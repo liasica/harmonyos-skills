@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-t
 title: "@ohos.telephony.data (蜂窝数据)"
 breadcrumb: API参考 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > ArkTS API > @ohos.telephony.data (蜂窝数据)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:53:55+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:4c4219846753be8d3acb75593d3c35c4b03ca48c751a78062ac5aff78a91114b
+scraped_at: 2026-10-31T07:37:09+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:352d609292e37851961006e94ddaa15eb6e34e378c0bd009a2ae397da25f6990
 ---
 
 蜂窝数据提供了移动数据管理能力，包括获取默认移动数据的SIM卡、获取蜂窝数据业务的上下行数据流状态、蜂窝数据业务链路连接状态，以及检查蜂窝数据业务和漫游是否启用等。
@@ -640,7 +640,7 @@ setPreferredApn(apnId: number): Promise<boolean>
 
 异步设置apnId对应的APN为首选APN。
 
-注意:
+**注意** 
 
 如果传入的apnId为无效的apnId，切回运营商默认配置的优选Apn。
 

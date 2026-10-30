@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: 绘制图形
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > svg开发指导 > 绘制图形
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:37+08:00
+scraped_at: 2026-10-31T07:31:57+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:de5c055cd1022ca0b88e98301dda433280e21688356776622f23e9c41cbfaaa6
+content_hash: sha256:b64ce53b4a1ef7c3502579070d3772a4bfe259a818857aac99f3a81bd31c981f
 ---
 
 svg组件可以用来绘制常见图形和线段，如矩形（<rect>）、圆形（<circle>）、线条(<line>）等，具体支持图形样式还请参考[svg](../harmonyos-references/js-components-svg.md)组件。
@@ -42,4 +42,4 @@ svg组件可以用来绘制常见图形和线段，如矩形（<rect>）、圆�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/6MMOD8yET9SAQJcQF6YzlQ/zh-cn_image_0000002803224051.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/87-G-1x0QGm2Dfxwx8vGCA/zh-cn_image_0000002776908924.png)

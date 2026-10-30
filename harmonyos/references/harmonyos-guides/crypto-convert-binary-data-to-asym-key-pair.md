@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-conver
 title: 指定二进制数据转换非对称密钥对(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥生成与转换 > 指定二进制数据转换非对称密钥对(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:41+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:fcd4554d3fc2917606a09c2c7253a4de06b9d2a3bb42cdb5cdabd4ffb5432236
+scraped_at: 2026-10-31T07:32:10+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:af09517bf35690c7bcff10d021d7e7705ab31a69e5624555376086511bbc33b7
 ---
 
 以RSA、ECC、SM2为例，根据指定的非对称密钥二进制数据，生成非对称密钥对（KeyPair），即将外部或存储的二进制数据转换为算法库的密钥对象，该对象可用于后续的加解密等操作。
@@ -157,6 +157,7 @@ content_hash: sha256:fcd4554d3fc2917606a09c2c7253a4de06b9d2a3bb42cdb5cdabd4ffb54
 
 ```typescript
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 async function main() {
   // 创建一个AsyKeyGenerator实例

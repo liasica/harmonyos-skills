@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/global-floati
 title: 全局悬浮窗开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 全局悬浮窗开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:33+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:f8c3a5bd0e7ac80cbd6fe955d06f381610e444d83ec4b8dd2613735f5f4b62b5
+scraped_at: 2026-10-31T07:31:58+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:86d2a67c03ce2bba79b2f745dc991f7c4bb603a4a082d7dec352ba692bce15b7
 ---
 
 ## 场景介绍
@@ -30,25 +30,25 @@ content_hash: sha256:f8c3a5bd0e7ac80cbd6fe955d06f381610e444d83ec4b8dd2613735f5f4
 
 1. 创建全局悬浮窗。
 
-   通过[window.createWindow()](../harmonyos-references/arkts-apis-window-f.md#windowcreatewindow9-1)接口创建全局悬浮窗类型（TYPE\_FLOAT）的窗口。
+   通过[window.createWindow()](../harmonyos-references/arkts-apis-window-f.md#windowcreatewindow9)接口创建全局悬浮窗类型（TYPE\_FLOAT）的窗口。
 
    ```typescript
    let floatWindowClass: window.Window | undefined = undefined;
    // ...
-         // 1.创建全局悬浮窗。
-         let context: common.UIAbilityContext | undefined = AppStorage.get<common.UIAbilityContext>('context');
-         let config: window.Configuration = {
-           name: 'floatWindow', windowType: window.WindowType.TYPE_FLOAT, ctx: context as common.BaseContext
-         };
-         window.createWindow(config, (err, data) => {
-           if (err?.code) {
-             console.error(`Failed to create the floatWindow. Cause code: ${err.code}, message: ${err.message}`);
-             return;
-           }
-           floatWindowClass = data;
-           console.info('Succeeded in creating the floatWindow. Data: ' + JSON.stringify(data));
-           // ...
-         });
+   // 1.创建全局悬浮窗。
+   let context: common.UIAbilityContext | undefined = AppStorage.get<common.UIAbilityContext>('context');
+   let config: window.Configuration = {
+     name: 'floatWindow', windowType: window.WindowType.TYPE_FLOAT, ctx: context as common.BaseContext
+   };
+   window.createWindow(config, (err, data) => {
+     if (err?.code) {
+       console.error(`Failed to create the floatWindow. Cause code: ${err.code}, message: ${err.message}`);
+       return;
+     }
+     floatWindowClass = data;
+     console.info('Succeeded in creating the floatWindow. Data: ' + JSON.stringify(data));
+     // ...
+   });
    ```
 2. 对全局悬浮窗进行属性设置等操作。
 

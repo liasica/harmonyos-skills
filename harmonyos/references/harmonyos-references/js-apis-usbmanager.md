@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-u
 title: "@ohos.usbManager (USB管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 设备管理 > @ohos.usbManager (USB管理)
 category: harmonyos-references
-scraped_at: 2026-10-29T08:01:15+08:00
+scraped_at: 2026-10-31T07:37:15+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:b4053108eb3f3c706a5b714cb386ba3911e114ab421febfcb696bfbca17c7bf8
+content_hash: sha256:64259c7bad9084fd8bd5f034c4418022bb3752a946e21d634defde378d673a0b
 ---
 
 本模块主要提供管理USB设备的相关功能，包括主机端的查询USB设备列表、批量数据传输、控制命令传输、权限控制等；设备端的端口管理、功能切换及查询等。适用于需要与USB设备进行数据交互、管理USB设备权限、动态切换USB设备模式等场景。
@@ -34,7 +34,7 @@ import { usbManager } from '@kit.BasicServicesKit';
 
 调用[usbManager.closePipe](js-apis-usbmanager.md#usbmanagerclosepipe)关闭设备连接通道。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/1Dbz6fQHT7WIyYk2j3Sf1w/zh-cn_image_0000002803266913.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/pSfhi2YsTh-QjdpuZYeekw/zh-cn_image_0000002776751770.png)
 
 ## usbManager.getDevices
 
@@ -1582,7 +1582,7 @@ USB端点，用于主机与设备之间数据传输的通信端点。通过[USBI
 
 协议层打包时依赖type决定传输特性，包括数据包格式、错误处理机制、超时策略等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/IHC579u0QweQCGpONWe6qQ/zh-cn_image_0000002803226819.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/WAbLIU2rQSCqP3jXuZkUSw/zh-cn_image_0000002806031487.png)
 
 **系统能力：** SystemCapability.USB.USBManager
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (WebSchemeHandlerResponse)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (WebSchemeHandlerResponse)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:19+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:190769b50894acc9e0d31f6c42471f982b36b357b33ba2aa1febeb9cc5511bce
+scraped_at: 2026-10-31T07:36:07+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:4f9a36278441a644dbb12c08e87f24116e26573f2670fe1889528e2b94ac8d8b
 ---
 
 WebSchemeHandlerResponse是自定义scheme拦截场景中用于构造HTTP响应数据的类。开发者通过该类创建Response对象，设置HTTP状态码、状态文本、媒体类型、字符集、自定义响应头、网络错误码以及重定向URL等属性，然后通过WebResourceHandler将自定义响应返回给Web组件。该类是自定义资源拦截的核心数据载体。
@@ -88,10 +88,6 @@ setUrl(url: string): void
 | --- | --- | --- | --- |
 | url | string | 是 | 重定向或因HSTS而更改后的URL。 |
 
-**示例：**
-
-完整示例代码参考[constructor](arkts-apis-webview-webschemehandlerresponse.md#constructor12)。
-
 **错误码：**
 
 以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
@@ -99,6 +95,10 @@ setUrl(url: string): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Incorrect parameter types. |
+
+**示例：**
+
+完整示例代码参考[constructor](arkts-apis-webview-webschemehandlerresponse.md#constructor12)。
 
 ## setNetErrorCode12+
 

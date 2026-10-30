@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: button开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > button开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:37+08:00
+scraped_at: 2026-10-31T07:31:57+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:55cccba50f52674f2fe52b8671b0079c20e0f567e5b1d2f02a5ba1cac3ae58c5
+content_hash: sha256:2622fff1cd67ea0224c6a394d3ae8b2f54ff3e4c2cea54cac141eac7a991a448
 ---
 
 button是按钮组件，其类型包括胶囊按钮、圆形按钮、文本按钮、弧形按钮、下载按钮。具体用法请参考[button API](../harmonyos-references/js-components-basic-button.md)。
@@ -33,7 +33,7 @@ button是按钮组件，其类型包括胶囊按钮、圆形按钮、文本按�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/PL1S9lwQTvKLWdOxl8dedA/zh-cn_image_0000002803224015.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/2Oeo0ZOSQBKAmOD2XdAt0w/zh-cn_image_0000002776908888.png)
 
 ## 设置button类型
 
@@ -73,7 +73,7 @@ button是按钮组件，其类型包括胶囊按钮、圆形按钮、文本按�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/ht_liwVcSmaYPTiXwDjVCQ/zh-cn_image_0000002774064014.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/paZTMoJmQcmn2bHrKG5WQQ/zh-cn_image_0000002776908606.png)
 
 **说明** 
 
@@ -166,7 +166,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/-l_w49r6R0uqvoyqsa4B9w/zh-cn_image_0000002774064296.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/S_mWCXMDRb2Qz_yHi75x-g/zh-cn_image_0000002776748902.gif)
 
 **说明** 
 
@@ -273,4 +273,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/SDuvhfOpQSqB5myhshRbXw/zh-cn_image_0000002773904322.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/3jIIrS9BStWQHtOx20eEeA/zh-cn_image_0000002806028619.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/libuv
 title: libuv
 breadcrumb: API参考 > 标准库 > libuv
 category: harmonyos-references
-scraped_at: 2026-10-29T08:03:10+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:fdb5a2a17784badae5f5983f744d2f72dd96359760558e396727cbb98f0ebd19
+scraped_at: 2026-10-31T07:39:36+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:93d642eed2a56c60c69e2bb3baf7f3f39fa8b25447c3d5fff6d1450cde6904ba
 ---
 
 ## 简介
@@ -1250,12 +1250,12 @@ handle：线程间通信句柄。
 
 返回：成功，返回0。失败，返回错误码。
 
-说明
+**说明** 
 
 1. uv\_async\_t从调用uv\_async\_init开始后就一直处于活跃状态，除非用uv\_close将其关闭。
 2. uv\_async\_t的执行顺序严格按照uv\_async\_init的顺序，而非通过uv\_async\_send的顺序来执行的。因此按照初始化的顺序来管理好时序问题是必要的。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/j1ESlcZ8S96jfjVtZp5NKg/zh-cn_image_0000002774067492.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/vtWK_WpzQWOwIplqtQcF-g/zh-cn_image_0000002806111777.jpg)
 
 示例代码：
 
@@ -1352,7 +1352,7 @@ work\_cb与after\_work\_cb的执行有一个时序问题，只有work\_cb执行�
 
 下图为原生libuv的线程池工作流程，图中流程已简化，默认句柄的pending标志为1，worker线程个数不代表线程池中线程的真实数量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/1Ttdp76tTA2sArR9UpRc_A/zh-cn_image_0000002773907518.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/ziQuDREpTTK_x4MXHCZxzw/zh-cn_image_0000002776912156.jpg)
 
 **2. 异步任务提交注意事项**
 
@@ -1372,7 +1372,7 @@ work\_cb与after\_work\_cb的执行有一个时序问题，只有work\_cb执行�
 
 另外，在应用主线程中，所有的异步任务尽管最终都是通过libuv得到执行的。但是在当前系统中，libuv的线程池已经对接到了FFRT中，任何抛向libuv的异步任务都会在FFRT的线程中得到调度。应用主线程的回调函数也通过PostTask接口插入到eventhandler的队列上。这就意味着FFRT线程上的异步任务完成后不再通过uv\_async\_send的方式触发主线程的回调。过程如下图:
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/k5aqRNeGRTCR5w0uA-eYhA/zh-cn_image_0000002803267301.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/IzPbtIj_R1O0bz1HeSJ8qA/zh-cn_image_0000002776752172.jpg)
 
 我们总结了五种类型的请求任务是直接可以按照正常用法在应用主循环中生效的：
 

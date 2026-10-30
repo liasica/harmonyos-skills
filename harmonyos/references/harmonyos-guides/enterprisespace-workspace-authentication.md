@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/enterprisespa
 title: 企业账号认证
 breadcrumb: 指南 > 应用服务 > Enterprise Space Kit（企业数字空间服务） > 空间管理 > 企业账号认证
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:25+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-31T07:33:00+08:00
+doc_updated_at: 2026-10-30
 content_hash: sha256:99699ebefdf80aa04b61bc6766ec848692c2eab762f81c09ef988ac3fdaa00bf
 ---
 

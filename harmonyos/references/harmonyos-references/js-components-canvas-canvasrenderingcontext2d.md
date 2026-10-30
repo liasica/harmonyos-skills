@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: CanvasRenderingContext2D对象
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 画布组件 > CanvasRenderingContext2D对象
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:58+08:00
+scraped_at: 2026-10-31T07:35:41+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:7934928d352aaea3f94ee5d15eabc0cc0c8351022d37afcd80f55e9f3f103ceb
+content_hash: sha256:76c03f360eccc95ee7cbebb3857a52f25c3e3f4a99054a1bb4c48d48753c3d19
 ---
 
 **说明** 
@@ -47,10 +47,10 @@ export default {
 
 * 示意图（关闭抗锯齿）
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/PFLtWo3vSjm1N3Rx1C2kJA/zh-cn_image_0000002773906792.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/5cCsnSTBSHikfcHnj_iNgg/zh-cn_image_0000002776911372.png)
 * 示意图（开启抗锯齿）
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/WK9iTsvFRCu2RSBnaw4bJw/zh-cn_image_0000002803266575.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/yrd-2yA6TXyJ4N1oMC5ghg/zh-cn_image_0000002776751386.png)
 
 ## 属性
 
@@ -95,7 +95,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/gDTMJ-z9RP6p3_egvrnPKA/zh-cn_image_0000002803226481.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/-Sbo9s_hTjGiuslHb16YbQ/zh-cn_image_0000002806031101.png)
 
 ### lineWidth
 
@@ -118,7 +118,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/zcsJoMwxTAuVJwJBCDBBmw/zh-cn_image_0000002774066766.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/4GEsdyy_ScaEvifL2-6RcQ/zh-cn_image_0000002806110995.png)
 
 ### strokeStyle
 
@@ -142,7 +142,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/zb_N2LoRSkmHJ4Ee4FVvtw/zh-cn_image_0000002773906794.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/qkjBnQXcQ_aqbUaDdeXLqA/zh-cn_image_0000002776911374.png)
 
 ### lineCap
 
@@ -169,7 +169,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/aDQfR2XRR2qPzVjcdr8BEg/zh-cn_image_0000002803266577.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/Sj1JgGXGSWOz4z7EHkO74A/zh-cn_image_0000002776751388.png)
 
 ### lineJoin
 
@@ -197,7 +197,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/JauJr18sSpm75TzAPLxqSA/zh-cn_image_0000002803226483.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/E1Cke4MoQQGV91_Lk3LZtA/zh-cn_image_0000002806031105.png)
 
 ### miterLimit
 
@@ -225,7 +225,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/OfAVwoKoQsWxqOVT16zGPA/zh-cn_image_0000002774066768.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/kWpR6VDWRdyczFOScYKgNA/zh-cn_image_0000002806110997.png)
 
 ### font
 
@@ -248,7 +248,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/rxObFyg1SSSGnTE2zqad_A/zh-cn_image_0000002773906796.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/9G_WvdYtTky42Yec0cef9Q/zh-cn_image_0000002776911376.png)
 
 ### textAlign
 
@@ -285,7 +285,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/49VZoPf_TU6Se37B_u0BIA/zh-cn_image_0000002803266579.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Vfrc1wwGSumqWB6pxx2www/zh-cn_image_0000002776751392.png)
 
 ### textBaseline
 
@@ -321,7 +321,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/dRs9OwiAToOTG5Qu2HtEXA/zh-cn_image_0000002803226485.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/kluOeuqHSf-QyC1QNcadPw/zh-cn_image_0000002806031107.png)
 
 ### globalAlpha
 
@@ -348,7 +348,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/BWwdtLp3SgaHaJb3OZUvKg/zh-cn_image_0000002774066770.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/RrfyCpJvQdGu4U_WWxVtuQ/zh-cn_image_0000002806111001.png)
 
 ### lineDashOffset
 
@@ -373,7 +373,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/Y3kvcHIxS2qdBZVAMPdCwQ/zh-cn_image_0000002773906798.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/hEbu2ISOQuakqgsakjdc9A/zh-cn_image_0000002776911378.png)
 
 ### globalCompositeOperation
 
@@ -423,7 +423,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/_zPP1BAzT32oq7b8-1jhQQ/zh-cn_image_0000002803266581.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/jmOYZahSSqGQFi0fQbNKMQ/zh-cn_image_0000002776751394.png)
 
 示例中，新绘制内容是蓝色矩形，现有绘制内容是红色矩形。
 
@@ -450,7 +450,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/ofrjMUBNQXyErEZVZWPOVA/zh-cn_image_0000002803226487.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/jZGcioTuS8mMmvCO-ZXuWA/zh-cn_image_0000002806031111.png)
 
 ### shadowColor
 
@@ -475,7 +475,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/70asV4gYSjSCJH08vwIMQg/zh-cn_image_0000002774066772.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/ur9fJRE_QJSX8sn_yb6HaQ/zh-cn_image_0000002806111003.png)
 
 ### shadowOffsetX
 
@@ -501,7 +501,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/mLrkjsQMQQW4F1RGwh4NBg/zh-cn_image_0000002773906800.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/4gIgbUTgRx-834K-Ik8QIg/zh-cn_image_0000002776911384.png)
 
 ### shadowOffsetY
 
@@ -527,7 +527,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/_OUdtr-kTqqZ6syXv0-0tQ/zh-cn_image_0000002803266583.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/LIgTvHITQuG9WGEr1mNEVQ/zh-cn_image_0000002776751396.png)
 
 ### imageSmoothingEnabled
 
@@ -555,7 +555,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/49TPN0WxRjmrp0q19hYEIg/zh-cn_image_0000002803226489.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/WyYaO3MdS_K1uuM7PW17lA/zh-cn_image_0000002806031115.png)
 
 ## 方法
 
@@ -596,7 +596,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/vaYi5A7pQFWidItWCqTU7g/zh-cn_image_0000002774066774.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/arMInkCZRxO_MDf_bH6Cag/zh-cn_image_0000002806111007.png)
 
 ### clearRect
 
@@ -637,7 +637,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/8I7FR_E_TRmsz_VNNPo4UQ/zh-cn_image_0000002773906802.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/ASPT0PPdRxWYpmuYa4OLPg/zh-cn_image_0000002776911386.png)
 
 ### strokeRect
 
@@ -676,7 +676,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/5KXJ4X4TTzCStmRFlpgwQw/zh-cn_image_0000002803266585.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/7BOJrG3BRPayBqO0GdI_ZQ/zh-cn_image_0000002776751402.png)
 
 ### fillText
 
@@ -715,7 +715,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/kRXh0669TUGbjqxsSA3KKg/zh-cn_image_0000002803226491.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/z-pkjJcdTIyJG6LuI1fPFg/zh-cn_image_0000002806031117.png)
 
 ### strokeText
 
@@ -754,7 +754,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/QQGuB1a-RI-wAi6huu6SCQ/zh-cn_image_0000002774066776.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/2kScwYLJQzadCHV8QcqCug/zh-cn_image_0000002806111009.png)
 
 ### measureText
 
@@ -799,7 +799,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/I6jTV2KtSoqia5SOZv4ssg/zh-cn_image_0000002773906804.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/TR1TPzNDQG-Y3NPWSlrfiw/zh-cn_image_0000002776911388.png)
 
 ### stroke
 
@@ -833,7 +833,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/vcT3hR2BQEiUlLGQiuGsJg/zh-cn_image_0000002803266587.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/fSxyCcUMTeigsgW6bTrwXg/zh-cn_image_0000002776751404.png)
 
 ### beginPath
 
@@ -868,7 +868,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/y-PYX0mgRyO_WKUHfizWIQ/zh-cn_image_0000002803226493.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/djph00lSQLywHHoqRZBZfg/zh-cn_image_0000002806031121.png)
 
 ### moveTo
 
@@ -908,7 +908,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/jv11WTvoTeyzn2NOyXUc4w/zh-cn_image_0000002774066778.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/WqtQoJGARRaZLJWmLxFYXg/zh-cn_image_0000002806111013.png)
 
 ### lineTo
 
@@ -948,7 +948,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/P98E7_OQQQqCHbVEkk1GQQ/zh-cn_image_0000002773906806.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/E-rP0g0RQimNi_5ZLHHupg/zh-cn_image_0000002776911392.png)
 
 ### closePath
 
@@ -983,7 +983,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/KrRjEOAlTkiXSnS7D1hLhA/zh-cn_image_0000002803266589.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/-wQhnThGQiiH3XEJq8KG8w/zh-cn_image_0000002776751406.png)
 
 ### createPattern
 
@@ -1031,7 +1031,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/hvUlANPKTJe85IHP31oBUA/zh-cn_image_0000002803226495.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/Gi7sSkheRwOVOKkAqsoiOQ/zh-cn_image_0000002806031123.png)
 
 ### bezierCurveTo
 
@@ -1075,7 +1075,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/dI8DJBlpQ_OiseBqlWu0ng/zh-cn_image_0000002774066780.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/NLa9LJvVTmCKRfn0r3LHpA/zh-cn_image_0000002806111015.png)
 
 ### quadraticCurveTo
 
@@ -1117,7 +1117,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/oAk6TnAFTzys1SMb1fALwQ/zh-cn_image_0000002773906808.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/Fo2m2cxAQVW5qLNH5Bq4EQ/zh-cn_image_0000002776911394.png)
 
 ### arc
 
@@ -1160,7 +1160,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/iTwQ1kZfSPabyv2QBXHMPw/zh-cn_image_0000002803266591.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/Hw8D9pEOTKug8Cov7g08BQ/zh-cn_image_0000002776751408.png)
 
 ### arcTo
 
@@ -1202,7 +1202,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/7AVvqzgBQuaHlQtU2HXasg/zh-cn_image_0000002803226497.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/kniYg_HLRhGEGPr6k5w9Zg/zh-cn_image_0000002806031127.png)
 
 ### ellipse
 
@@ -1247,7 +1247,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/A_-S_ilGR6eFzt6Iot9fhg/zh-cn_image_0000002774066782.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/mgQJWuIhRUa8sx4KXADdfQ/zh-cn_image_0000002806111017.png)
 
 ### rect
 
@@ -1287,7 +1287,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/BNOcQ-UERn6yt7c2u0PPIQ/zh-cn_image_0000002773906810.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/3JkiNJGHTquRCwqqs0XLHw/zh-cn_image_0000002776911396.png)
 
 ### fill
 
@@ -1318,7 +1318,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/RjFnIi-bRCWh8-4Hk405fA/zh-cn_image_0000002803266593.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/gFvkko71TTSmy0Tp64gFFQ/zh-cn_image_0000002776751412.png)
 
 ### clip
 
@@ -1353,7 +1353,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/-NE1JJ5XRBa-gZYWTmwIfg/zh-cn_image_0000002803226499.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/nzgbluhlQjye1NgsJesk6Q/zh-cn_image_0000002806031129.png)
 
 ### rotate
 
@@ -1390,7 +1390,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/w-HntZJJSZ6ObaHaVhEV4g/zh-cn_image_0000002774066784.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/WcZofPnjRVqSFE4JkFmSdQ/zh-cn_image_0000002806111021.png)
 
 ### scale
 
@@ -1429,7 +1429,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/zN8OD_uhRBmc_XXMY9w2cA/zh-cn_image_0000002773906812.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/KXPnLr7gQPa65EVh6wm2FA/zh-cn_image_0000002776911400.png)
 
 ### transform
 
@@ -1484,7 +1484,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/6jtVvrEITxmowBEVFtpw2Q/zh-cn_image_0000002803266595.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/cVmzeI7cRcGYvxINTa-OAQ/zh-cn_image_0000002776751414.png)
 
 ### setTransform
 
@@ -1529,7 +1529,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/8tJDyMRdQVOMeZyB86UlJQ/zh-cn_image_0000002803226501.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/a8W1wuhbQ7W2NzEzqcvxTA/zh-cn_image_0000002806031131.png)
 
 ### translate
 
@@ -1568,7 +1568,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/rLk04RCEQyqsKCnj7VBEPg/zh-cn_image_0000002774066786.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/x8DnBFc7SWaWsJ73Pyllug/zh-cn_image_0000002806111023.png)
 
 ### createPath2D
 
@@ -1639,7 +1639,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/ZBE5J7Q4SA2Cze4n-6JG_A/zh-cn_image_0000002773906814.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/9cMVnSVtQDOSpOCdhpywbQ/zh-cn_image_0000002776911402.png)
 
 ### drawImage
 
@@ -1686,7 +1686,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/-79tZJ5aRua-buJWOkCM7g/zh-cn_image_0000002803266597.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/aPmZmD4oQmmlp6SDuuKKPg/zh-cn_image_0000002776751416.png)
 
 ### restore
 
@@ -1796,7 +1796,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/64Y0RVrGT_O3ZQpfCsCEgA/zh-cn_image_0000002803226503.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/SELf4mGbR4G5k-24pQhFVw/zh-cn_image_0000002806031135.png)
 
 ### createRadialGradient6+
 
@@ -1852,7 +1852,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/EFzR3Yc1ThSsXU1nmh2--w/zh-cn_image_0000002774066788.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/qFRaHmkdTMGC6ax4vbHZ6Q/zh-cn_image_0000002806111025.png)
 
 ### createImageData
 
@@ -2026,7 +2026,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/mUku6VcFQuKT4Tem5OBDsA/zh-cn_image_0000002773906816.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/ncRgxn-aTMGxak6k_Kpn3Q/zh-cn_image_0000002776911404.png)
 
 ### putImageData
 
@@ -2071,7 +2071,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/5FoFieuXTVC48ia3N6Ypaw/zh-cn_image_0000002803266599.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/l1AY4kr-TTuS20SydcSvaw/zh-cn_image_0000002776751420.png)
 
 ### getPixelMap9+
 
@@ -2152,7 +2152,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/8KY78pSwTOWhvZ5uQRPnAw/zh-cn_image_0000002803226505.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/5rO4RZqCTU-_LQjOhlX-mw/zh-cn_image_0000002806031137.png)
 
 ### getLineDash
 
@@ -2228,4 +2228,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/JboiFQ7cTuWnNdqP1AdZOA/zh-cn_image_0000002774066790.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/YFNzo9IGRuOw3hnTixpfwA/zh-cn_image_0000002806111029.png)

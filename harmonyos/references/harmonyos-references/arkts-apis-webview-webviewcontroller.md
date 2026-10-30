@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (WebviewController)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (WebviewController)
 category: harmonyos-references
-scraped_at: 2026-10-11T07:25:18+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:017f5f1d181a5ffcc19562c683c28c92ca0cf1a9a907de5f5200b3a81ad54cec
+scraped_at: 2026-10-31T07:36:08+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:d648b37873424d15e88056c858a547e9b82cbc09ee5e646ba0a727442ec823ea
 ---
 
 WebviewController是Web组件各种行为的核心控制器，提供网页加载与导航控制、JavaScript交互、生命周期、滚动控制、页面缩放与内容查找、消息端口通信、缓存与证书管理等广泛功能。一个WebviewController对象只能控制一个Web组件，且必须在Web组件和WebviewController绑定后，才能调用WebviewController上的方法（静态方法除外）。
@@ -1579,7 +1579,7 @@ struct WebComponent {
                   try {
                     if (result.getErrorDescription()) {
                       // 若发生异常或返回类型不支持时，getErrorDescription不为空
-                      console.info(`runJavaScriptExt getErrorDescription: ${result.getErrorDescription()}`);
+                      console.error(`runJavaScriptExt getErrorDescription: ${result.getErrorDescription()}`);
                       return;
                     }
                     let type = result.getType();
@@ -1676,7 +1676,7 @@ struct WebComponent {
                   try {
                     if (result.getErrorDescription()) {
                       // 若发生异常或返回类型不支持时，getErrorDescription不为空
-                      console.info(`runJavaScriptExt getErrorDescription: ${result.getErrorDescription()}`);
+                      console.error(`runJavaScriptExt getErrorDescription: ${result.getErrorDescription()}`);
                       return;
                     }
                     let type = result.getType();
@@ -1807,7 +1807,7 @@ struct WebComponent {
               try {
                 if (result.getErrorDescription()) {
                   // 若发生异常或返回类型不支持时，getErrorDescription不为空
-                  console.info(`runJavaScriptExt getErrorDescription: ${result.getErrorDescription()}`);
+                  console.error(`runJavaScriptExt getErrorDescription: ${result.getErrorDescription()}`);
                   return;
                 }
                 let type = result.getType();
@@ -1893,7 +1893,7 @@ struct WebComponent {
                 try {
                   if (result.getErrorDescription()) {
                     // 若发生异常或返回类型不支持时，getErrorDescription不为空
-                    console.info(`runJavaScriptExt getErrorDescription: ${result.getErrorDescription()}`);
+                    console.error(`runJavaScriptExt getErrorDescription: ${result.getErrorDescription()}`);
                     return;
                   }
                   let type = result.getType();

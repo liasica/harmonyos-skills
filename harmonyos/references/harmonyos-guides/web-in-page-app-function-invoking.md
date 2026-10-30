@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-in-page-a
 title: 前端页面调用应用侧函数
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 在应用中使用前端页面JavaScript > 前端页面调用应用侧函数
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:40+08:00
+scraped_at: 2026-10-31T07:32:00+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:86e31c35f319181de7f4afcd099ac618761fa0d4da6460fce3751c650f1d3144
+content_hash: sha256:1a6a311ff9a575e9d9c07261823a54bd54b7eb226dde69de60dbbcb578d04372
 ---
 
 开发者使用Web组件将应用侧代码注册到前端页面中，注册完成之后，前端页面中使用注册的对象名称就可以调用应用侧的方法。
@@ -894,4 +894,4 @@ struct Index {
 
    使用[复杂类型使用方法](web-in-page-app-function-invoking.md#复杂类型使用方法)中应用侧和前端页面之间传递Array作为示例，调试结果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/2UiouVjHTheMaLutncRnrQ/zh-cn_image_0000002773904440.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/WyVRyj8KQYqYw7otbJueZA/zh-cn_image_0000002806028737.png)

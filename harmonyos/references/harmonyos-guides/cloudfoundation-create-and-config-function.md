@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 创建函数
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 云函数 > 开发云函数 > 创建函数
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:36+08:00
+scraped_at: 2026-10-31T07:32:59+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:897264b8932860929726efd1af0a3482093eb32de55ca1c1d61345b684198cd7
+content_hash: sha256:9d0f4733e3a8cbc2af9a96648ed75d5e73439523f0bab52b72ebd4d36f6ddd86
 ---
 
 ## 创建函数
@@ -17,16 +17,16 @@ content_hash: sha256:897264b8932860929726efd1af0a3482093eb32de55ca1c1d61345b6841
 3. 在左侧导航栏选择“云开发（Serverless） > 云函数”，进入云函数主界面。
 4. 选择“函数”页签，点击“创建函数”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/ljZO57CMQQSgv0jZOfXg1A/zh-cn_image_0000002773905246.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/PBiptjaWQSCv3Xw-qcQnBQ/zh-cn_image_0000002806029539.png)
 5. 页面右侧抽屉式滑出“创建函数”窗口，按照“函数配置 -> 触发器 -> 函数代码 -> 层配置”引导顺序配置函数。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/i_jSG9oKR52jnK0FMo2uzA/zh-cn_image_0000002803265029.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/mWvwpQJyTF2MRMX3ECwd4A/zh-cn_image_0000002806109429.png)
 
 ## 函数配置
 
 1. 在“函数配置”页面，配置“函数名称”、“触发方式”、“超时时长”等函数信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/RGRUDXA4QcCYaiuoQVFhpg/zh-cn_image_0000002803224937.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/bv60SqPUQ4Cg-ALIqkPKDA/zh-cn_image_0000002776909810.png)
 
    | 配置项 | **说明** |
    | --- | --- |
@@ -45,21 +45,21 @@ content_hash: sha256:897264b8932860929726efd1af0a3482093eb32de55ca1c1d61345b6841
 
    * 表单格式编辑
 
-     点击“新增变量”，输入key和value值，如下图中所示，env1为环境变量的key值，test为value值。点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/MHlZo4rCQSKs3w-Z0ur6Sg/zh-cn_image_0000002774065222.png)可将变量删除。
+     点击“新增变量”，输入key和value值，如下图中所示，env1为环境变量的key值，test为value值。点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/Nl1hC6tWQmComApYM9GtWg/zh-cn_image_0000002776749824.png)可将变量删除。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/rgta1mQRT_Wi0Grc0lLn6w/zh-cn_image_0000002773905248.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/CBzS5MvDTi6U4SwP4SHVEA/zh-cn_image_0000002806029541.png)
    * JSON格式编辑
 
      选中“JSON格式编辑”，在文本框中以key-value键值对JSON格式添加环境变量。当添加的环境变量比较多时，为了方便核对，可点击“format”对变量进行格式化排列。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/aXA0A8rQRiCLfLe5AxYY7A/zh-cn_image_0000002803265031.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/MkGeY5OOQX66QUwbsujYlQ/zh-cn_image_0000002806109431.png)
 3. “函数配置”页面配置完成后点击“下一步”。
 
 ## 触发器
 
 进入“触发器”页面，可基于函数触发场景配置需要的触发器，本场景下添加HTTP触发器。“触发器类型”和“请求方式”保持默认选择，并配置“认证类型”，配置完成后点击“下一步”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/maxYII9gQliCo_Yh5Shu1g/zh-cn_image_0000002803224939.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/BvJ_ScxpTvqG_tN90BoUYw/zh-cn_image_0000002776909812.png)
 
 | 参数 | 说明 |
 | --- | --- |
@@ -72,7 +72,7 @@ content_hash: sha256:897264b8932860929726efd1af0a3482093eb32de55ca1c1d61345b6841
 
 进入“函数代码”页面，配置“运行环境”、“内存配置”、“代码输入类型”等信息，配置完成后点击“下一步”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/xe-upp24R3Gqck9soB_Y9Q/zh-cn_image_0000002774065224.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/TelGf_-bR9SeyPhsQ0ismA/zh-cn_image_0000002776749826.png)
 
 | 配置项 | **说明** |
 | --- | --- |
@@ -92,7 +92,7 @@ content_hash: sha256:897264b8932860929726efd1af0a3482093eb32de55ca1c1d61345b6841
 
 WebIDE从左至右分两个部分：目录树、代码编辑器和最大化，如下图所示。编辑完成后平台会生成部署包并上传。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/xnGVa7NHTWK7bQu7d4DGDQ/zh-cn_image_0000002803265033.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/GHncU0ZORiaiS2mch_-yqA/zh-cn_image_0000002806109433.png)
 
 | 组成 | 说明 |
 | --- | --- |
@@ -108,14 +108,14 @@ WebIDE从左至右分两个部分：目录树、代码编辑器和最大化，�
 
 1. 进入“层配置”页面，点击“绑定层”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/VszjNulJSimaGm4O6_q__w/zh-cn_image_0000002774065228.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/Bg2BwTOwRwi9yIb4-A0jeQ/zh-cn_image_0000002776749830.png)
 2. 在右侧弹出的“绑定层”界面中，下拉框选择“层名称”和“版本”，“层范围”等信息根据层的配置将被自动填充，完成层绑定后点击“确定”。一个函数最多可以绑定5个层。
 
    **说明** 
 
    选择层时，层的兼容运行时需与函数运行环境相符，系统会自动完成过滤。如果无匹配的层，请参考[创建层](../AppGallery-connect-Guides/agc-cloud-function-layer-0000001517762624.md#section11358162018572)创建相同运行环境的层后再进行绑定。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/7OafRPBgTSuCstn1DQZ8Mg/zh-cn_image_0000002773905254.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/T9d2b_8TS62e8_UUwjeo-w/zh-cn_image_0000002806029547.png)
 
    | 参数 | 说明 |
    | --- | --- |
@@ -126,7 +126,7 @@ WebIDE从左至右分两个部分：目录树、代码编辑器和最大化，�
    | 层描述 | 层的附加说明，长度不超过1024位。 |
 3. 返回到“层配置”界面，绑定成功的层将展示在层列表中。如果需要解除层与函数的绑定关系，点击“解绑”即可。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/7s8WffkZTDC3Zj-vLR8lyA/zh-cn_image_0000002803265037.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/jlVIf25aQc-iu3Uq8yxfYw/zh-cn_image_0000002806109437.png)
 4. 按照“函数配置 -> 触发器 -> 函数代码 -> 层配置”顺序配置过程中，如果需要修改前面步骤中的配置，可点击“上一步”进行回退，配置完成后点击“创建”提交函数定义。
 
 ## 更多信息

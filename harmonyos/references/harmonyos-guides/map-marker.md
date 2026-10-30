@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-marker
 title: 标记
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 标记
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:44+08:00
+scraped_at: 2026-10-31T07:33:07+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:abaeb094f4a68b9f8ad75c508c34de197820c7043ee93448ae6a9aae80bd1e12
+content_hash: sha256:af0b0ad9d125ccd530fa2da4524197607eba7526ef3287ce0f6cd7d486927cc5
 ---
 
 ## 场景介绍
@@ -22,7 +22,7 @@ Marker有默认风格，同时也支持自定义。由于内容丰富，以下�
 
 6.1.1(24)开始，支持监听Marker长按事件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/atD_NyhUQ4KqNz6-bKa7hg/zh-cn_image_0000002803265213.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/E5_XtHTPQ1GB3II1htfB2Q/zh-cn_image_0000002776909996.jpg "点击放大")
 
 ## 接口说明
 
@@ -113,7 +113,7 @@ Marker有默认风格，同时也支持自定义。由于内容丰富，以下�
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/afs2nI1nT_WdUc8sD1AaDA/zh-cn_image_0000002803225121.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/PnwyXjWFTga5doippTSILA/zh-cn_image_0000002776750010.jpg "点击放大")
 3. 在添加标记之后，修改已经设置的标记属性。
 
    ```typescript
@@ -148,7 +148,7 @@ let markerOptions: mapCommon.MarkerOptions = {
 this.marker = await this.mapController.addMarker(markerOptions);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/MIeUhOirTAuptc8eUYdrRA/zh-cn_image_0000002774065406.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/oZStct85TNqktHviEs4trQ/zh-cn_image_0000002806029727.jpg "点击放大")
 
 ### 控制Marker文字显隐
 
@@ -189,11 +189,11 @@ console.info(`isAnnotationVisible is: ` + isAnnotationVisible);
 
 **图1** 隐藏Marker文字之前
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/ATx7TQv7TTyz7o2n47Tujw/zh-cn_image_0000002773905432.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/OwVc_j_uSbWNXB0pPAnwpw/zh-cn_image_0000002806109617.jpg "点击放大")
 
 **图2** 隐藏Marker文字之后
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/uI2bN0-8RVmXkcTxivCr0g/zh-cn_image_0000002803265215.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/dizPUZEZS2aWt4KIODvcKA/zh-cn_image_0000002776909998.jpg "点击放大")
 
 ### 碰撞检测
 
@@ -230,7 +230,7 @@ let markerOptions: mapCommon.MarkerOptions = {
 this.marker = await this.mapController.addMarker(markerOptions);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/RkldcPoISKyGC5sQv5yHzg/zh-cn_image_0000002803225123.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/b6pj_rGGSg2Anx9crVBNnw/zh-cn_image_0000002776750012.gif "点击放大")
 
 ### 设置监听标记点击事件
 
@@ -305,7 +305,7 @@ this.marker.setInfoWindowAnchor(1, 1);
 this.marker.setInfoWindowVisible(true);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/Y3Do9p24R-S-6ZidhrNJdA/zh-cn_image_0000002774065408.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/fMBLtj9cTtGee5IyMYf3dg/zh-cn_image_0000002806029729.jpg "点击放大")
 
 ### 自定义信息窗
 
@@ -392,7 +392,7 @@ struct MapMarkerDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/dUBFeA4zTLOlmasm22R6aQ/zh-cn_image_0000002773905434.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/3DyQ0EzdSrmajqjwdFtZlA/zh-cn_image_0000002806109619.jpg "点击放大")
 
 ### 标记动画
 
@@ -494,7 +494,7 @@ struct MapMarkerDemo {
 
 展示效果如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/-g1Or58XSMmq6tZA89pU_A/zh-cn_image_0000002803265217.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/LjCHTM1eQfW5PIdh51VrJQ/zh-cn_image_0000002776910000.gif "点击放大")
 
 ### 图片动画播放
 
@@ -599,7 +599,7 @@ struct MapMarkerDemo {
 
 展示效果如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/9NFUi4NTQY6HbRzJoGbc6w/zh-cn_image_0000002803225125.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/yo6fU5J9RFSQf6eCyNJ1Bg/zh-cn_image_0000002776750014.gif "点击放大")
 
 ### 自定义组件实现marker图标
 
@@ -675,4 +675,4 @@ struct MapMarkerDemo {
 
 展示效果如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/5HO_UhwPRbWtDy6f_rsLPA/zh-cn_image_0000002774065410.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/2Y3b-FPXSkeSoRnP4oqPsg/zh-cn_image_0000002806029731.jpg "点击放大")

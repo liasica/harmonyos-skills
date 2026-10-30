@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-even
 title: 使用扩展的Node-API接口在异步线程中运行和停止事件循环
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景 > 使用扩展的Node-API接口在异步线程中运行和停止事件循环
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:16+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:478ef7bd3bf80088272246ae8d4a4760389092e6fea2548b162eba4d718af736
+scraped_at: 2026-10-31T07:33:42+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:011bb96a5d4b28810729fd797cbd1b855dd96cfeb142d2113983bf2da3248db4
 ---
 
 ## 场景介绍
@@ -95,7 +95,7 @@ content_hash: sha256:478ef7bd3bf80088272246ae8d4a4760389092e6fea2548b162eba4d718
       ret = napi_load_module_with_info(env, "entry/src/main/ets/pages/ObjectUtils", "com.example.myapplication/entry",
                                        &objectUtils);
       if (ret != napi_ok) {
-          OH_LOG_INFO(LOG_APP, "Failed to load module");
+          OH_LOG_ERROR(LOG_APP, "Failed to load module");
           napi_close_handle_scope(env, scope);
           napi_destroy_ark_runtime(&env);
           return nullptr;
@@ -130,7 +130,7 @@ content_hash: sha256:478ef7bd3bf80088272246ae8d4a4760389092e6fea2548b162eba4d718
       if (env != nullptr) {
           napi_status destroy_ret = napi_destroy_ark_runtime(&env);
           if (destroy_ret != napi_ok) {
-              OH_LOG_INFO(LOG_APP, "Failed to destroy ark runtime");
+              OH_LOG_ERROR(LOG_APP, "Failed to destroy ark runtime");
           }
           env = nullptr;
       }
@@ -242,7 +242,7 @@ content_hash: sha256:478ef7bd3bf80088272246ae8d4a4760389092e6fea2548b162eba4d718
     return new Promise((resolve) => {
       setTimeout(() => {
         console.info('set timer delay 1s');
-        // attempt to stop the event loop at napi terminal
+        // 尝试在napi侧停止事件循环
         resolve();
       }, 1000)
     })

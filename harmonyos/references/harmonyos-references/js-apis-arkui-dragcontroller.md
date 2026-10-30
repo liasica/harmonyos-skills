@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.arkui.dragController (DragController)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.dragController (DragController)
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:22+08:00
+scraped_at: 2026-10-31T07:34:55+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:e01c80adeae2cc84f2f67b0fe5d9575ce296dcdc511631aff2f91330d394df2a
+content_hash: sha256:7f66396338dd5f0c63e9b926e5052c50208f2640ceef12fc9b868c45d777ca31
 ---
 
 本模块提供发起主动拖拽的能力，当应用接收到触摸或长按等事件时可以主动发起拖拽动作，并在拖拽过程中携带拖拽信息，适用于应用需要自主控制拖拽发起时机、拖拽预览效果和拖拽数据传递的场景，帮助应用实现更灵活的自定义拖拽交互。
@@ -138,7 +138,7 @@ struct DragControllerPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/lTHJo8pCSmikm4P376VU5A/zh-cn_image_0000002774065874.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/D_tLhogbQIWeUGNEn9E4bQ/zh-cn_image_0000002806030195.gif)
 
 ## dragController.executeDrag(deprecated)
 
@@ -290,7 +290,7 @@ struct DragControllerPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/WXf0tZrgTUSMtlamcIJe8g/zh-cn_image_0000002773905900.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/DckeSa1LS-KnO6PlfRlxLQ/zh-cn_image_0000002806110085.gif)
 
 ## DragInfo
 
@@ -585,7 +585,7 @@ struct DragControllerPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/HntzKyM3T0-zReprw4TkwQ/zh-cn_image_0000002803265683.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/13lefQzwTxKDn_hNS7E97g/zh-cn_image_0000002776910466.gif)
 
 ## DragAction11+
 
@@ -861,7 +861,7 @@ struct ImageExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/56AHgpYfSxeN_npwCZZcFQ/zh-cn_image_0000002803225591.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/Mz2YJJUtTLG0yB5Mi2zbzg/zh-cn_image_0000002776750480.gif)
 
 ### on('statusChange')11+
 
@@ -1305,7 +1305,7 @@ animate(options: AnimationOptions, handler: () => void): void
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/0uq05-P4SoKtnXemzXPfog/zh-cn_image_0000002774065876.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/1HRr35OeT6G75cqUvE8dMQ/zh-cn_image_0000002806030197.gif)
 
 ## DragStartRequestStatus18+
 

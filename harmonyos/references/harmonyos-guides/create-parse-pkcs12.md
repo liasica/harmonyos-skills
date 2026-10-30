@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/create-parse-
 title: "证书PKCS #12的创建和解析"
 breadcrumb: "指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 证书算法库框架 > 证书PKCS #12的创建和解析"
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:33+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:689928c827a332bc9ca81fef8a878bdf2a1e025d93967379f4725e07842cde85
+scraped_at: 2026-10-31T07:32:13+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:f594ca7da8f429e77e05d450648a1c7a4d9cd73f8942bdcc467869c57f505771
 ---
 
 从API version 18开始，支持解析PKCS #12证书。
@@ -164,7 +164,7 @@ async function doTestCreatePkcs12() {
     let p12 = await cert.createPkcs12(data, config);
     console.info(`createPkcs12 result: success, p12 = ` + p12);
     let out: cert.Pkcs12Data = await cert.parsePkcs12(p12, '123456');
-    console.info(`parsePKCS12 result: success.`);
+    console.info(`parsePkcs12 result: success.`);
     if (out.privateKey) {
       console.info(`privateKey:` + out.privateKey.toString());
     }
@@ -332,7 +332,7 @@ async function doTestCreatePkcs12Sync() {
       needsOtherCerts: true,
     };
     let out: cert.Pkcs12Data = cert.parsePkcs12(p12, conf);
-    console.info(`parsePKCS12 result: success.`);
+    console.info(`parsePkcs12 result: success.`);
     if (out.privateKey) {
       console.info(`privateKey:` + out.privateKey.toString());
     }
@@ -348,7 +348,7 @@ async function doTestCreatePkcs12Sync() {
       console.info(`otherCerts is empty or not an array.`);
     }
   } catch (err) {
-    console.error(`doTestCreatePkcs12 failed: errCode: ${err.code}, message: ${err.message}`);
+    console.error(`doTestCreatePkcs12Sync failed: errCode: ${err.code}, message: ${err.message}`);
   }
 }
 ```

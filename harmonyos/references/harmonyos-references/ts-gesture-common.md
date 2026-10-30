@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-gestur
 title: 手势公共接口
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 手势公共接口
 category: harmonyos-references
-scraped_at: 2026-09-15T07:04:51+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:cdc429547fad06f2da777d4ada13cda00fab89f7338d09d561271f40778ac556
+scraped_at: 2026-10-31T07:35:12+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:ef7a54268bf2409b5caa840e06892b57a30383c4c8bf47232da776acfb293bf8
 ---
 
 为开发者提供手势相关的公共接口，包括手势公共配置、手势识别器、手势事件信息、手势类型等能力，适用于在应用中识别、控制和处理点击、长按、滑动、捏合等手势交互场景。
@@ -719,7 +719,7 @@ getDistanceMap(): Map<SourceTool, number>
 | pinchCenterX | number | 否 | 否 | 捏合手势中心点相对于当前组件元素原始区域左上角的x轴坐标，单位为vp，用于PinchGesture手势触发场景。  取值范围：[0, +∞)  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | pinchCenterY | number | 否 | 否 | 捏合手势中心点相对于当前组件元素原始区域左上角的y轴坐标，单位为vp，用于PinchGesture手势触发场景。  取值范围：[0, +∞)  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | speed8+ | number | 否 | 否 | 快滑手势速度，即所有手指相对当前组件元素原始区域滑动的平均速度，单位为vp/s，用于SwipeGesture手势触发场景。  取值范围：[0, +∞)  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| fingerList8+ | [FingerInfo](ts-gesture-common.md#fingerinfo8对象说明)[] | 否 | 否 | 输入源为触屏产生的手势，fingerList中会包含触发事件的所有触点信息；由鼠标发起的手势，fingerList中只会有一条记录；触摸板的事件大类与鼠标一致，所以由触摸板发起的手势，fingerList只会携带一条记录。  **说明：**  1. 手指索引编号与位置对应，即fingerList[index]的id为index。先按下且未参与当前手势触发的手指在fingerList中对应位置为空。  2. 当使用键盘或手柄触发手势时，不存在手指信息，fingerList为空。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| fingerList8+ | [FingerInfo](ts-gesture-common.md#fingerinfo8对象说明)[] | 否 | 否 | 输入源为触屏产生的手势，fingerList中会包含触发事件的所有触点信息；由鼠标发起的手势，fingerList中只会有一条记录；触摸板的事件大类与鼠标一致，所以由触摸板发起的手势，fingerList只会携带一条记录。  **说明：**  1. 手指索引编号与位置对应，即fingerList[index]的id为index。先按下且未参与当前手势触发的手指在fingerList中对应位置为undefined。  2. 当使用键盘或手柄触发手势时，不存在手指信息，fingerList为undefined。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | fingerInfos20+ | [FingerInfo](ts-gesture-common.md#fingerinfo8对象说明)[] | 否 | 是 | 由触屏产生的手势，fingerInfos中会包含触发事件的所有触点信息；由鼠标发起的手势，fingerInfos中只会有一条记录；触摸板的事件大类与鼠标一致，所以由触摸板发起的手势，fingerInfos只会携带一条记录。  **说明：**  fingerInfos只会记录参与触摸的有效手指信息，先按下但未参与当前手势触发的手指在fingerInfos中不会显示。默认值为空数组[]，返回空数组时，表示当前无有效触点信息。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | velocityX10+ | number | 否 | 否 | 用于[PanGesture](ts-basic-gestures-pangesture.md)手势中，获取当前手势的x轴方向速度。坐标轴原点为屏幕左上角，分正负方向速度，从左往右为正，反之为负。单位为vp/s。  取值范围：(-∞, +∞)  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | velocityY10+ | number | 否 | 否 | 用于[PanGesture](ts-basic-gestures-pangesture.md)手势中，获取当前手势的y轴方向速度。坐标轴原点为屏幕左上角，分正负方向速度，从上往下为正，反之为负。单位为vp/s。  取值范围：(-∞, +∞)  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
@@ -862,7 +862,7 @@ type GestureType = TapGesture | LongPressGesture | PanGesture | PinchGesture | S
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| fingerList | [FingerInfo](ts-gesture-common.md#fingerinfo8对象说明)[] | 否 | 否 | 触发事件的所有手指信息。输入源为触屏产生的手势，fingerList中会包含触发事件的所有触点信息；由鼠标发起的手势，fingerList中只会有一条记录；触摸板的事件大类与鼠标一致，所以由触摸板发起的手势，fingerList只会携带一条记录。  **说明：**  1. 手指索引编号与位置对应，即fingerList[index]的id为index。先按下且未参与当前手势触发的手指在fingerList中对应位置为空。  2. 当使用键盘或手柄触发手势时，不存在手指信息，fingerList为空。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| fingerList | [FingerInfo](ts-gesture-common.md#fingerinfo8对象说明)[] | 否 | 否 | 触发事件的所有手指信息。输入源为触屏产生的手势，fingerList中会包含触发事件的所有触点信息；由鼠标发起的手势，fingerList中只会有一条记录；触摸板的事件大类与鼠标一致，所以由触摸板发起的手势，fingerList只会携带一条记录。  **说明：**  1. 手指索引编号与位置对应，即fingerList[index]的id为index。先按下且未参与当前手势触发的手指在fingerList中对应位置为undefined。  2. 当使用键盘或手柄触发手势时，不存在手指信息，fingerList为undefined。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | fingerInfos20+ | [FingerInfo](ts-gesture-common.md#fingerinfo8对象说明)[] | 否 | 是 | 参与触发事件的所有有效触点信息。由触屏产生的手势，fingerInfos中会包含触发事件的所有触点信息；由鼠标发起的手势，fingerInfos中只会有一条记录；触摸板的事件大类与鼠标一致，所以由触摸板发起的手势，fingerInfos只会携带一条记录。  **说明：**  fingerInfos只会记录参与触摸的有效手指信息，先按下但未参与当前手势触发的手指在fingerInfos中不会显示。默认值为空数组[]，返回空数组时，表示当前无有效触点信息。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
 
 ## TapGestureEvent11+对象说明

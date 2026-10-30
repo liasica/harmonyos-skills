@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/usbhost-overv
 title: USB服务开发概述
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB服务 > USB服务开发概述
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:03+08:00
+scraped_at: 2026-10-31T07:32:24+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:20543fee1727b6accd39a76d364d45ef9236dcf9e5e2d875b46eea111b96747d
+content_hash: sha256:216535581cbbab6bb53c4177298cbc5e5cdb3f8e9204ab5e79dfe49493157bfa
 ---
 
 ## 基本概念
@@ -20,7 +20,7 @@ USB服务系统包含USB API、USB Service、USB HAL。
 
 **图1** USB服务运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/Qo4W-YdSTWGwFFk6mYQMtQ/zh-cn_image_0000002803224453.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/n7RVrv2HRui3mD8aoa9ozg/zh-cn_image_0000002776909326.png)
 
 * USB API：提供USB的基础API，主要包含查询USB设备列表、批量数据传输、控制命令传输、权限控制等。
 * USB Service：主要实现HAL层数据的接收、解析、分发以及对设备的管理等。

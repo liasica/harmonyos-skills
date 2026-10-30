@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-abou
 title: 使用DevTools进行网页内存分析
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM性能调试指导 > 使用DevTools进行网页内存分析
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:18+08:00
+scraped_at: 2026-10-31T07:33:44+08:00
 doc_updated_at: 2026-08-14
-content_hash: sha256:18c0d090cc38ff05d885cf772983421b90791bf27ee1e0de20c84a7d54a93ef6
+content_hash: sha256:78b75aa28db9c78b62107f0345749fb4d888024c57205058c7904fb65bc3deac
 ---
 
 ## 开启DevTools
@@ -16,9 +16,9 @@ DevTools为Chrome浏览器自带工具，[下载](https://www.google.com.hk/intl
 
 在内存界面下选择堆快照，点击获取快照即可对当前页面进行一次内存快照。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/Ors9rVW3QrSueGi57HA7JA/zh-cn_image_0000002803265629.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/wbVgDSuVRbexugq9NEYyPw/zh-cn_image_0000002776910412.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/e5aHcO8WQbK3R0XcdJraUA/zh-cn_image_0000002803225537.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/SWC_weIWQROq5B54_KBagg/zh-cn_image_0000002776750426.png)
 
 ## 堆快照分析
 
@@ -32,11 +32,11 @@ DevTools为Chrome浏览器自带工具，[下载](https://www.google.com.hk/intl
 * 浅层大小(Shallow Size)：对象自身占用的内存大小。
 * 保留大小(Retained Size)：当一个对象被释放后，系统虚拟机可以释放的总内存。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/jyB2H9uFTxu5JB7iAxp9CA/zh-cn_image_0000002774065822.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/QojZpdBvQRKM_33x-sjy_g/zh-cn_image_0000002806030143.png)
 
 在摘要界面的右侧有一个选择栏，用户可以选择查看特定的对象，例如下图中选择“在快照2和快照3之间分配的对象”，这样生成的摘要可以用于定位内存问题发生的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/19DevYmgQdGdOVK6AJksYQ/zh-cn_image_0000002773905848.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/41vPMsK6TGC0HZYc7KhEUA/zh-cn_image_0000002806110033.png)
 
 ### 比较(Comparison)
 
@@ -52,40 +52,40 @@ DevTools为Chrome浏览器自带工具，[下载](https://www.google.com.hk/intl
 
 可以根据比较界面不同快照间的差异分析内存问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/hcjYdDcjTNa2rxNpOfKPeQ/zh-cn_image_0000002803265631.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/Vpu5sJzSTxOJzuEPfkc5-w/zh-cn_image_0000002776910414.png)
 
 ### 控制(Containment)
 
 控制(Containment)提供了一个自上而下的树形界面，该界面允许浏览和探索堆内存中的内容。我们可以用它来分析任意变量的引用情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/O5dgU4g9QmaGPe7aa_N3Ew/zh-cn_image_0000002803225539.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/z2YKU4NySieVA8oBk5EOjg/zh-cn_image_0000002776750428.png)
 
 ### 统计信息(Statistics)
 
 统计信息(Statistics)用一个饼图展示各个类型对象的内存占用比例。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/q6tjDQ0DTwOxmRY1IJKr_Q/zh-cn_image_0000002774065824.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/xYwWLS1xSm-xjyo_7XHQoA/zh-cn_image_0000002806030145.png)
 
 ## 内存泄漏分析流程
 
 1. 打开一个可能存在内存泄漏问题的页面并启用DevTools。下图展示的页面来自GitHub上的[memory-leak-simulation](https://github.com/Buchatech/JavaScript-Memory-Leak-Simulation)项目，该网页通过设置全局数组并不断向其推入'memory leak'字符串来模拟内存泄漏场景。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/UuiRi7lqSgioMr0TV7CO4A/zh-cn_image_0000002773905850.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/KSx_UOOqSJWmdwtGxntRNA/zh-cn_image_0000002806110035.png)
 2. 在性能界面录制可能导致内存泄漏的用户操作，以识别引起内存泄漏的用户操作或组件。下图显示，网页已加载完毕，但内存仍在持续上升，表明可能存在内存泄漏问题。对于包含大量动态组件和频繁DOM操作的网页，内存曲线可能呈起伏状态。持续观察内存起伏的最低值变化，若最低值逐渐上升，怀疑网页存在内存泄漏问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/4egpxWCdRt-TptbTHKuW3g/zh-cn_image_0000002803265633.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/Ot86ojeIQ8iSRvzB5hjhig/zh-cn_image_0000002776910416.png)
 3. 我们对这个网页进行第一次堆快照，发现Array占用了28M内存，基于该对象的内存占用显著高于正常值(通常在几MB范围内)，可以判断该对象可能存在内存泄漏问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/bNCEDwwDQryxTXd6FBykgg/zh-cn_image_0000002803225541.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/DTMxnGCySdW-YfuwRR8cfw/zh-cn_image_0000002776750430.png)
 4. 对网页进行可能会造成内存泄漏的操作，操作完成后进行第二次堆快照，然后选择两个快照间分配的对象，观察到Array构造器新产生约16MB内存占用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/psBdvrfyTVC5XuMNLU14cQ/zh-cn_image_0000002774065826.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/1OfqpojgTjSfmADPQNpVIQ/zh-cn_image_0000002806030147.png)
 5. 查看**比较(comparison)**，选择快照3并使用快照2作为比较对象，观察到Array构造器新产生了4030个对象，占用了16.1MB空间，但只释放了184B空间，根据此结果，确定内存泄漏发生在Array中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/rEijTMgpSa2pJnWugGemhg/zh-cn_image_0000002773905852.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/2h0ZyZloQRaxe1u4ZrWQGg/zh-cn_image_0000002806110037.png)
 6. 录制1-2分钟的堆快照来获得包含时间轴的摘要视图，这与性能界面中的视图类似。使用此视图可以分析是哪个动作造成了内存占用的变化。录制快照时选择“时间轴上的分配情况”选项，点击录制。完成想要测试的动作后，停止录制即可生成内存堆时间轴视图。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/gyX7PAeOSduMkkS6ANhKFA/zh-cn_image_0000002803265635.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/7FLlrbYsSCOdGwjU2r3C9A/zh-cn_image_0000002776910418.png)
 7. 在结果的时间轴上，使用左键滑动选择想要查看的区域，即可查看选定时间段内的内存分配情况。从下图中框选部分可以看到，在选定时间内，Array构造器产生了两千个新对象。利用该功能，可以明确不同操作对内存的影响。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/x9H7gX--T5qU9NtV5vlEzA/zh-cn_image_0000002803225543.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/eMLglbUwSueikQTsZH1usg/zh-cn_image_0000002776750432.png)

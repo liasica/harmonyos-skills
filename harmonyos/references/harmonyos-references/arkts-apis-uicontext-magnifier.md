@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Magnifier)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (Magnifier)
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:23+08:00
+scraped_at: 2026-10-31T07:34:56+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:3dc796a8c69bd1b89ab3765df7132f247d2a8fe72350ba270165bc10123ae890
+content_hash: sha256:87b4e980c156c4a301f51303d32a31d3254b21a5bd40242039268b6efb7d4783
 ---
 
 提供控制放大镜的显示与隐藏的能力，放大镜会对组件内容进行放大显示，便于查看组件细节。适用于非文本类组件（如图片）需要查看细节的场景。
@@ -80,7 +80,7 @@ struct MagnifierExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/zKqvBt25Qfiay5uCLGzgrw/zh-cn_image_0000002774065884.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/JOn3oLjjTcCfW6MRFT_qdg/zh-cn_image_0000002806030205.png)
 
 ## show
 

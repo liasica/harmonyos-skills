@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.application.DistributedExtensionAbility (协同Extension)"
 breadcrumb: API参考 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > ArkTS API > @ohos.application.DistributedExtensionAbility (协同Extension)
 category: harmonyos-references
-scraped_at: 2026-10-29T08:00:56+08:00
+scraped_at: 2026-10-31T07:36:53+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:72d07c2367bc80151ebea17767ee4f589d4fdb1230958de87efa4745e5e463db
+content_hash: sha256:dd52df5cc595977a73c6d7d37af84fda8ea26c962576f078a2f4273716140012
 ---
 
 DistributedExtensionAbility（分布式扩展能力）模块提供了面向多设备限定协同场景（如：面向穿戴和手机间的专有通讯服务）下的扩展能力基类。
@@ -18,7 +18,7 @@ DistributedExtensionAbility（分布式扩展能力）模块提供了面向多�
 
 协同Extension的核心类结构及其与上下文、自定义子类的关系如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/C74lFYj6T6yOfcwvHrifCg/zh-cn_image_0000002803226813.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/hOAA0ZVrSp-9631osJFR9w/zh-cn_image_0000002806031481.png)
 
 如上图所示：
 

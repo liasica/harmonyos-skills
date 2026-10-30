@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 图标小符号 (SymbolGlyph/SymbolSpan)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用文本 > 图标小符号 (SymbolGlyph/SymbolSpan)
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:30+08:00
+scraped_at: 2026-10-31T07:31:50+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:0c218bc9f68dbb6c2dfb4aba04deee3582be81bb40393b08b24aa3b60b7d35ff
+content_hash: sha256:b7cbfe0a7490efc9efe6ca941629c6a26a13a069c46a330aef45691c09419c5d
 ---
 
 SymbolGlyph是图标小符号组件，便于使用精美的图标，如渲染多色图标和使用动效图标。SymbolSpan作为Text组件的子组件，可在文本中穿插显示图标小符号。具体用法请参考[SymbolGlyph](../harmonyos-references/ts-basic-components-symbolglyph.md)和[SymbolSpan](../harmonyos-references/ts-basic-components-symbolspan.md)组件的API文档。
@@ -23,7 +23,7 @@ SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
   .fontColor([Color.Black, Color.Green, Color.White])
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/AwF1jlN9R1WwrATEXiXA2Q/zh-cn_image_0000002803263755.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/w_URN-UBSfCBd9Uj-pjxig/zh-cn_image_0000002806028267.png)
 
 ## 添加到文本中
 
@@ -41,7 +41,7 @@ SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/BqggZoOBRECFgL8b5sRheA/zh-cn_image_0000002803223665.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/LBYUYI1oRZ20hE1mQ8M6Jg/zh-cn_image_0000002806108157.png)
 * 通过[fontSize](../harmonyos-references/ts-basic-components-symbolspan.md#fontsize)属性设置SymbolSpan的大小。
 
   ```typescript
@@ -78,7 +78,7 @@ SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/vIVgr4P-TWSVQONd3CopPQ/zh-cn_image_0000002774063946.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/amp4zKlOQVCs9qnLqyK9qA/zh-cn_image_0000002776908538.png)
 * 通过[fontWeight](../harmonyos-references/ts-basic-components-symbolspan.md#fontweight)属性设置SymbolSpan组件的粗细。
 
   ```typescript
@@ -112,7 +112,7 @@ SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/bn_4grAFSkqi9AH_SVHT1A/zh-cn_image_0000002773903970.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/g1TsBHpfSZWUGM79PUQ_9g/zh-cn_image_0000002776748552.png)
 * 通过[fontColor](../harmonyos-references/ts-basic-components-symbolspan.md#fontcolor)属性设置SymbolSpan的颜色。
 
   ```typescript
@@ -146,7 +146,7 @@ SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/VhJ2y0eBSZqFFVcmJJv6eg/zh-cn_image_0000002803263757.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/HjA72gxGTKmIZCyWwn_aSA/zh-cn_image_0000002806028269.png)
 * 通过[renderingStrategy](../harmonyos-references/ts-basic-components-symbolspan.md#renderingstrategy)属性设置SymbolSpan的渲染策略。
 
   ```typescript
@@ -186,7 +186,7 @@ SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/Y3SZo3pLRkqmhHwrbeNCsA/zh-cn_image_0000002803223667.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/SnaoAJW-SgqYe62WorpTjw/zh-cn_image_0000002806108159.png)
 * 通过[effectStrategy](../harmonyos-references/ts-basic-components-symbolspan.md#effectstrategy)属性设置SymbolSpan的动效策略。
 
   ```typescript
@@ -223,7 +223,7 @@ SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/d-9C1A0rRN6jovrRlq8Knw/zh-cn_image_0000002774063948.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/mJd9zUZmTzmoMaXvcm8-Ug/zh-cn_image_0000002776908540.gif)
 * SymbolSpan不支持通用事件。
 
 ## 自定义图标动效
@@ -253,7 +253,7 @@ SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/UxDuHSrrTcy2TLyo9haM1g/zh-cn_image_0000002773903972.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/KPueBmTlTW6rJ6IwJJ7iRQ/zh-cn_image_0000002776748554.gif)
 * 通过设置symbolEffect属性，可以同时指定SymbolGlyph的动画效果策略及其播放触发条件。
 
   ```typescript
@@ -275,7 +275,7 @@ SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/mkIOikzISlii3moHhl_Rcg/zh-cn_image_0000002803263759.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/CfDiQVNaQmqFxKqUgv3O5g/zh-cn_image_0000002806028271.gif)
 * 从API version 20开始，支持通过设置symbolEffect属性为[ReplaceSymbolEffect](../harmonyos-references/ts-basic-components-symbolglyph.md#replacesymboleffect12)，设置[ReplaceEffectType](../harmonyos-references/ts-basic-components-symbolglyph.md#replaceeffecttype20枚举说明)为ReplaceEffectType.SLASH\_OVERLAY，可以指定SymbolGlyph的禁用动画效果及其播放触发条件。
 
   ```typescript
@@ -300,7 +300,7 @@ SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/7yXZE_1_TVeEqar-ifS2MA/zh-cn_image_0000002803223669.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/3bZ04bwLQFe_xvO7gksDJQ/zh-cn_image_0000002806108161.gif)
 * 从API version 20开始，支持通过设置symbolEffect属性为[ReplaceSymbolEffect](../harmonyos-references/ts-basic-components-symbolglyph.md#replacesymboleffect12)，设置[ReplaceEffectType](../harmonyos-references/ts-basic-components-symbolglyph.md#replaceeffecttype20枚举说明)为ReplaceEffectType.CROSS\_FADE，可以指定SymbolGlyph的快速替换动画效果及其播放触发条件。
 
   ```typescript
@@ -323,7 +323,7 @@ SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/K0_4xhrlSry1wZxEifuEOQ/zh-cn_image_0000002774063950.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/rzlOE8-4Q4uDxkymUd_NAA/zh-cn_image_0000002776908542.gif)
 
 ## 设置阴影和渐变色
 
@@ -356,7 +356,7 @@ SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/jgN3zLFKQKC8xMEZXjJiYg/zh-cn_image_0000002773903974.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/QpifF9t9Qe2OuafStqHK9g/zh-cn_image_0000002776748556.gif)
 * 从API version 20开始，支持通过[shaderStyle](../harmonyos-references/ts-basic-components-symbolglyph.md#shaderstyle20)接口为SymbolGlyph组件设置渐变色效果。
 
   ```typescript
@@ -381,7 +381,7 @@ SymbolGlyph($r('sys.symbol.ohos_folder_badge_plus'))
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/5AiJPcuFTyCCd84BfYjKEQ/zh-cn_image_0000002803263761.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/-LRbX4M4QYqjoIuSSU_doQ/zh-cn_image_0000002806028273.jpg)
 
 ## 添加事件
 
@@ -400,7 +400,7 @@ SymbolGlyph($r('sys.symbol.ohos_wifi'))
   })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/DXObeUzIRe-SDscdfSN9lA/zh-cn_image_0000002803223671.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/T0bqwwRxSVaeqqSJGn-ZUQ/zh-cn_image_0000002806108163.gif)
 
 ## 场景示例
 
@@ -624,4 +624,4 @@ struct SymbolMusicDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/n51Ownn3Ql2pGCtF75hhIQ/zh-cn_image_0000002774063952.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/X2E8i6RlQJGODqjQ0El4-g/zh-cn_image_0000002776908544.gif)

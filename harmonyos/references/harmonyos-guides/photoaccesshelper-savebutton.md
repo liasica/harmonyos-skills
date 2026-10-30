@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshe
 title: 保存媒体库资源
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 保存媒体库资源
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:01+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1a03c81e3ef48edf5d248a47946056feaf052dbaddde918082bd0f475e4dc6f9
+scraped_at: 2026-10-31T07:32:47+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:f70e1ed1f67699cf4a7092c088649ef72c56143ef7eab98731541f9de6b13bbc
 ---
 
 保存图片、视频等用户文件到图库时，无需申请相册管理模块权限'ohos.permission.WRITE\_IMAGEVIDEO'，应用可以通过[安全控件](photoaccesshelper-savebutton.md#使用安全控件保存媒体库资源)或[授权弹窗](photoaccesshelper-savebutton.md#使用弹窗授权保存媒体库资源)的方式，将用户指定的媒体资源保存到图库中。
@@ -58,7 +58,7 @@ export struct Scene1 {
 async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper): Promise<string> {
   try {
     let outputText = 'Supported formats:\n';
-    // The value 1 means the supported image formats, and 2 means the supported video formats.
+    // 参数为1表示支持图片，2表示支持视频。
     let imageFormat = await phAccessHelper.getSupportedPhotoFormats(photoAccessHelper.PhotoType.IMAGE);
     let result = '';
     for (let i = 0; i < imageFormat.length; i++) {
@@ -107,7 +107,7 @@ export struct Scene2 {
     icon: SaveIconStyle.FULL_FILLED,
     text: SaveDescription.SAVE_IMAGE,
     buttonType: ButtonType.Capsule
-  }// Set properties of SaveButton.
+  }// 设置保存按钮的属性。
 
  // ...
 
@@ -142,7 +142,7 @@ export struct Scene2 {
       Column({ space: 20 }) {
         // ...
 
-        SaveButton(this.saveButtonOptions) // Create a button with SaveButton.
+        SaveButton(this.saveButtonOptions) // 创建一个带有“保存”按钮的按钮。
           .onClick(async (event, result: SaveButtonOnClickResult) => {
             if (result == SaveButtonOnClickResult.SUCCESS) {
               try {
@@ -220,7 +220,7 @@ async function example(
     // 设置要保存的图片的参数：文件扩展名、图片类型、标题和子类型（后两者为可选）。
     let photoCreationConfigs: photoAccessHelper.PhotoCreationConfig[] = [
       {
-        title: 'test', // This parameter is optional.
+        title: 'test', // 此参数是可选的。
         fileNameExtension: 'jpg',
         photoType: photoAccessHelper.PhotoType.IMAGE,
         subtype: photoAccessHelper.PhotoSubtype.DEFAULT,

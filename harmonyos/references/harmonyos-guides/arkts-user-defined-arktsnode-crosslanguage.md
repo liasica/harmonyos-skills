@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-de
 title: 设置自定义节点跨语言属性
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > 自定义节点 > 设置自定义节点跨语言属性
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:34+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:76ccbc2a6f2ac6b1003fb8785f986550e3657ed2a3fe532166af2051201218d1
+scraped_at: 2026-10-31T07:31:53+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:be3d56db198dabdca7581fec03dc8201a3f80c39a6ac01c541b9ede254532b26
 ---
 
 ## 概述
@@ -391,11 +391,15 @@ struct CrossLanguage {
    ```
 5. 运行程序，在ArkTS侧点击按钮，设置当前attributeSetting为true，在Native侧点击按钮，设置ArkTS侧Scroll组件滚动条的颜色和粗细属性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/jdPvhEWJSQi_Xl5-jraWoQ/zh-cn_image_0000002803264009.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/VGDIkSFxRcmscl6s6n2AaA/zh-cn_image_0000002806108411.gif)
 
 ## 支持跨语言设置属性的节点类型
 
 仅以下节点类型支持跨语言设置节点属性。Native侧需要使用[OH\_ArkUI\_NodeUtils\_GetAttachedNodeHandleById](../harmonyos-references/capi-native-node-h.md#oh_arkui_nodeutils_getattachednodehandlebyid)获取待修改属性的节点，不支持对[OH\_ArkUI\_GetNodeHandleFromNapiValue](../harmonyos-references/capi-native-node-napi-h.md#oh_arkui_getnodehandlefromnapivalue)获取的目标节点跨语言设置属性。
+
+**说明** 
+
+通过C API创建的Scroll、WaterFlow、Grid和List节点支持在ArkTS侧使用bindController绑定滚动控制器[Scroller](../harmonyos-references/ts-container-scroll.md#scroller)。从API版本26.0.0开始，调用如上四个组件的对应接口无需开启跨语言属性设置。
 
 | ArkTS侧[TypedFrameNode](../harmonyos-references/js-apis-arkui-framenode.md#typedframenode12)类型 | Native侧[ArkUI\_NodeType](../harmonyos-references/capi-native-node-h.md#arkui_nodetype)类型 | ArkTS属性获取接口 | ArkTS控制器获取/绑定接口 |
 | --- | --- | --- | --- |

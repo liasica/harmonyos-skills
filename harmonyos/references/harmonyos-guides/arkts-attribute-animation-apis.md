@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-attribu
 title: 实现属性动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 属性动画 > 实现属性动画
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:32+08:00
+scraped_at: 2026-10-31T07:31:52+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:1343130045e17b33b1ab6c571aefdda055ceef3433dab62a84f5c8a05ed00571
+content_hash: sha256:b353eb3424bf9c82d3dc09bb13b41820587e5486f101d7e994194cf6c0b6371f
 ---
 
 通过可动画属性改变引起UI上产生的连续视觉效果，即为属性动画。属性动画是最基础易懂的动画，ArkUI提供三种动画接口[animateTo](../harmonyos-references/arkts-apis-uicontext-uicontext.md#animateto)、[animation](../harmonyos-references/ts-animatorproperty.md)和[keyframeAnimateTo](../harmonyos-references/ts-keyframeanimateto.md)驱动组件属性按照动画曲线等动画参数进行连续的变化，产生属性动画。
@@ -87,7 +87,7 @@ struct attrAnimateToDemo2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/tzFKvHJ2QmqNnkYJzC0kHA/zh-cn_image_0000002774064136.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/HMgm96tOQdWwwXYWHxdJ2g/zh-cn_image_0000002776748742.gif)
 
 ## 使用animation产生属性动画
 
@@ -150,7 +150,7 @@ struct attrAnimationDemo3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/UnYEDcfgRNKlaSXqvXiSRA/zh-cn_image_0000002773904162.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/vsDgLpFYTvKemazQQEOBvw/zh-cn_image_0000002806028459.gif)
 
 ## 使用keyframeAnimateTo产生属性动画
 
@@ -227,7 +227,7 @@ struct KeyframeAnimateToDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/98sTGbICS82CfmKMe6v9ag/zh-cn_image_0000002803263947.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/L72hTLS-QoKzUS9W1hSbhA/zh-cn_image_0000002806108349.gif)
 
 **说明** 
 

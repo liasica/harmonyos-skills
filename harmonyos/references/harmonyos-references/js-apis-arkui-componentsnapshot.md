@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.arkui.componentSnapshot (组件截图)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.componentSnapshot (组件截图)
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:21+08:00
+scraped_at: 2026-10-31T07:34:55+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:78fcb5a226d51c124ec23fd755b26ca407c99b35b0feb8faad323dbeded7dbba
+content_hash: sha256:6b8f5f78ef8af107feb26098aee2041604226bf1c45761b2e94a201ee956c8ec
 ---
 
 本模块提供获取组件截图的能力，包括已加载的组件的截图和没有加载的组件的截图。组件截图只能够截取组件大小的区域，如果组件的绘制超出了它的区域，或子组件的绘制超出了父组件的区域，这些在组件区域外绘制的内容不会在截图中呈现。兄弟节点堆叠在组件区域内，截图不会显示兄弟组件。
@@ -108,7 +108,7 @@ struct SnapshotExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/4Xsxj0BQQhqZuf0I8Cgc-g/zh-cn_image_0000002774065872.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/7Eh5uOPySw2K_8HWHIMcwQ/zh-cn_image_0000002806030193.gif)
 
 ## componentSnapshot.get(deprecated)
 
@@ -194,7 +194,7 @@ struct SnapshotExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/NB2tcec4RauH_R86FcIGtQ/zh-cn_image_0000002774065872.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/iAE6TWWyTeOGiSncX6fN-A/zh-cn_image_0000002806030193.gif)
 
 ## componentSnapshot.createFromBuilder(deprecated)
 
@@ -300,7 +300,7 @@ struct OffscreenSnapshotExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/a9jNNdV2RQOJXIZjMdcfaA/zh-cn_image_0000002773905898.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/75fWAa-7QOS77A0GbrNJ6A/zh-cn_image_0000002806110083.gif)
 
 ## componentSnapshot.createFromBuilder(deprecated)
 
@@ -409,7 +409,7 @@ struct OffscreenSnapshotExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/BRSWGrGCTBGA_VJuqABhNA/zh-cn_image_0000002773905898.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/0FMq2t-YRg6vILsQE1gjdg/zh-cn_image_0000002806110083.gif)
 
 ## componentSnapshot.getSync12+
 
@@ -495,7 +495,7 @@ struct SnapshotExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/Cn2mIa0JRTiiLIe4S4mysw/zh-cn_image_0000002774065872.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/ocPlgzcSRb2eWyVLGe0ovw/zh-cn_image_0000002806030193.gif)
 
 ## SnapshotSizeLimitation
 
@@ -590,7 +590,7 @@ struct SnapshotColorModeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/Sl0WMAFWRuWfkHAPKDhO1g/zh-cn_image_0000002774065872.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/2WP1AzTdSeeyFSONkFepmg/zh-cn_image_0000002806030193.gif)
 
 ## DynamicRangeModeOptions23+
 
@@ -653,7 +653,7 @@ struct SnapshotDynamicRangeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/Hu1sKceHR0WqQnGiVuB62w/zh-cn_image_0000002774065872.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/rEfBQsMiQl6_B9ONS23uNw/zh-cn_image_0000002806030193.gif)
 
 ## SnapshotRegionType15+
 
@@ -771,4 +771,4 @@ struct SnapshotExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/G_sBeJ-nSv-JIVnxmTEDcA/zh-cn_image_0000002803265681.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/yDMCq5r1Q0qDuvHZICDvpA/zh-cn_image_0000002776910464.gif)

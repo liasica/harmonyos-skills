@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: Chip
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > Chip
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:51+08:00
+scraped_at: 2026-10-31T07:35:31+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:5327dfcf71a7e49ffa29ee5ab52fcd73ef1810dd8c20f19962c3fee6c8458e34
+content_hash: sha256:708514a6309b5d6eab44fb2345d4c0ae0291c83ac624dc0e79e84e5978721fad
 ---
 
 Chip组件用于标签展示和交互场景，支持自定义样式、图标、激活态等功能，适用于搜索框历史记录、邮件发送列表等场景，可快速实现标签的创建、删除和交互能力。
@@ -347,7 +347,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/HcznuFdtSZeekrP1GnXrjg/zh-cn_image_0000002803266437.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/vDKGbMKISk6QveiX5UWx3Q/zh-cn_image_0000002776751232.png)
 
 ### 示例2（设置默认后缀图标）
 
@@ -396,7 +396,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/DBXORAkyTs228kjFWSOPhg/zh-cn_image_0000002803226343.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/eSui8hflTnKcKVAtLsEbbQ/zh-cn_image_0000002806030949.png)
 
 ### 示例3（不显示后缀图标）
 
@@ -444,7 +444,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/h3V-eATNRgCIEmoFjXL0xQ/zh-cn_image_0000002774066628.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/MXRzZEp3T7-viHHegx9okw/zh-cn_image_0000002806110839.png)
 
 ### 示例4（激活态操作块）
 
@@ -502,7 +502,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/UG1E_xiPQI-xcacRAOy7TQ/zh-cn_image_0000002773906656.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/QKe_KyohSVCrMUN-uYu8nw/zh-cn_image_0000002776911220.gif)
 
 ### 示例5（设置symbol类型图标）
 
@@ -557,7 +557,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/_WtliAJnQpeKRFo9MEu7Qw/zh-cn_image_0000002803266439.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/IGuaBjmORB2k43ZOxmklog/zh-cn_image_0000002776751234.gif)
 
 ### 示例6（设置镜像效果）
 
@@ -609,7 +609,7 @@ struct ChipPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/798FpPyqQu6w-HhfMSG-tQ/zh-cn_image_0000002803226345.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/ISG3KrLHRMC-u1OgfUYAow/zh-cn_image_0000002806030951.png)
 
 ### 示例7（Image类型无障碍朗读）
 
@@ -701,7 +701,7 @@ struct ChipExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/6bSGNbuIRAqItwbF95yFAw/zh-cn_image_0000002774066630.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/zr2zMKZNRNa4f7k6bwjryw/zh-cn_image_0000002806110841.png)
 
 ### 示例8（symbol类型无障碍朗读）
 
@@ -831,7 +831,7 @@ struct ChipExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/RJpaGsG-TCKtAsndQjeOCA/zh-cn_image_0000002773906658.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/-drao5aHRgq-O7OXazQkMw/zh-cn_image_0000002776911222.png)
 
 ### 示例9（Chip组件无障碍朗读）
 
@@ -933,7 +933,7 @@ struct ChipAccessibilityExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/s9p2YAc6RpiYm3ra6wFnxQ/zh-cn_image_0000002803266441.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/8XrBaYznRT25rOCDX1EdcA/zh-cn_image_0000002776751236.png)
 
 ### 示例10（设置系统材质样式）
 
@@ -1002,4 +1002,4 @@ struct ChipMaterialExample {
 
 该示例配图为高算力设备强档效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/3W47jolFTce2c9l32VF3zg/zh-cn_image_0000002803226347.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/_oBO1m5nSKWAr0r2iio8Mg/zh-cn_image_0000002806030953.png)

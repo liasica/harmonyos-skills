@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: SwipeGesture
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 基础手势 > SwipeGesture
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:1ba885087fe8389b1ad1949e894236ba20a210b0aff68ce8925af04b56beef45
+scraped_at: 2026-10-31T07:35:11+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:93e92268bdf4da4509fa675793c45045e828b05fe7d27d5d96d9615f88925117
 ---
 
 用于触发快滑手势，适用于快速翻页、轮播图切换、列表项快速切换等需要识别快速滑动操作的场景，滑动速度需大于速度阈值，默认最小速度为100vp/s。
@@ -69,7 +69,7 @@ SwipeGesture(options?: SwipeGestureHandlerOptions)
 
 **说明** 
 
-在[GestureEvent](ts-gesture-common.md#gestureevent对象说明)的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index。对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为空。建议开发者优先使用fingerInfos。
+在[GestureEvent](ts-gesture-common.md#gestureevent对象说明)的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index。对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为undefined。建议开发者优先使用fingerInfos。
 
 ### onAction
 
@@ -85,7 +85,7 @@ onAction(event: (event: GestureEvent) => void)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | (event: [GestureEvent](ts-gesture-common.md#gestureevent对象说明)) => void | 是 | 手势事件回调函数。在GestureEvent的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index。对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为空，建议开发者优先使用fingerInfos。 |
+| event | (event: [GestureEvent](ts-gesture-common.md#gestureevent对象说明)) => void | 是 | 手势事件回调函数。在GestureEvent的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index。对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为undefined，建议开发者优先使用fingerInfos。 |
 
 ## 示例
 
@@ -125,4 +125,4 @@ struct SwipeGestureExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/faN2VYmeTWyflbw6rfvLpw/zh-cn_image_0000002773906120.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/2764gkl2Sjy95fDWmnxmLw/zh-cn_image_0000002806110305.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-deliverin
 title: 权益发放
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 商品购买 > 非续期订阅商品购买 > 权益发放
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:42+08:00
+scraped_at: 2026-10-31T07:33:04+08:00
 doc_updated_at: 2026-09-24
-content_hash: sha256:bf3dde1a0c7088df59c98323da787d0e9b96ec7eee7945e5342aff179d519d0f
+content_hash: sha256:f78b0496f62bb7315d8e0356649cf8ae8879b057d79a6bd3e515fc7c6bd4b0fc
 ---
 
 ## 场景介绍
@@ -19,7 +19,7 @@ content_hash: sha256:bf3dde1a0c7088df59c98323da787d0e9b96ec7eee7945e5342aff179d5
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/bDUnlyAhRuaxW5IRP1cjrg/zh-cn_image_0000002773905332.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/kgfbd7sASeaQeZduDKmJ9g/zh-cn_image_0000002806029625.png)
 
 1. 应用客户端向IAP Kit发起[queryPurchases](../harmonyos-references/iap-iap.md#iapquerypurchases)请求，查询用户已购买但未确认发货的订单信息。
 2. IAP Kit返回[PurchaseData](../harmonyos-references/iap-data-model.md#purchasedata)列表。[PurchaseData](../harmonyos-references/iap-data-model.md#purchasedata)为JWS格式的字符串，承载了相关的订单信息。

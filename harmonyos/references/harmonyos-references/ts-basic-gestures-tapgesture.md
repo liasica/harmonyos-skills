@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: TapGesture
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 基础手势 > TapGesture
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:36+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:25a6dee59127c5d77999e1860e18f2cd72c5269dacb6acc4473156ed778c33c3
+scraped_at: 2026-10-31T07:35:11+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:054990518402d66c83479b1c1560f4c96bcbcdd816c38e0090d3b967be52814a
 ---
 
 支持单击、双击和多次点击事件的识别，适用于为组件绑定点击交互、区分不同点击次数并触发对应业务逻辑的场景。
@@ -58,7 +58,7 @@ TapGesture(value?: TapGestureParameters)
 
 组件通过手势事件绑定不同GestureType的手势对象，各手势对象在响应手势操作的事件回调中提供手势相关信息。下面通过TapGesture手势对象的[onAction](ts-basic-gestures-tapgesture.md#onaction)事件响应点击事件，获取事件相关信息。其余手势对象的事件定义见各个手势对象章节。 若需绑定多种手势，请使用[GestureGroup](ts-combined-gestures.md)。
 
-在[GestureEvent](ts-gesture-common.md#gestureevent对象说明)的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index。对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为空。建议优先使用fingerInfos。
+在[GestureEvent](ts-gesture-common.md#gestureevent对象说明)的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index。对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为undefined。建议优先使用fingerInfos。
 
 ### onAction
 
@@ -153,7 +153,7 @@ struct TapGestureExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/HXA3du1XQEWcvrud3uQAcw/zh-cn_image_0000002773906116.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/PTpw0-wNS9-qRYzmx2hTGw/zh-cn_image_0000002806110301.gif)
 
 ### 示例2（获取单击手势坐标）
 
@@ -194,7 +194,7 @@ struct TapGestureExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/7__76pDJTsqGKnII4EcK6w/zh-cn_image_0000002803265899.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/wNp19AYXSOqELvfs3Eyyaw/zh-cn_image_0000002776910682.png)
 
 ### 示例3（获取组件实时位置）
 
@@ -233,4 +233,4 @@ struct GetCurrentLocalPositionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/RNh59NowSzi0lF3nFTA_MQ/zh-cn_image_0000002803265767.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/WAFqFM7CRNiqIPRDBeVqWQ/zh-cn_image_0000002776910550.gif)

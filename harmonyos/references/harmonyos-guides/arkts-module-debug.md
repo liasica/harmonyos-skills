@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-module-
 title: 模块化调试工具
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS运行时 > ArkTS模块化 > 模块化调试工具
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:24+08:00
+scraped_at: 2026-10-31T07:31:43+08:00
 doc_updated_at: 2026-08-03
-content_hash: sha256:ce5da2c07f91301cfad56ac5d1c4caa688bc321d9fa3abd601419216cc7dab46
+content_hash: sha256:f89a8af503a6f1587851910573385c8440c4ae078947916a98cb51b9049647c8
 ---
 
 ArkTS运行时提供了多种模块化调试工具，帮助开发者快速定位和解决模块化相关问题。
@@ -196,26 +196,26 @@ HiSmartPerf工具完整的介绍可参考指南：[HiSmartPerf](../AppGallery-co
 
    打开HiSmartPerf工具，进入游戏性能分析的CPU Trace页面。虽然标题是游戏性能分析，但分析场景并不仅限于游戏场景。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/ffvSMX04TcqfYCbq1sy2rQ/zh-cn_image_0000002773903482.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/9uAiuxp9QEOm0decUJXsEQ/zh-cn_image_0000002776908050.png)
 2. 配置采集时间并开始采集
 
    采集完成后将提示文件回传，当文件较大时请耐心等待。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/RsweZ1XdRQ2Ap7Sd_BMhXA/zh-cn_image_0000002803263267.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/1Hnp8xIhQNC1IfYDR_7KgQ/zh-cn_image_0000002776748064.png)
 3. 打开trace文件并选择需要查看的应用
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/i9JzeGihSsW9eGzh3x8zZg/zh-cn_image_0000002803223175.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/ZNyYTUQZQuW7IzZvpCXzKA/zh-cn_image_0000002806027781.png)
 
 ### trace文件分析
 
 实例化的文件以及so在SourceTextModule::Instantiate下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/_rm4QRy3ST-7I2XzgZVuGg/zh-cn_image_0000002774063460.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/86dpqiEhQhq4mLkNdwyB-w/zh-cn_image_0000002806107671.png)
 
 执行的文件以及so在SourceTextModule::Evaluate下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/MCzSNoTQQwWyuQamCcBK_A/zh-cn_image_0000002773903484.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/JielI7G2R3Kb99wf--1zsQ/zh-cn_image_0000002776908052.png)
 
 选中需要分析的区域，会在下方生成表格。可以根据表格数据对耗时长的文件进行性能优化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/ufGtBtNQTbicSbaP-YjCGg/zh-cn_image_0000002803263269.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/SGGTszoAT6eZQ5iNowFHTA/zh-cn_image_0000002776748066.png)

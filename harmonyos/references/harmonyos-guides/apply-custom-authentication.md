@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/apply-custom-
 title: 切换自定义认证
 breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 切换自定义认证
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:58+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f84dfde078d227edd8916adb08f189287ccba14017f1cb71af9b3c00715fa433
+scraped_at: 2026-10-31T07:32:19+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:5735f9f267b934b139f3299954ea95b50255a20a9b5fd3572a72003825f2d290
 ---
 
 若开发者定义了自定义认证方式，则用户进行生物认证失败点击导航按钮时，统一用户认证框架会结束系统认证流程并通知调用者拉起自定义认证界面。
@@ -16,7 +16,7 @@ content_hash: sha256:f84dfde078d227edd8916adb08f189287ccba14017f1cb71af9b3c00715
 
 当用户点击该按钮，发起认证的业务应用便会收到统一用户认证框架返回的一个特殊认证结果，提示业务系统认证结束，需要拉起业务自定义的认证界面。这样，用户在点击“使用支付密码”按钮后，便会看到系统认证控件消失，显示出业务自定义的支付密码认证界面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/Z7gFvyGPT6e4irBM7FeXAQ/zh-cn_image_0000002803264495.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/pjwotXtOQAWuY_VF3iXeZw/zh-cn_image_0000002806108897.png)
 
 如图所示，框选区域为WidgetParam.navigationButtonText字段。开发者可配置此字段，引导用户从生物认证切换到应用自定义的业务密码认证。
 
@@ -96,4 +96,4 @@ applyingCustomAuthentication() {
 
 ## 示例代码
 
-* [切换自定义认证](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/UserAuthentication)
+* 可参考[用户认证服务](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/UserAuthentication)示例代码。

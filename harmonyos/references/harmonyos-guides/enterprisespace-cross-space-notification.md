@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/enterprisespa
 title: 跨空间消息提醒
 breadcrumb: 指南 > 应用服务 > Enterprise Space Kit（企业数字空间服务） > 空间管理 > 跨空间消息提醒
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:25+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-31T07:33:00+08:00
+doc_updated_at: 2026-10-30
 content_hash: sha256:7d9adcbf098ebbadd29e2a59b82ba9589bb5a1398aa796f1c471aa6e31c8c2ff
 ---
 

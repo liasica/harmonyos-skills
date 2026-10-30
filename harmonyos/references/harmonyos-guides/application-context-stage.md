@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-c
 title: 应用上下文Context
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > 应用上下文Context
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:50+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2fa66ee1a7ce72e7d86e1ba410717b2dfcd0ae483959f249138d30c2c76493d6
+scraped_at: 2026-10-31T07:31:35+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:61aa4a17668c22270c6118bf64283f57150c8efc803cbd7ec2f480620c288ae1
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ content_hash: sha256:2fa66ee1a7ce72e7d86e1ba410717b2dfcd0ae483959f249138d30c2c76
 
 **说明** 
 
-不同类型的Context具有不同的能力，不可相互替代或强行转换。例如，[ApplicationContext](../harmonyos-references/js-apis-inner-application-applicationcontext.md)绑定了[setFontSizeScale](../harmonyos-references/js-apis-inner-application-applicationcontext.md#applicationcontextsetfontsizescale13)方法，但[UIAbilityContext](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md)中没有此方法。因此，即使将UIAbilityContext强行转换为ApplicationContext，也无法调用setFontSizeScale方法。
+不同类型的Context具有不同的能力，不可相互替代或强行转换。例如，[ApplicationContext](../harmonyos-references/js-apis-inner-application-applicationcontext.md)绑定了[setFontSizeScale()](../harmonyos-references/js-apis-inner-application-applicationcontext.md#applicationcontextsetfontsizescale13)方法，但[UIAbilityContext](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md)中没有此方法。因此，即使将UIAbilityContext强行转换为ApplicationContext，也无法调用setFontSizeScale()方法。
 
 **表1** 不同类型Context的说明
 

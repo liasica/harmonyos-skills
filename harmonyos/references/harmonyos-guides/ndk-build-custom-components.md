@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-build-cus
 title: 构建自定义组件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 使用自定义能力 > 构建自定义组件
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:36+08:00
+scraped_at: 2026-10-31T07:31:56+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:df967687c518b50aa0674d7191384db319bc9bf7c765da2b07249156a8ee39c8
+content_hash: sha256:1d14f39a9abced524eea7710f56410a15efff8e6c882e33d74af8a70fec1136f
 ---
 
 ArkUI开发框架在NDK接口提供了自定义UI组件的能力，这些能力包括自定义测算，自定义布局和自定义绘制。开发者通过注册相关自定义回调事件接入ArkUI开发框架的布局渲染流程，这些事件需要使用[registerNodeCustomEvent](../harmonyos-references/capi-arkui-nativemodule-arkui-nativenodeapi-1.md#registernodecustomevent)来进行声明，并通过[addNodeCustomEventReceiver](../harmonyos-references/capi-arkui-nativemodule-arkui-nativenodeapi-1.md#addnodecustomeventreceiver)函数添加组件自定义事件的监听器，在该监听器的回调函数中处理相关自定义测算，自定义布局和自定义绘制逻辑。
@@ -24,7 +24,7 @@ ArkUI开发框架在NDK接口提供了自定义UI组件的能力，这些能力�
 
 **图1** 自定义容器组件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/pNWw7NXcSceymg8nVCf_dw/zh-cn_image_0000002803264071.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/FGgvg4NWRsaBQoE--uHDQQ/zh-cn_image_0000002806108473.png)
 
 1. 按照[接入ArkTS页面](ndk-access-the-arkts-page.md)创建前置工程。
 2. 创建自定义容器组件封装对象。
@@ -266,7 +266,7 @@ ArkUI开发框架在NDK接口提供了自定义UI组件的能力，这些能力�
 
 **图2** 自定义绘制组件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/2vKIRSasTS-zDzpapy6j9A/zh-cn_image_0000002803223981.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/7W6B-9p4Q6mpW7VFOaou_Q/zh-cn_image_0000002776908854.png)
 
 1. 按照[自定义布局容器](ndk-build-custom-components.md#自定义布局容器)章节准备前置工程。
 2. 创建自定义绘制组件封装对象。
@@ -481,7 +481,7 @@ ArkUI开发框架在NDK接口提供了自定义UI组件的能力，这些能力�
 
 **图3** 不规则网格布局效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/cL4sT5z6RgWmC5RODh5r4Q/zh-cn_image_0000002774064262.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/iKdzjcw4QG-w_Ok5k1S8TQ/zh-cn_image_0000002776748868.jpg)
 
 1. 按照[自定义布局容器](ndk-build-custom-components.md#自定义布局容器)章节准备前置工程。
 2. 创建不规则网格布局容器组件封装对象。

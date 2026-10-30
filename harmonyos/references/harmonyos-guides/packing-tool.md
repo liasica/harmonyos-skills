@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/packing-tool
 title: 打包工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > 打包拆包工具 > 打包工具
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:14+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:ae634c5fd9e39f08582aea459979e52da24be09cd45fe535fcc0d60bdda79c3a
+scraped_at: 2026-10-31T07:32:36+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:21e5a3e19bfd65dfd248dcd19dc40358d32fa515bfae2e8df4eaa4cbda1c9c47
 ---
 
 打包工具用于在程序编译完成后，对编译出的文件等进行打包，以供安装发布。开发者可以使用DevEco Studio进行打包，也可使用打包工具的JAR包进行打包，JAR包通常存放在SDK路径下的toolchains目录中。
@@ -88,8 +88,8 @@ content_hash: sha256:ae634c5fd9e39f08582aea459979e52da24be09cd45fe535fcc0d60bdda
 | --ets-path | 否 | NA | 存放ets文件目录路径。 | 仅Stage模型生效。 |
 | --out-path | 是 | NA | 目标文件路径，文件名必须以.hap为后缀。 | NA |
 | --force | 否 | boolean | 当目标文件路径已存在时，控制是否强制执行覆盖。当--out-path目标文件打包前已存在，该参数为true时，覆盖写入；为false时，终止打包过程并报错。当--out-path目标文件打包前不存在，正常打包，该参数无效。默认值为false。 | NA |
-| --an-path | 否 | NA | 存放[an文件](../harmonyos-faqs-V5/faqs-arkts-52-V5.md)的路径。 | 仅Stage模型生效。 |
-| --ap-path | 否 | NA | 存放[ap文件](../harmonyos-faqs-V5/faqs-arkts-52-V5.md)的路径。 | 仅Stage模型生效。 |
+| --an-path | 否 | NA | 存放[an文件](../doccenter-dev-faq/faqs-arkts-52.md)的路径。 | 仅Stage模型生效。 |
+| --ap-path | 否 | NA | 存放[ap文件](../doccenter-dev-faq/faqs-arkts-52.md)的路径。 | 仅Stage模型生效。 |
 | --dir-list | 否 | NA | 可指定目标文件夹列表，将其打入HAP包内。 | NA |
 | --compress-level | 否 | number | lib库下文件压缩等级，默认值1。可选等级1-9。在应用配置compressNativeLibs参数为true的情况下生效，数值越大压缩率越高、压缩速度越慢。 | NA |
 | --pkg-context-path | 否 | NA | 可指定语境信息表文件路径，文件名必须为pkgContextInfo.json。 | 仅Stage模型生效。 |
@@ -1246,7 +1246,7 @@ Check shared App mode invalid.
 
 1. 存在两个以上的[HSP包](in-app-hsp.md)。例如下图使用DevEco Studio构建App时，工程中包含了两个HSP包library和library1，此时打包APP包失败。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/8UfEr3k2Ra6Ttwe-lA_IRQ/zh-cn_image_0000002803224533.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/e-_ZmcBbQmWD_vFle5tP2w/zh-cn_image_0000002776909406.png)
 2. HSP包在module.json5中配置了dependencies。
 
 **处理步骤**

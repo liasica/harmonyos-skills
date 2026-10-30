@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: FormMenu
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > FormMenu
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:52+08:00
+scraped_at: 2026-10-31T07:35:33+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:12eff46f1af26f9360395282e7514ff0a9088d7892561efd7ca6270935e5a987
+content_hash: sha256:e85e76ac50b4ba28b91671c2de356eba1a6de389dd2595a2c9380fac133e2cf7
 ---
 
 本组件封装了一个“添加至桌面”菜单，用于实现应用内长按组件生成“添加至桌面”菜单，点击该菜单，触发卡片添加至桌面操作。通过桌面访问该应用快捷卡片，可以直接访问该组件功能。在应用使用过程中，该组件作为留存和复访入口，可吸引用户将功能快捷添加到桌面。
@@ -220,10 +220,10 @@ struct WidgetCard {
 
 **高级自定义控件界面**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/5-PldgKESRaV_mIZdx9GJA/zh-cn_image_0000002803266477.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/UpGSNxsDQYSbgWJxrK_Gdw/zh-cn_image_0000002776751272.jpeg)
 
 **调用高级自定义控件桌面加桌结果**
 
 左侧是formBindingData为空加桌结果，右侧是formBindingData为{ data: 'share' }的加桌结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/XVHsYKU6ScK3L-ff8a6GTA/zh-cn_image_0000002803226383.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/kRT2QYPSQNmQVhHTck4N_A/zh-cn_image_0000002806030989.jpeg)

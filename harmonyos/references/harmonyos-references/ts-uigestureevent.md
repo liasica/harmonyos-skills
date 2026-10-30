@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-uigest
 title: 设置组件绑定的手势
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 绑定手势 > 设置组件绑定的手势
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:58+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:643e6bd9ec7a3850c591a7b7fee3088f4a3572185fe85e9819177102e3a19620
+scraped_at: 2026-10-31T07:35:11+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:fa429650af85171dfea4068f07ee0b5c4f24c40d79b6264aabac43a2b327d581
 ---
 
 用于设置组件绑定的手势。可以通过UIGestureEvent对象动态添加、删除或清除组件上的手势，支持配置手势优先级、事件响应设置以及与子组件手势同时触发的并行手势，适用于运行时管理组件手势交互的场景。
@@ -14,7 +14,7 @@ content_hash: sha256:643e6bd9ec7a3850c591a7b7fee3088f4a3572185fe85e9819177102e3a
 
 * 本模块首批接口从API version 12开始支持，后续版本的新增接口，采用上角标单独标记接口的起始版本。
 * 本模块接口仅可在Stage模型下使用。
-* 在 [GestureEvent](ts-gesture-common.md#gestureevent对象说明) 的 fingerList 元素中，手指索引编号与位置相对应，即 fingerList[index] 的 id 为 index。对于先按下但未参与当前手势触发的手指，fingerList 中对应的位置为空。建议优先使用 fingerInfos。
+* 在 [GestureEvent](ts-gesture-common.md#gestureevent对象说明) 的 fingerList 元素中，手指索引编号与位置相对应，即 fingerList[index] 的 id 为 index。对于先按下但未参与当前手势触发的手指，fingerList 中对应的位置为undefined。建议优先使用 fingerInfos。
 
 ## UIGestureEvent
 

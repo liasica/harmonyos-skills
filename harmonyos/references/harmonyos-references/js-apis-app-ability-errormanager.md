@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.errorManager (错误管理模块)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.app.ability.errorManager (错误管理模块)
 category: harmonyos-references
-scraped_at: 2026-10-01T07:36:14+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:58c5180b271f2bc0bc6bbac02b00db2c66e378738a2f13d2713da10154e5db74
+scraped_at: 2026-10-31T07:34:26+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:fbf7d989e2c0c9b50d4605396b7a0b0c06aa8a2ccfdc18c9d39e8571ec28d23e
 ---
 
 ErrorManager模块提供对应用运行时各类异常的全局观测能力，包括注册和注销错误观测器，主要用于监测应用崩溃（JS\_CRASH）、应用冻屏（APP\_FREEZE）、未捕获的Promise异常、资源超基线等错误场景。通过设置监听器，开发者可以实时捕获异常信息、追踪问题根源、记录关键指标，从而提高应用的稳定性监控能力，加快故障排查和定位效率，提升应用质量和用户体验。
@@ -449,6 +449,7 @@ on(type: 'unhandledRejection', observer: UnhandledRejectionObserver): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 16200001 | If the caller is invalid. |
 
 **示例**：
 
@@ -661,6 +662,7 @@ off(type: 'unhandledRejection', observer?: UnhandledRejectionObserver): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+| 16200001 | If the caller is invalid. |
 | 16300004 | If the observer does not exist. |
 
 **示例**：

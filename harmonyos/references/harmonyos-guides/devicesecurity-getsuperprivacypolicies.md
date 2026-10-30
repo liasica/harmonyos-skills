@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 查询超级隐私模式管控策略
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 超级隐私模式 > 查询超级隐私模式管控策略
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:54+08:00
+scraped_at: 2026-10-31T07:32:15+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c273727bbf81226dbf5c0aab17168cdbcaf06b657d869e932482de8a574e7bde
+content_hash: sha256:20ec95eb67bd3f6bf4e55065ad95e0de40a906a76c2e7a2dd884b227610db59e
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:c273727bbf81226dbf5c0aab17168cdbcaf06b657d869e932482de8a574
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/HlD76sreRm-V-mSxfDX9FA/zh-cn_image_0000002774064670.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/GuDG50qORG-93orcVnlXew/zh-cn_image_0000002776749276.png)
 
 **流程说明：**
 

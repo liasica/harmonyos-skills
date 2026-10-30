@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-nested-sc
 title: Web组件嵌套滚动
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 > Web组件嵌套滚动
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:41+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:0fe8f09fb62f30f57425040fc45473a95804eac4c1a1cfa74cdafca38024f9cd
+scraped_at: 2026-10-31T07:32:01+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:93b9b75051a411bbe07042d1d8f24ab0bb076803e3865bae0f1fa46c7b2039b3
 ---
 
 Web组件嵌套滚动的典型应用场景为，在页面中，多个独立区域需进行滚动，当用户滚动Web区域内容时，可联动其他滚动区域，实现上下左右全方位滑动页面的嵌套滚动体验。内嵌于可滚动容器（[Grid](../harmonyos-references/ts-container-grid.md)、[List](../harmonyos-references/ts-container-list.md)、[Scroll](../harmonyos-references/ts-container-scroll.md)、[Swiper](../harmonyos-references/ts-container-swiper.md)、[Tabs](../harmonyos-references/ts-container-tabs.md)、[WaterFlow](../harmonyos-references/ts-container-waterflow.md)、[Refresh](../harmonyos-references/ts-container-refresh.md)、[bindSheet](../harmonyos-references/ts-universal-attributes-sheet-transition.md#bindsheet)）中的Web组件，接收到滑动手势事件后，需要设置ArkUI的[NestedScrollMode](../harmonyos-references/ts-appendix-enums.md#nestedscrollmode10)枚举属性，实现Web组件与ArkUI可滚动容器的嵌套滚动。
@@ -104,7 +104,7 @@ struct NestedScroll {
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/ICoKjPSRRIeHz2_BwkNEwA/zh-cn_image_0000002773904442.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/z9OGRbyPRWG_JNdfMUoMlQ/zh-cn_image_0000002806028739.gif)
 
 ## 使用nestedScroll常见问题
 
@@ -144,7 +144,7 @@ struct NestedScroll {
    (2) 再使用[onGestureRecognizerJudgeBegin](../harmonyos-references/ts-gesture-blocking-enhancement.md#ongesturerecognizerjudgebegin13)方法，禁止Web组件自带的滚动手势触发。
 
    ```ts
-   .onGestureRecognizerJudgeBegin((event: BaseGestureEvent, current: GestureRecognizer, otherArray<GestureRecognizer>) => {
+   .onGestureRecognizerJudgeBegin((event: BaseGestureEvent, current: GestureRecognizer, others: Array<GestureRecognizer>) => {
      if (current.isBuiltIn() && current.getType() == GestureControl.GestureType.PAN_GESTURE) {
        return GestureJudgeResult.REJECT;
      }
@@ -337,7 +337,7 @@ struct Index {
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/QJk8X-UVSDOZjSUgGB-UOQ/zh-cn_image_0000002803264227.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/5nVbrqgtRbCdTYfnqlrDoQ/zh-cn_image_0000002806108629.gif)
 
 ## 示例代码
 

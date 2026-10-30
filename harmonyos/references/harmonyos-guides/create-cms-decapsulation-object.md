@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/create-cms-de
 title: 证书CMS解封装
 breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 证书算法库框架 > 证书CMS解封装
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:28+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d5041e15a99db26534d9f1504841a0cc8ddd614bf1dad4b503a0d6ff2d891263
+scraped_at: 2026-10-31T07:32:13+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:82e27c0b7cd210a182604230c40cfccf72edfeeb8c2114a20b6c6fde09d222c7
 ---
 
 从API version 22开始，支持证书CMS解封装。
@@ -106,7 +106,6 @@ async function testCmsDecryptTest() {
     await cmsDecrypt.setRawData(envelopeData, cert.CmsFormat.PEM);
     let decPlainText: Uint8Array = await cmsDecrypt.decryptEnvelopedData(config);
     console.info('decryptEnvelopedData result: success, decPlainText = ' + decPlainText);
-    console.info('decryptEnvelopedData result: success.');
   } catch (error) {
     console.error(`decryptEnvelopedData failed: errCode: ${error.code}, message: ${error.message}`);
   }

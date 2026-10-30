@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/developme
 title: 开发说明
 breadcrumb: API参考 > API参考概述 > 开发说明
 category: harmonyos-references
-scraped_at: 2026-10-29T07:58:53+08:00
+scraped_at: 2026-10-31T07:34:23+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:1534a82f67f50f55fa02873bad552339f78259f475c3eff6f104b933aa91c359
+content_hash: sha256:ce798594740f868849deeb3edf7c384d8c2937602ba002422f70efaa814f9264
 ---
 
 API参考主要用于开发者查阅应用开发相关的各类API说明。为了方便开发者使用API文档，对文档描述中的常用字段进行说明。
@@ -23,7 +23,7 @@ API参考采用两种方式标记组件或接口开始支持的版本号：
 
 建议开发者同步勾选"只看筛选内容"，查阅当前使用的SDK支持的API接口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/5aIL3ZHdQ7G60C8xwLEbDg/zh-cn_image_0000002774065858.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/JB-3vMM7SWG38wpsXQj2ag/zh-cn_image_0000002806030179.gif)
 
 ## 支持设备说明
 
@@ -37,7 +37,7 @@ API参考采用两种方式标记组件或接口开始支持的版本号：
 
 建议开发者同步勾选"只看筛选内容"，查阅对应设备支持的API接口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/oYYuhwQ_SxiUsyc2-1JxfA/zh-cn_image_0000002773905884.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/FjuX-KDxSW-4nWj1DgNmeg/zh-cn_image_0000002806110069.gif)
 
 ### 接口在各设备类型的起始版本标记
 
@@ -45,7 +45,7 @@ API参考采用两种方式标记组件或接口开始支持的版本号：
 
 标记示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/RgqYXA0lRG6zXPnAfP08AA/zh-cn_image_0000002803265667.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/emTj3o8ETWSCReodBTSw1w/zh-cn_image_0000002776910450.png)
 
 **标记适用范围说明：**
 

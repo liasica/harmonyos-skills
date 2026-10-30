@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: LongPressGesture
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 基础手势 > LongPressGesture
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:36+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:297cb0df4d5044ed20134db8bd5ba3babd834aeae8aeaa0d2378d7b53ddf9212
+scraped_at: 2026-10-31T07:35:11+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:b9094beb04bffc6fb1d6c1612ae5d0f87055f52b724263340622868643172b12
 ---
 
 用于触发长按手势事件，触发长按手势的最少手指数为1，默认最短长按时间为500毫秒。可配置duration参数控制最短长按时长，适用于需要通过用户长按操作触发组件交互的场景。
@@ -71,7 +71,7 @@ LongPressGesture(options?: LongPressGestureHandlerOptions)
 
 **说明** 
 
-* 在[GestureEvent](ts-gesture-common.md#gestureevent对象说明)的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index。对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为空。建议优先使用fingerInfos。
+* 在[GestureEvent](ts-gesture-common.md#gestureevent对象说明)的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index。对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为undefined。建议优先使用fingerInfos。
 * 长按手势触发后，[GestureEvent](ts-gesture-common.md#gestureevent对象说明)中fingerList和fingerInfos的信息仅在有手指按下时才会更新，手指抬起时不会更新。
 
 ### onAction
@@ -179,4 +179,4 @@ struct LongPressGestureExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/NyxodPPJTRKMuprbjplHNA/zh-cn_image_0000002803225807.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/mUbAX8EgTmyt6Kv9asSl3g/zh-cn_image_0000002776750696.gif)

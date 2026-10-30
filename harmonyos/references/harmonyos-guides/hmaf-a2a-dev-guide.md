@@ -1,14 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hmaf-a2a-dev-guide
-title: 通过AgentAbilityExtension实现智能体间A2A协议通信
-breadcrumb: 指南 > AI > Agent Framework Kit（智能体框架服务） > 通过AgentAbilityExtension实现智能体间A2A协议通信
+title: 通过AgentExtensionAbility实现智能体间A2A协议通信
+breadcrumb: 指南 > AI > Agent Framework Kit（智能体框架服务） > 通过AgentExtensionAbility实现智能体间A2A协议通信
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:35:23+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:5601ecaa55222002187d6e5c0f7630c925e057014d5bf757298084341a8bbdf3
+scraped_at: 2026-10-31T07:33:18+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:9b7c413db6d3bccb6184f80dca46a4d6448a4d7445e0881ef20fe198289f8cd3
 ---
 
-从API版本26.0.0开始，新增支持通过AgentAbilityExtension实现智能体间A2A协议通信。
+从API版本26.0.0开始，新增支持通过AgentExtensionAbility实现智能体间A2A协议通信。
 
 A2A（Agent to Agent）协议用于智能体之间的通信。A2A服务端负责接收客户端请求、触发智能体执行任务、更新任务状态和返回执行结果。
 

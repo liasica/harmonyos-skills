@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/partneragent-
 title: 伙伴设备与HarmonyOS设备互通的开发指南
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 融合短距 > 伙伴设备与HarmonyOS设备互通的开发指南
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:00+08:00
+scraped_at: 2026-10-31T07:32:21+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:68a16c4e35cb04d96a7077b9cc42e087487d7549ecff1a17ba48607a45077ebe
+content_hash: sha256:81a8a8a8524c3614d7390d54291066cb153993d1ef331022fc9e222c35da0c68
 ---
 
 ## 简介
@@ -193,7 +193,7 @@ if (isBound == true) {
 
    EntryAbility中加载ets/pages/Index.ets绘制的页面，请求用户授予访问蓝牙权限。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/NEHrUcbTQniQoG6uIFGPSw/zh-cn_image_0000002803224413.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/EudC_Fy5TFu6hq-LENbqbw/zh-cn_image_0000002776909286.jpg)
 
    ```typescript
    import { AbilityConstant, ConfigurationConstant, UIAbility, Want } from '@kit.AbilityKit';
@@ -249,7 +249,7 @@ if (isBound == true) {
 
    调用注册设备等功能接口。Index.ets中输入要注册的设备蓝牙地址，注册输入的蓝牙设备，去注册输入的蓝牙设备、查询设备的绑定状态，获取本机绑定的设备列表等。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/FvUBTrmjTsSmJSBpKr5EwQ/zh-cn_image_0000002774064694.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/xpPvk3jCSe-_WNUXct3CBg/zh-cn_image_0000002776749300.jpg)
 
    ```typescript
    import { BusinessError } from '@kit.BasicServicesKit';

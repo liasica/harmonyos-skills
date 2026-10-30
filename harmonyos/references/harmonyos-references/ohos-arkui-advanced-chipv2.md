@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ChipV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ChipV2
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:51+08:00
+scraped_at: 2026-10-31T07:35:32+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:36e67f168cf3c41a974b8cd06ff72c5b088ebb5d1ea50a7957a091f5e1d1dd3d
+content_hash: sha256:ec0275949580c818e9de2f174e356e9726ab82400857b54cc5612f6855de1c8a
 ---
 
 ChipV2是提供丰富样式和交互能力的操作块组件，支持前缀图标、后缀图标、激活状态、关闭按钮等特性，支持Symbol和Image两种图标类型，并提供完善的无障碍访问能力。该组件适用于搜索历史记录、邮件发送列表、标签选择、过滤器、联系人展示等场景。
@@ -1015,7 +1015,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/8oY7HIDpS2aq1Je72wnJaw/zh-cn_image_0000002774066632.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/WMx5e6E8QryEeFlvKUkR9g/zh-cn_image_0000002806110843.png)
 
 ### 示例2（设置ChipV2激活状态）
 
@@ -1080,7 +1080,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/78YR1sZdSp21DeNMZeT86A/zh-cn_image_0000002773906660.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/n1y31b5HQM2qr223WLG1Ng/zh-cn_image_0000002776911224.gif)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -1139,7 +1139,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/y1-8a6WlQpSjwLa4I8tHjQ/zh-cn_image_0000002803266443.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/vsHD9ndhSsSwR-yefDUnRQ/zh-cn_image_0000002776751238.gif)
 
 ### 示例4（监听ChipV2Options内对象类型属性的内部属性变化）
 
@@ -1182,7 +1182,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/1MmoSRe6QUKAxEPfoF_Bvg/zh-cn_image_0000002803226349.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/8i5mNl37R6W1jb66IpVQ6Q/zh-cn_image_0000002806030955.gif)
 
 ### 示例5（设置系统材质样式）
 
@@ -1241,4 +1241,4 @@ struct Index {
 
 该示例配图为高算力设备强档效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/wpJT6U7RTEe7JSm5RhceOA/zh-cn_image_0000002774066634.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/tf4LRXc6ThWb08kp0bWpKQ/zh-cn_image_0000002806110845.png)

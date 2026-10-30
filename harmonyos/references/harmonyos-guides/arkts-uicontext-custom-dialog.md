@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-uiconte
 title: 不依赖UI组件的全局自定义弹出框 (openCustomDialog)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹出框 (Dialog) > 不依赖UI组件的全局自定义弹出框 (openCustomDialog)
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:31+08:00
+scraped_at: 2026-10-31T07:31:51+08:00
 doc_updated_at: 2026-10-16
-content_hash: sha256:4a23b1803afc8b2724a73fa2230b4d5375e4b3e4f6507f5791ea46a40ac4dc5e
+content_hash: sha256:6c5b2a73532b17694fda4c9b3ad90716e8d084c62a7169bbda8ea40c6c0fbc48
 ---
 
 在广告、中奖、警告、软件更新等与用户交互响应操作的场景下，可以使用UIContext中获取到的PromptAction对象提供的[openCustomDialog](../harmonyos-references/arkts-apis-uicontext-promptaction.md#opencustomdialog12)接口来实现自定义弹出框。相较于[CustomDialogController](../harmonyos-references/ts-methods-custom-dialog-box.md#customdialogcontroller)优势点在于页面解耦，支持动态刷新[update](../harmonyos-references/js-apis-arkui-componentcontent.md#update)。
@@ -187,7 +187,7 @@ export struct CustomDialogComponentWithTransition {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/gAPFdx0WSNOo_6S59KYcOA/zh-cn_image_0000002773904062.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/cBslpG69Q5WstTnkIGwu_w/zh-cn_image_0000002776748642.gif)
 
 ## 设置弹出框避让软键盘的距离
 
@@ -244,7 +244,7 @@ export struct CustomDialogWithKeyboardAvoidDistance {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/3OlRfL9LQ7eqrvS3qDG3EA/zh-cn_image_0000002803263847.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/tsqSwT8AT5Wk0S9-qRxbnQ/zh-cn_image_0000002806028359.gif)
 
 ## 完整示例
 
@@ -396,4 +396,4 @@ export struct OpenDialogAndUpdate {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/qunQ3stqRranfNs1rGc-og/zh-cn_image_0000002803223757.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/wuKbwKksSF-pqh-V1dTF2g/zh-cn_image_0000002806108249.gif)

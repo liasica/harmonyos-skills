@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: picker开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > picker开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:37+08:00
+scraped_at: 2026-10-31T07:31:57+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:be6261310aaef7f99c02e8ff1c545d93ac47680c472e19e722552c0998a43955
+content_hash: sha256:fa2b1134e78acb77a58ccc843c08afa42fac880063cc8a0654b58c2a9d44e1dd
 ---
 
 picker是滑动选择器组件，类型支持普通选择器、日期选择器、时间选择器、时间日期选择器和多列文本选择器。具体用法请参考[picker](../harmonyos-references/js-components-basic-picker.md)。
@@ -33,7 +33,7 @@ picker是滑动选择器组件，类型支持普通选择器、日期选择器�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/BC2RKUqzQZONU0s76oLv2g/zh-cn_image_0000002803264107.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/oUEOb_EgQeW3nvUDRt0PdA/zh-cn_image_0000002806108509.gif)
 
 ## 设置picker类型
 
@@ -73,7 +73,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/4DY9DPjuTaCPpBMWnF6nJQ/zh-cn_image_0000002803224017.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/9_UJYjWpTjSMkns6fVuMqQ/zh-cn_image_0000002776908890.gif)
 
 **说明** 
 
@@ -108,7 +108,7 @@ picker组件的hours属性用于设置时间显示格式，支持12小时制和2
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/5shSmkDJTG6cSSEXkVH_kw/zh-cn_image_0000002774064298.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/nrlZtYfnR9mN4tBj4y2Trw/zh-cn_image_0000002776748904.gif)
 
 **说明** 
 
@@ -165,7 +165,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/iMTJgChMSmCFYaLTeRRiug/zh-cn_image_0000002773904324.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/Fu3Ob64bTJCUaoQpl3rGPg/zh-cn_image_0000002806028621.gif)
 
 ## 场景示例
 
@@ -292,4 +292,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/roay68btQwKcHAmiqWk1Jw/zh-cn_image_0000002803264109.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/o5448Z6jROilVHkEAA3nqg/zh-cn_image_0000002806108511.gif)

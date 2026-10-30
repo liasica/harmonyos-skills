@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用扩展的Node-API接口在当前线程中创建、切换和销毁上下文环境
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景 > 使用扩展的Node-API接口在当前线程中创建、切换和销毁上下文环境
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:06:23+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:8649f3505f79a109721ca48795e9ad5a37a8fbba8f2c93ae28aa01a50a551dda
+scraped_at: 2026-10-31T07:33:42+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:99eab8b7505e0eba211c551ef64862625ecaf558742a5fb085c4daac37ea8b9f
 ---
 
 在应用被拉起时，应用的主线程即为一个ArkTS线程，该线程中存在一个由系统管理的上下文环境，当ArkTS需要和C/C++交互时，在C/C++侧，napi\_env即代表该上下文环境，每个上下文环境中存在着独立的globalThis对象。
@@ -255,13 +255,13 @@ content_hash: sha256:8649f3505f79a109721ca48795e9ad5a37a8fbba8f2c93ae28aa01a50a5
       napi_value plugin1 = nullptr;
       status = napi_load_module_with_info(env, "entry/src/main/ets/pages/plugin1", "com.example.myapplication/entry", &plugin1);
       if (status != napi_ok) {
-          OH_LOG_INFO(LOG_APP, "load plugin1 failed");
+          OH_LOG_ERROR(LOG_APP, "load plugin1 failed");
       }
       // 获取模块plugin1中的方法GetLocation
       napi_value getLocation1 = nullptr;
       status = napi_get_named_property(env, plugin1, "GetLocation", &getLocation1);
       if (status != napi_ok) {
-          OH_LOG_INFO(LOG_APP, "obtain GetLocation from plugin1 failed");
+          OH_LOG_ERROR(LOG_APP, "obtain GetLocation from plugin1 failed");
       }
       // 创建新的上下文环境newEnv2
       napi_env newEnv2 = nullptr;
@@ -272,20 +272,20 @@ content_hash: sha256:8649f3505f79a109721ca48795e9ad5a37a8fbba8f2c93ae28aa01a50a5
       // 主动切换到新的上下文环境newEnv2
       status = napi_switch_ark_context(newEnv2);
       if (status != napi_ok) {
-          OH_LOG_INFO(LOG_APP, "switch to newEnv2 failed");
+          OH_LOG_ERROR(LOG_APP, "switch to newEnv2 failed");
       }
       napi_value plugin2 = nullptr;
       // 在新的上下文环境中加载模块plugin2.ets
       status = napi_load_module_with_info(newEnv2, "entry/src/main/ets/pages/plugin2", "com.example.myapplication/entry",
                                           &plugin2);
       if (status != napi_ok) {
-          OH_LOG_INFO(LOG_APP, "load plugin2 failed");
+          OH_LOG_ERROR(LOG_APP, "load plugin2 failed");
       }
 
       napi_value getLocation2 = nullptr;
       status = napi_get_named_property(newEnv2, plugin2, "GetLocation", &getLocation2);
       if (status != napi_ok) {
-          OH_LOG_INFO(LOG_APP, "obtain GetLocation from plugin2 failed");
+          OH_LOG_ERROR(LOG_APP, "obtain GetLocation from plugin2 failed");
       }
 
       // 在新上下文环境中执行ArkTS侧的方法getLocation, 入参为模块plugin2中的方法GetLocation
@@ -295,12 +295,12 @@ content_hash: sha256:8649f3505f79a109721ca48795e9ad5a37a8fbba8f2c93ae28aa01a50a5
 
       status = napi_call_function(newEnv2, nullptr, args[0], 1, args2, &result);
       if (status != napi_ok) {
-          OH_LOG_INFO(LOG_APP, "call function of env failed");
+          OH_LOG_ERROR(LOG_APP, "call function of env failed");
       }
       int32_t ret = 0;
       status = napi_get_value_int32(newEnv2, result, &ret);
       if (status != napi_ok) {
-          OH_LOG_INFO(LOG_APP, "napi_get_value_int32 of env failed");
+          OH_LOG_ERROR(LOG_APP, "napi_get_value_int32 of env failed");
       } else {
           // plugin2的上下文中globalThis.a为3000
           OH_LOG_INFO(LOG_APP, "ret is %{public}d", ret); // 3000
@@ -308,7 +308,7 @@ content_hash: sha256:8649f3505f79a109721ca48795e9ad5a37a8fbba8f2c93ae28aa01a50a5
       // 主动切回原始上下文环境env
       status = napi_switch_ark_context(env);
       if (status != napi_ok) {
-          OH_LOG_INFO(LOG_APP, "switch to env failed");
+          OH_LOG_ERROR(LOG_APP, "switch to env failed");
       }
       args2[0] = getLocation1;
       status = napi_call_function(env, nullptr, args[0], 1, args2, &result);
@@ -434,6 +434,6 @@ content_hash: sha256:8649f3505f79a109721ca48795e9ad5a37a8fbba8f2c93ae28aa01a50a5
   globalThis.a = 3000;
 
   export function GetLocation() : number {
-  return globalThis.a;
+      return globalThis.a;
   }
   ```

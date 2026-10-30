@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-watch
 title: "@Watch装饰器：状态变量更改通知"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @Watch装饰器：状态变量更改通知
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:27+08:00
+scraped_at: 2026-10-31T07:31:46+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:66736b4917b05256a2e53a2fdca66d8fbaa446e3a37630b4badc42f08d74fa60
+content_hash: sha256:d8ce2a7ab905bca43fb18a8d03dbd12752152c55c3cdbcced2f3ca797e3ba06e
 ---
 
 [@Watch](../harmonyos-references/ts-state-management-watch.md#watch)应用于对状态变量的监听。如果开发者需要关注某个状态变量的值是否改变，可以使用@Watch为状态变量设置回调函数。
@@ -141,7 +141,7 @@ struct CountModifier {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/KOjzUETXSG-QRdBZaRQtcQ/zh-cn_image_0000002773903604.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/bpf4jUSvTtu3xgcCfzJAaQ/zh-cn_image_0000002776908172.gif)
 
 处理步骤：
 
@@ -223,7 +223,7 @@ struct BasketModifier {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/sSDo2TidTV6v3M6N3tm8ug/zh-cn_image_0000002803263391.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/fbL6Jz-6RjGwxdr90c6YHA/zh-cn_image_0000002776748186.gif)
 
 ### @Watch的触发时机
 
@@ -342,7 +342,7 @@ struct ChildComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/CfkGnRpbQBKzdcWbaAHR9g/zh-cn_image_0000002803223301.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/NGGYQD9OTmaGHiQPfrAIaA/zh-cn_image_0000002806027903.gif)
 
 处理步骤如下：
 
@@ -406,7 +406,7 @@ struct UsePropertyName {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/2vQ6hxMJT_Ks7apzIhG-cA/zh-cn_image_0000002774063582.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/R-u_pYaQSISiTsbQWT0WoQ/zh-cn_image_0000002806107793.gif)
 
 处理步骤如下：
 

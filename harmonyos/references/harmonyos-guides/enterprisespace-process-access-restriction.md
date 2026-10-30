@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/enterprisespa
 title: 进程访问限制
 breadcrumb: 指南 > 应用服务 > Enterprise Space Kit（企业数字空间服务） > 空间管理 > 进程访问限制
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:25+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-10-31T07:33:00+08:00
+doc_updated_at: 2026-10-30
 content_hash: sha256:76819c3f6d66f686be6abfbe20f807aecf4727e2ad25f60561932211da679ac5
 ---
 

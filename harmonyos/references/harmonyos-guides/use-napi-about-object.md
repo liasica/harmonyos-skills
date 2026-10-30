@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口进行object相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口进行object相关开发
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:11+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:4cad88cea6763a6c4fbab11eb60f91891290226dfc898c7886d61651c3246e4b
+scraped_at: 2026-10-31T07:33:41+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:94ccf84cb7321269af1c2150c1edfbdf28eda583b615535a84a772ee577a032a
 ---
 
 ## 简介
@@ -273,7 +273,7 @@ try {
 
 这个接口用于获取给定ArkTS value的ArkTS Type。
 
-\*\*注：\*\*napi\_typeof可以判断的类型包含：
+**注**：napi\_typeof可以判断的类型包含：
 
 | 类型 |
 | --- |

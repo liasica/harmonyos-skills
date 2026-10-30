@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-hds
 title: 沉浸光感
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 沉浸光感
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:47+08:00
+scraped_at: 2026-10-31T07:32:07+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b374996768f4141e56d4f8681af64c61c51f2b0995bbf6b9b2cd15e5d3d2e292
+content_hash: sha256:3f9a11d1d450d40b9e4ff5cbe29aacf5211206411b58b10f9c3f506ce6ecf80e
 ---
 
 ## 场景介绍
@@ -330,4 +330,4 @@ content_hash: sha256:b374996768f4141e56d4f8681af64c61c51f2b0995bbf6b9b2cd15e5d3d
 
    **沉浸光感材质效果展示**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/GKb9_xPtQkSt5ZGEdCgpoA/zh-cn_image_0000002803224329.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/LtugXwycQAm4ogKpjfWFAQ/zh-cn_image_0000002776909202.png)

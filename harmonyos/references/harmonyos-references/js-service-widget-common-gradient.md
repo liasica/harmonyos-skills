@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: 渐变样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 组件通用信息 > 渐变样式
 category: harmonyos-references
-scraped_at: 2026-10-29T08:00:00+08:00
+scraped_at: 2026-10-31T07:35:43+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:eb7ddba6ae7140a500b25cb95763eb31698a516bfc9702283f5d82ee4c390911
+content_hash: sha256:7fd119b4c9b8beb32a4203b5178e22521353b3baf585de77896e009136070618
 ---
 
 组件普遍支持在style或css中设置渐变样式，可以平稳过渡两个或多个指定的颜色。
@@ -57,7 +57,7 @@ background: repeating-linear-gradient(direction/angle, color, color, ...);
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/lBmNl3IySsWLsIlMelWmhw/zh-cn_image_0000002803226697.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/ygxJq9kOT-eO1XILAxihgQ/zh-cn_image_0000002806031361.png)
 2. 45度夹角渐变。
 
    ```css
@@ -65,7 +65,7 @@ background: repeating-linear-gradient(direction/angle, color, color, ...);
    background: linear-gradient(45deg, rgb(255, 0, 0),rgb(0, 255, 0));
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/TAxT6hZdSmKzju5nL9vCww/zh-cn_image_0000002774066982.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/u_RP_sjVSEiV6hMefnjmsg/zh-cn_image_0000002806111255.png)
 3. 设置方向从左向右渐变。
 
    ```css
@@ -73,7 +73,7 @@ background: repeating-linear-gradient(direction/angle, color, color, ...);
    background: linear-gradient(to right, rgb(255, 0, 0) 90px, rgb(0, 255, 0) 60%);
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/ZSA5J3jZT_OcjYcNS3_GPA/zh-cn_image_0000002773907010.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/2eS1Nx0YSbakxVxvCoFZwA/zh-cn_image_0000002776911632.png)
 4. 重复渐变。
 
    ```css
@@ -81,4 +81,4 @@ background: repeating-linear-gradient(direction/angle, color, color, ...);
    background: repeating-linear-gradient(to right, rgba(255, 255, 0, 1) 30vp,rgba(0, 0, 255, .5) 60vp);
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/M3wYr8CtTnivzIY6_S52EQ/zh-cn_image_0000002803266793.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/R1C00vi4SNKmL305YLdxVQ/zh-cn_image_0000002776751646.png)

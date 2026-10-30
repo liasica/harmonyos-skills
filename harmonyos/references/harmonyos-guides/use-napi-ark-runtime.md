@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-ark-
 title: 使用Node-API接口创建ArkTS运行时环境
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景 > 使用Node-API接口创建ArkTS运行时环境
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:11+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:74a3d247643906b19204799dcb4baad5220e08d6375c89772f4d26c1fa5e8bd1
+scraped_at: 2026-10-31T07:33:42+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:ce4f791cda41b56023076b8b4697b109da440500680c0c4efe7ba07f68b26a7a
 ---
 
 ## 场景介绍
@@ -115,7 +115,7 @@ content_hash: sha256:74a3d247643906b19204799dcb4baad5220e08d6375c89772f4d26c1fa5
       ret = napi_load_module_with_info(env, "entry/src/main/ets/pages/ObjectUtils", "com.example.myapplication/entry",
                                        &objUtils);
       if (ret != napi_ok) {
-          OH_LOG_INFO(LOG_APP, "Failed to load module");
+          OH_LOG_ERROR(LOG_APP, "Failed to load module");
           napi_close_handle_scope(env, scope);
           napi_destroy_ark_runtime(&env);
           return nullptr;
@@ -141,7 +141,7 @@ content_hash: sha256:74a3d247643906b19204799dcb4baad5220e08d6375c89772f4d26c1fa5
       // 4. 销毁ArkTS环境
       ret = napi_destroy_ark_runtime(&env);
       if (ret != napi_ok) {
-          OH_LOG_INFO(LOG_APP, "Failed to destroy ark runtime");
+          OH_LOG_ERROR(LOG_APP, "Failed to destroy ark runtime");
       }
 
       return nullptr;

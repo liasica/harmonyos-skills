@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: PanGesture
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 基础手势 > PanGesture
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d328e92b371830e00689c0b34b8b1a7be878984a68c50e2f863fc0609e63c34d
+scraped_at: 2026-10-31T07:35:11+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:a198aa8f1069f3f82c3dc6439cc0352ac5cbfc9b8b11045e38471accc2ccee1c
 ---
 
 当滑动距离达到设定的最小值时，触发滑动手势事件。
@@ -186,7 +186,7 @@ getDistance(): number
 
 **说明** 
 
-在[GestureEvent](ts-gesture-common.md#gestureevent对象说明)的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index。对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为空。建议优先使用fingerInfos。
+在[GestureEvent](ts-gesture-common.md#gestureevent对象说明)的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index。对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为undefined。建议优先使用fingerInfos。
 
 ### onActionStart
 
@@ -334,8 +334,8 @@ struct PanGestureExample {
 
 向左滑动：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/3ztIYG8PTPKNDCuYLpETKA/zh-cn_image_0000002774066092.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/qfNbVKsdSlqrXtj7hptxIQ/zh-cn_image_0000002806030413.png)
 
 点击按钮时，修改PanGesture触发条件为双指向任意方向滑动：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/kz6CJQVDQVeFur4sPA4niA/zh-cn_image_0000002773906118.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/NKBl8lgsTE6TjlXw6L1V7Q/zh-cn_image_0000002806110303.png)

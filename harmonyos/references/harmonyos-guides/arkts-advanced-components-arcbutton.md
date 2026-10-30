@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-advance
 title: 弧形按钮 (ArcButton)(圆形屏幕推荐使用)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 按钮与选择 > 弧形按钮 (ArcButton)(圆形屏幕推荐使用)
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:31+08:00
+scraped_at: 2026-10-31T07:31:50+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:a00991331fd9a00bfafcb759b8fa8c175b67dc9f243a84942b667ff13f746411
+content_hash: sha256:4a065df6eba7fba07a7ce5eb8433f56a45373d80f3f41b5a423b87309bd16745
 ---
 
 从API version 18开始支持ArcButton。ArcButton是弧形按钮组件，推荐用于圆形屏幕。为用户提供强调、普通、警告等样式按钮。具体用法请参考[ArcButton](../harmonyos-references/ohos-arkui-advanced-arcbutton.md)。
@@ -27,7 +27,7 @@ ArcButton({
 
 其中，[label](../harmonyos-references/ohos-arkui-advanced-arcbutton.md#arcbuttonoptions)设置按钮文字，[position](../harmonyos-references/ohos-arkui-advanced-arcbutton.md#arcbuttonoptions)设置按钮位置，[styleMode](../harmonyos-references/ohos-arkui-advanced-arcbutton.md#arcbuttonoptions)设置按钮样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/2E7rU-NqRxufXT4EDC34sA/zh-cn_image_0000002773904044.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/-M4DRO9FRKKQDXkCNY4eUg/zh-cn_image_0000002776748624.png)
 
 ## 设置按钮类型
 
@@ -49,7 +49,7 @@ ArcButton有上弧形按钮和下弧形按钮两种类型。使用[position](../
   })
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/X-Gt1LkwSWmgkBHK2JLjew/zh-cn_image_0000002803263829.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/fji_WSzWTBeKdYHsOTq_yA/zh-cn_image_0000002806028341.png)
 * 上弧形按钮。
 
   通过将[position](../harmonyos-references/ohos-arkui-advanced-arcbutton.md#arcbuttonoptions)属性设置为ArcButtonPosition.TOP\_EDGE，可以将按钮设置为上弧形按钮。
@@ -65,7 +65,7 @@ ArcButton有上弧形按钮和下弧形按钮两种类型。使用[position](../
   })
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/kz8at_OdQ1q9dg3BGhzCqw/zh-cn_image_0000002803223739.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/6os3u0XoQC2CDi700hZaFg/zh-cn_image_0000002806108231.png)
 
 ## 自定义样式
 
@@ -83,7 +83,7 @@ ArcButton有上弧形按钮和下弧形按钮两种类型。使用[position](../
   })
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/7LP_S7uESmq12oTlowvPYg/zh-cn_image_0000002774064020.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/WKcJV3wOR7mLWSAYCjfvRQ/zh-cn_image_0000002776908612.png)
 * 设置文本颜色。
 
   使用[fontColor](../harmonyos-references/ohos-arkui-advanced-arcbutton.md#arcbuttonoptions)属性设置按钮的文本颜色。
@@ -99,7 +99,7 @@ ArcButton有上弧形按钮和下弧形按钮两种类型。使用[position](../
   })
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/-UlEGUFBRP-QEMtyjMQcKQ/zh-cn_image_0000002773904046.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/FNrhEoq6RpeM_fsiBedcNw/zh-cn_image_0000002776748626.png)
 * 设置阴影颜色。
 
   使用[shadowEnabled](../harmonyos-references/ohos-arkui-advanced-arcbutton.md#arcbuttonoptions)属性启用按钮阴影，并通过[shadowColor](../harmonyos-references/ohos-arkui-advanced-arcbutton.md#arcbuttonoptions)属性设置按钮的阴影颜色。
@@ -114,7 +114,7 @@ ArcButton有上弧形按钮和下弧形按钮两种类型。使用[position](../
   })
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/-5iqt47-Qg2OG3Z6n2ONtQ/zh-cn_image_0000002803263831.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/0ayteJO_Svu-GdQrRAHDPw/zh-cn_image_0000002806028343.png)
 
 ## 添加事件
 
@@ -239,4 +239,4 @@ struct BrightnessPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/z1n0RRifROqxafu5klKc_g/zh-cn_image_0000002803223741.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/TWvGWv7hTICxK-KHWxG_MQ/zh-cn_image_0000002806108233.png)

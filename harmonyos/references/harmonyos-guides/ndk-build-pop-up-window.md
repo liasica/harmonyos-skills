@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-build-pop
 title: 构建弹窗
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 构建弹窗
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:35+08:00
+scraped_at: 2026-10-31T07:31:55+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:90ffb6c393db616daaf716232ac285da171581ccb4bd707dbfa15d516c2e72ed
+content_hash: sha256:e15167dbb0ae85bae5ed8219be9ec2390d1c4a149e28f557ddc42ff6dcfe9163
 ---
 
 可以通过创建弹窗控制器和创建自定义弹窗的内容对象两种方法显示自定义弹窗，设置其样式和内容。
@@ -284,7 +284,7 @@ content_hash: sha256:90ffb6c393db616daaf716232ac285da171581ccb4bd707dbfa15d516c2
      }
      ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/tC9IucFzQfKcSuLswhmyNg/zh-cn_image_0000002774064258.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/DLexfEv1QzeKL2onWleVjg/zh-cn_image_0000002776748864.gif)
 
 ## 弹窗的生命周期
 

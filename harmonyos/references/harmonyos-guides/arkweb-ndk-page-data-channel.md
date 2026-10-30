@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkweb-ndk-pa
 title: 建立应用侧与前端页面数据通道(C/C++)
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 在应用中使用前端页面JavaScript > 建立应用侧与前端页面数据通道(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:41+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:edd3bd6d7def2ed25c03c8c9c86139d811fb2cd5e28f2a671798d9e1a782b85d
+scraped_at: 2026-10-31T07:32:01+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:2e544e5f632c1b329442739abb6a97ee998dd441bd4c3dcffbec66d5f0024d0a
 ---
 
 前端页面和应用侧之间可以使用Native方法实现两端通信（以下简称Native PostWebMessage），可解决ArkTS环境的冗余切换，同时允许发送消息、回调在非UI线程上运行，避免造成UI阻塞。当前只支持string和buffer数据类型。
@@ -14,13 +14,13 @@ content_hash: sha256:edd3bd6d7def2ed25c03c8c9c86139d811fb2cd5e28f2a671798d9e1a78
 
 应用使用ArkTS、C++语言混合开发，或本身应用架构较贴近于小程序架构，自带C++侧环境，推荐使用ArkWeb在Native侧提供的[ArkWeb\_ControllerAPI](../harmonyos-references/capi-web-arkweb-controllerapi.md)、[ArkWeb\_WebMessageAPI](../harmonyos-references/capi-web-arkweb-webmessageapi.md)、[ArkWeb\_WebMessagePortAPI](../harmonyos-references/capi-web-arkweb-webmessageportapi.md)实现PostWebMessage功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/h130XDsbRgCwio6ffVRYhg/zh-cn_image_0000002803264225.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/R9L3ECu-Si23o1BFtFmXaA/zh-cn_image_0000002806108627.png)
 
 上图展示了具有普遍适用性的小程序的通用架构。在这一架构中，逻辑层依赖于应用程序自带的JavaScript运行时，该运行时在一个已有的C++环境中运行。通过Native接口，逻辑层能够直接在C++环境中与视图层（其中ArkWeb充当渲染器）进行通信，无需回退至ArkTS环境使用ArkTS PostWebMessage接口。
 
 左图是使用ArkTS PostWebMessage接口构建小程序的方案，如红框所示，应用需要先调用到ArkTS环境，再调用到C++环境。右图是使用Native PostWebMessage接口构建小程序的方案，不需要ArkTS环境和C++环境的切换，执行效率更高。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/AiOuc9fYTDqAZijqZHZrOQ/zh-cn_image_0000002774064416.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/Y4hIfZF7Ts-YaNSExqn_hA/zh-cn_image_0000002776749022.png)
 
 ## 使用Native接口实现PostWebMessage通信
 
@@ -471,10 +471,10 @@ webMessage = reinterpret_cast<ArkWeb_WebMessageAPI *>(OH_ArkWeb_GetNativeAPI(ARK
   ```
 * Node-API侧编译配置
 
-  ```
+  ```text
   # entry/src/main/cpp/CMakeLists.txt
   # the minimum version of CMake.
-  cmake_minimum_required(VERSION 3.4.1)
+  cmake_minimum_required(VERSION 3.5.0)
   project(NDKPostMessage)
 
   set(NATIVERENDER_ROOT_PATH ${CMAKE_CURRENT_SOURCE_DIR})

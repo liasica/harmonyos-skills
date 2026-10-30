@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-de
 title: 自定义组件节点 (FrameNode)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > 自定义节点 > 自定义组件节点 (FrameNode)
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:34+08:00
+scraped_at: 2026-10-31T07:31:54+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:aff575cef6361118e7732038153367dde381cfcc2cfce167275ec28a82beeb26
+content_hash: sha256:18d38eb656a2e326dbfef39327d00b09bd009847157c2d11f889bf8d2f8ac50f
 ---
 
 ## 概述
 
 对于拥有自定义前端的第三方框架（如JSON、XML、DOM树等），需将特定的DSL转换为ArkUI的声明式描述。如下图描述了JSON定义的前端框架和ArkUI声明式描述的对应关系。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/q5Uw2IsLTgS-iPKxc7-aWA/zh-cn_image_0000002803263995.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/DFcr8vSOTOCpJv8XBFm1qg/zh-cn_image_0000002806108397.png)
 
 上述转换过程需要依赖额外的数据驱动，绑定至[Builder](arkts-builder.md)中，较为复杂且性能欠佳。这类框架通常依赖于ArkUI的布局、事件处理、基础的节点操作和自定义能力。大部分组件通过自定义实现，但需结合使用部分系统组件以实现混合显示，如下图示例既使用了[FrameNode](../harmonyos-references/js-apis-arkui-framenode.md)的自定义方法进行绘制，又使用了系统组件[Column](../harmonyos-references/ts-container-column.md)及其子组件[Text](../harmonyos-references/ts-basic-components-text.md)，通过[BuilderNode](../harmonyos-references/js-apis-arkui-buildernode.md)的方式将其挂载到根节点的FrameNode上混合显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/v2F4N911THS4a1sbEZv2xA/zh-cn_image_0000002803223905.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/OxY6aghCQymVF3LzEy-D7Q/zh-cn_image_0000002776908778.png)
 
 [FrameNode](../harmonyos-references/js-apis-arkui-framenode.md)的设计初衷正是为了解决上述转换问题。FrameNode表示组件树中的实体节点，与自定义占位容器组件[NodeContainer](../harmonyos-references/ts-basic-components-nodecontainer.md)相配合，实现在占位容器内构建一棵自定义的节点树。该节点树支持动态操作，如节点的增加、修改和删除。基础的FrameNode具备设置通用属性和事件回调的功能，同时提供完整的自定义能力，涵盖自定义测量、布局和绘制等方面。
 
@@ -435,7 +435,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/nUPNAfGITTKniLLX2m23gA/zh-cn_image_0000002774064186.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/zt6gegQyQMqBEVNBrLv1Zg/zh-cn_image_0000002776748792.gif)
 
 ## 设置节点通用属性和事件回调
 
@@ -819,7 +819,7 @@ FrameNode提供了查询节点相对窗口、父组件以及屏幕位置偏移�
 
 [getPositionToWindow](../harmonyos-references/js-apis-arkui-framenode.md#getpositiontowindow12)，[getPositionToParent](../harmonyos-references/js-apis-arkui-framenode.md#getpositiontoparent12)，[getPositionToScreen](../harmonyos-references/js-apis-arkui-framenode.md#getpositiontoscreen12)三个接口获取到的位置信息关系如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/3CimV0p8QMmm0fSe2SH3Jw/zh-cn_image_0000002773904212.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/sn64I17aTCmISohOV17c_w/zh-cn_image_0000002806028509.png)
 
 ```typescript
 import { NodeController, FrameNode, UIContext } from '@kit.ArkUI';
@@ -2099,7 +2099,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/IuSWDgcmTLuROJK2LFdDXQ/zh-cn_image_0000002803263997.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/rMu9IKtRSg6MFUaG0T-KRA/zh-cn_image_0000002806108399.png)
 
 ## 更新当前帧节点
 
@@ -2199,7 +2199,7 @@ struct ListNodeTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/hbYvo3DcQJ2jDd8yXv7X8g/zh-cn_image_0000002803223907.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/PamzdXS-TPm6PWTyRaUiyQ/zh-cn_image_0000002776908780.png)
 
 ## 判断节点是否处于渲染状态
 
@@ -2270,4 +2270,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/6wbUF924SL24mskqO1jdAg/zh-cn_image_0000002774064188.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/kwJ3a4eVQO2BrzeAjlLrUQ/zh-cn_image_0000002776748794.png)

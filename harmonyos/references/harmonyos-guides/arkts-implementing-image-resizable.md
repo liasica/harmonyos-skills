@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-impleme
 title: 基于resizable实现图片拉伸效果
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 媒体展示 > 基于resizable实现图片拉伸效果
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:31+08:00
+scraped_at: 2026-10-31T07:31:50+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:7f39143a0226dae87c63efc8e11ab6ff8c6b8084b03f06476ba0203d0334f5b2
+content_hash: sha256:a25e028cf587baf73689acd959f286d9e0139d07e8d2367532fbd251716bec8f
 ---
 
 ## 概述
@@ -26,11 +26,11 @@ resizable属性参数类型为[ResizableOptions](../harmonyos-references/ts-basi
 
 通过slice参数指定原图片在上、下、左、右四个方向的偏移值（px像素点），将图片划分为九宫格布局：四个角的区域为固定区域，其余为可拉伸区域。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/agXfnmwwSK-GMsDpd4yjYQ/zh-cn_image_0000002773904034.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/D2jnDV4bQKKbA1OXTz7CVw/zh-cn_image_0000002776748614.png)
 
 下图展示了图片拉伸时各区域的拉伸效果。四个角的区域保持固定的宽高，中间区域可上下左右拉伸，顶部和底部的可拉伸区域保持高度不变，左右两侧的可拉伸区域保持宽度不变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/ayP-pM7ATtmznhtNZTHnRA/zh-cn_image_0000002803263819.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/9SjEQ89yRW2lfyaI67M1cw/zh-cn_image_0000002806028331.png)
 
 slice除了在resizable属性中使用，还支持在[backgroundImageResizable](../harmonyos-references/ts-universal-attributes-background.md#backgroundimageresizable12)属性中使用。
 
@@ -55,7 +55,7 @@ Image($r('app.media.bg_right_message'))
 
 例如，下图使用x轴坐标点数组[1, 150, 648]和y轴坐标点数组，将图像划分为3行3列的网格，图中蓝色区域即为偶数行与偶数列相交的固定区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/WPW0WJu-TOyDiwea0ozW8w/zh-cn_image_0000002803223729.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/Nf9TEwrkQrqRKrLQWUwH3g/zh-cn_image_0000002806108221.png)
 
 **说明** 
 
@@ -95,7 +95,7 @@ private drawingLatticeFirst: DrawingLattice =
 
 聊天消息气泡在社交应用中是一种常见场景，效果如下图所示。当消息内容的长度和高度不同时，消息气泡需保持四周圆角和小三角指示符的形状不变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/eoX8LY_GRviO3XxU4R1CYw/zh-cn_image_0000002774064010.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/YnLoh3a7SKq8alc2DtqD0Q/zh-cn_image_0000002776908602.png)
 
 ### 场景实现
 
@@ -105,7 +105,7 @@ private drawingLatticeFirst: DrawingLattice =
 
    开发者可以通过UX提供的坐标点或者使用PhotoShop等图片编辑工具，找到原始图固定区域上、下、左、右准确的偏移值。消息气泡图片区域划分和坐标点如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/SRzGl_DdTZaeX3fD7vNl8Q/zh-cn_image_0000002773904036.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/HNBPBTL6TlyhlfHbLOhJPg/zh-cn_image_0000002776748616.png)
 2. 实现消息气泡布局。
 
    slice支持在[backgroundImageResizable](../harmonyos-references/ts-universal-attributes-background.md#backgroundimageresizable12)属性中使用。开发者可直接为消息内容的Text组件设置backgroundImage属性，将其作为内容的背景图片。当内容宽高不同时，背景图片会随之进行伸缩。然后，将前面获取的偏移值（{ left: '70px', top: '80px', right: '40px', bottom: '40px' }），赋给Text组件backgroundImageResizable属性中的slice参数即可。
@@ -146,7 +146,7 @@ private drawingLatticeFirst: DrawingLattice =
 
 可拉伸占位图需实现边缘区域可拉伸，而中间的Logo区域保持不变，如下图所示。针对可拉伸占位图场景，本文将采用lattice属性实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/NSa421glQCus3oRWPiOEQg/zh-cn_image_0000002803263821.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/C77njlObR92J0P0DAN7Peg/zh-cn_image_0000002806028333.gif)
 
 ### 场景实现
 
@@ -156,11 +156,11 @@ private drawingLatticeFirst: DrawingLattice =
 
    图片Logo区域的坐标数组，可由UX设计人员提供，或由开发者通过Photoshop等图像编辑工具手动定位获取。示例场景中，该区域的x轴坐标数组为[150, 648]，y轴坐标数组为[150, 733]。若直接使用该坐标点数组，图片将被划分为3行3列的网格，Logo区域将位于第1行第1列（非偶数行和列）的交叉点，无法达到预期效果。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/lBX5T7OBRIOhOdr37YU96w/zh-cn_image_0000002803223731.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Zw2hsl_BSMyz2B9vrbV-Ew/zh-cn_image_0000002806108223.png)
 
    为解决此问题，可在x轴和y轴各增加一个坐标点，使Logo区域位于第2行第2列（偶数行和列）的交叉点。为避免影响显示效果，可在原坐标前添加一个较小的坐标值，如1。如此，新的x轴坐标点数组变为[1, 150, 648]，y轴坐标点数组变为[1, 150, 733]，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/Y593hkRrS82k6BbJboXObQ/zh-cn_image_0000002774064012.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/jwNamGupQcWq9X3JIYXcRg/zh-cn_image_0000002776908604.png)
 2. 实现可拉伸占位图布局。
 
    根据上述获得的x轴和y轴坐标点数组，使用[createImageLattice()](../harmonyos-references/arkts-apis-graphics-drawing-lattice.md#createimagelattice12)方法创建矩形网格对象，并设置给lattice参数。

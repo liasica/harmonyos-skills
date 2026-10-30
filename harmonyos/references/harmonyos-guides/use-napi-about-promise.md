@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口处理异步操作
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口处理异步操作
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:06:22+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:45f2525ca2e47bc282118e8b8171ad824bab34fbcab82e05d515d69d1c9e377a
+scraped_at: 2026-10-31T07:33:41+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:58e437b6be69458f71bc7eaaea001502fd9bed5bcf96c4f4bf41f23fa4788307
 ---
 
 ## 简介
@@ -201,7 +201,7 @@ promiseSuccess.then((res) => {
   hilog.info(0x0000, 'Node-API', 'get_resolve_deferred resolve %{public}s', res);
   // ...
 }).catch((err: Error) => {
-  hilog.info(0x0000, 'Node-API', 'get_resolve_deferred reject %{public}s', err);
+  hilog.error(0x0000, 'Node-API', 'get_resolve_deferred reject %{public}s', err);
   // ...
 })
 // Promise状态为false时设置reject，返回结果在catch函数中获得
@@ -211,7 +211,7 @@ promiseFail.then((res) => {
   hilog.info(0x0000, 'Node-API', 'get_resolve_deferred resolve %{public}s', res);
   // ...
 }).catch((err: Error) => {
-  hilog.info(0x0000, 'Node-API', 'get_resolve_deferred reject %{public}s', err);
+  hilog.error(0x0000, 'Node-API', 'get_resolve_deferred reject %{public}s', err);
   // ...
 })
 ```

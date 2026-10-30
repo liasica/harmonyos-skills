@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-embed-ren
 title: 构建渲染节点
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 构建渲染节点
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:31+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:7db661a63cf9c5958a19c0b48d2c652b7a3fd57d72e1d65d5136c805b4e0b9b9
+scraped_at: 2026-10-31T07:31:56+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:5d83c54c2351e33177e895a716ac96be56760c120394b1eaa813624211e14a14
 ---
 
 从API version 20开始，ArkUI开发框架针对NDK接口，提供了直接构建渲染节点的能力，包括节点树操作、属性设置及含动画的自定义绘制。开发者通过调用渲染节点相关能力，可以绕过[registerNodeCustomEvent](../harmonyos-references/capi-arkui-nativemodule-arkui-nativenodeapi-1.md#registernodecustomevent)的测量布局过程，直接对节点进行绘制并调整其大小和位置。
@@ -39,7 +39,10 @@ content_hash: sha256:7db661a63cf9c5958a19c0b48d2c652b7a3fd57d72e1d65d5136c805b4e
    #include <native_drawing/drawing_path.h>
    #include <native_drawing/drawing_pen.h>
 
-   ArkUI_NodeHandle testRenderNode(ArkUI_NativeNodeAPI_1 *nodeAPI) {
+   #include "ArkUINode.h"
+   #include "NativeEntry.h"
+
+   std::shared_ptr<ArkUIBaseNode> testRenderNode(ArkUI_NativeNodeAPI_1 *nodeAPI) {
        // 创建NDK原有容器逻辑。
        ArkUI_NodeHandle scroll = nodeAPI->createNode(ARKUI_NODE_SCROLL);
        ArkUI_NumberValue valueWidth[] = {400};
@@ -73,7 +76,7 @@ content_hash: sha256:7db661a63cf9c5958a19c0b48d2c652b7a3fd57d72e1d65d5136c805b4e
        auto result = OH_ArkUI_RenderNodeUtils_AddRenderNode(Custom, renderRootNode);
        if (result != ARKUI_ERROR_CODE_NO_ERROR) {
            // 通过错误码判断根节点是否挂载成功。
-           return scroll;
+           return std::make_shared<ArkUINode>(scroll);
        }
        
        OH_ArkUI_RenderNodeUtils_AddChild(renderRootNode, firstChildRenderNode);
@@ -126,7 +129,7 @@ content_hash: sha256:7db661a63cf9c5958a19c0b48d2c652b7a3fd57d72e1d65d5136c805b4e
        colorOption = nullptr;
 
        nodeAPI->addChild(scroll, column);
-       return scroll;
+       return std::make_shared<ArkUINode>(scroll);
    }
 
     napi_value CreateNativeRoot(napi_env env, napi_callback_info info) {
@@ -135,11 +138,22 @@ content_hash: sha256:7db661a63cf9c5958a19c0b48d2c652b7a3fd57d72e1d65d5136c805b4e
 
        napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
+       // 获取NodeContent。
+       ArkUI_NodeContentHandle contentHandle;
+       OH_ArkUI_GetNodeContentFromNapiValue(env, args[0], &contentHandle);
+       if (contentHandle == nullptr) {
+           return nullptr;
+       }
+       NativeEntry::GetInstance()->SetContentHandle(contentHandle);
+
        auto *nodeAPI = reinterpret_cast<ArkUI_NativeNodeAPI_1 *>(
            OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_NODE, "ArkUI_NativeNodeAPI_1"));
-       ArkUI_NodeHandle testNode = nullptr;
+       std::shared_ptr<ArkUIBaseNode> testNode = nullptr;
        if (nodeAPI != nullptr) {
             testNode = testRenderNode(nodeAPI);
+       }
+       if (testNode == nullptr) {
+           return nullptr;
        }
 
        NativeEntry::GetInstance()->SetRootNode(testNode);
@@ -152,7 +166,7 @@ content_hash: sha256:7db661a63cf9c5958a19c0b48d2c652b7a3fd57d72e1d65d5136c805b4e
 以下示例创建了一个渲染节点，调用自定义绘制能力并附加动画功能。
 
 1. 按照[接入ArkTS页面](ndk-access-the-arkts-page.md)创建前置工程。
-2. 创建渲染节点能力对象。
+2. 创建渲染节点能力对象。调用createNativeRoot时，需要在NodeContent对象后额外传入UIContext对象（例如this.getUIContext()），用于执行动画。
 
    ```c
    // NativeEntry.cpp
@@ -172,7 +186,10 @@ content_hash: sha256:7db661a63cf9c5958a19c0b48d2c652b7a3fd57d72e1d65d5136c805b4e
    #include <native_drawing/drawing_path.h>
    #include <native_drawing/drawing_pen.h>
 
-   ArkUI_NodeHandle testRenderNode2(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_ContextHandle context) {
+   #include "ArkUINode.h"
+   #include "NativeEntry.h"
+
+   std::shared_ptr<ArkUIBaseNode> testRenderNode2(ArkUI_NativeNodeAPI_1 *nodeAPI, ArkUI_ContextHandle context) {
 
        ArkUI_NodeHandle scroll = nodeAPI->createNode(ARKUI_NODE_COLUMN);
        ArkUI_NumberValue valueWidth[] = {400};
@@ -181,8 +198,9 @@ content_hash: sha256:7db661a63cf9c5958a19c0b48d2c652b7a3fd57d72e1d65d5136c805b4e
        ArkUI_NumberValue valueHeight[] = {600};
        ArkUI_AttributeItem itemHeight = {valueHeight, sizeof(valueHeight) / sizeof(ArkUI_NumberValue)};
        nodeAPI->setAttribute(scroll, NODE_HEIGHT, &itemHeight);
-       valueHeight[0].u32 = 0xff00F100;
-       nodeAPI->setAttribute(scroll, NODE_BACKGROUND_COLOR, &itemHeight);
+       ArkUI_NumberValue bgColor[] = {{.u32 = 0xff00F100}};
+       ArkUI_AttributeItem bgItem = {bgColor, sizeof(bgColor) / sizeof(ArkUI_NumberValue)};
+       nodeAPI->setAttribute(scroll, NODE_BACKGROUND_COLOR, &bgItem);
 
        ArkUI_NodeHandle column = nodeAPI->createNode(ARKUI_NODE_COLUMN);
        ArkUI_NodeHandle text = nodeAPI->createNode(ARKUI_NODE_TEXT);
@@ -296,7 +314,7 @@ content_hash: sha256:7db661a63cf9c5958a19c0b48d2c652b7a3fd57d72e1d65d5136c805b4e
        nodeAPI->addChild(column, text);
        nodeAPI->addChild(column, Custom);
        nodeAPI->addChild(scroll, column);
-       return scroll;
+       return std::make_shared<ArkUINode>(scroll);
    }
 
     napi_value CreateNativeRoot(napi_env env, napi_callback_info info) {
@@ -305,9 +323,17 @@ content_hash: sha256:7db661a63cf9c5958a19c0b48d2c652b7a3fd57d72e1d65d5136c805b4e
 
        napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
+       // 获取NodeContent。
+       ArkUI_NodeContentHandle contentHandle;
+       OH_ArkUI_GetNodeContentFromNapiValue(env, args[0], &contentHandle);
+       if (contentHandle == nullptr) {
+           return nullptr;
+       }
+       NativeEntry::GetInstance()->SetContentHandle(contentHandle);
+
        auto *nodeAPI = reinterpret_cast<ArkUI_NativeNodeAPI_1 *>(
            OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_NODE, "ArkUI_NativeNodeAPI_1"));
-       ArkUI_NodeHandle testNode = nullptr;
+       std::shared_ptr<ArkUIBaseNode> testNode = nullptr;
        if (nodeAPI != nullptr) {
             // 获取ets侧传入的context。
             ArkUI_ContextHandle context = nullptr;
@@ -317,6 +343,9 @@ content_hash: sha256:7db661a63cf9c5958a19c0b48d2c652b7a3fd57d72e1d65d5136c805b4e
                 return nullptr;
             }
             testNode = testRenderNode2(nodeAPI, context);
+       }
+       if (testNode == nullptr) {
+           return nullptr;
        }
 
        NativeEntry::GetInstance()->SetRootNode(testNode);

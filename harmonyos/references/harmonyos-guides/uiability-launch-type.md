@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-lau
 title: UIAbility组件启动模式
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > UIAbility组件 > UIAbility组件启动模式
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:17+08:00
+scraped_at: 2026-10-31T07:31:35+08:00
 doc_updated_at: 2026-10-21
-content_hash: sha256:ef13a06dc8e6f0faec794771526fcb79ac476ae3219e96672b744f9d291ee504
+content_hash: sha256:3941d2d9984dd275448a8b24fff2912f01669246593fe4e42addf80d221126b2
 ---
 
 [UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md)的启动模式是指UIAbility实例在启动时的不同呈现状态。针对不同的业务场景，系统提供了三种启动模式：
@@ -26,7 +26,7 @@ singleton启动模式为单实例模式，也是默认情况下的启动模式�
 
 **图1** 单实例模式演示效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/oGyxUIbaR9y5DtT5bW96ZA/zh-cn_image_0000002774063380.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/kRhLsekkSbirMrlQu7ZZFg/zh-cn_image_0000002806107591.gif)
 
 **说明** 
 
@@ -56,7 +56,7 @@ multiton启动模式为多实例模式，每次调用[startAbility()](../harmony
 
 **图2** 多实例模式演示效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/qIOZoULCQwOFmOThyCT0ww/zh-cn_image_0000002773903404.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/lcYGY_7iSNqJpuUi5WOOnA/zh-cn_image_0000002776907972.gif)
 
 multiton启动模式的开发使用，在[module.json5配置文件](module-configuration-file.md)中的launchType字段配置为multiton即可。
 
@@ -82,7 +82,7 @@ specified启动模式为指定实例模式，针对一些特殊场景使用（�
 
 **图3** 指定实例启动模式原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/-WKYV-uFRvqIP9bg7gyRrw/zh-cn_image_0000002803263189.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/qg8O4VwPR_G_imkaKbZbNA/zh-cn_image_0000002776747986.png)
 
 假设应用有两个[UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md)实例，即EntryAbility和SpecifiedAbility。EntryAbility以specified模式启动SpecifiedAbility。基本原理如下：
 
@@ -94,7 +94,7 @@ specified启动模式为指定实例模式，针对一些特殊场景使用（�
 
 **图4** 指定实例模式演示效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/ALfQcy-1RNO0r5isRHmBzQ/zh-cn_image_0000002803223097.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/E-cH_TsyT5-tp731hlzTRQ/zh-cn_image_0000002806027703.gif)
 
 1. 在SpecifiedAbility中，需要将[module.json5配置文件](module-configuration-file.md)的launchType字段配置为specified。
 

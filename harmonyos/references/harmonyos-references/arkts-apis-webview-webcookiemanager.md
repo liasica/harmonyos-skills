@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (WebCookieManager)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (WebCookieManager)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:18+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:466bfb8951852314678080292ea095839ee6f432ee5075b211b7dc4382f85893
+scraped_at: 2026-10-31T07:36:07+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:c6a42b7bc0a073e54f47f515beb4a193f5225cefbd557eec3e3fc10a3d2d6bbf
 ---
 
 WebCookieManager是Web组件的cookie管理器，提供对Web组件中cookie的全局管理能力。开发者通过该类可以实现cookie的获取、设置、保存、清除以及权限控制等操作。该类的所有方法均为静态方法，应用中的所有Web组件共享一个WebCookieManager实例。cookie的格式遵循[RFC6265](https://www.rfc-editor.org/info/rfc6265/)标准。
@@ -736,7 +736,7 @@ struct WebComponent {
                 console.info('configCookie success!');
               })
               .catch((error: BusinessError) => {
-                console.info('error: ' + JSON.stringify(error));
+                console.error('error: ' + JSON.stringify(error));
               })
           } catch (error) {
             console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
@@ -812,7 +812,7 @@ struct WebComponent {
                 console.info('configCookie success!');
               })
               .catch((error: BusinessError) => {
-                console.info('error: ' + JSON.stringify(error));
+                console.error('error: ' + JSON.stringify(error));
               })
           } catch (error) {
             console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
@@ -830,12 +830,12 @@ static saveCookieSync(): void
 
 将当前可通过fetchCookie获取到的所有需要持久化的cookies同步保存到磁盘中。
 
-**系统能力：** SystemCapability.Web.Webview.Core
-
 **说明** 
 
 * saveCookieSync用于强制将需要持久化的cookies写入磁盘。PC/2in1和Tablet设备不会持久化session cookies，即使调用saveCookieSync，也不会将session cookies写入磁盘。
 * saveCookieSync将阻塞调用者直到操作完成，期间可能会执行I/O操作。
+
+**系统能力：** SystemCapability.Web.Webview.Core
 
 **示例：**
 

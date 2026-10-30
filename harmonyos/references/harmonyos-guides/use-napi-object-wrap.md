@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-obje
 title: Native与ArkTS对象绑定
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景 > Native与ArkTS对象绑定
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:46+08:00
-doc_updated_at: 2026-08-21
-content_hash: sha256:da86218fdc44a1cd16da07a637f225a6e0df8a52dc6bc717ac20a7a5a9e26720
+scraped_at: 2026-10-31T07:33:42+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:d8364ff9a7a332cc955a7aa3065ba1b905de078ccdff8d6c61846d37c448d4d7
 ---
 
 ## 场景介绍
@@ -84,7 +84,7 @@ content_hash: sha256:da86218fdc44a1cd16da07a637f225a6e0df8a52dc6bc717ac20a7a5a9e
    {
        napi_status status = napi_delete_reference(env_, wrapper_);
        if (status != napi_ok) {
-           OH_LOG_INFO(LOG_APP, "Failed to delete reference, return code: %{public}d", status);
+           OH_LOG_ERROR(LOG_APP, "Failed to delete reference, return code: %{public}d", status);
        }
    }
 

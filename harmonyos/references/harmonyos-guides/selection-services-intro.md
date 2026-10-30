@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/selection-ser
 title: 划词服务概述
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 划词服务 > 划词服务概述
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:04+08:00
+scraped_at: 2026-10-31T07:32:25+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:a75cc82575b86507d2485f913c412821a182d4098e9dcbc82adcf9e7c37f7909
+content_hash: sha256:35d921a0279df43598c6f5851703e9ee077aa6e0ee54c4fd856ddcae0328b028
 ---
 
 从API version 24开始，新增划词服务，该服务具有全局获取用户选中文本的能力。开发者可调用该服务提供的接口，实现划词弹窗功能。
@@ -28,7 +28,7 @@ content_hash: sha256:a75cc82575b86507d2485f913c412821a182d4098e9dcbc82adcf9e7c37
 
 **划词服务**：划词服务被拉起时，会根据系统参数中的值，拉起用户在智慧划词界面选择的划词应用。同时，划词服务还会监听划词触发方式等参数变化，确保配置可实时生效。此外，划词服务会注册对多模输入模块的事件监听，实时捕获用户的键盘、鼠标、触控板输入事件，并基于预设规则驱动状态机，精确识别划词行为。一旦状态机判定用户执行了划词操作，划词服务将通过多模输入模块向被划词应用注入CTRL+C事件，模拟系统复制操作，触发文本内容的复制流程。与此同时，划词服务会向剪贴板服务写入一个专用的划词标记及回调函数，用于后续内容拦截与传递。被划词应用在接收到CTRL+C事件后，会执行标准的复制逻辑，将用户选中的内容写入系统剪贴板。剪贴板服务在收到该内容后，首先校验是否存在划词标记。若标记有效，则不会将内容写入公共剪贴板，而是将其中的文本内容直接传递给划词服务，并立即清除标记。最终，划词服务将获取到的文本内容转发至当前的划词应用，由划词应用完成后续处理（如翻译、摘要、扩写等），并创建与显示自定义面板。对应下图序号4到13。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/OD5biOewTECGNLZk1l9pGQ/zh-cn_image_0000002803264545.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/6gj8p0yaSxufw2a7tgonPA/zh-cn_image_0000002806108947.png)
 
 ## 能力范围
 

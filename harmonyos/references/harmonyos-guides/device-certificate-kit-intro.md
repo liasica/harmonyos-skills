@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device-certif
 title: Device Certificate Kit简介
 breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > Device Certificate Kit简介
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:52+08:00
-doc_updated_at: 2026-06-12
-content_hash: sha256:e6851e4a453ab7a8a4a14c1896b30ed215543f93b4d31ba840c6b21ca42f6a82
+scraped_at: 2026-10-31T07:32:13+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:b0a1f5cadff88d9836b88ef89cc6895b1785c7f9ebf93a5f59d5a3e37b9ce571
 ---
 
 使用Device Certificate Kit（设备证书服务）来对应用的数字证书进行管理和校验。总体而言，Device Certificate Kit支持如下两个特性：
@@ -31,7 +31,7 @@ content_hash: sha256:e6851e4a453ab7a8a4a14c1896b30ed215543f93b4d31ba840c6b21ca42
 
 证书管理服务在对数字证书凭据的安装和使用时，依赖[Universal Keystore Kit](huks-overview.md)的密钥存储和管理能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/jTRm5dpvQGGmZiUgYorlPA/zh-cn_image_0000002803264443.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/I1naGkOySVyo7L7p-MOhoQ/zh-cn_image_0000002806108845.png)
 
 **说明** 
 
@@ -47,4 +47,4 @@ Device Certificate Kit不具备生成或签发证书及证书吊销列表的能�
 
 本Kit支持模拟器。
 
-模拟器与真机存在通用差异，详情请参见详情请参见[模拟器与真机的差异](ide-emulator-specification.md)。
+模拟器与真机存在通用差异，详情请参见[模拟器与真机的差异](ide-emulator-specification.md)。

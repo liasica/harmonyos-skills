@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-bas
 title: 事件
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS 组件 > Web > 事件
 category: harmonyos-references
-scraped_at: 2026-10-11T07:25:20+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:33ad41504aa309c732582f63cd02973b73d50285e368dd21875e817da86e689f
+scraped_at: 2026-10-31T07:36:09+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:e556289c8428edc6592d0887a0dadc32101259dd07ed44e73da826f31d769501
 ---
 
 Web组件事件模块是ArkWeb框架中Web组件的事件回调接口集合，为开发者提供监听和响应Web组件各类运行时事件的机制。这些事件覆盖了Web页面加载的完整生命周期（从加载开始到完成）、JavaScript对话框交互、资源请求拦截与错误处理、安全认证（HTTP Auth、SSL错误、客户端证书）、权限管理、渲染进程状态、UI交互（上下文菜单、滚动、缩放、全屏）、窗口管理、同层渲染、性能度量以及多媒体设备状态等场景。开发者通过注册对应的事件回调，可以在Web组件运行过程中获取关键信息、拦截或自定义处理逻辑，实现应用对Web内容的精细管控和用户体验优化。
@@ -1675,7 +1675,7 @@ struct Index {
           event.handler.confirm(this.uri);
         })
         .onSslErrorEventReceive(e => {
-          console.info(`onSslErrorEventReceive->${e.error.toString()}`);
+          console.error(`onSslErrorEventReceive->${e.error.toString()}`);
         })
         .onErrorReceive((event) => {
           if (event) {
@@ -1977,7 +1977,7 @@ struct Index {
               event.handler.confirm(PinVerifyResult.PIN_VERIFICATION_SUCCESS);
             }).catch((err: BusinessError) => {
             // 通知webPIN码认证失败
-            console.info(`onVerifyPin fail`);
+            console.error(`onVerifyPin fail`);
             event.handler.confirm(PinVerifyResult.PIN_VERIFICATION_FAILED);
           })
         })

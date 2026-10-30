@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 焦点轴事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 基础输入事件 > 焦点轴事件
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:31+08:00
+scraped_at: 2026-10-31T07:35:05+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:02ee11b9abe7ff2b06221ba078f5b1f6fb324615a1f709d61c1626845bdb9d03
+content_hash: sha256:da18cf98c8bcd9d0ae045a6cd69abfa30fb17602f9556de68023d230307c3354
 ---
 
 焦点轴事件是指在与游戏手柄交互时，通过十字按键或者操纵杆上报的轴事件，此轴事件通过获得焦点的组件分发并回调给应用。若组件默认可获焦，如Button，则不需要额外设置属性。若组件在默认情况下不可获焦，如Text和Image，可以通过将[focusable](ts-universal-attributes-focus.md#focusable)属性设置为true来启用焦点轴事件。
@@ -98,4 +98,4 @@ struct FocusAxisEventExample {
 
 游戏手柄操纵杆移动时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/5t6HrHBgR1uECK0VKbxGPw/zh-cn_image_0000002773905988.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/IUi7hSU7QjGHUI-P2J1G0w/zh-cn_image_0000002806110173.png)

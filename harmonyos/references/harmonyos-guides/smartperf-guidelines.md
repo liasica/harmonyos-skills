@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/smartperf-gui
 title: HiSmartPerf Device性能使用指导
 breadcrumb: 指南 > 应用测试 > 专项测试 > 命令行工具 > HiSmartPerf Device性能使用指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:20+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4e4f3a522ae07d9a000b7c33022e7fa477befab60260e75cdf1247e53f6528f0
+scraped_at: 2026-10-31T07:34:08+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:033edad9d789b6f518380d838400fab7a5a37b0f30c7916afa4c1d6d40535ec9
 ---
 
 ## 工具简介
@@ -25,7 +25,7 @@ HiSmartPerf Device是一款性能功耗测试工具，支持监测性能、功�
 
 下图展示了HiSmartPerf Device工具的主要功能组成。Device hap端设置好采集项和采集参数后，启动应用，FPS、RAM、Trace等指标通过消息发送给Device daemon端，Device daemon端进行数据采集、数据持久化和数据分析，将生成的报告回传给Device hap端，Device hap端进行可视化显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/5uCnfpSRTAuaWZ5VLuZWRQ/zh-cn_image_0000002731520237.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/mdk79_w-RSmOPGMhgbxI9w/zh-cn_image_0000002806111839.png)
 
 ## 约束与限制
 
@@ -80,40 +80,40 @@ HiSmartPerf Device是一款性能功耗测试工具，支持监测性能、功�
     Usage: SP_daemon [options] [arguments]
 
     options:
-    -N              set the collection times(default value is 0) range[1,2147483647], for example: -N 10
+    -N              set the collection times, range[1,2147483647], for example: -N 10
     -PKG            set package name, must add, for example: -PKG ohos.samples.ecg
     -PID            set process pid, must add, for example: -PID 3568
-    -threads        get threads, must add -PID or -PKG for example:
+    -threads        get threads, must add -PID or -PKG, for example:
                     -threads -PID 3568 or -threads -PKG ohos.samples.ecg
-    -c              get device CPU frequency and CPU usage, process CPU usage and CPU load ..
-    -ci             get cpu instructions and cycles
+    -c              get device cpu frequency and cpu usage, process cpu usage and cpu load ..
+    -ci             get cpu instructions and cycles(only supported for root user)
     -g              get device GPU frequency and GPU load
-    -f              get app refresh fps(frames per second) and fps jitters and refreshrate
+    -f              get app refresh fps (frames per second) and fps jitters and refreshrate
     -profilerfps    get refresh fps and timestamp
-    -sections       set collection time period(using with profilerfps)
-    -t              get remaining battery power and temperature..
-    -p              get battery power consumption and voltage(Not supported by some devices)
+    -sections       set collection time period (using with profilerfps)
+    -t              get the temperature of the cpu and soc ...
+    -p              get battery power consumption and voltage (Not supported by some devices)
     -print          start mode print log
     -r              get process memory and total memory
     -snapshot       get screen capture
     -net            get uplink and downlink traffic
     -start          collection start command
     -stop           collection stop command
-    -VIEW           set layler, for example: -VIEW DisplayNode
-    -OUT            set csv output path.
+    -VIEW           set layer, for example: -VIEW ScreenNode
+    -OUT            set csv output path
     -d              get device DDR information
     -screen         get screen resolution
     -deviceinfo     get device information
     -server         start a process to listen to the socket message of the start and stop commands
     -clear          clear the process ID
-    -ohtestfps      used by the vilidator to obtain the fps, the collection times can be set
-    -recordcapacity get the battery level difference
+    -ohtestfps      used by the validator to obtain the fps, the collection times can be set
+    -recordcapacity get current battery level
     --version       get version
     --help          get help
     -editor         scenario-based collection identifier, parameter configuration items can be added later
     responseTime   get the page response delay after an application is operated
     completeTime   get the page completion delay after an application is operated
-    fpsohtest      used by the vilidator to obtain the fps
+    fpsohtest      used by the validator to obtain the fps
     example1:
     SP_daemon -N 20 -c -g -t -p -r -net -snapshot -d
     SP_daemon -N 20 -PKG ohos.samples.ecg -c -g -t -p -f -r -net -snapshot -d -nav -gc
@@ -360,7 +360,7 @@ HiSmartPerf Device是一款性能功耗测试工具，支持监测性能、功�
 
   order:0 timestamp=1741415257059
   order:1 arktsHeapPss=44835
-  order:2 childCarktsHeapPss=NA
+  order:2 childArktsHeapPss=NA
   order:3 childGpuPss=NA
   order:4 childGraphicPss=NA
   order:5 childHeapAlloc=NA
@@ -407,7 +407,7 @@ HiSmartPerf Device是一款性能功耗测试工具，支持监测性能、功�
 
   order:0 timestamp=1741415293198
   order:1 arktsHeapPss=45011
-  order:2 childCarktsHeapPss=NA
+  order:2 childArktsHeapPss=NA
   order:3 childGpuPss=NA
   order:4 childGraphicPss=NA
   order:5 childHeapAlloc=NA
@@ -450,19 +450,19 @@ HiSmartPerf Device是一款性能功耗测试工具，支持监测性能、功�
 * 采集1整机cpu指令数。
 
   ```shell
-  $ SP_daemon -N 1 -ci
+  # SP_daemon -N 1 -ci
 
   order:0 hw-cpu-cycles=2168073451.00000
   order:1 hw-instructions=833680950.00000
   order:2 timestamp=1705041491090
 
   command exec finished!
-  $
+  #
   ```
 * 采集1整机和指定应用cpu指令数。
 
   ```shell
-  $ SP_daemon -N 1 -pkg ohos.samples.ecg -ci
+  # SP_daemon -N 1 -pkg ohos.samples.ecg -ci
 
   order:0 cycles per instruction=2.617221
   order:1 hw-cpu-cycles=1923046916.000000
@@ -470,7 +470,7 @@ HiSmartPerf Device是一款性能功耗测试工具，支持监测性能、功�
   order:3 timestamp=1501838024624
 
   command exec finished!
-  $
+  #
   ```
 
   **说明** 
@@ -557,7 +557,7 @@ HiSmartPerf Device是一款性能功耗测试工具，支持监测性能、功�
 * 采集10次指定图层帧率。
 
   ```shell
-  $ SP_daemon -N 10 -VIEW DisplayNode -f
+  $ SP_daemon -N 10 -VIEW ScreenNode -f
 
   order:0 timestamp=1705306822850
   order:1 fps=15
@@ -576,9 +576,9 @@ HiSmartPerf Device是一款性能功耗测试工具，支持监测性能、功�
 
   **说明** 
 
-  + DisplayNode 是指定的图层名。
+  + ScreenNode 是指定的图层名。
   + 使用该命令采集时，需在传入的图层上操作页面。
-  + 该命令不能与指定应用帧率一起采集（SP\_daemon -N 20 -PKG ohos.samples.ecg -f 或 SP\_daemon -N 20 -VIEW DisplayNode -f）。
+  + 该命令不能与指定应用帧率一起采集（SP\_daemon -N 20 -PKG ohos.samples.ecg -f 或 SP\_daemon -N 20 -VIEW ScreenNode -f）。
 * 采集1次DDR信息。
 
   ```shell
@@ -914,11 +914,11 @@ HiSmartPerf Device是一款性能功耗测试工具，支持监测性能、功�
 
   **说明** 
 
-  + 开始采集示例1（采整机cpu、gpu、温度、功耗、fps、内存信息、DDR信息、网络速率、屏幕截图）：SP\_daemon -start -c -g -t -p -r -d -net -snapshot。
-  + 开始采集示例2（采整机和进程cpu负载、gpu、温度、功耗、fps、内存信息、DDR信息、网络速率、屏幕截图、线程数、文件描述符）：SP\_daemon -start -PKG ohos.samples.ecg -c -g -t -p -f -r -d -net -snapshot -threads。
-  + 开始采集示例3（采整机和进程cpu负载、gpu、温度、功耗、fps、内存信息、DDR信息、网络速率、屏幕截图、线程数、文件描述符）：SP\_daemon -start -PID 18847 -c -g -t -p -f -r -d -net -snapshot -threads。
-  + 开始采集示例4（采整机cpu、gpu、温度、功耗、fps、内存信息、DDR信息、网络速率、屏幕截图、线程数、文件描述符并且打印采集信息）：SP\_daemon -start -c -g -t -p -r -d -net -snapshot -threads -print。
-  + 开始采集示例5（采整机和进程cpu负载、gpu、温度、功耗、fps、内存信息、DDR信息、网络速率、屏幕截图、线程数、文件描述符并且打印采集信息）：SP\_daemon -start -PID 18847 -c -g -t -p -f -r -d -net -snapshot -threads -print。
+  + 开始采集示例1（采整机cpu、gpu、温度、功耗、内存信息、DDR信息、网络速率、屏幕截图）：SP\_daemon -start -c -g -t -p -r -d -net -snapshot。
+  + 开始采集示例2（采整机和进程cpu负载、gpu、温度、功耗、fps、内存信息、DDR信息、网络速率、屏幕截图、线程数）：SP\_daemon -start -PKG ohos.samples.ecg -c -g -t -p -f -r -d -net -snapshot -threads。
+  + 开始采集示例3（采整机和进程cpu负载、gpu、温度、功耗、fps、内存信息、DDR信息、网络速率、屏幕截图、线程数）：SP\_daemon -start -PID 18847 -c -g -t -p -f -r -d -net -snapshot -threads。
+  + 开始采集示例4（采整机cpu、gpu、温度、功耗、内存信息、DDR信息、网络速率、屏幕截图、线程数并且打印采集信息）：SP\_daemon -start -c -g -t -p -r -d -net -snapshot -threads -print。
+  + 开始采集示例5（采整机和进程cpu负载、gpu、温度、功耗、fps、内存信息、DDR信息、网络速率、屏幕截图、线程数并且打印采集信息）：SP\_daemon -start -PID 18847 -c -g -t -p -f -r -d -net -snapshot -threads -print。
   + 开始采集需和结束采集结合使用，先执行开始采集命令，执行完后操作设备中的应用，最后执行结束采集命令。
   + 在执行启停打印采集时，执行停止命令需重新打开命令框执行停止命令。
   + 结束采集，文件输出路径为：data/local/tmp/smartperf/1/t\_index\_info.csv。
@@ -976,8 +976,11 @@ HiSmartPerf Device是一款性能功耗测试工具，支持监测性能、功�
   | TotalcpusoftIrqUsage | CPU总软中断使用率。 | % |
   | TotalcpusystemUsage | CPU总系统/内核态使用率。 | % |
   | TotalcpuuserUsage | CPU总用户态使用率。 | % |
-  | gpuFrequency | 整机GPU的频率。 | % |
+  | gpuFrequency | 整机GPU的频率。 | 单位：Hz |
   | gpuLoad | 整机GPU的负载占比。 | % |
+  | hw-instructions | CPU已执行指令数。 | 单位：cycles |
+  | cycles per instruction | 每条指令所耗费的周期数。 | 单位：cycles/instruction |
+  | hw-cpu-cycles | CPU周期数。 | 单位：cycles |
   | currentNow | 当前读到的电流值。 | 单位：mA |
   | voltageNow | 当前读到的电压值。 | 单位：μV |
   | fps | 每秒帧数。 | 单位：fps |
@@ -999,35 +1002,35 @@ HiSmartPerf Device是一款性能功耗测试工具，支持监测性能、功�
   | memFree | 整机空闲内存。 | 单位：KB |
   | memTotal | 整机总内存。 | 单位：KB |
   | pss | 进程实际使用内存。 | 单位：KB |
-  | Childpss | 子进程实际使用内存。 | 单位：KB |
+  | childPss | 子进程实际使用内存。 | 单位：KB |
   | sharedClean | 进程共享的未改写页面。 | 单位：KB |
-  | ChildsharedClean | 子进程共享的未改写页面。 | 单位：KB |
+  | childSharedClean | 子进程共享的未改写页面。 | 单位：KB |
   | sharedDirty | 进程共享的已改写页面。 | 单位：KB |
-  | ChildsharedDirty | 子进程共享的已改写页面。 | 单位：KB |
+  | childSharedDirty | 子进程共享的已改写页面。 | 单位：KB |
   | privateClean | 进程私有的未改写页面。 | 单位：KB |
   | ChildprivateClean | 子进程私有的未改写页面。 | 单位：KB |
   | privateDirty | 进程私有的已改写页面。 | 单位：KB |
-  | ChildprivateDirty | 子进程私有的已改写页面。 | 单位：KB |
-  | swapTotal | 进程总的交换内存。 | 单位：KB |
-  | ChildswapTotal | 子进程总的交换内存。 | 单位：KB |
+  | childPrivateDirty | 子进程私有的已改写页面。 | 单位：KB |
+  | swap | 进程总的交换内存。 | 单位：KB |
+  | childSwap | 子进程总的交换内存。 | 单位：KB |
   | swapPss | 进程交换的pss内存。 | 单位：KB |
-  | ChildswapPss | 子进程交换的pss内存。 | 单位：KB |
-  | HeapSize | 进程堆内存大小。 | 单位：KB |
-  | ChildHeapSize | 子进程堆内存大小。 | 单位：KB |
-  | HeapAlloc | 进程可分配的堆内存大小。 | 单位：KB |
-  | ChildHeapAlloc | 子进程可分配的堆内存大小。 | 单位：KB |
-  | HeapFree | 进程剩余的堆内存大小。 | 单位：KB |
-  | ChildHeapFree | 子进程剩余的堆内存大小。 | 单位：KB |
+  | childSwapPss | 子进程交换的pss内存。 | 单位：KB |
+  | heapSize | 进程堆内存大小。 | 单位：KB |
+  | childHeapSize | 子进程堆内存大小。 | 单位：KB |
+  | heapAlloc | 进程可分配的堆内存大小。 | 单位：KB |
+  | childHeapAlloc | 子进程可分配的堆内存大小。 | 单位：KB |
+  | heapFree | 进程剩余的堆内存大小。 | 单位：KB |
+  | childHeapFree | 子进程剩余的堆内存大小。 | 单位：KB |
   | gpuPss | 进程使用的gpu内存大小。 | 单位：KB |
-  | ChildgpuPss | 子进程使用的gpu内存大小。 | 单位：KB |
+  | childGpuPss | 子进程使用的gpu内存大小。 | 单位：KB |
   | graphicPss | 进程使用的图形内存大小。 | 单位：KB |
-  | ChildgraphicPss | 子进程使用的图形内存大小。 | 单位：KB |
+  | childGraphicPss | 子进程使用的图形内存大小。 | 单位：KB |
   | arktsHeapPss | 进程使用的arkts内存大小。 | 单位：KB |
-  | ChildarktsHeapPss | 子进程使用的arkts内存大小。 | 单位：KB |
+  | childArktsHeapPss | 子进程使用的arkts内存大小。 | 单位：KB |
   | nativeHeapPss | 进程使用的native内存大小。 | 单位：KB |
-  | ChildnativeHeapPss | 子进程使用的native内存大小。 | 单位：KB |
+  | childNativeHeapPss | 子进程使用的native内存大小。 | 单位：KB |
   | stackPss | 进程使用的栈内存大小。 | 单位：KB |
-  | ChildstackPss | 子进程使用的栈内存大小。 | 单位：KB |
+  | childStackPss | 子进程使用的栈内存大小。 | 单位：KB |
   | timeStamp | 当前时间戳。 | 对应采集时间 |
 
 ### 场景化采集

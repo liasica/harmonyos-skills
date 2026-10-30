@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bytecode-obfu
 title: ArkGuard字节码混淆常见问题
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard字节码混淆工具 > ArkGuard字节码混淆常见问题
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:25+08:00
+scraped_at: 2026-10-31T07:31:44+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:72ce824c86ddc097c31adfcbeac0ef5eae15064c2ca7ed21813cd8be53255fcc
+content_hash: sha256:0773b2cbb75e8698e086bff926bc2e5df11825bd21bbbe2bb0b975416af988ae
 ---
 
 ## 字节码混淆与源码混淆差异
@@ -25,7 +25,7 @@ content_hash: sha256:72ce824c86ddc097c31adfcbeac0ef5eae15064c2ca7ed21813cd8be532
 
 **目录差异**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/claaTFetSjC0GRH-J2AVfA/zh-cn_image_0000002803223189.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/bRXVO2EgQQ-1USEN7Wxlrg/zh-cn_image_0000002774063472.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/ZKiorE3pSYelvULy1EBejQ/zh-cn_image_0000002806027793.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/o09qTGKuTkKCrxteGwNopg/zh-cn_image_0000002806107683.png)
 
 字节码混淆后，obfuscation目录中多了obf、origin文件夹和config.json文件，具体详见[混淆效果](bytecode-obfuscation-guide.md#查看混淆效果)。
 
@@ -221,7 +221,7 @@ callargs2 0x2e, v2, v3
 * 混淆后的文件目录：build/default/[...]/release/obfuscation/obf。
 * 混淆名称映射表及系统API白名单目录：build/default/[...]/release/obfuscation。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/A6NBhmQERjqWVNazT6aolA/zh-cn_image_0000002773903494.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/3i9NnxbpT5eeyEj1LATXJA/zh-cn_image_0000002776908062.png)
 
 * 名称映射表文件：nameCache.json，该文件记录了字节码名称混淆的映射关系。
 * 系统API白名单文件：systemApiCache.json，该文件记录了SDK中的接口与属性名称，与其重名的源码不会被混淆。
@@ -514,7 +514,7 @@ city1
 
 HSP需要将给其他模块用的方法配置到白名单中。因为主模块里也需要配置相同的白名单，所以推荐将HSP配置了白名单的混淆文件（假设名称为hsp-white-list.txt）添加到依赖它的模块的混淆配置项里，即下图files字段里。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/cSx2octOSQikCwdmnPAT4Q/zh-cn_image_0000002773903496.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/2UB2r9WeQGuJsXy2er9x8w/zh-cn_image_0000002776908064.png)
 
 **案例一：动态导入某个类，类定义的地方被混淆，导入类名时却没有混淆，导致报错**
 
@@ -706,7 +706,7 @@ person["m"] = 20;
 
 工程的目录结构如下图所示，模块library1的外层还有目录"directory"，开启文件名混淆后，"directory" 被混淆为f12，导致路径找不到。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/UvFg7AdgQYql8MN1Hvw6uw/zh-cn_image_0000002803263281.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/AYBg9bIjQjqz-j8Eu6fVyw/zh-cn_image_0000002776748078.png)
 
 **解决方案**：
 

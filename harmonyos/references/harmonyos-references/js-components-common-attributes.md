@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 通用属性
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 通用属性
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:55+08:00
+scraped_at: 2026-10-31T07:35:37+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:e3c5ee7977664c5be345806bac63857f968cb2a0fa959c8a7176fbc6ad030a9a
+content_hash: sha256:5d144470133093ecb5bbf040ce5c665df1f210fd1f35fcf017d63cf675f1b43a
 ---
 
 **说明** 
@@ -110,7 +110,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/iok3dW5oSCG4zAiaxyiCkQ/zh-cn_image_0000002803266539.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/1CWB_234QCGlTMIscSeljA/zh-cn_image_0000002776751338.gif)
 
 ### 示例2
 
@@ -148,4 +148,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/p-x9gTe-Rl-eOn1PYwlshA/zh-cn_image_0000002803226445.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/eCPYpJ7KS-6Rw8PXG6gWhQ/zh-cn_image_0000002806031055.png)

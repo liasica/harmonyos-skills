@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/param-tool
 title: param工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > param工具
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:12+08:00
+scraped_at: 2026-10-31T07:32:34+08:00
 doc_updated_at: 2026-06-12
-content_hash: sha256:8e3e6ad06636e4ad8fa24455e451c8ac9ea70796402d17c0c17c20fc89a50956
+content_hash: sha256:a241f1f05adc9c582a4457b82db096a59fb38e98a268b5ac0829c008b6f2b0a0
 ---
 
 param是为开发人员提供用于操作系统参数的工具，该工具只支持标准系统。
@@ -44,11 +44,11 @@ param是为开发人员提供用于操作系统参数的工具，该工具只支
 
   **示例**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/oio1sboXQQWU_IeTnpuoNQ/zh-cn_image_0000002773904842.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/6riGY_JfQ9Cyh64ENIfMkQ/zh-cn_image_0000002806029137.png)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/KguW8jcIRYOG8-Z4dX3CcA/zh-cn_image_0000002803264625.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/vEZIZbhLQZOk9IPrihL-vQ/zh-cn_image_0000002806109027.png)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/smwORT81STOISmnLuj65fg/zh-cn_image_0000002803224535.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/7LO4dS4PR92RUHHnDFQvAw/zh-cn_image_0000002776909408.png)
 
 ## 获取系统参数的值
 
@@ -60,7 +60,7 @@ param是为开发人员提供用于操作系统参数的工具，该工具只支
 
   **示例**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/EvLeByNsSt-KWJFUmAVQog/zh-cn_image_0000002774064816.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/E_yjAFncTcGr5qc3_TGwtA/zh-cn_image_0000002776749422.png)
 
 ## 设置系统参数的值
 
@@ -72,7 +72,7 @@ param是为开发人员提供用于操作系统参数的工具，该工具只支
 
   **示例**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/1Cb_3x0KRSi10xGPZ3V7cA/zh-cn_image_0000002773904844.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/uRIeQIRHTweNj9rL5PYpWA/zh-cn_image_0000002806029139.png)
 
 ## 等待系统参数值匹配
 
@@ -84,7 +84,7 @@ param是为开发人员提供用于操作系统参数的工具，该工具只支
 
   **示例**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/glQReq7qT5myy6yUkr1mDw/zh-cn_image_0000002803264627.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/BN0K8jldRVe7GQG-wUuIKw/zh-cn_image_0000002806109029.png)
 
 ## 保存persist(可持久化)参数
 
@@ -96,7 +96,7 @@ param是为开发人员提供用于操作系统参数的工具，该工具只支
 
   **示例**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/k9h-CeReSvKILRkSzeoRAg/zh-cn_image_0000002803224537.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/Ap_PK7TZRCWJer931EUiNQ/zh-cn_image_0000002776909410.png)
 
 ## 系统参数错误码说明
 

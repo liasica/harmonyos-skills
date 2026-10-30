@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-pr
 title: 删除应用内快捷方式
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用市场推荐 > 应用内快捷方式 > 删除应用内快捷方式
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:34+08:00
+scraped_at: 2026-10-31T07:32:56+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:0ed2e0724921a8104f0b1589c2ef9bfb33a8dcac618dbaafdd9b6537693e5216
+content_hash: sha256:e1a59c724a88557732d349e0841bb89fcd0a008d083b1102591a964634d1b438
 ---
 
 **说明** 
@@ -18,7 +18,7 @@ content_hash: sha256:0ed2e0724921a8104f0b1589c2ef9bfb33a8dcac618dbaafdd9b6537693
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/Vjgd93l7SWGhVUkKD0v6nw/zh-cn_image_0000002803264957.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/zW-hbvFYReief2mMEF1jtw/zh-cn_image_0000002806109359.png)
 
 1. 用户需要删除桌面快捷方式。
 2. 应用调用[removePinShortcut](../harmonyos-references/store-productviewmanager.md#productviewmanagerremovepinshortcut)接口删除快捷方式。
@@ -46,19 +46,19 @@ content_hash: sha256:0ed2e0724921a8104f0b1589c2ef9bfb33a8dcac618dbaafdd9b6537693
 
 1. 登录AppGallery Connect，选择“开发与服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/Tp2Fpa_uQruB1GhdgGlmVQ/zh-cn_image_0000002774065146.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/OVf-w4b5Q8ezPVqDlV5NOA/zh-cn_image_0000002776749750.png)
 2. 在项目列表中找到您的项目，并点击选择需申请静默删除桌面快捷方式能力的应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/6iiVKh0RSgCYjIoeNDyJsg/zh-cn_image_0000002803224867.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/5dAYo3EbSsm6ujOkKKSXHg/zh-cn_image_0000002776909740.png)
 3. 在“开放能力管理”页面，点击静默删除桌面快捷方式对应的“申请”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/OLvfenSnTDitUbYz0otycA/zh-cn_image_0000002774065150.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/jktDt4GlTmS-EzYf4ltNBA/zh-cn_image_0000002776749754.png)
 4. 在“新建业务申请”窗口填写申请信息，然后点击“提交”。申请原因：必填，包括应用介绍、使用场景，不超过256个字符。上传附件：必填，提供应用的使用场景录屏，录屏中需要体现应用自己的弹框以及在弹框中显示提示用户删除桌面快捷方式，仅可上传1个附件，大小不超过500MB。支持文本、表格、图片、视频、压缩包格式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/B6Y5J_MYQkuzghvfRatxLQ/zh-cn_image_0000002773905178.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/rwOZK8M0SfeepuYUBSpkgw/zh-cn_image_0000002806029471.png)
 5. 返回“开放能力管理”页面，原“申请”按钮变为“申请中”，1-3个工作日反馈申请结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/zHLAxZKrSHqFoXuLnixULA/zh-cn_image_0000002803264959.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/iYPjl7XRS1evu6IHli87Uw/zh-cn_image_0000002806109361.png)
 6. 申请审批通过后，互动中心会发送通知给您，同时“申请中”按钮会变为置灰显示的“申请”。
 7. 能力申请通过后，勾选删除桌面快捷方式的能力开关，点击右上角“保存”。至此，您的应用已成功接入开放能力。
 

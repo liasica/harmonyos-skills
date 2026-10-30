@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-m
 title: Interface (Marker)
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (Marker)
 category: harmonyos-references
-scraped_at: 2026-10-29T08:02:44+08:00
+scraped_at: 2026-10-31T07:39:04+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:794ef858a6663b986a306fed1ae1dc867227f3125f20abb5dc903cad71315653
+content_hash: sha256:df549083d95dea96f9ca1c866bebedc532daa58865a393e6bee7b22cb159cf04
 ---
 
 ## 导入模块
@@ -389,7 +389,7 @@ setMarkerAnchor(anchorU: number, anchorV: number): void
 
 设置标记的锚点位置。锚点是标记图标接触地图平面的点，图标的左顶点为（0, 0）点，右顶点为（1, 0）点，左底点为（0, 1）点，右底点为（1, 1）点。例如，在标记X（0.5, 0.3）处的锚点坐标如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/KM6MeQUvTsCuwHe5e-CGIQ/zh-cn_image_0000002803227183.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/0dxhTRxASIGOS5_m9hBk5w/zh-cn_image_0000002806031865.png)
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 

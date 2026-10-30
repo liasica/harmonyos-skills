@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fast-rect-par
 title: 使用RectPartition求解矩形划分
 breadcrumb: 指南 > 系统 > 基础功能 > FAST Kit（算法加速服务） > 使用RectPartition求解矩形划分
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:05+08:00
+scraped_at: 2026-10-31T07:32:26+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:cb9396461d64c550b7e6ee8ed35d62651ab94de2f480b9a6baaa32130acf734e
+content_hash: sha256:e276248ac6983e68fe2d3252fc47128be6cf499a6f27a9d53d2aeb9f96a9204f
 ---
 
 矩形划分求解器（Rectangular Partition Solver）用于解决矩形划分问题。其接收若干个彼此不相交的矩形作为输入（主要关注这些矩形共同定义的区域的并集），计算出覆盖相同区域的矩形划分方案，并使输出的矩形数量尽可能少（但不保证最优）。形如下方示意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/_7wao_eeTUGqn1AmqtAEPQ/zh-cn_image_0000002774064738.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/SjzNCv8FTyKcpruFpPrkyA/zh-cn_image_0000002776749344.png)
 
-其相关定义如下：一个矩形![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/aRXQI1LSRc6Lp70NTHnuTA/zh-cn_image_0000002773904766.png)为二维网格内横纵坐标满足![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/Vu2aMS1PRVOrl43IIQOhew/zh-cn_image_0000002803264549.png)的所有单元矩形构成的集合（坐标系说明：X轴从左到右递增，Y轴从上到下递增）。两个矩形相交，当且仅当它们共享至少一个公共的单元矩形。
+其相关定义如下：一个矩形![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/YGI3O0kpT5CknWCG4xNvmw/zh-cn_image_0000002806029061.png)为二维网格内横纵坐标满足![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/tNtK7swzSTiCDh5-S7H3-Q/zh-cn_image_0000002806108951.png)的所有单元矩形构成的集合（坐标系说明：X轴从左到右递增，Y轴从上到下递增）。两个矩形相交，当且仅当它们共享至少一个公共的单元矩形。
 
 在矩形划分问题（Rectangular Partition Problem）中，给定N个彼此不相交的矩形，要求输出M个矩形，使其满足如下几点：
 
@@ -20,7 +20,7 @@ content_hash: sha256:cb9396461d64c550b7e6ee8ed35d62651ab94de2f480b9a6baaa32130ac
 * 输出的M个矩形的并集与输入的N个矩形的并集完全相同。
 * 输出的矩形数量M尽可能少。
 
-矩形划分求解器运行的时间复杂度为 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/gnmAMtVnTUCJ53RGzOsoRw/zh-cn_image_0000002803224459.png)，可以高效处理大规模输入数据。在网格数据处理和空间几何计算等优化场景中，可以使用矩形划分求解器提升区域处理效率，减少冗余空间。
+矩形划分求解器运行的时间复杂度为 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/xhUpXsSRRsmsq50J4TBYWA/zh-cn_image_0000002776909332.png)，可以高效处理大规模输入数据。在网格数据处理和空间几何计算等优化场景中，可以使用矩形划分求解器提升区域处理效率，减少冗余空间。
 
 ## 接口说明
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 创建网格 (Grid/GridItem)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 列表与网格 > 创建网格 (Grid/GridItem)
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:30+08:00
+scraped_at: 2026-10-31T07:31:49+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:de28dcfc6e8721f82073706320b946420aa1678d78ab875bf5f5fa9b63ac6a09
+content_hash: sha256:29d42569ff89ec0196741a3c387eed040e50b10087c9fe52939da3cd25103c6c
 ---
 
 ## 概述
@@ -24,7 +24,7 @@ Grid组件为网格容器，其中容器内各条目对应一个GridItem组件�
 
 **图1** Grid与GridItem组件关系
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/iWTQNcC6TtCyAiGw1iGMZA/zh-cn_image_0000002774063872.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/SXAAkhfFTEK1Ju-OKcPuDw/zh-cn_image_0000002776908464.png)
 
 **说明** 
 
@@ -34,7 +34,7 @@ Grid的子组件必须是GridItem组件。
 
 **图2** 网格布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/Nhck5Q5vQOaE0iyt1oi6nA/zh-cn_image_0000002803223571.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/-DAgqQ3tSzuKBHZat1EqNA/zh-cn_image_0000002806028173.png)
 
 如果Grid组件设置了宽高属性，则其尺寸为设置值。如果没有设置宽高属性，Grid组件的尺寸默认适应其父组件的尺寸。
 
@@ -54,7 +54,7 @@ rowsTemplate和columnsTemplate属性值是一个由多个空格和'数字+fr'间
 
 **图3** 行列数量占比示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/LmRy428iRvinnSk4jOpXtg/zh-cn_image_0000002773903896.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/32upIrozSciO1LXR4zyLQA/zh-cn_image_0000002776748478.png)
 
 如上图所示，构建的是一个三行三列的网格布局，其在垂直方向上分为三等份，每行占一份；在水平方向上分为四等份，第一列占一份，第二列占两份，第三列占一份。
 
@@ -78,13 +78,13 @@ Grid() {
 
 **图4** 不均匀网格布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/xzigiWD9SHmoXW9ZjcPBow/zh-cn_image_0000002803263683.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/bLD51q_tRbesJr0i1Bp5tw/zh-cn_image_0000002806028195.png)
 
 例如计算器的按键布局就是常见的不均匀网格布局场景。如下图，计算器中的按键“0”和“=”，按键“0”横跨第一、二两列，按键“=”横跨第六、七两行。使用Grid构建的网格布局，其行列标号从0开始，依次编号。
 
 **图5** 计算器
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/YahKdYrhTlSxB49kQSa6kA/zh-cn_image_0000002803223593.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Jyl9sMEHSTeAr07EZu7NtQ/zh-cn_image_0000002806108085.png)
 
 在网格中，可以通过onGetRectByIndex返回的[rowStart,columnStart,rowSpan,columnSpan]来实现跨行跨列布局，其中rowStart和columnStart属性表示指定当前元素起始行号和起始列号，rowSpan和columnSpan属性表示指定当前元素的占用行数和占用列数。
 
@@ -118,7 +118,7 @@ Grid(undefined, this.layoutOptions) {
 
 **图6** 主轴方向示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/siqF3GS7QgK2YDV6bSFlGg/zh-cn_image_0000002774063874.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/NJTQ9s-ESraU222YE2GuTw/zh-cn_image_0000002776908466.png)
 
 当前layoutDirection设置为Row时，先从左到右排列，排满一行再排下一行。当前layoutDirection设置为Column时，先从上到下排列，排满一列再排下一列，如上图所示。此时，将maxCount属性设为3，表示主轴方向上最大显示的网格单元数量为3。
 
@@ -142,7 +142,7 @@ Grid() {
 
 **图7** 通用办公服务
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/GysBuadvSLKLcNYXiZ9krg/zh-cn_image_0000002773903898.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/I8jwVR9DQUyHLuScqaIHvA/zh-cn_image_0000002776748480.png)
 
 Grid组件可以通过二维布局的方式显示一组GridItem子组件。
 
@@ -224,7 +224,7 @@ export struct DataInGrid {
 
 **图8** 网格的行列间距
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/ihg0h7IeQlibHy8rnz7pwg/zh-cn_image_0000002803263685.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/paYJCd9RSfSJ7dCg9BzPzQ/zh-cn_image_0000002806028197.png)
 
 通过Grid的[rowsGap](../harmonyos-references/ts-container-grid.md#rowsgap)和[columnsGap](../harmonyos-references/ts-container-grid.md#columnsgap)可以设置网格布局的行列间距。在图5所示的计算器中，行间距为15vp，列间距为10vp。
 
@@ -242,7 +242,7 @@ Grid() {
 
 **图9** 横向可滚动网格布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/N3Ft5Yu7TIKxCDjAKO_E9w/zh-cn_image_0000002803223595.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/7Jiez3QUTJS1lZ1t9q3Lcw/zh-cn_image_0000002806108087.gif)
 
 如果设置的是columnsTemplate，Grid的滚动方向为垂直方向；如果设置的是rowsTemplate，Grid的滚动方向为水平方向。
 
@@ -291,7 +291,7 @@ export struct ScrollableGrid {
 
 **图10** 日历翻页
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/sJVY8rv-QK2TGWMbOgQ9GA/zh-cn_image_0000002774063876.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/PPIl6gLNTZaxnKJ_VOaaMQ/zh-cn_image_0000002776908468.gif)
 
 Grid组件初始化时，可以绑定一个[Scroller](../harmonyos-references/ts-container-scroll.md#scroller)对象，用于进行滚动控制，例如通过Scroller对象的[scrollPage](../harmonyos-references/ts-container-scroll.md#scrollpage9)方法进行翻页。
 
@@ -353,7 +353,7 @@ Column({ space: 5 }){
 
 **图11** 网格的外置滚动条
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/RcXhI4uBTHq0KGt1ZWHlkw/zh-cn_image_0000002773903900.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/6h7-ZPhzRsa9VXpd-oRj3A/zh-cn_image_0000002776748482.gif)
 
 **说明** 
 
@@ -366,7 +366,7 @@ Column({ space: 5 }){
 
 **Grid手指滑动多选示例效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/ylLeW7x-T4GR5Og_xq7LTQ/zh-cn_image_0000002803263687.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/DQMgIlHvTmKhUhyKGbmLWw/zh-cn_image_0000002806028199.gif)
 
 ### 设置编辑模式
 

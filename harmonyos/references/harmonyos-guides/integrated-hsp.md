@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/integrated-hs
 title: 集成态HSP
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发指导 > 集成态HSP
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:16+08:00
+scraped_at: 2026-10-31T07:31:34+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:9056efe343a502c195265b6a5af9f4dc2dddd3bb529a26262596f927367da3fd
+content_hash: sha256:6ba48aa0ca781cc3cadfd02ce90d8991c13738187654d4855186eaf3f7f3e058
 ---
 
 集成态HSP是应用内HSP的中间编译产物，用于解决使用方的bundleName和签名之间的强耦合问题。
@@ -83,7 +83,7 @@ HSP只能给bundleName一样的工程使用，集成态HSP可以给不同的bund
 
    (2) 配置release模式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/J75ML9tiSmqxqMlLdEpsgQ/zh-cn_image_0000002773903390.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/b1DCn7jwTQ2R1VznNUhODw/zh-cn_image_0000002776907958.png)
 
    (3) 选择library目录，执行Build -> Make Module 'library'。
 

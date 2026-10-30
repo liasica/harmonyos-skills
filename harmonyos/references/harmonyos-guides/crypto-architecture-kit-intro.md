@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-archit
 title: Crypto Architecture Kit简介
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > Crypto Architecture Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:59+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:7641b7e80184338d0433b0b13fb88e56156f49bb93ffe89a8ed219cc05b60c45
+scraped_at: 2026-10-31T07:32:09+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:921f851982411c76fa1a82a520284225ab0fc72790c319772ac0477fbd7c1884
 ---
 
 Crypto Architecture Kit屏蔽了第三方密码学算法库实现差异的算法框架，提供加解密、签名验签、消息认证码、哈希、安全随机数、密钥派生等相关功能。
@@ -50,7 +50,7 @@ Crypto Architecture Kit屏蔽了第三方密码学算法库实现差异的算法
 
 本Kit支持模拟器。
 
-模拟器与真机存在通用差异，详情请参见详情请参见[模拟器与真机的差异](ide-emulator-specification.md)。
+模拟器与真机存在通用差异，详情请参见[模拟器与真机的差异](ide-emulator-specification.md)。
 
 ## 与相关Kit的关系
 

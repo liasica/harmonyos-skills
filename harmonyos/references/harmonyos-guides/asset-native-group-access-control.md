@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/asset-native-
 title: 管理群组关键资产(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Asset Store Kit（关键资产存储服务） > Asset Store Kit开发指导(C/C++) > 管理群组关键资产(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:59+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:6da144201fcff9d7b6afb98508f69dfa626acdbc73c545d5dde20f94bdf803ed
+scraped_at: 2026-10-31T07:32:09+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:646e75538ae5d809edd13d6a6864400931d4c5b777a83d8fd4b4a8826fc79d2d
 ---
 
 以下为管理群组关键资产使用示例，请先查看开发指导：
@@ -17,28 +17,32 @@ content_hash: sha256:6da144201fcff9d7b6afb98508f69dfa626acdbc73c545d5dde20f94bdf
 
 ## 前置条件
 
-在应用配置文件app.json5中，配置群组ID，如：demo\_group\_id。群组支持配置多个群组ID。
+1. 在应用配置文件app.json5中，配置群组ID，如：demo\_group\_id。群组支持配置多个群组ID。
 
-```json5
-{
-  "app": {
-    // 其他配置项此处省略。
-    "assetAccessGroups": [
-      "demo_group_id",
-      // "another_group_id",
-      // ...
-    ]
-  }
-}
-```
+   ```json5
+   {
+     "app": {
+       // 其他配置项此处省略。
+       "assetAccessGroups": [
+         "demo_group_id",
+         // "another_group_id",
+         // ...
+       ]
+     }
+   }
+   ```
+2. 在CMake脚本中链接相关动态库。
 
-引用头文件。
+   ```txt
+   target_link_libraries(entry PUBLIC libasset_ndk.z.so)
+   ```
+3. 引用头文件。
 
-```
-#include "napi/native_api.h"
-#include <string.h>
-#include "asset/asset_api.h"
-```
+   ```
+   #include "napi/native_api.h"
+   #include <string.h>
+   #include "asset/asset_api.h"
+   ```
 
 ## 新增群组关键资产
 

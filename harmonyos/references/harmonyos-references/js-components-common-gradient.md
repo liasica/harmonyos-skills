@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 渐变样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 渐变样式
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:55+08:00
+scraped_at: 2026-10-31T07:35:36+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:0165cd64a1d3e1e4ccc2468ba6bb91c9739dd65e4f4e77c3bd1c159765206307
+content_hash: sha256:e11115218d8d8145a8bb306747f874570af20373a7ca387cfac96f7b472a39a3
 ---
 
 **说明** 
@@ -58,7 +58,7 @@ background: repeating-linear-gradient(direction/angle, color, color, ...);
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/N_ARcpLsQCeklHvuJTit4w/zh-cn_image_0000002803266543.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/pHSYJeJLSD6fHXVog6vpQw/zh-cn_image_0000002776751342.png)
 2. 45度夹角渐变。
 
    ```css
@@ -66,7 +66,7 @@ background: repeating-linear-gradient(direction/angle, color, color, ...);
    background: linear-gradient(45deg, rgb(255,0,0),rgb(0, 255, 0));
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/0hVouAGCSiS0_o2wwv7O8w/zh-cn_image_0000002803226449.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/Wl5DP1abSlOW6PPTK1__-g/zh-cn_image_0000002806031061.png)
 3. 设置方向从左向右渐变。
 
    ```css
@@ -74,7 +74,7 @@ background: repeating-linear-gradient(direction/angle, color, color, ...);
    background: linear-gradient(to right, rgb(255,0,0) 90px, rgb(0, 255, 0) 60%);
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/7j3WYkB_Rz6BlGxbySA2fw/zh-cn_image_0000002774066734.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/gxj6mGo_QPqnKvKK4NoQng/zh-cn_image_0000002806110951.png)
 4. 重复渐变。
 
    ```css
@@ -82,4 +82,4 @@ background: repeating-linear-gradient(direction/angle, color, color, ...);
    background: repeating-linear-gradient(to right, rgba(255, 255, 0, 1) 30px,rgba(0, 0, 255, .5) 60px);
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/ysmxZoHhSnyMmmXVr389QQ/zh-cn_image_0000002773906762.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/uUHS1kclQl6clmMqEdFJ0Q/zh-cn_image_0000002776911332.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-hds
 title: 设置页签的图标出血样式
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 底部页签 > 设置页签的图标出血样式
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:47+08:00
+scraped_at: 2026-10-31T07:32:07+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:dad02cfe579184f13dc17b0f60fed07ac9a4aa87cedd7107f376e426a44569a6
+content_hash: sha256:10dab346b7203a93651db61a88264d54afba82faf817a5e69287090fabb5b000
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:dad02cfe579184f13dc17b0f60fed07ac9a4aa87cedd7107f376e426a44
 
 [HdsTabs (底部页签)](../harmonyos-references/ui-design-hdstabs.md)容器组件扩展支持出血图标样式。当应用开发者需要tabBar内的页签高度超出tabBar时，可以通过设置对应页签的属性，添加出血效果的自定义组件，图标超出容器部分最大高度为4vp。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/oSwgyTmfT6uigkLeuQrRqQ/zh-cn_image_0000002773904624.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/ixc66zSuQEigcg3UkwzE0Q/zh-cn_image_0000002806028921.png)
 
 ## 约束条件
 

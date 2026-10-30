@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ffrt-concurre
 title: Function Flow Runtime图依赖并发(C)
 breadcrumb: 指南 > 系统 > 基础功能 > Function Flow Runtime Kit（任务并发调度服务） > Function Flow Runtime开发样例(C) > Function Flow Runtime图依赖并发(C)
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:05+08:00
+scraped_at: 2026-10-31T07:32:26+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:fbc1c11a00c69deb496331abb29bc3a8c9f52ab8c92638774e61fd5692883402
+content_hash: sha256:b01f68879ab3c80ed766a474b5110594b439146b4a766ab201fd98eeabf69aa9
 ---
 
 ## 概述
@@ -65,7 +65,7 @@ task4(OUT A);
 task5(OUT A);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/TVlB9dwmRiSlFH-jo3vnCg/zh-cn_image_0000002803224465.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/hNvpCouGSxuWIlIchScAFw/zh-cn_image_0000002776909338.png)
 
 为表述方便，本文中的数据流图均以圆圈表示Task，方块表示数据。
 
@@ -79,7 +79,7 @@ task5(OUT A);
 
 用户上传视频到流媒体平台，处理步骤包含：视频解析A、视频转码B、视频缩略图生成C、视频水印添加D和视频发布E，其中步骤B和步骤C可以并行执行。任务流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/vfVmZb5AQI-Wg4w9mpW4cA/zh-cn_image_0000002774064746.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/_hAFvX0bScqH1st8kJRC1w/zh-cn_image_0000002776749352.png)
 
 借助FFRT提供的图依赖并发范式，可以描述任务依赖关系，同时并行化上述视频处理流程，代码如下所示：
 
@@ -253,7 +253,7 @@ ffrt\_submit\_f接口可以接收裸函数指针任务作为参数，如果任�
 
 各个任务在FFRT内部形成了一棵调用树：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/IxoH_SWJROmmEnlDlgFJLQ/zh-cn_image_0000002773904774.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/aDw33X2MSp-UIzTIkuGDAw/zh-cn_image_0000002806029069.png)
 
 ## 接口说明
 

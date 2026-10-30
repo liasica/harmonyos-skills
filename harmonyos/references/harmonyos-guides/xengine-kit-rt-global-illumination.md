@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-r
 title: 光线追踪全局光照
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > 光线追踪全局光照
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:31+08:00
+scraped_at: 2026-10-31T07:32:54+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:8b7876c2c47f7c58256383cb973f48ea9572e335c31c4edc51b961cdc737a688
+content_hash: sha256:5ee4fce0d5ba2046bf38706eb06808d89703c0493583e50680a96aff3c6e1bb9
 ---
 
 从6.0.0(20) 版本开始，新增光线追踪全局光照特性。
@@ -74,7 +74,7 @@ NNGI算法：结合了AI和光线追踪技术，通过非常小分辨率（例�
 
 * 下面是基于Vulkan图形API平台集成动态漫反射全局光照的主要业务流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/4oxAZ0kxTNu5d9EXhhOTGQ/zh-cn_image_0000002803264917.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/Lk2Rd0j6ROu084tmgUcSGw/zh-cn_image_0000002806109319.jpg)
 
 1. 用户在进入游戏初始化场景时调用[HMS\_XEG\_EnumerateDeviceExtensionProperties](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询XEngine Kit支持的特性。检查返回列表中是否包含[XEG\_RTGI\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_rtgi_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
 2. 创建动态漫反射全局光照使用的创建信息，调用[HMS\_XEG\_CreateRTGI](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_creatertgi)接口创建动态漫反射全局光照实例。
@@ -296,7 +296,7 @@ NNGI算法：结合了AI和光线追踪技术，通过非常小分辨率（例�
 
 下面是基于Vulkan图形API平台集成神经网络全局光照的主要业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/op2rkSqUTlW_biCp9Gcn8A/zh-cn_image_0000002803224827.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/z_KWFFTtQpm-KCbZDFDc9g/zh-cn_image_0000002776909700.jpg)
 
 1. 用户在进入游戏初始化场景时调用[HMS\_XEG\_EnumerateDeviceExtensionProperties](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_enumeratedeviceextensionproperties)接口查询XEngine Kit支持的特性。检查返回列表中是否包含[XEG\_RTGI\_EXTENSION\_NAME](../harmonyos-references/xengine-kit-xengine.md#xeg_rtgi_extension_name)。若不包含，则当前设备不支持此特性，流程终止。
 2. 创建神经网络全局光照使用的创建信息，调用[HMS\_XEG\_CreateRTGI](../harmonyos-references/xengine-kit-xengine.md#hms_xeg_creatertgi)接口创建神经网络全局光照实例。

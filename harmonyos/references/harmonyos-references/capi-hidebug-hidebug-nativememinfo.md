@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hide
 title: HiDebug_NativeMemInfo
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > C API > 结构体 > HiDebug_NativeMemInfo
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:17+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:7fbee016f30f93e6620c549965e4c38358b1db25ab634b09c64b8778c89d2afd
+scraped_at: 2026-10-31T07:37:41+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:e9251cef82398dcfcd1f249717d5d01fee3a0f40f84c131428edbb408dbaa109
 ---
 
 ```c
@@ -28,7 +28,7 @@ typedef struct HiDebug_NativeMemInfo {...} HiDebug_NativeMemInfo
 
 | 名称 | 描述 |
 | --- | --- |
-| uint32\_t pss | 进程比例集大小内存，以KB为单位。 |
+| uint32\_t pss | 进程比例集内存大小，以KB为单位。 |
 | uint32\_t vss | 虚拟内存大小，以KB为单位。 |
 | uint32\_t rss | 常驻集大小，以KB为单位。 |
 | uint32\_t sharedDirty | 共享脏内存的大小，以KB为单位。 |

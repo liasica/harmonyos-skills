@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-faq-abou
 title: 内存泄漏相关问题汇总
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API常见问题汇总 > 内存泄漏相关问题汇总
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:46+08:00
-doc_updated_at: 2026-08-14
-content_hash: sha256:c9321e3d5708a264258c4d969e1177d1d2a71b644e3be084abcf40d7c48214be
+scraped_at: 2026-10-31T07:33:42+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:c1f93b40e80ea2872495698fc2a60e429b125752006905b0eb5e62d46935ce92
 ---
 
 ## 当前是否有机制来检查是否有泄漏的napi\_ref
@@ -76,7 +76,7 @@ MyTsfnContext(napi_env env, napi_value workName) {
     // 创建线程安全函数
     if (napi_create_threadsafe_function(env, nullptr, nullptr, workName, 1, 1, this,
             TsfnFinalize, this, TsfnCallJs, &tsfn_) != napi_ok) {
-        OH_LOG_INFO(LOG_APP, "tsfn is created failed");
+        OH_LOG_ERROR(LOG_APP, "tsfn is created failed");
         return;
     };
 };
@@ -149,7 +149,7 @@ static void TsfnCallJs(napi_env env, napi_value func, void *context, void *data)
 // 该方法需注册到模块Index.d.ts, 注册名为 myTsfnDemo, 接口描述如下
 // export const myTsfnDemo: () => void;
 napi_value MyTsfnDemo(napi_env env, napi_callback_info info) {
-    OH_LOG_ERROR(LOG_APP, "MyTsfnDemo is called");
+    OH_LOG_INFO(LOG_APP, "MyTsfnDemo is called");
     napi_value workName = nullptr;
     napi_create_string_utf8(env, "MyTsfnWork", NAPI_AUTO_LENGTH, &workName);
     MyTsfnContext *myContext = new MyTsfnContext(env, workName);
@@ -160,7 +160,7 @@ napi_value MyTsfnDemo(napi_env env, napi_callback_info info) {
     };
     char *data0 = new char[]{"Im call in ArkTS Thread"};
     if (!myContext->Call(data0)) {
-        OH_LOG_INFO(LOG_APP, "call tsfn failed");
+        OH_LOG_ERROR(LOG_APP, "call tsfn failed");
     };
 
     // 创建一个线程，模拟异步场景

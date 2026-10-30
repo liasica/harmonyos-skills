@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/obtain-enroll
 title: 查询用户注册凭据的状态
 breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 查询用户注册凭据的状态
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:34+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:f71c8efa2d32e2c3e1534e0a61a9294c29641a0d5053aaa2af8a933f7330759b
+scraped_at: 2026-10-31T07:32:19+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:5fd55616952da343e362f84a22d7f8439089a47e451648fb006282642840a909
 ---
 
 调用者需感知用户注册凭据（人脸、指纹、口令）的变化，可使用该接口查询当前用户注册凭据的状态。
@@ -41,4 +41,4 @@ obtainingEnrolledCredentialInformation() {
 
 ## 示例代码
 
-* [查询用户注册凭据的状态](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/UserAuthentication)
+* 可参考[用户认证服务](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/UserAuthentication)示例代码。

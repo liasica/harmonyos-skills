@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-message-
 title: （可选）测试消息分析
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 端云调试 > （可选）测试消息分析
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:48+08:00
+scraped_at: 2026-10-31T07:33:12+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:ad27358379db0d5b09f546deff8e1a565ab7e638ab230d00201ef7c3c0b25a9f
+content_hash: sha256:d9dbcdb2df19881f9e5bb8ab13e00e3be2dfbee48a9ccb10f78dcc65f531592e
 ---
 
 ## 场景介绍
@@ -54,7 +54,7 @@ content_hash: sha256:ad27358379db0d5b09f546deff8e1a565ab7e638ab230d00201ef7c3c0b
    * 发送category：开发者调用REST API发送通知消息或语音播报消息时，在请求体中传入的category参数值，用于标识消息的业务分类。
    * 实际下发category：消息下发时真正生效的category值。该值可能与发送时指定的category不同，参考[典型场景](push-message-analysis.md#典型场景)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/qJ1B59kLQLm0gwWj9AvGtg/zh-cn_image_0000002803265331.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/yxQHRtSeSaec3F825h06_A/zh-cn_image_0000002776910114.png)
 
 ## 典型场景
 
@@ -62,4 +62,4 @@ content_hash: sha256:ad27358379db0d5b09f546deff8e1a565ab7e638ab230d00201ef7c3c0b
 
 因此，当您的请求体中需要使用某个category值时，请提前确认该category对应的权益已开通。如未开通，请前往申请对应[推送场景化消息权益](push-apply-right.md#申请通知消息自分类权益)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/yBUiYKR6QP2NDjQQKTY8Ew/zh-cn_image_0000002803225239.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/diCA2pthQNCeaBV6K1SXAg/zh-cn_image_0000002776750128.png)

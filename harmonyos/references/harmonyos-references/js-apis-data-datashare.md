@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.dataShare (数据共享)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.dataShare (数据共享)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:24:40+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:5d577135ac88c709ade67273963eb5760282b383efbf657a1c6919cc6b86542e
+scraped_at: 2026-10-31T07:34:34+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:4b9797eb4db48ef689968d2d346e49fca8199c0b50a0f18ad890f48110244220
 ---
 
 **DataShare**用于应用管理其自身数据，同时支持同一个设备上不同应用间的数据共享。
@@ -51,7 +51,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 export default class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-    dataShare.createDataProxyHandle().then((dataProxyHandle) => {
+    dataShare.createDataProxyHandle().then(async (dataProxyHandle) => {
       console.info("createDataProxyHandle succeed");
     }).catch((err: BusinessError) => {
       console.error(`Failed to create DataProxyHandle. Code: ${err.code}, message: ${err.message}`);
@@ -546,6 +546,8 @@ putValue(uri: string, key: number, value: ValueType, config: DataProxyConfig): P
 **示例：**
 
 ```ts
+import { ValueType } from '@kit.ArkData';
+
 const config: dataShare.DataProxyConfig = {
   type: dataShare.DataProxyType.SHARED_CONFIG,
 };
@@ -612,6 +614,8 @@ removeValue(uri: string, key: number, config: DataProxyConfig): Promise<void>
 **示例：**
 
 ```ts
+import { ValueType } from '@kit.ArkData';
+
 const config: dataShare.DataProxyConfig = {
   type: dataShare.DataProxyType.SHARED_CONFIG,
 };
@@ -677,6 +681,8 @@ getValues(uri: string, config: DataProxyConfig): Promise<ValueType[]>
 **示例：**
 
 ```ts
+import { ValueType } from '@kit.ArkData';
+
 const config: dataShare.DataProxyConfig = {
   type: dataShare.DataProxyType.SHARED_CONFIG,
 };

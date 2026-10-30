@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-bindi
 title: 商户号绑定AppID
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 开发准备 > 商户号绑定AppID
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:46+08:00
+scraped_at: 2026-10-31T07:33:09+08:00
 doc_updated_at: 2026-04-28
-content_hash: sha256:201159ca4280676d66780e0ecdcc41eff20eaf4125b2d1ddd0c2338ffefed3ef
+content_hash: sha256:ec26ec191fabe75770e8db34ca5e2ffba13e5193f6fa7c17330ef0c97d6ca2df
 ---
 
 **说明** 
@@ -33,15 +33,15 @@ AppID绑定详细可参见[AppID管理及关联](../pay-docs/hwzf-appidguanli-00
 
 1. 请登录[华为支付商户平台](https://petalpay-merchant.cloud.huawei.com/)进入“商户中心 > 产品功能 > AppID管理 > 新增关联AppID”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/g5N-xnZKSQWR6BuzPDnKuA/zh-cn_image_0000002774065460.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/ibn1G69_Tlq2rL-cB2cGpw/zh-cn_image_0000002806029781.png)
 2. 申请绑定AppID后，应用管理员登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站选择对应的项目后，完成对应的商户“授权”操作， 操作路径如下：
 
    * **HarmonyOS应用**：“盈利 > 鸿蒙支付服务（可在‘全部功能’中搜索服务并固定到导航栏）> 支付服务（非虚拟类）> 待关联商户号”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/PEkCMWmbSfC79-7rn2SOeA/zh-cn_image_0000002773905486.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/PrAIv18gSKOAacfjKzxzYQ/zh-cn_image_0000002806109671.png)
    * **元服务**：“支付与交易 > 鸿蒙支付服务（可在‘全部功能’中搜索服务并固定到导航栏）> 支付服务（非虚拟类）> 待关联商户号”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/EHZ1O9UkS5-x_5n7AZnGzg/zh-cn_image_0000002803265269.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/-IJvipk6SRqvQFrEo2DiBw/zh-cn_image_0000002776910052.png)
 
 ## 服务商绑定
 
@@ -58,29 +58,29 @@ AppID绑定详细可参见[AppID管理及关联](../pay-docs/hwzf-appidguanli-00
 
 1. 服务商登录[华为支付商户平台](https://petalpay-merchant.cloud.huawei.com/)进入“商户中心 > 产品功能 > AppID管理”，在“服务商绑定的AppID”页签内点击“新增关联AppID”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/4FmtsdzAS9m_d4kRVbxz7A/zh-cn_image_0000002803225177.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/V_CviVHLSsmlry3ktm3GzA/zh-cn_image_0000002776750066.png)
 2. 申请绑定AppID后，应用管理员登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站选择对应的项目后，完成对应的商户“授权”操作， 操作路径如下：
 
    * **HarmonyOS应用**：“盈利 > 鸿蒙支付服务（可在‘全部功能’中搜索服务并固定到导航栏）> 支付服务（非虚拟类）> 待关联商户号”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/EO9kA-hlTKevZCrrx4CH-g/zh-cn_image_0000002773905486.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/RQ99YoE1TsazcrAzRQtusg/zh-cn_image_0000002806109671.png)
    * **元服务**：“支付与交易 > 鸿蒙支付服务（可在‘全部功能’中搜索服务并固定到导航栏）> 支付服务（非虚拟类）> 待关联商户号”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/oMABIjpmQ52hIIkPE6Gt2Q/zh-cn_image_0000002803265269.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/ehsY456jTSS5c8dP83RtHQ/zh-cn_image_0000002776910052.png)
 
 ### 服务商邀请特约商户绑定
 
 1. 服务商登录[华为支付商户平台](https://petalpay-merchant.cloud.huawei.com/)进入“商户中心 > 产品功能 > AppID管理”，在“特约商户绑定的AppID”页签内根据服务商下的特约商户列表，选择特约商户发起AppID绑定申请邀请。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/BkjA7KYgQhSqu-OyNS1qMA/zh-cn_image_0000002774065462.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/M7npDL4YQB27uv9ndfyDLQ/zh-cn_image_0000002806029783.png)
 2. 特约商户登录[华为支付商户平台](https://petalpay-merchant.cloud.huawei.com/)进入“商户中心 > 产品功能 > AppID管理”选择“服务商为我绑定的AppID列表”中的数据，点击去确认，对服务商邀请绑定AppID进行确认。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/a3dgHzA9T4aJL4GIVv0IlQ/zh-cn_image_0000002773905488.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/VHXKN9B1Sve9JidLwNTkXg/zh-cn_image_0000002806109673.png)
 3. 特约商户确认绑定AppID后，应用管理员登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站选择对应的项目后，完成对应的商户“授权”操作， 操作路径如下：
 
    * **HarmonyOS应用**：“盈利 > 鸿蒙支付服务（可在‘全部功能’中搜索服务并固定到导航栏）> 支付服务（非虚拟类）> 待关联商户号”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/2Ed2HQsDRTu2rNuoEodCvA/zh-cn_image_0000002773905486.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/hkQW9cn4S829t3ZdE1EqWA/zh-cn_image_0000002806109671.png)
    * **元服务**：“支付与交易 > 鸿蒙支付服务（可在‘全部功能’中搜索服务并固定到导航栏）> 支付服务（非虚拟类）> 待关联商户号”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/A-Pe5seHSlaDQMaTU8jFfw/zh-cn_image_0000002803265269.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/uq9uaiMyTe262iGXYL5hRg/zh-cn_image_0000002776910052.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口进行错误处理开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口进行错误处理开发
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:16+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:ba0f117295ec0ca08b75120744c19083b9fbe1a4278a97b663ff9a71e41a0a05
+scraped_at: 2026-10-31T07:33:41+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:7d0a727ed0f0bb25d29d8a6bc2e6b5b55036b5abd7f9f07fb28f5b32c697ec95
 ---
 
 ## 简介
@@ -61,7 +61,7 @@ static napi_value GetLastErrorInfo(napi_env env, napi_callback_info info)
     napi_status status = napi_get_value_int32(env, args[0], &value);
     // 接口使用错误，故返回值不为napi_ok
     if (status != napi_ok) {
-        OH_LOG_INFO(LOG_APP, "napi_get_value_int32 return status, status is not equal to napi_ok.");
+        OH_LOG_ERROR(LOG_APP, "napi_get_value_int32 return status, status is not equal to napi_ok.");
     }
     // 调用接口napi_get_last_error_info获取最后一次错误信息
     const napi_extended_error_info *errorInfo;
@@ -316,7 +316,7 @@ static napi_value NapiThrowBusinessError(napi_env env, napi_callback_info info)
 {
     napi_status status = napi_throw_business_error(env, INT_ARG_100, "error message");
     if (status != napi_ok) {
-        OH_LOG_INFO(LOG_APP, "napi_throw_business_error failed :: %{public}d", status);
+        OH_LOG_ERROR(LOG_APP, "napi_throw_business_error failed: %{public}d", status);
     }
     return nullptr;
 }

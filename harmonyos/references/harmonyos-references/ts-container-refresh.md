@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Refresh
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > Refresh
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:37+08:00
+scraped_at: 2026-10-31T07:35:14+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:1f3bb5f9253869672bb313fa1d996cc7f39fc7ceb8022e640b14a69dcaa6b1f4
+content_hash: sha256:4421c94c8dbb316b81f2c046912e07deb4303d556aa1089b3a88cb232600b7cb
 ---
 
 Refresh是提供下拉刷新交互的容器组件，适用于列表数据刷新、页面内容更新等需要用户触发数据更新的场景。它支持自定义刷新区域显示内容和文本、设置下拉偏移量和跟手系数、控制最大下拉距离等，可灵活适配不同应用的下拉刷新需求，提供一致且流畅的刷新体验。
@@ -341,7 +341,7 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/6Ggk6ke2RvaoHrnSiNEd4A/zh-cn_image_0000002803225889.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/bfl5kKhuShCqG6ahVvn2uQ/zh-cn_image_0000002806030495.gif)
 
 ### 示例2（设置刷新区域显示文本）
 
@@ -401,7 +401,7 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/GfAgVwD0T9qlMrgwcfk_BA/zh-cn_image_0000002774066174.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/h2dzSLArQAqRy9DWt7iPWQ/zh-cn_image_0000002806110385.gif)
 
 ### 示例3（自定义刷新区域显示内容-builder）
 
@@ -473,7 +473,7 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/cb7xyHpvRJWOz9K-HgTtPg/zh-cn_image_0000002773906200.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/IQWWCDYjQi2EM1xqsTpvsQ/zh-cn_image_0000002776910766.gif)
 
 ### 示例4（自定义刷新区域显示内容-refreshingContent）
 
@@ -567,7 +567,7 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/atg7VsG_TsaeJI69Gk8DbA/zh-cn_image_0000002803265983.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/DrJKu_LMTxy0teTyYerNJg/zh-cn_image_0000002776750780.gif)
 
 ### 示例5（实现最大下拉距离）
 
@@ -653,7 +653,7 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/_qVtGeadQr6ag-hJg78QWw/zh-cn_image_0000002803225891.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/OenEKV17QxWrkQfzBaRHjw/zh-cn_image_0000002806030497.gif)
 
 ### 示例6（实现下拉刷新上拉加载更多）
 
@@ -753,7 +753,7 @@ struct ListRefreshLoad {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/4jDoowfSSHmPszuC50xdQg/zh-cn_image_0000002774066176.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/l9PYkuPcQri-PReevDOimw/zh-cn_image_0000002806110387.gif)
 
 ### 示例7（设置最大下拉距离）
 
@@ -813,7 +813,7 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/moMnkLdcQ5SuPQjVLUGhvQ/zh-cn_image_0000002773906202.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/2UHqEFqWTr65xqjSyruXiQ/zh-cn_image_0000002776910768.gif)
 
 ### 示例8（禁止下拉刷新）
 
@@ -882,7 +882,7 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/ie1-quGtTMGON9E2NLhuyw/zh-cn_image_0000002803265985.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/MlNTK40qQX2XzWuz_qPSKQ/zh-cn_image_0000002776750782.gif)
 
 ### 示例9（不满一屏场景实现下拉刷新）
 
@@ -946,7 +946,7 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/h2FJEC0iQ9OdXgcTdLRAnw/zh-cn_image_0000002803225893.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/KHUh175BRSGycodbRiqC9g/zh-cn_image_0000002806030499.gif)
 
 ### 示例10（上滑不取消刷新）
 
@@ -1049,4 +1049,4 @@ struct RefreshExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/qO9FG0ARTpyroltTRPmSow/zh-cn_image_0000002774066178.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/QvYJtKs2RsSXYwxmny4sJg/zh-cn_image_0000002806110389.gif)

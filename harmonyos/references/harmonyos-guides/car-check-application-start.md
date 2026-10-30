@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/car-check-app
 title: 主动获取HiCar的连接状态
 breadcrumb: 指南 > 系统 > 硬件 > Car Kit（车服务） > 获取HiCar连接状态 > 主动获取HiCar的连接状态
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:06+08:00
+scraped_at: 2026-10-31T07:32:27+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c88a4972783039c710d726daa55c7355ef74c2c5564f2b6da916c1b4ff11138b
+content_hash: sha256:a46449a3aa9fa96a187a760ed178c3411addd0e78ac6a42819179f953d48328f
 ---
 
 ## 场景介绍
 
 生态应用可以通过主动获取智慧出行连接状态接口来获取HiCar的连接状态（如：判断应用是否在HiCar上拉起）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/zXOLwO8PSEGPLXPSmp_Eyg/zh-cn_image_0000002803264571.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/ZBfOCBgHTyWcsxYOIE70qQ/zh-cn_image_0000002806108973.png)
 
 ## 接口说明
 

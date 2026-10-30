@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appfreeze-gui
 title: AppFreeze（应用冻屏）检测
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 故障检测 > AppFreeze（应用冻屏）检测
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:10+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2b21f549e2a8421052dbb1211ff34c087fd3ac699f3d4bf49b26466468ecbd69
+scraped_at: 2026-10-31T07:32:31+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:e6c0c70d796069b6291d8369186e744b28eff0d5040e8afd54302d36496ce2be
 ---
 
 ## 简介
@@ -46,7 +46,7 @@ content_hash: sha256:2b21f549e2a8421052dbb1211ff34c087fd3ac699f3d4bf49b26466468e
 
 **图1**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/V1WiAgCqShGzUsvTr6c6Zw/zh-cn_image_0000002803224509.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/gU1-uOTdTB2mN1AHNx523A/zh-cn_image_0000002776909382.png)
 
 ### APP\_INPUT\_BLOCK用户输入响应超时
 
@@ -62,7 +62,7 @@ content_hash: sha256:2b21f549e2a8421052dbb1211ff34c087fd3ac699f3d4bf49b26466468e
 
 **图2**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/lQdJiGtGQv6w9e2MBvQAkQ/zh-cn_image_0000002774064790.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/fr5kf6oDR7WnG_9dCOhMZw/zh-cn_image_0000002776749396.png)
 
 ### LIFECYCLE\_TIMEOUT生命周期切换超时
 
@@ -98,7 +98,7 @@ content_hash: sha256:2b21f549e2a8421052dbb1211ff34c087fd3ac699f3d4bf49b26466468e
 
 **图3**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/VFieHnlaQ9yLqQiLdnszuQ/zh-cn_image_0000002773904818.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/kWcUhIz6S1iKlXLBt6vwZw/zh-cn_image_0000002806029113.png)
 
 ## 日志获取
 
@@ -110,7 +110,7 @@ DevEco Studio会收集设备/data/log/faultlog/faultlogger/路径下的进程崩
 
 **方式二：通过HiAppEvent接口订阅**
 
-HiAppEvent给开发者提供了故障订阅接口，详见[HiAppEvent介绍](hiappevent-intro.md)。参考[订阅应用冻屏事件（ArkTS）](hiappevent-watcher-freeze-events-arkts.md)或[订阅应用冻屏事件（C/C++）](hiappevent-watcher-freeze-events-ndk.md)完成应用冻屏事件订阅，并通过事件的[external\_log](hiappevent-watcher-freeze-events.md#事件字段说明)字段读取故障日志文件内容。
+HiAppEvent给开发者提供了故障订阅接口，详见[HiAppEvent介绍](hiappevent-intro.md)。参考[订阅应用冻屏事件（ArkTS）](hiappevent-watcher-freeze-events-arkts.md)或[订阅应用冻屏事件（C/C++）](hiappevent-watcher-freeze-events-ndk.md)完成应用冻屏事件订阅，并通过事件中的external\_log字段（详见[params字段说明](hiappevent-watcher-freeze-events.md#params字段说明)的表格介绍）读取故障日志文件内容。
 
 **方式三：通过hdc获取日志，需打开开发者选项**
 
@@ -658,7 +658,7 @@ DisplayPowerInfo:powerState:AWAKE
 
 **方式一：通过HiAppEvent接口订阅**
 
-从HarmonyOS 6.1.0.125以上的系统版本开始，系统默认将AppFreeze增强日志内容合并到APP\_FREEZE事件的[external\_log](hiappevent-watcher-freeze-events.md#事件字段说明)指向的日志结尾。
+从HarmonyOS 6.1.0.125以上的系统版本开始，系统默认将AppFreeze增强日志内容合并到APP\_FREEZE事件的external\_log字段（详见[params字段说明](hiappevent-watcher-freeze-events.md#params字段说明)的表格介绍）指向的日志结尾。
 
 如果开发者需要单独的AppFreeze增强日志文件，可以在AppScope/app.json5文件中配置如下环境变量：
 
@@ -673,7 +673,7 @@ DisplayPowerInfo:powerState:AWAKE
 
 HiAppEvent给开发者提供了故障订阅接口，开发者可以使用HiAppEvent监听应用冻屏事件，获取文件内容，详见[应用冻屏事件介绍](hiappevent-watcher-freeze-events.md)。参考[订阅应用冻屏事件（ArkTS）](hiappevent-watcher-freeze-events-arkts.md)或[订阅应用冻屏事件（C/C++）](hiappevent-watcher-freeze-events-ndk.md)完成应用冻屏事件订阅。
 
-开发者可以通过事件的[external\_log](hiappevent-watcher-freeze-events.md#事件字段说明)字段读取应用冻屏事件生成的故障文件和应用冻屏事件的增强日志文件。增强日志文件的命名与应用冻屏事件生成的故障文件名称格式相同。
+开发者可以通过事件的external\_log字段读取应用冻屏事件生成的故障文件和应用冻屏事件的增强日志文件。增强日志文件的命名与应用冻屏事件生成的故障文件名称格式相同。
 
 external\_log是字符串数组，第一个元素为应用冻屏事件生成的故障文件路径；第二个元素为应用冻屏事件生成的增强日志文件路径。
 

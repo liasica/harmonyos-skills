@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.file.storageStatistics (应用空间统计)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > @ohos.file.storageStatistics (应用空间统计)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:beef1c169aef86cf0bb94ff838387885cc1afc314ce2417211dc0558b00c00d2
+scraped_at: 2026-10-31T07:36:15+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:a0ebaf7aa620bc0cc2fe13f629d762e8eb57c4d28344d8ac3d750bfc5d3b64d0
 ---
 
 该模块提供空间查询相关的常用功能：包括对内置存储和外置存储卡的空间查询、对应用分类数据统计的查询、对应用数据的查询、对文件系统inode资源（总量、剩余量及当前应用占用量）的查询等。适用于存储空间管理、系统监控、应用存储优化等场景，帮助开发者实时掌握设备存储和inode资源使用情况，合理规划存储策略，避免因存储空间或inode资源不足导致应用异常。
@@ -38,7 +38,7 @@ getCurrentBundleStats(): Promise<BundleStats>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理错误码](errorcode-filemanagement.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[文件管理错误码](errorcode-filemanagement.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -75,7 +75,7 @@ getCurrentBundleStats(callback: AsyncCallback<BundleStats>): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理错误码](errorcode-filemanagement.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[文件管理错误码](errorcode-filemanagement.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -151,7 +151,7 @@ getTotalSize(callback: AsyncCallback<number>): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理错误码](errorcode-filemanagement.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[文件管理错误码](errorcode-filemanagement.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -265,7 +265,7 @@ getFreeSize(callback: AsyncCallback<number>): void
 
 **错误码：**
 
-以下错误码的详细介绍请参见[文件管理错误码](errorcode-filemanagement.md)和[通用错误码](errorcode-universal.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[文件管理错误码](errorcode-filemanagement.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |

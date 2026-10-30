@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-graphic
 title: 显示图片 (Image)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 媒体展示 > 显示图片 (Image)
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:31+08:00
+scraped_at: 2026-10-31T07:31:50+08:00
 doc_updated_at: 2026-10-16
-content_hash: sha256:9f9fcaa933f0eaba42e0dd65805b13d7629bd5a2121b7d1ded98d93a58433b10
+content_hash: sha256:45ad323e9e4a50481fea0f6a496a209ccec36e626aaeabefb0efce563253ec3a
 ---
 
 开发者经常需要在应用中显示一些图片，例如：按钮中的icon、网络图片、本地图片等。在应用中显示图片需要使用Image组件实现，Image支持多种图片格式，包括png、jpg、jpeg等格式，不支持apng和svga格式，具体支持格式和用法请参考[Image](../harmonyos-references/ts-basic-components-image.md)组件。
@@ -76,7 +76,7 @@ Image支持加载存档图、多媒体像素图和可绘制描述符三种类型
 
   **图1** resources
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/-d2grIVLRaC01oDOgQ76Fg/zh-cn_image_0000002773904002.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/_PCzNQYYRe6NlUwEtdC6PA/zh-cn_image_0000002776748584.jpg)
 
   调用方式：
 
@@ -89,7 +89,7 @@ Image支持加载存档图、多媒体像素图和可绘制描述符三种类型
 
   **图2** rawfile
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/K-EEZsHFSdG7NchlgNnZkQ/zh-cn_image_0000002803263789.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/3vNORKGJRYCzXvCPX3VdFw/zh-cn_image_0000002806028301.jpg)
 
   调用方式：
 
@@ -346,7 +346,7 @@ struct DrawableDescriptorType {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/M05nAdTMRJO01x9b21cKiQ/zh-cn_image_0000002803223699.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/rWFypjSZSzqf1pkeEG9YkA/zh-cn_image_0000002806108191.gif)
 
 ## 显示矢量图
 
@@ -365,11 +365,11 @@ Image($r('app.media.cloud'))
 
 **图3** 原始图片
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/7nklBol9TVmHFQKmdGqDYw/zh-cn_image_0000002774063980.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/wKhM5BMbQ_ODaDq-mG3Gqg/zh-cn_image_0000002776908572.png)
 
 **图4** 设置绘制颜色后的SVG图片
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/hbpqtxsTSXeX62c2J_pzyA/zh-cn_image_0000002773904004.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/U_E855xqRLe_QVjdHI0phg/zh-cn_image_0000002776748586.png)
 
 ### 矢量图引用位图
 
@@ -398,7 +398,7 @@ SVG图源通过<image>标签的xlink:href属性指定本地位图路径，本地
 
 文件工程路径示例如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/EPZHYueISjaG-9Pzlq192w/zh-cn_image_0000002803263791.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/0d4LkZLLTuyWPwqnj5Os6Q/zh-cn_image_0000002806028303.png)
 
 ## 添加属性
 
@@ -494,7 +494,7 @@ struct ImageScalingType {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/un-rRcOxSkaEIciuWT79vQ/zh-cn_image_0000002803223701.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/vlEN857OQ1ekmis3MeCl3g/zh-cn_image_0000002806108193.png)
 
 ### 图片插值
 
@@ -555,7 +555,7 @@ struct ImageInterpolationType {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/flcZfnJKRmS68aRl2n6TfA/zh-cn_image_0000002774063982.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/Zu1HBzBSRKmL09WyK7vbrA/zh-cn_image_0000002776908574.png)
 
 ### 设置图片重复样式
 
@@ -607,7 +607,7 @@ struct ImageRepetitionStyle {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/eGtcqEblTRGdzoS1beSakg/zh-cn_image_0000002773904008.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/_yIAG4ejSGCfvEKHYE2bDQ/zh-cn_image_0000002776748588.png)
 
 ### 设置图片渲染模式
 
@@ -644,7 +644,7 @@ struct SetImageRenderingMode {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/1X412Iq9QjGxf5pSbPTV7Q/zh-cn_image_0000002803263793.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/nztVVMghQSui9EBzgsfItw/zh-cn_image_0000002806028305.png)
 
 ### 设置图片解码尺寸
 
@@ -692,7 +692,7 @@ struct SetImageDecodingSize {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/Ns9OxpmQTl2lwm-B8epbrg/zh-cn_image_0000002803223703.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/G9-fZ5jlSAOcAyc4m36x1A/zh-cn_image_0000002806108195.png)
 
 ### 为图片添加滤镜效果
 
@@ -726,7 +726,7 @@ struct AddFilterEffectsToImages {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/HA0iq4QlQTuMHgqQaztvJw/zh-cn_image_0000002774063984.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/R4uMBflpQBGOEvT3QSA2zg/zh-cn_image_0000002776908576.png)
 
 ### 同步加载图片
 
@@ -794,4 +794,4 @@ struct EventCall {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/cxjAVjT7Syux9eZI2o2hzg/zh-cn_image_0000002773904010.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/uvtQMdv3ROKDaWvwcIzQPA/zh-cn_image_0000002776748590.png)

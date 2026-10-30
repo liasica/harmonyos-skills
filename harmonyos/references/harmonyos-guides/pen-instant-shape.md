@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pen-instant-s
 title: 接入一笔成形
 breadcrumb: 指南 > 系统 > 硬件 > Pen Kit（手写笔服务） > 手写功能开发 > 接入一笔成形
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:07+08:00
+scraped_at: 2026-10-31T07:32:28+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:17be725adeb19b97313c5e52431cc6b874831a2141c9d8660f5025204575ca25
+content_hash: sha256:85b397562b77642fcd766c523baa2152bd76ff4dadf1e79054506f5e1c75fbca
 ---
 
 接入一笔成形功能，可以传入手写笔迹的点位信息、通过手写笔/手指在屏幕上停顿一定的时间后触发此功能，触发功能后将自动识别当前绘制的图形，并生成对应的图像信息。
@@ -14,7 +14,7 @@ content_hash: sha256:17be725adeb19b97313c5e52431cc6b874831a2141c9d8660f502520457
 
 在应用中实现一笔成形，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/cI1pKGyJTHOUpnQEo5oIJg/zh-cn_image_0000002773904794.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/ZrZhdx6oQyynWqgZmMv0IA/zh-cn_image_0000002806029089.png)
 
 1. 支持获取识别的图像信息，图像信息支持存储。
 2. 支持从存储的图像信息中读取信息。

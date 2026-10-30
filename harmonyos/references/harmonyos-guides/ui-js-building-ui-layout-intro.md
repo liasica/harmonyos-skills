@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-buildin
 title: 布局说明
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 构建用户界面 > 构建布局 > 布局说明
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:36+08:00
+scraped_at: 2026-10-31T07:31:56+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:5ed46006e2ede61c24857b7bb578cd5fbc69edacb9a06441344da89322605b50
+content_hash: sha256:3c77a3e15b51f262f74c25b9ecdbfdbf268f8b37cec36a1311a7a44d92a790cb
 ---
 
 设备的基准宽度为720px（px为逻辑像素，非物理像素），实际显示效果会根据实际屏幕宽度进行缩放。
@@ -26,8 +26,8 @@ content_hash: sha256:5ed46006e2ede61c24857b7bb578cd5fbc69edacb9a06441344da893226
 
 **图1** 页面布局分解
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/wdxRBz91StqaA6XdYIbkFg/zh-cn_image_0000002803264083.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/_nb0m5nJSti2aOBWLG0SCw/zh-cn_image_0000002806108485.png)
 
 **图2** 留言区布局分解
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/UQf4FsvbRi-kPkj5O5oIPw/zh-cn_image_0000002803223993.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/5xLCN4mLRX6h9bwvuVGHow/zh-cn_image_0000002776908866.png)

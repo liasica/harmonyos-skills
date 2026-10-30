@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-syscap-ndk
-title: syscapndk
-breadcrumb: API参考 > 公共基础能力 > C API > 模块 > syscapndk
+title: SyscapNdk
+breadcrumb: API参考 > 公共基础能力 > C API > 模块 > SyscapNdk
 category: harmonyos-references
-scraped_at: 2026-10-29T08:03:07+08:00
-doc_updated_at: 2026-10-28
+scraped_at: 2026-10-31T07:39:32+08:00
+doc_updated_at: 2026-10-30
 content_hash: sha256:64008530e9ac2fb87784d8e5d30fe042aadd6be446cceea8df50647b69fc12f7
 ---
 

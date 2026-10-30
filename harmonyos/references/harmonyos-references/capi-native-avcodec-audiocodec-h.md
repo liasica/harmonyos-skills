@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avcodec_audiocodec.h
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 头文件 > native_avcodec_audiocodec.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:22+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:92bcd36371ef89fd8999cfd4b35a1c9fc6c65dba433420a54fd6e5d5ac99e2db
+scraped_at: 2026-10-31T07:37:52+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:03741d3c2e2ea34bc60db301ffafb11bf35284add3adfd3c1840e145e29adf6e
 ---
 
 ## 概述
@@ -490,14 +490,14 @@ OH_AVErrCode OH_AudioCodec_SetDecryptionConfig(OH_AVCodec *codec, MediaKeySessio
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_AVCodec](capi-codecbase-oh-avcodec.md) \*codec | 指向OH\_AVCodec实例的指针。 |
-| [MediaKeySession](capi-drm-mediakeysession.md) \*mediaKeySession | 带有解密功能的媒体秘钥会话实例。 |
+| [MediaKeySession](capi-drm-mediakeysession.md) \*mediaKeySession | 带有解密功能的媒体密钥会话实例。 |
 | bool secureAudio | 是否使用安全解码器。使用安全解码器为true,否则为false。  注意：当前音频解密尚不支持使用安全解码器。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_INVALID\_VAL：OH\_AVCodec实例为nullptr或无效，mediaKeySystemInfo实例为nullptr或无效。  AV\_ERR\_INVALID\_STATE：编解码器服务不可用。  AV\_ERR\_NO\_MEMORY：请求内存失败。 |
+| [OH\_AVErrCode](capi-native-averrors-h.md#oh_averrcode) | AV\_ERR\_OK：执行成功。  AV\_ERR\_INVALID\_VAL：OH\_AVCodec实例为nullptr或无效，mediaKeySession实例为nullptr或无效。  AV\_ERR\_INVALID\_STATE：编解码器服务不可用。  AV\_ERR\_NO\_MEMORY：请求内存失败。 |
 
 ### OH\_AudioCodec\_QueryInputBuffer()
 

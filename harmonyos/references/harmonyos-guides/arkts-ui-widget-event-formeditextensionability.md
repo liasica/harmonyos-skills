@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: ArkTS卡片编辑
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS卡片编辑
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:45+08:00
+scraped_at: 2026-10-31T07:32:05+08:00
 doc_updated_at: 2026-10-16
-content_hash: sha256:9cd20c607619a4515be9bf28a339a2cffe5b213b51f928b2e943995e9d0e6a8c
+content_hash: sha256:ee80968e7280313b1bb28f4758a7baa5c3fd634ccc53ba3ff88167678e2acea5
 ---
 
 ArkTS卡片提供卡片页面编辑能力，支持实现用户自定义卡片内容的功能，例如：编辑联系人卡片、修改卡片中展示的联系人、编辑天气卡片等。
@@ -18,7 +18,7 @@ ArkTS卡片提供卡片页面编辑能力，支持实现用户自定义卡片内
 
 ### 实现原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/MCdb2yLQQ46Kx4AbYptNFw/zh-cn_image_0000002803264327.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/khajgoiwQKiZq9_pavFSNA/zh-cn_image_0000002806108729.png)
 
 1. 长按卡片弹出菜单，此时桌面通过[formConfigAbility](arkts-ui-widget-configuration.md#配置文件字段说明)字段判断卡片是否支持卡片编辑能力来决定是否显示编辑按钮。
 2. 点击“编辑”菜单项，桌面通过formConfigAbility中的字段拉起对应的页面，进入一级编辑页。一级编辑页的编辑区域有限，用于比较简单的编辑布局。
@@ -630,13 +630,13 @@ ArkTS卡片提供卡片页面编辑能力，支持实现用户自定义卡片内
    ```
 6. 运行效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/V2E1t6W0SK62BGmboBDobg/zh-cn_image_0000002803224237.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/fYFKz5dmRDG6ywI9rse9TA/zh-cn_image_0000002776909110.gif)
 
 ## 全屏卡片编辑
 
 ### 实现原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/4tC8cKZUSKCXswlmYVQzcw/zh-cn_image_0000002774064518.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/keSxaqPbQ3CTAdwh4kvxiQ/zh-cn_image_0000002776749124.png)
 
 1. 长按卡片弹出菜单。桌面通过[formConfigAbility](arkts-ui-widget-configuration.md#配置文件字段说明)字段判断卡片是否支持卡片编辑能力来决定是否显示编辑按钮。
 2. 点击“编辑”菜单项进入全屏编辑页。桌面通过formConfigAbility字段的信息拉起卡片编辑页。
@@ -997,4 +997,4 @@ ArkTS卡片提供卡片页面编辑能力，支持实现用户自定义卡片内
    ```
 6. 运行效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/tbSxMraxQUeTKP2Xt8KrGg/zh-cn_image_0000002773904544.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/XMQoCUIQS-O3LJVkD7HlbQ/zh-cn_image_0000002806028841.gif)

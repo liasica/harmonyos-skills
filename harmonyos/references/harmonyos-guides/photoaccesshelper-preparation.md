@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshe
 title: 开发准备
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 受限开放能力 > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:47+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c16d12bda70aa3b4909cb7ddf1e1049f2dd00fc8e6918cc631b6ca7ca8303374
+scraped_at: 2026-10-31T07:32:47+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:fa3905c4f933306a4dc0e3f9b5a0f49cdc6bb629dd5b789ea29c50a690083df2
 ---
 
 应用需获取相册管理模块实例，才能访问和修改相册中的媒体数据。相册管理模块涉及用户个人数据信息，应用需向用户申请读写权限，以保证功能的正常运行。使用相册管理模块接口时，如无其他注明，默认在工程代码的pages/index.ets或其他自定义的ets文件中使用。
@@ -25,7 +25,7 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
 import { common } from '@kit.AbilityKit';
 
 // 此处获取的photoAccessHelper实例为全局对象，后续文档中使用到的地方默认为使用此处获取的对象，如未添加此段代码报未定义的错误请自行添加。
-// 请在组件内获取context，确保this.getUiContext().getHostContext()返回结果为UIAbilityContext
+// 请在组件内获取context，确保this.getUIContext().getHostContext()返回结果为UIAbilityContext
 @Entry
 @Component
 struct Index {

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: PatternLock
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > PatternLock
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:46+08:00
+scraped_at: 2026-10-31T07:35:24+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:5da552a947124f0aa8a3db9ee93c4c88983b30d7bc294da918671b4c086d3cb5
+content_hash: sha256:162e0d570402526194d2240119fb24f14b405337b38d90e1839e29a6f2eb768b
 ---
 
 图案密码锁组件，以九宫格图案的方式输入密码，用于密码验证场景。组件支持自定义九宫格尺寸、圆点及连线样式、选中/激活状态颜色等外观属性，支持密码输入过程中的实时反馈以及密码验证结果（正确/错误）的状态设置。手指在PatternLock组件区域按下时开始进入输入状态，手指离开屏幕时结束输入状态完成密码输入。
@@ -387,7 +387,7 @@ struct PatternLockExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/LdJvC7hlSBShymDtpqoSSA/zh-cn_image_0000002773906484.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/DT6W81JRT9GeassO4jGZjw/zh-cn_image_0000002776911050.gif)
 
 ### 示例2（判断密码是否正确）
 
@@ -462,4 +462,4 @@ struct PatternLockExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/OKnGP4UPS72cLwvDIH3T9g/zh-cn_image_0000002803266269.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/YeLy99S0QVWWWic11Q41TQ/zh-cn_image_0000002776751064.gif)

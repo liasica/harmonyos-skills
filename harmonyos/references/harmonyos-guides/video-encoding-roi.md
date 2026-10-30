@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encodin
 title: ROI视频编码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > ROI视频编码
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:17+08:00
+scraped_at: 2026-10-31T07:32:39+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:539614aae835033270cbff18603d1a40df81f9ec6ad001d6bd9a83c4bb44011f
+content_hash: sha256:4ef47e8aec31e1d4117b61af885f4fa13acdcbdf5fdff16ff69bd75846949dd0
 ---
 
 ## 基础概念
@@ -83,7 +83,7 @@ ROI是一个矩形区域，Top,Left和Bottom,Right分别定义了ROI的区域在
 
 **图1：ROI坐标和最大允许面积占比示意图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/EkbTUoFbQQKMegf_g4qpdA/zh-cn_image_0000002774064854.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/qyw9Q5UMRP-Z7so1dXoTSw/zh-cn_image_0000002776749460.png)
 
 ## 生效机制说明
 
@@ -124,7 +124,7 @@ Surface模式下，相机将视频帧输出到OH\_NativeImage的Surface上，开
 
 **图2：NativeBuffer元数据接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/mKCV_qY6QJ-YGcQQlzSloQ/zh-cn_image_0000002773904882.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/COwbPTi-Tu6ND8OmX537BQ/zh-cn_image_0000002806029177.png)
 
 详细开发步骤如下：
 
@@ -278,7 +278,7 @@ Surface模式下，相机将视频帧输出到OH\_NativeImage的Surface上，开
 
 **图3：编码输入参数回调接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/lpCo7UJiQZ-wuZHQuCNCVQ/zh-cn_image_0000002803264665.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/oL8yGQXUQtWxTf9A3846yA/zh-cn_image_0000002806109067.png)
 
 详细开发步骤如下：
 
@@ -384,7 +384,7 @@ Buffer模式下，视频帧通过OH\_VideoEncoder\_PushInputBuffer送入编码�
 
 **图4：编码输入Buffer回调接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/nbAYF7QYQyiKbn1vIg5bFA/zh-cn_image_0000002803224575.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/8l9jZjj7TLORKX4lj5EjGA/zh-cn_image_0000002776909448.png)
 
 详细开发步骤如下：
 

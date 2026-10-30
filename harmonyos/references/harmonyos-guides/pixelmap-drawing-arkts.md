@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pixelmap-draw
 title: 图片绘制（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 图元绘制 > 图片绘制（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:28+08:00
+scraped_at: 2026-10-31T07:32:50+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:15d1e000086e24a81f9ea3eb86fb1972653d13548fcd5f33137940b400680e32
+content_hash: sha256:adfe514468dd38ca25e69dd0fbf4c38e31841db348a6ec3b7e5afd95c6ca1d47
 ---
 
 位图是一种用于在内存中存储和表示图像的数据结构，它是一个未经过压缩的像素集合，而JPEG或PNG等格式的图片是压缩格式的，两者并不相同。如果需要将JPEG或PNG绘制到屏幕上，需要先解码成位图格式，具体可参考[图片处理服务（Image Kit）](image-overview.md)图片解码相关章节。
@@ -96,7 +96,7 @@ content_hash: sha256:15d1e000086e24a81f9ea3eb86fb1972653d13548fcd5f33137940b4006
 
    绘制效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/YEjjciyNT2erqSsKtTs9eA/zh-cn_image_0000002774065014.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/QvzG5hNlSW-6ukVx9m-CoQ/zh-cn_image_0000002776749618.png)
 
 ## 示例代码
 

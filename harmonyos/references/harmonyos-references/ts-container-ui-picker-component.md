@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: UIPickerComponent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > UIPickerComponent
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:41+08:00
+scraped_at: 2026-10-31T07:35:16+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:bbe1c64fe40c012f423a2282f5f793e9d0a5b41892f5e8c59568fea55f0fbe73
+content_hash: sha256:cdefd1628f6921f240d0e775560bf07215c07e8fff3c81bba8368dcd423cd290
 ---
 
 UIPickerComponent容器是用于实现用户选择操作的组件。它支持从一组有限的选项中让用户进行单选，采用立体滚轮样式提供直观的视觉反馈和流畅的滑动体验。该组件支持选项按需定制，包括文本类型、图片类型和图文组合类型，可根据业务需求提供更丰富的信息展示，可广泛应用于时间选择、日期选择、地区选择、状态选择等多种场景。
@@ -346,7 +346,7 @@ struct UIPickerComponentAttrsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/spzH0ncuSxWNkH9cmS3B8g/zh-cn_image_0000002774066226.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/DUzUjsRCRbOZJrR7OA2qhw/zh-cn_image_0000002806110437.gif)
 
 ### 示例2（设置事件回调）
 
@@ -396,7 +396,7 @@ struct UIPickerComponentEventsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/9cuJieoJTnKyqwNGMBPq-w/zh-cn_image_0000002773906252.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/W6DB-7srSPGqK5U2-1_HEw/zh-cn_image_0000002776910818.gif)
 
 ### 示例3（设置选中项索引值）
 
@@ -447,7 +447,7 @@ struct UIPickerComponentSelectedIndexExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/h7ikOQoLR0eF_Gmawe_mZw/zh-cn_image_0000002803266035.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/n4IcWASNSReAwVC9nD8NNg/zh-cn_image_0000002776750832.gif)
 
 ### 示例4（设置选中项指示器）
 
@@ -746,7 +746,7 @@ struct UIPickerComponentIndicatorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/4I_qgpOaQyiron8YoTACaA/zh-cn_image_0000002803225943.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/iPKJMHDaTe-zcC3FqBve-w/zh-cn_image_0000002806030549.gif)
 
 ### 示例5（自定义月份选择器）
 
@@ -798,7 +798,7 @@ struct MonthUIPickerComponentExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/BG_1r4ZxT1irzyS4q9iE7g/zh-cn_image_0000002774066228.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/LMulPPwQRhuNht-W9dzlwA/zh-cn_image_0000002806110439.gif)
 
 ### 示例6（自定义地区选择器）
 
@@ -916,7 +916,7 @@ struct RegionUIPickerComponentExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/JC-FOWmESTu6mb5RdRxWsQ/zh-cn_image_0000002773906254.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/bWGCR4mtQwikc1nqaOlgBg/zh-cn_image_0000002776910820.gif)
 
 ### 示例7（自定义选项类型）
 
@@ -1013,7 +1013,7 @@ struct UIPickerComponentExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/bWkcjEUXQe6MBhP6_TM3mA/zh-cn_image_0000002803266037.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/vD4Tj98GQpKBX8x69xqtqw/zh-cn_image_0000002776750834.gif)
 
 ### 示例8（自定义时间选择器）
 
@@ -1486,7 +1486,7 @@ struct TimeUIPickerComponentExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/-uM6k-L2T5uxr9W6opVjKw/zh-cn_image_0000002803225945.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/aY44jNRwTueGOWVWfvPyvg/zh-cn_image_0000002806030551.gif)
 
 ### 示例9（设置选项高度）
 
@@ -1550,7 +1550,7 @@ struct UIPickerComponentItemHeightExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/wR_VoR9PTTe1F08MG7LUEg/zh-cn_image_0000002774066230.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/XpyfVDtVRfuHHy-ZPEn5qg/zh-cn_image_0000002806110441.jpg)
 
 ### 示例10（设置可见选项数量）
 
@@ -1618,4 +1618,4 @@ struct UIPickerComponentDisplayedCountExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/sF5TGfHpR8CWgi8wZ06PEA/zh-cn_image_0000002773906256.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/Gw9HVc7hS3ebjLUCCXBQIQ/zh-cn_image_0000002776910822.jpg)

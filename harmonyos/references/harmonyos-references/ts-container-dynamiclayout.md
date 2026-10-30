@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: DynamicLayout
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 行列与堆叠 > DynamicLayout
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:36+08:00
+scraped_at: 2026-10-31T07:35:12+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:1a74919b8010102e407a701741c28e16ade1fc0b4f03ceea2a78211076c2cbc4
+content_hash: sha256:e496d8d08c83bc047243bf34183b5172747c81914159e1e22cb1bd61c8d3e8bb
 ---
 
 动态布局容器组件，支持在运行时动态切换不同的布局算法，不改变子组件的状态。使用DynamicLayout可以提升布局灵活性，简化界面适配和多视图切换的开发流程。适用于响应式布局（适配不同屏幕尺寸）、多视图模式切换（如列表/网格/瀑布流切换）、用户自定义布局等场景。
@@ -234,7 +234,7 @@ interface Product {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/AQUzilw_TkyJq1fUD5oQIA/zh-cn_image_0000002803225827.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/Qc3l6wYQS9K_CF0Vn6DwWQ/zh-cn_image_0000002806030433.png)
 
 ### 示例2（切换布局算法）
 
@@ -355,7 +355,7 @@ struct LayoutSwitchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/OAv-Q7sjRfyItmFXb2hmyw/zh-cn_image_0000002774066112.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/B2527vk5QqSXz05GkE-pyg/zh-cn_image_0000002806110323.gif)
 
 ### 示例3（修改布局算法属性）
 
@@ -425,4 +425,4 @@ struct PropertyChangeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/FHUwrVhGQUup8lEO0Zw5nA/zh-cn_image_0000002773906138.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/zsr0KjpZSyCQhtoFoUX7dA/zh-cn_image_0000002776910704.gif)

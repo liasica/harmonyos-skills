@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-intro
 title: Account Kit简介
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit简介
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:32+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:60821c4ce6c49cd279065cb6911a41ac34d3cce6f98692087b74451265bdfe4f
+scraped_at: 2026-10-31T07:32:54+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:8a7ac0d65c39f17133a4ea508b9d39abbfd3c155c89a4ceef47fa8f0c4a14774
 ---
 
 ## 场景介绍
@@ -68,5 +68,4 @@ Account Kit提供的[华为账号登录按钮组件SampleCode](https://gitcode.c
 本Kit支持模拟器，但与真机存在部分能力差异，具体差异如下。
 
 * 通用差异：请参见“[模拟器与真机的差异](ide-emulator-specification.md#section1227613205203)”。
-* 模拟器仅支持应用统一认证服务[authentication](../harmonyos-references/account-api-authentication.md)的登录和授权能力、[华为账号Button登录组件](../harmonyos-references/account-api-huawei-id-button.md#loginwithhuaweiidbutton)。
-* 不支持Wearable设备模拟器。
+* Wearable设备模拟器不支持Account Kit相关能力。其他模拟器仅支持应用统一认证服务[authentication](../harmonyos-references/account-api-authentication.md)的登录和授权能力、[华为账号Button登录组件](../harmonyos-references/account-api-huawei-id-button.md#loginwithhuaweiidbutton)。

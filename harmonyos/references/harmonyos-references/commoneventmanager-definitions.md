@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/commoneve
 title: 系统定义的公共事件
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 进程线程通信 > 系统定义的公共事件
 category: harmonyos-references
-scraped_at: 2026-10-17T06:47:03+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:f23a02530181bab08b2328a1725cc2c7e5deb1dd57413cf4b6ba3c5376e45034
+scraped_at: 2026-10-31T07:37:17+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:4a2c8f1c3c19ccb4c70810063d65ed10fee838686177a5bf4b24e2ef96daf3a3
 ---
 
 本文档提供了系统定义的公共事件清单。
@@ -282,20 +282,6 @@ datashare服务启动完成后，将会触发事件通知服务发布该[系统�
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **取值：** "common.event.SPLIT\_SCREEN"
-
-## Notification Kit
-
-### COMMON\_EVENT\_SLOT\_CHANGE
-
-表示[通知渠道](../harmonyos-guides/notification-glossary.md#notification-slot通知渠道)或通知开关发生变化。
-
-[通知设置](../harmonyos-guides/notification-glossary.md#notification-setting通知设置)里修改应用的渠道参数、渠道开关，或者开启、关闭通知使能开关时，都会触发通知服务发布这个[系统公共事件](../harmonyos-guides/common-event-glossary.md#system-common-event系统公共事件)。
-
-**系统能力：** SystemCapability.Notification.CommonEvent
-
-**订阅者所需权限：** ohos.permission.NOTIFICATION\_CONTROLLER
-
-**取值：** "usual.event.SLOT\_CHANGE"
 
 ## Background Tasks Kit
 

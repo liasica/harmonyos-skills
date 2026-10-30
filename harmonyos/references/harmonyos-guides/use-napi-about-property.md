@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口设置ArkTS对象的属性
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口设置ArkTS对象的属性
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:11+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:1dff203ff8924ff9383a9c3a2ba0c55130b1466c4ef33501e9b06c711de25f19
+scraped_at: 2026-10-31T07:33:42+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:5c9e8986c987c152d2b8e77a9872065c906db2d10418a3974464adad51d40040
 ---
 
 ## 简介
@@ -324,8 +324,8 @@ export function napiDeleteProperty() {
   let obj: Obj = { first: 1 };
   hilog.info(0x0000, 'testTag', 'Test Node-API napi_delete_property first: %{public}s',
     testNapi.deleteProperty(obj, 'first'));
-  // Set the new property as non-configurable
-  // The Object.defineProperty method is not supported in DevEco Studio 4.1.0.400 and above versions, and needs to be used in TS (TypeScript)
+  // 将新属性设置为不可配置
+  // DevEco Studio 4.1.0.400及以上版本不支持Object.defineProperty方法，需要在TS（TypeScript）中使用
   Object.defineProperty(obj, 'config', {
     configurable: false,
     value: 'value'
@@ -791,14 +791,14 @@ hilog.info(0x0000, 'testTag', 'Test Node-API define_method_properties:%{public}d
   testNapi.defineMethodProperties()
     .defineMethodPropertiesExample());
 // 定义string类型的属性
-hilog.info(0x0000, 'testTag', 'Test Node-API define_string_properties::%{public}s ',
+hilog.info(0x0000, 'testTag', 'Test Node-API define_string_properties:%{public}s ',
   testNapi.defineStringProperties()
     .defineStringPropertiesExample);
 // getter和setter
-hilog.info(0x0000, 'testTag', 'Test Node-API get::%{public}s ',
+hilog.info(0x0000, 'testTag', 'Test Node-API get:%{public}s ',
   testNapi.createStringWithGetterSetter()
     .getterCallback());
-hilog.info(0x0000, 'testTag', 'Test Node-API setter::%{public}s ',
+hilog.info(0x0000, 'testTag', 'Test Node-API setter:%{public}s ',
   testNapi.createStringWithGetterSetter()
     .setterCallback('set data'));
 ```

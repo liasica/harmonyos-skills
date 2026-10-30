@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/geometric-sha
 title: 几何形状绘制（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 图元绘制 > 几何形状绘制（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:28+08:00
+scraped_at: 2026-10-31T07:32:50+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:1d97d53acffcf81d60f35e4675d9eacb1d912948eb87b36fb07b8863bdee7f58
+content_hash: sha256:8585bf2909ce102f95c3834b957e8e0b54a3c92037ca7398cd39d02d8d96faa2
 ---
 
 ## 场景介绍
@@ -75,7 +75,7 @@ OH_Drawing_PenDestroy(pen);
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/r3fBg6EvRLe53a0zo7vVHQ/zh-cn_image_0000002773905044.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/SGTLcJLvQBmBIPJxcbPQrQ/zh-cn_image_0000002806029339.png)
 
 ## 绘制圆弧
 
@@ -110,7 +110,7 @@ OH_Drawing_RectDestroy(rect);
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/DSbrK59VQDKvlbLJmB5HJQ/zh-cn_image_0000002803264827.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/GIc5eVkVQWq7vbxVh38L2Q/zh-cn_image_0000002806109229.png)
 
 ## 绘制圆
 
@@ -144,7 +144,7 @@ OH_Drawing_PointDestroy(point);
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/bl7kswpGSeiaAHXSw-hauQ/zh-cn_image_0000002803224737.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/wIp8KR9bTCmCOT3CURqucg/zh-cn_image_0000002776909610.png)
 
 ## 绘制路径
 
@@ -209,7 +209,7 @@ OH_Drawing_PathDestroy(path);
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/SFD51ozgQz-WTz35mHZvsA/zh-cn_image_0000002774065020.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/wEcTAZKORdWagm5YgB7UOA/zh-cn_image_0000002776749624.png)
 
 ## 绘制区域
 
@@ -249,7 +249,7 @@ OH_Drawing_RectDestroy(rect2);
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/61_5jAexRR27xVt-wzmcpQ/zh-cn_image_0000002773905038.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/rA0JKgPbQAamgwwZF-MXpw/zh-cn_image_0000002806029333.jpg)
 
 ## 绘制矩形
 
@@ -276,7 +276,7 @@ OH_Drawing_RectDestroy(rect);
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/HdLhdrLxSQi3TzfIpOAwNA/zh-cn_image_0000002773905046.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/QdSQEPHJQvShbGcnzvMqOg/zh-cn_image_0000002806029341.png)
 
 ## 绘制圆角矩形
 
@@ -311,7 +311,7 @@ OH_Drawing_RoundRectDestroy(roundRect);
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/tj2DhsW0R_attt156l0n-w/zh-cn_image_0000002803264829.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/y7NvUJaPQzCREswvXkkybA/zh-cn_image_0000002806109231.png)
 
 ## 示例代码
 

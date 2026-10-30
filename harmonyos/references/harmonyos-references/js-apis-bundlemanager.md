@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bundle.bundleManager (应用程序包管理模块)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.bundle.bundleManager (应用程序包管理模块)
 category: harmonyos-references
-scraped_at: 2026-10-11T07:23:34+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:d7492544af6ae9285fc0a40652600a83f9bef9e003eeb0e7242f8525b7fcc0a3
+scraped_at: 2026-10-31T07:34:28+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:6b0f038efad954d36de8c3a73379a222dfa901d88435c8939780b9be4d8f8ec7
 ---
 
 本模块提供应用信息的查询能力，支持应用包信息[BundleInfo](js-apis-bundlemanager-bundleinfo.md)、应用程序信息[ApplicationInfo](js-apis-bundlemanager-applicationinfo.md)、UIAbility组件信息[AbilityInfo](js-apis-bundlemanager-abilityinfo.md)、ExtensionAbility组件信息[ExtensionAbilityInfo](js-apis-bundlemanager-extensionabilityinfo.md)等信息的查询。
@@ -338,7 +338,7 @@ getProfileByAbility(moduleName: string, abilityName: string, metadataName: strin
 
 根据给定的moduleName、abilityName和metadataName（module.json5中[abilities标签](../harmonyos-guides/module-configuration-file.md#abilities标签)下的metadata标签的name）获取自身相应配置文件的json格式字符串。使用callback异步回调。
 
-说明：
+**说明** 
 
 如果配置文件信息采用了资源引用格式，则返回值将保持资源引用格式（例如 $string:res\_id），开发者可以通过[资源管理](js-apis-resource-manager.md)的相关接口，来获取引用的资源。
 
@@ -398,7 +398,7 @@ getProfileByAbility(moduleName: string, abilityName: string, metadataName?: stri
 
 根据给定的moduleName、abilityName和metadataName（module.json5中[abilities标签](../harmonyos-guides/module-configuration-file.md#abilities标签)下的metadata标签的name）获取自身相应配置文件的json格式字符串。使用Promise异步回调。
 
-说明：
+**说明** 
 
 如果配置文件信息采用了资源引用格式，则返回值将保持资源引用格式（例如 $string:res\_id），开发者可以通过[资源管理](js-apis-resource-manager.md)的相关接口，来获取引用的资源。
 

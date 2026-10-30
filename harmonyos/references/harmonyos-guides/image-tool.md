@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-tool
 title: 读取和编辑图片Exif信息
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片元数据处理 > 读取和编辑图片Exif信息
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:58+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:f3bf85a5390839d05372e53e48281edf2e4cd08c10191ef6a24218942701d102
+scraped_at: 2026-10-31T07:32:44+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:3ce6b6e5be58b339aaae74843ab20a82c07faf0c2c88e0ea8272d0ed6c0e5360
 ---
 
 Image Kit提供图片Exif信息的读取与编辑能力。
@@ -89,7 +89,7 @@ Exif信息的读取与编辑相关的API如下，详细介绍请参考[ImageSour
      : Promise<string> {
      let info: string = '';
      if (imageSourceApi) {
-       // 编辑EXIF信息
+       // 编辑Exif信息
        try {
          await imageSourceApi.modifyImageProperty(key, value);
          try {

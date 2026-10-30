@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SubHeaderV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SubHeaderV2
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:53+08:00
+scraped_at: 2026-10-31T07:35:33+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2f750c2bf5e175f70c4e72425ae5d5805381182d6712d1c7a5bdc9bb3a46c65d
+content_hash: sha256:1cfb7416eda9b389e71ba9109d01fc9355d456ad1c0d6aae01969b1ffd6b65bf
 ---
 
 子标题，用于列表项或内容项顶部，将该列表或内容划分为一个区块，子标题名称用来概括该区块内容。
@@ -379,7 +379,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/4stpVh7nStKdgM3XBRbc_g/zh-cn_image_0000002774066686.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/QqAZy_KOQKyuMFWmPbRGrw/zh-cn_image_0000002806110899.png)
 
 ### 示例2（双行文本内容型子标题）
 
@@ -431,7 +431,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/GTcVLXFzQ-29pGExvFlfFw/zh-cn_image_0000002773906714.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/uEmeQyuCRSeg2UgQXHqpJQ/zh-cn_image_0000002776911280.png)
 
 ### 示例3（spinner型内容型子标题）
 
@@ -509,7 +509,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/rqKk5mQnTX22sQmYhohYtQ/zh-cn_image_0000002803266497.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/6o9FV3gYQUKOwcVDRsKsHg/zh-cn_image_0000002776751292.png)
 
 ### 示例4（设置左侧symbol图标）
 
@@ -553,7 +553,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/191glHvqTlm5UnBPV__V7A/zh-cn_image_0000002803226403.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/4aD2hIhqTIeAd7UvgKG8jQ/zh-cn_image_0000002806031009.gif)
 
 ### 示例5（设置右侧symbol图标）
 
@@ -639,7 +639,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/VpeoGiLoQn-M8UVT9TqDEg/zh-cn_image_0000002774066688.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/zg1Etm6MSRCrE_8cSkD6RA/zh-cn_image_0000002806110901.png)
 
 ### 示例6（自定义标题内容）
 
@@ -697,7 +697,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/akuvCkWHRMqD4NatuU5Ykw/zh-cn_image_0000002773906716.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/LrWhV7OgR6eplgCJdHLGIA/zh-cn_image_0000002776911282.png)
 
 ### 示例7（自定义标题样式）
 
@@ -748,7 +748,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/yJ8LewOcTZKZpXeX-fKwnA/zh-cn_image_0000002773906718.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/IdRThdIfRza_HNTE_HvUxg/zh-cn_image_0000002776911284.png)
 
 ### 示例8（右侧按钮自定义播报）
 
@@ -848,7 +848,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/ES42MUWxRl-5jvuijZ1HaQ/zh-cn_image_0000002803226405.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/eyS1SUj8TQGNaXmJo5thWw/zh-cn_image_0000002806031011.png)
 
 ### 示例9（右侧按钮设置默认获焦）
 
@@ -910,4 +910,4 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/k2mCmUrkSBGKWtI2HRoIhg/zh-cn_image_0000002774066690.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/0o9cjZGhQCuFstDUswbdHg/zh-cn_image_0000002806110903.png)

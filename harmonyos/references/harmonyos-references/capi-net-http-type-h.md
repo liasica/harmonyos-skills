@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-net-
 title: net_http_type.h
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 头文件 > net_http_type.h
 category: harmonyos-references
-scraped_at: 2026-10-27T07:42:30+08:00
-doc_updated_at: 2026-10-26
-content_hash: sha256:099bb69cdc06bee32fdf2c954aed3a60ae95aafa33e01cfadac2b95007f5e4aa
+scraped_at: 2026-10-31T07:37:01+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:3d8bc48026f732495471da9d39aed85e07626c067f443e3868f98b21f3102c5e
 ---
 
 ## 概述
@@ -66,7 +66,7 @@ content_hash: sha256:099bb69cdc06bee32fdf2c954aed3a60ae95aafa33e01cfadac2b95007f
 | NET\_HTTPMETHOD\_DELETE "DELETE" | HTTP请求DELETE方法。  **起始版本：** 20 |
 | NET\_HTTP\_METHOD\_POST "POST" | HTTP请求POST方法。  **起始版本：** 20 |
 | NET\_HTTP\_METHOD\_PUT "PUT" | HTTP请求PUT方法。  **起始版本：** 20 |
-| NET\_HTTP\_METHOD\_PATCH "PATCH" | HTTP请求PATCH方法。  **起始版本：** 20 |
+| NET\_HTTP\_METHOD\_PATCH "CONNECT" | HTTP请求CONNECT方法。  **起始版本：** 20 |
 
 ### 函数
 

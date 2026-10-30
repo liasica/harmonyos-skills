@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ohos-abi
 title: HarmonyOS ABI
 breadcrumb: 指南 > NDK开发 > 硬件兼容性 > HarmonyOS ABI
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:18+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:2b3addbce0ed8c717bd51858cf35cd1a15916087e7c4fb6f766b8e304d74129b
+scraped_at: 2026-10-31T07:33:45+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:9b696798a65b7af5c20d0c5d61f99e605c2fe579ec1e915164cd1ee68abe85c7
 ---
 
 HarmonyOS系统支持丰富的设备形态，支持多种架构指令集，支持多种操作系统内核；HarmonyOS遵循“OHOS”ABI定义，保持与社区ABI的一致性。
@@ -87,7 +87,9 @@ HarmonyOS系统采用ELF文件格式作为全系统的二进制文件格式，�
 }
 ```
 
-**注意**：如果DevEco Studio中不设置abiFilters字段，则默认配置的指定架构为：arm64-v8a。
+**注意** 
+
+如果DevEco Studio中不设置abiFilters字段，则默认配置的指定架构为：arm64-v8a。
 
 ### cmake中设置
 

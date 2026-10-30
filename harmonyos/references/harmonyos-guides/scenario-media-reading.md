@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-medi
 title: 插画/视频/动画的播报
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 插画/视频/动画的播报
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:19+08:00
+scraped_at: 2026-10-31T07:31:38+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:7c2bce2353e75d9d2862b736d6d42595ca7a3c0881fd50ad52f2fcef594be59b
+content_hash: sha256:76f99b38a8a553ac3cc49fea93bb619db403ff77d5fd0927effa5b1a5c6fcc16
 ---
 
 ## 插画信息开发流程
 
 如下图，插画信息有一定提示作用，插画和对应的功能介绍应该组合在一起，当焦点落到插画或者包含插画的符合控件时，需要朗读出对应的功能描述。建议插画和功能介绍作为一个组合使用一个焦点朗读。它可以借助“accessibilityGroup(true)”属性来实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/hDH86sytT-6Gj5gqbM-9rQ/zh-cn_image_0000002803263233.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/d6bCQzvnQ8-CKc45F_vRzw/zh-cn_image_0000002776748030.png)
 
 ```typescript
 @Entry
@@ -60,7 +60,7 @@ export struct Rule_2_1_6_1 {
 * 列表/网格控件，每个item应提供item包含的元素的所有信息。
 * 建议朗读列表每一项的所有嵌套元素的组合信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/z1X9HorcRSaP95_4xbncnA/zh-cn_image_0000002803223141.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/8vnwxByxQkK1nUcVGXUSnA/zh-cn_image_0000002806027747.png)
 
   它可以借助“accessibilityGroup(true)”属性来实现：
 

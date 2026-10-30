@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-interac
 title: 支持鼠标输入事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 输入设备与事件 > 支持鼠标输入事件
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:32+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:9f64c390966f64f4bc11674273242b829d218478d38f5aaee9e65b9dc11adcf4
+scraped_at: 2026-10-31T07:31:52+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:2b17dc254d53e1d6d3ccd9af5c04b93bfef1d716c7e84e027c7eb26704a3f59f
 ---
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/EehyPHwSRjGGUikF5RXzmg/zh-cn_image_0000002774064098.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/_rHk7lXqRCaAEf9MudXaVg/zh-cn_image_0000002776908690.png)
 
 鼠标设备是PC/2in1、Tablet类型设备必不可少的输入设备，其特点是可以通过按键达成点击或滑动操作，也可以通过滚轮触发滑动，另外还有一些按键，这些分别通过[MouseEvent](../harmonyos-references/ts-universal-mouse-key.md#mouseevent对象说明)及[AxisEvent](../harmonyos-references/ts-universal-events-axis.md#axisevent)上报给应用。
 
@@ -16,7 +16,7 @@ content_hash: sha256:9f64c390966f64f4bc11674273242b829d218478d38f5aaee9e65b9dc11
 
 所有单指可响应的触摸事件/手势事件，均可通过鼠标左键来操作和响应。
 
-* 例如当我们需要开发单击[Button](../harmonyos-references/ts-basic-components-button.md)跳转页面的功能、且需要支持手指点击和鼠标左键点击，那么只绑定一个点击事件（[onClick](../harmonyos-references/ts-universal-events-click.md#onclick)）就可以实现该效果；
+* 例如当开发者需要开发单击[Button](../harmonyos-references/ts-basic-components-button.md)跳转页面的功能、且需要支持手指点击和鼠标左键点击，那么只绑定一个点击事件（[onClick](../harmonyos-references/ts-universal-events-click.md#onclick)）就可以实现该效果；
 * 若需要针对手指和鼠标左键的点击实现不一样的效果，可以在onClick回调中，使用回调参数中的source字段判断当前触发事件的来源是手指还是鼠标。
 
 此外，对PC/2in1、Tablet类型设备上没有针对鼠标操作适配的应用，系统会提供兜底方案，将鼠标左键的点击和滑动，以及滚轮事件转换为触摸事件。并且对开发者开放了通过配置文件自行控制是否转换事件的能力。
@@ -99,7 +99,7 @@ struct MouseMove {
 
    右键点击时：button = 2（MouseButton.Right的枚举值），按下时：action = 1（MouseAction.Press的枚举值），抬起时：action = 2（MouseAction.Release的枚举值）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/4ddGF5DmQbGDHk0pAdyz2Q/zh-cn_image_0000002773904124.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/fzGFZJmdRo2qh3Ki6ymjMQ/zh-cn_image_0000002776748704.gif)
 
 如果需要阻止鼠标事件冒泡，可以通过调用stopPropagation方法进行设置。
 
@@ -155,7 +155,7 @@ struct StopPropagation {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/avs3tMNiS8WS40TGbzO0dg/zh-cn_image_0000002803263909.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/aDv2JZqRSrK7jS4Bs9foSA/zh-cn_image_0000002806028421.gif)
 
 在子组件（Button）的onMouse中，通过回调参数event调用stopPropagation回调方法（如上）即可阻止Button子组件的鼠标事件冒泡到父组件Column上。
 
@@ -203,7 +203,7 @@ struct OnHover {
 
 当鼠标从Button内移动到Button外的瞬间，回调响应，isHover值等于false，又将组件变成了初始的样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/zgOb1wuRTG-9HMhhQAAEFA/zh-cn_image_0000002803223819.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/_qYqpjeeTJObF0s1qBaBRA/zh-cn_image_0000002806108311.gif)
 
 ## 处理鼠标按键
 
@@ -343,7 +343,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/vWw1TeQtT7-lpiifVoxtHQ/zh-cn_image_0000002774064100.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/-iIZOBM6TKuZYWt31wtlvg/zh-cn_image_0000002776908692.gif)
 
 ## 处理滚轮
 
@@ -487,7 +487,7 @@ struct MouseWheel {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/M6WG4B-RRQScn7Q8_MJ61A/zh-cn_image_0000002773904126.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/DUeUoTpUT4-s_GChKrac6A/zh-cn_image_0000002776748706.gif)
 
 ## 鼠标事件转换
 
@@ -501,7 +501,7 @@ struct MouseWheel {
 
 在应用的entry/src/main/resources/base/profile目录下创建配置文件easy\_go.json（示例文件名，可自行命名）。在[module.json5](module-configuration-file.md)配置文件中添加easyGo字段，并指向引用的easy\_go.json配置文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/E1S1R5AFQzOx-sD9db37pw/zh-cn_image_0000002803263911.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/wnrctvvhRk23yd16-szh-g/zh-cn_image_0000002806028423.png)
 
 **2. 增加事件转换配置**
 

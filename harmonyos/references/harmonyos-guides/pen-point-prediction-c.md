@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pen-point-pre
 title: 接入报点预测
 breadcrumb: 指南 > 系统 > 硬件 > Pen Kit（手写笔服务） > 手写功能开发指导（C/C++） > 接入报点预测
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:07+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:13317840d06d503e4442fa23f7b14ae30a602d59d8db20116b5923c349b61eb5
+scraped_at: 2026-10-31T07:32:28+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:ef71912ee39a682d49c7c812e983f9eff6ed5a1eb7fc2cd75c4ac8e5f1c93c4f
 ---
 
 从6.0.0(20)开始，报点预测新增C API接口。
@@ -16,7 +16,7 @@ content_hash: sha256:13317840d06d503e4442fa23f7b14ae30a602d59d8db20116b5923c349b
 
 在应用的自定义界面中，获取到界面的触摸事件，通过调用报点预测的接口，可以得到预测的下一个报点的位置信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/9LGnuXZgRr-lCtTXcYaxLA/zh-cn_image_0000002773904796.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/EQpcWoTWSFySrjIYQynzVg/zh-cn_image_0000002806029091.png)
 
 ## 接口说明
 
@@ -24,58 +24,51 @@ content_hash: sha256:13317840d06d503e4442fa23f7b14ae30a602d59d8db20116b5923c349b
 | --- | --- |
 | int32\_t [HMS\_HandWrite\_GetPredictPoint](../harmonyos-references/pen-handwrite-c.md#hms_handwrite_getpredictpoint)(const [HandWrite\_HistoricalPoint](../harmonyos-references/pen-handwrite-struct-historicalpoint.md) \*event, int32\_t size, float \*predictPointX, float \*predictPointY) | 获取预测点。 |
 
-## 接入步骤
+## 开发步骤
 
 报点预测功能的历史点，通常需要在自定义渲染（XComponent）上注册触摸事件回调获得，请参考[自定义渲染开发指南](napi-xcomponent-guidelines.md)，获得历史触摸点。
 
-### 在CMake脚本中链接动态库
+1. 在CMake脚本中链接动态库。
 
-```c
-target_include_directories(entry PUBLIC ${HMOS_SDK_NATIVE}/sysroot/usr/include) # 当编译过程中报点预测头文件缺失时尝试加入此命令
-target_link_directories(entry PUBLIC ${HMOS_SDK_NATIVE}/sysroot/usr/lib/aarch64-linux-ohos) # 当编译过程中报点预测API链接异常时尝试加入此命令
-target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so libhandwrite_ndk.z.so)
-```
+   ```c
+   target_include_directories(entry PUBLIC ${HMOS_SDK_NATIVE}/sysroot/usr/include) # 当编译过程中报点预测头文件缺失时尝试加入此命令
+   target_link_directories(entry PUBLIC ${HMOS_SDK_NATIVE}/sysroot/usr/lib/aarch64-linux-ohos) # 当编译过程中报点预测API链接异常时尝试加入此命令
+   target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so libhandwrite_ndk.z.so)
+   ```
+2. 导入模块。
 
-### 导入模块
+   ```c
+   #include <ace/xcomponent/native_interface_xcomponent.h>
+   #include <handwrite/native_handwrite_api.h>
+   #include <hilog/log.h>
+   ```
+3. 调用[HMS\_HandWrite\_GetPredictPoint()](../harmonyos-references/pen-handwrite-c.md#hms_handwrite_getpredictpoint)接口获取预测点。
 
-```c
-#include <ace/xcomponent/native_interface_xcomponent.h>
-#include <handwrite/native_handwrite_api.h>
-#include <hilog/log.h>
-```
+   ```
+   void DispatchTouchEvent(OH_NativeXComponent *xcomponent, void *window) {
+       int32_t historicalPointSize = 0;
+       OH_NativeXComponent_HistoricalPoint *historicalPoints = nullptr;
+       if (OH_NativeXComponent_GetHistoricalPoints(xcomponent, window, &historicalPointSize, &historicalPoints) !=
+           OH_NATIVEXCOMPONENT_RESULT_SUCCESS) {
+           OH_LOG_Print(LOG_APP, LOG_ERROR, 0x0000, "PenKit", "failed to get historical points");
+           return;
+       }
 
-### 示例代码
+       std::vector<HandWrite_HistoricalPoint> handWriteHisPoints(historicalPointSize);
+       for (int32_t i = 0; i < historicalPointSize; ++i) {
+           handWriteHisPoints[i].x = historicalPoints[i].x;
+           handWriteHisPoints[i].y = historicalPoints[i].y;
+           handWriteHisPoints[i].timeStamp = historicalPoints[i].timeStamp;
+           handWriteHisPoints[i].force = historicalPoints[i].force;
+       }
 
-[native\_handwrite\_api.h](../harmonyos-references/pen-handwrite-headerfile-declare.md)提供HMS\_HandWrite\_GetPredictPoint()接口获取预测点。
+       float predictPointX = 0.0f;
+       float predictPointY = 0.0f;
+       int32_t errcode =
+           HMS_HandWrite_GetPredictPoint(handWriteHisPoints.data(), historicalPointSize, &predictPointX, &predictPointY);
 
-```cpp
-#include <ace/xcomponent/native_interface_xcomponent.h>
-#include <handwrite/native_handwrite_api.h>
-#include <hilog/log.h>
-
-void DispatchTouchEvent(OH_NativeXComponent *xcomponent, void *window)
-{
-    int32_t historicalPointSize = 0;
-    OH_NativeXComponent_HistoricalPoint *historicalPoints = nullptr;
-    if (OH_NativeXComponent_GetHistoricalPoints(xcomponent, window, &historicalPointSize, &historicalPoints) !=
-        OH_NATIVEXCOMPONENT_RESULT_SUCCESS) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, 0x0000, "PenKit", "failed to get historical points");
-        return;
-    }
-
-    std::vector<HandWrite_HistoricalPoint> handWriteHisPoints(historicalPointSize);
-    for (int32_t i = 0; i < historicalPointSize; ++i) {
-        handWriteHisPoints[i].x = historicalPoints[i].x;
-        handWriteHisPoints[i].y = historicalPoints[i].y;
-        handWriteHisPoints[i].timeStamp = historicalPoints[i].timeStamp;
-        handWriteHisPoints[i].force = historicalPoints[i].force;
-    }
-
-    float predictPointX = 0.0f;
-    float predictPointY = 0.0f;
-    int32_t errcode = HMS_HandWrite_GetPredictPoint(handWriteHisPoints.data(), historicalPointSize, &predictPointX, &predictPointY);
-
-    OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "PenKit", "error code is %{public}d", errcode);
-    OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "PenKit", "predict point is (%{public}f, %{public}f)", predictPointX, predictPointY);
-}
-```
+       OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "PenKit", "error code is %{public}d", errcode);
+       OH_LOG_Print(LOG_APP, LOG_INFO, 0x0000, "PenKit", "predict point is (%{public}f, %{public}f)", predictPointX,
+                    predictPointY);
+   }
+   ```

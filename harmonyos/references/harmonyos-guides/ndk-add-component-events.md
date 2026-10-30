@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-add-compo
 title: 添加事件监听
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 添加事件响应 > 添加事件监听
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:11+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:de545db5e65472a09f964f15bf02034380645b54c27942a7c8f716e03b61285e
+scraped_at: 2026-10-31T07:31:56+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:ff21db0b8275900d6b2c270065340d745079f8938ebf44a33e09e28cd48c17e6
 ---
 
 NDK接口为组件提供了事件监听能力。本文介绍组件事件监听、布局和绘制送显事件监听以及深浅色变更事件监听的使用方法。
@@ -696,10 +696,10 @@ void onColorModeChange(ArkUI_SystemColorMode colorMode, void *userData)
 {
     ColorModeInfo* info = static_cast<ColorModeInfo*>(userData);
     if (colorMode == ARKUI_SYSTEM_COLOR_MODE_LIGHT) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "[Sample_NdkAddInteractionEvent]",
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "[Sample_NdkAddInteractionEvent]",
                      "NdkAddInteractionEvent_Light mode: ", info->lightMsg);
     } else if (colorMode == ARKUI_SYSTEM_COLOR_MODE_DARK) {
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "[Sample_NdkAddInteractionEvent]",
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "[Sample_NdkAddInteractionEvent]",
                      "NdkAddInteractionEvent_Dark mode: ", info->darkMsg);
     }
 }

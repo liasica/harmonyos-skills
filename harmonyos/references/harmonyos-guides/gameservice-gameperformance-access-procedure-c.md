@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 开发指导(C/C++)
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏场景感知（可选） > 开发指导(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:39+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:7fe96dd33d466a8682c5ff99533738ae083d345f110b2a7000faf3c91d0c8eb5
+scraped_at: 2026-10-31T07:33:01+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:a0d87552c430f2677a485a8f0c6162b65ff5c232cf9c549df697747a05446b3f
 ---
 
 游戏场景感知包括：
@@ -15,7 +15,7 @@ content_hash: sha256:7fe96dd33d466a8682c5ff99533738ae083d345f110b2a7000faf3c91d0
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/Nr44bIemQ4iCBt-v6gxHUg/zh-cn_image_0000002773905304.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/xSaTj7nQRsq31WAV6AqByQ/zh-cn_image_0000002806029597.png)
 
 1. 游戏启动后调用[HMS\_GamePerformance\_Init](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_init)接口对游戏场景感知进行初始化。
 2. 初始化成功后，游戏调用[HMS\_GamePerformance\_RegisterThermalLevelChangedCallback](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_registerthermallevelchangedcallback)接口注册设备状态变化事件监听，订阅设备状态变化通知。
@@ -257,8 +257,8 @@ HMS_GamePerformance_ConfigInfo_SetMaxPictureQualityLevel(configInfo, GAME_PERFOR
 HMS_GamePerformance_ConfigInfo_SetCurrentPictureQualityLevel(configInfo, GAME_PERFORMANCE_PQL_HD);
 HMS_GamePerformance_ConfigInfo_SetMaxFrameRate(configInfo, 120);
 HMS_GamePerformance_ConfigInfo_SetCurrentFrameRate(configInfo, 60);
-HMS_GamePerformance_ConfigInfo_SetMaxResolution(configInfo, "1260*2720");
-HMS_GamePerformance_ConfigInfo_SetCurrentResolution(configInfo, "1260*2720");
+HMS_GamePerformance_ConfigInfo_SetMaxResolution(configInfo, "1260x2720");
+HMS_GamePerformance_ConfigInfo_SetCurrentResolution(configInfo, "1260x2720");
 HMS_GamePerformance_ConfigInfo_SetAntiAliasingEnabled(configInfo, true);
 HMS_GamePerformance_ConfigInfo_SetShadowEnabled(configInfo, true);
 HMS_GamePerformance_ConfigInfo_SetMultithreadingEnabled(configInfo, true);

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: Cloud Foundation Kit简介
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > Cloud Foundation Kit简介
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:36+08:00
+scraped_at: 2026-10-31T07:32:59+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:b2b4ed35ae4c7eeecf42fecaf2bae45dea37c2e073aef32436a7cb5747a807d9
+content_hash: sha256:f41504fccb03537b8dbc44b0462312fe3166d61093a1eb05e1774ca15d06ab09
 ---
 
 Cloud Foundation Kit（云开发服务）可以按需为应用提供云函数、云数据库、云存储、预加载等云端服务。应用运行所需的服务器和环境均可由云端平台提供，开发者只需关注应用的业务逻辑，而无需关心基础设施（例如：服务器、操作系统、容器等）。
@@ -33,7 +33,7 @@ DevEco Studio中还提供了[端云一体化开发](agc-harmonyos-clouddev-overv
 
 便捷操作云函数、云数据库、云存储、预加载服务，简化应用/元服务开发与运维相关的事务，快速构建应用/元服务的后端服务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/2gRdkrMLQMO6mqlvXnyP3w/zh-cn_image_0000002803224929.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/TDHmANecQLyJnA4pqP6olw/zh-cn_image_0000002776909802.png)
 
 ### 计算密集型任务
 
@@ -47,7 +47,7 @@ DevEco Studio中还提供了[端云一体化开发](agc-harmonyos-clouddev-overv
 * 对数据的同步，例如数据的抽取、转化或者加载。
 * 对视频或者图像的处理，例如生成不同分辨率的视频或者图片。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/PM05qbOuQuaTkY-OHSbJdw/zh-cn_image_0000002774065214.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/g4IhdEvuTA2twKk5AaQ4TA/zh-cn_image_0000002776749816.png)
 
 ### 协议适配和转换场景
 
@@ -55,7 +55,7 @@ DevEco Studio中还提供了[端云一体化开发](agc-harmonyos-clouddev-overv
 
 例如：可以将数据存储、身份验证、消息队列、推送通知、定时任务等功能切片通过云服务实现胶水层的链接、转换。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/vAV63xp2RzCLw5RQBiooig/zh-cn_image_0000002773905240.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/Q85JmisKQAS8K7S1LcG0-w/zh-cn_image_0000002806029533.png)
 
 ### 浪涌式访问场景
 
@@ -63,7 +63,7 @@ DevEco Studio中还提供了[端云一体化开发](agc-harmonyos-clouddev-overv
 
 Cloud Foundation Kit能根据业务访问量快速自动扩容，规避业务高峰时系统异常的风险，度过业务流量高峰期，使应用从容应对诸如秒杀、节日活动等业务场景；并发量骤降时，弹性伸缩的特性亦支持自动缩容，释放闲置资源，避免浪费。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/D8KO2w7oTpeo8Sb_crePaw/zh-cn_image_0000002803265023.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/MXGmQ78lQnKmD-RUhSas9Q/zh-cn_image_0000002806109423.png)
 
 ## 约束与限制
 

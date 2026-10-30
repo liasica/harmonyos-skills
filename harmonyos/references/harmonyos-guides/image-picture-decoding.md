@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-picture
 title: 使用ImageSource完成多图对象解码
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片解码 > 使用ImageSource完成多图对象解码
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:58+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:cf3e6d3dce96ff99583ba73f95e5651f5a60ac5636c0bbe7c5e071886e805cf7
+scraped_at: 2026-10-31T07:32:44+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:c5c35c163a93885774d317dea475c2cfb23cc65b1fdc167edc1314ec11c48e90
 ---
 
 将所支持格式的图片文件解码成[Picture](image-overview.md#基础概念)多图对象，以便在应用或系统中进行HDR图片显示、辅助图处理等操作。当前支持的图片文件格式包括JPEG、HEIF。
@@ -139,7 +139,7 @@ Picture和PixelMap是两种不同的图片解码对象，适用于不同的场�
    并非所有图片都包含辅助图。在获取辅助图前，应先调用Picture的[getAuxiliaryPicture](../harmonyos-references/arkts-apis-image-picture.md#getauxiliarypicture13)方法尝试获取。其他辅助图类型请参考[AuxiliaryPictureType](../harmonyos-references/arkts-apis-image-e.md#auxiliarypicturetype13)。
 
    ```typescript
-   async createPicture(imageSource : image.ImageSource | undefined, isReturnAux: Boolean)
+   async createPicture(imageSource : image.ImageSource | undefined, isReturnAux: boolean)
      : Promise<image.PixelMap | undefined | image.Picture> {
      // 配置解码选项参数。
      let options: image.DecodingOptionsForPicture = {

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: UIAbilityContext
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > application > UIAbilityContext
 category: harmonyos-references
-scraped_at: 2026-09-25T07:09:07+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:c22d660350dd9eec2d441847a407cef5ad5cb7b7264b45cfcd65597e3a866966
+scraped_at: 2026-10-31T07:34:30+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:6e1ffade259a51ad8c6540cc040b4eeb8eded937a29615c85e02eb7603a6ccd9
 ---
 
 UIAbilityContext是[UIAbility](js-apis-app-ability-uiability.md)组件的上下文，继承自[Context](js-apis-inner-application-context.md)。各类Context之间的关联与差异详见[应用上下文Context](../harmonyos-guides/application-context-stage.md)。
@@ -1339,6 +1339,10 @@ setMissionLabel(label: string, callback: AsyncCallback<void>): void
 
 设置UIAbility在多任务界面中显示的名称。使用callback异步回调。
 
+**说明** 
+
+建议主进程UIAbility名称与应用名保持一致。
+
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
@@ -1380,6 +1384,10 @@ export default class EntryAbility extends UIAbility {
 setMissionLabel(label: string): Promise<void>
 
 设置UIAbility在多任务界面中显示的名称。使用Promise异步回调。
+
+**说明** 
+
+建议主进程UIAbility名称与应用名保持一致。
 
 **元服务API**：从API version 11开始，该接口支持在元服务中使用。
 

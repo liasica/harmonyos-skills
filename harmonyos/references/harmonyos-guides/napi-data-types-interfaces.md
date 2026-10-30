@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-data-typ
 title: Node-API支持的数据类型和接口
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API支持的数据类型和接口
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:06:22+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:05ff286885d75d2e50bd71cf53125b5bd44a013ba9d39ceb7480fa663c40a59f
+scraped_at: 2026-10-31T07:33:41+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:926f20484b397e01dbd64f8557037460c5bfb77b1cffff19e5acbfb7dcd2a976
 ---
 
 ## Node-API的数据类型
@@ -596,7 +596,7 @@ napi_status napi_run_script_path(napi_env env,
                                  napi_value* result);
 ```
 
-\*\*注：\*\*使用限制说明文档：[使用napi\_run\_script\_path接口执行包内abc文件的使用限制](../harmonyos-faqs/faqs-ndk-65.md)
+**注**：使用限制说明文档：[使用napi\_run\_script\_path接口执行包内abc文件的使用限制](../harmonyos-faqs/faqs-ndk-65.md)
 
 **napi\_load\_module**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-genera
 title: 概述
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 通用凭证 > 概述
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:53+08:00
+scraped_at: 2026-10-31T07:33:17+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:c3aa670f6ddd081e2e599c10f546f2a30c614f7bef7816da065092c10f8ffe3c
+content_hash: sha256:16521e018fece40a062b083ad3a52a762a6936efc54f285c2087e21ec0a27b3f
 ---
 
 通用凭证为开发者提供了票券、会员卡、出行凭证等业务之外，没有明确且清晰业务划分的灵活选择，适用于预订凭证、行业资格证、服务预约单等多种场景。
@@ -18,7 +18,7 @@ content_hash: sha256:c3aa670f6ddd081e2e599c10f546f2a30c614f7bef7816da065092c10f8
 
 ## 系统架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/4YwAdwxYTZiB77-gOVBykg/zh-cn_image_0000002803225321.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/t8175HBmTj64ckRjpDeTaA/zh-cn_image_0000002776750210.png)
 
 | 角色 | 说明 |
 | --- | --- |
@@ -33,11 +33,11 @@ content_hash: sha256:c3aa670f6ddd081e2e599c10f546f2a30c614f7bef7816da065092c10f8
 
 ### 通用凭证开通
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/ldLYhJ-UTl2-3H-U_ypG_w/zh-cn_image_0000002774065628.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/_DA7CmDEQWuqAq3nmhyBWg/zh-cn_image_0000002806029949.png)
 
 ### 通用凭证展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/GdfDYo7rQ4uc8y1VAvY1cw/zh-cn_image_0000002773905654.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/lUSFhBCVTO-p8mP_rJuTPA/zh-cn_image_0000002806109839.png)
 
 ## 接入流程
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics-e
 title: ArkGraphics Editor插件及编辑器的下载与安装
 breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkGraphics Editor插件及编辑器的下载与安装
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:29+08:00
+scraped_at: 2026-10-31T07:32:51+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:8ce867575ad3913c918c52f036980bb57160485d73b7a0d72a2ab4cba2333259
+content_hash: sha256:32dc66c348dd9d225fca6c5ebd5fbdcc64228892d653d81e313459430c96715e
 ---
 
 3D编辑器ArkGraphics Editor提供3D模型、动画、ShaderGraph等核心编辑能力，可供设计师、开发者快速接入使用。支持通过拖拽等操作，利用3D编辑器可视化能力，完成3D场景开发，3D设计效果所见即所得。无需代码编写，支持从PC到移动端设备的快速流转， 可大幅提升3D应用开发效率。
@@ -36,7 +36,7 @@ ArkGraphics Editor插件支持的主要功能如下：
 2. 点击DevEco Studio菜单项的File，选择Settings，选择左边列表的Plugins。
 3. 点击Plugins窗口的顶部设置按钮，选择Install Plugin from Disk...。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/LI6mur0HTOm9T32AI5fz4Q/zh-cn_image_0000002803224787.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/Hdl5mHXpStiSVCD-0KJuvQ/zh-cn_image_0000002776909660.png)
 4. 选择下载的插件，进行安装。
 5. 安装成功后，关闭DevEco Studio，再重新打开，选择3D工程里的\*.scene文件，可在DevEco Studio里打开显示3D场景内容。
 6. 前往[下载中心](https://developer.huawei.com/consumer/cn/download/)下载最新版本ArkGraphics Editor编辑器，并进行安装。
@@ -51,22 +51,22 @@ ArkGraphics Editor插件支持的主要功能如下：
      + Visual Studio 2022 Community已安装使用C++ 进行桌面开发的选项。
    * 编辑器生成的3D资源文件，目前只支持在HarmonyOS 6.0.0及以上版本的设备上加载呈现。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/dS-Nnu5cScCfvT-8Gg8enw/zh-cn_image_0000002774065070.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/47tPIdbqQH-tWVEwRUyjIA/zh-cn_image_0000002776749674.png)
 
 ## 创建使用3D编辑器资源的工程
 
 1. 创建一个新工程或在已有工程下，右键工程名，选择New，选择Ark Graphics Editor Project。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/EYjQLiRYTD-LARjwW_YoJA/zh-cn_image_0000002773905096.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/yO9k7DT8SUexGoEfyZORLA/zh-cn_image_0000002806029391.png)
 2. 输入3D资源工程名。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/eTz7dAyfQk-PyG3R_roYBw/zh-cn_image_0000002803264879.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/wGIIPPmiR0eXVRbaTvkAfg/zh-cn_image_0000002806109281.png)
 3. 双击default.scene，可显示创建的3D场景资源。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/6fcWu-UdR-i9tF-30RLS0g/zh-cn_image_0000002803224789.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/NIClJE7IS2ymyF2uVcnOGw/zh-cn_image_0000002776909662.png)
 4. 点击右下角Editor，可打开编辑器编辑3D资源，编辑保存后，可显示编辑后的资源。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/SOycEgTrQl-fUphDawAytA/zh-cn_image_0000002774065072.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/IIbP3xLUQv-uaTiS-w_rbg/zh-cn_image_0000002776749676.png)
 5. 修改复制资源脚本文件。
 
    脚本文件路径：xxx/MyApplication/entry/hvigorfile.ts

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-read-p
 title: 构建阅读器
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容排版 > 构建阅读器
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:49+08:00
+scraped_at: 2026-10-31T07:33:13+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:8ef32e91c71f807082a87977aba2f568a41906a90c7a896ef2cd4478dbe2ec11
+content_hash: sha256:e8ab5ea43c66597f0c3b4eeaa026ade4613990a72f1c0a521338c99eb8330ffa
 ---
 
 Reader Kit提供的阅读页组件ReadPageComponent，支持对标准的txt和富文本内容（html+css）按仿真和横滑方式进行分页排版的能力、支持翻页阅读过程中所需要的进度和行为感知能力。利用ReadPageComponent，开发者可快速实现书籍阅读的能力。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/S_fHs3PXQbuKeRUtWdzIsA/zh-cn_image_0000002803225245.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/kVu62a7KTNGD_IYktjK2Pw/zh-cn_image_0000002776750134.png)
 
 ## 接口说明
 

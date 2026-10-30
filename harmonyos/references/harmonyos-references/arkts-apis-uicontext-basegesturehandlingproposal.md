@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (BaseGestureHandlingProposal)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (BaseGestureHandlingProposal)
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:23+08:00
+scraped_at: 2026-10-31T07:34:56+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:288dd4ea305e8c209d31b08ee80b01263af337de5b29bad23ba43bf7a8cd9837
+content_hash: sha256:33e78cc5053ed78f422a3dfd686e759d27854642339491baf0e46e7e1f737301
 ---
 
 智慧手势处理基类。当通过[registerMonitor](arkts-apis-uicontext-smartgesturecontroller.md#registermonitor)接口动态自定义智慧手势行为时，其回调参数类型为具体的子类类型实例。
@@ -79,4 +79,4 @@ struct SmartGestureControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/zMCzddjiT8q5HdYyfqG4dA/zh-cn_image_0000002803225603.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/o28xFY_tQmyS6WYHKpxsVg/zh-cn_image_0000002776750492.png)

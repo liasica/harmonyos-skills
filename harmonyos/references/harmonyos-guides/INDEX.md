@@ -2786,7 +2786,7 @@
 - [HiTraceMeter介绍](hitracemeter-intro.md)
 - [查看HiTraceMeter日志](hitracemeter-view.md)
 - [性能跟踪](hitracemeter.md)
-- [通过AgentAbilityExtension实现智能体间A2A协议通信](hmaf-a2a-dev-guide.md)
+- [通过AgentExtensionAbility实现智能体间A2A协议通信](hmaf-a2a-dev-guide.md)
 - [通过Function组件拉起智能体](hmaf-function.md)
 - [Agent Framework Kit术语](hmaf-glossary.md)
 - [Agent Framework Kit简介](hmaf-introduction.md)

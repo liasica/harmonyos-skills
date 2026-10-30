@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/onlineauthent
 title: 概述
 breadcrumb: 指南 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > 免密认证 > 通行密钥 > 概述
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:55+08:00
+scraped_at: 2026-10-31T07:32:16+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:a97bff66af79a6e8fc057d3b80f41786999be61fe54c70d0fcb0d7423d4903c7
+content_hash: sha256:21d34621b28400a0d081ee34d84b943c5e2ff70508ded7dfdaae2b91d9a96533
 ---
 
 通行密钥（Passkey）是基于[FIDO2标准协议](https://fidoalliance.org/passkeys/)（见[网站链接免责声明](onlineauthentication-website-disclaimer.md)）实现的一种简单又安全的登录方式。借用通行密钥，用户可使用指纹、人脸或手机解锁PIN码登录应用或网页。相较于传统密码，通行密钥具有更便捷、安全的优势。更多关于FIDO的背景知识，可以参见[FIDO规范介绍](https://fidoalliance.org/specifications-overview/)（见[网站链接免责声明](onlineauthentication-website-disclaimer.md)）。
@@ -24,19 +24,19 @@ content_hash: sha256:a97bff66af79a6e8fc057d3b80f41786999be61fe54c70d0fcb0d7423d4
 
 需要提供方便、快速、安全的本地应用或网页登录方式时，可以使用通行密钥服务的通行密钥注册能力为用户创建通行密钥。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/t-_Gr_n8S7C5wTFCoTfVfQ/zh-cn_image_0000002803264483.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/vMtZk4JzR4ydsHqViA0NdQ/zh-cn_image_0000002806108885.png)
 
 ### 使用通行密钥登录本设备的应用或网页账号
 
 用户在登录应用或者网页时，需要验证用户的身份，可以使用通行密钥服务的本地免密认证能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/Jw77QEjJR063fP_gktSo6w/zh-cn_image_0000002803224393.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/vLlqQiPJSd6PKMLUGRgOwQ/zh-cn_image_0000002776909266.png)
 
 ### 使用跨设备扫码登录其他设备的应用或网页账号
 
 用户在其他设备上登录应用或网页时，需要验证用户的身份，可以使用通行密钥服务的跨设备扫码认证能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/hxG4wMBLS1eXcW2fZBctDg/zh-cn_image_0000002774064674.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/dbztCzEVSge0jXmw7Uvaaw/zh-cn_image_0000002776749280.png)
 
 **说明** 
 

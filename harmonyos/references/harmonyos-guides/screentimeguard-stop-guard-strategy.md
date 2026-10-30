@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 停止策略
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 守护策略管理 > 停止策略
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:51+08:00
+scraped_at: 2026-10-31T07:33:14+08:00
 doc_updated_at: 2026-09-24
-content_hash: sha256:d9f238c81aac28e212e80b6e4f1ce5d52f4fb4a5258d93a3e877d5f457b2b249
+content_hash: sha256:7188f60e5a9b9dc4b8be8c96683acb4c3fc0772bc7851f0e96f5f930523006d8
 ---
 
 ## 场景介绍
@@ -14,11 +14,11 @@ content_hash: sha256:d9f238c81aac28e212e80b6e4f1ce5d52f4fb4a5258d93a3e877d5f457b
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/XsHOlDFiRiK-iTj_S2bZDw/zh-cn_image_0000002803265367.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/AKWeQHxHQUqDC5YL5T2b0w/zh-cn_image_0000002776910150.png)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/6oQyO0ToRtSXrJtuCXmLrg/zh-cn_image_0000002803225275.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/ozW6mi6yRA2O4oMUUP08oA/zh-cn_image_0000002776750164.png)
 
 流程说明：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-impleme
 title: 基于colorFilter实现图片滤镜效果
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 媒体展示 > 基于colorFilter实现图片滤镜效果
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:31+08:00
+scraped_at: 2026-10-31T07:31:50+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:122854a94db8417d90931ec5d52b2f8b7a84abeaef948d5a4adc895fa4e6a6b0
+content_hash: sha256:410dc40d78e024ebe6958d5460a2a289d23c9a7c197072f5f15f397e9f4df6f3
 ---
 
 ## 概述
@@ -32,7 +32,7 @@ ArkUI框架在[Image](../harmonyos-references/ts-basic-components-image.md)组�
 
 在图形学中，像素由RGBA（红色、绿色、蓝色以及透明度）四个通道组成。颜色转换矩阵的定义公式如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/JKFMtVcPToyv2jKQBucWGg/zh-cn_image_0000002774063996.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/1lOfg6WwQc6Dz0Z-hWWOwA/zh-cn_image_0000002776908588.png)
 
 其中：
 
@@ -132,7 +132,7 @@ export const ORIGINAL_MATRIX: number[] = [
 
 **效果图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/eJEHgBAhTFqM1csJzZm-XQ/zh-cn_image_0000002803223723.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/xtNSRDIaRFiRbuJ4coWpIQ/zh-cn_image_0000002806108215.png)
 
 ### 实现复古灰度滤镜功能
 
@@ -151,7 +151,7 @@ const RETRO_COLOR_MATRIX: number[] = [
 
 * RGB三通道使用相同的权重系数（0.213, 0.715, 0.072），这是标准的灰度转换系数，源自ITU-R BT.709国际标准（高清视频色彩空间标准）中的亮度计算公式，具体公式如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/sNphDDWTTQKRHCwuWgolWg/zh-cn_image_0000002774064004.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/dKiVZnIOSzqmPFXbaB56sQ/zh-cn_image_0000002776908596.png)
 
   灰度图的特点是每个像素的R、G、B值相等，因此通过转换矩阵使R' = G' = B'时，图片颜色将失去色相，仅保留亮度。基于此原理，使用上述灰度值转换公式，将R'、G'、B'均设置为L即可实现复古灰度滤镜效果。
 * 每个通道都基于相同的亮度值，产生单色调的灰度效果。
@@ -175,11 +175,11 @@ A' = 0 \* 255 + 0 \* 255 + 0 \* 0 + 1 \* 255 + 0 \* 255 = 255（透明度）。
 
 转换后的像素颜色分量（取整后）为：rgba(237, 237, 237, 255)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/mQE4GwDBTPeDp0Vy5VRucg/zh-cn_image_0000002773904030.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/bRqlYAqtRMiEl_hCd6pr1Q/zh-cn_image_0000002776748610.jpg)
 
 **效果图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/A19sDSORQXSwqkxIxK0V-w/zh-cn_image_0000002803263815.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/1AZfOwr6QHuEcEqTmDmQ-g/zh-cn_image_0000002806028327.png)
 
 ### 实现反色滤镜功能
 
@@ -202,7 +202,7 @@ const REVERSE_COLOR_MATRIX: number[] = [
 
 **效果图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/hN7xeVtER6i1hpxaupftqg/zh-cn_image_0000002803223725.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/qalS482CQRy0F2DEnu_AQA/zh-cn_image_0000002806108217.png)
 
 ### 实现饱和度增强滤镜功能
 
@@ -229,21 +229,21 @@ const ENHANCE_COLOR_MATRIX: number[] = [
 
 * **核心算法**：基于线性插值原理，在“灰度图像”与“原图”之间进行加权混合。公式为：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/MyUc7tblTruyoBSzFbeR_w/zh-cn_image_0000002774064006.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/7mHSpLLxQ_2OOzvm6RcGrw/zh-cn_image_0000002776908598.png)
 
   其中，S表示饱和度系数，本例中S ≈ 1.8，即提升饱和度约80%；Gray表示像素的亮度值，基于ITU-R BT.709国际标准（高清视频色彩空间标准）中的亮度计算公式，具体公式见上文[实现复古灰度滤镜功能](arkts-implementing-image-filters.md#实现复古灰度滤镜功能)中的原理解析。
 * **系数推导**：以红色通道的主对角线元素（1.63）为例：
   + 公式展开：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/WYls9jCFSOOIuck9vFQEIA/zh-cn_image_0000002773904032.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/3VIhCqqzSTKbiegvygyKng/zh-cn_image_0000002776748612.png)
   + 合并系数：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/txLkuGqHRXuAxR-jZYitSQ/zh-cn_image_0000002803263817.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/xDtKUv5KQaOZWnWJqo-7CQ/zh-cn_image_0000002806028329.png)
 * **效果**：通过公式计算出的矩阵，既保留了图像的亮度信息，又显著增强了RGB通道的差异，从而实现色彩鲜艳通透的效果。
 
 **效果图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/jZL8He3zReeBDsVjgkwvYg/zh-cn_image_0000002803223727.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/GxETZKfUTeSAA6oclidHkA/zh-cn_image_0000002806108219.png)
 
 ### 实现美白滤镜功能
 
@@ -270,7 +270,7 @@ const WHITENING_COLOR_FILTER =
 
 **效果图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/qdJGlrNYQM2xP2Tf6A8ctg/zh-cn_image_0000002774064008.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/kUdE2em4TG2NNZBzWKYYsw/zh-cn_image_0000002776908600.png)
 
 ## 开发步骤
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scenario-
 title: fileUriService（文件路径转换API）
 breadcrumb: API参考 > 应用服务 > Scenario Fusion Kit（融合场景服务） > ArkTS API > fileUriService（文件路径转换API）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:31+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:3af0846727666282fd5d888ff3de99d40dcaee646d6a75e5934593b7e1013185
+scraped_at: 2026-10-31T07:39:22+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:d929289f1c359394180d23a8637ad4c3ab20c23de3b57a4e1279369a4c3d2395
 ---
 
 本模块为开发者在HarmonyOS 4及以下到HarmonyOS 5及以上的升级场景和克隆场景，调用该接口可以将源文件路径转换为目标文件路径。
@@ -68,7 +68,7 @@ convertFileUris(sourceFileUris: Array<string>): Promise<Array<FileUriResult>>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| sourceFileUris | Array<string> | 是 | 待转换文件uri信息列表。列表数量范围：[1,100]，范围越界错误码：401 parameter error。 |
+| sourceFileUris | Array<string> | 是 | 待转换文件uri信息列表。  列表数量范围：[1,100]，超出此范围将返回401错误码。  若文件原始路径含中文字符，URI会经百分比编码，直接转换易致路径错误。请先使用**decodeURI**解码，再调用本接口。 |
 
 **返回值：**
 

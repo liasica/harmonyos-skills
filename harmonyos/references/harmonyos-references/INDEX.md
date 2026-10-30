@@ -2187,7 +2187,7 @@
 - [OH_PixelmapNative](capi-struct.md)
 - [styled_string.h](capi-styled-string-h.md)
 - [swiper.h](capi-swiper-h.md)
-- [syscapndk](capi-syscap-ndk.md)
+- [SyscapNdk](capi-syscap-ndk.md)
 - [task.h](capi-task-h.md)
 - [telephony_data.h](capi-telephony-data-h.md)
 - [telephony_radio.h](capi-telephony-radio-h.md)

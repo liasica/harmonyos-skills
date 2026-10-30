@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 布局约束
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 布局与边框 > 布局约束
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:32+08:00
+scraped_at: 2026-10-31T07:35:07+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:a72b4e8feedc3b50a460e727864c6844f3e26ae0388e4d9bb7beda502f87380c
+content_hash: sha256:71244d2239034ceaa475c275969e82aeef8634d53066a4c01e5d495585648d5f
 ---
 
 通过组件的宽高比和显示优先级约束组件显示效果，支持固定宽高比设置和响应式优先级控制两个核心特性，可解决组件变形、布局错乱等问题，提升界面显示质量。
@@ -136,11 +136,11 @@ struct AspectRatioExample {
 
 **图1** 竖屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/m7d9rP8fQLqloDE8gV2wmQ/zh-cn_image_0000002774065994.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/l86hWzGZQhK7n4TzjlRccg/zh-cn_image_0000002806030315.png)
 
 **图2** 横屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/2QqjxNYYQXyhksw358vS6A/zh-cn_image_0000002773906020.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/lHnJgpkQSvm8ge9MOoLx_g/zh-cn_image_0000002806110205.png)
 
 ### 示例2（设置组件显示优先级）
 
@@ -204,4 +204,4 @@ struct DisplayPriorityExample {
 
 横屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/nbZyq86ISCOxxlLyn8hY9w/zh-cn_image_0000002803265803.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/XdfYuFC8S2mAZdABsr3qkA/zh-cn_image_0000002776910586.gif)

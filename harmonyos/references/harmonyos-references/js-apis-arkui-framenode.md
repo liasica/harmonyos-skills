@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: FrameNode
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > arkui > FrameNode
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:26+08:00
+scraped_at: 2026-10-31T07:35:00+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:842c67817784b2f32a0d9355e474f7e0052bacb04c2e98e90cfd2fb9d803383c
+content_hash: sha256:d7364faa1d05ed48ad59d5a1005fec7d761ee9c549f366d76e4de73ddd95bee7
 ---
 
 FrameNode表示组件树的实体节点，支持节点树操作、自定义绘制与布局、位置查询、动画等能力。[NodeController](js-apis-arkui-nodecontroller.md)可通过[BuilderNode](js-apis-arkui-buildernode.md)持有的FrameNode将其挂载到[NodeContainer](ts-basic-components-nodecontainer.md)上，也可通过FrameNode获取[RenderNode](js-apis-arkui-rendernode.md)，挂载到其他FrameNode上。适用于需要通过代码动态创建和管理组件节点树的场景，可实现声明式组件无法直接满足的灵活UI组合与自定义渲染需求。最佳实践请参考[组件动态创建](../harmonyos-guides/arkts-ui-component-dynamic-creation.md)。
@@ -1886,7 +1886,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/QcEsScXERTWJfW7xNlKODQ/zh-cn_image_0000002803265747.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/Gh4nRlFSSgiIbE1v6pa7Ug/zh-cn_image_0000002776910530.gif)
 
 ### commonAttribute12+
 
@@ -2418,7 +2418,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/yKQ5ZbANSGWmL8tb4m9vfw/zh-cn_image_0000002803225655.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/KTP42s9RQLa5q1BdEcZYGg/zh-cn_image_0000002776750544.gif)
 
 ### setCrossLanguageOptions15+
 
@@ -9305,7 +9305,7 @@ struct FrameNodeTypeTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/hroctsMuQhag8NnWiKScQQ/zh-cn_image_0000002774065940.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/EsBBlMg3S3q0lBSyRxV_8g/zh-cn_image_0000002806030261.png)
 
 ## 节点操作示例
 
@@ -11166,7 +11166,7 @@ struct FrameNodeTypeTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/I_cnUHjURhqT1f1O8IGwSg/zh-cn_image_0000002773905966.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/5fXVRaF-TrmQUD4lmPEJMQ/zh-cn_image_0000002806110151.gif)
 
 ## 动画创建与取消示例
 
@@ -11269,7 +11269,7 @@ struct CreateAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/iz2vvx_KTTyW5lrO0X9D-g/zh-cn_image_0000002803265749.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/cX1emulgRCSKpuXeIm6KRw/zh-cn_image_0000002776910532.gif)
 
 ## 滚动事件示例
 
@@ -11475,7 +11475,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/EXhfBBi0Tky5K3J0lf3GaQ/zh-cn_image_0000002803225657.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/R56vvOGQR0GSaj9i4BB2ow/zh-cn_image_0000002776750546.gif)
 
 ## 检验NodeAdapter是否有效示例
 
@@ -11594,7 +11594,7 @@ struct ListNodeTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/SFAvRGprSTG4eeosXtUMYg/zh-cn_image_0000002774065942.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/NS8SqW9wS1mmDWY-VuATlg/zh-cn_image_0000002806030263.gif)
 
 ## 获取根节点示例
 

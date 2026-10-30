@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: PinchGesture
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 基础手势 > PinchGesture
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f61da2d4b51a3d5923c4645416e67fae7ddebea1d3ebf50d7b95938243be142e
+scraped_at: 2026-10-31T07:35:11+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:a5bf1b897e858515ec82348815e115d6c50daf0795e62b23c0618901e42b7e26
 ---
 
 用于触发捏合手势，常用于实现图片、页面内容等对象的缩放交互。最少需要2指，最多5指，最小识别距离为5vp。在支持鼠标和键盘输入的设备上，通过“Ctrl+鼠标滚轮”也可以触发捏合手势。
@@ -56,7 +56,7 @@ PinchGesture(options?: PinchGestureHandlerOptions)
 
 **说明** 
 
-在[GestureEvent](ts-gesture-common.md#gestureevent对象说明)的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index。对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为空。建议开发者优先使用fingerInfos。
+在[GestureEvent](ts-gesture-common.md#gestureevent对象说明)的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index。对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为undefined。建议开发者优先使用fingerInfos。
 
 ### onActionStart
 
@@ -193,7 +193,7 @@ struct PinchGestureExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/dGuZ6qEAQhSkzUPAxFn7GA/zh-cn_image_0000002803265901.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/Q05RLp8kTRi7OWRd3f4LHA/zh-cn_image_0000002776910684.png)
 
 ### 示例2（实现图片跟手缩放）
 
@@ -291,4 +291,4 @@ struct PinchGestureExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/C2WFyyIwQBO8yPZuGpoKXQ/zh-cn_image_0000002803225809.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/41ncW_LVSRWNadt2E_pl6A/zh-cn_image_0000002776750698.gif)

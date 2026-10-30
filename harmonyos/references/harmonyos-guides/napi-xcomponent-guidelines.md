@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-xcompone
 title: 自定义渲染 (XComponent)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加组件 > 自定义渲染 (XComponent)
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:31+08:00
+scraped_at: 2026-10-31T07:31:51+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:83778520916781477bba55eb7996ca714a56dcd178ee7d4ea4149bf62157ef6c
+content_hash: sha256:7aa08626b0882c1b2b4fd83c02a440a16816430901f6191f0412da1b84e1808e
 ---
 
 ## 概述
@@ -61,21 +61,21 @@ XComponent推荐使用两种方式获取XComponent持有Surface的生命周期�
 
   ArkTS侧onSurfaceCreated的时序如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/K-ssGJWXQRGFcd7Gi0DP0w/zh-cn_image_0000002773904052.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/bVKRaVOYQYWs42zwFpvalA/zh-cn_image_0000002776748632.png)
 * onSurfaceChanged回调
 
   触发时刻：Surface大小变化触发重新布局之后触发。
 
   ArkTS侧onSurfaceChanged的时序如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/eqKVvtTDS-m4K0ae8PyoWA/zh-cn_image_0000002803263837.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/g964JpzLTQm--FxHFm685w/zh-cn_image_0000002806028349.png)
 * onSurfaceDestroyed回调
 
   触发时刻：XComponent组件被销毁时触发，与一般ArkUI的组件销毁时机一致。
 
   ArkTS侧onSurfaceDestroyed的时序图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/TEdrFi_PSACorsp6osop7w/zh-cn_image_0000002803223747.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Rh4d5adIQUmPEjpFlw92ag/zh-cn_image_0000002806108239.png)
 
 对于复杂的交互逻辑需跨语言开发，追求极致渲染性能或业务需求自主控制Surface的创建和销毁的，建议在Native侧使用[OH\_ArkUI\_SurfaceHolder](../harmonyos-references/capi-oh-nativexcomponent-native-xcomponent-oh-arkui-surfaceholder.md)管理Surface生命周期。其生命周期触发时机如下：
 
@@ -88,21 +88,21 @@ XComponent推荐使用两种方式获取XComponent持有Surface的生命周期�
 
   Native侧OnSurfaceCreated的时序如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/P_x990YwRte_ENJziaxXBA/zh-cn_image_0000002774064028.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/T4ogL6EeTwmoCiyhtE5KiQ/zh-cn_image_0000002776908620.png)
 * OnSurfaceChanged回调
 
   触发时刻：OnSurfaceCreated回调成功触发且Surface大小变化触发重新布局之后触发。
 
   Native侧OnSurfaceChanged的时序如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/ja6fAoqOT0-VwnV5gD-aUg/zh-cn_image_0000002773904054.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/_qxzebvTQq6x1o_11c0rAw/zh-cn_image_0000002776748634.png)
 * OnSurfaceDestroyed回调
 
   触发时刻：组件下树且autoInitialize=true 或者调用[OH\_ArkUI\_XComponent\_Finalize](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_arkui_xcomponent_finalize)后触发。
 
   Native侧OnSurfaceDestroyed的时序图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/fH7dMqKeQ8esWe2gsKcIuw/zh-cn_image_0000002803263839.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/zxwTocyCRkenruUkvjORVw/zh-cn_image_0000002806028351.png)
 
 ### XComponent的开发范式
 
@@ -1649,7 +1649,7 @@ XComponent推荐使用两种方式获取XComponent持有Surface的生命周期�
 
    上述用例具体实现可参考[NativeXComponent](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/ArkUISample/NativeXComponentSample)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/16Xb1sqrQ7mRmcaVKymk8Q/zh-cn_image_0000002803223749.jpeg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/Uh_GM5G0QrqpH9SrR6Q_9g/zh-cn_image_0000002806108241.jpeg)
 
 ### 在ArkTS侧使用SurfaceId进行渲染绘制
 

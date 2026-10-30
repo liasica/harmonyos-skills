@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: HdsActionBar (操作栏)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsActionBar (操作栏)
 category: harmonyos-references
-scraped_at: 2026-10-29T08:00:39+08:00
+scraped_at: 2026-10-31T07:36:30+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:4deb2b84c1430c02db7fdd2f08cc5e6d63153aed90c3d83f99526bfd1d6a3dae
+content_hash: sha256:c6e52c8684c9d67c78a53fcbd614a821b11a91ad5b105e289c9db6bc039cd608
 ---
 
 提供多个按钮操作，如果有主按钮则支持展开和收缩的动效，其内部包含了0或1个主按钮、0或多个非主按钮和背板，其中主按钮可以用户自定义CustomBuilder。
@@ -273,4 +273,4 @@ struct TestActionBar {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/4Qnn_jfrQAKjO6s1GgOCcw/zh-cn_image_0000002803226803.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/FoRg4J3BRx6lqXsB_CPrSw/zh-cn_image_0000002806031469.gif)

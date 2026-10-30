@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-packer-
 title: 使用Image_NativeModule完成图片编码
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(C/C++) > 图片编码 > 使用Image_NativeModule完成图片编码
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:26+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:f037c85df0d1f4735823a99d0ca1aff622505f50f4dc027b56c49a8ea9a2f2da
+scraped_at: 2026-10-31T07:32:44+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:aa4747125b6ae4bcd8751eab9d3cbc598125a7ece6b52455a2b7e941f80b194f
 ---
 
 图像编码类，用于创建以及释放ImagePacker实例。
@@ -270,7 +270,7 @@ target_link_libraries(entry PUBLIC libhilog_ndk.z.so libimage_source.so libimage
        napi_value argv[1] = {0};
        size_t argc = 1;
        if (napi_get_cb_info(env, info, &argc, argv, nullptr, nullptr) != napi_ok) {
-           OH_LOG_ERROR(LOG_APP, "PackToFileFromImageSourceTestJs napi_get_cb_info failed.");
+           OH_LOG_ERROR(LOG_APP, "PackToFileFromPixelmapTestJs napi_get_cb_info failed.");
            return nullptr;
        }
        

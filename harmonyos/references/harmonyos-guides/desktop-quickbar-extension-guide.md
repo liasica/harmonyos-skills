@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/desktop-quick
 title: 应用接入快捷栏
 breadcrumb: 指南 > 系统 > 基础功能 > Desktop Extension Kit（桌面拓展服务） > 应用接入快捷栏
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:04+08:00
+scraped_at: 2026-10-31T07:32:26+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:e6d6858b94bdbe360ec6a9c924228e686a5ca85ec7691a944af5a71420a57e15
+content_hash: sha256:5c614743dd2823e7cf9e6abb4a2e497563b854a3b4ef80fd17c269655ab016fb
 ---
 
 应用接入快捷栏之后，可自定义应用的右键菜单分组、应用的窗口分组、应用的图标和进度条。
@@ -18,11 +18,11 @@ content_hash: sha256:e6d6858b94bdbe360ec6a9c924228e686a5ca85ec7691a944af5a71420a
 
 快捷栏指的是PC/2in1设备的屏幕底部的图标区域，具体如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/OPOHo4lKQ1ezhcZwnbtRzQ/zh-cn_image_0000002774064736.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/Zm9LJnxwQPu-DCrFZmo93w/zh-cn_image_0000002776749342.png)
 
 应用接入快捷栏之后，快捷栏的应用图标菜单会显示应用自定义的菜单项，应用可以添加、删除、更新、查询菜单项，具体效果如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/M7Z56aT1RHaf22-6oCbGaw/zh-cn_image_0000002773904764.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/sfW4vvw1SSejkE92EtrnOg/zh-cn_image_0000002806029059.png)
 
 ## 接口说明
 

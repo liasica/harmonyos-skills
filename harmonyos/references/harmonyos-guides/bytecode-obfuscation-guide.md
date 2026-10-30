@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bytecode-obfu
 title: ArkGuard字节码混淆开启指南
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard字节码混淆工具 > ArkGuard字节码混淆开启指南
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:25+08:00
+scraped_at: 2026-10-31T07:31:44+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:7e2dda89f9abf4309d8750da94e6f6fba5ba9865824e60894e2f852da9679591
+content_hash: sha256:ab7205969c46a3c763fed549b5ad3737d34f1410208467df3c4072553f82f50e
 ---
 
 **注意** 
@@ -181,7 +181,7 @@ content_hash: sha256:7e2dda89f9abf4309d8750da94e6f6fba5ba9865824e60894e2f852da96
 * origin目录：混淆前的modules.abc文件。
 * 配置信息文件：config.json，该文件记录了混淆的配置项和白名单列表。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/e0qTxrd8SAekyCqrWmGHag/zh-cn_image_0000002773903494.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/xyzdW8B2TCmINY3bK_Fxgw/zh-cn_image_0000002776908062.png)
 
 ## 报错栈还原
 
@@ -189,4 +189,4 @@ content_hash: sha256:7e2dda89f9abf4309d8750da94e6f6fba5ba9865824e60894e2f852da96
 
 反混淆工具需要使用应用编译过程中生成的sourceMaps.json文件以及混淆名称映射文件nameCache.json文件，因此请本地备份它们；为方便问题定位，建议备份release目录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/V45y_1PgR0CMYpdDBYszRQ/zh-cn_image_0000002803263279.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/4t3xGPkTR8e5JBIq534I3g/zh-cn_image_0000002776748076.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/obtain-suppor
 title: 查询支持的认证能力
 breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 查询支持的认证能力
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:34+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:bfc083606427635c3f6a37b8dbf736e8525e380ddec0d87beb31d39559edf078
+scraped_at: 2026-10-31T07:32:19+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:68cc6c95236780f222257dcb8d5770ee2c229c4d1600db95ef366c55da076e29
 ---
 
 不同的设备对于认证能力（人脸、指纹、口令）的支持性各有差异，开发者在发起认证前应当先查询当前设备支持的用户认证能力。
@@ -44,4 +44,4 @@ obtainingSupported() {
 
 ## 示例代码
 
-* [查询支持的认证能力](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/UserAuthentication)
+* 可参考[用户认证服务](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/UserAuthentication)示例代码。

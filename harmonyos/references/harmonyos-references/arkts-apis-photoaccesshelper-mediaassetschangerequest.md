@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (MediaAssetsChangeRequest)
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS API > @ohos.file.photoAccessHelper (相册管理模块) > Class (MediaAssetsChangeRequest)
 category: harmonyos-references
-scraped_at: 2026-10-27T07:43:25+08:00
-doc_updated_at: 2026-10-26
-content_hash: sha256:8cda70ba51f25935bc1245831471a8e4b2ef5ecfaec0e743c71df1d2a88399a3
+scraped_at: 2026-10-31T07:38:23+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:4cf05eaf3fec3982c760aa32fe4c4755bbddb4113925cac8136977015a028b71
 ---
 
 MediaAssetsChangeRequest类实现了[MediaChangeRequest](arkts-apis-photoaccesshelper-i.md#mediachangerequest11)接口。
@@ -113,7 +113,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
   let photoAssetList: Array<photoAccessHelper.PhotoAsset> = await fetchResult.getAllObjects();
   let assetsChangeRequest: photoAccessHelper.MediaAssetsChangeRequest = new photoAccessHelper.MediaAssetsChangeRequest(photoAssetList);
   assetsChangeRequest.setFavorite(true);
-  phAccessHelper.applyChanges(assetsChangeRequest).then(() => {
+  phAccessHelper.applyChanges(assetsChangeRequest as Object as photoAccessHelper.MediaChangeRequest).then(() => {
     console.info('apply setFavorite successfully');
   }).catch((err: BusinessError) => {
     console.error(`apply setFavorite failed with error: ${err.code}, ${err.message}`);

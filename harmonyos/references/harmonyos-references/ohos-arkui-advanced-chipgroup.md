@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ChipGroup
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ChipGroup
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:50+08:00
+scraped_at: 2026-10-31T07:35:31+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:65e2285bce112796bb3e64f9d72f0621367ac5ec8f92156600dfea898597bc48
+content_hash: sha256:c3a532d65432f11aa726de56284dd5a529c63e99c4b1b0e4a693a86ee87f4394
 ---
 
 ChipGroup组件提供操作块群组能力，支持单选或多选模式，可自定义样式、图标和间距，支持选中状态管理和事件回调。适用于文件分类、资源筛选、标签选择、内容分组等多种场景，帮助开发者快速实现选择功能，提供统一的视觉和交互体验。
@@ -339,7 +339,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/08orSNGgRdWegmwn9jtfiw/zh-cn_image_0000002773906662.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/7rpwL41_SGWECS7nPweKpw/zh-cn_image_0000002776911226.png)
 
 ### 示例2（有最右侧的builder）
 
@@ -435,7 +435,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/EsF0IqjsSoGcnMddDzLnIg/zh-cn_image_0000002803266445.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/P5kJwqysSp-hVCAfmzgdvg/zh-cn_image_0000002776751240.png)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -535,7 +535,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/WFs9QVXiSX-871hNXODPgw/zh-cn_image_0000002803226351.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/-KLtkwZfRXuDw_lxNcsHEg/zh-cn_image_0000002806030957.png)
 
 ### 示例4（单选时无障碍朗读）
 
@@ -720,7 +720,7 @@ export struct ChipGroupExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/X5KbT0IeTRux31XyqjDImw/zh-cn_image_0000002774066636.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/K8iZVbQpRLucFSPXbOwdbg/zh-cn_image_0000002806110847.png)
 
 ### 示例5（多选时无障碍朗读）
 
@@ -874,7 +874,7 @@ export struct ChipGroupExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/HZz6dAMoQC6yxkY7kBEGkA/zh-cn_image_0000002773906664.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/RAnI8RRFRS24o0v5kDB5IQ/zh-cn_image_0000002776911228.png)
 
 ### 示例6（设置系统材质样式）
 
@@ -962,7 +962,7 @@ struct ChipGroupMaterialExample {
 
 该示例配图为高算力设备强档效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/o8j1Sn-QTMOGcijSGoYMOA/zh-cn_image_0000002803266447.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/glLK10BXQ4SrTioakkj1ag/zh-cn_image_0000002776751242.png)
 
 ### 示例7（设置组件选中状态的系统材质样式）
 
@@ -1056,4 +1056,4 @@ struct ChipGroupMaterialExample {
 
 该示例配图为高算力设备强档效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/-4qt0b7UQDiFzvcTCmyCaA/zh-cn_image_0000002803226353.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/x6h7GqdGRdSnpEGLgYgR0w/zh-cn_image_0000002806030959.png)

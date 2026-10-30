@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: toolbar开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > toolbar开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:37+08:00
+scraped_at: 2026-10-31T07:31:57+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:d68182496222816078d7b46c37b802115bc5395c654a5eb54b26faeb66af120b
+content_hash: sha256:d87257f313a4a3b46ac2c03715b52e3d51db3510baff63b58d907c5ab2c7032b
 ---
 
 toolbar为页面工具栏组件，用于展示针对当前界面的操作选项，可作为页面的一级导航。具体用法请参考[toolbar](../harmonyos-references/js-components-basic-toolbar.md)。
@@ -39,7 +39,7 @@ toolbar-item{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/VxOr0DlJTHi-UZ_4pjwlqw/zh-cn_image_0000002803224031.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/OCJPO_1iTD201xH9P-ojQg/zh-cn_image_0000002776908904.gif)
 
 ## 添加子组件
 
@@ -74,7 +74,7 @@ toolbar-item{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/ESlVtb-JQSyxoBpeTxBogw/zh-cn_image_0000002774064312.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/xBtfvWSpRUmqpSDRGdGKTg/zh-cn_image_0000002776748918.gif)
 
 ## 设置样式
 
@@ -107,7 +107,7 @@ toolbar-item{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/Mt1bfmmiT5mFklURUkQl6w/zh-cn_image_0000002773904338.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/ND0uNW9mTyuA7jLdnlGPfA/zh-cn_image_0000002806028635.png)
 
 ## 绑定事件
 
@@ -157,7 +157,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/6MOKnkAxS1GStGqHyRkzGQ/zh-cn_image_0000002803264123.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/JKQ-akyFQ2-vOicq6jbClQ/zh-cn_image_0000002806108525.gif)
 
 **说明** 
 
@@ -212,4 +212,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/IyJW2wmCS6u5QuQG81Tk9Q/zh-cn_image_0000002803224033.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/ofZqyfpuRIil46knC9n55g/zh-cn_image_0000002776908906.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-m
 title: 组件复用迁移
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导 > 状态管理V1向V2迁移场景 > 组件复用迁移
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:28+08:00
+scraped_at: 2026-10-31T07:31:48+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:cd544d040a7c72b5be0d50284c1c99abb6315472739c9e605814a5052156d780
+content_hash: sha256:bad0761450446445b12d83b1f23be54cd186dfb701be184720f757b36610a79f
 ---
 
 本文档主要介绍组件复用从V1向V2的迁移，涉及如下装饰器。
@@ -177,7 +177,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/Wi8rYJWBRGevdww6WWANxw/zh-cn_image_0000002803263483.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/sdvgM4ODTiaqzXwlXBTQnQ/zh-cn_image_0000002776748278.gif)
 
 ### 列表滚动-Repeat使用场景
 
@@ -258,7 +258,7 @@ export struct CardViewV2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/B8xDn8vSRn2LvPmzW-Um5g/zh-cn_image_0000002803223393.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/mqOweYufQ52OSWtSjd4nbA/zh-cn_image_0000002806027995.gif)
 
 ### 列表滚动-if使用场景
 
@@ -365,7 +365,7 @@ export struct OneMoment {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/KKGGE3cSQOigHRZzdwivKA/zh-cn_image_0000002774063674.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/y3tAhaboQkqM_3s4rxk29Q/zh-cn_image_0000002806107885.gif)
 
 ### 列表滚动-Repeat全量加载使用场景
 
@@ -486,7 +486,7 @@ class ListItemObject {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/SyKbL0yaTDSB9UTyTwCimA/zh-cn_image_0000002773903698.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/8GE2zjGqTLGnsQhsqQZjHg/zh-cn_image_0000002776908266.gif)
 
 ### Grid使用场景
 
@@ -556,7 +556,7 @@ struct ReusableV2ChildComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/agnAaU1DRfuyan4R3JoDfQ/zh-cn_image_0000002803263485.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/d21lmhxUQJefTgGtz3Tx7A/zh-cn_image_0000002776748280.png)
 
 ### WaterFlow使用场景
 
@@ -661,7 +661,7 @@ struct ReusableWaterFlowScene {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/4yTF842SSjCqwvKlQuwuJA/zh-cn_image_0000002803223395.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/PvlX3Yp4Tq6WQQGgsZSW7w/zh-cn_image_0000002806027997.gif)
 
 ### Swiper使用场景
 
@@ -768,7 +768,7 @@ struct QuestionSwiperItem {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/CVYr5IYhQwCtrziQrkOhVQ/zh-cn_image_0000002774063676.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/kMAtRycZTLSCGLvCGevhHw/zh-cn_image_0000002806107887.gif)
 
 ### 列表滚动-ListItemGroup使用场景
 
@@ -849,7 +849,7 @@ class DataSrc {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/B4k4X3JMSh-9lXZCr7prTg/zh-cn_image_0000002773903700.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/r1lr0FJ2TJ23sHvjypJMPg/zh-cn_image_0000002776908268.gif)
 
 ### 多种条目类型使用场景
 
@@ -935,7 +935,7 @@ struct ReusableV2Component {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/_Z84nE4KTkenl70jith7rg/zh-cn_image_0000002803263487.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/MMNZGEB6TdOgimp_CON4RA/zh-cn_image_0000002776748282.png)
 
 **组合型**
 
@@ -1111,4 +1111,4 @@ struct ChildComponentD {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/CD_Y9zy7QQaqkDs7XSiFwQ/zh-cn_image_0000002803223397.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/49m_nC0hStSIXi5YpQ-IVw/zh-cn_image_0000002806027999.png)

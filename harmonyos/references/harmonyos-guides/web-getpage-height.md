@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-getpage-h
 title: 获取网页内容高度
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web渲染和布局 > 获取网页内容高度
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:23+08:00
-doc_updated_at: 2026-07-09
-content_hash: sha256:da02ed9c34aef7b5443ed6b44ce280f48f266d395097ff89d99110a8dc02fc67
+scraped_at: 2026-10-31T07:32:00+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:64625df4033d805e0ea3ed6a057715943e9c17484002e7abd0188e7e85f5f481
 ---
 
 通过调用[getPageHeight](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#getpageheight)可获取当前网页内容的实际高度，开发者可以根据具体需求选择合适的方法。
@@ -22,26 +22,38 @@ content_hash: sha256:da02ed9c34aef7b5443ed6b44ce280f48f266d395097ff89d99110a8dc0
 
 应用侧代码
 
-```ts
-// xxx.ets
-import { webview } from '@kit.ArkWeb';
-
-@Entry
+```typescript
 @Component
-struct Index {
+struct Scene1Static {
   controller: webview.WebviewController = new webview.WebviewController();
+  @State heightText: ResourceStr = $r('app.string.waiting_for_height');
 
   build() {
-    Row() {
-      Column() {
-        Web({ src: $rawfile('index.html'), controller: this.controller })
-          .onPageEnd(() => {
-            console.info("page height: onPageEnd: " + this.controller.getPageHeight());
-          })
-      }
-      .width('100%')
-      .height('100%')
+    Column() {
+      Text('getPageHeight: ' + this.heightText)
+        .width('100%')
+        .padding(12)
+        .fontSize(16)
+        .backgroundColor('#f5f5f5')
+        .textAlign(TextAlign.Center)
+
+      Web({ src: $rawfile('scene1_index.html'), controller: this.controller })
+        .layoutWeight(1)
+        .onPageEnd(() => {
+          this.heightText = $r('app.string.scene1_on_page_end');
+          setTimeout(() => {
+            try {
+              const h: number = this.controller.getPageHeight();
+              console.info(`page height: onPageEnd: ${h}`);
+              this.heightText = String(h) + ' px';
+            } catch (err) {
+              console.error(`page height: onPageEnd error: ${JSON.stringify(err)}`);
+              this.heightText = $r('app.string.get_height_failed');
+            }
+          }, 300)
+        })
     }
+    .width('100%')
     .height('100%')
   }
 }
@@ -53,43 +65,39 @@ struct Index {
 
 应用侧代码
 
-```ts
-// xxx.ets
-import { webview } from '@kit.ArkWeb';
-
-class TestClass {
-  testController: webview.WebviewController;
-
-  constructor(controller: webview.WebviewController) {
-    this.testController = controller;
-  }
-
-  notifyToGet(): void {
-    console.info("page height: " + this.testController.getPageHeight());
-  }
-}
-
-@Entry
+```typescript
 @Component
-struct Index {
+struct Scene2JsBridge {
   controller: webview.WebviewController = new webview.WebviewController();
+  @State heightText: ResourceStr = $r('app.string.waiting_for_height');
   @State jsbObj: TestClass = new TestClass(this.controller);
 
+  aboutToAppear(): void {
+    this.jsbObj.onGetHeight = (h: string) => {
+      this.heightText = h + ' px';
+    };
+  }
+
   build() {
-    Row() {
-      Column() {
-        Web({ src: $rawfile('index.html'), controller: this.controller })
-          .javaScriptAccess(true)
-          .javaScriptProxy({
-            object: this.jsbObj,
-            name: "jsbObj",
-            methodList: ["notifyToGet"],
-            controller: this.controller
-          })
-      }
-      .width('100%')
-      .height('100%')
+    Column() {
+      Text('getPageHeight: ' + this.heightText)
+        .width('100%')
+        .padding(12)
+        .fontSize(16)
+        .backgroundColor('#f5f5f5')
+        .textAlign(TextAlign.Center)
+
+      Web({ src: $rawfile('scene2_index.html'), controller: this.controller })
+        .layoutWeight(1)
+        .javaScriptAccess(true)
+        .javaScriptProxy({
+          object: this.jsbObj,
+          name: "jsbObj",
+          methodList: ["notifyToGet"],
+          controller: this.controller
+        })
     }
+    .width('100%')
     .height('100%')
   }
 }
@@ -201,28 +209,38 @@ struct Index {
 
 应用侧代码
 
-```ts
-// xxx.ets
-import { webview } from '@kit.ArkWeb';
-
-@Entry
+```typescript
 @Component
-struct Index {
+struct Scene3SetTimeout {
   controller: webview.WebviewController = new webview.WebviewController();
+  @State heightText: ResourceStr = $r('app.string.waiting_for_height');
 
   build() {
-    Row() {
-      Column() {
-        Web({ src: $rawfile('index.html'), controller: this.controller })
-          .onPageEnd(() => {
-            setTimeout(()=>{
-                console.info("page height: onPageEnd: setTimeout: " + this.controller.getPageHeight());
-            },2000)
-          })
-      }
-      .width('100%')
-      .height('100%')
+    Column() {
+      Text('getPageHeight: ' + this.heightText)
+        .width('100%')
+        .padding(12)
+        .fontSize(16)
+        .backgroundColor('#f5f5f5')
+        .textAlign(TextAlign.Center)
+
+      Web({ src: $rawfile('scene3_index.html'), controller: this.controller })
+        .layoutWeight(1)
+        .onPageEnd(() => {
+          this.heightText = $r('app.string.scene3_on_page_end');
+          setTimeout(() => {
+            try {
+              const h: number = this.controller.getPageHeight();
+              console.info(`page height: onPageEnd: setTimeout: ${h}`);
+              this.heightText = String(h) + ' px';
+            } catch (err) {
+              console.error(`page height: onPageEnd setTimeout error: ${JSON.stringify(err)}`);
+              this.heightText = $r('app.string.get_height_failed');
+            }
+          }, 2000)
+        })
     }
+    .width('100%')
     .height('100%')
   }
 }

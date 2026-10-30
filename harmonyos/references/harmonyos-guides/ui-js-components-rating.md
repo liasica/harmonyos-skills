@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: rating开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > rating开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:37+08:00
+scraped_at: 2026-10-31T07:31:57+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:88f7ea8d1dc7e27a319a5ba8ac62ed1545870b65d4973dadb76f79ee1aa7531c
+content_hash: sha256:0adf3ff263fa8ed5532c0d99bafd6842094c333369e9ce2cabcd41599d173f58
 ---
 
 rating是评分组件，用于展示用户对某项内容的评价等级。具体用法请参考[rating](../harmonyos-references/js-components-basic-rating.md)。
@@ -37,7 +37,7 @@ rating是评分组件，用于展示用户对某项内容的评价等级。具�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/DHtcXaGVSUm3i36TwNWtrA/zh-cn_image_0000002803224023.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/ITmYYZkRQJW5UkvOYce5RQ/zh-cn_image_0000002776908896.gif)
 
 ## 设置评分星级
 
@@ -67,7 +67,7 @@ rating组件通过设置numstars和rating属性设置评分条的星级总数和
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/pJJFNvBvT6-I8RPKYBN6gg/zh-cn_image_0000002774064304.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/x_Mchy4EQGGxatHRD8TSwA/zh-cn_image_0000002776748910.gif)
 
 ## 设置评分样式
 
@@ -111,7 +111,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/PI27BadLQQexccXpGfFRpw/zh-cn_image_0000002773904330.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/6B_SFopMT-6EZfMI-TsNWw/zh-cn_image_0000002806028627.gif)
 
 **说明** 
 
@@ -156,7 +156,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/MLHBLdwoR0mGwKw82SmXog/zh-cn_image_0000002803264115.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/K-klP3reRnuwentdvOY6Ng/zh-cn_image_0000002806108517.gif)
 
 ## 场景示例
 
@@ -241,4 +241,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/jnMH--Z3THKM6FIWzMLqtg/zh-cn_image_0000002803224025.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/ZG2e_UDbQ7Cgw3TD6KDeaA/zh-cn_image_0000002776908898.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: "@ohos.web.netErrorList (ArkWeb网络协议栈错误列表)"
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.netErrorList (ArkWeb网络协议栈错误列表)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:49:05+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:fee4aac36f85fde9c2d3d347a1f784efe3e38c0f13a273bcc400558da0daacb0
+scraped_at: 2026-10-31T07:36:08+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:bb532cc8834bb21373f69e040f1e853f10b6bd5ac624e54697569c7939ee462a
 ---
 
 ArkWeb的网络协议栈错误列表，错误码直接映射Chromium错误码[net\_error\_list.h](https://chromium.googlesource.com/chromium/src.git/+/refs/heads/main/net/base/net_error_list.h)，可在网络请求异常时基于标准化错误码快速定位问题、统一错误处理，提升排查效率。
@@ -34,14 +34,14 @@ ArkWeb的网络协议栈错误列表
 | ERR\_ABORTED | -3 | 操作已被中止。 |
 | ERR\_INVALID\_ARGUMENT | -4 | 参数无效。 |
 | ERR\_INVALID\_HANDLE | -5 | 文件描述符的句柄是无效的。 |
-| ERR\_FILE\_NOT\_FOUND | -6 | 文件未找到。 |
+| ERR\_FILE\_NOT\_FOUND | -6 | 文件或目录无法找到。 |
 | ERR\_TIMED\_OUT | -7 | 操作超时。 |
 | ERR\_FILE\_TOO\_LARGE | -8 | 文件过大。 |
 | ERR\_UNEXPECTED | -9 | 遇到了未被预期或未被特定处理的问题。 |
 | ERR\_ACCESS\_DENIED | -10 | 访问除了网络以外的资源被拒绝。 |
 | ERR\_NOT\_IMPLEMENTED | -11 | 功能未实现，导致操作失败。 |
 | ERR\_INSUFFICIENT\_RESOURCES | -12 | 系统或程序执行所需的资源不足。 |
-| ERR\_OUT\_OF\_MEMORY | -13 | 内存溢出。 |
+| ERR\_OUT\_OF\_MEMORY | -13 | 内存分配失败。 |
 | ERR\_UPLOAD\_FILE\_CHANGED | -14 | 上传文件失败，因为文件的修改时间不符合预期。 |
 | ERR\_SOCKET\_NOT\_CONNECTED | -15 | 长连接断开。 |
 | ERR\_FILE\_EXISTS | -16 | 文件已存在。 |
@@ -259,7 +259,7 @@ ArkWeb的网络协议栈错误列表
 | ERR\_CERT\_VERIFIER\_CHANGED | -716 | 证书验证配置已发生某种更改。 |
 | ERR\_DNS\_MALFORMED\_RESPONSE | -800 | DNS解析程序收到格式错误的响应。 |
 | ERR\_DNS\_SERVER\_REQUIRES\_TCP | -801 | DNS服务器需要TCP。 |
-| ERR\_DNS\_SERVER\_FAILED | -802 | DNS服务器失败。对于以下所有错误情况，都会返回此错误。1-格式错误-名称服务器无法解释查询。2-服务器故障-名称服务器由于自身问题无法处理这个查询。3-未实现-名称服务器不支持请求的查询类型。4-拒绝-名称服务器出于策略原因拒绝执行指定的操作。 |
+| ERR\_DNS\_SERVER\_FAILED | -802 | DNS服务器失败。对于以下所有错误情况，都会返回此错误。1-格式错误-名称服务器无法解释查询。2-服务器故障-名称服务器由于自身问题无法处理这个查询。4-未实现-名称服务器不支持请求的查询类型。5-拒绝-名称服务器出于策略原因拒绝执行指定的操作。 |
 | ERR\_DNS\_TIMED\_OUT | -803 | DNS事务超时。 |
 | ERR\_DNS\_CACHE\_MISS | -804 | 对于只查询本地源的查找，在缓存或其他本地源中未找到该条目。 |
 | ERR\_DNS\_SEARCH\_EMPTY | -805 | 后缀搜索列表规则阻止了给定主机名的解析。 |

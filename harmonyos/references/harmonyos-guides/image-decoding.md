@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-decodin
 title: 使用ImageSource完成图片解码
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片解码 > 使用ImageSource完成图片解码
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:07+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:e113cb6af6cb3a16c5a444218bf76d41f30286d0500da70d8a79e37386f6ec80
+scraped_at: 2026-10-31T07:32:44+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:cb00993f913a220169449bf50436495dfbe25ccc498e63cf46a54a873708bd61
 ---
 
 当应用需要读取图片内容、显示图片，或对图片进行缩放、裁剪等处理时，可使用[ImageSource](../harmonyos-references/arkts-apis-image-imagesource.md)完成图片解码。应用可通过图片在应用沙箱中的路径、文件描述符或缓冲区创建ImageSource，并将图片解码为PixelMap。
@@ -137,24 +137,24 @@ content_hash: sha256:e113cb6af6cb3a16c5a444218bf76d41f30286d0500da70d8a79e37386f
      ```
 4. 创建ImageSource实例。
 
-   * 方法一：通过沙箱路径创建ImageSource。沙箱路径可以通过步骤2的方法一获取。
+   * 方法一：通过沙箱路径创建ImageSource。沙箱路径可以通过步骤3的方法一获取。
 
      ```typescript
      // path为已获得的沙箱路径。
      const imageSource : image.ImageSource = image.createImageSource(filePath);
      ```
-   * 方法二：通过文件描述符fd创建ImageSource。文件描述符可以通过步骤2的方法二获取。
+   * 方法二：通过文件描述符fd创建ImageSource。文件描述符可以通过步骤3的方法二获取。
 
      ```typescript
      // fd为已获得的文件描述符。
      const imageSource: image.ImageSource = image.createImageSource(fd);
      ```
-   * 方法三：通过缓冲区数组创建ImageSource。缓冲区数组可以通过步骤2的方法三获取。
+   * 方法三：通过缓冲区数组创建ImageSource。缓冲区数组可以通过步骤3的方法三获取。
 
      ```typescript
      const imageSource: image.ImageSource = image.createImageSource(buffer);
      ```
-   * 方法四：通过资源文件的RawFileDescriptor创建ImageSource。RawFileDescriptor可以通过步骤2的方法四获取。
+   * 方法四：通过资源文件的RawFileDescriptor创建ImageSource。RawFileDescriptor可以通过步骤3的方法四获取。
 
      ```typescript
      const imageSource: image.ImageSource = image.createImageSource(rawFileDescriptor);
@@ -187,7 +187,7 @@ content_hash: sha256:e113cb6af6cb3a16c5a444218bf76d41f30286d0500da70d8a79e37386f
          console.info(`Create PixelMap successfully with imageInfo.isHdr: ${imageInfo.isHdr}.`);
          return pixelMap;
        } else {
-         console.info('Create PixelMap failed.');
+         console.error('Create PixelMap failed.');
          return undefined;
        }
      } catch (error) {

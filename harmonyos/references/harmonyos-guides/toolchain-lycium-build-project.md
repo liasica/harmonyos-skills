@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/toolchain-lyc
 title: 使用lycium交叉编译框架快速编译三方库
 breadcrumb: 指南 > NDK开发 > 编译工具链 > 使用lycium交叉编译框架快速编译三方库
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:19+08:00
+scraped_at: 2026-10-31T07:33:45+08:00
 doc_updated_at: 2026-05-07
-content_hash: sha256:f9e170b0546abbdb493e94f8cf0bf1586199efcd9391cdaae36c59737eb6ae06
+content_hash: sha256:6fb9d0f08e0e37a13f903b2e23deecb17136f8c1e3172f83cbefa32b39c28569
 ---
 
 ## 概述
@@ -196,17 +196,17 @@ lycium是一款协助开发者通过shell语言实现C/C++三方库快速交叉�
 
    如下图所示，xxx代表三方库名称，xxx文件夹下包含了aarch64架构以及arm架构两种方式生成的二进制文件，每种架构目录下包含了该库的头文件目录include以及二进制文件目录lib。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/fg7yAi1eS6qixZrdoTrAlw/zh-cn_image_0000002803225561.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/49y5U2VGRbSv8R6pI8_OaQ/zh-cn_image_0000002776750450.png)
 
    如果三方库二进制文件为so文件，还需要将so文件拷贝到工程目录的entry/libs/${OHOS\_ARCH}/目录下，如下图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/DAI8_oNPRx2yh7sFhkEoWw/zh-cn_image_0000002774065846.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/ALh6yVs1S8C6HvsbP9XErQ/zh-cn_image_0000002806030167.png)
 
    动态库引用注意事项：
 
    1. 应用在引用动态库的时候是通过soname来查找的，所以开发者需要将名字为soname的库文件拷贝到entry/libs/${OHOS\_ARCH}/目录下（soname查看方法：${OHOS\_SDK}/native/llvm/bin/llvm-readelf -d libxxx.so）。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/dQpeuPmrQrCz3193qTrkPQ/zh-cn_image_0000002773905872.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/mifUq_ofSDmcRRSWoTtDpA/zh-cn_image_0000002806110057.png)
    2. 正确拷贝so文件。
 
       拷贝方法：不通过压缩直接将so文件拷贝到windows，或将so文件压缩成.zip格式拷贝到windows，正确拷贝so文件后，so文件大小应该与原库实体文件大小一致。
@@ -229,7 +229,7 @@ lycium是一款协助开发者通过shell语言实现C/C++三方库快速交叉�
      target_link_libraries(entry PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/xxx/${OHOS_ARCH}/lib/libxxx.so)
      ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/x9zCkXDdTj6vObp_8V9fFw/zh-cn_image_0000002803265655.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/XJeK0Zg7Qi-asMah7wTQdw/zh-cn_image_0000002776910438.png)
 3. 配置头文件路径。
 
    在cpp目录的CMakeLists.txt文件中添加对应target\_include\_directories即可：
@@ -238,5 +238,5 @@ lycium是一款协助开发者通过shell语言实现C/C++三方库快速交叉�
    target_include_directories(entry PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/xxx/${OHOS_ARCH}/include)
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/WzZASvZ3Q42I_xNMbgwnEw/zh-cn_image_0000002803225563.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/g9LkekjgTlakfqLpBWAmBQ/zh-cn_image_0000002776750452.png)
 4. 配置完三方库的链接和头文件路径后，开发者即可根据自身业务逻辑，在应用中调用三方库接口，详细请参考：[三方动态链接库（.so）集成开发实践](../best-practices/bpta-dynamic-link-library.md)。

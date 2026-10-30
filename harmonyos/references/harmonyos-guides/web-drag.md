@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-drag
 title: 使用Web组件的拖拽功能与网页交互
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 > 使用Web组件的拖拽功能与网页交互
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:41+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:108b597b18f3b859da579b4a99594a32fa6628859b90d7dadd7a8569c43db469
+scraped_at: 2026-10-31T07:32:01+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:b021905c859e8bb37145dda5a4db2a21d9c8a34bdd87fd882310f2b63e2ab905
 ---
 
 ArkWeb的拖拽功能使应用能够在网页中实现元素的拖放，用户可以长按可拖拽的元素，将其拖至可放置的元素上，然后松手完成放置。ArkWeb在网页内容中的拖拽功能满足H5标准。
@@ -45,13 +45,13 @@ ArkWeb拖拽不同于ArkUI的组件级拖拽，主要针对网页内容的拖拽
 由于ArkTS侧的onDrop方法会早于H5中放置事件的处理方法（H5示例中的droppable.addEventListener('drop')）执行，若在onDrop方法中进行页面跳转等操作，将导致H5中的drop方法无法正确执行，产生不符合预期的结果。因此，应建立双向通信机制，在H5中的drop方法执行完毕后，通知ArkTS侧执行相应的业务逻辑，以确保业务逻辑的预期执行。
 
 ```typescript
-import { webview } from '@kit.ArkWeb'
+import { webview } from '@kit.ArkWeb';
 import { unifiedDataChannel, uniformTypeDescriptor } from '@kit.ArkData';
 
 @Entry
 @Component
 struct DragDrop {
-  private controller: webview.WebviewController = new webview.WebviewController()
+  private controller: webview.WebviewController = new webview.WebviewController();
   @State ports: Array<webview.WebMessagePort> = []
   @State dragData: Array<unifiedDataChannel.UnifiedRecord> = []
 
@@ -73,7 +73,7 @@ struct DragDrop {
         this.controller.postMessage('__init_port__', [this.ports[0]], '*');
       })// onDrop 可做简单逻辑，例如暂存一些关键数据
         .onDrop((dragEvent: DragEvent) => {
-          console.info('ETS onDrop!')
+          console.info('ETS onDrop!');
           let data: UnifiedData = dragEvent.getData();
           if(!data) {
             return false;
@@ -91,7 +91,7 @@ struct DragDrop {
               }
             }
           }
-          return true
+          return true;
         })
     }
 
@@ -207,11 +207,11 @@ H5示例:
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/h53uNAOUSJyR3lBLekMvzQ/zh-cn_image_0000002803264235.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/fSfZnUwNQ_qRtaNYeZUXgw/zh-cn_image_0000002806108637.gif)
 
 日志打印：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/8KekP20zTmyIpfl-W92MvQ/zh-cn_image_0000002803224145.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/0hX_ip--QP2x8wDZQGRQrA/zh-cn_image_0000002776909018.png)
 
 ## 常见问题
 
@@ -220,12 +220,12 @@ H5示例:
 请检查相关CSS资源是否正常设置，因为有些网页UA做了判断，针对特定设备的UA才会进行CSS样式设置。可以考虑在Web组件设置自定义UA解决这种问题，例如：
 
 ```typescript
-import { webview } from '@kit.ArkWeb'
+import { webview } from '@kit.ArkWeb';
 
 @Entry
 @Component
 struct Index {
-  private webController: webview.WebviewController = new webview.WebviewController()
+  private webController: webview.WebviewController = new webview.WebviewController();
   build(){
     Column() {
       Web({
@@ -233,8 +233,8 @@ struct Index {
         controller: this.webController,
       }).onControllerAttached(() => {
         // 特定UA
-        let customUA = 'android'
-        this.webController.setCustomUserAgent(this.webController.getUserAgent() + customUA)
+        let customUA = 'android';
+        this.webController.setCustomUserAgent(this.webController.getUserAgent() + customUA);
       })
     }
   }
@@ -314,7 +314,7 @@ H5示例1:
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/LITs3kJJS1Sn7QMsE-oqug/zh-cn_image_0000002774064426.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/nkIyMD35SEm6Cc_MJn0pkw/zh-cn_image_0000002776749032.gif)
 
 html示例2:
 
@@ -351,7 +351,7 @@ html示例2:
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/aWmu52CAR0WncA-ZoXSxfw/zh-cn_image_0000002773904452.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/24F4VCE7SXiC5PzyTBFa7w/zh-cn_image_0000002806028749.gif)
 
 ArkTS示例:
 
@@ -383,7 +383,7 @@ struct Index {
                 '});',
               (error, result) => {
                 if (error) {
-                  console.error(`run JavaScript error, ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`)
+                  console.error(`run JavaScript error, ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
                   return;
                 }
               });

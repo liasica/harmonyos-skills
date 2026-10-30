@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: textarea
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > textarea
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:57+08:00
+scraped_at: 2026-10-31T07:35:40+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:df05cb7ceeb205d6cfdab80c558e9fc536628455d4043ad89a092e85ec8a0c8e
+content_hash: sha256:7a8fd68874b3e1b71120e73b941454bc9044831c8e1d1aa2acc867b1feb18f80
 ---
 
 **说明** 
@@ -108,4 +108,4 @@ change(e){
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/_TUHr3WJTq6pAS0mxZmTvg/zh-cn_image_0000002774066762.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/NAVZGee7RAatHBpRAJq8lQ/zh-cn_image_0000002806110987.png)

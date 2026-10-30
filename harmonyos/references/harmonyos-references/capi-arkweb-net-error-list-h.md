@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkw
 title: arkweb_net_error_list.h
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > C API > 头文件 > arkweb_net_error_list.h
 category: harmonyos-references
-scraped_at: 2026-09-18T06:49:08+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:1a3894153882e563bc12bb806e96ba3ed9c07fe2b9ee6d097883617cd65c9653
+scraped_at: 2026-10-31T07:36:11+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:2dd6a195c62640bc1634862d3725a11c9d70cc47a0645e29ca011228efd51bbf
 ---
 
 ## 概述
@@ -61,7 +61,7 @@ enum ArkWeb_NetError
 | ARKWEB\_ERR\_ACCESS\_DENIED = -10 | 访问除网络外的资源被拒绝。 |
 | ARKWEB\_ERR\_NOT\_IMPLEMENTED = -11 | 由于功能未实现，操作失败。 |
 | ARKWEB\_ERR\_INSUFFICIENT\_RESOURCES = -12 | 没有足够的资源来完成操作。 |
-| ARKWEB\_ERR\_OUT\_OF\_MEMORY = -13 | 内存溢出。 |
+| ARKWEB\_ERR\_OUT\_OF\_MEMORY = -13 | 内存分配失败。 |
 | ARKWEB\_ERR\_UPLOAD\_FILE\_CHANGED = -14 | 文件上传失败，因为文件的修改时间与预期不同。 |
 | ARKWEB\_ERR\_SOCKET\_NOT\_CONNECTED = -15 | socket未连接。 |
 | ARKWEB\_ERR\_FILE\_EXISTS = -16 | 文件已存在。 |
@@ -151,7 +151,7 @@ enum ArkWeb_NetError
 | ARKWEB\_ERR\_INVALID\_ECH\_CONFIG\_LIST = -182 | 通过DNS获取的ECHConfigList无法解析。 |
 | ARKWEB\_ERR\_ECH\_NOT\_NEGOTIATED = -183 | 已启用ECH（Encrypted Client Hello，加密客户端Hello），但服务器无法解密加密的ClientHello。 |
 | ARKWEB\_ERR\_ECH\_FALLBACK\_CERTIFICATE\_INVALID = -184 | ECH（Encrypted Client Hello）已启用，但服务器无法解密加密的ClientHello，并且没有提供对公共名称有效的证书。 |
-| ARKWEB\_ERR\_CERT\_COMMON\_NAME\_INVALID = -200 | 服务器响应了一个证书，其通用名称与主机名不匹配。这可能意味着：1. 攻击者已将我们的流量重定向到他们的服务器，并呈现了一个他们知道私钥的证书。 |
+| ARKWEB\_ERR\_CERT\_COMMON\_NAME\_INVALID = -200 | 服务器响应了一个证书，其通用名称与主机名不匹配。这可能意味着：1. 攻击者已将我们的流量重定向到他们的服务器，并呈现了一个他们知道私钥的证书。2. 服务器配置错误，使用错误的证书进行响应。3. 用户在无线网络上，并被重定向到网络的登录页面。4. 操作系统使用了DNS搜索后缀，服务器在地址栏中没有缩写名称的证书。 |
 | ARKWEB\_ERR\_CERT\_DATE\_INVALID = -201 | 服务器以证书作为响应，但根据我们的时钟，该证书似乎尚未生效或已过期。这可能是以下情况之一：1. 攻击者提供了旧的证书，并设法获取了私钥。2. 服务器配置错误，没有提供有效的证书。3. 我们的时钟错误。 |
 | ARKWEB\_ERR\_CERT\_AUTHORITY\_INVALID = -202 | 服务器回应了一个由我们不信任的机构签名的证书。这可能意味着：1. 攻击者已经将真实的证书替换为包含其公钥并由其同伙签名的证书。 |
 | ARKWEB\_ERR\_CERT\_CONTAINS\_ERRORS = -203 | 服务器返回的证书包含错误。此错误无法恢复。MSDN对此错误的描述如下："SSL证书包含错误。"注意：目前尚不清楚这与ERR\_CERT\_INVALID有何不同。 |
@@ -279,7 +279,7 @@ enum ArkWeb_NetError
 | ARKWEB\_ERR\_CERT\_VERIFIER\_CHANGED = -716 | 证书验证配置已发生某种更改。 |
 | ARKWEB\_ERR\_DNS\_MALFORMED\_RESPONSE = -800 | DNS解析程序收到格式错误的响应。 |
 | ARKWEB\_ERR\_DNS\_SERVER\_REQUIRES\_TCP = -801 | DNS服务器需要TCP。 |
-| ARKWEB\_ERR\_DNS\_SERVER\_FAILED = -802 | DNS服务器失败。对于以下所有错误情况，都会返回此错误：1 - 格式错误 - 名称服务器无法解释查询。2 - 服务器故障 - 名称服务器由于自身问题无法处理这个查询。4 - 未实现 - 名称服务器不支持请求的查询类型。 |
+| ARKWEB\_ERR\_DNS\_SERVER\_FAILED = -802 | DNS服务器失败。对于以下所有错误情况，都会返回此错误：1 - 格式错误 - 名称服务器无法解释查询。2 - 服务器故障 - 名称服务器由于自身问题无法处理这个查询。4 - 未实现 - 名称服务器不支持请求的查询类型。5 - 拒绝 - 名称服务器出于策略原因拒绝执行指定的操作。 |
 | ARKWEB\_ERR\_DNS\_TIMED\_OUT = -803 | DNS事务超时。 |
 | ARKWEB\_ERR\_DNS\_CACHE\_MISS = -804 | 对于只查询本地源的查找，在缓存或其他本地源中未找到该条目。 |
 | ARKWEB\_ERR\_DNS\_SEARCH\_EMPTY = -805 | 后缀搜索列表规则阻止了给定主机名的解析。 |

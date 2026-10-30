@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/quick-playbac
 title: 快捷播放
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 应用接入播控自检 > 应用接入播控检查项详细说明 > 快捷播放
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:19+08:00
+scraped_at: 2026-10-31T07:32:41+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:b11de5a22c1643793f81a7b3eb33072ae7633dd9f6ff5fa4b43d17321e367258
+content_hash: sha256:4eb29dbbc878516aa15183dc2f3255b0e4ccedef5359ba95c83a4d7ba1b33a83
 ---
 
 针对音乐/听书类应用，播控中心提供一系列快捷播放能力，包括一键启动冷启动续播以及历史歌单与推荐歌单功能，其中歌单功能中支持显示的音频媒体内容有：音乐歌单、有声书专辑、播客专辑等。视频媒体内容、直播类媒体内容暂不支持歌单。应用选择PlayMusicList意图（音乐类应用）或者PlayAudio意图（听书类应用）其一，注册并适配[意图调用](intents-habit-rec-access-programme.md)，即可实现接入上述三个功能，具体实现参考[历史歌单](avsession-access-scene.md#历史歌单)。
@@ -25,7 +25,7 @@ content_hash: sha256:b11de5a22c1643793f81a7b3eb33072ae7633dd9f6ff5fa4b43d17321e3
   3. 未播放过的且未销毁的应用信息
   4. 最近播放过的且已销毁的应用信息（应用已接入冷启动）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/veDDOnsKTUS592tNUcsx3w/zh-cn_image_0000002803264695.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/xskJ8Wy8T4ixz__fox3t_g/zh-cn_image_0000002806109097.png)
 
 ## 历史歌单/歌单推荐
 
@@ -47,4 +47,4 @@ content_hash: sha256:b11de5a22c1643793f81a7b3eb33072ae7633dd9f6ff5fa4b43d17321e3
 
   如果用户开启了 “[播控推荐服务](avsession-recommendation.md)”，歌单列表展示 “为你推荐”。最多可展示 8 个基于算法推荐的歌单。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/aNwFZU-qSni8c3-bAPvlIA/zh-cn_image_0000002803224605.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/vp9RMzMWTkul7XA4tJ1rVw/zh-cn_image_0000002776909478.png)

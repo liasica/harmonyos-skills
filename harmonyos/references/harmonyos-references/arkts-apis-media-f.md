@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Functions
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Functions
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:33+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c8b8827ec77a4b2d04ddee133883d40288547a0c28bcd39f7c846acca2989fd8
+scraped_at: 2026-10-31T07:38:16+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:79e99475b11db4c0d5241695805109a3314be91f485a1138e946d14ff9dc1fda
 ---
 
 **说明** 
@@ -671,9 +671,11 @@ createMediaSourceWithFd(fdSrc: AVFileDescriptor): MediaSource | undefined
 ```ts
 import { common } from '@kit.AbilityKit';
 
-let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-let fdSrc = await context.resourceManager.getRawFd('xxx.mp4');
-let mediaSource : media.MediaSource | undefined = media.createMediaSourceWithFd(fdSrc);
+async test() {
+  let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  let fdSrc = await context.resourceManager.getRawFd('xxx.mp4');
+  let mediaSource : media.MediaSource | undefined = media.createMediaSourceWithFd(fdSrc);
+}
 ```
 
 ## media.createMediaSourceWithDataSource
@@ -708,24 +710,26 @@ createMediaSourceWithDataSource(dataSrc: AVDataSrcDescriptor): MediaSource | und
 import { common } from '@kit.AbilityKit';
 import { fileIo as fs, ReadOptions } from '@kit.CoreFileKit';
 
-let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-let fileDescriptor = await context.resourceManager.getRawFd('xxx.mp4');
-let file = fs.openSync("xxx.mp4");
-let dataSrc: media.AVDataSrcDescriptor = {
-  fileSize: fileDescriptor.length,
-  callback: (buf: ArrayBuffer, length: number, pos?: number) => {
-    let readLen = 0;
-    if (pos) {
-      let option: ReadOptions = {
-        offset: pos,
-        length: length,
-      };
-      readLen = fs.readSync(file.fd, buf, option);
+async test() {
+  let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  let fileDescriptor = await context.resourceManager.getRawFd('xxx.mp4');
+  let file = fs.openSync("xxx.mp4");
+  let dataSrc: media.AVDataSrcDescriptor = {
+    fileSize: fileDescriptor.length,
+    callback: (buf: ArrayBuffer, length: number, pos?: number) => {
+      let readLen = 0;
+      if (pos) {
+        let option: ReadOptions = {
+          offset: pos,
+          length: length,
+        };
+        readLen = fs.readSync(file.fd, buf, option);
+      }
+      return readLen > 0 ? readLen : -1;
     }
-    return readLen > 0 ? readLen : -1;
   }
+  let mediaSource : media.MediaSource | undefined =  media.createMediaSourceWithDataSource(dataSrc);
 }
-let mediaSource : media.MediaSource | undefined =  media.createMediaSourceWithDataSource(dataSrc);
 ```
 
 ## media.createAudioPlayer(deprecated)

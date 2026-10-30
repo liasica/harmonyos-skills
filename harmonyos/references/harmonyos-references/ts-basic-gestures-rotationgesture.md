@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: RotationGesture
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 基础手势 > RotationGesture
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:b7370905ee620d7d7ec0a8573581912881587412a0e0da851d48c023eb474bf3
+scraped_at: 2026-10-31T07:35:11+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:7c885bc123d08063a14de43347bf31b5bd329a99cbffe501cf0090ecd3cb82d8
 ---
 
 用于触发旋转手势，最少需要2指，最多5指，最小角度变化为1度，适用于需要识别用户多指旋转操作并实现旋转类交互的场景。该手势不支持通过触控板双指旋转操作触发。
@@ -54,7 +54,7 @@ RotationGesture(options?: RotationGestureHandlerOptions)
 
 **说明** 
 
-在[GestureEvent](ts-gesture-common.md#gestureevent对象说明)的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index。对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为空。建议优先使用fingerInfos。
+在[GestureEvent](ts-gesture-common.md#gestureevent对象说明)的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index。对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为undefined。建议优先使用fingerInfos。
 
 ### onActionStart
 
@@ -70,7 +70,7 @@ onActionStart(event: (event: GestureEvent) => void)
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| event | (event: [GestureEvent](ts-gesture-common.md#gestureevent对象说明)) => void | 是 | 手势事件回调函数。GestureEvent的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index；对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为空，建议优先使用fingerInfos。 |
+| event | (event: [GestureEvent](ts-gesture-common.md#gestureevent对象说明)) => void | 是 | 手势事件回调函数。GestureEvent的fingerList元素中，手指索引编号与位置相对应，即fingerList[index]的id为index；对于先按下但未参与当前手势触发的手指，fingerList中对应的位置为undefined，建议优先使用fingerInfos。 |
 
 ### onActionUpdate
 
@@ -184,4 +184,4 @@ struct RotationGestureExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/TZwWFyQ3QyOZGIObKGkFuQ/zh-cn_image_0000002774066094.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/2w4gb43CS0OqDU4hUjI8pQ/zh-cn_image_0000002806030415.png)

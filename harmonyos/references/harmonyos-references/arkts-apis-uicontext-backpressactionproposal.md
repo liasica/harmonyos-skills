@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (BackPressActionProposal)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (BackPressActionProposal)
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:23+08:00
+scraped_at: 2026-10-31T07:34:57+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:842ed87076c0fcc7c4dcfcc6663f1c9aa1191d19e854cb755da1dc0e49c5bcd8
+content_hash: sha256:e47d4ef6aa2852b2f3064648609cf05c4615665ebc1b8810a498dff10205f851
 ---
 
 智慧手势返回动作处理。当通过[registerMonitor](arkts-apis-uicontext-smartgesturecontroller.md#registermonitor)接口动态自定义智慧手势行为时，设置返回值[Class (GestureHandlingResolution)](arkts-apis-uicontext-gesturehandlingresolution.md)的selectedProposal为该类型对象，会返回上一页面。
@@ -93,4 +93,4 @@ struct SmartGestureControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/v1A7JdKfQ2KSSE3MOnQUWQ/zh-cn_image_0000002803225605.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/BvYSmAUUTYSANT_R5qq7xQ/zh-cn_image_0000002776750494.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/guidance-
 title: NDK涉及的musl libc接口使用限制的说明
 breadcrumb: API参考 > 标准库 > 附录 > NDK涉及的musl libc接口使用限制的说明
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:59+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:0343e97252423a9f08b04b131ac15627c2f397b05c2c8975427c9f753c516022
+scraped_at: 2026-10-31T07:39:37+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:c068b77e97dd66f77d36ff6c28a12a5c3018b91856cf6caeea66d0012853f14a
 ---
 
 ## 概述
@@ -239,7 +239,9 @@ content_hash: sha256:0343e97252423a9f08b04b131ac15627c2f397b05c2c8975427c9f753c5
 | unistd.h | getpass | /dev/tty |
 | utmp.h | login\_tty | 无；对传入 fd 执行 ioctl(TIOCSCTTY) |
 
-说明：这类接口常关联 dev\_ptmx、devpts、tty\_device，在策略中通常不是“所有主体无差别放开”。
+**说明** 
+
+这类接口常关联 dev\_ptmx、devpts、tty\_device，在策略中通常不是“所有主体无差别放开”。
 
 ### 共享内存与命名信号量
 
@@ -249,7 +251,9 @@ content_hash: sha256:0343e97252423a9f08b04b131ac15627c2f397b05c2c8975427c9f753c5
 | semaphore.h | sem\_open | /dev/shm/、/dev/shm/tmp-%d |
 | semaphore.h | sem\_unlink | /dev/shm/ |
 
-说明：/dev/shm 路径受系统侧 SELinux 管控。
+**说明** 
+
+/dev/shm 路径受系统侧 SELinux 管控。
 
 ### shell 执行与日志控制台
 
@@ -262,7 +266,9 @@ content_hash: sha256:0343e97252423a9f08b04b131ac15627c2f397b05c2c8975427c9f753c5
 | syslog.h | syslog 相关接口 | /dev/log、/dev/console |
 | fmtmsg.h | fmtmsg | /dev/console |
 
-说明：/dev/log、/dev/console 的访问一般依赖主体域授权，不是默认全放行。
+**说明** 
+
+/dev/log、/dev/console 的访问一般依赖主体域授权，不是默认全放行。
 
 ### 账号与敏感文件
 
@@ -270,7 +276,9 @@ content_hash: sha256:0343e97252423a9f08b04b131ac15627c2f397b05c2c8975427c9f753c5
 | --- | --- | --- |
 | shadow.h | getspnam\_r | /etc/tcb/%s/shadow、/etc/shadow |
 
-说明：该类接口客体敏感度高，建议按最小权限单独审计。
+**说明** 
+
+该类接口客体敏感度高，建议按最小权限单独审计。
 
 ### 无固定路径但存在 SELinux 管控点的接口
 
@@ -292,4 +300,6 @@ content_hash: sha256:0343e97252423a9f08b04b131ac15627c2f397b05c2c8975427c9f753c5
 | unistd.h | readlink / readlinkat | 路径由参数传入，SELinux 管控 lnk\_file read/getattr |
 | unistd.h | symlink / symlinkat | 路径由参数传入，SELinux 管控 lnk\_file create、父目录 add\_name |
 
-说明：以上接口没有在 musl 内部固定访问路径，是否触发 SELinux 拦截取决于调用主体、传入路径或 fd、内核对象标签及对应策略。
+**说明** 
+
+以上接口没有在 musl 内部固定访问路径，是否触发 SELinux 拦截取决于调用主体、传入路径或 fd、内核对象标签及对应策略。

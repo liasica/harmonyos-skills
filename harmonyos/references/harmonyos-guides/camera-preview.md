@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-previe
 title: 预览(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 预览(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:20+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:fde2f987d06b5620907e467661ca3ebf9535015a676d1f90bc48655b359cd9f7
+scraped_at: 2026-10-31T07:32:42+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:cec340e5e6f3fccced98746ae95a8ac3687b8a811418a7b46c6952ad2c459e41
 ---
 
 ## 概述
@@ -22,7 +22,7 @@ content_hash: sha256:fde2f987d06b5620907e467661ca3ebf9535015a676d1f90bc48655b359
 
 基础预览是自定义相机核心的功能，用户打开相机应用后，首先看到的就是实时的预览画面，该功能为画面调整、拍摄等操作提供基础。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/Jw44q72dT_KbKRCld0fr-A/zh-cn_image_0000002803224609.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/lMq7G3IBQtelHwulOhsbOg/zh-cn_image_0000002776909482.gif)
 
 ### 实现原理
 
@@ -40,13 +40,13 @@ content_hash: sha256:fde2f987d06b5620907e467661ca3ebf9535015a676d1f90bc48655b359
 4. 创建预览输出流。
 5. 配置相机会话Session并启动。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/frc7zCkwTr-TzpRlr3Uk8Q/zh-cn_image_0000002774064892.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/Emy4zzCIQpK5PEYHOusYTA/zh-cn_image_0000002776749496.png)
 
 ### 开发步骤
 
 1. 在使用相机相关功能前，需要申请ohos.permission.CAMERA相机权限。申请权限分为以下两步。
 
-   在module.json5中配置该权限，更多相机权限参考[相机开发准备](../harmonyos-guides-V5/camera-preparation-V5.md#申请权限)。
+   在module.json5中配置该权限，更多相机权限参考[申请相机开发的权限](../doccenter-capabilities/camera-preparation.md)。
 
    ```json5
    "requestPermissions": [
@@ -323,7 +323,7 @@ content_hash: sha256:fde2f987d06b5620907e467661ca3ebf9535015a676d1f90bc48655b359
 
 ### 切换前后置镜头
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/yWwPp1t3QkKNkorkQWZCNg/zh-cn_image_0000002773904918.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/xj5jyzJtQDGnkqk7hIz6Zg/zh-cn_image_0000002806029213.gif)
 
 预览页面中用isFront属性标识前置还是后置镜头，根据isFront获取[camera.CameraPosition](../harmonyos-references/arkts-apis-camera-e.md#cameraposition)的值。关于折叠屏CameraPosition的选择可参考[相机硬件差异](../best-practices/bpta-multi-device-camera.md#section13854163154917)。
 
@@ -363,7 +363,7 @@ toggleCameraPositionButton() {
 
 ### 设置相机焦距
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/mbdS68NQQv2GnkaP3mE7xg/zh-cn_image_0000002803264701.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/A35s6pcUStKAvgVSIFhSuA/zh-cn_image_0000002806109103.gif)
 
 使用[getZoomRatioRange()](../harmonyos-references/arkts-apis-camera-zoomquery.md#getzoomratiorange11)方法获取当前相机设备支持设置的焦距范围，根据业务需求在页面上生成相应焦距的按钮。
 
@@ -392,7 +392,7 @@ setSmoothZoom(zoom: number): void {
 
 ### 设置闪光灯
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/6bzUlN4kQ0mgLUFoZ_yKcg/zh-cn_image_0000002803224611.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/vw16kXWkQbKVfPHv3ET4cg/zh-cn_image_0000002776909484.gif)
 
 使用[setFlashMode()](../harmonyos-references/arkts-apis-camera-flash.md#setflashmode11)方法设置闪光灯模式，在设置前需使用[isFlashModeSupported()](../harmonyos-references/arkts-apis-camera-flashquery.md#isflashmodesupported11)方法检测设备是否支持设置所选闪光灯模式。
 
@@ -415,7 +415,7 @@ setFlashMode(flashMode: camera.FlashMode): void {
 
 点击预览区域，以点击处为焦点进行对焦，并显示对焦框。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/ka0WE2kHTS-KrYt66wvLwA/zh-cn_image_0000002774064894.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/io34IVmVRXChCrLstVgVvg/zh-cn_image_0000002776749498.gif)
 
 设置焦点[camera.Point](../harmonyos-references/arkts-apis-camera-i.md#point)的坐标是以充电口在右侧时横向设备方向为基准，该坐标系左上角为{ 0，0 }，右下角为{ 1，1 }。
 
@@ -425,7 +425,7 @@ setFlashMode(flashMode: camera.FlashMode): void {
 
 * 屏幕旋转角度为0：由下图可知，在焦点所处相机画面坐标系中，触碰点距原点在x轴方向的距离为y，在y轴方向的距离为w - x。由于该坐标系为0-1坐标系，所以实际焦点坐标为{ y / h, (w - x) / w }，即{ y / h, 1 - x / w }。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/t5Hyy97KQ6y-jYSDr6BjxQ/zh-cn_image_0000002773904920.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/jvX1yBC2RMuJMgbrJs6YZA/zh-cn_image_0000002806029215.png)
 
 同理，其他屏幕旋转方向上焦点坐标同可以计算出：
 
@@ -510,7 +510,7 @@ export function getClampedChildPosition(childSize: Size, parentSize: Size, point
 
 点击预览区域，设置点击处为曝光中心点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/Q6fwmqjyQ1asJ32K5k81uA/zh-cn_image_0000002803264703.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/ESpjFvYTSP2B9L88g-ZhlA/zh-cn_image_0000002806109105.gif)
 
 在相机会话启动后，使用[setExposureMode()](../harmonyos-references/arkts-apis-camera-autoexposure.md#setexposuremode11)方法设置曝光模式为EXPOSURE\_MODE\_CONTINUOUS\_AUTO，当点击预览画面时，设置曝光模式为EXPOSURE\_MODE\_AUTO，以支持曝光区域中心点设置。在设置前需检测相机是否支持该曝光模式。手动设置结束后将曝光模式切换为EXPOSURE\_MODE\_CONTINUOUS\_AUTO，以获得更好的曝光体验。
 
@@ -543,7 +543,7 @@ setMeteringPoint(point: camera.Point): void {
 
 ### 设置预览帧率
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/CWvxVWkrQuKYy9hScBxztQ/zh-cn_image_0000002803224613.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/fbgyWRyjSVeKbpYI9rzRyA/zh-cn_image_0000002776909486.gif)
 
 使用[PreviewOutput.getSupportedFrameRates()](../harmonyos-references/arkts-apis-camera-previewoutput.md#getsupportedframerates12)方法获取预览流支持的帧率范围。
 
@@ -579,7 +579,7 @@ setFrameRate(minFps: number, maxFps: number): void {
 
 在预览画面进行手势捏合操作，预览画面焦距会随捏合手势进行对应缩放调整。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/dqvAW4gBQKaaE7eKbBks3w/zh-cn_image_0000002774064896.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/VvueOoQXSKaq4LMQEBLS1A/zh-cn_image_0000002776749500.gif)
 
 使用[PinchGesture()](../harmonyos-references/ts-basic-gestures-pinchgesture.md)接口给预览区域元素绑定捏合事件。
 
@@ -616,7 +616,7 @@ XComponent({
 
 将相机预览画面划分为9个等比例区域（3×3宫格），为用户提供精准的构图参考框架。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/nwdaxjDuThqqGj4gkfBlag/zh-cn_image_0000002773904922.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/O0ggSsphR7yndx3fJDN7GA/zh-cn_image_0000002806029217.png)
 
 获取预览区域的宽高，通过行数和列数计算出每条网格线的起始坐标，在[Canvas](../harmonyos-references/ts-components-canvas-canvas.md)上进行绘制。注意设置[hitTestBehavior](../harmonyos-references/ts-universal-attributes-hit-test-behavior.md#hittestbehavior)属性为HitTestMode.Transparent，不影响下方预览区域的正常交互。
 
@@ -683,7 +683,7 @@ Stack({
 
 设备旋转过程中，水平仪指示线始终垂直于重力方向，当设备水平时（x轴或y轴垂直于重力方向），水平仪指示线由虚线变为实线。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/X23fhn6LSI-peNf1pZ_NcA/zh-cn_image_0000002803264705.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/9TeWX6BLQ0Sj_t-piBEs2w/zh-cn_image_0000002806109107.png)
 
 水平仪的实现需要用到重力加速度传感器。通过[sensor](../harmonyos-references/js-apis-sensor.md)模块获取重力加速度在x, y, z轴方向上的分量。以充电口在下的竖屏方向为基准，x, y, z轴的方向如下。
 
@@ -693,7 +693,7 @@ Stack({
 
 由下图可知，水平仪指示线与x轴的夹角用θ表示，若要指示线始终垂直重力方向，则tanθ = g(x) / -g(y)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/cagiyMZuTh2jBtA-ZA4nqw/zh-cn_image_0000002803224615.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/mgKh6tueSe-M3sOz28u16w/zh-cn_image_0000002776909488.png)
 
 在module.json5中配置加速度传感器权限。
 
@@ -781,7 +781,7 @@ export struct LevelIndicator {
 
 若相机在超过特定时间内未进行任何操作，则会暂停预览并显示遮罩。点击遮罩可重新启动预览，避免相机资源长时间浪费，从而降低功耗。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/fgrYxNkBRf6zSosrqwDF7w/zh-cn_image_0000002774064898.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/_k_LE5ODSnKusd8pef6-NQ/zh-cn_image_0000002776749502.gif)
 
 实现带刷新方法的定时器类，初始化时传入计时结束的回调函数。需要重置计时时间，调用refresh()方法实现。
 
@@ -864,7 +864,7 @@ wakeupMask() {
 
 当相机应用在退后台之后由于安全策略会被强制断流。当从后台切换至前台时，需要重启相机设备的预览流、拍照流以及相机会话。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/jsTbp9anRwSiBCbWKqYu5A/zh-cn_image_0000002773904924.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/m2Rsre91Q8iU6Jsxa5TgDA/zh-cn_image_0000002806029219.gif)
 
 使用[ApplicationContext.on('applicationStateChange')](../harmonyos-references/js-apis-inner-application-applicationcontext.md#applicationcontextonapplicationstatechange10)方法注册对当前应用前后台状态变化的监听。在切换至后台触发的[onApplicationBackground()](../harmonyos-references/js-apis-app-ability-applicationstatechangecallback.md#applicationstatechangecallbackonapplicationbackground)回调函数中释放相机相关资源。在切换至前台触发的[onApplicationForeground()](../harmonyos-references/js-apis-app-ability-applicationstatechangecallback.md#applicationstatechangecallbackonapplicationforeground)回调函数中重新启动相机及预览。
 
@@ -887,7 +887,7 @@ registerApplicationStateChange(): void {
 
 相机拍摄人像时，在预览画面上添加人脸检测框可以辅助对焦和构图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/8H-lEghHQVKJU4Ds9DOKJQ/zh-cn_image_0000002803264707.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/e-Y2LFN9RZy_ek8oHrOOaw/zh-cn_image_0000002806109109.png)
 
 相机的[元数据](camera-metadata.md)输出流携带了人脸检测信息，应用可配置元数据输出流并读取检测信息绘制检测框。相较于[基于Core Vision Kit的人脸检测](core-vision-face-detector.md)能力，元数据输出流在相机预览时返回数据更快，性能更好，具体对比如下：
 
@@ -1036,7 +1036,7 @@ registerApplicationStateChange(): void {
 5. 监听帧到达事件。
 6. 处理并释放帧数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/rdTYVYq-TAiZH2q05zMWVQ/zh-cn_image_0000002803224617.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/XdJitkAlQNGKTXomabT1zQ/zh-cn_image_0000002776909490.png)
 
 ### 开发步骤
 

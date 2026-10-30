@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-de
 title: 属性修改器 (AttributeModifier)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > Modifier机制 > 属性修改器 (AttributeModifier)
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:35+08:00
+scraped_at: 2026-10-31T07:31:54+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:f7b3a022f33cd2f0f245b676cfca1ff312c586532444a1005891d3686516f481
+content_hash: sha256:45cfb1e5e6989cb849c7e29ab63a3c15d87997c4e0c6ebd290cf8f2d7ccc4be9
 ---
 
 ## 概述
@@ -129,7 +129,7 @@ struct Button1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/6rX_dDaTQGG8RNFhtYHyAg/zh-cn_image_0000002803264023.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/rN8Co4nVS1K4hN_S1cEc9Q/zh-cn_image_0000002806108425.gif)
 
 ```typescript
 export class MyButtonModifier implements AttributeModifier<ButtonAttribute> {
@@ -183,7 +183,7 @@ struct Button2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/98inls1nTLS10CufdkcF9g/zh-cn_image_0000002803223933.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/ELqPTwbgTYeASE2D0oxu2A/zh-cn_image_0000002776908806.gif)
 
 当一个组件上多次使用applyNormalAttribute设置不同的Modifier实例时，每次状态变量刷新均会按顺序执行这些实例的方法属性设置，遵循属性覆盖原则，即后设置的属性生效。
 
@@ -254,7 +254,7 @@ struct Button3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/8bidNES9SXGcdqe993CKMA/zh-cn_image_0000002774064214.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/mbDhTqwPSqmf8QLa5rADAA/zh-cn_image_0000002776748820.gif)
 
 ## 设置多态样式、事件
 
@@ -300,7 +300,7 @@ struct Button4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/fB1ZbWvyQZmeXRCwAvchQA/zh-cn_image_0000002773904240.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/IsxNjt8PRLS3EnjvhdiDHA/zh-cn_image_0000002806028537.gif)
 
 ## 属性或事件对attributeModifier的支持情况
 

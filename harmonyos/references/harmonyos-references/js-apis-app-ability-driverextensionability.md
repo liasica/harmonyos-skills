@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.DriverExtensionAbility (驱动程序扩展能力)"
 breadcrumb: API参考 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > ArkTS API > @ohos.app.ability.DriverExtensionAbility (驱动程序扩展能力)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:11+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:7146e4a9fa0d6603c972442bf4ce6b0fa44521539a389543be8f8ae331545974
+scraped_at: 2026-10-31T07:37:32+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:9ad10f7df6807791f38c50000a88ac3557c1d629c30bdd7d6a742bebb573e4c9
 ---
 
 DriverExtensionAbility模块提供驱动相关扩展能力，提供驱动创建、销毁、连接、断开等生命周期回调。
@@ -36,7 +36,7 @@ DriverExtensionAbility类，包含驱动扩展的上下文环境定义。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| context | [DriverExtensionContext](js-apis-inner-application-driverextensioncontext.md) | 否 | 否 | DriverExtension的上下文环境，继承自ExtensionContext。 |
+| context | DriverExtensionContext | 否 | 否 | DriverExtension的上下文环境，继承自ExtensionContext。 |
 
 ### onInit
 
@@ -307,11 +307,11 @@ DriverExtensionAbility不支持以下模块的引用。
 | Core File Kit（文件基础服务） | [@ohos.file.storageStatistics (应用空间统计)](js-apis-file-storage-statistics.md) |
 | Form Kit（卡片开发服务） | [@ohos.application.formError (formError)](js-apis-application-formerror.md) |
 | IME Kit（输入法开发服务） | [@ohos.inputMethod (输入法框架)](js-apis-inputmethod.md) |
-| Location Kit | [@ohos.geolocation (位置服务)](js-apis-geolocation.md) |
-| Location Kit | [@ohos.geoLocationManager (位置服务)](js-apis-geolocationmanager.md) |
-| MDM Kit（企业设备管理服务） | [@ohos.enterprise.adminManager（admin权限管理）](js-apis-enterprise-adminmanager.md) |
-| MDM Kit（企业设备管理服务） | [@ohos.enterprise.deviceInfo（设备信息管理）](js-apis-enterprise-deviceinfo.md) |
-| MultimediaKit | @ohos.multimedia.mediaLibrary (媒体库管理) |
+| Location Kit（位置服务） | [@ohos.geolocation (位置服务)](js-apis-geolocation.md) |
+| Location Kit（位置服务） | [@ohos.geoLocationManager (位置服务)](js-apis-geolocationmanager.md) |
+| MDM Kit（企业设备管理服务） | [@ohos.enterprise.adminManager (admin权限管理)](js-apis-enterprise-adminmanager.md) |
+| MDM Kit（企业设备管理服务） | [@ohos.enterprise.deviceInfo (设备信息管理)](js-apis-enterprise-deviceinfo.md) |
+| Media Library Kit（媒体文件管理服务） | @ohos.multimedia.mediaLibrary [模块描述](arkts-apis-photoaccesshelper.md) |
 | Network Kit（网络服务） | [@ohos.net.connection (网络连接管理)](js-apis-net-connection.md) |
 | Network Kit（网络服务） | [@ohos.net.ethernet (以太网连接管理)](js-apis-net-ethernet.md) |
 | Network Kit（网络服务） | [@ohos.net.http (数据请求)](js-apis-http.md) |
@@ -325,7 +325,7 @@ DriverExtensionAbility不支持以下模块的引用。
 | Sensor Service Kit（传感器服务） | [@ohos.vibrator (振动)](js-apis-vibrator.md) |
 | Telephony Kit（蜂窝通信服务） | [@ohos.telephony.call (拨打电话)](js-apis-call.md) |
 | Telephony Kit（蜂窝通信服务） | [@ohos.telephony.data (蜂窝数据)](js-apis-telephony-data.md) |
-| Telephony Kit（蜂窝通信服务） | [@ohos.telephony.observer (observer)](js-apis-observer.md) |
+| Telephony Kit（蜂窝通信服务） | [@ohos.telephony.observer (电话服务状态监听)](js-apis-observer.md) |
 | Telephony Kit（蜂窝通信服务） | [@ohos.telephony.radio (网络搜索)](js-apis-radio.md) |
 | Telephony Kit（蜂窝通信服务） | [@ohos.telephony.sim (SIM卡管理)](js-apis-sim.md) |
 | Telephony Kit（蜂窝通信服务） | [@ohos.telephony.sms (短信服务)](js-apis-sms.md) |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-user
 title: "@ohos.userIAM.userAuthIcon (嵌入式用户身份认证控件)"
 breadcrumb: API参考 > 系统 > 安全 > User Authentication Kit（用户认证服务） > ArkTS组件 > @ohos.userIAM.userAuthIcon (嵌入式用户身份认证控件)
 category: harmonyos-references
-scraped_at: 2026-10-29T08:00:51+08:00
+scraped_at: 2026-10-31T07:36:46+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:6f55d57bddb168c38c359e3b18878d2408c46c5106a679172f3a2033220936e2
+content_hash: sha256:e5f173f7cc459312fa0639d823ac064d229eadfaf404a08daf7b482a5a3510ff
 ---
 
 **userAuthIcon**模块是HarmonyOS用户身份认证体系（UserIAM）的UI组件模块，提供了一个开箱即用的身份认证图标组件（UserAuthIcon）。该组件用于在应用UI中展示人脸认证或指纹认证的图标，支持自定义图标颜色和尺寸，并可在点击图标时直接启动系统身份认证弹窗组件。
@@ -35,7 +35,7 @@ UserAuthIcon是一个ArkTS自定义组件（@Component struct），封装了认�
 * **onAuthResult**：认证结果回调。
 * **onIconClick**：图标点击回调。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/CjZuLjWLRT6sd9W8z3-gXw/zh-cn_image_0000002803226811.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/Q1vCTIIwS6CzpBh2bhx3VQ/zh-cn_image_0000002806031479.png)
 
 ## API组合使用关系说明
 
@@ -167,8 +167,8 @@ struct Index {
 
 **人脸认证图例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/YvshFL5WSL2ecpabIFu1gQ/zh-cn_image_0000002774067096.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/tLTo1rlIRSmjek08WPNjmw/zh-cn_image_0000002806111371.png)
 
 **指纹认证图例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/muwi5b92TayW3LxxfvB1Gw/zh-cn_image_0000002773907124.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/0teSPNIHTsuKFG9y0Oc8UA/zh-cn_image_0000002776911748.png)

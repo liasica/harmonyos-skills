@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-stop-for-
 title: 应用退出（PC/2in1）
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用生命周期 > 应用退出（PC/2in1）
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:18+08:00
+scraped_at: 2026-10-31T07:31:36+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:45a9631d39f0ae4c282769d2ae106cf924f5ffc648d2f7f382ef7a1493871c78
+content_hash: sha256:4f604135d713b6a54e17f1f82319349dfe69d8e8d4576f279881cee02056c9e3
 ---
 
 ## 概述
@@ -16,16 +16,16 @@ PC/2in1设备上常见的应用退出场景主要包括：
 
 * **关闭按钮退出**：用户点击主窗口三键区中的关闭按钮，关闭当前应用窗口。这是最常见的窗口退出方式。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/45ojBjYETNS9zK1F8xNq7g/zh-cn_image_0000002803263207.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/8R64Xs62TD2pS6OVE6_Dew/zh-cn_image_0000002776748004.png)
 * **快捷栏退出**：用户在快捷栏右键点击应用图标，并选择“退出”或“关闭所有窗口”，触发应用级别的关闭流程。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/fcGP76QSTq65AfFLFqeFlg/zh-cn_image_0000002803223115.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/B54XI2rdQReowZ0VYS9OkQ/zh-cn_image_0000002806027721.png)
 * **托盘退出**：用户在系统托盘区域右键点击应用图标，并选择“退出”，触发应用级别的关闭流程。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/rAyjZf9FQPCvFvwKtvIy7g/zh-cn_image_0000002774063400.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/84uH9t0vSxap0OjvTSoB2w/zh-cn_image_0000002806107611.png)
 * **关机退出**：用户执行系统关机、重启等操作时，系统会依次关闭所有应用，并触发应用退出流程。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/BWPOTdypQk2rTeQnqJ9FDA/zh-cn_image_0000002773903424.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/14dK4Gn3QMqXguzeehP3-w/zh-cn_image_0000002776907992.png)
 
 不同退出场景触发的回调机制存在差异。开发者可根据应用需求选择合适的监听方式。本文将介绍单主窗退出、应用进程退出以及预关闭机制，帮助开发者了解PC/2in1设备上的应用退出开发方式。关于应用退出流程的通用机制，请参见[应用退出流程](app-stop.md#应用退出流程)。
 

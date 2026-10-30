@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-event
 title: 场景体验
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 事件推荐方案 > 场景体验
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:13+08:00
+scraped_at: 2026-10-31T07:33:38+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:a4db703aa6e7f7584d569863e7632b1637c087689cc84788384c5ac04df48714
+content_hash: sha256:b33ebd3f1ea32df5d3b78c27746caa4d01fb926dafc44febb0688f52b3416cd0
 ---
 
 ## 典型场景
@@ -18,14 +18,14 @@ content_hash: sha256:a4db703aa6e7f7584d569863e7632b1637c087689cc84788384c5ac04df
 
 各垂域也可根据垂域的实际情况定义具体的事件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/f9IO-gKWS1CG6N5Y8mWdCw/zh-cn_image_0000002774065742.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/AYQX_SwVRQqoYTxObmsZOg/zh-cn_image_0000002806030063.png)
 
 以电影开场提醒为例，用户在应用/元服务中购买了电影票，在电影开场前半小时（具体生效时间将根据具体垂域的情况和用户最佳体验确定），用户可在小艺建议入口看到电影取票提醒的卡片，点击卡片可跳转到应用/元服务的订单详情页，用户可在该页面完成电影取票。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/02QN67dgSa2hft2wTMR38Q/zh-cn_image_0000002773905768.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/cO2gtj4DSjm_MGN3YjXlpQ/zh-cn_image_0000002806109953.png)
 
 ## 卡片展示效果
 
 意图框架将提供系统标准的事件模板卡片，无需开发者开发，开发者只需按照具体垂域事件的[意图Schema](../service/intents-schema-0000001901962713.md)将事件推送至智慧分发平台服务器即可。各垂域事件卡片样式的示例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/N2Z0GA4yS-6NZ_Z8T7bi4A/zh-cn_image_0000002803265551.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/T9eHAkKCS--6yMpOwF0aYg/zh-cn_image_0000002776910334.png)

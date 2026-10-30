@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 浮层
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 基础属性 > 浮层
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:32+08:00
+scraped_at: 2026-10-31T07:35:07+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:3f379d3ed351865f8270448a3518c57225f318f076bdb7914a01869d19e2fec3
+content_hash: sha256:873fd29c5b3342540b6314e3863f8f3b8ef862a4a7fbe13fc68518940c716c7a
 ---
 
 设置组件的浮层，可用于在当前组件上叠加遮罩文本、自定义组件或ComponentContent，并支持基于当前组件进行定位，适用于提示信息展示、水印等需要在组件上方叠加内容的场景。
@@ -137,7 +137,7 @@ struct OverlayExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/OAuzt-ygQviVbaxK0UIiig/zh-cn_image_0000002803265789.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/T6ObH9iPTaOQ7Pi1NLdvOQ/zh-cn_image_0000002776910572.png)
 
 ### 示例2（通过builder设置浮层）
 
@@ -173,7 +173,7 @@ struct OverlayExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/TaPNf7SjRFmYi7Urn2I6vg/zh-cn_image_0000002803225697.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/C5A8leMiQ-2xjDjtTtf_tQ/zh-cn_image_0000002776750586.png)
 
 ### 示例3（通过ComponentContent设置浮层）
 
@@ -232,4 +232,4 @@ struct OverlayContentPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/2wp9nuG1TWeG46anDj7rrQ/zh-cn_image_0000002774065982.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/9yZoeZkGTcaacaJ96Xc2KQ/zh-cn_image_0000002806030303.gif)

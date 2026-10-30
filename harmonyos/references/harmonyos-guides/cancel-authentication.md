@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cancel-authen
 title: 认证过程中取消认证
 breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 认证过程中取消认证
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:34+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ad5d2fc493f658df7e291c0c0280817a50be1bef285acbd037fc523c4db048e7
+scraped_at: 2026-10-31T07:32:19+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:dabf808b209de1248c19963ca927431f9062083cb4cff7c9498d2b6b7b7bdbdd
 ---
 
 统一用户认证框架提供了cancel接口，当应用在认证过程中，需要取消认证时可调用该接口。
@@ -26,7 +26,7 @@ content_hash: sha256:ad5d2fc493f658df7e291c0c0280817a50be1bef285acbd037fc523c4db
 2. 指定用户认证相关参数[AuthParam](../harmonyos-references/js-apis-useriam-userauth.md#authparam10)（包括挑战值、认证类型[UserAuthType](../harmonyos-references/js-apis-useriam-userauth.md#userauthtype8)列表和认证等级[AuthTrustLevel](../harmonyos-references/js-apis-useriam-userauth.md#authtrustlevel8)），获取认证对象[UserAuthInstance](../harmonyos-references/js-apis-useriam-userauth.md#userauthinstance10)，并调用[UserAuthInstance.start](../harmonyos-references/js-apis-useriam-userauth.md#start10)发起认证。此步骤详细说明可参考[发起认证](start-authentication.md)。
 3. 使用已经成功发起认证的UserAuthInstance对象调用[UserAuthInstance.cancel](../harmonyos-references/js-apis-useriam-userauth.md#cancel10)接口取消本次认证。
 
-示例代码为发起认证可信等级≥ATL3的人脸+锁屏口令认证后，取消认证请求：
+示例代码为发起认证可信等级≥ATL3的人脸+锁屏密码认证后，取消认证请求：
 
 ```typescript
 handleAuthResultAndCanceling(userAuthInstance: userAuth.UserAuthInstance, exampleNumber: number) {
@@ -74,4 +74,4 @@ cancelingUserAuthentication() {
 
 ## 示例代码
 
-* [认证过程中取消认证](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/UserAuthentication)
+* 可参考[用户认证服务](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/UserAuthentication)示例代码。

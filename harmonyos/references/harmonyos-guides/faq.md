@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/faq
 title: 常见问题
 breadcrumb: 指南 > 应用测试 > 专项测试 > DevEco Testing > 常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:50+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:5833bb753a6ed3ed5655866128e0e3ecc7d2114e2469e440fdcdbac836366dfc
+scraped_at: 2026-10-31T07:34:07+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:5e06f4dd37b45e0bd0fad929712622ebc654b1e11a6cce4b7ad88767222f9dfc
 ---
 
 **Q1：执行过程中，设备断连重连后，任务能否继续执行？**
@@ -31,7 +31,7 @@ A4：请确认Mac版DevEco Testing客户端是否按照以下步骤安装：
 
 步骤1：DevEco Testing 客户端下载完成后将出现下图弹框。将下载的 DevEco\_Testing\_for\_App 文件拖拽至 Applications 文件夹。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/kH7SgjoOTwCN2NGpKnJhCQ/zh-cn_image_0000002633533182.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/kMXcnDZPTlKB4MGTOp76iQ/zh-cn_image_0000002633533182.png "点击放大")
 
 步骤2：在启动台找到 DevEco Testing 图标则表示 DevEco Testing 已正常安装。
 
@@ -49,16 +49,20 @@ A6：请先重启电脑，再重新覆盖安装。
 
 A7：如当前电脑仅有C盘，需要在客户端将数据目录设置为 C:\Users\...\AppData\Local\Temp\Deveco Testing 。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/UDtmPfwCQxeqE2wQgjFzNw/zh-cn_image_0000002633533180.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/CidcQljVRHqruYHX_UX48A/zh-cn_image_0000002633533180.png "点击放大")
 
 **Q8：如何通过客户端反馈日志****？**
 
 A8：（1）在客户端导航栏点击设置——选择问题反馈
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/sdX4vpkjTuaSgFnPFqFaYw/zh-cn_image_0000002678748202.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/_7wRnmB9SX-gMDTpMEtpOA/zh-cn_image_0000002678748202.png "点击放大")
 
 （2）根据页面提醒填问题反馈的信息，勾选“上传日志”选项；如果想反馈某一个任务的日志及执行情况，在“选择任务”栏点击对应的任务即可。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/P1Po2ckeRJqURXsL59qCzA/zh-cn_image_0000002708349369.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/D2Yl-5bfQgO6fmlpqpDM2w/zh-cn_image_0000002708349369.png "点击放大")
+
+**Q9：为什么 DevEco Testing 进行稳定性压测时，相同应用版本包，API25 版本的测试问题相比 API24 变多了？**
+
+A9：API25 及以上版本在获取 layout 命令的底层做了优化，遍历效率更高，遍历场景更多，因此可以触发更多稳定性问题。
 
 更多问题详见[FAQ](../harmonyos-faqs/faqs-deveco-testing-faq.md)

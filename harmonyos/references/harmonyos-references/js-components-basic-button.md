@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: button
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > button
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:56+08:00
+scraped_at: 2026-10-31T07:35:38+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:e9085fbad32950bde58915fbec4f9f11e402aa9cfa1ce4d8c328ce3448dc2d39
+content_hash: sha256:fae4fd83d1f8b1eedad665715f5b6be48761e3264a64fa328a7cf640f68bf82c
 ---
 
 **说明** 
@@ -150,4 +150,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/xyOFrrk6Q9ifXo9UqrVBHw/zh-cn_image_0000002773906774.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/-2WIJDEvS26RkDTU6HMaIw/zh-cn_image_0000002776911348.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/code-protect
 title: 应用加密
 breadcrumb: 指南 > 系统 > 安全 > 应用加密
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:48+08:00
-doc_updated_at: 2026-06-12
-content_hash: sha256:ddaa15a2be26f602df3bce62efd899d245cbaef98eea48dcae9ded857c30e8da
+scraped_at: 2026-10-31T07:32:09+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:95af7fc4d38c7be1694fafb182587233dcd046e5f954a42d288f4e3de5a75282
 ---
 
 **注意** 
@@ -16,7 +16,7 @@ content_hash: sha256:ddaa15a2be26f602df3bce62efd899d245cbaef98eea48dcae9ded857c3
 
 为了保护应用代码安全，保护开发者的核心资产，HarmonyOS提供了端到端的应用代码保护机制，该机制以系统安全为基础，构建内核级应用生命周期内的代码安全保护能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/ZslNCi9nT1Ca9gmdR5rwbA/zh-cn_image_0000002803224349.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/u6QzDepsRl-gmPIlNuHrOg/zh-cn_image_0000002776909222.png)
 
 开发者向应用市场提交上架申请，上传应用包后可[选择是否加密](../app/agc-help-release-app-choose-pkg-0000002278981434.md)。
 
@@ -69,7 +69,7 @@ content_hash: sha256:ddaa15a2be26f602df3bce62efd899d245cbaef98eea48dcae9ded857c3
   A1：应用加密特性可以有效提高应用代码文件逆向分析的难度，但应用代码防逆向是一个持续攻防对抗的过程，如对代码文件保护有更高的要求，需要结合其他安全加固措施，进一步提高逆向分析应用的难度。比如使能混淆能力、使能三方安全加固能力等。
 * **Q2：如果不使用代码加密能力，还能采取什么手段来保护应用代码资产？**
 
-  A2：使能混淆能力、使能三方安全加固能力等，请参考[应用资产保护设计-保护应用代码场景](../best-practices-V5/bpta-app-asset-protection-design-V5.md#section24320461547)。
+  A2：使能混淆能力、使能三方安全加固能力等，请参考[应用资产保护设计-保护应用代码场景](../doccenter-architecture/bpta-app-asset-protection-design.md#section24320461547)。
 * **Q3：代码加密会对应用包产生什么影响？**
 
   A3：加密后的应用在程序启动和运行过程中可能会小幅度增加性能开销；加密后的应用相比于不加密的应用体积更大，可能会小幅度增加下载和安装时间。

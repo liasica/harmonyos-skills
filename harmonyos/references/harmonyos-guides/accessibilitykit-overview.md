@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/accessibility
 title: Accessibility Kit 简介
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > Accessibility Kit 简介
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:19+08:00
+scraped_at: 2026-10-31T07:31:37+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:3404acc8ccad3a749b124b556983ff4d3fe214d18b869082705a6c969dfe6ad3
+content_hash: sha256:dfa712b7250b5f0a47416539d751e46357239f2e62e2fb7463347bcf7973b6fa
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ Accessibility（信息无障碍）指的是确保任何人在任何情况下都�
 
 所以，无论是开发新的应用，还是对已有应用的更新，都应该考虑到无障碍需求，让应用能够被更多的人所使用。Accessibility Kit（无障碍服务）则为应用更好的适配无障碍，开放了必要的能力，如为组件添加无障碍焦点、无障碍朗读文本等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/Tq5IzHZ0QL-IU_QllKoujA/zh-cn_image_0000002774063424.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/41DkvejOTY2W11W8-kAGvw/zh-cn_image_0000002806107635.png)
 
 * **系统服务：** 系统针对不同的障碍人群和障碍场景，提供了多种辅助服务能力，如屏幕朗读、大字体、高对比度文字、色彩校正、颜色反转、单声道音频、音量平衡、屏幕触控等。
 * **开放能力：** 基于系统服务，为应用提供了无障碍开放能力，如屏幕朗读开启状态的查询，无障碍朗读文本的设置、主动播报等。

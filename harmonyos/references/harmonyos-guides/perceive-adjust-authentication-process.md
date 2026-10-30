@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/perceive-adju
 title: 感知和调整认证过程
 breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 感知和调整认证过程
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:50+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:ad0f56359c033a8e627ca910c5cd3250d94b644665408f29f19d3f8c27fd81c3
+scraped_at: 2026-10-31T07:32:19+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:23ec3e5216946cba7b3b0e32957531f6cca4510ef045d541904bfc6e2d1cce83
 ---
 
 从API version 20开始，在应用发起身份认证时，可通过接口调整认证过程，以及感知认证过程。
@@ -84,4 +84,4 @@ perceiveAndAdjustAuthentication() {
 
 ## 示例代码
 
-* [感知和调整认证过程](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/UserAuthentication)
+* 可参考[用户认证服务](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/UserAuthentication)示例代码。

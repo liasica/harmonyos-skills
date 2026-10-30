@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-check-too
 title: 扫描工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > 扫描工具
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:13+08:00
+scraped_at: 2026-10-31T07:32:34+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:5802b0daddfd89d8e965620662eccfc8c9cbc47d2e41ffde1c1a5eda50a78684
+content_hash: sha256:8011d702d2a1575514259cf116b1b8666458b588fb45b91720ff9e26e18e6ab9
 ---
 
 ## 简介
@@ -20,7 +20,7 @@ content_hash: sha256:5802b0daddfd89d8e965620662eccfc8c9cbc47d2e41ffde1c1a5eda50a
 
 扫描工具app\_check\_tool.jar需要从SDK路径下的toolchains目录中获取。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/MaY-Ib6dSMS_xkk6TenZIw/zh-cn_image_0000002774064814.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/ErwvER2fQemYUUHzqB3pZw/zh-cn_image_0000002776749420.png)
 
 ## 约束与限制
 

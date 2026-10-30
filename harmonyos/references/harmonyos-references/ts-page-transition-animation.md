@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-page-t
 title: 页面间转场 (pageTransition)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 页面间转场 (pageTransition)
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:48+08:00
+scraped_at: 2026-10-31T07:35:27+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:3dcfebb55fe0f05f2eb708681c3b542ad99c3e0b611ea1a179d70dae1bd15932
+content_hash: sha256:6ee59c2f8cd792a18a30733b4b58087811b155ec4ac99b6586d1ca5d1a0ca61f
 ---
 
 当路由（[router](js-apis-router.md)）进行切换时，可以通过在[pageTransition](ts-custom-component-lifecycle.md#pagetransition9)函数中自定义页面入场和页面退场的转场动效。详细指导请参考[页面转场动画](../harmonyos-guides/arkts-page-transition-animation.md)。
@@ -369,7 +369,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/WQHclMNkS6Ck7Ui2qG6pxw/zh-cn_image_0000002803266361.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/ckNh2QS7TryZJ-myvep2EQ/zh-cn_image_0000002776751156.gif)
 
 自定义方式2：配置了当前页面的入场动画为从左侧滑入，退场为平移加透明度变化。
 
@@ -429,7 +429,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/p7mPzpU4RqC1z11OIiA4LA/zh-cn_image_0000002803226267.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/SwA6I1EfRbWSZCvcVl6vcw/zh-cn_image_0000002806030873.gif)
 
 ### 示例2（设置退入场平移效果）
 
@@ -515,7 +515,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/SSNDpFrCRKGEvK1qn3SV1A/zh-cn_image_0000002774066552.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/Q7p7irCATE-9xWMXHoc6kw/zh-cn_image_0000002806110763.gif)
 
 自定义方式2：使用系统默认的退入场效果，将系统语言排版模式改为RTL。
 
@@ -575,4 +575,4 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/cyJxrSLaTDeUBD1mSiPGRw/zh-cn_image_0000002773906580.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/5UiJQ-TXSeqsUawHx4Y3gg/zh-cn_image_0000002776911144.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 基础自定义弹出框 (CustomDialog)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹出框 (Dialog) > 基础自定义弹出框 (CustomDialog)
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:31+08:00
+scraped_at: 2026-10-31T07:31:50+08:00
 doc_updated_at: 2026-10-16
-content_hash: sha256:8db8535468673c2044312019cec21f5b57ccb11b3340e7c1c4e59ed179c010cf
+content_hash: sha256:e057948580135c0930f1c5f86c193d2c79067fef0fd0bddfe3dfe6ba5051810d
 ---
 
 CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件更新等与用户交互响应操作。开发者可以通过CustomDialogController类显示自定义弹出框。具体用法请参考[自定义弹窗](../harmonyos-references/ts-methods-custom-dialog-box.md)。
@@ -81,7 +81,7 @@ CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件�
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/BM3S4kJPRoeAHkEfXs08PA/zh-cn_image_0000002774064038.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/ErFYvkTBRoSJ41GYUk6CbQ/zh-cn_image_0000002776908630.png)
 
 ## 弹出框的交互
 
@@ -156,7 +156,7 @@ CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件�
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/mv-frtFDRcOFHecztAdyRA/zh-cn_image_0000002773904064.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/2NBbX5nSQH-y2iW7fYBCcA/zh-cn_image_0000002776748644.png)
 3. 可通过弹出框中的按钮实现路由跳转，同时获取跳转页面向当前页传入的参数。
 
    ```typescript
@@ -287,7 +287,7 @@ CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件�
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/nPKDDEjSSHi7A7k4Y-2ZYA/zh-cn_image_0000002803263849.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/U0yHpYNoT--8Y6R4Jj9zlg/zh-cn_image_0000002806028361.gif)
 
 ## 弹出框的动画
 
@@ -351,7 +351,7 @@ export struct DialogAnimationNew {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/Bdkl63FWTRiGG0_cZ_WR0Q/zh-cn_image_0000002803223759.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/yfJiAWQxSPCXkpY8vpVWaQ/zh-cn_image_0000002806108251.gif)
 
 ## 弹出框的样式
 
@@ -416,7 +416,7 @@ export struct DialogStyleNew {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/88_3ZFBEQWaXkXcX9J2sSg/zh-cn_image_0000002774064040.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/OjVErgMOTM6NCN5XfOmuSg/zh-cn_image_0000002776908632.gif)
 
 ## 嵌套自定义弹出框
 
@@ -528,7 +528,7 @@ export struct NestDialogNew {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/KPV3HL1sQYm9ZziNi2yHxg/zh-cn_image_0000002773904066.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/F7uy828QRAWPksWKM2xANQ/zh-cn_image_0000002776748646.gif)
 
 由于自定义弹出框在状态管理侧有父子关系，如果将第二个弹出框定义在第一个弹出框内，那么当父组件（第一个弹出框）被销毁（关闭）时，子组件（第二个弹出框）内无法再继续创建新的组件。
 
@@ -635,7 +635,7 @@ export struct DialogWithPhysicalBack {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/6yFgRHyWSPef-Aw0mRlw6w/zh-cn_image_0000002803263851.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/-yiXDaQBTymOYMWVR67m1w/zh-cn_image_0000002806028363.gif)
 
 ## 设置弹出框避让软键盘的距离
 
@@ -700,7 +700,7 @@ export struct DialogAvoidSoftKeyboard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/G9XHE55lR3-0LzXD2fEc2w/zh-cn_image_0000002803263847.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/Tv2iQdhkT8-T1skIX9qmcg/zh-cn_image_0000002806028359.gif)
 
 ## 获取弹出框的状态
 
@@ -768,4 +768,4 @@ export struct GetDialogStatus {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/KDZQ1ErgSfKuEQCFFTkwpg/zh-cn_image_0000002803223761.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/gZ3CBh_3Smq5l8nUXB1Uig/zh-cn_image_0000002806108253.gif)

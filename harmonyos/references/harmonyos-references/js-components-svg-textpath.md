@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: textPath
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > textPath
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:58+08:00
+scraped_at: 2026-10-31T07:35:41+08:00
 doc_updated_at: 2026-10-16
-content_hash: sha256:6c851d16c518b0a95b001b93b4f9b4cf80a7a3a03aabb001ae56c17234ab3eb9
+content_hash: sha256:375994e25f866b35034348eb0fdbb8a3c66b40b243a059378971da87563b025f
 ---
 
 沿路径绘制文本。
@@ -71,7 +71,7 @@ textPath属性示例，textpath文本内容沿着属性path中的路径绘制文
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/stRpMZ9eRxuLwgJPSfKs-A/zh-cn_image_0000002773906836.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/ZW6XVdQiRhmezAuKqL2Zug/zh-cn_image_0000002776911430.png)
 
 textpath与tspan组合示例与效果图
 
@@ -91,7 +91,7 @@ textpath与tspan组合示例与效果图
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/BKv0reRaQYa6szYAATKN_Q/zh-cn_image_0000002803266619.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/jhhTKxMjTLe9dysyTwTdyw/zh-cn_image_0000002776751446.png)
 
 ```html
 <!-- xxx.hml -->
@@ -111,7 +111,7 @@ textpath与tspan组合示例与效果图
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/9fGZon2jTmG3UaE3jsWPxQ/zh-cn_image_0000002803226525.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/edoMX7tiR2aklA0Zwy5sSQ/zh-cn_image_0000002806031163.png)
 
 ```html
 <!-- xxx.hml -->
@@ -132,7 +132,7 @@ textpath与tspan组合示例与效果图
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/O0LDydxUT3qzcQZV-uaIRw/zh-cn_image_0000002774066810.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/wBnCWldFTtuLJ465tYE0GA/zh-cn_image_0000002806111055.png)
 
 startOffset属性动画，文本绘制时起点偏移从10%运动到40%，不绘制超出path长度范围的文本。
 
@@ -164,7 +164,7 @@ startOffset属性动画，文本绘制时起点偏移从10%运动到40%，不绘
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/FHJDO2IESlapGs0iskuQrg/zh-cn_image_0000002773906838.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/9hqaxmSLS6KSC4hkllr2rA/zh-cn_image_0000002776911432.gif)
 
 textpath与tspan组合属性动画与效果图
 
@@ -195,7 +195,7 @@ textpath与tspan组合属性动画与效果图
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/p7dJrNHeRLmmlAepsawUXg/zh-cn_image_0000002803266621.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/wwDVp-moRcGhi_0Qww9MLQ/zh-cn_image_0000002776751448.gif)
 
 (1) "tspan attribute x|rotate" 文本绘制起点偏移从50px运动到100px，顺时针旋转0度到360度。
 
@@ -231,7 +231,7 @@ textpath与tspan组合属性动画与效果图
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/69voFAhUQpKVW9jw9KNLcA/zh-cn_image_0000002803226527.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/9od71lbsRdCAGUpFpxFBpg/zh-cn_image_0000002806031165.gif)
 
 (1) "This is TextPath." 在path上无偏移绘制第一段文本内容，大小30px，颜色"#D2691E"。
 
@@ -268,7 +268,7 @@ textpath与tspan组合属性动画与效果图
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/M0tN8rh_RoOYRXxRVCXGlg/zh-cn_image_0000002774066812.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/SLx1yK9mRRSia6rTw9_Y1Q/zh-cn_image_0000002806111057.gif)
 
 (1) "tspan attribute stroke" 轮廓颜色从红色逐渐转变成绿色。
 

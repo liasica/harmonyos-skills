@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: popup
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件 > popup
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:55+08:00
+scraped_at: 2026-10-31T07:35:38+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:af2c6c78856cedd6902d0c3bea3ddbad0e7c564b1eac8a6b5e70cd18307e8145
+content_hash: sha256:47aed3253001bb8316a4cf40e3dcc7fdd5d993e447d3bb1d300c38ca4c243b2c
 ---
 
 **说明** 
@@ -129,4 +129,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/dtebrbU6Rx275kFvZ9XEVg/zh-cn_image_0000002803226459.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/TdPLGBCGQLarjLCyTOqofw/zh-cn_image_0000002806031073.png)

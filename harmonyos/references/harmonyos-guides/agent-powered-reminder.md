@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agent-powered
 title: 代理提醒(ArkTS)
 breadcrumb: 指南 > 应用框架 > Background Tasks Kit（后台任务开发服务） > 代理提醒(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:42+08:00
+scraped_at: 2026-10-31T07:32:02+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:357cfd2ec9cdf113d2ffbb673316bd5241352584fb26ad091cab6817b82d57aa
+content_hash: sha256:23a245c0e4956b49f13e8834f6c1dd7541db667ed18c55af7a7294dbda0b808c
 ---
 
 ## 功能介绍
@@ -82,17 +82,17 @@ content_hash: sha256:357cfd2ec9cdf113d2ffbb673316bd5241352584fb26ad091cab6817b82
 2. 在项目列表中找到您的项目，在项目下的应用列表中选择需要申请代理提醒的应用。如果无对应应用，请先[创建HarmonyOS应用](../app/agc-help-create-app-0000002247955506.md)。
 3. 进入“项目设置”->“开放能力管理”页面，点击“代理提醒”卡片对应的“申请”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/4t_9iy7IQhuLct6XUBP_RA/zh-cn_image_0000002773904494.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/BGZ4mb8fSyOdUrU7zd-jMQ/zh-cn_image_0000002806028791.png)
 4. 在“新建业务申请”窗口填写申请原因，上传代理提醒功能场景截图和应用分类信息截图，然后点击“提交”。应用分类信息可登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，在“APP”页签中选择“应用上架”->“应用信息”查询。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/7IWoadrJT8mRFwNiciY_pg/zh-cn_image_0000002803264279.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/T-nDLlFaSWCfMtugwjkLlA/zh-cn_image_0000002806108681.png)
 5. 返回“开放能力接入”页面，原“申请”按钮变为“申请中”，8个工作日反馈申请结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/P2a6WBKeQJWsxLOQ-iXOCw/zh-cn_image_0000002803224189.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/AyuYX0zJSaCVtftTxDh3sg/zh-cn_image_0000002776909062.png)
 6. 申请审批通过后，互动中心会发送通知给您，同时“申请中”按钮会变为置灰显示的“申请”。
 7. 能力申请通过后，勾选代理提醒的能力开关，点击右上角“保存”。至此，您的应用已成功接入开放能力。此时，调试和发布应用必须重新生成Profile文件并使用[手动签名](ide-signing-manual.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/76_n0gLPSvyk5Lt-78t5DQ/zh-cn_image_0000002774064470.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/_FJ0iOw7Qkq3QSv43IgVUQ/zh-cn_image_0000002776749076.png)
 
 ### 申请权限
 

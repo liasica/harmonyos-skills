@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-static-di
 title: 静态图
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 静态图
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:44+08:00
+scraped_at: 2026-10-31T07:33:07+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:35a78a1d9098e396a81f61753e57772f3d6baae506801d3a062ed59212b68991
+content_hash: sha256:9ddfc290dde32fd94531f82f2307d4efb6f8c04ae33438e1a1aad3a0c1974046
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:35a78a1d9098e396a81f61753e57772f3d6baae506801d3a062ed59212b
 
 **图1** 静态图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/I6afOnA1Qc2PVpr2xJQV8w/zh-cn_image_0000002773905454.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/qfhesOGBRMuZhmRKgxo5Zw/zh-cn_image_0000002806109639.jpg "点击放大")
 
 ## 接口说明
 
@@ -137,4 +137,4 @@ content_hash: sha256:35a78a1d9098e396a81f61753e57772f3d6baae506801d3a062ed59212b
 
    **图2** 调用getMapImage方法获取静态图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/nrwOhuZ5S2uGNGisgrtV2A/zh-cn_image_0000002803265237.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/WVqQHeCsTBKc31--z7OBvg/zh-cn_image_0000002776910020.jpg "点击放大")

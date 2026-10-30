@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-dialog-
 title: 弹出框层级管理
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹出框 (Dialog) > 弹出框层级管理
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:31+08:00
+scraped_at: 2026-10-31T07:31:50+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b133cf9796fc18c02d916e55943385ad3c999ca94f79990810c7f514d7adea96
+content_hash: sha256:58cacbb6045abb8cc3268261f21a3727b8a674c231bbef7d50e8a7acfcfcbaa9
 ---
 
 ArkUI的弹出框节点默认直接挂载在根节点上，会根据层级从小到大依次挂载。根节点下，高层级的弹出框节点会显示在低层级的弹出框节点之上，新创建的弹出框节点会根据层级大小插入到对应的位置，同一层级大小的弹出框节点按照创建的先后顺序进行挂载。
@@ -150,4 +150,4 @@ export struct DialogBoxLayer {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/oCNYCTihTV2M0HuytypZxQ/zh-cn_image_0000002803223767.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/2Ylcrz5NQZyAGsbmQt6H7A/zh-cn_image_0000002806108259.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-geometr
 title: 绘制几何图形 (Shape)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 几何图形绘制 > 绘制几何图形 (Shape)
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:32+08:00
+scraped_at: 2026-10-31T07:31:51+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:4873da0003e284ee01caf1ea5403550303b713b9b2602603ee6d0db8b520e7b7
+content_hash: sha256:aaabc10fcb642013a7f21c3fde4b5a8d1f0050ce920803cd7bd7017aead71e96
 ---
 
 绘制组件用于在页面绘制图形，Shape组件是绘制组件的父组件，包含所有绘制组件的通用属性。具体用法请参考[Shape](../harmonyos-references/ts-drawing-components-shape.md)。
@@ -39,7 +39,7 @@ content_hash: sha256:4873da0003e284ee01caf1ea5403550303b713b9b2602603ee6d0db8b52
   Circle({ width: 150, height: 150 })
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/9RaxEii0RmKCd2Ph-VFAow/zh-cn_image_0000002803263889.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/ghVoFQSlQWGNdZyMAlQmQg/zh-cn_image_0000002806028401.jpg)
 
 ## 形状视口viewPort
 
@@ -119,7 +119,7 @@ viewPort(value: { x?: number | string, y?: number | string, width?: number | str
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/hrRjVCWFS3eRf_DiU5zlRA/zh-cn_image_0000002803223799.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/ukVm8TcZT9mOD6uGYPtyTg/zh-cn_image_0000002806108291.png)
 * 创建一个宽高都为300的shape组件，背景色为黄色，创建一个宽高都为300的viewPort。用一个蓝色的矩形来填充viewPort，在viewPort中绘制一个半径为75的圆。
 
   ```typescript
@@ -150,7 +150,7 @@ viewPort(value: { x?: number | string, y?: number | string, width?: number | str
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/Y0AK1VVUQ5aAy7iJM5ZIqw/zh-cn_image_0000002774064080.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/R1iZ3h1QTsOBXWQEFBcWLA/zh-cn_image_0000002776908672.jpg)
 * 创建一个宽高都为300的shape组件，背景色为黄色，创建一个宽高都为300的viewPort。用一个蓝色的矩形来填充viewPort，在viewPort中绘制一个半径为75的圆，将viewPort向右方和下方各平移150。
 
   ```typescript
@@ -181,7 +181,7 @@ viewPort(value: { x?: number | string, y?: number | string, width?: number | str
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/77nlg-22R0afXdfEe_s6PA/zh-cn_image_0000002773904106.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/pcyrauFzQ4-YMs2EIzN-FA/zh-cn_image_0000002776748686.jpg)
 
 ## 自定义样式
 
@@ -202,7 +202,7 @@ viewPort(value: { x?: number | string, y?: number | string, width?: number | str
     .strokeWidth(0)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/kB0zYvrDQsySau6Cwr2c8A/zh-cn_image_0000002803263891.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/36yKyMv_QU-ssdDRibecpA/zh-cn_image_0000002806028403.jpg)
 * 通过[stroke](../harmonyos-references/ts-drawing-components-common.md#stroke)可以设置组件边框颜色。
 
   ```typescript
@@ -214,7 +214,7 @@ viewPort(value: { x?: number | string, y?: number | string, width?: number | str
     .stroke(Color.Red)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/bL7sragISl2aAN340LVIsw/zh-cn_image_0000002803223801.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/aIR2JZQ5RDqba2d2so1hNw/zh-cn_image_0000002806108293.jpg)
 * 通过[strokeOpacity](../harmonyos-references/ts-drawing-components-common.md#strokeopacity)可以设置边框透明度。
 
   ```typescript
@@ -228,7 +228,7 @@ viewPort(value: { x?: number | string, y?: number | string, width?: number | str
     .strokeOpacity(0.2)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/x1QD5xFWSZSkzUFLKd4jQA/zh-cn_image_0000002774064082.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/yJZg5bBHQJS1kz5UZMcMhw/zh-cn_image_0000002776908674.jpg)
 * 通过[strokeLineJoin](../harmonyos-references/ts-drawing-components-common.md#strokelinejoin)可以设置线条拐角绘制样式。拐角绘制样式分为Bevel(使用斜角连接路径段)、Miter(使用尖角连接路径段)、Round(使用圆角连接路径段)。
 
   ```typescript
@@ -243,7 +243,7 @@ viewPort(value: { x?: number | string, y?: number | string, width?: number | str
     .strokeLineJoin(LineJoinStyle.Round)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/rpD8hf2zQomJ5HjoFJDoOA/zh-cn_image_0000002773904108.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/AYzMYlc_TIeBpK7c_iV34Q/zh-cn_image_0000002776748688.jpg)
 * 通过[strokeMiterLimit](../harmonyos-references/ts-drawing-components-common.md#strokemiterlimit)设置斜接长度与边框宽度比值的极限值。
 
   斜接长度表示外边框外边交点到内边交点的距离，边框宽度即[strokeWidth](../harmonyos-references/ts-drawing-components-common.md#strokewidth)属性的值。
@@ -273,7 +273,7 @@ viewPort(value: { x?: number | string, y?: number | string, width?: number | str
     .strokeMiterLimit(1.42)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/JoXNbCrpTzqfICo3sUXE6w/zh-cn_image_0000002803263893.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/p3xkj4JXSuSLQhXVpeir8Q/zh-cn_image_0000002806028405.jpg)
 * 通过[antiAlias](../harmonyos-references/ts-drawing-components-common.md#antialias)设置是否开启抗锯齿，默认值为true（开启抗锯齿）。
 
   ```typescript
@@ -286,7 +286,7 @@ viewPort(value: { x?: number | string, y?: number | string, width?: number | str
     .stroke(Color.Black)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/X7JooJ4TTLm72jbtB5f9hQ/zh-cn_image_0000002803223803.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/r66boAitT2iFFupTy5MqDw/zh-cn_image_0000002806108295.png)
 
   ```typescript
   // 关闭抗锯齿
@@ -299,7 +299,7 @@ viewPort(value: { x?: number | string, y?: number | string, width?: number | str
     .antiAlias(false)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/4pc11wKgRqaAWh5m8dAsSw/zh-cn_image_0000002774064084.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/tqYtCOI1Q9WM6JRfu2dfHA/zh-cn_image_0000002776908676.jpg)
 * 通过[mesh](../harmonyos-references/ts-drawing-components-shape.md#mesh8)设置网格效果，实现图像局部扭曲。
 
   **说明** 
@@ -452,7 +452,7 @@ viewPort(value: { x?: number | string, y?: number | string, width?: number | str
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/auh0bPZ2SzSoruuLzwQqUA/zh-cn_image_0000002773904110.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/_GbzIXzGTouX5ysD4XPTVQ/zh-cn_image_0000002776748690.png)
 
 ## 场景示例
 
@@ -489,7 +489,7 @@ struct ShapeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/udSk0OwwQrCnXBwRvAlPiw/zh-cn_image_0000002803263895.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/XDn3SRP7T_ed161EBOcyrw/zh-cn_image_0000002806028407.png)
 
 ### 绘制圆和圆环
 
@@ -521,7 +521,7 @@ struct CircleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/b7-Ni7mISPGbppQHp1qGRw/zh-cn_image_0000002803223805.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/jnykcIj7T9uOy_iZpUTycQ/zh-cn_image_0000002806108297.jpg)
 
 ### UI视觉属性作用效果
 
@@ -546,4 +546,4 @@ struct CircleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/VJt_O9OLSlKOeY4JMlls3w/zh-cn_image_0000002774064086.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/pqjecGveTiGiF-hHhbtCuQ/zh-cn_image_0000002776908678.jpg)

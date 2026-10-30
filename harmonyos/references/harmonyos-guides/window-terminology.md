@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-termin
 title: 窗口开发术语
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口开发术语
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:40+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:86df0a762f03a629a9de4ff7eb94bd89d811ff53f29c5694d5dba2a07df43adb
+scraped_at: 2026-10-31T07:31:59+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:ebc9a88e44d61f101b956d1018f38044ba979b8c00eb0af1931110f03119d0fc
 ---
 
 ## F
@@ -44,7 +44,7 @@ content_hash: sha256:86df0a762f03a629a9de4ff7eb94bd89d811ff53f29c5694d5dba2a07df
 
 部分Phone设备上，可通过下拉控制中心，点击“自由多窗”按钮开启自由多窗。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/8ZSv-6MsRKGwmp5zbiAcPg/zh-cn_image_0000002803264203.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/hNRl7rFFTZSp7u_-gNm8hQ/zh-cn_image_0000002806108605.png)
 
 ### Freeform Window；自由窗口
 
@@ -58,7 +58,7 @@ content_hash: sha256:86df0a762f03a629a9de4ff7eb94bd89d811ff53f29c5694d5dba2a07df
 
 自由窗口可以通过拖动窗口边缘调节窗口大小，可以通过拖动标题栏移动窗口位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/MyAokrqER0q-SXjSoNdMuQ/zh-cn_image_0000002773904418.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/XkEHaZ5UROG1RY9NzldO3g/zh-cn_image_0000002806028715.png)
 
 当前设备支持情况：
 
@@ -74,7 +74,7 @@ content_hash: sha256:86df0a762f03a629a9de4ff7eb94bd89d811ff53f29c5694d5dba2a07df
 
 在该坐标系中，所有物理屏幕被映射到同一连续的虚拟坐标空间内，各类窗口操作、坐标转换及窗口矩形变化事件均基于该坐标空间进行计算和回调。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/26AaPVz4RVWXRclwPFL06g/zh-cn_image_0000002773904432.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/LYgMK6TsQUyBQhoZQgaevw/zh-cn_image_0000002806028729.png)
 
 使用场景：
 
@@ -87,6 +87,12 @@ content_hash: sha256:86df0a762f03a629a9de4ff7eb94bd89d811ff53f29c5694d5dba2a07df
 
 让应用可布局区域拓展至整个窗口显示区域的状态。沉浸式布局下，应用内的可用布局区域延伸到整个窗口大小，此时应用界面的布局内容可与系统UI界面重叠显示，但系统界面元素层级始终高于应用界面内容。
 
+## M
+
+### Multi-Window；智慧多窗
+
+一个多种窗口模式组合使用的实践范例，它允许用户在同一时间、同一屏幕上以悬浮窗、分屏或全景多窗的方式同时运行多个应用窗口，从而实现多任务处理。智慧多窗包括智慧多窗悬浮窗、分屏和全景多窗等多种显示方式。
+
 ## P
 
 ### PC Mode；电脑模式
@@ -94,10 +100,6 @@ content_hash: sha256:86df0a762f03a629a9de4ff7eb94bd89d811ff53f29c5694d5dba2a07df
 一种支持用户在移动设备上进行多任务处理的交互方式。电脑模式下，允许用户在一块屏幕上同时显示多个应用窗口，此时的应用窗口为[自由窗口](window-terminology.md#freeform-window自由窗口)。部分Tablet设备上，可通过下拉控制中心，点击"电脑模式"按钮开启电脑模式。
 
 ## S
-
-### Multi-Window；智慧多窗
-
-一个多种窗口模式组合使用的实践范例，它允许用户在同一时间、同一屏幕上以悬浮窗、分屏或全景多窗的方式同时运行多个应用窗口，从而实现多任务处理。智慧多窗包括智慧多窗悬浮窗、分屏和全景多窗等多种显示方式。
 
 ### Starting Window；启动页
 
@@ -113,7 +115,7 @@ content_hash: sha256:86df0a762f03a629a9de4ff7eb94bd89d811ff53f29c5694d5dba2a07df
 
 ### Window Posture Mode；窗口姿态模式
 
-窗口姿态模式（WindowPostureMode）是指窗口在设备满足特定物理形态条件下的布局模式，应用可以根据窗口姿态模式调整应用内布局方式，从而提升不同设备物理形态下的交互体验。
+窗口姿态模式（Window Posture Mode）是指窗口在设备满足特定物理形态条件下的布局模式，应用可以根据窗口姿态模式调整应用内布局方式，从而提升不同设备物理形态下的交互体验。
 
 当前支持的窗口姿态模式：
 
@@ -121,7 +123,7 @@ content_hash: sha256:86df0a762f03a629a9de4ff7eb94bd89d811ff53f29c5694d5dba2a07df
 
   桌面模式适用于折叠屏设备半折叠状态下，窗口铺满整个屏幕并在上下半屏之间适配不同布局的场景，例如视频播放、阅读等。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/0ef9RzxeT3yUE-BnKXf5Vg/zh-cn_image_0000002803264217.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/NJL9aSQbQImGLQFDZeR05g/zh-cn_image_0000002806108619.jpg)
 
 ### Window Privacy Mode；隐私模式
 

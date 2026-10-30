@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (DragController)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (DragController)
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:23+08:00
+scraped_at: 2026-10-31T07:34:56+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:9515d2014402fcef2fa7c6e0eaddac2cdc55a4adf6d6fec96e85943a78d34290
+content_hash: sha256:ffe2d79945a9e43ebad8002788c3d6d74902fa85d458c02023eddc8997775317
 ---
 
 提供拖拽控制能力，支持在应用接收到触摸或长按等事件时主动发起拖拽并携带拖拽信息，也支持创建拖拽Action、获取拖拽背板、控制拖拽事件上报和拖拽启动请求、取消拖拽数据加载，以及设置不允许落入目标区域时的禁止角标显示。
@@ -104,7 +104,7 @@ struct DragControllerPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/bNeSzOohQdew7wb0D9-NQg/zh-cn_image_0000002803225597.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/FBjD4irESlG-Owaz4eTbGA/zh-cn_image_0000002776750486.gif)
 
 ## executeDrag11+
 
@@ -225,7 +225,7 @@ struct DragControllerPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/9AyHzWFnTNismvg6cRoF9Q/zh-cn_image_0000002774065882.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/AWZ1ZTszS_6fGgk3Lj9cGQ/zh-cn_image_0000002806030203.gif)
 
 ## createDragAction11+
 
@@ -408,7 +408,7 @@ createDragAction(customArray: Array<CustomBuilder | DragItemInfo>, dragInfo: dra
    }
    ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/cfmXKS-oRKWIcoxKicPqtg/zh-cn_image_0000002773905908.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/bfO7hGDkTAGfBaiA5XHFag/zh-cn_image_0000002806110093.gif)
 
 ## getDragPreview11+
 
@@ -590,7 +590,7 @@ struct NormalEts {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/289IN6AiQAmiokykKp3jGQ/zh-cn_image_0000002803265691.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/bFwqSqcdQ9urkKYUjwULxQ/zh-cn_image_0000002776910474.gif)
 
 ## enableDropDisallowedBadge20+
 
@@ -660,4 +660,4 @@ enableDropDisallowedBadge(enabled: boolean): void
    }
    ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/nCJq6oZgR_-kHKMz2qOo0w/zh-cn_image_0000002803225599.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/6d1FEQVoTcWsTAgZX6ssYA/zh-cn_image_0000002776750488.png)

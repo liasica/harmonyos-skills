@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: WithTheme
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 主题 > WithTheme
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:49+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:75f0e1a762a1b8442c2d428abdc7670b7bea77715a8fa4ee206b250fb4d6acc3
+scraped_at: 2026-10-31T07:35:29+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:26d1166f02641b07260f8eba53a381e0670aec2b5d5532d331126c9128fcd51e
 ---
 
 WithTheme组件用于设置应用局部页面自定义主题风格，可设置子组件深浅色模式和自定义配色。
@@ -16,6 +16,7 @@ WithTheme组件用于设置应用局部页面自定义主题风格，可设置�
 * 本模块接口仅可在Stage模型下使用。
 * WithTheme支持的系统组件如下：[TextInput](ts-basic-components-textinput.md)、[Search](ts-basic-components-search.md)、[Button](ts-basic-components-button.md)、[Badge](ts-container-badge.md)、[Swiper](ts-container-swiper.md)、[Text](ts-basic-components-text.md)、[Select](ts-basic-components-select.md)、[Menu](ts-basic-components-menu.md)、[TimePicker](ts-basic-components-timepicker.md)、[DatePicker](ts-basic-components-datepicker.md)、[TextPicker](ts-basic-components-textpicker.md)、[Checkbox](ts-basic-components-checkbox.md)、[CheckboxGroup](ts-basic-components-checkboxgroup.md)、[Radio](ts-basic-components-radio.md)、[Slider](ts-basic-components-slider.md)、[Progress](ts-basic-components-progress.md)、[QRCode](ts-basic-components-qrcode.md)、[Toggle](ts-basic-components-toggle.md)、[TextClock](ts-basic-components-textclock.md)、[PatternLock](ts-basic-components-patternlock.md)、[Divider](ts-basic-components-divider.md)。从API版本26.0.0开始，新增[CalendarPicker](ts-basic-components-calendarpicker.md)、[UIPickerComponent](ts-container-ui-picker-component.md)、[TextArea](ts-basic-components-textarea.md)、[属性字符串](ts-universal-styled-string.md)、[Gauge](ts-basic-components-gauge.md)、[DataPanel](ts-basic-components-datapanel.md)、[RichEditor](ts-basic-components-richeditor.md)、[MenuItem](ts-basic-components-menuitem.md)、[MenuItemGroup](ts-basic-components-menuitemgroup.md)、[Image](ts-basic-components-image.md)、[ImageAnimator](ts-basic-components-imageanimator.md)、[Counter](ts-container-counter.md)、[bindSheet](ts-universal-attributes-sheet-transition.md#bindsheet)、[LoadingProgress](ts-basic-components-loadingprogress.md)。
 * WithTheme相关使用指导请参考[设置应用内主题换肤](../harmonyos-guides/theme-skinning.md)。
+* WithTheme作用域内不支持使用@Reusable装饰器装饰的自定义组件，深浅色效果可能不符合预期。
 
 ## 子组件
 
@@ -76,7 +77,7 @@ type CustomTheme = import('../api/@ohos.arkui.theme').CustomTheme
 
 设置局部深浅色时，需要添加dark.json资源文件，深浅色模式才会生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/NU0QhbxaS5atXxfzZjeCRA/zh-cn_image_0000002774066610.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/gJbJQTiVTfOFQjTHvlZh3Q/zh-cn_image_0000002806110821.png)
 
 dark.json数据示例：
 
@@ -147,7 +148,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/cEbmw4jcRiuRAf2x4q80ww/zh-cn_image_0000002773906638.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/AfmYcs7ORzaEl04E0ZpiNw/zh-cn_image_0000002776911202.png)
 
 ### 示例2（自定义WithTheme作用域内组件缺省配色）
 
@@ -233,4 +234,4 @@ struct IndexPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/Yjtpwd-UTmygrk3CHhTy2A/zh-cn_image_0000002803266421.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/hcZdPwpnT-SEr6BNSgbY-g/zh-cn_image_0000002776751216.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avplayer-embe
 title: 基于AVPlayer播放嵌入式短视频实践
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 媒体开发实践 > 基于AVPlayer播放嵌入式短视频实践
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:23+08:00
+scraped_at: 2026-10-31T07:32:46+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:2faebe2b38cae8f2de3657498a9fb1e3ee76163a34934e035414c4f98965a5ee
+content_hash: sha256:008be22da83cdf820409e70f605f71433062f44e66a16252aa034045ca68c224
 ---
 
 ## 概述
@@ -23,7 +23,7 @@ content_hash: sha256:2faebe2b38cae8f2de3657498a9fb1e3ee76163a34934e035414c4f9896
 
 用户浏览视频列表时自动播放视频，在用户滑动视频列表时自动切换至首个完全可见的视频播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/x_mN_9hiQdWe5CmZD-0KVg/zh-cn_image_0000002803264751.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/rbwFo4E_StOJoLFiZxeztQ/zh-cn_image_0000002806109153.gif)
 
 ### 实现原理
 
@@ -31,7 +31,7 @@ content_hash: sha256:2faebe2b38cae8f2de3657498a9fb1e3ee76163a34934e035414c4f9896
 
 逻辑如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/1cAWSezVRfCQ-5Wk9yHoMQ/zh-cn_image_0000002803224661.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/0dPCmdhaTESKI1Q4EY6nVQ/zh-cn_image_0000002776909534.png)
 
 ### 开发步骤
 
@@ -231,7 +231,7 @@ content_hash: sha256:2faebe2b38cae8f2de3657498a9fb1e3ee76163a34934e035414c4f9896
 
 视频播放无缝转场是影音娱乐类应用中的典型场景之一，如视频列表中自动播放的热门视频，点击当前播放视频跳转至视频详情页后继续播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/pSwiEbsuR-yusrTZz815FQ/zh-cn_image_0000002774064944.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/Q-3JoSljTbaUAkjnE-5b_Q/zh-cn_image_0000002776749548.gif)
 
 ### 实现原理
 
@@ -243,7 +243,7 @@ content_hash: sha256:2faebe2b38cae8f2de3657498a9fb1e3ee76163a34934e035414c4f9896
 
 逻辑如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/xeUW8oh1TmKr_y7fxCRDRg/zh-cn_image_0000002773904970.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/4wBbMJ0mS12fusU7RU_g3Q/zh-cn_image_0000002806029265.png)
 
 ### 开发步骤
 

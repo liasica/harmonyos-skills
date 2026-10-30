@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-deferr
 title: 分段式拍照实践(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 分段式拍照实践(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:19+08:00
+scraped_at: 2026-10-31T07:32:42+08:00
 doc_updated_at: 2026-08-07
-content_hash: sha256:0432c93db63dd87b067c90c2b0a1a65d92f25469c46ae9a5f7bfeb45fb506b1d
+content_hash: sha256:f8edf63cd36e79a88a2cabd0962f2e39e6759848671f1f1d8b72ee4d3eefd07e
 ---
 
 在开发相机应用时，需要先[申请相关权限](camera-preparation.md)。
@@ -18,7 +18,7 @@ content_hash: sha256:0432c93db63dd87b067c90c2b0a1a65d92f25469c46ae9a5f7bfeb45fb5
 
 在获取到相机支持的输出流能力后，开始创建拍照流，开发流程如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/NqFaWb6LQ6a6BH0ShbKVmA/zh-cn_image_0000002803224619.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/h5cvCCbeQNGSI4L-SCo4Pw/zh-cn_image_0000002776909492.png)
 
 ## 完整示例
 

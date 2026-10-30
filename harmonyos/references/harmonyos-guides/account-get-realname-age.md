@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-get-r
 title: 获取实名年龄段
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 获取华为账号用户信息 > 获取实名年龄段
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:32+08:00
+scraped_at: 2026-10-31T07:32:55+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:6675726230ed0c9fcca52e2b46dfa5dfdade0ef9d84b86f7785fe250cc58b29b
+content_hash: sha256:48c814121b7cadf5c1cfd160ef0c7312233126f9527cbf20eb7615b07d2b5cd9
 ---
 
 ## 场景介绍
 
 当应用需要获取用户实名年龄段信息时，可使用Account Kit的年龄段授权能力。用户授权后，应用可快速获取实名年龄段信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/Xok5E7BdT9GDXhlnl80tTw/zh-cn_image_0000002803224847.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/nrY49GLsSNy4B1plHf4HEw/zh-cn_image_0000002776909720.png "点击放大")
 
 ## 约束与限制
 
@@ -20,7 +20,7 @@ content_hash: sha256:6675726230ed0c9fcca52e2b46dfa5dfdade0ef9d84b86f7785fe250cc5
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/zXuDsSN-Sium10XkJEO8jA/zh-cn_image_0000002774065130.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/YFyWd2JtTc64LK4iWbBHyA/zh-cn_image_0000002776749734.png)
 
 流程说明：
 

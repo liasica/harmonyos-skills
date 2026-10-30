@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-server-i
 title: 端云调试概述
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 端云调试 > 端云调试概述
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:48+08:00
+scraped_at: 2026-10-31T07:33:12+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:f019a31d33967b13e4e72997efcb14ee09fbb8902cdc8b3921b6e39d2423c4f0
+content_hash: sha256:372217403d194415848c559b4df4558399ab798271b0f79cc1d1c593f8b47cc3
 ---
 
 [推送场景化消息](push-scenes-send.md)章节中囊括了Push Kit的所有推送场景，每个推送场景的开发可大致分为两大步骤：
@@ -17,7 +17,7 @@ content_hash: sha256:f019a31d33967b13e4e72997efcb14ee09fbb8902cdc8b3921b6e39d242
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/2x-bTkMPQ4ejYxfkvXejrQ/zh-cn_image_0000002803265319.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/pgpSmBHhQwW2wzNK7SKQHg/zh-cn_image_0000002776910102.png)
 
 Push Kit云侧主要业务流程如下：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite-s
 title: 空间音频渲染(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频编创 > 空间音频渲染(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:17+08:00
+scraped_at: 2026-10-31T07:32:38+08:00
 doc_updated_at: 2026-10-21
-content_hash: sha256:a66b1de6194a1b28db4c3427c81dc34363550a82098b6a8711dcbdfd4f69f448
+content_hash: sha256:ae8182b12a440886d29415abe87bab540f9b747c1b598a1782006e7dd59a5998
 ---
 
 从API version 23开始，[OHAudioSuite](../harmonyos-references/capi-ohaudiosuite.md)给开发者提供空间渲染效果节点[EFFECT\_NODE\_TYPE\_SPACE\_RENDER](../harmonyos-references/capi-native-audio-suite-base-h.md#oh_audionode_type)，用于实现三维空间音频渲染能力。空间渲染效果节点提供固定摆位、旋转及扩展三种[工作模式](audio-suite-space-render.md#工作模式)，将音频源在三维空间中进行定位、旋转和扩展处理，助力开发者高效构建沉浸式空间音频体验。
@@ -30,19 +30,19 @@ content_hash: sha256:a66b1de6194a1b28db4c3427c81dc34363550a82098b6a8711dcbdfd4f6
 
 固定摆位模式用于将音频源放置在特定空间的固定位置，适用于需要固定音源位置的场景，用户可通过调用[OH\_AudioSuiteEngine\_SetSpaceRenderPositionParams](../harmonyos-references/capi-native-audio-suite-engine-h.md#oh_audiosuiteengine_setspacerenderpositionparams)对空间渲染节点进行参数配置。固定摆位示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/7_sil9HKSCq8nYTqBd9dTA/zh-cn_image_0000002803224561.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/BgGnCRkqRWScGPSzr_RMCA/zh-cn_image_0000002776909434.png)
 
 ### 旋转模式
 
 旋转模式让音频源在指定位置设定单周环绕时间与时针方向进行动态渲染，用户可通过调用[OH\_AudioSuiteEngine\_SetSpaceRenderRotationParams](../harmonyos-references/capi-native-audio-suite-engine-h.md#oh_audiosuiteengine_setspacerenderrotationparams)对空间渲染节点进行参数配置。旋转模式示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/1f3yb0lsR3KFq6pVqICGXA/zh-cn_image_0000002774064842.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/Seczd_DdTsaInzl-NGuQ-w/zh-cn_image_0000002776749448.png)
 
 ### 扩展模式
 
 扩展模式将音频源按照半径和角度进行扩展，用户可通过调用[OH\_AudioSuiteEngine\_SetSpaceRenderExtensionParams](../harmonyos-references/capi-native-audio-suite-engine-h.md#oh_audiosuiteengine_setspacerenderextensionparams)对空间渲染节点进行参数配置。扩展模式示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/yWK9za-ERm6vF25w80JGmQ/zh-cn_image_0000002773904870.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/wDCyx8e0SdiQUfXSBwIovA/zh-cn_image_0000002806029165.png)
 
 ## 开发基础配置
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-fixes-s
 title: 固定样式弹出框
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹出框 (Dialog) > 固定样式弹出框
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:31+08:00
+scraped_at: 2026-10-31T07:31:51+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:cbe12c3b0b609409e67a0478eee21f3da781290db2057fa564e14d655392b28d
+content_hash: sha256:eaaeff6e5a4ad6cb84c81751d039cafe5632e1b73e2959d362593df0850c691e
 ---
 
 固定样式弹出框采用固定的布局格式，这使得开发者无需关心具体的显示布局细节，只需输入所需显示的文本内容，从而简化了使用流程，提升了便捷性。
@@ -90,7 +90,7 @@ export struct ShowActionMenuExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/_j4C82PiQ5aZhpSM5pHd2Q/zh-cn_image_0000002774064042.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/Mds2jk81S_yNqMXV_EPuqw/zh-cn_image_0000002776908634.gif)
 
 ## 对话框 (showDialog)
 
@@ -154,7 +154,7 @@ export struct ShowDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/R5QI2XOMRPmgKxIFVB3aWA/zh-cn_image_0000002773904068.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/Jo_ly2BRTlOAsyfgFTzRHg/zh-cn_image_0000002776748648.gif)
 
 ## 选择器弹窗 (PickerDialog)
 
@@ -219,7 +219,7 @@ export struct CalendarDialog {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/a-pr3XJjRqK0DcW2C2SmlQ/zh-cn_image_0000002803263853.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/BEAa3ZqETEabpLt1HhlJPA/zh-cn_image_0000002806028365.gif)
 
 ### 日期滑动选择器弹窗 (DatePickerDialog)
 
@@ -267,7 +267,7 @@ export struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/KWlfMQQJQk6nYY7-3NyNgQ/zh-cn_image_0000002803223763.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/RW37goyGT_CGAu7mKj-_jw/zh-cn_image_0000002806108255.gif)
 
 该示例通过配置textStyle、selectedTextStyle、acceptButtonStyle、cancelButtonStyle实现了自定义文本以及按钮样式。
 
@@ -310,7 +310,7 @@ export struct DatePickerCustomDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/Q9_lCzgrRfixeuMZm3W-UA/zh-cn_image_0000002774064044.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/jaTHo8b8TdC-Q6S8n4ChfA/zh-cn_image_0000002776908636.gif)
 
 ### 时间滑动选择器弹窗 (TimePickerDialog)
 
@@ -363,7 +363,7 @@ export struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/zIMaTOIhSAeUJk1h-KMCmA/zh-cn_image_0000002773904070.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/RwMsYi_xTiap72N6kRlPBw/zh-cn_image_0000002776748650.gif)
 
 ### 文本滑动选择器弹窗 (TextPickerDialog)
 
@@ -417,7 +417,7 @@ export struct TextPickerCNDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/Aw_irdDeSfmO1U3JzORVjQ/zh-cn_image_0000002803263855.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/v5f_GhegRd-32hHBre3TqQ/zh-cn_image_0000002806028367.gif)
 
 ## 列表选择弹出框 (ActionSheet)
 
@@ -501,7 +501,7 @@ export struct showActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/bfRrX2dxR86iGbvUbcFtBw/zh-cn_image_0000002803223765.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/u280Uf6BQeyjsM7o2NNlNA/zh-cn_image_0000002806108257.gif)
 
 ## 警告弹窗 (AlertDialog)
 
@@ -575,4 +575,4 @@ export struct showAlertDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/aNty7JBPS0WjFQovK93w0g/zh-cn_image_0000002774064046.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/InXV0wOfSj-pgKDA0cmkQg/zh-cn_image_0000002776908638.gif)

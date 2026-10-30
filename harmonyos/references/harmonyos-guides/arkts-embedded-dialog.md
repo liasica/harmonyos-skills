@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-embedde
 title: 页面级弹出框
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹出框 (Dialog) > 页面级弹出框
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:31+08:00
+scraped_at: 2026-10-31T07:31:51+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c0de766625931f614ac2d2296c9e3c377b810d8b4840b34829fe9935415b982a
+content_hash: sha256:2780e3f852da5ed910994181c0cc548104f0391811d4d89a7e179393ebc22997
 ---
 
 ArkUI的弹出框默认设置为全局级别，弹窗节点作为页面根节点的子节点，显示层级高于应用中的所有路由/导航页面。当页面内进行路由跳转时，如果应用未主动调用close方法关闭弹出框，弹出框不会自动关闭，并且会在下一个跳转页面上继续显示。
@@ -187,7 +187,7 @@ struct Next {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/p6UtiNiqSBCHzFSwQyb75g/zh-cn_image_0000002773904072.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/SmpE_pY4SnKxCaek_dVnhQ/zh-cn_image_0000002776748652.gif)
 
 下述示例为基于Navigation导航模式下的页面级弹出框。使用本示例前需要参考[Navigation使用NavDestination作为导航页](../harmonyos-references/ts-basic-components-navigation.md#示例16navigation使用navdestination作为导航页)文档完成Index首页和router\_map.json的创建与配置。并使用下述示例代码中的PageLevelDialogInNavigation和PageLevelDialogInNavigationTestTwo组件替换Navigation参考文档中的PageHome和PageOne组件。
 
@@ -289,4 +289,4 @@ export struct PageLevelDialogInNavigationTestTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/fLy8y1thTRG1e7f9aPMmBQ/zh-cn_image_0000002803263857.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/NHbl40NMQay_l_0McjZtGQ/zh-cn_image_0000002806028369.gif)

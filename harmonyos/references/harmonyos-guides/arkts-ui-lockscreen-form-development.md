@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-lock
 title: ArkTS锁屏卡片
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS锁屏卡片
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:45+08:00
+scraped_at: 2026-10-31T07:32:05+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:a73d44b3c84a53adc690d584e81c87602648a6e3919ff5563831915fc34bc93c
+content_hash: sha256:973c8d2abb06ebdf18a021fa34063b679756b45e26be145400f3a1417b192a58
 ---
 
 从API version 18开始，Form Kit提供在设备锁屏界面上显示卡片的能力，用以展示重要信息或快捷操作，旨在让用户无需解锁即可获取关键资讯或执行常用功能。锁屏卡片常用于展示天气、时钟等内容，并支持用户个性化定制。
@@ -26,7 +26,7 @@ content_hash: sha256:a73d44b3c84a53adc690d584e81c87602648a6e3919ff5563831915fc34
 3. 添加卡片：在锁屏卡片管理页面选择任一卡片，例如运动健康和时钟，卡片就会添加到锁屏上。
 4. 删除卡片：在锁屏编辑态，点击卡片右上角的减号即可删除卡片。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/fkIWAMg0QlmSBA5wBuMQBQ/zh-cn_image_0000002803224239.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/uRjKUSxFTxmzY0S91LyGhQ/zh-cn_image_0000002776909112.png)
 
 ## 约束和限制
 
@@ -111,16 +111,16 @@ content_hash: sha256:a73d44b3c84a53adc690d584e81c87602648a6e3919ff5563831915fc34
 
 1. 在“开放能力接入”页面，点击锁屏卡片对应的申请按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/1KRBaCMtQgmzFtMI8X9Tzg/zh-cn_image_0000002774064520.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/jBZIacQOQx-hk1sWI0qQ4g/zh-cn_image_0000002776749126.png)
 2. 在“新建业务申请”窗口填写申请信息，然后点击“提交”。申请原因：必填，不超过256个字符。上传附件：选填，仅可上传1个附件，大小不超过500MB。支持文本、表格、图片、视频、压缩包格式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/S2lptnZ1SiyfmESz53E8cw/zh-cn_image_0000002773904546.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/JZGVymmHSwGsWXkmRDTSxQ/zh-cn_image_0000002806028843.png)
 3. 返回“开放能力接入”页面，原“申请”按钮变为“申请中”，1-3个工作日反馈申请结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/y4oRe-YoTXSqrdscr681yw/zh-cn_image_0000002803264331.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/8yUgMX_mRh2wrdFii9RRgw/zh-cn_image_0000002806108733.png)
 4. 申请审批通过后，互动中心会发送通知给您，同时“申请中”按钮会变为置灰显示的“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/Y50opWJKT-CBshnBQ1DidA/zh-cn_image_0000002803224241.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/sqIFV7QiQ9GFUkpyCynVIw/zh-cn_image_0000002776909114.png)
 5. 能力申请通过后，勾选锁屏卡片的能力开关，点击右上角“保存”。至此，您的应用已成功接入开放能力。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/fqYnhKUWSVK4WsInhDP5kQ/zh-cn_image_0000002774064522.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/wQFW0mDwQ3OBS9yb35n99g/zh-cn_image_0000002776749128.png)

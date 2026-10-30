@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: calendar
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 基础组件 > calendar
 category: harmonyos-references
-scraped_at: 2026-10-29T08:00:00+08:00
+scraped_at: 2026-10-31T07:35:43+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:f3847988d0cfdbf7c308eb3505922a4d64e3ee3a63b3bfe9cbe8379dfebfb084
+content_hash: sha256:0c0c3b6b373e3e1ad5dce3a2fee917d6e0ce884e126f0283a88b185fda22dc36
 ---
 
 日历组件，用于呈现日历界面。
@@ -196,4 +196,4 @@ calendardata示例：
 
 **4\*4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/YSwNQD8ESGerqpNobSG8TQ/zh-cn_image_0000002803266797.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/6Mqaq_upTNqktzyx5dpzMA/zh-cn_image_0000002776751652.png)

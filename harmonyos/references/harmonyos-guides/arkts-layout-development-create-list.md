@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 创建列表 (List)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 列表与网格 > 创建列表 (List)
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:31+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:8815d259a423aeb2880983e2865d2b1c863d59a36580c901a5b32c7a82440e4c
+scraped_at: 2026-10-31T07:31:50+08:00
+doc_updated_at: 2026-10-30
+content_hash: sha256:a3681fb03af58d5e6a81131c5e765679af783cf47765789ddb92b69bebdcd89f
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ ListItemGroup用于列表数据的分组展示，其子组件也是ListItem。Li
 
 **图1** List、ListItemGroup和ListItem组件关系
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/S0CUGMWESAykQD3BopYlnQ/zh-cn_image_0000002803223573.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/Beo3U3GUTPyg57bPJrlcPg/zh-cn_image_0000002806028175.png)
 
 **说明** 
 
@@ -42,13 +42,13 @@ List除了提供垂直和水平布局能力、超出屏幕时可以滚动的自�
 
 **图2** 垂直滚动列表（左：单列；右：多列）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/xANEfnAaT7S6x8Km1GShyg/zh-cn_image_0000002803263661.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/n7syOVd3Q3uRRWVHnXnr6Q/zh-cn_image_0000002776748456.png)
 
 利用水平布局能力可以构建单行或多行水平滚动列表，如下图所示。
 
 **图3** 水平滚动列表（左：单行；右：多行）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/RO7ALeVESdyK4TRsp93UYA/zh-cn_image_0000002774063854.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/t1L8vt8HSoSVqvMXsxneWw/zh-cn_image_0000002806108065.png)
 
 Grid和WaterFlow也可以实现单列、多列布局，如果布局每列等宽，且不需要跨行跨列布局，相比Grid和WaterFlow，则更推荐使用List。
 
@@ -60,7 +60,7 @@ Grid和WaterFlow也可以实现单列、多列布局，如果布局每列等宽�
 
 **图4** 列表的主轴与交叉轴
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/zUzVh95TRVqw6rM0Nzznlw/zh-cn_image_0000002773903878.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/tLFeva1EQOuk2v9ssOkARw/zh-cn_image_0000002776908446.png)
 
 如果List组件主轴或交叉轴方向设置了尺寸，则其对应方向上的尺寸为设置值。
 
@@ -70,7 +70,7 @@ Grid和WaterFlow也可以实现单列、多列布局，如果布局每列等宽�
 
 **图5** 列表主轴高度约束示例1（**A**: List的父组件; **B**: List组件; **C**: List的所有子组件）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/z4mN6kXWQqypHQ523wySVg/zh-cn_image_0000002803263665.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/XDmJhhXuQZGK26Egv5iIUw/zh-cn_image_0000002776748460.png)
 
 如果子组件主轴方向总尺寸超过List父组件尺寸时，List主轴方向尺寸适应List的父组件尺寸。
 
@@ -78,7 +78,7 @@ Grid和WaterFlow也可以实现单列、多列布局，如果布局每列等宽�
 
 **图6** 列表主轴高度约束示例2（**A**: List的父组件; **B**: List组件; **C**: List的所有子组件）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/H_e5DdgdRyGu4RV95JKqQg/zh-cn_image_0000002803223575.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/FwDj2qDXRq2YcIKd10P9Ew/zh-cn_image_0000002806028177.png)
 
 List组件交叉轴方向在没有设置尺寸时，其尺寸默认自适应父组件尺寸。
 
@@ -161,7 +161,7 @@ List组件创建时，所有ListItem将会被创建。显示区域内的ListItem
 
 **图7** ForEach创建ListItem的生命周期
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/IDZ1EYL8SJab_4K7C2Xx0g/zh-cn_image_0000002774063856.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/4th3MWLqTlSdo7_00yrGLQ/zh-cn_image_0000002806108067.png)
 
 ### 使用LazyForEach创建ListItem
 
@@ -171,7 +171,7 @@ List组件创建时，显示区域中的ListItem会被创建与布局。预加�
 
 **图8** LazyForEach创建ListItem的生命周期
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/TEAvb8wsT82fReMLu9C1hw/zh-cn_image_0000002773903880.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/kc4UvE4qSqOHVKFAQlFdzQ/zh-cn_image_0000002776908448.png)
 
 ### 使用Repeat创建ListItem
 
@@ -183,7 +183,7 @@ List组件创建时，使用设置了[virtualScroll](../harmonyos-references/ts-
 
 **图9** Repeat使用virtualScroll创建ListItem的生命周期
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/FdpRVDd3RwuJO5Yovi5seA/zh-cn_image_0000002803263667.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/PyRFYJAHTe2Ww9WD1An4dw/zh-cn_image_0000002776748462.png)
 
 **不使用virtualScroll**
 
@@ -193,7 +193,7 @@ List组件创建时，所有ListItem均被创建。显示区域内的ListItem在
 
 **图10** Repeat不使用virtualScroll创建ListItem的生命周期
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/WWyiR_t_R0GsS4UaWedYgw/zh-cn_image_0000002803223577.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/lvinFOX6R3qc3ytikuK28A/zh-cn_image_0000002806028179.png)
 
 ## 在列表中显示数据
 
@@ -201,7 +201,7 @@ List组件创建时，所有ListItem均被创建。显示区域内的ListItem在
 
 **图11** 城市列表
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/etHMJRoNQuWCFVOR1D_Q0A/zh-cn_image_0000002774063858.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/G9AtqPeNSi2CetTYI2YS7Q/zh-cn_image_0000002806108069.png)
 
 ```typescript
 @Entry
@@ -239,7 +239,7 @@ export struct DataInList {
 
 **图12** 联系人列表项示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/G4DK18uWSo-ZxZgQYiYFGg/zh-cn_image_0000002773903882.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/jeXVeDyQRIOROA0LtnXATA/zh-cn_image_0000002776908450.png)
 
 如上图所示，联系人列表的列表项中，每个联系人都有头像和名称。此时，需要将Image和Text封装到一个Row容器内。
 
@@ -349,7 +349,7 @@ List({ space: 10 }) {
 
 **图13** 设置列表分隔线样式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/Lz2ft_HRSOaYbsVri_A_aQ/zh-cn_image_0000002803263669.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/WIu3q6tqRmW9Xk7w04t3VA/zh-cn_image_0000002776748464.png)
 
 List提供了[divider](../harmonyos-references/ts-container-list.md#divider)属性用于给列表项之间添加分隔线。在设置divider属性时，可以通过strokeWidth和color属性设置分隔线的粗细和颜色。
 
@@ -404,7 +404,7 @@ export struct CustomListStyle {
 
 **图14** 列表的滚动条
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/OETo7Z8sRoa9xxf9YkSwKw/zh-cn_image_0000002803223579.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/FnejoQDWQLC_7Vnbx_woLA/zh-cn_image_0000002806028181.gif)
 
 在使用List组件时，可通过scrollBar属性控制列表滚动条的显示。scrollBar的取值类型为[BarState](../harmonyos-references/ts-appendix-enums.md#barstate)，当取值为BarState.Auto表示按需显示滚动条。此时，当触摸到滚动条区域时显示控件，可上下拖拽滚动条快速浏览内容，拖拽时会变粗。若不进行任何操作，2秒后滚动条自动消失。
 
@@ -446,7 +446,7 @@ List(
 
 **图15** 列表的外置滚动条
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/19_-dzOySY6z5_YExGrlfw/zh-cn_image_0000002774063860.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/SWwob-2bQeyQKxoA40qr4w/zh-cn_image_0000002806108071.gif)
 
 **说明** 
 
@@ -459,7 +459,7 @@ List(
 
 **图16** 联系人分组列表
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/dHKro48TQSeV0VLA42sn8A/zh-cn_image_0000002773903884.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/j05hh151TzGq0uneBLOPMg/zh-cn_image_0000002776908452.png)
 
 在List组件中使用ListItemGroup对项目进行分组，可以构建二维列表。
 
@@ -509,7 +509,7 @@ export struct GroupedList {
 
 **图17** 粘性标题
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/UjET4-dcRNiiue2m0kty1w/zh-cn_image_0000002803263671.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/bsuaCBLRTueYE7tAv6xCTA/zh-cn_image_0000002776748466.gif)
 
 List组件的[sticky](../harmonyos-references/ts-container-list.md#sticky9)属性配合ListItemGroup组件使用，用于设置ListItemGroup中的头部组件是否呈现吸顶效果或者尾部组件是否呈现吸底效果。
 
@@ -629,7 +629,7 @@ export struct StickyHeaderList {
 
 **图18** 返回列表顶部
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/bJmvGqB0S8u7hAzXaI30mQ/zh-cn_image_0000002803223581.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/mcTFdjdITMWaNnzt-lo5jQ/zh-cn_image_0000002806028183.gif)
 
 List组件初始化时，可以通过scroller参数绑定一个[Scroller](../harmonyos-references/ts-container-scroll.md#scroller)对象，进行列表的滚动控制。例如，用户在新闻应用中，点击新闻页面底部的返回顶部按钮时，就可以通过Scroller对象的scrollToIndex方法使列表滚动到指定的列表项索引位置。
 
@@ -667,7 +667,7 @@ Stack({ alignContent: Alignment.Bottom }) {
 
 **图19** 字母索引响应联系人列表滚动
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/iSQMDtYhQ_O67hJvGxOPSg/zh-cn_image_0000002774063862.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/ImTxFxz_Qq6vceKBGJZ6Tg/zh-cn_image_0000002806108073.gif)
 
 如上图所示，当联系人列表从A滚动到B时，右侧索引栏也需要同步从选中A状态变成选中B状态。此场景可以通过监听List组件的[onScrollIndex](../harmonyos-references/ts-container-list.md#onscrollindex)事件来实现，右侧索引栏需要使用字母表索引组件[AlphabetIndexer](../harmonyos-references/ts-container-alphabet-indexer.md)。
 
@@ -721,7 +721,7 @@ export struct ResponsiveScrollPositionList {
 
 **图20** 侧滑删除列表项
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/uwpFk2--R-m4-DlgCSOT6g/zh-cn_image_0000002773903886.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/IZJxOvK0R8qar9M-PNEqeg/zh-cn_image_0000002776908454.gif)
 
 ListItem的[swipeAction](../harmonyos-references/ts-container-listitem.md#swipeaction9)属性可用于实现列表项的左右滑动功能。swipeAction属性方法初始化时有必填参数SwipeActionOptions，其中，start参数表示设置列表项右滑时起始端滑出的组件，end参数表示设置列表项左滑时尾端滑出的组件。
 
@@ -768,7 +768,7 @@ ListItem的[swipeAction](../harmonyos-references/ts-container-listitem.md#swipea
 
 **图21** 给列表项添加标记
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/KM_sutbjQ_qVcWDvTPe4UQ/zh-cn_image_0000002803263673.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/7jNrug9GSae_5OcLMcjYFA/zh-cn_image_0000002776748468.png)
 
 在ListItem中使用[Badge](../harmonyos-references/ts-container-badge.md)组件可实现给列表项添加标记功能。Badge是可以附加在单个组件上用于信息标记的容器组件。
 
@@ -817,7 +817,7 @@ ListItem() {
 
 **图22** 新增待办
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/Jgo7mdNyTSySGf6ebmA23w/zh-cn_image_0000002803223583.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/9KvDRwDTRKuLpH0wJUU_tg/zh-cn_image_0000002806028185.gif)
 
 添加列表项功能实现主要流程如下：
 
@@ -988,7 +988,7 @@ ListItem() {
 
 **图23** 长按删除待办事项
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/XXhJ3QPQRy-dzmEF31aIsg/zh-cn_image_0000002774063864.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/hVqzNBuCR_eKciSKwCmADg/zh-cn_image_0000002806108075.gif)
 
 删除列表项功能实现主要流程如下：
 
@@ -1128,7 +1128,7 @@ List(
 
 **图24** 列表项的折叠与展开
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/vNoRAPdPTPynEkUhwFUiEQ/zh-cn_image_0000002773903888.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/PiSlGcH-S2CHAXs0Y8TE5A/zh-cn_image_0000002776908456.gif)
 
 列表项折叠与展开效果实现主要流程如下：
 
@@ -1316,7 +1316,7 @@ List(
 
 **图25** 实时消息滚动显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/aNzszfozTJi_sQEUBtjsUw/zh-cn_image_0000002803263675.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/Dckk-FrcTmK2RPvSUJ122A/zh-cn_image_0000002776748470.gif)
 
 1. 定义列表项数据结构。
 
@@ -1393,7 +1393,7 @@ List(
 
 **图26** 自定义限位滚动效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/6hmwR7eATYOxJ7PDMi334w/zh-cn_image_0000002803223585.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/nyx-aeA6QIiVsui4qFNa2w/zh-cn_image_0000002806028187.gif)
 
 1. 定义新闻条目数据结构。
 
@@ -1491,19 +1491,19 @@ List(
 
 **图27** 边缘回弹效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/mLIdH7c5QBuI31QPdi5wDQ/zh-cn_image_0000002774063866.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/ryfZvv0ETIKeXblb5JxnNQ/zh-cn_image_0000002806108077.gif)
 
 设置.edgeEffect(EdgeEffect.None)时，List无边缘滑动效果，如下图所示。
 
 **图28** 无边缘滑动效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/HkJNWd4BRn6VlM0FooesGw/zh-cn_image_0000002773903890.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/HdX0zhNeRxmu8w2rNRkmRg/zh-cn_image_0000002776908458.gif)
 
 从API version 18开始，List还支持只设置单边的边缘滑动效果，如设置.edgeEffect(EdgeEffect.Spring, { alwaysEnabled: true, effectEdge: EffectEdge.START })来实现起始边有边缘回弹效果，末尾边无效果，如下图所示。
 
 **图29** 单边边缘滑动效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/7wRS221oSyiBFtrtGhJdQw/zh-cn_image_0000002803263677.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/aMct8DuuTeuA1dyq3aBGqg/zh-cn_image_0000002776748472.gif)
 
 需要注意的是，当List组件的内容区小于一屏时，List默认无边缘滑动效果。若要启用边缘回弹效果，可以通过设置.edgeEffect(EdgeEffect.Spring, { alwaysEnabled: true })来实现。
 
@@ -1513,7 +1513,7 @@ List(
 
 **List手指滑动多选示例效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/IV1Y9LsZTSiHMtd_6cq4HA/zh-cn_image_0000002803223587.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/YrVSsNjoRASLrgExiL1CRA/zh-cn_image_0000002806028189.gif)
 
 ### 设置编辑模式
 
@@ -1573,6 +1573,74 @@ ListItem() {
 * 建议使用列表项数据中不会随位置变化的唯一标识（例如消息ID）记录选择结果，不建议仅使用当前下标，避免动态增删数据后选中项错位。
 * 当业务需要在退出编辑模式后保留选择结果时，可在[onEditModeChange](../harmonyos-references/ts-container-list.md#oneditmodechange)回调中保存选择结果。
 * 使用[LazyForEach](arkts-rendering-control-lazyforeach.md)时，数据源发生变化后应通过[DataChangeListener](../harmonyos-references/ts-rendering-control-lazyforeach.md#datachangelistener)通知组件刷新，确保滑动多选过程中列表项状态与数据源一致。
+
+## List手指从上往下滑时页面抖动
+
+**问题现象**
+
+在[List](../harmonyos-references/ts-container-list.md)组件中，当用户手指从上往下滑动列表时，如果此时在列表底部动态新增数据或追加内容，页面会出现抖动现象——列表内容短暂地向上跳动一下再恢复，视觉上表现为不稳定的闪烁/抖动。
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/XkoFOt0WTYSCC3dmv6-2ag/zh-cn_image_0000002806108079.gif)
+
+**可能原因**
+
+抖动的根源在于List反向布局时，底部新增内容引起的偏移量变化方向与用户手指滑动方向存在冲突。其中，偏移量是通过[currentOffset](../harmonyos-references/ts-container-scroll.md#currentoffset)接口获取的滚动总偏移量，表示List内容相对于视口顶部的位移。
+
+List组件有两套布局路径：
+
+* 正向布局：从列表第一项开始，依次向下排列。当用户手指从下往上滑动时走此路径。由于布局锚定在顶部，在底部新增内容不会改变已有item的位置，偏移量保持不变，因此不会与手指滑动方向产生冲突。
+* 反向布局：从列表最后一项开始，依次向上排列。当用户手指从上往下滑动时走此路径。此时List的布局计算方向与正向相反——它从底部item开始，向上依次确定每个item的位置。
+
+此时在底部新增内容，反向布局认为应该将视口内的内容向上推，即偏移量应该增大（向底部滚动）；而用户手指从上往下滑动，期望内容跟随手指向下移动，即偏移量应该减小（向顶部滚动）。这两个方向正好相反，两个相反方向的偏移在同一帧内冲突，内容先被推向一个方向，又被拉回，导致视觉抖动。
+
+**解决措施**
+
+改用[Scroll](../harmonyos-references/ts-container-scroll.md)+[LazyVGridLayout](../harmonyos-references/ts-container-lazyvgridlayout.md)替代List，Scroll组件的滚动模型是纯粹的位移偏移，不存在正向/反向布局的分叉路径，内容尺寸变化时不会产生方向冲突。
+
+```typescript
+@Entry
+@Component
+struct ScrollLazyDemo {
+  @State items: string[] = ScrollLazyDemo.initItems()
+  private timer: number = -1
+
+  aboutToAppear() {
+    this.timer = setInterval(() => {
+      this.items[this.items.length - 1] += '0123456789\n'
+    }, 400)
+  }
+
+  aboutToDisappear() {
+    clearInterval(this.timer)
+  }
+
+  private static initItems(): string[] {
+    const arr: string[] = []
+    for (let i = 0; i < 50; i++) {
+      arr.push(`Item ${i + 1} \n`)
+    }
+    return arr
+  }
+
+  build() {
+    Scroll() {
+      LazyVGridLayout() {
+        ForEach(this.items, (item: string) => {
+          Text(item)
+            .width('100%')
+            .padding(12)
+            .backgroundColor('#fff4f4f4')
+            .borderRadius(8)
+            .margin({ top: 4, bottom: 4 })
+        })
+      }
+    }
+    .initialOffset({ yOffset: Infinity })
+    .width('100%')
+    .height('100%')
+  }
+}
+```
 
 ## 示例代码
 
