@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-code-releasenote
 title: 版本说明
-breadcrumb: 指南 > DevEco Code > 版本说明
+breadcrumb: 指南 > DevEco Code > DevEco Code TUI > 版本说明
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:39+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-11-01T07:13:14+08:00
+doc_updated_at: 2026-10-31
 content_hash: sha256:bc16ce98b8376a41b870cbd5e4c7f928b920a6d90649bebd1a519040968906af
 ---
 

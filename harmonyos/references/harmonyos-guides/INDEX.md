@@ -1,6 +1,6 @@
 # 指南（harmonyos-guides）
 
-共 6155 篇文档。
+共 6167 篇文档。
 
 - [24h功耗器件分解统计事件](24-hour-battery-usage-event.md)
 - [aa工具](aa-tool.md)
@@ -3160,7 +3160,19 @@
 - [模型配置](ide-deveco-code-model.md)
 - [命令](ide-deveco-code-options.md)
 - [工具概述](ide-deveco-code-overview.md)
+- [常见问题](ide-deveco-code-plugin-faq.md)
+- [迁移CodeGenie数据至DevEco Code常见问题](ide-deveco-code-plugin-faq1.md)
+- [自然语言生成代码](ide-deveco-code-plugin-generate-code.md)
+- [操作指南](ide-deveco-code-plugin-guide.md)
+- [快速入门](ide-deveco-code-plugin-install.md)
+- [配置Models](ide-deveco-code-plugin-models.md)
+- [斜杠命令](ide-deveco-code-plugin-options.md)
+- [配置Skill](ide-deveco-code-plugin-skill.md)
+- [修复编译报错](ide-deveco-code-plugin-smart-fix.md)
+- [UX设计稿生成代码](ide-deveco-code-plugin-ux.md)
+- [DevEco Studio Plugin](ide-deveco-code-plugin.md)
 - [版本说明](ide-deveco-code-releasenote.md)
+- [DevEco Code TUI](ide-deveco-code-tui.md)
 - [开发者选项](ide-developer-mode.md)
 - [开发者模式](ide-developer-options.md)
 - [访问设备文件](ide-device-file-explorer.md)

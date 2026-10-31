@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpm convert
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm convert
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:51+08:00
+scraped_at: 2026-11-01T07:13:13+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:e5bef21f144fef32e4bd736f3d02359475710016a0d13624a54441e2639a8117
+content_hash: sha256:6de5831edf31227ebcfe440509c050c1946bfbbc69b2c66f2cbdf263b887e116
 ---
 
 将npm三方库转换为ohpm三方库。因为语法差异，转换时仅对文件进行格式转换，不修改原npm包的代码逻辑。若HAR包在转换后出现代码不兼容的报错，开发者需修改原npm包的代码做适配。
@@ -100,13 +100,13 @@ ohpm INFO: A total of 9 packets are converted successfully.
 ohpm INFO: Converted packages are saved to the "/storage/Users/currentUser/Documents/DevEcostudioProjects/MyApplication01/convert_1774947993178" directory.
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/B6dfLCf0TRCibUvRUSv0HQ/zh-cn_image_0000002750169790.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/ePtqm4jiQFuvlDzxqp1ATQ/zh-cn_image_0000002750169790.png)
 
 **转换本地node\_modules目录中的包**
 
 执行npm install uuid后，转换本地node\_modules目录中的包，执行以下命令：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/8XISCLr_TzeX8rrRz2YQXw/zh-cn_image_0000002779728957.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/QXR62URhTWyy8VBE363vgw/zh-cn_image_0000002779728957.png)
 
 ```screen
 ohpm convert ./node_modules
@@ -122,4 +122,4 @@ ohpm INFO: A total of 1 package(s) are converted successfully.
 ohpm INFO: Converted packages are saved to the "/storage/Users/currentUser/xxxxx/convert_1774948851809" directory.
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/uI1HMfuRRA2L1b67De9fUQ/zh-cn_image_0000002750009894.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/5k4k3cOER3GyYRqt-bqEnQ/zh-cn_image_0000002750009894.png)

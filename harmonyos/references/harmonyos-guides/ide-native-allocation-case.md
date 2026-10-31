@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-native-al
 title: 案例：Native内存泄漏分析
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 基础内存：Allocation分析 > 案例：Native内存泄漏分析
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:37+08:00
+scraped_at: 2026-11-01T07:13:00+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:de1de0a94eccd300ce86b2557afc495e23d9b12232ea41e7f19a2e38b468fa53
+content_hash: sha256:af5b38d869eeaa4cf38c1b78ef28cb50ef44dd61c14446c18811e06783a83501
 ---
 
 本案例介绍如何判断应用存在Native内存泄漏。
@@ -20,7 +20,7 @@ content_hash: sha256:de1de0a94eccd300ce86b2557afc495e23d9b12232ea41e7f19a2e38b46
 
    当在一段时间内应用内存没有明显增加或者在内存上涨后又逐渐回落至正常水平，则基本可以排除应用存在内存问题；反之，在一段时间内不断上涨且无回落或者内存占用明显增长超出预期，那么则可初步判断应用可能存在内存问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/IckzctOeRcq4_S8hx0xYfA/zh-cn_image_0000002701662668.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/Y1BycdA4TY24zqjFab89aQ/zh-cn_image_0000002701662668.png "点击放大")
 2. 当从实时监控页面初步判断应用可能存在内存问题后，通过[深度录制](deep-recording.md)抓取应用内存在问题场景下的详细数据，初步定界问题出现的位置。Memory泳道存在Allocation或Snapshot模板中，使用Allocation或Snapshot模板录制均可。
 3. 以Allocation模板为例，创建模板后，将模板中的其余泳道去除勾选，仅录制Memory泳道的数据。
 
@@ -28,17 +28,17 @@ content_hash: sha256:de1de0a94eccd300ce86b2557afc495e23d9b12232ea41e7f19a2e38b46
 
    其余泳道会抓取内存分配、内存对象等数据，为避免额外开销和影响分析，建议先排除录制。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/iMpLT-H_RlmVlSGCvdZZDw/zh-cn_image_0000002701662662.png)
-4. 点击三角按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/_1z7J9E1RoS25KcOyBjUwg/zh-cn_image_0000002701662664.png "点击放大")即开始录制。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/heRVG6xWR4uznUjrEHQwSg/zh-cn_image_0000002701662662.png)
+4. 点击三角按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/Ib6N_LhYQ8muj-yWcs10_A/zh-cn_image_0000002701662664.png "点击放大")即开始录制。
 5. 录制过程中，不断在问题场景操作应用功能，放大问题便于快速定界问题点。
 6. 点击下图中方块按钮或者左侧停止按钮结束录制。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/frZoKmYPRDuY2gVkIe4pGw/zh-cn_image_0000002731541859.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/nM9tqyECRR2dBcHfmkiLTw/zh-cn_image_0000002731541859.png "点击放大")
 7. 录制完成后，展开Memory泳道，其中Native Heap表示Native内存，主要是应用使用到的一些涉及Native API所申请的内存以及开发者自己的Native代码所申请使用的堆内存（通常是C/C++），这部分内存需要开发者自行管理申请和释放。
 
    当Native Heap有明显的上涨，说明Native内存上可能存在内存泄漏，可以使用[Allocation模板](ide-native-allocation-case.md#section776643810160)进行下一步分析。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/CtN1ikBCREGlIKb6mtyFtg/zh-cn_image_0000002731381887.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/3CSoprTkRXO4GPfAL0j0Hg/zh-cn_image_0000002731381887.png "点击放大")
 
 ## 使用Allocation模板分析Native内存问题（DevEco Studio 6.1.0 Beta1及以上版本）
 
@@ -49,16 +49,16 @@ content_hash: sha256:de1de0a94eccd300ce86b2557afc495e23d9b12232ea41e7f19a2e38b46
 
    **说明** 
 
-   如果要分析启动内存，单击Allocation任务后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/R2qE_RNiTa6dO5-JriKo0A/zh-cn_image_0000002731541847.png "点击放大")按钮。
+   如果要分析启动内存，单击Allocation任务后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/8Rf9wWH-QhiQcCfF86ykEg/zh-cn_image_0000002731541847.png "点击放大")按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/MuChGHCPSjyzFTKUthqjjg/zh-cn_image_0000002731381875.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/lFDPOlzoSQewcZ2h1nJW2Q/zh-cn_image_0000002731381875.png "点击放大")
 3. 操作应用复现问题场景，并在问题复现完成后，点击下图中方块按钮或者左侧停止按钮结束录制。
 
    **说明** 
 
    默认使用统计模式采集数据。该模式下工具的采集性能更好、负载更低。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/abkoT5x5SWWOXvoceUR6Mw/zh-cn_image_0000002701662658.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/sTid2O_TQp6ZmFXM8UKCiA/zh-cn_image_0000002701662658.png "点击放大")
 
 ### 分析Native数据
 
@@ -69,10 +69,10 @@ content_hash: sha256:de1de0a94eccd300ce86b2557afc495e23d9b12232ea41e7f19a2e38b46
    * Created & Existing：默认选中，在框选范围的起点之后分配的，且在框选范围的终点之前没有释放的内存数据。
    * Created & Released：在框选范围的起点之后分配的，且在框选范围的终点之前已经释放的内存数据。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/jAQP77BgS6OTdxWVBPMaqQ/zh-cn_image_0000002701822576.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/HY4IKBlWTUKuHWJ-kc31tg/zh-cn_image_0000002701822576.png "点击放大")
 3. 切换到“Call Trees”页签，该部分数据展示了详细的内存分配栈信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/iylcyca5SHKkLOOslktWVA/zh-cn_image_0000002731381883.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/bXvUjqRFReecO4LVuowiYQ/zh-cn_image_0000002731381883.png "点击放大")
 4. 优先在内存分配栈信息中寻找与业务代码强相关的Symbol Name，即Category中为亮色。从上图中看，主要泄漏点在业务代码侧，需要结合业务代码进行分析。
 
    **说明** 
@@ -89,16 +89,16 @@ content_hash: sha256:de1de0a94eccd300ce86b2557afc495e23d9b12232ea41e7f19a2e38b46
 
    **说明** 
 
-   如果要分析启动内存，单击Allocation任务后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/D1Wt6omESvapxZDVloDnhQ/zh-cn_image_0000002731381877.png "点击放大")按钮。
+   如果要分析启动内存，单击Allocation任务后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/i6y5M6wAQeCfAURV1Gct5Q/zh-cn_image_0000002731381877.png "点击放大")按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/1O8t9UC0QwykoYhJVwtoMw/zh-cn_image_0000002701822572.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/7hr2gRwKT_q00N70qvrxqA/zh-cn_image_0000002701822572.png "点击放大")
 3. 操作应用复现问题场景，并在问题复现完成后，点击下图中方块按钮或者左侧停止按钮结束录制。
 
    **说明** 
 
    默认使用统计模式采集数据。该模式下工具的采集性能更好、负载更低。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/PP4D5tQuRyKUvrJdnPREeQ/zh-cn_image_0000002731381881.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/LVV2bTkHSe6hkaI-MeFUZg/zh-cn_image_0000002731381881.png "点击放大")
 
 ### 分析Native数据
 
@@ -109,10 +109,10 @@ content_hash: sha256:de1de0a94eccd300ce86b2557afc495e23d9b12232ea41e7f19a2e38b46
    * Created & Existing：在框选范围的起点之后分配的，且在框选范围的终点之前没有释放的内存数据。
    * Created & Released：在框选范围的起点之后分配的，且在框选范围的终点之前已经释放的内存数据。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/fIUxzNbeR4e-0ljxpkc2pw/zh-cn_image_0000002701822580.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/f7jDfmBgQ1-Mbbpd-yGS7w/zh-cn_image_0000002701822580.png "点击放大")
 3. 切换到“Call Trees”页签，该部分数据展示了详细的内存分配栈信息，同样需要选择Created & Existing。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/YC5wdveDRA63k4QgPlwOCw/zh-cn_image_0000002731541855.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/Zw7ZQXHfRou0WTjXPeUM8A/zh-cn_image_0000002731541855.png "点击放大")
 4. 优先在内存分配栈信息中寻找与业务代码强相关的Symbol Name，即Category中为亮色。从上图中看，主要泄漏点在业务代码侧，需要结合业务代码进行分析。
 
    **说明** 

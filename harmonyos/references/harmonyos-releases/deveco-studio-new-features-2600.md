@@ -3,12 +3,53 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/deveco-stud
 title: 新增和增强特性
 breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > DevEco Studio（Windows/macOS版） > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-10-09T08:12:02+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:d29f8f6b52895f1470a84a82e9b2422a2e129ad89f7b6d55b3db845d37a91123
+scraped_at: 2026-11-01T07:09:56+08:00
+doc_updated_at: 2026-10-31
+content_hash: sha256:b498ee317e3fd5db589ed347214ebfa4fdf37b00685e1cb8236c4058da74ac6c
 ---
 
-当前为DevEco Studio最新版本说明文档，如需查看DevEco Studio其它历史版本的功能新增、变更情况，请在左侧文档目录中选择相应版本。
+## DevEco Studio 26.0.0 Release（26.0.0.865）
+
+### 兼容性配套关系
+
+DevEco Studio 26.0.0.865携带的工具列表、支持的API范围及开发态版本号信息如下：
+
+**表1** DevEco Studio
+
+| 组件 | 版本 | 说明 |
+| --- | --- | --- |
+| HarmonyOS SDK | HarmonyOS 26.0.0 Release SDK | - |
+| HarmonyOS Emulator | 26.0.0.402 | 模拟器。 |
+| Hvigor | 6.26.9 | 编译构建工具DevEco Hvigor（以下简称Hvigor），适用于API 10及以上的工程。 |
+| ohpm | 26.0.0.630 | OpenHarmony三方库的包管理工具。 |
+| Node.js | 24.14.1 | Hvigor、ohpm等工具的运行时环境。 |
+| modelVersion | 26.0.0 | 开发态版本号。 |
+| [compatibleSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 最低兼容版本：4.0.0(10) | 标识应用/元服务运行所需兼容的最低SDK版本。 |
+| [compileSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 26.0.0 | 标识编译应用/元服务所使用的SDK版本。 |
+| [targetSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 4.0.0(10)~26.0.0 | 标识应用/元服务运行所需目标SDK版本，介于compatibleSdkVersion和compileSdkVersion之间。 |
+
+DevEco Studio 26.0.0.865配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
+
+**表2** 命令行工具
+
+| 组件 | 版本 | 说明 |
+| --- | --- | --- |
+| Command Line | 26.0.0.865 | 命令行工具集版本。 |
+| codelinter | 6.0.240 | 执行代码检查与修复的工具。 |
+| hstack | 6.1.0 | 将release应用混淆后的crash堆栈还原为源码对应堆栈的工具。 |
+| hvigorw | 6.26.9 | 编译构建工具DevEco Hvigor（以下简称Hvigor），适用于API 10及以上的工程。 |
+| ohpm | 26.0.0.630 | OpenHarmony三方库的包管理工具。 |
+| HarmonyOS Emulator | 26.0.0.402 | 模拟器。 |
+| Node.js | 24.14.1 | codelinter、hvigorw、hstack、ohpm等工具的运行时环境。 |
+| sdk | HarmonyOS 26.0.0 Release SDK | - |
+| modelVersion | 26.0.0 | 开发态版本号。 |
+| [compatibleSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 最低兼容版本：4.0.0(10) | 标识应用/元服务运行所需兼容的最低SDK版本。 |
+| [compileSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 26.0.0 | 标识编译应用/元服务所使用的SDK版本。 |
+| [targetSdkVersion](../harmonyos-guides/ide-hvigor-build-profile-app.md#section45865492619) | 4.0.0(10)~26.0.0 | 标识应用/元服务运行所需目标SDK版本，介于compatibleSdkVersion和compileSdkVersion之间。 |
+
+### 新增和增强特性
+
+无新增和增强特性。
 
 ## DevEco Studio 26.0.0 Release（26.0.0.851）
 
@@ -16,7 +57,7 @@ content_hash: sha256:d29f8f6b52895f1470a84a82e9b2422a2e129ad89f7b6d55b3db845d37a
 
 DevEco Studio 26.0.0.851携带的工具列表、支持的API范围及开发态版本号信息如下：
 
-**表1** DevEco Studio
+**表3** DevEco Studio
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -32,7 +73,7 @@ DevEco Studio 26.0.0.851携带的工具列表、支持的API范围及开发态�
 
 DevEco Studio 26.0.0.851配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
 
-**表2** 命令行工具
+**表4** 命令行工具
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -59,7 +100,7 @@ DevEco Studio 26.0.0.851配套使用的命令行工具列表、支持的API范�
 
 DevEco Studio 26.0.0.821携带的工具列表、支持的API范围及开发态版本号信息如下：
 
-**表3** DevEco Studio
+**表5** DevEco Studio
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -75,7 +116,7 @@ DevEco Studio 26.0.0.821携带的工具列表、支持的API范围及开发态�
 
 DevEco Studio 26.0.0.821配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
 
-**表4** 命令行工具
+**表6** 命令行工具
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -152,7 +193,7 @@ DevEco Studio 26.0.0.821配套使用的命令行工具列表、支持的API范�
 
 DevEco Studio 26.0.0.621携带的工具列表、支持的API范围及开发态版本号信息如下：
 
-**表5** DevEco Studio
+**表7** DevEco Studio
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -168,7 +209,7 @@ DevEco Studio 26.0.0.621携带的工具列表、支持的API范围及开发态�
 
 DevEco Studio 26.0.0.621配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
 
-**表6** 命令行工具
+**表8** 命令行工具
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -216,7 +257,7 @@ DevEco Studio 26.0.0.621配套使用的命令行工具列表、支持的API范�
 
 DevEco Studio 26.0.0.461携带的工具列表、支持的API范围及开发态版本号信息如下：
 
-**表7** DevEco Studio
+**表9** DevEco Studio
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -232,7 +273,7 @@ DevEco Studio 26.0.0.461携带的工具列表、支持的API范围及开发态�
 
 DevEco Studio 26.0.0.461配套使用的命令行工具列表、支持的API范围及开发态版本号信息如下：
 
-**表8** 命令行工具
+**表10** 命令行工具
 
 | 组件 | 版本 | 说明 |
 | --- | --- | --- |
@@ -282,6 +323,7 @@ DevEco Studio 26.0.0.461配套使用的命令行工具列表、支持的API范�
 
 **构建应用**
 
+* hvigor-config.json5文件的properties下新增ohos.rollup.transform.useUnifiedAst字段，用于指定是否开启ArkTS编译转换过程中的AST（抽象语法树）合一优化。具体请参考[hvigor-config.json5文件](../harmonyos-guides/ide-hvigor-set-options.md)。
 * 工程级build-profile.json5文件的strictMode下新增apiCompatibilityCheck字段，用于设置ArkTS API兼容性检测级别。具体请参考[工程级build-profile.json5文件](../harmonyos-guides/ide-hvigor-build-profile-app.md)。
 * 工程级build-profile.json5文件的tscConfig下新增tsImportSoCheck字段，用于指定编译时是否对.ts文件中导入.so文件内的符号进行类型解析。具体请参考[工程级build-profile.json5文件](../harmonyos-guides/ide-hvigor-build-profile-app.md)。
 * HAP/HSP模块级build-profile.json5文件的nativeLib下新增enableSoDirCollection字段，用于指定ets文件中是否能够加载libs/{ABI}/子目录下的so文件。具体请参考[配置CPP](../harmonyos-guides/ide-hvigor-cpp.md)。

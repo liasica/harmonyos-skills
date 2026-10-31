@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/developer-car
 title: 开发者关怀
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 开发者模式 > 开发者关怀
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:30+08:00
+scraped_at: 2026-11-01T07:12:54+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:191e33a6cb7a2243bdb3ae22c6066a268db168481a2310d15bde562442889e1f
+content_hash: sha256:940068b279e000a925508241542684cbed86f891a220a4698d0c201a7c101af8
 ---
 
 从HarmonyOS 6.1开始，支持开发者关怀功能。开发者关怀致力于为您提供安全友好的开发体验，解决您在设备调试过程中因系统安全保护机制而遇到的不便。例如：当您的设备多次出现系统异常重启后，出于安全考虑，系统将关闭并锁定开发者选项。若您的设备出现开发者选项开启失败的情况，可借助“开发者关怀”功能解决您的问题。
@@ -14,7 +14,7 @@ content_hash: sha256:191e33a6cb7a2243bdb3ae22c6066a268db168481a2310d15bde5624428
 
 考虑到您的设备可能处于不同的网络环境，我们提供了在线解锁与离线解锁2种方法，二者最大的区别在于您的设备是否能联网，以及解锁过程中是否需要您的协助。联网情况下，设备将自动上传解锁请求给AGC（AppGallery Connect，华为应用市场），并根据AGC下发的解锁凭据自动解锁设备的开发者选项；未联网情况下，上传解锁请求和下载解锁凭据将需要您的协助，具体如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/x5z4R6rDRKqhOCgBNViB2w/zh-cn_image_0000002731541973.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/B6J-bS9VQrGS9ZpbsUtg1A/zh-cn_image_0000002731541973.jpg "点击放大")
 
 ## 使用流程
 
@@ -30,7 +30,7 @@ content_hash: sha256:191e33a6cb7a2243bdb3ae22c6066a268db168481a2310d15bde5624428
 
 **图1** 解锁操作流程示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/NGgjshjtQkKolMkWieWi7w/zh-cn_image_0000002731381993.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/vqgT0BTXRUmphWciATD-mg/zh-cn_image_0000002731381993.png "点击放大")
 
 ### 在线解锁
 
@@ -42,7 +42,7 @@ content_hash: sha256:191e33a6cb7a2243bdb3ae22c6066a268db168481a2310d15bde5624428
 
    点击“取消”按钮，打开设备WiFi或数据流量，确保设备可联网。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/voJuMICeRM-XwX_os-7j1w/zh-cn_image_0000002731381995.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/HnQovuctQQCdcSoEoiZv0Q/zh-cn_image_0000002731381995.png "点击放大")
 2. 触发在线解锁。
 
    您再次尝试打开开发者选项，触发在线自动解锁，在“开发者模式打开失败”弹窗界面点“取消”退出。
@@ -60,7 +60,7 @@ content_hash: sha256:191e33a6cb7a2243bdb3ae22c6066a268db168481a2310d15bde5624428
 
    点击“离线解锁设备”按钮，触发离线解锁，在弹窗“导出成功”后，设备会在Download/SecurityGuardAssistant路径生成解锁申请文件panic.json，导出此文件到电脑。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/s7O1xi_wQEuYZZelFivl6Q/zh-cn_image_0000002701662772.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/fJu5a7TBTLWpxwbqC7TbDA/zh-cn_image_0000002701662778.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/uzWe40iaThexkllWuqjUdg/zh-cn_image_0000002701662772.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/xgwmnmemQeWi8Uhj1ODomQ/zh-cn_image_0000002701662778.png "点击放大")
 2. 访问AGC网站，申请解锁凭据。
 
    在电脑端访问AGC网站【开发与服务】->【质量】->【开发者关怀】页面，上传解锁申请文件panic.json，获取解锁凭据文件。
@@ -68,18 +68,18 @@ content_hash: sha256:191e33a6cb7a2243bdb3ae22c6066a268db168481a2310d15bde5624428
    * AGC网址：[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject/461323198430420904/97458334310914890?extrainfo=)，登录您的华为开发者账户，进入后选择或者创建一个项目。
      + 登录AGC网站后，选择【开发与服务】页面，如果您之前没有创建过项目，请点击【添加项目】，输入项目名称后点击【完成】。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/LmloIOOqSAGzAs71s3m1Zw/zh-cn_image_0000002731541961.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/nfjYH_mGTFulLz7r2skrDA/zh-cn_image_0000002731541961.png "点击放大")
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/F__ufH34S5SuPMYXbX6o6Q/zh-cn_image_0000002701822702.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/lwoTRcTgQ52dttTbtnCxKA/zh-cn_image_0000002701822702.png "点击放大")
      + 登录AGC网站后，选择【开发与服务】页面，如果您之前创建过项目，选择已存在的项目即可。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/prNg0jHNSHO7PVsBSK4WGg/zh-cn_image_0000002701822690.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/zq_07rAbTs-Po-9B2MvmzQ/zh-cn_image_0000002701822690.png "点击放大")
      + 在【开发与服务-项目】页面，【质量】栏目下即可看到【开发者关怀】菜单，具体如下图所示。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/IHofnUM7SG2wJrWLEG5COQ/zh-cn_image_0000002731382001.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/QFfglzsJRyGxpwT-kQRTaw/zh-cn_image_0000002731382001.png "点击放大")
    * 进入开发者关怀界面，上传解锁申请文件后，页面会生成1个解锁凭据文件panic.unlock，请下载该文件到电脑，具体如下图所示。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/qDCsQhCLSUCiDihf88BNvA/zh-cn_image_0000002731541969.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/ZoMvksu4Qq-RWFhNm64wmg/zh-cn_image_0000002731541969.png "点击放大")
 3. 导入解锁凭据到设备并尝试开启开发者选项。
 
    把解锁凭据导入到设备中（与离线解锁申请文件同路径Download/SecurityGuardAssistant），再次尝试打开开发者选项。

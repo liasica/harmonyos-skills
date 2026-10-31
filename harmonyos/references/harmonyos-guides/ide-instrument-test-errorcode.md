@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-instrumen
 title: 仪器测试错误码
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 测试框架 > 测试框架错误码 > 仪器测试错误码
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:32+08:00
+scraped_at: 2026-11-01T07:12:56+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:ca1f3917f538c0cc236d508b629ae48473f81aabd883dc23cbb4556ee1a60331
+content_hash: sha256:cce0f3860c946abb124fd73a77e93cdb7218b4daa1a41aa7a3cef311a15f785e
 ---
 
 ## 00501001 测试套件名称含有变量
@@ -156,7 +156,7 @@ Current test case XXX not found in the test file.
 * 选择要运行的测试用例，重新运行。
 * 在运行配置窗口修改Method name。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/u4zucp7BSQOinYQpYloe7Q/zh-cn_image_0000002731541897.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/yErqiGcORSSsVZylgpp8uw/zh-cn_image_0000002731541897.png)
 
 ## 00502002 找不到测试用例
 
@@ -210,7 +210,7 @@ The current file does not have any function registered in the list file.
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/KpjKTtmHSA6dDw95dr5RYQ/zh-cn_image_0000002701662704.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/mpUl2Ms2R069Neub5tC0Tg/zh-cn_image_0000002701662704.png)
 
 ## 00502005 测试包中的所有函数都没有在List.test.ets文件中注册
 
@@ -230,7 +230,7 @@ The current package does not have any function registered in the list file.
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/Fla6ETimSV-DirXbdPBlEA/zh-cn_image_0000002731541895.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/HiZX5z3iRyi--LG6X9wgCQ/zh-cn_image_0000002731541895.png)
 
 ## 00502006 函数没有在List.test.ets文件中注册
 
@@ -250,7 +250,7 @@ The function where the suite XXX is located is not registered in the ''List.test
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/1JQVgNG4RQKs6AhOhZzukw/zh-cn_image_0000002701822626.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/jpO_eI0ySOi32RwAGBBumA/zh-cn_image_0000002701822626.png)
 
 ## 00502007 测试文件中找不到测试套件
 

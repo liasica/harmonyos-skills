@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-co
 title: 实践说明
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 定制构建 > 灵活定制编译选项 > 实践说明
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:33+08:00
+scraped_at: 2026-11-01T07:12:57+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:c485bfac4e10dd6c5c61e5adf415809a64903db9a780dd6a5b726776ac9266e1
+content_hash: sha256:6f08f5308e4f6e70cd378fdf7dcab3947ff8ecb99aa131784db34bb7cb8eae7d
 ---
 
 应用正式对外发布版本前，需要对应用进行代码调试。调试和正式发布版本，两者编译行为可能不同。此时，可以利用buildMode能力，来定制两个版本的编译差异性。
@@ -14,7 +14,7 @@ content_hash: sha256:c485bfac4e10dd6c5c61e5adf415809a64903db9a780dd6a5b726776ac9
 
 示例工程中包含一个模块entry，将entry模块交付到构建产物default中，模块定制两种不同的编译模式debug、release，将两种构建模式均绑定到构建产物default中。工程示例图如下（模块）：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/cFtCHqoHSgG9FRTumi9s2Q/zh-cn_image_0000002701822550.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/_MMGbiQPRByScLD-Tz0cPw/zh-cn_image_0000002701822550.png)
 
 ## 工程级build-profile.json5示例
 
@@ -140,7 +140,7 @@ hvigorw --mode project -p product=default -p buildMode=debug assembleApp
 
 编译产物示例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/bw6EUIt6Tce8G8-ZU5OBVw/zh-cn_image_0000002731381851.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/37JJBY5oT9Sic7AMV5_lOQ/zh-cn_image_0000002731381851.png)
 
 示例2：构建APP时，构建产物为default，指定构建模式为release，可执行如下命令：
 
@@ -150,10 +150,10 @@ hvigorw --mode project -p product=default -p buildMode=release assembleApp
 
 编译产物示例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/tlFmvUJxRnGWk_vE0Oy02Q/zh-cn_image_0000002701662636.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/cXxDBEujQVm4w1w55RZiFA/zh-cn_image_0000002701662636.png)
 
 ### DevEco Studio界面
 
 在DevEco Studio界面进行可视化配置，Product选择default，Build Mode选择debug后，点击Build -> Build Hap(s)/APP(s) -> Build APP(s) ，打包出产物为default、构建模式为debug的APP包。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/JQfsdpadR9OyIPf5JgLRYg/zh-cn_image_0000002731541825.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/t5lb53EBSd-9vOxztsK7qA/zh-cn_image_0000002731541825.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hot-reloa
 title: Hot Reload
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > Hot Reload
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:31+08:00
+scraped_at: 2026-11-01T07:12:55+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:ecc8c1273f2d3ed4f1f483cefd754b673cf9bca5f744bb8f523521adced8df24
+content_hash: sha256:afcc5e290842f74c2acc3e3aaf7e10a3b388bd0b7ce374abd7fa263fe86d2cef
 ---
 
 DevEco Studio提供Hot Reload（热重载）能力，支持开发者在真机或模拟器上运行/调试应用时，修改代码并保存后无需重启应用，在真机或模拟器上即可使用最新的代码，帮助开发者更快速地进行调试。
@@ -87,24 +87,24 @@ Hot Reload不支持卡片，不建议在hotReload模式下执行与卡片相关�
 * **Enable hot restart**：开启热重启。
 * **Enable Apply Changes**：开启Apply Changes。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/bXMXa_PqQna9BLsXiWL6Pw/zh-cn_image_0000002731381929.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/N0q1xN3RT1i2shoIEkQlCA/zh-cn_image_0000002731381929.png)
 
 ## 操作步骤
 
 1. 连接真机设备或模拟器。
-2. 在下拉菜单中，将运行/调试配置切换为Hot Reload的配置![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/wzcvBEm4TauWPzODgF33Gw/zh-cn_image_0000002701822634.png)。
+2. 在下拉菜单中，将运行/调试配置切换为Hot Reload的配置![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/L78VX5L1TW-OzxY2KswURQ/zh-cn_image_0000002701822634.png)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/-k6XpW52RuWjMWV8VeYQBw/zh-cn_image_0000002701662708.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/n2X1KxOHTOehxjOuLCn88g/zh-cn_image_0000002701662708.png)
 3. 运行/调试应用，请参考[使用本地真机运行应用](ide-run-device.md)或[使用模拟器运行应用](ide-run-emulator.md)。
 4. 修改代码后，可以通过如下操作，查看设备上修改后的显示效果。
-   * 方式一：点击Hot Reload![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/4v7j7B6HQyewuqHlnl8o1w/zh-cn_image_0000002701822630.png)按钮：
+   * 方式一：点击Hot Reload![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/SKcwz_gUR4GdjOJzibwGyA/zh-cn_image_0000002701822630.png)按钮：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/K1aXn_xBRhi7qQLfJyFJvQ/zh-cn_image_0000002701822628.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/RDQasn_UTSaVSfQUIiLUhw/zh-cn_image_0000002701822628.png)
    * 方式二：通过快捷键方式触发Hot Reload：需要先在菜单栏点击**File > Settings**（macOS为**DevEco Studio > Preferences/Settings**），选择**Tools > Actions on Save**，勾选**Perform hot reload**，点击**OK**完成设置。修改代码后通过快捷键**Ctrl + S**即可触发Hot Reload。
 
      方式二不支持Apply Changes，如需使用Apply Changes功能，请使用方式一。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/FBe89SxjRnOML2ckyMTZcQ/zh-cn_image_0000002701662710.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/aNtvn5fZSm-2INkanlavEw/zh-cn_image_0000002701662710.png)
 
    成功执行热重载后，控制台会打印以下内容：
 

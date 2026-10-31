@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-code-options
 title: 命令
-breadcrumb: 指南 > DevEco Code > 命令
+breadcrumb: 指南 > DevEco Code > DevEco Code TUI > 命令
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:39+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-11-01T07:13:14+08:00
+doc_updated_at: 2026-10-31
 content_hash: sha256:903cfd2307dcd497f67f637688a6e1fd1f02de6e5868cdbc5182ad512a587623
 ---
 

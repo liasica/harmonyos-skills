@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-peak-dyna
 title: 动态内存峰值占用
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 附录 > 体检规则 > 动态内存峰值占用
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:32+08:00
+scraped_at: 2026-11-01T07:12:56+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:4345c41f243d0651241f65672b2408728a0b08ca05b87e1ad07309b8334f22b1
+content_hash: sha256:1fe5191da7a0d4405f408241dc9afbb58294d9cdc2b616050ee39820a215e2fa
 ---
 
 ## 规则详情
@@ -17,7 +17,7 @@ content_hash: sha256:4345c41f243d0651241f65672b2408728a0b08ca05b87e1ad07309b8334
 1. 执行hdc shell。
 2. 执行hidumper --mem <进程pid>命令，获取如图Pss字段。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/GprQCeMARN-uL6eVfo_iIw/zh-cn_image_0000002731543113.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/61nlloEyRuSQQY-hI1iq9g/zh-cn_image_0000002731543113.png)
 
 ## 计算逻辑
 

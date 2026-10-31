@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-list
 title: ohpm list
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm list
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:37+08:00
+scraped_at: 2026-11-01T07:13:01+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:39864336877811b205ad08bf48f4ab108fc77f3495f80e4a94bedfddae5a89e9
+content_hash: sha256:df7db3e50c727f19ac7c7018ecfc54ee5396eba5dc568058f5114586b0dbfd89
 ---
 
 列出已安装的三方库。
@@ -108,7 +108,7 @@ OHPM客户端从5.2.0版本开始，可以在 list 命令后面配置 -r 或者 
 
   结果示例：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/CL6hSaLTTBW4cDMOKjaiWA/zh-cn_image_0000002731542985.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/GnzlZj1gQbeSMdF9Mhg6DQ/zh-cn_image_0000002731542985.png "点击放大")
 * 查看当前项目安装的**某个**三方库的依赖关系
 
   执行以下命令：
@@ -119,7 +119,7 @@ OHPM客户端从5.2.0版本开始，可以在 list 命令后面配置 -r 或者 
 
   结果示例：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/RPiNFoheQb6vlBYCi1iZaw/zh-cn_image_0000002731383013.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/1IbGPU3zS66c-9SDAVzroQ/zh-cn_image_0000002731383013.png)
 * 查看当前项目所有module安装的**所有**三方库及依赖关系。
 
   执行以下命令：

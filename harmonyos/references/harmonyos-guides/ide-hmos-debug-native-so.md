@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-debu
 title: so信息可视化
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > so信息可视化
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:47+08:00
+scraped_at: 2026-11-01T07:13:10+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:1ad3cb8e8e11f3e9df24937b3a15a7869b21eb73da6c35fb4bed083d9883af78
+content_hash: sha256:560ec2666f3bb68243d43283451673363101ca5528685e39690e3aad4f6a36f7
 ---
 
 在Native调试窗口中，选择**模块**页签，打开模块视图。
 
 在Native调试期间，**模块**窗口会列出并显示有关应用使用的so信息。部分属性可按升序/降序来排序，部分属性支持过滤。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/8smLp3BCR8u-c1RT4AGXgA/zh-cn_image_0000002750009634.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/rRLs41LfQMulOYjQE6iZnw/zh-cn_image_0000002750009634.png)

@@ -1,6 +1,6 @@
 # HarmonyOS 文档全量索引
 
-共 17102 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
+共 17114 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
 
 ## 版本说明（`harmonyos-releases`）— 1251 篇
 
@@ -1256,7 +1256,7 @@
 - [应用升级适配指导——向26.0.0升级](harmonyos-releases/upgrade-adaptation.md)
 - [版本号格式调整说明](harmonyos-releases/version-number-26.md)
 
-## 指南（`harmonyos-guides`）— 6155 篇
+## 指南（`harmonyos-guides`）— 6167 篇
 
 - [24h功耗器件分解统计事件](harmonyos-guides/24-hour-battery-usage-event.md)
 - [aa工具](harmonyos-guides/aa-tool.md)
@@ -4416,7 +4416,19 @@
 - [模型配置](harmonyos-guides/ide-deveco-code-model.md)
 - [命令](harmonyos-guides/ide-deveco-code-options.md)
 - [工具概述](harmonyos-guides/ide-deveco-code-overview.md)
+- [常见问题](harmonyos-guides/ide-deveco-code-plugin-faq.md)
+- [迁移CodeGenie数据至DevEco Code常见问题](harmonyos-guides/ide-deveco-code-plugin-faq1.md)
+- [自然语言生成代码](harmonyos-guides/ide-deveco-code-plugin-generate-code.md)
+- [操作指南](harmonyos-guides/ide-deveco-code-plugin-guide.md)
+- [快速入门](harmonyos-guides/ide-deveco-code-plugin-install.md)
+- [配置Models](harmonyos-guides/ide-deveco-code-plugin-models.md)
+- [斜杠命令](harmonyos-guides/ide-deveco-code-plugin-options.md)
+- [配置Skill](harmonyos-guides/ide-deveco-code-plugin-skill.md)
+- [修复编译报错](harmonyos-guides/ide-deveco-code-plugin-smart-fix.md)
+- [UX设计稿生成代码](harmonyos-guides/ide-deveco-code-plugin-ux.md)
+- [DevEco Studio Plugin](harmonyos-guides/ide-deveco-code-plugin.md)
 - [版本说明](harmonyos-guides/ide-deveco-code-releasenote.md)
+- [DevEco Code TUI](harmonyos-guides/ide-deveco-code-tui.md)
 - [开发者选项](harmonyos-guides/ide-developer-mode.md)
 - [开发者模式](harmonyos-guides/ide-developer-options.md)
 - [访问设备文件](harmonyos-guides/ide-device-file-explorer.md)

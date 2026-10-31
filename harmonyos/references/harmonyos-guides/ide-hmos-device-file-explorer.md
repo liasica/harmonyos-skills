@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-devi
 title: 访问设备文件
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 应用调试 > 访问设备文件
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:47+08:00
+scraped_at: 2026-11-01T07:13:10+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:c099572dc14646028f8a6046d0210a492fcf8bb9eee48d62ba2a7a6797358b11
+content_hash: sha256:038a9fd0f05f20587f435df7395f487ce677b62f322c8813c6de1dbf5baf6cbf
 ---
 
 开发者可以使用设备文件浏览器，在鸿蒙电脑DevEco Studio上进行文件新建、删除、上传、下载等操作，而无需使用命令行，提升开发效率，当前支持普通文件视图与应用沙箱视图两种模式。
@@ -28,37 +28,37 @@ content_hash: sha256:c099572dc14646028f8a6046d0210a492fcf8bb9eee48d62ba2a7a67973
 
 ## 操作步骤
 
-1. 在编辑器右侧点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/taGa5LSiT-mZ5vyqOQdtYA/zh-cn_image_0000002779728941.png "点击放大")图标打开设备文件浏览器。
+1. 在编辑器右侧点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/YN7q2gy8Tbu40B8ouaN5mw/zh-cn_image_0000002779728941.png "点击放大")图标打开设备文件浏览器。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/rljRlf5jQ1mo6RBMB5zeUw/zh-cn_image_0000002750169768.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/QueG4D-ORKqFEXXuPsCAFw/zh-cn_image_0000002750169768.png)
 2. 从下拉列表中选择设备（设备需已连接）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/BjRid-D7QO-a36r8evDhAw/zh-cn_image_0000002750169770.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/LxR38nPNR72M0O9w0rC_TQ/zh-cn_image_0000002750169770.png)
 3. 选择设备后，显示文件/文件夹列表，可进行以下操作：
    1. 右键单击目录或文件，进行新建/删除操作。
    2. 右键单击**下载**将选定的文件或目录下载到本地，右键单击**上传**将本地文件上传到设备指定目录。
    3. 在搜索框中输入关键字，可以对目录和文件进行搜索。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/ewWpqRV-Rby9ONRjbJW1qQ/zh-cn_image_0000002750009882.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/oCVlolRYTpOve1PC3rs9CA/zh-cn_image_0000002750009882.png)
    4. 双击某个文件可在DevEco Studio中将其打开。打开文件会默认下载文件到临时目录，关闭文件后，临时文件将被删除。
-   5. 如果通过命令行方式上传文件到设备后，需要右键对应文件夹，选择**刷新**后（或点击顶部![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/NZF2g6iYSWOeReRwfQlPww/zh-cn_image_0000002750009880.png "点击放大")刷新按钮）才可以在**设备文件浏览器**窗口中显示该文件。
+   5. 如果通过命令行方式上传文件到设备后，需要右键对应文件夹，选择**刷新**后（或点击顶部![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/nvqyByXoSNy1tKjDcqYWTg/zh-cn_image_0000002750009880.png "点击放大")刷新按钮）才可以在**设备文件浏览器**窗口中显示该文件。
 
 ## 普通文件视图
 
 普通文件视图将按照设备的真实物理路径显示当前设备上的文件结构。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/Ft3LKYLeTFedCQwjSX-VCw/zh-cn_image_0000002779608797.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/P8SYsg_vSJuuDzZ8WXy9NQ/zh-cn_image_0000002779608797.png)
 
 ### 公共目录
 
 用户的桌面、文档、下载等公共目录位于/storage/media/100/local/files/Docs路径下，支持删除、上传、下载操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/TOg0AfASTY2wv064hhNcyg/zh-cn_image_0000002750169778.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/JuObQh1FTOuW7-AXacQHYA/zh-cn_image_0000002750169778.png)
 
 ## 应用沙箱视图
 
-连接真机设备，将调试应用推送到设备上并运行。点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/y4qOlW-4TsmmaI8z3WyQdQ/zh-cn_image_0000002779728939.png)显示调试签名应用列表。
+连接真机设备，将调试应用推送到设备上并运行。点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/gFE5T6cSRT-UwX9ro5U2pw/zh-cn_image_0000002779728939.png)显示调试签名应用列表。
 
 应用沙箱视图将按照应用的沙箱文件路径显示应用的沙箱文件结构，支持文件的新建、删除、上传、下载等操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/6NKhHmBES1m-M7c1_fkxKg/zh-cn_image_0000002779728937.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/3WSmTGA5REuUUEX3G9WQXg/zh-cn_image_0000002779728937.png)

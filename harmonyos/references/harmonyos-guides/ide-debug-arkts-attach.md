@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-ark
 title: attach启动调试
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > ArkTS代码调试 > attach启动调试
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:30+08:00
+scraped_at: 2026-11-01T07:12:54+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:39cdca49074a82d9ad7c48a287f3b1b588e7f6d328a866dc7cc660c995278fac
+content_hash: sha256:6b258bc304650f1229977c3a67b155a5cd4b62323de8a9f68346cd1a12fa708d
 ---
 
 开发者也可以通过将调试程序attach到已运行的应用进行调试。
@@ -23,28 +23,28 @@ attach不支持的场景：
 * 本地无源码。
 * bundleName不匹配，将出现提示“The selected process does not match the bundlename of the current project!”，但不阻塞调试过程。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/q3uNr2i0TTuOf38HIQOwVg/zh-cn_image_0000002701823594.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/pJqVUe0JQoW5SAv06ZxvRQ/zh-cn_image_0000002701823594.png)
 
 ## 操作步骤
 
-1. 在工具栏中，选择调试的设备，并单击**Attach Debugger to Process**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/GTnR95CnSGuyZanLEloUlA/zh-cn_image_0000002701823596.png)启动调试。
+1. 在工具栏中，选择调试的设备，并单击**Attach Debugger to Process**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/fR96Hoh0SpiDr7lk9VB-oQ/zh-cn_image_0000002701823596.png)启动调试。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/UHjrtcWGSlK3r1itXxi5ew/zh-cn_image_0000002701663674.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/PYHY5eYDTYm9Gt4olT-t1g/zh-cn_image_0000002701663674.png)
 2. 选择要调试的应用进程，若应用bundleName与当前工程不一致，则需勾选Show all process。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/AkJ8tQ23QB2kCjdnPIbNCg/zh-cn_image_0000002701663676.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/Qh1Lpm6yToCmHVr3uPm1YQ/zh-cn_image_0000002701663676.png)
 
    **说明** 
 
    正常情况下，attach调试仅支持debug签名的应用，从DevEco Studio 6.0.2 Beta1版本开始，PC/2in1上的应用，如果使用了release签名并且配置了ohos.permission.kernel.ALLOW\_DEBUG权限，也支持被attach调试。
 3. 选择需要使用的调试配置，或者使用默认配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/XVJOv2BXQaO3ZPGsNNDUxw/zh-cn_image_0000002731542867.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/JWRFpk8ARwO6BtA6GDMoqw/zh-cn_image_0000002731542867.png)
 4. 选择需要调试的Debug type，若选择已创建的Run/Debug configuration进行attach调试，此时Debug type不可改变，只可在Run/Debug configuration界面修改。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/XHRdnZEqTvG0qAxafe7CFg/zh-cn_image_0000002731382895.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/BC6VT8kRSR-BvYZE19-dgQ/zh-cn_image_0000002731382895.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/iedGVMWcQUWeMcqOKbWi4Q/zh-cn_image_0000002701663672.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/BjbsCM2bTaiQiwSrWunsGA/zh-cn_image_0000002701663672.png)
 5. 点击**OK**开始attach调试。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/M7iEjiz-Rga37oQAgM4GSg/zh-cn_image_0000002731382897.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/OtT9ejubQHeSKtlUx4-U2w/zh-cn_image_0000002731382897.png)

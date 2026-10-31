@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-code-common-configure
 title: 常用配置
-breadcrumb: 指南 > DevEco Code > 常用配置
+breadcrumb: 指南 > DevEco Code > DevEco Code TUI > 常用配置
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:39+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-11-01T07:13:14+08:00
+doc_updated_at: 2026-10-31
 content_hash: sha256:59aac6a28eae163853964b8ac7026493ccc06aaff5c066d7a3466962e123c221
 ---
 

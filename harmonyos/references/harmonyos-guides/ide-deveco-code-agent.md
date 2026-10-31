@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-code-agent
 title: Agent模式
-breadcrumb: 指南 > DevEco Code > Agent模式
+breadcrumb: 指南 > DevEco Code > DevEco Code TUI > Agent模式
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:51+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:2e8f8df73c244191ee3be1b9dd689879153f472406b4417c2c34366fe7baedd4
+scraped_at: 2026-11-01T07:13:14+08:00
+doc_updated_at: 2026-10-31
+content_hash: sha256:32600fcc8914c06fc3c9691e54a94a2583aebfc91e5dc7447b558fd6fa4c4d08
 ---
 
 ## 功能概述
@@ -26,11 +26,11 @@ Windows/macOS版DevEco Code可配置模拟器进行推包验证。
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/cudNPdz6RnexxwnLDp7ZQw/zh-cn_image_0000002731383159.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/8N2zUtBfTP2mCvV6L9Y6Qg/zh-cn_image_0000002731383159.png "点击放大")
 
 ### 示例
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/a3/v3/76FbOQ5JQxuctd9rCMVpxg/zh-cn_media_0000002701663942.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/0b/v3/FhbJaVH2QaqUAZ49SgDpAQ/zh-cn_media_0000002701663942.mp4)
 
 ## Plan + Build模式
 
@@ -46,7 +46,7 @@ Windows/macOS版DevEco Code可配置模拟器进行推包验证。
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/FsOFcRncSIu_WC1JT1B3pA/zh-cn_image_0000002701823856.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/tGul9ShoRiu0Q69OugFS_A/zh-cn_image_0000002701823856.png "点击放大")
 
 Plan + Build模式实现流程分为三大阶段：
 
@@ -56,7 +56,7 @@ Plan + Build模式实现流程分为三大阶段：
 
 ### 示例
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/63/v3/_hcgkmf6SYCEhkgP71M7kw/zh-cn_media_0000002701823862.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/b3/v3/0Vuy3LmsTkSUGcbOC2Pftw/zh-cn_media_0000002701823862.mp4)
 
 ## Goal模式
 
@@ -72,7 +72,7 @@ Windows/macOS版DevEco Code可配置模拟器进行推包验证。
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/Uqf617HzRmiJeeC_wdS9aQ/zh-cn_image_0000002701663938.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/hv_fCCEaSLid1gPmdmUOhQ/zh-cn_image_0000002701663938.png "点击放大")
 
 Goal Agent实现流程分为两大阶段：
 
@@ -81,4 +81,4 @@ Goal Agent实现流程分为两大阶段：
 
 ### 示例
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/e/v3/QWGteCdWTjCcAiAgzQJj2A/zh-cn_media_0000002731543137.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/20/v3/S1vqn7XEQwCuMvnNNvGK3w/zh-cn_media_0000002731543137.mp4)

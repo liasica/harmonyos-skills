@@ -3,21 +3,21 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 创建云对象
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云对象 > 创建云对象
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:21+08:00
+scraped_at: 2026-11-01T07:12:46+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:56d1ee0571192a6e7a6ce16e61f62274b57a4e875c75f75abf817ed2caf5e2d2
+content_hash: sha256:3745f76560b3763bd8212463b40febb2324917ce6f8ee3f40f6e468f41616e3a
 ---
 
 首先您需要在云侧工程下创建云对象。
 
 1. 右击“cloudfunctions”目录，选择“New > Cloud Function”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/f_dNPmHSQkuPgDdMZRcgHw/zh-cn_image_0000002383015456.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/1yRs8Xw-RGmxfOtqj698sA/zh-cn_image_0000002383015456.png)
 2. 在“Select the Cloud Function Type”栏选择“Cloud Object”，输入云对象名称（如“my-cloud-object”），点击“OK”。
 
    与云函数名一样，云对象名称长度2-63个字符，仅支持小写英文字母、数字、中划线（-），首字符必须为小写字母，结尾不能为中划线（-）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/oIkSaQb-SxSIV-UF5skMrQ/zh-cn_image_0000002179498304.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/hJbuplmBT5OUXQmoVsW7dA/zh-cn_image_0000002179498304.png)
 
    “cloudfunctions”目录下生成新建的云对象目录，目录下主要包含如下文件：
    * 云对象配置文件“function-config.json”：包含handler、触发器等信息。
@@ -29,10 +29,10 @@ content_hash: sha256:56d1ee0571192a6e7a6ce16e61f62274b57a4e875c75f75abf817ed2caf
 
      云对象的配置文件“function-config.json”不建议手动修改，否则将导致云对象部署失败或其它错误。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/0FK6Rx1tR8Shf79t2AocOQ/zh-cn_image_0000002214858949.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/RIzExQcySf65Ccx4GPOtZA/zh-cn_image_0000002214858949.png)
    * 云对象入口文件“*xxx*.ts”（如“myCloudObject.ts”）：在此文件中编写云对象代码。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/NEfwTu5_SXyxBOuUvCPIyA/zh-cn_image_0000002214704565.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/9scGBblkSKKTy1uibj9NHQ/zh-cn_image_0000002214704565.png)
    * 云对象依赖配置文件“package.json”：在此文件中添加依赖。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/tFp-TGDIS6ayxkVpA1gIdA/zh-cn_image_0000002179338620.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/QdOsmgIqShCcum3eh6_1Yw/zh-cn_image_0000002179338620.png)

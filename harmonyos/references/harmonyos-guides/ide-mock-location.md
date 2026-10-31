@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-mock-loca
 title: 位置模拟
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 位置模拟
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:30+08:00
+scraped_at: 2026-11-01T07:12:54+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:4b31e8160e793f06418106ddfc70840636467808d174d8ea42670c3786d15cfd
+content_hash: sha256:8e173c63740ba48a0cc70a5110f0926833bcd75ab6f8dab54745764c1e06b583
 ---
 
 从26.0.0版本开始，新增位置模拟能力，帮助开发者调试和测试与地理位置相关的应用功能。
@@ -26,17 +26,17 @@ content_hash: sha256:4b31e8160e793f06418106ddfc70840636467808d174d8ea42670c3786d
 
 1. 点击菜单栏**View > Tool Windows > Device File Browser**，打开Device File Browser。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/Ue2lnKGPQdykEwkqh9LI1A/zh-cn_image_0000002731382515.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/y-iHqPM7SvGfDlO1tI9weA/zh-cn_image_0000002731382515.png)
 2. 点击图示按钮，打开位置模拟窗口。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/TFMwNyZ_Qvar0p0lqvkf0Q/zh-cn_image_0000002701663292.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/RYqMcZMZSxeo6DrbNQ1dPQ/zh-cn_image_0000002701663292.png)
 3. 设置位置信息，提供两种模式。
    * **Manual**：适用于模拟静态位置。手动输入此时所处位置的经度、纬度、海拔以及方位角。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/UNM-hcbYRImZjeAWx_SEDA/zh-cn_image_0000002731542489.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/WOySowrtRZ-R05L7gcq2ZQ/zh-cn_image_0000002731542489.png)
    * **Replay**：适用于模拟移动轨迹或连续位置变化。点击**Open**导入本地的GPX文件，设置时间间隔后，点击**Apply**即可按设定的时间间隔上报GPX文件中的轨迹信息。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/6prTLzR6SzSfq4Qsls6_PA/zh-cn_image_0000002731382513.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/cTqtXiXdRG63zLXjapJrbg/zh-cn_image_0000002731382513.png)
 4. 如需取消位置模拟能力，将**Virtual location**去勾选，即可恢复使用设备的真实地理位置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/c7_RedmQRgK1AhvSMIM9VQ/zh-cn_image_0000002731542485.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/aG0_Pis-TSmsQfTkEpFMXQ/zh-cn_image_0000002731542485.png)

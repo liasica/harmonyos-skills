@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-compile-b
 title: 构建产物说明
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 概述 > 构建产物说明
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:33+08:00
+scraped_at: 2026-11-01T07:12:56+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:4b1779c19cfa0c6c06db780baabf2af9dca14c500c822dfcd85a6839696b0558
+content_hash: sha256:907cc0a4ffd4093c659ee6c37f52d76137a9f63d88da09cc52d66b745eda8d69
 ---
 
 ## HAP/HSP构建产物说明
 
 以HAP为例，release模式的构建产物一般包含以下文件：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/MQqjGicJR52qedusIUew8Q/zh-cn_image_0000002701662784.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/7z99U7EsQsCg1hrjzr8cJw/zh-cn_image_0000002701662784.png)
 
 * resources：构建产物中的资源文件目录，如图片、媒体资源、配置文件等。
 * modules.abc：构建产物中通过源码编译出的字节码文件。
@@ -36,7 +36,7 @@ content_hash: sha256:4b1779c19cfa0c6c06db780baabf2af9dca14c500c822dfcd85a6839696
 
 APP构建产物如下，其中包名取决于个人项目中的模块名，与下图可能不同：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/cfCcgcSsTdOFvmLhZb5rrQ/zh-cn_image_0000002731541977.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/YhrF1sA1QzWkdoXnhU0ZLQ/zh-cn_image_0000002731541977.png)
 
 * entry-default.hap：由字节码、资源、三方库、配置文件等打包生成的entry类型的hap包，是App应用安装和运行的基本单元，application-default.hap是feature类型的hap包。
 * library-default.hsp：由字节码、资源、三方库、配置文件等打包生成的动态共享包，可实现代码和资源共享。

@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-code-install
 title: 下载与安装
-breadcrumb: 指南 > DevEco Code > 下载与安装
+breadcrumb: 指南 > DevEco Code > DevEco Code TUI > 下载与安装
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:52+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:fe5c8709b4ea5e8524f0ad0bb9d6854dd80f08ff05d40875283d5a9f7f55f0a8
+scraped_at: 2026-11-01T07:13:14+08:00
+doc_updated_at: 2026-10-31
+content_hash: sha256:f1b4c428595e8f7438adb3ac15f94c4337c8416dac61c9e65d7c5398ffdf2636
 ---
 
 DevEco Code支持通过npm包管理器进行分发，开发者可以在系统命令窗口或PowerShell中全局安装后，独立调用相关命令，灵活性高。同时，DevEco Code也支持在DevEco Studio的集成终端中直接使用，开发者无需额外配置即可在DevEco Studio终端调用相关命令，操作便捷。
@@ -205,19 +205,19 @@ npm uninstall -g @deveco/deveco-code   // 保留运行时数据，只卸载安�
 
 在鸿蒙电脑版DevEco Studio的菜单栏点击**安装DevEco Code**，等待完成安装。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/g8XC0Q1oSWWtGeSdanyn5A/zh-cn_image_0000002769879513.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/ZkRfKXE7SD2KKOl7r5UM9Q/zh-cn_image_0000002769879513.png "点击放大")
 
 ### 启动与登录
 
 1. 安装完成后，点击**新对话**新建并开启一个会话。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/1vrZOoueSJ20AJMvSwilqw/zh-cn_image_0000002769999383.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/hpCxmBQXRMmIS4BgfeJtTQ/zh-cn_image_0000002769999383.png)
 2. 选择信任当前文件夹，并点击链接登录华为账号。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/4D6NdX2CRLaivRX5gDgP4A/zh-cn_image_0000002740480074.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/2fwbIps2SgWobun6gGPr2w/zh-cn_image_0000002740480074.png)
 3. 登录完成后，在终端开始体验DevEco Code。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/4GhQRgkuTrS-f652oQRs1A/zh-cn_image_0000002769880455.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/atx5I2z2R1WeqTtOGR3l7Q/zh-cn_image_0000002769880455.png)
 
 ### 更新与卸载
 

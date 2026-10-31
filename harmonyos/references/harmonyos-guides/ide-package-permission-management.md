@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-package-p
 title: 包权限管理
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 页面功能介绍 > 包权限管理
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:20+08:00
+scraped_at: 2026-11-01T07:12:45+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:46db9a1b8337efe00cd51e2b171e609c02ef18e75180203a1859b6de08431a46
+content_hash: sha256:b10766c5f203bc62d4a10069c7ceadf668aa293afb3d9436eca25e5f4b13a2a8
 ---
 
 ohpm-repo从5.3.0版本开始支持配置包级别的权限管理。系统支持对单个三方包配置精细化的权限控制，包含包的所有者、包的维护者和包的查看者。
@@ -30,25 +30,25 @@ ohpm-repo从5.3.0版本开始支持配置包级别的权限管理。系统支持
 4. 管理维护者。
 5. 转移所有者。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/MTWMptzXTTqaAmoKK5TNWw/zh-cn_image_0000002731541801.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/TuJ8pDTRRdSL7iRA2a8ngg/zh-cn_image_0000002731541801.png "点击放大")
 
 * 区域1：筛选，点击列表标题旁的漏斗图标，可以进行包数据的筛选，支持针对包名和仓库名进行模糊搜索。例如筛选出包名含有group3，仓库名为ohpma的包，数据筛选效果如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/m0iRh_39RQyLLK9E1ZdI8g/zh-cn_image_0000002731381833.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/I5mI_WTsRpmPEAy7aOUIgQ/zh-cn_image_0000002731381833.png "点击放大")
 * 区域2：查看包所有版本列表，点击版本数量中的值，能够查看当前包具有多少个版本。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/_FDC-jQ3RhKMtUOKs7u_Ng/zh-cn_image_0000002701662600.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/NWQ3wYDgT8iJKxbp74UKyw/zh-cn_image_0000002701662600.png "点击放大")
 * 区域3：管理所有者，包的所有者具有包的下载，上传，下架和编辑包Tag权限，支持对包所有者进行新增和删除。
 
   当包仅剩唯一一个所有者用户时，禁止删除。当一个用户已经是包的维护者时，禁止被添加为包的所有者。禁止删除当前用户的所有者权限。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/NwAWnM17SmCQ6LfT5hESUA/zh-cn_image_0000002731381825.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/4A9H6wF8RzqEnHsCeYxVhg/zh-cn_image_0000002731381825.png "点击放大")
 * 区域4：管理维护者，包的维护者具有包的下载，上传和编辑Tag权限，支持对包维护者进行新增和删除。当一个用户已经是包的所有者时，禁止被添加为包的维护者。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/qLP2S-SoQJySoidJ_An7qg/zh-cn_image_0000002701822532.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/b6fjiEOoQQuL9Om-T-yHXQ/zh-cn_image_0000002701822532.png "点击放大")
 * 区域5：转移所有者，支持当前用户将包的所有者转移给其他非包所有者或维护者。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/pjs2oT4FQk-PzEhRpsoP4Q/zh-cn_image_0000002701662618.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/j4KYm0k_Rcu4omS3kkBjwg/zh-cn_image_0000002701662618.png "点击放大")
 
 ## 所维护的包
 
@@ -59,15 +59,15 @@ ohpm-repo从5.3.0版本开始支持配置包级别的权限管理。系统支持
 3. 查看包的所有者用户列表。
 4. 查看包的维护者用户列表。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/7ySBNU4IT_un5FGAFyCd4A/zh-cn_image_0000002731381841.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/bgDRVItISH-l_S6O2zWegg/zh-cn_image_0000002731381841.png "点击放大")
 
 * 区域1：筛选，点击列表标题旁的漏斗图标，可以进行包数据的筛选，支持针对包名和仓库名进行模糊搜索。例如筛选出包名含有a1，仓库名为ohpm的包，数据筛选效果如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/nkFwWKFpQmyh4sHL1r2h2g/zh-cn_image_0000002701662606.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/LaE8fvkZTY2brJ0gnupfBA/zh-cn_image_0000002701662606.png "点击放大")
 * 区域2：查看包所有版本列表，点击版本数量中的值，能够查看当前包具有多少个版本。
 * 区域3：查看包的所有者用户列表。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/ujQeoAuWT9aCSkNj-qYoJw/zh-cn_image_0000002731541799.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/vLFID7_GQgSIixFgKOm6TA/zh-cn_image_0000002731541799.png "点击放大")
 * 区域4：查看包的维护者用户列表。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/Shz3Rx9dREqlI0bTMdNvhw/zh-cn_image_0000002731381829.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/CgaDzKLiQlS17rgBpjs_Iw/zh-cn_image_0000002731381829.png "点击放大")

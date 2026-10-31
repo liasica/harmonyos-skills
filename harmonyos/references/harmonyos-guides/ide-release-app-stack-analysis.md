@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-release-a
 title: 堆栈轨迹分析
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 日志与故障分析 > 故障分析 > 堆栈轨迹分析
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:31+08:00
+scraped_at: 2026-11-01T07:12:55+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:0851c64d67420a35cd32e488ca9b7de26b92040dc0161793936d791c46fa761e
+content_hash: sha256:28b958d4c31e98c0fb21da0af04e49b3c6ff10026a476b3df3655c375dd56e09
 ---
 
 对于发布的应用（Release应用），为减小应用程序大小，提高运行效率，会对代码进行优化，去除其中的调试信息。因此无法直接通过Release应用的堆栈信息定位到源码的具体文件和行位置，不易于开发者快速定位解决问题。
@@ -16,17 +16,17 @@ Release应用堆栈解析功能操作方法如下：
 
 1. 单击菜单栏**Code > Analyze Stack Trace**，或在FaultLog页面异常堆栈信息处右键选择**Analyze Stack Trace。**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/r8gS2GwnR06QUVYN68OrsQ/zh-cn_image_0000002731541821.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/A60SilSgTJ2Ms91Xo-o8SQ/zh-cn_image_0000002731541821.png)
 2. 在弹出的**Analyze Stack Trace**对话框中，粘贴Release应用的异常堆栈信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/GOmtlDkQR4SmqccbqCQWgA/zh-cn_image_0000002701822546.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/-C2Z2ZH1RcCTTl663E3ExQ/zh-cn_image_0000002701822546.png)
 3. 如果当前工程为堆栈所在应用对应的工程，且存在Release构建产物，点击**Start Analyze**即可进行解析。
 
    如果当前工程不是堆栈所在应用对应的工程，则需要配置应用对应构建产物：勾选**Unscramble stack trace**, 在下方的文件选择框中，分别添加应用对应的sourceMap文件、so文件以及nameCache文件，点击**Start Analyze**进行转换。
 
    DevEco Studio将解析后的堆栈信息显示在右侧的输出框中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/zm7OQMyIREqeB7qsyEx3BQ/zh-cn_image_0000002701662630.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/QGi8loe2Sqqu_k05sx7dRQ/zh-cn_image_0000002701662630.png)
 
    在构建Release应用时，so文件是默认不包含符号表信息的，如果需要在构建Release应用时生成包含符号表的so文件，需要在工程的[模块级build-profile.json5](ide-hvigor-cpp.md)文件的buildOption属性中，配置如下信息：
 

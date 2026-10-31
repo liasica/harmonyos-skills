@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-ge
 title: 能力说明
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 定制构建 > 获取自定义编译参数 > 能力说明
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:34+08:00
+scraped_at: 2026-11-01T07:12:57+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:607a5d278f087b5ba28f44e7b7ad4fc74353c11a838f347d58643c0a351d1d0e
+content_hash: sha256:806ac08305859be05a325ca6be6aa177b7f4d7d1d944aa856b55248559a85651
 ---
 
 在编译构建时，Hvigor会生成BuildProfile类，开发者可以通过该类在运行时获取编译构建参数，也可以在build-profile.json5中通过buildProfileFields增加自定义字段，从而在运行时获取自定义的参数。
@@ -30,7 +30,7 @@ buildProfileFields的优先级：模块级target > 模块级buildOptionSet > 模
 
 执行完上述操作后，将在“${moduleName} / build / ${productName} / generated / profile / ${targetName} ”目录下生成BuildProfile.ets文件。示例如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/RFRuJrrkS_-L-YnpHTpryg/zh-cn_image_0000002731542917.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/-EAn813SRa6w11D22GGjwA/zh-cn_image_0000002731542917.png)
 
 ### 在代码中获取构建参数
 
@@ -155,7 +155,7 @@ import BuildProfile from '${packageName}/BuildProfile';
 
 执行完上述操作后，将在模块根目录下生成BuildProfile.ets文件（该文件可放置在.gitignore文件中进行忽略）。示例如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/dRbr4skdTZeo95pvKjFvPA/zh-cn_image_0000002731382941.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/2UVfHcn6RW6vzvFkCo4ysw/zh-cn_image_0000002731382941.png)
 
 ### 在代码中获取构建参数
 
@@ -171,7 +171,7 @@ import BuildProfile from './BuildProfile';
 const HAR_VERSION: string = BuildProfile.HAR_VERSION;
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/ha_IkO-wST2SfGYl8b9PXw/zh-cn_image_0000002731382943.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/WW5BpZOPRBeeQ3UCiVf1lg/zh-cn_image_0000002731382943.png)
 
 ### 默认参数
 
