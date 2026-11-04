@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: ScrollBar
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > ScrollBar
 category: harmonyos-references
-scraped_at: 2026-10-31T07:35:13+08:00
+scraped_at: 2026-11-04T08:32:57+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:73720c08b8e0b0b81ea1f29be8433b6146131be7b223769494891c24af0c0eaf
+content_hash: sha256:36008fdca7bfdbba38a1a8695c86b2346c47273e58efe250c96c9323e42ff460
 ---
 
 滚动条组件ScrollBar，用于配合可滚动组件使用，如[ArcList](ts-container-arclist.md)、[List](ts-container-list.md)、[Grid](ts-container-grid.md)、[Scroll](ts-container-scroll.md)、[WaterFlow](ts-container-waterflow.md)，提供可视化的滚动指示和控制能力，支持自定义滚动条样式。
@@ -165,7 +165,7 @@ struct ScrollBarExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/BTgnuYrjTwCSkeb6XhSFJQ/zh-cn_image_0000002806110383.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/wc-dDfAFQmeInM3nl85jbQ/zh-cn_image_0000002809051809.gif)
 
 ## 示例2（不设置子节点）
 
@@ -212,7 +212,7 @@ struct ScrollBarExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/g_gbfP4OTRair60WKpjwHA/zh-cn_image_0000002776910764.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/BzuFxKA1Q7aDT6VZnK6Leg/zh-cn_image_0000002779852244.gif)
 
 ## 示例3（支持嵌套滚动）
 
@@ -284,4 +284,4 @@ struct StickyNestedScroll {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/FKuySLQwRXKN0vX3D8O4Ew/zh-cn_image_0000002776750778.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/KgweB61HSOSZpqEeWWo5Rg/zh-cn_image_0000002779692276.gif)

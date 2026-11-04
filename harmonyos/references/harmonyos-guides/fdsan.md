@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fdsan
 title: fdsan使用指导
 breadcrumb: 指南 > NDK开发 > 代码开发 > C/C++标准库 > fdsan使用指导
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:33:40+08:00
+scraped_at: 2026-11-04T08:31:12+08:00
 doc_updated_at: 2026-10-16
-content_hash: sha256:0e87d835c883d111af6977dab80772719ea7f7366ac3d50103884108f9676d1d
+content_hash: sha256:835dcfdd2fa89475d3ea37b9a1a93d13f427360ee16a77c77bd72d6224f6763e
 ---
 
 ## 功能介绍
@@ -24,7 +24,7 @@ value用于标识实际的owner tag。
 
 tag构成图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/7k9wTMqGS_-ql8_O-C_07Q/zh-cn_image_0000002776750414.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/QPrlkzepRuOgZCmE_bPuyA/zh-cn_image_0000002779691912.png)
 
 ## 接口说明
 
@@ -223,7 +223,7 @@ int main()
 
 上述代码中的good\_write函数会打开一个文件并写入一些字符串，而bad\_close函数中也会打开一个文件同时包含double-close问题，这两个线程同时运行执行情况如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/gXTmgO-_RuufXl2S68wPAQ/zh-cn_image_0000002806030131.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/S0sPE7XdRoW3VQfxwiPCCQ/zh-cn_image_0000002809011533.png)
 
 由于每次open返回的文件描述符（fd）是顺序分配的，进入主函数后第一个可用的fd是43。在bad\_close 函数中，第一次open返回的fd也是43。关闭之后，43变成可用的fd。在good\_write函数中，open返回了第一个可用的fd，即43。然而，由于bad\_close函数中存在重复关闭问题，错误地关闭了另一个线程中打开的文件，导致写入失败。
 

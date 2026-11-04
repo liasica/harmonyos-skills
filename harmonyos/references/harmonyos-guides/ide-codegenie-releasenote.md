@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-codegenie
 title: 版本说明
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 版本说明
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:13:02+08:00
+scraped_at: 2026-11-04T08:31:39+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:36d7741619b132ca3d7be3ddecdba5de6638ca1b892061c189b02a141aaf2a1a
+content_hash: sha256:ae2e83d26525838ff5e79b62764fac8bbd48eca62084524cac77b710e5c4431f
 ---
 
 ## 26.0.0.621
@@ -112,7 +112,7 @@ content_hash: sha256:36d7741619b132ca3d7be3ddecdba5de6638ca1b892061c189b02a141aa
 ### 增强特性
 
 * HarmonyOS Ask智能体可读取和修改工程代码，以及在问答区编译验证。
-* 删除对话框中用于上下文定位的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/gj5an2ZCTieK81Y8ft-RwQ/zh-cn_image_0000002731383167.png)图标，可直接对选中的代码段或代码文件分析。
+* 删除对话框中用于上下文定位的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/mcrVu8MyQn6bcUkpH9VO4g/zh-cn_image_0000002731383167.png)图标，可直接对选中的代码段或代码文件分析。
 * 智能问答和代码生成能力增强，更加高效理解用户意图。
 
 ## 6.0.1.246

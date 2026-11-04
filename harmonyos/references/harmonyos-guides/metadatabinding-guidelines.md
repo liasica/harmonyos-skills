@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/metadatabindi
 title: 元数据绑定开发指导
 breadcrumb: 指南 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > 元数据绑定开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:28+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:f203a57c59e9177add0532b6f586a27366120433720083b3e70ff952c26dcab9
+scraped_at: 2026-11-04T08:29:55+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:190c138aeba1c2f0ee72e4176e34cf7ec5c73de13d0edcc66f9ad482915d0071
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ MetadataBinding（元数据绑定）指由第三方应用提供[鸿蒙App Linkin
 
 ## 演示示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/AgqBzm4fSyWc30UBGg2acw/zh-cn_image_0000002806108977.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/86ALukivSe2JvA1DxMtIjA/zh-cn_image_0000002809050403.gif)
 
 ## 接口说明
 
@@ -43,8 +43,7 @@ MetadataBinding（元数据绑定）指由第三方应用提供[鸿蒙App Linkin
 
    ```typescript
    import { metadataBinding } from '@kit.MultimodalAwarenessKit';
-   import { BusinessError } from '@kit.BasicServicesKit';
-   import { Callback } from '@kit.BasicServicesKit';
+   import { BusinessError, Callback } from '@kit.BasicServicesKit';
    ```
 2. 定义元数据绑定服务回调及包名，函数接收回传编码的内容。
 

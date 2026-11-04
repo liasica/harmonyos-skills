@@ -1,6 +1,6 @@
 # HarmonyOS 文档全量索引
 
-共 17114 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
+共 17109 篇文档。先在本文件 grep 关键词获取相对路径，再 Read 对应 `.md`。
 
 ## 版本说明（`harmonyos-releases`）— 1251 篇
 
@@ -1256,7 +1256,7 @@
 - [应用升级适配指导——向26.0.0升级](harmonyos-releases/upgrade-adaptation.md)
 - [版本号格式调整说明](harmonyos-releases/version-number-26.md)
 
-## 指南（`harmonyos-guides`）— 6167 篇
+## 指南（`harmonyos-guides`）— 6168 篇
 
 - [24h功耗器件分解统计事件](harmonyos-guides/24-hour-battery-usage-event.md)
 - [aa工具](harmonyos-guides/aa-tool.md)
@@ -6652,6 +6652,7 @@
 - [ArkGuard混淆常见问题](harmonyos-guides/source-obfuscation-questions.md)
 - [ArkGuard混淆配置选项](harmonyos-guides/source-obfuscation-rule-options.md)
 - [ArkGuard混淆原理](harmonyos-guides/source-obfuscation.md)
+- [SourceMap Splitter工具](harmonyos-guides/sourcemap-splitter-tool.md)
 - [重建三维场景（C/C++）](harmonyos-guides/spatial-recon-c-spatial-recon-pipeline.md)
 - [管理Spatial Recon会话](harmonyos-guides/spatial-recon-c-spatial-recon-session.md)
 - [添加滤镜效果](harmonyos-guides/spatial-recon-filter.md)
@@ -12192,7 +12193,7 @@
 - [XEngine](harmonyos-references/xengine-kit-xengine.md)
 - [zlib](harmonyos-references/zlib.md)
 
-## 最佳实践（`best-practices`）— 491 篇
+## 最佳实践（`best-practices`）— 485 篇
 
 - [电脑异形窗口](best-practices/bpta-2in1-window-shape.md)
 - [基于AbcKitTS实现字节码插桩](best-practices/bpta-abckitts-implements-instrumentation.md)
@@ -12240,7 +12241,6 @@
 - [ArkWeb OOM故障模式说明](best-practices/bpta-arkweb-oom-fault-mode-description.md)
 - [JS对象长期被JS持有导致内存泄漏故障模式说明](best-practices/bpta-arkweb-oom-js-object-held-by-js-object.md)
 - [ArkWeb Render进程卡死故障模式说明](best-practices/bpta-arkweb-render-freeze.md)
-- [ArkWeb渲染框架适配](best-practices/bpta-arkweb_rendering_framework.md)
 - [基于Aspect插件库实现切面编程](best-practices/bpta-aspect-implements-aop.md)
 - [音频和视频](best-practices/bpta-audio-and-video.md)
 - [音频投播](best-practices/bpta-audio-cast.md)
@@ -12293,7 +12293,7 @@
 - [自定义字体设置](best-practices/bpta-custom-font-settings.md)
 - [定制hvigor插件](best-practices/bpta-custom-hvigor-plugin.md)
 - [深色模式适配](best-practices/bpta-dark-mode-adaptation.md)
-- [应用包体积优化](best-practices/bpta-decrease_pakage_size.md)
+- [应用包体积优化](best-practices/bpta-decrease-pakage-size.md)
 - [操作延时触发](best-practices/bpta-delayed-trigger-operation.md)
 - [桌面快捷方式](best-practices/bpta-desktop-shortcuts.md)
 - [性能检测](best-practices/bpta-detection.md)
@@ -12304,7 +12304,6 @@
 - [跨设备剪贴板](best-practices/bpta-distributed-pasteboard-cast.md)
 - [跨设备剪贴板常见场景](best-practices/bpta-distributed-pasteboard.md)
 - [开发态快速定位DMA泄漏](best-practices/bpta-dma-leak-in-develop.md)
-- [Drawing自绘制性能提升](best-practices/bpta-drawing-capability-improve-performance.md)
 - [平行视界](best-practices/bpta-easygo-parallel.md)
 - [运维态高效处理FD资源泄漏](best-practices/bpta-efficiently-handle-fd-leaks.md)
 - [基于SFFT的大文件高速并发传输](best-practices/bpta-file-transmission-based-on-sfft.md)
@@ -12319,8 +12318,6 @@
 - [游戏](best-practices/bpta-game.md)
 - [概述](best-practices/bpta-general-comments.md)
 - [基于StateStore的全局状态管理](best-practices/bpta-global-state-management-state-store.md)
-- [GPU加速](best-practices/bpta-gpu-acceleration-practices.md)
-- [图形绘制](best-practices/bpta-graphic-drawing-practices.md)
 - [基于ScrollComponents实现网格](best-practices/bpta-grid-based-on-scrollcomponents.md)
 - [基于DialogHub的通用弹窗](best-practices/bpta-hadss_dialoghub.md)
 - [运维态高效处理DMA资源泄漏](best-practices/bpta-handling-dma-resource-leaks.md)
@@ -12411,7 +12408,6 @@
 - [多设备设置界面](best-practices/bpta-multi-settings-application-page.md)
 - [常见导航样式案例](best-practices/bpta-multi-tab-practice.md)
 - [多目标产物构建](best-practices/bpta-multi-target.md)
-- [智慧多窗](best-practices/bpta-multi-window-practice.md)
 - [多窗](best-practices/bpta-multi-window.md)
 - [多设备游戏界面](best-practices/bpta-multi_game.md)
 - [音乐播放场景低功耗规则](best-practices/bpta-music-playback-scenarios.md)
@@ -12628,7 +12624,6 @@
 - [应用启动与响应优化](best-practices/bpta-startup-response-optimization.md)
 - [状态刷新控制](best-practices/bpta-state-refresh.md)
 - [静态场景低功耗规则](best-practices/bpta-static-scenarios.md)
-- [状态管理最佳实践](best-practices/bpta-status-management.md)
 - [Swiper组件加载丢帧优化](best-practices/bpta-swiper_high_performance_development_guide.md)
 - [平板](best-practices/bpta-tablet-pc.md)
 - [图片资源加载优化](best-practices/bpta-texture-compression-improve-performance.md)
@@ -12882,6 +12877,7 @@
 - [常见问题](harmonyos-faqs/arkui-windmana-faq.md)
 - [应用所有页面不允许截图和录屏](harmonyos-faqs/arkui-windmana-troubleshooting-0001.md)
 - [切换智慧多窗模式后页面内容遮挡如何排查](harmonyos-faqs/arkui-windmana-troubleshooting-0002.md)
+- [startAbility启动小窗口后requestFocus原页面组件报错问题定位](harmonyos-faqs/arkui-windmana-troubleshooting-0003.md)
 - [故障排查](harmonyos-faqs/arkui-windmana-troubleshooting.md)
 - [ArkWeb执行JS脚本常见问题](harmonyos-faqs/arkweb-kit-faq-0001.md)
 - [ArkWeb网页加载问题排查与解决](harmonyos-faqs/arkweb-kit-faq-0002.md)
@@ -15626,7 +15622,6 @@
 - [PC设备上，页面滚动方向与预期不符](harmonyos-faqs/faqs-computer-3.md)
 - [应用在PC设备上页面文字显示过大或过小](harmonyos-faqs/faqs-computer-4.md)
 - [自由多窗模式下，应用页面与标题栏三键区域重叠](harmonyos-faqs/faqs-computer-5.md)
-- [startAbility启动小窗口后requestFocus原页面组件报错](harmonyos-faqs/faqs-computer-6.md)
 - [PC应用如何隐藏导航栏右上角三键](harmonyos-faqs/faqs-computer-7.md)
 - [鼠标对应光标丢失和样式变化](harmonyos-faqs/faqs-computer-8.md)
 - [如何设置PC窗口透明](harmonyos-faqs/faqs-computer-9.md)

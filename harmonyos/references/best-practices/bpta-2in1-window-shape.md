@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-2in1-windo
 title: 电脑异形窗口
 breadcrumb: 最佳实践 > 应用框架 > 窗口与屏幕管理 > 电脑异形窗口
 category: best-practices
-scraped_at: 2026-10-29T08:03:14+08:00
+scraped_at: 2026-11-04T08:37:49+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:5ba476683fb4c63cab865a74165a9be820b8a87d3c816986d0e1ea5c26f74985
+content_hash: sha256:b66ab06c0126838e0675e30a2b93b24772b69051f677118bfaed7f79183cdca6
 ---
 
 ## 概述
@@ -177,10 +177,10 @@ content_hash: sha256:5ba476683fb4c63cab865a74165a9be820b8a87d3c816986d0e1ea5c26f
 ### 实现效果
 
 **图1** 圆形子窗口效果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/bywlnwbCQWyfl7S6s3tgew/zh-cn_image_0000002229337273.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/7eohBfm0RHilNgt7_yM-Aw/zh-cn_image_0000002229337273.png "点击放大")
 
 **图2** 三角形子窗口效果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/ZtDL2P8wT-aNCYWeqbLlSg/zh-cn_image_0000002194011476.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/IkUhP6K5QbKBOAGrBN3_Cw/zh-cn_image_0000002194011476.png "点击放大")
 
 ## 不规则形状窗口
 
@@ -189,7 +189,7 @@ content_hash: sha256:5ba476683fb4c63cab865a74165a9be820b8a87d3c816986d0e1ea5c26f
 待开发的异形窗口，呈现出不规则的形状。这种情况通常先由设计人员提供图形文件，开发人员以文件为输入，基于ArkUI提供的图片处理能力，转化为相应的形状掩码，最后实现不规则的窗口形状。
 
 **图3** 不规则示例图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/nUv5lVqITZ6NtdqhP0TnjA/zh-cn_image_0000002229451765.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/LSyQZNJUT2-zaCfYvWymfw/zh-cn_image_0000002229451765.png)
 
 本节以上图为例说明不规则形状窗口的实现过程。
 
@@ -297,7 +297,7 @@ content_hash: sha256:5ba476683fb4c63cab865a74165a9be820b8a87d3c816986d0e1ea5c26f
 ### 实现效果
 
 **图4** 不规则形状子窗口效果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/p6FPffd-Ssa9Yyq_SbgHrA/zh-cn_image_0000002193851884.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/BLJZsLucRZuKjb0vVpvqqw/zh-cn_image_0000002193851884.png "点击放大")
 
 ## **示例代码**
 

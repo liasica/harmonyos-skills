@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-opera
 title: Kernel侧算子实现
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子实现 > 工程化算子开发 > 基于工程实现算子 > Kernel侧算子实现
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:33:20+08:00
+scraped_at: 2026-11-04T08:30:49+08:00
 doc_updated_at: 2026-06-05
-content_hash: sha256:5cc5468752341ba5922e485cb2df4201ed180c4c82944d1fc16535aa27d19146
+content_hash: sha256:05269e386b713befa8e3f851bd7e05dfe5518540eb8dd188ac69d7f25cf679aa
 ---
 
 在[算子实现](cannkit-operator-implementation-overview.md)章节已经介绍了kernel侧算子核心的实现方法，本章节侧重于介绍接入DDK框架时编程模式和API的使用。
@@ -72,7 +72,7 @@ extern "C" __global__ __aicore__ void add_custom(GM_ADDR x, GM_ADDR y, GM_ADDR z
 
 在核函数所有输出的最后增加一个GM\_ADDR类型的输出参数，并在核函数计算完成后，将输出shape信息写入到该出参中。shape信息的排布格式如下，大小为**n \* (8 + 1)**，每个元素的数据类型为**uint64\_t**。其中n表示待刷新shape信息的输出个数，每个输出的shape信息都通过第1个元素来保存实际的shape维度(dim)，后续的8个元素来保存具体每个维度的shape信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/t4AadMPbSaWJpvCJ2qJnDQ/zh-cn_image_0000002806109881.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/-PUO0uuWRX22H3P2KEleWA/zh-cn_image_0000002809051307.png)
 
 **说明** 
 

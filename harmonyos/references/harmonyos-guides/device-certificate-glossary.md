@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device-certif
 title: Device Certificate Kit术语
 breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > Device Certificate Kit术语
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:29+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:a2693d0a7d3533860b8137b591b2fbf385df87a06017b844a26d9d60cffd7cba
+scraped_at: 2026-11-04T08:29:39+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:b177e026746b3e7de10f22ed90b739a10e86d5871d9f6b3764034be5a8964c93
 ---
 
 ## C
@@ -56,7 +56,7 @@ content_hash: sha256:a2693d0a7d3533860b8137b591b2fbf385df87a06017b844a26d9d60cff
 
 ### Signature；签名
 
-使用私钥对需要传输的数据计算摘要并加密得到的密文。
+使用私钥对需要传输的数据计算摘要并进行签名运算得到的签名值。
 
 ### Signature Verification；验签
 

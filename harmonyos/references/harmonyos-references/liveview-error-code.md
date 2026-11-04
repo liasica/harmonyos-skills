@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/liveview-
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用服务 > Live View Kit（实况窗服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:57+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:5a8be660ba12add8fb120c5cd4bebe5a63dc2722595d35b51e7d27a0776bb8c8
+scraped_at: 2026-11-04T08:37:05+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:2d9d7f3356ef38f55dbed42fea55b8dd974d37101d2443ccf9428501c84ccc92
 ---
 
 **说明** 
@@ -96,11 +96,21 @@ The right of liveView is not enabled.
 
 **可能原因**
 
-应用未申请对应场景的权益。
+1. 接入联调测试阶段：
+
+   * 未申请调测权益。
+   * 未添加调测设备。
+   * 添加调测设备未满24小时。
+2. 申请实况正式权益：应用未申请对应场景的权益。
 
 **处理步骤**
 
-若已申请实况窗权益，请确认event字段与开通权益的场景匹配；若未申请实况窗权益，请参考[开发准备](../harmonyos-guides/liveview-preparations.md)，完成实况窗权益申请。
+1. 接入联调测试阶段：
+
+   * 若未申请调测权益，请参考[开通实况窗服务权益](../doccenter-capabilities/liveview-rights.md)，完成实况窗权益申请。
+   * 若未添加调测设备，请参考[添加调测设备](../doccenter-capabilities/liveview-joint-commission-test.md#添加调测设备)，完成调测设备添加。
+   * 若已申请实况调测权益，设备实况窗权益将于添加设备Push Token后满 24 小时起生效。
+2. 申请实况正式权益：若已申请实况窗权益，请确认event字段与开通权益的场景匹配；若未申请实况窗权益，请参考[申请实况正式权益](../doccenter-capabilities/liveview-formal-authority.md)，完成实况窗权益申请。
 
 ## 1003500006 实况窗已存在
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.file.environment (目录环境能力)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > @ohos.file.environment (目录环境能力)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:fa3c54137348df5385bdab8bc21958131bb3a85130f26ac38cbac168eeff05e9
+scraped_at: 2026-11-04T08:34:02+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:a6831001c7f8346bb0829ea517b4868b4c1aa339c3ea1c8634b0b65f7b5f8a82
 ---
 
 该模块提供用户环境目录能力，用于获取用户的下载目录、桌面目录、文档目录的沙箱路径。上述三个方法分别适用于获取不同类型用户目录的场景，开发者可根据需要选择对应的目录类型。
@@ -50,7 +50,7 @@ getUserDownloadDir(): string
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission verification failed, usually the result returned by VerifyAccessToken.  适用版本：11+ |
+| 201 | Permission verification failed, usually the result returned by VerifyAccessToken.  适用版本：11 |
 | 801 | Capability not supported. |
 | 13900042 | Unknown error. |
 
@@ -99,7 +99,7 @@ getUserDesktopDir(): string
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission verification failed, usually the result returned by VerifyAccessToken.  适用版本：11+ |
+| 201 | Permission verification failed, usually the result returned by VerifyAccessToken.  适用版本：11 |
 | 801 | Capability not supported. |
 | 13900042 | Unknown error. |
 
@@ -148,7 +148,7 @@ getUserDocumentDir(): string
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission verification failed, usually the result returned by VerifyAccessToken.  适用版本：11+ |
+| 201 | Permission verification failed, usually the result returned by VerifyAccessToken.  适用版本：11 |
 | 801 | Capability not supported. |
 | 13900042 | Unknown error. |
 

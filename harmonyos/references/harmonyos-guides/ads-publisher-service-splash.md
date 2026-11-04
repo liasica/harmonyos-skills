@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ads-publisher
 title: 开屏广告
 breadcrumb: 指南 > 应用服务 > Ads Kit（广告服务） > 流量变现服务开发 > 开屏广告
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:56+08:00
+scraped_at: 2026-11-04T08:30:24+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:019cd3e9487fabf3446c842a5b92f13a272b9458480b803f8227ad759e2652cb
+content_hash: sha256:93b9a546b790dd69078cc54e5c7c6580d66778e7a82c9c752a7f4b469b513a3b
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:019cd3e9487fabf3446c842a5b92f13a272b9458480b803f8227ad759e2
 
 开屏广告分为全屏开屏广告、半屏开屏广告，其中全屏开屏广告展示形式为广告铺满整个页面；半屏开屏广告展示形式会根据媒体页面自定义布局渲染广告、icon和版权信息，一般情况下建议将icon和版权信息展示在广告下方。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/QpJqurdUSVq0USa4cqRlzg/zh-cn_image_0000002806029461.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/-pZ9PKlcTOq30RvYsW2tjQ/zh-cn_image_0000002809010863.png)
 
 ## 约束与限制
 

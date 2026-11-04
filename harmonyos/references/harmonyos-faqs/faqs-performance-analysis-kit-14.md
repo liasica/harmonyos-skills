@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 如何查询应用当前CPU占用
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 如何查询应用当前CPU占用
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:44+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:eccc43a4fa4263237c4ca9c295aaca6f14b311ea05f0b6fb473fb616dbf46571
+scraped_at: 2026-11-04T08:38:16+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:5c13caf2968946809bdce78e0f201bba06e52fea69c6d4a79b6a6e4b79629b06
 ---
 
 目前有两种方式查询当前CPU占用：
@@ -20,7 +20,7 @@ let cpuUsage: number = hidebug.getCpuUsage();
 
 在命令行中查询：
 
-* 根据hdc命令行工具指导，完成[环境准备](../harmonyos-guides-V14/hdc-V14.md#环境准备)。
+* 根据hdc命令行工具指导，完成[环境准备](../doccenter-capabilities/hdc.md#环境准备)。
 * 正常连接设备。
 
   ```powershell

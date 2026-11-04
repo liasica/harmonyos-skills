@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.notification (Notification模块)"
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > ArkTS API > 已停止维护的接口 > @ohos.notification (Notification模块)
 category: harmonyos-references
-scraped_at: 2026-10-01T07:40:29+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:e39bddd2fb75fbe2c29a795016bf29cf947aca5c7dc4c346046458559296c585
+scraped_at: 2026-11-04T08:37:17+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:60a6e4c5850d802e30c6c542c10d71b03bf5336ff5fb38bfb22d3fb7eec4cafc
 ---
 
 本模块提供通知管理的能力，包括发布、取消发布通知，创建、获取、移除通知通道，订阅、取消订阅通知，获取通知的使能状态、角标使能状态，获取通知的相关信息等。
 
 **说明** 
 
-从API version 9开始，该模块不再维护，建议使用[@ohos.notificationManager](js-apis-notificationmanager.md)替代。
+从API版本9开始，该模块不再维护，建议使用[@ohos.notificationManager](js-apis-notificationmanager.md)替代。
 
-本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+本模块首批接口从API版本7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 [通知订阅](../harmonyos-guides/notification-glossary.md#notification-subscription通知订阅)和取消订阅仅对系统应用开放。
 
@@ -956,7 +956,7 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 **说明** 
 
-从 API version 7开始支持，从API version 9开始废弃。建议使用[notificationManager.BundleOption](js-apis-inner-notification-notificationcommondef.md#bundleoption)替代。
+从API版本7开始支持，从API版本9开始废弃。建议使用[notificationManager.BundleOption](js-apis-inner-notification-notificationcommondef.md#bundleoption)替代。
 
 | 名称 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
@@ -969,7 +969,7 @@ Notification.isDistributedEnabled().then((data: boolean) => {
 
 **说明** 
 
-从 API version 7开始支持，从API version 9开始废弃。
+从API版本7开始支持，从API版本9开始废弃。
 
 | 名称 | 类型 | 可读 | 可写 | 说明 |
 | --- | --- | --- | --- | --- |

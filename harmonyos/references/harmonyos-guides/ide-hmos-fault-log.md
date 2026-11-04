@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-faul
 title: FaultLog
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 日志与故障分析 > 故障分析 > FaultLog
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:13:10+08:00
+scraped_at: 2026-11-04T08:31:49+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:d0cfccde993f9f8c1b5e5a2f8041c6914114eb950a1909db5cba5dbbebd3153f
+content_hash: sha256:bcf08a3246e8a3f272c13924cc8df22c86685cbbdc7773816a8f1be5066a72fd
 ---
 
 当应用运行发生错误使应用进程终止时，应用将会抛出错误日志以通知应用崩溃的原因，开发者可通过查看错误日志分析应用崩溃的原因及引起崩溃的代码位置。
@@ -38,29 +38,29 @@ FaultLog由系统自动从设备进行收集，包括如下几类故障信息：
 
 ### 查看设备历史抛出的FaultLog日志
 
-点击鸿蒙电脑DevEco Studio底部![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/Do4WuC9ySnm2uS9BXDTI3g/zh-cn_image_0000002750169670.png "点击放大")图标打开日志面板，选择FaultLog，将显示当前选中设备抛出的所有FaultLog日志。
+点击鸿蒙电脑DevEco Studio底部![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/p5Sigfu4TIixzMbDU7B7yw/zh-cn_image_0000002750169670.png "点击放大")图标打开日志面板，选择FaultLog，将显示当前选中设备抛出的所有FaultLog日志。
 
 FaultLog故障信息左侧按照**应用/元服务包名 > 故障类型 > 故障时间**结构组成，选中具体的故障日期，则会在右侧展示详细的故障信息，并对部分关键信息进行高亮展示，便于开发者进行故障定位。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/6n8zr5oLTZ6-dP8q7Wi-Rg/zh-cn_image_0000002750009792.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/7qrPB4soQMKC0widfljzfw/zh-cn_image_0000002750009792.png)
 
 ### 查看设备实时抛出的FaultLog日志
 
 当设备抛出FaultLog日志时，DevEco Studio将会弹出消息提示框，点击**Jump To Log**即可跳转至FaultLog窗口查看日志信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/kFfVXt4xRyOxS8cIoB7dEw/zh-cn_image_0000002779728845.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/suhio53BRvmFws7o-QcU6Q/zh-cn_image_0000002779728845.png)
 
 ### 自动定位到最新FaultLog日志
 
-在FaultLog窗口点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/Hi1YKvceTNivqw37Ye1Idw/zh-cn_image_0000002779728847.png)按钮，将自动选中当前最新的日志。
+在FaultLog窗口点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/df1xb7XqQ8Cc023Y2hQF2Q/zh-cn_image_0000002779728847.png)按钮，将自动选中当前最新的日志。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/FM8cRWUTRqacvZzx4_I_Ag/zh-cn_image_0000002779608707.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/FfnhpRK1RcOrXoJxJNuTZA/zh-cn_image_0000002779608707.png)
 
 ### 跳转至引起错误的代码行
 
 若抛出的FaultLog中的堆栈信息中的链接或偏移地址指向的是当前工程中的某行代码，该段信息将会被转换为超链接形式，点击后可跳转至对应代码行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/VZZ_RgGdRxGF0x8tGuA20Q/zh-cn_image_0000002750169680.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/Z1E3oj8FSSu9BvDRhZ5vfA/zh-cn_image_0000002750169680.png)
 
 ## 导出日志
 
@@ -69,11 +69,11 @@ FaultLog故障信息左侧按照**应用/元服务包名 > 故障类型 > 故障
 * 保存当前选中节点的日志：
   + 在当前选中节点右键点击**导出故障日志**。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/PWV3EXlWT9yPJja5Jf5lnA/zh-cn_image_0000002750009790.png)
-  + 点击**导出**按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/vc-4izjDTFqfpLOS3S_87g/zh-cn_image_0000002750169674.png)，弹出子选项后进一步点击**导出选中的故障日志**。
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/khXcpukXRC6zyCVmWqIJyQ/zh-cn_image_0000002750009790.png)
+  + 点击**导出**按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/tbncMNe_T82_N9ByhEb1pQ/zh-cn_image_0000002750169674.png)，弹出子选项后进一步点击**导出选中的故障日志**。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/aNFfmyfjRL2_mblW59-HSA/zh-cn_image_0000002779608701.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/GIXJQOyuSZK37arl-ugafQ/zh-cn_image_0000002779608701.png)
 
-* 保存所有日志：点击**导出**按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/tKcPq4BrSxyFZC49eX6wKg/zh-cn_image_0000002750169672.png)，弹出子选项后进一步点击**导出所有故障日志**。
+* 保存所有日志：点击**导出**按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/o_U3RrlySPu3HHesZ1KNaw/zh-cn_image_0000002750169672.png)，弹出子选项后进一步点击**导出所有故障日志**。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/Jxonw6mRRpa_gEhYrYUnCg/zh-cn_image_0000002779608703.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/VP7lveINRoCvp7y7dM7N8A/zh-cn_image_0000002779608703.png)

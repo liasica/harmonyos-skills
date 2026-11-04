@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-dialog-encapsulation
 title: 弹窗组件封装
-breadcrumb: 最佳实践 > 布局与弹窗 > 弹窗组件封装
+breadcrumb: 最佳实践 > 行业场景解决方案 > 新闻阅读 > 弹窗组件封装
 category: best-practices
-scraped_at: 2026-10-29T08:03:14+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:fc901c3d0576506ab2f0435d8705e4e2eaefab0d0b4085048ecf5ec8a3630657
+scraped_at: 2026-11-04T08:37:54+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:d3267c8139698e346413888485ac83fbc7e84ec2bc9efd534a9a1cc5ae529c30
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ content_hash: sha256:fc901c3d0576506ab2f0435d8705e4e2eaefab0d0b4085048ecf5ec8a36
 
 以使用方点击按钮后展示自定义弹窗场景为例，若需实现下图效果，基于promptAction封装弹窗工具类和使用步骤如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/xid_oSXYTDOhDA4HGUouCQ/zh-cn_image_0000002396265913.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/nXrZjAJ2QvGh76Zv-cBmUA/zh-cn_image_0000002396265913.gif "点击放大")
 
 1. 使用方通过全局@Builder封装弹窗结构。
 

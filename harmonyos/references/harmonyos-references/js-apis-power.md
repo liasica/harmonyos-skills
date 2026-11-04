@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: "@ohos.power (系统电源管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 设备管理 > @ohos.power (系统电源管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:01+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:bc1a0b8ae882e79fcd6bca7926977cb30e145d50f8e8899a187407474f4ff913
+scraped_at: 2026-11-04T08:35:03+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:3430f4b080b2b1a35921cacdd90dc2f91922e2c4614d85f553ff70189a8fb345
 ---
 
 该模块主要提供重启、关机、查询屏幕状态等接口。开发者可以使用该模块的接口获取设备的活动状态、电源模式、亮灭屏状态等。
@@ -35,7 +35,7 @@ isActive(): boolean
 
 | 类型 | 说明 |
 | --- | --- |
-| boolean | 活动状态返回true，非活动状态返回false。 |
+| boolean | 活动状态返回true，非活动状态或获取设备活动状态失败时返回false。 |
 
 **示例：**
 
@@ -82,7 +82,7 @@ getPowerMode(): DevicePowerMode
 
 | 类型 | 说明 |
 | --- | --- |
-| [DevicePowerMode](js-apis-power.md#devicepowermode9) | 电源模式。 |
+| [DevicePowerMode](js-apis-power.md#devicepowermode9) | 当前设备的电源模式，取值包括标准模式、省电模式、性能模式、超级省电模式等。当获取当前设备的电源模式失败时返回0，该值不在[DevicePowerMode](js-apis-power.md#devicepowermode9)枚举定义范围内。开发者应检查返回值是否为有效枚举值（600及以上）。 |
 
 **示例：**
 

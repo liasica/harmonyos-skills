@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: NotificationContent
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > ArkTS API > notification > NotificationContent
 category: harmonyos-references
-scraped_at: 2026-10-01T07:40:28+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:a3d1f10b8d57d6a5efb57bd1c599846e2136404a8c0ac29d2b01a488d0e58e48
+scraped_at: 2026-11-04T08:37:16+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:6bcf6bf4c77afba4fdb1c5913636386ce7cc2f80cd64b5388fff18315d45b483
 ---
 
 NotificationContent中定义通知的内容结构，提供多种通知类型的内容描述接口。当应用需要发布通知时，可根据通知的展示需求（如普通文本、长文本、多行文本、图片、实况窗），选择对应的内容类型接口构造[通知内容](../harmonyos-guides/notification-glossary.md#notification-content通知内容)。
 
 **说明** 
 
-本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+本模块首批接口从API版本7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## NotificationContent
 
@@ -28,7 +28,7 @@ NotificationContent中定义通知的内容结构，提供多种通知类型的�
 | multiLine | [NotificationMultiLineContent](js-apis-inner-notification-notificationcontent.md#notificationmultilinecontent) | 否 | 是 | 多行类型通知内容。当notificationContentType为NOTIFICATION\_CONTENT\_MULTILINE时使用，通知展开后以多行列表样式展示。 |
 | picture | [NotificationPictureContent](js-apis-inner-notification-notificationcontent.md#notificationpicturecontent) | 否 | 是 | 图片类型通知内容。当notificationContentType为NOTIFICATION\_CONTENT\_PICTURE时使用。通知展开后可展示图片。 |
 | systemLiveView11+ | [NotificationSystemLiveViewContent](js-apis-inner-notification-notificationcontent.md#notificationsystemliveviewcontent) | 否 | 是 | [系统实况窗](../harmonyos-guides/notification-glossary.md#system-live-view系统实况窗)类型通知内容。不支持三方应用直接创建该类型通知，可以由系统代理创建系统实况窗类型通知后，三方应用发布同ID的通知来更新指定内容。 |
-| contentType(deprecated) | [notification.ContentType](js-apis-notification.md#contenttype) | 否 | 是 | 通知内容类型。  从API version 7开始支持，从API version 11开始废弃，建议使用notificationContentType替代。 |
+| contentType(deprecated) | [notification.ContentType](js-apis-notification.md#contenttype) | 否 | 是 | 通知内容类型。  从API版本7开始支持，从API版本11开始废弃，建议使用notificationContentType替代。 |
 
 ## NotificationBasicContent
 

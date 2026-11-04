@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-render
 title: Repeat
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 状态管理与渲染控制 > Repeat
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:53+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:f4881974ec978fdcd29e39a704a473162a3f72bd31a7d981ddd1af314763e2bc
+scraped_at: 2026-11-04T08:33:19+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:f9c23525b40ace1fded873bc44134297db3951e6071a29696ee4c35d62d4b2df
 ---
 
 Repeat基于数组类型数据来进行循环渲染，一般与滚动容器组件配合使用。
@@ -42,7 +42,7 @@ Repeat<T>(arr: Array<T>)
 Repeat<string>(this.arr)
 ```
 
-### Repeat
+### Repeat18+
 
 Repeat<T>(arr: RepeatArray<T>)
 

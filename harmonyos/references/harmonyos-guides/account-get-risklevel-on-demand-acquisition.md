@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-get-r
 title: 华为账号其他方式登录获取用户风险等级
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 获取华为账号用户信息 > 获取风险等级 > 华为账号其他方式登录获取用户风险等级
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:55+08:00
+scraped_at: 2026-11-04T08:30:23+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b82b5ebd1e5ab4e6665e10237ff07135145add8068f3a41d4897b11eb33c8b18
+content_hash: sha256:a6f743dd6fc76b0e17194d13be42251f2270381fd8f123c761510f8c4c1e8962
 ---
 
 ## 场景介绍
@@ -19,7 +19,7 @@ content_hash: sha256:b82b5ebd1e5ab4e6665e10237ff07135145add8068f3a41d4897b11eb33
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/7Ug4sKXjQReIkUb5GcWSQQ/zh-cn_image_0000002806109339.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/i-2V-IWaRVWv1NBcTA1erA/zh-cn_image_0000002809050765.png)
 
 流程说明：
 

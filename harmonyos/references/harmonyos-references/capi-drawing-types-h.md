@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: drawing_types.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > drawing_types.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:44+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:40497524d468001cc03f49f2ff2fe002e4e10aaa13421af4fcf58273f723ae98
+scraped_at: 2026-11-04T08:36:37+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:4dcd849765de6a8d043814af0c59e56e77a3f57aaeaaca548b66ebb503a5d8a3
 ---
 
 ## 概述
@@ -182,7 +182,7 @@ rc : 如果操作3个颜色通道，用rc表示。
 | BLEND\_MODE\_HARD\_LIGHT | 强光模式，根据源像素的亮度，选择性地应用MULTIPLY或SCREEN模式。 |
 | BLEND\_MODE\_SOFT\_LIGHT | 柔光模式，根据源像素的亮度，柔和地变亮或变暗目标像素。 |
 | BLEND\_MODE\_DIFFERENCE | 差值模式，rc = s + d - 2 \* (min(s \* da, d \* sa)), ra = s + (1 - sa) \* d。 |
-| BLEND\_MODE\_EXCLUSION | 排除模式，rc = s + d - two(s \* d), ra = s + (1 - sa) \* d。 |
+| BLEND\_MODE\_EXCLUSION | 排除模式，rc = s + d - 2 \* (s \* d), ra = s + (1 - sa) \* d。 |
 | BLEND\_MODE\_MULTIPLY | 正片叠底，r = s \* (1 - da) + d \* (1 - sa) + s \* d。 |
 | BLEND\_MODE\_HUE | 色相模式，使用源像素的色相，目标像素的饱和度和亮度。 |
 | BLEND\_MODE\_SATURATION | 饱和度模式，使用源像素的饱和度，目标像素的色相和亮度。 |

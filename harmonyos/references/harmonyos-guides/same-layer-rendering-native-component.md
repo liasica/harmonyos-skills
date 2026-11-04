@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/same-layer-re
 title: 同层渲染原生组件
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 同层渲染 > 同层渲染原生组件
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:02+08:00
+scraped_at: 2026-11-04T08:29:27+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:623b61bf563a9dd751d3a5c06854206001ee0fcc55e9cdf1158ded4cd6d04012
+content_hash: sha256:c52161a1f48d713c860fc0051b0b03b42a936ad0743697cc05f601e61b578073
 ---
 
 ## 概述
@@ -35,7 +35,7 @@ content_hash: sha256:623b61bf563a9dd751d3a5c06854206001ee0fcc55e9cdf1158ded4cd6d
 
 **图1** 同层渲染和非同层渲染区别
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/1DuKXHECSU6zZ_wm6Nhx6A/zh-cn_image_0000002806108665.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/-IUcjtvFQHap8E3vmjf21A/zh-cn_image_0000002809050091.png)
 
 ## 场景示例
 
@@ -43,7 +43,7 @@ content_hash: sha256:623b61bf563a9dd751d3a5c06854206001ee0fcc55e9cdf1158ded4cd6d
 
 **图2** 页面效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/WPHbJzt8Ti6MdA4A5O9r2w/zh-cn_image_0000002776909046.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/Ci0TzBJoSISKk3YX155eUg/zh-cn_image_0000002779850526.png)
 
 提供承载的H5页面代码如下：
 
@@ -537,7 +537,7 @@ struct SearchComponent {
 
 \*\*图3 \*\*非同层渲染的Trace图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/uIRgmBQCTAS8yC4qeLPluA/zh-cn_image_0000002776749060.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/D1kKm_93QZm3-OAOntJ4hw/zh-cn_image_0000002779690558.png)
 
 非同层渲染的分析：
 
@@ -548,7 +548,7 @@ struct SearchComponent {
 
 **图4** 同层渲染的Trace图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/P1IBZxWkSrqwdt6WMPTaYw/zh-cn_image_0000002806028777.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/QpERSkDxReOE6p7ezVONOA/zh-cn_image_0000002809010179.png)
 
 同层渲染的分析：
 
@@ -559,7 +559,7 @@ struct SearchComponent {
 
 下表为各种方法完成原生组件加载（蓝线）前后几帧render\_service侧的耗时对比（-1为完成前一帧，1为完成后一帧，以此类推）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/ClzGAS9nRSWeEsJGo424cw/zh-cn_image_0000002806108667.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/Fi97o8R9S_-zZWtuoIyvng/zh-cn_image_0000002809050093.png)
 
 从此表格可以看出，非同层渲染会导致render\_service侧每帧耗时大幅提升，同层渲染相比起非同层渲染，并不影响render\_service侧的每帧耗时。
 
@@ -571,7 +571,7 @@ struct SearchComponent {
 
 **图5** 非同层渲染滑动时单帧图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/lMpy1tdSR6W-CAZIvU3s5A/zh-cn_image_0000002776909048.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/IuyI3suwTnS1FIZOEqpVdg/zh-cn_image_0000002779850528.png)
 
 非同层渲染的分析：
 
@@ -582,7 +582,7 @@ struct SearchComponent {
 
 **图6** 同层渲染滑动时单帧图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/ZUWzjCfqSsybd9lwthBYiA/zh-cn_image_0000002776749062.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/mtRvWKqCSX2hFVfzNrXqWA/zh-cn_image_0000002779690560.png)
 
 同层渲染的分析：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-push-2
 title: 消息推送限制和消息回执问题
 breadcrumb: FAQ > 应用服务开发 > 消息推送服务（Push Kit） > 消息推送限制和消息回执问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:43+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:9d6ab246746324501d2a9900dce6020efa699133481e838344a76da37ad76e88
+scraped_at: 2026-11-04T08:40:24+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:20de1bf32a40fe12d195c073dac9a525913f935332b563b3ed585e974a0808a6
 ---
 
 ## 问题现象
@@ -28,12 +28,16 @@ content_hash: sha256:9d6ab246746324501d2a9900dce6020efa699133481e838344a76da37ad
 
 问题九：夜间消息管控的时段、触发条件及重发机制是什么？
 
+问题十：夜间消息管控期间，应用有重要报警通知需要推送，如何确保消息及时送达？
+
 ## 背景知识
 
 * [通知消息分类标准与提醒方式](../harmonyos-guides/push-apply-right.md#通知消息分类标准与提醒方式)：结合应用的消息内容和消息发送场景，Push Kit将通知消息分类为服务与通讯类和资讯营销类，并对不同类别的通知消息的提醒方式、消息展示位置、推送数量进行差异化管理。
 * [开发消息回执](../harmonyos-guides/push-msg-receipt.md)：消息回执是指Push Kit服务端将消息推送到用户终端之后，端侧会给Push服务端反馈送达结果，与此同时，Push服务端会将消息送达状态以回执消息形式发送给您的应用回执服务端，方便您获取消息下达端侧后的状态，定位问题等。受网络环境以及消息量的影响，消息回执在Push服务端收到端侧响应后发送，会存在一些延迟现象，如果较长时间无法收到回执，可能是设备处于离线状态。
 * [HarmonyOS 开发者中心在线推送通知消息](../harmonyos-guides/push-scenes-send.md#appgallery-connect在线推送通知消息)：介绍如何在HarmonyOS 开发者中心配置消息推送服务。其中离线消息缓存机制和消息缓存时间，关系到当设备由离线到在线的消息处理机制。
 * [推送消息的及时性](../harmonyos-guides/push-kit-introduction.md#推送消息的及时性)：为降低对用户的打扰，系统会学习用户的行为习惯，预测用户的睡眠时间，在用户睡眠期间实施消息管控。在此期间Push Kit将暂时缓存该时间段内收到的消息，用户结束睡眠后，Push Kit会将消息重新投递到对应设备。
+* [申请推送应用内通话消息权益](../harmonyos-guides/push-apply-right.md#申请推送应用内通话消息权益)：应用内通话消息（category=VoIP）不在夜间消息管控的缓存范围内，可直接投递到设备。告警类应用（仅服务于自身企业或本应用的用户或政府组织单位内部）属于该权益的开放申请场景。
+* [推送应用内通话消息](../harmonyos-guides/push-voip.md)：介绍如何推送应用内通话消息，包括服务端REST API请求体中category字段的配置方式。
 
 ## 解决方案
 
@@ -52,11 +56,43 @@ content_hash: sha256:9d6ab246746324501d2a9900dce6020efa699133481e838344a76da37ad
     - 最新消息：除15（离线消息管控）外的回执状态码。信息参考：[回执状态码](../harmonyos-guides/push-msg-receipt.md#回执状态码)。
     - 非最新消息：15（离线消息管控）回执状态码。
 * 问题四：V1回执不支持场景化消息发送，场景化消息请使用V2回执。受网络环境以及消息量的影响，消息回执在Push服务端收到端侧响应后发送，会存在一些延迟现象，无法即时获取到回执；如果较长时间未收到回执，请检查设备是否处于离线状态。请参考：[开发消息回执](../harmonyos-guides/push-msg-receipt.md)。
-* 问题五：应用推送服务有[消息推送速率管控](../harmonyos-references/push-msg-freq-control.md#消息推送速率管控)，当消息推送速率超过阈值时请求会返回HTTP响应码503。
+* 问题五：应用推送服务有[消息推送速率管控](../harmonyos-references/push-msg-freq-control.md#消息推送速率管控)，当消息推送速率超过阈值时请求会返回HTTP响应码503。QPS阈值按照应用日活用户数计算，若计算值不足6000，则默认兜底为6000。随着应用日活增长，QPS阈值也会相应提高。单设备消息推送上限为3000条/天，该上限无法突破。针对返回503流控问题，可通过以下方式优化：调整发送设备数和调用API接口的频次，使请求满足应用QPS阈值；在QPS阈值范围内增大调用API次数，减少单次请求携带的Token个数，降低被流控的概率；对返回503流控的消息，在发送空闲时段进行重试。
 * 问题六：该有效期是证书过期时间，不是回执ID有效期，到期后点击修改重新获取一下新证书后提交即可。
 * 问题七：推送服务的回执地址可以配置多个，每个回执地址对应一个回执ID。若使用不同推送平台推送消息，需要回执触达到不同的回执地址，可以在下发消息时指定[receiptId](../harmonyos-references/push-scenariozed-api-request-param.md)参数，消息下发情况会通过配置的回执ID下发到对应的回执地址。
 * 问题八：Push Kit没有限流情况，只有[消息推送频率管控](../harmonyos-references/push-msg-freq-control.md#消息推送速率管控)。Push Kit消息下发耗时通常不超过1s，如果从第三方推送平台受理成功到消息送达存在较长时间延迟，需要排查第三方推送平台调用Push Kit接口的耗时。
 * 问题九：夜间消息管控时段为0点到6点。触发条件为凌晨0到6点熄屏30分钟后管控消息下发，期间的发送消息会被缓存。管控结束后，该时段缓存的所有消息会集中重发，为防止浪涌，消息会离散处理，导致延迟。如果用户结束息屏，Push Kit会将消息直接投递到对应设备，不会走离散处理。
+* 问题十：
+
+  夜间消息管控期间，应用内通话消息或category=VoIP的消息不在缓存管控范围内，可直接投递到设备。因此，重要报警消息可通过申请[推送应用内通话消息权益](../harmonyos-guides/push-apply-right.md#申请推送应用内通话消息权益)，并在推送通知消息时携带category=VOIP实现及时送达。
+
+  告警类应用（仅服务于自身企业或本应用的用户或政府组织单位内部）属于该权益的开放申请场景。申请权益时需在附件中上传对应材料：企业内部应用、智能安防类（含智能视频监控、电梯应急呼叫）和智能穿戴设备类应用需提供被服务主体盖章的证明函；非上述应用需提供《增值电信业务经营许可证》（B22国内多方通信服务业务）。
+
+  服务端REST API请求体核心字段示例（category位于notification下）：
+
+  ```json
+  {
+    "payload": {
+      "notification": {
+        "category": "VOIP",
+        "title": "设备紧急告警",
+        "body": "XX设备触发告警，请及时处理",
+        "clickAction": {
+          "actionType": 0,
+          "action": "com.example.myapplication"
+        }
+      }
+    },
+    "target": {
+      "token": ["<客户端获取的Push Token>"]
+    },
+    "pushType": 0,
+    "expireTime": 86400
+  }
+  ```
+
+  category字段的具体说明请参考[请求体参数说明](../harmonyos-references/push-scenariozed-api-request-param.md#notification)。
+
+  若需进一步优化消息频控和延迟问题，还可采取以下措施：在AGC后台申请[推送场景化消息权益（自分类权益）](../harmonyos-guides/push-apply-right.md#申请通知消息自分类权益)，路径：开发与服务>增长>推送服务>配置>自分类权益；在推送消息体中显式传入category字段，确保与已申请的权益类型一致，使IoT设备消息归类为服务与通讯类；开发消息回执处理逻辑，过滤无效推送（回执码2/5/6/10分别对应Token无效、Token不匹配、通知不展示、非活跃设备），避免浪费频控额度；采用混合推送策略，应用进程在前台时走应用内消息通道（不消耗Push Kit频控额度），应用进程不在前台时通过Push Kit推送关键告警；对大量设备状态消息进行聚合/合并推送，将多条状态消息合并为一条摘要消息推送，减少推送条数。
 
 ## 常见FAQ
 

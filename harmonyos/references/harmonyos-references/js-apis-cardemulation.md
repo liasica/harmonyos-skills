@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.nfc.cardEmulation (标准NFC-cardEmulation)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.nfc.cardEmulation (标准NFC-cardEmulation)
 category: harmonyos-references
-scraped_at: 2026-10-29T08:00:54+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:843cc35eee2def266a300143afe9bf43efc44a0a75f357f8f921d9a37868d782
+scraped_at: 2026-11-04T08:34:38+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:491bdbe9c72848e563e3ae6e56b3616b215c57a3cf2e1bb82ebd147646e611df
 ---
 
 本模块主要提供NFC卡模拟业务，包括判断支持哪种卡模拟类型，HCE卡模拟的业务实现等。
@@ -599,9 +599,9 @@ on(type: 'hceCmd', callback: AsyncCallback<number[]>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 401 | Invalid parameter. |
-| 801 | Capability not supported. |
+| 201 | Permission denied.  适用版本：12+ |
+| 401 | Invalid parameter.  适用版本：12+ |
+| 801 | Capability not supported.  适用版本：12+ |
 
 **示例：**
 

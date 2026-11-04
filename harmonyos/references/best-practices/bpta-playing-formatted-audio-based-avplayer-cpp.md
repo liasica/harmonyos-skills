@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-playing-fo
 title: 基于AVPlayer播放格式化音频（C++）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频播放系列开发实践 > 基于AVPlayer播放格式化音频（C++）
 category: best-practices
-scraped_at: 2026-10-29T08:03:16+08:00
+scraped_at: 2026-11-04T08:37:50+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:c136c718cb483ea2317b672d5985723c0f9b5d86a47dc223bfbab1443c6065d8
+content_hash: sha256:6d54328952e31a7b35e01236e0220cb152cdb44fd014e341ca0e1ef14d0aeb64
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 本文是音频播放系列文章的第4篇，实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/2tltWy2KRDylmAjCK42-zg/zh-cn_image_0000002524217640.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/LVNv8-2sRea_pgyfzWh8tQ/zh-cn_image_0000002555337515.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/SD258mpjTUuQ89FDjbjfzg/zh-cn_image_0000002524057652.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/fx0SUE8UQlejdRZl5ej7Hg/zh-cn_image_0000002524217640.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/bIGwTFyVTEOVfprDr-43jg/zh-cn_image_0000002555337515.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/eIgwSqViRX2355AndsGjhg/zh-cn_image_0000002524057652.gif "点击放大")
 
 ## 场景分析
 
@@ -36,7 +36,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 通过[avplayer.h](../harmonyos-references/capi-avplayer-h.md)中的接口实现核心音频播放控制能力，包括音频资源加载、播放、暂停、停止及退出等操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/GZyLOOwJSo6i8HMdPwOqTg/zh-cn_image_0000002555217551.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/JjvS3wTWQRCEmWt9hmBjYQ/zh-cn_image_0000002555217551.gif "点击放大")
 
 ### 实现原理
 
@@ -288,7 +288,7 @@ void AVPlayer::ReleasePlayer() {
 
 通过点击或拖动进度条精准跳转到指定时间进行播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/iA_CDFzfRlS_xZxQtoIThw/zh-cn_image_0000002524217654.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/wYdhcnM4SAOjlf9DH0-Vkw/zh-cn_image_0000002524217654.gif "点击放大")
 
 ### 实现原理
 
@@ -319,7 +319,7 @@ void AVPlayer::SeekPlaySong(uint32_t timeStamp) {
 
 通过界面按钮快捷切换音频播放静音状态，实现一键开启或关闭静音。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/cCWay2P0SkKSl0O1wzZBlg/zh-cn_image_0000002555337523.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/OovXVokrTBaoup1o8jReaA/zh-cn_image_0000002555337523.gif "点击放大")
 
 ### 实现原理
 
@@ -352,7 +352,7 @@ void AVPlayer::SetSilentMode(bool isSilentMode) {
 
 点击上一首或下一首或歌单列表中的歌曲进行不同歌曲播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/2C-VzW5kTy6_JmWjyilA5Q/zh-cn_image_0000002524057660.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/VxFG2s-QQteI8dqmD9mYWg/zh-cn_image_0000002524057660.gif "点击放大")
 
 ### 实现原理
 
@@ -436,7 +436,7 @@ void AVPlayer::LoadSongInfo(uint32_t songFd, uint32_t songFileSize, uint32_t son
 
 滑动倍速调节面板调节播放速度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/xy4QWv_5RlOE6vPcW6d25w/zh-cn_image_0000002555217553.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/pfmiqmX3QaObHqccVl0xsA/zh-cn_image_0000002555217553.gif "点击放大")
 
 ### 实现原理
 
@@ -497,7 +497,7 @@ void AVPlayer::SetPlayingSpeed(float speed) {
 
 滑动音量调节面板调节播放音量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/UY_K6RHzRpSUIhGd1HBPfw/zh-cn_image_0000002524217656.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/c9jRqy_OSZyWMnwxFnqv4A/zh-cn_image_0000002524217656.gif "点击放大")
 
 ### 实现原理
 

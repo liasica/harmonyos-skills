@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-rtc
 title: 在Web中打开摄像头和麦克风
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 使用网页多媒体 > 在Web中打开摄像头和麦克风
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:19+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:76a4ceae67cd5fde6a17ea31b44c641de1988d07c2a8f2378d50de9c5488e55c
+scraped_at: 2026-11-04T08:29:27+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:f258090dea534dfb527015a80d9c926c51ffd621e08bb8f94a0bfcb61db0d304
 ---
 
 WebRTC（Web Real-Time Communications）是一项实时通讯技术，它允许网络应用或站点在无需中间媒介的情况下建立浏览器之间的点对点（Peer-to-Peer）连接，实现视频流、音频流或其他任意数据的传输。WebRTC所包含的标准使得用户无需安装任何插件或第三方软件即可创建点对点（Peer-to-Peer）的数据共享与音视频会议。WebRTC技术适用于所有现代浏览器和主要平台的本机客户端，其背后的技术作为开放的Web标准实现，并在所有主要浏览器中作为常规JavaScript API提供。
@@ -62,7 +62,7 @@ Web组件可以通过W3C标准协议接口访问摄像头和麦克风，通过[o
 
 ### 系统侧授权
 
-参考[完整示例代码](web-rtc.md#完整示例代码)中，调用requestPermissionsFromUser，使得进入应用后会弹出是否允许该应用访问摄像头和麦克风的授权框，需点击"始终允许"或"每次使用时询问"按钮，授权应用访问摄像头和麦克风。
+参考[完整示例代码](web-rtc.md#完整示例代码)中，调用requestPermissionsFromUser()，使得进入应用后会弹出是否允许该应用访问摄像头和麦克风的授权框，需点击"始终允许"或"每次使用时询问"按钮，授权应用访问摄像头和麦克风。
 
 ### 应用侧授权
 
@@ -159,7 +159,7 @@ struct WebComponent {
         video.srcObject = MediaStream;
         video.play();
       }).catch(function(err) {
-          console.info(err.name + ": " + err.message);
+          console.error(err.name + ": " + err.message);
       });
     }
   </script>

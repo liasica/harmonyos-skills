@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-audio-31
 title: 应用打开时中断了听书功能
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音频（Audio） > 应用打开时中断了听书功能
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:30+08:00
-doc_updated_at: 2026-08-13
-content_hash: sha256:c118e839e8a1255105fc37912dc3b2f54e0e3c9b17a141d2070b3969c5edd478
+scraped_at: 2026-11-04T08:40:09+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:8080963d5f069d8c35c5ee58d0a55b2dc14392efbbbc290ee41c358324e170fc
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:c118e839e8a1255105fc37912dc3b2f54e0e3c9b17a141d2070b3969c5e
 
 ## 背景知识
 
-1. 为解决多音频流播放冲突问题，系统采用了音频焦点机制，即只有获得音频焦点的音频流可以正常播放，失去音频焦点的音频流则不能播放，系统[音频焦点管理](../harmonyos-guides/audio-playback-concurrency.md#音频焦点)机制提供了四类音频中断策略：
+1. 为解决多音频流播放冲突问题，系统采用了音频焦点机制，即只有获得音频焦点的音频流可以正常播放，失去音频焦点的音频流则不能播放，系统[音频焦点管理](../doccenter-capabilities/audio-playback-concurrency.md)机制提供了四类音频中断策略：
    * 终止策略(Stop)：停止先播音频流，使其永久失焦，待后播音频流结束后，先播音频流不恢复播放。
    * 暂停策略(Pause)：暂停先播音频流，使其暂时失焦，待后播音频流结束后，先播音频流恢复播放。
    * 降音策略(Duck)：与先播音频流并发播放，并且降低先播音频流的音量，待后播音频流结束后，先播音频流恢复音量。
@@ -48,7 +48,7 @@ content_hash: sha256:c118e839e8a1255105fc37912dc3b2f54e0e3c9b17a141d2070b3969c5e
    ```
 2. 应用中搜索AudioConcurrencyMode并发模式，查看应用有无使用音频会话，自定义音频中断策略。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/JxeEZTzOSuiUzhEUCbu5Vg/zh-cn_image_0000002658911833.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/yHX9SsrpQ7C-eA2B77-DNQ/zh-cn_image_0000002658911833.png)
 
 ## 分析结论
 

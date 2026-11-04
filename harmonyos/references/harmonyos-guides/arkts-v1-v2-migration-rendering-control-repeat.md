@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-m
 title: 循环渲染迁移
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导 > 状态管理V1向V2迁移场景 > 循环渲染迁移
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:31:48+08:00
+scraped_at: 2026-11-04T08:29:12+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:e9a2069796ed872d39f4854ac71b2cddad606ec383dd29417a8145997afc36ff
+content_hash: sha256:1b0e2d2e39ab358cc6a96e280f750f7a3c9a2c015021621c3206c00cf9119611
 ---
 
 本文档主要介绍组件循环渲染从V1向V2的迁移，涉及如下渲染控制组件。
@@ -339,7 +339,7 @@ export struct MyComponent {
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/34p-KU0SQ7yg9DEevIG5xA/zh-cn_image_0000002806107889.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/Cq6SlI2OSCeLlVsKckiaqg/zh-cn_image_0000002809049315.gif)
 
 ### 数据更新操作
 
@@ -554,7 +554,7 @@ export struct MyComponent {
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/Wb1iXTZTQFCbZKtPzBLaNw/zh-cn_image_0000002776908270.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/foXLudeeS3Sgmz3CC3fqng/zh-cn_image_0000002779849750.gif)
 
 ### 修改数据子属性
 
@@ -695,7 +695,7 @@ export struct MyComponent {
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/WCFnxxW7RgycSuc2aDwnQw/zh-cn_image_0000002776748284.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/bWunCaiHTJic1gVMKohwJg/zh-cn_image_0000002779689780.gif)
 
 ### 状态管理V2观测组件内部状态
 
@@ -850,7 +850,7 @@ export struct ChildComponent {
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/ULL8K-xWRSG8Vr5h8zXRBQ/zh-cn_image_0000002806028001.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/kBKb5wyVTs6pkwLlSJGL6Q/zh-cn_image_0000002809009401.gif)
 
 ### 状态管理V2观测组件外部输入
 
@@ -989,7 +989,7 @@ export struct ChildComponent {
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/gttLpa45Q6W1Ow3K3cWbAg/zh-cn_image_0000002806107891.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/M08VAHMgQO2hpbCdjMKhiQ/zh-cn_image_0000002809049317.gif)
 
 ### 拖拽排序
 
@@ -1122,7 +1122,7 @@ export struct Parent {
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/YILqatRRQmqGpvgGYM6JmA/zh-cn_image_0000002776908272.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/vrpcnOgrSN-wEQLAvKLROw/zh-cn_image_0000002779849752.gif)
 
 ### 组件复用
 
@@ -1349,7 +1349,7 @@ export struct ChildComponent {
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/pnaaG8GTTR2zOdqPnq8Lig/zh-cn_image_0000002776748286.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/81ui6vd7SDuBIa5LgUOIBw/zh-cn_image_0000002779689782.gif)
 
 ### 模板渲染
 
@@ -1683,7 +1683,7 @@ export struct ChildComponentB {
 
 运行后界面如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/cQsQm-I0SiajNZXzPNI7yw/zh-cn_image_0000002806028003.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/tav8a9htRQGfhH4xhZptdw/zh-cn_image_0000002809009403.gif)
 
 ## BasicDataSource示例代码
 

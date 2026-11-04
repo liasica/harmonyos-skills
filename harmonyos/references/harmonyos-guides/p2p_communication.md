@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/p2p_communica
 title: 应用间消息通信
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > 手机侧应用开发 > 应用开发 > 应用间消息通信
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:44+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:f1fd213533bb9d6b9861291e6076073d62388a9bebfed477ae07c9ab96f0dc65
+scraped_at: 2026-11-04T08:29:56+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:c9555889753f61d09e3c0f736aa9a9dac26a086ea3ace63b142d38f75cbc2c67
 ---
 
 在手机侧与穿戴设备侧构建应用到应用的通信隧道，用于收发应用自定义的报文消息以及文件。实现手机应用和穿戴设备应用间的交互，为用户提供分布式场景和体验。比如手机应用发送音频文件到穿戴设备侧应用，实现在穿戴设备侧应用上播放音乐；手机应用发送暂停指令，实现穿戴设备音乐播放暂停等。
@@ -66,7 +66,7 @@ content_hash: sha256:f1fd213533bb9d6b9861291e6076073d62388a9bebfed477ae07c9ab96f
    p2pClient.getRemoteAppVersion(targetDevice.randomId, remoteBundleName).then((version) => {
      console.info(`Succeeded in getting remote app version, version is ${version}.`);
    }).catch((error: BusinessError) => {
-     console.error(`Failed to check get remote app version. Code is ${error.code}, message is ${error.message}.`);
+     console.error(`Failed to get remote app version. Code is ${error.code}, message is ${error.message}.`);
    });
    ```
 

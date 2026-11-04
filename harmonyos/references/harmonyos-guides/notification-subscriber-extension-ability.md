@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-
 title: 通知订阅扩展能力概述
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > 通知订阅扩展能力 > 通知订阅扩展能力概述
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:33:08+08:00
+scraped_at: 2026-11-04T08:30:37+08:00
 doc_updated_at: 2026-08-21
-content_hash: sha256:0defd84bc0564c560e33ec9e2c0d64201ec1ad69f510dbcad54295a967df3304
+content_hash: sha256:7e8b3eec9e8d88f7ff16cd41b8bcee3198643734e7815b055de9e6176d3451ba
 ---
 
 ## 功能简介
@@ -32,4 +32,4 @@ content_hash: sha256:0defd84bc0564c560e33ec9e2c0d64201ec1ad69f510dbcad54295a967d
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/iWA35w2jRNil0vDx5QYnnQ/zh-cn_image_0000002806109657.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/bTJU37bSRgiDpqHRnac-og/zh-cn_image_0000002809051083.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-developing
 title: 界面渲染性能优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化
 category: best-practices
-scraped_at: 2026-10-16T07:06:46+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:b3c6099f3699e33ad83d525ef9c30cc33f70316ebb52a157226774352ee80c40
+scraped_at: 2026-11-04T08:37:59+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:66f672e67ff59c7f7407a13341c5eb70893d39b828d735df201c0643afecac86
 ---
 
 * **[组件嵌套优化](bpta-component-nesting-optimization.md)**
@@ -17,3 +17,5 @@ content_hash: sha256:b3c6099f3699e33ad83d525ef9c30cc33f70316ebb52a157226774352ee
 * **[瀑布流加载丢帧优化](bpta-waterflow-performance-optimization.md)**
 * **[Grid组件加载丢帧优化](bpta-improve_grid_performance.md)**
 * **[Swiper组件加载丢帧优化](bpta-swiper_high_performance_development_guide.md)**
+* **[组件冗余刷新解决方案](bpta-redundancy-refresh-guide.md)**
+* **[马良GPU渲染优化](bpta-maleoon-gpu-best-practices.md)**

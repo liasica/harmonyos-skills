@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/net-dns
 title: 使用DNS解析域名
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 访问网络 > 使用DNS解析域名
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:11+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:d3b8a3d813a9edabf5d076dcf03c52cc50476185831096d53b25e9e73a362168
+scraped_at: 2026-11-04T08:29:48+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:9c3efc86930862fe9c6e399700aecbfff2b4d0ac21d4453b98f5477fa072fe9d
 ---
 
 ## 场景介绍
@@ -16,10 +16,10 @@ content_hash: sha256:d3b8a3d813a9edabf5d076dcf03c52cc50476185831096d53b25e9e73a3
 
 | 功能名称 | 功能描述 | 开始支持的版本 |
 | --- | --- | --- |
-| Unicode与ASCII转换 | 支持中文域名与ASCII编码之间的相互转换 | API version 23 |
-| 获取主机名的所有IP地址 | 使用当前默认网络解析主机名，获取所有IP地址 | API version 23 |
-| 指定IP类型解析主机名 | 使用当前默认网络，指定IP类型（IPv4/IPv6）解析主机名 | API version 23 |
-| 指定网络连接解析主机名 | 使用特定网络连接[NetHandle](../harmonyos-references/js-apis-net-connection.md#nethandle)解析主机名 | API version 23 |
+| Unicode与ASCII转换 | 支持中文域名与ASCII编码之间的相互转换。 | API version 23 |
+| 获取主机名的所有IP地址 | 使用当前默认网络解析主机名，获取所有IP地址。0.0.0.0不会作为有效地址返回。 | API version 23 |
+| 指定IP类型解析主机名 | 使用当前默认网络，指定IP类型（IPv4/IPv6）解析主机名。 | API version 23 |
+| 指定网络连接解析主机名 | 使用特定网络连接[NetHandle](../harmonyos-references/js-apis-net-connection.md#nethandle)解析主机名。 | API version 23 |
 
 ## DNS解析支持中文域名转码
 

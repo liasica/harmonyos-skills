@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: NotificationExtensionContent
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > ArkTS API > notification > NotificationExtensionContent
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:00+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:73552643dfe1dc6beb19af4f28733caad65c4f971a473ee634f09e2b782ee96e
+scraped_at: 2026-11-04T08:37:15+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:53637a4d1a26c10fdfbfea4cdeb10fc989f278b493ceb554f580a28ec161ef1d
 ---
 
 通知扩展内容。
 
 **说明** 
 
-本模块首批接口从API version 22开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+本模块首批接口从API版本22开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## NotificationExtensionContent
 

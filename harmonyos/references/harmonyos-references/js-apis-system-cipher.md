@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@system.cipher (加密算法)"
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > ArkTS API > 已停止维护的接口 > @system.cipher (加密算法)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:40+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:43e19bfe13da48c0516420b99221b4510abf6b62cf0291dcc562e78fa76937cf
+scraped_at: 2026-11-04T08:34:21+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:dc9a64e3e1719b0fb9dc8483a04958cee09d09f508084cc0243637eb0d232e0e
 ---
 
 **说明** 
@@ -39,7 +39,7 @@ import cipher from '@system.cipher';
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | action | string | 否 | 否 | 加解密操作类型，可选项有：  1. encrypt 加密；  2. decrypt 解密。 |
-| text | string | 否 | 否 | 待加密或解密的文本内容。待加密的文本内容应该是一段普通文本，长度不能超过keySize / 8 - 66，其中keySize是密钥的长度（例如密钥长度为1024时，text不能超过62个字节）。待解密的文本内容应该是经过base64编码的一段二进制值。base64编码使用默认风格。 |
+| text | string | 否 | 否 | 待加密或解密的文本内容。待加密的文本内容应该是一段普通文本，长度不能超过keySize / 8 - 66，其中keySize是密钥的长度（例如密钥长度为1024时，text不能超过62个字节）。待解密的文本内容应该是经过Base64编码的一段二进制值。Base64编码使用默认风格。 |
 | key | string | 否 | 否 | 加解密使用的RSA密钥。加密时key为公钥，解密时key为私钥。 |
 | transformation | string | 否 | 是 | RSA算法的填充项，默认为RSA/None/OAEPWithSHA256AndMGF1Padding。 |
 | success | (data: [CipherResponse](js-apis-system-cipher.md#cipherresponse)) => void | 否 | 是 | 接口调用成功的回调函数。 |
@@ -55,10 +55,10 @@ import cipher from '@system.cipher';
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | action | string | 否 | 否 | 加解密操作类型，可选项有：  1. encrypt 加密；  2. decrypt 解密。 |
-| text | string | 否 | 否 | 待加密或解密的文本内容。待加密的文本内容应该是一段普通文本。待解密的文本内容应该是经过 base64 编码的一段二进制值。base64 编码使用默认风格。 |
-| key | string | 否 | 否 | 加密或解密使用到的密钥，经过 base64 编码后生成的字符串。 |
+| text | string | 否 | 否 | 待加密或解密的文本内容。待加密的文本内容应该是一段普通文本。待解密的文本内容应该是经过Base64编码的一段二进制值。Base64编码使用默认风格。 |
+| key | string | 否 | 否 | 加密或解密使用到的密钥，经过Base64编码后生成的字符串。 |
 | transformation | string | 否 | 是 | AES算法的加密模式和填充项，默认AES/CBC/PKCS5Padding。 |
-| iv | string | 否 | 是 | AES加解密的初始向量，经过base64编码后的字符串，默认值为key值。 |
+| iv | string | 否 | 是 | AES加解密的初始向量，经过Base64编码后的字符串，默认值为key值。 |
 | ivOffset | string | 否 | 是 | AES加解密的初始向量偏移，默认值0，仅支持0。 |
 | ivLen | string | 否 | 是 | AES加解密的初始向量字节长度，当前为预留字段，默认值16，仅支持16。 |
 | success | (data: [CipherResponse](js-apis-system-cipher.md#cipherresponse)) => void | 否 | 是 | 接口调用成功的回调函数。 |
@@ -89,7 +89,7 @@ export default {
       action: 'encrypt',
       // 待加密的文本内容。
       text: 'hello',
-      // base64编码后的加密公钥。
+      // Base64编码后的加密公钥。
       key:
      'MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCx414QSP3RsYWYzf9mkBMiBAXo\n' +
      '6S7Lpva1fKlcuVxjoFC1iMnzD4mC0uiL4k5MNi43J64c7dbqi3qAJjdAtuwQ6NZJ\n' +
@@ -108,12 +108,12 @@ export default {
       cipher.rsa({
         // 解密：
         action: 'decrypt',
-        // 待解密的内容，是base64编码后的一段二进制值，解密后是文本内容“hello”。
+        // 待解密的内容，是Base64编码后的一段二进制值，解密后是文本内容“hello”。
         text:
        'EPeCFPib6ayKbA0M6oSywARvFZ8dFYfjQv3nY8ikZGtS9UHq2sLPvAfpeIzggSiCxqbWeCftP1XQ\n' +
        'Sa+jEpzFlT1qoSTunBbrYzugPTajIJDTg6R1IRsF/J+mmakn0POVPvi4jCo9wqavB324Bx0Wipnc\n' +
        'EU5WO0oBHo5l4x6dTpU=',
-         // base64编码后的解密私钥。
+         // Base64编码后的解密私钥。
          key:
         'MIICXgIBAAKBgQCx414QSP3RsYWYzf9mkBMiBAXo6S7Lpva1fKlcuVxjoFC1iMnz\n' +
         'D4mC0uiL4k5MNi43J64c7dbqi3qAJjdAtuwQ6NZJ+Enz0RzmVFh/4yk6lmqRzuEF\n' +
@@ -166,7 +166,7 @@ export default {
       action: 'encrypt',
       // 待加密的文本内容。
       text: 'hello',
-      // base64编码后的密钥。
+      // Base64编码后的密钥。
       key: 'NDM5Qjk2UjAzMEE0NzVCRjlFMkQwQkVGOFc1NkM1QkQ=',
       transformation: 'AES/CBC/PKCS5Padding',
       ivOffset: '0',
@@ -184,9 +184,9 @@ export default {
     cipher.aes({
       // 解密：
       action: 'decrypt',
-      // 待解密的内容，是base64编码后的一段二进制值。
+      // 待解密的内容，是Base64编码后的一段二进制值。
       text: '1o0kf2HXwLxHkSh5W5NhzA==',
-       // base64编码后的密钥。
+       // Base64编码后的密钥。
        key: 'NDM5Qjk2UjAzMEE0NzVCRjlFMkQwQkVGOFc1NkM1QkQ=',
        transformation: 'AES/CBC/PKCS5Padding',
        ivOffset: '0',

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-privac
 title: 应用隐私保护
 breadcrumb: 最佳实践 > 安全设计 > 应用隐私保护
 category: best-practices
-scraped_at: 2026-10-29T08:03:29+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:53a40302a025b22ab5fe997ff560e62c1d9aa7046845d46eec7b2d7dc2d98c71
+scraped_at: 2026-11-04T08:38:08+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:a7ab8bc94f95bab602221260a3d8de2ea7302d9dad1770b11f9cc8d0197cf3bf
 ---
 
 ## 概述
@@ -106,7 +106,7 @@ content_hash: sha256:53a40302a025b22ab5fe997ff560e62c1d9aa7046845d46eec7b2d7dc2d
 
 **图1** 权限申请弹窗
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/iE2zb2-4TfyoAsGok9xjZA/zh-cn_image_0000002681797507.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/_Gw7wRWcRjiKyrpOJR_VCQ/zh-cn_image_0000002681797507.png "点击放大")
 
 接下来介绍模糊位置申请的实现方法：
 
@@ -183,7 +183,7 @@ content_hash: sha256:53a40302a025b22ab5fe997ff560e62c1d9aa7046845d46eec7b2d7dc2d
 
 用户往往不愿意授予应用对其所有照片和视频的访问权限。因此，HarmonyOS在API9版本之后引入了@ohos.file.picker (选择器)，以满足用户正常的数据访问需求，同时最小化应用的数据泄露风险。通过减少授权范围，降低授权的颗粒度，例如用户在发送图片时，仅允许应用访问用户选择的图片。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/53Rc3h0HQC-h-rKiiqIZMw/zh-cn_image_0000002193851256.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/343PDjizSvGjh3NUYFWaiQ/zh-cn_image_0000002193851256.png "点击放大")
 
 示例代码如下：
 

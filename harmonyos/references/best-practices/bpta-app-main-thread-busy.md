@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-main-t
 title: 应用主线程繁忙故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 应用冻屏故障模式说明 > 应用主线程繁忙故障模式说明
 category: best-practices
-scraped_at: 2026-10-29T08:03:26+08:00
+scraped_at: 2026-11-04T08:38:04+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:a75c9ae9119556d5c7d66f75bf77476b16fb3e2b30344baa910a494ed334dca2
+content_hash: sha256:4678f731bc417f17c13b041adb478a84a1003ba878eddf7e982aaa58be0d34ba
 ---
 
 ## 概述
@@ -123,7 +123,7 @@ ld-musl-aarch64.so.1
 
    证据3：故障栈帧所在的代码
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/5ENKdlKUSN-xI_RfBbURzw/zh-cn_image_0000002673735603.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/z8Gth7-UTCKixHMx1QidRA/zh-cn_image_0000002673735603.png "点击放大")
 
    代码中创建了多个子线程，并且子线程中循环竞争锁资源，导致主线程繁忙。
 
@@ -237,7 +237,7 @@ WriteBinder
 
    证据3：故障栈帧所在的代码
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/wrr63jRhTyef9AFvaJv3cw/zh-cn_image_0000002643575820.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/UJ5sFtaUSZKqGTSiE-wcLQ/zh-cn_image_0000002643575820.png "点击放大")
 
    业务中循环调用系统音频服务接口导致主线程繁忙。
 
@@ -347,7 +347,7 @@ ld-musl-aarch64.so.1
 
    证据3：故障栈帧所在的代码
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/idtvGcQTRBe9NH9YHXjGEg/zh-cn_image_0000002643415866.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/bRO7OH85SlqLkDDIhOucEA/zh-cn_image_0000002643415866.png "点击放大")
 
    业务中循环进行文件读写操作导致主线程繁忙。
 
@@ -457,7 +457,7 @@ libace\_compatible.z.so
 
    证据3：故障栈帧关联的代码
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/lisYJD_MTFKtNjCCmhNiXQ/zh-cn_image_0000002673575733.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/yqKmmCLTTeKkauNVOi7F9g/zh-cn_image_0000002673575733.png "点击放大")
 
    业务中循环刷新Text组件导致主线程繁忙。
 
@@ -553,7 +553,7 @@ libace\_compatible.z.so
 
    证据3：故障栈帧所在的代码
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/PnyaqDRYRnWWMPYNGoUoZQ/zh-cn_image_0000002673735605.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/ti1lOZK9TCerGUweHOSZyA/zh-cn_image_0000002673735605.png "点击放大")
 
    业务中循环处理计算任务导致主线程繁忙。
 
@@ -632,7 +632,7 @@ libace\_compatible.z.so
 
    证据2：故障栈帧所在的代码
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/YrtsqiPcS-iLi2QdOdjmiQ/zh-cn_image_0000002643575824.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/iLmHVHGJQti8RSxN3M0T2g/zh-cn_image_0000002643575824.png "点击放大")
 
    业务中循环处理多个不同类型的耗时子任务导致主线程繁忙。
 

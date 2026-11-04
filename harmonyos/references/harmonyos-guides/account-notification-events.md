@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-notif
 title: Account Kit通知事件
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit通知事件
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:55+08:00
+scraped_at: 2026-11-04T08:30:23+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:d0b0523d81726b7112cee79bede3e79eedaf3a155cf63bd90c59ce06e275e2f4
+content_hash: sha256:e9d54450c5b4ae1285feb03035e5fb93e4640ebf74a914f821903c2d20cbfed7
 ---
 
 ## 概述
@@ -176,16 +176,16 @@ content_hash: sha256:d0b0523d81726b7112cee79bede3e79eedaf3a155cf63bd90c59ce06e27
 
 1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)，进入“开发者管理”页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/7VHJU__1T1esjxh0HUovgg/zh-cn_image_0000002776909724.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/xTuEd9ZCT3W68lTcF5W2lQ/zh-cn_image_0000002779851204.png)
 2. 左侧导航栏选择“ID、证书和Profile > APP ID”，页面中选择“HarmonyOS”，点击“开放能力管理”页签；选择需要订阅用户信息变更事件的应用，找到“RISC”并勾选，点击“保存”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/Frlf-lnxT0uK8_bB5_-T9A/zh-cn_image_0000002776749738.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/vlUNPTLxRHu2X9NQJuXZxw/zh-cn_image_0000002779691236.png)
 3. 点击“RISC”对应的“管理”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/JGOjS6HMTfm9xx_nqI2yvA/zh-cn_image_0000002806029455.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/49hW1AQrRmimo1I2qOZFQw/zh-cn_image_0000002809010857.png)
 4. 在弹窗中配置“回调地址”及“订阅范围”，然后点击“提交”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/TPFZf3fARGyDs8x6BT5DjQ/zh-cn_image_0000002806109345.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/ig_HLMz5R1qKw2itjbzH8Q/zh-cn_image_0000002809050771.png)
 
    **说明** 
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/drm-c-dev-gui
 title: 数字版权保护(C/C++)
 breadcrumb: 指南 > 媒体 > DRM Kit（数字版权保护服务） > 数字版权保护(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:58+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:0e39e03262026ccb85c9d8e1b5af4117facb4ef88c2ed92f9b149aeaf5b38d71
+scraped_at: 2026-11-04T08:30:11+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:ac988ebb3479d77b56789be94d57351156d74a91870609776dc0c8935f827d51
 ---
 
 ## 功能介绍
@@ -21,10 +21,12 @@ DRM Kit提供MediaKeySystem实现DRM证书管理、DRM许可证管理功能，�
 1. 导入DRM Kit接口。
 
    ```
-   #include "multimedia/drm_framework/native_drm_common.h"
-   #include "multimedia/drm_framework/native_drm_err.h"
-   #include "multimedia/drm_framework/native_mediakeysession.h"
-   #include "multimedia/drm_framework/native_mediakeysystem.h"
+   // ...
+   #include <cstring>
+   #include <multimedia/drm_framework/native_drm_common.h>
+   #include <multimedia/drm_framework/native_drm_err.h>
+   #include <multimedia/drm_framework/native_mediakeysession.h>
+   #include <multimedia/drm_framework/native_mediakeysystem.h>
    ```
 2. 在CMake脚本中链接动态库。
 
@@ -34,218 +36,153 @@ DRM Kit提供MediaKeySystem实现DRM证书管理、DRM许可证管理功能，�
 3. 获取设备支持的DRM解决方案名称和唯一标识的列表。
 
    ```
-   #include <cstring>
    uint32_t count = 3; // count是当前设备实际支持的DRM插件的个数，用户根据实际情况设置。
    DRM_MediaKeySystemDescription descriptions[3];
    memset(descriptions, 0, sizeof(descriptions));
    Drm_ErrCode ret = OH_MediaKeySystem_GetMediaKeySystems(descriptions, &count);
-   if (ret != DRM_ERR_OK) {
-       printf("OH_MediaKeySystem_GetMediaKeySystems failed.");
-   }
+   // ...
    ```
 4. （可选）查询设备是否支持对应DRM解决方案名称、媒体类型、安全保护级别的DRM解决方案。
 
    ```
-   bool isSupported = OH_MediaKeySystem_IsSupported3("com.wiseplay.drm", "video/mp4", CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
-   if (isSupported != true) {
-       printf("The device does not support the content protection level.");
-   }
+   bool isSupported = OH_MediaKeySystem_IsSupported3(name, mimeType, CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
+   // ...
    ```
 5. 创建MediaKeySystem实例。
 
    ```
-   MediaKeySystem *mediaKeySystem = nullptr;
-   ret = OH_MediaKeySystem_Create("com.wiseplay.drm", &mediaKeySystem);
+   Drm_ErrCode ret = OH_MediaKeySystem_Create(name, &mediaKeySystem);
    if (ret != DRM_ERR_OK || mediaKeySystem == nullptr) {
-       printf("OH_MediaKeySystem_Create failed.");
+       // ...
+       return log;
    }
+   // ...
    ```
 6. （可选）设置MediaKeySystem事件监听回调。
 
    ```
-   static Drm_ErrCode SystemCallBackWithObj(MediaKeySystem *mediaKeySystem, DRM_EventType eventType,
-       uint8_t *info, int32_t infoLen, char *extra)
-   {
-       printf("SystemCallBackWithObj enter");
-       if (eventType == EVENT_PROVISION_REQUIRED) {
-           // 设备DRM证书请求和处理。
-       }
-       return DRM_ERR_OK;
-   }
-
    ret = OH_MediaKeySystem_SetCallback(mediaKeySystem, SystemCallBackWithObj);
-   if (ret != DRM_ERR_OK) {
-       printf("OH_MediaKeySystem_SetCallback failed.");
-   }
+   // ...
    ```
 7. （可选）获取设备DRM证书状态。
 
    ```
-   DRM_CertificateStatus certStatus = CERT_STATUS_INVALID;
-   // 检查设备DRM证书状态。
+   DRM_CertificateStatus certStatus = CERT_STATUS_NOT_PROVISIONED;
    ret = OH_MediaKeySystem_GetCertificateStatus(mediaKeySystem, &certStatus);
-   if (ret == DRM_ERR_OK && certStatus != CERT_STATUS_PROVISIONED) {
-       // 设备DRM证书请求和处理。
-   }
+   // ...
    ```
 8. （可选）生成设备DRM证书请求与处理设备DRM证书响应。
 
    ```
-   #define MAX_DRM_PROVISION_BUF_SIZE 24576 // 24576: (2 * 12 * 1024)
-   unsigned char request[MAX_DRM_PROVISION_BUF_SIZE] = { 0x00 };  // 设备DRM证书request最大长度为MAX_DRM_PROVISION_BUF_SIZE，按实际大小申请。
+   unsigned char request[MAX_DRM_PROVISION_BUF_SIZE] = {0x00};
    int32_t requestLen = MAX_DRM_PROVISION_BUF_SIZE;
-   // DRM服务URL的最大长度为2048。
-   char defaultUrl[2048] = { 0x00 };
+   char defaultUrl[2048] = {0x00};
    int32_t defaultUrlLen = 2048;
-   ret = OH_MediaKeySystem_GenerateKeySystemRequest(mediaKeySystem, request, &requestLen, defaultUrl,
-       defaultUrlLen);
-   if (ret != DRM_ERR_OK) {
-       printf("OH_MediaKeySystem_GenerateKeySystemRequest failed.");
-   }
-   /*
-     应用通过网络请求，将设备DRM证书请求信息传到DRM服务获取设备DRM证书请求响应keySystemResponse，
-     再将设备DRM证书请求响应设置到设备上，请根据实际的数据和长度传入。
-    */
+   ret = OH_MediaKeySystem_GenerateKeySystemRequest(mediaKeySystem, request, &requestLen, defaultUrl, defaultUrlLen);
+   // ...
+   ```
+
+   ```
+   // 应用通过网络请求将设备DRM证书请求传到DRM服务获取响应keySystemResponse，请按实际数据传入。
    unsigned char keySystemResponse[MAX_DRM_PROVISION_BUF_SIZE] = {0x00};
    ret = OH_MediaKeySystem_ProcessKeySystemResponse(mediaKeySystem, keySystemResponse, sizeof(keySystemResponse));
-   if (ret != DRM_ERR_OK) {
-       printf("OH_MediaKeySystem_ProcessKeySystemResponse failed.");
-   }
+   // ...
    ```
 9. （可选）获取设备支持的最大内容保护级别。
 
    ```
-   DRM_ContentProtectionLevel maxContentProtectionLevel = CONTENT_PROTECTION_LEVEL_UNKNOWN;
-   ret = OH_MediaKeySystem_GetMaxContentProtectionLevel(mediaKeySystem, &maxContentProtectionLevel);
-   if (ret != DRM_ERR_OK) {
-       printf("OH_MediaKeySystem_GetMaxContentProtectionLevel failed.");
-   }
+   DRM_ContentProtectionLevel level = CONTENT_PROTECTION_LEVEL_UNKNOWN;
+   ret = OH_MediaKeySystem_GetMaxContentProtectionLevel(mediaKeySystem, &level);
+   // ...
    ```
 10. 创建MediaKeySession实例。
 
     ```
-    MediaKeySession *mediaKeySession = nullptr;
-    DRM_ContentProtectionLevel contentProtectionLevel = CONTENT_PROTECTION_LEVEL_SW_CRYPTO; // 依据设备支持的内容保护级别设置。
-    ret = OH_MediaKeySystem_CreateMediaKeySession(mediaKeySystem, &contentProtectionLevel, &mediaKeySession);
-    if (ret != DRM_ERR_OK || mediaKeySession == nullptr) {
-        printf("OH_MediaKeySystem_CreateMediaKeySession failed.");
-    }
+    DRM_ContentProtectionLevel securityLevel = CONTENT_PROTECTION_LEVEL_SW_CRYPTO;
+    ret = OH_MediaKeySystem_CreateMediaKeySession(mediaKeySystem, &securityLevel, &mediaKeySession);
+    // ...
     ```
 11. （可选）设置MediaKeySession事件监听回调。
 
     ```
-    static Drm_ErrCode SessionEventCallBackWithObj(MediaKeySession *mediaKeySession, DRM_EventType eventType, uint8_t *info, int32_t infoLen, char *extra)
-    {
-        if (eventType == EVENT_KEY_REQUIRED) {
-            // 媒体密钥请求与处理。
-        }
-        return DRM_ERR_OK;
-    }
-
-    static Drm_ErrCode SessionKeyChangeCallBackWithObj(MediaKeySession *mediaKeySession, DRM_KeysInfo *keysInfo, bool hasNewGoodKeys)
-    {
-        return DRM_ERR_OK;
-    }
-
     OH_MediaKeySession_Callback sessionCallback = { SessionEventCallBackWithObj, SessionKeyChangeCallBackWithObj };
     ret = OH_MediaKeySession_SetCallback(mediaKeySession, &sessionCallback);
-    if (ret != DRM_ERR_OK) {
-        printf("OH_MediaKeySession_SetCallback failed.");
-    }
+    // ...
     ```
 12. （可选）查询是否需要安全解码。
 
     ```
-    bool requireSecureDecoder;
-    ret = OH_MediaKeySession_RequireSecureDecoderModule(mediaKeySession, "video/avc", &requireSecureDecoder);
-    if (ret != DRM_ERR_OK) {
-        printf("OH_MediaKeySession_RequireSecureDecoderModule failed.");
-    }
+    bool requireSecureDecoder = false;
+    ret = OH_MediaKeySession_RequireSecureDecoderModule(mediaKeySession, mimeType, &requireSecureDecoder);
+    // ...
     ```
 13. 生成媒体密钥请求与处理媒体密钥响应，以请求许可证完成DRM节目授权。
 
     ```
-    #define MAX_DRM_MEDIA_KEY_RESPONSE_BUF_SIZE 24576 // 24576: (2 * 12 * 1024)
     DRM_MediaKeyRequest mediaKeyRequest;
     DRM_MediaKeyRequestInfo info;
-    // initData对应码流中的pssh数据，请按实际数据填入。
+    // initData对应媒体流中的PSSH数据，请按实际数据传入。
     unsigned char initData[512] = {0x00};
     memset(&info, 0, sizeof(DRM_MediaKeyRequestInfo));
     info.initDataLen = sizeof(initData);
-    info.type = MEDIA_KEY_TYPE_ONLINE; // MEDIA_KEY_TYPE_ONLINE: 在线媒体密钥请求类型; MEDIA_KEY_TYPE_OFFLINE: 离线媒体密钥请求类型。
+    info.type = MEDIA_KEY_TYPE_ONLINE; // MEDIA_KEY_TYPE_ONLINE：在线媒体密钥请求；MEDIA_KEY_TYPE_OFFLINE：离线媒体密钥请求。
     memcpy(info.mimeType, (char *)"video/mp4", sizeof("video/mp4"));
     memcpy(info.initData, initData, sizeof(initData));
     memcpy(info.optionName[0], (char *)"optionalDataName", sizeof("optionalDataName"));
     memcpy(info.optionData[0], (char *)"optionalDataValue", sizeof("optionalDataValue"));
     info.optionsCount = 1;
     ret = OH_MediaKeySession_GenerateMediaKeyRequest(mediaKeySession, &info, &mediaKeyRequest);
-    if (ret != DRM_ERR_OK) {
-        printf("OH_MediaKeySession_GenerateMediaKeyRequest failed.");
-    }
-    /*
-      应用通过网络请求DRM服务，获取媒体密钥响应mediaKeyResponse，将响应传到OH_MediaKeySession_ProcessMediaKeyResponse，
-      若是离线媒体密钥响应处理，则返回离线媒体密钥标识mediaKeyId，请根据实际的数据和长度传入。
-     */
+    // ...
+    ```
+
+    ```
+    // 应用通过网络请求DRM服务获取媒体密钥响应mediaKeyResponse，请按实际数据传入。
     unsigned char mediaKeyId[128] = {0x00};
     int32_t mediaKeyIdLen = 128;
-    // 媒体密钥响应长度最大为MAX_DRM_MEDIA_KEY_RESPONSE_BUF_SIZE，请按实际数据输入。
     unsigned char mediaKeyResponse[MAX_DRM_MEDIA_KEY_RESPONSE_BUF_SIZE] = {0x00};
     int32_t mediaKeyResponseLen = MAX_DRM_MEDIA_KEY_RESPONSE_BUF_SIZE;
     ret = OH_MediaKeySession_ProcessMediaKeyResponse(mediaKeySession, mediaKeyResponse,
         mediaKeyResponseLen, mediaKeyId, &mediaKeyIdLen);
-    if (ret != DRM_ERR_OK) {
-        printf("OH_MediaKeySession_ProcessMediaKeyResponse failed.");
-    }
+    // ...
     ```
 14. （可选）恢复离线媒体密钥。
 
     ```
-    // 将指定媒体密钥标识的媒体密钥加载到当前会话。
     ret = OH_MediaKeySession_RestoreOfflineMediaKeys(mediaKeySession, mediaKeyId, mediaKeyIdLen);
-    if (ret != DRM_ERR_OK) {
-        printf("OH_MediaKeySession_RestoreOfflineMediaKeys failed.");
-    }
+    // ...
     ```
 15. （可选）检查媒体密钥状态。
 
     ```
-    DRM_MediaKeyStatus mediaKeyStatus;
+    DRM_MediaKeyStatus mediaKeyStatus = {0};
     ret = OH_MediaKeySession_CheckMediaKeyStatus(mediaKeySession, &mediaKeyStatus);
-    if (ret != DRM_ERR_OK) {
-        printf("OH_MediaKeySession_CheckMediaKeyStatus failed.");
-    }
+    // ...
     ```
 16. （可选）获取离线媒体密钥标识列表、获取离线媒体密钥状态与清除离线媒体密钥。
 
     ```
     DRM_OfflineMediakeyIdArray offlineMediaKeyIds;
     ret = OH_MediaKeySystem_GetOfflineMediaKeyIds(mediaKeySystem, &offlineMediaKeyIds);
-    if (ret != DRM_ERR_OK) {
-        printf("OH_MediaKeySystem_GetOfflineMediaKeyIds failed.");
-    }
-    DRM_OfflineMediaKeyStatus OfflineMediaKeyStatus = OFFLINE_MEDIA_KEY_STATUS_UNKNOWN;
-    ret = OH_MediaKeySystem_GetOfflineMediaKeyStatus(mediaKeySystem, offlineMediaKeyIds.ids[0], offlineMediaKeyIds.idsLen[0], &OfflineMediaKeyStatus);
-    if (ret != DRM_ERR_OK) {
-        printf("OH_MediaKeySystem_GetOfflineMediaKeyStatus failed.");
-    }
-    ret = OH_MediaKeySystem_ClearOfflineMediaKeys(mediaKeySystem, offlineMediaKeyIds.ids[0], offlineMediaKeyIds.idsLen[0]);
-    if (ret != DRM_ERR_OK) {
-        printf("OH_MediaKeySystem_ClearOfflineMediaKeys failed.");
+    // ...
+    if (ret == DRM_ERR_OK && offlineMediaKeyIds.idsCount > 0) {
+        DRM_OfflineMediaKeyStatus offlineStatus = OFFLINE_MEDIA_KEY_STATUS_UNKNOWN;
+        ret = OH_MediaKeySystem_GetOfflineMediaKeyStatus(mediaKeySystem, offlineMediaKeyIds.ids[0],
+            offlineMediaKeyIds.idsLen[0], &offlineStatus);
+        // ...
+        ret = OH_MediaKeySystem_ClearOfflineMediaKeys(mediaKeySystem, offlineMediaKeyIds.ids[0],
+            offlineMediaKeyIds.idsLen[0]);
+        // ...
     }
     ```
 17. 销毁MediaKeySession实例。
 
     ```
     ret = OH_MediaKeySession_Destroy(mediaKeySession);
-    if (ret != DRM_ERR_OK) {
-        printf("OH_MediaKeySession_Destroy failed.");
-    }
+    // ...
     ```
 18. 销毁MediaKeySystem实例。
 
     ```
     ret = OH_MediaKeySystem_Destroy(mediaKeySystem);
-    if (ret != DRM_ERR_OK) {
-        printf("OH_MediaKeySystem_Destroy failed.");
-    }
+    // ...
     ```

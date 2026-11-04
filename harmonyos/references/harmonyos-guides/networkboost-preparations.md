@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/networkboost-
 title: 开发准备
 breadcrumb: 指南 > 系统 > 网络 > Network Boost Kit（网络加速服务） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:22+08:00
+scraped_at: 2026-11-04T08:29:48+08:00
 doc_updated_at: 2026-09-04
-content_hash: sha256:3179c7d5f18c95611b999b4c328172a9c1e7020681b579dd3c019d26a0e280bf
+content_hash: sha256:72ba099dfdd7dabfaf8564b470a7c0213515b45b3a8cb8bb832b707ab62dde03
 ---
 
 ## 申请权限
@@ -69,16 +69,16 @@ target_link_libraries(entry PUBLIC libnetwork_boost.so) #链接libnetwork_boost.
 
 1. [申请调试Profile文件和添加权限信息](ide-signing-manual.md#section201901445352)和[申请发布Profile](../app/agc-help-release-profile-0000002248341090.md)操作步骤中第4步“申请权限”是必须的，选中“受限ACL权限”后再点击“选择”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/iSiORQ73SeeOCNTWRPihuQ/zh-cn_image_0000002806108925.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/GCuc702xSq-3JP5fmoPKQw/zh-cn_image_0000002809050351.png)
 2. 在权限搜索框中输入"ohos.permission.LINKTURBO"找到LINKTURBO的权限并勾选，再提交申请。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/wHI3vFoXT9W8byyXXV65IQ/zh-cn_image_0000002776909306.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/St8GPqVgSqSziZZFeca92g/zh-cn_image_0000002779850786.png)
 3. 根据实际业务需求填写申请原因并提交，提交后将在1个工作日回复，可以[互动中心](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/interactive)查看申请情况。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/L1sXGhgrSdaCgtdEwAQ_0g/zh-cn_image_0000002776749320.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/4G-CZ_UESAeCAX2brjYfPA/zh-cn_image_0000002779690818.png)
 4. 权限申请通过后在“已获取权限”中可以看到已申请的权限，勾选后点击确定。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/z9eRd1j5R4WtVy2U5f4pIQ/zh-cn_image_0000002806029037.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/9_4oFTM-SLSIdG997qaE9Q/zh-cn_image_0000002809010439.png)
 5. 选择权限后点击“添加”生成新的Profile文件，下载后按[手动签名](ide-signing-manual.md)替换profile文件。
 6. 在工程中entry模块的module.json5文件中，在"requestPermissions"节点添加"ohos.permission.LINKTURBO"权限，如下所示：
 

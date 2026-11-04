@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-waterflow-
 title: 瀑布流加载丢帧优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > 瀑布流加载丢帧优化
 category: best-practices
-scraped_at: 2026-10-29T08:03:22+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:ab2bbe12ca4ee727975bfa78d2210e31c10f9062dbf13388e24078bea5753981
+scraped_at: 2026-11-04T08:37:59+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:8551d6485fd7b1a97c8291a73f76e2d4995ea1052e0c22260babfd75b0f3f886
 ---
 
 ## 概述
 
 瀑布流是应用开发中常见的场景。它通过容器布局规则将元素排列为多列不对齐的界面，内容像瀑布一样从上而下倾泻。瀑布流适用于展示图片资讯、购物商品、直播视频等多种数据。当瀑布流上下滑动时，无限加载特性使其能展示大量数据；不同大小的子元素会带来测量和绘制的性能消耗。
 
-在瀑布流的高频场景中，性能优化是关键，包括加快渲染速度、提升滑动帧率、降低内存占用等，从而显著提升应用流畅度和用户体验。对于希望快速实现的开发者，可使用ScrollComponents库直接创建流畅滑动的瀑布流，该库内置组件复用、懒加载、复用池共享等优化能力，并支持预创建和预加载，大幅减少开发者的性能调优成本，具体实现细节和最佳实践可参考[《基于ScrollComponents实现瀑布流》](bpta-waterflow-based-on-scrollcomponents.md)。
+在瀑布流的高频场景中，性能优化是关键，包括加快渲染速度、提升滑动帧率、降低内存占用等，从而显著提升应用流畅度和用户体验。对于希望快速实现的开发者，可使用ScrollComponents库直接创建流畅滑动的瀑布流，该库内置组件复用、懒加载、复用池共享等优化能力，并支持预创建和预加载，大幅减少开发者的性能调优成本，具体实现细节和最佳实践可参考[基于ScrollComponents实现瀑布流](bpta-waterflow-based-on-scrollcomponents.md)。
 
 本文将介绍懒加载、数据缓存、组件复用、无限滑动、固定宽高场景优化瀑布流滑动。
 
@@ -70,7 +70,7 @@ build() {
 
 组件复用详细原理及性能分析参考：[组件复用](bpta-best-practices-long-list.md#section36781044162218)
 
-全局组件复用池三方库：[nodepool](https://ohpm.openharmony.cn/#/cn/detail/@hadss%2Fnodepool)
+全局组件复用池三方库：[@hadss/nodepool(V1.0.1)](https://ohpm.openharmony.cn/#/cn/detail/@hadss%2Fnodepool)
 
 ## 无限滑动
 
@@ -85,7 +85,7 @@ build() {
 
 **瀑布流组件加载流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/PlFZFLsuQ_aFAPd_ccMZuQ/zh-cn_image_0000002194010900.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/iJ7XDzpPQ_OpeEakDV9ckg/zh-cn_image_0000002194010900.png)
 
 示例如下：
 
@@ -135,7 +135,7 @@ Image组件异步加载，提前设定FlowItem高度，避免图片加载后高�
 
 **图1** 瀑布流页面卡片宽高计算逻辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/fwqnmIw2TNO3QKvMLvCN2w/zh-cn_image_0000002194010908.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/VvhAVwijSlaQvsAZbsFuSA/zh-cn_image_0000002194010908.png "点击放大")
 
 如上图所示，两列瀑布流卡片的宽度 = （屏幕宽度 - 2 \* 组件外边距（margin） - 瀑布流组件内边距（gap））/ 2。
 
@@ -162,7 +162,7 @@ getTitleHeight(title: string): number {
 
 **整体效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/vZbhz2vIQmi3-JHCYnggrQ/zh-cn_image_0000002194010904.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/SqwLx8jcSryyB6Iz6hqK7w/zh-cn_image_0000002194010904.png "点击放大")
 
 下表为通过网络请求500条数据加载渲染，测试获得的数据（数据测试方式采用技术从左向右累加测试的）：
 

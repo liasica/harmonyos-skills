@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-genera
 title: 安全随机数生成(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 随机数 > 安全随机数生成(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:43+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:061673bebbaf104351cf1f2574fe7f838e040fad1c53ef6f1160d0a70bc44ffc
+scraped_at: 2026-11-04T08:29:38+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:4fd277f76ba512512b4f4aeec61202014b12a21aa0a2e76ed9c21e648bd65767
 ---
 
 **说明** 
@@ -50,15 +50,21 @@ content_hash: sha256:061673bebbaf104351cf1f2574fe7f838e040fad1c53ef6f1160d0a70bc
 
   ```typescript
   import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
 
   async function doRand() {
+    try {
       let rand = cryptoFramework.createRandom();
       let seed = new Uint8Array([1, 2, 3]);
       rand.setSeed({ data: seed });
       let len = 12;
       let randOutput = await rand.generateRandom(len);
       console.info('rand output: ' + randOutput.data);
+    } catch (err) {
+      let e: BusinessError = err as BusinessError;
+      console.error(`call failed: errCode: ${e.code}, errMsg: ${e.message}`);
     }
+  }
   ```
 * 同步返回结果：
 

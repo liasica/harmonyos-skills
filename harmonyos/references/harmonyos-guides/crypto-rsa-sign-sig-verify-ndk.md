@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-si
 title: 使用RSA密钥对签名验签(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 签名验签 > 使用RSA密钥对签名验签(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:26+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:5ceeff28547adeb28be10b923984f1b3fd6df5d4e0e13c19fe86de97dc780860
+scraped_at: 2026-11-04T08:29:37+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:a0be1047ac397da470d75b63d487aac8fbc3c46ecb684dcd4610a8d407d89f3d
 ---
 
 对应的算法规格请查看[签名验签算法规格：RSA](crypto-sign-sig-verify-overview.md#rsa)。
@@ -26,7 +26,7 @@ target_link_libraries(entry PUBLIC libohcrypto.so)
 2. 调用[OH\_CryptoSign\_Init](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptosign_init)，使用私钥（OH\_CryptoPrivKey）初始化Sign实例。
 3. 调用[OH\_CryptoSign\_Update](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptosign_update)，传入待签名的数据。当前单次update长度没有限制，开发者可以根据数据量判断如何调用update。如果数据量较小，可以直接调用OH\_CryptoSign\_Final接口一次性传入。
 4. 调用[OH\_CryptoSign\_Final](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptosign_final)，获取签名后的数据。
-5. 调用[OH\_CryptoSign\_Destroy](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptosign_destroy)等释放内存。
+5. 调用[OH\_CryptoSign\_Destroy](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptosign_destroy)释放内存。
 
 ```
 #include "CryptoArchitectureKit/crypto_common.h"
@@ -299,7 +299,7 @@ OH_Crypto_ErrCode DoTestRsaSignatureRecover()
 2. 调用[OH\_CryptoSign\_Init](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptosign_init)，使用私钥（OH\_CryptoPrivKey）初始化Sign实例。
 3. 调用[OH\_CryptoSign\_Update](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptosign_update)，传入待签名的数据。当前单次update长度没有限制，开发者可以根据数据量判断如何调用update。如果数据量较小，可以直接调用OH\_CryptoSign\_Final接口一次性传入。
 4. 调用[OH\_CryptoSign\_Final](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptosign_final)，获取签名后的数据。
-5. 调用[OH\_CryptoSign\_Destroy](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptosign_destroy)等释放内存。
+5. 调用[OH\_CryptoSign\_Destroy](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptosign_destroy)释放内存。
 
 ```
 #include "CryptoArchitectureKit/crypto_common.h"
@@ -526,7 +526,7 @@ bool DoTestRsaSignatureVerifySeg()
 2. 调用[OH\_CryptoSign\_Init](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptosign_init)，使用私钥（OH\_CryptoPrivKey）初始化Sign实例。
 3. 调用[OH\_CryptoSign\_Update](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptosign_update)，传入待签名的数据。当前单次update长度没有限制，开发者可以根据数据量判断如何调用update。如果数据量较小，可以直接调用OH\_CryptoSign\_Final接口一次性传入。
 4. 调用[OH\_CryptoSign\_Final](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptosign_final)，获取签名后的数据。
-5. 调用[OH\_CryptoSign\_Destroy](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptosign_destroy)等释放内存。
+5. 调用[OH\_CryptoSign\_Destroy](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptosign_destroy)释放内存。
 
 ```
 #include "CryptoArchitectureKit/crypto_common.h"

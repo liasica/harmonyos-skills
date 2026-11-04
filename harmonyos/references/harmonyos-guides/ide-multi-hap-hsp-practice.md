@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-multi-hap
 title: 性能/内存优化：多HAP/HSP工程编译优化实践
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 提升构建效率 > 实践说明 > 性能/内存优化：多HAP/HSP工程编译优化实践
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:12:58+08:00
+scraped_at: 2026-11-04T08:31:33+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:adb156064c02d6b12f4a4662ebab902e22519281569d73bb11fbcd45ee3053de
+content_hash: sha256:204bef1ceebd2c54c522dfc039a13259b54642e4f90cdaf7cac15de5d8a25a48
 ---
 
 ## 概述
@@ -29,18 +29,18 @@ content_hash: sha256:adb156064c02d6b12f4a4662ebab902e22519281569d73bb11fbcd45ee3
 
   因此，修改单模块后，建议通过Make Module进行构建，这样可以在多HAP/HSP场景下减少单次修改所编译的安装包数量，从而降低耗时和内存占用。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/z3Ydlt3tQXun2jzjQWnYzA/zh-cn_image_0000002701663412.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/b-2dJbCbQ-iCkwpGBSvMqw/zh-cn_image_0000002701663412.png)
 * 运行（Run）启动优化
 
   通过推包运行的方式启动编译构建，可以降低某些场景下的耗时和内存占用。例如频繁增量修改某个HSP模块，如果不涉及修改其导出接口，可以优先选择运行该HSP模块，从而避免重新编译和打包其他未修改的HAP/HSP模块。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/CagDkonrRfK9COrSG51A2g/zh-cn_image_0000002731542607.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/CW6wgleHQIad4JyoV0aYHg/zh-cn_image_0000002731542607.png)
 
 ## 优化方案二：HSP改造为HAR
 
 HAP和HSP、HSP之间可能依赖相同的HAR，导致编译、包体积都会有重复的部分。如果模块不需要按需加载特性，将HSP改造为HAR，可以降低编译耗时及内存占用，减小包体积。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/NhzdCu7PRMOm6FX9OAFu9Q/zh-cn_image_0000002731382639.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/7UBjxY5VSGyCCD-rksoSPQ/zh-cn_image_0000002731382639.png "点击放大")
 
 ### 改造原则
 
@@ -49,7 +49,7 @@ HAP和HSP、HSP之间可能依赖相同的HAR，导致编译、包体积都会�
    * 按照自顶向下的顺序，从依赖链路的顶端HSP开始改造。
    * 原因：如果从底层HSP开始改造为HAR，上层的HSP可能引入重复的HAR依赖，导致构建时间不减反增。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/VTQliBekRXKkh7YqUDbl1w/zh-cn_image_0000002731542605.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/SGPnK38SR0GQTQp0h96iUw/zh-cn_image_0000002731542605.png "点击放大")
 2. 适用对象
    * 工程中不需要使用按需加载特性的HSP模块。
 
@@ -69,7 +69,7 @@ HAP和HSP、HSP之间可能依赖相同的HAR，导致编译、包体积都会�
 
    资源命名规范化，为各模块的资源文件增加唯一标识。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/DPiBoUIiQEyH3cf4KkOUqg/zh-cn_image_0000002731382637.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/zRz7Jm7PRtWNFsgrkQx1WQ/zh-cn_image_0000002731382637.png "点击放大")
 2. Worker线程加载路径变更
 
    **问题现象**

@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1221
 title: setCurrentTime方法指定Video组件开始播放位置偶现其它帧闪烁的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > setCurrentTime方法指定Video组件开始播放位置偶现其它帧闪烁的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:18+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:6dceaa84d295d24c9d7c2d93ca6537ef5e723d2d7b3d0345b3f13c49f6dc9b0b
+scraped_at: 2026-11-04T08:38:52+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:64788c42c5e1fc80128e0f21c6aec914bb31fb923161019eba7de599401362da
 ---
 
 ## 问题现象
 
-进入一个页面时想让Video组件从一个指定的时间开始播放，比如第10秒，设置了参数this.controller.setCurrentTime(AppStorage.get('currentTime'),SeekMode.ClosestKeyframe)偶尔会出现定位不准，展示了视频第一帧的情况。已知在onStart中调用setCurrentTime一定会出现第一帧，在onPrepare中开始调用setCurrentTime偶尔会出现第一帧。是什么原因造成的该情况，如何避免？
+进入一个页面时想让Video组件从一个指定的时间开始播放，比如第10秒，设置了参数this.controller.setCurrentTime(AppStorage.get('currentTime'),SeekMode.ClosestKeyframe)偶尔会出现定位不准，展示了视频第一帧的情况。已知在onStart中调用setCurrentTime一定会出现第一帧，在onPrepared中开始调用setCurrentTime偶尔会出现第一帧。是什么原因造成的该情况，如何避免？
 
 问题代码示例参考如下：
 
-```screen
+```ts
 @Entry
 @Component
 struct VideoExamplePage {
@@ -61,7 +61,7 @@ interface DurationObject {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/vmM4cEJpSNqcrhVmpfnXfw/zh-cn_image_0000002658953229.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/KJbobuvRQhKVC405Z_ekNQ/zh-cn_image_0000002658953229.gif "点击放大")
 
 ## 背景知识
 
@@ -78,12 +78,12 @@ interface DurationObject {
 
 ## 修改建议
 
-取消自动播放，在onPrepare事件里先设置跳转，再进行播放，来代替[autoPlay(true)](../harmonyos-references/ts-media-components-video.md#autoplay)自动播放。
+取消自动播放，在onPrepared事件里先设置跳转，再进行播放，来代替[autoPlay(true)](../harmonyos-references/ts-media-components-video.md#autoplay)自动播放。
 
 1. 设置autoPlay(true)修改为autoPlay(false)。
-2. onPrepared事件修改参考如下：
+2. onPrepared事件修改如下：
 
-   ```screen
+   ```ts
    .onPrepared((error?: DurationObject) => {
      if (error != undefined) {
        console.info(`onPrepared is ${error.duration}`);
@@ -94,9 +94,9 @@ interface DurationObject {
    })
    ```
 
-完整示例参考如下：
+完整代码如下：
 
-```screen
+```ts
 @Entry
 @Component
 struct VideoExamplePage {

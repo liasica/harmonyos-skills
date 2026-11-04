@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/wearengin
 title: wearEngine（穿戴设备能力开放）
 breadcrumb: API参考 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > ArkTS API > wearEngine（穿戴设备能力开放）
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:53+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:80b4ce700de650bfee6a91d135befc98680f84fe4c8717630f1eef7d5255bb41
+scraped_at: 2026-11-04T08:35:35+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:ad324e4bcc78ad1b78a0ae9f2cf735a67e3df6e0f03032432a374273bd2c3128
 ---
 
 本模块提供手机与穿戴设备侧的交互能力。应用可调用模块内接口实现如下功能：
@@ -1406,7 +1406,7 @@ sendMessage(deviceRandomId: string, appParam: P2pAppParam, message: P2pMessage):
 | --- | --- | --- | --- |
 | deviceRandomId | string | 是 | [Device](wearengine_api.md#device)的随机标识符，用于指定本次订阅的设备。 |
 | appParam | [P2pAppParam](wearengine_api.md#p2pappparam) | 是 | 指定的设备侧应用参数。 |
-| message | [P2pMessage](wearengine_api.md#p2pmessage) | 是 | 需要传输的消息内容，取值范围：[1，4096)，单位Byte。 |
+| message | [P2pMessage](wearengine_api.md#p2pmessage) | 是 | 需要传输的消息内容，取值范围：(0，4096]，单位Byte。 |
 
 **返回值：**
 

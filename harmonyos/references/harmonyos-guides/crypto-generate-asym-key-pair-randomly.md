@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-genera
 title: 随机生成非对称密钥对(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥生成与转换 > 随机生成非对称密钥对(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:173d3aea35d75c1febfb610b0c3c7bca75af80a8ab582187aab4b788d0910cfb
+scraped_at: 2026-11-04T08:29:36+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:f8e05712cebbc911299987c9289d99944cc210f947c10887af53fff9bdf2995f
 ---
 
 以RSA和SM2为例，随机生成非对称密钥对（KeyPair），并获得二进制数据。
@@ -26,6 +26,7 @@ content_hash: sha256:173d3aea35d75c1febfb610b0c3c7bca75af80a8ab582187aab4b788d09
 
   ```typescript
   import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
 
   function generateAsyKey() {
     // 创建一个AsyKeyGenerator实例
@@ -40,6 +41,8 @@ content_hash: sha256:173d3aea35d75c1febfb610b0c3c7bca75af80a8ab582187aab4b788d09
       let skBlob = priKey.getEncoded();
       console.info('pk bin data: ' + pkBlob.data);
       console.info('sk bin data: ' + skBlob.data);
+    }).catch((error: BusinessError) => {
+      console.error(`generateAsyKey failed: errCode: ${error.code}, message: ${error.message}`);
     });
   }
   ```
@@ -85,6 +88,7 @@ content_hash: sha256:173d3aea35d75c1febfb610b0c3c7bca75af80a8ab582187aab4b788d09
 
   ```typescript
   import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
 
   function generateSM2Key() {
     // 创建一个AsyKeyGenerator实例
@@ -99,6 +103,8 @@ content_hash: sha256:173d3aea35d75c1febfb610b0c3c7bca75af80a8ab582187aab4b788d09
       let skBlob = priKey.getEncoded();
       console.info('pk bin data: ' + pkBlob.data);
       console.info('sk bin data: ' + skBlob.data);
+    }).catch((error: BusinessError) => {
+      console.error(`generateSM2Key failed: errCode: ${error.code}, message: ${error.message}`);
     });
   }
   ```

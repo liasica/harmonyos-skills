@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.net.socket (Socket连接)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.socket (Socket连接)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:53:47+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:ca173966fc1dde5e38844852de87a7f9a5511a5070cf74e685804c8b2d037d6c
+scraped_at: 2026-11-04T08:34:51+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:0cab2defcd86e7206bb634e5bdec3b0a620c67a3de31dda7b42768d07aba47bb
 ---
 
 本模块提供利用Socket进行数据传输的能力，支持TCPSocket、UDPSocket、WebSocket和TLSSocket。
@@ -1365,7 +1365,7 @@ dropMembership(multicastAddress: NetAddress): Promise<void>
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<void> | 以Promise形式返回MulticastSocket加入多播组的执行结果。 |
+| Promise<void> | Promise对象。无返回结果的Promise对象。 |
 
 **错误码：**
 

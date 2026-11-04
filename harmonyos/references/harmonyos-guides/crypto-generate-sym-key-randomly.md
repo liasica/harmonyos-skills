@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-genera
 title: 随机生成对称密钥(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥生成与转换 > 随机生成对称密钥(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:24+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c13642f45214f615621cea4f019688e61b09cf960339f0efe2a7132b4e05e1c4
+scraped_at: 2026-11-04T08:29:36+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:cf8a074f8f83700a4ebcb68bc669d4d11f426560aadfbb3ce86b511013fa5bfe
 ---
 
 以AES和SM4为例，随机生成对称密钥（SymKey），并获得二进制数据。
@@ -24,6 +24,7 @@ content_hash: sha256:c13642f45214f615621cea4f019688e61b09cf960339f0efe2a7132b4e0
 
   ```typescript
   import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
 
   function testGenerateAesKey() {
     // 创建SymKeyGenerator实例
@@ -34,6 +35,8 @@ content_hash: sha256:c13642f45214f615621cea4f019688e61b09cf960339f0efe2a7132b4e0
       // 获取对称密钥的二进制数据，输出256位密钥。长度为32字节
       let encodedKey = key.getEncoded();
       console.info('key hex: ' + encodedKey.data);
+    }).catch((error: BusinessError) => {
+      console.error(`testGenerateAesKey failed: errCode: ${error.code}, message: ${error.message}`);
     });
   }
   ```
@@ -41,15 +44,21 @@ content_hash: sha256:c13642f45214f615621cea4f019688e61b09cf960339f0efe2a7132b4e0
 
   ```typescript
   import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
 
   function testSyncGenerateAesKey() {
-    // 创建SymKeyGenerator实例
-    let symKeyGenerator = cryptoFramework.createSymKeyGenerator('AES256');
-    // 使用密钥生成器随机生成对称密钥
-    let symKey = symKeyGenerator.generateSymKeySync();
-    // 获取对称密钥的二进制数据，输出256位密钥。长度为32字节
-    let encodedKey = symKey.getEncoded();
-    console.info('key hex: ' + encodedKey.data);
+    try {
+      // 创建SymKeyGenerator实例
+      let symKeyGenerator = cryptoFramework.createSymKeyGenerator('AES256');
+      // 使用密钥生成器随机生成对称密钥
+      let symKey = symKeyGenerator.generateSymKeySync();
+      // 获取对称密钥的二进制数据，输出256位密钥。长度为32字节
+      let encodedKey = symKey.getEncoded();
+      console.info('key hex: ' + encodedKey.data);
+    } catch (err) {
+      let e: BusinessError = err as BusinessError;
+      console.error(`testSyncGenerateAesKey failed: errCode: ${e.code}, errMsg: ${e.message}`);
+    }
   }
   ```
 
@@ -67,6 +76,7 @@ content_hash: sha256:c13642f45214f615621cea4f019688e61b09cf960339f0efe2a7132b4e0
 
   ```typescript
   import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
 
   function testGenerateSM4Key() {
     // 创建SymKeyGenerator实例
@@ -77,6 +87,8 @@ content_hash: sha256:c13642f45214f615621cea4f019688e61b09cf960339f0efe2a7132b4e0
       // 获取对称密钥的二进制数据，输出128位字节流。长度为16字节
       let encodedKey = key.getEncoded();
       console.info('key hex: ' + encodedKey.data);
+    }).catch((error: BusinessError) => {
+      console.error(`testGenerateSM4Key failed: errCode: ${error.code}, message: ${error.message}`);
     });
   }
   ```
@@ -84,14 +96,20 @@ content_hash: sha256:c13642f45214f615621cea4f019688e61b09cf960339f0efe2a7132b4e0
 
   ```typescript
   import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
 
   function testSyncGenerateSm4Key() {
-    // 创建SymKeyGenerator实例
-    let symKeyGenerator = cryptoFramework.createSymKeyGenerator('SM4_128');
-    // 使用密钥生成器随机生成对称密钥
-    let symKey = symKeyGenerator.generateSymKeySync();
-    // 获取对称密钥的二进制数据，输出128位字节流。长度为16字节
-    let encodedKey = symKey.getEncoded();
-    console.info('key hex: ' + encodedKey.data);
+    try {
+      // 创建SymKeyGenerator实例
+      let symKeyGenerator = cryptoFramework.createSymKeyGenerator('SM4_128');
+      // 使用密钥生成器随机生成对称密钥
+      let symKey = symKeyGenerator.generateSymKeySync();
+      // 获取对称密钥的二进制数据，输出128位字节流。长度为16字节
+      let encodedKey = symKey.getEncoded();
+      console.info('key hex: ' + encodedKey.data);
+    } catch (err) {
+      let e: BusinessError = err as BusinessError;
+      console.error(`testSyncGenerateSm4Key failed: errCode: ${e.code}, errMsg: ${e.message}`);
+    }
   }
   ```

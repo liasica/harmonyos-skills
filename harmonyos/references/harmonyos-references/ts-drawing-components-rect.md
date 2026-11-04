@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: Rect
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Rect
 category: harmonyos-references
-scraped_at: 2026-10-31T07:35:26+08:00
+scraped_at: 2026-11-04T08:33:08+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:a80ef71d8d086348412f60e6925524668f9bdc8d6e664d1efd729219494af113
+content_hash: sha256:cf564cc7c8d6ac4dc8b8c44742c8cd19bf2294cff841eb8b99bbc1467d16e4ca
 ---
 
 矩形绘制组件，用于在界面中绘制矩形图形，支持设置填充颜色、边框样式、圆角等属性。
@@ -211,7 +211,7 @@ struct RectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/0L44Zj0CQhiDI58J5hYvmQ/zh-cn_image_0000002806030817.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/ETitnk1oSb-W7-s3BXYS8Q/zh-cn_image_0000002809012219.png)
 
 ### 示例2（绘制渐变色矩形）
 
@@ -252,7 +252,7 @@ struct RectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/xoseMVWeTze9S7nS4JhMPQ/zh-cn_image_0000002776911108.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/8YlYzQtZRyiwYlI2akiHfQ/zh-cn_image_0000002779852588.jpeg)
 
 ### 示例3（使用不同参数类型绘制矩形）
 
@@ -287,7 +287,7 @@ struct RectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/0LyccVOdTjGf48yQWE9bFg/zh-cn_image_0000002776911132.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/57ny5lRwSXO1q-6IxH0JZg/zh-cn_image_0000002779852612.png)
 
 ### 示例4（使用attributeModifier动态设置Rect组件的属性）
 
@@ -329,4 +329,4 @@ struct RectModifierDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/FapC5lz6Q4qSPeUawJ1OBg/zh-cn_image_0000002776751146.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/rNgfYY2QTVWx0DrkjEPY9w/zh-cn_image_0000002779692644.png)

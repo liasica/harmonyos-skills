@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-
 title: 更新通知
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > 更新通知
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:23+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a6cc6bbf2d50f739e1510ba2011363b048f5fe256cf7d02354d3a327cb84a52f
+scraped_at: 2026-11-04T08:30:37+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:e58295ce14b8554140bfdbcceeea247355275397062edfbafb453c687f0e9d66
 ---
 
-从API version 18开始，支持应用只更新已发布的通知。主要用于上传下载进度更新、IM会话消息更新等场景。
+从API版本18开始，支持应用只更新已发布的通知。主要用于上传下载进度更新、IM会话消息更新等场景。
 
 ## 接口说明
 

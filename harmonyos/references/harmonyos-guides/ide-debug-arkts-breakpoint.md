@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-ark
 title: 使用断点
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > ArkTS代码调试 > 使用断点
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:12:54+08:00
+scraped_at: 2026-11-04T08:31:28+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:2684adc86512a051b06ff678c1524bda616250ce002317ba31c7c7684749e721
+content_hash: sha256:8ed3a65488b79bf2607f43132d361132f012bc700fcd5bbff63a300cc4110530
 ---
 
 DevEco Studio ArkTS代码调试支持行断点、日志断点等多种类型的断点，这些断点可以触发不同的操作。
@@ -21,16 +21,16 @@ DevEco Studio ArkTS代码调试支持行断点、日志断点等多种类型的�
 
    当您设置断点时，相应的代码行旁边会出现一个红点，如图。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/Y2XHvsiqQXq3AwFGuabk9Q/zh-cn_image_0000002701823344.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/Jd7bQTXnSJWc0zWedP7New/zh-cn_image_0000002701823344.png)
 
    在设置的断点红点处，单击鼠标右键，在Condition中可以设置条件断点，此类断点仅在满足特定条件时暂停应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/5gwN2PnRTYiI8YEjLq_LYA/zh-cn_image_0000002701823346.png)
-3. 点击Debug图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/P5-M-xbaRcKFggNwRJG7RA/zh-cn_image_0000002701663422.png)，开始调试。如果您的应用已经在运行，请点击Attach Debugger to Process图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/_aFOZRLsQm6Ie9Fz_tRkXA/zh-cn_image_0000002731542615.png)。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/BsT8ty0zRb2W-vGUtTfJTQ/zh-cn_image_0000002701823346.png)
+3. 点击Debug图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/34kMpMzRSmS0BGoWG4MUkg/zh-cn_image_0000002701663422.png)，开始调试。如果您的应用已经在运行，请点击Attach Debugger to Process图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/-ldIULpmScOHUi_EYOgLNg/zh-cn_image_0000002731542615.png)。
 
    当应用运行到代码处，会在代码处停住，并高亮显示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/rpVLJKzNQz6pk8gy5c8eIw/zh-cn_image_0000002701663424.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/ktXFfOZ8Rv-rf82M9_pPFw/zh-cn_image_0000002701663424.png)
 
 ## 日志断点
 
@@ -56,7 +56,7 @@ DevEco Studio ArkTS代码调试支持行断点、日志断点等多种类型的�
 
 在[BreakPoints](ide-debug-arkts-breakpoint.md#section168791742202819)中，点击**+ > ArkTS Symbolic Breakpoints**，在弹出窗口中填写函数名，添加函数断点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/AvhV-pvQQmWFR56SKhEjoQ/zh-cn_image_0000002701663420.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/A5uHPW1MTDOYaJXnJWM7rQ/zh-cn_image_0000002731382641.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/S9b-eLr3SDaXAnv0wQ5n8w/zh-cn_image_0000002701663420.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/ibNybs1nSdG8yyYNTQc-8Q/zh-cn_image_0000002731382641.png)
 
 **说明** 
 
@@ -68,16 +68,16 @@ DevEco Studio 6.0.1 Release及以下版本，调试过程中如果命中在C++�
 
 在[BreakPoints](ide-debug-arkts-breakpoint.md#section168791742202819)中，勾选**ArkTS/JS Exception Breakpoints**，开启异常断点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/gkSmtq6qQsq1t698NGGF3Q/zh-cn_image_0000002731382643.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/SPTNz5F_SUO4Cl0MazAD2w/zh-cn_image_0000002731382643.png)
 
-当调试应用程序中出现异常时，会在异常处高亮，并且代码左侧有![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/8--VIkGPTpeAT9PSOD20mQ/zh-cn_image_0000002731382647.png)标志，并展示当前Frames和Variable，以及错误信息。
+当调试应用程序中出现异常时，会在异常处高亮，并且代码左侧有![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/a6sDd7wTQDaGt39e0_gn-A/zh-cn_image_0000002731382647.png)标志，并展示当前Frames和Variable，以及错误信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/HVy8MkdRRh-lPp5k-QL1KQ/zh-cn_image_0000002701823340.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/ZAgfjtkFT46gs1ugzwsRYQ/zh-cn_image_0000002701823340.png)
 
 ## 断点管理
 
 在设置的程序断点红点处，单击鼠标右键。然后单击**More**或按快捷键**Ctrl+Shift+F8**（macOS为**Shift+Command+F8**），可以管理断点。
 
-或者在“Debug”窗口中点击**View Breakpoints** 图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/yZYfkzY1RH6k_n_9GzTlIQ/zh-cn_image_0000002731542613.png)。
+或者在“Debug”窗口中点击**View Breakpoints** 图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/62XcsHmzSD22zJPeJiKvrQ/zh-cn_image_0000002731542613.png)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/neCWxwrCS1K-1XoksBfGOw/zh-cn_image_0000002731542617.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/Ku2nLB19Q7qbucvPEymOOw/zh-cn_image_0000002731542617.png)

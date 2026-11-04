@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.arkui.StateManagement (状态管理)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.StateManagement (状态管理)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:11+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:f71dddec1015a1a4952b785d45a5d07e7c4b2ed1e37f1ea5ed875fd7e1f800ad
+scraped_at: 2026-11-04T08:32:38+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:d3b5985c4ec45ab31deec1dbc437e186a7406a36ca28a474025c645c337a4409
 ---
 
 状态管理模块具备应用数据存储、持久化管理以及UIAbility（包含用户界面的应用组件）数据存储能力，同时覆盖环境状态、工具和UI状态同步等场景，从而帮助开发者简化状态管理逻辑，提升应用的响应能力和数据一致性。
@@ -48,13 +48,10 @@ defaultCreator?: StorageDefaultCreator<T>
 
 **说明** 
 
-1、若未指定key，使用第二个参数作为默认构造器；否则使用第三个参数（第二个参数非法也使用第三个参数作为默认构造器）。
-
-2、确保数据已经存储在AppStorageV2中，可省略默认构造器，获取存储的数据；否则必须指定默认构造器，不指定将导致应用异常。
-
-3、同一个key，connect不同类型的数据会导致应用异常，应用需要确保类型匹配。
-
-4、key建议使用有意义的值，可由字母、数字、下划线组成，长度不超过255个字符，使用非法字符或空字符的行为是未定义的。
+1. 若未指定key，使用第二个参数作为默认构造器；否则使用第三个参数（第二个参数非法也使用第三个参数作为默认构造器）。
+2. 确保数据已经存储在AppStorageV2中，可省略默认构造器，获取存储的数据；否则必须指定默认构造器，不指定将导致应用异常。
+3. 同一个key，connect不同类型的数据会导致应用异常，应用需要确保类型匹配。
+4. key建议使用有意义的值，可由字母、数字、下划线组成，长度不超过255个字符，使用非法字符或空字符的行为是未定义的。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -168,23 +165,15 @@ static globalConnect<T extends object>(type: ConnectOptions<T>): T | undefined
 
 **说明** 
 
-1、若未指定key，使用默认构造器defaultCreator返回数据的类名作为key存入PersistenceV2中。
-
-2、确保数据已经存储在PersistenceV2中，可省略默认构造器，获取存储的数据；否则必须指定默认构造器，不指定将导致应用异常。
-
-3、同一个key，globalConnect不同类型的数据会导致应用异常，应用需要确保类型匹配。
-
-4、key建议使用有意义的值，可由字母、数字、下划线组成，长度不超过255个字符，使用非法字符或空字符的行为是未定义的。
-
-5、关联[@Observed](../harmonyos-guides/arkts-observed-and-objectlink.md)对象时，因为该类型的name属性未定义，需要指定key或者自定义name属性。
-
-6、数据的存储路径为应用级别，不同module使用相同的key和相同的加密分区进行globalConnect，存储的数据副本应用仅有一份。
-
-7、globalConnect使用同一个key但设置了不同的加密级别，数据为第一个使用globalConnect的加密级别，并且PersistenceV2中的数据也会存入最先使用key的加密级别。
-
-8、connect和globalConnect不建议混用，因为数据副本路径不同，如果混用，则key不可以一样，否则会crash。
-
-9、EL5加密要想生效，需要开发者在module.json中配置字段ohos.permission.PROTECT\_SCREEN\_LOCK\_DATA，使用说明见[声明权限](../harmonyos-guides/declare-permissions.md)。
+1. 若未指定key，使用默认构造器defaultCreator返回数据的类名作为key存入PersistenceV2中。
+2. 确保数据已经存储在PersistenceV2中，可省略默认构造器，获取存储的数据；否则必须指定默认构造器，不指定将导致应用异常。
+3. 同一个key，globalConnect不同类型的数据会导致应用异常，应用需要确保类型匹配。
+4. key建议使用有意义的值，可由字母、数字、下划线组成，长度不超过255个字符，使用非法字符或空字符的行为是未定义的。
+5. 关联[@Observed](../harmonyos-guides/arkts-observed-and-objectlink.md)对象时，因为该类型的name属性未定义，需要指定key或者自定义name属性。
+6. 数据的存储路径为应用级别，不同module使用相同的key和相同的加密分区进行globalConnect，存储的数据副本应用仅有一份。
+7. globalConnect使用同一个key但设置了不同的加密级别，数据为第一个使用globalConnect的加密级别，并且PersistenceV2中的数据也会存入最先使用key的加密级别。
+8. connect和globalConnect不建议混用，因为数据副本路径不同，如果混用，则key不可以一样，否则会crash。
+9. EL5加密要想生效，需要开发者在module.json中配置字段ohos.permission.PROTECT\_SCREEN\_LOCK\_DATA，使用说明见[声明权限](../harmonyos-guides/declare-permissions.md)。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -258,11 +247,9 @@ type: ConnectOptionsCollections<T, S> | ConnectOptions<T>
 
 **说明** 
 
-1、若未指定key，使用默认构造器defaultCreator返回数据的类名作为key存入PersistenceV2中。
-
-2、key建议使用有意义的值，可由字母、数字、下划线组成，长度不超过255，使用非法字符或空字符的行为是未定义的。
-
-3、connect和globalConnect不建议混用，因为数据副本路径不同，如果混用，则key不可以一样，否则会crash。
+1. 若未指定key，使用默认构造器defaultCreator返回数据的类名作为key存入PersistenceV2中。
+2. key建议使用有意义的值，可由字母、数字、下划线组成，长度不超过255，使用非法字符或空字符的行为是未定义的。
+3. connect和globalConnect不建议混用，因为数据副本路径不同，如果混用，则key不可以一样，否则会crash。
 
 其他通用条件详见globalConnect18+的说明。
 
@@ -2190,7 +2177,7 @@ struct CompV2 {
 
 ## CustomComponentContext
 
-CustomComponentContext类提供对组件级服务的访问，包括复用池。通过[UIUtils.getCustomComponentContext](js-apis-statemanagement.md#getcustomcomponentcontext)获取实例。
+CustomComponentContext类提供对组件级服务的访问，包括复用池。通过[UIUtils.getCustomComponentContext](js-apis-statemanagement.md#getcustomcomponentcontext)获取实例，开发者请勿自行实现或重写该接口。
 
 **起始版本：** 26.0.0
 
@@ -2259,7 +2246,7 @@ struct PoolOwner {
 
 ## IReusePool
 
-IReusePool接口提供自定义组件上的全局复用池的相关功能，包括查询回收组件的当前数量和上限信息、预渲染可复用组件到复用池中等，适用于开发者需要手动管理和优化组件复用效率的场景。
+IReusePool接口提供自定义组件上的全局复用池的相关功能，包括查询回收组件的当前数量和上限信息、预渲染可复用组件到复用池中等，适用于开发者需要手动管理和优化组件复用效率的场景。通过[CustomComponentContext.getReusePool](js-apis-statemanagement.md#getreusepool)获取实例，开发者请勿自行实现或重写该接口。
 
 **起始版本：** 26.0.0
 

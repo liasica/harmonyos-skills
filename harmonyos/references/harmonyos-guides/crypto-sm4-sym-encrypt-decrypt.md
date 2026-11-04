@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-sm4-sy
 title: 使用SM4对称密钥加解密(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密 > 使用SM4对称密钥加解密(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:54+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:be4a1b37521450cac7020fb4ed0a72508c604134cb01c4b63c0d688400ff486d
+scraped_at: 2026-11-04T08:29:37+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:2922d0952dc07580f458aa92af5494e8353e8ce1485063c8b3fe0b5c44260f27
 ---
 
 对应的算法规格请查看[对称密钥加解密算法规格：SM4](crypto-encryption-decryption.md#sm4)。
@@ -37,7 +37,7 @@ content_hash: sha256:be4a1b37521450cac7020fb4ed0a72508c604134cb01c4b63c0d688400f
 3. 调用[Cipher.update](../harmonyos-references/js-apis-cryptoframework.md#update-1)，更新数据（密文）。
 4. 调用[Cipher.doFinal](../harmonyos-references/js-apis-cryptoframework.md#dofinal-1)，获取解密后的数据。
 
-SM4（CBC模式）解密失败返回错误码17630001可参考[使用SM4-ECB/CBC算法解密时调用doFinal失败](../harmonyos-references/errorcode-crypto-framework.md#使用sm4-ecbcbc算法解密时调用dofinal失败)
+SM4（ECB模式）解密失败返回错误码17630001可参考[使用SM4-ECB/CBC算法解密时调用doFinal失败](../harmonyos-references/errorcode-crypto-framework.md#使用sm4-ecbcbc算法解密时调用dofinal失败)
 
 * 异步方法示例：
 

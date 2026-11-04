@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Radio
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > Radio
 category: harmonyos-references
-scraped_at: 2026-10-31T07:35:17+08:00
+scraped_at: 2026-11-04T08:32:59+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:a543178c4e294ffbed97c97c287173ca36068777769ad8e42fcf686fadbec1da
+content_hash: sha256:129462488fac4c5afabfd64509093617130f26bd57a70953619bf4e955aa3d55
 ---
 
 单选框，提供单选类型的用户交互选择项。
@@ -319,7 +319,7 @@ struct RadioExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/94hIql10R4-sq1t2BGMHbQ/zh-cn_image_0000002806030565.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/r9_YIkgTQ1eiBEpqSYFQBw/zh-cn_image_0000002809011967.gif)
 
 ### 示例2 （设置选中样式）
 
@@ -376,7 +376,7 @@ struct RadioExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/iXjIZSlJQICkn1Pml76ohQ/zh-cn_image_0000002806110455.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/pZsIMJJbQGiMaTx1l8JfEA/zh-cn_image_0000002809051881.gif)
 
 ### 示例3（设置自定义样式）
 
@@ -442,4 +442,4 @@ struct RadioExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/BhDtt0feQmiImckAU9gSZg/zh-cn_image_0000002776910836.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/x2ZGsddfS-yC7G59q_Jqvw/zh-cn_image_0000002779852316.gif)

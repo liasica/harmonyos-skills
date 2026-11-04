@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-hmrouter
 title: 基于HMRouter的页面跳转
 breadcrumb: 最佳实践 > 手势与导航 > 基于HMRouter的页面跳转
 category: best-practices
-scraped_at: 2026-10-29T08:03:13+08:00
+scraped_at: 2026-11-04T08:37:48+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:6ca1718c5b3e4cbdcd677cb199ccc6c96496557ba1295248e518d6b20024762d
+content_hash: sha256:69ee76cd55be1f7bb06ba8fda2bccb5fd9ee5a304e69e7c7e09d5bd943b053cb
 ---
 
 ## 概述
@@ -87,7 +87,7 @@ HMRouterMgr.to('MainPage')
 ```
 
 **图1** 返回指定页面示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/u5j7gZH5Q3u7sCnfia7HQA/zh-cn_image_0000002505304640.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/9kqOakSVRc2Kv4cKjLZfww/zh-cn_image_0000002505304640.png "点击放大")
 
 ### 应用未登录，点击跳转登录页的校验场景
 
@@ -124,7 +124,7 @@ HMRouterMgr.to('MainPage')
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/TovPGUGpRIu2mFCok8I2qg/zh-cn_image_0000002229450657.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/wmk7mEn9Sl6Mr6XA24VteQ/zh-cn_image_0000002229450657.gif "点击放大")
 
 ### 实现单例页面的跳转
 
@@ -234,7 +234,7 @@ export struct PrivacyDialogDetail {
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/mjCS5Z8eQpiijIpmFfYtvQ/zh-cn_image_0000002193850796.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/LJZXe4gxQLKgY8tr0ihjtQ/zh-cn_image_0000002193850796.gif "点击放大")
 
 ### 首页两次返回退出应用
 
@@ -270,7 +270,7 @@ export struct PrivacyDialogDetail {
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/VlpgK1vkSOK0gDNSp676bw/zh-cn_image_0000002193850804.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/3QJP__nBR-CaoMVwTeWFxg/zh-cn_image_0000002193850804.gif "点击放大")
 
 ## 转场动效场景
 
@@ -367,7 +367,7 @@ HMRouterMgr.to('ProductContent')
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/iCgQeSuFQ4qjbECuMknooA/zh-cn_image_0000002194010372.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/ceo8jRxkQeq-lFi0ROrt-A/zh-cn_image_0000002194010372.gif "点击放大")
 
 ### 根据条件呈现不同转场动效
 
@@ -463,7 +463,7 @@ export struct CommentInput {
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/e0_hfBQIRsGbnXX1Dj7B4A/zh-cn_image_0000002194010392.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/gI3TFPdxSwOwi9CY5aH93A/zh-cn_image_0000002194010392.gif "点击放大")
 
 ### 交互式转场
 
@@ -520,7 +520,7 @@ export class LiveInteractiveAnimator implements IHMAnimator {
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/8eCwKeePSkamaXyX8JhILw/zh-cn_image_0000002194010388.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/_ITs9b-NSYOFx4WLqnUJFA/zh-cn_image_0000002194010388.gif "点击放大")
 
 ## 数据加载场景
 
@@ -555,7 +555,7 @@ export class LiveInteractiveAnimator implements IHMAnimator {
 3. 关联生命周期与对应组件。将生命周期的lifecycleName作为@HMRouter注解的lifecycle参数进行传入完成关联。
 
 **图2** 数据请求预加载流程  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/xenoGCSzTG6B0Fqcfi3ocA/zh-cn_image_0000002428190130.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/c76aG0PvTW--H3IwQ2DDmw/zh-cn_image_0000002428190130.png "点击放大")
 
 ### 页面重开数据恢复
 
@@ -627,7 +627,7 @@ export class LiveInteractiveAnimator implements IHMAnimator {
    ```
 
 **图3** 页面重开数据恢复流程  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/pH_AOWAFT6ymjacufWcomw/zh-cn_image_0000002461709833.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/fGGnEBOZTMymchENcp03zQ/zh-cn_image_0000002461709833.png "点击放大")
 
 ## 维测场景
 
@@ -657,7 +657,7 @@ export class LiveInteractiveAnimator implements IHMAnimator {
 
 **图4** 页面埋点日志记录
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/ENjA7_C8Tla6KyCzdzCp9w/zh-cn_image_0000002194010384.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/lzbmmS4sTzOBDoc7lVkJ7w/zh-cn_image_0000002194010384.png "点击放大")
 
 ## 示例代码
 

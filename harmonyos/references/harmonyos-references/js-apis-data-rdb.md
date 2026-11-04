@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.rdb (关系型数据库)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > 已停止维护的接口 > @ohos.data.rdb (关系型数据库)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:51:56+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:6f6aeea1259cb1d90bf16f7af7bf26090ad954dd63f5c28ad0d7e4f371bb3db4
+scraped_at: 2026-11-04T08:32:18+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:b036859b218e521aae91460c77242b0b2c14df26e40166d8636bf77ed5aa3424
 ---
 
 关系型数据库（Relational Database，RDB）是一种基于关系模型来管理数据的数据库。关系型数据库基于SQLite组件提供了一套完整的对本地数据库进行管理的机制，对外提供了一系列的增、删、改、查等接口，也可以直接运行用户输入的SQL语句来满足复杂的场景需要。不支持Worker线程。
@@ -38,7 +38,7 @@ getRdbStore(context: Context, config: StoreConfig, version: number, callback: As
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| context | Context | 是 | 应用的上下文。  FA模型的应用Context定义见[Context](js-apis-inner-app-context.md)。  Stage模型的应用Context定义见[Context](js-apis-inner-app-context.md)。 |
+| context | Context | 是 | 应用的上下文。  FA模型的应用Context定义见[Context](js-apis-inner-app-context.md)。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
 | config | [StoreConfig](js-apis-data-rdb.md#storeconfig) | 是 | 与此RDB存储相关的数据库配置。 |
 | version | number | 是 | 数据库版本。  目前暂不支持通过version自动识别数据库升级降级操作，只能由开发者自行维护。 |
 | callback | AsyncCallback<[RdbStore](js-apis-data-rdb.md#rdbstore)> | 是 | 回调函数。当操作成功，err为undefined，data为RdbStore对象；否则为错误对象。 |
@@ -96,7 +96,7 @@ getRdbStore(context: Context, config: StoreConfig, version: number): Promise<Rdb
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| context | Context | 是 | 应用的上下文。  FA模型的应用Context定义见[Context](js-apis-inner-app-context.md)。  Stage模型的应用Context定义见[Context](js-apis-inner-app-context.md)。 |
+| context | Context | 是 | 应用的上下文。  FA模型的应用Context定义见[Context](js-apis-inner-app-context.md)。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
 | config | [StoreConfig](js-apis-data-rdb.md#storeconfig) | 是 | 与此RDB存储相关的数据库配置。 |
 | version | number | 是 | 数据库版本。  目前暂不支持通过version自动识别数据库升级降级操作，只能由开发者自行维护。 |
 
@@ -157,7 +157,7 @@ deleteRdbStore(context: Context, name: string, callback: AsyncCallback<void>): v
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| context | Context | 是 | 应用的上下文。  FA模型的应用Context定义见[Context](js-apis-inner-app-context.md)。  Stage模型的应用Context定义见[Context](js-apis-inner-app-context.md)。 |
+| context | Context | 是 | 应用的上下文。  FA模型的应用Context定义见[Context](js-apis-inner-app-context.md)。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
 | name | string | 是 | 数据库名称，不能为空字符串且不能包含路径分隔符/。 |
 | callback | AsyncCallback<void> | 是 | 回调函数。当操作成功，err为undefined；否则为错误对象。 |
 
@@ -211,7 +211,7 @@ deleteRdbStore(context: Context, name: string): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| context | Context | 是 | 应用的上下文。  FA模型的应用Context定义见[Context](js-apis-inner-app-context.md)。  Stage模型的应用Context定义见[Context](js-apis-inner-app-context.md)。 |
+| context | Context | 是 | 应用的上下文。  FA模型的应用Context定义见[Context](js-apis-inner-app-context.md)。  Stage模型的应用Context定义见[Context](js-apis-inner-application-context.md)。 |
 | name | string | 是 | 数据库名称，不能为空字符串且不能包含路径分隔符/。 |
 
 **返回值**：

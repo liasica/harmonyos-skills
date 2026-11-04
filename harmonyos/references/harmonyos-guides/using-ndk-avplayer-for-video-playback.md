@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-avp
 title: 使用AVPlayer播放视频(C/C++)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 播放 > 使用AVPlayer播放视频(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:46+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:6629cd9b85a03c8e3ae0bc72bdb14e98714a04e3c1332302464fcd05773cd243
+scraped_at: 2026-11-04T08:30:14+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:f189829878603ce38ca7cce43a33fe237882d2f6aa8cb8193db513926e42da0d
 ---
 
 使用[AVPlayer](../harmonyos-references/capi-avplayer.md)可以实现端到端播放原始媒体资源，本开发指导将以完整地播放一个视频作为示例，向开发者讲解AVPlayer视频播放相关功能。
@@ -16,7 +16,7 @@ content_hash: sha256:6629cd9b85a03c8e3ae0bc72bdb14e98714a04e3c1332302464fcd05773
 
 **播放状态变化示意图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/0cSnHzO_Qc2k0qbqk_WrNA/zh-cn_image_0000002806109161.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/JIWeAtlJTBedoroEOFHCyg/zh-cn_image_0000002809050587.png)
 
 状态的详细说明请参考[AVPlayerState](../harmonyos-references/capi-avplayer-base-h.md#avplayerstate)。当播放处于AV\_PREPARED/AV\_PLAYING/AV\_PAUSED/AV\_COMPLETED状态时，播放引擎处于工作状态，这需要占用系统较多的运行内存。当客户端暂时不使用播放器时，调用reset()或release()回收内存资源，做好资源利用。
 
@@ -32,29 +32,25 @@ content_hash: sha256:6629cd9b85a03c8e3ae0bc72bdb14e98714a04e3c1332302464fcd05773
 
 ## 开发步骤及注意事项
 
-在CMake脚本中链接动态库：
+在CMake脚本中链接如下动态库：
 
-```
-target_link_libraries(sample PUBLIC libavplayer.so)
-```
-
-使用[OH\_AVPlayer\_SetOnInfoCallback()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setoninfocallback)、[OH\_AVPlayer\_SetOnErrorCallback()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setonerrorcallback)接口设置信息监听回调函数和错误监听回调函数，需要在 CMake 脚本中链接如下动态库：
-
-```
-target_link_libraries(sample PUBLIC libnative_media_core.so)
+```text
+target_link_libraries(entry PUBLIC
+    libavplayer.so
+    libnative_media_core.so
+    libhilog_ndk.z.so
+)
 ```
 
-开发者使用系统日志能力时，需引入如下头文件：
+使用[OH\_AVPlayer\_SetOnInfoCallback()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setoninfocallback)、[OH\_AVPlayer\_SetOnErrorCallback()](../harmonyos-references/capi-avplayer-h.md#oh_avplayer_setonerrorcallback)接口设置信息监听回调函数和错误监听回调函数，需要在CMake脚本中链接libnative\_media\_core.so动态库。
+
+开发者使用系统日志能力时，需引入如下头文件。
 
 ```
 #include <hilog/log.h>
 ```
 
-并需要在CMake脚本中链接如下动态库：
-
-```
-target_link_libraries(sample PUBLIC libhilog_ndk.z.so)
-```
+并需要在CMake脚本中链接libhilog\_ndk.z.so动态库。
 
 开发者通过引入[avplayer.h](../harmonyos-references/capi-avplayer-h.md)、[avplayer\_base.h](../harmonyos-references/capi-avplayer-base-h.md)和[native\_averrors.h](../harmonyos-references/capi-native-averrors-h.md)头文件，使用视频播放相关API。
 

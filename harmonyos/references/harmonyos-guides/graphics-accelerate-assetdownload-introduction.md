@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 业务概述
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏资源加速服务 > 资源包后台下载 > 业务概述
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:52+08:00
+scraped_at: 2026-11-04T08:30:20+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:27532c49d75cf2724e567d68990686e872ec887f07d6d4c2cc5f9cf02c7a48a9
+content_hash: sha256:0d2bec6c2673220da3af8fe2c2b1e4ba075d32674708374ab6632aaa4d480cd0
 ---
 
 资源包后台下载是将资源文件（例如关卡包、3D角色模型、纹理等）静默下载到用户设备中，减少游戏启动后等待资源包下载的时间，解决游戏启动慢的问题，为用户提供即开即玩的游戏体验。
@@ -23,24 +23,24 @@ content_hash: sha256:27532c49d75cf2724e567d68990686e872ec887f07d6d4c2cc5f9cf02c7
 
   用户在应用市场安装游戏后、或在应用市场更新游戏后，在游戏未启动状态下，若检测到该游戏有资源包需要更新，将自动触发资源包下载。用户下拉通知栏，实时查看资源包下载进度。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/sZhcbMAZTZaOcZJmWbT82A/zh-cn_image_0000002806029401.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/sVll-NbhTo2hFB6ZfCRuwQ/zh-cn_image_0000002809010803.gif "点击放大")
 * 场景二
 
   待用户设备满足闲时条件时，在游戏未启动状态下，若检测到上次更新资源包未完成，或该游戏有新的资源包需要更新，将自动触发资源包下载。用户下拉通知栏，实时查看资源包下载进度。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/diObml1AQD2mpelq6H8trA/zh-cn_image_0000002806109291.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/d0Heoi_6Rm2ImOtRJFTO7A/zh-cn_image_0000002809050717.gif "点击放大")
 
 ### 系统后台切应用前台接续下载资源包
 
 用户在应用市场安装游戏后、或在应用市场更新游戏后，在游戏未启动状态下，若检测到该游戏有资源包需要更新，将自动触发资源包下载。用户下拉通知栏，实时查看资源包下载进度。在下载过程中点击游戏App，游戏接管未完成的下载任务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/ufs3lv33TRG-SrwxqfuBqg/zh-cn_image_0000002776909672.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/erowfeChQ-igOKf003n0Cg/zh-cn_image_0000002779851152.gif "点击放大")
 
 ### 应用前台下载资源包
 
 用户点击游戏App，若检测到上次更新资源包未完成，或该游戏有新的资源包需要更新，游戏将接续执行未完成的下载任务或提交新的下载任务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/1-3i759lQuWKugzgoz1AwA/zh-cn_image_0000002776749686.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/9kx4ksNLQMyzrOIu0b1ncA/zh-cn_image_0000002779691184.gif "点击放大")
 
 ### 应用前台切应用后台下载资源包
 
@@ -50,7 +50,7 @@ content_hash: sha256:27532c49d75cf2724e567d68990686e872ec887f07d6d4c2cc5f9cf02c7
 
 应用前台下载资源包的过程中，将游戏切至后台，资源包下载任务不中断。用户下拉通知栏，实时查看资源包下载进度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/XMI9AAsDSo-23XbhIvQFOg/zh-cn_image_0000002806029403.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/qvek30oFSaCjcPdyAmKI_A/zh-cn_image_0000002809010805.gif "点击放大")
 
 ## 实现流程
 

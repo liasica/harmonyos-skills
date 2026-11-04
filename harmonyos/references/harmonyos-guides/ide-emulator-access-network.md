@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-
 title: 模拟器访问网络
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 使用模拟器运行应用 > 使用模拟器 > 模拟器访问网络
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:12:53+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:aa90e51b3cdf2c8e84b4348d034619ba0f6e8cee6f21e84a6b47ab9961b24d6e
+scraped_at: 2026-11-04T08:31:27+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:452f68a72fc7ba64dd14f3b75e4e32c1f5b33c65cd59730c882a68df2db3bbc2
 ---
 
 ## 模拟器访问互联网
@@ -14,7 +14,7 @@ content_hash: sha256:aa90e51b3cdf2c8e84b4348d034619ba0f6e8cee6f21e84a6b47ab9961b
 
 模拟器访问互联网实际上利用的是本地计算机的以太网或者WLAN，与本地计算机共享同一网络资源。如果无法连接网络，请确认本地网络访问是否受到了限制（如使用公司内网）。如果网络访问受到限制，则需要在模拟器上配置网络代理，请参考[网络代理设置](ide-emulator-more-features.md#section206461549731)。
 
-如果访问网络时需要安装数字证书，请参考[使用模拟器发起HTTPS请求时如何安装数字证书](../harmonyos-faqs/faqs-app-running-27.md)。
+如果访问网络时需要安装数字证书，请参考[使用模拟器发起HTTPS请求时如何安装数字证书](../harmonyos-faqs/network-kit-faq-0005.md)。
 
 **说明** 
 
@@ -41,10 +41,10 @@ content_hash: sha256:aa90e51b3cdf2c8e84b4348d034619ba0f6e8cee6f21e84a6b47ab9961b
    该命令中127.0.0.1:5555为模拟器B的HDC服务端口号，可通过hdc list targets命令查询。
 4. 在模拟器A上，设置客户端连接到10.0.2.2:<localPort>，其中10.0.2.2为模拟器的默认网关。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/scAEVH0jQaKxo3Hw_xMrUQ/zh-cn_image_0000002731541073.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/3QbfhJXgQGu18c3j0zS6YQ/zh-cn_image_0000002731541073.png)
 
 ## 断网模拟
 
 从26.0.0版本开始，模拟器支持断网模拟。启动模拟器后，下拉控制中心，打开飞行模式，即可模拟断网场景，调试应用在断网状态下的场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/oybr-GlwTB-EWTQyrZ14cQ/zh-cn_image_0000002731381103.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/HpDlusogRFixIgI-Yl5thQ/zh-cn_image_0000002731381103.png)

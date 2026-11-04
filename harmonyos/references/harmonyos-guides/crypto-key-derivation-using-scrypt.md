@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-de
 title: 使用SCRYPT进行密钥派生(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥派生 > 使用SCRYPT进行密钥派生(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:bd22ac7b65c636516f96df8633de5562c224eca3c1f469e7526e14db4874bb14
+scraped_at: 2026-11-04T08:29:38+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:f2f1efd676fb5305f652e87ebf8c1e67bb7b143d1c74fa553b4d01b3a6496237
 ---
 
 对应的算法规格请查看[密钥派生算法规格：SCRYPT](crypto-key-derivation-overview.md#scrypt算法)。
@@ -19,7 +19,7 @@ content_hash: sha256:bd22ac7b65c636516f96df8633de5562c224eca3c1f469e7526e14db487
    * algName：指定算法名为'SCRYPT'。
    * passphrase：用于生成派生密钥的原始密码。
 
-     如果使用string类型，需要直接传入用于密钥派生的数据，而不是HexString、base64等字符串类型。同时需要确保该字符串为utf-8编码，否则派生结果会有差异。
+     如果使用string类型，需要直接传入用于密钥派生的数据，而不是HexString、Base64等字符串类型。同时需要确保该字符串为utf-8编码，否则派生结果会有差异。
    * salt：盐值。
    * n：迭代次数，需要为正整数。
    * p：并行化参数，需要为正整数。

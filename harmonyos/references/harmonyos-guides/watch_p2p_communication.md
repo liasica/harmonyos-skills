@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/watch_p2p_com
 title: 应用间消息通信
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > 穿戴侧应用开发 > 应用间消息通信
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:44+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6146250a603a03d4d80cb583444b19d0a0498f62c8e71193a6cf9d3942863416
+scraped_at: 2026-11-04T08:29:56+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:5e266a325fd69b2f426782f39545683481c04685dce0a71149484d043878747b
 ---
 
 ## 约束与限制
@@ -55,10 +55,10 @@ content_hash: sha256:6146250a603a03d4d80cb583444b19d0a0498f62c8e71193a6cf9d39428
 
    **说明** 
 
-   步骤2中fingerprint表示应用指纹，具体请参考[如何获取应用指纹](wearengine_faq-9.md)。
+   步骤3中fingerprint表示应用指纹，具体请参考[如何获取应用指纹](wearengine_faq-9.md)。
 
    ```typescript
-   // 步骤2 构造对端应用参数
+   // 步骤3 构造对端应用参数
    let appInfo: wearEngine.AppInfo = {
      // 设置对端应用的应用信息：包名与指纹
      bundleName: '',
@@ -71,16 +71,16 @@ content_hash: sha256:6146250a603a03d4d80cb583444b19d0a0498f62c8e71193a6cf9d39428
    // 设置需要发送的消息内容，长度限制为4096字节
    let messageContent: string = 'this is message';
 
-   // 步骤3 构造消息结构体
+   // 步骤4 构造消息结构体
    let textEncoder: util.TextEncoder = new util.TextEncoder;
    let message: wearEngine.P2pMessage = {
      content: textEncoder.encodeInto(messageContent)
    };
 
-   // 步骤4 获取P2pClient对象
+   // 步骤5 获取P2pClient对象
    let p2pClient: wearEngine.P2pClient = wearEngine.getP2pClient(this.getUIContext().getHostContext());
 
-   // 步骤5 发送消息
+   // 步骤6 发送消息
    p2pClient.sendMessage(targetDevice.randomId, appParam, message).then((p2pResult) => {
      console.info(`Succeeded in sending message, result is ${p2pResult.code}.`);
    }).catch((error: BusinessError) => {
@@ -401,6 +401,6 @@ content_hash: sha256:6146250a603a03d4d80cb583444b19d0a0498f62c8e71193a6cf9d39428
    p2pClient.getRemoteAppVersion(targetDevice.randomId, remoteBundleName).then((version) => {
      console.info(`Succeeded in getting remote app version, version is ${version}.`);
    }).catch((error: BusinessError) => {
-     console.error(`Failed to check get remote app version. Code is ${error.code}, message is ${error.message}.`);
+     console.error(`Failed to get remote app version. Code is ${error.code}, message is ${error.message}.`);
    })
    ```

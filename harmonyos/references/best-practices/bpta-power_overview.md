@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-power_over
 title: 功耗概览
 breadcrumb: 最佳实践 > 功耗 > 功耗概览
 category: best-practices
-scraped_at: 2026-10-29T08:03:22+08:00
+scraped_at: 2026-11-04T08:38:00+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:5966d001e4329c6a66e10e5e6a16eca1657bd2632efa40683d294638d3b2aeda
+content_hash: sha256:3922723f180e0c1ad108f06238ee49ec112167b3ea08af05dba7b53ee8b81cb0
 ---
 
 应用功耗体验是用户在使用应用程序时的重要考量因素之一。在开发过程中，功耗工具开发套件覆盖了应用开发的各个阶段。应用开发完成后上架，有专业的功耗测试工具用于检查和测试应用的功耗指标。功耗最佳实践板块重点介绍了在应用开发过程中使用功耗工具和功耗优化方案来检测、分析和优化功耗问题的流程。
 
 ## 功耗工具集定位分析功耗问题流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/ZAYL5q6BQmmYjUfjKxKB9w/zh-cn_image_0000002370565344.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/sZIo3mMrQTyMiev4POtYHQ/zh-cn_image_0000002370565344.png "点击放大")
 
 * HiSmartPerf工具能够快速采集应用帧率、整机功耗及温度等关键信息，并在测试结束后生成测试报告。该工具主要适用于开发人员和测试人员所开展的场景功耗测试。
 * Profiler工具是DevEco Studio内置的场景化分析工具。它提供了实时监控（Realtime Monitor）和录制后分析的功能，主要适用于开发人员对应用功耗进行度量与优化的场景。

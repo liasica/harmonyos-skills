@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/integrate-thi
 title: 三方动态链接库集成
 breadcrumb: 指南 > NDK开发 > 构建NDK工程 > 三方动态链接库集成
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:33:40+08:00
+scraped_at: 2026-11-04T08:31:11+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:f50615a00cd5eb230c886739f431c4c4813084a58ccbc2abbd021ccacb61d347
+content_hash: sha256:3bb41527bdb071b5f3dab4bd4e3105b6d409fd1a09fa879cb0dbdccc0f8527cd
 ---
 
 ## 概述
@@ -40,9 +40,9 @@ content_hash: sha256:f50615a00cd5eb230c886739f431c4c4813084a58ccbc2abbd021ccacb6
 
 1. 将第一部分生成的so库文件置于entry/libs对应的架构目录下，将其对应的头文件置于src/main/cpp目录下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/3WHRYNW_Qy2g5BW9v2xzvw/zh-cn_image_0000002776750408.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/gxo0wgn4RgWrBGA5lZIYUA/zh-cn_image_0000002779691906.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/1yiorN5_RXyPEXv7yhTGMg/zh-cn_image_0000002806030125.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/ha9b8KpvROG3vrTQADs_8A/zh-cn_image_0000002809011527.png)
 2. 修改src/main/cpp目录下CMakeLists.txt文件配置，使用target\_link\_libraries命令将需要预加载的加法so库链接到项目中。
 
    ```txt
@@ -104,7 +104,7 @@ content_hash: sha256:f50615a00cd5eb230c886739f431c4c4813084a58ccbc2abbd021ccacb6
 
 **图 1** 在Native侧通过编译动态链接库的方式引用so库完成加法运算效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/OOrTJM71TiWLqhAmkBjKvw/zh-cn_image_0000002806110015.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/50mVoRzDTVqaQmi8UsXzdw/zh-cn_image_0000002809051441.png)
 
 ### 通过调用dlopen的方式引用
 
@@ -118,7 +118,7 @@ content_hash: sha256:f50615a00cd5eb230c886739f431c4c4813084a58ccbc2abbd021ccacb6
 
 1. 将第一部分生成的so库文件置于entry/libs对应的架构目录下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/53Ukw1LbQV-kA94OToF-0Q/zh-cn_image_0000002776910396.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/n3bdjivKTwyY1QjjnvJ2zA/zh-cn_image_0000002779851876.png)
 2. 在ArkTS侧将so库的[应用沙箱目录](app-sandbox-directory.md)传递至Native侧。
 
    **说明** 
@@ -190,7 +190,7 @@ content_hash: sha256:f50615a00cd5eb230c886739f431c4c4813084a58ccbc2abbd021ccacb6
 
 **图 2** 在Native侧通过调用dlopen引用三方so库完成减法运算效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/5MUvrNVKRBuW3H9G0XkBmg/zh-cn_image_0000002776750410.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/OZFRf8EDScqFPU00dtmzng/zh-cn_image_0000002779691908.png)
 
 ## 在ArkTS侧引用三方so库
 
@@ -212,10 +212,10 @@ content_hash: sha256:f50615a00cd5eb230c886739f431c4c4813084a58ccbc2abbd021ccacb6
 
 1. 将第一部分生成的so库文件置于entry/libs对应的架构目录下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/FZEQsvesQFKtX88XW3Gkew/zh-cn_image_0000002806030127.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/FI34ouivQSKEEjDRx1qFqg/zh-cn_image_0000002809011529.png)
 2. 在src/main/cpp/types下新建目录并将so库模块src/main/cpp/types目录下的index.d.ts、oh-package.json5移动到该目录下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/v8TJ9-BoTFqy7bGKebJKaw/zh-cn_image_0000002806110017.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/t4o_SLLkTiO79Urh5Z_a-w/zh-cn_image_0000002809051443.png)
 3. 在模块级oh-package.json5中声明乘法so库根目录路径。
 
    ```json5
@@ -237,7 +237,7 @@ content_hash: sha256:f50615a00cd5eb230c886739f431c4c4813084a58ccbc2abbd021ccacb6
 
 **图 3** 在ArkTS侧引用已经适配Native的三方so库完成乘法运算效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/ai_83T3ZRWWURhRFzvHoxg/zh-cn_image_0000002776910398.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/QcHevLvORQimQzCPfSu-lw/zh-cn_image_0000002779851878.png)
 
 ## 常见问题
 
@@ -268,7 +268,7 @@ target_link_libraries(entry PUBLIC ${NATIVERENDER_ROOT_PATH}/../../../libnativeA
 
 **示例如下**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/R-Hoxos5QW6IbVB02oYMZA/zh-cn_image_0000002776750412.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/i_FQzcugShOxPS6Xq00Veg/zh-cn_image_0000002806030129.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/fAmeeo5uSn64Dtszv1mLow/zh-cn_image_0000002779691910.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/iskCPJ6DQB-BpFyeEV9FgA/zh-cn_image_0000002809011531.png)
 
 ## 示例代码
 

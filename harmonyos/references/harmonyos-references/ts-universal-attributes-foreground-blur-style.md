@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 组件内容模糊
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 组件内容模糊
 category: harmonyos-references
-scraped_at: 2026-10-31T07:35:08+08:00
+scraped_at: 2026-11-04T08:32:50+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:184fe1034d1f6e8cf1c3887b783a5f43d769a1cadb372780914b770f641b1a35
+content_hash: sha256:70ead193dcd80be0662f65f7886e0adf12025d63cde9144cb87883191805ed52
 ---
 
 为当前组件添加内容模糊效果。
@@ -179,4 +179,4 @@ struct ForegroundBlurStyleDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/fHg0aQLJSZirFx_f3Qv78g/zh-cn_image_0000002806030345.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/WaK_my2mTcuw_TssfSBRzw/zh-cn_image_0000002809011747.png)

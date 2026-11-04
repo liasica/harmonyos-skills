@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-image-to-video-synthesis
 title: 图片合成视频开发实践
-breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 图片合成视频开发实践
+breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 图片合成视频开发实践
 category: best-practices
-scraped_at: 2026-10-29T08:03:15+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:188c9fec6bd3734ea4e883dc9c5ab4748fdb6f8694e05d1b36420a0f7733c2bb
+scraped_at: 2026-11-04T08:37:57+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:cdc499ea05e30ed6c2b799cc4a5b7f2334362b1dab39d9267c03b680ed58a0fa
 ---
 
 ## 概述
@@ -24,13 +24,13 @@ content_hash: sha256:188c9fec6bd3734ea4e883dc9c5ab4748fdb6f8694e05d1b36420a0f773
 
 以将图库中的图片转换为MP4文件为例，本场景展示使用图片和编解码的基础能力来实现图片合成视频的功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/PbN1pkvoS9GJvshsBGS3LQ/zh-cn_image_0000002770178894.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/x9wT-m4lTby1gf4tObik2A/zh-cn_image_0000002770178894.gif "点击放大")
 
 ### 实现原理
 
 [Image Kit简介](../harmonyos-guides/image-overview.md)中的[Interface (PixelMap)](../harmonyos-references/arkts-apis-image-pixelmap.md)是用于读取或写入图像数据以及获取图像信息的图像像素类。在图片合成视频的过程中，首先将图片解码为PixelMap，然后使用[Buffer模式](../harmonyos-guides/video-encoding.md#buffer模式)编码，将PixelMap中保存的图像数据复制到编码器的输入buffer中，未压缩的YUV输出成已压缩的视频码流H.264，编码完成后封装成视频文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/Ts06sdD5SMKaybQsxVNW_w/zh-cn_image_0000002497593680.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/NKDcQzHcRU6NxId4cBs5Xg/zh-cn_image_0000002497593680.png)
 
 如果需要使用[Surface模式](../harmonyos-guides/video-encoding.md#surface模式)编码，将图片解码成PixelMap后，需要先从编码器的NativeWindow申请buffer，然后将PixelMap中保存的图像数据复制到申请的buffer中并提交buffer，编码完成后再封装为视频文件，具体实现可以参考[NativeWindow开发指导 (C/C++)](../harmonyos-guides/native-window-guidelines.md)。
 

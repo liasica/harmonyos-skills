@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-redundancy-refresh-guide
 title: 组件冗余刷新解决方案
-breadcrumb: 最佳实践 > 声明式语法 > 组件冗余刷新解决方案
+breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > 组件冗余刷新解决方案
 category: best-practices
-scraped_at: 2026-10-29T08:03:14+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:a5fd9d923fca39709109b50cc7ed0e7e42ec4eeaf5eb4ed58d529b280c0938f7
+scraped_at: 2026-11-04T08:37:59+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:90cf4756cd5f7116ed2224ca0f9dbb0d6b4d58e8413949e1dd358ac8824442c9
 ---
 
 ## 简介
@@ -154,7 +154,7 @@ struct DFXStateBeforeOptimization {
 
 **图1** 修改代码前点击Scale按钮和Move按钮时运行动图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/4XTUxvONRdimZcUx7lgpTg/zh-cn_image_0000002229451917.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/4Qc6sWUcS-GLWDgLOfU2iw/zh-cn_image_0000002229451917.gif "点击放大")
 
 点击Move按钮的时候SpecialImage组件却发生了旋转动画，这就造成了冗余刷新。
 
@@ -172,7 +172,7 @@ hdc shell "hidumper -s WindowManagerService -a '-a'"
 
 **图2** 命令行获取应用窗口Id运行界面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/DYXdk7riS2eK78PeltF_7w/zh-cn_image_0000002194011628.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/C3TLmTAKSMSnj6CEjVbIow/zh-cn_image_0000002194011628.png "点击放大")
 
 3. 基于上一步获取的窗口Id 11，使用-viewHierarchy命令携带-r 参数递归打印应用的自定义组件树。
 
@@ -385,7 +385,7 @@ struct DFXStateAfterOptimization {
 
 **图3** 修改代码后点击Scale按钮和Move按钮时运行动图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/3g0Aodu4Rg-naqrBy28-BQ/zh-cn_image_0000002193852044.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/r-Od5pMbQe2ngAuwT20l4g/zh-cn_image_0000002193852044.gif "点击放大")
 
 可以使用上文步骤再次获取ComponentA组件的状态变量信息如下，可以看到ComponentA中状态变量scaleStyle影响组件SpecialImage[8]和Image[18]，状态变量translateStyle影响组件Column[9]，translateStyle的变化不会再导致SpecialImage的刷新。
 

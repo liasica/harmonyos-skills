@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/app-debugging-f
 title: Native应用运行ABI配置报错问题排查
 breadcrumb: FAQ > DevEco Studio > 应用调试 > 常见问题 > Native应用运行ABI配置报错问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:59+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:eac989a4ae34d6d2462cdcef4b1c2ef9794fd059680e783a896b7840c25ef7f1
+scraped_at: 2026-11-04T08:40:39+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:65287342e5eb27a47d058b9947ff1d8a37c342f3fa09792ec2098fb000e1cfdb
 ---
 
 **Q：在启动调试或运行C++应用/服务时，安装HAP出现错误，提示“error: install parse native so failed”错误信息，或者运行时提示“TypeError：Cannot read property xxx of undefined”错误。**
@@ -48,7 +48,7 @@ content_hash: sha256:eac989a4ae34d6d2462cdcef4b1c2ef9794fd059680e783a896b7840c25
    param get const.product.cpu.abilist
    ```
 
-4. 根据查询返回结果，检查[模块级build-profile.json5](../harmonyos-guides-V5/ide-hvigor-build-profile-V5.md#section11914746114811)文件中的“abiFilters”参数中的配置，规则如下：
+4. 根据查询返回结果，检查[模块级build-profile.json5](../doccenter-deveco-studio/ide-hvigor-build-profile.md)文件中的“abiFilters”参数中的配置，规则如下：
    * 若返回结果为default，请执行如下命令，查询是否存在lib64文件夹。
 
      ```shell
@@ -56,7 +56,7 @@ content_hash: sha256:eac989a4ae34d6d2462cdcef4b1c2ef9794fd059680e783a896b7840c25
      ls
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/uAGQawnsQwKuMmSOB_j9pA/zh-cn_image_0000002764960212.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/7MX439ICTh26TD6BLAv7yw/zh-cn_image_0000002764960212.png "点击放大")
 
      + 存在lib64文件夹：则“abiFilters”参数中需要包含arm64-v8a类型。
      + 不存在lib64文件夹：则“abiFilters”参数中需要包含armeabi类型。

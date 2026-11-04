@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-er
 title: 语法错误码
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 构建报错排查 > 编译构建错误码 > 语法错误码
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:21+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:828e6187a1866822ba74bbfa4e40f058a2f30f615bbb2c9a86bc9de156518757
+scraped_at: 2026-11-04T08:31:34+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:f8d7ad80bf7e725b2af7d4b54a5dabec4637a71ae7cf949c506cad945efb1f3e
 ---
 
 ## 00305001 ArkTS语法检查报错
@@ -176,7 +176,7 @@ A 'undefined symbol' error has occurred.
 
 **处理步骤**
 
-参考[CPP编译报错"A 'undefined symbol' error has occurred"](../harmonyos-faqs/faqs-compiling-and-building-116.md)。
+参考[C/C++编译报错问题排查](../harmonyos-faqs/compiling-and-building-faq-0019.md)。
 
 ## 00305012 CMake任务执行失败
 
@@ -230,7 +230,7 @@ A 'unknown type name' error has occurred.
 
 **处理步骤**
 
-根据以下指导排查：[CPP编译报错“A 'unknown type name' error has occurred”](../harmonyos-faqs/faqs-compiling-and-building-117.md)。
+根据以下指导排查：[C++编译报错unknown type name问题排查](../harmonyos-faqs/compiling-and-building-faq-0016.md)。
 
 ## 00305015 解析错误
 

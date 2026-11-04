@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-genera
 title: 指定密钥参数生成非对称密钥对(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥生成与转换 > 指定密钥参数生成非对称密钥对(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:41+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:21eff855e32191cb7890765550f7133546743504ed1cd5b4647bb0cca33e7c37
+scraped_at: 2026-11-04T08:29:36+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:057269577e298e0c957a959eb94b99378ea4aa7c9aa5b52b3cd75faa82754b31
 ---
 
 以RSA、ECC、SM2为例，根据指定的密钥参数，生成非对称密钥对（KeyPair），并获取密钥参数属性。
@@ -409,6 +409,7 @@ content_hash: sha256:21eff855e32191cb7890765550f7133546743504ed1cd5b4647bb0cca33
 
   ```typescript
   import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
 
   function genSM2KeyPairSpec() {
     let sm2CommonParamsSpec = cryptoFramework.ECCKeyUtil.genECCCommonParamsSpec('NID_sm2');
@@ -426,11 +427,16 @@ content_hash: sha256:21eff855e32191cb7890765550f7133546743504ed1cd5b4647bb0cca33
   }
 
   async function sm2Test() {
-    let sm2KeyPairSpec = genSM2KeyPairSpec();
-    let generatorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(sm2KeyPairSpec);
-    let keyPair = await generatorBySpec.generateKeyPair();
-    let sm2CurveName = keyPair.priKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.ECC_CURVE_NAME_STR);
-    console.info('ECC_CURVE_NAME_STR: ' + sm2CurveName); // NID_sm2
+    try {
+      let sm2KeyPairSpec = genSM2KeyPairSpec();
+      let generatorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(sm2KeyPairSpec);
+      let keyPair = await generatorBySpec.generateKeyPair();
+      let sm2CurveName = keyPair.priKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.ECC_CURVE_NAME_STR);
+      console.info('ECC_CURVE_NAME_STR: ' + sm2CurveName); // NID_sm2
+    } catch (err) {
+      let e: BusinessError = err as BusinessError;
+      console.error(`call failed: errCode: ${e.code}, errMsg: ${e.message}`);
+    }
   }
   ```
 * 同步返回结果（调用方法[generateKeyPairSync](../harmonyos-references/js-apis-cryptoframework.md#generatekeypairsync12)）：

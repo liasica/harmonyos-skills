@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bluetooth.connection (蓝牙connection模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.bluetooth.connection (蓝牙connection模块)
 category: harmonyos-references
-scraped_at: 2026-10-17T06:46:34+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:a0695561139db93647c9adc2cd3878fb1e4edc7a12d2876fd20b9c863e48254b
+scraped_at: 2026-11-04T08:34:38+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:61bf8e2ddd974fa78ce9897f48455a4e8791d356764827521f7afd4e19dcdc0f
 ---
 
 connection模块提供了蓝牙设备的配对、连接、状态查询、设备扫描发现、扫描模式设置、电量信息获取及事件订阅等能力，适用于需要在应用中实现蓝牙设备发现、配对、连接和信息查询的场景。
@@ -2023,8 +2023,13 @@ disconnectAllowedProfiles(deviceId: string): Promise<void>
 **示例**：
 
 ```js
+import { BusinessError } from '@kit.BasicServicesKit';
 try {
-  await connection.disconnectAllowedProfiles('68:13:24:79:4C:8C');
+  connection.disconnectAllowedProfiles('68:13:24:79:4C:8C').then(() => {
+      console.info('disconnectAllowedProfiles success');
+    }, (err: BusinessError) => {
+      console.error('disconnectAllowedProfiles:errCode' + err.code + ', errMessage: ' + err.message);
+  });
 } catch (err) {
   console.error(`errCode: ${err.code}, errMessage: ${err.message}`);
 }

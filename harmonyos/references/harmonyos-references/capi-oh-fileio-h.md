@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-f
 title: oh_fileio.h
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > C API > 头文件 > oh_fileio.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:33+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:1816438d40e4c285a479097c416f82dac5670ebf747a3b35c354125d92d26280
+scraped_at: 2026-11-04T08:34:05+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:8ba778b721f931af1686e828276708b0d5b8f350f9260598c4be30f9c6cadd4a
 ---
 
 ## 概述
@@ -82,4 +82,4 @@ FileManagement_ErrCode OH_FileIO_GetFileLocation(char *uri, int uriLength, FileI
 
 | 类型 | 说明 |
 | --- | --- |
-| [FileManagement\_ErrCode](capi-error-code-h.md#filemanagement_errcode) | 返回FileManagement模块错误码[FileManagement\_ErrCode](capi-error-code-h.md#filemanagement_errcode)。 |
+| [FileManagement\_ErrCode](capi-error-code-h.md#filemanagement_errcode) | 返回FileManagement模块错误码[FileManagement\_ErrCode](capi-error-code-h.md#filemanagement_errcode)。  401 - Invalid input parameter, pointer is null.  ERR\_ENOENT 13900002 - No such file or directory.  ERR\_ENOMEM 13900011 - Failed to apply for memory. |

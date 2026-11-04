@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-nat
 title: 堆栈可视化
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 堆栈可视化
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:12:54+08:00
+scraped_at: 2026-11-04T08:31:28+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:15524582192306f6aae3b27f6bfb53545e0cf8cadc6fa63ed04c0bf6058513a1
+content_hash: sha256:f11736e5bca1e106186e7b6a8b5f426e3b5577e8dcb0a9d08cc071544c43e312
 ---
 
-在native调试窗口中，点击**Layout Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/7uF9uIERTW-djerlzw0Diw/zh-cn_image_0000002731542421.png)，勾选**Parallel Stacks**，打开并行栈视图。
+在native调试窗口中，点击**Layout Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/1eSrQ3QWScqnGANH0IIW5w/zh-cn_image_0000002731542421.png)，勾选**Parallel Stacks**，打开并行栈视图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/ljWYvRMYQBOdPu-nqMWBcw/zh-cn_image_0000002701663228.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/13IjMqUyRai8FSUQ745njA/zh-cn_image_0000002701663228.png)
 
 在程序停下时，并行栈视图可以同时展示多个线程的调用栈信息，合并重复调用栈，帮助您更好地理解程序的并发执行情况，以及发现潜在的多线程问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/uq0u2poxQ0KKGOtnCScz6g/zh-cn_image_0000002731382447.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/co4dKFhsS8-5vePcbKafNw/zh-cn_image_0000002731382447.png)
 
 ## 调用栈跳转
 
@@ -24,4 +24,4 @@ content_hash: sha256:15524582192306f6aae3b27f6bfb53545e0cf8cadc6fa63ed04c0bf6058
 
 在多个线程合并的位置处悬停鼠标，可以显示这些线程的具体信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/lkhK8465Q0qySjxm0rl8nQ/zh-cn_image_0000002701823146.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/1THCY4rjRIKVZFndvjRGaA/zh-cn_image_0000002701823146.png)

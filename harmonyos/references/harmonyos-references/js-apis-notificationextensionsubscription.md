@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.notificationExtensionSubscription (notificationExtensionSubscription模块)"
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > ArkTS API > @ohos.notificationExtensionSubscription (notificationExtensionSubscription模块)
 category: harmonyos-references
-scraped_at: 2026-10-01T07:40:27+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:4e4c9ebbd9f54f2332b6a089367ebe32a3a42d5fdd63eba43404a364a8d2849d
+scraped_at: 2026-11-04T08:37:11+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:a816ea1c48a099acefa7d5f4fed80915162a8a2a3d2caf83ba85852c5a446a86
 ---
 
 本模块提供管理通知扩展的能力，具体包括：打开通知扩展订阅设置界面、订阅和取消订阅通知扩展、获取和设置[通知授权](../harmonyos-guides/notification-glossary.md#notification-authorization通知授权)状态。
 
 **说明** 
 
-本模块首批接口从API version 22开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+本模块首批接口从API版本22开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 

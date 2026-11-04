@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: menu开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > menu开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:31:57+08:00
+scraped_at: 2026-11-04T08:29:22+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c1409d2570a1d6be10529ccdf836f6460c89c90af816482a3461870d07c14fff
+content_hash: sha256:44d4843ebff39618304ea5a3109a4ce743aa21fd0fd4a123550950f6cb2e2c37
 ---
 
 提供菜单组件，作为临时性弹出窗口，用于展示用户可执行的操作，具体用法请参考[menu](../harmonyos-references/js-components-basic-menu.md)。
@@ -42,7 +42,7 @@ content_hash: sha256:c1409d2570a1d6be10529ccdf836f6460c89c90af816482a3461870d07c
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/LLpzszjcTDCABf4dwXKArw/zh-cn_image_0000002776748920.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/pRRbL1SRSyqvIPg7ErE1Fg/zh-cn_image_0000002779690418.png)
 
 **说明** 
 
@@ -96,7 +96,7 @@ option{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/gDNacZ1EQTe-nGzkDoDjXA/zh-cn_image_0000002806028637.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/W2KXvSyxTB2h4S44Ll7h8g/zh-cn_image_0000002809010037.png)
 
 ## 绑定事件
 
@@ -159,4 +159,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/KNWc4s5ZReeRY3yVi2dIsw/zh-cn_image_0000002806108527.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/CK4zxw1OSVaD2VSoFl4I1w/zh-cn_image_0000002809049953.gif)

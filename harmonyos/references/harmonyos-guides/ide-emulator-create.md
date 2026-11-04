@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-
 title: 创建模拟器
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 使用模拟器运行应用 > 管理模拟器 > 创建模拟器
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:12:53+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:70cd70a2be14e3bb56fd8ba9110113410a644946948aa58deb472614ea8f9388
+scraped_at: 2026-11-04T08:31:27+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:c873e55d6b9b524b54608e61912a1fda48bf153b91a6f044a10f5db5048d6220
 ---
 
 有网络环境可参考以下步骤创建模拟器，如果是无网络环境，请查看[离线部署模拟器](ide-emulator-no-network.md)。
 
 **说明** 
 
-在macOS中，您可能在活动监视器中发现模拟器进程占用的内存超过设置的内存。实际上，活动监视器中的**Memory**并不代表模拟器进程实际使用的物理内存，更多详情请参考[macOS上活动监视器中显示模拟器内存偏高](../harmonyos-faqs/faqs-app-running-23.md)。
+在macOS中，您可能在活动监视器中发现模拟器进程占用的内存超过设置的内存。实际上，活动监视器中的**Memory**并不代表模拟器进程实际使用的物理内存，更多详情请参考[本地模拟器启动与运行问题排查常见问题](../harmonyos-faqs/app-running-faq-0003.md)。
 
 ## 使用预置的模拟器
 
@@ -22,20 +22,20 @@ content_hash: sha256:70cd70a2be14e3bb56fd8ba9110113410a644946948aa58deb472614ea8
 
 该功能仅支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/dpbLdVOBTl2A2ZWKTk65Jw/zh-cn_image_0000002701662000.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/2_edWkOEScWvodz_6DCElQ/zh-cn_image_0000002701662000.png)
 
-在设备选择框中，选择预置的模拟器并点击运行按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/S4Gkze9ERFiPsqEmjf1quA/zh-cn_image_0000002701821888.png)后，根据界面提示下载镜像，或点击菜单栏**Tools > Device Manager** >![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/36G4EbdAR4q1XxQrnyt6og/zh-cn_image_0000002701661960.png)下载镜像后，即可使用模拟器。
+在设备选择框中，选择预置的模拟器并点击运行按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/c64NNQKMRpKFQCny_xaXDA/zh-cn_image_0000002701821888.png)后，根据界面提示下载镜像，或点击菜单栏**Tools > Device Manager** >![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/8NIPTugZSE-kFbSx7Ampmw/zh-cn_image_0000002701661960.png)下载镜像后，即可使用模拟器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/P6gNr-r1QjS2_fAhOXDemQ/zh-cn_image_0000002701661978.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/oon7LtcQSqmZV1KsbbLppA/zh-cn_image_0000002701661978.png)
 
 ## 创建新的模拟器
 
 1. 点击菜单栏的**Tools > Device Manager**，点击右下角的**Edit**设置模拟器实例的存储路径**Local Emulator Location**，Mac默认存储在~/.Huawei/Emulator/deployed下，Windows默认存储在C:\Users\xxx\AppData\Local\Huawei\Emulator\deployed下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/_TVhuihITEidWyq6gYzU-Q/zh-cn_image_0000002701661988.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/CwGSGtxdQUGxaJI86Z1zbg/zh-cn_image_0000002701661988.png "点击放大")
 2. 在**Local Emulator**页签中，单击右下角的**New Emulator**按钮，创建一个模拟器。
 
-   在模拟器配置界面，可以选择一个默认的设备模板，首次使用时需点击设备右侧的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/3EeBdmNrRRe8e5SAqEDPTw/zh-cn_image_0000002731381155.png)下载模拟器镜像，您也可以在该界面更新或删除不同设备的模拟器镜像。
+   在模拟器配置界面，可以选择一个默认的设备模板，首次使用时需点击设备右侧的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/eEbhLpJtTKmCSAnPYMXiow/zh-cn_image_0000002731381155.png)下载模拟器镜像，您也可以在该界面更新或删除不同设备的模拟器镜像。
 
    单击**Edit**可以设置镜像文件的存储路径。macOS默认存储在~/Library/Huawei/Sdk下，Windows默认存储在C:\Users\xxx\AppData\Local\Huawei\Sdk下。
 
@@ -43,7 +43,7 @@ content_hash: sha256:70cd70a2be14e3bb56fd8ba9110113410a644946948aa58deb472614ea8
 
    如果配置界面显示异常，例如设备列表为空等，可先关闭DevEco Studio，并进入~/Library/Huawei（Windows路径为C:\Users\xxx\AppData\Local\Huawei）目录，删除DevEcoStudiox.x文件夹（如DevEcoStudio6.0，具体文件夹名称和安装的DevEco Studio版本相关）以清理缓存。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/ZQux3zw8T7qYXo0gMj-7iQ/zh-cn_image_0000002701821910.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/AFT_tZwCS1aNxb6hdcsl3g/zh-cn_image_0000002701821910.png)
 3. 单击**Next**，设置设备相关的参数。
    * **Name**：设置模拟器的名称。
    * **Screen Profile**：从DevEco Studio 6.0.0 Beta1版本开始，部分设备支持选择预置的机型配置或自定义屏幕配置，具体支持的设备请参考[自定义屏幕配置](ide-emulator-customize-screen-configuration.md)。可点击下拉框选择预置的机型配置，也可点击**Customize**自定义配置，在自定义配置的情况下可以对屏幕尺寸、分辨率和DPI进行修改，取值范围参考界面提示。
@@ -61,17 +61,17 @@ content_hash: sha256:70cd70a2be14e3bb56fd8ba9110113410a644946948aa58deb472614ea8
 
    确认所有参数后，点击**Finish**创建模拟器。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/j0mYICXvQtqTXiR5KgUR6g/zh-cn_image_0000002731381203.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/odm_viLnS9yzf6VM-CEHOg/zh-cn_image_0000002731381203.png)
 4. 启动模拟器，有两种方式。
-   * 从DevEco Studio 6.1.0 Beta2版本开始，创建后的模拟器会展示在设备列表中（最多10个），选择模拟器后，点击运行按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/-wsbe-W6RXeBvz_WduAFSw/zh-cn_image_0000002701821928.png)，即可一键完成启动模拟器、编译构建、推包运行操作。
+   * 从DevEco Studio 6.1.0 Beta2版本开始，创建后的模拟器会展示在设备列表中（最多10个），选择模拟器后，点击运行按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/zh2pNN4WQtebjSendAB3OA/zh-cn_image_0000002701821928.png)，即可一键完成启动模拟器、编译构建、推包运行操作。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/L-7MEBCIRpazA63By8R3jg/zh-cn_image_0000002731381175.png)
-   * 在设备管理器页面，单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/PoTxXe3XTuekn5PM6ITftg/zh-cn_image_0000002701821850.png)启动模拟器。
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/njzXdRenRNO0Dg08VEXUMg/zh-cn_image_0000002731381175.png)
+   * 在设备管理器页面，单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/UVBpaVZxTD6sRWuGzitsdQ/zh-cn_image_0000002701821850.png)启动模拟器。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/KX4L44Z0SHqnf-wT5b37TA/zh-cn_image_0000002731541175.png "点击放大")
-5. 单击DevEco Studio的**Run > Run'模块名称'**或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/wK80bBPTRQi3uMU4BJ-K3g/zh-cn_image_0000002731541133.png)。
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/ofoUOwpwQTSgQsLgu82d_A/zh-cn_image_0000002731541175.png "点击放大")
+5. 单击DevEco Studio的**Run > Run'模块名称'**或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/l47BaRz3SjuLD2W3M7_O7g/zh-cn_image_0000002731541133.png)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/_BKD0PZOSwaUxwCjqZpaMA/zh-cn_image_0000002731541195.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/hPjFk-5DQYCODMtgMiC_mQ/zh-cn_image_0000002731541195.png)
 6. DevEco Studio会启动应用/元服务的编译构建与推包，完成后应用/元服务即可运行在模拟器上。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/SSIQSHjNTgqHqAsJVw6inw/zh-cn_image_0000002701661938.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/gQyOuUY0TueVJX36yTAG5g/zh-cn_image_0000002701661938.png)

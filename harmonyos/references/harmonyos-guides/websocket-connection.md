@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/websocket-con
 title: 使用WebSocket访问网络
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 访问网络 > 使用WebSocket访问网络
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:36+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:7c571c5b2c00d2dc54ec6c8135cb1873538df5c1847972427bf6645687147bd1
+scraped_at: 2026-11-04T08:29:48+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:f4d75b2f27a8a0c9dc4479ea51341a34cfbf59f681f9fc2d905d9032f374a0ae
 ---
 
 ## 场景介绍
 
 WebSocket是一种网络通信协议，它允许客户端和服务器之间建立一个持久的连接，并在该连接上进行全双工通信，连接之后客户端和服务器端可以同时主动发送数据，这是WebSocket和传统的HTTP协议最大的区别，HTTP以单向通信为主，客户端发起请求，服务器端响应数据，一次传输之后，连接会断开。一般情况下，HTTP适用于一次性数据获取（如网页内容加载），WebSocket适用于实时性要求高的场景下（如在线聊天、实时游戏），以避免频繁建立连接提升用户体验。
 
-该模块给第三方应用提供webSocket客户端和服务端能力，实现客户端与服务端的双向连接。
+该模块给第三方应用提供WebSocket客户端和服务端能力，实现客户端与服务端的双向连接。
 
 客户端：使用WebSocket建立服务器与客户端的双向连接，需要先通过[createWebSocket()](../harmonyos-references/js-apis-websocket.md#websocketcreatewebsocket)方法创建[WebSocket](../harmonyos-references/js-apis-websocket.md#websocket)对象，然后通过[connect()](../harmonyos-references/js-apis-websocket.md#connect)方法连接到服务器。当连接成功后，客户端会收到[open](../harmonyos-references/js-apis-websocket.md#onopen)事件的回调，之后客户端就可以通过[send()](../harmonyos-references/js-apis-websocket.md#send)方法与服务器进行通信。当服务器发信息给客户端时，客户端会收到[message](../harmonyos-references/js-apis-websocket.md#onmessage)事件的回调。当客户端想要取消此连接时，通过调用[close()](../harmonyos-references/js-apis-websocket.md#close)方法主动断开连接后，客户端会收到[close](../harmonyos-references/js-apis-websocket.md#onclose)事件的回调。若在上述任一过程中发生错误，客户端会收到[error](../harmonyos-references/js-apis-websocket.md#onerror)事件的回调。
 
@@ -22,13 +22,13 @@ WebSocket是一种网络通信协议，它允许客户端和服务器之间建�
 
 **说明** 
 
-websocket支持[心跳检测机制](https://datatracker.ietf.org/doc/html/rfc6455#section-5.5.2)，在客户端和服务端建立webSocket连接之后，从连接建立或者客户端收到Pong帧开始计时，每间隔pingInterval秒客户端会发送Ping帧给服务器。服务器若支持websocket协议则会在收到Ping帧后自动回复Pong帧，表示连接正常，若服务端异常或服务端不支持websocket协议则不会回复Pong帧；若Ping帧发出去后，pongTimeout秒内没有收到Pong帧，则会主动断开连接。支持开发者关闭心跳检测机制，自定义pingInterval与pongTimeout，详情请参考[WebSocketRequestOptions](../harmonyos-references/js-apis-websocket.md#websocketrequestoptions)。
+WebSocket支持[心跳检测机制](https://datatracker.ietf.org/doc/html/rfc6455#section-5.5.2)，在客户端和服务端建立WebSocket连接之后，从连接建立或者客户端收到Pong帧开始计时，每间隔pingInterval秒客户端会发送Ping帧给服务器。服务器若支持WebSocket协议则会在收到Ping帧后自动回复Pong帧，表示连接正常，若服务端异常或服务端不支持WebSocket协议则不会回复Pong帧；若Ping帧发出去后，pongTimeout秒内没有收到Pong帧，则会主动断开连接。支持开发者关闭心跳检测机制，自定义pingInterval与pongTimeout，详情请参考[WebSocketRequestOptions](../harmonyos-references/js-apis-websocket.md#websocketrequestoptions)。
 
 服务端从API version 19开始支持。
 
 ## client端开发步骤
 
-1. 导入webSocket以及错误码模块。
+1. 导入WebSocket以及错误码模块。
 
    ```typescript
    import { webSocket } from '@kit.NetworkKit';
@@ -105,7 +105,7 @@ websocket支持[心跳检测机制](https://datatracker.ietf.org/doc/html/rfc645
 
 ## server端开发步骤
 
-1. 导入webSocket以及错误码模块。
+1. 导入WebSocket以及错误码模块。
 
    ```typescript
    import { webSocket } from '@kit.NetworkKit';

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state
 title: "@State装饰器：组件内状态"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @State装饰器：组件内状态
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:31:46+08:00
+scraped_at: 2026-11-04T08:29:10+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:35ffd41df6358c64cb628d91ed7d2b3759e2817edecc4aaf20ca6927d022a479
+content_hash: sha256:6681edaa7ca8dec7888b38372b7a85fba2aa58336d874646be61f61036f669bc
 ---
 
 被状态变量装饰器装饰的变量称为状态变量，使普通变量具备状态属性。当状态变量改变时，会触发其直接绑定的UI组件渲染更新。
@@ -48,7 +48,7 @@ content_hash: sha256:35ffd41df6358c64cb628d91ed7d2b3759e2817edecc4aaf20ca6927d02
 
 **图1** 初始化规则图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/NkhORJIQTp29cg8_7C7BWw/zh-cn_image_0000002806027873.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/BsSXsAp8SY-7UHaikY1MEQ/zh-cn_image_0000002809009273.png)
 
 ## 观察变化和行为表现
 
@@ -205,7 +205,7 @@ content_hash: sha256:35ffd41df6358c64cb628d91ed7d2b3759e2817edecc4aaf20ca6927d02
   }
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/ZI1D-cETSc2VUA9ZzVd4SQ/zh-cn_image_0000002806107763.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/6ik_D73KR72HQos_MfHfBA/zh-cn_image_0000002809049189.gif)
 
 ### 装饰class对象类型的变量
 
@@ -265,7 +265,7 @@ content_hash: sha256:35ffd41df6358c64cb628d91ed7d2b3759e2817edecc4aaf20ca6927d02
   }
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/CuZKJ34OQXOG0ZLAewFKjQ/zh-cn_image_0000002776908144.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/F4FlPmdlSvqvYZD5_V_Lrg/zh-cn_image_0000002779849624.gif)
 
 ### 装饰Array类型变量
 
@@ -336,7 +336,7 @@ struct ArraySample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/mOP2Z1TvT0e4W01YwyylRg/zh-cn_image_0000002776748158.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/0w1GLefvQDCXZ0eOjCJ2wA/zh-cn_image_0000002779689654.gif)
 
 ### 装饰Map类型变量
 
@@ -403,7 +403,7 @@ struct MapSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/Mrro1Q5tSTC0bjJP6Bnw2w/zh-cn_image_0000002806027875.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/n9QmJWhURP6_DrkMdZrZ1Q/zh-cn_image_0000002809009275.gif)
 
 ### 装饰Set类型变量
 
@@ -463,7 +463,7 @@ struct SetSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/MD00Y90JR_unaOs8iK17YA/zh-cn_image_0000002806107765.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/FlTEJijeSbC67Tx8b0-z7g/zh-cn_image_0000002809049191.gif)
 
 ### 装饰Date类型变量
 
@@ -519,7 +519,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/7GMUpBWhSiyNrYQqdRvhsw/zh-cn_image_0000002776908146.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/dAVGYHE4Q-2iU1-QO01bRw/zh-cn_image_0000002779849626.gif)
 
 ### @State支持联合类型实例
 
@@ -557,4 +557,4 @@ struct UnionTypeSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/-s9LEBpOTL62-vx7wCGQQg/zh-cn_image_0000002776748160.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/URZscyGuQ02Ok5cbykOH_A/zh-cn_image_0000002779689656.gif)

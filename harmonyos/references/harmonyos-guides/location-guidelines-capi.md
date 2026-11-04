@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/location-guid
 title: 获取设备的位置信息开发指导(C/C++)
 breadcrumb: 指南 > 应用服务 > Location Kit（位置服务） > 获取设备的位置信息开发指导 > 获取设备的位置信息开发指导(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:33:06+08:00
+scraped_at: 2026-11-04T08:30:35+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:ba2e14a60d2c34900d4cd619a8b5df39fc080307f3d5e3f398382dbf46d060a9
+content_hash: sha256:661542572eabaf5629ab7b113956115b9a004fb9e8c25eb35c8fcc718139de1c
 ---
 
 ## 场景介绍
@@ -32,7 +32,7 @@ content_hash: sha256:ba2e14a60d2c34900d4cd619a8b5df39fc080307f3d5e3f398382dbf46d
 
 1. 新建一个Native C++工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/hlCKNe7-T8KKQbiOlhN8jw/zh-cn_image_0000002806029693.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/irJAK036T0WrExHueQHkdA/zh-cn_image_0000002809011095.png)
 2. 获取设备的位置信息，需要有位置权限，位置权限申请的方法和步骤见[申请位置权限开发指导](location-permission-guidelines.md)。
 3. CMakeLists.txt文件中引入动态依赖库。
 

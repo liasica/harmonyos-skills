@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-develop
 title: 开发应用沉浸式效果
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 组件布局 > 开发应用沉浸式效果
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:31:49+08:00
+scraped_at: 2026-11-04T08:29:13+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:4499a34c7a1d95be81ce86b25a78cb20d1b8354d899bf4a3d33809e023b2db86
+content_hash: sha256:663a5d311d957ec8de5e944ff634b96c8caf0afd04716490e061b3a2d568981b
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:4499a34c7a1d95be81ce86b25a78cb20d1b8354d899bf4a3d33809e023b
 
 **图1** 界面元素示意图（此处以导航区域表现为导航条为例给出示意）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/RDb-VFNhR66FjxwzxXhU5A/zh-cn_image_0000002776908432.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/f1C8Tm1sQI6yNV_26r6QPg/zh-cn_image_0000002779849912.png)
 
 开发应用沉浸式效果主要要考虑如下几个设计要素：
 
@@ -157,17 +157,17 @@ content_hash: sha256:4499a34c7a1d95be81ce86b25a78cb20d1b8354d899bf4a3d33809e023b
 
    **图2** 布局避让状态栏和导航区域（此处以导航区域表现为导航条为例给出示意）
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/-3PuVVQOS4eDkrxsDROLrQ/zh-cn_image_0000002776748446.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/Q9EUDf6OSaao5CPBjqHVNg/zh-cn_image_0000002779689942.jpg)
 
    **图3** 布局未避让状态栏和导航区域，UI元素重叠（此处以导航区域表现为导航条为例给出示意）
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/ON_LCw07QpqHnO3bAHWleQ/zh-cn_image_0000002806028163.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/RtIB1wRwScajhdZyQ3ezCQ/zh-cn_image_0000002809009563.jpg)
 
 ### 应用扩展布局，隐藏避让区
 
 此场景下状态栏和导航区域需要隐藏，适用于游戏、电影等应用场景。用户可以通过从底部上滑唤出导航条或三键导航。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/q4A_2kY_TSGPXU5rYDh06Q/zh-cn_image_0000002806108053.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/o3Bq479jSd-kywMTJO6MVw/zh-cn_image_0000002809049479.png)
 
 1. 调用setWindowLayoutFullScreen()接口设置窗口全屏。
 
@@ -268,7 +268,7 @@ content_hash: sha256:4499a34c7a1d95be81ce86b25a78cb20d1b8354d899bf4a3d33809e023b
 
 **图4** 界面元素自动避让状态栏和导航区域示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/NBUiFfZ6SqG2u1jnzADsBg/zh-cn_image_0000002776908434.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/ynZhA_aMS0SfUoN0hsF9iw/zh-cn_image_0000002779849914.png)
 
 针对状态栏和导航区域颜色与界面元素颜色不匹配问题，可以通过如下两种方式实现沉浸式效果：
 
@@ -335,7 +335,7 @@ content_hash: sha256:4499a34c7a1d95be81ce86b25a78cb20d1b8354d899bf4a3d33809e023b
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/a5IANdbBRSuH2qK_2D-nbQ/zh-cn_image_0000002776748448.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/pVlGSU41RhmD54Dx5fHZ3w/zh-cn_image_0000002779689944.png)
 * 状态栏和导航区域颜色不同时，可以使用[expandSafeArea](../harmonyos-references/ts-universal-attributes-expand-safe-area.md#expandsafearea)属性扩展安全区域属性进行调整。
 
   ```ts
@@ -381,7 +381,7 @@ content_hash: sha256:4499a34c7a1d95be81ce86b25a78cb20d1b8354d899bf4a3d33809e023b
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/Jqs9VsbJTSOyda4RHk_Q2g/zh-cn_image_0000002806028165.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/aSxYceBcQCyXnggnIPLEXg/zh-cn_image_0000002809009565.png)
 
 ### 扩展安全区域属性原理
 
@@ -395,7 +395,7 @@ content_hash: sha256:4499a34c7a1d95be81ce86b25a78cb20d1b8354d899bf4a3d33809e023b
 
   + safeAreaPadding位于原有的padding内侧。容器自外向内各层分别为border、padding、safeAreaPadding、内容区。当border和padding确定后，若容器可用空间不足以满足safeAreaPadding的设置，则优先分配给左侧和上侧safeAreaPadding、其次分配给右侧和下侧safeAreaPadding。safeAreaPadding实际尺寸确定后，余下空间为内容区。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/anGuiAoeRkiRdjs9WP1ehQ/zh-cn_image_0000002806108055.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/qbe_6HnTTiO9i4kKOHy9Ow/zh-cn_image_0000002809049481.png)
   + 系统组件如Navigation、List、Scroll、Tabs等可以利用外层或容器自身safeAreaPadding实现扩大裁剪范围等能力。
 
 ### 背景图和视频场景
@@ -421,7 +421,7 @@ struct SafeAreaExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/nju8srGLRZWPMdkYurJyMw/zh-cn_image_0000002776908436.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/Rw8e0Q2zRJuu2qlb0OLUcA/zh-cn_image_0000002779849916.png)
 
 ### 滚动类场景
 
@@ -458,7 +458,7 @@ struct SafeAreaExample1 {
 
    **图5** 滚动类容器设置expandSafeArea属性实现沉浸式效果
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/FCRicR-oQb2hRwzPpPZkSA/zh-cn_image_0000002776748450.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/XK6djz65TBGRXDWEmhEfKA/zh-cn_image_0000002779689946.png)
 2. 设置父组件滚动容器和子组件相同的背景色，设置滚动容器的内容裁剪属性clipContent(ContentClipMode.SAFE\_AREA)，将内容层裁剪区域扩展至避让区。
 
    ```ts
@@ -489,13 +489,13 @@ struct SafeAreaExample1 {
 
 **图6** 滚动类容器设置clipContent属性实现沉浸式效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/IG8fmZMySv-DwbQL-1rXrw/zh-cn_image_0000002806028167.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/dfKO81OvQNmhFGvTthLYsA/zh-cn_image_0000002809009567.png)
 
 ### 底部页签场景
 
 要求页签背景色能够延伸到导航区域（此处以导航区域表现为导航条为例给出示意），但页签内部可操作元素需要在导航区域之上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/QJFA6gRdRWCPCvxskb3mfw/zh-cn_image_0000002806108057.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/bAvhYgUaTBqwfnQ50vogIw/zh-cn_image_0000002809049483.png)
 
 针对底部的页签部分，Navigation组件和Tabs组件默认实现了页签的延伸处理，开发者只需要保证Navigation和Tabs组件的底部边界和底部导航区域重合即可。若开发者显式调用expandSafeArea接口，则安全区效果由expandSafeArea参数指定。
 
@@ -503,7 +503,7 @@ struct SafeAreaExample1 {
 
 **图7** 顶部和底部UI元素未设置和设置expandSafeArea属性效果对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/zbYghcvFTxmJfn5L37Rujg/zh-cn_image_0000002776908438.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/RzPoDGQUTXWW7C9PpLLhcA/zh-cn_image_0000002779849918.png)
 
 ```ts
 // xxx.ets
@@ -552,7 +552,7 @@ struct Example {
 
 当状态栏元素和底部导航区域元素不同时，无法单纯通过窗口背景色或者背景图组件延伸实现，此时需要对顶部元素和底部元素分别配置expandSafeArea属性，顶部元素配置expandSafeArea([SafeAreaType.SYSTEM],[SafeAreaEdge.TOP])，底部元素配置expandSafeArea([SafeAreaType.SYSTEM],[SafeAreaEdge.BOTTOM])。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/vOIIJfn3QbO0fO1qzeMTew/zh-cn_image_0000002776748452.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/vwlOb4IUTKS3ilU549FUTQ/zh-cn_image_0000002779689948.png)
 
 ```ts
 @Entry

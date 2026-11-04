@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@system.bluetooth (蓝牙)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 已停止维护的接口 > @system.bluetooth (蓝牙)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:52+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:3493b4110aef4f4ae3e8ad3de886efa0e75b4bd409acae82c183cd36e1eda80a
+scraped_at: 2026-11-04T08:34:44+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:0d6ed1f28eb8b59ae005d9b0cec58e538f2d63cd19e77463255e5fe86dbe7c6e
 ---
 
 **说明** 
@@ -124,7 +124,7 @@ bluetooth.subscribeBLEFound({
     console.info('call bluetooth.subscribeBLEFound success, data: ${data}.');
   },
   fail(data, code) {
-    console.info('call bluetooth.startBLEScan failed, code:' + code + ', data:' + data);
+    console.info('call bluetooth.subscribeBLEFound failed, code:' + code + ', data:' + data);
   }
 });
 ```

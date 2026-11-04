@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-appear
 title: 控制窗口外观 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 其他开发场景 > 控制窗口外观 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:31:59+08:00
+scraped_at: 2026-11-04T08:29:24+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:6426ed03a24f35bc2c3acf0e8b44e10e4e650a6e1b19924f20f78d0c1869b11b
+content_hash: sha256:189aac8deea43a95ecd85bcf12e0f5daec6d53fc0acf83ec0667611e1fe21e33
 ---
 
 ## 场景介绍
@@ -31,12 +31,12 @@ content_hash: sha256:6426ed03a24f35bc2c3acf0e8b44e10e4e650a6e1b19924f20f78d0c186
 
   掩码仅支持取值为整数0和整数1的二维数组输入，数组行数对应窗口高度，列数对应窗口宽度。整数0代表对应像素透明且不可交互，整数1代表对应像素不透明且可交互。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/MdJcfuqoQdCCepNZe3TUaw/zh-cn_image_0000002806028725.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/tywdzcSrS_adoD_Iyf1Rag/zh-cn_image_0000002809010125.png)
 * 从API版本26.0.0开始，支持使用[setWindowMaskWithAlpha()](../harmonyos-references/arkts-apis-window-window.md#setwindowmaskwithalpha)接口设置异形窗口的掩码。
 
   掩码支持取值在[0, 255]范围的数组输入，数组长度等于窗口宽度乘以窗口高度。整数0代表对应像素透明且不可交互，整数255代表对应像素不透明且可交互，0~255之间代表对应像素部分透明且可交互。此接口性能优于[setWindowMask()](../harmonyos-references/arkts-apis-window-window.md#setwindowmask12)，推荐使用。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/Vn-ydPH5TuWpsw-fD6HDvA/zh-cn_image_0000002806108615.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/v2h-aI7jS7OjDIJF0kHHsA/zh-cn_image_0000002809050041.png)
 
 此处以设置子窗的异形窗口为例。此例主要实现以下效果：
 
@@ -100,7 +100,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/YunkM8lOQJ643d1o6xeRDw/zh-cn_image_0000002776908996.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/5SnB92UbTuG1ufvzxuNamg/zh-cn_image_0000002779850476.gif)
 
 ## 窗口阴影
 
@@ -131,7 +131,7 @@ struct Index {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/ehNJq0z-QwawEoGG_JA_Gg/zh-cn_image_0000002776749010.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/DV8zP4kqSGCARA2pml47MA/zh-cn_image_0000002779690508.gif)
 
 ## 设置窗口圆角
 
@@ -160,7 +160,7 @@ struct Index {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/eYuiTnDxRuCTWHVxgdYZHQ/zh-cn_image_0000002806028727.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/B2yn2Vx6TniA0Cip52MItA/zh-cn_image_0000002809010129.gif)
 
 ## 窗口背景色
 
@@ -178,7 +178,7 @@ struct Index {
 * 未调用[setWindowContainerColor()](../harmonyos-references/arkts-apis-window-window.md#setwindowcontainercolor20)或[setWindowContainerModalColor()](../harmonyos-references/arkts-apis-window-window.md#setwindowcontainermodalcolor)接口设置窗口容器区域背景色时，容器区域背景色默认跟随系统颜色模式：浅色模式下为'#FFF0F0F0'，深色模式下为'#FF1A1A1A'。
 * 需要在[loadContent()](../harmonyos-references/arkts-apis-window-window.md#loadcontent9-1)或[setUIContent()](../harmonyos-references/arkts-apis-window-window.md#setuicontent9-1)调用生效后才能设置背景色。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/5fgZQj8BTymp4W5nUf3Y_Q/zh-cn_image_0000002806108617.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/Oua4rURYRlSUNpQ4pVvMqg/zh-cn_image_0000002809050043.gif)
 
 示例代码如下：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: SymbolSpan
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > SymbolSpan
 category: harmonyos-references
-scraped_at: 2026-10-31T07:35:18+08:00
+scraped_at: 2026-11-04T08:33:01+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:9d5a20c48ccae2e4086037e238afa53eb8209f973621a2590c2acf69d964745a
+content_hash: sha256:ec6a7704c903709d2cea7e0f721601f24d0d769b559dda4b4e12c265ad932761
 ---
 
 SymbolSpan作为Text组件的子组件，用于在文本中显示系统预置的图标小符号（Symbol图标）。支持设置颜色、大小、粗细、渲染策略和动效策略等属性，适用于需要在文本中嵌入图标符号的场景，如状态指示、功能标识等。SymbolSpan仅支持系统预置的symbol资源，可继承父组件Text的属性设置。
@@ -164,7 +164,7 @@ SINGLE表示单色渲染，适用于需要统一颜色的图标显示场景；MU
 
 不同渲染策略效果可参考以下示意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/W9p19a4ISfGV8g967zeL5w/zh-cn_image_0000002776750962.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/6C9hsHLzT2WYnL7AUW5dXA/zh-cn_image_0000002779692460.png)
 
 ### effectStrategy
 
@@ -319,7 +319,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/KE-71g3aSlqsRTK5acOGXw/zh-cn_image_0000002806030679.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/_q1JpQhfS3O3v5MMrQFNfQ/zh-cn_image_0000002809012081.gif)
 
 ### 示例2（设置动态属性）
 
@@ -353,7 +353,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/rcGw2WtESjOqcg3s0puYDw/zh-cn_image_0000002806110569.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/k9ijy4BnRqiNQQJ6fC0HnA/zh-cn_image_0000002809051995.gif)
 
 ### 示例3（设置字体粗细）
 
@@ -425,4 +425,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/TbVN4zEySKyBvxleoe6eug/zh-cn_image_0000002776910950.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/CHS-G-JDSn6rT-Ouz0t3Lw/zh-cn_image_0000002779852430.png)

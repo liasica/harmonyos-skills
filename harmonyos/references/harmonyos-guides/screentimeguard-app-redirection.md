@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 拦截页跳转至管控应用
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 拦截页跳转至管控应用
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:33:14+08:00
+scraped_at: 2026-11-04T08:30:44+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:2c6a00e672d41f83483d9d53c7b261e6fa903a95c5b3e4feac75100b98c95113
+content_hash: sha256:6fcf8dfaf90e465d5cc9390a4cf9f2aecb8165f863c2c1deb40c6a2bf3bcd9b3
 ---
 
 ## 场景介绍
@@ -14,11 +14,11 @@ Screen Time Guard Kit支持用户通过被管控应用拦截页跳转至当前�
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/VKO4qU0zQomDCJmP9omLVg/zh-cn_image_0000002776910150.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/cmVahUxaQ6ankgtZC4bqkw/zh-cn_image_0000002779851630.png)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/NyQBU0jtQX2eXP5-dt9MHg/zh-cn_image_0000002806109773.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/5OzNoaC8TICDZdXNFg-Lcg/zh-cn_image_0000002809051199.png)
 
 流程说明：
 

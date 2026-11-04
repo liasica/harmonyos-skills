@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/synchronous-v
 title: 视频解码同步模式
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 视频解码同步模式
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:40+08:00
+scraped_at: 2026-11-04T08:30:07+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:1f62ecc0b3bb835d24f4cd8ce64c1b1708d427ebdc5ee69508ad9ecffba443a2
+content_hash: sha256:c2de09a99d61e02d795ef25d37d8f03c34ae30d14337c101b72394cc52cb3111
 ---
 
 从API version 20开始，支持视频解码同步模式。
@@ -26,7 +26,7 @@ content_hash: sha256:1f62ecc0b3bb835d24f4cd8ce64c1b1708d427ebdc5ee69508ad9ecffba
 
 详细的API说明请参考[VideoDecoder](../harmonyos-references/capi-native-avcodec-videodecoder-h.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/Ud_fgfuET4ekC-n9ajTaww/zh-cn_image_0000002776909450.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/DKM3BoEaRUyt9wYGxlPMHQ/zh-cn_image_0000002779850930.png)
 
 ### 在CMake脚本中链接动态库
 

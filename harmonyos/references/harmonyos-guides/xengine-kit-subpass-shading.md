@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-s
 title: Subpass Shading
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > Subpass Shading
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:53+08:00
+scraped_at: 2026-11-04T08:30:21+08:00
 doc_updated_at: 2026-08-03
-content_hash: sha256:b673f261edd7b30c4ccb8e187d9aebfc99ebc2f436b70be1d9c98e8a676e2826
+content_hash: sha256:7c97504e37b68a362e467c4859158e86a1bf1df5e8b9a3be2565f694e2d489d8
 ---
 
 随着游戏场景的复杂化，越来越多的光照效果被应用到游戏场景中，随之也带来大量的光照计算以及带宽消耗。目前通过Tile-Based Deferred Rendering（TBDR）和Forward+等方法可以解决大量光照的渲染时间消耗，但是大量带宽的占用问题还是没有解决，Subpass Shading（子通道着色）能力主要减少计算过程中的读写从而减少带宽的占用。
@@ -14,11 +14,11 @@ content_hash: sha256:b673f261edd7b30c4ccb8e187d9aebfc99ebc2f436b70be1d9c98e8a676
 
 **图1** Forward+读取过程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/rSZvNcoZSV-vwAB3yuowPA/zh-cn_image_0000002806109317.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/C5FsUcS_S96hvcn-jIUOSg/zh-cn_image_0000002809050743.png)
 
 **图2** Subpass Shading读取过程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/_k74-1U2QpSIUSj5uL2TJA/zh-cn_image_0000002776909698.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/x_kyxBX2TDOtRh_EVyjwSQ/zh-cn_image_0000002779851178.png)
 
 ## 约束与限制
 

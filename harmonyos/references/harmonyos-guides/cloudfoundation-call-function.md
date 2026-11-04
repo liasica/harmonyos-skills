@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 调用函数
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 云函数 > 开发云函数 > 调用函数
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:59+08:00
+scraped_at: 2026-11-04T08:30:27+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:bdfc6c5b10c7e294dc4f979a99aa183a99fa0f1c112bb1394ca9846527b90e27
+content_hash: sha256:711efd55e12a453a4a9f21be015e7f73bcbf78125dc1fe236951442e54e0c418
 ---
 
 ## 约束与限制
@@ -28,7 +28,7 @@ content_hash: sha256:bdfc6c5b10c7e294dc4f979a99aa183a99fa0f1c112bb1394ca9846527b
 
 在函数的触发器页面点击“HTTP触发器”，查看“触发URL”的后缀，获取触发器的标识，格式为“函数名-版本号”。如下图所示，“myhandlerxxxx-$latest”即为HTTP触发器标识，其中“myhandlerxxxx”为函数名，“$latest”为版本号。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/cwvc-SqbQyqmEr6nNt23UQ/zh-cn_image_0000002806029555.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/Lbr2-6jwRlO7mj8UuJltrw/zh-cn_image_0000002809010957.png)
 
 ## 在应用中调用函数
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.i18n (国际化-I18n)"
 breadcrumb: API参考 > 应用框架 > Localization Kit（本地化开发服务） > ArkTS API > @ohos.i18n (国际化-I18n)
 category: harmonyos-references
-scraped_at: 2026-10-15T07:09:25+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:e23f1c9dde4a57b9d88b61b5ed441c88555f4bdb56b0787412d26fe2a9ffd8f8
+scraped_at: 2026-11-04T08:34:14+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:055b109d1e532239f986c24d81e3f77917560ea13a36b039b0b3714434df3f3b
 ---
 
 本模块提供系统相关的以及增强的[国际化](../harmonyos-guides/i18n-l10n.md)能力，包括区域管理、电话号码处理、日历等，相关接口为[ECMA 402](https://dev.ecma-international.org/publications-and-standards/standards/ecma-402/)标准中未定义的补充接口。[国际化-Intl](js-apis-intl.md)模块提供了ECMA 402标准定义的基础国际化接口，与本模块共同使用可提供完整的国际化能力。接口中使用的名词定义如下：
@@ -4616,7 +4616,7 @@ let result = formatter.format(new Date(2026, 2, 15, 12, 0, 0));
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| dateFormat | 'calendar' | 'ordinal' | 'week' | 否 | 是 | 日期格式。取值包括：  **calendar**：日期模式为**YYYY-MM-DD**。  **ordinal**：日期模式为**YYYY-DDD**。  **week**：日期模式为**YYYY-Www-D**。  默认值：**calendar**。模式中字符含义参考[日期字段符号表](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table)。 |
+| dateFormat | 'calendar' | 'ordinal' | 'week' | 否 | 是 | 日期格式。取值包括：  **calendar**：日期模式为**YYYY-MM-DD**。  **ordinal**：日期模式为**YYYY-DDD**。  **week**：日期模式为**YYYY-Www-e**。  默认值：**calendar**。模式中字符含义参考[日期字段符号表](https://www.unicode.org/reports/tr35/tr35-dates.html#Date_Field_Symbol_Table)。 |
 | timePrecision | 'dateOnly' | 'hours' | 'minutes' | 'seconds' | 'milliSeconds' | 否 | 是 | 时间精度。取值包括：  **dateOnly**：只显示日期。  **hours**：显示小时。  **minutes**：显示时分。  **seconds**：显示时分秒。  **milliSeconds**：显示时分秒毫秒。  默认值：**seconds**。 |
 | separatorStyle | 'extended' | 'basic' | 否 | 是 | 分隔符风格。取值包括：  **extended**：显示日期和时间分隔符。  **basic**：不显示日期和时间分隔符。  默认值：**extended**。 |
 | timeZone | [TimeZone](js-apis-i18n.md#timezone) | 否 | 是 | 时区。默认值：**UTC**。 |

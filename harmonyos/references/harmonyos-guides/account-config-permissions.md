@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-confi
 title: 申请账号权限
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 开发准备 > 申请账号权限
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:54+08:00
+scraped_at: 2026-11-04T08:30:22+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:09f8c23e3b5d7a5f34540f6ab6d7045ae531e5959b9394e81be6b38d225b7667
+content_hash: sha256:a2765e4625f449e7d98acb8127be6c0a320cb9411d423a36cec768af3438a16d
 ---
 
 请参考“[应用开发准备](application-dev-overview.md)”章节，创建应用、使用DevEco Studio创建应用工程。
@@ -75,7 +75,7 @@ content_hash: sha256:09f8c23e3b5d7a5f34540f6ab6d7045ae531e5959b9394e81be6b38d225
 
 1. 在 AppGallery Connect（简称AGC）的[开发与服务](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject)中，选择相应的项目，然后选择需要申请对应权限的HarmonyOS应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/Gru8g0OwRzGMFYA8nZH9Ug/zh-cn_image_0000002806109321.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/iFE1QytNS821TdtbCKwRPA/zh-cn_image_0000002809050747.png)
 2. 在“开放能力管理”中，选择想要申请的账号权限，并点击“申请”。
 
    **说明** 
@@ -84,10 +84,10 @@ content_hash: sha256:09f8c23e3b5d7a5f34540f6ab6d7045ae531e5959b9394e81be6b38d225
 
    图示仅为示例，不同应用类型展示不同权限，请以实际页面显示为准。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/2bgX_W8tRDOTXVzvx9Ebow/zh-cn_image_0000002776909702.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/Tc1QP6zVQe-LhhVKfAnuyg/zh-cn_image_0000002779851182.png)
 3. 点击申请后，请根据应用实际情况填写“申请原因”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/9EUyX-dBQbq6QlVZKO5udQ/zh-cn_image_0000002776749716.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/-LtAfwqBRBqqHS_57sDxBg/zh-cn_image_0000002779691214.png)
 
    **说明** 
 
@@ -137,8 +137,8 @@ content_hash: sha256:09f8c23e3b5d7a5f34540f6ab6d7045ae531e5959b9394e81be6b38d225
 
    **图1** 修改前
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/ag_ga8TVSxuwRt5s_xq0TA/zh-cn_image_0000002806029433.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/oqtV87NDQcSKvgyr36Avfw/zh-cn_image_0000002809010835.png)
 
    **图2** 修改后
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/7Dv0Q4HkSueLeUfe04vBXw/zh-cn_image_0000002806109323.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/BbGNU-FjRieVppXoMihVnA/zh-cn_image_0000002809050749.png)

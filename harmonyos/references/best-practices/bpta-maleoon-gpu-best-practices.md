@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-maleoon-gpu-best-practices
 title: 马良GPU渲染优化
-breadcrumb: 最佳实践 > 图形 > GPU加速 > 马良GPU渲染优化
+breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > 马良GPU渲染优化
 category: best-practices
-scraped_at: 2026-10-29T08:03:17+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:7f8de536d4f549a59f4c7bb60c182d63174501291a77ff486d1b859829406016
+scraped_at: 2026-11-04T08:38:00+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:06590c292ed076d06074273a57f3caa9d68061936769fa7eeaa7d01148d24070
 ---
 
 ## 概述
@@ -17,7 +17,7 @@ content_hash: sha256:7f8de536d4f549a59f4c7bb60c182d63174501291a77ff486d1b8598294
 
 图形渲染的基本流程如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/nZGRKDCiRnWRAUabsQdp2g/zh-cn_image_0000002229450553.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/Dj5AR9vwQOaAWm6gLko06w/zh-cn_image_0000002229450553.jpg "点击放大")
 
 **说明** 
 
@@ -41,7 +41,7 @@ vkAllocateMemory为了避免分配的内存没有真正被渲染线程使用，�
 
 根据资源需求，选择最为匹配的内存类型进行内存分配，相同类型的memory按照用户实际需求一次分配大块size用于不同类型的资源（比如index buffer、vertex buffer及uniform buffer），可以提升内存申请的效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/53LFtioNSn6nmMIj4tk-HA/zh-cn_image_0000002229336081.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/PAcKzQrrRxytXUNZSZmxLg/zh-cn_image_0000002229336081.jpg "点击放大")
 
 * vkFreeMemory一定要与vkAllocateMemory成对使用，避免内存泄漏。
 * 绑定的memory资源尽量分时复用。
@@ -953,7 +953,7 @@ vkCmdEndRenderPass()；
 
 Job的执行顺序如下图所示，可见graphics jobs之间存在较大空隙，compute和graphics jobs为串行执行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/IHQae0O_R9eKF_DiNUCALw/zh-cn_image_0000002194010276.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/-8hAG1u3S5auSKmceyUzZw/zh-cn_image_0000002194010276.jpg "点击放大")
 
 为了避免以上情况出现，compute执行时，尽量让可以并行的graphics任务与compute同时执行。API序列如下所示：
 
@@ -974,7 +974,7 @@ vkCmdEndRenderPass();
 
 Job的执行顺序如下图所示，此时compute和graphics jobs可以并发执行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/Ew5f0hGsRvOG98OWQfcXtA/zh-cn_image_0000002193850692.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/aD_vv0VkQ-qAwupXYjm0ZA/zh-cn_image_0000002193850692.jpg "点击放大")
 
 **【不推荐】**
 

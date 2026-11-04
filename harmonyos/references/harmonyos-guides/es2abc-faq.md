@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/es2abc-faq
 title: 方舟字节码生成常见问题
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > 方舟字节码 > 方舟字节码生成常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:14+08:00
-doc_updated_at: 2026-08-03
-content_hash: sha256:00e4e89f3643e567ff4a9a910c4703abfdfe0cbbf2c707d93e78c553c02918cb
+scraped_at: 2026-11-04T08:29:07+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:182e0055d843bb9fb3e0973df17f2a44e562ee3ea40b1cdc66deacb422be01e8
 ---
 
 ## 字节码生成流程
@@ -36,7 +36,7 @@ The size of programs is expected to be 434, but is 432
 
 **解决措施**
 
-查看工程和HAR包的build-profile.json5文件中的“compatibleSdkVersionStage”字段，将工程中的“compatibleSdkVersionStage”字段调整至大于或者等于HAR包中的版本。参考[build-profile.json5配置文件说明](../harmonyos-guides-V5/ide-hvigor-build-profile-V5.md#section511142752919)中对compatibleSdkVersionStage字段的说明。
+查看工程和HAR包的build-profile.json5文件中的“compatibleSdkVersionStage”字段，将工程中的“compatibleSdkVersionStage”字段调整至大于或者等于HAR包中的版本。参考[工程级build-profile.json5配置文件说明](../doccenter-deveco-studio/ide-hvigor-build-profile-app.md#section45865492619)中对compatibleSdkVersionStage字段的说明。
 
 ## 编译时报Field 'xxx' has different value错误
 

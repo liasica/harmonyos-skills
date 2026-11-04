@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-devi
 title: 发现星闪设备
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 星闪 > 发现星闪设备
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:31+08:00
-doc_updated_at: 2026-09-30
+scraped_at: 2026-11-04T08:29:47+08:00
+doc_updated_at: 2026-11-03
 content_hash: sha256:d068cb49c3b5258c0e38877c028cdf2de37a238cc70f7041239efb150e4670c9
 ---
 

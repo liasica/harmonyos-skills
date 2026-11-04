@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.bundle.skillManager (skillManager模块)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.bundle.skillManager (skillManager模块)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:24:33+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:fb5f89b013fb7e7423acea06a97897868bc36a7eca13a57c1bcdd36ba6e8f5f4
+scraped_at: 2026-11-04T08:32:03+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:cb1fc8719171004476df3ad57cde3405a69468dcd6bbcdfc195b1579240874cd
 ---
 
 本模块提供技能（Skill）信息的查询能力，支持查询应用自身的技能信息、指定应用的技能信息以及所有应用的技能信息。AI代理框架在规划任务时，可通过本模块查询设备上所有应用可用的技能，选择合适的技能来完成用户请求。通过技能信息查询，可以实现智能任务调度、能力匹配优化，提升AI代理的任务执行效率，降低开发者的技能集成复杂度。
@@ -161,7 +161,7 @@ getSkillInfo(bundleName: string, moduleName: string, skillName: string, flags: n
 
 **起始版本：** 26.0.0
 
-**需要权限：** ohos.permission.MANAGE\_SKILL\_PRIVILEGE 或 ohos.permission.MANAGE\_SKILL
+**需要权限：** ohos.permission.MANAGE\_SKILL\_PRIVILEGE（该权限仅系统应用可申请） 或 ohos.permission.MANAGE\_SKILL
 
 **说明** 
 
@@ -233,7 +233,7 @@ getSkillInfos(bundleName: string, flags: number, userId?: number): Promise<Array
 
 **起始版本：** 26.0.0
 
-**需要权限：** ohos.permission.MANAGE\_SKILL\_PRIVILEGE 或 ohos.permission.MANAGE\_SKILL
+**需要权限：** ohos.permission.MANAGE\_SKILL\_PRIVILEGE（该权限仅系统应用可申请） 或 ohos.permission.MANAGE\_SKILL
 
 **说明** 
 
@@ -299,7 +299,7 @@ getAllSkillInfos(flags: number, userId?: number): Promise<Array<[SkillInfo](js-a
 
 **起始版本：** 26.0.0
 
-**需要权限：** ohos.permission.MANAGE\_SKILL\_PRIVILEGE 或 ohos.permission.MANAGE\_SKILL
+**需要权限：** ohos.permission.MANAGE\_SKILL\_PRIVILEGE（该权限仅系统应用可申请） 或 ohos.permission.MANAGE\_SKILL
 
 **说明** 
 

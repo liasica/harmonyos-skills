@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.connectedTag (有源标签)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.connectedTag (有源标签)
 category: harmonyos-references
-scraped_at: 2026-10-29T08:00:54+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:3e48cf6b69fed4976f8ef55d81664730bc87f45ff60c265c48b1d6cf7858d575
+scraped_at: 2026-11-04T08:34:40+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:e9879dad25d166dc91b35cb7b034db0dadff04f2ba31c2cb64bce824567268fe
 ---
 
 本模块提供有源标签的使用，包括初始化有源标签芯片、读取有源标签内容、写入内容到有源标签等。
@@ -13,6 +13,8 @@ content_hash: sha256:3e48cf6b69fed4976f8ef55d81664730bc87f45ff60c265c48b1d6cf785
 **说明** 
 
 本模块首批接口从API version 8开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+
+有源标签能力仅对系统应用开放。
 
 ## 导入模块
 
@@ -341,7 +343,7 @@ write(data: number[]): Promise<void>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 401 | The parameter check failed. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameters types.  3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
 | 801 | Capability not supported. |
 | 3200101 | Connected NFC tag running state is abnormal in service. |
 
@@ -419,7 +421,7 @@ write(data: number[], callback: AsyncCallback<void>): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission denied. |
-| 401 | The parameter check failed. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameters types.  3. Parameter verification failed. |
+| 401 | Parameter error. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
 | 801 | Capability not supported. |
 | 3200101 | Connected NFC tag running state is abnormal in service. |
 

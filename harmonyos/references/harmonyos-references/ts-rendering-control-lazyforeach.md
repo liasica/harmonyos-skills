@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-render
 title: LazyForEach
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 状态管理与渲染控制 > LazyForEach
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:16+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:9592f77f114fedcf67353ad4167b9a52e72058d57d6ab8a7aca9b50b1621ded9
+scraped_at: 2026-11-04T08:33:18+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:5a1b76460047dec1cac5efc49d2f818f68d87e2db0502c73a186fb222455bce5
 ---
 
 **说明** 
@@ -367,6 +367,15 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+| 类型 | 说明 |
+| --- | --- |
+| [DataAddOperation](ts-rendering-control-lazyforeach.md#dataaddoperation12) | 添加数据操作。 |
+| [DataDeleteOperation](ts-rendering-control-lazyforeach.md#datadeleteoperation12) | 删除数据操作。 |
+| [DataChangeOperation](ts-rendering-control-lazyforeach.md#datachangeoperation12) | 改变数据操作。 |
+| [DataMoveOperation](ts-rendering-control-lazyforeach.md#datamoveoperation12) | 移动数据操作。 |
+| [DataExchangeOperation](ts-rendering-control-lazyforeach.md#dataexchangeoperation12) | 交换数据操作。 |
+| [DataReloadOperation](ts-rendering-control-lazyforeach.md#datareloadoperation12) | 重载所有数据操作，并配置是否允许在更新过程中复用旧的子组件。 |
 
 ### DataAddOperation12+
 

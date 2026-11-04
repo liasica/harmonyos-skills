@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pen-stylu
 title: StylusFrameBoost（手写笔跟手性加速功能）
 breadcrumb: API参考 > 系统 > 硬件 > Pen Kit（手写笔服务） > ArkTS API > StylusFrameBoost（手写笔跟手性加速功能）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:38+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-11-04T08:35:29+08:00
+doc_updated_at: 2026-11-03
 content_hash: sha256:4089b8faa0ea5e0a7bb7e41ce0f80079195ee5e233947b546471dbc8baa9ce24
 ---
 

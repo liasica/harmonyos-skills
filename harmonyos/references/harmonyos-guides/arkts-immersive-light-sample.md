@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 沉浸光感典型场景
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感典型场景
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:31:51+08:00
-doc_updated_at: 2026-10-26
-content_hash: sha256:89c3c7e584be90dbe586e1d0760ed44e0fdddc777cb9433c1f9557e0c9f5caaf
+scraped_at: 2026-11-04T08:29:16+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:f6a523ccb7e0daed42de394425bb0354700493d985d36f34cbcd98213b9f4060
 ---
 
 本文档提供沉浸光感两个典型场景的开发指导，包括搜索框标题栏效果和内容区标题栏开启沉浸光感。
@@ -14,7 +14,7 @@ content_hash: sha256:89c3c7e584be90dbe586e1d0760ed44e0fdddc777cb9433c1f9557e0c9f
 
 在信息浏览类应用（如新闻、贴吧、小说阅读等应用）的场景中，用户上滑首页内容区后，标题栏显示范围可随之缩小，同时通过沉浸光感提升标题栏的交互体验。
 
-1. 设置底部Tabs悬浮并为Tabs组件开启沉浸光感，同时使用[ExpandSafeArea](../harmonyos-references/ts-universal-attributes-expand-safe-area.md#expandsafearea)将显示内容延伸至状态栏区域，使应用整体体验更加一致。
+1. 设置底部Tabs悬浮并为Tabs组件开启沉浸光感，同时使用[ignoreLayoutSafeArea](../harmonyos-references/ts-universal-attributes-expand-safe-area.md#ignorelayoutsafearea20)将显示内容延伸至底部状态栏区域，使应用整体体验更加一致。
 
    ```typescript
    @Entry
@@ -44,7 +44,6 @@ content_hash: sha256:89c3c7e584be90dbe586e1d0760ed44e0fdddc777cb9433c1f9557e0c9f
        // 通过系统路由表的方式配置对应的页面跳转
        Navigation(this.exploreStack, { name: 'explore' })
          .hideTitleBar(true)
-         .expandSafeArea([SafeAreaType.SYSTEM])
      }
 
      @Builder
@@ -52,7 +51,6 @@ content_hash: sha256:89c3c7e584be90dbe586e1d0760ed44e0fdddc777cb9433c1f9557e0c9f
        // 通过系统路由表的方式配置对应的页面跳转
        Navigation(this.gameStack, { name: 'game' })
          .hideTitleBar(true)
-         .expandSafeArea([SafeAreaType.SYSTEM])
      }
 
      build() {
@@ -60,13 +58,10 @@ content_hash: sha256:89c3c7e584be90dbe586e1d0760ed44e0fdddc777cb9433c1f9557e0c9f
          TabContent() {
            this.tabExploreContent()
          }.tabBar(this.BottomTabBarItem('探索', $r('sys.symbol.compass'), 0))
-         // 内容区延伸到状态栏区域，形成整体的交互体验
-         .expandSafeArea([SafeAreaType.SYSTEM])
 
          TabContent() {
            this.tabGameContent()
          }.tabBar(this.BottomTabBarItem('游戏', $r('sys.symbol.gamecontroller'), 1))
-         .expandSafeArea([SafeAreaType.SYSTEM])
 
          TabContent() {
          }.tabBar(this.BottomTabBarItem('应用', $r('sys.symbol.grid'), 2))
@@ -77,13 +72,9 @@ content_hash: sha256:89c3c7e584be90dbe586e1d0760ed44e0fdddc777cb9433c1f9557e0c9f
        .barPosition(BarPosition.End)
        .barMode(BarMode.Fixed)
        .barOverlap(true)
-       .barHeight(56)
-       .barFloatingStyle({
-         barBottomMargin: 8,
-         systemMaterial: new uiMaterial.ImmersiveMaterial({})
-       })
-       .scrollable(true)
-       .expandSafeArea([SafeAreaType.SYSTEM])
+       .barFloatingStyle({ systemMaterial: new uiMaterial.ImmersiveMaterial({ style: uiMaterial.ImmersiveStyle.THIN }) })
+       .ignoreLayoutSafeArea([LayoutSafeAreaType.SYSTEM], [LayoutSafeAreaEdge.BOTTOM])
+       .height(LayoutPolicy.matchParent)
        .onChange((index: number) => {
          this.currentTab = index
        })
@@ -99,7 +90,6 @@ content_hash: sha256:89c3c7e584be90dbe586e1d0760ed44e0fdddc777cb9433c1f9557e0c9f
      @Local searchOpacity: number = 1
      @Local classifyType: Array<string> = []
      totalTitleHeight = 110
-     @Local titleHeight: number = this.totalTitleHeight
      @Local scrollOffset: number = 0
      @Local titleOffset: number = 0
 
@@ -117,15 +107,14 @@ content_hash: sha256:89c3c7e584be90dbe586e1d0760ed44e0fdddc777cb9433c1f9557e0c9f
              .height(40)
              .width(220)
              .systemMaterial(new uiMaterial.ImmersiveMaterial({}))
-         }.expandSafeArea([SafeAreaType.SYSTEM])
+         }
          .width('100%')
          .opacity(this.searchOpacity)
          .height(50)
 
          ClassifyComponent()
-       }.expandSafeArea([SafeAreaType.SYSTEM])
+       }
        .width('100%')
-       .height(this.titleHeight)
        .padding({ left: 20, right: 20 })
        .position({ x: 0, y: -this.titleOffset })
      }
@@ -165,15 +154,13 @@ content_hash: sha256:89c3c7e584be90dbe586e1d0760ed44e0fdddc777cb9433c1f9557e0c9f
          .height('100%')
          .onDidScroll((xOffset: number, yOffset: number, state: ScrollState) => {
            this.scrollOffset += yOffset
-           // 搜索框大小范围内
            if (this.scrollOffset <= 50) {
              this.titleOffset = this.scrollOffset
-             this.titleHeight = this.totalTitleHeight - this.titleOffset
              this.searchOpacity = 1 - this.titleOffset / 50
            }
          })
        }.title(
-         { builder: this.exploreTitleBar, height: this.titleHeight },
+         { builder: this.exploreTitleBar, height: this.totalTitleHeight },
          { barStyle: BarStyle.STACK,
            // 设置标题栏模糊
            scrollEffectOptions: {
@@ -181,12 +168,11 @@ content_hash: sha256:89c3c7e584be90dbe586e1d0760ed44e0fdddc777cb9433c1f9557e0c9f
            }
          }
        ).hideBackButton(true)
-       .expandSafeArea([SafeAreaType.SYSTEM])
      }
    }
    ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/54ilV66mR3WzVyVp7RiEVg/zh-cn_image_0000002776908670.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/hDROaq5lR9C0vk6l29eA4A/zh-cn_image_0000002779850150.gif)
 
 ## 内容区标题栏开启沉浸光感
 
@@ -273,7 +259,7 @@ content_hash: sha256:89c3c7e584be90dbe586e1d0760ed44e0fdddc777cb9433c1f9557e0c9f
            lightEffect: { color: Color.White },
            materialColor: '#80d3d3d3'
          }))
-       }.expandSafeArea([SafeAreaType.SYSTEM])
+       }
        .width('100%')
        .height('100%')
        .padding({ left: 20, right: 20 })
@@ -344,7 +330,6 @@ content_hash: sha256:89c3c7e584be90dbe586e1d0760ed44e0fdddc777cb9433c1f9557e0c9f
            this.getUIContext().getComponentUtils().getRectangleById('content').windowOffset.y
          )
        })
-       .expandSafeArea([SafeAreaType.SYSTEM])
        .hideBackButton(true)
        .title({ builder: this.gameTitleBar, height: this.titleHeight }, {
          barStyle: BarStyle.STACK,
@@ -356,4 +341,4 @@ content_hash: sha256:89c3c7e584be90dbe586e1d0760ed44e0fdddc777cb9433c1f9557e0c9f
    }
    ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/d5Y1EC7pRemY4HoilktZkw/zh-cn_image_0000002776748684.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/DdnGU9wNRCqkbqWO6Bau4Q/zh-cn_image_0000002779690180.gif)

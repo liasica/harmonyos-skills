@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API进行扩展能力功能开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API进行扩展能力功能开发
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:33:41+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:a48ff60913a0189287aee5c890afc0e1ab92f97520a8db6645e16408b79a0b26
+scraped_at: 2026-11-04T08:31:12+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:15bee3ea7f265a6b154484625ddefd40537f370c779b930cdca1010f6b61d49f
 ---
 
 ## 简介
@@ -511,7 +511,7 @@ napi_value AttachCallback(napi_env env, void* value, void* hint)
     // 将JS对象object和native对象value生命周期进行绑定
     napi_status status = napi_wrap(env, object, value, FinalizerCallback, nullptr, nullptr);
     if (status != napi_ok) {
-        OH_LOG_INFO(LOG_APP, "Node-API attachCallback is failed.");
+        OH_LOG_ERROR(LOG_APP, "Node-API attachCallback is failed.");
     }
     // JS对象携带native信息
     napi_coerce_to_native_binding_object(env, object, DetachCallback, AttachCallback, value, hint);
@@ -531,7 +531,7 @@ static napi_value Init(napi_env env, napi_value exports)
     auto object = Object::GetInstance();
     napi_status status = napi_wrap(env, exports, reinterpret_cast<void*>(object), FinalizerCallback, nullptr, nullptr);
     if (status != napi_ok) {
-        OH_LOG_INFO(LOG_APP, "Node-API napi_wrap is failed.");
+        OH_LOG_ERROR(LOG_APP, "Node-API napi_wrap is failed.");
     }
     napi_coerce_to_native_binding_object(env, exports, DetachCallback, AttachCallback, reinterpret_cast<void*>(object),
                                          nullptr);
@@ -642,7 +642,7 @@ test01();
 
 对ArkTS对象A调用napi\_coerce\_to\_native\_binding\_object将开发者实现的detach/attach回调和native对象信息加到A上，再将A跨线程传递。跨线程传递需要对A进行序列化和反序列化。此处的序列化与反序列化是人为控制的，需要调用后文介绍的napi\_serialize、napi\_deserialize接口。过程如下图所示：在当前线程thread1序列化A得到数据data，序列化阶段执行detach回调。然后将data传给目标线程thread2，在thread2中反序列化data，执行attach回调，最终得到ArkTS对象A。此处的detach/attach是告知开发者序列化与反序列化执行完毕的回调。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/CBJuTXK6QeaBcpzxIge7cA/zh-cn_image_0000002806110023.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/IH6PW8_lQBSFD82Nm6d8vQ/zh-cn_image_0000002809051449.png)
 
 ## 事件循环
 

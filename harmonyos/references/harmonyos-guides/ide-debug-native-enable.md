@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-nat
 title: 启动调试
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 启动调试
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:12:54+08:00
+scraped_at: 2026-11-04T08:31:28+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:32b6d7f96b7f0a160f1c65badaa09c95e91758f0ac828e7561f4fe41f69b97da
+content_hash: sha256:97c8f9cffb0443a74208f191fcacbc33808f6a71cc8e9e700c83c3e37a0182d3
 ---
 
 Native代码调试依赖LLDB调试器，请参考[LLDB高性能调试器](debug-lldb.md)。
@@ -18,7 +18,7 @@ Native代码调试依赖LLDB调试器，请参考[LLDB高性能调试器](debug-
 
 * 如果调试时启用编译器优化，增加编译优化选项或使用[release编译模式](ide-hvigor-compilation-options-customizing-guide.md#section192461528194916)等，编译器会对编译后的汇编指令进行更改，从而使得代码运行更加高效。但优化后的指令难以与原始代码形成映射关系，可能会导致在调试的过程中出现异常或错误信息，例如局部变量信息被删除、无法正确跳转到期望的代码行等。因此，在调试的过程中需要关闭编译优化选项或者使用debug编译模式，避免因优化而导致的异常。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/PTwlB8_ARn2UbGZU_mgHpw/zh-cn_image_0000002731542823.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/-vpZhrnbS0akOkZfQiwctQ/zh-cn_image_0000002731542823.png)
 
 **Debugger**页签中还支持自定义以下配置：
 

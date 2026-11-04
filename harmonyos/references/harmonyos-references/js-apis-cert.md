@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.security.cert (证书模块)"
 breadcrumb: API参考 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > ArkTS API > @ohos.security.cert (证书模块)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:57+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1e2b173585324d5c03446ccca238ce305aaafd5ccd5627b9f9c8abc5f9a3d0f2
+scraped_at: 2026-11-04T08:34:36+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:7da1377def1fae4b8c0f6496be0acf81c1e1f3fab79412b7cb900c9ab638d109
 ---
 
 证书算法库框架提供证书相关接口。其中，依赖加解密算法库框架的基础算法能力的部分，详细接口说明可参考[@ohos.security.cryptoFramework (加解密算法库框架)](js-apis-cryptoframework.md)。
@@ -13295,7 +13295,7 @@ PKCS #7是用于存储签名或加密数据的标准语法。注意CMS是PKCS #7
 
 ### addSigner18+
 
-addSigner(cert: X509Cert, keyInfo: PrivateKeyInfo, config: CmsSignerConfig): void;
+addSigner(cert: X509Cert, keyInfo: PrivateKeyInfo, config: CmsSignerConfig): void
 
 用于为内容类型为SIGNED\_DATA的CMS添加签名者信息。
 

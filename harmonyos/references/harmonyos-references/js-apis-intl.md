@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.intl (国际化-Intl)"
 breadcrumb: API参考 > 应用框架 > Localization Kit（本地化开发服务） > ArkTS API > @ohos.intl (国际化-Intl)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:39+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d551e618186971b492295651ffeff4cb4d2a5d1c1ad479c7c9a5838a15a407a2
+scraped_at: 2026-11-04T08:34:13+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:f42499b37f144e524d9bb4d655cfa4b0cd894e3c3df0d7461f6e42532fb3e4a3
 ---
 
 本模块提供基础的应用国际化能力，包括时间日期格式化、数字格式化、排序等，相关接口在ECMA 402标准中定义。
@@ -1275,7 +1275,7 @@ let style: string = options.style; // style = 'short'
 
 | 取值 | 显示效果 |
 | --- | --- |
-| long | -12,3000 hectares |
+| long | -12,300 hectares |
 | short | -12,300 ha |
 | narrow | -12,300ha |
 

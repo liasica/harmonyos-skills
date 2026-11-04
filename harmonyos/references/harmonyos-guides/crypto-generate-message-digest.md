@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-genera
 title: 消息摘要计算SHA256(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 消息摘要计算 > 消息摘要计算SHA256(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:393f8f77b06518234a5137953435276f17ff6c1b1795f52f8d4d5bac880d1a87
+scraped_at: 2026-11-04T08:29:38+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:92d37622eb3ae513abf8ee9d489f6274b2bf1ab358c8ea8644f4ee0c4d46e2e9
 ---
 
 对应的算法规格请查看[消息摘要计算算法规格](crypto-generate-message-digest-overview.md#支持的算法与规格)。
@@ -31,36 +31,48 @@ content_hash: sha256:393f8f77b06518234a5137953435276f17ff6c1b1795f52f8d4d5bac880
 
   ```typescript
   import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
   import { buffer } from '@kit.ArkTS';
 
   async function doMd() {
-    let mdAlgName = 'SHA256'; // 摘要算法名
-    let message = 'mdTestMessage'; // 待摘要的数据
-    let md = cryptoFramework.createMd(mdAlgName);
-    // 数据量较少时，可以只做一次update，将数据全部传入，接口未对入参长度做限制
-    await md.update({ data: new Uint8Array(buffer.from(message, 'utf-8').buffer) });
-    let mdResult = await md.digest();
-    console.info('Md result: ' + mdResult.data);
-    let mdLen = md.getMdLength();
-    console.info('md len: ' + mdLen);
+    try {
+      let mdAlgName = 'SHA256'; // 摘要算法名
+      let message = 'mdTestMessage'; // 待摘要的数据
+      let md = cryptoFramework.createMd(mdAlgName);
+      // 数据量较少时，可以只做一次update，将数据全部传入，接口未对入参长度做限制
+      await md.update({ data: new Uint8Array(buffer.from(message, 'utf-8').buffer) });
+      let mdResult = await md.digest();
+      console.info('Md result: ' + mdResult.data);
+      let mdLen = md.getMdLength();
+      console.info('md len: ' + mdLen);
+    } catch (err) {
+      let e: BusinessError = err as BusinessError;
+      console.error(`call failed: errCode: ${e.code}, errMsg: ${e.message}`);
+    }
   }
   ```
 * 以使用同步方式单次传入数据，获取摘要计算结果为例：
 
   ```typescript
   import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
   import { buffer } from '@kit.ArkTS';
 
   function doMdBySync() {
-    let mdAlgName = 'SHA256'; // 摘要算法名
-    let message = 'mdTestMessage'; // 待摘要的数据
-    let md = cryptoFramework.createMd(mdAlgName);
-    // 数据量较少时，可以只做一次update，将数据全部传入，接口未对入参长度做限制
-    md.updateSync({ data: new Uint8Array(buffer.from(message, 'utf-8').buffer) });
-    let mdResult = md.digestSync();
-    console.info('[Sync]:Md result: ' + mdResult.data);
-    let mdLen = md.getMdLength();
-    console.info('md len: ' + mdLen);
+    try {
+      let mdAlgName = 'SHA256'; // 摘要算法名
+      let message = 'mdTestMessage'; // 待摘要的数据
+      let md = cryptoFramework.createMd(mdAlgName);
+      // 数据量较少时，可以只做一次update，将数据全部传入，接口未对入参长度做限制
+      md.updateSync({ data: new Uint8Array(buffer.from(message, 'utf-8').buffer) });
+      let mdResult = md.digestSync();
+      console.info('[Sync]:Md result: ' + mdResult.data);
+      let mdLen = md.getMdLength();
+      console.info('md len: ' + mdLen);
+    } catch (err) {
+      let e: BusinessError = err as BusinessError;
+      console.error(`call failed: errCode: ${e.code}, errMsg: ${e.message}`);
+    }
   }
   ```
 
@@ -75,47 +87,59 @@ content_hash: sha256:393f8f77b06518234a5137953435276f17ff6c1b1795f52f8d4d5bac880
 
   ```typescript
   import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
   import { buffer } from '@kit.ArkTS';
 
   async function doLoopMd() {
-    let mdAlgName = 'SHA256'; // 摘要算法名
-    let md = cryptoFramework.createMd(mdAlgName);
-    // 假设信息总共43字节，根据utf-8解码后，也是43字节
-    let messageText = 'aaaaa.....bbbbb.....ccccc.....ddddd.....eee';
-    let messageData = new Uint8Array(buffer.from(messageText, 'utf-8').buffer);
-    let updateLength = 20; // 假设以20字节为单位进行分段update，实际并无要求
-    for (let i = 0; i < messageData.length; i += updateLength) {
-      let updateMessage = messageData.subarray(i, i + updateLength);
-      let updateMessageBlob: cryptoFramework.DataBlob = { data: updateMessage };
-      await md.update(updateMessageBlob);
+    try {
+      let mdAlgName = 'SHA256'; // 摘要算法名
+      let md = cryptoFramework.createMd(mdAlgName);
+      // 假设信息总共43字节，根据utf-8解码后，也是43字节
+      let messageText = 'aaaaa.....bbbbb.....ccccc.....ddddd.....eee';
+      let messageData = new Uint8Array(buffer.from(messageText, 'utf-8').buffer);
+      let updateLength = 20; // 假设以20字节为单位进行分段update，实际并无要求
+      for (let i = 0; i < messageData.length; i += updateLength) {
+        let updateMessage = messageData.subarray(i, i + updateLength);
+        let updateMessageBlob: cryptoFramework.DataBlob = { data: updateMessage };
+        await md.update(updateMessageBlob);
+      }
+      let mdOutput = await md.digest();
+      console.info('md result: ' + mdOutput.data);
+      let mdLen = md.getMdLength();
+      console.info('md len: ' + mdLen);
+    } catch (err) {
+      let e: BusinessError = err as BusinessError;
+      console.error(`call failed: errCode: ${e.code}, errMsg: ${e.message}`);
     }
-    let mdOutput = await md.digest();
-    console.info('md result: ' + mdOutput.data);
-    let mdLen = md.getMdLength();
-    console.info('md len: ' + mdLen);
   }
   ```
 * 以使用同步方式分段传入数据，获取摘要计算结果为例：
 
   ```typescript
   import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
   import { buffer } from '@kit.ArkTS';
 
   function doLoopMdBySync() {
-    let mdAlgName = 'SHA256'; // 摘要算法名
-    let md = cryptoFramework.createMd(mdAlgName);
-    // 假设信息总共43字节，根据utf-8解码后，也是43字节
-    let messageText = 'aaaaa.....bbbbb.....ccccc.....ddddd.....eee';
-    let messageData = new Uint8Array(buffer.from(messageText, 'utf-8').buffer);
-    let updateLength = 20; // 假设以20字节为单位进行分段update，实际并无要求
-    for (let i = 0; i < messageData.length; i += updateLength) {
-      let updateMessage = messageData.subarray(i, i + updateLength);
-      let updateMessageBlob: cryptoFramework.DataBlob = { data: updateMessage };
-      md.updateSync(updateMessageBlob);
+    try {
+      let mdAlgName = 'SHA256'; // 摘要算法名
+      let md = cryptoFramework.createMd(mdAlgName);
+      // 假设信息总共43字节，根据utf-8解码后，也是43字节
+      let messageText = 'aaaaa.....bbbbb.....ccccc.....ddddd.....eee';
+      let messageData = new Uint8Array(buffer.from(messageText, 'utf-8').buffer);
+      let updateLength = 20; // 假设以20字节为单位进行分段update，实际并无要求
+      for (let i = 0; i < messageData.length; i += updateLength) {
+        let updateMessage = messageData.subarray(i, i + updateLength);
+        let updateMessageBlob: cryptoFramework.DataBlob = { data: updateMessage };
+        md.updateSync(updateMessageBlob);
+      }
+      let mdOutput = md.digestSync();
+      console.info('[Sync]:md result: ' + mdOutput.data);
+      let mdLen = md.getMdLength();
+      console.info('md len: ' + mdLen);
+    } catch (err) {
+      let e: BusinessError = err as BusinessError;
+      console.error(`call failed: errCode: ${e.code}, errMsg: ${e.message}`);
     }
-    let mdOutput = md.digestSync();
-    console.info('[Sync]:md result: ' + mdOutput.data);
-    let mdLen = md.getMdLength();
-    console.info('md len: ' + mdLen);
   }
   ```

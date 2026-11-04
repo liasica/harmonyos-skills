@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-t
 title: tagSession (标准NFC-Tag TagSession)
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > tag > tagSession (标准NFC-Tag TagSession)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:50+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f9654a2dcf9050aa314cef41541584428672eca031486c01df6612a89c55ec9b
+scraped_at: 2026-11-04T08:34:43+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:915d6c2e57a766360599a77d3bf2a4b606cd57c4adf275eb639d3262b1c72cb2
 ---
 
 本模块是对NFC TagSession的使用说明。
@@ -640,7 +640,7 @@ transmit(data: number[]): Promise<number[]>
 | 401 | The parameter check failed. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameters types.  3. Parameter verification failed. |
 | 801 | Capability not supported. |
 | 3100201 | The tag running state is abnormal in the service. |
-| 3100204 | The tag I/O operation failed. |
+| 3100204 | The tag I/O operation failed.  适用版本：12+ |
 
 **示例：**
 
@@ -705,7 +705,7 @@ transmit(data: number[], callback: AsyncCallback<number[]>): void
 | 401 | The parameter check failed. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameters types.  3. Parameter verification failed. |
 | 801 | Capability not supported. |
 | 3100201 | The tag running state is abnormal in the service. |
-| 3100204 | The tag I/O operation failed. |
+| 3100204 | The tag I/O operation failed.  适用版本：12+ |
 
 **示例：**
 

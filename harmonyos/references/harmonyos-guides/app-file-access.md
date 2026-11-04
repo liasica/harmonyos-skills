@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-file-acce
 title: 应用文件访问(ArkTS)
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用文件访问与管理 > 应用文件访问(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:24+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:7a5e561a3190c1a93db94d6f5be5d703dd8b230e8b3598e0d09c8ccda1d7a37d
+scraped_at: 2026-11-04T08:29:28+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:4675b83e8a8e223863b78c6306c4eddfab323278f45bb05d3f230eef82485cd9
 ---
 
 应用需要对应用文件目录下的应用文件进行查看、创建、读写、删除、移动、复制、获取属性等访问操作，下文介绍具体方法。
@@ -354,8 +354,7 @@ function copyFileWithData(context: common.UIAbilityContext): void {
 
 ```ts
 // pages/xxx.ets
-import { fileIo } from '@kit.CoreFileKit';
-import { hash } from '@kit.CoreFileKit';
+import { fileIo, hash } from '@kit.CoreFileKit';
 import { common } from '@kit.AbilityKit';
 
 // 获取应用文件路径，请在组件内获取context

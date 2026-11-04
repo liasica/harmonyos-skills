@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohba
 title: ohbattery_info.h
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > C API > 头文件 > ohbattery_info.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:05+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:cbf2fa48e83434387ae983111ba143c4aeecb3bd1ff766a64b3ab7d12d521ba5
+scraped_at: 2026-11-04T08:35:12+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:786f610ff3f69c4fe34a8dcd282442ade428d95d697ee866eec1678fb7010ed2
 ---
 
 ## 概述
@@ -87,7 +87,7 @@ int32_t OH_BatteryInfo_GetCapacity()
 
 | 类型 | 说明 |
 | --- | --- |
-| int32\_t | 返回介于0和100之间的数字。 |
+| int32\_t | 表示当前电池电量百分比，有效取值范围为0到100之间的整数（包含0和100），返回-1则表示获取电池电量百分比失败。 |
 
 ### OH\_BatteryInfo\_GetPluggedType()
 

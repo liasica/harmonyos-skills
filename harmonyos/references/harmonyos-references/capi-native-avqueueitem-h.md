@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avqueueitem.h
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > C API > 头文件 > native_avqueueitem.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:25+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:a46a3a3a629f233f4701334866cfceace86c7f8eb98938ebd0557856e9bb062e
+scraped_at: 2026-11-04T08:35:55+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:d6d234484a804029ca308bccdb4f36d33322ca19bbb74ea456fd81b8da7f4828
 ---
 
 ## 概述
@@ -315,7 +315,7 @@ AVQueueItem_Result OH_AVSession_AVMediaDescriptionBuilder_SetDuration(OH_AVSessi
 
 | 类型 | 说明 |
 | --- | --- |
-| [AVQueueItem\_Result](capi-native-avsession-errors-h.md#avqueueitem_result) | AVQUEUEITEM\_SUCCESS：函数执行成功。  AVQUEUEITEM\_ERROR\_INVALID\_PARAM：  1. 参数builder为nullptr。  2. 参数duration为nullptr。 |
+| [AVQueueItem\_Result](capi-native-avsession-errors-h.md#avqueueitem_result) | AVQUEUEITEM\_SUCCESS：函数执行成功。  AVQUEUEITEM\_ERROR\_INVALID\_PARAM：  1. 参数builder为nullptr。  2. 参数duration无效（小于0）。 |
 
 ### OH\_AVSession\_AVMediaDescriptionBuilder\_SetMediaUri()
 

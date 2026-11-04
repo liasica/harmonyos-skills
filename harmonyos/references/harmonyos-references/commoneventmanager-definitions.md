@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/commoneve
 title: 系统定义的公共事件
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 进程线程通信 > 系统定义的公共事件
 category: harmonyos-references
-scraped_at: 2026-10-31T07:37:17+08:00
-doc_updated_at: 2026-10-30
-content_hash: sha256:4a2c8f1c3c19ccb4c70810063d65ed10fee838686177a5bf4b24e2ef96daf3a3
+scraped_at: 2026-11-04T08:35:07+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:0a4768681737ab0422f296befcb78c1c3f6a664d826ceea274459cd74cbe4fc3
 ---
 
 本文档提供了系统定义的公共事件清单。
@@ -14,7 +14,7 @@ content_hash: sha256:4a2c8f1c3c19ccb4c70810063d65ed10fee838686177a5bf4b24e2ef96d
 
 **说明** 
 
-本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+本模块首批接口从API版本9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## Ability Kit
 
@@ -233,7 +233,7 @@ content_hash: sha256:4a2c8f1c3c19ccb4c70810063d65ed10fee838686177a5bf4b24e2ef96d
 
 **订阅者所需权限：** 无
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本12开始，该接口支持在元服务中使用。
 
 **取值：** "usual.event.MINORSMODE\_ON"
 
@@ -247,7 +247,7 @@ content_hash: sha256:4a2c8f1c3c19ccb4c70810063d65ed10fee838686177a5bf4b24e2ef96d
 
 **订阅者所需权限：** 无
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本12开始，该接口支持在元服务中使用。
 
 **取值：** "usual.event.MINORSMODE\_OFF"
 
@@ -263,7 +263,7 @@ datashare服务启动完成后，将会触发事件通知服务发布该[系统�
 
 **订阅者所需权限：** 无
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本12开始，该接口支持在元服务中使用。
 
 **取值：** "usual.event.DATA\_SHARE\_READY"
 
@@ -279,7 +279,7 @@ datashare服务启动完成后，将会触发事件通知服务发布该[系统�
 
 **订阅者所需权限：** 无
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
 
 **取值：** "common.event.SPLIT\_SCREEN"
 
@@ -421,7 +421,7 @@ datashare服务启动完成后，将会触发事件通知服务发布该[系统�
 
 **订阅者所需权限：** 无
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本12开始，该接口支持在元服务中使用。
 
 **取值：** "common.event.DISTRIBUTED\_ACCOUNT\_LOGIN"
 
@@ -437,7 +437,7 @@ datashare服务启动完成后，将会触发事件通知服务发布该[系统�
 
 **订阅者所需权限：** 无
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本12开始，该接口支持在元服务中使用。
 
 **取值：** "common.event.DISTRIBUTED\_ACCOUNT\_LOGOUT"
 
@@ -453,7 +453,7 @@ datashare服务启动完成后，将会触发事件通知服务发布该[系统�
 
 **订阅者所需权限：** 无
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本12开始，该接口支持在元服务中使用。
 
 **取值：** "common.event.DISTRIBUTED\_ACCOUNT\_TOKEN\_INVALID"
 
@@ -469,7 +469,7 @@ datashare服务启动完成后，将会触发事件通知服务发布该[系统�
 
 **订阅者所需权限：** 无
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本12开始，该接口支持在元服务中使用。
 
 **取值：** "common.event.DISTRIBUTED\_ACCOUNT\_LOGOFF"
 
@@ -483,7 +483,7 @@ datashare服务启动完成后，将会触发事件通知服务发布该[系统�
 
 **订阅者所需权限：** 无
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
 
 **取值：** "usual.event.SCREEN\_LOCKED"
 
@@ -497,7 +497,7 @@ datashare服务启动完成后，将会触发事件通知服务发布该[系统�
 
 **订阅者所需权限：** 无
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
 
 **取值：** "usual.event.SCREEN\_UNLOCKED"
 
@@ -507,7 +507,7 @@ datashare服务启动完成后，将会触发事件通知服务发布该[系统�
 
 说明：
 
-从API version 9 开始支持，从API version 10 开始废弃，建议使用[COMMON\_EVENT\_SCREEN\_UNLOCKED](commoneventmanager-definitions.md#common_event_screen_unlocked)代替。
+从API版本9开始支持，从API版本10开始废弃，建议使用[COMMON\_EVENT\_SCREEN\_UNLOCKED](commoneventmanager-definitions.md#common_event_screen_unlocked)代替。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1192,7 +1192,7 @@ Wi-Fi连接状态发生改变。
 
 **订阅者所需权限：** 无
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
 
 **取值：** "usual.event.CONNECTIVITY\_CHANGE"
 
@@ -1612,7 +1612,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃，建议使用[COMMON\_EVENT\_BLUETOOTH\_HANDSFREE\_AG\_CONNECT\_STATE\_CHANGE](commoneventmanager-definitions.md#common_event_bluetooth_handsfree_ag_connect_state_change20)替代。
+从API版本9开始支持，从API版本20开始废弃，建议使用[COMMON\_EVENT\_BLUETOOTH\_HANDSFREE\_AG\_CONNECT\_STATE\_CHANGE](commoneventmanager-definitions.md#common_event_bluetooth_handsfree_ag_connect_state_change20)替代。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1626,7 +1626,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1640,7 +1640,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1654,7 +1654,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃，建议使用[COMMON\_EVENT\_BLUETOOTH\_A2DPSOURCE\_CONNECT\_STATE\_CHANGE](commoneventmanager-definitions.md#common_event_bluetooth_a2dpsource_connect_state_change20)替代。
+从API版本9开始支持，从API版本20开始废弃，建议使用[COMMON\_EVENT\_BLUETOOTH\_A2DPSOURCE\_CONNECT\_STATE\_CHANGE](commoneventmanager-definitions.md#common_event_bluetooth_a2dpsource_connect_state_change20)替代。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1668,7 +1668,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1682,7 +1682,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃，建议使用[COMMON\_EVENT\_BLUETOOTH\_A2DPSOURCE\_AVRCP\_CONNECT\_STATE\_CHANGE](commoneventmanager-definitions.md#common_event_bluetooth_a2dpsource_avrcp_connect_state_change20)替代。
+从API版本9开始支持，从API版本20开始废弃，建议使用[COMMON\_EVENT\_BLUETOOTH\_A2DPSOURCE\_AVRCP\_CONNECT\_STATE\_CHANGE](commoneventmanager-definitions.md#common_event_bluetooth_a2dpsource_avrcp_connect_state_change20)替代。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1696,7 +1696,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1710,7 +1710,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃，建议使用[COMMON\_EVENT\_BLUETOOTH\_A2DPSOURCE\_CODEC\_VALUE\_CHANGE](commoneventmanager-definitions.md#common_event_bluetooth_a2dpsource_codec_value_change20)替代。
+从API版本9开始支持，从API版本20开始废弃，建议使用[COMMON\_EVENT\_BLUETOOTH\_A2DPSOURCE\_CODEC\_VALUE\_CHANGE](commoneventmanager-definitions.md#common_event_bluetooth_a2dpsource_codec_value_change20)替代。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1734,7 +1734,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1748,7 +1748,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1762,7 +1762,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃，建议使用[COMMON\_EVENT\_BLUETOOTH\_REMOTEDEVICE\_ACL\_STATE\_CHANGE](commoneventmanager-definitions.md#common_event_bluetooth_remotedevice_acl_state_change20)替代。
+从API版本9开始支持，从API版本20开始废弃，建议使用[COMMON\_EVENT\_BLUETOOTH\_REMOTEDEVICE\_ACL\_STATE\_CHANGE](commoneventmanager-definitions.md#common_event_bluetooth_remotedevice_acl_state_change20)替代。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1776,7 +1776,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃，建议使用[COMMON\_EVENT\_BLUETOOTH\_REMOTEDEVICE\_ACL\_STATE\_CHANGE](commoneventmanager-definitions.md#common_event_bluetooth_remotedevice_acl_state_change20)替代。
+从API版本9开始支持，从API版本20开始废弃，建议使用[COMMON\_EVENT\_BLUETOOTH\_REMOTEDEVICE\_ACL\_STATE\_CHANGE](commoneventmanager-definitions.md#common_event_bluetooth_remotedevice_acl_state_change20)替代。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1790,7 +1790,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1804,7 +1804,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃，建议使用[COMMON\_EVENT\_BLUETOOTH\_REMOTEDEVICE\_PAIR\_STATE\_CHANGE](commoneventmanager-definitions.md#common_event_bluetooth_remotedevice_pair_state_change20)替代。
+从API版本9开始支持，从API版本20开始废弃，建议使用[COMMON\_EVENT\_BLUETOOTH\_REMOTEDEVICE\_PAIR\_STATE\_CHANGE](commoneventmanager-definitions.md#common_event_bluetooth_remotedevice_pair_state_change20)替代。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1818,7 +1818,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1832,7 +1832,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1846,7 +1846,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1860,7 +1860,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1874,7 +1874,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1888,7 +1888,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1902,7 +1902,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1916,7 +1916,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1930,7 +1930,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1944,7 +1944,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1958,7 +1958,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1972,7 +1972,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1986,7 +1986,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -1998,7 +1998,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 （预留事件，暂未支持）表示用户允许扫描蓝牙请求的公共事件的动作。
 
@@ -2014,7 +2014,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -2028,7 +2028,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -2042,7 +2042,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -2056,7 +2056,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -2070,7 +2070,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -2084,7 +2084,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -2098,7 +2098,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -2112,7 +2112,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -2126,7 +2126,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **说明** 
 
-从API version 9 开始支持，从API version 20 开始废弃。
+从API版本9开始支持，从API版本20开始废弃。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -2142,7 +2142,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **订阅者所需权限：** ohos.permission.LISTEN\_BUNDLE\_CHANGE
 
-**取值：** "usual.event.ABILITY\_ADDED"
+**取值：** "common.event.ABILITY\_ADDED"
 
 ### COMMON\_EVENT\_ABILITY\_REMOVED
 
@@ -2152,7 +2152,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **订阅者所需权限：** ohos.permission.LISTEN\_BUNDLE\_CHANGE
 
-**取值：** "usual.event.ABILITY\_REMOVED"
+**取值：** "common.event.ABILITY\_REMOVED"
 
 ### COMMON\_EVENT\_ABILITY\_UPDATED
 
@@ -2162,7 +2162,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **订阅者所需权限：** ohos.permission.LISTEN\_BUNDLE\_CHANGE
 
-**取值：** "usual.event.ABILITY\_UPDATED"
+**取值：** "common.event.ABILITY\_UPDATED"
 
 ### COMMON\_EVENT\_LOCATION\_MODE\_STATE\_CHANGED
 
@@ -2312,7 +2312,7 @@ Multimodalinput Kit面向应用发布如下[系统公共事件](../harmonyos-gui
 
 **订阅者所需权限：** ohos.permission.RECEIVER\_STARTUP\_COMPLETED（该权限仅系统应用可申请）
 
-**取值：** "usual.event.data.FOUNDATION\_READY"
+**取值：** "common.event.FOUNDATION\_READY"
 
 ### COMMON\_EVENT\_SPN\_INFO\_CHANGED
 

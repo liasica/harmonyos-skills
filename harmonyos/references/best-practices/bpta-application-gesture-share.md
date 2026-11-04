@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-applicatio
 title: 隔空传送快速分享
 breadcrumb: 最佳实践 > 技术创新 > 全场景 > 多端协同 > 隔空传送快速分享
 category: best-practices
-scraped_at: 2026-10-29T08:03:13+08:00
+scraped_at: 2026-11-04T08:37:47+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:e21f214f67669ff481e5efd64c32328d4f4be2df168438a3aeb907399e37c2cb
+content_hash: sha256:6c582e60a94ce6aa06310d70e6887c7ae3d9d855228ee52a3cb6d1a6942b77aa
 ---
 
 ## 概述
@@ -21,7 +21,7 @@ content_hash: sha256:e21f214f67669ff481e5efd64c32328d4f4be2df168438a3aeb907399e3
 
 ### 关键技术
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/G2nJA7rcRQiW9y_kLZB70Q/zh-cn_image_0000002464125198.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/qlBDUrT6T_CKboN805kbmw/zh-cn_image_0000002464125198.jpg "点击放大")
 
 隔空传送基于分享服务，允许用户通过简单的“一抓一放”手势实现跨设备分享，当前支持手机、平板、电脑，使用体验一致，应用接入只需监听harmonyShare.on('gesturesShare')方法。
 
@@ -35,7 +35,7 @@ content_hash: sha256:e21f214f67669ff481e5efd64c32328d4f4be2df168438a3aeb907399e3
 
 ### 开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/xEdpBrwITf6to7OcWoTb_Q/zh-cn_image_0000002497324205.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/byhLSgR9SVqOW1BFX7SywA/zh-cn_image_0000002497324205.jpg "点击放大")
 
 1. **分享注册监听与取消监听**：在分享页面的生命周期函数（如aboutToAppear或onPageShow）中，注册 harmonyShare.on('gesturesShare') 事件监听，以监听隔空传送事件。当页面即将隐藏或应用退至后台时，通过harmonyShare.off('gesturesShare')取消该监听。
 2. **构建分享数据**：定义需要分享的数据[SharedData](../harmonyos-references/share-system-share.md#shareddata)。

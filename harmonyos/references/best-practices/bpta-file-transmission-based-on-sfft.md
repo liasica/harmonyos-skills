@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-file-trans
 title: 基于SFFT的大文件高速并发传输
 breadcrumb: 最佳实践 > 网络 > 基于SFFT的大文件高速并发传输
 category: best-practices
-scraped_at: 2026-10-29T08:03:15+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:d2277b7f42dda2301ae9e4c7ddb1ee3cad3406f7cff0115ec5a9a96070e93d1d
+scraped_at: 2026-11-04T08:37:49+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:8ad08cad550a84efc956dccca7a007021e5637514ed8c835cfceb61c889ef70b
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ content_hash: sha256:d2277b7f42dda2301ae9e4c7ddb1ee3cad3406f7cff0115ec5a9a96070e
 
 多线程下载是一种通过同时开启多个线程，并行下载文件不同部分的文件传输特性，能够充分利用带宽资源，显著提升下载速度，尤其适用于下载大文件或在网络带宽受限的环境下下载文件。其核心原理是将文件分割为多个小块，由多个线程同时下载这些部分，并发写入到本地文件中，从而实现高效、稳定的下载。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/o4HVSl4HSVSpJseFPcwEzA/zh-cn_image_0000002236694464.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/bECndYN6RTW1-6IVHbJJ6Q/zh-cn_image_0000002236694464.png "点击放大")
 
 ### 实现原理
 
@@ -47,12 +47,12 @@ SFFT三方库使用RCP发送HTTP请求，因此使用了以下权限。权限设
 
 * 下载初始化。
 
-  ```typescript
+  ```screen
   await DownloadManager.getInstance().init(context);
   ```
 * 开发者开启多线程下载，并指定使用的线程数。
 
-  ```typescript
+  ```screen
   let downloadConfig: DownloadConfig = {
     url: this.url, // URL of the remote file.
     fileName: this.fileName, // Local file name.
@@ -71,7 +71,7 @@ SFFT三方库使用RCP发送HTTP请求，因此使用了以下权限。权限设
 
 当使用SFFT进行大文件多线程下载时，下载速率相比于单线程下的普通下载，可以得到明显地提升。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/dtVYwVzwQSWCKRLDJb5pUw/zh-cn_image_0000002271813645.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/pfHPR2b_QMusp_58v-Z_Dg/zh-cn_image_0000002271813645.gif "点击放大")
 
 ## 分片上传
 
@@ -79,7 +79,7 @@ SFFT三方库使用RCP发送HTTP请求，因此使用了以下权限。权限设
 
 分片上传是一种将本地大文件分成多个小块（分片）后，分别上传的特性，可提升传输效率并减少网络波动的影响。若某个分片上传失败，只需重传该分片，无需重新上传整个文件。结合断点续传技术，即使传输被中断也能继续上传，确保上传过程的稳定性，特别适合复杂的网络环境。分片上传需要服务端支持将多个小文件合并成完整文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/mV_q46J9Qau8V7x54cKgiA/zh-cn_image_0000002271853533.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/2jSbmUO0S9CLG-kwlKEtSw/zh-cn_image_0000002271853533.png "点击放大")
 
 ### 实现原理
 
@@ -93,17 +93,18 @@ SFFT基于RCP实现了分片上传，实现步骤如下：
 
 * 上传初始化。
 
-  ```typescript
+  ```screen
   await UploadManager.getInstance().init(context);
   ```
 * 开发者主动启用分片上传，并设置了分片大小。
 
-  ```typescript
+  ```screen
   let uploadConfig: UploadConfig = {
     url: this.isChunk ? CONSTANTS_CONFIG.urls.chunkUploadUrl :
          CONSTANTS_CONFIG.urls.ordinaryUploadUrl, // URL of the upload request
     filePath: this.filePath, // Local file path.
-    isChunk: this.isChunk, // Enable chunk upload by setting isChunk to true, which also activates download functionality.
+    // Enable chunk upload by setting isChunk to true, which also activates download functionality.
+    isChunk: this.isChunk,
     chunkSize: 1024 * 1024 * 10, // Set chunk size to 10MB. This field is effective only when isChunk is set to true.
     // ...
   };
@@ -119,7 +120,7 @@ SFFT基于RCP实现了分片上传，实现步骤如下：
 
 当使用SFFT进行大文件分片上传时，上传速率相比于不使用分片上传，可以得到明显地提升。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/EfPOct3JQf2L4S8n0vM0Mw/zh-cn_image_0000002236854260.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/WfHsApkYSw6da4HW7ZMz3w/zh-cn_image_0000002236854260.gif "点击放大")
 
 ## 断点续传/断点续下
 
@@ -135,7 +136,7 @@ SFFT基于RCP实现了分片上传，实现步骤如下：
 
 在SFFT中，断点续下基于上述多线程下载原理，结合关系型数据库[@ohos.data.relationalStore(关系型数据库)](../harmonyos-references/js-apis-data-relationalstore.md)实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/GnL5rRIbR-GQNFFYq3FFgg/zh-cn_image_0000002236694468.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/FpxsaK1TReqNSg0e4UFKVQ/zh-cn_image_0000002236694468.png "点击放大")
 
 当使用断点续下时：
 
@@ -148,7 +149,7 @@ SFFT基于RCP实现了分片上传，实现步骤如下：
 
 在SFFT中，断点续传基于上述分片上传原理，结合RDB实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/yU05qYEqT1Gf5ZxMjjbBPg/zh-cn_image_0000002271813649.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/ZFKMSM_KQ9SvvlWutQ1fXA/zh-cn_image_0000002271813649.png "点击放大")
 
 当使用断点续传时：
 
@@ -160,7 +161,7 @@ SFFT基于RCP实现了分片上传，实现步骤如下：
 
 * 断点续下。
 
-  ```typescript
+  ```screen
   let downloadConfig: DownloadConfig = {
     url: this.url, // URL of the remote file.
     fileName: this.fileName, // Local file name.
@@ -180,12 +181,13 @@ SFFT基于RCP实现了分片上传，实现步骤如下：
 
 * 断点续传。
 
-  ```typescript
+  ```screen
   let uploadConfig: UploadConfig = {
     url: this.isChunk ? CONSTANTS_CONFIG.urls.chunkUploadUrl :
          CONSTANTS_CONFIG.urls.ordinaryUploadUrl, // URL of the upload request
     filePath: this.filePath, // Local file path.
-    isChunk: this.isChunk, // Enable chunk upload by setting isChunk to true, which also activates download functionality.
+    // Enable chunk upload by setting isChunk to true, which also activates download functionality.
+    isChunk: this.isChunk,
     chunkSize: 1024 * 1024 * 10, // Set chunk size to 10MB. This field is effective only when isChunk is set to true.
     // ...
   };
@@ -224,7 +226,7 @@ SFFT基于RCP实现了分片上传，实现步骤如下：
 
 * 以文件下载为例，下面的代码使用了自动重连特性。在下载失败时，将自动尝试进行3次重连，重连间隔为2000毫秒。
 
-  ```typescript
+  ```screen
   let downloadConfig: DownloadConfig = {
     url: this.url, // URL of the remote file.
     fileName: this.fileName, // Local file name.
@@ -242,7 +244,7 @@ SFFT基于RCP实现了分片上传，实现步骤如下：
 
 当使用SFFT进行大文件传输时，应用能在网络条件恢复时自动重新连接。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/0GSoTjANRJafrApIYQxKFg/zh-cn_image_0000002236694472.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/bdLcJVZ3Qlqsiemv_C8IiA/zh-cn_image_0000002236694472.gif "点击放大")
 
 ## 服务端要求
 

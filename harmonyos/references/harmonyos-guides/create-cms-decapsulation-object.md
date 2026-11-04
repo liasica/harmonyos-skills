@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/create-cms-de
 title: 证书CMS解封装
 breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 证书算法库框架 > 证书CMS解封装
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:13+08:00
-doc_updated_at: 2026-10-30
-content_hash: sha256:82e27c0b7cd210a182604230c40cfccf72edfeeb8c2114a20b6c6fde09d222c7
+scraped_at: 2026-11-04T08:29:39+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:7893efa4ed32b939fda6d2592e145f7a91cfba9c9b60e6a7b92adbe854378268
 ---
 
 从API version 22开始，支持证书CMS解封装。
 
-PKCS #7是用于存储签名或加密数据的标准语法。CMS作为PKCS #7的扩展，支持的数据类型包括数据、签名数据、封装数据、签名和封装数据、摘要数据以及加密数据。该标准常用于保护数据的完整性和机密性。
+PKCS #7是用于存储签名或加密数据的标准语法。CMS（Cryptographic Message Syntax，加密消息语法）作为PKCS #7的扩展，支持的数据类型包括数据、签名数据、封装数据、签名和封装数据、摘要数据以及加密数据。该标准常用于保护数据的完整性和机密性。
 
 目前仅支持CMS签名数据和封装数据。
 

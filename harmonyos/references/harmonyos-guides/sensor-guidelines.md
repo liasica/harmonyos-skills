@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sensor-guidel
 title: 传感器开发指导(ArkTS)
 breadcrumb: 指南 > 系统 > 硬件 > Sensor Service Kit（传感器服务） > 传感器 > 传感器开发指导(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:29+08:00
+scraped_at: 2026-11-04T08:29:56+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:3c038f73af6ed1ae24c8b5d752c8ce282d23fb2cb59a1f738ce9a6702545f8ea
+content_hash: sha256:287edbce943cfb07d799618f4cf295fa77cf4917b95f38f2d2e26d32af333cfb
 ---
 
 ## 场景介绍
@@ -32,7 +32,7 @@ content_hash: sha256:3c038f73af6ed1ae24c8b5d752c8ce282d23fb2cb59a1f738ce9a670254
 
 1. 新建一个工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/YJZjDkRMROaIbXT3-1BVgg/zh-cn_image_0000002776749376.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/maYD3ZRNS4eTLzWxO4ts1g/zh-cn_image_0000002779690874.png)
 2. 配置加速度传感器权限，具体配置方式请参考[声明权限](declare-permissions.md)。
 
    ```json5
@@ -75,7 +75,7 @@ content_hash: sha256:3c038f73af6ed1ae24c8b5d752c8ce282d23fb2cb59a1f738ce9a670254
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/L_y1wnL4RmyHYC0HbHU-4Q/zh-cn_image_0000002806029093.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/QSVVLm0DTVO-Ov6TAXrVNw/zh-cn_image_0000002809010495.png)
 
    该传感器支持的最小采样周期为5000000纳秒，最大采样周期是200000000纳秒。不同传感器支持的采样周期范围也不同，interval应该设置在传感器支持范围内，大于最大值时以最大值上报数据，小于最小值时以最小值上报数据。设置数值越小数据上报越频繁，其功耗越大。
 
@@ -140,7 +140,7 @@ content_hash: sha256:3c038f73af6ed1ae24c8b5d752c8ce282d23fb2cb59a1f738ce9a670254
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/RS-QS55xSPqxsDmgxYWGrQ/zh-cn_image_0000002806108983.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/RZJr4f5QTnqKgSP5axBLTQ/zh-cn_image_0000002809050409.png)
 
    通过once()接口，实现对传感器的一次监听。
 
@@ -156,7 +156,7 @@ content_hash: sha256:3c038f73af6ed1ae24c8b5d752c8ce282d23fb2cb59a1f738ce9a670254
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/hhzg7uI_TS-_aBpz3eGHQA/zh-cn_image_0000002776909364.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/UqY8N3lTTQW4xehltBwxrw/zh-cn_image_0000002779850844.png)
 7. 取消持续监听。
 
    取消持续监听，此场景下未订阅而取消监听为异常行为，需处理异常。

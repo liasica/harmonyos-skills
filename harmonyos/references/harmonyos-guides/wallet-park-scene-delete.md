@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-park-s
 title: 删除园区卡
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 园区卡 > 开发场景 > 删除园区卡
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:33:16+08:00
+scraped_at: 2026-11-04T08:30:46+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:db3d74f1a3bca2ad9ae1fdfdf95a1bfe50617aa5d1f2964a4dfb9e1a86a21d33
+content_hash: sha256:04b533b453d863e0841679e5a08899813bdba515f72b76ce32091f7d60f5d189
 ---
 
 用户主动删除，将园区卡从钱包中移除。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/gqiomAGXRbGKhAKbWO38vA/zh-cn_image_0000002806109815.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/S-Dp2y-cT7WI_QonujNw7Q/zh-cn_image_0000002809051241.png)
 
 ## 服务端开发
 

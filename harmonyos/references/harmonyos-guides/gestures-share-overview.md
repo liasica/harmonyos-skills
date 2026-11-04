@@ -3,17 +3,17 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gestures-shar
 title: 概述
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 隔空传送 > 概述
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:33:15+08:00
+scraped_at: 2026-11-04T08:30:45+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:3bc5661a493be6d00eb8ac31aba6c73bbd36811c03bbef7eef3c17162f12d7f7
+content_hash: sha256:3979d275d63583c19adb51659b8c9d725175d4fa3f6728ac3690ee255822a0d4
 ---
 
 ## 场景介绍
 
 Share Kit新推出隔空传送分享，支持用户通过“一抓一放”实现跨端传输。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/h-Z9fEbpTLmgkDQutcBO1A/zh-cn_image_0000002806029901.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/LU6F0jTzSdiomXHbqQhusA/zh-cn_image_0000002809011303.png)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/SLco1bvySZaPaZv-2UYNeg/zh-cn_image_0000002806109791.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/W0vYoXFCS6eusCjAe20HwQ/zh-cn_image_0000002809051217.png)

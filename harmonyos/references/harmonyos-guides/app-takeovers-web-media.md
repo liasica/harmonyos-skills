@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-takeovers
 title: 托管网页中的媒体播放
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 使用网页多媒体 > 托管网页中的媒体播放
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:01+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6b5fbd3e5ef2e8a304684631d1e3ae90f780abb0a2099c106ec783dbb7cb08fd
+scraped_at: 2026-11-04T08:29:27+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:18efa6aa48731fafb62eb1bd16cd6a029a715f767142a6342fa3b16829cd2191
 ---
 
 Web组件提供了应用接管网页中媒体播放的能力，用来支持应用增强网页的媒体播放，如画质增强等。
@@ -26,7 +26,7 @@ Web组件提供了应用接管网页中媒体播放的能力，用来支持应�
 
 不开启该功能时，ArkWeb内核的播放架构如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/R4ti9GViRxCb6cBt1L86qw/zh-cn_image_0000002806108649.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/fhA_YzkoRB-S_XeBNTwbxQ/zh-cn_image_0000002809050075.png)
 
 **说明** 
 
@@ -35,7 +35,7 @@ Web组件提供了应用接管网页中媒体播放的能力，用来支持应�
 
 开启该功能后，ArkWeb内核的播放架构如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/9HZFyoVKRayUEhKC7GIUDA/zh-cn_image_0000002776909030.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/kqeEXiWTQEGM0ATSE2J-Uw/zh-cn_image_0000002779850510.png)
 
 **说明** 
 
@@ -44,7 +44,7 @@ Web组件提供了应用接管网页中媒体播放的能力，用来支持应�
 
 ### ArkWeb内核与应用的交互
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/2ZAYt1t7TIKZQsutvnsSFA/zh-cn_image_0000002776749044.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/NOlbzNvxRl6WpetzddpuXQ/zh-cn_image_0000002779690542.png)
 
 **说明** 
 
@@ -82,7 +82,7 @@ struct WebComponent {
 
 该功能开启后，网页中有媒体需要播放时，ArkWeb内核会触发[onCreateNativeMediaPlayer](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#oncreatenativemediaplayer12)注册的回调函数。
 
-应用则需要调用onCreateNativeMediaPlayer来注册一个创建本地播放器的回调函数。
+应用则需要调用onCreateNativeMediaPlayer()来注册一个创建本地播放器的回调函数。
 
 该回调函数需要根据媒体信息来判断是否要创建一个本地播放器来接管当前的网页媒体资源。
 
@@ -646,7 +646,7 @@ function getCurrentReadyState() {
     }
     onError() {
       // 通知ArkWeb内核，本地播放器出错了
-      console.info('AVPlayerListenerImpl.onError');
+      console.error('AVPlayerListenerImpl.onError');
       this.component.has_error = true;
       setTimeout(()=>{
         this.handler.handleError(1, "Oops!");
@@ -986,7 +986,7 @@ function getCurrentReadyState() {
     }
   }
   ```
-* 应用侧代码，视频播放示例, ./PlayerDemo.ets。
+* 应用侧代码，视频播放示例，./PlayerDemo.ets。XComponent创建方法请参考[自定义渲染(XComponent)](napi-xcomponent-guidelines.md)。
 
   ```ts
   import { media } from '@kit.MediaKit';

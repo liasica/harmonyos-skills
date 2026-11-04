@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 弹性布局 (Flex)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 组件布局 > 构建布局 > 弹性布局 (Flex)
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:31:48+08:00
+scraped_at: 2026-11-04T08:29:13+08:00
 doc_updated_at: 2026-10-21
-content_hash: sha256:37e9a5084627f0b15ff2ee951cdbb3c96fca3cd057770d2fe887ffa78d4b7940
+content_hash: sha256:513051802fe4b170fd030c28a7bd46e895a230e8cbe9e6ebf35ce536f5ea0ab2
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:37e9a5084627f0b15ff2ee951cdbb3c96fca3cd057770d2fe887ffa78d4
 
 **图1** 主轴为水平方向的Flex容器示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/HAa9hopaSoOULkhywXv7bA/zh-cn_image_0000002776748386.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/VJmyP3iISVqMV8hyAG8-1Q/zh-cn_image_0000002779689882.png)
 
 ## 基本概念
 
@@ -29,7 +29,7 @@ content_hash: sha256:37e9a5084627f0b15ff2ee951cdbb3c96fca3cd057770d2fe887ffa78d4
 
 **图2** 弹性布局方向图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Y15L0mchRvSpanW4XQmJCA/zh-cn_image_0000002806028103.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/VnZUeoUuQo2BnEfFIfrMQg/zh-cn_image_0000002809009503.png)
 
 * FlexDirection.Row（默认值）：主轴为水平方向，子元素从起始端沿着水平方向开始排布。
 
@@ -45,7 +45,7 @@ content_hash: sha256:37e9a5084627f0b15ff2ee951cdbb3c96fca3cd057770d2fe887ffa78d4
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/QFSG6XsBTAyOt0-PLcqrFA/zh-cn_image_0000002806107993.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/hv9rB6oCS6aEEaqNLwnoPA/zh-cn_image_0000002809049419.png)
 * FlexDirection.RowReverse：主轴为水平方向，子元素从终点端沿着FlexDirection.Row相反的方向开始排布。
 
   ```typescript
@@ -60,7 +60,7 @@ content_hash: sha256:37e9a5084627f0b15ff2ee951cdbb3c96fca3cd057770d2fe887ffa78d4
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/7mlMrPS8RYSPEN6528C74Q/zh-cn_image_0000002776908374.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/Ua5F5OziSp2GApSR0-A9DQ/zh-cn_image_0000002779849854.png)
 * FlexDirection.Column：主轴为垂直方向，子元素从起始端沿着垂直方向开始排布。
 
   ```typescript
@@ -75,7 +75,7 @@ content_hash: sha256:37e9a5084627f0b15ff2ee951cdbb3c96fca3cd057770d2fe887ffa78d4
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/PsgVy13KTVGBwuYf7OHGdA/zh-cn_image_0000002776748388.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/NB56CeT7Qdy7oSYLADY1Dw/zh-cn_image_0000002779689884.png)
 * FlexDirection.ColumnReverse：主轴为垂直方向，子元素从终点端沿着FlexDirection.Column相反的方向开始排布。
 
   ```typescript
@@ -90,7 +90,7 @@ content_hash: sha256:37e9a5084627f0b15ff2ee951cdbb3c96fca3cd057770d2fe887ffa78d4
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/RwhK7UkGS1GalJtMw2i38w/zh-cn_image_0000002806028105.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/oY_6Qun4Rjih9tEk1DuJRA/zh-cn_image_0000002809009505.png)
 
 ## 布局换行
 
@@ -109,7 +109,7 @@ content_hash: sha256:37e9a5084627f0b15ff2ee951cdbb3c96fca3cd057770d2fe887ffa78d4
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/WjEPtit2SfivILZU6m-J4A/zh-cn_image_0000002806107995.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/NjttBgTbR-yFXZHkG-48uw/zh-cn_image_0000002809049421.png)
 * FlexWrap.Wrap：换行，每一行子元素按照主轴方向排列。
 
   ```typescript
@@ -123,7 +123,7 @@ content_hash: sha256:37e9a5084627f0b15ff2ee951cdbb3c96fca3cd057770d2fe887ffa78d4
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/FtZZmG2CTGazYsjM8bT4DQ/zh-cn_image_0000002776908376.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/SyWFOebzRMOUFPiOwJR7Pg/zh-cn_image_0000002779849856.png)
 * FlexWrap.WrapReverse：换行，每一行子元素按照主轴反方向排列。
 
   ```typescript
@@ -137,13 +137,13 @@ content_hash: sha256:37e9a5084627f0b15ff2ee951cdbb3c96fca3cd057770d2fe887ffa78d4
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/2E6njiKiS7yROrWcrKtX-w/zh-cn_image_0000002776748390.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/BL26Ex1pSAuRa14gOftSAw/zh-cn_image_0000002779689886.png)
 
 ## 主轴对齐方式
 
 通过[justifyContent](../harmonyos-references/ts-container-flex.md#flexoptions对象说明)参数设置子元素在主轴方向的对齐方式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/JJoKF-l-R42LP5GVSZM87Q/zh-cn_image_0000002806028107.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/v6dXuDQURwGn7d1kMNKppQ/zh-cn_image_0000002809009507.png)
 
 * FlexAlign.Start（默认值）：子元素在主轴方向起始端对齐， 第一个子元素与父元素边沿对齐，其他元素与前一个元素对齐。
 
@@ -158,7 +158,7 @@ content_hash: sha256:37e9a5084627f0b15ff2ee951cdbb3c96fca3cd057770d2fe887ffa78d4
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/j40wz22JQcGKeHpwC4REBw/zh-cn_image_0000002806107997.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/lPDrthZ_Q1q6p1s-zEmS4g/zh-cn_image_0000002809049423.png)
 * FlexAlign.Center：子元素在主轴方向居中对齐。
 
   ```typescript
@@ -172,7 +172,7 @@ content_hash: sha256:37e9a5084627f0b15ff2ee951cdbb3c96fca3cd057770d2fe887ffa78d4
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/hQElSTCfQ6itWLUg7M0KEg/zh-cn_image_0000002776908378.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/LeWhPoZlQ0qtdaq-NexKpQ/zh-cn_image_0000002779849858.png)
 * FlexAlign.End：子元素在主轴方向终点端对齐，最后一个子元素与父元素边沿对齐，其他元素与后一个元素对齐。
 
   ```typescript
@@ -186,7 +186,7 @@ content_hash: sha256:37e9a5084627f0b15ff2ee951cdbb3c96fca3cd057770d2fe887ffa78d4
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/LqNdbpQwS062DRPoqVBPXQ/zh-cn_image_0000002776748392.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/vSh58tu5Re-xEJQbJu9W9Q/zh-cn_image_0000002779689888.png)
 * FlexAlign.SpaceBetween：Flex主轴方向均匀分配弹性元素，相邻子元素之间距离相同。第一个子元素和最后一个子元素与父元素边沿对齐。
 
   ```typescript
@@ -200,7 +200,7 @@ content_hash: sha256:37e9a5084627f0b15ff2ee951cdbb3c96fca3cd057770d2fe887ffa78d4
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/ml4vQOEzSr6MkZlJMF5AJA/zh-cn_image_0000002806028109.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/Icl_mh7TRsWq9H5jWVZHwQ/zh-cn_image_0000002809009509.png)
 * FlexAlign.SpaceAround：Flex主轴方向均匀分配弹性元素，相邻子元素之间距离相同。第一个子元素到主轴起始端的距离和最后一个子元素到主轴终点端的距离是相邻元素之间距离的一半。
 
   ```typescript
@@ -214,7 +214,7 @@ content_hash: sha256:37e9a5084627f0b15ff2ee951cdbb3c96fca3cd057770d2fe887ffa78d4
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/AklJUfzfTQa125NMbBATdA/zh-cn_image_0000002806107999.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/ZDTvbEv4SAGDaVLhj2T54A/zh-cn_image_0000002809049425.png)
 * FlexAlign.SpaceEvenly：Flex主轴方向元素等间距布局，相邻子元素之间的间距、第一个子元素与主轴起始端的间距、最后一个子元素到主轴终点端的间距均相等。
 
   ```typescript
@@ -228,7 +228,7 @@ content_hash: sha256:37e9a5084627f0b15ff2ee951cdbb3c96fca3cd057770d2fe887ffa78d4
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/8KSz3sMXQ1KqnocBtZvaUQ/zh-cn_image_0000002776908380.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/m-fSrTt_SkOd804poJQbpw/zh-cn_image_0000002779849860.png)
 
 ## 交叉轴对齐方式
 
@@ -251,7 +251,7 @@ content_hash: sha256:37e9a5084627f0b15ff2ee951cdbb3c96fca3cd057770d2fe887ffa78d4
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Ckf4vZIbTt2GJbwbiU6T5A/zh-cn_image_0000002776748394.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/3aSrtbhDQVCTwB-I8gDCyQ/zh-cn_image_0000002779689890.png)
 * ItemAlign.Start：交叉轴方向首部对齐。
 
   ```typescript
@@ -265,7 +265,7 @@ content_hash: sha256:37e9a5084627f0b15ff2ee951cdbb3c96fca3cd057770d2fe887ffa78d4
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/oruFF9gmRC6upv2C9aQtDg/zh-cn_image_0000002806028111.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/JxDL3Nw1R8yTvZPQTx88rw/zh-cn_image_0000002809009511.png)
 * ItemAlign.Center：交叉轴方向居中对齐。
 
   ```typescript
@@ -279,7 +279,7 @@ content_hash: sha256:37e9a5084627f0b15ff2ee951cdbb3c96fca3cd057770d2fe887ffa78d4
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/xuvyijt_Q0W79OhllDJXxA/zh-cn_image_0000002806108001.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/7IQiuhzbTo-JwnXtW8WfAg/zh-cn_image_0000002809049427.png)
 * ItemAlign.End：交叉轴方向底部对齐。
 
   ```typescript
@@ -293,7 +293,7 @@ content_hash: sha256:37e9a5084627f0b15ff2ee951cdbb3c96fca3cd057770d2fe887ffa78d4
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/u6sI-l_HRC6M2AqXW-2OvA/zh-cn_image_0000002776908382.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/amlq7T7iQkSH7Tzh6YCwGQ/zh-cn_image_0000002779849862.png)
 * ItemAlign.Stretch：交叉轴方向拉伸填充，在未设置尺寸时，拉伸到容器尺寸。元素在Flex容器中，沿交叉轴方向拉伸填充。容器为Flex且设置[FlexWrap](../harmonyos-references/ts-appendix-enums.md#flexwrap)为FlexWrap.Wrap或FlexWrap.WrapReverse时，元素拉伸到与当前行或列交叉轴长度最长的元素尺寸。其余情况下，无论元素尺寸是否设置，均拉伸到容器尺寸。
 
   ```typescript
@@ -307,7 +307,7 @@ content_hash: sha256:37e9a5084627f0b15ff2ee951cdbb3c96fca3cd057770d2fe887ffa78d4
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/FbhzElAnT_CtgfOO8F0Sfw/zh-cn_image_0000002776748396.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/awQOLqjrQ6q7SDp8lVDckw/zh-cn_image_0000002779689892.png)
 * ItemAlign.Baseline：交叉轴方向文本基线对齐。
 
   ```typescript
@@ -321,7 +321,7 @@ content_hash: sha256:37e9a5084627f0b15ff2ee951cdbb3c96fca3cd057770d2fe887ffa78d4
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/ckcD4E0HRyORPhwZHriuQw/zh-cn_image_0000002806028113.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/QrV6x6ORQKi0n5-VhVZhQg/zh-cn_image_0000002809009513.png)
 
 ### 子元素设置交叉轴对齐
 
@@ -348,7 +348,7 @@ Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) { // 容器
 }.width('90%').height(220).backgroundColor('#AFEEEE')
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/tNoPecfkTz6qgwFubw7j6w/zh-cn_image_0000002806108003.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/Jmsil-gOSgKw_v7UJ7LqqA/zh-cn_image_0000002809049429.png)
 
 上例中，Flex容器中alignItems设置交叉轴子元素的对齐方式为居中，子元素自身设置了alignSelf属性的情况，覆盖父组件的alignItems值，表现为alignSelf的定义。
 
@@ -371,7 +371,7 @@ Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) { // 容器
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/SN5vJs3TTeqnxCL1aZimRw/zh-cn_image_0000002776908384.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/l4lsyYOESE-ApcCNpdt87A/zh-cn_image_0000002779849864.png)
 * FlexAlign.Center：子元素各行在交叉轴方向居中对齐。
 
   ```typescript
@@ -387,7 +387,7 @@ Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) { // 容器
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/yDyH2ddkRyyTwy3NFGjvRA/zh-cn_image_0000002776748398.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/BMRskNveSb2_-BY5yY7QZg/zh-cn_image_0000002779689894.png)
 * FlexAlign.End：子元素各行与交叉轴终点对齐。
 
   ```typescript
@@ -403,7 +403,7 @@ Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) { // 容器
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/xpduu15mTTyYxWG_PX64wg/zh-cn_image_0000002806028115.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/e16_LVa2Q5SdSorWY7RtUg/zh-cn_image_0000002809009515.png)
 * FlexAlign.SpaceBetween：子元素各行与交叉轴两端对齐，各行间垂直间距平均分布。
 
   ```typescript
@@ -419,7 +419,7 @@ Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) { // 容器
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/JaCcqd5WTUm-7IRfyfZuMQ/zh-cn_image_0000002806108005.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/odoACP9USXamTHUgJ4jZ_A/zh-cn_image_0000002809049431.png)
 * FlexAlign.SpaceAround：子元素各行间距相等，是元素首尾行与交叉轴两端距离的两倍。
 
   ```typescript
@@ -435,7 +435,7 @@ Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) { // 容器
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/B9Kvjv5NR6mj5ICtrGRXFg/zh-cn_image_0000002776908386.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/6YQ13IfHQTSkyn0VyKA2fQ/zh-cn_image_0000002779849866.png)
 * FlexAlign.SpaceEvenly：子元素各行间距，子元素首尾行与交叉轴两端距离都相等。
 
   ```typescript
@@ -451,7 +451,7 @@ Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) { // 容器
   .backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/ABUCPDe9TbCdbx5yo3exgg/zh-cn_image_0000002776748400.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/wQoxRYM7TsGU4HT_j-13NQ/zh-cn_image_0000002779689896.png)
 
 ## 自适应拉伸
 
@@ -484,7 +484,7 @@ Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) { // 容器
   }.width('90%').height(120).padding(10).backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/T_5FplIVRUKZYxnKsHBLYA/zh-cn_image_0000002806028117.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/w0s8JMf7SWqRpT485pwdtw/zh-cn_image_0000002809009517.png)
 * [flexGrow](../harmonyos-references/ts-universal-attributes-flex-layout.md#flexgrow)：设置父容器的剩余空间分配给此属性所在组件的比例，用于分配父组件的剩余空间。
 
   ```typescript
@@ -507,7 +507,7 @@ Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) { // 容器
   }.width(360).height(120).padding(10).backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/fJD55oeDRQyBc8iMuZl7JQ/zh-cn_image_0000002806108007.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/mDOgm9jjQtugkd1ffbSfsg/zh-cn_image_0000002809049433.png)
 
   父容器宽度360vp，三个子元素原始宽度均为100vp，左右padding为20vp，总和320vp，剩余空间40vp根据flexGrow值的占比分配给子元素，未设置flexGrow的子元素不参与分配。
 
@@ -536,7 +536,7 @@ Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) { // 容器
   }.width(400).height(120).padding(10).backgroundColor('#AFEEEE')
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/tg1fEqPETi6e8kHe15oRYQ/zh-cn_image_0000002776908388.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/LuaPtLloQ-y506vyByFzfg/zh-cn_image_0000002779849868.png)
 
   父容器宽度400vp，三个子元素原始宽度为200vp，左右padding为20vp，父容器给子元素的布局空间为380vp，超出父容器空间220vp。
 
@@ -572,4 +572,4 @@ struct FlexExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/_h0pLLdeQoWc0nw9LgySdQ/zh-cn_image_0000002776748402.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/mgLtnA6PTcCeGfKIQyE_Yg/zh-cn_image_0000002779689898.png)

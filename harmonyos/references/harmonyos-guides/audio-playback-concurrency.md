@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-playbac
 title: 音频焦点介绍
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频焦点和音频会话管理 > 音频焦点介绍
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:37+08:00
+scraped_at: 2026-11-04T08:30:04+08:00
 doc_updated_at: 2026-10-26
-content_hash: sha256:479a9f0e032a80b25c91ccf00aad60d41a9c009e269a17e551c91ff70d69cbec
+content_hash: sha256:e492cf6489d72eb41396d8701fe945045970ff74e373ef2fdf7d51c81a8eada4
 ---
 
 ## 音频焦点概述
@@ -228,7 +228,7 @@ async function onAudioInterrupt(): Promise<void> {
 
 **规格图例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/dlYhJEJvTve_rd1bPFhJtg/zh-cn_image_0000002806109041.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/wr6DOeFlTkO_tnDTtTKBlg/zh-cn_image_0000002809050467.png)
 
 推荐使用共享焦点模式（SHARE\_MODE）。应用可按需自行管控各流的播放、暂停、恢复等操作，避免系统默认策略（如STOP）导致音频流无法恢复。
 

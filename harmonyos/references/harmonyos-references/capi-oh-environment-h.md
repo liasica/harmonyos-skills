@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-e
 title: oh_environment.h
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > C API > 头文件 > oh_environment.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:32+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:156498315449d75ea46701d1a6c4737be0f4783bf3abf98b9a455aa1f27d64d0
+scraped_at: 2026-11-04T08:34:04+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:47c65287efe2ae1c323a260dc95e5fce7cac41c828338ab3bbf0426630d55c7b
 ---
 
 ## 概述
@@ -61,7 +61,7 @@ FileManagement_ErrCode OH_Environment_GetUserDownloadDir(char **result)
 
 | 类型 | 说明 |
 | --- | --- |
-| [FileManagement\_ErrCode](capi-error-code-h.md#filemanagement_errcode) | 返回FileManagement模块错误码[FileManagement\_ErrCode](capi-error-code-h.md#filemanagement_errcode)。 |
+| [FileManagement\_ErrCode](capi-error-code-h.md#filemanagement_errcode) | 返回FileManagement模块错误码[FileManagement\_ErrCode](capi-error-code-h.md#filemanagement_errcode)。  ERR\_INVALID\_PARAMETER 401 - Invalid input parameter, pointer is null.  ERR\_DEVICE\_NOT\_SUPPORTED 801 - Device not supported.  ERR\_ENOMEM 13900011 - Failed to apply for memory. |
 
 ### OH\_Environment\_GetUserDesktopDir()
 
@@ -85,7 +85,7 @@ FileManagement_ErrCode OH_Environment_GetUserDesktopDir(char **result)
 
 | 类型 | 说明 |
 | --- | --- |
-| [FileManagement\_ErrCode](capi-error-code-h.md#filemanagement_errcode) | 返回FileManagement模块错误码[FileManagement\_ErrCode](capi-error-code-h.md#filemanagement_errcode)。 |
+| [FileManagement\_ErrCode](capi-error-code-h.md#filemanagement_errcode) | 返回FileManagement模块错误码[FileManagement\_ErrCode](capi-error-code-h.md#filemanagement_errcode)。  ERR\_INVALID\_PARAMETER 401 - Invalid input parameter, pointer is null.  ERR\_DEVICE\_NOT\_SUPPORTED 801 - Device not supported.  ERR\_ENOMEM 13900011 - Failed to apply for memory. |
 
 ### OH\_Environment\_GetUserDocumentDir()
 
@@ -109,4 +109,4 @@ FileManagement_ErrCode OH_Environment_GetUserDocumentDir(char **result)
 
 | 类型 | 说明 |
 | --- | --- |
-| [FileManagement\_ErrCode](capi-error-code-h.md#filemanagement_errcode) | 返回FileManagement模块错误码[FileManagement\_ErrCode](capi-error-code-h.md#filemanagement_errcode)。 |
+| [FileManagement\_ErrCode](capi-error-code-h.md#filemanagement_errcode) | 返回FileManagement模块错误码[FileManagement\_ErrCode](capi-error-code-h.md#filemanagement_errcode)。  ERR\_INVALID\_PARAMETER 401 - Invalid input parameter, pointer is null.  ERR\_DEVICE\_NOT\_SUPPORTED 801 - Device not supported.  ERR\_ENOMEM 13900011 - Failed to apply for memory. |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-nav
 title: 设置动态模糊样式
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 组件导航 > 设置动态模糊样式
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:07+08:00
+scraped_at: 2026-11-04T08:29:32+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:01ea17130af7dc6016679aab280069d49a88b4a387444f1167790c37b7050bfd
+content_hash: sha256:31c9241a9b266c4bec34262e452ba3d3780ad84f72fd24f141283cd0745981a6
 ---
 
 ## 场景介绍
@@ -22,19 +22,19 @@ content_hash: sha256:01ea17130af7dc6016679aab280069d49a88b4a387444f1167790c37b70
 
 对组件背景进行均匀的模糊处理，模糊强度一致，边界清晰，用于强调控件与内容的层级分隔。滑动内容进入/离开标题栏区域过程中，模糊背板和分割线透明渐变出现/消失。此方式适用于非沉浸式场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/1to-qZB5Tl-LnIZlsui46A/zh-cn_image_0000002776749194.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/nvJiAS0LR5OHzbdj6G3AKw/zh-cn_image_0000002779690692.gif "点击放大")
 
 ### 过渡模糊样式
 
 对组件背景进行均匀的模糊处理，模糊强度一致，边界清晰，用于强调控件与内容的层级分隔。滑动时标题栏内容发生颜色/状态变化，滑动过程中，随滑动距离，标题栏样式线性变化。此方式仅适用于沉浸式页面，随内容区滚动修改标题栏样式的场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/eHUFmxamSfqbTZhUobaejg/zh-cn_image_0000002806028911.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/XYVYFiDETbCriSj0yKZdOQ/zh-cn_image_0000002809010313.gif "点击放大")
 
 ### 渐变模糊样式
 
 模糊效果在空间维度上呈现逐渐增强/减弱的变化，模糊边界柔和，用于增强页面沉浸感。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/d9Zic8biQlOBZbiUTKIcDw/zh-cn_image_0000002806108801.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/lVpiv_OsQhOYc8Nc-EHeHg/zh-cn_image_0000002809050227.gif "点击放大")
 
 ## 开发步骤
 

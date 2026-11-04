@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pen-handw
 title: HandWrite
 breadcrumb: API参考 > 系统 > 硬件 > Pen Kit（手写笔服务） > C API > 模块 > HandWrite
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:13+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:cd223610eab9d46ee1122efc3c926711e8846cf50994f2929e082ece63688eeb
+scraped_at: 2026-11-04T08:35:30+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:ff46b2b835e0396949f3c93e7a46899b1b43816d726222e5dcaf90ddd199cf56
 ---
 
 ## 概述
@@ -41,11 +41,6 @@ content_hash: sha256:cd223610eab9d46ee1122efc3c926711e8846cf50994f2929e082ece636
 | 名称 | 函数 |
 | --- | --- |
 | int32\_t [HMS\_HandWrite\_GetPredictPoint](pen-handwrite-c.md#hms_handwrite_getpredictpoint)(const [HandWrite\_HistoricalPoint](pen-handwrite-struct-historicalpoint.md)\* event,  int32\_t size, float \*predictPointX, float \*predictPointY) | 此接口用于获取预测点。 |
-
-### 函数
-
-| 名称 | 函数 |
-| --- | --- |
 | int32\_t [HMS\_HandWrite\_SetRefreshDelayOff](pen-handwrite-c.md#hms_handwrite_setrefreshdelayoff)(const char\* xcomponentId, const bool enable) | 此接口用于提升手写笔书写时延。 |
 
 ## 枚举类型说明
@@ -98,8 +93,6 @@ E\_NO\_ERROR 0 - 执行成功。
 E\_PARAMS 401 - 输入参数无效。
 
 E\_INNER\_ERROR 1010400001 - 系统内部错误，相关资源加载失败。
-
-## 函数说明
 
 ### HMS\_HandWrite\_SetRefreshDelayOff()
 

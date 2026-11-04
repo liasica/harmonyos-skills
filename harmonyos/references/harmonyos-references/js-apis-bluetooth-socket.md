@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bluetooth.socket (蓝牙socket模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.bluetooth.socket (蓝牙socket模块)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:00+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:aa41ce48e4539bca8105dace2ff2bb6cca16aadb1a3a5a4584e34087033cd391
+scraped_at: 2026-11-04T08:34:38+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:ff4dea647a4d43b3c8d0db177593daec90cb131b066260f545dbfc794b558ea4
 ---
 
 本模块提供一种蓝牙套接字功能，可实现设备间连接和数据传输。当两个设备间进行蓝牙套接字通信交互时，依据设备功能的不同，可区分客户端与服务端。
@@ -119,7 +119,6 @@ getL2capPsm(serverSocket: number): number
 ```js
 import { BusinessError } from '@kit.BasicServicesKit';
 
-// 服务端获取客户端设备地址。
 let serverNumber = 1; // 此处serverNumber需赋值为调用sppListen接口后，回调中得到的serverNumber。
 try {
     let l2capPsm: number = socket.getL2capPsm(serverNumber);

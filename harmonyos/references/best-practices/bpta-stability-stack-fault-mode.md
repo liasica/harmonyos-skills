@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 栈内存过大导致内存泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > RSS内存泄漏故障模式说明 > 栈内存过大导致内存泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-10-29T08:03:27+08:00
+scraped_at: 2026-11-04T08:38:05+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:cd8175e3deaa2cff1824aefcc44763e243ae8ba1ae8bd089f736741341e8fe73
+content_hash: sha256:acf793a0fb3c3c6c53555b554e00f6c1abf717a7e53d49e1089c5ef0386044fc
 ---
 
 ## 概述
@@ -68,10 +68,10 @@ content_hash: sha256:cd8175e3deaa2cff1824aefcc44763e243ae8ba1ae8bd089f736741341e
    4. 单击下图4处选择Created & Existing，筛选申请并且未释放的内存及其调用栈。
    5. 筛选出线程个数申请异常的线程及其调用栈，如下图5处框选的内容：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/igiVBwNVRJmSFSnTXB6_1g/zh-cn_image_0000002729611091.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/DejaCam9Q_a3XO8cpJYapg/zh-cn_image_0000002729611091.png "点击放大")
 5. 分析调用栈指向的代码段，发现应用循环申请线程，且该线程一直运行未释放，最终导致了RSS内存泄漏：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/0mIHH21KSfWXdw5Q1IBBsA/zh-cn_image_0000002699891764.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/EuS2jae8RgC4yp1O_2uD_g/zh-cn_image_0000002699891764.png)
 
 **开发态分析思路**
 
@@ -108,10 +108,10 @@ content_hash: sha256:cd8175e3deaa2cff1824aefcc44763e243ae8ba1ae8bd089f736741341e
 3. 录制完成后，单击System Resources下的Threads泳道，发现线程数异常增长。
 4. 先单击下图1处Call Trees按钮，再单击下图2处筛选Created & Existing，找到异常的线程申请调用栈如下图3处框中所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/zajQ28j2R3uyp3XUvlTmKQ/zh-cn_image_0000002699731878.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/JTrkh8j-T_GYMrGuAOEbIg/zh-cn_image_0000002699731878.png "点击放大")
 5. 分析调用栈指向的代码段，发现应用正在循环申请线程，且该线程一直运行未释放，最终导致了RSS内存泄漏：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/FWAlePuMQo-bZRx_doihJQ/zh-cn_image_0000002729491133.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/lKi7G8iYQoq-dNEAyoBc2w/zh-cn_image_0000002729491133.png)
 
 ## 修复建议
 

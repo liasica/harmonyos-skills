@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-sync-of-
 title: 关系型数据库跨设备数据同步 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 同应用跨设备数据同步（分布式） > 关系型数据库跨设备数据同步 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:31:40+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:42139d9284370e7dc90feb3132910090caa34f970e8d292ec37feed7d2a1d88a
+scraped_at: 2026-11-04T08:29:03+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:1f534f12a2d9b4288dd6538e680c46bf91acc833eba0f4e4687e71dd0b70857b
 ---
 
 ## 场景介绍
@@ -26,7 +26,7 @@ content_hash: sha256:42139d9284370e7dc90feb3132910090caa34f970e8d292ec37feed7d2a
 
 ### 数据跨设备同步机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/duO4yvQhTxyU2aFf66ah9A/zh-cn_image_0000002806107645.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/b1lbQHJyRg2cCEqthGmjpQ/zh-cn_image_0000002809049071.jpg)
 
 业务将数据写入关系型数据库后，向数据管理服务发起同步请求。
 
@@ -51,7 +51,7 @@ content_hash: sha256:42139d9284370e7dc90feb3132910090caa34f970e8d292ec37feed7d2a
 
 需要注意的是，该模式下不支持对其他设备同步过来的数据进行修改。这一限制旨在保障数据一致性与同步逻辑的稳定性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/QvYXpUXuQl-Xmj-BlnPLMg/zh-cn_image_0000002776908026.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/VpxIGBLwQoaGhqvv6GC8fg/zh-cn_image_0000002779849506.jpg)
 
 **单版本表模式**
 
@@ -59,7 +59,7 @@ content_hash: sha256:42139d9284370e7dc90feb3132910090caa34f970e8d292ec37feed7d2a
 
 使用单版本表模式跨设备同步，需要配置schema文件，指定所需同步列以及解冲突列；单版本表模式同步数据支持修改对端设备同步过来的数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/Eu8Uprb8Q76h3LrC7L3thg/zh-cn_image_0000002776748040.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/vdCrzpsxQTmZHzhM8mznww/zh-cn_image_0000002779689536.jpg)
 
 ## 约束限制
 
@@ -331,7 +331,7 @@ let store: relationalStore.RdbStore | undefined = undefined;
 
 ### schema文件名及路径要求
 
-schema文件名及路径不支持自定义，否则使用单版本表模式进行数据同步将读取不到对应文件，设置分布式表也会失败。
+schema文件名及路径不支持自定义。若自定义，使用单版本表模式进行数据同步时将无法读取对应文件，创建分布式表也会失败。
 
 * 文件名：sync\_schema.json
 * 文件路径：../entry/src/main/resources/rawfile/arkdata/schema/sync\_schema.json
@@ -362,7 +362,7 @@ schema文件为json格式，文件主要为在dbSchema字段下进行多项配�
     - fields：数据库表字段详细信息，array[field]。
 
       * columnName：字段名，string类型，必填字段。
-      * type：字段类型，string类型，必填字段，可选参数范围为：["Text", "Integer", "Long", "Float", "Double", "Blob" ]。
+      * type：字段类型，string类型，必填字段，可选参数范围为：["Text", "Integer", "Long", "Float", "Double", "Blob"]。
       * primaryKey：该字段表示是否为指定解冲突列，与表中是否为主键无关，bool类型。如果这张表没有配置解冲突列时，有主键表默认主键为解冲突列，无主键表默认rowid为解冲突列。若是自增主键表，该字段为必填字段。其中：true表示为解冲突列，false表示非解冲突列，默认为false。
       * autoIncrement：是否自增属性，必须与表结构中对应，bool类型。关系型数据库跨设备数据同步不支持同步自增主键。其中：true表示自增主键，false表示非自增主键，默认为false。
       * notNull：是否非空，bool类型，非必填字段。其中：true表示非空字段，false表示可以为空字段，默认为false。
@@ -1174,13 +1174,13 @@ schema文件为json格式，文件主要为在dbSchema字段下进行多项配�
   + 写入语句：
 
     ```typescript
-    let valueBucket: ValueBucket = {};
+    let valueBucket: relationalStore.ValuesBucket = {};
     valueBucket["NAME"] = null;
     valueBucket["AGE"] = 25;
     valueBucket["SALARY"] = 23456.7;
     let value = new Uint8Array([1, 2, 3, 4, 5]);
     valueBucket["CODES"] = value;
-    await rdbstore.insert("EMPLOYEE", valueBucket);
+    await store.insert("EMPLOYEE", valueBucket);
     ```
   + 设置分布式表语句：
 

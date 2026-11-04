@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/share-utd-tex
 title: 分享文本
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 系统分享 > 常见分享场景 > 分享文本
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:33:15+08:00
+scraped_at: 2026-11-04T08:30:44+08:00
 doc_updated_at: 2026-05-26
-content_hash: sha256:210db3af24efa1a9b3ca85213b21c18153835ada5ef492220de3b290651b82e8
+content_hash: sha256:93071cff443d538dc8eb2ea2181b546b8acb2b4be32de79edebdee7d5c89d86e
 ---
 
 纯文本类型分享支持将一段文字分享到目标设备/目标应用。
@@ -13,7 +13,7 @@ content_hash: sha256:210db3af24efa1a9b3ca85213b21c18153835ada5ef492220de3b290651
 * 目标设备接收时，文本会转化为.txt文件保存在文件管理中。
 * 目标应用接收时，可便捷地处理文本内容。例如：将文字分享给备忘录，可新增一条备忘录内容。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/WIHy_pRkSAKfBQzp3a4ZbQ/zh-cn_image_0000002776910160.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/gHosJ317Rvq8nAjiUovnpQ/zh-cn_image_0000002779851640.png)
 
 ## 开发步骤
 

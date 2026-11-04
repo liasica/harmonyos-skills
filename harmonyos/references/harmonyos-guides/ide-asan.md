@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-asan
 title: 使用ASan检测内存错误
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 日志与故障分析 > 故障分析 > 使用ASan检测内存错误
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:12:55+08:00
+scraped_at: 2026-11-04T08:31:29+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:19e5079aa3dcc35547209d2a005c52a2e3742bdd985d6293a5aa033abdaa2023
+content_hash: sha256:6e08c83828d9e4c7a6551b6cf0c0638ab7312b09240638de8c0c8260b876d1c4
 ---
 
 为追求C/C++的极致性能，编译器和OS(Windows/Linux/Mac)运行框架不会对内存操作进行安全检测。针对该场景，DevEco Studio集成ASan（Address-Sanitizer）为开发者提供面向C/C++的地址越界检测能力，并通过FaultLog展示错误的堆栈详情及导致错误的代码行。关于ASan的检测原理请参考[ASan检测原理](../best-practices/bpta-stability-address-sanitizer-principle.md#section159561141247)。
@@ -23,10 +23,10 @@ content_hash: sha256:19e5079aa3dcc35547209d2a005c52a2e3742bdd985d6293a5aa033abda
 
 1. 点击**Run > Edit Configurations >** **Diagnostics**，勾选**Address Sanitizer**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/wKXWjOb7Tg27dK8HO4dCgg/zh-cn_image_0000002701823174.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/DWwM0ErcSLSuhS0Wcy1Vkg/zh-cn_image_0000002701823174.png)
 2. 如果有引用本地library，需在library模块的build-profile.json5文件中，配置arguments字段值为“-DOHOS\_ENABLE\_ASAN=ON”，表示以ASan模式编译so文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/i4RrQYhnSkuZKIaqIGwodg/zh-cn_image_0000002731542451.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/y7bqdxLdRxq7t7meUmlocA/zh-cn_image_0000002731542451.png)
 
 ### 方式二
 
@@ -36,7 +36,7 @@ content_hash: sha256:19e5079aa3dcc35547209d2a005c52a2e3742bdd985d6293a5aa033abda
     "asanEnabled": true
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/vFLX0uHATTSZeXMG4V_YfA/zh-cn_image_0000002701823178.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/WPZfAHHwSH-Xu_bfsyqN_g/zh-cn_image_0000002701823178.png)
 2. 设置模块级构建ASan插桩。
 
    在需要开启ASan的模块中，通过添加构建参数开启ASan检测插桩，在对应模块的模块级build-profile.json5中添加命令参数：
@@ -45,7 +45,7 @@ content_hash: sha256:19e5079aa3dcc35547209d2a005c52a2e3742bdd985d6293a5aa033abda
    "arguments": "-DOHOS_ENABLE_ASAN=ON"
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/PoI0IEGzTw2ZzDMRqwV7Bg/zh-cn_image_0000002731382481.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/LdbJhSjeRc-005mM2Yopmg/zh-cn_image_0000002731382481.png)
 
    **说明** 
 
@@ -60,4 +60,4 @@ ASAN\_OPTIONS用于在运行时配置ASan的行为，包括设置检测级别、
 1. 运行或调试当前应用。
 2. 当程序出现内存错误时，弹出ASan log信息，点击信息中的链接即可跳转至引起内存错误的代码处。日志中各字段的说明请参考[ASan日志规格](address-sanitizer-guidelines.md#asan日志规格)，异常检测类型请参考[ASan异常检测类型](../best-practices/bpta-stability-asan-detection.md#section12508111110451)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/BsOR26MnSPaH_2Gc6nSApg/zh-cn_image_0000002701663256.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/RbSGPQwhQYqu_oL5c13mxg/zh-cn_image_0000002701663256.png)

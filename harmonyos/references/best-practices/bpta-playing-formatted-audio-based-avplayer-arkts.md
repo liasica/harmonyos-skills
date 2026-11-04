@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-playing-fo
 title: 基于AVPlayer播放格式化音频（ArkTS）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频播放系列开发实践 > 基于AVPlayer播放格式化音频（ArkTS）
 category: best-practices
-scraped_at: 2026-10-29T08:03:16+08:00
+scraped_at: 2026-11-04T08:37:50+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:6af9af5bc2818a1b53a491787b3cb5cc36231ecc39d856fd789b526de4b54f1a
+content_hash: sha256:f28460e09f1c3b85754603bd14f73bbae9b573ce244174aa6f611a2e9ddb336a
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 本文是音频播放系列文章的第3篇，实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/2cijAf6kR_Gey9KPYhOEVg/zh-cn_image_0000002555217523.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/1iO4OrU6Qb2F5F4vzXpsAQ/zh-cn_image_0000002524217626.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/cl1znDdLQXuhNFUuS0D-kQ/zh-cn_image_0000002555337497.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/0mJH4KpnQfSqOAaKeDkekw/zh-cn_image_0000002555217523.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/8VzEOXASTzyv-C-JtF1RcA/zh-cn_image_0000002524217626.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/cSE5d9HaQS-mYJnpmZx5GA/zh-cn_image_0000002555337497.gif "点击放大")
 
 ## 场景分析
 
@@ -36,7 +36,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 通过[Interface (AVPlayer)](../harmonyos-references/arkts-apis-media-avplayer.md)实现核心音频播放控制能力，包括音频资源加载、播放、暂停、停止及退出等操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/PkpXSS06TfepE4di7NJDQg/zh-cn_image_0000002524057632.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/RgXB0pEuRJaa6dydnAarWA/zh-cn_image_0000002524057632.gif "点击放大")
 
 ### 实现原理
 
@@ -232,7 +232,7 @@ public release() {
 
 通过点击或拖动进度条精准跳转到指定时间进行播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/ZYth1JwvQqO5YW9N7Hxd_w/zh-cn_image_0000002555217525.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/o_q_NiNgRMyMbIQfhFLSAg/zh-cn_image_0000002555217525.gif "点击放大")
 
 ### 实现原理
 
@@ -258,7 +258,7 @@ public seek(ms: number) {
 
 通过界面按钮快捷切换音频播放静音状态，实现一键开启或关闭静音。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/ERuXUN2sR2S5OSDq0MMEYg/zh-cn_image_0000002524217628.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/odojzjVGSm65wVlQiUvZIQ/zh-cn_image_0000002524217628.gif "点击放大")
 
 ### 实现原理
 
@@ -285,7 +285,7 @@ public setSilentMode(isSilentMode: boolean) {
 
 点击上一首或下一首或歌单列表中的歌曲进行不同歌曲播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/4jl_jOPwRCu8j7dq-2--wQ/zh-cn_image_0000002555337501.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/327KZksdT4K5IP-CV35c9w/zh-cn_image_0000002555337501.gif "点击放大")
 
 ### 实现原理
 
@@ -329,7 +329,7 @@ async loadSongAsset(songRawFileDescriptor: resourceManager.RawFileDescriptor) {
 
 滑动倍速调节面板调节播放速度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/nPuFe_xnTxWrH6XiCYKwBA/zh-cn_image_0000002524057634.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/fiZ-vtptQjeBBBkpa-y8Lg/zh-cn_image_0000002524057634.gif "点击放大")
 
 ### 实现原理
 
@@ -377,7 +377,7 @@ public setSpeed(speed: number) {
 
 滑动音量调节面板调节播放音量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/A6rdO3XRTtyphFRQHyep0g/zh-cn_image_0000002555217531.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/hcEFkX2GTHKB8ePiQqDoWQ/zh-cn_image_0000002555217531.gif "点击放大")
 
 ### 实现原理
 

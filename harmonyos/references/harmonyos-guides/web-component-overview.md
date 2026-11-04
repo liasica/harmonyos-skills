@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-component
 title: ArkWeb简介
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > ArkWeb简介
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:14+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:50df7eb788acd02b11bfa36071eef4f100bbdfef31ff1c9bbd076295d8c5cf11
+scraped_at: 2026-11-04T08:29:25+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:de6713603aa5e57b4bb8738f9c924ca0aae6265962c711738918dbb9b02445a7
 ---
 
 ## 使用场景
@@ -33,17 +33,17 @@ Web组件为开发者提供了丰富的控制Web页面能力。包括：
 
 使用Web组件访问在线Web网页时需添加网络权限：ohos.permission.INTERNET，具体申请方式请参考[声明权限](declare-permissions.md)。
 
-```ts
+```json5
 "requestPermissions":[
-    {
-      "name" : "ohos.permission.INTERNET"
-    }
-  ]
+  {
+    "name" : "ohos.permission.INTERNET"
+  }
+],
 ```
 
 ## 约束与限制
 
-* 可依据ArkWeb内核版本在相关网站查询W3C标准的支持情况。例如：https://developer.mozilla.org/en-US/和https://webassembly.org/features/。
+* 可依据ArkWeb内核版本在相关网站查询W3C标准的支持情况。例如：<https://developer.mozilla.org/en-US/>和<https://webassembly.org/features/>。
 * ArkWeb内核版本：ArkWeb基于谷歌Chromium内核开发，系统版本与Chromium版本的对应关系如表格所示。
 
   | 系统版本 | Chromium版本 |

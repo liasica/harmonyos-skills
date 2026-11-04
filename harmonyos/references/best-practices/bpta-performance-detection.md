@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-performanc
 title: 开发态性能检测
 breadcrumb: 最佳实践 > 性能 > 性能检测 > 开发态性能检测
 category: best-practices
-scraped_at: 2026-10-29T08:03:21+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:a7a5054b04c1c3a61167270307ae9dbb5d4d99e5e124f90501cc474cccf0ca01
+scraped_at: 2026-11-04T08:37:58+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:39d17957a0dde77e00c67f42f61b479d3e0c6b8eadda53efebb2683c1242ed62
 ---
 
 ## 简介
@@ -18,7 +18,7 @@ content_hash: sha256:a7a5054b04c1c3a61167270307ae9dbb5d4d99e5e124f90501cc474cccf
 
 本文将介绍调优的方法和常用工具，帮助开发者更好地分析和解决应用程序中的性能问题，提升用户体验，实现应用程序的高效稳定运行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/XpK8PMPbR8KakSyzMl1-UA/zh-cn_image_0000002416519594.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/-uo_DCsiRVKektN9EhBQRQ/zh-cn_image_0000002416519594.png "点击放大")
 
 性能调优贯穿于HarmonyOS应用开发的整个生命周期中，开发前有性能最佳实践和指南等赋能套件让开发者快速上手学习，开发过程中有性能工具开发套件覆盖应用开发各阶段，应用开发完成上架后有专业的性能测试工具检查测试应用性能指标。目前DevEco Studio主要集成了四种性能工具，在不同的开发阶段各有侧重，主要分为性能问题检测类工具和性能问题分析类工具。本文重点介绍使用**性能问题检测类工具**来检测应用性能问题。
 
@@ -34,7 +34,7 @@ content_hash: sha256:a7a5054b04c1c3a61167270307ae9dbb5d4d99e5e124f90501cc474cccf
 
 在已打开的代码编辑器窗口单击右键点击Code Linter，或在工程管理窗口中鼠标选中单个或多个工程文件/目录，右键选择Code Linter > Full Linter执行代码全量检查。如图所示输入@performance，过滤性能检查结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/5bBfZE4RQ4eTryeL0MepMA/zh-cn_image_0000002404124977.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/1B4c_sDqQlOompyZAW6Oog/zh-cn_image_0000002404124977.png "点击放大")
 
 详细使用指导见：
 
@@ -73,29 +73,29 @@ content_hash: sha256:a7a5054b04c1c3a61167270307ae9dbb5d4d99e5e124f90501cc474cccf
 
 4、将编译模式Build Mode设置为release。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/x3j7-wLjS7Sy9iiHl16G8A/zh-cn_image_0000002474188572.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/s0VDfv2KS7uUMtZXTIoRRQ/zh-cn_image_0000002474188572.png)
 
 1. 点击菜单栏Tools，选择AppAnalyzer进入AppAnalyzer页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Jfzfc65wRs6cAr5VQIGpvA/zh-cn_image_0000002510905945.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/Qj_rgDWISPGe17d8Q2tiOQ/zh-cn_image_0000002510905945.png "点击放大")
 2. 在AppAnalyzer页面，默认选择场景化体检。以页面间转场场景为例，点击“手动性能页面间转场体检”即可进入体检界面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/t0cBhyaiSmWgkds31-1vqg/zh-cn_image_0000002510868387.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/MT7e7vNyTOW9IwT7BNa-1A/zh-cn_image_0000002510868387.png "点击放大")
 3. 在准备体检时，开发者需要保持手机解锁状态，待被检测应用自动安装并运行后，即表示准备完成。然后操作手机至检测页面，点击开始按钮开始体检。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/wSTByXfBRXafI23oyj0-aw/zh-cn_image_0000002478830250.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/HFlecSWVQcGW7K3w17kHEQ/zh-cn_image_0000002478830250.png "点击放大")
 4. 等待界面出现“体检中，请操作手机”时，开始操作手机，等待体检工具录制和分析。操作完成后，可以点击结束按钮结束体检。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/25uV5fv6SJeC9_Uti2EVXQ/zh-cn_image_0000002510870683.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/6kueoMatSAyoaj8Iyos2Zg/zh-cn_image_0000002510870683.png "点击放大")
 5. 等待体检工具生成报告。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/pOGc_wWHQneFqhJSxArmPA/zh-cn_image_0000002478830890.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/oLrc4KWOTYK2JYBwkog0MA/zh-cn_image_0000002478830890.png "点击放大")
 6. 查看检测结果报告，点击展开检测报告中的“页面间转场”，如果体检不为满分100，点击展开体检检测结果，若显示诊断异常（如下图中出现黄色、红色警告），则表示存在页面间转场的性能问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/x1kRs6U6Sh6ukx-Fj44sQw/zh-cn_image_0000002478831568.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/NEiYFswqSHOT2coz0cC28A/zh-cn_image_0000002478831568.png "点击放大")
 7. 检测存在故障时，开发者可通过点击“可能故障原因”，查看详细测试结果及优化建议。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/iEh8Nx85S9OfjetUhsFOog/zh-cn_image_0000002510871505.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/_NEwdKIvQHqA_u3H4rDDjQ/zh-cn_image_0000002510871505.png "点击放大")
 
 详细使用指导见：
 
@@ -111,7 +111,7 @@ content_hash: sha256:a7a5054b04c1c3a61167270307ae9dbb5d4d99e5e124f90501cc474cccf
 
 **图1** Testing测试报告导入体检工具分析流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/fxu3YB2LRDOU79zIiXIXpQ/zh-cn_image_0000002416522370.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/s_wdglguRHCnXg1nJfELAA/zh-cn_image_0000002416522370.png "点击放大")
 
 Testing测试报告导入体检工具分析的过程主要包括以下步骤。
 
@@ -119,32 +119,32 @@ Testing测试报告导入体检工具分析的过程主要包括以下步骤。
 
    使用DevEco Testing进行场景化性能测试，支持编写测试脚本和自定义测试场景对应用性能进行评估。具体使用方法和指导请见：[场景化性能测试](../harmonyos-guides-V13/perf-testing-V13.md#section12324184817324)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/cBmOtElISBS5WcEngxtQ8w/zh-cn_image_0000002416681522.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/vH904NNRSK-ligDRe7GQdQ/zh-cn_image_0000002416681522.png "点击放大")
 
    **查看测试结果**
 
    根据DevEco Testing检测结果，查看是否存在页面间转场等场景不达标的问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/cruR8zUARJOST6_OudZrHg/zh-cn_image_0000002450160661.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/_uXiRke2RDm6Y_xmiu7jNg/zh-cn_image_0000002450160661.png "点击放大")
 
    **获取测试报告**
 
    点击导出IDE体检文件按钮，跳转至报告文件本地路径，获取DevEco Testing体检测试报告。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/86XiW2XjTNCKOxKgddUo5g/zh-cn_image_0000002416521718.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/MScV1KVUQuaNBUFYhjhJBA/zh-cn_image_0000002416521718.png "点击放大")
 2. **体检报告导入AppAnalyzer**
 
    通过DevEcoTesting发现问题后，为深入分析问题，可将获取的体检报告导入体检工具AppAnalyzer进行具体定位和优化。打开DevEcoStudio，点击AppAnalyzer图标进入AppAnalyzer页面，随后点击“体检历史”按钮，跳转至历史记录页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/qFu12BWcQBqQmif9aw3_RQ/zh-cn_image_0000002478836312.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/AaxVLf9mRKmLoIAC0ecNjQ/zh-cn_image_0000002478836312.png "点击放大")
 
    点击“导入报告”，即可将Testing测试诊断出的体检文件导入体检工具进行解析。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/mDLkfejNS0asmhFbD5CjFw/zh-cn_image_0000002478833510.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/_R5y3ZMsRuSOp91nZTlaKA/zh-cn_image_0000002478833510.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/Q2ydpo9OSh6zD39BLjSH_A/zh-cn_image_0000002478838010.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/sEGDJlAeTtqhW9CA3NcUgQ/zh-cn_image_0000002478838010.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/jjHj4QWETXC64wS8RG7i9g/zh-cn_image_0000002510917261.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/-N2cF8qxRFuw_un-Cs3ypQ/zh-cn_image_0000002510917261.png "点击放大")
 
    **说明** 
 
@@ -158,3 +158,56 @@ Testing测试报告导入体检工具分析的过程主要包括以下步骤。
 3. **问题分析和修复**
 
    解析完成后，会生成测试报告和详情报告。通过测试报告，可以定位出性能问题的页面截图、检测指标和检测结果等。
+
+## 附录：工具检查规则项汇总表
+
+静态检测工具
+
+**表1**
+
+| 规则ID（@规则集/规则） | 针对的性能场景 | 级别 | 规则描述与参考优化方案链接 |
+| --- | --- | --- | --- |
+| @performance/sparse-array-check | 通用性能场景-ArkTs编程规范 | suggestion | 建议[避免使用稀疏数组](bpta-arkts-high-performance.md#section986811417525)。 |
+| @performance/number-init-check | 通用性能场景-ArkTs编程规范 | suggestion | 该规则将检查[number是否正确使用](../harmonyos-guides/arkts-high-performance-programming.md#number类型变量避免整型和浮点型混用)。 |
+| @performance/typed-array-check | 通用性能场景-ArkTs编程规范 | suggestion | [数值数组推荐使用TypedArray](../harmonyos-guides/arkts-high-performance-programming.md#数值数组推荐使用typedarray)。 |
+| @performance/hp-arkui-image-async-load | 丢帧-通用丢帧 | suggestion | 建议[大图片使用异步加载](bpta-click-to-click-response-optimization.md#section715115119192)。 |
+| @performance/hp-arkui-load-on-demand | 丢帧-滑动丢帧 | warn | 建议[使用按需加载](bpta-best-practices-long-list.md#section69931513103314)。 |
+| @performance/hp-arkui-remove-container-without-property | 丢帧-通用丢帧 | suggestion | 建议尽量[减少视图嵌套层次](bpta-improve-layout-performance.md#section9293918175210)。 |
+| @performance/hp-performance-no-closures | 通用性能场景-ArkTs编程规范 | suggestion | 建议[函数内部变量尽量使用参数传递](bpta-arkts-high-performance.md#section493912404613)。 |
+| @performance/hp-arkui-avoid-empty-callback | 通用性能场景-ArkUI编程规范 | suggestion | [避免设置空的系统回调监听](bpta-time-optimization-of-the-main-thread.md#section1193294163616)。 |
+| @performance/hp-arkui-no-state-var-access-in-loop | 丢帧-通用丢帧 | warn | [避免在for、while等循环逻辑中频繁读取状态变量](../harmonyos-guides/arkts-state-management-best-practices.md#避免在forwhile等循环逻辑中频繁读取状态变量)。 |
+| @performance/hp-arkui-use-local-var-to-replace-state-var | 丢帧-通用丢帧 | warn | 建议[使用临时变量替换状态变量](../harmonyos-guides/arkts-state-management-best-practices.md#建议使用临时变量替换状态变量)。 |
+| @performance/hp-arkui-use-row-column-to-replace-flex | 丢帧-通用丢帧 | suggestion | 建议[使用Column/Row替代Flex](bpta-improve-layout-performance.md#section12745188175420)。 |
+| @performance/hp-arkui-combine-same-arg-animateto | 丢帧-动效丢帧 | warn | 建议[动画参数相同时使用同一个animateTo](bpta-fair-use-animation.md#section1150051943714)。 |
+| @performance/hp-arkui-no-func-as-arg-for-reusable-component | 丢帧-滑动丢帧 | warn | [避免使用函数作为复用的自定义组件创建时的入参](https://developerlf.hwcloudtest.cn/consumer/cn/doc/best-practices/bpta-component-reuse#section18721184816136)。 |
+| @performance/hp-arkui-set-cache-count-for-lazyforeach-grid | 丢帧-滑动丢帧 | suggestion | 建议在Grid下使用LazyForEach时[设置合理的cacheCount](bpta-best-practices-long-list.md#section11667144010222)。 |
+| @performance/hp-arkui-use-object-link-to-replace-prop | 丢帧-通用丢帧 | warn | 建议[使用@ObjectLink代替@Prop减少不必要的深拷贝](bpta-component-reuse.md#section711438114319)。 |
+| @performance/hp-arkui-use-reusable-component | 丢帧-滑动丢帧 | warn | 建议复杂组件的定义，尽量使用[组件复用](bpta-component-reuse.md#section142448345398)。 |
+| @performance/hp-arkui-use-scale-to-replace-attr-animateto | 丢帧-动效丢帧 | warn | 建议[组件布局改动时使用图形变换属性动画](bpta-fair-use-animation.md#section1723931117204)。 |
+| @performance/hp-arkui-use-word-break-to-replace-zero-width-space | 通用性能场景-ArkUI编程规范 | suggestion | 建议[使用word-break替换零宽空格(\u200b)](bpta-time-optimization-of-the-main-thread.md#section193673511440)。 |
+| @performance/hp-arkui-remove-redundant-nest-container | 丢帧-通用丢帧 | suggestion | [避免冗余的嵌套](bpta-component-nesting-optimization.md)。 |
+| @performance/high-frequency-log-check | 通用性能场景-高耗时函数处理 | warn | [不建议在高频函数中使用Hilog](bpta-time-optimization-of-the-main-thread.md#section10112623611)。 |
+| @performance/hp-arkui-use-grid-layout-options | 丢帧-通用丢帧 | warn | 建议[在指定位置时使用GridLayoutOptions提升Grid性能](bpta-improve_grid_performance.md)。 |
+| @performance/hp-arkui-avoid-update-auto-state-var-in-aboutToReuse | 丢帧-通用丢帧 | suggestion | [避免在aboutToReuse中对自动更新值的状态变量进行更新](bpta-component-reuse.md#section7441712174414)。 |
+| @performance/hp-arkui-replace-nested-reusable-component-by-builder | 丢帧-通用丢帧 | warn | 建议[使用@Builder替代嵌套的自定义组件](bpta-component-nesting-optimization.md#section1012953161217)。 |
+| @performance/hp-arkui-suggest-reuseid-for-if-else-reusable-component | 丢帧-滑动丢帧 | warn | 建议[使用reuseId标记不同结构的组件构成](bpta-component-reuse.md#section1239555818211)。 |
+| @performance/hp-arkui-use-onAnimationStart-for-swiper-preload | 丢帧-滑动丢帧 | warn | 建议[Swiper预加载机制搭配 OnAnimationStart 接口回调使用](bpta-swiper_high_performance_development_guide.md#section8783121513246)。 |
+| @performance/hp-arkui-no-stringify-in-lazyforeach-key-generator | 丢帧-滑动丢帧 | warn | [在使用LazyForEach进行组件复用的key生成器函数里，不要使用stringify](bpta-lazyforeach-optimization.md#section68711519072)。 |
+| @performance/start-window-icon-check | 响应时延-冷启动响应时延 | suggestion | [启动页图标分辨率建议不超过256 \* 256](bpta-application-cold-start-optimization.md#section5953164714132)。 |
+| @performance/waterflow-data-preload-check | 丢帧-滑动丢帧 | suggestion | 建议[对waterflow子组件进行数据预加载](bpta-waterflow-performance-optimization.md#section12893102412329)。 |
+| @performance/hp-arkui-use-attributeUpdater-control-refresh-scope | 丢帧-通用丢帧 | suggestion | 建议[使用attributeUpdater精准控制组件属性的刷新](bpta-component-reuse.md#section1035317458423)。 |
+| @performance/hp-arkui-use-id-in-get-resource-sync-api | 通用性能场景-高耗时函数处理 | suggestion | 建议[在使用API getColorSync和getStringSync时建议使用带id版本](bpta-time-optimization-of-the-main-thread.md#section193673511440)。 |
+| @performance/hp-arkui-use-transition-to-replace-animateto | 丢帧-动效丢帧 | warn | 建议[组件转场动画使用transition](bpta-page-transition.md#section1560222414153)。 |
+| @performance/hp-arkui-remove-redundant-state-var | 丢帧-通用丢帧 | suggestion | 建议[移除不关联UI组件的状态变量设置](bpta-status-management.md#section2674939304)。 |
+| @performance/hp-arkui-use-taskpool-for-web-request | 完成时延-应用内点击完成时延 | warn | 建议[网络资源的请求和返回使用taskpool线程池异步处理](bpta-time-optimization-of-the-main-thread.md#section32971936174416)。 |
+| @performance/hp-arkui-remove-unchanged-state-var | 丢帧-通用丢帧 | suggestion | 建议[移除未改变的状态变量设置](bpta-status-management.md#section2674939304)。 |
+| @performance/hp-arkts-no-use-any-export-current | 完成时延-冷启动完成时延 | warn | [避免使用export \* 导出当前module中定义的类型和数据](bpta-application-cold-start-optimization.md#section584818173141)。 |
+| @performance/hp-arkts-no-use-any-export-other | 完成时延-冷启动完成时延 | warn | [避免使用export \* 导出其他module中定义的类型和数据](bpta-application-cold-start-optimization.md#section584818173141)。 |
+| @performance/hp-arkui-suggest-cache-avplayer | 音视频播放-启播速度 | warn | 建议[缓存AVPlayer实例減少起播时延](bpta-smooth-switching.md)。 |
+| @performance/hp-arkui-suggest-use-effectkit-blur | 丢帧-通用丢帧 | suggestion | 建议[使用effectKit.createEffect实现模糊效果](bpta-fuzzy-scene-performance-optimization.md)。 |
+| @performance/multiple-associations-state-var-check | 丢帧-通用丢帧 | suggestion | 多个组件关联同一数据时，建议[在组件中使用@Watch装饰器添加更新条件，避免不必要的组件更新](bpta-status-management.md#section19081251381)。 |
+| @performance/foreach-args-check | 丢帧-滑动丢帧 | warn | 建议[在ForEach参数中设置keyGenerator](../harmonyos-guides/arkts-rendering-control-foreach.md#渲染性能降低)。 |
+| @performance/constant-property-referencing-check-in-loops | 通用性能场景-ArkTs编程规范 | suggestion | 在循环如需频繁访问某个常量，且该属性引用常量在循环中不会改变，建议提[取到循环外部，减少属性访问的次数](../harmonyos-guides/arkts-high-performance-programming.md#循环中常量提取减少属性访问次数)。 |
+| @performance/hp-arkui-reduce-pangesture-distance | 响应时延-应用内点击响应时延 | suggestion | 建议[设置合理的拖动距离](bpta-application-latency-optimization-cases.md#section1116134115286)。 |
+
+动态运行工具规则请参阅[性能](../harmonyos-guides/ide-app-analyzer-all-rules.md#section355112916333)。

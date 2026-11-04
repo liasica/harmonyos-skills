@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-h
 title: "@ohos.hilog (HiLog日志打印)"
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > ArkTS API > @ohos.hilog (HiLog日志打印)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:53+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ac6e25909553e20fcbe507fbc037e4e51d1db7ed0ac5afe50565768268e9286b
+scraped_at: 2026-11-04T08:35:35+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:eda86af0c2e5578bdd69aa19f3d311f03b89ae4435e739e050240a4a37dc2507
 ---
 
 hilog模块是HarmonyOS提供的日志打印子系统，允许应用或服务按照指定的日志类型、日志级别和格式字符串输出日志。开发者可利用hilog在应用运行过程中记录关键流程信息，异常情况和错误事件，从而了解应用的运行状态并更好地调试程序。hilog适用于应用和服务在开发调试阶段记录运行日志的场景，也适用于正式发布版本中通过级别控制减少日志输出和保护隐私数据的场景。
@@ -648,7 +648,7 @@ getLogFile(latestSeconds: number): Array<string>
 ```js
 hilog.info(0x0001, "testTag", 'sandbox log to share sandbox with console');
 hilog.setOutputType(hilog.OutputType.SHARE_SANDBOX_WITH_CONSOLE);
-let timeInterval
+let timeInterval = 300;
 let logs = hilog.getLogFile(timeInterval);
 hilog.info(0x0001, "testTag", 'sandbox log files:%{public}s', logs.toString());
 hilog.flush();

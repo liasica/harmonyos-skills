@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-time-optim
 title: 主线程耗时操作优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > 主线程耗时操作优化
 category: best-practices
-scraped_at: 2026-10-29T08:03:22+08:00
+scraped_at: 2026-11-04T08:37:59+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:ee3e48665f52db783d132ac99eb6b0e25550c2ded24bd3162469703b6715a30e
+content_hash: sha256:35699271727917ed266799ed1c44e14f70b58a071693ae99badb726f2aabf7a6
 ---
 
 ## 概述
@@ -182,7 +182,7 @@ struct NoRedundantOperation {
 ```
 
 **图1** 反例标签"H:ScrollSlide"Trace图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/HpUMJTvGS7evfnRqo0iGGg/zh-cn_image_0000002193850140.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/VqHEZFSjTSGl0BfRk1bbeg/zh-cn_image_0000002193850140.png "点击放大")
 
 通过上图可知，在3.5s的滑动过程中，总计触发了424次日志打印以及Trace追踪，打印一次日志的平均耗时为84μs，由此可以计算出冗余的debug日志浪费了35.616ms。release版本建议删除无效日志的打印。
 
@@ -367,21 +367,21 @@ struct PositiveOfOnScroll {
 * 耗时对比
 
 **图2** 案例一onWillScroll事件回调耗时  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/x2KtqxRSSPqC0CfpFZxMPg/zh-cn_image_0000002194009712.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/SQ1ioVGiTY-QNeeZJshBmw/zh-cn_image_0000002194009712.png "点击放大")
 
 **图3** 案例二onWillScroll事件回调耗时  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/eJa7cotYQ4SJpmL0puIEvw/zh-cn_image_0000002194009728.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/mgpPVKNaT2uWSDjkeeaagw/zh-cn_image_0000002194009728.png "点击放大")
 
 * 帧率对比
 
 **图4** onWillScroll执行耗时操作的丢帧率  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/g3j4vrmTRL-E_wO-aS8BZA/zh-cn_image_0000002194009704.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/3fmPQfk_TAe5u-ipvOYemA/zh-cn_image_0000002194009704.png "点击放大")
 
 **图5** onWillScroll不执行耗时操作的丢帧率  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/3s2EMCwpSWS-SRXIa2Gkmg/zh-cn_image_0000002193850112.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/o2PJt7_bTTmtR5r6-81HbA/zh-cn_image_0000002193850112.png "点击放大")
 
 **图6** 首帧Trace详细信息  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/4rjqXUMlT-yHRZAE0a-mkw/zh-cn_image_0000002231669457.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/W_DPrG-RRUasznVC60fjiA/zh-cn_image_0000002231669457.png "点击放大")
 
 通过图2、图3可知，onWillScroll事件回调中带有耗时操作，会占用主线程20ms左右的时间。由图4可知在具有耗时操作的滑动过程中，丢帧率高达87.5%。观察图6卡顿首帧Trace的详细信息发现，原本期望完成时间为8.3ms。因为onWillScroll中耗时操作的影响，使得实际处理时间为25ms，远超期望时间，短时间内连续触发该回调就会导致发生连续丢帧现象。因此在开发过程中，开发者应该尽量避免在高频事件回调中处理耗时操作，否则将导致应用性能大幅下降。
 
@@ -437,10 +437,10 @@ aboutToReuse(params: Record<string, number>): void {
 **结果对比**
 
 **图7** 反例滑动时单个aboutToReuse耗时  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/sqocj_SST4SF1MvSWFp7Iw/zh-cn_image_0000002194009716.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/QxxhUldwQkGZ8T_2HfGDYA/zh-cn_image_0000002194009716.png "点击放大")
 
 **图8** 正例滑动时单个aboutToReuse耗时  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/s2PJdPKpR7aqDbB_tojAHQ/zh-cn_image_0000002231555137.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/0t-QWwniQfyd66z6-qiC5Q/zh-cn_image_0000002231555137.png "点击放大")
 
 如图7所示，从反例Trace中“H:ReuseOfGrid”标签可以看出，单个aboutToReuse执行耗时20ms。而从图8正例Trace中“H:ReuseOfGrid”标签看，单个aboutToReuse执行耗时仅56μs。带有耗时操作的单个aboutToReuse执行耗时远超期望时间8.3ms，在Grid滑动高频调用aboutToReuse的场景中，将会导致应用连续丢帧卡顿，性能大幅下降。因此，组件复用时应避免在aboutToReuse中执行耗时操作。
 
@@ -658,10 +658,10 @@ build() {
 **结果对比**
 
 **图9** itemGenerator中执行耗时操作的滑动效果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/4ekR76N1QwOnL7rZWGritg/zh-cn_image_0000002229335521.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/vBsYxu08QFKRrO48xI48hA/zh-cn_image_0000002229335521.gif)
 
 **图10** itemGenerator中不执行耗时操作的滑动效果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/NkYEkuIeQ5Gvp1VlvR993w/zh-cn_image_0000002194009708.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/lgnz5wQnRP67tkMi4JBJgg/zh-cn_image_0000002194009708.gif)
 
 图9是在itemGenerator入参函数中执行耗时操作的滑动效果，可以明显看出滑动时存在卡顿，item节点刷新慢等问题。图10是在aboutToAppear中执行耗时操作，把耗时操作计算的值timeConsumingValue传入itemGenerator的滑动效果，可以看出滑动效果流畅，无卡顿问题。
 
@@ -979,10 +979,10 @@ ResourceManager通过getXXXSync接口同步获取资源的方式有两种，1、
 **结果对比**
 
 **图11** 通过资源对象获取数据的耗时  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/iT3fR8B3QZeb5bCf-m-ZGg/zh-cn_image_0000002229335497.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/Vd8UAiipSuug4gdk9AbfAg/zh-cn_image_0000002229335497.png "点击放大")
 
 **图12** 通过资源id获取数据的耗时  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/oRI_Eyk2QLiJk_k9s98nAg/zh-cn_image_0000002193850108.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/4d96e58lRZyMYLcoAnwq9g/zh-cn_image_0000002193850108.png "点击放大")
 
 getStringSync参数为资源信息时（1.956ms）比参数为资源ID值时（0.071ms）耗时更多，因为通过resource对象获取资源时，获取的是拷贝对象，获取过程中发生了一次深拷贝，而通过资源ID获取子元素，直接获取原对象的引用。所以当需要使用类似方法时，使用资源ID值作为参数更优。
 
@@ -1101,7 +1101,7 @@ export class Item {
 使用profiler工具抓取Trace：
 
 **图13** 不使用多线程的Trace信息  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/GFWXNmeGTeqx2Mt7ZiTy-Q/zh-cn_image_0000002229450001.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/CBQFSyGpQZqx8OoSoMyE1Q/zh-cn_image_0000002229450001.png "点击放大")
 
 从图中可以看到，在主线程中出现了大块的耗时，直接导致用户在滑动的时候能感受到明显的卡顿。异步回调函数最后也由主线程执行，所以应该尽量避免在回调函数中执行耗时操作。可以使用系统自带的[@ohos.taskpool（启动任务池）](../harmonyos-references/js-apis-taskpool.md)多线程能力，将耗时任务交由子线程执行，避免主线程的长时间阻塞，以下为使用TaskPool优化后的代码：
 
@@ -1195,12 +1195,12 @@ async function mockRequestData(context: Context): Promise<Item[]> {
 ```
 
 **图14** 使用多线程的Trace信息  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/RmTMZMz4RS20JzxDQoyJbw/zh-cn_image_0000002229335505.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/iEStr6QKTweFWXNyEwEnuQ/zh-cn_image_0000002229335505.png "点击放大")
 
 通过上图可以看出，使用多线程能力TaskPool后，将原先在主线程中的获取资源的任务getRawFileContent转移到了TaskWorker线程，避免了获取资源导致的主线程长时间阻塞，但是TaskWorker将结果返回给主线程，主线程反序列化数据的过程中依然会消耗一定时间，接下来在泳道图中搜索"H:Deserialize"标签查看主线程反序列化耗时。
 
 **图15** 主线程反序列化耗时  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/u3htRO1kSIuZtM-0bv52yw/zh-cn_image_0000002229335525.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/y0vlb1PwTAaDx8mXuTdKCg/zh-cn_image_0000002229335525.png "点击放大")
 
 从图中可以看出主线程在反序列化TaskWorker线程返回的数据依然存在12ms的耗时，超过当前测试设备的Vsync周期（8.3ms），应用可能会因此引起卡顿。针对跨线程的序列化耗时问题，系统提供了@Sendable装饰器来实现内存共享，可以在返回的Item类上使用@Sendable装饰器，继续优化性能。
 
@@ -1222,7 +1222,7 @@ export class Item {
 上述示例代码中在TaskWorker线程返回的Item对象上使用了@Sendable，系统会使用共享内存的方式处理使用了@Sendable的类，从而降低反序列化的开销，抓取Trace图如下：
 
 **图16** 使用@Sendable装饰器后主线程反序列化耗时  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/BbDrzCiySYiWBWpjA3ubpg/zh-cn_image_0000002229449973.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/TjiX6JTBRFOnmo_3kQZGrA/zh-cn_image_0000002229449973.png "点击放大")
 
 从图中可以看出反序列化的耗时由12ms减少到1.6ms，明显减少了主线程的阻塞时间，所以当主线程需要反序列化其他线程返回的大量数据时，可以使用@Sendable装饰器减少主线程的时间消耗。
 

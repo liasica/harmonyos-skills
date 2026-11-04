@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-native-mem
 title: 分析native内存
 breadcrumb: 最佳实践 > 性能 > 性能分析 > 分析内存占用问题 > 分析native内存
 category: best-practices
-scraped_at: 2026-10-29T08:03:21+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:548a94d5aca0d29ed56993d4b2ed5ed8fd82dfa019909c677a8cfcb02859070e
+scraped_at: 2026-11-04T08:37:58+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:bae8131a7341be1939f0865040707a4beb9bdf8c83d708ccf40a4e73174b24b8
 ---
 
 本文Native内存指的主要是代码中通过malloc、new、realloc、calloc函数申请的堆内存和通过mmap映射内存地址空间，Native内存是进程内存中占比较高，也是容易出泄漏问题的一种内存。分析Native内存分布与占用问题需要借助工具，以及一些测试，分析技巧。DevEco Studio Profiler插件的Allocation模板，通过对基础库的malloc，free等函数进行插桩记录，可以抓取Native内存分配释放记录，包括大小和堆栈等数据，用以分析native内存的占用问题。
@@ -23,7 +23,7 @@ DevEco Studio Profiler插件的Allocation模板可以帮助用户分析堆内存
 5. 配置抓栈属性;
 6. 点击录制按钮，开启调优。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/dlpEncBSQy-z0OAmGFq-1g/zh-cn_image_0000002404045161.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/S2hQJDhnSIiuHuujNMu1BQ/zh-cn_image_0000002404045161.png "点击放大")
 
 **注意** 
 
@@ -35,7 +35,7 @@ DevEco Studio Profiler插件的Allocation模板可以帮助用户分析堆内存
 
 针对上节操作中第五步配置属性，对各属性进行介绍
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/C0W1cpR9T9W_B5hEsGK9hg/zh-cn_image_0000002370565332.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/ATNKNizAS7us8JfVURc0oA/zh-cn_image_0000002370565332.png)
 
 * Statistics Mode：开启统计模式， 此处表示10秒之内相同的调用栈会被累计在一起，在IDE上只显示一个栈，及出现次数，还有该栈总共未释放的内存。不会记录单次调用栈。关闭统计模式时，会详细记录每次内存分配栈出现的时间。对性能要求比较高的场景，可以选择开启统计模式。
 * Sampling Intervals：开启统计模式按钮才使用的参数，表示统计模式的统计间隔。
@@ -54,19 +54,19 @@ DevEco Studio Profiler插件的Allocation模板可以帮助用户分析堆内存
 
 在Persistent一栏看到进程分配但未释放的总内存。除此之外，还可以看到内存分配size聚类的信息，并根据需要进行排序查看。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/9DY1FriERnOSu3pd3bcnqg/zh-cn_image_0000002404124993.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/KiRKDYwDSByCdh7eRoY-hQ/zh-cn_image_0000002404124993.png "点击放大")
 
 **调用栈信息**
 
 选中Call Trees这一栏后，可以展开需要分析的栈，栈从上到下即调用链的顺序，栈底一般是operator new函数。下图中绿色部分为ArkTS栈，在开启Record JS Stack开关后可以抓到。可以根据需要选择展示已释放或者未释放部分的内存，并可以搜索需要过滤的符号。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/obIyMn6eSe6g4E7QDeoW-g/zh-cn_image_0000002370405444.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/vXKutoX_RJiACgUkJ3QVtw/zh-cn_image_0000002370405444.png "点击放大")
 
 **统计模式信息**
 
 在使用统计模式时，抓取的信息进行了精简化，不会展示每次调用栈具体时间，而是周期性聚类展示。所以会展示周期内Native内存分配变化情况。可以通过下图Count看到栈出现的总次数和总大小。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/xhR6s8m-SNm8UdMGNMH9vg/zh-cn_image_0000002404045165.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/vXwESEIUT82UG3SEsvc7Fw/zh-cn_image_0000002404045165.png "点击放大")
 
 ## 分析步骤
 
@@ -74,23 +74,23 @@ DevEco Studio Profiler插件的Allocation模板可以帮助用户分析堆内存
 
 1. 内存分配Top线程分析：选择Created & Existing后，在Call Trees一栏可以看到不同线程未释放内存的情况，可以从内存泄漏较多的线程入手进行分析。在Allocation List中可以搜索线程名来进一步分析调用栈。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/H-jV5RK6TpSRBmRxVxIYIg/zh-cn_image_0000002370565336.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/cQwVF87uQbijtZ_qOstPfg/zh-cn_image_0000002370565336.png "点击放大")
 
    当应用侧ArkTS/JS的代码逻辑触发napi调用然后在native层有内存分配的情况下，ArkTS/JS栈会传递到profiler侧和native栈进行缝合，展示出一套完整的调用链。所以profiler不仅可以用来分析内存泄漏问题，还可以用来分析业务逻辑和调用关系。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/8X9oQlE2TnuoI2_Pgl4ZSw/zh-cn_image_0000002404125001.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/JLC1RxITQvO4ByjBD4tvsA/zh-cn_image_0000002404125001.png "点击放大")
 2. 内存分配Top调用栈分析：在使用非统计模式抓栈时，在Allocations List一栏可以对所有调用栈分配内存的大小进行排序，着重分析分配内存较多的栈。如果调用栈中某些帧只有地址，没有符号，则需要导入带符号的elf文件，然后重新解析。导入的按钮在过滤选项旁边。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/otWrTyanQgyQJMewrS5SCA/zh-cn_image_0000002370405448.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/Te4M9e5DQ1qirik47HX2YQ/zh-cn_image_0000002370405448.png "点击放大")
 3. 分析具体调用链：在Call Trees树状图中或者Allocations List中，找到需要分析的调用栈后，可以在右侧Heaviest Stack中清晰看到具体的调用链，调用链从上到下展示了调用逻辑。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/2CXd9hmYQ0S4u05_6_NS2w/zh-cn_image_0000002404045169.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/m4cIxE6nR_2XBIACtt_PoQ/zh-cn_image_0000002404045169.png "点击放大")
 
 ## 常见问题:
 
 问题：为什么抓取非[debug版本应用](../harmonyos-guides/performance-analysis-kit-terminology.md#debug版本应用)时获取不到数据？
 
-解答: 由于安全限制，profiler不支持抓非debug版本应用。
+解答:  由于安全限制，profiler不支持抓非debug版本应用。
 
 问题：为什么Allocation分析模板抓到的堆内存大小比hidumper看到的native heap数值要小？
 

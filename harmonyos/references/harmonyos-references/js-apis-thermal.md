@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-t
 title: "@ohos.thermal (热管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 设备管理 > @ohos.thermal (热管理)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:24+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b2b1cb3491ed152dc7d0c3ff50a3b1a2be1bead702a6adf7d268d4d9b623b320
+scraped_at: 2026-11-04T08:35:03+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:cab475c50e95e5d199a1e0ea659c70a9928bba086e9933f46b68fef3c62a5c4f
 ---
 
 该模块提供热管理相关的接口，包括热档位查询及注册回调等功能。
@@ -24,7 +24,12 @@ import {thermal} from '@kit.BasicServicesKit';
 
 registerThermalLevelCallback(callback: Callback<ThermalLevel>): void
 
-订阅热档位变化时的回调提醒。使用callback异步回调。
+订阅热档位变化时的回调提醒。当设备温度跨越档位阈值导致热档位发生变化时，系统自动触发回调通知，通过callback返回变化后的热档位等级。使用callback异步回调。此方法与[thermal.unregisterThermalLevelCallback](js-apis-thermal.md#thermalunregisterthermallevelcallback9)配对使用，用于取消先前注册的热档位回调。
+
+* 每个进程仅支持订阅一个回调，重复订阅将覆盖。
+* 回调函数应尽快返回，不可执行耗时操作（如同步文件 I/O），否则可能阻塞系统热档位通知投递。
+* 当热管理服务异常重启后，已注册的回调将自动失效且不会收到通知。开发者需重新调用 registerThermalLevelCallback 恢复订阅。
+* 当热管理服务不可用时，订阅可能静默失败且不抛出异常。开发者无法从返回值判断订阅是否成功。建议在订阅后通过[thermal.getLevel](js-apis-thermal.md#thermalgetlevel9)验证服务是否可用（若[thermal.getLevel](js-apis-thermal.md#thermalgetlevel9)返回COOL且设备明显发热，则服务可能不可用）。
 
 **系统能力：** SystemCapability.PowerManager.ThermalManager
 
@@ -59,7 +64,7 @@ try {
 
 unregisterThermalLevelCallback(callback?: Callback<void>): void
 
-取消订阅热档位变化时的回调提醒。使用callback异步回调。
+取消订阅热档位变化时的回调提醒。使用callback异步回调。此方法与[thermal.registerThermalLevelCallback](js-apis-thermal.md#thermalregisterthermallevelcallback9)配对使用，用于取消先前注册的热档位回调。取消订阅未注册的回调不会报错，视为无操作。
 
 **系统能力：** SystemCapability.PowerManager.ThermalManager
 
@@ -67,7 +72,7 @@ unregisterThermalLevelCallback(callback?: Callback<void>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| callback | Callback<void> | 否 | 可选参数，回调函数，无返回值。 |
+| callback | Callback<void> | 否 | 回调函数。反注册完成后的通知回调，无返回值。该参数仅用于接收取消订阅完成的通知，取消订阅成功后会调用该回调函数。不传入此参数时，取消订阅仍生效，但不会触发回调通知。 |
 
 **错误码：**
 

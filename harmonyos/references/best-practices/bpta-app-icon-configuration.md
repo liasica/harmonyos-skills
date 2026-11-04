@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-icon-c
 title: 应用图标配置与开发
 breadcrumb: 最佳实践 > 应用框架 > 程序包结构 > 应用图标配置与开发
 category: best-practices
-scraped_at: 2026-10-29T08:03:14+08:00
+scraped_at: 2026-11-04T08:37:49+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:781eff79daa65471375db9274261e805db1227c6ec2d7f000eed7b654958edd7
+content_hash: sha256:047639957eee7161888d9cacff5386ecc461aa3f29a0611d39dd2ac97a816c43
 ---
 
 ## 概述
@@ -219,8 +219,8 @@ UI Design Kit提供了应用图标处理能力，支持单层图标和分层图�
 
    app.json5文件：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/Dwmlr5VJSACfU58Kx3uTeg/zh-cn_image_0000002548066135.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/3scTZATGTcymuSlmioq3bg/zh-cn_image_0000002548066135.png)
 
    module.json5文件的abilities标签：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/n0_603iPTVyF28OUaTQBPw/zh-cn_image_0000002516546242.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/uHGlZCfcRN-3PBSsJBzLoQ/zh-cn_image_0000002516546242.png)

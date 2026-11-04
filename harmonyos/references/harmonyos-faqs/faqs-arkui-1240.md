@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1240
 title: 应用未适配分屏模式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 应用未适配分屏模式
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:29+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:3f8e8b7c1943a4104688f440c8a2679277601776ceb2a1c99825a779b8b96036
+scraped_at: 2026-11-04T08:39:04+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:3d0234520dec0257303faf40cccace4a600c7b3f8d983ce27c6329ad12603411
 ---
 
 ## 问题现象
@@ -27,7 +27,7 @@ content_hash: sha256:3f8e8b7c1943a4104688f440c8a2679277601776ceb2a1c99825a779b8b
 * [abilities](../harmonyos-guides/module-configuration-file.md#abilities标签)标签中supportWindowMode可以设置UIAbility组件所支持的窗口模式是否支持分屏。preferMultiWindowOrientation属性主要标识当前UIAbility组件多窗布局方向，缺省默认支持。
 * 应用可以通过[on('windowStatusChange')](../harmonyos-references/arkts-apis-window-window.md#onwindowstatuschange11)方法可以检测窗口是否进入分屏状态。
 * 从全屏进入分屏模式后，窗口尺寸、宽高比例会发生变化。[on('windowSizeChange')](../harmonyos-references/arkts-apis-window-window.md#onwindowsizechange7)实现对窗口尺寸大小变化的监听，再根据窗口的尺寸变化，更新调整自身应用布局以实现适配。
-* 参考[合理控制元素显示与隐藏](../best-practices-V5/bpta-improve-layout-performance-V5.md#section14111154271)设置[小窗口布局](../best-practices-V5/bpta-phone-split-guide-V5.md#section88711672417)。
+* 参考[合理控制元素显示与隐藏](../doccenter-app-quality/bpta-control-rendering-range.md#section1922265142317)设置[小窗口布局](../doccenter-multi-device/bpta-multi-device-responsive-layout.md#section8955133118444)。
 * [Scroll组件](../harmonyos-references/ts-container-scroll.md)是可滚动的容器组件，上下分屏时，窗口高度会减小至约屏幕的1/2，可能导致全屏完整显示的内容在上下分屏时显示不全。推荐使用Scroll组件实现页面支持滑动。
 
 ## 问题定位

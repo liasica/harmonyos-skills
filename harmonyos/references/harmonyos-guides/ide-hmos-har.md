@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-har
 title: 开发静态共享包
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 开发环境搭建 > 工程创建 > 模块管理 > 开发发布与管理共享包 > 开发静态共享包
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:13:04+08:00
+scraped_at: 2026-11-04T08:31:42+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:91e653766730d6f8456d9cb8d8095974b124cd3bcd960b8254888f745e0ef84e
+content_hash: sha256:39f658ac1e476a33b103817093b3560d7b016a038f045af9b0c041a38f7cb387
 ---
 
 HAR（Harmony Archive）是静态共享包，可以包含代码、C++库、资源和配置文件。通过HAR可以实现多个模块或多个工程共享ArkUI组件、资源等相关代码。HAR不同于HAP，不能独立安装运行在设备上，只能作为应用模块的依赖项被引用。
 
 接下来，将简单介绍库模块的工程结构，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/n0Em1oEQTrWyD8454asKHQ/zh-cn_image_0000002750169832.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/Ax4UTvJATqmzySZlMOZ3tA/zh-cn_image_0000002750169832.png "点击放大")
 
 相关字段的描述如下，其余字段与Entry或Feature模块相关字段相同，可参考[C++工程目录结构](ide-hmos-project-structure.md#section181711599584)。
 
@@ -31,17 +31,17 @@ HAR（Harmony Archive）是静态共享包，可以包含代码、C++库、资�
 1. 点击菜单栏选择**新建 > 模块**，在工程中添加模块。
 2. 在**新建模块**界面中，选择**Static Library。**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/NN_aCRWxTgacSOnGztYy2A/zh-cn_image_0000002779729001.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/eyxCMVZESAaO3tkBxd0ZLA/zh-cn_image_0000002779729001.png "点击放大")
 3. 在**模块信息**界面中，设置新添加的模块信息，设置完成后，单击**确认**完成创建。
    * **模块名**：新增模块的名称。
    * **设备类型**：支持的设备类型。
    * **Enable Native**：是否创建一个用于调用C++代码的模块，勾选表示创建，未勾选表示不创建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/AqZy1CknTuyiqREf4DTvCw/zh-cn_image_0000002750169830.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/P2U1F7jLTDKM_J90cAOb0A/zh-cn_image_0000002750169830.png "点击放大")
 
    创建完成后，会在工程目录中生成库模块及相关文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/Gn73JFfKR4OttuMdHkMthA/zh-cn_image_0000002779728999.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/TbBHF7LzTs20VZGel83AQQ/zh-cn_image_0000002779728999.png "点击放大")
 
 ## 编译HAR模块
 
@@ -49,11 +49,11 @@ HAR（Harmony Archive）是静态共享包，可以包含代码、C++库、资�
 
 HAR可用于工程其它模块的引用，或将HAR上传至ohpm仓库，供其他开发者下载使用。若部分源码文件不需要打包至HAR中，可通过[创建.ohpmignore文件](ide-hmos-hvigor-build-profile.md#section1744183710558)，配置打包时要忽略的文件/文件夹。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/6Wg9NyqiQqGubzmbNSim4g/zh-cn_image_0000002779608853.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/658xkwEoQTSUoRn_67d1vw/zh-cn_image_0000002779608853.png "点击放大")
 
 编译构建的HAR可在模块下的build目录下获取，包格式为\*.har。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/5r5A9Z5jTb-TEQK12SPL4g/zh-cn_image_0000002750169834.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/s38pKGgDTy23cDAjdzQzFw/zh-cn_image_0000002750169834.png "点击放大")
 
 在编译构建HAR时，请注意以下事项：
 

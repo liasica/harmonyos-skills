@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-atta
 title: attach启动调试
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 应用调试 > 代码调试 > ArkTS代码调试 > attach启动调试
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:13:09+08:00
+scraped_at: 2026-11-04T08:31:48+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:f111c23b62b9324275fae88ed18474762180d071ebcbd0454baeb382c37e6b1c
+content_hash: sha256:09ca59643aeb8a4974e732133805ca579c03f90c923244ee58011ace8191bd3a
 ---
 
 开发者也可以通过将调试程序附加到已运行的应用进行调试。
@@ -23,22 +23,22 @@ content_hash: sha256:f111c23b62b9324275fae88ed18474762180d071ebcbd0454baeb382c37
 * 本地无源码。
 * 应用包名不匹配，将出现提示“**所选进程与当前项目的包名不匹配！**”，但不阻塞调试过程。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/N_v90xqIR4eNkVlR40Qz8w/zh-cn_image_0000002779608583.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/Z-HxR2G8Q8W_RNaWIevh3Q/zh-cn_image_0000002779608583.png)
 
 ## 操作步骤
 
 1. 在工具栏中，选择调试的设备，并单击附加调试。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/AVHRnAiiRqG0Uub_u56hNQ/zh-cn_image_0000002779608585.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/jj6iOF5DTl6uIkIivCoOwA/zh-cn_image_0000002779608585.png)
 2. 选择要调试的应用进程，若应用包名与当前工程不一致，则需勾选**显示所有进程**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/UywZFz8mQ1-tF78egL-zPA/zh-cn_image_0000002779728735.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/-px_rPN6SPy6F3-NAKFwiw/zh-cn_image_0000002779728735.png)
 3. 选择需要使用的调试配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/qElaj0XKRIqrY1aMLsEhrQ/zh-cn_image_0000002750009670.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/YtddsoTzQSauhzWOu-jA1A/zh-cn_image_0000002750009670.png)
 4. 选择好调试配置进行附加调试后，**调试类型**不可改变，只可在**运行/调试配置**界面修改。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/Rc8UBNE5SDWlDSw1MzZy-w/zh-cn_image_0000002750169560.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/yV-QdSE0Sm2ZQDS65_Aw1A/zh-cn_image_0000002750169560.png)
 5. 点击**确定**开始附加调试。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/iEi2SLXtTPqf7NK4eJMZ3g/zh-cn_image_0000002779728733.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/DUdaZmUJTgiP6UtGUakpyQ/zh-cn_image_0000002779728733.png)

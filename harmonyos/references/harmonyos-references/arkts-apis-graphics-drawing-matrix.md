@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Matrix)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (Matrix)
 category: harmonyos-references
-scraped_at: 2026-10-31T07:38:32+08:00
+scraped_at: 2026-11-04T08:36:31+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:bc5153eb93b0394d2af5893c5fd17f978632965f0dd6735629bf4c1f3d0c4d69
+content_hash: sha256:599aa824873e0a281f04a5d5b6d933b99865b14f590c86986093e96590f9f94c
 ---
 
 矩阵对象，用于图形的坐标变换，支持平移、旋转、缩放和倾斜等变换操作。通过矩阵变换可实现不同坐标系之间的映射。
 
 表示为3×3的矩阵，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/NsN-_04qTqSsVbafsbTOVw/zh-cn_image_0000002806031823.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/se-RTvipRi-sTTSYTzPoMA/zh-cn_image_0000002809053063.png)
 
 矩阵中的元素从左到右，从上到下分别表示水平缩放因子、水平倾斜系数、水平位移系数、垂直倾斜系数、垂直缩放因子、垂直位移系数、x轴透视系数、y轴透视系数、透视缩放因子。
 
 设(x1, y1)为源坐标点，(x2, y2)为源坐标点通过矩阵变换后的坐标点，则两个坐标点的关系如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/x8v8Oh5ETYy50xKTid_v7w/zh-cn_image_0000002806111713.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/tdQVgecUSC6xqeQW5KqJJg/zh-cn_image_0000002779853500.png)
 
 **说明** 
 
@@ -977,7 +977,7 @@ mapRect(dst: common2D.Rect, src: common2D.Rect): boolean
 
 将目标矩形设置为源矩形通过矩阵变换后的图形的外接矩形。如下图所示，蓝色矩形为源矩形，假设黄色矩形为源矩形通过矩阵变换形成的图形，此时黄色矩形的边不与坐标轴平行，无法使用矩形对象表示，因此，将目标矩形设置为黄色矩形的外接矩形，即黑色矩形。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/_A3vQqobSe-YFkelnyXC-A/zh-cn_image_0000002776912092.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/pKhkREHaSZayfd9stVREcQ/zh-cn_image_0000002779693532.png)
 
 **系统能力：** SystemCapability.Graphics.Drawing
 

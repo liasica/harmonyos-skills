@@ -1,6 +1,6 @@
 # 最佳实践（best-practices）
 
-共 491 篇文档。
+共 485 篇文档。
 
 - [电脑异形窗口](bpta-2in1-window-shape.md)
 - [基于AbcKitTS实现字节码插桩](bpta-abckitts-implements-instrumentation.md)
@@ -48,7 +48,6 @@
 - [ArkWeb OOM故障模式说明](bpta-arkweb-oom-fault-mode-description.md)
 - [JS对象长期被JS持有导致内存泄漏故障模式说明](bpta-arkweb-oom-js-object-held-by-js-object.md)
 - [ArkWeb Render进程卡死故障模式说明](bpta-arkweb-render-freeze.md)
-- [ArkWeb渲染框架适配](bpta-arkweb_rendering_framework.md)
 - [基于Aspect插件库实现切面编程](bpta-aspect-implements-aop.md)
 - [音频和视频](bpta-audio-and-video.md)
 - [音频投播](bpta-audio-cast.md)
@@ -101,7 +100,7 @@
 - [自定义字体设置](bpta-custom-font-settings.md)
 - [定制hvigor插件](bpta-custom-hvigor-plugin.md)
 - [深色模式适配](bpta-dark-mode-adaptation.md)
-- [应用包体积优化](bpta-decrease_pakage_size.md)
+- [应用包体积优化](bpta-decrease-pakage-size.md)
 - [操作延时触发](bpta-delayed-trigger-operation.md)
 - [桌面快捷方式](bpta-desktop-shortcuts.md)
 - [性能检测](bpta-detection.md)
@@ -112,7 +111,6 @@
 - [跨设备剪贴板](bpta-distributed-pasteboard-cast.md)
 - [跨设备剪贴板常见场景](bpta-distributed-pasteboard.md)
 - [开发态快速定位DMA泄漏](bpta-dma-leak-in-develop.md)
-- [Drawing自绘制性能提升](bpta-drawing-capability-improve-performance.md)
 - [平行视界](bpta-easygo-parallel.md)
 - [运维态高效处理FD资源泄漏](bpta-efficiently-handle-fd-leaks.md)
 - [基于SFFT的大文件高速并发传输](bpta-file-transmission-based-on-sfft.md)
@@ -127,8 +125,6 @@
 - [游戏](bpta-game.md)
 - [概述](bpta-general-comments.md)
 - [基于StateStore的全局状态管理](bpta-global-state-management-state-store.md)
-- [GPU加速](bpta-gpu-acceleration-practices.md)
-- [图形绘制](bpta-graphic-drawing-practices.md)
 - [基于ScrollComponents实现网格](bpta-grid-based-on-scrollcomponents.md)
 - [基于DialogHub的通用弹窗](bpta-hadss_dialoghub.md)
 - [运维态高效处理DMA资源泄漏](bpta-handling-dma-resource-leaks.md)
@@ -219,7 +215,6 @@
 - [多设备设置界面](bpta-multi-settings-application-page.md)
 - [常见导航样式案例](bpta-multi-tab-practice.md)
 - [多目标产物构建](bpta-multi-target.md)
-- [智慧多窗](bpta-multi-window-practice.md)
 - [多窗](bpta-multi-window.md)
 - [多设备游戏界面](bpta-multi_game.md)
 - [音乐播放场景低功耗规则](bpta-music-playback-scenarios.md)
@@ -436,7 +431,6 @@
 - [应用启动与响应优化](bpta-startup-response-optimization.md)
 - [状态刷新控制](bpta-state-refresh.md)
 - [静态场景低功耗规则](bpta-static-scenarios.md)
-- [状态管理最佳实践](bpta-status-management.md)
 - [Swiper组件加载丢帧优化](bpta-swiper_high_performance_development_guide.md)
 - [平板](bpta-tablet-pc.md)
 - [图片资源加载优化](bpta-texture-compression-improve-performance.md)

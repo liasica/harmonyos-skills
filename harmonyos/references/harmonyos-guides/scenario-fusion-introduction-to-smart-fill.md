@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 智能填充概述
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 智能填充服务 > 智能填充概述
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:33:14+08:00
+scraped_at: 2026-11-04T08:30:42+08:00
 doc_updated_at: 2026-10-16
-content_hash: sha256:bf497e57acd2f32c3d0d1315b649f81c77d3abada6df4544f26f39a3f667ce3c
+content_hash: sha256:2cd9fb42dad6126329a18a719cd3a82a4426f854edbc41f2e2cb9e626473853c
 ---
 
 智能填充服务提供场景化的输入建议，完善应用/元服务的系统开发能力，实现用户对复杂表单的一键填充，助力打造HarmonyOS极致输入效率。开发ArkUI输入组件后（[TextInput](../harmonyos-references/ts-basic-components-textinput.md)、[TextArea](../harmonyos-references/ts-basic-components-textarea.md)以下统称输入组件），一行代码配置快速启用功能。
@@ -30,13 +30,13 @@ content_hash: sha256:bf497e57acd2f32c3d0d1315b649f81c77d3abada6df4544f26f39a3f66
 2. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，选择“**开发与服务**”。
 3. 选择应用后，在“开放能力管理”栏，找到智能填充服务的开放能力，点击右侧“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/KKk8zhZKSEOnfhcl4waE3A/zh-cn_image_0000002776910124.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/4y3ERMGeSw6JSxjsCWPkgA/zh-cn_image_0000002779851604.png)
 4. 在“新建业务申请”窗口填写申请原因，选择上传附件，然后点击“提交”。
 
    * 申请原因：请详细描述使用**智能填充的具体场景**。（例如：\*\*\*应用是\*\*\*（应用简介），希望在\*\*\*场景中使用智能填充\*\*\*字段信息，以提升用户表单填写效率。）字段信息请参考[ContentType使用场景说明](scenario-fusion-intelligentfilling-appendix.md)。
    * 上传附件：提供接入智能填充场景的页面图片或视频。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/uvMKOM_zSry5Q1UjG4U-cQ/zh-cn_image_0000002776750138.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/z19U3jGhQUu-ZbtJF1VTNg/zh-cn_image_0000002779691636.png)
 
    **说明** 
 
@@ -53,7 +53,7 @@ content_hash: sha256:bf497e57acd2f32c3d0d1315b649f81c77d3abada6df4544f26f39a3f66
 
 * 设备智能填充开关必须处于打开状态，请前往“设置 > 隐私和安全 > 智能填充”页面开启开关，页面中可查看“关于智能填充与隐私的声明”和“权限使用说明”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/sImNjSgERX-nvR0QywK9AQ/zh-cn_image_0000002806029855.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/StgMig9FTGS_PUjNXZsphg/zh-cn_image_0000002809011257.png)
 
 * 应用/元服务的输入组件的[ContentType](scenario-fusion-intelligentfilling-appendix.md)属性配置对应场景，即可触发智能填充功能。
 * 设备已连接互联网。
@@ -66,27 +66,27 @@ content_hash: sha256:bf497e57acd2f32c3d0d1315b649f81c77d3abada6df4544f26f39a3f66
 
 * 点击表单中ContentType为“PERSON\_FULL\_NAME”（姓名）或“PERSON\_LAST\_NAME”（姓氏）、“PERSON\_FIRST\_NAME”（名字）的输入组件时，将同时推荐表单中其他ContentType类型的数据（以下统称多输入框场景）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/7ncKBjbSQViaRzx6s5F3wg/zh-cn_image_0000002806109745.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/wIS4V39KTlCOu4bd7nSHpQ/zh-cn_image_0000002809051171.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/eFBxNE5KRX2g25mN9aO3IA/zh-cn_image_0000002776910126.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/bmSKKPQ3TNW7N_s7NE03oQ/zh-cn_image_0000002779851606.png)
 
 * 点击其他ContentType的输入组件时，只会推荐对应场景数据。例如点击ContentType为“NICKNAME”（昵称）的输入组件时，仅会在弹窗中推荐昵称数据（以下统称单输入框场景）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/6NmSMVo7Q92Rk2Fg4KuxWQ/zh-cn_image_0000002776750140.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/KgbW-pqIS0-EFtrCpnj7Zg/zh-cn_image_0000002779691638.png)
 
 * 表单中存在ContentType为“PERSON\_FULL\_NAME”（姓名）或“PERSON\_LAST\_NAME”（姓氏）、“PERSON\_FIRST\_NAME”（名字）的输入组件且其中已填入信息，在点击其他已配置ContentType的输入组件时，将根据已填入的姓名信息进行信息匹配推荐。例如姓名填写“张三”，点击“手机号码”输入组件仅推荐数据源中“张三”相关的信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/Dd8wIHNQS321CM6Nyz3JkA/zh-cn_image_0000002806029857.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/wfVu4_3dQa-1q6UlY5PqNg/zh-cn_image_0000002809011259.png)
 
 * 表单中存在ContentType为“PERSON\_FULL\_NAME”（姓名）或“PERSON\_LAST\_NAME”（姓氏）、“PERSON\_FIRST\_NAME”（名字）的输入组件且存在地址输入组件，在点击用户姓名类和地址信息类的ContentType输入组件时，若推荐的数据包含华为账号数据源的数据，且华为账号数据源的推荐数目少于华为账号收货地址总数时，可点击“更多地址”按钮拉起选择其他收货地址页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/mCulk9EvT_CwyJdwRJeO6w/zh-cn_image_0000002806109747.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/gqlryQe1SS2HxeIEnyh8bg/zh-cn_image_0000002809051173.png)
 
 ### 昵称填写推荐场景
 
 当表单中需要昵称填写时，可从华为账号信息来源获取。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/zp1TXqHDRHSPzEv6Sk07ew/zh-cn_image_0000002776750140.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/n1GJzsU7ScmlvU6qiMPU2w/zh-cn_image_0000002779691638.png)
 
 ### 日程信息推荐场景
 
@@ -96,13 +96,13 @@ content_hash: sha256:bf497e57acd2f32c3d0d1315b649f81c77d3abada6df4544f26f39a3f66
 
 日程数据源推荐场景目前仅支持中文地址。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/e_jpT8iUQviWVnWsjQnwVQ/zh-cn_image_0000002776910128.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/Lm37aoWBT7io4xESgiqPJg/zh-cn_image_0000002779851608.png)
 
 ### 联系人信息推荐场景
 
 点击配置了ContentType为“PHONE\_NUMBER”（手机号）的输入组件时，若表单中存在ContentType为“PERSON\_FULL\_NAME”（姓名）或“PERSON\_LAST\_NAME”（姓氏）、“PERSON\_FIRST\_NAME”（名字）的输入组件且已填入信息，将根据其填入的信息来推荐联系人数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/yAKFOqGXQoWNaGSsqMUcMw/zh-cn_image_0000002776750142.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/zbXcfynCTSGhYcUi1ga2WA/zh-cn_image_0000002779691640.png)
 
 ### 车牌信息推荐场景
 
@@ -114,7 +114,7 @@ content_hash: sha256:bf497e57acd2f32c3d0d1315b649f81c77d3abada6df4544f26f39a3f66
 
 从API版本26.0.0开始，支持华为账号数据源。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/45FwkEjZSsKnIvKI7-5zzg/zh-cn_image_0000002806029859.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/i_zZ-IfhSCC2tFL4f8RMnQ/zh-cn_image_0000002809011261.png)
 
 ### 护照信息推荐场景
 
@@ -122,7 +122,7 @@ content_hash: sha256:bf497e57acd2f32c3d0d1315b649f81c77d3abada6df4544f26f39a3f66
 
 表单中存在ContentType为“COUNTRY\_ADDRESS”（国籍）、“PASSPORT\_NUMBER”（护照号）、“VALIDITY”（有效期至）、“ISSUE\_AT”（签发地）的输入组件，在点击姓名类输入组件时，可从历史表单输入数据源中推荐护照信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/wX0N40bSQHayJAGA9TfA_g/zh-cn_image_0000002806109749.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/GPy8OIvIScKlVv9zBRcTJQ/zh-cn_image_0000002809051175.png)
 
 ### 发票抬头推荐场景
 
@@ -130,7 +130,7 @@ content_hash: sha256:bf497e57acd2f32c3d0d1315b649f81c77d3abada6df4544f26f39a3f66
 
 当表单中存在ContentType为“ORGANIZATION”（名称）和“TAX\_ID”（税号）时，点击名称框可从华为账号数据源获取数据进行主动推荐，或根据输入内容进行匹配推荐，名称单框不支持推荐；税号框则根据名称框内容进行匹配推荐，名称框为空则进行主动推荐，税号单框不支持匹配推荐。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/LzNdajk5RSCuEpd0obn_7Q/zh-cn_image_0000002776910130.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/k0dBgm41QiaHkYLgQs53ZA/zh-cn_image_0000002779851610.png)
 
 ### 智能识别模式下通过导航条拉起智能填充进行填充推荐场景
 
@@ -143,7 +143,7 @@ content_hash: sha256:bf497e57acd2f32c3d0d1315b649f81c77d3abada6df4544f26f39a3f66
 
 当表单输入组件未配置ContentType时，可通过智能识别表单完成填充数据推荐。在进入到表单页面时，若有能够填充的表单数据，导航条会提示智能填充选项，用户点击后拉起推荐数据半模态，选择其中一条数据即可完成表单填充。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/9P5mExmsQRW_eANnulNuxg/zh-cn_image_0000002776750144.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/vFli79KFQBuUCJUurzob0g/zh-cn_image_0000002779691642.png)
 
 若进入到表单页面时，表单有“姓名”或“姓+名”的输入组件且已有数据，会进行匹配推荐，若有能够填充的表单数据，导航条会提示智能填充选项，用户点击后拉起推荐数据半模态，选择其中一条数据即可完成表单填充。
 
@@ -151,11 +151,11 @@ content_hash: sha256:bf497e57acd2f32c3d0d1315b649f81c77d3abada6df4544f26f39a3f66
 
 若需要使用小艺帮记数据源进行填充，请在设备上选择“设置 > 隐私和安全 > 智能填充 > 小艺帮记”，开启“使用小艺帮记作为填充建议”开关。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/i3JVjZi5QJqCXmRvLDG5Wg/zh-cn_image_0000002806029861.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/AUJiEjrxR6SmUZJaYWmaQg/zh-cn_image_0000002809011263.png)
 
 当处在表单页面时，用户可通过长按导航条触发智能填充，若有能够填充的表单数据，导航条会提示智能填充选项，用户点击后拉起推荐数据半模态，选择其中一条数据即可完成表单填充。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/89R0BEMYT4G2NPsU-Cfarg/zh-cn_image_0000002806109751.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/Xk1gbvH-QhiLBZ1sGuVtWA/zh-cn_image_0000002809051177.png)
 
 ## 历史表单输入
 
@@ -165,7 +165,7 @@ content_hash: sha256:bf497e57acd2f32c3d0d1315b649f81c77d3abada6df4544f26f39a3f66
 
 填写表单信息时，表单中存在配置了ContentType属性的输入组件触发历史表单输入保存页面，选择“保存”后智能填充弹窗提示开通服务，开启智能填充开关后填写表单进行一键填充。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/ZHc18NQeQE6y4EPOAutOYg/zh-cn_image_0000002776910132.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/s6TKTmCiRCa6QvsH7BnAZQ/zh-cn_image_0000002779851612.png)
 
 **说明** 
 
@@ -178,13 +178,13 @@ content_hash: sha256:bf497e57acd2f32c3d0d1315b649f81c77d3abada6df4544f26f39a3f66
 
 当表单中存在ContentType为“PERSON\_FULL\_NAME”（姓名）的输入组件时，且表单还存在其他任一配置了ContentType的输入组件，在触发保存时，若历史表单输入记录中存在该姓名的记录且其他数据存在差异，则拉起页面提示“更新已有记录”或“保存为新记录”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/pUO54jqIQnuxyy8cbyWZ7g/zh-cn_image_0000002776750146.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/8Bp5z2cOSSWzODzml3rd9Q/zh-cn_image_0000002779691644.png)
 
 ### 手动新增/修改历史表单输入场景
 
 在智能填充页面或个人信息页面可以对历史表单输入进行管理。当历史表单输入中无数据，可点击“新增表单信息”进行新增；也可对已保存的信息进行修改或删除（当设备设置锁屏密码，进入历史表单输入时，需要输入锁屏密码）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/KVoa3xXoTpG49vPUQ6LmuA/zh-cn_image_0000002806029863.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/WrJnHHXhQ9-RZ7yOMR0LZA/zh-cn_image_0000002809011265.png)
 
 ## 云空间同步数据
 
@@ -194,4 +194,4 @@ content_hash: sha256:bf497e57acd2f32c3d0d1315b649f81c77d3abada6df4544f26f39a3f66
 
 登录华为账号后“云空间服务 ”中 智能填充开关默认开启，可以实现多设备同步历史表单输入数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/WL9EO9MMQT6J0ONXSWlQ1w/zh-cn_image_0000002806109753.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/wJAEAsH3QhiXU7TLAsPLRQ/zh-cn_image_0000002809051179.png)

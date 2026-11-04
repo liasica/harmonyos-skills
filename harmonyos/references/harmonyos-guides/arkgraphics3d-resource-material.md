@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d
 title: 创建并使用材质资源
 breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > 资源创建与使用 > 创建并使用材质资源
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:16+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:702eac88808c0ab55c760d1b09e3bbca5e17e89e887eb2970e24324b6f3d8f62
+scraped_at: 2026-11-04T08:30:19+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:ee7737ff10aaa1602b128947fa70b91476aa8a166570e0b97f5e836da6b08e8e
 ---
 
 材质（Material）：材质是用于定义物体表面视觉效果的重要资源。材质决定了物体如何与光线交互，从而影响其最终的渲染效果，如颜色、金属感、粗糙度等外观属性。
@@ -273,6 +273,7 @@ ArkGraphics 3D中的材质类型通过[MaterialType](../harmonyos-references/js-
    import { Scene, Camera, Material, Node, Image, SceneResourceFactory, Geometry, EnvironmentBackgroundType,
      PostProcessSettings, ToneMappingType, MetallicRoughnessMaterial, Vec4 } from '@kit.ArkGraphics3D';
    import {lookAt, OrbitCameraHelper } from '../common/utils';
+   import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 加载场景资源。
 
@@ -290,6 +291,9 @@ ArkGraphics 3D中的材质类型通过[MaterialType](../harmonyos-references/js-
          let rf: SceneResourceFactory = scene.getResourceFactory();
 
          // ...
+       })
+       .catch((err: BusinessError): void => {
+         console.error('Failed to load scene, code is %{public}d, message is %{public}s', err.code, err.message);
        });
    }
    ```

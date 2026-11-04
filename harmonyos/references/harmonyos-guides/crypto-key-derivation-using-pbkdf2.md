@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-de
 title: 使用PBKDF2进行密钥派生(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥派生 > 使用PBKDF2进行密钥派生(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:049d0db9935145d8c482d7bef2504839b30f08ea1960bba98809059c84458cf8
+scraped_at: 2026-11-04T08:29:38+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:7d5c221d0dbc585dd9bc05580d943cdd04a23e758403f1b62ba91347d1608386
 ---
 
 对应的算法规格请查看[密钥派生算法规格：PBKDF2](crypto-key-derivation-overview.md#pbkdf2算法)。
@@ -19,7 +19,7 @@ content_hash: sha256:049d0db9935145d8c482d7bef2504839b30f08ea1960bba98809059c844
    * algName：指定算法'PBKDF2'。
    * password：用于生成派生密钥的原始密码。
 
-     如果使用string类型，需要直接传入用于密钥派生的数据，而不是HexString、base64等字符串类型。同时需要确保该字符串为utf-8编码，否则派生结果会有差异。
+     如果使用string类型，需要直接传入用于密钥派生的数据，而不是HexString、Base64等字符串类型。同时需要确保该字符串为utf-8编码，否则派生结果会有差异。
    * salt：盐值。
    * iterations：重复运算的次数，需要为正整数。
    * keySize：目标密钥的字节长度，需要为正整数。
@@ -38,18 +38,24 @@ content_hash: sha256:049d0db9935145d8c482d7bef2504839b30f08ea1960bba98809059c844
 
   ```typescript
   import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
 
   async function kdfAwait() {
-    let spec: cryptoFramework.PBKDF2Spec = {
-      algName: 'PBKDF2',
-      password: '123456',
-      salt: new Uint8Array(16),
-      iterations: 10000,
-      keySize: 32
-    };
-    let kdf = cryptoFramework.createKdf('PBKDF2|SHA256');
-    let secret = await kdf.generateSecret(spec);
-    console.info('key derivation output: ' + secret.data);
+    try {
+      let spec: cryptoFramework.PBKDF2Spec = {
+        algName: 'PBKDF2',
+        password: '123456',
+        salt: new Uint8Array(16),
+        iterations: 10000,
+        keySize: 32
+      };
+      let kdf = cryptoFramework.createKdf('PBKDF2|SHA256');
+      let secret = await kdf.generateSecret(spec);
+      console.info('key derivation output: ' + secret.data);
+    } catch (err) {
+      let e: BusinessError = err as BusinessError;
+      console.error(`call failed: errCode: ${e.code}, errMsg: ${e.message}`);
+    }
   }
   ```
 * 通过Promise返回结果：
@@ -79,17 +85,23 @@ content_hash: sha256:049d0db9935145d8c482d7bef2504839b30f08ea1960bba98809059c844
 
   ```typescript
   import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
 
   function kdfSync() {
-    let spec: cryptoFramework.PBKDF2Spec = {
-      algName: 'PBKDF2',
-      password: '123456',
-      salt: new Uint8Array(16),
-      iterations: 10000,
-      keySize: 32
-    };
-    let kdf = cryptoFramework.createKdf('PBKDF2|SHA256');
-    let secret = kdf.generateSecretSync(spec);
-    console.info('[Sync]key derivation output: ' + secret.data);
+    try {
+      let spec: cryptoFramework.PBKDF2Spec = {
+        algName: 'PBKDF2',
+        password: '123456',
+        salt: new Uint8Array(16),
+        iterations: 10000,
+        keySize: 32
+      };
+      let kdf = cryptoFramework.createKdf('PBKDF2|SHA256');
+      let secret = kdf.generateSecretSync(spec);
+      console.info('[Sync]key derivation output: ' + secret.data);
+    } catch (err) {
+      let e: BusinessError = err as BusinessError;
+      console.error(`call failed: errCode: ${e.code}, errMsg: ${e.message}`);
+    }
   }
   ```

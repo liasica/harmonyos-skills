@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-video-comp
 title: 基于Video组件播放长视频
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 基于Video播放视频系列开发实践 > 基于Video组件播放长视频
 category: best-practices
-scraped_at: 2026-10-29T08:03:15+08:00
+scraped_at: 2026-11-04T08:37:50+08:00
 doc_updated_at: 2026-08-26
-content_hash: sha256:506e55d787daad2a2645d20ffd447418e35d9f648e341faec3f44ae735fb6192
+content_hash: sha256:c579bf19f4730190a443215e60ec9d6cc27b9635858571f1ead453e8a6ed3ea3
 ---
 
 ## 概述
@@ -33,7 +33,7 @@ Video组件可用于播放视频文件并控制其播放状态。本文针对市
 
 通过Video组件实现视频基础播放控制能力，包括播放视频、暂停播放等操作。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/onw1nePeRsewxfBFNLFhlg/zh-cn_image_0000002555237888.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/vhiGflt1SE614ouPIhdMlA/zh-cn_image_0000002555237888.gif "点击放大")
 
 ### 实现原理
 
@@ -41,7 +41,7 @@ Video组件可用于播放视频文件并控制其播放状态。本文针对市
 
 Video组件的接口和状态变化关系如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/9SYxxV69S_WC40Bc0fuBqg/zh-cn_image_0000002555078262.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/0rRGAUFSQey8ABkdKBSUdw/zh-cn_image_0000002555078262.png "点击放大")
 
 ### 开发步骤
 
@@ -60,7 +60,7 @@ Video组件和Video控制器的基础使用请参考：[视频播放 (Video)](..
 
 长视频未播放时，显示视频资源的首帧画面或特定画面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/60RmLnZ6TL-b01nYlW2ufw/zh-cn_image_0000002585797859.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/4rW3kJTVQl6oD3Da8aLqKA/zh-cn_image_0000002585797859.png "点击放大")
 
 ### 实现原理
 
@@ -101,7 +101,7 @@ previewUri使用示例请参考：[示例1（视频播放基础用法）](../har
 
 播放视频时，可通过点击全屏图标按钮实现全屏播放，或通过旋转设备进行横竖屏切换。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/y63CTuWhSA6tOpPjVy-5cQ/zh-cn_image_0000002585677821.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/OeXhpgiySiiqdRZWR9QVZw/zh-cn_image_0000002585677821.gif "点击放大")
 
 ### 实现原理
 
@@ -188,7 +188,7 @@ previewUri使用示例请参考：[示例1（视频播放基础用法）](../har
 
 通过点击或拖动自定义进度条，实现视频跳转至指定时间进行播放功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/weeSAGQ8TeqTGchCfcK36A/zh-cn_image_0000002555237890.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/DlBlXBAdQqWuRA0mLLO1MQ/zh-cn_image_0000002555237890.gif "点击放大")
 
 ### 实现原理
 
@@ -230,7 +230,7 @@ Video组件自带的控制栏由[controls](../harmonyos-references/ts-media-comp
 
 播放视频时，向下滑动视频列表，Video组件从页面消失后，视频以小窗口模式进行播放，同时用户可以进行其它操作，提升使用体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/rKBiXD7-RfKXl1Jdd9rgGg/zh-cn_image_0000002555078264.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/-J22qXcbS2mRxtoeS8Tqfg/zh-cn_image_0000002555078264.gif "点击放大")
 
 ### 实现原理
 
@@ -310,7 +310,7 @@ Video组件不支持视频以画中画模式播放，如需使用画中画模式
 
 视频横屏时，通过点击按钮选择预设播放速度，实现视频倍速（1.0、1.25、1.75或2.0速度）播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/9IzqATjBSfK5xx2Sj4xPbg/zh-cn_image_0000002585797861.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/Gx4OETR1TnmNfDZ2UHr89w/zh-cn_image_0000002585797861.gif "点击放大")
 
 ### 实现原理
 
@@ -376,7 +376,7 @@ Video组件支持通过currentProgressRate参数（参考[VideoOptions对象说�
 
 视频横屏时，长按屏幕可实现2倍速播放，离手后视频恢复至默认1倍速播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/k02iOxvPRny7x2TQOTLZmw/zh-cn_image_0000002585677825.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/gQZHL4VdQMSHeev0O9b84w/zh-cn_image_0000002585677825.gif "点击放大")
 
 ### 实现原理
 
@@ -416,7 +416,7 @@ Video组件支持通过currentProgressRate参数（参考[VideoOptions对象说�
 
 视频播放结束后，立即重新开始播放，以实现无缝循环播放的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/-FRzUufqQ-Ob355Fm1VK6g/zh-cn_image_0000002555237894.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/MKxp0ETuTOCNaV6sma-ZIQ/zh-cn_image_0000002555237894.gif "点击放大")
 
 ### 实现原理
 
@@ -445,7 +445,7 @@ Video({
 
 滑动调节音量是视频应用中的常见交互：在播放界面左侧上下滑动，即可快速调节音量，无需中断观看，从而提升用户的观看体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/M7u8lNZVR4W5M4B2uUOqcQ/zh-cn_image_0000002555078268.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/SYuLrz24TJSwaFek-Flxfw/zh-cn_image_0000002555078268.gif "点击放大")
 
 ### 实现原理
 
@@ -499,7 +499,7 @@ Video({
 
 Video组件播放视频时，可以通过控制中心，实现视频的播放、暂停、切换视频、跳转播放、点击拉起应用等功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/SCEDa5vtQl2hsv38VIBoHQ/zh-cn_image_0000002585797863.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/wRNO7zcLSbmy3sB1LvLSTw/zh-cn_image_0000002585797863.gif "点击放大")
 
 ### 实现原理
 

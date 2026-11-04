@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-audio-65
 title: 怎么在播放音频时不打断其他APP音频
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音频（Audio） > 怎么在播放音频时不打断其他APP音频
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:44+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:fc56336abc0974e118c63c18d7357c4dbc220e977e069df6fa38d759078b0866
+scraped_at: 2026-11-04T08:40:10+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:71ddb3e2b0916c7b9a210de6845f24628583fc343fe627330e443ac24f19c403
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:fc56336abc0974e118c63c18d7357c4dbc220e977e069df6fa38d759078
 
 ## 背景知识
 
-* 系统预设了默认的[音频焦点](../harmonyos-guides/audio-playback-concurrency.md#音频焦点)策略，根据音频流的类型及启动的先后顺序，对所有播放和录制音频流进行统一管理。
+* 系统预设了默认的[音频焦点策略](../doccenter-capabilities/audio-playback-concurrency.md#音频焦点策略)，根据音频流的类型及启动的先后顺序，对所有播放和录制音频流进行统一管理。
 * 应用可利用[音频会话管理（AudioSessionManager）](../harmonyos-guides/audio-session-management.md)提供的接口，通过AudioSession主动管理应用内音频流的焦点，自定义本应用音频流的焦点策略。
 
 ## 解决方案

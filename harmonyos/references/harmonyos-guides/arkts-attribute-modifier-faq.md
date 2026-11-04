@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-attribu
 title: 动态属性设置常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI开发常见问题 > 动态属性设置常见问题
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:31:58+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:86f77ac3881d404f16893567e584bac4cc726fd636438407205428e57cd5f7e8
+scraped_at: 2026-11-04T08:29:23+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:9e68a035704d5bd81f78936fc46c90b13804cfc42898afb057cf9ee0353f379d
 ---
 
 本文档介绍动态属性设置的常见问题并提供参考。
@@ -16,7 +16,7 @@ content_hash: sha256:86f77ac3881d404f16893567e584bac4cc726fd636438407205428e57cd
 
 使用AttributeModifier对组件进行[动态属性设置](../harmonyos-references/ts-universal-attributes-attribute-modifier.md)，设置某些属性后出现[JS Crash](jscrash-guidelines.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/Qu4goHJZQ5yw6CSba5owqQ/zh-cn_image_0000002806028685.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/ec0HNk7ORau6Gcu_KxC8Mw/zh-cn_image_0000002809010085.png)
 
 **解决措施**
 
@@ -39,7 +39,7 @@ class MyButtonModifier implements AttributeModifier<ButtonAttribute> {
 
 @Entry
 @Component
-struct attributeDemo {
+struct AttributeDemo {
   @State modifier: MyButtonModifier = new MyButtonModifier();
 
   build() {
@@ -55,4 +55,4 @@ struct attributeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/6My1eaoBTH6V5RI-7T7GsQ/zh-cn_image_0000002806108575.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/U_zUWcbAQv2iTminIeV_fw/zh-cn_image_0000002809050001.gif)

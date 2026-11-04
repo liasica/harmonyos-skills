@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.events.emitter (Emitter)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 进程线程通信 > @ohos.events.emitter (Emitter)
 category: harmonyos-references
-scraped_at: 2026-10-11T07:26:30+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:ea7a0a43ca2f97713723ccbae84f4ebc3be2c969790c0f2d0aaa020dacb23586
+scraped_at: 2026-11-04T08:35:09+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:44f3657d28fe7ae528f9309d4a391f43849988267f8b135a591fe582651084c3
 ---
 
 本模块提供进程内线程间或线程内事件的发送与处理能力。开发者可以使用本模块的 API，订阅事件（持续订阅或单次订阅）、取消订阅事件，发送事件到事件队列中，以及查询事件的订阅数量，从而实现同一进程内不同线程之间、以及同一线程内的事件通信。适用于跨线程通信、模块解耦、事件驱动等场景，能够帮助开发者实现轻量级的发布-订阅模式，降低组件间的耦合度，提升代码的可维护性和可扩展性。
@@ -25,7 +25,7 @@ content_hash: sha256:ea7a0a43ca2f97713723ccbae84f4ebc3be2c969790c0f2d0aaa020dacb
 
 **说明** 
 
-本模块首批接口从API version 7开始支持。后续版本新增接口，采用上角标单独标记接口的起始版本。
+本模块首批接口从API版本7开始支持。后续版本新增接口，采用上角标单独标记接口的起始版本。
 
 ## 导入模块
 
@@ -39,7 +39,7 @@ on(event: InnerEvent, callback: Callback<EventData>): void
 
 持续订阅指定的事件，并在接收到该事件时，执行对应的回调处理函数。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -73,7 +73,7 @@ on(eventId: string, callback: Callback<EventData>): void
 
 持续订阅指定的事件，并在接收到该事件时，执行对应的回调处理函数。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -102,7 +102,7 @@ on<T>(eventId: string, callback: Callback<GenericEventData<T>>): void
 
 持续订阅指定的事件，并在接收到该事件时，执行对应的回调处理函数。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -145,7 +145,7 @@ once(event: InnerEvent, callback: Callback<EventData>): void
 
 单次订阅指定的事件，在接收到该事件且执行完对应的回调处理函数后，自动取消订阅。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -178,7 +178,7 @@ once(eventId: string, callback: Callback<EventData>): void
 
 单次订阅指定的事件，在接收到该事件且执行完对应的回调处理函数后，自动取消订阅。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -207,7 +207,7 @@ once<T>(eventId: string, callback: Callback<GenericEventData<T>>): void
 
 单次订阅指定的事件，在接收到该事件且执行完对应的回调处理函数后，自动取消订阅。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -252,7 +252,7 @@ off(eventId: number): void
 
 使用该接口取消某个事件订阅后，已通过[emit](js-apis-emitter.md#emitteremit)接口发布但尚未被执行的事件将被取消。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -277,7 +277,7 @@ off(eventId: string): void
 
 使用该接口取消某个事件订阅后，已通过[emit](js-apis-emitter.md#emitteremit11)接口发布但尚未被执行的事件将被取消。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -302,7 +302,7 @@ off(eventId: number, callback: Callback<EventData>): void
 
 使用该接口取消某个事件订阅后，已通过[emit](js-apis-emitter.md#emitteremit)接口发布但尚未被执行的事件将被取消。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -334,7 +334,7 @@ off(eventId: string, callback: Callback<EventData>): void
 
 使用该接口取消某个事件订阅后，已通过[emit](js-apis-emitter.md#emitteremit11)接口发布但尚未被执行的事件将被取消。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -366,7 +366,7 @@ off<T>(eventId: string, callback: Callback<GenericEventData<T>>): void
 
 使用该接口取消某个事件订阅后，已通过[emit](js-apis-emitter.md#emitteremit12)接口发布但尚未被执行的事件将被取消。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -414,7 +414,7 @@ emit(event: InnerEvent, data?: EventData): void
 
 该接口发布某个事件后，不保证该事件立刻执行，执行时间取决于事件队列里面的事件数量以及各事件的执行效率。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -453,7 +453,7 @@ emit(eventId: string, data?: EventData): void
 
 该接口发布某个事件后，不保证该事件立刻执行，执行时间取决于事件队列里面的事件数量以及各事件的执行效率。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -487,7 +487,7 @@ emit<T>(eventId: string, data?: GenericEventData<T>): void
 
 该接口发布某个事件后，不保证该事件立刻执行，执行时间取决于事件队列里面的事件数量以及各事件的执行效率。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -528,7 +528,7 @@ emit(eventId: string, options: Options, data?: EventData): void
 
 该接口发布某个事件后，不保证该事件立刻执行，执行时间取决于事件队列里面的事件数量以及各事件的执行效率。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -567,7 +567,7 @@ emit<T>(eventId: string, options: Options, data?: GenericEventData<T>): void
 
 该接口发布某个事件后，不保证该事件立刻执行，执行时间取决于事件队列里面的事件数量以及各事件的执行效率。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -609,7 +609,7 @@ getListenerCount(eventId: number | string): number
 
 获取指定事件的订阅数。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -635,7 +635,7 @@ let count: number = emitter.getListenerCount('eventId');
 
 表示事件的优先级。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -650,7 +650,7 @@ let count: number = emitter.getListenerCount('eventId');
 
 订阅或发送的事件，订阅事件时EventPriority不生效。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -663,7 +663,7 @@ let count: number = emitter.getListenerCount('eventId');
 
 发送事件时传递的数据。
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -675,7 +675,7 @@ let count: number = emitter.getListenerCount('eventId');
 
 发送事件的优先级。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -687,7 +687,7 @@ let count: number = emitter.getListenerCount('eventId');
 
 发送事件时传递的泛型数据。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本12开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -699,7 +699,7 @@ let count: number = emitter.getListenerCount('eventId');
 
 该功能支持在同一进程的同一Emitter类实例中，跨不同线程或同一线程内发送和处理事件。它能够实现持续订阅事件、单次订阅事件、取消订阅事件以及将事件发送到事件队列，适用于需要基于独立实例进行线程间通信和事件管理的场景，不同Emitter实例类之间相互隔离，互不影响。
 
-**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -709,7 +709,7 @@ constructor()
 
 构造函数。
 
-**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -725,7 +725,7 @@ on(eventId: string, callback: Callback<EventData>): void
 
 持续订阅当前Emitter类实例指定的事件，并在接收到该事件时，使用callback异步回调。
 
-**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -756,7 +756,7 @@ on<T>(eventId: string, callback: Callback<GenericEventData<T>>): void
 
 持续订阅当前Emitter类实例指定的事件，并在接收到该事件时，使用callback异步回调。
 
-**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -801,7 +801,7 @@ once(eventId: string, callback: Callback<EventData>): void
 
 单次订阅当前Emitter类实例指定的事件，在接收到该事件且执行完对应的回调处理函数后，自动取消订阅。使用callback异步回调。
 
-**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -832,7 +832,7 @@ once<T>(eventId: string, callback: Callback<GenericEventData<T>>): void
 
 单次订阅当前Emitter类实例指定的事件，在接收到该事件且执行完对应的回调处理函数后，自动取消订阅。使用callback异步回调。
 
-**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -879,7 +879,7 @@ off(eventId: string): void
 
 使用该接口取消某个事件订阅后，已通过[emit](js-apis-emitter.md#emit22)接口发布但尚未被执行的事件将被取消。
 
-**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -905,7 +905,7 @@ off(eventId: string, callback: Callback<EventData>): void
 
 使用该接口取消事件订阅后，已通过[emit](js-apis-emitter.md#emit22)接口发布但尚未被执行的事件将被取消。
 
-**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -938,7 +938,7 @@ off<T>(eventId: string, callback: Callback<GenericEventData<T>>): void
 
 使用该接口取消事件订阅后，已通过[emit](js-apis-emitter.md#emit22-1)接口发布但尚未被执行的事件将被取消。
 
-**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -987,7 +987,7 @@ emit(eventId: string, data?: EventData): void
 
 该接口发布某个事件后，不保证该事件立刻执行，执行时间取决于事件队列里面的事件数量以及各事件的执行效率。
 
-**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -1022,7 +1022,7 @@ emit<T>(eventId: string, data?: GenericEventData<T>): void
 
 该接口发布某个事件后，不保证该事件立刻执行，执行时间取决于事件队列里面的事件数量以及各事件的执行效率。
 
-**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -1066,7 +1066,7 @@ emit(eventId: string, options: Options, data?: EventData): void
 
 该接口发布某个事件后，不保证该事件立刻执行，执行时间取决于事件队列里面的事件数量以及各事件的执行效率。
 
-**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -1106,7 +1106,7 @@ emit<T>(eventId: string, options: Options, data?: GenericEventData<T>): void
 
 该接口发布某个事件后，不保证该事件立刻执行，执行时间取决于事件队列里面的事件数量以及各事件的执行效率。
 
-**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 
@@ -1150,7 +1150,7 @@ getListenerCount(eventId: string): number
 
 获取当前Emitter类实例指定事件的订阅数。
 
-**元服务API：** 从API version 22开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本22开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.Emitter
 

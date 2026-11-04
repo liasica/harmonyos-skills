@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: swiper开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 容器组件 > swiper开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:31:57+08:00
+scraped_at: 2026-11-04T08:29:21+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:3517fa9fd2142114066f4f270bc15a8582b74cb1b8d8699df157ee5127429a7f
+content_hash: sha256:5306f4cc9513de404f803eccc8a88594dc545ff85a2566a909602a3ce79b888d
 ---
 
 swiper为滑动容器，提供切换显示子组件的能力。具体用法请参考[swiper](../harmonyos-references/js-components-container-swiper.md)。
@@ -58,7 +58,7 @@ text{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/NgGjYGQvQLG2mPMJy04q0w/zh-cn_image_0000002776908880.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/aS53ptudQ_KttCkPYx7pCQ/zh-cn_image_0000002779850360.gif)
 
 **说明** 
 
@@ -115,7 +115,7 @@ text{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/rtoofulWTcKmoK-zCtt2xw/zh-cn_image_0000002776748894.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/zL6agqKVTTKGreZkqjO_3w/zh-cn_image_0000002779690392.gif)
 
 **说明** 
 
@@ -177,7 +177,7 @@ text{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/CEmA5440RDm7nSsSKzvOOA/zh-cn_image_0000002806028611.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/hixQ-3ZIRlqfbw975p0ZmA/zh-cn_image_0000002809010011.gif)
 
 ## 绑定事件
 
@@ -275,7 +275,7 @@ export default{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/4jz84oZqS8GzSlIk2UkCVA/zh-cn_image_0000002806108501.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/9tNDoiT1ROaH0_kaej4cBQ/zh-cn_image_0000002809049927.gif)
 
 ## 场景示例
 
@@ -352,4 +352,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/wqY80bHTSCilzsUWPQFTUg/zh-cn_image_0000002776908882.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/y-CQ8-YzSyaqayiCiA6uTg/zh-cn_image_0000002779850362.gif)

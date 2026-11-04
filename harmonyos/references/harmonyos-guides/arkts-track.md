@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-track
 title: "@Track装饰器：class对象属性级更新"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理数据对象的状态 > @Track装饰器：class对象属性级更新
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:31:46+08:00
+scraped_at: 2026-11-04T08:29:10+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:babf6499bb8b2c06c9c78bcc96b2d72eb8583faceed70dd1467079360da9a626
+content_hash: sha256:987b396acf617d6ac7e102596264bff28fa08533c0b1ccb827cf05997e4e75f5
 ---
 
 [@Track](../harmonyos-references/ts-state-management-track.md#track)应用于class对象的属性级更新。@Track装饰的属性变化时，只会触发该属性关联的UI更新。
@@ -81,7 +81,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/na-AQJoITXis_ZvoPB47-g/zh-cn_image_0000002776908174.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/GQwk_4WDRsOTOP8TsZDm8w/zh-cn_image_0000002779849654.gif)
 
 **说明** 
 
@@ -202,7 +202,7 @@ struct AddLog {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/FOBxBradTeGNn9lueE1Jpw/zh-cn_image_0000002776748188.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/3x6wU2JpSH2H4537EokC0w/zh-cn_image_0000002779689684.gif)
 
 在上面的示例中：
 
@@ -282,7 +282,7 @@ struct AddLog {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/-6FJslypT_iayVjtd5xSuQ/zh-cn_image_0000002806027905.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/6MGLOHm6QGOA_3kjddmEaA/zh-cn_image_0000002809009305.gif)
 
 处理步骤：
 

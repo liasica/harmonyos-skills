@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-aipp-
 title: AIPP参数
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型转换 > AIPP > AIPP参数
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:33:19+08:00
+scraped_at: 2026-11-04T08:30:48+08:00
 doc_updated_at: 2026-07-03
-content_hash: sha256:b89c4ab82760378fcbbb9bce94541517ca413ea09c1506b6bf6f96db8ce100f3
+content_hash: sha256:b855cab665fda4f64454e399802eb257dac9ef22db60f56fca46f17f9d5aaec2
 ---
 
 AIPP分为静态AIPP和动态AIPP，两者使用严格区分，静态AIPP模型不能接收模型推理时传入的AIPP参数，不兼容动态AIPP场景，静态与动态AIPP区别详见下表。
@@ -97,22 +97,22 @@ RB/UV通道交换丰富了输入图片的格式，开启RB/UV通道交换后，A
 
 * YUV转BGR
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/CtfZSdoZRNe-l1wNXEoKcA/zh-cn_image_0000002806029961.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/xrxZeTtMTTCLLf5LhJMUaQ/zh-cn_image_0000002809011363.png)
 * BGR转YUV
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/BPUw1eKjQveu3ZNIclBl7Q/zh-cn_image_0000002806109851.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/BEd5N7WRRtCCNgQAjtfKAw/zh-cn_image_0000002809051277.png)
 
 参考2：BT-601 narrow、JPEG和BT-709 narrow三种类型图片的转换公式。
 
 * BT-601 narrow
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/oF3R9lbaQh-MbyV4N3w79Q/zh-cn_image_0000002776910232.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/T8rPA4LoSh2gRc-u_UyTCw/zh-cn_image_0000002779851712.png)
 * JPEG
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/_lTLGM5ZSHWixCTV8Rn-KA/zh-cn_image_0000002776750246.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/nam4ompWS6iCoI8uvPuaOw/zh-cn_image_0000002779691744.png)
 * BT-709 narrow
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/bhSVYROyTL2zEN5ImNZWbg/zh-cn_image_0000002806029963.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/l7Yk15DnSJSc6_xH9n63pw/zh-cn_image_0000002809011365.png)
 
 使用配置文件生成静态AIPP模型时，需要根据以上的公式配置CSC矩阵以及"input\_bias"或者"output\_bias"的值。使用IR定义AIPP CSC功能算子，以及使用CANN Kit接口配置CSC参数时，支持传入目标类型，由系统来填充CSC配置参数。
 

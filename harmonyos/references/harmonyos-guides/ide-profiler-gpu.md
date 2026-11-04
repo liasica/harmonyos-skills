@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-
 title: GPU活动分析
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > GPU活动分析
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:13:00+08:00
+scraped_at: 2026-11-04T08:31:36+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:941a35c31fdf06ac33e5452d0fd3406c1fba556d6904070e1989f41437d37597
+content_hash: sha256:e4adb97a659129bf5183b7d26966546524974ac0dd04261d4fd2191c1a85135e
 ---
 
 ## 功能介绍
@@ -26,16 +26,16 @@ GPU模板支持的泳道包括：Counters、ArkTS Callstack、Callstack、CPU Co
 
 1. 创建GPU分析任务并录制相关数据，操作方法可参考[性能问题定位：深度录制](deep-recording.md)。
 
-   GPU分析任务支持在录制前单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/7YucPcxTTNKfXkci84lUVg/zh-cn_image_0000002731382227.png "点击放大")指定要录制的泳道。单击工具控制栏中的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/XIaRbGAqTySLELeos2BYwQ/zh-cn_image_0000002731542201.png "点击放大")按钮，可以设置采样时间间隔（Sampling Interval），可设置范围为1ms~1000ms，默认为10ms。
+   GPU分析任务支持在录制前单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/jXnzrI58SfiPKLr0smlhJQ/zh-cn_image_0000002731382227.png "点击放大")指定要录制的泳道。单击工具控制栏中的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/syPEhX7yQxipYYfY0ipPEw/zh-cn_image_0000002731542201.png "点击放大")按钮，可以设置采样时间间隔（Sampling Interval），可设置范围为1ms~1000ms，默认为10ms。
 2. **Counters**泳道显示当前设备GPU的使用率。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/ksUrVLx4Q32qFW_zEMz0Ag/zh-cn_image_0000002731542199.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/f_InPn7pRJOy8tJNCeRlPw/zh-cn_image_0000002731542199.png "点击放大")
 3. 将**Counters**泳道展开，**子泳道**显示GPU各项活动信息，包括counters\_gather、GPU执行命令的频率、GPU执行命令的持续时间等。除counters\_gather外，其他子泳道信息可参考[GPU Counters](../Tools-Guides/gpu-counters-0000001886127538.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/b1DDrT0eSVqRWc3FP-X7NQ/zh-cn_image_0000002731542205.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/irdb5iePSBGmpk5Hbywzdw/zh-cn_image_0000002731542205.png "点击放大")
 4. **counters\_gather**子泳道显示线程对各CPU核心的占用情况。单击运行状态的时间片段，显示线程在该时间片段的起始时间、持续时长、运行状态、频率、线程优先级、所属进程、所属线程、上一运行状态、下一运行状态，并且支持跳转到上个或者下个线程运行状态。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/8-Kbl76pTliWLElX5-vb3Q/zh-cn_image_0000002731382229.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/_byXIDvGShWc1ZzFS2oTeQ/zh-cn_image_0000002731382229.png "点击放大")
 5. 框选**counters\_gather**子泳道，可查看此时间段内的统计信息，包括线程状态统计信息、CPU单线程使用情况、线程中的中载重载数据统计。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/PEGFgYCWQBybg4jEttUtqQ/zh-cn_image_0000002731382231.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/x0iEPdvzSlizGQMnFlplTg/zh-cn_image_0000002731382231.png "点击放大")

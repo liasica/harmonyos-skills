@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: LoadingProgress
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > LoadingProgress
 category: harmonyos-references
-scraped_at: 2026-10-31T07:35:23+08:00
+scraped_at: 2026-11-04T08:33:06+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:e17e5010e6c4c0369f98d67dd16121ac26eb7b1ec96c92e458eaed03a3aced95
+content_hash: sha256:5bac325de8be8b3596825f3f1e1f1d80d954b12c8e5bf4fd3369bd24d5ef6859
 ---
 
 LoadingProgress是用于显示加载进度条的组件，在数据加载过程中为用户提供视觉反馈，提升用户体验。该组件支持设置前景色、控制动画显示状态等特性，适用于需要在应用内展示加载进度的场景。
@@ -151,7 +151,7 @@ struct LoadingProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/iLc-IlUsTAKQX0VD_SET7g/zh-cn_image_0000002776911048.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/GrneBp3OT5mMQKBlGSoOpQ/zh-cn_image_0000002779852528.gif)
 
 ### 示例2（设置定制内容区）
 
@@ -297,4 +297,4 @@ struct LoadingProgressDemoExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/g2F4BCWsQt681zlDCEGFgw/zh-cn_image_0000002776751062.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/2vQ-BI5nRA-sWA0Mt_j2hg/zh-cn_image_0000002779692560.gif)

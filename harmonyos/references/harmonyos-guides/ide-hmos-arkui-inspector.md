@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-arku
 title: 布局分析
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 应用调试 > 布局分析
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:13:10+08:00
+scraped_at: 2026-11-04T08:31:48+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:7405f36fd14c650c3598e6e29d6b6492528e365a8ea97139090f8f9ec75c6511
+content_hash: sha256:f1d4069f14d8ec2c020689470d1f40743a2663796863e63e9f2da7bf5d716f5f
 ---
 
 开发者可以使用ArkUI 界面检查器，在鸿蒙电脑DevEco Studio上查看应用在真机上的UI显示效果，并通过查看多次操作后的界面状态，快速分析定位UI界面存在的问题。
@@ -35,47 +35,47 @@ ArkUI 检查器支持的功能包括：
 
 ## 操作步骤
 
-1. 在DevEco Studio右侧边栏点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/KgxaRAe-RxWoynfiGFkNwA/zh-cn_image_0000002779728895.png "点击放大")图标展开ArkUI 界面检查器。
+1. 在DevEco Studio右侧边栏点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/7vdsAQOsTKS5D7Cxq08GFw/zh-cn_image_0000002779728895.png "点击放大")图标展开ArkUI 界面检查器。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/ViLGLWYCQgGIzEdTxZ5YXA/zh-cn_image_0000002750169726.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/zk77aFeXTca800Hij6xTTA/zh-cn_image_0000002750169726.png)
 2. 在设备应用列表选择要查看的设备和设备上的进程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/QODX_ZKrQc2d_LSzLhc5MA/zh-cn_image_0000002750009830.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/ZXnIk0-cR7Ct6J4zUDLXRA/zh-cn_image_0000002750009830.png)
 3. ArkUI 界面检查器上方区域显示当前设备的UI界面，左下方区域为当前的组件树结构，右下方区域为选中组件的属性信息。
 
-   可以在左下方区域组件树上或在上方UI界面点击选择组件。当设备上UI发生变化时，可点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/cNduss__T3qGBEILpjO9pA/zh-cn_image_0000002779608745.png "点击放大")按钮同步设备上的UI效果。
+   可以在左下方区域组件树上或在上方UI界面点击选择组件。当设备上UI发生变化时，可点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/WjXE39KATl6hwBL4sylJxg/zh-cn_image_0000002779608745.png "点击放大")按钮同步设备上的UI效果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/gwSq45DqR7qYV-lRU0svnw/zh-cn_image_0000002779608743.png)
-4. 点击右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/la5_MeLhRWeAYtv8GrsMJA/zh-cn_image_0000002779728901.png)按钮，可断开与设备的连接。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/1NXxSXtGTSK9ZgPG-cKkNg/zh-cn_image_0000002779608743.png)
+4. 点击右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/IaJQuCeASfCwY0GEk2t1pg/zh-cn_image_0000002779728901.png)按钮，可断开与设备的连接。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/V15roCzTSaySITNvu17dnw/zh-cn_image_0000002750169730.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/gER_2ZuXR9CtlCzcsKIyCg/zh-cn_image_0000002750169730.png)
 
 ## 显示组件信息
 
-* 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/E71Kkz6hRZ-j3vS3gb4Jwg/zh-cn_image_0000002750169722.png)，勾选**显示统计数据**，可显示组件树组件信息。
+* 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/k5teusLRSZSE3yBkVIeTyw/zh-cn_image_0000002750169722.png)，勾选**显示统计数据**，可显示组件树组件信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/elJGx5_mRdyNbmMXszDliw/zh-cn_image_0000002779728899.png)
-* 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/2YLkDkXCQuKBiRlImLuROQ/zh-cn_image_0000002779728897.png)，勾选**显示隐藏组件**，可显示隐藏的组件。
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/s_f29NwrQwGMb84EJ48wCQ/zh-cn_image_0000002779728899.png)
+* 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/UP1bCb0HQ_SkYfOeBfolGg/zh-cn_image_0000002779728897.png)，勾选**显示隐藏组件**，可显示隐藏的组件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/fv8Kof6YROCLQ1nNaiwIAg/zh-cn_image_0000002779728903.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/twlGZbXFStyHQatEPN1aUA/zh-cn_image_0000002779728903.png)
 
 ## UI组件源码跳转
 
-1. 点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/xkN1fPWqTyWVRsXQn4KGYQ/zh-cn_image_0000002750169724.png)按钮，在菜单中点击**Application**并选择相应模块，点击右侧编辑![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/Mjby3LnsSDCJ1fiSmwkMKg/zh-cn_image_0000002750009828.png)按钮打开配置界面。在**通用**中，勾选**启用源码行跳转**，重新运行工程。
+1. 点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/r67DRSeBQqmq91R4REhipw/zh-cn_image_0000002750169724.png)按钮，在菜单中点击**Application**并选择相应模块，点击右侧编辑![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/3USCtTM3SFu0R7BLplQXWw/zh-cn_image_0000002750009828.png)按钮打开配置界面。在**通用**中，勾选**启用源码行跳转**，重新运行工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/s7rXAEFSS26jsf6adEXI1A/zh-cn_image_0000002750169732.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/Fx6xVGkQSW-YK6MztX9E3A/zh-cn_image_0000002750169732.png)
 2. 在ArkUI 检查器中，选中要进行源码跳转的UI组件。点击右下方的源码跳转，即可跳转到UI组件源码位置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/-7BWkLEEQJm_tB3uRqPUmw/zh-cn_image_0000002779608741.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/-IQYY6rkSLOL87ESOivfoQ/zh-cn_image_0000002779608741.png)
 
 ## 显示布局边框
 
-点击组件数上方的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/-XrxDEg-RXqUSbcAog7s_w/zh-cn_image_0000002750009832.png "点击放大")按钮，可显示当前页面组件的布局信息。
+点击组件数上方的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/hppdX67rRAmvGUpqnWyBNw/zh-cn_image_0000002750009832.png "点击放大")按钮，可显示当前页面组件的布局信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/GA4OjIwQSva9tcGzjrZILA/zh-cn_image_0000002750009834.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Kv9Z5KOYQl6XSGPOCTfKPw/zh-cn_image_0000002750009834.png)
 
 ## 查看UI组件的状态变量
 
 点击组件，可以查看组件的状态变量，以及状态变量影响的下一层组件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/ZT-eW7HLRAunc8VkOkpcyA/zh-cn_image_0000002750169728.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/xZXcSam5TBuQosX3qq9D1A/zh-cn_image_0000002750169728.png)

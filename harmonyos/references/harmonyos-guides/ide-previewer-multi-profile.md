@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-previewer
 title: 查看多端设备预览效果
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 界面预览 > 查看多端设备预览效果
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:12:53+08:00
+scraped_at: 2026-11-04T08:31:27+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:5c61d5fc8779a79615def1bbb78c42d99f8b0a9e0240199afd4b1cc635711a28
+content_hash: sha256:92a03096c12acbb921d423a0bfc652cd7b5484b255a8251d406d2a72f1e26e95
 ---
 
 DevEco Studio支持HarmonyOS分布式应用/元服务开发，同一个应用/元服务可以运行在多个设备上。在HarmonyOS分布式应用/元服务的开发阶段，因不同设备的屏幕分辨率、形状、大小等不同，开发者需要在不同的设备上查看应用/元服务的UI布局和交互效果，此时便可以使用多端设备预览器功能，方便开发者在应用/元服务开发过程中，随时查看不同设备上的界面显示效果。
@@ -28,8 +28,8 @@ DevEco Studio支持HarmonyOS分布式应用/元服务开发，同一个应用/�
 
    多端设备预览不支持动画的预览，如果需要查看动画在设备上的预览效果，请关闭Multi-profile preview功能后在单设备预览界面进行查看。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/11SfdFXXR26P9r_FCJ63mg/zh-cn_image_0000002731542459.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/OIc2X4pOTK2LWbi-ddqRLA/zh-cn_image_0000002731542459.png "点击放大")
 
    多设备预览效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/znm4PFbGTAGctcYX6wiRag/zh-cn_image_0000002731382487.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/N23T147WSBeL2fvQ2MuvEA/zh-cn_image_0000002731382487.gif "点击放大")

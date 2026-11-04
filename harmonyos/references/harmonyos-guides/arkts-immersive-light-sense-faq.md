@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 沉浸光感常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感常见问题
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:31:52+08:00
+scraped_at: 2026-11-04T08:29:16+08:00
 doc_updated_at: 2026-10-26
-content_hash: sha256:84f6cb148ddeeda673c6f5fe45e1e8ce02234d4bb4d66fab10b75c46c4521b63
+content_hash: sha256:6bd2b2a7c5cbfb94e460ea4ea03d193379f00a96a3afc41732063f307f44ec86
 ---
 
 本文提供沉浸光感开发过程中的常见问题及解决措施。沉浸光感的完整能力介绍及开发指导，请参见[沉浸光感简介](arkts-immersive-light-sense-overview.md)。
@@ -150,7 +150,7 @@ struct MaterialScopeAdaptExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/eEFQGuEvTySMH2MPAIsPWg/zh-cn_image_0000002806108287.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/6FFqwrRKSxO0AlxxdqpLzQ/zh-cn_image_0000002809049713.jpg)
 
 ### 背景色或背景模糊遮挡材质效果
 
@@ -393,13 +393,13 @@ Column() {
 
 * Checkbox可视区域为40\*40的圆形，材质渲染区域为40\*40的矩形。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/8ZknqEulQ_mGNm53mUKVbw/zh-cn_image_0000002776908668.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/jtFiLc-oRFK5ZqLrKEg9PA/zh-cn_image_0000002779850148.jpg)
 * Text组件可视区域为文本内容，材质渲染区域为100\*40的矩形。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/bvFi-GvVTe2Fx2yqdRpW6w/zh-cn_image_0000002776748682.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/yuSLeES1RiyfniWm9W9sfw/zh-cn_image_0000002779690178.jpg)
 * Progress组件可视区域为胶囊形，材质渲染区域为100\*40的矩形。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/D8o3tdRNTPK1Uqn_Kj3wjg/zh-cn_image_0000002806028399.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/zvz_SprmRSGh1iysmW2spg/zh-cn_image_0000002809009799.jpg)
 
 **可能原因**
 
@@ -475,7 +475,7 @@ Row() {
 
 同时给组件设置沉浸式系统材质和背景色，材质效果被遮盖。例如TextArea组件设置背景色后，会遮盖材质效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/CsMVHk7RRDOnS9G6US7SsQ/zh-cn_image_0000002806108289.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/_SmY76o2TxC-MXUL-XARHQ/zh-cn_image_0000002809049715.jpg)
 
 **可能原因**
 

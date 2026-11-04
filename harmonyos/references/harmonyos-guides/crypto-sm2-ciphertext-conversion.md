@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-sm2-ci
 title: 使用SM2密文格式转换(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密 > 使用SM2密文格式转换(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1217a2501e42888110e2f969475bd53861f22d9cbfd80c805643b86c3292dac9
+scraped_at: 2026-11-04T08:29:37+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:6f3565af051f634f9d0bbc9d1744febe0949edb1400e4d3056ccc392dee17764
 ---
 
 当前支持的SM2密文格式为国密标准的ASN.1格式，其中各参数组合顺序为C1C3C2，具体参数含义请参考非对称密钥加解密算法规格中的[SM2](crypto-encryption-decryption.md#sm2)。
@@ -20,18 +20,24 @@ content_hash: sha256:1217a2501e42888110e2f969475bd53861f22d9cbfd80c805643b86c329
 
 ```typescript
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function testGenCipherTextBySpec() {
-  let spec: cryptoFramework.SM2CipherTextSpec = {
-    xCoordinate: BigInt('20625015362595980457695435345498579729138244358573902431560627260141789922999'),
-    yCoordinate: BigInt('48563164792857017065725892921053777369510340820930241057309844352421738767712'),
-    cipherTextData: new Uint8Array([100, 227, 78, 195, 249, 179, 43, 70, 242, 69, 169, 10, 65, 123]),
-    hashData: new Uint8Array([87, 167, 167, 247, 88, 146, 203, 234, 83, 126, 117, 129, 52, 142, 82, 54, 152, 226, 201,
-      111, 143, 115, 169, 125, 128, 42, 157, 31, 114, 198, 109, 244]),
+  try {
+    let spec: cryptoFramework.SM2CipherTextSpec = {
+      xCoordinate: BigInt('20625015362595980457695435345498579729138244358573902431560627260141789922999'),
+      yCoordinate: BigInt('48563164792857017065725892921053777369510340820930241057309844352421738767712'),
+      cipherTextData: new Uint8Array([100, 227, 78, 195, 249, 179, 43, 70, 242, 69, 169, 10, 65, 123]),
+      hashData: new Uint8Array([87, 167, 167, 247, 88, 146, 203, 234, 83, 126, 117, 129, 52, 142, 82, 54, 152, 226, 201,
+        111, 143, 115, 169, 125, 128, 42, 157, 31, 114, 198, 109, 244]),
+    }
+    // 此处的data可直接使用cryptoFramework进行SM2解密
+    let data = cryptoFramework.SM2CryptoUtil.genCipherTextBySpec(spec, 'C1C3C2');
+    console.info('genCipherTextBySpec result: success.');
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`call failed: errCode: ${e.code}, errMsg: ${e.message}`);
   }
-  // 此处的data可直接使用cryptoFramework进行SM2解密
-  let data = cryptoFramework.SM2CryptoUtil.genCipherTextBySpec(spec, 'C1C3C2');
-  console.info('genCipherTextBySpec result: success.');
 }
 ```
 
@@ -43,16 +49,26 @@ function testGenCipherTextBySpec() {
 
 ```typescript
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function testGetCipherTextSpec() {
-  let cipherTextArray =
-    new Uint8Array([48, 118, 2, 32, 45, 153, 88, 82, 104, 221, 226, 43, 174, 21, 122, 248, 5, 232, 105, 41, 92, 95, 102,
-      224, 216, 149, 85, 236, 110, 6, 64, 188, 149, 70, 70, 183, 2, 32, 107, 93, 198, 247, 119, 18, 40, 110, 90, 156,
-      193, 158, 205, 113, 170, 128, 146, 109, 75, 17, 181, 109, 110, 91, 149, 5, 110, 233, 209, 78, 229, 96, 4, 32, 87,
-      167, 167, 247, 88, 146, 203, 234, 83, 126, 117, 129, 52, 142, 82, 54, 152, 226, 201, 111, 143, 115, 169, 125, 128,
-      42, 157, 31, 114, 198, 109, 244, 4, 14, 100, 227, 78, 195, 249, 179, 43, 70, 242, 69, 169, 10, 65, 123]);
-  let cipherText: cryptoFramework.DataBlob = { data: cipherTextArray };
-  let spec: cryptoFramework.SM2CipherTextSpec = cryptoFramework.SM2CryptoUtil.getCipherTextSpec(cipherText, 'C1C3C2');
-  console.info('getCipherTextSpec result: success.');
+  try {
+    let cipherTextArray =
+      new Uint8Array(
+        [48, 118, 2, 32, 45, 153, 88, 82, 104, 221, 226, 43, 174, 21, 122, 248, 5, 232, 105, 41, 92, 95, 102,
+          224, 216, 149, 85, 236, 110, 6, 64, 188, 149, 70, 70, 183, 2, 32, 107, 93, 198, 247, 119, 18, 40, 110, 90,
+          156,
+          193, 158, 205, 113, 170, 128, 146, 109, 75, 17, 181, 109, 110, 91, 149, 5, 110, 233, 209, 78, 229, 96, 4, 32,
+          87,
+          167, 167, 247, 88, 146, 203, 234, 83, 126, 117, 129, 52, 142, 82, 54, 152, 226, 201, 111, 143, 115, 169, 125,
+          128,
+          42, 157, 31, 114, 198, 109, 244, 4, 14, 100, 227, 78, 195, 249, 179, 43, 70, 242, 69, 169, 10, 65, 123]);
+    let cipherText: cryptoFramework.DataBlob = { data: cipherTextArray };
+    let spec: cryptoFramework.SM2CipherTextSpec = cryptoFramework.SM2CryptoUtil.getCipherTextSpec(cipherText, 'C1C3C2');
+    console.info('getCipherTextSpec result: success.');
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`call failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-freeze
 title: 运维态高效处理应用冻屏
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 运维态稳定性分析 > 应用冻屏类问题分析 > 运维态高效处理应用冻屏
 category: best-practices
-scraped_at: 2026-10-29T08:03:28+08:00
+scraped_at: 2026-11-04T08:38:07+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:a91b9af46909623d3142451c988d4de63c0b7b4a6a5c9999a1852931976a9635
+content_hash: sha256:e0698fa7244d47dcb76dcce29582d647ce80a1491dbb29cb15ebcf0194c968e6
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ content_hash: sha256:a91b9af46909623d3142451c988d4de63c0b7b4a6a5c9999a1852931976
 
 排查流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/vyQSdU9bSTSM7DeDG5QhdA/zh-cn_image_0000002644931542.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/xdwvD810R0yEfIamB8mnWA/zh-cn_image_0000002644931542.png "点击放大")
 
 **排查步骤**
 
@@ -33,11 +33,11 @@ content_hash: sha256:a91b9af46909623d3142451c988d4de63c0b7b4a6a5c9999a1852931976
 
 在故障分析页面中，开发者可查看应用的TOP问题列表，结合业务对问题进行描述，标记优先级与问题状态，优先处理未修复的高优先级问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/Cxlw157JTteOBp_-eBYwfw/zh-cn_image_0000002675091251.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/W4ubplkRSZGjCX72VteP4Q/zh-cn_image_0000002675091251.png "点击放大")
 
 页面也展示应用的TOP耗时函数，开发者可重点关注问题高发的函数并结合业务优先级进行修改优化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/TXKdxQfaQJGgz2ITZ74TJQ/zh-cn_image_0000002675011409.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/AC-WNY5ERxWwwT6W_fRHcQ/zh-cn_image_0000002675011409.png "点击放大")
 
 **2、关键指标说明**
 
@@ -45,7 +45,7 @@ content_hash: sha256:a91b9af46909623d3142451c988d4de63c0b7b4a6a5c9999a1852931976
 * 发生次数（占比）：冻屏问题发生的频率，帮助判断问题严重程度。
 * 影响设备数（占比）：受影响的设备数量，评估问题影响面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/SyomKxcZQEeSzYxdhA0l-w/zh-cn_image_0000002645091456.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/wyyGeqYkRgqgLD7Q-lifsw/zh-cn_image_0000002645091456.png "点击放大")
 
 **3、关键信息提取**
 
@@ -55,17 +55,17 @@ content_hash: sha256:a91b9af46909623d3142451c988d4de63c0b7b4a6a5c9999a1852931976
 
   在问题详情页下钻分析可设置筛选条件，查看冻屏在不同时间、不同版本、不同设备维度的发生频率。例如，某次版本更新后该类冻屏量激增，通常表明新引入的问题。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/Jko9r-CXSKiy22Sjqc1cCQ/zh-cn_image_0000002644931544.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/JK-EBxhaSP6B7oJB6VotZQ/zh-cn_image_0000002644931544.png "点击放大")
 * 环境上下文
 
   包括设备信息、系统版本、应用版本、前后台状态等，帮助判断冻屏发生的具体环境。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/lkEo0_4RRZOlP40-ARFIug/zh-cn_image_0000002675091253.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/z67JsnWPRa2hFqo_1DgeBg/zh-cn_image_0000002675091253.png "点击放大")
 * 证据链
 
   证据链可查看堆栈信息，问题堆栈会有红色高亮显示，可查看问题发生的业务代码位置。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/JE6sZh-tTYa2txI_pRWUeA/zh-cn_image_0000002675011411.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/BEyfnvclQwSb1fPR22Pl4w/zh-cn_image_0000002675011411.png "点击放大")
 
 ## APMS平台应用冻屏问题分析案例
 
@@ -73,23 +73,23 @@ content_hash: sha256:a91b9af46909623d3142451c988d4de63c0b7b4a6a5c9999a1852931976
 
 可以在故障预警平台的告警规则页面创建告警。根据实际的业务情况，选择合适监控时段、监控频率、告警触发条件等，应用冻屏的指标类型是属于APP\_FREEZE。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/iwPQa5l7RS21pMEz4ZilPw/zh-cn_image_0000002645091458.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/QfvOuBoxTJKAGLUufEQI9w/zh-cn_image_0000002645091458.png "点击放大")
 
 配置告警规则后，当应用触发冻屏事件，设备会上报故障信息。系统会开始收集后台数据，当满足告警触发条件后，会触发预警。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/6ZR21dJPQjiQgKab7EvAmg/zh-cn_image_0000002644931546.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/LAzBGDa8RUS7H4ZON_aatA/zh-cn_image_0000002644931546.png "点击放大")
 
 收到预警后，可以点击查看进入故障指标页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/Ma0UPBhbQme9B05egzM2Jg/zh-cn_image_0000002675091255.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/B6p6IpaYQ2OYKZlPjZTTyQ/zh-cn_image_0000002675091255.png "点击放大")
 
 页面包含趋势分析、维度分布和问题列表。开发者可在界面上设置不同的筛选条件，对冻屏问题进行个性化分析。点击TOP问题列表中的“查看”，可进入详情页查看问题详情。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/QJE8OOQeQuWtYT8h2kpDQg/zh-cn_image_0000002675011413.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/OWG4p4LxSnuVYnCrwxe4mA/zh-cn_image_0000002675011413.png "点击放大")
 
 开发者也可以直接点击故障分析页面，经过条件筛选后可查看具体的TOP问题列表，点击查看可进入问题详情页进一步分析。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/W16CrfMgTyWAKfJZn3JBvg/zh-cn_image_0000002645091462.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/NK2x7T3iSNe9S_nvr3Glhg/zh-cn_image_0000002645091462.png "点击放大")
 
 ### 问题查看与聚类
 
@@ -106,17 +106,17 @@ content_hash: sha256:a91b9af46909623d3142451c988d4de63c0b7b4a6a5c9999a1852931976
 
 在界面可以设置不同的筛选条件对冻屏问题进行个性化分析。筛选条件设置完成后点击“查询”，即可查看指定时间范围和条件下的三类指标数据的变化趋势，包括冻屏率、冻屏次数、冻屏设备数。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/wAksNObkSGSsEMyNuLO4Hg/zh-cn_image_0000002644931548.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/xUxIrGrhQ9aDTTz88gKH_A/zh-cn_image_0000002644931548.png "点击放大")
 
 **TOP根因聚类**
 
 完成筛选后，开发者可进一步查看TOP问题列表，在问题列表中，每个问题都是同一类问题的汇总。APMS平台会将具有相同特征ID的问题聚合成一条记录，并按照发生次数进行排序，开发者可高优处理TOP问题。点击“查看”进入问题详情页，进一步查看问题详情。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/_7KKToqJTBSVfaQUm-aMag/zh-cn_image_0000002675091259.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/sXGb9uB9TZmAI88UxgwrCQ/zh-cn_image_0000002675091259.png "点击放大")
 
 开发者也可以查看TOP耗时函数，APMS会根据函数名，将相同函数发生的问题聚类成一个记录，并按照故障出现次数进行排序，开发者可根据函数名排查自己的业务逻辑。点击“查看”进入问题详情页，进一步查看问题详情。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/OJHjLMneQ8ylRpKg4Jf2JA/zh-cn_image_0000002675011415.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/WNDnNCNnTnetKQ7_XY0Egg/zh-cn_image_0000002675011415.png "点击放大")
 
 ### 根因定位与分析
 
@@ -126,39 +126,39 @@ content_hash: sha256:a91b9af46909623d3142451c988d4de63c0b7b4a6a5c9999a1852931976
 
 * 问题概要：展示问题的核心身份信息，包括问题特征ID、故障原因、故障模块，帮助开发者快速判断冻屏的基本属性。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/58Lz2UolTC6dXPf9-oGstQ/zh-cn_image_0000002645091464.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/DuujAzB4RbqTmAIlQyIKTQ/zh-cn_image_0000002645091464.png "点击放大")
 * 聚类数据：基于堆栈关键行和过滤条件，筛选同类故障并进行聚类，从而帮助开发者评估问题的影响范围与严重程度。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/qlARTBSyR9a-E2PCUMOf6w/zh-cn_image_0000002644931550.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/kLd2SKOxSHmYWv4VyP1Q2Q/zh-cn_image_0000002644931550.png "点击放大")
 * 分析报告：提供问题发生时的完整上下文，包括环境信息（设备型号、系统版本、ROM 版本、前后台状态等）、堆栈信息、日志文件，并基于分析结果给出修复建议，辅助开发者高效完成问题排查与闭环。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/arBGMkyYQoixmUSFcbSGFg/zh-cn_image_0000002675091261.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/LUGU1azkT8e-j8l7AQ7Edw/zh-cn_image_0000002675091261.png "点击放大")
 * 故障详情：可根据平台解析出的故障原因，参照修复建议定位代码问题，完成问题修复与验证。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/bDp4nNecRE6N9Sxz1AT9wA/zh-cn_image_0000002675011417.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/XBQqX_0NR3WLUtp8MW9Kzw/zh-cn_image_0000002675011417.png "点击放大")
 * 证据链：证据链会展示问题发生的堆栈并标出故障处，同时会说明问题根因的判断依据。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/P3kDx1eQSs2jNqEeS1N_ww/zh-cn_image_0000002645091466.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/C9fCln6qRyaZggPG9o4z4Q/zh-cn_image_0000002645091466.png "点击放大")
 * 现场数据：现场数据为开发者提供冻屏时刻的完整运行上下文（包含堆栈信息、页面导航轨迹、CPU信息、内存信息与热档位等），便于精准还原用户操作路径与触发场景。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/p6U8kfsFRz6w2RXnQ6PjCQ/zh-cn_image_0000002644931552.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/-PTGbaQ9Sj6Crl-geaPW9A/zh-cn_image_0000002644931552.png "点击放大")
 * 采样栈还原堆栈：通过上传SourceMap或.so符号表文件，可将混淆后的堆栈地址还原为可读的代码行号与函数名。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/8PIn6CifS7iFnp_iVpz76Q/zh-cn_image_0000002675091263.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/wX2X9KUYQValeO_GvJgTNw/zh-cn_image_0000002675091263.png "点击放大")
 
 **下钻分析**
 
 下钻分析的核心逻辑是：从一个汇总的指标或表象问题出发，将其拆分为多个组成部分，然后挑出最关键的线索继续向下拆分。重复这一过程，直至定位到具体的根因。平台会根据聚类id或pathname（函数/so路径名称）进行聚类并筛选TOP应用版本、系统版本以及设备型号。开发者可根据此重点关注问题高发的版本及设备，更精确的定位问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/DtaBm8RSTcqxMUZgJYyGRg/zh-cn_image_0000002675011419.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/vt6IRTM0SE28sPHaoUxUGA/zh-cn_image_0000002675011419.png "点击放大")
 
 **AI分析**
 
 平台提供了AI分析日志的功能，会解析问题堆栈，并给出问题根因以及修复建议，协助开发者处理问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/c2SgCRgsTeKuEgegHyV8gQ/zh-cn_image_0000002645091468.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/1jwT56ekRgemSvrlnuwnmA/zh-cn_image_0000002645091468.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/5qE1VNPMRjeh3K_CCmj4zA/zh-cn_image_0000002644931554.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/gFOp00-cRKGUZLWcewRdWw/zh-cn_image_0000002644931554.png "点击放大")
 
 ### 修复建议与问题闭环
 
@@ -166,14 +166,14 @@ content_hash: sha256:a91b9af46909623d3142451c988d4de63c0b7b4a6a5c9999a1852931976
 
 故障详情页面会给到修复建议，开发者可以通过给出的建议优化代码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/NYc_idHFTQGiY-W_77fTzw/zh-cn_image_0000002675091265.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/jt-fTpp0RgWWxe-PHRJPUw/zh-cn_image_0000002675091265.png "点击放大")
 
 **问题闭环**
 
 1. 修改问题之后，可以在分析页面的问题列表中，将对应的问题处标记已修复，并关注新版本的冻屏数据。
 2. 对比修复前后的问题发生率，确认修复是否有效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/w3zbz6iEQH2ri692Thkp5A/zh-cn_image_0000002675011421.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/CSlbw2lbSXqzwn5-gU71XA/zh-cn_image_0000002675011421.png "点击放大")
 
 **故障模式库**
 
@@ -187,11 +187,11 @@ Operation Analyzer平台是指DevEco Studio的Operation Analyzer插件。在DevE
 
 打开DevEco Studio后，在左侧可看到Operation Analyzer图标，点击后选择应用，再点击应用冻屏即可查看该类故障数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/DtRrAXZrRmqr7tBzdFdfHw/zh-cn_image_0000002645091470.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/R1fHzq8MRBi3A6rqliZVSw/zh-cn_image_0000002645091470.png "点击放大")
 
 如果左侧没有出现Operation Analyzer平台图标，也可通过上方导航栏的视图窗口进入。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/ILCSugm0QQW8mVXhzvjyVw/zh-cn_image_0000002644931558.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/ygpPStQeQmuZlSqRuXA9ww/zh-cn_image_0000002644931558.png "点击放大")
 
 ### 问题分析
 
@@ -199,44 +199,44 @@ Operation Analyzer平台是指DevEco Studio的Operation Analyzer插件。在DevE
 
 开发者可自定义筛选条件来筛选需要查看的问题，可点击功能列表下具体的问题进一步查看问题详情。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/cE6iq7FfT5uXdkynXmHcbg/zh-cn_image_0000002675091269.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/5PbQ8Yi9SseHWC8gQ6rCRQ/zh-cn_image_0000002675091269.png "点击放大")
 
 开发者也可以点击耗时函数列表，然后点击具体的耗时函数，进一步查看问题详情。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/Pz-WLv8HS5S19bnVV1gshg/zh-cn_image_0000002675011423.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/GXTGHmIvTICnz_HHiQjvXQ/zh-cn_image_0000002675011423.png "点击放大")
 
 **Operation Analyzer平台问题详情**
 
 平台的问题详情页同APMS平台功能相同，开发者可查看故障分析与修复建议排查问题。如果修复建议不能支撑解决问题，可进一步查看证据链、现场数据、采样栈日志进行具体分析。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/thl5S-YtTPSxrwimMzn3dw/zh-cn_image_0000002645091472.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/AQdcuvUPRLqrIvX2zCKcCg/zh-cn_image_0000002645091472.png "点击放大")
 
 开发者也可以查看问题分布图表，定位问题高发的应用版本、设备型号与系统版本，辅助进一步分析。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/cOV1O0CWTPqzVIqe7gtVkg/zh-cn_image_0000002644931560.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/7Hs_yXeBRN6UOmFYLdUv-w/zh-cn_image_0000002644931560.png "点击放大")
 
 **Operation Analyzer关联离线符号表**
 
 Operation Analyzer平台提供了堆栈还原的能力，可以通过上传符号表（.so/.map/.json文件）完成堆栈还原，辅助分析问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/hM4ESKa8QiS3q9UPMSV66A/zh-cn_image_0000002675091271.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/UJMJHVZNRemigWSYsOgaLA/zh-cn_image_0000002675091271.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/IDLzXQAGRqS2z47areagxw/zh-cn_image_0000002675011425.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/OJKJlgMwRnau9SyiPk9RKg/zh-cn_image_0000002675011425.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/NnG0Zv_URuu-ARKb_cRTDw/zh-cn_image_0000002645091474.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/fwl3myPUSrafQTNb37U3Rw/zh-cn_image_0000002645091474.png "点击放大")
 
 **Operation Analyzer关联代码**
 
 堆栈还原后，Operation Analyzer平台可将故障处与项目代码相关联。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/dyK_e4SETQOI5-96xa8kIw/zh-cn_image_0000002644931562.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/bM_iWz7qRiaFtcmQC5f9zA/zh-cn_image_0000002644931562.png "点击放大")
 
 点击故障处可跳转到源码中对应的代码行，可辅助开发者更高效的定位问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/eZl51jiyR62oEfguEeJsfw/zh-cn_image_0000002675091273.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/GqAJMKeiQPqVtnKWN3ErIQ/zh-cn_image_0000002675091273.png "点击放大")
 
 ### 问题修复
 
 Operation Analyzer平台会给出故障分析与修复建议，开发者可根据修复建议修复问题代码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/2tBLjN3VTfWWuei8PlsvrQ/zh-cn_image_0000002675011427.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/dd8FP81yRZqM18Ay-zRHjA/zh-cn_image_0000002675011427.png "点击放大")

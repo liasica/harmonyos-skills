@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-atom
 title: AtomicServiceSearch
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > AtomicService > AtomicServiceSearch
 category: harmonyos-references
-scraped_at: 2026-10-31T07:35:30+08:00
+scraped_at: 2026-11-04T08:33:12+08:00
 doc_updated_at: 2026-09-04
-content_hash: sha256:2633b3efc24dc16f8956ddf040587fb3edc546cd8cd0ee117d0118f2cb18c3b7
+content_hash: sha256:2f3441584db3ff3fca679bbf2856b764b0d2e278d7b88253c4e2ad2bce93e438
 ---
 
 AtomicServiceSearch为开发者提供满足定制化需求的功能，内容包括默认显示的搜索区、可自定义的选择区和功能区（最多两个）。
@@ -306,7 +306,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/Kv_OkGtxRaCmYS5ZY9FvWw/zh-cn_image_0000002776751218.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/w3lHRlpnQYqcsnIYRAMuDw/zh-cn_image_0000002779692716.gif)
 
 ### 示例2（AtomicServiceSearch添加功能位）
 
@@ -353,7 +353,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/PudOaRIESuWpRB61U0ICTA/zh-cn_image_0000002806030935.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/_dRWC3RORJOVoMxXZFYa4Q/zh-cn_image_0000002809012337.gif)
 
 ### 示例3（AtomicServiceSearch添加选择区及功能位）
 
@@ -419,7 +419,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/0x6jZ2wXR3OgzaaVha1OtQ/zh-cn_image_0000002806110825.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/34a5ClRGSrOKvAoAsV4GnA/zh-cn_image_0000002809052251.gif)
 
 ### 示例4（search回调事件）
 
@@ -550,7 +550,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/N5i9JGFbTJ-csG6CwoQhrw/zh-cn_image_0000002776911206.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/SF0Im5EFRFSrjZ-I-35GIg/zh-cn_image_0000002779852686.gif)
 
 ### 示例5（AtomicServiceSearch修改样式）
 
@@ -671,7 +671,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/rRwDPh40STOPRYz8KrI7Vw/zh-cn_image_0000002776751220.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/Y8PImfbtRBmUjnr_BKcmgA/zh-cn_image_0000002779692718.gif)
 
 ### 示例6（通过controller实现光标位置的设置）
 
@@ -719,7 +719,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/bWNTLPmoRKOTohHQbIDTVQ/zh-cn_image_0000002806030937.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/WgGwcQZDTFqYgMwPqLq9Pg/zh-cn_image_0000002809012339.gif)
 
 ### 示例7（设置输入法回车键类型）
 
@@ -758,7 +758,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/hSaCSx2fRTOc5mqMckVnFw/zh-cn_image_0000002806110827.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/YGhTTPaASjO6etZ7ZbDKqQ/zh-cn_image_0000002809052253.gif)
 
 ### 示例8（设置文字特性效果）
 
@@ -810,7 +810,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/CJG_KPR9Q3K2oCJ-aPJL_w/zh-cn_image_0000002776911208.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/x8V9Kdj4QQm6FEw7ZNf5Ug/zh-cn_image_0000002779852688.png)
 
 ### 示例9（设置文本自适应）
 
@@ -846,7 +846,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/5XheJ9YsS9ifvyY5aNBj-Q/zh-cn_image_0000002776751222.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/1WkROMCrS828OaQAsurkjQ/zh-cn_image_0000002779692720.png)
 
 ### 示例10（文本扩展自定义菜单）
 
@@ -915,7 +915,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/Sblli-J4Qc2MqFbbHtkWug/zh-cn_image_0000002806030939.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/EVpVR9-tTgujPHO58tPosQ/zh-cn_image_0000002809012341.gif)
 
 ### 示例11（设置文本水平对齐/光标样式/选中背景色）
 
@@ -952,7 +952,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/QbieFBC8QGaZ64fWDzuzqg/zh-cn_image_0000002806110829.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/3Y6In9JGTouvIbECRkEN1w/zh-cn_image_0000002809052255.png)
 
 ### 示例12（对输入的文本进行过滤）
 
@@ -991,4 +991,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/HZW5nnL3Rn2LEHsaniES7Q/zh-cn_image_0000002776911210.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/p1-DobbJSX2GGtyK3bo9_w/zh-cn_image_0000002779852690.gif)

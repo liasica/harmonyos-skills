@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: AlphabetIndexer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > AlphabetIndexer
 category: harmonyos-references
-scraped_at: 2026-10-31T07:35:23+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:6f6e496b0d0799428daef43072ae21b071bebb39f174f750e8891ea67016d327
+scraped_at: 2026-11-04T08:33:07+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:ea14d071f249e6cd29b43a892a6166e1465f5e56478854c0e7d2f28120c144e1
 ---
 
 可以与容器组件联动用于按逻辑结构快速定位容器显示区域的组件。
@@ -729,7 +729,7 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/aaX3qI76QQCGfOvy-aDAeg/zh-cn_image_0000002806110655.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/Q_5PKtWZSW6oSfAJxIEl9g/zh-cn_image_0000002809052081.gif)
 
 ### 示例2（开启自适应折叠模式）
 
@@ -871,7 +871,7 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/GOXGB1soRK-Wm9V_C6zhZA/zh-cn_image_0000002776911036.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/lGeGCqlOQ2yC2RaY1oNIDA/zh-cn_image_0000002779852516.gif)
 
 ### 示例3（设置提示弹窗背景模糊材质）
 
@@ -1002,7 +1002,7 @@ struct AlphabetIndexerSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/lnK8-EX9RzmT93XMKM9ulA/zh-cn_image_0000002776751050.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/F-kbMyAGSLSxaTsawXUovA/zh-cn_image_0000002779692548.gif)
 
 ### 示例4（设置提示弹窗的沉浸光感效果）
 
@@ -1116,10 +1116,6 @@ struct AlphabetIndexerSample {
 }
 ```
 
-未设置系统材质时：
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/lhlXvAoITZCwEu418sc5TA/zh-cn_image_0000002806030767.gif)
-
-设置系统材质后：
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/bzAGzxV6TrW8EMk6AV9PHA/zh-cn_image_0000002806110657.gif)
+| 效果对比 | 未设置系统材质时 | 设置系统材质后 |
+| --- | --- | --- |
+| 示例图 |  |  |

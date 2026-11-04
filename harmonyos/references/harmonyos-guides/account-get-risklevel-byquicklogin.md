@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-get-r
 title: 通过华为账号一键登录获取用户风险等级
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 获取华为账号用户信息 > 获取风险等级 > 通过华为账号一键登录获取用户风险等级
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:54+08:00
+scraped_at: 2026-11-04T08:30:23+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:13bd42e4b3c88b16cf42297ad900c13c9c80c260ccd4e0777db28c5cb73dea8d
+content_hash: sha256:fe34be0984e050cb62389911122a927c69b2182b391b5b582c01d08545704975
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:13bd42e4b3c88b16cf42297ad900c13c9c80c260ccd4e0777db28c5cb73
 
 **图1** 华为账号一键登录（用户首次登录应用）获取华为账号风险等级流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/NfrpmtO2TmeX4zCM5W7vPg/zh-cn_image_0000002806029449.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/wbDcPwytTJe7m0BHFvGKwQ/zh-cn_image_0000002809010851.png)
 
 1. 参考[华为账号一键登录业务流程](account-phone-unionid-login.md#业务流程)，确保系统账号已登录，匿名手机号获取成功，且用户首次使用华为账号登录应用。（如用户非首次使用华为账号登录，可通过[华为账号其他方式登录获取用户风险等级](account-get-risklevel-on-demand-acquisition.md)来查询华为账号的风险等级）
 2. 调用[LoginWithHuaweiIDButton](../harmonyos-references/account-api-huawei-id-button.md#loginwithhuaweiidbutton)组件，在[LoginWithHuaweiIDButtonParams](../harmonyos-references/account-api-component-manager.md#loginwithhuaweiidbuttonparams)参数中设置风险等级字段标识riskLevel，拉起应用登录页。

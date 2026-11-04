@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.commonEvent (公共事件模块)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 已停止维护的接口 > @ohos.commonEvent (公共事件模块)
 category: harmonyos-references
-scraped_at: 2026-10-11T07:26:30+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:256c3ef3fba2f4ce06096d4f1307001731451b36665432cb4c4b113cbda60d82
+scraped_at: 2026-11-04T08:35:10+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:5ed4ba89cb0e83d0c5e6df72d18fd0b2b199218117e9bf62048afb8806476fb9
 ---
 
 本模块提供了公共事件的能力，包括公共事件的权限列表，发布公共事件，订阅或取消订阅公共事件，获取或修改公共事件结果代码、结果数据等。
 
 **说明** 
 
-从API version 7 开始支持，从API version 9 开始废弃，建议使用[@ohos.commonEventManager](js-apis-commoneventmanager.md)替代。
+从API版本7开始支持，从API版本9开始废弃，建议使用[@ohos.commonEventManager](js-apis-commoneventmanager.md)替代。
 
 ## 导入模块
 
@@ -34,7 +34,7 @@ publish(event: string, callback: AsyncCallback<void>): void
 
 **说明** 
 
-从API version 7 开始支持，从API version 9 开始废弃，建议使用[commonEventManager.publish](js-apis-commoneventmanager.md#commoneventmanagerpublish)替代。
+从API版本7开始支持，从API版本9开始废弃，建议使用[commonEventManager.publish](js-apis-commoneventmanager.md#commoneventmanagerpublish)替代。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -71,7 +71,7 @@ publish(event: string, options: CommonEventPublishData, callback: AsyncCallback<
 
 **说明** 
 
-从API version 7 开始支持，从API version 9 开始废弃，建议使用[commonEventManager.publish](js-apis-commoneventmanager.md#commoneventmanagerpublish-1)替代。
+从API版本7开始支持，从API版本9开始废弃，建议使用[commonEventManager.publish](js-apis-commoneventmanager.md#commoneventmanagerpublish-1)替代。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -117,7 +117,7 @@ createSubscriber(subscribeInfo: CommonEventSubscribeInfo, callback: AsyncCallbac
 
 **说明** 
 
-从API version 7 开始支持，从API version 9 开始废弃，建议使用[commonEventManager.createSubscriber](js-apis-commoneventmanager.md#commoneventmanagercreatesubscriber)替代。
+从API版本7开始支持，从API版本9开始废弃，建议使用[commonEventManager.createSubscriber](js-apis-commoneventmanager.md#commoneventmanagercreatesubscriber)替代。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -163,7 +163,7 @@ createSubscriber(subscribeInfo: CommonEventSubscribeInfo): Promise<CommonEventSu
 
 **说明** 
 
-从API version 7 开始支持，从API version 9 开始废弃，建议使用[commonEventManager.createSubscriber](js-apis-commoneventmanager.md#commoneventmanagercreatesubscriber-1)替代。
+从API版本7开始支持，从API版本9开始废弃，建议使用[commonEventManager.createSubscriber](js-apis-commoneventmanager.md#commoneventmanagercreatesubscriber-1)替代。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -209,7 +209,7 @@ subscribe(subscriber: CommonEventSubscriber, callback: AsyncCallback<CommonEvent
 
 **说明** 
 
-从API version 7 开始支持，从API version 9 开始废弃，建议使用[commonEventManager.subscribe](js-apis-commoneventmanager.md#commoneventmanagersubscribe)替代。
+从API版本7开始支持，从API版本9开始废弃，建议使用[commonEventManager.subscribe](js-apis-commoneventmanager.md#commoneventmanagersubscribe)替代。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 
@@ -266,7 +266,7 @@ unsubscribe(subscriber: CommonEventSubscriber, callback?: AsyncCallback<void>): 
 
 **说明** 
 
-从API version 7 开始支持，从API version 9 开始废弃，建议使用[commonEventManager.unsubscribe](js-apis-commoneventmanager.md#commoneventmanagerunsubscribe)替代。
+从API版本7开始支持，从API版本9开始废弃，建议使用[commonEventManager.unsubscribe](js-apis-commoneventmanager.md#commoneventmanagerunsubscribe)替代。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 

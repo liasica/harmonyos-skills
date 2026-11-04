@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-thre
 title: 使用JSVM-API获取堆快照及监控堆内存阈值
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API获取堆快照及监控堆内存阈值
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:17+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:b4f7eea361ee0409f20468303abfc0ba10e2e7af1dcd5f1eb33c996bc2521e36
+scraped_at: 2026-11-04T08:31:15+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:b8306000df88418990eae045321e75a833288e016aa1295dfe73e2ddeb91f8b4
 ---
 
 ## 简介
@@ -130,13 +130,13 @@ static void TestSetHeapThresholdCallback(JSVM_VM vm, uint64_t threshold, int* te
     JSVM_Status addRepeatStatus = OH_JSVM_SetHeapThresholdCallback(
         vm, threshold, OnHeapThresholdReached, testData);
     if (addRepeatStatus == JSVM_INVALID_ARG) {
-        OH_LOG_INFO(LOG_APP, "Set repeated callback failed (expected)");
+        OH_LOG_ERROR(LOG_APP, "Set repeated callback failed (expected)");
     }
 
     JSVM_Status addInvalidStatus = OH_JSVM_SetHeapThresholdCallback(
         vm, 0, OnHeapThresholdReached, testData);
     if (addInvalidStatus == JSVM_INVALID_ARG) {
-        OH_LOG_INFO(LOG_APP, "Set callback with 0 threshold failed (expected)");
+        OH_LOG_ERROR(LOG_APP, "Set callback with 0 threshold failed (expected)");
     }
 }
 
@@ -151,13 +151,13 @@ static void TestClearHeapThresholdCallback(JSVM_VM vm, uint64_t threshold, int* 
     JSVM_Status removeRepeatStatus = OH_JSVM_ClearHeapThresholdCallback(
         vm, threshold, OnHeapThresholdReached, testData);
     if (removeRepeatStatus == JSVM_INVALID_ARG) {
-        OH_LOG_INFO(LOG_APP, "Clear repeated callback failed (expected)");
+        OH_LOG_ERROR(LOG_APP, "Clear repeated callback failed (expected)");
     }
 
     JSVM_Status removeMismatchStatus = OH_JSVM_ClearHeapThresholdCallback(
         vm, 999999, OnHeapThresholdReached, testData);
     if (removeMismatchStatus == JSVM_INVALID_ARG) {
-        OH_LOG_INFO(LOG_APP, "Clear mismatch threshold callback failed (expected)");
+        OH_LOG_ERROR(LOG_APP, "Clear mismatch threshold callback failed (expected)");
     }
 }
 

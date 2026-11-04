@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: NotificationCommonDef
 breadcrumb: API参考 > 应用服务 > Notification Kit（用户通知服务） > ArkTS API > notification > NotificationCommonDef
 category: harmonyos-references
-scraped_at: 2026-10-01T07:40:27+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:f63dd88bf293dd267ca58611385437aff6f0d177699e58b691d90350b9f85140
+scraped_at: 2026-11-04T08:37:15+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:b9a6f15719af1a7602fb118c48728ece2e39440962a6381836685b1f3dba6760
 ---
 
 NotificationCommonDef中定义了通知相关接口中使用的通用数据结构。
 
 **说明** 
 
-本模块首批接口从API version 9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+本模块首批接口从API版本9开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 ## BundleOption
 

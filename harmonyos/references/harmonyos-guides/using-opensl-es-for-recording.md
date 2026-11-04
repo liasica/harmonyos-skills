@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-opensl-
 title: 使用OpenSL ES开发音频录制功能(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > OpenSL ES开发指导(不再推荐) > 使用OpenSL ES开发音频录制功能(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:04+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:af2eecf16749bc6e77edb11141308754805333da0032ded3fbe0fde2669ff3bb
+scraped_at: 2026-11-04T08:30:06+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:9f262de175705cad4f78cc956ef5a0bf762d8fc64b2ba3d8971bb3b3f8f78109
 ---
 
 OpenSL ES全称为Open Sound Library for Embedded Systems，是一个嵌入式、跨平台、免费的音频处理库。为嵌入式移动多媒体设备上的应用开发者提供标准化、高性能、低延迟的API。HarmonyOS的Native API基于[Khronos Group](https://www.khronos.org/)开发的[OpenSL ES](https://www.khronos.org/opensles/) 1.0.1 API 规范实现，开发者可以通过<OpenSLES.h>和<OpenSLES\_OpenHarmony.h>在HarmonyOS上使用相关API。
@@ -113,7 +113,7 @@ target_link_libraries(sample PUBLIC libOpenSLES.so)
    SLDataFormat_PCM format_pcm = {
        SL_DATAFORMAT_PCM,           // 输入的音频格式。
        1,                           // 单声道。
-       SL_SAMPLINGRATE_44_1,        // 采样率: 44100HZ。
+       SL_SAMPLINGRATE_44_1,        // 采样率: 44100Hz。
        SL_PCMSAMPLEFORMAT_FIXED_16, // 音频采样格式, 小端, 带符号的16位整数。
        16,
        SL_SPEAKER_FRONT_LEFT,

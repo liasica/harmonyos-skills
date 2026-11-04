@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-unpu
 title: ohpm unpublish
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm unpublish
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:13:01+08:00
+scraped_at: 2026-11-04T08:31:38+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:a062b17a7343a354677a579e1714a22622f86fbae3c847afb8061afec791e46d
+content_hash: sha256:943d71f296016e1062ad90d819fdc9cef23e7a6ee1b30ab915497aaa1a9b45d8
 ---
 
 下架已发布的三方库。
@@ -101,4 +101,4 @@ ohpm unpublish demo@1.0.0 -f
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/lRjF89pISzSnAUfkE2fnIQ/zh-cn_image_0000002731382783.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/WiRk5qq2SFSpcat_NHuENw/zh-cn_image_0000002731382783.png "点击放大")

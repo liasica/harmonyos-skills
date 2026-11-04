@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1130
 title: 设置RichEditor键盘输入的字体颜色、字间距
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 设置RichEditor键盘输入的字体颜色、字间距
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:38+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:c0440967e18fd61a14ae803108415c0e38461b41dffcf6b4d8e3cbc3fd34c282
+scraped_at: 2026-11-04T08:39:12+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:985c6f32d58fac38325ac6e22cc395191bf90f998b9fe2924bfcbde63043a401
 ---
 
 ## 问题现象
@@ -25,12 +25,12 @@ onReady(() => {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/f2Y327IlSryp9pi9uRIzVQ/zh-cn_image_0000002658928735.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/Q5ogDJtRTAqv8zL1CMTEIQ/zh-cn_image_0000002658928735.gif "点击放大")
 
 ## 背景知识
 
-* [addTextSpan](../harmonyos-references/ts-basic-components-richeditor.md#addtextspan)：添加文本内容，如果组件光标闪烁，插入后光标位置更新为新插入文本的后面。
-* [letterSpacing](../harmonyos-references/ts-basic-components-richeditor.md#richeditortextstyle)：设置文本字符间距。
+* [addTextSpan](../doccenter-references/api/ts-basic-components-richeditor.md#addtextspan)：添加文本内容，如果组件光标闪烁，插入后光标位置更新为新插入文本的后面。
+* [letterSpacing](../doccenter-references/api/ts-basic-components-richeditor.md#richeditortextstyle)：设置文本字符间距。
 
 ## 解决方案
 
@@ -103,7 +103,7 @@ RichEditor组件的字体样式会默认跟随最后TextSpan的样式，所以�
 
 ## 常见FAQ
 
-Q：RichEditor的TextSpan是否可以配置backgroudcolor？
+Q：RichEditor的TextSpan是否可以配置backgroundcolor？
 
 A：不可以。
 

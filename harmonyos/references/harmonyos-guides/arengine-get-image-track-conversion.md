@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-get-
 title: 图像跟踪介绍
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 图像跟踪 > 图像跟踪介绍
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:49+08:00
+scraped_at: 2026-11-04T08:30:17+08:00
 doc_updated_at: 2026-04-24
-content_hash: sha256:b18d6cec712c6e9f3b9f4baf93111fb6f99423d2afaba471530d25bd75a9b092
+content_hash: sha256:356ba7b04bbad35ef5fd726d2792f8917a04734733485e30d9c19bdbad610e56
 ---
 
 AR Engine可以检测场景中是否存在用户提供的图像，识别之后输出图像的位姿。
@@ -14,4 +14,4 @@ AR Engine可以检测场景中是否存在用户提供的图像，识别之后�
 
 **图1** 图像跟踪示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/3xKN-MusQ-m5PZxOt8coDQ/zh-cn_image_0000002806109191.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/hPtKUe4MSU--lyaT86WkUw/zh-cn_image_0000002809050617.png)

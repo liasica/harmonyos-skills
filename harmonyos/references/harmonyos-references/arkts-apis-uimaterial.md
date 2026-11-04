@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: "@ohos.arkui.uiMaterial (系统材质)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.uiMaterial (系统材质)
 category: harmonyos-references
-scraped_at: 2026-10-31T07:34:57+08:00
+scraped_at: 2026-11-04T08:32:37+08:00
 doc_updated_at: 2026-10-26
-content_hash: sha256:216ddce64ba47064a9136608b693d99dfc609824232dc953ded8b8b09773502f
+content_hash: sha256:fa5b8c194d3fdadc9c0f4b526050dcb225f1e3d60494c1deda79d4d7db13c0d9
 ---
 
 本模块提供系统材质的接口定义。不同的系统材质对应不同的UI效果，包括背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)、材质层滤镜[materialFilter](ts-universal-attributes-filter-effect.md#materialfilter23)效果。当前提供的系统材质为沉浸式材质类型[ImmersiveMaterial](arkts-apis-uimaterial.md#immersivematerial)，其设备兼容性和算力分档表现，请参考[ImmersiveMaterial](arkts-apis-uimaterial.md#immersivematerial)的描述。
@@ -413,67 +413,67 @@ struct SystemMaterialPage {
 
 ULTRA\_THIN样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/nb1MzJaTQYae_tsUZIkv8w/zh-cn_image_0000002806110107.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/TfysUA07Sb-IRuY-crMsrA/zh-cn_image_0000002809051533.jpg)
 
 THIN样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/zcKR8pB-Tv-EYIRzVSk7Ow/zh-cn_image_0000002776910488.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/ng-1xtW7SzKjclRBJ88R0Q/zh-cn_image_0000002779851968.jpg)
 
 REGULAR样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/pHinUDeDRVSbKzCxylLsCw/zh-cn_image_0000002776750502.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/DCjXpUXDQdCDXM4RXHXwEA/zh-cn_image_0000002779692000.jpg)
 
 THICK样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/Raw495P5SFK1Y3uBKvBUcw/zh-cn_image_0000002806030219.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/QU7G5FpESA6zDCDcBIFeNg/zh-cn_image_0000002809011621.jpg)
 
 ULTRA\_THICK样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/ztU5fFpxSWKTOC230JcY9w/zh-cn_image_0000002806110109.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/Z6iEc8b5TbGL3ELW81aYpQ/zh-cn_image_0000002809051535.jpg)
 
 在支持沉浸式材质的中算力设备上表现：
 
 ULTRA\_THIN样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/5mMO5iXbRMGsm4_vP-wrFQ/zh-cn_image_0000002776910490.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/bvwLgn5xT6OW6fVv3i7VbQ/zh-cn_image_0000002779851970.jpg)
 
 THIN样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/jj3Elp4BTQ-XKexHCtALaA/zh-cn_image_0000002776750504.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/5jYZfWARQnmlsHzJzHebqw/zh-cn_image_0000002779692002.jpg)
 
 REGULAR样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/H_pu73pRQz-2wzEG5GyDoA/zh-cn_image_0000002806030221.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/OgMouFNxRVWgQLt1ti3bYg/zh-cn_image_0000002809011623.jpg)
 
 THICK样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/agKDG7tWRg6SIlN_ZKbGXw/zh-cn_image_0000002806110111.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/_R9BVKauSxSjJ6S6nZhm9w/zh-cn_image_0000002809051537.jpg)
 
 ULTRA\_THICK样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/5uTZ7U1fRl-8XE2dE1WK9w/zh-cn_image_0000002776910492.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/QApQAusrSjm6OjMKOXmpkA/zh-cn_image_0000002779851972.jpg)
 
 在支持沉浸式材质的高算力设备上表现：
 
 ULTRA\_THIN样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/8EIYBcKDRHKDsxaI2Gmiig/zh-cn_image_0000002776750506.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/pJ22G3xbS2KOxev6nkzasA/zh-cn_image_0000002779692004.jpg)
 
 THIN样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/AWZFmPPiS7a9vFRFXP7SvA/zh-cn_image_0000002806030223.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/yzKI3n1iQg66NA-9ew1AKQ/zh-cn_image_0000002809011625.jpg)
 
 REGULAR样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/DZZfDTRyRx6vmeOF89kYiQ/zh-cn_image_0000002806110113.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/C9vRDmgPTbC5hkCOySMCdw/zh-cn_image_0000002809051539.jpg)
 
 THICK样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/07vaMZZDS2GQn-rxE8qbRA/zh-cn_image_0000002776910494.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/5qn13FSCQsivoxhAB2qnDw/zh-cn_image_0000002779851974.jpg)
 
 ULTRA\_THICK样式：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/_Irx8tWISBOMGm339c9bng/zh-cn_image_0000002776750508.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/BCajRLv0SE2xAyNNJNRBzQ/zh-cn_image_0000002779692006.jpg)
 
 ### 示例2（获取材质配置信息并使用空材质关闭沉浸式系统材质）
 
@@ -547,15 +547,15 @@ struct MaterialInfoPage {
 
 在支持沉浸式材质的高算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/MNhVh43zS7GMLv6amSfdmQ/zh-cn_image_0000002806030225.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/q1ZzR3DyQ5idNA0mYc3O_w/zh-cn_image_0000002809011627.jpg)
 
 在支持沉浸式材质的中算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/eAkL5xZ_TwuJzh0UhpslsQ/zh-cn_image_0000002806110115.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/zZXABiUcStCfP-MDRJ-fCg/zh-cn_image_0000002809051541.jpg)
 
 在支持沉浸式材质的低算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/PfHmsArCSYOslNfwWbj1-w/zh-cn_image_0000002776910496.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/hNlExEZiSnaBblJ0SRRD9Q/zh-cn_image_0000002779851976.jpg)
 
 ### 示例3（设置组件材质的交互形变效果）
 
@@ -601,15 +601,15 @@ struct Index {
 
 在支持沉浸式材质的高算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/DrNSufy3SQ-EcH4tpBGfOw/zh-cn_image_0000002776750510.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/Tt1vKESxRHqKftABU64kwQ/zh-cn_image_0000002779692008.gif)
 
 在支持沉浸式材质的中算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/lHZMuptFSRSNtJm-ru3Ugg/zh-cn_image_0000002806030227.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/_9Yk1h66SFGZFiB8jBjxBw/zh-cn_image_0000002809011629.gif)
 
 在支持沉浸式材质的低算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/M1tckNcFRSaxnGm1csSqiw/zh-cn_image_0000002806110117.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/XgOl23kjRByqo3XLd-WC6Q/zh-cn_image_0000002809051543.gif)
 
 ### 示例4（设置组件材质的光感交互反馈效果）
 
@@ -686,15 +686,15 @@ struct NavigationTitleMaterialDemo {
 
 在支持沉浸式材质的高算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/rNWxlHMgQZef4fRni-ISjg/zh-cn_image_0000002776910498.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/hpPshCBnRy2wGNQrW6TFmQ/zh-cn_image_0000002779851978.gif)
 
 在支持沉浸式材质的中算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/HZLoPJ3DTxSRfUHo3ISR8w/zh-cn_image_0000002776750512.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/su1ZLGLPQ42rbV0z2JPq4g/zh-cn_image_0000002779692010.gif)
 
 在支持沉浸式材质的低算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/jhiD82_YSK6PYbrSpbpVsA/zh-cn_image_0000002806030229.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/MHEJUGckRzuVjgLNtobHew/zh-cn_image_0000002809011631.gif)
 
 ### 示例5（查询材质等级与是否支持沉浸式材质）
 
@@ -796,16 +796,16 @@ struct NavigationTitleMaterialDemo {
 
 在支持沉浸式材质的高算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/bTTu3V2bQxSB2AWFTQWIWQ/zh-cn_image_0000002806110119.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/mULENhmyS329EthbBRRhnA/zh-cn_image_0000002809051545.jpg)
 
 在支持沉浸式材质的中算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/NjFij6_DRFmNSFLrctHz-A/zh-cn_image_0000002776910500.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/WodeM2VtQPmAU1vHQt1srg/zh-cn_image_0000002779851980.jpg)
 
 在支持沉浸式材质的低算力设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/QyJSTBHZSdi0NKNyt_oi0A/zh-cn_image_0000002776750514.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/FnSi59rGTMiFDZSlJKJOyQ/zh-cn_image_0000002779692012.jpg)
 
 在不支持沉浸式材质的设备上表现：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/Y5BoKiLwQvWvcp79KP0D4w/zh-cn_image_0000002806030231.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/zNbFpVgHSv2IFI_OulK5PA/zh-cn_image_0000002809011633.jpg)

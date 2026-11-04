@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-v
 title: "@ohos.multimedia.videoProcessingEngine (视频处理引擎)"
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.videoProcessingEngine (视频处理引擎)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:f8e6d451ec67b6caad7e1d673b8ca368910f8fae91bed31121ab2130d05f1164
+scraped_at: 2026-11-04T08:36:08+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:784580fbc30a108680d149af83b8491131ad3ca46fa08191807ac3efd00ddc7d
 ---
 
 本模块提供图片内容的清晰度增强及缩放能力。
@@ -157,7 +157,7 @@ enhanceDetail(sourceImage: image.PixelMap, width: number, height: number, level?
 | sourceImage | [image.PixelMap](arkts-apis-image-pixelmap.md) | 是 | 输入图像，内存类型需为DMA内存，具体情况请参考[PixelMap的内存类型介绍](../harmonyos-guides/image-allocator-type.md#内存类型介绍)。 |
 | width | number | 是 | 目标宽度，单位为像素（px）。  当level为HIGH时，支持范围[512, 2000]；当level为其他时，支持范围[32, 3000]。 |
 | height | number | 是 | 目标高度，单位为像素（px）。  当level为HIGH时，支持范围[512, 2000]；当level为其他时，支持范围[32, 3000]。 |
-| level | [QualityLevel](js-apis-videoprocessingengine.md#qualitylevel) | 否 | 算法档位（HIGH、MEDIUM、LOW、NONE），默认为NONE。 |
+| level | [QualityLevel](js-apis-videoprocessingengine.md#qualitylevel) | 否 | 算法档位（HIGH、MEDIUM、LOW、NONE），默认为LOW。 |
 
 **返回值：**
 
@@ -205,7 +205,7 @@ enhanceDetail(sourceImage: image.PixelMap, scale: number, level?: QualityLevel):
 | --- | --- | --- | --- |
 | sourceImage | [image.PixelMap](arkts-apis-image-pixelmap.md) | 是 | 输入图像，内存类型需为DMA内存，具体情况请参考[PixelMap的内存类型介绍](../harmonyos-guides/image-allocator-type.md#内存类型介绍)。 |
 | scale | number | 是 | 目标缩放比例。取值范围(0.0, 32.0]。 |
-| level | [QualityLevel](js-apis-videoprocessingengine.md#qualitylevel) | 否 | 算法档位（HIGH、MEDIUM、LOW、NONE），默认为NONE。 |
+| level | [QualityLevel](js-apis-videoprocessingengine.md#qualitylevel) | 否 | 算法档位（HIGH、MEDIUM、LOW、NONE），默认为LOW。 |
 
 **返回值：**
 
@@ -254,7 +254,7 @@ enhanceDetailSync(sourceImage: image.PixelMap, width: number, height: number, le
 | sourceImage | [image.PixelMap](arkts-apis-image-pixelmap.md) | 是 | 输入图像，内存类型需为DMA内存，具体情况请参考[PixelMap的内存类型介绍](../harmonyos-guides/image-allocator-type.md#内存类型介绍)。 |
 | width | number | 是 | 目标宽度，单位为像素（px）。  当level为HIGH时，支持范围[512, 2000]；当level为其他时，支持范围[32, 3000]。 |
 | height | number | 是 | 目标高度，单位为像素（px）。  当level为HIGH时，支持范围[512, 2000]；当level为其他时，支持范围[32, 3000]。 |
-| level | [QualityLevel](js-apis-videoprocessingengine.md#qualitylevel) | 否 | 算法档位（HIGH、MEDIUM、LOW、NONE），默认为NONE。 |
+| level | [QualityLevel](js-apis-videoprocessingengine.md#qualitylevel) | 否 | 算法档位（HIGH、MEDIUM、LOW、NONE），默认为LOW。 |
 
 **返回值：**
 
@@ -303,7 +303,7 @@ enhanceDetailSync(sourceImage: image.PixelMap, scale: number, level?: QualityLev
 | --- | --- | --- | --- |
 | sourceImage | [image.PixelMap](arkts-apis-image-pixelmap.md) | 是 | 输入图像，内存类型需为DMA内存，具体情况请参考[PixelMap的内存类型介绍](../harmonyos-guides/image-allocator-type.md#内存类型介绍)。 |
 | scale | number | 是 | 目标缩放比例。取值范围(0.0, 32.0]。 |
-| level | [QualityLevel](js-apis-videoprocessingengine.md#qualitylevel) | 否 | 算法档位（HIGH、MEDIUM、LOW、NONE），默认为NONE。 |
+| level | [QualityLevel](js-apis-videoprocessingengine.md#qualitylevel) | 否 | 算法档位（HIGH、MEDIUM、LOW、NONE），默认为LOW。 |
 
 **返回值：**
 
@@ -347,6 +347,6 @@ function enhanceDetailSync(sourceImage: image.PixelMap, scale: number) {
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | NONE | 0 | 仅适用于缩放场景，支持改变宽高比例。  - 输入分辨率要求（单位为像素，px）：宽：[32，3000]，高：[32，3000]。  - 输出分辨率要求（单位为像素，px）：宽：[32，3000]，高：[32，3000]。 |
-| LOW | 1 | 仅适用于缩放场景，支持改变宽高比例。  - 输入分辨率要求（单位为像素，px）：宽：[32，3000]，高：[32，3000]。  - 输出分辨率要求（单位为像素，px）：宽：[32，3000]，高：[32，3000]。 |
+| LOW | 1 | 仅适用于缩放场景，支持改变宽高比例，当前为默认级别。  - 输入分辨率要求（单位为像素，px）：宽：[32，3000]，高：[32，3000]。  - 输出分辨率要求（单位为像素，px）：宽：[32，3000]，高：[32，3000]。 |
 | MEDIUM | 2 | 仅适用于缩放场景，支持改变宽高比例。  - 输入分辨率要求（单位为像素，px）：宽：[32，3000]，高：[32，3000]。  - 输出分辨率要求（单位为像素，px）：宽：[32，3000]，高：[32，3000]。 |
 | HIGH | 3 | 1. 缩放场景，不支持改变宽高比例。  - 输入分辨率要求（单位为像素，px）：宽：(32，512) (2000，8192]，高：(32，512) (2000，8192]。  - 输出分辨率要求（单位为像素，px）：宽：(32，512) (2000，8192]，高：(32，512) (2000，8192]。  2. 清晰度增强、缩放场景，支持改变宽高比例。  - 输入分辨率要求（单位为像素，px）：宽：[512，2000]，高：[512，2000]。  - 输出分辨率要求（单位为像素，px）：宽：[512，2000]，高：[512，2000]。 |

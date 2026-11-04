@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-templ
 title: Matmul模板参数
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC算子接口 > AscendC API > 高阶API > 矩阵相乘 > Matmul > Matmul模板参数
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:33:25+08:00
+scraped_at: 2026-11-04T08:30:54+08:00
 doc_updated_at: 2026-08-18
-content_hash: sha256:39c9481b08f6ddc260f9c3a9dd05639478676ad5be29a221490687136fd34b87
+content_hash: sha256:d047cedfc32b06c78ae3bc849ade53a85cb49d8e9dc302a05a3cec169fd5d831
 ---
 
 ## 功能说明
@@ -25,7 +25,7 @@ content_hash: sha256:39c9481b08f6ddc260f9c3a9dd05639478676ad5be29a221490687136fd
 
 **图1** Matmul算法框图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/pyBXYWhjRmOvTFfAodG22w/zh-cn_image_0000002806030031.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/r0BLTe9WT5yabTYgtAq-aQ/zh-cn_image_0000002809011433.png)
 
 计算过程分为如下几步：
 

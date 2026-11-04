@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 基于AVScreenCapture录制音频
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 基于AVScreenCapture录制音频
 category: best-practices
-scraped_at: 2026-10-29T08:03:15+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:f9f530d85478f399beb9f4ce48ba94708e0d20b42643064f2016d8217d62452f
+scraped_at: 2026-11-04T08:37:50+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:0b76642f8755d1b6bd25e1b78e7b6b10438175bdfe983d7587c3f197b8634fb7
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ AVScreenCapture具备采集设备内部音频和麦克风音频的能力，可�
 
 基于AVScreenCapture录制音频实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/ehrxvxX0QGCg3pYOUfnL2w/zh-cn_image_0000002524061076.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/zK84OwP9RXODquk7sMEApg/zh-cn_image_0000002524061076.gif "点击放大")
 
 本文的主要内容如下：
 

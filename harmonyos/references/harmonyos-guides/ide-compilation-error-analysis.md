@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-compilati
 title: 编译报错智能分析
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 编译报错智能分析
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:13:02+08:00
+scraped_at: 2026-11-04T08:31:39+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:f41b383433029034df261c977493512470bed261072d2ff2b7b2eae7a00c3235
+content_hash: sha256:d56f46ec8da23d3163f193d4cc84046e3d6a18769b72a309c8426bab29a9d16b
 ---
 
 当DevEco Studio构建ArkTS工程出现失败时，CodeGenie仅能够对ArkTS语法相关的错误进行智能分析，提供错误原因及修复方案，帮助开发者快速解决编译构建问题。
@@ -20,26 +20,26 @@ content_hash: sha256:f41b383433029034df261c977493512470bed261072d2ff2b7b2eae7a00
 
 1. 如需开启编译报错智能分析和自动修复，进入**File > Settings**（macOS为****DevEco Studio > Preferences/Settings****） **> CodeGenie****> General**页面，勾选**Enable AI** **auto-fix for build errors**和**Allow AI to modify local files for auto-fix**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/-b1MAvx_Qzqv5mYAmvmdyw/zh-cn_image_0000002731382695.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/Yh020m5_SKyzttEQhg-41A/zh-cn_image_0000002731382695.png)
 2. 当ArkTS工程出现构建报错时，点击报错信息后方**Add To Chat**图标，CodeGenie将自动引用构建报错信息。
 
    开发者可在输入框中选择对当前报错修复任务进行补充指令，帮助开发者进行定制化修复，使修复更准确，如“当前工程为API 24工程，注意兼容性”等，点击或回车发送对话后，CodeGenie会分析该报错及开发者输入信息，并提供可能的错误原因，针对语法错误问题将参考开发者诉求，提供恰当的修复方案。
 
    若弹窗提醒"Please sign in to access DevEco CodeGenie"，请先登录CodeGenie后，再次点击**Add To Chat**图标查看解决方案。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/tUQQfsASQMypml0AfI719A/zh-cn_image_0000002701663466.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/9_vYgYTYQxGYTzhVRYZK8w/zh-cn_image_0000002701663466.png "点击放大")
 3. CodeGenie提供的修复方案被自动应用到代码中。
    * DevEco Studio 6.1.0 Beta2之前版本：
      + 点击编辑区**Accept**（或使用快捷键**Ctrl+Shift+Y**），确认和接受AI提供的修复方案；点击**Reject**（或使用快捷键**Ctrl+Shift+N**）拒绝。
-     + 点击右侧对话框中的**Accept All****/Reject All**按钮，接受或拒绝所有文件的修改；将鼠标悬浮在文件路径上，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/jI9nzFH_Q2emFfgrG1SVhA/zh-cn_image_0000002731542661.png)可接受或拒绝该文件的修改。
+     + 点击右侧对话框中的**Accept All****/Reject All**按钮，接受或拒绝所有文件的修改；将鼠标悬浮在文件路径上，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/B4-lksYHTVaZBn13c3U7cQ/zh-cn_image_0000002731542661.png)可接受或拒绝该文件的修改。
    * DevEco Studio 6.1.0 Beta2及之后版本：
-     + 点击右侧对话框中的**Accept All****/Reject All**按钮，接受或拒绝所有文件的修改；将鼠标悬浮在文件路径上，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/YO7liYuKRiSalEaikZNIww/zh-cn_image_0000002731382685.png)可接受或拒绝该文件的修改。
+     + 点击右侧对话框中的**Accept All****/Reject All**按钮，接受或拒绝所有文件的修改；将鼠标悬浮在文件路径上，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/Y7yxkpxaQRmnPud8KmWKGw/zh-cn_image_0000002731382685.png)可接受或拒绝该文件的修改。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/b6kd9mGERy2JBT37YRcbvg/zh-cn_image_0000002701823388.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/GUs2DsglT92YSLPbN8-GRQ/zh-cn_image_0000002701823388.png "点击放大")
 4. 点击**Run**编译验证，所需时间见提示，时间单位是秒。
 
    DevEco Studio 6.1.0 Beta2及之后版本，勾选对话问答结果中的**Auto Run**，或者Agent中**Auto Run**，开启自动编译验证开关。取消勾选Agent中**Auto Run**选项，关闭自动编译验证开关。
 
    DevEco Studio 6.1.0 Beta2之前版本，勾选对话问答结果中的**Automatically compile and verify without prompting**，或者**File** **>** **Settings****> CodeGenie >****General**中的**Allow AI to automatically run compilation verification during auto-fix**，开启自动编译验证开关。取消勾选**File** **>** **Settings****> CodeGenie >****Genera****l**中**Allow AI to automatically run compilation verification during auto-fix**选项，关闭自动编译验证开关。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/2fgpIkV7T5eYTEcT2L4bPg/zh-cn_image_0000002701823380.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/tRUjmZFfQvCXt_tHBY0boQ/zh-cn_image_0000002701823380.png)

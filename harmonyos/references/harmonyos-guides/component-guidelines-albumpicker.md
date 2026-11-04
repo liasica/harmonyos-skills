@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-gui
 title: 使用AlbumPicker组件访问相册列表
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 使用AlbumPicker组件访问相册列表
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:47+08:00
+scraped_at: 2026-11-04T08:30:14+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:49c89d452fdbf36e0b0d1da3a65730040640e6a054822b774ef7186a2afafeb8
+content_hash: sha256:ea02d905928a7afb6a83e4c8141bbb30f2c50648acb92fc480e15831b0c9c5e6
 ---
 
 开发者可以在布局中嵌入AlbumPickerComponent组件，通过此组件，应用无需申请权限，即可访问公共目录中的相册列表。
@@ -14,7 +14,7 @@ content_hash: sha256:49c89d452fdbf36e0b0d1da3a65730040640e6a054822b774ef7186a2af
 
 界面效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/e1hImK1TQ_uPNLTooZtJEg/zh-cn_image_0000002776909550.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/nilmlCH6SXSyuI-0PoqboQ/zh-cn_image_0000002779851030.png)
 
 ## 开发步骤
 

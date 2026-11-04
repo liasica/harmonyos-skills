@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-conver
 title: 指定二进制数据转换对称密钥(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥生成与转换 > 指定二进制数据转换对称密钥(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:30ff2474c48e881f8a433219139186ec4f4232c6384e62ee125cabf2afe09040
+scraped_at: 2026-11-04T08:29:36+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:1453178b6257962fb002258617f8760c87cf3a57a2e77609c78acdef405cb69d
 ---
 
 以3DES和HMAC为例，根据指定的对称密钥二进制数据，生成对称密钥对象（SymKey），即将外部或存储的二进制数据转换为算法库的密钥对象，该对象可用于后续的加解密等操作。
@@ -103,35 +103,47 @@ content_hash: sha256:30ff2474c48e881f8a433219139186ec4f4232c6384e62ee125cabf2afe
 
   ```typescript
   import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
   import { buffer } from '@kit.ArkTS';
 
   async function testConvertHmacKey() {
-    // 对称密钥长度为64字节，512比特
-    let keyMessage = '12345678abcdefgh12345678abcdefgh12345678abcdefgh12345678abcdefgh';
-    let keyBlob: cryptoFramework.DataBlob = {
-      data: new Uint8Array(buffer.from(keyMessage, 'utf-8').buffer)
+    try {
+      // 对称密钥长度为64字节，512比特
+      let keyMessage = '12345678abcdefgh12345678abcdefgh12345678abcdefgh12345678abcdefgh';
+      let keyBlob: cryptoFramework.DataBlob = {
+        data: new Uint8Array(buffer.from(keyMessage, 'utf-8').buffer)
+      }
+      let symKeyGenerator = cryptoFramework.createSymKeyGenerator('HMAC');
+      let key = await symKeyGenerator.convertKey(keyBlob);
+      let encodedKey = key.getEncoded();
+      console.info('key encoded data: ' + encodedKey.data);
+    } catch (err) {
+      let e: BusinessError = err as BusinessError;
+      console.error(`call failed: errCode: ${e.code}, errMsg: ${e.message}`);
     }
-    let symKeyGenerator = cryptoFramework.createSymKeyGenerator('HMAC');
-    let key = await symKeyGenerator.convertKey(keyBlob);
-    let encodedKey = key.getEncoded();
-    console.info('key encoded data: ' + encodedKey.data);
   }
   ```
 * 同步方法（调用方法[convertKeySync](../harmonyos-references/js-apis-cryptoframework.md#convertkeysync12)）：
 
   ```typescript
   import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
   import { buffer } from '@kit.ArkTS';
 
   function testConvertKeySync() {
-    // 对称密钥长度为64字节，512比特
-    let keyMessage = '12345678abcdefgh12345678abcdefgh12345678abcdefgh12345678abcdefgh';
-    let keyBlob: cryptoFramework.DataBlob = {
-      data : new Uint8Array(buffer.from(keyMessage, 'utf-8').buffer)
+    try {
+      // 对称密钥长度为64字节，512比特
+      let keyMessage = '12345678abcdefgh12345678abcdefgh12345678abcdefgh12345678abcdefgh';
+      let keyBlob: cryptoFramework.DataBlob = {
+        data : new Uint8Array(buffer.from(keyMessage, 'utf-8').buffer)
+      }
+      let symKeyGenerator = cryptoFramework.createSymKeyGenerator('HMAC');
+      let key = symKeyGenerator.convertKeySync(keyBlob);
+      let encodedKey = key.getEncoded();
+      console.info('key encoded data: ' + encodedKey.data);
+    } catch (err) {
+      let e: BusinessError = err as BusinessError;
+      console.error(`call failed: errCode: ${e.code}, errMsg: ${e.message}`);
     }
-    let symKeyGenerator = cryptoFramework.createSymKeyGenerator('HMAC');
-    let key = symKeyGenerator.convertKeySync(keyBlob);
-    let encodedKey = key.getEncoded();
-    console.info('key encoded data: ' + encodedKey.data);
   }
   ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: input
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 基础组件 > input
 category: harmonyos-references
-scraped_at: 2026-10-31T07:35:42+08:00
+scraped_at: 2026-11-04T08:33:26+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:01c087e9d16f7f7ebb8ed2db78c2acece1e5df0374d9afda80205507c4bad860
+content_hash: sha256:1b55f45f766760af8c5d58bca30f0c9261b7ecceb5fce96b5196314b3cceef2b
 ---
 
 交互式组件，包括单选框，多选框，按钮。
@@ -94,7 +94,7 @@ content_hash: sha256:01c087e9d16f7f7ebb8ed2db78c2acece1e5df0374d9afda80205507c4b
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/RXAGp6ecR_SwNEmxkwhQ7g/zh-cn_image_0000002776911616.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/FoB2Gc-JQKuRHYH_0XOxzw/zh-cn_image_0000002779693072.png)
 2. type为checkbox
 
    ```html
@@ -135,7 +135,7 @@ content_hash: sha256:01c087e9d16f7f7ebb8ed2db78c2acece1e5df0374d9afda80205507c4b
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/rpZw3ZS_Q5S5Xhkucte5Xg/zh-cn_image_0000002776751632.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/0fDmbrWNS7mPwIBXLUlmTg/zh-cn_image_0000002809012693.gif)
 3. type为radio
 
    ```html
@@ -179,4 +179,4 @@ content_hash: sha256:01c087e9d16f7f7ebb8ed2db78c2acece1e5df0374d9afda80205507c4b
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/vPwVYGlMQEGVxhio-R-qMg/zh-cn_image_0000002806031347.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/SUkocfvzRf20rdXeuiZuuw/zh-cn_image_0000002809052607.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-layered-ar
 title: 分层架构设计
 breadcrumb: 最佳实践 > 应用架构 > 分层架构设计
 category: best-practices
-scraped_at: 2026-10-29T08:03:13+08:00
+scraped_at: 2026-11-04T08:37:47+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:b0b42f86d78a619cf44d8d662fcfb795134e4d3cb24db04108e51aed0c8ddb65
+content_hash: sha256:a803ef2987fb27a6f72b7fb7c37c7963fb070be414db22ea639288782a647b29
 ---
 
 HarmonyOS 应用的分层架构设计基于一套代码工程，支持华为手机、电脑等1+8全场景设备，实现了“一次开发，多端部署”的开发理念。
@@ -17,7 +17,7 @@ HarmonyOS应用分层架构包括产品定制层、基础特性层和公共能�
 ## 逻辑模型
 
 **图1** 分层架构逻辑模型  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/ye1YLtleTFqX07F6YacGbA/zh-cn_image_0000002229336237.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/wnis-ieBQXWelFb_39p4-w/zh-cn_image_0000002229336237.png "点击放大")
 
 * **产品定制层**
 
@@ -49,7 +49,7 @@ HarmonyOS应用分层架构包括产品定制层、基础特性层和公共能�
 ## 开发模型
 
 **图2** 分层架构开发模型  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/nMI2v_erSnGkk1yctBmKNg/zh-cn_image_0000002194010440.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/6HXDjvuETqSG39AFHUA8Zg/zh-cn_image_0000002194010440.png "点击放大")
 
 * **产品定制层**
 
@@ -69,7 +69,7 @@ HarmonyOS应用分层架构包括产品定制层、基础特性层和公共能�
 ## 部署模型
 
 **图3** 分层架构部署模型（不同设备的定制）  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/MFvfFSajQqyH0AGX-B0A3A/zh-cn_image_0000002229450717.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/TZJy74nFQ9GCCtmlQktD4w/zh-cn_image_0000002229450717.png "点击放大")
 
 应用程序（.app文件）在流水线或应用市场上被解包为N个Entry类型的HAP和N个Feature类型的HAP，根据设备类型和使用场景部署到不同设备，实现多端统一用户体验。
 

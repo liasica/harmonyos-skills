@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-
 title: 错误码
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 附录 > 错误码
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:23+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:c17359eeec48a8ed8ddeeffe99ac822f40df32f9b77b3aa3280318b7e53bed18
+scraped_at: 2026-11-04T08:31:37+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:c74ac8bea5bd090a4eb3e0d19d112bd4bee4b0612d801802b5d8581a45c7fda3
 ---
 
 ## 00701101 应用拉起失败
@@ -406,7 +406,7 @@ Profiler分配的内存已达到上限，导致无法正常运行。
 
 **处理步骤**
 
-在DevEco Studio的配置文件中手动修改虚拟机可使用的最大内存，具体请参考[内存占用率过高导致DevEco Studio无法正常运行](../harmonyos-faqs/faqs-profiler-3.md)。
+在DevEco Studio的配置文件中手动修改虚拟机可使用的最大内存，具体请参考[DevEco Studio内存占用过高问题排查](../harmonyos-faqs/development-environment-faq-0003.md)。
 
 ## 00703203 录制的数据与当前DevEco Studio窗口打开的工程SourceMap文件不匹配或SourceMap文件不存在
 

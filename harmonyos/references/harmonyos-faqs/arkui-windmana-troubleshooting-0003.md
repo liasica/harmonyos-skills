@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-windmana-
 title: startAbility启动小窗口后requestFocus原页面组件报错问题定位
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 故障排查 > startAbility启动小窗口后requestFocus原页面组件报错问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:29+08:00
-doc_updated_at: 2026-10-27
+scraped_at: 2026-11-04T08:39:03+08:00
+doc_updated_at: 2026-11-03
 content_hash: sha256:743b18b151adabb3a6dd7617ea2d291476bfb8f923ca91261e5d15d643bf39d2
 ---
 

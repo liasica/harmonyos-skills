@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-nat
 title: so信息可视化
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > so信息可视化
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:12:54+08:00
+scraped_at: 2026-11-04T08:31:28+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:fc4c968d26c88c6a8d3506203008c59a9ea100dc3c06e20dc46a87f01b2e3f01
+content_hash: sha256:249078702cd9c28dc5a951bca3e674e6a96d1f2443fa9f7821480fd94193fb5d
 ---
 
-在native调试窗口中，点击**Layout Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/Ggss9QnMQmW7SpgJDPLuMQ/zh-cn_image_0000002701663280.png)，勾选**Modules**，打开模块视图。
+在native调试窗口中，点击**Layout Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/7-bqN6TVQYCg0USKCiS7Bg/zh-cn_image_0000002701663280.png)，勾选**Modules**，打开模块视图。
 
 在native调试期间，**Modules**窗口会列出并显示有关应用使用的so信息。点击各属性可按升序/降序来排序，支持字符串匹配搜索。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/b_aozQyyRjO3BjOdTDkxIA/zh-cn_image_0000002701823202.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/pLGp7YH8ROSpuROwkyNZJA/zh-cn_image_0000002701823202.png)
 
 * 加载符号表文件
 

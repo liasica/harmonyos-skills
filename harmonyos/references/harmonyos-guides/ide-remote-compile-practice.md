@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-remote-co
 title: 内存优化：远程编译实践
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 提升构建效率 > 实践说明 > 内存优化：远程编译实践
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:12:58+08:00
+scraped_at: 2026-11-04T08:31:34+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:2fb8a5967be173fc3e3ede6de7fa75cd1a516ea21f7eae1c9b7526c98ff86483
+content_hash: sha256:135d4ed03a64d42dc833261ac6fa7dd56a9c1586c59c96d527bcf574c7851e38
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ content_hash: sha256:2fb8a5967be173fc3e3ede6de7fa75cd1a516ea21f7eae1c9b7526c98ff
 
 整个过程中，实际编译工作由服务端承担，本地仅负责发起构建和接收结果，无需保留完整的编译中间产物，从而有效释放本地内存资源。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/tmmcCNs5T9KDhaWigJj37Q/zh-cn_image_0000002731382087.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/e16Px5U1SmmeZhOZJfasuA/zh-cn_image_0000002731382087.png "点击放大")
 
 ## 使用示例
 
@@ -218,7 +218,7 @@ content_hash: sha256:2fb8a5967be173fc3e3ede6de7fa75cd1a516ea21f7eae1c9b7526c98ff
 
 启动rsync服务和Python脚本后，在本地启动构建，即可自动转移到远端服务器进行构建。查看日志信息如下说明远程编译启动成功。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/W7gKg6MzRKCHHAr52C37Cg/zh-cn_image_0000002731542061.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/3UubZTejTBGIU0A8fy0f-g/zh-cn_image_0000002731542061.png)
 
 ### 示例代码
 

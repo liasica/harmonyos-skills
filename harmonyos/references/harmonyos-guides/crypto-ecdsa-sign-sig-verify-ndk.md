@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-ecdsa-
 title: 使用ECDSA密钥对签名验签(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 签名验签 > 使用ECDSA密钥对签名验签(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:26+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:487f2119c733fb255788ada024af08298217ec86620de7775b072822bbafa648
+scraped_at: 2026-11-04T08:29:37+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:d9826368468d6bb0c8febcfe35507ad577b5ab9cc1c4174fa4e59c86c029de8f
 ---
 
 对应的算法规格请查看[签名验签算法规格：ECDSA](crypto-sign-sig-verify-overview.md#ecdsa)。
@@ -22,7 +22,7 @@ target_link_libraries(entry PUBLIC libohcrypto.so)
 2. 调用[OH\_CryptoSign\_Init](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptosign_init)，使用私钥[OH\_CryptoPrivKey](../harmonyos-references/capi-cryptoasymkeyapi-oh-cryptoprivkey.md)初始化Sign实例。
 3. 调用[OH\_CryptoSign\_Update](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptosign_update)，传入待签名的数据。当前单次update长度没有限制，开发者可以根据数据量判断如何调用update，如果数据量较小，可以直接调用OH\_CryptoSign\_Final接口一次性传入。
 4. 调用[OH\_CryptoSign\_Final](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptosign_final)，对数据进行签名。
-5. 调用[OH\_CryptoSign\_Destroy](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptosign_destroy)等释放内存。
+5. 调用[OH\_CryptoSign\_Destroy](../harmonyos-references/capi-crypto-signature-h.md#oh_cryptosign_destroy)释放内存。
 
 ```
 #include "CryptoArchitectureKit/crypto_common.h"

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persiste
 title: 通过关系型数据库实现数据持久化 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 应用数据持久化 > 通过关系型数据库实现数据持久化 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:31:39+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:e23d1518ab6890e23906680bcbb498b99cd4a784f3757cb11c19556515a8b0c9
+scraped_at: 2026-11-04T08:29:03+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:e7f65b73bb1a61a16c0920ecd0f094013b688f0410c15079f854ec6af98375b6
 ---
 
 ## 场景介绍
@@ -30,7 +30,7 @@ content_hash: sha256:e23d1518ab6890e23906680bcbb498b99cd4a784f3757cb11c19556515a
 
 **图1** 关系型数据库运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/D5fy101xT-Wf-4FrFQXwRw/zh-cn_image_0000002806027753.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/4_zsnz2fSjOu4_McJxZSfA/zh-cn_image_0000002809009153.jpg)
 
 ## 约束限制
 
@@ -243,8 +243,8 @@ content_hash: sha256:e23d1518ab6890e23906680bcbb498b99cd4a784f3757cb11c19556515a
 
    **说明** 
 
-   * 应用创建的数据库与其上下文（Context）有关，即使使用同样的数据库名称，但不同的应用上下文，会产生多个数据库，例如每个UIAbility都有各自的上下文。
-   * 当应用首次获取数据库（调用getRdbStore）后，在应用沙箱内会产生对应的数据库文件。使用数据库的过程中，在与数据库文件相同的目录下可能会产生以-wal和-shm结尾的临时文件。此时若开发者希望移动数据库文件到其它地方使用查看，则需要同时移动这些临时文件，当应用被卸载完成后，其在设备上产生的数据库文件及临时文件也会被移除。
+   * 应用创建的数据库与其上下文（[Context](../harmonyos-references/js-apis-inner-application-context.md)）有关，即使使用同样的数据库名称，但不同的应用上下文，会产生多个数据库，例如每个UIAbility都有各自的上下文。
+   * 当应用首次获取数据库（调用[getRdbStore()](../harmonyos-references/arkts-apis-data-relationalstore-f.md#relationalstoregetrdbstore)接口）后，在应用沙箱内会产生对应的数据库文件。使用数据库的过程中，在与数据库文件相同的目录下可能会产生以-wal和-shm结尾的临时文件。此时若开发者希望移动数据库文件到其它地方使用查看，则需要同时移动这些临时文件，当应用被卸载完成后，其在设备上产生的数据库文件及临时文件也会被移除。
    * 错误码的详细介绍请参见[通用错误码](../harmonyos-references/errorcode-universal.md)和[关系型数据库错误码](../harmonyos-references/errorcode-data-rdb.md)。
 2. 获取到RdbStore，完成数据表创建后，调用insert()接口插入数据。示例代码如下所示：
 

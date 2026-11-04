@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite-f
 title: 音频格式转换(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频编创 > 音频格式转换(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:53+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a0941cf5df5df5b090e4941ce49591fbde78184f3edb503b2da877302fe014d7
+scraped_at: 2026-11-04T08:30:06+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:c99654a7416f7efae70a86b980c4bd2355e61728e1f02f3ff6605b64ae9b56cd
 ---
 
 从API版本26.0.0开始，[OHAudioSuite](../harmonyos-references/capi-ohaudiosuite.md)给开发者提供PCM（Pulse Code Modulation）音频格式转换能力，在纯音频转码等场景下支持开发者使用格式转换接口将PCM音频数据从一种格式转换为另一种格式，包括采样率、声道布局、采样格式（位深）的转换。
@@ -16,8 +16,8 @@ content_hash: sha256:a0941cf5df5df5b090e4941ce49591fbde78184f3edb503b2da877302fe
 
 ### 在CMake脚本中链接动态库
 
-```cmake
-target_link_libraries(sample PUBLIC libohaudiosuite.so)
+```text
+target_link_libraries(entry PUBLIC libohaudiosuite.so)
 ```
 
 ### 添加头文件
@@ -121,7 +121,7 @@ if (result != AUDIOCONVERTER_SUCCESS) {
 输入数据回调函数。
 
 ```
-// 设置输出数据指针。
+// 设置输入数据指针。
 // 注意：数据指针的值并不一定要从userData中获取，也可以是存储数据的缓存地址。
 // 例如：从文件中读取数据放入缓存，然后将该缓存地址赋值给输出数据指针。
 // 只要确保数据指针在OH_AudioConverter_Process()返回前保持有效即可。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口设置ArkTS对象的属性
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口设置ArkTS对象的属性
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:33:42+08:00
-doc_updated_at: 2026-10-30
-content_hash: sha256:5c9e8986c987c152d2b8e77a9872065c906db2d10418a3974464adad51d40040
+scraped_at: 2026-11-04T08:31:13+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:23a6102132b26576a65b1073186018a2f9f18933d43801258fdd47b065d27a9f
 ---
 
 ## 简介
@@ -392,7 +392,7 @@ import testNapi from 'libentry.so';
 export function napiHasOwnProperty() {
   let myObj = { 'myProperty': 1 };
   let inheritedObj = { 'inheritedProperty': 2 };
-  // The Object.setPrototypeOf method is not supported in DevEco Studio 4.1.0.400 and later versions, and must be used in TypeScript (TS).
+  // DevEco Studio 4.1.0.400及以后的版本不支持Object.setPrototypeOf方法，必须在TypeScript（TS）中使用。
   Object.setPrototypeOf(myObj, inheritedObj);
   hilog.info(0x0000, 'testTag', 'Test Node-API napi_has_own_property my: %{public}s',
     testNapi.napiHasOwnProperty(myObj, 'myProperty'));

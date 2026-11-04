@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-quick-res
 title: 滑动操作响应快
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 附录 > 体检规则 > 滑动操作响应快
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:12:56+08:00
+scraped_at: 2026-11-04T08:31:30+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:946606fd48200ba635de0bfffd613a184468baa46c49a657e23b5a7f72ccff7c
+content_hash: sha256:dd9fdc0a51d6369c6d51e6ae699985067426f3c46ac64f3dcce2e4d002ed6596
 ---
 
 ## 规则详情
@@ -26,7 +26,7 @@ content_hash: sha256:946606fd48200ba635de0bfffd613a184468baa46c49a657e23b5a7f72c
   H:WEB\_LIST\_FLING
 * 备注：由于trace的响应时延小于用户实际感知的时延，所以目前滑动类算法会补偿30ms。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/hIPClEPYRfW2kYxh6Yzj_g/zh-cn_image_0000002731542981.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/pBIotEpdTyal_mV8IQ54xw/zh-cn_image_0000002731542981.png)
 
 ## 计算逻辑
 

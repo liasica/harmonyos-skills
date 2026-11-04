@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/linking-kit-faq
 title: App Linking跳转失败问题排查
 breadcrumb: FAQ > 应用服务开发 > 应用链接跳转服务（App Linking Kit） > 常见问题 > App Linking跳转失败问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:43+08:00
-doc_updated_at: 2026-10-22
-content_hash: sha256:44b6e7b42df9dbf37acf43aee801c352b66a3910e40188de16b89f8338b6cfbf
+scraped_at: 2026-11-04T08:40:24+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:355c82e2e67e75f81896f5d16d7b9010d321ed35c93292a032f4b9a78c252acb
 ---
 
 **Q：开发者在HarmonyOS 开发者中心开通了App Linking服务，并且在域名服务器上配置了对应文件，HarmonyOS 开发者中心上面也显示发布成功，但是点击跳转失败，提示16000019，是什么原因呢？**
 
-**A**：[16000019](../harmonyos-references/errorcode-ability.md#section16000019-隐式启动未查找到匹配应用)是隐式拉起失败，可能的原因是隐式启动的参数配置有误或者指定的HAP包未安装。排查方式：
+**A**：[16000019](../doccenter-references/api/errorcode-ability.md#section16000019-隐式启动未查找到匹配ability)是隐式拉起失败，可能的原因是隐式启动的参数配置有误或者指定的HAP包未安装。排查方式：
 
 1. 检查目标应用代码中的skills配置：
    * "entities"列表中必须包含"entity.system.browsable"；
@@ -49,7 +49,7 @@ content_hash: sha256:44b6e7b42df9dbf37acf43aee801c352b66a3910e40188de16b89f8338b
 
 **Q：通过附件中Form表单请求时，是否会触发App Linking的跳转机制？**
 
-**A**：通过普通表单（Form）的HTTP请求不会直接触发App Linking跳转机制。App Linking的触发条件：App Linking需要特定的URI格式，且需通过openLink()接口或特定组件（如ArkWeb中的链接点击）主动调用才能触发跳转。表单的常规HTTP请求属于普通网络行为，无法直接激活App Linking机制。
+**A**：通过普通表单的HTTP请求不会直接触发App Linking跳转机制。App Linking的触发条件：App Linking需要特定的URI格式，且需通过openLink()接口或特定组件（如ArkWeb中的链接点击）主动调用才能触发跳转。表单的常规HTTP请求属于普通网络行为，无法直接激活App Linking机制。
 
 **Q：HarmonyOS 开发者中心后台已开通App Linking，但是配置完域名链接发布后状态是失败是报错信息为：下载源JSON文件失败，请确认源文件是否存在异常？**
 
@@ -82,7 +82,7 @@ content_hash: sha256:44b6e7b42df9dbf37acf43aee801c352b66a3910e40188de16b89f8338b
 
 **A**：报错是由于applinking.json文件中类型不对导致的，比如HarmonyOS应用在applinking.json文件中类型为atomicServices，或者元服务应用在applinking.json文件中类型为apps。需要改为对应的正确类型。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/XqOFUsCLQWmjJNwTnY5GxA/zh-cn_image_0000002797176341.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/TFDOPp--RCqTKe4ttcie3g/zh-cn_image_0000002804593021.png "点击放大")
 
 **Q：应用链接发布失败后，在域名服务器上重新完成了applinking.json配置文件放置，为何HarmonyOS 开发者中心显示的状态仍然是"失败"？**
 
@@ -95,3 +95,11 @@ content_hash: sha256:44b6e7b42df9dbf37acf43aee801c352b66a3910e40188de16b89f8338b
 **Q：配置App Linking直达应用市场能力后，未安装应用时未跳转到应用市场而是打开了域名服务器地址，如何解决？**
 
 **A**：在配置直达应用市场链接时，域名地址末尾需要加上斜杠"/"，例如https://www.example.com/。直达链接配置的是.\*，表示域名+斜杠+任意值，即使不需要匹配任意路径值，斜杠"/"也必须保留。具体配置方式请参考[通过直达应用市场能力跳转至应用市场下载详情页](../harmonyos-guides/applinking-direct-to-ag.md)。
+
+**Q：仅支持PC/2in1设备类型的应用能否使用App Linking聚合链接拉起应用？**
+
+**A**：仅支持PC/2in1设备类型的应用在HarmonyOS 开发者中心配置聚合链接时会被拦截，提示“应用不支持此配置”。但可以使用App Linking应用链接来实现需求，App Linking应用链接本身支持PC/2in1设备。App Linking不提供按设备类型限制链接生效范围的功能，因此可以直接使用App Linking应用链接，无需也无法在配置层面做设备限制。具体配置方式可参考[目标方应用配置应用链接能力](../harmonyos-guides/app-linking-startupapp.md#配置应用链接能力)。
+
+**Q：App Linking域名校验是否必须使用应用自己的域名？**
+
+**A**：域名不必须是应用的域名，可以使用公司的其他域名，但域名必须由实际掌控，能够进行DNS和服务器配置。需要确保HarmonyOS 开发者中心配置的域名、代码中module.json5里声明的域名、applinking.json文件所在的域名三者保持一致。

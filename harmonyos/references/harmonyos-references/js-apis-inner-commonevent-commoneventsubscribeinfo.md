@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: CommonEventSubscribeInfo
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 进程线程通信 > commonEvent > CommonEventSubscribeInfo
 category: harmonyos-references
-scraped_at: 2026-10-11T07:26:29+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:1ed20a6ebb5ff6602ffebdd921dc525f40e03f1454a7bb1b4271c1964b03a0b1
+scraped_at: 2026-11-04T08:35:10+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:02a55623c06bc2ece38b92ba1bea185a48988d5d51f5df067eef069291c2c7bc
 ---
 
 用于表示公共事件订阅者的信息，支持配置订阅的公共事件类型、发布方权限、发布方设备ID、用户ID、订阅优先级等参数，适用于应用需要订阅[系统公共事件](../harmonyos-guides/common-event-glossary.md#system-common-event系统公共事件)或自定义公共事件并精细化控制事件来源的场景。
 
 **说明** 
 
-本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+本模块首批接口从API版本7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
 
 订阅自定义公共事件后，任意应用都可以向订阅者发送潜在的恶意公共事件。通过本模块的publisherPermission和publisherBundleName参数，可以限制公共事件发布方的范围。
 
 ## 属性
 
-**元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Notification.CommonEvent
 

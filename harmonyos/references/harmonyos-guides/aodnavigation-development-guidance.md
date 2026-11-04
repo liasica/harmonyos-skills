@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/aodnavigation
 title: 接入熄屏导航
 breadcrumb: 指南 > 系统 > 硬件 > AOD Navigation Kit（熄屏导航服务） > 接入熄屏导航
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:30+08:00
+scraped_at: 2026-11-04T08:29:57+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:1fe95ed9a6268789d38cdb23d68b19e56b4978e425cfc4c4b66acd6660d0d9b3
+content_hash: sha256:f412a59f307a11c7f3d7d72f0c886a56d2d03d33682eb08c4209398a54cbd8cc
 ---
 
 ## 概述
@@ -16,11 +16,11 @@ content_hash: sha256:1fe95ed9a6268789d38cdb23d68b19e56b4978e425cfc4c4b66acd6660d
 
 接入熄屏导航能力的应用可在设备熄屏后，在设备熄屏界面实时展示行进路线、运动轨迹、里程及耗时等核心信息。应用可自定义显示的数据项，当前支持12种数据选项供灵活配置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/go-J3K31TVqcylkZKDRnHQ/zh-cn_image_0000002776749394.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/9Lt7k9PeRDWjPbMTwjHCxw/zh-cn_image_0000002779690892.png)
 
 ### 开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/bamndeQJQiGSOag3AUJPbg/zh-cn_image_0000002806029111.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/zskO1XUBRcmxDb1Smk1lUg/zh-cn_image_0000002809010513.png)
 
 流程说明：
 

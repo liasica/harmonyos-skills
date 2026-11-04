@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-feature-a
 title: 特性问答
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 智能问答 > 特性问答
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:13:02+08:00
+scraped_at: 2026-11-04T08:31:39+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:4159310188acb014c9d5c242e17f1239c9819a7d6d09f4f0ae591c3fb9d4a641
+content_hash: sha256:aea5a16c8b98363184dccfc83070619c831829339b1c096bbd7eda8cecddedc9
 ---
 
 从DevEco Studio 6.1.1 Beta1版本开始，CodeGenie新增特性问答的功能。该功能通过深度分析用户代码库，广泛探索相关功能或模块，并进行深入解读，提供系统性建议。针对开发者提出的本地工程的功能特性等问题，它能提供精确和智能的解答。
 
 选择**HarmonyOS Ask**智能体，在对话区域输入“/”后，在弹出的菜单中选择“**Feature**”，在对话框中输入本地工程的功能特性问题（如释放音频资源的方法如何实现的），点击发送后等待回复。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/8QqXDmoBTJmT_G2X16uNmg/zh-cn_image_0000002701664008.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/z39Zqh7SQX6qgKXgFuvyBA/zh-cn_image_0000002701664008.gif "点击放大")

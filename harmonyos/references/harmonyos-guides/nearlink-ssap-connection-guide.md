@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-ssap
 title: 管理SSAP连接及服务
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 星闪 > 管理SSAP连接及服务
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:31+08:00
-doc_updated_at: 2026-09-30
+scraped_at: 2026-11-04T08:29:47+08:00
+doc_updated_at: 2026-11-03
 content_hash: sha256:90ea28ef66c4b431d8d557104a5e763ee428807f850c9953a752fc97b9a429b8
 ---
 

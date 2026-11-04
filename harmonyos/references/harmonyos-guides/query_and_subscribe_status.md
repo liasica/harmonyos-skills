@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/query_and_sub
 title: 状态查询与订阅
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > 手机侧应用开发 > 应用开发 > 状态查询与订阅
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:44+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:01e81b644332fbb9717751f8c841700bf69de6b23dc4415548397cab5fd56bf9
+scraped_at: 2026-11-04T08:29:56+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:401f7fb6e07d7c5ad7df338c87adf05cce23a07d6e2deef9083e08b2833aae34
 ---
 
 **说明** 
@@ -55,7 +55,7 @@ content_hash: sha256:01e81b644332fbb9717751f8c841700bf69de6b23dc4415548397cab5fd
      + “充电状态”字段：CHARGE\_STATUS。
      + “佩戴状态”字段：WEAR\_STATUS。
      + “设备模式”字段：POWER\_MODE。
-     + “可用内存”字段：AVAILABLE\_STORAGE\_SPACE
+     + “可用存储空间”字段：AVAILABLE\_STORAGE\_SPACE。
    * 通过[MonitorData](../harmonyos-references/wearengine_api.md#monitordata)对象，返回指定指标状态的查询结果。
 
      ```typescript

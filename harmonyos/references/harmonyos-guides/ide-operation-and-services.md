@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-operation
 title: 运维分析
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 发布应用 > 运维分析
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:13:01+08:00
+scraped_at: 2026-11-04T08:31:37+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:b6175c93de97aca2ff78d8beb692c4737d8c69799ee1280fe7961a23244c6d74
+content_hash: sha256:30adf2081995f4341ff50f53b2da9a0705f41d0268093e75be0787eccddc0fd5
 ---
 
 DevEco Studio支持对已发布上架的应用在使用过程中出现的崩溃、应用冻屏、OOM、资源泄漏等问题进行定位分析，以及查看崩溃、卡顿、丢帧、能耗等异常问题的趋势和分布情况。
@@ -18,11 +18,11 @@ DevEco Studio支持对已发布上架的应用在使用过程中出现的崩溃�
 
 在DevEco Studio菜单栏点击**View > Tool Windows > Operation Analyzer**，进入运维服务页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/aieWZCTKQfqEYM7IyCylEA/zh-cn_image_0000002731543197.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/_HG0ZdRbR46oKIrzbyHJAg/zh-cn_image_0000002731543197.png)
 
 点击**Add account**按钮，登录华为账号并授权后，可以查看当前账号下应用异常情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/f9QKw79pTeSiOoqXPhYS_A/zh-cn_image_0000002731383207.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/YzyKa9V2SqeBpkGlz9YQsQ/zh-cn_image_0000002731383207.png)
 
 当前页面共分为两个部分。页面左侧为菜单栏，右侧为数据内容展示区：
 
@@ -38,7 +38,7 @@ DevEco Studio支持对已发布上架的应用在使用过程中出现的崩溃�
    5. 手机型号：当前存在异常数据的手机型号。
    6. 发布类型：当前系统的发布类型。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/-c8GGkOoRkysGAOOcqphOg/zh-cn_image_0000002701823908.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/cu3PuE11S6O7noDkNevPcQ/zh-cn_image_0000002701823908.png)
 
 ## Reports
 
@@ -56,25 +56,25 @@ DevEco Studio支持对已发布上架的应用在使用过程中出现的崩溃�
 * 6号区域：上半部分可以通过切换应用版本/设备型号/系统版本来查看崩溃发生的分布情况，下半部分显示该崩溃事件的可能原因和最佳实践链接。
 * 7号区域：展示崩溃事件详情页，请查看下文说明。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/pxPkQDLlT0--rmuy0wcQJQ/zh-cn_image_0000002731543201.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/XRJHVjKTQeK8TcbjNsia-g/zh-cn_image_0000002731543201.png)
 
 * **Stack Info**：展示崩溃的堆栈日志信息，支持堆栈还原，并可跳转到具体的代码行查找问题。
   + **Raw Stack**：展示崩溃的原始堆栈信息，其中蓝色圆点代表系统栈，绿色圆点代表应用栈。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/uN41YgvjQNySwwf7zAMK-g/zh-cn_image_0000002731543177.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/sfCvG8NcRhqd7RW17EJ8xw/zh-cn_image_0000002731543177.png)
   + **Symbolicated Stack**：展示还原后的堆栈信息，堆栈还原需要先关联本地符号表或将符号表上传到云端进行解析，上传后符号表信息会在**Symbol Table**页签中显示。关联本地符号表或上传到云端成功解析还原后，如下图所示：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/Bxb_cmsCS2KIdkCVb8SZog/zh-cn_image_0000002701663988.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/Ugaa2Z88RAyChDArvR0qEw/zh-cn_image_0000002701663988.png)
 
     堆栈还原后，点击右上角的**Select related project**，关联堆栈对应的工程，即可通过堆栈中的超链接跳转到对应的源码。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/gtb8LUMQQQeglg67xvwMmg/zh-cn_image_0000002731543183.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/13xHatN7SNuB3KWOkwShlg/zh-cn_image_0000002731543183.png)
 * **Context Data**：崩溃的现场数据，展示栈地址空间、寄存器信息、FD信息、页面跟踪信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/LES5Ju_RSvadQWtlRYHw_Q/zh-cn_image_0000002731383213.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/KF1FEDPRScGwcYqxX79a4Q/zh-cn_image_0000002731383213.png)
 * **Symbol Table**：展示云端的符号表和本地关联的符号表信息，此处也支持上传符号表到云端和关联本地符号表。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/EnkXh6JZRGWe64GyNw8YxA/zh-cn_image_0000002731383225.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/INFnzy64T2O99sRlnSanYg/zh-cn_image_0000002731383225.png)
 
 **26.0.0以下版本**
 
@@ -89,11 +89,11 @@ DevEco Studio支持对已发布上架的应用在使用过程中出现的崩溃�
 * 7号区域：展示崩溃日志的CPU以及内存信息。该功能从DevEco Studio 5.1.0 Release版本开始支持。
 * 8号区域：展示故障日志的所有信息。支持[上传符号表](ide-publish-app.md#section4486164416341)后将现有堆栈信息还原为源码的堆栈。该功能从DevEco Studio 5.1.0 Release版本开始支持。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/L-OeEAC8RDKbnauT29cpGQ/zh-cn_image_0000002701823914.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/RgVr9LA7TAGB4vSj_w8iEA/zh-cn_image_0000002701823914.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/R2ZvW5zAQ1ar99qASx_nYQ/zh-cn_image_0000002731383209.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/lDkAJGn_T6i-IlgvwOzlIg/zh-cn_image_0000002731383209.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/Q3oeeTJJRE-O193OLQ1eUg/zh-cn_image_0000002731383217.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/Mrq3hUBCRxG8pp75K1e0mw/zh-cn_image_0000002731383217.png)
 
 ### OOM分析
 
@@ -107,18 +107,18 @@ DevEco Studio支持对已发布上架的应用在使用过程中出现的崩溃�
 * 6号区域：上半部分可以通过切换应用版本/设备型号/系统版本来查看内存溢出发生的分布情况，下半部分显示该内存溢出事件的可能原因。
 * 7号区域：展示内存泄漏事件详情页，请查看下文说明。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/xuNMItZmT66aQ21Odaj1AQ/zh-cn_image_0000002731543185.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/9tAPgWu2Qyu_sjtaWrBLnQ/zh-cn_image_0000002731543185.png)
 
 * **Stack Info**：展示内存泄漏事件的堆栈信息，其中蓝色圆点代表系统栈，绿色圆点代表应用栈。支持堆栈还原，并可跳转到具体的代码行查找问题，具体操作方式请参考[Crash堆栈还原](ide-operation-and-services.md#li37692225178)。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/nQAqNm_UR2-rJzcCStZavw/zh-cn_image_0000002731543195.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/ZOZWxce3TAyH1SdctF4c-g/zh-cn_image_0000002731543195.png)
 
 * **Context Data**：内存溢出的现场数据，展示页面跟踪信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/B_N4chkxRku7jfyN1hrIvg/zh-cn_image_0000002701664000.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/WhQT7B-YTD2DqdNqg9nCDA/zh-cn_image_0000002701664000.png)
 * **Symbol Table**：展示云端的符号表和本地关联的符号表信息，此处也支持上传符号表到云端和关联本地符号表。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/vAoHfAuGQQ6t_9dJllv-zw/zh-cn_image_0000002701823926.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/LzWZHCWMRRS6usRAId3teQ/zh-cn_image_0000002701823926.png)
 
 ### APP Freeze分析
 
@@ -132,22 +132,22 @@ DevEco Studio支持对已发布上架的应用在使用过程中出现的崩溃�
 * 6号区域：上半部分可以通过切换应用版本/设备型号/系统版本来查看应用冻屏发生的分布情况，下半部分显示该应用冻屏事件的可能原因。
 * 7号区域：展示应用冻屏事件详情页，请查看下文说明。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/g94nUayzTEKbbQddB6KaPg/zh-cn_image_0000002701663982.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/_5lLV1JkTVuYNAp4CCqrpw/zh-cn_image_0000002701663982.png)
 
 不同的冻屏类型对应的详情页存在差异，此处以THREAD\_BLOCK\_6S为例。
 
 * **Evidence Chain**：展示该应用冻屏事件的证据链信息，包括3s和6s的主线程堆栈信息，其中蓝色圆点代表系统栈，绿色圆点代表应用栈。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/L3NJ-ewbQDuTWXnf-_Fp1Q/zh-cn_image_0000002731383219.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/MkNZU5cZSxGR9MGw7x4GOg/zh-cn_image_0000002731383219.png)
 * **Context Data**：展示该应用冻屏事件的现场数据信息，包括堆栈信息（原始堆栈和还原堆栈，堆栈还原方法请参考[Crash堆栈还原](ide-operation-and-services.md#li37692225178)）、CPU信息、内存信息、热档位信息、页面跟踪信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/VrSSC0L3REKV7GGeItnIPA/zh-cn_image_0000002731543191.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/EX1m0NtbSI-_KtGuibHLOw/zh-cn_image_0000002731543191.png)
 * **Sampled Stack Logs**：展示该应用冻屏事件的采样栈日志信息，包括原始堆栈和还原堆栈。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/QYUn5SKsRMuK4AixvBeQZQ/zh-cn_image_0000002701823904.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/PZnGlun2Q_KbfCKEVij9qQ/zh-cn_image_0000002701823904.png)
 * **Symbol Table**：展示云端的符号表和本地关联的符号表信息，此处也支持上传符号表到云端和关联本地符号表。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/wt2MwFpkSh69RZ17WoEEIQ/zh-cn_image_0000002701664002.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/h-Vv4OC2S4yUWufRx36DNw/zh-cn_image_0000002701664002.png)
 
 ### Resource Leak分析
 
@@ -161,7 +161,7 @@ DevEco Studio支持对已发布上架的应用在使用过程中出现的崩溃�
 * 6号区域：上半部分可以通过切换应用版本/设备型号/系统版本来查看资源泄漏发生的分布情况，下半部分显示该资源泄漏事件的可能原因。
 * 7号区域：展示资源泄漏事件详情页，请查看下文说明。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/SIgCCExRTFSVo2jvwihajA/zh-cn_image_0000002701663996.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/vjN_5716TRSLfsM2OrCFNw/zh-cn_image_0000002701663996.png)
 
 不同的泄漏类型对应的详情页存在差异，此处以RSS\_LEAK为例。
 
@@ -169,25 +169,25 @@ DevEco Studio支持对已发布上架的应用在使用过程中出现的崩溃�
 
   堆栈分配详情：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/gbVAJsGpQ2ycEFsrPrRjpg/zh-cn_image_0000002731543179.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/R_M-5USRTcmxxIki_RW1Mg/zh-cn_image_0000002731543179.png)
 
   堆栈树分配：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/nd_80hizRQmVfKvBDaKHiA/zh-cn_image_0000002701663990.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/T6HVa5A9Q2Cn8xP-fsm0EA/zh-cn_image_0000002701663990.png)
 
   火焰树：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/KGL1c-3JS5KT7isVobF6jw/zh-cn_image_0000002701823920.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/M_CvTAEVRIySIWKNUZZVyg/zh-cn_image_0000002701823920.png)
 
   原始/还原堆栈（堆栈还原方法请参考[Crash堆栈还原](ide-operation-and-services.md#li37692225178)）：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/n5PTYYTFQ5Sem6OVlIHAEg/zh-cn_image_0000002701663984.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/pjwTLlEtSf-VIsN4J57S1w/zh-cn_image_0000002701663984.png)
 * **Context Data**：展示该资源泄漏事件的现场数据信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/liMRiJ0uSR-OMFYRqPB9Xw/zh-cn_image_0000002701823922.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/lZGJYQi9QjSJ-yR1cT5Nug/zh-cn_image_0000002701823922.png)
 * **Symbol Table**：展示云端的符号表和本地关联的符号表信息，此处也支持上传符号表到云端和关联本地符号表。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/meE-WKAlQQWoH8YJEMcL2w/zh-cn_image_0000002701823910.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/QDjZApdIS-GcbZeT0TcbYg/zh-cn_image_0000002701823910.png)
 
 ## Metrics
 
@@ -199,7 +199,7 @@ DevEco Studio支持对已发布上架的应用在使用过程中出现的崩溃�
 
 2号区域：通过柱状图展示不同维度在所有的崩溃异常中的占比。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/VPinpTsWSUCUG4APRMJ0Iw/zh-cn_image_0000002731383205.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/DvITr6KZRo2AKWPNbvNUXQ/zh-cn_image_0000002731383205.png)
 
 **说明** 
 
@@ -217,7 +217,7 @@ ProcessKill将通过柱状图和饼图联动，点击柱状图，通过饼图展
 
 2号区域：按照Page，Scenes两个维度展示丢帧异常率TOP N的页面或者场景。点击饼图上的某个区域，将展示具体页面或者场景的连续丢帧率情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/mPpZW-BXQwaoaqDVOLepLQ/zh-cn_image_0000002701663994.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/uTnlUoIkQyaJOxgXDZE6rQ/zh-cn_image_0000002701663994.png)
 
 ### Launch分析
 
@@ -239,7 +239,7 @@ ProcessKill将通过柱状图和饼图联动，点击柱状图，通过饼图展
 
 4号区域：展示启动当前阶段在不同时间段的耗时趋势。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/nrsMF5N8Qw29mghkJon3kA/zh-cn_image_0000002701823918.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/tV2ikb9SQ3CKFVFkP43xbA/zh-cn_image_0000002731383221.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/a9q00tFTThCGPWgYgO7mxg/zh-cn_image_0000002701823918.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/Lhq7WB3YQgCLWi-7cwjJXQ/zh-cn_image_0000002731383221.png)
 
 ### Battery Usage分析
 
@@ -251,4 +251,4 @@ ProcessKill将通过柱状图和饼图联动，点击柱状图，通过饼图展
 
 3号区域：展示后台能耗和耗电时长随Top 5设备器件分布情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/H7l5iN42SZa24dUX9UkuFg/zh-cn_image_0000002731543189.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/u1iLZs5HRRuy81ex7P27iA/zh-cn_image_0000002731543189.png)

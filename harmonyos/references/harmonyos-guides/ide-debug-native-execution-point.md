@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-nat
 title: 设置执行点
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 设置执行点
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:12:54+08:00
+scraped_at: 2026-11-04T08:31:28+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:cb3c0d98e970ea4d769c622ba80d5abf43d9fa5700f7f21de2db09c051692f58
+content_hash: sha256:98c8050c7602199a34a3c8778f3d0e4898bf1df9b0e27b542fcc57e264e79bbf
 ---
 
 开发者可以通过“设置执行点”在调试会话期间跳转到编辑器中的任意代码行，并在对应位置设置执行点，跳过当前位置到目标位置之间的所有代码。
@@ -16,10 +16,10 @@ content_hash: sha256:cb3c0d98e970ea4d769c622ba80d5abf43d9fa5700f7f21de2db09c0516
 
 1. 将当前执行指针（代表当前运行位置的橙色箭头）拖动到所需的代码行。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/lZfg95IXSVKuNrG0MmhY-Q/zh-cn_image_0000002701822654.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/JdQGcj3aTGCOQi20LYEtZQ/zh-cn_image_0000002701822654.png)
 2. 在需要设置执行点的行，点击鼠标右键，在弹出菜单中选择“Set Execution Point to Cursor”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/-jYKSejlSgmIOlz-4cCHbA/zh-cn_image_0000002731381955.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/vGtXCniERfGqWbTQYxM4vQ/zh-cn_image_0000002731381955.png)
 
 **说明** 
 

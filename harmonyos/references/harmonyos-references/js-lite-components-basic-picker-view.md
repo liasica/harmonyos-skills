@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: picker-view
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 基础组件 > picker-view
 category: harmonyos-references
-scraped_at: 2026-10-31T07:35:42+08:00
+scraped_at: 2026-11-04T08:33:26+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:e4a56e666145e924ff2b92081a691f3157267ecb2ca7a10b5e50b04fdbd0f5a8
+content_hash: sha256:c6a1f900bd3627e41a0d571d686f010df8d870bab62b0d36cb979b5c37dbf365
 ---
 
 嵌入页面的滑动选择器。
@@ -153,4 +153,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/L5pLOsjfRCibTwXaLNLB0g/zh-cn_image_0000002776911618.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/8uEm227NTECr-tAUAuv9pQ/zh-cn_image_0000002779693074.png)

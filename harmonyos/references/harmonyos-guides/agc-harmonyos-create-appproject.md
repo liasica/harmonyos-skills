@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 创建HarmonyOS应用工程
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 创建端云一体化开发工程 > 创建HarmonyOS应用工程
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:12:46+08:00
+scraped_at: 2026-11-04T08:31:19+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:a6ded5273889675b0d4e03dd47f0b8511e895a8bb8fd503cbb7dd3c9142c16f1
+content_hash: sha256:840c52bb4df8a4a72d2d187f49166fe3812df399f1793589c765e9f3cbc323fe
 ---
 
 ## 新建工程
@@ -27,7 +27,7 @@ content_hash: sha256:a6ded5273889675b0d4e03dd47f0b8511e895a8bb8fd503cbb7dd3c9142
 
    当前仅支持通用云开发模板（[CloudDev]Empty Ability）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/Zx7fHDhmRyODkI1TbKl3tQ/zh-cn_image_0000002462973802.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/jm9m0RXBSGWYrH_XNHglAQ/zh-cn_image_0000002462973802.png)
 
 ### 配置工程信息
 
@@ -40,7 +40,7 @@ content_hash: sha256:a6ded5273889675b0d4e03dd47f0b8511e895a8bb8fd503cbb7dd3c9142
    | Device type | 该工程模板支持的设备类型，目前仅支持手机设备。 |
    | Enable CloudDev | 是否启用云开发。云开发模板默认启用且无法更改。 |
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/7IMQiut0T6i2KynAQkwVQQ/zh-cn_image_0000002547465643.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/fgz-4uPQT_qLY7YFN8j9TQ/zh-cn_image_0000002547465643.png)
 
 2. 点击“Next”，开始关联云开发资源。
 
@@ -50,61 +50,61 @@ content_hash: sha256:a6ded5273889675b0d4e03dd47f0b8511e895a8bb8fd503cbb7dd3c9142
 
 1. （可选）如您尚未登录DevEco Studio，点击“Sign In”，在弹出的账号登录页面，使用[已实名认证](agc-harmonyos-clouddev-account.md)的华为开发者账号完成登录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/s54QTVyDStirAe-KFFdrNw/zh-cn_image_0000002214858793.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/LxSs306sQoWXGpiScjb09g/zh-cn_image_0000002214858793.png)
 
    登录成功后，界面将展示账号昵称。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/RaivyDojTuqz23vDVlA74A/zh-cn_image_0000002179338404.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/1KbeFaP2TCK6IEmlpAzFTQ/zh-cn_image_0000002179338404.png)
 2. 点击“Team”下拉框，选择开发团队。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/ciYATJ8oSDOkgYIF-TbFtg/zh-cn_image_0000002500639597.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/UON5JTTeT1m_Ka7LHr52nA/zh-cn_image_0000002500639597.png)
 3. 关联应用。
 
    选中团队后，系统根据工程Bundle name在该团队中自动查询HarmonyOS 开发者中心的同包名应用。
 
    * 如查询到应用，选中该应用，点击“Finish”即可。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/eyBBsjRtQVCtKLDuwwjtNw/zh-cn_image_0000002214704349.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/E6UTwm-OR4i5bMxOqonH8g/zh-cn_image_0000002214704349.png)
    * 如查询到的应用尚未关联任何项目（即为游离应用），则无法选中。请先[将游离应用添加到项目下](agc-harmonyos-create-appproject.md#section152521927193013)。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/ZizZ0OUZQCSKSbAV8cJPEw/zh-cn_image_0000002179498144.png)
-   * 如果查询到的应用所属项目尚未启用数据处理位置，请点击界面提示内的“AppGallery Connect”[设置数据处理位置](../app/agc-help-datalocation-0000001160439813.md)。设置完成后返回DevEco Studio界面，点击Bundle name后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/Mgltey7GT162u6cIj4zi5A/zh-cn_image_0000002495893905.png)刷新当前APP ID列表，即可看到设置的数据处理位置。
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/62L2ATn6T4uyVzmR13ix_g/zh-cn_image_0000002179498144.png)
+   * 如果查询到的应用所属项目尚未启用数据处理位置，请点击界面提示内的“AppGallery Connect”[设置数据处理位置](../app/agc-help-datalocation-0000001160439813.md)。设置完成后返回DevEco Studio界面，点击Bundle name后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/8JHl04egSlOUCM5Pd0miFA/zh-cn_image_0000002495893905.png)刷新当前APP ID列表，即可看到设置的数据处理位置。
 
      **注意** 
 
      + 由于云开发目前仅支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外），请确保项目启用的数据处理位置包含“中国”。
      + 无论项目启用的默认数据处理位置为哪个站点，后续开发的云服务资源都将部署在“中国”站点。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/ZsTTjN40SQGO4_T1Lihtqg/zh-cn_image_0000002495893753.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/ItXKT-4ISp6SYGo5nofJnw/zh-cn_image_0000002495893753.png)
    * 如查询到应用但出现如下提示，表明查询到的应用类型为元服务，与当前工程类型不一致。请修改以确保当前工程与HarmonyOS 开发者中心同包名应用均为HarmonyOS应用类型。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/iYutyBoaS36gzjJ14r5gvA/zh-cn_image_0000002462815550.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/GwZngmqSQeOqxa1v1kxSdg/zh-cn_image_0000002462815550.png)
    * 如在当前团队中未查询到同包名应用，请先确认填写的包名是否有误。
      + 如包名有误，点击界面提示中的“go back”返回工程信息配置界面进行修改。
      + 如包名无误，则表明当前团队尚未在HarmonyOS 开发者中心创建与当前工程包名相同的应用。您可点击界面提示中的“AppGallery Connect”，[前往HarmonyOS 开发者中心进行补充创建](agc-harmonyos-create-appproject.md#section397317130308)。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/P44tG5wySH-Be0luXtu_tA/zh-cn_image_0000002214858765.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/PebmBhXURsiAo5VImYD_5Q/zh-cn_image_0000002214858765.png)
 
      完成以上操作后，DevEco Studio即可获取到同包名应用信息。选中应用后，点击“Finish”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/2N5YHDyxRYe1RNuS5G4ybw/zh-cn_image_0000002214858801.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/zqWA-y3UQx2Rb32sS0LJcQ/zh-cn_image_0000002214858801.png)
 4. 如您所属的团队尚未签署云开发相关协议，点击协议链接仔细阅读协议内容后，勾选同意协议，点击“Finish”。
 
    **说明** 
 
    只有账号持有者和法务角色才有权限签署协议。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/mLt3BYbvQ-CgzFtvSgdfXQ/zh-cn_image_0000002179498108.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/lq7rM5o6QYu0S5fosjHnkg/zh-cn_image_0000002179498108.png)
 5. 进入主开发界面，DevEco Studio执行工程同步操作，端侧工程会自动执行“ohpm install”，云侧工程会自动执行“npm install”，以分别下载端侧和云侧依赖。
 
    **说明** 
 
    若云侧执行“npm install”失败，请排查是否尚未[配置NPM代理](ide-environment-config.md#section197296441787)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/W3byVjtvSM29hAvclBVVhg/zh-cn_image_0000002179498148.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/1U_lyAH5T56iL1yYXOHlqg/zh-cn_image_0000002179498148.png)
 6. 在主开发界面，可查看刚刚新建的工程。关于工程的详细目录结构介绍，请参见[端云一体化开发工程目录结构](agc-harmonyos-create-appproject.md#section20250910164411)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/0fMlwEzDRIeXjCxbaxJGHg/zh-cn_image_0000002214704397.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/bBDMH_cgSz6vZHxydJJ1Qw/zh-cn_image_0000002214704397.png)
 
 ## 工程初始化配置
 
@@ -127,31 +127,31 @@ DevEco Studio为工程关联的项目自动开通云函数、云数据库、云�
 
 端开发工程主要用于开发应用端侧的业务代码，使用通用云开发模板创建的端开发工程目录结构如下图所示。“Application/cloud\_objects”模块用于存放云对象的端侧调用接口类，“src/main/ets/pages”目录下包含了云存储、云数据库和云函数页面，其他目录文件介绍请参见[工程目录结构](ide-project-structure.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/A3qnIz6uRP6VvEF7AtrxAA/zh-cn_image_0000002214858825.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/Iw4uUhHnQyO_ilhV7pYDzA/zh-cn_image_0000002214858825.png)
 
 ### 云开发工程（CloudProgram）
 
 在云开发工程中，您可为您的应用开发云端代码，包括云函数和云数据库服务代码。使用通用云开发模板创建的云开发工程目录结构如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/D2bG9GX1TsuAy_rRwO4fhA/zh-cn_image_0000002279845320.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/sZ6ANThCRJ6dyAIRKZrvnA/zh-cn_image_0000002279845320.png)
 
 * clouddb：云数据库目录，包含数据条目目录（dataentry）和对象类型目录（objecttype）。
   + dataentry：用于存放数据条目文件。
 
     该目录下一般会根据您选择的云开发模板预置数据条目示例文件。在通用云开发模板工程中，该目录下会预置名为“d\_Post.json”的数据条目示例文件，内含两条示例数据。您可按需使用、修改或删除。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/CqjsvMVTQPOSjYGRQmZhWA/zh-cn_image_0000002314788585.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/W98ISfhaQ2aph_D2jciW-w/zh-cn_image_0000002314788585.png)
   + objecttype：用于存放对象类型文件。
 
     该目录下一般会根据您选择的云开发模板预置对象类型示例文件。在通用云开发模板工程中，该目录下会预置名为“Post.json”的对象类型示例文件，内含对象类型“Post”的权限、索引、字段名称和字段值等。您可按需使用、修改或删除。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/C3nkJnoHTOqZBDfsjzzrwA/zh-cn_image_0000002179498164.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/lgosUAvbTFWPSqT3yJP4ng/zh-cn_image_0000002179498164.png)
   + db-config.json：模块配置文件，主要包含云数据库工程的配置信息，如默认存储区名称、默认数据处理位置。
 * cloudfunctions：云函数目录，包含各个云函数/云对象子目录。每个子目录下包含了云函数/云对象的配置文件、入口文件、依赖文件等。
 
   该目录下一般会根据您选择的云开发模板预置示例函数。通用云开发模板工程下预置了一个用于生成UUID的示例云对象“id-generator”，您可按需使用、修改或删除。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/GfhHwH6FRbirCoPpxRFz_w/zh-cn_image_0000002179498100.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/KWEJP6weQaGOfbmv65V6xQ/zh-cn_image_0000002179498100.png)
 * node\_modules：工程同步时执行“npm install”生成，包含“typescript”和“@types/node”公共依赖。
 * cloud-config.json：云开发工程配置文件，包含应用名称与ID、项目名称与ID、启用的数据处理位置、支持的设备类型等。
 * package.json：定义了“typescript”和“@types/node”公共依赖。
@@ -165,10 +165,10 @@ DevEco Studio为工程关联的项目自动开通云函数、云数据库、云�
 
 1. 点击界面提示内的“AppGallery Connect”，浏览器打开HarmonyOS 开发者中心页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/h7qaqxtdQOuc4ax9XAXl4w/zh-cn_image_0000002214858733.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/TIXxT53tTImn7__rPAikrg/zh-cn_image_0000002214858733.png)
 2. 在“应用开发基础信息”页面，填写待创建的应用信息，完成后点击“下一步”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/DbZtSlJQQVGR69539MjwCw/zh-cn_image_0000002312627449.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/tvxdMj8US_6ArTu6ilbTTQ/zh-cn_image_0000002312627449.png)
 
    | 参数 | 说明 |
    | --- | --- |
@@ -180,28 +180,28 @@ DevEco Studio为工程关联的项目自动开通云函数、云数据库、云�
    * 如需将应用添加到已有项目，点击下拉框进行选择。
    * 如需将应用添加到新项目，直接在框中填写新项目名称。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/_Ll4Jl-4Tkm30UZUapWHUg/zh-cn_image_0000002312628981.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/XNh9FEf-Rke0j4XRXGcX0A/zh-cn_image_0000002312628981.png)
 4. 进入“云开发数据处理位置”页面，设置或管理项目的数据处理位置。
    * 如项目尚未设置数据处理位置：
      1. 点击“启用”。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/XGxE5YeVTiO0SX4HmujP1w/zh-cn_image_0000002312516673.png)
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/HHb3RHJFQiOHJrMjMRfxeQ/zh-cn_image_0000002312516673.png)
      2. 仔细阅读提示框的文字说明后，在“启用”栏为您的项目勾选一个或多个数据处理位置，并在“设为默认”栏将其中一个设置为默认数据处理位置。
 
         **注意** 
 
         启用的数据处理位置必须包含中国站点。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/i8dus6RmQZahQi4t_Mgb5A/zh-cn_image_0000002214858805.png)
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/uZ7MuHp5RsOnWsJ4W9rfWg/zh-cn_image_0000002214858805.png)
    * 如项目已设置过数据处理位置，可点击“管理”启用新的数据处理位置、取消已启用的数据处理位置，或修改默认数据处理位置。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/4EgY01r2Qfum65_CLVCt7A/zh-cn_image_0000002312630869.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/HYJL6tZZRIayWEaphGzsIw/zh-cn_image_0000002312630869.png)
 5. 点击“确认”，应用创建完成。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/FD3wDT-vSgepD_VJJMPeJA/zh-cn_image_0000002214858821.png)
-6. 返回DevEco Studio，可看到界面已获取并展示了刚刚创建的应用信息。若不展示，可点击Bundle name后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/hsa1EzAgTG6F1mxGVi7IVA/zh-cn_image_0000002500745449.png)刷新。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/r0wQLJlxQRWn5-JKUOmfrA/zh-cn_image_0000002214858821.png)
+6. 返回DevEco Studio，可看到界面已获取并展示了刚刚创建的应用信息。若不展示，可点击Bundle name后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/cJeMxGJuSqW15YwydEmzdA/zh-cn_image_0000002500745449.png)刷新。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/N142DvLwTnC9FcyBGWLX3w/zh-cn_image_0000002179338492.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/kX0PwAClRyqRnk3XlQL_wg/zh-cn_image_0000002179338492.png)
 
 ### 将游离应用添加到项目下
 
@@ -213,33 +213,33 @@ DevEco Studio为工程关联的项目自动开通云函数、云数据库、云�
 
 1. 点击“Not associated yet”，或点击界面下方提示内的“AppGallery Connect”，可打开HarmonyOS 开发者中心“开发与服务”页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Gyj_bcGFRyeQjWFY34nruw/zh-cn_image_0000002214704437.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/sneUC5RLS3SQO43MjARhQQ/zh-cn_image_0000002214704437.png)
 2. 点击选择希望为应用关联的项目，或者点击“添加项目”新建一个项目。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/V2OgCDcsQCuQHKK_xHQWBA/zh-cn_image_0000002496495517.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/989uDht7Rs6C1cUdZGzEMw/zh-cn_image_0000002496495517.png)
 3. 如选择了新建一个项目，设置项目名称，点击“确认”。
 
    如选择了已有项目，则忽略此步骤。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/WomZFKTvQ1OmiJZtdXcbog/zh-cn_image_0000002214704389.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/2Hg6G4fgR1WFZM8_EdvVBQ/zh-cn_image_0000002214704389.png)
 4. 设置或管理项目的数据处理位置。
    * 如项目尚未设置数据处理位置：
      1. 点击“启用”。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/jkGuSBLCQ3yngnWQBajIAw/zh-cn_image_0000002214704417.png)
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Y8Mu0CAqToW1n04kJFmszA/zh-cn_image_0000002214704417.png)
      2. 仔细阅读提示框的文字说明后，在“启用”栏为您的项目勾选一个或多个数据处理位置，并在“设为默认”栏将其中一个设置为默认数据处理位置。
 
         **注意** 
 
         启用的数据处理位置必须包含中国站点。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/_oGCxjiHSlSJrJUS18owWQ/zh-cn_image_0000002179338436.png)
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/EknB9t2xQxGHvqzkiaNSaA/zh-cn_image_0000002179338436.png)
    * 如项目已设置过数据处理位置，可点击“管理”启用新的数据处理位置、取消已启用的数据处理位置，或修改默认数据处理位置。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/8xeRo0IUQyKr14YxZXsbcA/zh-cn_image_0000002179338464.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/TAkplldiStexXBZ_m1P_LQ/zh-cn_image_0000002179338464.png)
 5. 点击“确认”，应用成功关联项目。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/xOaCtny_Qlar9gKw-aP2vw/zh-cn_image_0000002179498200.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/GSvyprUiSmyzIJTPLYtXxQ/zh-cn_image_0000002179498200.png)
 6. 返回DevEco Studio，可看到应用已关联上了项目。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/FslUD2ubTpC11SuDzHzfkA/zh-cn_image_0000002214858777.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/RWSTIABZTjyT_lRkeJW3UQ/zh-cn_image_0000002214858777.png)

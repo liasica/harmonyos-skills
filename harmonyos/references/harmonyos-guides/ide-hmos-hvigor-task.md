@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 开发hvigor任务
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 扩展构建能力 > 开发hvigor任务
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:13:11+08:00
+scraped_at: 2026-11-04T08:31:50+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:cf36d66c0b166dc95a7c75d4e95b6b8393ad9d52eae0c138eb3d3a6d7540373e
+content_hash: sha256:e2ad3eb5d8311ee3a54f0a1efb89c15b95f932e28db22b4032db1527de156260
 ---
 
 ## 了解任务
@@ -65,4 +65,4 @@ Finished
    ```
 4. 查看任务执行结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/Ga7BgRbZSbqHxjJt2WdOkw/zh-cn_image_0000002750169604.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/cZt5-aH6See8d3gqgnNbQw/zh-cn_image_0000002750169604.png)

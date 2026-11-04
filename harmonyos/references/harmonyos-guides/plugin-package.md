@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/plugin-packag
 title: 开发与使用应用插件（PC/2in1）
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发指导 > 开发与使用应用插件（PC/2in1）
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:31:34+08:00
+scraped_at: 2026-11-04T08:28:57+08:00
 doc_updated_at: 2026-10-14
-content_hash: sha256:e865c662d0e4cf8ae0f76dbf1a4b6f1deaf3e4c5fcc8d356ff0f24251d23be08
+content_hash: sha256:7bab339b9cb09ef44c53cda33698458d59cf7ff5e6151c734b7101e08b9283d3
 ---
 
 插件包是基于[HSP](in-app-hsp.md)的共享包组件，用于扩展宿主应用（加载并运行插件的应用程序）的功能。插件通常由第三方开发者或宿主应用开发者创建，旨在为宿主应用提供额外的特性或服务，例如专业设计软件通过插件为不同行业提供定制能力。插件运行依赖系统能力，例如调用ArkTS接口、使用Ability组件等。若插件自身不依赖系统能力，则可沿用应用原有的插件打包方式，无需采用HSP形式。插件不能独立运行，必须依赖宿主应用提供的运行环境和功能支持。
@@ -30,7 +30,7 @@ content_hash: sha256:e865c662d0e4cf8ae0f76dbf1a4b6f1deaf3e4c5fcc8d356ff0f24251d2
 
 1. 插件包本质上是动态共享包HSP，参考[创建HSP模块](ide-hsp.md#section79378499185)在工程中创建插件模块plugin。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/FPhfoip2S6K-6QB0F7czuA/zh-cn_image_0000002806107581.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/tE0q1zlCQEW7Lz4f4pOudQ/zh-cn_image_0000002809049007.png)
 2. 在[app.json5](app-configuration-file.md)中配置bundleType字段为appPlugin，该字段表示当前包为应用的插件包，bundleName为插件的包名。
 
    ```json5
@@ -49,16 +49,16 @@ content_hash: sha256:e865c662d0e4cf8ae0f76dbf1a4b6f1deaf3e4c5fcc8d356ff0f24251d2
    ```
 3. 选择DevEco Studio菜单栏中的File > Project Structure，在Signing Configs页面勾选Automatically generate signature。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/YogB_vjKQUym1Y8EA2OJfg/zh-cn_image_0000002776907962.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/aB_Ag3sNQHyb1g_lmmFHAw/zh-cn_image_0000002779849442.png)
 
 ### 编译打包
 
 1. 选中工程目录中插件模块的文件目录，通过DevEco Studio菜单栏的Build > Make Module ${libraryName}进行编译构建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/7IwpnHiSQXKe7LJwMdsh8Q/zh-cn_image_0000002776747976.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/VQRruE09Q6SLA9IDz59p7A/zh-cn_image_0000002779689472.png)
 2. 编译完成后，会在工程目录中生成对应的产物。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/aq6wFwXpTuanYhBNB8SYdA/zh-cn_image_0000002806027693.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/8dOOwix6Qiq2oxYDHawlcw/zh-cn_image_0000002809009093.png)
 
 ## 使用应用插件
 

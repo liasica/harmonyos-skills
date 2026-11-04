@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 以太网连接错误码
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 错误码 > 以太网连接错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:56+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d6343d860523966fea7d818123c92ed3939ec2ea284b57d25650b2dec5e63ee2
+scraped_at: 2026-11-04T08:34:54+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:78b53f7c00aacad9ee916fb8edf20f3b24878d81da63769193cfc14885683413
 ---
 
 **说明** 
@@ -60,15 +60,13 @@ System internal error.
 
 **可能原因**
 
-1.内存异常。
-
-2.空指针。
+1. 内存异常。
+2. 空指针。
 
 **处理步骤**
 
-1.检查内存空间是否充足，清理内存后重试。
-
-2.系统异常，请稍后重试或重启设备。
+1. 检查内存空间是否充足，清理内存后重试。
+2. 系统异常，请稍后重试或重启设备。
 
 ## 2201005 设备信息不存在
 
@@ -86,7 +84,7 @@ The device information does not exist.
 
 **处理步骤**
 
-```screen
+```shell
 > hdc shell ifconfig
 ```
 

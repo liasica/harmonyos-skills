@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Column
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 行列与堆叠 > Column
 category: harmonyos-references
-scraped_at: 2026-10-31T07:35:11+08:00
+scraped_at: 2026-11-04T08:32:53+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:955172bf8d9e20a7fa6f99f61f050509499d84b0fd0d7a808b67299fe670b212
+content_hash: sha256:443693c030db08a6c71334ff3c5b367ad35922f309d1d93cad1b3533a1d0100f
 ---
 
 沿垂直方向布局的容器。适用于需要将多个子组件按垂直方向依次排列的场景，如列表项、表单项、卡片内容等。支持设置子组件间距、对齐方式等属性，能够快速实现垂直方向的线性布局。
@@ -275,7 +275,7 @@ struct ColumnExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/RwE2OjcrRBK6Jc79_qpw5g/zh-cn_image_0000002806110315.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/PbFYfAzUQ7K3UInXrv82gw/zh-cn_image_0000002809051741.png)
 
 ### 示例2（设置反转属性）
 
@@ -305,4 +305,4 @@ struct ColumnReverseSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/juxEAmO3TI6EGsKZum534A/zh-cn_image_0000002776910696.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/HcBxTa2-TN-vmM4lXo9Spw/zh-cn_image_0000002779852176.png)

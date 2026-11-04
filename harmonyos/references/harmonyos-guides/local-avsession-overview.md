@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/local-avsessi
 title: 本地媒体会话概述
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 本地媒体会话 > 本地媒体会话概述
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:40+08:00
+scraped_at: 2026-11-04T08:30:08+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:833d04561814886e5b9d4b15ab6e0a37e6ac68737772eb9934734715538649b3
+content_hash: sha256:1929ad02149f2187a354ca4d6578650bf46ccb36d2a49a98c0c4d66e218ec100
 ---
 
 ## 交互过程
 
 本地媒体会话的数据源均在设备本地，交互过程如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/8DeGChP6QnyjmORhOMx1CA/zh-cn_image_0000002806029199.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/qt2VxUoSS-O5w_BBsYqsww/zh-cn_image_0000002809010601.png)
 
 此过程中涉及两大角色，媒体会话提供方和媒体会话控制方。
 

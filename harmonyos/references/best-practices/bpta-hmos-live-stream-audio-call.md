@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-hmos-live-
 title: 基于媒体能力实现直播连麦功能
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 基于媒体能力实现直播连麦功能
 category: best-practices
-scraped_at: 2026-10-29T08:03:20+08:00
+scraped_at: 2026-11-04T08:37:56+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:b0a80b1db1744067b81ff1e2077d179da413ee349d31dad83c15c48a774bac20
+content_hash: sha256:424395a4cf827d58ae5e7377d3d9e3fbdd5f24d15536ab4229337d305edbda61
 ---
 
 ## 概述
@@ -16,13 +16,13 @@ content_hash: sha256:b0a80b1db1744067b81ff1e2077d179da413ee349d31dad83c15c48a774
 
 因此，本文将聚焦于客户端开播侧的音视频流解码播放，详细介绍对应的技术实现方案。关于直播推拉流协议、云上服务器转码与分发等内容，本文暂不涉及。直播连麦系统的处理链路可参考下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/5joi3S7bTC6CZUDcV7mDgQ/zh-cn_image_0000002765180728.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/7oGxGP-8RryqbxmVhf90CA/zh-cn_image_0000002765180728.png "点击放大")
 
 ## 直播连麦架构
 
 以两路主播连麦场景为例，云端、应用客户端及系统的分层技术架构图如下图所示。实际直播场景支持多路连麦，每一路客户端的技术方案和基本原理均相似。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/1afY2tWMS82IAX2CKaJW2Q/zh-cn_image_0000002518209536.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/exVsgRnHT9m1Qie-ZQv9KA/zh-cn_image_0000002518209536.png "点击放大")
 
 由上图可见，直播连麦的整个流程可以分为**“发起连麦”**、**“连麦建立”** 和 **“观众观看”**三个主要阶段。
 
@@ -42,7 +42,7 @@ content_hash: sha256:b0a80b1db1744067b81ff1e2077d179da413ee349d31dad83c15c48a774
 
 主播1客户端从云端拉取主播2的视频码流（通常为H.264或H.265格式）并解码，与连麦UI布局XComponent创建的Surface ID关联后，即可直接渲染上屏显示。其原理示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/Jy9v-IQXRR2nqDg8zZmLUA/zh-cn_image_0000002518369668.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/dFOD3-zPQImam5KP26dIxg/zh-cn_image_0000002518369668.png "点击放大")
 
 ### 开发步骤
 

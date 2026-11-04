@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AudioCapturer)
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS API > @ohos.multimedia.audio (音频管理) > Interface (AudioCapturer)
 category: harmonyos-references
-scraped_at: 2026-10-11T07:26:57+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:c2425b00a91b491c26fccce5993d0ed9e373b3c40bd4bd24d05de9620d968234
+scraped_at: 2026-11-04T08:35:40+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:e8a2a3ba1af317526370e50cb9b37f757e21615e8f4727f4d3a61be85548bb2b
 ---
 
 提供音频采集的相关接口。
@@ -1119,7 +1119,7 @@ audioCapturer.off('markReach', markReachCallback);
 
 on(type: 'periodReach', frame: number, callback: Callback<number>): void
 
-监听标记到达事件（当采集的帧数达到frame参数的值时触发，即按周期上报信息）。使用callback异步回调。
+监听周期到达事件（当采集的帧数达到frame参数的值时触发，即按周期上报信息）。使用callback异步回调。
 
 如果将frame设置为10，每采集10帧数据均会上报信息（例如：第10帧、第20帧、第30帧......）。
 

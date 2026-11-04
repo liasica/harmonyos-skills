@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.file.fs (文件管理)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > @ohos.file.fs (文件管理)
 category: harmonyos-references
-scraped_at: 2026-09-15T07:06:01+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:f7b672e9cc70f7e5e868a3a0f97a13438d8cd69b2cf7659007f374e5ef8110e8
+scraped_at: 2026-11-04T08:34:04+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:ce53d6aa4708cc8580f8afbb695e9cdb42f87d354454d880b362deb4af3e866c
 ---
 
 本模块是Core File Kit的核心模块，提供基础文件操作API，用于对应用沙箱内的文件和目录进行创建、打开、读写、拷贝、移动、删除、查询属性等操作。
@@ -4425,6 +4425,8 @@ createRandomAccessFile(file: string | File, mode?: number, options?: RandomAcces
 
 接口抛出错误码的详细介绍请参见[基础文件IO错误码](errorcode-filemanagement.md#基础文件io错误码)。
 
+**示例：**
+
 ```ts
 import { BusinessError } from '@kit.BasicServicesKit';
 
@@ -5378,7 +5380,7 @@ isBlockDevice(): boolean
 
 ```ts
 let filePath = pathDir + "/test.txt";
-let isBLockDevice = fileIo.statSync(filePath).isBlockDevice();
+let isBlockDevice = fileIo.statSync(filePath).isBlockDevice();
 ```
 
 ### isCharacterDevice

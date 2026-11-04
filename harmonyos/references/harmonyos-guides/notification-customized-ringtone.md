@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-
 title: 为通知添加自定义铃声
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > 发布通知 > 为通知添加自定义铃声
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:23+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:491cb40f5ade0c07d40a08d97257bcdc8571412251cf6b85951b5ee088e454e2
+scraped_at: 2026-11-04T08:30:37+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:202766f2e4a3d8db539fb1c880dae5a6930386ebec25396c5eef5fe78ad1a1dc
 ---
 
-从API version 12开始，应用发布通知时，可以使用自定义的通知铃声，该铃声的音频资源需要预置在应用中。从API version 24开始，系统增强了该字段的能力，应用可以使用非预置的音频资源作为通知铃声，比如从网络下载或者用户生成的音频资源。
+从API版本12开始，应用发布通知时，可以使用自定义的通知铃声，该铃声的音频资源需要预置在应用中。从API版本24开始，系统增强了该字段的能力，应用可以使用非预置的音频资源作为通知铃声，比如从网络下载或者用户生成的音频资源。
 
 ## 接口说明
 

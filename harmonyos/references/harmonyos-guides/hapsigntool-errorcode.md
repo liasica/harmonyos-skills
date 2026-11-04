@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hapsigntool-e
 title: 签名工具错误码
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 构建报错排查 > 编译构建错误码 > 签名工具错误码
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:22+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:50ee255bd9820506e73dee3bc995308f958b5d1c7c92ce10c4eadc727169c5a3
+scraped_at: 2026-11-04T08:31:36+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:5b473279184fe1bcc9b4a006d16204009822c905db8c56a3f25250f4bae8c70b
 ---
 
 ## 11010001 未知错误
@@ -20,11 +20,13 @@ Unknown error.
 
 **可能原因**
 
-签名过程发生了错误，请查看日志中的签名验证失败详情。
+1. 签名过程发生了错误，请查看日志中的签名验证失败详情。
+2. 签名后的应用包大小超过4G，错误提示信息为"uint32 value out of range: xxx"。
 
 **处理步骤**
 
-结合控制台输出的错误日志信息及应用包进一步分析。
+1. 结合控制台输出的错误日志信息及应用包进一步分析。
+2. 减少软件包的大小，重新打包签名。
 
 ## 11012002 输入文件不存在
 
@@ -355,6 +357,60 @@ Zip format failed
 
 重新打包签名。
 
+## 11017005 签名后的软件包大小超4G
+
+**错误信息**
+
+The size of signed application is out of range
+
+**错误描述**
+
+签名后的HAP/HSP/HNP软件包大小超过4G。
+
+**可能原因**
+
+待签名的HAP/HSP/HNP软件包大小接近4G，写入签名块后软件包大小超过4G。
+
+**处理步骤**
+
+减少软件包的大小，重新打包签名。
+
+## 11018001 应用包完整性验证失败
+
+**错误信息**
+
+Verify input HAP failed
+
+**错误描述**
+
+待重签名的企业应用包验证失败
+
+**可能原因**
+
+待重签名的企业应用包未签名或完整性被破坏。
+
+**处理步骤**
+
+重新打包签名。
+
+## 11018002 不支持的应用分发类型
+
+**错误信息**
+
+Unsupported application distribution type: xxx
+
+**错误描述**
+
+不支持的应用分发类型。
+
+**可能原因**
+
+inFile参数指定的待重签名应用的分发类型不是企业应用。
+
+**处理步骤**
+
+将inFile参数指定的待重签名应用替换为分发类型为enterprise、enterprise\_normal、enterprise\_mdm的企业应用。
+
 ## 11106001 无效的文件格式
 
 **错误信息**
@@ -453,7 +509,7 @@ module.json文件内容错误。
 **处理步骤**
 
 1. 检查json内容结构是否符合格式规范。
-2. 在module.json中添加hnp文件描述，参考[开发指导](module-configuration-file.md#hnppackages标签)。
+2. 在module.json中添加hnp文件描述，[开发指导](module-configuration-file.md#hnppackages标签)。
 
 ## 11112003 ELF文件错误
 

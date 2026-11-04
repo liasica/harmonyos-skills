@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/create-parse-
 title: "证书PKCS #12的创建和解析"
 breadcrumb: "指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 证书算法库框架 > 证书PKCS #12的创建和解析"
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:13+08:00
-doc_updated_at: 2026-10-30
-content_hash: sha256:f594ca7da8f429e77e05d450648a1c7a4d9cd73f8942bdcc467869c57f505771
+scraped_at: 2026-11-04T08:29:39+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:dc6c8775ee2a10894b5fdddd1886c4074f857bef7cf87ac36034994b180b3170
 ---
 
 从API version 18开始，支持解析PKCS #12证书。
 
 从API version 21开始，支持创建PKCS #12证书。
 
-PKCS #12是一种用于存储和传输用户私钥、证书及其相关证书链的标准格式。该格式通过密码保护，将多个密码学对象打包为一个加密的容器文件，支持存储私钥、公钥证书、证书颁发机构证书以及其他相关的密码学数据。PKCS12广泛应用于数字证书的安全存储、跨平台传输和证书备份场景，是实现证书管理和PKI应用的重要标准之一。
+PKCS #12是一种用于存储和传输用户私钥、证书及其相关证书链的标准格式。该格式通过密码保护，将多个密码学对象打包为一个加密的容器文件，支持存储私钥、公钥证书、证书颁发机构证书以及其他相关的密码学数据。PKCS #12广泛应用于数字证书的安全存储、跨平台传输和证书备份场景，是实现证书管理和PKI应用的重要标准之一。
 
 ## 开发步骤
 

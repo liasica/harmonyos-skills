@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-quick-com
 title: 启动加载完成快
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 附录 > 体检规则 > 启动加载完成快
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:12:56+08:00
+scraped_at: 2026-11-04T08:31:31+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:6631cb636c7bd3afe1874c9110967aac4487b72a82dda5e6ad8605c87714aca0
+content_hash: sha256:6b7196cc865f57a961eeec4bb90e617f1bf8d01c6c07239b40c2ffd468044ed3
 ---
 
 ## DevEco Studio 6.0.1 Beta1及以上版本
@@ -26,7 +26,7 @@ content_hash: sha256:6631cb636c7bd3afe1874c9110967aac4487b72a82dda5e6ad8605c8771
 
 以首帧页面铺满屏幕作为开始时刻，冷启动完成时延等于应用首页加载完成耗时减去广告时间。若冷启动完成时延小于等于1100ms，则检测通过；若大于1100ms，小于等于6300ms，则检测告警；若大于6300ms，则检测失败。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/A7YyRCRSQs-YURG0wg_ipg/zh-cn_image_0000002701663900.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/4y35SiwsS9ijv4CSrHVMfA/zh-cn_image_0000002701663900.png)
 
 ## DevEco Studio 6.0.1 Beta1以下版本
 

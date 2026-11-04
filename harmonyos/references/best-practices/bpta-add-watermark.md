@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-add-watermark
 title: 水印添加
-breadcrumb: 最佳实践 > 图形 > 图形绘制 > 水印添加
+breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 水印添加
 category: best-practices
-scraped_at: 2026-10-29T08:03:16+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:10207b661d011cc311b28247e7dc1ffec545ceb35e1997d7d2e5c0f54b18e60e
+scraped_at: 2026-11-04T08:37:57+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:c89fc89903fad4dc9a31cd213919feee424a9316f1fb29d335418800eac6c735
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ content_hash: sha256:10207b661d011cc311b28247e7dc1ffec545ceb35e1997d7d2e5c0f54b1
 
 某个页面背景上添加水印文字，实现效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/uDa9RZoBQHC9_3vCApTy0A/zh-cn_image_0000002229451785.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/JlKLvXCWSqCBMDk_J6R_JQ/zh-cn_image_0000002229451785.png "点击放大")
 
 ### 实现原理
 
@@ -64,10 +64,10 @@ content_hash: sha256:10207b661d011cc311b28247e7dc1ffec545ceb35e1997d7d2e5c0f54b1
    2. 实现绘制水印draw()方法。绘制的起点默认为坐标轴的原点（画布的左上角），通过坐标轴的平移及旋转，实现在画布的不同位置、不同角度绘制水印。如果水印有一定旋转角度，想保证第一个水印能完整显示，需要对绘制的起点做平移，平移距离通过旋转角度及水印宽高计算。
       * 旋转角度大于0，由下图可知，水印沿x轴方向平移距离positionX = tan(θ) \* 水印高度，即绘制起点为(positionX, 0)。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/Dc-uHb_nSyCbuqNU7VrsmQ/zh-cn_image_0000002229337289.png "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/Ekl2wcxvTk2lPJMZbotaaw/zh-cn_image_0000002229337289.png "点击放大")
       * 旋转角度小于0，由下图可知，水印沿y轴方向平移距离positionY = tan(θ) \* 水印宽度，即绘制起点为(0, positionY)。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/otHHVV6fQWm8A7Wz8MULfQ/zh-cn_image_0000002229337285.png "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/FpdL5jSuTcurLRnv8k4xKw/zh-cn_image_0000002229337285.png "点击放大")
 
       最终通过CanvasRenderingContext2D.[fillText()](../harmonyos-references/ts-components-canvas-common-method.md#filltext)方法进行水印文字的绘制。
 
@@ -152,7 +152,7 @@ content_hash: sha256:10207b661d011cc311b28247e7dc1ffec545ceb35e1997d7d2e5c0f54b1
 
 保存的图片、拍照生成的图片等场景，需要添加水印。实现效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/KAlM6JlCQAy73Fo-YByTfg/zh-cn_image_0000002229451781.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/_N4Be6C8RR2ARB1pzIJeAg/zh-cn_image_0000002229451781.png "点击放大")
 
 ### 实现原理
 
@@ -284,7 +284,7 @@ content_hash: sha256:10207b661d011cc311b28247e7dc1ffec545ceb35e1997d7d2e5c0f54b1
 
 在PDF预览页面点击添加水印按钮，生成带水印的PDF文档，并显示在预览页面中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/T7Ewfc4rTFyn1tvL33OZbw/zh-cn_image_0000002229337293.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/IDj6fSeRSLOIFTCZiZRXEg/zh-cn_image_0000002229337293.png "点击放大")
 
 ### 实现原理
 

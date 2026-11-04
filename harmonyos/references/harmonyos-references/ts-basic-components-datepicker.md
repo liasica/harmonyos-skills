@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: DatePicker
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > DatePicker
 category: harmonyos-references
-scraped_at: 2026-10-31T07:35:16+08:00
+scraped_at: 2026-11-04T08:32:57+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:9b3b09aa80edab40db519cc99b759fab22153193d88353705e7f4e4ef8c14c42
+content_hash: sha256:5064db91d52d98a4439dd8ef9a2bd6c4bcb39465905776645577a8b263220099
 ---
 
 DatePicker是滑动选择日期的组件，支持公历和农历切换，可配置日期范围、选择模式和文本样式。用于需要用户选择日期的应用场景，提供统一的日期选择交互体验，能够提升用户体验，减少开发工作量。
@@ -442,7 +442,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/aU-_WndWSG-8YXbFwtIi3Q/zh-cn_image_0000002776910824.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/ajDRhdRHQGW9MQ-rJc-b9g/zh-cn_image_0000002779852304.gif)
 
 ### 示例2（设置文本样式）
 
@@ -475,7 +475,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/_0deMZ2nS4qlGckLQKr-_w/zh-cn_image_0000002776750838.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/iQPgT_6cTrea43dvPFC01Q/zh-cn_image_0000002779692336.png)
 
 ### 示例3（设置显示年、月和月、日列）
 
@@ -528,7 +528,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/oIIkLVH2Rraau5UdQ1EiEA/zh-cn_image_0000002806030555.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/e2_kE-1BTMuM6SFzLlMYBA/zh-cn_image_0000002809011957.gif)
 
 ### 示例4（设置循环滚动）
 
@@ -566,4 +566,4 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/4uyDelKoQmC5AmmAl8zXQQ/zh-cn_image_0000002806110445.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/HBLPpR_4Txa32vH8_-cRww/zh-cn_image_0000002809051871.gif)

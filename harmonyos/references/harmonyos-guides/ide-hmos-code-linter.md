@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-code
 title: Code Linter代码检查
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:13:05+08:00
+scraped_at: 2026-11-04T08:31:43+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:baac16f90657bd5430fd8c4c243769bdd9f84994ab7774310f18c932134550d4
+content_hash: sha256:dc6d3deb73f68c3c0e85a0290e1f0432d73df17b563bfd17ddff09b5ce8f1373
 ---
 
 Code Linter针对ArkTS/TS代码进行最佳实践、编程规范方面的检查。开发者可根据扫描结果中告警提示手动修复代码缺陷，或者执行一键式自动修复，在代码开发阶段，确保代码质量。
@@ -98,7 +98,7 @@ Code Linter针对ArkTS/TS代码进行最佳实践、编程规范方面的检查�
 
 在已打开的代码编辑器窗口单击右键选择**代码静态检查**，或在工程管理窗口中鼠标选中单个或多个工程文件/目录，右键选择**代码静态检查** **> 全量检查**执行代码全量检查。如只需对Git工程中增量文件（包含新增/修改/重命名）进行检查，右键选择**代码静态检查** **>** **增量检查**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/mZQZIWciT-iaanFVaWrWJg/zh-cn_image_0000002750169574.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/iu_ANaptQpqJupbsGzLGUA/zh-cn_image_0000002750169574.png "点击放大")
 
 **说明** 
 
@@ -118,20 +118,20 @@ Code Linter针对ArkTS/TS代码进行最佳实践、编程规范方面的检查�
 
 扫描完成后，在底部工具面板查看检查结果，具体包括：
 
-* 单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/sB-L2fU-QLe3OA76z2J-dA/zh-cn_image_0000002779728755.png "点击放大")图标，查看可修复的代码；点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/aeNcfXGqSE-OW9PopRWhIA/zh-cn_image_0000002750169572.png "点击放大")图标，可以一键式批量修复，并刷新检查结果；点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/_rmtxmjxTHqXvjxrczmf1w/zh-cn_image_0000002750169580.png "点击放大")图标，可以重新进行检查；点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/lo098dqiRsyD_D65udl7fg/zh-cn_image_0000002779728753.png "点击放大")图标，可以收起或者展开检查结果。
-* 点击不同告警等级，可分别查看对应告警级别的信息，其中![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/OSzQKHa_TXuLcWSKn9WEyw/zh-cn_image_0000002750009694.png "点击放大")表示错误、![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/bhfTtX66RzaMFZ3t4WA8_A/zh-cn_image_0000002779608607.png "点击放大")表示警告、![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/2INZoa6nQDuwWmeQ_9T-cQ/zh-cn_image_0000002779728751.png "点击放大")表示建议。
+* 单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/IMTHL7R1RNmXVQBmzJqkUw/zh-cn_image_0000002779728755.png "点击放大")图标，查看可修复的代码；点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/EeroCkDDSninPftFuXMIqw/zh-cn_image_0000002750169572.png "点击放大")图标，可以一键式批量修复，并刷新检查结果；点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/H1anDBP6R6mEEPkRB9iP5Q/zh-cn_image_0000002750169580.png "点击放大")图标，可以重新进行检查；点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/Qu5w3NyzQoWRAT5L9VBx1A/zh-cn_image_0000002779728753.png "点击放大")图标，可以收起或者展开检查结果。
+* 点击不同告警等级，可分别查看对应告警级别的信息，其中![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/XIbiEDcwTquYE4zPe4tlCg/zh-cn_image_0000002750009694.png "点击放大")表示错误、![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/dgQ-5gDjSwWOoacK5GmNFg/zh-cn_image_0000002779608607.png "点击放大")表示警告、![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/fIUNJYlrSjqeCMg6a2yJtA/zh-cn_image_0000002779728751.png "点击放大")表示建议。
 * 点击**按场景筛选**下拉菜单，可以筛选不同规则的检查结果。
 * 选中某条告警结果，可以在右侧**缺陷详情**查看告警对应的规则详细说明，其中包含正向和反向示例，并根据其中的建议修改代码。
 * 双击某条告警结果，可以跳转到对应代码缺陷位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/ih8w81JQRT-jcnYvjJ8mdw/zh-cn_image_0000002750009684.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/V7H_xxNHSxKMTKtV62OoBQ/zh-cn_image_0000002750009684.png "点击放大")
 
 **屏蔽告警信息：**
 
-* 在某些特殊场景下，若扫描结果中出现误报，鼠标悬浮在该条告警结果后点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/VSMhAQ_sRNC0JsnxS62DSA/zh-cn_image_0000002750169582.png "点击放大")图标，可以忽略对告警所在行的code linter检查；或勾选多条待屏蔽的告警，点击工具面板![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/uR75h_aoT0yCZszk7YxSmQ/zh-cn_image_0000002750169578.png "点击放大")图标批量执行。
+* 在某些特殊场景下，若扫描结果中出现误报，鼠标悬浮在该条告警结果后点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/NvtZDOIURYy4WQ9au07plg/zh-cn_image_0000002750169582.png "点击放大")图标，可以忽略对告警所在行的code linter检查；或勾选多条待屏蔽的告警，点击工具面板![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/AyWB_9C6ReKBeDrjDwcNlw/zh-cn_image_0000002750169578.png "点击放大")图标批量执行。
 * 在文件顶部添加注释/\* eslint-disable \*/可以屏蔽整个文件执行code linter检查，在eslint-disable 后加入一个或多个以逗号分隔的规则Id，可以屏蔽具体检查规则。
 * 在需要忽略检查的代码块前后分别添加/\* eslint-disable \*/和/\* eslint-enable \*/添加注释信息，再执行Code Linter，将不再显示该代码块扫描结果；在待屏蔽的代码行前一行添加/\* eslint-disable-next-line \*/，也可屏蔽对该代码行的codelinter检查。
 
-**导出检查结果：**点击工具面板![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/1ZyoTQEWRjWNr405wp5atg/zh-cn_image_0000002779608601.png "点击放大")图标，即可导出检查结果到csv文件，包含告警所在行，告警明细，告警级别等信息。
+**导出检查结果：**点击工具面板![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/NJ2ZOz5aTCuT6eXDLeSLlQ/zh-cn_image_0000002779608601.png "点击放大")图标，即可导出检查结果到csv文件，包含告警所在行，告警明细，告警级别等信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/lkmcV7mERqqh2eKKTNCHxg/zh-cn_image_0000002779728743.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/UK-QwRxqQKGx7ygq5F6UDg/zh-cn_image_0000002779728743.png "点击放大")

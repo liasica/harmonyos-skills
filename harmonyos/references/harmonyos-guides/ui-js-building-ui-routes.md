@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-buildin
 title: 页面路由
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 构建用户界面 > 页面路由
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:31:56+08:00
+scraped_at: 2026-11-04T08:29:21+08:00
 doc_updated_at: 2026-07-03
-content_hash: sha256:6c32b7627578eee9b3b6e59adf9c73de8b5cb919ba1221935ce1d4e77b351bdf
+content_hash: sha256:acaed8ca666d77eb4761437b98ae4708439116346dc91cc4e225839e104311f1
 ---
 
 很多应用由多个页面组成，比如用户可以从音乐列表页面点击歌曲，跳转到该歌曲的播放界面。开发者需要通过页面路由将这些页面串联起来，按需实现跳转。
@@ -85,4 +85,4 @@ export default {
 
 运行效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/LDKQRr2lTTmfE-7MQ5ddMg/zh-cn_image_0000002806028599.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/LN88KD6MQ_WqClbQzOYrxw/zh-cn_image_0000002809009999.png)

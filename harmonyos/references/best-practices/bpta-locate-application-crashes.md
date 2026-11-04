@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-locate-app
 title: 开发态快速定位应用崩溃
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 开发态稳定性分析 > 应用崩溃类问题分析 > 开发态快速定位应用崩溃
 category: best-practices
-scraped_at: 2026-10-29T08:03:28+08:00
+scraped_at: 2026-11-04T08:38:06+08:00
 doc_updated_at: 2026-08-10
-content_hash: sha256:c5d7fca3ea9e90ca59d0198fe69138ad7b08bd2d50ab9d55e7b914674f0a2c59
+content_hash: sha256:856249b39da1d4f915a45cfc76df80613dfe555d21dc4993ada4c6613f54bb52
 ---
 
 ## 概述
@@ -48,7 +48,7 @@ content_hash: sha256:c5d7fca3ea9e90ca59d0198fe69138ad7b08bd2d50ab9d55e7b914674f0
 
 通过上述流程，HWASan与BinXO可高效定位内存越界等底层崩溃，为复杂崩溃问题的排查提供标准化操作路径，详细流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/zK0-BCNqTUaEpHt5zvqkSA/zh-cn_image_0000002701362583.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/ZOhFdOWTROSjz_qH8WL0zA/zh-cn_image_0000002701362583.png)
 
 ## 数组越界案例
 
@@ -65,15 +65,15 @@ content_hash: sha256:c5d7fca3ea9e90ca59d0198fe69138ad7b08bd2d50ab9d55e7b914674f0
 
    1、设置Build Mode为debug模式打开DevEco Studio，以debug模式运行示例工程，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/dn5MaqWUSwGGW8PtcWa6wg/zh-cn_image_0000002671482890.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/8YsQ4vvXTTW2Pl4rlaunIw/zh-cn_image_0000002671482890.png)
 
    2、运行应用，反复滑动图片触发索引值超出范围，索引值大于7或者小于0的时候会低概率使应用崩溃产生CppCrash日志，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/bWnPhD5aSQGyvkSJYO1LfA/zh-cn_image_0000002671642752.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/D7IpRGBiQoWisfouPzLkgg/zh-cn_image_0000002671642752.gif "点击放大")
 
    3、分析CppCrash日志，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/Ktq7bjbNSPaLUgdo-t2_ow/zh-cn_image_0000002701242495.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/I_zwY61ORQaUE3uGflUKaQ/zh-cn_image_0000002701242495.png "点击放大")
 
    应用出现“SIGSEGV(SEGV\_MAPERR)”信号，表示访问了无效内存地址。该类崩溃通常由以下内存操作错误引发：
 
@@ -87,36 +87,36 @@ content_hash: sha256:c5d7fca3ea9e90ca59d0198fe69138ad7b08bd2d50ab9d55e7b914674f0
 
    1、开启HWASan工具，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/LGkcw-frSBa69p9gx9Xanw/zh-cn_image_0000002701362591.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/grxpCS3TR72qkWduFKEbSA/zh-cn_image_0000002701362591.png)
 
    2、运行应用，左滑图片超出索引（>7），应用必崩溃（HWASan工具会立即捕获本地代码数组越界访问），触发HWASan日志，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/AG24eCegTgu-CYH9Bj5F7w/zh-cn_image_0000002671482902.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/zoo8rrs-T4aNVtjhS65gkg/zh-cn_image_0000002671482902.gif "点击放大")
 
    3、分析HWASan日志，日志中显示堆栈信息，并且蓝色链接单击跳转到具体踩内存的方法中，方便开发者定位修改，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/MYfJnHYYTL2amndc4vhWDg/zh-cn_image_0000002671642766.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/WyqYfcD9RKCiFOVSsm9yYw/zh-cn_image_0000002671642766.png)
 
    4、重新运行应用，右滑图片超出索引（<0），应用低概率崩溃（HWASan工具不会立即捕获三方库so中的数组越界访问），崩溃产生HWASan日志，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/8pLBui0kQMud9jv7kjUJ8Q/zh-cn_image_0000002701242503.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/5lJ4QD7QSDapgnjCiA51fg/zh-cn_image_0000002701242503.gif "点击放大")
 
    5、分析HWASan日志时发现，其输出的堆栈信息无法有效定位到具体的越界访问代码行。原因在于，HWASan工具对第三方动态库（so）中的数组越界错误，往往不能即时捕获；即便捕获到异常，生成的日志也因堆栈信息不完整或缺乏符号解析，难以协助开发者追溯问题源头，具体现象如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/uC6GFBwNRmOlRHYzFRIk_Q/zh-cn_image_0000002701362603.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/LqmJLuNgQSKviKcxbdXzdA/zh-cn_image_0000002701362603.png "点击放大")
 3. 使用BinXO工具分析
 
    1、在HWASan基础上打开BinXO开关，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/IARJALHWQ3-100uiZQnMIg/zh-cn_image_0000002671482910.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/_fQdyLFsRVWjT2cClTe1sw/zh-cn_image_0000002671482910.png)
 
    2、重新运行应用，右滑图片超出索引（<0），应用必崩溃（BinXO工具会立即捕获三方库so中数组越界访问），触发HWASan日志，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/wqoVcvHHSzmcts-M1m_RzA/zh-cn_image_0000002671642770.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/wCwIkfEYSdC8ScYQkpAvyw/zh-cn_image_0000002671642770.gif "点击放大")
 
    3、分析HWASan日志，日志中显示堆栈信息，并且蓝色链接单击跳转到具体踩内存的方法中，方便开发者定位修改，堆栈第0帧是调用的三方库so信息，第1帧蓝色链接单击跳转到具体踩内存的方法，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/EG22jHeZQciYck0SPjW7LQ/zh-cn_image_0000002701242505.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/2XaDvdamQIGM7kglrWmidQ/zh-cn_image_0000002701242505.png)
 
 ## 代码分析与优化
 

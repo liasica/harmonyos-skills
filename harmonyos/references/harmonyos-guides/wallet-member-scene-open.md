@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-member
 title: 开通会员卡
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 会员卡 > 开发场景 > 开通会员卡
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:33:16+08:00
+scraped_at: 2026-11-04T08:30:46+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:d9a613d9b3d58d2f4f02c570f27e054dbfc8eed94765cae3b43079d30839db8c
+content_hash: sha256:ab5a01a1f02c8aacd34941a854f73b955e8731628a221e5109dab18c1e3e5423
 ---
 
 用户开通会员卡后，可以将电子会员卡添加至钱包，在钱包中方便查看和管理会员信息。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/N5dJbIjbQVSGdG58BF6hsA/zh-cn_image_0000002806029931.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/kUp6diWVRnyRPg36-uN8rQ/zh-cn_image_0000002809011333.png)
 
 ## 开发流程
 

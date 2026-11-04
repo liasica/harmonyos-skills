@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/car-preparati
 title: 开发准备
 breadcrumb: 指南 > 系统 > 硬件 > Car Kit（车服务） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:27+08:00
+scraped_at: 2026-11-04T08:29:54+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:4e389f5abcce92b989fdb2acb0c4e2ee9802006a28cc7aefdd3a36483b319208
+content_hash: sha256:d4870909cf5400042b35bc429a215aa6d58edb65d75c57979209e7bb19ead37a
 ---
 
 应用在使用Car Kit能力前，开发者需要完成的配置：配置编译模式、配置权限、配置能力。
 
 ## 配置编译模式
 
-在打包应用时，请在DevEco Studio中，点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/EZX3I8gMQwuZzLO_Xx5Txg/zh-cn_image_0000002806029079.png)图标，将编译模式修改为“release”，然后点击右下角的“Apply”即可。
+在打包应用时，请在DevEco Studio中，点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/ftbVMydhQyeSPS5NTsFO0g/zh-cn_image_0000002809010481.png)图标，将编译模式修改为“release”，然后点击右下角的“Apply”即可。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/c2exMFSOQwmDz7mNsK3WFQ/zh-cn_image_0000002806108969.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/U3DjPFKJRMaveIQ3MrI7Jw/zh-cn_image_0000002809050395.png)
 
 ## 配置权限
 

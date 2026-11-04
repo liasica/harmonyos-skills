@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-prev
 title: 查看应用组件树
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 使用多设备预览器运行应用 > 查看应用组件树
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:13:09+08:00
+scraped_at: 2026-11-04T08:31:48+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:1629efa810903c1038cf3a5b65e05b94ed3bfea0240af0698c04c611b46872d0
+content_hash: sha256:24feda87ee9c7b16a72db9b6121bc956e98683ddf94bd8dcda1970ecd4f611c6
 ---
 
 开发者可以在多设备预览器中从运行模式切换至预览模式，实时查看当前应用所对应的组件树，并支持跳转至对应代码，快速分析定位UI界面存在的问题。
@@ -22,15 +22,15 @@ content_hash: sha256:1629efa810903c1038cf3a5b65e05b94ed3bfea0240af0698c04c611b46
 
 ## 操作步骤
 
-1. 点击多设备预览器界面下方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/E3pH1CEBSnCzu-87PfKS8g/zh-cn_image_0000002779608609.png)图标进入预览模式。
+1. 点击多设备预览器界面下方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/JUj23CeUReGYi2MK0bv3LA/zh-cn_image_0000002779608609.png)图标进入预览模式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/OTp_UT7gR1eDiDhI19Fwug/zh-cn_image_0000002750169584.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/9xnJ_4kmQtmA79m1d-ADwg/zh-cn_image_0000002750169584.png)
 2. 在预览界面中可以查看当前页面的组件树和各个属性，支持组件搜索，展开和折叠组件树。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/4t6YhjxdS6eQhVxGUrpk-Q/zh-cn_image_0000002779728757.png "点击放大")
-3. 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/pwMwa9a4TBabF4kKdNpKzg/zh-cn_image_0000002750009698.png)图标，勾选**显示统计数据**，可显示组件树节点信息。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/bdF2qvqDTfy6OQ7IiEELEg/zh-cn_image_0000002779728757.png "点击放大")
+3. 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/qFe_eRPHT1CvHj1MWqVPTA/zh-cn_image_0000002750009698.png)图标，勾选**显示统计数据**，可显示组件树节点信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/-mXdQThSShyWCfOezH0A0g/zh-cn_image_0000002779728759.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/8m_dAg0BRUiDmVB5EuIy6Q/zh-cn_image_0000002779728759.png "点击放大")
 4. 选择要进行源码跳转的UI组件，在组件属性详情面板显示源码跳转链接，点击链接即可跳转到UI组件源码位置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/c_OuHYXySESdUtRxrh30OQ/zh-cn_image_0000002750009696.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/hwq08e1hRr2ire31_HPeVg/zh-cn_image_0000002750009696.png)

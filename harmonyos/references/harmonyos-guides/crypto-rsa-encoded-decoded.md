@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-en
 title: 使用RSA私钥进行编码解码(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥生成与转换 > 使用RSA私钥进行编码解码(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d65e4cdf8d63a7060a9c97d903a5180b4ee3b5b9f7a0a096475839494abfe911
+scraped_at: 2026-11-04T08:29:36+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:48eb3b38e691399fa602b042c2961d33aacf39276b3ccf27f3385c89435f0c61
 ---
 
 **编码**
@@ -30,17 +30,23 @@ content_hash: sha256:d65e4cdf8d63a7060a9c97d903a5180b4ee3b5b9f7a0a096475839494ab
 
   ```typescript
   import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+  import { BusinessError } from '@kit.BasicServicesKit';
 
   function prikeyEncoding() {
-    let rsaGenerator = cryptoFramework.createAsyKeyGenerator('RSA1024');
-    let keyPair = rsaGenerator.generateKeyPairSync();
-    let options : cryptoFramework.KeyEncodingConfig = {
-        password: '123456',
-        cipherName: 'AES-128-CBC'
+    try {
+      let rsaGenerator = cryptoFramework.createAsyKeyGenerator('RSA1024');
+      let keyPair = rsaGenerator.generateKeyPairSync();
+      let options : cryptoFramework.KeyEncodingConfig = {
+          password: '123456',
+          cipherName: 'AES-128-CBC'
+      }
+      let priPemKey = keyPair.priKey;
+      let priString = priPemKey.getEncodedPem('PKCS1', options);
+      console.info('[sync]TestPriKeyPkcs1Encoded priString output: ' + priString);
+    } catch (err) {
+      let e: BusinessError = err as BusinessError;
+      console.error(`prikeyEncoding failed: errCode: ${e.code}, errMsg: ${e.message}`);
     }
-    let priPemKey = keyPair.priKey;
-    let priString = priPemKey.getEncodedPem('PKCS1', options);
-    console.info('[sync]TestPriKeyPkcs1Encoded priString output: ' + priString);
   }
   ```
 * 解码示例：

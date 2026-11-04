@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-encodin
 title: 音频编码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 音频编码
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:39+08:00
+scraped_at: 2026-11-04T08:30:06+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:96243a64c55b004df3e8b6c5e851fabee2f0827c74efc6be46c569cc1dc27615
+content_hash: sha256:c6853e1d8382b877b268181564a22ede5dd1fb9e657ac1936d1294d27851294a
 ---
 
 开发者可以调用本模块的Native API接口，完成音频编码，即将音频PCM编码压缩成不同的格式。
@@ -41,7 +41,7 @@ content_hash: sha256:96243a64c55b004df3e8b6c5e851fabee2f0827c74efc6be46c569cc1dc
 * 虚线表示可选。
 * 实线表示必选。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/5aCSoPTOSL-W1IrhE2Dq-Q/zh-cn_image_0000002776909438.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/itQqOT1MQza-IVpBjbflbg/zh-cn_image_0000002779850918.png)
 
 ### 在 CMake 脚本中链接动态库
 
@@ -187,11 +187,11 @@ target_link_libraries(sample PUBLIC libnative_media_acodec.so)
 
    配置选项key值说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/wWz61f1NSuyIkeHbnLgnng/zh-cn_image_0000002776749452.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/drWzpUspTrmt8C3s1saaiw/zh-cn_image_0000002779690950.png)
 
    各音频编码类型参数范围说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/Uwo1U4UnR62S4xj0H9CMIQ/zh-cn_image_0000002806029169.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/YJ_2p2OcQcOH7P9lhK4jRQ/zh-cn_image_0000002809010571.png)
 
    例如对一个44100Hz采样率、2声道立体声、SAMPLE\_S16LE采样格式的PCM音频，以32000bps的码率进行AAC编码的调用流程如下：
 

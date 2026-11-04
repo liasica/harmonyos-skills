@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-vis
 title: 点光源效果
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 视效 > 点光源效果
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:07+08:00
+scraped_at: 2026-11-04T08:29:33+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:071dcdf68a0021b525237a8b6142b769302f05be53947fce8ab7f539555308a4
+content_hash: sha256:68565769b64ea7404cb50f714ad9d8dddce85e6c9eb7846ccb6341d9fde57290
 ---
 
 ## 场景介绍
@@ -160,4 +160,4 @@ content_hash: sha256:071dcdf68a0021b525237a8b6142b769302f05be53947fce8ab7f539555
    }
    ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/LfeAB7PLTDijxaFjoXPwbQ/zh-cn_image_0000002806028929.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/9NhlGutmSAm2ZHwG9CzvbA/zh-cn_image_0000002809010331.png)

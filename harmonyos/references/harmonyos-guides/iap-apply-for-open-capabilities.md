@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-apply-for
 title: （可选）申请嵌入式收银台开放能力权限
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 开发准备 > 基本准备工作 > （可选）申请嵌入式收银台开放能力权限
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:33:04+08:00
+scraped_at: 2026-11-04T08:30:32+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:b3625a4cdba25a21e19fd8ac2715f5c32b03c896bb9b4dc6cef7678fdd8640f8
+content_hash: sha256:73f37f7aa0e08c75bd565ec23f4993cdcd307d83a20218b534fedb9bc77dc45e
 ---
 
 如果需要接入[CashierComponent(iap嵌入式收银台组件)](../harmonyos-references/iap-cashier-component.md)，则需要申请对应权限。
@@ -22,15 +22,15 @@ content_hash: sha256:b3625a4cdba25a21e19fd8ac2715f5c32b03c896bb9b4dc6cef7678fdd8
 2. 在项目列表选择项目，并在应用列表下选择需要申请嵌入式收银台功能的应用。
 3. 进入“项目设置 > 开放能力管理”页面，选择能力名称为应用内购买服务（HarmonyOS NEXT），然后点击“嵌入式收银台”对应的“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/NJ-D1mZdTvqG7rBYnT2zvg/zh-cn_image_0000002806109505.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/ygLuQnYQRhidz6vpqJEiwA/zh-cn_image_0000002809050931.png)
 4. 参考“申请原因”中的模板，提供申请必需的相关信息，包括应用介绍、使用场景，然后点击“提交”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/lYALNUQPR6KGtnmhJilmDw/zh-cn_image_0000002776909886.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/Slno7nP2R4Ku1BAj6w6fng/zh-cn_image_0000002779851366.png)
 
    返回“开放能力管理”页面，原“申请”变为“申请中”，1~5个工作日内反馈申请结果，请留意互动中心的“服务开通申请”信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/jHxhiwKtTCOam4iLHuLzKw/zh-cn_image_0000002776749900.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/LaCs32MoTQ-sdF0kBtfMWQ/zh-cn_image_0000002779691398.png)
 
    申请通过后，互动中心会发送通知给开发者，同时“申请中”会变为置灰显示的“申请”，至此，应用已成功开启嵌入式收银台开放能力。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/HZSI58YSRBKzdgnNtm_Mhg/zh-cn_image_0000002806029617.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/HoTyIg9bSly7OpqN3_vUYA/zh-cn_image_0000002809011019.png)

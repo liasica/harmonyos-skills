@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 隐私遮罩
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 基础属性 > 隐私遮罩
 category: harmonyos-references
-scraped_at: 2026-10-31T07:35:07+08:00
+scraped_at: 2026-11-04T08:32:48+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:f93f593a7f8b9e91c9830b14ece52bca5ad7a9499c2c27e03dad65290925d2d4
+content_hash: sha256:1bfaf331dbc79cf55347c49775e311df12cbe0cfd5cd678aceedb14de25d6335
 ---
 
 用于对组件内容进行隐私遮罩处理。
@@ -81,4 +81,4 @@ struct ObscuredExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/HJMlkHOVSLettAD9QtGRXA/zh-cn_image_0000002776750590.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/bAtrY0eqQ9q74GkDTE4h4Q/zh-cn_image_0000002779692088.png)

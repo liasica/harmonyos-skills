@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ffrt-concurre
 title: Function Flow Runtime任务伙伴(C++)
 breadcrumb: 指南 > 系统 > 基础功能 > Function Flow Runtime Kit（任务并发调度服务） > Function Flow Runtime开发样例(C++) > Function Flow Runtime任务伙伴(C++)
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:26+08:00
+scraped_at: 2026-11-04T08:29:53+08:00
 doc_updated_at: 2026-08-07
-content_hash: sha256:573a2e0c282b2707d39e9044652ec6bd6fdb659c4c7c1050e505b605203e6b89
+content_hash: sha256:898190d5c8086a5fdd93b1758c09646f964e1c9e8d4b7e589a90dbb54b49076b
 ---
 
 ## 概述
@@ -17,7 +17,7 @@ content_hash: sha256:573a2e0c282b2707d39e9044652ec6bd6fdb659c4c7c1050e505b605203
 
 为解决以上问题，Job Partner并发范式应运而生。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/jFFu594_T-OrwcGxzTHOEQ/zh-cn_image_0000002806029067.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/MceqySXaSwm9ldcDZhHEvQ/zh-cn_image_0000002809010469.png)
 
 Job Partner并发范式中定义原先的线程为master线程，并支持动态管理partner线程（伙伴线程）。它有两个特性：
 

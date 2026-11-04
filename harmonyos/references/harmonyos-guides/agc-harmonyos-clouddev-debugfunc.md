@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 调试函数
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云函数 > 调试函数
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:12:46+08:00
+scraped_at: 2026-11-04T08:31:19+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:685138ee7c4063f5c38bb81a29ec85171fa74dcf04d2dd0a26ab568746d1de53
+content_hash: sha256:8fe13434d4499ca35ef0b5f6f171cecfc68805e8fdc2355323f42e31dfd0b164
 ---
 
 函数开发完成后，您可以对函数进行调试，以验证函数代码运行是否正常。
@@ -36,38 +36,38 @@ content_hash: sha256:685138ee7c4063f5c38bb81a29ec85171fa74dcf04d2dd0a26ab568746d
    * 直接从当前路径下Debug，使用的是默认的Debug配置，您也可[自定义Debug配置](agc-harmonyos-clouddev-debugfunc.md#section65830284215)。自定义Debug配置后再从此路径下Debug，将优先采用自定义Debug配置。
    * 如需批量调试多个函数，右击“cloudfunctions”目录，选择“Debug Cloud Functions”，即可启动该目录下所有函数。如“cloudfunctions”目录下同时存在云函数和云对象，将会启动所有的云函数和云对象。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/7PEGmtcSRumoatFThCwDfg/zh-cn_image_0000002214858717.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/Rq2fntyPTf6QM8su52MMmw/zh-cn_image_0000002214858717.png)
 2. 在下方通知栏“cloudfunctions”窗口，查看调试日志。如果出现“Cloud Functions loaded successfully”，表示函数成功加载到本地运行的HTTP Server中，并生成对应的Function URI。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/6W6Y3PQnRUGAaJXxavHx9w/zh-cn_image_0000002214704369.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/H40syERdTJ2-Z13QttGHAA/zh-cn_image_0000002214704369.png)
 3. 如需设置断点调试，在函数代码中选定要设置断点的有效代码行，在行号（如下图行15）后单击鼠标左键设置断点（如下图的红点）。
 
    设置断点后，调试能够在断点处中断，并高亮显示该行。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/kKvzr4BuSCy34pKy19E0rQ/zh-cn_image_0000002533684069.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/emAZF6WIQ6unYRgibI5KnQ/zh-cn_image_0000002533684069.png)
 4. 在菜单栏选择“View > Tool Windows > Cloud Functions Requestor”，使用事件模拟器（Cloud Functions Requestor）触发函数调用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/SjSMbCNkRKWzNAgM0hmdlQ/zh-cn_image_0000002179338456.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/PKRbjCnJQ66RFO1_7HUbvw/zh-cn_image_0000002179338456.png)
 5. 在弹出的“Cloud Functions Requestor”面板，配置触发事件参数。
    * Cloud Function：选择需要触发的云函数，此处以函数“my-cloud-function”为例。
    * Environment：选择函数调用环境。此处选择“Local”，表示本地调用。
    * Event：输入事件参数，内容为JSON格式请求体数据。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/7x2QKCChTdWlsdHsqoyqsw/zh-cn_image_0000002179338412.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/qcKXqgDVQLKzqKAkTYBX9Q/zh-cn_image_0000002179338412.png)
 6. （可选）点击“Save”，可保存当前触发事件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/6WmufqVkRxyjftdRxzDxEQ/zh-cn_image_0000002179498072.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/q2tO_csTQfK8sJvYq0zSzA/zh-cn_image_0000002179498072.png)
 
-   点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/VzruMa_MS_-3MNHxS4qmog/zh-cn_image_0000002179498132.png)可展开保存的触发事件，后续可直接点击“Load”加载事件。对于不需要保存的触发事件，也可以点击“Delete”删除。
+   点击右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/HXyy5alQTQKGnQNaAMJsEw/zh-cn_image_0000002179498132.png)可展开保存的触发事件，后续可直接点击“Load”加载事件。对于不需要保存的触发事件，也可以点击“Delete”删除。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/jKL66Vh2SXGPkEKvpRru4w/zh-cn_image_0000002278063192.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/LTvXwUVKRm6sAPI3VPpyVw/zh-cn_image_0000002278063192.png)
 7. 点击“Trigger”， 将会触发执行用户函数代码。执行结果将展示在“Result”框内，“cloudfunctions”窗口同时打印调试日志。
 
    **说明** 
 
    “Result”框右侧的“Logs”面板仅用于在[通过远程调用方式调试函数](agc-harmonyos-clouddev-debugfunc.md#section123191549587)时查看日志。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/2zbb5v9aS5yFJ8dI5QzfvA/zh-cn_image_0000002503613920.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/p2G_zVpzSLaUah3MP0sOYw/zh-cn_image_0000002503613920.png)
 8. （可选）如[配置了环境变量](agc-harmonyos-clouddev-debugfunc.md#li15793566149)，可将变量信息传入到函数执行环境中，用于函数运行时读取。
 
    ```screen
@@ -76,9 +76,9 @@ content_hash: sha256:685138ee7c4063f5c38bb81a29ec85171fa74dcf04d2dd0a26ab568746d
 
    如下图，函数“my-cloud-function”配置了环境变量“env1”，可成功访问环境变量“env1”的值“value1”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/5yjP5YxeS5OlzKhzYGY9PQ/zh-cn_image_0000002503615754.png)
-9. 点击菜单栏![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/dMv0NWgZSWueoUUEEwgWgg/zh-cn_image_0000002179338396.png)，可停止调试。
-10. 根据调试结果修改函数代码后，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/BhBEHfqKRFG8GJxscf18Fg/zh-cn_image_0000002179338420.png)重新以Debug模式启动调试，直至没有问题。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/EVnlvC0pS2e5Vtdv7fQt-Q/zh-cn_image_0000002503615754.png)
+9. 点击菜单栏![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/ublTjPEHTqWy6Otg0qpNfQ/zh-cn_image_0000002179338396.png)，可停止调试。
+10. 根据调试结果修改函数代码后，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/wJA_J6G_RrSHxRWLVAIJsw/zh-cn_image_0000002179338420.png)重新以Debug模式启动调试，直至没有问题。
 11. 参考步骤5~10，完成其他函数的调试。
 
 ## 通过远程调用方式调试函数
@@ -88,22 +88,22 @@ content_hash: sha256:685138ee7c4063f5c38bb81a29ec85171fa74dcf04d2dd0a26ab568746d
 1. 参考[部署函数](agc-harmonyos-clouddev-deployfunc.md)将需要调试的函数部署至HarmonyOS 开发者中心。
 2. （可选）如函数代码涉及访问环境变量，需在HarmonyOS 开发者中心函数列表中点击函数名称，为函数配置环境变量的值，供函数在运行时读取和使用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/TSfL2bm3QbKMkjLAUZuMew/zh-cn_image_0000002214858729.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/4iIP0wu2SxOlekGM08lgFg/zh-cn_image_0000002214858729.png)
 3. 在菜单栏选择“View > Tool Windows > Cloud Functions Requestor”，使用事件模拟器（Cloud Functions Requestor）触发函数调用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/6V6iVWoJQdOy6JAKgEljXg/zh-cn_image_0000002179498140.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/mbrovkUFTsCDku42UmcIqA/zh-cn_image_0000002179498140.png)
 4. 在弹出的“Cloud Functions Requestor”面板，配置触发事件参数。
    * Cloud Function：选择需要触发的云函数，此处依然以函数“my-cloud-function”为例。
    * Environment：选择函数调用环境。此处选择“Remote”，表示远程调用。
    * Event：输入事件参数，内容为JSON格式请求体数据。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/uLtXK874RpiF8gH6VL0Jmg/zh-cn_image_0000002179338388.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/HB7gA0nRTPewPjf_u3Vbyg/zh-cn_image_0000002179338388.png)
 5. 点击“Trigger”， 将会触发执行用户函数代码，执行结果将展示在“Result”框内。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/wtiwnF5CTUOlSDZZEbdj2A/zh-cn_image_0000002214704345.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/iTijMo0PR9-2MsK2e-Zn0Q/zh-cn_image_0000002214704345.png)
 6. 点击“Logs”页签，可查看打印的日志定位问题。修改函数代码、重新部署函数后再次执行远程调用，直至没有问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/53XuBJFnTb6F7D7EwTE8zQ/zh-cn_image_0000002535303613.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/FZT20ttjTv2jvZ_DrFZn7A/zh-cn_image_0000002535303613.png)
 7. 参考步骤1~5，完成其他函数的调试。
 
 ## （可选）自定义Run/Debug配置
@@ -112,15 +112,15 @@ content_hash: sha256:685138ee7c4063f5c38bb81a29ec85171fa74dcf04d2dd0a26ab568746d
 
 1. 在菜单栏选择“Run > Edit Configurations”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/eX8Akwg8RJyyTfL2lAVhYA/zh-cn_image_0000002179498096.png)
-2. 在“Run/Debug Configurations”窗口，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/BHjvaD8fSv-PWiEZT0QXlg/zh-cn_image_0000002214858773.png)，选择“Cloud Functions”，新增一个Run/Debug配置。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/vjQHrnupRK-PZhea0xqD7Q/zh-cn_image_0000002179498096.png)
+2. 在“Run/Debug Configurations”窗口，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/nrb6k32oR-yIj20xCvFPBg/zh-cn_image_0000002214858773.png)，选择“Cloud Functions”，新增一个Run/Debug配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/T5mXBsphQgqsqPqudUUDDw/zh-cn_image_0000002214704341.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/_k6Qrt8AQ06hkuLieye77g/zh-cn_image_0000002214704341.png)
 3. 自定义Run/Debug配置，完成后点击“Run”或“Debug”即可立即按当前自定义配置启动本地调试。
 
-   如当前暂不使用自定义配置，可点击“OK”保存配置。后续有需要时再选择自定义配置，分别点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/krBHWoyjTIy0uWodtO8BaA/zh-cn_image_0000002179338416.png)或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/bBnf6eM-T76y96LdrPmiRw/zh-cn_image_0000002214704373.png)进行Run或Debug。
+   如当前暂不使用自定义配置，可点击“OK”保存配置。后续有需要时再选择自定义配置，分别点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/jZzPa4ERT5GLJOb4yhaY4A/zh-cn_image_0000002179338416.png)或![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/Kzkoe4lkQ8iL59SAtR7yRg/zh-cn_image_0000002214704373.png)进行Run或Debug。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/vEuIyt4zTkOOtUCndZva5Q/zh-cn_image_0000002214704377.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/LPXIfPpcQyiXAZNg5CgKtA/zh-cn_image_0000002214704377.png)
    * Name：Run/Debug配置的名称，如“functions-custom1”。
    * Server IP Address：HTTP服务端监听IP地址，默认为localhost，支持切换为您的局域网IP地址。
    * Server Port：HTTP服务端监听端口。默认为“18090”，自定义端口号建议大于1024。勾选“Auto increment”表示如当前端口被占用则端口号自动加“1”。
@@ -128,4 +128,4 @@ content_hash: sha256:685138ee7c4063f5c38bb81a29ec85171fa74dcf04d2dd0a26ab568746d
 
      点击“Edit environment variables”按钮，在“Environment Variables”弹窗中点击“+”添加一个环境变量，然后点击“OK”。添加成功后，您便可以将变量配置信息传入到函数执行环境中，用于函数运行时读取。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/ohYVx4KKQHK35azTr0eKVg/zh-cn_image_0000002179338424.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/2T6hq1S9RB2YZ0m7B17U2A/zh-cn_image_0000002179338424.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-net-
 title: net_connection.h
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 头文件 > net_connection.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:55+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c4508cb8aaaccf52ece7d6b107d10f917f8004c1d06b9c19acf2254a97c6a094
+scraped_at: 2026-11-04T08:34:52+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:2974a5bd8a382fc8958f3383872b4dba90f56e579048cedeb95497255f6e088b
 ---
 
 ## 概述
@@ -627,8 +627,8 @@ int32_t OH_NetConn_RegisterNetConnCallback(NetConn_NetSpecifier *specifier, NetC
 
 | 参数项 | 描述 |
 | --- | --- |
-| netSpecifier | 网络特征集。 |
-| callback | 注册的回调函数集合。 |
+| specifier | 网络特征集。 |
+| netConnCallback | 注册的回调函数集合。 |
 | uint32\_t timeout | 超时时间，单位为毫秒，为0时表示无限等待。 |
 | uint32\_t \*callbackId | 出参，对应本次注册成功的回调。 |
 

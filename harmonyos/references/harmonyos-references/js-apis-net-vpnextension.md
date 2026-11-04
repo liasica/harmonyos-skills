@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.net.vpnExtension (VPN增强管理)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.vpnExtension (VPN增强管理)
 category: harmonyos-references
-scraped_at: 2026-10-29T08:01:00+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:ebe7273c478cbababd0f1154419f70fd0ea40ec0ca86d68a337c7d9f682eada2
+scraped_at: 2026-11-04T08:34:48+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:dce037b215ba0e0f15f254ca98329a6bfd30a0fa0a46af608aa6458060864455
 ---
 
 三方VPN管理模块，支持三方VPN的启动和停止功能。三方VPN是指由第三方提供的VPN服务，它们通常提供更多的功能和更广泛的网络连接选项，包括更多的安全和隐私功能，以及更全面的定制选项。当前提供三方VPN能力主要用于创建虚拟网卡及配置VPN路由信息，连接隧道过程及内部连接的协议需要应用内部自行实现。
@@ -396,7 +396,8 @@ create(config: VpnConfig): Promise<number>
 
 **说明** 
 
-建议在不需要VPN网络的时候配对调用[destroy()](js-apis-net-vpnextension.md#destroy)或[destroy(vpnId: string)](js-apis-net-vpnextension.md#destroy20)接口销毁启动的VPN网络，并执行资源清理等操作。
+1. 建议在不需要VPN网络的时候配对调用[destroy()](js-apis-net-vpnextension.md#destroy)或[destroy(vpnId: string)](js-apis-net-vpnextension.md#destroy20)接口销毁启动的VPN网络，并执行资源清理等操作。
+2. 当调用该接口返回错误码2200003时，请排查是否已申请ohos.permission.INTERNET权限。
 
 **系统能力**：SystemCapability.Communication.NetManager.Vpn
 

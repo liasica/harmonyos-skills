@@ -1,6 +1,6 @@
 # 指南（harmonyos-guides）
 
-共 6167 篇文档。
+共 6168 篇文档。
 
 - [24h功耗器件分解统计事件](24-hour-battery-usage-event.md)
 - [aa工具](aa-tool.md)
@@ -5396,6 +5396,7 @@
 - [ArkGuard混淆常见问题](source-obfuscation-questions.md)
 - [ArkGuard混淆配置选项](source-obfuscation-rule-options.md)
 - [ArkGuard混淆原理](source-obfuscation.md)
+- [SourceMap Splitter工具](sourcemap-splitter-tool.md)
 - [重建三维场景（C/C++）](spatial-recon-c-spatial-recon-pipeline.md)
 - [管理Spatial Recon会话](spatial-recon-c-spatial-recon-session.md)
 - [添加滤镜效果](spatial-recon-filter.md)

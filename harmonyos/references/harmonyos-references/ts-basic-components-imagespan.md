@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: ImageSpan
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > ImageSpan
 category: harmonyos-references
-scraped_at: 2026-10-31T07:35:18+08:00
+scraped_at: 2026-11-04T08:33:02+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:2fcc9e6545a98f81ac91508b00d7227b1f84c16ad8ca2a12b015e593d544f79d
+content_hash: sha256:5d567e718469715101a5bcf6028a8cfb829e7d0fe63321848bde1a27c37917e0
 ---
 
 ImageSpan是[Text](ts-basic-components-text.md)、[ContainerSpan](ts-basic-components-containerspan.md)组件的子组件，用于在文本中显示行内图片，支持设置图片对齐方式、缩放类型、加载占位图和颜色滤镜等，适用于需要在文本段落中嵌入图片实现图文混排的场景。
@@ -243,7 +243,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/lWvwJ5J8S2Ws7bjKMgL9Iw/zh-cn_image_0000002806030673.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/1GxU8Np8TYiMkqXJQkK1LQ/zh-cn_image_0000002809012075.png)
 
 ### 示例2（设置背景样式）
 
@@ -272,7 +272,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/orBbcKv0R02shLo6thHl7w/zh-cn_image_0000002806110563.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/S5hy9jecRDKp3sDfWli63A/zh-cn_image_0000002809051989.png)
 
 ### 示例3（为图片添加事件）
 
@@ -348,7 +348,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/mY0Kp9LoRLKpqvAf2gZLHg/zh-cn_image_0000002776910944.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/KSolPcOLT16W_6o4nEE4JQ/zh-cn_image_0000002779852424.png)
 
 ### 示例5（设置加载占位图）
 
@@ -421,7 +421,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/r7hvXNVBQQOdh5kCDH6hFg/zh-cn_image_0000002776750958.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/fUZk_rBESkOp5GDbYDjMWw/zh-cn_image_0000002779692456.gif)
 
 ### 示例6（使用supportSvg2属性时，SVG图片的显示效果）
 
@@ -462,4 +462,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/beYL8yBMSu2PucGQW7a9Yg/zh-cn_image_0000002806030675.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/KlQWs1KpTN-JZEQIxY-3Vg/zh-cn_image_0000002809012077.png)

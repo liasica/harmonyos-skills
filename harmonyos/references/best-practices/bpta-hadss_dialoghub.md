@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-hadss_dial
 title: 基于DialogHub的通用弹窗
 breadcrumb: 最佳实践 > 布局与弹窗 > 基于DialogHub的通用弹窗
 category: best-practices
-scraped_at: 2026-10-29T08:03:14+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:3f2aeb194b79db4ae8126fc6816c28da8474f9d9b7b306b61330eeb7aa1097e8
+scraped_at: 2026-11-04T08:37:48+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:35c08387edac44f0ffe0de621fa1089dd75dd295ace12c97646fc7e2cc7b4bdd
 ---
 
 ## 概述
@@ -73,7 +73,7 @@ DialogHub.init(this.getUIContext());
    调用 DialogHub 的 getToast()等接口，获取不同类型的弹窗构造器 DialogBuilder。
 
    ```screen
-   DialogHub.getToast()
+   DialogHub.getToast();
    ```
 2. **配置弹窗内容：**
 
@@ -84,29 +84,29 @@ DialogHub.init(this.getUIContext());
      .setContent(wrapBuilder(TextToastBuilder), new TextToastParams(CommonConstant.TOAST_TITLE))
      .setAnimation({ dialogAnimation: AnimationType.UP_DOWN })
      .setConfig({ dialogBehavior: { isModal: true } })
-     .setStyle({ backgroundColor: $r('sys.color.background_primary') })
+     .setStyle({ backgroundColor: $r('sys.color.background_primary') });
    ```
 3. **创建弹窗实例：**
 
    调用 DialogBuilder 的 build() 接口，创建弹窗实例 InfDialog 对象。
 
    ```screen
-   let dialog:InfToast = DialogHub.getToast()
-     // ...
-     .build()
+   let dialog: InfToast = DialogHub.getToast()
+   // ...
+     .build();
    ```
 4. **显示与销毁弹窗：**
 
    调用 InfDialog 对象的 show() 方法显示弹窗。
 
    ```screen
-   dialog.show()
+   dialog.show();
    ```
 
    调用 InfDialog 对象的 dismiss() 方法销毁弹窗。
 
    ```screen
-   dialog.dismiss()
+   dialog.dismiss();
    ```
 
 ### 模板复用能力开发流程
@@ -118,7 +118,7 @@ DialogHub.init(this.getUIContext());
    调用 DialogHub 的 createToastTemplate()等接口，创建不同类型弹窗的模板构造器 DialogTemplate。
 
    ```screen
-   DialogHub.createToastTemplate('SimpleToast')
+   DialogHub.createToastTemplate('SimpleToast');
    ```
 2. **配置模板内容：**
 
@@ -129,7 +129,7 @@ DialogHub.init(this.getUIContext());
      .setContent(wrapBuilder(TextToastBuilder), new TextToastParams(CommonConstant.TOAST_TITLE))
      .setAnimation({ dialogAnimation: AnimationType.UP_DOWN })
      .setConfig({ dialogBehavior: { isModal: true } })
-     .setStyle({ backgroundColor: $r('sys.color.background_primary') })
+     .setStyle({ backgroundColor: $r('sys.color.background_primary') });
    ```
 3. **注册模板：**
 
@@ -137,8 +137,8 @@ DialogHub.init(this.getUIContext());
 
    ```screen
    DialogHub.createToastTemplate('SimpleToast')
-     // ...
-     .register()
+   // ...
+     .register();
    ```
 4. **获取并使用弹窗模板：**
 
@@ -148,9 +148,9 @@ DialogHub.init(this.getUIContext());
 
    ```screen
    DialogHub.getToastTemplate('SimpleToast')
-     ?.setAnimation({dialogAnimation:AnimationType.FADE_IN_AND_OUT})
+   ?.setAnimation({ dialogAnimation: AnimationType.FADE_IN_AND_OUT })
      .build()
-     .show()
+     .show();
    ```
 
    **说明** 
@@ -162,22 +162,22 @@ DialogHub.init(this.getUIContext());
 
    ```screen
    DialogHub.updateToastTemplate('SimpleToast')
-     ?.setStyle({backgroundColor:Color.Blue})
-     .register()
+   ?.setStyle({ backgroundColor: Color.Blue })
+     .register();
    ```
 6. **(可选) 删除模板：**
 
    调用 DialogHub 的 removeTemplate() 接口，删除对应模板名称的弹窗模板。
 
    ```screen
-   DialogHub.removeTemplate('SimpleToast')
+   DialogHub.removeTemplate('SimpleToast');
    ```
 7. **(可选) 判断模板是否存在：**
 
    调用 DialogHub 的 isTemplateExist() 接口，判断指定模板名称的弹窗模板是否已被注册。
 
    ```screen
-   DialogHub.isTemplateExist('SimpleToast')
+   DialogHub.isTemplateExist('SimpleToast');
    ```
 
 ## 常见业务弹窗
@@ -195,7 +195,7 @@ DialogHub.getToast()
   .show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/irM9NiPhQGmIuJDu_w5uQQ/zh-cn_image_0000002656422016.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Rww3B9u1TTKlR8Mx3lnQiw/zh-cn_image_0000002656422016.png "点击放大")
 
 ### 指定位置弹窗的非模态弹窗
 
@@ -224,7 +224,7 @@ this.specifiedLocationDialog = this.specifiedLocationDialog ?? DialogHub.getCust
 this.specifiedLocationDialog.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/wGjGZ2iRSBO1KxNlDo7RFQ/zh-cn_image_0000002686503539.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/7ARw_cJISgKmVVA2tWxGhA/zh-cn_image_0000002686503539.png "点击放大")
 
 ### 会定时消失且带弹出动效的弹窗
 
@@ -268,7 +268,7 @@ this.specifiedLocationDialog.show();
   }
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/JT-u-kk0RFqblqz0Y-4scQ/zh-cn_image_0000002686623461.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/7flOwdsOS6Ko0JUgI96wBA/zh-cn_image_0000002686623461.png "点击放大")
 
 ### 会避让键盘的弹窗
 
@@ -299,7 +299,7 @@ if (forceFresh || this.avoidKeyboardDialog === null || this.avoidKeyboardDialog 
 this.avoidKeyboardDialog.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/2imnPaSmSGGiVcDOcIEETw/zh-cn_image_0000002656424912.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/dOoexu6JQD2kyI9070CliA/zh-cn_image_0000002656584862.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/aFTPAQp4RFqqAjyzBJiUzA/zh-cn_image_0000002656424912.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/2ovo8jGwTpiJokbCoWE7BA/zh-cn_image_0000002656584862.png "点击放大")
 
 ### 指向选定组件的带箭头弹窗
 
@@ -327,7 +327,7 @@ this.arrowPointingPopup = DialogHub.getPopup()
 this.arrowPointingPopup.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/UfhdCQkdTvWCTf4-g92-Gg/zh-cn_image_0000002656427622.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/7tDgDIy6ReKauTT6sBaQdg/zh-cn_image_0000002656427622.png "点击放大")
 
 ### 点击蒙层自动关闭的弹窗
 
@@ -341,7 +341,7 @@ this.maskCloseDialog = this.maskCloseDialog ?? DialogHub.getCustomDialog()
 this.maskCloseDialog.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/9UirCnGITcOS7BpPEM_3wg/zh-cn_image_0000002657633398.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/DJXgH521SiqQ4wtaSDH9Ow/zh-cn_image_0000002657633398.png "点击放大")
 
 ### 可主动关闭的弹窗
 
@@ -370,7 +370,7 @@ this.activelyCloseDialog = this.activelyCloseDialog ?? DialogHub.getCustomDialog
 this.activelyCloseDialog.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/UulOvIpjRWil1vCEISUHMQ/zh-cn_image_0000002687673109.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/eSYyT31KRPu5-OwBDmrzDQ/zh-cn_image_0000002687673109.png "点击放大")
 
 ### 能够动态调整高度的底部弹窗
 
@@ -407,8 +407,6 @@ this.activelyCloseDialog.show();
     },
     // ...
   });
-
-              this.adjustSheetDialog?.show();
   ```
 
 **说明** 
@@ -417,7 +415,7 @@ sheet类型弹窗须调用setComponentTargetId(targetCompId)以实现页面级�
 
 当前示例主要面向直板机等窄屏场景使用。因此对于如电脑、三折叠展开态等屏幕宽度大于600vp的场景，会自动隐藏对应入口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/HRHO59mmSvOtTYScBrMyIA/zh-cn_image_0000002686507285.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/qDJZA3gVR-aRUC8Vt-samQ/zh-cn_image_0000002656587618.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/xs0aosovQhikPjJAYnK9HQ/zh-cn_image_0000002686507285.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/kLZ_7l1vQ3iZiT25VCjdLw/zh-cn_image_0000002656587618.png "点击放大")
 
 ### 应用感知弹窗的打开、关闭
 
@@ -438,11 +436,11 @@ sheet类型弹窗须调用setComponentTargetId(targetCompId)以实现页面级�
 * 直接获取弹窗状态
 
   ```screen
-  // SHOW: 显示，HIDE: 隐藏， DEFAULT: 默认状态
+  // SHOW: visible, HIDE: hidden, DEFAULT: default state
   this.sensorDialog?.getStatus();
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/18jO_256QUm_DG-DzPvUiQ/zh-cn_image_0000002686627183.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/ygEGu_kLQ8qf4R8CSNes7g/zh-cn_image_0000002656587700.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/FqwxYEK2STq6AEYnUxp7Mw/zh-cn_image_0000002686627183.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/6lJj2KxgRqOVpsqGLJMysA/zh-cn_image_0000002656587700.png "点击放大")
 
 ## 弹窗与周边的交互
 
@@ -497,7 +495,7 @@ DialogHub.createCustomTemplate(CommonConstant.CUSTOM_TEMPLATE_SIMPLE)
   .setConfig({ dialogBehavior: { passThroughGesture: true, isModal: false } })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/JsaqvI1USAm89OXtAaUzdQ/zh-cn_image_0000002656427846.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/zbpZROaQTqunXEoQYj5lBg/zh-cn_image_0000002656427846.png "点击放大")
 
 ### 需要向页面返回数据的弹窗
 
@@ -525,7 +523,7 @@ this.returnDataDialog = DialogHub.getCustomDialog()
 this.returnDataDialog.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/0r3eM42eTCSczAmvX5aJ7g/zh-cn_image_0000002686507517.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/lXcm6l8lRMSN7nOVHf-Hvg/zh-cn_image_0000002656428000.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/kyWKv0YETN2uT9d9AWVvcg/zh-cn_image_0000002686507517.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/2s5ZOnh6Q2eD9ZhSrE7q9Q/zh-cn_image_0000002656428000.png "点击放大")
 
 ### 父页面刷新正在展示的弹窗内容
 
@@ -546,7 +544,7 @@ if (this.intervalID >= 0) {
   this.intervalID = -1;
 }
 this.intervalID = setInterval(() => {
-  params.value += 1
+  params.value += 1;
   if (params.value >= CommonConstant.progressNameTotal && this.intervalID >= 0) {
     this.updateByParentDialog?.dismiss();
     clearInterval(this.intervalID);
@@ -555,7 +553,7 @@ this.intervalID = setInterval(() => {
 }, CommonConstant.Interval_20);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/ZcfZibi9QdiNzek_5QPweg/zh-cn_image_0000002686627433.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/kLMAyvtuS36MrW8oE_cA2Q/zh-cn_image_0000002686627433.png "点击放大")
 
 ### 页面需要感知当前页面是否存在弹窗
 
@@ -584,7 +582,7 @@ this.skipDialog?.updateConfig({
 this.skipDialog?.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/UcyPuylGSwG6AFcdrZPwNA/zh-cn_image_0000002686507615.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/PZd2-U_jSE64K9xRkup-NQ/zh-cn_image_0000002686507615.png "点击放大")
 
 ### 折叠屏展开态不同位置的弹窗
 
@@ -594,7 +592,7 @@ this.skipDialog?.show();
 
 ```screen
 let parms = new SkipParams(() => {
-  this.skipDialog?.dismiss()
+  this.skipDialog?.dismiss();
 }, 1, this.pageInfos);
 this.skipDialog?.updateContent(parms);
 this.skipDialog?.updateConfig({
@@ -603,7 +601,7 @@ this.skipDialog?.updateConfig({
 this.skipDialog?.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/nQ0xDpTSRvqwKR9-TTBlFA/zh-cn_image_0000002656588412.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/WM-0qOC9QXOBdwnuC4rMgg/zh-cn_image_0000002656588412.png "点击放大")
 
 弹窗在右半屏：
 
@@ -618,7 +616,7 @@ this.skipDialog?.updateConfig({
 this.skipDialog?.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/SeRTnBPCSje_NFSr2TgQnQ/zh-cn_image_0000002656428632.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/c4jrecsUQ1eh3xSi-lFYJA/zh-cn_image_0000002656428632.png "点击放大")
 
 ## 弹窗内容复用场景
 
@@ -690,6 +688,10 @@ this.originalTemplateDialog?.show();
   ```screen
   if (this.dialogA?.getStatus() !== DialogStatus.SHOW) {
     this.dialogB?.show();
+  } else {
+    this.tipsToast?.updateContent(new TextToastParams(`${this.getParamString($r('app.string.Dialog')
+      .id)} B ${this.getParamString($r('app.string.PopupFailed').id)}`));
+    this.tipsToast?.show();
   }
   ```
 
@@ -700,6 +702,10 @@ this.originalTemplateDialog?.show();
   ```screen
   if (DialogHub.getCurrentPageDialogs().length === 0) {
     this.dialogC?.show();
+  } else {
+    this.tipsToast?.updateContent(new TextToastParams(`${this.getParamString($r('app.string.Dialog')
+      .id)} C ${this.getParamString($r('app.string.PopupFailed').id)}`));
+    this.tipsToast?.show();
   }
   ```
 

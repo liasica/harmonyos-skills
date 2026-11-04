@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/net-mdns
 title: 使用MDNS访问局域网服务
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 访问网络 > 使用MDNS访问局域网服务
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:46+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:775eaf2379f03bc6cb1353485a7351b27cec9e3fdc4e61cb5c66b0ed55920fcf
+scraped_at: 2026-11-04T08:29:48+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:6f45cfc42f761b2775257dedf7b71124fc6e026f076dddc604a39ecd14fce120
 ---
 
 ## 简介
@@ -84,7 +84,7 @@ MDNS管理的典型场景有：
 
 ## 发现本地服务
 
-1. 设备连接WiFi。
+1. 设备连接Wi-Fi。
 2. 从@kit.NetworkKit里导入mdns的命名空间。
 
    ```typescript

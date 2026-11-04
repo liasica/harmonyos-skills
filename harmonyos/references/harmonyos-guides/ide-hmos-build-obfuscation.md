@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-buil
 title: 混淆加固
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 混淆加固
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:13:12+08:00
+scraped_at: 2026-11-04T08:31:51+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:223cd3088789d7934ed355e638be2c9e7703fe5ca506c9d346810318e2763072
+content_hash: sha256:b9e3eda6155e3507d39654759406b70d918aee10030bcfb46dacefafb639a2dd
 ---
 
 鸿蒙电脑DevEco Studio默认关闭源码混淆功能。如果在模块级build-profile.json5配置文件中开启源码混淆，则混淆规则配置文件obfuscation-rules.txt中默认开启推荐的混淆规则，包含-enable-property-obfuscation、-enable-toplevel-obfuscation、-enable-filename-obfuscation、-enable-export-obfuscation四个混淆选项，开发者可进一步在obfuscation-rules.txt文件中选择开启的混淆选项，关于混淆选项的介绍请查看[ArkGuard混淆配置选项](source-obfuscation-rule-options.md)。
@@ -78,7 +78,7 @@ content_hash: sha256:223cd3088789d7934ed355e638be2c9e7703fe5ca506c9d346810318e27
 
    当存在多个混淆规则文件时，规则合并以及合并后的作用范围可参考[混淆规则合并策略](source-obfuscation.md#混淆规则合并策略)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/vamjhYTMQN6hdOZ3mbjTIQ/zh-cn_image_0000002779728863.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/JrQZ6By4R9a_JFGd0B27ow/zh-cn_image_0000002779728863.png)
 
 ### HAR/HSP配置保留选项
 
@@ -113,4 +113,4 @@ content_hash: sha256:223cd3088789d7934ed355e638be2c9e7703fe5ca506c9d346810318e27
 
    当存在多个混淆规则文件时，规则合并以及合并后的作用范围可参考[混淆规则合并策略](source-obfuscation.md#混淆规则合并策略)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/vtEbElrhQVO9o3XH8TspgQ/zh-cn_image_0000002750169688.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/Rq6llccLRDSoki8x4FK8vA/zh-cn_image_0000002750169688.png)

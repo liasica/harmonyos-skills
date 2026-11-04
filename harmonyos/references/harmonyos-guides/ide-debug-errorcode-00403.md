@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-err
 title: 调试失败错误码
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 调试错误码 > 调试失败错误码
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:17+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:56af6eed9f8b57e8301f63e41b4807b9e2a1bd2ae54cecada5877cb233603608
+scraped_at: 2026-11-04T08:31:29+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:b9d104b313aeb706730a16289dd423a53f6e0229bb7452c04fab3e30ab0abd71
 ---
 
 ## 00403001 离线日志解析失败
@@ -42,7 +42,7 @@ Failed to parse the HiLog file: XXX.
 
 **处理步骤**
 
-参考[Release应用堆栈解析相关错误提示及解决措施](../harmonyos-faqs/faqs-app-debugging-17.md)。
+参考[Release应用堆栈解析错误排查常见问题](../harmonyos-faqs/app-debugging-faq-0003.md)。
 
 ## 00403028 应用程序意外退出
 

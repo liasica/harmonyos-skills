@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: image
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 基础组件 > image
 category: harmonyos-references
-scraped_at: 2026-10-31T07:35:44+08:00
+scraped_at: 2026-11-04T08:33:27+08:00
 doc_updated_at: 2026-10-16
-content_hash: sha256:969be93877c8e5ed6265e1930367cc42cfc93742d0c5b253237bba0372ec66e1
+content_hash: sha256:29b85287348c9a35f088d92aec61b1c12097e5cb7f51efdcca7b14603548fd30
 ---
 
 图片组件，用来渲染展示图片。
@@ -84,4 +84,4 @@ content_hash: sha256:969be93877c8e5ed6265e1930367cc42cfc93742d0c5b253237bba0372e
 
 **4\*4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/APO50YdXReaSUA2n7RtgNg/zh-cn_image_0000002776911640.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/XgaQW6wpQvauz836MvkLjQ/zh-cn_image_0000002779693094.jpg)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 方舟多线程检测
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 方舟类问题检测 > 方舟多线程检测
 category: best-practices
-scraped_at: 2026-10-29T08:03:25+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:a066e324ee7479e8988a1c62e73a439eec7a0962004eda6fbd53f3187f02cdd7
+scraped_at: 2026-11-04T08:38:02+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:768ae2c9ecbff1974fdc2718a91901a5fbd7a641fc54f84282a13f8975346527
 ---
 
 ## 概述
@@ -112,7 +112,7 @@ Fatal: ecma_vm cannot run in multi-thread! thread:3096 currentThread:3550
 
   点击**Run > Edit Configurations >** **Diagnostics**，勾选**Multi Thread Check**。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/PPcw5PN5R9-Zh9vimAdTtA/zh-cn_image_0000002404045317.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/m0SpORCDRP2qqAQvIz6Cdw/zh-cn_image_0000002404045317.png)
 
 * **方式二**
 
@@ -121,6 +121,9 @@ Fatal: ecma_vm cannot run in multi-thread! thread:3096 currentThread:3550
   ```screen
   hdc shell aa start -a {abilityName} -b {bundleName} -R
   ```
+* 方式三
+
+  通过调用[setMultithreadDetectionEnabled()](../harmonyos-references/js-apis-util.md#setmultithreadingdetectionenabled23)接口开启。
 
 ### 使用方舟多线程检测
 
@@ -131,4 +134,4 @@ Fatal: ecma_vm cannot run in multi-thread! thread:3096 currentThread:3550
 
 若fatal信息为Fatal: ecma\_vm cannot run in multi-thread! thread:20296 currentThread:19953，则发生了多线程安全问题，意为：当前线程号为19953，而使用的JavaScript线程是20296创建出来的，跨线程使用VM。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/sQvpBH7qSZKvLHuQ0yuwfQ/zh-cn_image_0000002504986012.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/U00yvrRHS9a8-ry-OeZUZA/zh-cn_image_0000002504986012.png)

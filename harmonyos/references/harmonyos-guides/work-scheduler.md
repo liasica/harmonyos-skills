@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/work-schedule
 title: 延迟任务(ArkTS)
 breadcrumb: 指南 > 应用框架 > Background Tasks Kit（后台任务开发服务） > 延迟任务(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:02+08:00
+scraped_at: 2026-11-04T08:29:27+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:818db784c9d9cc781dbb4ba4eb9147bd42ef42900d3dc6a654c3fe8bd7aabf52
+content_hash: sha256:26eb0ae5a1df27e49684c93dda2dd4fb0d4acb4160477d93525ae3467893ee75
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ content_hash: sha256:818db784c9d9cc781dbb4ba4eb9147bd42ef42900d3dc6a654c3fe8bd7a
 
 **图1** 延迟任务实现原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/wQJe2-PURRufT3omri0WZA/zh-cn_image_0000002776749074.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/DGdlCGUwSD-X61YthZGE1A/zh-cn_image_0000002779690572.png)
 
 应用调用延迟任务接口添加、删除、查询延迟任务，延迟任务管理模块会根据任务设置的条件（通过[WorkInfo](../harmonyos-references/js-apis-resourceschedule-workscheduler.md#workinfo)参数设置，包括网络类型、充电类型、存储状态等）和系统状态（包括内存、功耗、设备温度、用户使用习惯等）统一决策调度时机。
 

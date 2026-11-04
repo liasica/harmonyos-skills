@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-content-cr
 title: AI辅助图文内容编创
 breadcrumb: 最佳实践 > 行业场景解决方案 > 社交通讯 > AI辅助图文内容编创
 category: best-practices
-scraped_at: 2026-10-29T08:03:21+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:1a8e1a34c9191bb9434379853af1c8e687171d630fa43482e7f8e470bae46a7b
+scraped_at: 2026-11-04T08:37:57+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:26cc067ab0a8c63b40308892bb6bf26bf338af23ae8293b15ecd79ff56ff3318
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ content_hash: sha256:1a8e1a34c9191bb9434379853af1c8e687171d630fa43482e7f8e470bae
 
 图文编创操作流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/4M80w90CQC65LGOgxHESyg/zh-cn_image_0000002229451385.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/e-_BTQe7Sl69teWqogK4iQ/zh-cn_image_0000002229451385.gif)
 
 ## 场景适用说明
 
@@ -102,7 +102,7 @@ photoViewPicker.select(photoSelectOptions).then((photoSelectResult: photoAccessH
 
 长按图片可识别文字并实现物体抠图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/5avpi0eLTda88vMp5jtlwg/zh-cn_image_0000002229336901.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/iO10MuJATnW1-i892Z5lVw/zh-cn_image_0000002229336901.gif)
 
 ### 关键点说明
 
@@ -353,7 +353,7 @@ build() {
 
 跨端相册获取新的图片
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/3djDheGzRRiXF5RfjJ9gNA/zh-cn_image_0000002730181338.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/ltG94lofSLmJcpplKaBIpA/zh-cn_image_0000002730181338.gif "点击放大")
 
 ### 子场景描述
 
@@ -447,7 +447,7 @@ private doInsertPicture(stateCode: number, bufferType: string, buffer: ArrayBuff
 
 自由流转，接续编辑图文内容的功能已启用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/3soDNKpMSMKipF6EIHn5Kw/zh-cn_image_0000002730021622.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/dDcFUbkHR9aEZm0Sy30TXw/zh-cn_image_0000002730021622.gif "点击放大")
 
 ### 关键点说明
 

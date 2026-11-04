@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-live-strea
 title: 弱网直播优化
 breadcrumb: 最佳实践 > 技术创新 > 通讯 > 弱网直播优化
 category: best-practices
-scraped_at: 2026-10-29T08:03:13+08:00
+scraped_at: 2026-11-04T08:37:47+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:a36b891d5b0cc2a5e8298afc8beeab7aa33f158bc5fa9d3c49360f23dac8527a
+content_hash: sha256:7ba3d21e35a926bea6f20fa4b69cba4dd52033223dec2f94c2e4eb3536874636
 ---
 
 ## 概述
@@ -32,7 +32,7 @@ QUIC协议通过多路复用和拥塞控制等核心特性，在高并发、移�
 
 FFmpeg层QUIC传输的适配主要包含创建连接、终止连接、创建数据流、数据读写、关闭数据流等核心操作。整体流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/9nMg0I2GSr6FirpJjPqW8w/zh-cn_image_0000002594078330.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/P4LjYBhRQwui_48Ok_vwAA/zh-cn_image_0000002594078330.png)
 
 ## 实现流程
 
@@ -48,7 +48,7 @@ FFmpeg层QUIC传输的适配主要包含创建连接、终止连接、创建数�
 6. 使用[HMS\_Rcp\_QuicConnStreamSend](../harmonyos-references/remote-communication-overview.md#hms_rcp_quicconnstreamsend)()通过数据流发送数据。
 7. 传输完成之后使用[HMS\_Rcp\_QuicConnDestroy](../harmonyos-references/remote-communication-overview.md#hms_rcp_quicconndestroy)()销毁连接对象，关闭所有流并释放连接资源；使用[HMS\_Rcp\_QuicDestroySession](../harmonyos-references/remote-communication-overview.md#hms_rcp_quicdestroysession)()销毁会话对象，释放全局资源。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/IfVbb8RYRay5W23zCSOEZw/zh-cn_image_0000002594238244.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/_PTbtc-MQtS2qQt--PLU8A/zh-cn_image_0000002594238244.png "点击放大")
 
 ## FFmpeg支持QUIC传输
 

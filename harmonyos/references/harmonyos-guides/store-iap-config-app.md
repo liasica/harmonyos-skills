@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-iap-con
 title: 配置应用
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 数字商品服务 > 启用数字商品服务 > 配置应用
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:56+08:00
+scraped_at: 2026-11-04T08:30:24+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:2c3bf00101cf99f241d8fab0da0044042873f24bcf85c2c993283bc8a9ed93de
+content_hash: sha256:80452c429a94757a50f08a02df42316a5679ca8ee1f6b27e6ff14f2f968b7d30
 ---
 
 接入数字商品服务前，需要先完成应用的bundleName配置和应用身份信息配置。
@@ -35,7 +35,7 @@ content_hash: sha256:2c3bf00101cf99f241d8fab0da0044042873f24bcf85c2c993283bc8a9e
    * 下图中的APPID可用于服务器API接口请求。
    * 如果开发者应用的compatibleSdkVersion>=14，则接入IAP Kit不要求开发者[添加公钥指纹](application-dev-overview.md#条件必选添加公钥指纹)以及配置应用身份信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/jBJKpQEyR4C3gh61dVKXvA/zh-cn_image_0000002776909732.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/zov4Yt4dRX-cZA_hFMUTpA/zh-cn_image_0000002779851212.png)
 2. 在工程“entry/src/main/module.json5”的**module**节点增加如下**client\_id**属性配置，用于数字商品服务接口的应用身份鉴权。
 
    ```json5

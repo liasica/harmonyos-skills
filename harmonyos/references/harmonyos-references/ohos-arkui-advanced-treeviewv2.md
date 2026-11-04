@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: TreeViewV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > TreeViewV2
 category: harmonyos-references
-scraped_at: 2026-10-31T07:35:35+08:00
+scraped_at: 2026-11-04T08:33:17+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:31d791c3f43b5fce8bfa280faf6bae9762313a54f7da4903ac6a9fadc5773182
+content_hash: sha256:ba6cff1831f91a61f3dd29080ae6531bd27a0f83f6a035f694c134f6b6d2cf27
 ---
 
 树视图V2组件。树视图作为一种分层显示的列表，适合显示嵌套结构。拥有父列表项和子列表项，可展开或折叠。
@@ -820,7 +820,7 @@ struct TreeViewV2Demo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/jdYE-hYASuKhQ6EYXawOPA/zh-cn_image_0000002806031017.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/PzOma3DZTB-YcgR_sS6nzA/zh-cn_image_0000002809052333.png)
 
 ### 示例2（设置Symbol类型图标）
 
@@ -1035,4 +1035,4 @@ struct TreeViewV2Demo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/Ib8M4yD2SmmZi8REjPseng/zh-cn_image_0000002806110909.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/XHWvgYqLTmeBwx7GgHGZQA/zh-cn_image_0000002779852768.png)

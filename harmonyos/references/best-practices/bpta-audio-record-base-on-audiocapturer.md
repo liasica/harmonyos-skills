@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 基于AudioCapturer录制PCM音频（ArkTS）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 基于AudioCapturer录制PCM音频（ArkTS）
 category: best-practices
-scraped_at: 2026-10-29T08:03:15+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:4bcae1865ef5bde39ec2efde286ab03880c11ccf0a6e087aaa83fbce685c59ce
+scraped_at: 2026-11-04T08:37:50+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:fac990a4253ce297213ac84039b0f65eb5099ecfab4bb709d2aff8dacdbc99fc
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ AudioCapturer（[Interface (AudioCapturer)](../doccenter-references/api/arkts-ap
 
 基于AudioCapturer录制PCM音频（ArkTS）实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/oI3RkGA2TCelDIZ94utUZA/zh-cn_image_0000002524061072.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/vvuBj2k4QbK_mYDlzZL2hA/zh-cn_image_0000002524061072.gif "点击放大")
 
 本文的主要内容如下：
 
@@ -28,7 +28,7 @@ AudioCapturer可以录制PCM（Pulse Code Modulation）音频数据，能够快�
 
 **图1** AudioCapturer状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/im_ILa-0QYK1mch9rhEybw/zh-cn_image_0000002555220981.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/Qj5sLXoOSRafAnQ8nqB4Ag/zh-cn_image_0000002555220981.jpg "点击放大")
 
 ### 开发步骤
 

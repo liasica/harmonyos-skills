@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-reduce-lay
 title: 布局节点减少
 breadcrumb: 最佳实践 > 性能 > 性能优化 > 布局节点减少
 category: best-practices
-scraped_at: 2026-10-29T08:03:21+08:00
-doc_updated_at: 2026-10-28
+scraped_at: 2026-11-04T08:37:59+08:00
+doc_updated_at: 2026-11-03
 content_hash: sha256:71e728bc7721e31c8938552e59faa73ff731ed5c36b6bd92b23b8ee43536bf3c
 ---
 

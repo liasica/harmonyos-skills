@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 设置数字盾密码
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 数字盾服务 > 数字盾密码管理 > 设置数字盾密码
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:14+08:00
+scraped_at: 2026-11-04T08:29:40+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:169b368d8fcb5a3cdbd79cb8834bf1370917f06d2fedfe098a2b478af4b8d491
+content_hash: sha256:2ef527eec420841f52809b70a1f90aee3f1009f91e41b0154ddef59829181289
 ---
 
 ## 场景介绍
@@ -19,7 +19,7 @@ content_hash: sha256:169b368d8fcb5a3cdbd79cb8834bf1370917f06d2fedfe098a2b478af4b
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/XSseQkitRJ6TqZ8tg8LiTQ/zh-cn_image_0000002806108863.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/LniCx6jOQZaTe43TB5xp9A/zh-cn_image_0000002809050289.jpg)
 
 数字盾开通时，需由应用服务器、应用客户端、Universal Keystore Kit和Device Security Kit共同协作完成。流程如下：
 
@@ -46,7 +46,7 @@ content_hash: sha256:169b368d8fcb5a3cdbd79cb8834bf1370917f06d2fedfe098a2b478af4b
 
 下图为开通数字盾服务时对应的TUI（Trusted User Interface）界面示例，其中密码长度、对应TUI应用图标以及当前应用场景说明均由开发者调用接口时传入，当设置盾密码长度不符合要求、密码强度低、两次密码设置不一致时，均会有对应失败报错提醒。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/E87noLzTSneA6KvLhmE2cw/zh-cn_image_0000002776909244.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/Pk7Ec7lYSoKtT9SGlRPhVw/zh-cn_image_0000002779850724.png)
 
 ## 开发步骤
 

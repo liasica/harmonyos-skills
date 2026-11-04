@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/network-infor
 title: 网络信息查询与连接管理
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 连接网络 > 连接网络开发实践 > 网络信息查询与连接管理
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:22+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:0c90dbd71a175b2b974494aa492d03fc908457c0202a124637b4336fbbcb59fd
+scraped_at: 2026-11-04T08:29:49+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:7ad0d7a3869413421a3c25eeae559b555e7e210f7a8442ee6257c9e583b9f334
 ---
 
 ## 概述
@@ -26,13 +26,13 @@ content_hash: sha256:0c90dbd71a175b2b974494aa492d03fc908457c0202a124637b4336fbbc
 
 **图 1** 连接到指定网络效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/rGDIo8cKR-um_Ix6i0kK7w/zh-cn_image_0000002806108921.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/XrD4ilfbSxCcWKqe4fdMlg/zh-cn_image_0000002809050347.gif)
 
 ### 实现方案
 
 连接到指定Wi-Fi场景主要通过[@ohos.wifiManager (WLAN)](../harmonyos-references/js-apis-wifimanager.md)模块结合[@ohos.net.connection (网络连接管理)](../harmonyos-references/js-apis-net-connection.md)模块相关API来实现。通过@ohos.wifiManager模块检查Wi-Fi是否启用，获取系统扫描的Wi-Fi列表，选中指定Wi-Fi后发起连接请求；通过@ohos.net.connection模块检测网络连通性，判断是否需要进行登录认证（如 Portal 认证）才能正常访问网络。流程图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/zsNHYv9ZRtKUQCf7_y6XOw/zh-cn_image_0000002776909302.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/WLU4ExGDQZCnHm9ARNPwhg/zh-cn_image_0000002779850782.png)
 
 ### 开发步骤
 
@@ -274,7 +274,7 @@ content_hash: sha256:0c90dbd71a175b2b974494aa492d03fc908457c0202a124637b4336fbbc
 
    从Wi-Fi切换为蜂窝网络后视频播放场景效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/DtoqadxjT6C7iUNglXkAJg/zh-cn_image_0000002776749316.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/qRImkvTYRIyx3oL9EQr6sA/zh-cn_image_0000002779690814.png)
 3. 订阅网络丢失事件。
 
    通过[on('netLost')](../harmonyos-references/js-apis-net-connection.md#onnetlost)方法可以订阅网络丢失的事件通知，使用Toast提示用户网络已断开。
@@ -290,7 +290,7 @@ content_hash: sha256:0c90dbd71a175b2b974494aa492d03fc908457c0202a124637b4336fbbc
 
    网络断开时效果图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/BTULrXWcSseeV2Fz6TyLkQ/zh-cn_image_0000002806029033.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/AfxigaslRAuy05D0HDXKQA/zh-cn_image_0000002809010435.png)
 
    当网络断开时，将继续播放视频缓存；缓存播放完毕后，将触发Video组件的onError方法。若此时网络仍未连接，需提示用户检查网络。
 
@@ -309,7 +309,7 @@ content_hash: sha256:0c90dbd71a175b2b974494aa492d03fc908457c0202a124637b4336fbbc
 
    播放错误时效果图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/BEsGO0MCTV2oooCCmk1CIQ/zh-cn_image_0000002806108923.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/DwU7SoN0RfiuVf6tSqXbgg/zh-cn_image_0000002809050349.png)
 4. 订阅网络状态变化通知。
 
    接下来需要调用[register()](../harmonyos-references/js-apis-net-connection.md#register)接口，用来订阅指定的网络状态变化通知，该接口需在on()方法调用之后使用。例如，若指定的网络可用，将触发on('netAvailable')、on('netCapabilitiesChange')回调；若超时时间内网络不可用，将触发on('netUnavailable')回调。若断网，将触发on('netLost')回调。
@@ -371,7 +371,7 @@ content_hash: sha256:0c90dbd71a175b2b974494aa492d03fc908457c0202a124637b4336fbbc
 
 **图 2** 获取Wi-Fi MAC地址效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/g9RBpixaQyuCn6Dyy4zkXw/zh-cn_image_0000002776909304.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/9hLZoYK_QT2ghv5TfS5V9w/zh-cn_image_0000002779850784.gif)
 
 ### 实现方案
 
@@ -517,7 +517,7 @@ content_hash: sha256:0c90dbd71a175b2b974494aa492d03fc908457c0202a124637b4336fbbc
 * 蜂窝网络信号强度
 * 网络时延
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/jDGIQrfjSsK1TZnl0XKl_A/zh-cn_image_0000002776749318.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/e6O-NSc7Q3mzc9CLXIGUsQ/zh-cn_image_0000002779690816.png)
 
 ### 实现方案
 
@@ -544,11 +544,12 @@ content_hash: sha256:0c90dbd71a175b2b974494aa492d03fc908457c0202a124637b4336fbbc
 
    该步骤整合了通过@ohos.net.connection模块可获取的各类网络基础连接信息，通过[getNetCapabilitiesSync()](../harmonyos-references/js-apis-net-connection.md#connectiongetnetcapabilitiessync10)方法获取网络类型和是否可用。
 
-   ```ts
+   ```typescript
    checkNetAvailable(): void {
      try {
        let netHandle = connection.getDefaultNetSync();
        if (netHandle.netId === 0) {
+         // 未连接网络时，获取到的netHandler的netid为0
          this.hasNetwork = false;
          this.checkResult = $r('app.string.result_network_not_connect');
          return;
@@ -573,15 +574,19 @@ content_hash: sha256:0c90dbd71a175b2b974494aa492d03fc908457c0202a124637b4336fbbc
 
    通过[getConnectionPropertiesSync()](../harmonyos-references/js-apis-net-connection.md#connectiongetconnectionpropertiessync10)方法获取路由信息、IP信息、DNS服务信息，通过[getDefaultHttpProxy()](../harmonyos-references/js-apis-net-connection.md#connectiongetdefaulthttpproxy10-1)方法获取代理信息。
 
-   ```ts
+   ```typescript
    getConnectionInfo(): void {
      try {
        let netHandle = connection.getDefaultNetSync();
        let properties = connection.getConnectionPropertiesSync(netHandle);
+       // 路由信息
        let routes = properties.routes || [];
+       // IP地址信息
        let addresses = properties.linkAddresses || [];
+       // DNS服务信息
        let dnses = properties.dnses || [];
        // ...
+       // 获取代理信息
        connection.getDefaultHttpProxy().then((data: connection.HttpProxy) => {
          Logger.info(TAG, `getDefaultHttpProxy success, data: ${JSON.stringify(data)}`);
          this.proxyInfo = JSON.stringify(data);
@@ -619,18 +624,23 @@ content_hash: sha256:0c90dbd71a175b2b974494aa492d03fc908457c0202a124637b4336fbbc
    * 使用[radio.getNetworkState()](../harmonyos-references/js-apis-radio.md#radiogetnetworkstate-2)方法判断蜂窝网络是否处于漫游状态。
    * 使用[radio.getSignalInformationSync()](../harmonyos-references/js-apis-radio.md#radiogetsignalinformationsync10)方法获取蜂窝网络信号强度和网络制式。
 
-   ```ts
+   ```typescript
    async getCellularInfo(): Promise<void> {
      try {
        let primarySlotId = await radio.getPrimarySlotId();
+       // 获取运营商名称
        this.operatorName = radio.getOperatorNameSync(primarySlotId);
+       // 蜂窝主卡的射频是否开启
        this.isRadioOn = await radio.isRadioOn(primarySlotId);
        let networkState = await radio.getNetworkState(primarySlotId);
+       // 判断蜂窝网络是否处于漫游状态
        this.isRoaming = networkState.isRoaming + '';
        let signalInfos: radio.SignalInformation[] = radio.getSignalInformationSync(primarySlotId);
        if (signalInfos.length > 0) {
          let signalInfo = signalInfos[0];
+         // 获取蜂窝网络信号强度
          this.cellularSignal = signalInfo.dBm + 'dBm';
+         // 获取蜂窝网络制式
          this.cellularType = NetworkUtil.getCellularTypeStr(signalInfo.signalType);
        }
      } catch (err) {
@@ -643,11 +653,12 @@ content_hash: sha256:0c90dbd71a175b2b974494aa492d03fc908457c0202a124637b4336fbbc
 
    首先判断网络是否连接和是否可用，如果未连接或者不可用，则显示网络未连接和网络不可用的结果。
 
-   ```ts
+   ```typescript
    checkNetAvailable(): void {
      try {
        let netHandle = connection.getDefaultNetSync();
        if (netHandle.netId === 0) {
+         // 未连接网络时，获取到的netHandler的netid为0
          this.hasNetwork = false;
          this.checkResult = $r('app.string.result_network_not_connect');
          return;
@@ -672,7 +683,7 @@ content_hash: sha256:0c90dbd71a175b2b974494aa492d03fc908457c0202a124637b4336fbbc
 
    如果有网络连接，则开启下载任务用于网络质量测试，下载任务持续时间为10秒。
 
-   ```ts
+   ```typescript
    queryNetworkInfo() {
      this.checkNetAvailable();
      if (!this.hasNetwork) {
@@ -685,8 +696,10 @@ content_hash: sha256:0c90dbd71a175b2b974494aa492d03fc908457c0202a124637b4336fbbc
 
      if (this.timeoutId === -1 && TEST_DOWNLOAD_URL !== '') {
        this.checkResult = $r('app.string.result_is_checking');
+       // 开始下载文件
        NetworkUtil.downloadFile(this.context, TEST_DOWNLOAD_URL, this.cachePath);
        this.timeoutId = setTimeout(() => {
+         // 10秒后移除下载任务
          NetworkUtil.removeTask();
          this.timeoutId = -1;
        }, 10000)
@@ -696,12 +709,12 @@ content_hash: sha256:0c90dbd71a175b2b974494aa492d03fc908457c0202a124637b4336fbbc
 
    在下载任务期间，通过netQuality模块的on('netQosChange')接口实时监听网络质量变化，获取时延、下载速度等关键指标。并计算10秒内的平均下载速度、平均时延、Wi-Fi和蜂窝的平均信号强度。并根据这些指标和规格数据对比，获取检测结果，数据规格参考[实现方案](network-information-query-connection-management.md#实现方案)小节。
 
-   ```ts
+   ```typescript
    onQosChange(): void {
      try {
-       netQuality.on('netQosChange', (list: netQuality.NetworkQos[]) => {
+       netQuality.on('netQosChange', async (list: netQuality.NetworkQos[]) => {
          if (list.length > 0) {
-           list.forEach(async (qos) => {
+           for (const qos of list) {
              // ...
              if (this.timeoutId !== -1 && TEST_DOWNLOAD_URL !== '') {
                let wifiRssi = NetworkUtil.getWifiSignalRssi();
@@ -713,15 +726,20 @@ content_hash: sha256:0c90dbd71a175b2b974494aa492d03fc908457c0202a124637b4336fbbc
                this.rttMsTimes += 1;
              }
              if ((this.timeoutId === -1) && (this.rttMsTimes !== 0) && (TEST_DOWNLOAD_URL !== '')) {
+               // 平均下载速度
                let avgSpeed = this.totalSpeed / 8 / 1024 / 1024 / 10;
+               // 平均延迟
                let avgRttMs = this.totalRttMs / this.rttMsTimes;
+               // 平均WiFi信号强度
                let avgWifiRssi = this.totalWifiRssi / this.rttMsTimes;
+               // 平均蜂窝信号强度
                let avgCellularRssi = this.totalCellularRssi / this.rttMsTimes;
                // ...
                if (avgSpeed < 1 || avgRttMs > 100) {
                  this.checkResult = $r('app.string.network_bad_tips');
-                 return;
+                 continue;
                }
+               // 当WiFi信号强度低于-70dBm或蜂窝网络信号强度低于-100dBm时，判定为网络质量差
                if ((this.networkType === 'wifi' && avgWifiRssi < -70) ||
                  (this.networkType === 'cellular' && avgCellularRssi < -100)) {
                  this.checkResult = $r('app.string.network_bad_tips');
@@ -729,7 +747,7 @@ content_hash: sha256:0c90dbd71a175b2b974494aa492d03fc908457c0202a124637b4336fbbc
                  this.checkResult = $r('app.string.result_network_normal');
                }
              }
-           });
+           }
          }
        });
      } catch (err) {

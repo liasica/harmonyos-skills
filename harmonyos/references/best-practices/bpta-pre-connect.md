@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pre-connec
 title: 冷启网络预建链最佳实践
 breadcrumb: 最佳实践 > 技术创新 > 通讯 > 冷启网络预建链最佳实践
 category: best-practices
-scraped_at: 2026-10-29T08:03:13+08:00
+scraped_at: 2026-11-04T08:37:47+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:789fa6881992b5b80752d276daa4e85084ef41b7ae12323a128d6639b670cfdb
+content_hash: sha256:671527bb802169e9df6b11bed0de12fc92681ea7437ca8d0cbf9268daee80c1b
 ---
 
 ## 概述
@@ -24,7 +24,7 @@ content_hash: sha256:789fa6881992b5b80752d276daa4e85084ef41b7ae12323a128d6639b67
 
 使用预建链请求与未使用预建链请求时序对比图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/lBzWLPomTim7BXQeg4dMnA/zh-cn_image_0000002594079346.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/DTxwpm53Ss6Pk3EIkez1Ww/zh-cn_image_0000002624518875.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/5jPFekFOR1aoXJ81JN4BVQ/zh-cn_image_0000002594079346.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/cgAjiwu3SBS1x5K-UafBNA/zh-cn_image_0000002624518875.png "点击放大")
 
 ## 冷启动网络预热
 
@@ -66,7 +66,7 @@ try {
 
 在应用启动时，使用预建链请求与非预建链正常请求对比：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/Rj2eTL6MQF66fxsun3nmNw/zh-cn_image_0000002594239264.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/3JKfZtQ7RXWv5GF-T2aivw/zh-cn_image_0000002594239264.png)
 
 2.连接复用获取数据：当实际数据请求发起时，直接复用预建链阶段已建立的连接，跳过连接建立过程，实现向目标服务器动态预取数据，以优化资源加载。
 
@@ -95,7 +95,7 @@ try {
 
 从应用启动到发起请求获取数据内容，使用预建链技术与正常请求对比：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/YVqe_c1pSyOhmWUBbLoyxg/zh-cn_image_0000002624638731.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/fyIaustbTCqrWNELywROdw/zh-cn_image_0000002624638731.gif)
 
 ## 常见问题
 

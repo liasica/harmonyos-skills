@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 如何解决内部测试安装失败，报错误码17700018的问题
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 如何解决内部测试安装失败，报错误码17700018的问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:51+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:99cb089a866ec6141fbdced12cb9ef0bcff2b69ae675d609c7d24d6a06a3d2d6
+scraped_at: 2026-11-04T08:40:27+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:533aa4ea0653627c8b609533b8b4098cb21fead3ed66c1165bf2bceae9698b8e
 ---
 
 ## 问题现象
@@ -35,7 +35,7 @@ content_hash: sha256:99cb089a866ec6141fbdced12cb9ef0bcff2b69ae675d609c7d24d6a06a
 
 1. 确认描述文件中应用依赖的所有module都已经按[配置规则](../app/agc-help-internal-test-release-app-0000002260691994.md)配置完成。
 2. 如果应用使用了集成态HSP可以使用以下两种解决方案:
-   * 将TGZ格式共享包转换为.HAR格式并打包到HAP中，具体转换方法可以[参考文档](../harmonyos-guides-V14/ide-tgz-har-migrating-V14.md)。
+   * 将TGZ格式共享包转换为.HAR格式并打包到HAP中，具体转换方法可以[参考文档](../doccenter-deveco-studio/ide-har-import.md)。
    * 将集成态HSP转换为应用内HSP，在应用中通过内部测试证书打包。
 
 ## 常见FAQ

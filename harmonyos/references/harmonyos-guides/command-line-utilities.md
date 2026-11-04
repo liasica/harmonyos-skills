@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/command-line-
 title: 命令行工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > 命令行工具
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:48+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:02d31a7d28a5a2a405ab60f954cb700dee02310c7618f0ecd642c26da5da596f
+scraped_at: 2026-11-04T08:30:03+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:47f261c49fcde096e6d403e66ede070d9bddece3bbafd489d044783659a5ac60
 ---
 
 * **[toybox工具](toybox.md)**
@@ -13,3 +13,4 @@ content_hash: sha256:02d31a7d28a5a2a405ab60f954cb700dee02310c7618f0ecd642c26da5d
 * **[devicedebug工具](devicedebug-tool.md)**
 * **[rawheap-translator工具](rawheap-translator.md)**
 * **[js-rawheap-translator工具](js-rawheap-translator.md)**
+* **[SourceMap Splitter工具](sourcemap-splitter-tool.md)**

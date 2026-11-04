@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.file.securityLabel (数据标签)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > @ohos.file.securityLabel (数据标签)
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:59+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:6de83d897169763f6c880cb70b7bf5e7c9e44b7c49701eda31c04d9bd5b2a14f
+scraped_at: 2026-11-04T08:34:02+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:aeec900227fd2fa5dfc0fcf99123da95f3ce1b0ac1687da658067c7487b7fe8d
 ---
 
 该模块提供文件数据安全等级的相关功能：向应用程序提供查询、设置文件数据安全等级的ArkTS接口。该功能可以帮助应用实现对不同安全等级文件的分级管理和访问控制，解决数据安全管控的需求，提升应用的数据安全合规性。
@@ -232,7 +232,7 @@ getSecurityLabel(path:string, callback:AsyncCallback<string>): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | 文件或目录的应用沙箱路径。 |
-| callback | AsyncCallback<string> | 是 | 回调函数，返回数据安全等级。 |
+| callback | AsyncCallback<string> | 是 | 回调函数。当获取文件或目录的数据安全等级，err为undefined，type为获取到的数据安全等级；否则为错误对象。 |
 
 **错误码：**
 

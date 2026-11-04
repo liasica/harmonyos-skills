@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_node.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_node.h
 category: harmonyos-references
-scraped_at: 2026-10-31T07:35:48+08:00
+scraped_at: 2026-11-04T08:33:32+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:8c01bec40ff5d93eedc4ad86aed7b90ddf947310df7b01c8c2beab3e140735e3
+content_hash: sha256:2ebbd4ebdbbf11dbc14cd3c2eeb6942fd95c3f07d0b3f57cdaeaa39a2429a37f
 ---
 
 ## 概述
@@ -3189,7 +3189,7 @@ int32_t OH_ArkUI_NativeModule_ConvertPositionToWindow(ArkUI_NodeHandle currentNo
 
 将点的坐标从指定节点的坐标系转换至当前窗口的坐标系。节点的坐标系考虑节点本身的变换，例如，节点A的变换效果为向左平移100，会使得其坐标系中的点的坐标也向左平移100。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/Hzvy8Mm9Tjmhy8PO5zKCTA/zh-cn_image_0000002806031447.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/6C68hQUwROGWUBXu5pqb9w/zh-cn_image_0000002809052703.png)
 
 如上图所示，将指定节点坐标系中的坐标(x0, y0)转换成窗口坐标系的坐标，结果为(x1, y1)。
 
@@ -3219,7 +3219,7 @@ int32_t OH_ArkUI_NativeModule_ConvertPositionFromWindow(ArkUI_NodeHandle targetN
 
 将点的坐标从当前窗口的坐标系转换至目标节点的坐标系。节点的坐标系考虑节点本身的变换，例如，节点A的变换效果为向左平移100，会使得其坐标系中的点的坐标也向左平移100。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/ZL-DjkhkRT-C27Fpek8RhQ/zh-cn_image_0000002806111341.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/ewN5LEUuQte2Is5at-ubcg/zh-cn_image_0000002779853138.png)
 
 如上图所示，将窗口坐标系中的坐标(x1, y1)转换成目标节点坐标系的坐标，结果为(x0, y0)。
 

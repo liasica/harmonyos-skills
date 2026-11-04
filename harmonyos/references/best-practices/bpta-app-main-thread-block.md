@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-main-t
 title: 应用主线程阻塞故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 应用冻屏故障模式说明 > 应用主线程阻塞故障模式说明
 category: best-practices
-scraped_at: 2026-10-29T08:03:26+08:00
+scraped_at: 2026-11-04T08:38:04+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:8ae69001e8add70596d8c45ce989e8238fadfea1083800756daa0c33390987ef
+content_hash: sha256:ae3a4dfd46b4e4725eb897e33142947efa0f0486b7745c3bf725786ad26bc6f2
 ---
 
 ## 概述
@@ -104,14 +104,14 @@ ld-musl-aarch64.so.1
 
    证据2：故障栈帧所在的代码
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/KfNzomkYTYekaGFSc-W-CQ/zh-cn_image_0000002673575729.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/JtqYeorEQoe7lsjOi0GJTg/zh-cn_image_0000002673575729.png "点击放大")
 
    代码行指向pthread\_mutex\_lock(&g\_deadlockMutexSecond)，即等待锁g\_deadlockMutexSecond。继续分析g\_deadlockMutexSecond的持锁情况。
 3. 在代码中查找g\_deadlockMutexSecond，确认除TriggerDeadlockSync外，仅在DeadlockOtherThread中有使用。
 
    证据3：DeadlockOtherThread的实现代码
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/LsQGeYSzQE6WAo46pVbFWg/zh-cn_image_0000002673735601.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/sfnj5Mk3RYGNvHAa_5c1gg/zh-cn_image_0000002673735601.png)
 
    DeadlockOtherThread是在主线程创建的子线程中调用的。子线程进入后先获取锁g\_deadlockMutexSecond，然后等待1s再获取锁g\_deadlockMutexFirst。创建子线程前主线程就已经获取g\_deadlockMutexFirst，创建子线程后主线程又去获取g\_deadlockMutexSecond。主线程和子线程发生死锁，主线程一直等锁阻塞。
 
@@ -142,14 +142,14 @@ ld-musl-aarch64.so.1
 
    证据2：故障栈帧所在的代码
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/ORLFH65VQOugf5DTtvRZgA/zh-cn_image_0000002643575818.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/wrx6XcZZQ9uzX9MvoaZZ0Q/zh-cn_image_0000002643575818.png "点击放大")
 
    代码行指向pthread\_join(t1, nullptr)，即等待子线程结束。继续分析子线程的实现。
 3. 查看t1和t2两个子线程的实现代码。
 
    证据3：两个子线程的实现代码
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/bDOuRjgIRcy3DHEXNEKCeQ/zh-cn_image_0000002643415864.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/Sz21QeJ5QRWfKu5ObdoOhA/zh-cn_image_0000002643415864.png)
 
    线程A进入后先获取锁g\_deadlockMutexFirst，然后等待1ms再获取锁g\_deadlockMutexSecond。线程B则反过来，先获取锁g\_deadlockMutexSecond再等待1ms获取锁g\_deadlockMutexFirst。这样两个子线程进入后都获取到了对方想要获取的锁，从而造成死锁。两个子线程都无法结束，导致主线程等待阻塞。
 
@@ -579,7 +579,7 @@ DumpHeapSnapshot
 
    证据2：故障栈帧所在的代码
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/kdAWLisXTHSQO6Mqb3l-MQ/zh-cn_image_0000002673575731.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/Op9uDv5dSniOJoMx1SLCqA/zh-cn_image_0000002673575731.png "点击放大")
 
    TriggerLongTimeOp方法中的while循环耗时导致主线程阻塞。
 

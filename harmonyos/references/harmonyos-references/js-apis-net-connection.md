@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.net.connection (网络连接管理)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.connection (网络连接管理)
 category: harmonyos-references
-scraped_at: 2026-10-29T08:01:01+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:cd1762d78cb2a842283937f39a31deed7466307f7261c6509fdddf15dfa2fe1e
+scraped_at: 2026-11-04T08:34:49+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:080b113c649b0408560c7dd295eea33fd7d54ef44b66c916b3c52ebf4af2e85e
 ---
 
 网络连接管理提供管理网络一些基础能力，包括获取默认激活的网络、获取所有激活网络列表、获取网络能力信息等功能。
@@ -2386,11 +2386,11 @@ import { connection } from '@kit.NetworkKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 connection.getIpNeighTable().then((data: connection.NetIpMacInfo[]) => {
-  if (data.length !== 0) {
-    console.info(`Succeeded to get ipAddress: ${JSON.stringify(data.ipAddress)}`);
-    console.info(`Succeeded to get iface: ${JSON.stringify(data.iface)}`);
-    console.info(`Succeeded to get macAddress: ${JSON.stringify(data.macAddress)}`);
-  }
+  data.forEach((info: connection.NetIpMacInfo) => {
+    console.info(`Succeeded to get ipAddress: ${JSON.stringify(info.ipAddress)}`);
+    console.info(`Succeeded to get iface: ${JSON.stringify(info.iface)}`);
+    console.info(`Succeeded to get macAddress: ${JSON.stringify(info.macAddress)}`);
+  });
 }).catch((error: BusinessError) => {
   console.error(`Failed to get ip neigh table. Code:${error.code}, message:${error.message}`);
 });
@@ -3246,7 +3246,7 @@ interface Data {
   if (socketType == "TCPSocket") {
     tcp.bind({address:"192.168.xxx.xxx",
               port:8080,
-              family:1} as socket.NetAddress, (error: Error) => {
+              family:1} as socket.NetAddress, (error: BusinessError) => {
       if (error) {
         console.error(`Failed to bind. Code:${error.code}, message:${error.message}`);
         return;

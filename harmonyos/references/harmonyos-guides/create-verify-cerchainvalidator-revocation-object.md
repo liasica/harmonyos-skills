@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/create-verify
 title: 证书链在线校验证书吊销状态
 breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 证书算法库框架 > 证书链在线校验证书吊销状态
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:28+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6151e20f2845a337a283012edaa480d11c83c0a219556519bc7c6ca8ce7766b9
+scraped_at: 2026-11-04T08:29:39+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:35189aab1580a7523cd34ca10070d1cb62e94b3b759c248e9cbdca83da306a83
 ---
 
 ## 本地证书链吊销状态校验时仅校验终端实体证书
 
-API 22开始支持本地证书链吊销状态校验时仅校验终端实体证书。
+从API版本22开始支持本地证书链吊销状态校验时仅校验终端实体证书。
 
 ### 开发步骤
 
@@ -114,7 +114,7 @@ async function doTestLeafCertCrlCheck() {
 
 ## 在线校验证书链中的中间CA证书的吊销状态
 
-从API version 22开始，支持在线校验证书链中的中间CA证书的吊销状态。
+从API版本22开始，支持在线校验证书链中的中间CA证书的吊销状态。
 
 ### 开发步骤
 
@@ -206,7 +206,7 @@ async function doTestCaCheck() {
 
 ## 证书链校验时忽略在线证书吊销检查的网络不可达异常
 
-从API version 23开始，支持证书链校验时忽略网络不可达的在线证书吊销检查异常。
+从API版本23开始，支持证书链校验时忽略网络不可达的在线证书吊销检查异常。
 
 ### 开发步骤
 
@@ -216,8 +216,9 @@ async function doTestCaCheck() {
    import { cert } from '@kit.DeviceCertificateKit';
    ```
 2. 调用[cert.createX509CertChain](../harmonyos-references/js-apis-cert.md#certcreatex509certchain11-2)创建证书链对象。
-3. 调用[cert.createX509Cert](../harmonyos-references/js-apis-cert.md#certcreatex509cert)创建X.509证书对象。构造 cert.CertChainValidationParameters 证书链校验参数，配置 revocationCheckParam 为 RevocationCheckOptions.REVOCATION\_CHECK\_OPTION\_IGNORE\_NETWORK\_ERROR，以忽略网络不可达的情况。
-4. 调用[cert.validate](../harmonyos-references/js-apis-cert.md#validate11)，传入证书链校验参数，进行证书链校验。
+3. 调用[cert.createX509Cert](../harmonyos-references/js-apis-cert.md#certcreatex509cert)创建X.509证书对象。
+4. 构造cert.CertChainValidationParameters证书链校验参数，配置revocationCheckParam为RevocationCheckOptions.REVOCATION\_CHECK\_OPTION\_IGNORE\_NETWORK\_ERROR，以忽略网络不可达的情况。
+5. 调用[cert.validate](../harmonyos-references/js-apis-cert.md#validate11)，传入证书链校验参数，进行证书链校验。
 
 在线CRL检查忽略网络不可达异常示例：
 

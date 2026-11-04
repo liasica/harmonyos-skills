@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: Scene
 breadcrumb: API参考 > 图形 > ArkGraphics 3D（方舟3D图形） > ArkTS API > graphics3d > Scene
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:01+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:aa31b11e931fa6f2759322f30fdcd849769cd1d4645e16fb1a1499ee055f86db
+scraped_at: 2026-11-04T08:36:42+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:2bb80a81bb90eac0a5d5c66bb22aa79391baca6e3dfe0aff92f74f116fb583d7
 ---
 
 本模块作为ArkGraphics 3D基础模块，提供SceneResourceParameters、SceneNodeParameters等通用数据类型。同时提供glTF模型加载，场景元素、资源创建等基础方法。
@@ -379,6 +379,8 @@ function createSamplerResource(): Promise<Sampler> {
 createScene(uri?: ResourceStr): Promise<Scene>
 
 从指定的资源URI创建一个新的场景。如果不指定URI，则创建一个空场景，使用Promise异步回调。
+
+该接口为耗时操作。在异步任务执行期间，调用其他接口可能会被阻塞，直到该异步任务完成。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
 
@@ -1004,6 +1006,8 @@ PCF（Percentage Closer Filtering，百分比邻近过滤）软阴影配置类�
 static load(uri?: ResourceStr): Promise<Scene>
 
 通过传入的资源路径加载资源，使用Promise异步回调。调用后，应该在Scene使用完毕时调用[destroy](js-apis-inner-scene.md#destroy)释放资源，否则可能导致资源泄漏。
+
+该接口为耗时操作。在异步任务执行期间，调用其他接口可能会被阻塞，直到该异步任务完成。
 
 **系统能力：** SystemCapability.ArkUi.Graphics3D
 

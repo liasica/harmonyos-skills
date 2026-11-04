@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-publ
 title: 发布应用
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 发布应用
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:13:12+08:00
+scraped_at: 2026-11-04T08:31:52+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:1073b4a2e2d1622b2e5e56e9a96b02a2d0ae9bf221d244c14acaf853cdd86ab0
+content_hash: sha256:b549b9a078ae7febfab906874c608e254df99fabfc0626b1d0a3063aeeefb7f2
 ---
 
 HarmonyOS通过数字证书与Profile文件等签名信息来保证应用/元服务的完整性，应用/元服务上架到AppGallery Connect必须通过签名校验。因此，您需要使用发布证书和Profile文件对应用/元服务进行签名后才能发布。
@@ -14,7 +14,7 @@ HarmonyOS通过数字证书与Profile文件等签名信息来保证应用/元服
 
 开发者完成HarmonyOS应用/元服务开发后，需要将应用/元服务打包成App Pack（.app文件），用于上架到AppGallery Connect。发布应用/元服务的流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/7_jVxvGQSOuTMHk2FE9zGQ/zh-cn_image_0000002779728717.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/HfWBTiOFQoyiap5XtL8zhw/zh-cn_image_0000002779728717.png)
 
 关于以上流程的详细介绍，请继续查阅本章节内容。
 
@@ -34,7 +34,7 @@ HarmonyOS应用/元服务通过数字证书（.cer文件）和Profile文件（.p
 1. 在主菜单栏单击**构建** **> 生成密钥和证书请求文件**。
 2. 在生成密钥和证书请求文件界面，可以单击Keystore File后的文件图标选择已有的密钥库文件（存储有密钥的.p12文件）。若没有密钥库文件，单击**新建**进行创建。下面以新建密钥库文件为例进行说明。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/bZVYqGNcS1qu2MOaungB2w/zh-cn_image_0000002750009654.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/FEG5zW0zSuqL5uA6OS0CdA/zh-cn_image_0000002750009654.png)
 3. 在**创建密钥存储文件**窗口中，填写密钥库信息后，单击**确认**。
    * **Keystore file(\*.p12)**：填写p12文件名，仅允许包含字母、数字、下划线（\_）、中划线（-）、句号（.）。
    * **Key store path**：设置密钥库文件存储路径。
@@ -42,13 +42,13 @@ HarmonyOS应用/元服务通过数字证书（.cer文件）和Profile文件（.p
    * **Confirm Password**：再次输入密钥库密码。
    * **Key alias**：密钥的别名信息，用于标识密钥名称。请记住该别名，后续签名配置需要使用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/qLnB6Cx5RY6xCm1cgJ9E5w/zh-cn_image_0000002779608569.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/VfRJEI7RQHaKLGYowL2mWA/zh-cn_image_0000002779608569.png)
 4. 在**生成密钥和证书请求文件**界面中，确认信息后点击**生成**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/9DNCS5ETRVCKqElpLmzSQA/zh-cn_image_0000002779608567.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/d0OdywNrS5WRLLmUemaG0w/zh-cn_image_0000002779608567.png)
 5. 创建CSR文件成功后，可以在存储路径下获取生成的密钥库文件（.p12）和证书请求文件（.csr）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/WqGJSpGfR7m17WyHUb8BSg/zh-cn_image_0000002750009658.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/ZKoaGMW3SHCb2V_Iitv5iA/zh-cn_image_0000002750009658.png "点击放大")
 
 ### 申请发布证书和Profile文件
 
@@ -74,7 +74,7 @@ HarmonyOS应用/元服务通过数字证书（.cer文件）和Profile文件（.p
 * **Profile File**：选择申请的发布Profile文件，文件后缀为.p7b。
 * **Certpath File**：选择申请的发布数字证书文件，文件后缀为.cer。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/KzD5HH29TlG2n7lir1psRg/zh-cn_image_0000002750169544.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/WJcHdPS1TJiB7V98Y0EIug/zh-cn_image_0000002750169544.png)
 
 然后使用DevEco Studio生成APP，请参考[编译构建.app文件](ide-hmos-publish-app.md#section1992513343374)。
 
@@ -93,7 +93,7 @@ HarmonyOS应用/元服务通过数字证书（.cer文件）和Profile文件（.p
    当未指定[构建模式](ide-hmos-hvigor-compilation-options-customizing-guide.md#section192461528194916)时，构建APP包，默认Release模式；构建HAP/HSP/HAR包，默认Debug模式。即Build APP(s)，默认构建的APP包为Release类型，符合上架要求，开发者无需进行另外设置。
 2. 编译构建完成后，可以在工程目录**build > outputs > default**下，获取带签名的应用包。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/9m0d2BnqQ_Cb8UPUhwzIfg/zh-cn_image_0000002750009656.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/AConNW0IR0ufOlarkqLAhA/zh-cn_image_0000002750009656.png)
 
 ## 发布.app文件到应用市场
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/ability-kit-faq
 title: Context功能使用常见问题
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 常见问题 > Context功能使用常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:13:43+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:621b27ed4b4859c1cebdba294a884dad12a188799d67046a6b3e8a1e1a98173c
+scraped_at: 2026-11-04T08:38:19+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:a5ac16432df9ef188fae9eba2d509d101dc97f8f4fccf797b3f2ddb192f56e61
 ---
 
 **Q：如何获取App版本号，版本名，屏幕分辨率等信息？**
@@ -38,9 +38,9 @@ content_hash: sha256:621b27ed4b4859c1cebdba294a884dad12a188799d67046a6b3e8a1e1a9
    let screenDensity = context.config.screenDensity;
    ```
 
-**Q：如何在TaskPool和Woker获取上下文Context？**
+**Q：如何在TaskPool和Worker获取上下文Context？**
 
-**A**：Worker线程和TaskPool线程中无法直接获取到组件级的Context 。可以通过主线程参数传递应用级Context，通过[getHostContext](../harmonyos-references/arkts-apis-uicontext-uicontext.md#gethostcontext12)接口获取Context上下文。
+**A**：Worker线程和TaskPool线程中无法直接获取到组件级的Context。可以通过主线程参数传递应用级Context，通过[getHostContext](../harmonyos-references/arkts-apis-uicontext-uicontext.md#gethostcontext12)接口获取Context上下文。
 
 ```ts
 import { hilog } from '@kit.PerformanceAnalysisKit';
@@ -142,79 +142,77 @@ struct Index {
 
 **Q：如何在Page中获取WindowStage实例？**
 
-**A**：
+**A**：方式一：在onWindowStageCreate方法中获取，此方式适用于Ability生命周期内需要持久化WindowStage实例的场景。
 
-* 方式一：在onWindowStageCreate方法中获取，此方式适用于Ability生命周期内需要持久化WindowStage实例的场景。
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { window } from '@kit.ArkUI';
 
-  ```ts
-  import { UIAbility } from '@kit.AbilityKit';
-  import { hilog } from '@kit.PerformanceAnalysisKit';
-  import { window } from '@kit.ArkUI';
+export default class EntryAbility extends UIAbility {
+  // ...
+  onWindowStageCreate(windowStage: window.WindowStage): void {
+    // Main window is created, set main page for this ability
+    hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
 
-  export default class EntryAbility extends UIAbility {
-    // ...
-    onWindowStageCreate(windowStage: window.WindowStage): void {
-      // Main window is created, set main page for this ability
-      hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onWindowStageCreate');
-
-      windowStage.loadContent('pages/Index', (err) => {
-        if (err.code) {
-          hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
-          return;
-        }
-        hilog.info(0x0000, 'testTag', 'Succeeded in loading the content.');
-      });
-      console.info('windowStage', JSON.stringify(windowStage))
-      // Store windowStage instance globally for cross-page access
-      AppStorage.setAndLink('windowStage', windowStage)
-    }
-
-    // ...
-  }
-  ```
-
-* 方式二：UIAbilityContext提供了获取WindowStage实例的接口，此方式适用于需要动态获取WindowStage的页面级场景，无需持久化存储。
-
-  ```ts
-  // Index.ets
-  import common from '@ohos.app.ability.common';
-
-  @Entry
-  @Component
-  struct Index {
-    @State showAbility: string = 'get windowStage'
-
-    build() {
-      Row() {
-        Column() {
-          Text(this.showAbility)
-            .fontSize(30)
-            .fontWeight(FontWeight.Bold)
-            .onClick(() => {
-              let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-              console.info('Obtained WindowStage instance:',JSON.stringify(context.windowStage))
-            });
-        }
-        .width('100%')
+    windowStage.loadContent('pages/Index', (err) => {
+      if (err.code) {
+        hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
+        return;
       }
-      .height('100%')
-    }
+      hilog.info(0x0000, 'testTag', 'Succeeded in loading the content.');
+    });
+    console.info('windowStage', JSON.stringify(windowStage))
+    // Store windowStage instance globally for cross-page access
+    AppStorage.setAndLink('windowStage', windowStage)
   }
-  ```
+
+  // ...
+}
+```
+
+方式二：UIAbilityContext提供了获取WindowStage实例的接口，此方式适用于需要动态获取WindowStage的页面级场景，无需持久化存储。
+
+```ts
+// Index.ets
+import common from '@ohos.app.ability.common';
+
+@Entry
+@Component
+struct Index {
+  @State showAbility: string = 'get windowStage'
+
+  build() {
+    Row() {
+      Column() {
+        Text(this.showAbility)
+          .fontSize(30)
+          .fontWeight(FontWeight.Bold)
+          .onClick(() => {
+            let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
+            console.info('Obtained WindowStage instance:',JSON.stringify(context.windowStage))
+          });
+      }
+      .width('100%')
+    }
+    .height('100%')
+  }
+}
+```
 
 参考链接：[onWindowStageCreate](../harmonyos-references/js-apis-app-ability-uiability.md#onwindowstagecreate)、[UIAbilityContext](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md)。
 
 **Q：如何将Resource资源对象转成string类型？**
 
-**A**：Resource 为字符串，支持使用 this.context.resourceManager.getStringSync(r(′app.string.test′).id)同步转换为字符串，也支持使用*r*(′*a**pp*.*s**t**r**in**g*.*t**es**t*′).*i**d*)同步转换为字符串，也支持使用r('app.string.test', 2) 进行格式化。
+**A**：Resource为字符串，支持使用this.context.resourceManager.getStringSync($r('app.string.test').id)同步转换为字符串，也支持使用$r('app.string.test', 2)进行格式化。
 
 参考链接：[getStringSync](../harmonyos-references/js-apis-resource-manager.md#getstringsync10)。
 
 **Q：如何获取应用级别的temp路径和files路径？**
 
-**A**：通过上下文 context 获取。例如：
+**A**：通过上下文context获取。例如：
 
-* temp路径：通过 this.context.getApplicationContext().tempDir 获取。
-* 文件路径：可通过 this.context.getApplicationContext().filesDir 获取。
+* temp路径：通过this.context.getApplicationContext().tempDir获取。
+* 文件路径：可通过this.context.getApplicationContext().filesDir获取。
 
 参考链接：[获取应用文件路径](../harmonyos-guides/application-context-stage.md#获取应用文件路径)。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite-m
 title: 离线编辑(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频编创 > 离线编辑(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:38+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:00067ff01d1b084310d7b0765fcb948c9d4ac2c46b2b62374212daa0e1b3da8f
+scraped_at: 2026-11-04T08:30:05+08:00
+doc_updated_at: 2026-11-03
+content_hash: sha256:99e882570e19bcbd313878c290ac717040844a5f51aedea036b0ea8a06072735
 ---
 
 从API version 22开始，[OHAudioSuite](../harmonyos-references/capi-ohaudiosuite.md)给开发者提供音频离线编辑能力，允许在非实时预览场景下对音频数据进行处理，开发者可以组合多个音频节点实现复杂的音频处理流程。
@@ -16,8 +16,8 @@ content_hash: sha256:00067ff01d1b084310d7b0765fcb948c9d4ac2c46b2b62374212daa0e1b
 
 ### 在CMake脚本中链接动态库
 
-```cmake
-target_link_libraries(sample PUBLIC libohaudiosuite.so)
+```text
+target_link_libraries(entry PUBLIC libohaudiosuite.so)
 ```
 
 ### 添加头文件
@@ -49,7 +49,7 @@ target_link_libraries(sample PUBLIC libohaudiosuite.so)
 
 **图1**：基础离线编辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/DBVDX5ywRXKtIzKPUA7uRg/zh-cn_image_0000002776909432.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/jcKdsKVATRa_ka5r6SycfA/zh-cn_image_0000002779850912.png)
 
 1. 创建引擎和管线。
 
@@ -219,7 +219,7 @@ target_link_libraries(sample PUBLIC libohaudiosuite.so)
 
 **图2**：音源分离编辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/n3-sLuoQQ9yOwwBmBWU-Rw/zh-cn_image_0000002776749446.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/Wq-WcgPwQoe2UMBMuvUdSw/zh-cn_image_0000002779690944.png)
 
 示例代码如下：
 
@@ -409,7 +409,7 @@ target_link_libraries(sample PUBLIC libohaudiosuite.so)
 
 **图3**：级联编辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/HQH5QncJSsaNL6Kbm3VY6g/zh-cn_image_0000002806029163.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/XF0UAsIiTFiohNgeDlcSpQ/zh-cn_image_0000002809010565.png)
 
 示例代码如下：
 

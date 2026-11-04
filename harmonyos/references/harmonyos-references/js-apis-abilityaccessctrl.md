@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.abilityAccessCtrl (程序访问控制管理)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.abilityAccessCtrl (程序访问控制管理)
 category: harmonyos-references
-scraped_at: 2026-10-31T07:34:26+08:00
+scraped_at: 2026-11-04T08:32:02+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:c39d3ce59c29347e9e337c688688dd11ea1d84984b9b38133329499480884582
+content_hash: sha256:80b05417d5af97f59cf1ffb2a292787c149830a3bf40fbf39de1b13cb1d1b5f4
 ---
 
 程序访问控制提供应用程序的权限校验和管理能力，支持应用在访问受保护资源前进行权限状态判断、运行时授权申请、设置页授权引导和权限状态变化监听。权限分为system\_grant（系统自动授权）、user\_grant（需用户手动授权）和[manual\_settings](../harmonyos-guides/app-permission-mgmt-overview.md#manual_settings手动设置授权)（手动设置授权）三类，应用需在配置文件中声明所需权限。权限管理机制详见[应用权限管控概述](../harmonyos-guides/app-permission-mgmt-overview.md)。
@@ -40,7 +40,7 @@ content_hash: sha256:c39d3ce59c29347e9e337c688688dd11ea1d84984b9b381333294994808
 
 * **[AtManager](js-apis-abilityaccessctrl.md#atmanager)：** 程序访问控制管理类，提供权限校验、权限弹窗申请、设置页授权引导和权限状态监听等能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/hpzcaszLRtOkRotSWt3caA/zh-cn_image_0000002806030187.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/zJn1xh29Rl6ytftBwSlE4Q/zh-cn_image_0000002809011589.png)
 
 ### API组合使用关系说明
 
@@ -391,7 +391,7 @@ requestPermissionsFromUser(context: Context, permissionList: Array<Permissions>,
 
 如果用户拒绝授权，将无法通过此接口再次拉起授权弹窗。开发者可引导用户前往系统设置界面手动授权，或调用[requestPermissionOnSetting](js-apis-abilityaccessctrl.md#requestpermissiononsetting12)拉起权限设置弹窗，引导用户完成授权。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/QuR3ecbMQPakRF1QgHDgZg/zh-cn_image_0000002806110077.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/mfcIfEiJS9KgqAxE8PrBUw/zh-cn_image_0000002809051503.png)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -520,7 +520,7 @@ requestPermissionOnSetting(context: Context, permissionList: Array<Permissions>)
 
 在调用此接口前，应用需要先调用[requestPermissionsFromUser](js-apis-abilityaccessctrl.md#requestpermissionsfromuser9)。如果用户已在首次弹窗中授权，则调用当前接口不会拉起授权弹窗。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/rLVGByfbQPyT-_Qd5AstjA/zh-cn_image_0000002776910458.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/hH4vY8O0SHOI29p37Lp4zA/zh-cn_image_0000002779851938.png)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -584,7 +584,7 @@ requestGlobalSwitch(context: Context, type: SwitchType): Promise<boolean>
 
 当应用需要使用相机、麦克风或定位等需要全局开关管控的功能时，如果对应的全局开关被关闭，应用可拉起此弹窗请求用户开启对应功能。如果当前全局开关的状态为开启，则不拉起弹窗。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/74NYIFnURwGVR2ecLnJbFg/zh-cn_image_0000002776750472.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/y4HZxWkzQM-_9bSIJaxTvQ/zh-cn_image_0000002779691970.png)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 

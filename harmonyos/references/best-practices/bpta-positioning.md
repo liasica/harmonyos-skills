@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-positionin
 title: 位置定位
 breadcrumb: 最佳实践 > 应用服务 > 位置定位
 category: best-practices
-scraped_at: 2026-10-29T08:03:16+08:00
+scraped_at: 2026-11-04T08:37:50+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:14434b4668602efb8576ec26bcab3d1de7a28cd6896da93bb8c9021e6537e61d
+content_hash: sha256:8a7fedffcfa7a0e339f0e10909cba7b39e03fcd631b3dff3719feb09724b686a
 ---
 
 ## 概述
@@ -71,7 +71,7 @@ content_hash: sha256:14434b4668602efb8576ec26bcab3d1de7a28cd6896da93bb8c9021e653
 5. 运行效果如下图所示
 
    **图1** 获取当前位置信息效果展示  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/AiJnnTMaRPiAV4COs4jJqA/zh-cn_image_0000002193852028.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/rVw_9BpbTnulfkh1sVuwMw/zh-cn_image_0000002193852028.png "点击放大")
 
 ## 实时位置定位
 
@@ -122,9 +122,9 @@ content_hash: sha256:14434b4668602efb8576ec26bcab3d1de7a28cd6896da93bb8c9021e653
 6. 运行效果如下图所示
 
    **图2** 持续获取实时位置信息效果展示  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/m2k5LrCBSRGUYAPI-nvAmQ/zh-cn_image_0000002194011616.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/F7kH2m-aRqqOhyr50Jnk4A/zh-cn_image_0000002194011616.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/G7l5WHqHRxuAZBRRUdAFHg/zh-cn_image_0000002229451909.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/VE0LuED7QoGEWwWOgh075Q/zh-cn_image_0000002229451909.png)
 
 ## 应用后台定位
 
@@ -268,9 +268,9 @@ content_hash: sha256:14434b4668602efb8576ec26bcab3d1de7a28cd6896da93bb8c9021e653
 6. 运行效果如下图所示
 
 **图3** 在应用后台持续获取位置信息效果展示  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/hiHi9SJcRnGcqrEcNdH1hA/zh-cn_image_0000002229337413.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/gWBpHZtIQICoYXjZ8IkGGg/zh-cn_image_0000002229337413.gif "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/WIUxoJ43Roq7jYEWz_JtFw/zh-cn_image_0000002229451897.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/qgahSTgRQ1-WhX36f5oJWg/zh-cn_image_0000002229451897.png)
 
 ## 历史定位获取
 
@@ -304,7 +304,7 @@ content_hash: sha256:14434b4668602efb8576ec26bcab3d1de7a28cd6896da93bb8c9021e653
 4. 运行效果如下图所示
 
    **图4** 获取缓存位置信息效果展示  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/nNI_N3g2TT6hH1m1EV--kQ/zh-cn_image_0000002193852040.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/DkT2bq9kT4CJMe9C0ZM7Ow/zh-cn_image_0000002193852040.png "点击放大")
 
 ## 常见问题
 

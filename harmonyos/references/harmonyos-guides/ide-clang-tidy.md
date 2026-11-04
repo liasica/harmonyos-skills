@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-clang-tid
 title: Clang-Tidy代码检查
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Clang-Tidy代码检查
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:12:53+08:00
+scraped_at: 2026-11-04T08:31:26+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:66f99d0ae920e74ac7c2981804c835a7f1d2363e8f536b35b357823202a54f00
+content_hash: sha256:b5faa4bda787c40073dd728e07e9796d4d9e08aa6671a89394753cc619c66819
 ---
 
 DevEco Studio支持通过内置的Clang-Tidy和自定义的Clang-Tidy对C/C++代码进行静态检查，以及支持配置检查规则，帮助开发者快速发现C++编码的问题。
@@ -18,19 +18,19 @@ DevEco Studio支持通过内置的Clang-Tidy和自定义的Clang-Tidy对C/C++代
 
 1. 在菜单栏进入**File > Settings...**（macOS系统为**DevEco Studio > Preferences/Settings...**）> **Languages & Frameworks** > **C/C++**，勾选**Use clang-tidy via clangd to enable the following checks**选项。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/6Nveb3lsSsGk-Z3WHvPyUA/zh-cn_image_0000002731382587.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/7Nvc1jnrTnSoK32cQTzWkw/zh-cn_image_0000002731382587.png)
 2. 在选项下方添加检查规则，多条规则用英文逗号隔开，检查规则具体请参考[Clang-Tidy Checks网站](https://releases.llvm.org/19.1.0/tools/clang/tools/extra/docs/clang-tidy/checks/list.html)。
 
-   添加检查规则时，可点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/Q6n0qajTRh6vH9OcqN-27A/zh-cn_image_0000002701823284.png)按钮展开规则填写框，在不同行添加规则。添加完成后点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/o_SyuLVwQea9LguyakrODw/zh-cn_image_0000002701823288.png)按钮，多条规则会自动用英文逗号隔开。
+   添加检查规则时，可点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/jkprlz-0QRmJwwD_cMNX3Q/zh-cn_image_0000002701823284.png)按钮展开规则填写框，在不同行添加规则。添加完成后点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/RAImMRDQSjmiiJCOnzBvAg/zh-cn_image_0000002701823288.png)按钮，多条规则会自动用英文逗号隔开。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/UMx23uq_S8qenknkgEYxaw/zh-cn_image_0000002731382599.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/-b-PsDS0TBaKAWQ4m1QG0A/zh-cn_image_0000002731382599.png)
 
 ### 方式二：在 .clang-tidy文件中配置
 
 1. 在工程根目录中或在编辑器中搜索找到并打开 .clang-tidy文件。
 2. 在**Checks**字段中添加检查规则，多条规则使用英文逗号隔开，检查规则具体请参考[Clang-Tidy Checks网站](https://releases.llvm.org/19.1.0/tools/clang/tools/extra/docs/clang-tidy/checks/list.html)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/GkrnBHznT8WHALJoIUV-eA/zh-cn_image_0000002701663374.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/S_Pz57NxTlu1ELtJ-TB1bA/zh-cn_image_0000002701663374.png)
 
 ### 方式三：在Inspection-checks中配置
 
@@ -38,12 +38,12 @@ DevEco Studio支持通过内置的Clang-Tidy和自定义的Clang-Tidy对C/C++代
    * 在工程目录顶部或工程目录中任意文件，单击鼠标右键选择**Inspect Code**...。
    * 在菜单栏点击**Code >** **Inspect Code**...。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/plUrJXGrShuXN1fUmIOF2A/zh-cn_image_0000002701663366.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/LWC_HU_SRKSVsbT4y7xxdA/zh-cn_image_0000002701663366.png)
 2. 点击**Configure...** **> CPP > clang-tidy**，在**checks**中添加检查规则，多条规则使用英文逗号隔开，检查规则具体请参考[Clang-Tidy Checks网站](https://releases.llvm.org/19.1.0/tools/clang/tools/extra/docs/clang-tidy/checks/list.html)。
 
-   添加检查规则时，可点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/ozKL70mlRU2_aFthq0tPfw/zh-cn_image_0000002731542561.png)按钮展开规则填写框，在不同行添加规则。添加完成后点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/8nEhXHY2SxCUb0JeopDj9A/zh-cn_image_0000002701823294.png)按钮，多条规则会自动用英文逗号隔开。
+   添加检查规则时，可点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/zJJ7dVm2TSW68M0_CNqEWg/zh-cn_image_0000002731542561.png)按钮展开规则填写框，在不同行添加规则。添加完成后点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/6gzkHN_pTTiV_6XRJe3XyA/zh-cn_image_0000002701823294.png)按钮，多条规则会自动用英文逗号隔开。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/PDaNg6oDT_SmbOiKvkKfbQ/zh-cn_image_0000002731382591.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/mzx6B64xTiyjiOyXABq2dg/zh-cn_image_0000002731382591.png)
 
 ## 通过内置Clang-Tidy检查代码
 
@@ -55,7 +55,7 @@ DevEco Studio支持通过内置的Clang-Tidy和自定义的Clang-Tidy对C/C++代
 
 若勾选了**live update****（show in “Current File”）**，自动实时检查时，[Clang-Tidy Checks](ide-clang-tidy.md#section386618116187)、[.clang-tidy文件](ide-clang-tidy.md#section158716295189)和[Inspection-checks中](ide-clang-tidy.md#section841663417181)配置的规则均生效；若不勾选**live update****（show in “Current File”）**，自动实时检查时，[Clang-Tidy Checks](ide-clang-tidy.md#section386618116187)和 [.clang-tidy文件](ide-clang-tidy.md#section158716295189)中配置的规则生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/HVAj1ZhGSqK8T3uLDk-3gw/zh-cn_image_0000002701663364.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/5Rp7jbByQaumnqrNAxzl5A/zh-cn_image_0000002701663364.png)
 
 **操作步骤**
 
@@ -73,13 +73,13 @@ DevEco Studio支持通过内置的Clang-Tidy和自定义的Clang-Tidy对C/C++代
    * 在工程目录顶部或工程目录中任意文件，单击鼠标右键选择**Inspect Code**...。
    * 在菜单栏点击**Code >** **Inspect Code**...。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/M_fsi1jWRz2VY_iedk7OXQ/zh-cn_image_0000002731382589.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/VCZQRgt2RHS9MOiT88O1NQ/zh-cn_image_0000002731382589.png)
 2. 指定检查范围，如整个工程、某个模块或者具体文件，单击**Analyze**按钮执行代码检查。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/__ppvttSSfG0yP566Vtm1g/zh-cn_image_0000002701823282.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/bJzI3T4wQdu0I9wFbdRJYA/zh-cn_image_0000002701823282.png)
 3. 检查完成后在界面左下方可查看告警文件和告警信息，点击告警信息可跳转至具体代码位置，开发者可在界面右下方代码区和上方代码区编辑修改。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/vSx5ojtGSSaXuKO8wt61QQ/zh-cn_image_0000002731382595.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/ZnuUcQseSHKiIX51VYgLiA/zh-cn_image_0000002731382595.png)
 
 ## 通过自定义Clang-Tidy检查代码
 
@@ -94,7 +94,7 @@ DevEco Studio支持通过内置的Clang-Tidy和自定义的Clang-Tidy对C/C++代
 
 1. 在菜单栏进入**File > Settings...**（macOS系统为**DevEco Studio > Preferences/Settings...**）> **Languages & Frameworks** > **C/C++**，勾选**Use external Clang-Tidy instead of the built-in one**，添加clang-tidy.exe程序文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/3aUDJGt6RJSy-hjLFIxSAQ/zh-cn_image_0000002731382593.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/K_tZ_exdQ1iPOW-naX913g/zh-cn_image_0000002731382593.png)
 
    **说明** 
 
@@ -103,4 +103,4 @@ DevEco Studio支持通过内置的Clang-Tidy和自定义的Clang-Tidy对C/C++代
    * 进入clang-tidy界面，若勾选**Prefer .clang-tidy files over IDE settings**， [.clang-tidy文件中配置的规则](ide-clang-tidy.md#section158716295189)生效；若不勾选**Prefer .clang-tidy files over IDE settings**，[Inspection-checks中配置的规则](ide-clang-tidy.md#section841663417181)生效。
    * 若勾选**live update（show in “Current File”）**，会开启自动实时检查；若不勾选，需要手动检查，手动检查操作具体请参考[内置Clang-Tidy的手动检查](ide-clang-tidy.md#section1395112325376)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/z41OuAMvQZqbz9JGXJveYA/zh-cn_image_0000002731542559.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/_JCJ9EdETrSEFYC_AWBv9g/zh-cn_image_0000002731542559.png)
