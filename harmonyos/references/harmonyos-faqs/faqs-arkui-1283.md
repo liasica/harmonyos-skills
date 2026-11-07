@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1283
 title: 如何解决获取窗口实例时出现延迟的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何解决获取窗口实例时出现延迟的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:28+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:24a1957b26e17dc0fcbf030c863158b212384706f9cbb543b38af2f54db95e4c
+scraped_at: 2026-11-07T08:07:56+08:00
+doc_updated_at: 2026-11-06
+content_hash: sha256:c5095342d7c76a6a134bfd9604952afa25db4144563a2199880d7ff3002418aa
 ---
 
 ## 问题现象
 
-如果仅需要在部分页面实现诸如设置隐私模式，窗口旋转等功能，需要先获取到窗口实例，再通过窗口实例去设置隐私模式或窗口旋转等功能。以官网[如何实现防截屏功能](faqs-arkui-3.md)为例，通过方式二在PageOne和PageTwo设置隐私模式，在频繁切换页面时，有时隐私模式会失效，导致该页面可以截屏。
+如果仅需要在部分页面实现诸如设置隐私模式，窗口旋转等功能，需要先获取到窗口实例，再通过窗口实例去设置隐私模式或窗口旋转等功能。以官网[如何实现防截屏功能](arkui-uimana-faq-0010.md)为例，通过方式二在PageOne和PageTwo设置隐私模式，在频繁切换页面时，有时隐私模式会失效，导致该页面可以截屏。
 
 问题代码如下：
 
@@ -129,7 +129,7 @@ struct PageTwo {
 
 正常情况下，当反复切换页面时，隐私模式应该由开启到关闭再到开启往复循环。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/MbWxHAhoSBm3EBUGOddu1Q/zh-cn_image_0000002669661697.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/aoDFjUncSHqHWsDgfLlv0Q/zh-cn_image_0000002669661697.png "点击放大")
 
 但日志中mode出现了连续为1和连续为0情况，说明隐私模式不是从开启到关闭进行循环。
 

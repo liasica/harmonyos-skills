@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-web-
 title: 个人中心主页
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 页面功能介绍 > 个人中心主页
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:17+08:00
+scraped_at: 2026-11-07T08:02:13+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:48af588720826f0f3569bf8141b32baf9930c17cab878c1b9fb7cc05e3814d00
+content_hash: sha256:45a4ca114bc5641cdde509318b2dc9a584b5af7877ea481a285c3c1bfcf893b2
 ---
 
 个人中心主页是ohpm-repo私仓的核心管理页面，整个系统在此进行集中管理和操作，页面效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/WC96vhxyQ_-gk1TZKiHhxg/zh-cn_image_0000002731541465.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/-ZHqSG2tSrKz0mypIG4FgQ/zh-cn_image_0000002731541465.png "点击放大")
 
 **区域1**：个人信息区域，显示登录用户的信息。其中有编辑、复制发布码和修改密码三个功能。
 
@@ -30,7 +30,7 @@ content_hash: sha256:48af588720826f0f3569bf8141b32baf9930c17cab878c1b9fb7cc05e38
 
 * 管理员菜单：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/I-XFWfCsR46RZF_8IeTwkg/zh-cn_image_0000002731541459.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/VAZ6zTQ4QTmFEIgWpWTLSQ/zh-cn_image_0000002731541459.png "点击放大")
 * 普通用户菜单：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/cCOl8ra6RLmj5lNBj5gRew/zh-cn_image_0000002731381497.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/-dDNduW1QmqaHulJz0l-Og/zh-cn_image_0000002731381497.png "点击放大")

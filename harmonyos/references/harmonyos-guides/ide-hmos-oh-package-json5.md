@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-oh-p
 title: oh-package.json5
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > oh-package.json5
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:51+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:159d110b99d0084794efc35c256beadce10b8994f763365bb99e2379f08d6c2c
+scraped_at: 2026-11-07T08:02:42+08:00
+doc_updated_at: 2026-11-06
+content_hash: sha256:d3c35c2869c751b92c1ea7e6c769605011c59c69bec8fa77964f0f61d97456a6
 ---
 
 支持区分工程级与模块级oh-package.json5配置。其中：
@@ -625,7 +625,7 @@ AppTest
     }
   }
   ```
-* 基于 [overrideDependencyMap场景示例](ide-hmos-oh-package-json5.md#section106151513236) 工程，在entry模块下执行：ohpm i，此时，在ohpm运行时中会将项目级oh-package.json5中的配置会变更为：
+* 基于 [overrideDependencyMap场景示例](ide-hmos-oh-package-json5.md#section106151513236) 工程，在entry模块下执行：ohpm i，此时，在ohpm运行时中会将项目级oh-package.json5中的配置变更为：
 
   ```screen
   {
@@ -654,7 +654,7 @@ oh-package-lock.json5用于锁定所有依赖的版本，以及缓存依赖的�
 
 建议将oh-package-lock.json5文件提交到代码仓库中进行版本管理。优点如下：
 
-* 确保构建可复现： oh-package-lock.json5文件记录了三方包安装时确切的依赖树，其中包括每个依赖的版本、子依赖及其版本等详细信息。将该文件提交到代码仓库，能够确保团队成员、持续集成（CI）服务器或其他任何克隆该项目的用户，在执行ohpm install时可以获得完全一致的依赖版本，从而保证项目的可复现构建。
-* 提高安装速度： ohpm在安装依赖时，会优先使用oh-package-lock.json5锁定的版本信息，避免重新解析依赖版本，有效地加快安装过程。
-* 安全性： 通过锁定依赖版本，oh-package-lock.json5可以帮助防止因上游依赖更新引入的安全漏洞。当发现依赖存在安全问题时，可以针对性地更新特定依赖版本，并将更新后的oh-package-lock.json5提交到仓库，确保所有使用者都获取到修复后的版本。
-* 便于协同工作： 当团队成员在项目中添加、更新或删除依赖时，他们应运行ohpm update以更新oh-package-lock.json5。提交这些变更到仓库，可以让其他成员了解到依赖的变化，并在拉取最新代码后自动获取正确的依赖版本。
+* 确保构建可复现：oh-package-lock.json5文件记录了三方包安装时确切的依赖树，其中包括每个依赖的版本、子依赖及其版本等详细信息。将该文件提交到代码仓库，能够确保团队成员、持续集成（CI）服务器或其他任何克隆该项目的用户，在执行ohpm install时可以获得完全一致的依赖版本，从而保证项目的可复现构建。
+* 提高安装速度：ohpm在安装依赖时，会优先使用oh-package-lock.json5锁定的版本信息，避免重新解析依赖版本，有效地加快安装过程。
+* 安全性：通过锁定依赖版本，oh-package-lock.json5可以帮助防止因上游依赖更新引入的安全漏洞。当发现依赖存在安全问题时，可以针对性地更新特定依赖版本，并将更新后的oh-package-lock.json5提交到仓库，确保所有使用者都获取到修复后的版本。
+* 便于协同工作：当团队成员在项目中添加、更新或删除依赖时，他们应运行ohpm update以更新oh-package-lock.json5。提交这些变更到仓库，可以让其他成员了解到依赖的变化，并在拉取最新代码后自动获取正确的依赖版本。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1484
 title: 防截屏功能实现及判断窗口是否允许截屏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 防截屏功能实现及判断窗口是否允许截屏
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:30+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:a8bdab8079d9f5973cb9896bb256c7c01fb65366d49c6bdb7bb28829af30d257
+scraped_at: 2026-11-07T08:07:58+08:00
+doc_updated_at: 2026-11-06
+content_hash: sha256:98c6ee3d5e032a06ac94392bb7469ca126bb2da8c9b0a0a0a0779d690110646e
 ---
 
 ## 问题现象
@@ -26,7 +26,7 @@ content_hash: sha256:a8bdab8079d9f5973cb9896bb256c7c01fb65366d49c6bdb7bb28829af3
 
 ## 解决方案
 
-* 方案一：设置主窗口为隐私模式，可参考[如何实现防截屏功能](faqs-arkui-3.md)中的方式二。
+* 方案一：设置主窗口为隐私模式，可参考[如何实现防截屏功能](arkui-uimana-faq-0010.md)中的方式二。
 * 方案二：针对单个页面需要设置隐私模式，可以在进入页面开启隐私模式，离开页面取消，具体步骤如下。
   1. 在module.json5文件中配置权限[ohos.permission.PRIVACY\_WINDOW](../harmonyos-guides/permissions-for-all.md#ohospermissionprivacy_window)，示例代码如下：
 

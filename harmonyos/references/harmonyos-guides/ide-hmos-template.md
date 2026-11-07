@@ -3,25 +3,25 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-temp
 title: 工程模板介绍
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 开发环境搭建 > 工程创建 > 工程模板介绍
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:42+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:af919c432357dbbe5f5cd55e141e925e537e61992244319b6bfb1e3307e0a187
+scraped_at: 2026-11-07T08:02:33+08:00
+doc_updated_at: 2026-11-06
+content_hash: sha256:55eb5321f842d847f5e1f8bdbbf17f2a9403e1338e517ccf09ed8e38798107d8
 ---
 
 鸿蒙电脑DevEco Studio支持多种品类的应用和元服务开发，预置丰富的工程模板，可以根据工程向导轻松创建适应于各类设备的工程，并自动生成对应的代码和资源模板。同时，DevEco Studio还提供了多种编程语言供开发者进行应用/元服务开发，包括ArkTS和C/C++。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/0TWgGgzfSj6Z-pBRYlchIQ/zh-cn_image_0000002779608619.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/cT_g5fzbQveBsPC05iHBtA/zh-cn_image_0000002781311128.png "点击放大")
 
 应用工程支持的开发语言及模板说明如下表所示：
 
 | 模板名称 | 说明 |
 | --- | --- |
-| Empty Ability | 用于Phone、Tablet、2in1设备的模板，展示基础的Hello World功能。 |
-| Native C++ | 用于Phone、Tablet、2in1设备的模板，作为应用调用C++代码的示例工程，界面显示“Hello World”。 |
+| Empty Ability | 用于Phone、Tablet、2in1、Car、Wearable、TV设备的模板，展示基础的Hello World功能。 |
+| Native C++ | 用于Phone、Tablet、2in1、Car、Wearable、TV设备的模板，作为应用调用C++代码的示例工程，界面显示“Hello World”。 |
 
 元服务工程支持的开发语言及模板说明如下表所示：
 
 | 模板名称 | 说明 |
 | --- | --- |
-| Empty Ability | 用于Phone、Tablet设备的模板，展示基础的Hello World功能。 |
-| Embeddable Ability | 用于Phone、Tablet设备的模板，此模板在嵌入式模式下实现启动服务。 |
+| Empty Ability | 用于Phone、Tablet、Car设备的模板，展示基础的Hello World功能。 |
+| Embeddable Ability | 用于Phone、Tablet、Car设备的模板，此模板在嵌入式模式下实现启动服务。 |

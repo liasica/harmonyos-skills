@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpm run
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm run
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:54+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:ac421b368dcde325486978d163d05fc6f1b016f57ae3128bd54ce0a6190b5085
+scraped_at: 2026-11-07T08:02:42+08:00
+doc_updated_at: 2026-11-06
+content_hash: sha256:800d93715969affd1e62983375c165f489b23c3b8929f324b102abe55c692399
 ---
 
 执行用户自定义脚本。
@@ -47,7 +47,7 @@ ohpm run [options] <script_name> [-- <args...>]
   ohpm run scriptName3 -- -paramKey1 newValue -paramKey4 paramValue4
   ```
 
-  该示例表明，脚本scriptName3的参数paramKey1会被替换为newValue, 并新增一个参数paramKey4。
+  该示例表明，脚本scriptName3的参数paramKey1会被替换为newValue，并新增一个参数paramKey4。
 * 如果脚本内容为ohpm run scriptName且使用了标识符“--”，则该scriptName对应的脚本内容不能再包含ohpm run相关的描述，避免嵌套引用。
 
 ### 支持多命令
@@ -124,7 +124,7 @@ ohpm run testSuc
 
 执行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/P3fgW8xLQAml9sc3IUS7-g/zh-cn_image_0000002779728935.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/suVgZ7CTSaKluckfXlBprQ/zh-cn_image_0000002810630799.png "点击放大")
 
 ### 失败示例
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-
 title: 加载丢帧：ArkWeb分析
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 加载丢帧：ArkWeb分析
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:36+08:00
+scraped_at: 2026-11-07T08:02:28+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:41dc1080bf9a77292e77088b3e49f5673ead6162b390bbb1c0a06684cd30316c
+content_hash: sha256:fc0006d0d310be0a90120005e07596f41b10a5d52cf2aac7bcb3b7e59dcc8c62
 ---
 
 ## 功能介绍
@@ -31,7 +31,7 @@ ArkWeb模板支持的泳道包括：ArkWeb、User Events、ArkTS Callstack、Cal
 
 **Details**区域可以跳转关键trace所在泳道，进一步分析加载问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/R98C6ymhQoeWXj9_EFxfrw/zh-cn_image_0000002701663768.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/8G_-5dafTtOerEQBwiwGOQ/zh-cn_image_0000002701663768.png "点击放大")
 
 ## ArkWeb丢帧问题分析
 
@@ -45,18 +45,18 @@ ArkWeb模板支持的泳道包括：ArkWeb、User Events、ArkTS Callstack、Cal
    * VizCompositorTh：绘制信号监听线程，向图形请求Web本身的vsync信号，触发系统Web相关绘制或执行。
    * Web应用Render线程：以 :render 结尾的线程，主要用于图形渲染任务，包括html、css解析，进行分层布局绘制。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/9nlVCAINT-uQsRyN9y042A/zh-cn_image_0000002701823692.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/D-LQtzbNQTmw_rla95RK9Q/zh-cn_image_0000002701823692.png "点击放大")
 2. 一般结合**H:RosenWeb**泳道和**PresentFence**泳道来分析是否存在丢帧。
 
    H:RosenWeb上标识有待提交给渲染服务的数据量。正常情况下，每个数据量都会提交给硬件进行上屏，即PresentFence泳道上的H:Waiting for PresentFence trace点。如果某个数据量在PresentFence泳道上没有该trace点，那么很可能是存在丢帧问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/FWWpbYRsRvmmNSQHLlcAXQ/zh-cn_image_0000002701663766.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/ZLuO0z9QQQSqkDxogayJ9g/zh-cn_image_0000002701663766.png "点击放大")
 
 3. 在ArkWeb的子泳道中，Web应用Render线程提供了分析子资源加载各阶段具体耗时的能力。切换到 **Sub Resource**区域，可查看详细信息。
 
    包括统一资源定位符、缓存类型、是否为本地资源替换、请求资源时间（ns）、队列时间（ns）、停滞时间（ms）、dns解析时间（ms）、连接耗时（ms）、ssl连接时间（ms）、服务器响应耗时（ms）、下载耗时（ms）、传输时间（ms）、请求方法、状态码、编码前资源大小、编码后资源大小以及HTTP版本。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/tFz5OCtlR7mJ_OraYMCnQQ/zh-cn_image_0000002701823690.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/li_RYN3FSymAr9T0jge0PA/zh-cn_image_0000002701823690.png "点击放大")
 4. 点选某一行，可以查看该URL对应的缓存信息。包括缓存存在时长、最后修改时刻、过期时刻、缓存指令、资源的唯一标识符以及资源是否过期。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/UZq3ZK4JQXetmwR6v_Rx4A/zh-cn_image_0000002701663770.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/5oCaMZ5YSO2nAprsfr63OQ/zh-cn_image_0000002701663770.png "点击放大")

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 规格错误码
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 构建报错排查 > 编译构建错误码 > 规格错误码
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:36+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:93dcf553c6510c8182f92b94bda2dda9e3e04304082e960cdfb2556e3dc3fd2b
+scraped_at: 2026-11-07T08:02:41+08:00
+doc_updated_at: 2026-11-06
+content_hash: sha256:a69f24d1733126f485b6a08bcd3548286be44c1c35cdbfacd6217a16d7295da5
 ---
 
 ## 00306001 文件路径长度超过最大限制
@@ -746,7 +746,7 @@ ohpm安装依赖失败。
 
 **可能原因**
 
-网络不通，或[ohpm镜像仓库地址](ide-hmos-ohpmrc.md#zh-cn_topic_0000001792216397_默认配置项)、oh-package.json5中依赖的包名、版本号不正确。
+网络不通，或[ohpm镜像仓库地址](ide-hmos-ohpmrc.md#section122351527183)、oh-package.json5中依赖的包名、版本号不正确。
 
 **处理步骤**
 

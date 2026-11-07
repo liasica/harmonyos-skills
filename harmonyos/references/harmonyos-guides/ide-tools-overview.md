@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-tools-ove
 title: 工具概述
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工具概述
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:16+08:00
+scraped_at: 2026-11-07T08:02:11+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:7f4fdd1539267a150c3b52949f32f9dcfac7d8bfd5134a6b5a24f7798e6bed8c
+content_hash: sha256:46e26475696d3e9a2f2910479781f7092dd6af73073fdb7c181a78e041e69e18
 ---
 
 ## HarmonyOS应用/元服务开发
@@ -28,7 +28,7 @@ HUAWEI DevEco Studio（获取工具请单击[链接下载](https://developer.hua
 
 开发一个应用/元服务流程如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/PSs9GEi5SWe6MHMih2XlEA/zh-cn_image_0000002731543105.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/2I5RFcT6QYOcheQ8VHwDmA/zh-cn_image_0000002731543105.png)
 
 **一、开发准备**
 

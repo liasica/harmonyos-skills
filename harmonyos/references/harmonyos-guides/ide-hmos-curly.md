@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-curl
 title: "@hw-stylistic/curly"
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > ArkTS代码风格规则@hw-stylistic > @hw-stylistic/curly
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:32+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:fb5517e9498ed99797e2c1017ba8c6b4f3b0aafb6c6abebc1618945932530876
+scraped_at: 2026-11-07T08:02:37+08:00
+doc_updated_at: 2026-11-06
+content_hash: sha256:b0a8e586dcb1feaf2e750d5cf8fc6efd2bc400b801b04dc354d67d4b8fd532d4
 ---
 
 条件语句和循环语句的逻辑代码必须写在大括号中。该规则仅检查.ets文件类型。
@@ -31,7 +31,7 @@ content_hash: sha256:fb5517e9498ed99797e2c1017ba8c6b4f3b0aafb6c6abebc16189459325
 export function test(a: number, b: number) {
   if (a > b) {
     console.info('doSomething');
-  } else if (a = b) {
+  } else if (a === b) {
     console.info('doSomething');
   } else {
     console.info('doSomething');
@@ -53,7 +53,7 @@ export function test(a: number, b: number) {
   if (a > b)
   // Expected { after 'if' condition.
     console.info('doSomething');
-  else if (a = b)
+  else if (a === b)
   // Expected { after 'if' condition.
     console.info('doSomething');
   else

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-co
 title: 常见问题
 breadcrumb: 指南 > DevEco Code > DevEco Code TUI > 常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:54+08:00
+scraped_at: 2026-11-07T08:02:43+08:00
 doc_updated_at: 2026-10-31
-content_hash: sha256:7e9b58c0ae35184a53e03ccfa6b325f077ba3978bede7eb76463efab1aa64bf5
+content_hash: sha256:830db9cc7a74a8fce7e8ffe2c327cb1b81be5ce35d982260b034127637e364b4
 ---
 
 ## 在鸿蒙电脑版DevEco Code执行命令时，提示“Permission denied：node”
@@ -14,7 +14,7 @@ content_hash: sha256:7e9b58c0ae35184a53e03ccfa6b325f077ba3978bede7eb76463efab1aa
 
 执行安装命令或检验环境搭建等命令时，提示没有node权限。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/tw04du9JTayPbRDI-A1pMA/zh-cn_image_0000002749157632.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/zJbyOGT5SRaXqyazX61hDg/zh-cn_image_0000002749157632.png)
 
 **可能原因**
 
@@ -32,7 +32,7 @@ tar -zxvf commandline-tools-harmonyos-xxx.tar.gz
 
 **问题现象**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/9eYX7DRWTMWqYrtSPJzOjA/zh-cn_image_0000002748997754.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/zb03r0dzS7ajbxxs-wNxCw/zh-cn_image_0000002748997754.png)
 
 **可能原因**
 
@@ -64,7 +64,7 @@ tar -zxvf commandline-tools-harmonyos-xxx.tar.gz
 
 在鸿蒙电脑上执行npm install -g @deveco/deveco-code@stable命令安装DevEco Code时，有报错提示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/wAzCvbgCSqWDRYqdJGugMQ/zh-cn_image_0000002749173362.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/mWZ_rnIkTZKAA40GvyI9eg/zh-cn_image_0000002749173362.png)
 
 **可能原因**
 
@@ -80,7 +80,7 @@ tar -zxvf commandline-tools-harmonyos-xxx.tar.gz
 
 在鸿蒙电脑DevEco Studio中安装DevEco Code时，弹窗提示“无法运行来自非应用市场的扩展程序”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/OOoqsXmnS62OE7pUGLKd8A/zh-cn_image_0000002785060491.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/ZDGE4z5oTCGZ0jahDAqlnQ/zh-cn_image_0000002785060491.png)
 
 **可能原因**
 
@@ -90,4 +90,4 @@ tar -zxvf commandline-tools-harmonyos-xxx.tar.gz
 
 点击弹窗中的**去设置 >** **隐私和安全**，开启**运行来自非应用市场的扩展程序**后，重新安装DevEco Code。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/sagUH6Z8SxSZ4XCTVOZ2og/zh-cn_image_0000002755421580.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/QQ-9p9HfQMmN9tRfOrTEPg/zh-cn_image_0000002755421580.png)

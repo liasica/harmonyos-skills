@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-commemory
 title: UI组件内存：ComMemory分析
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > UI组件内存：ComMemory分析
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:36+08:00
+scraped_at: 2026-11-07T08:02:28+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:2084cad68a7b850d17708f68a88f38e691769b7a4c4fc68e4e64466815205b26
+content_hash: sha256:88f5e6ba6040b3cf716cf37fb9b6b06c24a799bcbf23892c719d5bc8bd58a77f
 ---
 
 ## 功能介绍
@@ -23,16 +23,16 @@ ComMemory模板支持的泳道包括：Memory、ArkUI Snapshot、ArkTS Snapshot�
 
 ## 查看组件树和组件信息
 
-1. 开始录制后观察**Memory**泳道的内存使用情况，在需要定位的时刻单击任务左上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/5biucHlhRG-5_yOVJrhvAw/zh-cn_image_0000002731381907.png "点击放大")启动一次快照，一次快照完成后会在**ArkUI Snapshot**泳道出现紫色区块。
+1. 开始录制后观察**Memory**泳道的内存使用情况，在需要定位的时刻单击任务左上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/F_Q7XAWlRaCmXPD_z6CCOg/zh-cn_image_0000002731381907.png "点击放大")启动一次快照，一次快照完成后会在**ArkUI Snapshot**泳道出现紫色区块。
 
    **Details**区域显示当前快照的详细信息，点击**Open**，将在[ArkUI Inspector](ide-arkui-inspector.md)中打开相应的.arkli文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/nh61yzWQST2rLoMNq8IFTg/zh-cn_image_0000002701822608.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/V5L26SDYR06fz-DW0L8F5w/zh-cn_image_0000002701822608.png "点击放大")
 2. 在ArkUI Inspector中查看组件树。26.0.0版本新增Show Free-Node Components。
 
-   默认勾选**Show Component Size**和**Show Free-Node Components**，Show Component Size显示各组件的内存占用情况，Show Free-Node Components显示游离组件（未在组件树上的组件）。点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/YIekBjNsR2eiZVNk6a90cw/zh-cn_image_0000002731381913.png "点击放大")，勾选**Show Recursive Size**，显示各组件为根的子树的内存占用情况。
+   默认勾选**Show Component Size**和**Show Free-Node Components**，Show Component Size显示各组件的内存占用情况，Show Free-Node Components显示游离组件（未在组件树上的组件）。点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/_GuSWzFsSFmkSGOKyWa8oQ/zh-cn_image_0000002731381913.png "点击放大")，勾选**Show Recursive Size**，显示各组件为根的子树的内存占用情况。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/luGKNgIXQQ6UqZICdD89rg/zh-cn_image_0000002701662696.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/PFs5AeHqQ_6pipttn_rYSQ/zh-cn_image_0000002701662696.png)
 3. 在ArkUI Inspector中查看组件的信息。
    * 在ArkUI Inspector的**Memory** >**Statistics**中，查看组件的内存统计信息。
      + Current：当前组件ArkTS内存和Native内存的占用情况。
@@ -43,34 +43,34 @@ ComMemory模板支持的泳道包括：Memory、ArkUI Snapshot、ArkTS Snapshot�
      + arktsCount：当前组件的ArkTS堆快照对象个数。
      + recursive：递归统计信息。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/YlML2G5FT7ib-0Vz5kMxmw/zh-cn_image_0000002701662692.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/qdUcMNJqQsKezin2vIfkmQ/zh-cn_image_0000002701662692.png "点击放大")
    * 在ArkUI Inspector的**Memory** > **Details**中，点击Details中任一项后，打开DevEco Profiler查看显示组件的详情。
      + ShowAllocationDetail：显示当前组件的Allocation详情。
      + ShowSnapshotDetail：显示当前组件的Snapshot详情，系统组件不显示该项。
      + ShowRecursiveAllocationDetail：显示当前组件及其子组件的Allocation详情。
      + ShowRecursiveSnapshotDetail：显示当前组件及其子组件的Snapshot详情。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/dHdGrL78TL6lVC-P_Xe2_g/zh-cn_image_0000002701822612.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Y4GbMwIhQWWKO6Ux5XrNBA/zh-cn_image_0000002701822612.png "点击放大")
    * 在ArkUI Inspector的**Memory** > **State****s**中，查看UI组件的状态变量内存。
 
      memory字段表示该状态变量在对应组件的ArkTS堆快照中的Retained Size，更多请参考[查看UI组件的状态变量](ide-arkui-inspector.md#section19923158103412)。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/lzNYdLz1RA2ayOiWsREpOg/zh-cn_image_0000002731541881.png)
-4. 在中间栏点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/FAagpVsSQbO79dTkFxRCcQ/zh-cn_image_0000002701662688.png)可以将包含内存信息的组件树快照导出到本地。
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/DdtE1Z_9TOqT_doFxyB6tQ/zh-cn_image_0000002731541881.png)
+4. 在中间栏点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/TbNjWxKJSqaX4dTP_Jx3jw/zh-cn_image_0000002701662688.png)可以将包含内存信息的组件树快照导出到本地。
 
 ## .arkli文件对比
 
 从26.0.0版本开始，支持对比.arkli文件，通过对比快速定位异常增多的组件。
 
-1. 开始录制后观察**Memory**泳道的内存使用情况，在需要定位的时刻单击任务左上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/TyRggMQeQuiESlS3ZW0ZpA/zh-cn_image_0000002701822616.png "点击放大")启动一次快照，一次快照完成后会在**ArkUI Snapshot**泳道出现紫色区块。
+1. 开始录制后观察**Memory**泳道的内存使用情况，在需要定位的时刻单击任务左上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/VUsiQFj1QMeILDrsK3fsJA/zh-cn_image_0000002701822616.png "点击放大")启动一次快照，一次快照完成后会在**ArkUI Snapshot**泳道出现紫色区块。
 
    **Details**区域显示当前快照的详细信息，点击**Open**，将在[ArkUI Inspector](ide-arkui-inspector.md)中打开相应的.arkli文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/XCqvBtOwRDCcrLE3PzHHsg/zh-cn_image_0000002731541889.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/4n4JcayXQl2NYcGaquiUIw/zh-cn_image_0000002731541889.png "点击放大")
 2. 当前打开的.arkli文件作为base文件，在Component Tree下拉框选择的.arkli文件作为Target文件，查看两个.arkli文件的比较结果，从比较结果可查看：新增组件（绿色，如Column）、删除组件（红色，如NavBar）、游离组件（灰色，如JsView），及其子组件新增（绿色，如+1576）和删除个数（红色，如-8）。点击异常增多的组件，在右侧属性面板展示组件所在代码文件，点击可跳转至具体代码。
 
    **说明** 
 
    Target文件需要先点击**Open**按钮在ArkUI Inspector中打开，否则在下拉框中选不到。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/cfSxgGM3Ql2b2qbDzr1iuQ/zh-cn_image_0000002731541885.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/bdOCKYLwQH22KVN6W46uFw/zh-cn_image_0000002731541885.png)

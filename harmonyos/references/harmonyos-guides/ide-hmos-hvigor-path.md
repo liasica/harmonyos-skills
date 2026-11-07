@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 自定义.hvigor目录路径
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 配置构建流程 > 自定义.hvigor目录路径
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:35+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:77a2a8566fc2cba3430153fe4f5442c85faa674edc9808533df08e1ac23afcc0
+scraped_at: 2026-11-07T08:02:39+08:00
+doc_updated_at: 2026-11-06
+content_hash: sha256:d334272dbad3e66675749d823bf399002cf829c8f00f3c635521f8f9eff09088
 ---
 
 .hvigor目录默认位于用户目录下：/storage/Users/currentUser/.hvigor
 
-若默认目录的磁盘空间不足，开发者需要自定义.hvigor目录路径，可通过以下方式自行配置。
+若默认目录的磁盘空间不足，开发者需要自定义.hvigor目录路径，可通过以下方式配置。
 
 **说明** 
 

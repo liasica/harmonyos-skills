@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: 云调试应用期间出现黑屏如何处理
 breadcrumb: FAQ > DevEco Studio > 应用调试 > 云调试应用期间出现黑屏如何处理
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:57+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:3cc0c9204b39150c1b4ba59ba047f14e10658927d2f6226d9be4030fda678c57
+scraped_at: 2026-11-07T08:09:16+08:00
+doc_updated_at: 2026-11-06
+content_hash: sha256:5e1ffab5ff192fdb2a1b951e2d88f5335b6f76944451d54e309980c9ef1e9cba
 ---
 
 ## 问题现象
@@ -23,7 +23,7 @@ content_hash: sha256:3cc0c9204b39150c1b4ba59ba047f14e10658927d2f6226d9be4030fda6
 
   由于应用自身登录页设置了防截屏，此时云真机会显示黑屏，有两种方案可选：
 
-  1. 可以重新打包将防截屏开关关闭，参考文档[如何实现防截屏功能](faqs-arkui-3.md)。
+  1. 可以重新打包将防截屏开关关闭，参考文档[如何实现防截屏功能](arkui-uimana-faq-0010.md)。
   2. 通过点击“获取控件树”按钮启动辅助控件绘制功能来完成账号登录。详情请参见[使用获取控件树按钮完成登录](../app/agc-help-clouddebug-debugapp-0000002289629821.md#section1851413117162)。
 * **问题二解决方案：**
 

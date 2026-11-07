@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-import-mo
 title: 导入和引用模块
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 导入和引用模块
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:16+08:00
+scraped_at: 2026-11-07T08:02:12+08:00
 doc_updated_at: 2026-06-24
-content_hash: sha256:d80783c9f951563d26f066cd3a140b64771c394f3278ffc7ffd4e15e075e1218
+content_hash: sha256:8c1d80f3914613aaf45b934ce9f3023b62164909980e28cc6dbf085c2f91556a
 ---
 
 DevEco Studio支持通过以下两种方式导入其他工程下的模块：
@@ -17,15 +17,15 @@ DevEco Studio支持通过以下两种方式导入其他工程下的模块：
 
 1. 在菜单栏单击**File > New > Import... > Import Module。**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/k5IFR6zUTqeQTXR_qq3qpg/zh-cn_image_0000002731382415.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/h0JDhSppT2SbZMb8Y1wWhg/zh-cn_image_0000002731382415.png)
 2. 选择导入的模块。
 
    在指定路径下，选择导入的模块，单击**OK**。导入的模块可以为文件夹，也可以为zip格式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/hjgzqwjWQa62XCOgRy3zAg/zh-cn_image_0000002701823114.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/6O1FpFhQQkOzWXosl99kQQ/zh-cn_image_0000002701823114.png)
 
 ## 引用模块
 
 在工程级build-profile.json5文件中，如下图所示在modules > srcPath字段下配置工程外模块的相对路径，即可引用模块相关信息，不会将模块代码完全复制至本工程中。当前支持引用其他工程下的HAR和HSP模块。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/SG_rQzl_SG2IulXeorJYIw/zh-cn_image_0000002731542387.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/YLMuw52iR5mnEydFZGhJbg/zh-cn_image_0000002731542387.png)

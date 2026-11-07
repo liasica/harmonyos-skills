@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-prof
 title: 界面布局
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 优化应用性能 > DevEco Profiler调优工具简介 > 界面布局
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:51+08:00
+scraped_at: 2026-11-07T08:02:41+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:a5506b52153757911a214ddc849b78a72cf1a43bedd11d3c927311b2d15fa4d2
+content_hash: sha256:5ee8936a5d28027c45edd6d1c9b2474ad4792c4e016e213a3ff6ddac69de8725
 ---
 
 DevEco Profiler工具的首页分为两大区域：
@@ -16,4 +16,4 @@ DevEco Profiler工具的首页分为两大区域：
 
 ②[数据区](ide-hmos-profiler-data.md)：负责性能数据的可视化呈现。包含工具控制栏、时间轴、泳道区域、详情区域，通过不同泳道展示，直观展示调优详情。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/8n_ZSctZRd6hG4N2OCxVNw/zh-cn_image_0000002750009760.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/qt17zu45R061YPd16-nYAw/zh-cn_image_0000002781471126.png "点击放大")

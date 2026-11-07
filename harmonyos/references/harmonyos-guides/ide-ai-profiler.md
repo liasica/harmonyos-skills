@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ai-profil
 title: 智慧调优
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 智慧调优
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:39+08:00
+scraped_at: 2026-11-07T08:02:31+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:8b2ff837ceaeda38eb1a0b4d4302754538f02dac73e2020887333d9e23062f4c
+content_hash: sha256:66b3da7283d16465fb9e27c86fec02f5c58a0aa5d672875250cc40fc91241fa1
 ---
 
 DevEco Studio的Profiler工具中已集成智慧调优能力，支持通过自然语言交互，分析并解释当前实例或项目中存在的性能问题，帮助开发者快速定位影响性能的具体原因。
@@ -24,26 +24,26 @@ DevEco Studio的Profiler工具中已集成智慧调优能力，支持通过自�
 
 1. 首次使用请先根据界面提示完成CodeGenie授权登录。当前支持如下两种开启方式：
 
-   **方式一：**若Launch、Frame、Allocation、Snapshot模板已录制完成，点击**Session**窗口中该条会话上的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/gjSnmJVWSmm3UdEfcK7RIA/zh-cn_image_0000002701662872.png "点击放大")图标，即可开始智慧调优分析。录制方法具体请参考[性能问题定位：深度录制](deep-recording.md)。
+   **方式一：**若Launch、Frame、Allocation、Snapshot模板已录制完成，点击**Session**窗口中该条会话上的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/aacoCkjpTf-FMZ_ryR5kCg/zh-cn_image_0000002701662872.png "点击放大")图标，即可开始智慧调优分析。录制方法具体请参考[性能问题定位：深度录制](deep-recording.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/4KYH1MVGSUGdEnkKI0iI9Q/zh-cn_image_0000002731382095.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/FuMfQ4EKR6W5hWULmHLJ0w/zh-cn_image_0000002731382095.png)
 
    **方式二：**切换至**Assistant**窗口，点击**Create Session**开始录制调优任务；或点击**Open File**按钮导入已有的调优数据文件，当前支持导入的文件类型包括.insight、.heapsnapshot、.rawheap。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/0QLM3ii9Qi--xRYbxpTMrg/zh-cn_image_0000002731382101.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/3fEQQK5lSJS9hh0ap2SDoQ/zh-cn_image_0000002731382101.png)
 2. 对于方式二，在**Assistant**页面，点击**Create Session**按钮，从**Launch**、**Frame**、**Snapshot**、**Allocation**中选择一个分析模板。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/RJb8ED9pQBOXjAZc6JrfQg/zh-cn_image_0000002701662878.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/hf77mUFeQci_FJF7bZbQXQ/zh-cn_image_0000002701662878.png)
 
    使用Snapshot模板对堆快照问题进行分析时，支持在对话框中选择单个Snapshot分析，或选择两个Snapshot进行对比分析。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/kfLsFOCuQZ2wVo4205R9Cg/zh-cn_image_0000002731382097.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/pJeY_kQ6RN21F8XXegBk-w/zh-cn_image_0000002731382097.png)
 3. 以Allocation为例，录制新的调优任务或导入本地已有的调优数据模板文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/sxP_AFWzTc6gUOukU4jvkg/zh-cn_image_0000002701822796.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/qrbRh6usSJmagYJwnFOCnA/zh-cn_image_0000002701822796.png)
 4. 等待AI完成初步分析。左键点击高亮的泳道名称，点击**Analyze**进一步分析该阶段的具体内存信息，点击**View Lane**在右侧查看具体的泳道信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/LSW99AQwTeeUuFXxMSBm9A/zh-cn_image_0000002731542071.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/xeiIEckeRF6ZFzmaPIECNg/zh-cn_image_0000002731542071.png)
 5. 点击**Analyze**后，逐步深入挖掘当前异常场景，找到影响性能的可能原因。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/UkgS7BxERDSuqKnILpqz9A/zh-cn_image_0000002701822802.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/3FxY9lFYToqdAFDEIWHm0Q/zh-cn_image_0000002701822802.png)

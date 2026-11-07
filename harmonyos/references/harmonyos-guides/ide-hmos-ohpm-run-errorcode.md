@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpm run错误码
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm run错误码
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:39+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:f04c1a1e912288336c0083bd29bfb6c28635dc5d95a857d9fc3088123e7684e9
+scraped_at: 2026-11-07T08:02:42+08:00
+doc_updated_at: 2026-11-06
+content_hash: sha256:c080c9be5e022e0d53e27fa5c03938d014d77f9a21e7b4862ca49debd97fa89c
 ---
 
 ## 00611001 脚本执行失败
@@ -338,4 +338,4 @@ Invalid Param Config Error.
 
 **处理步骤**
 
-传递参数配置时，确保以--开头，以指示需要添加或覆盖的参数。具体请参考[传递参数](ide-hmos-ohpm-run.md#zh-cn_topic_0000001792216413_传递参数)。
+传递参数配置时，确保以--开头，以指示需要添加或覆盖的参数。具体请参考[传递参数](ide-hmos-ohpm-run.md#section15132366135)。

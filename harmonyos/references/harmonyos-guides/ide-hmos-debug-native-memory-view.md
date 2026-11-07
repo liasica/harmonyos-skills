@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-debu
 title: 查看内存信息
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 查看内存信息
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:48+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:29623281f7a9e11b7d7da78b768061f10c6825eab5eeac16ea2f83223832df9e
+scraped_at: 2026-11-07T08:02:38+08:00
+doc_updated_at: 2026-11-06
+content_hash: sha256:f99eb50e77f6a668f07679d7e2be2a822c88c969b0c70b0502e531accf32e678
 ---
 
 在native调试窗口中，点击**内存**，打开内存查看窗口。
@@ -14,20 +14,20 @@ content_hash: sha256:29623281f7a9e11b7d7da78b768061f10c6825eab5eeac16ea2f8322383
 
 在内存视图中，填写地址、数量、进制，点击地址旁的搜索按钮，或者按回车键，查看对应地址处的内存。
 
-返回的数据显示在下面的数据表中，第一列显示地址，0-F每个方框显示一个字节内存数据的16进制形式，一行显示16个字节的内存数据，最后一列显示每一个字节对应的ASCII值。
+返回的数据显示在下面的数据表中，第一列显示地址，0-F每个方框显示一个字节内存数据的十六进制形式，一行显示16个字节的内存数据，最后一列显示每一个字节对应的ASCII值。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/Jn9Xfw1XStiQMVPywoGtDQ/zh-cn_image_0000002750009844.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/bIxek4QWShucWXigALusxA/zh-cn_image_0000002781311274.png)
 
 支持内存值以十六进制、十进制、二进制展示，下拉框选择**Hexadecimal、Decimal或Binary**，默认为**Hexadecimal**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/QVgLzi-YR8e5DGwV3BCGxw/zh-cn_image_0000002750169738.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/9eKSHY86SEalOpsTiL3K2Q/zh-cn_image_0000002781471210.png)
 
 ## 内存修改
 
 可以在内存格上双击，输入想要修改的内存来修改对应地址处的内存值。十六进制可以输入1-2位，十进制可以输入1-3位，二进制可以输入1-8位，输入的值转换为十进制数值范围为0-255（一个字节8位）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/OZbXyZVESTyBbHsxeejaGw/zh-cn_image_0000002779608759.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/m4Dkv55pRqWaahzMxVDapA/zh-cn_image_0000002781471208.png)
 
 修改完之后，ASCII码也会同步刷新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/UNUVdl-oRrCzK1nI9GAysQ/zh-cn_image_0000002779728909.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/Fa6fCbnsSDC1GgX_NyK1uw/zh-cn_image_0000002781311276.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 配置CPP
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 配置构建流程 > 配置CPP
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:49+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:d0948115fd2360fc70a11b10799e26fee556d43ebb6cc759c8b8babcaa7cf9c2
+scraped_at: 2026-11-07T08:02:39+08:00
+doc_updated_at: 2026-11-06
+content_hash: sha256:a05c0e433426f007535ab08d66f8f1adb1ae1aa5a792fb614b95c9ffe2d3ce2a
 ---
 
 Hvigor集成CMake、Ninja为cpp代码的构建工具。在初始状态下，无需额外配置，您也可以添加以下自定义配置，定制cpp代码编译。
@@ -20,7 +20,7 @@ externalNativeOptions是Native编译配置项。
 
 | 字段名称 | 类型 | 可选/必选 | 含义 |
 | --- | --- | --- | --- |
-| path | 字符串 | 可选 | CMake构建脚本地址，即CMakeLists.txt文件地址。 |
+| path | 字符串 | 可选 | CMake构建脚本（CMakeLists.txt文件）地址。 |
 | abiFilters | 字符串数组 | 可选 | HarmonyOS当前支持的ABI编译环境，包括：   * arm64-v8a * x86\_64   如不配置该参数，编译时默认为arm64-v8a。 |
 | arguments | 字符串/字符串数组 | 可选 | CMake编译参数。  Hvigor将会把此处的自定义参数传递给CMake构建工具，您可通过CMake官方文档查找您所需的编译参数，同时它也将覆盖默认同名参数。 |
 | cppFlags | 字符串 | 可选 | C++编译器参数。 |
@@ -67,7 +67,7 @@ filter是Native 库（.so）文件的筛选选项。配置后优先级高于[nap
   + 三方包（包括远程三方包及本地har包）的优先级高于本地依赖模块的优先级。
   + 按照广度优先的遍历方式来收集依赖，如下图，优先级顺序为current > library0 > library1 > library5 > library2 > library3 > library4。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/FgNO73zlSpGeigwUTziEMg/zh-cn_image_0000002750169538.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/vNixTk6oQ-ij39MZRPyCbw/zh-cn_image_0000002810750645.png "点击放大")
 * **select**
 
   **表4** select字段说明
@@ -113,13 +113,13 @@ filter是Native 库（.so）文件的筛选选项。配置后优先级高于[nap
               package: "@ohos/curl", // 包名
               version: "1.3.5", // 包版本
               excludePattern: ['**/arm64-v8a/**'],    // 排除har包arm64-v8a目录下的所有.so文件
-             },
+            },
             {
               package: "@ohos/curl1", // 包名
               version: "1.3.5", // 包版本
               includePattern: ['**/x86_64/libcurl.so'],  // 针对重名的libcurl.so，指定打包har1包中的libcurl.so
               // include: ["libcurl.so"]  // 针对重名的libcurl.so，指定打包har1包中的libcurl.so
-             },
+            },
           ]
         }
       }
@@ -155,7 +155,7 @@ filter是Native 库（.so）文件的筛选选项。配置后优先级高于[nap
               excludePattern: ['**/arm64-v8a/!(*(libcurl1|libcurl2).so*)'], // 打包arm64-v8a目录下的libcurl1.so和libcurl2.so
               // include: [],
               // exclude: ["libcurl.so"] // 打包arm64-v8a目录下的libcurl1.so和libcurl2.so
-             }
+            }
           ]
         }
       }

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-buil
 title: 插件上下文
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 扩展构建能力 > 扩展构建API > 插件上下文
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:49+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:2daf038ee03d81d0f77ede9e78af24982a122d310afa1d5c06cd712900c95d56
+scraped_at: 2026-11-07T08:02:41+08:00
+doc_updated_at: 2026-11-06
+content_hash: sha256:d360ce166e5d98a1d3af7c3b8d78db6a65f677b64abc3ead973565170ec8d3d7
 ---
 
 ## OhosPluginId
@@ -261,7 +261,7 @@ setAppJsonOpt: (appJsonOpt: AppJson.AppOptObj) => void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| appJsonOpt | [AppJson.AppOptObj](app-configuration-file.md) | 是 | 设置当前构建的app.json5文件解析出来的obj对象 |
+| appJsonOpt | [AppJson.AppOptObj](app-configuration-file.md) | 是 | 设置当前构建的app.json5文件中内容的obj对象 |
 
 **说明** 
 
@@ -564,7 +564,6 @@ function hapTask(currentNode: HvigorNode) {
   currentNode.subNodes((node: HvigorNode) => {
     // 获取hap模块上下文信息
     const hapContext = node.getContext(OhosPluginId.OHOS_HAP_PLUGIN) as OhosHapContext;
-    const moduleName = hapContext?.getModuleName();
     hapContext?.targets((target: Target) => {
       const targetName = target.getTargetName();
       node.registerTask({
@@ -844,7 +843,7 @@ getDynamicDependenciesOpt: () => any
 
 | 类型 | 说明 |
 | --- | --- |
-| any | 工程下oh-package.json5中配置的dynamicDependencies依赖 |
+| any | 获取工程级别下oh-package.json5中DynamicDependencies信息 |
 
 **示例：**
 
@@ -1461,7 +1460,7 @@ setModuleJsonOpt: (moduleJsonOpt: ModuleJson.ModuleOptObj) => void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| moduleJsonOpt | [ModuleJson.ModuleOptObj](module-configuration-file.md) | 是 | 设置当前模块的module.json5文件解析出来的obj对象 |
+| moduleJsonOpt | [ModuleJson.ModuleOptObj](module-configuration-file.md) | 是 | 设置当前模块的module.json5文件中的obj对象 |
 
 **说明** 
 

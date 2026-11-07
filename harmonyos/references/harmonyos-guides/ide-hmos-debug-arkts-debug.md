@@ -3,27 +3,27 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-debu
 title: debug启动调试
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 应用调试 > 代码调试 > ArkTS代码调试 > debug启动调试
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:48+08:00
+scraped_at: 2026-11-07T08:02:38+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:0f926f722d4a1c3ef9d8aa53b932bb390973558c09b81f6c6b07487fee32eba3
+content_hash: sha256:3b97d8b9a263d7a3d591b0eaec8de1a0479de1b6f6cab2e07d1ac7b4c29a4ee4
 ---
 
 可以按照以下方式启动调试会话。
 
 1. 如果需要设置断点调试，找到需要暂停的代码片段，单击该代码行的左侧边栏。设置断点后，调试能够在正确的断点处中断，并高亮显示该行。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/zSZyrFGtRlO6S_8l-YgZjw/zh-cn_image_0000002779608673.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/CPBXxLIkSduqsdvFttc6AQ/zh-cn_image_0000002781471130.png)
 2. 在设备选择框中，选择调试的设备。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/GzvRQK1CTcapse8REGkzRg/zh-cn_image_0000002750169650.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/WrL0R0hDQv28xqDHU7o0ww/zh-cn_image_0000002781311198.png)
 3. 选择启动调试的配置，在模块选择框中选择需要调试的模块。也可以[配置调试参数](ide-hmos-run-debug-configurations.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/_y77NVy-SLafdAl-x5Wn_A/zh-cn_image_0000002779608675.png)
-4. 在工具栏中，单击调试 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/NfAux_vZT7CiVPpHIqDu_w/zh-cn_image_0000002750009764.png)。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/XAxz68KeTUWe3IZy59oawA/zh-cn_image_0000002810630685.png)
+4. 在工具栏中，单击调试 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/mewMdMpYRleAH6vz2xEhIw/zh-cn_image_0000002810630687.png)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/DYnU-nrKRAabEu0gPbQunw/zh-cn_image_0000002750009762.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/OLzFfbZySzSsXBFNA9Pmxw/zh-cn_image_0000002810750791.png)
 5. 启动调试后，开发者可以通过[调试器](ide-hmos-debug-arkts-debugger.md)进行代码调试。
 
    如有断点会在断点处高亮，并展示当前断点处的帧和变量。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/-mbEm45-T5OsMxzf5WpQLg/zh-cn_image_0000002750169652.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/AGMlyHAZTaOLnjJSQfcokA/zh-cn_image_0000002781471134.png)

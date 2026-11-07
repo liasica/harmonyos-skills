@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-
 title: 网络诊断：Network分析
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 网络诊断：Network分析
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:36+08:00
+scraped_at: 2026-11-07T08:02:28+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:962136c5c76ea02c4d58aa38376a480846730506f4c41b6b1b2b33c2385edac6
+content_hash: sha256:fa8cc643fa5cc4c8331690838cfecae1c73b1df91b6413a7b0c36e0d34a5960f
 ---
 
 ## 功能介绍
@@ -28,8 +28,8 @@ Network模板支持的泳道包括：Network Traffic、Network Request、User Tr
 
 * **Summary**区域可以查看按照网络接口（Network Interfaces）维度统计每个类型的流量消耗，展示信息包含平均下行流量、下行总流量、下行数据包数、网络接口、平均上行流量、上行总流量、上行数据包数。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/s9YPvIfhQgitXYdhsTcVvA/zh-cn_image_0000002701662852.png "点击放大")
-* **Details**区域将展示按时间戳排序的周期上报的网络数据，每个网络数据包含上报时间戳、持续时间、下行流量、下行流量包数、网络接口、上行流量、上行流量包数。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/ql9HHIwoRYGfE4d7Xu8_CQ/zh-cn_image_0000002731542041.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/G4hZDYOjS1y6oYJZbi9xGg/zh-cn_image_0000002701662852.png "点击放大")
+* **Details**区域将展示按时间戳排序的周期上报的网络数据，每个网络数据包含上报时间戳、持续时间、下行流量、下行流量包数、网络接口、上行流量、上行流量包数。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/1iYuh43QQSG04qbajv-r8w/zh-cn_image_0000002731542041.png "点击放大")
 
 ## 查看网络请求各阶段耗时
 
@@ -37,18 +37,18 @@ Network模板支持的泳道包括：Network Traffic、Network Request、User Tr
 
 * **Summary**区域可查看按照域名（Domain）维度统计展示网络请求耗时，展示信息包含域名、线程名称、数量、平均耗时、最大耗时、DNS解析/TCP连接/TLS连接/等待响应/接收数据平均耗时、DNS解析/TCP连接/TLS连接/等待响应/接收数据最大耗时。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/cOvgeY9NRpCjGrQpVeaRZA/zh-cn_image_0000002701822770.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/nJTt1G4ERByHQ03JJ3D4Aw/zh-cn_image_0000002701822770.png "点击放大")
 * 选择任意Domain，**Details**区域将展示请求该Domain的所有网络请求耗时，展示信息包含请求ID、线程名称、请求url、重定向url、IP地址、总耗时、DNS 解析耗时、TCP连接耗时、TLS连接耗时、请求等待耗时、接收响应耗时、请求类型、状态码、使用的版本。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/u6Yf7LlDT9q8mmFRODBHnw/zh-cn_image_0000002731382065.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/WSSiLjHJTBSTn8plqbcvKA/zh-cn_image_0000002731382065.png "点击放大")
 
   选择Details中某条数据，泳道区域将以虚线框展示其耗时方块，右侧**More**区域展示该请求的Request Headers、Response Headers、Response Body。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/JuD0sz10TEaSfSM5D6eU8g/zh-cn_image_0000002731382071.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/hjsmvPFwTCygC41baLQcyA/zh-cn_image_0000002731382071.png "点击放大")
 
   定位到可能造成网络卡顿的网络请求，点选其耗时方块，可以看见该请求各阶段耗时。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/fuEfbtVtS6e6mByKUArkfw/zh-cn_image_0000002701822774.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/3ic401LvS2i9zfnNj_DObg/zh-cn_image_0000002701822774.png "点击放大")
 
 ## 分析启动过程网络问题
 
@@ -59,6 +59,6 @@ DevEco Profiler的Network分析任务，提供了启动过程网络问题分析�
 * 如选择的是已安装但未启动的应用，在启动该分析任务时，会自动拉起应用，进行数据录制，结束录制后可正常进入解析阶段。
 * 如选择的是正在运行的应用，在启动该分析任务时，会先将应用关停，再自动拉起应用，进行数据录制，结束录制后可正常进入解析阶段。
 
-具体操作方法为：在任务列表中单击Network任务后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/NNhViGqrT4WipKE6afl8Rw/zh-cn_image_0000002701662854.png "点击放大")按钮。
+具体操作方法为：在任务列表中单击Network任务后的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/t9W_-kO_TX2q1sxKfAyvNQ/zh-cn_image_0000002701662854.png "点击放大")按钮。
 
 在分析结束后，呈现出的数据类型以及相应的处理方法，与非启动过程的分析相同。

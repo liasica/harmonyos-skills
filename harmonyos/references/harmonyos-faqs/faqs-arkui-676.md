@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-676
 title: 如何解决防截屏失效问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决防截屏失效问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:09+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:e55859112e724226bf4c6ee1417beaaf96ec69045fd32983556d6b601dbb5708
+scraped_at: 2026-11-07T08:07:40+08:00
+doc_updated_at: 2026-11-06
+content_hash: sha256:7d290157db32412be8eb6fc2a246b54b757c11048fec2eee9417749ceebc1349
 ---
 
 ## 问题现象
@@ -16,7 +16,7 @@ content_hash: sha256:e55859112e724226bf4c6ee1417beaaf96ec69045fd32983556d6b601db
 
 * [@ohos.window（窗口）](../harmonyos-references/js-apis-window.md)：窗口提供管理窗口的一些基础能力，包括对当前窗口的创建、销毁、各属性设置，以及对各窗口间的管理调度。
 * [setWindowPrivacyMode](../harmonyos-references/arkts-apis-window-window.md#setwindowprivacymode9)：设置窗口是否为隐私模式，使用callback异步回调。设置为隐私模式的窗口，窗口内容将无法被截屏或录屏。此接口可用于禁止截屏/录屏的场景。
-* 设置窗口禁止截屏可参考[如何实现防截屏功能](faqs-arkui-3.md)。
+* 设置窗口禁止截屏可参考[如何实现防截屏功能](arkui-uimana-faq-0010.md)。
 
 ## 问题定位
 

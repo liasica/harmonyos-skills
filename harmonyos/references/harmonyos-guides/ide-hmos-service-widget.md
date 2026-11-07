@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-serv
 title: 创建服务卡片
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 开发环境搭建 > 工程创建 > 模块管理 > 创建服务卡片
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:42+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:ba1266a6eb2983af35471cd149545bd67ee062025614acc6ff075bb897d4ed82
+scraped_at: 2026-11-07T08:02:33+08:00
+doc_updated_at: 2026-11-06
+content_hash: sha256:b8966779d0bfcc3ecf8df0b5474f6d944bec67f72a58ca9d1ccda57fe1af256c
 ---
 
 ## 概述
@@ -16,9 +16,9 @@ content_hash: sha256:ba1266a6eb2983af35471cd149545bd67ee062025614acc6ff075bb897d
 
 | 模板名称 | 支持的设备 | 支持的开发语言 | 模板描述 |
 | --- | --- | --- | --- |
-| Hello World | Phone、Tablet、2in1 | ArkTS | HelloWorld卡片，用于高效直观地构建UI。当前Hello World卡片模板支持使用6\*4尺寸。 |
-| Image With Information（图文卡片模板） | Phone、Tablet、2in1 | ArkTS | 图文卡片模板主要在于展现图片和一定数量文本的搭配，在这种布局下，图片和文本属于同等重要的信息。在不同尺寸下，图片大小和文本数量会发生一定变化，用于凸显关键信息。 |
-| Immersive Information（沉浸图文卡片模板） | Phone、Tablet、2in1 | ArkTS | 沉浸式卡片的装饰性较强，能够较好的提升卡片品质感并起到装饰桌面的作用，合理的去布局信息与背景图片之间的空间比例，可以提升用户的个性化使用体验。 |
+| Hello World | Phone、Tablet、2in1、Wearable、Car、TV | ArkTS | HelloWorld卡片，用于高效直观地构建UI。当前Hello World卡片模板支持使用6\*4尺寸。 |
+| Image With Information（图文卡片模板） | Phone、Tablet、2in1、Wearable、Car | ArkTS | 图文卡片模板主要在于展现图片和一定数量文本的搭配，在这种布局下，图片和文本属于同等重要的信息。在不同尺寸下，图片大小和文本数量会发生一定变化，用于凸显关键信息。 |
+| Immersive Information（沉浸图文卡片模板） | Phone、Tablet、2in1、Wearable、Car | ArkTS | 沉浸式卡片的装饰性较强，能够较好的提升卡片品质感并起到装饰桌面的作用，合理的去布局信息与背景图片之间的空间比例，可以提升用户的个性化使用体验。 |
 
 ## 使用约束
 
@@ -34,7 +34,7 @@ content_hash: sha256:ba1266a6eb2983af35471cd149545bd67ee062025614acc6ff075bb897d
    **Static** **Widget**：静态服务卡片。**form\_config.json**文件中**isDynamic**参数配置为"false"。静态卡片内存占用较小，有助实现整机内存优化，可实现静态信息展示、刷新和点击跳转。
 2. 选择卡片模板，单击**确认**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/IhWIwJd8TGCvKa41slMWvQ/zh-cn_image_0000002750169520.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/47UfOTsoR82T2ScUMcNRjg/zh-cn_image_0000002781311030.png "点击放大")
 3. 在界面中配置卡片的基本信息，包括：
    * **服务卡片名**：卡片的名称，在同一个应用中，卡片名称不能重复，且只能包含大小写字母、数字和下划线。
    * **显示名**：卡片预览面板上显示的卡片名称。
@@ -45,6 +45,6 @@ content_hash: sha256:ba1266a6eb2983af35471cd149545bd67ee062025614acc6ff075bb897d
    * **Ability名称：**选择一个挂靠服务卡片的Form Ability，或者创建一个新的Form Ability。
    * **模块名：**卡片所属的模块。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/QwzovZJqQQKhny2nG6IyAw/zh-cn_image_0000002779608543.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/PFpchvkvRHGcscPTOWvPdA/zh-cn_image_0000002810750629.png "点击放大")
 4. 单击**确认**完成卡片的创建。创建完成后，工具会自动创建出服务卡片的布局文件，并在form\_config.json文件中写入服务卡片的属性字段，关于各字段的说明请参考[配置文件说明](arkts-ui-widget-configuration.md)。
 5. 卡片创建完成后，请根据开发指导，完成服务卡片的开发，详情请参考[服务卡片开发指南](arkts-ui-widget.md)。

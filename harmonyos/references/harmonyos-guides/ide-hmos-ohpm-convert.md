@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpm convert
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm convert
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:54+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:f500c5f435fcf45351d0d6fd20669017d017cbfa7ac2d5defd6905da30fb1a1f
+scraped_at: 2026-11-07T08:02:42+08:00
+doc_updated_at: 2026-11-06
+content_hash: sha256:7534bc9642478d57cd3d23e3bac76220b024addbf83e65c49124bb2cf0c125c0
 ---
 
 将npm三方库转换为ohpm三方库。因为语法差异，转换时仅对文件进行格式转换，不修改原npm包的代码逻辑。若HAR包在转换后出现代码不兼容的报错，开发者需修改原npm包的代码做适配。
@@ -97,16 +97,16 @@ ohpm INFO: > start convert package: axios@1.6.8
 ohpm INFO: > start convert package: combined-stream@1.0.8
 ...
 ohpm INFO: A total of 9 packets are converted successfully.
-ohpm INFO: Converted packages are saved to the "/storage/Users/currentUser/Documents/DevEcostudioProjects/MyApplication01/convert_1774947993178" directory.
+ohpm INFO: Converted packages are saved to the "/storage/Users/currentUser/Documents/DevEcoStudioProjects/MyApplication01/convert_1774947993178" directory.
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/6D6JGXXpSQG-K9j1HiDAEg/zh-cn_image_0000002750169790.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/Py07Law1RpqgFpKaZf-j-Q/zh-cn_image_0000002781471256.png)
 
 **转换本地node\_modules目录中的包**
 
 执行npm install uuid后，转换本地node\_modules目录中的包，执行以下命令：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/ApqQBVwXQbypkVd5egLOug/zh-cn_image_0000002779728957.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/qdurUZQlRL-viGDq7FoaOQ/zh-cn_image_0000002810630807.png)
 
 ```screen
 ohpm convert ./node_modules
@@ -122,4 +122,4 @@ ohpm INFO: A total of 1 package(s) are converted successfully.
 ohpm INFO: Converted packages are saved to the "/storage/Users/currentUser/xxxxx/convert_1774948851809" directory.
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/aDrqUgeDSJ2lYSeop7qtGg/zh-cn_image_0000002750009894.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/T6y89cutQt6Il4ceAI558g/zh-cn_image_0000002781471258.png)

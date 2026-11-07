@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-5
 title: 自定义弹框资源未释放导致稳定性测试出现内存泄漏
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > 自定义弹框资源未释放导致稳定性测试出现内存泄漏
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:53:50+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:0c9f15799aaaa8d8f6f853b7a556c142205a4a75a0378f8f9a5e94a1b64909ef
+scraped_at: 2026-11-07T08:07:14+08:00
+doc_updated_at: 2026-11-06
+content_hash: sha256:3ac68466a25454917bfc036a5dd5ca4826faa55321753a7fb3693b6deee51d06
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:0c9f15799aaaa8d8f6f853b7a556c142205a4a75a0378f8f9a5e94a1b64
 
 ## 背景知识
 
-[setWindowPrivacyMode](../harmonyos-references/arkts-apis-window-window.md#setwindowprivacymode9)：设置窗口是否为隐私模式。设置为隐私模式的窗口，窗口内容将无法被截屏或录屏。此接口可用于禁止截屏/录屏的场景。设置窗口禁止截屏参考[如何实现防截屏功能](faqs-arkui-3.md)。
+[setWindowPrivacyMode](../harmonyos-references/arkts-apis-window-window.md#setwindowprivacymode9)：设置窗口是否为隐私模式。设置为隐私模式的窗口，窗口内容将无法被截屏或录屏。此接口可用于禁止截屏/录屏的场景。设置窗口禁止截屏参考[如何实现防截屏功能](arkui-uimana-faq-0010.md)。
 
 ## 问题定位
 
@@ -26,7 +26,7 @@ content_hash: sha256:0c9f15799aaaa8d8f6f853b7a556c142205a4a75a0378f8f9a5e94a1b64
 
 ## 修改建议
 
-1. 当前效果是既设置了HarmonyOS的隐私窗口防截屏，又设置了自定义弹窗提醒，建议参考[HarmonyOS防截屏的示例demo](faqs-arkui-3.md)，只使用HarmonyOS的隐私窗口防截屏。
+1. 当前效果是既设置了HarmonyOS的隐私窗口防截屏，又设置了自定义弹窗提醒，建议参考[HarmonyOS防截屏的示例demo](arkui-uimana-faq-0010.md)，只使用HarmonyOS的隐私窗口防截屏。
 2. 如果需要弹出自定义的防截屏弹窗，可以设置弹框自动消失时间。实现方案可参考如下示例，用户确认或取消操作后弹框消失，若设定时间内用户无确认或取消操作，到达设定时间后弹框也会自动消失。
 
 ```ts

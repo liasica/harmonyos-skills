@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpm publish
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm publish
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:38+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:f06cb54f1e596255963b5120356456bede66848b5c310164406237f7401c73b2
+scraped_at: 2026-11-07T08:02:42+08:00
+doc_updated_at: 2026-11-06
+content_hash: sha256:035da195c0da19c78f739d47d1f613096f76d6edfb71e69abcda83f9f550bb78
 ---
 
 发布一个三方库。
@@ -34,7 +34,7 @@ ohpm publish [options] <har_or_tgz_file>
 
 * 为了保证.har 和 .tgz 包的编译与运行正常，包中的 oh-package.json5 必须包含该包的所有直接依赖，若有依赖通过项目级别的 oh-package.json5 引入，则相应的依赖也必须写入包中对应的 oh-package.json5 中。
 * 请注意debug模式构建的HAR包中含有源码，便于本地调试，请注意代码安全，详细请参考[构建HAR](ide-hmos-hvigor-build-har.md)。
-* 发布包前请务必检查待发布包 oh-package.json5 的配置是否满足要求，具体要求请参考：[模块级oh-package.json5字段说明](ide-hmos-oh-package-json5.md#zh-cn_topic_0000001792256137_oh-packagejson5-字段说明)
+* 发布包前请务必检查待发布包 oh-package.json5 的配置是否满足要求，具体要求请参考：[模块级oh-package.json5字段说明](ide-hmos-oh-package-json5.md#section205811416386)
 
 ## 发布校验规则
 

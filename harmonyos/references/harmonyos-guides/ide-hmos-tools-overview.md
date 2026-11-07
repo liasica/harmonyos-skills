@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-tool
 title: 工具概述
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 开发环境搭建 > 工具概述
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:23:15+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:973008f9dc92e69fd2bec2451527b1f30cb10e0bd52a5d2a79b43ca889b9c325
+scraped_at: 2026-11-07T08:02:32+08:00
+doc_updated_at: 2026-11-06
+content_hash: sha256:c5ec5cd4b017d3dd3a82f69306815dc6aeb31d271caa0a338830f958e6b0b754
 ---
 
 ## DevEco Studio集成开发环境
@@ -30,42 +30,42 @@ content_hash: sha256:973008f9dc92e69fd2bec2451527b1f30cb10e0bd52a5d2a79b43ca889b
 
 ## 工具能力差异
 
-和Windows/macOS版DevEco Studio相比，鸿蒙电脑DevEco Studio仅支持HarmonyOS应用开发，支持Phone、Tablet、PC/2in1设备，其他差异参见下表。
+和Windows/macOS版DevEco Studio相比，鸿蒙电脑DevEco Studio仅支持HarmonyOS应用开发，其他差异参见下表。
 
 | 分类 | 能力 | 说明 |
 | --- | --- | --- |
-| 工程管理 | 工程结构视图 | 暂不支持Ohos视图 |
-| 签名 | 调试自动签名暂不支持在DevEco Studio上开通开放能力和添加ACL权限 |
-| 代码编辑 | 代码阅读 | 暂不支持代码结构视图 |
-| 跨语言代码编辑 | 暂不支持生成胶水代码 |
-| 预览器/模拟器 | / | 使用多设备预览器进行预览和调试 |
-| 编译构建 | 编译任务管理 | 暂不支持构建任务可视化及执行 |
-| 应用调试 | 代码调试 | ArkTS语言暂不支持等待调试、反向调试、状态变量调试 |
-| 暂不支持Native子进程调试 |
-| 暂不支持跨语言调试 |
-| 增量调试能力合并到Hot Reload |
-| 暂不支持数据库调试 |
-| 布局分析 | ArkUI 界面检查器暂不支持切换3D视图 |
-| ArkUI 界面检查器暂不支持查看窗口交互事件 |
-| 日志与故障分析 | 暂不支持堆栈跟踪分析、dump文件分析、App Killed日志查看 |
-| 设备管理 | 设备投屏可以使用多屏协同能力 |
-| 暂不支持无线连接设备 |
-| 性能调优 | 性能问题分析 | 暂不支持User Events用户交互事件 |
-| 暂不支持Lost Frames泳道数据展示 |
-| 资源泄漏问题分析 | 暂不支持ArkTS Callstack泳道数据展示 |
-| 暂不支持ArkTS Allocation泳道数据展示 |
-| 暂不支持All Heap & Anonymous VM泳道数据展示 |
-| 暂不支持All Heap泳道数据展示 |
-| 暂不支持All Anonymous VM泳道数据展示 |
-| 暂不支持System Resources泳道数据展示 |
-| 暂不支持Graphic Memory泳道数据展示 |
-| 暂不支持Native Leaks泳道数据展示 |
-| 数据实时监控 | 暂不支持温度、整机电流、最大电流、能耗、网络流量监控 |
-| 开发自测试 | ArkTS单元测试 | 暂不支持本地单元测试 |
-| 应用体检 | 暂不支持 |
-| 发起云端测试 | 暂不支持 |
-| 上传软件包 | / | 暂不支持 |
-| API变更助手 | / | 暂不支持 |
+| 工程管理 | 工程结构视图 | 暂不支持Ohos视图。 |
+| 签名 | 调试自动签名暂不支持在DevEco Studio上开通开放能力和添加ACL权限。 |
+| 代码编辑 | 代码阅读 | 暂不支持代码结构视图。 |
+| 跨语言代码编辑 | 暂不支持生成胶水代码。 |
+| 预览器/模拟器 | / | 使用多设备预览器进行预览和调试。 |
+| 编译构建 | 编译任务管理 | 暂不支持构建任务可视化及执行。 |
+| 应用调试 | 代码调试 | ArkTS语言暂不支持等待调试、反向调试、状态变量调试。 |
+| 暂不支持Native子进程调试。 |
+| 暂不支持跨语言调试。 |
+| 增量调试能力合并到Hot Reload。 |
+| 暂不支持数据库调试。 |
+| 布局分析 | ArkUI 界面检查器暂不支持切换3D视图。 |
+| ArkUI 界面检查器暂不支持查看窗口交互事件。 |
+| 日志与故障分析 | 暂不支持堆栈跟踪分析、dump文件分析、App Killed日志查看。 |
+| 设备管理 | 设备投屏可以使用多屏协同能力。 |
+| 从DevEco Studio 26.0.0 Beta2版本开始，支持无线连接设备。 |
+| 性能调优 | 性能问题分析 | 暂不支持User Events用户交互事件。 |
+| 暂不支持Lost Frames泳道数据展示。 |
+| 资源泄漏问题分析 | 暂不支持ArkTS Callstack泳道数据展示。 |
+| 暂不支持ArkTS Allocation泳道数据展示。 |
+| 暂不支持All Heap & Anonymous VM泳道数据展示。 |
+| 暂不支持All Heap泳道数据展示。 |
+| 暂不支持All Anonymous VM泳道数据展示。 |
+| 暂不支持System Resources泳道数据展示。 |
+| 暂不支持Graphic Memory泳道数据展示。 |
+| 暂不支持Native Leaks泳道数据展示。 |
+| 数据实时监控 | 暂不支持温度、整机电流、最大电流、能耗、网络流量监控。 |
+| 开发自测试 | ArkTS单元测试 | 暂不支持本地单元测试。 |
+| 应用体检 | 暂不支持。 |
+| 发起云端测试 | 暂不支持。 |
+| 上传软件包 | / | 暂不支持。 |
+| API变更助手 | / | 暂不支持。 |
 
 ## 文档声明
 

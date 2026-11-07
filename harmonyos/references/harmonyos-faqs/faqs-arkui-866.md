@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-866
 title: 登录界面焦点在非密码输入框时可被截屏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 屏幕管理 > 登录界面焦点在非密码输入框时可被截屏
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:27+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:f525b919ebb7142a7244f86d0e811a47cc14ef6b8f9cc1971b5ba87e16f68d91
+scraped_at: 2026-11-07T08:07:54+08:00
+doc_updated_at: 2026-11-06
+content_hash: sha256:e0e7a65aa420014762175aa2d96f9d3cabfb442abbff8c7aeb2796d6ca916751
 ---
 
 ## 问题现象
@@ -122,4 +122,4 @@ content_hash: sha256:f525b919ebb7142a7244f86d0e811a47cc14ef6b8f9cc1971b5ba87e16f
   }
   ```
 
-  更多信息请参考[如何实现防截屏功能](faqs-arkui-3.md)。
+  更多信息请参考[如何实现防截屏功能](arkui-uimana-faq-0010.md)。

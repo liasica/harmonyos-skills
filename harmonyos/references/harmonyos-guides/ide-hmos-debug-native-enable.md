@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-debu
 title: 启动调试
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 启动调试
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:48+08:00
+scraped_at: 2026-11-07T08:02:38+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:b8efb6a2d1dbc24f1351948a097d95323784fc9da0dd3c514f87aa2240822dce
+content_hash: sha256:a74f86c66c0815c16f7865999c95cc66b3dcecef1ec39c59bc8fa1ff55bef526
 ---
 
 支持debug模式启动调试，启动调试前选择对应的设备进行调试，可参考[debug启动调试](ide-hmos-debug-arkts-debug.md)。
 
-在启动调试前，点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/wpBdWrfYSoGtHpTv8w9YLA/zh-cn_image_0000002750169822.png "点击放大")按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/-47bwEybRtSw4PKs2Hdscg/zh-cn_image_0000002750009928.png)按钮打开配置界面。在**调试器**中选择**调试类型**为Dual (ArkTS/JS + Native) 、Native 或Detect Automatically，设置调试代码类型为C/C++。
+在启动调试前，点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/nImmT9I2Ram8uVtrocwHoA/zh-cn_image_0000002781311356.png "点击放大")按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/vNjwkzJmSKi-HqU2xqJXzQ/zh-cn_image_0000002781311358.png)按钮打开配置界面。在**调试器**中选择**调试类型**为Dual (ArkTS/JS + Native) 、Native 或Detect Automatically，设置调试代码类型为C/C++。
 
 **说明** 
 
 Detect Automatically类型会根据当前工程是否为Native工程判断是否启动Native调试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/CzcFrI6MQLCwroWpWynfNA/zh-cn_image_0000002779608843.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/VRCLOsFSQaarxIYah05Rpg/zh-cn_image_0000002810750951.png)
 
 **调试器**中还支持自定义以下配置：
 

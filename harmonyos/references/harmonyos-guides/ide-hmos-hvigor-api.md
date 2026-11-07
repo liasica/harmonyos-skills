@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 基础构建能力
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 扩展构建能力 > 扩展构建API > 基础构建能力
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:50+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:e64bf81fc142e196293b9892de3b09550394fc2add3bee6f27a6a1e322318825
+scraped_at: 2026-11-07T08:02:41+08:00
+doc_updated_at: 2026-11-06
+content_hash: sha256:3529e36fbd8691fc55d2286bba2b612584bc12eb877ad4778a968d6a65959b6a
 ---
 
 ## Hvigor预置对象
@@ -692,7 +692,9 @@ getChildNode(): HvigorNodeDescriptor[] | undefined
 
 ```ts
 // hvigorconfig.ts
-import { hvigorConfig } from '@ohos/hvigor';
+import { hvigor } from '@ohos/hvigor';
+
+const hvigorConfig = hvigor.getHvigorConfig();
 const rootNodeDescriptors = hvigorConfig.getRootNodeDescriptor();
 rootNodeDescriptors.getChildNode()?.forEach(child => {
   console.log(`child: ${child.name}`);
@@ -717,7 +719,9 @@ getRootNode(): HvigorNodeDescriptor
 
 ```screen
 // hvigorconfig.ts
-import { hvigorConfig } from '@ohos/hvigor';
+import { hvigor } from '@ohos/hvigor';
+
+const hvigorConfig = hvigor.getHvigorConfig();
 const entryNodeDescriptor = hvigorConfig.getNodeDescriptorByName('entry');
 console.log(`rootNode name: ${entryNodeDescriptor.getRootNode().name}`);
 ```
@@ -3992,11 +3996,11 @@ import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
 import path from "path";
 
 const currentNode = getNode(__filename);
-hvigor.nodesEvaluated(() => {
+hvigor.nodesEvaluated(async () => {
   const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
   const json5FilePath = path.resolve(context.getProjectPath(), 'testJson.json5');
   FileUtil.ensureFileSync(json5FilePath);
-  FileUtil.writeFile(json5FilePath, JSON.stringify(context.getAppJsonOpt()));
+  await FileUtil.writeFile(json5FilePath, JSON.stringify(context.getAppJsonOpt()));
 })
 
 export default {
@@ -4072,13 +4076,13 @@ import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin
 import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
 
 const currentNode = getNode(__filename);
-hvigor.nodesEvaluated(() => {
+hvigor.nodesEvaluated(async () => {
   const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
   const json5FilePath = FileUtil.pathResolve(context.getProjectPath(), 'testJson.json5');
   FileUtil.ensureFileSync(json5FilePath);
   FileUtil.writeFileSync(json5FilePath, JSON.stringify(context.getAppJsonOpt()));
   const copyFilePath = FileUtil.pathResolve(context.getProjectPath(), 'testJson_copy.json5');
-  FileUtil.copyFile(json5FilePath, copyFilePath);
+  await FileUtil.copyFile(json5FilePath, copyFilePath);
 })
 
 export default {

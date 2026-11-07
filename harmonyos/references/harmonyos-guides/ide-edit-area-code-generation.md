@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-edit-area
 title: 编辑区对话
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 编辑区代码生成 > 编辑区对话
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:39+08:00
+scraped_at: 2026-11-07T08:02:31+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:59a0c5409f84f88d9f5e40248ac4242b05ac337a1c4d3372463cb26049c580b2
+content_hash: sha256:794d045fac4d9666e0c1570e80944c682c96120e8a1812b44e7a1cba1af46e34
 ---
 
 CodeGenie提供Inline Edit能力，支持在ArkTS文件的编辑窗口中通过自然语言进行问答，基于上下文智能生成代码片段，提升代码可读性。
@@ -17,34 +17,34 @@ CodeGenie提供Inline Edit能力，支持在ArkTS文件的编辑窗口中通过�
 1. 当前有以下两种方式唤醒Inline Chat对话框：
    * 若未选中代码片段，在代码编辑区域右键选择**CodeGenie > Inline Chat**（或使用快捷键**Alt+I**，macOS中为**Command+I**）。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/b8TCf0haQ5G77UIrYo_Xmg/zh-cn_image_0000002731382655.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/zBZpoPLBQ5az9M5POxl-mQ/zh-cn_image_0000002731382655.png)
    * 若选中一段代码，点击**Inline Chat（**或使用快捷键**Alt+I**，macOS中为**Command+I）**浮框，如未出现浮框，请参考如下操作启用。
      + 从26.0.0 Beta1版本开始，如未出现浮框，可在**File** > **Settings** > **CodeGenie >****Inline Chat**（macOS中为**DevEco Studio** > **Prefe****rences/Settings** > **CodeGenie** > **Inline Chat**）中勾选**Show inline chat floating hints**启用浮窗。
      + 从DevEco Studio 6.1.0 Release版本开始，如未出现浮框，可在**File** > **Settings** > **CodeGenie > Code Suggestion** **& Inline Chat**（macOS中为**DevEco Studio** > **Prefe****rences/Settings** > **CodeGenie** > **Code Suggestion & Inline Chat**）中勾选**Show inline chat floating hints**启用浮窗。
      + 从DevEco Studio 6.1.0 Beta2版本开始，如未出现浮框，可在**File** > **Settings** > **CodeGenie > Code Completion** **& Inline Chat**（macOS中为**DevEco Studio** > **Prefe****rences/Settings** > **CodeGenie** > **Code Completion & Inline Chat**）中勾选**Show Inline Chat tips**启用浮窗。
      + 在DevEco Studio 6.1.0 Beta2之前版本，如未出现浮框，可在**File** > **Settings** > **CodeGenie** > **Code Generation**（macOS中为**DevEco Studio** > **Prefe****rences/Settings** > **CodeGenie** > **Code Generation**）中取消勾选**Hide Inline Chat Overlay**选项。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/5xn5IRtcR86Kjl5gewXVZg/zh-cn_image_0000002701823362.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/QEfvAWeiR96LeogJN1tqlQ/zh-cn_image_0000002701823362.png)
 2. 选择在CodeGenie中已配置的三方模型，或者使用内置模型。三方模型配置具体请参考[模型（Model）配置](ide-agent-model.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/v-g7egraSE60TVQ1k8YScA/zh-cn_image_0000002731382657.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/ywuWSo-7Rh2CBvw2KYa9Ig/zh-cn_image_0000002731382657.png "点击放大")
 3. 在对话框中输入代码功能描述，点击发送或在键盘输入回车，等待代码生成；或在对话框中输入"/"，选择不同的快捷指令，进行代码文件分析或生成分析报告等。内置模型从26.0.0 Beta1版本开始，支持使用快捷指令。
 
    快捷指令的具体操作如下：
    * 未选中代码片段，在对话框中输入"/"，在键盘输入回车或点击发送，对当前代码文件开始分析。点击**Stop Generation**，中断本轮代码生成过程。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/xL0Ck54FT72v8l1rKI_NHQ/zh-cn_image_0000002731382651.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/U7l93qPmQ0Kk5cNc8FBOBA/zh-cn_image_0000002731382651.png)
    * 选中一段代码，在对话框中输入"/"，选择**Parameter Validation**（参数校验）、**Code Explanation**（代码注释）、**Code Optimization**（代码优化），可输入或不输入功能描述，在键盘输入回车或点击发送后等待生成，分析报告和参数校验等结果跟模型有关。点击**Stop Generation**，中断本轮代码生成过程。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/fyFY5NomQdmBD-BqSRmNoA/zh-cn_image_0000002731382663.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/jvMJIdxqT42evAfjLRmPAA/zh-cn_image_0000002731382663.png "点击放大")
 4. 生成完毕将在编辑区展示本轮生成的代码内容，并通过不同颜色体现与当前代码的对比差异。
    * 绿色区域：新生成的代码内容。
    * 蓝色区域：对现有代码进行修改的内容。
    * 红色区域：删除的代码内容。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/RpLODo_wQbu8j9CGJbWOow/zh-cn_image_0000002731382659.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/qc-5v6GMRcC1Z_F5FEB6_Q/zh-cn_image_0000002731382659.png)
    * 点击Inline Chat对话框中**Accept All**（或使用快捷键**Alt+Enter**），接受当前生成的全部内容；
-   * 点击Inline Chat对话框中![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/A1rX3EY-RUqAFdAXI79yWw/zh-cn_image_0000002701823350.png)刷新按钮**/****Regenerate**，将根据当前描述重新生成代码片段；
+   * 点击Inline Chat对话框中![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/jSq4-3oNSMSR2hoWwvkaKQ/zh-cn_image_0000002701823350.png)刷新按钮**/****Regenerate**，将根据当前描述重新生成代码片段；
    * 点击编辑区中**Accept**（或使用快捷键**Shift+Ctrl+Y**，macOS上为**Shift+Command+Y**），分段逐一接受并保留生成内容；
    * 点击编辑区中**Reject**（或使用快捷键**Shift+Ctrl+N**，macOS上为**Shift+Command+N**），分段逐一拒绝并删除当前生成内容；
    * 点击**Further Edit**（或使用快捷键**Ctrl+K**，macOS上为**Command+K**），重新进行输入，开始新一轮问答。

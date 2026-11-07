@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-windmana-
 title: 如何设置窗口或页面透明背景色
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 常见问题 > 如何设置窗口或页面透明背景色
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:28+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:320834097a049d78d562a18598f2295f2296741e9b228181b4cbace14046b6b9
+scraped_at: 2026-11-07T08:07:55+08:00
+doc_updated_at: 2026-11-06
+content_hash: sha256:f0bddd5c704b4e3333bba1ac355132cd8ce17baa960e8e67b3ef5263afcaf90a
 ---
 
 **Q：在设计手机软件或应用程序时，需要将某些窗口或页面的背景设置为透明。实现这一效果的方法有哪些？**
@@ -92,7 +92,7 @@ content_hash: sha256:320834097a049d78d562a18598f2295f2296741e9b228181b4cbace1404
 
   方案一、方案二示例效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/9ozk_dalTgySl_jpOb4haw/zh-cn_image_0000002801490501.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/-Glrfep-Q3yLWKdHWJ1Rlg/zh-cn_image_0000002801490501.png "点击放大")
 * 方案三：如果页面使用了NavDestination，将其模式设置为DIALOG可实现背景透明的效果。
 
   ```ts
@@ -172,8 +172,8 @@ content_hash: sha256:320834097a049d78d562a18598f2295f2296741e9b228181b4cbace1404
 
   方案三示例效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/_heya3O1SjmPZTNF8RfSNQ/zh-cn_image_0000002772253302.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/T56s8qqTRPGrPgyvteZDfw/zh-cn_image_0000002772253302.png "点击放大")
 
 **Q：如何实现应用页面背景色完全透明的效果？**
 
-**A**：目前在PC和平板的自由多窗模式下应用子窗口可以实现完全透明，其他设备和主窗口不可设置背景色完全透明。实现PC和平板自由多窗模式下完全透明可参考[如何设置PC窗口透明](faqs-computer-9.md)。
+**A**：目前在PC和平板的自由多窗模式下应用子窗口可以实现完全透明，其他设备和主窗口不可设置背景色完全透明。

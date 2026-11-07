@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-custom-me
 title: 自定义元数据规则校验插件配置
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 自定义元数据规则校验插件 > 自定义元数据规则校验插件配置
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:18+08:00
+scraped_at: 2026-11-07T08:02:13+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:78e518e36722491fdc12ed104f9bc0a5e08eefd7f28479ed2c75a9f25ac750bc
+content_hash: sha256:34c1402fd22def133b6ff8d5d9d9dcaf7a43abde3e6fa877b613406c8e3b3e85
 ---
 
 ohpm-repo 5.1.3版本开始支持自定义元数据规则校验，允许通过插件对oh-package.json5中部分字段开发定制化的校验规则。
@@ -20,9 +20,9 @@ ohpm-repo 5.1.3版本开始支持自定义元数据规则校验，允许通过�
 2. 根据[模板文件](ide-rule-verification-template-file.md)中的操作指示，创建三个必要模板文件：[checkField.ts](ide-rule-verification-template-file.md#section14072085013)，[CustomExtensionValidationConfig.json](ide-rule-verification-template-file.md#section1076523392)和[tsconfig.json](ide-rule-verification-template-file.md#section1613602518915)。
 3. 将文件[tsconfig.json](ide-rule-verification-template-file.md#section1613602518915)文件移动到ohpm-repo解压根目录内；建议将文件[checkField.ts](ide-rule-verification-template-file.md#section14072085013)和[CustomExtensionValidationConfig.json](ide-rule-verification-template-file.md#section1076523392)文件移动到ohpm-repo解压根目录的plugins/fieldCheckPlugin文件夹内。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/mmAws6ddSkOb9uRpRX2b2g/zh-cn_image_0000002731381229.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/FckPqIbYQBiKeRaFSfFKhg/zh-cn_image_0000002731381229.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/n1qH6HzgRcK23p7EIXz1pQ/zh-cn_image_0000002731381235.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/t9YkCxvRT3ekEeZHYSBpyQ/zh-cn_image_0000002731381235.png "点击放大")
 
 ## 编写自定义规则校验函数文件checkField.ts
 

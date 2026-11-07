@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-load-unlo
 title: 卸载和加载模块
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 卸载和加载模块
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:16+08:00
+scraped_at: 2026-11-07T08:02:12+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:10f6a7adbf54efe34df1287b9f0154a9a3401f24d3329f30071ac40d9ef7185b
+content_hash: sha256:2b5693c1f9382b77df8cd55f544b7106112018b19eccf523d81965cfa059fa7c
 ---
 
 ## 功能介绍
@@ -42,7 +42,7 @@ content_hash: sha256:10f6a7adbf54efe34df1287b9f0154a9a3401f24d3329f30071ac40d9ef
 
    点击**Unload All**可将加载的模块全部添加到卸载模块中，点击**Load All**可将卸载的模块全部添加到加载模块中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/4iewoT1oT9uLoGjIQ-YVcw/zh-cn_image_0000002731382079.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/lJMwq3CASkirhwaryj4TRQ/zh-cn_image_0000002731382079.png)
 3. 点击**OK**，工程会根据配置的加载/卸载模块初始化。
 
    **说明** 

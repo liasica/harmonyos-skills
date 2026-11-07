@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-co
 title: Agent模式
 breadcrumb: 指南 > DevEco Code > DevEco Code TUI > Agent模式
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:55+08:00
+scraped_at: 2026-11-07T08:02:43+08:00
 doc_updated_at: 2026-10-31
-content_hash: sha256:4184d0283b6a8a2428868ac5c78e894a53295fdc9b246de149152653be118282
+content_hash: sha256:f57c05573c28e67cc50eb3782a83da973e4641b08a26d560f3cad0842328e7e4
 ---
 
 ## 功能概述
@@ -26,11 +26,11 @@ Windows/macOS版DevEco Code可配置模拟器进行推包验证。
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/OF8XwNXnQR-8l1cocz7nvg/zh-cn_image_0000002731383159.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/vqZmVwzYS1SYMsJggMn1OQ/zh-cn_image_0000002731383159.png "点击放大")
 
 ### 示例
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/ee/v3/a-QhUgYXT8-lVcq7o5a6hQ/zh-cn_media_0000002701663942.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/46/v3/QkV9G-iJTauO4e4ON9GuAw/zh-cn_media_0000002701663942.mp4)
 
 ## Plan + Build模式
 
@@ -46,7 +46,7 @@ Windows/macOS版DevEco Code可配置模拟器进行推包验证。
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/HOUVZQQ5QS20blyhHIT07A/zh-cn_image_0000002701823856.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/Wql0RZbuRhSmHqgga3tztg/zh-cn_image_0000002701823856.png "点击放大")
 
 Plan + Build模式实现流程分为三大阶段：
 
@@ -56,7 +56,7 @@ Plan + Build模式实现流程分为三大阶段：
 
 ### 示例
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/51/v3/B3bLv0J9TxGHxOeJ_r4FjQ/zh-cn_media_0000002701823862.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/b6/v3/gPBWE9qbRbmWtHREzLHAzA/zh-cn_media_0000002701823862.mp4)
 
 ## Goal模式
 
@@ -72,7 +72,7 @@ Windows/macOS版DevEco Code可配置模拟器进行推包验证。
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/SWmlklCsSbegxHe0F79NOw/zh-cn_image_0000002701663938.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/hCZZsdSFTwWEjjspqMa-zw/zh-cn_image_0000002701663938.png "点击放大")
 
 Goal Agent实现流程分为两大阶段：
 
@@ -81,4 +81,4 @@ Goal Agent实现流程分为两大阶段：
 
 ### 示例
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/a4/v3/-u0UkW_iQ8OyqIA4YTXbAA/zh-cn_media_0000002731543137.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/46/v3/YdaF7bTZSJa1t-1yJR9w0g/zh-cn_media_0000002731543137.mp4)

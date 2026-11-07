@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/appgallery-kit-
 title: 应用内检查更新实现及常见问题
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 常见问题 > 应用内检查更新实现及常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:44+08:00
-doc_updated_at: 2026-10-22
-content_hash: sha256:ed70a9a68449b4f0ac64963bb4856f7197bbcb4f551b38aeb04434548f1e65c5
+scraped_at: 2026-11-07T08:09:02+08:00
+doc_updated_at: 2026-11-06
+content_hash: sha256:fdcb195ef4002b1eb4da9a5507e2e4c332761ac4eae37113c239a7b39913c04e
 ---
 
 **Q：应用上架应用市场后，有新的版本更新时，如何实现老版本用户打开应用能提示更新版本？**
 
 A：业务流程：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/gwpbHTo7RNqAAV33VvBfzg/zh-cn_image_0000002792076741.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/DkdxJrDWSkiyLrlYJbujlQ/zh-cn_image_0000002792076741.png "点击放大")
 
 1. 应用调用检查更新接口。
 2. 升级服务API返回是否有新版本。
@@ -99,7 +99,7 @@ A：业务流程：
 
 **Q：应用测试（邀请测试）场景下，应用市场应用尝鲜页面中已安装低版本的应用为什么显示"安装"按钮而不是"更新"按钮？**
 
-**A**：应用测试（邀请测试）场景不支持更新功能，需要正式上架版本后才能测试更新功能。详情可参考[应用市场FAQ](../doccenter-dev-faq/faqs-appgallery-98.md#section6755123144919)。
+**A**：应用测试（邀请测试）场景不支持更新功能，需要正式上架版本后才能测试更新功能。详情可参考[应用市场FAQ](appgallery-kit-faq.md)。
 
 **Q：更新应用版本是否支持通过API上传更新，绕开应用市场？**
 

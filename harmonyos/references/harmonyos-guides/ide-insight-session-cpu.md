@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-insight-s
 title: CPU活动分析
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > CPU活动分析
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:37+08:00
+scraped_at: 2026-11-07T08:02:29+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:537519ee4047a5fa951864be2448baad07c3d2f463a71b974cfbb61702b46b9f
+content_hash: sha256:7680e7556f71e5f8a9b2faec3f307c7ed0acea665ffdf1f521c54e157927de92
 ---
 
 ## 功能介绍
@@ -26,50 +26,50 @@ CPU模板支持的泳道包括：Energy、CPU Core、Process。本文介绍CPU C
 
    框选主泳道，可对所选时间段内的CPU使用情况进行汇总统计，可查询多时间片的进程维度统计信息、线程维度状态统计信息、线程状态统计信息，以及所有时间片的数据统计信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/fykBChZ_TKC3tn8RcXjTZw/zh-cn_image_0000002731542623.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/ZXw3m74wRxulIVwbaDDb0g/zh-cn_image_0000002731542623.png "点击放大")
 2. 将其展开，子泳道显示各CPU核心调度信息、各CPU核心频率信息以及各CPU核心使用率信息。
 
    **说明** 
 
    将鼠标悬浮在某时间片上时，能够置灰非同进程时间片，通过此方法可以确定时间片的关联性。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/pWB5b4zbQ8Gjtboutzphrg/zh-cn_image_0000002731542627.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/cJlpZFjWSDmj_CiLvYWWnw/zh-cn_image_0000002731542627.png "点击放大")
 3. 指定时间片，查看统计信息。
    * 单击某个运行状态的时间片，可查询这个时间片的基本运行信息及调度时延信息。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/c6xegpdnQYGKFfDnuRiyEg/zh-cn_image_0000002701663438.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/LeMY_14BQZGbpV4Grfy9yQ/zh-cn_image_0000002701663438.png "点击放大")
    * 框选多个时间片，则可查询多时间片的进程维度统计信息以及所有时间片的数据统计信息。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/y51Um9I6SuqVfzJc28IZbQ/zh-cn_image_0000002701663442.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/35acNhNeTgeRiFq-nJ-7qw/zh-cn_image_0000002701663442.png "点击放大")
    * 开启"View Integrated Scheduling Chain"后，点击CPU时间片泳道的节点可以查看某一个CPU运行线程的完整唤醒调度链。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/BGulnoPWRIei4q1FsNTryA/zh-cn_image_0000002701823358.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/jF0guN_ARSyRazJ0ria_3w/zh-cn_image_0000002701823358.png "点击放大")
 
 ## 查询进程详情
 
-单击工具控制栏中的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/6ncm0TdiTwi1XoFUl9SCWg/zh-cn_image_0000002701823360.png "点击放大")按钮，可以设置是否为精简模式。精简模式下，trace数据量将大幅减少，主要采集当前进程、大桌面进程和render\_service进程的trace数据。
+单击工具控制栏中的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/z1hvTAM1RwCxEVzpubhFxA/zh-cn_image_0000002701823360.png "点击放大")按钮，可以设置是否为精简模式。精简模式下，trace数据量将大幅减少，主要采集当前进程、大桌面进程和render\_service进程的trace数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/tg7wifQ3QD-qVLoxx4PbQw/zh-cn_image_0000002701663432.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/gMAe0-57Q_SuzddXNDlboA/zh-cn_image_0000002701663432.png "点击放大")
 
 进程泳道显示进程对各CPU核心的占用情况。展开进程泳道，显示进程下的线程列表以及线程的运行状态。
 
 * 单击运行状态的时间片，显示线程在该片段的运行详情，包括起始时间、持续时长、运行状态、频率、线程优先级、所属进程、所属线程、上一运行状态、下一运行状态、唤醒线程，支持跳转到上个或者下个线程运行状态，支持跳转到唤醒线程状态等。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/mYpMHVIiQYCBiZ52BznVPw/zh-cn_image_0000002701663440.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/rSuqV8kxRbeDRQwAcb02UQ/zh-cn_image_0000002701663440.png "点击放大")
 * 框选Thread泳道中多个运行状态的时间片，可查看此时间段内的不同运行状态的线程的统计信息，包括总耗时时长、最大耗时、最小耗时、平均耗时、处于当前状态的线程数量以及线程中的中载和重载数据统计。
 
   **说明** 
 
   中载、重载数据每100ms做一次统计，24ms < Running时长 ≤ 48ms 记为中载，Running时长大于48ms记为重载。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/_h8BIZ0qQeyKwoIJjkUQag/zh-cn_image_0000002701663434.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/anL7-YBhT1CWBj3pDk3wsg/zh-cn_image_0000002701663434.png "点击放大")
 * 框选应用进程Process主泳道，可查看此时间段内该进程下的线程并行度统计信息。并行度数据每100ms做一次统计，可以查看100ms内运行的总线程数量、各线程并行的总时间和并行度。点选某一行，可以查看对应线程编号和运行时间段。
 
   **说明** 
 
   并行度（Parallelism）取值范围是[1,CPU核数]，数值越小代表并行度越低。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/Dvx42qr5TvGx3w66i2LT0Q/zh-cn_image_0000002731542629.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/IBMXRRtpTS-oh4xqoDP3LQ/zh-cn_image_0000002731542629.png "点击放大")
 
 ## 查看Trace详情
 
@@ -82,7 +82,7 @@ CPU模板支持的泳道包括：Energy、CPU Core、Process。本文介绍CPU C
   + 如果用户对线程进行了自定义打点，在此处亦可查看到对应的User Trace打点信息。
   + 从所在线程名称可分辨当前Trace的类型，系统Trace对应的线程名称为“线程名+线程号”，User Trace对应的线程名称为“打点任务名”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/FCod7_XWS7GOdhTajTeMDg/zh-cn_image_0000002701823352.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/SfZcuGp2RZO0BTlFhoTkBg/zh-cn_image_0000002701823352.png "点击放大")
 * 框选多个Trace片段，可查看到Trace统计信息列表，包括Trace名称、此类Trace的总耗时、单个Trace的平均耗时、以及该时间段内该类Trace的触发次数等。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/cqz2WRtHStCkxC0aNoUH2Q/zh-cn_image_0000002731382665.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/SeokBPfrTXWMIJWEEE0rCQ/zh-cn_image_0000002731382665.png "点击放大")

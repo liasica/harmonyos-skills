@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-pa
 title: 自定义.hvigor目录路径
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 配置构建流程 > 自定义.hvigor目录路径
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:32+08:00
+scraped_at: 2026-11-07T08:02:25+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:b39c24ca0dc0553e08ae9d9f03a1e7d38859ac1509a732d8d05f287ca9d45b4f
+content_hash: sha256:d9d188640d2d847744ca53b98b40cbbc2ad740324427a721b4ba4adc5eecd875
 ---
 
 .hvigor目录默认位于用户目录下：
@@ -30,7 +30,7 @@ content_hash: sha256:b39c24ca0dc0553e08ae9d9f03a1e7d38859ac1509a732d8d05f287ca9d
 
   变量值：自定义存放.hvigor目录的绝对路径。如D:\HvigorUserHome
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/piheAb9gSPqn7h9mDstbHg/zh-cn_image_0000002731382159.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/ZlJr2iZDRjuChZ9sY29n6Q/zh-cn_image_0000002731382159.png)
 * macOS环境变量设置方法：
 
   在macOS上为DevEco Studio设置环境变量需要使用launchd来设置。

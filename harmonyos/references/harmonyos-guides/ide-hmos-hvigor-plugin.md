@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 开发hvigor插件
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 扩展构建能力 > 开发hvigor插件
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:51+08:00
+scraped_at: 2026-11-07T08:02:40+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:c921fab94c0a2bec3b3b988967a81410d1312fdd8f960e55ec402cbd3d1b1c52
+content_hash: sha256:0e6168519bd9b06439999b5bdb2b05d5c9249ca53117ae0142958d0b9d7d2c15
 ---
 
 Hvigor允许开发者实现自己的插件，开发者可以定义自己的构建逻辑，并与他人共享。
@@ -22,7 +22,7 @@ Hvigor主要提供了两种方式来实现插件：基于hvigorfile脚本开发�
 
 若开发者需要创建新的构建脚本，推荐将这些脚本统一放在工程或模块的scripts目录下，以便与应用代码进行隔离，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/O0Y8KnYmR7SE1uytEAuU_g/zh-cn_image_0000002779728711.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/c-IyqOjNRoi5WJOApgN26A/zh-cn_image_0000002810630535.png "点击放大")
 
 以工程级hvigorfile.ts脚本为例，开发步骤如下。
 
@@ -62,7 +62,7 @@ Hvigor主要提供了两种方式来实现插件：基于hvigorfile脚本开发�
 
    执行Hvigor命令时，在Hvigor生命周期配置阶段执行插件中的apply方法。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/2cQ0fyEbR32kbf7eQfcVug/zh-cn_image_0000002750169534.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/VPG1usMOR2qkGugFd2bARg/zh-cn_image_0000002810630533.png)
 
 ## 基于typescript项目开发
 
@@ -96,7 +96,7 @@ Hvigor主要提供了两种方式来实现插件：基于hvigorfile脚本开发�
    tsc --init
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/A7zdQxWBTi6Hag1BVHccgg/zh-cn_image_0000002779608559.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/hdPu2pcuTqys6fvveJ0tQQ/zh-cn_image_0000002781311046.png)
 5. 删除verbatimModuleSyntax字段。
 
    检查tsconfig.json文件是否存在verbatimModuleSyntax字段，如果存在且配置为true，会导致无法使用ESM语法，编译时会报错，因此需要删除该字段。
@@ -183,7 +183,7 @@ typescript项目本质上是一种npm项目，插件发布流程遵循npm发布�
 
    如果编译时报以下错误，请检查初始化项目时是否[删除了verbatimModuleSyntax](ide-hmos-hvigor-plugin.md#li88369101451)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/THhBd9jsQJSdjdfKa8-tJg/zh-cn_image_0000002750009648.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/LINpzCLaSuuh8UrrqqqOuw/zh-cn_image_0000002810750643.png)
 4. 发布npm包。
 
    执行如下命令，将npm项目打包并发布至镜像仓库。

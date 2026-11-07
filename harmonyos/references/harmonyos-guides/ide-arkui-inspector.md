@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-arkui-ins
 title: 布局分析
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 布局分析
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:29+08:00
+scraped_at: 2026-11-07T08:02:22+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:0ebff6a47105361a9716092038bf24809ea70575fd933470771bfc715ac4f73b
+content_hash: sha256:6e6fbc79f1fe3805fc4e8ebb3450650be6c96f2bb8eda1d7364890ea5c70ffa2
 ---
 
 开发者可以使用ArkUI Inspector，在DevEco Studio上查看应用在真机上的UI显示效果，并通过查看多次操作后的界面状态，快速分析定位UI界面存在的问题。
@@ -41,69 +41,69 @@ ArkUI Inspector支持的功能包括：
 
 1. 在菜单栏点击**View > Tool Windows > ArkUI Inspector**，或者在DevEco Studio下方点击**ArkUI Inspector**，打开ArkUI Inspector。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/gAXFeymWSgC055c1tRojRA/zh-cn_image_0000002731381949.png)
-2. 点击RUN![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/e7EToPskS5ajUD1EEmNnDQ/zh-cn_image_0000002731381979.png)或者DEBUG![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/wlTuDoOXQqGT_7DkN6Wesw/zh-cn_image_0000002701822692.png)按钮，将应用推送安装到设备上，在设备的应用列表中选择当前显示在前台的UI进程。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/mjpA7aeBQbyabzQ1f1YwBg/zh-cn_image_0000002731381949.png)
+2. 点击RUN![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/B55TjBkfSdOsftrypP6y3Q/zh-cn_image_0000002731381979.png)或者DEBUG![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/xV2uVXXoT3CFB80gqtLNdQ/zh-cn_image_0000002701822692.png)按钮，将应用推送安装到设备上，在设备的应用列表中选择当前显示在前台的UI进程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/-ICwZ2A4QEGbiVhiuEYx-w/zh-cn_image_0000002701662716.png)
-3. ArkUI Inspector左侧为当前的组件树结构，中间栏显示当前设备的UI界面，右侧在选中组件的情况下为当前组件的属性信息。可以在左侧组件树上或在中间UI界面点击选择组件。当设备上UI发生变化时，可点击中间栏右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/t1_heVG1T9q_OVNgw9UCSQ/zh-cn_image_0000002731381985.png)按钮同步设备上的UI效果。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/nV31P3axTLiqDsEPf2t4nA/zh-cn_image_0000002701662716.png)
+3. ArkUI Inspector左侧为当前的组件树结构，中间栏显示当前设备的UI界面，右侧在选中组件的情况下为当前组件的属性信息。可以在左侧组件树上或在中间UI界面点击选择组件。当设备上UI发生变化时，可点击中间栏右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/B9aTERrSRju-gwAZGoVh0Q/zh-cn_image_0000002731381985.png)按钮同步设备上的UI效果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/wFVlTd3nTZy_03R33_hWVQ/zh-cn_image_0000002701662730.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/et4vaXuvSa-f6YAbvcklIQ/zh-cn_image_0000002701662730.png)
 4. 在设备框，点击设备列表的最后一项**Stop inspector**，可断开与设备的连接。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/jo1wZO6BSVqE5_aOMruA5g/zh-cn_image_0000002701822660.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/8xEeJiiNSdWVroug5nccoA/zh-cn_image_0000002701822660.png)
 
 ## 显示组件信息
 
-* 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/hQKTJN3nQ3S4X4LibucuyQ/zh-cn_image_0000002731541927.png "点击放大")，勾选**Show Tree Statistics**，可显示组件树组件信息。
+* 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/Jhj3uRfoQuKIgTjpi1b4Ew/zh-cn_image_0000002731541927.png "点击放大")，勾选**Show Tree Statistics**，可显示组件树组件信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/2Z42WkR4RHWAuJd00E1Jgg/zh-cn_image_0000002731541945.png)
-* 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/cSjkpBi0RkCyVJTLFDYo1A/zh-cn_image_0000002701662748.png "点击放大")，勾选**Show Hidden Components**，可显示隐藏的组件。
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/ftZHayyETyOqV_88p6VTbA/zh-cn_image_0000002731541945.png)
+* 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/IkumsMiLT6KrBBH_NQkP6A/zh-cn_image_0000002701662748.png "点击放大")，勾选**Show Hidden Components**，可显示隐藏的组件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/3A5BfPl4SjevF2Ap0xfjvQ/zh-cn_image_0000002701822638.png)
-* 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/RWIXGHrRRb-eOjM3dmKWgw/zh-cn_image_0000002731381933.png "点击放大")，勾选**Show Custom Components**，可过滤自定义组件。
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/s_GBbQGwQx2PO7HSD4WhQg/zh-cn_image_0000002701822638.png)
+* 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/I-t3b7RxQGOTxkdLYAl_PA/zh-cn_image_0000002731381933.png "点击放大")，勾选**Show Custom Components**，可过滤自定义组件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/FDtmzw0YSPqf-GUIvL71ig/zh-cn_image_0000002731541923.png)
-* 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/zLXsCwl5Rf2EM4-kfsNXkA/zh-cn_image_0000002731381971.png "点击放大")，勾选**Show System Components**，可过滤系统组件。
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/MwKhF8b6SpiRkAt60MrWcA/zh-cn_image_0000002731541923.png)
+* 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/P-o3Tzb6QAiiLJ2vKTjObw/zh-cn_image_0000002731381971.png "点击放大")，勾选**Show System Components**，可过滤系统组件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/CBJC2I_TSCqEKOS5BIR02A/zh-cn_image_0000002701822652.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/IiRhRj9uS2mnwidDz8bmMA/zh-cn_image_0000002701822652.png)
 
 ## 导入/导出UI界面快照
 
 ArkUI Inspector支持导出及导入应用UI界面快照，脱离设备查看应用UI界面显示效果。
 
-* 在中间栏点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/5-1vSLaUQwe4XNtX3-3OgA/zh-cn_image_0000002701662712.png)可以导入本地的应用UI界面快照。导入成功后将在DevEco Studio中打开该快照。
-* 在中间栏点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/jRxmKxcSQrashpKrP9cHnA/zh-cn_image_0000002701822696.png)可以将应用UI界面快照导出到本地。导出成功后将默认在DevEco Studio中打开该快照。
+* 在中间栏点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/8eOXROB4R7SaC7Qu-is6OQ/zh-cn_image_0000002701662712.png)可以导入本地的应用UI界面快照。导入成功后将在DevEco Studio中打开该快照。
+* 在中间栏点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/Nn5mla3mQHmtBG3iBjs2Dg/zh-cn_image_0000002701822696.png)可以将应用UI界面快照导出到本地。导出成功后将默认在DevEco Studio中打开该快照。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/cTMswLDSRU2mMHF7Yes90w/zh-cn_image_0000002731541955.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/eTVKMcDeRZuHl2Zjj0JJBw/zh-cn_image_0000002731541955.png)
 
 ## UI组件源码跳转
 
 1. 单击**Run > Edit Configurations**，勾选“**Enable DebugLine**”，点击**OK**保存后，重新运行工程，表示开启源码跳转功能。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/sHupqR7mSrisFYX1xjOmlA/zh-cn_image_0000002731381983.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/4tD5C_9cQnihugyhinZAmg/zh-cn_image_0000002731381983.png)
 2. 在ArkUI Inspector中，选中要进行源码跳转的UI组件，点击右侧的源码跳转，即可跳转到UI组件源码位置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/3dofUO5xRVuU7nKNximP5A/zh-cn_image_0000002731381963.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/si_wDoZNTAetGYrihO1HDA/zh-cn_image_0000002731381963.png)
 
 ## 显示布局边框
 
 在UI显示设置上，勾选“**Show Component Border**”，可显示当前页面所有组件的布局信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/9Z23XV_kRe6sXddvJBjvJg/zh-cn_image_0000002731381957.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/kF5r8WQ_QKagNn6Va2K23Q/zh-cn_image_0000002731381957.png)
 
 ## 查看UI组件的状态变量
 
 点击自定义组件，可以查看自定义组件的状态变量，以及状态变量影响的下一层组件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/uJsX4p7MQY23BcrNYeZGfg/zh-cn_image_0000002731381951.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/bGKa9yY2TkKW7Symm5SMQA/zh-cn_image_0000002731381951.png)
 
 ## 查看窗口交互事件
 
 从DevEco Studio 6.1.0 Beta1版本开始，支持查看[窗口交互事件](arkts-interaction-capability-overview.md)，包括触屏、鼠标、按键、滚轮、窗口焦点变化事件，帮助开发者定位窗口发生失焦、获焦、重绘等问题。
 
-选择**WindowEvents**页签，点击Start按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/ZWzI6gZFSLmOajRU-_i9oA/zh-cn_image_0000002731381947.png)，开始上报事件消息，包括事件时间戳、窗口ID、事件类型、坐标等，支持按事件类型过滤。点击Stop按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/Xntu3GKbT7iAp4d57Py07Q/zh-cn_image_0000002731381967.png)，即可停止上报事件。
+选择**WindowEvents**页签，点击Start按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/zwS1iDKHRs-ODbsjqL4Azw/zh-cn_image_0000002731381947.png)，开始上报事件消息，包括事件时间戳、窗口ID、事件类型、坐标等，支持按事件类型过滤。点击Stop按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/8rQw_SB7Te2rnID72YqEwg/zh-cn_image_0000002731381967.png)，即可停止上报事件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/9m8bKMNwTfa0t68vTF-ssA/zh-cn_image_0000002701662738.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/0MMXcPIoRe-I0NTc1DSYVA/zh-cn_image_0000002701662738.png)
 
 ## 3D展开应用
 
@@ -119,9 +119,9 @@ ArkUI Inspector支持将应用按照组件粒度进行3D展开，即UI界面能�
 
 ### 进入3D视图
 
-点击3D View按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/i8QsEVLVSjukeMHhKwJ8Ew/zh-cn_image_0000002701822668.png)，进入3D视图。首次进入3D视图会加载3D数据，请等待数据加载完成。
+点击3D View按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/92Pljh7xQwC9l6xRqtgbFg/zh-cn_image_0000002701822668.png)，进入3D视图。首次进入3D视图会加载3D数据，请等待数据加载完成。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/JOO6e1erQ72cmFHZWE4GRg/zh-cn_image_0000002731541915.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/YZSHxRQDShm3Ddwx-_TTIQ/zh-cn_image_0000002731541915.png)
 
 ### 基础操作
 
@@ -131,21 +131,21 @@ ArkUI Inspector支持将应用按照组件粒度进行3D展开，即UI界面能�
 
 ### 隐藏前方图层
 
-选中图层后，图层会显示蓝色边框，点击Hide Views in Front按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/9QIJzXNFTz2aUSSYFiCoMg/zh-cn_image_0000002701822636.png)，能够隐藏当前选中图层前方（朝向用户）的所有图层，避免不必要图层的干扰。
+选中图层后，图层会显示蓝色边框，点击Hide Views in Front按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/7Gx057vGSdGhqX38t1UpaA/zh-cn_image_0000002701822636.png)，能够隐藏当前选中图层前方（朝向用户）的所有图层，避免不必要图层的干扰。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/S00X8dP5QzuVwTcrok_hJQ/zh-cn_image_0000002701822658.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/f0g4L_IVRlyPI-FNq6mleQ/zh-cn_image_0000002701822658.png)
 
 ### 隐藏后方图层
 
-和隐藏前方图层类似，选中图层后，点击Hide Views Behind按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/TmrePrtfRdeTLTUQzbOa_g/zh-cn_image_0000002731381973.png)，能够隐藏当前选中图层后方的所有图层。
+和隐藏前方图层类似，选中图层后，点击Hide Views Behind按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/Ui6SIoUJR5KIiYR0p3_sIw/zh-cn_image_0000002731381973.png)，能够隐藏当前选中图层后方的所有图层。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/GHfVWe4OSKSHQSCq1Bawcw/zh-cn_image_0000002701662732.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/xMcanXBkTCuDKydlL8Qp7Q/zh-cn_image_0000002701662732.png)
 
 ### 恢复隐藏图层
 
-点击Restore Hidden Views按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/XmojT-ISTiC9anfwneaCtA/zh-cn_image_0000002731381999.png)，能够恢复所有隐藏的前方图层和后方图层。
+点击Restore Hidden Views按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/9T_zn8BtSqmSGZKjecyTCw/zh-cn_image_0000002731381999.png)，能够恢复所有隐藏的前方图层和后方图层。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/8grGWWsGTs-yQZRXwNpnmg/zh-cn_image_0000002701662724.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/3ohJwHkjQ5-Af179RA759w/zh-cn_image_0000002701662724.png)
 
 ### 切换图层排列顺序
 
@@ -154,42 +154,42 @@ ArkUI Inspector支持将应用按照组件粒度进行3D展开，即UI界面能�
 * id顺序：默认顺序，即渲染的顺序，也是组件真实显示的顺序，图层的遮挡关系和实际应用一致，每个图层显示在一个Z轴平面上，但如果图层数量较多，会导致Z轴过长，操作不方便。
 * 层级顺序：组件树上同一层级的组件，在3D视图中会显示在相同Z轴平面上，能够有效减少3D视图下Z轴长度。
 
-切换方式：点击Switch to Layer Order/Switch to Id Order按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/AyO3AALtRZO4PSDFZbPzbg/zh-cn_image_0000002731541963.png)，可以将图层的排列顺序分别切换至层级顺序/id顺序。
+切换方式：点击Switch to Layer Order/Switch to Id Order按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/8BKsrtzsSU6-YS_mG9Qkvw/zh-cn_image_0000002731541963.png)，可以将图层的排列顺序分别切换至层级顺序/id顺序。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/q_Ftf-f2TxGXVtabouxp6g/zh-cn_image_0000002701662726.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/QmsDGIrERGWIw6XYbVuK2A/zh-cn_image_0000002701662726.png)
 
 ### 调节图层间距
 
-鼠标悬浮在Adjust the Gap of Layers按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/IhGAfqnQQ0O2kqayr6EuIw/zh-cn_image_0000002731541935.png)上，出现一个拖动条，拖动后可调节图层间的距离，范围是0~100px。
+鼠标悬浮在Adjust the Gap of Layers按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/2h42V8RWS-OrQqGNdtpPnw/zh-cn_image_0000002731541935.png)上，出现一个拖动条，拖动后可调节图层间的距离，范围是0~100px。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/TPFNCbrXSFeLhwKOCY3aOA/zh-cn_image_0000002701662720.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/5fPMYRuZRx6q1j_SGtvdHw/zh-cn_image_0000002701662720.png)
 
 ### 显示/隐藏图层边框
 
-DevEco Studio默认给图层加了边框，此边框并非应用自身边框，便于查看透明图层。点击Hide Border按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/umlXhBAlQ6-kxdeAgjYRBA/zh-cn_image_0000002701662768.png)或Show Border![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/lYbnFeGyQpqtbkjeA8oqdA/zh-cn_image_0000002701662742.png)可以隐藏或显示图层边框。
+DevEco Studio默认给图层加了边框，此边框并非应用自身边框，便于查看透明图层。点击Hide Border按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/tkbz2dC-SS-pqtsN5uLxCw/zh-cn_image_0000002701662768.png)或Show Border![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/VG-ygFxKRDm24p3MOCtNsw/zh-cn_image_0000002701662742.png)可以隐藏或显示图层边框。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/HFdLBWpfS_isJTyJN42BEA/zh-cn_image_0000002731541943.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/i8GGt9pWTTmjCVJgm3urxA/zh-cn_image_0000002731541943.png)
 
 ### 放大/缩小视图
 
-点击Zoom In按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/enIpaS4fTm6ufwYF6NxFzw/zh-cn_image_0000002701822680.png)或Zoom Out按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/8Ifnp5H-S4iJ9f4sA5e9yQ/zh-cn_image_0000002701662734.png)，能够放大或缩小3D视图。
+点击Zoom In按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/5AVuLPJjTz6GPrdkYF4fwQ/zh-cn_image_0000002701822680.png)或Zoom Out按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/g1cjyv6zTTOsNPXtau1Z2Q/zh-cn_image_0000002701662734.png)，能够放大或缩小3D视图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/dzdFkbCBT1CxUxOsJM--FA/zh-cn_image_0000002731541957.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/2G3JImNbTNqaGGY2vO239w/zh-cn_image_0000002731541957.png)
 
 ### 自适应窗口
 
-点击Zoom to Fit Screen按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/x51a3ofQTkWKnzMI0sD2wQ/zh-cn_image_0000002701822646.png)，能够自动根据窗口大小，调整3D图层的缩放比例，并使3D视图回到区域中间。
+点击Zoom to Fit Screen按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/ewd-mJlvTbaZyT1w9Zz9JA/zh-cn_image_0000002701822646.png)，能够自动根据窗口大小，调整3D图层的缩放比例，并使3D视图回到区域中间。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/zNnpU2MlQvO33Wq0sPCNQw/zh-cn_image_0000002731541949.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/j_Gspn9GRqKVyWjDBxcQeg/zh-cn_image_0000002731541949.png)
 
 ### 切换正面/侧面视图
 
-DevEco Studio默认展示侧面视图，经过复杂的旋转后，可点击Switch to Front View按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/yUg1e2DoQpKWxVT-6rMeKQ/zh-cn_image_0000002731541953.png)或Switch to Side View按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/wanbuj2lRzGs3lkIbiVWxg/zh-cn_image_0000002731381987.png)，将3D视图自动调整到预设的正面或侧面视角。
+DevEco Studio默认展示侧面视图，经过复杂的旋转后，可点击Switch to Front View按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/vXpRwUySQ9u0W5jCVm_K-g/zh-cn_image_0000002731541953.png)或Switch to Side View按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/z4_VQaPeRpCZhf6_Sn741Q/zh-cn_image_0000002731381987.png)，将3D视图自动调整到预设的正面或侧面视角。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/9zok-d9qSkuwx-d7M6iedA/zh-cn_image_0000002701822642.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/C7xnyKh1RXyEd5c1j-oOAw/zh-cn_image_0000002701822642.png)
 
 ### 返回2D视图
 
-点击2D View按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/Dgpj3uwCTWa_TimW86xtig/zh-cn_image_0000002731541921.png)，可切换至2D视图。
+点击2D View按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/P8TYmH54Qc6gzrUs28JceQ/zh-cn_image_0000002731541921.png)，可切换至2D视图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/2_r-HvIQQB6Imk_usXSgug/zh-cn_image_0000002701822676.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/5lSGvJS6T9mOeIqezmWDCA/zh-cn_image_0000002701822676.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpm root
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm root
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:38+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:21856827e405743c4566f7c431ff29878a7b80057ec71362b6c2c992219e2f43
+scraped_at: 2026-11-07T08:02:42+08:00
+doc_updated_at: 2026-11-06
+content_hash: sha256:ade36d02170417fc4a58b09b17a477d011478fb301cf499ec09ae220791c9810
 ---
 
 在标准输出中打印有效的 oh\_modules 目录路径信息。
@@ -59,5 +59,5 @@ ohpm root
 pwd
 /storage/Users/currentUser/Documents/DevEcoStudioProjects/MyApplication01/entry/src
 ohpm root
-/storage/Users/currentUser/Documents/DevEcostudioProjects/MyApplication01/entry/oh_modules
+/storage/Users/currentUser/Documents/DevEcoStudioProjects/MyApplication01/entry/oh_modules
 ```
