@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-unified-dr
 title: 统一拖拽
 breadcrumb: 最佳实践 > 技术创新 > 全场景 > 多端协同 > 统一拖拽
 category: best-practices
-scraped_at: 2026-11-04T08:37:46+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:db0e58787ba12150d019bb7ed19f193cf8269d164a428ea733bcdc3991afb56b
+scraped_at: 2026-11-10T10:42:00+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:9e8503d480d2b969dfb9a4d9bbb1e20d779b9c2dcdf905dad981ec4f7adb432d
 ---
 
 ## 概述
 
 拖拽操作是一种直观且高效的数据传输方式，它允许用户通过手势（如用手指、鼠标或触控笔按住并移动）在应用程序之间及其内部进行数据传输。拖拽功能不仅操作便捷，还能与多种系统能力深度融合，从而拓展出更为广泛的应用场景。例如，跨设备拖拽功能使得用户能够在不同设备间无缝传输数据，而跨窗口拖拽则提高了多任务处理的灵活性。此外，基于拖拽操作还可以开发出更多创新性应用场景，如AI智能识别、水印添加等，这些创新性的功能统称为“统一拖拽”。
 
-拖拽过程中的数据传输基于统一数据管理框架（Unified Data Management Framework，UDMF）实现，UDMF为多对多跨应用数据共享场景提供了[标准化数据通路](../harmonyos-references/js-apis-data-unifieddatachannel.md)和[标准化数据结构](../harmonyos-references/js-apis-data-uniformdatastruct.md)。统一数据对象[UnifiedData](../harmonyos-references/js-apis-data-unifieddatachannel.md#unifieddata)提供了封装一组数据记录的方法，其中数据记录[UnifiedRecord](../harmonyos-references/js-apis-data-unifieddatachannel.md#unifiedrecord)可为一条HTML记录、一条图片记录等。UnifiedRecord支持调用[addEntry()](../harmonyos-references/js-apis-data-unifieddatachannel.md#addentry15)接口在当前数据记录中添加指定数据类型和内容的数据，通过此方法增加的数据类型和内容代表同一内容的不同表现形式。例如，对于一段文字，可以构造html和text两种样式的entry。通过这种方式，接收方能够按需选择接收。
+拖拽过程中的数据传输基于统一数据管理框架（Unified Data Management Framework，UDMF）实现，UDMF为多对多跨应用数据共享场景提供了[@ohos.data.unifiedDataChannel (标准化数据通路)](../harmonyos-references/js-apis-data-unifieddatachannel.md)和[@ohos.data.uniformDataStruct (标准化数据结构)](../harmonyos-references/js-apis-data-uniformdatastruct.md)。统一数据对象[UnifiedData](../harmonyos-references/js-apis-data-unifieddatachannel.md#unifieddata)提供了封装一组数据记录的方法，其中数据记录[UnifiedRecord](../harmonyos-references/js-apis-data-unifieddatachannel.md#unifiedrecord)可为一条HTML记录、一条图片记录等。UnifiedRecord支持调用[addEntry()](../harmonyos-references/js-apis-data-unifieddatachannel.md#addentry15)接口在当前数据记录中添加指定数据类型和内容的数据，通过此方法增加的数据类型和内容代表同一内容的不同表现形式。例如，对于一段文字，可以构造html和text两种样式的entry。通过这种方式，接收方能够按需选择接收。
 
 本文结合不同的场景，提供具体的示例方案，帮助开发者更好地理解和应用拖拽技术。
 
@@ -157,7 +157,7 @@ Column() {
 **运行效果**
 
 **图1** 拖拽图片增加水印  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/Ny14mimiT-WqCZYEyh6-oA/zh-cn_image_0000002315615638.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/hNCwZMgBTUOpxkD7JVknJQ/zh-cn_image_0000002315615638.gif "点击放大")
 
 **实现原理**
 
@@ -172,7 +172,7 @@ Column() {
      // ...
      .draggable(true)
    ```
-2. 在拖出对象的[onDragStart()](../harmonyos-references/ts-universal-events-drag-drop.md#ondragstart)接口中，获取图像信息并将其转换成[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)。
+2. 在拖出对象的[onDragStart()](../harmonyos-references/ts-universal-events-drag-drop.md#ondragstart)接口中，获取图像信息并将其转换成[Interface (PixelMap)](../harmonyos-references/arkts-apis-image-pixelmap.md)。
 
    ```screen
    Image($rawfile('river.png'))
@@ -275,11 +275,11 @@ Column() {
 **运行效果**
 
 **图2** 自定义拖拽背板  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/gQ22Vk75RcGEM8nWZ-7xVQ/zh-cn_image_0000002349574333.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/phP-0ZJlSR6Bj_4JtuNfSQ/zh-cn_image_0000002349574333.gif "点击放大")
 
 **实现原理**
 
-在拖出对象的[onDragStart()](../harmonyos-references/ts-universal-events-drag-drop.md#ondragstart)接口中，自定义[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)作为拖拽过程中的背板图。
+在拖出对象的[onDragStart()](../harmonyos-references/ts-universal-events-drag-drop.md#ondragstart)接口中，自定义[Interface (PixelMap)](../harmonyos-references/arkts-apis-image-pixelmap.md)作为拖拽过程中的背板图。
 
 **开发步骤**
 
@@ -363,7 +363,7 @@ Column() {
 **运行效果**
 
 **图3** AI识别拖拽内容  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/0sHni1CTTPG8RDLSa-IAXA/zh-cn_image_0000002349614541.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/wFWVJumiQjOUECoaGJ2Xrg/zh-cn_image_0000002349614541.gif "点击放大")
 
 **实现原理**
 
@@ -405,7 +405,7 @@ Column() {
      }
    })
    ```
-3. 将拖拽数据转换成颜色数据格式为BGRA\_8888的[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)类型的视觉信息。
+3. 将拖拽数据转换成颜色数据格式为BGRA\_8888的[Interface (PixelMap)](../harmonyos-references/arkts-apis-image-pixelmap.md)类型的视觉信息。
 
    ```screen
    Column() {
@@ -509,7 +509,7 @@ Column() {
 **运行效果**
 
 **图4** 在线图片拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/LQvjIZZfS26gY7jw6hYeog/zh-cn_image_0000002315775454.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/X6Uw6d0ITaCeyybdA7LNmw/zh-cn_image_0000002315775454.gif "点击放大")
 
 **使用说明**
 
@@ -575,7 +575,7 @@ Column() {
      // ...
    });
    ```
-4. 在落入方Image组件的[onDrop()](../harmonyos-references/ts-universal-events-drag-drop.md#ondrop)回调里调用[request](../harmonyos-references/js-apis-request.md#导入模块)的[downloadFile()](../harmonyos-references/js-apis-request.md#requestdownloadfile9)方法下载图片资源。
+4. 在落入方Image组件的[onDrop()](../harmonyos-references/ts-universal-events-drag-drop.md#ondrop)回调里调用[request](../doccenter-references/api/js-apis-request.md)的[request.downloadFile()](../harmonyos-references/js-apis-request.md#requestdownloadfile9)方法下载图片资源。
 
    ```screen
    Column() {
@@ -622,11 +622,11 @@ Column() {
 **运行效果**
 
 **图5** 本地视频拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/4CXGIqsvTNqqlMyzPe7yAQ/zh-cn_image_0000002315615654.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/gvzPE7ruSAiQ2zctdSkQ3A/zh-cn_image_0000002315615654.gif "点击放大")
 
 **实现原理**
 
-为了实现文件的拖拽，通常会构建一个[uniformDataStruct.FileUri](../harmonyos-references/js-apis-data-uniformdatastruct.md#fileuri15)类型的数据对象，传入文件的uri，并通过设置fileType属性来区分不同的文件类型。在接收方的[onDrop()](../harmonyos-references/ts-universal-events-drag-drop.md#ondrop)回调函数中获取uri，进而访问该文件。建议使用UDMF的[startDataLoading()](../harmonyos-references/ts-universal-events-drag-drop.md#startdataloading15)接口获取文件，并展示获取进度。如果接收方需要将文件拷贝到本地，可以通过向参数[datasyncoptions](../harmonyos-references/ts-universal-events-drag-drop.md#datasyncoptions15)传入destUri来指定目标路径，UDMF将会把文件拷贝至该路径。
+为了实现文件的拖拽，通常会构建一个[FileUri](../harmonyos-references/js-apis-data-uniformdatastruct.md#fileuri15)类型的数据对象，传入文件的uri，并通过设置fileType属性来区分不同的文件类型。在接收方的[onDrop()](../harmonyos-references/ts-universal-events-drag-drop.md#ondrop)回调函数中获取uri，进而访问该文件。建议使用UDMF的[startDataLoading()](../harmonyos-references/ts-universal-events-drag-drop.md#startdataloading15)接口获取文件，并展示获取进度。如果接收方需要将文件拷贝到本地，可以通过向参数[datasyncoptions](../harmonyos-references/ts-universal-events-drag-drop.md#datasyncoptions15)传入destUri来指定目标路径，UDMF将会把文件拷贝至该路径。
 
 **实现步骤：**
 
@@ -641,7 +641,7 @@ Column() {
      .draggable(true)
        // ...
    ```
-2. 在拖出视频的[onDragStart()](../harmonyos-references/ts-universal-events-drag-drop.md#ondragstart)回调中，将视频文件复制到沙箱目录。构造[uniformDataStruct.FileUri](../harmonyos-references/js-apis-data-uniformdatastruct.md#fileuri15)类型的数据，将oriUri设置为沙箱路径下视频文件的uri。
+2. 在拖出视频的[onDragStart()](../harmonyos-references/ts-universal-events-drag-drop.md#ondragstart)回调中，将视频文件复制到沙箱目录。构造[FileUri](../harmonyos-references/js-apis-data-uniformdatastruct.md#fileuri15)类型的数据，将oriUri设置为沙箱路径下视频文件的uri。
 
    ```screen
    Video({
@@ -723,7 +723,10 @@ Column() {
 
 ## 图文混排拖拽
 
-此场景涉及拖拽图片与文字混合的内容。对于轻量级的图文混排内容，可以通过向[Text](../harmonyos-references/ts-basic-components-text.md#接口)组件中添加[Span](../harmonyos-references/ts-basic-components-span.md#接口)和[ImageSpan](../harmonyos-references/ts-basic-components-imagespan.md#接口)子组件来实现。此外，使用[RichEditor](../harmonyos-references/ts-basic-components-richeditor.md#接口)组件也可构建图文混排内容。如何选择适合的图文混排组件，请参考[如何选择图文混排方案](../harmonyos-faqs/faqs-arkui-23.md)。
+此场景涉及拖拽图片与文字混合的内容。对于轻量级的图文混排内容，有两个方案可供选择：
+
+1. 轻量级[Span](../doccenter-references/api/ts-basic-components-span.md)和[ImageSpan](../doccenter-references/api/ts-basic-components-imagespan.md)图文混排：可通过[Text](../doccenter-references/api/ts-basic-components-text.md)组件中嵌套ImageSpan子组件和Span子组件的方式，实现图文混排。具体实现可参考ImageSpan中的[示例1（设置对齐方式）](../doccenter-references/api/ts-basic-components-imagespan.md#示例1设置对齐方式)。
+2. 富文本[RichEditor](../doccenter-references/api/ts-basic-components-richeditor.md)支持文本交互式编辑和图文混排，通过[addTextSpan](../doccenter-references/api/ts-basic-components-richeditor.md#addtextspan)方法添加文本内容，通过[addImageSpan](../doccenter-references/api/ts-basic-components-richeditor.md#addimagespan)方法添加图片内容。具体实现可参考RichEditor中的[示例1（更新文本样式）](../doccenter-references/api/ts-basic-components-richeditor.md#示例1更新文本样式)。
 
 在某些情况下，不同的接收方对同一内容支持的格式各不相同。此时，开发者可以自定义图文混排的拖拽内容，设置UDMF多Entry形式的拖拽数据，以适应不同的接收方。
 
@@ -732,7 +735,7 @@ Column() {
 **运行效果如下所示**
 
 **图6** Text组件图文混排拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/qD9BOqVFR36ONjOpwAu9yQ/zh-cn_image_0000002349574337.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/3UqB_zcLQvSJGqqx9PnceA/zh-cn_image_0000002349574337.gif "点击放大")
 
 **实现原理**
 
@@ -791,7 +794,7 @@ Column() {
 **运行效果展示**
 
 **图7** RichEditor组件图文混排拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/pKwl_jhHSmGhiHsngF2iuA/zh-cn_image_0000002349614553.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/vegLXlMGQ2mJdsouXq0HrA/zh-cn_image_0000002349614553.gif "点击放大")
 
 **实现原理**
 
@@ -875,7 +878,7 @@ async receiveDragData(event: DragEvent) {
 **运行效果如下所示**
 
 **图8** 多Entry图文混排拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/ou5o3hNORLGOgxBkjZMqng/zh-cn_image_0000002315775466.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/uKKh-VulT0-m__QkJwuY4w/zh-cn_image_0000002315775466.gif "点击放大")
 
 **实现原理**
 
@@ -1119,7 +1122,7 @@ async receiveDragData(event: DragEvent) {
 **运行效果如下图所示**
 
 **图9** 分屏拖拽  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/XkhszFhqRx-VevE-g4WJgA/zh-cn_image_0000002315615670.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/TkFaStS-RBypmJvpl8hq3w/zh-cn_image_0000002315615670.gif "点击放大")
 
 ## 跨设备拖拽
 
@@ -1132,11 +1135,11 @@ async receiveDragData(event: DragEvent) {
 **结果展示**
 
 **图10** 跨设备拖拽效果展示  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/AZ1IUK9BS0epSfBNATl3Kg/zh-cn_image_0000002349574349.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/H_22YvO1SdikdTc4xHSZLw/zh-cn_image_0000002349574349.gif "点击放大")
 
 ## 拖入小艺和中转站
 
-将数据拖入系统的中转站，可以实现跨应用数据拖拽和跨设备数据流转。将数据拖入小艺，可以利用系统的AI能力处理拖拽数据。小艺和中转站支持落入[标准化数据通路](../harmonyos-references/js-apis-data-unifieddatachannel.md#unifiedrecord)中定义的数据类型，开发者需要在起拖时构造相应的数据。
+将数据拖入系统的中转站，可以实现跨应用数据拖拽和跨设备数据流转。将数据拖入小艺，可以利用系统的AI能力处理拖拽数据。小艺和中转站支持落入[UnifiedRecord](../harmonyos-references/js-apis-data-unifieddatachannel.md#unifiedrecord)中定义的数据类型，开发者需要在起拖时构造相应的数据。
 
 **使用限制**
 
@@ -1145,10 +1148,10 @@ async receiveDragData(event: DragEvent) {
 **运行效果如下图所示**
 
 **图11** 将数据拖入小艺  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/9MYHzI6VQG6tY-G-9p9U_Q/zh-cn_image_0000002349614565.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/GsR1791aQ-24VHGROQFaKg/zh-cn_image_0000002349614565.gif "点击放大")
 
 **图12** 将数据拖入中转站  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/vaeoCEV7Roi_LO7TQfg7Qw/zh-cn_image_0000002315775482.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/d-392SL_R_y8_zpRzCQEyw/zh-cn_image_0000002315775482.gif "点击放大")
 
 ## 常见问题
 
@@ -1158,11 +1161,11 @@ async receiveDragData(event: DragEvent) {
 
 ### 拖拽的触发手势长按浮起与长按手势之间存在冲突
 
-若组件既需要处理长按手势，又需要支持可拖拽能力（拖拽的触发为长按500ms并移动10vp)，则可通过 parallelGesture 实现多个手势事件的处理，而不产生冲突。详细请参见[绑定手势方法](../harmonyos-references/ts-gesture-settings.md)。
+若组件既需要处理长按手势，又需要支持可拖拽能力（拖拽的触发为长按500ms并移动10vp)，则可通过parallelGesture实现多个手势事件的处理，而不产生冲突。详细请参见[绑定手势事件](../harmonyos-references/ts-gesture-settings.md)。
 
 ### 拖出的PixelMap落入时与拖出端存在色差
 
-拖出PixelMap时，需要设置当前PixelMap的编码格式，否则落入方不能确定该PixelMap的编码方式，按照默认行为处理可能出现存在色差的情况。PixelMap的默认编码格式是BGRA\_8888，若拖出方未指定PixelMap的编码格式，则落入方按照RGBA格式解码即可。若拖出方有指定了PixelMap的编码格式，则落入方可以通过systemDefinedPixelMap.details，details['pixel-format'] 获取拖出方的编码格式，再以该格式解码即可。
+拖出PixelMap时，需要设置当前PixelMap的编码格式，否则落入方不能确定该PixelMap的编码方式，按照默认行为处理可能出现存在色差的情况。PixelMap的默认编码格式是BGRA\_8888，若拖出方未指定PixelMap的编码格式，则落入方按照RGBA格式解码即可。若拖出方有指定了PixelMap的编码格式，则落入方可以通过systemDefinedPixelMap.details，details['pixel-format']获取拖出方的编码格式，再以该格式解码即可。
 
 ### 图文混排数据拖拽落位后与原拖出方排版格式有差异
 

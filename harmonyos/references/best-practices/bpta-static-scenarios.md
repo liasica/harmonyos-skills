@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-static-sce
 title: 静态场景低功耗规则
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 > 前台资源合理使用 > 静态场景低功耗规则
 category: best-practices
-scraped_at: 2026-11-04T08:38:01+08:00
+scraped_at: 2026-11-10T10:42:09+08:00
 doc_updated_at: 2026-03-27
-content_hash: sha256:c9ba230e8f6429327197c8ad18dabae68accc9cd5ac436a917ad542a9e4c9fc7
+content_hash: sha256:ee289a985484cd6d130508c48ae1b912b9163b7618846118e2d3912dbac48312
 ---
 
 ## 规则
@@ -48,16 +48,16 @@ content_hash: sha256:c9ba230e8f6429327197c8ad18dabae68accc9cd5ac436a917ad542a9e4
 
 * 开机后，桌面静置。连接Wi-Fi后，lottie动效异常，导致UI和RS空跑。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/OLs0CSWMQRWBPB2wIjIurg/zh-cn_image_0000002194011528.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/24CWwDW3R56tUb8PHM5S1g/zh-cn_image_0000002194011528.png "点击放大")
 * 应用静置界面时，应用以120 fps响应vsync事件但无实际显示，导致应用进程和RS负载较高。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/nDjgw6BZQnONVOmh69hQfQ/zh-cn_image_0000002229451821.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/RiPfTtBCQFWuSNu9yPCKfA/zh-cn_image_0000002229451821.png "点击放大")
 
 ## 调测验证
 
 * 查看日志：在控制台输入top指令，可直接获取进程负载。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/t_rynr0kSPGFl0wnpouE8w/zh-cn_image_0000002193851952.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/-bTU8-DmTnyK4RLL91XflA/zh-cn_image_0000002193851952.png "点击放大")
 * 抓取trace：通过trace中的进程耗时和绝对耗时，计算进程负载。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/OvVTbQrySHChClGz_xL6IQ/zh-cn_image_0000002229337329.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/NQln0xArS1SJ54dnuNq6uA/zh-cn_image_0000002229337329.png "点击放大")

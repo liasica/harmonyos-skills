@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-video-ligh
 title: 视频轻编辑开发实践
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 视频轻编辑开发实践
 category: best-practices
-scraped_at: 2026-11-04T08:37:56+08:00
+scraped_at: 2026-11-10T10:42:06+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:29f2fba4d174307512187e9c07545b72bbe26b3b59e01d98d247eab189fe6fc4
+content_hash: sha256:be339cf0e1d9d29aba11de04f2e677ac616a4a02e3bc046da2b800ee073a5e40
 ---
 
 ## 概述
@@ -28,13 +28,13 @@ content_hash: sha256:29f2fba4d174307512187e9c07545b72bbe26b3b59e01d98d247eab189f
 
 视频编辑预览是视频编辑的核心功能之一，允许用户在编辑过程中实时查看视频效果。用户可以通过拉起图库选择单个视频文件后进入编辑页，编辑页上方约70%区域为视频预览区，下方30%为编辑操作区。视频导入后自动播放，预览过程中支持播放、循环播放等操作，同时支持在视频上方叠加贴纸和文字等元素。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/7ezdKR5-RYi8f6zh3BKJaQ/zh-cn_image_0000002680339558.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/hU9Ox9CCS8ihdJ-_1hSM6w/zh-cn_image_0000002680339558.gif "点击放大")
 
 ### 实现原理
 
 预览阶段采用解码直出+UI叠加的轻量方案，不经过IGLRenderEngine，与导出侧InSurface/OutSurface链路形成对照，从而在编辑过程中保持较低延迟。调用时序图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/XC18YOZ2QlGOI0IcgTAqXQ/zh-cn_image_0000002710019335.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/B5cNSycYRF6GxnwHQWUmCw/zh-cn_image_0000002710019335.png "点击放大")
 
 ### 开发步骤
 
@@ -275,17 +275,17 @@ content_hash: sha256:29f2fba4d174307512187e9c07545b72bbe26b3b59e01d98d247eab189f
 
 用户点击按钮，显示文本输入面板，输入文字后点击添加按钮。文字显示在视频预览区上方，系统将文字渲染为图片，然后作为贴纸叠加到视频，支持单指移动、双指缩放与旋转，与贴纸共用手势逻辑。可叠加多段文字，按添加顺序决定层级。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/DaZZcXLZRyyCfEHChGOHBw/zh-cn_image_0000002680179682.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/yNGBJAgbRnOssVPe4_kjMQ/zh-cn_image_0000002680179682.gif "点击放大")
 
 ### 实现原理
 
 文字在预览与导出两端采用不同渲染路径、同一数据模型的策略：预览由ArkUI直接绘制，导出前将文字栅格化为PNG图像，复用贴纸/Image资产管线进入渲染引擎合成。调用时序（预览添加）图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/fecOSR-USNSYruFA7cIFVA/zh-cn_image_0000002709859481.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/5W7uzsE6Q0OXeOk_K5PqFg/zh-cn_image_0000002709859481.png "点击放大")
 
 导出合成的调用时序如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/DwTV40C5RDSzgaphWiQCjQ/zh-cn_image_0000002680339560.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/9w60Y_MeSbKjHsNC_Dp9xQ/zh-cn_image_0000002680339560.png "点击放大")
 
 ### 开发步骤
 
@@ -480,17 +480,17 @@ content_hash: sha256:29f2fba4d174307512187e9c07545b72bbe26b3b59e01d98d247eab189f
 
 用户点击按钮，从图库选择单张图片作为贴纸叠加到视频上。贴纸支持单指拖动、双指缩放与旋转，用户可以添加多个贴纸，按添加顺序叠放层级。贴纸位置限制在视频可视区域内，可以删除不需要的贴纸。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/fLQzwtUFTMibkFZvQa9jdw/zh-cn_image_0000002710019337.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/q7sTKep2Qy67HCDo3lu-4g/zh-cn_image_0000002710019337.gif "点击放大")
 
 ### 实现原理
 
 图片与文字共用ImageAsset数据结构与NAPI接口，预览由Image组件叠加，导出由IGLRenderEngine + ImageManager在GPU侧合成。预览添加与手势的调用时序如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/oKdDe2FZTcaByW6vBvIyKw/zh-cn_image_0000002680179684.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/3sVJNlBOQkm5SMRhqZYceA/zh-cn_image_0000002680179684.png "点击放大")
 
 导出合成调用时序如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/99F29wLmRd6_Hte5g2KNSA/zh-cn_image_0000002709859483.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/1lp2-t4MQNO_qlT5agGW6A/zh-cn_image_0000002709859483.png "点击放大")
 
 色彩空间要求：
 
@@ -703,7 +703,7 @@ content_hash: sha256:29f2fba4d174307512187e9c07545b72bbe26b3b59e01d98d247eab189f
 
 在短视频编辑场景中，用户通常希望对视频的音频进行灵活控制：一方面可以选择保留或移除视频原声，另一方面可以叠加新的背景音乐。例如，为一段旅行视频配上轻快的配乐并关闭原声，或在保留环境音的同时叠加一段舒缓的背景音乐。用户可以从音频库选择音频文件，添加后会立即播放音乐。在导出时，音乐起点会与视频裁剪点对齐，音乐时长大于视频时长时进行裁剪，小于视频时长时循环填充。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/ZiQ8GQnhSlmK5zPAF_sPRw/zh-cn_image_0000002680339562.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/co6EJoImRby8QjnwoInzWA/zh-cn_image_0000002680339562.gif "点击放大")
 
 ### 实现原理
 
@@ -732,11 +732,11 @@ content_hash: sha256:29f2fba4d174307512187e9c07545b72bbe26b3b59e01d98d247eab189f
 
 预览时序（原声控制 + 配乐叠加）如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/UDruuzreSyqIrDlJ7R4UsA/zh-cn_image_0000002710019339.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/xObWLzY_TKKgR5q_-zjlOQ/zh-cn_image_0000002710019339.png "点击放大")
 
 导出时序（原声控制 + 配乐叠加）如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/X_GSb5G_R-eZdrQfTP_FBg/zh-cn_image_0000002680179686.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/1mHavqqkQJGgjDsIdc0elQ/zh-cn_image_0000002680179686.png "点击放大")
 
 ### 开发步骤
 
@@ -1270,7 +1270,7 @@ content_hash: sha256:29f2fba4d174307512187e9c07545b72bbe26b3b59e01d98d247eab189f
 
 视频裁剪功能允许用户通过拖动把手来裁剪视频的时长。拖动左把手设置视频从开头裁剪的长度，拖动右把手设置从尾部裁剪的长度。预览时视频从裁剪起点到裁剪终点循环播放，导出时视频从裁剪起点导出至裁剪终点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/qsRKUUFsQaWdA5wG9ITwbA/zh-cn_image_0000002709859485.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/P3kblho6RDq0t4aFFjjnYA/zh-cn_image_0000002709859485.gif "点击放大")
 
 ### 实现原理
 
@@ -1400,7 +1400,7 @@ content_hash: sha256:29f2fba4d174307512187e9c07545b72bbe26b3b59e01d98d247eab189f
 
 视频编辑保存和导出功能是视频编辑器的最终输出环节。用户完成所有编辑操作后，点击"完成"按钮触发导出流程。界面显示半透明蒙层与进度条，暂停视频、原声与配乐播放，系统会将所有编辑效果（贴纸、文字、背景音乐、裁剪等）合成为一个新的视频文件，并保存到系统相册。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/hAf3TBlcSaGa9ApcWlsdXg/zh-cn_image_0000002680339564.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/PRB75E5YTryYDXMMZI7hTw/zh-cn_image_0000002680339564.gif "点击放大")
 
 ### 实现原理
 
@@ -1412,11 +1412,11 @@ content_hash: sha256:29f2fba4d174307512187e9c07545b72bbe26b3b59e01d98d247eab189f
 
 因此PrepareExportEngine中的配置顺序为：Render（Create + SetViewParams + SetOutSurface + SetInVideoFormat）→ Encoder（Init + GetVideoInputWindow）→ Decoder（SetVideoOutputWindow + Init + AddAudio + AddImage）。调用时序（用户触发导出）如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/ijhogTraSP6oGBX_jlFigA/zh-cn_image_0000002710019341.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/PeNmNpv5QVCvwCUVa9aU7g/zh-cn_image_0000002710019341.png "点击放大")
 
 调用时序（引擎预配置PrepareExportEngine）如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/bcX-P3ePQhC5gOgwSctrNw/zh-cn_image_0000002680179688.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/4DNB349dTnutDIQp6YtC9w/zh-cn_image_0000002680179688.png "点击放大")
 
 **启动顺序：** Render → Encoder → Decoder（与创建配置顺序不同，启动时先就绪下游再启动上游送帧）。
 

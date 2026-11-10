@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-ripp
 title: 基于AudioRenderer和AudioCapturer实现音频波形动画
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 基于AudioRenderer和AudioCapturer实现音频波形动画
 category: best-practices
-scraped_at: 2026-11-04T08:37:57+08:00
+scraped_at: 2026-11-10T10:42:06+08:00
 doc_updated_at: 2026-11-03
-content_hash: sha256:95363df8da6747f614aa623f85cf713fb060c6178aa2b9d56a0fd087b370c0a4
+content_hash: sha256:f15aa691c7dda7ea63dfd1fc556d32779158c4263592e955e88b9d4aaef86b10
 ---
 
 ## 概述
 
 音频波形动画是音频数据的线性波形显示，其中，水平X轴用于衡量时间，垂直Y轴用于衡量振幅，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/kwUsDMsTQYC8U5CrJ1S4oQ/zh-cn_image_0000002507968404.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/qBY5vsrjRj-f9hBaBRGXpA/zh-cn_image_0000002507968404.png "点击放大")
 
 由于音频波形可以清晰地显示振幅变化，因此非常适合于直观显示声音、音乐等的音量大小变化，常用于用户在录音或播放录音过程中实时展示音量大小的场景。
 
@@ -25,7 +25,7 @@ content_hash: sha256:95363df8da6747f614aa623f85cf713fb060c6178aa2b9d56a0fd087b37
 
 dBFS是描述音频信号在数字系统中的幅度的单位，在波形显示中，通常使用dBFS衡量数字音频中的信号强度。其计算公式如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/C_WQvWxiSjaf3GJfhF0iUQ/zh-cn_formulaimage_0000002539808087.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/wDmoesCMTEia2d-XvLG3dw/zh-cn_formulaimage_0000002539808087.png "点击放大")
 
 其中，A表示当前采样点的振幅值（即该时刻音频数据的瞬时数值）。Amax表示在当前位深下，系统所能表示的最大振幅值。
 
@@ -37,7 +37,7 @@ dBFS是描述音频信号在数字系统中的幅度的单位，在波形显示�
 
 开发者在开发录音播放等场景时，为了体现当前播放音量的大小，需要实现音频播放波形，下面将介绍如何基于AudioRenderer实现音频播放波形。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/h0XHCqdCQWCAOqAekZZjGA/zh-cn_image_0000002539688123.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/zx5FUcCDQCKa6e0-OpTOjw/zh-cn_image_0000002539688123.gif "点击放大")
 
 ### 实现原理
 
@@ -125,7 +125,7 @@ dBFS是描述音频信号在数字系统中的幅度的单位，在波形显示�
 
 开发者在开发通讯软件的语音录制发送、音乐录制等场景时，为了体现当前录制音量的大小，需要实现音频录制波形。下面将介绍如何基于AudioCapturer实现音频录制波形。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/X3maj5-ORtyPKfxAfZ69ug/zh-cn_image_0000002507968406.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/iZY8vZZSR2aE3l3zzGEZ_Q/zh-cn_image_0000002507968406.gif "点击放大")
 
 ### 实现原理
 

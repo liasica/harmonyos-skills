@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-waterflow-
 title: 瀑布流加载丢帧优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > 瀑布流加载丢帧优化
 category: best-practices
-scraped_at: 2026-11-04T08:37:59+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:8551d6485fd7b1a97c8291a73f76e2d4995ea1052e0c22260babfd75b0f3f886
+scraped_at: 2026-11-10T10:42:08+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:b336874791ab043aedd00d81806b8f9925330fa72d45de5533743b59b94f7e42
 ---
 
 ## 概述
@@ -85,7 +85,7 @@ build() {
 
 **瀑布流组件加载流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/iJ7XDzpPQ_OpeEakDV9ckg/zh-cn_image_0000002194010900.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/SJLwbBN3T8i163ecIb4L3Q/zh-cn_image_0000002194010900.png)
 
 示例如下：
 
@@ -135,7 +135,7 @@ Image组件异步加载，提前设定FlowItem高度，避免图片加载后高�
 
 **图1** 瀑布流页面卡片宽高计算逻辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/VvhAVwijSlaQvsAZbsFuSA/zh-cn_image_0000002194010908.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/C6eJFitqTSWYyvA8yU4WQA/zh-cn_image_0000002194010908.png "点击放大")
 
 如上图所示，两列瀑布流卡片的宽度 = （屏幕宽度 - 2 \* 组件外边距（margin） - 瀑布流组件内边距（gap））/ 2。
 
@@ -162,7 +162,7 @@ getTitleHeight(title: string): number {
 
 **整体效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/SqwLx8jcSryyB6Iz6hqK7w/zh-cn_image_0000002194010904.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/B86ttCzbRMShuPhLncMcIg/zh-cn_image_0000002194010904.png "点击放大")
 
 下表为通过网络请求500条数据加载渲染，测试获得的数据（数据测试方式采用技术从左向右累加测试的）：
 
@@ -187,7 +187,7 @@ getTitleHeight(title: string): number {
 | 组件复用 | 适用于瀑布流中存在大量结构相同的组件频繁创建与销毁导致性能瓶颈的场景。 | [自定义组件复用开发实践](../doccenter-capabilities/arkts-component_reuse.md) |
 | 固定宽高 | 适用于瀑布流页面组件高度不一的场景。 | [利用布局边界减少布局计算](../harmonyos-guides/arkts-layout-optimization-guidance.md#利用布局边界减少布局计算) |
 | 布局优化 | 错误的布局方式可能会导致组件树和嵌套层数过多，在创建和布局绘制阶段产生较大的性能开销，所以可以通过布局优化提升性能。 | [合理使用布局组件](../harmonyos-guides/arkts-layout-optimization-guidance.md#合理使用布局组件) |
-| 状态管理 | 在ArkUI的开发过程中，如果没有选择合适的装饰器或合理的控制状态更新范围，会导致非必要的UI视图刷新，造成性能浪费。 | [状态管理最佳实践](bpta-status-management.md) |
+| 状态管理 | 在ArkUI的开发过程中，如果没有选择合适的装饰器或合理的控制状态更新范围，会导致非必要的UI视图刷新，造成性能浪费。 | [状态管理最佳实践](../doccenter-capabilities/arkts-state-management.md) |
 
 ## 示例代码
 

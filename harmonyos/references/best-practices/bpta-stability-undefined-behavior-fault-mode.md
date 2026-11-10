@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 未定义异常访问故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 地址越界故障模式说明 > 未定义异常访问故障模式说明
 category: best-practices
-scraped_at: 2026-11-04T08:38:04+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:c426930eabb8d9badbae7b6b8dfaf223979ef643bcfb0c9c8c883d03674eda76
+scraped_at: 2026-11-10T10:42:11+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:a6672210d9179e2e8374d4bf0fb04e6f35cd4c8e177ae6fa501e29e337f57c17
 ---
 
 在程序运行过程中，部分操作虽然能够通过编译，但由于违反程序语言标准规定的行为约束，可能导致未定义行为。此类问题通常来源于程序对内存访问、数据运算以及类型转换规则的不正确使用。未定义行为发生后，程序执行结果不可预测，可能导致数据异常、程序崩溃或安全风险。[开启UBSan](../harmonyos-guides/ide-ubsan.md#section19738384313)（Undefined Behavior Sanitizer）检测能力后，系统可以在运行阶段对应用潜在的未定义行为进行检查，输出异常位置及具体原因，以辅助开发人员定位和修复问题。本文结合典型案例，介绍此类问题的日志特征与定位方法，具体包括：
@@ -71,13 +71,15 @@ content_hash: sha256:c426930eabb8d9badbae7b6b8dfaf223979ef643bcfb0c9c8c883d03674
    ```
 2. 获取带符号的so，通过llvm-addr2line工具（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）解析栈获取详细代码位置。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/uC_alY0-QJKBsv0Kkc6LOw/zh-cn_image_0000002699892014.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/ub611v1VS3OT8jWShXKJSw/zh-cn_image_0000002699892014.png)
 
    ubsanTest.cpp第75行代码触发异常，结合代码确认为执行\*pointer=42时触发的异常。对异常代码逐行解析如下：
 
-   1. 代码第73行：buffer指针被强转为int8\_t\*类型。
-   2. 代码第74行：buffer的类型为int8\_t\*，即buffer+1会向后移动1个int8\_t的大小（1字节）。而后又使用reinterpret\_cast强转为int32\_t\*类型，但reinterpret\_cast仅改变指针类型解释，不修正地址对齐问题，因此pointer指向了一个未对齐的地址。
-   3. 代码第75行：代码尝试向未对齐的地址写入一个int32\_t值（4字节），UBSan检测到该存储操作的目标地址不符合int32\_t的对齐规则，从而触发store to misaligned address错误。
+   a. 代码第73行：buffer指针被强转为int8\_t\*类型。
+
+   b. 代码第74行：buffer的类型为int8\_t\*，即buffer+1会向后移动1个int8\_t的大小（1字节）。而后又使用reinterpret\_cast强转为int32\_t\*类型，但reinterpret\_cast仅改变指针类型解释，不修正地址对齐问题，因此pointer指向了一个未对齐的地址。
+
+   c. 代码第75行：代码尝试向未对齐的地址写入一个int32\_t值（4字节），UBSan检测到该存储操作的目标地址不符合int32\_t的对齐规则，从而触发store to misaligned address错误。
 
 **问题结论与总结**
 
@@ -141,14 +143,17 @@ content_hash: sha256:c426930eabb8d9badbae7b6b8dfaf223979ef643bcfb0c9c8c883d03674
    ```
 2. 获取带符号的so，通过llvm-addr2line工具（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）解析栈得出，完成调用栈#0符号解析。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/kKO_AcBUQkeG6sK3hyGCjQ/zh-cn_image_0000002729611341.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/rINffFi8RtypwriISzn_7g/zh-cn_image_0000002729611341.png "点击放大")
 
    ubsanTest.cpp第109行代码触发异常，结合代码确认为执行pointer->i32=7时触发的异常。对异常代码逐行解析如下：
 
-   1. 代码第101~104行：定义结构体IllegalOperandA，结构体内部包含多个不同类型成员变量。由于不同成员类型具有不同对齐要求，结构体对象地址需要满足整体对齐规则。
-   2. 代码第107行：buffer获得一块连续的原始内存空间。
-   3. 代码第108行：对原始内存空间的地址进行了偏移操作，通过类型转换，将该地址转为结构体指针。
-   4. 代码第109行：通过结构体指针访问成员，此时程序根据IllegalOperandA的内存布局，计算成员i32在结构体中的位置，并向对应地址写入数据。但此时pointer的地址不是满足结构体访问要求的合法地址，因此通过该地址访问结构体成员时，实际访问地址不满足成员变量的数据对齐要求，最终导致UBSan检测到异常。
+   a. 代码第101~104行：定义结构体IllegalOperandA，结构体内部包含多个不同类型成员变量。由于不同成员类型具有不同对齐要求，结构体对象地址需要满足整体对齐规则。
+
+   b. 代码第107行：buffer获得一块连续的原始内存空间。
+
+   c. 代码第108行：对原始内存空间的地址进行了偏移操作，通过类型转换，将该地址转为结构体指针。
+
+   d. 代码第109行：通过结构体指针访问成员，此时程序根据IllegalOperandA的内存布局，计算成员i32在结构体中的位置，并向对应地址写入数据。但此时pointer的地址不是满足结构体访问要求的合法地址，因此通过该地址访问结构体成员时，实际访问地址不满足成员变量的数据对齐要求，最终导致UBSan检测到异常。
 
 **问题结论与总结**
 
@@ -213,14 +218,17 @@ content_hash: sha256:c426930eabb8d9badbae7b6b8dfaf223979ef643bcfb0c9c8c883d03674
    ```
 2. 获取带符号的so，通过llvm-addr2line工具（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）解析栈得出，完成调用栈#0符号解析。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/T-9L3JowR32MUc-o5uWznw/zh-cn_image_0000002699732132.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/rwi3SxKlTeaXdAiYMaZvxg/zh-cn_image_0000002699732132.png "点击放大")
 
    ubsanTest.cpp第58行代码触发异常，结合代码确认为执行res+=2时触发的异常。对异常代码逐行解析如下：
 
-   1. 代码第55行：创建了一个int类型的变量res。
-   2. 代码第56行：将指向int类型对象的地址强制按照bool类型指针处理，但内存中的对象并没有发生变化。
-   3. 代码第57行：执行条件判断语句时，发生一次内存读取，并按照bool类型解释数据，但bool只有两个合法状态0/1。
-   4. 代码第58行：代码通过bool\*类型指针访问实际为int类型的对象，导致对象类型与访问类型不匹配，产生非法类型解释和未定义行为。
+   a. 代码第55行：创建了一个int类型的变量res。
+
+   b. 代码第56行：将指向int类型对象的地址强制按照bool类型指针处理，但内存中的对象并没有发生变化。
+
+   c. 代码第57行：执行条件判断语句时，发生一次内存读取，并按照bool类型解释数据，但bool只有两个合法状态0/1。
+
+   d. 代码第58行：代码通过bool\*类型指针访问实际为int类型的对象，导致对象类型与访问类型不匹配，产生非法类型解释和未定义行为。
 
 **问题结论与总结**
 
@@ -285,12 +293,13 @@ content_hash: sha256:c426930eabb8d9badbae7b6b8dfaf223979ef643bcfb0c9c8c883d03674
    ```
 2. 获取带符号的so，通过llvm-addr2line工具（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）解析栈得出，完成调用栈#0符号解析。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/eAKg2TDNTNivx4d3mcvVaA/zh-cn_image_0000002729491389.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/5nRxrBZSQxWHUcbEy46C2A/zh-cn_image_0000002729491389.png)
 
    ubsanTest.cpp第48行代码触发异常，结合代码确认为执行int32\_t result=a+b时触发的异常。对异常代码逐行解析如下：
 
-   1. 代码第46行：设置的int32\_t类型的变量a已经达到了最大值（2147483647）。
-   2. 代码第48行：操作数达到类型最大值后继续累加（2147483647+1 > INT32\_MAX），导致整数运算结果超出类型表示范围。
+   a. 代码第46行：设置的int32\_t类型的变量a已经达到了最大值（2147483647）。
+
+   b. 代码第48行：操作数达到类型最大值后继续累加（2147483647+1 > INT32\_MAX），导致整数运算结果超出类型表示范围。
 
 **问题结论与总结**
 
@@ -354,12 +363,13 @@ content_hash: sha256:c426930eabb8d9badbae7b6b8dfaf223979ef643bcfb0c9c8c883d03674
    ```
 2. 获取带符号的so，通过llvm-addr2line工具（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）解析栈得出，完成调用栈#0符号解析。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/EQB8jbfzT8S2N6vDH9Y00A/zh-cn_image_0000002699892016.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/CnCCsEreTqW7U7JqGs4U-A/zh-cn_image_0000002699892016.png)
 
    ubsanTest.cpp第39行代码触发异常，结合代码确认为执行int m=static\_cast<int>(n)时触发的异常。对异常代码逐行解析如下：
 
-   1. 代码第38行：设置的变量n，存储的数值大小为1e+51。
-   2. 代码第39行：int类型的数值范围是-2147483648~2147483647，而1e+51远超该范围，将其转换为int类型时触发异常。
+   a. 代码第38行：设置的变量n，存储的数值大小为1e+51。
+
+   b. 代码第39行：int类型的数值范围是-2147483648~2147483647，而1e+51远超该范围，将其转换为int类型时触发异常。
 
 **问题结论与总结**
 
@@ -425,12 +435,13 @@ content_hash: sha256:c426930eabb8d9badbae7b6b8dfaf223979ef643bcfb0c9c8c883d03674
    ```
 2. 获取带符号的so，通过llvm-addr2line工具（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）解析栈得出，完成调用栈#0符号解析。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/fShaakU2S1ST4rTDpqsauw/zh-cn_image_0000002729611343.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/f0bzFzymRiCPOshLV_8TXw/zh-cn_image_0000002729611343.png)
 
    ubsanTest.cpp第17行代码触发异常，结合代码确认为执行sum/=i时触发的异常。对异常代码逐行解析如下：
 
-   1. 代码第16行：循环条件中，变量i的初始值设置为0。
-   2. 代码第17行：除数变量为0，导致发生除零操作。
+   a. 代码第16行：循环条件中，变量i的初始值设置为0。
+
+   b. 代码第17行：除数变量为0，导致发生除零操作。
 
 **问题结论与总结**
 

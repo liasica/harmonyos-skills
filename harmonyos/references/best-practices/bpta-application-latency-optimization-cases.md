@@ -3,22 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-applicatio
 title: 应用时延优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 应用启动与响应优化 > 应用时延优化
 category: best-practices
-scraped_at: 2026-11-04T08:37:59+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:3906073fc61837205cf156595e7d684ba7c50c33ba21a94b122ff0fdb3ece249
+scraped_at: 2026-11-10T10:42:08+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:e7544718e0f34eeeb01f7ccd52239c868f917eeab8ca2387eae01d7d8368af12
 ---
 
 ## 应用时延概述
 
-在移动终端应用开发中，完成时延是指用户操作移动终端时，从输入触控指令到界面完全刷新结束并达到可以阅读的稳定状态所用时间，点击时延依据界面转场类型可以分为界面内跳转和界面间跳转两种。完成时延作为用户体验关键指标，直接影响用户对响应速度和交互流畅性的感知，主要影响用户对触控交互及时性和愉悦性的体验评价。关于响应时延阶段的分析，请参考[《点击响应时延分析》](bpta-click-to-click-response-optimization.md)。关于完成时延阶段的分析，请参考[《点击完成时延分析》](bpta-click-to-complete-delay-analysis.md)。
+在移动终端应用开发中，完成时延是指用户操作移动终端时，从输入触控指令到界面完全刷新结束并达到可以阅读的稳定状态所用时间，点击时延依据界面转场类型可以分为界面内跳转和界面间跳转两种。完成时延作为用户体验关键指标，直接影响用户对响应速度和交互流畅性的感知，主要影响用户对触控交互及时性和愉悦性的体验评价。关于响应时延阶段的分析，请参考[点击响应时延分析](bpta-click-to-click-response-optimization.md)。关于完成时延阶段的分析，请参考[点击完成时延分析](bpta-click-to-complete-delay-analysis.md)。
 
-在一定时延水平以上，时延越短越好，当时延小于一定水平后，用户的流畅体验不再继续提升。建议应用或元服务内点击操作响应时延应≤100ms，应用或元服务内点击操作完成时延≤900ms，更多体验建议，请参考指南[《应用性能体验建议》](../harmonyos-guides/performance-experience-suggestions.md)。本文将给出时延问题常见优化方案。
+在一定时延水平以上，时延越短越好，当时延小于一定水平后，用户的流畅体验不再继续提升。建议应用或元服务内点击操作响应时延应≤100ms，应用或元服务内点击操作完成时延≤900ms，更多体验建议，请参考指南[应用性能体验建议](../harmonyos-guides/performance-experience-suggestions.md)。本文将给出时延问题常见优化方案。
 
 **图1** 点击完成起止点示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/F4abEJ-LRkqLE2EeQSXgyw/zh-cn_image_0000002229337521.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/JfSdXWaaRg2Zg-cm1j3XXA/zh-cn_image_0000002229337521.png "点击放大")
 
 **图2** 页面转场过程解析  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/ngKyHgImShyIBL7GmVRpng/zh-cn_image_0000002229452017.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/gZBxHMW5Tjax25_jJU0Vfg/zh-cn_image_0000002229452017.png "点击放大")
 
 ## 常见时延问题优化方案
 
@@ -32,13 +32,13 @@ content_hash: sha256:3906073fc61837205cf156595e7d684ba7c50c33ba21a94b122ff0fdb3e
 
 **图3** 留言箱列表界面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/XHRQKMqXTTCh98ZFgemKmw/zh-cn_image_0000002229337533.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/bg_jKt-nQim2oD5Rvtd6qQ/zh-cn_image_0000002229337533.png "点击放大")
 
 分解关系结构后，单个子项界面由6个构成元素组成，元素排列以线性风格为主，使用的组件包括Image、Badge和Text。
 
 **图4** 单个ListItem界面示意
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/k4xbdykXQwqstFMXmvaLAQ/zh-cn_image_0000002193852136.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/aO2T7G2wT92x2obb4URCSg/zh-cn_image_0000002193852136.png "点击放大")
 
 **具体实现**
 
@@ -46,11 +46,11 @@ content_hash: sha256:3906073fc61837205cf156595e7d684ba7c50c33ba21a94b122ff0fdb3e
 * 接下来采用相对布局优化实现。先将左侧头像添加到容器中，然后锚定其位置，逐一在右侧添加其他元素。实现结果使用工具观察，发现层级相对减少，最终实现的层级是3层。同时，借助相对布局，子元素结构扁平化，容器也相对减少，进一步优化了页面的构建渲染时间。
 
 **图5** Flex布局下的界面层级关系  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/OCcbbLD4R-i3JARn5Glvag/zh-cn_image_0000002229452013.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/0CsIzGgBRF2Gonut-yFXOQ/zh-cn_image_0000002229452013.png)
 
 **图6** 相对布局下的界面层级关系
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/DrCVuvtnQQmTQrDED13alA/zh-cn_image_0000002229452029.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/PnjbM18YRnuDKD6wzyN3qQ/zh-cn_image_0000002229452029.png)
 
 **统计分析**
 
@@ -353,11 +353,11 @@ struct PanGestureExample {
 
 利用Profiler工具分析得到的trace图，重点关注两个trace标签：DispatchTouchEvent表示点击事件，PanGesture表示事件响应。追踪流程从应用侧的DispatchTouchEvent（type=0，表示手指接触屏幕）标签开始，到PanGesture（事件响应）的变化，整个过程耗时145.1毫秒。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/Lw0nMD41TTyQ-jKPlKvcbQ/zh-cn_image_0000002229337529.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/c6WGzpr1QWWM1sopMTygiA/zh-cn_image_0000002229337529.png "点击放大")
 
 日志关注从应用接收TouchDown事件到pan识别的耗时，该过程耗时127ms。注：日志信息和trace图非同一时间获取，性能数据存在差异，提供的数值仅供参考。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/D3tqLr8tTamFRttVdTKSZw/zh-cn_image_0000002229452021.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/23qaM0-3RxC_MVvelOmOpg/zh-cn_image_0000002229452021.png "点击放大")
 
 针对该组件，其拖动手势识别距离可以调整到更合适的数值，这里优化后，指定触发拖动手势事件的最小拖动距离为4vp，代码如下：
 
@@ -370,11 +370,11 @@ Button('修改PanGesture触发条件')
 
 同样采用Profiler工具分析trace图，得到对应耗时38.4ms
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/R0OcrW_pTUChFXpsxRF6jQ/zh-cn_image_0000002194011720.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/7RJ9LheLSZq10GeiLLPtNA/zh-cn_image_0000002194011720.png "点击放大")
 
 对应日志过程耗时42ms。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/lbqzEvbORii3T2wCvFjHpQ/zh-cn_image_0000002229452025.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/I7eakhiGSZeAwAh7DS3cNQ/zh-cn_image_0000002229452025.png "点击放大")
 
 **性能比对**
 
@@ -399,7 +399,7 @@ Button('修改PanGesture触发条件')
 
 **图7** 场景实例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/8TyOjtmBTFiaX2VG6BJcXQ/zh-cn_image_0000002193852132.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/ajfia6RNRASRzlHCuOeOMA/zh-cn_image_0000002193852132.png "点击放大")
 
 **具体实现**
 
@@ -566,7 +566,7 @@ struct TabsPositiveExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/U0TjqooTQweSpmsbUi7ZeQ/zh-cn_image_0000002229337537.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/0Ftg6z6xR5KCASov-hHz2A/zh-cn_image_0000002229337537.png "点击放大")
 
 实验二：设置animationDuration为1000ms
 
@@ -597,7 +597,7 @@ struct TabsNegativeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/-2VCQ_ojSJCsmPim6N7Smw/zh-cn_image_0000002229337525.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/0wMgyp6XS-ugydbLp-ealw/zh-cn_image_0000002229337525.png "点击放大")
 
 **表7** 运行效果图
 

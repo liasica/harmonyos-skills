@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-kernel-mem
 title: 分析内核态内存
 breadcrumb: 最佳实践 > 性能 > 性能分析 > 分析内存占用问题 > 分析内核态内存
 category: best-practices
-scraped_at: 2026-11-04T08:37:58+08:00
+scraped_at: 2026-11-10T10:42:07+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:93754e840a9e7654dd67efe34b7d85e57e4a0191a7fe866ba011df9c57cdeb10
+content_hash: sha256:7c95e9481b4e639b2b2f84285b7f430af5e9baf15e3440358ddd84df841171c8
 ---
 
 **DevEco 工具堆内存抓栈功能说明**
@@ -18,16 +18,16 @@ DevEco Studio Profiler插件Allocation模板可以帮助用户分析堆内存分
 2. 点击Allocation选项。
 3. 点击Create Session创建录制会话。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/Ilf1L3l1Qu-2ec2b2VbV-A/zh-cn_image_0000002370565340.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/u8OgTuNHRFmk2FEELzYvtQ/zh-cn_image_0000002370565340.png "点击放大")
 4. 在筛选中勾选Memory。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/xa0AexknRzGnxAq31wuV6g/zh-cn_image_0000002404125005.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/nhfD_2nMSPCnDm7osV4F8A/zh-cn_image_0000002404125005.png)
 5. 点击按钮开始抓栈。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/vqTsY8I1REqzKv_UJ6jrJA/zh-cn_image_0000002370405452.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/2MF3CnhqTIKKdBFfH-tkLQ/zh-cn_image_0000002370405452.png)
 6. 录制完成后点击录制的结果，分析Memory中各内存的增长趋势。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/o7Q3uyNITtyoLmO1YI6LQw/zh-cn_image_0000002404045177.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/jC132MSETwOx6hR8RRnNCQ/zh-cn_image_0000002404045177.png "点击放大")
 
 ## 内存类型说明
 

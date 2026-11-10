@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 泛PSS内存泄漏故障模式概述
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > 泛PSS内存泄漏故障模式说明 > 泛PSS内存泄漏故障模式概述
 category: best-practices
-scraped_at: 2026-09-04T06:33:25+08:00
-doc_updated_at: 2026-09-03
-content_hash: sha256:df3c3c49dd9117322bcce36f955016f1dac0206c88a85364802ac100bca85845
+scraped_at: 2026-11-10T10:42:12+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:916db33e77419cf63c601e26cf2afdd7034e4ad30758142d4929aa3b398f277f
 ---
 
 系统周期监控应用泛PSS内存，如果应用的泛PSS内存使用量超过阈值，系统会抓取维测日志并通过资源泄漏事件通知给应用。如果应用切换到后台后未及时释放内存，那么系统会管控此应用。本文提供了泛PSS内存泄漏问题分析与定位实践系列文章，旨在系统梳理泄漏常见根因与问题分析方法，引导开发者在编码中建立良好的内存使用习惯。文章如下：
 
-* [泛PSS内存泄漏故障模式说明](bpta-stability-app-extpssleak-fault-mode.md)：系统周期监控应用进程整体内存占用，如果应用进程未管理好持有的DMA、PSS、GPU等内存，就会导致应用进程整体内存膨胀，超过系统管控阈值。系统会在后台对应用进程进行管控，导致应用出现后台业务中断、冷启动等故障。此文围绕应用泛PSS内存泄漏问题，为开发者提供了开发态和运维态的分析思路，并以典型的PSS过大导致泛PSS内存泄漏的案例为例展示分析思路。
+* [应用泛PSS内存泄漏故障模式说明](../doccenter-app-quality/bpta-stability-app-extpssleak-fault-mode.md)：系统周期监控应用进程整体内存占用，如果应用进程未管理好持有的DMA、PSS、GPU等内存，就会导致应用进程整体内存膨胀，超过系统管控阈值。系统会在后台对应用进程进行管控，导致应用出现后台业务中断、冷启动等故障。此文围绕应用泛PSS内存泄漏问题，为开发者提供了开发态和运维态的分析思路，并以典型的PSS过大导致泛PSS内存泄漏的案例为例展示分析思路。
 
 ## 泛PSS内存泄漏基本概念与故障检测机制
 
@@ -143,8 +143,8 @@ HiAppEvent eventInfo={"domain":"OS","name":"APP_KILLED","eventType":2,"params":{
 
 | 内存类型 | 问题分析方法 |
 | --- | --- |
-| PSS | 优先参考[PSS基础日志分析方法](bpta-stability-extpssleak-fault-mode-overreview.md#section28196459359)初步定界至二级根因，如果已经通过[内存栈日志获取方法](bpta-stability-rssleak-fault-mode-overreview.md#section18531162841113)获取到了应用内存栈维测日志，那么可以根据[内存栈日志分析方法](bpta-stability-rssleak-fault-mode-overreview.md#section94641340515)定位至泄漏点。 |
-| DMA | 参考DMA内存泄漏[运维态问题分析方法](bpta-stability-dmaleak-fault-mode-overreview.md#section10889164472315)定位至内存泄漏点。 |
+| PSS | 优先参考[PSS基础日志分析方法](../doccenter-app-quality/bpta-stability-extpssleak-fault-mode-overreview.md#section28196459359)初步定界至二级根因，如果已经通过[内存栈日志获取方法](bpta-stability-rssleak-fault-mode-overreview.md#section18531162841113)获取到了应用内存栈维测日志，那么可以根据[内存栈日志分析方法](bpta-stability-rssleak-fault-mode-overreview.md#section94641340515)定位至泄漏点。 |
+| DMA | 参考DMA内存泄漏[运维态问题分析方法](bpta-stability-gpuleak-fault-mode-overreview.md#section1045562816)定位至内存泄漏点。 |
 | GPU | 参考GPU内存泄漏[运维态问题分析方法](bpta-stability-gpuleak-fault-mode-overreview.md#section1045562816)定位至内存泄漏点。 |
 
 ### PSS基础日志分析方法
@@ -366,5 +366,5 @@ hidumper命令行工具更多用于实时观察应用的内存占用和进程内
 | top内存类型 | 问题分析方法 |
 | --- | --- |
 | PSS | PSS实际为去重后的RSS内存，因此分析方法可参考RSS内存泄漏[故障分析方法](bpta-stability-rssleak-fault-mode-overreview.md#section2982114911114)。 |
-| DMA | 参考DMA内存泄漏[故障分析方法](bpta-stability-dmaleak-fault-mode-overreview.md#section198045621516)。 |
+| DMA | 参考DMA内存泄漏[故障分析方法](../doccenter-app-quality/bpta-stability-dmaleak-fault-mode-overreview.md#section198045621516)。 |
 | GPU | 参考GPU内存泄漏[故障分析方法](bpta-stability-gpuleak-fault-mode-overreview.md#section113804961519)。 |

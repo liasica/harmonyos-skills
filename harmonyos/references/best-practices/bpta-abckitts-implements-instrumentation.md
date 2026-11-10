@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-abckitts-i
 title: 基于AbcKitTS实现字节码插桩
 breadcrumb: 最佳实践 > 应用框架 > ArkTS语言 > 基于AbcKitTS实现字节码插桩
 category: best-practices
-scraped_at: 2026-11-04T08:37:48+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:150c0d861d5e65b292f2293c66462c116d6c8f0bd0f6779b395d55e7320c0ae9
+scraped_at: 2026-11-10T10:42:02+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:f794ab1b5927e17777d5ba8e689ed97624d4a93177433c425bcbeffb67a37103
 ---
 
 ## 概述
@@ -71,7 +71,7 @@ IsaKit是AbcKitTS提供的核心指令操作工具，用于操作方法的Block�
 
 开发者要使用AbcKitTS对HarmonyOS工程进行插桩，需要完成两个步骤：**编写插桩代码**和**注册插件**。其中，插桩代码的编写会根据具体业务逻辑而有所不同，本文将在[场景示例](bpta-abckitts-implements-instrumentation.md#section21172491410)中根据不同业务场景详细介绍实现方法。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/J-xTQAKVRE-cVIPjOqiHiQ/zh-cn_image_0000002568136792.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/2BJUC1j9RzqUeKFEQQOl-g/zh-cn_image_0000002568136792.png "点击放大")
 
 ### 编写插桩代码
 
@@ -1145,7 +1145,7 @@ export class EventCbTask {
 
 **说明** 
 
-**initialRender**函数是鸿蒙应用页面级渲染的入口函数，onClick()回调通常以匿名函数形式嵌套在其中。
+**initialRender**函数是HarmonyOS应用页面级渲染的入口函数，onClick()回调通常以匿名函数形式嵌套在其中。
 
 **场景七：方法入参校验**
 

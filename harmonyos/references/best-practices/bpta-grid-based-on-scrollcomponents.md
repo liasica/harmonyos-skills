@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-grid-based
 title: 基于ScrollComponents实现网格
 breadcrumb: 最佳实践 > 布局与弹窗 > 基于ScrollComponents实现网格
 category: best-practices
-scraped_at: 2026-11-04T08:37:48+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:457bdfd19a995af18795af0ae4fe899bc697edee533605f699315860766548c3
+scraped_at: 2026-11-10T10:42:01+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:8450cfd4d99e96742b12674d3b91b555d959498ed24312af6579bad37c748b2f
 ---
 
 ## 概述
 
 网格是应用开发中常见的开发场景。它通过相交的横线和竖线，形成整齐有序的网状布局。网格适用于展示图片、媒体文件、购物商品等多种数据。当网格上下滑动时，子组件会带来测量和绘制的性能消耗。本文通过跨页面复用、加速首屏渲染、下拉刷新等场景，介绍ScrollComponents库创建高流畅滑动的网格页面。
 
-ScrollComponents作为高性能滑动解决方案，主要解决组件复用的问题，支持通过少量的代码实现高性能滑动，同时开发者无需关注复用池管理和其他性能优化方案的交互细节。可以参考[ScrollComponents使用说明](https://gitcode.com/openharmony-sig/scroll_components/blob/master/README.md#快速开始)进行安装配置与快速上手。ScrollComponents框架提供了下列功能特性：
+ScrollComponents作为高性能滑动解决方案，主要解决组件复用的问题，支持通过少量的代码实现高性能滑动，同时开发者无需关注复用池管理和其他性能优化方案的交互细节。可以参考[快速开始](https://gitcode.com/openharmony-sig/scroll_components/blob/master/README_zh.md#快速开始)进行安装配置与快速上手。ScrollComponents框架提供了下列功能特性：
 
 * 支持List，WaterFlow，Grid三种常见复杂页面的流畅滑动
 * 默认支持懒加载，开发者不用使用[LazyForEach](../harmonyos-references/ts-rendering-control-lazyforeach.md)和定义IDataSource数据源，减少一定的代码量
@@ -35,7 +35,7 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
 如图1是RecyclerView整体流程图，当节点从可视区移除时，NodeAdapter会通知视图管理器将组件回收，经NodeFactory回收处理之后，组件最终被存入到组件复用池。当节点需要创建时，NodeAdapter通知视图管理器开始创建，NodeFactory会向复用池请求复用节点，获取到节点之后经过一系列更新组件、组件拼接之后返回，最后由NodeAdapter将节点添加到可视区。
 
 **图1** RecyclerView整体流程图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/xNpBKxHKTkyWey6-iQ9TYg/zh-cn_image_0000002390335989.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/VJZ2Ir8ETISAltZdLuR5Lw/zh-cn_image_0000002390335989.jpg "点击放大")
 
 ### 开发流程
 
@@ -189,12 +189,12 @@ ScrollComponents三方库底层封装NodeContainer+FrameNode，结合NodeAdapter
       如果复用的单元格组件结构基本相同，存在部分差异，差异的部分会复用失效。ScrollComponents提供了PartReuse来保证命中组件复用。
 
       **图2** 可拆分组件复用创建流程图  
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/FhD_kxQ6RAKM9VkGGwy72g/zh-cn_image_0000002356815874.jpg "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/ttnJYm9yTBCfyfikcYhvXg/zh-cn_image_0000002356815874.jpg "点击放大")
 
       开发者可参考图3日志打印"generateItem reuse "表示复用，检验是否复用成功。
 
       **图3** 日志效果图  
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/2FSGGcf5Q9KrGIuCfIGSBQ/zh-cn_image_0000002390415913.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/pKXmsbi9RnOveLKvY1M80w/zh-cn_image_0000002390415913.png "点击放大")
 
       子组件1：
 
@@ -469,12 +469,12 @@ public aboutToAppear(): void {
 @Reusable：网络请求期间主线程大段空闲，请求结束后首屏组件绘帧耗时较长
 
 **图4** @Reusable测试结果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/oSaureqJS9qoMIEZkT_eCA/zh-cn_image_0000002356655986.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/9lNMBPGBREOoPvEmLEUKRQ/zh-cn_image_0000002356655986.png "点击放大")
 
 ScrollComponents：网络请求期间主线程空闲较少，请求结束后首屏组件绘帧耗时较短
 
 **图5** ScrollComponents测试结果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/opD2vEQwQqm_gJQ1wrWmmg/zh-cn_image_0000002390336069.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/4zSfMhcGTOO5d7V6WiR4Vw/zh-cn_image_0000002390336069.png "点击放大")
 
 **表1**
 

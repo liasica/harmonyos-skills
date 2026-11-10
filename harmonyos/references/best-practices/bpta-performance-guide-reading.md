@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-performanc
 title: 性能概览
 breadcrumb: 最佳实践 > 性能 > 性能概览
 category: best-practices
-scraped_at: 2026-11-04T08:37:57+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:0e0d8a16ca2b49a3fc8c2a5e12bafadddf68b329a2f8f1996fcbcfe3b55b8251
+scraped_at: 2026-11-10T10:42:07+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:29b0077dd71e937e004df42a599dc39be663ef51176ed69f4ae98f88902302ba
 ---
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/YptJwEMFQtqLeOLqpq7HiQ/zh-cn_image_0000002370405416.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/ZQ1kpIzWSGGFhWkrnX9LBg/zh-cn_image_0000002370405416.png)
 
 性能调优贯穿于HarmonyOS应用开发的整个生命周期中。开发前有性能最佳实践和指南等赋能套件让开发者快速上手学习。开发过程中有性能工具开发套件覆盖应用开发各阶段。应用开发完成上架后有专业的性能测试工具检测应用性能指标。本文重点介绍应用开发过程中使用性能工具与性能优化文章定位分析性能问题流程，目前DevEco Studio主要集成了四种性能工具，在不同的开发阶段各有侧重，主要分为性能问题检测类工具和性能问题分析类工具。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/atSiw5BOR2Cdg8Vjc53PpA/zh-cn_image_0000002404045141.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/VIhVt8ToSYa-75ruW9t9ZA/zh-cn_image_0000002404045141.png)
 
 ## 性能工具集定位分析性能问题流程
 
@@ -20,13 +20,13 @@ content_hash: sha256:0e0d8a16ca2b49a3fc8c2a5e12bafadddf68b329a2f8f1996fcbcfe3b55
 
 体检工具和调试&调优工具联动：部分不能通过具体规则拦截的性能问题，跳转到调试&调优工具进行分析，分析并行化、组件耗时、页面层次等具体问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/oQxkEi2_Q2q8-Zf_LPmtXQ/zh-cn_image_0000002370565312.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/EaunJ7EXQca3CnmqTeOkng/zh-cn_image_0000002370565312.png "点击放大")
 
-1. 检测发现性能问题，在代码编辑阶段可以使用Code Linter代码检查工具对代码进行单个文件或者文件夹进行静态代码扫描；同时在应用功能开发完成后，在运行态可以使用应用体检工具检测应用运行过程中的性能问题；
+1. 检测发现性能问题，在代码编辑阶段可以使用Code Linter代码检查工具对代码进行单个文件或者文件夹进行静态代码扫描；同时在应用功能开发完成后，在运行态可以使用应用体检工具检测应用运行过程中的性能问题。
 2. 以应用体检工具为主，对于动态运行检测发现的性能问题，提供三种修复问题的路径：
-   * 根据跳转的官网性能指导来修改发现的性能问题；
-   * 根据检测结果的问题页面，触发该页面源文件的Code Linter静态性能检查，根据静态检查结果跳转到官方最佳性能实践指导修复性能问题；
-   * 根据检测结果的过程性能文件，跳转到DevEco Profiler导入该文件深入分析，定位发现性能瓶颈点；
+   * 根据跳转的官网性能指导来修改发现的性能问题。
+   * 根据检测结果的问题页面，触发该页面源文件的Code Linter静态性能检查，根据静态检查结果跳转到官方最佳性能实践指导修复性能问题。
+   * 根据检测结果的过程性能文件，跳转到DevEco Profiler导入该文件深入分析，定位发现性能瓶颈点。
 
 ## 解决应用性能问题的策略
 
@@ -34,12 +34,12 @@ content_hash: sha256:0e0d8a16ca2b49a3fc8c2a5e12bafadddf68b329a2f8f1996fcbcfe3b55
 
 ### 滑动卡顿丢帧和时延类问题
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/qpU58rfSTliO4nByHDjF7Q/zh-cn_image_0000002511986340.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/wmaLtUfySHyMg2doCJ9qAQ/zh-cn_image_0000002511986340.png)
 
 应用体检工具AppAnalyzer目前集成了场景化体检、规则体检和上架前体检，对于滑动卡顿丢帧和时延类性能问题，这类问题的定位思路如下：
 
-* 打开应用体检工具和应用、连接设备，选择体检场景或者自定义选择性能检查项，点击开始执行应用体检；
-* 执行检测过程分为自动检测和手动检测，手动体检需要根据提示完成手动操作应用。应用体检工具会自动分析发现应用执行过程中的性能问题，将检测结果呈现给用户，用户重点关注未通过项；
+* 打开应用体检工具和应用、连接设备，选择体检场景或者自定义选择性能检查项，点击开始执行应用体检。
+* 执行检测过程分为自动检测和手动检测，手动体检需要根据提示完成手动操作应用。应用体检工具会自动分析发现应用执行过程中的性能问题，将检测结果呈现给用户，用户重点关注未通过项。
 * 查看报告里面的可能故障原因和更多耗时数据，可以获取导致性能问题的原因。点击报告里面部分时间超链接可以拉起Profiler深入分析问题，点击查看截图超链接可以查看操作过程中的截图，点击方法名超链接可以跳转到问题代码，点击优化建议超链接可以获取对应问题的优化建议。根据优化建议优化性能问题后可以再次执行体检过程查看优化后的效果。
 
 ### 内存类问题

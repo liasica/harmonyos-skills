@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: GlobalHandle类型内存泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > ArkTS内存泄漏故障模式说明 > GlobalHandle类型内存泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-11-04T08:38:04+08:00
-doc_updated_at: 2026-09-03
-content_hash: sha256:d591f71b13abaf355a38d34e4d5772db70dfa3d80f1c534ea3c32058e2b1a75d
+scraped_at: 2026-11-10T10:42:11+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:1481f1700da2840edffafcb9004ac190d7e62d971f52301c731c5dafc535f2cc
 ---
 
 ## 概述
@@ -47,7 +47,7 @@ GlobalHandle内存泄漏通常发生在创建了GlobalHandle但未能适时释�
 
 1. [napi\_create\_reference()](../harmonyos-references/napi.md#napi_create_reference)创建了对ArkTS对象的强引用，但未调用[napi\_delete\_reference()](../harmonyos-references/napi.md#napi_delete_reference)删除相关引用。
 2. [napi\_wrap()](../harmonyos-guides/use-napi-about-class.md#napi_wrap)绑定了对ArkTS对象的强引用（最后一个参数非空），但未调用[napi\_remove\_wrap()](../harmonyos-guides/use-napi-about-class.md#napi_remove_wrap)解绑。
-3. [napi\_acquire\_threadsafe\_function()](../harmonyos-guides/napi-data-types-interfaces.md#napi_threadsafe_function)增加了线程安全函数对象的引用计数，但未调用[napi\_release\_threadsafe\_function()](../harmonyos-references/napi.md#napi_release_threadsafe_function)清零，导致线程安全函数内的GlobalHandle泄漏。
+3. [napi\_acquire\_threadsafe\_function()](../doccenter-references/api/napi.md#napi_acquire_threadsafe_function)增加了线程安全函数对象的引用计数，但未调用[napi\_release\_threadsafe\_function()](../harmonyos-references/napi.md#napi_release_threadsafe_function)清零，导致线程安全函数内的GlobalHandle泄漏。
 4. [napi\_create\_promise()](../harmonyos-guides/use-napi-about-promise.md#napi_create_promise)创建的全局句柄持有了ArkTS对象，但未调用[napi\_resolve\_deferred()](../harmonyos-references/napi.md#napi_resolve_deferred)或[napi\_reject\_deferred()](../harmonyos-references/napi.md#napi_reject_deferred)进行响应闭环。
 5. [setInterval()](../harmonyos-references/js-apis-timer.md#setinterval)创建的定时器持有了ArkTS对象，但未调用[clearInterval()](../harmonyos-references/js-apis-timer.md#clearinterval)删除定时器，且底层全局句柄持有该定时器。
 
@@ -67,9 +67,9 @@ GlobalHandleRoot：C++代码为了长期保留ArkTS对象引用创建了持久�
 
 代码中GlobalHandle()函数申请100MB的数组对象，箭头函数使用该数组对象，并传入自定义Native接口create\_but\_no\_delreference()。箭头函数传入Native接口后，napi\_create\_reference()创建的GlobalHandle持有传入的函数对象未释放，该函数对象即为GlobalHandleRoot。示例如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/0ZFboXPtToSnbl5N7_FN5g/zh-cn_image_0000002729464441.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/zNjaRAFnRsW73d8hu6sXUA/zh-cn_image_0000002729464441.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/N2_KdXn-Qza8YtU8GdXUsQ/zh-cn_image_0000002699865070.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/fyHMok4RSP6-NYOYdu7aig/zh-cn_image_0000002699865070.png)
 
 **问题分析思路**
 
@@ -79,11 +79,11 @@ GlobalHandleRoot：C++代码为了长期保留ArkTS对象引用创建了持久�
 
 3. 参考[运维态内存泄漏分析方法](bpta-overview-of-arkts-memory-leaks-overview.md#section1289738624)，发现内存快照中有三个内存占用100MB的array对象，在内存快照中占用了最多的内存。查看array对象的根节点为匿名函数，根节点类型为GlobalHandleRoot，说明是GlobalHandle持有导致泄漏。内存快照如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/v-Ew21G3QFeqtXJnMZs30A/zh-cn_image_0000002729584401.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/zmIU8JVCR9mLYMgPOms9Iw/zh-cn_image_0000002729584401.png "点击放大")
 
 4. 使用[Handle泄漏检测工具使用方法](bpta-overview-of-arkts-memory-leaks-overview.md#section1943877608)进行进一步分析，找到对应创建GlobalHandle引用的调用栈。检测工具获取的调用栈如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/NnzL2jlqT26h-KsajEwSsQ/zh-cn_image_0000002699705182.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/NQPL6WtiQZKezxQLXvkmhw/zh-cn_image_0000002699705182.png "点击放大")
 
 5. 分析调用栈可知泄漏对象创建路径，结合业务代码分析是否存在内存泄漏场景。查看该调用栈，发现开发者没有调用napi\_delete\_reference()合理管控napi\_ref的生命周期导致内存泄漏。
 

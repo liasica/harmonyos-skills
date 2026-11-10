@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 基于AudioCapturer录制PCM音频（ArkTS）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 基于AudioCapturer录制PCM音频（ArkTS）
 category: best-practices
-scraped_at: 2026-11-04T08:37:50+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:fac990a4253ce297213ac84039b0f65eb5099ecfab4bb709d2aff8dacdbc99fc
+scraped_at: 2026-11-10T10:42:02+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:67f12045d14f7ed58cfc30f8d42785ced932df6e430f2c278c8dddeb784de1ed
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ AudioCapturer（[Interface (AudioCapturer)](../doccenter-references/api/arkts-ap
 
 基于AudioCapturer录制PCM音频（ArkTS）实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/vvuBj2k4QbK_mYDlzZL2hA/zh-cn_image_0000002524061072.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/ROt2uffSQeyRBjcjVD0brQ/zh-cn_image_0000002524061072.gif "点击放大")
 
 本文的主要内容如下：
 
@@ -28,14 +28,14 @@ AudioCapturer可以录制PCM（Pulse Code Modulation）音频数据，能够快�
 
 **图1** AudioCapturer状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/Qj5sLXoOSRafAnQ8nqB4Ag/zh-cn_image_0000002555220981.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/ZHsyBLKXQ_6hDVL5HHbVIQ/zh-cn_image_0000002555220981.jpg "点击放大")
 
 ### 开发步骤
 
 1.配置音频采集参数。
 
 * 音频采集参数分为2类：音频流信息[AudioStreamInfo](../harmonyos-references/arkts-apis-audio-i.md#audiostreaminfo8)（主要包括采样率、通道数、采样格式、编码格式等）和音频采集器信息[AudioCapturerInfo](../harmonyos-references/arkts-apis-audio-i.md#audiocapturerinfo8)（音频流类型，即录制业务场景和采集器标志）。
-* 将配置好的参数audioCapturerOptions传入createAudioCapturer()中，以创建音频采集器实例。
+* 将配置好的参数audioCapturerOptions（参考：[AudioCapturerOptions](../doccenter-references/api/arkts-apis-audio-i.md#audiocaptureroptions8)）传入[audio.createAudioCapturer](../doccenter-references/api/arkts-apis-audio-f.md#audiocreateaudiocapturer8)()中，以创建音频采集器实例。
 * 设置readData回调函数。该回调用于系统向PCM文件中写入采集到的音频数据。其中，Options用来标记每次写入的数据在文件中偏移量和大小。
 
 ```screen

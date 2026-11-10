@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 基于AVScreenCapture录制音频
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 基于AVScreenCapture录制音频
 category: best-practices
-scraped_at: 2026-11-04T08:37:50+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:0b76642f8755d1b6bd25e1b78e7b6b10438175bdfe983d7587c3f197b8634fb7
+scraped_at: 2026-11-10T10:42:02+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:58459248d7e290d2672ceff92cb99f6389ac1dca7fe6ec587886dc11c356060f
 ---
 
 ## 概述
 
-AVScreenCapture具备采集设备内部音频和麦克风音频的能力，可以录制设备内播放的音频或者麦克风的音频。本文适用于音频录制类应用的开发，针对市场上主流音频录制类应用的常见场景，介绍了如何基于AVScreenCapture录制音频，指导开发者实现基础录制。
+[AVScreenCapture](../doccenter-references/api/capi-avscreencapture.md)具备采集设备内部音频和麦克风音频的能力，可以录制设备内播放的音频或者麦克风的音频。本文适用于音频录制类应用的开发，针对市场上主流音频录制类应用的常见场景，介绍了如何基于AVScreenCapture录制音频，指导开发者实现基础录制。
 
 基于AVScreenCapture录制音频实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/zK84OwP9RXODquk7sMEApg/zh-cn_image_0000002524061076.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/z2NOFIOGTpWJTSS1OnL71Q/zh-cn_image_0000002524061076.gif "点击放大")
 
 本文的主要内容如下：
 
@@ -36,13 +36,13 @@ target_link_libraries(entry PUBLIC libace_napi.z.so libace_ndk.z.so libjsvm.so l
 
 2.配置音频录制相关参数。
 
-* 设置视频录制相关参数OH\_VideoInfo，包括OH\_VideoCaptureInfo和OH\_VideoEncInfo。
+* 设置视频录制相关参数[OH\_VideoInfo](../doccenter-references/api/capi-avscreencapture-oh-videoinfo.md)，包括[OH\_VideoCaptureInfo](../doccenter-references/api/capi-avscreencapture-oh-videocaptureinfo.md)和[OH\_VideoEncInfo](../doccenter-references/api/capi-avscreencapture-oh-videoencinfo.md)。
 
 **说明** 
 
 AVScreenCapture用于实现屏幕录制。当OH\_VideoCaptureInfo的videoFrameWidth和videoFrameHeight设置为0时，AVScreenCapture会忽略视频相关参数，不录制屏幕数据。
 
-* 设置音频相关参数OH\_AudioInfo，包括音频采集信息OH\_AudioCaptureInfo、音频编码信息OH\_AudioEncInfo。
+* 设置音频相关参数[OH\_AudioInfo](../doccenter-references/api/capi-avscreencapture-oh-audioinfo.md)，包括音频采集信息[OH\_AudioCaptureInfo](../doccenter-references/api/capi-avscreencapture-oh-audiocaptureinfo.md)、音频编码信息[OH\_AudioEncInfo](../doccenter-references/api/capi-avscreencapture-oh-audioencinfo.md)。
 
 ```cpp
 // Configuration parameters
@@ -77,7 +77,7 @@ void AVScreenCapture::SetConfig(OH_AVScreenCaptureConfig &config) {
 
 3.启动音频录制。
 
-* 在调用[OH\_AVScreenCapture\_Create()](../harmonyos-references/capi-native-avscreen-capture-h.md#oh_avscreencapture_create)创建录制对象后，通过环境配置OH\_AVScreenCaptureConfig初始化该对象。
+* 在调用[OH\_AVScreenCapture\_Create()](../harmonyos-references/capi-native-avscreen-capture-h.md#oh_avscreencapture_create)创建录制对象后，通过环境配置[OH\_AVScreenCaptureConfig](../doccenter-references/api/capi-avscreencapture-oh-avscreencaptureconfig.md)初始化该对象。
 * 然后，调用[OH\_AVScreenCapture\_StartScreenRecording()](../harmonyos-references/capi-native-avscreen-capture-h.md#oh_avscreencapture_startscreenrecording)启动音频录制。
 
 ```cpp

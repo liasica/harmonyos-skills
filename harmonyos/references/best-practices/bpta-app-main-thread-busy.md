@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-app-main-t
 title: 应用主线程繁忙故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 应用冻屏故障模式说明 > 应用主线程繁忙故障模式说明
 category: best-practices
-scraped_at: 2026-11-04T08:38:04+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:4678f731bc417f17c13b041adb478a84a1003ba878eddf7e982aaa58be0d34ba
+scraped_at: 2026-11-10T10:42:12+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:035535b0f8b3da8fb61b73fa73737ddef3106ebad80521443ce0b8fa1b000b9e
 ---
 
 ## 概述
@@ -119,11 +119,11 @@ ld-musl-aarch64.so.1
    ```
 
    采样栈聚合后根因主要为等锁。#02栈帧表明业务方是libentry.so(WaitThread)，结合代码继续分析等锁原因。
-3. 开发调试场景下可直接在DevEco Studio中单击libentry.so所在的栈帧跳转到对应代码行；运维场景下使用[llvm-addr2line](bpta-stability-app-crash-cpp-way.md#li186453444512)解析找到对应代码行。
+3. 开发调试场景下可直接在DevEco Studio中单击libentry.so所在的栈帧跳转到对应代码行；运维场景下使用llvm-addr2line（详见[通过SDK llvm-addr2line工具定位行号](bpta-stability-app-crash-cpp-way.md#li186453444512)）解析找到对应代码行。
 
    证据3：故障栈帧所在的代码
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/z8Gth7-UTCKixHMx1QidRA/zh-cn_image_0000002673735603.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/yuO2Gjh_Qfq-8RHIFY473w/zh-cn_image_0000002673735603.png "点击放大")
 
    代码中创建了多个子线程，并且子线程中循环竞争锁资源，导致主线程繁忙。
 
@@ -237,7 +237,7 @@ WriteBinder
 
    证据3：故障栈帧所在的代码
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/UJ5sFtaUSZKqGTSiE-wcLQ/zh-cn_image_0000002643575820.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/hl4c2iUHQk2Hw7oMhjLlgQ/zh-cn_image_0000002643575820.png "点击放大")
 
    业务中循环调用系统音频服务接口导致主线程繁忙。
 
@@ -347,7 +347,7 @@ ld-musl-aarch64.so.1
 
    证据3：故障栈帧所在的代码
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/bRO7OH85SlqLkDDIhOucEA/zh-cn_image_0000002643415866.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/A3821wb8Qc2fujonxYYXhw/zh-cn_image_0000002643415866.png "点击放大")
 
    业务中循环进行文件读写操作导致主线程繁忙。
 
@@ -457,7 +457,7 @@ libace\_compatible.z.so
 
    证据3：故障栈帧关联的代码
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/yqKmmCLTTeKkauNVOi7F9g/zh-cn_image_0000002673575733.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/bB_jmiNPQzSqPpGVCNC5lw/zh-cn_image_0000002673575733.png "点击放大")
 
    业务中循环刷新Text组件导致主线程繁忙。
 
@@ -549,11 +549,11 @@ libace\_compatible.z.so
    ```
 
    堆栈表明主线程耗时最多的业务是libentry.so(TriggerBusinessBusySync)。结合代码进一步分析。
-3. 开发调试场景下可直接在DevEco Studio中单击libentry.so所在的栈帧跳转到对应代码行；运维场景下使用[llvm-addr2line](bpta-stability-app-crash-cpp-way.md#li186453444512)解析找到对应代码行。
+3. 开发调试场景下可直接在DevEco Studio中单击libentry.so所在的栈帧跳转到对应代码行；运维场景下使用llvm-addr2line解析找到对应代码行。
 
    证据3：故障栈帧所在的代码
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/ti1lOZK9TCerGUweHOSZyA/zh-cn_image_0000002673735605.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/X_viZ2-cRySMrSGfN5VsIg/zh-cn_image_0000002673735605.png "点击放大")
 
    业务中循环处理计算任务导致主线程繁忙。
 
@@ -632,7 +632,7 @@ libace\_compatible.z.so
 
    证据2：故障栈帧所在的代码
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/iLmHVHGJQti8RSxN3M0T2g/zh-cn_image_0000002643575824.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/yG2nXdq-S-S0RMzqKPT7PA/zh-cn_image_0000002643575824.png "点击放大")
 
    业务中循环处理多个不同类型的耗时子任务导致主线程繁忙。
 

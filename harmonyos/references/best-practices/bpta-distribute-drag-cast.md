@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-distribute
 title: 跨设备拖拽
 breadcrumb: 最佳实践 > 技术创新 > 全场景 > 多端协同 > 跨设备拖拽
 category: best-practices
-scraped_at: 2026-11-04T08:37:46+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:3f1bc090f8068acb7acc9e02078b2d2b0316254837491179f325fc6d7640e21a
+scraped_at: 2026-11-10T10:42:00+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:4750bbea02d25e58873d26b5102c7557f2cb90ef85c62a9058f0cdf7850cb30d
 ---
 
-跨端拖拽提供跨设备的键鼠共享能力，支持在平板或2in1类型的任意两台设备之间拖拽文本、图片、视频、PDF文档等文件。
+跨端拖拽提供跨设备的键鼠共享能力，支持在平板或电脑类型的任意两台设备之间拖拽文本、图片、视频、PDF文档等文件。
 
 例如，当用户拥有两台平板设备时，可以共享一套键鼠，通过跨设备拖拽，一步将设备A的素材拖拽到设备B快速创作，实现跨设备的协同工作体验。
 
@@ -19,11 +19,11 @@ content_hash: sha256:3f1bc090f8068acb7acc9e02078b2d2b0316254837491179f325fc6d764
 
 开发者可以根据实际需求，实现组件的拖入或拖出，即可接入跨设备拖拽。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/vxMSkLIySraz89fIRSmnxg/zh-cn_image_0000002593676861.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/PGX3rEnnSqKExH5x8BkLPg/zh-cn_image_0000002593676861.gif "点击放大")
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/ofQjd_vNTOaVPAJTfBtqNg/zh-cn_image_0000002563037188.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/JItVBR8uSnaN-uIyFifn2A/zh-cn_image_0000002563037188.png "点击放大")
 
 1. 用户使用鼠标点击组件，触发拖拽事件。
 2. 应用设置拖拽数据。
@@ -37,7 +37,7 @@ content_hash: sha256:3f1bc090f8068acb7acc9e02078b2d2b0316254837491179f325fc6d764
 
 * **设备限制**
 
-  HarmonyOS NEXT Developer Preview0及以上版本的平板或2in1设备。
+  HarmonyOS NEXT Developer Preview0及以上版本的平板或电脑设备。
 * **使用限制**
   + 双端设备需要登录同一华为账号。
   + 双端设备需要打开Wi-Fi和蓝牙开关，并接入同一个局域网。
@@ -50,7 +50,7 @@ content_hash: sha256:3f1bc090f8068acb7acc9e02078b2d2b0316254837491179f325fc6d764
 
 * [拖拽控制](../harmonyos-references/ts-universal-attributes-drag-drop.md)：设置组件是否可以响应拖拽事件的属性。组件均需要设置draggable属性才能响应拖拽事件。
 
-  当前部分组件默认支持拖拽控制。应用使用这些组件时，只需要将draggable设置为true，系统将根据组件的支持情况，自动实现onDragStart的写信息或onDrop的读信息。
+  当前部分组件默认支持拖拽控制。应用使用这些组件时，只需要将draggable设置为true，系统将根据组件的支持情况，自动实现onDragStart()的写信息或onDrop()的读信息。
 * [拖拽事件](../harmonyos-references/ts-universal-events-drag-drop.md)：组件被鼠标选中后拖拽时触发的事件。
 
   应用应根据实际需求，实现组件拖入或拖出。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-perceived-
 title: 感知流畅优化
 breadcrumb: 最佳实践 > 性能 > 性能优化 > 感知流畅优化
 category: best-practices
-scraped_at: 2026-11-04T08:37:58+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:a6eeeebe2f3e70746c6221c9ad96596a8e4cba5b1669541c4a34b4d8db6639e9
+scraped_at: 2026-11-10T10:42:07+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:a334e2a95eb84471405522f8bd1cb8ec99b35f07918bf0fc42094c859a300aaa
 ---
 
 在应用开发中，动画可以为用户界面增添生动、流畅的交互效果，提升用户对应用的好感度。然而，滥用动画也会导致应用性能下降，消耗过多的系统资源，甚至影响用户体验。关于感知流畅度优化方法，请参阅[提升动画感知流畅度](../harmonyos-guides/arkts-animation-usage-guide.md#提升动画感知流畅度)。
@@ -17,7 +17,7 @@ content_hash: sha256:a6eeeebe2f3e70746c6221c9ad96596a8e4cba5b1669541c4a34b4d8db6
 开发者可以在用户交互动作开始时，添加动画元素，如单击效果、转场缩放、加载进度条和共享动画。这些动画可以告知用户当前状态已发生变化，应用程序正在快速运作。动画背后涉及数据计算、布局渲染和内容加载。当新界面渲染完成，动画元素可通过渐变消失或移出屏幕等友好的方式退出视觉区域。
 
 **图1** 应用响应的两个视角  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/eLy9PKYWS82LAa5bxbYHJw/zh-cn_image_0000002194010988.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/UFRYlVTtRCaO7UOas5ltSQ/zh-cn_image_0000002194010988.png)
 
 ## 转场场景动效感知流畅
 
@@ -39,7 +39,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 
 * [Tabs](../harmonyos-references/ts-container-tabs.md)组件设置TabContent切换动画时长，即[animationDuration](../harmonyos-references/ts-container-tabs.md#animationduration)属性。
 * [Swiper](../harmonyos-references/ts-container-swiper.md)组件设置子组件切换动画时长，即[duration](../harmonyos-references/ts-container-swiper.md#duration)属性。
-* 页面间转场（[pageTransition](../harmonyos-references/ts-page-transition-animation.md)）设置转场动画时长，即[PageTransitionOptions](../harmonyos-references/ts-page-transition-animation.md#pagetransitionoptions对象说明)对象中的duration字段。具体案例可以参考[动画时延场景案例](bpta-application-latency-optimization-cases.md#section36181326113013)。
+* [页面间转场 (pageTransition)](../harmonyos-references/ts-page-transition-animation.md)设置转场动画时长，即[PageTransitionOptions对象说明](../harmonyos-references/ts-page-transition-animation.md#pagetransitionoptions对象说明)对象中的duration字段。具体案例可以参考[动画时延场景案例](bpta-application-latency-optimization-cases.md#section36181326113013)。
 
 ## 使用连贯动画使应用快速响应
 

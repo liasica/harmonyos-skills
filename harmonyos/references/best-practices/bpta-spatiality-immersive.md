@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-spatiality
 title: 沉浸光感
 breadcrumb: 最佳实践 > 技术创新 > 空间化 > 沉浸光感
 category: best-practices
-scraped_at: 2026-11-04T08:37:46+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:d94fa294b9aaa3ec8f1e193e1dbad2dfa3eadfea5a7a668a5f9579adb17701df
+scraped_at: 2026-11-10T10:42:00+08:00
+doc_updated_at: 2026-11-10
+content_hash: sha256:b57c18c93ef57a01a598fdc215611f307ac782c6c6bb352f7f4462e4f8337641
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:d94fa294b9aaa3ec8f1e193e1dbad2dfa3eadfea5a7a668a5f9579adb17
 
 [沉浸光感](../harmonyos-guides/arkts-immersive-light-sense.md)是空间化视觉的基石，为组件（标题栏、导航栏、工具栏等）提供三种视觉效果：内容相关的毛玻璃模糊、按压状态的弹性光效反馈、以及滑动过程的透明度渐变。悬浮组件则是空间化的交互载体，底部导航栏从传统的贴底色块变为悬浮圆角胶囊，配合MiniBar折叠展开、智感握姿左右跟随等能力，让交互更加自然流畅。空间化的效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/vlxTaFaDSPa3bwNUinsZIA/zh-cn_image_0000002594475428.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/zCB_0xRhRuK_7qq1QXkYVw/zh-cn_image_0000002594475428.png "点击放大")
 
 本文将从沉浸光感的基础概念切入，重点围绕首眼沉浸光感、自适应悬浮导航与智感握姿智能交互三大应用场景，系统介绍如何在HarmonyOS应用中快速接入沉浸光感能力。
 
@@ -35,7 +35,7 @@ content_hash: sha256:d94fa294b9aaa3ec8f1e193e1dbad2dfa3eadfea5a7a668a5f9579adb17
 
 沉浸光感视觉示意图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/tRWzQdS7T9GyQoegKQSZeA/zh-cn_image_0000002594053198.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/25j7I5LBRIKB0X3nrvN7ww/zh-cn_image_0000002594053198.png "点击放大")
 
 ### 沉浸光感的档位
 
@@ -50,13 +50,12 @@ content_hash: sha256:d94fa294b9aaa3ec8f1e193e1dbad2dfa3eadfea5a7a668a5f9579adb17
 
 **说明** 
 
-在绝大多数场景下，建议使用ADAPTIVE（自适应）模式。系统会根据当前设备的算力和性能状态，自动选择最佳的光效表现，在保证流畅度的同时达到最优视觉效果。如果对视觉效果有极高要求，可以手动指定材质类型和级别，例如强制使用EXQUISITE（精致）级别。但必须注意设备兼容性，因为并非所有设备都支持高级沉浸光感。强行在低端设备上开启可能导致卡顿和发热。因此，需要[getSystemMaterialTypes](../harmonyos-references/ui-design-hdsmaterial.md#getsystemmaterialtypes)先查询设备支持的能力，再进行优雅降级。沉浸光感代表了HarmonyOS在空间、光影与交互设计上的新思考，合理运用能显著提升应用质感。
+* 推荐使用默认值ADAPTIVE档位。该模式下，系统会根据当前设备的算力动态调整组件的材质效果，兼顾性能与显示效果。
+* 若未采用系统自适应能力，请先调用[getSystemMaterialTypes()](https://link.gitcode.com/?target=https://developer.huawei.com/consumer/cn/doc/doccenter-references/api/ui-design-hdsmaterial#getsystemmaterialtypes&from=https://gitcode.com/self_dev/BestPractice/blob/dev/zh_CN/innovation-feature-development/technical-innovation/bpta-spatiality-immersive.md&lang=zh&theme=white)接口查询当前设备支持的材质能力，再根据查询结果选用相应的材质效果枚举：
+  + 如果查询结果显示当前设备支持IMMERSIVE材质类型，可选用EXQUISITE或GENTLE效果。
+  + 如果查询结果显示当前设备不支持IMMERSIVE材质类型，则建议使用SMOOTH效果，以降低卡顿和发热风险，保障用户体验。
 
-**注意事项与限制**
-
-* **同层渲染场景限制**：在API 23及以前版本的SDK中，[同层渲染场景下控件使能沉浸光感效果变透明](../harmonyos-faqs/faqs-arkweb-100.md)（如Web组件内嵌ArkUI控件）。此时建议在对应控件上关闭沉浸光感效果，或关闭同层渲染。
-* **设计原则**：在实际应用中，应遵循“内容为先、体验至上、灵动交互”的原则，确保沉浸光感增强UI的同时不牺牲操作效率。
-* **适配多种场景**：沉浸光感可以扩展到音量条、搜索框、各种按钮等更多控件，打造全场景一致的高级视觉体验。但在亮色模式下，EXQUISITE材质可能会覆盖白色叠层，若底色为非白纯色，可考虑切换至GENTLE材质。
+沉浸光感效果由材质滤镜、折射、高光、阴影等多层效果叠加而成，渲染时需要消耗GPU资源，不合理使用会显著增加功耗。在实际应用中，总体原则是将沉浸光感效果作为一种"稀缺"视觉资源使用，具体参考[沉浸光感功耗优化](https://link.gitcode.com/?target=https://developer.huawei.com/consumer/cn/doc/doccenter-capabilities/arkts-immersive-light-sense-constraints&from=https://gitcode.com/self_dev/BestPractice/blob/dev/zh_CN/innovation-feature-development/technical-innovation/bpta-spatiality-immersive.md&lang=zh&theme=white)。
 
 ## 沉浸光感适配方案
 
@@ -106,7 +105,7 @@ content_hash: sha256:d94fa294b9aaa3ec8f1e193e1dbad2dfa3eadfea5a7a668a5f9579adb17
 
 标题栏是沉浸光感最直观的体现。沉浸光感标题栏示意图如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/NFNUoeVARme0CcbybU1eGg/zh-cn_image_0000002624492723.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/G65udeI5SOe9e5ulGzfGsQ/zh-cn_image_0000002624492723.gif "点击放大")
 
 * 标题栏使用材质
 
@@ -144,14 +143,14 @@ content_hash: sha256:d94fa294b9aaa3ec8f1e193e1dbad2dfa3eadfea5a7a668a5f9579adb17
 
   悬浮导航示意图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/n1csVKijTyiiDRj4kAbIGQ/zh-cn_image_0000002594213114.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/A5HKzUMcQG2v-m-dsdOS8A/zh-cn_image_0000002594213114.png "点击放大")
 * 设置沉浸光感效果
 
   悬浮导航栏的沉浸光感效果可通过barFloatingStyle中的systemMaterialEffect属性进行配置，其中materialType用于定义材质风格，materialLevel则控制材质强度。
 
   沉浸光感示意图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/tdMoMf5yQwKY7SzffdpGcg/zh-cn_image_0000002624612573.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/5hq8rn5iTpSMXsraLjCYXg/zh-cn_image_0000002624612573.png "点击放大")
 * 沉浸式MiniBar
 
   针对悬浮导航的多功能场景，例如音乐播放等需同时展示底部导航和播放控制的场景，HdsTabs提供了MiniBar能力，即在底部导航栏中嵌入一个可折叠展开的[迷你栏](../harmonyos-guides/ui-design-hds-tabs-bar-floating.md#迷你栏)。
@@ -161,7 +160,7 @@ content_hash: sha256:d94fa294b9aaa3ec8f1e193e1dbad2dfa3eadfea5a7a668a5f9579adb17
 
   MiniBar示意图如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/PQU_AsrCS9GDxzj2BKmG5Q/zh-cn_image_0000002594053200.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/BYJfsPtiSeGPor8tRpsgFQ/zh-cn_image_0000002594053200.gif)
 
 ### 内容区域组件适配
 
@@ -177,7 +176,7 @@ content_hash: sha256:d94fa294b9aaa3ec8f1e193e1dbad2dfa3eadfea5a7a668a5f9579adb17
 
 效果示意图如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/nZdlMbLGT7mi853jARvUxw/zh-cn_image_0000002624492725.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/G1G3e_eRRx-gm3GPRFQNaw/zh-cn_image_0000002624492725.gif)
 
 ## 场景一：应用首眼沉浸光感
 
@@ -311,7 +310,7 @@ content_hash: sha256:d94fa294b9aaa3ec8f1e193e1dbad2dfa3eadfea5a7a668a5f9579adb17
 
 菜单栏沉浸光感适配的核心是通过封装版本兼容的材质工具类，实现API级别的平滑过渡。菜单栏沉浸光感效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/orBEbEPuRuyOaqt5hflbNA/zh-cn_image_0000002624951609.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/746z8u3IQDCAjG49XWzWUg/zh-cn_image_0000002624951609.gif "点击放大")
 
 * 材质工具类封装
 

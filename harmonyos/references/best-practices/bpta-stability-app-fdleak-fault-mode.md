@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 应用句柄泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 句柄泄漏故障模式说明 > 应用句柄泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-11-04T08:38:05+08:00
+scraped_at: 2026-11-10T10:42:12+08:00
 doc_updated_at: 2026-09-03
-content_hash: sha256:55946045b2a5b054575104a0485c9354aed8bc070e6bdddb7fa58e515c9e8923
+content_hash: sha256:c755fa6fa5c13b2d4898d4e45d939eea9cb258f38c3f608ef63ab5706a0aef77
 ---
 
 ## 概述
@@ -61,19 +61,19 @@ content_hash: sha256:55946045b2a5b054575104a0485c9354aed8bc070e6bdddb7fa58e515c9
    ```
 3. 如果获取到了句柄栈，可以按照[句柄栈分析方法](bpta-stability-fdleak-fault-mode-overreview.md#section1937413433216)提供的步骤依次分析，通过单击下图1处导入句柄栈文件，再依次单击下图2-4处，可筛选出泄漏的调用栈如下图5、6处所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/CGQeJTWJRKiSb8DEmL1rMA/zh-cn_image_0000002699891782.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/ZcbC1pYfTpWnSspjdup9Ow/zh-cn_image_0000002699891782.png "点击放大")
 4. 分析调用栈指向的代码段，发现FileHandleLeakUvWork()函数正在循环申请文件句柄，且未释放，最终导致了句柄泄漏，调用栈指向的代码段如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/8PfU4DS4Q4e9fUzIDKgKQw/zh-cn_image_0000002699731896.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/T4ir2vZqSCOxxW79TUdgQA/zh-cn_image_0000002699731896.png "点击放大")
 
 **开发态问题案例分析思路**
 
 1. 按照[开发态分析方法](bpta-stability-fdleak-fault-mode-overreview.md#section4840142124519)提供的步骤完成录制后，依次单击下图1、2处，可找到泄漏句柄的申请调用栈如下图3处框中所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/SbNo7qkJQ_6LJDdalL0Veg/zh-cn_image_0000002729491151.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/xTswCN8QRICgtZ8BewfZuQ/zh-cn_image_0000002729491151.png)
 2. 分析调用栈指向的代码段，发现FileHandleLeakUvWork()函数正在循环申请文件句柄，且未释放，最终导致了句柄泄漏。调用栈指向的代码段如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/mlaAH_kBQ8KH36L1PR5WGA/zh-cn_image_0000002729611111.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/z_HFeMm5Qs6MVIyVJW_b8g/zh-cn_image_0000002729611111.png "点击放大")
 
 **修复建议**
 
@@ -161,23 +161,23 @@ xample.dfx_test 6611 54 17411 1657
 3. 参考[问题分析思路](bpta-stability-app-fdleak-fault-mode.md#section15698629724)，分析详细日志中inode、PeerTid等数据，可进一步缩小排查范围。
 4. 如果获取到了句柄栈，可以按照[运维态分析方法](bpta-stability-fdleak-fault-mode-overreview.md#section71361119142017)提供的步骤依次分析，通过单击下图1处导入句柄栈文件，再依次单击下图2-4处，可筛选出泄漏的调用栈如下图5、6处所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/t0N0-cxzTTe2Du30BklHmA/zh-cn_image_0000002699891784.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/YUYafaArS6GPXJGPIXOmSQ/zh-cn_image_0000002699891784.png)
 5. 分析调用栈指向的代码段，发现SocketFDLeak()函数正在循环调用CreateSocketAndLeak()函数，后者会申请socket句柄，且未释放，最终导致了句柄泄漏，调用栈指向的代码段如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/jNS0lhF4SzCpSKBGl7QAcA/zh-cn_image_0000002699731898.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/zuPuYQhbSpuMyhqD3TnltA/zh-cn_image_0000002699731898.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/Tgut4afoQ6-pqZFvIxlyrA/zh-cn_image_0000002729491153.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/KcikJ890QKOYWWKVnhYfaA/zh-cn_image_0000002729491153.png "点击放大")
 
 **开发态问题案例分析思路**
 
 1. 按照[开发态分析方法](bpta-stability-fdleak-fault-mode-overreview.md#section4840142124519)提供的步骤完成录制后，依次单击下图1、2处，在下图3处可找到泄漏句柄的申请调用栈。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/p5nR_RW_SVe8yN9m3GKJjQ/zh-cn_image_0000002729611113.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/Sjw29dY2TdykgyWTDpATJA/zh-cn_image_0000002729611113.png)
 2. 分析调用栈指向的代码段，发现SocketFDLeak()函数正在循环调用CreateSocketAndLeak()函数，后者会申请socket句柄，且未释放，最终导致了句柄泄漏，调用栈指向的代码段如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/u1JMO378RYu-jOyXwJJ-Eg/zh-cn_image_0000002699891786.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/Y4Nzipy7QyODPHA74F-iYA/zh-cn_image_0000002699891786.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/COXVNlfTTFCVGhSxR9Hnnw/zh-cn_image_0000002699731900.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/NF30nLxmTpqtHzUXBF1i1w/zh-cn_image_0000002699731900.png "点击放大")
 
 **修复建议**
 
@@ -261,19 +261,19 @@ xample.dfx_test 20767 12 / 8564 16 16 16
    ```
 3. 如果获取到了句柄栈，可以按照[运维态分析方法](bpta-stability-fdleak-fault-mode-overreview.md#section71361119142017)提供的步骤依次分析，通过下图1处导入句柄栈文件，再依次单击下图2-4处，可筛选出泄漏的调用栈如下图5、6处所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/9xdT53bNTziarm43r4CgVQ/zh-cn_image_0000002729491155.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/IdQr9ziLTm2mPiqbjCYlwA/zh-cn_image_0000002729491155.png)
 4. 分析调用栈指向的代码段，发现PipeFDLeak()函数正在循环申请pipe句柄，且未释放，最终导致了句柄泄漏，调用栈指向的代码段如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/e72BbKHJSK2DtkHynsYS1A/zh-cn_image_0000002729611115.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/7WpQsVIaQgOgtGo5NCn30Q/zh-cn_image_0000002729611115.png "点击放大")
 
 **开发态问题案例分析思路**
 
 1. 按照[开发态分析方法](bpta-stability-fdleak-fault-mode-overreview.md#section4840142124519)提供的步骤完成录制后，并依次单击下图1、2处，在下图3处可找到泄漏句柄的申请调用栈。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/Oj18YpNyTy-h73_BUJajVg/zh-cn_image_0000002699891788.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/guBoH4K2QVOnPhlvnJ4BIw/zh-cn_image_0000002699891788.png)
 2. 分析调用栈指向的代码段，发现PipeFDLeak()函数正在循环申请pipe句柄，且未释放，最终导致了句柄泄漏，调用栈指向的代码段如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/sRkDzv8-SMaJMYLONwZwUg/zh-cn_image_0000002699731902.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/blAVSfFLQlev6fUH_A6QfQ/zh-cn_image_0000002699731902.png "点击放大")
 
 **修复建议**
 
@@ -359,23 +359,23 @@ composer_host	1467	60	328281	1465	dev/ashmem/gralloc_shared_attr	4096	4096	4392
 3. ASHMEM基础维测日志提供了申请的各个节点信息，可参考[问题分析思路](bpta-stability-app-fdleak-fault-mode.md#section17564184819411)分析ASHMEM句柄的具体使用业务，缩小排查范围。
 4. 如果获取到了句柄栈，可以按照[运维态分析方法](bpta-stability-fdleak-fault-mode-overreview.md#section71361119142017)提供的步骤依次分析，通过单击下图1处导入句柄栈文件，再依次单击下图2-4处，筛选出泄漏的调用栈如下图5、6处所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/jGPXzcTETWi4i8WqSqUTHA/zh-cn_image_0000002729491157.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/TugLaAqAQyiqA1n-vJqfaw/zh-cn_image_0000002729491157.png)
 5. 分析调用栈指向的代码段，发现AshmemFDLeak()函数正在循环调用AshmemCreate()函数，之后又进入AshmemOpenLocked()函数申请ASHMEM句柄，且未释放，最终导致了句柄泄漏，调用栈指向的代码段如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/QB0tAlYwRgiC8atvLGG-xw/zh-cn_image_0000002729611117.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/fJ6NFFNZR8-i3QnMrLzh7g/zh-cn_image_0000002729611117.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/eA71ZKA4Rjee9xf-3jg72g/zh-cn_image_0000002699891790.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/AEpztJeNTgO7Z7yVFURwAQ/zh-cn_image_0000002699891790.png "点击放大")
 
 **开发态问题案例分析思路**
 
 1. 按照[开发态分析方法](bpta-stability-fdleak-fault-mode-overreview.md#section4840142124519)提供的步骤完成录制后，依次单击下图1、2处，可找到泄漏句柄的申请调用栈如下图3处所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/uKFrGgVbRkaOb7--ZZAvZg/zh-cn_image_0000002699731904.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/9kKpsvwHTOCkpANUblGV-w/zh-cn_image_0000002699731904.png)
 2. 分析调用栈指向的代码段，发现AshmemFDLeak()函数正在循环调用AshmemCreate()函数，之后又进入AshmemOpenLocked()函数申请ASHMEM句柄，且未释放，最终导致了句柄泄漏，调用栈指向的代码段如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/RSIUq99XRYeuR0dy_KUPvA/zh-cn_image_0000002729491159.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/y3jvz2KKSfCDBAY4d-ce0A/zh-cn_image_0000002729491159.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/oUFSuNDfQYqu97JYejbNaw/zh-cn_image_0000002729611119.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/PPS5AeOiSm62m06xBtT4dw/zh-cn_image_0000002729611119.png "点击放大")
 
 **修复建议**
 
@@ -437,7 +437,7 @@ xample.dfx_test	28812   	80      	130965504	8829    	37152   	xample.dfx_test	sr
 4. 单击下图4处选择Created & Existing，筛选申请并且未释放的句柄及其调用栈。
 5. 找到申请异常的dmabuf句柄及其调用栈，如下图5、6处框选的内容。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/0tzxXLzhSe2caoPxJfBSdw/zh-cn_image_0000002699891792.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/EGtTdlJ5SHSVviL2a5WEXg/zh-cn_image_0000002699891792.png)
 
 **开发态问题分析思路**
 
@@ -473,12 +473,12 @@ xample.dfx_test	28812   	80      	130965504	8829    	37152   	xample.dfx_test	sr
    ```
 3. 如果获取到了句柄栈，可以按照[问题分析思路](bpta-stability-app-fdleak-fault-mode.md#section158103411211)中的运维态分析思路提供的步骤依次分析，通过下图1处导入句柄栈文件，再依次单击下图2-4处，可筛选出泄漏的调用栈如下图5、6处所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/TVmDQ30kTnmQLgNyPxuHEQ/zh-cn_image_0000002699731906.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/mNpJLgNsS6OxjrqUqIZg2w/zh-cn_image_0000002699731906.png)
 4. 分析调用栈指向的代码段，发现应用InitLeak()函数正在循环调用ResourceFactory::CreateResource()函数，之后又进入DmaBufResource::Acquire()函数，申请dmabuf句柄，且未释放，最终导致了句柄泄漏。调用栈指向的代码段如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/5_yW7sCpT3-HMrvyFVtPvw/zh-cn_image_0000002729491161.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/lvq73DAbS065bjoPptvp1Q/zh-cn_image_0000002729491161.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/EDMsW3NdQ-KtNtNCt3nI-A/zh-cn_image_0000002729611121.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/acxuGE84TCuuDm3DT0GLjQ/zh-cn_image_0000002729611121.png "点击放大")
 
 **开发态问题案例分析思路**
 
@@ -486,12 +486,12 @@ xample.dfx_test	28812   	80      	130965504	8829    	37152   	xample.dfx_test	sr
 
 1. 按照[问题分析思路](bpta-stability-app-fdleak-fault-mode.md#section158103411211)中开发态问题分析思路提供的步骤完成录制，并依次单击下图1、2处，在下图3处可找到泄漏句柄的申请调用栈。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/LX1tTXxHRqm31i4dnFfJzQ/zh-cn_image_0000002699891794.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/h8yxZpFAQ46BOxmDYu20AQ/zh-cn_image_0000002699891794.png)
 2. 分析调用栈指向的代码段，发现应用InitLeak()函数正在循环调用ResourceFactory::CreateResource()函数，之后又进入DmaBufResource::Acquire()函数，申请dmabuf句柄，且未释放，最终导致了句柄泄漏。调用栈指向的代码段如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/VZvmbn7cSX2sggdMCFtQKA/zh-cn_image_0000002699731908.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/wxwz5AN0QgyUUMq7DnZzKA/zh-cn_image_0000002699731908.png "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/lVLotM6EQGWWdi4PLbk0JQ/zh-cn_image_0000002729491163.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/f8oX9XgmQvuEtUsjjbnRiQ/zh-cn_image_0000002729491163.png "点击放大")
 
 **修复建议**
 

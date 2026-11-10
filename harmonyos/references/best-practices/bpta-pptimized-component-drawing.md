@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pptimized-
 title: 组件绘制优化
 breadcrumb: 最佳实践 > 性能 > 性能优化 > 组件绘制优化
 category: best-practices
-scraped_at: 2026-11-04T08:37:59+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:3efb751dd308e14dc93c0c16b2ce6aeff725ca7c9967ab2f9bfd03998b040d5b
+scraped_at: 2026-11-10T10:42:07+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:1acde73fe95da2adbee267ef7f907c14023d7b726eafb9dcc126787dfa2bd370
 ---
 
 应用启动性能与FrameNode树的节点数量及属性相关，建议采取以下UI组件优化方案：
@@ -14,7 +14,7 @@ content_hash: sha256:3efb751dd308e14dc93c0c16b2ce6aeff725ca7c9967ab2f9bfd03998b0
 
 **图1** 自定义组件生命周期流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/sn5jvL55T_2qQhabBwn17A/zh-cn_image_0000002375296885.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/Z8qWUocFRNuHRWzBdkghNQ/zh-cn_image_0000002375296885.png "点击放大")
 
 自定义组件生命周期如上图所示。创建完成后，在执行build函数前，将先调用aboutToAppear()生命周期回调函数。此时若执行耗时操作，将阻塞UI渲染，增加UI主线程负担。因此，应避免在自定义组件的生命周期内执行高耗时操作。具体原理可参考[自定义组件生命周期](../harmonyos-guides/arkts-page-custom-components-lifecycle.md)。具体优化案例请参阅[避免在自定义组件的生命周期内执行高耗时操作](../doccenter-app-quality/bpta-ui-component-performance-optimization.md#section18755173594714)。
 
@@ -24,4 +24,4 @@ content_hash: sha256:3efb751dd308e14dc93c0c16b2ce6aeff725ca7c9967ab2f9bfd03998b0
 
 ## 减少布局计算
 
-当组件的宽高不需要自适应时，建议在UI描述中明确指定组件的宽高数值。如果组件外部的容器尺寸发生变化，例如在拖拽缩放等场景下，组件本身的宽高固定，理论上该组件在布局阶段不会参与Measure阶段，节点中已保存了相应的大小信息。如果组件内容较多，由于避免了整体的测算过程，性能将显著提升。具体优化案例，请参阅[利用布局边界减少布局计算](../harmonyos-guides/arkts-layout-optimization-guidance.md#利用布局边界减少布局计算)、[合理使用布局组件](../doccenter-capabilities/arkts-layout-optimization-guidance.md#合理使用布局组件)**。**
+当组件的宽高不需要自适应时，建议在UI描述中明确指定组件的宽高数值。如果组件外部的容器尺寸发生变化，例如在拖拽缩放等场景下，组件本身的宽高固定，理论上该组件在布局阶段不会参与Measure阶段，节点中已保存了相应的大小信息。如果组件内容较多，由于避免了整体的测算过程，性能将显著提升。具体优化案例，请参阅[利用布局边界减少布局计算](../harmonyos-guides/arkts-layout-optimization-guidance.md#利用布局边界减少布局计算)、[Scroll嵌套List场景下，给定List组件宽高](../doccenter-capabilities/arkts-layout-optimization-guidance.md#scroll嵌套list场景下给定list组件宽高)**。**

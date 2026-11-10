@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-mobi
 title: 多设备移动支付界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备移动支付界面
 category: best-practices
-scraped_at: 2026-11-04T08:37:54+08:00
+scraped_at: 2026-11-10T10:42:04+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:122e5acc5b6ceb901ae2605e82b31b5c802134cc9dbda3767c4afcdbe9bb2c37
+content_hash: sha256:e4cb567a791615d484d136105c8449d6ade1c29c593313db100f40f1d12a8226
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ content_hash: sha256:122e5acc5b6ceb901ae2605e82b31b5c802134cc9dbda3767c4afcdbe9b
 
 移动支付应用的UX设计可参考[移动支付类](../design-guides/mobile-payment-0000001957421613.md)多设备响应式设计指南，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/asqcnIZXSt2ocLOszW3vDg/zh-cn_image_0000002583509660.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/R8WeiF1pR1CRIuhZsAKCPg/zh-cn_image_0000002583509660.png "点击放大")
 
 ## 工程管理
 
@@ -231,7 +231,7 @@ content_hash: sha256:122e5acc5b6ceb901ae2605e82b31b5c802134cc9dbda3767c4afcdbe9b
 
 电脑端推荐页与移动端推荐页内容基本一致，差异点在于，移动端使用底部页签进行内容视图切换，电脑端使用侧边栏进行切换。按照模块，将推荐页相关内容划分为2个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/qUACd1yMTU2DI37SihhlVw/zh-cn_image_0000002614029343.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/0wvkwAV0QK2Uw7gSHNQDFw/zh-cn_image_0000002614029343.png "点击放大")
 
 **界面开发**
 

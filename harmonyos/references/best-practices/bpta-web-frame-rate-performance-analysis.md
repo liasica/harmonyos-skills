@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-web-frame-
 title: Web帧率问题分析
 breadcrumb: 最佳实践 > 性能 > 性能分析 > Web帧率问题分析
 category: best-practices
-scraped_at: 2026-11-04T08:37:58+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:70c5432b0027450e4095e9af36694406a716d382d375b321eb104f560f0dbdf0
+scraped_at: 2026-11-10T10:42:07+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:e599b3ec22ba63a15eaa589ba66dc824db517ea3e73b2508f7ba6127842decf5
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:70c5432b0027450e4095e9af36694406a716d382d375b321eb104f560f0
 
 ## Web滑动渲染流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/Yv84LTKNSvC-emdSvFfxcQ/zh-cn_image_0000002598770531.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/tdDdOHd1TFK0FgS4Q2ZXdw/zh-cn_image_0000002598770531.png "点击放大")
 
 ArkWeb（HarmonyOS的Web引擎，负责Web页面的渲染、JS执行与交互处理）子泳道聚合了Web相关线程的trace信息，通过分析Web渲染过程关键函数的trace点，可以分析出每一帧的执行流程，图为[异步渲染模式](../harmonyos-guides/web-render-mode.md#异步渲染模式默认)异步渲染模式（默认）下ArkWeb滑动过程中的渲染流程图，其聚合的Web线程信息如下：
 
@@ -33,7 +33,7 @@ ArkWeb（HarmonyOS的Web引擎，负责Web页面的渲染、JS执行与交互处
 
 ## Web滑动丢帧分析方法
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/oKe88JBvSmmJF_-rqqxcXQ/zh-cn_image_0000002568330974.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/sARM_DreQayJdiH8Bri-6g/zh-cn_image_0000002568330974.png "点击放大")
 
 1. 确定是否存在丢帧问题：使用DevEco Profiler或录屏工具辅助分析，确认Web组件是否存在丢帧问题。若存在问题，则执行后续分析逻辑。
 2. 确认关键性能瓶颈：找到异常耗时trace点。
@@ -56,13 +56,13 @@ InputRouterImpl::FilterAndSendWebInputEvent | type=GestureScrollEnd代表终点�
 
 RenderWidgetHostInputEventRouter::DispatchTouchscreenGestureEvent | type=GestureFlingStart代表抛滑起始点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/rsFXP4T2StO_NnY3rkgOwQ/zh-cn_image_0000002568171322.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/XraayRVgRv2KoHeWYA8uWw/zh-cn_image_0000002568171322.png "点击放大")
 
 ### 从最终结果倒推，找到丢帧时间点
 
 Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当VSyncGenerator生成RS信号时，若RosenWeb泳道标识的buffer个数为0，则说明发生丢帧；有缓存时则不视为丢帧。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/DmRLzwvpRxilWUS8C639Lw/zh-cn_image_0000002598850589.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/UnTG31YhR9Km98Mmd65k4Q/zh-cn_image_0000002598850589.png "点击放大")
 
 ### 寻找丢帧原因
 
@@ -86,17 +86,17 @@ Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当
 
    **问题trace**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/Qv4v8P8-Tx2A0OPbax_1cA/zh-cn_image_0000002598770535.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/BkCIDNQBRceDkv0cJCD9gw/zh-cn_image_0000002598770535.png "点击放大")
 
    **根因分析**
 
-   1. 应用跳转到某Web页面时，同时创建一个空白的离线Web组件，以加快其他页面的加载速度。
+   a. 应用跳转到某Web页面时，同时创建一个空白的离线Web组件，以加快其他页面的加载速度。
 
-   2. 页面加载完成后，用户滑动页面时，恰好触发离线Web组件的创建。
+   b. 页面加载完成后，用户滑动页面时，恰好触发离线Web组件的创建。
 
-   3. 离线Web组件的创建阻塞了应用主线程，VSync信号到来时，Web手势无法正常下发，在这一个VSync周期内ArkWeb无法完成绘制，未产生buffer。
+   c. 离线Web组件的创建阻塞了应用主线程，VSync信号到来时，Web手势无法正常下发，在这一个VSync周期内ArkWeb无法完成绘制，未产生buffer。
 
-   4. 下一个VSync信号下发时，RosenWeb = 0，图形侧无法获取buffer进行送显，导致丢帧。
+   d. 下一个VSync信号下发时，RosenWeb = 0，图形侧无法获取buffer进行送显，导致丢帧。
 
    **优化方案**
 
@@ -109,23 +109,23 @@ Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当
 
    **问题trace**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/gPPOhOq5SuqfTB_eb63wcg/zh-cn_image_0000002568330976.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/WPDbmHI-TDybGud2pjqWiA/zh-cn_image_0000002568330976.png "点击放大")
 
    **根因分析**
 
-   1. 应用在某个Web组件中，使用[javaScriptProxy()](../harmonyos-references/arkts-basic-components-web-attributes.md#javascriptproxy)接口或[registerJavaScriptProxy()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#registerjavascriptproxy)接口将应用侧代码注册到前端页面中，注册完成之后，前端页面中使用注册的对象名称就可以调用应用侧的方法。
+   a. 应用在某个Web组件中，使用[javaScriptProxy()](../harmonyos-references/arkts-basic-components-web-attributes.md#javascriptproxy)接口或[registerJavaScriptProxy()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#registerjavascriptproxy)接口将应用侧代码注册到前端页面中，注册完成之后，前端页面中使用注册的对象名称就可以调用应用侧的方法。
 
-   2. 用户在滑动页面的过程中，Web页面与原生应用进行交互，触发JSB任务。
+   b. 用户在滑动页面的过程中，Web页面与原生应用进行交互，触发JSB任务。
 
-   3. JSB通信任务阻塞了应用主线程，VSync信号到来时，Web手势无法正常下发，在这一个VSync周期内ArkWeb无法完成绘制，没有buffer产生。
+   c. JSB通信任务阻塞了应用主线程，VSync信号到来时，Web手势无法正常下发，在这一个VSync周期内ArkWeb无法完成绘制，没有buffer产生。
 
-   4. 下一个VSync信号下发时，RosenWeb = 0，图形侧无法获取buffer进行送显，导致丢帧。
+   d. 下一个VSync信号下发时，RosenWeb = 0，图形侧无法获取buffer进行送显，导致丢帧。
 
    **优化建议**
 
-   1. 如果JSB是由滑动事件（如onscroll）触发的，控制JS侧调用频率。
+   a. 如果JSB是由滑动事件（如onscroll）触发的，控制JS侧调用频率。
 
-   2. JSB回调执行时，默认是在应用的主线程。如果回调里涉及复杂计算、文件IO或数据库等操作，将任务抛到**任务池**（[taskpool.execute](../harmonyos-references/js-apis-taskpool.md#taskpoolexecute)）去执行，并迅速返回。
+   b. JSB回调执行时，默认是在应用的主线程。如果回调里涉及复杂计算、文件IO或数据库等操作，将任务抛到**任务池**（[taskpool.execute](../harmonyos-references/js-apis-taskpool.md#taskpoolexecute)）去执行，并迅速返回。
 3. **JSView: ExecuteRerender（ArkUI中执行组件重渲染的函数，在应用主线程上运行）逻辑长时间阻塞应用主线程**
 
    **问题描述**
@@ -134,25 +134,25 @@ Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当
 
    **问题trace**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/lg97mz7DSqqg_TSITn_y0g/zh-cn_image_0000002568171324.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/To9gxn5gRIimdG9E5eqq9Q/zh-cn_image_0000002568171324.png "点击放大")
 
    **根因分析**
 
-   1. 在某个同时包含ArkUI和Web组件的页面中，定义了一些**状态变量**（被 @State, @Prop, @Link, @StorageLink 等装饰器修饰的变量，详见ArkUI[状态管理概述](../harmonyos-guides-V5/arkts-state-management-overview-V5.md)），某些ArkUI组件的一些属性关联这些状态变量。
+   a. 在某个同时包含ArkUI和Web组件的页面中，定义了一些**状态变量**（被 @State, @Prop, @Link, @StorageLink 等装饰器修饰的变量，详见ArkUI[状态管理概述](../harmonyos-guides-V5/arkts-state-management-overview-V5.md)），某些ArkUI组件的一些属性关联这些状态变量。
 
-   2. 在Web页面滑动的过程中触发了这些状态变量数值的变化，Web 组件所在的父组件或兄弟组件中存在状态变更，触发了整颗视图树的 build() 函数（ArkUI框架中用于构建页面的核心函数）重新执行。
+   b. 在Web页面滑动的过程中触发了这些状态变量数值的变化，Web 组件所在的父组件或兄弟组件中存在状态变更，触发了整颗视图树的 build() 函数（ArkUI框架中用于构建页面的核心函数）重新执行。
 
-   3. 在触发组件更新的过程中，业务可能绑定一些耗时的业务逻辑，导致JSView: ExecuteRerender执行耗时长。
+   c. 在触发组件更新的过程中，业务可能绑定一些耗时的业务逻辑，导致JSView: ExecuteRerender执行耗时长。
 
-   4. JSView: ExecuteRerender执行耗时长阻塞了应用主线程，VSync信号到来时，Web手势无法正常下发，在这一个VSync周期内ArkWeb无法完成绘制，没有buffer产生。
+   d. JSView: ExecuteRerender执行耗时长阻塞了应用主线程，VSync信号到来时，Web手势无法正常下发，在这一个VSync周期内ArkWeb无法完成绘制，没有buffer产生。
 
-   5. 下一个VSync信号下发时，RosenWeb = 0，图形侧无法获取buffer进行送显，导致丢帧。
+   e. 下一个VSync信号下发时，RosenWeb = 0，图形侧无法获取buffer进行送显，导致丢帧。
 
    **优化建议**
 
-   1. 检查是否在滑动监听中频繁修改了 @State 或 @Link等状态变量，减少滑动中这类变量的更新，降低重绘频率。
+   a. 检查是否在滑动监听中频繁修改了 @State 或 @Link等状态变量，减少滑动中这类变量的更新，降低重绘频率。
 
-   2. 缩小状态变量作用域，避免全局刷新。
+   b. 缩小状态变量作用域，避免全局刷新。
 4. **ExecuteJs（ArkUI中执行JS回调的函数，在应用主线程上运行）长时间阻塞应用主线程**
 
    **问题描述：**
@@ -161,21 +161,21 @@ Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当
 
    **问题trace**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/khvGwAj8QTSBzOHkE68tAg/zh-cn_image_0000002598850591.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/qFZ_91dQQ6K6LXnT7WQtCQ/zh-cn_image_0000002598850591.png "点击放大")
 
    **根因分析：**
 
-   1. 用户在滑动页面的过程中，在onScroll()等函数中执行了一些同步的应用自身耗时业务逻辑，对应trace中的ExecuteJs。
+   a. 用户在滑动页面的过程中，在onScroll()等函数中执行了一些同步的应用自身耗时业务逻辑，对应trace中的ExecuteJs。
 
-   2. ExecuteJs通信任务阻塞了应用主线程，VSync信号到来时，Web手势无法正常下发，在这一个VSync周期内ArkWeb无法完成绘制，没有buffer产生。
+   b. ExecuteJs通信任务阻塞了应用主线程，VSync信号到来时，Web手势无法正常下发，在这一个VSync周期内ArkWeb无法完成绘制，没有buffer产生。
 
-   3. 下一个VSync信号下发时，RosenWeb = 0，图形侧无法获取buffer进行送显，导致丢帧。
+   c. 下一个VSync信号下发时，RosenWeb = 0，图形侧无法获取buffer进行送显，导致丢帧。
 
    **优化建议**
 
-   1. 应用排查是否在滑动的过程中频繁触发自身js耗时逻辑，优化耗时逻辑或对调用进行节流，降低调用频率。
+   a. 应用排查是否在滑动的过程中频繁触发自身js耗时逻辑，优化耗时逻辑或对调用进行节流，降低调用频率。
 
-   2. 尝试使用异步方式处理耗时逻辑。
+   b. 尝试使用异步方式处理耗时逻辑。
 5. **应用自身未知逻辑长时间阻塞应用主线程**
 
    **问题描述：**
@@ -184,19 +184,19 @@ Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当
 
    **问题trace**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/P3Q90koUQMyUaJZpAjuTbA/zh-cn_image_0000002598770537.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/BOklP07STVuGtiBCNGAusA/zh-cn_image_0000002598770537.png "点击放大")
 
    **根因分析：**
 
-   1. 用户在滑动页面的过程中，长时间执行了应用自身业务逻辑阻塞了应用主线程，比如在web组件相关函数中定时执行一些耗时业务逻辑。
+   a. 用户在滑动页面的过程中，长时间执行了应用自身业务逻辑阻塞了应用主线程，比如在web组件相关函数中定时执行一些耗时业务逻辑。
 
-   2. VSync信号到来时，Web手势无法正常下发，在这一个VSync周期内ArkWeb无法完成绘制，没有buffer产生。
+   b. VSync信号到来时，Web手势无法正常下发，在这一个VSync周期内ArkWeb无法完成绘制，没有buffer产生。
 
-   3. 下一个VSync信号下发时，RosenWeb = 0，图形侧无法获取buffer进行送显，导致丢帧。
+   c. 下一个VSync信号下发时，RosenWeb = 0，图形侧无法获取buffer进行送显，导致丢帧。
 
    **优化建议**
 
-   1. 需应用自身排查是否存在不合理的业务阻塞逻辑，建议在应用代码的业务入口和出口手动调用[hiTraceMeter.startTrace](../harmonyos-references/js-apis-hitracemeter.md#hitracemeterstarttrace) 和 finishTrace手动添加 Trace 打点，定位到耗时区域。
+   需应用自身排查是否存在不合理的业务阻塞逻辑，建议在应用代码的业务入口和出口手动调用[hiTraceMeter.startTrace](../harmonyos-references/js-apis-hitracemeter.md#hitracemeterstarttrace) 和 finishTrace手动添加 Trace 打点，定位到耗时区域。
 
 ### 复杂的动效
 
@@ -207,25 +207,25 @@ Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当
    某个web页面使用了一个超高精度的3D渲染，页面每次滑动经过这块动画区域就会卡顿掉帧。
 
    **图1**   
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/KC7Mz01tSMKpTfpOsVw-fw/zh-cn_image_0000002568330978.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/lcOOnxDIQFKT-J8EO2hi8w/zh-cn_image_0000002568330978.png)
 
    **问题trace**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/EgIyi_f5TbG3tbjFGLgA5g/zh-cn_image_0000002568171326.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/tA7KyrYrTJikIWmtBblVgA/zh-cn_image_0000002568171326.png "点击放大")
 
    **根因分析**
 
-   1. 问题场景的页面使用了一个高清精致的3D渲染动效，该动效直接通过WebGL调用GPU进行复杂的计算，会长时间占用GPU计算单元。
+   a. 问题场景的页面使用了一个高清精致的3D渲染动效，该动效直接通过WebGL调用GPU进行复杂的计算，会长时间占用GPU计算单元。
 
-   2. 页面滑动经过高清动效的时候，此时开始绘制动效，GPU满载工作，页面滑动渲染管线中的CompositorGpuThread需将绘制指令提交到GPU队列，此时GPU满载，长时间等待GPU，导致生成buffer很晚。
+   b. 页面滑动经过高清动效的时候，此时开始绘制动效，GPU满载工作，页面滑动渲染管线中的CompositorGpuThread需将绘制指令提交到GPU队列，此时GPU满载，长时间等待GPU，导致生成buffer很晚。
 
-   3. 在等待GPU过程中，VSync信号多次下发，RosenWeb = 0，图形侧无法获取buffer去消费送显，出现多次丢帧。
+   c. 在等待GPU过程中，VSync信号多次下发，RosenWeb = 0，图形侧无法获取buffer去消费送显，出现多次丢帧。
 
    **优化建议**
 
-   1. 对动画进行降级处理。
+   a. 对动画进行降级处理。
 
-   2. 有复杂3D渲染动效的页面不建议支持上下滑动交互。
+   b. 有复杂3D渲染动效的页面不建议支持上下滑动交互。
 2. **大量高斯模糊动效**
 
    **问题描述**
@@ -234,18 +234,18 @@ Web为自渲染模式，丢帧判定需基于RosenWeb的buffer缓存状态：当
 
    **问题trace**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/0WDf_EhqRgiduI64YqYVMA/zh-cn_image_0000002598850593.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/eyeFluyoS46IJFzlOYOAjQ/zh-cn_image_0000002598850593.png "点击放大")
 
    **根因分析**
 
-   1. 该网页使用了比较重的高斯模糊动效，高斯模糊并非简单的像素着色，内核会对目标区域进行**多轮卷积采样运算，**当大量使用 **backdrop-filter** 或 **filter** 属性实现高斯模糊动效时，若模糊半径（Radius）过大或模糊区域过多，会耗费大量的计算资源。
+   a. 该网页使用了比较重的高斯模糊动效，高斯模糊并非简单的像素着色，内核会对目标区域进行**多轮卷积采样运算，**当大量使用 **backdrop-filter** 或 **filter** 属性实现高斯模糊动效时，若模糊半径（Radius）过大或模糊区域过多，会耗费大量的计算资源。
 
-   2. 在页面滑动的过程中，会触发高斯模糊动效，渲染流程中的DirectRenderer::DrawFrame和SkiaOutputSurfaceImplOnGpu::FinishPaintCurrentFrame这两个trace点的耗时会显著增加，导致Web无法在单帧时间内生成buffer。
+   b. 在页面滑动的过程中，会触发高斯模糊动效，渲染流程中的DirectRenderer::DrawFrame和SkiaOutputSurfaceImplOnGpu::FinishPaintCurrentFrame这两个trace点的耗时会显著增加，导致Web无法在单帧时间内生成buffer。
 
    * DirectRenderer::DrawFrame：该点位于VizCompositorThread线程中，负责管理和调度渲染层。由于每个高斯模糊区域都需要独立的 Render Pass 且存在复杂的纹理依赖，合成器必须花费大量时间进行层级分析和渲染指令调度，导致合成帧的构建过程变慢。
    * SkiaOutputSurfaceImplOnGpu::FinishPaintCurrentFrame：代表GPU实际执行绘图指令的耗时。高斯模糊的卷积核随半径增大导致采样次数剧增，GPU的像素填充率达到极限，导致该阶段在执行模糊Shader和纹理写回时耗时大幅拉长。
 
-   3. 在绘制过程中，VSync图形侧信号下发，RosenWeb = 0，图形侧无法获取buffer去消费送显，出现多次丢帧。
+   c. 在绘制过程中，VSync图形侧信号下发，RosenWeb = 0，图形侧无法获取buffer去消费送显，出现多次丢帧。
 
    **优化建议**
 

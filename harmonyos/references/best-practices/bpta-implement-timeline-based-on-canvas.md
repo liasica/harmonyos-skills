@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-implement-
 title: 基于Canvas实现录像回放时间轴
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 基于Canvas实现录像回放时间轴
 category: best-practices
-scraped_at: 2026-11-04T08:37:56+08:00
+scraped_at: 2026-11-10T10:42:06+08:00
 doc_updated_at: 2026-11-03
-content_hash: sha256:79ae15963b1d9f9e1f135805ca0c71fd61141269fd84687d87c24bac0f939344
+content_hash: sha256:7cef177c54243b979231ac72357d5c73d7332bb402e0b876d3b083588ef2d7e7
 ---
 
 ## **概述**
@@ -30,7 +30,7 @@ TimeBarView组件采用分层绘制，依次为刻度线、中间线、视频区
 刻度线绘制主要将时间戳转换为Canvas像素坐标。例如，开发者自定义刻度间隔的宽度为intervalWidth（如intervalWidth = 10vp），相同长度的时间间隔对应10分钟，实现“固定时间对应固定像素”的精准映射，确保任意时间戳均能通过公式计算出唯一的画布坐标。
 
 **图1** 时间-像素映射示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/Y56ye6fSTKa1hCHnwILc_A/zh-cn_image_0000002478758526.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/qEZdLHJoRymPg1u22cXGPA/zh-cn_image_0000002478758526.png "点击放大")
 
 ### 开发流程
 
@@ -215,7 +215,7 @@ TimeBarView组件采用分层绘制，依次为刻度线、中间线、视频区
    * 边界限制：设置最小（10vp）和最大（180vp）缩放阈值，避免过度缩放。
 
    **图2** 缩放时间轴示意图  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/5Cm0-AC-SsOk1QxxQ3ubZg/zh-cn_image_0000002478598550.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/JLs_gmJIQxKO9djpC52IjQ/zh-cn_image_0000002478598550.png "点击放大")
 
    ```screen
    // Update per-division width
@@ -305,7 +305,7 @@ TimeBarView时间轴与视频播放联动，滑动时间轴可快速定位至目
 滑动停止时，若时间轴中线对应的时间点在录像片段有效时间内，视频立即跳转并继续播放；若处于两端录像间的空白区域，系统自动跳转至最近的录像起始时间点，避免无画面时段，提高效率。时间轴滑动存在硬性边界限制，用户试图将时间轴向右滑动至所有录像片段的最末端（即最新一段录像的结束时间）时，将无法继续拖动，防止超出录像数据范围导致播放异常。
 
 **图3** 效果图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/yj7SkedXRZuNNcgLN4NEcg/zh-cn_image_0000002510798495.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/UTSJL-hzS2KUXqwL2aV-8w/zh-cn_image_0000002510798495.gif "点击放大")
 
 ### 开发步骤
 

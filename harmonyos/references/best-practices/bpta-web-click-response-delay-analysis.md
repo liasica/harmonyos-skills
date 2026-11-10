@@ -3,15 +3,15 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-web-click-
 title: Web点击响应时延分析
 breadcrumb: 最佳实践 > 性能 > 性能分析 > Web点击响应时延分析
 category: best-practices
-scraped_at: 2026-11-04T08:37:58+08:00
+scraped_at: 2026-11-10T10:42:07+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:eb0d73ba72799096eb2300341ded6e65efac0605a7ee5a4ec908cb8d85007979
+content_hash: sha256:609b414b68406248f0fd43fbf8c1506aafc650bc0778b5764bfeb5e3efc0f201
 ---
 
 下图为在ArkTS侧使用Web组件加载Web页面时的效果。当用户点击字块后，动画效果延迟较长时间才触发。点击操作响应时延的性能指标衡量起点为用户点击应用元素的时间，终点为应用界面开始发生变化的时间，变化时间应控制在100ms以内，以确保操作响应及时，维持用户流畅体验。开发者可以通过录屏辅助测试，使用DevEco Profiler工具量化点击响应时延，判断是否存在需要优化的问题。
 
 **图1** 场景动画  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/bXQ6SpeVRAmx5ol7Jwt-mQ/zh-cn_image_0000002229451169.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/ydzAZo6tSfOp5nxUN0XJPw/zh-cn_image_0000002229451169.gif "点击放大")
 
 ## 问题定位流程
 
@@ -19,7 +19,7 @@ content_hash: sha256:eb0d73ba72799096eb2300341ded6e65efac0605a7ee5a4ec908cb8d850
 
 **图2** Web网页整体加载泳道图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/iVYa8er-QzyPHMjAhBzUNw/zh-cn_image_0000002194010888.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/LjQeyZCPTlKaZ7E0bXij9Q/zh-cn_image_0000002194010888.png "点击放大")
 
 | Web网页加载流程拆解 | 关键Trace |
 | --- | --- |
@@ -42,24 +42,24 @@ content_hash: sha256:eb0d73ba72799096eb2300341ded6e65efac0605a7ee5a4ec908cb8d850
 
    **图3** Trace起点
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/XUW7noA2So-63mZYMYXwcw/zh-cn_image_0000002193851272.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/Ox7MPxm4TpKh_YUIsxQdUw/zh-cn_image_0000002193851272.png "点击放大")
 2. 确认终点：选择连续稳定发出的第一帧vsync信号作为终点，而非不稳定vsync信号，是因为非连续的vsync信号不一定触发界面上的渲染行为。本文旨在分析从应用元素点击到应用界面开始变化的点击时延问题，因此选择连续稳定渲染的第一帧vsync信号作为终点。
 
    **图4** Trace终点
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/rhib3A96SgKWxYppv7nBvw/zh-cn_image_0000002193851276.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/YKl5MRufSZGDzcxRV4UC6g/zh-cn_image_0000002193851276.png "点击放大")
 
    从图中可以看出，后续动画已经达到最大帧率，说明无响应发生在图中区域内。
 3. 分析中途出现的H:ReceiveVsync信号可以发现，在无响应阶段出现了几帧，但每帧的耗时并不长。应用侧也是如此，说明在UI绘制过程中没有高负载。
 
    **图5** Trace帧率分析
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/eB0mjiMgSD6mNYaIbQZ9yg/zh-cn_image_0000002193851300.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/t6KJpNY4TIK-2LDD9CoKxw/zh-cn_image_0000002193851300.png "点击放大")
 4. 在此过程中，应用长时间占用CPU，原因可能是进行了大量的计算。
 
    **图6** 可能耗时原因
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/tJWcORc5SwiHKHxKsw1qrg/zh-cn_image_0000002193851280.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/5BONc1W5Saq72JCc4IPzLA/zh-cn_image_0000002193851280.png "点击放大")
 
 经过前面的分析，应用侧发现Web侧可能产生了大量计算。此时，需要使用DevTools工具进行进一步分析。
 
@@ -70,7 +70,7 @@ content_hash: sha256:eb0d73ba72799096eb2300341ded6e65efac0605a7ee5a4ec908cb8d850
 抓取的DevTools泳道图如下图所示，本章节分析可能发生的异常区域：
 
 **图7** DevTools泳道图区域划分  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/J76zZVE8TLOnlqxp2c3orw/zh-cn_image_0000002193851264.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/zalqeqLKQEWg4tRX20TszQ/zh-cn_image_0000002193851264.png "点击放大")
 
 * 区域1：该处为起点，输入Event搜索点击事件。
 * 区域2：该处为组件加载区域，主要是JS执行。
@@ -85,7 +85,7 @@ content_hash: sha256:eb0d73ba72799096eb2300341ded6e65efac0605a7ee5a4ec908cb8d850
 在H5页面点击切换场景中，Web组件已初始化，点击事件由Web内部处理。该过程主要发生在下图的1、2、3、4区域。
 
 **图8** DevTools泳道图区域划分  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/5TmWHdNaRDqMNdSEdNd_KQ/zh-cn_image_0000002194010892.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/QBoG36ItSyC0sA-xAACDng/zh-cn_image_0000002194010892.png "点击放大")
 
 当点击时会执行以下流程：
 
@@ -106,7 +106,7 @@ content_hash: sha256:eb0d73ba72799096eb2300341ded6e65efac0605a7ee5a4ec908cb8d850
 对应下图中的区域2：可以记录此段内容的加载耗时。
 
 **图9** DevTools泳道图区域划分  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/O6rzeHH8TSaQW7vFOmTrDw/zh-cn_image_0000002229451141.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/PZJXdO6FSOKZQ2Jh_hEa2w/zh-cn_image_0000002229451141.png "点击放大")
 
 此处异常点通常为：
 
@@ -114,13 +114,13 @@ content_hash: sha256:eb0d73ba72799096eb2300341ded6e65efac0605a7ee5a4ec908cb8d850
 2. 多个区域涉及加载渲染组件，这可能是动态加载组件，时延较高。此时，可以观察到大量调用的myFun1，点击左下方可跳转到源码：
 
 **图10** DevTools泳道图区域划分  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/PB0CaOZbTvmfGD9hoBHtHQ/zh-cn_image_0000002194010856.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/QS-ge3iDTS-bcTtgPlwxTw/zh-cn_image_0000002194010856.png "点击放大")
 
 源码耗时如下图所示：
 
 **图11** 源码耗时
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/QrB_rEQXT1KyHkE7mOX7KQ/zh-cn_image_0000002229451173.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/bk3-LTwSTU-riogihG6WwA/zh-cn_image_0000002229451173.png "点击放大")
 
 如图所示，源码处会显示具体方法的耗时。此时可以发现myFun1()方法采用了递归，大幅增加了CPU的运算耗时，导致响应延时。将递归方法myFun1优化为循环方法myFun2，时间复杂度从O(2^n)降低到O(n)，在该场景下能显著减少耗时。经测试，myFun2的实际耗时在微秒级别，无法使用DevTools工具统计，建议使用其他方法进行函数耗时统计分析。
 
@@ -129,21 +129,21 @@ content_hash: sha256:eb0d73ba72799096eb2300341ded6e65efac0605a7ee5a4ec908cb8d850
 网络耗时占比异常通常发生在响应阶段，表现为网络请求完成后执行JavaScript或任务时阻塞线程，导致整体耗时显著增加。具体见图中的区域2：
 
 **图12** DevTools泳道图区域划分  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/S0TYCnc8TkGuEP_naYm4EA/zh-cn_image_0000002229336685.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/EB0PtC_sTbq5FKQQSBh9hA/zh-cn_image_0000002229336685.png "点击放大")
 
 ### 动画区域异常分析
 
 如果区域4中测试的响应时间的Trace起点到终点的时间相差很大，动画区域可能会出现异常。常见的异常包括页面背景色为透明，动画曲线呈现先慢后快的特点，导致动画弹出起点时透明度在视觉上没有变化。
 
 **图13** DevTools泳道图区域划分  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/RCetbPMVSWC6V21rqorfIw/zh-cn_image_0000002193851284.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/XBQdcogxS2-U1l6j9TCIsQ/zh-cn_image_0000002193851284.png "点击放大")
 
 ### 空白区域异常分析
 
 对应下图中的区域5：
 
 **图14** DevTools泳道图区域划分  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/l7wMvQBTS9mObw36aIF5Tw/zh-cn_image_0000002229336681.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/hXp-oTQYRxSvs-ogWis4YA/zh-cn_image_0000002229336681.png "点击放大")
 
 此处的异常点通常为：
 
@@ -155,7 +155,7 @@ content_hash: sha256:eb0d73ba72799096eb2300341ded6e65efac0605a7ee5a4ec908cb8d850
 经过上述分析步骤的优化，此时再次调用DevTools进行分析：
 
 **图15** 优化后的泳道图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/2z37f3JQRriEfv7dnZrbiA/zh-cn_image_0000002229451149.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/wA8Hc2xpTnyTj4XXo2PHCw/zh-cn_image_0000002229451149.png "点击放大")
 
 可以看出耗时明显减少，回归正常水平。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-arkweb-oom
 title: JS对象长期被JS持有导致内存泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > ArkWeb OOM故障模式说明 > JS对象长期被JS持有导致内存泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-11-04T08:38:05+08:00
+scraped_at: 2026-11-10T10:42:12+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:2f7bac2eb0619a89d05e56ff48f6f89d5879686b753caa352e450aedcbfc2188
+content_hash: sha256:a6c2bb516b7d7ac5c4158181b78e758e7ed4e0f5fae7962476fd84eb06d9463f
 ---
 
 ArkWeb V8引擎通过GC机制保证JS代码执行结束后释放JS对象占用的内存，如需在JS代码执行过程中及时释放内存，则依靠开发者对JS对象生命周期的管理。本文通过两种场景分析JS对象内存占用过高导致引擎OOM的问题，并通过堆快照文件展示相关堆内存特征。
@@ -57,15 +57,15 @@ msgEl.innerHTML = 'JS execute finish.';
 
 2. 在Memory页中，单击Load profile，上传内存快照文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/47v8SA0QTFWjP1fbzu0YWQ/zh-cn_image_0000002677818392.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/YAJEUaRvQI6Z_KzDqDo4Jw/zh-cn_image_0000002677818392.png)
 
 3. 打开后默认显示Summary视图（按对象构造函数分组），按Retained size从大到小排序，可见98%的内存分布在Array对象中，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/mI9Dnz9ZSD6VjJzflZAbxg/zh-cn_image_0000002707578253.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/o7lgQHlKQbKvEbH0Jj0UXg/zh-cn_image_0000002707578253.png)
 
 4. 切换至Containment视图（按引用关系追溯），按Retained size从大到小排序，大致估算每个节点的Retained size累计值，找到累计值最大的节点，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/0crjaiDRQyqveK1trwPXNQ/zh-cn_image_0000002677658544.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/S-2oxNw4QMmDtocEBxzzmg/zh-cn_image_0000002677658544.png)
 
 可见大量内存被Stack roots引用，表明当前内存分布主要集中在栈上局部变量。
 
@@ -116,15 +116,15 @@ msgEl.innerHTML = 'JS execute finish.';
 
 2. 在Memory页中，单击Load profile，上传内存快照文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/JZZzuZlbSCq_wCMJRWiUkA/zh-cn_image_0000002707458405.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/JCqxf6x-QLyafI3BxaG2aA/zh-cn_image_0000002707458405.png)
 
 3. 打开后，默认显示Summary视图（按对象构造函数分组），按Retained size从大到小排序，可见97%的内存被bigObject占用，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/5MIE3GSfTG6taYcAwYMvPQ/zh-cn_image_0000002677818394.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/fmOVSF6aQJarnL0mzucUrQ/zh-cn_image_0000002677818394.png)
 
 4. 切换至Containment视图（按引用关系追溯），按Retained size从大到小排序，依次展开Retained size最大的节点，直至无法进一步细分，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/eQTTS9EaQtKcE8PkMCP-Lw/zh-cn_image_0000002707578255.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/7YGLLT_pQwSL9wG0YeMF1Q/zh-cn_image_0000002707578255.png)
 
 可见大量内存被Micro tasks引用，表明当前内存分布集中于微任务所引用的变量。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-news_homep
 title: 首页信息流体验优化
 breadcrumb: 最佳实践 > 行业场景解决方案 > 新闻阅读 > 首页信息流体验优化
 category: best-practices
-scraped_at: 2026-11-04T08:37:55+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:8aa2c1d5790a97f9d1c853a71e1a7cfb99d2bb9b1faa57cc23244502bba250af
+scraped_at: 2026-11-10T10:42:05+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:ea6e0921956d7d48bdc6c50b5ebed9be45531b7277e0111ba6c0da244adadfc2
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ content_hash: sha256:8aa2c1d5790a97f9d1c853a71e1a7cfb99d2bb9b1faa57cc23244502bba
 
 * 应用的运行效果图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/ba9vZIKIQ-mCTwSATVwdfA/zh-cn_image_0000002193851428.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/3AhpABrZRo6dQlFDlEq0zw/zh-cn_image_0000002193851428.gif "点击放大")
 
 * 操作流程如下：
 
@@ -72,11 +72,11 @@ content_hash: sha256:8aa2c1d5790a97f9d1c853a71e1a7cfb99d2bb9b1faa57cc23244502bba
 
 通过添加Tab组件的动效触发事件，实现页面内容切换与页签样式切换的同步效果。具体效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/M_Y15IKgTX6A1QSOOpw1jg/zh-cn_image_0000002229336809.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/xkcDtrClTGqxdiaS_VGymg/zh-cn_image_0000002229336809.gif "点击放大")
 
 * 动效触发事件节点
 
-  推荐使用onAnimationStart()事件设置切换标签动效。使用onChange()事件会导致页面切换后再触发动效，造成效果延迟。使用onClick事件会与页面切换冲突。
+  推荐使用onAnimationStart()事件设置切换标签动效。使用onChange()事件会导致页面切换后再触发动效，造成效果延迟。使用onClick()事件会与页面切换冲突。
 
   ```typescript
   // TabBar.ets
@@ -109,11 +109,11 @@ content_hash: sha256:8aa2c1d5790a97f9d1c853a71e1a7cfb99d2bb9b1faa57cc23244502bba
 
 底部页签样式添加lottie动画，使跳转更加精致流畅。效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/5_NRxRqhTTKgNqPQb5S_xw/zh-cn_image_0000002229451313.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/Pu2rBJIlRc2Ee9i8cTdvPA/zh-cn_image_0000002229451313.gif "点击放大")
 
 * 底部页签跳转功能时序图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/m207_wHtTJ2Adu3D5uXF-A/zh-cn_image_0000002194011036.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/f16s0Q8WRv2gFqTdmTu4vA/zh-cn_image_0000002194011036.png "点击放大")
 
 * TabBar集成lottie动画
 
@@ -223,11 +223,11 @@ content_hash: sha256:8aa2c1d5790a97f9d1c853a71e1a7cfb99d2bb9b1faa57cc23244502bba
 
 通过三方库组件PullToRefresh实现下拉刷新页面和上拉加载更多数据的效果。具体效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/MW71aOG4SPWMt2ED-7UzuA/zh-cn_image_0000002229451321.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/oUGvgZudRESwGhXj1yzYGA/zh-cn_image_0000002229451321.gif "点击放大")
 
 * 上拉加载和下拉刷新时序图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/x4_5myDrTM6kQPhZSC7Fcw/zh-cn_image_0000002229336825.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/E-SXFmC5QRy5ztxg-eZZng/zh-cn_image_0000002229336825.png "点击放大")
 
 * PullToRefresh组件
 
@@ -281,7 +281,7 @@ content_hash: sha256:8aa2c1d5790a97f9d1c853a71e1a7cfb99d2bb9b1faa57cc23244502bba
 
 使用懒加载实现首页 feed 流的快速渲染和流畅滑动。效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/nQGp9VCTQU2bNjksl5XiBg/zh-cn_image_0000002194011028.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/XpiqUxIoRx6H9gcG__Hj5w/zh-cn_image_0000002194011028.gif "点击放大")
 
 * 懒加载
 
@@ -322,11 +322,11 @@ content_hash: sha256:8aa2c1d5790a97f9d1c853a71e1a7cfb99d2bb9b1faa57cc23244502bba
 
 使用位置服务实现定位功能，AlphabetIndexer组件实现地址首字母定位导航条。效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/G3_vM02CR6qs7l9mw1oJPw/zh-cn_image_0000002229336813.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/7II82YZZQly0ixVVyDAJzw/zh-cn_image_0000002229336813.gif "点击放大")
 
 * 地址选择页效果功能时序图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/Bf4qQwmqTKSJ0x8oj0AuFA/zh-cn_image_0000002229336833.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/kKN5M5q8RFqUK5V6DncjEA/zh-cn_image_0000002229336833.png "点击放大")
 
 * 位置服务与索引条导航
 

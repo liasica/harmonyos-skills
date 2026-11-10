@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-carousel-g
 title: 使用Swiper组件实现轮播图
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 使用Swiper组件实现轮播图
 category: best-practices
-scraped_at: 2026-11-04T08:37:56+08:00
+scraped_at: 2026-11-10T10:42:06+08:00
 doc_updated_at: 2026-11-03
-content_hash: sha256:d36ed34439b8031fb7dc384143b7ed726c2c17bb8e995e67e68d0198346d6764
+content_hash: sha256:9396cd265ebeed7dd31c2a98a1aa0b56c4c0389e8aa809a78fa75424fa27469b
 ---
 
 ## 概述
@@ -29,7 +29,7 @@ content_hash: sha256:d36ed34439b8031fb7dc384143b7ed726c2c17bb8e995e67e68d0198346
 
 效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/KuCEGYMxRTuKGe34cvkqXA/zh-cn_image_0000002396390305.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/sx5AZix_RbmTMjK2u5tt2Q/zh-cn_image_0000002396390305.gif "点击放大")
 
 ### 实现原理
 
@@ -68,7 +68,7 @@ content_hash: sha256:d36ed34439b8031fb7dc384143b7ed726c2c17bb8e995e67e68d0198346
 
    示意效果如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/6hS37mr8TcuiB239QmeSnQ/zh-cn_image_0000002362872296.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/ymKvlI17SCOy3DQWqVcU1g/zh-cn_image_0000002362872296.gif)
 2. 创建进度条自定义组件progressComponent。代码中，this.progressData为图片集合的数组，this.currentIndex为当前播放的图片在图片集合数组中的索引，index为进度条对应的图片在图片集合数组中的索引。当this.currentIndex > index时，表示图片集合数组中索引0-index的进度条都是已完成状态。
 
    ```typescript
@@ -104,7 +104,7 @@ content_hash: sha256:d36ed34439b8031fb7dc384143b7ed726c2c17bb8e995e67e68d0198346
 
    示意效果如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/R4njyQ-zScGOAKYsAlN-_Q/zh-cn_image_0000002396272325.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/fNFaST3PRFyyhO35QIwApA/zh-cn_image_0000002396272325.gif)
 3. 设置autoPlay属性为.autoPlay(this.slide ? false : true)，滑动切换图片后，关闭自动轮播与循环轮播。此时，开发者需要给Swiper组件添加[onGestureSwipe](../harmonyos-references/ts-container-swiper.md#ongestureswipe10)事件，来判断页面是否跟手滑动。其中slide为布尔值，用来判断页面是否跟手滑动。默认值为false，当页面跟手滑动时，slide的值为true。当进行滑动切换时，autoPlay、loop属性的取值为false，即关闭自动轮播与循环播放功能。若想实现滑动图片后仍自动循环轮播，直接去掉slide相关代码片段即可。
 
    ```screen
@@ -121,7 +121,7 @@ content_hash: sha256:d36ed34439b8031fb7dc384143b7ed726c2c17bb8e995e67e68d0198346
 
    示意效果如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/2SW5LVSdRymFMGMI9SY7Iw/zh-cn_image_0000002362712392.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/yMLMq8jGRRm9xcAqh3BRnQ/zh-cn_image_0000002362712392.gif "点击放大")
 4. 适配折叠屏，在aboutToAppear生命周期函数中获取设备是否可折叠，并且同时获取折叠状态，通过设备类型以及折叠状态设置Swiper的宽高值。同时绑定change回调事件，当页面变化时，触发回调实时刷新折叠状态值。
 
    ```typescript
@@ -166,7 +166,7 @@ content_hash: sha256:d36ed34439b8031fb7dc384143b7ed726c2c17bb8e995e67e68d0198346
 
 效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/23vMlvLwSGiIfnksQFYBcA/zh-cn_image_0000002362716188.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/nmId_OS9Q3eg8b6Ox2cMNA/zh-cn_image_0000002362716188.gif "点击放大")
 
 ### 实现原理
 

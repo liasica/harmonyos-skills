@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-handling-d
 title: 运维态高效处理DMA资源泄漏
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 运维态稳定性分析 > 资源泄漏类问题分析 > 运维态高效处理DMA资源泄漏
 category: best-practices
-scraped_at: 2026-11-04T08:38:06+08:00
+scraped_at: 2026-11-10T10:42:13+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:f16e83dfc16c40fc68fd57a3d59bf562a42c1f96605d4e2c0415a900d1f1fa18
+content_hash: sha256:79f201b27a6b00950655362d2c70d2d546e47b53e569dad7797cf6f10809e47e
 ---
 
 ## 概述
@@ -18,7 +18,7 @@ DMA内存泄漏是指应用或驱动程序通过ION接口申请DMA Buffer后，�
 
 运维态处理流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/o_VDORpJRTGhqBxnc2m8vQ/zh-cn_image_0000002729540769.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/kZr6SY3sSGKHcxyAtH1axg/zh-cn_image_0000002729540769.png "点击放大")
 
 ### 排查步骤
 
@@ -38,7 +38,7 @@ DMA内存泄漏是指应用或驱动程序通过ION接口申请DMA Buffer后，�
 
 资源泄漏信息详情页面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/Ds6kCrSOS96ysgqi6-CRzA/zh-cn_image_0000002699661544.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/vDRj-AegTl-sFrGdCUP7-A/zh-cn_image_0000002699661544.png "点击放大")
 
 **关键指标说明**
 
@@ -55,7 +55,7 @@ DMA内存泄漏是指应用或驱动程序通过ION接口申请DMA Buffer后，�
 
 故障详情页面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/ff3Ssz8oSIO1UvrxUo4WPQ/zh-cn_image_0000002729420817.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/77GQlFTXTXKw-OxvcT19hA/zh-cn_image_0000002729420817.png "点击放大")
 
 ## APMS平台DMA泄漏分析案例
 
@@ -65,13 +65,13 @@ DMA内存泄漏是指应用或驱动程序通过ION接口申请DMA Buffer后，�
 
 故障预警配置界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/QRH5ncMjRVGORvHgS31YBQ/zh-cn_image_0000002699821452.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/2vozvls4TJOT3DgZ_DpU7w/zh-cn_image_0000002699821452.png "点击放大")
 
 创建告警之后，后台会开始收集数据。当泄漏达到告警阈值后，会触发故障预警。
 
 故障预警通知如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/vKcIwLvGThGRX_KNQfdh6A/zh-cn_image_0000002729540771.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/TGkHX6LmT0SWq-R4Wh1Hvw/zh-cn_image_0000002729540771.png "点击放大")
 
 ### 问题查看与聚类
 
@@ -85,7 +85,7 @@ DMA资源泄漏聚类规则请参考[DMA泄漏聚类规则](../harmonyos-guides/
 
 故障告警页界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/n4WTgwOwR9KmYyYGwzHAjQ/zh-cn_image_0000002699661546.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/IH01btsFQHOg4oruYjcHHw/zh-cn_image_0000002699661546.png "点击放大")
 
 **资源泄漏信息详情Top问题**
 
@@ -93,13 +93,13 @@ DMA资源泄漏聚类规则请参考[DMA泄漏聚类规则](../harmonyos-guides/
 
 DMA资源泄漏查询界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/75CCL7vDTGCPL2ejiNUs5w/zh-cn_image_0000002729420819.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/IzMwpLdkT8We6QSSrOVbNA/zh-cn_image_0000002729420819.png "点击放大")
 
 在资源泄漏信息详情中，可查看当前应用的DMA资源泄漏情况。
 
 DMA资源泄漏信息详情如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/oDxeBTkDR1a-hp6DvtwkYw/zh-cn_image_0000002699821454.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/SCW6tF53SWWXwXae6dSIsg/zh-cn_image_0000002699821454.png "点击放大")
 
 ### 根因定位与分析
 
@@ -109,7 +109,7 @@ DMA资源泄漏信息详情如下所示：
 
 证据链详情如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/iD3fdCEnQM-a8j8h2e9GyA/zh-cn_image_0000002729540773.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/7qb5ZF9uS9-neI-SDgQZyg/zh-cn_image_0000002729540773.png "点击放大")
 
 **现场数据分析**
 
@@ -117,7 +117,7 @@ DMA资源泄漏信息详情如下所示：
 
 现场数据详情如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/OVE3y7CzR5qvd71yye2bxg/zh-cn_image_0000002699661548.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/OH2Bj6KeSjq7ZGKYNtXvqQ/zh-cn_image_0000002699661548.png "点击放大")
 
 **线程调用栈信息**
 
@@ -127,15 +127,15 @@ DMA资源泄漏信息详情如下所示：
 
 堆栈信息分析界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/K3ZZgef-SRKIM40hLW6VjA/zh-cn_image_0000002729420821.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/hoNFw2DkRZSZdXx3Fliqaw/zh-cn_image_0000002729420821.png "点击放大")
 
 堆栈树分配界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/n-Voz1xTRNq0-3gqd4n3-g/zh-cn_image_0000002699821456.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/hycgg6qTQPK3zuv7dKyObg/zh-cn_image_0000002699821456.png "点击放大")
 
 火焰树界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/KJk8Hp6gQ2urPPZM4IpKtA/zh-cn_image_0000002729540775.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/wczq4kLyQoexhkXKFxl4mw/zh-cn_image_0000002729540775.png "点击放大")
 
 **下钻分析**
 
@@ -143,7 +143,7 @@ DMA资源泄漏信息详情如下所示：
 
 下钻分析界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/MiW0HAxEQh6kTqkBQc549g/zh-cn_image_0000002699661550.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/HniLEvb0T8GClxL3FVwX_g/zh-cn_image_0000002699661550.png "点击放大")
 
 ### 修复建议验证与闭环
 
@@ -155,7 +155,7 @@ DMA资源泄漏信息详情如下所示：
 
 修复建议界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/t18w8ZzeQZWXZ2FsFflwiA/zh-cn_image_0000002729420823.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/6bL8EM6RTQuSGYYl0v_zbw/zh-cn_image_0000002729420823.png "点击放大")
 
 **验证与闭环**
 
@@ -171,7 +171,7 @@ Operation Analyzer平台是指DevEco Studio的Operation Analyzer插件。在DevE
 
 Operation Analyzer平台界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/WNDymDHfRgmP7bajcyx7ng/zh-cn_image_0000002699821458.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/VPm9-T_rROCT8r2rTNSi3Q/zh-cn_image_0000002699821458.png "点击放大")
 
 ### 问题分析
 
@@ -181,17 +181,17 @@ Operation Analyzer平台界面如下所示：
 
 问题详情页如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/ka_J8IrlS02L8NjO2O_ZKg/zh-cn_image_0000002729540777.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/Ymfv0n1oQDa2sGfzf-M9qg/zh-cn_image_0000002729540777.png "点击放大")
 
 Operation Analyzer平台的问题详情页同APMS平台功能相同，开发者可查看证据链与修复建议排查问题。如果修复建议不能支撑解决问题，可进一步查看现场数据、线程调用栈profiler进行具体分析。
 
 现场数据界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/kyMIWsPTRHKXkoaiLnfJzA/zh-cn_image_0000002699661552.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/uTjr4gA1Sp2Yu9tvApoOYA/zh-cn_image_0000002699661552.png "点击放大")
 
 线程调用栈profiler界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/rwx8LV0vRq2QKgOmO1Zbvg/zh-cn_image_0000002729420825.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/g9XVSB3JTcWFhe8jF84tOw/zh-cn_image_0000002729420825.png "点击放大")
 
 **Operation Analyzer关联离线符号表**
 
@@ -199,11 +199,11 @@ Operation Analyzer平台提供了堆栈还原的能力，可以通过上传符�
 
 关联离线符号表界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/lUZBW70TTYGo-aJYA6QU5g/zh-cn_image_0000002699821460.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/Or--LboRQM6ZHJC1EJU83A/zh-cn_image_0000002699821460.png "点击放大")
 
 上传符号表界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/SUwXKpXyS3284nJyTEQFIg/zh-cn_image_0000002729540779.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/LKfn3QpLR7ycgSPlqGYNjg/zh-cn_image_0000002729540779.png "点击放大")
 
 **Operation Analyzer关联代码**
 
@@ -211,11 +211,11 @@ Operation Analyzer平台提供了堆栈还原的能力，可以通过上传符�
 
 关联代码界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/eSDkxpOkTruK7x-m-tBYBA/zh-cn_image_0000002699661554.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/KUiszBs-SA6_MIiQGKX8LQ/zh-cn_image_0000002699661554.png "点击放大")
 
 查看故障处源码步骤如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/cJFeHACXT7ODN-vG1zADMw/zh-cn_image_0000002729420827.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/ZO1oY8gGTASKq-hu19A6DA/zh-cn_image_0000002729420827.png "点击放大")
 
 ### 问题修复
 
@@ -223,4 +223,4 @@ Operation Analyzer平台会给出故障分析与修复建议，开发者可根�
 
 问题修复界面如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/17MORTn7QfGL1i-gYSDW0g/zh-cn_image_0000002699821462.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/kKbNx48mRia4GjxoE12znQ/zh-cn_image_0000002699821462.png "点击放大")

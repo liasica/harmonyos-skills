@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-handling-g
 title: 运维态高效处理GPU内核泄漏
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 运维态稳定性分析 > 资源泄漏类问题分析 > 运维态高效处理GPU内核泄漏
 category: best-practices
-scraped_at: 2026-11-04T08:38:07+08:00
+scraped_at: 2026-11-10T10:42:13+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:d2314a04f4e147220383ab31b1adf58752d7b32bf6fa35166e623d172ddd6f09
+content_hash: sha256:4549d2f3fa0c32afd707a976d501a95fa5ad994d10d871ac2567af9916c57ab8
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ GPU内核泄漏是常见的泄漏类型，也是应用稳定性优化的重点�
 
 整体排查流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/cTcjqxWwQ42_wqgvw2oOOg/zh-cn_image_0000002671626374.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/YpsMcdMKRPOzYaul8KLcgQ/zh-cn_image_0000002671626374.png "点击放大")
 
 **排查步骤**
 
@@ -45,7 +45,7 @@ GPU内核泄漏是常见的泄漏类型，也是应用稳定性优化的重点�
 
 如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/IDONwTPQRlCasj8aGzTkuA/zh-cn_image_0000002701226099.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/HvO553WDRjO4nqkcBw7AGw/zh-cn_image_0000002701226099.png "点击放大")
 
 TOP问题列表根据最大泄漏数进行排序，开发者可单击查看按钮进入故障详情页查看问题的详细信息，进一步分析问题。
 
@@ -57,27 +57,27 @@ TOP问题列表根据最大泄漏数进行排序，开发者可单击查看按�
 
   进入问题详情页后，单击下钻分析可设置筛选条件查看当前根因的GPU内核泄漏在不同时间、不同版本、不同设备维度的发生频率。例如，某次版本更新后该类泄漏量激增，可以提示新引入的问题。如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/oPiEufB2Qr-kXj50F-JFcQ/zh-cn_image_0000002701346199.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/w4v9fysiTK6ZSWja49Cgjw/zh-cn_image_0000002701346199.png "点击放大")
 * 分析报告
 
   分析报告包括设备信息、系统版本、应用版本、ROM版本、前后台状态等，帮助开发者判断GPU内核泄漏发生的具体环境。如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/qiCPwgRIQDyJGiV6WfAH4g/zh-cn_image_0000002671466522.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/Wb9oE1jGRFqWgPVckRKgXg/zh-cn_image_0000002671466522.png "点击放大")
 * 证据链
 
   开发者可以通过单击证据链查看主泄漏堆块、主泄漏方法以及分配栈信息，其中疑似泄漏点会高亮标注，帮助快速定位泄漏信息。如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/u4NzLpuBTUOPolUTO5FhLQ/zh-cn_image_0000002671626376.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/-Jt071Y4RrOtz8pBG_NFcA/zh-cn_image_0000002671626376.png "点击放大")
 * 现场数据
 
   单击现场数据可查看GPU内核泄漏的具体泄漏类型、图片大小、图片数据量以及总泄漏大小。开发者可结合证据链中的堆栈信息，对比图片数据分析泄漏原因，从而定位具体泄漏位置。如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/PSLsg00XR-2ppSwW914Fug/zh-cn_image_0000002701226101.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/gTmPkwDaQmCIWg0idqvMUQ/zh-cn_image_0000002701226101.png "点击放大")
 * 采样栈还原堆栈
 
   通过上传.map或.so符号表文件，可将混淆后的堆栈地址还原为可读的代码行号与函数名。如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/dKVbswtkRr6OeZKzlET2Qg/zh-cn_image_0000002701346201.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/tisJwo7ESwi8yr4t737R2A/zh-cn_image_0000002701346201.png "点击放大")
 
 ## APMS平台GPU内核泄漏问题分析案例
 
@@ -91,13 +91,13 @@ TOP问题列表根据最大泄漏数进行排序，开发者可单击查看按�
 
 在故障预警平台的告警规则页面创建告警。根据实际业务情况，选择合适的监控时段、监控频率、告警触发条件等。平台将GPU\_LEAK归属到MEMORY\_LEAK，因此开发者在配置告警规则时指标类型需要选择MEMORY\_LEAK。配置完告警规则后，平台才会触发告警。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/ct6RYb8rT0avHOGJ_x01jg/zh-cn_image_0000002671466524.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/5ySfto_MQ_O7DCwe1skZMw/zh-cn_image_0000002671466524.png "点击放大")
 
 2. **查看告警**
 
 配置告警规则后，当应用触发MEMORY\_LEAK事件后设备会进行上报故障信息。APMS平台会开始收集后台数据，当满足告警触发条件后，会触发预警。收到预警后，单击查看可进入故障指标页面。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/QeNtBWk7S-yI8r6i_2HzFA/zh-cn_image_0000002671626378.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/QdtovUPeStuEdFvMfWOkUA/zh-cn_image_0000002671626378.png "点击放大")
 
 3. **查看故障数据**
 
@@ -107,12 +107,12 @@ TOP问题列表根据最大泄漏数进行排序，开发者可单击查看按�
 
   故障指标页面包含了趋势分析、维度分布和TOP问题列表。开发者可以在界面选择GPU\_LEAK泄漏类型并设置筛选条件，以过滤出GPU内核泄漏数据，从而进行个性化分析。TOP问题列表根据最大泄漏数进行排序，开发者可结合问题状态筛选需要优先处理的问题。如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/MFNQ8mQeSJ-TfHnJzkeNDA/zh-cn_image_0000002701226103.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/HN4TZ5OdSHqQ7K1szbdOXA/zh-cn_image_0000002701226103.png "点击放大")
 * 通过故障分析页查看故障数据
 
   开发者也可以直接单击故障分析页面，经过条件筛选后可查看具体的TOP问题列表。如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/Lwnl32o5Tam6MNOEDcmMgg/zh-cn_image_0000002701346203.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/nV_4bRKLTxm23Ss7qEW_sA/zh-cn_image_0000002701346203.png "点击放大")
 
 ### 问题查看与聚类
 
@@ -124,13 +124,13 @@ TOP问题列表根据最大泄漏数进行排序，开发者可单击查看按�
 
 筛选GPU内核泄漏问题范围：在界面可以设置不同的筛选条件对GPU内核泄漏问题进行个性化分析。筛选条件设置完成后单击“查询”，即可查看指定时间范围和条件下的三类指标数据的变化趋势，包括泄漏率、泄漏次数、泄漏设备数。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/DHBGzd7xSK6WRhdUJN_05w/zh-cn_image_0000002671466528.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/5R6b3nq2TvenRC9PorITOA/zh-cn_image_0000002671466528.png "点击放大")
 
 **TOP根因聚类**
 
 完成筛选后，开发者可进一步查看TOP问题列表，在问题列表中，每个问题都是同一类问题的汇总。APMS平台会将具有相同特征ID的问题聚合成一个，并按照发生次数进行排序，开发者可高优先级处理TOP问题。单击“查看”进入问题详情页，进一步查看问题详情。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/LG2wu3wtQ4Or6gJ4zF9NTQ/zh-cn_image_0000002671626380.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/4I0wPmTaQlKZuIseJ-Sgmw/zh-cn_image_0000002671626380.png "点击放大")
 
 ### 根因定位与分析
 
@@ -140,33 +140,33 @@ TOP问题列表根据最大泄漏数进行排序，开发者可单击查看按�
 
 1. 查看问题概要：问题概要会展示问题的核心身份信息，包括问题特征ID、故障原因、故障模块，帮助开发者快速判断GPU内核泄漏的基本属性。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/3Jzb49CVQmyV6mDjLHJZHQ/zh-cn_image_0000002701226107.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/1gFhzflJQBmZoByAFLmCLQ/zh-cn_image_0000002701226107.png "点击放大")
 
 2. 查看分析报告：分析报告会提供问题发生时的完整上下文，包括环境信息（设备型号、系统版本、ROM版本、前后台状态等）、堆栈信息、日志文件，并基于分析结果给出修复建议，辅助开发者高效完成问题排查与闭环。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/IbtYLmq6RFCFFYGST6tU_Q/zh-cn_image_0000002701346205.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/q5ALc0i3RNyfeVqn5yEijA/zh-cn_image_0000002701346205.png "点击放大")
 
 3. 查看故障详情：开发者可根据平台给出的修复建议定位代码问题，完成问题修复。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/tv5it_QDRJ6fSOUrRNAxAA/zh-cn_image_0000002671466530.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/9Mo1ioJRQwO9w2pbllcu_A/zh-cn_image_0000002671466530.png "点击放大")
 
 4. 查看证据链：开发者可以通过证据链查看主泄漏堆块、主泄漏方法以及分配栈信息，其中疑似泄漏点会高亮标注。开发者可结合分配栈中的方法信息定位到业务代码中的泄漏处。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/UTKYPmBtTvuwvsJdOomkqA/zh-cn_image_0000002671626382.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/BcWC_CrVTFyaUPi2CRAiqQ/zh-cn_image_0000002671626382.png "点击放大")
 
 5. 查看现场数据：现场数据展示了GPU内核泄漏的具体泄漏类型、图片大小、图片数据量以及总泄漏大小。开发者可结合证据链中的堆栈信息，对比图片数据分析泄漏原因，从而定位具体泄漏位置。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/6jNXi-nsS1i3UUxwJyg48Q/zh-cn_image_0000002701226109.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/VFHmz8owSgWxpfYYW_9M8g/zh-cn_image_0000002701226109.png "点击放大")
 
 6. 查看采样栈信息：通过上传SourceMap或.so符号表文件，可将混淆后的堆栈地址还原为可读的代码行号与函数名。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/JHzaXU6zTq60NVdaf6POTA/zh-cn_image_0000002701346207.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/Za5FeUS1Q1OcfUjOdZ864w/zh-cn_image_0000002701346207.png "点击放大")
 
 **下钻分析**
 
 下钻分析的核心逻辑是从一个汇总的指标或表象问题出发，将其拆分成多个组成部分。然后筛选出最关键的线索继续向下拆分，不断重复这个过程，直到定位到具体的根因。平台会根据故障特征ID进行聚类并筛选TOP应用版本、系统版本以及设备型号。开发者可根据此重点关注问题高发的版本及设备，更精确地定位问题。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/TEQCBvfYQSyNj-z7y3d9lQ/zh-cn_image_0000002671466532.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/-YCsvW7XTcipZ1zRaeArxA/zh-cn_image_0000002671466532.png "点击放大")
 
 ### 修复建议验证与闭环
 
@@ -174,14 +174,14 @@ TOP问题列表根据最大泄漏数进行排序，开发者可单击查看按�
 
 故障详情页面会给到修复建议，开发者可以通过给出的建议优化代码。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/FKJMwSegRve4NqVNa-Wn4A/zh-cn_image_0000002671626384.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/EKpzyriFQRCbBHNjFyFMnQ/zh-cn_image_0000002671626384.png "点击放大")
 
 **修复建议与闭环**
 
 1. 修改问题之后，可以在分析页面的问题列表中，将对应的问题处标记已修改，并关注新版本的GPU内核泄漏数据。
 2. 应用发布后，可在故障分析页面筛选新版本数据和旧版本数据，对比修复前后的泄漏率，确认修复是否有效。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/aQ0EszwjQVS23s58biUcnA/zh-cn_image_0000002701226111.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/U0IevHXAR8-YTy7a2tfrYw/zh-cn_image_0000002701226111.png "点击放大")
 
 ## 基于Operation Analyzer平台分析
 
@@ -191,11 +191,11 @@ Operation Analyzer平台是指DevEco Studio的Operation Analyzer插件。在DevE
 
 打开DevEco Studio后，在左侧可看到Operation Analyzer图标，单击后选择应用，再单击资源泄漏，查看GPU\_LEAK类型的数据。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/QxPoqXTGTuOzBTLHScVHqw/zh-cn_image_0000002701346209.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/4ScST0YbTOGE-fDSz8-57A/zh-cn_image_0000002701346209.png "点击放大")
 
 如果左侧没有出现Operation Analyzer平台图标，也可通过上方导航栏的视图窗口进入。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/2HnUhmywT2-Udi5zfCuGtw/zh-cn_image_0000002671466534.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/D_MEkU3ZSh6QJqG_IzPuCA/zh-cn_image_0000002671466534.png "点击放大")
 
 **问题分析**
 
@@ -203,15 +203,15 @@ Operation Analyzer平台是指DevEco Studio的Operation Analyzer插件。在DevE
 
 开发者可自定义筛选条件，筛选需要查看的问题，单击TOP Issues，选择下方类型为GPU\_LEAK的数据，单击即可查看当前GPU内核泄漏问题的详细信息。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/JdFV3rr7SL-Oa-XWhF5JFg/zh-cn_image_0000002671626386.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/OvxwAT2_TiSQXknvanJnkA/zh-cn_image_0000002671626386.png "点击放大")
 
 平台的问题详情页同APMS平台功能相同，开发者可参考修复建议进行修复。如果修复建议不能支撑解决，可进一步查看证据链、现场数据进行具体分析。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/KkxIFq5tRDy_SOq1DxqL3A/zh-cn_image_0000002701226115.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/KKfFjLzzTgGtDRiFx5s1ig/zh-cn_image_0000002701226115.png "点击放大")
 
 开发者也可以查看问题分布图表，定位问题高发的应用版本、设备型号与系统版本，辅助进一步分析。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/LqCQQGKkS5eNvbX-ozR6Lg/zh-cn_image_0000002701346211.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/_98-uL1QRFaWgifqIASuNg/zh-cn_image_0000002701346211.png "点击放大")
 
 * Operation Analyzer关联离线符号表
 
@@ -219,11 +219,11 @@ Operation Analyzer平台提供了堆栈还原的能力，可以通过上传符�
 
 选择本地符号表，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/fcytLEEhRoiNX5k6yjjvrA/zh-cn_image_0000002671466538.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/J4crsAlkT6eD318XXYisgw/zh-cn_image_0000002671466538.png "点击放大")
 
 完成堆栈还原，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/XTKSjfzXRJ2FBu0HcAYxpw/zh-cn_image_0000002671626390.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/MdIyM8luRoee_rE0ughq_Q/zh-cn_image_0000002671626390.png "点击放大")
 
 * Operation Analyzer关联代码
 
@@ -231,14 +231,14 @@ Operation Analyzer平台提供了堆栈还原的能力，可以通过上传符�
 
 关联项目代码，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/-Trw8H-gSBCrkYlmcKaGlg/zh-cn_image_0000002701226117.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/RbyN_aeoTwGhbBCgXLY28A/zh-cn_image_0000002701226117.png "点击放大")
 
 关联效果确认，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/WIuOo3thRZ2zT5IIQZ7MbA/zh-cn_image_0000002701346213.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/Uua8RY-KREy1hBppRODYsg/zh-cn_image_0000002701346213.png "点击放大")
 
 **问题修复**
 
 Operation Analyzer平台会给出故障分析与修复建议，开发者可根据修复建议修复问题代码。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/TWKNP3DyRRagah-xmrcl3A/zh-cn_image_0000002671466544.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/yANYZX0RS32XVYPAuRoJiw/zh-cn_image_0000002671466544.png "点击放大")

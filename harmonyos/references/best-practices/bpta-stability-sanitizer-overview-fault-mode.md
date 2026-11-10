@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 地址越界故障模式概述
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 地址越界故障模式说明 > 地址越界故障模式概述
 category: best-practices
-scraped_at: 2026-09-04T06:33:23+08:00
-doc_updated_at: 2026-09-03
-content_hash: sha256:5536b9d35d99b1043afdf854f874baa6f9ecc5670f5b72c765153985b6b379ae
+scraped_at: 2026-11-10T10:42:11+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:ddd26820c9a74701c3d240ab9c29ef20cfdfc826c4fff7ae5a5dc5304f40591c
 ---
 
 ## 概述
@@ -50,7 +50,7 @@ HarmonyOS提供多条路径获取故障日志，包括开发态和运维态，�
 
 ## 地址越界事件
 
-HarmonyOS通过HiAppEvent提供地址越界事件订阅能力。应用调用HiAppEvent的[addWatcher()](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md#hiappeventaddwatcher)接口订阅地址越界事件。当系统检测到相关异常时，会生成对应的事件信息和故障日志，并通过HiAppEvent将事件回调给应用。开发者可根据事件中的故障类型、日志路径等信息获取故障日志并分析问题。
+HarmonyOS通过HiAppEvent提供地址越界事件订阅能力。应用调用[hiAppEvent.addWatcher()](../doccenter-references/api/js-apis-hiviewdfx-hiappevent.md#hiappeventaddwatcher)接口订阅地址越界事件。当系统检测到相关异常时，会生成对应的事件信息和故障日志，并通过HiAppEvent将事件回调给应用。开发者可根据事件中的故障类型、日志路径等信息获取故障日志并分析问题。
 
 地址越界事件字段详情请参考：[事件字段说明](../harmonyos-guides/hiappevent-watcher-address-sanitizer-events.md#事件字段说明)。
 

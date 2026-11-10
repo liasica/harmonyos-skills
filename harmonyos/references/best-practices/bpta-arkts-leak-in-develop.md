@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-arkts-leak
 title: 开发态快速定位ArkTS泄漏
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 开发态稳定性分析 > 资源泄漏类问题分析 > 开发态快速定位ArkTS泄漏
 category: best-practices
-scraped_at: 2026-11-04T08:38:06+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:83ec11d9bca4e054b892fd21d4994b2a4a17df8f38519111be0c169f5ec6739f
+scraped_at: 2026-11-10T10:42:13+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:f412b81b9f371c3eb4ec59ce3863f754dba32e94c728dac968dcd2ac5efb6a47
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ content_hash: sha256:83ec11d9bca4e054b892fd21d4994b2a4a17df8f38519111be0c169f5ec
 
 ArkTS运行时采用[HPP GC](../harmonyos-guides/gc-introduction.md#hpp-gc)（即高性能部分垃圾回收），将对象按生命周期划分为新生代和老年代。使用标记-清除（mark-and-sweep）算法回收内存，可达对象被标记为存活，其余对象将被回收。GC从根节点开始遍历，根节点因此被称为[GC Root](bpta-arkts-leak-in-develop.md#table17319174010236)。该树的快照如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/eV4taikiR4CFPowCGvAs1w/zh-cn_image_0000002675100549.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/jVxcVeb6TZaji07opbEeZQ/zh-cn_image_0000002675100549.png "点击放大")
 
 理解垃圾回收（GC）机制的核心，在于把握一个根本原则：GC仅回收那些从GC Root不可达的对象。换言之，只要一个对象仍处于引用树的路径之上，即便它已被程序逻辑遗忘、不再被实际需要，GC也无力将其回收。内存泄漏的本质不是GC失效，而是开发者留下了不该留的引用链。因此排查内存泄漏的关键，就是找到那条从GC Root出发、让无用对象“存活”的引用路径，并在适当位置将其切断。
 
@@ -67,7 +67,7 @@ ArkTS运行时采用[HPP GC](../harmonyos-guides/gc-introduction.md#hpp-gc)（�
 
 标准化排查流程整体流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/mAuN0BiFT9atIAieUYB_Ig/zh-cn_image_0000002675020693.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/iEXIrGy8Q6WqWZLSir7R_A/zh-cn_image_0000002675020693.jpg "点击放大")
 
 ## ArkTS内存泄漏分析案例
 
@@ -87,30 +87,30 @@ ArkTS运行时采用[HPP GC](../harmonyos-guides/gc-introduction.md#hpp-gc)（�
       * **正常预期**：每次退出后内存回落至基线附近，整体呈锯齿状。
       * **实际现象**：曲线呈阶梯状上升，多次操作后内存增长至314.1MB且无明显回落，存在内存泄漏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/Rt4qameQS-Gc-iLQbYD-bw/zh-cn_image_0000002645100746.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/5ahqLWOfSW6LLlOGJTsn-g/zh-cn_image_0000002645100746.png "点击放大")
 2. **堆快照对比定位异常对象**
 
    在 Profiler 中切换到Snapshot模板，请参考[Snapshot模板基本操作](../harmonyos-guides/ide-snapshot-basic-operations.md)：选择Profiler工具 → 选择设备与应用进程 → 选择Snapshot模板 → 创建Session → 启动录制。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/43TevWMTT9qIxx-IuVzb2Q/zh-cn_image_0000002644940842.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/OrddG6fkQ4C5rhbT3V2fNQ/zh-cn_image_0000002644940842.png "点击放大")
 
    抓取快照1：首次在进入消息页前，点击“Take Heap Snapshot”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/QRAgu5kMQ7GQ5TvKYr9cwA/zh-cn_image_0000002675100551.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/4AeuUUy8QduAZk38AgVXPw/zh-cn_image_0000002675100551.png "点击放大")
 
    抓取快照2：重复进出消息页面7次后，回到首页，点击“Take Heap Snapshot”，再抓取第二次快照，并停止录制。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/DGeVkIKfSHSo-QKWbdMHtA/zh-cn_image_0000002675020695.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/N68tqpxNTHyPelpQzaOXxQ/zh-cn_image_0000002675020695.png "点击放大")
 
    在快照对比视图Comparison中，选择CompareTo Snapshot1。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/K6B0Kth4QGqFsj3Gu1U_Fw/zh-cn_image_0000002645100748.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/SYJ0vqTbQkWKFDcVQwRtiw/zh-cn_image_0000002645100748.png "点击放大")
 
    查看对象新增销毁情况，优先关注：
 
    操作次数的整数倍或整数倍+1（因为export出的对象本身也有一条引用链），业务对象，即Constructor的结构为包名/模块名/文件路径#泄漏对象。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/TAduGN5uQeOIu-436jfsWw/zh-cn_image_0000002644940844.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/bQoF82vDSguwJ1jt0anOpQ/zh-cn_image_0000002644940844.png "点击放大")
 
    关键发现：
 
@@ -122,44 +122,44 @@ ArkTS运行时采用[HPP GC](../harmonyos-guides/gc-introduction.md#hpp-gc)（�
 
    注：选择Distance数量较多的对象实例，主要是因为这些实例频繁地被创建且未能得到及时释放。这表明存在潜在的内存泄漏问题，需要进一步调查以确定具体的泄漏源。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/3dW0wqCrSF2VfU_cQ5kJRQ/zh-cn_image_0000002675100553.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/yYrHdVgOTraGNKJ-7ypucg/zh-cn_image_0000002675100553.png "点击放大")
 
    点击“Shortest Paths”获得如下Test对象实例的最短引用链：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/Jv3wyFm8Q9W0zlOYA0hfmA/zh-cn_image_0000002675020697.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/7IAWfo0FRQyGMAe7e0AGrA/zh-cn_image_0000002675020697.png "点击放大")
 4. **分析****VMRoot类型持有导致泄漏问题**
 
    1. 根据步骤3得到的Test对象实例的最短引用链分析，该引用链的GC Root为SourceTextModule符合被export模块导出对象持有，[VMRoot](bpta-arkts-leak-in-develop.md#table17319174010236)泄漏场景。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/fFUDpHfQSLiyKEuqceTAYQ/zh-cn_image_0000002645100750.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/W91bLY-WSZOPINqY_rsz5Q/zh-cn_image_0000002645100750.png "点击放大")
 
    2. 从GC Root向上排查引用链，找到第一个业务对象，即CacheTest.ts文件中的CacheTest对象的cache属性持有了Test对象未释放。点击后面跳转图标，打开CacheTest对象实例详细面板。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/n7a8ocEuRPWHQSMlZo4JNw/zh-cn_image_0000002644940846.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/8m-ihYRvQPKEcqY6OgVGPA/zh-cn_image_0000002644940846.png "点击放大")
 
    3. CacheTest对象实例面板中，点击对象名后跳转按钮，跳转对应代码行。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/NFFxcB3gSw6SXTdAX0G9zw/zh-cn_image_0000002675100555.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/jFNr1qumQOiETSCVH0Oj6g/zh-cn_image_0000002675100555.png "点击放大")
 
    4. 跳转代码后分析，CacheTest对象存在静态属性cache，该静态属性中保存了Test对象。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/TPx8fryvRz-eJlFb7CtRqQ/zh-cn_image_0000002675020701.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/HwuhC3S6SeKPEAeURl0aQA/zh-cn_image_0000002675020701.png "点击放大")
 
    5. 结合业务代码分析，MessageCenterPage组件创建时会保存一个Test对象到CacheTest中，但组件销毁时未清理该缓存导致内存泄漏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/DcN_ib1QSzKpFDJ8hIUXJA/zh-cn_image_0000002645100752.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/M_bobceDQR-i4MHU0Fbi_g/zh-cn_image_0000002779846142.png "点击放大")
 
    6. 修改代码，在页面销毁时清除缓存。修改后重新复现操作7次，并抓快照验证，Test对象创建数量正常。但分析发现Proxy对象数量异常，创建70个未销毁。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/6iTXHmQRT7GF_pjS6iJh1g/zh-cn_image_0000002644940848.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/0nL2T9DmRSq1xtrX0LjZZQ/zh-cn_image_0000002644940848.png "点击放大")
 
    7. 参考“步骤3：追踪引用链”，找到最短引用链，发现该Proxy对象的Distance为1。说明其为GC Root直接持有的对象，被Native侧直接持有未释放，即JS对象被Local Handle/Global Handle引用导致内存泄漏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/C-BfCqF2T7yc7mELRboExQ/zh-cn_image_0000002675100557.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/HwA82o4OSHu8tZMbnaXhTw/zh-cn_image_0000002675100557.png "点击放大")
 
    8. 通过Proxy对象的Distance为1的References，确认内存泄漏是由JS对象被Global Handle引用导致的。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/dC8ivquKQaypx6omouEm6g/zh-cn_image_0000002675020703.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/gYWGS7p6RCWkDfjGSE-gEA/zh-cn_image_0000002675020703.png "点击放大")
 5. 分析Local Handle/Global Handle类型持有导致泄漏问题
 
    基于步骤4分析，Proxy对象实例可能被[Local Handle](bpta-arkts-leak-in-develop.md#table17319174010236)/[Global Handle](bpta-arkts-leak-in-develop.md#table17319174010236)引用导致内存泄漏，可通过以下步骤继续分析定位：
@@ -171,31 +171,31 @@ ArkTS运行时采用[HPP GC](../harmonyos-guides/gc-introduction.md#hpp-gc)（�
    * 选择应用进程：运行应用，并在“区域2”选择目标设备和应用进程。
    * 创建Allocation录制模板：选择“Allocation”并点击Create Session创建录制模板。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/SzEqFxblR7KKLw6HSFdpgA/zh-cn_image_0000002645100754.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/vagi-xNWRCmhz9hkNxsZEQ/zh-cn_image_0000002645100754.png)
    * 配置录制参数
      + 配置模式：选择详情模式（即关闭Statistics Mode）。当前仅详情模式支持进行ArkTS和Native的关联分析。
      + 配置开关：勾选“Local Handle”和“Global Handle”，这是关键配置。这将使Allocation专门捕获与JS-NAPI句柄相关的内存分配事件。如果底层镜像不支持该功能，则会提示“当前镜像版本不支持，请升级镜像”。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/-egjYZh7RuyBkFFv3xFxxw/zh-cn_image_0000002644940852.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/bStjhX3sRJqxf5YsbjczWg/zh-cn_image_0000002644940852.png "点击放大")
      + 配置泳道范围：勾选ArkTS Snapshot泳道。这将使Allocation在录制结尾时自动抓取一份Snapshot快照用于关联分析。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/Q41xXgugSKKW_HS4LjvpBw/zh-cn_image_0000002675100559.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/pgwj9RaRRs2gyoqDPxD42A/zh-cn_image_0000002675100559.png "点击放大")
    * 启动录制：勾选了[Local Handle](bpta-arkts-leak-in-develop.md#table17319174010236)开关后，如果是在应用本生命周期内首次录制local handle数据，会触发弹窗请求重启应用以便录制对应信息，此时点击OK允许重启即可。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/GXlbJ_P5QJidJKRss3dpcg/zh-cn_image_0000002675020705.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/RVliwJKAREmAsvVQvXb8ug/zh-cn_image_0000002675020705.png "点击放大")
    * 运行应用程序：运行目标应用，执行相关被怀疑引入内存泄漏的业务操作，持续一段时间以增加内存压力和捕获更多数据。
    * 停止录制：自动触发抓取一份Snapshot快照用于关联分析。点击快照，查找到疑似泄漏对象Proxy 。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/fEK9Z_wcQHuYcWUC-I7POQ/zh-cn_image_0000002645100756.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/RLuuP19bQ_K0rUwX9N6I2Q/zh-cn_image_0000002645100756.png "点击放大")
 
    2. 配置Allocation录制模板并捕获数据
 
    * 定位可疑ArkTS对象：选中一个怀疑被泄漏的ArkTS对象实例（或对象类型），查看扩展标签页。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/XvQZ8pmNR0mbAoZfAtGlAw/zh-cn_image_0000002644940854.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/2mFW7FpbQlq-6EZanbqB4Q/zh-cn_image_0000002644940854.png "点击放大")
    * 查看Native List：若某个ArkTS对象的distance值为1，则可以通过扩展标签页中的Native List标签页，查看所有当前与该JS对象关联的Native句柄引用，以确认该JS对象是被Local Handle或Global Handle引用的对象。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/v4KbHRLRSoilXGqHMh-jQw/zh-cn_image_0000002675100561.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/SetKF2a0QYKFiHDICB7-Ug/zh-cn_image_0000002675100561.png "点击放大")
    * 关键信息：
      1. 句柄类型：调用栈底层的符号ArkGlobalHandle或ArkLocalHandle判断泄漏类型。
      2. 调用栈：通过调用栈，可以定位到应用的Native代码（可能是ArkUI框架代码或你自己代码）中创建napi\_ref的地方。
@@ -212,7 +212,7 @@ ArkTS运行时采用[HPP GC](../harmonyos-guides/gc-introduction.md#hpp-gc)（�
      3. 对于napi\_ref，其引用计数是关键。确保在不再需要引用时正确调用了napi\_delete\_reference。注意，引用计数可能因其他代码路径的创建或删除操作而意外增减。
      4. 检查libuv异步调用等场景中，句柄作用域是否正确添加Handle Scope。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/y-zy5HySRuinCElWuQarSg/zh-cn_image_0000002675020709.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/YvaCisuqSsGCZztQJp31nw/zh-cn_image_0000002675020709.png "点击放大")
 
 ### 优化修复
 
@@ -222,9 +222,9 @@ ArkTS运行时采用[HPP GC](../harmonyos-guides/gc-introduction.md#hpp-gc)（�
    * 内存曲线恢复锯齿状，每次退出后回落至基线。
    * 再次抓取快照对比，多次操作后业务对象实例数量无明显增长。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/HdUjbZK4TI6irsIEmfyVzA/zh-cn_image_0000002645100758.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/TXqxzoB3TWKh33WbdcRWGA/zh-cn_image_0000002645100758.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/jJfFpFBXRHywVYH5RNpsXw/zh-cn_image_0000002644940856.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/_ew-CnlmQb2c5RoLGSbxrQ/zh-cn_image_0000002644940856.png "点击放大")
 
 ### 术语介绍
 

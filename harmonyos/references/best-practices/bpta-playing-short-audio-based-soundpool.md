@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-playing-sh
 title: 基于SoundPool播放短音频
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频播放系列开发实践 > 基于SoundPool播放短音频
 category: best-practices
-scraped_at: 2026-11-04T08:37:50+08:00
+scraped_at: 2026-11-10T10:42:02+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:76c7d6f4e49b96485c6491f883544cfb5c3f77cca7a4d4255ef9904b87b7ef2a
+content_hash: sha256:299ba2139d4290885ca414779ca48049ddb8870d94e35782a1eb13731b4cb024
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ SoundPool提供短音频的播放能力，当需要播放一些急促简短的�
 
 本文是音频播放系列文章的第5篇，实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/GnR4kI9VSk6u2fmh6trJqQ/zh-cn_image_0000002555337527.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/JKtmiC_-T1qWpqQ3XYydtw/zh-cn_image_0000002555337527.png "点击放大")
 
 ## 规格与限制
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-arkweb-com
 title: ArkWeb组件安全开发
 breadcrumb: 最佳实践 > 应用安全 > ArkWeb组件安全开发
 category: best-practices
-scraped_at: 2026-10-16T07:06:45+08:00
-doc_updated_at: 2026-10-15
-content_hash: sha256:b1f2b52bdab95533683289cb07ed84a8c71af784a696c59befad928b94e099b5
+scraped_at: 2026-11-10T10:42:07+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:879a97715702280a499ffb5755075f48a9cbe730794ae67a5d7352beb68546f3
 ---
 
 ## 概述
@@ -136,7 +136,7 @@ struct WebComponent {
 
 **【描述】**
 
-[WebviewController](../harmonyos-references/arkts-apis-webview-webviewcontroller.md)提供了[loadData()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#loaddata)方法用于加载资源，以及[runJavaScript()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#runjavascript)和[runJavaScriptExt()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#runjavascriptext10)方法用于执行脚本，并通过回调方式返回脚本执行结果。
+[Class (WebviewController)](../harmonyos-references/arkts-apis-webview-webviewcontroller.md)提供了[loadData()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#loaddata)方法用于加载资源，以及[runJavaScript()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#runjavascript)和[runJavaScriptExt()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#runjavascriptext10)方法用于执行脚本，并通过回调方式返回脚本执行结果。
 
 若待加载的JavaScript脚本或者资源来自外部可控的不可信来源（例如通过[Want](../harmonyos-references/js-apis-app-ability-want.md#want)传入），务必在加载前对资源内容进行检查和过滤。
 
@@ -219,7 +219,7 @@ Web({ src: $rawfile('index.html'), controller: this.controller })
 
 **【描述】**
 
-通过[onInterceptRequest()](../harmonyos-references/arkts-basic-components-web-i.md#oninterceptrequestevent12)拦截URL资源访问，可以定制返回状态、内容等Response报文。若应用需要通过[getRequestUrl()](../harmonyos-references/arkts-basic-components-web-webresourcerequest.md#getrequesturl)打开本地文件，务必对URL进行路径检查，并判断是否存在路径遍历符号“../”，防止目录穿越。
+通过[OnInterceptRequestEvent](../harmonyos-references/arkts-basic-components-web-i.md#oninterceptrequestevent12)拦截URL资源访问，可以定制返回状态、内容等Response报文。若应用需要通过[getRequestUrl()](../harmonyos-references/arkts-basic-components-web-webresourcerequest.md#getrequesturl)打开本地文件，务必对URL进行路径检查，并判断是否存在路径遍历符号“../”，防止目录穿越。
 
 **【风险说明】**
 
@@ -996,7 +996,7 @@ Hello world!
 
 **【描述】**
 
-出于业务需要进行用户状态同步时，其中一种方式是使用[WebCookieManager](../harmonyos-references/arkts-apis-webview-webcookiemanager.md)为指定URL的页面传递Cookie。
+出于业务需要进行用户状态同步时，其中一种方式是使用[Class (WebCookieManager)](../harmonyos-references/arkts-apis-webview-webcookiemanager.md)为指定URL的页面传递Cookie。
 
 务必在校验待追加Cookie的URL符合业务预期后，再使用[configCookieSync()](../harmonyos-references/arkts-apis-webview-webcookiemanager.md#configcookiesync11)向其追加认证Cookie。建议使用[setUrlTrustList()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#seturltrustlist12)配置加载白名单后，再对待追加Cookie的URL进行一次合法性判断。
 

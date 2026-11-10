@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/changelog
 title: 最佳实践文档变更说明
 breadcrumb: 最佳实践 > 文档变更说明 > 最佳实践文档变更说明
 category: best-practices
-scraped_at: 2026-11-04T08:38:10+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:db3dde33f8419d1157f98397207d9137d341730aa79893ae1ccbd5043824d029
+scraped_at: 2026-11-10T10:42:15+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:cfcfbf65176b5af366e6ef9ea6c16c55b410e43caf776789ea7c13ac881e2019
 ---
 
 ## 2026年9月
@@ -454,7 +454,7 @@ content_hash: sha256:db3dde33f8419d1157f98397207d9137d341730aa79893ae1ccbd504382
 * [基于AudioRender播放PCM音频](bpta-playing-pcm-audio-based-audiorenderer.md)：介绍了如何指导开发者使用AudioRender接口实现播放PCM音频的功能。
 * [基于OHAudio播放PCM音频](bpta-playing-pcm-audio-based-ohaudio.md)：介绍了如何指导开发者使用OHAudio接口实现播放PCM音频的功能。
 * [基于AVPlayer播放格式化音频（ArkTS](bpta-playing-formatted-audio-based-avplayer-arkts.md)）：介绍了如何指导开发者使用AVPlayer的ArkTS API实现播放格式化音频的功能。
-* 基于AVPlayer播放格式化音频（C++）：介绍了如何指导开发者使用AVPlayer的Native API实现播放格式化音频的功能。
+* [基于AVPlayer播放格式化音频（C++）](../doccenter-feature-dev/bpta-playing-formatted-audio-based-avplayer-cpp.md)：介绍了如何指导开发者使用AVPlayer的Native API实现播放格式化音频的功能。
 * [基于SoundPool播放短音频](bpta-playing-short-audio-based-soundpool.md)：介绍了如何指导开发者使用SoundPool开发播放短音频功能。
 * [概述](bpta-audio-record-overview.md)：介绍了五个不同的音频格式和业务场景快速选型，并提供各个方案音频录制支持的能力对比。
 * [基于AudioCapturer录制PCM音频（ArkTS）](bpta-audio-record-base-on-audiocapturer.md)：介绍了基于AudioCapturer如何录制PCM音频，指导开发者基于不同的业务场景，使用AudioCapturer实现音频录制功能。
@@ -802,7 +802,7 @@ content_hash: sha256:db3dde33f8419d1157f98397207d9137d341730aa79893ae1ccbd504382
 **稳定性**
 
 * [地址越界检测能力概述](bpta-stability-address-sanitizer-overview.md)：介绍了各种地址越界检测的检测工具优劣势和使用场景。
-* 地址越界经典问题类型：介绍了地址越界典型问题类型，包括heap-use-after-free、stack-use-after-return和overflow。
+* [地址越界经典问题类型](../doccenter-app-quality/bpta-stability-address-sanitizer-category.md)：介绍了地址越界典型问题类型，包括heap-use-after-free、stack-use-after-return和overflow。
 * [地址越界检测工具原理](bpta-stability-address-sanitizer-principle.md)：介绍地址越界类问题检测的底层原理，包括Asan检测原理、HWAsan检测原理、MemDebug检测原理和GWP-Asan检测原理。
 * [适配常见问题](bpta-stability-address-sanitizer-faq.md)：介绍应用在适配地址越界检测的常见问题。
 * [地址越界类问题检测方法](bpta-stability-runtime-address-sanitizer-detection.md)：介绍了基于HiAppEvent订阅地址越界的系统事件。
@@ -910,7 +910,7 @@ content_hash: sha256:db3dde33f8419d1157f98397207d9137d341730aa79893ae1ccbd504382
 **变更效果**
 
 **图1** 最佳实践目录变更前后对比   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/vS9yB3ESSAivZkMKCv0arQ/zh-cn_image_0000002307192376.png "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/dRXSlz_gTIm4SuQEf_7IIQ/zh-cn_image_0000002307192376.png "点击放大")
 
 ### 新增文档
 
@@ -1107,7 +1107,7 @@ content_hash: sha256:db3dde33f8419d1157f98397207d9137d341730aa79893ae1ccbd504382
 
 **图2** 最佳实践目录变更
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/C1EBy2w1QdS-VrEMtMP9UQ/zh-cn_image_0000002318291885.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/-Xz8TKZNTxC9JOn8z4wQrQ/zh-cn_image_0000002318291885.png "点击放大")
 
 ### 新增文档
 
@@ -1259,7 +1259,7 @@ content_hash: sha256:db3dde33f8419d1157f98397207d9137d341730aa79893ae1ccbd504382
 * 原“常见性能优化场景”章节更名为“性能场景优化案例”，修改文档标题，提升查找的准确性和效率。
 
   **图3** 最佳实践性能目录变更对比   
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/TKjXLBWoQFGcvMbfrN1SRw/zh-cn_image_0000002283692304.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/-MjS5qtbR6e04WY5x0MgnA/zh-cn_image_0000002283692304.png "点击放大")
 
 ### 新增文档
 

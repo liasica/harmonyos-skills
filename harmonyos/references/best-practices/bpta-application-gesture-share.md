@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-applicatio
 title: 隔空传送快速分享
 breadcrumb: 最佳实践 > 技术创新 > 全场景 > 多端协同 > 隔空传送快速分享
 category: best-practices
-scraped_at: 2026-11-04T08:37:47+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:6c582e60a94ce6aa06310d70e6887c7ae3d9d855228ee52a3cb6d1a6942b77aa
+scraped_at: 2026-11-10T10:42:00+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:b5e22fed2a06b9dc8c6064b08874f1b8daaf84788b099414573d82a2bbf2504d
 ---
 
 ## 概述
@@ -21,7 +21,7 @@ content_hash: sha256:6c582e60a94ce6aa06310d70e6887c7ae3d9d855228ee52a3cb6d1a6942
 
 ### 关键技术
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/qlBDUrT6T_CKboN805kbmw/zh-cn_image_0000002464125198.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/SLtwMqNISxGlgVLVvZ-vzQ/zh-cn_image_0000002464125198.jpg "点击放大")
 
 隔空传送基于分享服务，允许用户通过简单的“一抓一放”手势实现跨设备分享，当前支持手机、平板、电脑，使用体验一致，应用接入只需监听harmonyShare.on('gesturesShare')方法。
 
@@ -35,7 +35,7 @@ content_hash: sha256:6c582e60a94ce6aa06310d70e6887c7ae3d9d855228ee52a3cb6d1a6942
 
 ### 开发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/byhLSgR9SVqOW1BFX7SywA/zh-cn_image_0000002497324205.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/RdKS5CSuQpiqanNpLagN3g/zh-cn_image_0000002497324205.jpg "点击放大")
 
 1. **分享注册监听与取消监听**：在分享页面的生命周期函数（如aboutToAppear或onPageShow）中，注册 harmonyShare.on('gesturesShare') 事件监听，以监听隔空传送事件。当页面即将隐藏或应用退至后台时，通过harmonyShare.off('gesturesShare')取消该监听。
 2. **构建分享数据**：定义需要分享的数据[SharedData](../harmonyos-references/share-system-share.md#shareddata)。
@@ -64,9 +64,9 @@ content_hash: sha256:6c582e60a94ce6aa06310d70e6887c7ae3d9d855228ee52a3cb6d1a6942
 on(event: 'gesturesShare', capability: SendCapabilityRegistry, callback: Callback<SharableTarget>): void
 ```
 
-该方法需传入capability参数，类型为[SendCapabilityRegistry](../harmonyos-references/share-harmony-share.md#sendcapabilityregistry)，继承自[BaseCapabilityRegistry](../harmonyos-references/share-harmony-share.md#basecapabilityregistry)。其包含windowId属性，需要传入当前应用的窗口ID。在PC/2in1或平板自由窗口模式中，系统会根据窗口ID判断当前应用是否获取了窗口焦点。只有在获取焦点后，当用户触发隔空传送事件时，才会触发应用注册的隔空传送方法。
+该方法需传入capability参数，类型为[SendCapabilityRegistry](../harmonyos-references/share-harmony-share.md#sendcapabilityregistry)，继承自[BaseCapabilityRegistry](../harmonyos-references/share-harmony-share.md#basecapabilityregistry)。其包含windowId属性，需要传入当前应用的窗口ID。在电脑或平板自由窗口模式中，系统会根据窗口ID判断当前应用是否获取了窗口焦点。只有在获取焦点后，当用户触发隔空传送事件时，才会触发应用注册的隔空传送方法。
 
-该方法支持phone、tablet和PC/2in1设备类型，在多设备开发时建议使用该接口。
+该方法支持phone、tablet和电脑设备类型，在多设备开发时建议使用该接口。
 
 定义ShareModel类，用于封装分享相关方法，也便于分享页面调用相关方法，首先需要导入相关模块，其中harmonyShare、systemShare为分享服务相关模块。
 

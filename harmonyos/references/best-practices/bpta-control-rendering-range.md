@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-control-re
 title: 渲染范围控制
 breadcrumb: 最佳实践 > 性能 > 性能优化 > 渲染范围控制
 category: best-practices
-scraped_at: 2026-10-29T08:03:21+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:0cca0e75c04dcd8fbe0b705f43de5bee9f5f010d47eb380b6a7ab6929ddb04aa
+scraped_at: 2026-11-10T10:42:07+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:c412ab10fd45e5ac38736c1e176323f2a81b436768286a3f4336c8c6d9b6a523
 ---
 
 在应用开发中，控制UI渲染范围，防止界面卡顿或掉帧。
@@ -22,7 +22,7 @@ content_hash: sha256:0cca0e75c04dcd8fbe0b705f43de5bee9f5f010d47eb380b6a7ab6929dd
 
 ## 组件复用
 
-组件复用通过重用已有组件节点减少创建开销，显著提升UI线程响应速度。组件复用针对的是自定义组件，只要发生了相同自定义组件销毁和再创建的场景，都可以使用组件复用，例如[长列表加载丢帧优化](../doccenter-app-quality/bpta-best-practices-long-list.md)、[瀑布流加载丢帧优化](../doccenter-app-quality/bpta-waterflow-performance-optimization.md)、[Swiper组件加载丢帧优化](../doccenter-app-quality/bpta-swiper_high_performance_development_guide.md)等场景，会出现大量重复布局的创建，使用组件复用可以大幅度降低因频繁创建与销毁组件带来的性能损耗。组件复用的基本原理请参阅[自定义组件复用开发实践](../doccenter-capabilities/arkts-component_reuse.md)。
+组件复用通过重用已有组件节点减少创建开销，显著提升UI线程响应速度。组件复用针对的是自定义组件，只要发生了相同自定义组件销毁和再创建的场景，都可以使用组件复用，例如[长列表加载丢帧优化](../doccenter-app-quality/bpta-best-practices-long-list.md)、[瀑布流加载丢帧优化](../doccenter-app-quality/bpta-waterflow-performance-optimization.md)、[Swiper组件加载丢帧优化](../doccenter-app-quality/bpta-swiper_high_performance_development_guide.md)等场景，会出现大量重复布局的创建，使用组件复用可以大幅降低因频繁创建与销毁组件带来的性能损耗。组件复用的基本原理请参阅[自定义组件复用开发实践](../doccenter-capabilities/arkts-component_reuse.md)。
 
 ## 分帧渲染
 

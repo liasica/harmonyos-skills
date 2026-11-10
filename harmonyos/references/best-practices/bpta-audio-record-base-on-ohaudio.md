@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 基于OHAudio录制PCM音频（C++）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 基于OHAudio录制PCM音频（C++）
 category: best-practices
-scraped_at: 2026-11-04T08:37:50+08:00
+scraped_at: 2026-11-10T10:42:02+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:8a2476866c92924074f1fc8ade58fe784a75a3a386d6bfe1b6a4405ea464f68e
+content_hash: sha256:5783de6792692ec0f4176ec9d14d7858c528526215d25160af05c9d27b1c1932
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:8a2476866c92924074f1fc8ade58fe784a75a3a386d6bfe1b6a4405ea46
 
 基于OHAudio录制PCM音频（C++）实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/03Hyh8vZSfaCbCWd6Ge7qg/zh-cn_image_0000002524221068.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/h0f1KV7RR5u-wuFPfY32ng/zh-cn_image_0000002524221068.gif "点击放大")
 
 本文的主要内容如下：
 
@@ -28,7 +28,7 @@ OH\_AudioCapturer仅支持PCM格式，同时支持设置低时延通路、静音
 
 **图1** OHAudio音频录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/6GmGeat-QmWzxkX0pUNCVA/zh-cn_image_0000002555340937.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/4EuUL3_STmGy9lsDsQcdmg/zh-cn_image_0000002555340937.jpg "点击放大")
 
 ### 开发步骤
 

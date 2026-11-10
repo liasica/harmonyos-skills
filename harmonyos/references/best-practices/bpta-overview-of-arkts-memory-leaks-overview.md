@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-overview-o
 title: ArkTS内存泄漏故障模式概述
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > ArkTS内存泄漏故障模式说明 > ArkTS内存泄漏故障模式概述
 category: best-practices
-scraped_at: 2026-11-04T08:38:05+08:00
-doc_updated_at: 2026-09-03
-content_hash: sha256:e598448bafa88092f5756a5f924db095c20162d339a163524531da84c05e2bb5
+scraped_at: 2026-11-10T10:42:11+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:e9133507203f20b69425dd3e93a58cdf13ac79f3960452dc33419ed54fb15566
 ---
 
 ## 概述
@@ -90,19 +90,19 @@ Snapshot是方舟虚拟机在运行时完整导出虚拟机内存堆中ArkTS对�
 
 ### 内存快照形式
 
-**线程级内存快照：**包含触发OOM线程的所有ArkTS对象，涵盖该线程LocalHeap对象及SharedHeap中与该线程存在引用关系的对象。
+**线程级内存快照**：包含触发OOM线程的所有ArkTS对象，涵盖该线程LocalHeap对象及SharedHeap中与该线程存在引用关系的对象。
 
 **说明** 
 
 由于SharedHeap溢出时，触发OOM的线程未必是泄漏最严重的线程，且线程级快照中的SharedHeap对象信息可能不完整，此类场景需抓取进程级快照。
 
-**进程级内存快照：**包含整个进程的所有ArkTS对象。导出进程级快照的方法参考[内存快照获取方法](bpta-overview-of-arkts-memory-leaks-overview.md#section9836115155612)。
+**进程级内存快照**：包含整个进程的所有ArkTS对象。导出进程级快照的方法参考[开发态内存快照获取方法](bpta-overview-of-arkts-memory-leaks-overview.md#section9836115155612)。
 
 ### 内存快照格式说明
 
-**heapsnapshot格式：**业界标准的JS堆内存快照格式，可直接导入DevEco Studio进行可视化分析。
+**heapsnapshot格式**：业界标准的JS堆内存快照格式，可直接导入DevEco Studio进行可视化分析。
 
-**rawheap格式：**为解决heapsnapshot格式导出耗时较长的问题，鸿蒙推出了rawheap格式。应用发生ArkTS内存OOM时会自动生成rawheap二进制文件，可使用[rawheap-translator工具](../harmonyos-guides/rawheap-translator.md)解析为heapsnapshot文件，DevEco Studio也支持直接导入rawheap文件。
+**rawheap格式**：为解决heapsnapshot格式导出耗时较长的问题，鸿蒙推出了rawheap格式。应用发生ArkTS内存OOM时会自动生成rawheap二进制文件，可使用[rawheap-translator工具](../harmonyos-guides/rawheap-translator.md)解析为heapsnapshot文件，DevEco Studio也支持直接导入rawheap文件。
 
 ### 开发态内存快照获取方法
 
@@ -130,7 +130,7 @@ Snapshot是方舟虚拟机在运行时完整导出虚拟机内存堆中ArkTS对�
 
 **2.通过****jsLeakWatcher接口获取**
 
-开发者可调用[ohos.hiviewdfx.jsLeakWatcher()](../harmonyos-references/js-apis-jsleakwatcher.md)接口导出heapsnapshot或rawheap快照文件。
+开发者可调用[@ohos.hiviewdfx.jsLeakWatcher (ArkTS泄漏检测)](../harmonyos-references/js-apis-jsleakwatcher.md)接口导出heapsnapshot或rawheap快照文件。
 
 **3.通过故障事件订阅获取**
 
@@ -148,7 +148,7 @@ Snapshot是方舟虚拟机在运行时完整导出虚拟机内存堆中ArkTS对�
 
 ### 开发态内存泄漏分析方法
 
-1. **排查泄漏对象：**
+1.**排查泄漏对象**：
 
 在DevEco Studio中打开内存快照文件，按Retained size降序排列内存对象，优先关注占用较大的业务对象。可通过聚类功能确认主要泄漏对象。此外，可对同一应用进程在相同场景下抓取两次快照进行对比，精确定位内存变化。
 
@@ -160,9 +160,9 @@ Snapshot是方舟虚拟机在运行时完整导出虚拟机内存堆中ArkTS对�
 
 在Snapshot内存快照中，虚拟节点handle包含四种RootType的虚拟节点信息，对应四种[ArkTS根节点类型](bpta-overview-of-arkts-memory-leaks-overview.md#section14558183832315)。RootType虚拟节点仅代表Root节点类型，Root节点被何种RootType虚拟节点持有，即代表该Root类型。四种RootType虚拟节点中，LocalHandleRoot类型和GlobalHandleRoot类型在API24及之后版本的内存快照中可以查看，VMRoot和FrameRoot在API26及之后版本的内存快照中可以查看。四种RootType虚拟节点如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/UkJy-yURT9ipveF8h-5lCQ/zh-cn_image_0000002729464439.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/ncQiP7xiQvy1qyoCCif9Kg/zh-cn_image_0000002729464439.png)
 
-3. **进一步确认泄漏根因或堆栈：**
+3. **进一步确认泄漏根因或堆栈**：
 
 若泄漏对象的根节点类型为VMRoot，需要查看引用链中对象是否重复创建，结合业务通过断开引用链来释放泄漏对象，可参考[ArkTS内存泄漏案例及常见问题](https://developer.huawei.com/consumer/cn/forum/topic/0208195932431565320?fid=0109140870620153026)。
 
@@ -177,7 +177,7 @@ Snapshot是方舟虚拟机在运行时完整导出虚拟机内存堆中ArkTS对�
 3. 单击3处设置录制配置项。
 4. 在设置中关闭统计模式，打开录制异步栈，选择如下图4所示LocalHandle/GlobalHandle。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/FW8GQ5QPSl-cp09ZZ07Wfg/zh-cn_image_0000002699865068.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/8GAh9bFQQmWCWgxSsWqruQ/zh-cn_image_0000002699865068.png "点击放大")
 
 2. 开始录制Allocation会话，操作应用的泄漏场景。
 
@@ -189,7 +189,7 @@ Snapshot是方舟虚拟机在运行时完整导出虚拟机内存堆中ArkTS对�
 4. 下图4处显示的Category代表调用栈类别，GlobalHandle会标注Native(G)，LocalHandle会标注Native(L)。
 5. 选中下图5处ArkTS Object List，可以看到该调用栈申请的ArkTS对象，单击对应的跳转按钮可以跳转回2处内存快照中对应的ArkTS对象。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/7xQK08XwTPGHS6FIg-Uztg/zh-cn_image_0000002729584399.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/GVeyoPtnQqiZk7KUMIIPyA/zh-cn_image_0000002729584399.png "点击放大")
 
 ## 运维态内存泄漏分析
 
@@ -204,7 +204,7 @@ Snapshot是方舟虚拟机在运行时完整导出虚拟机内存堆中ArkTS对�
 
 应用OOM时会产生崩溃日志，重点关注[日志规格](../harmonyos-guides/jscrash-guidelines.md#日志规格)中的几个关键字段。日志中Error name显示故障类型，OOM时显示OutOfMemoryError；Error message显示错误信息，里面会有导致崩溃的申请内存的大小，崩溃的堆类型等信息；Stacktrace表示导致崩溃的故障堆栈信息。崩溃日志示例如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/-E0YorEeQLKlwvhZqRvbgw/zh-cn_image_0000002699705180.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/_Y0DN68MRpO31V50AAlp3A/zh-cn_image_0000002699705180.png)
 
 **rawheap文件**
 
@@ -227,4 +227,4 @@ OOM触发后，可在/data/log/reliability/resource\_leak/memory\_leak目录下�
 
 通过泄漏对象的名字，属性名和文件名等信息，参考对应故障模式文档，找到相关业务逻辑和场景。若能确认内存泄漏的业务逻辑和场景后，可以尝试场景复现，通过开发态流程分析。
 
-具体分析思路，可参考[ArkTS/JS内存分析思路](bpta-arkts-js-memory-analysis.md#section3880144118139)。
+具体分析思路，可参考ArkTS/JS内存[分析思路](bpta-arkts-js-memory-analysis.md#section3880144118139)。

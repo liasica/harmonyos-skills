@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-video-comp
 title: 基于Video组件播放短视频
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 基于Video播放视频系列开发实践 > 基于Video组件播放短视频
 category: best-practices
-scraped_at: 2026-11-04T08:37:50+08:00
+scraped_at: 2026-11-10T10:42:03+08:00
 doc_updated_at: 2026-08-26
-content_hash: sha256:2a0f8f01c457007be47547a0bc4273921248c860ff8b00cccfe8dd06132fe7c0
+content_hash: sha256:c4198218dad9fca24504513e6418c7a0ec02ca96ae298f18bea34d07801b4594
 ---
 
 ## 概述
@@ -26,7 +26,7 @@ content_hash: sha256:2a0f8f01c457007be47547a0bc4273921248c860ff8b00cccfe8dd06132
 
 通过Video组件实现视频基础播放控制能力，包括播放视频、暂停播放等操作。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/QDNejXekRDqIyjDmF8Fy3Q/zh-cn_image_0000002555239530.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/max4wIP0TtOclNWmypHLwQ/zh-cn_image_0000002555239530.gif "点击放大")
 
 ### 实现原理
 
@@ -42,7 +42,7 @@ content_hash: sha256:2a0f8f01c457007be47547a0bc4273921248c860ff8b00cccfe8dd06132
 
 当用户需要全屏播放视频时，可以通过点击按钮全屏播放，或通过旋转设备进行横竖屏切换。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/AcoGuyDbSgKpJo9Mcx5E7g/zh-cn_image_0000002585679465.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/ZQJvZYKdTp6sIY1IW7W-gg/zh-cn_image_0000002585679465.gif "点击放大")
 
 ### 实现原理
 
@@ -65,7 +65,7 @@ content_hash: sha256:2a0f8f01c457007be47547a0bc4273921248c860ff8b00cccfe8dd06132
 
 在用户上下滑动时，视频能快速切换到下一个或上一个，且加载和播放流畅、无卡顿。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/E36ZPk71S-G79CgOMXt9MQ/zh-cn_image_0000002555079910.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/FHWFotKiRLKsfB7PiFkYhg/zh-cn_image_0000002555079910.gif "点击放大")
 
 ### 实现原理
 
@@ -96,7 +96,7 @@ content_hash: sha256:2a0f8f01c457007be47547a0bc4273921248c860ff8b00cccfe8dd06132
 
 通过长按屏幕实现视频2倍速播放。如下图所示，长按触屏时，显示"2.0X快进中"，同时视频以2倍速进行播放；抬起后，视频以默认的1倍速进行播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/zwCV5eirS1WrpDYqUN6juw/zh-cn_image_0000002585799527.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/9isZ8Md2QMyq7en9Vm7wMw/zh-cn_image_0000002585799527.gif "点击放大")
 
 ### 实现原理
 
@@ -150,7 +150,7 @@ content_hash: sha256:2a0f8f01c457007be47547a0bc4273921248c860ff8b00cccfe8dd06132
 
 应用从前台切到后台，再从后台切回前台时，能够保持原有进度继续播放原视频。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/rt9zSlYgTDGLkxz8Y3eP1w/zh-cn_image_0000002555239532.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Gm95eGdlS6WGfG6T_35GNQ/zh-cn_image_0000002555239532.gif "点击放大")
 
 ### 实现原理
 
@@ -204,7 +204,7 @@ content_hash: sha256:2a0f8f01c457007be47547a0bc4273921248c860ff8b00cccfe8dd06132
 
 音量设置在视频应用中是一种常见功能，允许用户在不离开视频播放界面的情况下，通过长按结合滑动手势即可调节音量，以获得更佳的观看体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/8ugPuMEHR1Wu13cJC4Z_jg/zh-cn_image_0000002585679469.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/7ySp9K47QxqR0h5i5rMdmw/zh-cn_image_0000002585679469.gif "点击放大")
 
 ### 实现原理
 
@@ -277,7 +277,7 @@ content_hash: sha256:2a0f8f01c457007be47547a0bc4273921248c860ff8b00cccfe8dd06132
 
 当前视频播放结束后，播放器将自动加载并播放下一个视频，无需用户手动操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/tDdrrHouSMePNipClsBlPg/zh-cn_image_0000002555079912.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/aNx7bDXqR_eW73HpfxBVjA/zh-cn_image_0000002555079912.gif "点击放大")
 
 ### 实现原理
 

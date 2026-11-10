@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-dma-leak-i
 title: 开发态快速定位DMA泄漏
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 开发态稳定性分析 > 资源泄漏类问题分析 > 开发态快速定位DMA泄漏
 category: best-practices
-scraped_at: 2026-11-04T08:38:06+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:1e0bf228a40c8983c831b6d35ccaf87274876c29c1f04547d43ce8a1f1b69f67
+scraped_at: 2026-11-10T10:42:13+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:27771b99dc2ba5de9052b32705585fc77f9dfc1b0b25c2fcb558533c663e62b9
 ---
 
 ## 概述
@@ -38,20 +38,20 @@ content_hash: sha256:1e0bf228a40c8983c831b6d35ccaf87274876c29c1f04547d43ce8a1f1b
 
 1. 复现与日志获取：使用DevEco Studio Profiler的Allocation模板开启统计模式录制泄漏场景，重复3-5次操作疑似泄漏场景以复现问题。
 
-2. 识别泄漏点：点击All Anonymous VM中的VM:ION子泳道，在下方详情Call Tree标签页中选择Created&Existing，查看内存占比较高的调用栈。
+2. 识别泄漏点：点击All Anonymous VM中的VM:ION子泳道，在下方详情Call Tree标签页中选择Created & Existing，查看内存占比较高的调用栈。
 
 3. 分析调用栈：优先在调用栈信息中寻找占比较高且与业务代码强相关的Symbol Name，即Category中为亮色。根据调用栈分析相关代码（双击跳转源码），排查内存未释放原因。
 
 4.代码审查：结合调用栈，梳理相关代码中的内存持有逻辑，定位泄漏根因。
 
-* 业务逻辑未发现异常：[查看进程中DMA内存信息](bpta-dma-leak-in-develop.md#section53218913389)并结合DMA内存信息分析。
+* 业务逻辑未发现异常：参考[附录：查看进程中DMA内存信息](bpta-dma-leak-in-develop.md#section53218913389)并结合DMA内存信息分析。
 * 业务逻辑存在异常：修改相关代码。
 
 5.修复与验证：修改代码后，重复步骤1，确认内存曲线回归平稳。
 
 标准化排查流程整体流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/Px6e4UOOTE-JZxbiQ5kPPQ/zh-cn_image_0000002675100563.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/Vt-ivYn4SYW_mQ1u6amK7Q/zh-cn_image_0000002675100563.jpg "点击放大")
 
 ## DMA内存泄漏分析案例
 
@@ -63,9 +63,9 @@ content_hash: sha256:1e0bf228a40c8983c831b6d35ccaf87274876c29c1f04547d43ce8a1f1b
 
 * **Graph子泳道**：应用使用的DMA内存。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/aOyJjW5cTYWmIQUA7AXryw/zh-cn_image_0000002675020711.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/jdZdY2QKSW-0NcfQ7eDy0w/zh-cn_image_0000002675020711.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/rIcwDlJNQyibCYGLZN6_Fg/zh-cn_image_0000002645100760.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/UTnbqJfXRIykjy9N1JjM8w/zh-cn_image_0000002645100760.png "点击放大")
 
 ### 分析流程
 
@@ -73,15 +73,15 @@ content_hash: sha256:1e0bf228a40c8983c831b6d35ccaf87274876c29c1f04547d43ce8a1f1b
 
    1. 基于DevEco Studio Profiler插件的Allocation模板分析堆内存分配、释放的信息以及调用栈信息。堆内存信息中包括已释放内存和未释放内存。操作步骤如下：启动应用进程，选择Profiler工具 → 选择设备与应用进程 → 选择Allocation模板 → 创建Session → 配置录制选项。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/p2oB1hP9SEiyJUBBtdu4Fw/zh-cn_image_0000002644940858.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/H-dlJ96MTHCfCmtEgVtuIg/zh-cn_image_0000002644940858.png)
 
    2. 开启统计模式，可以打开JS栈记录和异步栈记录开关。由于DMA内存的分配频率相比于NativeHeap的Malloc更低，因此可关闭Malloc采集，减少对DMA内存分析的影响。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/Vx4D6TJZRyqW_lWt-C14IQ/zh-cn_image_0000002675100565.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/6nueT4x-TyGcuwrt_TtX1A/zh-cn_image_0000002675100565.png "点击放大")
 
    3. 点击按钮启动录制并复现问题场景。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/n0oeuxu8SbWBuomuHVlKzQ/zh-cn_image_0000002675020713.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/2UA79OekQh2O9sQ5Qh9mHQ/zh-cn_image_0000002675020713.png "点击放大")
 2. **查看DMA内存调用栈**
 
    1. 框选All Anonymous VM中的VM:ION子泳道。
@@ -94,16 +94,16 @@ content_hash: sha256:1e0bf228a40c8983c831b6d35ccaf87274876c29c1f04547d43ce8a1f1b
    * Created & Existing：默认选中，在框选范围的起点之后分配的，且在框选范围的终点之前没有释放的内存数据。
    * Created & Released：在框选范围的起点之后分配的，且在框选范围的终点之前已经释放的内存数据。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/bU9ThAlWS1eWEDC4_qQbPg/zh-cn_image_0000002645100762.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/I-cFlUBaSoquhr8CTw2sOg/zh-cn_image_0000002645100762.png "点击放大")
 
    3. 切换到“Call Trees”页签，该部分数据展示了详细的内存分配栈信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/fksLmcAgRCi3KbXIy97MMQ/zh-cn_image_0000002644940860.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/5uNrzZ23T-i3yNi709i9oQ/zh-cn_image_0000002644940860.png "点击放大")
 3. **分析DMA内存调用栈**
 
    优先在内存分配栈信息中寻找占比较高且与业务代码强相关的Symbol Name，即Category中为亮色。根据调用栈分析相关代码（双击跳转源码），排查内存未释放原因。可以看到业务代码中缓存了PixelMap，但未调用release()方法释放内存。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/wG552xylR9Kop77iByQFWw/zh-cn_image_0000002675100567.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/Zf4zvpBGRH6EqbJa25763A/zh-cn_image_0000002675100567.png "点击放大")
 
 ### 优化修复
 
@@ -114,16 +114,16 @@ content_hash: sha256:1e0bf228a40c8983c831b6d35ccaf87274876c29c1f04547d43ce8a1f1b
    * 每次页面退出后，内存曲线回落至基线。
    * 泄漏问题已修复。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/BCvC_KClQeuG0rNsMuKSNw/zh-cn_image_0000002675020715.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/krLkk5OsQ6Wtqd767Ki7uw/zh-cn_image_0000002675020715.png "点击放大")
 
 ## 附录：查看进程中DMA内存信息
 
 1. 查找进程pid。启动应用进程，选择Profiler工具 → 选择设备与应用进程，即可看到进程pid。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/LkGGXJxpQYiCVqrX1TY3OA/zh-cn_image_0000002645100764.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/1xR7bjBrQJeO9e2IavGiiQ/zh-cn_image_0000002645100764.png "点击放大")
 
 2. 获取到pid后，在终端中执行hdc shell，然后执行命令hidumper --mem pid --show-dmabuf（[查询进程内存](../harmonyos-guides/hidumper.md#查询进程内存)）对比出现DMA泄漏前和DMA泄漏后的DMA内存数据。根据buf\_name和leak\_type排查相关组件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/rKgnd3eeTeWtdegaq8jq7A/zh-cn_image_0000002644940862.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/_Aa8s56vTQ2IkK3UKNoeWg/zh-cn_image_0000002644940862.png "点击放大")
 
 获取指定pid的DMA内存详细信息，开发者可以根据DMA内存信息中的buf\_name、leak\_type等列定位可疑泄漏组件。

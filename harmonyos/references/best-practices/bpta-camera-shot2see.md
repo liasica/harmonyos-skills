@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-camera-sho
 title: 相机分段式拍照性能优化
 breadcrumb: 最佳实践 > 媒体 > 相机 > 相机分段式拍照性能优化
 category: best-practices
-scraped_at: 2026-11-04T08:37:49+08:00
+scraped_at: 2026-11-10T10:42:02+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:aeebf118a45fc9c363c3aae8e98a32508eda650083b0e9a59a04c681c05766af
+content_hash: sha256:46292f6192e8762632709d2cdd713eff491e9692e4bfee36ecf1bfc6b3cd1cba
 ---
 
 ## 概述
@@ -19,17 +19,17 @@ content_hash: sha256:aeebf118a45fc9c363c3aae8e98a32508eda650083b0e9a59a04c681c05
 分段式与单段式拍照的全质量图输出质量一致，但输出低质量图场景下单段式更优。如果开发者不需要获取全质量图并且也不考虑Shot2See的完成时延，建议使用单段式拍照，否则的话，建议使用分段式拍照。本篇文章主要以相机Shot2See场景为例，来展示分段式拍照Shot2See的完成时延要低于单段式拍照。
 
 **图1** **分段式拍照流程示意图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/60KByxWwRNeZXXHdmfVbPg/zh-cn_image_0000002229450197.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/48yHZ8tXQ9yQ6bRErYEidw/zh-cn_image_0000002229450197.png "点击放大")
 
 ## 效果展示
 
 **图2** **单段式拍照效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/bl37zWSoRN6vHWPsZ9L_Hg/zh-cn_image_0000002193850332.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/TFd7znG6R7-I7SvEM_klHw/zh-cn_image_0000002193850332.gif "点击放大")
 
 **图3** **分段式拍照效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/VxLMAumBTCadGzx6eUbEOQ/zh-cn_image_0000002229450193.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/R8A2NW56TPSX0dcKFpFbsw/zh-cn_image_0000002229450193.gif "点击放大")
 
 从上述效果图中可以看出，分段式拍照从用户点击拍照控件到在缩略图显示区域显示缩略图的耗时比单段式拍照要短。
 
@@ -41,10 +41,10 @@ content_hash: sha256:aeebf118a45fc9c363c3aae8e98a32508eda650083b0e9a59a04c681c05
 
 **图4** **单段式拍照性能数据图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/op-NWYbqTaiy6TZHkE7cUw/zh-cn_image_0000002229450189.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/Axlq5DYZQd-egMzrePxVrg/zh-cn_image_0000002229450189.png "点击放大")
 
 **图5** **分段式拍照耗时数据****图**  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/VKN-9XmHQ-iPiXlg5qB4jA/zh-cn_image_0000002229450205.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/NDyGpXeIQMa2nCpbI7YHJw/zh-cn_image_0000002229450205.png "点击放大")
 
 **性能对比分析表**
 

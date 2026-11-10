@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-content-cr
 title: AI辅助图文内容编创
 breadcrumb: 最佳实践 > 行业场景解决方案 > 社交通讯 > AI辅助图文内容编创
 category: best-practices
-scraped_at: 2026-11-04T08:37:57+08:00
+scraped_at: 2026-11-10T10:42:06+08:00
 doc_updated_at: 2026-11-03
-content_hash: sha256:26cc067ab0a8c63b40308892bb6bf26bf338af23ae8293b15ecd79ff56ff3318
+content_hash: sha256:cb4cd1d6b16f640149f12fb973413e5aa00540d1b3ecc81a35f7b2d4d0e6a01a
 ---
 
 ## 概述
@@ -20,7 +20,7 @@ content_hash: sha256:26cc067ab0a8c63b40308892bb6bf26bf338af23ae8293b15ecd79ff56f
 
 图文编创操作流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/e-_BTQe7Sl69teWqogK4iQ/zh-cn_image_0000002229451385.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/n77J5pMiRDWzZTtUpa6Kig/zh-cn_image_0000002229451385.gif)
 
 ## 场景适用说明
 
@@ -102,7 +102,7 @@ photoViewPicker.select(photoSelectOptions).then((photoSelectResult: photoAccessH
 
 长按图片可识别文字并实现物体抠图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/iO10MuJATnW1-i892Z5lVw/zh-cn_image_0000002229336901.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/GWBkn_svSLqjNW7KGCL69A/zh-cn_image_0000002229336901.gif)
 
 ### 关键点说明
 
@@ -353,7 +353,7 @@ build() {
 
 跨端相册获取新的图片
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/ltG94lofSLmJcpplKaBIpA/zh-cn_image_0000002730181338.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/VzlOd3c2Q4yVQaRlxsRgSQ/zh-cn_image_0000002730181338.gif "点击放大")
 
 ### 子场景描述
 
@@ -447,7 +447,7 @@ private doInsertPicture(stateCode: number, bufferType: string, buffer: ArrayBuff
 
 自由流转，接续编辑图文内容的功能已启用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/dDcFUbkHR9aEZm0Sy30TXw/zh-cn_image_0000002730021622.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/cctqoh68TTm7lMi_6dVoxg/zh-cn_image_0000002730021622.gif "点击放大")
 
 ### 关键点说明
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 概述
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 概述
 category: best-practices
-scraped_at: 2026-11-04T08:37:50+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:c91f8555738872ead6d5ef571461b11d121520a407021ddb4547d43a44355634
+scraped_at: 2026-11-10T10:42:02+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:2a61da6369b053f1bcb0fec50b9bdb2cf6051697a813d789ce87b42d435905cd
 ---
 
 音频录制是媒体开发的常见场景，在系统中，根据不同的音频格式和业务场景，提供了多样化的音频录制方式。为了帮助开发者快速了解音频录制功能，并且根据不同的音频格式和业务场景快速选型，本文提供了音频录制开发实践的系列文章。共有如下五篇：
@@ -21,8 +21,8 @@ content_hash: sha256:c91f8555738872ead6d5ef571461b11d121520a407021ddb4547d43a443
 |  |  |  |  |  |  |
 | --- | --- | --- | --- | --- | --- |
 | **开发方式** | **录制文件格式** | **是否支持低时延** | **是否支持静音打断模式** | **是否支持回声消除** | **如何获取音频振幅** |
-| **AudioCapturer（ArkTS）** | 仅支持PCM格式 | 不支持 | 通过调用[setWillMuteWhenInterrupted](../doccenter-references/api/arkts-apis-audio-audiocapturer.md#setwillmutewheninterrupted20)()设置是否开启静音打断模式 | 通过将audio.[AudioCapturerInfo](../doccenter-references/api/arkts-apis-audio-i.md#audiocapturerinfo8)中SourceType值指定为SOURCE\_TYPE\_VOICE\_COMMUNICATION、SOURCE\_TYPE\_LIVE即可 | 通过调用[Interface (AudioVolumeGroupManager)](../doccenter-references/api/arkts-apis-audio-audiovolumegroupmanager.md)中的[getMaxAmplitudeForInputDevice](../doccenter-references/api/arkts-apis-audio-audiovolumegroupmanager.md#getmaxamplitudeforinputdevice12)()获取输入设备音频流的最大电平值 |
-| **OHAudio（C++）** | 仅支持PCM格式 | 通过调用[OH\_AudioStreamBuilder\_SetLatencyMode](../doccenter-references/api/capi-native-audiostreambuilder-h.md#oh_audiostreambuilder_setlatencymode)()设置低时延模式 | 通过调用[OH\_AudioStreamBuilder\_SetCapturerWillMuteWhenInterrupted](../doccenter-references/api/capi-native-audiostreambuilder-h.md#oh_audiostreambuilder_setcapturerwillmutewheninterrupted)()设置是否开启静音打断模式 | 通过将[OH\_AudioStream\_SourceType](../doccenter-references/api/capi-native-audiostream-base-h.md#oh_audiostream_sourcetype)值指定为AUDIOSTREAM\_SOURCE\_TYPE\_VOICE\_COMMUNICATION、AUDIOSTREAM\_SOURCE\_TYPE\_LIVE即可 | 通过采样深度（采样格式）计算最大采样值，然后将每个采样值与最大采样值做归一化处理，即可获得类似振幅大小数据 |
+| **AudioCapturer（ArkTS）** | 仅支持PCM格式 | 不支持 | 通过调用[setWillMuteWhenInterrupted](../doccenter-references/api/arkts-apis-audio-audiocapturer.md#setwillmutewheninterrupted20)()设置是否开启静音打断模式 | 通过将audio.[AudioCapturerInfo](../doccenter-references/api/arkts-apis-audio-i.md#audiocapturerinfo8)中[SourceType](../doccenter-references/api/arkts-apis-audio-e.md#sourcetype8)值指定为SOURCE\_TYPE\_VOICE\_COMMUNICATION、SOURCE\_TYPE\_LIVE即可 | 通过调用[Interface (AudioVolumeGroupManager)](../doccenter-references/api/arkts-apis-audio-audiovolumegroupmanager.md)中的[getMaxAmplitudeForInputDevice](../doccenter-references/api/arkts-apis-audio-audiovolumegroupmanager.md#getmaxamplitudeforinputdevice12)()获取输入设备音频流的最大电平值 |
+| **OHAudio（C++）** | 仅支持PCM格式 | 通过调用[OH\_AudioStreamBuilder\_SetLatencyMode()](../doccenter-references/api/capi-native-audiostreambuilder-h.md#oh_audiostreambuilder_setlatencymode)设置低时延模式 | 通过调用[OH\_AudioStreamBuilder\_SetCapturerWillMuteWhenInterrupted()](../doccenter-references/api/capi-native-audiostreambuilder-h.md#oh_audiostreambuilder_setcapturerwillmutewheninterrupted)设置是否开启静音打断模式 | 通过将[OH\_AudioStream\_SourceType](../doccenter-references/api/capi-native-audiostream-base-h.md#oh_audiostream_sourcetype)值指定为AUDIOSTREAM\_SOURCE\_TYPE\_VOICE\_COMMUNICATION、AUDIOSTREAM\_SOURCE\_TYPE\_LIVE即可 | 通过采样深度（采样格式）计算最大采样值，然后将每个采样值与最大采样值做归一化处理，即可获得类似振幅大小数据 |
 | **AVRecorder（ArkTS）** | 格式化音频文件 | 不支持 | 通过调用[setWillMuteWhenInterrupted](../doccenter-references/api/arkts-apis-media-avrecorder.md#setwillmutewheninterrupted20)()设置是否开启静音打断模式 | 通过将[AudioSourceType](../doccenter-references/api/arkts-apis-media-e.md#audiosourcetype9)值指定为AUDIO\_SOURCE\_TYPE\_VOICE\_COMMUNICATION即可 | 通过调用[getAudioCapturerMaxAmplitude](../doccenter-references/api/arkts-apis-media-avrecorder.md#getaudiocapturermaxamplitude11)()获取当前音频最大振幅 |
 | **AVRecorder（C++）** | 格式化音频文件 | 不支持 | 通过调用[OH\_AVRecorder\_SetWillMuteWhenInterrupted](../doccenter-references/api/capi-avrecorder-h.md#oh_avrecorder_setwillmutewheninterrupted)()设置是否开启静音打断模式 | 通过将[OH\_AVRecorder\_AudioSourceType](../doccenter-references/api/capi-avrecorder-base-h.md#oh_avrecorder_audiosourcetype)值指定为AVRECORDER\_VOICE\_COMMUNICATION即可 | 通过采样深度（采样格式）计算最大采样值，然后将每个采样值与最大采样值做归一化处理，即可获得类似振幅大小数据 |
 | **AVScreenCapture（C++）** | 在录制音频文件时，仅支持录制m4a的音频格式 | 不支持 | 不支持 | 不支持 | 通过调用AudioVolumeGroupManager中的getMaxAmplitudeForInputDevice()获取输入设备音频流的最大电平值 |

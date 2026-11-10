@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/low-power-consu
 title: 不可见组件低功耗建议
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 > 前台资源合理使用 > 不可见组件低功耗建议
 category: best-practices
-scraped_at: 2026-11-04T08:38:02+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:ade50294f11bb3e830bf5322fc88471cb79a21ca536b7984b4abcf5214d640d0
+scraped_at: 2026-11-10T10:42:09+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:07c1251c880f76d5f59bda9f82e2bfa605aab3520dd6e71f6796c9cda1bd4aa7
 ---
 
 ## 概述
@@ -26,9 +26,9 @@ content_hash: sha256:ade50294f11bb3e830bf5322fc88471cb79a21ca536b7984b4abcf5214d
 * 组件本身位于屏幕范围内，但由于页面特殊结构，被另一级页面或组件完全遮蔽了，考虑到用户实际的操作需求，以及上层组件可能存在透明度、模糊效果等因素，系统不会终止被遮挡组件的行为，依赖三方开发者感知这种遮蔽事件，来控制被遮挡组件停止刷新。
 * 动效组件如Video、Web等组件，在已经卸载ArkUI树后，依然在执行解码、web render等业务导致Buffer持续空转。一方面开发者需确保组件在离线状态下构建时，渲染控制器为不播放，另一方面需要开发者确保当组件卸载时，停止正在执行的渲染控制器。
 
-为了帮助开发者定位到存在空跑问题的组件，在当前系统中已经开放了[不可见动效的自检工具](bpta-frontend-invisible-animation-analysis.md)。本文将着重介绍Vsync冗余信号、UI刷新问题以及Buffer自绘制三类问题中的UI刷新问题。开发者可进一步通过[布局分析（ArkUI Inspector）](../harmonyos-guides/ide-arkui-inspector.md)较为直观且方便的查看ArkUI组件树结构以及关键的变量信息，勾选打开第四项，Show Hidden Components，可以使得开发者找到更多隐藏但未被析构的组件。
+为了帮助开发者定位到存在空跑问题的组件，在当前系统中已经开放了[前台不可见动效问题分析](bpta-frontend-invisible-animation-analysis.md)。本文将着重介绍Vsync冗余信号、UI刷新问题以及Buffer自绘制三类问题中的UI刷新问题。开发者可进一步通过[布局分析](../harmonyos-guides/ide-arkui-inspector.md)较为直观且方便的查看ArkUI组件树结构以及关键的变量信息，勾选打开第四项，Show Hidden Components，可以使得开发者找到更多隐藏但未被析构的组件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/U2Mq_xOTRGahlhtWKAutUw/zh-cn_image_0000002375069378.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/-XYD_djLSbGTvw8M_DUQxA/zh-cn_image_0000002375069378.png)
 
 以下是一些常见的引起空跑的情况。
 
@@ -44,7 +44,7 @@ content_hash: sha256:ade50294f11bb3e830bf5322fc88471cb79a21ca536b7984b4abcf5214d
 
 ### 概述
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/dfALul6dR_SPToF18o9cDQ/zh-cn_image_0000002374909522.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/SmNd2nsHQHCEjrP2y8sqhQ/zh-cn_image_0000002374909522.png "点击放大")
 
 对于一个动效组件而言，会影响组件可见与否的属性有以下几种：
 
@@ -58,19 +58,19 @@ content_hash: sha256:ade50294f11bb3e830bf5322fc88471cb79a21ca536b7984b4abcf5214d
 
 **组件位置**：如下图，“1”处所示的Button组件是视频竖向播放时的点赞组件进入Hidden状态的组件，当用户点击视频全屏时，页面会切换为横屏，原本处于屏幕内的点赞组件变成屏幕外。由于此时该组件依然位于该页面的前台，开发者可能仍有业务需要运行，且组件依然可能在下一个时机重新显示，故而系统并不会因此阻止该组件正在进行的行为。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/QDyQAW90QP-4EoWWm5kFfg/zh-cn_image_0000002408589053.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/4RIRheX5R6SKxqArdEKGew/zh-cn_image_0000002408589053.png "点击放大")
 
 **visibility**：当组件或其所属的根页面的visibility属性设置为Hidden时，该组件实际上被视为不可见。如图所示，“1”处标注的组件位于应用的首页（非当前页面），此时ArkUI会提示该组件不在屏幕显示范围内。进入Hidden状态后，大多数系统组件会因系统限制而停止刷新，但对于具有独立动画控制器的动效组件，仍需第三方主动控制。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/zl8KmYc8RMWQFum4y2ZBgQ/zh-cn_image_0000002408628893.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/Ql1X4DznRKuOsa00lOOUsQ/zh-cn_image_0000002408628893.png "点击放大")
 
 进一步查看该组件对应的NavDestination，可以发现该页面的visibility属性已被置为Hidden，这是由于Navigation跳转后，会将非栈首的页面视作不可见，后续该页面下所有的组件，在遍历可见性时，均可以感知到其根页面已进入Hidden状态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/M6RntLjyQeeHv6kaDrjkww/zh-cn_image_0000002375069394.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/w6YcotW5ShKvf_O05edywg/zh-cn_image_0000002375069394.png "点击放大")
 
 ### 开发参考
 
-* 接入可见性回调让动效组件能[感知可见性](../harmonyos-references/ts-universal-component-visible-area-change-event.md)，此方法适用于绝大多数页面跳转、页面内滑动浏览的可见性检测。开发者可将动效组件的控制器、播放状态等变量与可见性回调绑定，当检测到组件的可见性达到阈值，控制组件在完全可见时播放，完全不可见时停止。该回调所返回的可见面积值currentRatio，可以视作当前组件显示在屏幕范围内的面积占比，当组件的位置、visibility等属性变化时均可通过该接口感知到，开发示例如下：
+* 接入可见性回调让动效组件能[组件可见区域变化事件](../harmonyos-references/ts-universal-component-visible-area-change-event.md)，此方法适用于绝大多数页面跳转、页面内滑动浏览的可见性检测。开发者可将动效组件的控制器、播放状态等变量与可见性回调绑定，当检测到组件的可见性达到阈值，控制组件在完全可见时播放，完全不可见时停止。该回调所返回的可见面积值currentRatio，可以视作当前组件显示在屏幕范围内的面积占比，当组件的位置、visibility等属性变化时均可通过该接口感知到，开发示例如下：
 
   ```screen
   @Component
@@ -162,23 +162,23 @@ ArkUI Inspector不仅可以帮助开发者分析组件的详细信息， 也可�
 
 [Navigation](../harmonyos-references/ts-basic-components-navigation.md)是当前HarmonyOS中常见的跳转页面方式，用户每进入新页面时，都会将页面以NavDestination页面结构形式入栈，从页面返回时最先销毁退出栈顶页面。开发者可在组件结构的NavigationContent下查找并列的NavDestination子页面查看栈关系。如下图，“1”处NavBarContent对应首页，“2”处为首页点击推荐后进入的二级页面，“3”处为当前界面。Navigation在进入新页面时，上一级页面不会析构，但visibility将进入Hidden状态，页面内组件可通过不可见回调感知到不可见行为。由于用户可能通过返回到上一级页面继续执行逻辑，系统允许上一级页面逻辑继续执行。但开发者需通过可见性感知，停止动效组件的刷新行为。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/opstBvfNTtOnUCAs_4Sfcw/zh-cn_image_0000002374909538.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/9hWL9DiGSFSvFGhVFrFsIA/zh-cn_image_0000002374909538.png "点击放大")
 
 ### Tabs
 
 与Navigation的栈结构不同，[Tabs](../harmonyos-references/ts-container-tabs.md)是一种平铺的列表结构，由一个Swiper串联起各个平级的TabContent。默认情况下，Tabs只会Build第一个TabContent实例，如下图所示，“1”处的TabContent下方组件已成功Build，但另外3个TabContent此时处于空壳状态，下方并无ArkUI组件实例挂载。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/xjbYRJrRSZ2MsYEO4zgmqQ/zh-cn_image_0000002408589073.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/GiQjVLPCSTm_sd6X9ajfsA/zh-cn_image_0000002408589073.png "点击放大")
 
 逐个点击Tab，切换页面至“yellow”，可以发现此时前面两个TabContent页面的组件实例已创建，上一个TabContent的组件会因Tab的默认滑动动效而在挂载在屏幕侧面。值得注意的是，Tab默认开启的切换动效会构建路径中的所有TabContent，例如在从第一个Tab点击最后一个Tab时，中间的两个TabContent也会完成构建的操作。除此之外，Tab可通过[preloadItems](../harmonyos-references/ts-container-tabs.md#preloaditems12)预加载指定TabContent，开发者需留意在build预加载的TabContent时，需要确保预加载页面的动效、动画等组件初始状态为不播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/zlJUrRQHTASqkIM-KRizuQ/zh-cn_image_0000002408628913.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/yk96STF8SwORN5EDAtg2Yg/zh-cn_image_0000002408628913.png "点击放大")
 
 ### Refresh
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/LD7VSpDDT4mAkOkdOwEzZg/zh-cn_image_0000002375069410.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/QCz_q8cuSYiNETjOC7RVzA/zh-cn_image_0000002375069410.png "点击放大")
 
-Refresh是一种较为特殊的页面结构，许多开发者会通过[自定义Refresh Builder](../harmonyos-references/ts-container-refresh.md#示例3自定义刷新区域显示内容-builder)来实现自定义的刷新显示效果，通常而言，被创建好的动效组件大小可能会大于其父组件所在范围。如上图所示，通过Builder创建的apng动图，外侧的容器与动图本体Canvas不相交，Canvas实例被下层列表组件遮挡，仅在下拉列表后才会显现。在此情况下，用不可见回调等可见性方法将难以准确判断，推荐开发者使用Refresh自身的状态监听回调[onStateChange](../harmonyos-references/ts-container-refresh.md#onstatechange)，当监听到Refresh的下拉状态[RefreshStatus](../harmonyos-references/ts-container-refresh.md#refreshstatus枚举说明)为1、2、3时，表明Refresh处于下拉中或回弹中的状态，可以让动画播放，其余时间动画均需控制停止。下面给出了一个常见的控制写法，确保自定义的动画控制器状态与RefreshStatus绑定，且初始状态为不播放。
+Refresh是一种较为特殊的页面结构，许多开发者会通过[示例3自定义刷新区域显示内容-builder](../harmonyos-references/ts-container-refresh.md#示例3自定义刷新区域显示内容-builder)来实现自定义的刷新显示效果，通常而言，被创建好的动效组件大小可能会大于其父组件所在范围。如上图所示，通过Builder创建的apng动图，外侧的容器与动图本体Canvas不相交，Canvas实例被下层列表组件遮挡，仅在下拉列表后才会显现。在此情况下，用不可见回调等可见性方法将难以准确判断，推荐开发者使用Refresh自身的状态监听回调[onStateChange](../harmonyos-references/ts-container-refresh.md#onstatechange)，当监听到Refresh的下拉状态[RefreshStatus枚举说明](../harmonyos-references/ts-container-refresh.md#refreshstatus枚举说明)为1、2、3时，表明Refresh处于下拉中或回弹中的状态，可以让动画播放，其余时间动画均需控制停止。下面给出了一个常见的控制写法，确保自定义的动画控制器状态与RefreshStatus绑定，且初始状态为不播放。
 
 ```screen
 .onStateChange((refreshStatus: RefreshStatus) => {
@@ -201,7 +201,7 @@ Refresh是一种较为特殊的页面结构，许多开发者会通过[自定义
 
 当ArkUI组件处于离线节点状态时，仍可继续执行部分组件行为，但涉及组件刷新、Animation等行为将被终止。然而，诸如解码、自绘制渲染等行为无法由系统中断。此外，组件离线后，其可见性将无法定义。因此，如果开发者完全依赖不可见回调来控制动画，需考虑在离线节点情况下将动画的初始状态设置为不播放。以下是一些常见的离线节点应用场景：
 
-1. [if/else条件渲染](../harmonyos-guides/arkts-rendering-control-ifelse.md)：开发者可控制组件卸载、挂载ArkUI树，由开发者主动控制
+1. [if/else：条件渲染](../harmonyos-guides/arkts-rendering-control-ifelse.md)：开发者可控制组件卸载、挂载ArkUI树，由开发者主动控制
 2. 预加载、懒加载：开发者可以使用预加载、懒加载特性提前加载组件，优化浏览时的时延表现，但需要对提前加载的组件进行状态管控
 
 ### if/else
@@ -210,9 +210,9 @@ Refresh是一种较为特殊的页面结构，许多开发者会通过[自定义
 
 ### 懒加载
 
-[懒加载](bpta-lazyforeach-optimization.md)广泛用于List、Waterflow、Grid等列表结构，通过懒加载挂载显示的组件们无需一次性全量构建，而是在一定可视范围内动态按需构建组件，搭配组件复用优化方法，浏览时延表现会更好，功耗也收益显著。但开发者需谨慎处理离线动效组件的动画状态控制，预防通过懒加载生成的离线组件产生额外负载。如下图，在一个使用了LazyForEach实现懒加载的列表结构中，当CacheCount不为0时，意味着除了当前的ListItem外，还会额外离线创建一些ListItem用于加载。这些离线加载的列表项不会显示在ArkUI Inspector中，但会在需要显示时挂载上树。
+[懒加载优化性能](bpta-lazyforeach-optimization.md)广泛用于List、Waterflow、Grid等列表结构，通过懒加载挂载显示的组件们无需一次性全量构建，而是在一定可视范围内动态按需构建组件，搭配组件复用优化方法，浏览时延表现会更好，功耗也收益显著。但开发者需谨慎处理离线动效组件的动画状态控制，预防通过懒加载生成的离线组件产生额外负载。如下图，在一个使用了LazyForEach实现懒加载的列表结构中，当CacheCount不为0时，意味着除了当前的ListItem外，还会额外离线创建一些ListItem用于加载。这些离线加载的列表项不会显示在ArkUI Inspector中，但会在需要显示时挂载上树。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/5jaS0StOTweBMzuswgD4XA/zh-cn_image_0000002408589085.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/H7aZmfa7RRen46KSf5H4jA/zh-cn_image_0000002408589085.png "点击放大")
 
 在上图所示的页面中，设置LazyForEach的CacheCount为10，此时一共有7个列表项位于屏幕内，分别对每个列表项的aboutToAppear()、onDidBuild()以及onVisibleAreaChange()进行监听并输出log，结果如下图：
 
@@ -220,7 +220,7 @@ Refresh是一种较为特殊的页面结构，许多开发者会通过[自定义
 * “2”处信息表明：列表项Build完成后，将对7个ListItem注册onVisibleAreaChange()回调，返回结果为组件可见于屏幕
 * “3”处信息表明：位于CacheCount的10个离线ListItem完成aboutToAppear()和onDidBuild()，但因为此时节点并未挂载在ArkUI树上，不会产生可见性的回调
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/xr3Uo-LJSHqPzcX9p4CNPg/zh-cn_image_0000002408628921.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/PYX8iwlVQFeIaCioHnM0pw/zh-cn_image_0000002408628921.png "点击放大")
 
 这一结果可以表明，离线组件在完成build时，组件由于没有任何相关的父子关系作参考，onVisibleAreaChange()回调函数不会返回结果，开发者在控制离线组件的动效启停需通过其他方式来进行。建议开发者将懒加载组件中的动画初始状态设置为不播放，当组件挂载上树并进入可见状态时，通过可见性回调让其正常播放。
 

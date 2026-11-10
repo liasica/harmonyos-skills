@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-harmony-ap
 title: 应用安全编码实践
 breadcrumb: 最佳实践 > 应用安全 > 应用安全编码实践
 category: best-practices
-scraped_at: 2026-10-29T08:03:21+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:8aaf064efbde8c65851a528d6e1447e738d1fe0ce5b034ba9cfca4b915ecef85
+scraped_at: 2026-11-10T10:42:07+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:f1f2ebe5486fc11d9a12892255f44d919f77c558499faabb7c8a38b08668d420
 ---
 
 ## 概述
@@ -52,7 +52,7 @@ PrivacyAbility 是一个不对外交互的组件，但设置exported属性为tru
 
 * module.json5文件中显式设置exported属性为true，则表明该Ability允许对外交互的；
 
-程序内应用组件如果允许对外交互，数据会跨越信任边界，若被恶意应用程序利用，可能导致信息泄露、功能异常或应用拒绝服务等问题。因此，应使用`permissions`属性为对外交互的应用组件设置访问权限。
+程序内应用组件如果允许对外交互，数据会跨越信任边界，若被恶意应用程序利用，可能导致信息泄露、功能异常或应用拒绝服务等问题。因此，应使用“permissions”属性为对外交互的应用组件设置访问权限。
 
 敏感功能和对外提供的Ability存在利用风险，建议相关组件设置权限进行保护。
 
@@ -99,7 +99,7 @@ PrivacyAbility 是一个不对外交互的组件，但设置exported属性为tru
 
 隐式want是通过action条件匹配的方式来筛选组件，凡是满足条件的应用组件都有被启动的可能。如果携带个人数据，则恶意应用有可能劫持携带的个人数据。应用程序如果要携带个人数据，需要显式指定目标应用组件（bundle名、ability名）或者将个人数据匿名化。示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
-**错误示例:**
+**错误示例：**
 
 ```screen
 import { Want } from '@kit.AbilityKit';
@@ -119,9 +119,9 @@ import { Want } from '@kit.AbilityKit';
     }
 ```
 
-通过示例代码中的action："ability.want.test" 可以隐式启动组件。如果恶意应用也声明了相同的action，隐式调用时将显示一个列表供用户选择。如果用户选择了恶意应用，该应用可能会获取传递的敏感信息。
+通过示例代码中的action:"ability.want.test" 可以隐式启动组件。如果恶意应用也声明了相同的action，隐式调用时将显示一个列表供用户选择。如果用户选择了恶意应用，该应用可能会获取传递的敏感信息。
 
-**正确示例:**
+**正确示例：**
 
 ```screen
 import { Want } from '@kit.AbilityKit';
@@ -155,7 +155,7 @@ import { Want } from '@kit.AbilityKit';
 
 注意：使用此接口前，需申请ohos.permission.PRIVACY\_WINDOW权限。
 
-**正确示例:**
+**正确示例：**
 
 在口令输入、转账支付页面中设置隐私属性，防止截屏/录屏：
 
@@ -209,7 +209,7 @@ struct Index {
 
 对于携带个人数据的公共事件，需设置发送权限或加密个人数据。
 
-**错误示例:**
+**错误示例：**
 
 ```screen
 import { commonEventManager } from '@kit.BasicServicesKit';
@@ -232,7 +232,7 @@ function publishEventWithData() {
 
 发送了一个包含联系人数据的公共事件，但未设置接收方所需的权限。
 
-**正确示例:**
+**正确示例：**
 
 ```screen
 import { commonEventManager } from '@kit.BasicServicesKit';
@@ -262,7 +262,7 @@ function publishEventWithData() {
 
 对于涉及敏感数据或操作的公共事件，订阅方必须设置足够高的权限。
 
-**错误示例:**
+**错误示例：**
 
 ```screen
 import { commonEventManager } from '@kit.BasicServicesKit';
@@ -302,7 +302,7 @@ try {
 }
 ```
 
-**正确示例:**
+**正确示例：**
 
 ```screen
 import { commonEventManager } from '@kit.BasicServicesKit';
@@ -1101,9 +1101,9 @@ function readFile(fileName: string) {
 
 ### 建议正确设置发布版本应用调试属性
 
-"debug"属性是为了方便开发人员对应用进行调试，但对于正式发布版本，如果应用设置为可调试模式，方便了攻击者对应用进行更深入的分析调试，不利于对应用的保护，因此要求正式版本须设置为不可调试模式。
+“debug”属性是为了方便开发人员对应用进行调试，但对于正式发布版本，如果应用设置为可调试模式，方便了攻击者对应用进行更深入的分析调试，不利于对应用的保护，因此要求正式版本须设置为不可调试模式。
 
-对"debug"的设置需要在app.json5文件中进行配置。其中"debug"属性缺省值为false。
+对“debug”的设置需要在app.json5文件中进行配置。其中“debug”属性缺省值为false。
 
 **错误示例：**
 

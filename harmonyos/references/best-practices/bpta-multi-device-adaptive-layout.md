@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 自适应布局
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 界面元素自适应变化 > 自适应布局
 category: best-practices
-scraped_at: 2026-11-04T08:37:52+08:00
+scraped_at: 2026-11-10T10:42:04+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:166a784134ec7c2b99414253c46e111a759fefa873a91b4327961b92eb7c82a8
+content_hash: sha256:a452ffd83193b7ed53ff0616eb4680b8e3a58645fe2c62776a9adcb93b4f329e
 ---
 
 针对常见的开发场景，方舟开发框架提炼了七种自适应布局能力，这些布局可以独立使用，也可多种布局叠加使用。
@@ -54,7 +54,7 @@ content_hash: sha256:166a784134ec7c2b99414253c46e111a759fefa873a91b4327961b92eb7
 * 当父容器的尺寸大于600vp时，父容器中多余的空间全部分配给中间内容区。
 * 当父容器的尺寸小于600vp时，左右两侧的留白区按照“1:1”的比例收缩（即平均分配父容器的不足空间）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/NILhhsYgQhiqCuyulDwAng/zh-cn_image_0000002768365066.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/0gCQUhPSQdm2TkB6HPGBWw/zh-cn_image_0000002768365066.gif "点击放大")
 
 ```typescript
 @Entry
@@ -115,7 +115,7 @@ struct FlexibleCapability1 {
 
 文字和开关的尺寸固定，仅有中间空白区域（Blank组件）随父容器尺寸变化而伸缩。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/OUWh7QkmTBiDK6nsR_be5A/zh-cn_image_0000002768205236.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/UYfE7wsAQGatj0E_5lF5tA/zh-cn_image_0000002768205236.gif "点击放大")
 
 ```typescript
 @Entry
@@ -182,7 +182,7 @@ struct FlexibleCapability2 {
 
 父容器尺寸变化过程中，图标及文字的尺寸不变，图标间的间距及图标离左右边缘的距离同时均等改变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/etYv0hBmSSKMhrRXP-yQmw/zh-cn_image_0000002797525223.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/UE6qVEKPSTWQvlLMEAsNcw/zh-cn_image_0000002797525223.gif "点击放大")
 
 ```typescript
 @Entry
@@ -285,7 +285,7 @@ layoutWeight存在使用限制，所以实际使用过程中大多通过将子�
 
 将三个按钮的.layoutWeight(1)分别替换为.width('33%')、.width('34%')、.width('33%')，也可以实现与当前同样的显示效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/VEFiv6dOTz2L8orQ_K1m6Q/zh-cn_image_0000002797525315.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/YRGa-M7kRUSO3TjxrkM7KA/zh-cn_image_0000002797525315.gif "点击放大")
 
 ```typescript
 @Entry
@@ -370,7 +370,7 @@ struct ProportionCapability {
 
 为方便查看效果，示例中特意给Column组件加了边框。可以看到Column组件随着其Flex父组件尺寸变化而缩放的过程中，始终保持预设的宽高比，其中的图片也始终正常显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/xNHMpCfLQwiIQsL41G1gSg/zh-cn_image_0000002768205538.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/KMJeDWsxRQKzME8HwKwhPA/zh-cn_image_0000002768205538.gif "点击放大")
 
 ```typescript
 @Entry
@@ -461,7 +461,7 @@ struct ScaleCapability {
 
 分别通过List组件实现及通过Scroll组件配合Row组件实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/6yEnKAiHSzCNNmnKlrDJWA/zh-cn_image_0000002797525681.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/r03SMl15QXqlZ-NFwNXrgg/zh-cn_image_0000002797525681.gif "点击放大")
 
 （1）通过List组件实现。
 
@@ -610,7 +610,7 @@ struct ExtensionCapability1 {
 
 父容器尺寸发生变化时，其子元素按照预设的优先级显示或隐藏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/EXGU_q6_S4-lAX9kGHWu3g/zh-cn_image_0000002768365876.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/QdNvxqUDSOqkzYc3xVe2Tw/zh-cn_image_0000002768365876.gif "点击放大")
 
 ```typescript
 @Entry
@@ -716,7 +716,7 @@ struct HiddenCapability {
 
 父容器中的图片尺寸固定，当父容器尺寸发生变化，其中的内容做自适应换行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/x5qoQmiJT8W9IkXjM0F0ag/zh-cn_image_0000002797528317.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/eXBhFjVTSouHOzd9v9zb6Q/zh-cn_image_0000002797528317.gif "点击放大")
 
 ```typescript
 @Entry

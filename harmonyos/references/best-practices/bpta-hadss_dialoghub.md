@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-hadss_dial
 title: 基于DialogHub的通用弹窗
 breadcrumb: 最佳实践 > 布局与弹窗 > 基于DialogHub的通用弹窗
 category: best-practices
-scraped_at: 2026-11-04T08:37:48+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:35c08387edac44f0ffe0de621fa1089dd75dd295ace12c97646fc7e2cc7b4bdd
+scraped_at: 2026-11-10T10:42:01+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:901b3163393b02683894a1377c2243221d68d7a11ca6f0b657e50619cbc4d48f
 ---
 
 ## 概述
@@ -49,8 +49,8 @@ DialogHub作为ArkUI弹窗能力的解决方案，提供了以下功能特性：
 
 ## 实现原理
 
-* **弹窗能力****：**基于ArkUI框架中的OverlayManager和BindSheet能力实现。[OverlayManager](../harmonyos-references/arkts-apis-uicontext-overlaymanager.md)为弹窗提供一个可以覆盖在其他UI元素之上的显示层，而[BindSheet](../harmonyos-references/ts-universal-attributes-sheet-transition.md#bindsheet)则支持将弹窗与特定的页面或组件绑定，实现更精细的控制。
-* **页面级弹窗控制：**通过[UIObserver](../harmonyos-references/arkts-apis-uicontext-uiobserver.md)实时监听应用内的路由变化，当路由发生变化时，触发相应的回调，从而允许DialogHub根据当前页面的状态来决定是否显示或隐藏弹窗。
+* **弹窗能力****：**基于ArkUI框架中的OverlayManager和BindSheet能力实现。[Class (OverlayManager)](../harmonyos-references/arkts-apis-uicontext-overlaymanager.md)为弹窗提供一个可以覆盖在其他UI元素之上的显示层，而[bindSheet](../harmonyos-references/ts-universal-attributes-sheet-transition.md#bindsheet)则支持将弹窗与特定的页面或组件绑定，实现更精细的控制。
+* **页面级弹窗控制：**通过[Class (UIObserver)](../harmonyos-references/arkts-apis-uicontext-uiobserver.md)实时监听应用内的路由变化，当路由发生变化时，触发相应的回调，从而允许DialogHub根据当前页面的状态来决定是否显示或隐藏弹窗。
 
 ## 开发流程
 
@@ -115,14 +115,14 @@ DialogHub.init(this.getUIContext());
 
 1. **创建弹窗模板构造器：**
 
-   调用 DialogHub 的 createToastTemplate()等接口，创建不同类型弹窗的模板构造器 DialogTemplate。
+   调用DialogHub的createToastTemplate()等接口，创建不同类型弹窗的模板构造器 DialogTemplate。
 
    ```screen
    DialogHub.createToastTemplate('SimpleToast');
    ```
 2. **配置模板内容：**
 
-   调用 DialogTemplate 的 setContent()、setAnimation()等接口，配置模板的具体内容、动画效果、样式等。
+   调用DialogTemplate的setContent()、setAnimation()等接口，配置模板的具体内容、动画效果、样式等。
 
    ```screen
    DialogHub.createToastTemplate('SimpleToast')
@@ -133,7 +133,7 @@ DialogHub.init(this.getUIContext());
    ```
 3. **注册模板：**
 
-   调用 DialogTemplate 的 register() 接口，将配置好的模板注册并存储。
+   调用DialogTemplate的register()接口，将配置好的模板注册并存储。
 
    ```screen
    DialogHub.createToastTemplate('SimpleToast')
@@ -142,9 +142,9 @@ DialogHub.init(this.getUIContext());
    ```
 4. **获取并使用弹窗模板：**
 
-   调用 DialogHub 的 getToastTemplate()等接口，根据模板名称获取对应的 DialogBuilder。
+   调用DialogHub的getToastTemplate()等接口，根据模板名称获取对应的DialogBuilder。
 
-   然后按照弹窗能力开发流程中的步骤2~4，使用 DialogBuilder 配置并显示弹窗。
+   然后按照弹窗能力开发流程中的步骤2~4，使用DialogBuilder配置并显示弹窗。
 
    ```screen
    DialogHub.getToastTemplate('SimpleToast')
@@ -158,7 +158,7 @@ DialogHub.init(this.getUIContext());
    获取模板后配置的属性(如动画、位置等)只针对当前弹窗对象生效，不会修改模板内容。
 5. **(可选) 更新模板：**
 
-   调用 DialogHub 的 updateToastTemplate()、updatePopupTemplate() 等接口，更新对应模板名称的配置，并重新注册。
+   调用DialogHub的updateToastTemplate()、updatePopupTemplate()等接口，更新对应模板名称的配置，并重新注册。
 
    ```screen
    DialogHub.updateToastTemplate('SimpleToast')
@@ -167,14 +167,14 @@ DialogHub.init(this.getUIContext());
    ```
 6. **(可选) 删除模板：**
 
-   调用 DialogHub 的 removeTemplate() 接口，删除对应模板名称的弹窗模板。
+   调用DialogHub的removeTemplate()接口，删除对应模板名称的弹窗模板。
 
    ```screen
    DialogHub.removeTemplate('SimpleToast');
    ```
 7. **(可选) 判断模板是否存在：**
 
-   调用 DialogHub 的 isTemplateExist() 接口，判断指定模板名称的弹窗模板是否已被注册。
+   调用DialogHub的isTemplateExist()接口，判断指定模板名称的弹窗模板是否已被注册。
 
    ```screen
    DialogHub.isTemplateExist('SimpleToast');
@@ -195,7 +195,7 @@ DialogHub.getToast()
   .show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Rww3B9u1TTKlR8Mx3lnQiw/zh-cn_image_0000002656422016.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/OmmbsENYSHymX0lUB7W_qg/zh-cn_image_0000002656422016.png "点击放大")
 
 ### 指定位置弹窗的非模态弹窗
 
@@ -224,7 +224,7 @@ this.specifiedLocationDialog = this.specifiedLocationDialog ?? DialogHub.getCust
 this.specifiedLocationDialog.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/7ARw_cJISgKmVVA2tWxGhA/zh-cn_image_0000002686503539.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/0AwywS_2QP-94qsfjnitXw/zh-cn_image_0000002686503539.png "点击放大")
 
 ### 会定时消失且带弹出动效的弹窗
 
@@ -268,7 +268,7 @@ this.specifiedLocationDialog.show();
   }
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/7flOwdsOS6Ko0JUgI96wBA/zh-cn_image_0000002686623461.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/G05rQnC2Sh6-ctp3bwubSA/zh-cn_image_0000002686623461.png "点击放大")
 
 ### 会避让键盘的弹窗
 
@@ -299,7 +299,7 @@ if (forceFresh || this.avoidKeyboardDialog === null || this.avoidKeyboardDialog 
 this.avoidKeyboardDialog.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/aFTPAQp4RFqqAjyzBJiUzA/zh-cn_image_0000002656424912.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/2ovo8jGwTpiJokbCoWE7BA/zh-cn_image_0000002656584862.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/qEo3oxMTSjuIdWjl3SToHw/zh-cn_image_0000002656424912.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/8LAWDnQoQAWazHqP7Jr4KQ/zh-cn_image_0000002656584862.png "点击放大")
 
 ### 指向选定组件的带箭头弹窗
 
@@ -327,7 +327,7 @@ this.arrowPointingPopup = DialogHub.getPopup()
 this.arrowPointingPopup.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/7tDgDIy6ReKauTT6sBaQdg/zh-cn_image_0000002656427622.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/BLd4cAA3RRuC8jhc5yy5pQ/zh-cn_image_0000002656427622.png "点击放大")
 
 ### 点击蒙层自动关闭的弹窗
 
@@ -341,7 +341,7 @@ this.maskCloseDialog = this.maskCloseDialog ?? DialogHub.getCustomDialog()
 this.maskCloseDialog.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/DJXgH521SiqQ4wtaSDH9Ow/zh-cn_image_0000002657633398.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/yOCSTZ5-Tdy4g-vNWn7N9w/zh-cn_image_0000002657633398.png "点击放大")
 
 ### 可主动关闭的弹窗
 
@@ -370,7 +370,7 @@ this.activelyCloseDialog = this.activelyCloseDialog ?? DialogHub.getCustomDialog
 this.activelyCloseDialog.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/eSYyT31KRPu5-OwBDmrzDQ/zh-cn_image_0000002687673109.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/YSGZmUf9S4e2SghKzzDRSg/zh-cn_image_0000002687673109.png "点击放大")
 
 ### 能够动态调整高度的底部弹窗
 
@@ -415,7 +415,7 @@ sheet类型弹窗须调用setComponentTargetId(targetCompId)以实现页面级�
 
 当前示例主要面向直板机等窄屏场景使用。因此对于如电脑、三折叠展开态等屏幕宽度大于600vp的场景，会自动隐藏对应入口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/xs0aosovQhikPjJAYnK9HQ/zh-cn_image_0000002686507285.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/kLZ_7l1vQ3iZiT25VCjdLw/zh-cn_image_0000002656587618.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/986yjv2tQaak_1BB3EqMnA/zh-cn_image_0000002686507285.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/yK8t0NBhQRq3i_vBCWG8ag/zh-cn_image_0000002656587618.png "点击放大")
 
 ### 应用感知弹窗的打开、关闭
 
@@ -440,7 +440,7 @@ sheet类型弹窗须调用setComponentTargetId(targetCompId)以实现页面级�
   this.sensorDialog?.getStatus();
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/FqwxYEK2STq6AEYnUxp7Mw/zh-cn_image_0000002686627183.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/6lJj2KxgRqOVpsqGLJMysA/zh-cn_image_0000002656587700.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/zL9nvvRtTTSZ0gHbDiHjSA/zh-cn_image_0000002686627183.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/NV7MYcK7Th2HQsnugkMV8g/zh-cn_image_0000002656587700.png "点击放大")
 
 ## 弹窗与周边的交互
 
@@ -495,7 +495,7 @@ DialogHub.createCustomTemplate(CommonConstant.CUSTOM_TEMPLATE_SIMPLE)
   .setConfig({ dialogBehavior: { passThroughGesture: true, isModal: false } })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/zbpZROaQTqunXEoQYj5lBg/zh-cn_image_0000002656427846.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/dR8-Bx0XSmKrlFT9vGkJAA/zh-cn_image_0000002656427846.png "点击放大")
 
 ### 需要向页面返回数据的弹窗
 
@@ -523,7 +523,7 @@ this.returnDataDialog = DialogHub.getCustomDialog()
 this.returnDataDialog.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/kyWKv0YETN2uT9d9AWVvcg/zh-cn_image_0000002686507517.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/2s5ZOnh6Q2eD9ZhSrE7q9Q/zh-cn_image_0000002656428000.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/x85_sRZbStOwfKOPFyU5Lg/zh-cn_image_0000002686507517.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/ZyAg2GMyTui3ndE0GNneNg/zh-cn_image_0000002656428000.png "点击放大")
 
 ### 父页面刷新正在展示的弹窗内容
 
@@ -553,7 +553,7 @@ this.intervalID = setInterval(() => {
 }, CommonConstant.Interval_20);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/kLMAyvtuS36MrW8oE_cA2Q/zh-cn_image_0000002686627433.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/RqJo5SIiQ_anRz36gjJktw/zh-cn_image_0000002686627433.png "点击放大")
 
 ### 页面需要感知当前页面是否存在弹窗
 
@@ -582,7 +582,7 @@ this.skipDialog?.updateConfig({
 this.skipDialog?.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/PZd2-U_jSE64K9xRkup-NQ/zh-cn_image_0000002686507615.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/9vDAaEW7QT-KC_B-I3kE5w/zh-cn_image_0000002686507615.png "点击放大")
 
 ### 折叠屏展开态不同位置的弹窗
 
@@ -601,7 +601,7 @@ this.skipDialog?.updateConfig({
 this.skipDialog?.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/WM-0qOC9QXOBdwnuC4rMgg/zh-cn_image_0000002656588412.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/wBGIlsTDRR23I9ecFdwvag/zh-cn_image_0000002656588412.png "点击放大")
 
 弹窗在右半屏：
 
@@ -616,7 +616,7 @@ this.skipDialog?.updateConfig({
 this.skipDialog?.show();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/c4jrecsUQ1eh3xSi-lFYJA/zh-cn_image_0000002656428632.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/2jzW92tcQiWmEZ1dNIlmeA/zh-cn_image_0000002656428632.png "点击放大")
 
 ## 弹窗内容复用场景
 
@@ -756,7 +756,7 @@ this.originalTemplateDialog?.show();
 
 ### Popup绑定组件，id报错
 
-[组件标识id](../harmonyos-references/ts-universal-attributes-component-id.md#id)需要开发者保证唯一性。setComponentTargetId()设置绑定的组件id后，如果id有问题，会导致在show的时候报错且弹窗位置异常。
+[id](../harmonyos-references/ts-universal-attributes-component-id.md#id)需要开发者保证唯一性。setComponentTargetId()设置绑定的组件id后，如果id有问题，会导致在show的时候报错且弹窗位置异常。
 
 * id不存在：不存在此id的节点，排查绑定组件是否设置该id属性。错误码70000001。
 

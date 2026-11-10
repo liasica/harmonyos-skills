@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-optimizati
 title: 性能分析简介
 breadcrumb: 最佳实践 > 性能 > 性能分析 > 性能分析简介
 category: best-practices
-scraped_at: 2026-11-04T08:37:57+08:00
+scraped_at: 2026-11-10T10:42:07+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:c76a2d2b24c050d0d7c429dad25d9d2ccdc168a704ce6a17ea35b5fc0add1a3d
+content_hash: sha256:3cc27bd88d76fe499ee7f88976bc12ba4acbecfcd8e48a1f07e816ab25d71a1b
 ---
 
 ## 概述
@@ -77,7 +77,7 @@ HarmonyOS的DFX子系统提供了为应用框架以及系统底座核心模块�
 
 **图1** 线程状态转化图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/0fgyHDS_QZO7ClNxB-7UwA/zh-cn_image_0000002193851692.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/Jb0hm-pkRMWi5rtOxcF10Q/zh-cn_image_0000002193851692.png)
 
 ### 通过Trace点位信息识别线程状态
 
@@ -85,31 +85,31 @@ Trace 会用不同的颜色来标识不同的线程状态，在每个方法上�
 
 **（1）运行中（Running）**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/oDs4H1JLTEWu7EzxKr9Ebw/zh-cn_image_0000002229337097.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/dbvPpDGORTmYcKvUVz2wag/zh-cn_image_0000002229337097.png "点击放大")
 
 运行中（Running）表示处于该状态的线程才可能在CPU上运行。同一时刻可能有多个线程处于可执行状态，这些线程的task\_struct结构被放入对应CPU的可执行队列中，每个线程最多出现在一个CPU的可执行队列中。调度器从各个CPU的可执行队列中选择一个线程在该CPU上运行。
 
 **（2）可运行（Runnable）**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/ePVRwPZQSZmv0DX_tJvBYg/zh-cn_image_0000002194011288.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/uA7DL8aLRX6IyGzsOVgeAg/zh-cn_image_0000002194011288.png "点击放大")
 
 可运行（Runnable）表示线程可以运行但当前未被调度，在等待CPU。Runnable状态持续时间越长，说明CPU调度越忙，未能及时处理该任务。
 
 **（3）休眠中（Sleep）**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/qN6gXlJ-SOGux07eYWp1Vw/zh-cn_image_0000002229337117.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/YY_BDRzVSxqE6wVLtZaeVg/zh-cn_image_0000002229337117.png "点击放大")
 
 休眠中（Sleep）表示线程没有工作，可能是因为在互斥锁上被阻塞，或在等待某些操作返回，通常是在等待事件驱动。
 
 **（4）IO阻塞下不可中断的睡眠态（Uninterruptible Sleep - IO）**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/oDc9Xt_ZQBelPht0Tib7kQ/zh-cn_image_0000002194011280.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/3uNys04lQJ2pV1qjXOazvw/zh-cn_image_0000002194011280.png "点击放大")
 
 IO阻塞下不可中断的睡眠态（Uninterruptible Sleep - IO）表示线程在I/O上被阻塞或等待磁盘操作完成。当系统处于低内存状态时，申请内存的时候可能会触发page fault，从而导致有大量的不可中断的睡眠态出现。在Linux系统的page cache链表中，有时会出现一些还没准备好的page(即还没把磁盘中的内容完全地读出来) ，而正好此时用户在访问这个page时就会出现page fault。
 
 **（5）不可中断的睡眠态（Uninterruptible Sleep - non IO）**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/yJkVhSRbR6yhXzSUmTN65g/zh-cn_image_0000002193851728.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/mplDGXTVSSiiRSqehyojLw/zh-cn_image_0000002193851728.png "点击放大")
 
 不可中断的睡眠态（Uninterruptible Sleep - non IO）表示线程在其他内核操作（如内存管理）上被阻塞。线程陷入内核态，有时是正常现象，有时则需要进一步分析。
 
@@ -118,7 +118,7 @@ IO阻塞下不可中断的睡眠态（Uninterruptible Sleep - IO）表示线程�
 在HarmonyOS中，图形系统采用统一渲染模式，遵循典型流水线模式。以60Hz刷新率为例，每个Vsync周期为16.7ms；90Hz时，每个Vsync周期为11.1ms；120Hz时，每个Vsync周期为8.3ms。
 
 **图2** 90Hz刷新率渲染流程  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/ZBwyfc83T7-be4ukYE6trQ/zh-cn_image_0000002193851704.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/cKyrL-BcRGK-TNwoCHZRNQ/zh-cn_image_0000002193851704.png "点击放大")
 
 在整个渲染流程中，应用侧首先响应消费者的屏幕点击等输入事件，处理完成后提交给Render Service。Render Service协调GPU等资源处理，最终将图像送到屏幕上显示。
 
@@ -130,7 +130,7 @@ IO阻塞下不可中断的睡眠态（Uninterruptible Sleep - IO）表示线程�
 
 **图3** ArkUI渲染管线结构与Frame Insight性能打点
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/ukR3JtlpRWy0FrYQ61oE7w/zh-cn_image_0000002229337101.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/HfO5R9-WSp-2JfLWNGeswQ/zh-cn_image_0000002229337101.png "点击放大")
 
 * Animation：动画阶段，在动画过程中会修改相应的FrameNode节点触发脏区标记，在特定场景下会执行用户侧ets代码实现自定义动画；
 * Events：事件处理阶段，比如手势事件处理。在手势处理过程中也会修改FrameNode节点触发脏区标记，在特定场景下会执行用户侧ets代码实现自定义事件；
@@ -143,10 +143,10 @@ IO阻塞下不可中断的睡眠态（Uninterruptible Sleep - IO）表示线程�
 在整个处理流程中，应用侧和Render Service侧都可能出现卡顿，导致最终用户观察到丢帧。这两种情况分别称为AppDeadlineMissed和RenderDeadlineMissed。AppDeadlineMissed通常是由于应用逻辑处理代码不够高效导致的，而RenderDeadlineMissed则可能是因为界面结构过于复杂或GPU负载过大等原因引起的。这两个故障模型通过Frame模板可以直观地查看。相应的故障模型如下图所示。
 
 **图4** 应用卡顿导致丢帧的故障模型  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/l4NvDgIAS22RZ9gZt8cg4Q/zh-cn_image_0000002194011292.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/Z_pyI2NdRD6WDRQ7Nmtqdw/zh-cn_image_0000002194011292.png "点击放大")
 
 **图5** Render Service卡顿导致丢帧的故障模型  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/SbjYBQEbSuGNt05BBTYU5Q/zh-cn_image_0000002193851724.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/3eABymOpQU6Jz9JxMHT8Wg/zh-cn_image_0000002193851724.png "点击放大")
 
 ### 通过Trace识别关键渲染流程
 
@@ -154,7 +154,7 @@ IO阻塞下不可中断的睡眠态（Uninterruptible Sleep - IO）表示线程�
 
 **图6** UI后端引擎渲染Trace泳道图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/8TPcTujvSMyYzKCEFoQ0FQ/zh-cn_image_0000002193851696.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/x461tC6ERwiXIsdi0jRiOA/zh-cn_image_0000002193851696.png "点击放大")
 
 各部分介绍见下表：
 
@@ -178,7 +178,7 @@ Vsync信号刷新时的Trace泳道图如下所示。
 
 **图7** RS侧渲染Trace泳道图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/8BUJw_AZTXeCuMoDKQQJdg/zh-cn_image_0000002193851708.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/MP6pG1bcSFa6EgPStA_FDA/zh-cn_image_0000002193851708.png "点击放大")
 
 各部分介绍如下表：
 
@@ -201,7 +201,7 @@ Vsync信号刷新时的Trace泳道图如下所示。
 
 下图展示了懒加载过程中一帧的Trace泳道图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/sovarsrnQbOfMogg1W8Mng/zh-cn_image_0000002229451597.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/qdbWfATESsuICwfYO_q_vg/zh-cn_image_0000002229451597.png "点击放大")
 
 | 序号 | Trace | 参数说明 | 描述 |
 | --- | --- | --- | --- |
@@ -220,8 +220,8 @@ Vsync信号刷新时的Trace泳道图如下所示。
 
 自定义Trace示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/URZB-70qRp6DdaYh83DbNw/zh-cn_image_0000002194011304.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/7NoFWY49QHq055IovBxpmA/zh-cn_image_0000002194011304.png "点击放大")
 
 自定义状态值示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/J5hpUksSTKGAimZHd6A-AA/zh-cn_image_0000002229337085.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/JD66xHc6RVO-0UnuOHUCNw/zh-cn_image_0000002229337085.png "点击放大")

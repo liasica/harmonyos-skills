@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 应用冻屏问题排查方法
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 开发态稳定性分析 > 应用冻屏类问题分析 > 应用冻屏问题排查方法
 category: best-practices
-scraped_at: 2026-11-04T08:38:07+08:00
-doc_updated_at: 2026-07-22
-content_hash: sha256:1efd5c35537c95fb806f561716cb5048c1b6cc327af72295e9f17bd518292809
+scraped_at: 2026-11-10T10:42:13+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:b981bd1e5fe483c620b88f62afc23a0c2f9839e8671fb630c1e430c91b53a17a
 ---
 
 **须知** 
@@ -193,7 +193,7 @@ hiappevent对外提供订阅系统卡死事件，可以查询卡死事件信息�
    # 11 at query (entry/build/default/cache/default/default@CompileArkTS/esmodule/release/datamanager/datawrapper/src/main/ets/database/RdbManager.ts:188:1)
    ```
 
-   堆栈显示等锁卡死，通过反汇编获取对应代码行，排查其他线程栈和代码上下文锁的使用解决故障，请参考：[通过llvm-addr2line工具定位行号](bpta-stability-app-crash-cpp-way.md#li186453444512)。
+   堆栈显示等锁卡死，通过反汇编获取对应代码行，排查其他线程栈和代码上下文锁的使用解决故障，请参考：[通过SDK llvm-addr2line工具定位...](bpta-stability-app-crash-cpp-way.md#li186453444512)。
 2. warning/block栈一致，卡在IPC请求
 
    ```screen
@@ -380,11 +380,11 @@ DFX 相关打印：
 
    应用主线程日志完全无打应输出：卡死在最后日志打印的接口调用处
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/6LkfHk2nSSOCX0_MXr6vFw/zh-cn_image_0000002404125181.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/e8ZH7fc0TuSBm8rTGJWMYA/zh-cn_image_0000002370405640.png)例如示例：APP\_INPUT\_BLOCK 类型在07:24:08.167上报，应用主线程在07:24:01.581后就没有打印了，可排查是否为FormManagerService: [form\_mgr\_proxy.cpp(GetFormsInfoByApp:1128)]中的逻辑超时。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/6_QEhF85RcK2-0fFKDe0ZQ/zh-cn_image_0000002404125181.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/qy9nAzNLTtyr53ftHVQsmw/zh-cn_image_0000002370405640.png)例如示例：APP\_INPUT\_BLOCK 类型在07:24:08.167上报，应用主线程在07:24:01.581后就没有打印了，可排查是否为FormManagerService: [form\_mgr\_proxy.cpp(GetFormsInfoByApp:1128)]中的逻辑超时。
 
    应用高频打印输出同类日志：分析对应输出表示的场景及其合理性
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/WuoZ2Lm_TyqT55A111owwQ/zh-cn_image_0000002404045345.png)例如示例：进程在被杀死前在大量输出，对应的ImageEffect领域需排查此日志是否正常，是否陷入死循环或频繁调用场景。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/llmhQ10CQ0mxXiywmmAPgQ/zh-cn_image_0000002404045345.png)例如示例：进程在被杀死前在大量输出，对应的ImageEffect领域需排查此日志是否正常，是否陷入死循环或频繁调用场景。
 
 ### 结合trace信息
 
@@ -392,7 +392,7 @@ DFX 相关打印：
 
 1. 进程频繁执行密集任务超时
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/W8Z0PGPEQ5OUX3PeJyH1AQ/zh-cn_image_0000002370565524.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/_6HHRaq2S7mXRGb-y2R7_w/zh-cn_image_0000002404125185.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/y0tW4Ha2RtmbUeUIZtSRFg/zh-cn_image_0000002370565524.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/dUYEnOKORlapBxwjE3U4Xw/zh-cn_image_0000002404125185.png)
 
    示例为：PreviewArea::updateShotComponent（更新组件） -> ohos.animator （执行动画）-> 密集的动画执行过程达9.2s；
 
@@ -402,9 +402,9 @@ DFX 相关打印：
    2. 符合业务场景，分析每一小段业务是否耗时超过预期，性能为何不满足设计规格；
 2. 进程执行某一任务超时
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/4Yfz89_DSjmh0UJip3iD5w/zh-cn_image_0000002370405644.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/WKtsZq-FRLC55XLuLmNdwQ/zh-cn_image_0000002370405644.png "点击放大")
 
    示例为：OHOS::AppExecFwk::FormMgrAdapter::GetFormsInfoByApp接口执行时长达到8s。
 3. 进程多段任务累积超时
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/pjKxX4KZR4Kk896HCEz1pQ/zh-cn_image_0000002404045349.png "点击放大")示例中：三段任务累积到达6s超时，判断场景为屏幕旋转后页面动画超时。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/mj4dSwhRTiCvjWltm6JEQA/zh-cn_image_0000002404045349.png "点击放大")示例中：三段任务累积到达6s超时，判断场景为屏幕旋转后页面动画超时。

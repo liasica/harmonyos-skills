@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 基于AVRecorder录制格式化音频（ArkTS）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 基于AVRecorder录制格式化音频（ArkTS）
 category: best-practices
-scraped_at: 2026-11-04T08:37:50+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:5435efd7bad051ba8d1559cf35741fc1462e11881d92d009bd758cde3a18939a
+scraped_at: 2026-11-10T10:42:02+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:19f048dbc2a3a649e08df607016fb2f07844ea3ee55f8c56be720afc74dac13a
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:5435efd7bad051ba8d1559cf35741fc1462e11881d92d009bd758cde3a1
 
 基于[Interface (AVRecorder)](../harmonyos-references/arkts-apis-media-avrecorder.md)录制格式化音频（ArkTS）实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/6EM1sHylT6yBmKRAxtD-ag/zh-cn_image_0000002524061074.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/OCgUI0-_TuOa9QacNtp4Rg/zh-cn_image_0000002524061074.gif "点击放大")
 
 本文的主要内容如下：
 
@@ -26,11 +26,11 @@ content_hash: sha256:5435efd7bad051ba8d1559cf35741fc1462e11881d92d009bd758cde3a1
 
 为了方便开发者录制并输出格式化音频文件，HarmonyOS提供了[Interface (AVRecorder)](../harmonyos-references/arkts-apis-media-avrecorder.md)录制器，用于音频数据采集、音频编码以及音频文件封装等端到端一体化音频录制。AVRecorder输出文件格式支持m4a、mp3等格式，支持设置静音打断和回声消除，便于快速实现音频录制的功能。例如，开发者可以直接调用设备硬件（如麦克风）进行录音，并生成m4a音频文件。
 
-[Interface (AVRecorder)](../harmonyos-references/arkts-apis-media-avrecorder.md)提供了开始录制、暂停录制、恢复录制、停止录制、释放资源等功能。其整个开发流程可以概括为：AVRecorder实例创建、采集回调注册（各类事件监听）、音频采集参数配置、采集的开始、暂停、恢复、停止以及资源的释放等。其中，事件监听主要包括音频焦点中断事件监听和音频录制流状态监听。在创建完实例后，开发者可以调用相关方法使得音频录制流进入对应的状态。如果在某个状态下调用不合适的方法，则可能导致不可预期的错误，所以开发过程中应该严格遵循状态机要求，如只能在paused状态下调用resume()接口。
+[Interface (AVRecorder)](../harmonyos-references/arkts-apis-media-avrecorder.md)提供了开始录制、暂停录制、恢复录制、停止录制、释放资源等功能。其整个开发流程可以概括为：AVRecorder实例创建、采集回调注册（各类事件监听）、音频采集参数配置、采集的开始、暂停、恢复、停止以及资源的释放等。其中，事件监听主要包括音频焦点中断事件监听和音频录制流状态监听。在创建完实例后，开发者可以调用相关方法使得音频录制流进入对应的状态。如果在某个状态下调用不合适的方法，则可能导致不可预期的错误，所以开发过程中应该严格遵循状态机要求，如只能在paused状态下调用[resume](../doccenter-references/api/arkts-apis-media-avrecorder.md#resume9)()接口。
 
 **图1** 录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/wmZti98rQoys3axYxqZK2w/zh-cn_image_0000002555220983.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/GWgIQQd9QA-WOfaPgq3Jqw/zh-cn_image_0000002555220983.png "点击放大")
 
 ### 开发步骤
 
@@ -58,7 +58,7 @@ public async initAVRecorder() {
 
 * 设置音频录制[AVRecorderProfile](../harmonyos-references/arkts-apis-media-i.md#avrecorderprofile9)的参数配置，包括采样率、采样通道、音频格式等。
 * 设置音频录制[AVRecorderConfig](../harmonyos-references/arkts-apis-media-i.md#avrecorderconfig9)的参数配置，包括音频源类型、录制输出的URL等。
-* 调用prepare()接口，进入prepared状态。在进入prepared状态后，调用startRecorder()接口。
+* 调用[prepare](../doccenter-references/api/arkts-apis-media-avrecorder.md#prepare9)()接口，进入prepared状态。在进入prepared状态后，调用startRecorder()接口。
 
 ```screen
 // Configure audio recording parameters
@@ -99,7 +99,7 @@ public prepareAVRecorder(uiContext: Context | undefined) {
 }
 ```
 
-3.调用start()接口，开始音频录制。
+3.调用[start](../doccenter-references/api/arkts-apis-media-avrecorder.md#start9)()接口，开始音频录制。
 
 ```typescript
 // Start recording
@@ -112,7 +112,7 @@ public startRecorder() {
 }
 ```
 
-4.调用pause()接口，暂停音频录制。
+4.调用[pause](../doccenter-references/api/arkts-apis-media-avrecorder.md#pause9)()接口，暂停音频录制。
 
 ```typescript
 // Pause recording
@@ -125,7 +125,7 @@ public pauseRecorder() {
 }
 ```
 
-5.调用resume()接口，恢复音频录制。
+5.调用[resume](../doccenter-references/api/arkts-apis-media-avrecorder.md#resume9)()接口，恢复音频录制。
 
 ```typescript
 // Resume recording
@@ -138,7 +138,7 @@ public resumeRecorder() {
 }
 ```
 
-6.调用stop()接口，停止音频录制。
+6.调用[stop](../doccenter-references/api/arkts-apis-media-avrecorder.md#stop9)()接口，停止音频录制。
 
 ```typescript
 // Stop recording
@@ -151,7 +151,7 @@ public stopRecorder() {
 }
 ```
 
-7.调用release()接口，释放音频录制资源。
+7.调用[release](../doccenter-references/api/arkts-apis-media-avrecorder.md#release9)()接口，释放音频录制资源。
 
 ```typescript
 // Release audio recording resources

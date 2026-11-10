@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-picture-a
 title: 多设备图片美化界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备图片美化界面
 category: best-practices
-scraped_at: 2026-11-04T08:37:53+08:00
+scraped_at: 2026-11-10T10:42:04+08:00
 doc_updated_at: 2026-10-15
-content_hash: sha256:efd4511dd5d92b50008dbe150144e27ddc638e3a1a70660185718a1a088e0a57
+content_hash: sha256:c4e8b188b916e0923ed513251f5f4114c6f98e7a56edd680e0afea20851fe258
 ---
 
 ## 概述
@@ -30,7 +30,7 @@ content_hash: sha256:efd4511dd5d92b50008dbe150144e27ddc638e3a1a70660185718a1a088
 
 图片美化应用的UX设计可参考社交通讯类多设备响应式设计指南的[拍摄美化类](../design-guides/responsive-design-examples3-0000001746498074.md)章节，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/sf0r1E3VTMmExNl5rFZlfg/zh-cn_image_0000002610145561.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/CTYNldoXR1uLvlShooA9_g/zh-cn_image_0000002610145561.png "点击放大")
 
 ## 工程管理
 
@@ -158,7 +158,7 @@ content_hash: sha256:efd4511dd5d92b50008dbe150144e27ddc638e3a1a70660185718a1a088
 
 在照片浏览页面，用户可通过双指缩放手势动态调整图片宫格布局的显示大小。双指向外张开时，宫格放大，每行图片数量减少；双指向内捏合时，宫格缩小，每行图片数量增多。效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/nfpigdGUR7ONxsqLHIQbmg/zh-cn_image_0000002579625672.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/CK3frVgSTKihPCFQOttJrQ/zh-cn_image_0000002579625672.gif "点击放大")
 
 使用[PinchGesture](../harmonyos-references/ts-basic-gestures-pinchgesture.md)实现双指捏合手势触发时，动态修改Grid组件的显示列数。开发详情请参考[手势事件](bpta-multi-interaction.md#section182814229423)或[示例代码](multi-picture-app.md#section23671643329)。
 
@@ -182,7 +182,7 @@ content_hash: sha256:efd4511dd5d92b50008dbe150144e27ddc638e3a1a70660185718a1a088
 
 图片美化应用的照片浏览页主要用于展示照片及分类导航，以满足用户查看不同相册照片的需求。根据功能设计，将照片浏览页相关内容划分为3个区域，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/unncnUB4TgGK0cO6fWKgLQ/zh-cn_image_0000002754317059.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/O6fGUmKMR7CBU_w7U72iog/zh-cn_image_0000002754317059.png "点击放大")
 
 **界面开发**
 
@@ -198,7 +198,7 @@ content_hash: sha256:efd4511dd5d92b50008dbe150144e27ddc638e3a1a70660185718a1a088
 
 图片美化应用的照片编辑页主要用于一键套用预设滤镜，以满足用户的个性化表达需求。根据功能设计，将照片编辑页的相关内容划分为3个区域，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/1N16-K3KSAuQsPFRbTVNEw/zh-cn_image_0000002610065459.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/Of3PXriIRhWr699SdtG30Q/zh-cn_image_0000002610065459.png "点击放大")
 
 **界面开发**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 基于AVRecorder录制格式化音频（C++）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 基于AVRecorder录制格式化音频（C++）
 category: best-practices
-scraped_at: 2026-11-04T08:37:50+08:00
+scraped_at: 2026-11-10T10:42:03+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:2da5e348a2821d115ad824aaff6c70126c0e6df3c42231d451308a178d81d2cc
+content_hash: sha256:aea3577c3eb3002055f4098f94d98399b2c3cb2ee0d8808aa11e1cd10fe5ef06
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:2da5e348a2821d115ad824aaff6c70126c0e6df3c42231d451308a178d8
 
 基于[AVRecorder](../harmonyos-references/capi-avrecorder.md)录制格式化音频（C++）实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/cZWtfTkLSCWEcx18iUDPnQ/zh-cn_image_0000002524221070.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/T5tkk7YTQYCSGBa9sRLKvQ/zh-cn_image_0000002524221070.gif "点击放大")
 
 本文的主要内容如下：
 
@@ -28,7 +28,7 @@ content_hash: sha256:2da5e348a2821d115ad824aaff6c70126c0e6df3c42231d451308a178d8
 
 **图1** 录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/oiUHRC9rToWWad4_-QmJMw/zh-cn_image_0000002555340939.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/XrRLf8cBRY6LJ-jgYTLkyQ/zh-cn_image_0000002555340939.jpg "点击放大")
 
 ### 开发步骤
 

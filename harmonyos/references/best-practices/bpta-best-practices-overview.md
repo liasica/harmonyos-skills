@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-best-pract
 title: 最佳实践概览
 breadcrumb: 最佳实践 > 概览 > 最佳实践概览
 category: best-practices
-scraped_at: 2026-04-28T08:19:40+08:00
-doc_updated_at: 2026-03-12
-content_hash: sha256:3e882a3566fca2b0a34b6e6ba0e6c9e8aaf1d248b9ded66302a69fbbff0736fd
+scraped_at: 2026-11-10T10:42:01+08:00
+doc_updated_at: 2026-11-09
+content_hash: sha256:8f65094e178f2d72ed4374e31315f1cf794a8666bcf8fd0125e4df12977f76b6
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ HarmonyOS应用开发最佳实践，是基于大量真实开发场景提炼出�
 
 ## 架构设计
 
-良好的架构设计能够确保系统具有良好的可扩展性、可维护性和可测试性。架构设计最佳实践通过具体实例帮助开发者理解HarmonyOS推荐的[分层架构设计](bpta-layered-architecture-design.md)和[模块化设计](bpta-modular-design.md)。
+良好的架构设计能够确保系统具有良好的可扩展性、可维护性和可测试性。架构设计最佳实践通过具体实例帮助开发者理解HarmonyOS推荐的[分层架构设计](../doccenter-architecture/bpta-layered-architecture-design.md)和[模块化设计](../doccenter-architecture/bpta-modular-design.md)。
 
 ## 界面开发
 

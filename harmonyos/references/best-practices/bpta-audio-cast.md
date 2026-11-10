@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-cast
 title: 音频投播
 breadcrumb: 最佳实践 > 技术创新 > 全场景 > 多端协同 > 音频投播
 category: best-practices
-scraped_at: 2026-11-04T08:37:46+08:00
+scraped_at: 2026-11-10T10:42:00+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:c54d2735e71a3577693ec506123275866f83cd5c9376f98bbe127bc1508f05ae
+content_hash: sha256:7542e2782ff39c14ea1aac0e80f64f49b9434a6b2747753bed1ebc8a539fdbc9
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ content_hash: sha256:c54d2735e71a3577693ec506123275866f83cd5c9376f98bbe127bc1508
 
 **体验视频**
 
-**图1** 音频投播流程体验视频[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/a0/v3/Xu58Fa5MS8q7ivUZLsMGhw/zh-cn_media_0000002421894784.mp4)
+**图1** 音频投播流程体验视频[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/76/v3/F5tRqaJhRMmMKLlsym5m5A/zh-cn_media_0000002421894784.mp4)
 
 **用户体验路径**
 
@@ -56,7 +56,7 @@ content_hash: sha256:c54d2735e71a3577693ec506123275866f83cd5c9376f98bbe127bc1508
 投播功能的实现基于AVSession媒体会话和AVCastController投播控制器的协同工作，系统通过AVSession建立设备连接，由AVCastController向Cast+服务发送控制指令。开发者需要聚焦两个核心环节——通过AVSession实现监听设备连接，以及使用AVCastController控制远端播放并同步状态，详见[运作机制](../harmonyos-guides/distributed-playback-overview.md#运作机制)。
 
 **图6** 音视频投播运作机制示意图   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/pDqhio7vQy-NMC5Ofc2zEw/zh-cn_image_0000002422054660.png "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/kRCpkpF5TmGHfUFyy5nV4A/zh-cn_image_0000002422054660.png "点击放大")
 
 ## 模块设计
 
@@ -69,14 +69,14 @@ content_hash: sha256:c54d2735e71a3577693ec506123275866f83cd5c9376f98bbe127bc1508
 实现音频投播功能，建议参考如下流程接入，其中本端音频的播放和控制可参考[使用AVPlayer播放音频](../harmonyos-guides/using-avplayer-for-playback.md)、[使用AudioRenderer开发音频播放功能](../harmonyos-guides/using-audiorenderer-for-playback.md)等方案根据功能诉求自行实现，本文将从接入播控中心开始进行详细介绍。
 
 **图7** 接入音频投播流程图   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/aZBciuVyQQKZBN--CDHQMQ/zh-cn_image_0000002455573521.png "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/QPyv85hBRm2-qzbNomJayQ/zh-cn_image_0000002455573521.png "点击放大")
 
 ## 接入播控中心
 
 [音视频播控服务](../harmonyos-guides/avsession-overview.md)用于统一管理系统中所有音视频行为，开发者须接入播控中心才能实现投播功能。播控中心不仅能控制本端设备的播放，还能控制远端设备的播放。
 
 **图8** 播控中心控制音频播放   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/YxKO-NVhRUS1xLzCN1zmBg/zh-cn_image_0000002455453641.gif "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/grWH-82aSHiEEXmjCrctyg/zh-cn_image_0000002455453641.gif "点击放大")
 
 本应用与系统播控中心通过媒体会话AVSession进行信息交互。创建并初始化媒体会话实例后，应用需要通过[setAVMetaData()](../harmonyos-references/arkts-apis-avsession-avsession.md#setavmetadata10)接口设置会话元数据，同时使用[setAVPlaybackState()](../harmonyos-references/arkts-apis-avsession-avsession.md#setavplaybackstate10)接口主动向播控中心同步当前播放状态，并通过on('controlCommand')注册事件监听实时响应播控中心的音频操作事件，最终实现本应用与播控中心的双向状态同步，确保两端数据的一致性。下面为应用接入播控中心的简要开发流程。
 
@@ -181,14 +181,14 @@ this.AVSession?.on('pause', () => controller?.setPause());
 
 ### 创建投播
 
-**图9** 本端播放的音频投播到远端[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/1e/v3/eaHeReTuTmKD3jrvDM5Lcg/zh-cn_media_0000002421894824.mp4)
+**图9** 本端播放的音频投播到远端[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/ed/v3/lojx7eQhQayUDsDwhxxa7g/zh-cn_media_0000002421894824.mp4)
 
 创建投播需要通过setExtras()声明应用支持投播功能，初始化投播组件AVCastPicker，同时通过媒体会话注册设备改变事件监听。用户交互时，触发AVCastPicker组件弹出设备选择的半模态弹窗，待设备选定后，应用需依次执行投播媒体信息设置、投播媒体资源准备（prepare）和投播媒体资源播放启动（start）来将本端音视频资源投播到远端继续播放。
 
 **时序图**
 
 **图10** 创建投播时序图   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/Mljc0DQGSoKvGxYJPFsQ1w/zh-cn_image_0000002422054684.png "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/TbIQYLhhRRGpEClS90tHTg/zh-cn_image_0000002422054684.png "点击放大")
 
 **开发步骤**
 
@@ -202,7 +202,7 @@ this.AVSession?.on('pause', () => controller?.setPause());
 2. 在音频播放页绘制投播组件[AVCastPicker](../harmonyos-references/ohos-multimedia-avcastpicker.md#avcastpicker)，用于拉起半模态弹窗选择投播设备。
 
    **图11** 发起投播界面   
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/DM8CNjMZQs2LcQ-y6o6V8Q/zh-cn_image_0000002455573541.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/CjYfSw3HTw65aIp-fF1HLA/zh-cn_image_0000002455573541.png "点击放大")
 
    ```typescript
    AVCastPicker({
@@ -265,14 +265,14 @@ this.AVSession?.on('pause', () => controller?.setPause());
 
 ### 本端控制远端音频播放
 
-**图12** 本端控制远端音频播放[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/cb/v3/76A90Q3rTVinX6tohHhb7Q/zh-cn_media_0000002455453669.mp4)
+**图12** 本端控制远端音频播放[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/ed/v3/mnsFFQ_HQxOKnqHbWWq5fg/zh-cn_media_0000002455453669.mp4)
 
 开发者可以采用[avCastController.sendControlCommand()](../harmonyos-references/arkts-apis-avsession-avcastcontroller.md#sendcontrolcommand10)接口控制远端设备的播放状态，通过在command参数中传入不同的投播控制指令并设置相关参数，可以控制远端播放、暂停、播放进度、音量和循环模式等。具体指令与功能的对应关系可参考[AVCastControlCommandType](../harmonyos-references/arkts-apis-avsession-t.md#avcastcontrolcommandtype10)。
 
 **时序图**
 
 **图13** 本端控制远端音频播放时序图   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/IeAw8GO4Se-BytMZURUdQA/zh-cn_image_0000002421894848.png "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/O-9jxKG4RmKGgQqGd2tIVg/zh-cn_image_0000002421894848.png "点击放大")
 
 **开发步骤**
 
@@ -316,14 +316,14 @@ public async setPlayMode(playMode: number) {
 
 ### 远端音频状态回传本端
 
-**图14** 远端音频状态回传本端[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/a4/v3/yKs1CxHBQ0224vVMMoaEJQ/zh-cn_media_0000002422054696.mp4)
+**图14** 远端音频状态回传本端[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/6c/v3/_RxhPW4lTa-v60Ffe025EQ/zh-cn_media_0000002422054696.mp4)
 
 开发者可以采用[avCastController.on('playbackStateChange')](../harmonyos-references/arkts-apis-avsession-avcastcontroller.md#onplaybackstatechange10)接口监听远端设备播放状态的变化，通过在filter参数中传入不同的播放状态字段和callback参数设置相应的回调函数，可以将远端的播放状态（播放、暂停、上一首/下一首切换和播放进度等信息）同步到本端。具体的播放状态属性可参考[AVPlaybackState](../harmonyos-references/arkts-apis-avsession-i.md#avplaybackstate10)。
 
 **时序图**
 
 **图15** 远端音频状态回传本端时序图   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/OeQzONdUSQC72dfpcrQavQ/zh-cn_image_0000002455573553.png "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/Otjs-Dm2T1Ce56LgSyIdZg/zh-cn_image_0000002455573553.png "点击放大")
 
 **开发步骤**
 
@@ -403,7 +403,7 @@ export class AudioCastController implements Controller {
 **时序图**
 
 **图16** 切换投播音质时序图   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/xftejslvRQaQI3XTWTBr8g/zh-cn_image_0000002455453673.png "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/5z8uexmLS1m2HhtPEkm16g/zh-cn_image_0000002455453673.png "点击放大")
 
 投播过程中，当用户触发音质切换功能时，开发者只需根据对应音质重新设置不同的投播资源即可实现音质的切换，无需断开投播连接。设置资源的具体方法可参考[创建投播](bpta-audio-cast.md#section148446619451)。
 
