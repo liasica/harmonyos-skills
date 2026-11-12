@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: TreeView
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > TreeView
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:29+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:28c0bcce22dcac21697c819421080212bed8a80428be4304bee36284e442584f
 ---
@@ -411,7 +411,7 @@ struct TreeViewDemo {
   }}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/61_wnwr2RC6qygAIqDdl7Q/zh-cn_image_0000002815561115.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/61_wnwr2RC6qygAIqDdl7Q/zh-cn_image_0000002815561115.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=F03FE4EEE575CB0803765650C6DBFCC2E02831B752C97D73612EF55AB395C0F3)
 
 ### 示例2（设置Symbol类型图标）
 
@@ -537,4 +537,4 @@ struct TreeViewDemo {
   }}
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/NAyoCcjGRuCq7kNKkZ0mAg/zh-cn_image_0000002815401199.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/NAyoCcjGRuCq7kNKkZ0mAg/zh-cn_image_0000002815401199.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C8AD84BC01DDF19B51B8843F82ED9EE03C9D0E2F0D56BC8EB4F85332AD4BBB8)

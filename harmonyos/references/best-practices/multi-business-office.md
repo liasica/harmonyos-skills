@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-business-
 title: 多设备商务办公界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备商务办公界面
 category: best-practices
-scraped_at: 2026-11-10T10:42:04+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:c679e57cadfbee3c1f2bc9e58e557975d93d9b076643733df08c9da40cfd27e0
 ---
@@ -38,7 +38,7 @@ content_hash: sha256:c679e57cadfbee3c1f2bc9e58e557975d93d9b076643733df08c9da40cf
 
 本示例中的商务办公应用包含入口、备忘录、笔记汇总、笔记、日历等页面。以平板端为例，应用的基本业务逻辑如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/B647oM9yQPqYwnqVrBIPOQ/zh-cn_image_0000002229337365.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/B647oM9yQPqYwnqVrBIPOQ/zh-cn_image_0000002229337365.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=37E6F2BE279A35D7B00471ED4C6334A6B766161380B1619B998FEE68634FF488 "点击放大")
 
 ## 架构设计
 

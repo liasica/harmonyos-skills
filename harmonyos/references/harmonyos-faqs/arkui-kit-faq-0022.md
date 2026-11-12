@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: ArkUI-Stack组件布局与功能使用常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > ArkUI-Stack组件布局与功能使用常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:435d5c1210d90081aabc9735881e462256b4cf17c7a10d14953cf1fdc4f0ebf5
 ---
@@ -63,7 +63,7 @@ content_hash: sha256:435d5c1210d90081aabc9735881e462256b4cf17c7a10d14953cf1fdc4f
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/iHuhTY0SRAa_Al_jneIfiQ/zh-cn_image_0000002772420276.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/iHuhTY0SRAa_Al_jneIfiQ/zh-cn_image_0000002772420276.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=24782CFC4B7CB3484F8AE301D3DBA6FCD9992B19BC90D4F450E31636073E9195 "点击放大")
 * 方案二：需要精确地控制单个子组件的位置，可以使用[offset](../harmonyos-references/js-apis-arkui-shape.md#offset)和[position](../harmonyos-references/ts-universal-attributes-location.md#position)去做具体的调整。其中，offset控制子组件相对于自身原始位置的偏移，position控制子组件在父组件中的绝对位置。
 
   例如，通过position调整单个子组件至垂直方向底部，水平方向居中（alignContent参数可以使所有子组件在此处进行重叠，但无法指定单个子组件的位置）。
@@ -96,7 +96,7 @@ content_hash: sha256:435d5c1210d90081aabc9735881e462256b4cf17c7a10d14953cf1fdc4f
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/qcdq9Yb4SweJv0o9z6RwKg/zh-cn_image_0000002801660881.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/qcdq9Yb4SweJv0o9z6RwKg/zh-cn_image_0000002801660881.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=1DFAC30CAA6E249D30E740FB605FEAAD737765732A28DC37E00B119D63A64084 "点击放大")
 
   **Q：在Stack中，如果有两个兄弟组件，组件A被组件B覆盖，用户点击组件B时，是否可以将点击事件透传给组件A，触发组件A的onClick回调，而不触发组件B的onClick回调？**
 
@@ -267,7 +267,7 @@ content_hash: sha256:435d5c1210d90081aabc9735881e462256b4cf17c7a10d14953cf1fdc4f
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/GRgQWtW4S96tKGnpF62YjQ/zh-cn_image_0000002772422834.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/GRgQWtW4S96tKGnpF62YjQ/zh-cn_image_0000002772422834.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E6F1422ED6306011FD26E0392FB125C90B747EB2C9DAC0109CD78EE979127BB "点击放大")
 * 左右堆叠实现。
 
   和上下堆叠实现类似，只需微调SwiperStackComponent代码即可。
@@ -304,7 +304,7 @@ content_hash: sha256:435d5c1210d90081aabc9735881e462256b4cf17c7a10d14953cf1fdc4f
 
      效果预览：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/ZsC9w8GISka5Dn6jLD8CLg/zh-cn_image_0000002801664601.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/ZsC9w8GISka5Dn6jLD8CLg/zh-cn_image_0000002801664601.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=60C9639BF8A8B5B5AB0544B779E1C975ED037DE307CC85AC4A10C4F974AB8BB0 "点击放大")
 
      **说明** 
 

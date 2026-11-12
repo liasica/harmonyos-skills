@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (UIObserver)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (UIObserver)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:59+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:8982c0ab117c97de931b94f79747565e5c4a18473275c30964a372fcdecc499b
 ---
@@ -2258,7 +2258,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/xtZ7yvemSB62CXdpUBqhmw/zh-cn_image_0000002786520816.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/xtZ7yvemSB62CXdpUBqhmw/zh-cn_image_0000002786520816.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9C2937FF0217ECE12753A3629C21BFE0B2273DCB183B97728C87D80D3D24618)
 
 ## off('nodeRenderState')20+
 
@@ -2479,7 +2479,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/cE0Gu8z4ReCaC1DFBF7zXQ/zh-cn_image_0000002786360888.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/cE0Gu8z4ReCaC1DFBF7zXQ/zh-cn_image_0000002786360888.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=D421DC2725666182108A075DF397B2B6D73289A5A34122E0C09F1AB5C31C0CF3)
 
 ## removeGlobalGestureListener20+
 

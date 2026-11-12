@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-text-im
 title: 图文混排
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用文本 > 图文混排
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:0079a423f70b7e95a8ae541ad91ed88288d0c08a538f6b516871e7cf5ffcbf75
 ---
@@ -36,7 +36,7 @@ Text() {
 }.textVerticalAlign(TextVerticalAlign.CENTER)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/ajf38NWvT-q0lKI5VeP0fQ/zh-cn_image_0000002815558395.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/ajf38NWvT-q0lKI5VeP0fQ/zh-cn_image_0000002815558395.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDE11E1775105C3A3154940F70F7599CCCCBB6A13E51975C84CCD8E0B391A1AC)
 
 ## 使用属性字符串实现图文混排
 
@@ -224,4 +224,4 @@ struct styled_string_demo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/_-G4iR-WTxOogF5pQk3ZyA/zh-cn_image_0000002815398479.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/_-G4iR-WTxOogF5pQk3ZyA/zh-cn_image_0000002815398479.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D185093DC9DBC4C3822A13F0E60BCA240BAFD20CBEEE099F8301DEF69788841)

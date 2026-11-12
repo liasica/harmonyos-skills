@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (SmartGestureController)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (SmartGestureController)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:57+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:e7d08121270cca7d3162816509711dfaaeca459615f884bae39b1e36726f76e5
 ---
@@ -82,7 +82,7 @@ struct SmartGestureControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/mA9Iqtq5QiS9azoPMSqCFw/zh-cn_image_0000002786520808.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/mA9Iqtq5QiS9azoPMSqCFw/zh-cn_image_0000002786520808.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5FF6A4C169FD399FB07199BB84971AB73946644734CD6D37E5EACE109D09C74)
 
 ## registerMonitor
 
@@ -165,7 +165,7 @@ struct SmartGestureControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/mNn5_zEsRlCfwcmArltLXQ/zh-cn_image_0000002786520808.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/mNn5_zEsRlCfwcmArltLXQ/zh-cn_image_0000002786520808.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=EECF32A49AFF1360728C17E911FEDBBD10B157C29AFA1DC76269F8129E80F544)
 
 ## unregisterMonitor
 
@@ -239,7 +239,7 @@ struct SmartGestureControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/nPh_4pUyT-mEh_VkMvQbxw/zh-cn_image_0000002786520808.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/nPh_4pUyT-mEh_VkMvQbxw/zh-cn_image_0000002786520808.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8B170704B251B9E763A17A19EE2F643D332B651C6F7100B646183AD19F29FEE)
 
 ## clearMonitors
 
@@ -307,7 +307,7 @@ struct SmartGestureControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/qxwpOM7GRluVKAlgHq9U3A/zh-cn_image_0000002786520808.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/qxwpOM7GRluVKAlgHq9U3A/zh-cn_image_0000002786520808.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=CEA5FC816388B5A6AC563B152945F2B80750D7D3F6E74EA5701E3BCACEF3A835)
 
 ## requestSelected
 
@@ -384,7 +384,7 @@ struct SmartGestureControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/ty0X6WC7S9eD_UxCe45pBg/zh-cn_image_0000002786360880.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/ty0X6WC7S9eD_UxCe45pBg/zh-cn_image_0000002786360880.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B75766833A0BD495280900BE3DF676F9032EA254104488E28AF6B1086C67654)
 
 ## clearSelected
 
@@ -450,7 +450,7 @@ struct SmartGestureControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/61MARd32SBK2ERuAJX9XuA/zh-cn_image_0000002786360880.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/61MARd32SBK2ERuAJX9XuA/zh-cn_image_0000002786360880.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=59BDBFDBFCD03004E2F6FCC39D9824DC17DDB25F9F802BA24ABEA9938369601B)
 
 ## 示例
 
@@ -613,4 +613,4 @@ struct SmartGestureControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/phgcxqMpRW6SCaKUCPvdgA/zh-cn_image_0000002815560301.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/phgcxqMpRW6SCaKUCPvdgA/zh-cn_image_0000002815560301.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=36FB5C20708582D1D0EA27FD14A357486AB742E70224589210533FC9B75BCFF4)

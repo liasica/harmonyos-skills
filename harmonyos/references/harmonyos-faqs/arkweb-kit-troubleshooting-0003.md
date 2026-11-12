@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkweb-kit-trou
 title: ArkWeb网页视频全屏问题排查与解决
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 故障排查 > ArkWeb网页视频全屏问题排查与解决
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:04+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:b0b58db34a2c3afa9c56b4746831273c8d7e76d28326db3c4385d904b5b0b32b
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:b0b58db34a2c3afa9c56b4746831273c8d7e76d28326db3c4385d904b5b
 
 通过Web组件加载H5页面，页面中视频的全屏按钮置灰，无法点击。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/a7L0ohTJQG2srUvRR215uw/zh-cn_image_0000002768271488.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/a7L0ohTJQG2srUvRR215uw/zh-cn_image_0000002768271488.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=ECCC4312D5CAEFED5E49850D2D04A9469893B13D918BC3D9A6C882F4AE0BB1D5 "点击放大")
 
 ## 定位过程
 

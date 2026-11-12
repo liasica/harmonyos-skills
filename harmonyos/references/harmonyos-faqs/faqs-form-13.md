@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-form-13
 title: 主应用如何获取卡片列表中某个卡片添加/移除
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 主应用如何获取卡片列表中某个卡片添加/移除
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:50+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:0857026766656464e2c87c5faa8448f8fd9bd8f8f5792c1054e42252173e4630
 ---
@@ -33,30 +33,30 @@ onAddForm/onRemoveForm添加至桌面的生命周期触发流程如下：
 
    例如：打开下面的卡片列表，卡片列表中有3张卡片，可以看到日志中onAddForm回调了3次。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/UugrKyzwRNyhDD5_DUMdnw/zh-cn_image_0000002628631646.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/UugrKyzwRNyhDD5_DUMdnw/zh-cn_image_0000002628631646.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=17A12647A3A1719085CB7684959DC7DE673E6A685C159D9CAE61B38F849CEC7A "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/bZeRImzBTFy6JZb3gL68hg/zh-cn_image_0000002658870921.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/bZeRImzBTFy6JZb3gL68hg/zh-cn_image_0000002658870921.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2F11B5D8FC98E4290278B16CC52B20DB5161856D7D9EC0634EB52C63337C79B "点击放大")
 2. 长按应用图标->服务卡片->打开卡片列表->服务卡片列表取消，触发onRemoveForm（卡片列表中有几张卡片生命周期就会回调触发onRemoveForm几次）
 
    例如：点击x号取消了服务卡片列表，则会触发onRemoveForm回调3次。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/2JwkgociT3a8px9rUBNZEA/zh-cn_image_0000002628791552.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/2JwkgociT3a8px9rUBNZEA/zh-cn_image_0000002628791552.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=6398A7ABEAA69877F6C854A9967CB75B54BF568480EBAEC04C5828CA3B1F2E8A "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/_cIxOSHPRZmCriaabA6aHw/zh-cn_image_0000002658990861.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/_cIxOSHPRZmCriaabA6aHw/zh-cn_image_0000002658990861.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=87679F9D802BE05C1954ACE0A6FEB69728FCE3E94CD0FE855029C27D83FF6464 "点击放大")
 3. 长按应用图标->服务卡片->打开卡片列表->选择一张卡片添加到桌面（选中卡片将回调onUpdateForm，其余卡片回调onRemoveForm）
 
    例如：添加一张卡片至桌面，则会onUpdateForm选中的卡片，onRemoveForm另外两张卡片。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/CKIUvgsJRMyyYC06b32moQ/zh-cn_image_0000002628631648.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/ddSy0vk_TWS-2N2nWILTEg/zh-cn_image_0000002658870923.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/CKIUvgsJRMyyYC06b32moQ/zh-cn_image_0000002628631648.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=220F20E2408E7A928BD282CF2369D7EBF01577B0FEC8A73E9FE7D66BB0BCE908 "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/ddSy0vk_TWS-2N2nWILTEg/zh-cn_image_0000002658870923.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=FDF82662A28FB133AADCDFAFDE931D6864D664349F61331B9A77043260AAD73E "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/672lcLP4Tfesij8KQ0f1Eg/zh-cn_image_0000002628791554.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/672lcLP4Tfesij8KQ0f1Eg/zh-cn_image_0000002628791554.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=474A3AED28C131063DC81D0AB2FD3E4C3DC7E694A7A2AEFB346BA721121A4D60 "点击放大")
 4. 桌面上移除某一张卡片（选中移除卡片将回调onRemoveForm）
 
    例如：在桌面移除一张卡片，会onRemoveForm当前移除的卡片。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/CnGqDGYxQfmhKXsQSnvrhw/zh-cn_image_0000002658990863.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/CnGqDGYxQfmhKXsQSnvrhw/zh-cn_image_0000002658990863.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=534FEFEDD581E8F793880115A64224B005D3B7008D44ABA765F46DF4BBC09AEC "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/9cQJUf-STwWA_YZYiRHzrQ/zh-cn_image_0000002628631652.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/9cQJUf-STwWA_YZYiRHzrQ/zh-cn_image_0000002628631652.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=FFAB6A1B5BF1BA6AD6063B77714530F3D17BCCA185DE345A50CD0D996DC28F1D "点击放大")
 
 综上，将卡片添加至桌面的流程中，生命周期回调onAddForm/onRemoveForm会执行多次，但是最终卡片新增还是移除是确定的。
 

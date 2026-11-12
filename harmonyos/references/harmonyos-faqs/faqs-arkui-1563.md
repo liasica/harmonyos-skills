@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1563
 title: 全屏显示图片时拖动异常
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 全屏显示图片时拖动异常
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:34+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:497265ed77fcdeb53ddc5c5b6f0cc3118913bc7ebed7762588bddecd35d6c3d2
 ---
@@ -12,11 +12,11 @@ content_hash: sha256:497265ed77fcdeb53ddc5c5b6f0cc3118913bc7ebed7762588bddecd35d
 
 场景一：全屏显示图片时，未放大图片也可拖动图片。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/2GuYNKQdQhOLUsgt6pHTjQ/zh-cn_image_0000002628609858.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/2GuYNKQdQhOLUsgt6pHTjQ/zh-cn_image_0000002628609858.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=19DF374730534C4AE18ACC17D2FEA92E165EA007F464948B58EB738F068FA4D1 "点击放大")
 
 场景二：图片全屏显示后拖动图片到其他位置，停止拖动后图片无法回到原来位置，页面布局异常。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/JoJC9zu2TY6fv-o2n5NN1w/zh-cn_image_0000002628769752.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/JoJC9zu2TY6fv-o2n5NN1w/zh-cn_image_0000002628769752.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=19DFF5FB58C2264ABFFDA47E39576F44E47564EFB3E6055770C548150BA17F66 "点击放大")
 
 ## 背景知识
 
@@ -32,7 +32,7 @@ content_hash: sha256:497265ed77fcdeb53ddc5c5b6f0cc3118913bc7ebed7762588bddecd35d
 
 1. 使用DevEco Testing查看问题组件，该组件为Image组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/aVu4H_z3RhO01Xh2G4Miww/zh-cn_image_0000002658969073.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/aVu4H_z3RhO01Xh2G4Miww/zh-cn_image_0000002658969073.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=B6C5079C34E0EB8F976D1A057F7D316C6AF277D08AD0CD081FCBDB69BA042667 "点击放大")
 2. 查看Image组件的设置，该组件绑定了PinchGesture和PanGesture，实现图片放大缩小和图片移动功能，且没有对图片未放大时的交互做限制，未放大时也能移动。正常情况下应用能够放大图片并移动图片查看细节。
 
    ```typescript
@@ -77,7 +77,7 @@ content_hash: sha256:497265ed77fcdeb53ddc5c5b6f0cc3118913bc7ebed7762588bddecd35d
 
 场景二：
 
-1. 使用DevEco Testing查看问题组件，该问题组件为Image组件。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/rdNa6mlATfu4oxrHJLzJiA/zh-cn_image_0000002658849121.png "点击放大")
+1. 使用DevEco Testing查看问题组件，该问题组件为Image组件。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/rdNa6mlATfu4oxrHJLzJiA/zh-cn_image_0000002658849121.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C9C55DE490EED1A8F010DD82E85C2EB78EF6342DD5E88AD15816D621E6DC444 "点击放大")
 2. 查看该Image组件的设置，Image组件通过PanGesture响应滑动手势事件，并通过translate实现平移功能。然而组件在onActionEnd中设置了滑动结束后更新图片位置，导致图片后无法回到原来位置。
 
    ```typescript
@@ -342,7 +342,7 @@ export struct SituationOne_PageMain {
 
 运行效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/zbd0nIQJQnmqw1uYfSLyBg/zh-cn_image_0000002628609860.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/zbd0nIQJQnmqw1uYfSLyBg/zh-cn_image_0000002628609860.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C5E3B8F0F2CB6B4FAAF94FCB0EE34202C1DD40CA1B530C73D6EA8EEE429D9D6 "点击放大")
 
 * 场景二：
 
@@ -555,7 +555,7 @@ export struct SituationTwo_PageMain {
 
 运行效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/OhrGQM76TTeNSWERmES6Aw/zh-cn_image_0000002628769756.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/OhrGQM76TTeNSWERmES6Aw/zh-cn_image_0000002628769756.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B2403D24117A93AE368FB52E534E632251118BDE1E4D0FE19434A19A8A5AB46 "点击放大")
 
 * src/main/module.json5文件中需添加"routerMap": "$profile:router\_map"，且需添加如下所示的src/main/resources/base/profile/router\_map.json文件。SituationOne\_PageMain和SituationOne\_Dialog为场景一的内容，SituationTwo\_PageMain和SituationTwo\_Dialog为场景二的内容。
 

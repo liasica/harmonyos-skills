@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1446
 title: 如何实现List下滑指定距离才展开的效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现List下滑指定距离才展开的效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:9b085d0bd047a9d26699ede0e94b3a85ef4ea5458f764350b03f6306276a3916
 ---
@@ -17,7 +17,7 @@ List组件可以下拉上滑，期望实现以下效果：
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/ivPix09TS3y2eA1YqW_XKg/zh-cn_image_0000002628764160.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/ivPix09TS3y2eA1YqW_XKg/zh-cn_image_0000002628764160.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=0100784257DC4A5BBC0808A66F9433711F7363D1B1146A404E965D703EDAE54B "点击放大")
 
 ## 背景知识
 

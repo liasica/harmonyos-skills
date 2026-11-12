@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: "编译报错“ninja: error: mkdir(xxx): No such file or directory”"
 breadcrumb: "FAQ > DevEco Studio > 编译构建 > 编译报错“ninja: error: mkdir(xxx): No such file or directory”"
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:52+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:e131117eef63b00ce510ce15999332de9c1bc5ef4092dd06088a47f0af6d8b71
 ---
@@ -14,11 +14,11 @@ Native工程编译时出现以下告警和报错信息。
 
 出现工程目录长度超过250字符的告警，示例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/WZ6clvpBRCiewl8jKgBT0Q/zh-cn_image_0000002624638402.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/WZ6clvpBRCiewl8jKgBT0Q/zh-cn_image_0000002624638402.png?HW-CC-KV=V1&HW-CC-Date=20261112T233209Z&HW-CC-Expire=31536000000&HW-CC-Sign=1627D964F1927576E9B845C70FC75BB513FD903AA765DC0247E8DDE67B2B5F37 "点击放大")
 
 出现编译错误“ninja: error: mkdir(xxx): No such file or directory”。示例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/Zprcemf5Qs2tbaWmeQHtog/zh-cn_image_0000002654837811.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/Zprcemf5Qs2tbaWmeQHtog/zh-cn_image_0000002654837811.png?HW-CC-KV=V1&HW-CC-Date=20261112T233209Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F29608CD96A5A3CD6B95F5287E403BE8B0ED7E973AE30B151DE1BA5E7613ACE "点击放大")
 
 **解决措施**
 
@@ -35,7 +35,7 @@ CMAKE\_OBJECT\_PATH\_MAX默认值为250，如果工程中object file的实际路
 
   + 总路径长度为 object file directory 长度与 object file 长度之和。object file directory 和 object file 如下图所示，两个长度之和为 297 个字符，具体以实际为准。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/5ITiGGlURZKs_7ReMsSh3w/zh-cn_image_0000002624478500.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/5ITiGGlURZKs_7ReMsSh3w/zh-cn_image_0000002624478500.png?HW-CC-KV=V1&HW-CC-Date=20261112T233209Z&HW-CC-Expire=31536000000&HW-CC-Sign=941415522071CD7EB8F8F485F01600AFA685759E00E4DA2CCA12107560E5DFE6 "点击放大")
   + object file中目录部分长度：示例中“\_\_/\_\_/\_\_/\_\_/\_\_/third-party/rn/ReactCommon/react/renderer/textlayoutmanager”长度为74字符，具体以实际为准。
   + CMake哈希值字符数：CMake将长路径转换为哈希值时，哈希值的长度固定为32。
 

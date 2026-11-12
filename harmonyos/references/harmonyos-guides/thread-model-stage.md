@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/thread-model-
 title: 线程模型
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 线程模型
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:50:58+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:a7f649a4b84ad2525fa3210c20b27d6f9a7384b5b546fa341970c7d192e8cd20
 ---
@@ -28,7 +28,7 @@ content_hash: sha256:a7f649a4b84ad2525fa3210c20b27d6f9a7384b5b546fa341970c7d192e
 
     TaskPool与Worker的运作机制、通信手段和使用方法可以参考[TaskPool和Worker的对比](taskpool-vs-worker.md)。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/GL9xLKdgTPWXRK1VUVCo3g/zh-cn_image_0000002786358402.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/GL9xLKdgTPWXRK1VUVCo3g/zh-cn_image_0000002786358402.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=41C8F46BE2082EF91066FDB5E7671B3146FCC597FC4B5BBC6B3CACEDDA1BE636)
 
 **说明** 
 

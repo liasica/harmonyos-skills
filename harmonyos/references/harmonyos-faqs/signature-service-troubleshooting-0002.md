@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/signature-servi
 title: 手动签名失败问题排查与解决
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 故障排查 > 手动签名失败问题排查与解决
 category: harmonyos-faqs
-scraped_at: 2026-10-30T07:59:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-29
-content_hash: sha256:2d4cc6ad4c413d6b8f67872a5fc1f327042f4aba3b451597d1728c62932fecd3
+content_hash: sha256:1bd0b75354c0b6acaaed962b26ff9754d13179a8ac929cdcdf1651945444844d
 ---
 
 ## hdc安装应用报错9568393
@@ -168,7 +168,7 @@ hvigor ERROR: BUILD FAILED in 12 s 170 ms
 * 检查证书文件和调试Profile文件是否配套使用。
 * 检查调试证书和调试Profile文件的文件名是否包含中文。参考内容：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/Bmn4XZroQIexjXvNvmgicw/zh-cn_image_0000002774463322.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/GP7sDq7eREWRQ37sAa5VvQ/zh-cn_image_0000002774463322.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=D20595E724FBE07FA3F5EFA0D9066437224214005AFA695BF2857510C7244C75 "点击放大")
 
 ### 分析结论
 
@@ -238,10 +238,10 @@ at sun security.tools.keytool.Main.main(Main.java:359)
 1. 查资料可知这个错误有可能是因为不同jdk版本间不兼容。
 2. 查看DevEco Studio的jdk版本为17.0.12：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/sY160ZyKTFOZ6Et6IFnCbg/zh-cn_image_0000002803623261.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/B8J2fPNMSQKH7V9sS9BVRQ/zh-cn_image_0000002803623261.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E9510AEA534EC9DAF1939ECBD0098F7EAE65B3BA9F2BE572581EC13D26D3EAC "点击放大")
 3. 查看本地jdk版本为1.8.0：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/26eczOHCTz2RYUpA6cnlVA/zh-cn_image_0000002803783177.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/G7uZD13OSG69xbOu8F1JAQ/zh-cn_image_0000002803783177.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBDD024257BB7C17755A128BF271138A242EB2937DF3E8EB5D2E1761F6FC97FA "点击放大")
 4. 将本地的jdk升级到与IDE一致的版本后，再手动获取证书指纹，可以获取到。
 
 ### 分析结论

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1189
 title: 如何在动态修改Grid布局的行列数时Grid高度自适应
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何在动态修改Grid布局的行列数时Grid高度自适应
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:18+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:b71af506a2c5bdc6d55106b963b05bafdb63a4958bee47bf4d25540270a8d9f8
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:b71af506a2c5bdc6d55106b963b05bafdb63a4958bee47bf4d25540270a
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/41MPNpzqSXmvVBY4WwI00A/zh-cn_image_0000002628752864.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/41MPNpzqSXmvVBY4WwI00A/zh-cn_image_0000002628752864.png?HW-CC-KV=V1&HW-CC-Date=20261112T233149Z&HW-CC-Expire=31536000000&HW-CC-Sign=08C951B10C062D5378BDBEEDBB35151B52A78DB11AE7AE75B2670505E80BEE24 "点击放大")
 
 ## 背景知识
 

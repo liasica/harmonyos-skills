@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-add-page
 title: 添加Page
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 添加Page
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:52+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-04-30
 content_hash: sha256:29410b996d21c0506722d28aa7d2c0523dac0d86c7538b9e31021fab8a9be260
 ---
@@ -20,11 +20,11 @@ content_hash: sha256:29410b996d21c0506722d28aa7d2c0523dac0d86c7538b9e31021fab8a9
    * Payment Page：创建一个支付页面，可以实现点击按钮唤起支付弹窗，当前仅支持在Phone和Car设备中使用；
    * Iap Page：IAP Kit场景化模板，支持快速创建应用内支付购买虚拟数字商品相关代码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/WJdY-UvsSEqu_8WTHcX6MQ/zh-cn_image_0000002779407176.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/WJdY-UvsSEqu_8WTHcX6MQ/zh-cn_image_0000002779407176.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=2461153C29BDE080D415A3A41D5100C7B0ADBC0A1692A9CC1AA0D0A692365122)
 
    **说明** 
 
    API 10工程中仅支持创建Page，展示基础的Hello World功能；如需使用场景化Page模板，请将工程切换为API 11及以上后进行开发。
 2. 输入Page name（由大小写字母、数字和下划线组成），单击**Finish**完成添加。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/u5hfPL0DTN-Lxjvz6UNrKA/zh-cn_image_0000002808766737.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/u5hfPL0DTN-Lxjvz6UNrKA/zh-cn_image_0000002808766737.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD5ED93C161073817577999A27B70E95B19283F7238D4BF335FEA22EC2D69B9F "点击放大")

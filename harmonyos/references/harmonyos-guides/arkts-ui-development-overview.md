@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-deve
 title: UI开发（ArkTS声明式开发范式）概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI开发（ArkTS声明式开发范式）概述
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-17
 content_hash: sha256:e2b781cc953aaf70d2851254b2442ad9c6cc5281604862200c7d20fd4aff7029
 ---
@@ -54,7 +54,7 @@ content_hash: sha256:e2b781cc953aaf70d2851254b2442ad9c6cc5281604862200c7d20fd4af
 
 **图1** 整体架构图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/HRqfLQuZTfOgm_Swqy7n0g/zh-cn_image_0000002815397989.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/HRqfLQuZTfOgm_Swqy7n0g/zh-cn_image_0000002815397989.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=A87428034FE715231469E73AF850ACAB631BF464DF862207572B50CFC019F210)
 
 * **声明式UI前端**
 

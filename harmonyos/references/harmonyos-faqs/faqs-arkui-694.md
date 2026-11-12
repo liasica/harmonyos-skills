@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-694
 title: 如何实现类似9-patch功能使图片指定区域不被拉伸
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现类似9-patch功能使图片指定区域不被拉伸
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:15a6d45c716427efc2e28e4a9a83a39a867348a5c6d968db0e11ccc66cb7be45
 ---
@@ -28,7 +28,7 @@ content_hash: sha256:15a6d45c716427efc2e28e4a9a83a39a867348a5c6d968db0e11ccc66cb
 
 * **方案一**、对于样式简单的气泡图，通过配置ResizableOptions类型的slice参数，设置统一的上下左右拉伸距离，即可实现类似9-patch图的拉伸效果。拉伸示例图如下（灰色为可拉伸区域）：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/38kbZYBeQei4JuPh8JAZog/zh-cn_image_0000002658794125.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/38kbZYBeQei4JuPh8JAZog/zh-cn_image_0000002658794125.png?HW-CC-KV=V1&HW-CC-Date=20261112T233200Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB314F79926EDFA9BBC9C322408E93D1ED722A901C7A5A38B4E42B78C8F212F9 "点击放大")
 
   1. 通过为slice参数指定上、下、左、右四个方向的像素偏移值，将一张图片划分为九宫格布局。
   2. 此时四个角的区域为固定区域，其余为可拉伸区域。
@@ -94,10 +94,10 @@ content_hash: sha256:15a6d45c716427efc2e28e4a9a83a39a867348a5c6d968db0e11ccc66cb
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/7Kxz8U8RQ2GY_Ggf2JKlqA/zh-cn_image_0000002628554754.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/7Kxz8U8RQ2GY_Ggf2JKlqA/zh-cn_image_0000002628554754.png?HW-CC-KV=V1&HW-CC-Date=20261112T233200Z&HW-CC-Expire=31536000000&HW-CC-Sign=68DBACFE72D7F2A3872BECBE0F5CA1533C71034175B715CA61BA98E4ADED5C7A "点击放大")
 * **方案二**、针对结构复杂的气泡图，可以通过ResizableOptions类型的lattice参数，将图像划分为一个矩形网格来实现拉伸控制。拉伸示例图如下（灰色为可拉伸区域）：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/ifvnYbJRTZWAWSi4dbrvUw/zh-cn_image_0000002628394860.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/ifvnYbJRTZWAWSi4dbrvUw/zh-cn_image_0000002628394860.png?HW-CC-KV=V1&HW-CC-Date=20261112T233200Z&HW-CC-Expire=31536000000&HW-CC-Sign=2EE8CEAB34BB917ABA65EB3D27E6A20848B985482C79EB8EE531213A4F3EC445 "点击放大")
 
   1. 首先将原图划分为矩形网格，使无需发生形变的区域处于矩形网格的偶数行偶数列，并获取相应像素值。如上图所示，气泡图的水平方向包含左、中、右三个固定区域（图中黑色标注部分），因此水平上一共划分为五个区域。垂直方向上，则只有中间部分为可拉伸区域（图中灰色标注部分），因此垂直方向上共划分为三个区域。
   2. 创建DrawingLattice对象，并应用在Stack中作为背景图片的Image上。
@@ -168,4 +168,4 @@ content_hash: sha256:15a6d45c716427efc2e28e4a9a83a39a867348a5c6d968db0e11ccc66cb
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/VAEGqCRUR3mz6yeTEMDorg/zh-cn_image_0000002658914079.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/VAEGqCRUR3mz6yeTEMDorg/zh-cn_image_0000002658914079.png?HW-CC-KV=V1&HW-CC-Date=20261112T233200Z&HW-CC-Expire=31536000000&HW-CC-Sign=146FC2CAB676A72C0BC557E2A0BC912A34EF20038D4994659653A63B3AAC5436 "点击放大")

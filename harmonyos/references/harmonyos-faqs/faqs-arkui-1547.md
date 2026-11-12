@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1547
 title: 自定义Slider滑块
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 自定义Slider滑块
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:11ad1c12a71681e794e8dbd3fa09274073c5e0a8d7cf71a76d74c4df87f1784f
 ---
@@ -77,7 +77,7 @@ content_hash: sha256:11ad1c12a71681e794e8dbd3fa09274073c5e0a8d7cf71a76d74c4df87f
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/R3AdPfOoRWu_oFBHIWwlfw/zh-cn_image_0000002628609226.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/R3AdPfOoRWu_oFBHIWwlfw/zh-cn_image_0000002628609226.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E4B115C9B9AFA2ED5B4B1648E6D6987381E3EFA74D841861C42FAAFC6C6297E "点击放大")
 * 场景二：实现Slider滑动切换图片的效果，通过[overlay](../harmonyos-references/ts-universal-attributes-overlay.md)为Slider绑定图片，并监听onChange事件，根据滑动返回的value值动态切换对应图片。完整代码如下：
 
   ```ts
@@ -130,7 +130,7 @@ content_hash: sha256:11ad1c12a71681e794e8dbd3fa09274073c5e0a8d7cf71a76d74c4df87f
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/byrkKAAgQxmK9H3nqBAgdw/zh-cn_image_0000002628769124.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/byrkKAAgQxmK9H3nqBAgdw/zh-cn_image_0000002628769124.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4A1FDA579E1843E2DEDFDE6B77FA04E64903C6D1B769D0DC18BE150268CD8ED "点击放大")
 * 场景三：监听Slider组件的onChange事件，获取滑动条的数值用[Text](../harmonyos-references/ts-basic-components-text.md)显示出来，再通过offset属性使Text位置和滑块的位置一致，使用[animation](../harmonyos-references/ts-animatorproperty.md)设置Text位置改变时的动画效果。完整代码如下：
 
   ```ts
@@ -224,7 +224,7 @@ content_hash: sha256:11ad1c12a71681e794e8dbd3fa09274073c5e0a8d7cf71a76d74c4df87f
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/pI9OXj1IRROE78trv56PXQ/zh-cn_image_0000002658968443.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/pI9OXj1IRROE78trv56PXQ/zh-cn_image_0000002658968443.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=100462B01CB25574C8F0823680147115670B4EBB968CE9727215A2E00687688D "点击放大")
 
 ## 常见FAQ
 

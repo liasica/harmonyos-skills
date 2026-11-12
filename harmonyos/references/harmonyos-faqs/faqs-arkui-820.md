@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-820
 title: 解决修改文本宽度缺乏过渡动画的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 解决修改文本宽度缺乏过渡动画的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:44+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:2c60c1733b1e434ab4e21cbc0108cae5a445199f8ad861d893105ea7321a5ed8
 ---
@@ -54,11 +54,11 @@ struct AnimateToExample {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/TyDS-RD4SguP0utFmVRVaA/zh-cn_image_0000002658797715.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/TyDS-RD4SguP0utFmVRVaA/zh-cn_image_0000002658797715.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=25FA5F9EE764C4B959B270215C39B70149EC441B31744077A93DDF8B30C0C27D "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/HpsDL-koRdaA9PrqR1VhzA/zh-cn_image_0000002628558350.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/HpsDL-koRdaA9PrqR1VhzA/zh-cn_image_0000002628558350.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB9D1B0CA3C73ED9391D6EA19925DCABF5744A51EA03F193D6B2DBABF9E4A3F3 "点击放大")
 
 ## 背景知识
 

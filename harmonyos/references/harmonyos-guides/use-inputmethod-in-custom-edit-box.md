@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-inputmeth
 title: 在自绘编辑框中使用输入法
 breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > 在自绘编辑框中使用输入法
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:28+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:b140272fb6bd8c08741ce8a2adb22ebec0a67d2ed4284c7d2dca424bc2fc7d8c
 ---
@@ -141,7 +141,7 @@ content_hash: sha256:b140272fb6bd8c08741ce8a2adb22ebec0a67d2ed4284c7d2dca424bc2f
 
    在应用的entry/src/main/resources/base/profile目录下创建配置文件easy\_go.json（示例文件名，可自行命名）。在[module.json5](module-configuration-file.md)配置文件中添加easyGo字段，并指向引用的easy\_go.json配置文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/TQr-nckmSR-nfC3-4fdYIg/zh-cn_image_0000002815399089.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/TQr-nckmSR-nfC3-4fdYIg/zh-cn_image_0000002815399089.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=8FA7EA8595EAC04DAA762150689F3FE2DAD295455260D8A10937CA0A883ECB01)
 2. 增加物理数字键转换配置
 
    在easy\_go.json配置文件中，配置自绘编辑框接收数字物理键盘输入能力相关属性。
@@ -210,4 +210,4 @@ easy\_go.json是一个标准的Object类型JSON文件，整体结构分为两层
 
 ## 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/8bLBqvgxQBG10aB0kJ6W1w/zh-cn_image_0000002786519514.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/8bLBqvgxQBG10aB0kJ6W1w/zh-cn_image_0000002786519514.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0992E06E5D26D4824C1EA25462794A23FC7C4DE2B7C227BED48EF6114E690AA)

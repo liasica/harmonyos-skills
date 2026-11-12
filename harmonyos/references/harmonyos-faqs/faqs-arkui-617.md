@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-617
 title: 如何实现全局层级的自定义UI控件
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现全局层级的自定义UI控件
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:54+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:165c530a9ff9127105776a7864e33423852f93e5166485703c663e24bcdb8b6c
 ---
@@ -427,4 +427,4 @@ struct BuilderComponent {
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/NGXo-gMKStixtVC3EdwX-g/zh-cn_image_0000002628554166.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/NGXo-gMKStixtVC3EdwX-g/zh-cn_image_0000002628554166.png?HW-CC-KV=V1&HW-CC-Date=20261112T233158Z&HW-CC-Expire=31536000000&HW-CC-Sign=697E271845FC8B68561FD9750562A6B4A90BBC150EDDDAADC5AA182180B29EB7 "点击放大")

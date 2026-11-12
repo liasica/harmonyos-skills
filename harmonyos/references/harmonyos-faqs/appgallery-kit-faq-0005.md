@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/appgallery-kit-
 title: HarmonyOS 开发者中心软件包上传与打包签名常见问题
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 常见问题 > HarmonyOS 开发者中心软件包上传与打包签名常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:44+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-22
-content_hash: sha256:f84eef74cf5eea12dab77bc702705262337b802af1bcbb06aeb8ae764c42859c
+content_hash: sha256:ea75bdd486cf2cc04e1626f7c10322d1b2758e1969c53465a7237b606a469777
 ---
 
 **Q：应用开发完成后，打好的app包上传应用市场，经常会遇到软件包报错的情况，阻塞上架流程。报错有错误码和无错误码两种场景：**
@@ -13,7 +13,7 @@ content_hash: sha256:f84eef74cf5eea12dab77bc702705262337b802af1bcbb06aeb8ae764c4
 * 常见的错误码：
   + 上传软件包，提示软件包无效缺少依赖的包，错误码9。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/Yu3TZ88nRKCd7V3NKlkXEw/zh-cn_image_0000002792068633.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/yWl_s_SjRmylB7zcnKWleg/zh-cn_image_0000002792068633.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=C6953750B3DAFF7E0F44D03C8DA4CBA8B1F20794725F8B04FE2D818C35AE9FFE "点击放大")
   + 上传软件包，提示非法软件包，错误码991。
   + 使用Profile打包，上传软件包报错误码993。
   + 上传软件包，提示包解析失败，错误码1015。
@@ -42,7 +42,7 @@ content_hash: sha256:f84eef74cf5eea12dab77bc702705262337b802af1bcbb06aeb8ae764c4
     - hap包的名字与pack.info中name值不同。
     - 在File > Project Structure > Project > Signing Configs窗口中，取消勾选"Automatically generate signature"（如果是HarmonyOS应用，请勾选"Support HarmonyOS"）然后配置工程的签名信息。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/ED7qem-5SAKkZreAA-azew/zh-cn_image_0000002762670042.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/a3udIvz8QomYAIaxnwtfTQ/zh-cn_image_0000002762670042.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=5843B7A53AA400ED3B02D19346A1E7E8EAB2E6986CE4ECBDE40CA82F0D5D610F "点击放大")
   + [错误码993](../app/agc-help-package-errorcode-0000002312513009.md#section411361491513)，表示Profile文件非法，出现此错误涉及多种原因，请根据[官网步骤](../app/agc-help-package-errorcode-0000002312513009.md#section411361491513)排查。若排查后依旧报错，可能有以下原因：
     - 工程级目录build-Profile.json5文件中可能配置了多个签名，需确保打包时使用的签名正确，即products下的signingConfig需为配置了发布证书、发布Profile的签名。
     - build-profile.json5文件中没有配置签名，而是在hvigorfile.ts内overrides重写加载签名。需要将签名写入build-profile.json5文件中。

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1007
 title: 全局与局部自定义构建函数，传递与接收的区别
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 全局与局部自定义构建函数，传递与接收的区别
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:15+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:6420472c877f5bedb444e2f59bf929d0d6042cf90a5c45e715c874d60c7cb19e
 ---
@@ -88,7 +88,7 @@ content_hash: sha256:6420472c877f5bedb444e2f59bf929d0d6042cf90a5c45e715c874d60c7
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/Iq9e-09TS5GhJSPa9_7uAQ/zh-cn_image_0000002628564678.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/Iq9e-09TS5GhJSPa9_7uAQ/zh-cn_image_0000002628564678.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=DFB3063E9F29033ECF908B756F19C409E38FC82D4C68577BBBED6E64DF04D570 "点击放大")
 
 * **场景二**：@Builder全局自定义构建函数的传递与接收。
   + 全局自定义构建函数不支持参数初始化的箭头函数方式，同时由于其是全局自定义的构建函数，所以只要导入了该函数，就可以实现调用，而不必通过子组件@BuilderParam装饰器接收的方式实现。
@@ -172,7 +172,7 @@ content_hash: sha256:6420472c877f5bedb444e2f59bf929d0d6042cf90a5c45e715c874d60c7
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/TH-f-nHSRHGul2shCKqP2g/zh-cn_image_0000002658923993.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/TH-f-nHSRHGul2shCKqP2g/zh-cn_image_0000002658923993.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B9606D810966E7D90D778CC02A07304331F8A4D1A818D73D058B9080361B395 "点击放大")
 
 ## 常见FAQ
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-hotel-
 title: 更新酒店房卡
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 酒店房卡 > 开发场景 > 更新酒店房卡
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:38+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-28
 content_hash: sha256:71cc33f8aa2b4e1687b1723ec13b5223398cd84098623a99f0bbae0f64a5c7d7
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:71cc33f8aa2b4e1687b1723ec13b5223398cd84098623a99f0bbae0f64a
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/Df2YC1MlR2G0MfIY5zddew/zh-cn_image_0000002786520574.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/Df2YC1MlR2G0MfIY5zddew/zh-cn_image_0000002786520574.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=F39F9433673BBC3C5A7EC2C639003FA2E4D5588563D118A60590C92C4941D046)
 
 ## 服务端开发
 

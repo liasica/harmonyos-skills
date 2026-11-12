@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: bindSheet常见使用场景
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > bindSheet常见使用场景
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:59+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:b586bc71006a3a893f92b5f2d8f23439ee075e9306a647f47f6a40bdda119fd2
 ---
@@ -312,4 +312,4 @@ struct SheetBuilder2 {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/kAHfnqGQRRaOQU7MaLE3hQ/zh-cn_image_0000002802039465.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/kAHfnqGQRRaOQU7MaLE3hQ/zh-cn_image_0000002802039465.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=A84A1F538C5760646FF528B4CF34996D95D6A76DB435DB52FF538EE42CBA14D1 "点击放大")

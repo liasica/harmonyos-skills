@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/development-env
 title: 环境检查时显示ohpm registry access不通过问题排查
 breadcrumb: FAQ > DevEco Studio > 环境准备 > 常见问题 > 环境检查时显示ohpm registry access不通过问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:48+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:cd67098ea4943a75c347aab93188a905382cca902f2cff2331ec9ea6f0bc5c79
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:cd67098ea4943a75c347aab93188a905382cca902f2cff2331ec9ea6f0b
 
 **A**：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/1OUfJHxCRoK48PkQVci00g/zh-cn_image_0000002802143089.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/1OUfJHxCRoK48PkQVci00g/zh-cn_image_0000002802143089.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=F886308A5F867C2CCFDADFA632AC297325496B916FCC7886EA5FACFCCB7C6652 "点击放大")
 
 ohpm registry access不通过可能有以下几种情况：
 
@@ -50,13 +50,13 @@ ohpm registry access不通过可能有以下几种情况：
 
      执行结果如下图所示，则说明代理设置成功。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/EXb1Uf57T3aRMaMJH_ogDg/zh-cn_image_0000002772863250.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/EXb1Uf57T3aRMaMJH_ogDg/zh-cn_image_0000002772863250.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=60B4CEBEF34823B78B3AFDADDC84AAE48122532313DBCFF4F52B2C6B2531EAE2 "点击放大")
 
 **Q：环境检查时显示ohpm registry access不通过，registry证书地址校验不通过，详细信息提示“UNABLE\_TO\_VERIFY\_LEAF\_SIGNATURE”时如何处理？**
 
 A：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/FuvZ8Su8SvS6-vsFJC13zA/zh-cn_image_0000002772863252.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/FuvZ8Su8SvS6-vsFJC13zA/zh-cn_image_0000002772863252.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9246FAFD58D0E3A42908E07A65E4986D7B01B5CD0F1451ED16CA88040E5D733 "点击放大")
 
 该问题可能是校验registry证书时出现问题。
 

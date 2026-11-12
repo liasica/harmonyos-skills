@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/confidentials
 title: 运行数据应用处理数据
 breadcrumb: 指南 > 系统 > 安全 > Confidential Space Kit（机密空间服务） > 运行数据应用处理数据
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:32+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:36508b8a7ade7e05f8361c9754788397de6c46d61ecc148eac553a5268a2b600
 ---
@@ -33,7 +33,7 @@ content_hash: sha256:36508b8a7ade7e05f8361c9754788397de6c46d61ecc148eac553a5268a
 
 应用在机密空间中运行数据应用（以下简称DA）的业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/ZJbQxm2WQpK0MwpnZ0wqDA/zh-cn_image_0000002815559069.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/ZJbQxm2WQpK0MwpnZ0wqDA/zh-cn_image_0000002815559069.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=D62898F94D4286BC6F7F1D4DFAFE6D4EB0947EFE6F82A0B088EE7648C365323B)
 
 1. 应用调用[runApp](../harmonyos-references/confidentialspace-confidentialspace.md#confidentialspacerunapp)，异步发起运行DA请求：
 
@@ -71,7 +71,7 @@ content_hash: sha256:36508b8a7ade7e05f8361c9754788397de6c46d61ecc148eac553a5268a
 2. 在“选择应用”列表中选择您需要开通机密空间服务的应用。
 3. 找到机密空间服务，点击右侧“申请”链接。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/SN4hG_aJSAG0xbCnk-GGvg/zh-cn_image_0000002815399153.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/SN4hG_aJSAG0xbCnk-GGvg/zh-cn_image_0000002815399153.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=FDE022E87EB901E05CA2948C33742E0250B2C0CF1DFEA9620CD8ECD356079A86)
 4. 参照申请页面中的说明，检测应用是否满足申请条件。
 
    **说明** 
@@ -80,17 +80,17 @@ content_hash: sha256:36508b8a7ade7e05f8361c9754788397de6c46d61ecc148eac553a5268a
    2. 应用类型仅限银行、商城、移动支付行业的应用，请参考[配置应用分类、标签](../doccenter-submission/agc-help-release-app-class-tag-0000002271695234.md)。
    3. 机密空间服务仅面向注册地在中国大陆地区的开发者开放，请参考[配置发布国家或地区](../doccenter-submission/agc-help-release-app-area-0000002313510997.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/OgRiKGKASEmvMT7g2mGbgQ/zh-cn_image_0000002786519578.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/OgRiKGKASEmvMT7g2mGbgQ/zh-cn_image_0000002786519578.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC156FCE79EB5E895E4285B29D35691A8133A15249903FFB8B2EFF0BBEDCDA0F)
 5. 选择机密空间的使用场景，参考模板填写“申请原因”，在“举证材料”附件中提交安全报告说明和场景流程说明。填写完成后，点击“提交”按钮。
 
    **说明** 
 
    提交申请后，HarmonyOS 开发者中心运营将审核相关材料，审核周期为1-3个工作日，请耐心等待。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/AItN4cTgRpmTN2eBilS3OA/zh-cn_image_0000002786359650.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/AItN4cTgRpmTN2eBilS3OA/zh-cn_image_0000002786359650.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=47364A28D0BA815C4DD629582113A9ECC550127689464763FC7AE83B1E507336)
 6. 审核通过后，在“开放能力管理”标签页中勾选机密空间服务并点击“保存”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/mvC-6Pe_Tu-pMHr8yR9O4w/zh-cn_image_0000002815559071.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/mvC-6Pe_Tu-pMHr8yR9O4w/zh-cn_image_0000002815559071.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1CED45FA9F4D3B78FFDCE34DC181640FB9ECDFC2F65E3A902AAB621589BFF96)
 
 ## 开发步骤
 

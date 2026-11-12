@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/faq
 title: 常见问题
 breadcrumb: 指南 > 应用测试 > 专项测试 > DevEco Testing > 常见问题
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:34:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-30
 content_hash: sha256:5e06f4dd37b45e0bd0fad929712622ebc654b1e11a6cce4b7ad88767222f9dfc
 ---
@@ -31,7 +31,7 @@ A4：请确认Mac版DevEco Testing客户端是否按照以下步骤安装：
 
 步骤1：DevEco Testing 客户端下载完成后将出现下图弹框。将下载的 DevEco\_Testing\_for\_App 文件拖拽至 Applications 文件夹。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/kMXcnDZPTlKB4MGTOp76iQ/zh-cn_image_0000002633533182.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/kMXcnDZPTlKB4MGTOp76iQ/zh-cn_image_0000002633533182.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C2988F521D9DB33D96DDA22B5FE617C8861A45A6ADD8B837DACC07DD5D631AE "点击放大")
 
 步骤2：在启动台找到 DevEco Testing 图标则表示 DevEco Testing 已正常安装。
 
@@ -49,17 +49,17 @@ A6：请先重启电脑，再重新覆盖安装。
 
 A7：如当前电脑仅有C盘，需要在客户端将数据目录设置为 C:\Users\...\AppData\Local\Temp\Deveco Testing 。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/CidcQljVRHqruYHX_UX48A/zh-cn_image_0000002633533180.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/CidcQljVRHqruYHX_UX48A/zh-cn_image_0000002633533180.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=24754239F55AD9B2A5E22C383D3E739D3160E45B43B3E075FB2E8774DDEC4DF4 "点击放大")
 
 **Q8：如何通过客户端反馈日志****？**
 
 A8：（1）在客户端导航栏点击设置——选择问题反馈
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/_7wRnmB9SX-gMDTpMEtpOA/zh-cn_image_0000002678748202.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/_7wRnmB9SX-gMDTpMEtpOA/zh-cn_image_0000002678748202.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=29CC7B49E8ADA6189E6263FBC8A460AC19F0F33F39901739E4891D2B358127B1 "点击放大")
 
 （2）根据页面提醒填问题反馈的信息，勾选“上传日志”选项；如果想反馈某一个任务的日志及执行情况，在“选择任务”栏点击对应的任务即可。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/D2Yl-5bfQgO6fmlpqpDM2w/zh-cn_image_0000002708349369.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/D2Yl-5bfQgO6fmlpqpDM2w/zh-cn_image_0000002708349369.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=49E8BE17C666C9129B42703C0421D0D0316779C035534A6C671F87A039C45DF4 "点击放大")
 
 **Q9：为什么 DevEco Testing 进行稳定性压测时，相同应用版本包，API25 版本的测试问题相比 API24 变多了？**
 

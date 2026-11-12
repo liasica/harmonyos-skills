@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-atom
 title: AtomicServiceTabs
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > AtomicService > AtomicServiceTabs
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:5f12b543c79674c2dbaf1ea0fbf7c3daf56654cc0cbd19c1fc0f1d68cc5419dc
 ---
@@ -219,7 +219,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/nSVXuiYCQ3C7tSjQs1Rfug/zh-cn_image_0000002786521546.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/nSVXuiYCQ3C7tSjQs1Rfug/zh-cn_image_0000002786521546.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D0CE190E609E1233F968A40D6C9B004D5EA0BD160486A86CAA4512D12D7F2B7)
 
 ### 示例2(纯图标样式)
 
@@ -291,7 +291,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/S1u7auVPT5S6vaPF5Hhx-A/zh-cn_image_0000002786361618.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/S1u7auVPT5S6vaPF5Hhx-A/zh-cn_image_0000002786361618.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6A0DA45FFD7533C32371FAF103A5E3DF38EFB327A7C36968DB7EA53F87D8D1B)
 
 ### 示例3(图标加文本，自定义图文排布)
 
@@ -383,4 +383,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/MavBnK5QRXWcG696vTXE2A/zh-cn_image_0000002815561039.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/MavBnK5QRXWcG696vTXE2A/zh-cn_image_0000002815561039.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB00C08CD2FAE445D252D2D19F5CA2AEF68A8CE0632E1A96092022C05275B7BE)

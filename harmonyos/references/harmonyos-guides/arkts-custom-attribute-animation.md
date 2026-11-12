@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-custom-
 title: 自定义属性动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 属性动画 > 自定义属性动画
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:205415e7048597993cb2c31ffdc43ee57eb93ea13e62499366e71fe81c74693f
 ---
@@ -44,7 +44,7 @@ struct AnimatablePropertyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/d5rxTpBLTgi0rYWJTeG7Sg/zh-cn_image_0000002786359152.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/d5rxTpBLTgi0rYWJTeG7Sg/zh-cn_image_0000002786359152.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADA75B9422A68F4DB5E4F7F71315572BED46D6705310499CA7D11270B72D3B17)
 
 ## 使用自定义数据类型改变图形形状
 
@@ -188,4 +188,4 @@ struct AnimatedShape {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/E3VdjqCnTxOu13Dfd3nrzA/zh-cn_image_0000002815558573.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/E3VdjqCnTxOu13Dfd3nrzA/zh-cn_image_0000002815558573.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD8EB58FFA61060D3F3707FE7C63A6BE71B9B4B99199BFC2062D4E30F4B1C77F)

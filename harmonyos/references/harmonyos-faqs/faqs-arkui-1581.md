@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1581
 title: 如何实现Swiper部分区域响应左右滑动事件
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现Swiper部分区域响应左右滑动事件
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:a3fdca18a316672985ad88ae616b7f4b446134bbd4082ccac5cdb27edd05cd2e
 ---
@@ -124,4 +124,4 @@ struct SwiperDemo {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/vHm_Oh6vQoWLNvGBqqk8Tw/zh-cn_image_0000002712946877.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/vHm_Oh6vQoWLNvGBqqk8Tw/zh-cn_image_0000002712946877.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=D007AE325281857A558102D7DD80D1ECBB93D81968EFEF401FF3CE9E186F3985 "点击放大")

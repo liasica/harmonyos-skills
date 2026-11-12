@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/form-kit-faq-00
 title: 元服务卡片多张图片刷新展示常见问题
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 常见问题 > 元服务卡片多张图片刷新展示常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:50+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:ba90c122fd90fa0041863efcdbc02d0c2a0db2e6a7eadc5a22dff1b3b6476c26
 ---
@@ -100,7 +100,7 @@ content_hash: sha256:ba90c122fd90fa0041863efcdbc02d0c2a0db2e6a7eadc5a22dff1b3b64
 
    效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/KXIZEsFtTx-NbCusgpAX8g/zh-cn_image_0000002766078502.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/KXIZEsFtTx-NbCusgpAX8g/zh-cn_image_0000002766078502.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F9E8868C259A6502421AF337D96B1C33ECD291AE48DACAC7ED8D33E649EDCE0 "点击放大")
 
 **Q：服务卡片中是否可以加载GIF图？**
 

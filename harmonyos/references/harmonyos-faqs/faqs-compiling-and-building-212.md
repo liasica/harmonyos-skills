@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 如何在构建打包时获取云端文件新增或更新到rawfile文件夹中
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 如何在构建打包时获取云端文件新增或更新到rawfile文件夹中
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:56+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:c78565b008af5fbd17f86e0ed9170345606628d98da07fa43bf66b113b96d6b9
 ---
@@ -119,11 +119,11 @@ content_hash: sha256:c78565b008af5fbd17f86e0ed9170345606628d98da07fa43bf66b113b9
    ```
 3. 在未构建前，可以看到目前rawfile文件夹中没有文件：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/mkV7DQXlRgSnHbmKIbmDRQ/zh-cn_image_0000002658928503.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/mkV7DQXlRgSnHbmKIbmDRQ/zh-cn_image_0000002658928503.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=4DBFBEA17063DB50A35114FC16F2FAA837CACE50727953E0A2CCF49092D0FB3A "点击放大")
 4. 在构建打包之后，可以看到rawfile文件夹中多出来了一个文件，而且通过查看APP包的内容也能看到Entry模块打出来的Hap包的rawfile文件夹中，包含了之前下载好的文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/CQFOAAN_T9eqHBu-FLBZZQ/zh-cn_image_0000002628409284.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/CQFOAAN_T9eqHBu-FLBZZQ/zh-cn_image_0000002628409284.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC80B1B7231205FAD72ED5C6C799E5B52944F84F9DC6B0CDEF6B894B6E02093E "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/RWUI3_-JSbGSJGOBPQdBRA/zh-cn_image_0000002658808555.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/RWUI3_-JSbGSJGOBPQdBRA/zh-cn_image_0000002658808555.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=E097FBE51F9A90BBBA053174D9C262B69E23C39E7ED18C52B412A9C2F8B0079C "点击放大")
 
    以上运行结果说明脚本执行成功，可以通过自定义构建任务获取云端文件新增或更新到rawfile文件夹中。

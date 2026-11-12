@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-rotatio
 title: 旋转屏动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 转场动画 > 旋转屏动画
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:de8227fcb594426ac41d91adf82cd3fff2c7919d8e6c0b47316d449b4f0e96a5
 ---
@@ -44,7 +44,7 @@ struct RotationTest {
 
 布局切换的旋转屏动画，会对同步旋转的窗口与应用视图做大小和位置的过渡。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/1mO1-kG0S4KITQfUhaCUrQ/zh-cn_image_0000002815398669.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/1mO1-kG0S4KITQfUhaCUrQ/zh-cn_image_0000002815398669.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=510D8C7D2514E60AFC29ADBFAA15347316244CEB7F6E90F1A0DFEC5CA1E3B40C)
 
 ## 透明度变化的旋转屏动画
 
@@ -147,4 +147,4 @@ const TAG: string = 'EntryAbility';
 
 透明度变化的旋转屏动画，会对窗口做大小和位置的过渡，并同时对应用视图做切换过渡，且为消失隐藏的应用视图做渐隐效果，对新出现的视图做渐显的效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/yeVa6bQzTC-jcUx9mPQNvQ/zh-cn_image_0000002786519094.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/yeVa6bQzTC-jcUx9mPQNvQ/zh-cn_image_0000002786519094.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C6FF7216866C37DD6BE38885D121244C2592F2DAA908E554365CD09B315E953)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-modal-t
 title: 模态转场
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 转场动画 > 模态转场
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:8468617004be12994b65f150fddfb8e985b3cecf155fc1bba421952844e2b579
 ---
@@ -257,7 +257,7 @@ struct BindContentCoverDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/GwAw506sS5KTHSsl0SqfPA/zh-cn_image_0000002786359154.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/GwAw506sS5KTHSsl0SqfPA/zh-cn_image_0000002786359154.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=5BF63216A6CD5868D2C7D2CECDF68FCCCE547D518985182277BB94EB764FD796)
 
 ## 使用bindSheet构建半模态转场效果
 
@@ -374,7 +374,7 @@ struct BindSheetDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/PCCMNUN6QQunBQcxm0ebRA/zh-cn_image_0000002815558575.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/PCCMNUN6QQunBQcxm0ebRA/zh-cn_image_0000002815558575.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5350A693BE40C05DA235F6D84AF08342C0C3730C68FFB1EE951409AC9009392)
 
 ## 使用bindMenu实现菜单弹出效果
 
@@ -430,7 +430,7 @@ struct BindMenuDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/TXgjnzoZQLC706R6zo1MLw/zh-cn_image_0000002815398659.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/TXgjnzoZQLC706R6zo1MLw/zh-cn_image_0000002815398659.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDFB8C23EC98353BA7F95578CFDF63D1CA5D909810D7C8774E44E95893E34BB8)
 
 ## 使用bindContextMenu实现菜单弹出效果
 
@@ -511,7 +511,7 @@ struct BindContextMenuDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/tu3OkgzDSDCNnWKsKPjmwA/zh-cn_image_0000002786519084.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/tu3OkgzDSDCNnWKsKPjmwA/zh-cn_image_0000002786519084.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE845F734900F774E1222957B2CBBE100F003236F83F9744C51BA07D8F744E7E)
 
 ## 使用bindPopup实现气泡弹窗效果
 
@@ -573,7 +573,7 @@ struct BindPopupDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/AcaFGmg0SWyWjEArUgmMrw/zh-cn_image_0000002786359156.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/AcaFGmg0SWyWjEArUgmMrw/zh-cn_image_0000002786359156.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D5293E343836AD26296C5FD43DEC069B4881491440391000DC76C9F24B4938D)
 
 ## 使用if实现模态转场
 
@@ -779,4 +779,4 @@ struct ModalTransitionWithIf {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/xKt5OYYzTuOzdjbffBQ23w/zh-cn_image_0000002815558577.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/xKt5OYYzTuOzdjbffBQ23w/zh-cn_image_0000002815558577.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4D652D319193096AB0B64604860691547E36524316C1F800802C9B9650E9846)

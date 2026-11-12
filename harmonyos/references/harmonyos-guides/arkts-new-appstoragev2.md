@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-app
 title: "AppStorageV2: 应用全局UI状态存储"
 breadcrumb: "指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理应用拥有的状态 > AppStorageV2: 应用全局UI状态存储"
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:5d0832f02a251e555db567cfe99c8c9d043c82a6def5fddbbc4f8a7a9f5a4dbe
 ---
@@ -168,7 +168,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/0eY0i7DVQVGZcpXsijIwow/zh-cn_image_0000002786518586.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/0eY0i7DVQVGZcpXsijIwow/zh-cn_image_0000002786518586.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3D08145E016C9A14538A835E8244A464849EA74E60E2818E75709101B99C9D4)
 
 ### 在两个页面之间存储数据
 
@@ -321,4 +321,4 @@ struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/kQDvOFggQlWqiOCn3Dt0Uw/zh-cn_image_0000002786358658.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/kQDvOFggQlWqiOCn3Dt0Uw/zh-cn_image_0000002786358658.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=7685C7B0806009E8EC2706F3765544B0EB11A6FFA05A22B473C7AE365997C069)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/c-cpp-overvie
 title: C/C++标准库机制概述
 breadcrumb: 指南 > NDK开发 > 代码开发 > C/C++标准库 > C/C++标准库机制概述
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-14
 content_hash: sha256:6b3bf9c8961189300fb31248c3066f830840784d1d43540480861d42eeb9285d
 ---
@@ -46,7 +46,7 @@ HarmonyOS中动态库加载namespace配置的情况
 1. default ns和ndk ns可以互相访问全部so，不能访问app ns的so。
 2. app ns能访问ndk ns的全部so，不能访问default ns的so。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/8-KKAvzlTWqtuN4iqsnCHw/zh-cn_image_0000002815560219.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/8-KKAvzlTWqtuN4iqsnCHw/zh-cn_image_0000002815560219.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA4F2B4F3BB26E4EBF50946809A10D0F71605BC6D41EBE5DF555BEEABE1C70B1)
 
 ### rpath机制
 
@@ -61,7 +61,7 @@ SET(CMAKE_BUILD_WITH_INSTALL_RPATH TRUE)
 SET(CMAKE_INSTALL_RPATH "\${ORIGIN}/module")
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/CDmp9mQeROyDcfW3ofhxbg/zh-cn_image_0000002815400303.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/CDmp9mQeROyDcfW3ofhxbg/zh-cn_image_0000002815400303.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF312A698A31C92930A044C0C48CA45C922418294313D60C0F953C1287E2A079)
 
 ### 支持dlclose
 

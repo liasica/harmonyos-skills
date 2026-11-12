@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: LazyColumnLayout
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > LazyColumnLayout
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-30
 content_hash: sha256:8ff4673b465a89aba9036dd0d73373698bdd82d7ac6e502aa0f11c9b3ea8a713
 ---
@@ -341,7 +341,7 @@ struct LazyColumnLayoutSample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/0ssVPKXKTq6f7JzW6hOm1g/zh-cn_image_0000002786361164.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/0ssVPKXKTq6f7JzW6hOm1g/zh-cn_image_0000002786361164.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=51A74B84BB9BA7313D4B9960B589F7CD1A4CA9153ADED5F3FA16201DA9880ACD)
 
 ### 示例2（设置头部组件或尾部组件及吸附效果）
 
@@ -512,4 +512,4 @@ export class MyDataSource<T> extends BasicDataSource<T> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/yt94nzl7SWCBrZ8_p_tccg/zh-cn_image_0000002815560585.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/yt94nzl7SWCBrZ8_p_tccg/zh-cn_image_0000002815560585.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF5BB8CFEB1C18C06A2EA27D4E10497334066F03A9A360914273E19A7715E7B0)

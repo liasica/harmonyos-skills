@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: Hypium中，如何判断当前屏幕为横屏或竖屏
 breadcrumb: FAQ > DevEco Studio > 应用调试 > Hypium中，如何判断当前屏幕为横屏或竖屏
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:ab292c41eb09ebd0ef054bb25855472b240db7d9c9444ba1d210e799e6e8c0df
 ---
@@ -22,7 +22,7 @@ Hypium中，执行视频类应用的全屏或者游戏类应用横屏时，应�
 
 参考[窗口旋转说明](../best-practices/bpta-landscape-and-portrait-development.md#section388473115175)，窗口旋转形态有以下四种，分别为顺时针方向旋转0度（竖屏），旋转90度（反向横屏），旋转270度（横屏），旋转180度（反向竖屏）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/N3om0E7HSq-VQYfpA6xikA/zh-cn_image_0000002628569338.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/N3om0E7HSq-VQYfpA6xikA/zh-cn_image_0000002628569338.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=868D1B8DAE954FC10C00506E4CE8BAE616ADC0013F46BF0D52FFC91C2A89FB44 "点击放大")
 
 ## 解决方案
 

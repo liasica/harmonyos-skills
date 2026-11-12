@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-runnin
 title: 点击Device Manager，提示“找不到应用程序”
 breadcrumb: FAQ > DevEco Studio > 应用运行 > 点击Device Manager，提示“找不到应用程序”
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:58+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:3aad34180eea198f863b8060f497358a73a6b759abacee21a85f1520cfc68179
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:3aad34180eea198f863b8060f497358a73a6b759abacee21a85f1520cfc
 
 点击Device Manager进行登录授权时，如果提示“找不到应用程序”，则无法打开浏览器登录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/9qzs8dQfS7KSlS2kJQEW8w/zh-cn_image_0000002624478754.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/9qzs8dQfS7KSlS2kJQEW8w/zh-cn_image_0000002624478754.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8048837552B515F603FF2E9B66BB5EC473817991552426C843BD8D2091A8E8F)
 
 **解决措施**
 

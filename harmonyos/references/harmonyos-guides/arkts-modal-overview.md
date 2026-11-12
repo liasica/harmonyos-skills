@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-modal-o
 title: 绑定模态页面概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 绑定模态页面 > 绑定模态页面概述
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:13+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:358b8047e138a8ddebad4617e3fcb654e629766e5c8d649bab63d155f29d70fb
 ---
@@ -12,10 +12,10 @@ content_hash: sha256:358b8047e138a8ddebad4617e3fcb654e629766e5c8d649bab63d155f29
 
 * **​半模态：​**开发者可以利用此模态页面实现多形态效果。支持不同宽度设备显示不同样式的半模态页面。允许用户通过侧滑，点击蒙层，点击关闭按钮，下拉关闭半模态页面。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/bLQNFX4fTsC1CWtLeb2-jA/zh-cn_image_0000002815558495.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/bLQNFX4fTsC1CWtLeb2-jA/zh-cn_image_0000002815558495.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C3FAEF99CD978869895925762019F414383EF3956FF312E32CEB372F2B12EA0)
 * **全模态：​**开发者可以利用此模态页面实现全屏的模态弹窗效果。默认需要侧滑才能关闭。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/AC9dh1LHRyy-LwK29VBAOw/zh-cn_image_0000002815398579.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/AC9dh1LHRyy-LwK29VBAOw/zh-cn_image_0000002815398579.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=51CFF8A1C2F94F9D8F4E7A8DC49C60D062DC4585BB035496E28FB826ABAB7489)
 
 ## 使用场景
 

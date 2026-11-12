@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: 如何读取项目工程下预置的SQLite数据库
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > 如何读取项目工程下预置的SQLite数据库
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:59+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:8b3735349de71b0e49a949531462efaae00fbfe7816562761be339e09561436f
 ---
@@ -255,4 +255,4 @@ struct Index {
 
 代码运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/E52WaJVOSJqHDIp-rcQ87Q/zh-cn_image_0000002629059004.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/E52WaJVOSJqHDIp-rcQ87Q/zh-cn_image_0000002629059004.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6F91F4A295D28DE5A914D9F3A77AB5E0E9F02B4AD09363E596749FC0AD76CEA "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Lattice)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (Lattice)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:56:54+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:be83cb2376adc689c1154be63442d6403891509923992e0c64c34abfcc840f8c
 ---
@@ -72,7 +72,7 @@ class DrawingRenderNode extends RenderNode {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/QFq6HYz4S7yVYrhBCc_-4g/zh-cn_image_0000002786362144.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/QFq6HYz4S7yVYrhBCc_-4g/zh-cn_image_0000002786362144.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=F77567F130D6F4F036EB27FB0AAE198AE8103621565E563FF79F358CBD5E2A14)
 
 ## createImageLattice18+
 

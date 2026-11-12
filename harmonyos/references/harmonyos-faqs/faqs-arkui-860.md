@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-860
 title: 鼠标无法滑动Scroll组件
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 鼠标无法滑动Scroll组件
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:13+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:5438e83472616a29864d3c5afae7eb23b71044f94d8680cd2ba006b0fbfed6f6
 ---
@@ -121,7 +121,7 @@ struct MousePage {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/Gha6tKSjRjSfDxPkkTBOag/zh-cn_image_0000002658798167.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/Gha6tKSjRjSfDxPkkTBOag/zh-cn_image_0000002658798167.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F1CA1FCE48DE176C9C7F3A54839F83381EA0716E6D40EE923732B38EA28D8A9 "点击放大")
 
 ## 常见FAQ
 

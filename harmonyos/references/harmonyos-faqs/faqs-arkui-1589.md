@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1589
 title: 云调试环境下无法监听折叠屏屏幕状态的改变
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 云调试环境下无法监听折叠屏屏幕状态的改变
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:16567c6f3a45f40083a6e20c0b99add08f7d72eea63d92ff6706294018c53ce9
 ---
@@ -27,7 +27,7 @@ Q：折叠屏模拟器怎么控制展开折叠？
 
 A：折叠屏模拟器右侧工具栏可以控制折叠屏的展开折叠状态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/Ju0pAlRvRJGX2FL1yxHk2g/zh-cn_image_0000002658969527.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/Ju0pAlRvRJGX2FL1yxHk2g/zh-cn_image_0000002658969527.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A2EFDD95A63D957F3ED4CF1E183A3C7B9AB5C878462A97538D4309A976A4C1E "点击放大")
 
 Q：foldStatusChange和foldDisplayModeChange的区别？
 

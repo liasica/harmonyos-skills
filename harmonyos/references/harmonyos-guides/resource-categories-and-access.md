@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/resource-cate
 title: 资源分类与访问
 breadcrumb: 指南 > 基础入门 > 资源分类与访问
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:50:57+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:b24c86e6edbbc9c9a659be2dff7df05ce6b288559958f5659b82db5d65d75032
 ---
@@ -206,19 +206,19 @@ plural.json文件的内容如下：
 
 创建的目录名自动生成，格式固定为“限定词/资源组”，例如：创建一个限定词为dark的element目录，自动生成的目录名称为“dark/element”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/pu50ij29TFyPkirvrQh5QQ/zh-cn_image_0000002786518314.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/pu50ij29TFyPkirvrQh5QQ/zh-cn_image_0000002786518314.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=F88E0F64A790BAB7F06BEE4EA4809C420248F043AC2367C8FAFFFC119CE3F88B)
 
 ### 创建资源目录
 
 在resources目录右键菜单选择“New > Resource Directory”，可创建资源目录，默认创建的是base目录。如果选择了限定词，则会按照命名规范自动生成限定词和资源组目录。确定限定词后，选择资源组类型，当前资源组类型支持Element、Media、Profile三种，创建后生成资源目录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/jo6NJJ3PQiawOINUE0o6Qw/zh-cn_image_0000002786358386.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/jo6NJJ3PQiawOINUE0o6Qw/zh-cn_image_0000002786358386.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC6B845D81543FC51EF9217EE36055F7A0475A312C600FE7D8ECD521A096D164)
 
 ### 创建资源文件
 
 在资源组目录（element、media、profile）的右键菜单选择“New > XXX Resource File”，可创建对应资源组目录的资源文件。例如，在element目录下可新建Element Resource File。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/2FhjF6NtQrmEMiFpVv2lAw/zh-cn_image_0000002815557807.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/2FhjF6NtQrmEMiFpVv2lAw/zh-cn_image_0000002815557807.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=568E150590C98DAA883FB6BB4942882D566DDF97D267CFE583DBCDE08EE99143)
 
 ### 示例
 
@@ -226,12 +226,12 @@ plural.json文件的内容如下：
 
 1. 在resources目录右键菜单选择“New > Resource File”，File name填写为string\_sample，Resource type选择Element，Root Element选择string，Available qualifiers选中Locale，在右侧的语言列表中选择zh，地区列表中选择CN，将会在resources目录下创建zh\_CN/element/string\_sample.json文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/YBeJjlo_TbijX6FTpe9y7w/zh-cn_image_0000002815397891.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/YBeJjlo_TbijX6FTpe9y7w/zh-cn_image_0000002815397891.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC435CCD94D930B98E733B2C50D841AA3ECA522B0D3EA58B113DCD074569CA2E)
 2. 同理，语言选择en，地区选择US，创建en\_US/element/string\_sample.json文件。
 
    最终创建的资源文件如下。资源文件创建完成后，如何访问资源文件请参见[资源访问](resource-categories-and-access.md#资源访问)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/AJQTaBQMR-Wppad_-9qClA/zh-cn_image_0000002786518316.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/AJQTaBQMR-Wppad_-9qClA/zh-cn_image_0000002786518316.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=8794FDAF6FFA16E65464B294D8EB8331762E1C3AB65EBADB0CE6C83463560195)
 
 ## 资源可翻译特性
 
@@ -364,7 +364,7 @@ string资源配置attr属性示例如下，其中string1字符串被标记为不
 
 1. 在entry的oh-package.json5文件中添加依赖。如"dependencies": {"library": "file:../library"}。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/wimpY1IFRISLoONbnEU2bQ/zh-cn_image_0000002786358388.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/wimpY1IFRISLoONbnEU2bQ/zh-cn_image_0000002786358388.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4280420DE491F9BD2A574869C3FB481C9F165D181B4B2F2543A3E9F108DDAD6)
 2. 获取资源。
 
    ```typescript

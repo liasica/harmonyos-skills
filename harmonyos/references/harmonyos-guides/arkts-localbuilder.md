@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-localbu
 title: "@LocalBuilder装饰器：维持组件关系"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @LocalBuilder装饰器：维持组件关系
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:c7d5ac99b8783d438f284cab03ca780c4f501fc9f8bec5f7ae29a3c9805f703c
 ---
@@ -47,7 +47,7 @@ this.myBuilderFunction()
 
 跨组件传递局部@Builder函数时，会使用.bind(this)更改函数上下文，但这可能会导致组件的父子关系与状态管理的父子关系不一致。而@LocalBuilder无论是否使用.bind(this)，都不会改变组件的父子关系，即@LocalBuilder中定义组件所属的父组件是确定的，无法被改变。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/EBEoTN3_STmhIoNDYiBAeQ/zh-cn_image_0000002815398041.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/EBEoTN3_STmhIoNDYiBAeQ/zh-cn_image_0000002815398041.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=7BDDB56EBF7ACA5E410AF0DA5A7A28ED205776386B9D081171124D610404830F)
 
 **说明** 
 
@@ -103,7 +103,7 @@ struct Parent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/SFNF1GMGT1yXcHtdMWg-XQ/zh-cn_image_0000002786518466.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/SFNF1GMGT1yXcHtdMWg-XQ/zh-cn_image_0000002786518466.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=61406905233B5E8B69F56D1DA208AFCA14CB3ED90A869C836C386FD1E110C486)
 
 ## 限制条件
 
@@ -158,7 +158,7 @@ struct Parent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/ZOIe0s2QR0-_9lyECzF2lw/zh-cn_image_0000002786358538.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/ZOIe0s2QR0-_9lyECzF2lw/zh-cn_image_0000002786358538.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=D72D8F5BD1465D51245AEDCE3FCF5FBC61C4A1E6B8DF026B7A3BC72DD9B5603E)
 
 ### 按引用传递参数
 
@@ -205,7 +205,7 @@ struct Parent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/3W5YV2CiTzOPzwyR4kuJlg/zh-cn_image_0000002815557959.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/3W5YV2CiTzOPzwyR4kuJlg/zh-cn_image_0000002815557959.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=8367B578691DED77D63CE79ECEF1DF646C321508FD0B6BBEDF838C13ED32ACD9)
 
 按引用传递参数时，如果在@LocalBuilder函数内调用自定义组件，ArkUI提供$$作为按引用传递参数的范式。
 
@@ -263,7 +263,7 @@ struct Parent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/Mv6zOOS5TRuvqhNNBMM2Xw/zh-cn_image_0000002815398043.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/Mv6zOOS5TRuvqhNNBMM2Xw/zh-cn_image_0000002815398043.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA56727D3479907C600F100D45A4B13373561A542E3DD1B8B54175059047B1A3)
 
 当子组件引用父组件的@LocalBuilder函数并传入状态变量时，状态变量的改变不会触发@LocalBuilder函数内的UI刷新。这是因为调用@LocalBuilder装饰的函数创建出来的组件绑定于父组件，而状态变量的刷新机制仅作用于当前组件及其子组件，对父组件无效。而使用@Builder修饰函数可触发UI刷新，原因在于@Builder改变了函数的this指向，使创建出来的组件绑定到子组件上，从而在子组件修改变量能够实现@Builder中的UI刷新。
 
@@ -365,7 +365,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/DTvW51mTTyWuEvdaH8RRGw/zh-cn_image_0000002786518468.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/DTvW51mTTyWuEvdaH8RRGw/zh-cn_image_0000002786518468.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=8558657332D6A4C1A7C651E74B3AC3EDAF73B3E4A3000B424A4B8A6D0E03FF80)
 
 ### 按值传递参数
 
@@ -400,7 +400,7 @@ struct Parent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/wUJUeHlXQB2PY-o98Oaa5A/zh-cn_image_0000002786358540.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/wUJUeHlXQB2PY-o98Oaa5A/zh-cn_image_0000002786358540.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=919257C13BCCD2A6572105D05ECF74512084F97134AF9FAFE1224DCB5B311123)
 
 ## 使用场景
 
@@ -492,7 +492,7 @@ struct ParentPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/wFd8xhDSTY-sz3qMr6v0CQ/zh-cn_image_0000002815557961.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/wFd8xhDSTY-sz3qMr6v0CQ/zh-cn_image_0000002815557961.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FA49873D3387CB262EE7109C084B845EE88C8DFB54B2E9751CD79F9C4A9FB9D)
 
 ## 常见问题
 
@@ -596,7 +596,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/x0M6l-ZtS6-0lVPdGSU9eg/zh-cn_image_0000002815398045.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/x0M6l-ZtS6-0lVPdGSU9eg/zh-cn_image_0000002815398045.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=752E89983EE86DA2CE4BB75BD406E852F5AA998BB1628A89D78E4E1E6B006C9E)
 
 ### @LocalBuilder函数在参数处直接调用出现布局错乱
 
@@ -636,7 +636,7 @@ struct Page {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/IOZLXFKJSiywWdGnrSqtBQ/zh-cn_image_0000002786518470.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/IOZLXFKJSiywWdGnrSqtBQ/zh-cn_image_0000002786518470.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=34F372814B20E41BD529C72B1E74F9E8D7FA688476B495119DC4CC1140B9337B)
 
 【正例】
 
@@ -674,4 +674,4 @@ struct Page {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/Bhej4ck4Quqd8al5dsNodg/zh-cn_image_0000002786358542.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/Bhej4ck4Quqd8al5dsNodg/zh-cn_image_0000002786358542.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=49A175C356E544D53B9A9B874CB8067DC4335ED5B367BA064596B16576E700D4)

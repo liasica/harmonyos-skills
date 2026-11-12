@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkweb-ndk-pa
 title: 建立应用侧与前端页面数据通道(C/C++)
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 在应用中使用前端页面JavaScript > 建立应用侧与前端页面数据通道(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:c0fa781e161c5bf5d744be01f11effb1fa466d20818016ca8cbf8cfe60ca4341
 ---
@@ -14,13 +14,13 @@ content_hash: sha256:c0fa781e161c5bf5d744be01f11effb1fa466d20818016ca8cbf8cfe60c
 
 应用使用ArkTS、C++语言混合开发，或本身应用架构较贴近于小程序架构，自带C++侧环境，推荐使用ArkWeb在Native侧提供的[ArkWeb\_ControllerAPI](../harmonyos-references/capi-web-arkweb-controllerapi.md)、[ArkWeb\_WebMessageAPI](../harmonyos-references/capi-web-arkweb-webmessageapi.md)、[ArkWeb\_WebMessagePortAPI](../harmonyos-references/capi-web-arkweb-webmessageportapi.md)实现PostWebMessage功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/KORHFGaHRj281lF5cXa8sA/zh-cn_image_0000002786519358.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/KORHFGaHRj281lF5cXa8sA/zh-cn_image_0000002786519358.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=4EB1C225A44B8A88F266FCAA5CBA5EE48FA9804F241A33FB047A2E5D8FF8AD10)
 
 上图展示了具有普遍适用性的小程序的通用架构。在这一架构中，逻辑层依赖于应用程序自带的JavaScript运行时，该运行时在一个已有的C++环境中运行。通过Native接口，逻辑层能够直接在C++环境中与视图层（其中ArkWeb充当渲染器）进行通信，无需回退至ArkTS环境使用ArkTS PostWebMessage接口。
 
 左图是使用ArkTS PostWebMessage接口构建小程序的方案，如红框所示，应用需要先调用到ArkTS环境，再调用到C++环境。右图是使用Native PostWebMessage接口构建小程序的方案，不需要ArkTS环境和C++环境的切换，执行效率更高。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/xGSzzinRSEqXjRpM_ziWaw/zh-cn_image_0000002815558851.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/xGSzzinRSEqXjRpM_ziWaw/zh-cn_image_0000002815558851.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=079948DAB26D1FD43AFD749B13A130F973EFEDD4ED64B0EDC7EE2A7F66F1535F)
 
 ## 使用Native接口实现PostWebMessage通信
 

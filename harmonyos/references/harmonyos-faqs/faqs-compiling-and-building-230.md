@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译构建时报错：配置错误问题汇总
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译构建时报错：配置错误问题汇总
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:57+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:abc5195a1d580753b5b008fde5b11a122711e6da54dac0003d9a6287a6c426b2
 ---
@@ -25,7 +25,7 @@ content_hash: sha256:abc5195a1d580753b5b008fde5b11a122711e6da54dac0003d9a6287a6c
 
 * **场景一：构建报错：hvigor ERROR: 00303038 Configuration Error Schema validate failed.**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/i1LtlQsnQCKNX4D0iJRDyg/zh-cn_image_0000002658928591.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/i1LtlQsnQCKNX4D0iJRDyg/zh-cn_image_0000002658928591.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=633992D4DA01F7BB324BE3C6FF1B765D4E28BAA8EB0711E1808CF14DE3AC0184 "点击放大")
 * **场景二：构建报错：The type of the target device does not match the deviceType configured in the module.json5 file of the selected module.**
 * **场景三：构建报错：hvigor ERROR: EINVAL: invalid argument.**
 

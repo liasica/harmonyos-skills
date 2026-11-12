@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-560
 title: 如何解决子窗口设置状态栏颜色失败问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何解决子窗口设置状态栏颜色失败问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:29+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:08939db2b7744f748e8aac8684702cffb5a7599a79d8c78dd20aa3b5757ddad4
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:08939db2b7744f748e8aac8684702cffb5a7599a79d8c78dd20aa3b5757
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/OiIis2lCSLKXW15TPsi-WQ/zh-cn_image_0000002658791403.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/OiIis2lCSLKXW15TPsi-WQ/zh-cn_image_0000002658791403.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=752084F79187C9BD225CC5C86333B43DBC03F374B6747C702E4C289CC196CFFD "点击放大")
 
 ## 背景知识
 

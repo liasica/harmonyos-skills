@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-522
 title: Progress组件起点与终点样式重叠及白边问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Progress组件起点与终点样式重叠及白边问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:43d52ef6921ff5268b8a297dfca0653b69384227d0bfedb80fbad02b4321bd60
 ---
@@ -69,11 +69,11 @@ export struct Index {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/2CROL8l9S12Z7dyCU3AUdQ/zh-cn_image_0000002658790419.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/2CROL8l9S12Z7dyCU3AUdQ/zh-cn_image_0000002658790419.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=0235E09604294D1369363770E2013090B0F064AA36F9BBCCCF578B877495E61E "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/qsphOzyNSXec_Y-_kTfZKA/zh-cn_image_0000002628551060.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/qsphOzyNSXec_Y-_kTfZKA/zh-cn_image_0000002628551060.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=2357EF0E4063CF6FB1E9DE046689AB816A75EE09B502224C8A6AB3230B42D3C1 "点击放大")
 
 ## 背景知识
 

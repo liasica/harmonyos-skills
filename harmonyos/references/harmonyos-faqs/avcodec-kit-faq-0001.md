@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/avcodec-kit-faq
 title: 音视频编解码与转码常见问题
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频编解码（AVCodec） > 常见问题 > 音视频编解码与转码常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:33+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:3d6cfee98cc666ec3c5ca9ee853f98208d0a1c5bbbb3de10ce0ab45e42fbb4cf
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:3d6cfee98cc666ec3c5ca9ee853f98208d0a1c5bbbb3de10ce0ab45e42f
 
 **A**：根据需要转换的目标音频格式不同，可以将转码需求分为两种场景：第一种场景是目标音频格式为封装格式；第二种场景是目标音频格式为编码格式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/MxEv1S_XQMaJd6A_07Eu9Q/zh-cn_image_0000002767826964.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/MxEv1S_XQMaJd6A_07Eu9Q/zh-cn_image_0000002767826964.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=6096E616F60FEA3DFA638DA928E51E4AA7F98EB9556211EBA92611BAF9D3F8EA "点击放大")
 
 场景一，需要转为特定的封装格式：
 

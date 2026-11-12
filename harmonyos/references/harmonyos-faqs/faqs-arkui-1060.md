@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1060
 title: 如何在Canvas上实现涂抹效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何在Canvas上实现涂抹效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:53+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-22
 content_hash: sha256:1a83e356d1d604abafb22b261b274f1411d1a5a4d6754c494973d2a96bf946af
 ---
@@ -121,7 +121,7 @@ content_hash: sha256:1a83e356d1d604abafb22b261b274f1411d1a5a4d6754c494973d2a96bf
 
     实现效果如下：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/RHhJut8xTQKVuMbD5rjoew/zh-cn_image_0000002658926415.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/RHhJut8xTQKVuMbD5rjoew/zh-cn_image_0000002658926415.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E7DFACAEE466D272D7302E0A7CE8865333887ED070AF1BE1DBCCE7D7236063F "点击放大")
 * 场景二：撤销绘制的路径。
 
   在一些签名场景，如果用户绘制错误需要重新绘制，直接使用clearRect方法清空画布体验不够友好，需要仅撤销最新的绘制路径，这时可以使用数组来存储绘制过程中的路径，然后点击撤销时移除最新路径，最后重绘剩余路径，这样即可实现撤销绘制功能。示例代码参考如下：
@@ -215,7 +215,7 @@ content_hash: sha256:1a83e356d1d604abafb22b261b274f1411d1a5a4d6754c494973d2a96bf
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/Xz_z4S4OQpW1fBxZU4m9Xg/zh-cn_image_0000002628407212.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/Xz_z4S4OQpW1fBxZU4m9Xg/zh-cn_image_0000002628407212.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD0F9590F3E62A472EF22C14DFC9A121F0DBA1982279B8EAA987E09C3FBF2289 "点击放大")
 * 场景三：擦除部分绘制内容。
 
   在一些绘图场景，可能需要在原有的线条基础上进行擦除而不是撤销，这时就需要globalCompositeOperation实现。Canvas是增量绘制，在原有的基础上进行擦除，可以通过设置globalCompositeOperation属性为destination-out来实现，示例代码参考如下：
@@ -280,7 +280,7 @@ content_hash: sha256:1a83e356d1d604abafb22b261b274f1411d1a5a4d6754c494973d2a96bf
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/clXwIUpcRVK9zFIbqdxi7Q/zh-cn_image_0000002658806469.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/clXwIUpcRVK9zFIbqdxi7Q/zh-cn_image_0000002658806469.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8CA5767EEAD64A1091657566ECE4F9297C04D5548D885CBE17689424DA71D83 "点击放大")
 
 ## 常见FAQ
 

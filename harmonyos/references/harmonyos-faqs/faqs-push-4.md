@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-push-4
 title: 收到推送但是没有铃声和震动提醒
 breadcrumb: FAQ > 应用服务开发 > 消息推送服务（Push Kit） > 收到推送但是没有铃声和震动提醒
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:43+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:088621f846d70e5c8932e6f8b7f707fe43860cffb5f8c45fff5ecaa8f9967eb7
 ---
@@ -56,7 +56,7 @@ content_hash: sha256:088621f846d70e5c8932e6f8b7f707fe43860cffb5f8c45fff5ecaa8f99
 1. category是MARKETING，该消息分类为资讯营销类，消息提醒方式为静默通知，仅在通知栏展示。当category =IM （非MARKETING）时，按照[通知消息分类标准和提醒方式](../harmonyos-guides/push-apply-right.md#通知消息分类标准与提醒方式)，是有震动和铃声的，但是依然没有。
 2. 确认是否申请了自分类权益。登录HarmonyOS 开发者中心网站，点击"我的项目"。在项目列表中找到您的项目，通过"推送服务>配置"，在"配置"页签下选择需要申请自分类权益的应用，查看自分类权益是否已申请。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/6tubh-9QQXi4Dx1sEAgSzw/zh-cn_image_0000002655996468.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/6tubh-9QQXi4Dx1sEAgSzw/zh-cn_image_0000002655996468.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=13A417C4A2ACCA01ED06289EA1C9AFE076B5732D3D4C9C7030701D78671CA5A9 "点击放大")
 
 ## 分析结论
 

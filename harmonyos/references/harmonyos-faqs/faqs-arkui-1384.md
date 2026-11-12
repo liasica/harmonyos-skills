@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1384
 title: 如何勾勒出类似人脸的轮廓
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何勾勒出类似人脸的轮廓
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:35676a2c54e5e72114f7afb784970ced2c6515f5132714407cd8cc48bf4e9c88
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:35676a2c54e5e72114f7afb784970ced2c6515f5132714407cd8cc48bf4
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/3O7XrxOSSWKxx_ImHa9FRw/zh-cn_image_0000002658961875.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/3O7XrxOSSWKxx_ImHa9FRw/zh-cn_image_0000002658961875.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=7801F84AD3ABC75E04C7BE183DFC54B8AE084B253D264311E32A467A0C51CE2A "点击放大")
 
 ## 背景知识
 

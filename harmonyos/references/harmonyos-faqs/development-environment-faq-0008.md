@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/development-env
 title: ohpm命令行使用与环境变量配置常见问题
 breadcrumb: FAQ > DevEco Studio > 环境准备 > 常见问题 > ohpm命令行使用与环境变量配置常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:48+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:f48835ec439e80d817b95a5d42f091475ea9edb20da88b4defd219b59e753fed
 ---
@@ -20,10 +20,10 @@ ohpm 默认解压路径为：DevEco Studio 中默认安装位置：<DevEco Studi
 
 1. 在Windows系统中，右键点击“此电脑”选择“属性”，进入“高级系统设置”，点击“环境变量”，在“系统变量”中找到“Path”，点击“编辑”，添加ohpm工具包解压后的bin目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/RQgLKnWpRFOXqqevjLXSaA/zh-cn_image_0000002772993938.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/RQgLKnWpRFOXqqevjLXSaA/zh-cn_image_0000002772993938.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B83EAB9F7E549643AE5B83A5DBD86626E466198E9FF24A9589073E7A220E3A5 "点击放大")
 2. 添加变量后，重开命令行窗口，执行ohpm -v查看ohpm版本号，终端输出版本号信息（如1.0.0）即为成功。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/ipnkxogXRDuQVqXsIOmf_Q/zh-cn_image_0000002802393747.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/ipnkxogXRDuQVqXsIOmf_Q/zh-cn_image_0000002802393747.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB857B6B5E9A3AAAC14EDB7398CF7F9A33FD12F6345618DE900B444BC6FB2F6A)
 
 **Q：在Linux/Mac系统中，安装ohpm后，不能在命令行中使用ohpm，如何解决？**
 
@@ -51,7 +51,7 @@ ohpm 默认解压路径为：DevEco Studio 中默认安装位置：<DevEco Studi
    ohpm -v
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/h6aQ37ygTHGTk_Hg7AKr4Q/zh-cn_image_0000002802353669.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/h6aQ37ygTHGTk_Hg7AKr4Q/zh-cn_image_0000002802353669.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=3715FB2C35D3BB8131E94C9B7B68369D7C5AAFFEAC8C365C6489F6A2717A589D)
 
 **Q：oh-package.json5文件中dependencies、devDependencies和dynamicDependencies的区别是什么？**
 

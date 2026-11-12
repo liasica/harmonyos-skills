@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1188
 title: GridItem包含图片时，拖拽图片无法交换位置
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > GridItem包含图片时，拖拽图片无法交换位置
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:18+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:a91c317ac05802a3c225734d2b3df57e31ace14abcc5a058af6bc6a6b63425fe
 ---
@@ -14,7 +14,7 @@ Grid拖拽场景中，如果GridItem中包含图片，则在拖拽图片时只�
 
 现象如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/u1thvR3hTtWTWQLxG7sHLA/zh-cn_image_0000002628592956.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/u1thvR3hTtWTWQLxG7sHLA/zh-cn_image_0000002628592956.png?HW-CC-KV=V1&HW-CC-Date=20261112T233149Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED769BD02F513D53D0B75CD4EA0971514F6B04DAFFF0788618901BDE8C27922F)
 
 ## 背景知识
 
@@ -108,4 +108,4 @@ struct Second {
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/EatSkm6fSYK4tLvcr-yksA/zh-cn_image_0000002658832209.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/EatSkm6fSYK4tLvcr-yksA/zh-cn_image_0000002658832209.png?HW-CC-KV=V1&HW-CC-Date=20261112T233149Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E5B64C7095AADE031598D3D6EC172466DC35F30032365526846E571328ABA54)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: ArcSwiper
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > ArcSwiper
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:b35bd6c7b8aa59ddffebfa6ec6f75ee200a439d37feda47edf051e4608ded58c
 ---
@@ -733,7 +733,7 @@ struct TestNewInterface {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/PIYUGPD6QZGJrsotw5M9EA/zh-cn_image_0000002786361154.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/PIYUGPD6QZGJrsotw5M9EA/zh-cn_image_0000002786361154.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=F92697FA520331D85763768A5FF7F2254916531A50F2E656B337F6D4C676528D)
 
 ### 示例2（设置ArcSwiper自定义页面切换动画）
 
@@ -797,4 +797,4 @@ struct TestNewInterface {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/30OXMg_rS8W_TK9XGp52-Q/zh-cn_image_0000002815560575.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/30OXMg_rS8W_TK9XGp52-Q/zh-cn_image_0000002815560575.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA22B82A87A26ACBB3C64515C829579E5FA935D8230AAE8032AA1E75296A8DFC)

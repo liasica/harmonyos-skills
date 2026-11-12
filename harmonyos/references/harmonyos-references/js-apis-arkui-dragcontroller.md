@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.arkui.dragController (DragController)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.dragController (DragController)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:56+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-14
 content_hash: sha256:d837014be62730b8894480d6cb209d87dd383398f43e02ebea0874f8e55614b6
 ---
@@ -138,7 +138,7 @@ struct DragControllerPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/pmITEOW4RY-Mf2iGteZHmA/zh-cn_image_0000002815560285.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/pmITEOW4RY-Mf2iGteZHmA/zh-cn_image_0000002815560285.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=43B9F2AB747B3A698F912C2544353F7243A8A5500AB3A2FB7B90397B0E2C9B35)
 
 ## dragController.executeDrag(deprecated)
 
@@ -290,7 +290,7 @@ struct DragControllerPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/ZulAW6j_STa9LxdIaljlkw/zh-cn_image_0000002815400369.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/ZulAW6j_STa9LxdIaljlkw/zh-cn_image_0000002815400369.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B8F545F4106297049EC7F9FF4C882CD03E75B1D6DAF13251C90FFA5A28A20C5)
 
 ## DragInfo
 
@@ -585,7 +585,7 @@ struct DragControllerPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/gGkxORacSKysX-JJe4gtEg/zh-cn_image_0000002786520794.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/gGkxORacSKysX-JJe4gtEg/zh-cn_image_0000002786520794.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA7D84037389C3F86EC5F870A4A7711D8E12BBDF261CAE73B8E15E125E2B94F6)
 
 ## DragAction11+
 
@@ -861,7 +861,7 @@ struct ImageExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/xRXrqLLBR967NrzDNV42EQ/zh-cn_image_0000002786360866.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/xRXrqLLBR967NrzDNV42EQ/zh-cn_image_0000002786360866.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=D59F6F8BFE953F913DE61B467B3413407921E48A50EA6CD4B3B11872B1E3D02B)
 
 ### on('statusChange')11+
 
@@ -1305,7 +1305,7 @@ animate(options: AnimationOptions, handler: () => void): void
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/DNaKFXSpRs-IcD0XeN9GNA/zh-cn_image_0000002815560287.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/DNaKFXSpRs-IcD0XeN9GNA/zh-cn_image_0000002815560287.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=69AFABA6E471C331A294B19F4AF1A53D29564A0808E70283DE23479E866F2A5C)
 
 ## DragStartRequestStatus18+
 

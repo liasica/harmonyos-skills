@@ -5,9 +5,10 @@ import hashlib
 import json
 import re
 from dataclasses import dataclass
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Optional
-from urllib.parse import urljoin
+from urllib.parse import parse_qs, urljoin, urlparse
 
 from bs4 import BeautifulSoup, Tag
 from markdownify import markdownify
@@ -40,7 +41,7 @@ def convert_api_html(html: str, *, title: str, breadcrumb: str, doc_updated_at: 
     - 标题文本开头的 [hK] 标记表示比原标签再低 K-1 级，去掉标记并按此调整层级
     - 接口原文顶层章节是 h4（页面渲染为 h2），把标题层级整体上移到从 h2 开始
     - 提示框的图标图片换成「说明」「注意」等文字标签
-    - 链接转绝对 URL 并剥掉 CDN 签名参数；没有 href 的空锚点删除
+    - 链接转绝对 URL 并保留 CDN 签名参数；没有 href 的空锚点删除
     """
     soup = BeautifulSoup(html, "lxml")
     body = soup.body or soup
@@ -79,14 +80,13 @@ def convert_api_html(html: str, *, title: str, breadcrumb: str, doc_updated_at: 
     for a in body.find_all("a"):
         href = a.get("href")
         if href:
-            a["href"] = strip_signed_params(urljoin(base_url, href))
+            a["href"] = urljoin(base_url, href)
         elif not a.get_text(strip=True):
             a.decompose()
     for img in body.find_all("img", src=True):
-        src = strip_signed_params(urljoin(base_url, img["src"]))
-        m = _NOTE_ICON_RE.search(src)
+        src = urljoin(base_url, img["src"])
+        m = _NOTE_ICON_RE.search(urlparse(src).path)
         if m:
-            # 先剥掉签名参数再判断，真实 src 带 ?HW-CC-... 后缀
             label = soup.new_tag("strong")
             label.string = _NOTE_LABELS[m.group(1).lower()]
             img.replace_with(label)
@@ -95,7 +95,7 @@ def convert_api_html(html: str, *, title: str, breadcrumb: str, doc_updated_at: 
     # 其余带 src 的元素（source / iframe 等）同样处理
     for el in body.find_all(src=True):
         if el.name != "img":
-            el["src"] = strip_signed_params(urljoin(base_url, el["src"]))
+            el["src"] = urljoin(base_url, el["src"])
 
     md = markdownify(str(body), heading_style="ATX", code_language_callback=_code_lang)
     md = _post_process(md)
@@ -125,10 +125,34 @@ _URL_RE = re.compile(r"https?://[^\s)\]\"'<>]+")
 
 
 def _post_process(md: str) -> str:
-    # 兜底：正文文本里直接出现的签名 URL 也剥掉参数
-    if "HW-CC-" in md:
-        md = _URL_RE.sub(lambda m: strip_signed_params(m.group(0)), md)
     return re.sub(r"\n{3,}", "\n\n", md).strip() + "\n"
+
+
+def reuse_signed_urls(markdown: str, previous_markdown: str, *, now: datetime) -> str:
+    """同一资源复用尚有一天以上有效期的签名链接，其余使用本次抓取的链接"""
+    reusable = {}
+    for match in _URL_RE.finditer(previous_markdown):
+        url = match.group(0)
+        if "HW-CC-Sign=" not in url:
+            continue
+        params = parse_qs(urlparse(url).query)
+        if not params.get("HW-CC-Sign"):
+            continue
+        try:
+            signed_at = datetime.strptime(params["HW-CC-Date"][0], "%Y%m%dT%H%M%SZ").replace(tzinfo=timezone.utc)
+            expires_at = signed_at + timedelta(seconds=int(params["HW-CC-Expire"][0]))
+        except (KeyError, ValueError, OverflowError):
+            continue
+        if expires_at > now + timedelta(days=1):
+            reusable[strip_signed_params(url)] = url
+
+    def repl(match: re.Match[str]) -> str:
+        url = match.group(0)
+        if "HW-CC-Sign=" not in url:
+            return url
+        return reusable.get(strip_signed_params(url), url)
+
+    return _URL_RE.sub(repl, markdown)
 
 
 _LINK_RE = re.compile(r"\[([^\]]*)\]\((https?://[^\s)]+)\)")
@@ -231,6 +255,8 @@ def render_with_frontmatter(
 
 
 def compute_content_hash(markdown: str) -> str:
-    """对 Markdown 正文做规范化后 sha256；忽略空白差异"""
+    """对 Markdown 正文做规范化后 sha256；忽略空白和 CDN 签名差异"""
+    if "HW-CC-" in markdown:
+        markdown = _URL_RE.sub(lambda m: strip_signed_params(m.group(0)), markdown)
     normalized = re.sub(r"\s+", " ", markdown).strip()
     return "sha256:" + hashlib.sha256(normalized.encode("utf-8")).hexdigest()

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-4
 title: 使用DevEco Studio执行单元测试脚本常见问题和解决方案
 breadcrumb: FAQ > DevEco Studio > 应用测试 > 使用DevEco Studio执行单元测试脚本常见问题和解决方案
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:02+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-05
-content_hash: sha256:4185cd2497e66c0b88a280a560533bdd40d0ae5a12dc7e220e37858540f91306
+content_hash: sha256:e7783bc256b39a22e1723fca52fcdc7f3c9bcb917fb58bc9d69113e6cd344542
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:4185cd2497e66c0b88a280a560533bdd40d0ae5a12dc7e220e37858540f
 
   单元测试debug运行时卡住：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/7jGbFgEEQFuPjy1a1hUy5g/zh-cn_image_0000002688438687.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/IBZm20Y1Qjyx_3ITGl6hsg/zh-cn_image_0000002688438687.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF1D0873D88B87B289384DCC6A0C41904294FB51473A6BABF53D3857DCBEFBD9 "点击放大")
 * **问题二：**
 
   使用Instrument Test调用getContext()报错"Error in xxx, Parameter error. The context is invalid."。
@@ -49,7 +49,7 @@ content_hash: sha256:4185cd2497e66c0b88a280a560533bdd40d0ae5a12dc7e220e37858540f
 
   单击工具栏help->Show Log in Explorer，跳转到previewer.log所在路径，找到previewer.log并打开，发现报错提示"module name not exist"：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/E7axHYCTR6qSPQ3hh72-Kw/zh-cn_image_0000002658559890.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/THagsTg9RaiYabkHMJ6JrQ/zh-cn_image_0000002658559890.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=68276D02C2C5304CFD36C7735936F821ADFE5F08F77CFCF9CCD5AF7845179AA3 "点击放大")
 
   即用户引用了不存在的模块，建议用户排查工程中引用的模块，把报错模块的编译产物删除，再重新编译。
 * **问题二解决方案：**
@@ -74,7 +74,7 @@ content_hash: sha256:4185cd2497e66c0b88a280a560533bdd40d0ae5a12dc7e220e37858540f
 
   方案一：在DevEco Studio中Run/Debug Configurations中修改用例执行超时配置参数，避免用例执行超时。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/7w6bnoopR1yjcdgFqoJhsA/zh-cn_image_0000002688559699.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/7cZSPGQjT_6sh-kyh-Gi0A/zh-cn_image_0000002688559699.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=E06F68B33DA8C45E903C4CB92B832FE9366617E04EFF9A7CFE7456D6E591079C "点击放大")
 
   方案二：用例执行超时时长配置参考以下命令，timeout为测试用例执行的超时时间，正整数（单位ms），如不设置默认为5000ms：hdc shell aa test -b xxx -m xxx -s unittest OpenHarmonyTestRunner -s timeout 15000。
 

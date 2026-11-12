@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-li
 title: 动态共享包是否可以发布
 breadcrumb: FAQ > DevEco Studio > 命令行工具 > 动态共享包是否可以发布
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:03+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:777e16e117f7ca3903999a675a402c5a18259c6703b0f879f3df6a2a941725c9
 ---
@@ -27,26 +27,26 @@ content_hash: sha256:777e16e117f7ca3903999a675a402c5a18259c6703b0f879f3df6a2a941
   + 创建编译集成态HSP：
     1. 创建方-按如下步骤新建HSP模块publish\_hsp：
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/_QY21BfcQO6utaQRFLrdng/zh-cn_image_0000002658928951.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/_QY21BfcQO6utaQRFLrdng/zh-cn_image_0000002658928951.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=A30A7890446851FCA9C478EEF9CF7B0C3AC465E17DBD9C6D0D0847F83D77200D "点击放大")
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/O-WTz2hIRaeE3xloTd3aAw/zh-cn_image_0000002658808995.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/O-WTz2hIRaeE3xloTd3aAw/zh-cn_image_0000002658808995.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=437ABAA1FBC1B633CC06A84C0C77484060107292E518A06BC75DDB201FF5F82D "点击放大")
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/1gAJvZVuTI68Nkz7aNkXcw/zh-cn_image_0000002628409730.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/1gAJvZVuTI68Nkz7aNkXcw/zh-cn_image_0000002628409730.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=5BA1C84000F0162F1E79B282FD4F3015401513CFD4115065B13AB26DD0B5384D "点击放大")
     2. 创建方-[工程级build-profile.json5](../harmonyos-guides/ide-hvigor-build-profile-app.md)中useNormalizedOHMUrl配置项设置为true。
     3. 创建方-[模块级build-profile.json5](../harmonyos-guides/ide-hvigor-build-profile.md)中integratedHsp配置项设置为true。
     4. 点击工具栏右上角Product图标切换编译模式为release：
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/O_WxBKHnQu6Xq9MEDWKpvg/zh-cn_image_0000002628569632.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/O_WxBKHnQu6Xq9MEDWKpvg/zh-cn_image_0000002628569632.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7275B9A17491F2779C9313EDC186E18556555B4DE35606F77FDCD6D0FBBB4B0 "点击放大")
     5. 选中publish\_hsp模块的根目录，点击Build图标，选择Make Module 'publish\_hsp'启动构建可得到.tgz产物：
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/YiVsztp9Rqaag4IifstT_w/zh-cn_image_0000002658928953.png)
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/YiVsztp9Rqaag4IifstT_w/zh-cn_image_0000002658928953.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=B25116A3AF770BC2DF9A5A60B367B2B55AF194BBC4EE31F8D136CE0A92205088)
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/1HkLhTKNQjON5o0TY-WsMg/zh-cn_image_0000002658808997.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/1HkLhTKNQjON5o0TY-WsMg/zh-cn_image_0000002658808997.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C2AEDB5DA9C3637EB261347EFED7AB5AF21CC4D0942AD647E9D08CC40393A18 "点击放大")
   + 发布HSP：
 
     使用[ohpm publish](../harmonyos-guides/ide-ohpm-publish.md)命令即可将publish\_hsp-default.tgz上传至ohpm-repo私仓，私仓搭建参考[ohpm-repo私仓搭建工具](../harmonyos-guides/ide-ohpm-repo.md)：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/0JtR08jEQfifyo1-U2EbXw/zh-cn_image_0000002628409732.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/0JtR08jEQfifyo1-U2EbXw/zh-cn_image_0000002628409732.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2FECCB3A0E24487FCE96401629EC93C380034BEA3A2941ECE807DBF860C5FC2 "点击放大")
   + 引用已使用的集成态HSP：
     1. 使用方-工程级build-profile.json5中useNormalizedOHMUrl配置项设置为true。
     2. 使用方-在主模块的oh-package.json5配置文件dependencies配置依赖私有库：publish\_hsp: "1.0.0"。

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Hyperlink
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > Hyperlink
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:3740645be226e96917ae90ba9f50fb644e6504be6e6d923dfbf4bc69681b5e6d
 ---
@@ -86,4 +86,4 @@ struct HyperlinkExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/-wixhcyoQ46KKsuZMJacoA/zh-cn_image_0000002786521288.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/-wixhcyoQ46KKsuZMJacoA/zh-cn_image_0000002786521288.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=46AAA9D09524B3EB0054D76955FF6FA37C9B367BA8AE68152847862EC52F2B77)

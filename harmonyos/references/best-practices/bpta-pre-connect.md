@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pre-connec
 title: 冷启网络预建链最佳实践
 breadcrumb: 最佳实践 > 技术创新 > 通讯 > 冷启网络预建链最佳实践
 category: best-practices
-scraped_at: 2026-11-10T10:42:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:33b875acbc14e5bf88d9ed6e8784cf48009e36ac5d304ccb77bea42884a26888
 ---
@@ -24,7 +24,7 @@ content_hash: sha256:33b875acbc14e5bf88d9ed6e8784cf48009e36ac5d304ccb77bea42884a
 
 使用预建链请求与未使用预建链请求时序对比图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/KTT4NCTVRDygvMGqv7TDtQ/zh-cn_image_0000002594079346.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/YvwzQ8BoSdOZx9mSQ6J4vA/zh-cn_image_0000002624518875.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/KTT4NCTVRDygvMGqv7TDtQ/zh-cn_image_0000002594079346.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=2132EB96ED1515C8183AC60A8BA09DA3F7A26173945EAAE1B7F5E8256A7B9764 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/YvwzQ8BoSdOZx9mSQ6J4vA/zh-cn_image_0000002624518875.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5ED48094BEF3685D18D7207DB5A2A84D53099EAF2B33D594329B2D5C63B591D "点击放大")
 
 ## 冷启动网络预热
 
@@ -66,7 +66,7 @@ try {
 
 在应用启动时，使用预建链请求与非预建链正常请求对比：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/J6ZrtbFYR2irvyCYvEZCpw/zh-cn_image_0000002594239264.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/J6ZrtbFYR2irvyCYvEZCpw/zh-cn_image_0000002594239264.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E430B28D6FBE04EEACEB1B285BEC279B23C754BFF36A0D211B89F6539F17096)
 
 2.连接复用获取数据：当实际数据请求发起时，直接复用预建链阶段已建立的连接，跳过连接建立过程，实现向目标服务器动态预取数据，以优化资源加载。
 
@@ -95,7 +95,7 @@ try {
 
 从应用启动到发起请求获取数据内容，使用预建链技术与正常请求对比：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/98b1uWCLS3qWkR3loujY-A/zh-cn_image_0000002624638731.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/98b1uWCLS3qWkR3loujY-A/zh-cn_image_0000002624638731.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=74547B01A8DC7611E2057D22EA747B336F90E5CEB3F70999D5218FD6D0A883DF)
 
 ## 常见问题
 

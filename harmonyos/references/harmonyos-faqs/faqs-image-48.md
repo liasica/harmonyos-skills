@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-48
 title: 如何获取PixelMap图像的文件大小
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 如何获取PixelMap图像的文件大小
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:27+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:f9d0f141382b5e795e1580bf9445bbb4713ecc35f2897e18ff7fecdc492d2a93
 ---
@@ -96,9 +96,9 @@ struct Page {
 
 效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/QM3i104yS_-01R-1GDppcg/zh-cn_image_0000002658911821.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/QM3i104yS_-01R-1GDppcg/zh-cn_image_0000002658911821.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1F3E5759EA8226D819E0A36F0830AF30040082E6023D72E7AB4FC87A2E10227 "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/oddl5QSBS4-_mtQEp7SThw/zh-cn_image_0000002628392612.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/oddl5QSBS4-_mtQEp7SThw/zh-cn_image_0000002628392612.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=4DFFD1AD6BE82F36D29A7EDBA4CD867C0A30B2D970E1955CF8EE295A77F9CCDF "点击放大")
 
 ## 常见FAQ
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: 安全配置指南
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 安全配置指南
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:52+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-10
 content_hash: sha256:3992d34531518df96b662d2f6405a0d7e397c92c6e942f9b7ede0d8575717f52
 ---
@@ -79,7 +79,7 @@ store:
 
 在默认设置下，ohpm-repo仓库中的所有包信息均可供任意用户自由查看，且包文件也支持任意用户下载。为了避免不相关的人访问ohpm-repo，我们建议在ohpm-repo管理界面的**系统设置>系统安全**页面，关闭匿名访问功能（默认保持开启）。关闭后，只有在.ohpmrc文件中正确[配置仓库只读或读写AccessToken](ide-ohpm-certification.md#li168806431480)的用户才能够通过ohpm工具下载三方包，只有登录ohpm-repo账户，才能够访问ohpm-repo管理界面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/vjakAFatS1eZcdn1zU8JjQ/zh-cn_image_0000002808764651.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/vjakAFatS1eZcdn1zU8JjQ/zh-cn_image_0000002808764651.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=3810249299DFDAB451AC7F887956D07F8565DAFF5BCB6D4298E9AFA6E2E16245 "点击放大")
 
 ## 用户访问频率控制
 

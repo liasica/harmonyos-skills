@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: 如何封装Popup组件到SDK
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > 如何封装Popup组件到SDK
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:a7edd064ffd5e9f34ab482ffd458c2c07c19a2562550de714aecaec740353449
 ---
@@ -318,4 +318,4 @@ content_hash: sha256:a7edd064ffd5e9f34ab482ffd458c2c07c19a2562550de714aecaec7403
 
 运行效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/EJreVGEPTROsb1ARZ7_H2w/zh-cn_image_0000002772679736.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/EJreVGEPTROsb1ARZ7_H2w/zh-cn_image_0000002772679736.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7EF28231C41C50EC63A6B8FE7535E161C39C4F2FBA5A8B45B164A02FB918FCD "点击放大")

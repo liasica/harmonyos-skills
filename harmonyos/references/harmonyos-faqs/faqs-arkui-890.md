@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-890
 title: 如何设置APP内全局字体大小
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何设置APP内全局字体大小
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:37+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:9922596b0795d418c3cb2f70ded84086fdbbd83363cb1b02e66c774ae2db7eb7
 ---
@@ -69,7 +69,7 @@ content_hash: sha256:9922596b0795d418c3cb2f70ded84086fdbbd83363cb1b02e66c774ae2d
 
   效果预览图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/hZO0odKaSp2jWC5ygUW5zQ/zh-cn_image_0000002658798907.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/hZO0odKaSp2jWC5ygUW5zQ/zh-cn_image_0000002658798907.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=713B0684CA00941A8BE514B5810F2AB4C15911326305DAFC847B9EE080C99F51 "点击放大")
 * 方案三：使用ApplicationContext接口实现设置应用内全局字体大小。
 
   通过setFontSizeScale方法设置应用字体的全局缩放比例：在entryability/EntryAbility中调用ApplicationContext接口，并使用setFontSizeScale方法，即可设置应用内全局字体比例大小。页面代码为默认Hello World页面，EntryAbility示例代码如下：
@@ -162,11 +162,11 @@ content_hash: sha256:9922596b0795d418c3cb2f70ded84086fdbbd83363cb1b02e66c774ae2d
 
   正常字体大小：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/xaE_CWduQTe3MPqAmkZ9uw/zh-cn_image_0000002628559546.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/xaE_CWduQTe3MPqAmkZ9uw/zh-cn_image_0000002628559546.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=B20178183D0131F8AB27A370A71AC04157D2D7DDBBC483A0EE01E9D36F7620D2 "点击放大")
 
   设置setFontSizeScale(2)方法的字体大小：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/peB4ZdVNSYiDEa7dC-sgbQ/zh-cn_image_0000002658918857.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/peB4ZdVNSYiDEa7dC-sgbQ/zh-cn_image_0000002658918857.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=50A8AE4B99F039B932C687D20C7377C2A7356AB4C8A1610DA8D8C3D945A40C90 "点击放大")
 
 ## 常见FAQ
 

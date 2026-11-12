@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-781
 title: 如何解决Flex组件设置minHeight属性后子组件高度被压缩的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Flex组件设置minHeight属性后子组件高度被压缩的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:9ada9be3c3c3632f62673e2590c0ad8dbc4297c13364ac3175d03fba3ae3e5d5
 ---
@@ -61,7 +61,7 @@ struct FlexMin {
 
 问题效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/prsTKbKVTLa5E93o1B8log/zh-cn_image_0000002628397736.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/prsTKbKVTLa5E93o1B8log/zh-cn_image_0000002628397736.png?HW-CC-KV=V1&HW-CC-Date=20261112T233202Z&HW-CC-Expire=31536000000&HW-CC-Sign=2025DD665E7E7BB020609528046E0498BD0C8D09B914A6BA0748C497CA76F265 "点击放大")
 
 ## 背景知识
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-builder
 title: "@BuilderParam装饰器：引用@Builder函数"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @BuilderParam装饰器：引用@Builder函数
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:fbda572b36644fcc6969fec53300a1e8042d9a816bac1d358c01bd48d84089df
 ---
@@ -85,7 +85,7 @@ content_hash: sha256:fbda572b36644fcc6969fec53300a1e8042d9a816bac1d358c01bd48d84
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/aFzVBOxNQtOBUVKQpclm3A/zh-cn_image_0000002815557963.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/aFzVBOxNQtOBUVKQpclm3A/zh-cn_image_0000002815557963.png?HW-CC-KV=V1&HW-CC-Date=20261112T233025Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D13AFBE265B29B1C88D05B30037D536F201E5C898A2D3B6F66356CC8031F95B)
 
 * 需要注意this的指向。
 
@@ -145,7 +145,7 @@ content_hash: sha256:fbda572b36644fcc6969fec53300a1e8042d9a816bac1d358c01bd48d84
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/9T2bW9XtRgGH1tjqBVRpcg/zh-cn_image_0000002815398047.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/9T2bW9XtRgGH1tjqBVRpcg/zh-cn_image_0000002815398047.png?HW-CC-KV=V1&HW-CC-Date=20261112T233025Z&HW-CC-Expire=31536000000&HW-CC-Sign=67C8074A54697CC2F63B35F8D7F97BA7BD32F516C06A6FF50BFCD695087510EA)
 
 ## 限制条件
 
@@ -214,7 +214,7 @@ struct Parent {
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/MJHLitTER2iSDjDy3jbinw/zh-cn_image_0000002786518472.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/MJHLitTER2iSDjDy3jbinw/zh-cn_image_0000002786518472.png?HW-CC-KV=V1&HW-CC-Date=20261112T233025Z&HW-CC-Expire=31536000000&HW-CC-Sign=4E8ABB69778A9458EF193D4A22431B0319F9DFC82ACCD585E457ECA2F409D370)
 
 ### 尾随闭包初始化组件
 
@@ -284,7 +284,7 @@ struct CustomContainerUser {
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/OKgyeoYtSK28cqUcR8OBOQ/zh-cn_image_0000002786358544.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/OKgyeoYtSK28cqUcR8OBOQ/zh-cn_image_0000002786358544.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233025Z&HW-CC-Expire=31536000000&HW-CC-Sign=DFB772F1FC60EC2161FFCD12145055A00C86D21D366BF75BD4AE65EB8C4C87CF)
 
 可以使用全局或局部@Builder通过尾随闭包的形式对[@ComponentV2](arkts-create-custom-components.md#componentv2)装饰的自定义组件中的@BuilderParam装饰的方法进行初始化。
 
@@ -360,7 +360,7 @@ struct ParentPage {
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/BngOmeaRSzeQ1Zq0WbpIdw/zh-cn_image_0000002815557965.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/BngOmeaRSzeQ1Zq0WbpIdw/zh-cn_image_0000002815557965.png?HW-CC-KV=V1&HW-CC-Date=20261112T233025Z&HW-CC-Expire=31536000000&HW-CC-Sign=179426ED0CCE07F79DE5B9CA41F852BE0E2AC640B18F4A86F302C0F3AD03AB6A)
 
 ### 使用@BuilderParam隔离多组件对@Builder跳转逻辑的调用
 
@@ -479,7 +479,7 @@ struct HelloWorldPage {
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/T1BPnLAeQLCya4GSdKyVbw/zh-cn_image_0000002815398049.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/T1BPnLAeQLCya4GSdKyVbw/zh-cn_image_0000002815398049.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233025Z&HW-CC-Expire=31536000000&HW-CC-Sign=50C235EFE1978F91BD00472BC31F78B0D83C1FEBB43C606124750170281D0A0E)
 
 ### 使用全局和局部@Builder初始化@BuilderParam
 
@@ -565,7 +565,7 @@ struct ParentPage {
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/i5RUAuqsSnWkS_flTP0BDg/zh-cn_image_0000002786518474.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/i5RUAuqsSnWkS_flTP0BDg/zh-cn_image_0000002786518474.png?HW-CC-KV=V1&HW-CC-Date=20261112T233025Z&HW-CC-Expire=31536000000&HW-CC-Sign=6933AC7657715BE00F4CF1ECF19DBD71E0AD833B7B628D91403B3238C8229A22)
 
 ### 在@ComponentV2装饰的自定义组件中使用@BuilderParam
 
@@ -651,7 +651,7 @@ struct ParentPage {
 
 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/89wgOZHvSHGabtuLsj47-A/zh-cn_image_0000002786358546.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/89wgOZHvSHGabtuLsj47-A/zh-cn_image_0000002786358546.png?HW-CC-KV=V1&HW-CC-Date=20261112T233025Z&HW-CC-Expire=31536000000&HW-CC-Sign=A2C3F4A2EC8BCC3444EFEE5F7C3AB36E48B430D1F085796568B1DAD84D85F09F)
 
 ## 常见问题
 

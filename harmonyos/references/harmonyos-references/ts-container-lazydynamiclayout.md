@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: LazyDynamicLayout
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > LazyDynamicLayout
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-30
 content_hash: sha256:b2db2647da9eccf9e82c83fac6364dfb6ba9870d371e10ace1e6ff174866d824
 ---
@@ -443,4 +443,4 @@ export class MyDataSource<T> extends BasicDataSource<T> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/I_7wSjz1RoiVZE7Ob7IfDw/zh-cn_image_0000002815400669.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/I_7wSjz1RoiVZE7Ob7IfDw/zh-cn_image_0000002815400669.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=5EF85D27E3D7C48D07F95BF7FF8D25ABF477FBC1F70D0944A150E8268C659669)

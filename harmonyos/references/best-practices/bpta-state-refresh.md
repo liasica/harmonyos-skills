@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-state-refr
 title: 状态刷新控制
 breadcrumb: 最佳实践 > 性能 > 性能优化 > 状态刷新控制
 category: best-practices
-scraped_at: 2026-11-10T10:42:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-09
 content_hash: sha256:4e770d6b1a3dc381ba0188b4b5d05af56b0e3317f5285993db9f124b4feaf5bb
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:4e770d6b1a3dc381ba0188b4b5d05af56b0e3317f5285993db9f124b4fe
 
 **图1** ArkUI的MVVM模式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/LBkgopnqT8OrJm05e78qNQ/zh-cn_image_0000002229336545.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/LBkgopnqT8OrJm05e78qNQ/zh-cn_image_0000002229336545.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF58710AD1BB2FA430D20551859A35A2985440CF81CB505482EE28EF84626F5E "点击放大")
 
 ArkUI提供了一系列装饰器实现ViewModel的能力，如[@Prop装饰器：父子单向同步](../harmonyos-guides/arkts-prop.md)、[@Link装饰器：父子双向同步](../harmonyos-guides/arkts-link.md)、[@Provide装饰器和@Consume装饰器：与后代组件双向同步](../harmonyos-guides/arkts-provide-and-consume.md)、[LocalStorage：页面级UI状态存储](../harmonyos-guides/arkts-localstorage.md)等。当自定义组件内变量被装饰器装饰时变为状态变量，状态变量的改变会引起UI的渲染刷新。
 

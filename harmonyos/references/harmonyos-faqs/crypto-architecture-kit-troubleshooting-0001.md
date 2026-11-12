@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/crypto-architec
 title: 加解密与签名验签问题定位
 breadcrumb: FAQ > 系统开发 > 安全 > 加解密算法（Crypto Architecture） > 故障排查 > 加解密与签名验签问题定位
 category: harmonyos-faqs
-scraped_at: 2026-11-12T09:59:29+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:7a3c0fbe9f5743a188339cd421ebfae86ea346381d58b2a7e7f6ae4103754a09
 ---
@@ -28,7 +28,7 @@ const symKey = symKeyGenerator.convertKeySync({
 
 运行上文代码，使用密钥进行DES加密时报错如下图所示，根据报错信息可以判断是Key长度问题引起。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Hf0RA5FURE271ZBfa-KOYQ/zh-cn_image_0000002813787491.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/Hf0RA5FURE271ZBfa-KOYQ/zh-cn_image_0000002813787491.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=B90E25703AEF1A6F3173B04A2993AC446753DF8687CA506197D71A51593C4548 "点击放大")
 
 ### 分析结论
 

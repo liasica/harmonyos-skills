@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-887
 title: 如何实现舵式底部导航
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现舵式底部导航
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:72fa0c4854986ceee6182785805950a6b106866115c01566e5e0e6f348b6fe0b
 ---
@@ -31,7 +31,7 @@ content_hash: sha256:72fa0c4854986ceee6182785805950a6b106866115c01566e5e0e6f348b
 
 1. **场景一**：中间图标超出标签栏显示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/P8abBj3PRrajuGVuK0H9Vg/zh-cn_image_0000002658798905.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/P8abBj3PRrajuGVuK0H9Vg/zh-cn_image_0000002658798905.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=2EE6B35B117572F0B23730AF74C07AB6C0C6621524654BC99DFC41E3D2877135 "点击放大")
 
    实现方案：导航条通过Flex布局实现，替代tabBar属性设置，并通过offset控制中心图标与两侧图标的位置。详细说明请参考舵式底部导航。实现代码见[基于Tabs组件实现常见导航样式](https://gitcode.com/HarmonyOS_Samples/multi-tab-navigation)。
 2. **场景二**：页签栏实现凸起/凹陷视觉效果，页签点击切换时具有切换动画。
@@ -42,7 +42,7 @@ content_hash: sha256:72fa0c4854986ceee6182785805950a6b106866115c01566e5e0e6f348b
    实现方案：基于tabBar属性实现页签栏，通过使用[TabsOptions](../harmonyos-references/ts-container-tabs.md#tabsoptions15)中的barModifier设置TabBar的clip属性为true，再设置页签的offset属性实现页签超出tabBar区域显示效果。实现代码见[页签超出TabBar区域显示](../harmonyos-references/ts-container-tabs.md#示例15页签超出tabbar区域显示)。
 4. **场景四**：中间页签凸起显示，并伴有弧形背景。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/efch1DpQQ8eEpUvzsDIYzQ/zh-cn_image_0000002628559544.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/efch1DpQQ8eEpUvzsDIYzQ/zh-cn_image_0000002628559544.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=2021F9B38130DE80AF33840E64AE7C472359ADB15C23DFDED469B93830790E4A "点击放大")
 
    实现方案：未使用tabBar属性，通过自定义组件实现页签栏。通过Stack堆叠组件实现弧形背景，通过offset属性超出页签栏显示。
 

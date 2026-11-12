@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 使用方舟异常信息增强检测
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 方舟类问题检测 > 使用方舟异常信息增强检测
 category: best-practices
-scraped_at: 2026-11-10T10:42:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:c0d91c601093f71cfdf2ce2d6f24317d18f6efe3f412b596b9ed1b291b55c99a
 ---
@@ -20,7 +20,7 @@ content_hash: sha256:c0d91c601093f71cfdf2ce2d6f24317d18f6efe3f412b596b9ed1b291b5
 
   点击**Run > Edit Configurations >** **Diagnostics**，勾选**Enhanced Error Info**。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/GO48nFkTS7ut5qxpAGtOIw/zh-cn_image_0000002404125161.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/GO48nFkTS7ut5qxpAGtOIw/zh-cn_image_0000002404125161.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=4EA310DE50FE826EE54447819FA93A616707BEC14B981A77B7C1137613575284)
 
 * 方式二
 
@@ -35,4 +35,4 @@ content_hash: sha256:c0d91c601093f71cfdf2ce2d6f24317d18f6efe3f412b596b9ed1b291b5
 1. 运行或调试当前应用。
 2. 当程序出现因native模块加载导致的报错信息时，会显示更详细准确的错误信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/4BUWkYKrTEeXoJWM92DuRQ/zh-cn_image_0000002370405608.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/4BUWkYKrTEeXoJWM92DuRQ/zh-cn_image_0000002370405608.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8DA8C6A32DE4EEAED4EB18FB229D3A000F6181DCBB4C84E5A2850D3583F62AA)

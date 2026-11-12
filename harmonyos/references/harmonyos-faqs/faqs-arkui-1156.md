@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1156
 title: Image组件按照宽度进行填充加载时高度裁剪问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Image组件按照宽度进行填充加载时高度裁剪问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:e72ffaa49fa3a6548f757ba2276f21997dbfa5515dd6f731cf5d09f6cd3141d7
 ---
@@ -37,7 +37,7 @@ struct DisplayTest1 {
 
 预览效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/0IfvQVgUSYihxl1dYz1xFQ/zh-cn_image_0000002628569614.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/0IfvQVgUSYihxl1dYz1xFQ/zh-cn_image_0000002628569614.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC9B47232C1E272617254420E6EA50AA22B3A9EDB759767D630D4C7D6F88DE89 "点击放大")
 
 ## 背景知识
 
@@ -52,7 +52,7 @@ struct DisplayTest1 {
 
    此时预览效果图如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/VYAGN2zbRg-9erk_TYOVDw/zh-cn_image_0000002628409714.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/VYAGN2zbRg-9erk_TYOVDw/zh-cn_image_0000002628409714.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=6545F3824F77F5EF5069FAB69623A28CAABDEE398E62D7E7FF1547A7AE18B692 "点击放大")
 
 2. 然后对超出Row容器的部分进行裁剪，满足图片从上到下展示。此时可以使用Scroll容器替代Row容器，因为Scroll容器默认是对元素进行从上往下滚动，再将Scroll的滚动条隐藏，并设置不可滚动就能实现效果。
 
@@ -83,6 +83,6 @@ struct DisplayTest1 {
 
    预览效果图如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/vdaoDpiBS_24lM8p_Aivgg/zh-cn_image_0000002658928935.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/vdaoDpiBS_24lM8p_Aivgg/zh-cn_image_0000002658928935.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=2342E7B26E2D038A341BE91A17517B8ED9695220A3FE4089490369DF3824F805 "点击放大")
 
    此时的效果已满足该场景要求。

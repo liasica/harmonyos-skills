@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-coding-18
 title: DevEco Studio上使用api或组件时编辑器提示各种报错与告警
 breadcrumb: FAQ > DevEco Studio > 代码编辑 > DevEco Studio上使用api或组件时编辑器提示各种报错与告警
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-10
 content_hash: sha256:9490d61a2ad14d3e21b3da165e043dfaf83ac7ba09946237c29ef864dab75609
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:9490d61a2ad14d3e21b3da165e043dfaf83ac7ba09946237c29ef864dab
 
 使用ArcList组件时，编辑器报错，错误信息如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/N5An75uXT22jmEZAi1EDig/zh-cn_image_0000002665790183.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/N5An75uXT22jmEZAi1EDig/zh-cn_image_0000002665790183.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=D60CD0E438EFC5C23F2E7C1BFA0E3D025D3E67A3B2D368F542F97945A8E08A1C "点击放大")
 
 **解决措施**
 
@@ -30,7 +30,7 @@ content_hash: sha256:9490d61a2ad14d3e21b3da165e043dfaf83ac7ba09946237c29ef864dab
 
 使用被@test标注的api或组件属性时，例如通用组件属性key时，编辑器会报错，错误信息如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/YvPMLGJbQUiFyUmUFUr-tQ/zh-cn_image_0000002635896056.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/YvPMLGJbQUiFyUmUFUr-tQ/zh-cn_image_0000002635896056.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=147D2BF9FE275405861B81CA8A4DDF1265B92A2115E422E07F78BF28DCD73B83 "点击放大")
 
 **原因说明**
 

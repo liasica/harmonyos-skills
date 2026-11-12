@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-823
 title: Progress滑动评分动效实现
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Progress滑动评分动效实现
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:47+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:42b6ca4a004d6d23d0782a3d3361dc0dc7e21d9e0ff1666a5e29eac4696f6616
 ---
@@ -119,7 +119,7 @@ content_hash: sha256:42b6ca4a004d6d23d0782a3d3361dc0dc7e21d9e0ff1666a5e29eac4696
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/5cTsnWCEQMWeAFRC_i_b_w/zh-cn_image_0000002658917665.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/5cTsnWCEQMWeAFRC_i_b_w/zh-cn_image_0000002658917665.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=20A2C37AB9BF300E3DB69EA43FF96BB53C2B808958E2C8EEDEB935DD4608D754 "点击放大")
 
 完整代码：
 

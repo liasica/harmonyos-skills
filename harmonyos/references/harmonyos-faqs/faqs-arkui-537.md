@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-537
 title: 应用页面亮度与系统组件亮度差别大
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 应用页面亮度与系统组件亮度差别大
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:33+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:afacc4b3095bc7686910a87c9476d37cc451f84b711495beda2e05d59d4674ea
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:afacc4b3095bc7686910a87c9476d37cc451f84b711495beda2e05d59d4
 
 浏览页面时，页面的显示亮度远低于系统组件的亮度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/A4DwJanjRzGIpLbRXb5CbA/zh-cn_image_0000002658910831.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/A4DwJanjRzGIpLbRXb5CbA/zh-cn_image_0000002658910831.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=E43D39F00C6A15B52F344A5C568160EC2BFAC3DCB2E2D6E1160F0D6384D76073 "点击放大")
 
 ## 背景知识
 
@@ -23,7 +23,7 @@ content_hash: sha256:afacc4b3095bc7686910a87c9476d37cc451f84b711495beda2e05d59d4
 
 1. 使用DevEco Testing查看问题组件，问题组件为Stack组件的子组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/HioQkTpuT3yMJ3Ma0_x85A/zh-cn_image_0000002658790879.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/HioQkTpuT3yMJ3Ma0_x85A/zh-cn_image_0000002658790879.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3A86CB5720B40D2AF1D842AE318F5E7C12350BE0041DEED5AFEF365F98919F4 "点击放大")
 2. 查看该页面的设置，该问题组件的上层组件使用backgroundBrightness进行背景亮度设置，降低了问题组件的显示亮度。
 
    ```ts
@@ -133,4 +133,4 @@ struct Index {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/Eo14DXJQTwul_ELmAxfB8Q/zh-cn_image_0000002628551514.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/Eo14DXJQTwul_ELmAxfB8Q/zh-cn_image_0000002628551514.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=95B3228C824F124A15E525A979AD0AC8ECB55CAA28DEA915E00CBCA2055F0707 "点击放大")

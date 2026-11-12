@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-pc-guide
 title: 电脑应用开发
 breadcrumb: 最佳实践 > 多设备体验进阶 > 电脑 > 电脑应用开发
 category: best-practices
-scraped_at: 2026-11-10T10:42:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-15
 content_hash: sha256:c2f6add2c0b7d96fde5867e85f7cdf0466014d4167f2bec31cc0da413a1f9569
 ---
@@ -203,10 +203,10 @@ content_hash: sha256:c2f6add2c0b7d96fde5867e85f7cdf0466014d4167f2bec31cc0da413a1
 
 * 若应用支持横屏，将以固定大小的横屏窗口展示（窗口高度为屏幕高度的2/3，宽度比为1:1）。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/kBjjGWFaQ1eHdGCeFO5geQ/zh-cn_image_0000002585466864.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/kBjjGWFaQ1eHdGCeFO5geQ/zh-cn_image_0000002585466864.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=53ACBDAAB28248E21A724E2D830882680764EC10F48D7484BF384212F9303A90 "点击放大")
 * 若应用仅支持竖屏，则以固定大小的竖屏窗口展示（窗口高度为屏幕高度的2/3，宽度比为9:18）。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/et8tdffqSYyI225QJBEzIg/zh-cn_image_0000002585626808.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/et8tdffqSYyI225QJBEzIg/zh-cn_image_0000002585626808.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B5C3C654C9B7892A474DBC99A6368E80BCFB62EBEE7BF1B868778CCCE9A2CC8 "点击放大")
 
 **说明** 
 
@@ -238,13 +238,13 @@ Entry Module所依赖的module同名配置文件也需要同步修改。
 
 应用安装后，可进入设置->显示和亮度->应用显示布局，将应用显示比例调整为原始比例，即可退出兼容模式，方便开发者调试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/TdfO-Rp9TPuSsPvim1L0Kw/zh-cn_image_0000002615986525.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/TdfO-Rp9TPuSsPvim1L0Kw/zh-cn_image_0000002615986525.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0CA76E0888D25220789199D456E157A36861884715DB5CA1646BDE16B0154B1 "点击放大")
 
 ### 兼容运行上架配置
 
 应用上架基本信息中，有关兼容分发的说明内容如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/RlkYYKKmTPGn5xQXVPCG6w/zh-cn_image_0000002780926409.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/RlkYYKKmTPGn5xQXVPCG6w/zh-cn_image_0000002780926409.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=EFF723DAA6A36F014B21EB189D3CAE0DC9F981E14CC616A412FEF87F83D70D4D "点击放大")
 
 **说明** 
 
@@ -276,7 +276,7 @@ Entry Module所依赖的module同名配置文件也需要同步修改。
 
   由于手机与电脑操作方式存在差异，部分页面未提供返回按钮：手机端可通过屏幕边缘向内滑动返回上一页，电脑端无该手势操作。为此电脑系统在应用窗口界面增设返回键，模拟边缘侧滑返回的交互效果，效果如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/9XIHnfrBQ5eEDPZeFjVqAg/zh-cn_image_0000002585466874.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/9XIHnfrBQ5eEDPZeFjVqAg/zh-cn_image_0000002585466874.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=598ADC4CECF938E504BCA35A888DB0E947D8BFA1655DD5956116A79E13488D12 "点击放大")
 * 安全键盘的差异
 
   电脑设备自带物理键盘，在安全登录场景中，若应用基于私有安全键盘SDK开发，用户通过物理键盘输入密码时，可能出现密码明文显示、无法输入、输入后无法提交等问题。对于上述情况，建议采用如下方案进行优化。

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-ohpm
 title: ohpm run
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm run
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:24+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-06
 content_hash: sha256:b21d92b9c63941281fcea6df6a8ac80e7a3350602c46a447db3a6724eea2d38e
 ---
@@ -124,7 +124,7 @@ ohpm run testSuc
 
 执行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/z6IPVW4bSC-hqRvqWxbo9Q/zh-cn_image_0000002810630799.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/z6IPVW4bSC-hqRvqWxbo9Q/zh-cn_image_0000002810630799.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB7D9983D982131D31D7D2A7D9BBFF61184841E967E73659B100729823607B26 "点击放大")
 
 ### 失败示例
 

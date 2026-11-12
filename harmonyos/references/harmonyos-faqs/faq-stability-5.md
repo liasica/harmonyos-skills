@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-5
 title: 应用使用时卡死无响应
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > 应用使用时卡死无响应
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:39+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:0b32edb798917d9f881403d6577fa0eec97ed3fa502ad65de4e855e0d724d996
 ---
@@ -243,7 +243,7 @@ content_hash: sha256:0b32edb798917d9f881403d6577fa0eec97ed3fa502ad65de4e855e0d72
    ```
 3. 使用[HiSmartPerf](../AppGallery-connect-Guides/smartperf-tool-0000001873208929.md)工具抓取该过程的Trace信息，观察该操作的执行耗时。
 
-   当前任务运行时间Duration已达到7s，长时间占用主线程。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/k0OMIx1hTzGg-iKQAIOA8Q/zh-cn_image_0000002658555527.png "点击放大")
+   当前任务运行时间Duration已达到7s，长时间占用主线程。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/k0OMIx1hTzGg-iKQAIOA8Q/zh-cn_image_0000002658555527.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B8BDF5DC3D9EA2B8F88F132E0BF92A7445C6362FA2A014918F1ECCA128D3189 "点击放大")
 
 ### 场景七
 

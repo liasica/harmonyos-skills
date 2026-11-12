@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1577
 title: Badge组件如何实现点击灰点处和按钮事件都生效
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Badge组件如何实现点击灰点处和按钮事件都生效
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:29973099d2d457fe8b7c3fe8cca7e799eb9f1cebf9be2cd8e65a4e681f18e25f
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:29973099d2d457fe8b7c3fe8cca7e799eb9f1cebf9be2cd8e65a4e681f1
 
 点击按钮蓝色部分才会响应点击事件，被灰点遮挡的部分点击无响应，如何实现点击灰点处和按钮事件都生效？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/twEjq4VIT7yKglSaTuICSg/zh-cn_image_0000002658969083.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/twEjq4VIT7yKglSaTuICSg/zh-cn_image_0000002658969083.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=5EBED7B40F4CECC9C7ABD09F04A90E3D52BCDCEE578BDFE0523E9DFADB6F35AD "点击放大")
 
 问题代码示例参考如下：
 
@@ -52,7 +52,7 @@ struct BadgeClickTest {
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/WeGnw8SbR1y-eFYdmBafcQ/zh-cn_image_0000002658849135.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/WeGnw8SbR1y-eFYdmBafcQ/zh-cn_image_0000002658849135.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=6ABFF9ECAAE3F236F82596347A0DF52D9869D14A10548597E9CFF6725458C852 "点击放大")
 
 ## 背景知识
 

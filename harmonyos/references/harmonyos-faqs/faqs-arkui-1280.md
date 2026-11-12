@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1280
 title: 解决Slider精度问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 解决Slider精度问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:29a24e8fd201b3bb18b8f563c71ebe2b2a0c8be6423100d3711bd4dbb1b98d10
 ---
@@ -42,11 +42,11 @@ struct Question {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/AZVVOXaaS9C2tSxRniheoA/zh-cn_image_0000002628757874.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/AZVVOXaaS9C2tSxRniheoA/zh-cn_image_0000002628757874.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=05D7FB1B5CB0E6423D227555B3592FF6E4EEE81D3ACBE94A62580D7697BFB7E8 "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/frqV6Qg9Tea0DqWGz5ceLw/zh-cn_image_0000002658957189.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/frqV6Qg9Tea0DqWGz5ceLw/zh-cn_image_0000002658957189.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED0125EC11B31D885D3E882665AA840AE8DB1034A91E7E8439E8006F6DAD726F "点击放大")
 
 ## 背景知识
 

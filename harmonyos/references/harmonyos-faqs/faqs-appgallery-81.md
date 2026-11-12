@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 证书和Profile类型及使用场景
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 证书和Profile类型及使用场景
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
-content_hash: sha256:11bba80d42561e1b2ef8f00bb2f03ed74080cd77131f6180050bb7e982c81bc9
+content_hash: sha256:d4bf13a686dd24c871099bdccf1da82b00a3d403e76caad27afb34c6c6849318
 ---
 
 ## 问题现象
@@ -20,13 +20,13 @@ content_hash: sha256:11bba80d42561e1b2ef8f00bb2f03ed74080cd77131f6180050bb7e982c
    * 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，选择“证书、APP ID和Profile”。
    * 在左侧导航栏选择“证书、APP ID和Profile > 证书”，进入“证书”页面，点击“新增证书”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/qNGbqqaGTKa7ExvYmjzx4Q/zh-cn_image_0000002628554532.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/bCZZzWRYRCqQTXajhZJ3Zw/zh-cn_image_0000002628554532.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=6807C85659D9E41D51F6B72FE54FA06BE02343086043BAB8DEB397AF1E54912F "点击放大")
    * 在弹出的“新增证书”窗口选择证书类型，填写要申请的证书信息，点击“提交”。
 4. 申请Profile的通用步骤：
    * 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)，选择“证书、APP ID和Profile”。
    * 在左侧导航栏选择“证书、APP ID和Profile > Profile”，进入“Profile”页面，点击右上角“添加”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/6LAPjJ5yTBWW0jrAr3cSug/zh-cn_image_0000002658913851.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/oJdY_2rOSMmihX8JE3AHMQ/zh-cn_image_0000002658913851.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7D9A924F5B227829C97CF250EC9D91666E2E1BF46EB800D1A536C6172CBDE51 "点击放大")
    * 在“添加Profile”页面，选择证书，根据证书类型选择Profile类型，填写应用名称、Profile名称等必填信息。
 
 ## 解决方案
@@ -39,10 +39,10 @@ content_hash: sha256:11bba80d42561e1b2ef8f00bb2f03ed74080cd77131f6180050bb7e982c
 
    * 本地通过HDC命令即可安装的应用需要申请调试证书和调试Profile，登录HarmonyOS 开发者中心申请证书时，弹窗界面证书类型选择“调试证书”，如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/n0i_hGTxThSKuJ49854nBQ/zh-cn_image_0000002658793911.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/zBAHlXreTxWr4183zp0Cfg/zh-cn_image_0000002658793911.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2BAFDEEF6433AD5DD5C88D244126A04B0C2FD7974E9F3CA6D3C46C55B73C7AF)
    * 调试证书除了登录HarmonyOS 开发者中心手动申请，也可以通过DevEco Studio自动签名方式从HarmonyOS 开发者中心申请。详细操作可参考[自动签名](../harmonyos-guides/ide-signing.md#section18815157237)。申请成功也可登录HarmonyOS 开发者中心查看，证书名称以“auto\_debug”开头：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/7wyX0DYjQpOq3G3VPtE6Cg/zh-cn_image_0000002628394642.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/r8IrIuFeTmG52LkXAbY4qw/zh-cn_image_0000002628394642.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD31D592D0353BBADF9B0E6C1BA3277A6CDA53F038A3EAC607206965E0F104F5 "点击放大")
    * [申请调试Profile](../app/agc-help-debug-profile-0000002248181278.md)时，对应的证书类型选择“调试”。
 
    **注意** 
@@ -55,7 +55,7 @@ content_hash: sha256:11bba80d42561e1b2ef8f00bb2f03ed74080cd77131f6180050bb7e982c
    **适用场景**：上架应用市场。包括正式上架，非公开发布，公开测试，邀请测试等。
    * HarmonyOS应用上架应用市场必须申请发布证书和发布Profile，登录HarmonyOS 开发者中心申请证书时，弹窗界面证书类型选择“发布证书”，如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/T_v8_5OZS-OF3FfC9Bpx9w/zh-cn_image_0000002628554534.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/BgLDrEwJRQieiO-0HwX-kA/zh-cn_image_0000002628554534.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C114B0593582194D952BEB24E02CF7FA1B225BE9E17ACFAAB8728D0C9557130)
    * [申请发布Profile](../app/agc-help-release-profile-0000002248341090.md)时，对应的证书类型选择“发布”；[申请指定设备发布Profile](../app/agc-help-internaltest-profile-0000002283260129.md)时，对应的证书类型也选择“发布”。
 
    **注意** 
@@ -68,7 +68,7 @@ content_hash: sha256:11bba80d42561e1b2ef8f00bb2f03ed74080cd77131f6180050bb7e982c
    **适用场景**：[发布In-house应用](../app/agc-help-inhouse-0000002281532696.md)。适用于在企业内部网络环境中分发专属应用给内部员工的场景，In-house应用不适合在任何公开渠道发布。
    * In-house应用打包需要申请In-house发布证书，登录HarmonyOS 开发者中心申请证书时，弹窗界面证书类型选择“In-house发布证书”，如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/VnaZAp3_QCKAOYUHPhoGuQ/zh-cn_image_0000002658913853.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/NPXzPVC9ThyCgjyq3d09iw/zh-cn_image_0000002658913853.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4E80CD93A24F6AA8055373A3E843610A0E47BAA2C2281100E7DEB6F4CCE5333)
    * [申请In-house发布Profile](../app/agc-help-inhouse-profile-0000002283340021.md)时，对应的证书类型选择“In-house发布”；[申请指定设备发布Profile](../app/agc-help-internaltest-profile-0000002283260129.md)时，对应的证书类型也选择“In-house发布”。
 
    **注意** 
@@ -81,7 +81,7 @@ content_hash: sha256:11bba80d42561e1b2ef8f00bb2f03ed74080cd77131f6180050bb7e982c
    **适用场景**：涉及二进制程序，需使用华为颁发的二进制证书签名，才能在PC上正常运行。
    * 二进制程序需使用华为颁发的二进制证书签名，登录HarmonyOS 开发者中心申请证书时，弹窗界面证书类型选择“二进制证书”，如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/xTVrUwEuQnuot1gYrAf-Rg/zh-cn_image_0000002658793913.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/VE7EfvAiSq-Xry2iVvD3lg/zh-cn_image_0000002658793913.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=955A6D4830043D14BE38449662A182363BA7A9743FA438720270582B32B62228)
 
    **注意** 
 
@@ -93,7 +93,7 @@ content_hash: sha256:11bba80d42561e1b2ef8f00bb2f03ed74080cd77131f6180050bb7e982c
    **适用场景**：发布企业MDM应用。
    * 发布企业MDM应用时，需要使用企业MDM应用发布证书和企业MDM应用发布Profile手动签名后，才能编译构建正式发布包。登录HarmonyOS 开发者中心申请证书时，弹窗界面证书类型选择“企业MDM应用发布证书”，如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/iAeHQ3huTDO2iliQ_xW0TQ/zh-cn_image_0000002628394644.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/kkdxwiNIQbuJxHJyZrcWsQ/zh-cn_image_0000002628394644.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=F09C295C85A885FE40D230911600E7D8AC22F5EC04763A6DD7179E6C67AE7BB5)
    * [申请企业MDM应用发布Profile](../app/agc-help-enterprise-mdm-profile-0000002248341094.md)时，对应的证书类型选择“企业MDM应用发布”。
 
    **注意** 

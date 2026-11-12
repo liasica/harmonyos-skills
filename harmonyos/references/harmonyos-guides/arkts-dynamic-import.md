@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-dynamic
 title: 动态加载
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS运行时 > ArkTS模块化 > 动态加载
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:6b36f4efddcf0bda8caae3d58f1f6d71aa5cfa39f85e04e804f7bde09848de3b
 ---
@@ -694,11 +694,11 @@ import(packageName).then((ns: ESObject) => {
 
 当应用包含多个HAR包，HAR包之间的依赖关系比较复杂。在DevEco Studio中配置依赖关系时，可能会形成循环依赖。这时，如果HAR之间的依赖关系中仅有变量动态import，可以将HAR包之间直接依赖关系转移到HAP/HSP中配置，HAR包之间无需配置依赖关系，从而达到HAR包间依赖解耦的目的。如下示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/TiPf91GeTNW9rS1zlz7lfA/zh-cn_image_0000002815557887.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/TiPf91GeTNW9rS1zlz7lfA/zh-cn_image_0000002815557887.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=3AC94113E261B9AF17231764FC29D54041ACBA232C582106478A782C01044BEB)
 
 HAR之间的依赖关系转移至HAP/HSP后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/1YfDpSENR4uTXzpil4G5lw/zh-cn_image_0000002815397971.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/1YfDpSENR4uTXzpil4G5lw/zh-cn_image_0000002815397971.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C3AAE5DAD1E053E550B137BA586887F66124BFA5688C93C716D96F86238307E)
 
 **使用限制**
 
@@ -713,7 +713,7 @@ HAR之间的依赖关系转移至HAP/HSP后：
 
 下面的实例通过在单向依赖HAP->HAR1->HAR2->HAR3之上增加依赖HAR2->HAR1、HAR3->HAR1，形成了循环依赖。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/o3442z5nTR6lxa1bO3Vz0Q/zh-cn_image_0000002815557887.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/o3442z5nTR6lxa1bO3Vz0Q/zh-cn_image_0000002815557887.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=344850A914ED980BF147B80924D92A1E181A8F1068C677BD351397FD08EE73F9)
 
 ```typescript
 // HAP's src/main/ets/pages/Index.ets

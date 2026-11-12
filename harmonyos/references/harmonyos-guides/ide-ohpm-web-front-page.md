@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-web-
 title: 前台页面
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 页面功能介绍 > 前台页面
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:4ed4a5fbba811ba460c24d1a56c4a4049f3ec9c943041f7fdbe378caa0bd78fc
 ---
@@ -21,17 +21,17 @@ content_hash: sha256:4ed4a5fbba811ba460c24d1a56c4a4049f3ec9c943041f7fdbe378caa0b
 
 首页主要展示当前ohpm-repo私仓存储的包信息，同时提供搜索功能，页面效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/VaQUTYKCTAKxV6_bKNFDTg/zh-cn_image_0000002779565124.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/VaQUTYKCTAKxV6_bKNFDTg/zh-cn_image_0000002779565124.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3F7FD0B18FCB4FF025B02EC94E790A977390FF5C3049A23C3B50DE17437A533 "点击放大")
 
 * 区域1：搜索区域，搜索功能采用两级筛选：先通过下拉菜单选择目标仓库，然后基于所选仓库进行包名的模糊查询。
 * 区域2：登录注册区域，注册和登录后可通过此区域进入后台管理页面。
-* 区域3：包列表区域，全量展示符合查询条件的所有包。点击列表中包的摘要信息可进入包的详情页，查看更多关于该包的信息。若包名前显示![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/BNN45lBGTq6xK91o8hn2bg/zh-cn_image_0000002779405148.png "点击放大")锁图标，表示您暂无该包的访问权限。
+* 区域3：包列表区域，全量展示符合查询条件的所有包。点击列表中包的摘要信息可进入包的详情页，查看更多关于该包的信息。若包名前显示![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/BNN45lBGTq6xK91o8hn2bg/zh-cn_image_0000002779405148.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=2325793A582C87396E66E0C90CBCA86E1A6D649FD56C4BD4C441852F48DB3853 "点击放大")锁图标，表示您暂无该包的访问权限。
 
 ## 包详情页
 
 包详情页主要展示当前包的详细信息，这些信息主要来源于包的内部文件，同时记录了包的版本信息和下载量数据，页面效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/Cl0z9D1DSoS2-EHGcmoGYw/zh-cn_image_0000002779565120.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/Cl0z9D1DSoS2-EHGcmoGYw/zh-cn_image_0000002779565120.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=8DE723AC18EE91934B5B8407B2A42C8BD810B27A8646ABE2DBDFCA379933E4B6 "点击放大")
 
 * 区域1：包的基本信息区域，取自包的oh-package.json5文件。
 * 区域2：标签页区域，通过选择不同的标签展示包的更多信息。

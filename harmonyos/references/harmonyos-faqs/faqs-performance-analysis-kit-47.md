@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 如何通过hdc命令关闭整个应用
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 如何通过hdc命令关闭整个应用
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:44+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:8de767650e2b2f0fa287a03e85877133a6cd347fd27d1530edab7f077d56e671
 ---
@@ -22,7 +22,7 @@ hdc shell aa force-stop <bundleName>
 hdc shell aa force-stop com.example.myapplication
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/rxjMinKiQTWMdsdUcTA7uw/zh-cn_image_0000002654835777.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/rxjMinKiQTWMdsdUcTA7uw/zh-cn_image_0000002654835777.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=246A881FDECA4EDD4A4DF7BA46E4A1B7268204FC422C6F397FB4F9ABE27E2CC2 "点击放大")
 
 **参考链接**
 

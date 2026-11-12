@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-709
 title: 使用animator动画实现Progress宽高变化效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 使用animator动画实现Progress宽高变化效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:36+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:a538dcf30cc4bda3b58686d1c03b70f890c7bb043b513708df6f742d22b01fc9
 ---
@@ -81,11 +81,11 @@ struct Index {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/tJ0xi8PJTf2Ynzrg7oB6ww/zh-cn_image_0000002658914211.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/tJ0xi8PJTf2Ynzrg7oB6ww/zh-cn_image_0000002658914211.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233200Z&HW-CC-Expire=31536000000&HW-CC-Sign=B27473971763522DA5C23F26E3C7640D354BA193CBC6F159056A92E56004BEB0 "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/BGbCECkPT-uJWwxYe631Jg/zh-cn_image_0000002628394996.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/BGbCECkPT-uJWwxYe631Jg/zh-cn_image_0000002628394996.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233200Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E3533CC269C368863F69F7891C9D329B59F8443AD79C52760E5238C8EFECAFA "点击放大")
 
 ## 背景知识
 

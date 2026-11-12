@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-952
 title: 如何通过List组件实现可自动循环滚动的列表
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何通过List组件实现可自动循环滚动的列表
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:47+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:d4263ad5c6371ec07a556ea2ab3271c8fb671114211c559e6393286039d884b8
 ---
@@ -305,7 +305,7 @@ content_hash: sha256:d4263ad5c6371ec07a556ea2ab3271c8fb671114211c559e6393286039d
 
   纵向循环滚动效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/N-Q13GR5TVSOY6gSLvSHkg/zh-cn_image_0000002658920467.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/N-Q13GR5TVSOY6gSLvSHkg/zh-cn_image_0000002658920467.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=50723BE15641148656A122515770BD30271160A15D744F46A79C8E510A1D7186 "点击放大")
 
 * **场景二**：在横向实现循环滚动列表。横向滑动与纵向类似，完整代码如下（BasicDataSource.ets和MyDataSource.ets与场景一相同）。
 
@@ -443,4 +443,4 @@ content_hash: sha256:d4263ad5c6371ec07a556ea2ab3271c8fb671114211c559e6393286039d
 
   横向循环滚动效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/m6vyCNPaSYyToz37hnOJSg/zh-cn_image_0000002628401258.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/m6vyCNPaSYyToz37hnOJSg/zh-cn_image_0000002628401258.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C44CA328725F60DF90387761ACA6B028521015311BB3CB28ED5BBB1EFBC71C3 "点击放大")

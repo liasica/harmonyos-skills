@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-774
 title: 如何实现输入框在获焦时提示文本自动切换到左上角
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现输入框在获焦时提示文本自动切换到左上角
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:86bfcf089e61df08fea7b006ea13f8d0f4e15598039a78b8a08dfeb0fda04d8a
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:86bfcf089e61df08fea7b006ea13f8d0f4e15598039a78b8a08dfeb0fda
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/o9lAeg10QwejiLvMLCJMAw/zh-cn_image_0000002628395808.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/o9lAeg10QwejiLvMLCJMAw/zh-cn_image_0000002628395808.png?HW-CC-KV=V1&HW-CC-Date=20261112T233202Z&HW-CC-Expire=31536000000&HW-CC-Sign=04A0B7837634BAA47F5B9375E32AB02C1F4A61793FD94A77E887386094FF4FEE "点击放大")
 
 ## 背景知识
 

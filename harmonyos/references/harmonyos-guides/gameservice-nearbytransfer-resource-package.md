@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-n
 title: 传输资源包
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏近场快传（可选） > 开发指导 > 传输资源包
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:24+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:41dcbb8452dcf4278fcc523340e657887ff2838264cfc1747f516123d15300b4
 ---
@@ -18,7 +18,7 @@ content_hash: sha256:41dcbb8452dcf4278fcc523340e657887ff2838264cfc1747f516123d15
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/FiKZDRnmQuiEuRTDW3sFXw/zh-cn_image_0000002786520230.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/FiKZDRnmQuiEuRTDW3sFXw/zh-cn_image_0000002786520230.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF4DACFAB64F1C67A1388F3B32FD7A631784A775FE34993CB17667ED532C7253)
 
 1. 发送端游戏调用以下接口注册监听。
 

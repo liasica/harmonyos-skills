@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 证书有效期和创建密钥时不一致
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 证书有效期和创建密钥时不一致
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
-content_hash: sha256:12bdb8f52bedba86d96a988a5325e4ea5b645d726374da8e7ec9983705d9f9f3
+content_hash: sha256:76115fd205992a0c43cb808fe6d319d93e719dec8e6b5b4a8d4867ded017b07f
 ---
 
 ## 问题现象
@@ -16,7 +16,7 @@ content_hash: sha256:12bdb8f52bedba86d96a988a5325e4ea5b645d726374da8e7ec9983705d
 
 1. [生成密钥和证书请求文件](../harmonyos-guides/ide-signing.md#section462703710326)时需要填写证书的有效期（Validity字段），一般默认25年，覆盖应用/元服务的完整生命周期。密钥文件格式为.p12，如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/rBGIkMUDR82R4oL5CZyCxg/zh-cn_image_0000002658913857.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/z4PoNOSJT8WRUxOEBBI3TQ/zh-cn_image_0000002658913857.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8483187490491127755AE3DABCC67A239E92B820BAF33B666B5F08385A8202B "点击放大")
 2. 在HarmonyOS 开发者中心[申请发布证书](../app/agc-help-release-cert-0000002283336729.md)成功后实名认证开发者的发布证书有效期为3年。[申请调试证书](../app/agc-help-debug-cert-0000002283256797.md)成功后实名认证开发者的调试证书有效期为180天，未实名开发者的调试证书有效期为14天。证书文件格式为.cer。
 
 ## 问题定位

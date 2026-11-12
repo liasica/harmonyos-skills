@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 邀请测试时无法选取上传的软件包怎么办
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 邀请测试时无法选取上传的软件包怎么办
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:80122aa5534b36021e9cdc945f482439ba32cbdbe7ea231c492c0231b33e76c9
 ---
@@ -12,16 +12,16 @@ content_hash: sha256:80122aa5534b36021e9cdc945f482439ba32cbdbe7ea231c492c0231b33
 
 * 场景一，软件包已上传并通过检测，但在发布邀请测试时所有软件包选项均显示为灰色不可选状态。如下，已上传软件包：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/NMmQUIUxTD63HTKT5a9duw/zh-cn_image_0000002628554520.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/NMmQUIUxTD63HTKT5a9duw/zh-cn_image_0000002628554520.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=0EF6926B391F542541E09A84174DF4F5310D1E90C0F58316E327F7FF8E5629D9 "点击放大")
 
   版本选项全是灰色的，无法选取：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/DEOPFFgaSg6IoUkYiL_isg/zh-cn_image_0000002658913841.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/DEOPFFgaSg6IoUkYiL_isg/zh-cn_image_0000002658913841.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=4184D329ED80435B0381634691841F40C828ABBCE7B7ECED33D52795DA913122 "点击放大")
 * 场景二，在发布环节版本选取界面，选择的待发布软件包提示该状态为较低版本，不能选择使用。
 
   问题截图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/BPhC8o2eTEOrhnYVLwFQOA/zh-cn_image_0000002658793899.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/BPhC8o2eTEOrhnYVLwFQOA/zh-cn_image_0000002658793899.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E621B7ED5D04186120B85DFB42358DB2579C6A51DAC33803982A399E035F221 "点击放大")
 
 ## 解决方案
 

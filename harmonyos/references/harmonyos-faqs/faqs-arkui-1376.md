@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1376
 title: Button组件设置borderRadius无效
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Button组件设置borderRadius无效
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:3d9f93f7294fa8f6428363033189dd2286eb7fa361a593669db11ff60aeaabff
 ---
@@ -30,7 +30,7 @@ Button('按钮')
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/mCvC9rqUROSGhdYvq2BOlw/zh-cn_image_0000002658961255.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/mCvC9rqUROSGhdYvq2BOlw/zh-cn_image_0000002658961255.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7B6B2FC10E0605B84F07A7594A14FA5A2DDC92B7A4050F37D901400B7A49205)
 
 ## 背景知识
 
@@ -80,4 +80,4 @@ struct Index {
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/Hd4RSLIAQnOaRErSgD8I8g/zh-cn_image_0000002658841307.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/Hd4RSLIAQnOaRErSgD8I8g/zh-cn_image_0000002658841307.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=168336C7E59E5EE7F04DF998C4B00D6B903DC6A1F526B7B19D1F6E93683FC1BE "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: EmbeddedComponent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 渲染绘制 > EmbeddedComponent
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:a0046bb2a85f7cf6e11404a6975a595b65416f82fe81d2cc9479a6116e9b4226
 ---
@@ -410,4 +410,4 @@ DPI跟随策略，用于设置DPI，使其能够跟随宿主或EmbeddedUIExtensi
   ```
 * 示例图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/rGi0-mtOQ2CSGy-3zVVkGw/zh-cn_image_0000002786361544.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/rGi0-mtOQ2CSGy-3zVVkGw/zh-cn_image_0000002786361544.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=62855685517426C2BBA70C416046C3E38E9C42D2B7F0080C9DD816F775F26E48)

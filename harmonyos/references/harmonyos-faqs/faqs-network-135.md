@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-13
 title: VPN接入状态下，应用访问内网资源的流量未路由至VPN链路
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > VPN接入状态下，应用访问内网资源的流量未路由至VPN链路
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-19
 content_hash: sha256:65ad276db76c44edb91f2a99fadf09a8bdadd6c232d1757f5ae3c9aabd03177b
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:65ad276db76c44edb91f2a99fadf09a8bdadd6c232d1757f5ae3c9aabd0
 
 * 路由的概念：路由起到请求转发的作用，将应用的请求转发至VPN虚拟网卡转发或者物理网卡。路由在VPN中的位置：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/7CgU3JhcQauwCZhCTxvpow/zh-cn_image_0000002709508215.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/7CgU3JhcQauwCZhCTxvpow/zh-cn_image_0000002709508215.png?HW-CC-KV=V1&HW-CC-Date=20261112T233214Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C6205975977A3D0D65BFDF0B5FBF1F74F1C17C1812050A1EFF48122DF29DEBE "点击放大")
 * 默认路由: 所有未匹配到其它路由流量的兜底出口；在VPN网络未配置路由时，所有的流程都会走VPN隧道。IPv4默认路由为0.0.0.0/0；IPv6默认路由为::/0。
 * VPN路由的分类：全隧道模式和分流路由。
   1. 全隧道模式：客户端默认路由（0.0.0.0/0）指向VPN网关，所有流量（包括上网、访问内网）都走VPN。
@@ -40,11 +40,11 @@ content_hash: sha256:65ad276db76c44edb91f2a99fadf09a8bdadd6c232d1757f5ae3c9aabd0
 
 2.WireShark条件搜索ip.src == 182.xx.xxx.108 && ip.dst == 10.x.x.5，表示搜索从182.xx.xxx.108路由到10.x.x.5网卡的流量，说明应用的外网请求通过VPN网络转发。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/hK3gxYspRi2FAJ37KSztmA/zh-cn_image_0000002679948954.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/hK3gxYspRi2FAJ37KSztmA/zh-cn_image_0000002679948954.png?HW-CC-KV=V1&HW-CC-Date=20261112T233214Z&HW-CC-Expire=31536000000&HW-CC-Sign=2DC13516B6F95FD36DE16C4E9B4320BF036EA21DE1424CB598C9803BEC8AD349 "点击放大")
 
 3.WireShark条件搜索ip.src == 192.xxx.x.10 && ip.dst == 10.x.x.5，表示搜索从192.xxx.x.10路由到10.x.x.5网卡的流量，说明应用的内网请求不通过VPN网络转发，直接走内网的路由规则。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/RvaEI6b2SjOxJE-5uN0z9Q/zh-cn_image_0000002709628759.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/RvaEI6b2SjOxJE-5uN0z9Q/zh-cn_image_0000002709628759.png?HW-CC-KV=V1&HW-CC-Date=20261112T233214Z&HW-CC-Expire=31536000000&HW-CC-Sign=46E190AF4A936E26664CA8BE4CBE3007C903B434181BBB27F6158D3384578D9B "点击放大")
 
 ## 分析结论
 
@@ -68,7 +68,7 @@ Q：HarmonyOS系统如何查看设备路由规则？
 
 A：连接设备后，执行hdc shell netstat -r；其中Destination表示下一跳路由。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/LXNsoIYySh6BkSiSxNNxWw/zh-cn_image_0000002679949968.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/LXNsoIYySh6BkSiSxNNxWw/zh-cn_image_0000002679949968.png?HW-CC-KV=V1&HW-CC-Date=20261112T233214Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD8E38F7EF8F7C534F52FCA249A43AB9C51BC785664B52CD66F8D23B95C9B317 "点击放大")
 
 ## 总结
 

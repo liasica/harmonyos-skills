@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-file-back
 title: 应用数据备份恢复验证指导
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用数据备份恢复 > 应用数据备份恢复验证指导
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-04-20
 content_hash: sha256:519ebd71ce1370e6a64d865a06ff0e8388cf263540ccb039b11b6322b4d637fc
 ---
@@ -19,10 +19,10 @@ content_hash: sha256:519ebd71ce1370e6a64d865a06ff0e8388cf263540ccb039b11b6322b4d
 
 1. 打开数据克隆应用，一部设备选择“这是新设备”，作为数据恢复侧，另一部设备选择“这是旧设备”，作为数据备份侧，按照提示连接两部设备。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/R3NxN7v7S5qmImv6ZvXcQg/zh-cn_image_0000002786359490.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/R3NxN7v7S5qmImv6ZvXcQg/zh-cn_image_0000002786359490.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB9D11CB37ED93D7D7FF7AFE7E38F5F9FB23577AAA67D9FCBD459E2E81E63348)
 2. 在选择数据页面，点击应用及数据，勾选待测试应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/praDYsuuQdKLoDXhcXegRQ/zh-cn_image_0000002815558911.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/praDYsuuQdKLoDXhcXegRQ/zh-cn_image_0000002815558911.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=37A058F6BEC565AA3D6F9AFB5C300140522394CA7450E8474305C11D1C3185E3)
 3. 等待备份恢复完成，根据备份恢复结果，并结合日志分析备份和恢复流程是否正常。
 
 ## 常见问题说明
@@ -47,7 +47,7 @@ content_hash: sha256:519ebd71ce1370e6a64d865a06ff0e8388cf263540ccb039b11b6322b4d
 
 克隆结束后，迁移结果显示“仅克隆应用，不迁移数据”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/0rAtkUlBQt2Vl2uSKIh_kQ/zh-cn_image_0000002815398995.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/0rAtkUlBQt2Vl2uSKIh_kQ/zh-cn_image_0000002815398995.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=F77B6DE7D248BC1652E956E669B3E4A369912A3633D50A97EED765F04E8654CF)
 
 **可能原因**
 
@@ -63,7 +63,7 @@ onBackup/onBackupEx未按照规范实现。
 
 克隆结束后，迁移结果显示“应用数据恢复失败”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/FGourzxmQpyzjuaSPjMdsw/zh-cn_image_0000002786519420.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/FGourzxmQpyzjuaSPjMdsw/zh-cn_image_0000002786519420.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=29A62EF5ED62BE8773D4954969E860282BE116C7EEF3C3F602285F22B3ABF505)
 
 **可能原因**
 

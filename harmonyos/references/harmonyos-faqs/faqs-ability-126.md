@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-12
 title: 启动页展示系统默认图标问题
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 启动页展示系统默认图标问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:48+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:34daa0f19b462283794d4e570136d1ed173dd0d09010288c3607f4d623beaa1f
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:34daa0f19b462283794d4e570136d1ed173dd0d09010288c3607f4d623b
 
 应用启动页图标展示的是系统默认图标，如何修改。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/e7-KogJaT8e0sv206ATeuw/zh-cn_image_0000002628629222.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/e7-KogJaT8e0sv206ATeuw/zh-cn_image_0000002628629222.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=63A565C1B0147A6683C050BF657BD16A3490B3E1B7E7AD6101A3BCD786D6DAAA "点击放大")
 
 ## 背景知识
 

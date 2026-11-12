@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-pdf-9
 title: PDF Kit提供的PDF转图片的多个API有什么区别
 breadcrumb: FAQ > 应用服务开发 > PDF文档解析服务（PDF Kit） > PDF Kit提供的PDF转图片的多个API有什么区别
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:36+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-12
 content_hash: sha256:e5febb396dcb61276755ec59aa0d39ebd6d172cf93e47f46d0d90fed2fa74896
 ---
@@ -14,7 +14,7 @@ PDF Kit中的pdfService和pdfViewManager都提供了PDF转图片的API，它们�
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/pNqoCNzcSSKcZFcnlTB8vQ/zh-cn_image_0000002628554246.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/pNqoCNzcSSKcZFcnlTB8vQ/zh-cn_image_0000002628554246.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=916FD7DA0C0439B0603A2A843E2100DA648CD4B9241084B09729D295B8F2AF70 "点击放大")
 
 ## 背景知识
 
@@ -271,8 +271,8 @@ struct Index {
 
 效果预览图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/hagzvrfLQdW-eoQdECilpw/zh-cn_image_0000002658913563.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/hagzvrfLQdW-eoQdECilpw/zh-cn_image_0000002658913563.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=3CF887F1AA487F8EBEDC117CAFF6FE95D5C838B42AD80D797A2400819BEBC995 "点击放大")
 
 参考Device File Browser[操作步骤](../harmonyos-guides/ide-device-file-explorer.md#section165192211111)查看生成的图片：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/78sdCRb8RJi8UXvTtNGFDA/zh-cn_image_0000002628394350.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/78sdCRb8RJi8UXvTtNGFDA/zh-cn_image_0000002628394350.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=7663490975917DF2E70192609A28CE69C871567CF6C358F33ADC36BC45C74CC4 "点击放大")

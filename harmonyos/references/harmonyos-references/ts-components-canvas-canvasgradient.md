@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: CanvasGradient
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > CanvasGradient
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-24
 content_hash: sha256:ba60d0c534643c07e02bdee5c0dfd1001ede3d4728deeb7e8c768519948a132e
 ---
@@ -66,7 +66,7 @@ struct AddColorStop {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/a0Ds7UKRTfys58QIDzOCNA/zh-cn_image_0000002786521402.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/a0Ds7UKRTfys58QIDzOCNA/zh-cn_image_0000002786521402.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A5B44CF86756109A84DD0E3A30E440CC9D3EE70CF12014FB57721A396221779)
 
 ## addColorStop20+
 
@@ -157,4 +157,4 @@ struct AddColorStop {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/0iSURomxRWG08u1aXTdFyw/zh-cn_image_0000002786361474.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/0iSURomxRWG08u1aXTdFyw/zh-cn_image_0000002786361474.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBE6432A1B1030585791CD9DB040DC39A7778C4F9C060AE4600BECACC730DB1D)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.dlpPermission (数据防泄露)"
 breadcrumb: API参考 > 系统 > 安全 > Data Protection Kit（数据保护服务） > ArkTS API > @ohos.dlpPermission (数据防泄露)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:55:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:ca74efbf3b3208c0336bccc2f6ce6202e0ead3779535a027894326c2d9245826
 ---
@@ -49,7 +49,7 @@ content_hash: sha256:ca74efbf3b3208c0336bccc2f6ce6202e0ead3779535a027894326c2d92
 
 * **DlpConnManager**：是数据防泄露系统的核心管理类，在SA（System Ability）中注册或注销回调能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/wNVks08bR7i1q3gZwPDcdA/zh-cn_image_0000002786362094.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/wNVks08bR7i1q3gZwPDcdA/zh-cn_image_0000002786362094.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC2F0D13C5AA9390EFB68A26741F9D4D8FD872E455B89E3831B29401C4314137)
 
 ## API组合使用关系说明
 

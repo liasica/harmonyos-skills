@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-avcodec-14
 title: MP4视频在系统相册的画面预览中会出现部分绿屏
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频编解码（AVCodec） > MP4视频在系统相册的画面预览中会出现部分绿屏
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:33+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:e6fc24a00f9aced0b62a05c4bc58728040dd3bd2ecc536e6b75713a51289fcdd
 ---
@@ -20,14 +20,14 @@ stss box（Sync Sample Atom）：标识媒体流中的关键帧，提供了随�
 
 stss box具体内容如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Lvob9U2vTU-KQrybrvq1xw/zh-cn_image_0000002628552688.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Lvob9U2vTU-KQrybrvq1xw/zh-cn_image_0000002628552688.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=9364FFA1236C4B86E50DFCED8F8AD27D76EE277EADF5EF9DA342E32AC5037708 "点击放大")
 
 ## 问题定位
 
 1. 排查MP4文件资源及其关键帧信息是否正常。
 2. 排查MP4文件的stss box信息是否正常。使用MP4解析工具查看stss box信息，正常MP4文件的stss box信息如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/QG0LaHFLQb6yhKgn1bfT7g/zh-cn_image_0000002658912005.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/QG0LaHFLQb6yhKgn1bfT7g/zh-cn_image_0000002658912005.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0F67ABF4AD0F24C35F21D199B3DFF48CB8B1492CCA47ED2A013BF6757D97487 "点击放大")
 3. 排查业务代码里封装媒体数据的逻辑中，关键帧是否正常标记。
 
 ## 分析结论
@@ -35,7 +35,7 @@ stss box具体内容如下：
 1. MP4文件资源正常播放，但解析该资源发现仅有一个关键帧信息。
 2. 解析MP4文件资源，发现缺失stss box信息，具体信息如下图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/4oIeIoOqSxqQJ9q_6BvPJA/zh-cn_image_0000002628392798.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/4oIeIoOqSxqQJ9q_6BvPJA/zh-cn_image_0000002628392798.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=6ADAC1504C31BBFEC9E8AF563EE9BB25F244D99E62DE4A25937DE0A773696E0E "点击放大")
 
    缺失stss表中的数据信息导致预览组件seek就近位置的帧。实际上seek到一个非关键帧的位置，解码失败导致预览出现绿屏。
 3. MP4文件缺失stss box信息的原因是封装关键帧数据时，没有标记AVCODEC\_BUFFER\_FLAGS\_SYNC\_FRAME的标识。

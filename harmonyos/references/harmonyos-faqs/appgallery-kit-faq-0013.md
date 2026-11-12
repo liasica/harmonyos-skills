@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/appgallery-kit-
 title: AGC应用发布审核与备案配置常见问题
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 常见问题 > AGC应用发布审核与备案配置常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:44+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:80285c8e51974c9f1c28b693ea7dd22e24ea4128944ed14ddbf117d09e9fc088
 ---
@@ -12,9 +12,9 @@ content_hash: sha256:80285c8e51974c9f1c28b693ea7dd22e24ea4128944ed14ddbf117d09e9
 
 **A**：应用上架时，需根据软件包中声明的设备（即module.json5配置文件中"[deviceTypes](../harmonyos-guides/module-configuration-file.md#devicetypes标签)"标签的枚举值）勾选对应的支持设备，确保软件包中声明的设备范围大于等于HarmonyOS 开发者中心上勾选的支持设备范围。提交审核时会进行校验，如果HarmonyOS 开发者中心上勾选的支持设备范围大于软件包内声明时，会提示上传的软件包与声明支持设备不一致，将无法提交审核。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Satm5I62T76iBgYtoeW-jA/zh-cn_image_0000002774048294.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Satm5I62T76iBgYtoeW-jA/zh-cn_image_0000002774048294.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=84D4363769CACFFE3787843B3E4094E2A6015B6963FFD3B4CDC01A0D834CADFD "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/wxlqq-L3Rl-SrINv6A5SRg/zh-cn_image_0000002803088111.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/wxlqq-L3Rl-SrINv6A5SRg/zh-cn_image_0000002803088111.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=43BDEA23E7C9C80327592E82E1D53DADAFA784DF1411DE8865E2D6DEEC1FF877 "点击放大")
 
 **Q：HarmonyOS 开发者中心应用信息中的支持设备勾选分发的规则有哪些需要注意？**
 

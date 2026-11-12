@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: HarmonyOS按需加载实现方法和常见问题
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > HarmonyOS按需加载实现方法和常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-12
 content_hash: sha256:2bcece6091bc963a4063b5f84495815c7204fc063f2872353f82b019db253df8
 ---
@@ -36,7 +36,7 @@ content_hash: sha256:2bcece6091bc963a4063b5f84495815c7204fc063f2872353f82b019db2
 
 当动态模块为HSP时，基础功能Entry包的oh-package.json5中需要[添加依赖项](../harmonyos-guides/ide-hvigor-dependencies.md)。添加HSP模块的动态依赖方式可参考[如何配置oh-package.json5动态依赖](faqs-compiling-and-building-48.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/Mk758gVQQkCpbDjI4H0AEQ/zh-cn_image_0000002648285864.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/Mk758gVQQkCpbDjI4H0AEQ/zh-cn_image_0000002648285864.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8DAAB3E5089C69BBDA5A6EA21F329B2221227BAE86EFD0D468F0D501F260EB0 "点击放大")
 
 **步骤二：按需加载下载安装扩展功能包。**
 
@@ -63,10 +63,10 @@ A：Device File Browser可访问的文件夹有五种类型：[应用沙箱目�
 
 1. 按下图点击切换Device File Browser沙箱视图。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/DHdYWhBWRkaWWXeJ3X2MjA/zh-cn_image_0000002648286216.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/DHdYWhBWRkaWWXeJ3X2MjA/zh-cn_image_0000002648286216.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=BCAFF7CCA52C81180C485A9D8FD57A98F4474336354985FC4D6CC4579DDAE7E1)
 2. 在//data/app/el2/base/cache/moduleinstall/下添加对应的动态模块。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/l_9oC_aTTlC-Jd-hHhpeSg/zh-cn_image_0000002648126326.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/l_9oC_aTTlC-Jd-hHhpeSg/zh-cn_image_0000002648126326.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=986A5997DC8FF08C842D8F5326385A081F9BB84DED602F0B3F5CB8931C405537 "点击放大")
 
 Q：应用未上架如何测试按需加载功能？
 

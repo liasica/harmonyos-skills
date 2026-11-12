@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1428
 title: Scroll滚动回弹获取偏移位置不准确
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Scroll滚动回弹获取偏移位置不准确
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:bdd7d11072a137ef5cb343a5efd6beb79a4bc44e5e7360b899618581337f7451
 ---
@@ -49,7 +49,7 @@ struct ScrollerTest {
 
 滚动到边缘无法判定为0，现象如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/ytq2f135RXqDG4Q6BqZwFw/zh-cn_image_0000002628763648.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/ytq2f135RXqDG4Q6BqZwFw/zh-cn_image_0000002628763648.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=26465938CF35609AD1158384ACD86293AC49682F79B8751051C9556F1D2948F1 "点击放大")
 
 ## 背景知识
 
@@ -63,7 +63,7 @@ onWillScroll是滚动前触发的事件，滑动到边缘，触发弹性回弹�
 
 设置edgeEffect为None，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/HWFizH_RQIyUJdQDYswQ2w/zh-cn_image_0000002658962963.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/HWFizH_RQIyUJdQDYswQ2w/zh-cn_image_0000002658962963.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=88D6AF883784EF13691BCB5E6CE7F3A871F2B1491BF094146AA3378645DCA6E5 "点击放大")
 
 ## 分析结论
 
@@ -108,7 +108,7 @@ onWillScroll是滚动前触发的事件，不是滚动时或滚动后触发的�
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/mqP9SvG_RuykmoWIA-YhuA/zh-cn_image_0000002628603748.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/mqP9SvG_RuykmoWIA-YhuA/zh-cn_image_0000002628603748.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=30898A2180470C851955B7B3737141972D00039C3C147A855A6397CFE548A69A "点击放大")
 * 方案二：通过[onScrollEdge事件](../harmonyos-references/ts-container-scroll.md#onscrolledge)与[onScrollStop事件](../harmonyos-references/ts-container-scroll.md#onscrollstop9)判定是否滚动到边缘并停止：
 
   ```ts
@@ -149,4 +149,4 @@ onWillScroll是滚动前触发的事件，不是滚动时或滚动后触发的�
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/qnH7RkPTRAagEwz_KJC4JA/zh-cn_image_0000002658843015.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/qnH7RkPTRAagEwz_KJC4JA/zh-cn_image_0000002658843015.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=C501AE2E69426EB1BF8EA7F22F0DDC47E32650E0E324EF4E5A79E10EC5ECA575 "点击放大")

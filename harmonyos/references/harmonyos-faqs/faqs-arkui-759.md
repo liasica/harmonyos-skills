@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-759
 title: 如何实现宿主组件隐藏而绑定的半模态页面仍显示的效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现宿主组件隐藏而绑定的半模态页面仍显示的效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:49059bb0b65b20ca3c09762ebdc844311d685aaa210d6ddf27594c72cbc71cb5
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:49059bb0b65b20ca3c09762ebdc844311d685aaa210d6ddf27594c72cbc
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/b5ixSiV0TnqnVA7QxDxF8w/zh-cn_image_0000002628395792.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/b5ixSiV0TnqnVA7QxDxF8w/zh-cn_image_0000002628395792.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233202Z&HW-CC-Expire=31536000000&HW-CC-Sign=87B0A66A2CFF34169F197ED190EFEAB69088FB3033D2030EB980CDF3A6946A24 "点击放大")
 
 问题代码示例参考如下：
 
@@ -60,7 +60,7 @@ struct Index {
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/Q59PRAubQ42YHO5Dl-K4KQ/zh-cn_image_0000002658795059.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/Q59PRAubQ42YHO5Dl-K4KQ/zh-cn_image_0000002658795059.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233202Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4BB0401E9275DF7896E8C0BC12C29C993898049DA3CD6D8C37ABA3867EDD104 "点击放大")
 
 ## 背景知识
 

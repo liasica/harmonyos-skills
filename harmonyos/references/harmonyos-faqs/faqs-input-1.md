@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-input-1
 title: 大写字母键无效
 breadcrumb: FAQ > 系统开发 > 基础功能 > 多模输入（Input） > 大写字母键无效
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-30
 content_hash: sha256:8c9969348c4cd8140f7f80beaf7386d3f54920a473743170c05d756e696a7101
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:8c9969348c4cd8140f7f80beaf7386d3f54920a473743170c05d756e696
 
 * [多设备交互](../best-practices/bpta-multi-interaction.md#section11794812173816)：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/Pw4-gSPPT6eSFQS4YNy_gA/zh-cn_image_0000002628614390.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/Pw4-gSPPT6eSFQS4YNy_gA/zh-cn_image_0000002628614390.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=580F90B93D4467B5386D7A27E1921FAF55059DEE4B0F485C9B579A351668E781 "点击放大")
 
   + [inputDevice.setFunctionKeyEnabled](../harmonyos-references/js-apis-inputdevice.md#inputdevicesetfunctionkeyenabled15)：设置功能键（如：CapsLock键）使能状态。使用Promise异步回调。
 

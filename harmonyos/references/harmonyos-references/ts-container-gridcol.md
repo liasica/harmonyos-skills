@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: GridCol
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 栅格与分栏 > GridCol
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:f13edc3c8e93b25b6c5550b0aa1f9e4d0d05537b6002decf5695d445198958b4
 ---
@@ -197,4 +197,4 @@ struct GridColExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/ZZ-s02yiTKCCNqrmkinmsg/zh-cn_image_0000002815560529.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/ZZ-s02yiTKCCNqrmkinmsg/zh-cn_image_0000002815560529.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=4C60ED8834A3546F19F867B46436B80ABEA00D5E33B20C612F204F4AD78C5BB1)

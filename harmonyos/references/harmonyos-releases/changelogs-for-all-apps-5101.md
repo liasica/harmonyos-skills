@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: OS平台API行为的变更
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.0(18) > OS平台能力 > OS平台行为变更说明 > OS平台API行为的变更
 category: harmonyos-releases
-scraped_at: 2026-11-12T09:50:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-27
 content_hash: sha256:e20aa3a3af46a4fbd7cb488690a942ed0a955c913c885786875239b983b485fb
 ---
@@ -206,7 +206,7 @@ struct KeyboardAvoidExample1 {
 * 变更前：在XComponent组件上使用renderFit接口，使用部分fit模式的显示效果不符合预期。
 * 变更后：XComponent组件上使用renderFit接口后，可以正确显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/tI1f56LNT669oEvGXqFBVQ/zh-cn_image_0000002295394565.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/tI1f56LNT669oEvGXqFBVQ/zh-cn_image_0000002295394565.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F2BF1A7019258470B0BEA3EB96AA853F32C16976BE20FD0FC021F654F742EF6)
 
 **起始API Level**
 
@@ -253,7 +253,7 @@ struct enableAnalyzer {
 
 在白名单的内置组件属性与自定义组件重名时，编译拦截报错。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/mBXbGBu3SlOXYm6v-J5H3A/zh-cn_image_0000002260714460.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/mBXbGBu3SlOXYm6v-J5H3A/zh-cn_image_0000002260714460.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=89E92F1C0CDAB73A6356F7DC94AE5AFF68AEF5258BFFB054AE99E911077E68C9)
 
 **起始API Level**
 

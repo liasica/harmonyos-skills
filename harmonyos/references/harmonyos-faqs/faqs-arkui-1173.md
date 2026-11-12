@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1173
 title: 如何实现图标垃圾桶
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现图标垃圾桶
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:18+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:b8b9f399725f181b8786b571ef1b524471c5e27e72747ec8f2c223e93bfb4cac
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:b8b9f399725f181b8786b571ef1b524471c5e27e72747ec8f2c223e93bf
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/cttPGF7kS4KVv3goM4M7MQ/zh-cn_image_0000002658929095.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/cttPGF7kS4KVv3goM4M7MQ/zh-cn_image_0000002658929095.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B49F804E28F86EECF951AC48CC966766CD8B7482B1B6E1B1E5A76171E44C245 "点击放大")
 
 ## 背景知识
 

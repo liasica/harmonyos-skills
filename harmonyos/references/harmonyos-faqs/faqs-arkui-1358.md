@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1358
 title: 如何保持Swiper中图片居中效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何保持Swiper中图片居中效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:d72f00b66b1ee73f3baff266e2ec2bb7fe14569054239bde88e457b933ce2c90
 ---
@@ -50,13 +50,13 @@ struct Page1 {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/uznz-vsBQUOya379127dGA/zh-cn_image_0000002658961207.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/uznz-vsBQUOya379127dGA/zh-cn_image_0000002658961207.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=3620538AA3E07F4A3D21B64F1344092EEC095B66D79BF7FC9D58E63B135594DF "点击放大")
 
 ## 效果预览
 
 可以看到图片一直处于居中，不会出现图片下移的情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/XOQRhYLxQMuhE986ah8bSw/zh-cn_image_0000002658841259.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/XOQRhYLxQMuhE986ah8bSw/zh-cn_image_0000002658841259.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=116C63A573037D8DFFD6F939BAA73CB45BC72B9DFCE8551D5CEB5D97CDBF879D "点击放大")
 
 ## 背景知识
 

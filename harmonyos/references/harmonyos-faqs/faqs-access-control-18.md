@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-access-con
 title: 系统中关闭已开启的权限，应用被重启
 breadcrumb: FAQ > 系统开发 > 安全 > 程序访问控制 > 系统中关闭已开启的权限，应用被重启
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:db0d321972fb6b57c1a893708c85a41f0de3132a67822dade90794df0af38b4a
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:db0d321972fb6b57c1a893708c85a41f0de3132a67822dade90794df0af
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/SJzgspx8TZS_jRxjCujH8A/zh-cn_image_0000002658967681.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/SJzgspx8TZS_jRxjCujH8A/zh-cn_image_0000002658967681.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=529D44C0A772AC1E18EF4AC15F3B278F7B4658C7E9631BF3DE7BEAF5F2FFC260 "点击放大")
 
 ## 背景知识
 

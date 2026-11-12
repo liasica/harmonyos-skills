@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 验证签名
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 可信应用服务 > 签名验证 > 验证签名
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:36+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-03
 content_hash: sha256:ec42c3d9111d57e7f04573799727276b47ff71022c01590c8ed4b0f1dffa5d45
 ---
@@ -30,7 +30,7 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 安全图像数据的结构如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/1oHQOb2qTpKDhGC81cgsdA/zh-cn_image_0000002815559089.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/1oHQOb2qTpKDhGC81cgsdA/zh-cn_image_0000002815559089.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FD227D5D2C685B306C8E8C523891FB3314EE000E7ED2ECBDF357758E8544C63)
 
 其中，用户数据和图像数据为被签名的原始数据，图像数据长度固定为460800字节，签名数据是Base64编码的签名结果，开发者需要解析出这些数据用来验证安全图像数据签名。参考代码如下：
 
@@ -53,7 +53,7 @@ const signature = base64Helper.decodeSync(signatureString);
 
 压缩、裁剪处理后返回的安全图像数据的结构如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/yvtTerHtTI21hG-OsD3lTw/zh-cn_image_0000002815399173.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/yvtTerHtTI21hG-OsD3lTw/zh-cn_image_0000002815399173.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A01E537A54791F8498E1C39F9A01E40621C82399294B192A0E09014ADF9FB82)
 
 返回的处理后安全图像数据具体包含：
 

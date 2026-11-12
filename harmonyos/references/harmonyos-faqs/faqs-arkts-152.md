@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-152
 title: 文本内容显示乱码
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 文本内容显示乱码
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:53+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:6784bf387ba9a41d28f70111eb087ab4dccc88985cf104fd393ebe85a49bf7e8
 ---
@@ -114,7 +114,7 @@ content_hash: sha256:6784bf387ba9a41d28f70111eb087ab4dccc88985cf104fd393ebe85a49
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/mHel3ZnLROiHt0bliHzbRQ/zh-cn_image_0000002659138339.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/mHel3ZnLROiHt0bliHzbRQ/zh-cn_image_0000002659138339.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=B1F62CE61681862D30DC7FC810B5B7E04342A17E23476B383697E0E2E62B8CAC "点击放大")
 
 * 场景二：
   + 正确设置应用所使用的注册自定义字体的方法。

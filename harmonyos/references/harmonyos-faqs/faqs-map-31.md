@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-31
 title: 基于指定的经纬度坐标点，如何进行地图缩放
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 基于指定的经纬度坐标点，如何进行地图缩放
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:38+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-12
 content_hash: sha256:059da19af54e822810f1546f5d751125be6c8bb6996e2af7ff99c56bc40a6181
 ---
@@ -134,7 +134,7 @@ struct CustomScale {
 
 实现效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/9iTpgPLWSwmMzwsfQzogfw/zh-cn_image_0000002628394370.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/9iTpgPLWSwmMzwsfQzogfw/zh-cn_image_0000002628394370.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA79D8BF4D27C29479FBB44789320611F77378BB84B9A6F5DFD9B19445150864 "点击放大")
 
 ## 常见FAQ
 

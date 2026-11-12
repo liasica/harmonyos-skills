@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 通过命令行获取profile文件中的bundleName信息失败怎么办
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 通过命令行获取profile文件中的bundleName信息失败怎么办
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:56+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:a6b01dc07c2f58809a126141c4a0ce6541e0fcba11690c2fed37bc7f44871b91
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:a6b01dc07c2f58809a126141c4a0ce6541e0fcba11690c2fed37bc7f448
 
 搭建流水线时通过cat命令行查看获取profile文件中的信息为乱码，没办法校验bundleName（包名）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/AnNRCzcGRP6GjjERg5ulyg/zh-cn_image_0000002658808545.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/AnNRCzcGRP6GjjERg5ulyg/zh-cn_image_0000002658808545.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=D24472CEBA7F5D07C42747EA33715AA4667867CBB34FC34A31B53090FBE4CBA4 "点击放大")
 
 ## 知识背景
 
@@ -20,11 +20,11 @@ content_hash: sha256:a6b01dc07c2f58809a126141c4a0ce6541e0fcba11690c2fed37bc7f448
 
    签名可能会因为签名所需要的profile文件与工程中的包名不同、当前不在profile有效期内等原因导致签名失败，提前校验可以尽早发现问题，符合测试左移的工程原则。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/_ZNBDQeGSTmjADHhsg_4dw/zh-cn_image_0000002628569170.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/_ZNBDQeGSTmjADHhsg_4dw/zh-cn_image_0000002628569170.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=41A47229F84DF7E9077E3BC2D217B53367FDB8990D54D7180FE6E97CFC508B6E "点击放大")
 
    此校验过程在搭建流水过程中下图的红框部分，构建后签名前的校验脚本中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/raQrUWwuRa2GYRjjh7tJ8w/zh-cn_image_0000002658928495.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/raQrUWwuRa2GYRjjh7tJ8w/zh-cn_image_0000002658928495.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=192EC360C98849203C6C857D6093E36398245026725979C90A509BB129CA4C3C "点击放大")
 2. **签名的作用**。
    * 应用身份识别：每个包文件都有一个唯一的签名，系统通过它来识别应用的身份。
    * 保证应用完整性：签名能够确保包文件在传输和安装过程中没有被篡改。如果文件被修改，签名就会失效，系统就不会安装这个应用。
@@ -34,7 +34,7 @@ content_hash: sha256:a6b01dc07c2f58809a126141c4a0ce6541e0fcba11690c2fed37bc7f448
 
    Profile格式为.p7b，包含HarmonyOS应用/元服务的包名、数字证书信息、HarmonyOS应用/元服务允许申请的证书权限列表，以及允许应用/元服务调试的设备列表（如果应用/元服务类型为Release类型，则设备列表为空）等内容。Profile文件分为调试Profile和发布Profile两种。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/TCSSQEH3R82aw1YrWsQvoQ/zh-cn_image_0000002628409276.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/TCSSQEH3R82aw1YrWsQvoQ/zh-cn_image_0000002628409276.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CA619EB1590B358D6528EE945307F2C05DDA18067A56D4B1F38EA5777B92C87 "点击放大")
 4. **[搭建流水线](../harmonyos-guides/ide-command-line-building-app.md)**。
 
 ## 问题定位
@@ -62,4 +62,4 @@ echo $value
 
 签名能够确保文件在传输和安装过程中没有被篡改，在搭建流水线时，可以通过官网提供的命令行工具中的签名工具hap-sign-tool.jar校验包名和工程项目中的包名是否一致，提前发现问题。通过该方法，还可以获得type、developer-id、validity，开发者也可使用同样方法，对这些字段进行校验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/5sbJq6LqQ26yTscOIFDlaw/zh-cn_image_0000002658808547.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/5sbJq6LqQ26yTscOIFDlaw/zh-cn_image_0000002658808547.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=33DB4EECF6263E6957E73E715EB128D69B1E347D294A04CC9CE7BAAB75077E12 "点击放大")

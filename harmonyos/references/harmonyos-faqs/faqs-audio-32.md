@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-audio-32
 title: 安全键盘输入法中断音乐播放如何解决
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音频（Audio） > 安全键盘输入法中断音乐播放如何解决
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:30+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-15
 content_hash: sha256:e0ab8efd0299bee553e02461188e8d34ab994dfed482afb45fa7c66207255388
 ---
@@ -20,7 +20,7 @@ content_hash: sha256:e0ab8efd0299bee553e02461188e8d34ab994dfed482afb45fa7c662072
 
 ## 问题定位
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/cgmCbnktSfOhMxvLVEmTmQ/zh-cn_image_0000002639837502.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/cgmCbnktSfOhMxvLVEmTmQ/zh-cn_image_0000002639837502.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=A01345BE64F69C9701AE8CCF2621BF3D5BF7ED8286B27C75667C45253186C3FA "点击放大")
 
 打开被中断的音乐播放器，可以看到提示“允许同时播放提示”，音频焦点被抢占。安全键盘启用时（如银行/支付场景），系统会强制获取音频焦点，导致音乐被暂停。
 

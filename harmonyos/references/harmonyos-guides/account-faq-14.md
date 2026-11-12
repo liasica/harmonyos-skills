@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-faq-1
 title: 订阅到系统未成年人模式开启了，这个时候应用要怎么处理
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit常见问题 > 订阅到系统未成年人模式开启了，这个时候应用要怎么处理
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-04-20
 content_hash: sha256:96960b9bd000ac2b22d7c8d69a4cf6f1f5e79d32fbe6d9402f95911cb6e0dc96
 ---
@@ -12,4 +12,4 @@ content_hash: sha256:96960b9bd000ac2b22d7c8d69a4cf6f1f5e79d32fbe6d9402f95911cb6e
 
 如果应用处于前台（用户正在浏览内容或播放音视频等场景），可以在监听到状态变化后回到应用的主页，并将主页内容刷新为当前模式下的适龄内容。如果未及时刷新，可能存在未成年用户浏览到非适龄内容绕过管控，或成年用户仍浏览未成年人模式下的内容，无法关闭未成年人模式的情况。刷新后的未成年人模式主页可参考如下设计：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/TWIqVsLJS4iZH4-bmKOGSA/zh-cn_image_0000002815559569.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/TWIqVsLJS4iZH4-bmKOGSA/zh-cn_image_0000002815559569.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=6298F4CFE27447C2E6E7620D7506380F2B2EFD5631E6113F94BB40A2BD5BA3C0 "点击放大")

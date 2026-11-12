@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/text-custom-c
 title: 自定义文本绘制与显示（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 文本绘制与显示 > 自定义文本绘制与显示（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:13+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:9e8e62c4f9d225a1718245f265c23a87e5d46caaf79c8e561474290848699f9c
 ---
@@ -158,4 +158,4 @@ content_hash: sha256:9e8e62c4f9d225a1718245f265c23a87e5d46caaf79c8e5614742908486
 
 效果展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/cmWOKGicTRudxahybhjoJw/zh-cn_image_0000002815559503.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/cmWOKGicTRudxahybhjoJw/zh-cn_image_0000002815559503.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A310A5664A206515FC07DE4AEDA6648CE5BFC23E9D1FD8B41F6C4162F44973C)

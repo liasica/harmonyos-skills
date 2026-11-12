@@ -3,11 +3,11 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-scenario-b
 title: 卡顿率报了异常，丢帧卡顿次数为0，该如何理解
 breadcrumb: FAQ > DevEco Testing > 专项测试 > 场景化性能测试 > 卡顿率报了异常，丢帧卡顿次数为0，该如何理解
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:04+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:74a7aa16c53f6393dae6a4bae73027b3adb2f80fea46b38bfa77190d9a635d79
 ---
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/sJe_PQMKSGm6LdCuk3IjqA/zh-cn_image_0000002654798339.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/sJe_PQMKSGm6LdCuk3IjqA/zh-cn_image_0000002654798339.png?HW-CC-KV=V1&HW-CC-Date=20261112T233218Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7231171200F6DA7063EDCFE53205F82B4DC971294BD84DB1E7BC50C02CE9F75 "点击放大")
 
 卡顿率和丢帧的检测机制不同，没有必然联系，都需要关注。

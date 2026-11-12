@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-release-c
 title: 导入上架检测报告进行诊断
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 导入上架检测报告进行诊断
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:4b2026431128f6d0cd80328da524b52646d25405a1dde94c7ae447f07ff59d29
 ---
@@ -19,20 +19,20 @@ content_hash: sha256:4b2026431128f6d0cd80328da524b52646d25405a1dde94c7ae447f07ff
 
 1. 点击菜单栏**Tools >** **AppAnalyzer**，打开AppAnalyzer页面，点击底部**History**打开历史报告页面，点击右上角的**Import** **> Release Check Report**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/FNyTooVkRA-tMRoMtuqM8A/zh-cn_image_0000002779406784.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/FNyTooVkRA-tMRoMtuqM8A/zh-cn_image_0000002779406784.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=0870A84FEB2415495B3A144DFB08433ECA92168C9DEECA508AF2AE6231C752EF "点击放大")
 2. 确认需要导入的上架检测报告，点击**Import**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/MdDsP5lqTIeQUrenGTpQjw/zh-cn_image_0000002779406786.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/MdDsP5lqTIeQUrenGTpQjw/zh-cn_image_0000002779406786.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=E127C913130A2F030D958B0B894E33578422006512BF9054E39DC0F64AC0C9E6)
 3. 根据界面提示，确保即将导入的上架报告满足相关要求。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/Z_O5JS4HQMmXORLIUPG_Pw/zh-cn_image_0000002779566764.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/Z_O5JS4HQMmXORLIUPG_Pw/zh-cn_image_0000002779566764.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=074F09E1A6DB3134675C581347D0291B64B06AF1C054A8D8EFB83B8F0C6F43A3)
 
    选择是否授权AppAnalyzer获取应用上架驳回问题关联的hiperf数据，用于诊断问题的可能故障原因。在**AppAnalyzer**首页，点击底部**Settings**也支持进行堆栈授权**。**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/v7HXFeIOSma6Qtv21g8qQA/zh-cn_image_0000002808766347.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/v7HXFeIOSma6Qtv21g8qQA/zh-cn_image_0000002808766347.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=A70C5225E31522EA39DBAC8BCCE88DA218D60A6C00749F21CAB0FEBBA888AB37)
 4. 诊断完成后，会提示生成的体检报告的数量，请在当前的历史报告页面中查看对应的报告。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/HH0v069WQ_iKDuu-C0zQRA/zh-cn_image_0000002808886431.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/HH0v069WQ_iKDuu-C0zQRA/zh-cn_image_0000002808886431.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=976414307BC78882DB77D4AEBA0206679662576307F36FEC748BDF9027F34E1F)
 5. 查看体检报告。
    * **源文件、调优文件（包含trace文件和调用栈文件）或snapshot文件、时间戳等**：点击源文件可跳转到问题源码，点击调优文件或snapshot文件支持直接拉起性能分析工具Profiler并导入性能检测的问题数据进行调优分析，点击时间戳可以打开Profiler并定位到问题发生的时间范围。
    * **分析文档**：点击链接可跳转至官网文档，参考文档对检测出来的问题进行分析。
@@ -40,4 +40,4 @@ content_hash: sha256:4b2026431128f6d0cd80328da524b52646d25405a1dde94c7ae447f07ff
 
    如果在体检中遇到问题，可点击报告右上角的**User Feedback**向我们反馈。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/IlxTW-GnSZSc_8fKjG6tag/zh-cn_image_0000002808766349.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/IlxTW-GnSZSc_8fKjG6tag/zh-cn_image_0000002808766349.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=4431565043E9A095AC8D40C39DE1FFA74D3650E21648353ADB459827A667E9B6)

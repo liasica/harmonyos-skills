@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/ide-changel
 title: 变更说明
 breadcrumb: 版本说明 > 更多版本 > 26.0.0 > DevEco Studio（Windows/macOS版） > 变更说明
 category: harmonyos-releases
-scraped_at: 2026-11-12T09:50:02+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:87d9c96e8936c71dc8475bbf61fa63441a5a9f53652791edcd41769cf1d6633b
 ---
@@ -48,7 +48,7 @@ DevEco Studio适配IntelliJ 2026.1.1底座升级后，默认启用新UI，界面
 
 如果ArkUI-X工程是使用DevEco Studio 26.0.0 Beta2以下版本创建的，升级到Beta2及以上版本，编译会失败，并提示Could not open settings generic class cache for settings file。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/VFkVSpWGSt2-hCfDWvrmuA/zh-cn_image_0000002659368057.png)**适配指导**
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/VFkVSpWGSt2-hCfDWvrmuA/zh-cn_image_0000002659368057.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=B080563FD4D9DC879B17B69221C4F9B6068809159BD5DD02E4992706BBBBA639)**适配指导**
 
 * **方式一：适配升级gradle**
 
@@ -61,7 +61,7 @@ DevEco Studio适配IntelliJ 2026.1.1底座升级后，默认启用新UI，界面
 
   如果本地有jdk21，可以在gradle.properties中通过org.gradle.java.home变量指定使用jdk21。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/1T3z-c7bR6m8GagD-zWCmw/zh-cn_image_0000002662851951.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/1T3z-c7bR6m8GagD-zWCmw/zh-cn_image_0000002662851951.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=18B719D806E8D1B7C02688ECA355CE742C9A912A248568CA2B01C3A291655C79)
 
 ## DevEco Studio 26.0.0 Beta1引入的变更
 

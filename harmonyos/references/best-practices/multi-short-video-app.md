@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-short-vid
 title: 多设备短视频界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备短视频界面
 category: best-practices
-scraped_at: 2026-11-10T10:42:04+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:8a6ea7604b049058e6f9205bbe9dee35d97d8de2f906d44248207df467d1ba46
 ---
@@ -30,7 +30,7 @@ content_hash: sha256:8a6ea7604b049058e6f9205bbe9dee35d97d8de2f906d44248207df467d
 
 短视频应用的UX设计可参考影音娱乐类多设备响应式设计指南的[短视频](../design-guides/responsive-design-examples1-0000001957369849.md#section286164710457)章节，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/OH532aa5Q-q84Y9AHyT1EA/zh-cn_image_0000002622296745.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/OH532aa5Q-q84Y9AHyT1EA/zh-cn_image_0000002622296745.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB243B4BFCF91B6ABE6200A187E6C8B6AB42ED3316DFC8F210DBAE2660CFB65A "点击放大")
 
 ## 工程管理
 
@@ -266,7 +266,7 @@ content_hash: sha256:8a6ea7604b049058e6f9205bbe9dee35d97d8de2f906d44248207df467d
 
 短视频应用首页主要为推荐精品短视频。根据功能设计，将应用首页相关内容划分为5个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/CVHw_jRqQyWWZHceO27Akg/zh-cn_image_0000002591977212.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/CVHw_jRqQyWWZHceO27Akg/zh-cn_image_0000002591977212.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=DDD7FF3AF870B655B8B1543C7DC6FA57FCB6D50F51CC49A0362465304177CE8A "点击放大")
 
 **界面开发**
 
@@ -294,7 +294,7 @@ content_hash: sha256:8a6ea7604b049058e6f9205bbe9dee35d97d8de2f906d44248207df467d
 
 短视频应用首页主要推荐精选视频，满足用户观看需求。根据功能设计，将应用首页相关内容划分为4个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/JV0GK8ECTTqL3flYyMwQ_Q/zh-cn_image_0000002622296757.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/JV0GK8ECTTqL3flYyMwQ_Q/zh-cn_image_0000002622296757.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=960FBF6C87E87418B1E8714B09395DD0207CE5A590FB07143343ECD3B1BA550E "点击放大")
 
 **界面开发**
 
@@ -319,7 +319,7 @@ content_hash: sha256:8a6ea7604b049058e6f9205bbe9dee35d97d8de2f906d44248207df467d
 
 短视频应用首页主要推荐精选视频，满足用户观看需求。根据功能设计，将应用首页相关内容划分为4个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/ntM49hC3QVyLtr_yOcN2Yw/zh-cn_image_0000002622336875.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/ntM49hC3QVyLtr_yOcN2Yw/zh-cn_image_0000002622336875.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=F29BFA5E832C03903E9C6BA246C49BD29E496CBB96E2872A9F1630DD4807BAE9 "点击放大")
 
 **界面开发**
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/declare-permi
 title: 申请受限权限
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 申请应用权限 > 申请受限权限
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:30+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:238119a99e87374fc19a1678a02baa7371fee10caae89b3231584dbfa6e4f88d
 ---
@@ -20,7 +20,7 @@ content_hash: sha256:238119a99e87374fc19a1678a02baa7371fee10caae89b3231584dbfa6e
 
 ## 申请步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/Fscl1OcRSceHZGhwRL2sng/zh-cn_image_0000002786359630.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/Fscl1OcRSceHZGhwRL2sng/zh-cn_image_0000002786359630.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=71B8E51BFDD9D09C4339E4B78CC6984FAA91BB6B9F2B7200E224A95D2355C0C2)
 
 针对上图中的数字标注，补充说明如下：
 

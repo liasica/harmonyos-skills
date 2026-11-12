@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 布局约束
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 布局与边框 > 布局约束
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:489d9769e973ea94a6794aaf3fbc2e5b5f4dcf4af5e4ddb5b79c492972455a99
 ---
@@ -136,11 +136,11 @@ struct AspectRatioExample {
 
 **图1** 竖屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/uTQHo21UQr2E-ot9sAgwfg/zh-cn_image_0000002786360986.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/uTQHo21UQr2E-ot9sAgwfg/zh-cn_image_0000002786360986.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4348D6C27C61F553A678E4E2EE0948CA7BADBCF384DA3AC71F2E49884DC85B4)
 
 **图2** 横屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/ZLvTGU90SAqCJNpaEmngSA/zh-cn_image_0000002815560407.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/ZLvTGU90SAqCJNpaEmngSA/zh-cn_image_0000002815560407.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=368BBAE755F3F754CE3EC71D3D57CF4154F21C340D5B73E8514F7ACBEF6D9EDF)
 
 ### 示例2（设置组件显示优先级）
 
@@ -204,4 +204,4 @@ struct DisplayPriorityExample {
 
 横屏显示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/em33sNIiRYiI1R6WCCmMrA/zh-cn_image_0000002815400491.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/em33sNIiRYiI1R6WCCmMrA/zh-cn_image_0000002815400491.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=40E92B612F3058AA68B9E59BADED417F96DCC22561B8437DF8E0F142334A89EF)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/speech-ai
 title: AICaptionComponent（AI字幕组件）
 breadcrumb: API参考 > AI > Speech Kit（场景化语音服务） > ArkTS组件 > AICaptionComponent（AI字幕组件）
 category: harmonyos-references
-scraped_at: 2026-11-12T09:57:47+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:b9428dac38e51863a5b45939e7e2b946f1022eea9c6046f8a6c5e0471d4b139a
 ---
@@ -91,7 +91,7 @@ struct Index {
 
 组件如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/fetkdP5zS7e9SJRWtqYdcw/zh-cn_image_0000002815401711.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/fetkdP5zS7e9SJRWtqYdcw/zh-cn_image_0000002815401711.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C13CDD554E476F2CDC261C44F6627340FCBB7A3C9B85846B6BF9F5863881A60)
 
 ## AICaptionController
 

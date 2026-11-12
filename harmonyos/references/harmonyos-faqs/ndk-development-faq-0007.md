@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/ndk-development
 title: 如何通过AKI三方库实现ArkTS调用C/C++
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 常见问题 > 如何通过AKI三方库实现ArkTS调用C/C++
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:56+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:4c4d1b4a8ef3768c8aebe82f3c62f8b6d9b3146928917556b06b69a86c308577
 ---
@@ -42,7 +42,7 @@ content_hash: sha256:4c4d1b4a8ef3768c8aebe82f3c62f8b6d9b3146928917556b06b69a86c3
 
    在右上角同步工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/QMbhx9GGQPmR65kCu1x7rg/zh-cn_image_0000002774068822.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/QMbhx9GGQPmR65kCu1x7rg/zh-cn_image_0000002774068822.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D06B0CBC76DE8D726DA8511EB5FF56F2B28B4797C486F55F8E7BE4E5280607B "点击放大")
 2. 在napi\_init.cpp文件中定义业务，并将业务接口导出给ArkTS：
 
    ```cpp

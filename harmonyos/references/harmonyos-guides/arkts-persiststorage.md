@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-persist
 title: PersistentStorage：持久化存储UI状态
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理应用拥有的状态 > PersistentStorage：持久化存储UI状态
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:cd81277eb066571cd362fe888489dae3ed7f837a36c00d97d3720b939b5587b2
 ---
@@ -113,7 +113,7 @@ onWindowStageCreate(windowStage: window.WindowStage): void {
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/qzfUzm34SP22VV539N4M0g/zh-cn_image_0000002786518538.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/qzfUzm34SP22VV539N4M0g/zh-cn_image_0000002786518538.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=06B5E095B4AB0719B20A01A790C61BB04B20BB235284EA15AC5BC2AF3D7E1A88)
 
 * 新应用安装后首次启动运行：
 
@@ -125,7 +125,7 @@ onWindowStageCreate(windowStage: window.WindowStage): void {
 
   **图1** persistProp初始化流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/y-aN8nPURTaiU62o7bTLmQ/zh-cn_image_0000002786358610.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/y-aN8nPURTaiU62o7bTLmQ/zh-cn_image_0000002786358610.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=0586914D866EB5DA3E6D8FDE05D2F5F9486EB23C1680CFB3D0CA5016D541999D)
 * 触发点击事件后：
 
   1. 状态变量@StorageLink('aProp') aProp改变，触发Text组件重新刷新。
@@ -221,7 +221,7 @@ struct TestCase6 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/XLcdvmWhRZixogqK7SdDKw/zh-cn_image_0000002815558031.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/XLcdvmWhRZixogqK7SdDKw/zh-cn_image_0000002815558031.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9C05C2D7FFBD6438F893EE2F72E314D369B8598BCA3BABBE62D58D48FB8DBD1)
 
 ### 持久化Date类型变量
 
@@ -288,7 +288,7 @@ struct PersistedDate {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/C8dVUDz2RXy_n8DXpeXdLQ/zh-cn_image_0000002815398115.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/C8dVUDz2RXy_n8DXpeXdLQ/zh-cn_image_0000002815398115.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=40041973D602297FFC222C4029A5A2C93C7EABF89BC343B205DA0A2F49C704F3)
 
 ### 持久化Map类型变量
 
@@ -344,7 +344,7 @@ struct PersistedMap {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/LoyGORs6T4ig2lC4OPquQQ/zh-cn_image_0000002786518540.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/LoyGORs6T4ig2lC4OPquQQ/zh-cn_image_0000002786518540.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=444910501DC2986C3480EBD51D2AC73994A53D0201D19DC3AA392DB970054DAE)
 
 ### 持久化Set类型变量
 
@@ -421,4 +421,4 @@ struct PersistedSet {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/-uR1UtxpRpa81Bx6mzjilQ/zh-cn_image_0000002786358612.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/-uR1UtxpRpa81Bx6mzjilQ/zh-cn_image_0000002786358612.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=57E99F849DD98A0C0D5BDC5F9F37E24C6C0A67E7652B50DE1234148EDCC5A66E)

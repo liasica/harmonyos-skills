@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ime-2
 title: 通过外接键盘无法输入数字
 breadcrumb: FAQ > 应用框架开发 > 输入法框架 > 输入法开发（IME） > 通过外接键盘无法输入数字
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:57+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:73a5722d650b137fc64250427a51bd5e8c517b095a0cde1548dbe47f81dbc1aa
 ---
@@ -27,7 +27,7 @@ content_hash: sha256:73a5722d650b137fc64250427a51bd5e8c517b095a0cde1548dbe47f81d
   2. 再向输入法分发，输入法会消费按键用作输入。
   3. 再次将事件发给ArkUI框架，用于响应系统默认Key事件（例如走焦）以及获焦组件绑定的[onKeyEvent](../harmonyos-references/ts-universal-events-key.md#onkeyevent)回调。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/djITGA1XSuG9JvlJc8l2ew/zh-cn_image_0000002628820890.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/djITGA1XSuG9JvlJc8l2ew/zh-cn_image_0000002628820890.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=7111305A42969B84211EE26CD10E277C0E7BD8CBA57BDDA13206C74FF67EAEB9 "点击放大")
 
 ## 问题定位
 

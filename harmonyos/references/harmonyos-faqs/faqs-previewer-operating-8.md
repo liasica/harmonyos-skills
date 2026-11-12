@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-previewer-
 title: SVG图片在真机和DevEco Studio中颜色显示不一致该如何解决
 breadcrumb: FAQ > DevEco Studio > 界面预览 > SVG图片在真机和DevEco Studio中颜色显示不一致该如何解决
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:09e3f6a06c5f7d022e42585e3b694dcaed12af023cfec4df4a003f9c8c829edc
 ---
@@ -14,11 +14,11 @@ SVG图片在DevEco Studio和浏览器中打开显示为黄色，但是在测试�
 
 * DevEco Studio中预览为黄色：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/rdyG-przQbyb9wgWGveSFA/zh-cn_image_0000002628408094.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/rdyG-przQbyb9wgWGveSFA/zh-cn_image_0000002628408094.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=FEB6A436AFC9B29F0A024364BADFEBA865F74842EF87DB8314E99DDE1FE689F9 "点击放大")
 
 * DevEco Studio的Previewer中渲染为红色：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/rI0iTaxGR-C3eVVW-ShU-Q/zh-cn_image_0000002628567994.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/rI0iTaxGR-C3eVVW-ShU-Q/zh-cn_image_0000002628567994.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1ACC0B805F1F79C72315DA5F35BC1F7B9F4BE8758C985CAAF03E4D23A20CBD1 "点击放大")
 
   ```screen
   <svg id='vector' xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28'>
@@ -35,7 +35,7 @@ SVG图片在DevEco Studio和浏览器中打开显示为黄色，但是在测试�
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/hhl-xOpYTiif1wCpbghrag/zh-cn_image_0000002658927315.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/hhl-xOpYTiif1wCpbghrag/zh-cn_image_0000002658927315.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B7868B356684C021E34B4786402B95B2062AC3A78ECF48F3E3E34F98E5D499F "点击放大")
 
 ## 定位思路
 

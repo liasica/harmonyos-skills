@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: Path2D对象
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > Canvas开发指导 > Path2D对象
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-28
 content_hash: sha256:767857ee74c2bee0da5a5467cb883a9c2d4e33f0b09cb6b3a4050a2ebfd01492
 ---
@@ -81,7 +81,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/IKfDT8YRRsibtBSbJN5VCQ/zh-cn_image_0000002815398845.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/IKfDT8YRRsibtBSbJN5VCQ/zh-cn_image_0000002815398845.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA57BC54B03F17620577C0ED78AB4A437859F6CE786EC8BE757194D2DAA03AAF)
 
 ## 画图形
 
@@ -200,4 +200,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/ePjU6w9nQAOvCI_wD_F9Uw/zh-cn_image_0000002786519270.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/ePjU6w9nQAOvCI_wD_F9Uw/zh-cn_image_0000002786519270.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=883B6473B0B32A22476EA819199F70B60F2DD9F7620E14ED951B2BE9FFE1626F)

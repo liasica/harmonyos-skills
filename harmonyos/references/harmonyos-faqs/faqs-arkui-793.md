@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-793
 title: Swiper组件导航点颜色重叠问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Swiper组件导航点颜色重叠问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:1b1f7dbf93ff2eb3e8da0bd2de4593c2f40018c09be708e1b208bb6a3bd271d4
 ---
@@ -40,7 +40,7 @@ export class YDSwiperIndicatorStyles implements AttributeModifier<SwiperAttribut
 
 效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/2x_YPwfvT8GTLbZIPOQTHA/zh-cn_image_0000002658797001.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/2x_YPwfvT8GTLbZIPOQTHA/zh-cn_image_0000002658797001.png?HW-CC-KV=V1&HW-CC-Date=20261112T233202Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC0ACC5AE9DA60BCB92467DC9587DBA9AB45053CFB1C145197BC9C9E8B06E08C "点击放大")
 
 ## 背景知识
 
@@ -115,4 +115,4 @@ struct swiperDemo {
 
 效果参考如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/Qm09pQs-TuGcCfngKVyAqQ/zh-cn_image_0000002628557638.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/Qm09pQs-TuGcCfngKVyAqQ/zh-cn_image_0000002628557638.png?HW-CC-KV=V1&HW-CC-Date=20261112T233202Z&HW-CC-Expire=31536000000&HW-CC-Sign=49B054B1E9E60F084BA2832CBC6626F074C65DDD5B39F2E3BBBB138C70495FB6 "点击放大")

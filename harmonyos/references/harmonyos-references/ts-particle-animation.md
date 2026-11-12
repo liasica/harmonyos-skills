@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-partic
 title: 粒子动画 (Particle)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 粒子动画 (Particle)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:24+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:f978f83f212b6a007cf8cfc126d83c6d7b8fb4c833db0603ec165161e34d0aa9
 ---
@@ -640,7 +640,7 @@ interface ParticleColorUpdaterOptions<UPDATER extends ParticleUpdater> {
 * 当outerRadius小于innerRadius时（即外圆半径小于内圆半径时），会将当前较小的值作为新的内圆半径，将较大的值作为新的外圆半径。
 * 当endAngle小于startAngle时（即结束角度小于起始角度时），会将当前较小的值作为新的起始角度，将较大的值作为新的结束角度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/_vefd_rcQZWb99d2vZG5VA/zh-cn_image_0000002786521484.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/_vefd_rcQZWb99d2vZG5VA/zh-cn_image_0000002786521484.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=842D7F9804553BFBF9ABE1CB8322E0159A93DE1A9BDBE5FE5AAD2DC54B44E439)
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -864,7 +864,7 @@ struct ParticleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/Ar7Jy6JVSzCxLVRaKLXYUw/zh-cn_image_0000002786361556.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/Ar7Jy6JVSzCxLVRaKLXYUw/zh-cn_image_0000002786361556.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=418951DDD3FD9BFB3EFEC758EC49DFE61E2033983A6EE7FAF0DB962783606D74)
 
 ### 示例2（图片初始化粒子）
 
@@ -971,7 +971,7 @@ struct ParticleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/XFyZp_FmRbi1knmqu3BiUw/zh-cn_image_0000002815560977.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/XFyZp_FmRbi1knmqu3BiUw/zh-cn_image_0000002815560977.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=8FED6EA8DA4A195B45C0595B959432200E9ECAE72C3CB2C98989B277D14A35F7)
 
 ### 示例3（粒子扰动场的干扰下运动轨迹发生变化）
 
@@ -1099,7 +1099,7 @@ struct ParticleExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/idzSFPd9SHm5gS8eFPpr_A/zh-cn_image_0000002815401061.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/idzSFPd9SHm5gS8eFPpr_A/zh-cn_image_0000002815401061.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4A77AE2B898DCA0D078FD408DA192A95DA70080550F3ED60CECF60AD7869D6B)
 
 ### 示例4（调整粒子发射器位置）
 
@@ -1178,7 +1178,7 @@ struct ParticleExample4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/P1O9gs4VRFaf69KX_IKL-g/zh-cn_image_0000002786521486.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/P1O9gs4VRFaf69KX_IKL-g/zh-cn_image_0000002786521486.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB87097D3DBFE50E36CB2BA5F0746BF0D9591F1FB93B99A07CB116392F47D2B5)
 
 ### 示例5（环形发射器创建）
 
@@ -1265,7 +1265,7 @@ struct ParticleExample5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/pvUYMeMRQh6SOhOsgZLK5Q/zh-cn_image_0000002786361558.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/pvUYMeMRQh6SOhOsgZLK5Q/zh-cn_image_0000002786361558.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=901A8EC1B57548B63FB7A342F81A5090105C9C34C5E5A4392C4CADAC496DC691)
 
 ### 示例6（环形发射器更新）
 
@@ -1381,7 +1381,7 @@ struct ParticleExample6 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/JjIKC7_0TTymD5TfN1S-0Q/zh-cn_image_0000002815560979.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/JjIKC7_0TTymD5TfN1S-0Q/zh-cn_image_0000002815560979.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4915610136DF1BF000F119508638B6212060EA2AEF4F75DF5FED3F2F6292129)
 
 ### 示例7（设置波动场和速度场）
 
@@ -1510,4 +1510,4 @@ struct ParticleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/Y4mlZPDAS1ORwyYbPgEAJg/zh-cn_image_0000002815401063.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/Y4mlZPDAS1ORwyYbPgEAJg/zh-cn_image_0000002815401063.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=4673AAF680F8C05DCB2D6C575A7017808B40FDC32A7C3C1DCEC3002CF8AA957F)

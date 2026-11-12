@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/app-debugging-f
 title: Native应用运行ABI配置报错问题排查
 breadcrumb: FAQ > DevEco Studio > 应用调试 > 常见问题 > Native应用运行ABI配置报错问题排查
 category: harmonyos-faqs
-scraped_at: 2026-11-04T08:40:39+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-03
 content_hash: sha256:65287342e5eb27a47d058b9947ff1d8a37c342f3fa09792ec2098fb000e1cfdb
 ---
@@ -56,7 +56,7 @@ content_hash: sha256:65287342e5eb27a47d058b9947ff1d8a37c342f3fa09792ec2098fb000e
      ls
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/7MX439ICTh26TD6BLAv7yw/zh-cn_image_0000002764960212.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/7MX439ICTh26TD6BLAv7yw/zh-cn_image_0000002764960212.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=3DBFF56F6CF22FC346CA37AE943E27A3825E2486B0E04B05C16355E0AB145020 "点击放大")
 
      + 存在lib64文件夹：则“abiFilters”参数中需要包含arm64-v8a类型。
      + 不存在lib64文件夹：则“abiFilters”参数中需要包含armeabi类型。

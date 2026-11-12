@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-faq-5
 title: 关于通知消息被频控的问题
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > Push Kit常见问题 > 关于通知消息被频控的问题
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:34+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:268fc589116941c71f09780da665336db94bf11d137a649f6f75e11384ad14c9
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:268fc589116941c71f09780da665336db94bf11d137a649f6f75e11384a
 
 ## 通知消息被频控的可能原因
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/_sxHMbnxSw2AsSD78NPcsw/zh-cn_image_0000002786360554.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/_sxHMbnxSw2AsSD78NPcsw/zh-cn_image_0000002786360554.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=401A2D45B5E580EAB0767E13F141295ADC9808E3D26FD95DF94E70820FC44ABC)
 
 具体规则如下：
 

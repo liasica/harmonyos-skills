@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/app-debugging-f
 title: DevEco Studio安装HAP报错FileTransfer Failed问题排查
 breadcrumb: FAQ > DevEco Studio > 应用调试 > 常见问题 > DevEco Studio安装HAP报错FileTransfer Failed问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:59+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:788eddc563441d8603020f716260253f98fd3d8b7e350913afd1fbc881e02066
 ---
 
 **Q：DevEco Studio安装HAP时报错“FileTransfer Failed: Error while Deploy Hap”如何解决？**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/tKgLBagZQzaYeqOsFWTfwA/zh-cn_image_0000002803181263.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/tKgLBagZQzaYeqOsFWTfwA/zh-cn_image_0000002803181263.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=986B20FC8495FFD41995A7CFF727902DAC8ADD560867A1819F85C9C110858F8A "点击放大")
 
 **A**：
 

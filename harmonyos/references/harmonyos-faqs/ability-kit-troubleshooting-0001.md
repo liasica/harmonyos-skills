@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/ability-kit-tro
 title: UIAbility生命周期与启动问题定位
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 故障排查 > UIAbility生命周期与启动问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:47+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:66bd6e21b610739c5030ff508334d08c7cd414849dcfa07fe478e548c859895c
 ---
@@ -99,7 +99,7 @@ struct Index {
 
 应用启动后，在页面内容出现前显示黑屏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/eIu9tVXuRWSNn30zBScVow/zh-cn_image_0000002797578507.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/eIu9tVXuRWSNn30zBScVow/zh-cn_image_0000002797578507.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4359354D72E3D9D2CB17EAE2B22EC103C6C9712934622A2606E06B544F15A97 "点击放大")
 
 ### 定位过程
 
@@ -171,4 +171,4 @@ struct StartDemo {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/PhL60ugTRUCLWIBUUxSl0w/zh-cn_image_0000002768139012.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/PhL60ugTRUCLWIBUUxSl0w/zh-cn_image_0000002768139012.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=B39579CCF5374AED8976416B4839253E74CCCA7E716D93896DE490F5AD0DC428 "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (MeasureUtils)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (MeasureUtils)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:57+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:d6956ff8a949551621cfa589d4d471c4461369d10524c79ae747ca1bf4538019
 ---
@@ -252,7 +252,7 @@ struct TextDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/eJ1NqcPoRIWO1dR5eXbOkQ/zh-cn_image_0000002815560297.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/eJ1NqcPoRIWO1dR5eXbOkQ/zh-cn_image_0000002815560297.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=C63EF3B0A2CD80111F3C9A1676EB059AB7ECE82D7BA73CF9D5A8D4B3ACAA230F)
 
 ## getParagraphs20+
 
@@ -486,4 +486,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/zBQDXOzsSeSSyeUstPjBBw/zh-cn_image_0000002815400381.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/zBQDXOzsSeSSyeUstPjBBw/zh-cn_image_0000002815400381.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=2128BCC17B308F845ADCD880B93C6F15D2B14544BCFFB50FCC44514D28F29A34)

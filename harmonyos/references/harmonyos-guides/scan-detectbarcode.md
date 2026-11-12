@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-detectba
 title: 识别本地图片
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 图像识码 > 识别本地图片
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:873ff9bdd7d3220fdba535febbe6caf986050fe6343c9773f912b81f7f3f3435
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:873ff9bdd7d3220fdba535febbe6caf986050fe6343c9773f912b81f7f3
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/04gTX5AZTqa_KZfr_YdggA/zh-cn_image_0000002815399483.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/04gTX5AZTqa_KZfr_YdggA/zh-cn_image_0000002815399483.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=EAF33171B2D3AF29ADF604C762C916277F4AAD86B9E37184BB5472FCCC402CA0)
 
 1. 用户向开发者的应用发起图片识码请求。
 2. 应用通过调用Scan Kit的decode()接口启动图片识码。

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1437
 title: Text嵌套Span组件maxFontSize失效
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Text嵌套Span组件maxFontSize失效
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:2c7f13da063bbc44a10d24b5715f1f343385a28209d8169d6391289162da7439
 ---
@@ -91,7 +91,7 @@ struct TextMaxFontSizeFile {
 
 代码运行展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/HZWajW0MTFGzjoaWQ9JqKA/zh-cn_image_0000002633800272.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/HZWajW0MTFGzjoaWQ9JqKA/zh-cn_image_0000002633800272.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0AAC0B4EB09CA69FC848D85669281AEE31785A1D59EDAA433F97A5D005C0CF6 "点击放大")
 
 ## 常见FAQ
 

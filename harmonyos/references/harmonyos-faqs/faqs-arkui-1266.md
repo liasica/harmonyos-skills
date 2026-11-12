@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1266
 title: 深色模式适配及持久化实现方式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 深色模式适配及持久化实现方式
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:39+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:fe096b1ebb5a00d3a798dffac604609fddc7ae1500cbec9d71462365f9410778
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:fe096b1ebb5a00d3a798dffac604609fddc7ae1500cbec9d71462365f94
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/u0gq3R2NTYOcrcSz--cKMg/zh-cn_image_0000002628756010.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/u0gq3R2NTYOcrcSz--cKMg/zh-cn_image_0000002628756010.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=783D7D719EC9DA5F7B5ECF8BFB70939102A654DD6C0B27FF06E90A55520174B9 "点击放大")
 
 ## 背景知识
 

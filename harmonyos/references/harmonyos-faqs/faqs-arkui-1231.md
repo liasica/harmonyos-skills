@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1231
 title: 如何让组件（如Toggle）在自定义弹窗点击确认之后才改变状态
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何让组件（如Toggle）在自定义弹窗点击确认之后才改变状态
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:cc3245f28f05c688fe83e769c4743344233458c437387c39e141ec3e1cd1ad11
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:cc3245f28f05c688fe83e769c4743344233458c437387c39e141ec3e1cd
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/bOXCaUVAS6eaKAApqkbHwg/zh-cn_image_0000002628753942.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/bOXCaUVAS6eaKAApqkbHwg/zh-cn_image_0000002628753942.png?HW-CC-KV=V1&HW-CC-Date=20261112T233150Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8DCF0DDE4FB974CD3189C01C9BABB3B918C3A64FD8877E270085038B86BA7BA "点击放大")
 
 ## 背景知识
 

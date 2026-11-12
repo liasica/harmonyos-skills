@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: RotationGesture
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 基础手势 > RotationGesture
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-30
 content_hash: sha256:44439111448ce891c447fd9c683a05d4b74133a1e82775ae0ac7e8d06ead7070
 ---
@@ -184,4 +184,4 @@ struct RotationGestureExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/LsG-m00iSumQnJRYfAEcLA/zh-cn_image_0000002815400591.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/LsG-m00iSumQnJRYfAEcLA/zh-cn_image_0000002815400591.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=5BD1A4DA5B9A83C765640EBE6834515208681B2FE41FE8538B83D5783B8FEE14)

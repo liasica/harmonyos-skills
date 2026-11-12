@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-open-in-n
 title: 在新窗口中打开页面
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 设置基本属性和事件 > 在新窗口中打开页面
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:ff2c27f8423fff8b61113a06106ef5a03010acacfdd96b1b55a97eedc3bcb785
 ---
@@ -115,4 +115,4 @@ struct WebComponent {
 
 **图1** 新窗口中打开页面效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/lHFSRbBpTlW0R64of79LsA/zh-cn_image_0000002815398929.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/lHFSRbBpTlW0R64of79LsA/zh-cn_image_0000002815398929.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFAC5C8F74BCAB6AC52CD327DE6DF7D98C9F7EFEEED0A9D9BB92C8FE4F179EBC)

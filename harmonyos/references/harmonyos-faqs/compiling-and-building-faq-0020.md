@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/compiling-and-b
 title: HSP包编译类型注解报错问题排查
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 常见问题 > HSP包编译类型注解报错问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:52+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:6e29faecc8c8309859efc60a21414962aff7a52bff08a35fd2b7383fb6a3a02d
 ---
@@ -12,6 +12,6 @@ content_hash: sha256:6e29faecc8c8309859efc60a21414962aff7a52bff08a35fd2b7383fb6a
 
 **A**：HSP生成的.d.ts声明文件缺少类型注解，因为原始文件中未注明类型。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/XVmh2aZQSP6CJYnPp8NKEw/zh-cn_image_0000002772860978.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/XVmh2aZQSP6CJYnPp8NKEw/zh-cn_image_0000002772860978.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBABF80326026797BF00508DC77F39C572A3E2CBB9C3F957ED4DBECAF4C030AB "点击放大")
 
 在报错位置添加类型注解。

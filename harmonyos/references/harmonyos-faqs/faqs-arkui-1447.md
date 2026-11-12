@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1447
 title: 如何解决Swiper过早渲染导致渲染失败的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Swiper过早渲染导致渲染失败的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:3b2fd2d7f5c16a2fa25b33c44f18e2ff373c4e1560325b7981ec354aeee3017f
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:3b2fd2d7f5c16a2fa25b33c44f18e2ff373c4e1560325b7981ec354aeee
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/_gR8CVycReCeamJMQJ3Cbw/zh-cn_image_0000002658963479.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/_gR8CVycReCeamJMQJ3Cbw/zh-cn_image_0000002658963479.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=2672075AE31642758483F2712CE8F4F99EF8BDA06794DA7190A52B6F0F69E18C "点击放大")
 
 ## 背景知识
 

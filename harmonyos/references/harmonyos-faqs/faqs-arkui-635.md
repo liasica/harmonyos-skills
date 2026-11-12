@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-635
 title: RichEditor设置内容自适应宽度
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > RichEditor设置内容自适应宽度
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:03c6bb7f2cce710e51e500df742937a37dc2aedddc5dc89672e64fd6a39b2ecf
 ---
@@ -14,11 +14,11 @@ RichEditor与Text组件不同，无法根据内容自适应自身宽度，组件
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/aw1_Tg6OTTWy7mHmr3HdDQ/zh-cn_image_0000002658793547.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/aw1_Tg6OTTWy7mHmr3HdDQ/zh-cn_image_0000002658793547.png?HW-CC-KV=V1&HW-CC-Date=20261112T233158Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB72211407F2FF2F5A7651DAC9767609D93506E4052601E006CDF50C5492EF97 "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/-09pCWUKTvui-6m_foOb5Q/zh-cn_image_0000002628554180.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/-09pCWUKTvui-6m_foOb5Q/zh-cn_image_0000002628554180.png?HW-CC-KV=V1&HW-CC-Date=20261112T233158Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D0FED9E1BE3C49D0BB24AC78079FADD4527F5EC7F4045867163E59E0F826E9C "点击放大")
 
 ## 背景知识
 

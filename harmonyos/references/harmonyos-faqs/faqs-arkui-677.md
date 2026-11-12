@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-677
 title: 如何实现自定义UI单选功能
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现自定义UI单选功能
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:e7b288d90f2daff15631e636d61a8155aad62d5aeec39b03b95f276320d77551
 ---
@@ -14,11 +14,11 @@ content_hash: sha256:e7b288d90f2daff15631e636d61a8155aad62d5aeec39b03b95f276320d
 
 效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/9lkOj7Z2SAWVcxQSX7dVhQ/zh-cn_image_0000002658914057.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/9lkOj7Z2SAWVcxQSX7dVhQ/zh-cn_image_0000002658914057.png?HW-CC-KV=V1&HW-CC-Date=20261112T233200Z&HW-CC-Expire=31536000000&HW-CC-Sign=9051AFC12E8AF619BCA61F72EC6227A453B42967A79D5D2AECF80EBAD4571235)
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/I2e03u2xTxW8c6-kn4795g/zh-cn_image_0000002658794107.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/I2e03u2xTxW8c6-kn4795g/zh-cn_image_0000002658794107.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233200Z&HW-CC-Expire=31536000000&HW-CC-Sign=F95DA7016BDB1B22F821E1106D4489EA14FD15B5182F721D140CA7CD42C70852 "点击放大")
 
 ## 背景知识
 

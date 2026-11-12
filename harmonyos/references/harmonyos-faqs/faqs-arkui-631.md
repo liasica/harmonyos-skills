@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-631
 title: RichEditor组件设置禁止编辑
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > RichEditor组件设置禁止编辑
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:e6354c8b1515622cc846577015f7ea9d204c78d8a147cd4b5caedef55d46d86a
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:e6354c8b1515622cc846577015f7ea9d204c78d8a147cd4b5caedef55d4
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/b5huaVm5TkyhD7P8g_kskA/zh-cn_image_0000002658913491.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/b5huaVm5TkyhD7P8g_kskA/zh-cn_image_0000002658913491.png?HW-CC-KV=V1&HW-CC-Date=20261112T233158Z&HW-CC-Expire=31536000000&HW-CC-Sign=31B31F559CAFA081DAFB075FE5983FEF99D2A6B32099E34AB57C18946A4F742C "点击放大")
 
 ## 背景知识
 

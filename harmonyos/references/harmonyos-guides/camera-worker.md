@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-worker
 title: 在Worker线程中使用相机(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 在Worker线程中使用相机(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:04+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:489f453595e679884b1d8136616b8890cde4bd7ee77d316d15a693aa87ed614b
 ---
@@ -251,8 +251,8 @@ content_hash: sha256:489f453595e679884b1d8136616b8890cde4bd7ee77d316d15a693aa87e
 
 不使用Worker：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/RuzOOPGMQd2KAhmLBaaK5Q/zh-cn_image_0000002815559335.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/RuzOOPGMQd2KAhmLBaaK5Q/zh-cn_image_0000002815559335.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=6110A43D44348E7DB63C28DF0AA9ADF0A4239FFD63AFEF40E9660E5EC8D56021)
 
 使用Worker：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/OtVDeupXQNi7hlvowFyk1w/zh-cn_image_0000002815399419.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/OtVDeupXQNi7hlvowFyk1w/zh-cn_image_0000002815399419.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=7BB09171D0D252706ED82A85017D2E79A4D35C139E32360A48ABDFFF7EC256CE)

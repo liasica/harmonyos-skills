@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-passw
 title: 应用内调整未成年人模式设置
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 未成年人模式 > 应用与系统实现未成年人模式联动 > 应用内调整未成年人模式设置
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:9c1694fe035c6afe3d11330d4a89a4b9e9b464fb432e11f5ca896ebb26ba892b
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:9c1694fe035c6afe3d11330d4a89a4b9e9b464fb432e11f5ca896ebb26b
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/tgUqQjBzS2S6y8vztwCBUQ/zh-cn_image_0000002815399655.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/tgUqQjBzS2S6y8vztwCBUQ/zh-cn_image_0000002815399655.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=01C345722A77A0017E06015839EB492856C682672EC09DC0DF988CD66E8E3253)
 
 流程说明：
 

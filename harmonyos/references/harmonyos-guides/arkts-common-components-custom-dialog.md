@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 基础自定义弹出框 (CustomDialog)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹出框 (Dialog) > 基础自定义弹出框 (CustomDialog)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:13+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:10f947eeaca985d63d70e3e54b4c63ede14ccd5d80fffa103c0f45f745950050
 ---
@@ -81,7 +81,7 @@ CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件�
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/Lgw1G9qaTC2ikV0SXcEyrA/zh-cn_image_0000002786359052.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/Lgw1G9qaTC2ikV0SXcEyrA/zh-cn_image_0000002786359052.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=61ECE7566B14B9989709C5747C1656BBC1B1EDB7BA59A9C0C92B3D804BB3B48A)
 
 ## 弹出框的交互
 
@@ -156,7 +156,7 @@ CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件�
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/Ct7_sY4dQjyDzNShR7k3JA/zh-cn_image_0000002815558473.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/Ct7_sY4dQjyDzNShR7k3JA/zh-cn_image_0000002815558473.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E419286F92B1A8AA8FBA5C8A52AAA00D479F7CD963D2900A5919DF9CD3441CD7)
 3. 可通过弹出框中的按钮实现路由跳转，同时获取跳转页面向当前页传入的参数。
 
    ```typescript
@@ -287,7 +287,7 @@ CustomDialog是自定义弹出框，可用于广告、中奖、警告、软件�
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/UjuU6oMyT-yPgmXTxfyJVQ/zh-cn_image_0000002815398557.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/UjuU6oMyT-yPgmXTxfyJVQ/zh-cn_image_0000002815398557.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC326482B5558B3CEC79F6D9CCFF098D0333C650FC646922B2E80B68610554CD)
 
 ## 弹出框的动画
 
@@ -351,7 +351,7 @@ export struct DialogAnimationNew {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/_CFJTs8VQx68W8gweS2ojg/zh-cn_image_0000002786518982.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/_CFJTs8VQx68W8gweS2ojg/zh-cn_image_0000002786518982.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=4761F6F0BF169384D3FC7C799BC22656D7EEA8CFFD2BFED77782FC552FE95402)
 
 ## 弹出框的样式
 
@@ -416,7 +416,7 @@ export struct DialogStyleNew {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/Eh1eQsKVT86yCEdVQickxw/zh-cn_image_0000002786359054.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/Eh1eQsKVT86yCEdVQickxw/zh-cn_image_0000002786359054.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=76C9F53A6F64706728443DBEBF04376166157F0FF3DD85A1011110C3FD330896)
 
 ## 嵌套自定义弹出框
 
@@ -528,7 +528,7 @@ export struct NestDialogNew {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/olN1WJyrQcufljIBRNHiQw/zh-cn_image_0000002815558475.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/olN1WJyrQcufljIBRNHiQw/zh-cn_image_0000002815558475.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=CACFD1F1864B8D90D3E73AC08C3731CE1E1D015BA3541BF88B8697612952C5A8)
 
 由于自定义弹出框在状态管理侧有父子关系，如果将第二个弹出框定义在第一个弹出框内，那么当父组件（第一个弹出框）被销毁（关闭）时，子组件（第二个弹出框）内无法再继续创建新的组件。
 
@@ -635,7 +635,7 @@ export struct DialogWithPhysicalBack {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/tNTJVN2DT4Wa4XsIg4JClw/zh-cn_image_0000002815398559.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/tNTJVN2DT4Wa4XsIg4JClw/zh-cn_image_0000002815398559.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=56AD42F9D09AA231CFEE7591BD0CC2BD534E84ACC98B0E27E378821BD16A608C)
 
 ## 设置弹出框避让软键盘的距离
 
@@ -700,7 +700,7 @@ export struct DialogAvoidSoftKeyboard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/eo0umRnxRw-LfqrWBwRy5w/zh-cn_image_0000002815398555.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/eo0umRnxRw-LfqrWBwRy5w/zh-cn_image_0000002815398555.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=87AC0008994417D53C2E41F8433CE01F7328264A337A71B6C02F19D2D5619E6D)
 
 ## 获取弹出框的状态
 
@@ -768,4 +768,4 @@ export struct GetDialogStatus {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/5C9JHcglRYK47OeSugoFGQ/zh-cn_image_0000002786518984.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/5C9JHcglRYK47OeSugoFGQ/zh-cn_image_0000002786518984.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=74FC6DB938404BF167D64F30522FBC34E8B6700915DB30DEF6EB578C3EDDADF7)

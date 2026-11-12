@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1022
 title: 如何判断子窗口是否存在
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何判断子窗口是否存在
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:30+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:dabcb84cbb3f96befb004f59b0f6d0650e9f91dc2a834453840b1ec72647e5ea
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:dabcb84cbb3f96befb004f59b0f6d0650e9f91dc2a834453840b1ec7264
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/lTTl0gfxSjawncSyyEr-bA/zh-cn_image_0000002628404810.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/lTTl0gfxSjawncSyyEr-bA/zh-cn_image_0000002628404810.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=F32B5C250C82127C4BD856FA3F0D84CDDD40699FAACDC5018A8F5062B050844A "点击放大")
 
 ## 背景知识
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-119
 title: 页面标题内容快速变化
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 页面标题内容快速变化
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:ab00ea2beecd9a537578d966164c9d781ed107815cd4c947db53857e967bc88a
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:ab00ea2beecd9a537578d966164c9d781ed107815cd4c947db53857e967
 
 进入Web页面时，页面顶部的标题内容快速变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/FAInoCP4QsiPt3ndeuB-NQ/zh-cn_image_0000002628899130.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/FAInoCP4QsiPt3ndeuB-NQ/zh-cn_image_0000002628899130.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C542A0AAF77A6A6F854AF08C2FB035E3E3F75E02138DE973641B3E11DB00723 "点击放大")
 
 ## 背景知识
 
@@ -150,4 +150,4 @@ resource://rawfile/title.html：
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/Bb3WQzQBT5ClmgR_NzIfGA/zh-cn_image_0000002659138399.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/Bb3WQzQBT5ClmgR_NzIfGA/zh-cn_image_0000002659138399.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=691B14671BEF237B989EFB3165CEAB0C709DEC0F941CCEEDDA35087B3B7B83DE "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wearengine_ap
 title: 申请接入Wear Engine服务
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > 手机侧应用开发 > 接入准备 > 申请接入Wear Engine服务
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:52+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:90c3a2689c8105ba6f0e50a6fe13860425ee7c1c1acf8a9e1de28c240d50c134
 ---
@@ -13,13 +13,13 @@ content_hash: sha256:90c3a2689c8105ba6f0e50a6fe13860425ee7c1c1acf8a9e1de28c240d5
 1. 登录[HarmonyOS开发者中心](https://developer.huawei.com/consumer/cn/hdc-console#/)，进入“开发者管理 > ID、证书和Profile > APP ID > 开放能力管理”页面，在应用列表下选择需要申请的应用。
 2. 点击“Wear Engine”对应的“管理”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/OSIt6eTYT8exZynJbdpOGw/zh-cn_image_0000002786359790.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/OSIt6eTYT8exZynJbdpOGw/zh-cn_image_0000002786359790.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=6AC250269CDB96AEFE6B111749CFB999F7E5367ABA75F1A57DF26E19DE6A2989)
 3. 点击“申请Wear Engine服务”，同意协议后，进入权限申请页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/HLdHG942QHS3lqFQHRBS3A/zh-cn_image_0000002815559211.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/HLdHG942QHS3lqFQHRBS3A/zh-cn_image_0000002815559211.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=993242F3BE3517A9C5F488D246BCC841264D3587B07EA0A11AFE991E2BAA03EF)
 4. 点击“HarmonyOS应用”并选择产品后，勾选必需申请的权限（个人开发者当前只可申请设备基础信息、消息通知两个基本的权限）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/E0rANcSYQC-3bDznL3pGgQ/zh-cn_image_0000002815399295.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/E0rANcSYQC-3bDznL3pGgQ/zh-cn_image_0000002815399295.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE1790ACD5F774D25EF53FDE1534B61ED10A6C6B9C8E8F9BDAB13CE6BB7B8CC1)
 
    **说明** 
 

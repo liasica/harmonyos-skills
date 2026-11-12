@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 概述
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 预加载 > 概述
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-12
 content_hash: sha256:88bc840905e585e59251fc240ad1d28d31bc1883e89d0ab14e0198eb82854683
 ---
@@ -30,7 +30,7 @@ content_hash: sha256:88bc840905e585e59251fc240ad1d28d31bc1883e89d0ab14e0198eb828
 2. 预加载服务将获取的数据在本地进行缓存。
 3. 应用使用获取的缓存数据，进行页面渲染。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/B0bszUbeRCWmlCw5XM95GA/zh-cn_image_0000002786520186.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/B0bszUbeRCWmlCw5XM95GA/zh-cn_image_0000002786520186.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A901BC456AC1B1E5CEE1DA88B8C65E88C73060F5D354361D7F4397DDCF7D515)
 
 ## 典型应用场景
 
@@ -38,13 +38,13 @@ content_hash: sha256:88bc840905e585e59251fc240ad1d28d31bc1883e89d0ab14e0198eb828
 
 在应用启动前或初始化阶段，为避免出现首页内容加载慢、白屏等情况，开发者可以使用预加载将一些必要的资源，例如图片、音频、视频或数据文件，提前加载到本地进行缓存。用户首次访问应用时，可直接从缓存中获取数据，这样就减少了从服务器重新下载资源的时间，提升了应用首开速度，从而提高用户留存率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/F9pSv3ybQi6WyVVjsX7zRQ/zh-cn_image_0000002786360258.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/F9pSv3ybQi6WyVVjsX7zRQ/zh-cn_image_0000002786360258.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=2484B27B7BE565666FA161C4B96712E633998A3D486333053E922741A7C2B91C)
 
 ### 实现节日主题即发即现
 
 很多应用会在节日更换特定主题内容进行活动营销，用户打开应用时需要从服务器上获取相关资源来呈现内容，可能会造成页面加载速度较慢而导致用户体验不佳。开发者可以使用预加载，在节日活动开始前通过周期性的数据拉取提前将主题资源获取到本地，活动开始用户访问时直接从本地获取即可，减少了网络请求的时间和带宽消耗，从而能够更快地展示节日主题，实现即发即现的效果，提升用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/Dei2Hz9HQUKayclF0YmxsA/zh-cn_image_0000002815559679.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/Dei2Hz9HQUKayclF0YmxsA/zh-cn_image_0000002815559679.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=D64E5478B3B49DF24BCDE3D918AA780363A15F007C00BA2786123F0EC113CA8F)
 
 ## 约束与限制
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-controls-
 title: 控件交互
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图交互 > 控件交互
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:29+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:75aeb17be3e3cdcda76cf0471a08242ad7dbd5d86bfd373aab6b5a75aa5b2dcc
 ---
@@ -14,9 +14,9 @@ content_hash: sha256:75aeb17be3e3cdcda76cf0471a08242ad7dbd5d86bfd373aab6b5a75aa5
 
 本章节将向您介绍如何使用地图的控件。
 
-控件是指浮在地图组件上的一系列用于操作地图的组件，例如缩放按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/_0cdm782Q3SWtuywsOr4sQ/zh-cn_image_0000002815559841.png)、定位按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/Hg0AmfB5Tca-ED_Z9lnMpw/zh-cn_image_0000002815399925.png)、比例尺![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/O6TUbVqHRZS7FcXLAnHWUA/zh-cn_image_0000002786520350.png)等。
+控件是指浮在地图组件上的一系列用于操作地图的组件，例如缩放按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/_0cdm782Q3SWtuywsOr4sQ/zh-cn_image_0000002815559841.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F7DB611142ABB246B4F39E67DAAB76F467445EB363252AEB47B2DB6B96F6819)、定位按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/Hg0AmfB5Tca-ED_Z9lnMpw/zh-cn_image_0000002815399925.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=857C02A47F83147BA8A526BADB3E17BEBFAD7D5D9E1BBDEEDDEDD604A32F2C62)、比例尺![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/O6TUbVqHRZS7FcXLAnHWUA/zh-cn_image_0000002786520350.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A57A78A2043F8A9E62F13BB096E6C6D53BAE1AC1153829C877DD535C4CBA090)等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/AULSsYhjS_yHbgiRjgH3_w/zh-cn_image_0000002786360422.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/AULSsYhjS_yHbgiRjgH3_w/zh-cn_image_0000002786360422.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BE7EF0ACAC3CAFE4DCC65DC5FBD6889B5FE322E20CE2A85E376E5B119BAE57A "点击放大")
 
 ## 接口说明
 
@@ -50,7 +50,7 @@ Map Kit提供了内置的缩放控件，默认情况下是开启的。
 this.mapController.setZoomControlsEnabled(true);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/B74yxUOFTVa1WVC79NOVdw/zh-cn_image_0000002815559843.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/B74yxUOFTVa1WVC79NOVdw/zh-cn_image_0000002815559843.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=4AC301F615FB35CDC80E8F08FCEE5EF10D410ED5428442A6831A11DB90789023 "点击放大")
 
 ### 比例尺
 
@@ -61,7 +61,7 @@ Map Kit提供了内置的比例尺控件，默认情况下是关闭的。
 this.mapController.setScaleControlsEnabled(true);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/BcOUMmPaQme7dJibx0YrpA/zh-cn_image_0000002815399927.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/BcOUMmPaQme7dJibx0YrpA/zh-cn_image_0000002815399927.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA85F1FE3728D3EE1E6B48BEC3507A638DAF40809C78E9047F87FE4612352B82 "点击放大")
 
 **调整比例尺位置：**
 
@@ -77,7 +77,7 @@ let point: mapCommon.MapPoint = {
 this.mapController.setScalePosition(point);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/2sXpoEBQSOygrLqN-njwYg/zh-cn_image_0000002786520352.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/2sXpoEBQSOygrLqN-njwYg/zh-cn_image_0000002786520352.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4C473354CE674EF7BECB98220F392EB21BD4D9EA38F122CD6CDF8BBF876C73C "点击放大")
 
 **获取当前层级的比例尺大小：**
 
@@ -118,7 +118,7 @@ Map Kit提供了内置的指南针控件，默认情况下是开启的，控件�
 this.mapController.setCompassControlsEnabled(true);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/0bFvYv8BQli-0KNQ7VjWOQ/zh-cn_image_0000002786360424.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/0bFvYv8BQli-0KNQ7VjWOQ/zh-cn_image_0000002786360424.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB216C8BA1724EF4E753C6D99768A6E809A03E267648D60C1CBDF83C03D9430C "点击放大")
 
 **调整指南针位置：**
 
@@ -134,7 +134,7 @@ let point: mapCommon.MapPoint = {
 this.mapController.setCompassPosition(point);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/xFXuUJjeS0avAdjz0JuzbQ/zh-cn_image_0000002815559845.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/xFXuUJjeS0avAdjz0JuzbQ/zh-cn_image_0000002815559845.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BBD71D6019158E4421E3347D529603BEDFE65AC87ED9D00F322799E93AD91A5 "点击放大")
 
 ### 地图Logo
 
@@ -151,7 +151,7 @@ let padding: mapCommon.Padding = {
 this.mapController.setLogoPadding(padding);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/XQRtU5JVQWGe-fTZdT5jLg/zh-cn_image_0000002815399929.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/XQRtU5JVQWGe-fTZdT5jLg/zh-cn_image_0000002815399929.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=01894E142572370206F0BB3A1660B076FF7F6C22F0AF224AA1A5FD84FF9C0C79 "点击放大")
 
 ### 审图号
 
@@ -164,4 +164,4 @@ Map Kit通过方法[setApproveNumberEnabled](../harmonyos-references/map-map-map
 this.mapController.setApproveNumberEnabled(true);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/bLKtnWglQ6KA286ycAbE2A/zh-cn_image_0000002786520354.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/bLKtnWglQ6KA286ycAbE2A/zh-cn_image_0000002786520354.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E81B0E3167E8F08BFB9DB8187FE961984512D610AD5762D2782B123C0EEF7A5 "点击放大")

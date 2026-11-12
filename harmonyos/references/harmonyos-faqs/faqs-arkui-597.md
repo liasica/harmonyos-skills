@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-597
 title: 如何绘制有图片超出弹窗边框的弹窗
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何绘制有图片超出弹窗边框的弹窗
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:43+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:a6c54053bc6bec30eba9da8ce83100f1d5f818e89f353d91dd6b026ccc4a68af
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:a6c54053bc6bec30eba9da8ce83100f1d5f818e89f353d91dd6b026ccc4
 
 如何实现如下图所示这一类弹窗，使图片超出弹窗上边框。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/uorLykDcQ7K7G4R6Z7gTrg/zh-cn_image_0000002658791975.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/uorLykDcQ7K7G4R6Z7gTrg/zh-cn_image_0000002658791975.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=45CF4D5E385FCA7B2139107268D6EAB024F6C2866862F0C62FDB10337B014AB7 "点击放大")
 
 ## 背景知识
 
@@ -122,7 +122,7 @@ content_hash: sha256:a6c54053bc6bec30eba9da8ce83100f1d5f818e89f353d91dd6b026ccc4
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/kdEYffJESWqmTBmSP7bF1A/zh-cn_image_0000002628552600.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/kdEYffJESWqmTBmSP7bF1A/zh-cn_image_0000002628552600.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=91A78E7B8914BE2EDE0E70718C432C974C861E5D3B9576B6D86C2A749EB2C21F "点击放大")
 
 * 场景二：bindSheet半模态弹窗使用zIndex+margin实现图片超出弹窗边框效果。
   1. 设置bindSheet背景色为透明，隐藏bindSheet自带的关闭按钮。
@@ -225,7 +225,7 @@ content_hash: sha256:a6c54053bc6bec30eba9da8ce83100f1d5f818e89f353d91dd6b026ccc4
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/XGaokSDdTQikztP-FW5RPA/zh-cn_image_0000002658911915.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/XGaokSDdTQikztP-FW5RPA/zh-cn_image_0000002658911915.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=396618DF744C66B51F9B49B6F3EFB6D698EE82C2F8C7067CF4A9F8C1743F6462 "点击放大")
 
 两种场景的完整示例代码如下：
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-760
 title: ForEach实现曲线滑动失败
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > ForEach实现曲线滑动失败
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:43+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:537bbbd579ae948ddc37c74f6f2627f9e04868a9905eae6b2287ba66bafa7398
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:537bbbd579ae948ddc37c74f6f2627f9e04868a9905eae6b2287ba66baf
 
 手势滑动只能让月亮图片内的数字变动，月亮图片并没有位移。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/g2sgyU6mRO25tdn9ubuikg/zh-cn_image_0000002628555690.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/g2sgyU6mRO25tdn9ubuikg/zh-cn_image_0000002628555690.png?HW-CC-KV=V1&HW-CC-Date=20261112T233202Z&HW-CC-Expire=31536000000&HW-CC-Sign=197247E208CDFD8E90727716BAB2CBBC5816E81B244E3383640E79D90ADF2AAA "点击放大")
 
 **预期描述：** 想要实现通过手势滑动让月亮图片以半圆曲线的轨迹滚动的效果。
 
@@ -209,4 +209,4 @@ struct StartPage {
 
 改动后效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/dAoIK1t1Q8qxuzKATqaVlA/zh-cn_image_0000002658915011.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/dAoIK1t1Q8qxuzKATqaVlA/zh-cn_image_0000002658915011.png?HW-CC-KV=V1&HW-CC-Date=20261112T233202Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEE476412F66BA73DFAB007002DE5D419547065BF4D8D6BCB3400F5A7DF97900 "点击放大")

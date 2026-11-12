@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-830
 title: 拉起软键盘时闪过黑色块
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 拉起软键盘时闪过黑色块
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:28+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:17deb1176c5400e8357ea016d08f3e9becc12aca6d17e9c96f5ce0aad5cc4b83
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:17deb1176c5400e8357ea016d08f3e9becc12aca6d17e9c96f5ce0aad5c
 
 拉起软键盘时，页面与键盘之间显示黑色块。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/OlMm6ZD8SVC5Zy9ThiN-hw/zh-cn_image_0000002658917667.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/OlMm6ZD8SVC5Zy9ThiN-hw/zh-cn_image_0000002658917667.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=5148459A850EFAE38DFFB608F538AD471C08E7329EEC76A3232EB6CE67A91F9D "点击放大")
 
 ## 背景知识
 
@@ -249,4 +249,4 @@ src/main/module.json5中需添加权限"ohos.permission.SYSTEM\_FLOAT\_WINDOW"�
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/rTC-O6paSRiXZkEgDmBsnQ/zh-cn_image_0000002628398444.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/rTC-O6paSRiXZkEgDmBsnQ/zh-cn_image_0000002628398444.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=69562724AEFA507014C8C03B6B59BE295BDEDD11EA5A527753F74DE939236843 "点击放大")

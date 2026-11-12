@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-developme
 title: NDK开发导读
 breadcrumb: 指南 > NDK开发 > NDK开发导读
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-28
 content_hash: sha256:c5ce705e226c7234cbedaa99611e6d1d54a3c88dbb22f6907708da4224ba25ca
 ---
@@ -53,7 +53,7 @@ NDK（Native Development Kit）是HarmonyOS SDK提供的Native API、相应编�
 
 * build目录：放置预定义的toolchain脚本文件[hmos.toolchain.cmake](build-with-ndk-overview.md#hmostoolchaincmake简介)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/eZSYYCZdQEecTaBmeOTLug/zh-cn_image_0000002815400285.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/eZSYYCZdQEecTaBmeOTLug/zh-cn_image_0000002815400285.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=706E671C7FF3F2F0170EF849324B9ADFA0DBB4B0A5DCDAE43D1509CBAFFCFA64)
 
   CMake编译时需要读取该文件中的默认值，比如编译器架构、C++库链接方式等，因此在编译时会通过CMAKE\_TOOLCHAIN\_FILE指出该文件的路径，便于CMake在编译时定位到该文件。
 * build-tools文件夹：放置NDK提供的编译工具
@@ -67,7 +67,7 @@ NDK（Native Development Kit）是HarmonyOS SDK提供的Native API、相应编�
   ```
 * llvm文件夹：放置NDK提供的编译器
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/3DuM4n6DQDO36A8NmUZhLA/zh-cn_image_0000002786520710.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/3DuM4n6DQDO36A8NmUZhLA/zh-cn_image_0000002786520710.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=767A7C900E9B09F9A52ABBD3298841ABE563C9F5F7B40DB333FB11056B4CFF75)
 
 ## NDK常用模块
 

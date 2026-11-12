@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-notificati
 title: 通知订阅扩展能力常见问题
 breadcrumb: FAQ > 应用服务开发 > 用户通知服务（Notification Kit） > 通知订阅扩展能力常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:47+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:bb2bdc4735aea1eae7cb76bc159a1be5132b09b61f93165e2cbc1652a775050a
 ---
@@ -18,13 +18,13 @@ content_hash: sha256:bb2bdc4735aea1eae7cb76bc159a1be5132b09b61f93165e2cbc1652a77
 
 * 检查点一、确认用户已通过手机中的穿戴应用程序与穿戴设备配对。可以在设置-星闪和蓝牙-已配对设备中查看穿戴设备配对状态。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/MwqN4SyHT3Cigs_HiuLnlg/zh-cn_image_0000002628554622.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/MwqN4SyHT3Cigs_HiuLnlg/zh-cn_image_0000002628554622.png?HW-CC-KV=V1&HW-CC-Date=20261112T233215Z&HW-CC-Expire=31536000000&HW-CC-Sign=3965A9070A61D3C3770614009AE0EC0BC4CB404772F02ECCEF85262CD2D10B75 "点击放大")
 
   手机与穿戴设备配对有两种方式：
 
   1. 星闪和蓝牙-其他设备列表中选择设备，手动完成配对操作。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/FEgtxdwORqWKLPEm6Gxczg/zh-cn_image_0000002658913945.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/FEgtxdwORqWKLPEm6Gxczg/zh-cn_image_0000002658913945.png?HW-CC-KV=V1&HW-CC-Date=20261112T233215Z&HW-CC-Expire=31536000000&HW-CC-Sign=3932DCF47A9F2835DE1B5739123C9FC887859C9CEE524B7C70A58B264A88635F "点击放大")
   2. 应用内使用[connection.pairDevice](../harmonyos-references/js-apis-bluetooth-connection.md#connectionpairdevice)接口主动发起配对。
 
      **说明** 

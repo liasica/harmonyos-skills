@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 匿名映射过大导致内存泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > RSS内存泄漏故障模式说明 > 匿名映射过大导致内存泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-11-10T10:42:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-15
 content_hash: sha256:b5bdfe0ea92d0e0a0a606beb07b9a8de619a5d331b155bba5a3a19eb808304ae
 ---
@@ -85,14 +85,14 @@ smaps维测关键字：LOGGER\_MEMCHECK\_SAMPLIFY\_SMAPS\_INFO。
   + 单击④处选择Created & Existing，筛选申请并且未释放的内存及其调用栈。
   + 找到内存申请异常的内存及其调用栈，如下图⑤、⑥处框选的内容。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/yMw_PQwSSkGKOLbB_toteQ/zh-cn_image_0000002680464170.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/yMw_PQwSSkGKOLbB_toteQ/zh-cn_image_0000002680464170.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=D311F9DAE6A341D9D5E278971CB0920C1E27717E4C5ED45B15F9C558EA79A96D "点击放大")
 * 分析内存栈指向的代码段，可以得出单次点击“mmap”按钮，会通过Native层MmapMemoryLeak()函数，申请一次超大匿名页内存且未释放：
   + ArkTS层函数如下图所示：响应按钮点击动作，调用Native层的MmapMemoryLeak()函数：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/T2BjsDvlRNaApW0Fvz7xfA/zh-cn_image_0000002710143985.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/T2BjsDvlRNaApW0Fvz7xfA/zh-cn_image_0000002710143985.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB6CD7CD33437BC92EF42E39F955CD94E09371E580B31E67412D0659E2B4B5B8 "点击放大")
   + Native层函数实现如下图所示：每次执行都会通过mmap()创建匿名页内存，并且退出前未释放：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/kzS-6t6CS6iQJl-p_QTqBg/zh-cn_image_0000002710326177.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/kzS-6t6CS6iQJl-p_QTqBg/zh-cn_image_0000002710326177.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3A10B461CD1572073B79D8D3DC8090DA0534B5FCB647F953C0D6A7F4A4B0219)
 
 **开发态问题分析思路：**
 
@@ -100,17 +100,17 @@ smaps维测关键字：LOGGER\_MEMCHECK\_SAMPLIFY\_SMAPS\_INFO。
 
 * 完成录制后，在下图①处Memory的options按钮中选择下图②处AnonPage Other复选框，观察下图③处AnonPage Other内存增长趋势，发现AnonPage Other内存的增长趋势最明显：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/t1qQGlMxR3CZaNm9Uv6Gsw/zh-cn_image_0000002710303839.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/t1qQGlMxR3CZaNm9Uv6Gsw/zh-cn_image_0000002710303839.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8DD86836729460C9DE0EBC4604F0DF33BF0E3F5C906F4A33EC201D3B55C49CD "点击放大")
 * 选择①处ALL Anonymous VM中的VM:others泳道如②处，单击③处Call Trees查看内存申请调用栈，单击④处筛选Created & Existing可以找到内存增长点的内存申请调用栈，内存申请调用栈如下图⑤、⑥处框中所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/uxK9Ewg7RJeCie5TaoDL0w/zh-cn_image_0000002680464192.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/uxK9Ewg7RJeCie5TaoDL0w/zh-cn_image_0000002680464192.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB23E0307817880438C4548BE9AC362238F155149637DB05F9D8B89D857293BE "点击放大")
 * 根据调用栈能够找到具体的代码行，通过分析代码功能，发现每次点击按钮“mmap”，ArkTS层会响应点击动作，并调用Native层的MmapMemoryLeak()函数去通过mmap申请500MB匿名页内存，连续点击多次按钮后，最终发生了RSS内存泄漏。
   + ArkTS层函数如下图所示，响应按钮点击动作，调用Native层的MmapMemoryLeak()函数：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/a86F_9-QQNyu0Ipluj6nbg/zh-cn_image_0000002710143999.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/a86F_9-QQNyu0Ipluj6nbg/zh-cn_image_0000002710143999.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=55263C63D5B813576CB323A5912D1569C19532AF9DF7F708A51FEC3E3D5FB53F "点击放大")
   + Native层函数实现如下图所示，每次执行都会通过mmap()创建匿名页内存，并且退出前未释放：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/-pFrhL3wTTChkcgAId7V6Q/zh-cn_image_0000002680646400.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/-pFrhL3wTTChkcgAId7V6Q/zh-cn_image_0000002680646400.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4280CA0724A89177DEA8AC392A74F3230F05407B10B523A91663647BD131F74 "点击放大")
 
 ### 预防建议
 

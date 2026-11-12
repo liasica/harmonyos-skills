@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: extension系统托管下载
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏资源加速服务 > 资源包后台下载 > 系统后台下载资源包 > extension系统托管下载
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:b224e355eae61f13059dfecad354336d312b22a1031ec8b2a1f438dca3bdf3bc
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:b224e355eae61f13059dfecad354336d312b22a1031ec8b2a1f438dca3b
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/nGTyb_A_RJm878ZbkPBwjQ/zh-cn_image_0000002815399605.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/nGTyb_A_RJm878ZbkPBwjQ/zh-cn_image_0000002815399605.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=81D98CB6C365BF6B682BF96E74F3081CC2CCA334FEDC193710EF0CC464D809BD)
 
 1. 用户在应用市场安装游戏后、用户在应用市场更新游戏后、系统检测到用户设备符合闲时条件时，游戏资源加速服务开启资源包后台下载。
 2. 游戏资源加速服务从AppGallery Connect获取相关资源下载配置信息，例如下载类型、CDN类型、 manifestUrl、域名白名单等。具体资源下载配置信息请参见[发布资源包下载任务](graphics-accelerate-assetdownload-release.md)。

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: ArcScrollBar
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > ArcScrollBar
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:e0aee612ce17b4c54a9fa6091b4e78b3975fd950f9700a28e15320c6eeebf8bb
 ---
@@ -95,4 +95,4 @@ struct ArcScrollBarExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/9VUyJ8VlS7yaTvblMrZTFQ/zh-cn_image_0000002786361172.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/9VUyJ8VlS7yaTvblMrZTFQ/zh-cn_image_0000002786361172.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA17CA4DFCCC891054007D66889CA0360E9C13CD3A557F6275B6899F652AD9FF)

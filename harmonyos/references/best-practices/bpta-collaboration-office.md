@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-collaborat
 title: 办公编辑全场景协同最佳实践
 breadcrumb: 最佳实践 > 技术创新 > 全场景 > 典型全场景协同开发案例 > 办公编辑全场景协同最佳实践
 category: best-practices
-scraped_at: 2026-11-10T10:42:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:2157406d9ca4392d0733b917a1fd1f44d393ef401ca1b7233883f85d87bb3ac0
 ---
@@ -64,7 +64,7 @@ content_hash: sha256:2157406d9ca4392d0733b917a1fd1f44d393ef401ca1b7233883f85d87b
 
 通过同层渲染在Web页面中嵌入按钮，点击后调用[createCollaborationServiceMenuItems()](../harmonyos-references/servicecollaboration-collaborationservice.md#createcollaborationservicemenuitems-1)创建设备选择菜单。使用对端设备执行操作（如拍照）后，通过[onState()](../harmonyos-references/servicecollaboration-collaborationservice.md#onstate)回调返回数据（Buffer或URI）。应用根据数据类型上传到服务器，再通过[runJavaScript()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#runjavascript)将图片插入Web编辑器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/X5xzdvpyR-CNAzBxcITMdQ/zh-cn_image_0000002556898911.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/X5xzdvpyR-CNAzBxcITMdQ/zh-cn_image_0000002556898911.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=BEF2E3EB44B6A1BF137A624E350C9BC46AA4DA11CB4EFF6FD5C5963579AD9A53 "点击放大")
 
 **开发步骤**
 
@@ -386,7 +386,7 @@ content_hash: sha256:2157406d9ca4392d0733b917a1fd1f44d393ef401ca1b7233883f85d87b
 
    拖拽落入时序图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/13QjNF-vTT-tNQVFzfNIHQ/zh-cn_image_0000002525619066.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/13QjNF-vTT-tNQVFzfNIHQ/zh-cn_image_0000002525619066.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6E7B9E39204B2B86B2DCD499B9FD9233B66044256E1115E253DF96730CC0349 "点击放大")
 
 拖拽拖出：
 
@@ -559,7 +559,7 @@ content_hash: sha256:2157406d9ca4392d0733b917a1fd1f44d393ef401ca1b7233883f85d87b
 
 首先获取剪贴板权限，通过[onContextMenuShow()](../harmonyos-references/arkts-basic-components-web-events.md#oncontextmenushow9)显示上下文菜单，使用[hasDataSync()](../harmonyos-references/js-apis-pasteboard.md#hasdatasync11)检查剪贴板是否有数据。用户点击粘贴后调用[paste()](../harmonyos-references/arkts-basic-components-web-webcontextmenuresult.md#paste9)，系统自动将剪贴板内容插入WebView。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/9gLx1nR3Tx2rp8lAJ7NFlQ/zh-cn_image_0000002556778943.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/9gLx1nR3Tx2rp8lAJ7NFlQ/zh-cn_image_0000002556778943.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F19181BEFB04B7A8236F1C0E34A6943725D8CC1749B957CB1A16C7D866E228D "点击放大")
 
 **开发步骤**
 
@@ -690,7 +690,7 @@ content_hash: sha256:2157406d9ca4392d0733b917a1fd1f44d393ef401ca1b7233883f85d87b
 
 编辑页加载时注册[on('dataReceive')](../harmonyos-references/share-harmony-share.md#ondatareceive)监听，支持指定MEDIA和FILE类型。电脑端通过碰一碰发送文件后触发回调，调用[receive()](../harmonyos-references/share-harmony-share.md#receive)接收数据。解析[getRecords()](../harmonyos-references/share-system-share.md#getrecords)获取文件URI，上传到服务器后通过[runJavaScript()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#runjavascript)插入编辑器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/Ick2SVbRSPibtdGFLuy5Cg/zh-cn_image_0000002525779028.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/Ick2SVbRSPibtdGFLuy5Cg/zh-cn_image_0000002525779028.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=33D0553506EE3C5B9C765650E1E7FFE345A1D9623BAEEEE3014F6322CC136080 "点击放大")
 
 **开发步骤**
 
@@ -813,7 +813,7 @@ content_hash: sha256:2157406d9ca4392d0733b917a1fd1f44d393ef401ca1b7233883f85d87b
 
 源端在[onContinue()](../harmonyos-references/js-apis-app-ability-uiability.md#oncontinue)中获取当前WebView的URL并保存到wantParam.webUrl，系统传输到目标设备。目标设备在[onCreate()](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)/[onNewWant()](../harmonyos-references/js-apis-app-ability-uiability.md#onnewwant)中检测launchReason.CONTINUATION，从want.parameters获取URL，设置给continuationUrl静态变量。页面加载时检查continuationUrl，若为编辑页则调用loadUrl加载接续URL。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/QGptS-onRdKxX-xYKZsg2w/zh-cn_image_0000002556898917.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/QGptS-onRdKxX-xYKZsg2w/zh-cn_image_0000002556898917.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=7FBE21C401C71A22D2F3F663F9AC7997E87C76D0517C13A265953236F0BE8C38 "点击放大")
 
 **开发步骤**
 
@@ -921,7 +921,7 @@ content_hash: sha256:2157406d9ca4392d0733b917a1fd1f44d393ef401ca1b7233883f85d87b
 
 初始化时注册[on('knockShare')](../harmonyos-references/share-harmony-share.md#onknockshare-1)事件监听。用户触发分享时保存当前文档URL和docId。设备碰一碰或执行手势后触发事件，优先使用预保存缩略图，创建SharedData对象（类型为HYPERLINK）并调用[share()](../harmonyos-references/share-harmony-share.md#share)分享链接。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/p34ZXLk9TWOiPkhYD9ZX_g/zh-cn_image_0000002525619068.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/p34ZXLk9TWOiPkhYD9ZX_g/zh-cn_image_0000002525619068.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF6D65C22D47C67A3B4D2971480871D7205DE0B563C4EDCEA8877B57331F1C20 "点击放大")
 
 **开发步骤**
 
@@ -1106,7 +1106,7 @@ content_hash: sha256:2157406d9ca4392d0733b917a1fd1f44d393ef401ca1b7233883f85d87b
 
 初始化时注册[on('gesturesShare')](../harmonyos-references/share-harmony-share.md#ongesturesshare-1)事件监听。用户触发分享时保存当前文档URL和docId。设备检测到隔空手势后触发事件，构建[SharedRecord](../harmonyos-references/share-system-share.md#sharedrecord)对象，并调用SharableTarget.share()分享链接。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/YFiEdpnWS6yCcG43CpKl5w/zh-cn_image_0000002556778947.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/YFiEdpnWS6yCcG43CpKl5w/zh-cn_image_0000002556778947.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=80F62E6F5F5375568AA24F8D52877AB2E5C73CF88D2381F5C4A18900910948F8 "点击放大")
 
 **开发步骤**
 

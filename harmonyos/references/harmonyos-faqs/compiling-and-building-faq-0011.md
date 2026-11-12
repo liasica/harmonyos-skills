@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/compiling-and-b
 title: Native工程CMake编译NOTFOUND报错问题排查
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 常见问题 > Native工程CMake编译NOTFOUND报错问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:708d1ae596b8c3c0e1e75a4687acb9a0c265ece96478eeeb27866df46b819957
 ---
 
 **Q：Native工程使用find\_path时出现报错，因find\_path未在CMAKE\_SYSROOT限定路径中找到目标文件而触发该报错，如何解决？**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/LI5OYqENT-G3hyvVdB0RhA/zh-cn_image_0000002799410683.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/LI5OYqENT-G3hyvVdB0RhA/zh-cn_image_0000002799410683.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=378319B4027E8C9C514A7BC2453515F539D6C3308137697D8852D88F5D5623EF "点击放大")
 
 **A**：OpenHarmony SDK的ohos.toolchain.cmake文件限制搜索路径为CMAKE\_SYSROOT。
 

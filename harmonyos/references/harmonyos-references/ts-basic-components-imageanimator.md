@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: ImageAnimator
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图片与视频 > ImageAnimator
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:a716ce414be6e1a2d224690eaac89b0aa03692be436e2b90a2789daf63b9f1ba
 ---
@@ -411,7 +411,7 @@ struct ImageAnimatorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/audKTghIRnieBFbn4yRjGw/zh-cn_image_0000002786361388.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/audKTghIRnieBFbn4yRjGw/zh-cn_image_0000002786361388.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1CCF88032C32F83919A5488973ED7B25C32CA3A7A4EB8A28BD1F1DAB40CE876)
 
 ### 示例2（播放PixelMap动画）
 
@@ -511,7 +511,7 @@ struct ImageAnimatorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/RIRZ0k7CRoOIWOvSRORZCg/zh-cn_image_0000002815560809.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/RIRZ0k7CRoOIWOvSRORZCg/zh-cn_image_0000002815560809.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=98E0CE81973FCB073F3B58AABC7C50198680C9F8284827AD7D96CE7D71514BBD)
 
 ### 示例3（设置不可见自动停播）
 
@@ -614,4 +614,4 @@ struct ImageAnimatorAutoPauseTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/NeloJMUgS6-IZH2fHtG63w/zh-cn_image_0000002815400893.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/NeloJMUgS6-IZH2fHtG63w/zh-cn_image_0000002815400893.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBB7CE260E9F43386A15A84DFB34097A5AF3339CEF5A514EDF435168064AE070)

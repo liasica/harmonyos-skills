@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1553
 title: 如何实现滑动经过复选框时选中/取消的功能
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现滑动经过复选框时选中/取消的功能
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:c99134d9fc99d23932f53416d509a17e1556397bb4d5c937a1f2fa075f40d594
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:c99134d9fc99d23932f53416d509a17e1556397bb4d5c937a1f2fa075f4
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/wt4FKoMARAi2NLIAKLzavw/zh-cn_image_0000002658968445.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/wt4FKoMARAi2NLIAKLzavw/zh-cn_image_0000002658968445.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=1799B4B9F930DC77CF8CD6EBE326881E6546F2F98E9BF58B743D2FD374DA925A "点击放大")
 
 ## 背景知识
 

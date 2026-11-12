@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-atom
 title: AtomicServiceNavigation
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > AtomicService > AtomicServiceNavigation
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:24+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-17
 content_hash: sha256:7772f7c7e9fce8c21d8887953c226fd5370942204a90fdfc39c213f974cd19cd
 ---
@@ -329,7 +329,7 @@ export struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/DoCQQcskT-C7Y7_lMaFsTg/zh-cn_image_0000002786361610.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/DoCQQcskT-C7Y7_lMaFsTg/zh-cn_image_0000002786361610.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=0BF273EEC09796994C2D9A5E0CC5BD3E545B64BBEECB3352CC01E1231232567C)
 
 ### 示例2（抽屉样式，宽屏场景下插入自定义布局）
 
@@ -468,7 +468,7 @@ export struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/XuaMD0_LQNK6CTOxMZ55xA/zh-cn_image_0000002815561031.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/XuaMD0_LQNK6CTOxMZ55xA/zh-cn_image_0000002815561031.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE37DA0C0CA952613DBB74A808914012B576196DDF835A890F8AB2AF6E505BA6)
 
 ### 示例3（侧边栏使用场景）
 
@@ -608,4 +608,4 @@ export struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/GpWw4WA3RYCa0QmODSfWDQ/zh-cn_image_0000002815401115.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/GpWw4WA3RYCa0QmODSfWDQ/zh-cn_image_0000002815401115.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=3101B3B4D7D2EA66EB0E44B8153794CE3F885EFF2BE9C7B61E8C6F24CC8457E7)

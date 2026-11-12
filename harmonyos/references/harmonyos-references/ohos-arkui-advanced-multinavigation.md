@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: MultiNavigation
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 导航与切换 > MultiNavigation
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:d78882c5e3680d4e19c49cb01b92c2e10ef89c52d598ab2559a631263c4ba79c
 ---
@@ -1599,12 +1599,12 @@ export struct PagePlaceholder {
 
 分栏效果演示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/p3ZxWB2ZSBqXyFFPacZMoA/zh-cn_image_0000002786521118.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/p3ZxWB2ZSBqXyFFPacZMoA/zh-cn_image_0000002786521118.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=51A18EC58C4D2D9176620F56F1786841C5DD3DEAFD416D4AE29E5D7A503F2F6E)
 
 主页跳转详情页效果演示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/DHwm83J-Sk26AygpgZtYRg/zh-cn_image_0000002786361190.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/DHwm83J-Sk26AygpgZtYRg/zh-cn_image_0000002786361190.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=665326E9BEC234E1181395E0241D10E69F373FCADD57451A62DFF26C126F998D)
 
 全屏类型页面效果演示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/hGU5tQfRTFeNv8flSX3W1g/zh-cn_image_0000002815560611.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/hGU5tQfRTFeNv8flSX3W1g/zh-cn_image_0000002815560611.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8381F8193ACA96819112FFE0667A230A35B40F739C7091429AB895AE74DDCFD)

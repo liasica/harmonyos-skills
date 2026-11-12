@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SplitLayout
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SplitLayout
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:27+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-04
 content_hash: sha256:de8860ce31d4aa081268121df4d0d690ff73ed9da9c392ed263236d0ee05a0f1
 ---
@@ -81,12 +81,12 @@ struct Index {
 
 小于等于600vp布局：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/H5B6-pq4QIefEZKGydgB1Q/zh-cn_image_0000002786521612.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/H5B6-pq4QIefEZKGydgB1Q/zh-cn_image_0000002786521612.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DE0E343863FE2C4E34B55E22B6CF898BC0D4A860F0842EA7398DEE8FEB8BFB3)
 
 大于600vp且小于等于840vp的布局：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/AQJ_eo8xQG-SCWu6hT8PGw/zh-cn_image_0000002786361684.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/AQJ_eo8xQG-SCWu6hT8PGw/zh-cn_image_0000002786361684.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D6E216D2EFD45151BC25CB2786AA86E942F1448202DD7269F0FE066F56E936B)
 
 大于840vp布局：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/2_AigFJPStO1paIDBfK_IA/zh-cn_image_0000002815561105.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/2_AigFJPStO1paIDBfK_IA/zh-cn_image_0000002815561105.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=ABB6903CB58DEDB5A1911517AA3583576EB12F6BE636C3C3266F62B686980FB8)

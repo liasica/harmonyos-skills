@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-646
 title: 如何为RichEditor中插入的图片绑定缩放手势
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何为RichEditor中插入的图片绑定缩放手势
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:a5c8cd16014a5c450bcf7b7c54cd60206a5ee8008e479c6e89144dc1102eb94e
 ---
@@ -14,7 +14,7 @@ RichEditor是支持图文混排和文本交互式编辑的组件。在RichEditor
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/ZvIOLk1ESs6j2p7Ik74IHg/zh-cn_image_0000002658913727.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/ZvIOLk1ESs6j2p7Ik74IHg/zh-cn_image_0000002658913727.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233158Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2F890EC7556BD645167E0EBDB9D8FD2A221757FE4A3C1C24D8AA2183A47631C "点击放大")
 
 ## 背景知识
 

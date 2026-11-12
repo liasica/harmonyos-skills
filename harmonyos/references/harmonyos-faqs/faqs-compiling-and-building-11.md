@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“Property xxx does not exist on type 'typeof BuildProfile'.”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“Property xxx does not exist on type 'typeof BuildProfile'.”
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:52+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:de64c860127e7c0fc7c7c84ab96a4bc1f58ec047cce9ffef78bb12653b45b436
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:de64c860127e7c0fc7c7c84ab96a4bc1f58ec047cce9ffef78bb12653b4
 
 使用自定义参数BuildProfile时，编译过程中未出现异常，但编译构建失败，提示“Property xxx does not exist on type 'typeof BuildProfile'”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/w5OFAGYrSxq0XYXedO054A/zh-cn_image_0000002624638386.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/w5OFAGYrSxq0XYXedO054A/zh-cn_image_0000002624638386.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=A583875971BEE9A305CCBDBAF24E1ADDD87F7F595EA98E7408E2EC81B48B1807)
 
 **解决措施**
 
@@ -55,7 +55,7 @@ content_hash: sha256:de64c860127e7c0fc7c7c84ab96a4bc1f58ec047cce9ffef78bb12653b4
 
 使用了自定义参数BuildProfile并且编译器标红且构建失败，提示“Property xxx does not exist on type 'typeof BuildProfile'.”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/yZV2orZLSFSAnNM-8PHpmw/zh-cn_image_0000002654837791.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/yZV2orZLSFSAnNM-8PHpmw/zh-cn_image_0000002654837791.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=8366BE7CB22D736DBCB818949F508BB2AD60EF9B78ABE9FA349678640C33E4BA)
 
 **解决措施**
 

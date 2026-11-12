@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1628
 title: 弹窗重复打开问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 弹窗重复打开问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:29+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:77184a92e3435d104d7be3a4fcf82c4ae21015aab861bc87c11e03492bea0324
 ---
@@ -69,7 +69,7 @@ content_hash: sha256:77184a92e3435d104d7be3a4fcf82c4ae21015aab861bc87c11e03492be
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/CaN3QaneRGOqJ2SVFnm8qg/zh-cn_image_0000002628617580.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/CaN3QaneRGOqJ2SVFnm8qg/zh-cn_image_0000002628617580.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=59D513F63F77D770009F7615ECE6CAEFC223D92B16A4EB0B24D38A857C147430 "点击放大")
 
 ## 分析结论
 

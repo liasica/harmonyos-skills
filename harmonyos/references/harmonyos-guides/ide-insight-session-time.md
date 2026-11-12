@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-insight-s
 title: 基础耗时：Time分析
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 基础耗时：Time分析
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:4ddef04bf5c07000adb5f25dec3ad54eefa2db8ffcb22c98df41505ecee31805
 ---
@@ -20,8 +20,8 @@ Time模板支持的泳道包括：User Trace、ArkTS Callstack、Callstack、Ene
 
 1. 构建应用前请参考[模块级build-profile.json5文件](ide-hvigor-build-profile.md)，增加strip字段并赋值为false，不移除当前模块.so文件中的符号表、调试信息。采集函数栈解析符号需要附带符号表信息，无符号表信息可能采集不到函数名称，或ArkTS Callstack泳道无法关联到Native调用栈，因此请按照下图进行配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/MFmlH9XqTcGeUdofvSWidQ/zh-cn_image_0000002808887125.png)
-2. 创建Time任务并录制相关数据，操作方法可参考[性能问题定位：深度录制](deep-recording.md)。Time分析任务支持在录制前单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/BiiRw2IYReyWSBEJAf7nCA/zh-cn_image_0000002808887109.png "点击放大")指定要录制的泳道：
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/MFmlH9XqTcGeUdofvSWidQ/zh-cn_image_0000002808887125.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=9186EE186D584814029163151D4A85BFE5AC91379CCE863AC0A1FCF8A712D9FD)
+2. 创建Time任务并录制相关数据，操作方法可参考[性能问题定位：深度录制](deep-recording.md)。Time分析任务支持在录制前单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/BiiRw2IYReyWSBEJAf7nCA/zh-cn_image_0000002808887109.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=4BB15A1EF43FC56561A6698E24D1FF229064F98EDC477E693F534BA85BE8A586 "点击放大")指定要录制的泳道：
    * **User Trace**：用户自定义打点泳道，基于时间轴展示当前时段内用户使用hiTraceMeter接口自定义的打点任务的具体运行情况。
    * **ArkTS Callstack**：方舟运行时函数调用泳道，基于时间轴展示CPU使用率和虚拟机的执行状态，以及当前调用栈名称和调用类型。由于隐私安全政策，已上架应用市场的应用不支持录制此泳道。
 
@@ -38,7 +38,7 @@ Time模板支持的泳道包括：User Trace、ArkTS Callstack、Callstack、Ene
 
    **说明** 
 
-   * 单击任意泳道名称后方的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/M4ulnhsGQLSNCWuJf5EDCw/zh-cn_image_0000002779407470.png "点击放大")可将其置顶。
+   * 单击任意泳道名称后方的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/M4ulnhsGQLSNCWuJf5EDCw/zh-cn_image_0000002779407470.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A72AED9498BF12248C70753E8D7B652DA161C4CBA5C7E188CD72BE1AFD6518B "点击放大")可将其置顶。
    * Release版本的so库构建时，默认优化等级为-O2，编译器会对代码进行函数内联、寄存器分配、指令重排等优化，可能导致函数调用栈缺失、局部变量被优化、运行时序与源码不一致，从而造成录制数据不完整。可以在CMakeLists.txt中配置编译优化等级为-O0，采集完整的数据。
 3. 在**ArkTS Callstack****泳道**和**ArkTS Callstack****子泳道**上长按鼠标左键并拖拽，框选要分析的时间段。**Details**区域会显示所选时间段内的函数栈耗时分布情况，**Heaviest Stack**区域会展示出Details区域选择节点所处的耗时最长的完整调用栈。函数栈耗时分布有三种展现方式：调用树（默认展示方式）、火焰图、冰锥图。
    1. 在调用树中，“Weight”字段表示当前函数的总执行时间，“Self”字段表示函数自身的执行时间，两者之差为当前函数所调用的子函数执行时间之和，“Average Duration”字段表示函数自身的平均执行时间，“Category”字段表示函数调用类型。
@@ -47,28 +47,28 @@ Time模板支持的泳道包括：User Trace、ArkTS Callstack、Callstack、Ene
       **说明** 
 
       * 火焰图条块支持搜索，搜索结果不匹配的条块会被置灰。
-      * “Ctrl+鼠标滚轮”的操作，或单击该区域右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/e4hi0nkRRx2jzv6Xoto6RQ/zh-cn_image_0000002779567450.png)、![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/A-M3pllrS0qjQ_Py85f96w/zh-cn_image_0000002808767043.png)可放大和缩小火焰图的时间轴比例，单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/xtnKsqNOTsGEtoIK3sgSWQ/zh-cn_image_0000002779567456.png)可恢复时间轴比例为初始状态。
+      * “Ctrl+鼠标滚轮”的操作，或单击该区域右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/e4hi0nkRRx2jzv6Xoto6RQ/zh-cn_image_0000002779567450.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E02B4AE70243E38D281C039A4C954753E42C7E95008A67AA1F1AB4FB423A8A3)、![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/A-M3pllrS0qjQ_Py85f96w/zh-cn_image_0000002808767043.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=1925C1C68DDB0B8F5AB4C9D1C392E268CFDC82D44E6581688EB2A0A761CCB07D)可放大和缩小火焰图的时间轴比例，单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/xtnKsqNOTsGEtoIK3sgSWQ/zh-cn_image_0000002779567456.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C0938DA4098284DD5F3A6A565663C9080AF0D144C0C93952C5A2B2CFED140F4)可恢复时间轴比例为初始状态。
       * “Shift+鼠标滚轮”的操作可左右横向调整可视区间，单独操作滚轮可上下纵向调整可视区间。
-      * 选中节点，单击该区域右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Lo2MGHdVTcaTOaMmzxrR9w/zh-cn_image_0000002779407472.png "点击放大")，点击添加面包屑。添加面包屑后，该节点成为根节点，耗时占比为100%，子节点的耗时占比相对于该节点重新计算。
+      * 选中节点，单击该区域右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Lo2MGHdVTcaTOaMmzxrR9w/zh-cn_image_0000002779407472.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=B747AE13CCD8D96657C322006895669CB5D02F9B6E7F70B0E2EC979EBEEA7D98 "点击放大")，点击添加面包屑。添加面包屑后，该节点成为根节点，耗时占比为100%，子节点的耗时占比相对于该节点重新计算。
       * 在火焰图中选中任一节点，使用“Alt+鼠标左键”可将该节点左置底并将其占比放大到100%，其上从属节点按同比例放大显示。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/l3ZgUXufRV-P2YZvorALxA/zh-cn_image_0000002808887119.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/l3ZgUXufRV-P2YZvorALxA/zh-cn_image_0000002808887119.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=84A6DBC89F6E8DCE64B9930872C780AF3BDFA592E58B2D067ADD08BEF41DA816 "点击放大")
    3. 在ArkTS Callstack子泳道或Callstack子泳道上点击**Unfold CallStack**按钮，可以在泳道图区域将函数调用栈以冰锥图的形式展示，调用栈的先后顺序与实际调用时序保持一致。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/-PEU69pLR6G-Ro1A6E_xWA/zh-cn_image_0000002808767027.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/-PEU69pLR6G-Ro1A6E_xWA/zh-cn_image_0000002808767027.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=51256233646184820317766619B0AAF639BE6B5AB99877853A5ECC4AB32BEAB8 "点击放大")
 4. 在**Callstack**泳道上长按鼠标左键并拖拽，框选要分析的时间段。
    * **Summary**区域展示框选时段内，所有Native线程的CPU占用率的峰值、谷值、平均值。
    * **Callstack**区域展示框选时段内，所有Native线程的函数热点。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/LbyVWJOuSLmXbp1ACjQKhQ/zh-cn_image_0000002808767037.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/LbyVWJOuSLmXbp1ACjQKhQ/zh-cn_image_0000002808767037.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=9976EAA3A1A0D822C1E2EDC8211CC47C371BF89FE29B6E5F57A51D9DE0ACB51D "点击放大")
    * 将鼠标悬浮到节点，显示以此节点为根节点，点击添加面包屑。添加面包屑后，该节点成为根节点，耗时占比为100%，子节点的耗时占比相对于该节点重新计算。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/_vxLe_ZJQqGiJS8S9Fenxw/zh-cn_image_0000002808887121.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/_vxLe_ZJQqGiJS8S9Fenxw/zh-cn_image_0000002808887121.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=C42F409C6053F96A59835B4B52E218641B72928E7910F599F42BF7D4E3920C03 "点击放大")
 5. 在**Callstack**子泳道上长按鼠标左键并拖拽，框选要展示分析的时间段。
    * **Top Down**页签显示所选时间段内的函数栈耗时分布情况，**Heaviest Stack**区域会展示出Details区域选择节点所处的耗时最长的完整调用栈。
    * **Bottom UP**页签显示函数列表，展开任一函数节点可查看其调用方及每个调用方的耗时。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/NnLqZoEQT4iycubS4LbqNA/zh-cn_image_0000002779567448.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/NnLqZoEQT4iycubS4LbqNA/zh-cn_image_0000002779567448.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8DC772C203159CB31072F38A616AAB0CC0AEF43D0E22E1D4CC0890DCD90B800 "点击放大")
 6. （可选）在**详情区**中双击需要优化的节点（例如耗时超过预期），可快速跳转至对应工程源码，为开发者节省定位代码路径的时间。
 
    **说明** 
@@ -83,7 +83,7 @@ Time模板支持的泳道包括：User Trace、ArkTS Callstack、Callstack、Ene
 * **ArkTS Callstack**父泳道内可以看到被选择进程的CPU使用率，框选后展示此时段内录制到的所有方舟实例的函数调用栈信息。
 * **ArkTS Callstack**子泳道框选后展示此时段内录制到的该方舟实例的函数调用栈信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/18HS4TbMRt6-sUo4O_0oxw/zh-cn_image_0000002808887123.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/18HS4TbMRt6-sUo4O_0oxw/zh-cn_image_0000002808887123.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CD4BFB090617A0E844D5AF624AA0340CFFD8007975330E1B34306DC66AF50EE "点击放大")
 
 ## 离线符号解析
 
@@ -91,16 +91,16 @@ DevEco Profiler提供离线符号解析能力，基于携带符号表信息的so
 
 对于有so库路径和偏移地址的采样数据，如图所示，通过导入对应的携带符号表信息的so库进行解析，补充release so库中缺失的符号表信息（包括系统so库，用户自编译的so库，三方库）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/MdcMPic3QEGZP1qVz-yvqA/zh-cn_image_0000002808767041.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/MdcMPic3QEGZP1qVz-yvqA/zh-cn_image_0000002808767041.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F7C4575C7FECAFD076C5EC56B20346B8F93C7A2ACA3972DF02CBA249B835FC1 "点击放大")
 
-您可以通过点击工具栏![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/i1r-orAVS0yGdoYcn3OG5Q/zh-cn_image_0000002779407476.png "点击放大")按钮，导入包含debug信息的so库。
+您可以通过点击工具栏![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/i1r-orAVS0yGdoYcn3OG5Q/zh-cn_image_0000002779407476.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A3B8915775C598F22906BF89C9BFDF2FC8305F00D08D7DDD958005DB02F3F8C "点击放大")按钮，导入包含debug信息的so库。
 
 **说明** 
 
 * 离线导入携带符号表信息的so库，需要严格保证与Release版本的so库保持同一优化等级（如-O1, -O2, -O3等）。可以在CMakeLists.txt文件中查看或配置编译优化等级。
 * 离线导入携带符号表信息的so库，需要尽可能与Release版本的so库编译选项保持一致，防止so库起始地址不一致，影响解析正确性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/XEvZU_mBQmOkDOgFYaqdjw/zh-cn_image_0000002808767039.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/XEvZU_mBQmOkDOgFYaqdjw/zh-cn_image_0000002808767039.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=40B2D6000083341AA57CD5F9C6432855938F8A9EA9A4B3E612F38671E2AB42A5 "点击放大")
 
 ## 查询自定义打点信息
 
@@ -108,15 +108,15 @@ DevEco Profiler提供离线符号解析能力，基于携带符号表信息的so
 
 单击User Trace泳道的“options”下拉列表，可以设置子泳道是按照Task Name维度还是Thread ID维度显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/yC2OvEL0RK65RD3pG9hMZg/zh-cn_image_0000002808767029.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/yC2OvEL0RK65RD3pG9hMZg/zh-cn_image_0000002808767029.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=F82A8C4D12BF6B85A29E117A6D1B235B53BF8528F82DAA12B4E14C80C11395DA)
 
 展开**User Trace**泳道，在子泳道上长按鼠标左键并拖拽，框选要展示分析的时间段，获取该时间段内的用户打点信息。
 
 * **Statistics**区域：显示当前任务泳道在所选时间段内的打点任务统计信息，包括任务的名称、同一任务执行的次数、平均持续时长、最长持续时间和最短持续时间。通过这些统计信息，开发者可直观地了解打点任务的执行频率、持续时间偏差等，方便定位。
 * **User Trace**区域：将所选时间段内的所有任务都一一列举出来，包括任务的ID、名称、起始/结束时间、持续时长等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/m5uk4fkrTd64timQtVoXWA/zh-cn_image_0000002808767033.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/m5uk4fkrTd64timQtVoXWA/zh-cn_image_0000002808767033.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=48EFE0E7C9C1EF3BCA8791F47F079258F62AF5BFC058CA5730F2242DEB714345 "点击放大")
 
 单击**User Trace**子泳道中的任意一个任务块，**Details**区域将展示该任务块的详细信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/WMnUEIupT8-MOBRsHJR9lg/zh-cn_image_0000002779407474.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/WMnUEIupT8-MOBRsHJR9lg/zh-cn_image_0000002779407474.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=4796425ABA80B09FEEB4216273FEF97A05F802C6D15897CDEA5AC91E1FF40003 "点击放大")

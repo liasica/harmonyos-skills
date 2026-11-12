@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1027
 title: 如何实现想法标记功能
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现想法标记功能
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:53+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-21
 content_hash: sha256:29830d07ddec36c9d2800585330a5e3934f0900e79de4abb3a3f384f9f6c9ded
 ---
@@ -19,7 +19,7 @@ content_hash: sha256:29830d07ddec36c9d2800585330a5e3934f0900e79de4abb3a3f384f9f6
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/in0xR6DfQjaQhRWMw_RE0g/zh-cn_image_0000002658804085.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/in0xR6DfQjaQhRWMw_RE0g/zh-cn_image_0000002658804085.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B1EA02712E4F799F835AC7456BEDE3C91F6F88BE22A484912D07B6E569E8EA2 "点击放大")
 
 ## 背景知识
 

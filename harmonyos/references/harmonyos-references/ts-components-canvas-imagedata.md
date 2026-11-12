@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: ImageData
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > ImageData
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:cff6f0963843e2db8a6c7f1afd4fe311afc641bae2871ed39977cd2968568f38
 ---
@@ -109,4 +109,4 @@ struct Translate {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/5SYbyVS1QLue9nnABMDixA/zh-cn_image_0000002786361482.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/5SYbyVS1QLue9nnABMDixA/zh-cn_image_0000002786361482.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C2714D6CA14CC9B791C123CD7B776143C94EACFD93B2C5832AEB92F0CC5F5A9)

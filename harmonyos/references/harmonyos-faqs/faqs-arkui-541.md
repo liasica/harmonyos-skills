@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-541
 title: 视频下方的列表刷新，视频同步发生刷新，刷新异常
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 视频下方的列表刷新，视频同步发生刷新，刷新异常
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:bf2e633dbc4a9f36833f6c80f931cbf5bc746a38ac846723dbb9de4e9bd06bf6
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:bf2e633dbc4a9f36833f6c80f931cbf5bc746a38ac846723dbb9de4e9bd
 
 视频下方的列表下拉刷新时，列表上方的视频也会进行刷新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/Up4MSvKpRnutkoeaQ3aEjQ/zh-cn_image_0000002658790881.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/Up4MSvKpRnutkoeaQ3aEjQ/zh-cn_image_0000002658790881.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=CCEE7C2E9510576C6A48896B17275B33FFF74A7C9CABA107976E3DC4824BE6A9 "点击放大")
 
 ## 背景知识
 
@@ -23,7 +23,7 @@ content_hash: sha256:bf2e633dbc4a9f36833f6c80f931cbf5bc746a38ac846723dbb9de4e9bd
 
 ## 问题定位
 
-1. 使用DevEco Testing查看列表组件和视频组件，列表组件为Refresh组件，视频组件为Video组件。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/IjgXBcRzSKawEFQBMRl1bw/zh-cn_image_0000002628551516.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/8VwYjj-FRmqSRY-w0OvMHA/zh-cn_image_0000002628391620.png "点击放大")
+1. 使用DevEco Testing查看列表组件和视频组件，列表组件为Refresh组件，视频组件为Video组件。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/IjgXBcRzSKawEFQBMRl1bw/zh-cn_image_0000002628551516.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=342302054AB3B8129A3E2D12E2D58FB54FDC47B56DA050E19617CFF3AE311E64 "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/8VwYjj-FRmqSRY-w0OvMHA/zh-cn_image_0000002628391620.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=E77ECF8E0F893B494B1D6D79EB95155111BCD6B172BFE2DF2336013F8FFA967C "点击放大")
 2. 查看Refresh组件和Video组件的设置，视频组件播放视频列表中的第一个视频，视频列表下拉刷新时视频数据重新加载，加载完成后视频组件重新获取视频列表中的第一个视频。关键部分：
 
    ```screen
@@ -531,4 +531,4 @@ struct ListRefreshLoad {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/drI7DfYvSxSStKmDT6_ZIg/zh-cn_image_0000002658910835.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/drI7DfYvSxSStKmDT6_ZIg/zh-cn_image_0000002658910835.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3F29673999BB4BAE2BB139A249EF88819F7B96635CC25A24EC4AC4B79ECBBD2 "点击放大")

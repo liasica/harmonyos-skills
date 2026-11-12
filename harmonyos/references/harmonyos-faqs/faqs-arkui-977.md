@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-977
 title: 如何在分屏下自动适应是否滑动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何在分屏下自动适应是否滑动
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:30+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:80711c30ae845f73149b9ae1f46fa3433dcfa89e51cbcf4fcb26c4a94c333f4b
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:80711c30ae845f73149b9ae1f46fa3433dcfa89e51cbcf4fcb26c4a94c3
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/gBU6j7qpTzO_GAMpsnHSCw/zh-cn_image_0000002658920919.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/gBU6j7qpTzO_GAMpsnHSCw/zh-cn_image_0000002658920919.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=0273FCDC50562EF408C70454648AF6D34463F6F37D1AC8D7D8DA0ABF6FB080C5 "点击放大")
 
 ## 背景知识
 

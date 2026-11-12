@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-polygon
 title: 多边形
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 多边形
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:29+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:a1fba74276b0359bdad25739b80f0c67ea7d30371cd53ef6b007ea5232bd5cb1
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:a1fba74276b0359bdad25739b80f0c67ea7d30371cd53ef6b007ea5232b
 
 多边形主要用于标识小区、学校、商圈等封闭区域范围，同时可呈现省、市、区县等行政区域边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/W4J4IhFVT3aMGRbPhE2vBg/zh-cn_image_0000002786360442.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/W4J4IhFVT3aMGRbPhE2vBg/zh-cn_image_0000002786360442.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7AC0AB91CBA13B989DB8063CF6F360610CB09AF2D5355A39F07E78631BADB77 "点击放大")
 
 ## 接口说明
 
@@ -102,4 +102,4 @@ content_hash: sha256:a1fba74276b0359bdad25739b80f0c67ea7d30371cd53ef6b007ea5232b
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/ESMS70QvQd6zCmMIY9veKw/zh-cn_image_0000002815559863.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/ESMS70QvQd6zCmMIY9veKw/zh-cn_image_0000002815559863.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=83673EDCD3BA0DFEF03E7A25989C982997BBC5ED5D7A538B4A80F157024E9F6D "点击放大")

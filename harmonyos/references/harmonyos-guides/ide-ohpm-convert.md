@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-conv
 title: ohpm convert
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm convert
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:fa3846fdf0e7eeff34ab0114612739706279736afae522b69c71fb0f56cc50c4
 ---
@@ -98,13 +98,13 @@ ohpm INFO: A total of 9 packets are converted successfully.
 ohpm INFO: Converted packages are saved to the "C:\Users\xxxxx\Desktop\convert_1712127991590" directory.
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/QRk70WjISA2tHlFGaZnZXQ/zh-cn_image_0000002808886923.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/QRk70WjISA2tHlFGaZnZXQ/zh-cn_image_0000002808886923.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=884C130BB59B02E3393DBEFE996AEF5812E8D040229FFA116BDB1AEF25593B71 "点击放大")
 
 **转换本地node\_modules目录中的包**
 
 执行npm install uuid后，转换本地node\_modules目录中的包，执行以下命令：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/K8v6kGFwSeWMnstFU4CboQ/zh-cn_image_0000002808766845.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/K8v6kGFwSeWMnstFU4CboQ/zh-cn_image_0000002808766845.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=19D2D27ED577DDD87A748456ADD41DF858D5A29723DD4F4B2136B71E8698FC60)
 
 ```screen
 ohpm convert C:\Users\xxxxx\Desktop\uuidInstallDir\node_modules
@@ -120,4 +120,4 @@ ohpm INFO: A total of 1 package(s) are converted successfully.
 ohpm INFO: Converted packages are saved to the "C:\Users\xxxxx\Desktop\convert_1712128912583" directory.
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/SrnitcbgTLK_Jx73jJyDFQ/zh-cn_image_0000002779407284.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/SrnitcbgTLK_Jx73jJyDFQ/zh-cn_image_0000002779407284.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C306E2B42B84C1FC2F877D177752761B4048260CBBB6E095DEB1E15798F260E)

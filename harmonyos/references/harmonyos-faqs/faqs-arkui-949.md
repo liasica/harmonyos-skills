@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-949
 title: 如何保证组件与变化组件的高度一致
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何保证组件与变化组件的高度一致
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:cd8967b748cf740dec95b902269a0d867f9f69ed7c0666a1ed21015f8d29970d
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:cd8967b748cf740dec95b902269a0d867f9f69ed7c0666a1ed21015f8d2
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/Na9eTIHnQaGgU_rhD567xg/zh-cn_image_0000002628561154.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/Na9eTIHnQaGgU_rhD567xg/zh-cn_image_0000002628561154.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=B67F805E883FF550C0D251CC99ECDC77A72476E02E9C856FABB2F64DAD9C5F56 "点击放大")
 
 ## 背景知识
 

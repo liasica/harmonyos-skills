@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/layered-image
 title: 配置应用图标和名称
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发指导 > 配置应用图标和名称
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:50:56+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:fb91442e31f1d9bc3da4d6fffae4b07d575c6ebd6dc3d3fd7782fc8c91e25170
 ---
@@ -18,7 +18,7 @@ content_hash: sha256:fb91442e31f1d9bc3da4d6fffae4b07d575c6ebd6dc3d3fd7782fc8c91e
 
 效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/ESd0XXnMQwq2o5h1b1hmvA/zh-cn_image_0000002815557797.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/ESd0XXnMQwq2o5h1b1hmvA/zh-cn_image_0000002815557797.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=2182DC1FF3A57D2CA699FBA189DD1AEC88564C714A1AF3AA9899062581CE4B63)
 
 ## 配置优先级和生成策略
 

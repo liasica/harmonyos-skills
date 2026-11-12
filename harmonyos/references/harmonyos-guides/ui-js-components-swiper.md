@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: swiper开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 容器组件 > swiper开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:ae7fabd7688075357b42fe20a374e866da392b358d6639250a05643167c1aad2
 ---
@@ -58,7 +58,7 @@ text{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/j7Bg5e_sQ_CSf3uMP4AkfQ/zh-cn_image_0000002786359302.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/j7Bg5e_sQ_CSf3uMP4AkfQ/zh-cn_image_0000002786359302.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=6899D86E479759967960D777897370FB93096DBB76E9B33C3824A6CB8B47759E)
 
 **说明** 
 
@@ -115,7 +115,7 @@ text{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/yayDMXuRQ3O6WupMU8fYqw/zh-cn_image_0000002815558723.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/yayDMXuRQ3O6WupMU8fYqw/zh-cn_image_0000002815558723.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=1CD1D0902E854B83FFB4518D7F4F0AEECAF8FCD7E53E5C8CB2E8F07E190F92DC)
 
 **说明** 
 
@@ -177,7 +177,7 @@ text{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/1_JF3ZclQdKqtsF-c-c35g/zh-cn_image_0000002815398807.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/1_JF3ZclQdKqtsF-c-c35g/zh-cn_image_0000002815398807.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=54CF0DBE519D2B4276607DF38EC75049EE5FE8B7C13F0BF8AC9ECF6DA5BE9B76)
 
 ## 绑定事件
 
@@ -275,7 +275,7 @@ export default{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/ZBDQkbXrR_aSM0SFlSPBYw/zh-cn_image_0000002786519232.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/ZBDQkbXrR_aSM0SFlSPBYw/zh-cn_image_0000002786519232.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3CC948BFE51BE55C9BEC8C5A449A7C2022C31F1ED506AAE5C17C8F8C50CB834)
 
 ## 场景示例
 
@@ -352,4 +352,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/1nLTvGBPTLmYuDW4PWSGcA/zh-cn_image_0000002786359304.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/1nLTvGBPTLmYuDW4PWSGcA/zh-cn_image_0000002786359304.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=36AD88F173A2E1B0A0144D183754520CF8A8C82BA9E4FDAA736C761207E0758D)

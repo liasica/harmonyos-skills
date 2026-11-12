@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uitest-guidel
 title: UI测试框架使用指导
 breadcrumb: 指南 > 应用测试 > 单元测试和UI测试 > 自动化测试框架使用指导 > UI测试框架使用指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:8aad3cb067a6da9384a7990fc981d112ffbf39752a5822a88cbbdd7e3ef20ac1
 ---
@@ -24,7 +24,7 @@ UITest支持采用ArkTS API与命令行两种方式，为界面自动化测试�
 
 支持通过命令行直接实现多元化测试操作，包括获取当前界面截图、获取控件树、录制界面操作流程、便捷注入UI模拟事件等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/rQjdV3WqQ8GU80En2TmVGg/zh-cn_image_0000002731520235.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/rQjdV3WqQ8GU80En2TmVGg/zh-cn_image_0000002731520235.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=76569659BF962571DACE9B595278D078A7C8BD09C112748A59009255526F9F97)
 
 UITest分为客户端和服务端。
 

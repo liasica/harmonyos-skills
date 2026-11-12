@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/package-structu
 title: 应用打包与安装操作常见问题
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 常见问题 > 应用打包与安装操作常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:45+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:b6c1d91d424b0ba36a04d4c58b6f0ed9065c4402b1446499bd7643a40e042645
 ---
 
 **Q：启动调试或运行应用/服务时，如果安装HAP出错，提示“error: failed to start ability. error: ability visible false deny request”，应该如何检查应用的可见性设置？**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/PvPQQbFkRYydW4-oE86xCA/zh-cn_image_0000002770980364.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/PvPQQbFkRYydW4-oE86xCA/zh-cn_image_0000002770980364.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F128CFC75364A5C219CEFEBE067740758B0FCDEC58CCB81CCED9A4EF8AC8425)
 
 **A**：解决措施如下：
 
@@ -28,7 +28,7 @@ content_hash: sha256:b6c1d91d424b0ba36a04d4c58b6f0ed9065c4402b1446499bd7643a40e0
 1. 分别对不同工程的模块进行打包，执行DevEco Studio中的Build Hap指令。在outputs文件夹下获取未签名的hap包和pack.info文件。
 2. 合并所有模块的pack.info文件，生成app级别的pack.info文件，格式如下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/TI3bVOSxRy-7m1BjpPJ4-w/zh-cn_image_0000002771140334.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/TI3bVOSxRy-7m1BjpPJ4-w/zh-cn_image_0000002771140334.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=735ED57EF144A529D5860A32642A882C9919A04265F918FB60EA5942A6318C7C "点击放大")
 
    summary.app为整个包的配置信息，保证唯一。summary.modules和packages取模块级别pack.info文件中相对应的第1个值填入。
 3. 在SDK toolchains工具的lib文件夹下执行以下命令打包未签名的app包：java -jar app\_packing\_tool.jar --mode app --force true --pack-info-path [pack.info 文件路径] --hap-path [hap 包路径，使用逗号隔开] --out-path [输出 app 包路径，以 .app 结尾]。

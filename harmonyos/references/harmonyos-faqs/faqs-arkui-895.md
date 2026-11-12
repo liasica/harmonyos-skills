@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-895
 title: 怎么解决自定义Span组件在NavDestination下无法显示问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 怎么解决自定义Span组件在NavDestination下无法显示问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:13+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:de7c1338cb915f397fadeee7607e493b9daf591a62c3663a181ad64c43a063fb
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:de7c1338cb915f397fadeee7607e493b9daf591a62c3663a181ad64c43a
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/-RWIawDPQzuIa-4DxBHgpQ/zh-cn_image_0000002658918867.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/-RWIawDPQzuIa-4DxBHgpQ/zh-cn_image_0000002658918867.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A0E635AD74CC85056D3106DFC886FC0143BEE6648859F5A473D279F9BB085EB "点击放大")
 
 ## 背景知识
 
@@ -83,7 +83,7 @@ content_hash: sha256:de7c1338cb915f397fadeee7607e493b9daf591a62c3663a181ad64c43a
 
    效果预览：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/tvAZPw64Qjq5ijtCpOCNzA/zh-cn_image_0000002628399650.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/tvAZPw64Qjq5ijtCpOCNzA/zh-cn_image_0000002628399650.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=C239C2A44AA4E45E9D611C466E63EC155CF8B3F4D8DE1E6A2AA7FBF8535655AF "点击放大")
 2. 如果Span组件是一组公共的特性，则可以通过@Builder装饰器把公共的部分抽取出来。
 
    ```ts
@@ -139,7 +139,7 @@ content_hash: sha256:de7c1338cb915f397fadeee7607e493b9daf591a62c3663a181ad64c43a
 
    效果预览：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/zbh9D9m1QcWvM9IuD-fa1A/zh-cn_image_0000002658798917.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/zbh9D9m1QcWvM9IuD-fa1A/zh-cn_image_0000002658798917.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DB588F65E55FCEC282EB7D11977E3F5C1CBE492854C5DD0E12B9AC98AE25715 "点击放大")
 3. 如果需要使用自定义组件，应该选择支持自定义子组件的组件，比如Column组件。
 
    ```ts
@@ -202,7 +202,7 @@ content_hash: sha256:de7c1338cb915f397fadeee7607e493b9daf591a62c3663a181ad64c43a
 
    效果预览：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/PHywAtG1SMmRi_gEKfJEDQ/zh-cn_image_0000002628559556.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/PHywAtG1SMmRi_gEKfJEDQ/zh-cn_image_0000002628559556.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=A27376A64B5CF1CF97F465C9159E85A1CBF9032810B0A0962FE9EC18CF5A5DB9 "点击放大")
 
 ## 总结
 

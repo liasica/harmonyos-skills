@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-prev
 title: 查看应用组件树
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 使用多设备预览器运行应用 > 查看应用组件树
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-08
 content_hash: sha256:7e1d7404ad6a741106309c5c5a1fbc98a8d8a8a80f83b9f9d9ad0cf3a4aa70a3
 ---
@@ -22,15 +22,15 @@ content_hash: sha256:7e1d7404ad6a741106309c5c5a1fbc98a8d8a8a80f83b9f9d9ad0cf3a4a
 
 ## 操作步骤
 
-1. 点击多设备预览器界面下方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/LVavyrKISlCiaj-TTlBizw/zh-cn_image_0000002810750713.png)图标进入预览模式。
+1. 点击多设备预览器界面下方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/LVavyrKISlCiaj-TTlBizw/zh-cn_image_0000002810750713.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B7AD69799CC1DB334E2C3E1B77D8352EDF292777CCB4F9D1C953E44D5572EDD)图标进入预览模式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/wPt19oA0QY2CcfH4J9kDMA/zh-cn_image_0000002810630605.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/wPt19oA0QY2CcfH4J9kDMA/zh-cn_image_0000002810630605.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=B04547EF01E03C7D70300FDC070DD90E767FC5ED2F4485DE8C02F3A79B59FD18)
 2. 在预览界面中可以查看当前页面的组件树和各个属性，支持组件搜索，展开和折叠组件树。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/WPWHF_vGSA6Ur-C8KjCM5w/zh-cn_image_0000002810630603.png "点击放大")
-3. 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/qHK3rXFUSgynnLgU1AD1wQ/zh-cn_image_0000002781471052.png)图标，勾选**显示统计数据**，可显示组件树节点信息。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/WPWHF_vGSA6Ur-C8KjCM5w/zh-cn_image_0000002810630603.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=32F9123A41B45A581D6DF2296E06A241384A2D7F44F039D3346B7B8C9CC6180D "点击放大")
+3. 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/qHK3rXFUSgynnLgU1AD1wQ/zh-cn_image_0000002781471052.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=2084D21FDA86DB8F28F3F78706D2F6A6DC07684CFDB88AFFE19E8E364B7C26FA)图标，勾选**显示统计数据**，可显示组件树节点信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/Clqq64_ZR9OICglbXGpKkw/zh-cn_image_0000002810630601.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/Clqq64_ZR9OICglbXGpKkw/zh-cn_image_0000002810630601.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E47070CB6C4DD2732905C830EF16C825E5F99923FC5DACB96D50CDC3B9CBA60 "点击放大")
 4. 选择要进行源码跳转的UI组件，在组件属性详情面板显示源码跳转链接，点击链接即可跳转到UI组件源码位置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/uoJBnet0T2aObjx6nhioLw/zh-cn_image_0000002810750711.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/uoJBnet0T2aObjx6nhioLw/zh-cn_image_0000002810750711.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=CFE279EABFB52ED918BE4A50207286A7C1ACBCF7968BD0A1D325243874362183 "点击放大")

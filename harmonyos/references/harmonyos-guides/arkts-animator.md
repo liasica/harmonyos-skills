@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-animato
 title: 帧动画（ohos.animator）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 帧动画（ohos.animator）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:15+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:f2bdfe1211ee2222a51e759919985b6f80eca83fe3e72869bda901fd822bf242
 ---
@@ -19,9 +19,9 @@ content_hash: sha256:f2bdfe1211ee2222a51e759919985b6f80eca83fe3e72869bda901fd822
 
 如图所示，帧动画在动画过程中即可实时响应，而属性动画按最终状态响应。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/WmjW1ZE3RQSxsL--3SQ2aA/zh-cn_image_0000002786519116.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/WmjW1ZE3RQSxsL--3SQ2aA/zh-cn_image_0000002786519116.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BFB289FF84E645CB6469AEC5A3BA9CD993C4697E2FA79CB1AC0E061DC486113)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/fHh40-6aQV-ZOlqSXY4FYg/zh-cn_image_0000002786359188.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/fHh40-6aQV-ZOlqSXY4FYg/zh-cn_image_0000002786359188.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2FF22158604E514661BB9A454B861FAA79EF48D602D41EEFA15640CABD656EA)
 
 ## 使用帧动画实现动画效果
 
@@ -242,4 +242,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/rBlS7DL5T7qQs1LCLA1Hzw/zh-cn_image_0000002815558609.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/rBlS7DL5T7qQs1LCLA1Hzw/zh-cn_image_0000002815558609.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=06BF016511F765F7BE9263043F32CF879770AA2C3146CCCC0EE5346CCF5EF078)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1625
 title: 地图放大后，亮度显示不足，影响用户体验
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 地图放大后，亮度显示不足，影响用户体验
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:29+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:5504de399304b82123f701016c55e4f58833bb2a218de0496afe12a365bf4d2f
 ---
@@ -82,4 +82,4 @@ struct FixedBrightnessDemo {
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/mkVk_pnfQFGJru2DMDW2LA/zh-cn_image_0000002658856845.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/mkVk_pnfQFGJru2DMDW2LA/zh-cn_image_0000002658856845.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E2D5B32048F2AD155265F00CE4642CB71087BB99F649D5C402922A50A516921 "点击放大")

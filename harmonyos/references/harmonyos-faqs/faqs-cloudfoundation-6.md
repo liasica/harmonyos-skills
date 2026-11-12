@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-cloudfound
 title: 元服务使用云数据库是否需要获取用户凭据
 breadcrumb: FAQ > 应用服务开发 > 云开发服务（Cloud Foundation Kit） > 元服务使用云数据库是否需要获取用户凭据
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:47+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:c3529b14bf01862e352cc93cc94cf627b053bbbb7a55b62eba8ab49dca820a6d
 ---
@@ -18,7 +18,7 @@ content_hash: sha256:c3529b14bf01862e352cc93cc94cf627b053bbbb7a55b62eba8ab49dca8
 
 应用/元服务后端构建典型场景：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/gvJPQdGCQ1G_vjHO4r8xag/zh-cn_image_0000002658794005.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/gvJPQdGCQ1G_vjHO4r8xag/zh-cn_image_0000002658794005.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9E5082020E787FB2033A4FAB7B9FAC339CFE48121E7D897015F6538D5462D2E "点击放大")
 
 ## 解决方案
 

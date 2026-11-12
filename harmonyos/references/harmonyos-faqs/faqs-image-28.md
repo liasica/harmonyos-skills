@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-28
 title: 对图片进行“图片转格式”操作后，图片预览图有比较长时间的空白
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 对图片进行“图片转格式”操作后，图片预览图有比较长时间的空白
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:27+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:202a17669fc38d9c2f73c68dbfc771f88ff1f78d7fa23a0c893f8e2b24e5a837
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:202a17669fc38d9c2f73c68dbfc771f88ff1f78d7fa23a0c893f8e2b24e
 
 应用对图片进行“图片转格式”操作后，图片预览空白，没有展示图片信息。等待比较长的一段时间后图片才展现。点击“下载”无响应。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/jBWFguPcTF-XZEhvyId9jQ/zh-cn_image_0000002628392598.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/jBWFguPcTF-XZEhvyId9jQ/zh-cn_image_0000002628392598.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=79D9677F818C30F8B11F96AB6B47CEF5667E7034CE63C2E42B5ECBC22E27C931 "点击放大")
 
 ## 背景知识
 
@@ -24,7 +24,7 @@ content_hash: sha256:202a17669fc38d9c2f73c68dbfc771f88ff1f78d7fa23a0c893f8e2b24e
 
 复现场景发现，应用的图片转换，整个转换过程在服务端执行，需要上传和下载。等待一段时间下载到图片之后，是可以获取到图片的预览图，图片通过Image组件展现，点击“下载”无响应。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/8W6NJHfkQ_KLrR1ly4zlsw/zh-cn_image_0000002658791865.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/8W6NJHfkQ_KLrR1ly4zlsw/zh-cn_image_0000002658791865.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=21D0EAA2F1E0E2CFBEFA2CC57DCFF6C1399C28EC786A28D2A649922E517C3C8C "点击放大")
 
 通过分析hilog日志，得到如下关键信息，可知图片通过http请求获取，返回数据超过最大限制或curl返回码错误。
 

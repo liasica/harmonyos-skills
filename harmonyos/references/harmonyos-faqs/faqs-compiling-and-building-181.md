@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: "编译报错\"Error: open 'xxx\\libimage_transcoder_shared.dll' failed\""
 breadcrumb: "FAQ > DevEco Studio > 编译构建 > 编译报错\"Error: open 'xxx\\libimage_transcoder_shared.dll' failed\""
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:2c14a8e4dfb2e95badf6e16b0d29375b0a74e562ea894909c4f6a949f93cd94b
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:2c14a8e4dfb2e95badf6e16b0d29375b0a74e562ea894909c4f6a949f93
 
 Windows下编译工程出现错误，提示“Error: open 'xxx\deveco-studio\sdk\default\hms\toolchains\lib\libimage\_transcoder\_shared.dll' failed”，加载dll失败。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/H3XXRH6CRRKWEEkkZXZhlA/zh-cn_image_0000002624638562.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/H3XXRH6CRRKWEEkkZXZhlA/zh-cn_image_0000002624638562.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=BAC27FDA1C5EF7E21206CF83E82EE0306D6C445A56799202B0C2AD1785CA7F2C)
 
 **可能原因**
 
@@ -22,11 +22,11 @@ Windows下编译工程出现错误，提示“Error: open 'xxx\deveco-studio\sdk
 
 例如，用户环境变量中包含%USERPROFILE%\AppData\Local\Microsoft\WindowsApps。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/1U6lhuCuRmqGqP8c-ZKEWQ/zh-cn_image_0000002654837967.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/1U6lhuCuRmqGqP8c-ZKEWQ/zh-cn_image_0000002654837967.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=153C14E3D8C4AE68DA14EE514C09224B7CEC4FB6A94AC5C0D840592ED74BA835)
 
 该路径的文件无法访问。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/SOamCwfERhSij7IL4XhleQ/zh-cn_image_0000002624478656.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/SOamCwfERhSij7IL4XhleQ/zh-cn_image_0000002624478656.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2E5BEE9068DACD9EF2815A18DD80430D24B780514FA4C7A9066C372D2960A77)
 
 **解决措施**
 

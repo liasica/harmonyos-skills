@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1579
 title: 如何解决单个状态变量绑定多个@Watch监听器时部分监听器失效的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决单个状态变量绑定多个@Watch监听器时部分监听器失效的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:974ecc893dd293adb70a4b2a6572667f54d8578727ac34d292e3de04d7dd166f
 ---
@@ -52,7 +52,7 @@ struct S20250403171354570182 {
 
 change1()函数未执行，change2()函数被执行，问题现象如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/AcBDaqO4QjWUItAMN4bSyQ/zh-cn_image_0000002628770192.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/AcBDaqO4QjWUItAMN4bSyQ/zh-cn_image_0000002628770192.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E9B58C00A62BB0670BE82F42218231C50F7EA26D767991ADE550C854FDCE335 "点击放大")
 
 ## 解决方案
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-34
 title: 如何处理相机旋转的相关问题
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera） > 如何处理相机旋转的相关问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:d714560d5bedbc50f9ce2d71d5dc84b4a01f571926ceb68a02da723125794783
 ---
@@ -26,7 +26,7 @@ content_hash: sha256:d714560d5bedbc50f9ce2d71d5dc84b4a01f571926ceb68a02da7231257
 * **场景二：使用ImageReceiver接收图片旋转。**
   + **问题现象：** 使用[ImageReceiver](../harmonyos-references/arkts-apis-image-imagereceiver.md)接收相机预览流图片，将获取到的YUV数据buffer解码成RGBA\_8888的图片并进行实时送显，角度与实际拍摄角度不一致，如下图所示：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/yfwSgRb_RVG9lhWIBIQaig/zh-cn_image_0000002658911793.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/yfwSgRb_RVG9lhWIBIQaig/zh-cn_image_0000002658911793.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A9BC84651BBF2DB81432F8BF38C885EB2B276BE56C38F8B69881A8A617BA878 "点击放大")
   + **解决方案：** 目前预览流角度固定后置摄像头得到的YUV数据顺时针旋转270度。可以对buffer数据再顺时针旋转90度，使用旋转后的buffer创建[ImageSource](../harmonyos-references/arkts-apis-image-imagesource.md)，再进行解码等操作，核心代码见rotateYUVDegree90()方法，完整参考代码如下：
 
     ```ts
@@ -248,7 +248,7 @@ content_hash: sha256:d714560d5bedbc50f9ce2d71d5dc84b4a01f571926ceb68a02da7231257
 
     旋转之后的预览图像如下图所示：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/C3QzaVnwSly8NGF4sNEgWA/zh-cn_image_0000002628392580.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/C3QzaVnwSly8NGF4sNEgWA/zh-cn_image_0000002628392580.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4F050664E24353CCF91345B33C1B8447FB92DB568DC9C0BE52695C3EF1DEAE6 "点击放大")
 * **场景三：视频通话旋转。**
   + **问题现象：** 两个设备之间进行视频通话，存在设备间持握方向不一致问题，导致一端看到的另一端画面是颠倒的。
   + **解决方案：** 在本端将画面转正，再通过网络发送到对端，可以使用libyuv三方库进行自绘制场景预览角度的归一化处理。

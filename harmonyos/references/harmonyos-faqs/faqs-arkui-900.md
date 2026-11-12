@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-900
 title: PersistentStorage无法获取持久化的数据如何解决
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > PersistentStorage无法获取持久化的数据如何解决
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:38+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:2bd589c3ed1e409b79beeb2225b415ffb427c9d39e15effa77b4833d057ce076
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:2bd589c3ed1e409b79beeb2225b415ffb427c9d39e15effa77b4833d057
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/Ru6vkfnvQWG-_5zuFdFFkg/zh-cn_image_0000002628559668.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/Ru6vkfnvQWG-_5zuFdFFkg/zh-cn_image_0000002628559668.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=6EB9EF7ACCE44096EA8A6AA53BA0F333EC0EEFB4564D69B1A754B7589801F704 "点击放大")
 
 问题代码示例参考如下：
 
@@ -116,7 +116,7 @@ content_hash: sha256:2bd589c3ed1e409b79beeb2225b415ffb427c9d39e15effa77b4833d057
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/6yKwlXPVTPij5Tx6-mS5Zw/zh-cn_image_0000002658918975.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/6yKwlXPVTPij5Tx6-mS5Zw/zh-cn_image_0000002658918975.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1474DE65CAD14E131531E5C502BB9E1516E7F9FC7B6D5B03B3013C84FC1E0E6 "点击放大")
 
 ## 背景知识
 

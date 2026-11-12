@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1407
 title: 如何解决组件宽高过长导致组件截图失败的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 屏幕管理 > 如何解决组件宽高过长导致组件截图失败的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:28+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:976d2500aa32d37f762e00d1243323ba5e4557b8ec9296bc92bdbba59893af8e
 ---
@@ -12,9 +12,9 @@ content_hash: sha256:976d2500aa32d37f762e00d1243323ba5e4557b8ec9296bc92bdbba5989
 
 使用componentSnapshot.get接口进行组件截图，组件内容过长会出现截图失败，问题现象和代码如下图，图中是通过输入框数字控制List组件中的图片数量，然后对List组件进行截图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/oMoWW-QEToCMxSg0e2XXug/zh-cn_image_0000002658842529.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/oMoWW-QEToCMxSg0e2XXug/zh-cn_image_0000002658842529.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=15D5E21B612FCD8E2E750DFBF0788B199333AF51CF158802041D1A92F2BE06BC "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/12u_s7hRTwKwkLisSJfouQ/zh-cn_image_0000002628763164.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/12u_s7hRTwKwkLisSJfouQ/zh-cn_image_0000002628763164.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=F49D3D84AFF507B12DB9069C41E931629526821119AF4A280469D4A43C874564 "点击放大")
 
 ## 背景知识
 

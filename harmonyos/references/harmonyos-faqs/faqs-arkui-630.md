@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-630
 title: 如何实现子组件对角线分布效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现子组件对角线分布效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:0ef4a46252b351c2f17d47388728dafe8bfcebc45813275cba054ffb0ba7171c
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:0ef4a46252b351c2f17d47388728dafe8bfcebc45813275cba054ffb0ba
 
 如何实现组件对角线布局效果，如一个子组件位于父组件的左上角，另一个子组件位于父组件的右下角。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/fIHCUTgBR4ebdreuIy3qog/zh-cn_image_0000002658913489.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/fIHCUTgBR4ebdreuIy3qog/zh-cn_image_0000002658913489.png?HW-CC-KV=V1&HW-CC-Date=20261112T233158Z&HW-CC-Expire=31536000000&HW-CC-Sign=A273396BC0F7B386B6586F349796F6BA1F7573090857196C624538035875A063 "点击放大")
 
 ## 背景知识
 
@@ -69,7 +69,7 @@ content_hash: sha256:0ef4a46252b351c2f17d47388728dafe8bfcebc45813275cba054ffb0ba
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/759tunenSD2zBJBhuF0clg/zh-cn_image_0000002658793541.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/759tunenSD2zBJBhuF0clg/zh-cn_image_0000002658793541.png?HW-CC-KV=V1&HW-CC-Date=20261112T233158Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C6EDB665648E989A4D116AC5D5B79DB21E22C94FA7426A6F6D4709EBB3CAB56 "点击放大")
 * **方案二**：使用Stack组件。
 
   实现原理：设置多个子组件在容器内的对齐方式，但需要定义里面Stack组件的宽高，来控制子组件重叠情况。
@@ -112,7 +112,7 @@ content_hash: sha256:0ef4a46252b351c2f17d47388728dafe8bfcebc45813275cba054ffb0ba
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/ujgm9wZKTbiibi82IV0qQw/zh-cn_image_0000002628554174.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/ujgm9wZKTbiibi82IV0qQw/zh-cn_image_0000002628554174.png?HW-CC-KV=V1&HW-CC-Date=20261112T233158Z&HW-CC-Expire=31536000000&HW-CC-Sign=14FD87F40D8834A477D0DB84D3B8295C9E042E92F6EB192526D313326F6416BB "点击放大")
 * **方案三**：设置position属性。
 
   实现原理： 基于父组件内容区四边确定位置，top/left/right/bottom分别为组件各边距离父组件内容区相应边的边距，通过边距来确定组件相对于父组件内容区的位置。
@@ -151,7 +151,7 @@ content_hash: sha256:0ef4a46252b351c2f17d47388728dafe8bfcebc45813275cba054ffb0ba
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/9BhPnWJ7S8mpeV0SSZnwEA/zh-cn_image_0000002628394276.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/9BhPnWJ7S8mpeV0SSZnwEA/zh-cn_image_0000002628394276.png?HW-CC-KV=V1&HW-CC-Date=20261112T233158Z&HW-CC-Expire=31536000000&HW-CC-Sign=B53A83F12F3219C8AE2B50BA3A6289078361747228FC4B05D9EAC961454B3736 "点击放大")
 
 ## 总结
 

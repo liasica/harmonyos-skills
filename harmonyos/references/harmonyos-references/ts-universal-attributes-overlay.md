@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 浮层
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 基础属性 > 浮层
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:f1aa5acd7b664a4b513d6444cee79774d43c79e030bd8d0233ad3d133c1ddfcf
 ---
@@ -137,7 +137,7 @@ struct OverlayExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/K5olERxbRxu4pT9fxxBzMg/zh-cn_image_0000002815400477.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/K5olERxbRxu4pT9fxxBzMg/zh-cn_image_0000002815400477.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=E64625DD48D7DD7C290A257644778FDA30DA87D2F7E5070FDC95EC729BF8FCCF)
 
 ### 示例2（通过builder设置浮层）
 
@@ -173,7 +173,7 @@ struct OverlayExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/l8B1UmF0Sta0Xz1VgNrCMQ/zh-cn_image_0000002786520902.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/l8B1UmF0Sta0Xz1VgNrCMQ/zh-cn_image_0000002786520902.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=95A43B302880A5E5B5FB9C1C8914FBAE7280079E1A01B7AA71DD4D8C9D51096E)
 
 ### 示例3（通过ComponentContent设置浮层）
 
@@ -232,4 +232,4 @@ struct OverlayContentPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/eYShOJ0_RxCWp5PardaNGA/zh-cn_image_0000002786360974.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/eYShOJ0_RxCWp5PardaNGA/zh-cn_image_0000002786360974.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=38FCC18A62B0F9B9C2D903685F205CBC200C1862A377919035C06E46CF1C3BB2)

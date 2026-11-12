@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1012
 title: Canvas绘制文字时如何设置样式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Canvas绘制文字时如何设置样式
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-13
 content_hash: sha256:6d5d376d77ed9d3df959eec163a0823d7b9d7fa2122af1746d79ce574664daf5
 ---
@@ -74,7 +74,7 @@ Canvas提供了绘制文字的API，开发者在使用fillText绘制文字时会
 
      效果预览：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/wQS6GzAgTgqed9bNJMNzpQ/zh-cn_image_0000002658804045.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/wQS6GzAgTgqed9bNJMNzpQ/zh-cn_image_0000002658804045.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=4AC0A714409D78B255449DCB29E237352BF228FC9F5CB49342DCCEC01E1C73BC "点击放大")
 
 * **场景三**：绘制渐变色字体。
 
@@ -123,7 +123,7 @@ Canvas提供了绘制文字的API，开发者在使用fillText绘制文字时会
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/ULMhrQ2PSsWQiXVgcgZ8Qw/zh-cn_image_0000002628404776.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/ULMhrQ2PSsWQiXVgcgZ8Qw/zh-cn_image_0000002628404776.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=C38735C34395B1B6C36FEA07926C039568ECF57EC9DF1E374616A61F17D34032 "点击放大")
 
 * **场景四**：设置字体阴影。
 
@@ -159,7 +159,7 @@ Canvas提供了绘制文字的API，开发者在使用fillText绘制文字时会
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/YCsO47nvQGS3ejQtgbF0wA/zh-cn_image_0000002628564682.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/YCsO47nvQGS3ejQtgbF0wA/zh-cn_image_0000002628564682.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=74F264D8B1FF545C786F70460EA62C1D5199A687CE3EB37F0927514403106D74 "点击放大")
 
 ## 总结
 

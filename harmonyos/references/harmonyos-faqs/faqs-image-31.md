@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-31
 title: 图片像素错误导致显示异常
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 图片像素错误导致显示异常
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:27+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-13
 content_hash: sha256:3865e51d5297e391db068dc297163b91a5146ff8f1244ed7ed4fb1ecc2f01b19
 ---
@@ -28,7 +28,7 @@ content_hash: sha256:3865e51d5297e391db068dc297163b91a5146ff8f1244ed7ed4fb1ecc2f
 
   问题现象：图像正常显示但图像中颜色显示错误。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/9BFMeUYOSheRGEc3PRed2g/zh-cn_image_0000002658911809.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/9BFMeUYOSheRGEc3PRed2g/zh-cn_image_0000002658911809.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=36249600CA3563BACEA171526E868759BF51BE6BC45849DAB3D18446C713FE0B)
   1. 在Native侧创建PixelMap传递给ArkTS的Image组件进行展示时，报出colorspace的错误，图片颜色显示错误。
   2. 在使用createPixelMap创建PixelMap发现图片变黄了。
   3. 使用readPixelsToBuffer和readPixels读取像素的排列格式不同，图片显示的颜色不同。
@@ -37,11 +37,11 @@ content_hash: sha256:3865e51d5297e391db068dc297163b91a5146ff8f1244ed7ed4fb1ecc2f
 
   图一：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/L11593XvSaSv6_DJRdVRAA/zh-cn_image_0000002628392600.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/L11593XvSaSv6_DJRdVRAA/zh-cn_image_0000002628392600.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B24645CC79D110E0479CCA2357C4674EC0102DD17B9CD380F705C2BCD5D7EE4 "点击放大")
 
   图二：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/5LNSto4SReq1rht-wVnazA/zh-cn_image_0000002658791867.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/5LNSto4SReq1rht-wVnazA/zh-cn_image_0000002658791867.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB45080F35F281E548BACDC6F8A68D5A1ADDC537856C4AE4B2F41902DE945C22 "点击放大")
 
   原因分析：颜色显示错误如RGB用BGR的像素格式去解析渲染，会导致原本R红色通道的值变为B蓝色通道的值，B蓝色通道的值变为R红色通道的值，导致最终颜色错误。
 
@@ -56,11 +56,11 @@ content_hash: sha256:3865e51d5297e391db068dc297163b91a5146ff8f1244ed7ed4fb1ecc2f
 
   图三：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/ZyhqlsqMR1adCo5mP53dgg/zh-cn_image_0000002628552492.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/ZyhqlsqMR1adCo5mP53dgg/zh-cn_image_0000002628552492.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=A47322413191F2C1E27C071C5754C64BB511F4CC599E692E0D40568F37BA2431 "点击放大")
 
   图四：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/2NK9iRFIRryVKZdXwhShwQ/zh-cn_image_0000002658911811.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/2NK9iRFIRryVKZdXwhShwQ/zh-cn_image_0000002658911811.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=16B37651A73CBBF841E68A421061EF9202DC33440A3BD8E4076ED2280DED8B88 "点击放大")
 
   原因分析：如果图像中有多种颜色，颜色显示错误错乱，无法正常显示可见图片，并有清晰可见且规则排列的点，则需要确认色彩空间的表示是否错误。
 
@@ -192,7 +192,7 @@ content_hash: sha256:3865e51d5297e391db068dc297163b91a5146ff8f1244ed7ed4fb1ecc2f
 
   问题现象：图片呈明显的斜条纹撕裂：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/Sw7_RykGT42opd37M0FV1Q/zh-cn_image_0000002628392604.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/Sw7_RykGT42opd37M0FV1Q/zh-cn_image_0000002628392604.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=63EDC5FA6ECB35FE901C17B9E2F27EBD58DC13447E03B7151B8A60EF98495988)
 
   常见跨距花屏场景：
   + 相机预览中发生跨距异常。
@@ -202,19 +202,19 @@ content_hash: sha256:3865e51d5297e391db068dc297163b91a5146ff8f1244ed7ed4fb1ecc2f
 
   假设图片对齐为8，宽为6，跨距为8，填充为2，正常显示如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/j7p_OOBxSCKYwLkdt6z25g/zh-cn_image_0000002658791869.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/j7p_OOBxSCKYwLkdt6z25g/zh-cn_image_0000002658791869.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=71AC7BE77C0FB0978F58D804FA484356631141B61961B33EEE539F2EBA2CA418)
 
   当跨距设置错误时会出现下面两种情况：
 
   + 当padding填充不够时（假设为1），因为对齐为8此时会读取8个像素数据，现在只有1个padding，此时就会把第二行的像素数据多读取一个如下图所示：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/YICI_GAPR-Krez1s4CpwTg/zh-cn_image_0000002628552496.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/YICI_GAPR-Krez1s4CpwTg/zh-cn_image_0000002628552496.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B7F0F9162BAA2157FF86CD97237186E7BF5F855017A5ACB7FA627CA2C2B1471)
 
   此时画面因为像素的错位显示呈现出左下往右上的撕裂斜条纹。
 
   + 同理此时跨距过大，即padding填充过多时（假设为3）会导致多的一个填充被下一行像素数据读取如下图所示：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/Z70vXcHwQiWDjOyzeEHJhg/zh-cn_image_0000002658911813.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/Z70vXcHwQiWDjOyzeEHJhg/zh-cn_image_0000002658911813.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=84AE5B593DAB58A7793B9B4A648C5AE6960158526CC6683AC86106F5CAC8D191)
 
   此时画面因为像素的错位显示呈现出左上往右下的撕裂斜条纹。
 

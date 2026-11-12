@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.inputMethodList (输入法切换列表控件)"
 breadcrumb: API参考 > 应用框架 > IME Kit（输入法开发服务） > ArkTS API > @ohos.inputMethodList (输入法切换列表控件)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:55:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:d343f84d8442011997b796fb0cd16c8b9fb2f964ab41cd7b9992b392078a6ce6
 ---
@@ -187,4 +187,4 @@ struct SettingsItem {
 
 示例效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/JFPsFLg1QMq0VxOqjWef7A/zh-cn_image_0000002815561497.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/JFPsFLg1QMq0VxOqjWef7A/zh-cn_image_0000002815561497.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7EC28E477D0DAFC56494BEAE1997EF094269F80C58D473D52D721A8670EDCA4)

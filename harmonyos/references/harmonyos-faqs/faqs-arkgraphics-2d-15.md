@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: 使用drawTextBlob进行文本绘制的常见问题
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > 使用drawTextBlob进行文本绘制的常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:bb612da286731d0b9afa199882e4704612db04ac36813cc6d7d631f8f2e338a3
 ---
@@ -65,11 +65,11 @@ content_hash: sha256:bb612da286731d0b9afa199882e4704612db04ac36813cc6d7d631f8f2e
 
   问题效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/mGZmJ9WPSmu1ukiSBwDnlg/zh-cn_image_0000002628553198.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/mGZmJ9WPSmu1ukiSBwDnlg/zh-cn_image_0000002628553198.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=48689E688DE76887F190822EAD659BCAE3857864AC6E69347955CD24349ECBF3 "点击放大")
 
   因此在计算文本坐标时要根据字体的bound做出相应调整，bound和baseline的关系如下图所示，从Top到bottom为bound垂直区域，ascent为文本的升部，decender为文本的降部。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/AInbJDH0TSumnkhm7FmHIA/zh-cn_image_0000002658912515.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/AInbJDH0TSumnkhm7FmHIA/zh-cn_image_0000002658912515.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF84498724126FC3ADCB862E81CE7FE57C8D41A10B0114A84A75DF8C124D43D7 "点击放大")
 
   根据bound修改后的绘制效果参考代码如下：
 
@@ -167,7 +167,7 @@ content_hash: sha256:bb612da286731d0b9afa199882e4704612db04ac36813cc6d7d631f8f2e
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/H2ipbNDWTjqrBmjjPqzY4A/zh-cn_image_0000002658792571.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/H2ipbNDWTjqrBmjjPqzY4A/zh-cn_image_0000002658792571.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=D25D27B891471993CFD853BE5F290222F56E1419606773A683DB8D71F91C0D57 "点击放大")
 
 * **场景三**：使用makeFromFile无法获取rawfile中文本字体文件。
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1429
 title: 如何实现双层Swiper组件嵌套联动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现双层Swiper组件嵌套联动
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:7d6a80a3bb52683b2776967a95101644198e1c87e261905f077b58fd3468b465
 ---
@@ -14,7 +14,7 @@ Swiper组件嵌套Swiper，当子组件滑动到首页或尾页边界时，如�
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/qcc5fEzzTrm_7iSWjD9d_Q/zh-cn_image_0000002628763650.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/qcc5fEzzTrm_7iSWjD9d_Q/zh-cn_image_0000002628763650.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=37ED2EF418371451B0244BC8DE3D2CE0178BEB4A49181102F1C947712EA2349A "点击放大")
 
 ## 背景知识
 

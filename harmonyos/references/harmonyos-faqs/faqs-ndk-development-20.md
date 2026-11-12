@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-develo
 title: 在HarmonyOS工程中如何引用外部构建的so库
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 在HarmonyOS工程中如何引用外部构建的so库
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:58+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-13
 content_hash: sha256:0a8228ed4fe25d9fcd1dd36a041bb3f71880ce11ad1fbd3902ac5f73c7af004d
 ---
@@ -51,7 +51,7 @@ content_hash: sha256:0a8228ed4fe25d9fcd1dd36a041bb3f71880ce11ad1fbd3902ac5f73c7a
        ```
     5. 工程关键部分结构。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/kbOjPNxiSheuoVN9-uda0Q/zh-cn_image_0000002659138349.png)
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/kbOjPNxiSheuoVN9-uda0Q/zh-cn_image_0000002659138349.png?HW-CC-KV=V1&HW-CC-Date=20261112T233214Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEBC38AA88B85C01A88E4B2B5CB9C49E9F839162BFAD0382DC162A93647DF8CA)
   + 注意事项：
 
     在引用过程中除了将已经适配HarmonyOS的libxxx.so库文件置于entry/libs对应的架构目录下外，还需要将编译三方so库时配套产生的libc++\_shared.so库文件置于该目录下。
@@ -82,7 +82,7 @@ content_hash: sha256:0a8228ed4fe25d9fcd1dd36a041bb3f71880ce11ad1fbd3902ac5f73c7a
 
        假设xxx代表的是三方库名称，xxx文件夹下包含了arm64架构生成的二进制文件，架构目录下包含了该库的头文件(include)以及二进制文件(lib)。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/kLjJt3jOSHW25sQRvxN4tg/zh-cn_image_0000002629058998.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/kLjJt3jOSHW25sQRvxN4tg/zh-cn_image_0000002629058998.png?HW-CC-KV=V1&HW-CC-Date=20261112T233214Z&HW-CC-Expire=31536000000&HW-CC-Sign=77838C8750869D0BF35C831A920570877860BF51576ECBEEF4C93B0C9D713F05 "点击放大")
   + 注意事项。
     1. 应用在引用动态库的时候是通过soname来查找的，所以我们需要将名字为soname的库文件拷贝到entry/libs/${OHOS\_ARCH}/目录下。
 

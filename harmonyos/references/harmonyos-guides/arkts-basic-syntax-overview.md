@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-basic-s
 title: 基本语法概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 基本语法概述
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:cb67ae9f07ed03009bab33262e2d8639e964908e4daa84e28f0143ca5447aa85
 ---
@@ -14,13 +14,13 @@ content_hash: sha256:cb67ae9f07ed03009bab33262e2d8639e964908e4daa84e28f0143ca544
 
 **图1** 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/BU02WYJBTW2RVyedA5uJDA/zh-cn_image_0000002786518414.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/BU02WYJBTW2RVyedA5uJDA/zh-cn_image_0000002786518414.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=925679865B418D2C1464A64DB76375EEA91EF1E089DC4FFA6F5254E9FD411B04)
 
 本示例中，ArkTS的基本组成如下所示。
 
 **图2** ArkTS的基本组成
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/ZZ6xsyV-R0mAvbvBnY9d0A/zh-cn_image_0000002786358486.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/ZZ6xsyV-R0mAvbvBnY9d0A/zh-cn_image_0000002786358486.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E66D22CF32EA710045442D9BE7ECDF1E1CDE6B9A13B224554A88AFC3E6FFB8E2)
 
 **说明** 
 

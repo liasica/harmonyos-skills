@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-27
 title: 地图如何实现添加折线显示在地点名称和图标（底图POI）上层
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 地图如何实现添加折线显示在地点名称和图标（底图POI）上层
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:38+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-12
 content_hash: sha256:fd36c70a1b0292afef0f7840a8fb271aef2eea5f28aa9655b211ccc45773f35d
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:fd36c70a1b0292afef0f7840a8fb271aef2eea5f28aa9655b211ccc4577
 
 地图添加折线后，折线显示在了地点名称和图标（底图POI）的下层，对折线有遮挡，如何让折线显示在上层。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/wzwFanjnQj6cpe3RdvJ7KQ/zh-cn_image_0000002658913579.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/wzwFanjnQj6cpe3RdvJ7KQ/zh-cn_image_0000002658913579.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=C55AA26DE5B00CCF59D3FC97F3B6F6A6F69B45DA457E695E77DF5F6AB5F64A02 "点击放大")
 
 ## 背景知识
 

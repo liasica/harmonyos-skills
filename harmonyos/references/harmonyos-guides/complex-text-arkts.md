@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/complex-text-
 title: 复杂文本绘制与显示（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 文本绘制与显示 > 复杂文本绘制与显示（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:13+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:05c8e411725b832a62e77b5cd80f5260fce31cd4f58e217af817f2923d6b10c3
 ---
@@ -75,7 +75,7 @@ content_hash: sha256:05c8e411725b832a62e77b5cd80f5260fce31cd4f58e217af817f2923d6
 
 ### 效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/9p7c-DApQcWjFT8T8aQLxg/zh-cn_image_0000002815559469.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/9p7c-DApQcWjFT8T8aQLxg/zh-cn_image_0000002815559469.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=B99C39BD58546C8097CBF359448E770A37463A7239031B22C077F10E5E1118BC)
 
 ## 多行文本绘制与显示
 

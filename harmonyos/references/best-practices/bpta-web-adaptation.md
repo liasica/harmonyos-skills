@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-web-adapta
 title: Web响应式布局
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 特殊界面布局场景 > Web响应式布局
 category: best-practices
-scraped_at: 2026-11-10T10:42:03+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-15
 content_hash: sha256:67b0dd4e149e520cc972e0563e76c147538a5e6f3a29be1b102dc37921bd25d3
 ---
@@ -176,7 +176,7 @@ window对象提供了resize事件注册，该事件在文档视图（窗口）�
 CSS中提供了grid布局，与[栅格布局（GridRow/GridCol）](../harmonyos-guides/arkts-layout-development-grid-layout.md)类似，它将网页内容划分成一个一个的网格，通过任意组合不同的网格，从而做出各种各样的布局。
 
 **图1** 宫格布局示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/utWaNaumTWO6X_GNm3Ghjw/zh-cn_image_0000002193850828.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/utWaNaumTWO6X_GNm3Ghjw/zh-cn_image_0000002193850828.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=0EC0A377BF445B8630F6AC84C273D033B84BB20B3736D4D64586AA35BFF18512 "点击放大")
 
 关于宫格布局，有几个关键概念需要了解。更多详细信息，开发者可以查阅CSS Grid的相关资料。
 
@@ -229,7 +229,7 @@ CSS中提供了grid布局，与[栅格布局（GridRow/GridCol）](../harmonyos-
 
 **图2** 示例代码效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/354L_LxsQNC-_pL9Hmfo0g/zh-cn_image_0000002193850848.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/354L_LxsQNC-_pL9Hmfo0g/zh-cn_image_0000002193850848.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=757998CAF6E295961C698A051C464806E2423A0ECADA9A5EC6A47931946E8D05)
 
 当元素个数较少时，可以通过逐个书写（如grid-template-columns: 100px 100px 100px）的方式进行排列指定。然而，当元素数量较多，例如一行有十列时，这种写法的可读性会变差。此时，可以使用repeat()函数来简化书写。该函数接收两个参数：第一个参数为重复的次数，第二个参数为要重复的值。例如，上述写法可以改写为grid-template-columns: repeat(3, 100px)，效果相同。在多列情况下，repeat()函数能显著提高代码的可读性和简洁性。
 

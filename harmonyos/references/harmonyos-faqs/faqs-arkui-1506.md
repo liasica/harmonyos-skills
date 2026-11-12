@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1506
 title: 如何解决Grid组件在编辑模式打开后拖拽子组件异常问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Grid组件在编辑模式打开后拖拽子组件异常问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:24+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:45f2c5eea96a3f07f9023c29cac872cab4002b08307bf861cb0a07f0b874b1e4
 ---
@@ -18,7 +18,7 @@ Grid组件编辑模式打开后拖拽效果异常，预期和实际效果如下�
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/rlTS-dg2S7iGe1O6Mb5dEg/zh-cn_image_0000002658845801.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/rlTS-dg2S7iGe1O6Mb5dEg/zh-cn_image_0000002658845801.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=69BB2CB97105CCECC32B85EF3BD55BBDD4A4400F2DD51513FC48A8C4EB9220BE "点击放大")
 
 问题代码如下：
 
@@ -173,7 +173,7 @@ struct GridPullPage {
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/geeemKbcSGuBKJJumvhe_g/zh-cn_image_0000002628766432.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/geeemKbcSGuBKJJumvhe_g/zh-cn_image_0000002628766432.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=B088DEC7691B927A43B2461FCF98A4E992AA440D8703E55BA8F08B6025B83B75 "点击放大")
 
 ## 背景知识
 

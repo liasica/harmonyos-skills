@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1652
 title: 应用在启动和退出时，状态栏颜色突兀
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 应用在启动和退出时，状态栏颜色突兀
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:27+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:c45fee5b8bf967212a4cd777bde60c7dbdd05ffce4be8200589d7d007f4c3ad7
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:c45fee5b8bf967212a4cd777bde60c7dbdd05ffce4be8200589d7d007f4
 
 进入应用时状态栏颜色由白色突变为黑色，退出应用时状态栏颜色由黑色突变为透明。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/vEgwXpXHSzCN-WxrvjZ9lQ/zh-cn_image_0000002628661000.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/vEgwXpXHSzCN-WxrvjZ9lQ/zh-cn_image_0000002628661000.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=F297EF3D2BCF0052878671249108FCB971F1BCAE4E61F017F07771B3A230F48C "点击放大")
 
 ## 背景知识
 
@@ -108,4 +108,4 @@ struct Index {
 
    效果图如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/ja6xzplQQGWK8cCZZ1kh1w/zh-cn_image_0000002659060261.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/ja6xzplQQGWK8cCZZ1kh1w/zh-cn_image_0000002659060261.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=791DEB363A0916129B05049E845E465AEE776406F49A7C4835B3D257927FCB92 "点击放大")

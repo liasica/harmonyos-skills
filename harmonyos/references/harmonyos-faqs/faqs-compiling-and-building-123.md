@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: "如何解决编译报错“Error: cJSON_Parse failed, please check the JSON file.”的问题"
 breadcrumb: "FAQ > DevEco Studio > 编译构建 > 如何解决编译报错“Error: cJSON_Parse failed, please check the JSON file.”的问题"
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:54+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:b2142f665be7c14434f55579b5b3bba71ad4a5c104c015f1d69ec3a83bce170e
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:b2142f665be7c14434f55579b5b3bba71ad4a5c104c015f1d69ec3a83bc
 
 编译错误：“Error: cJSON\\_Parse failed”。请检查JSON文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/tTa4W1gCSrOJ8Nb-fCjD7Q/zh-cn_image_0000002654797961.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/tTa4W1gCSrOJ8Nb-fCjD7Q/zh-cn_image_0000002654797961.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0502D3789AAF114FB02AC8624864506738417EB865C0BA14B521E8EF19F51FA "点击放大")
 
 **报错原因**
 

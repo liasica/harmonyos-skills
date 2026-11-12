@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: HdsActionBar (操作栏)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsActionBar (操作栏)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:55:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:1c88565cb1b43a4bdea84d900ddd005477afac3e843d13e37224a80cb66ef364
 ---
@@ -273,4 +273,4 @@ struct TestActionBar {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/2NpdeI4UTwC2lsnIeMyjsQ/zh-cn_image_0000002786522016.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/2NpdeI4UTwC2lsnIeMyjsQ/zh-cn_image_0000002786522016.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA0332C6217062170FC16DEEC8EE750D3CABE379469484102E4319C4312375DD)

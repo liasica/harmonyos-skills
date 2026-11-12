@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-audio-reco
 title: 基于AVRecorder录制格式化音频（ArkTS）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频录制系列开发实践 > 基于AVRecorder录制格式化音频（ArkTS）
 category: best-practices
-scraped_at: 2026-11-10T10:42:02+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-09
 content_hash: sha256:19f048dbc2a3a649e08df607016fb2f07844ea3ee55f8c56be720afc74dac13a
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:19f048dbc2a3a649e08df607016fb2f07844ea3ee55f8c56be720afc74d
 
 基于[Interface (AVRecorder)](../harmonyos-references/arkts-apis-media-avrecorder.md)录制格式化音频（ArkTS）实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/OCgUI0-_TuOa9QacNtp4Rg/zh-cn_image_0000002524061074.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/OCgUI0-_TuOa9QacNtp4Rg/zh-cn_image_0000002524061074.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1BE7246BE3665E4F215A98FDB04F59346231509CF7FA682AC77B11D5D986B41 "点击放大")
 
 本文的主要内容如下：
 
@@ -30,7 +30,7 @@ content_hash: sha256:19f048dbc2a3a649e08df607016fb2f07844ea3ee55f8c56be720afc74d
 
 **图1** 录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/GWgIQQd9QA-WOfaPgq3Jqw/zh-cn_image_0000002555220983.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/GWgIQQd9QA-WOfaPgq3Jqw/zh-cn_image_0000002555220983.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC86113EAAEE724BD86F91B3C3ADADB0100C824D391A4D8019AC8C5312AE5838 "点击放大")
 
 ### 开发步骤
 

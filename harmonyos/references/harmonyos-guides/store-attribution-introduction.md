@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-attribu
 title: 开发概述
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用归因服务 > 开发概述
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:921bfefad9cef4c9b83e9ba179528ec1ba73950c030947bfc9158f0f4e993575
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:921bfefad9cef4c9b83e9ba179528ec1ba73950c030947bfc9158f0f4e9
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/yclagx3jTmuB6cZRFscS2Q/zh-cn_image_0000002815559593.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/yclagx3jTmuB6cZRFscS2Q/zh-cn_image_0000002815559593.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C7AA157C1719A6F055500FEF590746385CFD1094EB970F8D2F57B81431F63CC)
 
 业务流程中各任务描述如下：
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-896
 title: 如何解决切换输入框导致输入法重复拉起问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决切换输入框导致输入法重复拉起问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:13+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:4dc2d3777e0916dbe03874a117af8902c499f40a4d969008fd7d568dc8f3ee2b
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:4dc2d3777e0916dbe03874a117af8902c499f40a4d969008fd7d568dc8f
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/DkCbRHm_Sgyjhux7ow7ZDQ/zh-cn_image_0000002658918871.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/DkCbRHm_Sgyjhux7ow7ZDQ/zh-cn_image_0000002658918871.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=081159FA26312E5C4CE507FD0FA1A331F51FECAE9B1ADB4BE3FCCC271B9FBF55 "点击放大")
 
 ## 背景知识
 

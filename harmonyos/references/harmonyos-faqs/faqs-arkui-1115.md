@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1115
 title: 播放进度条的进度动画不流畅
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 播放进度条的进度动画不流畅
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:64f1004775c65730d9abba7d0f50a4329cb0da52ae456ee7be79f7564ebe15fa
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:64f1004775c65730d9abba7d0f50a4329cb0da52ae456ee7be79f7564eb
 
 视频播放进度条动画卡顿，如何解决该问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/M4EgsTtbSqankA5cnsKPaw/zh-cn_image_0000002658926709.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/M4EgsTtbSqankA5cnsKPaw/zh-cn_image_0000002658926709.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C3FD03478CFEA7C0B066D73389CB0377B9674CBD0934D792280D97C10FD378A "点击放大")
 
 ## 背景知识
 

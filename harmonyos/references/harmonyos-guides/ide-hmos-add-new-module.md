@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-add-
 title: 添加和删除模块
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 开发环境搭建 > 工程创建 > 模块管理 > 添加和删除模块
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-08
 content_hash: sha256:8dafb2de8242685a8a736b3b933e688663c78526da15b64fe5128a5466f48843
 ---
@@ -33,7 +33,7 @@ content_hash: sha256:8dafb2de8242685a8a736b3b933e688663c78526da15b64fe5128a5466f
      + 勾选（true）：可以被其它应用/元服务调用。
      + 不勾选（false）：不可以被其它应用/元服务调用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/fgL9HdjNTOqv25Y7qbDOiw/zh-cn_image_0000002810630667.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/fgL9HdjNTOqv25Y7qbDOiw/zh-cn_image_0000002810630667.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4FEAA0286A44F72B563A747D0216C61ABF3C032347FD3A30F303660754915AC "点击放大")
 3. 单击**确认**，等待创建完成后，可以在工程目录中查看和编辑新增的模块。工程中所包含模块的信息可以在[build-profile.json5](ide-hvigor-build-profile-app.md)中modules字段进行配置。
 
 ## 删除模块

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-182
 title: ArkTS中as类型断言及JSON反序列化常见场景与注意事项
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > ArkTS中as类型断言及JSON反序列化常见场景与注意事项
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:54+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:a8d6dac860f91f383dfc1190b3c8b5a04b517eabb45f4d8518d70feb06277c84
 ---
@@ -53,7 +53,7 @@ content_hash: sha256:a8d6dac860f91f383dfc1190b3c8b5a04b517eabb45f4d8518d70feb062
     this.options.position.target.longitude = lon;
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/QpbG5FasSCmNKIqWstQWeg/zh-cn_image_0000002629058992.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/QpbG5FasSCmNKIqWstQWeg/zh-cn_image_0000002629058992.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=66AF8F633353D6FD6A127D5D570B45BDF67B6A8BFE7DEDBF0CFD2DA9CEE8B47F)
 * **场景三：** 对对象类型使用类型断言，DevEco Studio静态检查报错Object literal must correspond to some explicitly declared class or interface (arkts-no-untyped-obj-literals) ：
 
   ```ts

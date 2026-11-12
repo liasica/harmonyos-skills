@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: button开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > button开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-28
 content_hash: sha256:5d18a4b2a96aed3a190c988816cf0237acb1731f9bf99e91db8eb2dab85076ce
 ---
@@ -33,7 +33,7 @@ button是按钮组件，其类型包括胶囊按钮、圆形按钮、文本按�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/qaILV1HRR7ueBR3Pp6xmFg/zh-cn_image_0000002786359310.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/qaILV1HRR7ueBR3Pp6xmFg/zh-cn_image_0000002786359310.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=947C16D071FA17AA44B51A5882784CA2E2435381D67074AE74A812DFB016FDAB)
 
 ## 设置button类型
 
@@ -73,7 +73,7 @@ button是按钮组件，其类型包括胶囊按钮、圆形按钮、文本按�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/VS_rNQq1TVOvXr_YVYxoww/zh-cn_image_0000002786359028.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/VS_rNQq1TVOvXr_YVYxoww/zh-cn_image_0000002786359028.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F9540243307C4833135355F1921C5D818C4A814987D0C4F1E80AC127925BF0F)
 
 **说明** 
 
@@ -166,7 +166,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/iIJZ42cuSGKctk527m0zLg/zh-cn_image_0000002815558731.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/iIJZ42cuSGKctk527m0zLg/zh-cn_image_0000002815558731.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=1604B0C9D1CF459DB99CB71EA1E9126633A1AA97E8D65C7B6FDE77C763582B08)
 
 **说明** 
 
@@ -273,4 +273,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/B-whn1wwR6OsENDPxwC49A/zh-cn_image_0000002815398815.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/B-whn1wwR6OsENDPxwC49A/zh-cn_image_0000002815398815.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7B8126EDAEE063E073BDC535CBDE583A1BEDA76CC937E7BED54E691C494A646)

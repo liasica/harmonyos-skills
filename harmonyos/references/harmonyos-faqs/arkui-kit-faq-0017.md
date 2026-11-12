@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: 如何控制TextArea最多显示多少行，超出尺寸的显示滚动条
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > 如何控制TextArea最多显示多少行，超出尺寸的显示滚动条
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:59+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:d5719997a643ecd94986d8017f01baf0a7317ba299aece60e8605895abf5335f
 ---
@@ -55,4 +55,4 @@ struct TextAreaDemo {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/4Olk0KLzSmeRoar_Y02uFA/zh-cn_image_0000002767956462.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/4Olk0KLzSmeRoar_Y02uFA/zh-cn_image_0000002767956462.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=8BEE85ADE2031890877C0625A2CCD4924C1127E4EC889E5E826674DE220E68B9 "点击放大")

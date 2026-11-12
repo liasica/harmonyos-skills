@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1557
 title: Progress如何控制平滑过渡的速率
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Progress如何控制平滑过渡的速率
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:ead1b13b5aeb87db05b6b5293735b64d826607f9ca39f546ce4091a830b134f6
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:ead1b13b5aeb87db05b6b5293735b64d826607f9ca39f546ce4091a830b
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/EnCEIM52RNav8kgGXINg_Q/zh-cn_image_0000002658968451.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/EnCEIM52RNav8kgGXINg_Q/zh-cn_image_0000002658968451.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=4E633A7935253C0077B3BB81F2A23EF1474DDFB066CDA7A8A9167EAECB494ED5 "点击放大")
 
 ## 背景知识
 

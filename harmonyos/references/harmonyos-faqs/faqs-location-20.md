@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-location-2
 title: 地图添加标记返回undefined如何解决
 breadcrumb: FAQ > 应用服务开发 > 位置服务（Location Kit） > 地图添加标记返回undefined如何解决
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-30
 content_hash: sha256:4a60076a0fa1669352dabc6ec44bc96f2a46c953c5221b6ad89490d20c3d49c7
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:4a60076a0fa1669352dabc6ec44bc96f2a46c953c5221b6ad89490d20c3
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/1cATFEIPTemdjr7oYqfyjg/zh-cn_image_0000002658913755.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/1cATFEIPTemdjr7oYqfyjg/zh-cn_image_0000002658913755.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3C57113E5BBC6C80F62F81899ACF7B9630136D18164B3CAA551028EC26CF6B4 "点击放大")
 
 问题代码示例如下：
 
@@ -73,7 +73,7 @@ struct MarkerPage {
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/60lk_DwASF-brPpyozK5ww/zh-cn_image_0000002658793809.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/60lk_DwASF-brPpyozK5ww/zh-cn_image_0000002658793809.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=8677BAD6CC5C5A318B5C7859145F046B9DCEBE52CA5B60081084EEA49137C37C "点击放大")
 
 ## 背景知识
 

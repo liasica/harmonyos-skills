@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/compiling-and-b
 title: 编译构建密钥库密码错误问题排查
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 常见问题 > 编译构建密钥库密码错误问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:eb27c7cb52ad386d84aaa8b07e09b2af30ed52ea4d6376a0eb7f45c4d2890512
 ---
@@ -12,11 +12,11 @@ content_hash: sha256:eb27c7cb52ad386d84aaa8b07e09b2af30ed52ea4d6376a0eb7f45c4d28
 
 **A**：问题现象：编译时出现错误，提示“ERROR - hap-sign-tool: error: ACCESS\_ERROR, code: 109. Details: Init keystore failed: keystore password was incorrect”。请检查密钥库密码是否正确。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/AGxLrXA8TvuYG-PlmTRVDQ/zh-cn_image_0000002771935442.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/AGxLrXA8TvuYG-PlmTRVDQ/zh-cn_image_0000002771935442.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2282F22515972BDA800B5D1E75662088F21FF6C058513284FAC23A2B4BF65D8 "点击放大")
 
 报错原因：密钥库(p12)的密码错误。签名文件中的签名密码错误导致该问题出现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/oL-JPmc7TYGJseXhJiMgAQ/zh-cn_image_0000002772095400.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/oL-JPmc7TYGJseXhJiMgAQ/zh-cn_image_0000002772095400.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=D859D2821596D1F9FC273D0C61B595963011AFCEFAD5502107E32EFD298359CB "点击放大")
 
 **须知** 
 
@@ -33,4 +33,4 @@ content_hash: sha256:eb27c7cb52ad386d84aaa8b07e09b2af30ed52ea4d6376a0eb7f45c4d28
 1. 点击**File > Project Structure > Project > Signing Configs**，打开签名配置页面。
 2. 勾选“Automatically generate signing”（如果是HarmonyOS工程，还需勾选“Support HarmonyOS”），等待重新签名，点击**OK**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/kpGnP5d6Q9KZZPFDiz2Yxw/zh-cn_image_0000002801215679.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/kpGnP5d6Q9KZZPFDiz2Yxw/zh-cn_image_0000002801215679.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=775956DFFBC0B648C19E0504A1D94B8E2561A1E776D0A498DA58A8F5DFB64340 "点击放大")

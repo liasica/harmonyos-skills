@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-avp
 title: 使用AVPlayer播放视频(C/C++)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 播放 > 使用AVPlayer播放视频(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:703132cc653167af5a2bdbb99c10e808011d480ee4cd64e26d915e94c3bd9d91
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:703132cc653167af5a2bdbb99c10e808011d480ee4cd64e26d915e94c3b
 
 **播放状态变化示意图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/t7jtggEtRp2kYLAhKyV_vA/zh-cn_image_0000002786359962.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/t7jtggEtRp2kYLAhKyV_vA/zh-cn_image_0000002786359962.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=987ACA9FF06774175D4F6B42FCA1C9A60FF4D23DB8C8FC6970E2A01D620B0D1D)
 
 状态的详细说明请参考[AVPlayerState](../harmonyos-references/capi-avplayer-base-h.md#avplayerstate)。当播放处于AV\_PREPARED/AV\_PLAYING/AV\_PAUSED/AV\_COMPLETED状态时，播放引擎处于工作状态，这需要占用系统较多的运行内存。当客户端暂时不使用播放器时，调用reset()或release()回收内存资源，做好资源利用。
 

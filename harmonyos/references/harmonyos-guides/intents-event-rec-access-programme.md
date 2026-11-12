@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-event
 title: 接入方案
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 事件推荐方案 > 接入方案
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:44+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:1c663b68f2170f90912bde2e01f767f050205f6834b8cde474bf4f100c536c27
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:1c663b68f2170f90912bde2e01f767f050205f6834b8cde474bf4f100c5
 
 当开发者有事件想要通知到用户时，可通过应用/元服务的云侧服务器向智慧分发平台推送事件内容（意图共享）。系统通过智慧决策判断事件发生的条件，在满足条件时，向用户推荐事件提醒卡片，当用户点击卡片后，可跳转到应用/元服务的详情页查看事件详情（意图调用）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/SY-0pWLXRK-AePB0whQx0g/zh-cn_image_0000002815400237.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/SY-0pWLXRK-AePB0whQx0g/zh-cn_image_0000002815400237.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=D25C7100706EAF8068F70BE828F133C57996EB8608B300A43DA4B72E137CD588)
 
 ## 流程图
 
@@ -21,7 +21,7 @@ content_hash: sha256:1c663b68f2170f90912bde2e01f767f050205f6834b8cde474bf4f100c5
 3. 华为侧会根据事件和具体场景制定事件服务推出规则和时机。
 4. 在满足制定规则场景下展示对应用户事件，增加服务曝光率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/6_Rezr3rQ9mSTUfO9mivFw/zh-cn_image_0000002786520662.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/6_Rezr3rQ9mSTUfO9mivFw/zh-cn_image_0000002786520662.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=DAC2E5CD38C4A39A6379BB9857AAAED335BEB1093EF21EA9934393319DFEA52D)
 
 ## 意图注册
 

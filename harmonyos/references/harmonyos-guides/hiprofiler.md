@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiprofiler
 title: hiprofiler
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > hiprofiler
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:58+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-23
 content_hash: sha256:c6a5b3378cb7ebbb0f143fbf34aa801139cda639693b3585de28c1601f2ed100
 ---
@@ -29,7 +29,7 @@ Hiprofiler工具对标业界调优工具，并提供更多能力，比如[跨语
 4. hiprofilerd进程将调优数据以proto格式存储到文件，或者实时返回给PC端；
 5. PC端解析数据，生成泳道，展示获取到的调优数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/4zOXbPutSu-GP5b4UqCKRA/zh-cn_image_0000002815399337.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/4zOXbPutSu-GP5b4UqCKRA/zh-cn_image_0000002815399337.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=4868E560C65EF8DF00F3694E2D3758EF3BE753765E1A189D045973DC931A8F92)
 
 ## 命令行说明
 
@@ -245,7 +245,7 @@ $ hiprofiler_cmd \
 CONFIG
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/YN_1D-yJSXu8Q9vbrRDn4g/zh-cn_image_0000002786519762.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/YN_1D-yJSXu8Q9vbrRDn4g/zh-cn_image_0000002786519762.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE32A95F18F3510794594CF08B4BBD7324F49E5942B429A568ED90EDEB22E014)
 
 开启dwarf回栈和跨语言回栈（可以展示出native -> js ->native的栈）：
 
@@ -291,7 +291,7 @@ $ hiprofiler_cmd \
 CONFIG
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/QUp1tb9wQ-K5Fjk4dHOUlA/zh-cn_image_0000002786359834.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/QUp1tb9wQ-K5Fjk4dHOUlA/zh-cn_image_0000002786359834.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA67B3F8DD253EF65662D54D90E5542C1750B4C6D7B187F5EC76328DFABB93CF)
 
 开启统计模式，在此模式下，栈数据会周期性展示：
 
@@ -336,7 +336,7 @@ $ hiprofiler_cmd \
 CONFIG
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/1jmxg1oaTK2nAkldPIaL_w/zh-cn_image_0000002815559255.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/1jmxg1oaTK2nAkldPIaL_w/zh-cn_image_0000002815559255.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C0BB397248850BD57878589C967464EBD02291766D30BFF2644357BEDBC78FF)
 
 开启非统计模式，在此模式下，栈数据不会周期性展示：
 
@@ -380,7 +380,7 @@ $ hiprofiler_cmd \
 CONFIG
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/TVnNAeAYTvOeeVlbWq_29A/zh-cn_image_0000002815399339.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/TVnNAeAYTvOeeVlbWq_29A/zh-cn_image_0000002815399339.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A4E97244335EEBFAE88868ECA15CEBFE5CFD7901C8A016E3ECDA00113B20B39)
 
 ### ftrace plugin插件
 
@@ -437,7 +437,7 @@ CONFIG
 
 点击binder transaction右边的箭头，可以跳转到binder对端的进程或线程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/P9NbMN_ZT_KS3MFWJDhGJQ/zh-cn_image_0000002786519764.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/P9NbMN_ZT_KS3MFWJDhGJQ/zh-cn_image_0000002786519764.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E9472E97E66B971AFA90B8B5B8724E86AB02727E0B536DC0D671AF86C4F8EA8)
 
 ### memory plugin插件
 
@@ -542,11 +542,11 @@ CONFIG
 
 此命令读取系统的内存的基本统计信息。执行命令后，通过hdc file recv /data/local/tmp/hiprofiler\_data.htrace命令将文件导出到当前目录，然后通过smartperf打开并解析。结果示例如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/a3bxdJGQQC22h337yMfQIw/zh-cn_image_0000002786359836.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/a3bxdJGQQC22h337yMfQIw/zh-cn_image_0000002786359836.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=09F3156500D5ED764B4B048B72CB0B74CACB6EC096BD93E15FC8106767E89955)
 
 通过DevEco Studio 的工具获得内存的数据：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/8vdEjFW3SSe3oAQECuQ0-Q/zh-cn_image_0000002815559257.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/8vdEjFW3SSe3oAQECuQ0-Q/zh-cn_image_0000002815559257.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C6EC4F7BE9AC7566362E91914C2A9EB5F19AA3D9691A48EB7BF119AB48E670A)
 
 通过DevEco->profiler->Allocation工具，选择Memory泳道，可以使用profiler的memory plugin功能。上图展示了框选时间段的进程smaps内存信息。
 
@@ -561,7 +561,7 @@ CONFIG
 
 **结果分析**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/iTRMpj-6QEymRxXI4XHhnQ/zh-cn_image_0000002815399341.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/iTRMpj-6QEymRxXI4XHhnQ/zh-cn_image_0000002815399341.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=B962D9DA5A72640A33B645FD9B73011A9A0B8FB63E6F33D17448B46FBE5EA028)
 
 通过DevEco->profiler->real time monitor工具，可以获取相关进程能耗数据。
 
@@ -627,7 +627,7 @@ CONFIG
 
 此命令读取cpu的基本统计信息。执行命令后，通过hdc file recv /data/local/tmp/hiprofiler\_data.htrace命令将文件导出到当前目录，然后通过smartperf打开并解析。结果示例如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/q_4u4IK_SCKSfVVgyPyA5g/zh-cn_image_0000002786519766.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/q_4u4IK_SCKSfVVgyPyA5g/zh-cn_image_0000002786519766.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=52C2AD7D028C7F6BA4F2A0F754027D23EFC88C98025A8CB8E10524BEC92F80FE)
 
 ### diskio plugin插件
 
@@ -680,7 +680,7 @@ CONFIG
 
 此命令读取disk io的基本统计信息。执行命令后，通过hdc file recv /data/local/tmp/hiprofiler\_data.htrace将文件导出到当前目录，然后通过smartperf打开并解析。结果示例如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/IliqPzWrQRaqQ0yPSggi3Q/zh-cn_image_0000002786359838.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/IliqPzWrQRaqQ0yPSggi3Q/zh-cn_image_0000002786359838.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9D3B3ACF42D61382946837EECC068379CE5A8809BA224E28504EB0CEB9EC4A5)
 
 ### hidump plugin插件
 
@@ -697,7 +697,7 @@ CONFIG
 
 该插件暂时不支持smartperf工具方式的trace数据解析，只支持DevEco Studio模式下的trace数据解析。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/VVrR2_gKTXm0DEzGXUHKJA/zh-cn_image_0000002815559259.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/VVrR2_gKTXm0DEzGXUHKJA/zh-cn_image_0000002815559259.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=4906C44958F728D3C04DD9C0CFCF213FAF78B7CCBEB6FCB39BFFBF5E300692B2)
 
 ### hisysevent plugin插件
 
@@ -742,7 +742,7 @@ CONFIG
 
 此命令示例抓取所有hisystem event订阅事件信息。执行命令后，通过hdc file recv /data/local/tmp/hiprofiler\_data.htrace将文件导出到当前目录，然后通过smartperf打开并解析。结果示例如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/CUWIztXLTnWZ8uxlPuJOkw/zh-cn_image_0000002815399343.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/CUWIztXLTnWZ8uxlPuJOkw/zh-cn_image_0000002815399343.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F83757843BA259B09E72050428B1A4211628957A0678504C8954499F4E618F2)
 
 ### network plugin插件
 
@@ -802,7 +802,7 @@ CONFIG
 
 此命令示例抓取整机网络数据信息。执行命令后，通过hdc file recv /data/local/tmp/hiprofiler\_data.htrace将文件导出到当前目录，然后通过smartperf打开并解析。结果示例如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/30HfwWhuSEKICEgelCKyhg/zh-cn_image_0000002786519768.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/30HfwWhuSEKICEgelCKyhg/zh-cn_image_0000002786519768.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB429C7C10BD70F3047CB726790A61F58DF2C1897495FFFBCF2DB006E642877B)
 
 ### network profiler插件
 
@@ -1209,7 +1209,7 @@ CONFIG
 
 使用hiprofiler\_cmd命令时，显示Service not started。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/Kb7VSRGVQnS-yIvZpQJXWw/zh-cn_image_0000002786359840.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/Kb7VSRGVQnS-yIvZpQJXWw/zh-cn_image_0000002786359840.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=64D2EE0EE3046D2B4AA755EA6EF2C7B264015B4615BCB1ACCA0EF7972BD57062)
 
 **可能原因&解决方法**
 

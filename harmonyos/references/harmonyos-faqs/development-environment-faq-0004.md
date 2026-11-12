@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/development-env
 title: IDE编译报错SDK component missing问题排查
 breadcrumb: FAQ > DevEco Studio > 环境准备 > 常见问题 > IDE编译报错SDK component missing问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:48+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:4d5dc898a9d5d18ad7dfdcf48421333dee480eeb387e35118ad63aef7e380d09
 ---
@@ -28,13 +28,13 @@ content_hash: sha256:4d5dc898a9d5d18ad7dfdcf48421333dee480eeb387e35118ad63aef7e3
 2. IDE错误的使用其他版本的hvigor。
    1. 查看当前报错日志的首行，确认调用的hvigorw.js是否在当前IDE所在目录中。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/jc9C4H0DSxW42eq7MzJmvQ/zh-cn_image_0000002770976596.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/jc9C4H0DSxW42eq7MzJmvQ/zh-cn_image_0000002770976596.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B3EBE3423DDF0DD76290657D9126BB7AF982659D35EF9C4B9A1C9FCFA64D7A3 "点击放大")
    2. 若非当前IDE所在目录，点击下图任一按钮，选择编辑配置。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/5yQjDBfASz-j3cBtoXdIbA/zh-cn_image_0000002770976598.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/5yQjDBfASz-j3cBtoXdIbA/zh-cn_image_0000002770976598.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F4B1F4CB4D8E7A5FD499276710E1508CCAD062DC1E632F506D10ED9642460AF)
    3. 选中Hvigor下的配置，配置JavaScript file：当前IDE根目录/tools/hvigor/bin/hvigorw.js。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/LVnzSqFtR2m_dujFebPNVQ/zh-cn_image_0000002800176461.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/LVnzSqFtR2m_dujFebPNVQ/zh-cn_image_0000002800176461.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=401C4D0D490C0823EDDCB4E606DE0481CFCC286344C83BC23674F1A388B8A912 "点击放大")
    4. 将hvigor-config.json和oh-package.json5中的modelVersion修改为当前版本。
 
 方案二：环境配置问题。
@@ -43,25 +43,25 @@ content_hash: sha256:4d5dc898a9d5d18ad7dfdcf48421333dee480eeb387e35118ad63aef7e3
 
 1. 找到SDK所在目录，在IDE的Terminal中输入echo $env:DEVECO\_SDK\_HOME，路径应为：“IDE安装路径/sdk”，SDK根目录不要指向default目录或OpenHarmony下载目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/rqCED6Q-Q7awJYEq5pkE_Q/zh-cn_image_0000002800296447.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/rqCED6Q-Q7awJYEq5pkE_Q/zh-cn_image_0000002800296447.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=D391AFFF10A3AF1326E93E47773ED688A12CF7630CDD0A454714EECD19AF8C82 "点击放大")
 2. 检查SDK路径下的文件放置顺序是否正确。检查各文件、目录是否有缺失，如有缺失，请将对应的文件补齐。确保这些文件和文件夹的名称都是正确的并存在，目录结构如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/wEkyy6d8RFWB4c25gi9PoQ/zh-cn_image_0000002800296449.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/wEkyy6d8RFWB4c25gi9PoQ/zh-cn_image_0000002800296449.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=A2EF5046F6B754A3999AABB783D81F8D95D205138D1E4D98AB5F121CB067A46E "点击放大")
 3. 检查sdk-pkg.json文件是否与IDE配套：
    * 在替换full SDK时可能会修改sdk-pkg.json文件的内容，导致该文件内容与IDE版本不配套（如非必要，请在替换full SDK时不要修改此文件）。
    * 打开sdk-pkg.json文件，查看apiVersion字段是否与IDE支持的API匹配，两者必须要相同，否则就会出现找不到SDK的错误。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/J2nX9-6kRxuFr08Ruqjnrg/zh-cn_image_0000002771137100.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/J2nX9-6kRxuFr08Ruqjnrg/zh-cn_image_0000002771137100.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=E57E7912AAF820E79136867BD9B1CF3DCB6E16044683491F700ED7799711DD62 "点击放大")
 4. 如果上面几步都无效，检查工程是否做了一体化适配：
    * 执行同步工程的操作。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/ioBkX4b3TeG3SEVLyhXXcg/zh-cn_image_0000002770977138.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/ioBkX4b3TeG3SEVLyhXXcg/zh-cn_image_0000002770977138.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=3456DABBEC7E13C2FCD11990D9859AEA68A750698CA1C90E6F9DBDAD55986288 "点击放大")
    * 观察右侧Notifications中是否出现了Sync failed的提示。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/UBpGQci-R8CkBliilASiOg/zh-cn_image_0000002770977140.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/UBpGQci-R8CkBliilASiOg/zh-cn_image_0000002770977140.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=24B37A8F47728B2077A828E9E2FC58C85866DB0CA8082FF1681BB68DAA54CB8C "点击放大")
    * 点击提示语中的Migrate Assistant，工程下方会打开Migrate Assistant的窗口，点击里面的Migrate按钮，待执行成功后再去编译。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/y5BrBTF3Suix5kC4hKk9Iw/zh-cn_image_0000002800177013.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/y5BrBTF3Suix5kC4hKk9Iw/zh-cn_image_0000002800177013.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=CACFFF4D2371A108E5F637DA3E3052925036E299E6C2E33BD89CC6A6150A20F5 "点击放大")
 5. 检查工程是否配置了hvigor版本：
 
    如果有，需要删除，因为目前都是使用一体化的版本，版本自带有hvigor工具。删除之后重新同步工程。

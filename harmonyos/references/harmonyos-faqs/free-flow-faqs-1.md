@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/free-flow-faqs-
 title: 应用接续任务失败
 breadcrumb: FAQ > 多设备场景 > 自由流转 > 应用接续任务失败
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:39+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-13
 content_hash: sha256:27f75a99d1946508043012d191e49d02a6d5a66170b3e67d9d93d1ff738f9c98
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:27f75a99d1946508043012d191e49d02a6d5a66170b3e67d9d93d1ff738
 
 * [应用接续](../best-practices/bpta-continue-cast.md)，指当用户在一个设备上操作某个应用时，可以在另一个设备的同一个应用中快速切换，并无缝衔接上一个设备的应用体验。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/gzMEy9rYTAOucyx0jcle1g/zh-cn_image_0000002628552418.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/gzMEy9rYTAOucyx0jcle1g/zh-cn_image_0000002628552418.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=232B76FF44C318E3DCF678289E7F590BA6F93963E3BF95F1A7915A526A01B3E1 "点击放大")
 * [DistributedSchedule错误码](../harmonyos-references/errorcode-distributedschedule.md)为分布式调度特有错误码。
 
 ## 问题定位

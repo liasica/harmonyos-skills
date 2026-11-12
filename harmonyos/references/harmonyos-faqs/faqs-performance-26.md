@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 文字翻转有延迟
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 文字翻转有延迟
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:43+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:397306fe14f3b4879da4a3d8c225e63d718cac375179f8344d3fa18e462c44d5
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:397306fe14f3b4879da4a3d8c225e63d718cac375179f8344d3fa18e462
 
 文字翻转有延迟，如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/MEmSIzjzRs20Eu4YBmfEVw/zh-cn_image_0000002658914391.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/MEmSIzjzRs20Eu4YBmfEVw/zh-cn_image_0000002658914391.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=069E3B73FC72650BEE4D276E27611F97A52B0558B771AABC1BB80A1CBB9CA9F8 "点击放大")
 
 ## 背景知识
 

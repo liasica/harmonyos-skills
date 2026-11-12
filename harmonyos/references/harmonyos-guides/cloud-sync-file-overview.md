@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloud-sync-fi
 title: 端云文件协同概述
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 端云文件协同 > 端云文件协同概述
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:26+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-04-20
 content_hash: sha256:d2757b229d17be38aee3f6e0bae8a2d5eb78138728e9551f2ea548ac1d414dbe
 ---
@@ -55,4 +55,4 @@ content_hash: sha256:d2757b229d17be38aee3f6e0bae8a2d5eb78138728e9551f2ea548ac1d4
 
 端云文件协同能力基于系统级服务构建，由 cloudfiledaemon 进程提供基础文件操作、元数据管理、分片预读等核心功能；cloudfileservice 进程则在后台自动与云端服务进行交互，根据业务需求变化触发并完成文件上下行，文件缓存，同时也提供了接口支持版本管理和主动触发同步任务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/1oqMKmfxQhiqKbGK6NW_6w/zh-cn_image_0000002786359508.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/1oqMKmfxQhiqKbGK6NW_6w/zh-cn_image_0000002786359508.png?HW-CC-KV=V1&HW-CC-Date=20261112T233228Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D871D7E3E71850EE5D9C169E2F2575C34932F11C80AE843232C1A055E70D39C)

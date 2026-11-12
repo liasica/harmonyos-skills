@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: CppCrash类问题分析方法
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 开发态稳定性分析 > 应用崩溃类问题分析 > CppCrash类问题分析方法
 category: best-practices
-scraped_at: 2026-11-10T10:42:13+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-15
 content_hash: sha256:19617a3c2447a7ac13bddbaacfc2e2789d4542c20c3b22290fd675d72d88b020
 ---
@@ -70,7 +70,7 @@ ffbe9000-ffc0a000 rw-p 00000000 [stack] <- 栈地址范围，sp小于栈的低�
 
    在应用开发场景，对于应用自身的动态库，生成的CppCrash调用栈可直接跳转到代码行处，支持Native栈帧和JS栈帧，无需开发者自行进行解行号操作。对于部分未能解析跳转到对应行号的栈帧，可参考方式二解析。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/CZCGMLhSR1i1OzyKLW2WBQ/zh-cn_image_0000002404125229.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/CZCGMLhSR1i1OzyKLW2WBQ/zh-cn_image_0000002404125229.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=D97381CB0B0D6DFFBE2FEBE3956D3CEA09489EB98C56734FD44DB44331AE8D49)
 2. 通过SDK llvm-addr2line工具定位行号。
    1. 获取符号表。
 
@@ -127,7 +127,7 @@ ffbe9000-ffc0a000 rw-p 00000000 [stack] <- 栈地址范围，sp小于栈的低�
 
 在分析CppCrash日志内容和定位行号后，回到代码中检视上下文，分析具体是什么业务逻辑导致崩溃。借助hilog提供的崩溃现场日志分析业务场景，找出代码中的可疑点。如下图所示，hello.cpp中的48行是一个空指针解引用的代码问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/MAPLenTZRgung3eretH3OQ/zh-cn_image_0000002370405684.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/MAPLenTZRgung3eretH3OQ/zh-cn_image_0000002370405684.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C582CDE6CFF0D0BD49C15E4CC2C0D9F6FF2F22DF7171610EAEBED96783EECBB)
 
 本场景是一个故障构造的应用，实际场景需要结合具体业务进行分析。
 

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/signature-servi
 title: 应用签名失败与证书过期问题排查
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 常见问题 > 应用签名失败与证书过期问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:57+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
-content_hash: sha256:b16b84687b68978248e4ae138250e9da3db2d4eb17de1c2994e69c997ee9bf26
+content_hash: sha256:0e646ece2c349492362fa88d357e4adae424fbc87cf9f4fdb907b576b821bf2d
 ---
 
 **Q：应用在进行自动签名时，签名失败，提示“The signature does not take effect or has expired. The current system time may be inaccurate. Please calibrate the system time and sign again.”。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/uXYAnxJ2SA2qKK8x-bvjfQ/zh-cn_image_0000002772993956.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/rr6IXVGXQ1-IZCr3KHylWQ/zh-cn_image_0000002772993956.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=0397C78AEB0B946CBED33A3FE2501535E36C728DE5C1676B1956B2966B6EC83A "点击放大")
 
 **A**：出现报错是因为电脑的系统时间与北京时间不一致。请在系统设置中将时间设置为北京时间。
 

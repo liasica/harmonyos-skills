@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1461
 title: List下拉刷新时如何保证更新后的页面停留在原始位置上
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > List下拉刷新时如何保证更新后的页面停留在原始位置上
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:4fca10168e1c4afda747f21a0cae2a0b52acccca929f5327432f8c857991d8d7
 ---
@@ -210,7 +210,7 @@ content_hash: sha256:4fca10168e1c4afda747f21a0cae2a0b52acccca929f5327432f8c85799
 
     效果图如下：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/A7MCK49yQzKIykMJyBrS-w/zh-cn_image_0000002628605352.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/A7MCK49yQzKIykMJyBrS-w/zh-cn_image_0000002628605352.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1A51BF73079FD9E8E41D65A73C403B5A4B0E9B1467821CA0AE7C7285C4896F0 "点击放大")
 * **方案二**：通过scrollToIndex、scrollTo控制滚动，使得可视区域不变。
   1. LazyDataSource2.ets：定义LazyForEach懒加载数据通用工具类。
 
@@ -376,7 +376,7 @@ content_hash: sha256:4fca10168e1c4afda747f21a0cae2a0b52acccca929f5327432f8c85799
 
      效果图如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/VJpS5kZmRqaUOwjauNt00Q/zh-cn_image_0000002658844609.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/VJpS5kZmRqaUOwjauNt00Q/zh-cn_image_0000002658844609.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=A488B17A0C677812A40A4D0D290914674D9A9DAE4AD3A7B49D8152A480B2531F "点击放大")
 
 ## 常见FAQ
 

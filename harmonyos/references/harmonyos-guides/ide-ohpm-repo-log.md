@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: 日志
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 日志
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:3db0095d0248669615e0f8fc7a0117c12c464680dc45bed1df8e3f5242d9c67a
 ---
@@ -18,7 +18,7 @@ content_hash: sha256:3db0095d0248669615e0f8fc7a0117c12c464680dc45bed1df8e3f5242d
 
 操作日志中主要包含操作时间、日志级别、操作人id（userId）、终端IP（ip）、操作资源（resource）、操作方法名（event）以及操作结果（result），其文件保存个数最多为180个。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/onzXdwB-RXCx4neJ8Ssw0g/zh-cn_image_0000002808884785.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/onzXdwB-RXCx4neJ8Ssw0g/zh-cn_image_0000002808884785.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD9F93F22BACC67F12CE2DAF740942F8F1C5C3A2CCC0FAE5DD2DF72B3EF55F2A "点击放大")
 
 **说明** 
 
@@ -58,7 +58,7 @@ content_hash: sha256:3db0095d0248669615e0f8fc7a0117c12c464680dc45bed1df8e3f5242d
 
 运行日志中主要包含操作时间、日志级别以及日志信息，其文件保存个数最多为30个。运行日志定义了日志级别：all，trace，debug，info，warn，error，fatal，mark和off。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/W-uhdyVlRRy6tQoW-cmqJg/zh-cn_image_0000002808764693.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/W-uhdyVlRRy6tQoW-cmqJg/zh-cn_image_0000002808764693.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=CADA4639F524834A671F71CECBAFE37A9D749C691A8D025709C3B318A5802BE7 "点击放大")
 
 ## 运行错误日志 - repoError.log
 

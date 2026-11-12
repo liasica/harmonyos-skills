@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1411
 title: 如何解决顶部图片延伸场景存在留白问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决顶部图片延伸场景存在留白问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:1a8e1475d5cc285b8783ce36979f10ab6bc941d99e00419efd992bffc561bced
 ---
@@ -34,11 +34,11 @@ struct page1 {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/aessu8k5Taa6Unw1xhIq6A/zh-cn_image_0000002658962479.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/aessu8k5Taa6Unw1xhIq6A/zh-cn_image_0000002658962479.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F0DCD8A4AA52F43FE4C5A963BB8D490AB1E33FAD5B32FE628C1D2B96B9EB7D9 "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/skeUg07sQvW0T7cLwOLxuA/zh-cn_image_0000002628603268.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/skeUg07sQvW0T7cLwOLxuA/zh-cn_image_0000002628603268.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=92D80D8717D8FF8BDCB4CDD20CD7B06DBAE00113A7F90C34E5118D55D288DFDA "点击放大")
 
 ## 背景知识
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: 跑马灯效果实现常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > 跑马灯效果实现常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:59+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:92119d03cfe0546833e0381308a01a71b489391173ddeee1b861ee9b3dc9dca8
 ---
@@ -55,7 +55,7 @@ content_hash: sha256:92119d03cfe0546833e0381308a01a71b489391173ddeee1b861ee9b3dc
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/Xl7XUbd4RSG6zvu4yKMVWA/zh-cn_image_0000002795479779.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/Xl7XUbd4RSG6zvu4yKMVWA/zh-cn_image_0000002795479779.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=290A258659B1AB7674BF08D0BAA5E160E403EBB50D77D905F10010458B824673 "点击放大")
 * 场景二：使用Swiper组件实现文字跑马灯效果，示例代码如下：
 
   ```ts
@@ -94,7 +94,7 @@ content_hash: sha256:92119d03cfe0546833e0381308a01a71b489391173ddeee1b861ee9b3dc
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/MtjjUPgfS42FQ2bhUdeELA/zh-cn_image_0000002795479845.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/MtjjUPgfS42FQ2bhUdeELA/zh-cn_image_0000002795479845.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=4C74802AD9F38A6E1357E0EBEE1DB9E15EC3CAB3BDFF9EACA85E5A6E89D6F695 "点击放大")
 * 场景三：使用Text组件实现文字跑马灯效果，示例代码如下：
 
   ```ts
@@ -135,7 +135,7 @@ content_hash: sha256:92119d03cfe0546833e0381308a01a71b489391173ddeee1b861ee9b3dc
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/Q8z0gzj1TJeQUjX95LGfuQ/zh-cn_image_0000002795320205.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/Q8z0gzj1TJeQUjX95LGfuQ/zh-cn_image_0000002795320205.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C862B5E870777C25C18A3A24C484604FAD26DDBEFFF3DA511E93B0C9FF8A1BB "点击放大")
 * 场景四：使用Row组件的translate属性平移方式实现图片的跑马灯效果，示例代码如下：
 
   ```ts
@@ -205,7 +205,7 @@ content_hash: sha256:92119d03cfe0546833e0381308a01a71b489391173ddeee1b861ee9b3dc
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/IZNgSVuFSqCoQ2xKrHgdig/zh-cn_image_0000002766081606.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/IZNgSVuFSqCoQ2xKrHgdig/zh-cn_image_0000002766081606.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=B19294FDF86E75B4FD95F90E5823A26351D98852464F997CF96589FB8BC3FEF6 "点击放大")
 * 场景五：每条消息会先停留两秒以便阅读，然后自动从左到右滚动显示全文；滚动结束后再停顿两秒，随后显示下一条消息，循环往复：
 
   ```ts
@@ -340,7 +340,7 @@ content_hash: sha256:92119d03cfe0546833e0381308a01a71b489391173ddeee1b861ee9b3dc
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/grX9szTLSyWPERm-2dgwww/zh-cn_image_0000002766081692.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/grX9szTLSyWPERm-2dgwww/zh-cn_image_0000002766081692.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9A931B47398C06A44ADA9873455E1C36BD6321D6F51E8DE92A83D8321C75F66 "点击放大")
 
 **Q：同样设置loop=-1，为什么Marquee在卡片场景动效只执行一次，在普通场景可无限循环？**
 

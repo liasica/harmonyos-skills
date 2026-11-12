@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-m
 title: 状态管理V1和V2混用指导（API version 19及之后）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导 > 状态管理V1和V2混用场景 > 状态管理V1和V2混用指导（API version 19及之后）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:fb702ebdbf3ccfa0efa3c0c0157e6f81c91a8d9a28f1c1f4d49c65b0f4a0bf0e
 ---
@@ -108,7 +108,7 @@ content_hash: sha256:fb702ebdbf3ccfa0efa3c0c0157e6f81c91a8d9a28f1c1f4d49c65b0f4a
 
 开发者在使用这两个接口混用V1V2时，可遵循下图逻辑。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/mIETwxhmTWOZOSm7E6mbWw/zh-cn_image_0000002815558115.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/mIETwxhmTWOZOSm7E6mbWw/zh-cn_image_0000002815558115.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2F751B4FF7EEAAB389446F976CDF0DD606A95DD4C902E513FABCF955EC05B74)
 
 ## V1中使用V2的自定义组件
 
@@ -161,7 +161,7 @@ struct CompV2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/kUoZvU4CQsmCQ5d0TpsIcw/zh-cn_image_0000002815398199.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/kUoZvU4CQsmCQ5d0TpsIcw/zh-cn_image_0000002815398199.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=72458FDAA97B1F1FC904418BE051866B011268664B9F2C759705F82C5FD013DD)
 
 **@Observed+@Track装饰的class**
 
@@ -231,7 +231,7 @@ struct CompV2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/2LZ0f6USSPOug4N0MvdTJg/zh-cn_image_0000002786518624.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/2LZ0f6USSPOug4N0MvdTJg/zh-cn_image_0000002786518624.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=1509A9A3BF8020CC79054C2BB7BEF5F3928310F97CA2B928F442BDE9CC2A0A4C)
 
 ### 传递内置类型（V1->V2）
 
@@ -282,7 +282,7 @@ struct ArrayCompV2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/VcaNpbXyQeKw7KzoMxKQEA/zh-cn_image_0000002786358696.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/VcaNpbXyQeKw7KzoMxKQEA/zh-cn_image_0000002786358696.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=D05C4A0B9268CFFDE37CFBAD7E007135A04973296689EACF1C09E594B682C56B)
 
 ### 传递二维数组（V1->V2）
 
@@ -362,7 +362,7 @@ struct IndexPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/qLb5mFEjQZ6hBLZRErK4xA/zh-cn_image_0000002815558117.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/qLb5mFEjQZ6hBLZRErK4xA/zh-cn_image_0000002815558117.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=D530B5EEB2D0932F5FEDAC1E7D277D7F6EDF0F7E6B96CC3C44B6244BD92DF8D8)
 
 ### 传递嵌套类型（V1->V2）
 
@@ -504,7 +504,7 @@ struct NestedClassV2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/pJtynquhTFCMK5BcgbOgLA/zh-cn_image_0000002815398201.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/pJtynquhTFCMK5BcgbOgLA/zh-cn_image_0000002815398201.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=8AFFABE67359982DEFC3E24F6BD7272D6C87896BD50F3572AFE3867AF35451A5)
 
 以上例子刷新行为可总结为：
 
@@ -567,7 +567,7 @@ struct CompV1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/zPbvpwMYSlyW7nu06YuVoA/zh-cn_image_0000002786518626.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/zPbvpwMYSlyW7nu06YuVoA/zh-cn_image_0000002786518626.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=CFEE193EC451D09B1A3958009CE346F080B1BC5BC914DD1D163C575C172FCA45)
 
 **@Observed+@Track装饰的class**
 
@@ -632,7 +632,7 @@ struct CompV1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/AH96JNYyTfaqB-_E-oRFjw/zh-cn_image_0000002786358698.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/AH96JNYyTfaqB-_E-oRFjw/zh-cn_image_0000002786358698.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F862C712BE3D84B7278ACF2876DBB4729A8EBCB7FDB1121B8B6C50CE347F99B)
 
 ### 传递内置类型（V2->V1）
 
@@ -681,7 +681,7 @@ struct ArrayCompV1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/-VMoiw2kR6eAAVFkj9vjxQ/zh-cn_image_0000002815558119.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/-VMoiw2kR6eAAVFkj9vjxQ/zh-cn_image_0000002815558119.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF8F8CCAF9938B0998820C42D86686B4E39C1A336C609D0830F7373CE223944A)
 
 ### 传递二维数组（V2->V1）
 
@@ -762,7 +762,7 @@ struct IndexPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/7fHKJpyfSrKGyaXdu22mEg/zh-cn_image_0000002815398203.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/7fHKJpyfSrKGyaXdu22mEg/zh-cn_image_0000002815398203.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9266704FD51DCA3CAEEC226EDD0525C685FFE784BD90FB5842E9377FFFBC5AE)
 
 ### 传递嵌套类型（V2->V1）
 
@@ -899,4 +899,4 @@ struct NestedClassV1ObjectLinkArrayItem {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/yVtgsFpwTOWa3Af_iYW15w/zh-cn_image_0000002786518628.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/yVtgsFpwTOWa3Af_iYW15w/zh-cn_image_0000002786518628.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=2940E5A9377D41E688817BB989C6CDCF7340E64FAF9CBF295C665473C2046CAE)

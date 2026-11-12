@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-skill
 title: 场景体验
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 技能调用方案 > 场景体验
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:44+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-12
 content_hash: sha256:b51195ea616bc0c2a58e5d990057b4680c5516fe3e6f884221644a7cdcc96613
 ---
@@ -33,4 +33,4 @@ content_hash: sha256:b51195ea616bc0c2a58e5d990057b4680c5516fe3e6f884221644a7cdcc
 
 开发者将应用内的功能声明接入意图框架后，用户可以通过小艺直接打开相应功能页面，比如“打开XX视频的会员中心”，可直接拉起对应页面，实现一步直达。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/Kv8yJBwQTkGHMRK_56QCDQ/zh-cn_image_0000002786520664.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/Kv8yJBwQTkGHMRK_56QCDQ/zh-cn_image_0000002786520664.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=89F23C702072BFEBB3049775289DD71B256254228C2E74ED100EE9F0CEBA3BC5)

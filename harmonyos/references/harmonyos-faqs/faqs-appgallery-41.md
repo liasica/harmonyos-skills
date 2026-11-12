@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 应用发布选取新包时提示较低版本包，无法选择
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 应用发布选取新包时提示较低版本包，无法选择
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:45+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:031695266cc57cf9ca1da6bed5ab4b04f25c8f3d0fdce1f922d01d573f47a52e
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:031695266cc57cf9ca1da6bed5ab4b04f25c8f3d0fdce1f922d01d573f4
 
 版本包上传成功后，在新版本发布选择版本包时，无法勾选新版本包，提示“该状态为较低版本包，不能选择使用”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/aHlWspdsRO6V4JR0bKWwpQ/zh-cn_image_0000002628394610.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/aHlWspdsRO6V4JR0bKWwpQ/zh-cn_image_0000002628394610.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5BBAAA6B9D3AD87E147519244CDC7A90E37CA218CEF4BE1D6DECDE678F19E75 "点击放大")
 
 ## 背景知识
 
@@ -22,7 +22,7 @@ content_hash: sha256:031695266cc57cf9ca1da6bed5ab4b04f25c8f3d0fdce1f922d01d573f4
 
 * 查看应用当前在架版本号，为12920000。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/rwo05GJuRFCLCcjO15uwog/zh-cn_image_0000002628554500.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/rwo05GJuRFCLCcjO15uwog/zh-cn_image_0000002628554500.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=6765291B357A25CD05D216C2635270217583693FA882BDE6CB0BDEEA225E527E "点击放大")
 * 问题现象中可以知道新上传的包版本为11940000。
 
 ## 分析结论

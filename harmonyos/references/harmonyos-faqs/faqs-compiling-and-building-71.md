@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 如何解决DevEco Studio编译hsp和闭源har包的时候，生成声明文件时emit的耗时过长导致编译慢的问题
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 如何解决DevEco Studio编译hsp和闭源har包的时候，生成声明文件时emit的耗时过长导致编译慢的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:53+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:e921b3d82e380c576bfcd12bfd909a0fe53aa76010bb1b244eaeac7183386769
 ---
@@ -18,7 +18,7 @@ content_hash: sha256:e921b3d82e380c576bfcd12bfd909a0fe53aa76010bb1b244eaeac71833
 
 1. 生成 sourceFile，在遍历文件时生成声明文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/EwYHpcZ6QRCUKBbLKdyO3Q/zh-cn_image_0000002654797893.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/EwYHpcZ6QRCUKBbLKdyO3Q/zh-cn_image_0000002654797893.png?HW-CC-KV=V1&HW-CC-Date=20261112T233210Z&HW-CC-Expire=31536000000&HW-CC-Sign=307BD785CEB7DA65DB6D9ED1BDED3C704D5C03C6B1E2C91FE6A78A2F30D2A812 "点击放大")
 2. 修改 getEmitOutput 函数，将其改为 getFileEmitOutput 函数，以获取声明文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/ArX8QtT5SPCrxEBh04s0Kw/zh-cn_image_0000002624638440.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/ArX8QtT5SPCrxEBh04s0Kw/zh-cn_image_0000002624638440.png?HW-CC-KV=V1&HW-CC-Date=20261112T233210Z&HW-CC-Expire=31536000000&HW-CC-Sign=4345FD2E0EC14D8C14CAEE31AA996E2A22BC44C082F2A3D3622D43D710C12314 "点击放大")

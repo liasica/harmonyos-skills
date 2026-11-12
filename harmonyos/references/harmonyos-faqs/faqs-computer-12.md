@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-computer-1
 title: PC端设置窗口大小不生效
 breadcrumb: FAQ > 多设备场景 > 电脑 > 常见问题 > PC端设置窗口大小不生效
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:38+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-30
 content_hash: sha256:e9c9768d31a03aa0cedd32e55ba212f14d1c25102b6b7daf356bbaa6a2643da3
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:e9c9768d31a03aa0cedd32e55ba212f14d1c25102b6b7daf356bbaa6a26
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/5GLOlgKfRgK83h6pE8skuw/zh-cn_image_0000002658791751.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/5GLOlgKfRgK83h6pE8skuw/zh-cn_image_0000002658791751.png?HW-CC-KV=V1&HW-CC-Date=20261112T233210Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1274AA984973FFBF054140B67FAF5A92485474568D994A80015317897D3E204 "点击放大")
 
 ## 背景知识
 

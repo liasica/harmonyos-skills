@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-previewer-
 title: 如何设置DevEco Studio 的预览功能的屏幕像素值
 breadcrumb: FAQ > DevEco Studio > 界面预览 > 如何设置DevEco Studio 的预览功能的屏幕像素值
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:762ad71bb016db5383004af44e607bdec549dfc7debd66a1d10099f97f59cf07
 ---
@@ -16,4 +16,4 @@ DevEco Studio的预览功能支持 phone、PC/2in1 和Foldable设备，但这些
 
 预览器有一个New Profile功能，支持手动配置屏幕尺寸和DPI。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/kW3ajF4fReqG5Py2h6ZCGw/zh-cn_image_0000002624638360.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/kW3ajF4fReqG5Py2h6ZCGw/zh-cn_image_0000002624638360.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA145FA91733433AAA51CE8E50C7AD0797794506DC111C94558FB56AFE724C79)

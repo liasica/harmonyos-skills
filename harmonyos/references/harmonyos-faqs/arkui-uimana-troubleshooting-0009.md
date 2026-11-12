@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-tr
 title: NavDestination首页跳转动画异常问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 故障排查 > NavDestination首页跳转动画异常问题
 category: harmonyos-faqs
-scraped_at: 2026-11-12T09:58:58+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:e0cd65c7d0784db2505985b7fd6959bed532c3190aecef90b5439a80486e23b6
 ---
@@ -65,7 +65,7 @@ content_hash: sha256:e0cd65c7d0784db2505985b7fd6959bed532c3190aecef90b5439a80486
 
    上述实现方式，在打开应用时导航页总是会显示一瞬间，如何实现子页代替导航页成为首页的功能，并避免这种跳转异常？
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/_L_xCG3URTGINuERKdU_0Q/zh-cn_image_0000002768133986.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/_L_xCG3URTGINuERKdU_0Q/zh-cn_image_0000002768133986.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=709C3DD34AA9EF6B5E0E905D0248262EFCF016D26702A788FAC146422692CAF8 "点击放大")
 
 ## 定位过程
 

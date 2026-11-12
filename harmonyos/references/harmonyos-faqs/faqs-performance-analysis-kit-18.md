@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 如何查看应用是否为系统应用
 breadcrumb: FAQ > 应用质量 > 技术质量 > 运维 > 如何查看应用是否为系统应用
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:44+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:55bf99800fd3fcf2013867be1c409125cf2d1c8e1c98ff50fe3d5af3f29db825
 ---
@@ -18,6 +18,6 @@ content_hash: sha256:55bf99800fd3fcf2013867be1c409125cf2d1c8e1c98ff50fe3d5af3f29
 
    返回的部分结果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/A_3EzelQSHaojl7d7CWZFw/zh-cn_image_0000002624476468.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/A_3EzelQSHaojl7d7CWZFw/zh-cn_image_0000002624476468.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C0E7E592FA73BFAAAC3F175DD0EA642BBCF162F6A783921DADA82A01A07FA63 "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/QQ7C_hwmR8SXyQ8T1U3iag/zh-cn_image_0000002654795827.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/QQ7C_hwmR8SXyQ8T1U3iag/zh-cn_image_0000002654795827.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6C5F7959E344012090E4D4A7388187C32AFF32563E83F2CC5CD7FEEF483DA9C "点击放大")

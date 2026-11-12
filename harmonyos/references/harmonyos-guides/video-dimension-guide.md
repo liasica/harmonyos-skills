@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-dimensi
 title: 视频编解码宽高、跨距与裁剪信息说明
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > AVCodec Kit常见问题 > 视频编解码宽高、跨距与裁剪信息说明
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:03+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-30
 content_hash: sha256:25ec8ba719af798d1ffbf35e4d2052ba42e2e29bf62860bedcc174d675330d90
 ---
@@ -102,7 +102,7 @@ sliceHeight = height + padding_height        （垂直方向）
 
 **图1** NV12格式图像的内存布局示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/vpW28EDYQdO8dEX0vrB6_A/zh-cn_image_0000002815559283.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/vpW28EDYQdO8dEX0vrB6_A/zh-cn_image_0000002815559283.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=2EDFB5297902D83D8215366846B45ACDDB333E1A6669E6152951F4AFF294D5D8)
 
 图1中各参数含义：
 
@@ -119,7 +119,7 @@ sliceHeight = height + padding_height        （垂直方向）
 
 **图2** 解码器输出Buffer的内存布局示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/pvp2qMBMRye4wwxdxBASuw/zh-cn_image_0000002786359870.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/pvp2qMBMRye4wwxdxBASuw/zh-cn_image_0000002786359870.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5F12B996DACB75B047D648434E5D7AB03BD2B48A261712C42E8241C4AD600EF)
 
 图2中各参数含义：
 
@@ -138,7 +138,7 @@ sliceHeight = height + padding_height        （垂直方向）
 
 **图3** 含crop信息时解码器侧内存布局示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/iHpQ8dAsTt2nHAwHksg0Xg/zh-cn_image_0000002815559309.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/iHpQ8dAsTt2nHAwHksg0Xg/zh-cn_image_0000002815559309.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=542CAC441359305C13315A78D636B4FF62A30CFDC4A5EAA5D24E8460C2FD9604)
 
 解码器特有的4个裁剪参数定义了**有效显示区域**的矩形范围。
 

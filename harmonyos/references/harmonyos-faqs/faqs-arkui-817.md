@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-817
 title: 如何扩大Image组件的点击区域
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何扩大Image组件的点击区域
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:f81375e583839a024551fe498ce28253a04f2a332437d6fe0f9e60d0d9675feb
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:f81375e583839a024551fe498ce28253a04f2a332437d6fe0f9e60d0d96
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/Sid4qZ4lR16FUEbhorfOBw/zh-cn_image_0000002658917119.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/Sid4qZ4lR16FUEbhorfOBw/zh-cn_image_0000002658917119.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=071843F045481380C9E897C455EA7709B046FF252C570333C18DEC1A434D185D "点击放大")
 
 ## 解决方案
 

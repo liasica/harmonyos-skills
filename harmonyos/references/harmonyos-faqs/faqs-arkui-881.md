@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-881
 title: 快速滑动页面时，顶部区域颜色渐变异常
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 快速滑动页面时，顶部区域颜色渐变异常
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:16eca814f10dcad3c8416f879292e491dffc80ba194c60dac65923e341a0e547
 ---
@@ -15,7 +15,7 @@ content_hash: sha256:16eca814f10dcad3c8416f879292e491dffc80ba194c60dac65923e341a
 * 颜色卡在半透明色，视觉上颜色断层。
 * 渐变延迟（约1秒后才恢复）。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/SpERDnOeS96GF2VdgyPUcw/zh-cn_image_0000002658918851.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/SpERDnOeS96GF2VdgyPUcw/zh-cn_image_0000002658918851.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=802B1CBC037E555AD1E74B1269C0C61E8D043E6DECFEDDE5F01B98BB051AE65A "点击放大")
 
 ## 背景知识
 
@@ -27,7 +27,7 @@ content_hash: sha256:16eca814f10dcad3c8416f879292e491dffc80ba194c60dac65923e341a
 
 1. 使用DevEco Testing-实用工具-UIViewer查看布局实现，确认滚动页面基于Scroll组件实现。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/bljVEvPZRS6jTw4eTMBn0g/zh-cn_image_0000002628399636.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/bljVEvPZRS6jTw4eTMBn0g/zh-cn_image_0000002628399636.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D8A5EAA2F8EF7D7A0A9909816BAA0CA4E6AE517E74A1CB4CC0AABE52548E8A4 "点击放大")
 2. 排查代码中关于顶部固定区域透明度变化的相关事件是否在onWillScroll回调函数中执行。
 
    ```screen
@@ -266,4 +266,4 @@ export function StackDemoBuilder() {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/smM0_hWOSresjdk9S4oNmg/zh-cn_image_0000002658798903.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/smM0_hWOSresjdk9S4oNmg/zh-cn_image_0000002658798903.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=C661F468FDBA4339B84257BB5210EF40D4899D111C4E02AFCD71E026B49E799B "点击放大")

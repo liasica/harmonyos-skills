@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-env-sys
 title: "@Env：环境变量"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习响应式环境变量 > @Env：环境变量
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:cf7641eea7adb7f65e7f487d19b7f65bf5c08784ba4cd758d9bac2b266c602c9
 ---
@@ -220,11 +220,11 @@ content_hash: sha256:cf7641eea7adb7f65e7f487d19b7f65bf5c08784ba4cd758d9bac2b266c
 
 流程图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/1TSuyupFTniqTqTznBiXCA/zh-cn_image_0000002786358742.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/1TSuyupFTniqTqTznBiXCA/zh-cn_image_0000002786358742.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=720AD315BC72700AD1D2C2CF7AEF7EB64F5407600C628AB8334436C0A37B652A)
 
 基于上面流程，下面的示例中以@Env使用SystemProperties.BREAK\_POINT为例，各个组件中的初始化如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/DAZ5h9u4QJWI31CRAM9gaA/zh-cn_image_0000002815558163.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/DAZ5h9u4QJWI31CRAM9gaA/zh-cn_image_0000002815558163.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D71200C546553E37163D6EDF50EE6B0A111BB16F4EEC2B5A0D3016B31B3C715)
 
 1. Child1初始化@Env(SystemProperties.BREAK\_POINT)：
    * 递归查找直到父组件为空：向上查找父组件Index，没有@Env对应的SystemProperties.BREAK\_POINT实例。
@@ -733,7 +733,7 @@ struct SubWindow {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/ALd_aRxaTZG_L6BldmiGNA/zh-cn_image_0000002815398247.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/ALd_aRxaTZG_L6BldmiGNA/zh-cn_image_0000002815398247.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=72B4F23A38FEDF4041F0F6866F0F550500A2A2CAAE38544F4DF32707C957A2CA)
 
 可以使用lambda闭包函数将ComponentUnderBuilderNode中的@Env向下传递。通过这种方式ComponentUnderBuilderNode中的@Env可以收集到子组件Comp内组件的依赖，在切换窗口实例的时候触发Comp内组件的刷新。
 
@@ -773,7 +773,7 @@ struct Comp {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/gBo0tDF5R_KBk8O2pEiL0w/zh-cn_image_0000002786518672.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/gBo0tDF5R_KBk8O2pEiL0w/zh-cn_image_0000002786518672.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=50E56F53B87412045C6B2EB295382760300A060A26EC8C0ADB4331F19A47149B)
 
 ### @Watch与@Monitor监听@Env装饰的变量
 
@@ -824,7 +824,7 @@ struct ChildV1 {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/Vj4lu0l8RYWlEHKXRzCW-w/zh-cn_image_0000002786358744.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/Vj4lu0l8RYWlEHKXRzCW-w/zh-cn_image_0000002786358744.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=39AD008F90CFAE57B0507FB3A3BB9B3463DF960CC0F0F9C5252A725D9A136C75)
 
 在@ComponentV2中，可通过@Monitor监听@Env装饰变量的变化。需要注意的是，仅当@Env装饰的变量被整体赋值时才会触发@Monitor监听回调，其内部属性的变化不会触发回调。
 
@@ -877,4 +877,4 @@ struct Child {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/v8Esq0yHRtip7KAOJvVpOg/zh-cn_image_0000002815558165.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/v8Esq0yHRtip7KAOJvVpOg/zh-cn_image_0000002815558165.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=3EE40512A274C6C1539B811B99AA66BA1D5D377B9D5A2740F7DC9321CCFFA322)

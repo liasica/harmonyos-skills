@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 如何动态修改oh-package.json5的内容
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 如何动态修改oh-package.json5的内容
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:56+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:225ad5ad01c61b8b272384be99b47b7e46f896099a568e9e7b6040d7d57ccdb5
 ---
@@ -21,7 +21,7 @@ content_hash: sha256:225ad5ad01c61b8b272384be99b47b7e46f896099a568e9e7b6040d7d57
 
 以构建har包为例，准备两个入口文件Index.ets和Index123.ets，目前oh-package.json5的入口文件为Index.ets。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/kN87CwOvTVO74A7yvFh3Nw/zh-cn_image_0000002628409280.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/kN87CwOvTVO74A7yvFh3Nw/zh-cn_image_0000002628409280.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=55506BCEE48F991ABCAF7CCE8CE0877558B405564D1784BE09BA7FD7DB3709D1 "点击放大")
 
 在har模块的hvigorfile.ts文件中添加如下内容：
 
@@ -79,4 +79,4 @@ export function customPluginFunction(): HvigorPlugin  {
 
 构建har包，可以看到入口文件已被替换成Index123.ets。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/IiK9tMPrSOOP4g3a8cEAfA/zh-cn_image_0000002658808551.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/IiK9tMPrSOOP4g3a8cEAfA/zh-cn_image_0000002658808551.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A9F3E732961F20ED20B06F56631E346206DC905AE16E4398629E0600C8F082E "点击放大")

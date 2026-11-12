@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: CheckboxGroup
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > CheckboxGroup
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:13+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:b3090ddb123768f7521aa2358e97d8e5cfcf87e7a87d720467adac6224ca199d
 ---
@@ -448,7 +448,7 @@ struct CheckboxExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/uKgFxGMmS5GEdRuAlo-xZQ/zh-cn_image_0000002815400725.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/uKgFxGMmS5GEdRuAlo-xZQ/zh-cn_image_0000002815400725.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=849CF5CCC613FA83FC0DD5C52395B5F128C025AA53FB7CC2C9F29C1463DF8B31)
 
 ### 示例2（自定义勾选样式）
 
@@ -527,7 +527,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/6ixVBt7lR6iEs8cgKuv7Nw/zh-cn_image_0000002786521150.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/6ixVBt7lR6iEs8cgKuv7Nw/zh-cn_image_0000002786521150.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=F21E1349CBF99E7E9CB8C27388472364DBDCD4B443E53E005F8397F3D833DE81)
 
 ### 示例3（自定义多选框样式）
 
@@ -649,7 +649,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/g73oZVY6TyCn6lSfvwaSnQ/zh-cn_image_0000002786361222.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/g73oZVY6TyCn6lSfvwaSnQ/zh-cn_image_0000002786361222.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=891D93E0E9983066BE6E4429FEA83F8F716301392BBECDF002122B7DB99D502E)
 
 ### 示例4（设置全选）
 
@@ -806,4 +806,4 @@ struct MyComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/SlIOpFj5TBujgQ0uamsCJw/zh-cn_image_0000002815560643.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/SlIOpFj5TBujgQ0uamsCJw/zh-cn_image_0000002815560643.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=8541EFDA9FBA58D113CB45230ADA5ACB85BD3861F7D67F0EBA3F684352B24C68)

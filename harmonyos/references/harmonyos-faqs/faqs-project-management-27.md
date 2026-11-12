@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-project-ma
 title: 使用发布证书打release包未成功的解决方案
 breadcrumb: FAQ > DevEco Studio > 工程管理 > 使用发布证书打release包未成功的解决方案
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:50+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:e5b9388d5ff86a4ba4e18c3ebcb5f1540239b2064138f9d14e4956d3b507746c
 ---
@@ -44,4 +44,4 @@ Q：上架时报错：当前软件包存在有调试信息，不允许上架发�
 
 A：通过DevEco Studio界面配置Build Mode选项，点击右上角运行/调试配置旁的圆点图标选择构建模式，检查Build Mode是否设置为release模式，若非release模式请尝试选择release模式后重新编译生成app包。因为Build Mode默认情况下为<Default>选项，选择此项，构建APP包使用release构建模式；构建HAP/HSP/HAR包使用debug构建模式，当应用中存在HAR模块依赖时会导致出现此问题现象。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/c88DZD2DSjK9J2rHl6iu8g/zh-cn_image_0000002628408060.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/c88DZD2DSjK9J2rHl6iu8g/zh-cn_image_0000002628408060.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6297B624850A552AAB33D1F530B23F3D619571DF5A9E0CD09DCADBA1CA85CC9 "点击放大")

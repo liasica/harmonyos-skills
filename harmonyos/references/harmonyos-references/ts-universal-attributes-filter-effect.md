@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 视效设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 视效设置
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:3e1b9ef58a2a9dbb064f1e90e8b56c4050d92c61b633ba0f28170f9d34b39f3f
 ---
@@ -227,4 +227,4 @@ struct FilterEffectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/eNw9DTXcTHS8UzkOdvSpPw/zh-cn_image_0000002786520944.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/eNw9DTXcTHS8UzkOdvSpPw/zh-cn_image_0000002786520944.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=E55934A4FEA39C748EC328A9F6B9125DB7F1DA881DFD3890AF8CEDF82F77729A)

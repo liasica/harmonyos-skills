@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-remote-com
 title: RCP会话实例如何在子线程使用
 breadcrumb: FAQ > 系统开发 > 网络 > 远场通信（Remote Communication） > RCP会话实例如何在子线程使用
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:c0955d8f28f152bb5ae0a5ceeb19807269d9751c2345e11c8b0fb3d32197c67c
 ---
@@ -144,7 +144,7 @@ content_hash: sha256:c0955d8f28f152bb5ae0a5ceeb19807269d9751c2345e11c8b0fb3d3219
 
 代码运行效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/YBPHqBDHQr-MM2xMLFDIrA/zh-cn_image_0000002628612498.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/YBPHqBDHQr-MM2xMLFDIrA/zh-cn_image_0000002628612498.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=73DDB0759E291A02225A2EA3B23C0387D718781D05E39718EF8A4100206552EF "点击放大")
 
 ### 场景二：在TaskPool中进行实现RCP网络请求
 

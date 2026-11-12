@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-802
 title: 返回顶部按钮功能异常
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 返回顶部按钮功能异常
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:95db6f923856c5a2d94455b0f330cc48e483e3c5b9e980324e5fca43e98ffdc6
 ---
@@ -23,7 +23,7 @@ content_hash: sha256:95db6f923856c5a2d94455b0f330cc48e483e3c5b9e980324e5fca43e98
 
 1. 使用DevEco Testing查看滚动的组件，滚动组件为List，ListItem中是图片。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/lxUcBi-eSRuiCAqA9MHodQ/zh-cn_image_0000002628557790.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/lxUcBi-eSRuiCAqA9MHodQ/zh-cn_image_0000002628557790.png?HW-CC-KV=V1&HW-CC-Date=20261112T233202Z&HW-CC-Expire=31536000000&HW-CC-Sign=72BFC498BFA84A7D9C98371909F7F11529FD0AF04652EB54872917322B51FC6B "点击放大")
 2. 检查List组件的滑动控制器Scroller，滑动位置是否设置有误，是否设置了滑动动画。
 
 ## 分析结论

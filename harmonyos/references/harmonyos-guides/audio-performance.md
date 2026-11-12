@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-perform
 title: 提升音频性能体验
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频性能调优 > 提升音频性能体验
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:17abb285f972ae6e48507d076a5d64379188c2cef4a5c48bdcf5a6fa0cf62f65
 ---
@@ -77,35 +77,35 @@ HiSmartPerf工具完整的介绍可参考指南：[HiSmartPerf](../AppGallery-co
 
 1. 进入CPU Trace。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/a5tXBVJPRruylNrX4J9C0Q/zh-cn_image_0000002786359848.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/a5tXBVJPRruylNrX4J9C0Q/zh-cn_image_0000002786359848.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=7051F916ED9095924FDF64F0541384C50606F447E5324B476A67A73317741B86)
 
    打开HiSmartPerf工具，进入游戏性能分析的CPU Trace页面。虽然标题是游戏性能分析，但分析场景并不仅限于游戏场景。
 2. 抓取配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/yJ3-WtZNQQaRHijEs3fpyQ/zh-cn_image_0000002815559269.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/yJ3-WtZNQQaRHijEs3fpyQ/zh-cn_image_0000002815559269.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=9134BDE4B2BB2BB7CDC349B3B44EDF1488D3BFC382ECEFD242C4A6D971AE7A23)
 
    配置项主要有数据文件名、缓存容量、最大文件大小、数据项和采集时间。要抓取系统音频相关的数据项，需要勾选zaudio。采集时间可以按测试场景进行调节，需要注意，测试时长和勾选的数据项数量会影响文件大小，往往需要同步调节。
 3. 开始采集。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/gRwZYtG-S7yJ-P1I5ZI7NQ/zh-cn_image_0000002815399353.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/gRwZYtG-S7yJ-P1I5ZI7NQ/zh-cn_image_0000002815399353.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=61D00D5FA571B9E3F76FC51E918D5F45DB339484F959E4267D6A1C51A1C574CD)
 
    采集完成后将提示文件回传，当文件较大时请耐心等待。
 4. 查看Trace。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/hVEPGmBSQs6OU1cIM9_vQA/zh-cn_image_0000002786519778.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/hVEPGmBSQs6OU1cIM9_vQA/zh-cn_image_0000002786519778.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=2BC131DF5EF2ED5142CEDD1A16EC52735913BA9561DFDF3E740207FD85C3CDD1)
 
    采集时间内的cpu性能分析结果。
 5. 找到音频数据处理线程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/Ogt-zRq7S0mGjQA0t_XuYA/zh-cn_image_0000002786359850.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/Ogt-zRq7S0mGjQA0t_XuYA/zh-cn_image_0000002786359850.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=8610852350A72EC2FBC6E13429F9052618221D2E44AB938DA35EC6A0DA443C3D)
 
    对于音频播放业务，可以通过OnWriteData搜索目标测试应用为系统输入播放数据的位置，进一步分析数据的生产来源的性能情况。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/faZK_3GERjGK3VhfSC49rw/zh-cn_image_0000002815559271.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/faZK_3GERjGK3VhfSC49rw/zh-cn_image_0000002815559271.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A6AD11A6D51CF65924DE95601865931D9BD062FAC3694F89C5B4FEB2D386F11)
 
    Runnable表示线程在等待调度，当存在由于过长的Runnable导致数据未能被及时写入的情况，包括应用自身的数据生产线程，则需要考虑接入音频工作组，以提升线程的优先级并保障CPU资源分配。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/4ePVAK8pTZWWmDoDhSYxbg/zh-cn_image_0000002815399355.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/4ePVAK8pTZWWmDoDhSYxbg/zh-cn_image_0000002815399355.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=800031B441D3276418D1D968A940D7E01DF5E2F6C2C78E3F72756F53DDC11605)
 
    在CPU Usage中可以查看每个任务的CPU占用情况。
 

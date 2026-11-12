@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-avcodec-18
 title: 部分视频边缓存边播放失败
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频编解码（AVCodec） > 部分视频边缓存边播放失败
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:33+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:d847ffec1e4c439486a27b89eb2a46026e08cde5bb657ec8ffd09af19e67b665
 ---
@@ -25,7 +25,7 @@ content_hash: sha256:d847ffec1e4c439486a27b89eb2a46026e08cde5bb657ec8ffd09af19e6
    * mdat：用于存储实际的音视频数据。一个mp4文件可以有一个或多个mdat盒子，也可以没有（当媒体数据全部引用其他文件时）。媒体数据的结构由metadata进行描述。
 2. 对无法播放的视频文件进行结构解析，发现moov信息排在最后面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/-yTEe_E1QBWjvL5AZTEqJw/zh-cn_image_0000002658911571.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/-yTEe_E1QBWjvL5AZTEqJw/zh-cn_image_0000002658911571.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=59FF752C9B328A571F45FBE3CE7FCD1BE2A299ABF889559511F49EF149D10C56 "点击放大")
 
 ## 分析结论
 

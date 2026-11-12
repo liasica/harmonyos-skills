@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 实现游戏伴随
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏伴随服务 > 实现游戏伴随
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:15+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-10
 content_hash: sha256:738cf6c06dcd9ea868fc26f8ec8439c7e7a657493b7809d64228bb409b2495f8
 ---
@@ -20,7 +20,7 @@ content_hash: sha256:738cf6c06dcd9ea868fc26f8ec8439c7e7a657493b7809d64228bb409b2
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/acKyPHsIQeCAo91j20rRBg/zh-cn_image_0000002786360116.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/acKyPHsIQeCAo91j20rRBg/zh-cn_image_0000002786360116.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC15ECECAF8EC9045D8E6AB9FDBCFEA3D536AE317443C07DD66B8B111218AD6D)
 
 1. 用户启动游戏陪玩类应用。
 2. 用户启动游戏。

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 表冠事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 基础输入事件 > 表冠事件
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:e721ef1ed3312a3c61349e2efbbe96c710de707be92f36c1dbe82a3541a2ecec
 ---
@@ -100,4 +100,4 @@ struct CityList {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/jLXaDiEvRu-mh0GrcBG_aw/zh-cn_image_0000002815558543.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/jLXaDiEvRu-mh0GrcBG_aw/zh-cn_image_0000002815558543.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9E54E66219B7320E64ED373982BE5FF3697C35940B9355B13D00005FE0CF946)

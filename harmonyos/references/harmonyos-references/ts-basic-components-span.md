@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Span
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > Span
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:fa8379828024b8e29a7df4d2abc6651b34e0dd5912379fcf274503b773d65fbd
 ---
@@ -576,7 +576,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/KG23PUGcSiuvy6TBNoYXtA/zh-cn_image_0000002786361346.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/KG23PUGcSiuvy6TBNoYXtA/zh-cn_image_0000002786361346.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=881415460E8F5D2758BAA0DD9EC7E8AC19DFEEAF702580CC799EB4AC6ADF9795)
 
 ### 示例2（设置文本阴影）
 
@@ -630,7 +630,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/L8PI_Mv1QMCFVldilGNAkw/zh-cn_image_0000002815560767.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/L8PI_Mv1QMCFVldilGNAkw/zh-cn_image_0000002815560767.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA2FFF1141E8886C209D59D2FCACA06008727DBF854F224E170C812537F640A4)
 
 ### 示例3（设置背景样式）
 
@@ -654,7 +654,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/SEco1FVzS7eBLJCXc1vGYA/zh-cn_image_0000002815400851.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/SEco1FVzS7eBLJCXc1vGYA/zh-cn_image_0000002815400851.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=537B9C58B9BA0A9615AB8FED3358605C0DE35D43662624D0B220CF2294299578)
 
 ### 示例4（设置文本基线偏移量）
 
@@ -691,7 +691,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/UglTmCf6QkqEByMgKrpfRg/zh-cn_image_0000002786521276.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/UglTmCf6QkqEByMgKrpfRg/zh-cn_image_0000002786521276.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=508E1806B12265C7B30A0FB77FED05200F51D2B7488609A1943D7EB0517B1DB9)
 
 ### 示例5（设置文本可变字体的属性）
 
@@ -724,4 +724,4 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/HRZZiv2VQ8u-LRh9djcTCg/zh-cn_image_0000002815400775.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/HRZZiv2VQ8u-LRh9djcTCg/zh-cn_image_0000002815400775.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E0213CB75E6F3B444279B6154A109917553AC1633CD98FA6F2CDDCC9CFD8599)

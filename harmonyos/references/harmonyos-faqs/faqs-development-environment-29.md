@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: 新建项目运行报错ROR:node
 breadcrumb: FAQ > DevEco Studio > 环境准备 > 新建项目运行报错ROR:node
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:49+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:3da06ed447a424bfb0430633b67e8d3ca366d11730400a4e6dd462cfa92c22b6
 ---
@@ -18,7 +18,7 @@ content_hash: sha256:3da06ed447a424bfb0430633b67e8d3ca366d11730400a4e6dd462cfa92
 ROR:  node: *** Terminating app due to uncaught exception 'NSInvalidArgumentException', reason: '-[__NSCFString _stringByResolvingSymlinksInPathUsingCache:]: unrecognized selector sent to instance 0x60000385c000'
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/pPvwFUGPQtW-eDwqSiqI6Q/zh-cn_image_0000002628405084.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/pPvwFUGPQtW-eDwqSiqI6Q/zh-cn_image_0000002628405084.png?HW-CC-KV=V1&HW-CC-Date=20261112T233211Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD23466F199A3CA125659B9DA516946D4CA61532A23DCEF17C5B47074FB7D432 "点击放大")
 
 ## 背景知识
 

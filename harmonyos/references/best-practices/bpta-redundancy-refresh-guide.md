@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-redundancy
 title: 组件冗余刷新解决方案
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > 组件冗余刷新解决方案
 category: best-practices
-scraped_at: 2026-11-10T10:42:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-03
 content_hash: sha256:5dc1b98ad56f9b23beb93e6c6712abede688ff2c07a545dfcadd99a6d88ccc1a
 ---
@@ -154,7 +154,7 @@ struct DFXStateBeforeOptimization {
 
 **图1** 修改代码前点击Scale按钮和Move按钮时运行动图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/7bCVEEJBQpyt8_V7XWoHjA/zh-cn_image_0000002229451917.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/7bCVEEJBQpyt8_V7XWoHjA/zh-cn_image_0000002229451917.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A6B2CDB511CAF0F722F08EA3FC0020CD97207948F381B4DC84EAD0BEDB70613 "点击放大")
 
 点击Move按钮的时候SpecialImage组件却发生了旋转动画，这就造成了冗余刷新。
 
@@ -172,7 +172,7 @@ hdc shell "hidumper -s WindowManagerService -a '-a'"
 
 **图2** 命令行获取应用窗口Id运行界面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/acliJMJWSby8AscrYyxEzQ/zh-cn_image_0000002194011628.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/acliJMJWSby8AscrYyxEzQ/zh-cn_image_0000002194011628.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2213C604C7EDA3DBAD806DC4481AA4A208DFCF515593BAA290E5D08D028A12A "点击放大")
 
 3. 基于上一步获取的窗口Id 11，使用-viewHierarchy命令携带-r 参数递归打印应用的自定义组件树。
 
@@ -385,7 +385,7 @@ struct DFXStateAfterOptimization {
 
 **图3** 修改代码后点击Scale按钮和Move按钮时运行动图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/vG5w8rRxQ_ebh3Rp-UVqew/zh-cn_image_0000002193852044.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/vG5w8rRxQ_ebh3Rp-UVqew/zh-cn_image_0000002193852044.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=67C3DEDECFBC6224798F0389EDB1AA2DA22B11B68C800C05712F517DDC3056E3 "点击放大")
 
 可以使用上文步骤再次获取ComponentA组件的状态变量信息如下，可以看到ComponentA中状态变量scaleStyle影响组件SpecialImage[8]和Image[18]，状态变量translateStyle影响组件Column[9]，translateStyle的变化不会再导致SpecialImage的刷新。
 

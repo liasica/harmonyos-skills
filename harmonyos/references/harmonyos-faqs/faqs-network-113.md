@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-11
 title: 移动数据关闭再打开后，如何监听IPv6已激活
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > 移动数据关闭再打开后，如何监听IPv6已激活
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:5b78566c793004cd520b7b98cb339739f37f587d73fe0451fce9aac0a030886c
 ---
@@ -71,7 +71,7 @@ conn.on('netAvailable', ((netHandle: connection.NetHandle) => {
 
    日志打印：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/a8M9hEkrQaa7v1DWsHYpDA/zh-cn_image_0000002628610904.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/a8M9hEkrQaa7v1DWsHYpDA/zh-cn_image_0000002628610904.png?HW-CC-KV=V1&HW-CC-Date=20261112T233214Z&HW-CC-Expire=31536000000&HW-CC-Sign=65508E4BCF8059AEDCD923203146D3CF1C4665C1C92EC0AA3D70585EEE387C26 "点击放大")
 
 完整样例参考：
 

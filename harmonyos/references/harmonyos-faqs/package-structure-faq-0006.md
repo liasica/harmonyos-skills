@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/package-structu
 title: 多HAP包集成同一HSP规则与配置常见问题
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 常见问题 > 多HAP包集成同一HSP规则与配置常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:45+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:803b0557730895495bad7cb3a5d26834ff0004adcdc8f2498197b298bf61204c
 ---
@@ -18,11 +18,11 @@ content_hash: sha256:803b0557730895495bad7cb3a5d26834ff0004adcdc8f2498197b298bf6
 
    场景一：业务工程不涉及改动，但基础工程需要演进（功能增强/修复bug等）。只需要修改基础工程中的versionCode、minAPIVersion（如果涉及的话）。其他业务工程后续迭代时，增加对应业务工程的versionCode版本，使之与基础工程中的versionCode版本一致。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/8d_TblAmTIGsk1HGtKlkDw/zh-cn_image_0000002772029372.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/8d_TblAmTIGsk1HGtKlkDw/zh-cn_image_0000002772029372.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=2FA05CD4A3A17BF70389BF5A541A76961AD37506E343F43C13863F87369EE362 "点击放大")
 
    场景二：基础工程不涉及改动，业务工程需要演进（功能增强/修复bug等）。不仅需要增加业务工程中的versionCode，同时需要修改基础工程中的versionCode。如果涉及到minAPIVersion改动，同理，也需要两者一起修改。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/IWH3JSueR--SuwuV07cZow/zh-cn_image_0000002801429155.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/IWH3JSueR--SuwuV07cZow/zh-cn_image_0000002801429155.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=C78AA42B9A416A4F5211F917CBEB273E1430E62E97C1252F47E3BC0589A787C0 "点击放大")
 
 **Q：安装HAP包时提示错误码10024？**
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-li
 title: ohpm私仓安装私有SDK失败
 breadcrumb: FAQ > DevEco Studio > 命令行工具 > ohpm私仓安装私有SDK失败
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:02+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:aa550f7016f227250e3e87a215fe5a51b11efecd5063e774ec4b8977f01a8d09
 ---
@@ -22,7 +22,7 @@ content_hash: sha256:aa550f7016f227250e3e87a215fe5a51b11efecd5063e774ec4b8977f01
 
 1. 打开项目的ohpm配置文件，可以通过IDE的settings查找文件所在位置：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/tDsmUgdAQvKNcl8ePExluQ/zh-cn_image_0000002628409724.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/tDsmUgdAQvKNcl8ePExluQ/zh-cn_image_0000002628409724.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=76A65C63EB8AE4790424DEDB5586F5C36AF2B790654E68772B5171CD2DA57027 "点击放大")
 2. 添加仓库地址配置：
 
    通过@group:registry语法，为特定作用域的包指定专属registry。

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-1
 title: Hypium框架中的BY.XPath指令为何获取不到控件
 breadcrumb: FAQ > DevEco Studio > 应用测试 > Hypium框架中的BY.XPath指令为何获取不到控件
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:362622b00be1738c9d7bab7cd925519a07593af4e10a5e92ee152708c208463e
 ---
@@ -20,7 +20,7 @@ component = driver.touch(BY.xpath("/root/Navigation/NavBar/NavBarContent/NavRout
 
 工程组件结构如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/L7kAOTtjT529_W4yi9o5Dg/zh-cn_image_0000002658928757.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/L7kAOTtjT529_W4yi9o5Dg/zh-cn_image_0000002658928757.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC2091E17C6ABF599AA986A4B933C746E3EEA5394640FE6B40BA09D2F9CE8232 "点击放大")
 
 ## 背景知识
 

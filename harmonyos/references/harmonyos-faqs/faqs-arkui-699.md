@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-699
 title: 已经登录过，但是点击评论依然提示需要登录
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 已经登录过，但是点击评论依然提示需要登录
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:5c3536dc291cb235597eb898d967f8b111f6ca500dbbf0b314cfe62cbc3d93af
 ---
@@ -166,4 +166,4 @@ content_hash: sha256:5c3536dc291cb235597eb898d967f8b111f6ca500dbbf0b314cfe62cbc3
 
    效果图如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/tAI-uMESRmSWKjdnNxpjcw/zh-cn_image_0000002658914203.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/tAI-uMESRmSWKjdnNxpjcw/zh-cn_image_0000002658914203.png?HW-CC-KV=V1&HW-CC-Date=20261112T233200Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DE4C67912D3A3C56733511FD4C9B75A188E80683D0C3BF489A49F477C45F2A7 "点击放大")

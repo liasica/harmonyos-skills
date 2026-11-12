@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-581
 title: 多级Tabs嵌套滑动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 多级Tabs嵌套滑动
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:39+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:a5768751ec4fd3df78509542622118ab09fb87ddf3014555044bf8c2a7909a1e
 ---
@@ -14,7 +14,7 @@ Tabs组件嵌套Tabs，在正常情况下，当子组件滑动到边缘时不会
 
 效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/da4g6zxdSoS15bN6fKrXJA/zh-cn_image_0000002628552384.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/da4g6zxdSoS15bN6fKrXJA/zh-cn_image_0000002628552384.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7CB72755EBEDE739A14E8B29C9C55421E5866001B8264579C4FA8AF6341B509 "点击放大")
 
 ## 背景知识
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-remote-com
 title: RCP下载进度监听
 breadcrumb: FAQ > 系统开发 > 网络 > 远场通信（Remote Communication） > RCP下载进度监听
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-30
 content_hash: sha256:9661137104017fdd4c8b75de0f11655e8d8e21a42e000a33793d51d60e62cfd0
 ---
@@ -14,7 +14,7 @@ RCP进行文件下载时，如何对下载进度实时监听？
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/_K0DR7HFT-KMCr6dgPe81A/zh-cn_image_0000002658851747.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/_K0DR7HFT-KMCr6dgPe81A/zh-cn_image_0000002658851747.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=4C2F6E8EAED747AD5A1FA7D167AC76EE9F49732B847BE560F8268679655770D9 "点击放大")
 
 ## 解决方案
 

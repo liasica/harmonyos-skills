@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: Rect
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Rect
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:6fcd0d19ffc23a173c6113bc5eb80126bb8f9d92491789cc3f87f4bb5beb6b51
 ---
@@ -211,7 +211,7 @@ struct RectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/3MEJvWkFTX-sJzuqyXIrhg/zh-cn_image_0000002786361494.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/3MEJvWkFTX-sJzuqyXIrhg/zh-cn_image_0000002786361494.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=99DDAEB7974B19965234FD1EA428CA1327E137B923893682B2A455160FC11432)
 
 ### 示例2（绘制渐变色矩形）
 
@@ -252,7 +252,7 @@ struct RectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/Ni6NTd-YRmCqI7C-uyf0EA/zh-cn_image_0000002815401019.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/Ni6NTd-YRmCqI7C-uyf0EA/zh-cn_image_0000002815401019.jpeg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=A47651366B352D66132E036F9461708D7ABE0F8DD2F41E32D504C8F76942DBB9)
 
 ### 示例3（使用不同参数类型绘制矩形）
 
@@ -287,7 +287,7 @@ struct RectExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/CEnl5YUARlCDHPqNHkMBmw/zh-cn_image_0000002815401043.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/CEnl5YUARlCDHPqNHkMBmw/zh-cn_image_0000002815401043.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=DDF8A508269B51BABA1050B9F30F810ED767562A689691175DA94FF5B0B78F47)
 
 ### 示例4（使用attributeModifier动态设置Rect组件的属性）
 
@@ -329,4 +329,4 @@ struct RectModifierDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/hdq0o1tWQ2ODjegjGAo-Zg/zh-cn_image_0000002786521468.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/hdq0o1tWQ2ODjegjGAo-Zg/zh-cn_image_0000002786521468.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4A44DD6EF06D207289A3AE7F26A0DE77385165D080FD70580AD2CA78A07AFC8)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-673
 title: 如何实现根据不同的列表项，弹出不同的上下文菜单
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现根据不同的列表项，弹出不同的上下文菜单
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:3fd7573c7e818f42e0c4d5ae042eb1529cca1a15d15ecb12f8253e0ab1e6b317
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:3fd7573c7e818f42e0c4d5ae042eb1529cca1a15d15ecb12f8253e0ab1e
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/f8TO_jd5S62SNo5pPHcmHw/zh-cn_image_0000002628554566.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/f8TO_jd5S62SNo5pPHcmHw/zh-cn_image_0000002628554566.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233159Z&HW-CC-Expire=31536000000&HW-CC-Sign=2CEA97E8C66D1BF81F56AD50E0EFE58094C9D7D3B22552633A74F3B8F07DAF39 "点击放大")
 
 ## 背景知识
 

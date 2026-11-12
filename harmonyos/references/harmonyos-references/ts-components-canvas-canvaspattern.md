@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: CanvasPattern
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > CanvasPattern
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:e02e09b34e4ede2d2ae7cdcdd2bdda8f9bd47f2c1b5b739da662d80e2949308d
 ---
@@ -92,4 +92,4 @@ struct CanvasPatternPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/TZcUiiAKSF-uCoXnKAi-NQ/zh-cn_image_0000002815560895.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/TZcUiiAKSF-uCoXnKAi-NQ/zh-cn_image_0000002815560895.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=52510EB25B9D6BCD3E763B2D173D06991DDF58CDA9FE17B45FAE67A016104F6A)

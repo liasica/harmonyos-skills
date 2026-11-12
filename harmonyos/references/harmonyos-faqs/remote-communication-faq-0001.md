@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/remote-communic
 title: rcp如何实现文件上传
 breadcrumb: FAQ > 系统开发 > 网络 > 远场通信（Remote Communication） > 常见问题 > rcp如何实现文件上传
 category: harmonyos-faqs
-scraped_at: 2026-11-12T09:59:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:d903f64c2b7b88fd3b5418e1774e546441b3f2c278ea09933aaf695cd4305361
 ---
@@ -49,7 +49,7 @@ content_hash: sha256:d903f64c2b7b88fd3b5418e1774e546441b3f2c278ea09933aaf695cd43
 
    场景1运行效果：使用uploadFromFile方法上传文件content-type系统默认为'application/octet-stream'，运行日志如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/pZu5g54cRIOnjUgPUSvu5A/zh-cn_image_0000002768139480.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/pZu5g54cRIOnjUgPUSvu5A/zh-cn_image_0000002768139480.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=F811AAC39C45F2F6FE64CCEAB17FEBEBADCA21A3EBC16C00CF2D630340358D34 "点击放大")
 
 场景2：使用读取文件数据回调函数作为入参上传文件，具体参考官方指南[上传功能实现](../doccenter-capabilities/remote-communication-filetransferfast.md#上传功能实现)。
 
@@ -96,7 +96,7 @@ content_hash: sha256:d903f64c2b7b88fd3b5418e1774e546441b3f2c278ea09933aaf695cd43
 
 使用沙箱路径上传表单文件，系统默认会根据文件名类型匹配content-type，此为图片类型文件上传，即为image/jpeg，运行日志如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/3U2S-T5NTS2LwBSSR7EY9g/zh-cn_image_0000002797580145.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/3U2S-T5NTS2LwBSSR7EY9g/zh-cn_image_0000002797580145.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC905D626297BF6D4B50075B93E477CA6FAD48083298EB34F7591CB06D8AFFA3 "点击放大")
 
 场景2：使用文件数据上传表单文件。
 
@@ -124,10 +124,10 @@ content_hash: sha256:d903f64c2b7b88fd3b5418e1774e546441b3f2c278ea09933aaf695cd43
 
 * 如果配置参数remoteFileName，系统默认会根据文件名类型匹配content-type，此为图片类型文件上传，即为'image/jpeg'，运行日志如下图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/_U6UZuHpSrm8GQpM7sRffw/zh-cn_image_0000002797461851.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/_U6UZuHpSrm8GQpM7sRffw/zh-cn_image_0000002797461851.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9D18A10C34347C454BC17D1CEACF95FC3E65EBF3DC55FCDC32A488F5472D6C3 "点击放大")
 * 如果不配置参数remoteFileName，或者设置为undefined，系统无法识别为图片类型文件，即使设置contentType参数为'image/jpeg'，上传数据依然无法识别，运行日志如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/W-dYYS6iRNuoK-UAld8pGQ/zh-cn_image_0000002797581829.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/W-dYYS6iRNuoK-UAld8pGQ/zh-cn_image_0000002797581829.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C15DC003CBC29363C5551C7F098A8A97FD289134FC2399B051E3ACD504B34AC "点击放大")
 
 完整示例代码：
 

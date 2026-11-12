@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: ArkUI页面滑动卡顿
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > ArkUI页面滑动卡顿
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:cb003d2dffadf86dc1ea6affed021372a740e92a8d68c4ee380540613fafd2d0
 ---
@@ -45,57 +45,57 @@ content_hash: sha256:cb003d2dffadf86dc1ea6affed021372a740e92a8d68c4ee380540613fa
 
 1. 使用SmartPerf抓取或打开问题场景Trace文件，通过滑动Trace点H:APP\_LIST\_FLING确定应用滑动操作区间。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/j8FKBV53RlmCHc58-g61LQ/zh-cn_image_0000002658914265.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/j8FKBV53RlmCHc58-g61LQ/zh-cn_image_0000002658914265.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=8EF1329F19F06E45A0051E46E6A2FF502EEA2023FD3FC5CBDC02AF79383ABFF6 "点击放大")
 2. 确定滑动区域内卡顿点。
 
    针对不同屏幕刷新率，Vsync信号的周期不同，120Hz对应8.33ms，90Hz对应11.11ms，60Hz对应16.67ms，滑动卡顿问题需要先确定Vsync信号的周期。
 
    查看滑动操作区间内的屏幕刷新率（找到render\_service泳道中H:PreferredFrameRate对应的位置），如下图为120Hz，则在滑动区间内应用主线程接收Vsync信号周期（两个Vsync信号的起始点之间的间隔时间）为8.3ms，超出8.3ms的地方为卡顿点，需要分析排查其中耗时部分。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/GDiR8P3oQj-DFDSDFiddHA/zh-cn_image_0000002658794313.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/GDiR8P3oQj-DFDSDFiddHA/zh-cn_image_0000002658794313.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A664DB670BDFF1476706087D84CDF2D4573236F596623463B7A0C865CA51466 "点击放大")
 3. 卡顿点可能存在以下情况：
    * 应用执行耗时操作：
 
      应用在两侧接收Vsync信号处理存在长时间的Running，如下图所示，此处应用在执行耗时操作，会导致卡顿。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/x1rp2NGyRaydL91W5ONMrw/zh-cn_image_0000002628554948.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/x1rp2NGyRaydL91W5ONMrw/zh-cn_image_0000002628554948.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=91B32943D2A1B7791190983B6DCE8DF75C94C11B79FE372D3C478861E5AD0CA9 "点击放大")
    * 应用执行耗时的ArkTS业务逻辑：
 
      如下图所示，应用在接收Vsync信号处理时耗时20.1ms，远远超出了8.3ms，耗时主要在H:ExecuteJS，运行ArkTS业务逻辑。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/d9CXACs8QZOZRN5bdBrbMg/zh-cn_image_0000002628395048.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/d9CXACs8QZOZRN5bdBrbMg/zh-cn_image_0000002628395048.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1F17FCB72A5886A49FC00F1CEDDFDF274676889E78ED82EC45A77CA264FA3A9 "点击放大")
    * 应用组件复杂，测量、布局耗时：
 
      如下图所示，应用在接收Vsync信号处理时耗时10ms，超出了预期时间8.3ms，耗时主要集中在组件ListItem测量部分。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/yPt4p-N0R-CweV1oV6-10g/zh-cn_image_0000002658914267.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/yPt4p-N0R-CweV1oV6-10g/zh-cn_image_0000002658914267.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C9CAFD280063F1F721E3F21B60F8C7C211DB0217CF5C113CE7522026081E862 "点击放大")
 
      使用ArkUI Inspector工具查看该组件的层级，可看到该组件层级达到了10+，组件层级较多。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/WkHu18qQTYi7jEu2TSPqDQ/zh-cn_image_0000002658794315.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/WkHu18qQTYi7jEu2TSPqDQ/zh-cn_image_0000002658794315.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=660FC539E847DCBD6D9CB434F52786EB65C3AC546136645E585FB41F4B95F9DB "点击放大")
    * 应用以独立的帧率绘制更新UI页面：
 
      如下图所示，应用在接收Vsync信号处理时耗时14.3ms，超出了预期时间8.3ms，耗时主要集中在H:DispatchDisplaySync，推测应用进行了降帧率。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/klRcWwG4RLuVHS0mc0B20Q/zh-cn_image_0000002628554950.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/klRcWwG4RLuVHS0mc0B20Q/zh-cn_image_0000002628554950.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9BC71F1DACC8D51F0CFD622B9B86D9A931D072CDCE206388AB7D3E13C73274A "点击放大")
 
      可以使用DevEco Profiler [Frame分析](../harmonyos-guides/ide-insight-session-frame.md)工具抓取该过程Trace信息，查看DispatchDisplaySync部分应用的调用栈，如下图可看到耗时集中在应用so文件的帧回调函数，应用有[请求自绘制内容绘制频率](../harmonyos-guides/displaysync-xcomponent.md)，该频率较低导致滑动卡顿问题。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/04XZxW9HR2yF9Idae0GeDQ/zh-cn_image_0000002628395050.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/04XZxW9HR2yF9Idae0GeDQ/zh-cn_image_0000002628395050.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=271F7F4FC8F2F2DC0681C5B2A53D4CED3BD2424C7D3922A4DD900CB5290C3636 "点击放大")
    * 滑动期间binder调用过多：
 
      如下图所示，应用接收Vsync信号的周期超过90ms，远大于预期的11.11ms，耗时主要集中在大量binder调用。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/gW9mHp6AS1Sq_muwAgPvGA/zh-cn_image_0000002658914269.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/gW9mHp6AS1Sq_muwAgPvGA/zh-cn_image_0000002658914269.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A478597112128742E4981E0153F77034097C3C3AB781C7B48EF93E34FB25FF2 "点击放大")
    * 状态变量变化，组件更新耗时多：
 
      如下图所示，应用在接收Vsync信号处理时耗时10.1ms，超出了预期时间8.3ms，耗时主要集中在H:FlushDirtyNodeUpdate，状态变量变化，组件更新耗时多。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/-KbW_-cWQrmTUxIST0f40A/zh-cn_image_0000002658794317.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/-KbW_-cWQrmTUxIST0f40A/zh-cn_image_0000002658794317.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=97B717993B04673FCD1193457580382F838C43816D39D8FA4CA8DB88E2A77BFA "点击放大")
 
      查看滑动过程中Trace信息，发现有大量状态变量更新、节点刷新，同时在日志中可以看到有大量State variable 'xxx' has changed during render日志打印，这是由于组件渲染绘制时有更新状态变量，一直触发节点刷新，导致滑动卡顿丢帧问题。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/QOzTwCiEQvKAIJsNlymPZg/zh-cn_image_0000002628554952.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/QOzTwCiEQvKAIJsNlymPZg/zh-cn_image_0000002628554952.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B8B534F85ABB883BCFE0BC7A3C829B468DD14F1289DA7838E960EC454AE4A48 "点击放大")
 
      ```txt
      11889-11889  C03947/com.exam...AceStateMgmt com.examp...lication  E     [(100000:100000:scope)] FIX THIS APPLICATION ERROR:  @Component 'XXXXXX'[11248]: State variable 'XXXXXX' has changed during render! It's illegal to change @Component state while build (initial render or re-render) is on-going. Application error!
@@ -111,7 +111,7 @@ content_hash: sha256:cb003d2dffadf86dc1ea6affed021372a740e92a8d68c4ee380540613fa
 
      如下图所示，在滑动过程List组件有多次进行测量布局，测量布局耗时较多导致滑动卡顿。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/V4aLzgJjRXOCWPYnn1E5cg/zh-cn_image_0000002628395052.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/V4aLzgJjRXOCWPYnn1E5cg/zh-cn_image_0000002628395052.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=A343E1B61651AFB3646924B9468FB720959C7C2E0A48F0C4DBB905641B0AB630 "点击放大")
 
 ## 分析结论
 

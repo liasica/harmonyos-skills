@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-core-speec
 title: 文本转语音如何区分是否为手动停止播报
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 基础语音（Core Speech） > 文本转语音如何区分是否为手动停止播报
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:983f414051eb5392e5482096f0ceb50728659a065cbb1daf748df7fb2a6747fe
 ---
@@ -20,10 +20,10 @@ content_hash: sha256:983f414051eb5392e5482096f0ceb50728659a065cbb1daf748df7fb2a6
 * onComplete回调触发有2种情况，回调结果[CompleteResponse](../harmonyos-references/hms-ai-texttospeech.md#completeresponse)中type为0表示合成结束，type为1表示播报结束，两者的回调时序并不固定。而onStop回调必然会在播报结束（type为1）的onComplete回调之后触发，即当调用stop接口时，可能会出现两种回调时序：
   + 调用stop前语音已经合成结束：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/Fs7YunoKSRC6_McWrUZZGg/zh-cn_image_0000002658914049.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/Fs7YunoKSRC6_McWrUZZGg/zh-cn_image_0000002658914049.png?HW-CC-KV=V1&HW-CC-Date=20261112T233210Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6BA756CCFF28954BE95C6FA17FA529F5E3E3C4B98AEA13BFB1828919F94512E "点击放大")
   + 调用stop前语音还未合成完毕：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/koiSTm-VSU6Dz0fM0A1nbA/zh-cn_image_0000002658794099.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/koiSTm-VSU6Dz0fM0A1nbA/zh-cn_image_0000002658794099.png?HW-CC-KV=V1&HW-CC-Date=20261112T233210Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A16C811EFFAD89CC283B0DEEF83ADA85FCB292F5F31F32A1C1AD710A9456779 "点击放大")
 
 ## 解决方案
 

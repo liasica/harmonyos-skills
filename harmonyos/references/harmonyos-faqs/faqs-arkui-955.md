@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-955
 title: 如何实现PC悬浮弹出提示框功能
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现PC悬浮弹出提示框功能
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:3954f35219de40efd4d3214575bfe1d33fa416a1bc0bf1d4545f1cecc9d25210
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:3954f35219de40efd4d3214575bfe1d33fa416a1bc0bf1d4545f1cecc9d
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/zqlT_8hOSGuCdmbxX0A-uQ/zh-cn_image_0000002658920479.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/zqlT_8hOSGuCdmbxX0A-uQ/zh-cn_image_0000002658920479.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=9866BF95240178D34A0855177CAE9AC3A08A303BFD6A02BB95DF3E83C329AFF1 "点击放大")
 
 ## 背景知识
 
@@ -58,7 +58,7 @@ content_hash: sha256:3954f35219de40efd4d3214575bfe1d33fa416a1bc0bf1d4545f1cecc9d
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/IYA360DKQ0y5-vPxDJGUug/zh-cn_image_0000002628401266.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/IYA360DKQ0y5-vPxDJGUug/zh-cn_image_0000002628401266.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=605A864F131B8121862C55D281BD73AEC37A9EE356197CAC8496A65269C8345E "点击放大")
 * **方案二**：为图片组件绑定onHover悬浮事件监听与Popup控制气泡。当检测到有鼠标进入时，通过修改控制显示的状态变量来弹出气泡。
 
   ```ts
@@ -101,7 +101,7 @@ content_hash: sha256:3954f35219de40efd4d3214575bfe1d33fa416a1bc0bf1d4545f1cecc9d
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Smqr51oDQ_inttN539WCvw/zh-cn_image_0000002658800525.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Smqr51oDQ_inttN539WCvw/zh-cn_image_0000002658800525.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=602C2A20DE15A0F00D93BC45A4C1FA896F2DA906CD475994F2A71A56310ACF11 "点击放大")
 
 ## 常见FAQ
 

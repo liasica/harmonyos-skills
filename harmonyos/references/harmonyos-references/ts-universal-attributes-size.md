@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 尺寸设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 布局与边框 > 尺寸设置
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:76417b44749acd7addd53a2603c7a63484e382f0699c5bf29bf6025c6a87ad19
 ---
@@ -434,7 +434,7 @@ struct SizeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/mQhOFdY5R1yCZIfseQvBng/zh-cn_image_0000002815560399.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/mQhOFdY5R1yCZIfseQvBng/zh-cn_image_0000002815560399.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0CDF7E9D6BDC1588677B542DD7371DA5F53B1F1CD8D37152811AB49297B104B)
 
 ### 示例2（LocalizedPadding和LocalizedMargin类型的使用）
 
@@ -486,11 +486,11 @@ struct SizeExample {
 
 从左至右显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/sOnP-XisRmyC0gRNfHu9SQ/zh-cn_image_0000002815400483.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/sOnP-XisRmyC0gRNfHu9SQ/zh-cn_image_0000002815400483.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC0186B169BA1F342BDF034C5B2B1D16906841C4C5B25B79FF8D2E8F8CCEF104)
 
 从右至左显示语言示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/8MmWvIM4ScKZpiniNj6mxw/zh-cn_image_0000002786520908.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/8MmWvIM4ScKZpiniNj6mxw/zh-cn_image_0000002786520908.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=64E1317CF82EA99648C26A14FCC608576408EFFD41E685D332CEA071E694D6FF)
 
 ### 示例3（设置组件级安全区）
 
@@ -524,7 +524,7 @@ struct SafeAreaPaddingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/VzuTs1fRSByzrL58BqokyQ/zh-cn_image_0000002786360980.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/VzuTs1fRSByzrL58BqokyQ/zh-cn_image_0000002786360980.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F7F25EA549AFEF5115CAD26F40FBAEAF9D6DEFEE2C6BBE75113A024E4220AA4)
 
 ### 示例4（使用attributeModifier动态设置安全区）
 
@@ -569,7 +569,7 @@ struct SafeAreaPaddingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/BJiRa-1MRlq_EkR9pgoCQQ/zh-cn_image_0000002815560401.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/BJiRa-1MRlq_EkR9pgoCQQ/zh-cn_image_0000002815560401.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=3EE734C3D2DEBDE0461A495DE883F6BD01AAD6256906AA01DBA940310F53FEFC)
 
 ### 示例5（设置布局策略）
 
@@ -626,7 +626,7 @@ struct LayoutPolicyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/GGYpiicwQ7ybXNMrFqVrhg/zh-cn_image_0000002815400485.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/GGYpiicwQ7ybXNMrFqVrhg/zh-cn_image_0000002815400485.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8EFF8745D2598E37E5E7D5A862496B79C068C7DE466E72F053F219EC2765AF8)
 
 ### 示例6（子组件单方向设置matchParent效果）
 

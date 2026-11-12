@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-help
 title: ohpm help
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm help
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:a4eebb8d5358b3127a8d7f37a86c45843e9b05de08cfdc6bc49a7d1d67f5febc
 ---
@@ -38,4 +38,4 @@ ohpm -h
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/6RVTMdHdRFuWbnERCT62Iw/zh-cn_image_0000002808766705.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/6RVTMdHdRFuWbnERCT62Iw/zh-cn_image_0000002808766705.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=542CDFF6FE8A93AE3F2ECA1734C94A62BE6E89E80215F1966F3665675F933B88 "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-754
 title: PC应用内组件如何实现悬浮样式Hover效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > PC应用内组件如何实现悬浮样式Hover效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:43+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:63f6dad3be24ee86cfb4a9541368ee902be07e128f4947d85d1c16558377d8fc
 ---
@@ -14,7 +14,7 @@ PC应用如何实现鼠标悬停在组件上时，组件UI效果变更？
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/uBql9B8ETBK8sTBKxTGCrg/zh-cn_image_0000002628395472.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/uBql9B8ETBK8sTBKxTGCrg/zh-cn_image_0000002628395472.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA87D5638D3B6A8FBD9234EC8D7DFD119AEA6E10E95F60AB4C6E4DEC79AEC057 "点击放大")
 
 ## 背景知识
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-runnin
 title: 登录华为开发者账号后，提示需要实名认证
 breadcrumb: FAQ > DevEco Studio > 应用运行 > 登录华为开发者账号后，提示需要实名认证
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:58+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:9f619866ba74b4f498fb491e61ebe75ae8cf1dd695f45ce70308247a09f0c7ec
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:9f619866ba74b4f498fb491e61ebe75ae8cf1dd695f45ce70308247a09f
 
 使用本地模拟器时，需用实名认证的开发者账号登录授权。若账号未实名认证，本地模拟器会提示需要实名认证。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/W0n4zjAkSCy0biNeDypg0g/zh-cn_image_0000002624478746.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/W0n4zjAkSCy0biNeDypg0g/zh-cn_image_0000002624478746.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=F84EF02F77224DC4098D52772555522A32772584439CBF44BD01A6EA2591EB9F "点击放大")
 
 **解决措施**
 
@@ -24,10 +24,10 @@ content_hash: sha256:9f619866ba74b4f498fb491e61ebe75ae8cf1dd695f45ce70308247a09f
 1. 点击上图中的**Verify Identity**，前往开发者联盟实名认证。
 2. 根据浏览器界面提示进行实名认证，具体指导可以参考[实名认证介绍](../app/hdc-verification-introduction-0000002752607793.md)。个人开发者可以选择银行卡认证或者身份证认证。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/LmYbkCidQiizdmqU9gghCg/zh-cn_image_0000002654798107.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/LmYbkCidQiizdmqU9gghCg/zh-cn_image_0000002654798107.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=FFECF1A0B7139B0E97CD9D8480ED99099DCD88739E27FF74158B8EA4833BD227 "点击放大")
 3. 认证完成后，在DevEco Studio界面，点击右上角个人中心，点击Sign out退出，重新登录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/shgigK_FRcy0lWslwNbNKA/zh-cn_image_0000002624638656.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/shgigK_FRcy0lWslwNbNKA/zh-cn_image_0000002624638656.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F814FA914CD5B5E4B5B200DBEC8D6A3D5CAEC66814AF972637B7231EE580535)
 4. （可选）如果实名认证后重新登录，仍提示需要进行实名认证，可清除浏览器 **Cookie（快捷键 Ctrl+Shift+Del）**后重试。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/bKyUmvJbRd6c4P_MYPw_Yg/zh-cn_image_0000002654838059.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/bKyUmvJbRd6c4P_MYPw_Yg/zh-cn_image_0000002654838059.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=5106AE1CB7C149D650BECBBE38ACE8FE00FE0DCC00189C7C040208719C27A5D5 "点击放大")

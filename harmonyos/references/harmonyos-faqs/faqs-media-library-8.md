@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-libr
 title: 保存图片时，预览图显示空白
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 媒体文件管理（Media Library） > 保存图片时，预览图显示空白
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:02+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:31815f3bb394348a30bf0b43b0ed427356497bf8ecfb6e8dd2c4fa79a48e0f5e
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:31815f3bb394348a30bf0b43b0ed427356497bf8ecfb6e8dd2c4fa79a48
 
 保存图片时，显示的预览图是空白的。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/MP8nOa2HT9iz0-j1cMIU1A/zh-cn_image_0000002746875190.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/MP8nOa2HT9iz0-j1cMIU1A/zh-cn_image_0000002746875190.png?HW-CC-KV=V1&HW-CC-Date=20261112T233214Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6975FB47503956BB51B2E81E62A05EA33C21180BCF16378CA0BDE201E0FC4E9 "点击放大")
 
 ## 背景知识
 

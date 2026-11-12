@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 侧载安全管控
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 侧载安全管控
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:37+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:acc015b66f27bd81f692ef6a0fd9e124b89ad5e52d38302257e34b19600d4f57
 ---
@@ -18,7 +18,7 @@ content_hash: sha256:acc015b66f27bd81f692ef6a0fd9e124b89ad5e52d38302257e34b19600
 
 ### 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/9ag0mConSYGG8SeGEVf1bQ/zh-cn_image_0000002786359686.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/9ag0mConSYGG8SeGEVf1bQ/zh-cn_image_0000002786359686.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=12DE39DB75A6C1153A064FDDBA30804097B5540E3CDB6BF02222876F54950A61)
 
 **流程说明：**
 
@@ -65,7 +65,7 @@ content_hash: sha256:acc015b66f27bd81f692ef6a0fd9e124b89ad5e52d38302257e34b19600
 
 ### 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/MvWzx7zURtaUVkcnV6cv_w/zh-cn_image_0000002815559107.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/MvWzx7zURtaUVkcnV6cv_w/zh-cn_image_0000002815559107.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=1407721A3FF651D39347FE5E8D68AF044DBB71FA92603B3A617B9DEA5C2B8B0B)
 
 **流程说明：**
 

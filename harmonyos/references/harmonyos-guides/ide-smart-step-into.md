@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-smart-ste
 title: 智能步入
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 智能步入
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:03+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-08
 content_hash: sha256:55c808d483bfb0dd298323be8bc1d2c31933f3c5bc438447a94cb7a50fda4b35
 ---
 
-进行C++调试时，当前代码行有多个函数调用时，开发者可以使用Smart Step Into功能![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/sdrCoAH_T8qwom9hlJCgkg/zh-cn_image_0000002779406508.png)直接Step Into到其中某一个函数的实现中。
+进行C++调试时，当前代码行有多个函数调用时，开发者可以使用Smart Step Into功能![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/sdrCoAH_T8qwom9hlJCgkg/zh-cn_image_0000002779406508.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=2CB43FFFC6365A04C04FF4CCEDEC5ED3F4C30E84BDF005C5945E234EA8E5CF0D)直接Step Into到其中某一个函数的实现中。
 
 ## 操作步骤
 
-通过点击调试窗口“entry-Native”调试器下的Debugger窗格中的按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/ChN7zHN5TmaZW2d68XKTKw/zh-cn_image_0000002779406510.png)（或使用快捷键**Shift+F7**）触发Smart Step Into功能后，DevEco Studio会将当前代码中可以进行跳转的函数进行高亮显示。
+通过点击调试窗口“entry-Native”调试器下的Debugger窗格中的按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/ChN7zHN5TmaZW2d68XKTKw/zh-cn_image_0000002779406510.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=7326AADE81D21C1DF707FECF7B899B3D6B0A32AA69FF5F020ACE5D3E7BBE9F1A)（或使用快捷键**Shift+F7**）触发Smart Step Into功能后，DevEco Studio会将当前代码中可以进行跳转的函数进行高亮显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/CmeW69E-QTanIFCxpWK2Og/zh-cn_image_0000002779566486.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/CmeW69E-QTanIFCxpWK2Og/zh-cn_image_0000002779566486.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DE0E515A93B8D6FAAC32F5A35241CEDFDB419F8502D1F40CF0C370DB3CD0F00 "点击放大")
 
 开发者点击需要跳转的函数，程序会运行到目标函数的实现内。
 

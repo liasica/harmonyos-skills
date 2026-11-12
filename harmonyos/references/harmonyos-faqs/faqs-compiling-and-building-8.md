@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: "编译报错“Could not load ${file1} (imported by ${file2}): Maximum call stack size exceeded”"
 breadcrumb: "FAQ > DevEco Studio > 编译构建 > 编译报错“Could not load ${file1} (imported by ${file2}): Maximum call stack size exceeded”"
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:52+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:25f7df6ffe4c9dcc31ef124eae64dd2c0176808ff2c0a5119d33bdb3c2fd49c3
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:25f7df6ffe4c9dcc31ef124eae64dd2c0176808ff2c0a5119d33bdb3c2f
 
 Stage模板工程编译构建失败，提示 “ERROR: Could not load ${file1} (imported by ${file2}): Maximum call stack size exceeded”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/oThYfAIGT8mddlNkoGAFZg/zh-cn_image_0000002654797835.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/oThYfAIGT8mddlNkoGAFZg/zh-cn_image_0000002654797835.png?HW-CC-KV=V1&HW-CC-Date=20261112T233210Z&HW-CC-Expire=31536000000&HW-CC-Sign=46FB18D2D27CF46DA9BE00059BABA247161A133F69B5523F64680FCA0296AF53)
 
 **解决措施**
 
@@ -22,4 +22,4 @@ Stage模板工程编译构建失败，提示 “ERROR: Could not load ${file1} (
 2. 选择Static Library模板。
 3. 配置build-profile.json中的dependencies添加HAR引用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/JA9r9w5iQN6Rkjfjp50Qbg/zh-cn_image_0000002624638380.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/JA9r9w5iQN6Rkjfjp50Qbg/zh-cn_image_0000002624638380.png?HW-CC-KV=V1&HW-CC-Date=20261112T233210Z&HW-CC-Expire=31536000000&HW-CC-Sign=7DE4ED9EBA0337F2EA985209C31B251BB174548C651763D596984AF4A4C5E22F)

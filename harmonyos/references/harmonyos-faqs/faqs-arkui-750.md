@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-750
 title: RichEditor实现上下角标数字的效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > RichEditor实现上下角标数字的效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:41+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:ad8d5da5302bb7f9ef3484e1b852de6dd00ff9f25d94394078fbce2fb6894f72
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:ad8d5da5302bb7f9ef3484e1b852de6dd00ff9f25d94394078fbce2fb68
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/q-umHaYYROefBEQ5tg0K8w/zh-cn_image_0000002658794735.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/q-umHaYYROefBEQ5tg0K8w/zh-cn_image_0000002658794735.png?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=18F873EEABF326F5C97DE80ECDEEA9117CB27BD93B873ED327B0D884F5F21365 "点击放大")
 
 ## 背景知识
 

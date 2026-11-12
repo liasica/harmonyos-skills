@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/codegenie-faq-0
 title: 应用UI生成插件解压APK文件报错问题排查
 breadcrumb: FAQ > DevEco Studio > AI辅助编程 > 常见问题 > 应用UI生成插件解压APK文件报错问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:02+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:7c45ff7afe9ca9e20a95b9b2a9b2c22797be282661bbafb45122d9853dafcd1e
 ---
 
 **Q：在Windows环境下使用应用UI生成插件时，选择完配置项信息（Install Package Path、SDK Path、Git Bash Path），点击Next按钮后，在应用UI生成插件的执行终端中提示“tar.exe: Tool-small extra data: Need at least 4 bytes, but only found 1 bytes”，如何解决？**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/skSIPHs0TZCLyN05QdgAPQ/zh-cn_image_0000002766030242.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/skSIPHs0TZCLyN05QdgAPQ/zh-cn_image_0000002766030242.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=19FA7847C1F4F54C5E97CF6D1BAD66AA0966D0D11030E6D654C28D3B912EE9EB "点击放大")
 
 **A**：可能原因：Windows内置的C:/Windows/System32/tar.exe不支持解压apk文件。
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: "DevEco Studio安装HAP时报错“FileTransfer Failed: [Fail]Error opening file: operation not permitted”"
 breadcrumb: "FAQ > DevEco Studio > 应用调试 > DevEco Studio安装HAP时报错“FileTransfer Failed: [Fail]Error opening file: operation not permitted”"
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:dd311d174d2c84639b129230ef43c56ec8930571ec3a8128c9e7d660e476edb8
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:dd311d174d2c84639b129230ef43c56ec8930571ec3a8128c9e7d660e47
 
 DevEco Studio安装HAP时报错“FileTransfer Failed: [Fail]Error opening file: operation not permitted”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/bUZCye27RtOW0HdKP6cY1Q/zh-cn_image_0000002654838121.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/bUZCye27RtOW0HdKP6cY1Q/zh-cn_image_0000002654838121.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=156335D38D755EB31134DE4DC59B06D4E12A71F9A7CCB04B082014EB959557B2)
 
 **解决措施**
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/packing-tool
 title: 打包工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > 打包拆包工具 > 打包工具
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:58+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-30
 content_hash: sha256:fd8854e644f34205263a034cb18d8af5bfe886716568cfce9364d250af941911
 ---
@@ -1246,7 +1246,7 @@ Check shared App mode invalid.
 
 1. 存在两个以上的[HSP包](in-app-hsp.md)。例如下图使用DevEco Studio构建App时，工程中包含了两个HSP包library和library1，此时打包APP包失败。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/X7sSmWq5SjWcu2qfvNjByw/zh-cn_image_0000002815559247.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/X7sSmWq5SjWcu2qfvNjByw/zh-cn_image_0000002815559247.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E8D802FA0A80FB18BF6486D0AD49544ED1E68BD3D7716560DA8E2160FADFFBB)
 2. HSP包在module.json5中配置了dependencies。
 
 **处理步骤**

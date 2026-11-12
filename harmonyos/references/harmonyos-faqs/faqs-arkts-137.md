@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-137
 title: gbk字符串TextEncoder编码结果属性buffer长度为何比编码结果长度略大
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > gbk字符串TextEncoder编码结果属性buffer长度为何比编码结果长度略大
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:53+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:c083f09664cda1904f105bd84d1b4c8bb2dd243f34ca7049e3a018547d27f1ff
 ---
@@ -14,7 +14,7 @@ TextEncoder编码字符串“你好abc”，格式是gbk，分别获取编码结
 
 TextEncoder编码结果属性buffer的长度比编码结果的长度略大。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/a-mbqZjkSCmHAjYUoZgA1g/zh-cn_image_0000002654835193.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/a-mbqZjkSCmHAjYUoZgA1g/zh-cn_image_0000002654835193.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=93CA8ADF8CFBC3B949193CA73E6D1BFD0BBDA3961746E97E2AD635FBBEACD043 "点击放大")
 
 **原因解释**
 

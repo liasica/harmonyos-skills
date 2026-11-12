@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-939
 title: 实现跨页面的同步旋转图片动画
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 实现跨页面的同步旋转图片动画
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:45+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:e3b0f6c7d20c65d2fd6782961043fde34d1cfee6d5700f71d455cb4701b8b504
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:e3b0f6c7d20c65d2fd6782961043fde34d1cfee6d5700f71d455cb4701b
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/5qHfoNmkTbOhVxN1kw_pgQ/zh-cn_image_0000002658920411.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/5qHfoNmkTbOhVxN1kw_pgQ/zh-cn_image_0000002658920411.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=B39CD0CE96B8FF1ABB34D4C31A28BE1DBEBEBA62377F85859FB1639006189EDE "点击放大")
 
 ## 背景知识
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/worker-introd
 title: Worker简介
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 多线程并发 > Worker简介
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:03+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:72f7da209e7adb2dbc5abb2719fb066f59929c5f5a4867448b73b9aa2a1e4fcb
 ---
@@ -14,7 +14,7 @@ Worker的主要作用是为应用程序提供一个多线程的运行环境，�
 
 **图1** Worker运作机制示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/kVcQSwNbSf64Pe4deQSZng/zh-cn_image_0000002786358452.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/kVcQSwNbSf64Pe4deQSZng/zh-cn_image_0000002786358452.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=06D3333FCE5C6791AA5F7D11C0FD7ABF6885CAA31ABE1BC6DD1508C57E613919)
 
 创建Worker的线程称为宿主线程（不局限于主线程，Worker线程也支持创建Worker子线程）。Worker子线程（或Actor线程、工作线程）是Worker自身运行的线程。每个Worker子线程和宿主线程拥有独立的实例，包含独立执行环境、对象、代码段等。因此，启动每个Worker存在一定的内存开销，需要限制Worker子线程的数量。Worker子线程和宿主线程通过消息传递机制通信，利用序列化、引用传递或转移所有权的机制完成命令和数据的交互。
 

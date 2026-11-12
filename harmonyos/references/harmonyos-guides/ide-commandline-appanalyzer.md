@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-commandli
 title: 应用与元服务体检工具（appanalyzer）
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 应用与元服务体检工具（appanalyzer）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:558066f4f5d663ff122b9b8942744490fb2dd7114f9638a1eed6befea1aeb912
 ---
@@ -170,4 +170,4 @@ appanalyzer uxAnalyze -b com.example.demo -p ./demoProject -s D03 -d 127.0.0.1:5
 
 zip报告可以导入到DevEco Studio中的AppAnalyzer进行查看，具体请参考[导入报告](ide-app-analyzer-history-reports.md#section438013151813)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/tA1-dCHBRLqQt68kpg74tw/zh-cn_image_0000002779407244.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/tA1-dCHBRLqQt68kpg74tw/zh-cn_image_0000002779407244.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=12F456EE25824BC8C834499528B018A9AA20D5EEA215F79EAD8CDA92BE6D1F2F "点击放大")

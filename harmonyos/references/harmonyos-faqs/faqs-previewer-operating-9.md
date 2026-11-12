@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-previewer-
 title: previewer显示的UX效果和真机的显示实际不一致
 breadcrumb: FAQ > DevEco Studio > 界面预览 > previewer显示的UX效果和真机的显示实际不一致
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:d0f7e9444990ff4ea15cd81c355d05cb58295a21d6ab3f4ea84dae7c269360be
 ---
@@ -40,11 +40,11 @@ struct Index {
 
 previewer效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/zKo4v-EhSfe6-P0Twurerg/zh-cn_image_0000002658807357.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/zKo4v-EhSfe6-P0Twurerg/zh-cn_image_0000002658807357.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=3767A44F24F0D2A0F792A0A571CE0269949A3688E5CE1FC46A83E995367E5BE2 "点击放大")
 
 真机效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/qVwIfP7PSYm_oI4ZA-gRiA/zh-cn_image_0000002628408096.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/qVwIfP7PSYm_oI4ZA-gRiA/zh-cn_image_0000002628408096.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=231B44161AB27E635C1A872C29DFD3F9989592FA92052E97609022B4E756A273 "点击放大")
 
 可以发现真机的Text组件两侧留有空白。
 
@@ -52,7 +52,7 @@ previewer效果：
 
 * previewer可以看到previewer设备的屏幕尺寸：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/JOt572RqQ8SA93g12Ma9ew/zh-cn_image_0000002628567996.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/JOt572RqQ8SA93g12Ma9ew/zh-cn_image_0000002628567996.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA7F437BF7D131B97DA50F31FA9991EEB75A77AFD282A0423DC23C9097641C5C "点击放大")
 
   1080px换算成vp是360vp。
 * 屏幕管理API @ohos.display可以参考[如何获取手机屏幕信息](faqs-arkui-242.md)。

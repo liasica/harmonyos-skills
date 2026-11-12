@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (Window)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.window (窗口) > Interface (Window)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:04+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:c9b948155d8a5dd828425cda5de0dddc82eeec55c8193d5dd53a05f4b4685fcc
 ---
@@ -11889,7 +11889,7 @@ convertOrientationAndRotation(from: RotationInfoType, to: RotationInfoType, valu
 
 示意图和表格展示了直板机窗口方向、屏幕方向和屏幕角度的关系。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/K--9BVJQRued4oXDJCEqpQ/zh-cn_image_0000002786520876.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/K--9BVJQRued4oXDJCEqpQ/zh-cn_image_0000002786520876.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1FC7A153E13C29BF770572B08E0873F9075CDB1632F326AE4781003D1ADF9E9)
 
 | value | WINDOW\_ORIENTATION  （窗口方向） | DISPLAY\_ORIENTATION  （屏幕方向） | DISPLAY\_ROTATION  （屏幕角度） |
 | --- | --- | --- | --- |

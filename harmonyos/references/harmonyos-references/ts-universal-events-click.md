@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 点击事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互响应事件 > 点击事件
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-14
 content_hash: sha256:28c8257ffb90c5a8568a0eeea7d46cfa4dae356407a5a2d664a9c465fce9c9be
 ---
@@ -257,7 +257,7 @@ struct ClickExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/FYomHRFbRBSdl0rxlS-WAA/zh-cn_image_0000002815400459.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/FYomHRFbRBSdl0rxlS-WAA/zh-cn_image_0000002815400459.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4938D5607700829631AB39A8494C21F0A7E02C13F524A7C659C66C018A2F877)
 
 ### 示例2（获取组件实时位置）
 
@@ -293,4 +293,4 @@ struct GetCurrentLocalPositionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/ipiBkSwkRbS2pCici1OpMw/zh-cn_image_0000002786360952.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/ipiBkSwkRbS2pCici1OpMw/zh-cn_image_0000002786360952.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6A9CEB5F5FE18DB1E2DCBA255E6218B8450B1D96A4CA6EAE9B2AAC5B67FC6A8)

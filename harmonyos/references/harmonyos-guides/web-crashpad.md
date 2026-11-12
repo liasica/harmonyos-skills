@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-crashpad
 title: 使用Crashpad收集Web组件崩溃信息
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web调试维测 > 使用Crashpad收集Web组件崩溃信息
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:24+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:9eb62ca0788fe14bd92c4f4630bb432dd7267750826acba8557d0f32dff77cf3
 ---
@@ -68,7 +68,7 @@ Web组件支持使用Crashpad记录进程崩溃信息。Crashpad是Chromium内�
 
    这个路径可以利用DevEco Studio查看。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/jSnVJBKDSAGjyJJVHVvFig/zh-cn_image_0000002786519408.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/jSnVJBKDSAGjyJJVHVvFig/zh-cn_image_0000002786519408.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=340321909B31C16FFA67C3466F0E71571E82C281108A56DE8F4C42424AD416CA)
 3. 获取dmp文件后进行解析，具体步骤如下：
 
    * 通过minidump\_stackwalk工具解析dmp文件，可以得到上述dmp文件对应的进程崩溃信息（崩溃的原因、线程信息、寄存器信息等），示例如下（Linux环境）：

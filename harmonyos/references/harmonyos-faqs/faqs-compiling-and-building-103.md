@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译通过，但是安装时失败报错“Error while Deploy Hap”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译通过，但是安装时失败报错“Error while Deploy Hap”
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:54+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:1895262149700b43a2e92f3562c12879efd2f0a02bed182bedd02d63df6bb1d6
 ---
@@ -46,4 +46,4 @@ hdc shell bm clean -d -n 应用bundleName
 
 方案二：保存的数据应用版本与新安装的版本不一致可能导致问题。解决方法：进入“Run”>“Edit Configurations”>“Run/Debug Configuration”，取消选中“Keep Application Data”选项。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/F_S66X_gRvaELcBd-xOpuA/zh-cn_image_0000002624478540.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/F_S66X_gRvaELcBd-xOpuA/zh-cn_image_0000002624478540.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=23215CDCF9A21B5921BA67CF7B962CABEA98CADC6DF145DE4EAD0038D23CE1A2)

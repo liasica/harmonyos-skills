@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: entry引用本地library时，没有ASan日志输出
 breadcrumb: FAQ > DevEco Studio > 应用调试 > entry引用本地library时，没有ASan日志输出
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:59+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:578362d99662eb1059ec80425dfbb8bd8923b1b731814e78326e56e594da5417
 ---
@@ -27,4 +27,4 @@ entry引用本地library时，已经勾选ASan选择项，没有ASan日志输出
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/C2A86jx7QhirZt4EFOwkHA/zh-cn_image_0000002654798149.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/C2A86jx7QhirZt4EFOwkHA/zh-cn_image_0000002654798149.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=4119EC8DA5FC297FD8001D0A8054AABA4340D0B7C56EA8F3A1FEB965B687D1A2)

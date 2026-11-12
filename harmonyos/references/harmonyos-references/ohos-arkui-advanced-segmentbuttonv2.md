@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SegmentButtonV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SegmentButtonV2
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:28+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-14
 content_hash: sha256:a0c36262b96e22e77dd196930ae242fc3163621b50558a70f7ab8d4276024d06
 ---
@@ -595,7 +595,7 @@ export struct VCard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/r8S22JovTeK6Pna8Cf5asQ/zh-cn_image_0000002815561097.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/r8S22JovTeK6Pna8Cf5asQ/zh-cn_image_0000002815561097.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=5766E2A599813425FC35C0852A096AB0A82520122004807DD040DDE1E7F01112)
 
 ### 示例2（单选的胶囊型分段按钮）
 
@@ -725,7 +725,7 @@ export struct VCard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/jZ0DS99RT_-A-kU3-J0EJQ/zh-cn_image_0000002815401181.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/jZ0DS99RT_-A-kU3-J0EJQ/zh-cn_image_0000002815401181.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0A0A3F79C66488AF21029D232A138A1448C72AE3E2E9EE5C9BD67DF344E618B)
 
 ### 示例3（多选的胶囊型分段按钮）
 
@@ -855,7 +855,7 @@ export struct VCard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/ImPiDuvCQDGQAI9DkTbePg/zh-cn_image_0000002786521606.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/ImPiDuvCQDGQAI9DkTbePg/zh-cn_image_0000002786521606.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F643E251BACBD9C323E87226F651D49EB49B5BE306D159FF112FB901892670E)
 
 ### 示例4（分段按钮Modifier的基本用法）
 
@@ -950,7 +950,7 @@ export struct VCard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/xGG_wviHT2uciLldhfx3kg/zh-cn_image_0000002786361678.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/xGG_wviHT2uciLldhfx3kg/zh-cn_image_0000002786361678.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=5369A701542A621888C33EBFBF5127511820AFDE6B3F5572443EA93AD1760C8D)
 
 ### 示例5（开启SegmentButtonV2的属性动画）
 
@@ -1045,7 +1045,7 @@ export struct VCard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/kwR36tVFQdWDkqu1PRlOmQ/zh-cn_image_0000002815561099.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/kwR36tVFQdWDkqu1PRlOmQ/zh-cn_image_0000002815561099.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=192BA38683CD523389D9DB8D347D6E4A8BF0B6580B82AA93034AFD436625EB2D)
 
 ### 示例6（设置背景板材质）
 
@@ -1165,7 +1165,7 @@ export struct VCard {
 
 该示例配图为高算力设备强档效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/5qwDFFLZSrqr7BhIUxCSmQ/zh-cn_image_0000002815401183.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/5qwDFFLZSrqr7BhIUxCSmQ/zh-cn_image_0000002815401183.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4E70D7AC5EC1BAE6C53A91837EBF3A6EB683B4B28C8B125B6EF401A74147841)
 
 ### 示例7（监听对象类型属性内部属性的变化）
 
@@ -1212,4 +1212,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/vbFjCJ76TOepfCqtLOvqeQ/zh-cn_image_0000002786521608.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/vbFjCJ76TOepfCqtLOvqeQ/zh-cn_image_0000002786521608.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=40A139E63A18BC71E57F37394CB029B7E7E74F50FD483506F6262D06057F0547)

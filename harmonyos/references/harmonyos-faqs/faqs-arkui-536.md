@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-536
 title: 预览器中图片进行缩放操作后，移出屏幕显示范围
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 预览器中图片进行缩放操作后，移出屏幕显示范围
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:33+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:db58796c330c50302c155d012c47449b00432f20acea572cab8bb5c7dc0db028
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:db58796c330c50302c155d012c47449b00432f20acea572cab8bb5c7dc0
 
 在预览器中对图片进行缩放操作后，由于缩放比例的变化，图片的显示区域可能超出当前屏幕的可视范围，导致部分或全部图像无法在屏幕上完整显示，需要通过拖动或调整缩放比例才能重新将其完整呈现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/RhM-J6oEScehRgPl7B6tYQ/zh-cn_image_0000002628391614.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/RhM-J6oEScehRgPl7B6tYQ/zh-cn_image_0000002628391614.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=B42665324047C67EFD9EABC99188E222325E42A9AB537D54A521A5D82455306F "点击放大")
 
 ## 背景知识
 

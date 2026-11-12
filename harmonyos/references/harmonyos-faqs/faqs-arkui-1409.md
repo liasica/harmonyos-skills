@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1409
 title: Text组件字符超过特定长度时，超出部分如何隐藏与显示
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Text组件字符超过特定长度时，超出部分如何隐藏与显示
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:38+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:5b042cf288323c5c356cb2a651fed9bfa365efae3ab4b57233b6864864bd8836
 ---
@@ -17,7 +17,7 @@ content_hash: sha256:5b042cf288323c5c356cb2a651fed9bfa365efae3ab4b57233b6864864b
 * [measureText](../harmonyos-references/arkts-apis-uicontext-measureutils.md#measuretext12)方法能够根据文本信息计算文本宽度。
 * [getAllDisplays](../harmonyos-references/js-apis-display.md#displaygetalldisplays9)方法能够获取display对象，display对象的width属性为屏幕的宽度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/ImnCU1DhRZWowrMeMBDVYQ/zh-cn_image_0000002658842531.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/ImnCU1DhRZWowrMeMBDVYQ/zh-cn_image_0000002658842531.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=C19CFABAB53F495934AF7EF3C8807936D60101A0309CE399EB522AF3D730C442 "点击放大")
 
 ## 解决方案
 

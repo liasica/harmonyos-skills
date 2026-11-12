@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-sync-of-
 title: 关系型数据库跨设备数据同步 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 同应用跨设备数据同步（分布式） > 关系型数据库跨设备数据同步 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:02+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:2c54983ca153465a258421915317e6f063295d2f0e09702100d09b6b35064c7d
 ---
@@ -26,7 +26,7 @@ content_hash: sha256:2c54983ca153465a258421915317e6f063295d2f0e09702100d09b6b350
 
 ### 数据跨设备同步机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/ff-d0zX_TMSMaosdoVKloQ/zh-cn_image_0000002815397949.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/ff-d0zX_TMSMaosdoVKloQ/zh-cn_image_0000002815397949.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E7418E039876ADF880B9C352C58546B3497B0EBF1459C7CA35C5D37FE65DB42)
 
 业务将数据写入关系型数据库后，向数据管理服务发起同步请求。
 
@@ -51,7 +51,7 @@ content_hash: sha256:2c54983ca153465a258421915317e6f063295d2f0e09702100d09b6b350
 
 需要注意的是，该模式下不支持对其他设备同步过来的数据进行修改。这一限制旨在保障数据一致性与同步逻辑的稳定性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/x0r3ZDjARgG9h-xma8G9-g/zh-cn_image_0000002786518374.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/x0r3ZDjARgG9h-xma8G9-g/zh-cn_image_0000002786518374.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF737191E7CFEA8C8C190ADFA764189ECC96FC9FD2F8EF1128A9A92B51F3EB28)
 
 **单版本表模式**
 
@@ -59,7 +59,7 @@ content_hash: sha256:2c54983ca153465a258421915317e6f063295d2f0e09702100d09b6b350
 
 使用单版本表模式跨设备同步，需要配置schema文件，指定所需同步列以及解冲突列；单版本表模式同步数据支持修改对端设备同步过来的数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/CRhPGqD2QAaHzNPmiZ3iRQ/zh-cn_image_0000002786358446.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/CRhPGqD2QAaHzNPmiZ3iRQ/zh-cn_image_0000002786358446.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7BCA826F57E53A4FF7341924AD0E38D2F27DE025F8B14D8F848446A3AEE36FA)
 
 ## 约束限制
 

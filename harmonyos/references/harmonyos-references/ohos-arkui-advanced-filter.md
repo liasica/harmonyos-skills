@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: Filter
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > Filter
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:26+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:102fb5921bd0fd7bdbc53a32013dab5fb75e198a209cdcda67910ba064cdf443
 ---
@@ -157,4 +157,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/qvkUNQZ8RJGN1XBO8H1PmA/zh-cn_image_0000002815561077.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/qvkUNQZ8RJGN1XBO8H1PmA/zh-cn_image_0000002815561077.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=64E88612E1C495C564218C66E7771288621D767464C5A9FB9131D846C1162D45)

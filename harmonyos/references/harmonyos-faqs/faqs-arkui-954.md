@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-954
 title: Tabs页签动态收缩异常
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Tabs页签动态收缩异常
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:47+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:84a92b35c28095acb1003b992acd072b650f64bfff89637e49b354da1fe3953d
 ---
@@ -42,11 +42,11 @@ Button('隐藏 tabBar ')
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/nerDerWfQEeYJqc83Hz2OQ/zh-cn_image_0000002658800523.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/nerDerWfQEeYJqc83Hz2OQ/zh-cn_image_0000002658800523.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=07D99FAC3B57763011B1AE63F71F0135CC405B8530A11B1CAEE718A04956F5D3 "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/Mg3u899nQG-1P8yta3e-zA/zh-cn_image_0000002628561168.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/Mg3u899nQG-1P8yta3e-zA/zh-cn_image_0000002628561168.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF02D8B4B667FC888957F4F513360A3F50B8B824CEEEDC9EB87C1A0F173F0E42 "点击放大")
 
 ## 背景知识
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1117
 title: 如何拦截页面跳转
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何拦截页面跳转
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:a23bda495d99dcc62ac1fba626d1f4b5d9a07d86a855ec1b097bf4f30b819f0a
 ---
@@ -222,7 +222,7 @@ export class RouterManager {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/ZAkqZiHLS4i3vGe7-EQRIg/zh-cn_image_0000002689327236.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/ZAkqZiHLS4i3vGe7-EQRIg/zh-cn_image_0000002689327236.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1830DC69CE3EA756E44EEBA0ED616ECA1BEF0885D96E22C10B9D9295AD0A413 "点击放大")
 
 ## 常见FAQ
 

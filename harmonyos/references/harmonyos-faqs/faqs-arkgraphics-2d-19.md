@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: Canvas绘制翻角效果
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > Canvas绘制翻角效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-13
 content_hash: sha256:1b1b5e6c6a941290fbaf19f363103785ce6333c535b59a8420bcfeeec658d3c1
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:1b1b5e6c6a941290fbaf19f363103785ce6333c535b59a8420bcfeeec65
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/BE7lvUmATmSTzqPuSXU5Qw/zh-cn_image_0000002628393352.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/BE7lvUmATmSTzqPuSXU5Qw/zh-cn_image_0000002628393352.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=B30866461ADCAC5E063D51995DEBB63806EFA84129E5F841F76D79EADB5DE6E0 "点击放大")
 
 ## 背景知识
 

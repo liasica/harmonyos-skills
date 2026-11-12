@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1233
 title: 识别Text组件中文本内容里的链接功能
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 识别Text组件中文本内容里的链接功能
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:2186e64367f1543cee08bc60e21b0399d6926669fb0906a06a786276a0157ace
 ---
@@ -86,7 +86,7 @@ content_hash: sha256:2186e64367f1543cee08bc60e21b0399d6926669fb0906a06a786276a01
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/w-WjOvjNRaatT70w-Tw38A/zh-cn_image_0000002658833297.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/w-WjOvjNRaatT70w-Tw38A/zh-cn_image_0000002658833297.png?HW-CC-KV=V1&HW-CC-Date=20261112T233150Z&HW-CC-Expire=31536000000&HW-CC-Sign=07E75829FF02D63C8996FC0225DCCE974E98D3ED9A96BDDBEC9843F65780E3A4 "点击放大")
 
 ## 总结
 

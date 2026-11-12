@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-set-dark-
 title: Web深色模式适配
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 设置基本属性和事件 > Web深色模式适配
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:22939ee461aa19558ea9d9d20d259d312a944e2ad1526c7ffd4d97046e627d4e
 ---
@@ -65,7 +65,7 @@ ArkWeb提供灵活控制Web组件深色模式的能力，支持独立于系统�
 
   **图1** color-scheme效果图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/rws8oDf6RQy_5w-cEMF10w/zh-cn_image_0000002786519352.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/rws8oDf6RQy_5w-cEMF10w/zh-cn_image_0000002786519352.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=2CBCBE28C0EDAE45A72A0A113274F2C97FEC9496FA40498B46F0486196EC27DC)
 * prefers-color-scheme是CSS中的一个媒体查询功能，可以检测系统的主题颜色。网页开发者可以通过该特性，为不同的系统主题颜色定义不同的网页CSS样式，以适应用户的主题偏好。使用样例如下：
 
   ```html
@@ -100,7 +100,7 @@ ArkWeb提供灵活控制Web组件深色模式的能力，支持独立于系统�
 
   **图2** prefers-color-scheme效果图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/1_VzpSs3T5GG-rfaf4G8bw/zh-cn_image_0000002786359424.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/1_VzpSs3T5GG-rfaf4G8bw/zh-cn_image_0000002786359424.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=1357BCCD0298027878042EB7820B9A983BEBDBB07E44DDC3EDC20F447B18853D)
 
 ## Web深色模式设置
 
@@ -175,7 +175,7 @@ darkModePage.html页面在深色模式关闭、深色模式开启及强制深色
 
 **图3** Web深色模式和强制深色模式效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/u1_r-wQET0WuB1U_OI1qrA/zh-cn_image_0000002815558845.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/u1_r-wQET0WuB1U_OI1qrA/zh-cn_image_0000002815558845.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1EEAD0E98C7E224374EDE8A29577C6D5AF735C6F85FF3270C9A71A4E676EB82)
 
 ## Web组件背景色适配
 

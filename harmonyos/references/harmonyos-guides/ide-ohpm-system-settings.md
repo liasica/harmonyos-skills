@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-syst
 title: 系统设置
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 页面功能介绍 > 系统设置
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:52+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:ef05f15490a6e440a17a5d9a1666613f5e903ad8e0b69f17d937649074a076b1
 ---
@@ -22,27 +22,27 @@ oh-package.json5检查规则是ohpm-repo对上传包的oh-package.json5文件进
 
 页面效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/A49d7aFHSAmM5Aoa14hRdQ/zh-cn_image_0000002808764823.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/A49d7aFHSAmM5Aoa14hRdQ/zh-cn_image_0000002808764823.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=7DDEB660074E5E1C680E8E92D813DC3A6C1935124823A7016DEA94801E53B07C "点击放大")
 
 ## 系统安全
 
 系统安全页面中有两部分配置项：重置系统密钥和配置是否支持匿名访问。页面效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/wVoh7V2pSQeD5AAxrbSGZg/zh-cn_image_0000002808884877.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/wVoh7V2pSQeD5AAxrbSGZg/zh-cn_image_0000002808884877.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=35B59753F88CFC149DFDD942488610D70D365A85457F1D0442A4E77866698E00 "点击放大")
 
 1. 重置系统密钥
 
    系统密钥用于重新加密ohpm-repo服务中用户上传的公钥和uplinks的网络代理口令信息。多实例部署ohpm-repo时不支持重置系统密钥。点击重置系统密钥，将出现重置提示，如果确定重置，需要点击按钮“是”，将出现密码输入框，由于重置系统密钥是敏感操作，故需要输入当前登录账户的密码进行再次认证，页面效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/eAejoeG9TgmmBIJobv337Q/zh-cn_image_0000002808764785.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/eAejoeG9TgmmBIJobv337Q/zh-cn_image_0000002808764785.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B3E1F54A30B460538B2257D7AEF14EB5C069BFBFA236DB7BF7F59E81CE83073 "点击放大")
 2. ohpm-repo匿名访问配置
 
    ohpm-repo从5.0.5版本开始，支持配置匿名访问功能。默认情况下，ohpm-repo支持匿名访问。如果需要配置不支持匿名访问，需要点击按钮“否”后提交，页面效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/8U6mgQqDQKmYTVyuB6y5OQ/zh-cn_image_0000002808884909.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/8U6mgQqDQKmYTVyuB6y5OQ/zh-cn_image_0000002808884909.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBF78FAFC7CCDC8B40BA8C403772BD7BCE9B36154E5A37D067FB7C7F56123318 "点击放大")
 
    * 当配置禁用匿名访问后，用户未登录状态下，不能够访问ohpm-repo管理界面首页中的包列表页面和包详情页面，只有登录后才能正常访问；首页也不能注册用户，只有登录选项。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/eLjt6p0TRMGVtzjqt4VDqQ/zh-cn_image_0000002808764817.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/eLjt6p0TRMGVtzjqt4VDqQ/zh-cn_image_0000002808764817.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7A18C67B29A9801A62ABF48CCEEFAAA79C26DBD1430B60BFA5FB14CDF7A5BA0 "点击放大")
    * 配置禁用匿名访问后，当没有在.ohpmrc文件中正确配置AccessToken认证信息时，ohpm没有权限执行需要读权限的install，info和update命令。必须在.ohpmrc文件中正确配置读写/只读AccessToken认证信息。
    * 配置禁用匿名访问后，如果使用ohpm-repo5.0.5版本以前的[认证插件](ide-custom-auth-plugin.md)模板，必须升级认证插件内容，额外添加方法authWithReadOnly，实现只读AccessToken认证方法。

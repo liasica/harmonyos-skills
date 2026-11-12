@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataaugme
 title: rag（检索增强生成）
 breadcrumb: API参考 > 应用框架 > Data Augmentation Kit（数据增强服务） > ArkTS API > rag（检索增强生成）
 category: harmonyos-references
-scraped_at: 2026-11-12T09:55:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:1ac492285843cc605a39c29e1dd526066aa4aa3eb9c31cf584c73f4f02032177
 ---
@@ -37,7 +37,7 @@ RAG（Retrieval-Augmented Generation，检索增强生成）模块提供基于�
 
 ### UML类图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/S_RHlPb8Q3uhbwhrVNkmlg/zh-cn_image_0000002786362076.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/S_RHlPb8Q3uhbwhrVNkmlg/zh-cn_image_0000002786362076.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D5B5E42F092D2552FFFFE496FF46EEC2DCB93CCD45144E6FAA041CAA019254E)
 
 ## 导入模块
 

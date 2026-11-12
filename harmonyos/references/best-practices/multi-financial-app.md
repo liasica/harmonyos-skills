@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-financial
 title: 多设备银行理财界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备银行理财界面
 category: best-practices
-scraped_at: 2026-11-10T10:42:04+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-15
 content_hash: sha256:c97bd916168d2cd0f3fff1cf5471dea3c5c97462dc07c73c7c52ebc87956fc08
 ---
@@ -28,7 +28,7 @@ content_hash: sha256:c97bd916168d2cd0f3fff1cf5471dea3c5c97462dc07c73c7c52ebc8795
 
 应用的UX设计可参考[金融理财类](../design-guides/responsive-design-examples6-0000001793536905.md)的多设备响应式设计指南，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/z21V9X-jSoe1icPz9ZtT2w/zh-cn_image_0000002619248557.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/z21V9X-jSoe1icPz9ZtT2w/zh-cn_image_0000002619248557.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=09295EB50116E4904C6638F76E37B10E10C14432B7A1C25D5A327DBB2D0B4C97 "点击放大")
 
 ## 工程管理
 
@@ -212,7 +212,7 @@ content_hash: sha256:c97bd916168d2cd0f3fff1cf5471dea3c5c97462dc07c73c7c52ebc8795
 
 银行理财应用首页主要承担业务入口、消息公告、卡片内容和财富推荐的聚合展示。根据功能设计，应用首页相关内容划分为6个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/IL9d-2yoTtu9SX4GmZnaow/zh-cn_image_0000002610026103.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/IL9d-2yoTtu9SX4GmZnaow/zh-cn_image_0000002610026103.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=1BBA71FBD7B2BA1D787BCF959FF84BB4E12678E4E28BE4D8A27F1CB0667A0415 "点击放大")
 
 **界面开发**
 
@@ -231,7 +231,7 @@ content_hash: sha256:c97bd916168d2cd0f3fff1cf5471dea3c5c97462dc07c73c7c52ebc8795
 
 账户总览页用于展示用户总资产、昨日收益概览，及活期、投资、负债等资产模块的分区信息。根据功能设计，应用账户总览页相关内容划分为6个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/OMjfudKjQFOKViSEbTDWYA/zh-cn_image_0000002579426308.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/OMjfudKjQFOKViSEbTDWYA/zh-cn_image_0000002579426308.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=7700DD7A3B2D5164FC3189021E390799D31968A76653B055A4AB1F388AA31313 "点击放大")
 
 **界面开发**
 
@@ -250,7 +250,7 @@ content_hash: sha256:c97bd916168d2cd0f3fff1cf5471dea3c5c97462dc07c73c7c52ebc8795
 
 理财详情页用于展示单个理财产品的关键信息、交易时间线及产品亮点，并提供“关注/买入”的底部操作入口。根据功能设计，将理财详情页相关内容划分为5个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/tZsvBCYMQB2FZ9LjJo_hkw/zh-cn_image_0000002609946203.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/tZsvBCYMQB2FZ9LjJo_hkw/zh-cn_image_0000002609946203.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0E67A0BE484CDAF67AFE78C387DE658C785FA24D399F6E72A98D9D3EA67956D "点击放大")
 
 **界面开发**
 
@@ -268,7 +268,7 @@ content_hash: sha256:c97bd916168d2cd0f3fff1cf5471dea3c5c97462dc07c73c7c52ebc8795
 
 购买页用于完成理财产品的申购确认，用户在此确认金额、选择付款方式并核对产品信息。根据功能设计，将购买页相关内容划分为6个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/tAkpwNS9RCKjV3HEmK3zVg/zh-cn_image_0000002579586218.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/tAkpwNS9RCKjV3HEmK3zVg/zh-cn_image_0000002579586218.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=76AE7DDD921246190870BD0E264CC1342B524A554343A6E2F49888B1B9799FAF "点击放大")
 
 **界面开发**
 

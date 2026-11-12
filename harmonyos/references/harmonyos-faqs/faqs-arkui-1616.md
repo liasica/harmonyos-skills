@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1616
 title: 如何通过RelativeContainer实现列表的统一格式布局
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何通过RelativeContainer实现列表的统一格式布局
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:9c912c791b0f5eced3773579132f8d80f5c61df84a2e3d6c36a8e7e003d1b0c3
 ---
@@ -78,7 +78,7 @@ struct AdjustComponentSizeByAreaChange17 {
 
 显示效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/FHe4qKsZSp-hOqq7pEFVEw/zh-cn_image_0000002658972599.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/FHe4qKsZSp-hOqq7pEFVEw/zh-cn_image_0000002658972599.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=5726EB8788BCBFA157B0742360695D8B566FC344934D36719B3D18350AC40D43 "点击放大")
 
 ## 常见FAQ
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-waterflow-
 title: 瀑布流加载丢帧优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > 瀑布流加载丢帧优化
 category: best-practices
-scraped_at: 2026-11-10T10:42:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-09
 content_hash: sha256:b336874791ab043aedd00d81806b8f9925330fa72d45de5533743b59b94f7e42
 ---
@@ -85,7 +85,7 @@ build() {
 
 **瀑布流组件加载流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/SJLwbBN3T8i163ecIb4L3Q/zh-cn_image_0000002194010900.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/SJLwbBN3T8i163ecIb4L3Q/zh-cn_image_0000002194010900.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=2BFA526A02071CC28CF20F5BCDDE37F88ABF94E2F98780C0931EB1A1114096B3)
 
 示例如下：
 
@@ -135,7 +135,7 @@ Image组件异步加载，提前设定FlowItem高度，避免图片加载后高�
 
 **图1** 瀑布流页面卡片宽高计算逻辑示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/C6eJFitqTSWYyvA8yU4WQA/zh-cn_image_0000002194010908.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/C6eJFitqTSWYyvA8yU4WQA/zh-cn_image_0000002194010908.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF7BF069FCA56FA9B04797401FE94BF3B99073E9680312C4D31C74BD243CAFA2 "点击放大")
 
 如上图所示，两列瀑布流卡片的宽度 = （屏幕宽度 - 2 \* 组件外边距（margin） - 瀑布流组件内边距（gap））/ 2。
 
@@ -162,7 +162,7 @@ getTitleHeight(title: string): number {
 
 **整体效果图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/B86ttCzbRMShuPhLncMcIg/zh-cn_image_0000002194010904.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/B86ttCzbRMShuPhLncMcIg/zh-cn_image_0000002194010904.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFBAF02191C03A9A4DE62D238F14F4F859FC05B503448CDA6522E7DF66B7F2EE "点击放大")
 
 下表为通过网络请求500条数据加载渲染，测试获得的数据（数据测试方式采用技术从左向右累加测试的）：
 

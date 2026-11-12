@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-jsvm-12
 title: napi关联的c层对象无法触发GC
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > JSVM > napi关联的c层对象无法触发GC
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:59+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:01d28a13e0102c4e1f471f9756615661d11b47290a79675a17762d230d8d9b68
 ---
@@ -14,15 +14,15 @@ content_hash: sha256:01d28a13e0102c4e1f471f9756615661d11b47290a79675a17762d230d8
 
 ArkTS侧创建对象：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/q-xm9LTUTky7TvH7JBaQ1w/zh-cn_image_0000002658907827.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/q-xm9LTUTky7TvH7JBaQ1w/zh-cn_image_0000002658907827.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C34CCCA1248048C02A96DE6095A0089CA1AC6C0E0DB48EDED212ABB8F1F9C46 "点击放大")
 
 C++侧构造函数和析构函数：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/oF8BJEvYRBWXGszzPoNXqw/zh-cn_image_0000002658787891.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/oF8BJEvYRBWXGszzPoNXqw/zh-cn_image_0000002658787891.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=B6127968658EB241F694ECF222320FBE65E50FC10648923A298D256FD4AC38AD "点击放大")
 
 napi\_wrap绑定ArkTS对象与C++对象：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/qCONgY9sTQiJJ9k5jkAWrw/zh-cn_image_0000002628388616.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/qCONgY9sTQiJJ9k5jkAWrw/zh-cn_image_0000002628388616.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=7298C47FE0E8087ABF78B38A5554FB722CA8BEA682F9337B8616D2FB8CAE8637 "点击放大")
 
 ## 背景知识
 
@@ -34,7 +34,7 @@ napi\_wrap绑定ArkTS对象与C++对象：
 
 多次创建对象，析构执行后，再次创建对象不会再执行析构。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/ZpEClTNARCaCBgboaXTD5w/zh-cn_image_0000002628548516.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/ZpEClTNARCaCBgboaXTD5w/zh-cn_image_0000002628548516.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0214C3210744D4674CD9F9E0278EB7A7FF03E691531CE1A0EC6F2A0FAB366A8 "点击放大")
 
 ## 分析结论
 

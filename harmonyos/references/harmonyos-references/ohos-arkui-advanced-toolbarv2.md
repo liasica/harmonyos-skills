@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ToolBarV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ToolBarV2
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:28+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-30
 content_hash: sha256:d5689be24c32f0623ef2543b40d7a8d7a0c588dcc9ffd2e5e8bcd65e485179fd
 ---
@@ -546,7 +546,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/EVYHdKS4S7WkZTEBOxedGg/zh-cn_image_0000002786521622.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/EVYHdKS4S7WkZTEBOxedGg/zh-cn_image_0000002786521622.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5EC18DE8043F08DA9B2D048A912AE5A4827EEBBE1063145BF2E9AB705E02556)
 
 ### 示例2（设置工具栏自定义样式）
 
@@ -678,7 +678,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/698x4-m6T0q5arYtljuBvw/zh-cn_image_0000002786361694.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/698x4-m6T0q5arYtljuBvw/zh-cn_image_0000002786361694.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=C797E998FBF40627F089BC95847FB68BCF2F7F61AFF4A0AE81395B53633A7506)
 
 ### 示例3（设置工具栏自定义播报）
 
@@ -804,4 +804,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/vSBHINeoSHGt4ZfTYmL2mQ/zh-cn_image_0000002786521622.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/vSBHINeoSHGt4ZfTYmL2mQ/zh-cn_image_0000002786521622.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=582FF8F83355638DB2470E49DF59290C130847A6E1D30B93E183718613AA64E4)

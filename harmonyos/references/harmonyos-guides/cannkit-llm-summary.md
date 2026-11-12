@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-llm-s
 title: 简介
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > LLM大模型对接 > 简介
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:43+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-07
 content_hash: sha256:4f3b99b9a0ab57a7b713bd3d09a2c9268c4f371dc95b0a5f44ea375054fce7b8
 ---
@@ -14,7 +14,7 @@ LLM Engine是其在大语言模型场景下的具体应用，提供的LLM计算�
 
 ## CANN LM Engine 组件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/7zXHRHBTReib_qmE5WYxJw/zh-cn_image_0000002786360706.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/7zXHRHBTReib_qmE5WYxJw/zh-cn_image_0000002786360706.png?HW-CC-KV=V1&HW-CC-Date=20261112T233225Z&HW-CC-Expire=31536000000&HW-CC-Sign=A51CAE81007EF459968A55CB89783FF2C70E7D2BE9191E4926F4C6D9D8939861)
 
 * CANN LM Engine：CANN LM Engine为大模型业务提供基于[计算加速服务和标准化API接口](../harmonyos-references/cannkit-llm-engine.md)的端到端计算链路加速封装。
 * CANN工具链：提供模型转换、量化、Ascend C等[工具链](https://link.gitcode.com/?target=https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiaifoundation-preparations&from=https://gitcode.com/HarmonyOS_Samples/cannkit_samplecode_lm_engine_cpp&lang=zh&theme=white)。
@@ -34,7 +34,7 @@ CANN LLM Engine基于CANN硬件加速能力，提供高性能，低功耗的运�
 
 开发者可通过本指南按照如下pipeline的顺序完成LLM模型在CANN硬件环境上的集成：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/aTY6TUToSJmiDN9YtdkCdA/zh-cn_image_0000002815560127.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/aTY6TUToSJmiDN9YtdkCdA/zh-cn_image_0000002815560127.png?HW-CC-KV=V1&HW-CC-Date=20261112T233225Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB566E7A92123890A2C78666B89D7937A526B596C3B0F6CFCC978CD7AFF84D9D)
 
 1. LLM模型量化，输入是用户原始模型，输出是量化后权重和量化系数文件。
 2. 将模型结构导出到ONNX格式，输入是原始模型结构和第一步生成的量化权重，输出是ONNX模型及模型结构NPU亲和适配。

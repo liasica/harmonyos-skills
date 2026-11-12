@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1580
 title: 如何对SelectDialog的单选项进行增减
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何对SelectDialog的单选项进行增减
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:43+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:465153b5baff8e1d42c3a9520fd2985626418e0474bd82fd49d4cb7ed3cca84b
 ---
@@ -14,11 +14,11 @@ content_hash: sha256:465153b5baff8e1d42c3a9520fd2985626418e0474bd82fd49d4cb7ed3c
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/tWHUuHnrQ26pYpjhcBC9aA/zh-cn_image_0000002658969515.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/tWHUuHnrQ26pYpjhcBC9aA/zh-cn_image_0000002658969515.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=01ED43F830C3A178133BFE482B46D3A4D67D6BE030BD2DAA7E378A8266A8D21F "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/Xvz-g5RgQGK8zEIJqL7OMw/zh-cn_image_0000002628610296.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/Xvz-g5RgQGK8zEIJqL7OMw/zh-cn_image_0000002628610296.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=448D88CE35FC8917EDE0573A33436E3C0C675CA76BB2933ED036A86E1525C45F "点击放大")
 
 ## 背景知识
 

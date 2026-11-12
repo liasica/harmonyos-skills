@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (ClickActionProposal)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (ClickActionProposal)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:57+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:d80eeb08af685e7e651aa6055231671e8d46b977bc2b7645e6e25b51a30046c9
 ---
@@ -100,4 +100,4 @@ struct SmartGestureControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/fnjUJDwARRGsNu199aWSPg/zh-cn_image_0000002786520808.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/fnjUJDwARRGsNu199aWSPg/zh-cn_image_0000002786520808.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=839B5CDB193F5485ABD77FFFF3A9B4581CBF9E5C7CC4AD08B00EF31AA486FB7B)

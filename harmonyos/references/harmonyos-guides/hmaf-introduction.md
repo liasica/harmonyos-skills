@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hmaf-introduc
 title: Agent Framework Kit简介
 breadcrumb: 指南 > AI > Agent Framework Kit（智能体框架服务） > Agent Framework Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:40+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-28
 content_hash: sha256:6980be93f11380531eb486219eceea685a5565c6cdb45382dbd2f50b05d4bfba
 ---
@@ -18,7 +18,7 @@ Agent Framework Kit主要包含Function组件和A2A（Agent to Agent）协议模
 
 * Agent Framework Kit 通过标准化组件，满足应用在不同场景、不同界面下的智能体入口诉求。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/x36MAnUzRxm5hxvBbf41pQ/zh-cn_image_0000002786360658.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/Yc70dwkHTO6zNXEruLTCVg/zh-cn_image_0000002815560079.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/x36MAnUzRxm5hxvBbf41pQ/zh-cn_image_0000002786360658.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0943FF51689E9308571017718EA643F2116924A387C27F395D30475808C6125)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/Yc70dwkHTO6zNXEruLTCVg/zh-cn_image_0000002815560079.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA6CD02FAE2AB06ED4902CB42F9B99073A4725A665AA4810E287022870F6D98B)
 * 通过A2A模块，在应用中智能体可以作为客户端或服务端与其它应用中的智能体进行交互。例如，当一个应用内的智能体需要调用小艺智能体完成某项任务时，可以通过 A2A 协议发起请求，实现跨应用的智能体协作。同样地，当某个智能体需要向其他应用提供服务时，也可以通过 A2A 协议作为服务端响应请求，从而实现更丰富的智能体联动能力。
 
 ## 约束与限制

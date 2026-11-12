@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-821
 title: TextInput的placeholder文本显示不完整如何解决
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > TextInput的placeholder文本显示不完整如何解决
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:4dd55aea43e2c9500c9ac31b613c50a905359517e5342c640cbaead04c4f4430
 ---
@@ -60,7 +60,7 @@ TextInput组件的placeholder文本较长时，默认会使用省略号来截断
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/C4ri04YiSsGpn7LR_Npjzw/zh-cn_image_0000002658917661.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/C4ri04YiSsGpn7LR_Npjzw/zh-cn_image_0000002658917661.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3E1241F1729E80FA88A40D14F7CF3BF7EA3666750FCBE567FABEE5316E621E6 "点击放大")
 * **方案二**：使用TextArea组件，组件不设置高度时，会自适应内容高度，从而实现placeholder多行显示。
 
   ```ts
@@ -95,7 +95,7 @@ TextInput组件的placeholder文本较长时，默认会使用省略号来截断
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Wq1CkjtRQrOiKf2NPwrooQ/zh-cn_image_0000002628398434.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Wq1CkjtRQrOiKf2NPwrooQ/zh-cn_image_0000002628398434.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=11F4895C76CF8D8AEFBDF7D94E3BF04B1851322E52BB757DC2247746A3C19D6A "点击放大")
 * **方案三**：placeholder文本大小默认为16fp，可通过placeholderFont将placeholder文本大小设置小一点，如10fp。
 
   ```ts
@@ -130,7 +130,7 @@ TextInput组件的placeholder文本较长时，默认会使用省略号来截断
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/sj0uT02DSOKVVkM-6pxpsg/zh-cn_image_0000002658797717.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/sj0uT02DSOKVVkM-6pxpsg/zh-cn_image_0000002658797717.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=DAFF718ED31414459E00626E1BB876BD608AE2976E5EA686B9EDAB4873B4FBD9 "点击放大")
 * **方案四**：可设置TextInput的[style](../harmonyos-references/ts-basic-components-textinput.md#style9)为Inline，文本选中底板高度与输入框高度相同，在输入时可显示全部placeholder文本。
 
   ```ts
@@ -167,7 +167,7 @@ TextInput组件的placeholder文本较长时，默认会使用省略号来截断
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/NTkAkkI1R3ymb2t4rjjf5A/zh-cn_image_0000002628558352.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/NTkAkkI1R3ymb2t4rjjf5A/zh-cn_image_0000002628558352.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=406393660997E4BD7CE28E9A1A60873E6552AC000F4FCBD84AA8884A3F462600 "点击放大")
 
 ## 总结
 

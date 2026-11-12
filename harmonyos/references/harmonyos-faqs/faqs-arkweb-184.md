@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-184
 title: 应用ArkTS侧如何通过代码手动控制H5中视频
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 应用ArkTS侧如何通过代码手动控制H5中视频
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:4e9601b0fdb063fcbd287ae46aedc9dc199696c67e96a5eaa0b5b5aea28e8925
 ---
@@ -103,7 +103,7 @@ H5网页集成到应用中，需要通过ArkTS控制H5中video视频播放暂停
 
 Q：ArkTS侧如何设置H5中视频的播放控件不显示？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/IqnQh9wfQ6ui1vgf-W6Kqg/zh-cn_image_0000002628899170.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/IqnQh9wfQ6ui1vgf-W6Kqg/zh-cn_image_0000002628899170.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=72AF9CDF576E67900491C9F1EC41810C94CB94AF92147CC86D260B8BEA698C19)
 
 A：video的播放控件由controls属性进行控制，网页加载完成后，设置controls属性为false，播放控件就不会显示。示例代码：
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1336
 title: AppStorageV2怎么更新已保存的数据
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > AppStorageV2怎么更新已保存的数据
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:7ec1e7d870fbdcfd8899c7e265229c90ed35c1ac8ea30d912ea2ae74fd5f5587
 ---
@@ -14,7 +14,7 @@ AppStorageV2只有connect、remove、keys方法，没有update更新方法，如
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/ovJFLMD4SbCZWEi75JmkgQ/zh-cn_image_0000002628600020.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/ovJFLMD4SbCZWEi75JmkgQ/zh-cn_image_0000002628600020.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=630FC6BD40C7D124FE5CABCCA86E68A99199A05F2CC59F93F8A494C942693686 "点击放大")
 
 ## 背景知识
 

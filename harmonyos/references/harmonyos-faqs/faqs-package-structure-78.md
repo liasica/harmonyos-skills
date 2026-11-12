@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 编译HAR包报错无权限创建软链接
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 编译HAR包报错无权限创建软链接
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:6f50fe3c1a6d2d24a009be46e88f82c65daf0a95abde31bc0bd423f241cb5ac3
 ---
@@ -28,7 +28,7 @@ HAR（Harmony Archive）是静态共享包，可以包含代码、C++库、资�
 
 注：正常HAR包在工程目录中生成库模块及相关文件，如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/n4lCBUWeRAWUQN7vzlk_ng/zh-cn_image_0000002628788122.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/n4lCBUWeRAWUQN7vzlk_ng/zh-cn_image_0000002628788122.png?HW-CC-KV=V1&HW-CC-Date=20261112T233215Z&HW-CC-Expire=31536000000&HW-CC-Sign=1184C85B0DA47C9B8AC3A7040BD2EA10ABC38318928F7E3BF24B75F6CA8E5B44)
 
 ## 分析结论
 

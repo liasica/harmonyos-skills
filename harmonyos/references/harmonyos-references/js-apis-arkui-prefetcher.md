@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.arkui.Prefetcher (内容预取)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.Prefetcher (内容预取)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-20
 content_hash: sha256:d80da68bc2dd52a8b48636c4f6ec99235f248376541d85dc91fe594d32d88056
 ---
@@ -424,7 +424,7 @@ function create10x10Bitmap(color: number): ArrayBuffer {
 
 演示效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/NVQEBXkLTUSFMJeHRrNHtw/zh-cn_image_0000002815400371.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/NVQEBXkLTUSFMJeHRrNHtw/zh-cn_image_0000002815400371.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=68E946286B40308B3D373C3725630A085AC8806D80CB213FC6BF1A0C438B68E1)
 
 ## 补充说明
 

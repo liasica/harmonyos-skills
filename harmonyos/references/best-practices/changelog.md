@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/changelog
 title: 最佳实践文档变更说明
 breadcrumb: 最佳实践 > 文档变更说明 > 最佳实践文档变更说明
 category: best-practices
-scraped_at: 2026-11-10T10:42:15+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-09
 content_hash: sha256:cfcfbf65176b5af366e6ef9ea6c16c55b410e43caf776789ea7c13ac881e2019
 ---
@@ -910,7 +910,7 @@ content_hash: sha256:cfcfbf65176b5af366e6ef9ea6c16c55b410e43caf776789ea7c13ac881
 **变更效果**
 
 **图1** 最佳实践目录变更前后对比   
- ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/dRXSlz_gTIm4SuQEf_7IIQ/zh-cn_image_0000002307192376.png "点击放大")
+ ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/dRXSlz_gTIm4SuQEf_7IIQ/zh-cn_image_0000002307192376.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=09735C4C0719E3AAC809AAADA56D18425F3A7BBC1543496242CEC977C0DE87DC "点击放大")
 
 ### 新增文档
 
@@ -1107,7 +1107,7 @@ content_hash: sha256:cfcfbf65176b5af366e6ef9ea6c16c55b410e43caf776789ea7c13ac881
 
 **图2** 最佳实践目录变更
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/-Xz8TKZNTxC9JOn8z4wQrQ/zh-cn_image_0000002318291885.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/-Xz8TKZNTxC9JOn8z4wQrQ/zh-cn_image_0000002318291885.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=88BCE2881C77A1A9020E3831FAE0B7692C02A67B7C122118468D9BB365C6A686 "点击放大")
 
 ### 新增文档
 
@@ -1259,7 +1259,7 @@ content_hash: sha256:cfcfbf65176b5af366e6ef9ea6c16c55b410e43caf776789ea7c13ac881
 * 原“常见性能优化场景”章节更名为“性能场景优化案例”，修改文档标题，提升查找的准确性和效率。
 
   **图3** 最佳实践性能目录变更对比   
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/-MjS5qtbR6e04WY5x0MgnA/zh-cn_image_0000002283692304.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/-MjS5qtbR6e04WY5x0MgnA/zh-cn_image_0000002283692304.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=11A03487548214C1C2CC6E6DB07E5F93C4293162BD23CA03B824124BF459879B "点击放大")
 
 ### 新增文档
 

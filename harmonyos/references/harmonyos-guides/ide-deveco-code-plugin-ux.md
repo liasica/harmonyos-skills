@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-co
 title: UX设计稿生成代码
 breadcrumb: 指南 > DevEco Code > DevEco Code Plugin > 操作指南 > UX设计稿生成代码
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:088636cbd1320322ced8fe948b10b6ca1ca17ea321ea1059d9efc9359058a62a
 ---
@@ -40,7 +40,7 @@ hmos-design-to-arkts内置完整工作流与精简工作流两种模式：完整
    }
    ```
 2. 选择Agent模式，建议使用Goal或Build模式。选择Goal默认执行完整工作流，Build默认执行精简工作流；同时，开发者也可以在输入框中指定完整工作流或精简工作流。
-3. 在对话框中输入Pixso设计稿链接和生成代码需求描述后，按**Enter键**或者点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/hQD0YZLLTFS_6-U54pu7Yg/zh-cn_image_0000002779406572.png)发送。例如：
+3. 在对话框中输入Pixso设计稿链接和生成代码需求描述后，按**Enter键**或者点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/hQD0YZLLTFS_6-U54pu7Yg/zh-cn_image_0000002779406572.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4C74A9471AEEE5FE0D637155467387387C7E2AA37D4C44CA3213BA3B5C7E823)发送。例如：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/3GQjigsNQG244bGkdEsIGg/zh-cn_image_0000002779566550.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/3GQjigsNQG244bGkdEsIGg/zh-cn_image_0000002779566550.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F6A4AE85EC5DBD45819C852427589B4130EA4CFF543BBB41EF0C45E1CE72FB3)
 4. 等待Agent自动完成设计稿解析、工程理解、方案设计、页面实现等流程。

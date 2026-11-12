@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1403
 title: 实现bindContextMenu弹出式菜单点击后保持开启
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 实现bindContextMenu弹出式菜单点击后保持开启
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:37+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:326ae9418589309c96871791d0a4f9b8a2eec4d0022aa648c1e5786f3df8e0a7
 ---
@@ -16,11 +16,11 @@ content_hash: sha256:326ae9418589309c96871791d0a4f9b8a2eec4d0022aa648c1e5786f3df
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/7qKn4ffpQx2SiOg5RtYb2g/zh-cn_image_0000002628603238.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/7qKn4ffpQx2SiOg5RtYb2g/zh-cn_image_0000002628603238.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB6F8196ED751BD796AEDCE4DCBE31F87B1D4F091101CDC4ED3283001CB15B1B "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/yrUAxyPWTyqiwPgXqLx8sg/zh-cn_image_0000002658842503.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/yrUAxyPWTyqiwPgXqLx8sg/zh-cn_image_0000002658842503.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD042B92BFFBCB9010ABB947C5B9708E36BE02FEE556C311C2CF417131EE9361 "点击放大")
 
 ## 背景知识
 

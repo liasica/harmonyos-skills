@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1236
 title: Image动态适配Text的宽高
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Image动态适配Text的宽高
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:47+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:22bc1809ddc701b141bc048e8a4ea7d8edc47af359ea9102e4cb12dd983c2603
 ---
@@ -63,4 +63,4 @@ struct TextView {
 
 实现效果如下：增大Text文本，图片对应变大。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/IyFbEp7vSUeU0ZOxn5UFJw/zh-cn_image_0000002628753944.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/IyFbEp7vSUeU0ZOxn5UFJw/zh-cn_image_0000002628753944.png?HW-CC-KV=V1&HW-CC-Date=20261112T233150Z&HW-CC-Expire=31536000000&HW-CC-Sign=3CCF94F43F220B379CBA62E6564CF6C1B3C0FE60445FD5A3ED08640F44C3799F "点击放大")

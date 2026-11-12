@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1375
 title: 如何同时绑定全模态和半模态转场
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何同时绑定全模态和半模态转场
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:063ccd67709b94986eac5ec07d3a6fe767340c0934d82982263d80dd0b7f35bb
 ---
@@ -32,7 +32,7 @@ Row()
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/85CNWO1ASCaHUEmPaGMPog/zh-cn_image_0000002628761926.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/85CNWO1ASCaHUEmPaGMPog/zh-cn_image_0000002628761926.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=2EB3F469A6DFB11856FD411D1462A4CD131834B39CCA0FC06001B916D84E6B61 "点击放大")
 
 ## 背景知识
 

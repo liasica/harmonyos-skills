@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 开发者中心添加的公钥指纹信息和证书文件指纹信息不一致
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 开发者中心添加的公钥指纹信息和证书文件指纹信息不一致
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:45+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:55bea7b25a39a375649ed61061780bfc09b9c508e5ddda682249f00f84c4415d
 ---
@@ -14,15 +14,15 @@ content_hash: sha256:55bea7b25a39a375649ed61061780bfc09b9c508e5ddda682249f00f84c
 
 HarmonyOS 开发者中心添加公钥指纹：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/OK2T6672RQiuSm9-iq_kBQ/zh-cn_image_0000002658793855.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/OK2T6672RQiuSm9-iq_kBQ/zh-cn_image_0000002658793855.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=8DCDC87CA6F67ACABA7F5B9F46F790746C484806D1469BB8F86FACB54651730D "点击放大")
 
 证书管理页面：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/29EJsImAS6eliGEl8OKt7g/zh-cn_image_0000002628394584.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/29EJsImAS6eliGEl8OKt7g/zh-cn_image_0000002628394584.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F76E776BCFC126331D27C42BC6FBC7C604C70FA6D70E458942ADDB7E53C28C7 "点击放大")
 
 证书里的指纹信息：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/UFkHqXe9R0mGKyKYSwbDcQ/zh-cn_image_0000002628554474.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/UFkHqXe9R0mGKyKYSwbDcQ/zh-cn_image_0000002628554474.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=4FA99B73016DE65D0DCAD27B7558E2FB897C12CF67F03B175FD121F07C96BDCB "点击放大")
 
 在HarmonyOS 开发者中心中通过添加“公钥指纹(HarmonyOS API 9及以上)”入口添加的指纹信息为什么和下载下来的.cer文件指纹信息不一致？
 

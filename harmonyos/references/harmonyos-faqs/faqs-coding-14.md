@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-coding-14
 title: DevEco Studio上使用生成NAPI功能时， 提示“Failed to generate NAPI, check the napi_init.cpp file and try again. ”错误
 breadcrumb: FAQ > DevEco Studio > 代码编辑 > DevEco Studio上使用生成NAPI功能时， 提示“Failed to generate NAPI, check the napi_init.cpp file and try again. ”错误
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:50+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:92aba68303aec27c37706a27b52b15cb8c66727c0388d3023aa8347ac9d2c3bf
 ---
@@ -12,10 +12,10 @@ content_hash: sha256:92aba68303aec27c37706a27b52b15cb8c66727c0388d3023aa8347ac9d
 
 右键单击函数， 在弹出的菜单中依次选择 Generate... > NAPI， 生成胶水代码报错。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/kpz106SdQ1-gnVVxQHnumw/zh-cn_image_0000002624638354.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/kpz106SdQ1-gnVVxQHnumw/zh-cn_image_0000002624638354.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BC8B2AE1BA054CEA50C3883E27262B323BC8282E62178EF17B338A626E14C3F)
 
 **解决措施**
 
 检查napi\_init.cpp文件的Init函数中是否初始化了napi\_property\_descriptor变量。没有初始化请添加napi\_property\_descriptor desc[] = {}; 然后重新生成NAPI。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/QKuz1co3SKeO4uW20sL4Sg/zh-cn_image_0000002654837759.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/QKuz1co3SKeO4uW20sL4Sg/zh-cn_image_0000002654837759.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=10AB33D9467D213DC305F961E232D584E911DC5058656FD3CB2C9E1147EBDB15)

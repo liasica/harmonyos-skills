@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1436
 title: Toast是否支持设置字体大小和弹窗宽高等属性
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Toast是否支持设置字体大小和弹窗宽高等属性
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:fbb044ca739e276fad236e96d564356e1032192851332d781692a764fa099dd3
 ---
@@ -14,7 +14,7 @@ Toast是否支持自定义设置字体大小和弹窗背板的宽高等属性？
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/hxA4PeCDTwW7NNgOc6nknw/zh-cn_image_0000002628763654.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/hxA4PeCDTwW7NNgOc6nknw/zh-cn_image_0000002628763654.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A7942BA4A3A12D7C20ABF5AD819C03138053ED210A9D9F7B7A1FBFE2E0DE125 "点击放大")
 
 ## 背景知识
 

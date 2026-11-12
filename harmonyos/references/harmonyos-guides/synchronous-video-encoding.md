@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/synchronous-v
 title: 视频编码同步模式
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 视频编码同步模式
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:64bea6abf353e915fb6030a8c2b1f3b98cf34cda6c165480b9396c73917589cb
 ---
@@ -26,7 +26,7 @@ content_hash: sha256:64bea6abf353e915fb6030a8c2b1f3b98cf34cda6c165480b9396c73917
 
 详细的API说明请参考[VideoEncoder](../harmonyos-references/capi-native-avcodec-videoencoder-h.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/yBRh65s-TuiQ8QozskngNA/zh-cn_image_0000002786359864.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/yBRh65s-TuiQ8QozskngNA/zh-cn_image_0000002786359864.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F459A40F1111D0D93B88B25FB7117A8D7C3115A18B29D46096EF38D1619F93D)
 
 ### 在CMake脚本中链接动态库
 

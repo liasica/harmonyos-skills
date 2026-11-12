@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/smart-photopi
 title: 使用PhotoPicker推荐图片
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 使用PhotoPicker推荐图片
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-03-09
 content_hash: sha256:a66a7f5b87b748e9f95bb8e9c48398b89be464c04e18c2cf54c78bc8e87ec364
 ---
@@ -14,14 +14,14 @@ content_hash: sha256:a66a7f5b87b748e9f95bb8e9c48398b89be464c04e18c2cf54c78bc8e87
 
   以指定图片类型为二维码为例，PhotoPicker界面上将出现“二维码”的Tab页，展示图库中的二维码图片。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/tUQEJjoRRy2CEQpo2Ie1sQ/zh-cn_image_0000002815559393.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/tUQEJjoRRy2CEQpo2Ie1sQ/zh-cn_image_0000002815559393.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A600B674C775F298DA03B5BA6689FA7317D8B85BA29C1D3B770E3E97DF2330D)
 * 在图文编辑时选择图片，系统可以根据应用传入的文本信息，提取出时间、地点、事物或活动，并根据提取的信息，推荐对应的图片展示在PhotoPicker中。
 
   举例说明，如设置的推荐参数文本是“国庆节，带着女儿去了上海野生动物园，看到了凶猛的大象，漂亮的火烈鸟，还有她心心念念的大熊猫，小家伙可开心了。”
 
   而且手机中有相应的图片，图片分析完成时，会在“推荐”的Tab页中展示出时间是国庆节，地点是上海野生动物园的大熊猫、火烈鸟、大象的图片。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/yHpGL-M9RwK-BTDFLKAH5A/zh-cn_image_0000002815399477.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/yHpGL-M9RwK-BTDFLKAH5A/zh-cn_image_0000002815399477.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=46ECA07E8471C61E4BB8D109605ADB0F7EE0ED60F7C9779A14BA6D1D921F5E28)
 
 ## 约束与限制
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-mock-loca
 title: 位置模拟
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 位置模拟
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:03+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-08
 content_hash: sha256:4807b5f84976f4b5f0fa6cb727e3f853b44374edc628b2e8ed91e263b90fefca
 ---
@@ -26,17 +26,17 @@ content_hash: sha256:4807b5f84976f4b5f0fa6cb727e3f853b44374edc628b2e8ed91e263b90
 
 1. 点击菜单栏**View > Tool Windows > Device File Browser**，打开Device File Browser。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/aX_qYiVtT0WjptE6ATDzbA/zh-cn_image_0000002808886757.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/aX_qYiVtT0WjptE6ATDzbA/zh-cn_image_0000002808886757.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=53819F85AC170DD2F515919455730A78B96FE6E07DE7C33DAA88237455CB2620)
 2. 点击图示按钮，打开位置模拟窗口。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/NJQNzwC8R8yuJ4OMHSd6LQ/zh-cn_image_0000002808766673.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/NJQNzwC8R8yuJ4OMHSd6LQ/zh-cn_image_0000002808766673.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6DA40EA3713E94827D4354C7A7B88B369422602E4B8BC8C20D0068A1F24BD3E)
 3. 设置位置信息，提供两种模式。
    * **Manual**：适用于模拟静态位置。手动输入此时所处位置的经度、纬度、海拔以及方位角。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/g9vP4YbCTdqfzsa-vEbJBw/zh-cn_image_0000002808886755.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/g9vP4YbCTdqfzsa-vEbJBw/zh-cn_image_0000002808886755.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A0522B7B270D0E45FFD04519701230C617A5C48AF91F723FAC65E20904C7753)
    * **Replay**：适用于模拟移动轨迹或连续位置变化。点击**Open**导入本地的GPX文件，设置时间间隔后，点击**Apply**即可按设定的时间间隔上报GPX文件中的轨迹信息。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/sleEXGetQUCOAWsvJB7jKA/zh-cn_image_0000002779567092.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/sleEXGetQUCOAWsvJB7jKA/zh-cn_image_0000002779567092.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FEE75FB16D7E2496BE7C27980222881ECC0971F8C3427D0FCCF24E7CBB2E354)
 4. 如需取消位置模拟能力，将**Virtual location**去勾选，即可恢复使用设备的真实地理位置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/e9WXuzarTe2SRLc7bjDBsA/zh-cn_image_0000002808766675.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/e9WXuzarTe2SRLc7bjDBsA/zh-cn_image_0000002808766675.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB3E5220EA3B0648A6A6C172026B5D8021ABA62715B254E0544CD75BAF5B744C)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1172
 title: 如何根据API版本动态增加Image组件的属性
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何根据API版本动态增加Image组件的属性
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:18+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:9e4f706fc2e2b5950febdb47f5f69eaf8ed460c324dfc394c4e088b0dfaee1de
 ---
@@ -68,8 +68,8 @@ export class ImageModifier implements AttributeModifier<ImageAttribute> {
 
 系统API版本小于API 14：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/JngGvczMTRGcRUo3yhs45w/zh-cn_image_0000002628569782.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/JngGvczMTRGcRUo3yhs45w/zh-cn_image_0000002628569782.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=463E5108624DB3BF7979AB47889BFE4C96C40CFA2EA0FD04C11D5AA35ABFAFE4 "点击放大")
 
 系统API版本大于API 14：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/tqpAfEE3S2OJk2yiHUOMKA/zh-cn_image_0000002628409878.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/tqpAfEE3S2OJk2yiHUOMKA/zh-cn_image_0000002628409878.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8FAFB7FDF8F0BB2F973C7D3B932E27CD68034CAC34099334332A8871319F95F "点击放大")

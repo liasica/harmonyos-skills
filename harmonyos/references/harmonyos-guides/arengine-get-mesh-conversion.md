@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-get-
 title: 环境Mesh识别介绍
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 环境Mesh识别 > 环境Mesh识别介绍
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-04-24
 content_hash: sha256:f3c55e39186493fec8acd5afe2b4a821c6b633b35f3176a77bcf45548f700816
 ---
@@ -14,4 +14,4 @@ AR Engine可以实时计算并输出当前画面中的环境网格数据，可�
 
 **图1** 环境网格扫描示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/875RxAlMSUKK27mH0MsAWQ/zh-cn_image_0000002815559409.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/875RxAlMSUKK27mH0MsAWQ/zh-cn_image_0000002815559409.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B2B6465F188887A9A3A0A8B1F937673087F89B20BC6402796061316A218E648)

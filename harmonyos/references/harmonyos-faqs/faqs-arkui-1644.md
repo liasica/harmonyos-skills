@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1644
 title: HarmonyOS中Navigation组件单栏与分栏模式动态切换及横屏布局异常解决方案
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > HarmonyOS中Navigation组件单栏与分栏模式动态切换及横屏布局异常解决方案
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:41+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-13
 content_hash: sha256:f946fb50ebc78ce56c58076ce1e65f5c9566cda5cdc75893aa1a5439eb12c262
 ---
@@ -106,7 +106,7 @@ content_hash: sha256:f946fb50ebc78ce56c58076ce1e65f5c9566cda5cdc75893aa1a5439eb1
 
        实现效果如下：
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/7fjzJ7wvR2eQNmIeLXAwdA/zh-cn_image_0000002663720495.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/7fjzJ7wvR2eQNmIeLXAwdA/zh-cn_image_0000002663720495.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DEF43B595F3C269C39C27770D86314799E22EE8F79DADFFD5493622A015EF0B "点击放大")
   + **场景二：跳转不同页面采用不同的模式设置。**
 
     在推送子页时修改 Navigation 模式，需要单栏显示的页面设置为 false，需要分栏显示的页面设置为 true。参考场景一，修改代码如下：

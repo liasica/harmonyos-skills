@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: 如何解决关闭开发者选项后应用白屏问题
 breadcrumb: FAQ > DevEco Studio > 应用调试 > 如何解决关闭开发者选项后应用白屏问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:98c8dd8eaec311fc7744b4defde296adb052a5ddd587800472b9658f059d19fb
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:98c8dd8eaec311fc7744b4defde296adb052a5ddd587800472b9658f059
 
 手机升级系统后，原先安装在手机上的应用白屏/卡在启动页。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/u7DjzZjWQ0etO3v3ffjqFQ/zh-cn_image_0000002658928627.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/jlZMrx4OSL6d90lt234Jag/zh-cn_image_0000002628409406.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/u7DjzZjWQ0etO3v3ffjqFQ/zh-cn_image_0000002658928627.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A154C564F505B4ACE826F9AA5DD87361F1C1F771E9792BFC8932F774D0E0A13 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/jlZMrx4OSL6d90lt234Jag/zh-cn_image_0000002628409406.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A33F8CC99A5FCF3E750BB5EB5FAFE9B243B96CAB438F5279EC0186C3DED68ED "点击放大")
 
 ## 背景知识
 
@@ -24,7 +24,7 @@ content_hash: sha256:98c8dd8eaec311fc7744b4defde296adb052a5ddd587800472b9658f059
 
   定位问题时抓取日志，开启[开发者选项](../harmonyos-guides/ide-developer-mode.md)后，应用正常打开，问题修复。原因是Debug证书编译打包的应用，仅适用于调试应用，需要真机开启开发者选项。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/H26__pZ_TIWrLGTHSSpN0A/zh-cn_image_0000002658808675.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/H26__pZ_TIWrLGTHSSpN0A/zh-cn_image_0000002658808675.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A31D359E787B09B41E6F2354639CE284B66EC74B37ED79A5536A6E3FF45C4EF "点击放大")
 * **方案二**：邀请测试。
 
   问题定位期间，推荐开发者使用[邀请测试](../app/agc-help-invite-test-0000002270829393.md)来测试应用效果，邀请测试需要上传Release模式编译的APP包。

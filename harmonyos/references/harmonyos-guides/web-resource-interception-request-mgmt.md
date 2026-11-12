@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-resource-
 title: 自定义页面请求响应
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > 自定义页面请求响应
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:7321385efc73136a68c146ac957769804be11f1491845b417fe65ac3c9029bb6
 ---
@@ -74,7 +74,7 @@ Web网页上发起资源加载请求，应用层收到资源请求信息。应�
   ```
 * 被拦截后的页面
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/aH3FR67GRcSfRfV3ANY0GQ/zh-cn_image_0000002786519376.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/aH3FR67GRcSfRfV3ANY0GQ/zh-cn_image_0000002786519376.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=899F16D7795B3A432700484A395118C547C1E0FD35E16966C7765F0CE222906B)
 
 为自定义的JavaScript请求响应生成CodeCache：自定义请求响应的资源类型如果是JavaScript脚本，可以在响应头中添加“ResponseDataID”字段，Web内核读取到该字段后会为该JS资源生成CodeCache，加速JS执行，并且ResponseData如果有更新时必须更新该字段。不添加“ResponseDataID”字段的情况下默认不生成CodeCache。
 
@@ -168,4 +168,4 @@ Web网页上发起资源加载请求，应用层收到资源请求信息。应�
   ```
 * 被拦截后的页面
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/-qiPWD4xQfSXlaygFfkjNw/zh-cn_image_0000002786359448.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/-qiPWD4xQfSXlaygFfkjNw/zh-cn_image_0000002786359448.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=2125FB7C8FD4744F7DF29072B278B90F70E0C0F31E47675834C2398C00BBA768)

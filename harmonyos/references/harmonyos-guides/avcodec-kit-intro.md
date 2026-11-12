@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avcodec-kit-i
 title: AVCodec Kit简介
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > AVCodec Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:d406c3d00192fd1e493417f10ea4d3055d6ce1461cdc3035b56c63c1ef7c3675
 ---
@@ -54,7 +54,7 @@ AVCodec Kit（Audio & Video Codec Kit，音视频编解码，封装，解封装�
 
   视频编解码的逻辑如图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/d-jO2XgNSxirf3C8aFP82g/zh-cn_image_0000002786359856.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/d-jO2XgNSxirf3C8aFP82g/zh-cn_image_0000002786359856.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=50F3C4AD68F8E773067E41E1A0D9934F86FC9E8003FD85A2012E5E9E23A3BC0A)
 
   具体开发指导请参考[视频解码Surface模式](video-decoding.md#surface模式)、[视频编码Surface模式](video-encoding.md#surface模式)。
 * 音频编解码
@@ -65,7 +65,7 @@ AVCodec Kit（Audio & Video Codec Kit，音视频编解码，封装，解封装�
 
   音频编解码逻辑如图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/h7d_VelFQyKz2-ph4z0cXQ/zh-cn_image_0000002815559277.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/h7d_VelFQyKz2-ph4z0cXQ/zh-cn_image_0000002815559277.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB9B3E9DD4278463DE631A1EEBFE84762C14A06C9D3FB0E49B6556ED33293485)
 
   具体开发指导请参考[音频解码](audio-decoding.md)、[音频编码](audio-encoding.md)。
 * 文件封装与解封装
@@ -76,7 +76,7 @@ AVCodec Kit（Audio & Video Codec Kit，音视频编解码，封装，解封装�
 
   文件封装、解封装逻辑如图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/I0_YA6yaTVmKDAATGXQrgA/zh-cn_image_0000002815399361.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/I0_YA6yaTVmKDAATGXQrgA/zh-cn_image_0000002815399361.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4E309E2BE05784B027E13E226E7F68B8320ADD8C032749BCE7B6E501BB73250)
 
   具体开发指导请参考[媒体数据封装](audio-video-muxer.md)和[媒体数据解封装](audio-video-demuxer.md)。
 

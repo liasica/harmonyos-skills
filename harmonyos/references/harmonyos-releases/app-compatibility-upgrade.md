@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/app-compati
 title: 应用升级targetSDKVersion兼容低版本指导
 breadcrumb: 版本说明 > 应用升级适配与兼容性 > 应用兼容性说明 > 应用开发中的兼容性场景开发指导 > 应用升级targetSDKVersion兼容低版本指导
 category: harmonyos-releases
-scraped_at: 2026-11-12T09:50:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-06
 content_hash: sha256:fa76eceb208974ae39f0e590ca5f1db58e2c7ff9a18f1f75670c449ac83f4e87
 ---
@@ -24,7 +24,7 @@ API版本号格式从26.0.0开始进行调整（详见[版本号格式调整说�
 
 例如：接口A在SDK版本5.0.2(14)产生行为变更并进行了版本隔离，应用升级targetSDKVersion≥5.0.2(14)并适配了新版本行为， compatibleSdkVersion还保持设置为5.0.1(13)， 则若应用分发到低版本设备5.0.1(13)上，需保证该应用在低版本设备能够兼容运行正常（如下图所示）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/u_6wU1oxSM2rhPpcg85Ruw/zh-cn_image_0000002448697365.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/u_6wU1oxSM2rhPpcg85Ruw/zh-cn_image_0000002448697365.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA9F5458BA6D70B110DE7743DB026F61CCA176842A5559EA2D12DB052422031A "点击放大")
 
 这种场景开发者可以使用如下方式进行兼容处理：
 

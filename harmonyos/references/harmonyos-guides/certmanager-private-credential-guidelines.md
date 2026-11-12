@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/certmanager-p
 title: 应用证书凭据开发指导
 breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 证书管理服务 > 应用证书凭据开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:809da05582d1b6a56aff7198544aa82deaccab72c9aaf26413199af29e0a2afd
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:809da05582d1b6a56aff7198544aa82deaccab72c9aaf26413199af29e0
 
 您的应用可以读取已安装应用证书凭据的证书链，及使用对应私钥进行签名，但不能读取私钥数据（保护私钥数据的安全）。应用证书凭据的公私钥对存储在[Universal Keystore Kit](huks-overview.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/oApobB6xRdGG1KirlYnrxg/zh-cn_image_0000002815559077.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/oApobB6xRdGG1KirlYnrxg/zh-cn_image_0000002815559077.png?HW-CC-KV=V1&HW-CC-Date=20261112T233228Z&HW-CC-Expire=31536000000&HW-CC-Sign=52D5340F0660937A0D27746C00396FC22AE4ABFF493E6B38A309B5B5B34EF78D)
 
 **说明** 
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/connectivity-ki
 title: 蓝牙BLE扫描与状态监听常见问题
 breadcrumb: FAQ > 系统开发 > 网络 > 短距通信（Connectivity） > 常见问题 > 蓝牙BLE扫描与状态监听常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:18+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:c7fa8de17ab58c55397d145bcf8ee66d3408da6ff44e2f3d3c234833c2495cb2
 ---
@@ -493,7 +493,7 @@ content_hash: sha256:c7fa8de17ab58c55397d145bcf8ee66d3408da6ff44e2f3d3c234833c24
 
   [ble.startBLEScan](../harmonyos-references/js-apis-bluetooth-ble.md#blestartblescan)发起BLE扫描流程时，可以选择SCAN\_MODE\_LOW\_LATENCY扫描模式，减少蓝牙扫描的时间，提高扫描发现效率。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/3BzSg3xSRMyzVHeEuCTb-A/zh-cn_image_0000002803061457.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/3BzSg3xSRMyzVHeEuCTb-A/zh-cn_image_0000002803061457.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=955A46017DCBA5F821EF42176086A41420037891B00D55DEABF363A7EF9F0C16 "点击放大")
 * 方案三：
 
   服务发现与特征值匹配优化。扫描到目标设备后，通过[GattClientDevice](../harmonyos-references/js-apis-bluetooth-ble.md#gattclientdevice)订阅服务并匹配特征值的过程可能耗时较长，可以通过以下方式优化：

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: HarmonyOS权限分类、受限权限审批前调试方法及开发者中心 Profile中权限置灰原因说明
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > HarmonyOS权限分类、受限权限审批前调试方法及开发者中心 Profile中权限置灰原因说明
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
-content_hash: sha256:c9b55fe52bef08841e93c8ed32e2c75a0ff12f35fd0fecba1e874d188c896b8b
+content_hash: sha256:2206a36fee12dd8ae6469834438d6cb7c071318141f4a539632221ecaf8175e4
 ---
 
 ## 问题现象
@@ -34,10 +34,10 @@ content_hash: sha256:c9b55fe52bef08841e93c8ed32e2c75a0ff12f35fd0fecba1e874d188c8
    * 在module.json5配置文件的requestPermissions标签中声明需要申请的ACL权限。具体操作可参考[声明权限](../harmonyos-guides/declare-permissions.md)。
    * 使用真机设备连接开发工具DevEco Studio后，进入File > Project Structure... > Project > Signing Configs界面，勾选"Automatically generate signature"即可完成签名。如果未登录，请先单击Sign In进行登录，然后自动完成签名。申请了受限权限页面也会弹窗提示：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/mTSSIfd8TxOVg0isKe1T4g/zh-cn_image_0000002728875983.png "点击放大")
-   * 签名完成后，将鼠标悬停在Provisioning Profile: DevEco Managed Profile后![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/1Sc6we_MRWSk2Qzam3_qpA/zh-cn_image_0000002728995927.png)，也可查看申请的ACL权限信息：
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/MmVW2NDQQpukfTce2CVKBw/zh-cn_image_0000002728875983.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=A83BB9ACB43BEEE2E134365761BF57D6BB48F46D25E3A890F5CADBDF136D8BEE "点击放大")
+   * 签名完成后，将鼠标悬停在Provisioning Profile: DevEco Managed Profile后![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/aaKhYbkXRPyif4MDfR9nxA/zh-cn_image_0000002728995927.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D5D92F0816E4A1D72AE0723C8D2DACE16B7779C1138A6C5E4F2F7635DB5562C)，也可查看申请的ACL权限信息：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/1qE4FojpRC6WQLj9ylkq4g/zh-cn_image_0000002728995933.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/dnGEc8eWQQaRqP_Kti6jBQ/zh-cn_image_0000002728995933.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=DBDFA68C1FAB9192A98A37F10F914127908A3255F0F236B468B8AF69F038C53F "点击放大")
 
      **说明** 
 
@@ -45,16 +45,16 @@ content_hash: sha256:c9b55fe52bef08841e93c8ed32e2c75a0ff12f35fd0fecba1e874d188c8
 
 2. 在HarmonyOS 开发者中心[创建试用调试Profile](../app/agc-help-apply-acl-0000002394212138.md#section1443958124819)，完成[申请ACL权限](../app/agc-help-apply-acl-0000002394212138.md)后，在审核等待期间，还可以创建试用调试Profile来提前试用您申请的这些权限。试用调试Profile有效期为5天，到期即失效。具体操作指导如下：
    * 在提交ACL权限申请后弹出的提示框中，点击"Profile页面"链接。
-   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/JoDJcNUzTsOhNM-EpWdfdw/zh-cn_image_0000002699237296.png)
+   * ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/zzdZsnKMTOWH1TWo_Mb9xA/zh-cn_image_0000002699237296.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DBBDFBA31698A7E0DBAAA3B3D42C8187E4C5CE2CE94842882B5C5EB9D7D6F04)
    * 进入"添加试用调试Profile"页面，配置Profile信息。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/GHqRDdY_TVKc6UBizoa7wA/zh-cn_image_0000002728876701.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/mf7xs5IWQzaCp178Oeu-1g/zh-cn_image_0000002728876701.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F8CA3F59B5DFA253C73AC2A1E338CCCF2595C2139049FCC45856175AC70BE13 "点击放大")
    * 添加ACL权限到Profile。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/9A7Ws_eQSw-H8yVVpP8BFw/zh-cn_image_0000002699237306.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/Vo4ggRytSZKWRMBx_9Mvow/zh-cn_image_0000002699237306.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=3CD69A2B132F95CD06B13F9AADB152B3163C919C918274B18FBF13958F4030FD "点击放大")
    * 核对Profile信息无误后，点击右上角"添加"，试用调试Profile创建成功。点击"下载"，将生成的Profile保存至本地，供后续签名使用。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/mF99zEtIRpGMsmdnjOJ2Yw/zh-cn_image_0000002699077430.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/t8PY8b13Tq-NDkDDJh3aIg/zh-cn_image_0000002699077430.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E39C4F7106F87255618ED8B74E4492D8B215CC69F4A1C47C3B9B46DBB70D1B3 "点击放大")
 
      **说明** 
 

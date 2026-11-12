@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 应用更新无法拉起升级对话框
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 应用更新无法拉起升级对话框
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:45+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:85b6c991e7a4d8d85e17a172170986ba9ef83247edf152fb5386080dd49d99d5
 ---
@@ -36,7 +36,7 @@ content_hash: sha256:85b6c991e7a4d8d85e17a172170986ba9ef83247edf152fb5386080dd49
    ```
 3. 如果本地版本确实低于在架版本，则需要抓取hilog进行分析，搜索"app invalid"查看报错信息，如下报错，显示本地调试应用的appid和在架版本不一致，这就是问题原因。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/wGE8VXl9Q4mKen0wBhYZXA/zh-cn_image_0000002705154589.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/wGE8VXl9Q4mKen0wBhYZXA/zh-cn_image_0000002705154589.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=41340DBF2E9F158D8FEE36413C76C15424BC9F8ADBABAEE72A038D42DBE62B86 "点击放大")
 
 ## 分析结论
 

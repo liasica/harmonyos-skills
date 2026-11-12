@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-3
 title: UI测试框架如何获取控件并进行操作
 breadcrumb: FAQ > DevEco Studio > 应用测试 > UI测试框架如何获取控件并进行操作
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-30
 content_hash: sha256:43d647a1dc8137f50271c1f3371713c9fe343578b05cda1cff0f5a5627ae04c4
 ---
@@ -121,7 +121,7 @@ A：控件树中类型为空串的结点代表当前的屏幕信息，类型为r
 
 Q：UiTest中Component提供控件属性获取，但是只能获取id、文本信息、类型等少数属性，无法获取对齐方式AlignType、输入类型InputType等更多属性，如何获取这些属性？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/jVY9MNFCToaAoSOcYb2Z7g/zh-cn_image_0000002658808909.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/jVY9MNFCToaAoSOcYb2Z7g/zh-cn_image_0000002658808909.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=3533A91890388E659481949A4DE4D6E6BADCA6D2C0270A3F3A664E2E237C6C18)
 
 A：使用[getInspectorInfo](https://gitcode.com/openharmony/docs/blob/master/zh-cn/application-dev/reference/apis-arkui/js-apis-arkui-frameNode.md#getinspectorinfo12)获取节点的结构信息，获取的信息和DevEco Studio内置ArkUI Inspector工具里面的一致（getInspectorInfo接口用于获取所有节点的信息，作为调试接口使用，频繁调用会导致性能下降）。
 

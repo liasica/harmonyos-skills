@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 关于系统设置中应用的存储大小
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 关于系统设置中应用的存储大小
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:84080a53ae3c2dcb803d384bb379f1ef9d7cf206746a0ab3f176499eaa4c8cb1
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:84080a53ae3c2dcb803d384bb379f1ef9d7cf206746a0ab3f176499eaa4
 
 系统设置-存储-应用大小页面如下，其中“应用”、“数据”、“缓存”这三个存储数据的值分别表示什么含义？开发者如何查询本应用的这三个存储数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/iFNMAMp9TWyAwllMNNBODQ/zh-cn_image_0000002629059028.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/iFNMAMp9TWyAwllMNNBODQ/zh-cn_image_0000002629059028.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=CCDF349194D39B223F456EE29B55D75344E12FA933FD4339D6BA15EB5F7EE5F3 "点击放大")
 
 ## 解决方案
 
@@ -70,5 +70,5 @@ content_hash: sha256:84080a53ae3c2dcb803d384bb379f1ef9d7cf206746a0ab3f176499eaa4
 
    运行效果图如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/5kUNq_N1S1aWZ0NRGttP4g/zh-cn_image_0000002659258331.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/5kUNq_N1S1aWZ0NRGttP4g/zh-cn_image_0000002659258331.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=F14B6E88199108B3B971FF99FBDA0E0AE1E3391039C36BB50DA3E55926DACAC2 "点击放大")
 3. 如果需要继续查询对应存储空间下的文件信息，可以参考[获取文件大小和文件类型](faqs-local-file-manager-63.md)。

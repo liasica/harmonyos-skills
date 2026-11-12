@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-613
 title: 如何解决多层级组件手势冲突
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决多层级组件手势冲突
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:90e9643fc911b064adf15d49ebcf1a157d0df7f52c6247fc9d06f52801fc4f10
 ---
@@ -119,7 +119,7 @@ struct StackExample {
 
 效果如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/LsxuIe6NQ3m2b0sqihJwfQ/zh-cn_image_0000002658792003.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/LsxuIe6NQ3m2b0sqihJwfQ/zh-cn_image_0000002658792003.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=D872EA394B2F8AB43992F9ABA2B1A229C66B35BC682943B208FAEA143A23F0C8 "点击放大")
 
 ### 场景二
 
@@ -162,7 +162,7 @@ struct TouchExample {
 
 效果如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/RWhQ_WwcRquS0O__AETCiQ/zh-cn_image_0000002628552626.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/RWhQ_WwcRquS0O__AETCiQ/zh-cn_image_0000002628552626.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=48F9E1FC0B67B3463DE314A7E386A8F7DF52A22B4248046283425EC9A08568F7 "点击放大")
 
 ### 场景三
 

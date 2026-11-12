@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: 如何给图片添加底色
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > 如何给图片添加底色
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:f3f9f19b6dc90343a0db8f43a38ac5b61640ecdf0165c253e049db81d1ca8dcc
 ---
@@ -157,7 +157,7 @@ content_hash: sha256:f3f9f19b6dc90343a0db8f43a38ac5b61640ecdf0165c253e049db81d1c
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/j7eL09IzTrGClu6QZD5KXQ/zh-cn_image_0000002628553242.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/j7eL09IzTrGClu6QZD5KXQ/zh-cn_image_0000002628553242.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=A70395F8095C031814DEBF4A2C8D5B18C13C4DD90530AA81E692F6CC2C1D73B9 "点击放大")
 
   也可改为：
 
@@ -286,7 +286,7 @@ content_hash: sha256:f3f9f19b6dc90343a0db8f43a38ac5b61640ecdf0165c253e049db81d1c
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/Z2NRh-DaSMWW36vNxfcW1A/zh-cn_image_0000002658912557.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/Z2NRh-DaSMWW36vNxfcW1A/zh-cn_image_0000002658912557.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=710CD60838AD03B7D489A606F45A3E316C795EF2EA898F458FD3E929696BE603 "点击放大")
 * **方案二**：使用createPixelMap实现纯色背景。
   + 对一张蒙版图片创建纯色背景：
 
@@ -437,7 +437,7 @@ content_hash: sha256:f3f9f19b6dc90343a0db8f43a38ac5b61640ecdf0165c253e049db81d1c
 
     效果预览：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/lQssgI0ZQLGNS0NuorFqEA/zh-cn_image_0000002658792619.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/lQssgI0ZQLGNS0NuorFqEA/zh-cn_image_0000002658792619.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9E31D06C2865ECDE91B3D24EE63408BA6958BCD454BFBE9363979F1050443BD "点击放大")
   + 对蒙版图片多次创建纯色背景：
 
     为避免批量处理图片导致线程阻塞，可采用异步接口[createPixelMap](../harmonyos-references/arkts-apis-image-f.md#imagecreatepixelmap8)或多线程[TaskPool](../harmonyos-guides/taskpool-introduction.md)。
@@ -789,7 +789,7 @@ content_hash: sha256:f3f9f19b6dc90343a0db8f43a38ac5b61640ecdf0165c253e049db81d1c
 
     效果预览：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/C_JU2rUfRfepZRGNauAzJQ/zh-cn_image_0000002628393360.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/C_JU2rUfRfepZRGNauAzJQ/zh-cn_image_0000002628393360.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=ECF81ED36175C062B7C96857DF7CC84DED47FA5D2C9B21B863922DA138F80792 "点击放大")
 * **方案三**：使用readPixelsToBufferSync遍历像素中的透明像素实现纯色背景。
 
   通过接口[readPixelsToBufferSync](../harmonyos-references/arkts-apis-image-pixelmap.md#readpixelstobuffersync12)访问PixelMap的像素数据，对透明部分的像素点添加为底色。
@@ -955,7 +955,7 @@ content_hash: sha256:f3f9f19b6dc90343a0db8f43a38ac5b61640ecdf0165c253e049db81d1c
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/flN7P-ErQgmX3IkJuzH5ig/zh-cn_image_0000002628553246.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/flN7P-ErQgmX3IkJuzH5ig/zh-cn_image_0000002628553246.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=469908B573956E8E928C21000E50A53A553851DDD5E5F8E886A816F6C9BC0767 "点击放大")
 
 **场景二**：为图片创建渐变色背景。
 
@@ -1079,7 +1079,7 @@ content_hash: sha256:f3f9f19b6dc90343a0db8f43a38ac5b61640ecdf0165c253e049db81d1c
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/woOXai2hRY-X23go0BRPeQ/zh-cn_image_0000002658912559.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/woOXai2hRY-X23go0BRPeQ/zh-cn_image_0000002658912559.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE3E8E641D5A46038B02F07FAAF94577DB67205F1371EB12C88993BF67BFC3AB "点击放大")
 
 ## 总结
 

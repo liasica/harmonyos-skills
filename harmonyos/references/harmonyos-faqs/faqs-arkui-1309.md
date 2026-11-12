@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1309
 title: 如何实现支持滑动调节护眼强弱的护眼模式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现支持滑动调节护眼强弱的护眼模式
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:48+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-13
 content_hash: sha256:aa2454b1a775a7866258f7799ca35c8523f5064848af7ca1fce635dccaad4661
 ---
@@ -91,7 +91,7 @@ content_hash: sha256:aa2454b1a775a7866258f7799ca35c8523f5064848af7ca1fce635dccaa
 
      效果预览：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/HzWVMrbaQBq5FnFnduWlzw/zh-cn_image_0000002628758922.gif "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/HzWVMrbaQBq5FnFnduWlzw/zh-cn_image_0000002628758922.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=615E97EE0C28FB5F89CA45FCF53C63044F63DF9772F208FC2893CBE2249F0D46 "点击放大")
 
 * **场景二：为整个应用设置护眼模式。**
   + 方案一：Navigation组件与护眼组件重叠。
@@ -289,7 +289,7 @@ content_hash: sha256:aa2454b1a775a7866258f7799ca35c8523f5064848af7ca1fce635dccaa
 
     效果预览：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/5dcAZ1mdTPe0n74L9fWxbQ/zh-cn_image_0000002658958251.gif "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/5dcAZ1mdTPe0n74L9fWxbQ/zh-cn_image_0000002658958251.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9F4B3ED76D178880321C81383C1FFD22970A153CE4DE623365D1D71D4C39EFA "点击放大")
 
 ## 总结
 

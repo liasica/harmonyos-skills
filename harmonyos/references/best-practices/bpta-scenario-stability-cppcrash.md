@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-scenario-s
 title: CppCrash类问题案例
 breadcrumb: 最佳实践 > 稳定性 > 稳定性案例 > 应用异常退出类问题案例 > CppCrash类问题案例
 category: best-practices
-scraped_at: 2026-11-10T10:42:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-15
 content_hash: sha256:6a9c91ab255c2eb59250b314255868af279de9fcf0733836a2b32d041938a6dd
 ---
@@ -70,7 +70,7 @@ napi\_env释放后仍被使用。
 
 核心崩溃栈如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/0WmyainiSk2MJJMgkuUUsg/zh-cn_image_0000002404125269.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/0WmyainiSk2MJJMgkuUUsg/zh-cn_image_0000002404125269.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD59AAA6BE017D79F58FBEEF015EFD8B537675F6ED322FAF9E4179FEA5A4776A)
 
 ### 分析步骤
 
@@ -114,7 +114,7 @@ ipc在线程2中使用先前保存的env,出现崩溃
 
 崩溃调用栈如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/4ooJLJK4RCa8uXG8LNDETA/zh-cn_image_0000002370405724.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/4ooJLJK4RCa8uXG8LNDETA/zh-cn_image_0000002370405724.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=51FCE83BA3D5F3AD50C62040FF045394F8F36F3391A7007730D0527FF4508C77)
 
 ### 分析步骤
 
@@ -173,15 +173,15 @@ previously allocated by thread T0 (thread name) here: <- 内存申请的现场
 
 根据调用栈继续分析，JsiWeak析构或重置的时候会触发其成员（类型为JsiObject/JsiValue/JsiFunction）父类JsiType中CopyableGlobal被释放，如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/im5FtMpcRkWVOOjyAXQ0JA/zh-cn_image_0000002404045461.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/im5FtMpcRkWVOOjyAXQ0JA/zh-cn_image_0000002404045461.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9F36ECF021E4803D6267C20121CF939655E85CF426920E9FAF40AEF1EC926BE)
 
 运行时在GC过程中IterateWeakEcmaGlobalStorage，会对无callback的WeakNode调用DisposeGlobalHandle操作，也对其进行释放，如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/4yo5Q2AwQXiRHmNi2hynfg/zh-cn_image_0000002370565636.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/4yo5Q2AwQXiRHmNi2hynfg/zh-cn_image_0000002370565636.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=81BF015EA5A3430DDB00D371BC59BDEA2E2E70BB527F7C8057582A14CFCF661D)
 
 对于同一个WeakNode，可能会存在两个入口释放。如果是GC过程中IterateWeakEcmaGlobalStorage先释放，因为无callback回调通知到JsiWeak进行清理，JsiWeak那边仍保存一个对已释放的WeakNode引用，即CopyableGlobal；当前面讲的WeakNode所在的NodeList被整体释放，JsiWeak处保留的CopyableGlobal再释放，就会存在重复释放内存问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/MLcrycw4TSKUrbBjUsgE-w/zh-cn_image_0000002404125273.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/MLcrycw4TSKUrbBjUsgE-w/zh-cn_image_0000002404125273.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD111F6B6636F78159C0A36ADCE878A338583A0D8F00B527496B112F4957C42F)
 
 ### 修复方法
 
@@ -268,7 +268,7 @@ static napi_value TriggerCrash(napi_env env, napi_callback_info info)
 
 ### 分析步骤
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/b1i0fGwPS66pkA0E-nw1LA/zh-cn_image_0000002370405728.png)构造主动调用abort函数场景举例说明SIGABRT类崩溃问题如何分析。上图所示，LastFatalMessage是进程退出前的最后一条fatal级别日志，对于SIGABRT类崩溃问题其一般能提供程序主动异常终止的原因，对定位该类问题有很大帮助。从上往下跳过C库的调用栈，找到调用abort函数的调用栈（图中#02层调用栈），从这里结合LastFatalMessage进行分析。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/b1i0fGwPS66pkA0E-nw1LA/zh-cn_image_0000002370405728.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=52C4E0C72557404A2DE94496F0A630AA0EFC6F9947D8CBD590C70A4F6DC8E706)构造主动调用abort函数场景举例说明SIGABRT类崩溃问题如何分析。上图所示，LastFatalMessage是进程退出前的最后一条fatal级别日志，对于SIGABRT类崩溃问题其一般能提供程序主动异常终止的原因，对定位该类问题有很大帮助。从上往下跳过C库的调用栈，找到调用abort函数的调用栈（图中#02层调用栈），从这里结合LastFatalMessage进行分析。
 
 除了调用abort函数外，C++中的另一个异常处理机制还包括assert函数，assert用于校验当前函数执行流程中的一些数据，校验失败进程会主动终止，分析问题的方法都是一样的。
 
@@ -285,7 +285,7 @@ static napi_value TriggerCrash(napi_env env, napi_callback_info info)
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/nQtr-_FgQ0S9ogYxnnmLEw/zh-cn_image_0000002404045465.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/nQtr-_FgQ0S9ogYxnnmLEw/zh-cn_image_0000002404045465.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=82B1A1B08285F1EFF2B122423BB9E4D1DD21C5B8E030457B071F617DF4B2D3E0)
 
 ## 案例6：通过反汇编分析CppCrash问题
 

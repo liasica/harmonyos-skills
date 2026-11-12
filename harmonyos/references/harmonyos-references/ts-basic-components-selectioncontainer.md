@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: SelectionContainer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > SelectionContainer
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:ba00ba18b541aac71050874776e738b80094dbffa679994139a445eb15ea73e1
 ---
@@ -492,7 +492,7 @@ struct SelectionContainerExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/5VMkVqOgS5m3utyRFBOWlg/zh-cn_image_0000002815400857.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/5VMkVqOgS5m3utyRFBOWlg/zh-cn_image_0000002815400857.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=67285BE592521603F57154EF79D3DF45D6FD09D35983B1542FE1930AECABCD59)
 
 ### 示例2（绑定自定义选择菜单）
 
@@ -591,7 +591,7 @@ struct SelectionContainerExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/Q8Ssk0rRSIaXsrKv-ECrPg/zh-cn_image_0000002786521282.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/Q8Ssk0rRSIaXsrKv-ECrPg/zh-cn_image_0000002786521282.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C2C80B4226E43F3F099BB74C247457114FDEC2EDF072ED258ED9EE2C527A4B0)
 
 ### 示例3（扩展菜单选项）
 
@@ -734,7 +734,7 @@ struct SelectionContainerExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/1fvOtej_TlGdAhWbnXVoEw/zh-cn_image_0000002786361354.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/1fvOtej_TlGdAhWbnXVoEw/zh-cn_image_0000002786361354.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=16340C95C611ABA1443EEF2F6B98B7727F9626DE01E1F2E1CF3CB072EF45842C)
 
 ### 示例4（通过控制器关闭选择菜单与清除文本选中）
 
@@ -791,4 +791,4 @@ struct SelectionContainerControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/PeDoUQipT8OURz9BUiJQNg/zh-cn_image_0000002815560775.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/PeDoUQipT8OURz9BUiJQNg/zh-cn_image_0000002815560775.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E558D8DAEAE6705F31024D829EB69FCA8967AE8238F936CBF45664BC4542A39)

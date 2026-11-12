@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-real-
 title: （可选）用户身份验证服务接入准备
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 开发准备 > （可选）用户身份验证服务接入准备
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:31+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:5417209adf1c41da6f02c68c7c2865ad9d763d8f1f75a32d6711cb345952b501
 ---
@@ -18,17 +18,17 @@ content_hash: sha256:5417209adf1c41da6f02c68c7c2865ad9d763d8f1f75a32d6711cb34595
 
 开启身份验证服务相关权限开关时，开发者需签署一份“开发者协议”，开发者同意协议并提交申请资料后需要等待审核（审核周期一般在1-3个工作日）通过后才能使用相关服务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/xgIMlmQrQB6_3BzcEXUUSA/zh-cn_image_0000002786360494.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/xgIMlmQrQB6_3BzcEXUUSA/zh-cn_image_0000002786360494.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF7701334E78EA5127167E7200B3B0405AAA12DF1DE57B4E8ED1C59FE4139D0B)
 
 ## 上传开发者公钥及下载华为公钥
 
 开发者可登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)，在“鸿蒙支付服务 > 身份验证服务”菜单中的“公钥管理”页签下完成开发者证书的上传以及华为公钥证书下载。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/WuVjy90wSs6tdGtlvRBaxQ/zh-cn_image_0000002815559915.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/WuVjy90wSs6tdGtlvRBaxQ/zh-cn_image_0000002815559915.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA8B104B459E717586DB7D8342632747CC34E2C89E3AA7DAF96EEF9F84F4CF1E)
 
 证书使用如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/vr9i4De_S-mWc1s40ixIzw/zh-cn_image_0000002815399999.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/vr9i4De_S-mWc1s40ixIzw/zh-cn_image_0000002815399999.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D56BB47BAAA6D2D02E00C845E646100610990C6C089B41EF6279BAF1E30351B)
 
 证书说明如下：
 

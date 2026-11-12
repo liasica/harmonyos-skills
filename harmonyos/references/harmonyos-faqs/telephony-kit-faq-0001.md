@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/telephony-kit-f
 title: 蜂窝通信服务API编译告警问题排查
 breadcrumb: FAQ > 系统开发 > 网络 > 蜂窝通信（Telephony） > 常见问题 > 蜂窝通信服务API编译告警问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:3d7af1502506ab253d65ee856e4482f68d98e2190c4f38c67e3ad2cefe25fd36
 ---
@@ -46,7 +46,7 @@ content_hash: sha256:3d7af1502506ab253d65ee856e4482f68d98e2190c4f38c67e3ad2cefe2
 
   由于DevEco Studio默认创建的项目会包含phone，tablet，2in1三种设备类型：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/6cy6HzeuTfmHGeNZd1SZyQ/zh-cn_image_0000002801599181.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/6cy6HzeuTfmHGeNZd1SZyQ/zh-cn_image_0000002801599181.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=F42AB9E60627CBB03B6D0B5539EE69482F9FC0521BCCF5D6C776C2CF688CADB9 "点击放大")
 
   tablet和2in1不具备SystemCapability.Applications.Contacts能力。所以默认没有修改设备类型时，会提示编译告警。移除下例代码中tablet，2in1后则不会再出现告警：
 

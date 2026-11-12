@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: 如何实现多张图片的拼接
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > 如何实现多张图片的拼接
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-22
 content_hash: sha256:18ae08096243d60d8d3b15616e62d6b065435e845f4f969d692a91a9be893ce3
 ---
@@ -35,7 +35,7 @@ content_hash: sha256:18ae08096243d60d8d3b15616e62d6b065435e845f4f969d692a91a9be8
 
 如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/7Mpy67cNRKm0WrdUqeFLLQ/zh-cn_image_0000002628393350.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/7Mpy67cNRKm0WrdUqeFLLQ/zh-cn_image_0000002628393350.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=35F795E88D04E79181FEE2F510123B1DD6FA5A820A6F112FAD1650338A51396C "点击放大")
 
 绘制图片会根据drawImage设置的图片绘制区域进行等比例缩放，常用的图片像素处理格式有ImageBitmap和PixelMap，两者的使用优劣对比如下表所示：
 
@@ -101,7 +101,7 @@ struct CanvasDrawing {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/3nfsZFZMQDqoiVPFDPyw8w/zh-cn_image_0000002628553232.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/3nfsZFZMQDqoiVPFDPyw8w/zh-cn_image_0000002628553232.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=D188239C51F665D3CEC7A7470205F6EF0698AD189A4C2EC58FB902DFE2DE3C71 "点击放大")
 
 离屏绘制的相关代码如下：
 
@@ -157,7 +157,7 @@ struct OffScreenDrawing {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/nYva38XRSruy0vByCIxHjA/zh-cn_image_0000002658912551.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/nYva38XRSruy0vByCIxHjA/zh-cn_image_0000002658912551.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=394E3F19C2C77E4C7449AC30A0235B0D0096A80F5D074F81BD6BB506F8ED7D96 "点击放大")
 
 对于相册图片或沙箱图片，可以在获取图片的ArrayBuffer数据后，创建PixelMap实例绘制长图。参考代码如下：
 
@@ -240,7 +240,7 @@ struct AlbumImageData {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/xiyWpfJiQcmQaV4C_ZnRMA/zh-cn_image_0000002658792609.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/xiyWpfJiQcmQaV4C_ZnRMA/zh-cn_image_0000002658792609.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=244F6D5BE68A889056F140767D965D5F3972BF57BB494957875A4B32D01F9171 "点击放大")
 
 **方案二**：使用writePixels实现长图绘制。
 

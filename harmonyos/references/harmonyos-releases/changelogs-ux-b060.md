@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: UX样式或效果的变更
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Developer Beta5引入的接口行为变更 > UX样式或效果的变更
 category: harmonyos-releases
-scraped_at: 2026-11-12T09:50:34+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-27
 content_hash: sha256:02881099cd19d4a0a639207b80dcc11d631f729e9ab5cf02da4ba0715609e120
 ---
@@ -117,11 +117,11 @@ UX规格变更
 
 变更前：RichEditor非用户手动点击收起键盘按钮收起键盘时，触发组件失焦，关闭菜单，复位选中区。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/m5AiA6n3QD6UAWMNTR0Bxg/zh-cn_image_0000002027415465.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/m5AiA6n3QD6UAWMNTR0Bxg/zh-cn_image_0000002027415465.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=550CAB1F4E4F801ED20FE8A24DA2EAC16E62F2A908C696FEE7BB830E83B7A573)
 
 变更后：RichEditor非用户手动点击收起键盘按钮收起键盘时，仅小窗模式下触发组件失焦，其他场景不触发组件失焦，不关闭菜单，不复位选中区。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/KrzcMyUGTGOHB6LO_AQeOw/zh-cn_image_0000002027334989.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/KrzcMyUGTGOHB6LO_AQeOw/zh-cn_image_0000002027334989.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=769407384407A3F673ADA0749424D147A8414EC8A2F69EED19531F8055C1E5E1)
 
 **起始API Level**
 
@@ -203,7 +203,7 @@ UX默认行为变更，无需适配。可以通过[promptAction中ShowToastOptio
 
 在适老化场景，Menu集成保存控件“保存图片”，由于字体的尺寸增大，保存控件的实际布局宽度会大于所设定宽度，可能会出现截断情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/NjXz9FEwTpK6xFvVVgImFw/zh-cn_image_0000002027415469.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/NjXz9FEwTpK6xFvVVgImFw/zh-cn_image_0000002027415469.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=42F8B425FA9857613BDBBF32286678EC094B23CA96D311215ACD4B259482EA37)
 
 变更后：
 
@@ -213,7 +213,7 @@ UX默认行为变更，无需适配。可以通过[promptAction中ShowToastOptio
 
 变更后，在相同的参数条件下，安全控件完整显示的最小宽度超过所设定的宽度，按钮文本信息会自动换行，控件高度会自适应增大，以保证安全控件显示的完整性。换行后，组件的高度增大，如果布局不满足实际要求，需要根据实际需要对安全控件的宽度和高度做调整。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/TLtH_rngQKyFMSc8L3byJQ/zh-cn_image_0000002027334993.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/TLtH_rngQKyFMSc8L3byJQ/zh-cn_image_0000002027334993.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C15A1DD7FEC8BE76A484090318E55FEF453754BD28D0BA313BC08D380FFF006)
 
 **起始API Level**
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-14
 title: UIAbility组件各场景生命周期及监听
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > UIAbility组件各场景生命周期及监听
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:49+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:95715c4493ffe9440e4e8fec17a7a8331fa236108a6c4f54778fe0d313cf0f60
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:95715c4493ffe9440e4e8fec17a7a8331fa236108a6c4f54778fe0d313c
 
 [UIAbility组件的核心生命周期回调](../harmonyos-guides/uiability-lifecycle.md)包括onCreate、onForeground、onBackground、onDestroy。UIAbility的生命周期示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/fHRIXEa2Rf6hSSh4GDttOw/zh-cn_image_0000002658868621.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/fHRIXEa2Rf6hSSh4GDttOw/zh-cn_image_0000002658868621.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=90F8DA9A752820E468FE2920B961B99DE594E010F4C91395084C8847EDD20644 "点击放大")
 
 ## 解决方案
 

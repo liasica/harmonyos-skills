@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-basics-serv
 title: 访问剪贴板控件，没有剪贴板访问记录
 breadcrumb: FAQ > 系统开发 > 基础功能 > 基础服务（Basics Service） > 访问剪贴板控件，没有剪贴板访问记录
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:a7589a968f7ee567f7844ba4f4feb0204a44b5d19c66ab10c6ee5eb0d2442000
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:a7589a968f7ee567f7844ba4f4feb0204a44b5d19c66ab10c6ee5eb0d24
 
 在系统设置->隐私和安全->剪贴板->访问记录，没有问题应用的剪贴板访问记录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/askljKZoRUOV4HPC1N4_tw/zh-cn_image_0000002658973157.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/askljKZoRUOV4HPC1N4_tw/zh-cn_image_0000002658973157.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=50268BE359E34D5479EC5E193032618DAE5CE903E0402D17DB729198E32A0A9C "点击放大")
 
 ## 背景知识
 

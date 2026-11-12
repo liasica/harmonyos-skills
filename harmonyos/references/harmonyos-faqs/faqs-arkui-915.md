@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-915
 title: 如何设置半模态转场弹窗与设备屏幕底部的边距
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何设置半模态转场弹窗与设备屏幕底部的边距
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:40+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:be2516bf26836bc037881907b1454dd55a949a135afad71dbeefe0aecbdf40c9
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:be2516bf26836bc037881907b1454dd55a949a135afad71dbeefe0aecbd
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/cNHvQCE2QnyKrWx4RfYtyg/zh-cn_image_0000002628559678.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/cNHvQCE2QnyKrWx4RfYtyg/zh-cn_image_0000002628559678.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=358628C98D771ECD429D7A50AC3C2619A1174832BB3A978961B311D26CD3AF8C "点击放大")
 
 ## 背景知识
 

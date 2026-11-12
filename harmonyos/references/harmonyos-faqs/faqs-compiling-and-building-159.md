@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“The reason attribute are mandatory for user_grant permissions.”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“The reason attribute are mandatory for user_grant permissions.”
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:4d8b884324be8b5a78418013b97f312c3e895d39c06577a643725bc1bd5d095f
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:4d8b884324be8b5a78418013b97f312c3e895d39c06577a643725bc1bd5
 
 在module.json5文件中配置user\_grant类型的权限时，必须包含reason属性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/VAbObV3qQIS8m3AjF_ZJhQ/zh-cn_image_0000002624638548.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/VAbObV3qQIS8m3AjF_ZJhQ/zh-cn_image_0000002624638548.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3C5DE9FAFCAD3201B4FBDC18607A3B6D4A1798978DC9F5CDDEFEB1EF0901B94)
 
 **解决措施**
 

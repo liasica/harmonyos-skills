@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-arkui-f
 title: 命令式节点常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI开发常见问题 > 命令式节点常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:dfacb7303cf697d85a958f9d86889cb1c5228e2b0f2ad3b2bb3448f7a8616ce5
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:dfacb7303cf697d85a958f9d86889cb1c5228e2b0f2ad3b2bb3448f7a86
 
 不规范地使用[FrameNode](../harmonyos-references/js-apis-arkui-framenode.md)后出现[JS Crash](jscrash-guidelines.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/2SvFoSfATRGNu-M0mvCBEw/zh-cn_image_0000002815398881.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/2SvFoSfATRGNu-M0mvCBEw/zh-cn_image_0000002815398881.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD8541AD9B1052FE57C2CD786D86ABD85A7EB986635455AA7A1009C22D3B65DA)
 
 **解决措施**
 
@@ -53,7 +53,7 @@ struct FrameNodeTypeTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/tKEcYP-JQhGe9SrGegGGKg/zh-cn_image_0000002786359378.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/tKEcYP-JQhGe9SrGegGGKg/zh-cn_image_0000002786359378.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1D37CE0EE0D7A38D99218681C238DB818D32CC30F2A347FDF2349B8340A6EEE)
 
 ## Native侧创建的ArkUI\_NodeHandle执行disposeNode后出现cppcrash
 
@@ -61,11 +61,11 @@ struct FrameNodeTypeTest {
 
 开发者对[ArkUI\_NodeHandle](../harmonyos-references/capi-arkui-nativemodule-arkui-node8h.md)执行[disposeNode](../harmonyos-references/capi-arkui-nativemodule-arkui-nativenodeapi-1.md#disposenode)前，未清理节点相关的资源对象（如回调、捕获引用等），导致节点下树后高概率发生程序崩溃，崩溃原因为释放后使用（Use After Free）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/pv7VsDX6TBOm4zO2Tg-iDg/zh-cn_image_0000002815558799.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/pv7VsDX6TBOm4zO2Tg-iDg/zh-cn_image_0000002815558799.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE5FD3F52141527E7422C086FE1DA2E58D2FA0AE5B04EA3E4C2E03BE8B248D33)
 
 下图为此类问题的典型故障日志，日志中的Reason:Signal字段为SIGSEGV(SEGV\_MAPERR)，表示崩溃地址不固定，可能提示野指针或空指针解引用。此时崩溃栈内各个栈帧基本均为系统栈，如DetachFromMainTree、~FrameNode等系统函数，此类系统函数多与disposeNode接口和节点下树析构相关。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/BrePddmURUOnaYwLZFhZPQ/zh-cn_image_0000002815398883.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/BrePddmURUOnaYwLZFhZPQ/zh-cn_image_0000002815398883.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D41A987894F94E35E4EDA34B064392F25C3EBDC05CB35482AAFA7D5ACAAF9A1)
 
 **解决措施**
 

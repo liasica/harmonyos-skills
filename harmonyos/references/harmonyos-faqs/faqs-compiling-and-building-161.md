@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“Duplicate 'routerMap' object names detected.”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“Duplicate 'routerMap' object names detected.”
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:2e9af17d31f1b9ec6b3c71b840c866d4e20e0b433d4dc0a652f44d4099bd1879
 ---
@@ -16,7 +16,7 @@ routerMap配置中存在重复名称。
 
 当前模块的router\_map.json文件中存在name重复的routerMap配置，或者当前模块与依赖模块之间存在name重复的routerMap配置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/iBj_5L0dSF23d5Vlml91jQ/zh-cn_image_0000002624478642.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/iBj_5L0dSF23d5Vlml91jQ/zh-cn_image_0000002624478642.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=46DFEF43D0D504004F6336C474F707408D05B2B342C7969CBA498537A64D491D)
 
 **解决措施**
 

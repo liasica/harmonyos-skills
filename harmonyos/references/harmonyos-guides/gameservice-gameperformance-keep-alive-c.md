@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 设置游戏实况窗后台保活（C/C++）
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏场景感知（可选） > 开发指导（C/C++） > 设置游戏实况窗后台保活（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:24+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:5b377ad297defb141a72e16945ce9fd42e1f41b68a54b63d25dfb7d313753b78
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:5b377ad297defb141a72e16945ce9fd42e1f41b68a54b63d25dfb7d3137
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/ejOfgv7gSiSzaJ3S9xnlXA/zh-cn_image_0000002786360300.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/ejOfgv7gSiSzaJ3S9xnlXA/zh-cn_image_0000002786360300.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=70687AABF1399524FA717BC8BD74E3F8E39EE848F6CCB34A1CEC1FC363FF1B93)
 
 1. 游戏启动后调用[HMS\_GamePerformance\_Init()](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_init)接口对游戏场景感知进行初始化。
 2. 初始化成功后，游戏调用[HMS\_GamePerformance\_UpdateSceneInfo()](../harmonyos-references/gameservice-game-performance.md#hms_gameperformance_updatesceneinfo)接口向游戏场景感知上报游戏场景信息。

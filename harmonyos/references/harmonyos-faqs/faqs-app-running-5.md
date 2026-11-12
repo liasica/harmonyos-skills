@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-runnin
 title: 运行工程到本地模拟器，提示“Failed to get the device apiVersion”
 breadcrumb: FAQ > DevEco Studio > 应用运行 > 运行工程到本地模拟器，提示“Failed to get the device apiVersion”
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:58+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:fd7ee7778c3c008441a479779bf8227d1cca9320d931c5d76e563e15542ac059
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:fd7ee7778c3c008441a479779bf8227d1cca9320d931c5d76e563e15542
 
 本地模拟器启动后，运行工程到模拟器，提示“Failed to get the device apiVersion”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/BwR9O1NtT32WIrTO4GL7iQ/zh-cn_image_0000002654798111.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/BwR9O1NtT32WIrTO4GL7iQ/zh-cn_image_0000002654798111.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=858EF83F09E74F582265C44BB77F814695696C4F51CE22A8A7EFC0250054CA67)
 
 **解决措施**
 
@@ -25,4 +25,4 @@ content_hash: sha256:fd7ee7778c3c008441a479779bf8227d1cca9320d931c5d76e563e15542
   ./hdc kill -r
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/BLdV_VsDQ7exSsHT_e2pDA/zh-cn_image_0000002624638658.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/BLdV_VsDQ7exSsHT_e2pDA/zh-cn_image_0000002624638658.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A31C0701639B2EFC8574FA79A3EB92C3641AA11F2944AA54E4032B345FA9602)

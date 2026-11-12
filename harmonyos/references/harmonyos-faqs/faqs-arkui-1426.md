@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1426
 title: 屏蔽Swiper组件切换效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 屏蔽Swiper组件切换效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:41+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:68a6e9c2347f50989c8ad1ea70e706a033d6a559156720c17142d0eb48bd2fc5
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:68a6e9c2347f50989c8ad1ea70e706a033d6a559156720c17142d0eb48b
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/0P0L12RJT1W1jG8vp44hCQ/zh-cn_image_0000002628763646.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/0P0L12RJT1W1jG8vp44hCQ/zh-cn_image_0000002628763646.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8643C32F0B5C339A59DD346304A42554C7ABCD8E139B9A6B90DA9B70CCC4594 "点击放大")
 
 ## 背景知识
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-mult
 title: "@ohos.multimedia.movingphotoview (动态照片)"
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS组件 > @ohos.multimedia.movingphotoview (动态照片)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:56:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:a6b0a88c849d5a334fea1839c2967b2668c1fd52c7cd023ed6504bd30cb175a9
 ---
@@ -483,7 +483,7 @@ class MediaDataHandlerMovingPhoto implements photoAccessHelper.MediaAssetDataHan
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/RXMQLAXNQTqY4dJGkShGdQ/zh-cn_image_0000002786362136.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/RXMQLAXNQTqY4dJGkShGdQ/zh-cn_image_0000002786362136.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=6657FF4B36D410994E6DFBCA60E46367F5000414B2803B28A9BE9BE9EB9928E6)
 
 ## 示例2：在元服务中使用动态照片
 
@@ -579,7 +579,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/XR62XSEBTRmIFuhdV7ipXw/zh-cn_image_0000002815561557.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/XR62XSEBTRmIFuhdV7ipXw/zh-cn_image_0000002815561557.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF2AFD1D94CCA4C50C85A1BB08AB4D0B163EE79B14EA5C2A965BD36E65DDD431)
 
 ## 示例3：图像分析功能使用
 
@@ -735,4 +735,4 @@ class MediaDataHandlerMovingPhoto implements photoAccessHelper.MediaAssetDataHan
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/7VZR_h-RSGyzsW7mrMfFbQ/zh-cn_image_0000002815401641.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/7VZR_h-RSGyzsW7mrMfFbQ/zh-cn_image_0000002815401641.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=00C4C6152D894B6FFA0D23DFB84D9F08477B4C560C0E2D1A9528F663F712E56F)

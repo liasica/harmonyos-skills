@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: GridRow
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 栅格与分栏 > GridRow
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:9a16690fed4b208b39db4ff15e97e10c958dce359a188fc2c8297a37215d614d
 ---
@@ -179,7 +179,7 @@ columns: {md:4, lg:8} // 等于配置 columns: {xs:4, sm:4, md:4, lg:8, xl:8, xx
 * 新一行的offset加上子组件的span超过总列数时，将下一个子组件放在新一行。
 * 例：Item1: GridCol({ span: 6 })， Item2: GridCol({ span: 8, offset:11 })。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/7cgCwlLETCWHQn4oiF_YTw/zh-cn_image_0000002786361108.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/7cgCwlLETCWHQn4oiF_YTw/zh-cn_image_0000002786361108.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEEE972D677280A675581237C45329752416A36D7F378AE650BAD2A22BA08A28)
 
 **卡片能力：** 从API version 9开始，该接口支持在ArkTS卡片中使用。
 
@@ -280,7 +280,7 @@ struct GridRowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/N0xMOv8JTJyQlQS63CYdrA/zh-cn_image_0000002815560529.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/N0xMOv8JTJyQlQS63CYdrA/zh-cn_image_0000002815560529.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0033BA651E66FE7DCEEA35BE777B8BAA26EFA66A1C99FC9E4A52352DF43CDFF)
 
 ### 示例2（AlignItems的基本用法）
 
@@ -348,4 +348,4 @@ struct GridRowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/IvgKpIXCRg2VUmH8QUWUvw/zh-cn_image_0000002815400613.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/IvgKpIXCRg2VUmH8QUWUvw/zh-cn_image_0000002815400613.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFA1EB00D2EB51AEBFA1AAE0F9C700DDC7E83E23158D6704F6EDEDBB71A6BE5D)

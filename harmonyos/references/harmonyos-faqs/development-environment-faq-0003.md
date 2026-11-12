@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/development-env
 title: DevEco Studio内存占用过高问题排查
 breadcrumb: FAQ > DevEco Studio > 环境准备 > 常见问题 > DevEco Studio内存占用过高问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:48+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:1d6a6b192e419bd660d57f27bde5117c62d9ad43da542ca3917f9105c154b063
 ---
@@ -28,13 +28,13 @@ content_hash: sha256:1d6a6b192e419bd660d57f27bde5117c62d9ad43da542ca3917f9105c15
 
 在Profiler数据分析过程中，如果DevEco Studio卡顿或停止响应，并显示“Low Memory”告警，说明内存不足。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/CPY8egBWRc-k_riasumRmA/zh-cn_image_0000002800175559.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/CPY8egBWRc-k_riasumRmA/zh-cn_image_0000002800175559.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F1EEE13FA809932E182B400350E158D5745F3C7958F5463CD945EFBB2FE9756)
 
 问题现象二
 
 在Profiler数据分析过程中，Profiler功能无法正常使用，并显示“The IDE is running low on memory”告警。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/wA6KlZt_Tx2OPNHfREE3Ng/zh-cn_image_0000002800295483.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/wA6KlZt_Tx2OPNHfREE3Ng/zh-cn_image_0000002800295483.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=77528D190434E63A264D34CB6DBA1DCBD1E16D2014ED30F0DDBFC0F75F8619FD)
 
 解决措施
 
@@ -42,5 +42,5 @@ content_hash: sha256:1d6a6b192e419bd660d57f27bde5117c62d9ad43da542ca3917f9105c15
 
 1. 在DevEco Studio工具栏中依次选择“Help > Edit Custom VM Options…”，打开配置文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/qFNPtEtnS5KCQyl5bOFntw/zh-cn_image_0000002800295485.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/qFNPtEtnS5KCQyl5bOFntw/zh-cn_image_0000002800295485.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A602A4556ABB0D58F048CAAE47BC57EF54B24223E4393C0226D4F934B929AFF)
 2. 根据实际需求调整“-Xmx”参数后的值。如果配置文件中未包含“-Xmx”参数，请手动添加，例如：-Xmx2048m。2048m 表示虚拟机可使用的内存量，如需增加，可修改该数值。

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 如何解决应用向用户索取权限使用目的说明不明确等问题
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 如何解决应用向用户索取权限使用目的说明不明确等问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:45+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:961376f5a41c3ff374869e79726251109250e13dc5bbbdda4d1d24382ee748d8
 ---
@@ -20,10 +20,10 @@ content_hash: sha256:961376f5a41c3ff374869e79726251109250e13dc5bbbdda4d1d24382ee
 
 * 修改前，向用户索取位置权限时，没有说明权限申请的使用目的，仅说明“获取地理位置信息”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/y1aPqMOrTP2veiS9xjjPbw/zh-cn_image_0000002628394580.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/y1aPqMOrTP2veiS9xjjPbw/zh-cn_image_0000002628394580.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7B32C714D682F7A27AEA86ABB19062796840B60B55585DEB1DF11536B446AB2 "点击放大")
 * 修改后，向用户索取位置权限时，说明“查询附近网点，显示当前位置等功能需要访问您的定位权限，请允许授权后体验更多功能”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/WvhzdliQSxmKoKoIvnZYHg/zh-cn_image_0000002628554470.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/WvhzdliQSxmKoKoIvnZYHg/zh-cn_image_0000002628554470.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=381EC45952E399E48BB8481E443C4771A80F0FF63A407D287518583492090903 "点击放大")
 
 应用需要在module.json5配置文件的requestPermissions标签中声明reason属性，对应上图权限申请的使用目的：
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1397
 title: 自定义组件拦截父组件的滚动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 自定义组件拦截父组件的滚动
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:23d79ae0dcaa60acc91c500ceaf11edd662a346dbfdc98fe1cae8d1df0e1c64b
 ---
@@ -85,7 +85,7 @@ content_hash: sha256:23d79ae0dcaa60acc91c500ceaf11edd662a346dbfdc98fe1cae8d1df0e
 
   效果预览：手指按在第一个Text区域内无法滑动Scroll组件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/eVGGOAIcQReUzXm6tnIWoQ/zh-cn_image_0000002628602674.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/eVGGOAIcQReUzXm6tnIWoQ/zh-cn_image_0000002628602674.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=B49595D12218C152ADDCCFB6970A7362F4F8EB34ABA341339E70094153632F28 "点击放大")
 * **方案二**：gesture手势事件。
 
   使用gesture给特定区域绑定滑动手势事件[PanGesture](../harmonyos-references/ts-basic-gestures-pangesture.md)，则手指在此区域滑动时，滑动事件不会传递至外层的滚动组件，即实现此区域滑动时，滚动组件不滚动的效果。
@@ -104,4 +104,4 @@ content_hash: sha256:23d79ae0dcaa60acc91c500ceaf11edd662a346dbfdc98fe1cae8d1df0e
 
   效果预览：手指按在第一个Text区域内无法滑动Scroll组件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/-Mv-kuEbSDGvJkNzpuZF8g/zh-cn_image_0000002658841945.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/-Mv-kuEbSDGvJkNzpuZF8g/zh-cn_image_0000002658841945.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C28327ABBC78D15A74AB36A5671EBCBDBCAE887F45C5998707BC34F2BA55742 "点击放大")

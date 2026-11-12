@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-api-o
 title: 接口概述
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > 基本概念 > 编程API > 接口概述
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:41+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:97a318e2f754a2796dd17d32e0650db823d71836e12b5724e676eaa8de28d634
 ---
@@ -15,7 +15,7 @@ AscendC算子采用标准C++语法和一组类库API进行编程，开发者可�
 
 **图1** AscendC编程类库API示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/m6wtbP_MSQygTQhtqmeHiA/zh-cn_image_0000002815400193.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/m6wtbP_MSQygTQhtqmeHiA/zh-cn_image_0000002815400193.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=93295510B81A2A1947D8921AA33C34782F389BFF6CCDF6E86E37BBF30FD77B82)
 
 对于基础API，主要分为以下几类：
 
@@ -38,4 +38,4 @@ AscendC算子采用标准C++语法和一组类库API进行编程，开发者可�
 
 **图2** 计算API几种计算方式的特点
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/flvVt8-XSLKEh7SCjF3dEw/zh-cn_image_0000002786520618.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/flvVt8-XSLKEh7SCjF3dEw/zh-cn_image_0000002786520618.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF1B53D60BE3190F02D89E9FB49E8DD55DDD1CB9B8B871E54E68873D5967DE73)

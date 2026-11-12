@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-waterflow
 title: 使用瀑布流
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 使用列表与网格 > 使用瀑布流
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:8513039cf75f4bb6897cba6ad9f70528cf9c3227e9b50a5502a3578392032fd5
 ---
@@ -406,4 +406,4 @@ inline std::shared_ptr<ArkUIWaterflowNode> CreateWaterflowExample(napi_env env)
 #endif // MYAPPLICATION_CREATEWATERFLOWEXAMPLE_H
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/jRv_QHs2QHmq-Anpjee5ww/zh-cn_image_0000002815398773.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/jRv_QHs2QHmq-Anpjee5ww/zh-cn_image_0000002815398773.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5CEA9F3748EAE486B5D04C44B6075A36E2B520E3F354E74D9C9BF406CCB4E0A)

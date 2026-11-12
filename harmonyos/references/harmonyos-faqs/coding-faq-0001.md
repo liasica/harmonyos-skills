@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/coding-faq-0001
 title: DevEco Studio代码编辑功能失效问题排查
 breadcrumb: FAQ > DevEco Studio > 代码编辑 > 常见问题 > DevEco Studio代码编辑功能失效问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:50+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:422794da7223a1eb170cbe7d67d43c16104722252aef40a2fb45e6117265e408
 ---
@@ -21,7 +21,7 @@ content_hash: sha256:422794da7223a1eb170cbe7d67d43c16104722252aef40a2fb45e611726
 
 1. 场景1：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/WC8qlYO7SjWRjxIv4GsVkQ/zh-cn_image_0000002802200939.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/WC8qlYO7SjWRjxIv4GsVkQ/zh-cn_image_0000002802200939.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D3B0E411634485831C390341FD9CD2791197544F9299475A3385A33B0574F72)
 
    解决措施：
 
@@ -29,10 +29,10 @@ content_hash: sha256:422794da7223a1eb170cbe7d67d43c16104722252aef40a2fb45e611726
 
    以配置内存上限为12G举例，打开DevEco Studio，通过菜单栏的Help > Edit Custom Properties...，打开idea.properties配置文件。在文件中新增一行 arkts.server.max.old.space.size=12288，然后重启DevEco Studio。编辑器Node进程的内存上限将设置为12288M（即12G）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/qTk2w7iITh-puoo3sLOLcw/zh-cn_image_0000002773081074.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/qTk2w7iITh-puoo3sLOLcw/zh-cn_image_0000002773081074.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=957CBEBF6C09BABCF1F78FF8F228B5D9C31F0A5F3139D11E69B452688C8AABBA "点击放大")
 2. 场景2：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/2JxqdRxQQ0qh1HBrK_tPTA/zh-cn_image_0000002802280843.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/2JxqdRxQQ0qh1HBrK_tPTA/zh-cn_image_0000002802280843.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=C47AFEA37CD15858D84863D94C10F71B00416059ABF6F6B5B128ACD3EA573C83)
 
    解决措施：
 
@@ -40,12 +40,12 @@ content_hash: sha256:422794da7223a1eb170cbe7d67d43c16104722252aef40a2fb45e611726
 
    点击配置内存（打开DevEco Studio，通过菜单栏的文件>设置... 打开，搜索内存设置）增加ArkTS语言服务最大内存大小的值。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/HSOyMvESTQWYit0SbMYJZw/zh-cn_image_0000002773081076.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/HSOyMvESTQWYit0SbMYJZw/zh-cn_image_0000002773081076.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=73863142336E067C89BCDB108321F982EFC3F0C45E3273A366081A71561453A7 "点击放大")
 
    默认值通常为8G，如果在idea.properties中配置了arkts.server.max.old.space.size值则默认值等于该值。ArkTS语言服务最大内存大小是工程独立配置，配置后不会影响其他工程。idea.properties中的arkts.server.max.old.space.size值为全局配置。
 3. 场景3：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/deJzlO4sTaK3P5BR8DXydA/zh-cn_image_0000002802200943.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/deJzlO4sTaK3P5BR8DXydA/zh-cn_image_0000002802200943.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=81447E30B9327F63E8FFA60F92609DD3DA3975847BB8AE719DCBE10D5611BC91)
 
    解决措施：
 
@@ -53,7 +53,7 @@ content_hash: sha256:422794da7223a1eb170cbe7d67d43c16104722252aef40a2fb45e611726
    * 措施2：可配置部分模块不加载[卸载和加载模块](../harmonyos-guides/ide-load-unload-modules.md)。
 4. 场景4：问题现象：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/SnAKgW7sRmmCMhBhO8_v9g/zh-cn_image_0000002773081078.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/SnAKgW7sRmmCMhBhO8_v9g/zh-cn_image_0000002773081078.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=B292CE82F006198B7EED5271140FB08825F6B5E146913171E4BE408C0D340827)
 
    解决措施：
 

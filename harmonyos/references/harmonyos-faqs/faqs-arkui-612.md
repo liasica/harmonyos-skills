@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-612
 title: Image组件加载SVG图片异常的常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Image组件加载SVG图片异常的常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:12e0f4c903eed912eb692145c16736f745e593fd5b54a5ce6c16d750964649ca
 ---
@@ -80,7 +80,7 @@ struct Index {
 
 运行效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/jvzm2UF_QaCsupKSbunVxw/zh-cn_image_0000002628552624.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/jvzm2UF_QaCsupKSbunVxw/zh-cn_image_0000002628552624.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=433D93AE43BC0A2DAF0BF51189B57925F7AC71883F69E21663E678B904C10400 "点击放大")
 
 场景二：标签支持范围限制。
 
@@ -150,7 +150,7 @@ struct Page {
 
 运行效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/WJOtbYMTRMyMReoG8tXAIA/zh-cn_image_0000002658911941.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/WJOtbYMTRMyMReoG8tXAIA/zh-cn_image_0000002658911941.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7D16F89B5C368C079DADF86BC0C7BC3FF3523FA065D167AB3928F4373168A06 "点击放大")
 
 场景三：objectFit参数配置。
 
@@ -207,7 +207,7 @@ struct PageOne {
 
 运行效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/6sWNi_dvTRG3Zf0MU_ZuAg/zh-cn_image_0000002628392732.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/6sWNi_dvTRG3Zf0MU_ZuAg/zh-cn_image_0000002628392732.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=3BC2A7EEFAAA01CC9E5CED61865FE7043864876481A4DBB6919951A5987C3973 "点击放大")
 
 场景四：解析能力增强功能的差异。
 

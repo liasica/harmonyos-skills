@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1588
 title: 如何解决Tabs和滚动组件的嵌套滑动问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Tabs和滚动组件的嵌套滑动问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:3c6ea28f5a0e56566b03cee77f309d9bfbbeec0d86e5307372a7504a77a900ae
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:3c6ea28f5a0e56566b03cee77f309d9bfbbeec0d86e5307372a7504a77a
 
 Tabs组件存在横向滑动的控制手势，当其内部嵌套Tabs或横向的List、Scroll、Swiper、Grid等滚动与滑动组件时，会产生横向滚动手势冲突，导致外部的Tabs无法横向切换。以Grid为例问题现象如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/T4fegmJET4KFKlwkKyrjjw/zh-cn_image_0000002628770204.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/T4fegmJET4KFKlwkKyrjjw/zh-cn_image_0000002628770204.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD8DD0FAF54CAE0E25C5E8EE0F98628E52D44460CE25741FA0C6DACACF4B2031 "点击放大")
 
 当Grid组件滑动到右侧底部时，预期触发Tabs从“首页1”切换到“首页2”，实际未触发。
 

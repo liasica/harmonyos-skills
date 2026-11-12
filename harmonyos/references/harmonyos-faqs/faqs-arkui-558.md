@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-558
 title: 视频扩散播放效果实现
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 视频扩散播放效果实现
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:c02d2b50ee2baf9ead7ddf2b5ea7f6e0d10c8596bff7442693c5a6909db7d4aa
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:c02d2b50ee2baf9ead7ddf2b5ea7f6e0d10c8596bff7442693c5a6909db
 
 在播放视频时，如何实现以下的画中画扩散播放效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/e3js7bUFRLyltcPYhF6P-g/zh-cn_image_0000002628552012.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/e3js7bUFRLyltcPYhF6P-g/zh-cn_image_0000002628552012.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=7893DAAE86E22D84F46BCFD871CEB40127AFAEA52D0405A9388FAC4A7D63E9DC "点击放大")
 
 ## 背景知识
 

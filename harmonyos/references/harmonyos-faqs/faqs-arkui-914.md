@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-914
 title: 如何解决Canvas绘制文本进行缩放后，内容模糊问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决Canvas绘制文本进行缩放后，内容模糊问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:40+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-13
 content_hash: sha256:e2e3f6422d044de3d9fb54a6c8ae781f905c4c03e1462fdfeeeb80ffac9ec563
 ---
@@ -51,11 +51,11 @@ struct Index {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/uFckkPHDThm8LBb-5qFfiw/zh-cn_image_0000002628399762.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/uFckkPHDThm8LBb-5qFfiw/zh-cn_image_0000002628399762.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A7056E2C5D4070E8DD3065351DF1AFFBF645BC583D165D0CCF993BA60B461F6 "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/_MhT2eKCQDazMEDDQUH3MA/zh-cn_image_0000002658799031.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/_MhT2eKCQDazMEDDQUH3MA/zh-cn_image_0000002658799031.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EEA6C362E314018C4E87414ECCA2BF303200AC0745F106D017ABCDE34146B35 "点击放大")
 
 ## 背景知识
 

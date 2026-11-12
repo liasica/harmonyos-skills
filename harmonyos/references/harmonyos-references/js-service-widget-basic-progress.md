@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: progress
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 基础组件 > progress
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:37+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:d2a28a11cda8c7f1912689fa94e4029103ee94119a62d07f07d48523764be1df
 ---
@@ -120,4 +120,4 @@ type=arc
 
 **4\*4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/OmQLn2UGTWmbQw1JQudPag/zh-cn_image_0000002786521920.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/OmQLn2UGTWmbQw1JQudPag/zh-cn_image_0000002786521920.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE455C5C30DBD6C686DA8F2C54760AE3609CEFE31E322F62C98615C49E186A94)

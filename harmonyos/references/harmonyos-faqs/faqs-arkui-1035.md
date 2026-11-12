@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1035
 title: 如何解决多弹窗跳转页面覆盖问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决多弹窗跳转页面覆盖问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:52+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:40ad5b6e86f2ff9f552603b90d9a0907278e6f7202d5d859fe321749a78dcdec
 ---
@@ -238,7 +238,7 @@ content_hash: sha256:40ad5b6e86f2ff9f552603b90d9a0907278e6f7202d5d859fe321749a78
 
 实现效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/SqaxGA_PQ2qg_b9DiX8GjQ/zh-cn_image_0000002628564726.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/SqaxGA_PQ2qg_b9DiX8GjQ/zh-cn_image_0000002628564726.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=672BAA702EEC38CC8AB62B3C8DFDDB042424AED0B94D7171C327D489A283AE9B "点击放大")
 
 ## 常见FAQ
 

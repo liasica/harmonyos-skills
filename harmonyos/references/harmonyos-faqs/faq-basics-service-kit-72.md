@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-basics-serv
 title: 发布公共事件如何限制指定的订阅者接收
 breadcrumb: FAQ > 系统开发 > 基础功能 > 基础服务（Basics Service） > 发布公共事件如何限制指定的订阅者接收
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-26
 content_hash: sha256:1b26ebc1f1e51c024a77fd78a1c82eda8f91383bbe056a237e9ec4ae72938ec6
 ---
@@ -25,7 +25,7 @@ content_hash: sha256:1b26ebc1f1e51c024a77fd78a1c82eda8f91383bbe056a237e9ec4ae729
 
   以自定义custom.permission.Publisher权限为例，创建订阅者后可以通过命令hidumper -s 3299 -a -e来查询订阅者设置的权限是否生效。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/ebEzBlxLRxa6csJpz-DU6w/zh-cn_image_0000002723210359.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/ebEzBlxLRxa6csJpz-DU6w/zh-cn_image_0000002723210359.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C729CC90DE2034B590467557B655DBD03AF5CD2BDCD99469EE37081E59F7E9E "点击放大")
 * 方案二：发送方或订阅方指定包名。
 
   如果可以明确只向某一个应用发送公共事件，或者只接收来自某一个应用的公共事件，也可以通过指定包名来约束发送方或订阅方。

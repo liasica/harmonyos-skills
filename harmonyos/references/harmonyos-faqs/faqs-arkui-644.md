@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-644
 title: 自定义实现图标拖动效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 自定义实现图标拖动效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:f96eac8c838cf471a224e356dd517609d30a9b6dad081a41ca3930e9e1aa8529
 ---
@@ -125,4 +125,4 @@ struct DragDemo {
 
 实现效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/Y28hdmWsTuaMjPgxEiRXKA/zh-cn_image_0000002658793779.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/Y28hdmWsTuaMjPgxEiRXKA/zh-cn_image_0000002658793779.png?HW-CC-KV=V1&HW-CC-Date=20261112T233158Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FC68E9666B5D621ACB5DED0E4DE0A59CA6ECD378E1861B8203CD5AF50376A7C "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/testhelper-gu
 title: 辅助测试工具使用指导
 breadcrumb: 指南 > 应用测试 > 单元测试和UI测试 > 自动化测试框架使用指导 > 辅助测试工具使用指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:a99288892e70209d72df121bd9e2ab04f82a07c4c77b45187607162857b3996f
 ---
@@ -18,7 +18,7 @@ content_hash: sha256:a99288892e70209d72df121bd9e2ab04f82a07c4c77b45187607162857b
 
 testhelper功能架构设计图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/AtVkXqi8RiGvVYNIXRV_yA/zh-cn_image_0000002701800954.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/AtVkXqi8RiGvVYNIXRV_yA/zh-cn_image_0000002701800954.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=505ACBB735BA30313A2DC0FF627CB58608F9F9C14919CECE66F408EC93E5246A)
 
 testhelper分为命令行工具层和核心能力层两部分，依赖底层系统服务提供功能支持。
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1001
 title: 如何在AlertDialog中根据数组动态生成多个按钮
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何在AlertDialog中根据数组动态生成多个按钮
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:50+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:d2eb98c561f5d3ec34d9a73b3583a6704ab8aecf8354c869cb681a0733e45e03
 ---
@@ -14,7 +14,7 @@ AlertDialog是否支持在弹窗内显示一个已经定义好的数组，例如
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/Tc6OIMh4SvSEEhraZQdmjA/zh-cn_image_0000002658923989.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/Tc6OIMh4SvSEEhraZQdmjA/zh-cn_image_0000002658923989.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=26BD3C15C36AAB13A8A3F5306D61687ABBC77B92A2E33DC248FCC7E49B4EF517 "点击放大")
 
 ## 背景知识
 

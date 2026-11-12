@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ux-testing
 title: UX测试
 breadcrumb: 指南 > 应用测试 > 专项测试 > DevEco Testing > UX测试
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-04
 content_hash: sha256:ad39c1d73a8faec911501f22c06e590756c5b624dfe5b95122da92b38badf4a4
 ---
@@ -34,15 +34,15 @@ hdc默认安装在Testing客户端安装目录的**\app\resources\bin**路径下
 
 启动模拟器后通过**hdc list targets**命令，查询已启动模拟器SN。模拟器的SN通常为127.0.0.1:port的形式（port默认为5555，端口冲突则依次加2递增）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/eKbzlkizRAGaINXrgS-eNQ/zh-cn_image_0000002633533120.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/eKbzlkizRAGaINXrgS-eNQ/zh-cn_image_0000002633533120.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=ABE8AFA0A84C8D1C1419E088409EF75CEDF7396D3DDE977D08D383FA0DD947B6)
 
 若未配置hdc环境变量，需要先切换到hdc文件目录（hdc安装目录获取参考hdc工具配置），Windows通过 **.\hdc list targets**命令，查询已启动模拟器SN。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/8C4_kxQIQQS-rfHtfekelA/zh-cn_image_0000002633693016.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/8C4_kxQIQQS-rfHtfekelA/zh-cn_image_0000002633693016.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=939075BF108C1A49936E3979B6787ED03C510B4A0C0B8A068D8008142C9D6946)
 
 Mac需要在hdc安装目录下打开命令行，运行**./hdc list targets**命令查询已启动模拟器SN，如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/mbAR3IOJT-Wt_O1WFEZkdQ/zh-cn_image_0000002663932201.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/mbAR3IOJT-Wt_O1WFEZkdQ/zh-cn_image_0000002663932201.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F27CEFEABFE4E63B0DEC56D2B556B4E2E3CABF3C477679A63E895D4EB3CB810 "点击放大")
 
 **注意** 
 
@@ -54,41 +54,41 @@ Mac需要在hdc安装目录下打开命令行，运行**./hdc list targets**命�
 
 启动windows命令行，输入**ipconfig /all**命令，获取模拟器所在PC的IP。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/abaCWjp4RwCdzqgBOPc77A/zh-cn_image_0000002633533126.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/abaCWjp4RwCdzqgBOPc77A/zh-cn_image_0000002633533126.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=06EF9E6F5B9F2E62965FA231BC9F24BEBB02785B9AD7D9D740B158FF2EED58D2 "点击放大")
 
 **Mac**
 
 启动Mac命令行，输入**ifconfig**命令，获取模拟器所在PC的IP。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/ocFE33KQS-GUk_7NnKHYaw/zh-cn_image_0000002633693018.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/ocFE33KQS-GUk_7NnKHYaw/zh-cn_image_0000002633693018.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FE870F5C4F6390597A963FDFE6E9FACEE891B67B77D9599A0F1E244D9AFBEA3 "点击放大")
 
 **远程模拟器启动hdc服务**
 
 外部需要通过hdc服务对模拟器进行远程访问，服务器启动命令为hdc kill && hdc -s IP:8710 -e IP -m（其中IP为模拟器所在PC的IP，下同）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/Jx1eN1FjR0qxxJp12FY8bQ/zh-cn_image_0000002663932189.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/Jx1eN1FjR0qxxJp12FY8bQ/zh-cn_image_0000002663932189.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=16C220793D3389486F9F9460C25433DAB0EC4596521BA87C83F6CDD4BC4EF7FA "点击放大")
 
 若未配置hdc环境变量，需要先切换到hdc文件目录（hdc安装目录获取参考hdc工具配置），Windows命令为 .\hdc kill && .\hdc -s ip:8710 -e ip -m。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/H-OcPr1XTti2K5O_LLfmzQ/zh-cn_image_0000002663932195.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/H-OcPr1XTti2K5O_LLfmzQ/zh-cn_image_0000002663932195.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5368F2A43C2E5E50C52B8500BFEE4FD46C917D4C62DAF1BE41EA0478CBEEB6A "点击放大")
 
 Mac需要在hdc安装目录下打开命令行，运行命令 ./hdc kill && ./hdc -s ip:8710 -e ip -m启动服务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/URlj7xnDSYG1GGoG0A6hiA/zh-cn_image_0000002664012239.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/URlj7xnDSYG1GGoG0A6hiA/zh-cn_image_0000002664012239.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F58C4C8D7D9A257FDE3F43442DDD68395583502275C8C5E57F28E6C148B0BC3 "点击放大")
 
 **注意** 
 
 服务启动后，在本机执行 hdc list targets 命令会查询不到已启动的设备；可在其他PC通过 hdc -s IP:8710 list targets查询设备。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/3KyJSUkfTZWNKpHu436NXg/zh-cn_image_0000002663932207.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/3KyJSUkfTZWNKpHu436NXg/zh-cn_image_0000002663932207.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=45B33BD2B654C253FD0C1FBAE67E88B95187286FF3803F2506F5E5D88478346E)
 
 ### DevEco Testing连接远程模拟器
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/wtxeOawcQ5anjYDDQXB_qA/zh-cn_image_0000002645219174.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/wtxeOawcQ5anjYDDQXB_qA/zh-cn_image_0000002645219174.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=15CFC138ACC1FAC3B6B892284A24C4517F183879C43DB4FB306BDEFCEDCD3FDE "点击放大")
 
 步骤 1：安装DevEco Testing后，左边菜单栏选择“设置”，开启支持模拟器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/1OyVvGfzT0uli_Hc_ozM-w/zh-cn_image_0000002645219344.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/1OyVvGfzT0uli_Hc_ozM-w/zh-cn_image_0000002645219344.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=445503F4DECAD9CCF59B72DCA4C16EB5242964127DDE45BC55F57D9AC8543AEF "点击放大")
 
 步骤 2：选择“远程设备管理”，输入远程设备信息，并建立连接。
 
@@ -96,7 +96,7 @@ Mac需要在hdc安装目录下打开命令行，运行命令 ./hdc kill && ./hdc
 
 ②HDC端口：远程PC启动的hdc服务端口，默认为 8710。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/UBPweayJT6-TFVqaxh8GTQ/zh-cn_image_0000002633533132.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/UBPweayJT6-TFVqaxh8GTQ/zh-cn_image_0000002633533132.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=44AC68FDEC3FDAF244CFB70D6E1AB7C31E1F50CCB6B1C0972B08AAC4E6D1DABE "点击放大")
 
 步骤3：点击连接远程模拟器，输入远程模拟器的SN与远程模拟器建立连接。
 
@@ -112,7 +112,7 @@ Mac需要在hdc安装目录下打开命令行，运行命令 ./hdc kill && ./hdc
 
 步骤 1：与远程模拟器建立连接后，左边菜单栏选择“测试服务”，选择“多设备布局对比测试”，点击服务卡片，即进入任务创建界面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/prAqvdSGR-yF0BH6HzVQrg/zh-cn_image_0000002664012249.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/prAqvdSGR-yF0BH6HzVQrg/zh-cn_image_0000002664012249.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF933E83382E5988224B0278153262E083E3186A5E787CABC11025C91340E5B6 "点击放大")
 
 步骤 2：进入任务创建界面，配置任务参数。
 
@@ -132,15 +132,15 @@ Mac需要在hdc安装目录下打开命令行，运行命令 ./hdc kill && ./hdc
 
 **测试执行**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/V2neeyvtQsG11AAN90y0rQ/zh-cn_image_0000002645219100.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/V2neeyvtQsG11AAN90y0rQ/zh-cn_image_0000002645219100.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=76874E61EA2426B8695677FFAA077FEAEDE48AB7A4160E2F887A50E00B9E89F3 "点击放大")
 
 创建任务后，将会跳转到执行页，测试过程中，在测试页面可以看到累计发现问题汇总、当前页面问题汇总、测试进度，点击查看详情可以实时查看。执行页实时展示测试进度、预计执行时间、预计剩余时间、设备实时投屏、累计发现问题汇总和当前页面问题汇总等信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/Nl7gHavsRQit8zsErFqdTw/zh-cn_image_0000002633533110.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/Nl7gHavsRQit8zsErFqdTw/zh-cn_image_0000002633533110.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBB3FB61CB374148FDEB2C122F164D189B6168D111525C03214CDAD39AE47E4B "点击放大")
 
 在执行页点击右上角“查看详情”按钮跳转到问题详情页，该页面实时展示检测设备已检测信息，包括累计问题数、检测项（包括检测中和待检测）。通过点击设备信息切换不同设备的检测信息详情。点击各检测项的“不通过数|通过数”对应值可查看该检测项详细检测结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/4MCL90iRQi-qzRIbyGgEDg/zh-cn_image_0000002633693024.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/4MCL90iRQi-qzRIbyGgEDg/zh-cn_image_0000002633693024.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=673A920162FE8F6E89AA60FF12809D5308F9A6BE91EE8D9EADCFE5CCB1553986 "点击放大")
 
 **测试报告**
 
@@ -150,7 +150,7 @@ Mac需要在hdc安装目录下打开命令行，运行命令 ./hdc kill && ./hdc
 
 测试概览中，包含测试总览、检测机型、结果统计及多设备对比，可直观查看本次任务中，测试项检测结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/u_vXczQpQzC5o7CAfUCm9Q/zh-cn_image_0000002633533114.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/u_vXczQpQzC5o7CAfUCm9Q/zh-cn_image_0000002633533114.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B7B84078F71DC761A11D8A907726D5520CB62BFE6584676ACA9D5ECFB9A45D4)
 
 **测试总览信息解读：**
 
@@ -164,13 +164,13 @@ Mac需要在hdc安装目录下打开命令行，运行命令 ./hdc kill && ./hdc
 
 检测机型页面包含被测设备的基础信息、问题汇总和问题详情等信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/kDdFvBelSkeEGFj1D_ziZA/zh-cn_image_0000002633693034.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/kDdFvBelSkeEGFj1D_ziZA/zh-cn_image_0000002633693034.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=375EE0B930C41D0BC8ADE73BE4EA09D1892C8F3DDE81D7C2373957E6D112274C "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/5n0zUpIXS66eFCREdVkydQ/zh-cn_image_0000002664012255.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/5n0zUpIXS66eFCREdVkydQ/zh-cn_image_0000002664012255.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=BCCE7BB2E7E15CD7F08CBDF546A0F4C75AECACD4DAD8CD5B8198ED7DC9FBE4BB "点击放大")
 
 检测不通过或检测异常的规则项，点击查看详情即可查看异常问题详情，包含检测项概览、测试截图、问题列表、详细的问题描述、问题等级和修复指南等信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/e3LdJ9C5RPGqRFKT1gTCQA/zh-cn_image_0000002663932185.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/e3LdJ9C5RPGqRFKT1gTCQA/zh-cn_image_0000002663932185.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A9BF001754762595A5158787D8902018392E76BFA2D574DBD3971AB1D8410D4 "点击放大")
 
 多设备对比页用于展示同一页面在不同设备上的布局效果。当页面检测未通过时，图片下方将显示当前页面的问题详情。同时运行三个及以上设备时，即使某个设备未能匹配上，也会正常展示该页面数据，未匹配上设备显示为空白。
 

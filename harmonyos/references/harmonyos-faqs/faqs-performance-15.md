@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 应用拍照时延长
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 应用拍照时延长
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:446069c6c2416600021bebcbb98b340c69b6655cd911756a5a6082a57e6e157c
 ---
@@ -76,23 +76,23 @@ content_hash: sha256:446069c6c2416600021bebcbb98b340c69b6655cd911756a5a6082a57e6
 
      从下图可以看出，单段式拍照方式耗时达到了3.3s。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/cyWZY_ljSZSXyfVY7y78nA/zh-cn_image_0000002628395116.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/cyWZY_ljSZSXyfVY7y78nA/zh-cn_image_0000002628395116.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=2FD5D3C907149956F2CBE48C14026BC6B8193F130A88C98C63677226DD7FE138 "点击放大")
 
      分段式拍照方式拍照耗时643ms。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/UwDfhUbeSj-ajw4L28JLIQ/zh-cn_image_0000002658914337.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/UwDfhUbeSj-ajw4L28JLIQ/zh-cn_image_0000002658914337.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=17284FA982A4ADE688E20264FD855F246A93D5481AC22A6F1B85DA90FF76C6B0 "点击放大")
 2. 如果是单段式拍照方式，在拍照过程中通过多帧融合以及多个底层算法处理之后返回一张高质量图片，完成时延比较长，导致拍照慢，可更换成分段式拍照方式。
 3. 如果是分段式拍照方式，拍照慢需要分析耗时集中在哪部分。
 
    首先使用[布局分析](../harmonyos-guides/ide-arkui-inspector.md)工具ArkUI Inspector抓取拍照加载过程的页面布局，确认加载动效使用的是什么组件，如下图中可看到加载动效使用的是LoadingProgress，以及组件ID。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/SN1_UmE4S8ql-SYPRs0aiA/zh-cn_image_0000002658794385.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/SN1_UmE4S8ql-SYPRs0aiA/zh-cn_image_0000002658794385.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=2EA3683BAC73674D3DE116A321B6C074438444EC50F3537951AD4B722DA1240A)
 
    然后使用[Frame分析](../harmonyos-guides/ide-insight-session-frame.md)工具抓取拍照整体阶段的Trace信息，根据PhotoOutputNapi::Capture或HStreamCapture::Capture、PhotoListener::OnBufferAvailable确定应用调用拍照接口到获取图像数据阶段的耗时，根据LoadingProgress组件首次绘制和最后一次绘制的Trace点（H:FrameNode[LoadingProgress][id:组件ID]::RenderTask）来确定应用处理图像数据的耗时。
 
    从下图中可看到整体耗时2.2s，耗时较多的是应用处理图像数据部分，达到1.6s。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/rSjYAUQGRnu7RFmN5FhVoA/zh-cn_image_0000002628555020.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/rSjYAUQGRnu7RFmN5FhVoA/zh-cn_image_0000002628555020.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=F282273562A893D88ADE9377F80829341B399BAC645F057DEE7AC7037E00255D "点击放大")
 
 ## 分析结论
 

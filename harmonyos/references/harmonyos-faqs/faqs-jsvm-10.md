@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-jsvm-10
 title: 未捕获JS-Crash异常导致应用崩溃该如何处理
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > JSVM > 未捕获JS-Crash异常导致应用崩溃该如何处理
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:59+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:7c7d1547113bf5a4b0b115cd3cd2a978c7bfd579342760dc92f6a0ee3c29b28e
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:7c7d1547113bf5a4b0b115cd3cd2a978c7bfd579342760dc92f6a0ee3c2
 
 应用运行过程中可能会出现JS crash异常，当出现未被捕获的JS crash异常时应用崩溃。如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/aOYTEfZvQby49PWuP-nc0g/zh-cn_image_0000002658907825.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/aOYTEfZvQby49PWuP-nc0g/zh-cn_image_0000002658907825.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=0839E5B5CA93DB3B632D938EEAC83CC6120AAA8934565F1C32F9254DFCBF2917 "点击放大")
 
 ## 背景知识
 
@@ -154,4 +154,4 @@ content_hash: sha256:7c7d1547113bf5a4b0b115cd3cd2a978c7bfd579342760dc92f6a0ee3c2
 
    运行效果：出现JS Crash问题时应用无闪退并在日志中记录堆栈。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/fpyoD3xrQXiufBaS1TuYOg/zh-cn_image_0000002658787889.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/fpyoD3xrQXiufBaS1TuYOg/zh-cn_image_0000002658787889.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=44BD368C0D2C27846B9E4492C2876828625145F400F06348350C794C0EC47DC7 "点击放大")

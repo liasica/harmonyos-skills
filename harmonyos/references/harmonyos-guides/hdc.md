@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdc
 title: hdc
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > hdc
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:57+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-20
 content_hash: sha256:43ca078cbab9eb994111d3fa8f6668faea967c985402066c2cdaa5c3757d9d05
 ---
@@ -20,7 +20,7 @@ hdc包含三部分：
 
 如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/_DHLNMUBQECe00Sg04_TwA/zh-cn_image_0000002786519744.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/_DHLNMUBQECe00Sg04_TwA/zh-cn_image_0000002786519744.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=3646D6F7B71EFCAF33EA829B40B83CEAE184B29A3209B77FC97B53FE0D0497DF)
 
 **说明** 
 
@@ -401,7 +401,7 @@ TCP调试功能尚未稳定，建议仅在测试环境中使用。
 
 远程连接场景指客户端（通常是开发者使用的本地电脑）通过网络与服务器（通常是连接了调试设备的服务器或开发机）建立连接，实现客户端对目标设备的远程调试，控制和管理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/lukD9XUzQ824pwW5UfTX7A/zh-cn_image_0000002786359816.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/lukD9XUzQ824pwW5UfTX7A/zh-cn_image_0000002786359816.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=529E41B01D04C4CA7E0C86781B14B164A2ACAFBC245E5CDEA5BD69F52AAA840F)
 
 远程连接使用-s参数来指定服务器的网络参数，包括地址和端口号，该设置只在当前命令执行期间有效，命令格式如下：
 
@@ -1867,7 +1867,7 @@ Linux和MacOS系统非管理员角色运行hdc后，使用USB方式连接设备�
 
 hdc文件传输命令执行出现乱码，如使用file recv从设备端发送带有中文名称的文件到本地，报错提示[Fail]Error opening file: no such file or directory, path:XXXXX，其中path显示中文乱码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/UhjK3YCQRlCmeX3XuPekdQ/zh-cn_image_0000002815559237.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/UhjK3YCQRlCmeX3XuPekdQ/zh-cn_image_0000002815559237.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A9AD6A2AD1377721565A61903C27C6F8D69859DE4A522DC65D1814C0A611420)
 
 **可能原因&解决方法**
 
@@ -1881,7 +1881,7 @@ API版本12开始，文件传输命令支持参数路径中包含中文，版本
 
 使用hdc list targets命令查询已连接设备，连接设备标识后显示Unauthorized。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/WdW6rMnMQwCWS4GCt44NHw/zh-cn_image_0000002815399321.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/WdW6rMnMQwCWS4GCt44NHw/zh-cn_image_0000002815399321.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BDFF022657A765A47E17A636309F28A90DE8F47EA368B7A1E89EC2160A21798)
 
 **可能原因&解决方法**
 

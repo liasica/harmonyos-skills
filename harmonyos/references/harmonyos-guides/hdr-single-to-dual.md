@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hdr-single-to
 title: 单层HDR图片转换双层
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(C/C++) > 图片编辑和处理 > 使用ImageProcessing处理图片 > 单层HDR图片转换双层
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-04-20
 content_hash: sha256:c41b69a4afed5c1bb1d3d6907750093cb732a4bc88b88f6329cca637069817cf
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:c41b69a4afed5c1bb1d3d6907750093cb732a4bc88b88f6329cca637069
 
 该能力常用于图片分享中，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/5WYXlSEyTfuaWeUL8b5HBQ/zh-cn_image_0000002815559359.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/5WYXlSEyTfuaWeUL8b5HBQ/zh-cn_image_0000002815559359.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=6FF8DE0526EDB31D949DC1AEF70BDB0E090B2E6A8C01D75AE4F6A370820C40D9)
 
 ## 规格说明
 

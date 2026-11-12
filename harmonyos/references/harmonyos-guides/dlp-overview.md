@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dlp-overview
 title: 数据防泄漏服务简介
 breadcrumb: 指南 > 系统 > 安全 > Data Protection Kit（数据保护服务） > 数据防泄漏服务 > 数据防泄漏服务简介
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:bf6b6109b3955c1644da3d7069a0fa24eb16e9169ee64fd04a0d1a8210a069fd
 ---
@@ -26,7 +26,7 @@ DLP整体解决方案由3个主要部件构成。
 
 ## 运作流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/TcbV82zkRPixpIkc_6-50g/zh-cn_image_0000002815399155.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/TcbV82zkRPixpIkc_6-50g/zh-cn_image_0000002815399155.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C6E754E6148201A2BEC9B61204471C5B8CEB48228D244E3EC79B3B08D78998A)
 
 **DLP文件生成**
 

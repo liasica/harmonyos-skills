@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-localizati
 title: 如何实现在程序运行时动态添加并使用多语言资源
 breadcrumb: FAQ > 应用框架开发 > 无障碍和本地化 > 本地化开发（Localization） > 如何实现在程序运行时动态添加并使用多语言资源
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:03+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:c29205a1a164e301eac4d782f156c3658c4de5a537e7677570ce7205e7b2eeb3
 ---
@@ -207,12 +207,12 @@ content_hash: sha256:c29205a1a164e301eac4d782f156c3658c4de5a537e7677570ce7205e7b
 
 当系统语言为中文时，显示的是中文的字段：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/63mLFs_FSeaOJzfpTyWJyQ/zh-cn_image_0000002659022315.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/0uV61U7CQKeHrJMoCi3ZSw/zh-cn_image_0000002659062369.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/63mLFs_FSeaOJzfpTyWJyQ/zh-cn_image_0000002659022315.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEA07A74630A7450BE9A8461205F5852A4709597ACCAC1431914B330D264B69C "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/0uV61U7CQKeHrJMoCi3ZSw/zh-cn_image_0000002659062369.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF68EBB1AADF7A58FEE677ACEDE1237E599B079B50C267E18D11D7F0D0BE3C39 "点击放大")
 
 当系统语言为英文时，显示的是英文对应的字段：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/LpbG8AszTSq4ZhGwEtym2Q/zh-cn_image_0000002628822998.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/0EV-lzBCQOy4LDDjTyW1Dw/zh-cn_image_0000002628663110.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/LpbG8AszTSq4ZhGwEtym2Q/zh-cn_image_0000002628822998.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=B438E5374BC0AA84FBE99BB7964B851E3FF952B85FB93FC4F000C460A1166ACD "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/0EV-lzBCQOy4LDDjTyW1Dw/zh-cn_image_0000002628663110.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=A28F977F7C220CFE7213D4B3272A70A84C96308A1BA9EEA645E5E5189D11C960 "点击放大")
 
 动图效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/TeDrO6KGTLmpujVPOOEjnw/zh-cn_image_0000002659022317.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/TeDrO6KGTLmpujVPOOEjnw/zh-cn_image_0000002659022317.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDFFECE5BB39EA8A55D9716A208312DE74B415A8A63FA383FD017C40386CB759 "点击放大")

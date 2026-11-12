@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-custom-
 title: 自定义组件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 自定义组件
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:b33a5c451e711cd861d0dbe8b967998a77190602b58280fa0bcfa9db7af5451f
 ---
@@ -103,4 +103,4 @@ content_hash: sha256:b33a5c451e711cd861d0dbe8b967998a77190602b58280fa0bcfa9db7af
 
 **图1** 自定义组件的效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/YYG--X8-SOiDqc-Q5zhiVA/zh-cn_image_0000002815398861.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/YYG--X8-SOiDqc-Q5zhiVA/zh-cn_image_0000002815398861.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A62EB159BE12826922D016ABA9DB82AEA3F1A5E8B6D288A4B203D996C811CFD)

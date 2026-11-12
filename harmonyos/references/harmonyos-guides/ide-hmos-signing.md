@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-sign
 title: 配置调试签名
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 配置调试签名
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-10
 content_hash: sha256:93d28583c35fb80b17fddf8e51859bd7409167f0b23c4f13d7c28f4d558d7315
 ---
@@ -37,7 +37,7 @@ content_hash: sha256:93d28583c35fb80b17fddf8e51859bd7409167f0b23c4f13d7c28f4d558
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/hME5ICj3SE697FpjMTkqLQ/zh-cn_image_0000002781311256.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/hME5ICj3SE697FpjMTkqLQ/zh-cn_image_0000002781311256.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=6002B6ED511A75F2A728D85EE19ACDA3A4E0061C2CA8247BBB8B7A6E3E90CA5D)
 
    **说明** 
 
@@ -45,12 +45,12 @@ content_hash: sha256:93d28583c35fb80b17fddf8e51859bd7409167f0b23c4f13d7c28f4d558
    * 涉及受限权限的应用，上架时，应用市场（AGC）将根据应用的使用场景审核是否可以使用对应的受限权限，如不符合，应用的上架申请将被驳回。在配置ACL权限前，请审视是否符合[受限权限的使用场景](restricted-permissions.md)。当前仅少量符合特殊场景的应用可在通过审批后，使用受限权限，申请方式请见[申请使用受限权限](declare-permissions-in-acl.md)。
 3. 在菜单栏单击**文件 > 项目结构 > ${default} > 签名配置**，点击**Team**下拉框可以切换团队账号，点击**生成签名文件**按钮，即可完成签名。其中，default为产品的名称，与build-profile.json5文件中的[Products](ide-hvigor-build-profile-app.md#section45865492619)中"name"一致。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/wSqGdmeSQQGrr_Dhc-SuWQ/zh-cn_image_0000002810630737.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/wSqGdmeSQQGrr_Dhc-SuWQ/zh-cn_image_0000002810630737.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=127BD0EB3A3B6939ED39DCCF3AE069D0FEECD475824298D4FF2607B164D64876 "点击放大")
 4. 签名完成后如下图所示。
 
    进入工程级build-profile.json5文件，在“signingConfigs”下查看配置成功的签名信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/fPY9kUg3TyqbcHk3frSbGA/zh-cn_image_0000002781311250.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/fPY9kUg3TyqbcHk3frSbGA/zh-cn_image_0000002781311250.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E5958752C9D5E649AFC6D442E28A88FA455C7F36AD8FC4BFEE2E3448A323E39 "点击放大")
 
 ## 手动签名
 
@@ -68,7 +68,7 @@ HarmonyOS应用/元服务通过数字证书（.cer文件）和Profile文件（.p
 1. 在菜单栏单击**构建 > 生成密钥和证书请求文件**。
 2. 在生成密钥和证书请求文件界面，可以单击Keystore File后的文件图标选择已有的密钥库文件（存储有密钥的.p12文件）。若本地没有密钥库文件，单击**新建**进行创建。下面以新建密钥库文件为例进行说明。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/YEivYrCYQ_2mCCkNn1eqpQ/zh-cn_image_0000002781311252.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/YEivYrCYQ_2mCCkNn1eqpQ/zh-cn_image_0000002781311252.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0207DADA696DCC7687547D0E761AF091E6F8DAC59E678E4FE328FC91F2BD65D "点击放大")
 3. 在**创建密钥存储文件**窗口中，填写密钥库信息后，单击**确认**。
    * **Keystore file(\*.p12)**：填写p12文件名，仅允许包含字母、数字、下划线（\_）、中划线（-）、句号（.）。
    * **Keystore File**: 设置密钥库文件存储路径。
@@ -76,13 +76,13 @@ HarmonyOS应用/元服务通过数字证书（.cer文件）和Profile文件（.p
    * **Confirm Password**：再次输入密钥库密码。
    * **Key Alias**：密钥的别名信息。请记住该别名，后续签名配置需要使用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/yUq-d-wYTj6ptQu49jYiRg/zh-cn_image_0000002810750845.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/yUq-d-wYTj6ptQu49jYiRg/zh-cn_image_0000002810750845.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=5410C1BE7FAC7D5D13B925A4896ACE74321751BB62D09E69E95C2B77E8B89EA2 "点击放大")
 4. 在**生成密钥和证书请求文件**界面，确认信息后点击**生成**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/vd5uI47BRwe_EGKXa66YUg/zh-cn_image_0000002810750847.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/vd5uI47BRwe_EGKXa66YUg/zh-cn_image_0000002810750847.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=19FC31C7391856D8E4589E989D0B3AF67421D955C7AD07F30C94BEED00566DE3 "点击放大")
 5. 创建CSR文件成功后，可以在存储路径下获取生成的密钥库文件（.p12）、证书请求文件（.csr）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/Z3vkSQyTRqqsUUQ2yf_0lA/zh-cn_image_0000002810630739.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/Z3vkSQyTRqqsUUQ2yf_0lA/zh-cn_image_0000002810630739.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=A156498B69D067E53896C9F3DBAC0C8C625C88101D4DC0BB4D1AD7A912FBF657)
 
 ### 申请调试证书
 
@@ -113,7 +113,7 @@ HarmonyOS应用/元服务通过数字证书（.cer文件）和Profile文件（.p
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/hr5XtGxURyiJZwug4jD_aw/zh-cn_image_0000002781471184.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/hr5XtGxURyiJZwug4jD_aw/zh-cn_image_0000002781471184.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA82B4AD96788E5F93AAC8A09BE232539265F08884DA0187346FB2D0D6DD7E4F)
 2. 使用[申请调试证书](ide-hmos-signing.md#section1723711253433)，在AGC中申请和下载Profile，将生成的Profile保存至本地，供配置签名使用，具体请参考[申请调试Profile](../app/agc-help-debug-profile-0000002248181278.md)。
 
 ### 配置签名信息
@@ -131,5 +131,5 @@ HarmonyOS应用/元服务通过数字证书（.cer文件）和Profile文件（.p
    * Store file、Profile file、Certpath file三个字段支持配置相对路径，以项目根目录为起点，配置文件所在位置的路径名称。
    * 密钥库文件、密钥库密码、密钥别名、密钥密码、Profile文件、数字证书文件必须配套使用，否则会导致签名失败。若失败请根据报错信息进行修改，再进行签名。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/-kWues7XQxGS9Zotlt5JBQ/zh-cn_image_0000002810750843.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/-kWues7XQxGS9Zotlt5JBQ/zh-cn_image_0000002810750843.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=991D05F81BF15A152FAAEF6CC0A20264FAEF9FB31E537D13764EACF5F30F430A "点击放大")
 2. 签名完成后，进入工程级build-profile.json5文件，在“signingConfigs”下查看配置成功的签名信息。

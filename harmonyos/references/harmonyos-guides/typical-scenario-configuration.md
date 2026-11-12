@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/typical-scena
 title: 创建应用静态快捷方式
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发指导 > 创建应用静态快捷方式
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:50:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:cfe41eb133dbf43cd0fac7e134d40f75f8ff9c8ee519cbda4e5dbf9cb1d3d224
 ---
@@ -104,7 +104,7 @@ content_hash: sha256:cfe41eb133dbf43cd0fac7e134d40f75f8ff9c8ee519cbda4e5dbf9cb1d
 
 安装应用后，长按桌面上的应用图标，图标上方会显示开发者配置的快捷方式：“添加收藏”和“分享好友”。点击相应标签，可启动对应的组件。应用配置的静态快捷方式在桌面上的展示效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/EE2p3ktqRsadnXbrI52uUQ/zh-cn_image_0000002786358374.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/EE2p3ktqRsadnXbrI52uUQ/zh-cn_image_0000002786358374.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3007B1B479B8BBA77F481BFB8F3610C00959CA13947D6240E4D5D2E7ED1C86E)
 
 ## 隐藏快捷方式
 

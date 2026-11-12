@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-particl
 title: 粒子动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 粒子动画
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:15+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-03-09
 content_hash: sha256:cbf0f837995369a6f909b7bd1db9b9a9fa237ec8e64cb79d37b9d7f24b6bc5fd
 ---
@@ -42,7 +42,7 @@ struct ParticleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/dZNKoMx4QRSzNuJ8anxL2A/zh-cn_image_0000002815398671.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/dZNKoMx4QRSzNuJ8anxL2A/zh-cn_image_0000002815398671.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=C53E388F14AC4CB1571EDC4CCC12A8E5C63E9C2FA25604DF863E59E50EAB4C07)
 
 ## 实现粒子发射器
 
@@ -63,7 +63,7 @@ Particle(...).width(300).height(300).emitter(this.emitterProperties) // 动态�
 // ...
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/66OWhV25Rfua0cQ-0rTIIA/zh-cn_image_0000002786519096.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/66OWhV25Rfua0cQ-0rTIIA/zh-cn_image_0000002786519096.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=25E82EE2C2E19F7AF6BBF6ED63378305DFF0D50572D3A53CFFD5667689CF163D)
 
 ## 设置粒子颜色
 
@@ -78,7 +78,7 @@ color: {
 // ...
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/WcSKi5-LSqaiL4ZCRUfdsw/zh-cn_image_0000002786359168.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/WcSKi5-LSqaiL4ZCRUfdsw/zh-cn_image_0000002786359168.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CEC061EF56A722420C6970971890155D6C9F9D10AD508C4B048670C6B95DD13)
 
 ## 粒子的生命周期
 
@@ -102,7 +102,7 @@ color: {
 // ...
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/gljGCDC7TXezzhLRwm_cdA/zh-cn_image_0000002815558589.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/gljGCDC7TXezzhLRwm_cdA/zh-cn_image_0000002815558589.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCEBFDDA86B2A910DB8B7EBA65311966323108994E89CF3DBC152FF3196D62DE)
 
 ## 设置粒子扰动场
 
@@ -157,4 +157,4 @@ Particle({ particles: [
 // ...
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/BAfuKDesSNKN0puNGZv3Uw/zh-cn_image_0000002815398673.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/BAfuKDesSNKN0puNGZv3Uw/zh-cn_image_0000002815398673.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD2019F0111DA75223AA98AF7BFBDA6877AA5196FDAB6DE70D5852BCC8280A26)

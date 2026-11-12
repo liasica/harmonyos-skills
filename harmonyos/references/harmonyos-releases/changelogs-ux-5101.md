@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: UX样式或效果的变更
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.1.0(18) > OS平台能力 > OS平台行为变更说明 > UX样式或效果的变更
 category: harmonyos-releases
-scraped_at: 2026-11-12T09:50:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:cde1b51e70186a3014c9e98f1868dd4c2aefc97eb3933a1d83073c2ee1c98b4f
 ---
@@ -26,7 +26,7 @@ content_hash: sha256:cde1b51e70186a3014c9e98f1868dd4c2aefc97eb3933a1d83073c2ee1c
 
 变更后：ButtonOptions中type的默认值为ButtonType.ROUNDED\_RECTANGLE。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/rr7b8ktQTHC7sHHRP0Le5w/zh-cn_image_0000002295507629.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/rr7b8ktQTHC7sHHRP0Le5w/zh-cn_image_0000002295507629.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=91762718AE7F12FA1671047DFF58676FC5D7F8020EFD524DFBF4F34E912FFDF3 "点击放大")
 
 **起始API Level**
 

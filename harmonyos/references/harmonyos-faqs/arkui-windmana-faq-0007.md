@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-windmana-
 title: 如何监听窗口大小的变化
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 常见问题 > 如何监听窗口大小的变化
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:28+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:53a37deaaa2693ddead582713aec92cdc75a44947078930d99c4436d1fb520c2
 ---
@@ -164,7 +164,7 @@ struct Index {
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/PdLwrxUVTMapreCxiiVoUw/zh-cn_image_0000002772679744.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/PdLwrxUVTMapreCxiiVoUw/zh-cn_image_0000002772679744.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=91C338C3B63FD67949DBD4EF697274EEDE3017E41F40657B08DD6EF2A48C888A "点击放大")
 
 方案三：通过on('windowSizeChange')方法开启窗口尺寸变化的监听。
 
@@ -250,7 +250,7 @@ struct Index {
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/jXphkU_1R_ii0Qt0i3y21g/zh-cn_image_0000002802119573.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/jXphkU_1R_ii0Qt0i3y21g/zh-cn_image_0000002802119573.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B7F16E88D151A0D17A4879C447338693286A4DD84609231DCFD6A48CBD08FA7 "点击放大")
 
 方案四：通过display.on('foldDisplayModeChange')监听折叠屏折叠状态的变化，再通过getLastWindow方法返回的窗口实例中的getGlobalRect方法获取窗口的宽度和高度。该方法适用于折叠屏折叠状态变化时，获取窗口当前的宽度和高度，以达到折叠屏适配的效果。
 
@@ -330,7 +330,7 @@ struct Index {
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/K0swCK8sRViD5mOsoice8A/zh-cn_image_0000002802039477.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/K0swCK8sRViD5mOsoice8A/zh-cn_image_0000002802039477.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=860ACF515FACB1BE711F0B0F6FB81CC23B14C448CE188BBD8069886AB4BD3466 "点击放大")
 
 方案五：通过display.on('foldStatusChange')监听折叠屏折叠状态的变化，再通过getLastWindow方法返回的窗口实例中的getGlobalRect方法获取窗口的宽度和高度。
 
@@ -411,4 +411,4 @@ struct Index {
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/b1CtR2GrSx-NMT4L7Y6ONg/zh-cn_image_0000002772839720.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/b1CtR2GrSx-NMT4L7Y6ONg/zh-cn_image_0000002772839720.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=891DC724EC6906A3437740D6AD04501BAB277A61D9C8F816A34E374336FF1F51 "点击放大")

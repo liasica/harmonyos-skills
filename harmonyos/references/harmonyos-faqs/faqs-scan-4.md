@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-scan-4
 title: 扫码界面如何监听无操作返回事件
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 扫码服务（Scan） > 扫码界面如何监听无操作返回事件
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:29+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-13
 content_hash: sha256:33028457e8f66891c895f4955303c17d59a9f6687187a480ee8cfdd996619097
 ---
@@ -29,7 +29,7 @@ content_hash: sha256:33028457e8f66891c895f4955303c17d59a9f6687187a480ee8cfdd9966
 
 默认界面扫码效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/g7P1C0vTSQi382l-2JJF3g/zh-cn_image_0000002628552516.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/g7P1C0vTSQi382l-2JJF3g/zh-cn_image_0000002628552516.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=B213463F3EB3F072010580E5B603C1FB5DAD978D3F930475A1D3B82F15A3052C "点击放大")
 
 ## 背景知识
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1639
 title: 组件实现随手拖动松手后贴边效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 组件实现随手拖动松手后贴边效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:36+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:df3fb30ec4bc7d6068126aa25db63c417908ead7919f6c36318a2eac7723dad8
 ---
@@ -239,4 +239,4 @@ struct Index {
 
 实现效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/_2fRMyo7QvyQUbvnd9i1DQ/zh-cn_image_0000002659021815.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/_2fRMyo7QvyQUbvnd9i1DQ/zh-cn_image_0000002659021815.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=874873F9FE48A3BAC5DF4714E8C91A558F973ED70D9D838C91EF94B8F63CFF62 "点击放大")

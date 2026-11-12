@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-user
 title: "@ohos.userIAM.userAuthIcon (嵌入式用户身份认证控件)"
 breadcrumb: API参考 > 系统 > 安全 > User Authentication Kit（用户认证服务） > ArkTS组件 > @ohos.userIAM.userAuthIcon (嵌入式用户身份认证控件)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:55:30+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:03530f121c252eabf9cc9d48157f24e6d18f9b84a51212811427763c0a29035b
 ---
@@ -35,7 +35,7 @@ UserAuthIcon是一个ArkTS自定义组件（@Component struct），封装了认�
 * **onAuthResult**：认证结果回调。
 * **onIconClick**：图标点击回调。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/4aWosKcLQXmynW2DQQ4IOg/zh-cn_image_0000002786522024.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/4aWosKcLQXmynW2DQQ4IOg/zh-cn_image_0000002786522024.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4C290683F156DDCA1DDEA2A517D40D9AB3A12894EB9FB467C3A1E34E557BC56)
 
 ## API组合使用关系说明
 
@@ -167,8 +167,8 @@ struct Index {
 
 **人脸认证图例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/jt9WFMV8RXKFwtgNyattTA/zh-cn_image_0000002786362096.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/jt9WFMV8RXKFwtgNyattTA/zh-cn_image_0000002786362096.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=58374FC42E5ABBE2B299D73C27401C6B5A7A6E8CE085D59EFA04F5DCAB917700)
 
 **指纹认证图例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/nPBQTNhiQGWmK5v-1yxlow/zh-cn_image_0000002815561517.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/nPBQTNhiQGWmK5v-1yxlow/zh-cn_image_0000002815561517.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=445E976E56149A7DCE0B8EE830F2F231C73262C366C82A069DA695674B016E1E)

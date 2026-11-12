@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1502
 title: 悬浮窗模式，应用页面未避让顶部窗口控制条
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 悬浮窗模式，应用页面未避让顶部窗口控制条
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:29+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:a599db777f1cb8077c2faa08d88c571a3ad67b66e7e21a1ad10926c154444b47
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:a599db777f1cb8077c2faa08d88c571a3ad67b66e7e21a1ad10926c1544
 
 应用在悬浮窗模式下，页面是沉浸式布局，但是未注意悬浮窗模式时，顶部存在的窗口控制条，页面顶部内容与悬浮窗的顶部窗口控制条重叠，可能导致Header区域点击事件被窗口控制条拦截而无法正常点击。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/UmATAHGNRbaHI_DXEs0zeA/zh-cn_image_0000002679982924.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/UmATAHGNRbaHI_DXEs0zeA/zh-cn_image_0000002679982924.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B65D67259614C2DB66C1185FB017EB132F177F2CF5AE5BBE4F2D06B99BF4DBB "点击放大")
 
 ## 背景知识
 

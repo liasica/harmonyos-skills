@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-confi
 title: 申请账号权限
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 开发准备 > 申请账号权限
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:f3deaeb562b15d9dffc3dc9c37283ae703f3cf9e8b066d5b149aea355e054645
 ---
@@ -85,7 +85,7 @@ content_hash: sha256:f3deaeb562b15d9dffc3dc9c37283ae703f3cf9e8b066d5b149aea355e0
 
 1. 在 AppGallery Connect（简称AGC）的[开发与服务](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject)中，选择相应的项目，然后选择需要申请对应权限的HarmonyOS应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/t3M84wrPQ82iGpLORHMq6A/zh-cn_image_0000002815399633.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/t3M84wrPQ82iGpLORHMq6A/zh-cn_image_0000002815399633.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E9CB0948B6A9710022EB2BE96BD94E71F27B18AE8A6269AA4449B5FDB720B71)
 2. 在“开放能力管理”中，选择想要申请的账号权限，并点击“申请”。
 
    **说明** 
@@ -94,10 +94,10 @@ content_hash: sha256:f3deaeb562b15d9dffc3dc9c37283ae703f3cf9e8b066d5b149aea355e0
 
    图示仅为示例，不同应用类型展示不同权限，请以实际页面显示为准。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/oai-hEMtTdyBZA9_Qsnuqg/zh-cn_image_0000002786520058.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/oai-hEMtTdyBZA9_Qsnuqg/zh-cn_image_0000002786520058.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=E77C19FF254BF1168ADDA0A9F50D5045EFF1E4AD81E3D0872EBA34181567ACE4)
 3. 点击申请后，请根据应用实际情况填写“申请原因”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/ugJ1j8ZYQwKoM-KA9w_qJA/zh-cn_image_0000002786360130.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/ugJ1j8ZYQwKoM-KA9w_qJA/zh-cn_image_0000002786360130.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=652BE97E52E19A94934F1D864C964E248A69D44AC43ADC446DE08B414904CF22)
 
    **说明** 
 
@@ -148,8 +148,8 @@ content_hash: sha256:f3deaeb562b15d9dffc3dc9c37283ae703f3cf9e8b066d5b149aea355e0
 
    **图1** 修改前
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/dPxBpJP2TaigKqOAhJpapg/zh-cn_image_0000002815559551.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/dPxBpJP2TaigKqOAhJpapg/zh-cn_image_0000002815559551.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=DBDB73250219FB67F590AF981C7C510D7F8CB8983437C92F2358D10BAAB61E69)
 
    **图2** 修改后
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/Vdag-r1QRDmUocAnyEAphA/zh-cn_image_0000002815399635.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/Vdag-r1QRDmUocAnyEAphA/zh-cn_image_0000002815399635.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E8D3CECF62423D765A56C20AA50376771420B65F75359D4E20AA4050A3292D3)

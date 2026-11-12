@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-34
 title: 如何解决创建PixelMap出现Create PixelMap error错误
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 如何解决创建PixelMap出现Create PixelMap error错误
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:27+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:f3513be592454aaec60aa1f3d11d8ca242553d8a47057949c513640fb1c0f709
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:f3513be592454aaec60aa1f3d11d8ca242553d8a47057949c513640fb1c
 
 使用readPixelsToBuffer将PixelMap转换成buffer后，再将buffer转回PixelMap时出现报错，报错和代码如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/FXaT6Qo1SGeGXOjKGIiArQ/zh-cn_image_0000002628392606.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/FXaT6Qo1SGeGXOjKGIiArQ/zh-cn_image_0000002628392606.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=C91828234BB19CB94E52B6078CE22C32AC4DEC82678B0DFD7F76BBC455A49410 "点击放大")
 
 ```ts
 this.pixel = await imageSource.createPixelMap(opts);

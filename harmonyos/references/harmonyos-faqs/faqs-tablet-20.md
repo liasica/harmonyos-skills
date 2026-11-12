@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-tablet-20
 title: 应用横屏打开会自动切换成竖屏
 breadcrumb: FAQ > 多设备场景 > 平板 > 常见问题 > 应用横屏打开会自动切换成竖屏
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:37+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:71dd99220c94d6d00195c1f04b27c6bc9b5620e2bf9abc68ed4d14f4bb999bab
 ---
@@ -14,11 +14,11 @@ content_hash: sha256:71dd99220c94d6d00195c1f04b27c6bc9b5620e2bf9abc68ed4d14f4bb9
 
 横屏状态图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/DtjY7nBBRCeblhB6PDUHkg/zh-cn_image_0000002658911553.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/DtjY7nBBRCeblhB6PDUHkg/zh-cn_image_0000002658911553.png?HW-CC-KV=V1&HW-CC-Date=20261112T233219Z&HW-CC-Expire=31536000000&HW-CC-Sign=626E37D015C227C6579872ABA4B9AABCEB4A700FA8229B883B8214528ACB2616 "点击放大")
 
 打开后切换为竖屏状态图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/HIl-5ZWsSYiWiOgAbEwiLg/zh-cn_image_0000002628392332.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/HIl-5ZWsSYiWiOgAbEwiLg/zh-cn_image_0000002628392332.png?HW-CC-KV=V1&HW-CC-Date=20261112T233219Z&HW-CC-Expire=31536000000&HW-CC-Sign=33B1BB96E7166744E565379D9C634071EFEB13FB9BA5BF9C26FE1F7506421A8F "点击放大")
 
 ## 背景知识
 
@@ -31,11 +31,11 @@ content_hash: sha256:71dd99220c94d6d00195c1f04b27c6bc9b5620e2bf9abc68ed4d14f4bb9
 
    指定竖屏打开状态如图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/Arsm8khEQmGVPOJGR8WNhA/zh-cn_image_0000002658791619.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/Arsm8khEQmGVPOJGR8WNhA/zh-cn_image_0000002658791619.png?HW-CC-KV=V1&HW-CC-Date=20261112T233219Z&HW-CC-Expire=31536000000&HW-CC-Sign=182DD550F83B20D2076D574E8F371B45F9468B81C1A0ABE96873341C6D1F94B3 "点击放大")
 
    指定横屏打开状态如图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/6s7rMmEgRkCFqdX-AIaT1A/zh-cn_image_0000002628552234.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/6s7rMmEgRkCFqdX-AIaT1A/zh-cn_image_0000002628552234.png?HW-CC-KV=V1&HW-CC-Date=20261112T233219Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0053BE5CEDF266F46E9C93470B251D3AE07DC843A442CC2C6853FB124CC5D1F "点击放大")
 2. 对比发现问题中的横竖屏自动切换不是上图所示的横竖屏状态，考虑实际上发生横竖屏切换的是窗口而不是应用。检查EntryAbility.ets中onWindowStageCreate加载窗口时或者在应用打开时是否有以下变更窗口状态的类似操作：
 
    ```ts

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-apply
 title: 申请运动健康服务
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > 开发准备 > 申请运动健康服务
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:af41f8d99d4516e388098f54d9ed76deea17059dac4c10d06991f779d6f82c35
 ---
@@ -13,14 +13,14 @@ content_hash: sha256:af41f8d99d4516e388098f54d9ed76deea17059dac4c10d06991f779d6f
 1. 登录[HarmonyOS开发者中心](https://developer.huawei.com/consumer/cn/hdc-console#/)，进入“开发者管理 > ID、证书和Profile > APP ID > 开放能力管理”页面，在应用列表下选择需要申请的应用。
 2. 点击**运动健康服务**对应的**管理**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/GNdk294QQD2rBg6t9_VePQ/zh-cn_image_0000002815559727.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/GNdk294QQD2rBg6t9_VePQ/zh-cn_image_0000002815559727.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=A172A55E1EF7EA9E3022AD5AA5ED5E785B781A05D26BFF4F04F93B137F5DF8CD)
 
    **说明** 
 
    * 暂不支持团队账号下的成员账号独立使用运动健康开发服务，详情请参见[团队账号](../start/team-account-guides-0000001053785552.md)。
 3. 单击**申请Health Service Kit服务**，同意协议后，进入数据权限申请页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/Wt8YWdYvQ2aav512Av2FQw/zh-cn_image_0000002815399811.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/Wt8YWdYvQ2aav512Av2FQw/zh-cn_image_0000002815399811.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=245140BFB6D40721B59AA2FF7FB3C88747B23469F8FAA3DDF80EC385450853CE)
 4. 产品类型选择**HarmonyOS应用**，并填写申请信息，勾选产品必需申请的数据权限。
 
    **说明** 
@@ -29,16 +29,16 @@ content_hash: sha256:af41f8d99d4516e388098f54d9ed76deea17059dac4c10d06991f779d6f
    * 在应用或服务发布后，华为会对权限使用情况进行不定期抽查，抽查形式包括但不限于对已发布的应用进行抽样检查、对API调用情况进行监控、派遣专员核查等。您可以通过在申请运动健康服务前签署的合作协议，了解核查标准以及核查后的处理方式。
    * 数据类型对应的OAuth权限请参见[权限说明](health-permission-description.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/w_hJHGeaSB-nXm6UIMqEPQ/zh-cn_image_0000002786520236.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/w_hJHGeaSB-nXm6UIMqEPQ/zh-cn_image_0000002786520236.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=0FAD34D4C1D3B0A04E21D2C24FF010E75C683CD7FFA97291BFFBDA9C16663995)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/uyn9mASpSLmZKRLWS5avMg/zh-cn_image_0000002786360308.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/uyn9mASpSLmZKRLWS5avMg/zh-cn_image_0000002786360308.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=650E5838795C71BEC3D1787AEF0932F696919A90C119F7F956FEF5FC32B40337)
 5. 为保障用户隐私和数据安全，运动健康服务需要开发者反馈相关材料和信息，以确保应用向用户请求数据权限是合理的。
 
    **说明** 
 
    请在提交材料前先阅读[申请被驳回的常见问题](health-apply.md#申请被驳回的常见问题)，以避免在您的申请材料中出现同类问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/ulsXBDb1SJ-5BnV4Tyzrzw/zh-cn_image_0000002815559729.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/ulsXBDb1SJ-5BnV4Tyzrzw/zh-cn_image_0000002815559729.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA05E1DF4D862A06FE2BB604E0433A77EB9A04911256FF4500CF6F80E98CA09A)
 6. 申请开通测试权限。
 
    您提交的申请需要经过人工审核，审核周期约10个工作日，请耐心等待，审批结果将以短信和邮件的形式通知您。
@@ -52,14 +52,14 @@ content_hash: sha256:af41f8d99d4516e388098f54d9ed76deea17059dac4c10d06991f779d6f
      + 当前审核通过仅以开发测试为目的，测试阶段有用户数量的限制，仅前100位用户可使用您申请应用中的华为运动健康服务。为解除用户数量的限制，请在应用完成开发测试验证后提交验证申请，具体请参见[申请验证获取正式权限](health-verification.md)提交验证申请。
      + 测试权限开通后，请于一年内完成[申请验证获取正式权限](health-verification.md)操作，否则平台将关闭您已开通的测试权限。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/FAfKBiKBTAyjEab45H1Xbw/zh-cn_image_0000002815399813.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/FAfKBiKBTAyjEab45H1Xbw/zh-cn_image_0000002815399813.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0289CEB9AEB7B9603AF83602E8BEB1220F3D3447A292E8E37255C37F94873A3)
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/qh6f3s7bSrGCiSG3mazhdg/zh-cn_image_0000002786520238.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/qh6f3s7bSrGCiSG3mazhdg/zh-cn_image_0000002786520238.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=36169890FE147CC1D0D1F838ACF3260CE7360E19D11E5076B2F853718819184B)
 7. 权限管理。
 
 若您的业务范围发生变动，需要修改相应的数据权限，您可以单击“管理”更新权限再次提交申请。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/rm6SnbzjRvmfhYqUB7C08g/zh-cn_image_0000002786360310.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/rm6SnbzjRvmfhYqUB7C08g/zh-cn_image_0000002786360310.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F2FEB5A9BE8830F627C1EBD752A8788F2D87734AEF17FEEFCE838A79254D140)
 
 ## 申请被驳回的常见问题
 

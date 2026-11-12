@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: H5接入智能填充
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 智能填充服务 > 三方框架+H5接入智能填充 > H5接入智能填充
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:36+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-01
 content_hash: sha256:70af6336655fef1ac352e4dab96ea6b87767efa73dfc68ca6690abe951e687db
 ---
@@ -18,7 +18,7 @@ content_hash: sha256:70af6336655fef1ac352e4dab96ea6b87767efa73dfc68ca6690abe951e
 
 ## 效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/8LV02WQeRWqEOfvLawz0Yg/zh-cn_image_0000002786360574.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/8LV02WQeRWqEOfvLawz0Yg/zh-cn_image_0000002786360574.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=2248DF93466AD6137B0183E6B8EEE3E9A140CD30609134043D3EBCC7BE0BCFE7)
 
 ## 示例代码一
 

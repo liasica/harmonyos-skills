@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/performance-tro
 title: 点击页签，页面切换响应慢
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 故障排查 > 点击页签，页面切换响应慢
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-14
 content_hash: sha256:bc827ed9e51f4e9ededfe11c73c767a897c2997152dc5fa76fa9368709f1d71e
 ---
@@ -16,10 +16,10 @@ content_hash: sha256:bc827ed9e51f4e9ededfe11c73c767a897c2997152dc5fa76fa9368709f
 
 1. 本地尝试复现问题，使用DevEco Profiler中[Frame分析](../harmonyos-guides/ide-insight-session-frame.md)工具抓取点击切换tab页面时的Trace信息。选取User Events泳道以及应用包名泳道。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/3R0CfWdaTYSKGVN1VsEFVw/zh-cn_image_0000002762686164.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/3R0CfWdaTYSKGVN1VsEFVw/zh-cn_image_0000002762686164.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=627B59E6FB26494FDC58B73C45A5804823B3EB549700243928EDCC43050F61CB "点击放大")
 2. 点击User Events泳道，对照每组手势，计算在下方Details中的duration可以发现在每次点击tab页签后，都需要等待300ms以上时间应用才会开始处理页面切换，因此使用时有不流畅、响应慢的现象。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/LY0YuOPmQ6uirUd253Kv6g/zh-cn_image_0000002762686380.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/LY0YuOPmQ6uirUd253Kv6g/zh-cn_image_0000002762686380.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C81527F7CCCDD514E931818C4ED1D75040F546437CE312DC018441CF8973F31 "点击放大")
 3. 搜索关键词**GestureMode.Exclusive**，应用组合手势使用的是互斥识别，且双击识别在前，单击识别在后，这导致用户每次单击切换时需要等待300ms，超过双击手势两次点击间隔的阈值后才会被判定为单击手势，触发单击切换后续操作。
 
    ```ts

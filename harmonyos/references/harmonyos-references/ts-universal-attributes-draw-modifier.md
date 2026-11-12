@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 自定义绘制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 动态属性与自定义 > 自定义绘制
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-14
 content_hash: sha256:d68f1531644ff9770a10780c7cae22461055f6b3e513de12a9c61554ce1f8f44
 ---
@@ -55,7 +55,7 @@ DrawModifier可设置遮罩层（drawOverlay23+）、前景（drawForeground20+�
 
 自定义层级示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/PeYL54w_SCSQncjQnpGh7Q/zh-cn_image_0000002815400583.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/PeYL54w_SCSQncjQnpGh7Q/zh-cn_image_0000002815400583.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C3604D9B218B5E1BC1C53C31E90673395EF4CF9A7ADAAB875CC3CBF3A09A321)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -443,7 +443,7 @@ struct DrawModifierExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/16I8Mq-vTye0wJPaa_NiMw/zh-cn_image_0000002786521008.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/16I8Mq-vTye0wJPaa_NiMw/zh-cn_image_0000002786521008.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=04B09B8E7A1517A000B8EA5FEC2FE63F797CB1A64F9F7DDF0750C83DDF8AD0A8)
 
 ### 示例2（通过DrawModifier对容器的前景进行自定义绘制）
 
@@ -508,4 +508,4 @@ struct DrawModifierExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/EZPqYgEhQNCMJ3I84sPy0A/zh-cn_image_0000002786361080.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/EZPqYgEhQNCMJ3I84sPy0A/zh-cn_image_0000002786361080.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=15F501B2FEE9BB316489CECE312994316588E9DFCF40C5AE85C77AC66071070B)

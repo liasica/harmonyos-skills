@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-add-
 title: 添加Ability
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 开发环境搭建 > 工程创建 > 模块管理 > 添加Ability
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-06
 content_hash: sha256:f6224cd2026e33647c436709e004799c5963c0ab1d6d166a770571468c454a4c
 ---
@@ -18,7 +18,7 @@ Ability是应用/元服务所具备的能力的抽象，应用的一个Module可
 1. 在工程目录选中对应的模块，单击鼠标右键，选择**新建 > Ability** 。
 2. 设置**Ability名称**，单击**确认**完成创建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/KCrBK1cqQD-6zzpBgauVhw/zh-cn_image_0000002781471186.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/KCrBK1cqQD-6zzpBgauVhw/zh-cn_image_0000002781471186.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=F83B425036AECD750F190D85441935689CEF9E0DF4E63E1A3F469EB5E377CFBA "点击放大")
 
 ## 在模块中添加Extension Ability
 
@@ -26,7 +26,7 @@ Ability是应用/元服务所具备的能力的抽象，应用的一个Module可
    * **Accessibility**：用于提供[辅助功能业务/无障碍](../doccenter-capabilities/accessibilitykit-overview.md)能力。
    * **InputMethod**：用于提供输入法功能业务的能力。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/-puIdgggQnu_ckcKGZHWtA/zh-cn_image_0000002781311254.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/-puIdgggQnu_ckcKGZHWtA/zh-cn_image_0000002781311254.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D2CD3BF569698D71961E518C5A4B4BD7CD977546F082EDB7008172CF72C64B5 "点击放大")
 2. 设置**Ability名称**，单击**确认**完成Extension Ability创建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/3bJt24yJQbuMMbwekUFSNw/zh-cn_image_0000002810630741.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/3bJt24yJQbuMMbwekUFSNw/zh-cn_image_0000002810630741.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=04F8ABFD6C7BFF8ADADABA755DF89904AF14A6F443E6314D4D420F48335C8F3E "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-5
 title: aa命令拉起hipreview应用并预览本地文件失败
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > aa命令拉起hipreview应用并预览本地文件失败
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:40+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:5f3fc31cceb4eee137305c9f9d8b60c617dbb5328c758e2a0220f1b75e2e2db6
 ---
@@ -18,11 +18,11 @@ hdc shell aa start -b com.huawei.hmos.hipreview -a MainAbility -U file://storage
 
 其中文件路径是通过Device File Browser获取的文件真实路径，也叫物理路径。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/2bEPDkqxQIuI-9ctbFQ9FQ/zh-cn_image_0000002628554892.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/2bEPDkqxQIuI-9ctbFQ9FQ/zh-cn_image_0000002628554892.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=9637512EE04BB4B4F27289B6237E921FF027A54AA409259085076B9E9427F992 "点击放大")
 
 命令行执行效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/zZexp6NaSqiGm_29ds1xcQ/zh-cn_image_0000002628394990.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/zZexp6NaSqiGm_29ds1xcQ/zh-cn_image_0000002628394990.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6E6E01AE8919422D1B69D1BC3F03A4DBD5A4448610E3FE0A111CF9331815834 "点击放大")
 
 ## 背景知识
 
@@ -37,7 +37,7 @@ hdc shell aa start -b com.huawei.hmos.hipreview -a MainAbility -U file://storage
 hdc shell aa start -b com.huawei.hmos.hipreview -a MainAbility -U file://docs/storage/Users/currentUser/Documents/1.pdf
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/fH7yhiLgSK-UeBbp23G21Q/zh-cn_image_0000002658914209.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/fH7yhiLgSK-UeBbp23G21Q/zh-cn_image_0000002658914209.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1F11487176CB2496749FFC6A8E44B2A98CBD1305A65AD69CF2E7223291128F6 "点击放大")
 
 ## 常见FAQ
 

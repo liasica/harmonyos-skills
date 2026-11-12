@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-skill
 title: 基于Link的装饰器方案
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 技能调用方案 > 接入方案 > 任务执行类场景方案（装饰器接入方式） > 基于Link的装饰器方案
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:45+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:ead25487d80ea601b39d64eebdbaeeb695061819d0f952f1003e3507c03d4019
 ---
@@ -114,25 +114,25 @@ content_hash: sha256:ead25487d80ea601b39d64eebdbaeeb695061819d0f952f1003e3507c03
 
    1. 打开CodeGenie插件：在DevEco Studio右侧边栏点击CodeGenie或输入快捷键Alt/Option+U，可以进入DevEco CodeGenie。若使用非最新版本的DevEco Studio，可通过[下载中心](https://developer.huawei.com/consumer/cn/download/deveco-codegenie)获取并使用相关功能，具体请参考[插件获取及安装](ide-codegenie.md#section18337533718)。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/g6I6fuO3SXKc5aoF8UTCzw/zh-cn_image_0000002815400241.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/g6I6fuO3SXKc5aoF8UTCzw/zh-cn_image_0000002815400241.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B8FC6CBCC96A7DD2DC42AD10B5AEBD3B75E173721ED59DF2AAC31904E3CBCF8)
    2. 框选想要接入意图框架功能的代码。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/qrCKJFMBQ_uT4D_FePUyxw/zh-cn_image_0000002786520666.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/qrCKJFMBQ_uT4D_FePUyxw/zh-cn_image_0000002786520666.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=22F4344F0B70E7314A58F4FEF942BB60C4BE9F4A266DB56C671DC125EACF5BA5)
    3. 在选中的代码块上右键CodeGenie > Insight Intent，选择适合的装饰器。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/KnsJU8nlRsmEESdId3asgg/zh-cn_image_0000002786360738.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/KnsJU8nlRsmEESdId3asgg/zh-cn_image_0000002786360738.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=F84355AE348BD8AEEFAAE8CC1A4D3042D3F2F28361A74B01D55F6C8CF0F4DAB4)
    4. 在DevEco CodeGenie对话框中对意图定义、功能和参数等进行描述。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/_IXlqe2aQJukBMGtjuehjg/zh-cn_image_0000002815560159.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/_IXlqe2aQJukBMGtjuehjg/zh-cn_image_0000002815560159.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=38F06FD8F5D67ED66D00B5A7DB894411C1F1B4716F9D06A99FD01A36F3E415C6)
    5. 回车或者点击发送按钮，即可生成对应的装饰器内容。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/Nhr5eQ3qS8O3OZq_DGy9ng/zh-cn_image_0000002815400243.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/Nhr5eQ3qS8O3OZq_DGy9ng/zh-cn_image_0000002815400243.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=92855D525F3E661ED67133A3D70B50706B9E395D479CD87248722CBE4E123800)
    6. 将光标放置于要插入装饰器的位置，点击插入图标，即可在对应位置插入装饰器。
 
    插入前：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/FDrola3DREyQYhFf3bRivw/zh-cn_image_0000002786520668.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/FDrola3DREyQYhFf3bRivw/zh-cn_image_0000002786520668.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=4EE6521A57C3D07B69BA5F47E4E06D0C4558BBBA362E3B148CC3529F0C3D02F6)
 
    插入后：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/RkgjUltIQQGhP87rfTRGXg/zh-cn_image_0000002786360740.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/RkgjUltIQQGhP87rfTRGXg/zh-cn_image_0000002786360740.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=C2180115BC07FC637FE3DA5A8BBD77102AB60743BD559212C0E605B8E5184B26)

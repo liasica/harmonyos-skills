@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-gui
 title: 使用MindSpore Lite实现图像分类 (C/C++)
 breadcrumb: 指南 > AI > MindSpore Lite Kit（昇思推理框架服务） > 使用MindSpore Lite实现图像分类 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:45+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:19098207d4873b0a2a57cc98e1164d44805c5b928f23522e1e2e6e3f1225ad16
 ---
@@ -563,9 +563,9 @@ struct Index {
 
 在设备上，点击photo按钮，选择相册中的一张图片，点击确定。在图片下方显示此图片占比前4的分类信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/1ajU-5n_SfOZZAwGq78Fqw/zh-cn_image_0000002815400279.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/i2KZMSXZSkCLEe8T7ObhWA/zh-cn_image_0000002786520702.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/1ajU-5n_SfOZZAwGq78Fqw/zh-cn_image_0000002815400279.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=03F909C16346C31C44DF1D6A0F7E8B4612E0E0CFF90D9052810D2A7FEBEC4DC3) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/i2KZMSXZSkCLEe8T7ObhWA/zh-cn_image_0000002786520702.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=E802CC0A7AD8CED9BF0A90C447B67B0CCBA0617E0F9A56E5811E9C991231ADAF)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/VW_nOKLeQMG72vF1rZ9Ipw/zh-cn_image_0000002786360774.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/_sJll0L0Q82v1W713CeczQ/zh-cn_image_0000002786520704.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/VW_nOKLeQMG72vF1rZ9Ipw/zh-cn_image_0000002786360774.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=96CFDC89A7EAD97A9952874F3CDEE928015B624344FC220A0841EDA58EB33EE6) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/_sJll0L0Q82v1W713CeczQ/zh-cn_image_0000002786520704.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD5334C9EDE8211EEAD4717AEB0A6929BABE3281DF5A370AA61B9A15C56475DA)
 
 ## 示例代码
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/onlineauthent
 title: DID分布式数字身份
 breadcrumb: 指南 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > DID分布式数字身份
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:39+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:8b4c59d692f94c083f9f870fa303c9a23b5f5b9a70ed7ec54392160a4405bd25
 ---
@@ -47,7 +47,7 @@ content_hash: sha256:8b4c59d692f94c083f9f870fa303c9a23b5f5b9a70ed7ec54392160a440
 
 应用需要为用户创建数字身份时，可以使用数字身份服务创建及使用与用户DID关联的密钥、导入用户DID文档等信息至设备。创建数字身份后，应用可基于用户DID标识为用户颁发凭证，并使用用户DID密钥对数据签名授权。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/ARUkelSaTBuIvQpkWfoL3w/zh-cn_image_0000002786359694.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/ARUkelSaTBuIvQpkWfoL3w/zh-cn_image_0000002786359694.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=0FCA0E0EA96BD41AF49A265B08E6BB13C9FF08FED4087FCFB92784A20A1A7EBC)
 
 流程说明：
 
@@ -61,7 +61,7 @@ content_hash: sha256:8b4c59d692f94c083f9f870fa303c9a23b5f5b9a70ed7ec54392160a440
 
 应用为用户颁发数字身份凭证（例如教师凭证等），可以使用数字身份服务将数字身份凭证导入至设备安全存储，用于后续便携出示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/lTAR79kgQ2Gbq1W4-SRW2g/zh-cn_image_0000002815559115.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/lTAR79kgQ2Gbq1W4-SRW2g/zh-cn_image_0000002815559115.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4381A69358FAEB29C808378D8C212F6CD47DF875502BE9F9CCAC864D9DFFD94)
 
 流程说明：
 
@@ -73,7 +73,7 @@ content_hash: sha256:8b4c59d692f94c083f9f870fa303c9a23b5f5b9a70ed7ec54392160a440
 
 应用作为验证方，需要请求用户的数字身份凭证用于验证用户身份或者发放相应权益时，可以使用数字身份服务请求获取用户凭证，用户确认出示的凭证及披露的属性字段后，数字身份服务会将凭证出示到验证方应用。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/6SIRAP_OTUCCbtgSqArilA/zh-cn_image_0000002815399199.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/6SIRAP_OTUCCbtgSqArilA/zh-cn_image_0000002815399199.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7634417822CF8AD78653782E2AC32AA8B1275E9BA54E2627382DE93084CC011)
 
 流程说明：
 

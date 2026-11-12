@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-encodin
 title: 音频编码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 音频编码
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:7ec120d01d6dffaf6f7713c27d0697ff5097e6843877e27fe197a12173ab971b
 ---
@@ -43,7 +43,7 @@ content_hash: sha256:7ec120d01d6dffaf6f7713c27d0697ff5097e6843877e27fe197a12173a
 * 虚线表示可选。
 * 实线表示必选。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/zZ60MzxEQoqT4EeSYA6IPQ/zh-cn_image_0000002815559279.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/zZ60MzxEQoqT4EeSYA6IPQ/zh-cn_image_0000002815559279.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=2AA13FA899EF9725139EE23700B0707E16FB58942B2FE9FC111FD8165E55D4C5)
 
 ### 在 CMake 脚本中链接动态库
 
@@ -205,11 +205,11 @@ target_link_libraries(sample PUBLIC libnative_media_acodec.so)
 
    配置选项key值说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/hzGYIzM9SdmkrR_f7KrdDA/zh-cn_image_0000002815399363.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/hzGYIzM9SdmkrR_f7KrdDA/zh-cn_image_0000002815399363.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=9381DEF66A8B004B59DB7CF57363F328611F46C9D1BEE1BC49A5AF7C523B6BAE)
 
    各音频编码类型参数范围说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/9TNIz5ghQyat2TqXXqRE8w/zh-cn_image_0000002786519788.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/9TNIz5ghQyat2TqXXqRE8w/zh-cn_image_0000002786519788.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=B188C29F098ED166AEC81F27CBB5BA6EDE3BB1D5AF6EAC2432773F252E61FCA3)
 
    例如对一个44100Hz采样率、2声道立体声、SAMPLE\_S16LE采样格式的PCM音频，以32000bps的码率进行AAC编码的调用流程如下：
 

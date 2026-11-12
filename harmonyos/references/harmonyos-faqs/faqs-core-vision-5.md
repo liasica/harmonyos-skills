@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-core-visio
 title: 如何对文本识别的文本行增加边框描边
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 基础视觉（Core Vision） > 如何对文本识别的文本行增加边框描边
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-13
 content_hash: sha256:534834f8b27a13a891024528a07cb26cf4ce138090c1d01770adc395aa3c8948
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:534834f8b27a13a891024528a07cb26cf4ce138090c1d01770adc395aa3
 
 使用textRecognition对图片进行文字识别，需要对图片上识别到的文本增加边框描边的效果，如下图所示，该如何实现？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/muL7lxcnQE2l5bUu0pR8IQ/zh-cn_image_0000002628554728.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/muL7lxcnQE2l5bUu0pR8IQ/zh-cn_image_0000002628554728.png?HW-CC-KV=V1&HW-CC-Date=20261112T233210Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F80BC93717BA0D2280CC8866E870F425CE8E35A87201A090166A6331A73266E "点击放大")
 
 ## 背景知识
 

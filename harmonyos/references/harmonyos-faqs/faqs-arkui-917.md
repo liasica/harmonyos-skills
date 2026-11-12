@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-917
 title: 如何实现自定义Tabs模拟浏览器页签增加删除能力
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现自定义Tabs模拟浏览器页签增加删除能力
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:8b9f797875a50b5a334a0177184f0418362f67b6fe9ada5e26c06df37368755c
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:8b9f797875a50b5a334a0177184f0418362f67b6fe9ada5e26c06df3736
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/0fVr_yU3SeWRbmo6mawWMA/zh-cn_image_0000002658918985.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/0fVr_yU3SeWRbmo6mawWMA/zh-cn_image_0000002658918985.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=C29DADDCB2F4DEDD559E8775972F3D8A5746A9A2CF43646906657799DF55B28B "点击放大")
 
 ## 背景知识
 

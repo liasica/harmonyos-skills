@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1533
 title: TextTimer组件使用计时功能时的常见场景
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > TextTimer组件使用计时功能时的常见场景
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:24+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:c7298f40a5b6cce75ae99c0a0ddb9829b5396b241820fa26ace9a7f7c9352ce9
 ---
@@ -89,7 +89,7 @@ TextTimer组件使用计时功能时遇到的常见场景如下。
 
   运行效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/J-wp65n2RUyJuEhh3NFRaA/zh-cn_image_0000002628766890.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/J-wp65n2RUyJuEhh3NFRaA/zh-cn_image_0000002628766890.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D571C28FC59C2D16BC1BC8B7D47F61AD1E742C058A9B2F13C419FA6C66EB45D "点击放大")
 * 问题三：TextTimer组件后台停止前台恢复可以通过计时器控制器的指令实现。将控制器导出，在EntryAbility.ets文件中使用。当应用进入后台触发onBackground时使用pause指令停止计时器，进入前台时根据上一次后台前计时器的状态判断是否调用start指令让计时器继续计时。
 
   参考代码如下：
@@ -153,7 +153,7 @@ TextTimer组件使用计时功能时遇到的常见场景如下。
 
   运行效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/1A9ncHMHQz2qhAEjKuzbJg/zh-cn_image_0000002658966221.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/1A9ncHMHQz2qhAEjKuzbJg/zh-cn_image_0000002658966221.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D234EE660BC9517084EB4F9E973B69F0AC0F2CA80F443DF18E104110DA12950 "点击放大")
 
 ## 常见FAQ
 

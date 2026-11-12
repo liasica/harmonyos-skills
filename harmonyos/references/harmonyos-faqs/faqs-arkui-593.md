@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-593
 title: List嵌套LazyForEach滚动条大小会变化
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > List嵌套LazyForEach滚动条大小会变化
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:1ff68b95626b7641cbffc1f91f6fb66c46a8508ae078fe26d5050325bb893e08
 ---
@@ -14,11 +14,11 @@ content_hash: sha256:1ff68b95626b7641cbffc1f91f6fb66c46a8508ae078fe26d5050325bb8
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/bOr8QYbSQmqf3zqIyuWlcg/zh-cn_image_0000002628392522.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/bOr8QYbSQmqf3zqIyuWlcg/zh-cn_image_0000002628392522.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F404B8A13A41DC38A36DD1FCC6200B912402D5C9CDA3E2EE32A86E1161E2DDC "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/RRfFLeAgRbejmJ6a_YqYXg/zh-cn_image_0000002658911741.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/RRfFLeAgRbejmJ6a_YqYXg/zh-cn_image_0000002658911741.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=66D5FA043AE66EDFFB6E1CEB08EFA65CA5774ABB16A7FBD358526CDEFF8D2566 "点击放大")
 
 ## 背景知识
 

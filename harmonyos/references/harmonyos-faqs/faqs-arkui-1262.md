@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1262
 title: RichEditor自定义菜单文本复制
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > RichEditor自定义菜单文本复制
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:37+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:9586d8935e049403afcb5d1f1122dc628245b0b7b677808616b14d1e572dbd57
 ---
@@ -156,4 +156,4 @@ struct RichEditorExample {
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/CzMF-xC7TfiKawerEDk0rg/zh-cn_image_0000002658955327.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/CzMF-xC7TfiKawerEDk0rg/zh-cn_image_0000002658955327.png?HW-CC-KV=V1&HW-CC-Date=20261112T233150Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B99A86ED86D2247326A99AF0D87E170CC5BCFF85D3CCD4C4978539F84619785 "点击放大")

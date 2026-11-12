@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Canvas)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (Canvas)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:56:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:04cf417d0309df9670cc18d3629cefff7e145c66388d25214d2a3dfaafeefa2d
 ---
@@ -1335,7 +1335,7 @@ drawTextBlob(blob: TextBlob, x: number, y: number): void
 | x | number | 是 | 所绘制出的文字基线（下图蓝线）的左端点（下图红点）的横坐标，该参数为浮点数。单位为物理像素px。 |
 | y | number | 是 | 所绘制出的文字基线（下图蓝线）的左端点（下图红点）的纵坐标，该参数为浮点数。单位为物理像素px。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/Mo9tnzrzSxetoBo96KMl8A/zh-cn_image_0000002786522072.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/Mo9tnzrzSxetoBo96KMl8A/zh-cn_image_0000002786522072.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6443C1ADD2A6D689C4692B13BE21AD0FCA7272233B1C9EBA7646AA4B9DC6723)
 
 **错误码：**
 
@@ -1442,7 +1442,7 @@ drawSingleCharacter(text: string, font: Font, x: number, y: number): void
 | x | number | 是 | 所绘制出的字符基线（下图蓝线）的左端点（下图红点）的x轴坐标，该参数为浮点数。单位为物理像素px。 |
 | y | number | 是 | 所绘制出的字符基线（下图蓝线）的左端点（下图红点）的y轴坐标，该参数为浮点数。单位为物理像素px。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/x1tx5keaS92hOxLwBFj-ww/zh-cn_image_0000002786522072.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/x1tx5keaS92hOxLwBFj-ww/zh-cn_image_0000002786522072.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=771BABE96577BC9088F95EECC13DFC06ED4DAA7BE4FB550725E683FA342AF16A)
 
 **错误码：**
 

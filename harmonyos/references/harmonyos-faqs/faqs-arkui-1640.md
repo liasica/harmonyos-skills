@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1640
 title: 如何绘制包含emoji的图文混合内容
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何绘制包含emoji的图文混合内容
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:37+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-13
 content_hash: sha256:12687e88ead52012a0bf671290f97b91e243bfddf571252f7288cffa411ec704
 ---
@@ -51,7 +51,7 @@ content_hash: sha256:12687e88ead52012a0bf671290f97b91e243bfddf571252f7288cffa411
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/mU01QoMyRhedx70DskO3vQ/zh-cn_image_0000002628662310.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/mU01QoMyRhedx70DskO3vQ/zh-cn_image_0000002628662310.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=328F54CBC8D3B24624BE4994FDF351089CC3E18F65BF1CFDF0C0126EA50C56E1 "点击放大")
 * 方案二：由于drawTextBlob不支持降级，可以通过接口drawSingleCharacter实现，drawSingleCharacter有字体退化处理的能力（在用户给的字体typeface不支持某些表情包时，可以退化查找其他已载入字体的typeface），没有设置字体会使用系统默认字体。具体使用可参考[drawSingleCharacter](../harmonyos-references/arkts-apis-graphics-drawing-canvas.md#drawsinglecharacter12)中的示例，将示例中绘制的字符串替换为emoji即可。
 
 ## 常见FAQ

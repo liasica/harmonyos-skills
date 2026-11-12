@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-m
 title: 组件内状态管理常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理常见问题 > 组件内状态管理常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:b660b6b31cc259c7bfd3dbc2325d1578ccab90076a8338f353fd1119bcedfce3
 ---
@@ -806,7 +806,7 @@ struct Index {
 
 直接操作状态变量，三次触发计算函数，运行[耗时](ui-inspector-profiler.md#trace调试能力)结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/2uxLCqxtQkeFGcaWzpfBNQ/zh-cn_image_0000002786358700.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/2uxLCqxtQkeFGcaWzpfBNQ/zh-cn_image_0000002786358700.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=65A65B7970F0378AD83B2750C06B03AB46E0526749477006657FB25C958364B2)
 
 【正例】
 
@@ -853,7 +853,7 @@ struct Index {
 
 使用临时变量取代状态变量的计算，三次触发计算函数，运行耗时结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/U9pxfAfTSuuUT8ML89TfRQ/zh-cn_image_0000002815558121.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/U9pxfAfTSuuUT8ML89TfRQ/zh-cn_image_0000002815558121.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=3EBC4141FCFC24521B9F089E1ABFBE677BBF631C27F7CA0E636990BD212D4B06)
 
 【总结】
 
@@ -1007,7 +1007,7 @@ struct MyComponent {
 
 上述代码运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/uYTZg-sVQ--UX0B5VL2UWw/zh-cn_image_0000002815398205.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/uYTZg-sVQ--UX0B5VL2UWw/zh-cn_image_0000002815398205.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=A29485048E8761E4CE3DA2A069AAAC415866538C8C471DDDAC1F163D4B556AD0)
 
 可以观察到在点击更改message之后，图片“闪烁”了一下，同时输出了组件的onAppear日志，这说明组件进行了重建。这是因为在更改message之后，导致LazyForEach中这一项的key值发生了变化，使得LazyForEach在reloadData的时候将这一项ListItem进行了重建。Text组件仅仅更改显示的内容却发生了重建，而不是更新。而尽管Image组件没有需要重新绘制的内容，但是因为触发LazyForEach的重建，会使得同样位于ListItem下的Image组件重新创建。
 
@@ -1156,7 +1156,7 @@ struct ChildComponent {
 
 上述代码运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/_aBIpJyWR9GC6tOaNIufow/zh-cn_image_0000002786518630.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/_aBIpJyWR9GC6tOaNIufow/zh-cn_image_0000002786518630.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD4329B7114384C492EE993E5FFE1CB733F4C6975621A9EA9BF55202153A3D3D)
 
 可以观察到UI能够正常刷新，图片没有“闪烁”，且没有输出日志信息，说明没有对Text组件和Image组件进行重建。
 
@@ -1222,7 +1222,7 @@ struct Page {
 
 上述代码运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/M81lz3dLSEeRktEHPKqqLQ/zh-cn_image_0000002786358702.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/M81lz3dLSEeRktEHPKqqLQ/zh-cn_image_0000002786358702.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD614EBDE10086A4D9BE08CC85CABA0B7ABA64F339EFE74DDEDA4037C47C83B6)
 
 由于ForEach中生成的item是一个常量，因此当点击改变item中的内容时，没有办法观测到UI刷新，尽管日志表明item的值已改变（这体现在打印了“change font size”的日志）。因此，需要使用自定义组件，配合@ObjectLink来实现观测的能力。
 
@@ -1291,7 +1291,7 @@ struct Page {
 
 上述代码的运行效果如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/Iho0qxa4R-WD0LUvkLYPMw/zh-cn_image_0000002815558123.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/Iho0qxa4R-WD0LUvkLYPMw/zh-cn_image_0000002815558123.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=B847B97096BD9242D45722BBB611940F00097DE2FC32BECFB46B989A151377DA)
 
 使用@ObjectLink接受传入的item后，使得TextComponent组件内的textStyle变量具有了被观测的能力。在父组件更改styleList中的值时，由于@ObjectLink是引用传递，所以会观测到styleList每一个数据项的地址指向的对应item的fontSize的值被改变，因此触发UI的刷新。
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-15
 title: 如何隐藏应用启动时展示的应用图标
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 如何隐藏应用启动时展示的应用图标
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:49+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:b0d16abe08f81e5fb5dc7cce4ba3d18bf75fe175c4f7217027948948ee6da303
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:b0d16abe08f81e5fb5dc7cce4ba3d18bf75fe175c4f7217027948948ee6
 
 应用启动时会先展示应用图标，然后再跳转至首页（如下效果图所示）。如何隐藏该应用图标呢？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/VnIk0Q4NTDSxGbak1qgkbw/zh-cn_image_0000002628789248.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/VnIk0Q4NTDSxGbak1qgkbw/zh-cn_image_0000002628789248.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B5B76AF0CBEBAB8290C21B3F1F7DEA9330287542AA8CE733AD59C3F3E7C8425 "点击放大")
 
 ## 背景知识
 
@@ -43,7 +43,7 @@ content_hash: sha256:b0d16abe08f81e5fb5dc7cce4ba3d18bf75fe175c4f7217027948948ee6
 
    效果预览：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/-OS808MkRey8QFm1PZQ6pg/zh-cn_image_0000002628629350.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/-OS808MkRey8QFm1PZQ6pg/zh-cn_image_0000002628629350.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=946B2CB81C04A4719DF2FDFC9FA685BDE3233EF94438B270C58F596C805D2D4F "点击放大")
 
    深色模式：
 
@@ -60,4 +60,4 @@ content_hash: sha256:b0d16abe08f81e5fb5dc7cce4ba3d18bf75fe175c4f7217027948948ee6
 
    效果预览：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/raKVtu_ARGqVWAHftk4-PQ/zh-cn_image_0000002658988571.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/raKVtu_ARGqVWAHftk4-PQ/zh-cn_image_0000002658988571.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=227414E48D9D3D82E70AB7E6CC72DBF80C2EA27500EE47E38E7AE29C696ED4D9 "点击放大")

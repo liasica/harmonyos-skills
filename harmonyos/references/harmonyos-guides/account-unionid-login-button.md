@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-union
 title: 使用“华为账号登录”按钮登录
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 登录 > 华为账号登录（获取UnionID/OpenID） > 使用“华为账号登录”按钮登录
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:2cca29a6fe2e885808721d1fac4af78eb42630461c6d3fcc739fc442694d7f8e
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:2cca29a6fe2e885808721d1fac4af78eb42630461c6d3fcc739fc442694
 
 华为账号登录按钮包含文本、标志和文本、标志三种样式，以满足应用对界面风格一致性和灵活性的要求。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/lvcTD_3rQcCEdasTtTzyig/zh-cn_image_0000002815559559.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/lvcTD_3rQcCEdasTtTzyig/zh-cn_image_0000002815559559.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=6AC70B36343F63B071663BDD5B9ABA23DDC275867FA4D883925F6BF14B495F92)
 
 ## 约束与限制
 
@@ -22,13 +22,13 @@ content_hash: sha256:2cca29a6fe2e885808721d1fac4af78eb42630461c6d3fcc739fc442694
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/8ZWfk9n8RS-D7xy_WObSCQ/zh-cn_image_0000002815399643.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/8ZWfk9n8RS-D7xy_WObSCQ/zh-cn_image_0000002815399643.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=A39C99BF308B169DFA6D91F94109BAA5FF1F44673A6A215FE722693DB71A3FD5)
 
 账号登录按钮的用户体验和UX设计需符合[【华为账号登录】按钮](../design-guides/id-0000001880001344.md#section2624430102713)规范，不符合规范的UX设计可能会对应用上架和用户体验带来影响。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/PFda63aHR9ScOS-mSFi1hA/zh-cn_image_0000002786520068.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/PFda63aHR9ScOS-mSFi1hA/zh-cn_image_0000002786520068.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2951E0C1053EB563DDED36B1861CC96989AFBD3E56BB9F97A267B877CDFCEBB)
 
 流程说明：
 

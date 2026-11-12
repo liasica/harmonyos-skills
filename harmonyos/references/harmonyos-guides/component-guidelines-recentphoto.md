@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/component-gui
 title: 使用RecentPhoto组件获取最近一张图片
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 使用RecentPhoto组件获取最近一张图片
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-04-30
 content_hash: sha256:cd0a45a3e96a64fea309c0c8e0a4eb9223443216a80838c7312dfe2f9c4ac89f
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:cd0a45a3e96a64fea309c0c8e0a4eb9223443216a80838c7312dfe2f9c4
 
 界面效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/0Oz_-G2DSsuSdcadniya1A/zh-cn_image_0000002815399475.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/0Oz_-G2DSsuSdcadniya1A/zh-cn_image_0000002815399475.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADEE2F50FABAEE03ABFD22CA3224A7B1FBA0E0BE196B62835BF25B084337777E)
 
 ## 开发步骤
 

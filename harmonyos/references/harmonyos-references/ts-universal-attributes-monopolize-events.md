@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 事件独占控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 交互属性 > 触摸交互控制 > 事件独占控制
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:88678e323badcb366b606892f8af878b84a490aba507c7de2fded9e8f20b4719
 ---
@@ -117,4 +117,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/5MD1vz00RTGDye39n1afXg/zh-cn_image_0000002815400543.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/5MD1vz00RTGDye39n1afXg/zh-cn_image_0000002815400543.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=4747E72DB5C109F8CF1601A88C8B01342D3CB2B2110AA809314FE8AD60D79F63)

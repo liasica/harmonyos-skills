@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-content-s
 title: Web页面显示内容滚动
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 > Web页面显示内容滚动
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:c710a129181eada4014fb6887f69715c08aa87a2716fe40d9103c82d57bad674
 ---
@@ -128,4 +128,4 @@ content_hash: sha256:c710a129181eada4014fb6887f69715c08aa87a2716fe40d9103c82d57b
   ```
 * 效果展示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/eCxiaqZKQ32WVKjVN7l_-g/zh-cn_image_0000002786359432.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/eCxiaqZKQ32WVKjVN7l_-g/zh-cn_image_0000002786359432.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E732CB665AD249204C819472FEDDA507ADA6AB07EDF323A5DF141F37240DDBC)

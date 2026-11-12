@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-590
 title: 如何解决Video组件全屏播放时，自定义控制器显示异常的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Video组件全屏播放时，自定义控制器显示异常的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:ae6ac007f27335ba6a4f90d1194aeb849b4a5f84e4e91540fc581094d188ecdd
 ---
@@ -14,11 +14,11 @@ content_hash: sha256:ae6ac007f27335ba6a4f90d1194aeb849b4a5f84e4e91540fc581094d18
 
 通过Text组件定义一个名为“这是一个全屏按钮”的视频控制器。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/Zdbn9LLyQyODMamiNwPfug/zh-cn_image_0000002658791779.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/Zdbn9LLyQyODMamiNwPfug/zh-cn_image_0000002658791779.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCCA5E5BD72A0B435DE033F4507A93D455922102DB9ADF2DFB4B07A7A29C5667 "点击放大")
 
 点击“这是一个全屏按钮”视频控制器，将视频进行横屏全屏播放。横屏后“这是一个全屏按钮”控制器会消失。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/7JdSPpTiQZSGtZHM4JVMcQ/zh-cn_image_0000002628552402.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/7JdSPpTiQZSGtZHM4JVMcQ/zh-cn_image_0000002628552402.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=06401164E78200F7EB27E17CB0A5FA6FA15F276B9F7B4022B97EDF9602990C0D "点击放大")
 
 问题代码示例参考如下：
 
@@ -87,11 +87,11 @@ struct Index {
 
 修改完成后，竖屏播放效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/QZpLfzB-Swe9HAjoo1muhQ/zh-cn_image_0000002628392512.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/QZpLfzB-Swe9HAjoo1muhQ/zh-cn_image_0000002628392512.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2CFD16CDF8E356C690A1851E4626BC819ED88E267FF6933C36C99F9E4B3996A "点击放大")
 
 点击“全屏”按钮进入横屏播放效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/BDVoSJYARSKyV9a_ZBYVlA/zh-cn_image_0000002658911729.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/BDVoSJYARSKyV9a_ZBYVlA/zh-cn_image_0000002658911729.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=4FE3A86CA9DB88CB7C1BE239C20BC9C0B2866B5C474C25DCA85BE57FF2C5EFC7 "点击放大")
 
 视频横屏后，控制器依旧存在。
 

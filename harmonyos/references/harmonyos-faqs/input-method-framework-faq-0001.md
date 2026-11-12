@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/input-method-fr
 title: 悬浮键盘位置尺寸修改防抖
 breadcrumb: FAQ > 应用框架开发 > 输入法框架 > 常见问题 > 悬浮键盘位置尺寸修改防抖
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:57+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:6e0e0603dd962323e0d56db515261b66c4224536aca9365bb14a28b698ce9079
 ---
 
 **Q：同时调用moveTo()和resize()接口来实现悬浮键盘缩放时，键盘会出现抖动现象，如何解决？问题现象如图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/IoqFMo_iSfSqHwLVVEYALA/zh-cn_image_0000002772679752.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/IoqFMo_iSfSqHwLVVEYALA/zh-cn_image_0000002772679752.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=51B784753FE6CB73006CDAFA79A8C67B32AC24D44CF198B5F57585AE306EFC9B "点击放大")
 
 **A**：moveTo()方法用于移动输入法面板的位置，而resize()方法用于调整面板的大小。这两种操作都会导致系统的UI层进行重新计算和绘制，特别是在移动和缩放操作快速执行时，可能会导致视觉上的抖动效果。同时修改悬浮面板的位置和尺寸建议用adjustPanelRect()方法。
 
@@ -400,4 +400,4 @@ content_hash: sha256:6e0e0603dd962323e0d56db515261b66c4224536aca9365bb14a28b698c
 
 示例效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/JChjwRlXTtiKdjhZVym_AA/zh-cn_image_0000002802119581.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/JChjwRlXTtiKdjhZVym_AA/zh-cn_image_0000002802119581.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=43B40B7E5E70484074026733CA9656836A104565AA8591DC10B5C1E950E6772D "点击放大")

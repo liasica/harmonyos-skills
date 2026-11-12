@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1385
 title: 如何实现环形仪表盘
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现环形仪表盘
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:53+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-13
 content_hash: sha256:9cf5ed714b3bcc7774b104754307ad795de592f1946f26af667dfe97860d4c1b
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:9cf5ed714b3bcc7774b104754307ad795de592f1946f26af667dfe97860
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/VOPPHc0YRFOoKNTrRudmZA/zh-cn_image_0000002628602664.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/VOPPHc0YRFOoKNTrRudmZA/zh-cn_image_0000002628602664.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E6AFDC85FC509F6AD8140F3529A0614F03D733E2E05785787C818438175AF5B "点击放大")
 
 ## 背景知识
 

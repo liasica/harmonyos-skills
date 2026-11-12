@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-previewer-
 title: 预览窗口顶部和底部出现白边
 breadcrumb: FAQ > DevEco Studio > 界面预览 > 预览窗口顶部和底部出现白边
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:b73ce483e7fe7a0c0f8d94392d9af0a6452d69dfd64b28093115c879e971dfba
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:b73ce483e7fe7a0c0f8d94392d9af0a6452d69dfd64b28093115c879e97
 
 预览窗口顶部和底部出现白边。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/7j8qQIJlSGK2iM9dj4wQXA/zh-cn_image_0000002654837771.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/7j8qQIJlSGK2iM9dj4wQXA/zh-cn_image_0000002654837771.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA73CE411EFA021711C2B918B3DC1C9365D38A3754CDB17F5E8F6452D80628F0)
 
 **解决措施**
 

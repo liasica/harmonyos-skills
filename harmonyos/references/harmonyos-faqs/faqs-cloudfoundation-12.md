@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-cloudfound
 title: 云数据库端云同步方案
 breadcrumb: FAQ > 应用服务开发 > 云开发服务（Cloud Foundation Kit） > 云数据库端云同步方案
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:47+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:d16c06985a40ffd8392fa9cf4fe181d6e42d80b2e9e6cde095517a34ce47636b
 ---
@@ -31,7 +31,7 @@ Cloud Foundation Kit的云数据库如果要实现监听云侧数据变化，需
 1. 创建云数据库，按照以下步骤完成接入云数据库的准备工作：[新增对象类型](../harmonyos-guides/cloudfoundation-database-add-object.md)、[新增存储区](../harmonyos-guides/cloudfoundation-database-add-zone.md)、[引入对象类型文件](../harmonyos-guides/cloudfoundation-database-add-file.md)、[初始化数据库访问](../harmonyos-guides/cloudfoundation-database-initialize.md)。
 2. [创建函数](../harmonyos-guides/cloudfoundation-create-and-config-function.md#创建函数-1)，在进入到创建触发器页面时，"触发器类型"选择"云数据库触发器"，"存储区"和"对象类型"选择上一步创建云数据库所新增的选项。由于需要监听云数据库数据的所有变化，所以"事件类型"选择"onWrite"。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/c5b-0i5ZTIyV5kNaiY8wwg/zh-cn_image_0000002719018075.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/c5b-0i5ZTIyV5kNaiY8wwg/zh-cn_image_0000002719018075.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F57FB7FE3D304344DAAF3E6AC1F68FAEA793C5F11B244F48203A7432E2A5F1C "点击放大")
 3. 根据实际业务，完成接收到云数据库触发器事件后的云函数代码，调用函数时，入口方法的入参event对象中包含了云数据库触发器传递的信息，具体event对象的字段要求请参见event对象说明中的[云数据库触发器](../AppGallery-connect-Guides/agc-cloudfunction-trigger-event-0000001620581529.md#section207831182811)示例。[入口方法](../harmonyos-guides/cloudfoundation-develop-function-nodejs.md#入口方法)的开发参见[开发函数](../harmonyos-guides/cloudfoundation-develop-function.md)官方文档。
 
 ## 常见FAQ

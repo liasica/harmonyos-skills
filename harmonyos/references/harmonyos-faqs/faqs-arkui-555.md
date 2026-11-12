@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-555
 title: CustomDialog动态设置宽高
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > CustomDialog动态设置宽高
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:20f9daee2fbe7d606510b9990b035b39ba9cd4ed91a13672028fe67e7fcc5e7f
 ---
@@ -93,7 +93,7 @@ content_hash: sha256:20f9daee2fbe7d606510b9990b035b39ba9cd4ed91a13672028fe67e7fc
   + 样式修改的范围：[CustomDialogControllerOptions对象](../harmonyos-references/ts-methods-custom-dialog-box.md#customdialogcontrolleroptions对象说明)支持的参数均可修改，如width、maskColor、offset等。
   + 效果如下：点击change按钮后，创建了一个新的弹窗，改变了原弹窗的宽度。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/whF61MwLT32jSCXKYiMZWQ/zh-cn_image_0000002628551602.gif "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/whF61MwLT32jSCXKYiMZWQ/zh-cn_image_0000002628551602.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=39E453EE6C01B0316BAE544E8273349EC4355408242FD58F4106A6F0B3218B63 "点击放大")
 * **方案二**：使用ComponentContent封装弹窗的UI，使用PromptAction控制弹窗的显隐，使用ComponentContent的update方法更新弹窗，实现动态修改弹窗样式的效果。
 
   ```screen
@@ -139,7 +139,7 @@ content_hash: sha256:20f9daee2fbe7d606510b9990b035b39ba9cd4ed91a13672028fe67e7fc
   + 可以在弹窗展示的过程中动态修改样式，只要update方法支持传递的参数均可用于动态修改样式。
   + 效果如下：在弹窗显示的过程中，更新弹窗的文字。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/jBU6q9ZhREynUK34iNOmQg/zh-cn_image_0000002628391704.gif "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/jBU6q9ZhREynUK34iNOmQg/zh-cn_image_0000002628391704.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=72EAA074EFA478D8FB57412E5B735B1583CEF8E5640A35C466A326BD229A1D16 "点击放大")
 * **方案三**：和方案二一样使用PromptAction显示弹窗，使用updateCustomDialog更新弹窗样式，但目前仅支持更新alignment、offset、autoCancel、maskColor四种属性。使用方法可参考[updateCustomDialog](../harmonyos-references/arkts-apis-uicontext-promptaction.md#updatecustomdialog12)下方的代码示例。
 
 ## 常见FAQ

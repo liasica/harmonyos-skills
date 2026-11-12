@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-color-e
 title: 色彩
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 动画效果 > 色彩
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:15+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:ecea2be2ecf474405cbd28a77517d5fe959e51e40a1a383ae75591f40f19e073
 ---
@@ -105,7 +105,7 @@ struct LinearGradientDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/nwHKlwRlTKifHRzCKCtVtQ/zh-cn_image_0000002786519102.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/nwHKlwRlTKifHRzCKCtVtQ/zh-cn_image_0000002786519102.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E04862ED3549594AF93E646656C0D44ACBC97AA246A72750B7A3D287B05786D)
 
 ## 为组件添加角度渐变效果
 
@@ -218,7 +218,7 @@ struct SweepGradientDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/7mGxiKfCQw-q_-3xYmiGGw/zh-cn_image_0000002786359174.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/7mGxiKfCQw-q_-3xYmiGGw/zh-cn_image_0000002786359174.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=11720432AD998CAB93E39B5072453E120D6D879048BAB1F8D1546A0EF676CB57)
 
 ## 为组件添加径向渐变效果
 
@@ -325,4 +325,4 @@ struct RadialGradientDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/CiFN9vJOQDOVtmcVwG84gg/zh-cn_image_0000002815558595.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/CiFN9vJOQDOVtmcVwG84gg/zh-cn_image_0000002815558595.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=79CE49F650A9AD7666CF83B97BFEC9A62AD0FA105ADE99BA4947AEE4C38BE728)

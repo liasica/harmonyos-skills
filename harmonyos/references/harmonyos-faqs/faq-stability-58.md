@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-5
 title: C++代码如何配置trace打点数据
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > C++代码如何配置trace打点数据
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:40+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-24
 content_hash: sha256:c253fc51dd2056555dd0c2f22774ae5f4883334f8c576295ba7ed58ddef3a2b7
 ---
@@ -29,16 +29,16 @@ OH\_HiTrace\_StartAsyncTraceEx标记一个异步跟踪耗时任务的开始。�
 
 * OH\_HiTrace\_StartTraceEx和OH\_HiTrace\_FinishTraceEx配套使用，要用cpu insight才能看到trace信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/2X-Qyp1zTP2lP_PSmEu6Kg/zh-cn_image_0000002677871739.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/2X-Qyp1zTP2lP_PSmEu6Kg/zh-cn_image_0000002677871739.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=25E8E397FCB74C1B5C8422EB2BC59FD6F71D1D39861D28A166D181BC8F19CC67 "点击放大")
 * OH\_HiTrace\_StartAsyncTraceEx和OH\_HiTrace\_FinishAsyncTraceEx配套使用，Time insight和cpu insight都可以看到trace信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/y9iCQ5-7StivPmm4_D8zZw/zh-cn_image_0000002677872197.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/y9iCQ5-7StivPmm4_D8zZw/zh-cn_image_0000002677872197.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=59FC99AC34584F44041140A7B6BBDECB801D73AC06FBA12D8036B5FE007FC49F "点击放大")
 * 如果是配合ArkTS/HarmonyOS排查函数耗时，用OH\_HiTrace\_StartAsyncTraceEx和OH\_HiTrace\_FinishAsyncTraceEx进行打点，然后使用Profiler的Time insight模板就可以看到。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/wkG7qkhKRfuEiK3SjyFz5g/zh-cn_image_0000002647792546.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/wkG7qkhKRfuEiK3SjyFz5g/zh-cn_image_0000002647792546.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=B1DE1AB70ED47B64BA0A1D2E65FB9E87947A6D8FFFB83A7A6BB72847C789D277 "点击放大")
 * 运行hitrace打点，要在这里添加libhitrace\_ndk.z.so。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/ZD6vf8NYTzekAobz2Dqfcw/zh-cn_image_0000002647792624.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/ZD6vf8NYTzekAobz2Dqfcw/zh-cn_image_0000002647792624.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=65CED974DA9CB77DF8D74DE4D181E65AD16A58236D37E0FF325036F9E1A7DD1B "点击放大")
 
 ## 常见FAQ
 

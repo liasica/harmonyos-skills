@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-513
 title: Text组件如何给文本添加下划线
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Text组件如何给文本添加下划线
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:2b9937be98c0f21b1b56630384e15f1fd3b58043dd8ea48d60ee57ae3e272c01
 ---
@@ -65,7 +65,7 @@ Text组件本身支持decoration属性，设置文本装饰线样式及其颜色
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/fU0vXbi1REqG8DSx2kpcGA/zh-cn_image_0000002658907835.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/fU0vXbi1REqG8DSx2kpcGA/zh-cn_image_0000002658907835.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA472C6E57F1256049D73A94F0055E431BC6ED26DB090A1E7F79BD4F969E3F7E "点击放大")
 * **方案二**：通过Text组件的decoration参数直接设置基础线条样式。
 
   ```screen
@@ -166,7 +166,7 @@ Text组件本身支持decoration属性，设置文本装饰线样式及其颜色
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/G3nPOxFTRqekeA_FhR_K7g/zh-cn_image_0000002658787897.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/G3nPOxFTRqekeA_FhR_K7g/zh-cn_image_0000002658787897.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=5405DE22A7731F49E620B9B651A227A16B55537E66634B49D59CD1295EEF6A42 "点击放大")
 * **方案三**：通过border属性给Text组件添加下边框来实现文字下划线的效果。
 
   ```screen
@@ -261,4 +261,4 @@ Text组件本身支持decoration属性，设置文本装饰线样式及其颜色
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/3XUtvzH8TsibkWVSyuO34Q/zh-cn_image_0000002628388624.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/3XUtvzH8TsibkWVSyuO34Q/zh-cn_image_0000002628388624.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE5556A9F4A7059C757749FE87F9F8032801326984858ABA3F7F70F1217EFB98 "点击放大")

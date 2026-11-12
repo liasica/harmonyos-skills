@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-runnin
 title: 模拟器使用物理键盘无法输入中文
 breadcrumb: FAQ > DevEco Studio > 应用运行 > 模拟器使用物理键盘无法输入中文
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:58+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:eef17645950ab391457c533fa7b46c3c7a9773e84e9437a75b9cc7c3c2a58c39
 ---
@@ -16,4 +16,4 @@ content_hash: sha256:eef17645950ab391457c533fa7b46c3c7a9773e84e9437a75b9cc7c3c2a
 
 模拟器不支持物理键盘输入中文。如需输入中文，点击输入框时会弹出软键盘，使用软键盘进行输入。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/SaKAfxhFTZ2XzIYbmg4l4A/zh-cn_image_0000002654838079.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/SaKAfxhFTZ2XzIYbmg4l4A/zh-cn_image_0000002654838079.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=49935D97018BC6A950A045A73FFF6959ED8C80ABDD45DD4BF480B943DB9F398A)

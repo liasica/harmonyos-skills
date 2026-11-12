@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1346
 title: 视频全屏时顶部有白条，随后消失
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 视频全屏时顶部有白条，随后消失
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:358506e7c52e98a23a970cb161ef6aa70ef420d15370639707d65f06a1a867cc
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:358506e7c52e98a23a970cb161ef6aa70ef420d15370639707d65f06a1a
 
 视频切换到横屏全屏时，页面顶部短暂显示标题栏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/K4cN4rtgR0G-vdUt2qXLkQ/zh-cn_image_0000002658840789.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/K4cN4rtgR0G-vdUt2qXLkQ/zh-cn_image_0000002658840789.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E3B8FE0286A1AF13017654E72A7C17DB6B9A667ECF0C86AB147FC32402D5602 "点击放大")
 
 ## 背景知识
 
@@ -24,7 +24,7 @@ content_hash: sha256:358506e7c52e98a23a970cb161ef6aa70ef420d15370639707d65f06a1a
 
 1. 使用DevEco Testing查看问题组件，问题组件为XComponent组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/-fhf8zZBRLaJdy8FFxGU9w/zh-cn_image_0000002628761412.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/-fhf8zZBRLaJdy8FFxGU9w/zh-cn_image_0000002628761412.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=DDDADF049F63E352E6EF35E2CF123DE125789813815935CA81569C987686ED3E "点击放大")
 2. 排查该XComponent组件的相关设置，全屏时XComponent组件的尺寸重新变化后才触发去除视频上方的标题栏。
 
    ```screen
@@ -630,4 +630,4 @@ struct XComponentTranslation {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/ujZ8rvdwSiSyjt8iz7mNgg/zh-cn_image_0000002658960737.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/ujZ8rvdwSiSyjt8iz7mNgg/zh-cn_image_0000002658960737.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=17DA73988713D429BD8CC3B16934219291F51E27E498D289A011482CC8608A12 "点击放大")

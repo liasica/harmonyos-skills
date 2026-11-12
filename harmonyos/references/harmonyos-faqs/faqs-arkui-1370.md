@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1370
 title: 如何自定义一个既可输入也可下拉选择的文本行
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何自定义一个既可输入也可下拉选择的文本行
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:3d7baf1e6abeb89218bf034269ab968a1f267e56500c9ba006d2c306f8d58428
 ---
@@ -69,7 +69,7 @@ TextInput组件的[showUnit](../harmonyos-references/ts-basic-components-textinp
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/G7z3yFtjRR6qN0ENgd7qug/zh-cn_image_0000002628602038.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/G7z3yFtjRR6qN0ENgd7qug/zh-cn_image_0000002628602038.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=16A1A65D75E207F96736F7604C67DBC0D751C16A1284BCA7038D0613933FD7AE "点击放大")
 * **方案二**：组合使用Stack组件和margin属性自定义实现，示例代码：
 
   ```screen
@@ -140,4 +140,4 @@ TextInput组件的[showUnit](../harmonyos-references/ts-basic-components-textinp
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/6fMn-o-hTW2RpmP2ZDbl6Q/zh-cn_image_0000002628761924.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/6fMn-o-hTW2RpmP2ZDbl6Q/zh-cn_image_0000002628761924.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0794E2105027D274615EC6F96FA78ABF26F9E55DA2B0401DD27A9CF327847F5 "点击放大")

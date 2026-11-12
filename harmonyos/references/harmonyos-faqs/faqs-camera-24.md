@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-24
 title: 视频通话时，画面比例显示异常
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera） > 视频通话时，画面比例显示异常
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:24+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:df91644233f3456e4ceaae3ef95e536ec2223ae58c15d30e7643fe3e1d626652
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:df91644233f3456e4ceaae3ef95e536ec2223ae58c15d30e7643fe3e1d6
 
 视频通话时，画面比例显示异常，画面明显被拉长了。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/J-Z0cXhoQg6h5bnClUZzUw/zh-cn_image_0000002658911779.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/J-Z0cXhoQg6h5bnClUZzUw/zh-cn_image_0000002658911779.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=17D733838E85226E4C742212E56B0709B3C2C778AF569FCF9E8D60C446CE954D "点击放大")
 
 ## 背景知识
 
@@ -266,7 +266,7 @@ content_hash: sha256:df91644233f3456e4ceaae3ef95e536ec2223ae58c15d30e7643fe3e1d6
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/5LdqytFTTJKMOqIHLi_hsw/zh-cn_image_0000002628392564.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/5LdqytFTTJKMOqIHLi_hsw/zh-cn_image_0000002628392564.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC151FF8258F11A096B643C9CCAA5CD43E4E1A4687426C85BFE23AC740AA6FF6 "点击放大")
 * 方案二：根据XComponent的宽高比调整使用的Profile。
 
   ```ts
@@ -439,4 +439,4 @@ content_hash: sha256:df91644233f3456e4ceaae3ef95e536ec2223ae58c15d30e7643fe3e1d6
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/NYeoaDLSSASBXIrk-tTseA/zh-cn_image_0000002658791841.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/NYeoaDLSSASBXIrk-tTseA/zh-cn_image_0000002658791841.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=35CEC8B68DE41F16D76AFFD6752BCD4AEA1DE78F397FC1FD68F4D897078425B6 "点击放大")

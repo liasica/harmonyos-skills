@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-buildin
 title: 手势事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 构建用户界面 > 手势事件
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:18+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-03-09
 content_hash: sha256:0929f020e48576391f2e3c13bc80e1ac2ed4e235bc03608a299f8de17f929b4a
 ---
@@ -112,4 +112,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/A6qAs2pBRHCBBThcqtQ1KA/zh-cn_image_0000002815558711.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/A6qAs2pBRHCBBThcqtQ1KA/zh-cn_image_0000002815558711.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=8612E10DFE673F6A691BC8833B7A7B8BF24E952EE813C0C542832C1A5A906A71)

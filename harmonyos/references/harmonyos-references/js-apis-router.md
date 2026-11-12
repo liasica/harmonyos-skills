@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-r
 title: "@ohos.router (页面路由)(不推荐)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.router (页面路由)(不推荐)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:59+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:5160b30b7d57aa1a49901ebf681dc80edfcdb55c5aef518fb188369c1db92bf0
 ---
@@ -2007,4 +2007,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/pPHYyi-TRnKvzuWshqsmLg/zh-cn_image_0000002815560335.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/pPHYyi-TRnKvzuWshqsmLg/zh-cn_image_0000002815560335.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B564B33304A53897A0C8B7FB1A278240BEA555D96E10A1766C30520D8AB6522)

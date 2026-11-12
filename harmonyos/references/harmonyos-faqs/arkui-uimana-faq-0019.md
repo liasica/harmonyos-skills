@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-fa
 title: ArkUI手势常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > ArkUI手势常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:33+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:377e4a471c065c929486aa38b6fb519b9c6e35be349974ec2b618fae2ecabb37
 ---
@@ -315,7 +315,7 @@ struct Page {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/vx3-BkqURCqWrZhU-_nvLw/zh-cn_image_0000002765940926.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/vx3-BkqURCqWrZhU-_nvLw/zh-cn_image_0000002765940926.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=046D983F58F3DA073AD57233FF38287B3AB2E5674569E453216802DC069C6C84 "点击放大")
 
 **Q：Grid上下左右拖拽动画如何实现？**
 
@@ -492,7 +492,7 @@ struct ImageMovePage {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/yKxI9wdNSiqGXxQ4gIR69A/zh-cn_image_0000002765940938.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/yKxI9wdNSiqGXxQ4gIR69A/zh-cn_image_0000002765940938.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=33ECE63FDE4D4F3A37561D046DC6E19B00116F0305A0609B807A58F724E6CA63 "点击放大")
 
 **Q：横向的进度条嵌套在Scroll组件中，当触摸进度条时，手指不抬起进行拖动操作，若拖动操作起始为上下，那么后续的拖动只会影响Scroll的滚动。相反，若拖动操作起始为左右，那么后续拖动只会影响Slider进度条的变化，无法影响Scroll滚动。如何实现在单次拖动内Scroll组件和Slider进度条同时响应拖动操作？问题代码如下：**
 
@@ -628,7 +628,7 @@ struct ScrollSlider {
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/wO0JmuKJQE2MUXQZoR5qJg/zh-cn_image_0000002795500381.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/wO0JmuKJQE2MUXQZoR5qJg/zh-cn_image_0000002795500381.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DE8326F34220B9232002B60A2FCAC7B1119C647FBBA6C537144E12025128EA6 "点击放大")
 
 **说明** 
 
@@ -715,7 +715,7 @@ struct GestureDragAndSwiper {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/XdsqqkYASoKd0w_AT8w1eg/zh-cn_image_0000002766100870.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/XdsqqkYASoKd0w_AT8w1eg/zh-cn_image_0000002766100870.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=CEE9EB527BE9EA0449BFDBD1ABA917602CAEFF9A77FE2BEA9CD3742C2A1B115E "点击放大")
 
 **Q：场景二中除了使用优先识别手势priorityGesture，还有其他替代方案吗？**
 
@@ -754,7 +754,7 @@ export struct Index {
 
 实际问题：手势操作只在上层D、E、F组件上适配，无法将手势操作透传给下层目标组件B。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/9fbKHPlsSfObpGYvp6uU-A/zh-cn_image_0000002795339639.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/9fbKHPlsSfObpGYvp6uU-A/zh-cn_image_0000002795339639.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=9733D65485A121895A75DBD3BDA73CF3430C72BDD2275FA8D99BD3A3BB3D1419 "点击放大")
 
 **A**：针对业务场景代码梳理UI层级，预期将上层手势响应事件不作处理透传到下层组件进行处理，根据hitTestBehavior类型说明，选择HitTestMode.None模式，达到上层不响应，传递至子节点响应。
 
@@ -895,7 +895,7 @@ Executing a gesture:ComponentB
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/mZ8E4EE5Te-XHiBncgYxVw/zh-cn_image_0000002766100874.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/mZ8E4EE5Te-XHiBncgYxVw/zh-cn_image_0000002766100874.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=101147F89080A790E94D6F7AC332754ED62553D281B9C9CE5D815479B9F0D1CE "点击放大")
 
 **Q：页面有多个按钮，其中一个按钮用于控制按钮能否拖动，如何实现按钮可通过滑动手势改变位置，并在退出应用时保存按钮的位置？**
 
@@ -1022,4 +1022,4 @@ Executing a gesture:ComponentB
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/mSdZnDz1Si-mTGClgt2ZlQ/zh-cn_image_0000002795499441.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/mSdZnDz1Si-mTGClgt2ZlQ/zh-cn_image_0000002795499441.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5D070E5ABE1B9940B1ECA0EF51E121981599279DE2D90C9DC09434E2DA3D0D3 "点击放大")

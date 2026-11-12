@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: Tips控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 弹窗控制 > Tips控制
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-14
 content_hash: sha256:7e73a4c1ce6e32cf2fc02b8f9dad307c92ba10d62d9a5d5d3d993aa4ea2af244
 ---
@@ -106,7 +106,7 @@ struct TipsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/JsCBd4zRRVmOGOmeIz05tw/zh-cn_image_0000002786361048.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/JsCBd4zRRVmOGOmeIz05tw/zh-cn_image_0000002786361048.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=01369398689F86A83ED1CF55DD67B1353E24D8DB87ADF9AB5B3B61C88DBFB628)
 
 ### 示例2（多个悬浮气泡的显示和消失）
 
@@ -145,7 +145,7 @@ struct TipsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/qWszGOBVQ_mk2BuowjkMcQ/zh-cn_image_0000002815560469.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/qWszGOBVQ_mk2BuowjkMcQ/zh-cn_image_0000002815560469.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=EFDB6FEFCF396AB7BAD6154914991EB7A46C0696EEB344EF6C3EDC97D2D1250E)
 
 ### 示例3（设置悬浮气泡的沉浸光感视效）
 
@@ -182,8 +182,8 @@ struct TipsExample {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/QBY2j_vySZSp1p1HKVCqjA/zh-cn_image_0000002815400553.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/QBY2j_vySZSp1p1HKVCqjA/zh-cn_image_0000002815400553.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=3379838A3978A0EB276B2C205A715C06F48EF6EE0E1EC8AE7D51D4C0E161C9A6)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/tIgw2_VvRsWrhwJLpFUelA/zh-cn_image_0000002786520978.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/tIgw2_VvRsWrhwJLpFUelA/zh-cn_image_0000002786520978.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=455285CAE13CB54F19B6B9768264159E39751CE471A8CB5718DE16460617FCE8)

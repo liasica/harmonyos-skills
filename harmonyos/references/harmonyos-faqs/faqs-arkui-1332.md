@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1332
 title: 如何隐藏PatternLock控件的解锁轨迹
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何隐藏PatternLock控件的解锁轨迹
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:39eab63006db0046e29ffa1fd11549e9724b2c5644fdf40f01b18221cfb31d53
 ---
@@ -14,7 +14,7 @@ HarmonyOS如何隐藏图案锁PatternLock控件的解锁轨迹。
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/A3FyO1IdRFSptYk5LiEFHg/zh-cn_image_0000002628599896.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/A3FyO1IdRFSptYk5LiEFHg/zh-cn_image_0000002628599896.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=EAFB352BD0BBA620644153D8668EBA1FD8F34BF30EF692746F2BA7473256D21B "点击放大")
 
 ## 背景知识
 
@@ -38,7 +38,7 @@ PatternLock()
 
 解锁效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/DXJocjL-QmS-QrtKdBUQEQ/zh-cn_image_0000002628759800.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/DXJocjL-QmS-QrtKdBUQEQ/zh-cn_image_0000002628759800.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=7DAC539AE9D9B0BDAE7536D62BCADE66B5BE56496565895CB8F6C2B74C37E5B5 "点击放大")
 
 ## 解决方案
 
@@ -93,7 +93,7 @@ struct HiddenPatternLock {
 
 在日志中会打印出选择的数字，截图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/Jlxetj7FQS2kzZ81GIVtPg/zh-cn_image_0000002658959115.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/Jlxetj7FQS2kzZ81GIVtPg/zh-cn_image_0000002658959115.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=959F09376F9759D10E652D834564CB9EA88C7F73DEBF9C73431BFDB54FEF1F8D "点击放大")
 
 ## 常见FAQ
 
@@ -141,4 +141,4 @@ struct SelectedPatternLock {
 
 运行效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/h1YCS8e4TY-A6QWXv6u2eQ/zh-cn_image_0000002658839165.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/h1YCS8e4TY-A6QWXv6u2eQ/zh-cn_image_0000002658839165.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A87553E068E4D8E5C25B93F6D70F69164846E8C03961DDBB67749D0543497EF "点击放大")

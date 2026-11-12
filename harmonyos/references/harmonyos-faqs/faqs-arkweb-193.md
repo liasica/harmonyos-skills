@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-193
 title: ArkWeb本地资源跨域问题和解决方案
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > ArkWeb本地资源跨域问题和解决方案
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:697319448faa2569af4828fb380ddad437f91bc4144a3bec385316b1935de4b3
 ---
@@ -49,7 +49,7 @@ content_hash: sha256:697319448faa2569af4828fb380ddad437f91bc4144a3bec385316b1935
 
   1. 如果设置跨域的路径为resourceDir，对应静态资源目录为应用resources目录下的resfile目录（与rawfile目录同级）；
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/3F6n_0R2Tg-j0fLof_kyxA/zh-cn_image_0000002659138445.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/3F6n_0R2Tg-j0fLof_kyxA/zh-cn_image_0000002659138445.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=425E362522CBC0F82AEAC730D61449C11B1B76EF8507A949DC2155C7249010F6)
   2. 如果设置跨域路径为应用文件目录的子目录，不能直接指定应用沙箱目录，需要指定应用沙箱目录的子目录。例如不能直接指定沙箱文件目录/data/storage/el2/base/haps/entry/files，需要指定文件目录下的子目录，如：/data/storage/el2/base/haps/entry/files/example。
 
   方案二：参考[本地资源跨域问题解决方法](../harmonyos-guides/web-cross-origin.md#本地资源跨域问题解决方法)的方法一，使用http或https协议替代file或resource协议，即先加载自定义构造的http或者https的URL，再结合Web的设置请求拦截器接口如[onInterceptRequest()](../harmonyos-references/arkts-basic-components-web-events.md#oninterceptrequest9)拦截替换加载资源。

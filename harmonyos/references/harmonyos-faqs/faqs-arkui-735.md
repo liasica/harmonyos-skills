@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-735
 title: 解决Row容器空间不足时子组件消失的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 解决Row容器空间不足时子组件消失的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:40+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:78732aaf65c1b3a0ac1e72d558faaf5953330d5c74dbe0444b5c1c844a107e74
 ---
@@ -51,11 +51,11 @@ struct Index {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/CZ0gE1w2SNe09M8j71qWhg/zh-cn_image_0000002628395322.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/CZ0gE1w2SNe09M8j71qWhg/zh-cn_image_0000002628395322.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F99E3468CC02D76088012E1E49005252FE9DB9C3BDED11F3E9E9D43B0DCFB55 "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/djTi08lrRB-WKEYy_uNnog/zh-cn_image_0000002658794597.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/djTi08lrRB-WKEYy_uNnog/zh-cn_image_0000002658794597.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=932D03AF04033CC7B00E7F58C97E4B2A5C7543C984F6DB62A7C1935C889B79A0 "点击放大")
 
 ## 背景知识
 

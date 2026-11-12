@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multi-window-
 title: 应用布局适配智慧多窗
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口模式 > 智慧多窗应用开发指导 > 应用布局适配智慧多窗
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:69bbcb77400306f777335d593b6aaeeb1db728ca7538adb185882808b21b092f
 ---
@@ -36,7 +36,7 @@ content_hash: sha256:69bbcb77400306f777335d593b6aaeeb1db728ca7538adb185882808b21
 
 目前支持两种分屏样式：“上下分屏”和“左右分屏”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/pKfr3nw-S0q7YnNC84vvqg/zh-cn_image_0000002786519332.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/pKfr3nw-S0q7YnNC84vvqg/zh-cn_image_0000002786519332.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8C81B8774D96F174D40D1BD17317548DD0805E71CD422771B1F926C06C9373A)
 
 分屏比例指的是分屏下两应用间尺寸的比例，调整分屏比例会调整应用窗口的大小。
 
@@ -119,4 +119,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/AeHnv0OaROS4ZhgbwWywwg/zh-cn_image_0000002786359404.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/AeHnv0OaROS4ZhgbwWywwg/zh-cn_image_0000002786359404.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=A244ADBADA1D78CA764BEF1E4BF41A50FC7BC5AD8DD0CD0290B44EA4C3ECF339)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1191
 title: 应用未显示系统导航栏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 应用未显示系统导航栏
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:30+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:2b1640634afeb0a81f6b24dc6fbb043ba23426bb944fe13fd9d0dffde3372fc9
 ---
@@ -14,11 +14,11 @@ content_hash: sha256:2b1640634afeb0a81f6b24dc6fbb043ba23426bb944fe13fd9d0dffde33
 
 期望效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/VqF2AlErRq2Cu9ZAQVeUHw/zh-cn_image_0000002628752866.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/VqF2AlErRq2Cu9ZAQVeUHw/zh-cn_image_0000002628752866.png?HW-CC-KV=V1&HW-CC-Date=20261112T233149Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE97694515AC0DF3B0328C05F175322154EBF498590D192229988A0D49DF6227 "点击放大")
 
 实际效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/AytyJQ3kSAeXyM2GzjDCzQ/zh-cn_image_0000002658952185.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/AytyJQ3kSAeXyM2GzjDCzQ/zh-cn_image_0000002658952185.png?HW-CC-KV=V1&HW-CC-Date=20261112T233149Z&HW-CC-Expire=31536000000&HW-CC-Sign=4CB5DE948DA9DA9A0C62B85D2EC9B30880454CC10A9BAAABC9DA3A6EFF66397A "点击放大")
 
 ## 背景知识
 
@@ -96,7 +96,7 @@ content_hash: sha256:2b1640634afeb0a81f6b24dc6fbb043ba23426bb944fe13fd9d0dffde33
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/bA5cQvAtTMO9jwLj2srNng/zh-cn_image_0000002628592972.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/bA5cQvAtTMO9jwLj2srNng/zh-cn_image_0000002628592972.png?HW-CC-KV=V1&HW-CC-Date=20261112T233149Z&HW-CC-Expire=31536000000&HW-CC-Sign=56673BB8AFB2AF100892C152ADA40E0B1AB4EC514AD33D981CFF2D2E65D86138 "点击放大")
 * 场景二：使用setSpecificSystemBarEnabled方法设置导航条显示。
 
   ```ts
@@ -135,4 +135,4 @@ content_hash: sha256:2b1640634afeb0a81f6b24dc6fbb043ba23426bb944fe13fd9d0dffde33
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/hQoTIFcoT-m8XUxeS7G7cw/zh-cn_image_0000002658832227.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/hQoTIFcoT-m8XUxeS7G7cw/zh-cn_image_0000002658832227.png?HW-CC-KV=V1&HW-CC-Date=20261112T233149Z&HW-CC-Expire=31536000000&HW-CC-Sign=ECC890F219737B9F9E3CF7C5FA318EAB8448951EEB5474E964687839826847F7 "点击放大")

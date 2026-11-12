@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/implement-sys
 title: 实现录制系统音频
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频录制 > 开发录制系统音频(内录)功能 > 实现录制系统音频
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:59+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:7722ce3b0f240b405051f7f7babb1c67d5c183b79a3c3e9a2e919ae4a06ce881
 ---
@@ -42,7 +42,7 @@ C/C++开发建议搭配[OH\_AudioStreamBuilderStruct](../harmonyos-references/ca
 
 **系统弹框示意图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/O9Q4szKqR9iprQTsDAsHCQ/zh-cn_image_0000002815559267.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/O9Q4szKqR9iprQTsDAsHCQ/zh-cn_image_0000002815559267.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=1CE6EF89827D6C6CFBE060ECCDEFF4B26B2651B194493426A7FA59AA778D34BB "点击放大")
 
 ### 开发步骤及注意事项(ArkTS)
 

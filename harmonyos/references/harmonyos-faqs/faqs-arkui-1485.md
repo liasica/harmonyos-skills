@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1485
 title: 使用clipShape进行裁剪后，borderRadius无法生效怎么处理
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 使用clipShape进行裁剪后，borderRadius无法生效怎么处理
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:24+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:64be248701de092b54964c380ebfa6dc4e446dfe57698d0298cc874cdb0a6bda
 ---
@@ -35,7 +35,7 @@ struct IrregularShape {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/bqRt7q5SQ2yQOW-iedWhPw/zh-cn_image_0000002658965027.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/bqRt7q5SQ2yQOW-iedWhPw/zh-cn_image_0000002658965027.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=9191993875DF31081EB6913DAE6E7C96EB0587745D7161BD479E0DD319FCF749 "点击放大")
 
 ## 背景知识
 
@@ -140,7 +140,7 @@ borderRadius属性从规格上是相对于组件的大小而言的，当组件�
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/e6jkLZibR12nwta6bSxbQQ/zh-cn_image_0000002628605822.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/e6jkLZibR12nwta6bSxbQQ/zh-cn_image_0000002628605822.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=62BE955CC506DAA3C78E90D1C6CC00892CFB616AFC02C6AA4E62474E41C07388 "点击放大")
 * **方案二：绘制带圆角的组件**。
 
   某些场景下可能需要绘制出带有圆角或其他形状的图形，此时可以使用Path组件进行绘制。
@@ -174,7 +174,7 @@ borderRadius属性从规格上是相对于组件的大小而言的，当组件�
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/lZgd4KiATZe5V0hDu_J10A/zh-cn_image_0000002658845075.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/lZgd4KiATZe5V0hDu_J10A/zh-cn_image_0000002658845075.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1A5432485DF7AA8DEE9650880EB77D3D87E987F0790880B44116F3584EE41DE "点击放大")
 
 ## 总结
 

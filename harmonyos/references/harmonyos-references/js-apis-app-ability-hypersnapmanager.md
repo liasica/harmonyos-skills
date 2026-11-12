@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.hyperSnapManager (应用快启管理)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.app.ability.hyperSnapManager (应用快启管理)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:31+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:d0bf70ec94025bae56cc60adc93dc6c5a82174d9a8cfef2607f3677f90c702ed
 ---
@@ -20,7 +20,7 @@ content_hash: sha256:d0bf70ec94025bae56cc60adc93dc6c5a82174d9a8cfef2607f3677f90c
 
 **图1** 快启启动流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/klAKjzEFRs-tOAg_aJKheg/zh-cn_image_0000002786360858.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/klAKjzEFRs-tOAg_aJKheg/zh-cn_image_0000002786360858.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=DAF7776DA2FD08E92536E187BDACED4E9205FF44BB6B1BF7B55F5971A4DC8CF4)
 
 ## 导入模块
 

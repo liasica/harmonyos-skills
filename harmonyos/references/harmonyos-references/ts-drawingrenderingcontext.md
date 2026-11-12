@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: DrawingRenderingContext
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > DrawingRenderingContext
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:78ba1ba615bbf2a01e830df0342c2b7d885789d9086c6f6962f4b4ded3c2a375
 ---
@@ -169,11 +169,11 @@ struct CanvasExample {
 
 图1 绘制圆心为(200, 200)，半径为100的圆，填充色为RGBA(39, 135, 217, 255)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/D1Nudxa3RPmlUU3oTMlb0A/zh-cn_image_0000002815400983.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/D1Nudxa3RPmlUU3oTMlb0A/zh-cn_image_0000002815400983.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F2AC5941A1E5C5BF66052241034DED64EC0D2C7EACB6B78E9ADFC1EC2B90A36)
 
 图2 点击Clear按钮清空画布
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/JeKfOmBWSzq3t1_c231Cjw/zh-cn_image_0000002786521408.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/JeKfOmBWSzq3t1_c231Cjw/zh-cn_image_0000002786521408.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=729302BA3DBA23462EE1EB88107065D386B67696FAB7CF29FA34A1E8D29D682D)
 
 ### 示例2（绘制文本）
 
@@ -215,4 +215,4 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/2yGp16n3SnGOSJoSBkPJtw/zh-cn_image_0000002786361480.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/2yGp16n3SnGOSJoSBkPJtw/zh-cn_image_0000002786361480.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=7282940DA25DFC8173E076DD790DC9D9AC77FE59EEC1597957FD330B271E14D3)

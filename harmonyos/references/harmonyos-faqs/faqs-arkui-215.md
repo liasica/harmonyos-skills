@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-215
 title: 如何动态控制键盘绑定在不同的TextInput上
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何动态控制键盘绑定在不同的TextInput上
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:02+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:10966c841bcfaed9c724283b1c62502c3ea035b0f09b0d91334c4760610bd0ce
 ---
@@ -63,7 +63,7 @@ struct DynamicControlKeyboard {
 
 效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/wGDETjghRXOD3CicJeBXmQ/zh-cn_image_0000002624475924.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/HP-KjRIjTjOLpXTeWZx2Og/zh-cn_image_0000002654835233.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/wGDETjghRXOD3CicJeBXmQ/zh-cn_image_0000002624475924.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=645FD7B77A8019041AF9E4DFF1631E8990FD47F85BE22C32F5B8FF1BDC8F726D)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/HP-KjRIjTjOLpXTeWZx2Og/zh-cn_image_0000002654835233.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=C79D21381D18D8B140C0EFD7690E4C581445AE283C44CCA093B2BD6E91B235F5 "点击放大")
 
 **参考链接**
 

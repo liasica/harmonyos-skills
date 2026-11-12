@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译构建项目无法排除某些目录打包怎么处理
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译构建项目无法排除某些目录打包怎么处理
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:56+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:f254506fbda8ee6dbb2ba9e1c9c1ff1a19ec1ed8859391f9a11186ad431642cb
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:f254506fbda8ee6dbb2ba9e1c9c1ff1a19ec1ed8859391f9a11186ad431
 2. hvigor-config.json5中ohos.compile.lib.entryfile为true，开启从入口文件开始编译；
 3. 模块下的build-profile.json5中buildOptionSet.arkOptions.obfuscation.ruleOptions.enable为true，构建闭源HAR。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/cEkFSjP5RjiHCNTg6yZsLA/zh-cn_image_0000002628409278.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/cEkFSjP5RjiHCNTg6yZsLA/zh-cn_image_0000002628409278.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=2752A86186DE7507F687F5037D708D09EDDA7FFCB3E9945EC2AC159A3FFF4621 "点击放大")
 
 ## 解决方案
 
@@ -34,13 +34,13 @@ content_hash: sha256:f254506fbda8ee6dbb2ba9e1c9c1ff1a19ec1ed8859391f9a11186ad431
 
 a. 如果test文件被其他地方引用了，test.har编译结果如下，发现包含test文件：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/SQqillKUSa6Not2-U4lIcA/zh-cn_image_0000002658808549.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/SQqillKUSa6Not2-U4lIcA/zh-cn_image_0000002658808549.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8E151ACB2F869880B82925853A7D3AB0113D4394B8150ADAA537A485EC17F35 "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/7bKsBGSfTSGNl4XuDOsi5Q/zh-cn_image_0000002628569174.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/7bKsBGSfTSGNl4XuDOsi5Q/zh-cn_image_0000002628569174.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=54CB90BAD4025535BB5B16F7AA10E761F8D9623356A833402201C6C3C60FD409 "点击放大")
 
 b. 如果test文件没有被引用，test.har编译结果如下，此时不包含test文件：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/9okKc7C2TNGJcgSoQ-vSyQ/zh-cn_image_0000002658928499.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/9okKc7C2TNGJcgSoQ-vSyQ/zh-cn_image_0000002658928499.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=44ADD9BCDB375FDAE25315F195F03336D8E98F06C452AD9B74CB9476B6A486C0 "点击放大")
 
 ## 总结
 

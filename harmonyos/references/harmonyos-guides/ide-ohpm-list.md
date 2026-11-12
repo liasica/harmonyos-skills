@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-list
 title: ohpm list
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm list
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-08
 content_hash: sha256:cc9f995ecd92e9969e0c3b94c001c80a75ac139e92812da78605ee9fb3d58385
 ---
@@ -108,7 +108,7 @@ OHPM客户端从5.2.0版本开始，可以在 list 命令后面配置 -r 或者 
 
   结果示例：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/H-uNrMOZTweffHg3oWfQKg/zh-cn_image_0000002779407528.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/H-uNrMOZTweffHg3oWfQKg/zh-cn_image_0000002779407528.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D765D310076D17AD5677C6731D869B65DEC1E169157738859912C20085A83D5 "点击放大")
 * 查看当前项目安装的**某个**三方库的依赖关系
 
   执行以下命令：
@@ -119,7 +119,7 @@ OHPM客户端从5.2.0版本开始，可以在 list 命令后面配置 -r 或者 
 
   结果示例：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/7jnmoVzjTjSC57tRLF5ctQ/zh-cn_image_0000002808767083.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/7jnmoVzjTjSC57tRLF5ctQ/zh-cn_image_0000002808767083.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD1DD21ECBDE9E96DF08739A934F33B56415421CD76F56BC7C802B5A5189DE2B)
 * 查看当前项目所有module安装的**所有**三方库及依赖关系。
 
   执行以下命令：

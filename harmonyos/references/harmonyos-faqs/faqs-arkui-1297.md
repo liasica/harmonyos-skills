@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1297
 title: 如何让每个Tab页签的数据只请求一次
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何让每个Tab页签的数据只请求一次
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:66fbd2ba02ee9b809e7b496a69017bd0394953b7f5a8af5ee3de923426125205
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:66fbd2ba02ee9b809e7b496a69017bd0394953b7f5a8af5ee3de9234261
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/-M-Y2u9bSmSlKpE2neEB_g/zh-cn_image_0000002658837247.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/-M-Y2u9bSmSlKpE2neEB_g/zh-cn_image_0000002658837247.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=241150D23221AA4E93424CC424568833141DBDB6E31656F57085929394550408 "点击放大")
 
 ## 背景知识
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-scan-6
 title: 如何自定义扫码组件的扫码区域
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 扫码服务（Scan） > 如何自定义扫码组件的扫码区域
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:29+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-19
 content_hash: sha256:2143384100f6ead67ea8540a76b332c018a18d51b22544af0b73e6cb69dce7da
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:2143384100f6ead67ea8540a76b332c018a18d51b22544af0b73e6cb69d
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/9yWaLq9BS3-dZtbx2ddT-Q/zh-cn_image_0000002628392620.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/9yWaLq9BS3-dZtbx2ddT-Q/zh-cn_image_0000002628392620.png?HW-CC-KV=V1&HW-CC-Date=20261112T233218Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E170F3D8E6FB6780145F2E46833300C342BFD2C15D4C3841310900F93E40A4E "点击放大")
 
 ## 背景知识
 
@@ -198,7 +198,7 @@ build() {
 
 示例效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/HAhEbr8KS8m2_JsQ99FhFg/zh-cn_image_0000002658791887.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/HAhEbr8KS8m2_JsQ99FhFg/zh-cn_image_0000002658791887.png?HW-CC-KV=V1&HW-CC-Date=20261112T233218Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7DC472A60DB68AED97C42006F7158DC1771FA3260037A1F10969C55CCCC48B4 "点击放大")
 
 完整代码如下：
 

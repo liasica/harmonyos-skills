@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-tablet-27
 title: 平板横屏状态下，页面两侧出现大量黑边
 breadcrumb: FAQ > 多设备场景 > 平板 > 常见问题 > 平板横屏状态下，页面两侧出现大量黑边
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:37+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:698716946832350a681ffac15454920c6013d018e175170c5732109e0c6351b9
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:698716946832350a681ffac15454920c6013d018e175170c5732109e0c6
 
 在平板横屏状态下，播放视频两侧出现了大量黑边。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/IK7nWA3ISNStIDq-3hWixg/zh-cn_image_0000002658911557.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/IK7nWA3ISNStIDq-3hWixg/zh-cn_image_0000002658911557.png?HW-CC-KV=V1&HW-CC-Date=20261112T233219Z&HW-CC-Expire=31536000000&HW-CC-Sign=C2A940F1D039E625FFA1278C8BD90ABB5D07EFEA4BBD02901DE574A6D9BE0ED4 "点击放大")
 
 ## 背景知识
 
@@ -23,10 +23,10 @@ content_hash: sha256:698716946832350a681ffac15454920c6013d018e175170c5732109e0c6
 
 1. 使用[DevEco Testing](https://developer.huawei.com/consumer/cn/download/deveco-testing)查看页面布局，发现该页面使用了XComponent组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/lHJcqRhATa6SQoh2ULX67g/zh-cn_image_0000002628392338.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/lHJcqRhATa6SQoh2ULX67g/zh-cn_image_0000002628392338.png?HW-CC-KV=V1&HW-CC-Date=20261112T233219Z&HW-CC-Expire=31536000000&HW-CC-Sign=D92DF1B0252AA51E9FA2C5EFE182F79641266686496E1124B2EA54CD5AFE4588)
 2. 根据布局查看，发现XComponent组件的宽高属性没有铺满整个屏幕。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/AdqPkzlXSmCEJIkL4G2_mA/zh-cn_image_0000002658791623.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/AdqPkzlXSmCEJIkL4G2_mA/zh-cn_image_0000002658791623.png?HW-CC-KV=V1&HW-CC-Date=20261112T233219Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC171CB6A337D97C6866CDC9A7F787EFCD5E9EDD4B88416D272EB5E5BF4062B1)
 3. 检查代码中是否设置了固定宽高，是否没有通过on('windowSizeChange')接口动态调整布局。示例代码如下：
 
    ```ts

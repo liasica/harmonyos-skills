@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/servicecollab
 title: 跨设备互通（RichEditor控件）
 breadcrumb: 指南 > 系统 > 网络 > Service Collaboration Kit（协同服务） > 跨设备互通（RichEditor控件）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-28
 content_hash: sha256:3747957409030595bd9dfdd64652e31af58a49cf55b3a7eee49e971316e104ac
 ---
@@ -77,19 +77,19 @@ struct Index {
 
 1.在富文本区域右键。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/A9oOMzdJTW2BtUWm1oJgBg/zh-cn_image_0000002786359742.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/A9oOMzdJTW2BtUWm1oJgBg/zh-cn_image_0000002786359742.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1D57D76D0FDA5DCF2740A96A44F3117FC61137DB51BC2FD37EE90B9DDC7D063)
 
 2.选择想要使用的能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/V8gcOib1QA-NJIzbA0Mvuw/zh-cn_image_0000002815559163.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/V8gcOib1QA-NJIzbA0Mvuw/zh-cn_image_0000002815559163.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=22FDE412D955D30602A32DF2D2F4D44D4070B368BFF29B69FEBA5B61862FBFEA)
 
 3.等待对端设备拍照回传。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/RrF78wdxSJC2n4YZaDZmBQ/zh-cn_image_0000002815399247.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/RrF78wdxSJC2n4YZaDZmBQ/zh-cn_image_0000002815399247.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E1F0DADBBB7650BFEF51B7A3F3BF0B7561E82E2BCAC50B6EC88043B78A1D1BE)
 
 4.图片回传后，在光标后面已嵌入一张图片。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/idpMOwZCRDWLOHvOy3Nocw/zh-cn_image_0000002786519672.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/idpMOwZCRDWLOHvOy3Nocw/zh-cn_image_0000002786519672.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC75A7D6A42152EA8FA72D0BB88D113B2BE4C30C351708D66A87F84839F3EDF8)
 
 ## 关闭富文本跨设备互通能力
 

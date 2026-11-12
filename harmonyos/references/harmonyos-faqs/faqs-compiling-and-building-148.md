@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“Invalid tag 'xxx' at 'xxx/xxx.json5'.”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“Invalid tag 'xxx' at 'xxx/xxx.json5'.”
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:5ef102073d87827fd29536aa7b61891f3fb553f768bdfa231de2b0d8f1994565
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:5ef102073d87827fd29536aa7b61891f3fb553f768bdfa231de2b0d8f19
 
 在项目根目录的oh-package.json5文件中定义parameterFile参数配置文件的配置版本号时，使用的tag标签包含不符合要求的字符。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/PCPWqBPTQ0KPshVS1zEnoQ/zh-cn_image_0000002624478632.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/PCPWqBPTQ0KPshVS1zEnoQ/zh-cn_image_0000002624478632.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=717B6D7862218C83E31A43C51228C0FCF11B8B31703C5DD900AFE6BA6A069A0F)
 
 **解决措施**
 

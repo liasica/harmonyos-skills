@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1289
 title: bindSheet底部按钮如何固定
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > bindSheet底部按钮如何固定
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:0141eae6243648ed4f5b1e5f143ed86d57ec7d1b0d02284afbc9994de4387e6f
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:0141eae6243648ed4f5b1e5f143ed86d57ec7d1b0d02284afbc9994de43
 
 问题效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/49HpE5SrQHS_tP8hanQ3-w/zh-cn_image_0000002628757878.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/49HpE5SrQHS_tP8hanQ3-w/zh-cn_image_0000002628757878.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=439D0C94239D55CFBA1F3F789F4A9F584522F27ADA2749B04091CCFE4FC29659 "点击放大")
 
 ## 背景知识
 
@@ -75,7 +75,7 @@ struct SheetTransitionExample {
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/e2Clmf4LSvuO_SZ9nEVWtA/zh-cn_image_0000002658957195.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/e2Clmf4LSvuO_SZ9nEVWtA/zh-cn_image_0000002658957195.png?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=29D1CC72715145B51C8F8FFDAB5D65D380B9F0FFE6E456C0DF7200BB201B9C64 "点击放大")
 
 ## 常见FAQ
 

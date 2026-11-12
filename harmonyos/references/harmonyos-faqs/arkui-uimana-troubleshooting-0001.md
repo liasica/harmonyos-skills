@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-tr
 title: ArkUI一多适配布局问题定位
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 故障排查 > ArkUI一多适配布局问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:32+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-14
 content_hash: sha256:7c20c173a0dd6077cbe92b51a6b6fbbbcccbdcc4ed254c3e8c9c2988337cfbec
 ---
@@ -160,7 +160,7 @@ struct ShoppingPage {
 
 1. 使用UIView查看平板上的页面布局，可见组件存在，只是挤压到了屏幕之外。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/5LuLcYoMSoSb_qzlW9Lm-A/zh-cn_image_0000002760004412.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/5LuLcYoMSoSb_qzlW9Lm-A/zh-cn_image_0000002760004412.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=330AF936136745AC6CFA459FEECC039DB4FADB3D366C733360A8ADFD7222E7E6 "点击放大")
 2. 检查页面的相关组件的尺寸属性是否设置成了固定值。
 
 ### 分析结论

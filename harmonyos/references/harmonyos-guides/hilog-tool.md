@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hilog-tool
 title: hilogtool
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > hilogtool
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:57+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:ad6579c5269ab9d145cdb62d5dc76ef248476fdc52c6aaa47cb33cc8c85d5ea8
 ---
@@ -102,19 +102,19 @@ hilogtool parse --input xxx --output xxx --dict xxx
 
 在当前日志所在目录，通过cmd进入shell窗口，在shell窗口直接执行hilogtool parse，即可进行解析操作，如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/IcRoHohHTKyrStgb0wz03A/zh-cn_image_0000002815399335.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/IcRoHohHTKyrStgb0wz03A/zh-cn_image_0000002815399335.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=1AD2D78E07475DB0976CC9736691EA0C2628F6035B640D0164AF51176AF9C82F)
 
 ### 解析指定目录下的hilog文件
 
 hilogtool parse -i D:\09-temp\dict-test -d D:\09-temp\dict-test
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/g0dJfqwhT5CpUqFbyaVSgg/zh-cn_image_0000002786519760.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/g0dJfqwhT5CpUqFbyaVSgg/zh-cn_image_0000002786519760.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A56F49C4DF69E30379FA48A007F07F1040EE077FEC5130BCDA7F1CF4F7DC4A6)
 
 ### 解析单个hilog文件
 
 hilogtool parse -i D:\09-temp\dict-test\hilog.025.20231020-154659.gz -d D:\09-temp\dict-test
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/z-vr_oDWTwG3vkSTUhMctw/zh-cn_image_0000002786359832.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/z-vr_oDWTwG3vkSTUhMctw/zh-cn_image_0000002786359832.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA3993791ADF1F3D9AD14025A79AD765C36EFE9730AEB2EAD8BA4E998077A50D)
 
 ## 自动化脚本
 
@@ -136,7 +136,7 @@ pause
 
 脚本运行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/newaWYRGR_O-uUenaLHfgA/zh-cn_image_0000002815559253.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/newaWYRGR_O-uUenaLHfgA/zh-cn_image_0000002815559253.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=235E3E42D4F46F2B2D1B3761D7BAED8A4128BFB9993166594527FE43FE3BD204)
 
 ### mac平台脚本
 

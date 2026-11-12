@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-vision-1
 title: 人脸活体检测结果获取方法
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 场景化视觉（Vision） > 人脸活体检测结果获取方法
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:e7dc133a2d9e341e91aa137dc3b0bc461fed428ef2568b3260c359631f57a408
 ---
@@ -31,7 +31,7 @@ successResult.then(data => {
 
 人脸活体检测相对应的页面生命周期状态可参考下图逻辑：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/mMEB0aP5Qq6MeO3rdnbhrQ/zh-cn_image_0000002628394820.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/mMEB0aP5Qq6MeO3rdnbhrQ/zh-cn_image_0000002628394820.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB93EF2ECC27D1FFEBA018DFFD3640DBBDA9A63C0BBA82B278ADF8E55FD6B0FD "点击放大")
 
 **检测开始**：页面A点击开始检测按钮调用https://developer.huawei.com/consumer/cn/doc/harmonyos-references/vision-interactive-liveness#startlivenessdetection()，进入检测页面B，此时页面A进入onPageHide()阶段，页面B进入onPageShow()阶段。
 

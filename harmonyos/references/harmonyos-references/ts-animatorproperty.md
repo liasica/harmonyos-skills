@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-animat
 title: 属性动画 (animation)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 属性动画 (animation)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-04
 content_hash: sha256:c6cb08287c83b94bc90e438189c8850a20062efa5cf3a3613089f98cc54a2b97
 ---
@@ -149,4 +149,4 @@ struct AttrAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/bZrMeM5YS3aDWE5b3cNrHQ/zh-cn_image_0000002786521476.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/bZrMeM5YS3aDWE5b3cNrHQ/zh-cn_image_0000002786521476.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0D421C98EE5B6BFFFF41388BFFEE82ABBBF938B1C6F6D28DFA177647B9DAC18)

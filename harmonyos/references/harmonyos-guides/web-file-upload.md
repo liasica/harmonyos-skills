@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-file-uplo
 title: 使用Web组件上传文件
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页文件上传与下载 > 使用Web组件上传文件
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:76c60cdd6631407b04f7c73485d0e6fb85149605d4e4d108062bf0e9b09997d4
 ---
@@ -68,7 +68,7 @@ struct WebComponent {
   </html>
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/93h8lyY7STSF-wtOacm82A/zh-cn_image_0000002815398953.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/93h8lyY7STSF-wtOacm82A/zh-cn_image_0000002815398953.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=7015978994413DC145E4F49F35C9ABBA23F89ED4995CEEE4170A7634F54DC1FC)
 
 ## 使用onShowFileSelector拉起图库
 
@@ -129,7 +129,7 @@ struct WebComponent {
   </html>
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/-ZPKfpIeRKqE5aAwjAelTw/zh-cn_image_0000002786519378.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/-ZPKfpIeRKqE5aAwjAelTw/zh-cn_image_0000002786519378.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B1529809E2B57CF4C663B9C2D4EFE7CD4CBD4718B9D689D0CB817A5FA19CACF)
 
 ## 使用onShowFileSelector拉起相机
 
@@ -227,7 +227,7 @@ HTML页面代码
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/QuW6BjLpTKSXt8iu8yTv2w/zh-cn_image_0000002786359450.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/QuW6BjLpTKSXt8iu8yTv2w/zh-cn_image_0000002786359450.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5A1ADC5DA2DCCC25A30AEB4E0FF9102AC55DC3B559DF252E81D2061181DC6F2)
 
 ## 使用ArkWeb默认的方式处理文件上传请求
 
@@ -322,7 +322,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/jRK2ZIx3SlOqzpouQ2SrVQ/zh-cn_image_0000002815558871.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/jRK2ZIx3SlOqzpouQ2SrVQ/zh-cn_image_0000002815558871.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=06F592664C6612CD3BCA3FC32DC3D501EF7C63038BAF6CCEC89405AEC1210BE7)
 
 ## 自定义处理JS接口拉起的文件请求
 
@@ -474,7 +474,7 @@ struct WebComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/ZyFPe8WAQ9iPudiawFlccA/zh-cn_image_0000002815398955.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/ZyFPe8WAQ9iPudiawFlccA/zh-cn_image_0000002815398955.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=268D1C6CFB3A722762EC9472E8BFDC87F7D169885465D8C8C0909792DF1CDC00)
 
 样例以HTML中的showSaveFilePicker()配合ArkTS中documentViewPicker.save()方法为例。
 

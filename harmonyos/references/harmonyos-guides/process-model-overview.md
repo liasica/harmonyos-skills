@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/process-model
 title: 进程模型概述
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 进程模型 > 进程模型概述
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:50:58+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:f71c7d69c1c6586fc79e1ac681a2d8a4cb142769f87030d58605ef65022d48c0
 ---
@@ -32,7 +32,7 @@ HarmonyOS的进程模型则以组件为中心，大多数情况下应用并不�
 
 **图1** 基本进程类型
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/HRr3tKgcSnyD4zPv1CGm_Q/zh-cn_image_0000002815397905.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/HRr3tKgcSnyD4zPv1CGm_Q/zh-cn_image_0000002815397905.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=334DFCB1AA76DFE962A4031A26060BBB430E924031C4215F36311996C4D8DBDB)
 
 **说明** 
 
@@ -53,4 +53,4 @@ HarmonyOS的进程模型则以组件为中心，大多数情况下应用并不�
 
 **图2** 独立进程配置和子进程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/KvG9r35URz6P8KAmO9RWwQ/zh-cn_image_0000002786518330.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/KvG9r35URz6P8KAmO9RWwQ/zh-cn_image_0000002786518330.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=65627AD6C3C634FA7BB6187A0270D9E3AA71861C0270FEAB32C8558C962B141F)

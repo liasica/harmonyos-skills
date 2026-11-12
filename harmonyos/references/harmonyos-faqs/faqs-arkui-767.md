@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-767
 title: TextArea拉起键盘的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > TextArea拉起键盘的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:e943c7b75e5bb3497a6f79e3a11817658f338719e3f327cf35655d0d5b8c5100
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:e943c7b75e5bb3497a6f79e3a11817658f338719e3f327cf35655d0d5b8
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/yZ3V2317Ra60a_th0aLgAA/zh-cn_image_0000002658915019.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/yZ3V2317Ra60a_th0aLgAA/zh-cn_image_0000002658915019.png?HW-CC-KV=V1&HW-CC-Date=20261112T233202Z&HW-CC-Expire=31536000000&HW-CC-Sign=5FEB6938F8F9EA93953378164DE2340727A2A7B5DB2CECFE57C48DA235ED4EEC "点击放大")
 
 ## 背景知识
 

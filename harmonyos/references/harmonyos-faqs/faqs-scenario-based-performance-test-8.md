@@ -3,11 +3,11 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-scenario-b
 title: 卡顿率显示的视频时间与下面给的视频图片集编号对不上，是什么原因
 breadcrumb: FAQ > DevEco Testing > 专项测试 > 场景化性能测试 > 卡顿率显示的视频时间与下面给的视频图片集编号对不上，是什么原因
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:04+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:4dd1a55e8813f5f2e3205bbe5f45175df6e06daea1a310148d98142c1687df3f
 ---
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/B8kedxQLQq6UUxpNwdM-wQ/zh-cn_image_0000002624638876.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/B8kedxQLQq6UUxpNwdM-wQ/zh-cn_image_0000002624638876.png?HW-CC-KV=V1&HW-CC-Date=20261112T233218Z&HW-CC-Expire=31536000000&HW-CC-Sign=88FFA2F54663DCA3DA14C6D361A10F95DEE2F04E49259B11A2513B535605B747 "点击放大")
 
 卡顿率指标关注设备的时间性能，可以与trace中RenderService帧的上屏时间相对应。提供的帧图片集仅供参考。

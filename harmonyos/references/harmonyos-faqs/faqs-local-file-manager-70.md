@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 如何使用DownloadFileButton组件保存文件
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 如何使用DownloadFileButton组件保存文件
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:945e8fdfc7201ca6f97c380a632ee20e99e13b926a10bf7be52d02c595563358
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:945e8fdfc7201ca6f97c380a632ee20e99e13b926a10bf7be52d02c5955
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/sjaQGSpIS5-q7XCJnMRvyw/zh-cn_image_0000002629059026.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/sjaQGSpIS5-q7XCJnMRvyw/zh-cn_image_0000002629059026.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6715F1D50DAAAF2CAD4C64AC4D746184C9934CDD44B05D3AED5C53E4A1D4D22 "点击放大")
 
 ## 背景知识
 

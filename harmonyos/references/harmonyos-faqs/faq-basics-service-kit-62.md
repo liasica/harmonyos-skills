@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-basics-serv
 title: 如何获取HarmonyOS手机系统版本信息
 breadcrumb: FAQ > 系统开发 > 基础功能 > 基础服务（Basics Service） > 如何获取HarmonyOS手机系统版本信息
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:22f14c00c16c9369db37c05232d6d4610fdebf896da141b3bfcfe4ad77891978
 ---
@@ -62,4 +62,4 @@ struct Index {
 
 可从日志中获取系统版本号信息：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/5C98-4vUR9aBeA6VoWqqDg/zh-cn_image_0000002628773844.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/5C98-4vUR9aBeA6VoWqqDg/zh-cn_image_0000002628773844.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=25768C75D1FD7954C6D1D9512EC68B8A27ED00EA6B867C6E4793CD4BB5E6D9EB "点击放大")

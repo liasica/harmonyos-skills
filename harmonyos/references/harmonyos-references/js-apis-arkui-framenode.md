@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: FrameNode
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > arkui > FrameNode
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:03+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:ae43a585beaa010de65b083e26c006ee8399314c1a2009b3ae6d712c004aba9e
 ---
@@ -1886,7 +1886,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/Am7kqSlPSuKn2B3fUOfzZA/zh-cn_image_0000002815400435.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/Am7kqSlPSuKn2B3fUOfzZA/zh-cn_image_0000002815400435.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=705C693CE61A1F3A5C4F2A1809868F41FE4C816B6E21FA881E2C199C43A26623)
 
 ### commonAttribute12+
 
@@ -2418,7 +2418,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/_1vgyXfdS6yLU8BDUz6npw/zh-cn_image_0000002786520860.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/_1vgyXfdS6yLU8BDUz6npw/zh-cn_image_0000002786520860.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=D56430F514DF4470C3D9C1C1C31F15E9110481A42C9B8E4D9829BE3A1F2766B1)
 
 ### setCrossLanguageOptions15+
 
@@ -9305,7 +9305,7 @@ struct FrameNodeTypeTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/tMdYWVaeSJ-oUkfHFvSENw/zh-cn_image_0000002786360932.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/tMdYWVaeSJ-oUkfHFvSENw/zh-cn_image_0000002786360932.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=432D4613B21DC5F15AE7D1708663C451DD8CDC716D9C93C142A182AC16F179F2)
 
 ## 节点操作示例
 
@@ -11166,7 +11166,7 @@ struct FrameNodeTypeTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/K4yHYs2ETHKqA74nwV-U8Q/zh-cn_image_0000002815560353.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/K4yHYs2ETHKqA74nwV-U8Q/zh-cn_image_0000002815560353.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=3926F88404A35417803DC1494570B0BD1652E6F4665A6997FD11EF5F48DE76F0)
 
 ## 动画创建与取消示例
 
@@ -11269,7 +11269,7 @@ struct CreateAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/BVVktNxkSwqPuFD8B2wPXw/zh-cn_image_0000002815400437.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/BVVktNxkSwqPuFD8B2wPXw/zh-cn_image_0000002815400437.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=7166A6950BD63E5D715A26ADE3F970A46530D8917BBE3ADD7D160CB37BAD0871)
 
 ## 滚动事件示例
 
@@ -11475,7 +11475,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/lzrq4xuJRsmKv4NihRskIA/zh-cn_image_0000002786520862.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/lzrq4xuJRsmKv4NihRskIA/zh-cn_image_0000002786520862.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=BFF058FCE41AD605063100804156E6981F2ED385DCBA49274D71FBC0AAFBB208)
 
 ## 检验NodeAdapter是否有效示例
 
@@ -11594,7 +11594,7 @@ struct ListNodeTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/89E1FucPQceEPNqHLGN1MQ/zh-cn_image_0000002786360934.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/89E1FucPQceEPNqHLGN1MQ/zh-cn_image_0000002786360934.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B4C48B8EDB132665A31ACCB720AC3C68CB9E46BAF494C9C13BA58C550CD8F0E)
 
 ## 获取根节点示例
 

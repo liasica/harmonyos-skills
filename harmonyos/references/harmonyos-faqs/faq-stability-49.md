@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-4
 title: 如何解决日志内容过大时控制台打印被截断的问题
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > 如何解决日志内容过大时控制台打印被截断的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:40+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-05
 content_hash: sha256:28cab11ce9a359d5c11d2dbce01908d93d01ad4ea509bd37866b96a8b33552d8
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:28cab11ce9a359d5c11d2dbce01908d93d01ad4ea509bd37866b96a8b33
 
 控制台日志输出内容被截断，后半部分无法打印。以下文日志为例（单个文本16个字符，一共拼接500次，累计8000字符），使用hilog进行打印时截断（只打印到第233次）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/0hS4vdh_RCS_ldDluHVq5A/zh-cn_image_0000002689423443.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/0hS4vdh_RCS_ldDluHVq5A/zh-cn_image_0000002689423443.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=40827ED4C6F51714423D59815CBBDA223FAF56BA965A7570FB3188F122910E6B "点击放大")
 
 ## 背景知识
 
@@ -97,4 +97,4 @@ struct LongLogPrint {
 
 修改后日志能打印完整：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/FFAPgResQAqAvIHyVBMhaQ/zh-cn_image_0000002659467164.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/FFAPgResQAqAvIHyVBMhaQ/zh-cn_image_0000002659467164.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=A491ADD73627A896E7901F554646E9B6C5CB29C7A5A68AB6C52703EE2E1E007E "点击放大")

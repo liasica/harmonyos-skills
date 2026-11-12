@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 自定义组件的基本用法
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 自定义组件 > 自定义组件的基本用法
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:b88ca0105332ef50ef5c219b5cbb1d8a861edcafb2133fa6abd83f6f33670ab0
 ---
@@ -151,7 +151,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/9qiPl-nFR8OASZnOOaQM7A/zh-cn_image_0000002786521744.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/9qiPl-nFR8OASZnOOaQM7A/zh-cn_image_0000002786521744.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D120F98B290AB02D8D2E50ED86ED1C55443E3640A0998230B45EC587C700624)
 
 ## 自定义组件数据
 

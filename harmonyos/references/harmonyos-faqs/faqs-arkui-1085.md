@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1085
 title: 如何裁剪自定义形状
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何裁剪自定义形状
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:7ec66bae4c9c3c836030794e48959671573cbe166282289f35b221a6002673d8
 ---
@@ -24,7 +24,7 @@ content_hash: sha256:7ec66bae4c9c3c836030794e48959671573cbe166282289f35b221a6002
 
   路径描述：从上底左侧点(150,0)开始，水平向右画到(250,0)，接着以半径20的圆弧连接到(270,20)，再直线延伸至右下角(350,180)，然后通过另一个圆弧过渡到(330,200)，再水平向左到(50,200)，接着用圆弧连接到(30,180)，然后垂直向下到(30,20)，再通过圆弧回到起点(50,0)，最后闭合路径。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/ErfDlKyGQqinW-idcuQ_RA/zh-cn_image_0000002710157063.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/ErfDlKyGQqinW-idcuQ_RA/zh-cn_image_0000002710157063.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2AF1D9730C70A9045267C2E9BE48631941B6C3459A907CD4F5722DA71D48343 "点击放大")
 
   示例代码如下：
 
@@ -55,7 +55,7 @@ content_hash: sha256:7ec66bae4c9c3c836030794e48959671573cbe166282289f35b221a6002
 
   构造一个宽度与图片一样，高度为图片1.5倍的RectShape，为此RectShape设置圆角，然后将此RectShape进行偏移。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/TQEmm2FJRaOLNJI9qogrYg/zh-cn_image_0000002680480188.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/TQEmm2FJRaOLNJI9qogrYg/zh-cn_image_0000002680480188.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=84FC0DC47379A7138C316356F0971E845C825E4F79824DADD73DA82136AE88AA "点击放大")
 
   示例代码如下：
 

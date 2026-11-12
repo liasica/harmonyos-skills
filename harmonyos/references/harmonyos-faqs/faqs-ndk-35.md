@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-35
 title: Native侧如何使用hilog打印出日志信息
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > Native侧如何使用hilog打印出日志信息
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:56+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:2dcade6a185f464d45ebdd190a90e39dbda316916b632d48d4839bce65899bc3
 ---
@@ -35,7 +35,7 @@ OH_LOG_ERROR(LOG_APP, "Pure a:%{public}d b:%{private}d.", a, b);
 
 结果展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/qClshGSgRpCZYIYwAQy7Lg/zh-cn_image_0000002624475902.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/qClshGSgRpCZYIYwAQy7Lg/zh-cn_image_0000002624475902.png?HW-CC-KV=V1&HW-CC-Date=20261112T233214Z&HW-CC-Expire=31536000000&HW-CC-Sign=418EA29531C6BCF19FF45086DCDD92E5DC856FF41143EB00E43EA24BDAE21C1F "点击放大")
 
 **参考链接：**
 

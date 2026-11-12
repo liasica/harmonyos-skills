@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-scenario-b
 title: 卡顿率指标是怎么定义的
 breadcrumb: FAQ > DevEco Testing > 专项测试 > 场景化性能测试 > 卡顿率指标是怎么定义的
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:04+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:664ff8ee1ec87de1c1e7f053a56477e11da8d0609d502c723970dc3bf31b1237
 ---
@@ -12,4 +12,4 @@ content_hash: sha256:664ff8ee1ec87de1c1e7f053a56477e11da8d0609d502c723970dc3bf31
 
 单帧丢帧时长等于实际上屏时间减去期望上屏时间。上屏时间可在trace图形子系统的present线程中查看，取泳道结束点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/myx3EGc7SSujhHG5TlJJeg/zh-cn_image_0000002624478980.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/myx3EGc7SSujhHG5TlJJeg/zh-cn_image_0000002624478980.png?HW-CC-KV=V1&HW-CC-Date=20261112T233218Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B3B7ECB453495869E94AB418F1C273586803A0F6894EDB5FD29C31074E85F61 "点击放大")

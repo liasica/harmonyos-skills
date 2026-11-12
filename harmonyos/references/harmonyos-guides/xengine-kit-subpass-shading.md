@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-s
 title: Subpass Shading
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > Subpass Shading
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:15+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-03
 content_hash: sha256:58801bc516b56adb6a3daf6735d3390eaad2fea38f1243e9e2e6ad81857c764c
 ---
@@ -14,11 +14,11 @@ content_hash: sha256:58801bc516b56adb6a3daf6735d3390eaad2fea38f1243e9e2e6ad81857
 
 **图1** Forward+读取过程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/yF-6TqObTuS8q4BjhEjSgQ/zh-cn_image_0000002815399629.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/yF-6TqObTuS8q4BjhEjSgQ/zh-cn_image_0000002815399629.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A0935C37F95F988352867F97C4DFBCA9957E3AC6EB24CFD12FA93F5F8667624)
 
 **图2** Subpass Shading读取过程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/cMJOb7nPQJKPEm5a9NmK0A/zh-cn_image_0000002786520054.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/cMJOb7nPQJKPEm5a9NmK0A/zh-cn_image_0000002786520054.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6D023BFF1A8D3F4A66DD318AB969FBDEC1D2B0FD67E281556735BEDE3A60CF9)
 
 ## 约束与限制
 

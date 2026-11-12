@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-familiar
 title: 快速上手
 breadcrumb: 指南 > 应用测试 > 专项测试 > DevEco Testing > 快速上手
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-12
 content_hash: sha256:2e36ac4a0cdbdd0dcd34ae8aa3463b625432f41630a00e0181ee3d7a37aabc9e
 ---
@@ -50,7 +50,7 @@ DevEco Testing是一款专项集成测试工具，提供了多项测试能力。
 
 选择应用时，支持选择测试设备上已安装的应用或者安装新的应用，即在测试设备上安装新的应用包。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/CpSyTzYeSQy7PGePVGtYbw/zh-cn_image_0000002633533158.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/CpSyTzYeSQy7PGePVGtYbw/zh-cn_image_0000002633533158.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=E021F29CDDEF57516D6CC93DC1EA316736E67253FE422206267A1BACBEEC7A6E "点击放大")
 
 **注意** 
 
@@ -58,17 +58,17 @@ Q1：HarmonyOS 5.0及以上版本设备已连接，DevEco Testing为什么无法
 
 A1：请在cmd窗口中执行hdc list targets，确认设备正常连接。正常连接如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/jLjNrHixTBGOt0aE54oiww/zh-cn_image_0000002633533152.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/jLjNrHixTBGOt0aE54oiww/zh-cn_image_0000002633533152.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=894E67EF6158975A4B53AF1998C0E21FF570B30436EB6FD03C96524077875C39)
 
 如返回为空，则表示USB连接没有建立，需排查PC机USB驱动、USB线缆连接、手机是否开启USB调试模式。
 
 若hdc list targets能识别到设备，DevEco Testing未识别到设备，请将DevEco Testing安装路径中的hdc路径配置至PATH环境变量中，即可正常识别。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/b2TVZ7N3Qm6O1WyPS8EZyQ/zh-cn_image_0000002664012281.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/b2TVZ7N3Qm6O1WyPS8EZyQ/zh-cn_image_0000002664012281.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AF9260F7B0C09321F28452BA1F9F758C790CBDB2F79C1B4A752C166059518F4 "点击放大")
 
 **测试任务**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/hU3sSIMUQ5SkKTOjSJq6GQ/zh-cn_image_0000002664012287.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/hU3sSIMUQ5SkKTOjSJq6GQ/zh-cn_image_0000002664012287.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=0718E31CF206141BBB14EEA8CFA64F5CD8624800C35FB242E94B4EA4E7887875 "点击放大")
 
 1、用户在DevEco Testing工具导航栏 —【测试任务】中可以查看当前正在执行和历史执行的测试任务。用户可通过顶部操作栏，按任务名/备注、服务类型、任务状态筛选测试任务。
 
@@ -94,12 +94,12 @@ DevEco Testing执行测试任务结束后会生成测试报告，测试报告整
 
 1、测试报告概览包含应用信息、参数配置、执行日志等，可点击查询相关信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/ykOuB0x0TkKyUoO62STfsw/zh-cn_image_0000002633693070.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/ykOuB0x0TkKyUoO62STfsw/zh-cn_image_0000002633693070.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1E7B97894EFF7CB73C73274AB2D8162DF08A6816FE99CBEFF7A50A838349F4E "点击放大")
 
 2、不同的测试服务报告详情不同，以下图的应用上架预检（本地）为例，测试报告详情由应用信息、测试总览、各项检测数据组成。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/PP2alS_tTq2PIW-T0eiGlg/zh-cn_image_0000002633693064.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/PP2alS_tTq2PIW-T0eiGlg/zh-cn_image_0000002633693064.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=A13715EBA4A7AF03EBEC452F48A5A97B7C12F34B203C472AC64FA3B57556CB62 "点击放大")
 
 3、测试报告支持手动备注，方便测试人员标记任务，并提供报告导出功能，点击报告页面“打开目录”按钮，可导出html格式的报告文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/FWQ-UVwwSs2eAaxAmEG0Rw/zh-cn_image_0000002663932229.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/FWQ-UVwwSs2eAaxAmEG0Rw/zh-cn_image_0000002663932229.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EA01CB6EDACF7AEB96C13486E17A3C5A62C608C29E7C58A78699B65E56F260C "点击放大")

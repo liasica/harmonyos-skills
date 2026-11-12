@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-bluetooth-
 title: 低功耗蓝牙基础使用
 breadcrumb: 最佳实践 > 网络 > 低功耗蓝牙基础使用
 category: best-practices
-scraped_at: 2026-11-10T10:42:02+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:48ec2b890efb56c54091c0ba82ccc1c47a644f166f22526b10e26c0e2bb917ff
 ---
@@ -23,7 +23,7 @@ content_hash: sha256:48ec2b890efb56c54091c0ba82ccc1c47a644f166f22526b10e26c0e2bb
 3. 数据传输阶段：服务端订阅描述符写请求事件，准备数据（如心率值），通过特征通知机制向已连接客户端发送数据；客户端监听特征值变化事件，接收并解析数据内容，根据业务需求更新用户界面或执行相应逻辑。
 4. 断开连接阶段：服务端在连接状态回调中处理断开事件，可以停止广播并清理资源；客户端主动断开连接，关闭GATT客户端，注销监听器，重置连接状态，可选择将设备ID持久化以便后续自动重连。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/N2lB-QM0Q9WWEoy6oUMRlg/zh-cn_image_0000002492448638.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/N2lB-QM0Q9WWEoy6oUMRlg/zh-cn_image_0000002492448638.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=39F0AD43D8F80B008BAA133B37EFA8DF256CEEB27C22746AE89EC0548F14617F "点击放大")
 
 ### 关键技术
 
@@ -83,7 +83,7 @@ content_hash: sha256:48ec2b890efb56c54091c0ba82ccc1c47a644f166f22526b10e26c0e2bb
 
 这种协同工作机制大幅提升了BLE连接效率。服务端的精准广播与客户端的智能过滤形成互补，避免了传统全量扫描带来的资源浪费。当用户在应用中看到设备列表时，背后已完成多层筛选：硬件层过滤掉非BLE设备，协议层过滤掉不匹配服务的设备，应用层进一步通过制造商数据确认目标设备身份。这种分层过滤策略不仅加速了设备发现过程，也显著降低了系统功耗，为后续的连接与数据传输奠定了高效基础。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/attjD1jTSIavdtYRX0r4OQ/zh-cn_image_0000002524568343.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/attjD1jTSIavdtYRX0r4OQ/zh-cn_image_0000002524568343.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=517C323D0FD3A5467C400A1E9CBEED1F1E5E40B98522DBF83BC066CF407E1520 "点击放大")
 
 **关键技术**
 

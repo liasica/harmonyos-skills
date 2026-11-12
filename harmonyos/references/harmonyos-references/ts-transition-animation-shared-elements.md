@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transi
 title: 共享元素转场 (sharedTransition)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 共享元素转场 (sharedTransition)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:24+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:1785ec04d33d39b22fcef36b5c1d2bd2f80e705cec8730cdb50720642e6425ea
 ---
@@ -114,4 +114,4 @@ struct PageBExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/9hp_lh_MQZynhhp1vGxW6w/zh-cn_image_0000002786521482.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/9hp_lh_MQZynhhp1vGxW6w/zh-cn_image_0000002786521482.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=B302C4618E6DF8E306E3C79B70D83839C8BF4D12C2C6B2CC7801703F84CE0DA0)

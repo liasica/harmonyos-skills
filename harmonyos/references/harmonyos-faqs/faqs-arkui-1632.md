@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1632
 title: 滑动Swiper组件时如何不触发子组件的点击事件
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 滑动Swiper组件时如何不触发子组件的点击事件
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:26+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:e10118926df81778eb19d28d4b9821d8e525a14e6287e9720397538b1094227e
 ---
@@ -44,7 +44,7 @@ struct Index {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/KNTwKq0EQ1SaE-gztk5Mjg/zh-cn_image_0000002628777522.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/KNTwKq0EQ1SaE-gztk5Mjg/zh-cn_image_0000002628777522.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=E77840C126007E4750CB411E3E8F1668513AE9B4B0AFCBDDD8BD381A16EC87D1 "点击放大")
 
 ## 背景知识
 
@@ -88,7 +88,7 @@ struct Index {
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/AebrYACoQJG5otbf9C0dLA/zh-cn_image_0000002658976861.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/AebrYACoQJG5otbf9C0dLA/zh-cn_image_0000002658976861.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=D21092DC5A725F20726AF0FDF1989BEB18464ECB83DD6925B371A19F25A932C0 "点击放大")
 * **方案二**：当需要识别单击、双击和多次点击事件，并阻止滑动过程中误触发子组件点击事件时，可将子组件的onClick事件替换为TapGesture。[TapGestureParameters](../harmonyos-references/ts-basic-gestures-tapgesture.md#tapgestureparameters12对象说明)中可设置连续点击次数count，同时设置distanceThreshold限制手势移动范围，当手势移动距离超过该阈值时，不识别为有效点击，从而有效避免滑动时的误触。
 
   ```screen
@@ -125,4 +125,4 @@ struct Index {
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/gjkdHuKzTky-hiPGBVj-rA/zh-cn_image_0000002658856921.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/gjkdHuKzTky-hiPGBVj-rA/zh-cn_image_0000002658856921.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=7564345C5BF9431923DB3CE010321306EE23E2BDF885AC1C6239C301F077D9AF "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 涉诈剧本检测
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 业务风险检测 > 涉诈剧本检测
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:37+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:18b115aa08aa2cf87a96ca1c5423285e555831c6941f68444f5d2ee8f7545ae6
 ---
@@ -20,7 +20,7 @@ content_hash: sha256:18b115aa08aa2cf87a96ca1c5423285e555831c6941f68444f5d2ee8f75
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/VnMPN1tpQ7ekrBMqjBGgqw/zh-cn_image_0000002815559103.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/VnMPN1tpQ7ekrBMqjBGgqw/zh-cn_image_0000002815559103.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=F97B75D10B3A0A8ABF512D0F47936D0E0AFCE1B05D181E358937DBC85C16BB7B)
 
 **流程说明：**
 

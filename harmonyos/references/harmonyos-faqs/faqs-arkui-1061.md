@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1061
 title: 如何在不同场景下实现页面置灰效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何在不同场景下实现页面置灰效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:53+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:125fb6bb142da920b286622876bb5431068995139016f905980259953f7c3ae3
 ---
@@ -73,7 +73,7 @@ content_hash: sha256:125fb6bb142da920b286622876bb5431068995139016f905980259953f7
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/hh2NvlafQM6Ij-qCs-rM9Q/zh-cn_image_0000002628567116.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/hh2NvlafQM6Ij-qCs-rM9Q/zh-cn_image_0000002628567116.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=F611C61F4B9326F3568B950CBD2972A483FCCC103D8AEB69002AB53A609BF0F6 "点击放大")
 * 场景二：单个页面置灰。
 
   在多个页面场景，如果只有某个页面需要置灰，其他页面不变，只需将相应页面根元素设置grayscale属性为1。
@@ -82,7 +82,7 @@ content_hash: sha256:125fb6bb142da920b286622876bb5431068995139016f905980259953f7
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/oOcaDzPSRIubvUn8umf2GA/zh-cn_image_0000002658926417.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/oOcaDzPSRIubvUn8umf2GA/zh-cn_image_0000002658926417.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD2A5E01C9EEEC0A540E52B2B3FBCDA954258EFF6EED87CBBF96F3B4FB52F1B7 "点击放大")
 * 场景三：所有页面置灰。Navigation设置的一些属性会影响所有的页面，将主页的Navigation组件设置grayscale属性为1，可实现所有页面置灰的效果。完整示例代码如下：主页Index.ets示例代码如下：
 
   ```ts
@@ -182,7 +182,7 @@ content_hash: sha256:125fb6bb142da920b286622876bb5431068995139016f905980259953f7
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/m-qlxDePSkmXS7xq62JFxQ/zh-cn_image_0000002628407216.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/m-qlxDePSkmXS7xq62JFxQ/zh-cn_image_0000002628407216.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=1661DD61E71F8A5E054B3CE455A7C0FA84694601B9E1AD539E329FD182F32737 "点击放大")
 
 ## 常见FAQ
 

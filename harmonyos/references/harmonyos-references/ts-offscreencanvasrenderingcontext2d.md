@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-offscr
 title: OffscreenCanvasRenderingContext2D
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > OffscreenCanvasRenderingContext2D
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-10
 content_hash: sha256:6acf0847e28af82519f304382542169136fce2d526df8830f4d8e3930c952d0b
 ---
@@ -116,7 +116,7 @@ struct ToDataURL {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/1v7rn2aORbOEaJjYdWyUhA/zh-cn_image_0000002815560909.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/1v7rn2aORbOEaJjYdWyUhA/zh-cn_image_0000002815560909.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=35CC02C4CF970A4D9CB2D6374810D3BE6ACA37DE8F45EAF8E46D5DC4876CE64A)
 
 ## transferToImageBitmap
 
@@ -173,4 +173,4 @@ struct PutImageData {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/6X8NPKQBQ86AiZEwZluGZw/zh-cn_image_0000002815400993.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/6X8NPKQBQ86AiZEwZluGZw/zh-cn_image_0000002815400993.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE42E5240E48D1339682A28AC17BE50E397EBBBA198ABF34C73CB3908BA1C009)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1228
 title: 如何解决Swiper组件在滑动过程中onGestureSwipe回调被触发多次的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Swiper组件在滑动过程中onGestureSwipe回调被触发多次的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:18+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:f7866f54c6354dc731cc4a52e2ee618d255380cd1435812d5597d07be4382157
 ---
@@ -14,7 +14,7 @@ Swiper组件在滑动过程中onGestureSwipe回调被触发多次，如何限制
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/Z1yHFeufT3aR7owzdjDaWw/zh-cn_image_0000002658833295.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/Z1yHFeufT3aR7owzdjDaWw/zh-cn_image_0000002658833295.png?HW-CC-KV=V1&HW-CC-Date=20261112T233150Z&HW-CC-Expire=31536000000&HW-CC-Sign=97A8A75EEBC4A0866FB5F2434018F73988D0C43DF2B6C5C6055477C59D7EF2D2 "点击放大")
 
 ## 背景知识
 

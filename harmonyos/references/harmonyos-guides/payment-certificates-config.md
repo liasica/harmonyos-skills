@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-certi
 title: 准备证书
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 开发准备 > 准备证书
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:31+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:544e3d5bc86c03ac784bec15d06bb8400494013d6bcf2f25999ead75bb44634d
 ---
@@ -18,7 +18,7 @@ content_hash: sha256:544e3d5bc86c03ac784bec15d06bb8400494013d6bcf2f25999ead75bb4
 
 证书使用如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/cwPUssV5S8Cs7Pcfnic8uw/zh-cn_image_0000002815559911.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/cwPUssV5S8Cs7Pcfnic8uw/zh-cn_image_0000002815559911.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8589199804CD5A5608F6999AF62E289652A2C9B4CC8FEF55967054818FF55E9)
 
 ## 商户证书
 
@@ -42,7 +42,7 @@ content_hash: sha256:544e3d5bc86c03ac784bec15d06bb8400494013d6bcf2f25999ead75bb4
 * 商户需将生成的证书公钥上传到[华为支付商户平台](https://petalpay-merchant.cloud.huawei.com/)来获取证书ID，证书ID为请求华为支付开放API接口时请求头鉴权信息[PayMercAuth](../harmonyos-references/payment-model.md#paymercauth)对象中的authId字段以及订单信息参数[orderStr](../harmonyos-references/payment-model.md#orderstr)中的auth\_id字段。
 * 证书上传（参见[上传商户证书](payment-certificates-config.md#上传商户证书)）后，可以在“商户中心 > 证书管理 > 上传商户证书 > 证书ID”处获取。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/qw0TcdOMQV-tkSD7LR3-lg/zh-cn_image_0000002815399995.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/qw0TcdOMQV-tkSD7LR3-lg/zh-cn_image_0000002815399995.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=999EE3461CA7BA65EC72D147C6052BC2EEECC28710240DE4EAC2D1B2A45D9331)
 
 ### 生成商户证书
 
@@ -52,7 +52,7 @@ content_hash: sha256:544e3d5bc86c03ac784bec15d06bb8400494013d6bcf2f25999ead75bb4
 
    登录[Node.js](https://nodejs.org/en/download/)官方网站，下载Node.js软件包。请选择LTS版本，并根据电脑操作系统选择对应的软件包。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/JDvNOI9xR86cdK3nYlHh3Q/zh-cn_image_0000002786520420.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/JDvNOI9xR86cdK3nYlHh3Q/zh-cn_image_0000002786520420.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=467B2FA4CFE51F39E5CC6766D89352F9C570845A016201AFDA506F6DA5B76ED7)
 
    双击下载后的软件包进行安装。全部按照默认设置点击“Next”，直至“Finish”。安装过程中，Node.js会自动在系统的path环境变量中配置node.exe的目录路径。
 
@@ -62,7 +62,7 @@ content_hash: sha256:544e3d5bc86c03ac784bec15d06bb8400494013d6bcf2f25999ead75bb4
 
    打开命令行工具，输入**node -v**命令，能正常查询Node.js的版本号，说明Node.js执行环境配置完成。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/iNWc6mIDRhelMdRq8LsbPA/zh-cn_image_0000002786360492.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/iNWc6mIDRhelMdRq8LsbPA/zh-cn_image_0000002786360492.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FB833423EE89AC5F9AAFB6C5FFD45147E1111A66B00C97DCD69919D0D2F17E7)
 2. 使用文本编辑器新建文件（编码为UTF-8），拷贝以下代码到文件中并保存命名为“generateKeyPair.js”。
 
    ```typescript
@@ -87,7 +87,7 @@ content_hash: sha256:544e3d5bc86c03ac784bec15d06bb8400494013d6bcf2f25999ead75bb4
 3. 打开命令行工具，进入generateKeyPair.js所在目录，执行**node generateKeyPair.js**命令。
 4. 从结果中拷贝生成的公私钥并保存。结果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/h-8XD5WeRsKeNbh2nfqnZA/zh-cn_image_0000002815559913.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/h-8XD5WeRsKeNbh2nfqnZA/zh-cn_image_0000002815559913.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=C51825672AF2930C0A6FB12ED886FEB0B244C5BD5F44829E63B8CC1194259B23)
 
 **方式2：使用在线工具生成**
 
@@ -138,4 +138,4 @@ DQIDAQAB
 
 登录[华为支付商户平台](https://petalpay-merchant.cloud.huawei.com/)后，通过“商户中心 > 证书管理 > 华为支付证书”页签进行华为支付证书下载，该证书用于校验华为支付给商户业务系统发送的信息，如支付结果信息等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/0ZIqCQj9REyerFmXuFCyMQ/zh-cn_image_0000002815399997.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/0ZIqCQj9REyerFmXuFCyMQ/zh-cn_image_0000002815399997.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B4F8768199A375C73D23685CDF0CEAA7DFEA4FA75B05315AB532C1390F1A0EC)

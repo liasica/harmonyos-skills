@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 跨HAP包页面跳转方案
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 跨HAP包页面跳转方案
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:f45905ad4daa7713c509ab07e149e7e8d7cbff26a2d8e9cbb031ba4b81e01695
 ---
@@ -22,7 +22,7 @@ content_hash: sha256:f45905ad4daa7713c509ab07e149e7e8d7cbff26a2d8e9cbb031ba4b81e
 
 1. 在项目中创建targetHap：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/HNkGxKzpTSu5TTP2dLF1UQ/zh-cn_image_0000002628628222.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/HNkGxKzpTSu5TTP2dLF1UQ/zh-cn_image_0000002628628222.png?HW-CC-KV=V1&HW-CC-Date=20261112T233215Z&HW-CC-Expire=31536000000&HW-CC-Sign=5397316F62FB56281602C569CE1C61A107004E542A074F3CB22C3A34FEFC4C32 "点击放大")
 2. 在entry模块中使用startAbility拉起targetHap模块的实例，需要配置bundleName和Ability名称，并在被拉起的HAP中配置期望打开的页面即可。发起侧示例代码如下：
 
    ```ts
@@ -74,7 +74,7 @@ content_hash: sha256:f45905ad4daa7713c509ab07e149e7e8d7cbff26a2d8e9cbb031ba4b81e
    ```
 3. 进入“Run”>“Edit Configurations”>“Run/Debug Configuration”，勾选主模块的Deploy Multi Hap/Hsp选框下的Deploy Multi Hap/Hsp Packages和All Modules选项，即可运行验证。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/W16tpZtnQfGflpviIlLUmg/zh-cn_image_0000002658867501.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/W16tpZtnQfGflpviIlLUmg/zh-cn_image_0000002658867501.png?HW-CC-KV=V1&HW-CC-Date=20261112T233215Z&HW-CC-Expire=31536000000&HW-CC-Sign=51C8928A9AB3AA5A7A52296907D116A878895B22B20D8FF5F01A295F5CCA3BFB "点击放大")
 4. 若是有多模块页面跳转的需求，建议还是使用静态库HAR或动态库HSP，尽量避免涉及多HAP之间的页面跳转。
 
 ## 常见FAQ

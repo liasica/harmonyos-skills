@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/source-obfusc
 title: ArkGuard混淆开启指南
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard源码混淆工具 > ArkGuard混淆开启指南
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:4aa9c5bfaa2219cc143fdc2d15f6ff7d7751579100de9baef2c9cef9b036edc5
 ---
@@ -172,7 +172,7 @@ content_hash: sha256:4aa9c5bfaa2219cc143fdc2d15f6ff7d7751579100de9baef2c9cef9b03
   + 名称映射表文件：nameCache.json，该文件记录了源码名称混淆的映射关系。
   + 系统API白名单文件：systemApiCache.json，该文件记录了SDK中的接口与属性名称，工程源码中与其重名的元素不会被混淆。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/52DydlBPRVqCTFNGCUTylg/zh-cn_image_0000002786518406.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/52DydlBPRVqCTFNGCUTylg/zh-cn_image_0000002786518406.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE8F2D33F11357FB85A864C7048BF296420E1DF7FD244995AA56708A94ABA9E5)
 
 ## 报错栈还原
 
@@ -184,4 +184,4 @@ content_hash: sha256:4aa9c5bfaa2219cc143fdc2d15f6ff7d7751579100de9baef2c9cef9b03
 
 源代码映射信息文件：sourceMaps.map，该文件记录了压缩/转换后的代码到原始源代码之间的映射关系。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/3MjNhTVhRt2i9Y22hiSvJQ/zh-cn_image_0000002786358478.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/3MjNhTVhRt2i9Y22hiSvJQ/zh-cn_image_0000002786358478.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=4FD660C39CFC408ABA1CD02255FF93400D03D1A1CBD1AC70BB3504B3B03B8E27)

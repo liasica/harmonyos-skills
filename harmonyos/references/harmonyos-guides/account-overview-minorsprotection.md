@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-overv
 title: 概述
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 未成年人模式 > 概述
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:77e3c78d1142535443b6292aa3679f8c632851ad11a7998e83304eb1bad8a458
 ---
@@ -123,6 +123,6 @@ content_hash: sha256:77e3c78d1142535443b6292aa3679f8c632851ad11a7998e83304eb1bad
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/POR-Wnr_RGaZ63iG6G7Y1Q/zh-cn_image_0000002815559569.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/POR-Wnr_RGaZ63iG6G7Y1Q/zh-cn_image_0000002815559569.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE20FD957227CBC57FBA96CC8D1B6F59025D8A1D422D62C66607D458C5D3A748 "点击放大")
 
 当应用开启未成年人模式后，建议应用主页样式参考以上UX设计，保障用户体验的一致性。

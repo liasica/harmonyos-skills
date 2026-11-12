@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-
 title: 申请通知横幅默开权益
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > 申请通知横幅默开权益
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:31+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:2b0ebe160c9f1345059d3697d85b04c28790214fd9813756441dc5d0cbf78b6b
 ---
@@ -30,21 +30,21 @@ content_hash: sha256:2b0ebe160c9f1345059d3697d85b04c28790214fd9813756441dc5d0cbf
 
 1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/index.html)，选择“应用管理”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/0IWoR6ELSJ2DWLf7U_CU5w/zh-cn_image_0000002786360476.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/0IWoR6ELSJ2DWLf7U_CU5w/zh-cn_image_0000002786360476.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=6711BB29CFA08DF7A801D946A71D2300AEBAA985173E07969B7FB85B8199FF6C)
 2. 切换至正确的项目，在项目下的应用列表中选择需要申请通知横幅默开权益的应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/uVK-7ec1QBO7G6eFc1IXrw/zh-cn_image_0000002815559897.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/uVK-7ec1QBO7G6eFc1IXrw/zh-cn_image_0000002815559897.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4FD37F0D36EEDA23EF38F9C5E8D12D70526141396D96B30DAC2499DBFEA74E8)
 3. 进入“开放能力管理”页面，点击“通知横幅默开”的“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/58TWZES7TO66znD3bKGmUg/zh-cn_image_0000002815399981.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/58TWZES7TO66znD3bKGmUg/zh-cn_image_0000002815399981.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=0766A3DB404507F062004D6FD9DD3C1E0235F401A8FB317F1570ED9ABF7CB957)
 4. 开发者可参考“申请原因”中的模板，提供申请必须的相关信息，包括应用介绍、使用场景、申请用途、附件、承诺信息，然后点击“提交”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/Dx30hS50QPK9e53kSZvELA/zh-cn_image_0000002786520406.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/Dx30hS50QPK9e53kSZvELA/zh-cn_image_0000002786520406.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D9EB664CB236341C832A932CD7D5EC77CBAC2BD0C53F8958291A780CA42F5DB)
 5. 开发者可通过互动中心的“服务申请”消息获取通知横幅默开权益申请结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/x97KM8kyQ7-67e-78iBR-w/zh-cn_image_0000002786360478.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/x97KM8kyQ7-67e-78iBR-w/zh-cn_image_0000002786360478.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDE7A066F8ADFC4C475AACFB3B9FE95FEBFE21E42985042E3C29BCB8AA151B84)
 6. 通知横幅默开权益申请通过后，须在“开发者管理”页签下左侧树形菜单的“ID、证书和Profile"->“Profile”菜单，点击“添加”重新生成Profile文件，并下载Profile文件到本地，然后在“[发布应用](ide-publish-app.md)”时，须将该Profile打包到应用包中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/NYL53zzvT0aWy4XJtrywqg/zh-cn_image_0000002815559899.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/NYL53zzvT0aWy4XJtrywqg/zh-cn_image_0000002815559899.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=BCDBE985189354621AA86945E99D300E70F32C79887D81A058F343AC6ECAFB73)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/teh2E1LHSr-dFm9CAtyj_g/zh-cn_image_0000002815399983.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/teh2E1LHSr-dFm9CAtyj_g/zh-cn_image_0000002815399983.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=B49D493ECAF3A64A4EF04134E54674423D4E2F16354A94CBD2727650F5F8933D)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/compiling-and-b
 title: C/C++项目三方so库未打包入HAP问题排查
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 常见问题 > C/C++项目三方so库未打包入HAP问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:65b251bac3954ca35768865f6ebd3f34da9c0291445a973f65a44c3f34b72bdf
 ---
@@ -17,5 +17,5 @@ content_hash: sha256:65b251bac3954ca35768865f6ebd3f34da9c0291445a973f65a44c3f34b
 3. 使用IMPORTED\_LOCATION定义引入的so文件位置。
 4. 将定义的三方so声明给目标。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/JoHf8ndbQTGlnHJzJmrYiA/zh-cn_image_0000002794546783.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/JoHf8ndbQTGlnHJzJmrYiA/zh-cn_image_0000002794546783.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=8370166BEF6F088250CD390FB245EE553C549AB25D5E8A14D13282BECBAEEC1C "点击放大")
 5. 再次打包生成HAP，确认三方so已打包到HAP中。

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-607
 title: 如何解决ForEach渲染对象数组时，删除数据异常的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决ForEach渲染对象数组时，删除数据异常的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:c3174f44377b1877cd26c88ed5e5bcebb99c72eda14eda79e449425688c37b9d
 ---
@@ -90,7 +90,7 @@ struct ListTestPage {
 
 问题现象如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/F_IviufPSvaxbUTqCgst0Q/zh-cn_image_0000002628392724.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/F_IviufPSvaxbUTqCgst0Q/zh-cn_image_0000002628392724.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7DA2824AAC3F384D33EF1306BBD4CB71594DDCC4DD94159BD75B117BC823A1E "点击放大")
 
 ## 背景知识
 
@@ -311,7 +311,7 @@ ForEach渲染对象数组，删除数据时，刷新异常的原因是：ForEach
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/Paaaw12nR0ScSnSyS57wrw/zh-cn_image_0000002658791997.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/Paaaw12nR0ScSnSyS57wrw/zh-cn_image_0000002658791997.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=839350E5CCDD2C52FCF6982FF048F8A37351E42AD1B909D2EA64D0C735C23554 "点击放大")
 
 ## 总结
 

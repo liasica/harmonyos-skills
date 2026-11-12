@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-co
 title: 配置Skill
 breadcrumb: 指南 > DevEco Code > DevEco Code Plugin > 操作指南 > 配置Skill
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:34a32544d463adc12e291d42aec092c56e6ab0f3683bae17b20c41ad92c6129b
 ---
@@ -60,15 +60,15 @@ metadata:选填
 
 ## 操作步骤
 
-1. 点击DevEco Code界面**Menu**中的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/JFulxBVMSpa-4ydplEDc_g/zh-cn_image_0000002779407322.png "点击放大")Skill卡片，或点击菜单栏**File > Setti**n**gs > AI > Skills**，进入配置页面。
+1. 点击DevEco Code界面**Menu**中的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/JFulxBVMSpa-4ydplEDc_g/zh-cn_image_0000002779407322.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=70E7DA56A7F98A72282A5056942D88255FF9CA55679F8FC08DB208399D0FF871 "点击放大")Skill卡片，或点击菜单栏**File > Setti**n**gs > AI > Skills**，进入配置页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/1CeXHfFLRMOjESbsmc453Q/zh-cn_image_0000002779567296.png "点击放大")
-2. 在**Global Skills**或**Project Skills**下，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/Jge_m8KPR9aYRlWK4XzG7g/zh-cn_image_0000002808886959.png)导入Skill文件夹或文件夹的压缩包（.zip格式），点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/Qcj-3H7JQxWc2KU0hafTUA/zh-cn_image_0000002808766879.png)删除。SKILL.md的父目录为技能根目录。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/1CeXHfFLRMOjESbsmc453Q/zh-cn_image_0000002779567296.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=8FF1E8C2443164E7BCD9E05123FE8A16A2E40DC50B1076B1296F7BECD42F710A "点击放大")
+2. 在**Global Skills**或**Project Skills**下，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/Jge_m8KPR9aYRlWK4XzG7g/zh-cn_image_0000002808886959.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=33B6A43DECAB5AF7EF7DD566AB49C9B7A318DE71EAA88F1E71AE87E8721EFEF6)导入Skill文件夹或文件夹的压缩包（.zip格式），点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/Qcj-3H7JQxWc2KU0hafTUA/zh-cn_image_0000002808766879.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEE17FA03A792081927BAE346A6B8075D0307994043F8D63B895AD6708BE828D)删除。SKILL.md的父目录为技能根目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/PunY_l9oT2yave4fqcFkOg/zh-cn_image_0000002808886961.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/PunY_l9oT2yave4fqcFkOg/zh-cn_image_0000002808886961.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A87E399CC8A6DD50B7643C9651E6CDDE4578345FE0A7AE1E955FC8F96E2E39B "点击放大")
 3. 在**Global Skills**和**Project Skills**列表中，显示已导入的技能信息，包括启用状态、技能名称、描述信息（最多显示60字符）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/p2CMEd7LS-Km763k8t_GPw/zh-cn_image_0000002808886957.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/p2CMEd7LS-Km763k8t_GPw/zh-cn_image_0000002808886957.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0889946E9450762EF7BC3ED8139056C8DECD361D31B9F6FDD2FECF7614FBC8D "点击放大")
 4. 返回DevEco Code，在输入框输入"**/**"可以查看所有的Skills，选择对应Skill后进行问答。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/6PeL9NV6TTWptA-Xg_hUKw/zh-cn_image_0000002808766877.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/6PeL9NV6TTWptA-Xg_hUKw/zh-cn_image_0000002808766877.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=2546CFD49678FA8E495FE8196D722722FFC753BC0BB1F3F6A2C6738783DCCC67 "点击放大")

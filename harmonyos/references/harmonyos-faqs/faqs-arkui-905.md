@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-905
 title: 如何解决Navigation路由调用pop后onPop回调代码不执行的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决Navigation路由调用pop后onPop回调代码不执行的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:38+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:ee6bae9ba4aa760e4d6e984929fc2b7275d3c51a5a17ddf6faa3300a1943b632
 ---
@@ -85,7 +85,7 @@ struct PageTwo {
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/f3q0JOkZQ-GUpRov99hjoA/zh-cn_image_0000002628559672.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/f3q0JOkZQ-GUpRov99hjoA/zh-cn_image_0000002628559672.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=27C23A461548CEA766B102D3939D99F1805A4E66843D087CA3B679A05FBA2491 "点击放大")
 
 ## 背景知识
 
@@ -96,7 +96,7 @@ struct PageTwo {
 
 ## 问题定位
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/J0D7phYJRO6v0NMDR42SKg/zh-cn_image_0000002658918979.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/J0D7phYJRO6v0NMDR42SKg/zh-cn_image_0000002658918979.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=106A7E493A0354B1555972DC123899877C81588817821E4886F450DCE9F37878 "点击放大")
 
 查阅官方文档关于pushPath方法的[NavPathInfo](../harmonyos-references/ts-basic-components-navigation.md#navpathinfo10)入参说明，其中的onPop回调函数仅pop、[popToName](../harmonyos-references/ts-basic-components-navigation.md#poptoname11)、[popToIndex](../harmonyos-references/ts-basic-components-navigation.md#poptoindex11)中设置result参数后触发。
 

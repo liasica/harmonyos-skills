@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: ArcAlphabetIndexer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > ArcAlphabetIndexer
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:7cd714b3e1170ba0dd09f42f381f987c162600576b1088659cbbbb1e6828a277
 ---
@@ -426,7 +426,7 @@ struct ArcListAndIndexer {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/uEqj2XVyQRmkSQC5Wkzr8g/zh-cn_image_0000002815400949.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/uEqj2XVyQRmkSQC5Wkzr8g/zh-cn_image_0000002815400949.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A15F6EB89B651DA3FDC0B1A688758116942432B84531F950667F0BE2D004181 "点击放大")
 
 ### 示例2（设置弹窗显示）
 
@@ -524,4 +524,4 @@ struct ArcListAndIndexer {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/eRz3q7cgQr-fPhQqvL5PMQ/zh-cn_image_0000002786521374.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/eRz3q7cgQr-fPhQqvL5PMQ/zh-cn_image_0000002786521374.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=56A8D9DE33911EFB61EC641CDF9B938AA69D90E295128B3B604DEC93BADAD0FB "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 拖拽排序
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 交互属性 > 拖拽排序
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:84051b42cdfa9fee9e4cdec39bcb0d55661b7188d8f4ccd6f76aa9db884407e3
 ---
@@ -260,7 +260,7 @@ struct GridOnMoveExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/1ShG3xsZTpqxH8Vjl7Funw/zh-cn_image_0000002815400539.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/1ShG3xsZTpqxH8Vjl7Funw/zh-cn_image_0000002815400539.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=185113C01726CB76DC5A8D73819EBCE535654CA8CBFE58E6F8880D08D4617090)
 
 ### 示例4（Grid不规则布局使用ForEach的onMove进行拖拽，并设置拖拽事件回调）
 
@@ -404,7 +404,7 @@ struct GridOnMoveExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/-ZNZTKvWT5qRJsk2cW3Acg/zh-cn_image_0000002786520964.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/-ZNZTKvWT5qRJsk2cW3Acg/zh-cn_image_0000002786520964.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=8714A76E0CD36192110E99B59D7269601C7D2829487B0479AE9D299255595118)
 
 ### 示例5（Grid不规则布局使用LazyForEach的onMove进行拖拽，并设置拖拽事件回调）
 
@@ -617,7 +617,7 @@ struct GridOnMoveExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/M5mIKAg7Rs6VVmsffg7zAA/zh-cn_image_0000002786361036.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/M5mIKAg7Rs6VVmsffg7zAA/zh-cn_image_0000002786361036.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=C70C5A49DA146C79821BCE8E83074444766C826983235837D9FA2E43903295B5)
 
 ### 示例6（Grid不规则布局使用Repeat的onMove进行拖拽，并设置拖拽事件回调）
 
@@ -778,4 +778,4 @@ struct GridOnMoveExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/SeFFjM1_R9u75BXiq4E9Zw/zh-cn_image_0000002815560457.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/SeFFjM1_R9u75BXiq4E9Zw/zh-cn_image_0000002815560457.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=804102BD7AD08485047A40D3D4FC5E7AC7E0FD2D80E911F4E34E42A216F72E4D)

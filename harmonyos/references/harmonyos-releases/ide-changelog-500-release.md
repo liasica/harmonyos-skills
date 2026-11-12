@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/ide-changel
 title: 变更说明
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > DevEco Studio > 变更说明
 category: harmonyos-releases
-scraped_at: 2026-11-12T09:50:54+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:4cfd764b3bd4540bdf357ea299ac9a0da4d5d23e5a72dab90e542833a088159a
 ---
@@ -83,7 +83,7 @@ async function attachAbility(bundleName: string) {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/Q9mjG0bAQeCte1cYvpEKMA/zh-cn_image_0000002336528273.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/Q9mjG0bAQeCte1cYvpEKMA/zh-cn_image_0000002336528273.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=15B4208DD5B912AF4A1BB159811257ADD99201B7CBC4E03AEFA1BEC5CD46C19C)
 
 ## 5.0.3.706至5.0.3.800
 
@@ -142,7 +142,7 @@ Code Linter检查安全规则@security/specified-interface-call-chain-check中�
     ```
   + 如果工程级build-profile.json5文件的useNormalizedOHMUrl字段为true，则oh-package.json5中依赖的包使用的别名需要和依赖包的oh-package.json5的name保持一致，否则编译会报错。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/r1xey-veSI6hvRzesoxpsg/zh-cn_image_0000002336448501.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/r1xey-veSI6hvRzesoxpsg/zh-cn_image_0000002336448501.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=22356AED3BEB18099C3D71FF062AE69B7C82D7793FDD1C8CCCEEBF40007F3089 "点击放大")
 * 新建工程时，默认构建[字节码格式的HAR](../harmonyos-guides-V5/ide-hvigor-build-har-V5.md#section179161312181613)。
 
 **适配指导**
@@ -194,7 +194,7 @@ Code Linter检查安全规则@security/specified-interface-call-chain-check中�
 
 打开历史工程，请根据DevEco Studio提示进行操作，点击Enable按钮，配置完成后会在obfuscation-rules.txt文件中增加四项推荐的混淆规则。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/6WZXuBf1SziFqRcUNjs50g/zh-cn_image_0000002302688922.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/6WZXuBf1SziFqRcUNjs50g/zh-cn_image_0000002302688922.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B4A418BC99D16ED50C25FA087316A97C227BD106DBB474392FE700E5D5E942D)
 
 ## 5.0.3.500至5.0.3.502
 

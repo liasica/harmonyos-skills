@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-177
 title: Web组件同层渲染时如何传自定义参数
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web组件同层渲染时如何传自定义参数
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:88fca94f4d5191da663f1f47fd8d2f4fb3e7b55dfb30f2c368bcf70d057f804c
 ---
@@ -73,4 +73,4 @@ HTML示例代码如下：
 
 打印结果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/lE0SjmieQmW3k_QRhp1zjw/zh-cn_image_0000002659138435.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/lE0SjmieQmW3k_QRhp1zjw/zh-cn_image_0000002659138435.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F65129F0DE11A9BADFB50F2BB6AACB351BBE022AEEFBFBFC804A6AC407054B7 "点击放大")

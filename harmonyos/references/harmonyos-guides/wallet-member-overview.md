@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-member
 title: 概述
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 会员卡 > 概述
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:38+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-28
 content_hash: sha256:866f9cbf84dad742e3769d22f6d29023d0f035b705a8c1cc05c15cc7eac35430
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:866f9cbf84dad742e3769d22f6d29023d0f035b705a8c1cc05c15cc7eac
 
 ## 系统架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/EqG-zNPCTGiBOtstYDnHrw/zh-cn_image_0000002815400137.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/EqG-zNPCTGiBOtstYDnHrw/zh-cn_image_0000002815400137.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D21B59E996EF8625AE9814530E47B6C4448081AC1D3C34068D2E049B92EC6F2)
 
 | 角色 | 说明 |
 | --- | --- |
@@ -29,11 +29,11 @@ content_hash: sha256:866f9cbf84dad742e3769d22f6d29023d0f035b705a8c1cc05c15cc7eac
 
 ### 会员卡开通
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/vR5W1YyCSiqqp5mmi9RhAw/zh-cn_image_0000002786520562.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/vR5W1YyCSiqqp5mmi9RhAw/zh-cn_image_0000002786520562.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=ACD1416E2701E20F82A9584F5E2B0757ADC3345DA878C31BC00349D74A3252A8)
 
 ### 会员卡展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/UY5kTy5HRwmWUhlUTFYxoA/zh-cn_image_0000002786360634.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/UY5kTy5HRwmWUhlUTFYxoA/zh-cn_image_0000002786360634.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=350D0F6B9FC4D4637791AEFB843E1E5EFE837A5EFFE3DB04FD53CC5EAB775ED6)
 
 ## 接入流程
 

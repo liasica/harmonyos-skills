@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-page-cu
 title: 自定义组件生命周期
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件生命周期
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:cdac90e0135833ad34309f5d553b8f1a18c76678eda9183e27df01929ea51793
 ---
@@ -20,7 +20,7 @@ content_hash: sha256:cdac90e0135833ad34309f5d553b8f1a18c76678eda9183e27df01929ea
 
 自定义组件生命周期流程如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/_4Am5YCiQz6XkUpza5FMWQ/zh-cn_image_0000002786358490.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/_4Am5YCiQz6XkUpza5FMWQ/zh-cn_image_0000002786358490.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8663ED4652258722329CBD6B6A03880C76F88233D804F5083D505C462F8CD49)
 
 根据上面的流程图，接下来从自定义组件的初始创建、重新渲染和删除来详细说明。
 
@@ -126,7 +126,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/aSR8ac2uSmqS8ww70nXkgg/zh-cn_image_0000002815557911.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/aSR8ac2uSmqS8ww70nXkgg/zh-cn_image_0000002815557911.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A8E43CB6C22285347B1683AA27D02B045E97C1A3DE6D4F3239230D4E9796F03)
 
 以上示例中，Index页面包含两个自定义组件，一个是Parent，一个是Child，Parent及其子组件Child分别声明了各自的自定义组件生命周期函数（aboutToAppear / onDidBuild / aboutToDisappear）。
 
@@ -165,4 +165,4 @@ Child onDidBuild
 
 当showChild为默认值true时，该示例的生命周期流程图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/6ztTIYI_R5eR5AnLITPDJg/zh-cn_image_0000002815397995.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/6ztTIYI_R5eR5AnLITPDJg/zh-cn_image_0000002815397995.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=65478A3C943FF968AD16E66DBA2F226042AA3A049C60A8833EA196B9EF0CDC45)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1292
 title: 如何扩展安全区域实现全屏遮罩
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何扩展安全区域实现全屏遮罩
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:867713a1fc81630ef04d3f28c6a78a4a2d773fa8d66ed9fd5e45d54789aabcb4
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:867713a1fc81630ef04d3f28c6a78a4a2d773fa8d66ed9fd5e45d54789a
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/emEmXrZxSQSsjNBDgehVgQ/zh-cn_image_0000002658837243.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/emEmXrZxSQSsjNBDgehVgQ/zh-cn_image_0000002658837243.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=544FF17EB04E5C2B536534B9C50F3BC7BC6B5AE5F3838FF6CD5FDF3C4B7D3917 "点击放大")
 
 ## 背景知识
 

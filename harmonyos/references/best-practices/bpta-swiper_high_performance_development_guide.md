@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-swiper_hig
 title: Swiper组件加载丢帧优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 界面渲染性能优化 > Swiper组件加载丢帧优化
 category: best-practices
-scraped_at: 2026-11-10T10:42:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-09
 content_hash: sha256:f2333fa4dcd7efdc3d115af69e3b078e27856011328e791a185575cf5b2b82e9
 ---
@@ -323,17 +323,17 @@ Swiper主页面核心代码：
 如图1所示，不使用onAnimationStart回调提前加载数据，通过自定义打点标签“H:noPreLoadData”，可以看出SwiperItem节点的构建耗时50ms左右。
 
 **图1** 没有提前加载数据的打点信息  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/tCb_NUblSQeVORNW94bgFg/zh-cn_image_0000002193850808.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/tCb_NUblSQeVORNW94bgFg/zh-cn_image_0000002193850808.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=27E1C555F48F11CAFE5CAD4A3EA7B0986C6E7D7AE123C4600E55919F7F6D9330 "点击放大")
 
 如图2所示，采用onAnimationStart回调提前加载数据，通过自定义打点标签“H:preLoadData”，可以看出SwiperItem节点的构建耗时2ms左右。
 
 **图2** 使用了提前加载数据的打点信息  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/YlIskVd6QgywLsL-7kkP9A/zh-cn_image_0000002194010396.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/YlIskVd6QgywLsL-7kkP9A/zh-cn_image_0000002194010396.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=172A4DF5EA4779C96F6BB4959DBCBBE83FF049705651DF40B61572501D73066F "点击放大")
 
 观察“H:noPreLoadData”时间段的详细trace图，可以发现预加载构建SwiperItem时，aboutToAppear生命周期回调加载图片资源占用48毫秒。
 
 **图3** “H:noPreLoadData”时间段的trace详细信息  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/hPji0gSkQnu84P_0FLni0Q/zh-cn_image_0000002229450669.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/hPji0gSkQnu84P_0FLni0Q/zh-cn_image_0000002229450669.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF1AD3146A7E3D7E1F18B497B340804F17AF5AB153D90793675D1881A5D8FE76 "点击放大")
 
 使用onAnimationStart回调接口提前加载后续范围内子组件所需资源，能够减少cachedCount范围内子组件节点的加载时间。
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-tr
 title: ArkUI平板分栏显示异常问题定位
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 故障排查 > ArkUI平板分栏显示异常问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:33+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:318b5abe3b4a1816306da6a0c1c2800fb355c30d1143bfb28744c793803ca831
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:318b5abe3b4a1816306da6a0c1c2800fb355c30d1143bfb28744c793803
 
 使用UIView查看页面组件布局，发现当前页面未采用Navigation组件实现路由控制。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/j4GmKGhUShin_idiIk1Weg/zh-cn_image_0000002771832192.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/j4GmKGhUShin_idiIk1Weg/zh-cn_image_0000002771832192.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E76BDA5B9314C0D85D37361C1E0CF126DD4F2D15E7D8B74B03CD858F3937C50 "点击放大")
 
 ## 分析结论
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-deveco-tes
 title: DevEco Testing支持的设备类型
 breadcrumb: FAQ > DevEco Testing > DevEco Testing支持的设备类型
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:04+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:8f31a33b673c0f2716617d1ef3bffc21fc6ae336afcef6b18d04a6f7525e277d
 ---
@@ -18,8 +18,8 @@ DevEco Testing从5.0版本开始不支持除OpenHarmony和HarmonyOS Next外的�
 
 [DevEco Testing](https://developer.huawei.com/consumer/cn/download/deveco-testing?ha_source=sousuo&ha_sourceId=89000251)下载中心可查看版本号。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/5d6mLHuKQuu5WMA8VO7jPQ/zh-cn_image_0000002628404184.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/5d6mLHuKQuu5WMA8VO7jPQ/zh-cn_image_0000002628404184.png?HW-CC-KV=V1&HW-CC-Date=20261112T233210Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D74369807272AB3DEE9C7D0408B2D4A1D0AE5280732AD0BB6F0DCF714B5C5E8 "点击放大")
 
 已安装DevEco Testing，可以在设置-关于查看版本。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/OrJbZ_d-T8W2D-Ag2g2Neg/zh-cn_image_0000002628564088.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/OrJbZ_d-T8W2D-Ag2g2Neg/zh-cn_image_0000002628564088.png?HW-CC-KV=V1&HW-CC-Date=20261112T233210Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C145776511E93DC6A87BEF79A8EB4C08CFC7910E46594AF0BF037F569E1ECFE "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-troub
 title: ArkWeb多组件拖拽手势冲突问题定位
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 故障排查 > ArkWeb多组件拖拽手势冲突问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:b0862db70bf8bbd3f1a7a2a6ecb3db6b3dba715db0a8fc90bd124c742a77c7fb
 ---
@@ -72,7 +72,7 @@ struct Index {
 
 问题效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/YYCo0rW7QXeSLTrVtJ4JgQ/zh-cn_image_0000002802039471.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/YYCo0rW7QXeSLTrVtJ4JgQ/zh-cn_image_0000002802039471.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=457C6C8616CFBBCCCD3F288ACB82585BE1FBEC448F48932FB831F3ACA0ACAD54 "点击放大")
 
 ## 定位过程
 
@@ -167,4 +167,4 @@ struct HitTestModeTouchIDemo {
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/XoRR1r5RQIeiri_eHnUFsQ/zh-cn_image_0000002772839716.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/XoRR1r5RQIeiri_eHnUFsQ/zh-cn_image_0000002772839716.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED9EF66D9DDA89CECF435D0CC08C910B2D1842DBD751FEC9AD789305450A1E21 "点击放大")

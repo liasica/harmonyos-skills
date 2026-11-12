@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-li
 title: 如何通过USB线将手机相册里面图片传到电脑上
 breadcrumb: FAQ > DevEco Studio > 命令行工具 > 如何通过USB线将手机相册里面图片传到电脑上
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:03+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:04acc724e537156db4494aa683077458662a6621694c9ec7baf7c1d2ee430112
 ---
@@ -30,4 +30,4 @@ mediatool工具为系统自带工具，不需要安装，内置在/bin文件夹�
 1. 选择【图库】中的照片，点击分享-复制，然后打开【文件管理】后根据提示，粘贴到我的手机-Download路径下。
 2. 打开DevEco Studio的Device File Browser，在/storage/media/100/local/files/Docs/Download路径下即可看到对应的图片，右键另存为保存到电脑上。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/XcfD0dRSQxiVpzuaoR7cOw/zh-cn_image_0000002628569626.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/XcfD0dRSQxiVpzuaoR7cOw/zh-cn_image_0000002628569626.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD481B6B19FFB629ACCD2060FB8CDD83977355D913122E31504DC58E7C8F2307 "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-50
 title: 如何自定义Marker样式
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 如何自定义Marker样式
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:38+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-12
 content_hash: sha256:af96625f312fff04618d7bcc14482d255aa5b01008af08910cac2afa00fd8603
 ---
@@ -151,7 +151,7 @@ content_hash: sha256:af96625f312fff04618d7bcc14482d255aa5b01008af08910cac2afa00f
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/H9VzfoJVSPa_a34KbUkqwQ/zh-cn_image_0000002628394396.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/H9VzfoJVSPa_a34KbUkqwQ/zh-cn_image_0000002628394396.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=3AADE98A61DA533C5FA065C4B3AD521B9D613EE5FD2C57372A8E553BF01B0901 "点击放大")
 
 完整代码：
 

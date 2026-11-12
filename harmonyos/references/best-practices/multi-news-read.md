@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-news-read
 title: 多设备新闻阅读界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备新闻阅读界面
 category: best-practices
-scraped_at: 2026-11-10T10:42:04+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-20
 content_hash: sha256:0dcad3c4af4818ea8eed6ee020302a4415b31f2bb7a95489d95a2bab562b70d9
 ---
@@ -26,7 +26,7 @@ content_hash: sha256:0dcad3c4af4818ea8eed6ee020302a4415b31f2bb7a95489d95a2bab562
 
 新闻阅读应用的UX设计可参考[新闻阅读类](../design-guides/responsive-design-examples4-0000001746657290.md)设计指南。应用在直板机上采用单列纵向布局，在折叠屏和平板上以双列栅格展示，在电脑上采用侧边栏加内容区的分栏布局。多设备新闻阅读界面在不同设备形态下的效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/0kqvIOOVQ7OpCTqWhvhwQw/zh-cn_image_0000002693047956.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/0kqvIOOVQ7OpCTqWhvhwQw/zh-cn_image_0000002693047956.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D13586479C9EF0E3F7EE9AD35D3939648F37912CE4793F70C789D0424666E0A "点击放大")
 
 ## 工程管理
 
@@ -165,7 +165,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 电脑端首页推荐页的页签栏展示在左侧，右侧承载内容区。效果图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/dgPSuuzeTwWeZYermw2ypw/zh-cn_image_0000002722887399.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/dgPSuuzeTwWeZYermw2ypw/zh-cn_image_0000002722887399.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C169F564E2582EA6182E6A1FF255C293BB6D94639FB7F274945CE7F212E1DA8 "点击放大")
 
 **界面开发**
 
@@ -181,7 +181,7 @@ HarmonyOS的分层架构主要包括三个层次：产品定制层、基础特�
 
 电脑端新闻详情页左侧为新闻内容、右侧展示评论区，底部嵌入工具栏。运行效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/l_OPlyIMTB2Pt81sSbvkxw/zh-cn_image_0000002693207824.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/l_OPlyIMTB2Pt81sSbvkxw/zh-cn_image_0000002693207824.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E574D6C71DED84813E9EAAA56EB32024C05056991170F53878CBFE424B16771 "点击放大")
 
 **界面开发**
 

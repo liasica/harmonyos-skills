@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-troub
 title: Video组件播放与显示问题定位
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 故障排查 > Video组件播放与显示问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:ae7834056e286cc0aae0c2816415ee2c4cfdaea100b280af77eb00047ba112a0
 ---
@@ -438,7 +438,7 @@ struct OptionTwo {
 
 当前视频播放状态未保持连续性，切换到后台后视频停止播放，返回前台后需要手动刷新页面才能恢复播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/P5Dz1oWTTMmeJux21oxs9A/zh-cn_image_0000002768130662.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/P5Dz1oWTTMmeJux21oxs9A/zh-cn_image_0000002768130662.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=BFEBA8F989D512C466C65DE39C4697660E95C9B9ABEF6F6ACB1CE4834AD581C1 "点击放大")
 
 ### 定位过程
 
@@ -626,4 +626,4 @@ struct VideoControlPage {
 
 **效果预览图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/Wc7OzWsnSUOSpOb2kxD9Cw/zh-cn_image_0000002768292190.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/Wc7OzWsnSUOSpOb2kxD9Cw/zh-cn_image_0000002768292190.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDB7262CF4608BCF3274F9E66538A5B6EB2E994E8A32A189EA48DFD423059144 "点击放大")

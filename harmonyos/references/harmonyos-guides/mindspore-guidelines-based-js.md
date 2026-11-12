@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-gui
 title: 使用MindSpore Lite实现图像分类 (ArkTS)
 breadcrumb: 指南 > AI > MindSpore Lite Kit（昇思推理框架服务） > 使用MindSpore Lite实现图像分类 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:45+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:d0613ac76df0e5e71e4d71bc876836c2abcd9406b0c6da78d0c60aca04e7e6c7
 ---
@@ -348,9 +348,9 @@ content_hash: sha256:d0613ac76df0e5e71e4d71bc876836c2abcd9406b0c6da78d0c60aca04e
 
 在设备上，点击photo按钮，选择相册中的一张图片，点击确定。在图片下方显示此图片占比前4的分类信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/GgI-Atx1RNWAQC4L0YxIWg/zh-cn_image_0000002815400277.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/hp7chqq-S1e4ry-FpvzMcw/zh-cn_image_0000002786520702.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/GgI-Atx1RNWAQC4L0YxIWg/zh-cn_image_0000002815400277.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=4BAFDC508F058A325DECF9AC4B6C19419164F553E6059E91A874C47659CE2EA9) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/hp7chqq-S1e4ry-FpvzMcw/zh-cn_image_0000002786520702.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=4E62CA6CC3236F05CAACF14F51CF9E1375E4FF7D90218FB1C63F92DCAE5D23AD)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/ZiC7Tac1Sdiim79yjS2-lw/zh-cn_image_0000002786360774.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/UHoUw2HvRPmCs0DYh6m5GA/zh-cn_image_0000002815560195.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/ZiC7Tac1Sdiim79yjS2-lw/zh-cn_image_0000002786360774.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=B15D3254EF6987AB68B482DF389D0B8CD267B9BBCB7B1D32B91D15DF6FD0E6DF) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/UHoUw2HvRPmCs0DYh6m5GA/zh-cn_image_0000002815560195.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB56D4B395A8EB7AD5195320287431FB25A609E05812BCD8E30CCF632C417B02)
 
 ## 示例代码
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendabl
 title: Sendable对象简介
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > Sendable对象 > Sendable对象简介
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:03+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:e794c5fddf993ba7242ebf6fa3291e1733ad62d4278075140727337635fbe669
 ---
@@ -14,7 +14,7 @@ ArkTS提供了Sendable对象类型，它是一种可在ArkTS并发实例间安�
 
 Sendable对象可共享，跨线程前后指向同一个JS对象。如果Sendable对象通过调用Napi接口与一个Native对象绑定，当共享传递Sendable对象时，其绑定的Native对象也会一并共享传递。通信过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/PUVXdLUyTgiZFhxiPMzITA/zh-cn_image_0000002786358460.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/PUVXdLUyTgiZFhxiPMzITA/zh-cn_image_0000002786358460.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=3AC5EA9359EE295FF4B3DF9ABD723F78CAFEE8E850034FF882B4E4AE1C0BF39F)
 
 与其它ArkTS数据对象不同，符合Sendable协议的数据对象在运行时应为类型固定的对象。
 
@@ -160,7 +160,7 @@ struct enumusage {
 
 **SharedHeap与LocalHeap关系图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/VIINXHb5S5iSy-yh045mwQ/zh-cn_image_0000002815557881.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/VIINXHb5S5iSy-yh045mwQ/zh-cn_image_0000002815557881.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC9AE178EA54CB5E039A08E01B0530760E002B065C6276BCC65F6BF522DC3DD3)
 
 各个并发实例的LocalHeap是隔离的。SharedHeap是进程级别的堆，可以被所有并发实例共享，但SharedHeap不能引用LocalHeap中的对象。
 

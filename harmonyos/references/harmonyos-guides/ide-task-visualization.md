@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-task-visu
 title: 任务可视化与执行
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 任务可视化与执行
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-08
 content_hash: sha256:9f0b1996b2b6f77fb1fbdded7562603b6d3bea32491bf90d9c2a0bc4544d444b
 ---
@@ -17,5 +17,5 @@ content_hash: sha256:9f0b1996b2b6f77fb1fbdded7562603b6d3bea32491bf90d9c2a0bc4544
 
    其中工程级和模块级的任务，build和help目录下是Hvigor的默认任务，other目录下是开发者[自定义的任务](ide-hvigor-task.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/taoy0SjrRzKD-XWrREr1hA/zh-cn_image_0000002779407076.png)
-2. 可以通过鼠标双击、鼠标右键或Enter键快速执行一个选中的任务，也可以点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/EljnQNWUSLCTkIvXTBzDDw/zh-cn_image_0000002779567054.png)打开Run Anything窗口，搜索任务并双击执行。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/taoy0SjrRzKD-XWrREr1hA/zh-cn_image_0000002779407076.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=7922E48CD2050998B12868CBA062CA583C51FC6DB6DF42EF354CD5E7CFAD6BFE)
+2. 可以通过鼠标双击、鼠标右键或Enter键快速执行一个选中的任务，也可以点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/EljnQNWUSLCTkIvXTBzDDw/zh-cn_image_0000002779567054.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=84C3ADDBCBC63F8FDCF9CF4F75D93B7575EB10135B30D110A2A142F908047994)打开Run Anything窗口，搜索任务并双击执行。

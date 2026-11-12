@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/distributed-p
 title: 播控特性简介
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 分布式媒体会话 > 使用投播组件 > 播控特性简介
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:02+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:354a7525164a18d5cdeed792adf80a1870131dbce5d6c8cc07abef82bd6855c8
 ---
@@ -35,7 +35,7 @@ HarmonyOS提供了统一的应用内音视频投播功能设计，通过使用�
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/Ga5oA-BRRJmBhnPkS6P1AA/zh-cn_image_0000002786359890.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/Ga5oA-BRRJmBhnPkS6P1AA/zh-cn_image_0000002786359890.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=A79FD464BF342DB2A1CF02353693AF77D1C751D757045BC2B1BF7DE1ABF44ECA)
 
 * **发现和连接设备**
 

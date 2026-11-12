@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1365
 title: 如何实现Video组件画面尺寸跟随半模态页面bindSheet的尺寸同步变化
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现Video组件画面尺寸跟随半模态页面bindSheet的尺寸同步变化
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:063f518e07114a7ccb48d1c2c667ad2d8a28a476c5db9014488a8ea41fc4d0a4
 ---
@@ -128,7 +128,7 @@ content_hash: sha256:063f518e07114a7ccb48d1c2c667ad2d8a28a476c5db9014488a8ea41fc
 
   效果图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/u3fpbgnzSgyqve-r5O3dng/zh-cn_image_0000002658841301.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/u3fpbgnzSgyqve-r5O3dng/zh-cn_image_0000002658841301.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3001C1580677F486217410937D3210CE4882B50B9BA3A920EE65691026D9AF6 "点击放大")
 * 方案二、Navigation配合NavDestinationMode.DIALOG。可以通过以下步骤实现：
   1. 根页面使用Navigation容器，并设置为单栏模式。后续步骤需要记录弹窗高度且在页面级UI存储，使用LocalStorage创建新实例并初始化，Entry页面添加storage。
   2. Video页面使用NavDestination子页面容器，并获取内部组件高度。按钮组件跳转弹窗页面。
@@ -348,4 +348,4 @@ content_hash: sha256:063f518e07114a7ccb48d1c2c667ad2d8a28a476c5db9014488a8ea41fc
 
   效果图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/KQaBINlTRz6EnZsgYjhB-g/zh-cn_image_0000002628602034.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/KQaBINlTRz6EnZsgYjhB-g/zh-cn_image_0000002628602034.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBF790C598342BB14DB3116548B228A5E99D89212FAF82F1C8C3C62AFBFAD715 "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-874
 title: 下拉刷新列表，部分数据无变化
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 下拉刷新列表，部分数据无变化
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:34+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:b991765f4aa04148fdd7751a5be8fd7aae37a9360e53f636fb901ffecbca1680
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:b991765f4aa04148fdd7751a5be8fd7aae37a9360e53f636fb901ffecbc
 
 列表每次下拉刷新，只刷新了前两条内容，第三条内容无变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/1IUWL1HlSsKPzSALfrGyuQ/zh-cn_image_0000002628398916.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/1IUWL1HlSsKPzSALfrGyuQ/zh-cn_image_0000002628398916.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=30A5FB4B5A0AFDCE791EC455EE316AFB0C22E44545DE43BED5DFD818C5CD79C4 "点击放大")
 
 ## 背景知识
 

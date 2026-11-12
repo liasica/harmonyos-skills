@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-518
 title: 如何让属性字符串字体大小随给定区域自适应变化
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何让属性字符串字体大小随给定区域自适应变化
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:5a3a07917b439627a94e99ad53a0332453dfda67800112a1eb64e7b804f45a66
 ---
@@ -146,4 +146,4 @@ content_hash: sha256:5a3a07917b439627a94e99ad53a0332453dfda67800112a1eb64e7b804f
 
    效果预览：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/9NKtAZ82RyeFjrj-NOcDIw/zh-cn_image_0000002628551056.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/9NKtAZ82RyeFjrj-NOcDIw/zh-cn_image_0000002628551056.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9BD2744B14C7C61C61FD7453AFAA541B821F905078A08B65C0F21691369EE92 "点击放大")

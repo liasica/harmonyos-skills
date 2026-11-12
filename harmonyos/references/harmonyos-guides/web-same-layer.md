@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-same-laye
 title: 同层渲染
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 同层渲染 > 同层渲染
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:24+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:d9043e3a0045e07d9f07ffcc1e4ffc42cc597e199f916e35e557035d791e6e67
 ---
@@ -35,7 +35,7 @@ ArkWeb同层渲染特性主要提供两种能力：同层标签生命周期和�
 
 **图1** 同层渲染整体架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/jKDzPOYiQFmAeMTmCJDkwQ/zh-cn_image_0000002786359464.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/jKDzPOYiQFmAeMTmCJDkwQ/zh-cn_image_0000002786359464.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3609EE8A8501B71DA0DFC411D474A15B1EF5F7C92F72D172ECF36E781C80968)
 
 ## 规格约束
 
@@ -115,11 +115,11 @@ display，position，z-index，visibility，opacity, background-color，backgrou
 
   **图2** 未使用Stack包裹，TextInput的位置错位
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/AeuQzZBwTPGciaazgw1LDg/zh-cn_image_0000002815558885.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/AeuQzZBwTPGciaazgw1LDg/zh-cn_image_0000002815558885.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5212FE4B1505B9A3E2909134A91896767636B8583DF628A4C01C3FAF93EECC6)
 
   **图3** 使用Stack包裹，TextInput的位置正常
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/XenpNnScSi6qrIfbSSVbkQ/zh-cn_image_0000002815398969.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/XenpNnScSi6qrIfbSSVbkQ/zh-cn_image_0000002815398969.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE3CAC78399C07B15C289858708A57CCE49BBBDF935718E2DBE58A6E48698996)
 
 ## Web页面中同层渲染输入框
 
@@ -127,7 +127,7 @@ display，position，z-index，visibility，opacity, background-color，backgrou
 
 **图4** 同层渲染输入框
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/yLzsfqriQSSMdCmzuaKbbQ/zh-cn_image_0000002786519394.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/yLzsfqriQSSMdCmzuaKbbQ/zh-cn_image_0000002786519394.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE0A4D5669DF2272D98227F079BAADEA1AA4BA731C4DCB48B4B209EC12E4DB43)
 
 1. 在Web页面中标记需要同层渲染的HTML标签。
 
@@ -1054,7 +1054,7 @@ struct Page{
   ```
 * 实现效果：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/Alm-fOBGT4C6P8JrIS-MAA/zh-cn_image_0000002786359466.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/Alm-fOBGT4C6P8JrIS-MAA/zh-cn_image_0000002786359466.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=7901E33A4B881C69A694C8125F15D0F48C18D69E50712A602E175130DF3446AB)
 
 ## 同层标签设置为最高层级
 
@@ -1350,11 +1350,11 @@ struct Page{
 
   未设置arkwebnativestyle的display属性：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/Lcyo-5QsRBmuMh-4OgzA3g/zh-cn_image_0000002815558887.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/Lcyo-5QsRBmuMh-4OgzA3g/zh-cn_image_0000002815558887.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4509F8C353131C9DE974CCBE807FDE3D60C7C79AE963AEB9E7D6BE8B44EDE10)
 
   设置arkwebnativestyle的display属性：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/z-d0LYZJQLC_5Xg3jtWdsg/zh-cn_image_0000002815398971.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/z-d0LYZJQLC_5Xg3jtWdsg/zh-cn_image_0000002815398971.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC38295B641C28642F65DAB8F115E4865EA9C19A5AF0BCA6B55C3DFF879CF822)
 
 ## 同层渲染纹理贴图对齐方式
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/app-running-faq
 title: 本地模拟器启动与运行问题排查常见问题
 breadcrumb: FAQ > DevEco Studio > 应用运行 > 常见问题 > 本地模拟器启动与运行问题排查常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:57+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:347a1893f584bfcf6dc8292c71b463df4e096d569f4e583bba1c1d8a91b0282c
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:347a1893f584bfcf6dc8292c71b463df4e096d569f4e583bba1c1d8a91b
 
 **A**：配置模拟器内存为4GB并使用一段时间后，在活动监视器中可能发现模拟器进程占用的内存超过6GB（如下图所示）。请注意，图中的6.49GB不代表模拟器进程实际使用的物理内存（即Dirty内存），而是指其占用的phys\_footprint内存。在Mac系统中，针对虚拟化平台（如模拟器），phys\_footprint内存通常远高于Dirty内存。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/pIa3DnlKT0CxXdfkCwr8kg/zh-cn_image_0000002799528877.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/pIa3DnlKT0CxXdfkCwr8kg/zh-cn_image_0000002799528877.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD3AFAC3DEF22ADF849D146FF80A3A2DE1D2CE9E25CC22427C086CAF96857497 "点击放大")
 
 想要查看模拟器的Dirty内存，首先打开活动监视器，查看Emulator的进程号（PID）。然后通过 footprint -vmObjectDirty 进程号 命令可以查看Dirty内存大小。
 
@@ -27,9 +27,9 @@ content_hash: sha256:347a1893f584bfcf6dc8292c71b463df4e096d569f4e583bba1c1d8a91b
 1. 请确保模拟器的[使用环境](../harmonyos-guides/ide-emulator-requirements.md)符合要求。
 2. 如果CPU支持虚拟化，打开控制面板 > 程序 > 程序与功能 > 启动或关闭Windows功能（对于Windows 11系统，需打开系统 > 可选功能，在相关设置中点击更多Windows功能），找到并勾选“Hyper-V”、“Windows虚拟机监控程序平台”和“虚拟机平台”，点击确定并重启电脑。若勾选后启动模拟器仍提示错误，需以管理员权限打开命令行窗口，执行 `bcdedit /set hypervisorlaunchtype auto`，然后重启电脑。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/N8axTWehTlWLkzsLcMahJg/zh-cn_image_0000002799409869.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/N8axTWehTlWLkzsLcMahJg/zh-cn_image_0000002799409869.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8123736C1063A399B9CB0DDA55DBCD4A2AC070C562B23062FB3835C9389849C)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/pqeXjCYlSySwpbUynI78kw/zh-cn_image_0000002770128980.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/pqeXjCYlSySwpbUynI78kw/zh-cn_image_0000002770128980.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=31AB3ADE76ACAFB5FCB2A4F55572607AA9AB1F46A192B84248B8829C6BEC4E61)
 3. 若勾选后启动模拟器仍然提示该错误，需要以管理员权限打开命令行窗口执行以下命令，并重启电脑。
 
    ```screen
@@ -37,7 +37,7 @@ content_hash: sha256:347a1893f584bfcf6dc8292c71b463df4e096d569f4e583bba1c1d8a91b
    ```
 4. 如果上述步骤无法解决问题，打开任务管理器，切换到“性能”选项卡。如果显示虚拟化已禁用或未开启，说明BIOS中虚拟化功能未开启。请根据计算机主板型号，进入 BIOS 设置界面，开启虚拟化功能。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/8lqeGbiwSym9OwlcMidVpg/zh-cn_image_0000002799529851.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/8lqeGbiwSym9OwlcMidVpg/zh-cn_image_0000002799529851.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=D26B07DCEEFEABFEBD920ED74D9933674242BE7168E440A09577EF831492447E "点击放大")
 
 如果安装和开启Hyper-V的过程遇到其他问题，请根据系统版本查阅相关文档。更多关于Hyper-V安装请参考[安装 Hyper-V](https://learn.microsoft.com/zh-cn/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v?f=255&MSPPError=-2147217396)，[Windows 和 Windows Server 上的 Hyper-V 的系统要求](https://learn.microsoft.com/zh-cn/virtualization/hyper-v-on-windows/reference/hyper-v-requirements)。
 
@@ -45,7 +45,7 @@ content_hash: sha256:347a1893f584bfcf6dc8292c71b463df4e096d569f4e583bba1c1d8a91b
 
 **A**：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/cjipQ_BuTrqHmJ_TA252RQ/zh-cn_image_0000002770128998.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/cjipQ_BuTrqHmJ_TA252RQ/zh-cn_image_0000002770128998.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC6C3BD54057FE5F9A5EF6CECF62DBD12C749575C3AB1D6A11C6A152E8026DBB "点击放大")
 
 请通过以下两种方式解决：
 
@@ -61,4 +61,4 @@ content_hash: sha256:347a1893f584bfcf6dc8292c71b463df4e096d569f4e583bba1c1d8a91b
 * 方式一：及时删除本地模拟器中不再使用的文件。可以通过hdc shell [COMMAND]命令删除相关文件，更多关于hdc命令使用指导请参考[hdc](../harmonyos-guides/hdc.md)。
 * 方式二：删除本地模拟器，然后重新创建。如果使用本地模拟器推送大文件或应用，建议在创建时适当增加模拟器的内部存储空间。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/whJhI-DEQESVXOvPt2D5jg/zh-cn_image_0000002770289946.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/whJhI-DEQESVXOvPt2D5jg/zh-cn_image_0000002770289946.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D8693F5DE187D77A1A7FACF721E34096BF77E4814B29EE204BFC50A1ADBA65C "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 拖拽事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互响应事件 > 拖拽事件
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:ef409805d256accd9f65b999ddbcfd39b05248a961db9d8cad770c78f185dfc3
 ---
@@ -1153,7 +1153,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/R1rIhZKKSOeYyDdG_pkjXA/zh-cn_image_0000002786520884.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/R1rIhZKKSOeYyDdG_pkjXA/zh-cn_image_0000002786520884.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3F3F7C07C59047E744CEEC202B5F0C42E45A27CA7A1B6DC990A1B2BDE22A46F)
 
 ### 示例2（自定义落位动效）
 
@@ -1238,7 +1238,7 @@ struct DropAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/lwP1PSdmRVigZnlxNUGsug/zh-cn_image_0000002786360956.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/lwP1PSdmRVigZnlxNUGsug/zh-cn_image_0000002786360956.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=0ADF293764F7CC19AEF9FD5F578AB2FE6807BAA83397A10AAF0EFA614A1A0812)
 
 ### 示例3（拖拽异步获取数据）
 
@@ -1539,7 +1539,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/H7QT4JoPQ2y7v60HrA1SJg/zh-cn_image_0000002815560377.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/H7QT4JoPQ2y7v60HrA1SJg/zh-cn_image_0000002815560377.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=67C05165DD23B4E7285F05899B044A6D051E564762DB63F55167ED1AE2F6559B)
 
 ### 示例5（获取包名和是否是跨设备）
 
@@ -1622,7 +1622,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/c5aRJTsjQliukZ_pJMcwjw/zh-cn_image_0000002815400461.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/c5aRJTsjQliukZ_pJMcwjw/zh-cn_image_0000002815400461.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCB384C9EFF76AA4BD1C5BD0FD571B15D34296C42DFE8A0EF69231AA9A9419B6)
 
 ### 示例6（拖拽支持悬停检测）
 
@@ -1706,7 +1706,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/y8xYQsIQT9S-vQL3gmv5FA/zh-cn_image_0000002786520886.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/y8xYQsIQT9S-vQL3gmv5FA/zh-cn_image_0000002786520886.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF959E3379904EA2496D071F217C3589EFF91545D01A4EE4C4228D4217835F0E)
 
 ### 示例7（拖起方延迟提供数据）
 
@@ -1861,7 +1861,7 @@ struct VideoExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/I4WpOjbPR6izcgl0Ipo3kA/zh-cn_image_0000002786360958.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/I4WpOjbPR6izcgl0Ipo3kA/zh-cn_image_0000002786360958.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=529D3AED9E1C923BD7CF9108D620CAACC7453F2A012059F7CE3B14124545FD56)
 
 ### 示例8（拖拽自动隐藏指定组件）
 
@@ -1987,4 +1987,4 @@ struct DragEventAutoHideSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/i2ZqWbTFSxiAeHAzG2piSQ/zh-cn_image_0000002815560379.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/i2ZqWbTFSxiAeHAzG2piSQ/zh-cn_image_0000002815560379.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=ACD3F3E0AF478D1A0CB9D16EF364273A0A449EB9E14292E1B1B443C37EBDC5FA)

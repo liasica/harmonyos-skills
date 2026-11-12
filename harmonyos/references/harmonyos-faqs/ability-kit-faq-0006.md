@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/ability-kit-faq
 title: 字体设置与效果常见问题
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 常见问题 > 字体设置与效果常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:47+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:b34f22521387bd6d642c4c3531f66ab8e5818659e258d3e17a5533604588bc8d
 ---
@@ -58,7 +58,7 @@ content_hash: sha256:b34f22521387bd6d642c4c3531f66ab8e5818659e258d3e17a553360458
 
      效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/xRfPphpvRa2TnAzBUDs4_w/zh-cn_image_0000002795443137.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/xRfPphpvRa2TnAzBUDs4_w/zh-cn_image_0000002795443137.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=320E47DB34086089C5D54F7805B1CBA2F3BF2393AC943D9CE701851303493E07 "点击放大")
 2. 显示大小缩放是否跟随系统实施方案：
    * 设置应用显示大小缩放不跟随系统变化的功能：
 
@@ -342,7 +342,7 @@ A：设置configuration标签的fontSizeScale为nonFollowSystem仅控制字体�
 
 **A**：由于linearGradient颜色渐变属于组件内容且绘制在背景上方，若仅对文本应用渐变，效果将作用于背景而非文字本身，其效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/4r4oLdUoQQy113vlG6AKEw/zh-cn_image_0000002766033142.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/4r4oLdUoQQy113vlG6AKEw/zh-cn_image_0000002766033142.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=B87958C65DB3D79B908326F1DEE315C16992ECF454760E40E41C9C62A99E087A)
 
 要实现作用在字体上，目前以下实现方式：
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-933
 title: TextInput修改数据后光标位置重置
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > TextInput修改数据后光标位置重置
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:2e3c3470c10570d0606d48a93b36954bfc788f6a2c2a2dc7ff9127953b60ab4a
 ---
@@ -14,11 +14,11 @@ content_hash: sha256:2e3c3470c10570d0606d48a93b36954bfc788f6a2c2a2dc7ff9127953b6
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/dkLVvs87RVmSJ8QaDuCXCg/zh-cn_image_0000002658919559.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/dkLVvs87RVmSJ8QaDuCXCg/zh-cn_image_0000002658919559.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=4C6B7916449C0C55C89E634EFC48E4CFE44CA6DEEDF7FE3D2D11E0049FC3386C "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/P00c5guMQXyC8r9js8nKVQ/zh-cn_image_0000002628400356.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/P00c5guMQXyC8r9js8nKVQ/zh-cn_image_0000002628400356.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=92B2CB9E8DF60E484E4D33EC763B821AFA322B06235A03FB6959BC6541345DA5 "点击放大")
 
 ## 背景知识
 

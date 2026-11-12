@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-instrumen
 title: 仪器测试错误码
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 测试框架 > 测试框架错误码 > 仪器测试错误码
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:7027752d712fe8743acfa1f852d650977107ff1b4b73d0221cc1a2cb69ab60a9
 ---
@@ -156,7 +156,7 @@ Current test case XXX not found in the test file.
 * 选择要运行的测试用例，重新运行。
 * 在运行配置窗口修改Method name。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/sUjUsYtVQGSE-CMTmQgjfQ/zh-cn_image_0000002808886161.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/sUjUsYtVQGSE-CMTmQgjfQ/zh-cn_image_0000002808886161.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=ACE4270422BA4D04EF4D8D65B37C9977F81273AEEFB2C121AD58E46CABB6FFA8)
 
 ## 00502002 找不到测试用例
 
@@ -210,7 +210,7 @@ The current file does not have any function registered in the list file.
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/h-LDxZp5QjayPX1Qp0nBhw/zh-cn_image_0000002808886167.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/h-LDxZp5QjayPX1Qp0nBhw/zh-cn_image_0000002808886167.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=7AF8CE6809D90723559D9CC06DD8D8BE206B2C372C359D4816EC21DE9602C8DD)
 
 ## 00502005 测试包中的所有函数都没有在List.test.ets文件中注册
 
@@ -230,7 +230,7 @@ The current package does not have any function registered in the list file.
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/K-m1k2lnSOSJhkrxXmOdww/zh-cn_image_0000002808766087.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/K-m1k2lnSOSJhkrxXmOdww/zh-cn_image_0000002808766087.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A8E8CC10CC997BE8594E957B67F18E1EAE11185A7B59018822E4D71FB774203)
 
 ## 00502006 函数没有在List.test.ets文件中注册
 
@@ -250,7 +250,7 @@ The function where the suite XXX is located is not registered in the ''List.test
 
 在List.test.ets文件中注册函数，示例如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/OhED6Dj6SmOq6YoAh6UItQ/zh-cn_image_0000002808766083.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/OhED6Dj6SmOq6YoAh6UItQ/zh-cn_image_0000002808766083.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=C6AC408F145FE0EC486D0ED4309527516D5BC9876D5751FE09A12332142ACA08)
 
 ## 00502007 测试文件中找不到测试套件
 

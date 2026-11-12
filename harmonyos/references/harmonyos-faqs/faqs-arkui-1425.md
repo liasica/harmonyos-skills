@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1425
 title: 输入框光标闪烁效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 输入框光标闪烁效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:41+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:d90edbdc5796648d1a4e37c5c0ec7f70bf225014662ea22c98d4bff887e14126
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:d90edbdc5796648d1a4e37c5c0ec7f70bf225014662ea22c98d4bff887e
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/t2nXHW95T4CBdoP-FlcYCg/zh-cn_image_0000002658843011.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/t2nXHW95T4CBdoP-FlcYCg/zh-cn_image_0000002658843011.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=6001EA5D5E2D0F5FAE92689CE42C07CD31FEFC862D5EEE892C22E1AB35DFB001 "点击放大")
 
 ## 背景知识
 

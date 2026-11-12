@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-notificati
 title: 如何发布本地消息到通知中心
 breadcrumb: FAQ > 应用服务开发 > 用户通知服务（Notification Kit） > 如何发布本地消息到通知中心
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:47+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:9231aad5dbbf8c0683dd50c545b55f1d8ed543df672df615d278897f3d0c7b10
 ---
@@ -15,7 +15,7 @@ content_hash: sha256:9231aad5dbbf8c0683dd50c545b55f1d8ed543df672df615d278897f3d0
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/A4wyqzOMRJeDFb5nUgmD-w/zh-cn_image_0000002658794001.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/A4wyqzOMRJeDFb5nUgmD-w/zh-cn_image_0000002658794001.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233215Z&HW-CC-Expire=31536000000&HW-CC-Sign=45B5E78503825C50903DE6DB750E62B2327CDD6A564ED78DD46172FB7B067938 "点击放大")
 
 ## 背景知识
 

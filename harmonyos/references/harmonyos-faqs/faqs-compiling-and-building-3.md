@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译告警“The re-export name 'xx' need to be marked as type”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译告警“The re-export name 'xx' need to be marked as type”
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:52+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:5b516bfcf33de5095f2ab93417363052451689e60439760e8ed17f56169e2344
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:5b516bfcf33de5095f2ab93417363052451689e60439760e8ed17f56169
 
 升级DevEco Studio至3.1 Beta2 Release版本后，API 9的Stage工程编译时出现告警，提示“The re-export name 'T' need to be marked as type, please use 'export type'”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/f0To1FZ2Q16oiK86YrC2Aw/zh-cn_image_0000002624638368.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/f0To1FZ2Q16oiK86YrC2Aw/zh-cn_image_0000002624638368.png?HW-CC-KV=V1&HW-CC-Date=20261112T233209Z&HW-CC-Expire=31536000000&HW-CC-Sign=191D6A3F5514FEF048E0B422EB7788945DC6974529D5C03FB6594035BDC6C511)
 
 **解决措施**
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 无权限签署华为开发者服务协议
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 无权限签署华为开发者服务协议
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:47+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:0c4051dcc41b877fc552a614a4a0b891acfc2e5430a56a913254dea313ef20a5
 ---
@@ -18,4 +18,4 @@ content_hash: sha256:0c4051dcc41b877fc552a614a4a0b891acfc2e5430a56a913254dea313e
 
 查看当前账号角色与权限：HarmonyOS 开发者中心后台-用户与访问-个人信息-角色管理-查看权限。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/4gnvdtcdRheitNX8RkOe-w/zh-cn_image_0000002658793995.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/4gnvdtcdRheitNX8RkOe-w/zh-cn_image_0000002658793995.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=814E6CA1B088807DCF07E25054C47BFB877CB870CF59ADEBCDFA74B682C62419 "点击放大")

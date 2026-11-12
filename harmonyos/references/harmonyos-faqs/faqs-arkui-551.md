@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-551
 title: 切换视频时都会短暂显示暂停按钮
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 切换视频时都会短暂显示暂停按钮
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:33+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:2bd79ebf5eea87b46a2c463f408e2018344a0071e14554043fafcbe68dda9efc
 ---
@@ -22,7 +22,7 @@ content_hash: sha256:2bd79ebf5eea87b46a2c463f408e2018344a0071e14554043fafcbe68dd
 
 1. 通过UIViewer工具可以发现应用通过Video组件实现了视频播放，并通过Image组件作为暂停标志进行显示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/8Ue6m2boT82wPeBvSb56SQ/zh-cn_image_0000002658790895.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/8Ue6m2boT82wPeBvSb56SQ/zh-cn_image_0000002658790895.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=64187B551DF4F380CAEB497326267E5BDCD337CF0ECC8E25AE61EBA89643F4A4 "点击放大")
 2. 在HiLog日志中通过搜索media\_service和pause关键字发现应用多次设置pause状态，即使当前已处于pause。
 
    ```txt

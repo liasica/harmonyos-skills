@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ArcSlider
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > ArcSlider
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:15+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:edd357288803e39e3294aec9d5dcdd8a0834be8f3e092adab85348ffc6d3e3a4
 ---
@@ -395,4 +395,4 @@ struct ArcSliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/Wb_fCqoASlS66biIaGFeYA/zh-cn_image_0000002786361256.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/Wb_fCqoASlS66biIaGFeYA/zh-cn_image_0000002786361256.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=27D9DC65D2B5F6769F9327EF4E08365B220152AA8A033675175905429100F3ED)

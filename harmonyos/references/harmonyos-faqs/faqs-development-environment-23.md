@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: 创建新工程Create Project为空白如何解决
 breadcrumb: FAQ > DevEco Studio > 环境准备 > 创建新工程Create Project为空白如何解决
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:49+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:f284ebba81b4c42d196de9f77d0e36ca2b3658186aa8762444d253705d359b5f
 ---
@@ -12,14 +12,14 @@ content_hash: sha256:f284ebba81b4c42d196de9f77d0e36ca2b3658186aa8762444d253705d3
 
 1. 创建新工程时，Create Project为空白。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/PPRJ7XJySHySKfLJDV8FdQ/zh-cn_image_0000002628405062.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/PPRJ7XJySHySKfLJDV8FdQ/zh-cn_image_0000002628405062.png?HW-CC-KV=V1&HW-CC-Date=20261112T233211Z&HW-CC-Expire=31536000000&HW-CC-Sign=C155C2D595968DBFBE2168D40D7F39FD0EBA6BEF169714B46BAE01FC8BCD2821 "点击放大")
 2. 环境变量JAVA\_HOME没有指向有效的jvm。
 
    ```shell
    The environment variable JAVA_HOME with the value of does not point to a valid JVM installation。
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Mk6EaMRgSvGoQMupPDfQpQ/zh-cn_image_0000002658924283.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Mk6EaMRgSvGoQMupPDfQpQ/zh-cn_image_0000002658924283.png?HW-CC-KV=V1&HW-CC-Date=20261112T233211Z&HW-CC-Expire=31536000000&HW-CC-Sign=A53894622EA810CA392D3192069260C0B6549AC9F3C02141759C1252D17916D3 "点击放大")
 
 ## 背景知识
 
@@ -31,16 +31,16 @@ content_hash: sha256:f284ebba81b4c42d196de9f77d0e36ca2b3658186aa8762444d253705d3
 
 1. 检查DevEco Studio是否存在报错：Too many restarts of GPU-process (jcef)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/_G5EQmxCTuSVhdKYRcAA4Q/zh-cn_image_0000002658804333.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/_G5EQmxCTuSVhdKYRcAA4Q/zh-cn_image_0000002658804333.png?HW-CC-KV=V1&HW-CC-Date=20261112T233211Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A6E923F451BE274CBA0DE8B519504756F0BFDAD7FBE1E2339996FDE6C823221 "点击放大")
 2. 查看DevEco Studio依赖的jbr路径下，jvm.dll与chrome\_elf.dll是否存在，如果不存在很可能是被杀毒软件误删除了。
 
    jvm.dll路径：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/aFwbXIhYRDOO_Ay4_0UchA/zh-cn_image_0000002628564972.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/aFwbXIhYRDOO_Ay4_0UchA/zh-cn_image_0000002628564972.png?HW-CC-KV=V1&HW-CC-Date=20261112T233211Z&HW-CC-Expire=31536000000&HW-CC-Sign=BFF3C919F49599B170BD457300EB9BD905AAF7EB246AB76C14B3D026A2F558F8)
 
    chrome\_elf.dll路径：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/4IH5h1XJS0qMahlU0njtEA/zh-cn_image_0000002628405072.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/4IH5h1XJS0qMahlU0njtEA/zh-cn_image_0000002628405072.png?HW-CC-KV=V1&HW-CC-Date=20261112T233211Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9BFC8E21F0E78091BE142FEC47C7CF66E100365A26540B2F1D8E10D0EB80DC6)
 3. 开发者的环境可能和沙箱环境是否冲突，检查ide.browser.jcef.sandbox.enable=false是否勾选。
 
 ## 分析结论
@@ -55,7 +55,7 @@ content_hash: sha256:f284ebba81b4c42d196de9f77d0e36ca2b3658186aa8762444d253705d3
 
 * 按照图示开启jcef.gpu.disable：help->find action，输入registry，点击生成registry界面；registry界面中勾选jcef.gpu.disable选项。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/H6nUji8PROCJEOIzCsI57w/zh-cn_image_0000002658924287.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/H6nUji8PROCJEOIzCsI57w/zh-cn_image_0000002658924287.png?HW-CC-KV=V1&HW-CC-Date=20261112T233211Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4B8DC8402BE7E2FBD9CB562FE162373A6E0EBBC262A89BFAF2DD64D860DB165 "点击放大")
 * 找杀毒软件，将文件添加到白名单并恢复文件。或者重新安装应用，在杀毒软件提示拦截的时候放行。
 * 直接添加ide.browser.jcef.sandbox.enable=false，通过Help -> Edit Custom Properties...打开对应的配置页面，在后面添加ide.browser.jcef.sandbox.enable=false即可。
 

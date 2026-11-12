@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-drag
 title: 使用Web组件的拖拽功能与网页交互
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 > 使用Web组件的拖拽功能与网页交互
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:7841610f3955e455f6c72ec882a2cff967aa77ee58dc00517f2db52569900873
 ---
@@ -207,11 +207,11 @@ H5示例:
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/LbijVRlxRdmNLpwSJUyojA/zh-cn_image_0000002786519368.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/LbijVRlxRdmNLpwSJUyojA/zh-cn_image_0000002786519368.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D97D770AF3C620607F0CF4CA003F60A97E84B1F0976E13CBA9457B091A33933)
 
 日志打印：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/4c-27aJ9QgOlOt3wQy14Yg/zh-cn_image_0000002786359440.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/4c-27aJ9QgOlOt3wQy14Yg/zh-cn_image_0000002786359440.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3C2D9DC59B9715228CC8893524CE4A92D37C39C01D24F31F6C3ECB2A12A48AA)
 
 ## 常见问题
 
@@ -314,7 +314,7 @@ H5示例1:
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/pPlH8FuaR_OXpIcD_ph6ow/zh-cn_image_0000002815558861.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/pPlH8FuaR_OXpIcD_ph6ow/zh-cn_image_0000002815558861.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=075AA5909B5BD9793777018F75F11C3A6A673DCF733EE4264D7D8EFEF07CAC18)
 
 html示例2:
 
@@ -351,7 +351,7 @@ html示例2:
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/8rKTteVsQgeMxMZEt7UddQ/zh-cn_image_0000002815398945.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/8rKTteVsQgeMxMZEt7UddQ/zh-cn_image_0000002815398945.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=F05D22C690FDDC70BF290FF62E7C185C3B1B9B5792F53FC1B29C518DFC791FEA)
 
 ArkTS示例:
 

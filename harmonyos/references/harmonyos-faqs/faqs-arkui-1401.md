@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1401
 title: 多个Grid组件间GridItem相互拖拽时出现异常如何解决
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 多个Grid组件间GridItem相互拖拽时出现异常如何解决
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:004c2639d56250d1e9b60b3ad7064d5f5626dd38e3c795299daaa7568fdcb7ab
 ---
@@ -118,7 +118,7 @@ struct GridTestPage {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/u2LjZXELQDq7fBdMNFcmrg/zh-cn_image_0000002658962447.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/u2LjZXELQDq7fBdMNFcmrg/zh-cn_image_0000002658962447.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=5CCA1F6B28F0B63061C519ADC81E44A9067DC67AA11D662E6D12DFB0A4E2FBE2 "点击放大")
 
 拖拽第一个Grid组件的第5个GridItem到第二Grid组件区域，数据没有交换成功的同时第一个组件的5消失不见。
 
@@ -381,7 +381,7 @@ struct GridTestPage {
 
      效果预览：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/LLkbAQ0dTHu4ZSBvVapu4g/zh-cn_image_0000002628603236.gif "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/LLkbAQ0dTHu4ZSBvVapu4g/zh-cn_image_0000002628603236.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C7423619C5A35DB6FB895A74E5911764FD76F427C71F9657762E329BDDAD8E2 "点击放大")
 
 * **场景二**：多个Grid既可以内部交换数据又可以外部互相交换数据（桌面分组图标交换等）。
   1. 在场景一的基础上引入changeData变量存储不同Grid间需要交换的数据，同时引入whoIsEnd变量判断哪一个Grid作为结束插入。
@@ -511,7 +511,7 @@ struct GridTestPage {
 
      效果预览：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/1RtjGCTyRZ2hJxbcZ-y97Q/zh-cn_image_0000002658842499.gif "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/1RtjGCTyRZ2hJxbcZ-y97Q/zh-cn_image_0000002658842499.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=4CA2ACFA2009802FCC0F1C57168054162037308D816152860851B1AA73064698 "点击放大")
 
 ## 总结
 

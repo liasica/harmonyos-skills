@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-948
 title: 如何解决List组件部分分割线不显示的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决List组件部分分割线不显示的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:47+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:03e1a04ee6228ac926b7516e224f758ba4c5ea6063fd97b1687af410e5ceecc9
 ---
@@ -59,11 +59,11 @@ struct Index {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/vIMaQZ6OSASbtx6YIX0xMQ/zh-cn_image_0000002628401240.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/vIMaQZ6OSASbtx6YIX0xMQ/zh-cn_image_0000002628401240.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC522D8F0DAACC08BA674D99C5A17C85D4B7F0080564C2D2C3384CAC3D7322B8 "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/OZwqR0PJRZ62TJqiEiMHgQ/zh-cn_image_0000002658800511.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/OZwqR0PJRZ62TJqiEiMHgQ/zh-cn_image_0000002658800511.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=0EAA32E7F9BA23A2EB76D6324B6DB3E789CDBBE4BFCCA91C51898307ED807E0D "点击放大")
 
 ## 背景知识
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 支持智慧手势输入事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 输入设备与事件 > 支持智慧手势输入事件
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:c4ea3a2e1e53863f21b3239a5e3dcf1f026781c450241454939cf27c51a8163a
 ---
@@ -333,7 +333,7 @@ struct Demo1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/3N9NM07dT2aROv-UxjBYJQ/zh-cn_image_0000002815398627.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/3N9NM07dT2aROv-UxjBYJQ/zh-cn_image_0000002815398627.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E7679E52B64207D599CCF66697765F8FC2A182EA8F0BAF42DB4FD0108AA44F8)
 
 ### 长列表场景
 
@@ -479,7 +479,7 @@ struct Demo2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/cmXrxet7SnWOW2TvncwXEA/zh-cn_image_0000002786519052.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/cmXrxet7SnWOW2TvncwXEA/zh-cn_image_0000002786519052.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEC1D7093E553CB9BA1512CB20AC74647A59F923699DEE9257CFE419408C04DD)
 
 ### 多组件类型场景手动控制选中态
 
@@ -664,7 +664,7 @@ struct Demo3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/fUyC2g7zTLemZxUWO3Aa0g/zh-cn_image_0000002786359124.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/fUyC2g7zTLemZxUWO3Aa0g/zh-cn_image_0000002786359124.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=77E9E6BA877A6BD0326BA0307EB9B53471031BCA6CE9B3FC8EFA5D3B8C04EAA5)
 
 ### Swiper组件翻页场景
 
@@ -866,4 +866,4 @@ struct Demo4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/_Kde6ocGQQa4BUX_sSeMXw/zh-cn_image_0000002815558545.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/_Kde6ocGQQa4BUX_sSeMXw/zh-cn_image_0000002815558545.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B037D595C2D23550A3C0823CC737C30E0039D739CFF8A256FF00A2C4CE2D4A3)

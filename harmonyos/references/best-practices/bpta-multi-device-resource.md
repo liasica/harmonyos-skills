@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 多设备资源文件
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备资源文件
 category: best-practices
-scraped_at: 2026-11-10T10:42:03+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:8299ddeedb971d3cf6fc520dd0aecff28eb5b6ff6cd3bde4a45e3d80988325f8
 ---
@@ -86,7 +86,7 @@ base目录与限定词目录下面可以创建资源组目录，用于存放特�
 
 在代码中通过 "$r('app.type.name')" 的形式使用应用资源，并分别在默认设备和平板上查看代码的运行效果，可以发现同一资源在不同设备上的取值不同。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/ZdWu-haVRqeQxJghpzboFQ/zh-cn_image_0000002321308262.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/ZdWu-haVRqeQxJghpzboFQ/zh-cn_image_0000002321308262.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE5F3F5FD80C918FC70582F23EF3964694F782E49CE8E224BA8C1596BAE75624 "点击放大")
 
 ```typescript
 @Entry

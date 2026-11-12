@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1567
 title: 应用首页在手机上侧滑能弹出弹窗，在平板上无法弹出弹窗
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 应用首页在手机上侧滑能弹出弹窗，在平板上无法弹出弹窗
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:34+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:4dfcc05ed0ea02b68ce14d329058e39a509ffb65c2ed83a8bb937356fa5d6633
 ---
@@ -150,4 +150,4 @@ struct CustomDialogUser {
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/RqX1R6ViSv2R0Qkd8hwaMg/zh-cn_image_0000002628769760.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/RqX1R6ViSv2R0Qkd8hwaMg/zh-cn_image_0000002628769760.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=2CA34482C81DF33D5DC5096161B88DAE7C28D301BC5D2C40DF1CB4CCFC724985 "点击放大")

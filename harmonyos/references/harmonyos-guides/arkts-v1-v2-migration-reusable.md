@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-m
 title: 组件复用迁移
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导 > 状态管理V1向V2迁移场景 > 组件复用迁移
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:ff46fbed9696b8aa6f867887c0e20ac1c56af79fa5255a1b60fe93fa17ed6ed9
 ---
@@ -177,7 +177,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/FGbVXnLTTMCJqwpFUFpKWw/zh-cn_image_0000002786358684.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/FGbVXnLTTMCJqwpFUFpKWw/zh-cn_image_0000002786358684.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=A736F77C1D5FE064506D3FBF939554388EF961B763377E294496066F094A2E0C)
 
 ### 列表滚动-Repeat使用场景
 
@@ -258,7 +258,7 @@ export struct CardViewV2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/ZavR8j7HRZOKK88fwBovkg/zh-cn_image_0000002815558105.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/ZavR8j7HRZOKK88fwBovkg/zh-cn_image_0000002815558105.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B94C065F254774A272BE33CC660CBE74FBF687FB6C7341A3A90B68899837FB6)
 
 ### 列表滚动-if使用场景
 
@@ -365,7 +365,7 @@ export struct OneMoment {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/ieU6bmUgRUSFTXBqZadH0w/zh-cn_image_0000002815398189.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/ieU6bmUgRUSFTXBqZadH0w/zh-cn_image_0000002815398189.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=07C7702E1E9343AA87CF2649E8F1F07FBEFB13F939CC000318C4BF37AB8DEB44)
 
 ### 列表滚动-Repeat全量加载使用场景
 
@@ -486,7 +486,7 @@ class ListItemObject {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/qJAiyOe1SP2TFh1amhbS1A/zh-cn_image_0000002786518614.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/qJAiyOe1SP2TFh1amhbS1A/zh-cn_image_0000002786518614.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=8ED5FC638EF3B837EF08428E9EE702809A2C375CA7511E8559A8A1DBEC42B62A)
 
 ### Grid使用场景
 
@@ -556,7 +556,7 @@ struct ReusableV2ChildComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/RDElvvbjT9KunbsNHuyCGg/zh-cn_image_0000002786358686.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/RDElvvbjT9KunbsNHuyCGg/zh-cn_image_0000002786358686.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=183044F077C8FFEE9EE8C5121667257BFBC55C60ADCDD98D09216B295393CCBC)
 
 ### WaterFlow使用场景
 
@@ -661,7 +661,7 @@ struct ReusableWaterFlowScene {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/MiSJGYX4SMOQkipr56ZMJQ/zh-cn_image_0000002815558107.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/MiSJGYX4SMOQkipr56ZMJQ/zh-cn_image_0000002815558107.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D6E458A40642FBE6EC3CB4019BA99E88A4BC6482B81000A55EEDA9BA50222D4)
 
 ### Swiper使用场景
 
@@ -768,7 +768,7 @@ struct QuestionSwiperItem {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/HX0E9mMNRpqg5voIS78Plw/zh-cn_image_0000002815398191.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/HX0E9mMNRpqg5voIS78Plw/zh-cn_image_0000002815398191.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=DFF0DEF51219C26B15718AD50C6DB050F8ED42DA9744BC55F7F731EFCFD03142)
 
 ### 列表滚动-ListItemGroup使用场景
 
@@ -849,7 +849,7 @@ class DataSrc {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/7UX0UA5NQEWvZ0hqeSXgxA/zh-cn_image_0000002786518616.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/7UX0UA5NQEWvZ0hqeSXgxA/zh-cn_image_0000002786518616.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9C7800F4DEC1DB8D63231249262D001FAA170535E41952C88C8FFE014BDA050)
 
 ### 多种条目类型使用场景
 
@@ -935,7 +935,7 @@ struct ReusableV2Component {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/MzKyIqVUTx6bzsG8sOU08g/zh-cn_image_0000002786358688.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/MzKyIqVUTx6bzsG8sOU08g/zh-cn_image_0000002786358688.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=35102DA2F69555492339D260893AA268D48690C8A519C69A56DB530D1780FB50)
 
 **组合型**
 
@@ -1111,4 +1111,4 @@ struct ChildComponentD {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/WrOaTZ9sT8Scw71CppcbLg/zh-cn_image_0000002815558109.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/WrOaTZ9sT8Scw71CppcbLg/zh-cn_image_0000002815558109.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB927B01887AA1597F888202B18CC57C5A39FBB0E3DB74AACD5F963B1BEE2CEC)

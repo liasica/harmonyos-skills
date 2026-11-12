@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: Harmony无法正常显示对应的字体
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > Harmony无法正常显示对应的字体
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:8662a7af08edf65be561865d2085a5a8db9c3048f24133701e4b9d24503b523d
 ---
@@ -14,13 +14,13 @@ content_hash: sha256:8662a7af08edf65be561865d2085a5a8db9c3048f24133701e4b9d24503
 
 问题现象1（注册字体失败）：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/L_SVxE-wRb-sAl9GxFsZ1g/zh-cn_image_0000002628553252.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/L_SVxE-wRb-sAl9GxFsZ1g/zh-cn_image_0000002628553252.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=20C1A8692652F7BB93E65CFD4119A69D0116CC8EE3E19420B6C54139595337FE "点击放大")
 
 问题现象2（字体显示与字体资源文件中的字形显示不一致）：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/QcPbABSzQ6uzve-9ZsHsFA/zh-cn_image_0000002658912565.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/QcPbABSzQ6uzve-9ZsHsFA/zh-cn_image_0000002658912565.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=73B7824F524943B8D6FA02C75DDE733AADC6D8E993340F1E22AA26E23845B76D "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/OnAk6TKSQ2iRUWtEGxz2Rg/zh-cn_image_0000002658792627.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/OnAk6TKSQ2iRUWtEGxz2Rg/zh-cn_image_0000002658792627.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CA42D2396E9F6859A503BF508B50C9137849D688F8756AF17E81840369D8FFC "点击放大")
 
 问题代码如下：
 
@@ -91,10 +91,10 @@ struct Index {
 
 1. 字体资源异常：字体资源文件存在问题，如不存在对应的字体，会导致字体不显示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/STbEAlbEQnCLKdGGCYU1OQ/zh-cn_image_0000002628393366.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/STbEAlbEQnCLKdGGCYU1OQ/zh-cn_image_0000002628393366.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=437F5FAF725676856BD081638526B84F7889F0EFB13F7FF0F8B0A6AFE06D0466 "点击放大")
 2. 字体引擎注册字体异常：注册字体失败。特别需要注意的是，注册字体使用的名称需要唯一。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/dhmTNd-bRs2rtWCASQpNRQ/zh-cn_image_0000002628553256.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/dhmTNd-bRs2rtWCASQpNRQ/zh-cn_image_0000002628553256.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=D497E847F2606F48607C394C17C17D7BD0179B5BFDE4B6E1CD364A2D9128FE9F "点击放大")
 3. 代码逻辑使用不当导致的异常：例如时序问题、使用了错误的Unicode码等。
 
    第一点可以通过使用在线字体网站/字体软件查询自定义字体文件中是否包含未正确显示的字体；第二点可以通过查看日志，来判断字体是否注册成功。

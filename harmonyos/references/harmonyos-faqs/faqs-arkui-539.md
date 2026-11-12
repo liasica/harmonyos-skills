@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-539
 title: 页面退出时，旧页面的内容与新页面的内容重叠
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 页面退出时，旧页面的内容与新页面的内容重叠
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:33+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:bf091fe70e27441e86331fedcf5dd06d32b2116ce73262a1835dcd33bb141153
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:bf091fe70e27441e86331fedcf5dd06d32b2116ce73262a1835dcd33bb1
 
 页面退出时，新页面与正在退出的页面显示重叠。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/CLgzbr8vQnq_mUBuxBJRzg/zh-cn_image_0000002628391616.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/CLgzbr8vQnq_mUBuxBJRzg/zh-cn_image_0000002628391616.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8E018C7269AA1D17ABDAC96BA42073A6B8819639F9070B88F0E45D42DB188F8 "点击放大")
 
 ## 背景知识
 
@@ -189,4 +189,4 @@ src/main/module.json5文件中需添加"routerMap": "$profile:router\_map"。
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/NGY7Qq9jRhi0dhTYHGzrCQ/zh-cn_image_0000002658910833.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/NGY7Qq9jRhi0dhTYHGzrCQ/zh-cn_image_0000002658910833.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=A30693B153AF8A028C5367B09E93155252C76FAB1614946682E4122661CDA4B5 "点击放大")

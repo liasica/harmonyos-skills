@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (PromptAction)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (PromptAction)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:57+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-14
 content_hash: sha256:efe7b4b633efa50053b1d2234e05c29cfa3d22348239547865dfd1148f2fc6c7
 ---
@@ -365,11 +365,11 @@ struct Index {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/rD0R728iSBGAEJiNn3btcw/zh-cn_image_0000002815560299.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/rD0R728iSBGAEJiNn3btcw/zh-cn_image_0000002815560299.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=E15F527389E324ADC58F942A86014A99AFC915ED064760A87328B71B7076213D)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/CVt_jberSBaxLmQnpAAeRg/zh-cn_image_0000002815400383.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/CVt_jberSBaxLmQnpAAeRg/zh-cn_image_0000002815400383.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C19589D0176B238CFD08E1457E0A1649683017C05C7E86E47D3ED58DBCD2772)
 
 ## showDialog
 

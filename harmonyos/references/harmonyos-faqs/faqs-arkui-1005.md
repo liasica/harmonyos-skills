@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1005
 title: 如何实现画布绘制的图案随手指移动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现画布绘制的图案随手指移动
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:50+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-13
 content_hash: sha256:8f5e620521f8dc3e52d2d914f3de7e8c1bb3517694d9e505366b5fbb11d5dedf
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:8f5e620521f8dc3e52d2d914f3de7e8c1bb3517694d9e505366b5fbb11d
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/LQWv3M4NQi6NaA0YDREWwg/zh-cn_image_0000002658923991.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/LQWv3M4NQi6NaA0YDREWwg/zh-cn_image_0000002658923991.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=189EC775325AF50CA0535A18F0F8F3AC90BEE5831BBF4129625DC5DEC405C9B7 "点击放大")
 
 ## 背景知识
 

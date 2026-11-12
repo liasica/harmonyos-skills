@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-744
 title: 如何解决关闭bindSheet半模态窗口时退出动效执行两次的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决关闭bindSheet半模态窗口时退出动效执行两次的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:218dac2b2aa8ba0ab64d25f676efbb147dd11043a291801387ad2570d05d2cb8
 ---
@@ -14,11 +14,11 @@ content_hash: sha256:218dac2b2aa8ba0ab64d25f676efbb147dd11043a291801387ad2570d05
 
 问题现象图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/eLPjVcr-S-SwqusrQnGkJQ/zh-cn_image_0000002658914683.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/eLPjVcr-S-SwqusrQnGkJQ/zh-cn_image_0000002658914683.png?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=075993754AF2495D7B592AAD2202DDE497D49030B5E399C998160148EE00B350 "点击放大")
 
 效果预览:
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/FUpVPHt_TmmrvjfhrYkBTg/zh-cn_image_0000002658794733.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/FUpVPHt_TmmrvjfhrYkBTg/zh-cn_image_0000002658794733.png?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A076A70045502397EE8527C07C69BE29DDA19972459613190311A7F125C33E6 "点击放大")
 
 复现问题示例代码如下：
 

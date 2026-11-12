@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-872
 title: 弹窗箭头位置错误，指示不明确
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 弹窗箭头位置错误，指示不明确
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:34+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:585e21c93eb0f2f5090e519b9687869f8d632d75fe1ed095aa9d32bb8dd8739e
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:585e21c93eb0f2f5090e519b9687869f8d632d75fe1ed095aa9d32bb8dd
 
 弹窗提示“点击图片可放大”，但是箭头并未指向图片。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/n_j2c8__TDSEdvj-73X4WA/zh-cn_image_0000002658798189.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/n_j2c8__TDSEdvj-73X4WA/zh-cn_image_0000002658798189.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8B8BB71871004F8910AA07900C407496419A0E663357451450E3F6F74E05268 "点击放大")
 
 ## 背景知识
 
@@ -22,7 +22,7 @@ content_hash: sha256:585e21c93eb0f2f5090e519b9687869f8d632d75fe1ed095aa9d32bb8dd
 
 1. 使用DevEco Testing查看问题组件，该弹窗组件为Popup气泡弹窗组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/zQREtwktSjClnJYRFXgBQg/zh-cn_image_0000002628558818.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/zQREtwktSjClnJYRFXgBQg/zh-cn_image_0000002628558818.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DC486630027E3F150C6E1C2DDF219D402836614BED40B5BBE87B031F6AEB1BB "点击放大")
 2. 查看该Popup气泡弹窗组件的设置，该组件并没有绑定在图片组件上，而是绑定在列表组件List上。
 
    ```screen
@@ -134,4 +134,4 @@ struct ScrollExamplePop {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/iTYuNS2nQTWsDOGhlHHrVg/zh-cn_image_0000002658918135.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/iTYuNS2nQTWsDOGhlHHrVg/zh-cn_image_0000002658918135.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=D338A28B42ECC2A93414EEE6759A8F223899543F1934A6AE1F184BB26DF6C735 "点击放大")

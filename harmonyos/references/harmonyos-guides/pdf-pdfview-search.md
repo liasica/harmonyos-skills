@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-pdfview-s
 title: 搜索关键字
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > PdfView预览组件 > 搜索关键字
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:33+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:6df7a3c84fdc17f178d6a207f694e27bf64ff445db2ec14c409a72bbe42097b9
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:6df7a3c84fdc17f178d6a207f694e27bf64ff445db2ec14c409a72bbe42
 
 使用[getSearchIndex](../harmonyos-references/pdf-arkts-pdfviewmanage.md#getsearchindex)方法获取当前高亮的索引，可以使用[clearSearch](../harmonyos-references/pdf-arkts-pdfviewmanage.md#clearsearch)方法清除所有搜索结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/-eK3XrR-TB-NJw2yWRURiQ/zh-cn_image_0000002815400019.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/-eK3XrR-TB-NJw2yWRURiQ/zh-cn_image_0000002815400019.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=F391B614D915FADD70BCD0F2C93A6969B96141DADC132F7EE2613D07F7180C0D)
 
 ## 接口说明
 

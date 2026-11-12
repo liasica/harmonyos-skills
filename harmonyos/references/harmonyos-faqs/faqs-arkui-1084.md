@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1084
 title: PersistenceV2持久化后数据无法读取的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > PersistenceV2持久化后数据无法读取的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:5525fb0a94a117c5e26660f93ad4f6659c1d9bc705079dbd398caa0c7b479102
 ---
@@ -45,7 +45,7 @@ struct PageOne {
 
 场景一问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/g1dMnOJ0RpeHrTR-3Wz8iA/zh-cn_image_0000002628407346.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/g1dMnOJ0RpeHrTR-3Wz8iA/zh-cn_image_0000002628407346.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=A423FE20683718A5478DEB5AE733CA955F36ED55AE76A1FB3FE79F471F474A40 "点击放大")
 
 ## 背景知识
 
@@ -107,7 +107,7 @@ struct PageOne {
 
     效果预览：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/ShgoZWYGSxKLV-HY9oKd9w/zh-cn_image_0000002628567244.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/ShgoZWYGSxKLV-HY9oKd9w/zh-cn_image_0000002628567244.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=F14D45130FDB32C4BCD4414EB9906931D8588299278E98D8DD9B3D1A477F2243 "点击放大")
   + **方案二**：为value属性添加一个初始值。
 
     ```ts
@@ -141,7 +141,7 @@ struct PageOne {
 
     效果预览：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/WwUkWjlbT-OZZvgye9gtMg/zh-cn_image_0000002658926557.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/WwUkWjlbT-OZZvgye9gtMg/zh-cn_image_0000002658926557.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=45662673844DD55AE4B985C82F35B32AB28FDA3206EB14FFD3F6B9EE57970CF1 "点击放大")
 
 ## 常见FAQ
 

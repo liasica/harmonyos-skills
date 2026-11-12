@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-tablet-15
 title: 悬浮窗模式，组件大小与显示内容大小不一致
 breadcrumb: FAQ > 多设备场景 > 平板 > 常见问题 > 悬浮窗模式，组件大小与显示内容大小不一致
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:37+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-30
 content_hash: sha256:1bf61260107e84da7fd5853098db04d22b2d7013f53ed61881165a4d36119dc7
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:1bf61260107e84da7fd5853098db04d22b2d7013f53ed61881165a4d361
 
 全屏模式显示正常，悬浮窗模式下组件大小与显示大小不一致。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/rSaenxWUQNa5CqBe1SJYYg/zh-cn_image_0000002658791617.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/rSaenxWUQNa5CqBe1SJYYg/zh-cn_image_0000002658791617.png?HW-CC-KV=V1&HW-CC-Date=20261112T233219Z&HW-CC-Expire=31536000000&HW-CC-Sign=73FCCB953854D612616CA022920BED6A4534B1DB84071C7204B67EADE4E281A5 "点击放大")
 
 ## 背景知识
 

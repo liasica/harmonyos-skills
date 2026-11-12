@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: Slider组件常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > Slider组件常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:59+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:7b2368310366dddfbc7541cdfc13b6a9c8858bda8490e087ce3bcf7df738a7ee
 ---
@@ -200,4 +200,4 @@ function buildSlider(config: SliderConfiguration) {
 
 运行效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/81PqUXFaRaW5Wzt85sKOTw/zh-cn_image_0000002793770213.png "点击放大")。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/81PqUXFaRaW5Wzt85sKOTw/zh-cn_image_0000002793770213.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=726B39B3F2613E816F17B41C145CD3C3499FD51AC72A1509F6E5317DD70C753D "点击放大")。

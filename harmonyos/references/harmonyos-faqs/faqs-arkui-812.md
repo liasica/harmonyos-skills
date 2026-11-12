@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-812
 title: Swiper如何设置数字指示器的背景色
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Swiper如何设置数字指示器的背景色
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:2c85115703cb61fd165656c669f862613e273f9c110dbcd6d4214af3e26d8c8d
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:2c85115703cb61fd165656c669f862613e273f9c110dbcd6d4214af3e26
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/TZyZKNmXRa6lCm-w9_fj1g/zh-cn_image_0000002658797167.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/TZyZKNmXRa6lCm-w9_fj1g/zh-cn_image_0000002658797167.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5AE2B33642C8A3F8C0941BB15A6B4CB7F474FFCE88801AB7EF4FBD380A4FA18 "点击放大")
 
 ## 背景知识
 

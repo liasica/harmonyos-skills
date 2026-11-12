@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/external-log
 title: external_log日志介绍
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 故障检测 > 通用日志 > external_log日志 > external_log日志介绍
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:53+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:3cd3a0d7071bb00a8890fcc9c91db0962b8ac4ad8bd694ce17cd92d0090d6764
 ---
@@ -25,7 +25,7 @@ external\_log是应用沙箱内的故障日志文件路径，当应用通过HiAp
 
 应用通过订阅系统事件来获取对应系统事件发生时的external\_log故障日志文件内容，其实现原理如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/i32diBKyQvKaRcVdZ6_XXQ/zh-cn_image_0000002815399313.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/i32diBKyQvKaRcVdZ6_XXQ/zh-cn_image_0000002815399313.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=DDE0A6671DAEF2F55445552A7ACA573C417BB0A3C552E21AF28332A0EF146865)
 
 详细步骤如下：
 

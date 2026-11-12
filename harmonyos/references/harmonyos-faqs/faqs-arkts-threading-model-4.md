@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-thre
 title: TaskPool多线程如何共享对象
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > ArkTS线程模型和并发 > TaskPool多线程如何共享对象
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:a424390854d52e5731b339fc9c9d5c2a879f788b91c96d97f79e7f811bceece0
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:a424390854d52e5731b339fc9c9d5c2a879f788b91c96d97f79e7f811bc
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/HTpykkppTl2N0VXaPZbezA/zh-cn_image_0000002629058994.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/HTpykkppTl2N0VXaPZbezA/zh-cn_image_0000002629058994.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B1AA94317E987BF92278268E6923182B65684F3C8C75921F309D332D22FDCC5 "点击放大")
 
 ## 背景知识
 
@@ -131,4 +131,4 @@ content_hash: sha256:a424390854d52e5731b339fc9c9d5c2a879f788b91c96d97f79e7f811bc
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/K6QTkuSkS6OEajSBYheqsA/zh-cn_image_0000002628899076.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/K6QTkuSkS6OEajSBYheqsA/zh-cn_image_0000002628899076.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1D5AE2A0F0B13B6FB00F998F5A26DE8076D3252176A04BD4866CD3DABB9B2E2 "点击放大")

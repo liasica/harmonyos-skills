@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 设置应用访问限制
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 应用访问限制 > 设置应用访问限制
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:37+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-23
 content_hash: sha256:5646b7d223a88b282ff7cc77d2341044b01f8e81efda2c82f45493d934e45104
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:5646b7d223a88b282ff7cc77d2341044b01f8e81efda2c82f45493d934e
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/nx0LoLQsR9GEiTd-iz80UQ/zh-cn_image_0000002815400093.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/nx0LoLQsR9GEiTd-iz80UQ/zh-cn_image_0000002815400093.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC1528697E595F576C47CEB74EB5FBCEAA1A42A447F33BCE8CDB7E517E347AD9)
 
 流程说明：
 

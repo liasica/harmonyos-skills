@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: LoadingProgress
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > LoadingProgress
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-01
 content_hash: sha256:85d8b31f3398858a5e7616b34e9d5afeeebc57ec7d28c576459420197e641fcc
 ---
@@ -151,7 +151,7 @@ struct LoadingProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/Lksr7fvBQw6gER6YWWNHDQ/zh-cn_image_0000002815400959.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/Lksr7fvBQw6gER6YWWNHDQ/zh-cn_image_0000002815400959.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=7716F72504E8A1CB630ED6757FE99541DC90DE1AC40045393850795C9C10AEC8)
 
 ### 示例2（设置定制内容区）
 
@@ -297,4 +297,4 @@ struct LoadingProgressDemoExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/jJ2bIxjVQ-qWNPJuI7wucA/zh-cn_image_0000002786521384.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/jJ2bIxjVQ-qWNPJuI7wucA/zh-cn_image_0000002786521384.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=1BC9BF531E2AEF41648301EE883C52B586D07B0ED3729B83CDF606F0728E0781)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 组件尺寸变化事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 组件变化事件 > 组件尺寸变化事件
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:3bac59f6c9d414b97d626b2070b13839a76880dce308ffa0dfd74df079bf55a0
 ---
@@ -96,4 +96,4 @@ struct AreaExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/82KPKrYTSFiCrD8YJN-p1w/zh-cn_image_0000002786520894.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/82KPKrYTSFiCrD8YJN-p1w/zh-cn_image_0000002786520894.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=D117B5669CE6BAD417DE65E08117D6FAA47988792AC50A99D3228F7962333CCF)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-atom
 title: InterstitialDialogAction
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > AtomicService > InterstitialDialogAction
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:24+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-17
 content_hash: sha256:75ad42f0ac3c4706694ff9b52eb878284610e0cd1860a2e0f4e6ca59dfd495ed
 ---
@@ -260,7 +260,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/WOQMOXW-QoOhP4ZbvNEMQw/zh-cn_image_0000002815401123.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/WOQMOXW-QoOhP4ZbvNEMQw/zh-cn_image_0000002815401123.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=96D8DB5C6FDB108FA95CCDF20F3953D52E27951DDB099260EA258F12274779AE)
 
 ### 示例2
 
@@ -386,4 +386,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/H3jJ2y30TCKyOLk24Nkrqg/zh-cn_image_0000002786521548.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/H3jJ2y30TCKyOLk24Nkrqg/zh-cn_image_0000002786521548.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=996983E960147CC85587CC2AB8F5ED687A42F23664E1BEB8587705271313F066)

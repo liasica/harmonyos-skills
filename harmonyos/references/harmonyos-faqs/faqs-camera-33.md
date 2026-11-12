@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-33
 title: 如何正确关闭释放相机流
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera） > 如何正确关闭释放相机流
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:ced6f7d2a790ab1468fd2bdfe772af21354ed6379d2f5c45cc252be9a4946a52
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:ced6f7d2a790ab1468fd2bdfe772af21354ed6379d2f5c45cc252be9a49
 
 相机拍照流程一般分为获取相机管理器和相机设备、创建相机输入流、获取相机输出能力、创建相机预览输出流、创建拍照输出流、设置拍照回调、创建并配置相机会话、启动相机会话、触发拍照、保存图片、释放资源等流程，流程之间存在依赖关系，具体开发流程可参考[拍照（ArkTS）](../harmonyos-guides/camera-shooting.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/gAKoyOUWSqaOUtrRnfEnKQ/zh-cn_image_0000002628552468.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/gAKoyOUWSqaOUtrRnfEnKQ/zh-cn_image_0000002628552468.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=C09D9DB0985DF042130296B277D49FAE0DD2F1ACE5E724BCA7B71E3846419C80 "点击放大")
 
 ## 解决方案
 

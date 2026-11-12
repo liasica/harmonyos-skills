@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: marquee开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > marquee开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-01
 content_hash: sha256:721c147fa4005c911721f87c82f12cb5ba4d62fb8e0bfa7cd1d3ae5b4dfb8a18
 ---
@@ -33,7 +33,7 @@ marquee为跑马灯组件，用于展示一段单行滚动的文字。具体用�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/_yIAzq5yTZ6oPM64sUKYIA/zh-cn_image_0000002786359330.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/_yIAzq5yTZ6oPM64sUKYIA/zh-cn_image_0000002786359330.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=8BF85ED9C82DED53A715566DB84FCBF467BFCEF44AD68DCDB345E8AA447F14BB)
 
 ## 设置属性和样式
 
@@ -70,7 +70,7 @@ marquee通过color和font-weight属性设置跑马灯中文本的颜色和字体
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/ZjKB54lJTNe1fbhI3mVVow/zh-cn_image_0000002815558751.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/ZjKB54lJTNe1fbhI3mVVow/zh-cn_image_0000002815558751.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=394BFABFEDA2DE7A6C25AC4E52B01C39E1650EDB531FA155B637B9BA3A07D0B4)
 
 通过scrollamount、loop和direction属性实现跑马灯滚动时的移动距离、滚动次数和文字滚动方向。
 
@@ -148,7 +148,7 @@ export default {
 
 当loop的值小于等于零时，跑马灯marquee将连续滚动。如果loop未指定，则默认为-1。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/vxcg8DnCS7-PFi8XJ6HIOg/zh-cn_image_0000002815398835.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/vxcg8DnCS7-PFi8XJ6HIOg/zh-cn_image_0000002815398835.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=739615B1229000DC35EE70CB958E2BB25039D273F114A3D991787FE3660FCC0C)
 
 ## 场景示例
 
@@ -229,4 +229,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/9mGldiv3TmK10ZleJ8mXhA/zh-cn_image_0000002786519260.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/9mGldiv3TmK10ZleJ8mXhA/zh-cn_image_0000002786519260.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=3FE5CE5BABC5E874154A56237FD6A9C39F8B0773005F871DF4399B61B4B75A6C)

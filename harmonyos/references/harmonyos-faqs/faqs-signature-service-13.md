@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-signature-
 title: 签名密钥库文件口令错误
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 签名密钥库文件口令错误
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:57+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:fe26870d7824d3783111fe7218d8d30f2e566340b46084f05ca5964c19c6f487
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:fe26870d7824d3783111fe7218d8d30f2e566340b46084f05ca5964c19c
 
 签名密钥库文件口令错误。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/9cHPq9gWRFqjDJ5Xm2qrnw/zh-cn_image_0000002624638648.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/9cHPq9gWRFqjDJ5Xm2qrnw/zh-cn_image_0000002624638648.png?HW-CC-KV=V1&HW-CC-Date=20261112T233218Z&HW-CC-Expire=31536000000&HW-CC-Sign=9698398B9679669B711248035C512C9D864C27BBA0A552F6C87AB5BBC421FB08)
 
 **解决措施**
 
@@ -26,8 +26,8 @@ content_hash: sha256:fe26870d7824d3783111fe7218d8d30f2e566340b46084f05ca5964c19c
 
 * 口令正确示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/K8kymzo3QICQqJHc0Mm8Zg/zh-cn_image_0000002654838049.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/K8kymzo3QICQqJHc0Mm8Zg/zh-cn_image_0000002654838049.png?HW-CC-KV=V1&HW-CC-Date=20261112T233218Z&HW-CC-Expire=31536000000&HW-CC-Sign=16EC369E581A509149EDCACA3E0678A3AFCCCB685900B5D2F9872632B9687225)
 
 * 口令错误示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/48h_s6mvTceOPU2S0qDSkA/zh-cn_image_0000002624478740.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/48h_s6mvTceOPU2S0qDSkA/zh-cn_image_0000002624478740.png?HW-CC-KV=V1&HW-CC-Date=20261112T233218Z&HW-CC-Expire=31536000000&HW-CC-Sign=C136961DA1B3669971FC9AD81CC8FB675A360A490D9E231C906D4828553075BE)

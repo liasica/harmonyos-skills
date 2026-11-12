@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-734
 title: TextPicker组件如何禁止响应事件
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > TextPicker组件如何禁止响应事件
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:efe08e9c7b5adc3a58c4619fcb048098bd30af4f06180c2f23228b517d7657de
 ---
@@ -48,7 +48,7 @@ TextPicker组件如何禁止所有响应事件，或者禁止指定响应事件�
 
    效果预览：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/LAm3Pmj3SEKW6wraW_rHzg/zh-cn_image_0000002658794593.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/LAm3Pmj3SEKW6wraW_rHzg/zh-cn_image_0000002658794593.png?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=21A9D8003E71135EF8C0D6FA9BD9690DADA22257E793A6D231087D12F951995E "点击放大")
 2. 禁止组件指定的响应事件，可以通过onGestureJudgeBegin自定义手势判定函数，自主决定是否响应。如下相关代码实现了当前TextPicker的选中项点击事件被禁止，而不影响对其他手势事件的响应。
 
    ```screen
@@ -102,13 +102,13 @@ TextPicker组件如何禁止所有响应事件，或者禁止指定响应事件�
 
    效果预览：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/mNEIjKRUQUCwpH0Z2s5xDg/zh-cn_image_0000002628555226.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/mNEIjKRUQUCwpH0Z2s5xDg/zh-cn_image_0000002628555226.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C2B6DD6FFE7080D09536D9185D2AB1716D8B92A6942AAB673962247B2C55AC8 "点击放大")
 
    以长按手势为例，区分是否禁用对应的手势。代码中设置点击手势标志：“点击tap1”无打印，长按手势标志打印：“长按longPress”。
 
    日志如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/ySKi2Wv5TE-LXPoJWogttg/zh-cn_image_0000002658914549.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/ySKi2Wv5TE-LXPoJWogttg/zh-cn_image_0000002658914549.png?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=C79663D6AB843D3095E97233C5D850582F58222097D1EA68C5379595D100FA78)
 
 ## 总结
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-form-25
 title: 如何定位并解决卡片白屏展示的问题
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 如何定位并解决卡片白屏展示的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:8f92d85612bc39486f5f121e218e53b8986f373543c448dde8f5417b97821aea
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:8f92d85612bc39486f5f121e218e53b8986f373543c448dde8f5417b978
 
 在开发服务卡片功能时，可能会出现卡片白屏显示异常的问题。这可能是因为卡片页面样式配置错误，也可能是因为没有遵循卡片的开发约束。如何通过卡片日志定位并解决问题？异常示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/XR9j2QBiRJa7MR0Do7r7-g/zh-cn_image_0000002658990875.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/XR9j2QBiRJa7MR0Do7r7-g/zh-cn_image_0000002658990875.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=03FDF3C3AA85473E95591EDDA3068A61C36E0BD88007812E0DC3DC363985166A "点击放大")
 
 ## 背景知识
 
@@ -165,4 +165,4 @@ Q：在卡片开发过程中，很多import方法以及UI能力的使用不支�
 
 A：当卡片的页面功能复杂时，可能在卡片的实际运行时才崩溃报错，体现为卡片显示白屏。（注意：一个卡片报错后会导致应用的所有卡片渲染全部挂掉成为白屏）出现此类情况时，可以在IDE中查看日志，选择com.ohos.formrenderservice卡片渲染服务查看error日志看具体卡片渲染报错原因。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/8QgpurgvRkO-WZQc2ZfPqQ/zh-cn_image_0000002628631666.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/8QgpurgvRkO-WZQc2ZfPqQ/zh-cn_image_0000002628631666.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=445451A7282D397ACEAD17D9AD467369BDA1BE73A052C821BB33C75687DB3FB7 "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/basic-services-
 title: 文件下载分享功能常见问题
 breadcrumb: FAQ > 系统开发 > 基础功能 > 基础服务（Basics Service） > 常见问题 > 文件下载分享功能常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:f841f7e6ba543ed57cab822384ab26629de1b96829943966ee7bb779b496e0b4
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:f841f7e6ba543ed57cab822384ab26629de1b96829943966ee7bb779b49
 
 A：实现文件下载并打开分享功能可参考如下流程进行：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/FoG9SlLhSaWxGjWDc5WDSw/zh-cn_image_0000002801512925.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/FoG9SlLhSaWxGjWDc5WDSw/zh-cn_image_0000002801512925.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0A107399DBB5F4FC38E5515077E97A048DFA6332AD18674B3A33336A8F81597 "点击放大")
 
 各步骤实现样例参考如下：
 
@@ -199,7 +199,7 @@ downLoad2Share() {
 
 实现效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/c-sZj3RHQE26zHZ2RzzqfA/zh-cn_image_0000002772439048.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/c-sZj3RHQE26zHZ2RzzqfA/zh-cn_image_0000002772439048.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=4FD6A52F72942D45F408ED4FA4828B6FA98A1C9F5C6F356AD353B5316A2B661B "点击放大")
 
 **Q：文件下载到沙箱失败，报错Invoke downloadFile failed，code is 13400003。**
 

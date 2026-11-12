@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1653
 title: 实现Slider进度和滑块解耦
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 实现Slider进度和滑块解耦
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:27+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:3af59fed7567f26468f8d1bbfe224ed7cb0d5d314c4f71158920c263144895f1
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:3af59fed7567f26468f8d1bbfe224ed7cb0d5d314c4f71158920c263144
 
 如何实现类似Slider组件，且要求滑块和进度解耦。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/Dwws-CQmRB2AD_EK2BubbA/zh-cn_image_0000002628820888.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/Dwws-CQmRB2AD_EK2BubbA/zh-cn_image_0000002628820888.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=75E037ABDDD77D8AE46A77AE95DF92BC3C024BC1F6FAFA6448242FECAF54ECC1 "点击放大")
 
 ## 背景知识
 

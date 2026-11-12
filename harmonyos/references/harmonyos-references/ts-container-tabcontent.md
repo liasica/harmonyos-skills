@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: TabContent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 导航与切换 > TabContent
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:60a74113bd3224cfa9c81c1d882895150980da2ade99f644f7dc8414fbac0be8
 ---
@@ -998,7 +998,7 @@ struct TabContentExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/em2ip-bTRg2MkfruS533FA/zh-cn_image_0000002815560625.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/em2ip-bTRg2MkfruS533FA/zh-cn_image_0000002815560625.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=812FEBE41A9E25B4CEEAAC1E2ACD743EBEF2D893B4B60ABD8D2CD76B5F86C67D)
 
 ### 示例2（自定义侧边页签）
 
@@ -1073,7 +1073,7 @@ struct TabContentExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/F3k77INTRRuomlDKW7DuYA/zh-cn_image_0000002815400709.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/F3k77INTRRuomlDKW7DuYA/zh-cn_image_0000002815400709.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E80FA4FBE3A42E2803E794B8CD44F65D3B608941457F1563D37D2E31922932A)
 
 ### 示例3（子页签/底部页签/侧边页签样式对比）
 
@@ -1250,7 +1250,7 @@ struct TabBarStyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/fxE0OMcTS8ymeQiZzP0FCQ/zh-cn_image_0000002786521134.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/fxE0OMcTS8ymeQiZzP0FCQ/zh-cn_image_0000002786521134.jpeg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=76480B0CA0A97651C2192AE69E7AEB6CC24F6A24B9D2483879999883BED7CC0D)
 
 ### 示例4（设置子页签下划线基本属性）
 
@@ -1488,7 +1488,7 @@ struct TabsAttr {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/UPJAM7EJSPSIET2iAsUk9A/zh-cn_image_0000002786361206.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/UPJAM7EJSPSIET2iAsUk9A/zh-cn_image_0000002786361206.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E193AD672C6BD347BFD6965E576806A95B1F9E95CA906299B008C1A23DDD735)
 
 ### 示例5（设置子页签文本自适应高度属性）
 
@@ -1576,7 +1576,7 @@ struct TabsTextOverflow {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/WlB8MjQgSNqRwBxihe0GlQ/zh-cn_image_0000002815560627.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/WlB8MjQgSNqRwBxihe0GlQ/zh-cn_image_0000002815560627.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A2DB5C3D23D60806EEA2AB4136FFC27C6D1CDC9C57D73D6A75E3AFDF509E769)
 
 ### 示例6（设置底部页签基本属性）
 
@@ -1727,7 +1727,7 @@ struct TabContentExample6 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/wJ3cdtSDQMWI4wiujD0I3w/zh-cn_image_0000002815400711.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/wJ3cdtSDQMWI4wiujD0I3w/zh-cn_image_0000002815400711.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=9128F8B3EA2644CB25CDED0F4D98BC50ED9E582B1924E0EB8FD3262D4B3D9EED)
 
 ### 示例7（设置子页签/底部页签文本颜色）
 
@@ -1827,7 +1827,7 @@ struct TabBarStyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/fHykttdmRrKhfjkMKNegbQ/zh-cn_image_0000002786521136.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/fHykttdmRrKhfjkMKNegbQ/zh-cn_image_0000002786521136.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=59195040A0E460AB6D2DD9110FF5D9F97331A159E75201917679EBFB113A08D7)
 
 ### 示例8（设置底部页签使用symbol图标）
 
@@ -1911,7 +1911,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/VvbNo45aRHG9m-qZfLTeyg/zh-cn_image_0000002786361208.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/VvbNo45aRHG9m-qZfLTeyg/zh-cn_image_0000002786361208.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=8443593FD1A1A1E558B44C5545D06483E8F60E5B7A9766F68EC8AD2D7496C68F)
 
 ### 示例9（通过ComponentContent设置TabBar）
 
@@ -2017,7 +2017,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/jZGGJfzIR8SCJAmgErDpPA/zh-cn_image_0000002815560629.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/jZGGJfzIR8SCJAmgErDpPA/zh-cn_image_0000002815560629.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=136F1585A49191B983A1B7B0B1141776F68FAF8AA3B03EE4D64C117F5C27159F)
 
 ### 示例10（通过ComponentContent预加载子节点）
 
@@ -2193,7 +2193,7 @@ struct MyComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/-7JTh1CARuKo6R0Jps4ACQ/zh-cn_image_0000002815400713.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/-7JTh1CARuKo6R0Jps4ACQ/zh-cn_image_0000002815400713.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D4B40EFEDCD5B0B291DDE13E2BAA30B8EBB343EAC7053D327772D3D842F7301)
 
 ### 示例11（设置子页签indicator为图片）
 
@@ -2259,7 +2259,7 @@ struct TabsIndicatorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/cNHIziY4Q4aoQAPk0CbSsg/zh-cn_image_0000002786521138.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/cNHIziY4Q4aoQAPk0CbSsg/zh-cn_image_0000002786521138.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5709E494DAF12E38EB7A4365544B6896A9997ABA9D1D1D03E50B8E38422B1CE)
 
 ### 示例12（设置页签在不同页签栏中的可见性）
 
@@ -2379,4 +2379,4 @@ struct TabBarVisibilityExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/XMiELUnCTDOo2eBeXfQhxQ/zh-cn_image_0000002786361210.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/XMiELUnCTDOo2eBeXfQhxQ/zh-cn_image_0000002786361210.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=29096324F75B553723CCCF5567E9BF1C5BA62FDEE96CE3582F647AB403A4B993)

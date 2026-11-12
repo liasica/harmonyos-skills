@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/perf-detectio
 title: 性能检测
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 性能检测
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:53+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-28
 content_hash: sha256:01f231255922fe443eca41642637030a9326d7ce495bf0320c0258aa136bf85f
 ---
@@ -18,7 +18,7 @@ content_hash: sha256:01f231255922fe443eca41642637030a9326d7ce495bf0320c0258aa136
 
 启动耗时事件统计时间起点为用户点击屏幕，默认结束点为启动动效完成，使用者可调用[reportDrawCompleted](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#reportdrawncompleted10)接口根据实际情况传入定制结束时间。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/bj3ry1znR36eMKxP8n5c2w/zh-cn_image_0000002786519738.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/bj3ry1znR36eMKxP8n5c2w/zh-cn_image_0000002786519738.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=8754D540FA5680BB3E08EC585711C686C7A09242A0AC16FCCDBB9E7995E1D546)
 
 icon\_input\_time：用户点击屏幕时间点。
 
@@ -52,7 +52,7 @@ extend\_time：开发者定制的启动耗时，该时间为手指离开屏幕�
 
    最大单帧耗时超过50ms则为滑动丢帧，具体规则为max\_render\_frametime或max\_app\_frametime超过50ms时会触发该事件上报。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/B9uUJH2qR_aidCCk16-uxw/zh-cn_image_0000002786359810.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/B9uUJH2qR_aidCCk16-uxw/zh-cn_image_0000002786359810.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=112B95D893E78EFFA290D7E6801288AB9C14CBF31939DC211D8108F896B45D95)
 
 ### 约束与限制
 
@@ -85,7 +85,7 @@ extend\_time：开发者定制的启动耗时，该时间为手指离开屏幕�
 
 抓栈结果部分示例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/-Mel5OsjQRm4wwmSSsOhug/zh-cn_image_0000002815559231.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/-Mel5OsjQRm4wwmSSsOhug/zh-cn_image_0000002815559231.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=48798A52B69F8C0FD190E0216B418BD54095BF28BCC9E58F2E7C677F70BE2BE8)
 
 此采样栈包含在滑动出现超过50ms卡顿时应用主线程调用信息，由于一般滑动卡顿过程较短，因此在出现问题时采集了一次调用栈。可根据同一场景卡顿上报的采样栈数据进行聚类，以判断该场景下滑动卡顿的具体根因。采样栈具体解析方法详见[主线程超时调用栈日志规格](apptask-timeout-guidelines.md#日志规格)。
 

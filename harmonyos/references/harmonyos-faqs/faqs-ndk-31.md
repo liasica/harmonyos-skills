@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-31
 title: 如何在Native侧集成三方库Curl，并进行HTTP数据请求
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何在Native侧集成三方库Curl，并进行HTTP数据请求
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:56+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:3b2512c83c93f9e8a1924371d466abaeb9e4eeb02a98e8401cf3b9d16213e30c
 ---
@@ -14,13 +14,13 @@ content_hash: sha256:3b2512c83c93f9e8a1924371d466abaeb9e4eeb02a98e8401cf3b9d1621
 
 1. 将移植后的Curl的so库放入Native工程的entry/libs/arm64-v8a/目录，将包含头文件的include目录放入entry/src/main/cpp目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/Ho9ga33ITKWFMCadIDLnGA/zh-cn_image_0000002624475894.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/Ho9ga33ITKWFMCadIDLnGA/zh-cn_image_0000002624475894.png?HW-CC-KV=V1&HW-CC-Date=20261112T233214Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3326B12C8428D744DB0BAEA51E1AB4753D1492B2A966209A767828BBD91852C "点击放大")
 2. 在CMakeLists.txt文件中链接Curl对应的so库。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/9JUkAn_GRFmbAhwQPw2oZg/zh-cn_image_0000002654835203.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/9JUkAn_GRFmbAhwQPw2oZg/zh-cn_image_0000002654835203.png?HW-CC-KV=V1&HW-CC-Date=20261112T233214Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6D31081E88D8A8E2412D4BBEAE0698226B87EA40EBAC6DDCF7C11EAD6553754 "点击放大")
 3. 在Native侧的.cpp文件中引入头文件curl.h，使用Curl的相关能力。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/cXBoMZdFSNCoMxAdg_r_KQ/zh-cn_image_0000002654795267.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/cXBoMZdFSNCoMxAdg_r_KQ/zh-cn_image_0000002654795267.png?HW-CC-KV=V1&HW-CC-Date=20261112T233214Z&HW-CC-Expire=31536000000&HW-CC-Sign=BAB0A51902D5DB134204CD5FE628C0C728ED1762B49DE94A9864B6B0D4B834E4 "点击放大")
 
    具体可参考以下代码：
 
@@ -89,7 +89,7 @@ content_hash: sha256:3b2512c83c93f9e8a1924371d466abaeb9e4eeb02a98e8401cf3b9d1621
 
 终端使用curl指令获取的网站信息一致。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/VF2GP3tnS_2UsOGRIA-UlQ/zh-cn_image_0000002624635800.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/VF2GP3tnS_2UsOGRIA-UlQ/zh-cn_image_0000002624635800.png?HW-CC-KV=V1&HW-CC-Date=20261112T233214Z&HW-CC-Expire=31536000000&HW-CC-Sign=2972ECC083CA0E0573B125348D3F69CC6042B51B25694440FC14CC950042D8C0 "点击放大")
 
 **参考链接**
 

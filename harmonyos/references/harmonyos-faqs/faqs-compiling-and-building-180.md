@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: "构建HSP模块时报错“Ohos BundleTool [Error]: hsp has home ability;Ohos BundleTool [Error]: CompressEntrance::main exit, verify failed.”"
 breadcrumb: "FAQ > DevEco Studio > 编译构建 > 构建HSP模块时报错“Ohos BundleTool [Error]: hsp has home ability;Ohos BundleTool [Error]: CompressEntrance::main exit, verify failed.”"
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:7a37e206990fc30c6de8c353089473ffbd2124234c0710e0b658cd1f1ce2e5c4
 ---
@@ -12,14 +12,14 @@ content_hash: sha256:7a37e206990fc30c6de8c353089473ffbd2124234c0710e0b658cd1f1ce
 
 构建HSP模块时出现以下错误：Ohos BundleTool [Error]: hsp 包含 home 能力；Ohos BundleTool [Error]: CompressEntrance::main 校验失败。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/hOo8yc3VRnSdcOM6unXQBA/zh-cn_image_0000002624478652.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/hOo8yc3VRnSdcOM6unXQBA/zh-cn_image_0000002624478652.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A77B7023F5DA4BBF9682F12DCF1881B0CDB8660336664B6E0B8BC156865B8BA)
 
 **问题原因**
 
 1. 从DevEco Studio 5.0.2 Beta1版本开始，HSP支持配置UIAbility组件，除入口Ability外。
 2. 构建过程中，HSP模块会将依赖的HAR中的Ability与其自身配置合并。因此，HSP不支持依赖带有入口Ability的HAR。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/KXmYfEyiSBKJmolHCvOlAw/zh-cn_image_0000002654798011.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/KXmYfEyiSBKJmolHCvOlAw/zh-cn_image_0000002654798011.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=27A874FC1B9C55BF69665A38E9683031A8D8C9B0A0EABE2F485B9A3D00235670)
 
 **解决措施**
 

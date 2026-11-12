@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: RowSplit
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 栅格与分栏 > RowSplit
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:6129563ab75591373d036f72f3e097c17a216225d92be11ec528bbcadf74b56b
 ---
@@ -95,4 +95,4 @@ struct RowSplitExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/hqYa48XfRoOLloV7rD6m1g/zh-cn_image_0000002815560531.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/hqYa48XfRoOLloV7rD6m1g/zh-cn_image_0000002815560531.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F0EE8AEB7D8D76A191F7462E3685CFF0EF690B6F2253FB8B19BA2C44155DA1D)

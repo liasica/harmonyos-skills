@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ProgressButton
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ProgressButton
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:27+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-14
 content_hash: sha256:9086babc62e0dae1a9eedd4431cf955fc24aadf3db9b279113fc3ae11aa630be
 ---
@@ -115,7 +115,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/gKkqxZ65TyORZfNOSY5rQg/zh-cn_image_0000002786361670.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/gKkqxZ65TyORZfNOSY5rQg/zh-cn_image_0000002786361670.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=88A4FEAD5547D93C32510D1D6B6A246D3288B86DD127D7744B933E321F39195F)
 
 ### 示例2（自定义颜色按钮）
 
@@ -178,7 +178,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/26_O4gQbTvGlCFVvBx5LbA/zh-cn_image_0000002815561091.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/26_O4gQbTvGlCFVvBx5LbA/zh-cn_image_0000002815561091.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=6167D20ED05B44886D5039C08AF445EE6DFC72C21DB357ED5CDB8CD9E46804D3)
 
 ### 示例3（自定义圆角按钮）
 
@@ -235,4 +235,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/yKDWJY-TQPWwB1KshgHTjA/zh-cn_image_0000002815401175.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/yKDWJY-TQPWwB1KshgHTjA/zh-cn_image_0000002815401175.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADC22D01C9517E9D909248C9B77159A288954DD104E875995658916D2AB91153)

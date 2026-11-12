@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-event-seq
 title: Web组件的生命周期
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web组件的生命周期
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:b72b4fd7aba36aae474e5e84ee8cf3a9d1aff642a22eaee93e1c5c5d0bc19b12
 ---
@@ -22,7 +22,7 @@ Web页面保活可以参考[使用离线Web组件](web-offline-mode.md)。
 
 **图1** Web组件网页正常加载过程中的回调事件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/B_NJAJY2SIq1ehMDKUVqfw/zh-cn_image_0000002815398927.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/B_NJAJY2SIq1ehMDKUVqfw/zh-cn_image_0000002815398927.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1018A40CDA9AC967C4CC7F371C42B5C4D39FA615BB74910B37BAA690C38B074)
 
 ## Web组件网页正常加载过程所涉及的状态说明
 

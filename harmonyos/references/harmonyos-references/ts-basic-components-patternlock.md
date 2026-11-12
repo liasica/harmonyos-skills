@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: PatternLock
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > PatternLock
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:658b11d85a4c3c3a194b8a467d98be3abdda2b3a5a291353e73fd17211949966
 ---
@@ -387,7 +387,7 @@ struct PatternLockExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/GwV63cMSQTasYbh9m2Kvig/zh-cn_image_0000002815400961.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/GwV63cMSQTasYbh9m2Kvig/zh-cn_image_0000002815400961.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0994C0D0D2581A64582F21306161837CBBE07164574267159DC8F04E278EE3E)
 
 ### 示例2（判断密码是否正确）
 
@@ -462,4 +462,4 @@ struct PatternLockExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/3-SeUXtOS1GJAV5s8xjIpg/zh-cn_image_0000002786521386.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/3-SeUXtOS1GJAV5s8xjIpg/zh-cn_image_0000002786521386.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=8FD78776AD72F50786F421372B9E4CDE39D19F1B096008AABF1EF519D58A5C5D)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-2
 title: PyCharm运行Hypium项目报错“测试用例的设备条件不满足”或者“required device does not exist”如何解决
 breadcrumb: FAQ > DevEco Studio > 应用测试 > PyCharm运行Hypium项目报错“测试用例的设备条件不满足”或者“required device does not exist”如何解决
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:85d1b4b4d47e6a0147c2e7583bab4b8c19abf08dfbbd9f86950a4818e3b7123c
 ---
@@ -14,10 +14,10 @@ cmd命令行可以连接到设备，UiViewer也可以连接设备。但是执行
 
 * 提示“Test source required 1 devices, actually 0 devices were found [Suggestions]测试用例的设备条件不满足”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/F6nVW-YRQXqdwVEcGwYE0A/zh-cn_image_0000002628409554.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/F6nVW-YRQXqdwVEcGwYE0A/zh-cn_image_0000002628409554.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8048B66F6E25E47EC2D036B9F3FFEAE5F22D6C6CD2ADEAECED42CC7FEB75627 "点击放大")
 * 提示“required device does not exist”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/qHgyU4x-QoKD_daXNEjj5Q/zh-cn_image_0000002628569452.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/qHgyU4x-QoKD_daXNEjj5Q/zh-cn_image_0000002628569452.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0791A00EFCC6C8EC67059F1BB643104B477E6A507BF88C267C552D5779EEFAB "点击放大")
 
 ## 背景知识
 
@@ -44,15 +44,15 @@ cmd命令行可以连接到设备，UiViewer也可以连接设备。但是执行
 * 将OHOS\_HDC\_SERVER\_PORT环境变量删除后重启PyCharm。
 * user\_config.xml文件sn不设置或者修改为当前设备sn，type类型和label类型按实际使用设备配置正确。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/3I5-Yu2VS9C-Sw76kgzczw/zh-cn_image_0000002658928769.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/3I5-Yu2VS9C-Sw76kgzczw/zh-cn_image_0000002658928769.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=C871D90B618B3B8B86593C9CDE1274276E9A5916A585F1D5B7159997EB2FB52B "点击放大")
 * 用例的json文件type类型配置正确。
 
   如下图所示，该用例请求了两个设备，一个为HarmonyOS设备，一个为其他平台设备。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/zNCw7STvS9qY9YwcbouUoA/zh-cn_image_0000002658808823.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/zNCw7STvS9qY9YwcbouUoA/zh-cn_image_0000002658808823.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=D09A86457119FC2515BDA566662BBCF283C9DC579860C8A08FCE91DDEC87D10B "点击放大")
 * 用例的json文件设备label类型配置每个设备对应的设备类型。如果用例可以在任何设备上运行，label字段不需要填。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/NF5vTMAEQPyRcVrFvvOSjQ/zh-cn_image_0000002628409556.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/NF5vTMAEQPyRcVrFvvOSjQ/zh-cn_image_0000002628409556.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC68B47AA29CFB35D37365F92177189154320EEF321FB7711D01F277ACF7AE52 "点击放大")
 
   | label类型 | 设备 |
   | --- | --- |

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: PinchGesture
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 基础手势 > PinchGesture
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-30
 content_hash: sha256:8138e079508d53859f53c0e3e2087839162325bf2ef521031425595f9117ad63
 ---
@@ -193,7 +193,7 @@ struct PinchGestureExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/KkeFfFQHQh6sF8CVGrMS1A/zh-cn_image_0000002786361086.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/KkeFfFQHQh6sF8CVGrMS1A/zh-cn_image_0000002786361086.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=E36889EFDC140DAA90D22C60937682CC30452C52A3876FC5C97EC79049636390)
 
 ### 示例2（实现图片跟手缩放）
 
@@ -291,4 +291,4 @@ struct PinchGestureExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/TcPKxCiPRdO4lq5iOgC0RA/zh-cn_image_0000002815560507.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/TcPKxCiPRdO4lq5iOgC0RA/zh-cn_image_0000002815560507.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=992B6B2E625EA00A9CAC7A4D50B767740E3F5D16B4688E061E64B95E64912B13)

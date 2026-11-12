@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 触摸热区设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 交互属性 > 触摸交互控制 > 触摸热区设置
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-17
 content_hash: sha256:8ce64c2c13fd9ccd8b19c3b5e3bfd9ee950a081b5aa81d1b13eab45afce70bc8
 ---
@@ -203,7 +203,7 @@ struct TouchTargetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/J1Cb41v5SW-VwYxIiRQrag/zh-cn_image_0000002786520966.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/J1Cb41v5SW-VwYxIiRQrag/zh-cn_image_0000002786520966.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=69C9410A7C34776A4F34335CF98CA7323BDEA6A0FEB60C9F9E0301AAEB785E48)
 
 ### 示例2（通过responseRegionList接口设置触摸热区）
 
@@ -261,7 +261,7 @@ struct TouchTargetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/diOtrLfgQvuyk-oCXtTppg/zh-cn_image_0000002786361038.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/diOtrLfgQvuyk-oCXtTppg/zh-cn_image_0000002786361038.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=33FE82B7967A18C578F36BFAC57FB338E2A4A41487FE0BC6ACDAD2B98BB250FE)
 
 ### 示例3（设置鼠标的触摸热区以响应点击事件）
 
@@ -353,4 +353,4 @@ struct MouseResponseRegionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/GhvKnqtVSMWMC_4cQrc8uw/zh-cn_image_0000002815560459.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/GhvKnqtVSMWMC_4cQrc8uw/zh-cn_image_0000002815560459.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B6ADB056C0FF9ED24EAF498030346523CCA13680E30D35DD72777E87FD6095F)

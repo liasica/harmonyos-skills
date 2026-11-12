@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/command-testi
 title: 命令行执行测试
 breadcrumb: 指南 > 应用测试 > 专项测试 > DevEco Testing > 命令行执行测试
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:8f8c67efa37a57538d42986b324df94e564b9ae913201875cfd23f7e2a7ba291
 ---
@@ -40,7 +40,7 @@ PS：性能测试对内存消耗比较大，为了避免出现任务执行失败
 
 安装DevEco Testing客户端后，登录进入首页->点击设置，在基本设置页面开启登录状态保活。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/9XMS7AKlRfq21af2_I0quw/zh-cn_image_0000002645378872.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/9XMS7AKlRfq21af2_I0quw/zh-cn_image_0000002645378872.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3CE0F4EBA38078373CB25944E46166E56D45DC49383368E3E521EDFAA0799CE "点击放大")
 
 ### 命令行启动测试任务
 
@@ -50,11 +50,11 @@ PS：性能测试对内存消耗比较大，为了避免出现任务执行失败
 
 2、在当前文件路径中输入cmd后点击回车进入cmd命令窗口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/sMaloz1OTj6GBDNeFOwGnQ/zh-cn_image_0000002645114060.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/sMaloz1OTj6GBDNeFOwGnQ/zh-cn_image_0000002645114060.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=C698C1333F9CD1328C1A68A154E1A3176EA4C6ED8C65E77EC3543117104739EB "点击放大")
 
 3、进入cmd窗口后，输入：DevEcoTestingConsole.bat -params 参数json文件路径。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/H4nsXuU-RECp5hXZ0tazcQ/zh-cn_image_0000002672388211.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/H4nsXuU-RECp5hXZ0tazcQ/zh-cn_image_0000002672388211.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9F66DB3D68560B729D72C076C211D4D6EC8426CC596A45800DDD41C468C20C7 "点击放大")
 
 **注意** 
 
@@ -66,7 +66,7 @@ json文件路径中不要含有特殊字符、中文、空格，可以直接拖�
 
 1、安装完客户端后，在应用程序中找到DevEco\_Testing\_for\_App.app，选中后control+右键，选择显示包内容进入 DevEco\_Testing\_for\_App.app/Contents/PlugIns/java.jdk/Contents/Home 目录，在该目录下选中bin目录后control + 右键，选择新建位于文件夹位置的终端窗口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/BJ30mlfeT_ygd29YN03Z0g/zh-cn_image_0000002663950171.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/BJ30mlfeT_ygd29YN03Z0g/zh-cn_image_0000002663950171.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=F80454B56A42BBA12C5948095CA4411C7F7EDE2AF133A5B4E5DBA601D9D0BF4D "点击放大")
 
 2、执行 ./DevEcoTestingConsole.sh 脚本
 
@@ -74,11 +74,11 @@ json文件路径中不要含有特殊字符、中文、空格，可以直接拖�
 
 初次执行可能会有permission denied权限问题，需给./DevEcoTestingConsole.sh脚本添加可执行权限，在终端窗口执行 chmod +x ./DevEcoTestingConsole.sh 。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/WOPSZLWyTtSpyiPh4-Bqxg/zh-cn_image_0000002664332745.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/WOPSZLWyTtSpyiPh4-Bqxg/zh-cn_image_0000002664332745.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDBAF16971FA3312CD1905ED5B4EA450C2210865F7C4430AF6F2914F9018B9AE "点击放大")
 
 权限添加完成即可通过命令行方式执行 “./DevEcoTestingConsole.sh -params json文件路径 ”命令启动测试服务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/e1VNmD8xRleKlVHzltvlbA/zh-cn_image_0000002634013774.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/e1VNmD8xRleKlVHzltvlbA/zh-cn_image_0000002634013774.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=08EE9B3BBA5C0BB316184EE9EEC507C1D8F330B035155FFD066EBE12731BC4BC "点击放大")
 
 ### 配置 json 文件
 
@@ -88,7 +88,7 @@ json文件路径中不要含有特殊字符、中文、空格，可以直接拖�
 
 查看任务状态前需要获取任务的taskId，在任务创建成功后可以在对应的打印日志中获取：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/zBGRa0kaRNyizS-QSHS_4g/zh-cn_image_0000002672530917.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/zBGRa0kaRNyizS-QSHS_4g/zh-cn_image_0000002672530917.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E620C5DE8749348C5375079F5A34B5768D658A15E572CC297FF87BB5ECB1E6B "点击放大")
 
 **Mac查看任务状态** 终端窗口执行命令：./DevEcoTestingConsole.sh -taskIds "f3\*\*\*469eca"
 
@@ -96,7 +96,7 @@ json文件路径中不要含有特殊字符、中文、空格，可以直接拖�
 
 查询结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/z_XdrCxARWGgUwozM87Ydg/zh-cn_image_0000002663950173.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/z_XdrCxARWGgUwozM87Ydg/zh-cn_image_0000002663950173.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC31C8C1188521451007778AD78AF1F94E084ABC0C48AEF40BF872055A169584 "点击放大")
 
 ### 命令行停止任务
 
@@ -106,7 +106,7 @@ json文件路径中不要含有特殊字符、中文、空格，可以直接拖�
 
 结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/mDdGO-OFQkGxGKSERCg7zg/zh-cn_image_0000002664030217.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/mDdGO-OFQkGxGKSERCg7zg/zh-cn_image_0000002664030217.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=25A0359BC2ACC3FE34B7F73A71C0107E582A506CB9B1D75A843E475138ED6D04 "点击放大")
 
 **说明** 
 
@@ -122,7 +122,7 @@ Windows 和 Mac 命令行启动任务参数，拼接-update 参数；本地测�
 
 ### 场景化性能测试
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/xPo6FcTORHiJ1jfjVZF1Fw/zh-cn_image_0000002663950223.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/xPo6FcTORHiJ1jfjVZF1Fw/zh-cn_image_0000002663950223.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=567648C87E596C0E1AE5ADD078A36115668B43EE4ADD4B554F456D4CC5A657E6 "点击放大")
 
 参数说明：
 
@@ -188,7 +188,7 @@ Windows 和 Mac 命令行启动任务参数，拼接-update 参数；本地测�
 
 ### 性能基础质量测试
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/cZ4piDYzS3er8wNfoYD3Pw/zh-cn_image_0000002670965461.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/cZ4piDYzS3er8wNfoYD3Pw/zh-cn_image_0000002670965461.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=C55223BBA533F9AF8A464437CB5908FFF13F83E8BAD3DFA593624BD264EAD761 "点击放大")
 
 参数说明：
 
@@ -259,7 +259,7 @@ Windows 和 Mac 命令行启动任务参数，拼接-update 参数；本地测�
 
 ### 稳定性基础质量测试
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/daBTl31xTvGra2WCdx0CLw/zh-cn_image_0000002633711132.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/daBTl31xTvGra2WCdx0CLw/zh-cn_image_0000002633711132.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=80DC7E12B4BC1485321F68CBD0D7CBB8A1A17C1F2B888D2EE651DDD1F40FF9FD "点击放大")
 
 参数说明：
 
@@ -335,7 +335,7 @@ Windows 和 Mac 命令行启动任务参数，拼接-update 参数；本地测�
 
 ### 内存泄漏测试
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/nReEdMhiRbaP82fBBFwPwA/zh-cn_image_0000002709499739.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/nReEdMhiRbaP82fBBFwPwA/zh-cn_image_0000002709499739.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=40D87C5C805F7D5387857E915FC9A71530F5913312213655D1534AE6411F8FF0 "点击放大")
 
 参数说明：
 
@@ -406,7 +406,7 @@ Windows 和 Mac 命令行启动任务参数，拼接-update 参数；本地测�
 
 ### 应用上架预检（本地）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/QWC__y6MRCy792_ucSH6XQ/zh-cn_image_0000002633871058.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/QWC__y6MRCy792_ucSH6XQ/zh-cn_image_0000002633871058.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=A616D18D77C207A85A68A9C87B48481EA7A8A571CAC21222AE4009E24AD2F160 "点击放大")
 
 参数说明：
 
@@ -545,7 +545,7 @@ softwareCatagory参数取值说明：
 
 打开任务数据存储目录，任务报告html和任务产物（2d\_report\_data.json）可在 taskPath目录下export文件夹下找到，例如：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/UzIj6CoTQ36yUKbwiURZiw/zh-cn_image_0000002633871884.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/UzIj6CoTQ36yUKbwiURZiw/zh-cn_image_0000002633871884.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=59750A20547186C05DEEEE910618E8B1E1EEAA7128CA768F49FB6987DE3FAB2D "点击放大")
 
 任务产物（2d\_report\_data.json）说明如下。
 
@@ -875,9 +875,9 @@ Error: Could not create the Java Virtual Machine ：命令启动窗口目录错�
 
 任务报告html可在 taskPath目录下export文件下找到，例如：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/5mvxQo4KThOutU_FKUOCrA/zh-cn_image_0000002663951775.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/5mvxQo4KThOutU_FKUOCrA/zh-cn_image_0000002663951775.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F4E78861DA62647159ADDE88D9529050ED63F08ECCD0A28125797A60298EEBF "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/zPgqGJ_bQCWJQLAgi1Ef6w/zh-cn_image_0000002664031823.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/zPgqGJ_bQCWJQLAgi1Ef6w/zh-cn_image_0000002664031823.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C20409F60264575A3FA980EBA90395B3FBE6A23ED61B20B88816B965918D3BA "点击放大")
 
 ## 常见问题
 

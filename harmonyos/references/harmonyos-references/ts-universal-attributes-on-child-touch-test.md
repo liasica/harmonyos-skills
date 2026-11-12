@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 自定义事件分发
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互事件分发控制 > 自定义事件分发
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:3fb2ae61fc2d4ef99d51686c37ce93271d772dda6e5d4dea624bfc34d18da214
 ---
@@ -181,7 +181,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/R-t2fEUjSfGBEpaLNzgWxg/zh-cn_image_0000002815560383.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/R-t2fEUjSfGBEpaLNzgWxg/zh-cn_image_0000002815560383.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=3FEDADD8737C0EAA2CF63DBFA785BEBB55984F9151CDF3165D36C3B6592D0C4F)
 
 ### 示例2（设置事件派发策略为FORWARD）
 
@@ -256,7 +256,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/oEYxZ62vTNelk1Yp7OMydg/zh-cn_image_0000002815400467.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/oEYxZ62vTNelk1Yp7OMydg/zh-cn_image_0000002815400467.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=712637573DDCFE2100029E72680A728269EA780266F12A650AA9BB1BDFFFAD8D)
 
 ### 示例3（设置事件派发策略为DEFAULT）
 
@@ -326,4 +326,4 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/3M8qI-_CT3iKoSrsob3_sA/zh-cn_image_0000002786520892.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/3M8qI-_CT3iKoSrsob3_sA/zh-cn_image_0000002786520892.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E7BF4747198F15DE5360004AA3A6C2F990F2ACA977AC6DF0A6FE3847885C9D7)

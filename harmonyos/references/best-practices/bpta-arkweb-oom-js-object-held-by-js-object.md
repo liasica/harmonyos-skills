@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-arkweb-oom
 title: JS对象长期被JS持有导致内存泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > ArkWeb OOM故障模式说明 > JS对象长期被JS持有导致内存泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-11-10T10:42:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-15
 content_hash: sha256:a6c2bb516b7d7ac5c4158181b78e758e7ed4e0f5fae7962476fd84eb06d9463f
 ---
@@ -57,15 +57,15 @@ msgEl.innerHTML = 'JS execute finish.';
 
 2. 在Memory页中，单击Load profile，上传内存快照文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/YAJEUaRvQI6Z_KzDqDo4Jw/zh-cn_image_0000002677818392.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/YAJEUaRvQI6Z_KzDqDo4Jw/zh-cn_image_0000002677818392.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7EB0C5AE987FADC1F29C9A5332B60CF4868E274B514695E8F62FE4D5B2A1CD5)
 
 3. 打开后默认显示Summary视图（按对象构造函数分组），按Retained size从大到小排序，可见98%的内存分布在Array对象中，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/o7lgQHlKQbKvEbH0Jj0UXg/zh-cn_image_0000002707578253.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/o7lgQHlKQbKvEbH0Jj0UXg/zh-cn_image_0000002707578253.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=83F7A83D48F494F9F7CE86C8FB9D1E3A4C9B5BEB0073B6865BD035258EB61675)
 
 4. 切换至Containment视图（按引用关系追溯），按Retained size从大到小排序，大致估算每个节点的Retained size累计值，找到累计值最大的节点，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/S-2oxNw4QMmDtocEBxzzmg/zh-cn_image_0000002677658544.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/S-2oxNw4QMmDtocEBxzzmg/zh-cn_image_0000002677658544.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=79647DA9B2CEA58828D823445D2D5A2314BE74389260426E47114F4CD2CB9ADD)
 
 可见大量内存被Stack roots引用，表明当前内存分布主要集中在栈上局部变量。
 
@@ -116,15 +116,15 @@ msgEl.innerHTML = 'JS execute finish.';
 
 2. 在Memory页中，单击Load profile，上传内存快照文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/JCqxf6x-QLyafI3BxaG2aA/zh-cn_image_0000002707458405.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/JCqxf6x-QLyafI3BxaG2aA/zh-cn_image_0000002707458405.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF9DFF0634D20505908A3D700C86E1917F7E3DEF7C528531F48B46C4B09DD9AD)
 
 3. 打开后，默认显示Summary视图（按对象构造函数分组），按Retained size从大到小排序，可见97%的内存被bigObject占用，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/fmOVSF6aQJarnL0mzucUrQ/zh-cn_image_0000002677818394.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/fmOVSF6aQJarnL0mzucUrQ/zh-cn_image_0000002677818394.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=EAAB4FE71F76829C1E49199A8700FC6FBAF3888C8FC18B5007AA5D855049B151)
 
 4. 切换至Containment视图（按引用关系追溯），按Retained size从大到小排序，依次展开Retained size最大的节点，直至无法进一步细分，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/7YGLLT_pQwSL9wG0YeMF1Q/zh-cn_image_0000002707578255.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/7YGLLT_pQwSL9wG0YeMF1Q/zh-cn_image_0000002707578255.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=1278310C8DFA6F5231B353E0898D74AA3058D344C426501DF0621579F2ACC7BA)
 
 可见大量内存被Micro tasks引用，表明当前内存分布集中于微任务所引用的变量。
 

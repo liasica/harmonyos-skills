@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-822
 title: 实现组件拖拽不超出限定区域
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 实现组件拖拽不超出限定区域
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:ba1a221450a1b40fc47201e1e96283fef461fd37fdfb4befced45f0da018f614
 ---
@@ -75,7 +75,7 @@ content_hash: sha256:ba1a221450a1b40fc47201e1e96283fef461fd37fdfb4befced45f0da01
 
   问题效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/6fxqQh85RpqbFlhYBHVmvQ/zh-cn_image_0000002658917663.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/6fxqQh85RpqbFlhYBHVmvQ/zh-cn_image_0000002658917663.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=0FBC3A7AE037D007236EA9088FDBFEB0AB5DEBD4EF6E82F6ECEFB94A4D9D8417 "点击放大")
 * **场景二**：
 
   可拖拽组件的初始位置(Stack({ alignContent: Alignment.End }))不在屏幕左上角的场景时，如何限制组件拖拽范围？在代码中给Stack组件添加了拖动事件，设置了任意方向可拖动，当前发现组件会拖动到屏幕以外的区域，期望能够实现组件只在屏幕内拖动的效果。
@@ -131,7 +131,7 @@ content_hash: sha256:ba1a221450a1b40fc47201e1e96283fef461fd37fdfb4befced45f0da01
 
   问题效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/uM7bvwJKSESMddH1HEJjjQ/zh-cn_image_0000002628398436.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/uM7bvwJKSESMddH1HEJjjQ/zh-cn_image_0000002628398436.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=E67A08194694EC1F2A272B16CE9DE4DAD7614384D3A1BEBD9CFCC81316281BF9 "点击放大")
 
 ## 背景知识
 
@@ -233,7 +233,7 @@ content_hash: sha256:ba1a221450a1b40fc47201e1e96283fef461fd37fdfb4befced45f0da01
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/V_I2KsDVQL24ByftnfPGTw/zh-cn_image_0000002658797719.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/V_I2KsDVQL24ByftnfPGTw/zh-cn_image_0000002658797719.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=08D84DF18B917F8F68747A7155CE4CB66933AB49A63B5A6287BAC95CB4BD3917 "点击放大")
 * **场景二**：
 
   设置Stack({ alignContent: Alignment.End })后，布局为尾端纵向居中，此时，坐标(0，0)不在屏幕的左上角，而是在方块右上角向左平移100vp，向下平移(xx)vp的位置。此时，整个屏幕被划分成了四个区域，左上角为(x<0,y<0)，右上角为(x>0,y<0)，左下角为(x<0,y>0)，右下角为(x>0,y>0)。
@@ -320,4 +320,4 @@ content_hash: sha256:ba1a221450a1b40fc47201e1e96283fef461fd37fdfb4befced45f0da01
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/JwNlhPipStCQNCEMqz-Xig/zh-cn_image_0000002628558354.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/JwNlhPipStCQNCEMqz-Xig/zh-cn_image_0000002628558354.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=A41BC70F859D7D2B80A1EE4BBD8FE7F42BAC37875CD0E3BB6BB91462C3BFF3A4 "点击放大")

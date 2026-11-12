@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: DatePickerComponent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > DatePickerComponent
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:28+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:057b3b4815a312742d42f0b095964be133f485146b14295ee581411aac732381
 ---
@@ -293,7 +293,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/0Dw8mtqyRdyNDfVHSd64lQ/zh-cn_image_0000002815401203.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/0Dw8mtqyRdyNDfVHSd64lQ/zh-cn_image_0000002815401203.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=10845E29EC102FB09147234758A88A891C083F96EADC907D6FA9111485F6E34C)
 
 ### 示例2（时间选择器）
 
@@ -330,7 +330,7 @@ struct TimePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/H1BhtMZsR7a98BlvD4CbRA/zh-cn_image_0000002786521628.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/H1BhtMZsR7a98BlvD4CbRA/zh-cn_image_0000002786521628.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=45E9B0DA47BEC417B8A6E62B96794FD1FF630D5D3BBE04192F1302D61E3E437E)
 
 ### 示例3（日期时间选择器）
 
@@ -377,7 +377,7 @@ struct DateTimePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/OuVPdsjNSYSj4i52d88_8g/zh-cn_image_0000002786361700.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/OuVPdsjNSYSj4i52d88_8g/zh-cn_image_0000002786361700.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=B78ABE691EBCBBFBE7FE52089EF4B20507E1A02CB527FE9077675F35D1FB7F95)
 
 ### 示例4（关闭循环模式）
 
@@ -413,4 +413,4 @@ struct NoLoopPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/NKbfpEB7S8ap7lIXvd4sZQ/zh-cn_image_0000002815561121.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/NKbfpEB7S8ap7lIXvd4sZQ/zh-cn_image_0000002815561121.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=235EB40431438BEC2C37B6D09462560295F5EE63314F9EFCDE67B6A33F70964E)

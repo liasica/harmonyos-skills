@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1335
 title: 如何避免组件设置border属性后外侧有阴影线
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何避免组件设置border属性后外侧有阴影线
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:6e345d125613d1e2fb1c57b34adf72a6468a6ddb03e2e3cec57eb11f1c1991b8
 ---
@@ -40,7 +40,7 @@ struct NavigationPage {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/jOKVmWX-QQ6hX-OisXQpMg/zh-cn_image_0000002658959239.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/jOKVmWX-QQ6hX-OisXQpMg/zh-cn_image_0000002658959239.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B563BC55B9B778CA8E719FC119BF82029689877395967B85CE7549583FADA9B "点击放大")
 
 ## 背景知识
 
@@ -111,7 +111,7 @@ struct NavigationPage {
 
   效果预览:
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/D4vSxWTsSqqVnG2qb6-2Iw/zh-cn_image_0000002658839287.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/D4vSxWTsSqqVnG2qb6-2Iw/zh-cn_image_0000002658839287.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C675258D0BD0E62424ABC8CC2C2B5C6B13BC8B7CBCFB37F9862A87168062D66 "点击放大")
 
 * **方案三**：调整圆角半径，当圆角半径较小时，可以减轻外侧线的显示。
 

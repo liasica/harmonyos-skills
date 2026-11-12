@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-location-2
 title: 如何监听/获取“位置”配置的开关状态
 breadcrumb: FAQ > 应用服务开发 > 位置服务（Location Kit） > 如何监听/获取“位置”配置的开关状态
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:787284fd59dfeb9a256f1d9b294e22d823970c8eb882f1b8a8604e2e92bde09a
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:787284fd59dfeb9a256f1d9b294e22d823970c8eb882f1b8a8604e2e92b
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/LwvoNEFoSRWgGOX_jcDjoA/zh-cn_image_0000002628554432.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/LwvoNEFoSRWgGOX_jcDjoA/zh-cn_image_0000002628554432.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA5E12D84BDA0427A9EE1D3D783EA1C6258881D5D9A7E5A3E7A1A7568C5FD7A2 "点击放大")
 
 ## 背景知识
 

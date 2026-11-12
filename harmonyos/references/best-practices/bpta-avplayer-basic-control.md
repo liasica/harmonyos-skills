@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-avplayer-b
 title: 基于AVPlayer基础播控实践
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 基于AVPlayer播放视频系列开发实践 > 基于AVPlayer基础播控实践
 category: best-practices
-scraped_at: 2026-11-10T10:42:02+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:d772f63596771fcd5bca3e9a7c97479c162120e0239e640bf62b488807b1f2ed
 ---
@@ -61,7 +61,7 @@ content_hash: sha256:d772f63596771fcd5bca3e9a7c97479c162120e0239e640bf62b488807b
 
 进度条是视频应用的一个基础能力，可以通过点击或拖动进度条精准跳转到指定时间进行播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/DplpPH6iQw-4R13Yz_bX9A/zh-cn_image_0000002453067562.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/DplpPH6iQw-4R13Yz_bX9A/zh-cn_image_0000002453067562.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2830B7BD1ABA287D9ADE9DF48B920B7BBEFF3E8F3ADEE06CDC09B62A429AFA4 "点击放大")
 
 ### 实现原理
 
@@ -107,7 +107,7 @@ Slider({
 
 通过界面按钮快捷切换视频播放静音状态，实现一键开启或关闭静音，提升媒体播放的交互便捷性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/7qJ5U-OrSJuMw9rJuGjm8Q/zh-cn_image_0000002486107325.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/7qJ5U-OrSJuMw9rJuGjm8Q/zh-cn_image_0000002486107325.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2C447D49C76FDA7202C5A08F36EEEDFA3699278EA415E3FA3F07960A27218B5 "点击放大")
 
 ### 实现原理
 
@@ -196,10 +196,10 @@ this.avPlayer.on('stateChange', async (state) => {
 点击按钮即可弹出设置弹窗，可选择"拉伸至与窗口等大"模式，视频拉伸至与窗口等大，适合需要充分利用显示区域且对比例变化不敏感的场景；选择"缩放至最短边填满窗口"模式，视频将保持原始宽高比并以最短边为基准进行缩放，适合需要保持画面比例不变的场景。
 
 **图1** 拉伸至与窗口等大模式  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/RQHlm4NGQ86N-qB9gqf4OQ/zh-cn_image_0000002452907970.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/RQHlm4NGQ86N-qB9gqf4OQ/zh-cn_image_0000002452907970.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=0289EA7CEFB626EAA864E2906CC60D3C8FDE975AB3497E4F05348A34911712EC "点击放大")
 
 **图2** 缩放至最短边填满窗口  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/zr6J8cQeQuWrwhobG_YVHQ/zh-cn_image_0000002485947349.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/zr6J8cQeQuWrwhobG_YVHQ/zh-cn_image_0000002485947349.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E38B0900AD00AC53027A0C9F2526F5A2558EE391CE351C28BC9E155108FA750 "点击放大")
 
 ### 实现原理
 
@@ -284,7 +284,7 @@ this.avPlayer.on('stateChange', async (state) => {
 
 通过点击按钮选择预设倍速实现倍速设置，为用户提供灵活的视频播放速率控制。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/EjxxYeSsRIid6tc-qnQiTg/zh-cn_image_0000002453067566.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/EjxxYeSsRIid6tc-qnQiTg/zh-cn_image_0000002453067566.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C92BC8E5A4ABBF902B9A7BE8D8AF712044A14FDD49D945E0573FC73DAA8CAEE "点击放大")
 
 ### 实现原理
 
@@ -398,7 +398,7 @@ this.avPlayer.on('stateChange', async (state) => {
 
 滑动调节音量是一项非常实用的功能，它允许用户在不离开视频播放界面的情况下快速调整音量，以获得更好的观看体验。该功能位于窗口左侧，通过上下滑动手势即可调整音量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/L7BcSNbnRBuxDBnPcEHUew/zh-cn_image_0000002486107329.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/L7BcSNbnRBuxDBnPcEHUew/zh-cn_image_0000002486107329.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=20BDE3E155A5C820C3D06BCDCDC705A50C190A671D863AF6BA02572E32DDED31 "点击放大")
 
 ### 实现原理
 
@@ -460,7 +460,7 @@ this.avPlayer.on('stateChange', async (state) => {
 
 在视频播放前，用户可设置外挂字幕文件，字幕将精准同步显示于视频画面下方，并可以通过按钮切换字幕语言，提升观看体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/8nF5sdMrSUOIcRafrSSMpg/zh-cn_image_0000002452907974.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/8nF5sdMrSUOIcRafrSSMpg/zh-cn_image_0000002452907974.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BCEE1E9CC739B3D968963D540B5EDD7D27E6FA88479C6AE0357DECD20DF8151 "点击放大")
 
 ### 实现原理
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-136
 title: 编译异常，无具体错误日志，难以定位问题
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 编译异常，无具体错误日志，难以定位问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:53+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:58fdf49806e85b86d5a62b9d32b9cd40e3afafd748257c34f391fdf3987ca6ab
 ---
@@ -20,15 +20,15 @@ content_hash: sha256:58fdf49806e85b86d5a62b9d32b9cd40e3afafd748257c34f391fdf3987
 
 在Windows上，可以打开事件管理器，找到Windows日志中的应用程序日志，查看对应的时间。如果找到es2abc.exe的崩溃日志，并且异常代码为0xc00000fd，表示该程序因栈溢出而崩溃。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/GhyX5UpiQqWIzg2U6xMMFA/zh-cn_image_0000002654795255.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/GhyX5UpiQqWIzg2U6xMMFA/zh-cn_image_0000002654795255.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=40B7C3ABE44990DD8ABD87DA9BBD1D6F00E0EBBD50406BEC05154609B5E7BA80 "点击放大")
 
 在mac上，可以进入控制台，点击崩溃报告，找到es2abc,双击查看崩溃日志。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/8BkYDQsCSSmSKd5cwQjn9w/zh-cn_image_0000002624635788.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/8BkYDQsCSSmSKd5cwQjn9w/zh-cn_image_0000002624635788.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB299A7285E7B81BB5A5AAD3A6C9A6ADF805F6A0035BBBDBC4D593435A15F712 "点击放大")
 
 如果出现下图中所示，调用栈出现大量反复的调用相同的函数，那么极有可能是出现了大量递归导致栈溢出。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/nDeiHB7FQyWQsGtE1IuL3g/zh-cn_image_0000002624475886.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/nDeiHB7FQyWQsGtE1IuL3g/zh-cn_image_0000002624475886.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=362E85A424CD16E6C58DB5A3A0290D37D6488505B8528E3DA19CBBF55D82E681 "点击放大")
 
 **解决措施**
 

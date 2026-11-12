@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: ABR功能开发
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏渲染加速服务 > ABR功能开发
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:251592a94cbb8f065aaa0d55513da6690c66fc237d27d08ebd629816f278a958
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:251592a94cbb8f065aaa0d55513da6690c66fc237d27d08ebd629816f27
 
 基于相机运动感知策略的ABR主要业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/T37A7yQrQ4y5PrCvRwEXlA/zh-cn_image_0000002815399601.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/T37A7yQrQ4y5PrCvRwEXlA/zh-cn_image_0000002815399601.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=BAB14255EF942F589EE107A69EE544B6D2F9E3BD0AC038AD7B454B74C842E6FB)
 
 1. 用户进入ABR适用的游戏场景。
 2. 游戏应用调用[HMS\_ABR\_CreateContext](../harmonyos-references/_graphics_accelerate.md#hms_abr_createcontext)接口并指定图形API类型，创建ABR上下文实例。

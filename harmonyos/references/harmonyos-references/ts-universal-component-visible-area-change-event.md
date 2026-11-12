@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 组件可见区域变化事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 组件变化事件 > 组件可见区域变化事件
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:c369d002828cdca3b69f191c754c9c112d44d3c1446b7227e496c2a3e6b63ff0
 ---
@@ -357,7 +357,7 @@ struct ScrollExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/ug_8nl83RRCFr2nAptVPJw/zh-cn_image_0000002786360966.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/ug_8nl83RRCFr2nAptVPJw/zh-cn_image_0000002786360966.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=29EEA6D49756D51EF9F611352328678FB6CD4A74D517D9F26F384F669DB0EB04)
 
 ### 示例3 (设置measureFromViewport子组件超出父组件显示)
 
@@ -470,4 +470,4 @@ struct OnVisibleAreaChangeSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/z5nN59t0QZyN_H3Hb1lzeQ/zh-cn_image_0000002815560387.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/z5nN59t0QZyN_H3Hb1lzeQ/zh-cn_image_0000002815560387.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A3528F9C4C4FF91E2AE824978EBFA6DB5B1E08B6F3293CEABE5C36DA12DA44E)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-scanbarc
 title: 默认界面扫码
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 默认界面扫码
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:d7fda881cf2e4bc447411ff8daff86f69e4b6e7edcd415f08bdda547323dc63f
 ---
@@ -20,7 +20,7 @@ content_hash: sha256:d7fda881cf2e4bc447411ff8daff86f69e4b6e7edcd415f08bdda547323
 
 默认界面扫码UX：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/nXyI1m1DRWiJWfs6Ut_V-A/zh-cn_image_0000002815399481.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/nXyI1m1DRWiJWfs6Ut_V-A/zh-cn_image_0000002815399481.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=0EA4D211A71F3048BD32A7BFD9C369BCF09AA480694B6280E7091D02C79538BE)
 
 **说明** 
 
@@ -48,7 +48,7 @@ content_hash: sha256:d7fda881cf2e4bc447411ff8daff86f69e4b6e7edcd415f08bdda547323
 
 使用默认界面扫码的主要业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/m8jmbIXOT56yiVB__i7sFw/zh-cn_image_0000002786519906.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/m8jmbIXOT56yiVB__i7sFw/zh-cn_image_0000002786519906.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=53AE5046DA5BE5D319ACB426EE2A1086C6AED41A91D3DD6CC631A6A97EE9DCE2)
 
 1. 用户向开发者的应用发起扫码请求。
 2. 开发者的应用通过调用Scan Kit的startScanForResult()接口启动扫码界面。

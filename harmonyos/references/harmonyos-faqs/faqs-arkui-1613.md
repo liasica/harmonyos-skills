@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1613
 title: 输入框获焦时不显示光标
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 输入框获焦时不显示光标
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:26+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:6cad473ecf0d412083b7789cd2b806c5107994d546e73f2ae15636ab30db8cb6
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:6cad473ecf0d412083b7789cd2b806c5107994d546e73f2ae15636ab30d
 
 打开应用，点击搜索，输入框没有光标。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/a0KT0iOPSuS4wXdOVmvlLg/zh-cn_image_0000002658852643.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/a0KT0iOPSuS4wXdOVmvlLg/zh-cn_image_0000002658852643.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=01BA714C9152609DB8649CC2F1AC22EE87BDAAFE13236AA213CD974454DACC1F "点击放大")
 
 ## 背景知识
 
@@ -34,7 +34,7 @@ content_hash: sha256:6cad473ecf0d412083b7789cd2b806c5107994d546e73f2ae15636ab30d
 
 1. 使用DevEco Testing查看问题组件，该组件为TextInput组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/5_n0Gn7FSDWzVTmpmKX-Vg/zh-cn_image_0000002628773280.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/5_n0Gn7FSDWzVTmpmKX-Vg/zh-cn_image_0000002628773280.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=A89B60085E1340CCB0EC60FFC52C087887672D82534F7ADD04BC574F8B047320 "点击放大")
 2. 全局搜索caretColor，排查输入框光标颜色设置。
    * 颜色设置为#0C000000，与搜索框背景色一致。
 
@@ -127,4 +127,4 @@ struct TextInputCaretColor {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/01_F-g-FTRCvRZo5fVeRWg/zh-cn_image_0000002628613386.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/01_F-g-FTRCvRZo5fVeRWg/zh-cn_image_0000002628613386.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDE1CFA9FC552B92CE8B0590832CD1662E43B37D475854F96931422E5D41CB61 "点击放大")

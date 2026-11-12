@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-interac
 title: 支持键盘输入事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 输入设备与事件 > 支持键盘输入事件
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:765b4ba4b9a68beacb725810ed75a4e88fc3183f7f9a30d8ecad487ee15e88d8
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:765b4ba4b9a68beacb725810ed75a4e88fc3183f7f9a30d8ecad487ee15
 
 ## 按键事件数据流
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/55I4KQbIQWmizlPq4mk7Rw/zh-cn_image_0000002786519046.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/55I4KQbIQWmizlPq4mk7Rw/zh-cn_image_0000002786519046.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2191239EC017BBA2698F9A301843D34E1E5BAEFE16B33723A5E6C4447D1BC53)
 
 按键事件由外设键盘等设备触发，经驱动和多模处理转换后发送给当前获焦的窗口，窗口获取到事件后，会尝试分发三次事件。三次分发的优先顺序如下，一旦事件被消费，则跳过后续分发流程。
 
@@ -98,7 +98,7 @@ struct KeyEventExample {
 
 上述示例中给组件Button和其父容器Column绑定onKeyEvent。应用打开页面加载后，组件树上第一个可获焦的非容器组件自动获焦，设置Button为当前页面的默认焦点，由于Button是Column的子节点，Button获焦也同时意味着Column获焦。获焦机制见[支持焦点处理](arkts-common-events-focus-event.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/d4G6qvzvS9GK4LMGbM8EsA/zh-cn_image_0000002786359118.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/d4G6qvzvS9GK4LMGbM8EsA/zh-cn_image_0000002786359118.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E65577054B632341C97543956FBC2478116894F11F80CE3AF74C228F31EDD03)
 
 打开应用后，依次在键盘上按这些按键：空格、回车、左Ctrl、左Shift、字母A、字母Z。
 
@@ -164,7 +164,7 @@ struct KeyEventPreventBubble {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/Zz-O6dztRWqf-z_g1Yh5_A/zh-cn_image_0000002815558539.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/Zz-O6dztRWqf-z_g1Yh5_A/zh-cn_image_0000002815558539.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=1CB5DEE4AC73F7C7274D8CA3B763A38AB23F6DB501941417B5A709C8F0F72F74)
 
 使用onKeyPreIme屏蔽在输入框中使用方向左键。
 
@@ -198,7 +198,7 @@ struct PreImeEventExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/vfdDUZMrQsW-9dRoHSJjtA/zh-cn_image_0000002815398623.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/vfdDUZMrQsW-9dRoHSJjtA/zh-cn_image_0000002815398623.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D59E1D12AB3D90D416D5B3A8BF0D42A141240DA9635E50C74BD386CF48892DC)
 
 使用onKeyEventDispatch分发按键事件到子组件，子组件使用onKeyEvent。
 
@@ -253,7 +253,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/3uHv-XWWSVWKejoIPHsPYg/zh-cn_image_0000002786519048.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/3uHv-XWWSVWKejoIPHsPYg/zh-cn_image_0000002786519048.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D2CCE9AB7443E6F3E14A12284F4B1FD08F86DBD39CBD28393FECAC0F2F1B338)
 
 使用onKeyPreIme实现回车提交（建议使用物理键盘）。
 
@@ -300,8 +300,8 @@ struct TextAreaDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/vWnmE4N1TSS_N8SyUrdzsA/zh-cn_image_0000002786359120.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/vWnmE4N1TSS_N8SyUrdzsA/zh-cn_image_0000002786359120.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADD1FCE584449DC8008FF769E17424F39B3ED5891A30C419D661AA0AE507C5A0)
 
 在输入框中输入内容后回车。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/9vn6uhqvQDOqO2q5I64lNQ/zh-cn_image_0000002815558541.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/9vn6uhqvQDOqO2q5I64lNQ/zh-cn_image_0000002815558541.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=4C77DAA84E0F410AE9FE11305B682F812997D77D7AB15395DA84326DD89A9B01)

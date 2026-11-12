@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1649
 title: TextInput输入框绑定自定义键盘不生效的解决方案
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > TextInput输入框绑定自定义键盘不生效的解决方案
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:26+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:4f4209f1db24af9d14b1d0614374535f56dd6342ef49d4396eec587efc1b59e8
 ---
@@ -78,7 +78,7 @@ struct TextInputClearFocusExample {
 
 问题现象见下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/WLFzbfZPR2698OpVZw3gog/zh-cn_image_0000002664281407.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/WLFzbfZPR2698OpVZw3gog/zh-cn_image_0000002664281407.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2B3B5180607317C8FA279811E666B44DC7358BFA530F72959BEAE09B1E27EA6 "点击放大")
 
 ## 背景知识
 

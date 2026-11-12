@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: UX样式或效果的变更
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Release引入的接口行为变更 > UX样式或效果的变更
 category: harmonyos-releases
-scraped_at: 2026-11-12T09:50:34+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:15c31b03e3e2eab5ec113babadf2017cef8dc17a1c1c2718153570a56b6934da
 ---
@@ -90,13 +90,13 @@ showToast接口
 
 图中的分享框就是一个模态UIExtension，该组件弹出后，带有"Sub Window"字样的子窗不会被隐藏，并且盖在分享框的上面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/wdjNn2jgRkei6c2ucordrA/zh-cn_image_0000002078063544.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/wdjNn2jgRkei6c2ucordrA/zh-cn_image_0000002078063544.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=6504E6A7EEC0BF44D20861560CAF7C7ADEB2D4E1399C900C5AA5F05CF380E99C "点击放大")
 
 **变更后**：
 
 图中的分享框就是一个模态UIExtension，该组件弹出后，带有"Sub Window"字样的子窗被隐藏，关闭分享框后这个子窗重新展示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/NC0QAD5KRVSnkrfH6iegGw/zh-cn_image_0000002113588317.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/NC0QAD5KRVSnkrfH6iegGw/zh-cn_image_0000002113588317.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F31B36249FCA0238C53D37E5C06E95A6F1D07A4FCAB63D3A36C435087641C82 "点击放大")
 
 **起始API Level**
 
@@ -142,7 +142,7 @@ showToast接口
 
 安全控件设置offset属性后被父组件裁剪不能完整显示时，安全控件仍可响应点击授权。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/JsBH3VchSl-rZqPhZcRTSQ/zh-cn_image_0000002087445945.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/JsBH3VchSl-rZqPhZcRTSQ/zh-cn_image_0000002087445945.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=F637C3ED5530A1B5894AC6EC06D5C080440EE6A469C9960478AE3D7E107B1204)
 
 变更后：
 
@@ -168,4 +168,4 @@ showToast接口
 
 安全控件设置offset属性后被父组件裁剪不能完整显示时，可通过调整offset({x: value, y: value})中x或y值，使得安全控件完整显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/jrF3nngiRjiVnOoEFOFLTQ/zh-cn_image_0000002051328534.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/jrF3nngiRjiVnOoEFOFLTQ/zh-cn_image_0000002051328534.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9E74324C9D73EF490FE28FA3FB58B85C8CB6E7AAF8157926C11CB7BA7246A44)

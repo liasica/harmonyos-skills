@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-troub
 title: Swiper嵌套Image显示图片失败
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 故障排查 > Swiper嵌套Image显示图片失败
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:4c861e5ee6c441e3a5b9c16ae62ddd39cc9faaa66e9f5865bc7489f7029d72a5
 ---
@@ -48,7 +48,7 @@ struct SwiperImageDemo {
 
 查看打印的数据信息：图片加载并解码后的数据。除图片实际宽高外，组件宽高和图片绘制宽高均为0。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/fDn1RiDVR-ay2xG6MOhEEA/zh-cn_image_0000002772679740.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/fDn1RiDVR-ay2xG6MOhEEA/zh-cn_image_0000002772679740.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=47F1F0282EAA69A878D020B418CA7E972A0FE07392D00DFFE21257712C1D7AB6)
 
 ## 分析结论
 
@@ -91,4 +91,4 @@ struct SwiperImageDemo {
 
 查看打印的图片尺寸信息：组件宽高和图片实际绘制宽高大于0。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/PmLnXXynRQ-hzePrfYVrTQ/zh-cn_image_0000002802119565.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/PmLnXXynRQ-hzePrfYVrTQ/zh-cn_image_0000002802119565.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4F25981A24980407291651CCEB19FC6D8C18791001BE64A7C28FDCDA4718599)

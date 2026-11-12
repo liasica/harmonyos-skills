@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-
 title: 即时反馈（Toast）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 即时反馈（Toast）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:13+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:c761214c710a6b98f9c26a13dd389b6623850148b18ea6ec7b4c4ef9b94df793
 ---
@@ -103,7 +103,7 @@ export struct DefaultAndTopToastExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/B9bNs3SZS0WvqZhePe_NQQ/zh-cn_image_0000002786519006.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/B9bNs3SZS0WvqZhePe_NQQ/zh-cn_image_0000002786519006.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=B6FBA7C15E91E2717ACCB37036978A06D0C67A1D2731DDAD5EA4374680653134)
 
 ## 创建即时反馈
 
@@ -144,7 +144,7 @@ export struct CreateToastExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/7AFBOcQqRqCVbuTYOOLi9Q/zh-cn_image_0000002786359078.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/7AFBOcQqRqCVbuTYOOLi9Q/zh-cn_image_0000002786359078.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=300B7288A92271B13BE4DB06499C5024C1F874AC42677F445020552AC7778053)
 
 ## 显示和关闭即时反馈
 
@@ -204,4 +204,4 @@ export struct OpenCloseToastExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/9SXOpJ48ReG9bcDFJ5TUfw/zh-cn_image_0000002815558499.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/9SXOpJ48ReG9bcDFJ5TUfw/zh-cn_image_0000002815558499.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=CED44AC610C638565F4DCD2179A1D196945600C8C85003E7FCE3078621962EF0)

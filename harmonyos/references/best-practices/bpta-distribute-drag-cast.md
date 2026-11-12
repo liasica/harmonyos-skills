@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-distribute
 title: 跨设备拖拽
 breadcrumb: 最佳实践 > 技术创新 > 全场景 > 多端协同 > 跨设备拖拽
 category: best-practices
-scraped_at: 2026-11-10T10:42:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-09
 content_hash: sha256:4750bbea02d25e58873d26b5102c7557f2cb90ef85c62a9058f0cdf7850cb30d
 ---
@@ -19,11 +19,11 @@ content_hash: sha256:4750bbea02d25e58873d26b5102c7557f2cb90ef85c62a9058f0cdf7850
 
 开发者可以根据实际需求，实现组件的拖入或拖出，即可接入跨设备拖拽。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/PGX3rEnnSqKExH5x8BkLPg/zh-cn_image_0000002593676861.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/PGX3rEnnSqKExH5x8BkLPg/zh-cn_image_0000002593676861.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=186AFD3FC2ADD667B9C338E73CD3ADFBACD494565C54A44B9633DF23CC651B99 "点击放大")
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/JItVBR8uSnaN-uIyFifn2A/zh-cn_image_0000002563037188.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/JItVBR8uSnaN-uIyFifn2A/zh-cn_image_0000002563037188.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8A002C5A92D4F9F6AD4E30C74B0ABD0E996B5E5D96FFBA37D94CC69F11EF307 "点击放大")
 
 1. 用户使用鼠标点击组件，触发拖拽事件。
 2. 应用设置拖拽数据。

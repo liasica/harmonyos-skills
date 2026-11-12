@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-config-s
 title: 开通推送服务
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 开发准备 > 开通推送服务
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:33+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-14
 content_hash: sha256:5e2fdb036d472d333a9bc9284dbfa1fa3e81f4bec327676f988f31c4a85aa28c
 ---
@@ -18,20 +18,20 @@ content_hash: sha256:5e2fdb036d472d333a9bc9284dbfa1fa3e81f4bec327676f988f31c4a85
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“开发与服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/1ppmrR2ZTm2Vtfrou29MJg/zh-cn_image_0000002786520446.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/1ppmrR2ZTm2Vtfrou29MJg/zh-cn_image_0000002786520446.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D8978EF3E7BFD95EB2D791AAD6F5B068291E641EE1F397ED4E2DD09DF797D5D)
 2. 在项目列表中找到您的项目，在项目下的应用列表中选择需要配置推送服务参数的应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/GpgtavXpTOaxDa6RJCn--Q/zh-cn_image_0000002786360518.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/GpgtavXpTOaxDa6RJCn--Q/zh-cn_image_0000002786360518.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=42443878E86799D568DCBC398482BA6C2E1FDC27DE52CE73BCA159BD3D80CC61)
 3. 在左侧导航栏选择“增长 > 推送服务”，点击“立即开通”，在弹出的提示框中点击“确定”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/KwklcwO7SP-RksoKhkkK9w/zh-cn_image_0000002815559939.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/KwklcwO7SP-RksoKhkkK9w/zh-cn_image_0000002815559939.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=70F3DAFF47B12F30E9C85B6C7BA92C0D0FFC2BA77369C6BAA0054C4D9B8F5685)
 
    **说明** 
 
    推送服务权益为项目级，若您已有开通过推送服务的项目，当您在项目中添加新的应用时，无需再次开通推送服务。
 4. 若项目当前未配置数据处理位置，请在提示中点击“确定”，会弹出设置数据处理位置的弹窗。完成数据处理位置的设置，点击“确定”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/OGPwhINLTQSV4Y5DI-XBGg/zh-cn_image_0000002815400023.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/OGPwhINLTQSV4Y5DI-XBGg/zh-cn_image_0000002815400023.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E8025501D43E85847DBAF161CF18E5A4F4C195443773A434231E498D7A555F6)
 
    **说明** 
 
@@ -41,14 +41,14 @@ content_hash: sha256:5e2fdb036d472d333a9bc9284dbfa1fa3e81f4bec327676f988f31c4a85
    * 手动签名：调试阶段**必须**申请调试证书、[注册调试设备](../app/agc-help-add-device-0000002283189937.md)、确保“增长 > 推送服务”中已开通“推送服务”后**重新**申请调试Profile文件，并完成[手动签名](ide-signing-manual.md)。
    * 自动签名（新增）：请参考[自动签名](ide-signing-auto.md)，开通Push Kit开放能力，点击“OK”后，DevEco Studio将自动重新签名。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/_XvUCuX4SauVQ-8vmPJGoQ/zh-cn_image_0000002786520448.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/_XvUCuX4SauVQ-8vmPJGoQ/zh-cn_image_0000002786520448.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D99B31EFD0EDC35438384523BCFB0E3F7E29920504DD2C162E5A0628F30CDF1)
 
      5-10分钟后访问[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，“项目设置 > 开放能力管理”中推送服务能力会显示已勾选。同时，“增长 > 推送服务”中“推送服务”会自动开通。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/vKXyXUepTvSUPAFkdwCTAw/zh-cn_image_0000002786360520.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/vKXyXUepTvSUPAFkdwCTAw/zh-cn_image_0000002786360520.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=EFA08A85547CF16B416E878EF52DF53B8F274C39487E0CC065E7ED1DAE965AF8)
 6. 应用发布阶段**必须**申请发布证书、确保“增长 > 推送服务”中已开通“推送服务”后重新申请发布Profile文件，并完成手动签名。详情请参考发布应用[配置签名信息](ide-publish-app.md#section945904791115)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/RLCIFmAvQxajrU4EmYmTOg/zh-cn_image_0000002815559941.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/RLCIFmAvQxajrU4EmYmTOg/zh-cn_image_0000002815559941.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=704ACB914951354B9E2E1F32468860046D6C453750B0EC26180EE8E2BE33DB05)
 7. 您还可以通过“增长 > 推送服务 > 配置”，在“配置”页签下选择需要申请自分类权益的应用，点击**自分类权益**后的“申请”，详见[申请步骤](push-apply-right.md#申请通知消息自分类权益)。
 
    **说明** 
@@ -74,5 +74,5 @@ content_hash: sha256:5e2fdb036d472d333a9bc9284dbfa1fa3e81f4bec327676f988f31c4a85
 3. 进入“项目设置 > 数据处理位置”页面，点击“管理”。
 4. 按需设置数据处理位置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/Rfl_PMz4TgmYum9t2xSUGw/zh-cn_image_0000002815400025.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/Rfl_PMz4TgmYum9t2xSUGw/zh-cn_image_0000002815400025.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=0753AC79B640EBD055F1F2DCD00E9F0D7628E7F6A599FA9A29912D86302D5F00)
 5. 设置完成后，点击“保存”。

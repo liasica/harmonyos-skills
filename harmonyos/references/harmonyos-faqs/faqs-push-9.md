@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-push-9
 title: 通知扩展消息语音播放提前退出
 breadcrumb: FAQ > 应用服务开发 > 消息推送服务（Push Kit） > 通知扩展消息语音播放提前退出
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:43+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:7e705c54a80d4e6e33c7b8b09eece913cf38d61917bdfce577d4f380295c36e4
 ---
@@ -22,24 +22,24 @@ content_hash: sha256:7e705c54a80d4e6e33c7b8b09eece913cf38d61917bdfce577d4f380295
 
 1. 16:58:51.707：push\_manager\_service启动通知扩展子进程RemoteNotificationExtensionAbility，处理扩展通知消息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/kBogEfS3RriS1jJaoYsa4w/zh-cn_image_0000002658913761.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/kBogEfS3RriS1jJaoYsa4w/zh-cn_image_0000002658913761.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BF52923BB3FB9917BFEB2E0961D08886ED7245C940ECC9005DCFB2507E12E52 "点击放大")
 2. 16:58:51.790：触发[onReceiveMessage()](../harmonyos-references/push-remote-notification-extension-ability.md#onreceivemessage)回调，开始初始化SoundPool处理语音消息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/mGA5ZrYPS8mENPW2NvMbTQ/zh-cn_image_0000002658793815.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/mGA5ZrYPS8mENPW2NvMbTQ/zh-cn_image_0000002658793815.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=953AA99E555A8D1E53814E5B6AFD481FE6C9E348C5B8E4CF05C448C7DDDDF694 "点击放大")
 3. 16:58:51.790：RemoteNotificationExtensionAbility子进程生命周期销毁。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/zaQ9l_gfQp2F6QZPhimJYw/zh-cn_image_0000002628394544.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/zaQ9l_gfQp2F6QZPhimJYw/zh-cn_image_0000002628394544.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=37D0D317F6076D255077200D4F907075A6D753D7E200F762E9E1938A2A9E5B2A "点击放大")
 
    但后续音频一直在播放，直到16:58:54.420。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/gylHifrtRbGvtHdO35DLEg/zh-cn_image_0000002628554438.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/gylHifrtRbGvtHdO35DLEg/zh-cn_image_0000002628554438.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7C7848CB09D0F7AB24053C07BE33DD69B90168B520F78DC4E6DCA3304C97685 "点击放大")
 4. 16:58:54.808：触发系统冻结进程，音频播放终止。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/jc0U49PWS5qqL35Ffacedw/zh-cn_image_0000002658913763.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/jc0U49PWS5qqL35Ffacedw/zh-cn_image_0000002658913763.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA3756735E18E96B231C1866E300B2A083780676DAAC23CFC53FA31DEAE6BDF7 "点击放大")
 
 结合代码可知，在onReceiveMessage()中收到消息后，语音播报逻辑未执行完，直接返回了处理后的消息。导致RemoteNotificationExtensionAbility提前结束了生命周期，使得语音播放没有播放完就系统冻结，进程挂起。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/5QB7udhxTO-Y1x-GhsjzGA/zh-cn_image_0000002658793817.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/5QB7udhxTO-Y1x-GhsjzGA/zh-cn_image_0000002658793817.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5A7F52CAC6CCA4A17EDF88B2E63352B9C201BAEE56F536104D46FCD2D469F1B "点击放大")
 
 ## 分析结论
 

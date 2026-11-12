@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicemanager
 title: USB设备管理（C/C++）
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB服务 > USB Host模式开发 > USB设备管理（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:48+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:673a12fb98460543e0aa08d476d1d5e10552a49f7eaca17fb873d80be0502b42
 ---
@@ -51,7 +51,7 @@ USB服务系统包含USB API、USB Service、USB HAL三层架构。
 
 **图1** USB服务运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/3_SPp9k6QlGQgBTCRYRhrw/zh-cn_image_0000002815399257.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/3_SPp9k6QlGQgBTCRYRhrw/zh-cn_image_0000002815399257.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D2B5FDF3D64FE449336412A6EC592CF97D228DCCB5226C06F89561245582617)
 
 * **USB API层**：提供USB基础API，包含查询USB设备列表、权限控制、设备连接等接口。OH\_UsbManager C接口属于该层，通过libohusb\_manager.so动态链接库提供。
 * **USB Service层**：实现HAL层数据的接收、解析、分发以及对设备的管理。

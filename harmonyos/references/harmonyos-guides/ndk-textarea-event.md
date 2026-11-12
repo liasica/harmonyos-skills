@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-textarea-
 title: 添加输入框文本事件监听
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 使用文本 > 添加输入框文本事件监听
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:c2b6cdc2c45b14f4e3d183005c841ecb7ff0aca419c1093a2aa7f200a34124bf
 ---
@@ -217,4 +217,4 @@ content_hash: sha256:c2b6cdc2c45b14f4e3d183005c841ecb7ff0aca419c1093a2aa7f200a34
   }
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/hzBetWk6SAuIJAcyRgsBXQ/zh-cn_image_0000002786519200.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/hzBetWk6SAuIJAcyRgsBXQ/zh-cn_image_0000002786519200.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=3962BF9DB3EBB84B0C4A215D5E79F2BFCA634EED54D44B505003B41861C3B078)

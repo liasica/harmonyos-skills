@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 接入华为账号登录（必选）
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 基础游戏服务（必选） > 游戏登录 > 网络游戏登录 > 接入华为账号登录（必选）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:24+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:144bfc712c650aa468b837dac294bde00251ed741d480c334c6c8ac69809ab8c
 ---
@@ -64,7 +64,7 @@ AppGallery Connect会自动生成证书对应的公钥信息，并计算出对�
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，在“开发与服务”下选择项目及项目下的游戏，获取“应用”下的APP ID和Client ID。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/JlVwRbQ2Spq-iCz3t57LfQ/zh-cn_image_0000002786360280.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/JlVwRbQ2Spq-iCz3t57LfQ/zh-cn_image_0000002786360280.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C303133C5CD163DAD8A640526B4EB10360CA58D79120A506A2A6910E78BE5CA)
 2. 在工程的entry模块module.json5文件中，新增metadata并配置client\_id和app\_id，同时新增requestPermissions以配置网络权限。如下所示：
 
    ```typescript
@@ -104,14 +104,14 @@ AppGallery Connect会自动生成证书对应的公钥信息，并计算出对�
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，在“开发与服务”下选择项目及项目下的游戏，左侧菜单选择“构建 > 游戏服务”，在右侧点击“新增配置”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/sCXUgtYcTausdGrOmquLfA/zh-cn_image_0000002815559701.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/sCXUgtYcTausdGrOmquLfA/zh-cn_image_0000002815559701.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=78E764B4317040057C7C4708C697359214D1B28DD19B077CC5092197F603843A)
 2. 在弹出的“新增配置信息”窗口中选择HAP游戏和APK游戏，完成后点击“下一步”。
 
    **说明** 
 
    请正确配置HAP游戏与APK游戏的映射关系。若开发者配置错误类型的游戏，将有提示框提示重新选择游戏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/tesseKNPSiK4Qtcs_3KqtA/zh-cn_image_0000002815399785.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/tesseKNPSiK4Qtcs_3KqtA/zh-cn_image_0000002815399785.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE3ECE04E0F8CE1C20CAD3FF49279D35B0DA0DA84AD742637308DA37DAA671F1)
 
    | 信息项 | 说明 |
    | --- | --- |
@@ -119,7 +119,7 @@ AppGallery Connect会自动生成证书对应的公钥信息，并计算出对�
    | HarmonyOS 4及以下游戏 | 请选择已上架或待上架的APK游戏。  若无待上架的游戏，请先创建草稿状态的APK游戏。 |
 3. 在弹出的窗口中继续填写信息，完成后点击“下一步”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/hGM714ABQ2WMaaOBGxXD0w/zh-cn_image_0000002786520210.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/hGM714ABQ2WMaaOBGxXD0w/zh-cn_image_0000002786520210.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=C95C098D123A836D3FA0AB4D6337CD7D4FF965097216B725614D9B31EE02ED1E)
 
    | 信息项 | 说明 |
    | --- | --- |
@@ -131,23 +131,23 @@ AppGallery Connect会自动生成证书对应的公钥信息，并计算出对�
    玩家标识严格区分大小写，例如gamePlayerId=xxx和gamePlayerId=XXX表示两个不同的玩家。
 4. （可选）填写开发者服务器的回调地址，回调地址要求支持HTTPS协议，且具有合法商用证书，完成后点击“确定”提交APP ID映射关系的审批申请。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/9yBle7_nQWewoQNL_gSgAQ/zh-cn_image_0000002786360282.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/9yBle7_nQWewoQNL_gSgAQ/zh-cn_image_0000002786360282.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=25638E7859ADF382AF52B636C9065FC1747D82EC11D4FD0B7D19FCB7C596FCB7)
 
    若用户注销华为账号，华为游戏服务器向开发者服务器发送事件通知，通知游戏自行清理账号数据。
 5. 若出现异常情况，将在如下提示框以红字提醒。建议点击“取消”并重新配置映射关系，若忽略异常情况点击“确定”继续提交申请，可能会造成映射关系审批不通过。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/D77kMiWDSkmr9Y7TLZAWkA/zh-cn_image_0000002815559703.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/D77kMiWDSkmr9Y7TLZAWkA/zh-cn_image_0000002815559703.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=DFCCC289A177C5A9CAAE36DC3A13710DF65E6975DCD0922C5163E8C1EEA40340)
 6. 提交申请后，华为工作人员完成审核需要1-3个工作日，请耐心等待。APP ID映射关系生效后如需重新配置，请先提交映射关系的删除申请。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/kntsQsXNQRKJJm8kTrVlCQ/zh-cn_image_0000002815399787.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/kntsQsXNQRKJJm8kTrVlCQ/zh-cn_image_0000002815399787.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA7531478FACAD04602A186E44D8FC119191F35A6AC099396603C870010596D2)
 
    配置/删除APP ID映射关系的审核结果将通过互动中心或邮件进行通知。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/3Alr-EspTaCffNH8RqE69Q/zh-cn_image_0000002786520212.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/3Alr-EspTaCffNH8RqE69Q/zh-cn_image_0000002786520212.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF9CF836CEED59BDE9D14FFCCABE92B05AA98B7BA575659F99D241102450A0EA)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/LcHE2eNQQled6tli1ohcaA/zh-cn_image_0000002786360284.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/LcHE2eNQQled6tli1ohcaA/zh-cn_image_0000002786360284.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9DFC2353C6C8EC3D7FDD866E2AE5C8DA73109565C7158DA9591F2F3983CA177)
 
 1. 玩家启动游戏。
 2. 游戏调用[init()](../harmonyos-references/gameservice-gameplayer.md#gameplayerinit-1)接口初始化Game Service Kit。初始化后，弹出华为游戏服务与隐私的声明窗口，玩家确认同意后，则继续往下执行。
@@ -196,7 +196,7 @@ AppGallery Connect会自动生成证书对应的公钥信息，并计算出对�
 
 接入华为账号登录的接口调用流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/mVVrC842ROq3vb5r7A36BQ/zh-cn_image_0000002815559705.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/mVVrC842ROq3vb5r7A36BQ/zh-cn_image_0000002815559705.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=C72A4F891D352DA23E50D8B9A03066E3F2F834C756484677A132C1D9DDEA112C)
 
 ### 导入模块
 
@@ -238,7 +238,7 @@ onWindowStageCreate(windowStage: window.WindowStage) {
 
 初始化后，游戏弹出华为游戏服务与隐私的声明窗口，用户同意签署，则继续往下执行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/v-_sJKqeRLygM6wNAMuNLw/zh-cn_image_0000002815399789.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/v-_sJKqeRLygM6wNAMuNLw/zh-cn_image_0000002815399789.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=E263AB7FB55545B7D4C57854074EE259BF74A311026895B348975A17BB2BC820)
 
 若当前华为账号同意过华为游戏服务与隐私的声明，后续使用该华为账号登录的游戏将不再弹出该窗口。
 
@@ -303,11 +303,11 @@ try {
 
 联合登录面板为官方统一样式，不支持开发者自定义联合登录面板样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/vYlJ4U6aTUuuj6UEOxMXug/zh-cn_image_0000002815399783.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/vYlJ4U6aTUuuj6UEOxMXug/zh-cn_image_0000002815399783.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=9328CAC5AD3DA3F9E76A7B927139707D554546ECC0BF79C5C3F764B72B4536F9)
 
 用户完成登录流程后，游戏顶部弹出欢迎横幅，并向游戏返回accountName（选择华为账号登录返回值为hw\_account）、accountIdentifier（选择华为账号登录返回值为hw\_account）、gamePlayerId等信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/EiE2d7xGSyOr4Cp36-vH9A/zh-cn_image_0000002786520214.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/EiE2d7xGSyOr4Cp36-vH9A/zh-cn_image_0000002786520214.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=70DA15B6351E76D14E3B448C2AB2C8ECB62EED7BF257B50DE2BBD4872358A26C)
 
 游戏获取到的gamePlayerId（HarmonyOS 5.0及以上系统）与openId/playerId（HarmonyOS 4及以下系统）数值相等。开发者可以根据gamePlayerId实现HarmonyOS 5.0及以上游戏和HarmonyOS 4及以下游戏的账号资产互通。
 
@@ -317,7 +317,7 @@ try {
 
 由于[unionLogin()](../harmonyos-references/gameservice-gameplayer.md#gameplayerunionlogin)接口返回的gamePlayerId存在被篡改的风险，建议在开发者服务端核验玩家信息，即从开发者服务器获取gamePlayerId与[unionLogin()](../harmonyos-references/gameservice-gameplayer.md#gameplayerunionlogin)接口返回的gamePlayerId做比对，确保玩家信息一致性。若无服务器，无需校验一致性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/1vWcNXXmSmqTmLym1FTIZA/zh-cn_image_0000002786360286.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/1vWcNXXmSmqTmLym1FTIZA/zh-cn_image_0000002786360286.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0E47B21327AA80FB1DBE3F839BE0AECFCC5791C22F01AA1FBCA201E4E5403BB)
 
 1. 调用[createLoginWithHuaweiIDRequest()](../harmonyos-references/account-api-authentication.md#createloginwithhuaweiidrequest)创建认证请求并设置参数。
 
@@ -400,7 +400,7 @@ try {
 | 未成年人防沉迷 | 校验已实名认证为未成年人的华为账号是否在规定时间内登录游戏。 | 根据国家新闻出版署的最新规定，所有网络游戏企业仅可在周五、周六、周日和法定节假日每日20时至21时向未成年人提供1小时网络游戏服务，其他时间均不得以任何形式向未成年人提供网络游戏服务。 | - 已实名认证为未成年人的华为账号在规定时间内登录游戏，当游戏进行到晚上21时，基础游戏服务会弹窗提示玩家已到游戏时间，强制玩家退出游戏并返回[1002000006](../harmonyos-references/errorcode-gameservice.md#section1002000006-玩家未成年并且当前不在可游戏时间)错误码。  - 已实名认证为未成年人的华为账号在非规定游戏时间内登录游戏，基础游戏服务会弹框提示玩家不允许游戏，强制玩家退出游戏并返回[1002000006](../harmonyos-references/errorcode-gameservice.md#section1002000006-玩家未成年并且当前不在可游戏时间)错误码。 |
 | 未成年人支付限额 | 校验已实名认证为未成年人的华为账号是否限额付费。 | 根据国家新闻出版署的最新规定，网络游戏企业不得为未满8周岁的用户提供游戏付费服务。同一网络游戏企业所提供的游戏付费服务，8周岁以上未满16周岁的用户，单次充值金额不得超过50元人民币，每月充值金额累计不得超过200元人民币；16周岁以上未满18周岁的用户，单次充值金额不得超过100元人民币，每月充值金额累计不得超过400元人民币。 | 已实名认证为未成年人的华为账号在游戏内超额付费，IAP Kit会弹窗提示消费金额超出限制。  用户在使用华为应用内支付时，华为会自动根据国家新闻出版署的要求进行支付限额控制，开发者无需处理。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/KEiW50NCSJCEbB3WSzeQjQ/zh-cn_image_0000002815559707.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/KEiW50NCSJCEbB3WSzeQjQ/zh-cn_image_0000002815559707.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=0337DE5D90A5B439707B9E1D2DF1B42784168FA06BAE3CB887A2D6D145F815ED)
 
 ### 提交玩家角色信息
 
@@ -445,4 +445,4 @@ try {
 1. 在[on()](../harmonyos-references/gameservice-gameplayer.md#gameplayeronplayerchanged)接口回调中清理游戏的登录缓存。
 2. 在[on()](../harmonyos-references/gameservice-gameplayer.md#gameplayeronplayerchanged)接口回调中重新调用[unionLogin()](../harmonyos-references/gameservice-gameplayer.md#gameplayerunionlogin)接口，将**showLoginDialog**参数设置为**true**，即可强制拉起联合登录面板，允许玩家重新选择华为账号登录或游戏官方账号登录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/CU5S_P5HQ8mMo44nvkvf_Q/zh-cn_image_0000002815399791.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/CU5S_P5HQ8mMo44nvkvf_Q/zh-cn_image_0000002815399791.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE45FFB89C1B48ED7E619773CDC15CCBBCA42C6A7F1842A4900F02A18479E17A)

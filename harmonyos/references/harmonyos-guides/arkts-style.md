@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-style
 title: "@Styles装饰器：定义组件重用样式"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @Styles装饰器：定义组件重用样式
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:010d68f4373357f218358186221d1b6f4d4a8a185f91663d8418f55431590d81
 ---
@@ -61,7 +61,7 @@ struct FancyUse {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/SZkpsHsORcO88yKy020p3g/zh-cn_image_0000002786358550.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/SZkpsHsORcO88yKy020p3g/zh-cn_image_0000002786358550.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F50E219FD954BA715BBAC780C9FAA759825B2E39952076E0C3628626B22A097)
 
 ## 限制条件
 
@@ -148,4 +148,4 @@ struct GlobalFancy {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/d0-qGVanSqe6fcYd1paL7g/zh-cn_image_0000002815557971.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/d0-qGVanSqe6fcYd1paL7g/zh-cn_image_0000002815557971.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=6AC90028F77E851A1A497232B2F4050EDD7C76A7D1A6F032562DCCB339892281)

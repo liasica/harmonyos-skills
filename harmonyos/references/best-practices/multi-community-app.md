@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-community
 title: 多设备社区评论界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备社区评论界面
 category: best-practices
-scraped_at: 2026-11-10T10:42:04+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-15
 content_hash: sha256:b2a8ead7e1770b6c3e903303c0580cc9b8ed8b146cee186d0967f956bd764a71
 ---
@@ -26,7 +26,7 @@ content_hash: sha256:b2a8ead7e1770b6c3e903303c0580cc9b8ed8b146cee186d0967f956bd7
 
 应用的UX设计可参考[社交通讯类](../design-guides/responsive-design-examples2-0000001793536901.md)的多设备响应式设计指南，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/ihQdxhTQRLueDN-tf_9U6w/zh-cn_image_0000002591828652.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/ihQdxhTQRLueDN-tf_9U6w/zh-cn_image_0000002591828652.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E3582AE3C0182168477EC057AC2F1C4F7059E353860852055A76BA69B016F17 "点击放大")
 
 ## 工程管理
 
@@ -191,7 +191,7 @@ content_hash: sha256:b2a8ead7e1770b6c3e903303c0580cc9b8ed8b146cee186d0967f956bd7
 
 社区评论应用首页作为业务入口，关注页相关内容划分为4个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/1m7EiPESQoOXNzzi8ggJKw/zh-cn_image_0000002622348223.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/1m7EiPESQoOXNzzi8ggJKw/zh-cn_image_0000002622348223.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=E909D8EFDE4F5FC30B90582F23680EE8BC29098DD4A9E7E1E7BD0F35C6B7835E "点击放大")
 
 **界面开发**
 
@@ -208,7 +208,7 @@ content_hash: sha256:b2a8ead7e1770b6c3e903303c0580cc9b8ed8b146cee186d0967f956bd7
 
 热点页用于展示当前实时热点内容。根据功能设计，热点页相关内容划分为3个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/YcRXBdL0SuapU--Qzp-5dQ/zh-cn_image_0000002591988552.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/YcRXBdL0SuapU--Qzp-5dQ/zh-cn_image_0000002591988552.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=73705FE72D7C72E9DECB452162E0DCC847AFDB4B0E1F827E4FD1B41C52980B8E "点击放大")
 
 **界面开发**
 
@@ -224,7 +224,7 @@ content_hash: sha256:b2a8ead7e1770b6c3e903303c0580cc9b8ed8b146cee186d0967f956bd7
 
 根据功能设计，社交详情页相关内容划分为5个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/jFDO1nkTSJmdSbPoGVvtrA/zh-cn_image_0000002622308087.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/jFDO1nkTSJmdSbPoGVvtrA/zh-cn_image_0000002622308087.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=F66B9D11A97CBDBA20762A6619E335C733A0E032278541B0377B40CEE2E3F184 "点击放大")
 
 **界面开发**
 
@@ -242,7 +242,7 @@ content_hash: sha256:b2a8ead7e1770b6c3e903303c0580cc9b8ed8b146cee186d0967f956bd7
 
 图片详情页相关内容划分为1个区域，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/oDUUi94eRECkrula6nbyXQ/zh-cn_image_0000002591828660.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/oDUUi94eRECkrula6nbyXQ/zh-cn_image_0000002591828660.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=901297044DFDFD554EA615999654B72CC1A828949A811046ACE14BD290F193A4 "点击放大")
 
 **界面开发**
 

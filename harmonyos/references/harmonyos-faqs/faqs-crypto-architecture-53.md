@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-crypto-arc
 title: 客户端公钥与服务端公钥不匹配问题
 breadcrumb: FAQ > 系统开发 > 安全 > 加解密算法（Crypto Architecture） > 客户端公钥与服务端公钥不匹配问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:f92fcc04e5b899f7f67e57da3dcbcc68cbd6d1e0913ef3733e18c39c7b0f984d
 ---
@@ -67,4 +67,4 @@ struct Index {
 
 日志打印：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/pHfYu7NBSr60xdyGtpN2DA/zh-cn_image_0000002628769116.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/pHfYu7NBSr60xdyGtpN2DA/zh-cn_image_0000002628769116.png?HW-CC-KV=V1&HW-CC-Date=20261112T233210Z&HW-CC-Expire=31536000000&HW-CC-Sign=6887B8BDF3FF64AC5A66FE5E8F4979DC00AC7F0E85277C7E7C9E9DD132D36248 "点击放大")

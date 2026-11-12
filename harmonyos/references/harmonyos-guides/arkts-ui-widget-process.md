@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: ArkTS卡片进程模型
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片进程模型
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:27+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-12
 content_hash: sha256:266af851650e981127ecc2a961f825e26942f4e02e8e431f024824543cbe12f0
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:266af851650e981127ecc2a961f825e26942f4e02e8e431f024824543cb
 
 **图1** 卡片进程模型
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/k0GtTLufSbm_PH95zPJJmQ/zh-cn_image_0000002815399029.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/k0GtTLufSbm_PH95zPJJmQ/zh-cn_image_0000002815399029.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=DFB0C7A5999B753878D2EF44A844916815B8E0A9008071AFCA77DE10B49E428B)
 
 * 卡片使用方进程：显示卡片的宿主进程，例如桌面进程。
 * 卡片渲染服务进程：系统内统一加载渲染卡片UI的进程，所有卡片渲染在同一个进程内，不同的应用卡片通过虚拟机隔离。

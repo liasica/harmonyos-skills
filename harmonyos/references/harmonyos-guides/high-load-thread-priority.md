@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/high-load-thr
 title: 高负载场景线程优先级设置
 breadcrumb: 指南 > 系统 > 基础功能 > Kernel Enhance Kit（内核增强能力） > 内存管理 Purgeable Memory 开发指导 > 高负载场景线程优先级设置
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:50+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-26
 content_hash: sha256:84afbe443a26f4de4b3cf4f5128b9e81e47e26440fe496db18d22170e557d87f
 ---
@@ -30,7 +30,7 @@ content_hash: sha256:84afbe443a26f4de4b3cf4f5128b9e81e47e26440fe496db18d22170e55
 
 下面是一个在高负载情况下，配置了不同QoS等级的两个关键线程完成相同计算任务所花时间的对比图，从界面的运行结果可以看到在高负载情况下，配置了高优先级的线程执行完计算所花的时间更少一些。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/PVktzFZkQMul1ddvqR-Q0Q/zh-cn_image_0000002786359774.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/PVktzFZkQMul1ddvqR-Q0Q/zh-cn_image_0000002786359774.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE28169F8A321E54BCD8C1D713916C352C01724503DB77DC89FD954B7C004DA2)
 
 具体实现步骤如下：
 
@@ -172,7 +172,7 @@ void SetQoS(QoS_Level level) {
 
 计算线程（线程id：39260）设置低QoS等级trace图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/AVEPSjd3Qciq26ECZQoCBg/zh-cn_image_0000002815559195.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/AVEPSjd3Qciq26ECZQoCBg/zh-cn_image_0000002815559195.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D78CBB004BE858079D31E4E73284A895CFAE8A2ED3FC4BF993BFBCE92B8780F)
 
 如上图所示，计算线程执行完计算任务耗时726.8ms。
 
@@ -205,7 +205,7 @@ void SetQoS(QoS_Level level) {
 
 计算线程（线程id：39204）设置高QoS等级trace图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/SQ0cEAYnQkOUuqaWjg6kQg/zh-cn_image_0000002815399279.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/SQ0cEAYnQkOUuqaWjg6kQg/zh-cn_image_0000002815399279.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7F12ED39446A1FC7E14DA511971430ED3892FDBDB181057F39DDB1B92EB6CEC)
 
 如上图所示，计算线程执行完计算任务耗时323.9ms。
 

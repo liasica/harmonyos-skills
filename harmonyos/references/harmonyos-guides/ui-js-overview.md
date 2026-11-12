@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-overvie
 title: UI开发 (兼容JS的类Web开发范式)概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > UI开发 (兼容JS的类Web开发范式)概述
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:18+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-05-08
 content_hash: sha256:d83bef840bfe1c758cda41f2c5b71499f19aacb8b87c52284164bea3b2c292d1
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:d83bef840bfe1c758cda41f2c5b71499f19aacb8b87c52284164bea3b2c
 
 兼容JS的类Web开发范式的方舟开发框架，包括应用层（Application）、前端框架层（Framework）、引擎层（Engine）和平台适配层（Porting Layer）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/tJ3gQFfoQgeb_TzdLWNFDw/zh-cn_image_0000002815558683.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/tJ3gQFfoQgeb_TzdLWNFDw/zh-cn_image_0000002815558683.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=30D3BBE11AE095C605C503D9760E2F4290243D213F59DDCC3EF48674BCA49C8D)
 
 * **Application**
 

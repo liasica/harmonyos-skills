@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1038
 title: 如何实现只对子组件进行横向裁剪，不进行纵向裁剪
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现只对子组件进行横向裁剪，不进行纵向裁剪
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:26bacb4959f26d6b888b1f91ec6aae8153ba1e84eaac01bdbfdd3eb8b373bc3a
 ---
@@ -14,7 +14,7 @@ clip属性会把子组件超出父组件的部分全部裁剪掉，如何实现�
 
 初始效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/cJRFIXulR7yU-wwADmtUag/zh-cn_image_0000002658924721.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/cJRFIXulR7yU-wwADmtUag/zh-cn_image_0000002658924721.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB047F1050CED62609E6D5A412C8840DBD1F2DF20ECFB5B9420537450422410D "点击放大")
 
 ## 背景知识
 
@@ -27,7 +27,7 @@ clip属性会把子组件超出父组件的部分全部裁剪掉，如何实现�
 
 RectShape示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/yDLWmSYJTcirvp1_C1utlQ/zh-cn_image_0000002628405516.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/yDLWmSYJTcirvp1_C1utlQ/zh-cn_image_0000002628405516.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=3FDFCF31328095C32CFC9F98E2F5EAAED7536B2CA0BF47313B79B2EEB6C6C91B "点击放大")
 
 ```ts
 import { RectShape } from '@kit.ArkUI';
@@ -79,7 +79,7 @@ struct ClipShapeDemo {
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/7TmnVD4qT36hz992Gd6w2g/zh-cn_image_0000002658804789.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/7TmnVD4qT36hz992Gd6w2g/zh-cn_image_0000002658804789.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=4E01680AC8D29B5CBE8302C240476E526854A9B9CDDD2B1E3CC701FF1689C82D "点击放大")
 
 ## 总结
 

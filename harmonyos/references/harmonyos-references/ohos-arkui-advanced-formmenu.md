@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: FormMenu
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > FormMenu
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:27+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:4b1651a5fa3513772148f65c99be96186ff1a83c91de8ccda09ca6cacb5ddd8c
 ---
@@ -220,10 +220,10 @@ struct WidgetCard {
 
 **高级自定义控件界面**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/TVQ8DJhKTiaM2CNcAYQGOg/zh-cn_image_0000002786521594.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/TVQ8DJhKTiaM2CNcAYQGOg/zh-cn_image_0000002786521594.jpeg?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A9C00B84A8F19510C4EF781701927430BC67C43DBAC86E3FFDDFF8D53D4DF8C)
 
 **调用高级自定义控件桌面加桌结果**
 
 左侧是formBindingData为空加桌结果，右侧是formBindingData为{ data: 'share' }的加桌结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/20YmXU_ZSfexhRdnw15KJw/zh-cn_image_0000002786361666.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/20YmXU_ZSfexhRdnw15KJw/zh-cn_image_0000002786361666.jpeg?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B0483A7F8C1DC208F48C3620F3AA6E528AD4F21723A5446FC4CA011F2D9C410)

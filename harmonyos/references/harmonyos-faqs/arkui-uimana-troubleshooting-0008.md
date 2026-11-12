@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-tr
 title: 页面跳转后弹窗不关闭问题定位
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 故障排查 > 页面跳转后弹窗不关闭问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:33+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:384fcd8c25ba146404ad19015cc74060d4b946e06033c8500d7fbb3aa79806de
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:384fcd8c25ba146404ad19015cc74060d4b946e06033c8500d7fbb3aa79
 
 在页面中的自定义弹窗中点击按钮进行页面跳转，跳转完成后，自定义弹窗不关闭，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/st50Nw2VRrW24v5P9g5JsQ/zh-cn_image_0000002797211317.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/st50Nw2VRrW24v5P9g5JsQ/zh-cn_image_0000002797211317.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=1660806BD8A1BCF67B73EC404876802ECAB83DB39B55076499A62D3E82A1ADA0 "点击放大")
 
 主页代码如下所示：
 
@@ -150,7 +150,7 @@ ArkUI的弹出框默认设置为全局级别，弹窗节点作为页面根节点
 
   修改后的效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/JyTVOdSbRLeyK3Jufw5nqg/zh-cn_image_0000002768051332.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/JyTVOdSbRLeyK3Jufw5nqg/zh-cn_image_0000002768051332.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1B7F99848C2F67AEBABAC4571E9F0B34892F0FF27F68F543F8F084436E3A09A "点击放大")
 * 在页面的生命周期回调函数[onPageHide](../harmonyos-references/ts-custom-component-lifecycle.md#onpagehide)中添加关闭弹框逻辑可以实现弹窗自动关闭。
 
   ```ts
@@ -329,7 +329,7 @@ ArkUI的弹出框默认设置为全局级别，弹窗节点作为页面根节点
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/WPohsZrcTdquX2mPq-zeGg/zh-cn_image_0000002768051342.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/WPohsZrcTdquX2mPq-zeGg/zh-cn_image_0000002768051342.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=553769FB527A51D30A8D31B3360905E981134E0D48B33E875243DACE823617CF "点击放大")
 
 方案二：使用页面级弹出框。在弹出框的options入参中设置levelMode属性，值为LevelMode.EMBEDDED表示开启页面级弹出框能力，该方法仅支持API15及以上版本。目标跳转页面同方案一，主页面示例代码为：
 
@@ -397,7 +397,7 @@ struct PageNavigationFour {
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/r01EfIftTJS_yxcrXtIOoA/zh-cn_image_0000002797331343.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/r01EfIftTJS_yxcrXtIOoA/zh-cn_image_0000002797331343.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=9531CE69E87E41DFDAD771890F8906F7AEDC2820A23AB3DEE4789D8F99287A8C "点击放大")
 
 补充说明，使用Navigation跳转页面时，通过CustomDialogController配置LevelMode.EMBEDDED后，弹窗会挂载在Page根节点下，层级高于Navigation内所有NavDestination页面，路由跳转后弹窗仍然显示在最上层。此时需要通过[openCustomDialog](../harmonyos-guides/arkts-uicontext-custom-dialog.md)接口打开弹窗，并配置LevelMode.EMBEDDED和levelUniqueId属性，将弹窗节点挂载到NavDestination下，实现页面级弹窗。
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: 解决不同主轴方向的Flex组件嵌套高度不
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > 解决不同主轴方向的Flex组件嵌套高度不
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:0b332929e0a18bc23b50fe15af6971b2058aab7edaef43d80ec223e19b45cdd5
 ---
@@ -64,7 +64,7 @@ struct FlexNested {
 
 问题效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/7DKumy3XS0qOkWgbd6ZFlw/zh-cn_image_0000002772726546.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/7DKumy3XS0qOkWgbd6ZFlw/zh-cn_image_0000002772726546.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B2D969A9DAFA97CEFEE88EBCFC50BC1735460C2E8C8A46BE09EBB8B95E21314 "点击放大")
 
 A：
 

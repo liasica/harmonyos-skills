@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: LazyVWaterFlowLayout
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > LazyVWaterFlowLayout
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-30
 content_hash: sha256:fd722aaee9d83960ca0cebc563a0c5cd1a44fa1cc3201cdc5b34914c9db11f91
 ---
@@ -446,7 +446,7 @@ export class MyDataSource<T> extends BasicDataSource<T> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/DOtt0DWdTnWpJBlrBjeKNg/zh-cn_image_0000002815560583.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/DOtt0DWdTnWpJBlrBjeKNg/zh-cn_image_0000002815560583.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=0829ED42CFF6D18E3245A1C6975B95C37F8887A5BACDA13DF87A125F11DA3A69)
 
 ### 示例2（设置头部组件或尾部组件及吸附效果）
 
@@ -555,7 +555,7 @@ struct LazyVWaterFlowLayoutStickyDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/MPRY6WUqSuyAfkkXkQkKjw/zh-cn_image_0000002815400667.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/MPRY6WUqSuyAfkkXkQkKjw/zh-cn_image_0000002815400667.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=E76685E6C3AD204E13CF5D35DACA0F517D31FB270D443197123DA98428931030)
 
 ### 示例3（设置自适应列数）
 
@@ -685,4 +685,4 @@ struct LazyVWaterFlowLayoutColumnsTemplateDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/KlnkjNu1QI-WiMr1lFTl5w/zh-cn_image_0000002786521092.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/KlnkjNu1QI-WiMr1lFTl5w/zh-cn_image_0000002786521092.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF3937CDC8A8955E4E7740FFE08452AEAB7C1E23D9931D8936CEA3F6FC6FC186)

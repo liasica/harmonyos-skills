@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-custom-me
 title: 自定义元数据规则校验插件配置
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 自定义元数据规则校验插件 > 自定义元数据规则校验插件配置
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:53+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:a44b949b0b4011258877d1f059dc0ab7617f84ea012317dca62dd07f873d6e5e
 ---
@@ -20,9 +20,9 @@ ohpm-repo 5.1.3版本开始支持自定义元数据规则校验，允许通过�
 2. 根据[模板文件](ide-rule-verification-template-file.md)中的操作指示，创建三个必要模板文件：[checkField.ts](ide-rule-verification-template-file.md#section14072085013)，[CustomExtensionValidationConfig.json](ide-rule-verification-template-file.md#section1076523392)和[tsconfig.json](ide-rule-verification-template-file.md#section1613602518915)。
 3. 将文件[tsconfig.json](ide-rule-verification-template-file.md#section1613602518915)文件移动到ohpm-repo解压根目录内；建议将文件[checkField.ts](ide-rule-verification-template-file.md#section14072085013)和[CustomExtensionValidationConfig.json](ide-rule-verification-template-file.md#section1076523392)文件移动到ohpm-repo解压根目录的plugins/fieldCheckPlugin文件夹内。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/qr0LyfoqQESyXJfyJus0sQ/zh-cn_image_0000002808764709.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/qr0LyfoqQESyXJfyJus0sQ/zh-cn_image_0000002808764709.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3DA8CFFFD9C2E12D9FC267668E21FEB04A09F53B38E4A9BE034B699B83E8B66)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/lozuqIGpQquuYcd56lUPXw/zh-cn_image_0000002808764705.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/lozuqIGpQquuYcd56lUPXw/zh-cn_image_0000002808764705.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5875B28DC6DC00C9CB32495771622925FB0705845A3FEDAEAB678603645B5B5 "点击放大")
 
 ## 编写自定义规则校验函数文件checkField.ts
 

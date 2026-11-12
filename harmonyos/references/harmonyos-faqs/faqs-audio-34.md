@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-audio-34
 title: 使用AudioCapturer录制音频时报错6800301该如何处理
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音频（Audio） > 使用AudioCapturer录制音频时报错6800301该如何处理
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:30+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:a0d9d693f3802ae4b0b074e821a0cd864341855aeed3f4b479071230b84cc0fe
 ---
@@ -34,15 +34,15 @@ content_hash: sha256:a0d9d693f3802ae4b0b074e821a0cd864341855aeed3f4b479071230b84
 
 如下图所示，如果权限没有正确申请，则会导致权限校验异常造成报错，这里取消了麦克风权限导致报错：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/F30R9zbsSKyxPk_JoqB6Og/zh-cn_image_0000002658791891.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/F30R9zbsSKyxPk_JoqB6Og/zh-cn_image_0000002658791891.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=A30719F27046653065D12EDA8AE0B77F3F18AA99CEA3B222301656EB620AF897 "点击放大")
 
 如下图所示，如果参数配置不正确，则会导致参数校验异常造成报错，音频采集参数的详细信息可以查看[AudioStreamInfo](../harmonyos-references/arkts-apis-audio-i.md#audiostreaminfo8)，这里配置了错误的采样率导致报错：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/ASxpjPJvQ4etDPCwf2y90A/zh-cn_image_0000002628552524.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/ASxpjPJvQ4etDPCwf2y90A/zh-cn_image_0000002628552524.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=1CAB01A53DF278F22CFDFC6C17A502E80DA2CD9A1C09237E77F44D800DEF75C6 "点击放大")
 
 如下图所示，如果没有进行正确的初始化，则会导致状态检查异常造成系统报错，这里初始化步骤在申请权限之前导致报错：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/tyxANRXETVSLU5_yBW0IwQ/zh-cn_image_0000002658911835.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/tyxANRXETVSLU5_yBW0IwQ/zh-cn_image_0000002658911835.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD7C8FBF1B289853F9D946A045FD975AC308162B82654176A8C545AE626B889A "点击放大")
 
 ## 修改建议
 

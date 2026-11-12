@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: SymbolSpan
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > SymbolSpan
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-01
 content_hash: sha256:e09d7b4a90b535c3b12346b45c51e53abb2b4d9159af76a7c87b626a472aec01
 ---
@@ -164,7 +164,7 @@ SINGLE表示单色渲染，适用于需要统一颜色的图标显示场景；MU
 
 不同渲染策略效果可参考以下示意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/IeyBmihdTneFMo50xfT5IQ/zh-cn_image_0000002815400859.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/IeyBmihdTneFMo50xfT5IQ/zh-cn_image_0000002815400859.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBB6BB835B877543E6F280DC02A53E8A423E897370B7FE9CC4CA835B41B31CCA)
 
 ### effectStrategy
 
@@ -319,7 +319,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/8BwbTf4vTwCRFtLkA3Y1HQ/zh-cn_image_0000002786521284.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/8BwbTf4vTwCRFtLkA3Y1HQ/zh-cn_image_0000002786521284.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7A99B3908460EC0321097D7F3F96315935FD2D2981BB623B1BD29C137322C5B)
 
 ### 示例2（设置动态属性）
 
@@ -353,7 +353,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/XXXVjkm6TDyuwGZWzwrW9Q/zh-cn_image_0000002786361356.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/XXXVjkm6TDyuwGZWzwrW9Q/zh-cn_image_0000002786361356.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D18A32E98E4307139D7E5A333C060A7D566236BD753D58B3D4CC5A5844976D1)
 
 ### 示例3（设置字体粗细）
 
@@ -425,4 +425,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/iRMYxKq_TDKyxdz2Nt0pjA/zh-cn_image_0000002815560777.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/iRMYxKq_TDKyxdz2Nt0pjA/zh-cn_image_0000002815560777.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=2453B90D9A19E35C651C09A56C8DE9F55C49DC6E8C6C68E15FB4668533ECD349)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 动态手势设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 动态属性与自定义 > 动态手势设置
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:b7dda9d1b743a46f236bc8c819bf1d1ce767af929c628ad084fe10e9012a23fc
 ---
@@ -129,7 +129,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/vQ_aJ0QRQ9aBCVbISuAI1Q/zh-cn_image_0000002786361078.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/vQ_aJ0QRQ9aBCVbISuAI1Q/zh-cn_image_0000002786361078.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=50F30039C0D3A61C3DA6E39E5CEBB6FB3B1A59FBA31361462E2FB7B3282A4D87)
 
 ### 示例2（动态绑定手势组）
 
@@ -207,4 +207,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/89NrqA9XTmWcTiAttwL2Rw/zh-cn_image_0000002815560499.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/89NrqA9XTmWcTiAttwL2Rw/zh-cn_image_0000002815560499.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=55499F3717EDD9E2909D2AB389744CEFD42F33ACDDD4A012598C5A62FFFCB0A7)

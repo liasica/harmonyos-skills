@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-913
 title: 如何动态设置Swiper组件的nextMargin属性
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何动态设置Swiper组件的nextMargin属性
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:13+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:7d50cefed358444ebe43f824f4dc5e495168853b040eca3b105adfb4273d4c61
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:7d50cefed358444ebe43f824f4dc5e495168853b040eca3b105adfb4273
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/q9H4tSmlR5Ks8qxw1rtJdQ/zh-cn_image_0000002658918983.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/q9H4tSmlR5Ks8qxw1rtJdQ/zh-cn_image_0000002658918983.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=A95D2BE6D389F005FA13A3CD9722D53890D070DAB87C3830A1FF10AA1C8C8C51 "点击放大")
 
 ## 背景知识
 

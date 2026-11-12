@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 动态变化的页面卡住一段时间无变化
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 动态变化的页面卡住一段时间无变化
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:43+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:bb205b556c33ba303f3e10e00b68d906ae4d004e46248a763eaa125c744f8baf
 ---
@@ -23,14 +23,14 @@ content_hash: sha256:bb205b556c33ba303f3e10e00b68d906ae4d004e46248a763eaa125c744
 1. 使用ArkUI Inspector抓取该页面布局，发现该动态变化的页面使用XComponent组件来完成渲染绘制。
 2. 使用DevEco Profiler Frame工具抓取该过程的Trace信息，在上方搜索框中输入H:NativeWindowFlushBuffer找到应用将自绘制内容传送到XComponent组件的Surface的相关线程。从下图中可看到该线程为应用的44780子线程，同时有持续1.6s左右未将自绘制内容传送到XComponent组件的Surface。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/JIn3W_8GTs6dzULctEly_g/zh-cn_image_0000002658914493.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/JIn3W_8GTs6dzULctEly_g/zh-cn_image_0000002658914493.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2CDBBCAAB2678190B163626C8F9C0D5FF4F8D49BA783647F76A497D7DF65E24 "点击放大")
 
    在过程该线程大部分时间处于Running状态，在执行耗时操作。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/l59An57MQ8CKKVVrwAGsNg/zh-cn_image_0000002628395264.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/l59An57MQ8CKKVVrwAGsNg/zh-cn_image_0000002628395264.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8FC2C84ECF651F9D3BCD1454B74FA55AF314BBFD102FF778F18A1E795650D80 "点击放大")
 3. 通过查看Callstack泳道中的XXX[44780]子泳道，可看到耗时主要集中在libxxx.so文件的函数中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/54n7DxMtTPavlUp00UA0rw/zh-cn_image_0000002658794539.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/54n7DxMtTPavlUp00UA0rw/zh-cn_image_0000002658794539.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=626BF83D1CA6AA34E475962AA1CF17BF3B1DD04A92D0735969B802E0400D20B3 "点击放大")
 
 ## 分析结论
 

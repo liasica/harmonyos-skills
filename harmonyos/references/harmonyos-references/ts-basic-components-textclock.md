@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: TextClock
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > TextClock
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-01
 content_hash: sha256:c47c54f8d132d36b7793b2a074b2c95805477437d9e67bc58bf7a69573ea300a
 ---
@@ -469,7 +469,7 @@ struct Second {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/i70wHKMIRByiiK5LUHfAPg/zh-cn_image_0000002786521392.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/i70wHKMIRByiiK5LUHfAPg/zh-cn_image_0000002786521392.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E709BD43A85F16A7E734238D7612226894E0BD41DB61E6A08A329E833FBA66E)
 
 ### 示例2（设定文本阴影样式）
 
@@ -514,7 +514,7 @@ struct TextClockExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/CsaSZhU3QCePnVJt0x349Q/zh-cn_image_0000002786361464.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/CsaSZhU3QCePnVJt0x349Q/zh-cn_image_0000002786361464.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=5111F7D31DAC3BDCEE9CD74E20C145BFEE586C43FFCC413852F610254EEA14CC)
 
 ### 示例3（设定自定义内容区）
 
@@ -601,7 +601,7 @@ struct TextClockExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/VIwax7qeShqi2rszLxMi3w/zh-cn_image_0000002815560885.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/VIwax7qeShqi2rszLxMi3w/zh-cn_image_0000002815560885.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0C33A453356ACEC04E682618DB1A89FDF3F5CD26CE66A76EDAAE03F3FAA602B)
 
 ### 示例4（设置前导零）
 
@@ -636,7 +636,7 @@ struct TextClockExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/bal9JzhUTuSqrOQqM9zAMA/zh-cn_image_0000002815400969.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/bal9JzhUTuSqrOQqM9zAMA/zh-cn_image_0000002815400969.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7CF276B93A4E686F2B24D2EE9FFC4E797518666369B141EBC2F5A3CF858F64E)
 
 ### 示例5（设置文字显示样式）
 
@@ -691,4 +691,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/pHLGtn5CTzCumNfXqCwqZQ/zh-cn_image_0000002786521394.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/pHLGtn5CTzCumNfXqCwqZQ/zh-cn_image_0000002786521394.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2C1F204009C63EB224BF3841F5AFFCF6EAB21295AE99CF1440D113BAE6B32EE)

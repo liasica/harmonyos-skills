@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: PopupV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > PopupV2
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:27+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-30
 content_hash: sha256:d22e916a2c61cb501a75d18c8776b57072637b0749fd93739d85e5176a822926
 ---
@@ -137,7 +137,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/RmyGFrjuSQqgHrSSeU9plQ/zh-cn_image_0000002815561089.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/RmyGFrjuSQqgHrSSeU9plQ/zh-cn_image_0000002815561089.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=1122A109B3A06F79AA7E7CCF7E6ABA6D8F00E9C22C74C714978477499F90FA1B)
 
 ### 示例2（设置布局方向）
 
@@ -192,7 +192,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/uApdm34cTHyoMTbQLciFyw/zh-cn_image_0000002815401173.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/uApdm34cTHyoMTbQLciFyw/zh-cn_image_0000002815401173.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9512C172F2E3E585D37F537AEC7E1F1781EC006497367292FB7D24C3D1C327E)
 
 ### 示例3（设置自定义宽度）
 
@@ -248,4 +248,4 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/Dmn-lv2NRa2noilhoIRQGg/zh-cn_image_0000002786521598.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/Dmn-lv2NRa2noilhoIRQGg/zh-cn_image_0000002786521598.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCD76CB10DD2DEE2357496873A8E9E9C15D6DDBB7D780AEE9CF51A2DF8A37613)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-avcodec-15
 title: 视频硬解码CPU使用率高
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频编解码（AVCodec） > 视频硬解码CPU使用率高
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:33+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:0c4b4f557a7e299e0ff2334aa0e2d10da73bed6d71bb60697b7be3cb3b580745
 ---
@@ -16,11 +16,11 @@ CPU测试结果如下图：
 
 硬解码：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/AFefFfgRStyL3ACBWQdYxA/zh-cn_image_0000002658792067.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/AFefFfgRStyL3ACBWQdYxA/zh-cn_image_0000002658792067.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=4415128201860E1D3028B4A7CBBFD65F0ECDA0379D00908BA8E9D8BEEA13112A "点击放大")
 
 ffmpeg软解码：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/z0TEOgHbTbmRZOMgnH0-GA/zh-cn_image_0000002628552690.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/z0TEOgHbTbmRZOMgnH0-GA/zh-cn_image_0000002628552690.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=1107795806BE762C112F062298E53219038EB439D5620F542D159A13F1150FAF "点击放大")
 
 从CPU测试结果图来看硬件视频解码CPU使用率维持在7%到8%左右，使用ffmpeg软件解码播放时平均维持在3%左右。这与硬解码和软解码的CPU占用不符合。硬解码调用设备相关硬件进行解码，软解码调用软件（调用CPU）进行解码，预期结果应当为硬解码占用更少的CPU。
 
@@ -96,13 +96,13 @@ void OHOSVDecoder::OnNeedInputBuffer(OH_AVCodec *codec, uint32_t index, OH_AVBuf
 
 在视频Buffer和音频Buffer都为nullptr时，在视频源有数据不断传入时，解码器会保持空载。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/0-dwsVA0SkSSmLwyJ1Y2Kw/zh-cn_image_0000002658912009.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/0-dwsVA0SkSSmLwyJ1Y2Kw/zh-cn_image_0000002658912009.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=5BDE280EEC278DC30B981BFBE03A852F5D4ABB7A852BCE5321C8901892836FFA "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/irdtyqb-RoOWms4xlkx6ig/zh-cn_image_0000002628392810.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/irdtyqb-RoOWms4xlkx6ig/zh-cn_image_0000002628392810.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=B30C45A9023E7A2241FFC1BDA30206E6B14DE99A8DF35BB495B9D6E0AD92E872 "点击放大")
 
 当传入解码队列的音频Buffer不为空，视频Buffer为nullptr时，解码器运行，只有音频输出。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/0l_foAxCSymzIaSmcc5ImA/zh-cn_image_0000002658792093.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/0l_foAxCSymzIaSmcc5ImA/zh-cn_image_0000002658792093.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=334E1583F908C491CB394238FC1E943D92C9FD33524F2A53027D22879358951F "点击放大")
 
 ## 修改建议
 

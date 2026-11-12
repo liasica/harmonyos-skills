@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-image-whit
 title: Image白块解决方案
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 专项问题解决方案 > Image白块解决方案
 category: best-practices
-scraped_at: 2026-11-10T10:42:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-15
 content_hash: sha256:3936b92ae541c735ab5108ab47efc5dee990134ee140b67abfe236b50f70b935
 ---
@@ -18,7 +18,7 @@ content_hash: sha256:3936b92ae541c735ab5108ab47efc5dee990134ee140b67abfe236b50f7
 * 缓存复用阶段：当Image组件加载时，首先检查应用沙箱是否存在缓存。若存在，则直接读取缓存数据；若不存在，再发起网络请求。非首次请求时，该机制可避免重复下载，从而缩短白块持续时间。
 
 **图1** Image加载网络图片两种方式对比  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/SCDs4IFxQh6R4oWh9Lu3rg/zh-cn_image_0000002429762245.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/SCDs4IFxQh6R4oWh9Lu3rg/zh-cn_image_0000002429762245.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=4DA061BEBB28E11A5E889CFA8E655B78572274A7019E41A466A69B8C3B02A09F "点击放大")
 
 **说明** 
 
@@ -81,7 +81,7 @@ export struct PageOne {
 
 **图2** 使用预下载的方式，由开发者灵活地处理网络图片，减少白块出现时长
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/ArPnjO0LSiqPWluI-0oBVw/zh-cn_image_0000002651406702.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/ArPnjO0LSiqPWluI-0oBVw/zh-cn_image_0000002651406702.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB8FD1C424D836E23DF84429055876A8C029499CE657DCE79BBD94C5F8D486A6 "点击放大")
 
 1. 在父组件里aboutToAppear()中提前发起网络请求，当父页面点击按钮跳转子页面PageOne，此时触发读取应用沙箱中已缓存解码的网络图片请求并存储。非首次点击时，不再重复调用getPixMap()，避免每次点击都从沙箱里读取文件。
 
@@ -267,7 +267,7 @@ export struct PageOne {
 
 **图3** 直接使用Image加载网络数据
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/8jxEGG1bQs-TY_MBi4PchA/zh-cn_image_0000002681606227.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/8jxEGG1bQs-TY_MBi4PchA/zh-cn_image_0000002681606227.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB4CBBBE737DBA6418F1AAD431E28EDFBCE7C339E0D1857A36484E420BFEA4E3 "点击放大")
 
 【优化后】
 
@@ -275,7 +275,7 @@ export struct PageOne {
 
 **图4** 使用预下载的方式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/3_q-GkkRTuK4TjufaovxgQ/zh-cn_image_0000002651566612.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/3_q-GkkRTuK4TjufaovxgQ/zh-cn_image_0000002651566612.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=667CB713077E0F03E2A63B16945B023174BF39E061E2A367D95EFA18347E0C8C "点击放大")
 
 **说明** 
 

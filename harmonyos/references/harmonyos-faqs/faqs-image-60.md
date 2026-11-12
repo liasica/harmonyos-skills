@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-60
 title: 使用rotate接口对PixelMap多次旋转后图像逐渐变小
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 使用rotate接口对PixelMap多次旋转后图像逐渐变小
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:28+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:2d8326ad7b3ceb32c733c54af5cbdbad1182bbd57aa0d961e121b791d4a59142
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:2d8326ad7b3ceb32c733c54af5cbdbad1182bbd57aa0d961e121b791d4a
 
 使用[Image](../harmonyos-references/ts-basic-components-image.md)组件显示[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)图像数据，对PixelMap图像使用[rotate](../harmonyos-references/arkts-apis-image-pixelmap.md#rotate9)接口多次旋转后，图片逐渐变小，直到几乎消失不见。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/N5j9rc36RsW9Eqdc6yaODg/zh-cn_image_0000002628552512.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/N5j9rc36RsW9Eqdc6yaODg/zh-cn_image_0000002628552512.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4BF89FD062CF65A9AB4BECE4EA8395608DCE119C32DBA753DCDE3EDAFD1E6AA "点击放大")
 
 ## 背景知识
 

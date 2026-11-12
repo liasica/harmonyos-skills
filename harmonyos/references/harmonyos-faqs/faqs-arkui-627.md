@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-627
 title: 如何解决Video组件播放前出现预览黑屏的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Video组件播放前出现预览黑屏的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:35a82ba973bc8fca3a4e30628df9fd880337f17c247e05a62691dde65bb6650c
 ---
@@ -14,7 +14,7 @@ Video组件在未播放视频内容之前是黑色的，开始播放后，再点
 
 问题现象效果如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/-ucABKUfTxC-NHo7OAUsMg/zh-cn_image_0000002658913487.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/-ucABKUfTxC-NHo7OAUsMg/zh-cn_image_0000002658913487.png?HW-CC-KV=V1&HW-CC-Date=20261112T233158Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4408646F959EBD2C720003D90A07A28D7944AF4374197432E27B39C87E68B84 "点击放大")
 
 ## 背景知识
 

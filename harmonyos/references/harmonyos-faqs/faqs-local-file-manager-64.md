@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: fs.writeSync写文件时如何在文件末尾追加内容
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > fs.writeSync写文件时如何在文件末尾追加内容
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:65e05cf5d88434735c61ccc206d8e2f6866b627d9bbc936315a1bb6f47ee5fbd
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:65e05cf5d88434735c61ccc206d8e2f6866b627d9bbc936315a1bb6f47e
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/bqdrJwx0ScKlpzPC8hKouQ/zh-cn_image_0000002629059024.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/bqdrJwx0ScKlpzPC8hKouQ/zh-cn_image_0000002629059024.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=646C6AB93073B30D51DB0312CD5D209A84FB27AB2A11D1489F038618AC0548C6 "点击放大")
 
 ## 解决方案
 

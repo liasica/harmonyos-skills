@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/compiling-and-b
 title: 编译构建配置文件报错问题排查
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 常见问题 > 编译构建配置文件报错问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:fb2c489817dae4c871abfb080e814ee21237350a8b8b834a02ac05b92f4e8221
 ---
@@ -95,7 +95,7 @@ Detail: Please check the following fields.
   + required：表示该字段为必选配置项。若缺失或拼写错误将导致属性未配置。
   + oneOf：表示当前配置不符合oneOf要求。通过instancePath已经确认报错出现在abilities标签，在DevEco Studio中，按住Ctrl点击"abilities"跳转到对应的module.json文件，可以查看到必须配置以下两组中的一组。根据对比排查，可识别到因拼写错误导致"name"属性未配置。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/Qz2s0OC2QqSsV0cr9CIvgw/zh-cn_image_0000002772707696.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/Qz2s0OC2QqSsV0cr9CIvgw/zh-cn_image_0000002772707696.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=94EF080B40971D130A7E03D6D3E9BF69B391AFDDFEEFA96906D386C3FD24FA7A)
   + enum：所有可配置的属性。开发者可根据枚举值确认属性的正确写法。
   + propertyNames：字段拼写错误时，propertyName: 'nam'指明 "nam" 为错误属性。
 * params：不同keyword对应不同的详细说明。例如，当keyword为'required'时，params的missingProperty: 'name'表示缺失的属性为“name”。
@@ -104,8 +104,8 @@ Detail: Please check the following fields.
 
 **Q：打包APP时，出现“uri datashareproxy://bundleName/\*\* in proxy data is duplicated”的提示。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/uyxGlQjPS4OKyUpdvhykuA/zh-cn_image_0000002802147679.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/uyxGlQjPS4OKyUpdvhykuA/zh-cn_image_0000002802147679.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B55BCA22959BA53A480972AD3D21F1F850A4A72CA6883E9B8E13F83980A5EA6 "点击放大")
 
 **A**：proxyData 标识模块提供的数据代理列表，仅允许 entry 和 feature 配置，不同 proxyData 中配置的 URI 不得重复。遇到此问题，检查模块间是否配置了相同的 URI。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/KhxF51NoT8mUm9PaMUwnQA/zh-cn_image_0000002802147681.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/KhxF51NoT8mUm9PaMUwnQA/zh-cn_image_0000002802147681.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=1AC11F39A9DBF025FC91CE30CABB511D7B60F18845126836E2C5C0843164C637 "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1112
 title: 如何设置TabContent切换动画
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何设置TabContent切换动画
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:c58e4d998a1d050bb17becc5eea780f4afcc8c446a3b6583409921c05798de65
 ---
@@ -160,7 +160,7 @@ struct FadePage {
 
 效果图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/Gx-G6pqcQ5mE9SUbxneXLA/zh-cn_image_0000002658926707.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/Gx-G6pqcQ5mE9SUbxneXLA/zh-cn_image_0000002658926707.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD87ABA441F36D6D2D1E40AA7ADF0F8FE937BF5EA474E15128DFFD78D2C82ED0 "点击放大")
 
 * **场景二：点击页签，TabContent有左右切换效果，A、B、C三个页面，B页面居中，左滑A宽80%拼接B左侧20%，右滑同理。**
 
@@ -293,7 +293,7 @@ struct FadePage {
 
   效果图如下所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/ED84uA9pQz2XZq3PjqHu7A/zh-cn_image_0000002658806749.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/ED84uA9pQz2XZq3PjqHu7A/zh-cn_image_0000002658806749.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B0AA66A11C30A38AB4ACDB196C0023EDD1C3A9469C13A3AD94D639F3F6BC9BB "点击放大")
 
 ## 常见FAQ
 

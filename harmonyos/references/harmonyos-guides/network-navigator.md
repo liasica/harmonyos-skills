@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/network-navig
 title: 使用网络领航员进行网络模拟
 breadcrumb: 指南 > 系统 > 网络 > 网络调试调优 > 使用网络领航员进行网络模拟
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:47+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-10
 content_hash: sha256:2901ee9fe6fcfe7408684296a927c190a3e7a0b0c8c0073fcf1302b85c4c3876
 ---
@@ -30,29 +30,29 @@ App上线之前需要优化和验证App在各种网络场景的体验，例如�
 
 当您首次使用该功能时，可根据 **[开启开发者选项](ide-developer-mode.md#section530763213432)** 指引先开启设备的开发者模式，然后点击**设置** -> **系统** -> **开发者选项** -> **网络领航员**即可进入网络领航员页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/V-U9KTZCRVq-Ris3O4DYTw/zh-cn_image_0000002786359744.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/V-U9KTZCRVq-Ris3O4DYTw/zh-cn_image_0000002786359744.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6E89E6AFBC201DA8DC4117FEE4001CE36C72A37786671850F981F56F7FA557A)
 
 网络领航员已预置如下常用网络模拟场景，您可以直接使用预置的网络模拟场景快速进行App使用体验测试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/fsek88f-R0GnldrenLURoA/zh-cn_image_0000002815559165.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/fsek88f-R0GnldrenLURoA/zh-cn_image_0000002815559165.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E86C2D002398CEE8DC115BDD73E3D6E3D8E4A39B0189905C8F1943A48D8B5CA)
 
 **如何启用一个网络模拟场景**
 
 在**可用的网络模拟场景**中点击任意一个您需要模拟的场景即可启用网络模拟。例如，点击**进出电梯**后，即可启用该模拟场景，并可查看**已生效的网络模拟场景。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/5MYlGBd6RPOZ4ZWhjmo3ng/zh-cn_image_0000002815399249.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/5MYlGBd6RPOZ4ZWhjmo3ng/zh-cn_image_0000002815399249.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE343C6025082790611AFE635F1ABF3FC42A4840C61CD654D0B59B2BEF9B68FD)
 
 同时您可在设备实况窗中查看到网络模拟内容（以进出电梯为例）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/Kw-7FNYlScWnw3l8BtZevQ/zh-cn_image_0000002786519674.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/Kw-7FNYlScWnw3l8BtZevQ/zh-cn_image_0000002786519674.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=253A77BF2927A99A865A7A6EA963BF907645AF783EBD4714BB41AFA1955A5953)
 
 **如何停止一个网络模拟场景**
 
-如果您需要停止网络模拟场景，可点击右侧的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/HqQhTCjeSoK8cfn2WF_CmA/zh-cn_image_0000002786359746.png)，然后点击退出该网络模拟场景即可退出模拟。
+如果您需要停止网络模拟场景，可点击右侧的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/HqQhTCjeSoK8cfn2WF_CmA/zh-cn_image_0000002786359746.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=E66C5BADACAF48600E7D3186685968B37D5F9ABC3B40EEFC80F2F8D9BE752941)，然后点击退出该网络模拟场景即可退出模拟。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/uVSt1A8AR2m7JmlU4qUMtw/zh-cn_image_0000002815559167.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/uVSt1A8AR2m7JmlU4qUMtw/zh-cn_image_0000002815559167.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE5B3CC0AC365491181D677AD3E692BC6A858531BC9804776AD31102D1CA0B94)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/WvjK30ZHSwWPkM-K0cpY-g/zh-cn_image_0000002815399251.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/WvjK30ZHSwWPkM-K0cpY-g/zh-cn_image_0000002815399251.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2DC5A5DB75F221706DE8219B18B691DCAE39F06DB719E38FD085A892FD3871B)
 
 预置的网络模拟场景使用前置条件及模拟场景阶段说明如下：
 
@@ -73,7 +73,7 @@ App上线之前需要优化和验证App在各种网络场景的体验，例如�
 
 当上述预置网络模拟场景无法满足您的开发需要时，您也可以在网络领航员页面通过点击底部的 **添加自定义网络场景** 来新增所需网络配置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/xN5qgquJRJmLk7UOEDjcyw/zh-cn_image_0000002786519676.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/xN5qgquJRJmLk7UOEDjcyw/zh-cn_image_0000002786519676.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=9AAC4FA85A5E3FC99389FE076001A3AFEDA4423F04141376F5AF8991D7C130A4)
 
 参数的取值范围参考如下，输入参数取值后会自动添加单位。自定义场景的参数配置将应用于启动时的默认网络，建议在网络环境稳定时使用。
 
@@ -92,9 +92,9 @@ App上线之前需要优化和验证App在各种网络场景的体验，例如�
 
 当您使用网络领航员能力时，可以通过实况窗实时了解网络变化，同时您也可以点击实况窗查看该场景的详细介绍，点击蓝色字体可**查看详细的网络参数**和**网络开发代码开发最佳实践**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/5PxeOytWRrC74jMaFnVbyg/zh-cn_image_0000002786359748.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/5PxeOytWRrC74jMaFnVbyg/zh-cn_image_0000002786359748.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEC7B3775E036DFB6998AD66157BE72CA8F6179F3AFA8CA49BD5D16DD18CEB31)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/dg2iKTwlQhii9IM12ZC6Lw/zh-cn_image_0000002815559169.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/dg2iKTwlQhii9IM12ZC6Lw/zh-cn_image_0000002815559169.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D873F10141F25C7A6E2DD6329752C2CEBCD1F9EBDD4EBE98A528EE89D658C98)
 
 ## 网络领航员代码优化建议
 

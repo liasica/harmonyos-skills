@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SegmentButton
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SegmentButton
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:28+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-17
 content_hash: sha256:2bd449c529462db9518a715830c76ed9333047977f0aa490610ca39f98c2a080
 ---
@@ -760,7 +760,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/TEiti8FlSUye0zrLNnerlQ/zh-cn_image_0000002786361672.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/TEiti8FlSUye0zrLNnerlQ/zh-cn_image_0000002786361672.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB7126340E401531C8FC9C02FEEFCA433C342148A9B794C918C2AADF6F13DB29)
 
 ### 示例2（设置分段按钮样式）
 
@@ -868,7 +868,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/J91uwVmXTSu_K25VNqodsQ/zh-cn_image_0000002815561093.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/J91uwVmXTSu_K25VNqodsQ/zh-cn_image_0000002815561093.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=D029D5F6F97AA37243DCED8A2B07AC97C40CE5F9CE1106895B524F425864D9A2)
 
 ### 示例3（分段按钮数组处理）
 
@@ -945,7 +945,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/F48881SmT6a4_oWTI-zXeg/zh-cn_image_0000002815401177.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/F48881SmT6a4_oWTI-zXeg/zh-cn_image_0000002815401177.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=1CE00D21330134126B2AF7240A1F1C90635EF6CCF9BB6DCFF98518EBAF2E9B80)
 
 ### 示例4（设置镜像效果）
 
@@ -1055,7 +1055,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/z3GJzIAMTNGglWwWw4eWwA/zh-cn_image_0000002786521602.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/z3GJzIAMTNGglWwWw4eWwA/zh-cn_image_0000002786521602.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6CD9E69D7D5FEEE4060D535F51A755AD45E4380F8659DB2C3CB600F0C7AB94C)
 
 ### 示例5（设置无障碍朗读）
 
@@ -1202,7 +1202,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/VFlq-yByS7qU7IDmcHLmug/zh-cn_image_0000002786361674.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/VFlq-yByS7qU7IDmcHLmug/zh-cn_image_0000002786361674.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=C2AB75834D56C3B2D236E887266A4EB529410D7193BBD59E51600E5ED48C09E5)
 
 ### 示例6（设置自定义圆角）
 
@@ -1247,7 +1247,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/LDI6suIfSzmcAyqXFjTW2g/zh-cn_image_0000002815561095.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/LDI6suIfSzmcAyqXFjTW2g/zh-cn_image_0000002815561095.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=1272973EE78C18AD5720EE214853544C27F75182032C3C35CFFB121E5B109069)
 
 ### 示例7（开启SegmentButton的属性动画）
 
@@ -1323,7 +1323,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/2fwE4ah9Qq--QPQzCq0Ptg/zh-cn_image_0000002815401179.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/2fwE4ah9Qq--QPQzCq0Ptg/zh-cn_image_0000002815401179.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=3AEF49227B9C5671725D4E4E7130E5C1BEE4D1283D5138312E3D165BC298A150)
 
 ### 示例8（设置背景板材质）
 
@@ -1394,7 +1394,7 @@ struct Index {
 
 该示例配图为高算力设备强档效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/ZCs6KwOISbS5r5HQsL64qg/zh-cn_image_0000002786521604.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/ZCs6KwOISbS5r5HQsL64qg/zh-cn_image_0000002786521604.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8571C34062F775D638E413019E106DD19AFED662FD5EAAFD91592DF49BD6610)
 
 ### 示例9（监听SegmentButtonOptions内属性的变化）
 
@@ -1458,4 +1458,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/JaccztvJTRqizc63Bpsqlw/zh-cn_image_0000002786361676.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/JaccztvJTRqizc63Bpsqlw/zh-cn_image_0000002786361676.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=35BDAEEE482F32C1778FCD86FF388BA2426B226A54863B2A395E7DADF3ECEC3D)

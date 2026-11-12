@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-bin
 title: "!!语法：双向绑定"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 语法糖 > !!语法：双向绑定
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:91fd12f930bad22f6aed8a6e1b5bdc52312c1f6da12ada09de00114613f3dddd
 ---
@@ -177,7 +177,7 @@ struct BindMenuInterface {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/OovTx_xJQZ2mQSXOJodD8Q/zh-cn_image_0000002815398179.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/OovTx_xJQZ2mQSXOJodD8Q/zh-cn_image_0000002815398179.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=91E308463F1AC49907DBE0D3B0178B5B23F4795D6E125FFFC857F8833526C1FD)
 
 **使用规则**
 

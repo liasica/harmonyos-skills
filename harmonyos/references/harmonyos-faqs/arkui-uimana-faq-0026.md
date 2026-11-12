@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-fa
 title: 面包屑导航效果实现常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > 面包屑导航效果实现常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:32+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:b140bbd48f23e1f017944e7b24d920a9e0e2beeae0636ad5641a53cb623eb4f2
 ---
 
 **Q：如何在HarmonyOS中实现面包屑导航的效果，具体演示如下：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/3LfwWFndRwm-GjVrwOK3SA/zh-cn_image_0000002772839722.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/3LfwWFndRwm-GjVrwOK3SA/zh-cn_image_0000002772839722.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE4CEFE5FDDCC52DCC46C98E39418F59C90A81B77326D306E1FE2FE0B2708AC1 "点击放大")
 
 **A**：实现面包屑导航效果的步骤如下：
 
@@ -308,4 +308,4 @@ struct BreadcrumbTab {
 
 运行效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/nP1w2jYCTUiuCsj5DIOPBA/zh-cn_image_0000002772679748.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/nP1w2jYCTUiuCsj5DIOPBA/zh-cn_image_0000002772679748.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=C35E6DAC700C7EA1B0DC787BBEF1C7EBC9B452A56CFA9B3719DA5A0BAA32052E "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-647
 title: Text组件嵌套多个Span组件的布局效果示例
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Text组件嵌套多个Span组件的布局效果示例
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:67dd86a29b8c4e0f1346f8e8f1b1f2ec2fcf347dae25777fa534af9e66824f2d
 ---
@@ -57,7 +57,7 @@ content_hash: sha256:67dd86a29b8c4e0f1346f8e8f1b1f2ec2fcf347dae25777fa534af9e668
 
     效果预览：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/4SsTqRvKRDS5ueQx26pkZw/zh-cn_image_0000002628394514.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/4SsTqRvKRDS5ueQx26pkZw/zh-cn_image_0000002628394514.png?HW-CC-KV=V1&HW-CC-Date=20261112T233158Z&HW-CC-Expire=31536000000&HW-CC-Sign=3280E00AA759C44D0B72BE273F2702C3560F77483FB71307F3136CD0425B833F "点击放大")
   + 针对效果二：先获取当前屏幕宽度，再计算指定文本的宽度，将两者对比判断是否需要换行，如果需要换行，则插入一个换行符来实现。
 
     ```ts
@@ -126,13 +126,13 @@ content_hash: sha256:67dd86a29b8c4e0f1346f8e8f1b1f2ec2fcf347dae25777fa534af9e668
 
     换行效果预览：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/XMtAEP5fSm2IiPGcoAeeDw/zh-cn_image_0000002658793781.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/XMtAEP5fSm2IiPGcoAeeDw/zh-cn_image_0000002658793781.png?HW-CC-KV=V1&HW-CC-Date=20261112T233158Z&HW-CC-Expire=31536000000&HW-CC-Sign=9765BB9DD0D541D001FDB1B71BD1AEBA53DC19563179A10C6EFE2C6DB4F4202C "点击放大")
 
     当changeLine方法传入的文本（message）和msg加起来不超过一行时，不会进行换行。
 
     不换行效果预览：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/_maUl6hwSAioyH1EhrUNAw/zh-cn_image_0000002628554404.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/_maUl6hwSAioyH1EhrUNAw/zh-cn_image_0000002628554404.png?HW-CC-KV=V1&HW-CC-Date=20261112T233158Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5633ECB2158350F6B0890471A62F6893B34749146186B07BF83AEB1BB1A06D6 "点击放大")
 * **场景二**：将以上两个效果结合在一起实现。使用substring()方法截取指定长度字符，通过三元运算符来动态截断文本换行并添加省略号实现以上两个效果。
 
   ```ts
@@ -175,7 +175,7 @@ content_hash: sha256:67dd86a29b8c4e0f1346f8e8f1b1f2ec2fcf347dae25777fa534af9e668
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/7zdXS8GiSU-rUAJ_Ym2PnQ/zh-cn_image_0000002658913729.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/7zdXS8GiSU-rUAJ_Ym2PnQ/zh-cn_image_0000002658913729.png?HW-CC-KV=V1&HW-CC-Date=20261112T233158Z&HW-CC-Expire=31536000000&HW-CC-Sign=3771F0E78873E568E067E793613CC1BB3A15E53943D2CB5C442524D9967CE226 "点击放大")
 
 ## 常见FAQ
 

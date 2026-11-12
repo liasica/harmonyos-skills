@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-connectivi
 title: BLE蓝牙重连异常
 breadcrumb: FAQ > 系统开发 > 网络 > 短距通信（Connectivity） > BLE蓝牙重连异常
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:d3066356d5562bab0894b14c415ac35204e0f1b021b8a2c4e07d581172240989
 ---
@@ -31,12 +31,12 @@ content_hash: sha256:d3066356d5562bab0894b14c415ac35204e0f1b021b8a2c4e07d5811722
 
 1. setCharacteristicChangeNotification和getServices一直在循环调用，且getServices在setCharacteristicChangeNotification之后调用，而正常流程是先调用getServices之后才能调用setCharacteristicChangeNotification。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/pY7AFfqCSgK-_RwzTTcG_g/zh-cn_image_0000002658972619.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/pY7AFfqCSgK-_RwzTTcG_g/zh-cn_image_0000002658972619.png?HW-CC-KV=V1&HW-CC-Date=20261112T233210Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F35FAC84D89075452F8B2CBAEE129D5BAD9F0ADE4B4739F420BAAC1BAABEA93 "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/0hE-bHwaTKCGY9txLvqm_Q/zh-cn_image_0000002628613410.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/0hE-bHwaTKCGY9txLvqm_Q/zh-cn_image_0000002628613410.png?HW-CC-KV=V1&HW-CC-Date=20261112T233210Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4AD076C3BF51D416965E2B14CABC8122459240E0D3085D995E866E87E20DBDA "点击放大")
 2. writeCharacteristicValue没有在setCharacteristicChangeNotification异步回调回来之后再调用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/S7MUt8cFQC6tE3YGjmSoXw/zh-cn_image_0000002658852667.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/S7MUt8cFQC6tE3YGjmSoXw/zh-cn_image_0000002658852667.png?HW-CC-KV=V1&HW-CC-Date=20261112T233210Z&HW-CC-Expire=31536000000&HW-CC-Sign=525CFC411B2DD6459367D0318BE51D8558872B70CBF715D9955424D54605A2BA "点击放大")
 
 ## 分析结论
 

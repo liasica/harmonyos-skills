@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo remove_instance
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo remove_instance
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-01-27
 content_hash: sha256:58d61a53aafb517575bc0e20e1150adf2b790613221fa4a286a14a144f1fed36
 ---
@@ -35,4 +35,4 @@ ohpm-repo remove_instance
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/f8FjWtPDS2eMkqhAtKZ-Pw/zh-cn_image_0000002779405138.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/f8FjWtPDS2eMkqhAtKZ-Pw/zh-cn_image_0000002779405138.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFCD6CD733136E2CDC924B195887B3236C64662D7B014CB6EC84731C5B35F45D "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-4
 title: 页面发生卡死，无法响应点击或侧滑操作
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > 页面发生卡死，无法响应点击或侧滑操作
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:40+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:b7acc1768e71e1353f12a4b4491b31522b28434a2e75515316b2295197e95b70
 ---
@@ -43,7 +43,7 @@ content_hash: sha256:b7acc1768e71e1353f12a4b4491b31522b28434a2e75515316b2295197e
 1. 当faultlogger目录下没有卡死日志生成时，可以结合trace进行分析。
 2. 使用HiSmartPerf工具抓取该过程的trace信息，查看应用主线程，排查卡死阶段有没有耗时特别长的函数。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/XK9kg8OSSUCVk5eZCdWeWA/zh-cn_image_0000002628316232.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/XK9kg8OSSUCVk5eZCdWeWA/zh-cn_image_0000002628316232.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=351CBCFF8E3EADE38607FC586CAAFB17913BD006F2FA15720259BCF0E65C30E3 "点击放大")
 3. 从trace日志中看出，OnBackground函数执行时间超过了20s。
 
 ### 分析结论
@@ -75,7 +75,7 @@ content_hash: sha256:b7acc1768e71e1353f12a4b4491b31522b28434a2e75515316b2295197e
 
 1. 当faultlogger目录下没有卡死日志生成时，使用HiSmartPerf工具抓取该过程的trace信息，结合trace分析，查看应用主线程，可以看到部分时间段无内容加载，进一步发现http请求执行时间过长，持续时间36s。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/G_U9_TH1RXKUvYl8t5iwVQ/zh-cn_image_0000002658675469.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/G_U9_TH1RXKUvYl8t5iwVQ/zh-cn_image_0000002658675469.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=1552992AAFE9C2BBFC78405F62936DB06D1AE85B5199DE017FA345A35646BE42 "点击放大")
 2. 记下TaskId=-2147483648，在hilog日志中查找对应网络请求日志。
 
    发现http请求报错，错误码为2300028，查询文档[HTTP错误码](../harmonyos-references/errorcode-net-http.md)。

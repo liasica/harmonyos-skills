@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: SVG标签说明
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图片与视频 > SVG标签说明
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:18+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:bba9a758ff513cae78364d09065a58cf180eeb201309631a7c966817e902cf2a
 ---
@@ -123,7 +123,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/QvnNX_GeSFSe1nvPV3G4Fw/zh-cn_image_0000002786521320.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/QvnNX_GeSFSe1nvPV3G4Fw/zh-cn_image_0000002786521320.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=D246E3288007E28F86F07739E91E9761DA32FE166112C32B27036C9BAE8C780E)
 
 ## 图形效果
 

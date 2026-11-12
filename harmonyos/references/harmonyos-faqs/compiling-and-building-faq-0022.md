@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/compiling-and-b
 title: DevEco Studio工程配置调试与安装报错问题排查
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 常见问题 > DevEco Studio工程配置调试与安装报错问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:4ee52f614ba5c7143b8f99b8cc5abb4922869499713c7a0e8b44018202f3852a
 ---
@@ -12,23 +12,23 @@ content_hash: sha256:4ee52f614ba5c7143b8f99b8cc5abb4922869499713c7a0e8b44018202f
 
 **A**：问题现象
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/sVzR_YSgR3SofdYDXPyJhQ/zh-cn_image_0000002802062937.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/sVzR_YSgR3SofdYDXPyJhQ/zh-cn_image_0000002802062937.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=11A76B55B151E754CE7F68C00EA2E5AAFA7C7CADFFEDC862A3502D3F92DE5F9E "点击放大")
 
 问题分析
 
 报该错误，可能是build-profile.json5文件中未添加“targets”配置，Module Target下为空，工程同步失败。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/mPBMP2WMSUGAABz-TW7A0A/zh-cn_image_0000002772863194.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/mPBMP2WMSUGAABz-TW7A0A/zh-cn_image_0000002772863194.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E6E11E539350EEFB9961EC9DF356E961CE23ECF533F6C6CBD724B39E162BA3B)
 
 解决措施
 
 需要在模块级build-profile.json5文件中添加“targets”配置，点击“Sync Now”，待完成同步后，即可解决该问题（确保工程同步成功）。具体配置如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/b3ho4zpIQGWS--Z7w2EJ4A/zh-cn_image_0000002772703212.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/b3ho4zpIQGWS--Z7w2EJ4A/zh-cn_image_0000002772703212.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=62AB132B6FA3487961EA7DB0145A8508CAD736B2723D057D53FDFFAFC040230D "点击放大")
 
 **Q：在启动调试或运行应用/服务时，安装HAP出现错误，提示“compatibleSdkVersion和releaseType与设备上的apiVersion和releaseType不匹配。”如何解决？**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/EqTW-JgATFuRtdU0om2sDQ/zh-cn_image_0000002772703214.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/EqTW-JgATFuRtdU0om2sDQ/zh-cn_image_0000002772703214.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=A665D2E3127A7322C4F339A5A18FFB0FD4BDD0B363797630DE5FB4E9495587D1 "点击放大")
 
 **A**：出现该问题是因为当前工程配置的最低兼容版本高于设备镜像版本。
 
@@ -36,9 +36,9 @@ content_hash: sha256:4ee52f614ba5c7143b8f99b8cc5abb4922869499713c7a0e8b44018202f
 
 方法一：请升级设备镜像版本以匹配当前工程版本。在系统设置界面升级设备系统。
 
-方法二：降低工程的API版本，点击DevEco Studio右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/GBfqUMQPR8-R6JCocAhDdQ/zh-cn_image_0000002802143057.png)，Compatible SDK选择更低的版本号，以兼容设备的API版本。
+方法二：降低工程的API版本，点击DevEco Studio右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/GBfqUMQPR8-R6JCocAhDdQ/zh-cn_image_0000002802143057.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=ECED3C4D3C00CD9B8185B9CF918AE0D74ACF466778616124A997B8423F27457C)，Compatible SDK选择更低的版本号，以兼容设备的API版本。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/WitEDvKHTrKoVDvUd_3ZlQ/zh-cn_image_0000002802143061.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/WitEDvKHTrKoVDvUd_3ZlQ/zh-cn_image_0000002802143061.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=31D53FF9E385924E7A482598CF7CB009F2023410497A52C6B3B26AEB63DA6283 "点击放大")
 
 **说明** 
 

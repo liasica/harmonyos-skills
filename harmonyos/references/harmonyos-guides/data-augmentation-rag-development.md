@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-augmenta
 title: 知识问答
 breadcrumb: 指南 > 应用框架 > Data Augmentation Kit（数据增强服务） > RAG > 知识问答
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:26+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:79b7120db388ef893f00bc28e2e6971e76774eab30563dd09226e44c2189b4b8
 ---
@@ -356,4 +356,4 @@ RAG关键接口如下表所示，具体API说明详见[API参考](../harmonyos-r
 
 ## 流式问答调用流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/roP2t-QVRSatwPtNRuV-Lw/zh-cn_image_0000002815558937.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/roP2t-QVRSatwPtNRuV-Lw/zh-cn_image_0000002815558937.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B74DFDCEED1B6A4B34C34A9D79218B7D3D647578E3AFD1E8582F2FD1FC19137)

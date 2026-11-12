@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1483
 title: 如何解决CustomDialog内嵌套Navigation导致弹窗无法底部对齐的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决CustomDialog内嵌套Navigation导致弹窗无法底部对齐的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:53+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:6627858d2a05d809fe77d50831afa093e0e51d9cee6e11a3ea119f080181e287
 ---
@@ -51,7 +51,7 @@ struct Dialog {
 
 问题现象如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/RaMRYmp4Qq6FG4W1rFXGtg/zh-cn_image_0000002658845073.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/RaMRYmp4Qq6FG4W1rFXGtg/zh-cn_image_0000002658845073.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AD6280886D7C999529668F6A3D8F1239E196B38E23EEFC87F77A929F77C49D6 "点击放大")
 
 ## 背景知识
 
@@ -105,7 +105,7 @@ struct Dialog {
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/vZ5fOWNETICZd32wX5_17Q/zh-cn_image_0000002628765700.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/vZ5fOWNETICZd32wX5_17Q/zh-cn_image_0000002628765700.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=43C232D09A34A54D0A9455F0CD5A8A6F24FCB264F0BF1328A5F36500E1A0F2AD "点击放大")
 
 上图中弹窗为白色与蓝色部分（其中白色是弹窗中子组件背景色，蓝色是弹窗背景色），弹窗底部对齐。
 

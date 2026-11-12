@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transi
 title: 组件内转场 (transition)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 组件内转场 (transition)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:a1a737b5e63ecb205dc89fd0a15ea82b4cd6112821debbf034c6a35dc0a0843d
 ---
@@ -445,7 +445,7 @@ struct TransitionEffectExample1 {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/nT6GRDu3Rne4H3N1BeZvkg/zh-cn_image_0000002786521480.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/nT6GRDu3Rne4H3N1BeZvkg/zh-cn_image_0000002786521480.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC5F314756DA04E4FDC4D087CC150B5B5032F6610C036D43866B8913C1442C78)
 
 ### 示例2（使用不同接口实现图片出现消失）
 
@@ -508,7 +508,7 @@ struct TransitionEffectExample2 {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/nc17INwpQN-YtUrtmNn8dQ/zh-cn_image_0000002786361552.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/nc17INwpQN-YtUrtmNn8dQ/zh-cn_image_0000002786361552.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE8092A3EE80DFB48FBD358214DEE78986A2B14AE4E4F83AEB6E010DD45F57D1)
 
 ### 示例3（设置父子组件为transition）
 
@@ -569,7 +569,7 @@ struct TransitionEffectExample3 {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/HuAMY1jeQfCtuolPeJks1w/zh-cn_image_0000002815560973.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/HuAMY1jeQfCtuolPeJks1w/zh-cn_image_0000002815560973.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=BABA0A88955E362FA86112B4F204A641FB12FCD6C06B7F4FE6CC6CFC08965CC8)
 
 ### 示例4（visibility切换时的双动画复合效果）
 
@@ -608,4 +608,4 @@ struct TransitionVisibilityExample {
 
 示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/GkeisBbdRwG7hkKY9yyddw/zh-cn_image_0000002815401057.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/GkeisBbdRwG7hkKY9yyddw/zh-cn_image_0000002815401057.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF98B9B4F879E6C34876B76AD7462AD95264193B018D3E4C53483455C80A6C76)

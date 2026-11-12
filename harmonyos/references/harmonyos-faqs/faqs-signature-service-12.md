@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-signature-
 title: 签名密钥库文件与JDK版本不兼容
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 签名密钥库文件与JDK版本不兼容
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:57+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:b0fc31b16d883c728ae24d5aa445f361e0210552d48aea9c94167c3ae3078f08
 ---
@@ -27,7 +27,7 @@ content_hash: sha256:b0fc31b16d883c728ae24d5aa445f361e0210552d48aea9c94167c3ae30
 
 1. 查看DevEco Studio预置的JDK版本信息，DevEco Studio Terminal窗口执行java -version命令，当前示例DevEco Studio预置的JDK版本为21.0.6。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/StT7LEBDRGORab_ShDuG0A/zh-cn_image_0000002624478736.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/StT7LEBDRGORab_ShDuG0A/zh-cn_image_0000002624478736.png?HW-CC-KV=V1&HW-CC-Date=20261112T233218Z&HW-CC-Expire=31536000000&HW-CC-Sign=642B25357CCF9AB6573C05558FD81092F1EB5F09708558849CD1E2568212FB47)
 2. 查看本地系统JDK版本信息，CMD窗口执行java -version命令，当前示例本地系统JDK版本为1.8.0\_292，与步骤1示例中DevEco Studio预置的JDK版本不一致。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/f_veWZISQdGZW5dlVuELoA/zh-cn_image_0000002654798099.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/f_veWZISQdGZW5dlVuELoA/zh-cn_image_0000002654798099.png?HW-CC-KV=V1&HW-CC-Date=20261112T233218Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1E78405DF83E99AC29F4B86E27B203AFFDE62F0ACBE189969F23A5444D58750)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1147
 title: 在Swiper上添加滑动手势监听
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 在Swiper上添加滑动手势监听
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:80627ecf90b24ed429f1aa5da334113879cd8af17f8ed46c92484e058ca1830d
 ---
@@ -14,7 +14,7 @@ Swiper组件，在滑动时手指抬起后，怎样监听到是要显示下一�
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/ATTpSx8vQ1yWJQkDFCzAxQ/zh-cn_image_0000002658808973.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/ATTpSx8vQ1yWJQkDFCzAxQ/zh-cn_image_0000002658808973.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=400DD60330E9D6282408A7636054D780AF004A738880FA70069816AA6D5613B7 "点击放大")
 
 ## 背景知识
 

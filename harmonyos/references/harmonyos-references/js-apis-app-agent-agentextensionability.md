@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.agent.AgentExtensionAbility (智能体扩展组件)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.agent.AgentExtensionAbility (智能体扩展组件)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:29+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-23
 content_hash: sha256:202987630188fcc75bfd5515eedc0439062cac9992d8ec70b3e6555cf6c25938
 ---
@@ -30,7 +30,7 @@ import { AgentExtensionAbility } from '@kit.AbilityKit';
 
 **图1** AgentExtensionAbility生命周期
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/5i7X5ovlTZK4oeYMCQvLfQ/zh-cn_image_0000002786520784.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/5i7X5ovlTZK4oeYMCQvLfQ/zh-cn_image_0000002786520784.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=23A8E1063790FB8C15187D41012687D780A35B16B9367E217EB25B573B7F12D5)
 
 * **onCreate**
 

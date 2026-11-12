@@ -24,6 +24,7 @@ from scripts.converter import (
     compute_content_hash,
     read_frontmatter,
     render_with_frontmatter,
+    reuse_signed_urls,
     rewrite_internal_links,
     yaml_scalar,
 )
@@ -371,11 +372,14 @@ def _persist(manifest: Manifest, result: FetchResult, meta: dict, log: logging.L
         url_normalizer=normalize_url,
         url_to_relative=url_to_reference_relative,
     )
+    previous_md = local_path.read_text(encoding="utf-8").partition("\n---\n")[2] if local_path.exists() else ""
+    md = reuse_signed_urls(md, previous_md, now=datetime.fromisoformat(now))
     content_hash = compute_content_hash(md)
 
     # manifest 里没有记录（如 CI 的全新环境）时退回读磁盘副本 frontmatter 里的 hash，避免整库重写
     previous_hash = existing.content_hash if existing and existing.content_hash else _hash_on_disk(local_path)
-    if previous_hash == content_hash and local_path.exists() and _frontmatter_matches(local_path, result.url, doc):
+    if (previous_hash == content_hash and previous_md.strip() == md.strip()
+            and local_path.exists() and _frontmatter_matches(local_path, result.url, doc)):
         manifest.upsert(
             url=result.url, title=doc.title, category=meta["category"],
             local_path=rel_path, content_hash=content_hash,

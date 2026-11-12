@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-210
 title: 如何在自定义弹窗中再次弹窗
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何在自定义弹窗中再次弹窗
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:56+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:9672349d835ed5517be8a58985835dd78a8eb88878c9bee4c37b36f2727cb73c
 ---
@@ -118,4 +118,4 @@ struct PopUpDialogAgainInCustomDialog {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/0lT2KxUwRg6Jhi23tI4IWw/zh-cn_image_0000002624635826.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/0lT2KxUwRg6Jhi23tI4IWw/zh-cn_image_0000002624635826.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4CD21A2430B406228CF5EAB1D9A026B4640B1ADC5AC7B038FBDAC42516CEF0A "点击放大")

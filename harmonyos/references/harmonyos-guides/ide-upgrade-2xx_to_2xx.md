@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-upgrade-2
 title: 2.X.X/5.X.X升级至更高版本
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 版本升级 > 2.X.X/5.X.X升级至更高版本
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:52+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:0575a7d2aa231c7e53027cbd34b781e4f53c5d05e8cfcda33d61eab370ca33d7
 ---
@@ -28,7 +28,7 @@ content_hash: sha256:0575a7d2aa231c7e53027cbd34b781e4f53c5d05e8cfcda33d61eab370c
    * 若想在其他目录使用ohpm-repo，请将对应版本ohpm-repo工具包解压目录中bin目录的路径配置到[系统环境变量](ide-ohpm-repo-faq.md#section1270373714319)path中。
 2. 下载并解压工具包：下载新版本的ohpm-repo私仓工具包，并解压（请解压到一个空文件夹中）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/XRFxdHk0TK2wqlgvnW7eoA/zh-cn_image_0000002779405512.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/XRFxdHk0TK2wqlgvnW7eoA/zh-cn_image_0000002779405512.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=16994A0B63EEFF9F6EC52A25587C8C6399CA01B8E5A6C9051298823FA7D989E8)
 3. 安装完成之后，进入ohpm-repo私仓工具包解压目录下的bin目录，执行如下命令：
 
    ```screen
@@ -58,7 +58,7 @@ content_hash: sha256:0575a7d2aa231c7e53027cbd34b781e4f53c5d05e8cfcda33d61eab370c
 
      结果示例：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/ZjRysd_ERQiNTvg-cJr_iQ/zh-cn_image_0000002808885155.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/ZjRysd_ERQiNTvg-cJr_iQ/zh-cn_image_0000002808885155.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D71FBC1BDE1EEEA0AEE5ECE02F4AC696DF9DAB681C1F79D0CD29988FB37880D "点击放大")
    * 刷新环境变量：安装成功后，必须根据给出的提示信息刷新环境变量，Windows系统和Linux/Mac 系统，有不同处理方式：
      + Windows系统： 关闭当前窗口，重新开启一个窗口。
      + Linux/Mac系统：
@@ -75,7 +75,7 @@ content_hash: sha256:0575a7d2aa231c7e53027cbd34b781e4f53c5d05e8cfcda33d61eab370c
 
      结果示例：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/4yivLV9ZShG9EB8nClJtSA/zh-cn_image_0000002808765067.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/4yivLV9ZShG9EB8nClJtSA/zh-cn_image_0000002808765067.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB10004D96AFEFE9D91C9E0E29A3CA75EF4494C584651F90236E53BD46B7D387 "点击放大")
 
      **说明** 
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-landscape-
 title: 视频类应用横竖屏切换
 breadcrumb: 最佳实践 > 行业场景解决方案 > 影音娱乐 > 视频类应用横竖屏切换
 category: best-practices
-scraped_at: 2026-11-10T10:42:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-15
 content_hash: sha256:d227b46e95ed168f05d858e84b10487bb3979be56be10a94824979362e4d51a6
 ---
@@ -26,7 +26,7 @@ content_hash: sha256:d227b46e95ed168f05d858e84b10487bb3979be56be10a94824979362e4
 
 目前HarmonyOS系统中的窗口旋转形态有四种，对应真机实际状态如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/42VquMSbTA6IfDE9MyvyEg/zh-cn_image_0000002553741749.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/42VquMSbTA6IfDE9MyvyEg/zh-cn_image_0000002553741749.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=3AB4DAF7AB877D49046CBA9DF5EC3AFE58ADC8F30B9710CEB6159A53E9F99FF3 "点击放大")
 
 开发者可通过以下两种方式设置窗口旋转策略：
 
@@ -82,13 +82,13 @@ orientation字段用于配置应用启动时的窗口显示状态。如果应用
 
 以如下应用为例，关闭控制中心的旋转锁定开关后，应用页面会随手机旋转而切换；开启旋转锁定开关后，则不会发生切换。需将orientation字段配置为auto\_rotation\_restricted以实现此效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/BicX-c_STVmetfVAUVZNrw/zh-cn_image_0000002522821800.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/BicX-c_STVmetfVAUVZNrw/zh-cn_image_0000002522821800.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=75754A6D95EDE08FE0DC1D99D3BCC0C045BF5C2A2861C9C252D36BD3A2F7823F "点击放大")
 
 ### 调用窗口管理的setPreferredOrientation()接口
 
 对于需要实现横竖屏切换的应用，可调用[setPreferredOrientation()](../harmonyos-references/arkts-apis-window-window.md#setpreferredorientation9)接口进行设置。典型场景包括视频类和图片类应用，视频类应用实现横竖屏切换的效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/uTW8Yo-iRHmwx6-LBjdmjg/zh-cn_image_0000002553861703.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/uTW8Yo-iRHmwx6-LBjdmjg/zh-cn_image_0000002553861703.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=47D41B659B5463595ADE729479A3075AEDAC97061EA1FFD64D8A1151268DB139 "点击放大")
 
 此类应用启动时默认为竖屏，而在视频播放页面可横屏显示，开发者需确保应用支持用户临时更改窗口显示方向。使用[setPreferredOrientation()](../harmonyos-references/arkts-apis-window-window.md#setpreferredorientation9)接口修改窗口显示方向时，窗口将保持最后一次设置的方向。即使页面跳转，窗口显示方向也不会改变。
 
@@ -156,7 +156,7 @@ export struct VideoPlayView {
 
 一般情况下，视频播放应用的窗口不会旋转至反向竖屏（由UX需求决定），仅支持旋转至竖屏、横屏和反向横屏。点击全屏按钮时，窗口默认旋转至横屏状态，并支持跟随传感器旋转至反向横屏。竖屏状态和横屏状态的窗口示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/UbGdVYIgRMWmOz3fpnoc5A/zh-cn_image_0000002522661810.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/UbGdVYIgRMWmOz3fpnoc5A/zh-cn_image_0000002522661810.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=3CFEC4577DF8792A1C0370F28359C33D5D478688F2712FC88BECC5DBE27FF542 "点击放大")
 
 当用户点击进入或退出全屏时，应分别触发对应的逻辑处理，所需使用的方向状态如下：
 
@@ -228,7 +228,7 @@ aboutToDisappear(): void {
 
 需要注意的是，当应用不随传感器旋转时，如果用户手动触发setOrientation()方法将窗口设置为横屏状态，即使当前手机处于垂直方向，窗口仍会保持横屏状态。此时，窗口的宽度为竖屏状态下的高度，高度则为竖屏状态下的宽度。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/Hc6JFjOtTleYmvh05mUXhw/zh-cn_image_0000002553741751.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/Hc6JFjOtTleYmvh05mUXhw/zh-cn_image_0000002553741751.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=F162F034B0A856DB033F0503984F800A715439806CDF0A36EB54F33FBAB8F034 "点击放大")
 
 进入视频详情页面时，需监听窗口尺寸的变化，并依据状态变化调整XComponent的宽高。
 
@@ -268,7 +268,7 @@ XComponent({ id: 'video_player_id', type: XComponentType.SURFACE, controller: th
 
 在监听窗口变化的回调中，动态调整XComponentWidth和XComponentHeight，以适配横屏和竖屏视频播放组件的布局。横屏时，视频播放组件的宽高应与窗口的宽高一致，并进入全屏状态。竖屏时，视频播放组件的宽度与窗口宽度相等，高度则按视频播窗比例乘以窗口宽度，并退出全屏状态。旋转过程宽高属性如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/blzTOPbLS5io9viB-R9Ylg/zh-cn_image_0000002522821802.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/blzTOPbLS5io9viB-R9Ylg/zh-cn_image_0000002522821802.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=FFF478FD6FC0162F9562273BEBB641A652FBDA62DBA6923E554F6CB992C97C52 "点击放大")
 
 在监听窗口变化时，可调用[display.getDefaultDisplaySync()](../harmonyos-references/js-apis-display.md#displaygetdefaultdisplaysync9)接口获取屏幕的display对象，依据display对象的Orientation属性决定实际的横竖屏状态。然后根据横竖屏状态和折叠屏的折叠状态设置旋转策略，具体实现如下：
 
@@ -311,7 +311,7 @@ this.windowClass.on('windowSizeChange', (size) => {
 
 某些视频应用支持锁定屏幕功能，在全屏状态下，可隐藏功能按钮并临时锁定屏幕旋转，以防止用户误触其他操作按钮。屏幕锁定后，应用可在横屏和反向横屏间切换，但不能从横屏切换至竖屏；解锁后，如果当前屏幕为竖屏，则应恢复为竖屏显示。全屏状态下锁定屏幕功能如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/w0rjSUJnQGq86OzOLIJhgQ/zh-cn_image_0000002553861705.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/w0rjSUJnQGq86OzOLIJhgQ/zh-cn_image_0000002553861705.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=E85E4CF7BF9FE18AE50D40D5A11D728FB80C3E8A707E9E9A4EEF835902C8A30C "点击放大")
 
 开发者应考虑以下三种情况以实现上述功能：
 
@@ -386,7 +386,7 @@ if (this.isVideoLock) {
 
 在视频类应用中，屏幕最终显示的画面可分为视频图层（视频播放组件）、UI图层（UI组件）和系统图层（状态栏、导航栏）。页面级分层旋转是指通过页面跳转实现横竖屏切换，页面切换时仅旋转视频图层。实现原理如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/CW7ix5xsSjKYmRLJ46LEQQ/zh-cn_image_0000002522661812.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/CW7ix5xsSjKYmRLJ46LEQQ/zh-cn_image_0000002522661812.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=4DA8264B1568A98BAE4471F9D6C8F828EC8F3D0AC290EBD72E8230F15EC3B0AC "点击放大")
 
 1. 通过NavDestination的[preferredOrientation](../harmonyos-references/ts-basic-components-navdestination.md#preferredorientation19)属性设置页面的显示方向，并使用[NavPathStack](../harmonyos-references/ts-basic-components-navigation.md#navpathstack10)实现页面切换。
 2. 使用[自定义声明式节点 (BuilderNode)](../harmonyos-guides/arkts-user-defined-arktsnode-buildernode.md)挂载视频播放组件，并通过[NodeController](../harmonyos-references/js-apis-arkui-nodecontroller.md)实现视频节点在页面之间迁移，可参考[实现视频播放节点的迁移](bpta-landscape-and-portrait-development.md#section015175011467)。
@@ -715,7 +715,7 @@ BuilderNode提供了组件预构建的能力，对于初始化耗时较长的声
    * WindowUtils根据当前页面显示方向获取窗口大小。横屏页面切换至竖屏页面时，获取的是横屏页面的窗口大小，此时，WindowUtils.windowWidthPx获取的值与竖屏页面的窗口高度相等。
    * X值为直板机竖屏时视频节点中心点距离屏幕顶部的距离，Y值为直板机竖屏时视频节点中心点距离屏幕右侧的距离。根据竖屏页面视频中心点与横屏页面视频中心点坐标的差值，得出视频节点在X轴与Y轴的偏移值。如下图所示：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/D_DCPYoiRgSvkg5qTc2DpQ/zh-cn_image_0000002553741753.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/D_DCPYoiRgSvkg5qTc2DpQ/zh-cn_image_0000002553741753.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA7AC87B262752369C309A5150ED501027F3C6E5E6D922229E37CFD0C58DE03A "点击放大")
 
    从竖屏页面切换至横屏页面时，计算可动画属性的初始值，即在竖屏页面的width、height、translateX、translateY和rotate数据。
 
@@ -805,7 +805,7 @@ BuilderNode提供了组件预构建的能力，对于初始化耗时较长的声
 
    直板机实现效果：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/QC9YHXtfSUOCQXd_9g_PzA/zh-cn_image_0000002522821804.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/QC9YHXtfSUOCQXd_9g_PzA/zh-cn_image_0000002522821804.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=C47381FA55B4E0A3C82A875B31F842651D3BAE8810AC499FBD4F45ECDF725140 "点击放大")
 3. 使用[window.getLastWindow()](../harmonyos-references/arkts-apis-window-f.md#windowgetlastwindow9)接口获取应用内层级最高的窗口对象，通过[on('windowSizeChange')](../harmonyos-references/arkts-apis-window-window.md#onwindowsizechange7)接口开启窗口尺寸变化的监听。当折叠屏的折叠状态切换时，视频节点宽高同步调整。
 
    ```typescript
@@ -869,7 +869,7 @@ BuilderNode提供了组件预构建的能力，对于初始化耗时较长的声
 
    折叠屏实现效果：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/QYREA8EfSq-SZZx5wl5eng/zh-cn_image_0000002553861707.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/QYREA8EfSq-SZZx5wl5eng/zh-cn_image_0000002553861707.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDD214B930C8AA6B612420C27B16ED3D51B39A952E7D827EC51EC201151DFB40 "点击放大")
 
 ## 性能优化
 

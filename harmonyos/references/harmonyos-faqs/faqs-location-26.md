@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-location-2
 title: 如何解决经纬度坐标在地图上显示与实际地点有偏差问题
 breadcrumb: FAQ > 应用服务开发 > 位置服务（Location Kit） > 如何解决经纬度坐标在地图上显示与实际地点有偏差问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-12
 content_hash: sha256:f75e4be4c88d274e8f9319182c845c0ece347e83b5a7b0331f92ca98da92f112
 ---
@@ -26,7 +26,7 @@ content_hash: sha256:f75e4be4c88d274e8f9319182c845c0ece347e83b5a7b0331f92ca98da9
 1. 检查代码中是否使用Location Kit获取位置后，直接使用位置坐标在Map Kit地图上进行了标记绘制，未进行[坐标纠偏](../harmonyos-guides/map-convert-coordinate.md)。
 2. 将获取的坐标通过[setMyLocation](../harmonyos-references/map-map-mapcomponentcontroller.md#setmylocation)接口在地图上显示“我的位置”，如果“我的位置”与真实位置一致，说明坐标是WGS84坐标系。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/kJN_1CWHQl2znXakWeK5-Q/zh-cn_image_0000002628394540.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/kJN_1CWHQl2znXakWeK5-Q/zh-cn_image_0000002628394540.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9931351F02068C19FC6C69CAADAA97001FE8E7FD0E6C040ED10479E20169465 "点击放大")
 
 ## 分析结论
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-signature-
 title: IDE在线签名报错该怎么解决
 breadcrumb: FAQ > DevEco Studio > 签名服务 > IDE在线签名报错该怎么解决
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:57+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:adc885cff6c8633d6e7c2532b94d5dfc6843ed6a97231f598d5f4a930ae618aa
 ---
@@ -24,7 +24,7 @@ The bundle name contains 7 to 128 characters, including only letters, digits, an
 
 自动签名时，bundleName没有带出，显示为空，导致出现上述报错。往上定位，发现是AppScope下的app.json5文件没有被识别到，继续定位，发现是设置了忽略app.json5文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/PnVw0h91QYKTJaWjvF0l-w/zh-cn_image_0000002658808643.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/PnVw0h91QYKTJaWjvF0l-w/zh-cn_image_0000002658808643.png?HW-CC-KV=V1&HW-CC-Date=20261112T233218Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E91A2163AA214406B7F580BA3ED80096ECD171DF73F868C5D2C2D17540F676D "点击放大")
 
 ## 分析结论
 

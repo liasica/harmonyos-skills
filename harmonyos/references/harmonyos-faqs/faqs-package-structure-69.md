@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-package-st
 title: 如何在应用内共享HSP
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 如何在应用内共享HSP
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:fd6bf614214d38ce2d72a48c81d06e351eb23ecdf5a7b7d538dd2f982cc2c450
 ---
@@ -12,13 +12,13 @@ content_hash: sha256:fd6bf614214d38ce2d72a48c81d06e351eb23ecdf5a7b7d538dd2f982cc
 
 1. 将编译模式设为release。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/e6eS7fTERFaQn81rP00u7Q/zh-cn_image_0000002654835175.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/e6eS7fTERFaQn81rP00u7Q/zh-cn_image_0000002654835175.png?HW-CC-KV=V1&HW-CC-Date=20261112T233215Z&HW-CC-Expire=31536000000&HW-CC-Sign=D073D60C3D5C57F2C41448285B97DBEE04E0233E94BE1B64105A9E4750489EE6 "点击放大")
 2. 选中HSP模块的根目录，点击Build > Make Module {libraryName}，启动构建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/Tw8dR2cBQ062fU3yZwM0bQ/zh-cn_image_0000002654795239.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/Tw8dR2cBQ062fU3yZwM0bQ/zh-cn_image_0000002654795239.png?HW-CC-KV=V1&HW-CC-Date=20261112T233215Z&HW-CC-Expire=31536000000&HW-CC-Sign=D10168A561F658DC79BC404342F2887E0D7D38538BEB5FD0B6DEDB1C708D75FA "点击放大")
 3. 构建完成后，build目录下生成HSP包产物，其中.tgz用来上传至私仓（请参考[将三方库发布到 ohpm-repo](../harmonyos-guides/ide-ohpm-repo-quickstart.md#zh-cn_topic_0000001792256157_将三方库发布到ohpm-repo)）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/YeIfMu3UTNCwzmPWHUNbHw/zh-cn_image_0000002624635772.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/YeIfMu3UTNCwzmPWHUNbHw/zh-cn_image_0000002624635772.png?HW-CC-KV=V1&HW-CC-Date=20261112T233215Z&HW-CC-Expire=31536000000&HW-CC-Sign=313BB591E590947D77CFF6ECFBA57E0103DB6CCF66DBF21298BD8D796DBE73D4 "点击放大")
 4. 上传到仓库，然后使用 `ohpm install` 命令将依赖安装到工程的oh-package.json5文件的dependencies字段中，即可查看对外共享的 HSP 方法。
 
 **参考链接**

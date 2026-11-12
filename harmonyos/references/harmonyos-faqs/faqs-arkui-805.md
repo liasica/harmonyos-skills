@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-805
 title: 如何解决动态修改TextArea数量时光标跳转的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决动态修改TextArea数量时光标跳转的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:dea825d7d46889ab2946e26627cace601ade68b93a5459b6bb1fa6c5eb878e8e
 ---
@@ -70,11 +70,11 @@ class AcquireModel {
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/lrSgaD7LRiyvJNj1uT02dA/zh-cn_image_0000002658917111.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/lrSgaD7LRiyvJNj1uT02dA/zh-cn_image_0000002658917111.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=5AFB987B93E6F9AA5153F21B0D9626861F368D1E5B81B37C4EC2538F93B7ABB8 "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/yvU7Dbc-QzGHo8OX09jtxA/zh-cn_image_0000002628397890.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/yvU7Dbc-QzGHo8OX09jtxA/zh-cn_image_0000002628397890.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=5FCF8F655A50C72A3EFE61C5FE7E9E3D581FBE32F9BA54EC2D60084ACEC05C0C "点击放大")
 
 ## 背景知识
 

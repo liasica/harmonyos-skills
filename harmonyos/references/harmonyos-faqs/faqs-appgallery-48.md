@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 如何接入HarmonyOS 开发者中心应用性能监测服务（含崩溃服务）
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 如何接入HarmonyOS 开发者中心应用性能监测服务（含崩溃服务）
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:45+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:605687c66618b6b1e87844a4aabf89a01a1da09774a70e349376a3d05e543074
 ---
@@ -73,7 +73,7 @@ Q：APMS报错信息是混淆的，能否还原至原始代码？
 
 A：点击“还原堆栈”页签，可将混淆后的业务堆栈信息还原成用户可读信息。请确保已上传对应符号表文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/vFVRkBb_RDihaKzo6AQ0tA/zh-cn_image_0000002675224017.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/vFVRkBb_RDihaKzo6AQ0tA/zh-cn_image_0000002675224017.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC2017312F4B64064A647C6EAD1E287430A215C066CF1975719CEE8A8869EC4C)
 
 Q：在APMS中为什么最新型号手机信息没有，导致异常日志搜索不到。
 
@@ -83,7 +83,7 @@ Q：本地调试的Debug版本崩溃日志也会上传APMS吗？是否能够设�
 
 A：应用接入异常管理后，可通过设置调试版本和发布版本的不同版本号进行区分。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/UpaosywmR9Cvgub7HsAcJA/zh-cn_image_0000002645184080.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/UpaosywmR9Cvgub7HsAcJA/zh-cn_image_0000002645184080.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C220494BC121EDDD4B881E75693E4F61B36F53FAAF0D9F40783EA35090F91D6)
 
 Q：为什么收集到的崩溃信息的行号与源代码不一致？
 

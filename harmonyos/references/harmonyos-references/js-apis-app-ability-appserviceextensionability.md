@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.AppServiceExtensionAbility (应用后台服务扩展组件)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.AppServiceExtensionAbility (应用后台服务扩展组件)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:28+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-23
 content_hash: sha256:aad7e6e7a278cbba226f4a666ea9d662062cb10fcc8fade55d02d2f64a167fb0
 ---
@@ -26,7 +26,7 @@ AppServiceExtensionAbility模块提供后台服务相关扩展能力，包括后
 
 AppServiceExtensionAbility提供了[onCreate()](js-apis-app-ability-appserviceextensionability.md#oncreate)、[onRequest()](js-apis-app-ability-appserviceextensionability.md#onrequest)、[onConnect()](js-apis-app-ability-appserviceextensionability.md#onconnect)、[onDisconnect()](js-apis-app-ability-appserviceextensionability.md#ondisconnect)和[onDestroy()](js-apis-app-ability-appserviceextensionability.md#ondestroy)生命周期回调，开发者可根据需要重写对应的回调方法。下图展示了AppServiceExtensionAbility的生命周期。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/BsDUHULoTFmJK807paHeRg/zh-cn_image_0000002786360854.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/BsDUHULoTFmJK807paHeRg/zh-cn_image_0000002786360854.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=99628C69C2CEB4D6A1405427125000745BCA3C9D4E76ACFFB478ED72B3C35E1F)
 
 * **onCreate**
 

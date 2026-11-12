@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-insight-s
 title: Launch模板基本操作
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 冷启动：Launch分析 > Launch模板基本操作
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:3cc440ea0268759e41c949e397c161919aa487b21964d6289098a2871afdd482
 ---
@@ -30,7 +30,7 @@ Launch模板支持的泳道包括：Launch、Frame、ArkTS Callstack、Callstack
 
 ## 启动模式介绍
 
-录制前应用的启动模式分为![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/nS3cZwdxTWCtkk7E4ViHgQ/zh-cn_image_0000002808766361.png "点击放大")自动启动和![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/CsZlYdzUQGym16XztGje4Q/zh-cn_image_0000002808886445.png "点击放大")手动启动，可点击图标切换两种不同模式：
+录制前应用的启动模式分为![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/nS3cZwdxTWCtkk7E4ViHgQ/zh-cn_image_0000002808766361.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1DB9D13F6FB9EBB1FAF90C49F9D9ECAE2C001D865185439B22B0E96D77D3A40 "点击放大")自动启动和![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/CsZlYdzUQGym16XztGje4Q/zh-cn_image_0000002808886445.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=71B1DEE646B01695D4A057DC00C6F2A2879BC75647FCA832DAEFE37A31DBDD63 "点击放大")手动启动，可点击图标切换两种不同模式：
 
 * 若选择自动启动模式，当用户使用Launch模板并开始录制时，将自动重启所选应用。
 * 若选择手动启动模式，在开始录制时，只会自动终止所选应用，等待界面出现弹窗提示启动应用后，开发者需要手动启动应用。
@@ -41,7 +41,7 @@ Launch模板支持的泳道包括：Launch、Frame、ArkTS Callstack、Callstack
 
    展开各阶段的统计信息折叠表，可以看到各个任务的具体耗时信息，单击跳转按钮，可直接跳转至相关线程打点任务中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/Q3sWyhbMSrOlSwmFB_vRDA/zh-cn_image_0000002779566784.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/Q3sWyhbMSrOlSwmFB_vRDA/zh-cn_image_0000002779566784.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE21FE39EFC320923A8923CFD3E69DCDFD7DE9FD2B863BE5C7A1E4C0B90579DC "点击放大")
 2. DevEco Studio 6.0.0 Beta1版本新增**Load ETS Files**区域，支持查看冷启动过程中.ets文件的加载情况。各字段含义如下：
    * Category：该.ets文件在应用启动过程中是否被使用。
    * Weight**：**该.ets文件加载子节点文件（不包括自身）的总耗时。
@@ -50,10 +50,10 @@ Launch模板支持的泳道包括：Launch、Frame、ArkTS Callstack、Callstack
    * File Name：该.ets文件的名称。
    * Path：该.ets文件构建产物的路径。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/HnN4xnzASZG30Kng5pGgGg/zh-cn_image_0000002808766367.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/HnN4xnzASZG30Kng5pGgGg/zh-cn_image_0000002808766367.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=5FE4AE0490A1C05F0C852DD3DC2A30E8E2B4A6A5D3F28E780731F8F97332063B "点击放大")
 3. 切换到**TOP Redundant**区域，可查看冷启动过程中TOP 100冗余ETS加载文件信息。若File Name字段显示为蓝色，双击可快速跳转至对应工程源文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/NvsL2oViTAi6lSgQdgku_Q/zh-cn_image_0000002808766363.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/NvsL2oViTAi6lSgQdgku_Q/zh-cn_image_0000002808766363.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F9958AB9D41E219F5BB6BBF1CE560E7CB20DB521DCC95A08DBB7926E5D50E73 "点击放大")
 
 **说明** 
 
@@ -66,14 +66,14 @@ Launch模板支持的泳道包括：Launch、Frame、ArkTS Callstack、Callstack
 
    针对耗时超过预期的加载任务，可单击跳转按钮，跳转至相关线程打点任务中进行深度分析。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/pDhp9E8jQFKTcGC6RpRvBQ/zh-cn_image_0000002808886449.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/pDhp9E8jQFKTcGC6RpRvBQ/zh-cn_image_0000002808886449.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DC12C1D7E081B42A76D2D45A3545886C642C45457B99ABEF697AC3C38C0E4E0 "点击放大")
 
 ## 查看核心线程在CPU Core的运行情况
 
 1. 展开**Launch**泳道，其中的**Running CPU Cores**子泳道展示启动过程中的关键线程具体运行在哪个CPU核心。
 2. 单击单个进程色块或框选多个进程色块，下方的**Details**区域展示所选对象的运行情况统计信息，单击CPU的跳转按钮，可跳转到CPU Core泳道查看详细的调度信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/eb8L7N-OSYCacMEObP_67w/zh-cn_image_0000002779566780.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/eb8L7N-OSYCacMEObP_67w/zh-cn_image_0000002779566780.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF2544BA6D9E5FE32C97CE2B93FA155D7D2C37353AE23B64BAE7AF2EB4CE7945 "点击放大")
 
 ## 查看启动过程相关的线程Trace数据
 
@@ -85,4 +85,4 @@ Launch模板支持的泳道包括：Launch、Frame、ArkTS Callstack、Callstack
    * **Slice List**区域展示所选对象的切片统计信息。
    * **Load Statistics**区域展示所选对象的中载和重载信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/OKxsqalKRmKTIO1aYxARbA/zh-cn_image_0000002779566782.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/OKxsqalKRmKTIO1aYxARbA/zh-cn_image_0000002779566782.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=3AB2FD953F709323278DC0B87D672D870A1CEB2076E4950E2526DDEC4AD6DAA9 "点击放大")

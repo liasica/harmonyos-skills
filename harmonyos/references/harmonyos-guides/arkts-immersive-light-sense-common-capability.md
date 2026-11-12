@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-immersi
 title: 沉浸式系统材质视效
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 沉浸光感 > 沉浸光感开发指导 > 沉浸式系统材质视效
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:13+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:cfce137982449f29ad21c999a2d4704f6621818784316b3fa4180c313a23998c
 ---
@@ -84,7 +84,7 @@ struct PageMaterialReverse {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/T8RW0wgbSZuu6-1kogfzug/zh-cn_image_0000002786519016.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/T8RW0wgbSZuu6-1kogfzug/zh-cn_image_0000002786519016.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=149FA8240FD980B24EA383B91CD964DEB31F59881505F756339C83E4D0D9D8AD)
 
 ## 为沉浸式系统材质赋色
 
@@ -143,7 +143,7 @@ struct MaterialColorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/2b2Uku_xSJ2w5kIApfF7HA/zh-cn_image_0000002786359088.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/2b2Uku_xSJ2w5kIApfF7HA/zh-cn_image_0000002786359088.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1159BEEC35251DCF5701D0DFFC4FCD7F1BD38D4671F6DA89FACE0414F4D53BE)
 
 ## 设置沉浸式系统材质交互效果
 
@@ -201,7 +201,7 @@ struct MaterialInteractiveLightExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/CZb_Iu46RBWZc4cBguDKXA/zh-cn_image_0000002815558509.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/CZb_Iu46RBWZc4cBguDKXA/zh-cn_image_0000002815558509.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=F543572046220E75B2CC8F80053BDB223DA0A34FD364D69333004A8F2A965E90)
 
 ## 设置沉浸式系统材质阴影效果
 
@@ -257,4 +257,4 @@ struct CustomShadowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/VZq1jq3HStuu2yrgIijANA/zh-cn_image_0000002815398593.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/VZq1jq3HStuu2yrgIijANA/zh-cn_image_0000002815398593.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=A36C86A63C6A2E262A9ADA4FBD5D0E1532802AA461D5497E046DDFDDC88B68E8)

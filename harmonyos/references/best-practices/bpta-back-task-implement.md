@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-back-task-
 title: 应用后台运行
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 后台任务低功耗 > 应用后台运行
 category: best-practices
-scraped_at: 2026-11-10T10:42:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:c0084c8e05d82eac68d90a6f2630ff5c39fa588fed9dca5a57a87c3baa69091c
 ---
@@ -26,7 +26,7 @@ content_hash: sha256:c0084c8e05d82eac68d90a6f2630ff5c39fa588fed9dca5a57a87c3baa6
 
 标准系统支持规范内受约束的后台任务，包括短时任务、长时任务、延迟任务、代理提醒。开发者可以根据如下介绍，选择合适的[后台任务类型](../harmonyos-guides/background-task-overview.md#后台任务类型)，以满足应用退至后台后继续运行的需求。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/dN76xwgcRTudBSzRfsBOtQ/zh-cn_image_0000002193850856.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/dN76xwgcRTudBSzRfsBOtQ/zh-cn_image_0000002193850856.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D36484654C8DD3D72A68396854C93E11FD07378A18E15AD66390CF37B9E9672 "点击放大")
 
 以下表格对比总结了各类后台任务的概念、适用场景以及任务执行过程中的应用状态。
 
@@ -44,7 +44,7 @@ content_hash: sha256:c0084c8e05d82eac68d90a6f2630ff5c39fa588fed9dca5a57a87c3baa6
 
 在应用进行小文件下载、缓存、信息发送等业务场景时，如果应用短暂退至后台导致进程被挂起，重新切换到前台，可能因应用的前后台周期回调中存在业务代码逻辑，导致应用使用状态异常。此时，可以申请短时任务作为解决方案。以下示例展示了如何使用ApplicationContext订阅应用前后台切换的回调，以在应用切后台时申请短时任务，解决因短暂切换前后台导致的消息发送异常问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/l2_MhFiZRHeiZwrsMsACqw/zh-cn_image_0000002193850852.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/l2_MhFiZRHeiZwrsMsACqw/zh-cn_image_0000002193850852.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B3AE58AC6A24678762FBC3C4D4C8E40CDD304F2E0BB58F7B204A9A8C305734D "点击放大")
 
 1. 定义短时任务信息SuspendTaskInfo()接口，包括短时任务的ID和获取对应短时任务的剩余时间delayTime。
 
@@ -163,14 +163,14 @@ content_hash: sha256:c0084c8e05d82eac68d90a6f2630ff5c39fa588fed9dca5a57a87c3baa6
 
 **实现效果**
 
-* **系统息屏场景/应用置于后台场景：**前台应用在自动息屏后，会被识别为置于后台。此时，应用可以申请短时任务，剩余时长上限为3分钟（如下图所示，delayTime为180000ms）。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/iayq9N8SSNuVkMZIl0K_MQ/zh-cn_image_0000002193850864.png)
-* 当短时任务的剩余时间不足时，系统会触发回调，停止任务。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/YMlD1GwsRam6DR94wMklMA/zh-cn_image_0000002229450725.png)
+* **系统息屏场景/应用置于后台场景：**前台应用在自动息屏后，会被识别为置于后台。此时，应用可以申请短时任务，剩余时长上限为3分钟（如下图所示，delayTime为180000ms）。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/iayq9N8SSNuVkMZIl0K_MQ/zh-cn_image_0000002193850864.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0CDB12EC5200A8FD502F0B8095D65AFEC81BAD7D9E868B21336540FF5131E48)
+* 当短时任务的剩余时间不足时，系统会触发回调，停止任务。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/YMlD1GwsRam6DR94wMklMA/zh-cn_image_0000002229450725.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=380B022748553FD273BC7335385115221E0ED2990CD394C86F8C606BD920C27C)
 
 ### 应用后台长时间运行不中断
 
 当应用涉及数据传输、音频播放、录音操作、定位导航、蓝牙和WLAN相关应用、多设备互联、音视频通话、复杂计算任务等场景时，需要应用在后台长时间运行。为了确保应用在这些情况下正常运作，可以申请后台长时任务来实现。以下示例展示了如何使用长时任务管理应用的定位服务，以实现应用在后台长时间运行时，持续获取设备位置信息的功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/_MI5kzOURZuoyCWcVGr28w/zh-cn_image_0000002194010444.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/_MI5kzOURZuoyCWcVGr28w/zh-cn_image_0000002194010444.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=C580B4DD7A142A0661E7D5EA04B3BC05921ACD708065A38BDD58DBD2CDFF55B6 "点击放大")
 
 1. 在定位、导航类的应用场景下，为了确保应用在后台仍能使用定位服务，需在module.json5配置文件中为EntryAbility声明定位类型的长时任务，并申请定位相关权限。
 
@@ -308,9 +308,9 @@ content_hash: sha256:c0084c8e05d82eac68d90a6f2630ff5c39fa588fed9dca5a57a87c3baa6
 
 **实现效果**
 
-* 在定位和导航应用场景中，应用前台运行时开启位置订阅，控制台定期打印位置信息。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/31Lc9txMTdmRPftzeFPoWg/zh-cn_image_0000002229450733.png)
+* 在定位和导航应用场景中，应用前台运行时开启位置订阅，控制台定期打印位置信息。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/31Lc9txMTdmRPftzeFPoWg/zh-cn_image_0000002229450733.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=545620318DBC0C4586527A1728A36DE312FD31DE1ABB40036BF6C7251B1B6382)
 
-* 在定位和导航应用场景中，应用退至后台持续运行，控制台日志定时打印位置信息。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/P3Qhwu5KRNq3LN-8slUmfA/zh-cn_image_0000002194010448.png)
+* 在定位和导航应用场景中，应用退至后台持续运行，控制台日志定时打印位置信息。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/P3Qhwu5KRNq3LN-8slUmfA/zh-cn_image_0000002194010448.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6E918BFA148B4F6C9A56BA862C7263414305F4F1F7142537A4168121FF8A4F0)
 
 ## 示例代码
 

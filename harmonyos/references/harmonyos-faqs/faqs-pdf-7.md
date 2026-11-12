@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-pdf-7
 title: 如何将不同尺寸的图片添加到PDF里
 breadcrumb: FAQ > 应用服务开发 > PDF文档解析服务（PDF Kit） > 如何将不同尺寸的图片添加到PDF里
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:36+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-12
 content_hash: sha256:7648aea6086f2636c4755afc48c7aba0de708a850c72ecd74f4acae8f8a190ec
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:7648aea6086f2636c4755afc48c7aba0de708a850c72ecd74f4acae8f8a
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/oizHAP41Qw-zwMhNTtx0ng/zh-cn_image_0000002628394348.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/oizHAP41Qw-zwMhNTtx0ng/zh-cn_image_0000002628394348.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=7BC5386080B502C6EC73D47AD38D05ADB8DC2DBAA63AA9E7F88E4C2732D12C0B "点击放大")
 
 ## 背景知识
 

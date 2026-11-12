@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-580
 title: 如何给tabBar页签设置不同宽度
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何给tabBar页签设置不同宽度
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:bb9376fb909c1d0254df49c13af30e618ea82a622157c4917996bc2e07f8abfc
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:bb9376fb909c1d0254df49c13af30e618ea82a622157c4917996bc2e07f
 
 效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/3Vili2XmTQWtohjyLYUt7A/zh-cn_image_0000002658791765.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/3Vili2XmTQWtohjyLYUt7A/zh-cn_image_0000002658791765.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD0BE0A5085129594BCBF4DF3644DDB4B065F85791075B8D3058F79C6CD5AD7E "点击放大")
 
 ## 背景知识
 

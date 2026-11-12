@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-animat
 title: "@AnimatableExtend：定义可动画属性"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义组件 > 组件扩展装饰器 > @AnimatableExtend：定义可动画属性
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:26+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:6c7ae08e6960cd8b2b4c874c619f7e1005ad872f0abb794396040d2de499d559
 ---
@@ -163,7 +163,7 @@ struct AnimatablePropertyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/5cOXcj8oQyyFVaZ61FKIGQ/zh-cn_image_0000002815561045.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/5cOXcj8oQyyFVaZ61FKIGQ/zh-cn_image_0000002815561045.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=146A484889F4545C6931A2CFD542C8E115970CBCEF0513CC0D4BCECAE3C292CD)
 
 ### 示例2（折线的动画效果）
 
@@ -284,4 +284,4 @@ struct AnimatablePropertyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/HJBNdPuHSPuaL_SnIOiGag/zh-cn_image_0000002815401129.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/HJBNdPuHSPuaL_SnIOiGag/zh-cn_image_0000002815401129.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8C8848DCF8A14ADAB580DAF3B473E4D41C98A778DF46EBF76349442BD42F2C6)

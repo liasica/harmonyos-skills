@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1132
 title: 拖拽List组件内的子组件时，如何解决被拖拽的子组件位置会向两边偏移的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 拖拽List组件内的子组件时，如何解决被拖拽的子组件位置会向两边偏移的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:70e462131a0f9ddc411dcef1e32d8c98f70463f60b1d7ffc4bb7df9e6e42a383
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:70e462131a0f9ddc411dcef1e32d8c98f70463f60b1d7ffc4bb7df9e6e4
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/cf60tIflSEOq4XGpyapfeg/zh-cn_image_0000002658808791.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/cf60tIflSEOq4XGpyapfeg/zh-cn_image_0000002658808791.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=38850EAB57552FD6C588F0B31F3356EA86E92EEEB9684C0F9AAFE122DC13AFAD "点击放大")
 
 ## 背景知识
 

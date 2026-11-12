@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-create-
 title: 创建自定义组件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 创建自定义组件
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:3aa2080d9378e6843a4156413c57b2392fe78c983f23e019c54bb115a3b5c1e0
 ---
@@ -69,7 +69,7 @@ struct ParentComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/PSFk_ZP5TBaJfB7d2H5K6A/zh-cn_image_0000002815557907.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/PSFk_ZP5TBaJfB7d2H5K6A/zh-cn_image_0000002815557907.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=C314CAA167721E5441A32A4D330C091A0F76DF3495C6639208222C84109BF4C6)
 
 要完全理解上面的示例，需要了解自定义组件的以下概念定义，本文将在后面的小节中介绍：
 
@@ -196,7 +196,7 @@ struct MyComponent {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/mpXRt4n5QTaZ64mGgLVXzA/zh-cn_image_0000002815397991.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/mpXRt4n5QTaZ64mGgLVXzA/zh-cn_image_0000002815397991.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=661ABC96475BFE522A274CB5B5AE094A03B9D7BFF503FC923567952C4600EE93)
 
 除非特别说明，@ComponentV2装饰的自定义组件将与@Component装饰的自定义组件保持相同的行为。
 
@@ -313,7 +313,7 @@ struct ParentComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/MWwROU-ZSkysw_AxHd-KXA/zh-cn_image_0000002786518416.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/MWwROU-ZSkysw_AxHd-KXA/zh-cn_image_0000002786518416.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=A950E3FCEE0EB5292D35554D9706475250BF7DC7AEBDBBEE44322F881FA21CBE)
 
 以下示例代码将父组件中的函数传递给子组件，并在子组件中调用。
 
@@ -358,7 +358,7 @@ struct Son {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/M-bFZxepQYm6OectA2LoXA/zh-cn_image_0000002786358488.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/M-bFZxepQYm6OectA2LoXA/zh-cn_image_0000002786358488.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=630F0A89375137D11B24A9516AC1A4584105ECAF5E3823C79AD3F0D4194E8281)
 
 ## build()函数实现规则
 
@@ -549,7 +549,7 @@ struct Son {
 
   在ArkUI状态管理中，状态驱动UI更新。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/ziiZW09pTUOiC2LnZn4N8g/zh-cn_image_0000002815557909.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/ziiZW09pTUOiC2LnZn4N8g/zh-cn_image_0000002815557909.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=94C176060BC74E5738D4881F76FF8AD82A7CF3DB1FB0B2A392B62335F6818199)
 
   所以，不能在自定义组件的build()或@Builder方法里直接改变状态变量，这可能会造成循环渲染的风险。Text(`${this.count++}`)在全量更新或最小化更新会产生不同的影响：
 
@@ -611,7 +611,7 @@ struct MyComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/I7euKG4aQKa4FckCm1Gamw/zh-cn_image_0000002815397993.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/I7euKG4aQKa4FckCm1Gamw/zh-cn_image_0000002815397993.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=1028370362DBDAFF4FB901F0927E208C7B8159371EA5E165622FCF95B7542C6E)
 
 **说明** 
 
@@ -852,7 +852,7 @@ struct ExtraIndex {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/QkcB1IYeRNu7gRYqlBOJ-w/zh-cn_image_0000002786518418.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/QkcB1IYeRNu7gRYqlBOJ-w/zh-cn_image_0000002786518418.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=86E6BA4B2597963A1208A20619B0A084D75AFD7340F541C612C89E0DE6719085)
 
 ## 限制条件
 

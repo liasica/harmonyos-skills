@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-845
 title: 使用HMRouter跳转后Radio无法保持选中状态
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 使用HMRouter跳转后Radio无法保持选中状态
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:47+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:2616eafc17f024f88d5473664bdf3cd4223d4c46c238405bf00bee0db3bdf7af
 ---
@@ -162,7 +162,7 @@ export struct TwoPage {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/9ea0jU7lTO2ZrJioKoNS9Q/zh-cn_image_0000002658917857.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/9ea0jU7lTO2ZrJioKoNS9Q/zh-cn_image_0000002658917857.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA2339A183FEB08CD1EBE3CB1C6C5BDDE9B45269E842BDD94FAF1961D767CEE5 "点击放大")
 
 ## 背景知识
 

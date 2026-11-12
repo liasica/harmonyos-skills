@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 如何获取BuildProfile中的值
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 如何获取BuildProfile中的值
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:53+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:55dba718311ad5f101e2f86e1ee67868b3112aab4e75a2d463c04826d56d8636
 ---
@@ -22,7 +22,7 @@ const BUILD_MODE_NAME: string = BuildProfile.BUILD_MODE_NAME;
 const DEBUG: boolean = BuildProfile.DEBUG;
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/b-ZFAEY3QJqWCh8GwXUJSg/zh-cn_image_0000002654837847.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/b-ZFAEY3QJqWCh8GwXUJSg/zh-cn_image_0000002654837847.png?HW-CC-KV=V1&HW-CC-Date=20261112T233210Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9016F14A4B3DDE8B3BD33C675EE2AC92BFE96DDDCBBBCC4B3E2CF13AE8ED5FC "点击放大")
 
 **参考链接**
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: image-animator开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > image-animator开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:98e3bfe3dfa146bbb1dfaea19a151bddf0946ed298ce699f058a8f1c5bc8f4ad
 ---
@@ -53,7 +53,7 @@ export default {
 };
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/50ZqmkY9QLqe9TNNsNglkg/zh-cn_image_0000002786359316.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/50ZqmkY9QLqe9TNNsNglkg/zh-cn_image_0000002786359316.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=D48189ADFA69525F94550F6B5D32605B99DF8B768B076F68FB4783D6330A64E6)
 
 ## 设置image-animator组件属性
 
@@ -132,7 +132,7 @@ export default {
 };
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/HpzDa6NJSjeYO9o_IflAkw/zh-cn_image_0000002815558737.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/HpzDa6NJSjeYO9o_IflAkw/zh-cn_image_0000002815558737.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=F097E413FCF71293A57A3DFB8225792D9FF5C69AD89A3CF23351829443CBC3CE)
 
 **说明** 
 
@@ -217,7 +217,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/CY7axN8ATneeK7It0EzoJg/zh-cn_image_0000002815398821.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/CY7axN8ATneeK7It0EzoJg/zh-cn_image_0000002815398821.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=1745F694DAC9F00F9094A757AF2A274301DF33078D24E8A88A359C7291174BCF)
 
 ## 场景示例
 
@@ -322,4 +322,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/JfObrYliSuKgOlw4-PUSrw/zh-cn_image_0000002786519246.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/JfObrYliSuKgOlw4-PUSrw/zh-cn_image_0000002786519246.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=32C3BED01BA5BE0FD693B0892B22F641ECE4AD31A70FBFCD88E718EFBBC5EC42)

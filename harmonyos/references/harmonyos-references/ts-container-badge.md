@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Badge
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > Badge
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:beff32ab0348ee6cf796d3e0176e4a7de7467331506c237ec8dd6ce5c1fbe3fa
 ---
@@ -313,7 +313,7 @@ struct BadgeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/IXK2_tufSwWSppVNinLdvw/zh-cn_image_0000002786361446.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/IXK2_tufSwWSppVNinLdvw/zh-cn_image_0000002786361446.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=653428D09541159C336B096BF3EE396979416136D72F889745DF4BD4DF9073E6)
 
 ### 示例2（设置数字控制标记显隐）
 
@@ -350,7 +350,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/te5exu63RreZ_46IoFqMmA/zh-cn_image_0000002815560867.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/te5exu63RreZ_46IoFqMmA/zh-cn_image_0000002815560867.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A95E17419AD903BC85E908CB63B02529C7DDC4C9E72DE398BDE8938B165C10C)
 
 ### 示例3（设置外描边和文本延伸方式）
 
@@ -400,4 +400,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/xoeEQaEyQgCls8RI3QFHKA/zh-cn_image_0000002815400951.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/xoeEQaEyQgCls8RI3QFHKA/zh-cn_image_0000002815400951.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=E022BA39B9518D390F83BE9B380C5D472A14547AF989923B131C340968E1442A)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encodin
 title: ROI视频编码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > ROI视频编码
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:02+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:7c5eaaeb5acfc2d1090e8d82f0952b537926f36a7984d394f47eee784d397286
 ---
@@ -83,7 +83,7 @@ ROI是一个矩形区域，Top,Left和Bottom,Right分别定义了ROI的区域在
 
 **图1：ROI坐标和最大允许面积占比示意图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/_G-a-kfqQrS0kO3bOGYAaQ/zh-cn_image_0000002815399371.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/_G-a-kfqQrS0kO3bOGYAaQ/zh-cn_image_0000002815399371.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DD08A4CE266CE942BAE48003D47C1647031D0314220D9D4E329E000589F5BD0)
 
 ## 生效机制说明
 
@@ -124,7 +124,7 @@ Surface模式下，相机将视频帧输出到OH\_NativeImage的Surface上，开
 
 **图2：NativeBuffer元数据接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/ywJR08INSqyzb1Rv_4WnUw/zh-cn_image_0000002786519796.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/ywJR08INSqyzb1Rv_4WnUw/zh-cn_image_0000002786519796.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C750F9A505CECCFDAF9E9B587D31BE73637E0AA5FDABCD34FA7DAC5D91A72C7)
 
 详细开发步骤如下：
 
@@ -278,7 +278,7 @@ Surface模式下，相机将视频帧输出到OH\_NativeImage的Surface上，开
 
 **图3：编码输入参数回调接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/3O0H6qOJQsK78yFVGCDIOg/zh-cn_image_0000002786359868.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/3O0H6qOJQsK78yFVGCDIOg/zh-cn_image_0000002786359868.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=00542ACFC9A188F75BD7B55A61BE12C1EA043A9A855A17C1D5758DDE040CCD3E)
 
 详细开发步骤如下：
 
@@ -384,7 +384,7 @@ Buffer模式下，视频帧通过OH\_VideoEncoder\_PushInputBuffer送入编码�
 
 **图4：编码输入Buffer回调接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/xxLtn-4GRUa8D6ZWDdfG2A/zh-cn_image_0000002815559289.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/xxLtn-4GRUa8D6ZWDdfG2A/zh-cn_image_0000002815559289.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1A6B3828A01A1811FDA47BE6DD5401A8F8B5B339A1E2AAB7A4B62D7394289E5)
 
 详细开发步骤如下：
 

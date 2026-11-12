@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 创建懒加载布局 (LazyColumnLayout/LazyVGridLayout/LazyVWaterFlowLayout)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 列表与网格 > 创建懒加载布局 (LazyColumnLayout/LazyVGridLayout/LazyVWaterFlowLayout)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:e33d4b80dff7a809f190af89f150342262608e6e894308073f96c86fe9d026c5
 ---
@@ -81,7 +81,7 @@ columnsTemplate属性值是一个由多个空格和'数字+fr'间隔拼接的字
 
 **图1** 列数占比示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/vdxeqfnySGK1T3-eVNdjBA/zh-cn_image_0000002815558321.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/vdxeqfnySGK1T3-eVNdjBA/zh-cn_image_0000002815558321.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=67F0FA2DCECDEE8EA7F1EF0BC316D1D009407B06F7E2158C27219903E5F1DC8C)
 
 如上图所示，构建的是一个三行三列的网格布局，其在水平方向上分为四等份，第一列占一份，第二列占两份，第三列占一份。只要将columnsTemplate设置为'1fr 2fr 1fr'，即可实现上述网格布局。
 
@@ -113,7 +113,7 @@ columnsTemplate还支持通过repeat关键字自动计算列数，格式为'repe
 
 **图2** 网格的行列间距示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/T_d8pGQEQjWOMavoliiNjQ/zh-cn_image_0000002815558307.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/T_d8pGQEQjWOMavoliiNjQ/zh-cn_image_0000002815558307.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=85490E43EDDBCBE19030EFBFF75E12F68F0FE8F2CC5CCA6256806D50787BA96E)
 
 LazyVGridLayout组件提供了[rowsGap](../harmonyos-references/ts-container-lazyvgridlayout.md#rowsgap)和[columnsGap](../harmonyos-references/ts-container-lazyvgridlayout.md#columnsgap)属性分别设置行间距和列间距。默认值均为LengthMetrics.vp(0)，设置为小于0的值时按默认值显示。
 
@@ -523,7 +523,7 @@ export struct ListNestedLazyLayout {
 
 **图3** List嵌套懒加载布局容器效果示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/embm-ZMMQHy9F0BsZcyV6w/zh-cn_image_0000002786358864.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/embm-ZMMQHy9F0BsZcyV6w/zh-cn_image_0000002786358864.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=40427071E7549A73D8E31363AB7B785650BE87F91E8F3A199E1D3B9F4916C9A5)
 
 * 通过LazyColumnLayout嵌套组合多种懒加载布局容器
 
@@ -753,7 +753,7 @@ export struct LazyColumnLayoutNestedLazyLayout {
 
 **图4** LazyColumnLayout嵌套懒加载布局容器效果示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/HrgwATJCT2G0565bibX5EQ/zh-cn_image_0000002815398405.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/HrgwATJCT2G0565bibX5EQ/zh-cn_image_0000002815398405.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=3747448FCC952B08448CF702374D6927E5EDAA32FA1893BFDCCBE0E79A24147A)
 
 ## 分组展示与粘性标题
 
@@ -1062,4 +1062,4 @@ export struct LazyLayoutGroup {
 
 **图6** 分组展示与粘性标题效果示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/dLvLcP8XSYSfYZWlJN4PfA/zh-cn_image_0000002815398407.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/dLvLcP8XSYSfYZWlJN4PfA/zh-cn_image_0000002815398407.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=73EBB8558A77C1695F62914A5787A82E70366C539E22D246C46F384F4E56420B)

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-utilities-
 title: UIViewer获取页面时，无法展示页面截图和元素树如何处理
 breadcrumb: FAQ > DevEco Testing > 实用工具 > UIViewer > UIViewer获取页面时，无法展示页面截图和元素树如何处理
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:e4ba30de4055e52db03b174b20dccb53ba304c2e4a1ea871a3e921f503826f47
 ---
 
 请排查设备UiTest框架是否正常，打开cmd窗口，在设备上运行 hdc shell uitest dumpLayout 和 hdc shell snapshot\_display -f /data/local/tmp/screenCasting.jpeg 两条指令，确认下是否能运行成功，成功运行截图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/B-A0SeAKQ3y4ZSS3ZrqyUA/zh-cn_image_0000002654798349.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/B-A0SeAKQ3y4ZSS3ZrqyUA/zh-cn_image_0000002654798349.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=A44DAF2931BDE02C2132D4D725F3515DBB8A0F585A6F62AB5FE46784283EE7CA "点击放大")
 
 如运行失败，请前往DevEco Testing客户端-设置-问题反馈，或通过[华为开发者联盟-在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)，提交该场景信息（测试服务名称+异常任务信息+问题描述+问题截图），以便于研发团队进一步分析。
 

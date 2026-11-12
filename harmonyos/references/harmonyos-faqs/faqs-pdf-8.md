@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-pdf-8
 title: PDF文档转换成的图片如何重命名
 breadcrumb: FAQ > 应用服务开发 > PDF文档解析服务（PDF Kit） > PDF文档转换成的图片如何重命名
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-12
 content_hash: sha256:ce97e2fda85a7d4162d0997ea09477e3026fd49075c230fdbd876970e6daef16
 ---
@@ -130,7 +130,7 @@ struct PdfPreview {
 
 可使用[Device File Browser](../harmonyos-guides/ide-device-file-explorer.md#section165192211111)查看重命名效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/xe_e6WpdS5ySb2uUK6h8YA/zh-cn_image_0000002658793613.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/xe_e6WpdS5ySb2uUK6h8YA/zh-cn_image_0000002658793613.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=03CCCCA5302AC139D2D3C0061D6A340D032905F6C53678F028DDD492B65A18FD "点击放大")
 
 **说明** 
 

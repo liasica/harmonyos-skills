@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-cus
 title: 应用加载自定义Symbol
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 应用加载自定义Symbol
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:29+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:9be3d5da5000bd3fc70741124cd713385b5ccbef581cb6672b331287b08704ae
 ---
@@ -22,10 +22,10 @@ content_hash: sha256:9be3d5da5000bd3fc70741124cd713385b5ccbef581cb6672b331287b08
 
 1. 将Symbol图标资源（TTF文件，设计规范参见[图标设计文档](../design-guides/system-icons-0000001929854962.md#section26702397263)）与动效参数资源（JSON文件）放入entry/src/main/resources/rawfile目录下，可在此目录下新建子目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/8_wF1EGkTvqM9hJ54jigQg/zh-cn_image_0000002786519550.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/8_wF1EGkTvqM9hJ54jigQg/zh-cn_image_0000002786519550.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=E698D023C03D15B83215415E92CB96D2E753164E50B3A7484ACEAFECCABC82A8)
 2. 多语言场景，在entry/src/main/resources目录中对应语言目录下的string.json文件中配置对应的Symbol图标Unicode值。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/3SlIY332Q2aFdXgpmgPOjA/zh-cn_image_0000002786359622.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/3SlIY332Q2aFdXgpmgPOjA/zh-cn_image_0000002786359622.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A1B20ADED67CBCE7A7A8047898D6D7D88DCCD2C8AB39365DA60DC495EF3CEEA)
 
    ```json
    {
@@ -68,4 +68,4 @@ content_hash: sha256:9be3d5da5000bd3fc70741124cd713385b5ccbef581cb6672b331287b08
    }
    ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/Bbz3A5VZSnWmhqvNkEqoYg/zh-cn_image_0000002815559043.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/Bbz3A5VZSnWmhqvNkEqoYg/zh-cn_image_0000002815559043.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=10919B02BDFF99D1968E88CF86F9BFFAEE00FB7EDC7EA461856FFE47A22ABDA0)

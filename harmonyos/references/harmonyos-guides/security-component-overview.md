@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/security-comp
 title: 安全控件概述
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 使用安全控件 > 安全控件概述
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:31+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:e250b99d038dc8ed4005127ce42ab026d8ed8d8d13fa054e98204d177df6f065
 ---
@@ -43,7 +43,7 @@ content_hash: sha256:e250b99d038dc8ed4005127ce42ab026d8ed8d8d13fa054e98204d177df
 
 开发者调用接口时，运作流程如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/MugloKg3Q4yMOtUlKH7pXg/zh-cn_image_0000002815559051.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/MugloKg3Q4yMOtUlKH7pXg/zh-cn_image_0000002815559051.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8903278CD5BE7DD7CE982F1715A835F4D54C044E744B4E018A84E625C5BC826)
 
 1. 应用开发者在ETS文件中集成安全控件，通过JS引擎解析后，在ArkUI框架中生成具体的控件。
 2. 安全控件注册控件信息到安全控件管理服务，安全控件管理服务检查控件信息的合法性。

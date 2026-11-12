@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler
 title: DevEco Profiler调优工具简介
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > DevEco Profiler调优工具简介
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:0e34af5a833f818f52308f42d0a2ec89633833296aa79c3737f4294a19c6cc8b
 ---
@@ -23,7 +23,7 @@ content_hash: sha256:0e34af5a833f818f52308f42d0a2ec89633833296aa79c3737f4294a19c
 * 在DevEco Studio底部/左侧的工具栏中单击“Profiler”。
 * 使用“Ctrl+Shift+A”（macOS中为双击“Shift”）打开搜索功能，搜索“Profiler”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/vIacsomRR46FOrP3FJQU9Q/zh-cn_image_0000002779567416.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/vIacsomRR46FOrP3FJQU9Q/zh-cn_image_0000002779567416.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B1B24C8C14AC8D83A463A69811DAD7EFF165D816F410FC8E0BC54B4A0C6AF21 "点击放大")
 
 * **[界面布局](ide-profiler-layout.md)**
 * **[会话区](ide-profiler-session.md)**

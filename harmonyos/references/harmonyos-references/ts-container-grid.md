@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Grid
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > Grid
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-30
 content_hash: sha256:ea64bf1e2c17007e87dfd01d240c26c58c50689df276f109f39051327a16f3f1
 ---
@@ -88,7 +88,7 @@ Grid组件使用通用属性[clip12+](ts-universal-attributes-sharp-clipping.md#
 
 设置Grid的padding后，如果子组件部分位于Grid内容区且部分位于padding区域内，则会显示；如果子组件完全位于padding区域内，则不会显示。如下图所示，GridItem1显示，而GridItem2不显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/n98QGxO9QWW5YJuWTwO-CQ/zh-cn_image_0000002786521056.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/n98QGxO9QWW5YJuWTwO-CQ/zh-cn_image_0000002786521056.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=2FC9F6A3C5DF3DE0E5387D4D6C1D4C69058198A4A22F3B2E6F2C2862385F05D4)
 
 ### columnsTemplate
 
@@ -1223,7 +1223,7 @@ struct GridExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/Hm3fXNiVR2mObrGz2uV1ww/zh-cn_image_0000002786361128.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/Hm3fXNiVR2mObrGz2uV1ww/zh-cn_image_0000002786361128.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=46C81AB2CE1645BD66C5AC34A5187E0D451AB1938C0AC4DB10D6412875511BB8)
 
 ### 示例2（可滚动Grid和滚动事件）
 
@@ -1372,7 +1372,7 @@ struct GridExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/zJmKQaGJTCK_a9S6-VE7Mg/zh-cn_image_0000002815560549.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/zJmKQaGJTCK_a9S6-VE7Mg/zh-cn_image_0000002815560549.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=244F678ACD0A4F21E0577A3E5AA963334F2144CE3C7B708FA5EDB00EDDDACF16)
 
 ### 示例3（可滚动Grid设置跨行跨列节点）
 
@@ -1465,7 +1465,7 @@ struct GridExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/pi4eTwumQZK29IZBlFnW0Q/zh-cn_image_0000002815400633.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/pi4eTwumQZK29IZBlFnW0Q/zh-cn_image_0000002815400633.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=A765BCFCA454EE2F9B81E005003B9C71028BEE04E375812AB1EB6E7FED0D3C6C)
 
 ### 示例4（Grid嵌套滚动）
 
@@ -1647,7 +1647,7 @@ struct GridExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/Anm8cXAoTb-rgOaCtyXWOA/zh-cn_image_0000002786521058.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/Anm8cXAoTb-rgOaCtyXWOA/zh-cn_image_0000002786521058.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6C913E7C8F89839461630333B2C8A48B39ABFAF67C753656952673CC0D70ACD)
 
 ### 示例5（Grid拖拽场景）
 
@@ -1738,19 +1738,19 @@ struct GridExample {
 
 网格子组件开始拖拽：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/VUFAVF0MQ8C2FJQ5KfaiZw/zh-cn_image_0000002786361130.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/VUFAVF0MQ8C2FJQ5KfaiZw/zh-cn_image_0000002786361130.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=86C245A65D66E37F709E6D8A7592107387CB79982B0D52610DA741D101692669)
 
 网格子组件拖拽过程中：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/JR1AbQvpTQmP63GI2pZXXg/zh-cn_image_0000002815560551.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/JR1AbQvpTQmP63GI2pZXXg/zh-cn_image_0000002815560551.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF814C7A109CCE666F56831BE91BB30BA99AC8E35169B94FE7E930903007F3B0)
 
 网格子组件1与子组件6拖拽交换位置后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/ES72IRbsRA-tLiy1MB200g/zh-cn_image_0000002815400635.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/ES72IRbsRA-tLiy1MB200g/zh-cn_image_0000002815400635.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=6FF199BB7B93C2880B3ADD391B1E03D5CA9EED8B4DA9C90A4C727EA035B70139)
 
 拖拽动画：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/pypeGbx7RIeMB9v2oLmqOg/zh-cn_image_0000002786521060.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/pypeGbx7RIeMB9v2oLmqOg/zh-cn_image_0000002786521060.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=14CC2CBB201BC159D6726C0B440CA97BCA0646BB1A7C2F8FFB66F60882DEAC7D)
 
 ### 示例6（自适应Grid）
 
@@ -1803,7 +1803,7 @@ struct GridExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/PoQp-sP1R0a0x4OohrS6hw/zh-cn_image_0000002786361132.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/PoQp-sP1R0a0x4OohrS6hw/zh-cn_image_0000002786361132.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF02159A3A36A1AC1100D1CA6DB39AC1C036B7730E42C245560D964D5FCAC53C)
 
 ### 示例7（双指缩放修改Grid列数）
 
@@ -1889,7 +1889,7 @@ struct GridExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/F5QSDNINQC2rnnGau-8YiQ/zh-cn_image_0000002815560553.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/F5QSDNINQC2rnnGau-8YiQ/zh-cn_image_0000002815560553.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2A925DA2A4790248DA2DC88F9FE9FB56A382012D2028DA255185F5FF87A3FB5)
 
 ### 示例8（设置自适应列数）
 
@@ -1959,7 +1959,7 @@ struct GridColumnsTemplate {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/4-dFcAkbSZucrRC7v161DA/zh-cn_image_0000002815400637.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/4-dFcAkbSZucrRC7v161DA/zh-cn_image_0000002815400637.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=A09C23A358E9211B0B411B41D0D8178D7093E645465C27EBC0A5CD5B73BFC20D)
 
 ### 示例9（以当前行最高的GridItem的高度为其他GridItem的高度）
 
@@ -2028,7 +2028,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/nXhOlTl2QRuqd8yiqhw7Pg/zh-cn_image_0000002786521062.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/nXhOlTl2QRuqd8yiqhw7Pg/zh-cn_image_0000002786521062.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=2AA1AC4B3AE2605A3CF9AA785ED8EAC150A31C718B23C551096BB1EA612F0DEA)
 
 ### 示例10（设置边缘渐隐）
 
@@ -2084,7 +2084,7 @@ struct GridExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/uYEM5Sw5QreTRZDaTg29XQ/zh-cn_image_0000002786361134.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/uYEM5Sw5QreTRZDaTg29XQ/zh-cn_image_0000002786361134.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=F75A4F8D5041B7C3DFBD99903B2F360D12FB69A3111EF2EA7A8ABA084BBBAA6D)
 
 ### 示例11（单边边缘效果）
 
@@ -2139,7 +2139,7 @@ struct GridExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/x1EM8K2rTSiATpL2bANqnQ/zh-cn_image_0000002815560555.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/x1EM8K2rTSiATpL2bANqnQ/zh-cn_image_0000002815560555.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=ABABB845C120A7259FC932F7C09EC39F138627E383AFD07A873498FA37E1B72F)
 
 ### 示例12（方向键走焦换行模式）
 
@@ -2225,7 +2225,7 @@ struct GridExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/OO9qeGybRCqZgZ3JVBuoYw/zh-cn_image_0000002815400639.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/OO9qeGybRCqZgZ3JVBuoYw/zh-cn_image_0000002815400639.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=519000E48251176C085ED93D124C343E1D1B2E1045D036725C77E4F5258CD66F)
 
 ### 示例13（设置滚动事件）
 
@@ -2381,7 +2381,7 @@ struct GridScrollToIndexSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/OY2CGnKSQtCrIzC62wkGFA/zh-cn_image_0000002786521064.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/OY2CGnKSQtCrIzC62wkGFA/zh-cn_image_0000002786521064.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD6FF2DF52B0B1EA468328E60A4C0A3081084B5E3CC6E111F6B92681C790C944)
 
 ### 示例15（实现Grid滑动选择）
 
@@ -2684,7 +2684,7 @@ struct GridExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/U8JXP3jlSl-pH96LIhH8Cg/zh-cn_image_0000002786361136.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/U8JXP3jlSl-pH96LIhH8Cg/zh-cn_image_0000002786361136.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C7E4341E4D534C04E4B36FA0597958DAD5D9D17788C363FB627581638EFEEED)
 
 ### 示例16（实现GridItem自定义拖拽）
 
@@ -2954,7 +2954,7 @@ struct GridItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/IPhSjTvDRsGXeLjF41hNSw/zh-cn_image_0000002815560557.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/IPhSjTvDRsGXeLjF41hNSw/zh-cn_image_0000002815560557.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=9451AB5DA160CE6D68DE13E0EC5C454675FC20794434845597F5B13EF6AEF7B7)
 
 ### 示例17（通过拖拽事件实现GridItem拖拽）
 
@@ -3026,7 +3026,7 @@ struct Example {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/74REcLLaQE-pF0n7F1JVMw/zh-cn_image_0000002815400641.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/74REcLLaQE-pF0n7F1JVMw/zh-cn_image_0000002815400641.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC9AD41C648A1731D4467276641114997E023DB77711FF345A01079BE1E9A97E)
 
 ### 示例18（Grid组件基于断点配置列数）
 
@@ -3080,15 +3080,15 @@ struct GridExample {
 
 Grid宽度属于sm及更小的断点区间时显示2列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/RdNREL94QE2GSSBpX3OHPQ/zh-cn_image_0000002786521066.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/RdNREL94QE2GSSBpX3OHPQ/zh-cn_image_0000002786521066.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9B95E77D15EE0C9A4AD7C68C6FC3EC484F5139E1F9D45F26568AB4FC1E9B0FB)
 
 Grid宽度属于md断点区间时显示3列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/9J9juEQTTGq_Uf9VjQQkCw/zh-cn_image_0000002786361138.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/9J9juEQTTGq_Uf9VjQQkCw/zh-cn_image_0000002786361138.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=D76B45AD6A9C5422DABF0CF9EBB2A69BC293BE191BEFE42E678046F8B92FF184)
 
 Grid宽度属于lg及更大的断点区间时显示5列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/U0EqKwugQu23mqwV0he22A/zh-cn_image_0000002815560559.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/U0EqKwugQu23mqwV0he22A/zh-cn_image_0000002815560559.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=33A20D785123A7C9AAEF97C1F9D75C6D5BCEC75D99DA98707A40A57717DD6228)
 
 ### 示例19（获取内容总大小）
 
@@ -3174,7 +3174,7 @@ struct GridExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/ceNxDPGjTva_NuhM-MmwEw/zh-cn_image_0000002815400643.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/ceNxDPGjTva_NuhM-MmwEw/zh-cn_image_0000002815400643.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=19BEAF04C02B822255EC0228A3857E8E1B96FF3655C9470285650D88EB260A22)
 
 ### 示例20（设置多选聚拢动画）
 
@@ -3278,7 +3278,7 @@ struct GridExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/At174yCsSumE8vFQgc_5nQ/zh-cn_image_0000002786521068.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/At174yCsSumE8vFQgc_5nQ/zh-cn_image_0000002786521068.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DE64DABFCE3B64126E88545438E6C328D3C6A2AD6BEC8A45AD6162F41B1A8E9)
 
 ### 示例21（设置滑动多选）
 
@@ -3375,7 +3375,7 @@ struct GridExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/CutUigp3Q7Swihc4v885SA/zh-cn_image_0000002786361140.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/CutUigp3Q7Swihc4v885SA/zh-cn_image_0000002786361140.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=07CDEEC52C6C556FF55851BD3ED8429511EF386CD0F332D71B2CF25B266AE71D)
 
 ### 示例22（使用OnMove进行拖拽）
 
@@ -3588,4 +3588,4 @@ struct GridOnMoveExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/KLbb4LaqRp-DWHCTewcmZw/zh-cn_image_0000002815560561.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/KLbb4LaqRp-DWHCTewcmZw/zh-cn_image_0000002815560561.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA377A096DB345C18429AC8B0B80CCB9CBEAF62CF5B695D5A83D5F74E42C1D4C)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-693
 title: 实现子组件创建和销毁后的排序显示
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 实现子组件创建和销毁后的排序显示
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:73a0bfc7a6d904104b5cc86596d72a05550c54555d55975bb32457c86a4b7205
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:73a0bfc7a6d904104b5cc86596d72a05550c54555d55975bb32457c86a4
 
 视频会议场景下，邀请的成员中有人挂断或者超时未接听后，将其显示在已入会人员区域最后，当成员重新进入后，将其显示到已接听人员最后，如果有人点击离开会议，则将其显示在下方为未入会人员区域。效果如下图所示，如何实现这种排序显示效果？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/hP8M7JoHRca1lN2eCQLorQ/zh-cn_image_0000002628554752.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/hP8M7JoHRca1lN2eCQLorQ/zh-cn_image_0000002628554752.png?HW-CC-KV=V1&HW-CC-Date=20261112T233200Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1C61B1BB9BEE946C9CF3E5964B79A9DA3D3592A4C95EED571156D0761E99424 "点击放大")
 
 ## 背景知识
 

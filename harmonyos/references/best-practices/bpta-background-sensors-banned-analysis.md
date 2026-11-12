@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-background
 title: 应用退后台禁止使用传感器问题分析
 breadcrumb: 最佳实践 > 功耗 > 应用功耗分析 > 应用退后台禁止使用传感器问题分析
 category: best-practices
-scraped_at: 2026-11-10T10:42:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:4f76765e82eb17f1a9691b4bac8673ba98b4c024ee572b00f47d5ba725428392
 ---
@@ -24,20 +24,20 @@ content_hash: sha256:4f76765e82eb17f1a9691b4bac8673ba98b4c024ee572b00f47d5ba7254
 2. 判断应用内所有界面退后台后，是否存在传感器没有关闭的行为
    * 方法一：通过DevEco软件日志栏中实时过滤(搜索栏支持正则匹配搜索)：(bundleName).\*open the sensor|(bundleName).\*close the sensor
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/GwqG6X9_SG2BWYmNpiHOlg/zh-cn_image_0000002555614824.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/GwqG6X9_SG2BWYmNpiHOlg/zh-cn_image_0000002555614824.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=27BDDFB0E8F45B91D23B842A2E20FFBE9C9F45C7B21873F85884E4BB0CC1A5DF "点击放大")
 
    * 方法二：本地使用命令行控制台实时过滤日志：hdc shell hilog | grep -i "(bundleName).\*open the sensor\|(bundleName).\*close the sensor"
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/khKtVAw5RTyCfpWamLKQYQ/zh-cn_image_0000002586174413.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/khKtVAw5RTyCfpWamLKQYQ/zh-cn_image_0000002586174413.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=8195DF98903657C054A47FAD09C453000E3A9BC397FA70C043AA2FEAEE10B876 "点击放大")
 3. 判断应用在后台是否存在长时任务
    * 过滤关键词：suspend\_manager.\*(bundleName)
      + 应用后台不存在长时任务
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/JI8ZpP-gRp2KudAVLz2R4g/zh-cn_image_0000002586294373.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/JI8ZpP-gRp2KudAVLz2R4g/zh-cn_image_0000002586294373.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A4A32CB6F162FBF2800BFD77493A8756E712F6EB150ADEB1E0958077FACD107 "点击放大")
 
      + 应用后台存在长时任务
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/TYEDRQ6BTv6Xes4_5Gw5VA/zh-cn_image_0000002555774456.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/TYEDRQ6BTv6Xes4_5Gw5VA/zh-cn_image_0000002555774456.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2100BE6B8C5598B8A755A1C521A7933E5966890454F131579E4C4983351D751 "点击放大")
 4. 如果存在应用退后台后还存在没有关闭的传感器，并且没有长时任务保活，需要进行优化，合理使用资源
    * 优化建议：在应用退后台后主动调用sensor.off关闭传感器
 
@@ -81,7 +81,7 @@ content_hash: sha256:4f76765e82eb17f1a9691b4bac8673ba98b4c024ee572b00f47d5ba7254
 2. 通过所有日志查看哪些传感器在退后台后没有关闭。
    * 过滤日志关键词：(bundleName).\*open the sensor|(bundleName).\*close the sensor
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/Ycf4trJpTOyEqpHTQX_fWQ/zh-cn_image_0000002555614826.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/Ycf4trJpTOyEqpHTQX_fWQ/zh-cn_image_0000002555614826.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=0141CA5B270A6B5A57ABC799AEE7C2E61CF46F167DA5CD50A9DFFE742E31B694 "点击放大")
 3. 如果存在应用退后台后还存在没有关闭的传感器，并且没有长时任务保活，需要进行优化，合理使用资源。
    * 优化建议：在应用退后台后主动调用sensor.off关闭传感器
 

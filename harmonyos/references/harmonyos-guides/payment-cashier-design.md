@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-cashi
 title: 收银台设计规范
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 收银台设计规范
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:31+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:b30ce879a7e1d4d119d02bc1485a55a88b0f1bc5bcae038503519e95b4cd9816
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:b30ce879a7e1d4d119d02bc1485a55a88b0f1bc5bcae038503519e95b4c
 
 实现效果如下（具体实现可参见[示例代码](https://gitcode.com/HarmonyOS_Samples/paymentkit-samplecode-uxcodeproject-arkts)）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/hdpH4N4ARUWyDV_z61_LBQ/zh-cn_image_0000002815559903.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/hdpH4N4ARUWyDV_z61_LBQ/zh-cn_image_0000002815559903.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5E12DEB4BC024A596B944B1E260A0EDD4F2B430C52AD25EB536E37E24CE9AAD)
 
 ## 定义收银台页面容器
 
@@ -164,7 +164,7 @@ export struct CashierComponent {
 
 **运行结果：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/gFrVO70oS-2Rl6TrqOxz5g/zh-cn_image_0000002815559903.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/gFrVO70oS-2Rl6TrqOxz5g/zh-cn_image_0000002815559903.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=05AB29C9CD0EFF95BF1BF281F474A5C28279A55A6E52A2FAC7AE689CFB44127B)
 
 ### 展示商户信息
 
@@ -251,7 +251,7 @@ export struct Amount {
 
 **运行结果：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/GAvxzGdtQR6KYjlE5FvRDw/zh-cn_image_0000002815399987.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/GAvxzGdtQR6KYjlE5FvRDw/zh-cn_image_0000002815399987.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6628B2EB9F06BB5717CB0D0BB328502F6800876E6D3D1DAA57B0A2D5BE119CC)
 
 ### 构造支付方式列表
 
@@ -512,7 +512,7 @@ select(paymentType: PaymentType) {
 
 **运行结果：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/kTa13GXxQRiuDGO3I-HHUQ/zh-cn_image_0000002786520412.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/kTa13GXxQRiuDGO3I-HHUQ/zh-cn_image_0000002786520412.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F6FDA449F529D2E20061732E52E395ED60D59F3A8D8262B73CA0F41C9EBF723)
 
 ### 添加支付按钮
 
@@ -589,7 +589,7 @@ export struct ConfirmButton {
 
 **运行结果：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/zmOWPVuFT8yy94UgharKbA/zh-cn_image_0000002786360484.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/zmOWPVuFT8yy94UgharKbA/zh-cn_image_0000002786360484.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=4150B8AD9D5508D5B3AB278742D0C589E194EB0B1B7AFAFB4B08DA55B14EFAAD)
 
 ## 页面数据定义
 

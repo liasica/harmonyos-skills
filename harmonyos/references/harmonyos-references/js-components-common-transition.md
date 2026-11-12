@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: 转场样式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 组件通用信息 > 转场样式
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:31+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:819d0eec4b3d7537e0ae8d4f038425ca50a0d00807816dfa83fd2956f3b338d2
 ---
@@ -35,7 +35,7 @@ content_hash: sha256:819d0eec4b3d7537e0ae8d4f038425ca50a0d00807816dfa83fd2956f3b
 
    **图1** 共享元素转场默认效果
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/zIKCpoitRGmRkaRsUYm-WQ/zh-cn_image_0000002815401239.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/zIKCpoitRGmRkaRsUYm-WQ/zh-cn_image_0000002815401239.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=C6214318483251A548E253AF077D220EB83025924EE3ADC75D5FE7ADE0CD0D10)
 3. 共享元素动画对元素的边框、背景色不生效。
 4. 共享元素转场时，由于页面元素会被隐藏，故页面元素配置的动画样式/动画方法失效。
 5. 动态修改shareid5+：若组件A的shareid被组件B的shareid覆盖，组件A的共享元素效果将失效。即使后续修改组件B的shareid，组件A的共享元素效果也不会恢复。
@@ -213,7 +213,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/2TWI2YUuSLWVNLf3d5c6zQ/zh-cn_image_0000002786521664.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/2TWI2YUuSLWVNLf3d5c6zQ/zh-cn_image_0000002786521664.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=7519DFCADEB70945E4950842A2CCD5AD438DDB1B30FC15330F0698EBDB5B8E77)
 
 ## 页面转场样式
 
@@ -234,11 +234,11 @@ export default {
 
    a. push场景下：进入页面栈的Page2.js应用transition-enter描述的动画配置；进入页面栈第二位置的Page1.js应用transition-exit描述的动画配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/W3L1Bt3NQ2GP5WZ154UpbQ/zh-cn_image_0000002786361736.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/W3L1Bt3NQ2GP5WZ154UpbQ/zh-cn_image_0000002786361736.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=6313B0184AF978AD27B84DDD72FF15A544AAF9699A5CD62CDEF54FE7D9377E0F)
 
    b. back场景下：退出页面栈的Page2.js应用transition-enter描述的动画配置，并进行倒播；从页面栈第二位置进入栈顶位置的Page1.js应用transition-exit描述的动画配置，并进行倒播。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/BLDwvEh4SMunhg8eN9CvcA/zh-cn_image_0000002815561157.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/BLDwvEh4SMunhg8eN9CvcA/zh-cn_image_0000002815561157.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=FEC3C3FDD6FFB5E075BF44D39CF0ED233F8295FDCF03D59767B2AA53D38CE750)
 
 ### 示例
 
@@ -377,4 +377,4 @@ Page1有一个不透明盒子，点击盒子会跳转到Page2，当点击Page2�
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/3w9yd3mASOiwd4mWFZZfqQ/zh-cn_image_0000002815401241.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/3w9yd3mASOiwd4mWFZZfqQ/zh-cn_image_0000002815401241.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=921D4346FC4BF4C31929201F5E105B2B5EF07656A22A3D48FFC65DDEF3166DDE)

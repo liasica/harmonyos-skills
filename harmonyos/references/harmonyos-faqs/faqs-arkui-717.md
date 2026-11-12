@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-717
 title: 实现在单行或多行文本后添加自定义标签
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 实现在单行或多行文本后添加自定义标签
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:a678a40cbc6a5b074cbe99e553b393f636a843066346a6ae0d1b80af6effc9aa
 ---
@@ -99,7 +99,7 @@ content_hash: sha256:a678a40cbc6a5b074cbe99e553b393f636a843066346a6ae0d1b80af6ef
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/XiBReb3TRi2hGNIuejuTNA/zh-cn_image_0000002628554920.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/XiBReb3TRi2hGNIuejuTNA/zh-cn_image_0000002628554920.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=18549EE2A20741E52F3639E0CC54AE5C6A12AAE8468FE3C6E462025903B027CD "点击放大")
 * **方案二**：
   1. 使用@Builder创建一个自定义的浮层组件OverlayNode。
   2. 使用overlay属性将浮层组件OverlayNode绑定到Text组件，并通过offset来控制浮层位置。
@@ -179,7 +179,7 @@ content_hash: sha256:a678a40cbc6a5b074cbe99e553b393f636a843066346a6ae0d1b80af6ef
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/i91HpLcrQ7eWEHvi3sRRJg/zh-cn_image_0000002658914237.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/i91HpLcrQ7eWEHvi3sRRJg/zh-cn_image_0000002658914237.png?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA1299D24C3DC293644345E3C6C9FA6F3D97E402E4847500216A27CC78BD2EF6 "点击放大")
 * **方案三**：
   1. 使用Text嵌套Span组件和ContainerSpan组件。
   2. 使用ContainerSpan组件嵌套Span组件，展示标签。
@@ -217,7 +217,7 @@ content_hash: sha256:a678a40cbc6a5b074cbe99e553b393f636a843066346a6ae0d1b80af6ef
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/Js7ogFOdQbWY9l_jUyFHIg/zh-cn_image_0000002628395020.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/Js7ogFOdQbWY9l_jUyFHIg/zh-cn_image_0000002628395020.png?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=22BFAAF4B5FE49A8D439645F51D30292CD3DE39DEBF62A5B424B96EEE140CB61 "点击放大")
 * **方案四：**
 
   使用Stack层叠布局，创建一个Text标签，通过rotate属性固定位置，实现自定义标签。

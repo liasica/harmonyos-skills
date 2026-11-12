@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-11
 title: 应用启动时页面周边有白边
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 应用启动时页面周边有白边
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:48+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:a6bcddc80cc3970e443845a63b4f79df7c8954f5e9dde9ac5d3c557af480541b
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:a6bcddc80cc3970e443845a63b4f79df7c8954f5e9dde9ac5d3c557af48
 
 应用启动时动效异常，启动图片未铺满屏幕，周边有空白。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/eEkPAfYKSya3JUJvNdPbyQ/zh-cn_image_0000002628789130.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/eEkPAfYKSya3JUJvNdPbyQ/zh-cn_image_0000002628789130.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBEFE2621027DD471A09402DEF2E71DD1FEA0D1D17E2F7322A1F216EBA43D0CE "点击放大")
 
 ## 背景知识
 
@@ -40,10 +40,10 @@ content_hash: sha256:a6bcddc80cc3970e443845a63b4f79df7c8954f5e9dde9ac5d3c557af48
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/OpcoYTVSTMWfO-D333TyIA/zh-cn_image_0000002658988441.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/OpcoYTVSTMWfO-D333TyIA/zh-cn_image_0000002658988441.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1228D2616CA47B4211109239EFA14F55EE9C480992D249CFAB949C1C1A03EFD "点击放大")
 2. 在系统设置中查看屏幕的尺寸，启动页图片的大小与屏幕尺寸不一致。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/hwxCcUeoTQWOzMwWVE-wlw/zh-cn_image_0000002628629220.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/hwxCcUeoTQWOzMwWVE-wlw/zh-cn_image_0000002628629220.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=B27551D21ECA180F1AF15C76CF11B62116564377EED238988673C2AD39E4F3C4 "点击放大")
 
 ## 分析结论
 
@@ -175,4 +175,4 @@ content_hash: sha256:a6bcddc80cc3970e443845a63b4f79df7c8954f5e9dde9ac5d3c557af48
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/El6Q2QwrRYSt5LBNOCiIjg/zh-cn_image_0000002658868495.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/El6Q2QwrRYSt5LBNOCiIjg/zh-cn_image_0000002658868495.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3E6685B80A1581DBA1A137D7E3D32423F894310DA94AC837DD143D51B11273D "点击放大")

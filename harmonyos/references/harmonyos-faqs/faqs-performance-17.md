@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 点击web页面分享按钮生成页面截图响应慢
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 点击web页面分享按钮生成页面截图响应慢
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:241d661967f7b651658e8fbfe241b373d554d72079aa8dbe296ce336a899d2dc
 ---
@@ -38,45 +38,45 @@ content_hash: sha256:241d661967f7b651658e8fbfe241b373d554d72079aa8dbe296ce336a89
 1. 使用ArkUI Inspector抓取显示页面截图的组件，发现该组件为Web，可知显示页面截图涉及到Web组件渲染输出。
 2. 使用DevEco Studio的ArkWeb分析抓取该过程的Trace信息，以应用收到手指离开屏幕事件的Trace关键字作为问题分析的起点。由于非连续不稳定的vsync信号不一定导致界面上的渲染行为，取问题分析终点为渲染服务render\_service连续稳定渲染的第一帧vsync信号。可得到如下分析结果，从图中可知响应时间为2.2s左右。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/oQkiSV-NSKuj-FQiS4lvjQ/zh-cn_image_0000002628555028.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/oQkiSV-NSKuj-FQiS4lvjQ/zh-cn_image_0000002628555028.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=971B067BDD7010655CCBF144567569D78EE24E85E048FCF317C68676E8F4E924 "点击放大")
 3. 由于Web页面的渲染绘制是由应用的render主线程触发，因此查看连续稳定渲染之前应用render主线的Trace信息，从图中可看到js编译与执行的Trace关键字，而在此之前render线程长时间处于sleeping状态，推测该截图信息不是由Web端生成，而是在ArkTS端。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/JDf2lrPdQp2E56vpD9JtNw/zh-cn_image_0000002628395124.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/JDf2lrPdQp2E56vpD9JtNw/zh-cn_image_0000002628395124.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=D76D4A7C8BDCE686E5CEE1C58409E930B2206B5B77402BE81EFC378E119BE99D "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/7oDXVYDLTjqKf2Af-gG14Q/zh-cn_image_0000002658914349.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/7oDXVYDLTjqKf2Af-gG14Q/zh-cn_image_0000002658914349.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=07BEF84A03B3508D9D54FB05F73B6CC760498F1A30D39CAEC3F5D9C1A8101E6B "点击放大")
 4. 由于Web网页显示内容会涉及到资源请求，在render线程的js编译与执行Trace关键字附近框选Trace信息，通过requestResource过滤，可看到应用有从沙箱目录中请求图片资源，查看设备目录下该图片资源，发现大小为6.9M。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/z5RwpTuSTW2i7f_SvrfYCg/zh-cn_image_0000002658794397.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/z5RwpTuSTW2i7f_SvrfYCg/zh-cn_image_0000002658794397.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E26F3A745BA63858C409B4B9E515BA0640F7884D56B6DFDB8B4F1B7F9A8EC27 "点击放大")
 
    点击render线程最左侧Running状态，通过WakeUp From Tid不断找唤醒线程，发现最终唤醒线程为应用主线程，可知render线程进行js编译与执行是由主线程触发的。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/Zgr8BQFhTZCYfTqZAPy2OA/zh-cn_image_0000002628555034.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/Zgr8BQFhTZCYfTqZAPy2OA/zh-cn_image_0000002628555034.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=42520C7EE212658F540D6C7E6DD50C3E583E06E7678C14AA6A77FE988BA9D36C "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/FFWpkJiNSKWlnImlVKxMCg/zh-cn_image_0000002628395132.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/FFWpkJiNSKWlnImlVKxMCg/zh-cn_image_0000002628395132.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A8E640375280B7BC8D71BF77B91EBD78E43F8AC35E4084F3E76FBD9DB1F9EB0 "点击放大")
 5. 找到上图红框中主线程最左侧的runnable状态，通过WakeUp From Tid发现主线程是由OS\_TaskWorker线程唤醒。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/Neaq_H0sRGKnCWH877ovbA/zh-cn_image_0000002658914355.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/Neaq_H0sRGKnCWH877ovbA/zh-cn_image_0000002658914355.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=2074534FE065DCA751B49C2C302077761C9A62B2F01E488C5541EDDFCEFCCDC7 "点击放大")
 
    点击上图中跳转箭头找到OS\_TaskWorker线程，该线程有执行PackToFile完成后的回调函数，[PackToFile](../harmonyos-references/arkts-apis-image-imagepacker.md#packtofile11)表示将图片数据编码进文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/KeZRu6cDRfyrBZhbWp46Zw/zh-cn_image_0000002658794403.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/KeZRu6cDRfyrBZhbWp46Zw/zh-cn_image_0000002658794403.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E2E61917E8D1ABB77DDAB9273C8FF3D3CA0A5ED84274174ED6C89C66F3F042E "点击放大")
 
    通过上图中H:Napi complete, name:PackToFile处左侧runnable状态找到执行PackToFile的线程，可看到PackToFile耗时1.28s左右，图片分辨率为3375x7825。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/w-FHuXXPRcmLZcwhTqYHQw/zh-cn_image_0000002628555040.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/w-FHuXXPRcmLZcwhTqYHQw/zh-cn_image_0000002628555040.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=C31BB57A8D7D6E8BC37BC5C865157ACDCF5B47BC0387E6C0ED532A12153CA980 "点击放大")
 
    根据runnable状态查找执行PackToFile的线程的唤醒线程，发现唤醒线程为OS\_TaskWorker线程，同时线程有执行screenshot截图，耗时为673ms左右。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/VF-xXUKASD-R_07KTTq2wA/zh-cn_image_0000002628395138.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/VF-xXUKASD-R_07KTTq2wA/zh-cn_image_0000002628395138.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=A44940C4571A60A2C04C811DE341A05327917F27A4B7A834D79BEE107C5617F1 "点击放大")
 
    通过Running状态发现OS\_TaskWorker线程的唤醒线程为应用主线程，可知应用收到点击事件之后，会通过taskpool执行生成截图的任务，首先截图，然后将截图数据编码到文件，保存到沙箱目录，最后通知到Web侧执行js代码，请求沙箱中的图片资源并将图片显示在Web页面中，该过程耗时主要集中在截图和数据编码到文件部分。
 6. 展开Callstack泳道，找到截图部分的调用栈，发现耗时较多为CoreCanvas::DrawImageRect，此处表示应用在Canvas画布上绘制图片。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/vEtbRkDMRQGvjjEfclfP5A/zh-cn_image_0000002658914361.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/vEtbRkDMRQGvjjEfclfP5A/zh-cn_image_0000002658914361.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF0C7502477C3869A5B49A337D51B009D6C179D8ECD63FE19289D995B40375A7 "点击放大")
 
    而图片编码处H:DoEncode部分，通过调用栈发现耗时主要集中在将图片编码进png格式文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/urQ8FiJ0S3avTkKBSRFvPg/zh-cn_image_0000002658794409.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/urQ8FiJ0S3avTkKBSRFvPg/zh-cn_image_0000002658794409.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=6AF00B26FCAAD645AE73B1F6FDFC973D13A634A91E901C9DB10C182D8A00B2CB "点击放大")
 
    截图、图片编码进png格式文件耗时较多是因为绘制、编码的图片分辨率较大，达到了3375x7825。
 

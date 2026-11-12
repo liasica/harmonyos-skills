@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/ability-kit-faq
 title: 通过Want调用其他应用打开文件常见问题
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 常见问题 > 通过Want调用其他应用打开文件常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:47+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:e43f02fb171f7b3f9a616480271cd832526e25922f3fe1e7503f0f636b632e61
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:e43f02fb171f7b3f9a616480271cd832526e25922f3fe1e7503f0f636b6
 
 效果示意如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/7jXRsdjWTfaeuI953bJenA/zh-cn_image_0000002800962283.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/7jXRsdjWTfaeuI953bJenA/zh-cn_image_0000002800962283.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1A0A22E69C73C1B5BFE3F6314D90FE5DE1B86E78F40733172111752286EA36C "点击放大")
 
 调用方
 

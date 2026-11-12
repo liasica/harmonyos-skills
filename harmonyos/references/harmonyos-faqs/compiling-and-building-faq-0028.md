@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/compiling-and-b
 title: 编译内存不足报错排查
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 常见问题 > 编译内存不足报错排查
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:b048ce8dc18d711eec57d1caf6efc66fe568e431a01754fe7a66b98c2a11abe0
 ---
 
 **Q：编译构建时，出现报错“JS heap out of memory”。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/yaASzJtNTey87vhWyStRPA/zh-cn_image_0000002773076174.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/yaASzJtNTey87vhWyStRPA/zh-cn_image_0000002773076174.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=B05F7452DA3FD5A4ED842660A1D3432739EBF65A2D86C1589DA126DCEC1A3254 "点击放大")
 
 **A**：出现该报错的原因是hvigor运行时内存不足。在使用Deveco Studio 5.0.0 Release及以上版本是时，可通过以下方式修改hvigor运行时内存的最大值。
 
 勾选 Enable the Daemon for tasks：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/g1kj2heiQ_u3f9KeqBIMuQ/zh-cn_image_0000002802275937.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/g1kj2heiQ_u3f9KeqBIMuQ/zh-cn_image_0000002802275937.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C4009BF905FE911A1C5603F04FB93CF7C3B37037C476A333A32580382A89A91 "点击放大")
 
 在hvigor-config.json5中修改maxOldSpaceSize字段，根据工程大小适当增大，例如设置为 8192。
 

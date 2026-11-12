@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-video-comp
 title: 基于Video组件播放短视频
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 基于Video播放视频系列开发实践 > 基于Video组件播放短视频
 category: best-practices
-scraped_at: 2026-11-10T10:42:03+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-26
 content_hash: sha256:c4198218dad9fca24504513e6418c7a0ec02ca96ae298f18bea34d07801b4594
 ---
@@ -26,7 +26,7 @@ content_hash: sha256:c4198218dad9fca24504513e6418c7a0ec02ca96ae298f18bea34d07801
 
 通过Video组件实现视频基础播放控制能力，包括播放视频、暂停播放等操作。实现效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/max4wIP0TtOclNWmypHLwQ/zh-cn_image_0000002555239530.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/max4wIP0TtOclNWmypHLwQ/zh-cn_image_0000002555239530.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=538E4D923AE073B84754C3D9C5120A51D526286886EC232DECED14D69581CEED "点击放大")
 
 ### 实现原理
 
@@ -42,7 +42,7 @@ content_hash: sha256:c4198218dad9fca24504513e6418c7a0ec02ca96ae298f18bea34d07801
 
 当用户需要全屏播放视频时，可以通过点击按钮全屏播放，或通过旋转设备进行横竖屏切换。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/ZQJvZYKdTp6sIY1IW7W-gg/zh-cn_image_0000002585679465.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/ZQJvZYKdTp6sIY1IW7W-gg/zh-cn_image_0000002585679465.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=E28658B921915422FCCF8158A5EFDFFF0592140A3D92A363A456D9EC021F7D24 "点击放大")
 
 ### 实现原理
 
@@ -65,7 +65,7 @@ content_hash: sha256:c4198218dad9fca24504513e6418c7a0ec02ca96ae298f18bea34d07801
 
 在用户上下滑动时，视频能快速切换到下一个或上一个，且加载和播放流畅、无卡顿。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/FHWFotKiRLKsfB7PiFkYhg/zh-cn_image_0000002555079910.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/FHWFotKiRLKsfB7PiFkYhg/zh-cn_image_0000002555079910.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC3991FED1F247D8D14C6207BA7B0E5A83E0CFC3EA4952BFF9FFBA61DCED9E83 "点击放大")
 
 ### 实现原理
 
@@ -96,7 +96,7 @@ content_hash: sha256:c4198218dad9fca24504513e6418c7a0ec02ca96ae298f18bea34d07801
 
 通过长按屏幕实现视频2倍速播放。如下图所示，长按触屏时，显示"2.0X快进中"，同时视频以2倍速进行播放；抬起后，视频以默认的1倍速进行播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/9isZ8Md2QMyq7en9Vm7wMw/zh-cn_image_0000002585799527.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/9isZ8Md2QMyq7en9Vm7wMw/zh-cn_image_0000002585799527.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D21C8F4EFABA153946EE72A534101A512295159AFF42C1D1192AA2E1D811F94 "点击放大")
 
 ### 实现原理
 
@@ -150,7 +150,7 @@ content_hash: sha256:c4198218dad9fca24504513e6418c7a0ec02ca96ae298f18bea34d07801
 
 应用从前台切到后台，再从后台切回前台时，能够保持原有进度继续播放原视频。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Gm95eGdlS6WGfG6T_35GNQ/zh-cn_image_0000002555239532.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Gm95eGdlS6WGfG6T_35GNQ/zh-cn_image_0000002555239532.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=F08875D85F2D1272C7B6210BA0D8FF92B649048075A3E0FB689747AEDAF91AC3 "点击放大")
 
 ### 实现原理
 
@@ -204,7 +204,7 @@ content_hash: sha256:c4198218dad9fca24504513e6418c7a0ec02ca96ae298f18bea34d07801
 
 音量设置在视频应用中是一种常见功能，允许用户在不离开视频播放界面的情况下，通过长按结合滑动手势即可调节音量，以获得更佳的观看体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/7ySp9K47QxqR0h5i5rMdmw/zh-cn_image_0000002585679469.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/7ySp9K47QxqR0h5i5rMdmw/zh-cn_image_0000002585679469.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=4881106FB6BB4C4DFEB43C212D077798910D47F1B35D176FAA27072DB6BF0627 "点击放大")
 
 ### 实现原理
 
@@ -277,7 +277,7 @@ content_hash: sha256:c4198218dad9fca24504513e6418c7a0ec02ca96ae298f18bea34d07801
 
 当前视频播放结束后，播放器将自动加载并播放下一个视频，无需用户手动操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/aNx7bDXqR_eW73HpfxBVjA/zh-cn_image_0000002555079912.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/aNx7bDXqR_eW73HpfxBVjA/zh-cn_image_0000002555079912.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=E387156661632E0DC3904A42D26F271798615A18C069D1F85AF9DFB3F2799CFE "点击放大")
 
 ### 实现原理
 

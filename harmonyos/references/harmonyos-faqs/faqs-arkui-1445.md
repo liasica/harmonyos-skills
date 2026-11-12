@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1445
 title: 使用属性动画和颜色渐变实现动态渐变色背景
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 使用属性动画和颜色渐变实现动态渐变色背景
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:45+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:e9b5f19266341bcac9836c4120ed2d363e226eb068a32fba6fe788951ecc8bfc
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:e9b5f19266341bcac9836c4120ed2d363e226eb068a32fba6fe788951ec
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/vDIPJ5b1R9G7KCASYRvmKQ/zh-cn_image_0000002658843527.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/vDIPJ5b1R9G7KCASYRvmKQ/zh-cn_image_0000002658843527.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F115D674BEB8C0E8817400C9761F7EE56EA66980C4125FE8624D33C72E4EC23 "点击放大")
 
 ## 背景知识
 

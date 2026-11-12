@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/code-precauti
 title: 应用升级过程代码开发注意事项
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用数据备份恢复 > 设备升级应用数据迁移适配指导 > 应用升级过程代码开发注意事项
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-05-18
 content_hash: sha256:d8233fe40ee7b5ac4f13a4a00eaac435dbf71db3c7f6f4e3df35214a66797fc3
 ---
@@ -86,7 +86,7 @@ export default class EntryBackupAbility extends BackupExtensionAbility {
 
 为解决该问题，系统提供数据迁移公共目录文件继承方案，支持应用将记录的HarmonyOS公共媒体库文件URI或者路径转换为对应的HarmonyOS NEXT公共媒体库文件URI或者路径，并且返回对应文件类型。当应用需要在HarmonyOS NEXT中访问公共媒体库中的文件时，可以使用转换后的HarmonyOS NEXT公共媒体库文件URI或者路径，通过HarmonyOS NEXT提供的公共媒体库API进行授权访问。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/-JIc2Q6nTsisrPfmiDU6jQ/zh-cn_image_0000002815558927.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/-JIc2Q6nTsisrPfmiDU6jQ/zh-cn_image_0000002815558927.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=54F53D533E7F7E61A4FF7B45E4D47DA411CC96232A5DBF491F06D13B05185E21)
 
 ### 代码实现
 

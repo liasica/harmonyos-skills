@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1136
 title: LazyForEach渲染的List列表上滑触发刷新动画
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > LazyForEach渲染的List列表上滑触发刷新动画
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:38+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:1a5f8e08537ceaf341284f7f61711815ae7d63231e3e93c251b8ec1f872b3fbc
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:1a5f8e08537ceaf341284f7f61711815ae7d63231e3e93c251b8ec1f872
 
 问题示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/iRQTIGr7SsWedXw6P_l8OQ/zh-cn_image_0000002628569432.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/iRQTIGr7SsWedXw6P_l8OQ/zh-cn_image_0000002628569432.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=B273C32446C7AFDA656BBF85A5EB043452900F030839C5A26454CA0C98A38988 "点击放大")
 
 ## 背景知识
 
@@ -271,7 +271,7 @@ struct LazyForEachListTransition {
 
 修正效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/XvqX8M4IQVaTETalhjZHCA/zh-cn_image_0000002628409532.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/XvqX8M4IQVaTETalhjZHCA/zh-cn_image_0000002628409532.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=0FC866C09AB4EB68A50ECA007F619E46C82A127F77393457AE0A5298B1C76FCA "点击放大")
 
 ## 总结
 

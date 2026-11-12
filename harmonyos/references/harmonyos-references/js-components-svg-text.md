@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: text
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > text
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:34+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:1c939e4813bed4ff115109c2f70594c9c1390df392850732f540ffc2d6505625
 ---
@@ -76,7 +76,7 @@ content_hash: sha256:1c939e4813bed4ff115109c2f70594c9c1390df392850732f540ffc2d65
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/9QJWnK6uRXmqyG0tX8nfxg/zh-cn_image_0000002786361804.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/9QJWnK6uRXmqyG0tX8nfxg/zh-cn_image_0000002786361804.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=2CE4B815AC0C0AA275CE1EA02B2DB9A7107DF752F538EBAC9199B1CDF88A32A4)
 
 属性动画示例
 
@@ -105,7 +105,7 @@ content_hash: sha256:1c939e4813bed4ff115109c2f70594c9c1390df392850732f540ffc2d65
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/-FM0TWbqQuyr_FlP9gKpcQ/zh-cn_image_0000002815561225.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/-FM0TWbqQuyr_FlP9gKpcQ/zh-cn_image_0000002815561225.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=03412904C20251844CBCA3310DE2CA68FE78AD7CA0E6127DF84FEE05F9234519)
 
 ```html
 <!-- xxx.hml -->
@@ -120,7 +120,7 @@ content_hash: sha256:1c939e4813bed4ff115109c2f70594c9c1390df392850732f540ffc2d65
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/em7mHdqXQya9tXEcHkb7Rg/zh-cn_image_0000002815401309.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/em7mHdqXQya9tXEcHkb7Rg/zh-cn_image_0000002815401309.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E5BB5B3595FEFC0A8D2B948004E3E6DF66E631A1C4EB711A16F38818B435466)
 
 ```html
 <!-- xxx.hml -->
@@ -139,4 +139,4 @@ content_hash: sha256:1c939e4813bed4ff115109c2f70594c9c1390df392850732f540ffc2d65
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/jiMtIGIHTpqQuE_7KgXR8A/zh-cn_image_0000002786521734.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/jiMtIGIHTpqQuE_7KgXR8A/zh-cn_image_0000002786521734.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B2D28456DCE92839A858C37B5DD04005B5442D4EE7B06EAD947F4BF44DB9B27)

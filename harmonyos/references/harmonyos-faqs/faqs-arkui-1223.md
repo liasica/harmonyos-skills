@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1223
 title: 如何实现单页面的沉浸式效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何实现单页面的沉浸式效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:31+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:d68b914ef0e75e93c28c88e4998550e3be38c84d2418debac763dbdbf23f217e
 ---
@@ -14,7 +14,7 @@ A页面没有设置沉浸式模式，B页面设置了沉浸式模式。在A页�
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/bLOSnUBxTQmF1-OESJBJSQ/zh-cn_image_0000002628594024.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/bLOSnUBxTQmF1-OESJBJSQ/zh-cn_image_0000002628594024.png?HW-CC-KV=V1&HW-CC-Date=20261112T233150Z&HW-CC-Expire=31536000000&HW-CC-Sign=11CB3E7C34A9686C119271DC7AC9B23ACEDE68092A43D19A50D74CE6F90434E4 "点击放大")
 
 ## 背景知识
 
@@ -105,7 +105,7 @@ A页面没有设置沉浸式模式，B页面设置了沉浸式模式。在A页�
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/1aC-DU_bTJGKXOmT93f11A/zh-cn_image_0000002628753920.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/1aC-DU_bTJGKXOmT93f11A/zh-cn_image_0000002628753920.png?HW-CC-KV=V1&HW-CC-Date=20261112T233150Z&HW-CC-Expire=31536000000&HW-CC-Sign=31E0809E12D445C7D906A098E43BAB34370FACADF1B4AFC5862F463AE7A25616 "点击放大")
 * **方案二**：使用expandSafeArea属性扩展安全区域的方案实现：
 
   单个页面实现沉浸式，优先考虑使用expandSafeArea属性扩展安全区域的方案实现，该方案只会影响当前组件的布局。PageThree页面：
@@ -163,7 +163,7 @@ A页面没有设置沉浸式模式，B页面设置了沉浸式模式。在A页�
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/MK07FreIQt2Tlg89vC7faA/zh-cn_image_0000002658953231.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/MK07FreIQt2Tlg89vC7faA/zh-cn_image_0000002658953231.png?HW-CC-KV=V1&HW-CC-Date=20261112T233150Z&HW-CC-Expire=31536000000&HW-CC-Sign=362EED513889586E24CF603951349F2CF8F91B5F23C4E1E4DE0C461A1E1DA0CE "点击放大")
 
 ## 常见FAQ
 

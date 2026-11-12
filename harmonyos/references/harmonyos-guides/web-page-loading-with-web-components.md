@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-page-load
 title: 使用Web组件加载页面
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > 使用Web组件加载页面
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:ea4020b31daa64b97ed4b67eb8dacf908f95b982897165b5e8c93469d6da60b1
 ---
@@ -72,7 +72,7 @@ struct WebComponent {
 
   **图1** 资源文件路径
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/RxcqI-NTT4aN3F4NHDvS2g/zh-cn_image_0000002786359442.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/RxcqI-NTT4aN3F4NHDvS2g/zh-cn_image_0000002786359442.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=2408B15C09858D7D69E4AFA3CDA55667FD43B4FCA5D77FB093F349BD5BC7646E)
 * 应用侧代码。
 
   ```typescript

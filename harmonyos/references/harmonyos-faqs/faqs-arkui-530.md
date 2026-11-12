@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-530
 title: 视频播放出现闪屏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 视频播放出现闪屏
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:27+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:19a7a017c440526ff4374e3a0a76e16c75be4ea3e859e7eb34728b17bf49b18b
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:19a7a017c440526ff4374e3a0a76e16c75be4ea3e859e7eb34728b17bf4
 
 当视频播放组件的生命周期开始时，界面短暂闪烁，出现其他视频中不期望出现的颜色。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Tpx3jaH1Q9eQl08Cz_evng/zh-cn_image_0000002658790425.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Tpx3jaH1Q9eQl08Cz_evng/zh-cn_image_0000002658790425.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=AED059DE2C408FFC781D0304378856BBE9CB4C647C6C2652AD08C56CC3C771A7 "点击放大")
 
 ## 背景知识
 
@@ -23,7 +23,7 @@ content_hash: sha256:19a7a017c440526ff4374e3a0a76e16c75be4ea3e859e7eb34728b17bf4
 
 1. 使用DevEco Testing查看问题组件，该组件为Video组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/VosjsfXjSLS_mEjmKWv75g/zh-cn_image_0000002628551064.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/VosjsfXjSLS_mEjmKWv75g/zh-cn_image_0000002628551064.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B1D594F27424C1EEE418EC33D66CD5970CC2319788781621AFA98CBA515D50F "点击放大")
 2. 查看该Video组件的设置，该Video组件未设置previewUri参数显示预览图。
 
    ```ts
@@ -228,4 +228,4 @@ struct Index {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/SYz-cFwMTbWMdGS74ZUgYg/zh-cn_image_0000002658910381.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/SYz-cFwMTbWMdGS74ZUgYg/zh-cn_image_0000002658910381.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=209E30CC76ADE4981D8D4699B2D908258CBE58FBA665651D1DFBC1BD13C0BD23 "点击放大")

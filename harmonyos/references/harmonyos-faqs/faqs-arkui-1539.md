@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1539
 title: 如何实现横向翻页效果的Grid
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现横向翻页效果的Grid
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:24+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:2421aa0a1839cb4415ce2fc95aaadc0513674b8738f2bbbb6c5f5d4dd7d15d72
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:2421aa0a1839cb4415ce2fc95aaadc0513674b8738f2bbbb6c5f5d4dd7d
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/bTELpLZEQ6q_3f9eeRDzNA/zh-cn_image_0000002658968433.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/bTELpLZEQ6q_3f9eeRDzNA/zh-cn_image_0000002658968433.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD2216D0DD2E48C9FDECB5BA5BEBDB1E892FADE0B4485800657FDBD386B23B2A "点击放大")
 
 ## 背景知识
 

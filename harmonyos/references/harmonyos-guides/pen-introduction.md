@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pen-introduct
 title: Pen Kit简介
 breadcrumb: 指南 > 系统 > 硬件 > Pen Kit（手写笔服务） > Pen Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:7d26cdf32596103479a2af825be34583ea8d702a57db045a4df07da73a6e23e7
 ---
@@ -28,13 +28,13 @@ Pen Kit（手写笔服务）是华为提供的一套手写套件，提供笔刷�
   + 手写波轮：从API版本26.0.0开始，新增环形工具栏，支持笔刷、笔宽、颜色、不透明度等属性的快速调节。通过轻捏手写笔笔身，隐藏原本工具栏，展开环形工具栏，再次轻捏笔身，隐藏环形工具栏。
   + 其他功能：撤销、重做、禁止手指书写。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/0CqRDnpSQoixU--prXkTcA/zh-cn_image_0000002815399283.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/0CqRDnpSQoixU--prXkTcA/zh-cn_image_0000002815399283.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD504FEE447E94C8670B6105842ADCE7664114FC4D2D024BCAF2D8EDD81A3F3F)
 
 ## 报点预测
 
 根据书写轨迹预测报点提前进行绘制，提高手写跟手性，手写套件已默认开启报点预测，您也可以在应用中单独集成报点预测功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/HBLzzP2URaSyEVrlblHJkQ/zh-cn_image_0000002786519708.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/HBLzzP2URaSyEVrlblHJkQ/zh-cn_image_0000002786519708.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=81A0BA9EC54D191ABCD8B8F35DAB1793C32BED1093D8446203255EFE13873E04)
 
 ## 一笔成形
 
@@ -47,13 +47,13 @@ Pen Kit（手写笔服务）是华为提供的一套手写套件，提供笔刷�
 | 多边形 | 三角形、矩形、平行四边形、菱形、正五边形、五角星形 |
 | 曲线 | 抛物线、带箭头抛物线（单向、双向） |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/tnWVWPa1Q2eWdoSQqoJOyQ/zh-cn_image_0000002786359780.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/tnWVWPa1Q2eWdoSQqoJOyQ/zh-cn_image_0000002786359780.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=34D1CCE8D666022ADA854AD88F2CA653F0F928EEE3E127C109631B2E56F7C197)
 
 ## 全局取色
 
 提供全屏取色基础能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/sFkSMjx6SbKNStcRGHQp1w/zh-cn_image_0000002815559201.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/sFkSMjx6SbKNStcRGHQp1w/zh-cn_image_0000002815559201.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=C65716E4D74E958E30BDB024CC2CD818BD0C042AD9A398C0C00EEDCE961F54AF)
 
 ## 手写交互
 

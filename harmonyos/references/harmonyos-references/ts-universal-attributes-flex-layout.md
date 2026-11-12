@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: Flex布局
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 布局与边框 > Flex布局
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-14
 content_hash: sha256:c183875bf044104fb709cdb5e8f018132b0be97d4d993ac99e4661ad28c200de
 ---
@@ -214,4 +214,4 @@ struct FlexExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/dkSWedFoQ_qIl1ivcP1R_Q/zh-cn_image_0000002786520916.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/dkSWedFoQ_qIl1ivcP1R_Q/zh-cn_image_0000002786520916.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B076F2B7F51895C543705B1228AA8182E20CA4C8AB145F35E367F5BC4AA1F8D)

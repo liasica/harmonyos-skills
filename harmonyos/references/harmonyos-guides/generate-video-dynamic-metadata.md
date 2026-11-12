@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/generate-vide
 title: 视频动态元数据生成
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 视频处理 > 视频动态元数据生成
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-04-30
 content_hash: sha256:c6bde535438815d915a578418104553fb2739e543acae59b8ecfc781682459cc
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:c6bde535438815d915a578418104553fb2739e543acae59b8ecfc781682
 
 该能力常用于视频编辑中，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/LTWM2CorRXmRocFZ8hoj4w/zh-cn_image_0000002786519896.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/LTWM2CorRXmRocFZ8hoj4w/zh-cn_image_0000002786519896.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=ACF4994E5C0D2C5D3E487FF011F4002A74D39A2861C2CF8036648E9A4A6304BD)
 
 ## 规格说明
 

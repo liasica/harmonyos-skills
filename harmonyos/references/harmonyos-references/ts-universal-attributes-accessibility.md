@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 无障碍属性
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 无障碍属性
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:d6775e8e71acd018443f34c0640f53b32e5ae939cc9c9337000aa96f1539c22f
 ---
@@ -994,7 +994,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/zCSuVNsSSkGpEqu-2V001w/zh-cn_image_0000002815400567.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/zCSuVNsSSkGpEqu-2V001w/zh-cn_image_0000002815400567.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C750F9089E8963AFD2151880FB727CE70D1451C6759784C5F55E65175C86BD1)
 
 ### 示例6（设置无障碍聚合功能下的子组件状态和操作接管功能）
 

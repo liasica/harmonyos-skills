@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-applicatio
 title: 应用切面编程设计
 breadcrumb: 最佳实践 > 应用架构 > 应用切面编程设计
 category: best-practices
-scraped_at: 2026-11-10T10:42:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-03
 content_hash: sha256:1b4ef50effacb10a4a721bb6e1db9dc7b951610979df3b87f55f1df093393207
 ---
@@ -32,24 +32,24 @@ HarmonyOS主要通过插桩机制来实现切面编程，并提供了[Aspect](..
 addBefore()、addAfter()、replace()接口的原理基于class的ECMAScript语义，即类的静态方法是类的属性，类的实例方法是类的原型对象(prototype)的属性。
 
 **图1** class的ECMAScript语义示意  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/LkCSHi7oRo6WVPhRFhf5tw/zh-cn_image_0000002380185801.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/LkCSHi7oRo6WVPhRFhf5tw/zh-cn_image_0000002380185801.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=A14494E00CB19EA635527979B2C40F2E0C81335A212752CDE782A088301A0A75 "点击放大")
 
 ### 原理解析
 
 类的实例有一个属性\_\_proto\_\_（称为原型），它是指向类的prototype的引用，如图2所示。实例调用方法时，会通过\_\_proto\_\_找到类的prototype，再在prototype中找到方法并执行。类的原型对象prototype被所有实例共享，因此修改原型对象中的方法会影响所有实例。
 
 **图2** 类的实例化示意  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/BHCnwrthQAa0ncnmQ966Yg/zh-cn_image_0000002346386188.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/BHCnwrthQAa0ncnmQ966Yg/zh-cn_image_0000002346386188.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA34E385B802C42FBB89EC93BEDEA9C373E34E0F0EDCC979F6A92092747CFFFC "点击放大")
 
 原型对象也有原型\_proto\_。类的继承通过原型实现。实例方法调用时，会在原型链上查找方法，找到后执行调用。具体如图3所示。
 
 **图3** 类的原型与继承  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/FtfuemEbRXmsrXH0GSN5Ww/zh-cn_image_0000002346386564.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/FtfuemEbRXmsrXH0GSN5Ww/zh-cn_image_0000002346386564.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=F507F81021E1DF50AA3C66865023F7C6317AC125065CA432C1EF7DC696FE1BA4 "点击放大")
 
 插桩和替换的操作是将回调参数与原方法组合成新函数，再用新函数替换原方法。具体如图4所示。
 
 **图4** 插桩和替换原理示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/C4ybHKuKTgOwdspzu5ejDA/zh-cn_image_0000002346546400.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/C4ybHKuKTgOwdspzu5ejDA/zh-cn_image_0000002346546400.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5F76B7421DC7D1F06F6B9B0632FB091D001D7F9DCC5372A727A6EA492839DE9 "点击放大")
 
 ### 接口原理的伪代码示例
 

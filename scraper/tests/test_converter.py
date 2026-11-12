@@ -26,10 +26,10 @@ def test_convert_api_html_drops_title_h1_shifts_headings_and_fixes_links():
     assert "## 概述" in md and "### 细节" in md
     assert "### 子节" in md and "[h2]" not in md
     assert "**说明**" in md and "note_3.0" not in md
-    assert "[视频](https://x/v.mp4)" in md
+    assert "[视频](https://x/v.mp4?HW-CC-Sign=1&HW-CC-Date=2)" in md
     assert "```typescript" in md
     assert "https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/y" in md
-    assert "HW-CC-Sign" not in md and "https://x/a.png?k=v" in md
+    assert "https://x/a.png?HW-CC-Sign=1&k=v" in md
     assert doc.breadcrumb == "指南 > 应用模型" and doc.doc_updated_at == "2026-08-29"
 
 

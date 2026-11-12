@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: List
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > List
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-30
 content_hash: sha256:3db59b9ee59869184e8636d9ac0f62e075a5fe2216181788958fcd8390b2704c
 ---
@@ -1721,7 +1721,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/9TCzALlZST-W_2WuGagTZA/zh-cn_image_0000002786521040.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/9TCzALlZST-W_2WuGagTZA/zh-cn_image_0000002786521040.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=1636E98BE8EFDB5F6BDDF73EF48342735C6DA27F2FDBE999EB0B92902F3B5C8C)
 
 ### 示例2（设置子元素对齐）
 
@@ -1777,7 +1777,7 @@ struct ListLanesExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/UqjoVFjrQ3--FSo0t-Zg9w/zh-cn_image_0000002786361112.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/UqjoVFjrQ3--FSo0t-Zg9w/zh-cn_image_0000002786361112.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=B740EE0DDFEA1713C49818CC10CFBDF7196617142071AC58A0682D42A22DAA15)
 
 ### 示例3（自定义编辑和删除模式）
 
@@ -1841,7 +1841,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/Bf0t7mr9RxKVQCa4N1aWZA/zh-cn_image_0000002815560533.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/Bf0t7mr9RxKVQCa4N1aWZA/zh-cn_image_0000002815560533.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEBF015C5689A8962E01CE7ABE90816FE900D63DDC67A31C0053E3B66A15B40B)
 
 ### 示例4（设置限位对齐）
 
@@ -1900,7 +1900,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/Ej23ntrDSGyxOWUUqrH2KQ/zh-cn_image_0000002815400617.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/Ej23ntrDSGyxOWUUqrH2KQ/zh-cn_image_0000002815400617.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=93C1EEA2196825051895F6EE2BC1497EB57B2C34CC9048EC34FCFF5A126239D3)
 
 ### 示例5（跳转准确）
 
@@ -1979,7 +1979,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/1iIDETG5Rpy3bLGdRwInSg/zh-cn_image_0000002786521042.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/1iIDETG5Rpy3bLGdRwInSg/zh-cn_image_0000002786521042.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=215C95FDAF26582C767BFFF3C80178B7EF96BB57A78766282DD2B1A23A761C4A)
 
 ### 示例6（获得子组件索引信息）
 
@@ -2141,7 +2141,7 @@ interface TimeTable {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/IHUjgfooS3euBxeErq37Xg/zh-cn_image_0000002786361114.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/IHUjgfooS3euBxeErq37Xg/zh-cn_image_0000002786361114.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=16E17680E1767917EDD229C9F671573D3ED0BF2146F4AAE986FFE1E8D9E5317B)
 
 ### 示例7（设置边缘渐隐）
 
@@ -2180,7 +2180,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/sIkcwRVdSvu1yHeSxpX_xw/zh-cn_image_0000002815560535.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/sIkcwRVdSvu1yHeSxpX_xw/zh-cn_image_0000002815560535.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B7C8D45259BA2178A1D0A11361102E034CC0CB2063093C24F44982BCD0F0765)
 
 ### 示例8（单边边缘效果）
 
@@ -2219,7 +2219,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/Y4isfzYnSgi3XDtI9n9S1A/zh-cn_image_0000002815400619.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/Y4isfzYnSgi3XDtI9n9S1A/zh-cn_image_0000002815400619.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=C46CC6B51A847BAA36180C52726C77513D8DAA1966A1ECD0E9438865749848EF)
 
 ### 示例9（设置折行走焦）
 
@@ -2266,7 +2266,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/7vtmE45qRMW3MJCOu3u_Xg/zh-cn_image_0000002786521044.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/7vtmE45qRMW3MJCOu3u_Xg/zh-cn_image_0000002786521044.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=8FAC5587C7769C2DDD68A78103E60B270580C73BEDDC662F5846FA9684137495)
 
 ### 示例10（设置显示区域外插入数据时，保持显示内容不变）
 
@@ -2312,7 +2312,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/R5GnaR_1TqCMJ3atMt7h_A/zh-cn_image_0000002786361116.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/R5GnaR_1TqCMJ3atMt7h_A/zh-cn_image_0000002786361116.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=FAA7EC3CEE8F923FA74E9DE9E44C7F5D26DEC5E742FA8F422796E53F936692F0)
 
 ### 示例11（设置滚动条的边距）
 
@@ -2356,7 +2356,7 @@ struct ListScrollBarMarginExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/zP5McpopRZqKLmmT4wL9GQ/zh-cn_image_0000002815560537.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/zP5McpopRZqKLmmT4wL9GQ/zh-cn_image_0000002815560537.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=CEEF5BB1438749EA6A36D640B06FF478B549A2E824E36179B3F55B21A541246B)
 
 ### 示例12（使用onMove进行拖拽）
 
@@ -2400,7 +2400,7 @@ struct ForEachSort {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/4HimGAGGQrC8W257kHV5dA/zh-cn_image_0000002815400621.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/4HimGAGGQrC8W257kHV5dA/zh-cn_image_0000002815400621.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=03FE63FCC7B3D7918A433F0A6F36ABF8DB70C65C5900A649B1E5295C8D458ADA)
 
 ### 示例13（基于断点配置lanes）
 
@@ -2442,15 +2442,15 @@ struct ListExample {
 
 List宽度属于sm及更小的断点区间时显示2列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/gc-Ds7GDSbKguZEz7_CpFA/zh-cn_image_0000002786521046.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/gc-Ds7GDSbKguZEz7_CpFA/zh-cn_image_0000002786521046.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA419C4EBC8BBDDC7AAFBF7815F02AE64285F1DE6C68D1DA50265E123604ECE2)
 
 List宽度属于md断点区间时显示3列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/uDrLBQKcTM-6WUvilifpTA/zh-cn_image_0000002786361118.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/uDrLBQKcTM-6WUvilifpTA/zh-cn_image_0000002786361118.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=22FC9A825C4752B39648816872F2CFA3E58296AE06C37FF59954CDCE651D2E78)
 
 List宽度属于lg及更大的断点区间时显示5列。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/fCqdl-QNTRagitK9nS3Xpw/zh-cn_image_0000002815560539.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/fCqdl-QNTRagitK9nS3Xpw/zh-cn_image_0000002815560539.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=292A75D6C5B681B924A0757CDBB78F606FEBB5ECE8F7F209960E44B5FBD04720)
 
 ### 示例14（获取内容总大小）
 
@@ -2512,7 +2512,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/pXPsoNPURemNFhdk15qGnQ/zh-cn_image_0000002815400623.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/pXPsoNPURemNFhdk15qGnQ/zh-cn_image_0000002815400623.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=1727D5A0F7388C05728BC366C72C7B92887EF7724623EDA7061CC2EA0A59B01C)
 
 ### 示例15（在两个列表之间实现拖拽功能）
 
@@ -2632,7 +2632,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/srnVJGC1Tti6n8Rl5X5VSQ/zh-cn_image_0000002786521048.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/srnVJGC1Tti6n8Rl5X5VSQ/zh-cn_image_0000002786521048.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B21B891486ACB08E5768CA4B80E492BC3972958F4C42BD35723CE55337DC151)
 
 ### 示例16（实现ListItemGroup中点击项的居中效果）
 
@@ -2741,7 +2741,7 @@ struct ContactsList {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/AmgvRtOTSRGDrfbkPA34NQ/zh-cn_image_0000002786361120.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/AmgvRtOTSRGDrfbkPA34NQ/zh-cn_image_0000002786361120.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=E980D164CD36C2D4AB7FA993939962364B1D8233E0EEF8889A3C37DA9A6F80D4)
 
 ### 示例17（设置多选聚拢动画）
 
@@ -2840,7 +2840,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/faLg-904StGQqTk8ooi94A/zh-cn_image_0000002815560541.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/faLg-904StGQqTk8ooi94A/zh-cn_image_0000002815560541.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=059CD97649388C011BA1470ED6400F3CA639C34191E8B590BC8C4E2B1AFD25E4)
 
 ### 示例18（设置滑动多选）
 
@@ -2916,4 +2916,4 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/U1z6YC5MT1WwDNPdkh6P4Q/zh-cn_image_0000002815400625.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/U1z6YC5MT1WwDNPdkh6P4Q/zh-cn_image_0000002815400625.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B0C9BD7894CD0AF023F634752F70BBE0C029B5B50CC0F2BF86E5B9F1619F6A8)

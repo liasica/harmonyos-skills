@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite-r
 title: 实时预览(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频编创 > 实时预览(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:48875d7ac05298c87a399aec0755823030c620cddd122fb45f8deadd1d29b508
 ---
@@ -42,7 +42,7 @@ target_link_libraries(entry PUBLIC libohaudiosuite.so)
 
 **图1**：实时预览示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/AuDrGgORQAqMPnYv_J_F1g/zh-cn_image_0000002786359854.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/AuDrGgORQAqMPnYv_J_F1g/zh-cn_image_0000002786359854.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC51F12ABAFF8D80A284D31B96DDC13CDAEC7C6E71C9565D43F067ADEB08EA8C)
 
 开发者可以通过以下步骤来实现一个简单的均衡器效果节点实时预览功能。此处以均衡器效果为例演示实时预览流程，其他效果节点的详细说明请参考[音频效果(C/C++)](audio-suite-effects.md)。
 

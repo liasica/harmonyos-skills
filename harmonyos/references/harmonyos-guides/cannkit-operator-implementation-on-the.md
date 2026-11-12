@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-opera
 title: Kernel侧算子实现
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC算子实现 > AscendC算子工程开发 > AscendC算子工程实现 > Kernel侧算子实现
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:a2f6412a10d72c2b91551ff8825d59679e2226060066f9a7be02790a9d972756
 ---
@@ -72,7 +72,7 @@ extern "C" __global__ __aicore__ void add_custom(GM_ADDR x, GM_ADDR y, GM_ADDR z
 
 在核函数所有输出的最后增加一个GM\_ADDR类型的输出参数，并在核函数计算完成后，将输出shape信息写入到该出参中。shape信息的排布格式如下，大小为**n \* (8 + 1)**，每个元素的数据类型为**uint64\_t**。其中n表示待刷新shape信息的输出个数，每个输出的shape信息都通过第1个元素来保存实际的shape维度(dim)，后续的8个元素来保存具体每个维度的shape信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/oKKi0K_9SkyK5zI9LUDnqg/zh-cn_image_0000002815560119.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/oKKi0K_9SkyK5zI9LUDnqg/zh-cn_image_0000002815560119.png?HW-CC-KV=V1&HW-CC-Date=20261112T233225Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8BD542B2FCA8EAA25D6FDF5F792EE8DC96CF680C5E1DFB80D83777B46845392)
 
 **说明** 
 

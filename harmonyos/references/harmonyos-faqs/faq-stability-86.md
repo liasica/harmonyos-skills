@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-8
 title: 如何检测资源泄漏问题
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > 如何检测资源泄漏问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-07
 content_hash: sha256:9bca36ac135eae26064105b5a6b6e8ba54c4c60ab8a5c029b3f49dfcabc0854a
 ---
@@ -35,23 +35,23 @@ content_hash: sha256:9bca36ac135eae26064105b5a6b6e8ba54c4c60ab8a5c029b3f49dfcabc
 
        1. 打开应用，通过hdc shell "hidumper -s WindowManagerService -a '-a'"获取当前应用的pid，如下图中可以看到pid为7066。
 
-          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/C63BUWHmRkiYX7lSAfItcQ/zh-cn_image_0000002628395024.png "点击放大")
+          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/C63BUWHmRkiYX7lSAfItcQ/zh-cn_image_0000002628395024.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=5EC9385F2BA5AE430ACF91BEB56B7DEC6FF62551A92A5923110AAA034CD5342A "点击放大")
        2. 输入hdc shell "hidumper --mem [pid]"查看应用的内存信息，在测试过程观察Pss（实际使用物理内存）Total一列的数据，是否存在持续增长未回落的情况。如下图中可以看到应用占用3494411KB的内存，主要为Native堆内存（3439852KB），存在Native堆内存泄漏问题。
 
-          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/eC4iy0d7QFO5xlcnSnwCGA/zh-cn_image_0000002658914243.png "点击放大")
+          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/eC4iy0d7QFO5xlcnSnwCGA/zh-cn_image_0000002658914243.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8369B69910824967B29F2FE58790C1F1B6E1B52A19356462FEBBB99C111D9D1 "点击放大")
 
        方式二：使用DevEco Profiler检测是否存在内存泄漏问题。
 
        启动应用，打开DevEco Profiler工具，选取应用后启动[实时监控](../harmonyos-guides/realtime-monitor.md)功能，执行测试步骤，查看Memory泳道应用内存变化情况，当一段时间内存不断上涨无回落或者内存占用增长多（比如达到3GB及以上），则可初步判断应用存在内存泄漏问题。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/aTeDMJ7-Que6SQuKz0Z6ng/zh-cn_image_0000002658794291.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/aTeDMJ7-Que6SQuKz0Z6ng/zh-cn_image_0000002658794291.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=49B876A95BE5DF62A84E30FCB6D8D760D9C56C5F4946473134194FA403CE344D "点击放大")
      + 线程泄漏：
        1. 打开应用，通过hdc shell "hidumper -s WindowManagerService -a '-a'"获取当前应用的pid，如下图中可以看到pid为7066。
 
-          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/gmn2JP6uQlizAOLK3jPduw/zh-cn_image_0000002628554930.png "点击放大")
+          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/gmn2JP6uQlizAOLK3jPduw/zh-cn_image_0000002628554930.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=93BC61DF85CDD832CA2AA5289C46B1C85E6E93DCA751BED5D08FF9B1D8C39C1E "点击放大")
        2. 通过hdc shell ps -T [pid]命令可以查看应用进程的线程信息，通过hdc shell "ps -T [pid] | wc -l"命令可以查看应用进程的线程总数，如下图中可以看到应用进程的线程总数为1619，超出了线程泄漏检测的阈值（700个）。
 
-          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/yWaGUpOFSueIESNgt8dH7Q/zh-cn_image_0000002628395030.png "点击放大")
+          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/yWaGUpOFSueIESNgt8dH7Q/zh-cn_image_0000002628395030.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=51D63543D2A0B2FDA446DC21E9B196E0CEBD77A58210B5C796EC625DC471C01F "点击放大")
      + 句柄泄漏：
 
        如检测应用是否存在文件句柄泄漏类问题，可参考文件句柄泄漏类问题检测方法中的[检测步骤](../best-practices/bpta-stability-file-handle-detection.md#section10763954174218)。
@@ -105,7 +105,7 @@ content_hash: sha256:9bca36ac135eae26064105b5a6b6e8ba54c4c60ab8a5c029b3f49dfcabc
           ```
        2. 启动应用后连续点击按钮多次，应用会闪退，重新打开应用后可以看到如下日志打印，resource\_type字段为js\_heap。
 
-          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/vMlQe2MQT_qTxu_9XRJ4BA/zh-cn_image_0000002658914247.png "点击放大")
+          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/vMlQe2MQT_qTxu_9XRJ4BA/zh-cn_image_0000002658914247.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C45E04062F0FC346F363CAE6AD7D61CD4B12C1323B089F593156F6122C6497C "点击放大")
      + Pss内存泄漏：
        1. 编辑工程中"entry > src > main > cpp > napi\_init.cpp"文件，新增TriggerPssLeak函数，在函数中启动一个线程去申请内存构造Pss内存泄漏。
 
@@ -161,11 +161,11 @@ content_hash: sha256:9bca36ac135eae26064105b5a6b6e8ba54c4c60ab8a5c029b3f49dfcabc
           ```
        4. 启动应用后点击按钮，使用Profiler的[实时监控](../harmonyos-guides/realtime-monitor.md)功能，通过Memory泳道确认应用当前占用内存3.3GB。
 
-          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/OE1nnZGURsOTk9sjRH-4mA/zh-cn_image_0000002658794295.png "点击放大")
+          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/OE1nnZGURsOTk9sjRH-4mA/zh-cn_image_0000002658794295.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D82575FA4721F4101E674AE5FB3C646478191F2E61DAEF9E71179A4AA500F59 "点击放大")
 
           等待15到30分钟左右，可以看到有如下日志打印，resource\_type字段为pss\_memory。同一个应用，24小时内至多上报一次资源泄漏事件，测试时可以通过重启设备来实现短时间内二次上报。
 
-          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/8SMhhfThToChrWfr9ajsNw/zh-cn_image_0000002628554932.png "点击放大")
+          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/8SMhhfThToChrWfr9ajsNw/zh-cn_image_0000002628554932.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=6679C742C8B0A20B311B833424D009EC5EAF795F866AD7C883F3AC13E9BF34E0 "点击放大")
      + Ion泄漏：
        1. 编辑工程中的"entry > src > main > ets > pages > Index.ets"文件，新增triggerIonLeak函数，创建多个像素图来构造Ion泄漏，添加按钮并在onClick函数中调用triggerIonLeak函数。
 
@@ -185,7 +185,7 @@ content_hash: sha256:9bca36ac135eae26064105b5a6b6e8ba54c4c60ab8a5c029b3f49dfcabc
           ```
        2. 启动应用后点击按钮，等待几分钟后可以看到如下日志打印，resource\_type字段为ion\_memory。如果长时间未看到相关日志打印，可以重启手机后重新执行该步骤。
 
-          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/jE2VcPBURXaXnYndenzbIw/zh-cn_image_0000002628395032.png "点击放大")
+          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/jE2VcPBURXaXnYndenzbIw/zh-cn_image_0000002628395032.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DEF8B7E8BD5411E37CCBC848A8FF5AF14F8B18C83D5265B40B523A71F760456 "点击放大")
      + 句柄泄漏：
        1. 编辑工程中的"entry > src > main > ets > pages > Index.ets"文件，新增triggerFdLeak函数，打开多个文件来构造句柄泄漏，添加按钮并在onClick函数中调用triggerFdLeak函数。
 
@@ -207,7 +207,7 @@ content_hash: sha256:9bca36ac135eae26064105b5a6b6e8ba54c4c60ab8a5c029b3f49dfcabc
           ```
        2. 启动应用后点击按钮，等待几分钟后运行hdc shell ls -l /data/log/reliability/resource\_leak/fd\_leak命令查看是否有应用进程的句柄泄漏日志生成（文件名为进程pid\_fd\_leak.txt）。如果有日志生成，将应用退出后重启，可以看到有如下日志打印，resource\_type字段为fd；如果长时间未看到句柄泄漏日志生成，可以重启手机后重新执行该步骤。
 
-          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/SmZFqIQtQvGhfXxYts5taA/zh-cn_image_0000002658914249.png "点击放大")
+          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/SmZFqIQtQvGhfXxYts5taA/zh-cn_image_0000002658914249.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB2FC5D966AA626E22613861DDD0389C34A60E69071DEAB1140BD10D3E9CB032 "点击放大")
      + 线程泄漏：
        1. 编辑工程中"entry > src > main > cpp > napi\_init.cpp"文件，新增TriggerThreadLeak函数，启动多个线程构造线程泄漏。
 
@@ -263,7 +263,7 @@ content_hash: sha256:9bca36ac135eae26064105b5a6b6e8ba54c4c60ab8a5c029b3f49dfcabc
           ```
        4. 启动应用后点击按钮，等待几分钟后可以看到有如下日志打印，resource\_type字段为thread。如果长时间未看到相关日志打印，可以重启手机后重新执行该步骤。
 
-          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/U9eXDklxQQee6MtmmIYoMA/zh-cn_image_0000002658794297.png "点击放大")
+          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/U9eXDklxQQee6MtmmIYoMA/zh-cn_image_0000002658794297.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=680BA58E822BB6FA9EE60EF0A5F616C6962FEB3E01EB71EB9A5710ECEB0376F2 "点击放大")
 
 完整代码如下：
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/certificate-f
 title: 证书算法库框架概述
 breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 证书算法库框架 > 证书算法库框架概述
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-16
 content_hash: sha256:5e1ec7dac383db699576f8d7cf3a46fd9afa64a57ec14b5dc446bee8e10017e8
 ---
@@ -38,19 +38,19 @@ content_hash: sha256:5e1ec7dac383db699576f8d7cf3a46fd9afa64a57ec14b5dc446bee8e10
 
 ### X.509证书的基本结构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/h76eg7E3SUeEBDMvdlmq_w/zh-cn_image_0000002786359652.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/h76eg7E3SUeEBDMvdlmq_w/zh-cn_image_0000002786359652.png?HW-CC-KV=V1&HW-CC-Date=20261112T233228Z&HW-CC-Expire=31536000000&HW-CC-Sign=93ECE8053F7E61A8684E299CBB89475C37A2DF0DE634C2294B500BE04EB1F4DF)
 
 样例证书文件：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/NujiunT2Thq2nDBg_YeTuA/zh-cn_image_0000002815559073.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/NujiunT2Thq2nDBg_YeTuA/zh-cn_image_0000002815559073.png?HW-CC-KV=V1&HW-CC-Date=20261112T233228Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F12D200EAAB5EDA8B7898D4EF207301548C0BE3725EA6322131983D0A29CC64)
 
 ### X.509证书吊销列表（CRL）基本结构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/nd98jWTmSJimqqfEBpnRLA/zh-cn_image_0000002815399157.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/nd98jWTmSJimqqfEBpnRLA/zh-cn_image_0000002815399157.png?HW-CC-KV=V1&HW-CC-Date=20261112T233228Z&HW-CC-Expire=31536000000&HW-CC-Sign=02C07BCB6C1E31C463B8A4432469938A08A0C5B4B521DC14E476D0A68B13D6CA)
 
 样例CRL文件：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/3moDqFp3RTCbVsAZbfEHQw/zh-cn_image_0000002786519582.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/3moDqFp3RTCbVsAZbfEHQw/zh-cn_image_0000002786519582.png?HW-CC-KV=V1&HW-CC-Date=20261112T233228Z&HW-CC-Expire=31536000000&HW-CC-Sign=36161AEE46883858759A6CC875A33EF400F9D7D755E7FA1E1FF572628C4FCBD5)
 
 ## 约束与限制
 

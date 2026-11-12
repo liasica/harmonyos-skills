@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-shadow-
 title: 阴影
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 动画效果 > 阴影
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:15+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:82772d5832664a20524212a819f2fc0af5c611cf9b02f71487932280906e198a
 ---
@@ -57,4 +57,4 @@ struct ShadowOptionDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/1Fawyk8OSDapa7WMIQ9xSw/zh-cn_image_0000002815398677.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/1Fawyk8OSDapa7WMIQ9xSw/zh-cn_image_0000002815398677.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=5AA557B664C86C3739B8D527D55B2CA74282E45315F48B555D66012344D74C03)

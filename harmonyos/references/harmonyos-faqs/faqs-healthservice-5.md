@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-healthserv
 title: 运动健康无法获取数据常见问题和解决方案
 breadcrumb: FAQ > 应用服务开发 > 运动健康数据服务（Health Service Kit） > 运动健康无法获取数据常见问题和解决方案
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:48+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
-content_hash: sha256:e839023caf236f5d2a33b649ccf03ef5a7f1d702910f65f9c487f64f4aeacc23
+content_hash: sha256:33e946d884fefd671b42f6cd02a708edd1657133009177966a46423017e14424
 ---
 
 ## 问题现象
@@ -34,7 +34,7 @@ content_hash: sha256:e839023caf236f5d2a33b649ccf03ef5a7f1d702910f65f9c487f64f4ae
 
   登录[开发者联盟网站](https://developer.huawei.com/consumer/cn/)，单击进入“HarmonyOS 开发者中心”。在应用服务中，单击Health Service Kit卡片申请Health Service Kit服务，同意协议后，进入数据权限申请页面，确保使用权限scopes已勾选申请，应用内使用申请权限对照[权限说明](../harmonyos-guides/health-permission-description.md)。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/IOHG2H73TzKIZirgaehq6A/zh-cn_image_0000002661377573.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/4VtgXDy1S5mmriZAgh9YCg/zh-cn_image_0000002661377573.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=26E71C7B565842F40F842C81D0629017A0E52812420A0C4409198CE85B9C0C80 "点击放大")
 
   更多错误码请参考[ArkTS API错误码](../harmonyos-references/errorcode-healthservice.md)。
 * 问题二：说明没有正确配置client\_id，将client\_id(xxxxxxx)配置到‘\entry\src\main\module.json5’文件中再次尝试，参考[配置Client ID](../harmonyos-guides/health-configuration-client-id.md)。

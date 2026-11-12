@@ -3,27 +3,27 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-arkui-sta
 title: 查看ArkUI状态变量
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > 查看ArkUI状态变量
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:03+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-08
 content_hash: sha256:8c3c1696f1e1663b33ca2c22e3ffd400f35ae9aa0183973c3a89a47544472857
 ---
 
 从DevEco Studio 6.0.2 Beta1版本开始，支持在调试时查看ArkUI状态变量的实时变化情况。
 
-在调试窗口中，点击**Layout Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/uG-pv18DT7yYuEp8i1XRNQ/zh-cn_image_0000002808766215.png)，勾选**ArkUI State**，打开ArkUI状态变量面板。
+在调试窗口中，点击**Layout Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/uG-pv18DT7yYuEp8i1XRNQ/zh-cn_image_0000002808766215.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F930F7C0FB4DB290A6133C19D4D54CAC7B8EBF09B041604F9EE0548FA502555)，勾选**ArkUI State**，打开ArkUI状态变量面板。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/jz9Gv8oeTZCQW80N5pes2A/zh-cn_image_0000002808886299.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/jz9Gv8oeTZCQW80N5pes2A/zh-cn_image_0000002808886299.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB3C860FF25AF13214786DCE2EB4D7EA76354D696D174258508DE5642859C8F0)
 
 状态变量面板分为总览（Summary）和当前值（Current Value）两个子面板：
 
 * 总览面板显示了当前应用运行时，状态变量更新的总体情况，包含了状态变量的名称、更新次数、装饰器类型、所属组件、所属类、当前值。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/ZnvYpiRXT8OYKXNryc68IQ/zh-cn_image_0000002808766221.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/ZnvYpiRXT8OYKXNryc68IQ/zh-cn_image_0000002808766221.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=FAE054D4365CDD71D23D7525F666F247F7157C67B54AE2478E51BF2721CCD91A)
 * 当前值面板记录了状态变量实时变化的数据，包含了状态变量的更新时间、名称、所属组件、所属类、装饰器类型、当前值、影响的组件数量。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/cLk3NxlhQkSFafzj9qM_aA/zh-cn_image_0000002808886295.png)当点击右侧的箭头时，新弹出的面板将显示当前选中状态变量影响的组件列表，包含影响组件的组件名、组件ID、是否为自定义组件。
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/cLk3NxlhQkSFafzj9qM_aA/zh-cn_image_0000002808886295.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=972D37EDE870883B75F041A1877F83430EC08B3E3EAF35FE2B461ECDCD9094E7)当点击右侧的箭头时，新弹出的面板将显示当前选中状态变量影响的组件列表，包含影响组件的组件名、组件ID、是否为自定义组件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/WP3ryBHbRJ21_zoNUdVRqg/zh-cn_image_0000002808886297.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/WP3ryBHbRJ21_zoNUdVRqg/zh-cn_image_0000002808886297.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BDBE590D2B86B53CC560C851EDFC078903A0D396841625397D6B4A648096E83)
 
 **说明** 
 

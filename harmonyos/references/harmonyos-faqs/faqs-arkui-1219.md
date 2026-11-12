@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1219
 title: 如何使用小九宫格展示PatternLock控件的解锁轨迹
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何使用小九宫格展示PatternLock控件的解锁轨迹
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:10f75b451522a0b3c8842118be74862f5da070a5d54cc579d6959ea5085d0e1e
 ---
@@ -14,11 +14,11 @@ content_hash: sha256:10f75b451522a0b3c8842118be74862f5da070a5d54cc579d6959ea5085
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/DndgoLJLTpmQc8r3_vE6Iw/zh-cn_image_0000002658953227.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/DndgoLJLTpmQc8r3_vE6Iw/zh-cn_image_0000002658953227.png?HW-CC-KV=V1&HW-CC-Date=20261112T233150Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D8DA181B27408BA6100A5CC7FFB4C6B88DC95707A2D34CC4FDB135B133FFD10 "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/kma-fipWR3uWBGYFCyaWWQ/zh-cn_image_0000002658833269.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/kma-fipWR3uWBGYFCyaWWQ/zh-cn_image_0000002658833269.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233150Z&HW-CC-Expire=31536000000&HW-CC-Sign=482237960AC577F3F708090E49E67D1BDC7A05163BE04A7293056937BCE01969 "点击放大")
 
 ## 背景知识
 

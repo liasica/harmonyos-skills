@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-fa
 title: Tabs组件常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > Tabs组件常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:32+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:86e21cab7856ca5f0a89bd0c3693dd95c738ea6263452e033ff22b34e49911f4
 ---
@@ -70,7 +70,7 @@ content_hash: sha256:86e21cab7856ca5f0a89bd0c3693dd95c738ea6263452e033ff22b34e49
 
   参考图如下所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/VpCWIZTMQwu2devCdoXXiw/zh-cn_image_0000002801204549.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/VpCWIZTMQwu2devCdoXXiw/zh-cn_image_0000002801204549.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD39AE37DCB5C92C9F84D19AAE90EE6FDCD51600BAEAE2DB8C196D9AC232D15C "点击放大")
 * 方案二：安全区域拓展实现沉浸式。
 
   Tabs的expandSafeArea属性具有默认值，默认对底部导航条实现沉浸式效果，本文设置expandSafeArea属性为expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM])，将组件的安全区域延伸至状态栏和导航条区域，同时保持子组件在安全区内布局，对子组件TabContent设置expandSafeArea时，可实现对指定页签内容实现沉浸式。代码如下：
@@ -126,7 +126,7 @@ content_hash: sha256:86e21cab7856ca5f0a89bd0c3693dd95c738ea6263452e033ff22b34e49
 
   参考图如下所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/za2OO5YSTYOyWone7FLiHQ/zh-cn_image_0000002771924890.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/za2OO5YSTYOyWone7FLiHQ/zh-cn_image_0000002771924890.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=47D59B952430E61C14C112C28E5A24444E0B77F58709FBE2503053A981EAE2C2 "点击放大")
 * 方案三：设置页面沉浸。
 
   对Tabs组件设置ignoreLayoutSafeArea属性并设置高度为LayoutPolicy.matchParent，页面背景与布局均扩展至顶部状态栏和底部导航条。代码如下：
@@ -244,7 +244,7 @@ content_hash: sha256:86e21cab7856ca5f0a89bd0c3693dd95c738ea6263452e033ff22b34e49
 
      参考图如下所示：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/JMaqcHl0S2CSGtjsAg8WHA/zh-cn_image_0000002771925790.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/JMaqcHl0S2CSGtjsAg8WHA/zh-cn_image_0000002771925790.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=18AA8E2AE2DE4F8D418E6ECCB3DA5A25BDED235EF56E1296FB2F300C9ABB29F8 "点击放大")
 * 方案四：设置窗口沉浸。
 
   调用aboutToAppear，在执行build()函数前，设置主窗为沉浸式布局，可实现对整个应用实现沉浸式效果。代码如下：
@@ -321,7 +321,7 @@ content_hash: sha256:86e21cab7856ca5f0a89bd0c3693dd95c738ea6263452e033ff22b34e49
 
   参考图如下所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/V6L-tZ3QSweM7MSCmTexFw/zh-cn_image_0000002801085839.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/V6L-tZ3QSweM7MSCmTexFw/zh-cn_image_0000002801085839.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=A85A46079FCF8435752D5BBB0532E3531F6CF1A76D96A2C2F804FBF111610ABB "点击放大")
 
 **Q：设置沉浸式时，如何将TabBar隐藏？**
 

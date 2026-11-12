@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1406
 title: NavPathStack跳转不存在页面时重定向
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > NavPathStack跳转不存在页面时重定向
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:37+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:84ff7b5fdbad1ba62c19949b9b714415a5b14ffd80bad883bbdab8c202ccc6e2
 ---
@@ -14,7 +14,7 @@ NavPathStack跳转不存在的页面如何能拦截，然后重定向到一个�
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/PdaqSjkjS921tGxGFWci0Q/zh-cn_image_0000002628603240.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/PdaqSjkjS921tGxGFWci0Q/zh-cn_image_0000002628603240.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=D516E13FCD4F97FB573E41B1D664239CE0040A5A7012D5AC79AE297BEB2018B3 "点击放大")
 
 ## 背景知识
 

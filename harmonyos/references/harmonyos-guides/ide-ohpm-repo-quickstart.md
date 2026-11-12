@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: 快速开始
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 快速开始
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:d60af413a42c89680c71a10a607b5507a31188de2dad4495e25671570d3961fe
 ---
@@ -25,7 +25,7 @@ ohpm-repo私仓不允许在Linux或macOS系统中使用root用户启动，请使
 2. 下载ohpm-repo私仓工具包。请在[下载中心](https://developer.huawei.com/consumer/cn/download/ohpm-repo)获取最新的ohpm-repo，并根据下载中心页面**工具完整性**指导进行完整性校验。
 3. 解压ohpm-repo私仓工具包。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/eUO8j_DLTXadOgeyrh0Hzw/zh-cn_image_0000002779405068.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/eUO8j_DLTXadOgeyrh0Hzw/zh-cn_image_0000002779405068.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=15A9923A2470FBD36798FC5F7ADDC25D65776645EBEC733C22C05DA7A1E251BC)
 4. 请将ohpm-repo工具包解压目录中bin目录的路径配置到[系统环境变量](ide-ohpm-repo-faq.md#section1270373714319)path中，执行如下查询命令:
 
    ```screen
@@ -74,7 +74,7 @@ ohpm-repo私仓不允许在Linux或macOS系统中使用root用户启动，请使
 
     结果实例：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/qWI9iVHLSGOyB_oIZrbFyA/zh-cn_image_0000002779405076.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/qWI9iVHLSGOyB_oIZrbFyA/zh-cn_image_0000002779405076.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADF40FA90707C24DCE1013CE61791EBB335F81CCC1506B0947C8EF284A3AA365 "点击放大")
 11. 安装成功后，**必须**根据给出的提示信息刷新部署目录的环境变量，针对Windows系统和Linux/Mac系统，有不同处理方式：
     * Windows系统：关闭当前窗口，重新开启一个窗口。
     * Linux/Mac系统：在命令行中执行刷新命令：当shell为bash时执行*source ~/.bashrc*或者.*~/.bashrc*；当shell为zsh时执行*source ~/.zshrc*或者. *~/.zshrc*。
@@ -89,7 +89,7 @@ ohpm-repo start
 
 启动成功，将会出现以下日志信息：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/RdUZtDeaQh2TRIQEtngK-Q/zh-cn_image_0000002779565034.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/RdUZtDeaQh2TRIQEtngK-Q/zh-cn_image_0000002779565034.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=90CF2AD5C9491DE665934D40CD4517319B7AB5AE4C013923C1064A847090F1BA "点击放大")
 
 **说明** 
 
@@ -147,7 +147,7 @@ ohpm install @ohos/lottie --registry <配置的ohpm-repo私仓服务地址>/repo
 
 2. 登录ohpm-repo私仓管理地址，单击主页右上角的个人中心 > 认证管理，新增公钥，将公钥文件（<your\_key\_path>.pub）的内容粘贴到公钥输入框中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/jODhPP9vQXa_us_dykRuBA/zh-cn_image_0000002779405062.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/jODhPP9vQXa_us_dykRuBA/zh-cn_image_0000002779405062.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=980DC2D8186A7BCBE048DF7ABB1F2BD54D6710D8EAC497FDC497B8352E78CA8D "点击放大")
 
 3. 打开命令行工具，执行如下命令设置私钥路径。
 
@@ -157,7 +157,7 @@ ohpm install @ohos/lottie --registry <配置的ohpm-repo私仓服务地址>/repo
 
 4. 登录ohpm-repo私仓管理地址，单击主页右上角的个人中心，复制发布码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/zzan18HmQQOWl-L6m_JIrQ/zh-cn_image_0000002779565048.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/zzan18HmQQOWl-L6m_JIrQ/zh-cn_image_0000002779565048.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=705E4013736162CAA204FA98DF7892FB207480C64F0A6C57D4C3BC3EC138D521 "点击放大")
 
 5. 将发布码配置到.ohpmrc文件中，可执行如下命令：
 
@@ -208,6 +208,6 @@ ohpm install @ohos/lottie --registry <配置的ohpm-repo私仓服务地址>/repo
 
 在Web页面用管理员账号登录ohpm-repo私仓管理地址，在个人中心 > 仓库管理中，点击管理三方包 > 上传三方包，包的后缀名必须为.har或者.tgz。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/R110UB7rSuKRaNai3TABpg/zh-cn_image_0000002779565040.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/R110UB7rSuKRaNai3TABpg/zh-cn_image_0000002779565040.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=1082A286FA9B5F9A380A3DB755C5A4C5815F38103C913DDAB2C103AEA967F9A0 "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/1uM9NZ1GQrelcNdDYnEm6w/zh-cn_image_0000002808884711.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/1uM9NZ1GQrelcNdDYnEm6w/zh-cn_image_0000002808884711.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=7FA3CE86E50E421DFCA2DD37D17AE32E67BF62026DCE636661B54B2BA4D4D240 "点击放大")

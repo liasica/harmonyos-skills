@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-debu
 title: 汇编调试
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 汇编调试
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-08
 content_hash: sha256:166f14cb827802b2ed86ffd1278a388399c579512e8c3a56cfc94f55ff81507c
 ---
@@ -14,14 +14,14 @@ content_hash: sha256:166f14cb827802b2ed86ffd1278a388399c579512e8c3a56cfc94f55ff8
 
 在某一个堆栈处右键，在弹出菜单中选择**打开反汇编视图**，可以查看该栈帧对应的汇编码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/QBQZu2BESYiP3TBunoyHZA/zh-cn_image_0000002781311068.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/QBQZu2BESYiP3TBunoyHZA/zh-cn_image_0000002781311068.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1E691AAD4A8E480E083841260E87754775D11ECC4EB78AD41CEDB3A8806DEE3)
 
 汇编视图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/b1tzKXgxS8COhWIIMEcpnQ/zh-cn_image_0000002781471002.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/b1tzKXgxS8COhWIIMEcpnQ/zh-cn_image_0000002781471002.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=41E1A77624E7F7EA8F3F99DA139662A5C04297F354CA46D47B1103CCC0E80E04)
 
 ## 单步调试
 
 汇编视图下，单步按钮默认以汇编指令级别进行单步调试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/ExrIRMarQIGD-TWeIrrCuA/zh-cn_image_0000002810750665.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/ExrIRMarQIGD-TWeIrrCuA/zh-cn_image_0000002810750665.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=63FD93C38BB7268A66993C55F78362A103647D92DF9CEC5F5CC1170B38363182)

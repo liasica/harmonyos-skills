@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: XComponentNode
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 已停止维护的接口 > XComponentNode
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:02+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:9a4f436e433684f2d5deb6568ab903a113fe2334b489f9d40919677b9993ca78
 ---
@@ -158,4 +158,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/QSaB_bq0Rh2OSVmh6dyOtw/zh-cn_image_0000002786360950.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/QSaB_bq0Rh2OSVmh6dyOtw/zh-cn_image_0000002786360950.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=C52CEC717CF15C25642C4EEA7BB398967B8B2661B71E3B1001730E7D18B1FCEC)

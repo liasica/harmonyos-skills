@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1402
 title: 如何解决NavDestination切换页面后浏览位置无法保存问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决NavDestination切换页面后浏览位置无法保存问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:37+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-13
 content_hash: sha256:56e5db672f69a4f37324753dfcafdbb0d7f6ff653576f4f35932728a9fd52552
 ---
@@ -140,7 +140,7 @@ content_hash: sha256:56e5db672f69a4f37324753dfcafdbb0d7f6ff653576f4f35932728a9fd
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/cJRE_p_eR1erynN8n_8s4g/zh-cn_image_0000002628763134.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/cJRE_p_eR1erynN8n_8s4g/zh-cn_image_0000002628763134.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA389932634C07569CB309CE86411C872F092A006A80AA0E0033D569F70EFE1F "点击放大")
 * **方案二**：手动保存与恢复滚动状态。
 
   若必须销毁页面，可通过以下步骤实现状态持久化：
@@ -285,7 +285,7 @@ content_hash: sha256:56e5db672f69a4f37324753dfcafdbb0d7f6ff653576f4f35932728a9fd
 
      效果预览：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/dd4Y4YNOSgus6sAIH3tqsg/zh-cn_image_0000002658962449.gif "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/dd4Y4YNOSgus6sAIH3tqsg/zh-cn_image_0000002658962449.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=65EEBE671B41CD4394F833DB67799A68F2D27D94C07011AC605FF21FA4E7D3ED "点击放大")
 
 ## 常见FAQ
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/task-pool-usa
 title: TaskPool使用规范
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 多线程并发 > TaskPool使用规范
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:03+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-26
 content_hash: sha256:ef7bba17386cabd86d011045ded0b5df6dc95acaf3929cd3d20bd5edafa44141
 ---
@@ -22,7 +22,7 @@ content_hash: sha256:ef7bba17386cabd86d011045ded0b5df6dc95acaf3929cd3d20bd5edafa
 
 在工程中导入文件和HAR时，某些文件使用了如[@Observed装饰器和@ObjectLink装饰器：嵌套类对象属性变化](../doccenter-capabilities/arkts-observed-and-objectlink.md)、[AppStorage：应用全局的UI状态存储](../doccenter-capabilities/arkts-appstorage.md)等UI装饰器或状态变量，这些UI装饰器或状态变量即使没有被显式调用也可能会被解析执行。然而目前子线程并不支持UI属性，当解析到这些UI装饰器或状态变量时，会抛出异常并返回，导致本模块的解析会被中断。访问这些包含UI的文件中的某些变量时可能会抛出错误：xxx is not initialized，导致功能失效甚至crash。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/pnP63h2rTlKjUKnIBzZJ9A/zh-cn_image_0000002786358450.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/pnP63h2rTlKjUKnIBzZJ9A/zh-cn_image_0000002786358450.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=02765F3366C2290928F30AAA1DA303B7710C9E5DF020B66E35DAF7E8464C7DE7)
 
 另外在一些复杂项目中，即使本模块未发生改动，也可能由于SDK或其他依赖模块发生变更而导致该问题。此类问题排查起来较为困难，因此推荐在开发和迭代阶段就做好相应的约束和验证。
 
@@ -145,7 +145,7 @@ taskpool.execute(correctConcurrentFunc)
 
 因此，当开发者有监听需求时，推荐使用长时任务，主动管理任务所在线程的生命周期。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/dLXSGy9dTc-QcTuACL7vbw/zh-cn_image_0000002815557871.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/dLXSGy9dTc-QcTuACL7vbw/zh-cn_image_0000002815557871.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=97D2AE3069FE6C3980419FC9666A6E00FDC5DB2545E33D050ED5CFB9DB9F68DA)
 
 **反例**
 
@@ -237,7 +237,7 @@ TaskPool提供了支持TaskPool子线程和宿主线程通信的接口[sendData(
 
 如果有需要，推荐使用emitter，emitter能够方便地实现宿主线程和子线程之间的双向通信。另外emitter的on()接口具有监听性质，在没有取消注册的情况下，能在任意时间被触发，因此需要在LongTask中注册。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/PsnhGCMiTX-vYUjd0TXMXw/zh-cn_image_0000002815397955.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/PsnhGCMiTX-vYUjd0TXMXw/zh-cn_image_0000002815397955.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=2589C73BF30714CC2198593B5762F62E2BF8A5E839815FE1BD456C050E6EC598)
 
 **反例**
 
@@ -326,7 +326,7 @@ taskpool.execute(task)
 
 在合适的场景下也可以使用[SequenceRunner](../harmonyos-references/js-apis-taskpool.md#sequencerunner11)()等API，以避免短时间内大量任务连续进入任务池，使线程数瞬间提升到最大。主线程连续处理大量任务密集返回时的回调和微任务会阻塞UI，影响用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/DaP1X1BJTYqRfKy2A3gYvw/zh-cn_image_0000002786518380.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/DaP1X1BJTYqRfKy2A3gYvw/zh-cn_image_0000002786518380.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=71D19D81831CA0F9218060E9CE2B4E302687702CE0C358EA242E0FF2A2BEB8AC)
 
 ```ts
 // Sample5.ets

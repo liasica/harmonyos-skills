@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-avrecor
 title: 使用AVRecorder录制音频（ArkTS）
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 录制 > 使用AVRecorder录制音频（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:eff4924c7c44f1866e7195c035fe7dd9bc7d1245acc773b0a1fb66fcc8a48398
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:eff4924c7c44f1866e7195c035fe7dd9bc7d1245acc773b0a1fb66fcc8a
 
 **图1** 录制状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/HXdhjcykQpeX2bdkxGap1A/zh-cn_image_0000002786519872.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/HXdhjcykQpeX2bdkxGap1A/zh-cn_image_0000002786519872.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1031C41E7D3D000998B6BAEC0C0FB403A9EAF4507236611FB58F6F62C2BB240)
 
 状态的详细说明请参考[AVRecorderState](../harmonyos-references/arkts-apis-media-t.md#avrecorderstate9)。
 

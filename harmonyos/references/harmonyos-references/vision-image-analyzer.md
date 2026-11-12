@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/vision-im
 title: visionImageAnalyzer（AI识图控件）
 breadcrumb: API参考 > AI > Vision Kit（场景化视觉服务） > ArkTS API > visionImageAnalyzer（AI识图控件）
 category: harmonyos-references
-scraped_at: 2026-11-12T09:57:48+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:38db14ec9e43fe511cd2263730769780b5e40b15263385bbaa69db5312d01857
 ---
@@ -258,7 +258,7 @@ struct ImageDemo {
 
 示例图如下，AIButton离底部300vp
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/cjsb2JLWRh-nrWZL15B7Ew/zh-cn_image_0000002786522136.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/cjsb2JLWRh-nrWZL15B7Ew/zh-cn_image_0000002786522136.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=AEED50F1709103E0A7AA867B7118B57D3FF5329E6CE3A581DD8B4B2B0F937F47)
 
 ### setAIButtonVisibility
 
@@ -309,7 +309,7 @@ struct ImageDemo {
 
 AIButton可见时如下图所示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/mCCE3z_FR9OTJwtF5euoHw/zh-cn_image_0000002786362208.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/mCCE3z_FR9OTJwtF5euoHw/zh-cn_image_0000002786362208.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9AEB5C3A4DB855FBE5FF52705D2893CCF40E520D7E6B3D63392940ABE51C634)
 
 ### setCustomTextMenuItems
 
@@ -368,7 +368,7 @@ struct ImageDemo {
 
 示例如下图所示，菜单右侧增加自定义菜单项。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/Y2qxg3-8T22HriGsPHw3nA/zh-cn_image_0000002815561629.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/Y2qxg3-8T22HriGsPHw3nA/zh-cn_image_0000002815561629.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=80637F19722B01CEA7F6D2220E06F81BC72E0DAAD2FFA671B040C7524A476199)
 
 ### startSubjectAnalyzer
 

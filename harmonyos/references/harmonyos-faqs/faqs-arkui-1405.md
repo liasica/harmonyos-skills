@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1405
 title: TextInput背景设置
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > TextInput背景设置
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:37+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:e2b706b7ef169ff76e07db6ce86b82b63dc1d7d6edd16fb04c6a9de0ef2165f2
 ---
@@ -59,7 +59,7 @@ content_hash: sha256:e2b706b7ef169ff76e07db6ce86b82b63dc1d7d6edd16fb04c6a9de0ef2
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/1CXkVnnPTTOE6tpgDxSb9Q/zh-cn_image_0000002628763136.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/1CXkVnnPTTOE6tpgDxSb9Q/zh-cn_image_0000002628763136.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=F02EE80CB94A9D9657CBF7344CA5D322DE3EC45A12B88FC47C340934A3BAB813 "点击放大")
 * **场景四**：在TextInput组件的onChange方法中使用if/else判断是否有输入内容，如果有输入内容则将其背景修改为对应颜色。
 
   ```ts
@@ -97,7 +97,7 @@ content_hash: sha256:e2b706b7ef169ff76e07db6ce86b82b63dc1d7d6edd16fb04c6a9de0ef2
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/kzTE9pN3R96zII_wof8Jvg/zh-cn_image_0000002658962451.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/kzTE9pN3R96zII_wof8Jvg/zh-cn_image_0000002658962451.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AFC1FD34F733F4AEC343A88393544392BAABD827C9F3075F73C10E9CBB6CB3B "点击放大")
 
 ## 常见FAQ
 

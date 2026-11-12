@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-avcodec-17
 title: 解码器解码过程中卡住无输出
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频编解码（AVCodec） > 解码器解码过程中卡住无输出
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:34+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:dd5ef6f0599e08187ff68cc35647cc92dbba5937e9e7e29fe2d54c915decf133
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:dd5ef6f0599e08187ff68cc35647cc92dbba5937e9e7e29fe2d54c915de
 
 在调试解码器硬解功能时发现反复拉流的时候解码器有段时间只能输入数据，但是没有数据输出。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/wxgj5cekSYSBtkkPc3d3ag/zh-cn_image_0000002628552732.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/wxgj5cekSYSBtkkPc3d3ag/zh-cn_image_0000002628552732.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=705BF47D42801700083344D324C27136952E2948F57EFBDD424FAE57AB95CC51 "点击放大")
 
 ## 背景知识
 
@@ -27,7 +27,7 @@ content_hash: sha256:dd5ef6f0599e08187ff68cc35647cc92dbba5937e9e7e29fe2d54c915de
 
 视频解码中的调用关系图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/jjaNqpYOQGyM9lgzRm0kfg/zh-cn_image_0000002658912053.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/jjaNqpYOQGyM9lgzRm0kfg/zh-cn_image_0000002658912053.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=B03ACD64441DB8D3CDEA9AB168C75F0382E869EC66DBFAB0FADA0E948C467EFA "点击放大")
 
 ## 问题定位
 
@@ -37,7 +37,7 @@ content_hash: sha256:dd5ef6f0599e08187ff68cc35647cc92dbba5937e9e7e29fe2d54c915de
 4. 发现AVCODEC\_BUFFER\_FLAGS\_CODEC\_DATA未传准确，但是修改后问题还是存在。
 5. 再次测试，错误日志如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/EhPQhhNAQt21EADY8qyA_w/zh-cn_image_0000002628392848.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/EhPQhhNAQt21EADY8qyA_w/zh-cn_image_0000002628392848.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC65BAAE6193D5F61804E7F05642322454879003F6DC3D90DE7A7FE9529D71CD "点击放大")
 6. 根据解码输出出现问题的时间段定位到11:37的时间点。查看日志输出相关时间点发现报错如下：
 
    ```txt
@@ -89,7 +89,7 @@ void Player::VideoDecInputThread()
 
 index输出如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/Ia1AVVjeTfG37vO0MSpSoQ/zh-cn_image_0000002658792119.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/Ia1AVVjeTfG37vO0MSpSoQ/zh-cn_image_0000002658792119.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=4EC30A4BA3B6E62A37D9F100C424BFDCCF813EDE1194F62B6592DB03F73D1A0F "点击放大")
 
 完整demo可参考[AVCodecVideo](https://gitee.com/harmonyos_samples/AVCodecVideo)。
 

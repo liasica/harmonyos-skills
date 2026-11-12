@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-audio-36
 title: AudioRenderer播放音频异常
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音频（Audio） > AudioRenderer播放音频异常
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:30+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:5632770058366cd1ee1fcb6d752ddc41e3e9dd6cfab119e1d868dc4cd683475e
 ---
@@ -39,7 +39,7 @@ content_hash: sha256:5632770058366cd1ee1fcb6d752ddc41e3e9dd6cfab119e1d868dc4cd68
 
   AudioRenderer会调用[AudioRendererWriteDataCallback](../harmonyos-references/arkts-apis-audio-t.md#audiorendererwritedatacallback12)方法来写入音频数据，如果数据未能填满回调buffer的长度就放入队列里播放，则会导致杂音、卡顿等现象。如下图所示，因为部分buffer未填满导致存在脏数据影响播放：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/tthpNCYSTECGB9-LxmsWCA/zh-cn_image_0000002631174054.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/tthpNCYSTECGB9-LxmsWCA/zh-cn_image_0000002631174054.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=84A246C2799DF509BD991887B6AC1BBA236B1366FA3D8CEDF89FB5D24D2131B2 "点击放大")
 
   此时可以将buffer长度和写入数据长度打印出来，比较大小，相关日志如下：
 
@@ -70,7 +70,7 @@ content_hash: sha256:5632770058366cd1ee1fcb6d752ddc41e3e9dd6cfab119e1d868dc4cd68
 
   在没有写入新的音频数据也没有停止AudioRenderer的情况下，则会循环播放缓冲区的历史数据，导致不断输出杂音，影响播放效果，如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/eQ5yiM2kSyuXfw3Z1D5kaA/zh-cn_image_0000002661413249.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/eQ5yiM2kSyuXfw3Z1D5kaA/zh-cn_image_0000002661413249.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=9028842277A8B6C8AF152DA02CBDA4BBD1DBF63CDCBD8E92B0079F8B25E8B3CB "点击放大")
 
   打印出日志如下图所示，在没有新数据写入也没有停止的情况下，会不断循环播放缓冲区数据：
 

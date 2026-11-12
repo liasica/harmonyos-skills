@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 单应用自渲染GPU内存泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 内存泄漏故障模式说明 > GPU内存泄漏故障模式说明 > 单应用自渲染GPU内存泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-11-10T10:42:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:e1608f28354279ce19e6e2af716094a8bc27db02f0d0f1a05751cf3ff09d65bb
 ---
@@ -124,37 +124,37 @@ content_hash: sha256:e1608f28354279ce19e6e2af716094a8bc27db02f0d0f1a05751cf3ff09
   + 单击④处选择Created & Existing，筛选申请并且未释放的内存及其调用栈。
   + 找到内存申请异常的内存及其调用栈，如下图⑤、⑥处框选的内容。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/o3VHjg9sRi2-0G4WPagFrw/zh-cn_image_0000002710303863.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/o3VHjg9sRi2-0G4WPagFrw/zh-cn_image_0000002710303863.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=89E83016D82BD2DACEF9CD415CC317EEB270394050AB1CE445DBCB11DF047C7C "点击放大")
   + 结合ArkTS栈分析发现单击按钮“GPU-Leak-Vulkan-Sync”后，应用会申请一次GPU内存，且未进行释放：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/ElKMcQGlSniigFEzHVqrcA/zh-cn_image_0000002680464214.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/ElKMcQGlSniigFEzHVqrcA/zh-cn_image_0000002680464214.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=BFA452C6F0A893A34A9D8D13CDFD42FBCA3C92583347D02A7624D2555DDB34B1 "点击放大")
   + 结合Native调用栈定位至LeakMemoryGPUVkAllocateMemorySync()，泄漏点为通过VulkanImageExample方式动态分配了大量GPU内存，但是没有主动释放导致的泄漏问题：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/ZKUbuhh3RqeLvNFlM6U1Gw/zh-cn_image_0000002710144025.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/ZKUbuhh3RqeLvNFlM6U1Gw/zh-cn_image_0000002710144025.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4D8FBDCAB84FDE4B3A045C6A0B0029BF86504F0F8A8F9B4B72240B410CC5C62 "点击放大")
 
 **开发态问题分析思路：**
 
 * 开发者在调试过程中，如果遇到应用闪退问题，可以在DevEco Studio中找到日志组件如下图①处，再选择应用终止如下图②处，单击③选择应用进程名，筛选出调试应用的历史退出原因，发现上一次闪退原因为“ResourceLeak:Gpu Leak”如下图④处所示，说明应用在调试过程中发生了GPU内存泄漏故障。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/9EjyILmGRXGQ8vu8ExsoVQ/zh-cn_image_0000002680624108.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/9EjyILmGRXGQ8vu8ExsoVQ/zh-cn_image_0000002680624108.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=483C5838B0C7FBECB951FA3EDC8A2908BFF3DB953D0E3C03DAAECAFB112C7113 "点击放大")
 
 * 确认问题为GPU内存泄漏后，开发者可以使用DevEco Studio的Profiler工具中的Allocation功能进行分析，使用方法可参考[基础内存：Allocation分析](../harmonyos-guides/ide-insight-session-allocations.md)。
 * 抓取GPU内存申请趋势之前需要先增加筛选Graphic Memory泳道，然后启动录制：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/F_MnYaSOSjqeY3aD05wXCg/zh-cn_image_0000002710303871.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/F_MnYaSOSjqeY3aD05wXCg/zh-cn_image_0000002710303871.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=58A2C2039227D2FAB69A82135C25B99F9AA37DECC402CFA933BD8030F5359E2C "点击放大")
 * 录制过程中，开发者可以持续复现疑似发生泄漏的场景。
 * 录制完成后，选中Graphic Memory中的Vulkan泳道：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/uOcg4WMnSQG2gOsSD23UnA/zh-cn_image_0000002680464226.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/uOcg4WMnSQG2gOsSD23UnA/zh-cn_image_0000002680464226.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=C2A519280EA00F23465F48F331608A39E49F997F5EAB956161536A70DA859B7B "点击放大")
 * 单击①处Call Trees按钮，单击②处筛选Created & Existing，可以找到异常申请的内存块和它的内存申请调用栈，内存申请调用栈如下图③处框中所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/PHW5WfJbSZCub2zoLZOgmw/zh-cn_image_0000002710144035.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/PHW5WfJbSZCub2zoLZOgmw/zh-cn_image_0000002710144035.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=00E847B691815220C49F0613B0FD35DCD995383F3EEB73A1D9AC8061BC58C79D "点击放大")
 * 结合ArkTS栈分析发现单击按钮“GPU-Leak-Vulkan-Sync”后，应用会申请一次GPU内存，且未进行释放：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/sZ7b_yLRRiKbcTkZNsEWYQ/zh-cn_image_0000002680624120.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/sZ7b_yLRRiKbcTkZNsEWYQ/zh-cn_image_0000002680624120.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=37CB165D80C170AF35B9FFF5C76274EC4477345AA3961F10CB850E68463479C9 "点击放大")
 * 结合Native调用栈定位至LeakMemoryGPUVkAllocateMemorySync()，泄漏点为通过VulkanImageExample方式动态分配了大量GPU内存，但是没有主动释放导致的泄漏问题：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/RKRHxNCTTQWV9UWhDiXGQg/zh-cn_image_0000002710303887.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/RKRHxNCTTQWV9UWhDiXGQg/zh-cn_image_0000002710303887.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D0C7EDD15DBEAD101C12ED048D27257467AF87675E3CC421222CD5CB872520B "点击放大")
 
 ## 预防建议
 

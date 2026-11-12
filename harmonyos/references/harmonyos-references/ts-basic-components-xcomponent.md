@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: XComponent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 渲染绘制 > XComponent
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:3ec673c0d5c19c74d41528552cc62533c97ede6101515b24c941adb974b0337c
 ---
@@ -917,7 +917,7 @@ struct XComponentExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/gWTJUgPrREeUlF42nKucbA/zh-cn_image_0000002786361542.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/gWTJUgPrREeUlF42nKucbA/zh-cn_image_0000002786361542.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B1E48384B9CB130F18C217AD2A4898603042C45E919031AC90E724E2CF3AF5B)
 
 ### 示例2（在Surface旋转过程中锁定）
 
@@ -1032,7 +1032,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/r1nSSbb3SoqOrwUEXHHlrA/zh-cn_image_0000002815560963.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/r1nSSbb3SoqOrwUEXHHlrA/zh-cn_image_0000002815560963.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=5ACF1894248F4943CFDD3D4F8135A12176AEF987C52041326D5AE5322CD6C50C)
 
 ### 示例4（XComponent实现沉浸式效果）
 
@@ -1079,7 +1079,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/nWiYRZyJT1aX7TirjsUMpA/zh-cn_image_0000002815401047.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/nWiYRZyJT1aX7TirjsUMpA/zh-cn_image_0000002815401047.jpeg?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=384877F21A23C8E32D2EECDCA13009A9C9BA0E258F94BF699341946586A94A98)
 
 ### 示例5（设置XComponent持有Surface在渲染时是否需要被视为不透明）
 
@@ -1183,4 +1183,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/d0Uv7UKiQ4mMXJeXFKTMDA/zh-cn_image_0000002786521472.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/d0Uv7UKiQ4mMXJeXFKTMDA/zh-cn_image_0000002786521472.jpeg?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0159A9F809C5C0AB455DD6200C1F222DA22D2F170D1C6DF08F680BD662E6D90)

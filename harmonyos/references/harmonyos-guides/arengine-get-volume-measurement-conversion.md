@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-get-
 title: 高精几何重建介绍
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 高精几何重建 > 高精几何重建介绍
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-04-24
 content_hash: sha256:22f7513b272788615b4cd305195fedb6c50d200c0a5a8b64974198f57b42489c
 ---
@@ -14,12 +14,12 @@ AR Engine高精几何重建用于识别空间中的立方体物体或者嵌入�
 
 **图1** 稠密点云绘制示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/xZgEOqU1TP6uKWNAZjRL2A/zh-cn_image_0000002786519918.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/xZgEOqU1TP6uKWNAZjRL2A/zh-cn_image_0000002786519918.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D37A78D9E8E56CCFF0DC63AEB7CB7B2F5926F97C9359DE2B08881D447732368)
 
 **图2** 体积测量示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/nenQl1Y1SF-72PAQbN5VPQ/zh-cn_image_0000002786359990.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/nenQl1Y1SF-72PAQbN5VPQ/zh-cn_image_0000002786359990.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=65FA4391B200EC5554971D90A988420DB18CC62410845F936A9307FF017A271B)
 
 **图3** 空间识别示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/Gn4pO-5vQKedaTSN2haDag/zh-cn_image_0000002815559411.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/Gn4pO-5vQKedaTSN2haDag/zh-cn_image_0000002815559411.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=36D7939DB0399E745500FCE68000BFACF7613873E887E7F4AF31252838762C6E)

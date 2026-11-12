@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-685
 title: 多级Tabs感知当前屏幕显示的TabContent
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 多级Tabs感知当前屏幕显示的TabContent
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:99ae3d6d0ad77bbf543105ca098db83836bd9560882b05930dc0c7b929e6a74e
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:99ae3d6d0ad77bbf543105ca098db83836bd9560882b05930dc0c7b929e
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/1X3HRPcXQx2Jj46Pfep8ZA/zh-cn_image_0000002658914071.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/1X3HRPcXQx2Jj46Pfep8ZA/zh-cn_image_0000002658914071.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233200Z&HW-CC-Expire=31536000000&HW-CC-Sign=3EB8766D64340983E57CC77BDBD342C2F1C6FF7B06FE128D9BB8A14FFAAEDCA3 "点击放大")
 
 ## 背景知识
 

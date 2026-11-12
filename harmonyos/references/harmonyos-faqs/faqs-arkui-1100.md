@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1100
 title: 如何实现支付密码输入弹框
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现支付密码输入弹框
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:1832d34fe6503675dae456c9fa6de097d53b30ed9ec65459b99526cffa75924e
 ---
@@ -115,7 +115,7 @@ content_hash: sha256:1832d34fe6503675dae456c9fa6de097d53b30ed9ec65459b99526cffa7
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/Kvd0-gAERImMdK1i5QO0NQ/zh-cn_image_0000002628407448.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/Kvd0-gAERImMdK1i5QO0NQ/zh-cn_image_0000002628407448.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F08F85C99B28A39493790ED407DF4140517BDA18A18188A57CDEB8513E02B4D "点击放大")
 * **方案二**：通过自定义弹窗实现密码输入弹窗的主体页面，并通过输入法框架提供的attach方法给自定义密码输入框绑定软键盘。
   1. 创建@CustomDialog组件，用来承载密码输入弹窗的主体页面。
 
@@ -511,4 +511,4 @@ content_hash: sha256:1832d34fe6503675dae456c9fa6de097d53b30ed9ec65459b99526cffa7
 
      效果预览：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/FXczSr_jT1S2GOvGmuUcPw/zh-cn_image_0000002628567344.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/FXczSr_jT1S2GOvGmuUcPw/zh-cn_image_0000002628567344.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=01BB9EABDDA1E295AABEC600A08369BF6A837ED5820EFF6711F2AEA235849168 "点击放大")

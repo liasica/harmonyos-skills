@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-nested-sc
 title: Web组件嵌套滚动
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 > Web组件嵌套滚动
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:5a2223b1f561f27ec072b0480c3ad4339167f1c60ae9f39e2f83b0c5390a90e3
 ---
@@ -104,7 +104,7 @@ struct NestedScroll {
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/afO6F1ciT0mk80PIH91GHg/zh-cn_image_0000002815398935.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/afO6F1ciT0mk80PIH91GHg/zh-cn_image_0000002815398935.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D164404A660AB542D0B5B198F55526FEEDA2E9D5CD852FF9B5349AECF492097)
 
 ## 使用nestedScroll常见问题
 
@@ -337,7 +337,7 @@ struct Index {
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/-HTp0Po_SpqBao9ea0mrVA/zh-cn_image_0000002786519360.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/-HTp0Po_SpqBao9ea0mrVA/zh-cn_image_0000002786519360.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=931183F405BA57623E1104AF4441725DDF3FB50730FD62871DCE5017BA426C65)
 
 ## 示例代码
 

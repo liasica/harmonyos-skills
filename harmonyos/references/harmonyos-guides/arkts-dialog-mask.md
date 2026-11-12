@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-dialog-
 title: 弹出框蒙层控制
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹出框 (Dialog) > 弹出框蒙层控制
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:13+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:fc5b60645923d0ead9d1be329b4136c11fe968047ecfd7ff424483215cc1be88
 ---
@@ -93,7 +93,7 @@ build() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/b2FfLW2tRLewoKMN_JQHPg/zh-cn_image_0000002815398567.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/b2FfLW2tRLewoKMN_JQHPg/zh-cn_image_0000002815398567.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=8DED50756EE341E95D0FCB3A916CB36B9DEF2D1DEC187FB1910253B663B7F670)
 
 设置isModal为false，将默认的模态弹出框变为非模态弹出框。
 
@@ -124,7 +124,7 @@ build() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/cRGP8KQnRLuSbFV2lPMRzA/zh-cn_image_0000002786518992.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/cRGP8KQnRLuSbFV2lPMRzA/zh-cn_image_0000002786518992.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=699975B48228266CD5041BE7E62DD7134E205BC6A24C09CD072F4918FD94E4AD)
 
 ## 弹出框蒙层样式控制
 
@@ -165,7 +165,7 @@ build() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/O7zGn2c4Q92F053yLIsGYw/zh-cn_image_0000002786359064.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/O7zGn2c4Q92F053yLIsGYw/zh-cn_image_0000002786359064.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=2DB3C5153FEBEB94846CC596314D5E69066D96F5AB10323D20F3D06B095DEFDA)
 
 在levelMode为LevelMode.EMBEDDED下，展示不同immersiveMode对蒙层在导航栏和状态栏的延伸效果。
 
@@ -199,7 +199,7 @@ build() {
   }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/mC-RVnLjShaIefil9-o-FQ/zh-cn_image_0000002815558485.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/mC-RVnLjShaIefil9-o-FQ/zh-cn_image_0000002815558485.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=29A9AB15B2F4F53B144A648666D95CBADF1B0CBA8BAEA6ACE2793901B1635142)
 
 ## 弹出框蒙层动画控制
 
@@ -234,7 +234,7 @@ build() {
   }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/xNUtWPWnS9u5rur56fze0g/zh-cn_image_0000002815398569.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/xNUtWPWnS9u5rur56fze0g/zh-cn_image_0000002815398569.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FF36CCEA2B329A63A2C2702EE0E30D30BE75662CE949483396378DAFB8C6E65)
 
 设置maskTransition，实现弹出框中蒙层单独的动画定制能力。
 
@@ -253,7 +253,7 @@ Button('openCustomDialog maskTransition')
   })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/FgFdOsNzTZe1HP1dgHKisQ/zh-cn_image_0000002786518994.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/FgFdOsNzTZe1HP1dgHKisQ/zh-cn_image_0000002786518994.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=922203545A74C7FB5CAF9B242B7CDB139BB259FB850AAF10896D452A2617B7FC)
 
 [CustomDialog](arkts-common-components-custom-dialog.md)虽然不支持transition接口，但与之对应的openAnimation和closeAnimation接口在动画的打开和关闭时可进行定制，示例代码如下：
 
@@ -316,7 +316,7 @@ export struct CustomDialogAnimation {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/FGf162ayQcW2KQiHghOYsg/zh-cn_image_0000002786359066.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/FGf162ayQcW2KQiHghOYsg/zh-cn_image_0000002786359066.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E50AFB03857C6759D887B541762FCB13B4DF0E074F1A00BBAB95AF525ED63C2E)
 
 ## 完整示例
 
@@ -438,4 +438,4 @@ export struct CustomDialogControl {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/1aLCmOGwTXS1i5ptB_GK2A/zh-cn_image_0000002815558487.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/1aLCmOGwTXS1i5ptB_GK2A/zh-cn_image_0000002815558487.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2047222DC1AD2F53B6DA84B5026525E9F10E694602ECA9B5B6C605884BA80C3)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-985
 title: 如何解决Flex组件设置width('auto')不生效的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Flex组件设置width('auto')不生效的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:15+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:17dbd7e720d68dfd950073f26d86463f732ee415e7e8c26da10a54a2de03a0f5
 ---
@@ -109,7 +109,7 @@ struct FlexPage {
 
 问题效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/ZqUb09eiR0GsTeZ9UblVYA/zh-cn_image_0000002628561710.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/ZqUb09eiR0GsTeZ9UblVYA/zh-cn_image_0000002628561710.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E552470EA50018066CD953DEBE0ED495322C88D01989C873C9077E5E42B041D "点击放大")
 
 ## 背景知识
 
@@ -203,7 +203,7 @@ struct FlexPage {
 
   运行效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/56smwvR4RpmdjxmqBnPrJg/zh-cn_image_0000002658921029.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/56smwvR4RpmdjxmqBnPrJg/zh-cn_image_0000002658921029.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEEC7F1BBC5161FD1B74AE0D284D754E7679341B0ADA44C14168D08F0AED25BC "点击放大")
 * 方案二：
 
   首先根据设置的布局计算出Flex组件中一行可用的最大宽度。通过measureText得到文本占用的宽度，从而计算文本框占用的宽度。当全部文本框占用的宽度加起来未超过一行就将Flex设置为FlexWrap.NoWrap。如果前几个文本框累计超过一行后面无需计算，直接将Flex设置为FlexWrap.NoWrap。
@@ -306,4 +306,4 @@ struct FlexPage {
 
   运行效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/4IKkpQSDTZOGZ52NsQ_Ifw/zh-cn_image_0000002658801079.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/4IKkpQSDTZOGZ52NsQ_Ifw/zh-cn_image_0000002658801079.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A9B972D392E1F85C4E092703DA9E98963FF91540DBDF6D78BC4251E9FA6B4FF "点击放大")

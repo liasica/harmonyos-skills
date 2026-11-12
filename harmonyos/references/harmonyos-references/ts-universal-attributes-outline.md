@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 外描边设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 外描边设置
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:80a5e4687f74cb5058d24add045e7fb1d55e1daf3cf5c6d8bf5afcb5a547d460
 ---
 
 设置组件外描边（outline）样式。外描边绘制在组件的外侧，不影响布局，不会占用组件本身大小。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/f_PjG2I6RXutjlnA9eo4OA/zh-cn_image_0000002786520942.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/f_PjG2I6RXutjlnA9eo4OA/zh-cn_image_0000002786520942.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=AAB4B17AFB91076429385A594B09512121B29FAB1738487F2C8B3BD93D36FA4F)
 
 **说明** 
 
@@ -320,7 +320,7 @@ struct OutlineExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/g7Ve8fthR4iPIAUUZUX9OQ/zh-cn_image_0000002786361014.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/g7Ve8fthR4iPIAUUZUX9OQ/zh-cn_image_0000002786361014.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=F796BF7A08754FD46CABCCB2AF2931C2C0642F6B01BA91E1585A9BDBEC819598)
 
 ### 示例2（使用LocalizedEdgeColors类型）
 
@@ -371,8 +371,8 @@ struct OutlineExample {
 
 从左至右显示语言示例图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Dklqlp5HR8CWjs8To5nDVQ/zh-cn_image_0000002815560435.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Dklqlp5HR8CWjs8To5nDVQ/zh-cn_image_0000002815560435.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=756DF59762391AFA3BC928313FE71CC84D5C67231CCB710EE144291989B2A098)
 
 从右至左显示语言示例图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/UA1_q035THGWLmIOQOgBpQ/zh-cn_image_0000002815400519.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/UA1_q035THGWLmIOQOgBpQ/zh-cn_image_0000002815400519.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=54CC250F9415143A1D722583D06B8EB1339519A51C2660F55BC145C8AB54FAE9)

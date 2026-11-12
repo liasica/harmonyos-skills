@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-detail-r
 title: 通知内容管理细则
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 附录 > 通知内容管理细则
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-04-20
 content_hash: sha256:fc12b0f4f227113a9cf3d90aac0fcf012087da31d6f5eab33f7d0e04172b4de9
 ---
@@ -20,7 +20,7 @@ content_hash: sha256:fc12b0f4f227113a9cf3d90aac0fcf012087da31d6f5eab33f7d0e04172
 
 推送各元素的定义：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/RaDQb0b1S424pF9BWTYPVA/zh-cn_image_0000002786520484.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/RaDQb0b1S424pF9BWTYPVA/zh-cn_image_0000002786520484.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=33570F5E2BFC84BFCDB70659D12DBF4915C4A1BE295D287B13B10EFC97359B90)
 
 * 消息框：消息推送的整体边框、背景、布局样式。
 * 推送文字：通知标题、文本内容部分出现的所有文字。

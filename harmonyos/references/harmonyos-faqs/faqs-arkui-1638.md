@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1638
 title: 如何解决Refresh组件阻尼状态下动画显示异常的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Refresh组件阻尼状态下动画显示异常的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:27+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:958da79c0cfe893d2574cb0b8ab4aaaf34c19795f6ad4d9d924fc4f6f2b310f6
 ---
@@ -16,11 +16,11 @@ content_hash: sha256:958da79c0cfe893d2574cb0b8ab4aaaf34c19795f6ad4d9d924fc4f6f2b
 
 不设置阻尼效果动画正常：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/NuvLdmxcTKqadEXvuW4imQ/zh-cn_image_0000002659061907.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/NuvLdmxcTKqadEXvuW4imQ/zh-cn_image_0000002659061907.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=02AA9381C6CA26E9B318829CD75A01BC6F591AF5340F8EB77C0A39BF6DEF27FA "点击放大")
 
 设置阻尼效果动画异常：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/leknoHeARXyp1msje4ff4Q/zh-cn_image_0000002628822560.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/leknoHeARXyp1msje4ff4Q/zh-cn_image_0000002628822560.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=E309E6A71A0EC667DAC71F84BC1331BDA4590721613480EBBED8A79702E186FF "点击放大")
 
 问题代码示例参考如下：
 
@@ -196,7 +196,7 @@ struct RefreshExample {
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/c7ONm_6FSueQ-8P6DboD_A/zh-cn_image_0000002659021865.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/c7ONm_6FSueQ-8P6DboD_A/zh-cn_image_0000002659021865.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=86A6DEC7C79A8589AA625AC4736BD6CE03A8568C7A73A761ACC85646FDB5EFCB "点击放大")
 
 ## 背景知识
 

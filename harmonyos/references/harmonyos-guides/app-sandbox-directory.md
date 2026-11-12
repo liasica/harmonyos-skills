@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-sandbox-d
 title: 应用沙箱目录
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用沙箱目录
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:116386c5a37a6f23f9feb21de65c9f1e1e32ee3aae9eb6c40c22a2b5ed7f367f
 ---
@@ -18,7 +18,7 @@ content_hash: sha256:116386c5a37a6f23f9feb21de65c9f1e1e32ee3aae9eb6c40c22a2b5ed7
 
 **图1** 应用沙箱文件访问关系图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/Dv3ei24NTz2QNrZrjjZ4VA/zh-cn_image_0000002815558909.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/Dv3ei24NTz2QNrZrjjZ4VA/zh-cn_image_0000002815558909.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E850EC18189D16DC33685B80BAC765DA77FA8FF2759E4F0C49247F7EDE55A06)
 
 ## 应用沙箱目录与应用沙箱路径
 
@@ -30,7 +30,7 @@ content_hash: sha256:116386c5a37a6f23f9feb21de65c9f1e1e32ee3aae9eb6c40c22a2b5ed7
 
 **图2** 应用沙箱路径（不同权限与角色的进程下可见的文件路径不同）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/WNhe3o2XRN2T-MaXlfEWUA/zh-cn_image_0000002815398993.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/WNhe3o2XRN2T-MaXlfEWUA/zh-cn_image_0000002815398993.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=41F9BF5949789E2EE594576E45ADF1F9FCBF218BF9A1257C99CE03ECFFBCB976)
 
 ## 应用文件目录与应用文件路径
 
@@ -42,7 +42,7 @@ content_hash: sha256:116386c5a37a6f23f9feb21de65c9f1e1e32ee3aae9eb6c40c22a2b5ed7
 
 **图3** 应用文件目录结构图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/Uj5Yu4rpRH-rlSXFZbEc6w/zh-cn_image_0000002786519418.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/Uj5Yu4rpRH-rlSXFZbEc6w/zh-cn_image_0000002786519418.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF6EA55A37B339922E58B843FBF4C081F2400FE915AA52B76D3D7C09812E109F)
 
 **说明** 
 

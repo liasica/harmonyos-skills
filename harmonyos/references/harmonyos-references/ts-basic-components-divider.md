@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Divider
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 空白与分隔 > Divider
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:3e8fc50e3be08f3db2159625ea40079df24c618c5b245cd6c61eec40f1de72b6
 ---
@@ -195,7 +195,7 @@ struct DividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/aYzPPlGaQN6xLMWdb-PgvA/zh-cn_image_0000002815560891.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/aYzPPlGaQN6xLMWdb-PgvA/zh-cn_image_0000002815560891.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD5DBA8EED3469156F455AD86C99C2BD049FE70BD0A743050BB69E25A479F1A8)
 
 ### 示例2（定义Divider的lineCap样式）
 
@@ -234,4 +234,4 @@ struct DividerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/4GM1tAm-QMO22MYL8eEZ5g/zh-cn_image_0000002815400975.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/4GM1tAm-QMO22MYL8eEZ5g/zh-cn_image_0000002815400975.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=D11074CB877F02BF2FC3175F81F24C275CF226A5B2FA3DA2F72254B36CDEAEE8)

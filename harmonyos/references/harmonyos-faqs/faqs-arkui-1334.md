@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1334
 title: List自适应高度
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > List自适应高度
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:f195be001f071a0ebe0e6952bbd9ac7bfd757048e06bb6f180478b66a2c1c92b
 ---
@@ -75,7 +75,7 @@ content_hash: sha256:f195be001f071a0ebe0e6952bbd9ac7bfd757048e06bb6f180478b66a2c
 
    效果预览：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/DICGnUPCQ8282qRosRENNw/zh-cn_image_0000002628600018.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/DICGnUPCQ8282qRosRENNw/zh-cn_image_0000002628600018.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=0268BE3258B2629586A8A3B21B4C6887F862D9C15F199521717CF22E0994BA77 "点击放大")
 2. 在父容器高度受限的场景下，可通过List组件的constraintSize接口中的[ConstraintSizeOptions](../harmonyos-references/ts-types.md#constraintsizeoptions)属性设置maxHeight参数控制最大高度，实现动态伸缩布局。
 
    ```ts
@@ -128,7 +128,7 @@ content_hash: sha256:f195be001f071a0ebe0e6952bbd9ac7bfd757048e06bb6f180478b66a2c
 
    效果预览：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/iazMx5YnSPynjfKIvXKmOg/zh-cn_image_0000002628759924.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/iazMx5YnSPynjfKIvXKmOg/zh-cn_image_0000002628759924.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EB3D2FF14C1C1EC08064D3025E92A27A6A7647281711A7D0EBC57AAB7FE4273 "点击放大")
 
 ## 常见FAQ
 

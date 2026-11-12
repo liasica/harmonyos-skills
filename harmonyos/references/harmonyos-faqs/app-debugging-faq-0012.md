@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/app-debugging-f
 title: 真机设备识别常见问题
 breadcrumb: FAQ > DevEco Studio > 应用调试 > 常见问题 > 真机设备识别常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:59+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:de8911bcd481e24d450eab25b9c70c583e7a55c1de86581b182f31975e85d50f
 ---
 
 **Q：调试运行时，安装HAP失败并提示“设备未找到或未连接”；或DevEco Studio设备列表显示“No device”（未识别设备）。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/yNeqfmrCQFCd25V2XqvNRw/zh-cn_image_0000002802269993.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/yNeqfmrCQFCd25V2XqvNRw/zh-cn_image_0000002802269993.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=5FA9D85B005008E61A6411D1E8AB7CE623408B93660C614F3B2E8E05F4F1C256 "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/5N4EEFmBQ8qmGWzM8hK8nw/zh-cn_image_0000002802186559.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/5N4EEFmBQ8qmGWzM8hK8nw/zh-cn_image_0000002802186559.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=92F99CE749491069A7BA3FDF05422F30ACE8B5F7EDF3C6AE6402DDC6A7A8E975 "点击放大")
 
 **A**：先执行hdc list targets -v检查设备连接状态。
 
@@ -27,15 +27,15 @@ content_hash: sha256:de8911bcd481e24d450eab25b9c70c583e7a55c1de86581b182f31975e8
    场景二：打开“无线调试”开关后，进行无线调试连接。随后，关闭“无线调试”开关，并打开“USB调试”开关，进行USB调试。此时，设备无法被识别。
 6. hdc客户端和服务端版本不一致时可能存在功能异常。启动ide时会检查当前hdc客户端和服务端版本，ide会自动尝试关闭当前hdc，重新拉起sdk中的hdc，并弹出如下提示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/ELTSvkU7TaarblRY1fNa4Q/zh-cn_image_0000002772910248.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/ELTSvkU7TaarblRY1fNa4Q/zh-cn_image_0000002772910248.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=314CB1A00716B10FFCB28D2A275FA2062779723FE693E3464EC94869AA888AE5)
 
    如果有在使用其他需要hdc的工具并有保活hdc的行为，可能会导致ide重启hdc失败。
 7. 注册表中设置终端自动执行任务可能导致ide和hdc建立连接失败。
 8. ide内存达到分配堆内存上限，导致查询设备任务异常，通常会伴随有以下提示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/0fAkoIlWTHWHFaLL6Au--A/zh-cn_image_0000002802190081.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/0fAkoIlWTHWHFaLL6Au--A/zh-cn_image_0000002802190081.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=5EDF6B6BA4EEEF5092C5D988AE3AB1CB4CF98BF1A3ABE8AD535A6A7EE7494B30)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/ZAUMpp5XTzuLulHIKWgrcw/zh-cn_image_0000002773070220.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/ZAUMpp5XTzuLulHIKWgrcw/zh-cn_image_0000002773070220.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB5AA4E861CDAC28288CAD9D9034AB656EC6295CBAA2538C86593942F7062CB7)
 
 解决措施：
 
@@ -44,7 +44,7 @@ content_hash: sha256:de8911bcd481e24d450eab25b9c70c583e7a55c1de86581b182f31975e8
 
    并确保连接调试的设备在支持列表中，详细请参见[各版本支持设备型号清单](../harmonyos-releases/support-device.md)。如无真机设备，可使用Device Manager模拟器。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/goSRxAAjRAukCjtVYK5eLA/zh-cn_image_0000002802269997.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/goSRxAAjRAukCjtVYK5eLA/zh-cn_image_0000002802269997.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=737C59E102EB7FDB55B9F14CAA01F1777B99E2B284DC9C8D8B72D5F505315C35 "点击放大")
 3. 请更换为符合USB2.0标准的数据线；建议直接连接，不要使用拓展坞。请更换USB数据口后重新尝试，并检查端口驱动是否正常。
 4. 执行如下命令，结束hdc进程，然后重新连接。
 
@@ -182,7 +182,7 @@ content_hash: sha256:de8911bcd481e24d450eab25b9c70c583e7a55c1de86581b182f31975e8
 
       打开zadig（[zadig官网](https://zadig.akeo.ie/))/（[zadig仓库下载](https://github.com/pbatard/libwdi/releases)），插入设备，Options里面打开List All Devices，下拉框找到HDC Device，然后点击Reinstall Driver。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/72JHnv4ZRH-c4q87O5qfFw/zh-cn_image_0000002772910252.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/72JHnv4ZRH-c4q87O5qfFw/zh-cn_image_0000002772910252.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF567A7AA211DE2E7E08A487B8E62186EF2C34F3F53647ED7298002554A654BA)
    2. Linux环境：
 
       在命令行执行“lsusb”，查看是否存在HDC Device或HDC Interface。如果没有该命令，通过“apt-get install usbutils”安装usbutils。
@@ -203,7 +203,7 @@ content_hash: sha256:de8911bcd481e24d450eab25b9c70c583e7a55c1de86581b182f31975e8
    1. 打开本地注册表（regedit），导航至：计算机\HKEY\_LOCAL\_MACHINE\SYSTEM\CurrentControlSet\Control\Class{88bae032-5a81-49f0-bc3d-a4ff138216d6}。
    2. 在右侧列表中找到【UpperFilters】键，右键点击并选择修改，清空所有字符数据（建议在清空前备份数据）。最后，刷新或插拔设备，或重启PC，即可正常显示。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/26hEWuNbRA2HW1jXPKsF6A/zh-cn_image_0000002773066702.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/26hEWuNbRA2HW1jXPKsF6A/zh-cn_image_0000002773066702.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=3ED3AA2E9711E013116112D8E227FE49C03316DD2A6BDBB618EC4D2BD22F465E "点击放大")
 3. 进入【设置>系统>开发人员选项>usb调试】重新关闭、打开USB调试；
 4. 若连接设备时出现“[Fail] Failed to communicate with daemon”：
    1. hdc与设备不匹配：如果设备烧写的镜像是最新版本，hdc也必须使用最新版本。

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/modular-objec
 title: 模块化对象模型概述 (C/C++)
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 基于ModularObjectExtensionAbility的模块化对象开发指导 (C/C++) > 模块化对象模型概述 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:50:59+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:17b10c80b22325af8e2cd62b453c71a95cf979083b8138e5abd3edc924859982
 ---
@@ -25,7 +25,7 @@ content_hash: sha256:17b10c80b22325af8e2cd62b453c71a95cf979083b8138e5abd3edc9248
 2. 服务端返回Proxy对象：连接成功后，系统会加载服务端对应Ability的so库，并调用OnNativeExtensionCreate入口函数。然后系统会依次触发服务端的OnCreateFunc和OnConnectFunc回调，开发者在OnConnectFunc回调中返回Stub对象。系统将Stub转换为Proxy对象返回给客户端。
 3. 客户端通过Proxy与服务端通信：客户端在OnConnectCallback回调中收到服务端返回的Proxy对象后，通过该对象与服务端通信。当不再需要通信时，客户端可以通过Disconnect断开连接。连接断开后，系统会依次触发服务端的OnDisconnectFunc回调和OnDestroyFunc回调。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/xZze3OLXTQ61vx7YaepWUA/zh-cn_image_0000002786358434.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/xZze3OLXTQ61vx7YaepWUA/zh-cn_image_0000002786358434.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=34C3C874F77A74A73EF10AA02CBF0B45E28728EF933CF06CBD42A72B6AD3FC21)
 
 上述步骤中涉及的简写与完整接口名称的对应关系如下表所示：
 

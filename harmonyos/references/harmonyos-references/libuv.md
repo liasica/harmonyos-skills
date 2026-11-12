@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/libuv
 title: libuv
 breadcrumb: API参考 > 标准库 > libuv
 category: harmonyos-references
-scraped_at: 2026-11-12T09:57:50+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-30
 content_hash: sha256:20b0fbfbaba0679b9d763627c2d61e2a0d0e9cb131242a987cabd220b26b851d
 ---
@@ -1255,7 +1255,7 @@ handle：线程间通信句柄。
 1. uv\_async\_t从调用uv\_async\_init开始后就一直处于活跃状态，除非用uv\_close将其关闭。
 2. uv\_async\_t的执行顺序严格按照uv\_async\_init的顺序，而非通过uv\_async\_send的顺序来执行的。因此按照初始化的顺序来管理好时序问题是必要的。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/S0O593JHSJO4TX3cX10ylg/zh-cn_image_0000002815401713.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/S0O593JHSJO4TX3cX10ylg/zh-cn_image_0000002815401713.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=56FDEA6834CE2CA27EB1B9CBB1CD7D94005FA00C1B66E95BF2C8330F6379A32E)
 
 示例代码：
 
@@ -1352,7 +1352,7 @@ work\_cb与after\_work\_cb的执行有一个时序问题，只有work\_cb执行�
 
 下图为原生libuv的线程池工作流程，图中流程已简化，默认句柄的pending标志为1，worker线程个数不代表线程池中线程的真实数量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/EsK6ycwvQ7iI_1la4vXw7Q/zh-cn_image_0000002786522138.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/EsK6ycwvQ7iI_1la4vXw7Q/zh-cn_image_0000002786522138.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4E92D09228E9E0F12AEC333180F9EE1ACB146E6DC2CA14089746D7FB267DD50)
 
 **2. 异步任务提交注意事项**
 
@@ -1372,7 +1372,7 @@ work\_cb与after\_work\_cb的执行有一个时序问题，只有work\_cb执行�
 
 另外，在应用主线程中，所有的异步任务尽管最终都是通过libuv得到执行的。但是在当前系统中，libuv的线程池已经对接到了FFRT中，任何抛向libuv的异步任务都会在FFRT的线程中得到调度。应用主线程的回调函数也通过PostTask接口插入到eventhandler的队列上。这就意味着FFRT线程上的异步任务完成后不再通过uv\_async\_send的方式触发主线程的回调。过程如下图:
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/Yk1KqrAfTfmjr0985yhPLw/zh-cn_image_0000002786362210.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/Yk1KqrAfTfmjr0985yhPLw/zh-cn_image_0000002786362210.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=C99C9646017ADF4870E1A74BA230377AAAD4A684F735E83B6C0337195F0B32E2)
 
 我们总结了五种类型的请求任务是直接可以按照正常用法在应用主循环中生效的：
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-project-ma
 title: 如何在Entry模块中访问Library模块中的数据
 breadcrumb: FAQ > DevEco Studio > 工程管理 > 如何在Entry模块中访问Library模块中的数据
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:50+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:e46cde15fa70b3327c395d0fd14a20c8d45dab417daab9d38ad174bf5b6eac5e
 ---
@@ -115,7 +115,7 @@ content_hash: sha256:e46cde15fa70b3327c395d0fd14a20c8d45dab417daab9d38ad174bf5b6
 
    实现效果：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/kFH29gyLTda0QK4YvpFy-Q/zh-cn_image_0000002658927281.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/kFH29gyLTda0QK4YvpFy-Q/zh-cn_image_0000002658927281.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=726D376E1FEA7F881D3185C47C6B90B1266A3C24C72AFDBE3699ADF5F35A49C7 "点击放大")
 
 ## 总结
 

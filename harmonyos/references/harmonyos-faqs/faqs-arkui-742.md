@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-742
 title: 实现占位文字跟随内容一起上滑
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 实现占位文字跟随内容一起上滑
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:a3f32368296859963387796c7a3a0dc9ed989f8c1664780e49c19d5b791d34df
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:a3f32368296859963387796c7a3a0dc9ed989f8c1664780e49c19d5b791
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/zQY6OqpbQJacZCk54R0OMQ/zh-cn_image_0000002628395466.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/zQY6OqpbQJacZCk54R0OMQ/zh-cn_image_0000002628395466.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB7705165995E687DBC5D1602F8CFED33852F788558D4D92534B0564B321D34C "点击放大")
 
 ## 背景知识
 

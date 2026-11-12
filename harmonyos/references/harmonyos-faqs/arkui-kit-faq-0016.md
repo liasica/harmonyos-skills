@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: 滚动与滑动组件实现吸顶效果常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > 滚动与滑动组件实现吸顶效果常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:6a36cfb6cbfc17aa3c59c3fa7fbc7fd7a5b3108572029686ddd522ef9bdb5216
 ---
@@ -67,7 +67,7 @@ content_hash: sha256:6a36cfb6cbfc17aa3c59c3fa7fbc7fd7a5b3108572029686ddd522ef9bd
 
      实现效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/zeYFvb7tSo-i4DTdVst2Cg/zh-cn_image_0000002797263351.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/zeYFvb7tSo-i4DTdVst2Cg/zh-cn_image_0000002797263351.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=3008C4CB8F8AC543195117BA97D32C658F0F30AC9BB38A48A52AA33CD10BEFA6 "点击放大")
   2. 方案二：自定义标题的吸顶实现。若要实现Tabs页面切换效果，需要自定义页面切换逻辑。
 
      参考上文中方案一，示例代码如下：
@@ -123,7 +123,7 @@ content_hash: sha256:6a36cfb6cbfc17aa3c59c3fa7fbc7fd7a5b3108572029686ddd522ef9bd
 
      实现效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/RYfB9yqQS-u7rpAq9uYSlQ/zh-cn_image_0000002797144395.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/RYfB9yqQS-u7rpAq9uYSlQ/zh-cn_image_0000002797144395.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C7800C10E9F4E912CC33F95D3EA568FFB9D95D9EEEBBF80DF21E6203644F3AA "点击放大")
 
 * 单标题滚动嵌套吸顶效果：
   1. 方案一： 通过nestedScroll属性，实现吸顶效果。由于nestedScroll属性是滚动与滑动组件的通用属性，理论上在滚动组件嵌套的过程中，支持该属性的滚动组件都可以实现吸顶效果。以Tabs组件为例，示例代码如下：
@@ -212,7 +212,7 @@ content_hash: sha256:6a36cfb6cbfc17aa3c59c3fa7fbc7fd7a5b3108572029686ddd522ef9bd
 
      实现效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/GqO2qr7FRgqZFu2sTgWa-w/zh-cn_image_0000002767984428.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/GqO2qr7FRgqZFu2sTgWa-w/zh-cn_image_0000002767984428.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DECFD34E9A66AD9F5D85CE6D74E6BDF082D469F30165E11F710ADB28C2FFAC8 "点击放大")
 
      **说明** 
 
@@ -335,7 +335,7 @@ content_hash: sha256:6a36cfb6cbfc17aa3c59c3fa7fbc7fd7a5b3108572029686ddd522ef9bd
 
      实现效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/08Myrtg5SguYQbgImNSG0Q/zh-cn_image_0000002797144539.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/08Myrtg5SguYQbgImNSG0Q/zh-cn_image_0000002797144539.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=031786C013BE38626BA8D634B93137ED107C3B787D97D6A9BE6E08A648572E79 "点击放大")
 
 * 多标题滚动嵌套吸顶效果：
   1. 方案一：通过nestedScroll属性对滚动组件多次滚动嵌套，参考单标题滚动嵌套吸顶效果，示例代码如下：
@@ -464,7 +464,7 @@ content_hash: sha256:6a36cfb6cbfc17aa3c59c3fa7fbc7fd7a5b3108572029686ddd522ef9bd
 
      实现效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/_ALzBt0hRaethSVOi71UdQ/zh-cn_image_0000002767825066.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/_ALzBt0hRaethSVOi71UdQ/zh-cn_image_0000002767825066.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=0275A662663723FBDB3F97395504DC3E9BD00CCD747D615A4437AB8ACDABD66C "点击放大")
   2. 方案二：通过List组件的sticky属性，实现吸顶效果。
 
      常见场景一：header吸顶和footer吸底，该方案仅适用于List组件，具体实施方案参考官方示例：[吸顶/吸底](../harmonyos-references/ts-container-listitemgroup.md#示例1设置吸顶吸底)。
@@ -568,7 +568,7 @@ content_hash: sha256:6a36cfb6cbfc17aa3c59c3fa7fbc7fd7a5b3108572029686ddd522ef9bd
 
      实现效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/Brlb8RJoTvC-g1P1MTfx0w/zh-cn_image_0000002797265351.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/Brlb8RJoTvC-g1P1MTfx0w/zh-cn_image_0000002797265351.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=B211563215A66349700D0F3242FA05A188154D7D274E9FA14363F82808C0791C "点击放大")
 * 二级标题滚动嵌套吸顶效果：
 
   第一层吸顶用Scroll嵌套List实现，第二层是利用ListItemGroup的sticky属性实现，示例代码如下：
@@ -671,7 +671,7 @@ content_hash: sha256:6a36cfb6cbfc17aa3c59c3fa7fbc7fd7a5b3108572029686ddd522ef9bd
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/UZN1JOPkQnS8mMaKbrcMPA/zh-cn_image_0000002767985764.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/UZN1JOPkQnS8mMaKbrcMPA/zh-cn_image_0000002767985764.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2E939C2E910D318E9B15A0AC91904FDD37BAD18A715724AEA80ED80BAD07C03 "点击放大")
 
 * 动态控制二级标题滚动嵌套吸顶效果：
 
@@ -789,7 +789,7 @@ content_hash: sha256:6a36cfb6cbfc17aa3c59c3fa7fbc7fd7a5b3108572029686ddd522ef9bd
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/j4ij4OzVTpKngIbHaG6Q9g/zh-cn_image_0000002767825996.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/j4ij4OzVTpKngIbHaG6Q9g/zh-cn_image_0000002767825996.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=A79ADFABC9ABD17EC1D7169DE29CC7DB14DEBF9569D8C74614E4FF2CAC40C387 "点击放大")
 
 **Q：还有其他组件能实现吸顶效果吗？**
 

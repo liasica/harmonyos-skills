@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1059
 title: "@Param和@Once相较于@Prop、@Link的使用场景及优势"
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > @Param和@Once相较于@Prop、@Link的使用场景及优势
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:fc4778bb955342700134afe8e6ed3d3da052342cb5ae43a187ff81ab47ca46d3
 ---
@@ -49,7 +49,7 @@ content_hash: sha256:fc4778bb955342700134afe8e6ed3d3da052342cb5ae43a187ff81ab47c
 
   场景一问题现象如下（当传递普通变量时，在父组件修改不会触发子组件刷新）：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/TZdJ_9i5SNW6gn6KJMEqXw/zh-cn_image_0000002658806467.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/TZdJ_9i5SNW6gn6KJMEqXw/zh-cn_image_0000002658806467.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=CAD98F5D6E8B2BC59A85DC864B821144E8D9044B047ECDCFB0D6210B4FF960E4 "点击放大")
 * 场景二：如何将V1的@Prop、@Link迁移至V2的@Param？
 * 场景三：状态管理V1中由于@State、@Prop、@Link、@Provide等装饰器均能接收参数，当多人协作开发时，复用他人组件的过程中若存在过多的参数，应该如何分辨哪些@State、@Provide装饰的参数需要传递？问题代码如下：
 
@@ -214,7 +214,7 @@ content_hash: sha256:fc4778bb955342700134afe8e6ed3d3da052342cb5ae43a187ff81ab47c
 
      场景一实现效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/PDNuXXeyTkKRTCCYq_8NnA/zh-cn_image_0000002628567114.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/PDNuXXeyTkKRTCCYq_8NnA/zh-cn_image_0000002628567114.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=D632337C23ACBE9C4235C8F0F655786370F413502DBF0671A86CE301F2AF3C5C "点击放大")
 
 * 场景二：V1版@Prop、@Link迁移至V2版@Param的方案。
 

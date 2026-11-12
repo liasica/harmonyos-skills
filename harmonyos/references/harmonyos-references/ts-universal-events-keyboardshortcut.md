@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 组件快捷键事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互响应事件 > 组件快捷键事件
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:ec97bd0f5dbb406243d69af1d7cd837938d8261620a9c70e9df3da5302ab5961
 ---
@@ -130,7 +130,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/fSGkmhf-ShemxovsQnTxUw/zh-cn_image_0000002815400465.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/fSGkmhf-ShemxovsQnTxUw/zh-cn_image_0000002815400465.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=95247A2722981D793382FC2140EAA8DC2A13857B45EC2B37D5B8EDB64029A47D)
 
 ### 示例2（快捷键的绑定和解除绑定）
 
@@ -170,4 +170,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/46CmTSs1T-ylqEjwtoWhew/zh-cn_image_0000002786520890.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/46CmTSs1T-ylqEjwtoWhew/zh-cn_image_0000002786520890.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=35AFCB8308D463FE9F5F80EAD829B05B8E2539C494712C75C5D21AD347C0FEAA)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-gesture
 title: 使用Web组件的手势与应用交互
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 > 使用Web组件的手势与应用交互
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:9a5bbecff6174fcae19eabc45128af6d038466ef0df6f80b4332313c8cd4a173
 ---
@@ -84,7 +84,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/C3X-hkM-QY6grZgOrK3W5w/zh-cn_image_0000002815558857.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/C3X-hkM-QY6grZgOrK3W5w/zh-cn_image_0000002815558857.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=202B33C7761CAD92A833AAF476F6008433F30BCB262A7B5FB8839BBF7874A525)
 
 ## Web组件的手势拦截
 

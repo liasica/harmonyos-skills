@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/filemanagerse
 title: 自定义文件角标和右键菜单项
 breadcrumb: 指南 > 应用服务 > File Manager Service Kit（文件管理服务） > 自定义文件角标和右键菜单项
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:678d2040f5e98c4615654ed3721da7d4eeb5c0ed354aa8de3e4614884c836a94
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:678d2040f5e98c4615654ed3721da7d4eeb5c0ed354aa8de3e4614884c8
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/8_jv125cSiCVpazSU7S6HA/zh-cn_image_0000002815399781.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/8_jv125cSiCVpazSU7S6HA/zh-cn_image_0000002815399781.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=9AE4107AAFF81228D7893D3CB944E735ADE7AB2C2CCE467FD2E957316C87647D)
 
 ## 约束限制
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-30
 title: 关于从视频中提取特定帧图片的常见方法及问题
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 媒体（Media ） > 关于从视频中提取特定帧图片的常见方法及问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:32+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:d40e276a126e0622e550159a03c25419c16d49f1feb1f3a60f3164cc6a559444
 ---
@@ -136,7 +136,7 @@ content_hash: sha256:d40e276a126e0622e550159a03c25419c16d49f1feb1f3a60f3164cc6a5
   ```
 * **效果图：**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/QI-5R21wQ-StsuCi7kFkVw/zh-cn_image_0000002631345224.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/QI-5R21wQ-StsuCi7kFkVw/zh-cn_image_0000002631345224.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=205C81E703D62BB19945EBC5F980B2B3F0E280927AA83E46F52C1F4B17E255AF "点击放大")
 * **可能会遇到的问题：**成功提取音视频文件首帧图像后，无法对原始音视频文件执行压缩操作。
   + **问题根因：**应用默认只能访问自身沙箱目录，其他目录的文件无法直接操作。
   + **解决方案：**若音视频文件存储在非沙箱路径，应用无法直接读取或修改，需通过fs接口将文件拷贝至沙箱目录后才能处理。实测：7.76M左右原视频，COMPRESS\_QUALITY\_LOW下为1.9M左右。
@@ -254,7 +254,7 @@ content_hash: sha256:d40e276a126e0622e550159a03c25419c16d49f1feb1f3a60f3164cc6a5
     ```
   + **效果图：**
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/Mnf9-lzBT2S-71qZYkYGJg/zh-cn_image_0000002661544457.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/Bj28MA6GQhe7t_7zA_dO1w/zh-cn_image_0000002661424517.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/Mnf9-lzBT2S-71qZYkYGJg/zh-cn_image_0000002661544457.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=98EB21DCB840140B81656D7803FECCC902E3086479B91A48F9512000F54E6229 "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/Bj28MA6GQhe7t_7zA_dO1w/zh-cn_image_0000002661424517.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=F530B4986303BE358A6E21885425201E11B8AACC72195BDBE3BA61911C2368FC "点击放大")
 
 ### 方案二：下载网络视频到沙箱，然后获取视频特定帧图片
 
@@ -398,7 +398,7 @@ content_hash: sha256:d40e276a126e0622e550159a03c25419c16d49f1feb1f3a60f3164cc6a5
     ```
   + **效果图：**
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/23tVaiEeQq6eMc5e6INzMQ/zh-cn_image_0000002631185318.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/23tVaiEeQq6eMc5e6INzMQ/zh-cn_image_0000002631185318.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E5E457DEFB8B0C7239798001CA2E4DE1A51B759FE9C2459520763DD56DC2567 "点击放大")
 * **业务场景二：**对于大数量的大视频文件，如何展示所有视频的封面图。
 
   **解决方案**：缓存视频资源过多容易因为内存占用过多导致应用崩溃。API 17起，用户可以通过[setMediaSource](../harmonyos-references/arkts-apis-media-avplayer.md#setmediasource12)预下载流媒体资源，并通过设置[PlaybackStrategy](../harmonyos-references/arkts-apis-media-i.md#playbackstrategy12)中的showFirstFrameOnPrepare实现封面图展示。当参数设置为true时，Prepare之后便显示视频起播首帧，参考如下。
@@ -619,7 +619,7 @@ content_hash: sha256:d40e276a126e0622e550159a03c25419c16d49f1feb1f3a60f3164cc6a5
   ```
 * **效果图：**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/SjmHEauASe-1FUw3F8S5Og/zh-cn_image_0000002631345226.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/SjmHEauASe-1FUw3F8S5Og/zh-cn_image_0000002631345226.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=C63942F2907C7A361435401C6301D4A85C4C57991B630D2809E54FE974B746C5 "点击放大")
 * **可能会遇到的问题：**无法从系统相册中读取视频文件的帧序列数据。
 
   **问题根因：**
@@ -658,7 +658,7 @@ let param: media.PixelMapParams = {
 
 输出结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/z4nj1PVpRmihhXmY0KwG4w/zh-cn_image_0000002658792049.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/z4nj1PVpRmihhXmY0KwG4w/zh-cn_image_0000002658792049.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=059C9663A84D0E7123948C1D282CBD894865B874FAADE6F306653EEAA766C95C "点击放大")
 
 Q：为什么相册选择视频后,获取到视频缩略图并转成PixelMap,封装成对象msg：{thumbnail: pixelMap},传到另一个组件@Prop msg无法展示?
 

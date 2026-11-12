@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: ArkUI事件传递阻断常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > ArkUI事件传递阻断常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:59+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:2f4c5d4591cbee112f79d49c10d8d922a28de86270f03ba06810fb56491e6c75
 ---
@@ -82,5 +82,5 @@ content_hash: sha256:2f4c5d4591cbee112f79d49c10d8d922a28de86270f03ba06810fb56491
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/B4EKl8VBQUyydSgSbhiGnQ/zh-cn_image_0000002772075044.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/B4EKl8VBQUyydSgSbhiGnQ/zh-cn_image_0000002772075044.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=64DE661379061670D21575B1588ECD1D2056175D7851B9224D1DFCD8DCC5EFBD "点击放大")
 * 方案三：设置事件独占控制：在其中一个组件上设置[monopolizeEvents](../harmonyos-references/ts-universal-attributes-monopolize-events.md#monopolizeevents)属性，并赋值为true，该组件就将独占所有事件，包括触摸、点击和手势事件，当该组件响应事件后，其他组件将不会响应任何事件，直到事件结束，达到隔离其他触摸事件的效果，具体实现可以参考官网[示例](../harmonyos-references/ts-universal-attributes-monopolize-events.md#示例)。

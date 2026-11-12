@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 触摸事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 基础输入事件 > 触摸事件
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-14
 content_hash: sha256:c6750fca5c6d6e8efbc5e03f263d52f59eeb1b472c54e7d03e53c32c2a620af8
 ---
@@ -228,7 +228,7 @@ struct TouchExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/5Samuc9yTEqaljSeGJH1gQ/zh-cn_image_0000002815560371.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/5Samuc9yTEqaljSeGJH1gQ/zh-cn_image_0000002815560371.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D3D6166DB5EBDB06F09011966ECD362616972BD87A56529ED9F6B645B2954A8)
 
 ### 示例2（获取组件实时位置）
 
@@ -263,4 +263,4 @@ struct GetCurrentLocalPositionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/WYLgnJA8So6TZPY51fY_4w/zh-cn_image_0000002815400455.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/WYLgnJA8So6TZPY51fY_4w/zh-cn_image_0000002815400455.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=F611010A0BBDCE511DBBA08EFCC67E97288020AFAC339F530A9AB12977D324CD)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-998
 title: 如何让Slider不显示进度变化动画
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何让Slider不显示进度变化动画
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:4941e9bd9ca359794c92b69ea209bebcf88a2c6d26f8194417b3160e52f73764
 ---
@@ -14,7 +14,7 @@ Slider在点击和长按某个位置时，如何让进度直接展示，不显�
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/2VkR3MiKTMCxJFNktS3lWg/zh-cn_image_0000002658804037.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/2VkR3MiKTMCxJFNktS3lWg/zh-cn_image_0000002658804037.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BB23151B933499EB044D46AE2385229225C043454AA37EB5E130A0CDEE9B544 "点击放大")
 
 ## 背景知识
 

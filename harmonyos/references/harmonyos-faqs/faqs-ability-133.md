@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-13
 title: 文件默认的打开方式中应用重复
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 文件默认的打开方式中应用重复
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:48+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-31
 content_hash: sha256:384caa1329dfcd129f28b502da150d402eca8e77e4dba30928819b0e8b1eeeb8
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:384caa1329dfcd129f28b502da150d402eca8e77e4dba30928819b0e8b1
 
 在综合办公类应用中，“选择文件打开方式”是一个高频使用场景，当用户需要查看某个文件时，可以选择支持该文件类型的其他应用打开。然而，这个过程中可能存在可供选择的应用重复的现象。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/eW4xvo_qTrSF4kDCRoig1A/zh-cn_image_0000002658868497.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/eW4xvo_qTrSF4kDCRoig1A/zh-cn_image_0000002658868497.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3C8D490A1B56D28F6B784877A7E152BDDE5FB53C8AD8BA588DBBC8903B0E698 "点击放大")
 
 ## 背景知识
 

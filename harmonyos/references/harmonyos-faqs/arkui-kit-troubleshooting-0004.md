@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-troub
 title: ArkUI标题栏渐变导致控件不显示问题定位
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 故障排查 > ArkUI标题栏渐变导致控件不显示问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:9c26ad675a894eb50ff91e2109b17486e4bdfaf741638cb7ef66efb284e3ad88
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:9c26ad675a894eb50ff91e2109b17486e4bdfaf741638cb7ef66efb284e
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/x_92uGjBSh2Xod-JUTwv7g/zh-cn_image_0000002793380211.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/x_92uGjBSh2Xod-JUTwv7g/zh-cn_image_0000002793380211.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA901D7AFFC21EBE872896B0C5C54D9587639219530A4C35C04F48975D2100BD "点击放大")
 
 问题代码示例参考如下：
 
@@ -244,4 +244,4 @@ struct tabTopScroll {
 
 解决后效果如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/qibzkmbcRZmhu6RWRqLDHQ/zh-cn_image_0000002764141826.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/qibzkmbcRZmhu6RWRqLDHQ/zh-cn_image_0000002764141826.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=08C1590A3244F75222F7B6CBF9C5323681640B50793D0246B1685090BDDEE7E3 "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 多设备适配屏幕差异
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备功能开发 > 多设备适配屏幕差异
 category: best-practices
-scraped_at: 2026-11-10T10:42:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-15
 content_hash: sha256:a545712b88ff4428f87102915efdedbe9cdb241e95c2497bb2a4deccafe8de2d
 ---
@@ -25,7 +25,7 @@ content_hash: sha256:a545712b88ff4428f87102915efdedbe9cdb241e95c2497bb2a4deccafe
 
 页面适配不同尺寸屏幕的本质，是适配不同尺寸的窗口——无论是手机、折叠屏、平板还是电脑，其屏幕差异最终都体现为应用显示窗口宽高、比例的差异。因此，适配的核心应基于窗口属性抽象出响应式能力，通过“[断点](bpta-multi-device-responsive-layout.md#section1532120147301)适配”实现界面随窗口尺寸动态调整，实现页面的同步刷新，详情可参考[通过断点刷新UI](bpta-multi-device-responsive-layout.md#section175001836203617)。通过一次性基于断点的布局适配，即可支持分屏、悬浮窗、自由窗口等多种窗口模式，确保界面在不同形态间平滑、连续地响应变化。效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/NOEBMvZsSHiTrkH3-ECYOg/zh-cn_image_0000002506596732.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/NOEBMvZsSHiTrkH3-ECYOg/zh-cn_image_0000002506596732.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2D04F6FE228843C8687C9742715867E740E939C7F1822DBBC4ED5FE76D904B6 "点击放大")
 
 开发多设备界面时，不同屏幕类型常用的响应式布局可参考[屏幕类型布局场景](bpta-multi-device-screen-layout.md)，包含[直板机竖屏](bpta-multi-device-screen-layout.md#section1919517165814)、[大屏横屏](bpta-multi-device-screen-layout.md#section6493354468)等常见窗口形态和[小方形屏](bpta-multi-device-screen-layout.md#section1395830175918)等特殊窗口形态的适配。
 
@@ -33,7 +33,7 @@ content_hash: sha256:a545712b88ff4428f87102915efdedbe9cdb241e95c2497bb2a4deccafe
 
 视频适配不同尺寸屏幕，旨在确保各类宽高比的视频在多种设备屏幕上均能呈现良好效果，避免拉伸变形或关键内容被过度裁切。为提升视频观看体验，可通过全屏展示、弱化界面干扰，使用户更加专注于视频内容。效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/WPXtiROISdiZvIxsJWQRQA/zh-cn_image_0000002506436906.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/WPXtiROISdiZvIxsJWQRQA/zh-cn_image_0000002506436906.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=16C6264556752DE87B5288C5B7E281C0C0E66AF5C07B05EFBB22E21E1FA27BD1 "点击放大")
 
 为了实现这一效果，需考虑不同尺寸视频在不同尺寸窗口上的适配规则。从视频的宽高比出发，可分为9:16和非9:16两种类型。
 
@@ -45,17 +45,17 @@ content_hash: sha256:a545712b88ff4428f87102915efdedbe9cdb241e95c2497bb2a4deccafe
 
 宽高比非9:16的视频包括竖向视频（高>宽）或横向视频（宽>高），红色区域为推荐的视频显示区域，适配建议如下图所示，其中横向坐标为窗口宽高比。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/kBy6eikARoK0pCZzcOBDnw/zh-cn_image_0000002538396643.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/kBy6eikARoK0pCZzcOBDnw/zh-cn_image_0000002538396643.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE631C0F65984B1C64F4593744EE475195EDC6F94DC43D25FE7A1968891186B5 "点击放大")
 
 **适配宽高比为9:16的视频**
 
 当视频宽高比为9:16时，其在断点区间的适配效果图如下图所示，红色区域为推荐的视频显示区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/gJ2swvXDRzCVjyt8S3bUHA/zh-cn_image_0000002538316627.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/gJ2swvXDRzCVjyt8S3bUHA/zh-cn_image_0000002538316627.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B398CF0A05B45D6703736C0B5046F01D1DF2C4660726E94445FBEE2A0C0C1F5 "点击放大")
 
 当横向断点为sm、纵向断点为lg时，由于设备尺寸的差异，存在不同的适配建议。具体如下图所示，其中横坐标为窗口宽高比。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/-f2YfFa1SleMlEy0dfmaEQ/zh-cn_image_0000002506596740.png "点击放大")对于不满足横向断点为sm、纵向断点为lg的其他窗口尺寸，建议顶部状态栏和底部Tab栏均采用沉浸式设计，内容区高度=窗口高度，内容区宽度=内容区高度×视频宽高比。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/-f2YfFa1SleMlEy0dfmaEQ/zh-cn_image_0000002506596740.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=261262311A431A8AFA813B27C65FA5BC54A3F10348CCCD3800E0AFD9454C3331 "点击放大")对于不满足横向断点为sm、纵向断点为lg的其他窗口尺寸，建议顶部状态栏和底部Tab栏均采用沉浸式设计，内容区高度=窗口高度，内容区宽度=内容区高度×视频宽高比。
 
 **获取窗口信息**
 
@@ -119,7 +119,7 @@ private onWindowSizeChange: (windowSize: window.Size) => void = (windowSize: win
 
 对于双折叠开合连续使用场景，应用在完成折叠状态切换操作后，需确保[List](../harmonyos-references/ts-container-list.md)组件、[WaterFlow](../harmonyos-references/ts-container-waterflow.md)组件以及[Scroll](../harmonyos-references/ts-container-scroll.md)组件等可滑动组件的阅读焦点不发生偏移。目前，这些组件依据折叠状态改变前的滑动偏移量来维持阅读焦点位置，然而，由于折叠状态切换前后，组件内部高度可能发生变化，即便滑动相同的偏移量，也难以达成阅读焦点不偏移的目标。因此，有必要针对上述可滑动组件采取特殊处理措施。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/_yrfKFuDSXqUNqhsNv4cjw/zh-cn_image_0000002585654510.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/_yrfKFuDSXqUNqhsNv4cjw/zh-cn_image_0000002585654510.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=D30FE6D356B9A722EF41D7916EA97C903FFA56BF05AD72A746778CE25C0C5B01 "点击放大")
 
 * List组件
 
@@ -194,4 +194,4 @@ private onWindowSizeChange: (windowSize: window.Size) => void = (windowSize: win
 
 折叠屏在悬停态下可平稳放置于桌面，实现免手持体验，适用于视频通话、播放视频、拍照及听歌等无需频繁交互的场景。设计规范可参照[悬停态](../design-guides/foldable-0000002352875141.md#section183378919119)。设备在悬停态时，应用需避开中间折痕区域，并对上下两个界面进行悬停适配，重新布局。悬停状态的实现方案可参考[折叠屏悬停态](bpta-folded-hover.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/WMdsYL40T0uhb6jrOYeY8w/zh-cn_image_0000002506436912.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/WMdsYL40T0uhb6jrOYeY8w/zh-cn_image_0000002506436912.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC1AE9F8AEEC209C521516CB1386A4A60C0FAA7F7F320C0F0F5F72FC91D31028 "点击放大")

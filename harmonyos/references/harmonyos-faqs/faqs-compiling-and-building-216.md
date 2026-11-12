@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错daemon connections达到上限
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错daemon connections达到上限
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:56+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:d989affb362107fdcf5e0d3fcbd028d631918fef37ceac3b1760ecb747b723a3
 ---
@@ -32,13 +32,13 @@ hvigor ERROR: hvigor daemon: The number of hvigor daemon connections has reached
 
 取消使用守护进程，在IDE的设置中，点击File > Settings > Build, Execution, Deployment > Build Tools > Hvigor，取消勾选字段Enable the Daemon for tasks。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/5ag6OPGGQHCD0bOrDhOZfQ/zh-cn_image_0000002628409286.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/5ag6OPGGQHCD0bOrDhOZfQ/zh-cn_image_0000002628409286.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=8CECEF1D80F305634FEF5BD11C7C8CCA211875C90F3C807776418E50E5EFA157 "点击放大")
 
 ## 常见FAQ
 
 Q：热部署没成功就点击运行，会报如下错误：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/Z2vgIQE-S7efPRkA2HvVMw/zh-cn_image_0000002658808557.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/Z2vgIQE-S7efPRkA2HvVMw/zh-cn_image_0000002658808557.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7355FCB97DBD308F4CD5A55FFE5BB26EF2F87396B6F9121317E4140F5C8860D "点击放大")
 
 这种报错除了重启IDE还能怎么解决？
 

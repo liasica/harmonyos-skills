@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-project-ma
 title: ExternalCpp视图中显示SDK的系统API
 breadcrumb: FAQ > DevEco Studio > 工程管理 > ExternalCpp视图中显示SDK的系统API
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:50+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:e39b0b1ce2982d8456dcd66e75e2a556e7988a2c863bc85ffe65536fa21b56e1
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:e39b0b1ce2982d8456dcd66e75e2a556e7988a2c863bc85ffe65536fa21
 
 ExternalCpp视图中显示SDK的系统API。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/LWUR3s7vSv-MtjKefUpvsA/zh-cn_image_0000002624478440.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/LWUR3s7vSv-MtjKefUpvsA/zh-cn_image_0000002624478440.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=305F9DDF71B564E860B23BC59AFF646288DF59287D9969014032F6ED39A5CA1D)
 
 **可能原因**
 

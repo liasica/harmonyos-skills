@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/development-env
 title: DevEco Studio环境配置常见问题
 breadcrumb: FAQ > DevEco Studio > 环境准备 > 常见问题 > DevEco Studio环境配置常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:48+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:281a160c7ce56d9ca5376eee049fe5732c28f9830aa0494f615a4edb7bf865f4
 ---
@@ -26,7 +26,7 @@ JDK25版本中JDK-8370216的接口行为变更，导致打包问题。
 
 **Q：在Mac上，通过打开DMG文件中的DevEco Studio图标启动DevEco Studio时，如果构建报错“The path XX is not writable. please choose a new location”，请选择一个新的位置。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/ldZLLovgQw6ziiBdd7LL2Q/zh-cn_image_0000002772995676.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/ldZLLovgQw6ziiBdd7LL2Q/zh-cn_image_0000002772995676.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DE484D59323B2CA4DB945715DAB15C110B1BD8BC36354CDAA3E5D454A139536 "点击放大")
 
 **A**：在Mac上直接通过DMG中的DevEco Studio图标打开DevEco Studio，会以只读方式打开。内置在DevEco Studio中的文件没有写权限。
 

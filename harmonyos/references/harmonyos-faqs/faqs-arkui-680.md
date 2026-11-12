@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-680
 title: TextInput绑定的Popup气泡无法弹出
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > TextInput绑定的Popup气泡无法弹出
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:43+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:8b7d20c37bcfbc476fd568754196539ac5de507756ad5511cbd7e97a0e12646e
 ---
@@ -14,11 +14,11 @@ content_hash: sha256:8b7d20c37bcfbc476fd568754196539ac5de507756ad5511cbd7e97a0e1
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/jEXNx1aESNyIgAsNLRhEuQ/zh-cn_image_0000002628554740.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/jEXNx1aESNyIgAsNLRhEuQ/zh-cn_image_0000002628554740.png?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CD9C4B3667A81978BF2B17822131559A7203E0377A5EA33FBD581ADA07C7A88 "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/ck7cDgxnRrObTmdEkavb-w/zh-cn_image_0000002628394844.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/ck7cDgxnRrObTmdEkavb-w/zh-cn_image_0000002628394844.png?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=506D4D9A5CDC1BE12FA22627AA30A42AEB55EBDC7D7B340B05E9EC02C6B30D48 "点击放大")
 
 ## 背景知识
 

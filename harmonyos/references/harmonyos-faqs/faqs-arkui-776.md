@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-776
 title: Navigation中如何关闭removeByName删除页面时的默认动画
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Navigation中如何关闭removeByName删除页面时的默认动画
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:44+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:f0bcaf216aa8ab5825b629e5fec53c0ee42071a4f92579b53a4058b394ee341f
 ---
@@ -14,7 +14,7 @@ Navigation中使用removeByName删除页面时存在从底部滑出的动画，A
 
 目前效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/SvkbWhK9SBmTviCeb12ygQ/zh-cn_image_0000002658915025.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/SvkbWhK9SBmTviCeb12ygQ/zh-cn_image_0000002658915025.png?HW-CC-KV=V1&HW-CC-Date=20261112T233202Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3E49E30BADD18BBF8AE5EAD0281A573AB48B3C5997A6E197E23B4E14C5CDD7C "点击放大")
 
 ## 背景知识
 

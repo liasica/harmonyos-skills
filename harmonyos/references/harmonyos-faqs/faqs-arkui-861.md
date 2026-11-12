@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-861
 title: 页面没有实现护眼模式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 页面没有实现护眼模式
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:34+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:195d0331e9c9c22d1ad8312aa331f21fde1cfcd9dabe501058685b1faf1be3e9
 ---
@@ -62,7 +62,7 @@ content_hash: sha256:195d0331e9c9c22d1ad8312aa331f21fde1cfcd9dabe501058685b1faf1
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/d4OluwbaSV6xrZQ4BNSv9A/zh-cn_image_0000002628558792.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/d4OluwbaSV6xrZQ4BNSv9A/zh-cn_image_0000002628558792.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=955E9D0D92896E54040E5A649222761044BFB6CC013E6275021636A5093DB803 "点击放大")
 
 * 方案二：使用createSubWindow和setUIContent实现护眼模式。
 
@@ -93,7 +93,7 @@ content_hash: sha256:195d0331e9c9c22d1ad8312aa331f21fde1cfcd9dabe501058685b1faf1
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/bBzM0UuSRxi1eJw4dwqQtA/zh-cn_image_0000002658918109.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/bBzM0UuSRxi1eJw4dwqQtA/zh-cn_image_0000002658918109.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DD48FAD75870125938B2BA0A7CADD33CDCDEF03C8E92430FFD57F62DA7C06F1 "点击放大")
 
 完整示例：
 

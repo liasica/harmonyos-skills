@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: OS平台API行为的变更
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.2(14) > OS平台能力 > OS平台行为变更说明 > OS平台API行为的变更
 category: harmonyos-releases
-scraped_at: 2026-11-12T09:50:31+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:194071c007e493ebab9f8e308b794619b39b4e8fd601cfbf848934e5a2200f25
 ---
@@ -642,7 +642,7 @@ struct zIndexTest {
 
 实现效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/amXgqx9vTvKdPYwnj2Md9A/zh-cn_image_0000002300492512.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/amXgqx9vTvKdPYwnj2Md9A/zh-cn_image_0000002300492512.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCAA9826F73B86FE413B963A5EC7EBEB64C2C0FD1A133FE19699B0C7C82E5FB3)
 
 ### 屏幕Display对象rotation和orientation属性变更
 
@@ -1706,7 +1706,7 @@ hdc命令行工具
 hidumper --mem `pidof render_service_`
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/d8sTcQJ1TFyCqWeR_3hBYA/zh-cn_image_0000002334331997.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/d8sTcQJ1TFyCqWeR_3hBYA/zh-cn_image_0000002334331997.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A9521BED81114615DFA29F0BA2360DEEF6CB046D5EB501E3AF49AE3E30266D1)
 
 变更后：每一列数据后新增一个空格
 
@@ -1714,7 +1714,7 @@ hidumper --mem `pidof render_service_`
 hidumper --mem `pidof render_service_`
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/5CmSJMRwS0-pQrbPbiW_fQ/zh-cn_image_0000002334372173.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/5CmSJMRwS0-pQrbPbiW_fQ/zh-cn_image_0000002334372173.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=C157C7A6104054DE2A11D41F61637DF50D5EC2522C8F24C35209691967054864)
 
 其中hidumper、hidumper --mem、hidumper -c [system]变更效果与hidumper --mem [pid]命令效果一致。
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-310
 title: 在长按拖拽排序的场景下，如何实现自定义长按拖拽onItemDragStart的开始触发时长
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 在长按拖拽排序的场景下，如何实现自定义长按拖拽onItemDragStart的开始触发时长
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:03+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:9bbda5ca9ca6985c6691e6cb16406194554712721a4bf2caf2b94a9e1e333137
 ---
@@ -328,4 +328,4 @@ struct ReplaceDefaultTimeSetPage {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/qjrxfBbmS5Cc3EGYnQiwfA/zh-cn_image_0000002654795305.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/qjrxfBbmS5Cc3EGYnQiwfA/zh-cn_image_0000002654795305.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=9934FA2DFD1448999C4DE76B4A1AB178AE864C4196E78B88B7DB581769665757 "点击放大")

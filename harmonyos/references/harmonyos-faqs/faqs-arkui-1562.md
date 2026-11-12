@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1562
 title: 应用挂起或退出时，页面顶部闪现白条
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 应用挂起或退出时，页面顶部闪现白条
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:34+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:7344574b9311225399de5eaba5f54c11e92a4df89eea7fad5f13230e15581388
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:7344574b9311225399de5eaba5f54c11e92a4df89eea7fad5f13230e155
 
 应用挂起或退出时，应用页面的上方出现白色区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/EkuEFNtCQBK-FHDLqdcE3w/zh-cn_image_0000002628769750.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/EkuEFNtCQBK-FHDLqdcE3w/zh-cn_image_0000002628769750.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D99DECB075D5079CFF56B655B3621A0C3C2D151F3229136018947CEDF2AFDA2 "点击放大")
 
 ## 背景知识
 
@@ -84,7 +84,7 @@ content_hash: sha256:7344574b9311225399de5eaba5f54c11e92a4df89eea7fad5f13230e155
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/7SwW08WmTAyOlp5BMFeiUA/zh-cn_image_0000002658969071.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/7SwW08WmTAyOlp5BMFeiUA/zh-cn_image_0000002658969071.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=86B8AE908CF1889F609AAA24ACB5D23C01F1E78438294F7D4AA3AC5457644A07 "点击放大")
 * 页面中的组件配置[expandSafeArea](../harmonyos-references/ts-universal-attributes-expand-safe-area.md#expandsafearea)属性，确保expandSafeArea属性生效，扩展组件的安全区域到状态栏。
 
   代码如下：
@@ -106,4 +106,4 @@ content_hash: sha256:7344574b9311225399de5eaba5f54c11e92a4df89eea7fad5f13230e155
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/NXTKKXycRCqDN73_VFHrQg/zh-cn_image_0000002658849117.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/NXTKKXycRCqDN73_VFHrQg/zh-cn_image_0000002658849117.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=B6983A8211EA99189558BEC6C6DD8036DD970B242A460F62E223CDC91709AD54 "点击放大")

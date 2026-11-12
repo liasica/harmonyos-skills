@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/floatingball-
 title: 闪控球开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 闪控球开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:9bde736015ece3fbb5e07917f0434e3d18daec9892e643eaf4262242ff600922
 ---
@@ -68,49 +68,49 @@ content_hash: sha256:9bde736015ece3fbb5e07917f0434e3d18daec9892e643eaf4262242ff6
 
 **图1** 静态布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/KPui8u4nTLqWw5p1f4GOWQ/zh-cn_image_0000002786519308.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/KPui8u4nTLqWw5p1f4GOWQ/zh-cn_image_0000002786519308.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=75188EFC858E6F4D7B892DB4D16FBC43FEA1FDD1A376B964E601E0D108D911A0)
 
 **图2** 静态布局-超长文本标题
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/w5k-Zf7YTuCV_ZcVJ7LBYQ/zh-cn_image_0000002786359380.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/w5k-Zf7YTuCV_ZcVJ7LBYQ/zh-cn_image_0000002786359380.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=BFD192A9E0CFB677FE80B24ADD1156F7762A69D1D9D82F7669DF52A2A102F2A3)
 
 **图3** 普通文本布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/LtXwW9--SFmgP7QV95NjtQ/zh-cn_image_0000002815558801.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/LtXwW9--SFmgP7QV95NjtQ/zh-cn_image_0000002815558801.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=32CDB9A09487799744A5EA198F72801246287E64D10AFCECACD4255F464F46C6)
 
 **图4** 普通文本布局-超长文本内容
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/qixj0lvnQY-yhrdqj1acKw/zh-cn_image_0000002815398885.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/qixj0lvnQY-yhrdqj1acKw/zh-cn_image_0000002815398885.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=44C6FE8D697B4525CCF5C9730790D6DA598BAFDAD530E9AB3FF842179951378C)
 
 **图5** 强调文本布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/MGR2sftNSmKOUT-Hvxa5Zg/zh-cn_image_0000002786519310.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/MGR2sftNSmKOUT-Hvxa5Zg/zh-cn_image_0000002786519310.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=84E8C8BC77378F43E0F50AFEA3960B28342CB10B39118EFE04D2A224DEEF2321)
 
 **图6** 强调文本布局-超长文本内容
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/lqb21iWiRHiB4vWgZjvqjg/zh-cn_image_0000002786359382.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/lqb21iWiRHiB4vWgZjvqjg/zh-cn_image_0000002786359382.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=38B79B6C95EE544B8360D5DCEE4F9C794712EB394FE7C650DC96C707F9609288)
 
 **图7** 强调文本布局-图标
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/uO8xemA7STqE4IcTQgW12Q/zh-cn_image_0000002815558803.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/uO8xemA7STqE4IcTQgW12Q/zh-cn_image_0000002815558803.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD89FCD6ED396481BDEC8C13DDA842B60609EEC066C2F66E19FEC97E23CB72BA)
 
 **图8** 强调文本布局-图标和超长文本内容
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/IA7-unA3Swqos0TGXjA4YA/zh-cn_image_0000002815398887.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/IA7-unA3Swqos0TGXjA4YA/zh-cn_image_0000002815398887.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E99E969AEF123ADE34EFF2417E3C70F1B63DA58508A6F1CCBB0B8BFD45D098D)
 
 **图9** 纯文本布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/Qp9340PYTciPq3pV3ykqNw/zh-cn_image_0000002786519312.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/Qp9340PYTciPq3pV3ykqNw/zh-cn_image_0000002786519312.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=3BF383456EDBD64E4BB0B0A1B440C898A6379C21C774668FB741C3010E456278)
 
 **图10** 纯文本布局-超长文本标题
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/6CEC7qpYQSi-X_lCsa2KdA/zh-cn_image_0000002786359384.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/6CEC7qpYQSi-X_lCsa2KdA/zh-cn_image_0000002786359384.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=3FDC2D4E1DB7619D9B245786C2EDCCC3521F6B103C0BFAF4762DA385534DE3A4)
 
 当有两个应用启动了闪控球后，闪控球将合并展示，如下图所示。整体高度为76vp。
 
 **图11** 闪控球上下合并展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/OL1zpV8cRciK00CBbI_0ag/zh-cn_image_0000002815558805.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/OL1zpV8cRciK00CBbI_0ag/zh-cn_image_0000002815558805.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7C9CBB0271AA0FF0BF986B2FB4513EAFADAACED9F57FECB7A425068B79C5F40)
 
 ## 开发步骤
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Stack
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 行列与堆叠 > Stack
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:9c2ec9c91d6ad6253f5c732f8ee66085b5b07e52b9f7b219f9517caf6d171259
 ---
@@ -134,4 +134,4 @@ struct StackExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/NLavEZJ1Q0-DuMHXz0p01A/zh-cn_image_0000002786521028.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/NLavEZJ1Q0-DuMHXz0p01A/zh-cn_image_0000002786521028.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=6336CA70B683C2FB3744D52EF9D12928090708AD768ACA1D94076A705D74EA69)

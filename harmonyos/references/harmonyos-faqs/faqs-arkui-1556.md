@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1556
 title: 关于ListItem中swipeAction使用问题合集
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 关于ListItem中swipeAction使用问题合集
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:36+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:9f09c8eaa05971bd4fbabcb4e9bc73115b08b050139461372d9fee7dae610dc8
 ---
@@ -135,4 +135,4 @@ struct ListSwipe {
 
 实现效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/SBSFE54tR3-QuuQ_bubZSg/zh-cn_image_0000002628769134.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/SBSFE54tR3-QuuQ_bubZSg/zh-cn_image_0000002628769134.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D28E06BA1C09315C773AFF8AB2271313E196C2262927D9680998FC343771A3C "点击放大")

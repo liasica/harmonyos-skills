@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1121
 title: 列表左滑删除时，删除按钮异常滑动到页面最左侧
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 列表左滑删除时，删除按钮异常滑动到页面最左侧
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:27+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:19c8458d47a3cf970c6ce94982e64815b6c5bd3eca82a236bc84419354cae1be
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:19c8458d47a3cf970c6ce94982e64815b6c5bd3eca82a236bc84419354c
 
 列表项左滑删除时，长距删除区可滑动至撑满列表子组件宽度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/G6B_uNauSS2XE706xyXzgw/zh-cn_image_0000002658928727.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/G6B_uNauSS2XE706xyXzgw/zh-cn_image_0000002658928727.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3637F653F4F1C060506E4B35BAE9D1C8C0032443723F4409D4011F6EA885F03 "点击放大")
 
 ## 背景知识
 

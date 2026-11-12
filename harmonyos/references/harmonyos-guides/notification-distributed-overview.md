@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-
 title: 跨设备协同通知概述
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > 跨设备协同通知 > 跨设备协同通知概述
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:30+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-03
 content_hash: sha256:8d09c233a474bf6b008a0d06268ca8201c86783526d1db35a4f465730a9cfcff
 ---
@@ -22,4 +22,4 @@ content_hash: sha256:8d09c233a474bf6b008a0d06268ca8201c86783526d1db35a4f465730a9
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/Ylr1ra79TfW6R7PQuq7sEQ/zh-cn_image_0000002815399973.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/Ylr1ra79TfW6R7PQuq7sEQ/zh-cn_image_0000002815399973.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D4E4682AE16E9B280646BFDE45C42485E04F15E966BA4BA20D06684981BCA49)

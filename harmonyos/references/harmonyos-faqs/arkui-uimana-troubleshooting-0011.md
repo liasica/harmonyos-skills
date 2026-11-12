@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-tr
 title: 沉浸式状态栏显示与避让问题定位
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 故障排查 > 沉浸式状态栏显示与避让问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:33+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:a5a812fbc20a7859e07896ac2364f1bbc857e61175017a11d335e1942f69e7f1
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:a5a812fbc20a7859e07896ac2364f1bbc857e61175017a11d335e1942f6
 
 平板从自由多窗模式退出后，应用页面内容与状态栏有重叠。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/RjgmcMNeQh2aJw_lsDk8pQ/zh-cn_image_0000002802119577.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/RjgmcMNeQh2aJw_lsDk8pQ/zh-cn_image_0000002802119577.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF38CE5C055B4628BBE184EA2F81DF84AA2831FEFD63B017045F16860050505A "点击放大")
 
 ### 定位过程
 
@@ -181,7 +181,7 @@ struct TabsExample {
 
 如下图所示（左边是正常模式，右边是深色模式）：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/ERG0adJjQB2Zk8BPP4WTpg/zh-cn_image_0000002802039483.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/fnrQpHuXST-ku0i5SF0nSg/zh-cn_image_0000002772839728.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/ERG0adJjQB2Zk8BPP4WTpg/zh-cn_image_0000002802039483.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3655A117A7103E2870551F2DBBE7F1F8595B56E9FCB82E0757445BC5617B1B4 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/fnrQpHuXST-ku0i5SF0nSg/zh-cn_image_0000002772839728.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=515147C4E42AECE0F7B0AB5A3F921FC0F4F028FB852062B446CA5B0BCD604033 "点击放大")
 
 沉浸式布局下，若通过setWindowSystemBarProperties接口将状态栏图标颜色（statusBarContentColor）统一设为白色，切换到深色模式时顶部背景变为浅色，白色图标将看不清。
 

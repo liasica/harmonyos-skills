@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-location
 title: 显示我的位置
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 创建地图 > 显示我的位置
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:29+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:68653c5e7380cbf099f70e01deffc91f78b4f253811f151d6f969d0f14c5353a
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:68653c5e7380cbf099f70e01deffc91f78b4f253811f151d6f969d0f14c
 
 本章节将向您介绍如何开启和展示“我的位置”功能，“我的位置”指的是进入地图后点击“我的位置”显示当前位置点的功能。效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/gsP_KnG5TKaPr9QZXxrEtg/zh-cn_image_0000002815559833.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/gsP_KnG5TKaPr9QZXxrEtg/zh-cn_image_0000002815559833.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=5946181D44B0D246A4E2BE0D7894039772CCACFD5510917E0F775B8CEC0370F1 "点击放大")
 
 ## 接口说明
 
@@ -181,9 +181,9 @@ content_hash: sha256:68653c5e7380cbf099f70e01deffc91f78b4f253811f151d6f969d0f14c
    ```
 3. 检查“我的位置”功能是否成功启用。
 
-   “我的位置”按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/snBfW18RTIWRUgwXhmuIjw/zh-cn_image_0000002815399917.png)默认显示在地图的右下角。点击“我的位置”按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/w45hXF7NQHeiPaedh8Q_SQ/zh-cn_image_0000002786520342.png)，将会在屏幕中心显示当前定位，以蓝色圆点的形式呈现，效果如下图所示，效果根据获取到的用户位置会有变化。
+   “我的位置”按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/snBfW18RTIWRUgwXhmuIjw/zh-cn_image_0000002815399917.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=5EA79A133F57EB8D22599E2EE3C8D3DC7A9E0015AAFC0F8A87B3AD12FF449125)默认显示在地图的右下角。点击“我的位置”按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/w45hXF7NQHeiPaedh8Q_SQ/zh-cn_image_0000002786520342.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EFF50D3E9CB6C7B2BC7AF3E6802A70DDF0CD105B0691236E88ECB4580ABA091)，将会在屏幕中心显示当前定位，以蓝色圆点的形式呈现，效果如下图所示，效果根据获取到的用户位置会有变化。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/m75JQZXSSTWZYFR-X_2SJw/zh-cn_image_0000002786360414.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/m75JQZXSSTWZYFR-X_2SJw/zh-cn_image_0000002786360414.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=26CC5CAEB42682EDF4A28639B604AB3D9B5462E5B24C0802DCF1D61205947A6D "点击放大")
 4. 获取用户位置坐标并设置用户的位置。
 
    Map Kit默认使用系统的连续定位能力，如果您希望定制显示频率或者精准度，可以调用[geoLocationManager](../harmonyos-references/js-apis-geolocationmanager.md)相关接口获取用户位置坐标（WGS84坐标系）。注意访问设备的位置信息必须申请权限，并且获得用户授权，详情见[geoLocationManager](../harmonyos-references/js-apis-geolocationmanager.md)。
@@ -237,7 +237,7 @@ let style: mapCommon.MyLocationStyle = {
 await this.mapController.setMyLocationStyle(style);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/yHp_WvFnQNqH3Hl924dOHA/zh-cn_image_0000002815559835.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/yHp_WvFnQNqH3Hl924dOHA/zh-cn_image_0000002815559835.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2D4BB870D48BB8A79B6A06101FFF195F42CBFFA9989E83E29464AE5C565F8ED "点击放大")
 
 ### 更改我的位置图层相对于覆盖物的压盖顺序
 
@@ -248,4 +248,4 @@ await this.mapController.setMyLocationStyle(style);
 this.mapController?.changeMyLocationLayerOrder(true);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/A9rOuNzDQxqz9QF3ppOSJg/zh-cn_image_0000002815399919.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/A9rOuNzDQxqz9QF3ppOSJg/zh-cn_image_0000002815399919.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=92629C11BB307C4AEF51B2D5ED66FB28635DFC05ACCB8E303A927878AACCB499 "点击放大")

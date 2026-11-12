@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-521
 title: 输入组件获焦时实现提示文本的动态效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 输入组件获焦时实现提示文本的动态效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:43+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:bf0760eca55a64b6ef6ac58dee4d1a4c7d6ee160f2665c564c486ab317997f91
 ---
@@ -160,4 +160,4 @@ class TextModifier implements AttributeModifier<TextAttribute> {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/1vT8Loc7Q0CLCc_HPKaDyg/zh-cn_image_0000002628391170.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/1vT8Loc7Q0CLCc_HPKaDyg/zh-cn_image_0000002628391170.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=F96BBA407963AD7D274DB05336AA1C405C8DF4697ABAEAF8DAC204D620448EB2 "点击放大")

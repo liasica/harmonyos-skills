@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-
 title: 为通知添加行为意图
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > 发布通知 > 为通知添加行为意图
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:30+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:dd807e1d18d41187d8babf68794d72db5083691afeb55996af0c57802c44754d
 ---
@@ -12,11 +12,11 @@ content_hash: sha256:dd807e1d18d41187d8babf68794d72db5083691afeb55996af0c57802c4
 
 携带了actionButtons的通知示意图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/uucjd3miQTCqztEWcfpTAg/zh-cn_image_0000002786360468.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/uucjd3miQTCqztEWcfpTAg/zh-cn_image_0000002786360468.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=7EE0E029C998C048E32A6EDD1174D588831D58B6F42E2F4929C10CA1AEC531A8)
 
 ## 运行机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/YXy73c1aRr-c5uSjte2Ulw/zh-cn_image_0000002815559889.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/YXy73c1aRr-c5uSjte2Ulw/zh-cn_image_0000002815559889.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=DAC83FA1D5B1CEA09E198EB7E272BE56FFBD72B1E58466632B11F76010D6E186)
 
 ## 接口说明
 

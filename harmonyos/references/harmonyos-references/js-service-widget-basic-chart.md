@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: chart
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 基础组件 > chart
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:37+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:c79d90205872411c74f6a29a1815d429aa8b8e7868390d71cff862faa9579e15
 ---
@@ -253,7 +253,7 @@ content_hash: sha256:c79d90205872411c74f6a29a1815d429aa8b8e7868390d71cff862faa95
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/N87SUOIrTE6kA-jb45WFKg/zh-cn_image_0000002786521916.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/N87SUOIrTE6kA-jb45WFKg/zh-cn_image_0000002786521916.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D512C643302222895AF05954FD3136859D9DB5380D2496CEDD2263DAB5DF4EA)
 2. 柱状图
 
    ```html
@@ -320,7 +320,7 @@ content_hash: sha256:c79d90205872411c74f6a29a1815d429aa8b8e7868390d71cff862faa95
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/YUS675MlT6quaBeyT9tmjA/zh-cn_image_0000002786361988.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/YUS675MlT6quaBeyT9tmjA/zh-cn_image_0000002786361988.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=267FA0C21B871BF0097B71DBC7E0CA8C00A320D94EE80FEB7FB6E038224CEF25)
 3. 量规图
 
    ```html
@@ -349,4 +349,4 @@ content_hash: sha256:c79d90205872411c74f6a29a1815d429aa8b8e7868390d71cff862faa95
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/9vliv_OFSnOK2-MTFlGy8A/zh-cn_image_0000002815561409.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/9vliv_OFSnOK2-MTFlGy8A/zh-cn_image_0000002815561409.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=76C64D5EED7C49930C26F20BE829D0FA230D9D7AEA0D880B9FD7EF556A92FFD9)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (BackPressActionProposal)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (BackPressActionProposal)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:57+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:15904ab18e88f1e5c1f14e4bf358fb425cd45a442b06fe54a14d56006631cb42
 ---
@@ -93,4 +93,4 @@ struct SmartGestureControllerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/QmAO3_QyQQOj7cxxh-TzsA/zh-cn_image_0000002786520810.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/QmAO3_QyQQOj7cxxh-TzsA/zh-cn_image_0000002786520810.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8338E188CAD763F9189319E4EE9AC3FE0BB1D092E31D02B6C6959093CDD7EEB)

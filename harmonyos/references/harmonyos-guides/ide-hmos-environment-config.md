@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-envi
 title: 配置OHPM代理
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 附录 > 配置OHPM代理
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-03
 content_hash: sha256:b3f086795282c1ccaa7683b9f4d34d4c3550e4ba6da2c8ef27beb07f43686bd3
 ---
@@ -28,14 +28,14 @@ content_hash: sha256:b3f086795282c1ccaa7683b9f4d34d4c3550e4ba6da2c8ef27beb07f436
 
    填写并勾选以上信息后，点击确认。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/dx2TtMA0Tj6wesM_BH8w_w/zh-cn_image_0000002810630521.png "点击放大")
-3. 代理配置完成后，点击底部![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/mbN024DvR7uEHhg-WoxOOQ/zh-cn_image_0000002810750631.png)终端图标，可执行如下命令验证代理是否配置成功。执行结果如下图所示，则说明代理设置成功。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/dx2TtMA0Tj6wesM_BH8w_w/zh-cn_image_0000002810630521.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=E131A53308F35CC5DE7C042AE263647A9522ABB8B276456C191525B64C1B8DF5 "点击放大")
+3. 代理配置完成后，点击底部![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/mbN024DvR7uEHhg-WoxOOQ/zh-cn_image_0000002810750631.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=5ED74D90C639D949BF3C3088EFFC53A68BA65C685CC37CEB4785452046A415B4)终端图标，可执行如下命令验证代理是否配置成功。执行结果如下图所示，则说明代理设置成功。
 
    ```screen
    ohpm info @ohos/lottie
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/qnQLqF1KSn-mj1dS4g_wiQ/zh-cn_image_0000002781470968.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/qnQLqF1KSn-mj1dS4g_wiQ/zh-cn_image_0000002781470968.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=90CC9EEE559EB4B198BC80DB569BBC347C3E0D9389A77BF37D095F6A7D4AB480 "点击放大")
 
 **说明** 
 
@@ -80,4 +80,4 @@ ohpm默认校验registry仓库地址证书。如果环境检查中ohpm registry 
 
    执行结果如下图所示，则说明代理设置成功。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/HWy-XA4jQWOdWdWXcpaTIA/zh-cn_image_0000002781311032.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/HWy-XA4jQWOdWdWXcpaTIA/zh-cn_image_0000002781311032.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7A819E2E03A655C78BAA34874841792F66876A97D504BB8C86135C8C6ADB1B9)

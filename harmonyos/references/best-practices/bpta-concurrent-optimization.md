@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-concurrent
 title: 并行化性能优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 并行化性能优化
 category: best-practices
-scraped_at: 2026-11-10T10:42:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:8db5a2e84bc1b968113370db4ba584f6ae9b5cff06f156462e8f5baea6548824
 ---
@@ -32,13 +32,13 @@ content_hash: sha256:8db5a2e84bc1b968113370db4ba584f6ae9b5cff06f156462e8f5baea65
 
 某应用首页的业务逻辑如下图所示：首先从网络端获取数据，解析数据，生成数据类，随后与业务对象结合以渲染页面。上述业务逻辑均在主线程执行（耗时100ms+），由于主线程阻塞时间较长，导致出现丢帧现象。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/N5KVAqRWR2OSFtwR7lOiug/zh-cn_image_0000002547101027.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/N5KVAqRWR2OSFtwR7lOiug/zh-cn_image_0000002547101027.png?HW-CC-KV=V1&HW-CC-Date=20261112T233137Z&HW-CC-Expire=31536000000&HW-CC-Sign=D84523587903B5392D03DDA85C6295E62D448C38EA7EC212C0D84328330189DB)
 
 ### 实现原理
 
 **逻辑迁移到子线程的改造**：上述业务逻辑中，网络库下载JSON字符串、解析及生成Model数据类这三个阶段均涉及数据操作，且无需在主线程中执行，因此可将上述业务逻辑迁移到子线程中。优化后整体流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/PZkKOCRPRGmn8qwt4p7p3Q/zh-cn_image_0000002515421200.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/PZkKOCRPRGmn8qwt4p7p3Q/zh-cn_image_0000002515421200.png?HW-CC-KV=V1&HW-CC-Date=20261112T233137Z&HW-CC-Expire=31536000000&HW-CC-Sign=37E772F1CB3E931A5058EFDF2D08A2F7AF563DA990727AB60C7613C21BC8D091)
 
 **数据进行线程间共享改造**：业务逻辑迁移到子线程后，为避免跨线程通信导致的数据拷贝消耗，可基于Sendable思想，将通信数据改造成多线程间共享对象。由于UI逻辑无法在子线程中执行，实际操作中需将数据结构解耦，分离数据与UI。将数据抽取为Sendable类，剥离UI相关部分，从而在子线程中完成数据的请求、解析和生成。
 
@@ -48,7 +48,7 @@ content_hash: sha256:8db5a2e84bc1b968113370db4ba584f6ae9b5cff06f156462e8f5baea65
 
 应用业务逻辑为：首先生成LightArtDocument对象。该对象作为组件树的上下文，包含树结构和方法等信息。接着，通过LightArtDocument记录的节点和方法，递归生成树，即对LightArtUIComponent填充数据，形成数据模型。最后递归生成LightArtViewModel。因此，数据结构中存在互相持有及数据与UI耦合的情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/v9ZXYXpVQDKVQHyFIANW6g/zh-cn_image_0000002515581110.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/v9ZXYXpVQDKVQHyFIANW6g/zh-cn_image_0000002515581110.png?HW-CC-KV=V1&HW-CC-Date=20261112T233137Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DB115DF11D1C4EDD3924BD1A6BA712ECE3B00DFE03C4C4868C32EBDE0BB7482)
 
 针对上述三大主要结构的整改，主要是将数据生成部分迁移至子线程，在子线程中完成数据下载与解析，并封装成Sendable数据，返回主线程后将数据组装到UI中进行渲染。
 
@@ -122,11 +122,11 @@ export class LightArtDataComponentType implements ISerializableType<LightArtData
 
 优化前，数据下载至解析生成Model数据类的耗时有130ms+。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/WLViGxNFTTy_p0NGnRgJsg/zh-cn_image_0000002547181033.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/WLViGxNFTTy_p0NGnRgJsg/zh-cn_image_0000002547181033.png?HW-CC-KV=V1&HW-CC-Date=20261112T233137Z&HW-CC-Expire=31536000000&HW-CC-Sign=713D88C23EF7793C0CB8852CFAE4639CE8F2C5C79F17EBEB9B7BB84014BDDBC8)
 
 优化后，数据下载至解析生成Model数据类的操作已全部移至子线程执行，主线程耗时下降至40ms，共优化90ms+。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/BYQpCobVTbqTTOnXfgtBQg/zh-cn_image_0000002547101029.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/BYQpCobVTbqTTOnXfgtBQg/zh-cn_image_0000002547101029.png?HW-CC-KV=V1&HW-CC-Date=20261112T233137Z&HW-CC-Expire=31536000000&HW-CC-Sign=0EC2780181B5CE38F6B6A3F40466E1224FE83C3C8CD42305BC8173A61A60FD39)
 
 **说明** 
 
@@ -147,7 +147,7 @@ export class LightArtDataComponentType implements ISerializableType<LightArtData
 1. 在子线程范围1进行改造：如果Network下发的数据为JSON格式，且网络库能够将数据以ArrayBuffer形式返回，则可以在此范围内进行改造。改造时，可使用ASON.[parse()](../harmonyos-references/arkts-apis-arkts-utils-ason.md#parse)将Network下发的字符串反序列化成可共享的JSON对象。还需对部分Model对象进行Sendable处理，使其能够在子线程中完成JSON对象到Model对象的转换。
 2. 在子线程范围2进行改造：在此改造范围内，网络请求需在子线程发起，因此网络请求所需的全局对象数据必须在子线程中可访问，这部分数据需进行相应的Sendable改造。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/YAT5KeupS_emakvpBsMnwQ/zh-cn_image_0000002515421202.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/YAT5KeupS_emakvpBsMnwQ/zh-cn_image_0000002515421202.png?HW-CC-KV=V1&HW-CC-Date=20261112T233137Z&HW-CC-Expire=31536000000&HW-CC-Sign=4C951B7EE498F9728F3B809DE0AB3DF701F48A0F3C621C0BD7EE2945759E0870)
 
 其次，在改造过程中，应先尝试并行化改造，再考虑Sendable改造。仅在需要跨线程传递方法或传递较大对象时，才需进行Sendable改造。
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-framework-
 title: JS语法参考
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 框架说明 > 语法 > JS语法参考
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:18+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:5bc5ea152b6733ed20fcabfa5ce858e2636d8d5495be8c173624f0988ccda3ab
 ---
@@ -224,7 +224,7 @@ JS文件用来定义HML页面的业务逻辑，支持ECMA规范的JavaScript语�
    };
    ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/pYz5K_9ISZitCHWII8IsfA/zh-cn_image_0000002786519214.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/pYz5K_9ISZitCHWII8IsfA/zh-cn_image_0000002786519214.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DBE6CEEC23495A232AB8A695C413C94476DE3EE7BD057098C4FF6432CA71964)
 
 ## 获取ViewModel
 
@@ -250,7 +250,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/vaZ2GKVeTLOAWr5oCyH-uQ/zh-cn_image_0000002786359286.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/vaZ2GKVeTLOAWr5oCyH-uQ/zh-cn_image_0000002786359286.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=6AD82EE0EE9F2F771C0AED6B86B6223FBB15E87AFE6EECF1CAD8B47418CD7F40)
 
 自定义parent组件：
 
@@ -308,4 +308,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/e1qdEnzUQR-PfRgw2Gm_jw/zh-cn_image_0000002815558707.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/e1qdEnzUQR-PfRgw2Gm_jw/zh-cn_image_0000002815558707.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=052946E65DE8A90EAD0052D1D5555AE0DEEA2B4E2AC80B1ED5D12E58EF9B1FB2)

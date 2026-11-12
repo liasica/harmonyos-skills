@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-traditi
 title: 传统曲线
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 动画曲线 > 传统曲线
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:15+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:bad392731c4f4389b7f9ab6f3936a5fd6c81cc4d89e3b89302b288276d9001b3
 ---
@@ -110,4 +110,4 @@ struct CurveDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/Q5J8yuGfS4Oof4wmkEDZUQ/zh-cn_image_0000002815398675.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/Q5J8yuGfS4Oof4wmkEDZUQ/zh-cn_image_0000002815398675.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=378EB88E985E89913716763E8D92917768D5FFCCC0B8796975193F71D7665EEA)

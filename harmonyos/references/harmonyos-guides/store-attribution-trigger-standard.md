@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-attribu
 title: 标准转化事件
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用归因服务 > 开发准备 > 管理转化事件 > 标准转化事件
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-04-20
 content_hash: sha256:f4151be81f9b31e87df273fee1f96e8ddba1eeb39a95706625072e679ab32be7
 ---
@@ -14,11 +14,11 @@ content_hash: sha256:f4151be81f9b31e87df273fee1f96e8ddba1eeb39a95706625072e679ab
 
 点击左侧“转化事件管理”菜单，点击页面中“标准转化事件”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/Buy-mE6aTsGDTnn75YJeHQ/zh-cn_image_0000002815559595.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/Buy-mE6aTsGDTnn75YJeHQ/zh-cn_image_0000002815559595.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=53E7F68C720C78827874F76D95AA992C822B90B1FFB36735EF83974D39EE8DEB)
 
 查看[标准转化事件信息](appgallery-attribution-appendix-triger.md#标准转化事件信息)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/UTcjYADBQQWgOD2wpGKY2Q/zh-cn_image_0000002815399679.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/UTcjYADBQQWgOD2wpGKY2Q/zh-cn_image_0000002815399679.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=1BFD2FE4FA72F610E4BEBA458B0420FC86FCB5CB364769BEC1FAE1D5AF9310AD)
 
 **说明** 
 

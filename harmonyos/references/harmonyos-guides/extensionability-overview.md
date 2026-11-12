@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/extensionabil
 title: ExtensionAbility组件
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > ExtensionAbility组件
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:50:57+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-14
 content_hash: sha256:3e6e88c613a824e82e796a4534e36af80bd967f39873d768ec65e74c0949cb5e
 ---
@@ -76,7 +76,7 @@ content_hash: sha256:3e6e88c613a824e82e796a4534e36af80bd967f39873d768ec65e74c094
 
 **图1** 使用InputMethodExtensionAbility组件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/ruy8GrAXTcmLKgO5ibIgOA/zh-cn_image_0000002786358394.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/ruy8GrAXTcmLKgO5ibIgOA/zh-cn_image_0000002786358394.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=B04E56E26F120CE899EC5EBCC6102171F8C1B3181634C92269A583B2363A1137)
 
 ## 实现指定类型的ExtensionAbility组件
 
@@ -84,7 +84,7 @@ content_hash: sha256:3e6e88c613a824e82e796a4534e36af80bd967f39873d768ec65e74c094
 
 卡片FormExtensionAbility实现方不用关心使用方何时去请求添加、删除卡片，FormExtensionAbility实例及其所在的[ExtensionAbility](../harmonyos-references/js-apis-app-ability-extensionability.md)进程的整个生命周期，都是由卡片管理系统服务FormManagerService进行调度管理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/USk4UFOjR5ydkhUXs88u2A/zh-cn_image_0000002815557815.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/USk4UFOjR5ydkhUXs88u2A/zh-cn_image_0000002815557815.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A354BB68B87CA0EAE9893849430C59464B23DEF079A57230829DD7F6DF4B4B0)
 
 * **[EmbeddedUIExtensionAbility](embeddeduiextensionability.md)**
 * **[使用AppServiceExtensionAbility组件实现后台服务](app-service-extension-ability.md)**

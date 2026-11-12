@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-windmana-
 title: 屏幕常亮设置常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 常见问题 > 屏幕常亮设置常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:28+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:0ac2d9218c6959cac90f87f68de746a4f71510ffa5cf3b69f1c0ec8f0dc71f7d
 ---
@@ -69,7 +69,7 @@ export struct SetScreenStatePage {
 
 运行结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/s3LOX_78S7e-K9uzts7bHQ/zh-cn_image_0000002795314303.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/s3LOX_78S7e-K9uzts7bHQ/zh-cn_image_0000002795314303.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA554822AFA51639882267F41C5305B0260D184EF300D46E24E98F0793CDC98A "点击放大")
 
 **Q：为什么设置了屏幕常亮，但是在APP里依然会息屏？**
 

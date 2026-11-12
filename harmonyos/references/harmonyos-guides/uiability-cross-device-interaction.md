@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-cro
 title: 通过Call调用实现多端协同
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > UIAbility组件 > 通过Call调用实现多端协同
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:50:57+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-24
 content_hash: sha256:d5bb8fd2cebbb9219cbb8bdc82c4b1f5a7eafb22472bf8897428949f73555ad0
 ---
@@ -37,7 +37,7 @@ Call调用示意图如下所示。
 
 **图1** Call调用示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/zk10S60GSVKpRHq5_Yd68g/zh-cn_image_0000002786518322.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/zk10S60GSVKpRHq5_Yd68g/zh-cn_image_0000002786518322.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=AADAE2D5847F6DE8B7CF5B6BDA59E2CBE9AA208CBCE9C8E8573AB0EF3C0A8BCF)
 
 * CallerAbility调用[startAbilityByCall()](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#startabilitybycall)接口获取[Caller](../harmonyos-references/js-apis-app-ability-uiability.md#caller)，并使用Caller对象的[call()](../harmonyos-references/js-apis-app-ability-uiability.md#call)方法向CalleeAbility发送数据。
 * CalleeAbility持有一个[Callee](../harmonyos-references/js-apis-app-ability-uiability.md#callee)对象，通过Callee的[on()](../harmonyos-references/js-apis-app-ability-uiability.md#on)方法注册回调函数，当接收到Caller发送的数据时将会调用对应的回调函数。

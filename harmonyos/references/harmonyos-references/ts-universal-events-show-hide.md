@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 挂载卸载事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 组件变化事件 > 挂载卸载事件
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:d345d02c32dbf4801c3be02d80882771772e242515224f17ee2b464693ccfdd8
 ---
@@ -160,4 +160,4 @@ struct AppearExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/zNLUPVEDSRCAhoOfEAtHpg/zh-cn_image_0000002786360964.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/zNLUPVEDSRCAhoOfEAtHpg/zh-cn_image_0000002786360964.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E789A25D6CB117C0EDBA7FED4588C39F62DB634DC7AB76111F632FBDEA2B5AC)

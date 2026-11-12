@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1317
 title: CanvasRenderingContext2D是否可以绘制GIF动画
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > CanvasRenderingContext2D是否可以绘制GIF动画
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-21
 content_hash: sha256:86ffc40bb50712c0f5731a01fe4d2cdbeec49169698a7ae3b2c05da9f3912fb1
 ---
@@ -14,7 +14,7 @@ CanvasRenderingContext2D对象中的drawImage方法是否可以绘制GIF动画�
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/TuVGjDM4RiGRAC9SYMWG8A/zh-cn_image_0000002628599106.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/TuVGjDM4RiGRAC9SYMWG8A/zh-cn_image_0000002628599106.png?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=60117EC1FA41B609EBC2822B5D43322A3D91944C5D9135BAC7697F27C963E140 "点击放大")
 
 ## 背景知识
 

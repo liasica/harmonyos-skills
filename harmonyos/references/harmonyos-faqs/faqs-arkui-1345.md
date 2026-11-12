@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1345
 title: 登录页面手机号输入长度不对仍然可以点击登录
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 登录页面手机号输入长度不对仍然可以点击登录
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:ca3145b0d7ef4579d60fe7a01526b3ed7eba28d4e9e3232d1c7737ce434f50a7
 ---
@@ -18,7 +18,7 @@ content_hash: sha256:ca3145b0d7ef4579d60fe7a01526b3ed7eba28d4e9e3232d1c7737ce434
 
 ## 问题定位
 
-通过UIViewer查看页面布局，手机号输入框采用TextInput组件，最多可以输入15位长度，而不是手机号的标准长度11位，还可以输入“+”、“-”符号，说明没有对输入框做长度限制。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/toH4DOnnQRybd_1QGRiOfg/zh-cn_image_0000002628601516.png "点击放大")
+通过UIViewer查看页面布局，手机号输入框采用TextInput组件，最多可以输入15位长度，而不是手机号的标准长度11位，还可以输入“+”、“-”符号，说明没有对输入框做长度限制。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/toH4DOnnQRybd_1QGRiOfg/zh-cn_image_0000002628601516.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A828B0345FCB23CA17434E82FA9B0079D5F35A9D655EBFDA42886C94BD954A2 "点击放大")
 
 ## 分析结论
 

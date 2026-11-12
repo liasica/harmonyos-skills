@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types
 title: 基础类型定义
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 公共定义 > 基础类型定义
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:31+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:011e5248090b03d2757234a67730850f7c638d93ffb05e06dd83082ddf9dec57
 ---
@@ -1039,11 +1039,11 @@ type ResponsiveFillType = PresetFillType
 
 以水平方向Bias为例，其值为组件到左锚点的距离 Dstart与组件到水平方向锚点间总距离 Dstart + Dend的比值。镜像语言下，Dstart为组件到右锚点的距离。下图中Dwidth表示组件宽度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/IREsYb96Ta65sWrjIjG-yA/zh-cn_image_0000002786361702.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/IREsYb96Ta65sWrjIjG-yA/zh-cn_image_0000002786361702.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=08F6E9F53D183FBA15795E563E3EB18B8637FC5B48CEF801EB2432779AA220C8)
 
 竖直方向同理，其值为组件到上锚点的距离Dtop与组件到竖直方向锚点间总距离Dtop + Dbottom的比值。下图中Dheight表示组件高度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/6B6BU68RSUqIcNN7llG3SQ/zh-cn_image_0000002815561123.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/6B6BU68RSUqIcNN7llG3SQ/zh-cn_image_0000002815561123.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=71381FED6B7EABF55A7164D3C80FCC9BB4AEA281B6D62F5C13E661DBF75DB5BA)
 
 **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
 

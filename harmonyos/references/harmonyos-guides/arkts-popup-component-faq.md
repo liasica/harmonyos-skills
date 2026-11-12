@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-popup-c
 title: 弹窗组件常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI开发常见问题 > 弹窗组件常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:ff91a1d151694caa6f5048c11355cd51101323831f9a9854c9a9ab3fd27a96f3
 ---
@@ -24,7 +24,7 @@ Popup气泡优先在开发者设置的placement位置显示，当空间不足时
 
 1. Popup气泡的默认显示区域是绑定组件以外的窗口区域，如下示意图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/3DYzX_vQRGq2h6mBSAYVWw/zh-cn_image_0000002786359372.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/3DYzX_vQRGq2h6mBSAYVWw/zh-cn_image_0000002786359372.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3DFE325C044B3B68B63EC2C48C8DEE10875DF2E2934C91A4FCB4B1F79F90807)
 2. 如果设置的位置可用空间不够完整显示气泡，ArkUI框架会判断该位置的镜像位置是否可以显示。例如Placement.Bottom的镜像位置是Placement.Top，Placement.Left的镜像位置是Placement.Right。
 3. 如果镜像位置的空间仍然不足，会切换到另一轴方向的位置显示，即跨轴避让（cross-axis fallback）。例如垂直方向（Top/Bottom）都不够时，会尝试水平方向（Left/Right），反之亦然。
 4. 如果四周空间均不足以完整显示气泡，则默认气泡会遮挡绑定组件进行显示。如果开发者不期望遮挡绑定组件，可通过设置[avoidTarget](../harmonyos-references/ts-universal-attributes-popup.md#popupoptions类型说明)属性为AvoidanceMode.AVOID\_AROUND\_TARGET来解决，此时气泡在剩余空间不足的情况下会进行压缩以避免遮挡绑定组件。

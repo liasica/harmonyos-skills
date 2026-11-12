@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-canvas
 title: CanvasRenderingContext2D
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > CanvasRenderingContext2D
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:2cff41430949f3bca9ff3b0e757c861c9572e914c7154eb861d80e9505cb222e
 ---
@@ -109,7 +109,7 @@ struct LengthMetricsUnitDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/yR7QcOiqR5KB654Zt9ywnw/zh-cn_image_0000002815400979.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/yR7QcOiqR5KB654Zt9ywnw/zh-cn_image_0000002815400979.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=1854312430C83ECC248F39260739BDDC98128D8792807B5CCA29ADBA45072BF3)
 
 ## 属性
 
@@ -177,7 +177,7 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/PH7CnaR7Tw6zHar-Ewqdig/zh-cn_image_0000002786521404.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/PH7CnaR7Tw6zHar-Ewqdig/zh-cn_image_0000002786521404.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=C40F39F10CF9DAFE78A30D84168656492AC3269E61E6AFCACF9415018FA201B5)
 
 ## on('onAttach')13+
 
@@ -402,7 +402,7 @@ struct AttachDetachExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/x9b3tSQbSkqfTSBGzq2iYQ/zh-cn_image_0000002786361476.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/x9b3tSQbSkqfTSBGzq2iYQ/zh-cn_image_0000002786361476.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4F7F53DB29121B3D8CFCD8EF6B51BA97695E8EB26D4873CB5BA2C9967275C46)
 
 ## startImageAnalyzer12+
 
@@ -534,7 +534,7 @@ struct ImageAnalyzerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/63-5ZyfSSbW_pGzeckaJAg/zh-cn_image_0000002815560897.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/63-5ZyfSSbW_pGzeckaJAg/zh-cn_image_0000002815560897.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=46909FBA7D13EECFCD8EEB37DE4F909C5B699808559FDDC75708039FE7DC7793)
 
 ## getContext2DFromDrawingContext23+
 
@@ -602,7 +602,7 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/cNwje0IbS1S-4P9QD7-IoA/zh-cn_image_0000002815400981.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/cNwje0IbS1S-4P9QD7-IoA/zh-cn_image_0000002815400981.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=79F9C9370EB52B700FA19F6B45B9E5EBF2BC9856DD64B5DEA9D9647C69252793)
 
 ## RenderingContextOptions23+
 
@@ -697,7 +697,7 @@ struct WidthExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/YHjgyFtIQSuHrr_NJHQnTQ/zh-cn_image_0000002786521406.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/YHjgyFtIQSuHrr_NJHQnTQ/zh-cn_image_0000002786521406.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=4103F6D32ADAB0CEE3CECA6C08610BA3CF1220716EB8552DF8596878CB64D77C)
 
 ### 示例2（height属性用法）
 
@@ -726,7 +726,7 @@ struct HeightExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/N5Mtt7xST5mhX04yYk2dnA/zh-cn_image_0000002786361478.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/N5Mtt7xST5mhX04yYk2dnA/zh-cn_image_0000002786361478.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=12AC3D33EE2A9854092252CFFFCF4A9831791EF05797B14CE084C7497C4142D5)
 
 ### 示例3（canvas属性用法）
 
@@ -770,4 +770,4 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/QaT5EX65QLiYz_FJnc9_-A/zh-cn_image_0000002815560899.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/QaT5EX65QLiYz_FJnc9_-A/zh-cn_image_0000002815560899.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA9BC1ED796D17BFC87DEDC9B63787A7310CCC18B2591AF0AB31A3D809A52EDB)

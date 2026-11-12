@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1103
 title: expandSafeArea常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > expandSafeArea常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:9d59f1f7793cdde2c413133f42c5ba4a32de0e9bb4a74e30f08a1fc319775626
 ---
@@ -23,7 +23,7 @@ content_hash: sha256:9d59f1f7793cdde2c413133f42c5ba4a32de0e9bb4a74e30f08a1fc3197
 
 问题现象图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/0TRH9bHsTsmIw8od_Vw5cA/zh-cn_image_0000002767843647.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/0TRH9bHsTsmIw8od_Vw5cA/zh-cn_image_0000002767843647.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB2868BA39A96B3E4C06BD921FB671C9C098498AA47BF4D1DB0391E9B516ED9A "点击放大")
 
 示例代码如下：
 
@@ -54,7 +54,7 @@ struct Index {
 
 问题现象图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/-5qPBPXUQD6mrjWm1CZqGA/zh-cn_image_0000002767964817.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/-5qPBPXUQD6mrjWm1CZqGA/zh-cn_image_0000002767964817.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD43634937BAA0831E0A3D203AAB1F78B4BE48610758414D91C479FDD3E50815 "点击放大")
 
 灰色为TabContent背景色。
 
@@ -103,7 +103,7 @@ struct TabsExample {
 
 问题现象图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/jtkgGEE9SNSmCA2SWXzP8Q/zh-cn_image_0000002738166878.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/jtkgGEE9SNSmCA2SWXzP8Q/zh-cn_image_0000002738166878.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AFEDE19F7539E0D909C1D98AED0F810210CD48C28791B0076BC3859B03FC487 "点击放大")
 
 示例代码如下：
 
@@ -134,7 +134,7 @@ struct Index4 {
 
 问题现象图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/NGOVNQt0RMirdaPO1E4t2Q/zh-cn_image_0000002767847479.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/NGOVNQt0RMirdaPO1E4t2Q/zh-cn_image_0000002767847479.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=30B5F38B0FFB02466EF508E37FFE72D20196C7B30EDE51B9322D3D3E8D0F7902 "点击放大")
 
 示例代码如下：
 
@@ -166,7 +166,7 @@ struct Index6 {
 
 问题效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/9iBpYZ6MQQS47hSODnyGSA/zh-cn_image_0000002738329086.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/9iBpYZ6MQQS47hSODnyGSA/zh-cn_image_0000002738329086.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF5339EAFD00542AE978FA6B4D49EC71F3947DE75973C26B3CD1A9F57931C61B "点击放大")
 
 其中，灰色为Canvas背景色，已经扩展至底部导航条，但fillRect方法绘制的黑色矩形与底部导航条仍有一定距离。
 
@@ -221,7 +221,7 @@ struct CanvasExample {
 
   横屏状态下，挖孔区域处于屏幕左侧或右侧，会出现挖孔区域遮挡内容的情况。
 
-  如果希望边缘组件避让挖孔区域，需要在模块的module.json5文件中配置metadata，完成配置后，边缘组件会避让挖孔区域，效果如下：![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/hi4lybzTQyaibpUhS6iXVQ/zh-cn_image_0000002767969967.png "点击放大")
+  如果希望边缘组件避让挖孔区域，需要在模块的module.json5文件中配置metadata，完成配置后，边缘组件会避让挖孔区域，效果如下：![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/hi4lybzTQyaibpUhS6iXVQ/zh-cn_image_0000002767969967.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=105EC07C1F84DAC432DC481447DA9AF095DE9464786B99D6D39785F4C37BD098 "点击放大")
 
   module.json5文件如下：
 
@@ -314,7 +314,7 @@ struct CanvasExample {
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/ju3KepI5SWC57djEtP3igw/zh-cn_image_0000002738494118.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/ju3KepI5SWC57djEtP3igw/zh-cn_image_0000002738494118.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F738547A9C05EBBEE2703F218B44DC7CA5811C64426A11F6F9D4B48089B4E98 "点击放大")
 * 场景二：TabContent设置expandSafeArea属性无法扩展至非安全区域。Tabs组件本身虽然不是滚动类组件，但其子组件TabContent是通过放置在一个Swiper中实现的，因此如果需要让某个TabContent可以扩展至状态栏，需要按照组件嵌套关系，将当前节点到滚动类祖先容器间所有直接节点设置expandSafeArea属性。如下代码所示，需要同时给Tabs组件，TabContent组件和TabContent内容的根节点设置expandSafeArea属性。
 
   ```ts
@@ -358,7 +358,7 @@ struct CanvasExample {
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/lNyYLYzyQCiO_gob3N9Cfg/zh-cn_image_0000002738336458.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/lNyYLYzyQCiO_gob3N9Cfg/zh-cn_image_0000002738336458.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7DD4C6F8DCC7B8F0A7389E235612F96DB9F4C61FBB1A9C07A76AB62D3596CE3 "点击放大")
 * 场景三：使用expandSafeArea实现沉浸式，原有UI比例发生变化。
   + 示例一：组件使用百分比高度时，由于状态栏高度与导航栏高度不一，扩展内容后会导致原有的UI比例发生变化。
 
@@ -407,7 +407,7 @@ struct CanvasExample {
 
     效果图如下：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/bGTr6fS1TJ2ZBPpPX5Snvg/zh-cn_image_0000002738339430.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/bGTr6fS1TJ2ZBPpPX5Snvg/zh-cn_image_0000002738339430.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D53E53AB2F25D37DFF3004346E7D9242E1D3F92705BC63721E1BB61992C827A "点击放大")
   + 示例二：组件使用固定高度时，使用expandSafeArea扩展到顶部，中间出现空白。
 
     设置expandSafeArea属性进行组件绘制扩展时，建议组件尺寸不要设置固定宽高（百分比除外），当设置固定宽高（包括设置'auto'）时，扩展安全区域的方向只支持[SafeAreaEdge.TOP, SafeAreaEdge.START]，扩展后的组件尺寸保持不变。设置百分比高度时，组件是延伸至非安全区域，设置固定高度时，组件相当于是移动并填满非安全区域而非扩展内容至非安全区域。
@@ -419,7 +419,7 @@ struct CanvasExample {
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/oEVnZyjTRKGR_2ZtWV4eww/zh-cn_image_0000002767862017.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/oEVnZyjTRKGR_2ZtWV4eww/zh-cn_image_0000002767862017.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=B151BC3409F3247C4CC7D82B71AECB8450E97C878C38EBDFEADEBAF11C2112DE "点击放大")
 
   注意：本文中需要用到的横竖屏切换效果和windowStage需要在EntryAbility.ets中的onWindowStageCreate方法中添加如下代码：
 

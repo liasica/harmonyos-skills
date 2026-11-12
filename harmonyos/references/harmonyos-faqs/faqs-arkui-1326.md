@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1326
 title: Navigation自定义toolBar实现多次点击常亮效果时显示异常
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Navigation自定义toolBar实现多次点击常亮效果时显示异常
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:38+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:52d08211235c8d21023b141c60cd02cc930c1ffad71519a14482051c7a0b63f3
 ---
@@ -94,7 +94,7 @@ class MenuEntity {
 
 问题现象：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/trGeuCmeSw-9PPq_twsBTw/zh-cn_image_0000002628599750.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/trGeuCmeSw-9PPq_twsBTw/zh-cn_image_0000002628599750.png?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCF5F168629543979FFE0DECEEBA425A31F4A4578BE9C1F419D2050AE84CBCF5 "点击放大")
 
 ## 背景知识
 
@@ -140,7 +140,7 @@ Tabs的TabBar和Navigation工具栏点击效果区分：
 
    验证效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/3NSYLXT7T_KMjLEdYxlV_w/zh-cn_image_0000002628759654.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/3NSYLXT7T_KMjLEdYxlV_w/zh-cn_image_0000002628759654.png?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=639C014F14A3D631618B8FA6262A8E6A740400FEFACFB2489264B4D11D7A5D8A "点击放大")
 
 ## 分析结论
 

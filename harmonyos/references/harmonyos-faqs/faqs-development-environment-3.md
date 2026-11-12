@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: 导入Sample时，提示SSL证书校验错误
 breadcrumb: FAQ > DevEco Studio > 环境准备 > 导入Sample时，提示SSL证书校验错误
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:48+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:2e7a5cfcb7cb42408314c7343b760ce4f37ff3bd06e616c5ad26ac9f7a2e5bcb
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:2e7a5cfcb7cb42408314c7343b760ce4f37ff3bd06e616c5ad26ac9f7a2
 
 导入Sample时，导入失败，提示“SSL certificate problem: unable to get local issuer certificate”证书校验错误。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/dG5gkepOQ2uu03u4qRrl6g/zh-cn_image_0000002624478400.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/dG5gkepOQ2uu03u4qRrl6g/zh-cn_image_0000002624478400.png?HW-CC-KV=V1&HW-CC-Date=20261112T233211Z&HW-CC-Expire=31536000000&HW-CC-Sign=538075A3AA9447B56F4C7E0F57FAB7EABEC91EAA91D568D927E73A54930F804F)
 
 **解决措施**
 

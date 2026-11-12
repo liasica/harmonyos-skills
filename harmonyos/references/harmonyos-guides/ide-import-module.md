@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-import-mo
 title: 导入和引用模块
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 导入和引用模块
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-24
 content_hash: sha256:c24c8892e6b51264d64dec36f02a071ebec43de4636660392bbd20e8566e26f9
 ---
@@ -17,15 +17,15 @@ DevEco Studio支持通过以下两种方式导入其他工程下的模块：
 
 1. 在菜单栏单击**File > New > Import... > Import Module。**
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/OAJd_9UaTg-NwIGhMBe7aA/zh-cn_image_0000002808766521.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/OAJd_9UaTg-NwIGhMBe7aA/zh-cn_image_0000002808766521.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E653ED3E4B9AEAC6A66D7E7AE0D0DD8ECA3E6085187B6764928E92F5A2B1689)
 2. 选择导入的模块。
 
    在指定路径下，选择导入的模块，单击**OK**。导入的模块可以为文件夹，也可以为zip格式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/5BIF6QUSSkqTMxxHM9pBMA/zh-cn_image_0000002808766519.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/5BIF6QUSSkqTMxxHM9pBMA/zh-cn_image_0000002808766519.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=97209CB3E3B15E2399D82EF6280D282AE191461C448773FD4F83A278CE02BA99)
 
 ## 引用模块
 
 在工程级build-profile.json5文件中，如下图所示在modules > srcPath字段下配置工程外模块的相对路径，即可引用模块相关信息，不会将模块代码完全复制至本工程中。当前支持引用其他工程下的HAR和HSP模块。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/DtyXjABGRtOYhIpdVJHVhQ/zh-cn_image_0000002808886601.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/DtyXjABGRtOYhIpdVJHVhQ/zh-cn_image_0000002808886601.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0F884499A16D5D5E1BD2E520DDD60647BE989591B601D4868FC93FB20B6F22B)

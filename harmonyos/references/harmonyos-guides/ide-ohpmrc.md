@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpmrc
 title: ohpmrc
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > ohpmrc
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:bcf1b7fee490f4d7abd409f65c46ad3257f808f497bd93eecd91d955de85e39d
 ---
@@ -98,7 +98,7 @@ https://contentcenter-drcn.dbankcdn.cn/   //该域名用于文件资源下载，
 
 访问https://ohpm.openharmony.cn/地址，下载证书，请选择保存类型为**证书链**（访问https://contentcenter-drcn.dbankcdn.cn/ 执行相同操作）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/WhKk07nDQxqv3oqdj0chEQ/zh-cn_image_0000002779567336.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/WhKk07nDQxqv3oqdj0chEQ/zh-cn_image_0000002779567336.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=B99FA34FE3AC26E030B4CC2470AA91CE7AE6BA58E6DFBDCE692C2A96E5BF67E5 "点击放大")
 
 通过访问https://ohpm.openharmony.cn/地址获取证书openharmony.cn.crt，通过访问https://contentcenter-drcn.dbankcdn.cn/地址获取证书update.hicloud.crt，在 .ohpmrc 文件中配置 ca\_files=证书路径1，证书路径2（两个文件均需配置）。
 
@@ -117,7 +117,7 @@ https://contentcenter-drcn.dbankcdn.cn/   //该域名用于文件资源下载，
 
 访问https://ohpm.openharmony.cn/地址，下载证书，请选择保存类型为**证书链**（访问https://contentcenter-drcn.dbankcdn.cn/ 执行相同操作）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/GXzm3IODQPKtpotIdVdVag/zh-cn_image_0000002808886993.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/GXzm3IODQPKtpotIdVdVag/zh-cn_image_0000002808886993.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=C89629B73282C32D95CF59F4B0EEEBE54F3C930D1728FA5FB5F875EFF5432F02 "点击放大")
 
 通过访问https://ohpm.openharmony.cn/地址获取证书openharmony.cn.pem，通过访问https://contentcenter-drcn.dbankcdn.cn/地址获取证书update.hicloud.pem，在 .ohpmrc 文件中配置 ca\_files=证书路径1，证书路径2（两个文件均需配置）。
 
@@ -131,16 +131,16 @@ ca_file=/Users/用户名/_.openharmony.cn.pem,/Users/用户名/_.update.hicloud.
 
 * debug：控制台会打印debug、info、warn、error日志。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/JsV_ZU2AS3ySW_oygWWcOA/zh-cn_image_0000002779567350.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/JsV_ZU2AS3ySW_oygWWcOA/zh-cn_image_0000002779567350.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=E59A60BD6CFF1E1A9BC7FFE2C9052912D09C6AC64F74D460355A77F082D3CFF9 "点击放大")
 * info：控制台会打印info、warn、error日志。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/4S3xdqx4SFyYu34yupBKTA/zh-cn_image_0000002779407362.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/4S3xdqx4SFyYu34yupBKTA/zh-cn_image_0000002779407362.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D4EB062CA45E2D304D41F4CE24B3DF9A43C65EC889DD1284C6C704B783C8B37 "点击放大")
 * warn：控制台会打印warn、error日志。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/VfV-MySFTl2wtRZl9hIfww/zh-cn_image_0000002808766923.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/VfV-MySFTl2wtRZl9hIfww/zh-cn_image_0000002808766923.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=14DE9DAA1F80CA8D5BC9D4E3E824DF3560BEF089C4B2391E41C1E0CF4859AD17)
 * error：控制台只会打印error日志。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/w1jzeTAGQQKQR61p92oX-g/zh-cn_image_0000002808766927.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/w1jzeTAGQQKQR61p92oX-g/zh-cn_image_0000002808766927.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DBAA2880D4356456712D976CE9AAF1A87B913E6CD2AAB44FEA4E2FDE7BFECD4)
 
 ## install\_all
 
@@ -160,29 +160,29 @@ ca_file=/Users/用户名/_.openharmony.cn.pem,/Users/用户名/_.update.hicloud.
 
 ### 模块内依赖版本冲突
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/-cRys6zgRSGqPNKfbl_gdQ/zh-cn_image_0000002808766911.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/-cRys6zgRSGqPNKfbl_gdQ/zh-cn_image_0000002808766911.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=E06053C40BDAAE175FCEBCF578FC7FA0586667BCC058361B71D4ED0DDE1BE298)
 
 如上图所示的依赖路径中，moduleA 为您正在开发的模块，其直接依赖为 B@1.1，C@1.1。其中 B@1.1 与 C@1.1 分别依赖了 D 的两个版本 D@1.2 与 D@1.3。当您开启了依赖版本冲突自动解决功能，ohpm将会选择 D@1.3 版本作为待安装的版本，最终依赖路径被解析为下图蓝色箭头所指向的路径：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/kQsZn6WDR62nRYjB8Vcv9g/zh-cn_image_0000002808887001.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/kQsZn6WDR62nRYjB8Vcv9g/zh-cn_image_0000002808887001.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F7CF20CE5A567E9B9FD90CBEEC2F06D43CB25A05B536CEFDDA1E066712616E4)
 
 ### 模块间依赖版本冲突
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/mgbmx_b_TAKb5imTqnA9MQ/zh-cn_image_0000002808886995.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/mgbmx_b_TAKb5imTqnA9MQ/zh-cn_image_0000002808886995.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA21794695B378D8959667D7602B3F941E3BBC09B3E4571EE4DD47D295FFB737)
 
 如上图所示的依赖路径中，moduleA、moduleB 为您同一项目下正在开发的两个模块，其中moduleA 依赖 B@1.1，moduleB 依赖 C@1.1，B@1.1 与 C@1.1 分别依赖了 D 的两个版本 D@1.2 与 D@1.3。当您开启了依赖版本冲突自动解决功能，并且您是使用 ohpm install --all 进行安装时，ohpm将会选择 D@1.3 版本作为待安装的版本，最终依赖路径被解析为下图蓝色箭头所指向的路径：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/Vr_9LXPaSVekb1E1MXheVQ/zh-cn_image_0000002808766915.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/Vr_9LXPaSVekb1E1MXheVQ/zh-cn_image_0000002808766915.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=8336B5B150F6F01DD33082415F00E8C8096CDD3E5C9334E189F6CED0E254194B)
 
 ### 更新依赖版本的场景
 
 当您希望将您某个模块的直接依赖更新成另一个版本，如下图所示，您手动将 C@1.1 更新为 C@1.2：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/SH4NVy-CSwGw4JKqL129HQ/zh-cn_image_0000002808887007.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/SH4NVy-CSwGw4JKqL129HQ/zh-cn_image_0000002808887007.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=25E5BCE797C78680692A44D017612FC6AABDD6FFDEC86A021A814129A497A642)
 
 由于 C 更新为 C@1.2 后，不再依赖 D，若依赖 D 的版本在更新 C 版本之前已经通过 ohpm 的自动冲突处理机制锁定为 D@1.3 版本，此时 C 版本的升级将不会导致 D 的版本由 D@1.3 回退为 D@1.2，这样可以保证每一次更新都只是在上一次结果上进行影响最小的修改，最终的依赖路径将会被解析为下图蓝色箭头所指向的路径：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/Wgj5yaSITISa6wcXqeW0DA/zh-cn_image_0000002779407370.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/Wgj5yaSITISa6wcXqeW0DA/zh-cn_image_0000002779407370.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=9639CB8CFD95F85D3C263B1F89CD292E4EED74A1AF6BD3EDC2CDA8E8577F7FED)
 
 对于上述场景，如果希望D版本同时也回退至D@1.2版本，则需要在ohpm install之前执行ohpm clean命令清理各模块下的oh-package-lock.json5文件，以消除上一次安装结果的影响。
 
@@ -229,7 +229,7 @@ ohpm客户端从5.0.9版本，开始支持严格的依赖版本冲突处理机�
 * 同一依赖，同时存在本地版本（如：./a.har）与远程版本（如：^1.0.0）时，冲突决策失败；
 * 同一依赖，存在多个固定版本时，冲突决策失败。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/Tb5zqxLFTf2A04PgsCLUig/zh-cn_image_0000002808766929.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/Tb5zqxLFTf2A04PgsCLUig/zh-cn_image_0000002808766929.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=2369A7F6F5AECB39F48520469610F024E3BF8FBF92BDB4C163D5277DC2A77CF3 "点击放大")
 
 **注意** 
 
@@ -271,7 +271,7 @@ ohpm客户端从5.0.9版本，开始支持严格的依赖版本冲突处理机�
    ```
 4. 在AppTest3工程下任意目录执行命令：ohpm install --all，根据严格的依赖版本冲突处理规则，此时ohpm会安装失败并打印依赖冲突树，如下所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/_25jSXBSTRmD3mknSB3I_Q/zh-cn_image_0000002779407358.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/_25jSXBSTRmD3mknSB3I_Q/zh-cn_image_0000002779407358.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCD09D608BF651FA968CF4FF61CB8C70EE311F56A9F6132BDB307A988D2F12BD)
 
 ## crypto\_path
 
@@ -338,7 +338,7 @@ AccessToken是 ohpm-repo 2.1.0版本新引入的认证机制，用户通过ohpm-
 
 ### 如何获取AccessToken
 
-当前AccessToken仅 ohpm-repo 支持，登录成功后，在ohpm-repo首页的右上角 > 认证管理 > AccessToken页面进行生成。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/6XYP1LUlQEmi1gWiofzsAw/zh-cn_image_0000002808887011.png "点击放大")
+当前AccessToken仅 ohpm-repo 支持，登录成功后，在ohpm-repo首页的右上角 > 认证管理 > AccessToken页面进行生成。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/6XYP1LUlQEmi1gWiofzsAw/zh-cn_image_0000002808887011.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=8CCC58D51DB679D4BE90B97BAD290347B6B92B9F0A3ADDC3AADC29B5C5C10063 "点击放大")
 
 ### 如何配置AccessToken
 
@@ -429,11 +429,11 @@ ohpm WARN: local dependency "fee" found in "D:\DevecostudioProjects\MyApplicatio
 
 此时在entry的依赖树中，依赖fee存在两个版本：一个别名为fee的foo模块，一个名称为fee的fee模块，若此时开启了[resolve\_conflict](ide-ohpmrc.md#section368717475562)，由于fee模块的实际版本号为1.0.0要小于foo模块的版本号2.0.0，在执行ohpm install时将只会在entry模块的oh\_modules下安装以fee为别名的foo模块，而实际的fee模块则不会被安装，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/VsDi76V2RyGwZOChIjHa5Q/zh-cn_image_0000002808766931.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/VsDi76V2RyGwZOChIjHa5Q/zh-cn_image_0000002808766931.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C795B9548500D3966A12704A5CF4A4F182BBC71186D77B43BE63F63929F3922 "点击放大")
 
 在entry的oh\_modules下会生成一个名称为fee的软链接，该链接却指向foo模块的实际路径：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/rl7n_--xS4yrTM4AYlbDgg/zh-cn_image_0000002808766913.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/rl7n_--xS4yrTM4AYlbDgg/zh-cn_image_0000002808766913.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D893819B300E72B18F72722AA2FCE64C5611DF0B327C57D2854CEC9ECBFA435 "点击放大")
 
 如果entry实际希望依赖的是真实的fee模块而不是foo模块，则此时会导致entry无法编译成功。
 
@@ -465,7 +465,7 @@ ohpm从1.7.0版本开始，支持在.ohpmrc文件中配置ensure\_dependency\_in
    ```
 3. 当ensure\_dependency\_include=false时，发布完成后将打印告警提示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/L8RHRaOCTOCmQeBotdq2-A/zh-cn_image_0000002808887005.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/L8RHRaOCTOCmQeBotdq2-A/zh-cn_image_0000002808887005.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=F70E0BB731C4AC18FD8CDFB05B7FAA986BB3D85F6FF0679076D39E654DE797EB "点击放大")
 
 ### 示例2
 
@@ -479,7 +479,7 @@ ohpm从1.7.0版本开始，支持在.ohpmrc文件中配置ensure\_dependency\_in
    ```screen
    ohpm publish test.har
    ```
-3. 当ensure\_dependency\_include=true时，发布时将报错。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/SM95-5SZR1WDcVaZL0o07Q/zh-cn_image_0000002779567348.png)
+3. 当ensure\_dependency\_include=true时，发布时将报错。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/SM95-5SZR1WDcVaZL0o07Q/zh-cn_image_0000002779567348.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=066E75D2920FD61D18507C73937E2761516D8A1498A90464554FD0627075B92D)
 
 ## disallow\_nested\_package
 
@@ -508,7 +508,7 @@ ohpm从1.8.0版本开始，支持在.ohpmrc文件中配置disallow\_nested\_pack
    ```screen
    ohpm publish lib_nested.har
    ```
-4. 当disallow\_nested\_package=true时，发布时将报错。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/orRA4O9bQ7KYYFqrq3uDxw/zh-cn_image_0000002779567338.png)
+4. 当disallow\_nested\_package=true时，发布时将报错。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/orRA4O9bQ7KYYFqrq3uDxw/zh-cn_image_0000002779567338.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=246B8064B4F244AD44DC7B360C14200433AF2B53B924EFE353E1B75FB1D82BBA)
 
 ## odm\_r2\_project\_root
 
@@ -582,7 +582,7 @@ ohpm客户端从5.3.1开始新增开关配置enable\_lock\_inner\_pkg\_version�
 
 如下图所示，蓝色箭头标识最终要安装的依赖，安装的依赖D@1.0.0来自依赖B@1.0.0（依赖名称和依赖版本相同的依赖会被定性为相同依赖，最终安装哪个由依赖构建先后顺序决定）, 因B@1.0.0并没有安装，但oh-package-lock.json5中锁定了依赖D的版本，在二次安装时会爆出D的依赖路径不存在错误，此时需要将该开关设置为false。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/gK3HAj5ET5uBteolIi6v6Q/zh-cn_image_0000002808887009.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/gK3HAj5ET5uBteolIi6v6Q/zh-cn_image_0000002808887009.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C20C4929D3D1C576ECE39D8C192452A198CA4924EA0C9C6ED3598FA1AC2E001)
 
 **oh-package-lock.json5示例**
 
@@ -829,4 +829,4 @@ ohpm客户端从26.0.0.630版本新增开关配置symlink\_for\_local\_dep字段
 
 创建的软链接如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/oaTlMPQHRPSg-f7jBqJ7rg/zh-cn_image_0000002779567344.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/oaTlMPQHRPSg-f7jBqJ7rg/zh-cn_image_0000002779567344.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8FCEAF71E6EB68BA97910B20A73A0F00AFA320CB90A070C63A1091DEE91434B)

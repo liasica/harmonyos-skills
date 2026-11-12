@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-runnin
 title: Windows x86模拟器卡在开机界面，无法进入桌面
 breadcrumb: FAQ > DevEco Studio > 应用运行 > Windows x86模拟器卡在开机界面，无法进入桌面
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:58+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-15
 content_hash: sha256:9271b1f9332348657efb6e791e6c5ac854fbc0b08bc0c094a055fb256a04a820
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:9271b1f9332348657efb6e791e6c5ac854fbc0b08bc0c094a055fb256a0
 
 Windows x86模拟器卡在开机界面，无法进入桌面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/qophjYmeQhWkvZ06G_QQPg/zh-cn_image_0000002635735156.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/qophjYmeQhWkvZ06G_QQPg/zh-cn_image_0000002635735156.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3F657EDDF7D7DD94AC2548B8C4FA30BDDF25427052C1531B548C0B384A6B29D "点击放大")
 
 场景一：
 
@@ -22,7 +22,7 @@ Windows x86模拟器卡在开机界面，无法进入桌面。
 
 本机计算机系统CPU、内存资源不足。
 
-可通过任务管理器，查看当前运行模拟器时本机CPU、内存占用，若发现CPU或内存占用过高时，可能导致模拟器无法启动。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/UIEvyPbkTxOppR3bVQ6Jvw/zh-cn_image_0000002666054267.png "点击放大")
+可通过任务管理器，查看当前运行模拟器时本机CPU、内存占用，若发现CPU或内存占用过高时，可能导致模拟器无法启动。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/UIEvyPbkTxOppR3bVQ6Jvw/zh-cn_image_0000002666054267.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C8BC7F390324408FC700B47ED5FCF7C8EB233FA08386EC76843194E7C6C8F06 "点击放大")
 
 **解决措施：**
 

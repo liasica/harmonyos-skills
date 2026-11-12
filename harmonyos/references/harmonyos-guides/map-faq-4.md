@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-faq-4
 title: 设置地图Logo始终显示
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > Map Kit常见问题 > 设置地图Logo始终显示
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:30+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:7f53e93e44ad9a2c75e3cebd6c976fc45ffbebba6c591e5347cb9e2a4f214011
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:7f53e93e44ad9a2c75e3cebd6c976fc45ffbebba6c591e5347cb9e2a4f2
 
 Map Kit地图Logo不可见。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/qNGYlTuTRxmRWHYlSJTPig/zh-cn_image_0000002815399967.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/qNGYlTuTRxmRWHYlSJTPig/zh-cn_image_0000002815399967.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC019A92289D94D966FD890666D38786A48ECAE288EEC84337D9AEE597931404 "点击放大")
 
 **可能原因**
 
@@ -148,4 +148,4 @@ struct MapKitAppDemo {
 
 展示效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/5zfvMzPXQZOqQ19nLUBECQ/zh-cn_image_0000002786520392.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/5zfvMzPXQZOqQ19nLUBECQ/zh-cn_image_0000002786520392.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=31C4A7681567334B91BB4D3D3C5C29DA7FCDE17777103E2A3DF2FE37D024DB33 "点击放大")

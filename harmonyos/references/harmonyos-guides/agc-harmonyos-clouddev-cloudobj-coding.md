@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 开发云对象
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 开发端云工程 > 开发云侧工程 > 开发云对象 > 开发云对象
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:53+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-08
 content_hash: sha256:0abdf5bba9c10784d7c9983612bae3cbcaba3ac2177f814aee7e22293aa60b0a
 ---
@@ -23,7 +23,7 @@ content_hash: sha256:0abdf5bba9c10784d7c9983612bae3cbcaba3ac2177f814aee7e22293aa
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/UFgSbfGuTpi6yhIAMiJG0g/zh-cn_image_0000002179338600.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/UFgSbfGuTpi6yhIAMiJG0g/zh-cn_image_0000002179338600.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D91CF7A2FC2E19B33930BB558B46DEC6F796183BE8BC80CAB0C558F39785B2D)
 
    **注意** 
 
@@ -41,8 +41,8 @@ content_hash: sha256:0abdf5bba9c10784d7c9983612bae3cbcaba3ac2177f814aee7e22293aa
 
    右击“package.json”文件，选择“Run 'npm install'”菜单，也可以实现依赖包安装。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/xNveRkKuTymYFOiOIVMArQ/zh-cn_image_0000002425894173.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/xNveRkKuTymYFOiOIVMArQ/zh-cn_image_0000002425894173.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9BEE6D12C3A1F4542E30935F24DC3CD41A86DEDB98EF19E1ED6C7FFD9FCE002)
 
    所有安装的依赖包都会存储在当前云对象的“node\_modules”目录下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/c_3e-By7QvS9xti-tzB2WA/zh-cn_image_0000002425974957.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/c_3e-By7QvS9xti-tzB2WA/zh-cn_image_0000002425974957.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=B616405720662AA3B40614C2E004C0C537FFECD94919C046952E2AA9B471D0C0)

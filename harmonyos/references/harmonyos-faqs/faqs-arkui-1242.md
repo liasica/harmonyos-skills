@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1242
 title: Navigation在分栏模式下页面有大量留白
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Navigation在分栏模式下页面有大量留白
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:33+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:c9bb5e015443c5b29297a29221e747bac15569020bee1a9a512acba350f98ae1
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:c9bb5e015443c5b29297a29221e747bac15569020bee1a9a512acba350f
 
 当用户在平板设备上或折叠屏展开态打开应用时，应用的页面呈现出左侧为导航栏，而右侧为大面积空白的现象。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/ptjKPjo9QBCw0Gm3ffUlRA/zh-cn_image_0000002658834707.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/ptjKPjo9QBCw0Gm3ffUlRA/zh-cn_image_0000002658834707.png?HW-CC-KV=V1&HW-CC-Date=20261112T233150Z&HW-CC-Expire=31536000000&HW-CC-Sign=D333844B41FCC673725934BCBB733F4445319C30BC904EAA1090377C66A512D1 "点击放大")
 
 ## 背景知识
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-co
 title: 鸿蒙电脑版DevEco Code常见问题
 breadcrumb: 指南 > DevEco Code > DevEco Code TUI > 常见问题 > 鸿蒙电脑版DevEco Code常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:88cefa01c236f9427e4cc19f11ae8dc0cfcf5ea73fae349b61be13dc46315763
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:88cefa01c236f9427e4cc19f11ae8dc0cfcf5ea73fae349b61be13dc463
 
 执行安装命令或检验环境搭建等命令时，提示没有node权限。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/b7r95pxTSYGyrg_IssDjwQ/zh-cn_image_0000002808886377.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/b7r95pxTSYGyrg_IssDjwQ/zh-cn_image_0000002808886377.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=21F1DF8170810269134997CA89B195FA9331877A373B853BB9D86A141230BE5B)
 
 **可能原因**
 
@@ -32,7 +32,7 @@ tar -zxvf commandline-tools-harmonyos-xxx.tar.gz
 
 **问题现象**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/hMfIz9sLRESrU39Lq2OrtQ/zh-cn_image_0000002808766297.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/hMfIz9sLRESrU39Lq2OrtQ/zh-cn_image_0000002808766297.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=B94040EE69700411F9AE3C020D4E1F6830427B1100D6B492B0EA13F37D7BD00E)
 
 **可能原因**
 
@@ -64,7 +64,7 @@ tar -zxvf commandline-tools-harmonyos-xxx.tar.gz
 
 在鸿蒙电脑上执行npm install -g @deveco/deveco-code@stable命令安装DevEco Code时，有报错提示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/Dd2KImefQfejOyGcFZJKqA/zh-cn_image_0000002808766301.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/Dd2KImefQfejOyGcFZJKqA/zh-cn_image_0000002808766301.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=E22C3F80D56DC59E5F7D4F8B8A6F3AC33D2D83C74C297E004521D1ABEED27F87)
 
 **可能原因**
 
@@ -80,7 +80,7 @@ tar -zxvf commandline-tools-harmonyos-xxx.tar.gz
 
 在鸿蒙电脑DevEco Studio中安装DevEco Code时，弹窗提示“无法运行来自非应用市场的扩展程序”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/mDTE9LShSAqquUq78yBLdw/zh-cn_image_0000002808766293.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/mDTE9LShSAqquUq78yBLdw/zh-cn_image_0000002808766293.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=81760D63DD8F85ABE6103B6C2F9F42658CF5509E6FE27A9D8FA22717321EBB44)
 
 **可能原因**
 
@@ -90,7 +90,7 @@ tar -zxvf commandline-tools-harmonyos-xxx.tar.gz
 
 点击弹窗中的**去设置 >** **隐私和安全**，开启**运行来自非应用市场的扩展程序**后，重新安装DevEco Code。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/MTZg_QiJTniCtRYlsR2DXw/zh-cn_image_0000002808886379.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/MTZg_QiJTniCtRYlsR2DXw/zh-cn_image_0000002808886379.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFB1C43750C1CAA5DD3035AE1783F0486DF4709CFE4C9A6137260C100DA82289)
 
 ## 在鸿蒙电脑DevEco Studio中安装DevEco Code时，提示“由于网络问题，DevEco Code安装失败，请调整网络后再次尝试”
 
@@ -98,7 +98,7 @@ tar -zxvf commandline-tools-harmonyos-xxx.tar.gz
 
 在鸿蒙电脑DevEco Studio中安装DevEco Code时，报安装失败。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/TBpgcnOeQPmZGW9J2GAvgQ/zh-cn_image_0000002808886381.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/TBpgcnOeQPmZGW9J2GAvgQ/zh-cn_image_0000002808886381.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=41FD27EFD7AC1D64BAF72918B7BE3A1282AFFAADB70B3EB38E31AE8C749298A8)
 
 **可能原因**
 
@@ -129,10 +129,10 @@ npm install -g @deveco/deveco-code
 
 * 升级：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/dI32HjspSGW1cjGKKY088g/zh-cn_image_0000002808886383.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/dI32HjspSGW1cjGKKY088g/zh-cn_image_0000002808886383.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=613924BC8C8834B3E8A9AA005F17A4C84E6E491C2EB5293855D7ADC7A8F03A08)
 * 卸载：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/eDrCbRO7R1ibUajyfgHG-g/zh-cn_image_0000002808766295.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/eDrCbRO7R1ibUajyfgHG-g/zh-cn_image_0000002808766295.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=16EB6017B2D8FEBF8202CABE9D15E02648112BFEC5805DB2E6B7881E6F60486B)
 
 **可能原因**
 

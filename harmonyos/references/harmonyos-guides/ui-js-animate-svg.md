@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-animate
 title: svg动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 动效开发指导 > CSS动画 > svg动画
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-03-09
 content_hash: sha256:38afbfeafa528c6c4e41a44812faaf72f46ff5f1a29052870ea19554d0a53118
 ---
@@ -40,7 +40,7 @@ content_hash: sha256:38afbfeafa528c6c4e41a44812faaf72f46ff5f1a29052870ea19554d0a
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/-Q_uLXloTH-y_Wd_pIGXpw/zh-cn_image_0000002786359352.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/-Q_uLXloTH-y_Wd_pIGXpw/zh-cn_image_0000002786359352.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED4C24DD201E8E20DA07A91CE452FDBB241F917788DD58E7830D7DB78F82DA05)
 
 **说明** 
 
@@ -64,7 +64,7 @@ content_hash: sha256:38afbfeafa528c6c4e41a44812faaf72f46ff5f1a29052870ea19554d0a
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/lJ9r3cSgSLCGRzXOsXsvQw/zh-cn_image_0000002815558773.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/lJ9r3cSgSLCGRzXOsXsvQw/zh-cn_image_0000002815558773.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=C73F1123CD7CEDDA5CFA1783231035739DBA0357AAD35130B0A216A50810911B)
 
 ## animateTransform动画
 
@@ -106,4 +106,4 @@ content_hash: sha256:38afbfeafa528c6c4e41a44812faaf72f46ff5f1a29052870ea19554d0a
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/oXdFNsqsQSGHlNevWGiy9g/zh-cn_image_0000002815398857.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/oXdFNsqsQSGHlNevWGiy9g/zh-cn_image_0000002815398857.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D660B06C18BF67E38FD4EBB9E424E4B5C8969B811CD71481A0492C0BBAD14EA)

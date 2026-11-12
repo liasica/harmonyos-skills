@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/adaptation-pr
 title: 适配流程
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用数据备份恢复 > 设备升级应用数据迁移适配指导 > 适配流程
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-04-20
 content_hash: sha256:aeee2b45ade03c8df9379010b2934b1803198261d044f67c50ea606d2282cedb
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:aeee2b45ade03c8df9379010b2934b1803198261d044f67c50ea606d228
 
 **图1** 适配流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/N9niVfjOQSqBQL_9mMjTsA/zh-cn_image_0000002786359494.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/N9niVfjOQSqBQL_9mMjTsA/zh-cn_image_0000002786359494.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=661027871ED5DC870B8AAC0DE13246C68034EB89DDA9541A386FC50C37CAAC2E)
 
 ## 适配准备阶段
 
@@ -30,7 +30,7 @@ content_hash: sha256:aeee2b45ade03c8df9379010b2934b1803198261d044f67c50ea606d228
 
 后续HarmonyOS应用通过访问HarmonyOS应用沙箱获取应用的数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/PnhzRe0PQISt85TfCAfZcQ/zh-cn_image_0000002815558915.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/PnhzRe0PQISt85TfCAfZcQ/zh-cn_image_0000002815558915.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=89BA16293706E0C0AB6692ABDB18F05FCCABEE5F14663B32744FCC7AD41FF6B8)
 
 备份恢复目录如下表中所示：
 

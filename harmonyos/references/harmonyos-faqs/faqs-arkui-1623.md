@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1623
 title: 接收网络数据时，如何解决无法刷新@LocalBuilder装饰的组件的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 接收网络数据时，如何解决无法刷新@LocalBuilder装饰的组件的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:67ca8c71f8bf37ab0db29159bf41d8f458c7d3b49e5c09f5838f6f35bafcf893
 ---
@@ -71,7 +71,7 @@ class Person {
 
 截图如下，渲染结果值依然为初始值，没有变化，点击change也没有变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/OK2oGJaFShayT4itOFZXiw/zh-cn_image_0000002628777468.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/OK2oGJaFShayT4itOFZXiw/zh-cn_image_0000002628777468.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=519BCAE676FA8195816C7CD54D3783756D7A11D68428F728BA2E26979D836363 "点击放大")
 
 ## 背景知识
 

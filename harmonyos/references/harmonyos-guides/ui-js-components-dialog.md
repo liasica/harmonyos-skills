@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: dialog开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 容器组件 > dialog开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:18+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-30
 content_hash: sha256:f8a9cb0ca03daae0660c5637e68ba7cf3c6fc451a700fb1a81f8aae510cda06c
 ---
@@ -69,7 +69,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/LErWzTCzQeeVd_4RjMHgww/zh-cn_image_0000002786359294.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/LErWzTCzQeeVd_4RjMHgww/zh-cn_image_0000002786359294.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E868F48B34E03614166DADE522133E031B1E0D209ED09A1CEACCAF243CC4BA5)
 
 ## 设置弹窗响应
 
@@ -145,7 +145,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/qUGi-hGsSHOWAJOoajSqbQ/zh-cn_image_0000002815558715.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/qUGi-hGsSHOWAJOoajSqbQ/zh-cn_image_0000002815558715.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=756751E63D00C60B2184D11A0A86E0A887758D23D5C80B84E7195B22B14D696A)
 
 **说明** 
 
@@ -308,4 +308,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/pSU_OSGYQ422VAwJzkGqpA/zh-cn_image_0000002815398799.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/pSU_OSGYQ422VAwJzkGqpA/zh-cn_image_0000002815398799.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=88D55DB1F92A5B62C45B361F1D021C1F2073E6D8601A6CE72FC72162AC304590)

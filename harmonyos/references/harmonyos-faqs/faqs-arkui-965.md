@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-965
 title: 应用从后台返回前台时，退出沉浸式全屏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 应用从后台返回前台时，退出沉浸式全屏
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:30+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:5591b5502e3309bf4cd32413f5969eab81377210b796e82480e5ded7c172a129
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:5591b5502e3309bf4cd32413f5969eab81377210b796e82480e5ded7c17
 
 视频全屏播放时，退出前台并重新进入前台，视频页面退出沉浸式全屏。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/gxpmz11PTWChY1kvXhWQJQ/zh-cn_image_0000002658800933.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/gxpmz11PTWChY1kvXhWQJQ/zh-cn_image_0000002658800933.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0D54C2C56B3ADAA5384D660F7226EB49736E43FF7252F610AE62AF95C708569 "点击放大")
 
 ## 背景知识
 
@@ -25,7 +25,7 @@ content_hash: sha256:5591b5502e3309bf4cd32413f5969eab81377210b796e82480e5ded7c17
 
 1. 使用DevEco Testing查看问题页面，视频组件为XComponent组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/jqf-almfQA2IxeWOT0TGAw/zh-cn_image_0000002628401676.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/jqf-almfQA2IxeWOT0TGAw/zh-cn_image_0000002628401676.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=E23E219DF665704A51C0E1A13A6C1875C268CB3BA09DD0B69A39F2A343D7049B "点击放大")
 2. 查看全屏时的相关设置，点击全屏按钮时应用沉浸式横屏显示。并且页面使用onPageShow在应用进入前台时避让导航栏和状态栏。
 
    ```screen
@@ -531,4 +531,4 @@ struct Index {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/PW5L0zmZTuWemFKCfk3h0w/zh-cn_image_0000002628561604.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/PW5L0zmZTuWemFKCfk3h0w/zh-cn_image_0000002628561604.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B09232170801B42A39FE073EF694F13F5E1B41CB011346CCDED093CFBEF100B "点击放大")

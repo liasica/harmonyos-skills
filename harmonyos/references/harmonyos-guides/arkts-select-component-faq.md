@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-select-
 title: 按钮与选择组件常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI开发常见问题 > 按钮与选择组件常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:27c99b78b0280f037f53a6e66e4fe1f485c7b894c1789532da2e1642a47a4cf2
 ---
@@ -16,11 +16,11 @@ Slider的滑块与滑轨显示样式[SliderStyle](../harmonyos-references/ts-bas
 
 SliderStyle.OutSet模式下，滑块的中心与滑轨的端点对齐，示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/kROdaahiS_Ws-TppK_yVLQ/zh-cn_image_0000002786359370.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/kROdaahiS_Ws-TppK_yVLQ/zh-cn_image_0000002786359370.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=E06CE16F3D2E59F388C20404BD5D1C989DF68A6C96584DCA4A364107D1239D23)
 
 SliderStyle.InSet模式下，滑块与滑轨的中心对齐，即距离端点滑轨高度的一半的位置，示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/ifKFgq7iSgOQ5Wj-Jk-evA/zh-cn_image_0000002815558791.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/ifKFgq7iSgOQ5Wj-Jk-evA/zh-cn_image_0000002815558791.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8B68C8B097C16D98F3533D4BB6C6D1C6B709F1095BF5EAA4FCC684301CEFC4B)
 
 **示例**
 
@@ -117,7 +117,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/0HtUE0InTuK6gls2Kunb_w/zh-cn_image_0000002815398875.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/0HtUE0InTuK6gls2Kunb_w/zh-cn_image_0000002815398875.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=2FFAAD585F7791BAE2D2F588A21A906E5577FF59F8C8AA67E6FDAEFC8D8D22C2)
 
 ## Button组件设置type时，ButtonType枚举值与数字值不一致
 
@@ -186,4 +186,4 @@ struct ButtonTypeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/qso6uMh4SeC4LGnbhvaHag/zh-cn_image_0000002786519300.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/qso6uMh4SeC4LGnbhvaHag/zh-cn_image_0000002786519300.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=B23D40AF55C4B58E956E06EC79D07ABBD5DD505474FC09E9BC3E49376072FA9E)

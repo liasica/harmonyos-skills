@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-601
 title: Scroll组件如何自动滚动到指定位置
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Scroll组件如何自动滚动到指定位置
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:5942563bfddc1f11fae6c6c8553106b63f4dfcba03e7bd47890e0d2f132687b1
 ---
@@ -124,7 +124,7 @@ scrollTo、scrollBy和scrollToIndex可实现通用滚动控制，scrollToItemInG
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/55QHzHyNRW6eSU_8YRiZMA/zh-cn_image_0000002658911917.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/55QHzHyNRW6eSU_8YRiZMA/zh-cn_image_0000002658911917.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=235ABCD80C0D3E2FEB1DB20D92F38F9595C8B117E99026ADA063767E95BA1F85 "点击放大")
 * **场景二**：多层级分组结构，精准跳转至某个特定的分组中的某一项。
 
   使用scrollToItemInGroup定位到分组列表中指定分组内的目标项。
@@ -239,7 +239,7 @@ scrollTo、scrollBy和scrollToIndex可实现通用滚动控制，scrollToItemInG
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/PSI4TeOjS76C2Ljl-Ka-sg/zh-cn_image_0000002628392708.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/PSI4TeOjS76C2Ljl-Ka-sg/zh-cn_image_0000002628392708.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=2CF11FC5DC739468443E2D3883A1C0254C9EECFEC1DEB098D8448C4C66A88272 "点击放大")
 
 ## 总结
 

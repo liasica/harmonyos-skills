@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-sensor-ser
 title: 应用无法获取气压信息
 breadcrumb: FAQ > 系统开发 > 硬件 > 传感器（Sensor Service） > 应用无法获取气压信息
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:a8e1b2f613b2120ae529e20d6372dd1802831e8a649b108367ae90df723602bd
 ---
@@ -24,7 +24,7 @@ content_hash: sha256:a8e1b2f613b2120ae529e20d6372dd1802831e8a649b108367ae90df723
 1. 首先排查是否是网络问题。
    * 使用UIViewer查看页面布局，发现显示气压数据的页面非H5页面。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/redGjxB3RVq8KCQ10t7tyg/zh-cn_image_0000002628615112.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/redGjxB3RVq8KCQ10t7tyg/zh-cn_image_0000002628615112.png?HW-CC-KV=V1&HW-CC-Date=20261112T233218Z&HW-CC-Expire=31536000000&HW-CC-Sign=17213DBE34F02304E436468C55C8819F590B4CA1D299B26E3D14117FDC79E7BB "点击放大")
    * 查看HiLog日志，搜索"sensorId"、"SubscribeSensor"和包名等关键词，日志如下，发现应用调用了传感器获取相关信息，因此排除设备网络或请求异常导致的问题。
 
      ```txt

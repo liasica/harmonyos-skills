@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-external
 title: 密钥管理扩展介绍
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 密钥管理扩展 > 密钥管理扩展介绍
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:41+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:011bbedfc7086b48eb30d1098ef9a702bf46780c2ff5dc9709b59a720725b788
 ---
@@ -21,7 +21,7 @@ HUKS框架保持设备无关，既支持UKey物理设备，也支持软件形态
 
 ## 整体框架
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/I7tugv34Qn-zCq4w9S6TnQ/zh-cn_image_0000002786519630.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/I7tugv34Qn-zCq4w9S6TnQ/zh-cn_image_0000002786519630.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=50BC98A6C3F0D9F4744B560EF0F9A0433B0068FAEFD972CB29FEA64FDB1A0B72)
 
 密钥管理扩展采用分层架构，自上而下划分为生态伙伴层、应用层、系统服务层与密钥管理扩展应用层，各层之间通过IPC协同。
 

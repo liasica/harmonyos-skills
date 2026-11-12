@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-937
 title: 如何修改半模态弹窗关闭按钮背景色
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何修改半模态弹窗关闭按钮背景色
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:44+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:913e16ad03f8019c02635ad5da5013ad71dc75d8d161152ac01a230fbd6701bd
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:913e16ad03f8019c02635ad5da5013ad71dc75d8d161152ac01a230fbd6
 
 如何实现半模态弹窗关闭按钮背景色的修改？如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/BwGn2WtgSOeHAKPAbzm2Og/zh-cn_image_0000002628560268.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/BwGn2WtgSOeHAKPAbzm2Og/zh-cn_image_0000002628560268.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=0BACECA1BA14355105048F4B21311738A1B6927574B4A22F28F76C682A2B4378 "点击放大")
 
 ## 背景知识
 

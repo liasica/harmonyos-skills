@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: HarmonyOS中DevEco Studio缺少Device Manager入口及模拟器镜像下载报错的解决方案
 breadcrumb: FAQ > DevEco Studio > 环境准备 > HarmonyOS中DevEco Studio缺少Device Manager入口及模拟器镜像下载报错的解决方案
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:49+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-30
 content_hash: sha256:c992455e5643ea5bd11c267006d7b2b36d8de712c155f0346949f211d0075567
 ---
@@ -14,7 +14,7 @@ HarmonyOS应用开发与测试环境中，可能会遇到DevEco Studio的国家�
 
 * 场景一：在DevEco Studio中打开Tools菜单，未找到Device Manager入口。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/Dts3ZKI1R9iD4N4bMaXxuA/zh-cn_image_0000002631134494.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/Dts3ZKI1R9iD4N4bMaXxuA/zh-cn_image_0000002631134494.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=9D6DC7782554144A13EB8034F4DAA2D1A407C8A8357668217E68B659701F1129)
 * 场景二：通过命令行执行模拟器镜像下载命令时，提示Currently, this capability is available only in the Chinese mainland.错误，导致镜像无法正常下载。
 
 ## 背景知识
@@ -33,7 +33,7 @@ DevEco Studio的部分功能（如Device Manager和模拟器镜像下载）受�
 
   保存修改并重启DevEco Studio后，即可在Tools菜单中看到Device Manager入口。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/VIMtSDZTT_-AJN9FanRD_Q/zh-cn_image_0000002661374419.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/VIMtSDZTT_-AJN9FanRD_Q/zh-cn_image_0000002661374419.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=6AE11915C57651B127226A76F87132E0AB907BFE77C22AB0AD473EC3F2427408)
 
 * 场景二：如果在通过命令行下载模拟器镜像时提示限大陆报错，同样是因为配置文件中的国家码未正确设置。前往country.region.xml文件所在目录，将其中的countryregion字段修改为CN。
 

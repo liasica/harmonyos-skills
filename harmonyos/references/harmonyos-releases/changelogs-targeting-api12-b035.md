@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: 针对API 12应用的变更
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Developer Beta3引入的接口行为变更 > 针对API 12应用的变更
 category: harmonyos-releases
-scraped_at: 2026-11-12T09:50:34+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:dfc5249986ea182720aa13954d5f98753b0274d04f8e2829164ddeb8e486e7a4
 ---
@@ -214,7 +214,7 @@ API 11：RenderNode的clipToFrame设为false不生效，超出节点大小范围
 
 API 12及以上版本：RenderNode的clipToFrame设为false时，超出节点大小范围的子节点内容不会被剪裁。为保证变更前后clipToFrame的默认行为一致，开发者在未显式设置clipToFrame属性的情况下，clipToFrame默认值变更为true。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/1r9DBsUDRn2ASW1Lzt7ghw/zh-cn_image_0000001971091670.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/1r9DBsUDRn2ASW1Lzt7ghw/zh-cn_image_0000001971091670.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=1952CC58D90EF530FEDA9B309FFB30FD6522CC9D7D9032DA324CF1C70ADC0D19)
 
 **起始API Level**
 
@@ -564,13 +564,13 @@ totalCount表示UI显示的数据个数。当0 < totalCount < arr.length时，�
 
 将arr.length设置为10，totalCount设置为5。显示效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/CNj4fRBFQQWCIxJMsL20WA/zh-cn_image_0000002007771985.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/CNj4fRBFQQWCIxJMsL20WA/zh-cn_image_0000002007771985.jpeg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=972F2EBB2C0A8CBCA35B115524ACEFCF4A9D0C3361F18C3F5B39DBB4FB0ACDD5)
 
 变更后：Repeat设置totalCount属性时，如果totalCount小于数据长度，显示的数据个数为totalCount值。
 
 将arr.length设置为10，totalCount设置为5。显示效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/oojyysN-ThyfEo-uaEZ4Sg/zh-cn_image_0000002007731453.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/oojyysN-ThyfEo-uaEZ4Sg/zh-cn_image_0000002007731453.jpeg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F6D5300641B50CA4AA3AC2D6D836EC72B62EC0FC9D4103D0A6CC1292748B559)
 
 **起始API Level**
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1620
 title: 如何在系统键盘和自定义键盘切换时自动适配输入框的高度
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何在系统键盘和自定义键盘切换时自动适配输入框的高度
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:26+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:3f4f1184f4385e9df40bc6cc31c38a27de40b283139d2e2e57b9be073894aaff
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:3f4f1184f4385e9df40bc6cc31c38a27de40b283139d2e2e57b9be07389
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/7VXf1_5bQAOTvzTs0WuImg/zh-cn_image_0000002658976783.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/7VXf1_5bQAOTvzTs0WuImg/zh-cn_image_0000002658976783.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F81BCA483C70B8EEA8D52B57AFB8CDE766BEBD44D5FE2C3C6DF650818BA816F "点击放大")
 
 ## 背景知识
 

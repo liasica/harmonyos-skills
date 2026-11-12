@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-11
 title: 如何获取手机当前网络连接的子网掩码
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > 如何获取手机当前网络连接的子网掩码
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:15+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:9eb937d29f40a4004cc971bd503f61439a51c4276bddf3f5d09185857860b5f0
 ---
@@ -90,5 +90,5 @@ content_hash: sha256:9eb937d29f40a4004cc971bd503f61439a51c4276bddf3f5d0918585786
 
      示例效果：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/yKJyRM_bQr-Lr1l2V_EnHA/zh-cn_image_0000002658970121.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/yKJyRM_bQr-Lr1l2V_EnHA/zh-cn_image_0000002658970121.png?HW-CC-KV=V1&HW-CC-Date=20261112T233214Z&HW-CC-Expire=31536000000&HW-CC-Sign=B50DF27B4966CBE475726D9A2F4F8816E0DE5320F1762DC69D7EFCA6F317F8DF "点击放大")
 2. 可以通过[connection.getConnectionPropertiesSync](../harmonyos-references/js-apis-net-connection.md#connectiongetconnectionpropertiessync10)接口获取[ConnectionProperties](../harmonyos-references/js-apis-net-connection.md#connectionproperties)网络连接信息，其中就包含routes路由信息。

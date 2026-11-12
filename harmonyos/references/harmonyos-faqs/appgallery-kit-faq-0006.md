@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/appgallery-kit-
 title: 应用内检查更新实现及常见问题
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 常见问题 > 应用内检查更新实现及常见问题
 category: harmonyos-faqs
-scraped_at: 2026-11-07T08:09:02+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-06
 content_hash: sha256:fdcb195ef4002b1eb4da9a5507e2e4c332761ac4eae37113c239a7b39913c04e
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:fdcb195ef4002b1eb4da9a5507e2e4c332761ac4eae37113c239a7b3991
 
 A：业务流程：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/DkdxJrDWSkiyLrlYJbujlQ/zh-cn_image_0000002792076741.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/DkdxJrDWSkiyLrlYJbujlQ/zh-cn_image_0000002792076741.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC3229360389DB71E2F5ED4DA92FA87076BBB8DE66D4438C3E607C5D1153E067 "点击放大")
 
 1. 应用调用检查更新接口。
 2. 升级服务API返回是否有新版本。

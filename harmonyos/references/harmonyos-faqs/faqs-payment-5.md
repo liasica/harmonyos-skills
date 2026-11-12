@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-payment-5
 title: 商户号如何绑定AppID
 breadcrumb: FAQ > 应用服务开发 > 华为支付服务（Payment Kit） > 商户号如何绑定AppID
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:39+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:4eec0c730e9e0894d70e31149a285cc3b021502cbe039d057ccd6073401f4d6c
 ---
@@ -13,7 +13,7 @@ content_hash: sha256:4eec0c730e9e0894d70e31149a285cc3b021502cbe039d057ccd6073401
 1. 华为支付配置过程中，商户号如何与AppID进行绑定？
 2. 登录华为支付商户平台后，商户中心没有证书管理和AppID管理的选项，如何解决？
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/j0vPJ-QVS9KxbfEqYfjqGQ/zh-cn_image_0000002658793791.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/j0vPJ-QVS9KxbfEqYfjqGQ/zh-cn_image_0000002658793791.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=8535182EE45DE8E48E9ECF14FDC33F8831D3268ABFF4FC6B67F3A12496B696DD "点击放大")
 
 ## 背景知识
 
@@ -35,4 +35,4 @@ content_hash: sha256:4eec0c730e9e0894d70e31149a285cc3b021502cbe039d057ccd6073401
 
    重新入网步骤：华为账号登录华为支付商户平台后在弹框右上角选择新商户入网申请完成后才可以[上传商户证书](../harmonyos-guides/payment-certificates-config.md#上传商户证书)，具体如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/vBdCofsFSBqUrwju8_KzaA/zh-cn_image_0000002628394524.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/vBdCofsFSBqUrwju8_KzaA/zh-cn_image_0000002628394524.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A16C02AE004E9866DA728BA5D5A20FF06AF695A558064848460C83997C136E1 "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1392
 title: 页面跳转时，有渐入渐出的动效
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 页面跳转时，有渐入渐出的动效
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:34+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:ac08bea466d3137c26072617bc821f4642d22ac0faa2088babdc13bdbb8328d4
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:ac08bea466d3137c26072617bc821f4642d22ac0faa2088babdc13bdbb8
 
 页面跳转时，有渐入渐出的动效，新旧页面内容出现重叠显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/qzkk1kbHSJKRGxWQEsUh-g/zh-cn_image_0000002658961879.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/qzkk1kbHSJKRGxWQEsUh-g/zh-cn_image_0000002658961879.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=88BD284FBF4B444E1C2C8475F623285688226A50E923A98D10EC46C5BC9A8DB5 "点击放大")
 
 ## 背景知识
 
@@ -23,9 +23,9 @@ content_hash: sha256:ac08bea466d3137c26072617bc821f4642d22ac0faa2088babdc13bdbb8
 
 1. 使用DevEco Testing查看该页面的组件，跳转前后的页面分别通过不同的Web组件显示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/jt3hVjTpQi-47ef4VM_kOQ/zh-cn_image_0000002628602668.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/jt3hVjTpQi-47ef4VM_kOQ/zh-cn_image_0000002628602668.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F4199F1D3DCC646DFF4044CD3729751195E833A7B09C0F216D3D1F680A2F881 "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/SVnE_Ht0R3aY25SzyNBE9A/zh-cn_image_0000002658841939.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/SVnE_Ht0R3aY25SzyNBE9A/zh-cn_image_0000002658841939.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA8455CE61B18183EEDB378FB2F5D12BE348C62FB62E367604534B605145F1DA "点击放大")
 2. 查看跳转之后的Web组件的相关设置，发现应用transition属性设置了透明度渐变的过渡效果。
 
    ```ts
@@ -262,7 +262,7 @@ content_hash: sha256:ac08bea466d3137c26072617bc821f4642d22ac0faa2088babdc13bdbb8
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/jdskj7hzS--H8thableYQA/zh-cn_image_0000002628762568.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/jdskj7hzS--H8thableYQA/zh-cn_image_0000002628762568.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=71095365EB0E67931D076EEF1C47EAC5E984A99DD0CD04F30A2DADB64F30933D "点击放大")
 * 方案二：跳转后的Web组件不设置透明度渐变的过渡效果。
 
   ```ts
@@ -467,4 +467,4 @@ content_hash: sha256:ac08bea466d3137c26072617bc821f4642d22ac0faa2088babdc13bdbb8
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/ref1Qh0rQQiL6No6U10s2w/zh-cn_image_0000002658961881.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/ref1Qh0rQQiL6No6U10s2w/zh-cn_image_0000002658961881.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=90446956F69B61DB8E8144D1161347813B1DBBD861CC4CBD10A4AA6F9D227D01 "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-windmana-
 title: 应用无交互超时弹窗提示功能实现常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 常见问题 > 应用无交互超时弹窗提示功能实现常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:28+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:17145e80d95e6681d1ea003367cdab75497f9372a7beb771954d62ca31a88e78
 ---
@@ -157,7 +157,7 @@ content_hash: sha256:17145e80d95e6681d1ea003367cdab75497f9372a7beb771954d62ca31a
 
    效果：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/j7tNPwJlQjaPB6wDOUhABA/zh-cn_image_0000002764286444.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/j7tNPwJlQjaPB6wDOUhABA/zh-cn_image_0000002764286444.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=0FDDAC18D79AFCC548B9F51C4E1F2B61FC0ACCFA99CE4CF64497217913336EA7 "点击放大")
 
 方案二：使用全局时间戳手动检测
 

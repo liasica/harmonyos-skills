@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-travel
 title: 开通出行凭证
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 出行凭证 > 开发场景 > 开通出行凭证
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:39+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:dc42290b860bb070d48cde89db985d3b31f83282d2dd7fd4e003ec7b05b52234
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:dc42290b860bb070d48cde89db985d3b31f83282d2dd7fd4e003ec7b05b
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/rqIUG90TQ-ygv97YR5NMRA/zh-cn_image_0000002786520566.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/rqIUG90TQ-ygv97YR5NMRA/zh-cn_image_0000002786520566.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=63503A8A2D0498CCE8637F449B50A18F6CBEE3F9BD4902073A8E5F5DBA404366)
 
 ## 开发流程
 

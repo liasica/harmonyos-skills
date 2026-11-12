@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-method
 title: 文本滑动选择器弹窗 (TextPickerDialog)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 弹窗 > 文本滑动选择器弹窗 (TextPickerDialog)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:24+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-17
 content_hash: sha256:7be127a9f7eff9b2b0bd871db9e10d9df469ec2fe0ee497c3e8a35d997c60b84
 ---
@@ -210,7 +210,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/bAbrCdwkRtGwRNjVWmANjA/zh-cn_image_0000002786521522.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/bAbrCdwkRtGwRNjVWmANjA/zh-cn_image_0000002786521522.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F149E35A98E1A25F851B24B0A190B547FA997FED72C51E93A985B964B7ABC49)
 
 ### 示例2（自定义样式）
 
@@ -298,7 +298,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/1YpH2cUnRQqTuIMgq24LeQ/zh-cn_image_0000002786361594.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/1YpH2cUnRQqTuIMgq24LeQ/zh-cn_image_0000002786361594.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=46679C4B35849E0BE86A229DD0CDA4A58FE4A249A72C95F48B7AEAE61D1227B6)
 
 ### 示例3（悬停态弹窗）
 
@@ -363,7 +363,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/l0wT4LXYR8GnwZrKyi6A4g/zh-cn_image_0000002815561015.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/l0wT4LXYR8GnwZrKyi6A4g/zh-cn_image_0000002815561015.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=049ED26E3BE288DFE30B74951F3CCC8E0705035966058BA63ED36B969F67149C)
 
 ### 示例4（设置弹窗位置）
 
@@ -405,7 +405,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/Pprf159IRqKkosvCV2HRbQ/zh-cn_image_0000002815401099.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/Pprf159IRqKkosvCV2HRbQ/zh-cn_image_0000002815401099.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D3EEF7382D8BA29D02DA19A05D41C48AC11F7B30E5B6CEAE79B6C81EECEA805)
 
 ### 示例5（设置遮蔽区）
 
@@ -451,7 +451,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/AcjP6fA7Q_2IXL8d9BF8gw/zh-cn_image_0000002786521524.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/AcjP6fA7Q_2IXL8d9BF8gw/zh-cn_image_0000002786521524.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=79D85A539CCD0D914ED6BD08A3CFAD30EC0BBEBCC77B0B60B61B44122AA5760C)
 
 ### 示例6（设置弹窗背板）
 
@@ -494,7 +494,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/mYdQBs2YRJenm0UdSANDBQ/zh-cn_image_0000002786361596.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/mYdQBs2YRJenm0UdSANDBQ/zh-cn_image_0000002786361596.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=59556A152C75CE996A04B7DBE48843E3CD972A5E6A4CBC30EAD3C619EB574E74)
 
 ### 示例7（设置循环滚动）
 
@@ -536,7 +536,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/H7t5CUvfQkqYJ-xKlUAAsA/zh-cn_image_0000002815561017.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/H7t5CUvfQkqYJ-xKlUAAsA/zh-cn_image_0000002815561017.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF75A9D6B8010C92878C6A142770F91E86F71C5021FA951BF8C7886BA1AF6C11)
 
 ### 示例8（设置选中项的背景样式）
 
@@ -575,7 +575,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/LnQhdD2cTrqOb8TX5zSoCQ/zh-cn_image_0000002815401101.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/LnQhdD2cTrqOb8TX5zSoCQ/zh-cn_image_0000002815401101.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B50540F15E59D3EAC7D99C9CCA0652AC814A010FBBC9682838D1D968AC16BCF)
 
 ### 示例9（自定义背景模糊效果参数）
 
@@ -613,7 +613,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Sn2FOVmZRUKWrQe1Is9RhA/zh-cn_image_0000002786521526.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/Sn2FOVmZRUKWrQe1Is9RhA/zh-cn_image_0000002786521526.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=2FF6FCE19E03F873DC945522862F5BB664BD454165BC21FDB990E0A15A5607B8)
 
 ### 示例10（自定义背景效果参数）
 
@@ -652,7 +652,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/33XWgSUrRh-52lY1oB7goQ/zh-cn_image_0000002786361598.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/33XWgSUrRh-52lY1oB7goQ/zh-cn_image_0000002786361598.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=21F6FE9739D8824895FDD791BAF0912164791ACFB2F7A43A1B7842268A746C6D)
 
 ### 示例11（设置沉浸光感）
 
@@ -691,4 +691,4 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/97hM5m7_Q_myr-rqYTYE7w/zh-cn_image_0000002815561019.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/97hM5m7_Q_myr-rqYTYE7w/zh-cn_image_0000002815561019.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=827D03D7A67CDBCEC8A8BA62B01BE1312147F254A8091152527E4BE17B6D4E0A)

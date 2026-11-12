@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-898
 title: 并发接口拦截器中如何实现全局弹窗
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 并发接口拦截器中如何实现全局弹窗
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:38+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:3cd0274371e9ac903aea5e42e694dfc829d68498b2d39dae808b6679382bd88f
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:3cd0274371e9ac903aea5e42e694dfc829d68498b2d39dae808b6679382
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/Kh2f2PRSTIGXlhyXLmyVwg/zh-cn_image_0000002658799017.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/JamdG-DOT0OuUuAXypiTwQ/zh-cn_image_0000002628559664.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/g2q_CNImQUCwVDKK98tUFg/zh-cn_image_0000002658918971.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/Kh2f2PRSTIGXlhyXLmyVwg/zh-cn_image_0000002658799017.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=19DFE78B425948A90993E423294F811D0796A0A9C04D765DCAEC6DE3FD038A21 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/JamdG-DOT0OuUuAXypiTwQ/zh-cn_image_0000002628559664.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=C501E6874446D3FB6397C3E41BD62F0AAEE4C44E75F7D9E550B6526A917A4359 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/g2q_CNImQUCwVDKK98tUFg/zh-cn_image_0000002658918971.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=71AB521640976C68A811BD1EE3AF430EDCB9ACB95375145771EB2B0967C33603 "点击放大")
 
 ## 背景知识
 

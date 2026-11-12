@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-regression
 title: 生成回归测试包时报错提示“当前项目根目录下不存在setup-regression.py文件”
 breadcrumb: FAQ > DevEco Testing > 回归测试 > 生成回归测试包时报错提示“当前项目根目录下不存在setup-regression.py文件”
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:9261aabee03ed194ff407a207abeb6f61b058a9807def29ffb00d87ea24e8f4e
 ---
@@ -12,4 +12,4 @@ content_hash: sha256:9261aabee03ed194ff407a207abeb6f61b058a9807def29ffb00d87ea24
 
 一个完整的回归测试工程结构为：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/YGkzOlCVRhSye7xi07RMwA/zh-cn_image_0000002654838303.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/YGkzOlCVRhSye7xi07RMwA/zh-cn_image_0000002654838303.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=E852944DB6867B6074D480F3E847109D38EF25E2D7633DB68459C44CA151C144 "点击放大")

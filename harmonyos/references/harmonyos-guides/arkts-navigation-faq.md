@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigat
 title: Navigation常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI开发常见问题 > Navigation常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:865252cd458842ee86085156ee8d1dacc98ef7961f3a78e227eb0af5778f0d6a
 ---
@@ -16,10 +16,10 @@ content_hash: sha256:865252cd458842ee86085156ee8d1dacc98ef7961f3a78e227eb0af5778
 
 * 将蒙层背景色设置在页面上：pop页面的时候蒙层没有马上消失，而是等内容下滑退出后才消失。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/MtJ-kdedRfOh2_50TCtC8Q/zh-cn_image_0000002815558789.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/MtJ-kdedRfOh2_50TCtC8Q/zh-cn_image_0000002815558789.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=3938660B3B96E6C89DC3B55605C6A4BBB4911624A67300F7F05F6DF38C13E7A4)
 * 将蒙层背景色设置在内容区域：蒙层一起从上向下退出。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/YLt7hNynTEWPHeRjnbsc0Q/zh-cn_image_0000002815398873.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/YLt7hNynTEWPHeRjnbsc0Q/zh-cn_image_0000002815398873.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=92C49CE1597A2EB9A01DE5418FA6F9F07C60C8B11C982942D5A6C6AE6B7640A1)
 
 期望退出时蒙层渐隐，同时内容区域向下退出。
 
@@ -67,7 +67,7 @@ export struct DialogNavDestination {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/v472cZwfRAerErdliokpaQ/zh-cn_image_0000002786519298.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/v472cZwfRAerErdliokpaQ/zh-cn_image_0000002786519298.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=14AAF4185217F184208A2EE414977682B31F45E4000BFAB1F65FFC53E188CCBB)
 
 ## router、navigation动画冲突
 

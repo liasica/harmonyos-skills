@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-pdf-16
 title: PDF添加SquareAnnotationInfo标注，设置fillColor无效如何解决
 breadcrumb: FAQ > 应用服务开发 > PDF文档解析服务（PDF Kit） > PDF添加SquareAnnotationInfo标注，设置fillColor无效如何解决
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:37+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-12
 content_hash: sha256:7c8b9d540b89a2ebcffbea872aeaaa1ce1c7e7ac15a6203e90cdc8d67882bab6
 ---
@@ -77,7 +77,7 @@ content_hash: sha256:7c8b9d540b89a2ebcffbea872aeaaa1ce1c7e7ac15a6203e90cdc8d6788
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/pPE0jT9MR9mdfBd4bLqVfQ/zh-cn_image_0000002628554252.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/pPE0jT9MR9mdfBd4bLqVfQ/zh-cn_image_0000002628554252.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE37212BD2764931FFF81256387E00CEF2F98C72AE7A04A49E22C7ACB78C0E2A)
 
 ## 背景知识
 
@@ -315,8 +315,8 @@ struct PDFPage {
 
 方案一效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/oBIx2iE9QlabJCoA6zmIDQ/zh-cn_image_0000002658913571.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/oBIx2iE9QlabJCoA6zmIDQ/zh-cn_image_0000002658913571.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=FAF80C8856B9BDD48122E64114B9D06ECE5F65306EF5406542C49A339B2A3690 "点击放大")
 
 方案二效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/B2e7cG8nQA2T3eEc34CDfQ/zh-cn_image_0000002628394360.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/B2e7cG8nQA2T3eEc34CDfQ/zh-cn_image_0000002628394360.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E7DF7D6AAE846881176521627B343805443FF19AC3977A694CE904D345EF6A5 "点击放大")

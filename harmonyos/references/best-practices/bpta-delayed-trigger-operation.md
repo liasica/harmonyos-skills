@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-delayed-tr
 title: 操作延时触发
 breadcrumb: 最佳实践 > 性能 > 性能优化 > 操作延时触发
 category: best-practices
-scraped_at: 2026-11-10T10:42:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:a0e65516cd70e14fa4ac1d67417750a5a68d78b65cd3cc5934c8d23af1296cd8
 ---
@@ -30,7 +30,7 @@ content_hash: sha256:a0e65516cd70e14fa4ac1d67417750a5a68d78b65cd3cc5934c8d23af12
 
 下面示例中，所有变量均从DeviceInfo模块中导出。除了冷启动用到的name模块，一些非关键路径模块（如screen和storage）也一起被导出。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/6pWkqeIARsqXUqQ3jEztYQ/zh-cn_image_0000002533090658.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/6pWkqeIARsqXUqQ3jEztYQ/zh-cn_image_0000002533090658.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=33C15156F3183D3D20E011C3B75445D2DF2BDB12AF3EEF0EF4B613FE155E0BD4 "点击放大")
 
 ```typescript
 // entry\src\main\ets\pages\Index.ets
@@ -78,7 +78,7 @@ export { name, screen, storage };
 
 使用体检工具可以查看冷启动阶段未使用的模块和这些模块的加载耗时。将这些未使用模块（storage和screen）从关键路径中剥离，添加lazy标识进行延迟加载。修改后，从下图Trace中可以观察到冷启动阶段仅加载了DeviceName模块。OtherDeviceInfo模块被推迟到用户首次点击文本时才会执行。从修改前后的Trace可以看出，冷启动耗时有所降低。具体请参阅[import加载耗时](../doccenter-app-quality/bpta-application-cold-start-optimization.md#section16955857103112)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/uH8xQ5XAS46gz0kdcwd_Yw/zh-cn_image_0000002563810679.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/uH8xQ5XAS46gz0kdcwd_Yw/zh-cn_image_0000002563810679.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=E23D293B5B6EE7FAFAC06427966AEB5880ED0824B742CBFBC662486ADA547971 "点击放大")
 
 ```typescript
 // entry\src\main\ets\pages\Index.ets
@@ -171,7 +171,7 @@ struct Index {
 export const title = 'HarmonyOS';
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/t3Lpm4DyT1iyqr9VgojuCQ/zh-cn_image_0000002547097925.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/t3Lpm4DyT1iyqr9VgojuCQ/zh-cn_image_0000002547097925.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3FB0D90E214095C63FC70778C3F50C6C8DAF1E54B511AF6F8206CC443108448 "点击放大")
 
 使用体检工具记录冷启动Trace，识别启动阶段未使用的模块及其加载耗时。在该示例中，不需要在用户点击事件前加载libentry.so模块，建议删除import testNapi from 'libentry.so'语句，仅在需要使用时通过import()函数动态加载该模块。下图为修改后采集的冷启动Trace，从图中可以看到冷启动阶段不再加载libentry.so。从修改前后的Trace可以看出降低了冷启动的耗时。
 
@@ -207,7 +207,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/bmjCnBazQQWBTMKGwn29Pg/zh-cn_image_0000002515418092.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/bmjCnBazQQWBTMKGwn29Pg/zh-cn_image_0000002515418092.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=84745C76B8F66D303DCDE676501CC27D81A3F3A3CBF1DB6987705DD7168FCE8D "点击放大")
 
 ## **延迟执行资源释放操作**
 

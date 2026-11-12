@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkweb-kit-trou
 title: ArkWeb同层渲染滚动问题定位
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 故障排查 > ArkWeb同层渲染滚动问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:04+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:4a5f35c649424f43c1286889b29f43c433ee7b7262ab62b6e3b71bc9613777c1
 ---
@@ -39,7 +39,7 @@ Web({ src: $rawfile("embed_view.html"), controller: this.browserTabController })
 
 问题效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/T0ENC1FRRGC6qMoKdXwijw/zh-cn_image_0000002772839732.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/T0ENC1FRRGC6qMoKdXwijw/zh-cn_image_0000002772839732.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=C335CB737A2E8AD13C11A2770F53CDB6D84E4809DD45AC3068A49F6946C0282C "点击放大")
 
 ## 定位过程
 

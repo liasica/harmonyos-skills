@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-cl
 title: 快速入门
 breadcrumb: 指南 > DevEco CLI > 快速入门
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:e48db6c4eac3d01341481e5f3fe7d8912ca9fd921d867ff1e75c6a03cd230e44
 ---
@@ -147,7 +147,7 @@ devecocli update
 
 1. 初始化。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/ScVhKupASgi_1GdwDASbYw/zh-cn_image_0000002808886949.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/ScVhKupASgi_1GdwDASbYw/zh-cn_image_0000002808886949.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A722A86AE87D839FB02211C20E05305E0FE2F3C3DB37E9128F94202901C29EC)
 2. 创建一个HarmonyOS应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/X2MrUb0ASwaKhVarUBJLVQ/zh-cn_image_0000002808766869.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/X2MrUb0ASwaKhVarUBJLVQ/zh-cn_image_0000002808766869.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7977D66F3B231190A2F919903422CBACD358CD2582440B1CCD23C58FFB0F4D2)

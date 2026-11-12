@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/ndk-development
 title: Native侧SO库集成与加载方法常见问题
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 常见问题 > Native侧SO库集成与加载方法常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:490286d9832b43d25c1bbdf2d16f8edf65402478f85de6c3f2e8e54abcd00a0f
 ---
@@ -22,13 +22,13 @@ content_hash: sha256:490286d9832b43d25c1bbdf2d16f8edf65402478f85de6c3f2e8e54abcd
 
 1. 将移植后的Curl的so库放到Native工程的entry/libs/目录下，并将移植后生成的、包含头文件的include目录放到entry/src/main/cpp目录下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/KQmX_0AHSG-XK8XKupsJiA/zh-cn_image_0000002802039455.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/KQmX_0AHSG-XK8XKupsJiA/zh-cn_image_0000002802039455.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C05F342DAF075DA1BD9A0D2F2C270C220CE83D97B52C3BE43D3E1E0AFEF4A22)
 2. 在CMakeLists.txt文件中链接Curl对应的so库。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/0cuQsMxITYyLqmm_TVIFtA/zh-cn_image_0000002772839700.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/0cuQsMxITYyLqmm_TVIFtA/zh-cn_image_0000002772839700.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=63D2D32DFBA295883D6F0F742FD0406C4E23EA225FC32ADE9E2C9343BF8398D1 "点击放大")
 3. 在Native侧.cpp文件中通过引入头文件curl.h来使用Curl的相关能力。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/SJbBX-TSRK6JyRtjNBA-Sw/zh-cn_image_0000002772679724.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/SJbBX-TSRK6JyRtjNBA-Sw/zh-cn_image_0000002772679724.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=98A0F8838BA6A79F26553F94793DE9E87EDB6DCF8A5BF1451414DFAEBC5D13AC)
 
 参考链接：[在NDK工程中使用预构建库](../harmonyos-guides/build-with-ndk-prebuilts.md)。
 
@@ -70,7 +70,7 @@ content_hash: sha256:490286d9832b43d25c1bbdf2d16f8edf65402478f85de6c3f2e8e54abcd
 4. Native侧使用dlopen动态加载so库。需要调用liba.so中的add函数。
    * 将liba.so文件放到libs/arm64-v8a/路径下。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/tqH1WgbeQNenA3Peeps6GA/zh-cn_image_0000002802119551.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/tqH1WgbeQNenA3Peeps6GA/zh-cn_image_0000002802119551.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DA7F1DF02B49DA833A35BC629DBC5434277BB86F1D78C0E3584DEFF4516E221)
    * 需要在ArkTS侧传递so库路径信息到Native侧。
 
      ```ts
@@ -138,10 +138,10 @@ content_hash: sha256:490286d9832b43d25c1bbdf2d16f8edf65402478f85de6c3f2e8e54abcd
 
 1. 将so文件移动到libs文件夹下对应架构的目录。如果在纯ArkTS工程中，还需将编译三方库时生成的libc++\\_xxx.so移动到该目录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/35w98m8TRzWT3B3nxCoB_w/zh-cn_image_0000002802039461.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/35w98m8TRzWT3B3nxCoB_w/zh-cn_image_0000002802039461.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4ED299695DE5015966454FDAD0557E694448E3CC79F95ACEF84DB9C409E2FCF)
 2. 在src/main/cpp/types目录下创建新目录，并将Index.d.ts和oh-package.json5文件移动到该目录下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/Vz-9BGmoT0KwoFs-SVAkkQ/zh-cn_image_0000002772839704.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/Vz-9BGmoT0KwoFs-SVAkkQ/zh-cn_image_0000002772839704.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=00D04726DF4A1D7E725D18B20C542366F1FE03F5AFBE9CE93ECC45F01D2077E2)
 3. 在模块级的oh-package.json5文件中声明该 so 库的根目录路径。
 
    ```json
@@ -181,7 +181,7 @@ content_hash: sha256:490286d9832b43d25c1bbdf2d16f8edf65402478f85de6c3f2e8e54abcd
 
 运行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/LqaqFmbmSuWh7632XlBW0w/zh-cn_image_0000002772679730.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/LqaqFmbmSuWh7632XlBW0w/zh-cn_image_0000002772679730.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=0565F2DC5C7EDACF71851BF67C1F7E99CC5AA7A2485433967D1E9B5BBDE2F7E4)
 
 参考链接：[在ArkTS侧引用三方so库](../harmonyos-guides/integrate-third-party-dlls.md#在arkts侧引用三方so库)。
 

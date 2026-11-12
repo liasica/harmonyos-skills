@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-linking-s
 title: 通过App Linking应用链接拉起指定应用
 breadcrumb: 指南 > 应用服务 > App Linking Kit（应用链接服务） > 通过App Linking应用链接拉起指定应用
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:c30a66bbfd7344a5ed39b1e38f682e0a3e025882ce86ab1a7fa28532537cae8e
 ---
@@ -87,14 +87,14 @@ content_hash: sha256:c30a66bbfd7344a5ed39b1e38f682e0a3e025882ce86ab1a7fa28532537
 1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console#/)，进入“应用管理”页面。
 2. 选择目标应用后，左侧导航栏选择“推广运营 > 增长运营 > App Linking > 应用链接”，点击“创建”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/F7xmGdPVTGSAyLdCY19CeQ/zh-cn_image_0000002786360192.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/F7xmGdPVTGSAyLdCY19CeQ/zh-cn_image_0000002786360192.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B8BE1259FFA13D8DE3E0E930A18C92F6E2D4B8FD6C5A50BF53ED29F78D6E9CD)
 3. 填写[建立域名与应用关联关系](app-linking-startupapp.md#建立域名与应用关联关系)的网址域名，例如：https://www.example.com。必须输入精确的域名，不可输入包含特殊字符的模糊网址。
 
    **说明** 
 
    不可以在域名末尾添加/，即不支持https://www.example.com/形式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/iOpMFMLORnymojoSmYVrEg/zh-cn_image_0000002815559613.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/iOpMFMLORnymojoSmYVrEg/zh-cn_image_0000002815559613.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=BEA0584491AAE90D4A1DB2DABA946B242EB5DA5036D5225767A403D8DC85B2D9)
 4. 设置完成后点击“发布”，HarmonyOS 开发者中心会对该网站域名的配置文件所包含的应用与本项目内的应用列表进行交集校验。
 
    **说明** 
@@ -103,15 +103,15 @@ content_hash: sha256:c30a66bbfd7344a5ed39b1e38f682e0a3e025882ce86ab1a7fa28532537
 
    例如：开发者在4月7日17:21创建了应用链接，系统会在4月8日17:30去域名服务器上重新获取配置文件，然后进行交集校验，更新发布状态。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/tzAp2KOxTmSlqWdVwX59NA/zh-cn_image_0000002815399697.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/tzAp2KOxTmSlqWdVwX59NA/zh-cn_image_0000002815399697.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=3999A024C4B74F7FF42A6EA68DD16BCC207E3D6262CB3F0AC8D04CF9898AE24B)
 
    * 如果域名的配置文件中存在本项目中的应用，则发布成功，点击“查看”可显示该域名关联的应用信息。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/7WsDWQJlQkalIS_c1_EufQ/zh-cn_image_0000002786520122.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/7WsDWQJlQkalIS_c1_EufQ/zh-cn_image_0000002786520122.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=3879E5797B59FD091FDB23E23E3551F543D8C1C4840B3101AEA2137E09E97090)
    * 如果还在校验中，则状态为“发布中”。
    * 如果配置文件中没有包含任何本项目中的应用，则发布失败，点击“查看”可显示发布失败原因。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/sou5Mt_OQ1yVyvhlnbgQ6g/zh-cn_image_0000002786360194.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/sou5Mt_OQ1yVyvhlnbgQ6g/zh-cn_image_0000002786360194.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=949DC6CB931036A573D51160E867B1D08987F0696D144A4B1ABEA98D1ABA481C)
 
 ### 在module.json5中配置关联的网址域名
 
@@ -326,7 +326,7 @@ ArkWeb深度集成了App Linking的能力，当用户在系统浏览器或者集
 
 通过系统级扫码入口扫描App Linking应用链接对应的二维码，然后查看跳转效果。以“扫码直达”服务的美团单车场景为例。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/YRyQj94sSzi4iJExMs_HgQ/zh-cn_image_0000002815559615.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/YRyQj94sSzi4iJExMs_HgQ/zh-cn_image_0000002815559615.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6C6BCC4DEA164697A7B3C09388A38294CE54AE44C4374D90C7A1274D8553FA9)
 
 ## FAQ
 

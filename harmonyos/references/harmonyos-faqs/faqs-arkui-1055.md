@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1055
 title: 如何实现全局可调用弹窗
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现全局可调用弹窗
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:53+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:277ca0d71ab1ef6d5448b1a115b4fe50dcc16faca08888eca04bbf51e6562d43
 ---
@@ -167,7 +167,7 @@ content_hash: sha256:277ca0d71ab1ef6d5448b1a115b4fe50dcc16faca08888eca04bbf51e65
 
      运行效果图如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/mQeu0lgtT7-plBOVDm5FPw/zh-cn_image_0000002628565460.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/mQeu0lgtT7-plBOVDm5FPw/zh-cn_image_0000002628565460.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=6519686002403F90D73FE87C7C9E25BA007558F0D20DD3A067C70046300E278F "点击放大")
 * 方案三：通过自定义弹窗(CustomDialog)封装成自定义组件的方式：
   1. 封装弹窗控制方法Dialog.ets，使用[@watch](../harmonyos-guides/arkts-watch.md)监听外部传入的变量变化，通过CustomDialogController控制弹窗的显示隐藏，代码如下：
 
@@ -262,7 +262,7 @@ content_hash: sha256:277ca0d71ab1ef6d5448b1a115b4fe50dcc16faca08888eca04bbf51e65
 
      运行效果图如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/E5Ql7AepQDqrsIOQzLyH7Q/zh-cn_image_0000002658924769.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/E5Ql7AepQDqrsIOQzLyH7Q/zh-cn_image_0000002658924769.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=972A0EA85457BD39A06307C74883F6A3767F4171E025EC12DD76B205A17E0AA5 "点击放大")
 
 ## 总结
 

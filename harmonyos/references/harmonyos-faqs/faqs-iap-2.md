@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-iap-2
 title: 应用如何接入退款及常见问题
 breadcrumb: FAQ > 应用服务开发 > 应用内支付服务（IAP Kit） > 应用如何接入退款及常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:43+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
-content_hash: sha256:1261bd3047d83a062d23aa7ce3e3ed29b67e449c260c21b5c49a69767eaa9357
+content_hash: sha256:c2a0a2f4d7152ddaec4217904fd5d06340b2c438ae218c93db56bc598101773f
 ---
 
 ## 问题现象
@@ -38,7 +38,7 @@ content_hash: sha256:1261bd3047d83a062d23aa7ce3e3ed29b67e449c260c21b5c49a69767ea
    * 服务端API查询：用户申请退款后，IAP服务器会向开发者服务器发起请求，请求中会携带[RefundRequestData](../harmonyos-references/iap-server-refund-receive-notify.md#refundrequestdata)结构体，该结构体中的applyAmount字段就说明了用户申请的退款金额（单位：分），除此外还有refundReason（用户申请退款理由）和refundOrders（退款申请工单下的订单号）等参数。
    * HarmonyOS 开发者中心管理台查询退款信息：开发者登录HarmonyOS 开发者中心，选择“App与元服务”，在“运营”页签下，点击“产品运营>退款管理”，查看用户提交的退款申请，处理退款订单。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/k6EqGfOrSj69FLGY3iU6fQ/zh-cn_image_0000002654410216.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/3JWunVkmRfS-Z3OEA9GRkA/zh-cn_image_0000002654410216.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=80E9A05FC316340FC731164EDC228699FC5D86689BE7FBC0D2495A96484F95AD "点击放大")
 
 5. 检查开发者在HarmonyOS 开发者中心配置的通知版本是否设置为v3，配置的接收退款申请事件通知服务器地址是否有修改、变更等情形，有变动可以通过[测试服务通知](../harmonyos-references/iap-server-notifications-test.md)验证是否可以调用成功，除此外https证书失效或者不符合要求也会出现该问题。
 

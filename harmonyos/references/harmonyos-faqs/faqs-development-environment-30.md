@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: DevEco Studio无法启动
 breadcrumb: FAQ > DevEco Studio > 环境准备 > DevEco Studio无法启动
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:49+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:1af8c758fdf22c5b3a4fd6ac5310effea5455533b196c944c56c68fb4edae553
 ---
@@ -16,13 +16,13 @@ content_hash: sha256:1af8c758fdf22c5b3a4fd6ac5310effea5455533b196c944c56c68fb4ed
 
    Windows系统报错如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/1rEcleyiQ--jrqPT2GcgOA/zh-cn_image_0000002658924303.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/1rEcleyiQ--jrqPT2GcgOA/zh-cn_image_0000002658924303.png?HW-CC-KV=V1&HW-CC-Date=20261112T233211Z&HW-CC-Expire=31536000000&HW-CC-Sign=0437D9E2680D96EB5BCA1E7431C1A931777A6F29B2CF7F37DE5E0AFD5C9CF8DB "点击放大")
 
    macOS系统报错如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/jjv1zVS1Rq-t8uFS_4nm-w/zh-cn_image_0000002658804359.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/jjv1zVS1Rq-t8uFS_4nm-w/zh-cn_image_0000002658804359.png?HW-CC-KV=V1&HW-CC-Date=20261112T233211Z&HW-CC-Expire=31536000000&HW-CC-Sign=88E5A42BE66155E5CB1858AC50E72CBF1CAB5FBE326ED5818F0EFAC71EFE7D3D "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/Fpy0qrWZRg2rNHk21nIctg/zh-cn_image_0000002628564994.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/Fpy0qrWZRg2rNHk21nIctg/zh-cn_image_0000002628564994.png?HW-CC-KV=V1&HW-CC-Date=20261112T233211Z&HW-CC-Expire=31536000000&HW-CC-Sign=5256E291940704BB7C1B33C38CBD44FC69685ED6CE2CBF2A3D38713AE58DC8A4 "点击放大")
 4. 无法启动，报错信息如下：
 
    ```txt
@@ -155,7 +155,7 @@ content_hash: sha256:1af8c758fdf22c5b3a4fd6ac5310effea5455533b196c944c56c68fb4ed
 
    DevEco Studio突然无法打开，弹框报错信息如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/UMnESjqQQ4CCGiIMmnxEbw/zh-cn_image_0000002628405090.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/UMnESjqQQ4CCGiIMmnxEbw/zh-cn_image_0000002628405090.png?HW-CC-KV=V1&HW-CC-Date=20261112T233211Z&HW-CC-Expire=31536000000&HW-CC-Sign=039E9A1C0A4681E5B0959C4B0E0EFD98C2618843971C1ABDEDBFDC8AE3B97AC8 "点击放大")
 8. DevEco Studio无法正常打开项目。
 
 ## 背景知识

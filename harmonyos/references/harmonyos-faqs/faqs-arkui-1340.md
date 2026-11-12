@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1340
 title: 在TextArea中复制完文字后如何取消文字的选中状态
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 在TextArea中复制完文字后如何取消文字的选中状态
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:869dd42605a2783cb10777317c2823cf26b2b2431ddf6d4f4478c05b9696ee2b
 ---
@@ -40,11 +40,11 @@ struct Index {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/5NakZOSHQ3WVWpz1_vZj2g/zh-cn_image_0000002628761404.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/5NakZOSHQ3WVWpz1_vZj2g/zh-cn_image_0000002628761404.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=32DBFFC4183F59E2DAF01E8A711671B9222BD2EEEBE7763B31E4449A11E8C8CC "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/ggnvyTKGRUiGkz4CAIi0jw/zh-cn_image_0000002658960733.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/ggnvyTKGRUiGkz4CAIi0jw/zh-cn_image_0000002658960733.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF3A1E7D26AECF329F4E5EF90F6029E7B92FA92AFB784F52A6DFDF795B553D6B "点击放大")
 
 ## 背景知识
 

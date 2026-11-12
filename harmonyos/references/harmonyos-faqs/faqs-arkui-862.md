@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-862
 title: 应用从后台返回前台时，视频窗口闪屏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 应用从后台返回前台时，视频窗口闪屏
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:29+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:6d2fc31f25ce2febc5ee892665b6c60229c8fe0eee092c71d168fb6ec1eb3a35
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:6d2fc31f25ce2febc5ee892665b6c60229c8fe0eee092c71d168fb6ec1e
 
 应用从后台返回前台时，视频窗口内容闪过其他内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/K2oTY7Q4SOS8SUy9zR1_3Q/zh-cn_image_0000002628398894.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/K2oTY7Q4SOS8SUy9zR1_3Q/zh-cn_image_0000002628398894.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=B9B2DB98BF85C001737BF2D69E26AB2D0C3E663B08477730EED96B4C5F02DD8E "点击放大")
 
 ## 背景知识
 
@@ -23,7 +23,7 @@ content_hash: sha256:6d2fc31f25ce2febc5ee892665b6c60229c8fe0eee092c71d168fb6ec1e
 
 1. 使用DevEco Testing查看问题组件，为Stack组件下的Video组件，且同层组件为Image组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/OhIreg0URLag0w0wB8rmSw/zh-cn_image_0000002658798169.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/OhIreg0URLag0w0wB8rmSw/zh-cn_image_0000002658798169.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C48399F4866E8403F1A6C74C56BBA00BFA67542F7FE5C8DF7E751AE2E425F55 "点击放大")
 2. 查看该页面的相关设置，发现页面使用了onPageShow和onPageHide在应用进入和退出前台时控制图片的显示。应用退出前台暂停播放时显示静态图片，返回前台恢复播放时又从图片切换到视频，造成视频窗口闪屏。
 
    ```screen
@@ -282,4 +282,4 @@ export struct Index {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/YBmnEBm5QZS1z64DPpVuNA/zh-cn_image_0000002628558794.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/YBmnEBm5QZS1z64DPpVuNA/zh-cn_image_0000002628558794.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4233EED2431B0A9D8A4DDB907B16F28D552AD9AACAE20D6B9EF6BBCECBB7DC0 "点击放大")

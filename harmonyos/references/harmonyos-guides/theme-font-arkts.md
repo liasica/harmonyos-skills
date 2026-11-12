@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/theme-font-ar
 title: 使用主题字体（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 字体管理 > 使用主题字体（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:afd0c72144a52394c20de6ed0e5a81522a9e28d423ad0eb018f8c1efcca11ad3
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:afd0c72144a52394c20de6ed0e5a81522a9e28d423ad0eb018f8c1efcca
 
 **图1** 主题字体的切换和使用
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/CM7tgxxKR8GWfHnb_6pUsw/zh-cn_image_0000002815399547.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/CM7tgxxKR8GWfHnb_6pUsw/zh-cn_image_0000002815399547.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=3733927049CA62B88AA029927F719349F43103E3FB83E50438D8372AE164E06A)
 
 针对主题字体的切换使用，应用方应确保订阅主题字体变更事件，当接收到字体变更事件后，由应用方主动调用页面刷新才能实现主题字体的切换，否则主题字体只能在重启应用后才生效。
 
@@ -163,8 +163,8 @@ content_hash: sha256:afd0c72144a52394c20de6ed0e5a81522a9e28d423ad0eb018f8c1efcca
 
 **图2** 主题字体1的效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/sKUgPLjmTaavlj3k5SHhfA/zh-cn_image_0000002786519972.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/sKUgPLjmTaavlj3k5SHhfA/zh-cn_image_0000002786519972.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCF6762C17B4B0A41CB46463FEA16C374F454BA5A4636989A18912AEFF92541D)
 
 **图3** 主题字体2的效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/HXrr6pz3TAmISlOfepOyYw/zh-cn_image_0000002786360044.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/HXrr6pz3TAmISlOfepOyYw/zh-cn_image_0000002786360044.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A015DCFFA211C28F8C2BCF0E285953E551D1AD6773A81EFC01F18FBEA2D9574)

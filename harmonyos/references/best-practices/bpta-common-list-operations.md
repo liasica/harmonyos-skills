@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-common-lis
 title: 常见列表操作
 breadcrumb: 最佳实践 > 布局与弹窗 > 常见列表操作
 category: best-practices
-scraped_at: 2026-11-10T10:42:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-03
 content_hash: sha256:9e264ef70189a5ab4302cb04ce2a5fcbcac9c2b10987a92ff88aa5dbb3a733ae
 ---
@@ -105,7 +105,7 @@ scroller.currentOffset()偏移量是相对于组件最顶端的偏移量，并�
 
 嵌套滚动是指多个滚动容器相互嵌套，并能协同工作的滚动机制。例如：在移动端应用中，一个页面整体可以垂直滚动，而其中某个子组件（如Tab内容、评论区、图片列表）也只支持独立滚动。根据滚动对象的不同，嵌套滚动主要分为Scroll组件嵌套List组件、Web组件嵌套List组件、List组件嵌套List组件等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/lVdlO4lHTaqMVpqqlVlM0w/zh-cn_image_0000002361711474.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/lVdlO4lHTaqMVpqqlVlM0w/zh-cn_image_0000002361711474.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B0E1D867DE3F3A2EC5FB2D1F66E2A92E0FE679F496397A6CBDB6521F7ADE513 "点击放大")
 
 * List组件与Scroll组件的嵌套滚动：[示例2（嵌套滚动实现方式一）](../harmonyos-references/ts-container-scroll.md#示例2嵌套滚动实现方式一)
 * Web组件与List组件嵌套：[Web组件嵌套滚动](../doccenter-capabilities/web-nested-scrolling.md)
@@ -149,7 +149,7 @@ scroller.currentOffset()偏移量是相对于组件最顶端的偏移量，并�
 
 当List组件内容大小小于组件自身时，默认不开启滚动效果，可以设置[edgeEffect](../harmonyos-references/ts-container-scrollable-common.md#edgeeffect11)(EdgeEffect.Spring, { alwaysEnabled: true })开启滚动效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/74ZyrcKOSBaut1tkfQNmgA/zh-cn_image_0000002395231413.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/74ZyrcKOSBaut1tkfQNmgA/zh-cn_image_0000002395231413.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=14FD4F5BD92D82BBF8508875D8F832D87E9A823264273280C54F3AC14FFAFB55 "点击放大")
 
 **滚动过程中禁用滚动：**可以通过enabled(false)关闭滚动使能，但是如果是惯性滚动触发的，List仍然能依靠惯性滚动一段距离。如果想要实现禁用滚动及惯性滚动，可使用以下2种方式：
 
@@ -180,7 +180,7 @@ scroller.currentOffset()偏移量是相对于组件最顶端的偏移量，并�
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/QQeYV84MQP-kjBpfPp4LKQ/zh-cn_image_0000002361871362.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/QQeYV84MQP-kjBpfPp4LKQ/zh-cn_image_0000002361871362.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=12CCAB47EAA136FD3859E70D28B7D5D472EBFC5001BB11C2F7556AB130E3DB69 "点击放大")
 
 ## 列表排版
 
@@ -229,7 +229,7 @@ build() {
     .overlay(this.overlayBuilder())
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/yJ-caVJ-RSKUHtWu16fsOA/zh-cn_image_0000002395391277.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/yJ-caVJ-RSKUHtWu16fsOA/zh-cn_image_0000002395391277.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=454B37240462517D4784E5C71BA70510F022CEFF0BF5B7F798F414C5F3C4E47F "点击放大")
 
 **折叠展开：**列表项的折叠与展开用途广泛，常用于信息清单的展示、填写等应用场景。通过改变ListItem的状态，来控制每个列表项是否展开，并通过animation和animateTo来实现展开与折叠过程中的动效效果。具体请参见：**[折叠与展开](../harmonyos-guides/arkts-layout-development-create-list.md#折叠与展开)**
 
@@ -335,7 +335,7 @@ Column() {
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/ucwMixesTsi-4P7X9VnRWw/zh-cn_image_0000002361711486.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/ucwMixesTsi-4P7X9VnRWw/zh-cn_image_0000002361711486.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A92601E8BAE0C12CDE6C7DDAF940E617846B46A65DFAC9098D682D48D03C074 "点击放大")
 
 **局部数据刷新：**通过直接修改单一ListItem的数据源即可实现。
 
@@ -388,7 +388,7 @@ List({ space: 3 }) {
 .maintainVisibleContentPosition(true)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/XsLDnTL_SmqgD0R6leRbyg/zh-cn_image_0000002395231433.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/XsLDnTL_SmqgD0R6leRbyg/zh-cn_image_0000002395231433.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=4BFEC4E4B4615A2F52F094E649C436584AAC0E001C9D9D3947AFCA4A3F3B8A12 "点击放大")
 
 **方案二：**可以给List添加scroller控制器，将列表跳回至原先所在位置this.scroller.scrollToIndex，具体请参考示例：[List的下拉加载如何回滚到当前展示位置](../harmonyos-faqs/faqs-arkui-268.md)
 
@@ -416,13 +416,13 @@ List({ space: 3 }) {
 * 支持下拉加载历史聊天记录
 * 实时新增并展示最新聊天内容
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/RUrIlxciSmKxwUh7XKalrw/zh-cn_image_0000002361871382.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/RUrIlxciSmKxwUh7XKalrw/zh-cn_image_0000002361871382.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE8D0EBBFED72BA94783549D1540122E5C37F58A532A7E49144FEA08AA6CFCE8 "点击放大")
 
 **消息气泡**
 
 在ListItem中使用[Badge](../harmonyos-references/ts-container-badge.md)组件可实现给列表项添加标记功能。Badge是可以附加在单个组件上用于信息标记的容器组件。例如，在消息列表中，若希望在联系人头像右上角添加标记，可在实现消息列表项ListItem的联系人头像时，将头像Image组件作为Badge的子组件。在Badge组件中，count和position参数用于设置需要展示的消息数量和提示点显示位置，还可以通过style参数灵活设置标记的样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/tps4ShskRq62jNKT28b-wA/zh-cn_image_0000002395391281.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/tps4ShskRq62jNKT28b-wA/zh-cn_image_0000002395391281.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B57A3416653745FF5743FE6C53D81829C2DD7E163DF6A4005002314EDEF9FAC "点击放大")
 
 **实现方案**
 
@@ -451,7 +451,7 @@ if (item.isNewMessage) {
 
 **左滑删除/置顶**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/2l7q6q0GQ5Cc4oo1nqQZRg/zh-cn_image_0000002361711502.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/2l7q6q0GQ5Cc4oo1nqQZRg/zh-cn_image_0000002361711502.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=4DCBB5404C1D57A7CB4716352F7951CF4A0CEC3373A03EC7FD9555F61EE226CC "点击放大")
 
 **实现方案**
 
@@ -506,7 +506,7 @@ itemEnd(item: Item, index: number) {
 
 **滚动后跳转到指定位置**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/cxrdVKkjT1uHgu1yKezl5w/zh-cn_image_0000002395231445.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/cxrdVKkjT1uHgu1yKezl5w/zh-cn_image_0000002395231445.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=44A7EA31E38345A25E3EED02204403DBCCF38535D4C8AAEEE02FC729553EAE4C "点击放大")
 
 **实现方案**
 
@@ -539,7 +539,7 @@ if (this.isFlag) {
 
 **消息列表拖拽排序**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/nGUVqWcmSTmGojpuI_vceQ/zh-cn_image_0000002361871390.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/nGUVqWcmSTmGojpuI_vceQ/zh-cn_image_0000002361871390.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=C13D7B08F5DD4F1A9F226B6EAC0474E2B77503F63134C3B54175C52B45FAD7AA "点击放大")
 
 **实现方案**
 
@@ -627,7 +627,7 @@ if (this.isFlag) {
 
 **初始化显示到底部**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/zDbYDwpLRiSVF5u78DOU9Q/zh-cn_image_0000002395391293.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/zDbYDwpLRiSVF5u78DOU9Q/zh-cn_image_0000002395391293.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=1117CF0AE81D7D73C2AE26FAC699BC145950D6A982C9C9A2923327C92A083CA7 "点击放大")
 
 **实现方案**
 
@@ -693,7 +693,7 @@ List({ space: 10, scroller: this.scroller, initialIndex: this.itemInfo.message.l
 
 **下拉加载更多聊天记录**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/6Pcz3qQ0S3-XmHte9spIIA/zh-cn_image_0000002361711514.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/6Pcz3qQ0S3-XmHte9spIIA/zh-cn_image_0000002361711514.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A74DB9BF4D0BCFD08F4409759387F533D1B5A8A728534EE631F6B6F966FA223 "点击放大")
 
 **实现方案**
 
@@ -775,7 +775,7 @@ Refresh({ refreshing: $$this.isRefreshing }) {
 
 **新增聊天记录**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Ty_SjblwQxig7G0LzQ6wKw/zh-cn_image_0000002395231449.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Ty_SjblwQxig7G0LzQ6wKw/zh-cn_image_0000002395231449.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=747A14DBB3675DD3FBA11B3D581AE33E8A9279A194A05E4C510F5CCF9800B431 "点击放大")
 
 **实现方案**
 

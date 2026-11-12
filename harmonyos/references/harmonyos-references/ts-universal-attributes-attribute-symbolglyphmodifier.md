@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 动态SymbolGlyphModifier属性设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 动态属性与自定义 > 动态SymbolGlyphModifier属性设置
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:368485d952621ee4f81e927f2d5fd38085b5daa26a5e12455d69234801ffb5c3
 ---
@@ -83,4 +83,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/vOcYoZ8ZQf2YdAGrXWEyag/zh-cn_image_0000002786521010.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/vOcYoZ8ZQf2YdAGrXWEyag/zh-cn_image_0000002786521010.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=49BB18A52ACA602D1298860E3F4A9C608C05A8146DAEB7E538191E8CCEC3A554)

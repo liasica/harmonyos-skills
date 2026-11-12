@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1109
 title: 实现卡片投影效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 实现卡片投影效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:32fa31f93cbdf0ac0505553307d5bc0da1119d95a973fc72f6cd91d4f928a733
 ---
@@ -62,7 +62,7 @@ content_hash: sha256:32fa31f93cbdf0ac0505553307d5bc0da1119d95a973fc72f6cd91d4f92
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/r-GZRH1EQr26OjbxjF2M5A/zh-cn_image_0000002628407492.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/r-GZRH1EQr26OjbxjF2M5A/zh-cn_image_0000002628407492.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=64D48EF940AF5A84B5E7A09792C06EC7844C052A503049A617636B3729D0A01B "点击放大")
 * 场景二：实现阴影扩展效果。
   1. 使用radius属性给阴影添加圆角效果与卡片圆角对齐。
   2. 给卡片外部增加一层容器，通过padding实现扩展效果，通过position实现扩展方向。
@@ -99,7 +99,7 @@ content_hash: sha256:32fa31f93cbdf0ac0505553307d5bc0da1119d95a973fc72f6cd91d4f92
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/UaY33a8qSu2c--Bc2utemQ/zh-cn_image_0000002628567388.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/UaY33a8qSu2c--Bc2utemQ/zh-cn_image_0000002628567388.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=C88842C4961B74697181EFF5E16C2B9392480977E42FDBBBC037809BF9B83BA9 "点击放大")
 * 场景三：实现多个阴影样式。
 
   通过父子组件嵌套实现，设置父子组件的大小，边框等完全一致，仅设置的阴影效果不一致。
@@ -151,4 +151,4 @@ content_hash: sha256:32fa31f93cbdf0ac0505553307d5bc0da1119d95a973fc72f6cd91d4f92
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/973b0HlNTbub9V07V2SfLw/zh-cn_image_0000002658926705.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/973b0HlNTbub9V07V2SfLw/zh-cn_image_0000002658926705.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7038FD358BE6A8B570742E0DD17984B4E5B4C1FD4A193B011EE6FF88BCA5E5D "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-genera
 title: 更新通用凭证
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 通用凭证 > 开发场景 > 更新通用凭证
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:39+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:9b991841a415b7e088a7ea509a98dc976413e1eb5501509e62cfd654663161b2
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:9b991841a415b7e088a7ea509a98dc976413e1eb5501509e62cfd654663
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/CIJ3OCm1Qr2bODC-JHC0Xg/zh-cn_image_0000002815560059.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/CIJ3OCm1Qr2bODC-JHC0Xg/zh-cn_image_0000002815560059.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=58E5C8E0A14914647CA39DEF50DAC9A7DFBD3B0F5779EF09CB276356118ADE6A)
 
 ## 服务端开发
 

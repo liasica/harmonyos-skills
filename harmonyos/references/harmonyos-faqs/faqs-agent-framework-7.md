@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-agent-fram
 title: 智能体如何在真机上显示markdown格式文档
 breadcrumb: FAQ > AI功能开发 > 计算平台 > 智能体框架（Agent Framework） > 智能体如何在真机上显示markdown格式文档
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:36f67f3728fbe6be64ad5bc2276fdab32926d1cf374cd7d835f2c58385f7531b
 ---
@@ -16,4 +16,4 @@ content_hash: sha256:36f67f3728fbe6be64ad5bc2276fdab32926d1cf374cd7d835f2c58385f
 
 将工作流模式结束节点中的流式输出打开，即可显示markdown格式文档。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/iHgG_pjkTZuTh0Fi8T5IXg/zh-cn_image_0000002658794115.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/iHgG_pjkTZuTh0Fi8T5IXg/zh-cn_image_0000002658794115.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=DAD43AFBC1B1274B16F892967571C7C2CB41BD3E1894033A37203DA1F7C2099F "点击放大")

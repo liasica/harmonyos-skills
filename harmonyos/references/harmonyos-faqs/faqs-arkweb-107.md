@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-107
 title: 进入页面后，页面内容抖动
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 进入页面后，页面内容抖动
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:9bc149a8c5cece4e9d6c3ece3057e222d7af0d58f9335e9abdb5cb09ee0be09a
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:9bc149a8c5cece4e9d6c3ece3057e222d7af0d58f9335e9abdb5cb09ee0
 
 进入Web页面后，页面内容先上移后下移，造成视觉上页面内容抖动。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/vVMiyr74RaGst5ZvO8cx0g/zh-cn_image_0000002629059044.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/vVMiyr74RaGst5ZvO8cx0g/zh-cn_image_0000002629059044.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C0D2739F9A20B0A95A8237CE2643D0BE9C21202DEA6783F1CD82CCF2E6765F1 "点击放大")
 
 ## 背景知识
 
@@ -146,7 +146,7 @@ H5页面设置了在数据为空时不显示该组件，且数据获取的等待
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/EskykdyBRC6_Q1Md7hXeBA/zh-cn_image_0000002659258347.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/EskykdyBRC6_Q1Md7hXeBA/zh-cn_image_0000002659258347.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=8BBF6ED032B15C1A9BF423A1B39B3A2A351176E065AD69EE3EE55B145E9ACD13 "点击放大")
 * 方案二：延长数据获取的等待时间。
 
   ```screen
@@ -225,4 +225,4 @@ H5页面设置了在数据为空时不显示该组件，且数据获取的等待
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/G39R0tZtT3mCXjnC_2e_aQ/zh-cn_image_0000002628899128.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/G39R0tZtT3mCXjnC_2e_aQ/zh-cn_image_0000002628899128.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=63614E14E81AA502AE48DB4D95EAC8C69B9B3513EDA5CE0975598E0E97427B59 "点击放大")

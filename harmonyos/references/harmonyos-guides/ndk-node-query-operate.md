@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-node-quer
 title: 查询和操作NDK节点
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 查询和操作NDK节点
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:18+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:e8cb56520f58d74d448d7d50e30d73f1589a4bab63a87ee34876bf71606ecaad
 ---
@@ -476,7 +476,7 @@ const unsigned int VALUE_3 = 50;
    ```
 4. 运行程序，点击按钮，Stack节点会移动到目标位置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/WiRdgmtqQNenO5Bh1PC87Q/zh-cn_image_0000002815398783.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/WiRdgmtqQNenO5Bh1PC87Q/zh-cn_image_0000002815398783.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=E252A00D8D80F609F2FEED3B39CA627735F85AFC594695381B4ADBDF52AA1629)
 
 ## 在当前即时帧触发节点属性更新
 
@@ -668,7 +668,7 @@ const unsigned int VALUE_3 = 50;
    ```
 4. 运行程序，点击按钮，切换图片正常展示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/U6mriDtfRQuyPNTOas7Fig/zh-cn_image_0000002786519208.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/U6mriDtfRQuyPNTOas7Fig/zh-cn_image_0000002786519208.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBFD1055FC9A5D1F12CBC0A8CEB3522086152A5FAE2A450D4238930C60B6E21D)
 
 ## 用不同的展开模式获取对应下标的子节点
 
@@ -1136,4 +1136,4 @@ NDK支持通过不同的展开方式获取目标节点下的有效节点信息�
    ```
 4. 运行程序，点击change text visibility后打印text是否在渲染树上。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/zMy6pJSfSYWgTcM2AQ-fQA/zh-cn_image_0000002786359280.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/zMy6pJSfSYWgTcM2AQ-fQA/zh-cn_image_0000002786359280.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=CDB505755D1BAE6930168F399DE1365477585B08FC1F107CF5A8C99FECC033BD)

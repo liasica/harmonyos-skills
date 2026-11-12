@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1091
 title: Tabs及其子组件生命周期触发问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Tabs及其子组件生命周期触发问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:a2e8d0b2dfe7734c9a56c0ce469337285aa2fa2aa8e023a65a487824ad93892e
 ---
@@ -321,7 +321,7 @@ struct TabsLifeCycle {
 
 * 实现效果展示如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/OmqD3O1iRW-k5UQe-FnDPw/zh-cn_image_0000002628407364.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/OmqD3O1iRW-k5UQe-FnDPw/zh-cn_image_0000002628407364.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=290CF0925088BE53E729AFE4499221A0C3BF608BD973C7E5F4B07827B83EF086 "点击放大")
 
   方案对比：
 
@@ -390,7 +390,7 @@ struct TabsLifeCycle {
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/1v58eRCTSI6MsLuv9lNMxw/zh-cn_image_0000002628567260.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/1v58eRCTSI6MsLuv9lNMxw/zh-cn_image_0000002628567260.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=560F6D2FF1CFFE617ABD4E10D078ABBF98BD15B214F78F9E58AA712EE5B82887 "点击放大")
 
 ## 总结
 

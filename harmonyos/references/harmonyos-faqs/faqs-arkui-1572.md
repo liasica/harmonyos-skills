@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1572
 title: 使用子窗口实现自定义宽度和圆角的弹窗
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 使用子窗口实现自定义宽度和圆角的弹窗
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:30+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:3fd85336becd9b80fe5965b5972de376d7079411526115b879fe54ecaac5aee9
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:3fd85336becd9b80fe5965b5972de376d7079411526115b879fe54ecaac
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/CxGsTN34Q1i0W1CzodaF5w/zh-cn_image_0000002628769764.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/CxGsTN34Q1i0W1CzodaF5w/zh-cn_image_0000002628769764.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=920D20050173571E0EF2D647E90C2DAB659ED565A556E829EF00676EF3032959 "点击放大")
 
 ## 背景知识
 

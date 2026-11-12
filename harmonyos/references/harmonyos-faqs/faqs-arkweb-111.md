@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-111
 title: 视频详情页加载时，视频出现由小变大的缩放问题
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 视频详情页加载时，视频出现由小变大的缩放问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:a9814cc3e91273d8945a9abb222064d0e1df6ea1b56224b03be6dc481f866905
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:a9814cc3e91273d8945a9abb222064d0e1df6ea1b56224b03be6dc481f8
 
 页面加载时，先出现一个背景为黑色的视频播放组件，等视频预览图加载完成后，切换成和预览图宽高相同的视频播放组件，页面出现闪跳。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/BFXc51iaQ72z67cF5uAcDA/zh-cn_image_0000002629059046.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/BFXc51iaQ72z67cF5uAcDA/zh-cn_image_0000002629059046.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=059F2AB6496FF579FE9D92371499742B2A993DB8EAE947D52E0F8F261AC38EF6 "点击放大")
 
 ## 背景知识
 

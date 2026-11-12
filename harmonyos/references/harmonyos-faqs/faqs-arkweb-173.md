@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-173
 title: Web组件加载网络链接失败后如何加载错误页面
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web组件加载网络链接失败后如何加载错误页面
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:027292678c8386c66ea64a00c10c009e52d60e32a8cb24fdd2ffc9e6a19c89de
 ---
@@ -18,7 +18,7 @@ content_hash: sha256:027292678c8386c66ea64a00c10c009e52d60e32a8cb24fdd2ffc9e6a19
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/GsUKQTa2RnuSo18VNJ7ylA/zh-cn_image_0000002659258391.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/GsUKQTa2RnuSo18VNJ7ylA/zh-cn_image_0000002659258391.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB53183A3A6DD783AC6D91B3F8BDB43B118D31A5773D3ECD884F8BAB828E675F "点击放大")
 
 ## 背景知识
 

@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-debu
 title: 启动调试
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 启动调试
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-08
 content_hash: sha256:1b6bca12f877e67e7d4d70d6073d9730790baee1ace3a3603fc83a944f06d5c6
 ---
 
 支持debug模式启动调试，启动调试前选择对应的设备进行调试，可参考[debug启动调试](ide-hmos-debug-arkts-debug.md)。
 
-在启动调试前，点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/dx40oIprQPaeF1oo1uLJtA/zh-cn_image_0000002781311356.png "点击放大")按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/q9ZLmtFDSxuGndYhLT1rsQ/zh-cn_image_0000002781311358.png)按钮打开配置界面。在**调试器**中选择**调试类型**为Dual (ArkTS/JS + Native) 、Native 或Detect Automatically，设置调试代码类型为C/C++。
+在启动调试前，点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/dx40oIprQPaeF1oo1uLJtA/zh-cn_image_0000002781311356.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=4CD80AAE010866479923FAF7886DA62D0C548610B781015D9A7D3D01A4AFA66F "点击放大")按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/q9ZLmtFDSxuGndYhLT1rsQ/zh-cn_image_0000002781311358.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AC5131F2EA09EAAD635C517C523DEFF0434DDB65F764018497A9D37A9CE85EC)按钮打开配置界面。在**调试器**中选择**调试类型**为Dual (ArkTS/JS + Native) 、Native 或Detect Automatically，设置调试代码类型为C/C++。
 
 **说明** 
 
 Detect Automatically类型会根据当前工程是否为Native工程判断是否启动Native调试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/VZ9L76CUTtulBdWT_xNLYg/zh-cn_image_0000002810750951.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/VZ9L76CUTtulBdWT_xNLYg/zh-cn_image_0000002810750951.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A21CE4FD20E992CD6A60DA86AB5288702363C206E32C6E1B1C88DE65FE25C73)
 
 **调试器**中还支持自定义以下配置：
 

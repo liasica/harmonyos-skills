@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-784
 title: attach设置软键盘属性inputAttribute不生效
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > attach设置软键盘属性inputAttribute不生效
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:f1fea9d5ed0fc2f1bbe12b96748f20f11181d0db7f058f6d9c09f69633f8f4fd
 ---
@@ -30,11 +30,11 @@ onFocus(() => {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/s1c36w3bS9mNKTS7SnuFUg/zh-cn_image_0000002658916947.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/s1c36w3bS9mNKTS7SnuFUg/zh-cn_image_0000002658916947.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233202Z&HW-CC-Expire=31536000000&HW-CC-Sign=2DBB5EFEDF1ED4A9263585AF39D890071013F2B79E933897781C8F06EB147DA9 "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/xmZPO9KmQmyrW-OAOm0m_g/zh-cn_image_0000002628397738.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/xmZPO9KmQmyrW-OAOm0m_g/zh-cn_image_0000002628397738.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233202Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5B36006242CF0F28CB64AA444401FB5561F783D251713004D665AD2468364EE "点击放大")
 
 ## 背景知识
 

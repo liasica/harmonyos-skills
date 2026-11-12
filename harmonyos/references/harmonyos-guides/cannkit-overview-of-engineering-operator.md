@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-overv
 title: AscendC算子工程开发概述
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC算子实现 > AscendC算子工程开发 > AscendC算子工程开发概述
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:2e3e4bcee615b5adcd247d6d0c9dd74069af3319a7bd370b79c602e89d976636
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:2e3e4bcee615b5adcd247d6d0c9dd74069af3319a7bd370b79c602e89d9
 
 工程化算子开发流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/zUcANNb1Qd6y63v-IUpbcQ/zh-cn_image_0000002786360698.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/zUcANNb1Qd6y63v-IUpbcQ/zh-cn_image_0000002786360698.png?HW-CC-KV=V1&HW-CC-Date=20261112T233225Z&HW-CC-Expire=31536000000&HW-CC-Sign=1363E392A6458B0FBBCBD78C26B8CE6D373BD7D3F12641D74C9A3F770835D68D)
 
 1. 环境准备。
 

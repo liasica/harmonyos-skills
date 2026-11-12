@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-crypto-arc
 title: 如何使用DSA算法实现签名验签的功能
 breadcrumb: FAQ > 系统开发 > 安全 > 加解密算法（Crypto Architecture） > 如何使用DSA算法实现签名验签的功能
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:10dc020920bb15edc851875004952caf9033dbd4c696765bb53d45ac7ab601d7
 ---
@@ -29,7 +29,7 @@ content_hash: sha256:10dc020920bb15edc851875004952caf9033dbd4c696765bb53d45ac7ab
 
 流程图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/Tq413ltYRr6bD9NdMaxLKw/zh-cn_image_0000002658968429.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/Tq413ltYRr6bD9NdMaxLKw/zh-cn_image_0000002658968429.png?HW-CC-KV=V1&HW-CC-Date=20261112T233210Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8E7F0CFEBA6624BF514BB78CD897EBC277FA4D269D64F56F535159938550DD6 "点击放大")
 
 完整示例参考如下：
 

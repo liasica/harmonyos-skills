@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-compone
 title: 组件动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 组件动画
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:0c22132be5796b7c08483344ad22e1eb666949952eacc4e02c4c6c7978acfe30
 ---
@@ -40,7 +40,7 @@ struct ComponentDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/G5ahC2-HQAGCn041r8DtNw/zh-cn_image_0000002786519098.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/G5ahC2-HQAGCn041r8DtNw/zh-cn_image_0000002786519098.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=59ACA99816D67BAC6A46D715A06E28BBA23A1F585A443F6111380BFCE92E6A75)
 
 ## 打造组件定制化动效
 
@@ -352,7 +352,7 @@ export struct TaskSwitchMainPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/Hx9Tmi5hT7a5nQD0zCAsOg/zh-cn_image_0000002786359170.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/Hx9Tmi5hT7a5nQD0zCAsOg/zh-cn_image_0000002786359170.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=266BE5B54F90611F8C4AFAA57B75E3A22CBF91813A4E29BB28DA32EA40566DD2)
 
 通过animateTo可以实现将List中指定的Item替换到首位，List中其余Item依次向下排列。定制List组件动态替换动效的示例代码和效果如下。
 
@@ -528,7 +528,7 @@ struct ListAutoSortExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/HW1rDgDwTLiHR7GNZDG2xA/zh-cn_image_0000002815558591.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/HW1rDgDwTLiHR7GNZDG2xA/zh-cn_image_0000002815558591.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC524353750ECAF96C4A79E665C4282D9BE252C30CEFF4353C5FA44D83087559)
 
 ## 示例代码
 

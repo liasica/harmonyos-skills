@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-arkui-ana
 title: ArkUI分析
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 卡顿丢帧分析 > ArkUI分析
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-08
 content_hash: sha256:9864e3c867f92fc2a25a2cad8e80bc1f40820fec31392256f1a0946b55dbe5a7
 ---
@@ -29,13 +29,13 @@ ArkUI模板支持的泳道包括：APP Frame、ArkUI Component、ArkUI State、A
 1. 在时间轴上拖拽鼠标选定要查看的时间段。
 2. **Summary**区域展示录制时段内自定义组件以及系统组件的绘制统计情况，包括绘制次数、总耗时、最小耗时、平均耗时、最大耗时、耗时标准差。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/ct3j-2YgSz-r_Jm29jleTA/zh-cn_image_0000002808766123.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/ct3j-2YgSz-r_Jm29jleTA/zh-cn_image_0000002808766123.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A6A26DF057C9D4B562BDC0B8E7403D49CA95AEE89A658B615402A93BCE05043 "点击放大")
 3. **Details**详情区域可以查看按照时间线排序的组件详情，同时**More**区域展示以该组件为根节点的组件树信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/exIP52IoSe6qv3UZUniFyQ/zh-cn_image_0000002808766115.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/exIP52IoSe6qv3UZUniFyQ/zh-cn_image_0000002808766115.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E31DA67CD8DF09EE173A926DB7624C53A4D9938CBA57B47183F8A34B8D605CA "点击放大")
 4. 点选ArkUI Component泳道中的条块，会打开**Slice Detail**区域，点击Slice Detail中的Name支持跳转至对应Process子泳道并选中trace信息，**More**区域展示以该组件为根节点的组件树信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/7X_deoe6S_-72CcJEb_0bg/zh-cn_image_0000002779406558.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/7X_deoe6S_-72CcJEb_0bg/zh-cn_image_0000002779406558.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=1DA15903D806D0F07C80427B1E1429C3D324C1EDACAE7D7125D6CED2C6D789AF "点击放大")
 
    **说明** 
 
@@ -46,13 +46,13 @@ ArkUI模板支持的泳道包括：APP Frame、ArkUI Component、ArkUI State、A
 1. 点击**ArkUI State**泳道，可在下方数据区查看录制过程中发生的状态变量变化。
    * **Summary**区域可查看状态变量名称、变化次数、状态变量类型、所属组件和所属类。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/fOUZOFmZSyqZ4oXQKiPBTw/zh-cn_image_0000002808886203.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/fOUZOFmZSyqZ4oXQKiPBTw/zh-cn_image_0000002808886203.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B267309111C932F03FC9C7C195DB27948AC7BA6E4BAA70C623B43C9A28A312C "点击放大")
    * **Current Value**区域以时间顺序展示状态变量变化，**Current Values**列展示变化后的值。选择**Current Value**中某一个数据，泳道区域将以虚线展示其时间位置，右侧**More**区域展示该状态变量影响的组件关联关系。打开页面下方的**Delivery Chain**开关，该状态变量影响的组件关联关系将以图形展示。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/SHQlWyrvQ5mlcEJYxwdT-g/zh-cn_image_0000002779406562.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/SHQlWyrvQ5mlcEJYxwdT-g/zh-cn_image_0000002779406562.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=65DE5CF10483746D47245C97D23FD2A07A2150E61E01DE255399F744DF547896 "点击放大")
 2. 定位到可能造成卡顿的状态变量变化时间点，框选对应时间段，选择**ArkUI Component**泳道查看对应组件刷新时间。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/dT_kDU6xSQ6U3BoB8yBEuw/zh-cn_image_0000002779566538.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/dT_kDU6xSQ6U3BoB8yBEuw/zh-cn_image_0000002779566538.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDB48776E5F162DE5EC9411F3726F6B544A8EC2998B94B033AC35A57A44F033A "点击放大")
 
 **说明** 
 

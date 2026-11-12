@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1463
 title: 如何实现弹窗不避让软键盘
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现弹窗不避让软键盘
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:48+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:40783f2639d52d20e1d07a94d85d3a350f5a754412eca5f11795578072f0f466
 ---
@@ -57,7 +57,7 @@ content_hash: sha256:40783f2639d52d20e1d07a94d85d3a350f5a754412eca5f11795578072f
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/xvUH6DkCSxeFCVuGj7z85w/zh-cn_image_0000002628765242.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/xvUH6DkCSxeFCVuGj7z85w/zh-cn_image_0000002628765242.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=5416ED33D6772622F8EBA22C79AEEA1B92CD343A2B5AFD7F9EC5FB0AEA4C7F58 "点击放大")
 * **方案二**：使用stack层叠布局，最下层初始页面设置弹窗按钮，中层和上层设置visibility属性，控制组件的显隐。点击按钮，显示中层的蒙层和上层的弹窗页面，实现弹窗不避让软键盘。
 
   ```ts
@@ -180,4 +180,4 @@ content_hash: sha256:40783f2639d52d20e1d07a94d85d3a350f5a754412eca5f11795578072f
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/TJR6N1iAQH2z3s6R7Xc2Sg/zh-cn_image_0000002658964563.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/TJR6N1iAQH2z3s6R7Xc2Sg/zh-cn_image_0000002658964563.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DA0ACC634398FBCC0763F54BE44098D9F336556BA7B826FBBF8D41A14402A38 "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-agent
 title: 智能体场景开发案例
 breadcrumb: 最佳实践 > AI使能 > 智能体场景开发案例
 category: best-practices
-scraped_at: 2026-11-10T10:42:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:e4b22c1faddd301463a43fd594c4b534719c833936366457eb430904a675c29d
 ---
@@ -32,7 +32,7 @@ content_hash: sha256:e4b22c1faddd301463a43fd594c4b534719c833936366457eb430904a67
 
 准备条件：真机调试及端插件开发需在HarmonyOS 5.1.0 Release及以上版本的设备上进行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/2uhrjUqCSCSzX30rAyFu3w/zh-cn_image_0000002358083477.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/2uhrjUqCSCSzX30rAyFu3w/zh-cn_image_0000002358083477.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D92CC845F564382270AA68B340759D54AB276A88C9FC36A8A63404D4EB91352 "点击放大")
 
 ### 模式选择
 
@@ -52,7 +52,7 @@ A2A模式是一种三方智能体接入小艺开放平台的高效编排方式�
 
 不同编排模式的智能体，能力拓展部分的功能点也会有所区别。各编排模式的区别可参考开发者指导文档[快速开始](../doccenter-celia/quickstart-0000002762985731.md)，开发者可根据不同模式的区别，考虑使用场景应该适配何种编排模式的智能体，选择对应的编排模式，并设定智能体相关信息，便可创建对应模式的智能体。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/bOd6ozq0R4-Hd6rVoSy2Sg/zh-cn_image_0000002490331108.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/bOd6ozq0R4-Hd6rVoSy2Sg/zh-cn_image_0000002490331108.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=1DA260DF39A1C15E50D5F75846DBE9137F4229B0272A910D26DD6F491A5FAFC4 "点击放大")
 
 ### 智能体编排
 
@@ -60,9 +60,9 @@ A2A模式是一种三方智能体接入小艺开放平台的高效编排方式�
 
 以下为LLM模式和工作流模式的编排页面：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/NT-q9J8JRDm0cJJK_EUN0g/zh-cn_image_0000002522373909.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/NT-q9J8JRDm0cJJK_EUN0g/zh-cn_image_0000002522373909.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADCAB82544ACA65DF0884CCA581CA8C1B167C2DE18C9AD6FC20911AB19FF592F "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/gqZbYFwyRcqcJKPOQeM4kw/zh-cn_image_0000002490496464.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/gqZbYFwyRcqcJKPOQeM4kw/zh-cn_image_0000002490496464.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF9B8DA3EC49473976BD3FE67E791FB56B3BF3589F6E5565D73DCFB482390CEE "点击放大")
 
 ### 功能验证
 
@@ -109,7 +109,7 @@ A2A模式是一种三方智能体接入小艺开放平台的高效编排方式�
 
 1. 调试测试：调试与预览界面可以进行交互测试，预览实际交互场景，也可点击右上角调试按钮，进入调试详情页，查看详细的调测信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/9pyUH15uSDyTtCPSiLFeLg/zh-cn_image_0000002358083481.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/9pyUH15uSDyTtCPSiLFeLg/zh-cn_image_0000002358083481.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F21D8E076ED46A56AFF0CECAA7C72617E04EB0FFCA8ED3752D55D51890D84E1 "点击放大")
 2. 真机测试：点击调试与预览页面右上角的真机测试，可发布真机测试。真机测试前需配置白名单，开发者（团队账户需管理员权限）可通过新增组来管理真机调试用户，每个团队最多可创建100个用户组，每个用户组最多可添加100个用户。 开发者在服务发布至真机调试后，处于真机调试用户白名单中的用户可以访问到该开发测试服务，详见开发者指导文档[真机测试](../doccenter-celia/debug-and-preview-0000002762838261.md#section2389456174816)。
 
 **上架升级**
@@ -440,10 +440,10 @@ A2A模式是一种三方智能体接入小艺开放平台的高效编排方式�
       |  |  |
    3. 按照任务执行顺序连接对应节点
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/fMo5a_q_S26o8301IHV2Pg/zh-cn_image_0000002358003581.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/fMo5a_q_S26o8301IHV2Pg/zh-cn_image_0000002358003581.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=C29051E45874CC5C07584B4EB76AF942E11C44B298E5F10793DFF556321DBB16 "点击放大")
 3. 测试上架：点击【试运行】后，进入调试页面，可自行测试整体流程（无法在小艺开放平台调试端插件适配情况，只能测试工作流整体流程）。测试无误后，点击【上架】，进入上架审核阶段，待审核通过，即可在智能体中添加插件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/HQ4pLTnjTWiCzB30QEvwrg/zh-cn_image_0000002324005016.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/HQ4pLTnjTWiCzB30QEvwrg/zh-cn_image_0000002324005016.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=33E231B7419100E3079CAE816AED2E71D0C0A1C6628CB746B920E13AFE2A5C7B "点击放大")
 
 **工作流模式智能体编排**
 
@@ -465,7 +465,7 @@ A2A模式是一种三方智能体接入小艺开放平台的高效编排方式�
 
 功能测试完成后，点击【保存】【上架】即可将智能体提交到上架审核阶段，具体流程可参考开发者指导文档[入门指南](../doccenter-celia/harmonyos-service-0000001238266717.md)。上架完成后，可在端侧小艺的智能体页面搜索查询到创建的智能体并使用。效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/xbuWrXORT8CxQsCEKegNKA/zh-cn_image_0000002358003589.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/xbuWrXORT8CxQsCEKegNKA/zh-cn_image_0000002358003589.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB388BE5A717771D01A7C0B1B1EE61C2015BA031335EE4A1D3EB7573BA82AD12 "点击放大")
 
 ## 总结
 

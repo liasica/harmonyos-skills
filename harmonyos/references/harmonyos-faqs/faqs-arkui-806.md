@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-806
 title: Navigation使用replacePath跳转后，如何携带数据返回到栈内上一个页面
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Navigation使用replacePath跳转后，如何携带数据返回到栈内上一个页面
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:36+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:9805f456617321475c9dc7ddd57f35fa75bd27cb9902f476cf9dbfe7596a4005
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:9805f456617321475c9dc7ddd57f35fa75bd27cb9902f476cf9dbfe7596
 
 PageA通过pushPath跳转到PageB，PageB通过replacePath方式跳转到PageB，如何在PageB回到PageA的时候把数据返回到PageA。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/hNZ97LLBRK-aeFvjBc3yTQ/zh-cn_image_0000002658797159.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/hNZ97LLBRK-aeFvjBc3yTQ/zh-cn_image_0000002658797159.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=BFE5A89DC4E41B53EDD576B5701DF381E0DDA3B2A66DAE2B4BB206F5C820914C "点击放大")
 
 ## 背景知识
 

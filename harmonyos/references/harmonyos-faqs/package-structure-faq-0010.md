@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/package-structu
 title: HAP/HAR/HSP包常见问题
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 常见问题 > HAP/HAR/HSP包常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:45+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:ca6b4017c07eed3088351cd6d7f57bd5f9bac77cbf64c5c88bd1672e652367cf
 ---
@@ -49,7 +49,7 @@ content_hash: sha256:ca6b4017c07eed3088351cd6d7f57bd5f9bac77cbf64c5c88bd1672e652
 
 **A**：不能。AbilityStage与HAP包一一对应。具体关系可见下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/oHkOL-APT_GNg8fQid1H3g/zh-cn_image_0000002803284281.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/oHkOL-APT_GNg8fQid1H3g/zh-cn_image_0000002803284281.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=4AB07AF19E916FD37C4D7615DDFE600DD5C4136C026B4E8494BE0C9D8F00BC53 "点击放大")
 
 **Q：HAR转HSP后，编译报错，该怎么排查？**
 
@@ -128,7 +128,7 @@ content_hash: sha256:ca6b4017c07eed3088351cd6d7f57bd5f9bac77cbf64c5c88bd1672e652
 
 **A**：在使用DevEco Studio推包到设备进行调试时，如果遇到jscrash报错，FaultLog中显示“Error message: cannot find record '&XXX/src/main/ets/YYY&x.y.z'，请检查请求路径 'ZZZ.abc'”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/OzTQZqfrTn6sk9o7D-cknQ/zh-cn_image_0000002773924892.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/OzTQZqfrTn6sk9o7D-cknQ/zh-cn_image_0000002773924892.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=3284963396A73A9A2C61739572B5283086D3C719BA642F3F80B69F6892511EEE "点击放大")
 
 问题原因及解决措施如下：
 
@@ -162,7 +162,7 @@ content_hash: sha256:ca6b4017c07eed3088351cd6d7f57bd5f9bac77cbf64c5c88bd1672e652
 
 1. 在工程根目录下新增plugin.ts文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/UUFhH0UKTJO2mHeG2XZJ6A/zh-cn_image_0000002803284691.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/UUFhH0UKTJO2mHeG2XZJ6A/zh-cn_image_0000002803284691.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=093DA595A7D7D002FC2C29FEAB54AB8C4C67AEE8A448A378B23D7D4024A37944 "点击放大")
 
    plugin.ts文件内容：
 
@@ -295,7 +295,7 @@ content_hash: sha256:ca6b4017c07eed3088351cd6d7f57bd5f9bac77cbf64c5c88bd1672e652
    ```
 2. 在工程级hvigorfile.ts文件中增加两个插件，并执行Sync。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/ZzgrR5VFRpecOI3GG-0Q8A/zh-cn_image_0000002773925252.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/ZzgrR5VFRpecOI3GG-0Q8A/zh-cn_image_0000002773925252.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=82DDB4663C561FB91DF022E98BAABAEB2001ED2A2BA14359E256FB4631A92C7E "点击放大")
 
    hvigorfile.ts文件内容：
 
@@ -314,4 +314,4 @@ content_hash: sha256:ca6b4017c07eed3088351cd6d7f57bd5f9bac77cbf64c5c88bd1672e652
    hvigorw --stop-daemon
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/i3Xui2T3SoaV_NY0nIPuUw/zh-cn_image_0000002803245341.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/i3Xui2T3SoaV_NY0nIPuUw/zh-cn_image_0000002803245341.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=6105E6A28622ACF27DFFC88210DA142D6890FCCB60806F3DB333047A5B19BEF3 "点击放大")

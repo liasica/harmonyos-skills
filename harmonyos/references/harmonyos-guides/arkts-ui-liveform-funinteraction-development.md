@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-live
 title: 趣味交互类型互动卡片开发指导
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > 互动卡片开发 > 趣味交互类型互动卡片开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:27+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-04-17
 content_hash: sha256:ad9c82679ddd2ae282b6944e60cb2f98a86ac66237468f39729f897b6b90301a
 ---
@@ -20,7 +20,7 @@ content_hash: sha256:ad9c82679ddd2ae282b6944e60cb2f98a86ac66237468f39729f897b6b9
 
 **图1** 趣味交互类型互动卡片激活态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/io-jN36FQDC0vQEmcjmB8Q/zh-cn_image_0000002786359548.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/io-jN36FQDC0vQEmcjmB8Q/zh-cn_image_0000002786359548.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B1F3A82DC4E6E5E4F26B18E83C7AFA2C4977914A0B8C4A5944243ABABCB8716)
 
 ### 暂停态
 
@@ -28,7 +28,7 @@ content_hash: sha256:ad9c82679ddd2ae282b6944e60cb2f98a86ac66237468f39729f897b6b9
 
 **图2** 趣味交互类型互动卡片暂停态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/BAQHYK_vTESI-0VLbLM6rg/zh-cn_image_0000002815558969.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/BAQHYK_vTESI-0VLbLM6rg/zh-cn_image_0000002815558969.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=F50C08DCFCEEECBD85C6AA9BBFB3BA58D3354058C811A3660B0119C306C6FCF0)
 
 ### 非激活态
 
@@ -36,7 +36,7 @@ content_hash: sha256:ad9c82679ddd2ae282b6944e60cb2f98a86ac66237468f39729f897b6b9
 
 **图3** 趣味交互类型互动卡片非激活态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/qYPfXARRSgStvirKaIIAIA/zh-cn_image_0000002815399053.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/qYPfXARRSgStvirKaIIAIA/zh-cn_image_0000002815399053.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B2730D42446A7F55225BA2852B37B345B21AFE8731EA541E23B9B8B5E0AE688)
 
 ## 约束与限制
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-overvi
 title: Camera Kit简介
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > Camera Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:03+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:c4c5ac32c3e3619bc945dc24ba400804409ce5fd9fc8e2e709ca2322e8790e9b
 ---
@@ -28,7 +28,7 @@ content_hash: sha256:c4c5ac32c3e3619bc945dc24ba400804409ce5fd9fc8e2e709ca2322e87
 
 **图1** 相机工作流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/SsJhEldCQ6Gl1kUhsBNi7A/zh-cn_image_0000002786519830.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/SsJhEldCQ6Gl1kUhsBNi7A/zh-cn_image_0000002786519830.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=901053EE5C00F4EA398F848EF934E45672C93298417BE1102D7BFF8942F32989)
 
 为便于开发者更好地开发相机应用，建议先了解相机开发工作流程，再了解相机的开发模型（如图2所示）。
 
@@ -38,7 +38,7 @@ content_hash: sha256:c4c5ac32c3e3619bc945dc24ba400804409ce5fd9fc8e2e709ca2322e87
 
 **图2** 相机开发模型
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/ZB3CZ89fSG-omUSsRWpiQw/zh-cn_image_0000002786359902.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/ZB3CZ89fSG-omUSsRWpiQw/zh-cn_image_0000002786359902.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0007D5B1FC3A07ECC2D4E882832A37EDBFAF6ABE683D4458F5D2FC881803543)
 
 ## 模拟器支持情况
 

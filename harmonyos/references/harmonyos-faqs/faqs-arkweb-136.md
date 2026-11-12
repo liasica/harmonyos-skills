@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-136
 title: 如何解决Web组件高度无法动态改变的问题
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 如何解决Web组件高度无法动态改变的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:034cc4848f639e0ee44e31876dd565d7b39bf57f69d2ceaed1f9a24f2f038426
 ---
@@ -15,7 +15,7 @@ content_hash: sha256:034cc4848f639e0ee44e31876dd565d7b39bf57f69d2ceaed1f9a24f2f0
 * 预期效果：系统输入法弹出后，Web组件的渲染区域缩小到屏幕上半部分，并且在Web组件和输入法之间有预留的动态避让区（通过Blank组件实现）。
 * 实际效果：系统输入法弹出后，虽然组件树中感知到动态避让区（Blank组件）高度为413vp，但实际并没有绘制出动态避让区，且Web组件的渲染区域并未缩小到屏幕上半部分，如下图。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/PKFCB_--TLOKmNeA45iZMA/zh-cn_image_0000002628899134.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/PKFCB_--TLOKmNeA45iZMA/zh-cn_image_0000002628899134.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6A2517C1EB93722681B22895F6584667AF5BF5A3B29E76102FAB05E9B0C7DE6 "点击放大")
 
   期望通过监听键盘高度来实现Web组件高度动态改变。
 

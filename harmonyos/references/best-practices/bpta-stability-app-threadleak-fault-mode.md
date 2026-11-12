@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 应用线程泄漏故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 线程泄漏故障模式说明 > 应用线程泄漏故障模式说明
 category: best-practices
-scraped_at: 2026-11-10T10:42:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-03
 content_hash: sha256:854ceb358cfa10def17ca4d594d4214985045de4fe603629198a2ef8fddcb26a
 ---
@@ -85,17 +85,17 @@ content_hash: sha256:854ceb358cfa10def17ca4d594d4214985045de4fe603629198a2ef8fdd
    * 单击下图4处选择Created & Existing，筛选申请并且未释放的线程及其调用栈。
    * 如下图5、6处框选的内容所示，可识别出线程数量申请异常的线程及其调用栈。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/7opso_RwQ7icYJYKvON6Ww/zh-cn_image_0000002729477841.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/7opso_RwQ7icYJYKvON6Ww/zh-cn_image_0000002729477841.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A1B5F4FD89425F74841704E1712EB4906078591928DD0A7A6466E9DE8854355 "点击放大")
 5. 结合调用栈可定位至对应业务逻辑，研读业务代码后确认：每次单击“Thread-No-Exit-Leak”按钮，ArkTS层响应单击事件，进而调用Native接口LeakThreadNoExit()批量创建线程；重复单击该按钮后，线程持续堆积，最终引发线程泄漏。
    * ArkTS层函数如下图所示：响应按钮单击动作，调用Native层的LeakThreadNoExit()函数。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/m93pQ247SK-w2wbklrhllA/zh-cn_image_0000002729597805.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/m93pQ247SK-w2wbklrhllA/zh-cn_image_0000002729597805.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3DCFDC3D05C5963F73AB2F116A1F091ADEFE3C608A7B613113057DD9AD917CF)
    * Native层LeakThreadNoExit()函数如下图所示：通过分析，该函数接收ArkTS层传入的指定数量参数，每次执行均通过pthread\_create()创建线程，但线程生命周期结束前未调用pthread\_join()完成线程资源回收，存在资源泄漏隐患。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/DTTv4D7nQZOgDBlsY6znbw/zh-cn_image_0000002699878480.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/DTTv4D7nQZOgDBlsY6znbw/zh-cn_image_0000002699878480.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5DF441900F13839094EBBA4978B4669A406F9CCC5CC05E8E419F72B2DEB7B02)
    * 线程执行函数ThreadLeakNoExit()如下图所示：函数内部为无限while(1)循环，持续睡眠，不存在任何跳出循环的逻辑，线程启动后会永久运行，无法自行退出销毁。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/mPOq5uvIRmenhv4IqiyVFw/zh-cn_image_0000002699718590.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/mPOq5uvIRmenhv4IqiyVFw/zh-cn_image_0000002699718590.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=747A56D371EE3B02F62FA815A423E5170E210DD7DF533152769216AD83427A76)
    * 线程依靠死循环常驻进程无法退出，叠加LeakThreadNoExit()缺少线程回收逻辑，反复调用该接口会持续新增常驻线程，线程数量不断上涨，最终引发线程泄漏。
 
 **开发态分析思路**
@@ -104,20 +104,20 @@ content_hash: sha256:854ceb358cfa10def17ca4d594d4214985045de4fe603629198a2ef8fdd
 
 1. 录制完成获得结果后，单击System Resources中的Threads泳道。观测到线程数量达到1014个，存在异常增长现象，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/k95pkSfmQ9GLlzfZZyUdrg/zh-cn_image_0000002729477843.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/k95pkSfmQ9GLlzfZZyUdrg/zh-cn_image_0000002729477843.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=056E0DCFD2C16534DFD9CF5BA1F58D7D1275DFD52ADA33E601FFCD49418B5555 "点击放大")
 2. 单击下图1处Call Trees按钮，单击下图2处再筛选Created & Existing，可以识别出线程数量申请异常的线程及其调用栈，申请调用栈如下图3处框中所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/OfvEkgVxRpmT5u8LG2M4Sw/zh-cn_image_0000002729597807.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/OfvEkgVxRpmT5u8LG2M4Sw/zh-cn_image_0000002729597807.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=280FAE6F6C9644FD8A7EE1F09A2DB210986B0062D312448E70F366D38B9D0BF5 "点击放大")
 3. 结合调用栈定位对应业务逻辑，研读业务代码后确认：每次单击“Thread-No-Exit-Leak”按钮，ArkTS层响应单击事件，进而调用Native接口LeakThreadNoExit()批量创建线程；重复单击该按钮后，线程持续堆积，最终引发线程泄漏。
    * ArkTS层函数如下图所示：响应按钮单击动作，调用Native层的LeakThreadNoExit()函数。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/Ic-CiCLnTpylBOPLjyj4yw/zh-cn_image_0000002699878482.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/Ic-CiCLnTpylBOPLjyj4yw/zh-cn_image_0000002699878482.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=95BA64902E124E54CBCDF033D850188E95C5867D1510E689B1F64B233CB0FC64)
    * Native层LeakThreadNoExit()函数如下图所示：通过分析，该函数接收ArkTS层传入的指定数量参数，每次执行均通过pthread\_create()创建线程，但线程生命周期结束前未调用pthread\_join()完成线程资源回收，存在资源泄漏隐患。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/8aDGQg0PQcisTzLY5sxt0g/zh-cn_image_0000002699718592.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/8aDGQg0PQcisTzLY5sxt0g/zh-cn_image_0000002699718592.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A56029A12D42A4C7F4CFA34BB87F2CE2CC51D9347A0974781EEB7C0D8E31EB0)
    * 线程执行函数ThreadLeakNoExit()如下图所示：函数内部为无限while(1)循环，持续睡眠，不存在任何跳出循环的逻辑，线程启动后会永久运行，无法自行退出销毁。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/XTPXb4zZSrKj2k3M6tqgpA/zh-cn_image_0000002729477847.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/XTPXb4zZSrKj2k3M6tqgpA/zh-cn_image_0000002729477847.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4A273D68F54CC084AE8E75B6D529A38C9E2AB37FEB4FA09EC0D75A2CBDD80A3)
    * 线程依靠死循环常驻进程无法退出，叠加LeakThreadNoExit()缺少线程回收逻辑，反复调用该接口会持续新增常驻线程，线程数量不断上涨，最终引发线程泄漏。
 
 **修复建议**
@@ -179,21 +179,21 @@ content_hash: sha256:854ceb358cfa10def17ca4d594d4214985045de4fe603629198a2ef8fdd
    * 单击下图4处选择Created & Existing，筛选申请并且未释放的线程及其调用栈。
    * 如下图5、6处框选的内容所示，可以识别出线程数量申请异常的线程及其调用栈。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/3bYHOIFRTvSCycy-OV36Yg/zh-cn_image_0000002729597809.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/3bYHOIFRTvSCycy-OV36Yg/zh-cn_image_0000002729597809.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=21CC58F1DB48BC4ABF94081AD31CDABCCAC574D10B9A54E2731B3317977E136B "点击放大")
 5. 结合调用栈可定位至对应业务逻辑，研读业务代码后确认：每次单击“Blocked-Thread-Leak”按钮，ArkTS层响应单击事件，进而调用Native接口LeakThreadBlocked()批量创建线程；重复单击该按钮后，线程持续堆积，最终引发线程泄漏。
    * ArkTS层函数如下图所示：响应按钮单击动作，调用Native层的LeakThreadBlocked()函数。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/Tjy3DK6FSLuu7ziV48KGsg/zh-cn_image_0000002699878484.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/Tjy3DK6FSLuu7ziV48KGsg/zh-cn_image_0000002699878484.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=D064489B393BBFA1638D8086A4E31DB576A1E31BD39A7CEE61F751655360A75D)
    * Native层LeakThreadBlocked()函数如下图所示：该方法每次执行都会通过pthread\_create()批量创建ThreadDeadlockA、ThreadDeadlockB线程并记录线程ID，但全程没有调用pthread\_join()回收线程资源。
 
      **说明** 
 
      由pthread\_create()创建的线程默认为joinable属性，若不主动join，即便线程正常结束，系统也不会释放线程资源，存在泄漏风险。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/5FQkGn4YSOSgrNyXK4b1dg/zh-cn_image_0000002699718594.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/5FQkGn4YSOSgrNyXK4b1dg/zh-cn_image_0000002699718594.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=96A073CB0B49886F3ADCCB1B5EEF4796E729864E9D71C5653773E68DAA0F9C86)
    * 分析业务线程执行函数ThreadDeadlockA()与ThreadDeadlockB()如下图所示：两个线程采用相反顺序获取g\_mutex\_a、g\_mutex\_b，形成AB-BA锁序冲突进而触发死锁，线程互相等待锁资源，永久阻塞无法退出。同时线程阻塞后栈上lock\_guard对象无法析构释放互斥锁，锁资源也会持续占用。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/wvgtmYywStK_HrWqyFT21Q/zh-cn_image_0000002729477849.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/wvgtmYywStK_HrWqyFT21Q/zh-cn_image_0000002729477849.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E3FAE177552A255C5E0B118FF94C7175BD2B5C25D05E40C5FD5B0978BA9D8EE)
    * 死锁造成线程常驻进程无法销毁，叠加LeakThreadBlocked()缺少线程回收逻辑，多次单击按钮调用该接口后，进程内线程数量不断堆积，最终引发线程泄漏。
 
 **开发态分析思路**
@@ -202,20 +202,20 @@ content_hash: sha256:854ceb358cfa10def17ca4d594d4214985045de4fe603629198a2ef8fdd
 
 1. 录制完成获得结果后，单击System Resources中的Threads泳道，观测到线程数量达到1993个，存在异常增长现象，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/XV_8rfujTZessSms5rOtiA/zh-cn_image_0000002729597811.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/XV_8rfujTZessSms5rOtiA/zh-cn_image_0000002729597811.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=126EEA41D9E6CC44E9A0F2CD048990C6D2B1B7141A2A03E42BE259FF50753972 "点击放大")
 2. 单击下图1处Call Trees按钮，单击下图2处再筛选Created & Existing，可以识别出线程数量申请异常的线程及其调用栈，申请调用栈如下图3处框中所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/GH1QjCtFRP2ZCKLuodPvxQ/zh-cn_image_0000002699878486.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/GH1QjCtFRP2ZCKLuodPvxQ/zh-cn_image_0000002699878486.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF94C0C26C126561EE980BB2359439176D65A154850495068B162218F317DE28 "点击放大")
 3. 结合调用栈可定位至对应业务逻辑，研读业务代码后确认：每次单击“Blocked-Thread-Leak”按钮，ArkTS层响应单击事件，进而调用Native接口LeakThreadBlocked()批量创建线程；重复单击该按钮后，线程持续堆积，最终引发线程泄漏。
    * ArkTS层函数如下图所示：响应按钮单击动作，调用Native层的LeakThreadBlocked()函数。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/nDnSnpaVSPGojXMcMWHMWw/zh-cn_image_0000002699718596.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/nDnSnpaVSPGojXMcMWHMWw/zh-cn_image_0000002699718596.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=11D19220683CB4C204886C1E488F0AFF47CEB0E7B0F8802CCF2AEF8A3AED16EC)
    * Native层LeakThreadBlocked()函数如下图所示：该方法每次执行都会通过pthread\_create()批量创建ThreadDeadlockA、ThreadDeadlockB线程并记录线程ID，但全程没有调用pthread\_join()回收线程资源。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/rQroH2nsQ7eAYe9q91kf4Q/zh-cn_image_0000002729477851.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/rQroH2nsQ7eAYe9q91kf4Q/zh-cn_image_0000002729477851.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C84D6D0A50EEE23FACEB2A153D236E60074E7EF377298F5D797DC65DDBE2FE9)
    * 继续分析业务线程执行函数ThreadDeadlockA()与ThreadDeadlockB()如下图所示：两个线程采用相反顺序获取g\_mutex\_a、g\_mutex\_b，形成AB-BA锁序冲突进而触发死锁，线程互相等待锁资源，永久阻塞无法退出。同时线程阻塞后栈上lock\_guard对象无法析构释放互斥锁，锁资源也会持续占用。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/bmeQOJXORSW0iYVsgZ2XSQ/zh-cn_image_0000002729597813.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/bmeQOJXORSW0iYVsgZ2XSQ/zh-cn_image_0000002729597813.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3FC3ADDF71D71F5E4C4C79256C8F02A8B092C10F1D3253D75DD71D306FB8465)
    * 死锁造成线程常驻进程无法销毁，叠加LeakThreadBlocked()缺少线程回收逻辑，多次单击按钮调用该接口后，进程内线程数量不断堆积，最终引发线程泄漏。
 
 **修复建议**

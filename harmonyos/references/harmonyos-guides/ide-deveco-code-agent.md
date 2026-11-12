@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-co
 title: Agent模式
 breadcrumb: 指南 > DevEco Code > DevEco Code TUI > Agent模式
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:3c6d8ab96e71e5b47d15b96ee27a627a3249da0a6f48883fabb007fd8a9ccaf0
 ---
@@ -25,7 +25,7 @@ DevEco Code支持三种Agent模式，分别为Build模式、Plan模式、Goal模
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/oHLpJaPJRBiQl09VY9W_Gw/zh-cn_image_0000002779567392.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/oHLpJaPJRBiQl09VY9W_Gw/zh-cn_image_0000002779567392.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=C65D836101D0938118475938CB93367C6F38B4CD95D7BE7C9972C28E7FC26A21 "点击放大")
 
 ### 示例
 
@@ -44,7 +44,7 @@ DevEco Code支持三种Agent模式，分别为Build模式、Plan模式、Goal模
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/7_eUsqcET8W3MKujbEOaAg/zh-cn_image_0000002808766971.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/7_eUsqcET8W3MKujbEOaAg/zh-cn_image_0000002808766971.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A2A7757BD7CE5C12F6DAA5B1F1E214A04941CAF986FE7AF4EF0DB3D8BDC121E "点击放大")
 
 Plan + Build模式实现流程分为三大阶段：
 
@@ -70,7 +70,7 @@ Plan + Build模式实现流程分为三大阶段：
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/iORykznEShKR7FQNdrXJNA/zh-cn_image_0000002779407414.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/iORykznEShKR7FQNdrXJNA/zh-cn_image_0000002779407414.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=64F030EAA7DBEB3C2C101105DE574E7BF77CE797D26A3431BF82A40685C5D69C "点击放大")
 
 Goal模式实现流程分为两大阶段：
 

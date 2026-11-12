@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-park-o
 title: 概述
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 园区卡 > 概述
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:38+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-28
 content_hash: sha256:f2c6d2591feb788bd41ca8b2cff280063d06bb0396ad089e10bb7c2816311340
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:f2c6d2591feb788bd41ca8b2cff280063d06bb0396ad089e10bb7c28163
 
 ## 系统架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/H37J795dRJujE6_7EdEfYA/zh-cn_image_0000002815560045.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/H37J795dRJujE6_7EdEfYA/zh-cn_image_0000002815560045.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=1CBA712CD4CA5B88DD0B6B7576C8A73B9773C12731571447F3BC03705AC82D41)
 
 | 角色 | 说明 |
 | --- | --- |
@@ -31,11 +31,11 @@ content_hash: sha256:f2c6d2591feb788bd41ca8b2cff280063d06bb0396ad089e10bb7c28163
 
 ### 园区卡开通
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/goBM6FrJRGK7TGar-I4Cdw/zh-cn_image_0000002815400129.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/goBM6FrJRGK7TGar-I4Cdw/zh-cn_image_0000002815400129.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=95873B58395FC7657E106F32A0C8A505520F47A7D71852D94CC4C9C2C658BED7)
 
 ### 园区卡展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/y3tOgaibRGasNx3tkJr7Ag/zh-cn_image_0000002786520554.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/y3tOgaibRGasNx3tkJr7Ag/zh-cn_image_0000002786520554.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=85336199A5A8382B7AAD08CC14EC38B031DD987DD846F379766DCAED9150035D)
 
 ## 接入流程
 

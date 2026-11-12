@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: 滚动条滑块主题色适配
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > 滚动条滑块主题色适配
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:88169db8fbcf625d1ac55cda005cbb82482c9c242de578c110c38035533cee36
 ---
@@ -149,7 +149,7 @@ struct MyTheme {
 
 效果图为：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/YSosxCjGQ8CfOEvK_V2hJA/zh-cn_image_0000002802119563.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/YSosxCjGQ8CfOEvK_V2hJA/zh-cn_image_0000002802119563.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1C394DD943002AA226504922A06E01E6022DFB62BEDD827C8FE8B8871E48AD5 "点击放大")
 
 **Q：使用scrollBarColor设置滚动条滑块的颜色不生效，可能什么原因导致？**
 

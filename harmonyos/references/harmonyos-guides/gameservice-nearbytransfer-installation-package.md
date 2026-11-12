@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-n
 title: 传输安装包
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏近场快传（可选） > 开发指导 > 传输安装包
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:24+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:0bb9dfbce17c3278e30c492e792318e08718c53f6740116be6ef8b3f240993f5
 ---
@@ -25,10 +25,10 @@ content_hash: sha256:0bb9dfbce17c3278e30c492e792318e08718c53f6740116be6ef8b3f240
 
 1. 发送端设备打开游戏后在任意游戏界面与接收端设备通过[碰一碰](knock-share-between-phones-overview.md)触发安装包传输。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/ktY2BcWXRq-He-p2qWoV8A/zh-cn_image_0000002786360302.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/ktY2BcWXRq-He-p2qWoV8A/zh-cn_image_0000002786360302.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=42D62719864CD8A19129CB1E4FA46C55D70039029CDFF970E03A23F26DA6AD4A)
 2. 若当前接收端已安装该游戏，则会打开该游戏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/q2irGWEQRZeovrjri-dtKw/zh-cn_image_0000002815559723.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/q2irGWEQRZeovrjri-dtKw/zh-cn_image_0000002815559723.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=C13CC0A6A9FF3E8FACFD417FC0F9CBBB70DE057A4F977D5D6763D1B044867F1E)
 
 ## 集成Game Service Kit实现安装包传输
 
@@ -36,7 +36,7 @@ content_hash: sha256:0bb9dfbce17c3278e30c492e792318e08718c53f6740116be6ef8b3f240
 
 ### 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/ANa1lupPTS-xQus0yPQTUA/zh-cn_image_0000002815399807.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/ANa1lupPTS-xQus0yPQTUA/zh-cn_image_0000002815399807.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B5EEA830594A27666285194F66D068929AA88A330C3574F97087B9725A5546F)
 
 1. 发送端设备打开游戏后与接收端设备通过[碰一碰](knock-share-between-phones-overview.md)或[隔空传送](gestures-share-overview.md)触发安装包传输。
 2. 发送端调用[create()](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)创建安装包传输任务。

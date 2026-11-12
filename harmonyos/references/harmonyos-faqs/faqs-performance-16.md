@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 视频播放页面退出时声音暂停有延迟
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 视频播放页面退出时声音暂停有延迟
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:282eded865e644a21be409a963627b9373b219ecdcf742bbffad26cd9dd1fbb7
 ---
@@ -22,46 +22,46 @@ content_hash: sha256:282eded865e644a21be409a963627b9373b219ecdcf742bbffad26cd9dd
 1. 首先使用ArkUI Inspector抓取视频播放页面确认当前播放页面是ArkUI页面还是Web页面。
    * ArkUI页面（如下图示例应用使用Video组件播放视频）：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/h0r3IeAYTX6r8mUZMU2xSg/zh-cn_image_0000002628395118.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/h0r3IeAYTX6r8mUZMU2xSg/zh-cn_image_0000002628395118.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3008336CF92D9E60BAE3DB2F4BEBC40B184FCA5E3C32DB417AEB7701B188120 "点击放大")
    * Web页面（如下图示例应用使用Web组件显示视频页）：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/JJwluDo_TLmKYNud7KmISw/zh-cn_image_0000002658914339.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/JJwluDo_TLmKYNud7KmISw/zh-cn_image_0000002658914339.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=08C66E604D844E04634A9836C7764DBBEB8AD24307337D9884D15998C46575C6 "点击放大")
 
 2. 使用DevEco Profiler Frame分析工具抓取视频播放页退出时的Trace信息，根据步骤1确认的结果按以下步骤分析。
    * 视频播放页是ArkUI页面：
 
-     展开应用主线程泳道，通过其中的子泳道H:ABILITY\_OR\_PAGE\_SWITCH找到页面退出的部分。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/bmvJ8kObT82OOJf0iCeG1A/zh-cn_image_0000002658794387.png "点击放大")
+     展开应用主线程泳道，通过其中的子泳道H:ABILITY\_OR\_PAGE\_SWITCH找到页面退出的部分。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/bmvJ8kObT82OOJf0iCeG1A/zh-cn_image_0000002658794387.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=9368EB6A7D07CDE18E13F40D8A7DBF13FE3FBB3D6F68E3FFB37D8E1E6E3C2A1B "点击放大")
 
      在上方搜索框中输入H:AudioRenderer::Pause关键字，找到停止音频播放的部分，如果有多个H:AudioRenderer::Pause搜索结果，可通过点击搜索框右侧的箭头来找到靠近H:ABILITY\_OR\_PAGE\_SWITCH的那一个。如下图所示可看到停止音频播放是在页面切换完成之后执行的，而应用停止音频播放时，系统侧需要时间处理，因此会有延迟。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/FSbvssvfRniNsyMgwR8WAQ/zh-cn_image_0000002628555024.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/FSbvssvfRniNsyMgwR8WAQ/zh-cn_image_0000002628555024.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=B84017946B16F8D91896250A637961BC99CF2718703DF8ED9D1F0B3819F82B40 "点击放大")
 
      从停止音频播放操作处看不出来是由什么触发的，但通常音频播放和停止是由应用控制的，因此可以通过查看线程的唤醒关系来确定。点击应用线程状态中的Runnable状态、查看其中WakeUp From Tid，从下图中可看到是由PlayerRequest线程唤醒的。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/6me2AVIvQVWxBHeb__qUOw/zh-cn_image_0000002628395120.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/6me2AVIvQVWxBHeb__qUOw/zh-cn_image_0000002628395120.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB6489310C221C69C1138A324DB0D2C6EA0EFFD303B428B19302E5B357D6182E "点击放大")
 
-     PlayerRequest线程是属于音频服务media\_service的子线程，不属于应用部分，因此继续查看该线程的唤醒线程。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/lkA--mG-SwK8-K-yhLnZJA/zh-cn_image_0000002658914341.png "点击放大")
+     PlayerRequest线程是属于音频服务media\_service的子线程，不属于应用部分，因此继续查看该线程的唤醒线程。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/lkA--mG-SwK8-K-yhLnZJA/zh-cn_image_0000002658914341.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=9698872B4A96AFCA4D7BD6A7EDC66EC1388ABE99BD4551347904DB0175D31923 "点击放大")
 
      通过不断查看线程的唤醒关系，最终找到唤醒线程为主线程，从下图中可看到停止音频播放时在视频页面退出过渡完成之后才执行的，而暂停音频播放需要时间，因此会出现页面退出后声音延迟暂停的问题。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/mRr2SEHHTI6t1PZvGNFnlA/zh-cn_image_0000002658794389.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/mRr2SEHHTI6t1PZvGNFnlA/zh-cn_image_0000002658794389.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=524318B99B8C2A18C9947765CD17D21196033F4D8E92CADF70D93D61CE415128 "点击放大")
    * 视频播放页面是Web页面：
 
      首先展开应用主线程泳道，通过其中的子泳道H:ABILITY\_OR\_PAGE\_SWITCH找到页面退出的部分。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/rEVSwKgbS3mMRKYfotWpdQ/zh-cn_image_0000002628555026.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/rEVSwKgbS3mMRKYfotWpdQ/zh-cn_image_0000002628555026.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=39CEAA13166C8470A93535661F2A895329E018C53D55DF4243C385C327CE8FF4 "点击放大")
 
      然后确定停止音频播放的地方，Web页面音频开始播放、发送数据、停止播放时由AudioThread线程完成的，因此在应用泳道中找到AudioThread，同时通过H:RendererInClientInner::StopAudioStream关键字来确定停止音频播放的部分。从下图中可看到停止音频播放是在页面切换完成后执行的，而暂停音频播放需要时间，因此会出现页面退出后声音延迟暂停的问题。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/hUgQUP9NRUWFH-pU5T4nBg/zh-cn_image_0000002628395122.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/hUgQUP9NRUWFH-pU5T4nBg/zh-cn_image_0000002628395122.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A1B5A8C3241FCDEB320ABCBBD02CAFE7A1F53C332BA2A5F24AC235B6AFB1C6A "点击放大")
 
      Web页面音频播放和暂停是由Web相关的线程控制，可搜索H:AudioOutputDevice::Stop关键字确认Web侧触发音频停止的地方，然后通过该线程的Runnable线程状态查看该线程的唤醒线程，可看到Web侧音频停止是由应用Web渲染线程在执行SetPageLifecycleState时触发。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/OfOxMC8lQbO8ABbDR35ZKg/zh-cn_image_0000002658914343.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/OfOxMC8lQbO8ABbDR35ZKg/zh-cn_image_0000002658914343.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=85E4D15A7B248200787E22BCD4AD6DA96909657CCA48B0F9159865AA9E1DAC0B "点击放大")
 
      对比SetPageLifecycleState和H:ABILITY\_OR\_PAGE\_SWITCH，可看到SetPageLifecycleState执行在页面切换完成，由此可知页面退出后，应用Web渲染线程会更新Web页面生命周期状态，同时停止音频播放，停止音频播放是在页面切换完成后执行的，导致页面退出后声音延迟暂停的问题。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/SnylbXSbS-GSRKSQGaLjqg/zh-cn_image_0000002658794391.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/SnylbXSbS-GSRKSQGaLjqg/zh-cn_image_0000002658794391.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=07421AAD8F420D948D35FF78BF5044E620B553A948ECE9407AE197066C00B937 "点击放大")
 
 ## 分析结论
 

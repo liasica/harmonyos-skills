@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-add-
 title: 添加Page
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 开发环境搭建 > 工程创建 > 模块管理 > 添加Page
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-08
 content_hash: sha256:6ddfdd523e117f5d3e019ee0218e52cf80c0b1007cf080a3d772420306207c86
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:6ddfdd523e117f5d3e019ee0218e52cf80c0b1007cf080a3d7724203062
 
 1. 选中ets文件夹下的pages，单击鼠标右键，选择**新建** **> Page****s >** **Empty Page**，创建一个普通页面，展示基础的Hello World功能。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/x7b3RYZWR6GrDb2pRuFUpg/zh-cn_image_0000002810630653.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/x7b3RYZWR6GrDb2pRuFUpg/zh-cn_image_0000002810630653.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B1FA436E78CF49432084BFBD1F2FF99F747A20E24DE125C4280ADD65E6F4915 "点击放大")
 2. 输入**Page****名称**（由大小写字母、数字和下划线组成），单击**确认**完成添加。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/EEyxrzK8Sk-1ZwQZngwizg/zh-cn_image_0000002781311164.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/EEyxrzK8Sk-1ZwQZngwizg/zh-cn_image_0000002781311164.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=822808F91075D396C68B2D89909384897316932DD863F98BA0EB2AD01D3169B2 "点击放大")

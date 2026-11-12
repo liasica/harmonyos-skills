@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-584
 title: 获取ListItem组件的高度问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 获取ListItem组件的高度问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:eb746a3fb31da143edfc244a3572706ef8fa5660c6da312baefd36aa56fe5819
 ---
@@ -97,7 +97,7 @@ content_hash: sha256:eb746a3fb31da143edfc244a3572706ef8fa5660c6da312baefd36aa56f
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/Ig6hYOxnSoq6QY8aqcC0Ug/zh-cn_image_0000002628552386.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/Ig6hYOxnSoq6QY8aqcC0Ug/zh-cn_image_0000002628552386.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=468EF03768DEB8BE1C0F936C79A40210D3AD7D5B5926E09DDC4DCAB594E5E64F "点击放大")
 * **场景二**：要想获取ListItem的总高度，可以通过获取List中每一个ListItem组件的高度，然后将所有高度进行相加。
 
   ```ts
@@ -141,7 +141,7 @@ content_hash: sha256:eb746a3fb31da143edfc244a3572706ef8fa5660c6da312baefd36aa56f
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/9uNuBKlcT0CpRjqsd6tB7w/zh-cn_image_0000002628392496.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/9uNuBKlcT0CpRjqsd6tB7w/zh-cn_image_0000002628392496.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=75CBBFC5B2A25145578836744F5A12D4038C431C7AC7CCCDD49AD1E765C7AF8E "点击放大")
 
   总共有12个组件，每个组件的高度是35，总和为420。
 

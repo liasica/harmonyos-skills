@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1583
 title: Slider设置渐变色常见场景
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Slider设置渐变色常见场景
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:12dcb740a71c581d514768c8174c51f7925c7924b4961292d4848ebc3205f372
 ---
@@ -20,15 +20,15 @@ Slider组件设置渐变色效果可能遇到以下场景：
 
 预期效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/e2fxyghWR0yWqpdn0AlL2A/zh-cn_image_0000002658969517.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/e2fxyghWR0yWqpdn0AlL2A/zh-cn_image_0000002658969517.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADCB494FC367A4ED90F45D8D799ED3C15B9C5A0A0B08818B4D9B8782AF1F5EDC)
 
 实际效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/ZQ_l_eljSXWF43_hacJcMA/zh-cn_image_0000002628610298.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/ZQ_l_eljSXWF43_hacJcMA/zh-cn_image_0000002628610298.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB16A723B9493CED4E9172B61D6C464382E19760520D5817A90408ED6D11013F)
 
 场景四：如何实现Slider组件滑动条颜色为渐变色时，滑动条颜色不压缩？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/xYqgV71IQ3CSot6ZssG8Fw/zh-cn_image_0000002658849561.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/xYqgV71IQ3CSot6ZssG8Fw/zh-cn_image_0000002658849561.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5C4374149165A1829C85C5654A102B0B9175446A626446977E15ED90293F9E6 "点击放大")
 
 ## 背景知识
 
@@ -72,7 +72,7 @@ Slider组件设置渐变色效果可能遇到以下场景：
 
   效果如图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/o2f_0_NCTzegU6Q6rwHkMQ/zh-cn_image_0000002628770196.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/o2f_0_NCTzegU6Q6rwHkMQ/zh-cn_image_0000002628770196.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=2253905D93378C1B6AEB515B83EB06DA39560F59E9E760104A37F26F27713D0B "点击放大")
 * 方案三：将滑轨的背景颜色及已滑动部分颜色均设置成渐变色。示例代码如下：
 
   ```ts
@@ -105,7 +105,7 @@ Slider组件设置渐变色效果可能遇到以下场景：
 
   效果如图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/SNbBgk_yTpqgvik0VXk_Rw/zh-cn_image_0000002658969519.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/SNbBgk_yTpqgvik0VXk_Rw/zh-cn_image_0000002658969519.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCD80CC592268D01090A1BDF1AC06C7D809612483CDAB2D46CE74B6447D91800 "点击放大")
 * 场景四：当滑轨的背景颜色为渐变色时，滑块滑动过程中未选择部分的颜色渐变不会产生压缩效果。因此，为了实现滑轨已选择部分为渐变色且不压缩，可以将滑轨的背景颜色设置为渐变色，并通过设置reverse属性为true来将滑动条取值范围设置为反向，从而将已选择部分和未选择部分替换，实现渐变色不压缩的效果。
 
   ```ts
@@ -150,4 +150,4 @@ Slider组件设置渐变色效果可能遇到以下场景：
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/kax6yLVcQLCotPax0d7gBQ/zh-cn_image_0000002628610300.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/kax6yLVcQLCotPax0d7gBQ/zh-cn_image_0000002628610300.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=897A11C26D1DD2C015BBF30308A216AF2104190F3313B6AE1226553012DF0583 "点击放大")

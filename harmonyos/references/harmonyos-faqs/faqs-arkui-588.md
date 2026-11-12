@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-588
 title: 使用Slider时如何判断点击的是滑块还是进度条
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 使用Slider时如何判断点击的是滑块还是进度条
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:3713c27f696e4ec3c41708dfdcefb0221d4a8d8207ad265f92acc6349e9ed0a5
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:3713c27f696e4ec3c41708dfdcefb0221d4a8d8207ad265f92acc6349e9
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/M--NM_EcRRGRvJNyrYMcTw/zh-cn_image_0000002628552394.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/M--NM_EcRRGRvJNyrYMcTw/zh-cn_image_0000002628552394.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=CFA60B7BE3440246D1972E71FB988F7AFCFC18EEDE391B6218A9CFFAA0D96D80 "点击放大")
 
 ## 背景知识
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1415
 title: List组件实现自定义时间选择器
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > List组件实现自定义时间选择器
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:75180f7b95470c98136db0bd978b863e9595d560d82b0220de5aec269fcf0da9
 ---
@@ -12,11 +12,11 @@ content_hash: sha256:75180f7b95470c98136db0bd978b863e9595d560d82b0220de5aec269fc
 
 目前HarmonyOS官方提供的TextPicker组件没有横向滑动的能力，怎样实现横向滑动的时间选择器？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/tykgHxhFStGPt_Sb0dHWLg/zh-cn_image_0000002628763170.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/tykgHxhFStGPt_Sb0dHWLg/zh-cn_image_0000002628763170.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=610B362231FDEDD5344599DBD41B6B2667FFB1A241346B6F57DDF12FB0809968 "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/T4reLxeOSBOHUmHHw8UR5g/zh-cn_image_0000002658962483.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/T4reLxeOSBOHUmHHw8UR5g/zh-cn_image_0000002658962483.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C0D292355D781E41A35E8231645C888EE6028A60503F59465344D16B13D12AA "点击放大")
 
 ## 背景知识
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cross-languag
 title: 跨语言调用复杂参数传递
 breadcrumb: 指南 > NDK开发 > 编译工具链 > 跨语言调用复杂参数传递
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:50+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:91af3044d1d87f1a713575ea6df0103e0761a3259361865b39d4e3886eac4469
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:91af3044d1d87f1a713575ea6df0103e0761a3259361865b39d4e3886ea
 
 **图 1** 新建Napi模块
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/oFCVa2nfRJSemJFz-ZqmcQ/zh-cn_image_0000002786360838.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/oFCVa2nfRJSemJFz-ZqmcQ/zh-cn_image_0000002786360838.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=F61B50ABF3F4CD739F9B756EBC658EF261FEFB6873CD5E0AF0F99CB342E6C007)
 
 ## 场景案例
 
@@ -171,7 +171,7 @@ ArrayBuffer是一种用于表示通用的、固定长度的原始二进制数据
 
 **实现效果**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/0o4Ax1mLQtiNb8QTPUf2jw/zh-cn_image_0000002815560259.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/0o4Ax1mLQtiNb8QTPUf2jw/zh-cn_image_0000002815560259.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9EB6EDA7DE1F218508CDF5B54A5DC20BEB0757D1CBB0D7201501B0FA71D0181)
 
 ### object类型数据交互
 
@@ -278,7 +278,7 @@ Object类是所有其他类型的基类。在C++侧接收该类型参数时一�
 
 **实现效果**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/Joj6eLBfTmCZ7G1aFTT0Lg/zh-cn_image_0000002815400343.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/Joj6eLBfTmCZ7G1aFTT0Lg/zh-cn_image_0000002815400343.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=6272A35A1986EB0D72A9DF6DEDCBE1587DF63404C2D5FC61A1F15F2EB2507806)
 
 ### hashMap类型数据交互
 
@@ -436,7 +436,7 @@ hashMap是一种基于哈希表的Map接口实现的数据结构。在C++侧接�
 
 **实现效果**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/QQalbLZFTEGUB3Hi26lgig/zh-cn_image_0000002786520768.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/QQalbLZFTEGUB3Hi26lgig/zh-cn_image_0000002786520768.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E2F1822A5CD4D7013A7784C2D030E7D6527B00C719AFA15CB0D74F7E5682068)
 
 ### pixelMap类型数据交互
 
@@ -552,7 +552,7 @@ PixelMap是一种用于显示图像的数据结构。在C++侧接收该类型参
 
 **实现效果**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/TJGBAsBcSGeJQorEZtqsXA/zh-cn_image_0000002786360840.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/TJGBAsBcSGeJQorEZtqsXA/zh-cn_image_0000002786360840.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF1EE4675BB528B182BF91E80CA435B13DF7C437EDBC8EBB452D88730169EA1E)
 
 ### class类型数据，ArkTS传递至C++
 
@@ -652,7 +652,7 @@ ArkTS语言中，class（类）是用于定义对象的模板，并拥有特有�
 
 **实现效果**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/MxeKJafpSxqvgZiRvaETZQ/zh-cn_image_0000002815560261.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/MxeKJafpSxqvgZiRvaETZQ/zh-cn_image_0000002815560261.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=747EE8DE7782B3A6E39E0AF737B62A8EFF7EADD6C36FB70E3802ED0F9965FB15)
 
 ### class类型数据，C++传递至ArkTS
 
@@ -862,7 +862,7 @@ ArkTS语言中，class（类）是用于定义对象的模板，并拥有特有�
 
 **实现效果**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/V9LxX4B5QBKc1z8dBxjgCQ/zh-cn_image_0000002815400345.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/V9LxX4B5QBKc1z8dBxjgCQ/zh-cn_image_0000002815400345.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=A46EB5E4674AF10A9E798551C204D640E9596B857AD0D4A32214C3A1044A0DA5)
 
 ## 示例代码
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: SideBarContainer
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 栅格与分栏 > SideBarContainer
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:50d8c15faa6e67d73c13932f7ba9cb304969af49ade8ab7ca11bb13d69b4e167
 ---
@@ -500,4 +500,4 @@ struct SideBarContainerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/Ye2JlErPSpi56KM3m8nN5g/zh-cn_image_0000002815400615.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/Ye2JlErPSpi56KM3m8nN5g/zh-cn_image_0000002815400615.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=8DC1347FBFB16939EC5DDA002D21DC02D2020A4BD1BB1C0D6E8B2EAEDA11D397)

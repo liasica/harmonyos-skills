@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-overvie
 title: Image Kit简介
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > Image Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:6d62615bc7cdd9f9a36f1639bd7cb69f2339848fd67d4edbd638aa1e14e2cb2b
 ---
@@ -51,11 +51,11 @@ Image Kit还提供了读取和[编辑图片EXIF信息](image-tool.md)的能力�
 
 **图1** 图片解码流程示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/RuCtNkGISBeeV_QlPgc0XA/zh-cn_image_0000002786359932.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/RuCtNkGISBeeV_QlPgc0XA/zh-cn_image_0000002786359932.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=304413DA0167476506DC4A7E8676FEC902B9E58702A48FC5EA3C42F475D4CEB3)
 
 **图2** 图片编码流程示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/HLHNLl6JRRaD6I9KQYip8g/zh-cn_image_0000002815559353.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/HLHNLl6JRRaD6I9KQYip8g/zh-cn_image_0000002815559353.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=B68C820E464D0EE0277A46C683112D5003993F3A7C18CF694A1A8A33C52E1C83)
 
 ## 约束与限制
 

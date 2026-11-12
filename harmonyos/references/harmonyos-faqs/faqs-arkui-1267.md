@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1267
 title: 动态生成多个CheckboxGroup并设置全选
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 动态生成多个CheckboxGroup并设置全选
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:3ddd17f32c545e6bccfd78a935c0d14c4d7d0654735ce8dab668803557bca5b2
 ---
@@ -102,7 +102,7 @@ content_hash: sha256:3ddd17f32c545e6bccfd78a935c0d14c4d7d0654735ce8dab668803557b
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/-7ID-ciCQZerpGT60rnxTQ/zh-cn_image_0000002658955329.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/-7ID-ciCQZerpGT60rnxTQ/zh-cn_image_0000002658955329.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=479528DBA0E96B6E4BD66ACCEF0F7659AD9C84A2367C69ACD3B70BB68F46A4AC "点击放大")
 * CheckboxGroup还可以和List组件组合使用，点击“全选”后实现全部选中，参考示例代码如下：
 
   ```screen
@@ -190,4 +190,4 @@ content_hash: sha256:3ddd17f32c545e6bccfd78a935c0d14c4d7d0654735ce8dab668803557b
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/VB4u2C2YRCefY9kH8QnGRw/zh-cn_image_0000002628596112.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/VB4u2C2YRCefY9kH8QnGRw/zh-cn_image_0000002628596112.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B61EBE8BD9D271E1E35CCC1ED25E2520BA49246EFCDB00C8F04A1962D876ADC "点击放大")

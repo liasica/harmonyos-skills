@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1464
 title: 如何解决TextInput限制输入异常问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决TextInput限制输入异常问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:1489dd57eaee346ab979a9427c709f50670d01d58c2dd64eb3d73a05df423a35
 ---
@@ -50,11 +50,11 @@ struct TextInputPage {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/H3Sde93GTmGjTxdNsZOFpg/zh-cn_image_0000002628605354.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/kvibLgPiSC-ytmFl3kr_-Q/zh-cn_image_0000002658844611.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/H3Sde93GTmGjTxdNsZOFpg/zh-cn_image_0000002628605354.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=535AAAA7B46BF2165EF4D153463075CE951F82C25466E7192E00E1F0AAAEE726 "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/kvibLgPiSC-ytmFl3kr_-Q/zh-cn_image_0000002658844611.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=887695A5D945A8020FB28F075DEE28180BA033863846BB74394819FF7DAFF0EE "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/BGYfPXPOSNiJcVc18onUzA/zh-cn_image_0000002628765244.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/BGYfPXPOSNiJcVc18onUzA/zh-cn_image_0000002628765244.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F60037989299E5F72BA24F659013B3E7691313B04A02F05C1D2410EE596778A "点击放大")
 
 ## 背景知识
 

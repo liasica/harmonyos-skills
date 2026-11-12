@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-dialog-
 title: 弹出框层级管理
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹出框 (Dialog) > 弹出框层级管理
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:6e65d2d54de9e7300363836230eee0a44dada2c04e739a76f73dface0f62abd1
 ---
@@ -150,4 +150,4 @@ export struct DialogBoxLayer {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/1eoLQpktTZGHzHH4qevENQ/zh-cn_image_0000002786518990.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/1eoLQpktTZGHzHH4qevENQ/zh-cn_image_0000002786518990.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=1144A99CD9D3C611DB4F0B419BF3C517BFF0E9CE98F0B60F9C5DEDC0CEB44DB7)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: ArkUI页面点击图片查看时加载缓慢
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > ArkUI页面点击图片查看时加载缓慢
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:4d1325a0ca58d74fa9bc6be9bdae9847c9a1756d166aef724fc3ab405d2988bb
 ---
@@ -63,7 +63,7 @@ content_hash: sha256:4d1325a0ca58d74fa9bc6be9bdae9847c9a1756d166aef724fc3ab405d2
 
   具体如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/Bv3Bxk2MTp20N4h3mhJ1Zg/zh-cn_image_0000002658914273.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/Bv3Bxk2MTp20N4h3mhJ1Zg/zh-cn_image_0000002658914273.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA48265BAD95E3BA3D8681A099039DADCC6529E9850E542119A82A5D8C21F817)
 
 ## 问题定位
 
@@ -81,22 +81,22 @@ content_hash: sha256:4d1325a0ca58d74fa9bc6be9bdae9847c9a1756d166aef724fc3ab405d2
    ```
 2. 如网络环境正常，使用DevEco Profiler ArkUI分析工具抓取点击图片到图片全屏显示完成的Trace信息，点击应用主线程泳道，在下方弹框中的Slice List页使用H:OnImageLoadSuccess来过滤图片加载完成的Trace信息，发现一共有7个Image组件加载图片资源完成。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Dlg6uF6SShWUf_n2p1cVZA/zh-cn_image_0000002658794319.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Dlg6uF6SShWUf_n2p1cVZA/zh-cn_image_0000002658794319.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=69A64909D5743D44559DC0BA0EAD9A68782248A5214851E970B0FFBFCECAFEA5 "点击放大")
 
    由于无法确认何时图片全屏显示完成，使用Ark Inspector查看全屏显示完成后的Image组件，发现该组件Id为5505，在右侧Attributes中的输入框输入src确认图片数据源为网络图片。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/BUGbrM-0TCedVzmGkyrolg/zh-cn_image_0000002628554954.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/BUGbrM-0TCedVzmGkyrolg/zh-cn_image_0000002628554954.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=44D0AFF9311C58A5AE2BA47C37108A74DDAF1193C67A9064C71431F95C7FF1D7 "点击放大")
 
    在Profiler上方搜索框中分别输入type=1和H:OnImageLoadSuccess[self:5505]找到点击图片、图片全屏显示完成的位置，如下图所示，两者时间间隔3.6s，页面切换过程400ms左右，可知点击图片后400ms切换到新页面，过了3.2s后图片才全屏显示完成。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/8duD-pNnSaST_DVtG2XZhw/zh-cn_image_0000002628395054.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/8duD-pNnSaST_DVtG2XZhw/zh-cn_image_0000002628395054.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=82B84F042AA635E4A806501D6DA9CC7152362F4AACFF59ACEBA24BA84E0F2A33 "点击放大")
 3. 查看图片资源下载完成Trace点（H:DownloadImage）左侧的Runnable状态信息，可知应用主线程是由OS\_NET\_HttpWork线程唤醒，即该图片资源是应用通过http请求访问服务器下载的。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/T4PD5ozgQXe1gTSKaUL-5A/zh-cn_image_0000002658914275.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/T4PD5ozgQXe1gTSKaUL-5A/zh-cn_image_0000002658914275.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=09ACD4D1C47211FA3B99EF09D4784BB82358F1A4B1A72F4B71F1B22BF270F1E8 "点击放大")
 
    查看http请求Trace点信息，可知该图片下载耗时达到3.2s。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/zlP5YqQZSiSPn_FnWiPkGg/zh-cn_image_0000002658794321.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/zlP5YqQZSiSPn_FnWiPkGg/zh-cn_image_0000002658794321.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=43E68246AC2EB8E9A073A826121DD208587A9242801CC6CC6A6E1AAFDE5F14DB "点击放大")
 
    排查日志中NETSTACK、Download image关键日志，发现该图片大小为6.95M，图片资源较大导致查看图片时图片加载慢的问题。
 

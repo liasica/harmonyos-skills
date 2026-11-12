@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1474
 title: 如何解决全屏播放视频时状态栏异常显示的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何解决全屏播放视频时状态栏异常显示的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:31+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:9cdb9ae9392fc4073e01c4d2a5d05a2602ed9f632af2a1dcd1adeaaa2f130d79
 ---
@@ -14,11 +14,11 @@ content_hash: sha256:9cdb9ae9392fc4073e01c4d2a5d05a2602ed9f632af2a1dcd1adeaaa2f1
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/zHn0x0l9Sk2TD4y7aGkApQ/zh-cn_image_0000002628765248.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/zHn0x0l9Sk2TD4y7aGkApQ/zh-cn_image_0000002628765248.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=53F2FAB0CA0C93C65D17B46623A52DC359264E575738D4D2E4C5B3209CACB62F "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/caufz8eARvCOC3BxLAqS4Q/zh-cn_image_0000002658964569.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/caufz8eARvCOC3BxLAqS4Q/zh-cn_image_0000002658964569.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=511FD2842412244934A8E6B060351317C779A6962346AC2390DFB4B7FC3F9108 "点击放大")
 
 ## 背景知识
 

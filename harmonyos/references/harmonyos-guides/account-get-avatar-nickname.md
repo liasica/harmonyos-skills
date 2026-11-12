@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-get-a
 title: 获取头像昵称
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 获取华为账号用户信息 > 获取头像昵称
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:9c29a81aed344b176e9bee58072141f5de904067c7971af9bd13cc185005c95d
 ---
@@ -14,11 +14,11 @@ content_hash: sha256:9c29a81aed344b176e9bee58072141f5de904067c7971af9bd13cc18500
 
 **图1** 手机端获取头像昵称（请以实际效果为准）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/5Vs0tD-CS-G-aTBvECjHFA/zh-cn_image_0000002786520070.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/5Vs0tD-CS-G-aTBvECjHFA/zh-cn_image_0000002786520070.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=9628A03E699724BC3041A3A0462989963E0AFA1EDB5592B4DC3A8C9268A5F8C3 "点击放大")
 
 **图2** Wearable设备获取头像昵称（请以实际效果为准）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/Yj-YOZjhRoCeHgnMABA_Kw/zh-cn_image_0000002786360142.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/Yj-YOZjhRoCeHgnMABA_Kw/zh-cn_image_0000002786360142.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=9993C2C82DF24CDD6B61C65CAAEFC5D34859D72F0FCF13A551035FB289F94A84 "点击放大")
 
 ## 约束与限制
 
@@ -26,7 +26,7 @@ content_hash: sha256:9c29a81aed344b176e9bee58072141f5de904067c7971af9bd13cc18500
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/GfmmghCjQUSc6MXal9ke_g/zh-cn_image_0000002815559563.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/GfmmghCjQUSc6MXal9ke_g/zh-cn_image_0000002815559563.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE88A0C4017CEE4903B9D2E6AD0651532E125B30068B2559D0D3A8C0BA835F50)
 
 流程说明：
 

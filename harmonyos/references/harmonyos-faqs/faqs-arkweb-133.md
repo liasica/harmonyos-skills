@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-133
 title: Web组件内容过长时，底部的内容无法滑动联动如何解决
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web组件内容过长时，底部的内容无法滑动联动如何解决
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:cb91444de02636253d96cab836466911c31cc4e53c59486aee5411ed389f6267
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:cb91444de02636253d96cab836466911c31cc4e53c59486aee5411ed389
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/xGRHA9Y6SYyYZuK_TPvEPg/zh-cn_image_0000002628899132.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/xGRHA9Y6SYyYZuK_TPvEPg/zh-cn_image_0000002628899132.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A580F0335A60EC179F41AEA428F5B2EFA9BD24858BF714AE9C961565BA9FEAD "点击放大")
 
 示例代码：
 
@@ -51,7 +51,7 @@ struct WebScroll {
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/t4h5TP86Q8aKgF3RHoGaDA/zh-cn_image_0000002659138401.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/t4h5TP86Q8aKgF3RHoGaDA/zh-cn_image_0000002659138401.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=5EE1B2E3E1C8CB489B42F3BE627D8A7D542B001F586672F22F3D4C5FF00505D3 "点击放大")
 
 ## 背景知识
 
@@ -63,7 +63,7 @@ struct WebScroll {
 
 针对布局问题，首先分析组件的层级结构：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/jj8bhl_LQa6p8Wmz2Pt2QQ/zh-cn_image_0000002629059050.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/jj8bhl_LQa6p8Wmz2Pt2QQ/zh-cn_image_0000002629059050.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F3AE91E941B0672E820786F9E42DF0ABF9F85E3BDCB9DB6598250D992213F44 "点击放大")
 
 当未指定高度时，Column、Scroll组件的默认高度、宽度均是100%。
 

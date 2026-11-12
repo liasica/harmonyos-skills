@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-animate
 title: 属性样式动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 动效开发指导 > CSS动画 > 属性样式动画
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-28
 content_hash: sha256:06b18abc8336e46ed8f5472febbf83eee59f4296c7b9b96f3c23d466bbdea05c
 ---
@@ -88,7 +88,7 @@ text {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/v-XdIkMZSBuQN-Bb1x0Rcg/zh-cn_image_0000002786359348.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/v-XdIkMZSBuQN-Bb1x0Rcg/zh-cn_image_0000002786359348.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E655D43ADFCD81A55751F601F20A02678493650BCF57E67BA572BDEE7DAE02C)
 
 **说明** 
 

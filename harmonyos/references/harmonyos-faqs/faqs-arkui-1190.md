@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1190
 title: Checkbox更改样式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Checkbox更改样式
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:18+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:2f867ca5d4fe3e536ab59ff637a1f9e617398e7f1e1f6c2c488cf8af1eb9845c
 ---
@@ -16,7 +16,7 @@ Checkbox组件在交互的过程中有默认样式，但根据界面设计需求
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/wBjFMFA2T4KXeoV3z7dPUA/zh-cn_image_0000002658952183.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/wBjFMFA2T4KXeoV3z7dPUA/zh-cn_image_0000002658952183.png?HW-CC-KV=V1&HW-CC-Date=20261112T233149Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B351F79F184F7B2035069FAE15AC4962498B5F8EBA7FAAE9E8ADBD2231E4B2F "点击放大")
 * 场景二：如何修改Checkbox未选择状态时的背景？
 
 ## 背景知识
@@ -91,7 +91,7 @@ Checkbox组件在交互的过程中有默认样式，但根据界面设计需求
 
   示例代码运行效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/wp2dk5_MRmqPCJF-Bm8JPA/zh-cn_image_0000002628592970.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/wp2dk5_MRmqPCJF-Bm8JPA/zh-cn_image_0000002628592970.png?HW-CC-KV=V1&HW-CC-Date=20261112T233149Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C0B3D7D9CB892C4660DF31FCA39E0021DBD193F7E7FD66C316C516D05273371 "点击放大")
 
 * 场景二：通过contentModifier属性自定义圆形选择框样式，传入未选中时的默认背景图片，在点击事件中对当前背景图片进行取反，且使用CheckBoxConfiguration的triggerChange方法触发多选框选中状态变化从而实现背景的修改。
 
@@ -153,7 +153,7 @@ Checkbox组件在交互的过程中有默认样式，但根据界面设计需求
 
   示例代码运行效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/N3zkGLonT_qvzbuqlcef5g/zh-cn_image_0000002658832225.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/N3zkGLonT_qvzbuqlcef5g/zh-cn_image_0000002658832225.png?HW-CC-KV=V1&HW-CC-Date=20261112T233149Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8CB5BEBC8CCA6AB5B054B4D4C9AEC8460AF2DFB0B55B428C8C21AAC83F27A81 "点击放大")
 
 ## 常见FAQ
 

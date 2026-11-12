@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-757
 title: 如何解决动画瞬间出现效果不连续的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决动画瞬间出现效果不连续的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:44+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:953ae026c1cf9c945e157b79342687f3e3111a44c90756b8ad017b5cad979288
 ---
@@ -101,11 +101,11 @@ struct ListItemComponent {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/sePcTZUURxeLhhRNDGHRVg/zh-cn_image_0000002658914689.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/sePcTZUURxeLhhRNDGHRVg/zh-cn_image_0000002658914689.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233202Z&HW-CC-Expire=31536000000&HW-CC-Sign=D22536FFB4319E35B29CAA1AE5C4D4D8B70BDD51807D66F0BE6A7ED320626752 "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/9FDPMJkXTCOeV5zvLFtYrA/zh-cn_image_0000002658794741.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/9FDPMJkXTCOeV5zvLFtYrA/zh-cn_image_0000002658794741.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233202Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B6C316A7C94EEE8C91BD20CFC1592EAEDC064198BFCB08B446050872BD6AA03 "点击放大")
 
 ## 背景知识
 

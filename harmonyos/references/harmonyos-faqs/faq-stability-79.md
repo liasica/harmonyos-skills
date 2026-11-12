@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-7
 title: 如何收集应用崩溃信息
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > 如何收集应用崩溃信息
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:af6e1d245e74c1521c5a2b025587d04f1ea919f7dcbe0721bf0c94125ebf53b0
 ---
@@ -43,10 +43,10 @@ Performance Analysis Kit、APMS和智能分析平台三种崩溃信息收集方�
    * 这两种方案都能快速开通一键使用，快速具备应用质量检测能力。而两者的差异在于，APMS侧重正式版本的质量问题检测以及异常数据采集上报多视角展示，智能分析平台则是倾向于应用异常分析。
    * 开通[APMS开通服务](../app/agc-help-apms-faq-0000002271373129.md)后，APMS可以采集性能指标，帮助快速界定问题范围：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/2oHvg8-BTAC873Sn1H4SFg/zh-cn_image_0000002680658384.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/2oHvg8-BTAC873Sn1H4SFg/zh-cn_image_0000002680658384.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=115F0D259DDB2727262C161F88C03E2058BDF7452533E1693747EC36C44C49E0 "点击放大")
    * [智能分析平台启动即接入](https://devecoservice.harmonyos.com/activateservice)，数据来源于系统侧上报，无需接入SDK，即可分析查看应用异常：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/iWDCL7BGSxaiFAfD0zKWWA/zh-cn_image_0000002680498518.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/iWDCL7BGSxaiFAfD0zKWWA/zh-cn_image_0000002680498518.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA0314B59FE59D0F7A87C4265559D3C0CF57D29E8A39DFC64552E9B48D1A2035 "点击放大")
 
 ## 常见FAQ
 

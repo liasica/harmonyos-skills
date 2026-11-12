@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 获取多个文件的持久化读写权限
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 获取多个文件的持久化读写权限
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:1edd551cbfab327de3eadfd39f7c8b0e65a69a44be2a71e80f99f66a12e74a02
 ---
@@ -30,7 +30,7 @@ content_hash: sha256:1edd551cbfab327de3eadfd39f7c8b0e65a69a44be2a71e80f99f66a12e
 
   首先根据首选项存储的内容进行判断，是否已经申请过持久化权限。若已经申请过，则使用activatePermission唤醒权限，然后操作对应路径下的文件即可。若没有申请过，则首先拉起DocumentViewPicker，获取需要配置持久化权限的文档链接，然后使用persistPermission配置持久化权限。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/k5Jjdqe9Td-FOt3z1QhRnQ/zh-cn_image_0000002659258329.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/k5Jjdqe9Td-FOt3z1QhRnQ/zh-cn_image_0000002659258329.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=EED9A4467397A3CE8F4EC6B151092F2ABB202A0589E2C95F4E25FF0ED5AB159A "点击放大")
 
   注意：持久化需要申请权限：[ohos.permission.FILE\_ACCESS\_PERSIST](../harmonyos-guides/restricted-permissions.md#ohospermissionfile_access_persist)，并配置module.json5。
 

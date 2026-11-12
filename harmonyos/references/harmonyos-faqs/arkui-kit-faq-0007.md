@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: px2vp单位转换方法及常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > px2vp单位转换方法及常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:59+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:ebb7cf6969cafb93ce3d63e32ee307bd226284670e3235da260ad69886d2dc51
 ---
@@ -83,7 +83,7 @@ struct Example {
 
 运行结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/bto2agZBRvKhqPxgmZRUQg/zh-cn_image_0000002793763795.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/bto2agZBRvKhqPxgmZRUQg/zh-cn_image_0000002793763795.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=1544BED0D2CA896940DD76EF016428BA878BF76C476FB5BD63CB39D1EE3C732C "点击放大")
 
 **Q：既然推荐使用vp，那lpx和designWidth有什么用？**
 

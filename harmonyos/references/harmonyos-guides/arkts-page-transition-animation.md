@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-page-tr
 title: 页面转场动画 (不推荐)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 转场动画 > 页面转场动画 (不推荐)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:9fa9a4a87ec16aedca80d0ee7fa700459edbccd5998cf4eac7c0411494214724
 ---
@@ -243,7 +243,7 @@ struct PageTransitionDst1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/2TIpzNRUTVazG_4L6jwSUQ/zh-cn_image_0000002786359166.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/2TIpzNRUTVazG_4L6jwSUQ/zh-cn_image_0000002786359166.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A5337FC7BE37508B2CFF8F9660C56D2AAD473D3DC730695176BC9E53E661D2D)
 
 下面介绍使用了type为None的页面转场动画示例。
 
@@ -335,4 +335,4 @@ struct PageTransitionDst2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/h651LymJSJWEBDgUPrDXLg/zh-cn_image_0000002815558587.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/h651LymJSJWEBDgUPrDXLg/zh-cn_image_0000002815558587.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=E964E316FEC2D075F8A359FBF5E271C928E7849B22B21491B1A627855F0AC353)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-long-sc
 title: 长截图
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI系统场景化能力 > 长截图
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-21
 content_hash: sha256:97405a61e4226be9e882e47a9e7f157089d40ed69ffef9969841315b2482deae
 ---
@@ -22,13 +22,13 @@ List组件可以通过模拟用户滚动行为，然后使用getComponentSnapsho
 
 **图 1** 长截图拼接原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/E6-tLjZFSYq_wYcK5BSzqg/zh-cn_image_0000002815398761.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/E6-tLjZFSYq_wYcK5BSzqg/zh-cn_image_0000002815398761.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=83BD563CBFD3A7223781A2D3AFCFC53A2E89BCEEC7B46DB69D6E2FB4479EA722)
 
 长截图主要流程如下：
 
 **图 2** 滚动长截图流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/dL1tQph9Sf-olvI6WWVRgg/zh-cn_image_0000002786519186.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/dL1tQph9Sf-olvI6WWVRgg/zh-cn_image_0000002786519186.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=11A4E74B8DB55F54286205F72B3F2402539D13511F29F548A8C3D17C5E8584F6)
 
 **说明** 
 
@@ -48,7 +48,7 @@ List、Scroll、Grid、WaterFlow等滚动组件均是通过Scroller来控制组�
 
 点击“一键截图”，会生成整个列表的长截图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/uDhFSa5ZTs-47veC-gaYHg/zh-cn_image_0000002786359258.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/uDhFSa5ZTs-47veC-gaYHg/zh-cn_image_0000002786359258.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF23F278F6EA4137F269854FB70CD407109469627343611D505F9B9381CAE854)
 
 **开发流程**
 
@@ -516,7 +516,7 @@ List、Scroll、Grid、WaterFlow等滚动组件均是通过Scroller来控制组�
 
 点击“滚动截图”按钮后，列表将自动滚动。点击列表中的任意条目时，滚动会立即停止，并开始截取从滚动开始到停止这段时间内的数据截图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/qQvk7yVmRzG5wCDyE6B2Dw/zh-cn_image_0000002815558679.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/qQvk7yVmRzG5wCDyE6B2Dw/zh-cn_image_0000002815558679.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9367B2F4CC4045B91EFF95515AB1FAB7F35506D0213FAF954A7A707A244A753)
 
 **功能实现**
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encodin
 title: 视频编码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 视频编码
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:d3012d83bbadac789683b35e3d60c315cf00f9d8276c736837c7ee8151b54a19
 ---
@@ -53,7 +53,7 @@ AVCodec支持的视频编码格式请参考[视频编码](avcodec-support-format
 
 **图1** 状态机调用关系示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/Bm9b_PCITeiq6isxAz8SUA/zh-cn_image_0000002786519790.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/Bm9b_PCITeiq6isxAz8SUA/zh-cn_image_0000002786519790.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B73C3B3FE49954CC3B76BAF675F9386683D76E4056EC390F17115B49B77704D)
 
 ## 开发指导
 
@@ -64,7 +64,7 @@ AVCodec支持的视频编码格式请参考[视频编码](avcodec-support-format
 * 虚线表示可选。
 * 实线表示必选。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/7Nk8eQ_oSqa_cH0H5BvyFg/zh-cn_image_0000002786359862.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/7Nk8eQ_oSqa_cH0H5BvyFg/zh-cn_image_0000002786359862.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=617EDBAD6CA3D1F1DAAAE14108A3A45EF021581878E83AE21AC58EEE9DD103DF)
 
 ### 在 CMake 脚本中链接动态库
 
@@ -873,7 +873,7 @@ target_link_libraries(sample PUBLIC libnative_media_venc.so)
 
    **图3** NV12图像排布示意图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/L0u-fUOCT4q6qJWqb7314A/zh-cn_image_0000002815559283.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/L0u-fUOCT4q6qJWqb7314A/zh-cn_image_0000002815559283.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=54C821A474198C1FEC8DA4F9C4FF3C2D7ACAB260105C22E0CFE1D07243ED79E4)
 
    添加头文件。
 
@@ -948,11 +948,11 @@ target_link_libraries(sample PUBLIC libnative_media_venc.so)
 
    **图4** YUVI420图像排布示意图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/tCbSEdvrSCCjV-UXTG8IBQ/zh-cn_image_0000002815399367.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/tCbSEdvrSCCjV-UXTG8IBQ/zh-cn_image_0000002815399367.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=82CF85800C0BB8D2B70CCEDDB5B3644686014547FBB08D25136EE195504C58DA)
 
    **图5** RGBA1010102图像排布示意图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/9d5h3ildQJCW-EdKDSiOgg/zh-cn_image_0000002786519792.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/9d5h3ildQJCW-EdKDSiOgg/zh-cn_image_0000002786519792.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=467728A5317B840238CF642B1BD5541C4A96BAB2931D1D008A26E5A1A6DE5CD0)
 9. 通知编码器结束。
 
    在编码过程中，当最后一帧数据被送入编码输入队列时，需要设置bufferInfo的flag标识为AVCODEC\_BUFFER\_FLAGS\_EOS，通知编码器输入结束。

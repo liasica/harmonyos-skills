@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-37
 title: 自定义相机预览界面有黑边
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera） > 自定义相机预览界面有黑边
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:d2c8ce2491c1b9d2ba32afd7d2369f17595e4c5a266226873b5256b709d6112e
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:d2c8ce2491c1b9d2ba32afd7d2369f17595e4c5a266226873b5256b709d
 
 在使用自定义相机进行拍照时，预览界面的左侧有黑边，影响使用体验，异常界面如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/uLUKG31kQ8SW7bhAUgQ-EQ/zh-cn_image_0000002628552472.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/uLUKG31kQ8SW7bhAUgQ-EQ/zh-cn_image_0000002628552472.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C72A19BE1B7030854FACF1F0BB59523D0B136047FF340C93574260E30D4CFB7 "点击放大")
 
 ## 背景知识
 
@@ -313,4 +313,4 @@ struct Index {
 
 修改后的正常界面如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/L2DmfwzyQMaRpko6sXYooQ/zh-cn_image_0000002658911795.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/L2DmfwzyQMaRpko6sXYooQ/zh-cn_image_0000002658911795.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4B73A8A9D6261543EDE74A5C09E5D9D8CF79B95C16813D0090EDE32FB5DCDC4 "点击放大")

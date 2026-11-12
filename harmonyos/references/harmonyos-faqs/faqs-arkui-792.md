@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-792
 title: 文本内容超出组件时，文本内容无法向右对齐
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 文本内容超出组件时，文本内容无法向右对齐
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:49+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:d328008b85dc17cb22a778288631d37df16b6be06f40e79a46447ff0be19063a
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:d328008b85dc17cb22a778288631d37df16b6be06f40e79a46447ff0be1
 
 当文本内容增加时，期望显示是文本内容尾端对齐，但当文本内容增加并超出组件宽度时，文本不再尾端对齐，新增文本内容无法继续动态显示，只能通过滚动组件查看新增内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/ULsMdAgDRKuMZqMz-DcQSQ/zh-cn_image_0000002658916949.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/ULsMdAgDRKuMZqMz-DcQSQ/zh-cn_image_0000002658916949.png?HW-CC-KV=V1&HW-CC-Date=20261112T233202Z&HW-CC-Expire=31536000000&HW-CC-Sign=22355C5F110E5CEDAEAA634BACABF403E216F606ADBE47756B19085F610B7C4A "点击放大")
 
 ## 背景知识
 
@@ -23,7 +23,7 @@ content_hash: sha256:d328008b85dc17cb22a778288631d37df16b6be06f40e79a46447ff0be1
 
 1. 通过DevEco Testing-实用工具-UIViewer查看页面布局实现，发现文本组件外部包裹滚动组件，以便文本内容超过父容器时滑动查看文本内容。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/2LD5xr0rTXmo_MtVFj0FeQ/zh-cn_image_0000002628397740.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/2LD5xr0rTXmo_MtVFj0FeQ/zh-cn_image_0000002628397740.png?HW-CC-KV=V1&HW-CC-Date=20261112T233202Z&HW-CC-Expire=31536000000&HW-CC-Sign=80D2EA5939420EEC157D6DABBFEF750755A38919F0ED327627260EFD6651B6B8 "点击放大")
 2. 同时查看Text组件布局实现，发现设置textAlign属性用于实现尾端对齐功能。
 
    ```ts

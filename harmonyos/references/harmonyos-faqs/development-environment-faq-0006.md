@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/development-env
 title: 导入Sample连接Gitee超时问题排查
 breadcrumb: FAQ > DevEco Studio > 环境准备 > 常见问题 > 导入Sample连接Gitee超时问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:48+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:5b827cef1d2c2c6213a5450d2211385507f74256e0b69350d330b5771bd2bf74
 ---
 
 **Q：导入Sample时，如果连接gitee.com的443端口超时，会提示“Failed to connect to gitee.com port 443: Time out”，如何解决？**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/0bm77pupTDiy3VunqSCPcA/zh-cn_image_0000002802286003.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/0bm77pupTDiy3VunqSCPcA/zh-cn_image_0000002802286003.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBD8F113BF008A2B3021146B67BF834BB4112FEF20B4B77DE9D9C6EE69CC1507)
 
 A：该问题可能是由于网络受限导致的，请检查网络连接状态。如果确实受限，需要通过代理服务器访问网络，请按照以下步骤配置git代理信息。
 

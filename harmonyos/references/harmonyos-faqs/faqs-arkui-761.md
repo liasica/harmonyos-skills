@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-761
 title: NavPathStack如何在自己封装的公共类中使用
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > NavPathStack如何在自己封装的公共类中使用
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:44+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:3c859150c5e4adc3898e6ce954023d3b6eca4d0fce6c46540f8c2dac3cbe7a4f
 ---
@@ -14,7 +14,7 @@ NavPathStack能在子组件中使用或者自己封装的公共类中使用吗�
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/5OKI0e9OTUKbhO2StDIT1w/zh-cn_image_0000002628395798.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/5OKI0e9OTUKbhO2StDIT1w/zh-cn_image_0000002628395798.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233202Z&HW-CC-Expire=31536000000&HW-CC-Sign=2210E28E725D5EE624AE98070052EF90C7F368CE5277D70C0589D8BA9A0819A4 "点击放大")
 
 ## 背景知识
 

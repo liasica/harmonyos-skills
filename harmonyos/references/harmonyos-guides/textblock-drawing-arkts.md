@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/textblock-dra
 title: 字块绘制（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 图元绘制 > 字块绘制（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:efbac01005617a5ae16bd61614350fa6cd89d8d596afc49addc30048c9a22d35
 ---
@@ -48,7 +48,7 @@ const textBlob = drawing.TextBlob.makeFromString('Hello world', font, drawing.Te
 canvas.drawTextBlob(textBlob, VALUE_200, VALUE_300);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/9PjSDVmoQ0K7Y4s4T4QPDA/zh-cn_image_0000002786519954.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/9PjSDVmoQ0K7Y4s4T4QPDA/zh-cn_image_0000002786519954.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5BF1D042DCB69FE39B7D0249B9FFB2D6E3974F4B97A7C78715B3E160F25F1F9)
 
 ## 文字描边
 
@@ -83,7 +83,7 @@ canvas.drawTextBlob(textBlob, VALUE_200, VALUE_300);
 canvas.detachPen();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/Ek21FJrTRaaeYKyFkTbh_w/zh-cn_image_0000002786360026.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/Ek21FJrTRaaeYKyFkTbh_w/zh-cn_image_0000002786360026.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=658B2EEEA582BF42A63E7243DACA1DCB3FD153A415764FA8F7474DAC185333D5)
 
 ### 中文文字描边
 
@@ -125,7 +125,7 @@ canvas.drawTextBlob(textBlob, VALUE_200, VALUE_300);
 canvas.detachBrush();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/I4tR0ehIRN6xuEztCe__oQ/zh-cn_image_0000002815559447.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/I4tR0ehIRN6xuEztCe__oQ/zh-cn_image_0000002815559447.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=6880AF09D31886F252147E1C3C555A33463285FF2FEB2C1974BD72A7F81F9C69)
 
 ## 文字渐变
 
@@ -157,7 +157,7 @@ canvas.drawTextBlob(textBlob, VALUE_100, VALUE_300);
 canvas.detachBrush();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/21BylubFSuyAmG8rmg1_Yg/zh-cn_image_0000002815399531.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/21BylubFSuyAmG8rmg1_Yg/zh-cn_image_0000002815399531.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=122471AD0DC41C0FBA2440E372E112B76299A657EE79EFC5390EA860BF5369B0)
 
 ## 主题字体
 
@@ -211,7 +211,7 @@ for (let s of text) {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/4hb-_scMRzmYDJb0rhJcbQ/zh-cn_image_0000002815559449.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/4hb-_scMRzmYDJb0rhJcbQ/zh-cn_image_0000002815559449.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=D950D60B0F2BE1C5725B4610BCA02939BCD885D5277E8612DEB83009A076BF9F)
 
 进阶场景：绘制带字体特征的字符。
 
@@ -236,7 +236,7 @@ for (let s of text) {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/IoGr0vRnQJ2Peo6OC8mj_A/zh-cn_image_0000002815399533.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/IoGr0vRnQJ2Peo6OC8mj_A/zh-cn_image_0000002815399533.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=45EED56F494AD86C0621D5EB3000B8D2748AE4A943383298EEFF690DEB7FCFC6)
 
 **说明** 
 

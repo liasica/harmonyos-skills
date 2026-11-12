@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-tr
 title: Tabs组件切换与显示问题定位
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 故障排查 > Tabs组件切换与显示问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-30T07:58:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-29
 content_hash: sha256:aae51c5be0de4404227e96a5459f4383d7dcfe5076af7abb4d5efc21e8485193
 ---
@@ -109,7 +109,7 @@ struct onChangePause {
 
 Tabs页面切换时，tabBar切换动画发生的比较慢，需要等到Tabs页面完成切换时，tabBar才发生切换。效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/iAEjGMrOQzOy6H2VJGVJMA/zh-cn_image_0000002804456473.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/iAEjGMrOQzOy6H2VJGVJMA/zh-cn_image_0000002804456473.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=078E80FC28B530EC994D45D1A83CEF77F182ED56E023DBF4375EF41B67B32569 "点击放大")
 
 ### 定位过程
 
@@ -272,13 +272,13 @@ struct TabsExample {
 
 返回主页面时标签栏跳转到到第一个标签的位置，而非当前页面所在标签的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/T4wv2U7yQIqzLaQetpWKKg/zh-cn_image_0000002804458285.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/T4wv2U7yQIqzLaQetpWKKg/zh-cn_image_0000002804458285.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=2AB62419E9199FB5C6E72A66A237D9655250F3B683E387456759F99F7FC67F5D "点击放大")
 
 ### 定位过程
 
 1. 使用DevEco Testing查看页面布局，确认页签实现基于Tabs组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/n9_GeAoDRk6NcW5UgkYgBw/zh-cn_image_0000002804299223.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/n9_GeAoDRk6NcW5UgkYgBw/zh-cn_image_0000002804299223.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A67EDD9A9F208D1356D0C4076D3AE4495009FCC303F5D0511ED02978C07B5BB "点击放大")
 2. 继续排查，是否将Tabs的index值设置为0。
 
    第二个页面点击返回时将Tabs的index值设置为0：
@@ -355,13 +355,13 @@ struct TabsChange {
 
 点击页面上的Tab标题，当前页签未停留在点击的Tab标题上，而是返回至第一个Tab标题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/mA8FjwcfSTu_cfTIJAVakw/zh-cn_image_0000002775300968.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/mA8FjwcfSTu_cfTIJAVakw/zh-cn_image_0000002775300968.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE50F2A560C3A7EDA2E419C44CEE841EF75456DBA62102CFA8D33A23C7B197A3 "点击放大")
 
 ### 定位过程
 
 1. 使用DevEco Testing查看页面布局，确认页签实现基于Tabs组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/7zMB47bVRf-kGjGTWn29oQ/zh-cn_image_0000002804460687.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/7zMB47bVRf-kGjGTWn29oQ/zh-cn_image_0000002804460687.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=91F8F5D69E997FF3D0BA02ABF602BF8A26E061A8B090E87927970034F6C4EDC4 "点击放大")
 2. 排查Tabs组件中在改变页签时，是否在动画结束后，重置了Tabs的索引值为0。
 
    ```ts

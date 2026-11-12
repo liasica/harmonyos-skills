@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: List组件拖拽功能
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > List组件拖拽功能
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:5210f223748c8111c7bd14bec6476a859fcf6c902e4e9ef334a915b47cd5832c
 ---
@@ -308,7 +308,7 @@ struct ListDrag {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/pv7gGMbHT1ed9BpvJbZiUw/zh-cn_image_0000002772839708.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/pv7gGMbHT1ed9BpvJbZiUw/zh-cn_image_0000002772839708.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CE800F1BF8C791F38CB59496F1F32F6B918E3066481444707E3014DF74E0640 "点击放大")
 
 **Q：二级嵌套List中使用什么方法触发拖拽回调？**
 

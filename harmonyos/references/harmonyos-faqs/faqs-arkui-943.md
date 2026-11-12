@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-943
 title: RichEditor获取ImageSpan中图片信息
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > RichEditor获取ImageSpan中图片信息
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:13+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:9a2ffc98fe1d3d4aec99c10b1b50091de28a2f1d7c1a16d08ef4b7a310429cdf
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:9a2ffc98fe1d3d4aec99c10b1b50091de28a2f1d7c1a16d08ef4b7a3104
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/mZByhwj7QhyHiK5iscEhGw/zh-cn_image_0000002658800487.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/mZByhwj7QhyHiK5iscEhGw/zh-cn_image_0000002658800487.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9A24FB36F5670AAE64ABFC653FE2B866D1A644A692E163CE00DEA16B03A3E8B "点击放大")
 
 ## 背景知识
 
@@ -76,4 +76,4 @@ struct RichEditorPage {
 
 效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/AYysmiOHS7uJDC7MIGmosA/zh-cn_image_0000002628561128.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/AYysmiOHS7uJDC7MIGmosA/zh-cn_image_0000002628561128.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=904E4E11FB7ECEB9976125C45D650A62BF573BFEF49320FD84E1DA5E65225A9D "点击放大")

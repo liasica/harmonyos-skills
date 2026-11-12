@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-tr
 title: 自定义弹窗键盘避让问题定位
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 故障排查 > 自定义弹窗键盘避让问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:33+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:d0d837e7b678de4a1f99aa65e211a01576b214add5ee901b5df3257c197fa4ae
 ---
@@ -17,11 +17,11 @@ content_hash: sha256:d0d837e7b678de4a1f99aa65e211a01576b214add5ee901b5df3257c197
 
 预期效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/Me8XeL4vRd-NsQeWniulAw/zh-cn_image_0000002772938024.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/Me8XeL4vRd-NsQeWniulAw/zh-cn_image_0000002772938024.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=46086003F927237B6E0E8F176481B0C695B63A1E87C3A09C55D886531722157E "点击放大")
 
 实际效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/0s3RdHdQRtuN2Xspr95nfA/zh-cn_image_0000002772938026.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/0s3RdHdQRtuN2Xspr95nfA/zh-cn_image_0000002772938026.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=F97A494272508B227AB464124BAF7D0DDAD7A3E65BF25A378A5DB8AA6184B512 "点击放大")
 
 ## 定位过程
 

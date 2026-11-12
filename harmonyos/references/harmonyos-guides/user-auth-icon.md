@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-auth-ico
 title: 使用嵌入式用户身份认证控件
 breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 使用嵌入式用户身份认证控件
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-07
 content_hash: sha256:7d76065910512825f7aa782112ae723c494c60a13c3e2818ec44c3e85de0c175
 ---
@@ -24,7 +24,7 @@ content_hash: sha256:7d76065910512825f7aa782112ae723c494c60a13c3e2818ec44c3e85de
 
 以指纹认证为例，控件使用效果如图所示。应用集成嵌入式用户身份认证控件后，用户点击左图中的指纹图标（即嵌入式用户身份认证控件），系统将自动拉起右图中的系统身份认证控件，完成身份认证。开发者无需通过接口发起身份认证请求，简化了认证流程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/ZIApv3dzRxOMp1FT9rjAGw/zh-cn_image_0000002815399209.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/ZIApv3dzRxOMp1FT9rjAGw/zh-cn_image_0000002815399209.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E05F1EA88790DC557FDB919D7A318EAFE44F109E7E876E53472FB3E21924DC6)
 
 ## 示例
 

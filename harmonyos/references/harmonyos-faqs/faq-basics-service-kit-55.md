@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-basics-serv
 title: 如何解决使用剪贴板接口阻塞主线程问题
 breadcrumb: FAQ > 系统开发 > 基础功能 > 基础服务（Basics Service） > 如何解决使用剪贴板接口阻塞主线程问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:f991489460dd0b40dfd368adf680bacf28b08a049512c46aaccc8b21da44591a
 ---
@@ -19,7 +19,7 @@ content_hash: sha256:f991489460dd0b40dfd368adf680bacf28b08a049512c46aaccc8b21da4
 
 ## 问题定位
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/SMpz75hDTdiZO6DgTSwmbw/zh-cn_image_0000002658853203.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/SMpz75hDTdiZO6DgTSwmbw/zh-cn_image_0000002658853203.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB5D4B3F44E270FF7218C110DBC21759802832D3E68BC2628B6974912A4A44E2 "点击放大")
 
 日志显示THREAD\_BLOCK\_6S卡死由主线程调用getDataSync时锁阻塞引起，同时子线程在剪贴板服务阻塞4s，导致主线程无法响应。
 

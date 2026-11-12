@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Column
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 行列与堆叠 > Column
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:9630ea76904ea52a01aa83f68e0bcc0a3039411d8e5eab5790f2664a210e5040
 ---
@@ -275,7 +275,7 @@ struct ColumnExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/tAcr0abXT0GT-QaIiYpa-Q/zh-cn_image_0000002786521026.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/tAcr0abXT0GT-QaIiYpa-Q/zh-cn_image_0000002786521026.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=80FDF2759C38DEBBADB6E64D11B69B377D30190AD85556CCDDA2BB6BBBB3670D)
 
 ### 示例2（设置反转属性）
 
@@ -305,4 +305,4 @@ struct ColumnReverseSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/ZX07S8vCSEyz1TJCyb9cow/zh-cn_image_0000002786361098.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/ZX07S8vCSEyz1TJCyb9cow/zh-cn_image_0000002786361098.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C49914633F08EDD1AE080250460A39530AD64A9AE748DCE8DE7C663750604E9)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: chart开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > chart开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:763b0e6ea74b8ff0ba79599ae20562c1348256ea4424661469cac2a84353105b
 ---
@@ -67,7 +67,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/dK2D_Pq9TSKn7D7Hf2KRIQ/zh-cn_image_0000002815398827.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/dK2D_Pq9TSKn7D7Hf2KRIQ/zh-cn_image_0000002815398827.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D1F07616D960809C97489C0A591C35146F1557A5DD1B84440DC309B6CDA4C7D)
 
 ## 设置图表类型
 
@@ -210,7 +210,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/yjn6SbVtR2W141_verE-ZQ/zh-cn_image_0000002786519252.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/yjn6SbVtR2W141_verE-ZQ/zh-cn_image_0000002786519252.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB51DD5BF49E145D8F85AB9B96047F3D48B34A98DC093708B5932C19E454FF3F)
 
 **说明** 
 
@@ -512,4 +512,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/idUlXrTrRNKx69_f5STu0g/zh-cn_image_0000002786359324.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/idUlXrTrRNKx69_f5STu0g/zh-cn_image_0000002786359324.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=23235B0FEA9948A2E03D53FDD09EA8C8FB706B6760C0616AEC8DF0A789C768EE)

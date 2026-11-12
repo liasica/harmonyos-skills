@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-715
 title: 使用openCustomDialog实现菜单弹窗并返回选中项回调
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 使用openCustomDialog实现菜单弹窗并返回选中项回调
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:38+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:639f066d1fe55681068c0c6721d6ee515b2311b2b6adce4458c216365a5e91c2
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:639f066d1fe55681068c0c6721d6ee515b2311b2b6adce4458c216365a5
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/IjUAfyZXRoSKwZ0029jV_g/zh-cn_image_0000002628395012.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/IjUAfyZXRoSKwZ0029jV_g/zh-cn_image_0000002628395012.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F219706257173F4C07C0EB0D79F2361EFB9534BC01FC0FD9EAB1D1B06CE3AC0 "点击放大")
 
 ## 背景知识
 

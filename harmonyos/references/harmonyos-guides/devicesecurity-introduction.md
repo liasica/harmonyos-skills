@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: Device Security Kit简介
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > Device Security Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:36+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:dbc692e4338973fcbba52c99386f87775f85e84bedf7263563c29e693a2f6f05
 ---
@@ -39,7 +39,7 @@ Device Security Kit（设备安全服务）提供应用设备状态检测（Devi
 
 业务关联如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/JkgWmueaRSKDLn2nc8ZVcg/zh-cn_image_0000002786359658.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/JkgWmueaRSKDLn2nc8ZVcg/zh-cn_image_0000002786359658.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=544E05C2983A720FD8F8DB24E45956BC8AF8C66BC6B001ED8AEA169BA66AB67D)
 
 ## 约束与限制
 

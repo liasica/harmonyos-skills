@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SelectionMenu
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SelectionMenu
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:28+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:90c0a3dba0c81c17f220608113d07b28a6015c3365b4572cbf9be9e536572673
 ---
@@ -456,7 +456,7 @@ struct Index {
 
 示例图为鼠标操作触发的自定义菜单弹出效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/djoXaIPJRlGC3-u2HGROVg/zh-cn_image_0000002786521610.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/djoXaIPJRlGC3-u2HGROVg/zh-cn_image_0000002786521610.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0B788FF1F9AD62CC67002AB64FE1060A794F0C96906D5665FFE3D414EC1D8A8)
 
 ### 示例2（设置Symbol类型图标）
 
@@ -793,7 +793,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/cOSc0Kq-QKqtvX2b42QB0g/zh-cn_image_0000002786361682.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/cOSc0Kq-QKqtvX2b42QB0g/zh-cn_image_0000002786361682.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D71ABF4BF7FF1E88B6533DC8388122DF8B76BB2E86B8837F22F728D452CB826)
 
 ### 示例3（设置背景板材质）
 
@@ -909,8 +909,8 @@ struct Index {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/_ptimjVHRFO78B_hNkfMsg/zh-cn_image_0000002815561103.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/_ptimjVHRFO78B_hNkfMsg/zh-cn_image_0000002815561103.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=C02D64FF0A6F3668D1943F970C8F12D9D3319A3271627A5749BAA9899DC70B9E)
 
 设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/ae1pExcOSBaqORe8DrzTpw/zh-cn_image_0000002815401187.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/ae1pExcOSBaqORe8DrzTpw/zh-cn_image_0000002815401187.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A0AC1170FF4E03CA6FE62392E3DD5B8A3674202C52C17C6C53F2B29B284892A)

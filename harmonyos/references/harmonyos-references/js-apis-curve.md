@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.curves (插值计算)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.curves (插值计算)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:58+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-20
 content_hash: sha256:ece56b0a945561ecad5b18fcefdc27523fb39196d6d440e05fd9f12688626def
 ---
@@ -468,4 +468,4 @@ struct ImageComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/ZmVjWdS2QFqRxsqu2gqh8A/zh-cn_image_0000002815560323.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/ZmVjWdS2QFqRxsqu2gqh8A/zh-cn_image_0000002815560323.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=7DDCC5407FF0BE172CE8DCF2E77F8E251CEE5F471DC5DC6F2712D7AEB0CE563D)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/appgallery-kit-
 title: HarmonyOS 开发者中心应用信息与图标配置常见问题
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 常见问题 > HarmonyOS 开发者中心应用信息与图标配置常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:44+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:14aa59bfba55d177c1eb60fc71ffc4319c3ef5b103caae343c729616968bb53d
 ---
@@ -33,7 +33,7 @@ content_hash: sha256:14aa59bfba55d177c1eb60fc71ffc4319c3ef5b103caae343c729616968
 
 **Q：配置前景图背景图后，应用图标出现细微的栅格点，是什么原因？如下图所示：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/rju7RAl-RmOdA-_vcY77SQ/zh-cn_image_0000002771925300.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/rju7RAl-RmOdA-_vcY77SQ/zh-cn_image_0000002771925300.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=ABFF2632034950022DF7FC984FBEF93D680AC78FED4D30D3F2DC71A72D47B137 "点击放大")
 
 **A**：查看前景图后发现透明区域都是栅格点，且图片不是PNG格式，导致透明区域的栅格点都显现出来，整改图片确保透明区域100%透明度，图片格式为PNG后，可解决问题。
 

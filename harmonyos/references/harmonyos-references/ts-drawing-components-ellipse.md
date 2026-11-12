@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: Ellipse
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Ellipse
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:5520812e1601bedd0bcd364671889ff19a864c803ca6d586695477f4e9df2484
 ---
@@ -108,7 +108,7 @@ struct EllipseExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/GpXVuTPBTjGp1RKX1vZGgQ/zh-cn_image_0000002786521422.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/GpXVuTPBTjGp1RKX1vZGgQ/zh-cn_image_0000002786521422.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=58D6A4AC38D7CAF690CBA499CD669E0689574A7A896C522752828CD183DABCCA)
 
 ### 示例2（宽和高使用不同参数类型绘制椭圆）
 
@@ -132,7 +132,7 @@ struct EllipseTypeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/qHdjnReCRoWuxTA9PIDVcQ/zh-cn_image_0000002815401035.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/qHdjnReCRoWuxTA9PIDVcQ/zh-cn_image_0000002815401035.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=66BC469B14D9F2E678833D4E704AF62FAB093EAD3367202876E5593F21265C34)
 
 ### 示例3（使用attributeModifier动态设置Ellipse组件的属性）
 
@@ -170,4 +170,4 @@ struct EllipseModifierDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/38Z_6miLT82dOM6jdYQN7g/zh-cn_image_0000002786521460.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/38Z_6miLT82dOM6jdYQN7g/zh-cn_image_0000002786521460.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADB06949E84787B874EDCD40F9EB530E4190AAD4BDA69BCB4F912668DA97AA9D)

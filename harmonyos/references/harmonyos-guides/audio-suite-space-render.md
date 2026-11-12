@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite-s
 title: 空间音频渲染(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频编创 > 空间音频渲染(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:e15a619278299f1c80bb54f2c44070bfa8083e3716ec235d9d7be1aeef9042fe
 ---
@@ -30,19 +30,19 @@ content_hash: sha256:e15a619278299f1c80bb54f2c44070bfa8083e3716ec235d9d7be1aeef9
 
 固定摆位模式用于将音频源放置在特定空间的固定位置，适用于需要固定音源位置的场景，用户可通过调用[OH\_AudioSuiteEngine\_SetSpaceRenderPositionParams](../harmonyos-references/capi-native-audio-suite-engine-h.md#oh_audiosuiteengine_setspacerenderpositionparams)对空间渲染节点进行参数配置。固定摆位示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/KDTGlUdfTvefQ3Uzann52A/zh-cn_image_0000002815559275.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/KDTGlUdfTvefQ3Uzann52A/zh-cn_image_0000002815559275.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=E896C0185C7D4BF0AA6E9BB6FEF0A0D25D3DA1034A5139860E4F437E6BD1C23D)
 
 ### 旋转模式
 
 旋转模式让音频源在指定位置设定单周环绕时间与时针方向进行动态渲染，用户可通过调用[OH\_AudioSuiteEngine\_SetSpaceRenderRotationParams](../harmonyos-references/capi-native-audio-suite-engine-h.md#oh_audiosuiteengine_setspacerenderrotationparams)对空间渲染节点进行参数配置。旋转模式示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/leLsJ78nSbexAvi_aQt0vw/zh-cn_image_0000002815399359.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/leLsJ78nSbexAvi_aQt0vw/zh-cn_image_0000002815399359.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=AB1B9C072D089844AD47289FC31292E66632BF706C592FCADB4164E0380A78D3)
 
 ### 扩展模式
 
 扩展模式将音频源按照半径和角度进行扩展，用户可通过调用[OH\_AudioSuiteEngine\_SetSpaceRenderExtensionParams](../harmonyos-references/capi-native-audio-suite-engine-h.md#oh_audiosuiteengine_setspacerenderextensionparams)对空间渲染节点进行参数配置。扩展模式示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/0daq7vDBQ2G08DNC5t0KUA/zh-cn_image_0000002786519784.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/0daq7vDBQ2G08DNC5t0KUA/zh-cn_image_0000002786519784.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=FFE8BFDCFD0CC07332D2157E85D74DA06C1B2A5FB0E90C1E7C970D8612D5B1FD)
 
 ## 开发基础配置
 

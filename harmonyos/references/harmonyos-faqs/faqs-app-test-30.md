@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-3
 title: 如何对C++项目的模块进行单元测试
 breadcrumb: FAQ > DevEco Studio > 应用测试 > 如何对C++项目的模块进行单元测试
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:ce0c643a352aaacf837cd984b07b08f28aa7433e184a5a058e16e73fcfba0dae
 ---
@@ -18,8 +18,8 @@ content_hash: sha256:ce0c643a352aaacf837cd984b07b08f28aa7433e184a5a058e16e73fcfb
 
 * [创建Native C++工程](../harmonyos-guides/use-napi-process.md#创建native-c工程)：在DevEco Studio中New > Create Project，选择Native C++模板，点击Next，选择API版本，设置好工程名称，点击Finish，创建得到新工程。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/qADZuNK8SYuPIpO1tIcfuQ/zh-cn_image_0000002628569516.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/qADZuNK8SYuPIpO1tIcfuQ/zh-cn_image_0000002628569516.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=327C39E84EA2B7D28A45FE6A597A66E2512A83041071A08573C97C06E86A1000 "点击放大")
 * [创建](../harmonyos-guides/in-app-hsp.md#创建)HSP模块：鼠标移到工程目录顶部，单击鼠标右键，选择New > Module，选择Shared Library，并在“Configure New Module”页面中输入模块名，图中为library，启用“Enable native”选项。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/bf9KlmFRTYKGmZPNHLpDDA/zh-cn_image_0000002658928839.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/bf9KlmFRTYKGmZPNHLpDDA/zh-cn_image_0000002658928839.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A42C73F5FED764BB07D6C564ADC9D670BD44E0364226B6CD778655ECB6F03D8 "点击放大")
 * 在HSP模块library中进行C++测试，参考测试C++代码，鼠标右键单击工程目录“\library\src\ohosTest”目录，选择New > C/C++ File(Napi)，在ohosTest下生成cpp测试目录，在工程目录“\library\src\ohosTest\ets\test”下实现单元测试代码。

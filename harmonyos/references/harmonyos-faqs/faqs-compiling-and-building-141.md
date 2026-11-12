@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“The type of target device does not match the device type configured by module：xxx”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“The type of target device does not match the device type configured by module：xxx”
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:54+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:1a943475a3b5217669a2bc1108e8e4fd6f7e753d594995d571d5f2df5c72ecec
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:1a943475a3b5217669a2bc1108e8e4fd6f7e753d594995d571d5f2df5c7
 
 指定target设备的类型与模块配置的设备类型不匹配。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/7-mJHeHcTQyQYWiJ7WaR_g/zh-cn_image_0000002624638532.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/7-mJHeHcTQyQYWiJ7WaR_g/zh-cn_image_0000002624638532.png?HW-CC-KV=V1&HW-CC-Date=20261112T233207Z&HW-CC-Expire=31536000000&HW-CC-Sign=08E57951E9D06895BFC7B17E110BAFA6F6335D5E2615B4B3E8F22372C51C3E59)
 
 **解决措施**
 

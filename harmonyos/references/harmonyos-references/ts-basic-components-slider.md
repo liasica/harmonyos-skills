@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Slider
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > Slider
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-23
 content_hash: sha256:eafc0d40eab586e2bdf94f3a022c50e690a9ee27b22dd9c7171ab87e560ffd1a
 ---
@@ -1099,7 +1099,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/Nfbi95v5QhqKv5xgyjlsvg/zh-cn_image_0000002786521178.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/Nfbi95v5QhqKv5xgyjlsvg/zh-cn_image_0000002786521178.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E8A664012DBFA7E734088EB99E1EBC85DFD754244C12F483064F190FF32702F)
 
 ### 示例2（设置滑动条样式）
 
@@ -1154,7 +1154,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/z2KxywqLR_ORYYa1XVaNHQ/zh-cn_image_0000002786361250.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/z2KxywqLR_ORYYa1XVaNHQ/zh-cn_image_0000002786361250.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1BFB55F82DD504AEEDC4E508C8C10F6328D488E5EBCD4B41C364E873E8914BB)
 
 ### 示例3（自定义滑动条）
 
@@ -1272,7 +1272,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/9XOH70TIQByaMT_jWh7iqQ/zh-cn_image_0000002815560671.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/9XOH70TIQByaMT_jWh7iqQ/zh-cn_image_0000002815560671.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE976875CA2ABAE7C58C6B2C8B354E1A9848FCD0FB12FF45086C917756ED0D6D)
 
 ### 示例4（设置滑动条渐变色）
 
@@ -1355,7 +1355,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/6--TL8hDT7S9DuzOPtE1xw/zh-cn_image_0000002815400755.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/6--TL8hDT7S9DuzOPtE1xw/zh-cn_image_0000002815400755.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=32783D13BE65B7E1230AF648949E84968AED5E8D60FBC34D9AC12FDFB17F4187)
 
 ### 示例5（滑动条设置前后缀内容）
 
@@ -1572,7 +1572,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/EV5NfdFPRk6jP7bZ1NlVEQ/zh-cn_image_0000002786521180.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/EV5NfdFPRk6jP7bZ1NlVEQ/zh-cn_image_0000002786521180.jpeg?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=309225AB70DC7AB985D8A33B03977599D52C349F105036A26A8737183150B1B6)
 
 ### 示例6（滑动条设置刻度点无障碍文本）
 
@@ -1640,7 +1640,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/SbtuucMBSXyroJy3nd9XjQ/zh-cn_image_0000002786361252.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/SbtuucMBSXyroJy3nd9XjQ/zh-cn_image_0000002786361252.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B26C8F12DD2F28B76858746D1DDE59833A65F783928965B121B3694BF3BE3A4)
 
 ### 示例7（设置滑动条的双向绑定）
 
@@ -1673,7 +1673,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/ooHsaTe0ScasT-jJpNN9Dg/zh-cn_image_0000002815560673.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/ooHsaTe0ScasT-jJpNN9Dg/zh-cn_image_0000002815560673.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C77B1AB3BB9F426D6FC589E351C09B6573973D5A0325BA22BB71AD8CD2C5C3D)
 
 ### 示例8（滑块设置渐变色）
 
@@ -1792,7 +1792,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/ApT4JvWCS3yynnGy1Ng-XA/zh-cn_image_0000002815400757.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/ApT4JvWCS3yynnGy1Ng-XA/zh-cn_image_0000002815400757.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=90D2FCF3C451DFBB2F3E23505A2BF3AA4E3B8CB6F79AEEEB6FA62CEDC268D58A)
 
 ### 示例9（设置滑轨的背景颜色）
 
@@ -1836,7 +1836,7 @@ struct SliderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/4HFPe3g5SYGzBHg4MX_FTw/zh-cn_image_0000002786521182.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/4HFPe3g5SYGzBHg4MX_FTw/zh-cn_image_0000002786521182.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=4177B5D07270AD7232BFA6B5B94D17A3A4ECAB52EE6F04113DFF71447949E418)
 
 ### 示例10（设置滑动条的沉浸光感效果）
 
@@ -1876,8 +1876,8 @@ struct SliderSystemMaterial {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/gOoWIs_QTtWFUliknHsVUQ/zh-cn_image_0000002786361254.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/gOoWIs_QTtWFUliknHsVUQ/zh-cn_image_0000002786361254.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=50C999CE1F6DDCD16317BB6CC871A39C40B69FF5752B93248F2CBF2AAA88AE96)
 
 设置系统材质后：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/VzJMUgoRSA2-Ahfhf2BJCQ/zh-cn_image_0000002815560675.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/VzJMUgoRSA2-Ahfhf2BJCQ/zh-cn_image_0000002815560675.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DB61CEB1704C8285799213B52BDE64FDE08174A6487234AD9E29E0BD20B6A9C)

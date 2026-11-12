@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 图形变换
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 图形变换
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:fa0040ea335aec7765543dbaf8c2e017dd5c713a5587d6763b57b5ced770547f
 ---
@@ -415,7 +415,7 @@ struct TransformExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/ATAfq6JdR6OZJB4L40jHgw/zh-cn_image_0000002815400503.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/ATAfq6JdR6OZJB4L40jHgw/zh-cn_image_0000002815400503.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=29CB61D21509B0E83C864FBC0DADA05AD12297E1452BF688DFE41C57475CF4F8)
 
 ### 示例2（设置旋转视距）
 
@@ -459,7 +459,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/VEQM313qTTKsUjuAuxB5EA/zh-cn_image_0000002786520928.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/VEQM313qTTKsUjuAuxB5EA/zh-cn_image_0000002786520928.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=C6ED8A6C0294DC17B18971A46F992B2A3D3A7D53FBD0327B686E7950D5B2A4E0)
 
 ### 示例3（按中心点旋转）
 
@@ -533,7 +533,7 @@ struct MatrixExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/OyqALrSvTniCkXqaqQJCGA/zh-cn_image_0000002786361000.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/OyqALrSvTniCkXqaqQJCGA/zh-cn_image_0000002786361000.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=49C0D826A603A4F6705040E2ED05CF96F452282EB199C349319AD1C24026CC0B)
 
 ### 示例4（通过transform3D实现图形变换）
 
@@ -571,7 +571,7 @@ struct Transform3DExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/T7LhQfdJQu6DWL2PtnVrlg/zh-cn_image_0000002815560421.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/T7LhQfdJQu6DWL2PtnVrlg/zh-cn_image_0000002815560421.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=80048A6F926C0972B8FF0768F1257C9D033D09DDA380848774DAFC1640A1770B)
 
 ### 示例5（按各轴旋转角的方式实现旋转）
 
@@ -612,4 +612,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/BmCKoZDoQCalgTjIBV0GdA/zh-cn_image_0000002815400505.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/BmCKoZDoQCalgTjIBV0GdA/zh-cn_image_0000002815400505.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C2E4E09D04EA5EE1D0EFBD0F43787B1588276DE7543247AE5CDDBA6818AE266)

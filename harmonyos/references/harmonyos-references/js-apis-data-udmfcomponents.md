@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.UdmfComponents (内容卡片)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS 组件 > @ohos.data.UdmfComponents (内容卡片)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:43+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-01
 content_hash: sha256:4ff26bb9d97b137660eb042040ce7501d6900246b720a36d51c0313e2abed696
 ---
@@ -139,4 +139,4 @@ struct Index {
 
 本例效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/6vHRbAWiTYKsH5g1vkT7MQ/zh-cn_image_0000002786360860.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/6vHRbAWiTYKsH5g1vkT7MQ/zh-cn_image_0000002786360860.jpeg?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF6F4945E0EB9874C3DDF00F072BE2C94056178386BA9E67F76CB2993145991F)

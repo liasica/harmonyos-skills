@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-devel
 title: 开发流程
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC算子部署 > AscendC算子入图（GE图）开发 > 开发流程
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:09459822a6d92dd77e4ab194c7b3865be722f813b7f82d640d75b937ae9dcfa5
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:09459822a6d92dd77e4ab194c7b3865be722f813b7f82d640d75b937ae9
 
 **图1** shape与datatype推导示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/xz2KMubpQEmk2Sv-Cluhug/zh-cn_image_0000002815400205.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/xz2KMubpQEmk2Sv-Cluhug/zh-cn_image_0000002815400205.png?HW-CC-KV=V1&HW-CC-Date=20261112T233224Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9C403130CA0B342E93B63C4F946CBAF3C5CA397C4DFC52CFF6E0A234FBBE282)
 
 除了tiling实现外，算子入图时需要额外提供的实现代码有以下几种：
 

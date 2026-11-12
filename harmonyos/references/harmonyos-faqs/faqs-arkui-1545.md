@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1545
 title: 如何使用layoutWeight属性设置子元素尺寸权重
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何使用layoutWeight属性设置子元素尺寸权重
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:d17f11eef8bf1692ee7ce67938a732eb579e110c7adaef129122404619787506
 ---
@@ -57,7 +57,7 @@ content_hash: sha256:d17f11eef8bf1692ee7ce67938a732eb579e110c7adaef1291224046197
 
   效果图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/oPnhR6TDQAuPKVQ-SWyeag/zh-cn_image_0000002628609224.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/oPnhR6TDQAuPKVQ-SWyeag/zh-cn_image_0000002628609224.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=94800BDC3A9683DEA6E54D9A537A8FFB1651FDBCFC20882E420F3237CFEBF00B "点击放大")
 * Column容器：**垂直布局**（从上到下），通过layoutWeight设置子元素在**垂直方向**的占比。
 
   ```ts
@@ -91,7 +91,7 @@ content_hash: sha256:d17f11eef8bf1692ee7ce67938a732eb579e110c7adaef1291224046197
 
   效果图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/31tsD8iBS-23gmUmLr_tsA/zh-cn_image_0000002628769122.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/31tsD8iBS-23gmUmLr_tsA/zh-cn_image_0000002628769122.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=87A0463E3FEF458817C77ADBEE438C773AFEEC1551F13F9D193E238BE855324C "点击放大")
 
 ## 常见FAQ
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-catalo
 title: 获取目录列表
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容解析 > 获取目录列表
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-14
 content_hash: sha256:62db693f5a56f1955f678139ceedac195e84360ef5e295edafb49c20db2df840
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:62db693f5a56f1955f678139ceedac195e84360ef5e295edafb49c20db2
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/1ORcJFF1SjW1NWpW3yiLEQ/zh-cn_image_0000002815559977.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/1ORcJFF1SjW1NWpW3yiLEQ/zh-cn_image_0000002815559977.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=84E15C22D24A89CF8EC3EE125F01180A7D73575EC586B4A34A0597ACF3448BB3)
 
 ## 接口说明
 

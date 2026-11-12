@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1488
 title: 如何实现弹出弹窗时不自动收起软键盘
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现弹出弹窗时不自动收起软键盘
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:54+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:f3d26f070e9108d888eafda2e26b9a6068282cee69872bd30148ea29151596a7
 ---
@@ -50,13 +50,13 @@ export struct TestDialogController {
 
 问题示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/eKVShuATQ62areKtDtR2uQ/zh-cn_image_0000002628765702.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/eKVShuATQ62areKtDtR2uQ/zh-cn_image_0000002628765702.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=D22DA5D20A0A535FD31E2D7BCB568677DB12633AE7A46DEAA9476CA0F7399D0A "点击放大")
 
 期望是显示弹窗时，软键盘不收起，如何实现？
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/KQNqyIvnRqedW_1gBXhYjg/zh-cn_image_0000002658965029.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/KQNqyIvnRqedW_1gBXhYjg/zh-cn_image_0000002658965029.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=B343F295208FF5C121D57BACFBD0B79DF7C18FF5F0BA260A2DAD4BB659FF8EC0 "点击放大")
 
 ## 背景知识
 

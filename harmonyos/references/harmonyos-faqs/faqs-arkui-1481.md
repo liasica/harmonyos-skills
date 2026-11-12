@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1481
 title: constraintSize属性实现尺寸约束
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > constraintSize属性实现尺寸约束
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:55fc39780e61f08534edbea5f790eaed53933f5ba41c131b8de8aabe2baa7d48
 ---
@@ -69,7 +69,7 @@ content_hash: sha256:55fc39780e61f08534edbea5f790eaed53933f5ba41c131b8de8aabe2ba
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/6S1d5z2PS8itHORQZTVGKw/zh-cn_image_0000002628765698.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/6S1d5z2PS8itHORQZTVGKw/zh-cn_image_0000002628765698.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=448541141F14D9A2AD0D06C2256DB762CB3F533210B67A8BB6FE7B6272E9E36E "点击放大")
 * **场景二**：可以使用[layoutWeight](../harmonyos-references/ts-universal-attributes-size.md#layoutweight)来实现，但会导致Text占据剩余空间，从而可能影响到Row组件设置的居中效果。因此，需要考虑其他方法。使用constraintSize设置Text的最大宽度，达到约束Text组件的效果，需要注意的是，应根据不同设备的适配需求，合理设置constraintSize中的maxWidth值。
   1. 获取屏幕宽度。
   2. 计算Text的最大允许宽度：屏幕宽度减去Image的宽度和Row的margin等。
@@ -116,7 +116,7 @@ content_hash: sha256:55fc39780e61f08534edbea5f790eaed53933f5ba41c131b8de8aabe2ba
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/Mn7qVUwHSLijVFQJR0FsXQ/zh-cn_image_0000002658965025.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/Mn7qVUwHSLijVFQJR0FsXQ/zh-cn_image_0000002658965025.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F0B7DD2A08B6ADD48D288DBAD58EFAA522B3F58987B5A764C71602423655B85 "点击放大")
 * **场景三**：将需要省略显示的Text组件的maxLines属性设置为1，并将其最大宽度设置为父组件宽度减去间距和其他组件的宽度。
 
   ```ts
@@ -157,4 +157,4 @@ content_hash: sha256:55fc39780e61f08534edbea5f790eaed53933f5ba41c131b8de8aabe2ba
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/TB1LPWSsRdS5qYIeIA0oVg/zh-cn_image_0000002628605820.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/TB1LPWSsRdS5qYIeIA0oVg/zh-cn_image_0000002628605820.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=75DF72D25AEAFB331CFB22CCC3C465D335FD6D6C79AFE1207850A88B71E0BCDA "点击放大")

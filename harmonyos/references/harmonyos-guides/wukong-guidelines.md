@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wukong-guidel
 title: wukong稳定性工具使用指导
 breadcrumb: 指南 > 应用测试 > 专项测试 > 命令行工具 > wukong稳定性工具使用指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:7689515e983ecd999b51e4544951238be63b8ba1bc5a4475040ea8cc7c8cce53
 ---
@@ -22,7 +22,7 @@ wukong是系统自带的一种命令行工具，支持Ability的随机事件注�
 
 wukong部件架构图以及部件内子模块职责如下所述。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/wp9uZbctRnWK5yWXbE__QQ/zh-cn_image_0000002701641040.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/wp9uZbctRnWK5yWXbE__QQ/zh-cn_image_0000002701641040.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DCB1402456B4D9F3FF846CBB52D942D6CC64D3A226FACB4731A98145AD21F83)
 
 * 命令行解析：支持命令行获取参数并解析。
 * 运行环境管理：根据命令行初始化wukong整体运行环境。

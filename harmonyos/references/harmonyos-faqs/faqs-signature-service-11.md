@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-signature-
 title: 签名时，提示"Failed to query agreement signing records"
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 签名时，提示"Failed to query agreement signing records"
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:57+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:ae549ade6a982ca78aa0078742dd88859303d86bc75e2294bd9ee1b5773efce9
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:ae549ade6a982ca78aa0078742dd88859303d86bc75e2294bd9ee1b5773
 
 使用未实名认证的华为账号登录会导致签名错误。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/h3k9QKAmSXKVxpf2uJXJPQ/zh-cn_image_0000002654838047.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/h3k9QKAmSXKVxpf2uJXJPQ/zh-cn_image_0000002654838047.png?HW-CC-KV=V1&HW-CC-Date=20261112T233218Z&HW-CC-Expire=31536000000&HW-CC-Sign=9AC5EC5B7DEB8F6D5D34A905240F4696A4AAB00103112AD513188D61FAA895AA)
 
 **解决措施**
 

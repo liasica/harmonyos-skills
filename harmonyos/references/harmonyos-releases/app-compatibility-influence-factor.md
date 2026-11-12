@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/app-compati
 title: 影响应用兼容性的关键信息
 breadcrumb: 版本说明 > 应用升级适配与兼容性 > 应用兼容性说明 > 影响应用兼容性的关键信息
 category: harmonyos-releases
-scraped_at: 2026-11-12T09:50:54+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-23
 content_hash: sha256:61f4c750e8344eef970fc5ae2a060a75db059cd89d33704eecdca8c2c4d443b8
 ---
@@ -58,7 +58,7 @@ API版本号格式从26.0.0开始进行调整（详见[版本号格式调整说�
 
   关于本机的进入方式如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/csJLiXcDQo6mVaVXR0NBvw/zh-cn_image_0000002379286636.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/j3nRBISCRhu9pXjd-qJjCw/zh-cn_image_0000002412806157.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/vRjuvUAuTrqPInRy4GlYoA/zh-cn_image_0000002379126760.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/csJLiXcDQo6mVaVXR0NBvw/zh-cn_image_0000002379286636.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=8DF35C50CF69842B5420741375625771DA21B2CD80829B99F8579B1ACE78F244 "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/j3nRBISCRhu9pXjd-qJjCw/zh-cn_image_0000002412806157.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=A83AD3E5D6DFD94B8CD9C2585F890E337DEBB3B309E042C1A6E29BDF22A3B17B "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/vRjuvUAuTrqPInRy4GlYoA/zh-cn_image_0000002379126760.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B1314BD0ECA241C0C88897AD52F5DEC824A234C6ABE7E0FE678F7FBFCD3104E "点击放大")
 
   注意：上述界面的API版本的取值是从deviceInfo的distributionOSApiName和sdkApiVersion属性组合而成。
 * **【方式二】**可通过以下hdc命令来查询设备ROM的API版本号。
@@ -103,7 +103,7 @@ API版本号格式从26.0.0开始进行调整（详见[版本号格式调整说�
 
 当用户设备的API版本低于应用包中的minAPIVersion时，该应用仍可在该设备的应用市场推荐页被展示，或通过搜索被查看到。但当用户点击安装此应用时，会提示此应用“无法安装”并给出所需要的系统版本要求（如下图所示）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/97NAX6FCSiajSiJDolsm3g/zh-cn_image_0000002515801291.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/97NAX6FCSiajSiJDolsm3g/zh-cn_image_0000002515801291.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D7C67DCD3B0596CF13ADCE693BC7B20038E902E6033F04D68E8C52E8C82091D)
 
 ### 对API的行为变更进行API版本隔离
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: hdsEffect (hds高级视效)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS API > hdsEffect (hds高级视效)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:55:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:036458577c31cfc70949d9dafaeedce234ab457fe97cb0910368c655be1d3cf4
 ---
@@ -127,7 +127,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/K_fKsVz6TKeie7YDmrb8fw/zh-cn_image_0000002815561499.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/K_fKsVz6TKeie7YDmrb8fw/zh-cn_image_0000002815561499.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=2FEACE766AA521AE7DF242E451D6C6D0ABD5BB9C3CCE67B21B1B81DA732CC386)
 
 ### pressShadow
 
@@ -202,7 +202,7 @@ struct PressShadowExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/5TXvbFQATLqhHsoq09T3rQ/zh-cn_image_0000002815401583.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/5TXvbFQATLqhHsoq09T3rQ/zh-cn_image_0000002815401583.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=41681DF5E356CF7E5F52E53F9D0133C332241DBAFE6611E403680F1E4764EDB7)
 
 ### shaderEffect
 
@@ -304,7 +304,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/ALZoEEiMQBiMJnDYg9US-w/zh-cn_image_0000002786522008.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/ALZoEEiMQBiMJnDYg9US-w/zh-cn_image_0000002786522008.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=C48F95D7EF6BF53C3B159392E0FA274533DA26FE3F439FC983663738F4AF1FF8)
 
 ### buildEffect
 

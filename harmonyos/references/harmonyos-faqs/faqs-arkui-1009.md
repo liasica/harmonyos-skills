@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1009
 title: 如何在全局自定义Builder中实现动画效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何在全局自定义Builder中实现动画效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:14f0c672dc27e04705c38bc3e40c574c2c203f0e4d440c3a150fef02bd76bd42
 ---
@@ -146,6 +146,6 @@ function bottomViewBuilder() {
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/vNpeT2B_SJSt1lcxjq0vHA/zh-cn_image_0000002658804043.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/vNpeT2B_SJSt1lcxjq0vHA/zh-cn_image_0000002658804043.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC0B940B1943EA3B6BD798E113DB101B49D78FC249B9D651671B16A70EF7C223 "点击放大")
 
   由于全局自定义函数的Builder的父容器Column组件没有设置宽高限制，导致Column组件自适应子组件大小，所以Text组件也跟随移动。

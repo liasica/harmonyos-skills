@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: UX样式或效果的变更
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.2(14) > OS平台能力 > OS平台行为变更说明 > UX样式或效果的变更
 category: harmonyos-releases
-scraped_at: 2026-11-12T09:50:31+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-27
 content_hash: sha256:05126021fea04e5cbcf8c5318711f900df88139506fbc46d7ce0ef66e38ad7fd
 ---
@@ -86,11 +86,11 @@ API version 14及以后，设备宽度在600-840vp间时，默认显示居中弹
 
 变更前：设备宽度在600-840vp间时，SheetOptions中的preferType设置为SheetType.POPUP，实际显示居中弹窗样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/uzKRAb4kT0amCmlZhwnzmA/zh-cn_image_0000002334372189.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/uzKRAb4kT0amCmlZhwnzmA/zh-cn_image_0000002334372189.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=231A05F4BCAAF037038ABCA5FAAD67F0F01702AE8D5A7D8234E13B63BF078494)
 
 变更后：设备宽度在600-840vp间时，SheetOptions中的preferType设置为SheetType.POPUP，实际显示跟手弹窗样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/7nQC45_ESSCB4D91EQ7l-A/zh-cn_image_0000002334332009.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/7nQC45_ESSCB4D91EQ7l-A/zh-cn_image_0000002334332009.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=32F559F948620778DA9BB5AA8A12DFDFE7E309E4B382ECA7D8048003E537266C)
 
 **起始API Level**
 

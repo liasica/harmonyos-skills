@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo install
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo install
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:27dfe939816efe69154ad0bb30ed1a7cd559fb4c6e6d331dad2a754605113311
 ---
@@ -67,7 +67,7 @@ ohpm-repo install  --config D:\config.yaml
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/o95AqXMbTOaqDsE2wfpTtg/zh-cn_image_0000002808764989.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/o95AqXMbTOaqDsE2wfpTtg/zh-cn_image_0000002808764989.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=E56D35D33FD5B6D91AAF893204AFE1F5AF5909212EE6462B0DCEEC56EB08003D "点击放大")
 
 ## 注意
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/media-library-k
 title: PhotoPicker组件大图预览模式常见问题
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 媒体文件管理（Media Library） > 常见问题 > PhotoPicker组件大图预览模式常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:02+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:a4dad406cffa98900e423af3a127c4151ac8c5708d088ebab7c8cd9e47a0c614
 ---
@@ -49,7 +49,7 @@ content_hash: sha256:a4dad406cffa98900e423af3a127c4151ac8c5708d088ebab7c8cd9e47a
 
 **Q：PhotoPicker组件点击缩略图进入预览界面，当PhotoPicker组件存在尺寸限制时，预览界面大小被限制为PhotoPicker组件的尺寸，体验不佳，想实现全屏预览的效果，当前效果如下。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/Kh4LBqCwTRiI3IzF9N5KOA/zh-cn_image_0000002765913422.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/Kh4LBqCwTRiI3IzF9N5KOA/zh-cn_image_0000002765913422.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A73641A3F089734C9A3779881A0CDA5D281422AF46ED45A49FC4A0AB41B2032 "点击放大")
 
 **A**：PhotoPicker组件点击缩略图进入预览界面，界面大小被限制可参考以下方案。
 

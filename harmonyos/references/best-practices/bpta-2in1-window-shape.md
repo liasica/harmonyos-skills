@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-2in1-windo
 title: 电脑异形窗口
 breadcrumb: 最佳实践 > 应用框架 > 窗口与屏幕管理 > 电脑异形窗口
 category: best-practices
-scraped_at: 2026-11-10T10:42:02+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:ea8c0874bea4a208254441be28125914bc8c6abc5f8ac8c3ec40dfdefef4a52d
 ---
@@ -177,10 +177,10 @@ content_hash: sha256:ea8c0874bea4a208254441be28125914bc8c6abc5f8ac8c3ec40dfdefef
 ### 实现效果
 
 **图1** 圆形子窗口效果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/n3oF0padTiyCx9VJVzf6Uw/zh-cn_image_0000002229337273.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/n3oF0padTiyCx9VJVzf6Uw/zh-cn_image_0000002229337273.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8A8E857C6CD88F16942F192881C96A9B0E868E54EC78814FE9FECDBDBA51686 "点击放大")
 
 **图2** 三角形子窗口效果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/NkfYa-KhT-6m0Te-iiWGhw/zh-cn_image_0000002194011476.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/NkfYa-KhT-6m0Te-iiWGhw/zh-cn_image_0000002194011476.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCE31F37969D66D3F440D523BBC201518CB54A283CB76EB04D2192EAF1246F57 "点击放大")
 
 ## 不规则形状窗口
 
@@ -189,7 +189,7 @@ content_hash: sha256:ea8c0874bea4a208254441be28125914bc8c6abc5f8ac8c3ec40dfdefef
 待开发的异形窗口，呈现出不规则的形状。这种情况通常先由设计人员提供图形文件，开发人员以文件为输入，基于ArkUI提供的图片处理能力，转化为相应的形状掩码，最后实现不规则的窗口形状。
 
 **图3** 不规则示例图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/bSZZNgXpSb6MXreme4uJJg/zh-cn_image_0000002229451765.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/bSZZNgXpSb6MXreme4uJJg/zh-cn_image_0000002229451765.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=1529411FB99649261E03C1D26A64C9C572A5001CD0214F17927BB8F1E1AFD993)
 
 本节以上图为例说明不规则形状窗口的实现过程。
 
@@ -297,7 +297,7 @@ content_hash: sha256:ea8c0874bea4a208254441be28125914bc8c6abc5f8ac8c3ec40dfdefef
 ### 实现效果
 
 **图4** 不规则形状子窗口效果  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/VNNF28KNQcOgrLdrIBZMcw/zh-cn_image_0000002193851884.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/VNNF28KNQcOgrLdrIBZMcw/zh-cn_image_0000002193851884.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=70D9CCF18C06F3FB243750CB4C7AE1982046723EE3D38057CFC2B78ADD07568F "点击放大")
 
 ## **示例代码**
 

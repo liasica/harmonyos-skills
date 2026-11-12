@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-959
 title: RichEditor组件设置属性字符串后如何监听文本行数
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > RichEditor组件设置属性字符串后如何监听文本行数
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:e9d69abe54606b2fbf28fd3a63d49c5b695b378679dc461421070fac7b35ec90
 ---
@@ -14,7 +14,7 @@ RichEditor组件使用控制器方法RichEditorStyledStringController.setStyledS
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/bnuWDYpYRH6Ghc1PTinRog/zh-cn_image_0000002628561580.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/bnuWDYpYRH6Ghc1PTinRog/zh-cn_image_0000002628561580.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=114D925630DA3C2E09942511FD8B0A307E92EB143D11610C3B2C54ED2DFD9260 "点击放大")
 
 ## 背景知识
 

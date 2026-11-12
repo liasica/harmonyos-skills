@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/performance-tro
 title: H5页面加载缓慢
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 故障排查 > H5页面加载缓慢
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-14
 content_hash: sha256:d9f6ab72c11e9c6c9963850d1c4c377db4eba5c2ae53607bcf0875a7440d8aff
 ---
@@ -38,7 +38,7 @@ content_hash: sha256:d9f6ab72c11e9c6c9963850d1c4c377db4eba5c2ae53607bcf0875a7440
      | 页面加载完成到开始显示网页 | H:RenderFrameImpl::didStopLoading到之后的第一个SkiaOutputSurfaceImplOnGpu::SwapBuffers | 5.5ms |
      | 总耗时 | - | 5661.5 |
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/zRvPDJj1SvOA_H3-Kg741A/zh-cn_image_0000002792210187.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/zRvPDJj1SvOA_H3-Kg741A/zh-cn_image_0000002792210187.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=22F31D8F131C3EE798082BF6AD269F26E062CBE9372BC781B6BC6FFB6EB015C4 "点击放大")
    * 耗时集中在html解析、子资源下载到页面加载完成：
      + 以下表和图为例，耗时主要集中在html解析、子资源下载到页面加载完成部分（1.7s）。
 
@@ -51,35 +51,35 @@ content_hash: sha256:d9f6ab72c11e9c6c9963850d1c4c377db4eba5c2ae53607bcf0875a7440
        | 页面加载完成到开始显示网页 | H:RenderFrameImpl::didStopLoading到之后第一个SkiaOutputSurfaceImplOnGpu::SwapBuffers | 88.4ms |
        | 总耗时 | - | 2535.4 |
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/XjkiN1BaR6OJ56KbRSNN5w/zh-cn_image_0000002762691394.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/XjkiN1BaR6OJ56KbRSNN5w/zh-cn_image_0000002762691394.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D0BDFDCE976A1F503B684779389C86CA67F2850A42142AB6DDF92EC2BA1F90C "点击放大")
      + 通过查看应用包名:render线程的Trace点，html解析、子资源下载到页面加载完成部分耗时主要是在解析过程中脚本运行耗时，与网页本身有关，可使用DevTools分析网页侧性能。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/nMWgoEH5S6On5NL_21IRFA/zh-cn_image_0000002762689282.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/nMWgoEH5S6On5NL_21IRFA/zh-cn_image_0000002762689282.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=8226FCE4FC651A4A2FB7CC23F97CDC4CA040483DAD76A070A9B6F5350149102F "点击放大")
      + 使用DevTools录制页面加载情况，分析"性能"页中"网络"和"主要"项的耗时情况。
        1. 查看"网络"项是否有耗时较长的网页资源请求，网络请求是否正常。
 
           如下图所示可以发现加载慢主要是网页资源加载造成的，耗时集中在发送请求、等待处理以及资源下载部分。
 
-          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/B-azhddhRK-U0cQPs8zX-A/zh-cn_image_0000002792087867.png "点击放大")
+          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/B-azhddhRK-U0cQPs8zX-A/zh-cn_image_0000002792087867.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=089C9578107DFA7DCD57AAF11A17D6FDA95D0C546CC3858161CF12A6FABB363C "点击放大")
 
           如发现有耗时超长的网络请求，耗时集中在排队和连接部分（如下图index.css），则可能是网络请求出现异常，可通过查看"网页"项的资源请求状态确认，如下图中请求index.css资源出现403状态码（服务器拒绝客户端授权访问）。
 
-          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/8fIMyH5gRBGU2CH6Yp1rEg/zh-cn_image_0000002762849204.png "点击放大")
+          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/8fIMyH5gRBGU2CH6Yp1rEg/zh-cn_image_0000002762849204.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=B71308513AD4C789F37779D7C82CD0B1A61CDC45A5EB4F5AAD1243ABC7A47A5B "点击放大")
 
-          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/ImJHyyxhTj6fJAfd4WhnyQ/zh-cn_image_0000002762849208.png "点击放大")
+          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/ImJHyyxhTj6fJAfd4WhnyQ/zh-cn_image_0000002762849208.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=63BDCE9DE1F80249400288CA827C1A5B39650806A52993B43803E2EB15A24E6F "点击放大")
 
           如未发现有耗时较长的网络请求（如下图所示），可排查网络页和控制台是否有错误信息。
 
-          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/lNq2k2dITfqjHC-_lFVf1Q/zh-cn_image_0000002792208089.png "点击放大")
+          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/lNq2k2dITfqjHC-_lFVf1Q/zh-cn_image_0000002792208089.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=D927A984F387D4100014DD9D012FBC3D791D10E2C9E523AEB0DC4A6E44B98403 "点击放大")
 
           下图中可看到网页加载时访问js脚本的地址出现ERR\_NAME\_NOT\_RESOLVED错误（域名无法解析），IP地址不正确，资源请求超时导致页面加载慢。
 
-          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/EIY_vrOwRF-GFj2hI6SYkw/zh-cn_image_0000002792208095.png "点击放大")
+          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/EIY_vrOwRF-GFj2hI6SYkw/zh-cn_image_0000002792208095.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C29DD32E3F0B24E23261A958530F4F3BD45C1A13EC28B5683406487DA43F132 "点击放大")
        2. 查看"主要"项中是否存在耗时任务。
 
           可查看"主要"项是否有标红的部分来确认网页是否存在耗时任务，如下图可看到网页存在472.92ms的长任务，其中耗时主要集中在脚本执行，脚本代码flushJobs函数执行耗时最长。
 
-          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/JvD3PGhoTJWrDVLUZPE_yg/zh-cn_image_0000002792087877.png "点击放大")
+          ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/JvD3PGhoTJWrDVLUZPE_yg/zh-cn_image_0000002792087877.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=55BD371921A43A3E4C5A722E2399FF9AE7333537440EC5E220972ACC4FB7EDED "点击放大")
 
 ## 分析结论
 

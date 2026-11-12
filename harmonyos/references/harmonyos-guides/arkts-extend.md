@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-extend
 title: "@Extend装饰器：定义扩展组件样式"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @Extend装饰器：定义扩展组件样式
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:dbde7436b6446e7961d39179639a8dafebfdb1764232d34707ba8d42a5a41f3d
 ---
@@ -139,7 +139,7 @@ content_hash: sha256:dbde7436b6446e7961d39179639a8dafebfdb1764232d34707ba8d42a5a
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/2u9nZoL9RKWGRGw3__iWxg/zh-cn_image_0000002815398055.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/2u9nZoL9RKWGRGw3__iWxg/zh-cn_image_0000002815398055.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=C19F2A685C305FB3C477E1A8A0A70188DB9EE73F33C2A34C1A7B066B3B2A228D)
 
 ## 限制条件
 
@@ -307,7 +307,7 @@ struct FancyUse {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/alvkrnZZRAuGvVUJpaRVeg/zh-cn_image_0000002786518480.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/alvkrnZZRAuGvVUJpaRVeg/zh-cn_image_0000002786518480.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7B32A3C4C958C2D59AD4434358FEF475D76E2E8D1272B39CDBEC7C3C848E14D)
 
 使用@Extend将样式组合复用，示例如下。
 

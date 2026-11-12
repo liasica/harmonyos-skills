@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1030
 title: 实现Text设置lineHeight属性后文本垂直居中显示
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 实现Text设置lineHeight属性后文本垂直居中显示
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:53+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:9245d852ae956902fe87ccb276db46c0d592a54a51af1420fb164ca183775dd7
 ---
@@ -18,7 +18,7 @@ Text("测试Text设置lineHeight").lineHeight(100).backgroundColor(Color.Green)
 
 问题展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/wUPuoVoJT7iWvF9D0BY5hg/zh-cn_image_0000002628564722.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/wUPuoVoJT7iWvF9D0BY5hg/zh-cn_image_0000002628564722.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F16A5F3E93060350C9187A5CB8D2144DF67768BF96A13BCCD5070451693A808 "点击放大")
 
 ## 背景知识
 

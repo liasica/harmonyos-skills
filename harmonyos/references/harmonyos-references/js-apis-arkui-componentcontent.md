@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: ComponentContent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > arkui > ComponentContent
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:59+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:de14bbda04d788b3fdefea55fceac0a55b04f4c512354b0a23d4014e60003fa1
 ---
@@ -150,7 +150,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/rRWr7TpNQmCQv5lkdnWdYA/zh-cn_image_0000002786520854.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/rRWr7TpNQmCQv5lkdnWdYA/zh-cn_image_0000002786520854.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=9023D48760F8FFADFA1A88D40AAF640529A657F064F72DF80530906251A54949)
 
 ### update
 
@@ -220,7 +220,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/9Q4QigxKRlSYVywWG0OvOw/zh-cn_image_0000002786360926.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/9Q4QigxKRlSYVywWG0OvOw/zh-cn_image_0000002786360926.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7367534CBBB7AC7705C0D4ACF032BDDB93AC7F3868815553E0AEAADCFCE1ABE)
 
 ### reuse
 
@@ -420,7 +420,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/wJU1fOBrTHKbasKi2kjwdg/zh-cn_image_0000002815560347.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/wJU1fOBrTHKbasKi2kjwdg/zh-cn_image_0000002815560347.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=1928FD9BAB96DF42D116F6A6C79057D433D04BCEE191C9DFD9DDF0BD55AF3AFB)
 
 从API版本26.0.0开始，ComponentContent中的自定义组件支持V2组件复用。
 
@@ -671,7 +671,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/usXBxOwRQ0O_mujnjOY-ew/zh-cn_image_0000002815400431.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/usXBxOwRQ0O_mujnjOY-ew/zh-cn_image_0000002815400431.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=E96071AEE640393B8367D761940D48D8EAD9173486D17291691B46F66A2E71EB)
 
 ### updateConfiguration
 
@@ -787,7 +787,7 @@ struct FrameNodeTypeTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/2ASLx8UuR0K5KO86XoMPlw/zh-cn_image_0000002786520856.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/2ASLx8UuR0K5KO86XoMPlw/zh-cn_image_0000002786520856.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=25A4D64AEA98D9F504B061E0F6E4C640F54E40097BAE41AD7DE6B7944476B85F)
 
 ### isDisposed20+
 
@@ -879,7 +879,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/moicT22tSuaTwtO5vywXvA/zh-cn_image_0000002786360928.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/moicT22tSuaTwtO5vywXvA/zh-cn_image_0000002786360928.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=F43C55A2EAC7635C2E2C01C03B017063DB783130388BB1EED94E27C6BF434385)
 
 ### inheritFreezeOptions20+
 
@@ -1089,7 +1089,7 @@ struct TextBuilder {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/08U8FbOOQiuH35HzugFLaQ/zh-cn_image_0000002815560349.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/08U8FbOOQiuH35HzugFLaQ/zh-cn_image_0000002815560349.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA3F42217BC51D10358531D599E3640A687C48FA57EFD2319B311D06DE873167)
 
 ## ReactiveComponentContent22+
 
@@ -1180,7 +1180,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/ysrf9UoxS4K7GcJMmX0shA/zh-cn_image_0000002786520854.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/ysrf9UoxS4K7GcJMmX0shA/zh-cn_image_0000002786520854.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A145EAE4872D39138E26388A0DF3627030377D0901F3E88EE29558D9AA7E185)
 
 ### reuse22+
 
@@ -1388,7 +1388,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/gRyejSQEQl-5lDzqWnQYHw/zh-cn_image_0000002815560347.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/gRyejSQEQl-5lDzqWnQYHw/zh-cn_image_0000002815560347.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=5CA325BD1EBB6E44176C48C8AAEB40886C7D652A3C3F5510007C99F3B7417D0E)
 
 从API版本26.0.0开始，ReactiveComponentContent中的自定义组件支持V2组件复用。
 
@@ -1681,7 +1681,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/b7xJ9DMPTIieYcVXKidVSw/zh-cn_image_0000002815400433.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/b7xJ9DMPTIieYcVXKidVSw/zh-cn_image_0000002815400433.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=78DC855F49C74ACA161D999D44D46B38A2EB53FE199C0A596F07983222458FA0)
 
 ### updateConfiguration22+
 
@@ -1799,7 +1799,7 @@ struct FrameNodeTypeTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/M2tv2eJIRCqB3G8eCqCMLw/zh-cn_image_0000002786520856.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/M2tv2eJIRCqB3G8eCqCMLw/zh-cn_image_0000002786520856.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA0EA73BA90842CF83C37114F0E7056DB27C554E60458BE78919BF180DB7B7F4)
 
 ### flushState22+
 
@@ -1923,7 +1923,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/CpRO7dMRSj2YiZ2oO9io2A/zh-cn_image_0000002786520858.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/CpRO7dMRSj2YiZ2oO9io2A/zh-cn_image_0000002786520858.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=3CF3B66FDBFBD4F3B51E92E5E4F8AC499B980174BD5BC1F3948402EC1043A315)
 
 ### inheritFreezeOptions22+
 
@@ -2129,7 +2129,7 @@ struct TextBuilder {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/ZsTx9v5PTgCg_lOjXA3OzQ/zh-cn_image_0000002786360930.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/ZsTx9v5PTgCg_lOjXA3OzQ/zh-cn_image_0000002786360930.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8012C9CD9095C68795281516E3FB2C1D2292707C18EC8408ADFBD38F8511E56)
 
 ### isDisposed22+
 
@@ -2271,4 +2271,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/6GMX-TC3TSeRrfqpa8WezA/zh-cn_image_0000002815560351.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/6GMX-TC3TSeRrfqpa8WezA/zh-cn_image_0000002815560351.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2142172B57510D3860F3516B030538D2C4713C2276B45FD1A307765A8FB0961)

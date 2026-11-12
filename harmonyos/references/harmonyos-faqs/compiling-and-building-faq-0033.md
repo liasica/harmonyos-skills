@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/compiling-and-b
 title: 构建任务与文件冲突报错
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 常见问题 > 构建任务与文件冲突报错
 category: harmonyos-faqs
-scraped_at: 2026-10-30T07:59:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-29
 content_hash: sha256:5ecaf47db7678853b5992ac4479527569233c4d9f0275c89634c757b54699007
 ---
@@ -57,13 +57,13 @@ content_hash: sha256:5ecaf47db7678853b5992ac4479527569233c4d9f0275c89634c757b546
 
   问题现象：执行hap覆盖率测试时，出现报错："Error Message: Cannot read properties of undefined (reading 'module')"。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/407-MTJyQ22SfFb8xDlFLA/zh-cn_image_0000002774299982.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/407-MTJyQ22SfFb8xDlFLA/zh-cn_image_0000002774299982.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B4F0E585ABCCFC77B50908925E8854D546527E3E17432A35C7E4985BB3A2850 "点击放大")
 
   可能原因：工程下hap和hsp模块的build-profile.json5中targets包含ohosTest，但是ohosTest目录不存在，导致构建过程获取模块的ohosTest信息失败。
 
   解决措施：检查工程所有模块，如果build-profile.json5下targets里配置了ohosTest，模块内确保有src/ohosTest目录及目录对应结构；如不需要ohosTest，则在targets内删除ohosTest。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/n3Gv6S9aQ7CU-VMgeQVqZQ/zh-cn_image_0000002774459966.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/n3Gv6S9aQ7CU-VMgeQVqZQ/zh-cn_image_0000002774459966.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=4428CEE7C8ABE8B2E4890405CB8D6D21A2B4AEA0AFFD6B9CBFAE22DD593DE30F "点击放大")
 
 最终方案：
 
@@ -86,7 +86,7 @@ content_hash: sha256:5ecaf47db7678853b5992ac4479527569233c4d9f0275c89634c757b546
 
 请按照如下步骤进行操作：[提单链接](https://developer.huawei.com/consumer/cn/support/)，在线提单 -> 问题分类选择"HarmonyOS NEXT / 开发工具 / DevEco Studio"。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/C07biiJ0SyaHj6nhVZTOTA/zh-cn_image_0000002803779695.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/C07biiJ0SyaHj6nhVZTOTA/zh-cn_image_0000002803779695.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=A29E9A0493C6D608F160D9CD6060C1F711ACADAE3F60888B1CE70688F3AC0366 "点击放大")
 
 **Q：命令行手动执行构建命令时，如果构建失败并提示"ERROR: Task xxx was not found in the project xxx"，应该如何处理？**
 
@@ -96,7 +96,7 @@ content_hash: sha256:5ecaf47db7678853b5992ac4479527569233c4d9f0275c89634c757b546
 * 确认项目中是否包含该任务。
 * 确认项目路径是否正确。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/mX7YPlkLQLiq575peNm6vg/zh-cn_image_0000002803619777.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/mX7YPlkLQLiq575peNm6vg/zh-cn_image_0000002803619777.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=2739B05AF2391D923E316EF30D232CA007A90BAF2400F7CC7EAFC6E7EC418C25 "点击放大")
 
 问题确认：
 
@@ -112,7 +112,7 @@ content_hash: sha256:5ecaf47db7678853b5992ac4479527569233c4d9f0275c89634c757b546
 
 **A**：构建时存在不同版本的同名SO文件会导致问题。例如，将har模块产物中的SO文件拷贝到entry模块的libs目录下，此时har模块和entry模块中都有一个名为libhar.so的文件。如果再配置entry依赖har，构建entry时就会出现错误。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/-PFcxDnMSaWqyah44VALXg/zh-cn_image_0000002774299996.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/-PFcxDnMSaWqyah44VALXg/zh-cn_image_0000002774299996.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9A3064445467F69CA46AE01F123F938EB6CDE8C4387D5FE4F5DC225CFFDD7BA "点击放大")
 
 使用select、pickFirsts、pickLasts等配置项选择要使用的.so文件。select提供对 native 产物的精准选择，优先级高于excludes、pickFirsts等配置项。pickFirsts和pickLasts按照.so文件的优先级顺序打包，优先级顺序基于依赖收集的顺序，越晚被收集的优先级越高。
 
@@ -120,4 +120,4 @@ content_hash: sha256:5ecaf47db7678853b5992ac4479527569233c4d9f0275c89634c757b546
 
 在entry/build-profile.json5中，配置select选中har模块中的so文件，package选中包名为har的模块，include选中libhar.so文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/BxzPlPfvS2W0x1F-xq8kew/zh-cn_image_0000002774300002.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/BxzPlPfvS2W0x1F-xq8kew/zh-cn_image_0000002774300002.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=52DEFEA8919809DAAAB6FFAB5739E8CDFC3071B00FF92A2DB97378A74441E35C "点击放大")

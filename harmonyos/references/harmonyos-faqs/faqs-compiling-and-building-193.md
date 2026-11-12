@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 并行编译多个大型Hap/Hsp模块可能会导致DevEco Studio闪退
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 并行编译多个大型Hap/Hsp模块可能会导致DevEco Studio闪退
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:462c29e5dc0c6d684c37edd948d295ae0464f2a7117d2fb5787173d8d37b2773
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:462c29e5dc0c6d684c37edd948d295ae0464f2a7117d2fb5787173d8d37
 
 当应用包含了多个Hap/Hsp，每个模块的代码量都是100万行级别，直接点击DevEco Studio的构建（点击Build然后点击Build Hap(s)/APP(s)）之后DevEco Studio工具出现闪退。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/6l4hAlK5RRyKkBWIPGGJuw/zh-cn_image_0000002654838039.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/6l4hAlK5RRyKkBWIPGGJuw/zh-cn_image_0000002654838039.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=04DD132646CB2479DDDE4498F01089423E4193E28824595F9700C16FCBE2810E)
 
 **可能原因**
 
@@ -22,4 +22,4 @@ content_hash: sha256:462c29e5dc0c6d684c37edd948d295ae0464f2a7117d2fb5787173d8d37
 
 将并行编译改为串行编译执行。在DevEco Studio上依次选中每个模块再点击编译(左侧选中模块，然后点击Build,再点击第一个按钮Make Module 'xxx')。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/jVp5IRQWS8C2BGzz5f7FlA/zh-cn_image_0000002624478726.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/jVp5IRQWS8C2BGzz5f7FlA/zh-cn_image_0000002624478726.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=09D58E7D3133A2722EA2479FE033C2F508B50E51EC5150CD1741BBA3C57BBB6B)

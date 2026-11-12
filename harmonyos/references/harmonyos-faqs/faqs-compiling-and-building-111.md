@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 构建报错“debug is different”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 构建报错“debug is different”
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:54+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:05305b9c48c50ba20c89c09722e2cc7e2ac22ade05c6bd41ff6d90db7e77c339
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:05305b9c48c50ba20c89c09722e2cc7e2ac22ade05c6bd41ff6d90db7e7
 
 打包应用时，提示“debug is different”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/Dwf2EfkgRruISZ-sdoNwzw/zh-cn_image_0000002654797907.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/Dwf2EfkgRruISZ-sdoNwzw/zh-cn_image_0000002654797907.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=43ACC1190B2C0F92B48BEE733CD3CA53C98E0396290AE1CE11476D78A52E852D)
 
 **解决措施**
 
@@ -20,8 +20,8 @@ content_hash: sha256:05305b9c48c50ba20c89c09722e2cc7e2ac22ade05c6bd41ff6d90db7e7
 
 1.该debug字段由编译构建工具自动生成，保存在HAP/HSP包的module.json文件中，如下图所示，首先确认各模块间该字段是否一致。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/2LbETFjMTmOA64r1uEzFlA/zh-cn_image_0000002624638456.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/2LbETFjMTmOA64r1uEzFlA/zh-cn_image_0000002624638456.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=44E73B68C289A78CC44CA195963D10EC61AB5DD3CEE7A1D278B43C013E511121)
 
 2.编译工具根据设置的Build Mode选项生成debug标识，如图所示，可以通过此处进行设置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/FCgr3-SEQVeHfM-GC94wuw/zh-cn_image_0000002654837897.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/FCgr3-SEQVeHfM-GC94wuw/zh-cn_image_0000002654837897.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F013AB92569AE2C483ADC5980A92873FAB819B475F3417EE634AC1967D29892)

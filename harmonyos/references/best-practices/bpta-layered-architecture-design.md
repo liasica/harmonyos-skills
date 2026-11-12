@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-layered-ar
 title: 分层架构设计
 breadcrumb: 最佳实践 > 应用架构 > 分层架构设计
 category: best-practices
-scraped_at: 2026-11-10T10:42:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:4e20cf17d680531242e74bccd41dbd0ed049bc9c5c1bdefb2f8eecf2676c164e
 ---
@@ -17,7 +17,7 @@ HarmonyOS应用分层架构包括产品定制层、基础特性层和公共能�
 ## 逻辑模型
 
 **图1** 分层架构逻辑模型  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/QPy38HE3TP2mk3JawlKDcg/zh-cn_image_0000002229336237.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/QPy38HE3TP2mk3JawlKDcg/zh-cn_image_0000002229336237.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=51EDF30A302BA5E2F629951E7F8529BFD231E75A2AA542F25ECF557F891FD1D0 "点击放大")
 
 * **产品定制层**
 
@@ -49,7 +49,7 @@ HarmonyOS应用分层架构包括产品定制层、基础特性层和公共能�
 ## 开发模型
 
 **图2** 分层架构开发模型  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/CnGbRkXeSdys8R6jIDYHkw/zh-cn_image_0000002194010440.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/CnGbRkXeSdys8R6jIDYHkw/zh-cn_image_0000002194010440.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=ECA63A8404E2ADB0619F38499D343D19A784A471787908098263731F17E9F1CA "点击放大")
 
 * **产品定制层**
 
@@ -69,7 +69,7 @@ HarmonyOS应用分层架构包括产品定制层、基础特性层和公共能�
 ## 部署模型
 
 **图3** 分层架构部署模型（不同设备的定制）  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/_uJ1BCnuS_SrEph62IsDmg/zh-cn_image_0000002229450717.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/_uJ1BCnuS_SrEph62IsDmg/zh-cn_image_0000002229450717.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=C66CDB9E0A1ED863BF52CDE0CCAC23ED43B1C63D086A1DA61DDC5044D18AFBA4 "点击放大")
 
 应用程序（.app文件）在流水线或应用市场上被解包为N个Entry类型的HAP和N个Feature类型的HAP，根据设备类型和使用场景部署到不同设备，实现多端统一用户体验。
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: DrawingRenderingContext绘制图像图形如何填充
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > DrawingRenderingContext绘制图像图形如何填充
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:34+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:d183e91cb78b96a7348e97596e52ff06e45bedc398a681811c2f839d50bbb8ae
 ---
@@ -43,7 +43,7 @@ content_hash: sha256:d183e91cb78b96a7348e97596e52ff06e45bedc398a681811c2f839d50b
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/PffkeVY7RxmVguBtk0m6pw/zh-cn_image_0000002628553238.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/PffkeVY7RxmVguBtk0m6pw/zh-cn_image_0000002628553238.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5273744918E34CD23961B921853809DEA94A61C589C339C0A026DE5168AF140 "点击放大")
 * 绘制实心图形：
 
   设置画刷样式，使用attachbrush将画刷应用到画布绘制中，关键代码如下：
@@ -60,7 +60,7 @@ content_hash: sha256:d183e91cb78b96a7348e97596e52ff06e45bedc398a681811c2f839d50b
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/k0XlAcB6SNaTzjieSW76uA/zh-cn_image_0000002658912553.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/k0XlAcB6SNaTzjieSW76uA/zh-cn_image_0000002658912553.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D4872753E703336C7EA3733255127FD052E0C8FD49945DF01FF950577E5F8E2 "点击放大")
 * 绘制带描边的实心图形：
 
   绘制图案时若既要描边又要填充，可以将画笔和画刷样式都应用到画布绘制中，以绘制带描边的同心圆为示例，代码如下：
@@ -84,7 +84,7 @@ content_hash: sha256:d183e91cb78b96a7348e97596e52ff06e45bedc398a681811c2f839d50b
   this.context.invalidate();
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/CJQoBC0tRNWHDada28S7sw/zh-cn_image_0000002658792613.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/CJQoBC0tRNWHDada28S7sw/zh-cn_image_0000002658792613.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0C36DC26B0673C4D6286A37917CCE2E8C2A0FAACA8CAD2A5667A4A30C36FB4D "点击放大")
 
 完整运行示例代码如下：
 

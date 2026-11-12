@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-data
 title: preferences实现数据跨进程读取
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地数据库管理 > preferences实现数据跨进程读取
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:59+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:828e89a01b10b2d8ff72be934652c8692a5f454dc83b96f0ada9bcf16813adbc
 ---
@@ -119,7 +119,7 @@ AppStorage不适合跨进程共享数据。此场景“应用与卡片之间数�
 
    实现效果：上述代码实现token数据存入myStore文件，文件内容为token的值：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/igasA5OaSNq6kiXWPpGomA/zh-cn_image_0000002628899082.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/igasA5OaSNq6kiXWPpGomA/zh-cn_image_0000002628899082.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=40B971DE9BFB22BA58B39FA8130D4BE76DD644348355A3C0D6347B50E6D376ED "点击放大")
 
 ## 常见FAQ
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1056
 title: 多个滚动组件同步滚动实现方案及应用场景
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 多个滚动组件同步滚动实现方案及应用场景
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:53+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:2d4cfcc9adf094af0feb4b58d4877877a87a7b57568366d99e25f0d190574fc7
 ---
@@ -176,7 +176,7 @@ onScroll事件从API version11开始使用，从API version12开始废弃不再�
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/dBTIASi_RKmsHibNC4suLg/zh-cn_image_0000002628405562.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/dBTIASi_RKmsHibNC4suLg/zh-cn_image_0000002628405562.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=E180B8E1D5BDB909E631E75AD396EF2D9105A8BDBB6186775B06BF4DB22E7858 "点击放大")
 
 * **场景二：实现不同表格同步滚动。**
 
@@ -439,7 +439,7 @@ onScroll事件从API version11开始使用，从API version12开始废弃不再�
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/lcYDoIDqRtWITiCITQBwPw/zh-cn_image_0000002658804835.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/lcYDoIDqRtWITiCITQBwPw/zh-cn_image_0000002658804835.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=60C2BA346E337BDB57964BDD17FE1CCA59739B429C5B595326FE449E8A4370D3 "点击放大")
 
 ## 常见FAQ
 

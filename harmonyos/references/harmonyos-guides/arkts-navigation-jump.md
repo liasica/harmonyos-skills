@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigat
 title: Navigation页面路由
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 设置组件导航和页面路由 > 组件导航(Navigation) (推荐) > Navigation页面路由
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:481e9140c4b5c33109f8938ccc7bd4c7312069ef300f0e98b6bd2402f20f3d48
 ---
@@ -700,4 +700,4 @@ export struct PageTwo {
    ```
 2. 工程配置文件[module.json5](module-configuration-file.md)中配置{"routerMap": "$profile:router\_map"}。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/h8coEP1iRi6aWARbD0SYPA/zh-cn_image_0000002786358760.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/h8coEP1iRi6aWARbD0SYPA/zh-cn_image_0000002786358760.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC393DFF86845B807A73CAC025CF68624882398E3C9560067C6B76B4238095B8)

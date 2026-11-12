@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1629
 title: "@Prop装饰器装饰的值没有及时更新如何解决"
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > @Prop装饰器装饰的值没有及时更新如何解决
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:37+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:c4cbd708cad3ac9040a6d36f1f5291dae7699f995c694dbaa240d3332c605a15
 ---
@@ -68,7 +68,7 @@ struct Parent {
 
 当首次点击Button时，Button中文本“初始值”变更为“变更值”，UI刷新成功，但弹窗showToast和输出日志的“from Child callback Prop”的值仍为“初始值”，只有再次点击后，弹窗showToast和输出日志的“from Child callback Prop”的值才会变更为“变更值”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/pJF3qPOvRpe7EKoMRbFX7g/zh-cn_image_0000002628777478.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/pJF3qPOvRpe7EKoMRbFX7g/zh-cn_image_0000002628777478.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D16C6CB3ABD63F8E13BB99E44C8610C7D7A341F42F187C9DA8E534D5BD342A0 "点击放大")
 
 ```log
 12-22 15:41:50.041   13492-13492   A03d00/JSAPP                    com.examp...42649434  I     from Parent State 变更值
@@ -159,7 +159,7 @@ struct Parent {
 
 第一次点击Button后，弹窗显示内容为“变更值”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/Z8y1DltKSdi005XsKiTOhg/zh-cn_image_0000002658976793.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/Z8y1DltKSdi005XsKiTOhg/zh-cn_image_0000002658976793.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=2EF0CD68FBE43A0AD6882261D443A4A2634540056EEFD446F3573A5EF6DE8EBA "点击放大")
 
 打印日志如下：
 
@@ -244,7 +244,7 @@ struct Parent {
 
 点击Button时，弹窗显示“变更值”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/zJy_8uZCRPS3_u9FCkTXkA/zh-cn_image_0000002658856853.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/zJy_8uZCRPS3_u9FCkTXkA/zh-cn_image_0000002658856853.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=802557360DEBC016EBC3378225C7FC43F8420C7D4994CEAA4E11E65AE229490D "点击放大")
 
 日志输出如下：
 

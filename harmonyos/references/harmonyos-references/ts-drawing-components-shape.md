@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: Shape
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Shape
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-17
 content_hash: sha256:c3d0385bc96adf63a66d5afc529d45b56bb54dc6be0340b0f6b89a64616ade2e
 ---
@@ -305,7 +305,7 @@ struct ShapeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/0_1fUnUNQZmcKfhaLGBr-Q/zh-cn_image_0000002786361540.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/0_1fUnUNQZmcKfhaLGBr-Q/zh-cn_image_0000002786361540.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD3B342281729F390A9D41BDD0BF4AD4C53CE57F9D61FDAA38B0467C9E437154)
 
 ### 示例2（使用不同参数类型绘制图形）
 
@@ -348,7 +348,7 @@ struct ShapeTypeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/LMF_fUrjRgChiIo2lM4Reg/zh-cn_image_0000002815560961.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/LMF_fUrjRgChiIo2lM4Reg/zh-cn_image_0000002815560961.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=753A04460210289A5EEED170B564BD2FB3B994370A0A12F26E297DDABD422BC5)
 
 ### 示例3（使用attributeModifier动态设置Shape组件的属性）
 
@@ -392,7 +392,7 @@ struct ShapeModifierDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/SWTOYbrOTKioJZlunjXK_w/zh-cn_image_0000002815401045.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/SWTOYbrOTKioJZlunjXK_w/zh-cn_image_0000002815401045.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=48E4E4EBFA5637CA6813A71223EF0B0B7E182ADEF0475FEEFA986EC5139CB1B2)
 
 ### 示例4（使用mesh实现图像局部扭曲）
 
@@ -436,4 +436,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/vC8Cke6MS-ajLNI81gu5KQ/zh-cn_image_0000002786521470.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/vC8Cke6MS-ajLNI81gu5KQ/zh-cn_image_0000002786521470.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=758F40DDF512A1FDCCE8EE964A3D625B57190CA6EF50E954FB468C65D32DC5AA)

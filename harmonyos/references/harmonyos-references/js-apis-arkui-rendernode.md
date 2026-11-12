@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: RenderNode
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > arkui > RenderNode
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:8472ea30662f733a6399554d539b3277d06487db656944823bb97dbd0592c1b7
 ---
@@ -1898,7 +1898,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/XZFsqC-rRN64h_ykV3uBcA/zh-cn_image_0000002786360942.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/XZFsqC-rRN64h_ykV3uBcA/zh-cn_image_0000002786360942.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=D49B695B4EB7DFF4845EA599BB8AD01CA7FF21A630C952B14A0111BB17B9E56A)
 
 ### shadowRadius
 
@@ -1980,7 +1980,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/xEsOJaf4TPe5KTisEajwew/zh-cn_image_0000002815560363.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/xEsOJaf4TPe5KTisEajwew/zh-cn_image_0000002815560363.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=339A6E31C8545EFB71771B107F275C6E51F1B550DAFB17512ECB18DCD6062F2E)
 
 ### draw
 
@@ -2815,7 +2815,7 @@ set markNodeGroup(isNodeGroup: boolean)
 
 标记是否优先绘制节点及其子节点。若设置为true，则透明度等属性将在节点绘制完毕后再进行合成，适用于多个半透明节点重叠且需要正确合成透明度效果的场景。设置效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/ZoGfEzWSRaSrqPrk9Qb9gA/zh-cn_image_0000002815400447.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/ZoGfEzWSRaSrqPrk9Qb9gA/zh-cn_image_0000002815400447.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=C20EFCB64CD47FEDD512A5DCE4A4862703C8B235CDF2BC0AA4F28964B6883697)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -3085,7 +3085,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/0KgyZe5DRs-4_iUFguWfMQ/zh-cn_image_0000002786520872.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/0KgyZe5DRs-4_iUFguWfMQ/zh-cn_image_0000002786520872.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=1DA70DC7AC143D726FACFFC4E84FFCE10521807923F88AC108EFE73431B6868C)
 
 ### backgroundBlur
 
@@ -3209,7 +3209,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/xMbEsDtxQ6qegJNUZJzlOQ/zh-cn_image_0000002786360944.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/xMbEsDtxQ6qegJNUZJzlOQ/zh-cn_image_0000002786360944.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7B3718747493F744403EF95C47548F22571CC362ED95CCB5352EF31E790FC17)
 
 ### contentBlur
 
@@ -3333,7 +3333,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/ehL_I7gwSsGipq1JRtMtuw/zh-cn_image_0000002815560365.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/ehL_I7gwSsGipq1JRtMtuw/zh-cn_image_0000002815560365.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDB1B01944474F4D72B44DDD92776A2272A4D5BC8240D22EF40EB538E3D604CB)
 
 ### foregroundBlur
 
@@ -3456,4 +3456,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/HWewynHnQWeS8Xc1c-Wzhg/zh-cn_image_0000002815400449.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/HWewynHnQWeS8Xc1c-Wzhg/zh-cn_image_0000002815400449.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=01BB59429635F3F094BCD6839FD8624A0ACCEC1D605713B5BDCA4668A863E915)

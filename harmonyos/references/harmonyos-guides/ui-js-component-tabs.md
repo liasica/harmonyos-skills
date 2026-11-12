@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: tabs开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 容器组件 > tabs开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-03-09
 content_hash: sha256:5b5da3f4c23720fe172d0a8974af5609bcee1569217d1c722d231de0ad0a822b
 ---
@@ -54,7 +54,7 @@ tabs是一种常见的界面导航结构。通过页签容器，用户可以快�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/hdI0zYqORKG1C5nShnEL7A/zh-cn_image_0000002786359300.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/hdI0zYqORKG1C5nShnEL7A/zh-cn_image_0000002786359300.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=72E8DEFD388CDE9AE55EE28A9D3F05346A08045CB9C8CEC8ADD70FD3995CEEBF)
 
 ## 设置样式
 
@@ -108,7 +108,7 @@ tabs是一种常见的界面导航结构。通过页签容器，用户可以快�
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/90s3OzRJQSO5bThyZ6puCg/zh-cn_image_0000002815558721.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/90s3OzRJQSO5bThyZ6puCg/zh-cn_image_0000002815558721.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF952336D1885306D73AB1CBA8F2116BB8DF31A71C1422DDAD6E749A11B5010B)
 
 ## 显示页签索引
 
@@ -146,7 +146,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/W2B4pZ25TsydGMYaetW5gw/zh-cn_image_0000002815398805.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/W2B4pZ25TsydGMYaetW5gw/zh-cn_image_0000002815398805.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=5813AF7D0438C590E3CC64A6A07E43CB58DC5288F51B054AB67ABA4152E43F23)
 
 **说明** 
 
@@ -264,4 +264,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/A1taHDMOTeiITbWldYYiRQ/zh-cn_image_0000002786519230.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/A1taHDMOTeiITbWldYYiRQ/zh-cn_image_0000002786519230.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=8153C99F3477524263BAE3A74D626F7ADC00874219D26FCBFFC23935C20C8B69)

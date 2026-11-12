@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1543
 title: web组件隐藏时，回调事件不触发
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > web组件隐藏时，回调事件不触发
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:24+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:3fbeed8ede10cc76df4a1c85e7073a4f6399d54bc6b3daee2808cf37d69de886
 ---
@@ -30,7 +30,7 @@ Web({})
 
 通过ArkUI Inspector工具，可以看到出问题的组件并没有被渲染出来。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/v-YuNiphTreCoTuTJfOBcA/zh-cn_image_0000002658968439.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/v-YuNiphTreCoTuTJfOBcA/zh-cn_image_0000002658968439.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA9488DF9EE92A1EB6869510B718F2D2778BD9BB85423740DF86FEFD1F5B1010 "点击放大")
 
 ## 分析结论
 

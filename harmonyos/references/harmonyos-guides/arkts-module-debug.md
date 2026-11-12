@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-module-
 title: 模块化调试工具
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS运行时 > ArkTS模块化 > 模块化调试工具
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:04+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-03
 content_hash: sha256:50410d70fa21668165651a239c73c1a5c29cfc09499419b7bdffba12eb101c18
 ---
@@ -196,26 +196,26 @@ HiSmartPerf工具完整的介绍可参考指南：[HiSmartPerf](../AppGallery-co
 
    打开HiSmartPerf工具，进入游戏性能分析的CPU Trace页面。虽然标题是游戏性能分析，但分析场景并不仅限于游戏场景。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/Y-jeTKwyTN6ThNBh1DIghQ/zh-cn_image_0000002786518398.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/Y-jeTKwyTN6ThNBh1DIghQ/zh-cn_image_0000002786518398.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=68B75B30F38E98047C4D3677B350E9431CB5607EC5489EF1B25B888736069D7B)
 2. 配置采集时间并开始采集
 
    采集完成后将提示文件回传，当文件较大时请耐心等待。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/o-VxbSVrQiabn-cL091Jmg/zh-cn_image_0000002786358470.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/o-VxbSVrQiabn-cL091Jmg/zh-cn_image_0000002786358470.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=0ACF83880154B4DE2AA71A400EABEE732EC2D0431B04426F8CA31AAF3BEA8E98)
 3. 打开trace文件并选择需要查看的应用
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/7HFKVemoQ5OQyXMevhdK5A/zh-cn_image_0000002815557891.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/7HFKVemoQ5OQyXMevhdK5A/zh-cn_image_0000002815557891.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8E330661E0FD455D091855D2E3F527CCC324176FE386F05BF74A9ECB1DF01C0)
 
 ### trace文件分析
 
 实例化的文件以及so在SourceTextModule::Instantiate下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/iZFxHL_eSfiTPIAnpe2lEg/zh-cn_image_0000002815397975.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/iZFxHL_eSfiTPIAnpe2lEg/zh-cn_image_0000002815397975.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=FBD171EBAC31A6613BAB2B3653A1673186CC1825ADFAB5316863621D6B6A651F)
 
 执行的文件以及so在SourceTextModule::Evaluate下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/nthKzzgbSUyq_2SayBNJXw/zh-cn_image_0000002786518400.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/nthKzzgbSUyq_2SayBNJXw/zh-cn_image_0000002786518400.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4DF1C7B639A8F17DE7B0F533DB56980812EBE6C53487C6F057C6F736D619AF9)
 
 选中需要分析的区域，会在下方生成表格。可以根据表格数据对耗时长的文件进行性能优化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/XxkMoY6UR6mRe3x_vJXehg/zh-cn_image_0000002786358472.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/XxkMoY6UR6mRe3x_vJXehg/zh-cn_image_0000002786358472.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD67D53E173ED7085715CDA23C2A19DAC1065DF2BD77DABC24A84ED2A4CDDA12)

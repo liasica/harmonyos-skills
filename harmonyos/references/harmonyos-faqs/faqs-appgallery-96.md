@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 如何查看和管理HarmonyOS Next应用市场的用户评论数据
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 如何查看和管理HarmonyOS Next应用市场的用户评论数据
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:1d2ce66776cbda074af4465eff39954af1bd15fd8a7be90c00aaad2daea778f5
 ---
@@ -21,7 +21,7 @@ HarmonyOS Next应用上架应用市场后，用户在应用市场的评论数据
 
 1. 操作路径：登录[应用推广引擎](https://developer.huawei.com/consumer/cn/service/apcs/aggrowth/chassis/resources/interactiveTools)，选择“用户经营-用户互动”，即可进入“评论评分”页面。默认展示“用户评论”数据。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/S5H3gtupRzKcjSmBGFmZcA/zh-cn_image_0000002628394704.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/S5H3gtupRzKcjSmBGFmZcA/zh-cn_image_0000002628394704.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=CFE536F71238157C6C082CC4B9A8BB8F977DC08AD2F066D3C14F2BABD5EDCF4A "点击放大")
 2. 除了查看评论数据，还可以进行评论数据的导出、回复等操作。具体参见[评论与评分](../app/comment-management-0000002246992933.md)。
 
 ## 常见FAQ

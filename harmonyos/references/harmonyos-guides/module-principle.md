@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-princi
 title: 模块化运行简介
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS运行时 > ArkTS模块化 > 模块化运行简介
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:10066a4460990d8c521a978019b7c587b0ff27431f39dd7ef36d12821af0e610
 ---
@@ -20,7 +20,7 @@ ArkTS模块化运行根据ECMAScript模块规范实现，以后序遍历的方�
 
 以下图为例，每个父节点加载对应子节点，并按import顺序执行同级。模块图文件执行顺序为：D->F->G->E->B->I->H->C->A。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/sgB1tJNcRlCQMwV5yXJRHg/zh-cn_image_0000002786358466.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/sgB1tJNcRlCQMwV5yXJRHg/zh-cn_image_0000002786358466.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=2426C9404A3568DBBA9CDB7406C751040F90F4CB7043829A288384FD3F90424F)
 
 A文件称为入口文件，即执行起点。一些内置的加载接口，如[windowStage.loadContent](../harmonyos-references/arkts-apis-window-window.md#loadcontent9)和[路由跳转](arkts-navigation-architecture.md)等页面拉起接口（即不是通过import写法拉起的文件），入参文件都会作为入口文件执行。
 

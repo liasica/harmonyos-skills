@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-940
 title: 如何实现自动填充文本框
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现自动填充文本框
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:45+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:afdc76f0f4be1be70b8e3983f59528a08a4c36c2433b9246a40b11d8b8bbb085
 ---
@@ -14,7 +14,7 @@ HarmonyOS如何实现输入关键字，下拉框有提示项内容，点击自�
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/etBnEJRISPyLG0QKIP_1lA/zh-cn_image_0000002628401198.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/etBnEJRISPyLG0QKIP_1lA/zh-cn_image_0000002628401198.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=BFA6398A3E04D9D82060D899DB13DF79B2A633430EA713069B2FF82287C75C45 "点击放大")
 
 ## 背景知识
 

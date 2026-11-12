@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.arkui.shape (形状)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.shape (形状)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:56+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-23
 content_hash: sha256:b2e7e2e70e6622a81a9bea1d1a5ba7824563fac860ce845115ef76b2b535cec0
 ---
@@ -526,4 +526,4 @@ struct ShapeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/ESAzjKOAQ1qCBLXOWXTB5w/zh-cn_image_0000002786520796.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/ESAzjKOAQ1qCBLXOWXTB5w/zh-cn_image_0000002786520796.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=323474782B9D6DA55163144186A2100662C53C37ED951A8B6F62DCE359898EE3)

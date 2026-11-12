@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: HdsSnackBar (即时操作)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsSnackBar (即时操作)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:55:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:3280349fcb4aa6cac4935b8e5425b3b0d58d74570021471345b9d475440754be
 ---
@@ -266,4 +266,4 @@ struct TestSnackBar {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/N_uGpLCpQQa26kgcCxMiaA/zh-cn_image_0000002815561507.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/N_uGpLCpQQa26kgcCxMiaA/zh-cn_image_0000002815561507.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EDA19BD66251F3CEB677EF1947404D57E9E7064E53708EC47F2B8E5500360C0)

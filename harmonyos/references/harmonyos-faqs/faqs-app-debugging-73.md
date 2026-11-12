@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: 如何处理PyCharm创建的Hypium工程报错：未解析的引用‘devicetest’
 breadcrumb: FAQ > DevEco Studio > 应用调试 > 如何处理PyCharm创建的Hypium工程报错：未解析的引用‘devicetest’
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:775c6d313c27d79588cf9751a7023c8d03f278c38964c5e62f99442ec1334456
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:775c6d313c27d79588cf9751a7023c8d03f278c38964c5e62f99442ec13
 
 Python已安装4个Hypium离线包，使用PyCharm创建的DevEco Testing Hypium工程报错，显示“未解析的引用'devicetest'”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/mW-dLVtTQhOU-LPHDAdezg/zh-cn_image_0000002628409430.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/mW-dLVtTQhOU-LPHDAdezg/zh-cn_image_0000002628409430.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=151090309A7898E046761837A475C369DB02476565EFDA70F3159D83243B8AE5 "点击放大")
 
 ## 背景知识
 
@@ -33,10 +33,10 @@ xdevice-ohos；
 
 * 方式一：打开PyCharm点击“File”>“Settings”在“Project:YourProjectName”>“Python Interpreter”部分。查看已安装包如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/xogcT4s1QEesaamZRsOnVw/zh-cn_image_0000002658808697.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/xogcT4s1QEesaamZRsOnVw/zh-cn_image_0000002658808697.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=A489D4C5DA395A1EDCD365DC2DFDF1D63F46BC130D2CC98216E19165671FA6C7 "点击放大")
 * 方式二：在PyCharm中，打开Terminal（底部工具栏的Terminal图标）PyCharm会自动引导到当前虚拟环境。通过pip list命令方式查看已安装包如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/p1f-NHl_Qiaz-2yGembd2Q/zh-cn_image_0000002628569336.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/p1f-NHl_Qiaz-2yGembd2Q/zh-cn_image_0000002628569336.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=47EB8E6948AC74023BCB6670085DADB0F12090730D97193C8BE82120C169E219 "点击放大")
 
 ## 分析结论
 
@@ -56,7 +56,7 @@ xdevice包需要安装到当前项目配置的虚拟环境中，才能解析引�
 
   python -m pip install hypium-5.0.7.200.tar.gz
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/J9yKT7mpQ-K-PH-mwxEwbQ/zh-cn_image_0000002658928655.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/J9yKT7mpQ-K-PH-mwxEwbQ/zh-cn_image_0000002658928655.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=3DC366CF1602254C6C87CAA1DF5EFE711BC70AB7B4339E18E5C9A871AC0492A6 "点击放大")
 * 方式二：切换已经安装xdevice包的虚拟环境。
 
   打开PyCharm点击“File” > “Settings”在“Project:YourProjectName” > “Python Interpreter”。右侧Python Interpreter下拉框中选择了已安装xdevice包的解释器，点击OK保存设置关闭窗口。PyCharm将会自动切换到选择的虚拟环境，并且所有包管理和运行配置都会基于这个新的解释器。
@@ -65,7 +65,7 @@ xdevice包需要安装到当前项目配置的虚拟环境中，才能解析引�
 
   此时命令行查看方式需要重启PyCharm。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/NH_0qOYTSu-XVsilATirmw/zh-cn_image_0000002628409432.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/KhwwOVAARSqnIcvNinWpww/zh-cn_image_0000002658808699.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/NH_0qOYTSu-XVsilATirmw/zh-cn_image_0000002628409432.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=8763A24A402D0D0FD088F2578681559A6B5942B7211BD448E57B96CCEE4AFEC1 "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/KhwwOVAARSqnIcvNinWpww/zh-cn_image_0000002658808699.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=ACBFE0F4596D5B70B8EBB904A63B25870E0AD7C529F2ED8CBF1E4DA23C5E0B2B "点击放大")
 
 ## 常见FAQ
 

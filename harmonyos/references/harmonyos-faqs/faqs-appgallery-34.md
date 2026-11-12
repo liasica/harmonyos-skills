@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 应用上架检测出未使用的权限
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 应用上架检测出未使用的权限
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:45+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:02d53e055a7495928d6fef1755327f3d58263c6dd1864fa7f414d72c9dcaab38
 ---
@@ -31,10 +31,10 @@ content_hash: sha256:02d53e055a7495928d6fef1755327f3d58263c6dd1864fa7f414d72c9dc
 
 1. 排查app包内的[module.json5](../harmonyos-guides/module-configuration-file.md)文件，看是否误填了未使用的权限。如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/zy5mQiDNQcyEuOxxNWDeWg/zh-cn_image_0000002628394608.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/zy5mQiDNQcyEuOxxNWDeWg/zh-cn_image_0000002628394608.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=3956B59DE512C71BF5BCE87D6992FD285348938A0DA53EA151E3DB309C2A4FDD "点击放大")
 2. 排查引用的三方库是否使用了此权限。比如在项目工程目录oh\_modules下，依次在引用三方库的module.json5文件中查看“requestPermissions”字段，以此排查应用申请权限属于哪个三方库。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/DpLrxBX-R5ewCWJNHe42Vw/zh-cn_image_0000002628554496.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/DpLrxBX-R5ewCWJNHe42Vw/zh-cn_image_0000002628554496.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=822BFEF6A8134F92B35E12D4CF0A5941E21226DABB8C46E5209E406806367F15 "点击放大")
 3. 验证权限是否与功能场景匹配，避免声明未使用的敏感权限（如通讯录、位置等）。
 4. 排查是否使用了已废弃权限，例如[ohos.permission.WRITE\_MEDIA](../harmonyos-guides/permissions-for-all-user.md#ohospermissionwrite_media)权限。需要根据文档说明使用替换方案。
 

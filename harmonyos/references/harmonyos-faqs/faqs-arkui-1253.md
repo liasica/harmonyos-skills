@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1253
 title: Text组件滚动虚化样式实现
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Text组件滚动虚化样式实现
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:e02645851a29124149d9c242e5583c112c62f29c64edb1d8b6168dc2c6a79e64
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:e02645851a29124149d9c242e5583c112c62f29c64edb1d8b6168dc2c6a
 
 预期效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/QJaHaDrjQd6SGMPBs8A6xg/zh-cn_image_0000002628595510.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/QJaHaDrjQd6SGMPBs8A6xg/zh-cn_image_0000002628595510.png?HW-CC-KV=V1&HW-CC-Date=20261112T233150Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E492E43A989311AA078A878D41FD8A2B51E234DE082ECC2554F2AD7A17CD218 "点击放大")
 
 ## 背景知识
 
@@ -30,7 +30,7 @@ content_hash: sha256:e02645851a29124149d9c242e5583c112c62f29c64edb1d8b6168dc2c6a
 
    为了使Text组件可拖动，可以使用Scroll组件嵌套Text组件。原理如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/H9eyNC_2Ti66PRwjsJ2qXQ/zh-cn_image_0000002628755404.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/H9eyNC_2Ti66PRwjsJ2qXQ/zh-cn_image_0000002628755404.png?HW-CC-KV=V1&HW-CC-Date=20261112T233150Z&HW-CC-Expire=31536000000&HW-CC-Sign=9729C0D9EF35B73FE82A5605B7CB1B6263C164A4C5D9EE9F97428FC8B11CDEF9 "点击放大")
 
    在Text组件中文本量较大的情况下，如果设置了宽度，Text组件会自动拉高，将所有文字展示出来。同时，背景知识板块中提到：**当子组件的布局尺寸超过父组件的尺寸时**，Scroll组件内容可以滚动，因此可以给Scroll组件设置固定高度，且该高度要小于Text组件高度。
 
@@ -68,11 +68,11 @@ content_hash: sha256:e02645851a29124149d9c242e5583c112c62f29c64edb1d8b6168dc2c6a
 
    实现效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/ctOt4LZfTrG3iJQW0eWHwQ/zh-cn_image_0000002658954727.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/ctOt4LZfTrG3iJQW0eWHwQ/zh-cn_image_0000002658954727.png?HW-CC-KV=V1&HW-CC-Date=20261112T233150Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE0133D88F8567ED1078C585D2FCF7228D49370DB5E034F4B1F07D29405F95C2 "点击放大")
 2. 滑动时添加边缘虚化样式：
    * **方案一**：Text组件没有直接设置边缘虚化的属性，因此该效果需要自定义实现。边缘虚化原理如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/130cfOeoQdKCIXp2I5ttJA/zh-cn_image_0000002658834767.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/130cfOeoQdKCIXp2I5ttJA/zh-cn_image_0000002658834767.png?HW-CC-KV=V1&HW-CC-Date=20261112T233150Z&HW-CC-Expire=31536000000&HW-CC-Sign=42FF0A8767770F46436C163CAF0268DAEEED5CC1C832B7D25DBA8495D3B49BAD "点击放大")
 
      在Scroll组件的上下两侧分别添加两个Row组件，并将它们设置成渐变白色（图示为了清晰，把渐变白变成了黑白渐变色）。
 
@@ -159,7 +159,7 @@ content_hash: sha256:e02645851a29124149d9c242e5583c112c62f29c64edb1d8b6168dc2c6a
 
      实现效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/DV_A5bU3STeQA80yOkpY9A/zh-cn_image_0000002628595512.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/DV_A5bU3STeQA80yOkpY9A/zh-cn_image_0000002628595512.png?HW-CC-KV=V1&HW-CC-Date=20261112T233150Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5F030208D9F4360BD12384496178C8A3075FE53162A779C71A9B1AB8645B59C "点击放大")
    * **方案二**：添加属性fadingEdge(true, { fadingEdgeLength: LengthMetrics.vp(20) })。
 
      完整示例参考如下：

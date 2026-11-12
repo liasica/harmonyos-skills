@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-universal-
 title: 如何解决DH公钥在服务端协商报参数不兼容的问题
 breadcrumb: FAQ > 系统开发 > 安全 > 密钥管理（Universal Keystore） > 如何解决DH公钥在服务端协商报参数不兼容的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:9dd4405b201f868c405dd67977859272fa817875a1cb204185df5a47a1e063ab
 ---
@@ -43,13 +43,13 @@ class TestDh {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/FKTsV8OzRue3HK1Jl2iiLw/zh-cn_image_0000002658849153.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/FKTsV8OzRue3HK1Jl2iiLw/zh-cn_image_0000002658849153.png?HW-CC-KV=V1&HW-CC-Date=20261112T233219Z&HW-CC-Expire=31536000000&HW-CC-Sign=57DBACF4B8E0DC9F251E9875032FF33C241FB5801F111A749CC30E913612904B "点击放大")
 
 ## 背景知识
 
 [DH密钥协商算法](../harmonyos-guides/crypto-key-agreement-overview.md#dh)流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/nW4w8z1_StqYrtA_CcTaHA/zh-cn_image_0000002628769786.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/nW4w8z1_StqYrtA_CcTaHA/zh-cn_image_0000002628769786.png?HW-CC-KV=V1&HW-CC-Date=20261112T233219Z&HW-CC-Expire=31536000000&HW-CC-Sign=53D86084425B4B4A8D885EC1822ED6B456157D6C55C27E3A52B1BBFA6003E0BA "点击放大")
 
 ## 定位思路
 
@@ -91,7 +91,7 @@ DH密钥交换算法，务必按照定位思路中的三个步骤，逐个检查
 
 协商成功的截图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/Tp5JBlfsQNK7LE9RYnmzjQ/zh-cn_image_0000002628609890.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/Tp5JBlfsQNK7LE9RYnmzjQ/zh-cn_image_0000002628609890.png?HW-CC-KV=V1&HW-CC-Date=20261112T233219Z&HW-CC-Expire=31536000000&HW-CC-Sign=0BA9D194DE4F919B071A8C553208C622E4AB841A34348E28F7F3464E10D23EAB)
 
 这里提供HarmonyOS密钥协商的正确代码实现：
 

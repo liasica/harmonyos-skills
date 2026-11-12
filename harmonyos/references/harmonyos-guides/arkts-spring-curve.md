@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-spring-
 title: 弹簧曲线
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 动画曲线 > 弹簧曲线
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:949dd83e2e73c0d5fc0de6108e38e1a7355781a18118bcde01552ec2248a1038
 ---
@@ -141,4 +141,4 @@ export struct SpringCurve {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/QqeBnCULTW-d2TR5sMDTfg/zh-cn_image_0000002786519100.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/QqeBnCULTW-d2TR5sMDTfg/zh-cn_image_0000002786519100.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=18B99205555D4C677BABA8B06FEEFC2124282CEF94CDDA179C3595D42ACFB3E1)

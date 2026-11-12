@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1095
 title: HarmonyOS下HdsNavigation与HdsTabs实现滚动模糊及沉浸光感材质效果的解决方案
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > HarmonyOS下HdsNavigation与HdsTabs实现滚动模糊及沉浸光感材质效果的解决方案
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-09
 content_hash: sha256:619c4b4c260905d8c93c2cb44df4db067b4fbdd934e42c29a51810da54973d8b
 ---
@@ -83,7 +83,7 @@ struct Index {
 
 问题效果图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/VrvkIVUpRWeGkxevNuCS6g/zh-cn_image_0000002633438810.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/VrvkIVUpRWeGkxevNuCS6g/zh-cn_image_0000002633438810.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=F068D1B53FBF417C766884145021DDA8070962F024849CE3A865DA727783F599 "点击放大")
 
 场景三：如何为HdsNavigation的标题栏与HdsTabs的底部悬浮页签设置沉浸式光感材质效果（如颜色反射）？
 
@@ -197,7 +197,7 @@ struct Index {
 
   效果图如下所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/KoLq6pXQTqGknQOmurHdLQ/zh-cn_image_0000002633598796.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/KoLq6pXQTqGknQOmurHdLQ/zh-cn_image_0000002633598796.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9EF773D1741A4278BE819F562ADA2B1514636BABF9F4F200F973EFE5F1D32C7 "点击放大")
 * **场景二：实现HdsNavigation嵌套HdsTabs滚动模糊效果正常显示。**
   1. 每个Tab单独创建独立的Scroller，互不共用，避免彼此干扰。
   2. bindToScrollable仅动态绑定当前Tab的Scroller。
@@ -312,7 +312,7 @@ struct Index {
 
   效果图如下所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/8DHYAdQ6ROuCmIXW2olHUg/zh-cn_image_0000002633438926.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/8DHYAdQ6ROuCmIXW2olHUg/zh-cn_image_0000002633438926.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=BAFF7BCCD5147895CDE4DE5CAF37C47D8E50A769CFB0881714AD2A203976113A "点击放大")
 * **场景三：为HdsNavigation的标题栏与HdsTabs的底部悬浮页签设置沉浸式材质效果。**
 
   1.在aboutToAppear生命周期中，调用hdsMaterial.getSystemMaterialTypes()获取当前设备支持的材质类型。若设备不支持hdsMaterial.MaterialType.IMMERSIVE沉浸式材质，则降级使用hdsMaterial.MaterialLevel.SMOOTH效果以优化性能。

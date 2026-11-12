@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1650
 title: Stack组件中子组件超出边界显示问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Stack组件中子组件超出边界显示问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:26+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:393f2338e58f738d96e6370624913d8cefde0e456f32afbc44f83a2b6cb1921a
 ---
@@ -40,7 +40,7 @@ content_hash: sha256:393f2338e58f738d96e6370624913d8cefde0e456f32afbc44f83a2b6cb
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/IPLG_2vzQFe6ozMYFJe8cQ/zh-cn_image_0000002659060259.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/IPLG_2vzQFe6ozMYFJe8cQ/zh-cn_image_0000002659060259.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=65408D69421CE295880F8E978A68AC9E55AF9C56D295F3661073F303DD182B44 "点击放大")
 * 场景二：如何实现图片超出容器右上角展示效果？
 
 ## 背景知识
@@ -87,7 +87,7 @@ content_hash: sha256:393f2338e58f738d96e6370624913d8cefde0e456f32afbc44f83a2b6cb
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/jsjKiFYlQ-WlS08Bz7qNig/zh-cn_image_0000002628820886.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/jsjKiFYlQ-WlS08Bz7qNig/zh-cn_image_0000002628820886.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D618216B47CA49DD1C37C5509382CF4323A5051BEFBF9E71042C213D4849CE2 "点击放大")
 * 场景二：
 
   使用Stack容器的默认层叠布局模式结合子组件position属性实现图片超出父组件右上角堆叠效果。示例代码如下：
@@ -132,4 +132,4 @@ content_hash: sha256:393f2338e58f738d96e6370624913d8cefde0e456f32afbc44f83a2b6cb
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/xCtsDmauR4iU4AWUQLAC9Q/zh-cn_image_0000002659020191.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/xCtsDmauR4iU4AWUQLAC9Q/zh-cn_image_0000002659020191.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=9507E3948B4A92C66DCC5A84875B42B325E47CB897F07D97F478FB3FA2C7C597 "点击放大")

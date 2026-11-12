@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: "构建过程中控制台报错：“构建过程中控制台报错：EPERM: operation not permitted, symlink 'xxxxxxxx' -> 'xxxxxxx'......”"
 breadcrumb: "FAQ > DevEco Studio > 编译构建 > 构建过程中控制台报错：“构建过程中控制台报错：EPERM: operation not permitted, symlink 'xxxxxxxx' -> 'xxxxxxx'......”"
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:d6ca68cd78f24b8314befee1100ee4ad6bd2ebc13be73f861191827bf8f6164f
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:d6ca68cd78f24b8314befee1100ee4ad6bd2ebc13be73f861191827bf8f
 
 在windows系统使用DevEco Studio在编译构建工程或module时，编译构建报错，控制台显示错误信息：EPERM: operation not permitted, symlink 'xxxxxxxx' -> 'xxxxxxx'......，如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/ibQ6-cJ1Qbub1JippyTJ8g/zh-cn_image_0000002654838017.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/ibQ6-cJ1Qbub1JippyTJ8g/zh-cn_image_0000002654838017.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=D292C98538D8B17482CB62D645E2B6A66673B4C048370119D2C16D2A7EC1EA82)
 
 **可能原因**
 

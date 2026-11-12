@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1093
 title: 如何实现全局loading控件
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现全局loading控件
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:8a4b308c8a6664d84ad608e63f6acffcde17d88a29de670d1e1de3083eaebfcf
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:8a4b308c8a6664d84ad608e63f6acffcde17d88a29de670d1e1de3083ea
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/ku3zaMewRDiOw8VhhmzBaw/zh-cn_image_0000002628407366.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/ku3zaMewRDiOw8VhhmzBaw/zh-cn_image_0000002628407366.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=3FA1A2A5FC7AFE88FADB0E00C242B53CEE865BC56D1FDF8386301A04927DDD76 "点击放大")
 
 ## 背景知识
 

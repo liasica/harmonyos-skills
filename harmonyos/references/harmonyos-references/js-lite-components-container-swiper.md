@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: swiper
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 容器组件 > swiper
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:36+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:58b20e87d55c1ce1e16425680e2de7db5c8e5820b6a16b8dd21838a6e25d30f5
 ---
@@ -121,4 +121,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/bosPnaxfTEC4V8MseYOahA/zh-cn_image_0000002786361966.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/bosPnaxfTEC4V8MseYOahA/zh-cn_image_0000002786361966.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=638D10524EA8B53624EE5E19AE48652B740EA5D4029198E85BE2EED81C17E347)

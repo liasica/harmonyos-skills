@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-63
 title: 预览帧处理时如何选择format
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera） > 预览帧处理时如何选择format
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:26+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:6c8ebefc239a35165675c46b0ced8451fe2f770278e51a4279f7378ed49100b5
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:6c8ebefc239a35165675c46b0ced8451fe2f770278e51a4279f7378ed49
 
 * **画面色彩混乱、画面错位。** 画面出现大面积偏色或者局部色彩错误，甚至出现色块杂乱等情况，如下图所示（图一为正常图案，图二三为异常现象）：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/7iGv7mbPSFG3oWE2LwzDrA/zh-cn_image_0000002658911805.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/_euKy_ZWQyiGUqP3FydMjQ/zh-cn_image_0000002628392596.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/JSQa0REkQrWWgJpWZn3Yhg/zh-cn_image_0000002658791863.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/7iGv7mbPSFG3oWE2LwzDrA/zh-cn_image_0000002658911805.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=1CD6FDBE0625F0FF887CA17EC5C70AA99CA7CA51AF17201D54816048839DC927 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/_euKy_ZWQyiGUqP3FydMjQ/zh-cn_image_0000002628392596.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E7999F22B5774A767F1ED938F8C8D4205F66A5283819674A222FF2CF5FE6B1D "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/JSQa0REkQrWWgJpWZn3Yhg/zh-cn_image_0000002658791863.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=251AF073E30ED5766C21269B8B54BC66BB47DD44872A90FC0369BE9E4A352CF7 "点击放大")
 * **预览界面直接闪退。** 相机预览界面打开后快速闪退，并伴有如下crash日志：
 
   ```txt

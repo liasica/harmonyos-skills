@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1098
 title: Navigation基础传参和接收示例
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Navigation基础传参和接收示例
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:e12d746fe3395afccb2562e5897c1f0b9d826c9f5e23fced51b7076b10fbfdfd
 ---
@@ -353,7 +353,7 @@ struct PageC {
 
 效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/pjcHxkHER4KzyiyKo1qi2A/zh-cn_image_0000002658806699.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/pjcHxkHER4KzyiyKo1qi2A/zh-cn_image_0000002658806699.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=C12CAF31AF2922BDA100047A2A576C6510E500B0C91AC208D50D9208A2005F28 "点击放大")
 
 场景四完整示例参考如下：
 
@@ -472,7 +472,7 @@ struct ReceivePageB {
 
 效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/AlYwKvNnQwOWaEBpegTLLA/zh-cn_image_0000002628407446.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/AlYwKvNnQwOWaEBpegTLLA/zh-cn_image_0000002628407446.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=2276305E5E19F721759CE6CDA89344D837B8D44C6DAC4E4DF5C8A0703953BC87 "点击放大")
 
 ## 常见FAQ
 

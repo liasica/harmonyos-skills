@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/complex-drawi
 title: 复杂绘制效果（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 绘制效果 > 复杂绘制效果（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:fc0b09d0221d55700adad86793c7d3a4d05bff52696ca8dddb49e2bd8960dd83
 ---
@@ -53,7 +53,7 @@ function drawRenderNode(canvas: drawing.Canvas) {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/16XLe3BjRC2pnEeYspT0Wg/zh-cn_image_0000002815399513.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/16XLe3BjRC2pnEeYspT0Wg/zh-cn_image_0000002815399513.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE52CF7FD6E0A279F69B16B62487418D62ECC6DF3B7739FDD37B3A93036676E3)
 
 ## 路径效果
 
@@ -144,7 +144,7 @@ canvas.drawRect(rect);
 canvas.detachBrush();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/0E6K28BbQDa-HOmHV7VQpQ/zh-cn_image_0000002815559431.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/0E6K28BbQDa-HOmHV7VQpQ/zh-cn_image_0000002815559431.png?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B16AB85433E69FBCC3CF787B9D8F777D262650F31B2EF7F1CBCCA16B69D50D5)
 
 ### 径向渐变着色器效果
 
@@ -177,7 +177,7 @@ canvas.drawRect(rect);
 canvas.detachBrush();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/8UnIZcVgQZiMhGXdSFB1Ig/zh-cn_image_0000002815399515.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/8UnIZcVgQZiMhGXdSFB1Ig/zh-cn_image_0000002815399515.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=6EA128F58A736DFA5D67AC51E2287F691EC48161A7BF8E5A8BDDFABCB6E1D461)
 
 ### 扇形渐变着色器效果
 
@@ -210,7 +210,7 @@ canvas.drawRect(rect);
 canvas.detachBrush();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/EYHFmjIsTAipLOmj-X1m9A/zh-cn_image_0000002786519940.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/EYHFmjIsTAipLOmj-X1m9A/zh-cn_image_0000002786519940.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233229Z&HW-CC-Expire=31536000000&HW-CC-Sign=432667F574F4F79DF9F11BF73EF2823EA90158ED58878557E03254B5D16BB54B)
 
 ## 滤波器效果
 

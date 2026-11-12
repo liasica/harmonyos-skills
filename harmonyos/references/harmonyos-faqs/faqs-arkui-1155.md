@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1155
 title: 通过监听List滑动位置实现唤起组件的功能
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 通过监听List滑动位置实现唤起组件的功能
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:a417002a01e2b8b8b81e65a6978cb049a537895889b704023cfec33987e509a5
 ---
@@ -134,7 +134,7 @@ content_hash: sha256:a417002a01e2b8b8b81e65a6978cb049a537895889b704023cfec33987e
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/z05RWnwQSH2__4bEEjAv6g/zh-cn_image_0000002661497527.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/z05RWnwQSH2__4bEEjAv6g/zh-cn_image_0000002661497527.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EA57111D89DECD7C9328AF5A297684C61C79F641562ABAA161D20BE37323FEB "点击放大")
 * 场景二：偏移量监听实现上滑唤醒按钮下滑隐藏按钮：
 
   ```ts
@@ -204,7 +204,7 @@ content_hash: sha256:a417002a01e2b8b8b81e65a6978cb049a537895889b704023cfec33987e
 
   手指向上滑动同时内容向上，为上滑；手指向下滑动同时内容向下，为下滑。实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/sPkQwJxoTBGaFOTJdLWDdA/zh-cn_image_0000002631307298.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/sPkQwJxoTBGaFOTJdLWDdA/zh-cn_image_0000002631307298.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9BD447BE1000F98420D55A6D61AE42B5E2BB58660879D0F31E1B88122F7F224 "点击放大")
 
 ## 常见FAQ
 

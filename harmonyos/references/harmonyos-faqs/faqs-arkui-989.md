@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-989
 title: Canvas如何实现惯性滑动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Canvas如何实现惯性滑动
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:15+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:9a76fc88316dabc28cd790f18a2e14dfb4414a04506ec50fceda5b0e0830aea9
 ---
@@ -14,7 +14,7 @@ Canvas绘制一个数字列表，需要添加滑动手势才能实现滑动，�
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/AKzqPAiBRaSo12IN7zVIgg/zh-cn_image_0000002628401810.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/AKzqPAiBRaSo12IN7zVIgg/zh-cn_image_0000002628401810.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=79BF1335D17C1576738BC957E02FF251F44BC79929251374F6AB96E0AB46533F "点击放大")
 
 ## 背景知识
 

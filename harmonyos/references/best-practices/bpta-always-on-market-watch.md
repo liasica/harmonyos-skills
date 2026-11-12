@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-always-on-
 title: 全链路盯盘开发实践
 breadcrumb: 最佳实践 > 场景创新 > 生产力 > 金融 > 全链路盯盘开发实践
 category: best-practices
-scraped_at: 2026-11-10T10:42:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:04318c1e4fb72ee47ce211705e192390ecd1bf79ef8e5d6ef3f4e4ef8757c999
 ---
@@ -19,7 +19,7 @@ content_hash: sha256:04318c1e4fb72ee47ce211705e192390ecd1bf79ef8e5d6ef3f4e4ef875
 
 全链路盯盘涉及多项系统能力的综合运用，各能力之间的协作关系如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/PtcUHBsNRjmzGrVoML8j0Q/zh-cn_image_0000002748611785.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/PtcUHBsNRjmzGrVoML8j0Q/zh-cn_image_0000002748611785.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6B0B80C640212609271119F9715CE486585D30010EDC168C02E21D65F7DA426 "点击放大")
 
 本文主要内容如下：
 
@@ -49,7 +49,7 @@ content_hash: sha256:04318c1e4fb72ee47ce211705e192390ecd1bf79ef8e5d6ef3f4e4ef875
 
 **闪控球**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/qw-9jQC7RWypLmOZDsjFyA/zh-cn_image_0000002718931886.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/qw-9jQC7RWypLmOZDsjFyA/zh-cn_image_0000002718931886.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B8172613686E5A4E5BE7E9DEAFBFB4E4ACC6BCD8B5E691FB458C1F028A8BB04 "点击放大")
 
 |  |  |  |
 | --- | --- | --- |
@@ -79,7 +79,7 @@ content_hash: sha256:04318c1e4fb72ee47ce211705e192390ecd1bf79ef8e5d6ef3f4e4ef875
 
 桌面盯盘的初始化流程如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/I2inItwURf2fWvF5AIGq7A/zh-cn_image_0000002748611789.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/I2inItwURf2fWvF5AIGq7A/zh-cn_image_0000002748611789.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA7E393525AC021190959904E99D7B180656F0DA1B981B44610E01BD082FB706 "点击放大")
 
 ### 开发步骤
 
@@ -350,7 +350,7 @@ async startFloatPanel() {
 
 **防窥保护**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/HdLmcH-XRPeXCWZhK7jPpw/zh-cn_image_0000002718931890.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/HdLmcH-XRPeXCWZhK7jPpw/zh-cn_image_0000002718931890.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=43A3A2504E735A29EC586903F66429AD73E040FE930FC5625AF83FC74814FD80 "点击放大")
 
 ### 实现原理
 
@@ -368,7 +368,7 @@ async startFloatPanel() {
 
 防窥保护的监听流程如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/9fQbmezCS42pv_smV20fmw/zh-cn_image_0000002719091808.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/9fQbmezCS42pv_smV20fmw/zh-cn_image_0000002719091808.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=E27FF8318210AACEABA50E5EFB998AE9191E2367CDDF12076568A81F6AF03536 "点击放大")
 
 ### 开发步骤
 
@@ -508,7 +508,7 @@ private async handleAntiPeepStatus(status: dlpAntiPeep.DlpAntiPeepStatus) {
 
 **锁屏卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/Ko9IdwyFSlilRNqnJePLWA/zh-cn_image_0000002748531717.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/Ko9IdwyFSlilRNqnJePLWA/zh-cn_image_0000002748531717.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=80B3D36A852172EAE530192240C9EDE18AB990748C7EE4A3EDD6422EE590C267 "点击放大")
 
 ### 实现原理
 
@@ -623,7 +623,7 @@ struct LockScreenCard {
 
 当设备插入充电器或开启“不充电可显示”开关，设备横屏锁屏并与桌面夹角45°至90°稳定摆放（折叠机需切换为外屏；同时折叠机支持帐篷模式显示），即可进入待机屏保界面。用户可在待机屏保编辑界面添加全链路盯盘卡片，在充电待机状态下持续查看股票行情。待机屏保盯盘功能效果如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/WuqJbCTmTAGLzOUTE1EE6w/zh-cn_image_0000002748611791.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/WuqJbCTmTAGLzOUTE1EE6w/zh-cn_image_0000002748611791.png?HW-CC-KV=V1&HW-CC-Date=20261112T233136Z&HW-CC-Expire=31536000000&HW-CC-Sign=97D3E86345C4FC799D3940F5AAB0E1209CC47CA39E273B8A9D639639A5DDFB00 "点击放大")
 
 ### 实现原理
 

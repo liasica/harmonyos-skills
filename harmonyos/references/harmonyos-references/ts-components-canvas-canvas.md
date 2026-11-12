@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: Canvas
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > Canvas
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:1ef70089609e3e84fb58576fed4d2411707a109eaa8e92db126f188fd2492cb9
 ---
@@ -206,7 +206,7 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/EdtDCFEPTsKe0glb5TeVVA/zh-cn_image_0000002786521400.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/EdtDCFEPTsKe0glb5TeVVA/zh-cn_image_0000002786521400.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=84123323CA06938385907F3EEF96AEB53C42BDF8E29727F75F4DF496D9414023)
 
 ### 示例2（使用DrawingRenderingContext中的方法）
 
@@ -236,7 +236,7 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/gJAlfGHeRFSAoVSVjNoNvA/zh-cn_image_0000002786361472.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/gJAlfGHeRFSAoVSVjNoNvA/zh-cn_image_0000002786361472.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=4170FCC4BF59DE7B5F248B379EB9799F6DF64D8CD3E2A2E0EB6BFC27A98E8467)
 
 ### 示例3（使用attributeModifier动态设置Canvas组件的属性及方法）
 
@@ -324,7 +324,7 @@ struct attributeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/q_5f8IJcTSmWyEP-vBWPng/zh-cn_image_0000002815560893.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/q_5f8IJcTSmWyEP-vBWPng/zh-cn_image_0000002815560893.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F21C999ACB5290FD745BECE3A25A64B8BF19A0E23741FF894BF3B381E979B4A)
 
 ### 示例4（创建不缓存指令Canvas并进行绘制）
 
@@ -372,4 +372,4 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/DO5LiQwETjKVNZYN6ekdgw/zh-cn_image_0000002815400977.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/DO5LiQwETjKVNZYN6ekdgw/zh-cn_image_0000002815400977.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=32C09462756F11C9987288D846D306790234CC2D24ABB645C66E6C70B25D94D8)

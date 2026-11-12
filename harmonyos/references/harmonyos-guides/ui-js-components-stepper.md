@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: stepper开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 容器组件 > stepper开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:18+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:86bb1218227624af4914be3b98679c3f2383e1a5d447617668da332946d224bd
 ---
@@ -45,7 +45,7 @@ text{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/BNLK8O7TTyyysEFslXsmvA/zh-cn_image_0000002786519226.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/BNLK8O7TTyyysEFslXsmvA/zh-cn_image_0000002786519226.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB42AF3EAF42DA61F23565C2E9E0F46529244F72A930805D3E4F8D8E07521419)
 
 ## 设置index和label属性
 
@@ -83,7 +83,7 @@ text{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/me5tSEkWRXKn9qJx0rGD5g/zh-cn_image_0000002786359298.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/me5tSEkWRXKn9qJx0rGD5g/zh-cn_image_0000002786359298.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE83AB77B696E1B0DFE20AE1656C338155D9E47F5BE7F2765DA60E8B1B6846FC)
 
 通过设置label属性，自定义stepper-item的提示按钮。
 
@@ -144,7 +144,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/Spqh7WBnSe2sANmbgM5pDQ/zh-cn_image_0000002815558719.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/Spqh7WBnSe2sANmbgM5pDQ/zh-cn_image_0000002815558719.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=0CADC23DF7869352DB4EB80447AF2321151A2DBE48D801BC070E35EE1CADAF26)
 
 ## 设置样式
 
@@ -188,7 +188,7 @@ text{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/Yqp5uGWzRpajvVci-cO2LQ/zh-cn_image_0000002815398803.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/Yqp5uGWzRpajvVci-cO2LQ/zh-cn_image_0000002815398803.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=953172B227BC85F064F031DDC22B1FEF44AC9A6214D0A77CE9A84E0227E68FF9)
 
 ## 添加事件
 
@@ -288,4 +288,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/lv1Mv0siRGqvdOEOdzEvSw/zh-cn_image_0000002786519228.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/lv1Mv0siRGqvdOEOdzEvSw/zh-cn_image_0000002786519228.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=D08229C88CC4C8935932DAFA064497C2686A1E65C672F2FC73E368DBC65CCA80)

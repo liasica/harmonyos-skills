@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-638
 title: 实现游戏摇杆控制角色移动的动画效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 实现游戏摇杆控制角色移动的动画效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:43+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:27f87edecfcb7f46b01418d66f57ee8d47b1f10e2f0fd43622b6bea388340ec0
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:27f87edecfcb7f46b01418d66f57ee8d47b1f10e2f0fd43622b6bea3883
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/GImaqc95S5SigojzE6DaUA/zh-cn_image_0000002658793777.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/GImaqc95S5SigojzE6DaUA/zh-cn_image_0000002658793777.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233158Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF26D6148D098AC8026CF9FBDCFCCFACB71517CFC2A8C0C3B08B4D2F42A3FC5C "点击放大")
 
 ## 背景知识
 

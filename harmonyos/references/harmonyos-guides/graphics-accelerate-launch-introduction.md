@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 业务概述
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏启动加速服务 > 秒级启动 > 业务概述
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-04-20
 content_hash: sha256:d737fd1881732d5b61b13270d282d8c9013f60c2ca559ef6f77ae2d2cf88d807
 ---
@@ -26,10 +26,10 @@ content_hash: sha256:d737fd1881732d5b61b13270d282d8c9013f60c2ca559ef6f77ae2d2cf8
 
 * 加载内存镜像
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/bvLxLr4cSRe8ToRN6nAT6w/zh-cn_image_0000002815559533.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/bvLxLr4cSRe8ToRN6nAT6w/zh-cn_image_0000002815559533.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=58E5EC0DE056AA9B5E4D57039754DD688FD4DAE4FF1BF41221E159E069DD61DE)
 * 未加载内存镜像
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/pl03l-TETSeUHoFPkGaNVA/zh-cn_image_0000002815399617.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/pl03l-TETSeUHoFPkGaNVA/zh-cn_image_0000002815399617.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=39B13DB407A39178CBC5DAB24F9B34C7652F609E53235A050A86C9F8B6AF40AF)
 
 ## 快速上手体验
 

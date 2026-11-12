@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-commemory
 title: UI组件内存：ComMemory分析
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > UI组件内存：ComMemory分析
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-08
 content_hash: sha256:ed68059c85d079a37b57bd17aedf92d70208a10f728af101f00dd613e5016c16
 ---
@@ -23,16 +23,16 @@ ComMemory模板支持的泳道包括：Memory、ArkUI Snapshot、ArkTS Snapshot�
 
 ## 查看组件树和组件信息
 
-1. 开始录制后观察**Memory**泳道的内存使用情况，在需要定位的时刻单击任务左上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/5eOgr-vsTlC6t-2RE_BrVQ/zh-cn_image_0000002808766181.png "点击放大")启动一次快照，一次快照完成后会在**ArkUI Snapshot**泳道出现紫色区块。
+1. 开始录制后观察**Memory**泳道的内存使用情况，在需要定位的时刻单击任务左上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/5eOgr-vsTlC6t-2RE_BrVQ/zh-cn_image_0000002808766181.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6C4C28FFD0EE4144D155CD9EB85B5FD8C6E8FE52BC163BF43F946E00BFF16FB "点击放大")启动一次快照，一次快照完成后会在**ArkUI Snapshot**泳道出现紫色区块。
 
    **Details**区域显示当前快照的详细信息，点击**Open**，将在[ArkUI Inspector](ide-arkui-inspector.md)中打开相应的.arkli文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/hkCVahnhR9qDCj2h6SQiSw/zh-cn_image_0000002808766175.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/hkCVahnhR9qDCj2h6SQiSw/zh-cn_image_0000002808766175.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=62439EBF9BB2455A9929F9EAE6C8DB3089EB8B4FE50033E2DA0B1C33C93293E5 "点击放大")
 2. 在ArkUI Inspector中查看组件树。26.0.0版本新增Show Free-Node Components。
 
-   默认勾选**Show Component Size**和**Show Free-Node Components**，Show Component Size显示各组件的内存占用情况，Show Free-Node Components显示游离组件（未在组件树上的组件）。点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/TdDawAFhTQ-IXw8ucQ3I_Q/zh-cn_image_0000002779406606.png "点击放大")，勾选**Show Recursive Size**，显示各组件为根的子树的内存占用情况。
+   默认勾选**Show Component Size**和**Show Free-Node Components**，Show Component Size显示各组件的内存占用情况，Show Free-Node Components显示游离组件（未在组件树上的组件）。点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/TdDawAFhTQ-IXw8ucQ3I_Q/zh-cn_image_0000002779406606.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D29228EA586F0CB46ADEACC22FDC8176AC90063B0DBBC8D4670C22B0A65E3EC "点击放大")，勾选**Show Recursive Size**，显示各组件为根的子树的内存占用情况。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/UEWvmVYMR8-_f9N_B6TuFg/zh-cn_image_0000002779566590.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/UEWvmVYMR8-_f9N_B6TuFg/zh-cn_image_0000002779566590.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=43847A0D70D7647B45DAFB7732C1DD566E56874057F0C9B64657C887E1E3B02D)
 3. 在ArkUI Inspector中查看组件的信息。
    * 在ArkUI Inspector的**Memory** >**Statistics**中，查看组件的内存统计信息。
      + Current：当前组件ArkTS内存和Native内存的占用情况。
@@ -43,34 +43,34 @@ ComMemory模板支持的泳道包括：Memory、ArkUI Snapshot、ArkTS Snapshot�
      + arktsCount：当前组件的ArkTS堆快照对象个数。
      + recursive：递归统计信息。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/ENHQfU_iTPiMsQIEwPbu8Q/zh-cn_image_0000002779406610.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/ENHQfU_iTPiMsQIEwPbu8Q/zh-cn_image_0000002779406610.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=92D08B914D538A7DDCB6E3B534879DCFFF64EEA6DB362E8CDFEC27E26B96E1F6 "点击放大")
    * 在ArkUI Inspector的**Memory** > **Details**中，点击Details中任一项后，打开DevEco Profiler查看显示组件的详情。
      + ShowAllocationDetail：显示当前组件的Allocation详情。
      + ShowSnapshotDetail：显示当前组件的Snapshot详情，系统组件不显示该项。
      + ShowRecursiveAllocationDetail：显示当前组件及其子组件的Allocation详情。
      + ShowRecursiveSnapshotDetail：显示当前组件及其子组件的Snapshot详情。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/pYYG4QruQLy1BdeRlPsvqw/zh-cn_image_0000002808886259.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/pYYG4QruQLy1BdeRlPsvqw/zh-cn_image_0000002808886259.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=C6876FD5F5738D868125F2030A7FEFEF406741845FDC805C4EA3EC82AAF4D59B "点击放大")
    * 在ArkUI Inspector的**Memory** > **State****s**中，查看UI组件的状态变量内存。
 
      memory字段表示该状态变量在对应组件的ArkTS堆快照中的Retained Size，更多请参考[查看UI组件的状态变量](ide-arkui-inspector.md#section19923158103412)。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/36i3668NSSOy56HOM76dqw/zh-cn_image_0000002779406614.png)
-4. 在中间栏点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/oaGhrv3eQhalIa4k5Si1Uw/zh-cn_image_0000002779566586.png)可以将包含内存信息的组件树快照导出到本地。
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/36i3668NSSOy56HOM76dqw/zh-cn_image_0000002779406614.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=60EF6356C33C835CB312CEE764E2D57F8100C786ABFCCE8C15B5FBB7F00EA5F6)
+4. 在中间栏点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/oaGhrv3eQhalIa4k5Si1Uw/zh-cn_image_0000002779566586.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=B44413CE9BCF2C6E9CFB29BCD9BC9ADF84F3FAAB9DA3887D64AED735814A250A)可以将包含内存信息的组件树快照导出到本地。
 
 ## .arkli文件对比
 
 从26.0.0版本开始，支持对比.arkli文件，通过对比快速定位异常增多的组件。
 
-1. 开始录制后观察**Memory**泳道的内存使用情况，在需要定位的时刻单击任务左上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/bLV0M5aVR4-ONIAA5Ef1FA/zh-cn_image_0000002779406620.png "点击放大")启动一次快照，一次快照完成后会在**ArkUI Snapshot**泳道出现紫色区块。
+1. 开始录制后观察**Memory**泳道的内存使用情况，在需要定位的时刻单击任务左上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/bLV0M5aVR4-ONIAA5Ef1FA/zh-cn_image_0000002779406620.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3A4B239E7839F6569FD34252A4EFDF93D7299C17F6FF4AE623E6525B26561A0 "点击放大")启动一次快照，一次快照完成后会在**ArkUI Snapshot**泳道出现紫色区块。
 
    **Details**区域显示当前快照的详细信息，点击**Open**，将在[ArkUI Inspector](ide-arkui-inspector.md)中打开相应的.arkli文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/hAL9HK_OS7uozJrNY6CUSA/zh-cn_image_0000002808886243.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/hAL9HK_OS7uozJrNY6CUSA/zh-cn_image_0000002808886243.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=422573CA636657C402A72BAAFAF5A6911E77EB10735630A28B0EBE8684F6FAB4 "点击放大")
 2. 当前打开的.arkli文件作为base文件，在Component Tree下拉框选择的.arkli文件作为Target文件，查看两个.arkli文件的比较结果，从比较结果可查看：新增组件（绿色，如Column）、删除组件（红色，如NavBar）、游离组件（灰色，如JsView），及其子组件新增（绿色，如+1576）和删除个数（红色，如-8）。点击异常增多的组件，在右侧属性面板展示组件所在代码文件，点击可跳转至具体代码。
 
    **说明** 
 
    Target文件需要先点击**Open**按钮在ArkUI Inspector中打开，否则在下拉框中选不到。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/JoCiR-qWQGqW5grYLSTIUA/zh-cn_image_0000002779566594.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/JoCiR-qWQGqW5grYLSTIUA/zh-cn_image_0000002779566594.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D438F85561B8A4957B84395ECC0575EB6BD03B8F75C2D0E845FB4783C8A8CDA)

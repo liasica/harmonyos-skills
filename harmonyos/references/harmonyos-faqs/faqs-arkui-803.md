@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-803
 title: 在折叠屏展开态下，页面内容重叠
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 在折叠屏展开态下，页面内容重叠
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:33+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:705ed039be2e9e112cf31c8f97799a8658f7354b4620f1be7d7faf61b5214895
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:705ed039be2e9e112cf31c8f97799a8658f7354b4620f1be7d7faf61b52
 
 在折叠屏展开态下，页面部分内容出现了重叠。效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/03SVLvhkQpGZTCRkS-YvwQ/zh-cn_image_0000002658917107.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/03SVLvhkQpGZTCRkS-YvwQ/zh-cn_image_0000002658917107.png?HW-CC-KV=V1&HW-CC-Date=20261112T233202Z&HW-CC-Expire=31536000000&HW-CC-Sign=62962260D02C11AB2C22CFD3655CBD4B8B63ABE14B772FEB37293D6FDECD8DF4 "点击放大")
 
 ## 背景知识
 
@@ -22,7 +22,7 @@ content_hash: sha256:705ed039be2e9e112cf31c8f97799a8658f7354b4620f1be7d7faf61b52
 
 使用[DevEco Testing](https://developer.huawei.com/consumer/cn/download/deveco-testing)查看页面布局，发现子组件的高度大于父组件的高度，溢出了父组件的范围。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/tZwb1anFROGL0uUwzSX6Yw/zh-cn_image_0000002628397886.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/tZwb1anFROGL0uUwzSX6Yw/zh-cn_image_0000002628397886.png?HW-CC-KV=V1&HW-CC-Date=20261112T233202Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC5D89E30DFD0D81532838DD11B9AEE3129F7ED9C27998829D51707B17EA22EC "点击放大")
 
 ## 分析结论
 
@@ -96,4 +96,4 @@ struct HeightAutoPage {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/B0PwJm4IRRuHOSkCOrWAZA/zh-cn_image_0000002658797155.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/B0PwJm4IRRuHOSkCOrWAZA/zh-cn_image_0000002658797155.png?HW-CC-KV=V1&HW-CC-Date=20261112T233202Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8E76A5551EDB9CAE90D83D581464486F01033EA223731CE8E1610F412C7E33A "点击放大")

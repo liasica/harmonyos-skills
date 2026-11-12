@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1296
 title: 如何实现文字压在底部下划线上的布局
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现文字压在底部下划线上的布局
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:45+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:5ec207cbe1dd542be31d458d940cc567a31be723fd02da6e7ad31adcf742eeab
 ---
@@ -14,11 +14,11 @@ content_hash: sha256:5ec207cbe1dd542be31d458d940cc567a31be723fd02da6e7ad31adcf74
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/WnX6VxonSY6FF_nG0bD_HQ/zh-cn_image_0000002628757882.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/WnX6VxonSY6FF_nG0bD_HQ/zh-cn_image_0000002628757882.png?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=93595878919EC42B26EE84E064A6075EEBA9BAD8542C86C744426C643598DF5B "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/1TJhjbHiTdy8eXCAw9RMxQ/zh-cn_image_0000002658957199.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/1TJhjbHiTdy8eXCAw9RMxQ/zh-cn_image_0000002658957199.png?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=9558E633C692163A97ED2F8DB4EECAC6E6D9C9DAC9C1350CB430514E88CAC814 "点击放大")
 
 ## 背景知识
 

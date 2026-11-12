@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-setfra
 title: 动态调整预览帧率(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 动态调整预览帧率(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-05-26
 content_hash: sha256:d44e897679ac2a2539c064773e7b762d077cccff8c2c0f6effabd94d4e330361
 ---
@@ -22,7 +22,7 @@ content_hash: sha256:d44e897679ac2a2539c064773e7b762d077cccff8c2c0f6effabd94d4e3
 
 流程图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/h2uM8akRTFuYasB5o6QQbA/zh-cn_image_0000002815399435.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/h2uM8akRTFuYasB5o6QQbA/zh-cn_image_0000002815399435.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F1378861523A39F2250E646F8ACA17E1EB3AD857681ADEBC58995995B2BEBFD)
 
 与普通的[预览](native-camera-preview.md)流程相比，动态调整预览帧率的注意点如图上标识：
 

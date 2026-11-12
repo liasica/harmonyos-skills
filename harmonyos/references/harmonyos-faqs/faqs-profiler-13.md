@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-profiler-1
 title: 在macOS上使用Profiler录制数据时，必现trace相关泳道显示“No Data”
 breadcrumb: FAQ > DevEco Studio > 性能分析 > 在macOS上使用Profiler录制数据时，必现trace相关泳道显示“No Data”
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:a642ee244e37016845dc9e0368a0412e6b2ce7c9a5bbe0bc89f545d3848f4784
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:a642ee244e37016845dc9e0368a0412e6b2ce7c9a5bbe0bc89f545d3848
 
 在macOS上使用Profiler录制数据时，可能必现trace相关泳道显示“No Data”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/5CkfPO7GR46LxzjS-CQFfw/zh-cn_image_0000002624478814.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/5CkfPO7GR46LxzjS-CQFfw/zh-cn_image_0000002624478814.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C10F157DF7D5D678A4E9E984E33860A20101E00341D0BD088B0A214DC260160 "点击放大")
 
 **问题原因**
 

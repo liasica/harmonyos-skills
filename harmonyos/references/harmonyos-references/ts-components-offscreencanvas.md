@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: OffscreenCanvas
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > OffscreenCanvas
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-10
 content_hash: sha256:261a9d653eab9180387cf59fc3074a3daca8e7298554d292891edc16e94302e8
 ---
@@ -114,7 +114,7 @@ struct OffscreenCanvasPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/R2suiwZjTW-nIR8XCFWScw/zh-cn_image_0000002786361486.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/R2suiwZjTW-nIR8XCFWScw/zh-cn_image_0000002786361486.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F7244CFA5DF0FFECD6AD352D994D8A6DC52463A30083BE38F097977591BD33F)
 
 ### height
 
@@ -152,7 +152,7 @@ struct OffscreenCanvasPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/DxYWhrsQSbG4WAhNZXhi9Q/zh-cn_image_0000002815560907.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/DxYWhrsQSbG4WAhNZXhi9Q/zh-cn_image_0000002815560907.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=C0C94986DC0BA499B6EE09A2F3E1C3E383577D2EA9E39A658BBBCC6F2589BAE0)
 
 ## 方法
 
@@ -214,7 +214,7 @@ struct OffscreenCanvasPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/LMyGr4gPSAylmvN-ziOviA/zh-cn_image_0000002815400991.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/LMyGr4gPSAylmvN-ziOviA/zh-cn_image_0000002815400991.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B86E03FB6B079EEBB952BA2AD11983789671DC6DEAF84B70B0C923202E17DEF)
 
 ### getContext10+
 
@@ -295,7 +295,7 @@ struct OffscreenCanvasExamplePage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/L07dFWKCSem34GD-T4KtDg/zh-cn_image_0000002786521416.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/L07dFWKCSem34GD-T4KtDg/zh-cn_image_0000002786521416.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCB0E1789016E79D6F952F4FEAE5DA24B5B1B12D240D2F3D1D38F9B1E3C6A51E)
 
 ## OffscreenCanvas支持并发线程绘制
 
@@ -408,4 +408,4 @@ workerPort.onmessage = (e: MessageEvents) => {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/LSOnaVu2TKSbq0EBaK1PrQ/zh-cn_image_0000002786361488.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/LSOnaVu2TKSbq0EBaK1PrQ/zh-cn_image_0000002786361488.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=D72A6CCBD19E778CA200A606B74D6EEE357E21A39F8604CAC676AA9E4E0ED309)

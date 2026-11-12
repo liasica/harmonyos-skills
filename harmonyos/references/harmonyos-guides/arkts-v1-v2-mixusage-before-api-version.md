@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-v1-v2-m
 title: 状态管理V1和V2混用指导（API version 19前）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理V1-V2迁移指导 > 状态管理V1和V2混用场景 > 状态管理V1和V2混用指导（API version 19前）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:cae41f1292c97074b147e1ff775c1b209c743ad30603b2391dd405227b5c146c
 ---
@@ -300,7 +300,7 @@ struct IndexFour {
 
 V2装饰器不能和@Observed一起使用，V1传递@Observed装饰的class类给V2自定义组件时，不直接用@Param接收数据，如下图所示先定义V1BridgeComponent组件作为桥接层。在桥接层监听V1组件的数据，同步到V2定义的单例数据。V1组件直接使用V1BridgeComponent，在V1BridgeComponent中引入V2自定义组件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/dnAe16DfSjO81yhPmTC7Pg/zh-cn_image_0000002786358694.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/dnAe16DfSjO81yhPmTC7Pg/zh-cn_image_0000002786358694.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=88424E273AF265031A56DB04AFF6AA5671FE31929192B2DD75AF5A7A79ED9769)
 
 具体实现可参考以下示例代码：
 

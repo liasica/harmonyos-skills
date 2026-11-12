@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1657
 title: "@Builder和@Component的区别与嵌套使用场景"
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > @Builder和@Component的区别与嵌套使用场景
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:27+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:32934ded5484c5d147774c0767e2134b05ab2dd4a9799a18d00ccbe6a633c4a3
 ---
@@ -126,7 +126,7 @@ content_hash: sha256:32934ded5484c5d147774c0767e2134b05ab2dd4a9799a18d00ccbe6a63
 
   场景二实现效果：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/RMJMnE9RTaWg62KdoB_eNg/zh-cn_image_0000002628661002.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/RMJMnE9RTaWg62KdoB_eNg/zh-cn_image_0000002628661002.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC05257256C747DC0E7A38021BC0381B9C5D494B119F34BBA083234C1585B74E "点击放大")
 
 ## 常见FAQ
 

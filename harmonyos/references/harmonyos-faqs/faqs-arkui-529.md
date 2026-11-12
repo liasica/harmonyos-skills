@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-529
 title: 进入页面后，页面自动滑动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 进入页面后，页面自动滑动
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:33+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:a01b263ef3d1ead35a444d9362e94458306a15a1524e8390bbbafc6488388413
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:a01b263ef3d1ead35a444d9362e94458306a15a1524e8390bbbafc64883
 
 应用跳转到新的页面时，页面开始移动（页面没受到触碰）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/kJYA9-X_TzmYTUB5oS2bsA/zh-cn_image_0000002628551062.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/kJYA9-X_TzmYTUB5oS2bsA/zh-cn_image_0000002628551062.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=1067720C5537FC21B01DD8FE0998E0492AAF67A745E22B8C2B60F54514DF3E11 "点击放大")
 
 ## 背景知识
 
@@ -23,7 +23,7 @@ content_hash: sha256:a01b263ef3d1ead35a444d9362e94458306a15a1524e8390bbbafc64883
 
 1. 使用DevEco Testing查看问题组件，该组件为Scroll组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/hGr8r4ttQSCbryTmqxJ3ig/zh-cn_image_0000002658910379.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/hGr8r4ttQSCbryTmqxJ3ig/zh-cn_image_0000002658910379.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=28F5DE112FD3F959E34742B8A0DF3C57242925D82707E853955636FE0BC8DF32 "点击放大")
 2. 查看该组件的设置，该组件设置了fling属性，且值不为0，进入页面时会有向下滚动的初速度。
 
    ```screen
@@ -151,4 +151,4 @@ src/main/module.json5文件中需添加"routerMap": "$profile:router\_map"。
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/CBny6El4SDetGPiaRAlxOw/zh-cn_image_0000002628391174.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/CBny6El4SDetGPiaRAlxOw/zh-cn_image_0000002628391174.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=275449D2F4D704602583BF4DE72A68DFE5856C961D117CC2D7A64E1294C3AB10 "点击放大")

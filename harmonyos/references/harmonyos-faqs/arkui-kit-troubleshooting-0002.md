@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-troub
 title: ArkUI-Image图片拖拽与缩放平移问题定位
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 故障排查 > ArkUI-Image图片拖拽与缩放平移问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-14
 content_hash: sha256:7e8d60013d4d245a9561788b3a8b9fc649de7fcaf6b61eb47e15deba479677e6
 ---
@@ -14,13 +14,13 @@ content_hash: sha256:7e8d60013d4d245a9561788b3a8b9fc649de7fcaf6b61eb47e15deba479
 
 某些场景下的图片，如PC自由多窗模式下，左侧导航页签图标可以拖动，与使用习惯不符合。异常效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/cI37zz2hR8Ssyk9pcDhO-Q/zh-cn_image_0000002759883744.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/cI37zz2hR8Ssyk9pcDhO-Q/zh-cn_image_0000002759883744.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=D63EF749F0C73257844F7DAA23BAD22E9CC3063C3E523F6C1FC0E12138078C8E "点击放大")
 
 ### 定位过程
 
 1. 使用DevEco Testing-实用工具-UIViewer查看页面布局，发现菜单栏Tabs组件下使用了Image组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/jisLvs5ZRsCyOkRnZV2VNA/zh-cn_image_0000002789283017.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/jisLvs5ZRsCyOkRnZV2VNA/zh-cn_image_0000002789283017.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=C297004ADC39920D2AFBA79B65F63CA99B0353926C0DC1867338DF2FA0317ACB "点击放大")
 2. 排查代码Image组件中draggable属性值是否为可拖拽状态。Image的draggable设置为true或者未设置，图片都是可拖动。示例代码如下：
 
    ```ts
@@ -107,7 +107,7 @@ struct TabImageExample {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/LXmMH0A4Sn-iSsopEsw20Q/zh-cn_image_0000002759884290.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/LXmMH0A4Sn-iSsopEsw20Q/zh-cn_image_0000002759884290.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=E463635150200BD8AFF57157A8347A3D9EE1BD097666373690DCEC29CCC488D1 "点击放大")
 
 ## 使用matrix4缩放图片后无法平移至边缘如何处理
 
@@ -255,7 +255,7 @@ struct Index {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/MnQviTQDSb-aLbiJZnTrhA/zh-cn_image_0000002760048634.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/MnQviTQDSb-aLbiJZnTrhA/zh-cn_image_0000002760048634.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C44B9E76353406A835C902B037DB76884974B41096E1FF25EF9A2F99995BF6E "点击放大")
 
 ### 定位过程
 
@@ -422,4 +422,4 @@ struct Index {
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/7z-cjgcUTLCkl9AtgeO5hQ/zh-cn_image_0000002759888086.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/7z-cjgcUTLCkl9AtgeO5hQ/zh-cn_image_0000002759888086.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=425F7FAA3D1EBCA48B99A3F0446CB4940B1D46A2DF33EF8D0AE6218206F3016F "点击放大")

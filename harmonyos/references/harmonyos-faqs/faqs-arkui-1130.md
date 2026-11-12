@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1130
 title: 设置RichEditor键盘输入的字体颜色、字间距
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 设置RichEditor键盘输入的字体颜色、字间距
 category: harmonyos-faqs
-scraped_at: 2026-11-04T08:39:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-03
 content_hash: sha256:985c6f32d58fac38325ac6e22cc395191bf90f998b9fe2924bfcbde63043a401
 ---
@@ -25,7 +25,7 @@ onReady(() => {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/Q5ogDJtRTAqv8zL1CMTEIQ/zh-cn_image_0000002658928735.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/Q5ogDJtRTAqv8zL1CMTEIQ/zh-cn_image_0000002658928735.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=543857E6292CAF1CA2D212C1B0A635747EFA006C6356949C71C7296892439265 "点击放大")
 
 ## 背景知识
 

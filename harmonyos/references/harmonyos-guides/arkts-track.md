@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-track
 title: "@Track装饰器：class对象属性级更新"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理数据对象的状态 > @Track装饰器：class对象属性级更新
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:e45d967134f610ded2e77d6e8b8a130039a5531e77f55105fbf377625c3aa3d8
 ---
@@ -81,7 +81,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/Scz-0GSqTtuvW2VCuRUMkQ/zh-cn_image_0000002786518522.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/Scz-0GSqTtuvW2VCuRUMkQ/zh-cn_image_0000002786518522.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=37304CF482D622D3B69E999DDFF2950A54F5C703E26E0AD08A0B5553A38BD1DB)
 
 **说明** 
 
@@ -202,7 +202,7 @@ struct AddLog {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/nAJNaG-UTDmVWFUlnZXOmQ/zh-cn_image_0000002786358594.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/nAJNaG-UTDmVWFUlnZXOmQ/zh-cn_image_0000002786358594.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=8FA0911196EBF42BFAC0D31E50380AAC0EBA8887C40AB262864D03725C52C907)
 
 在上面的示例中：
 
@@ -282,7 +282,7 @@ struct AddLog {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/n3nEMPSgT7OczMhejL_trA/zh-cn_image_0000002815558015.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/n3nEMPSgT7OczMhejL_trA/zh-cn_image_0000002815558015.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1DFD21F9C07B4BDBE90E2D4E2BBBC7E579DBFD5308BF6A39A6E3D951B2E3AD0)
 
 处理步骤：
 

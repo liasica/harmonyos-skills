@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/compiling-and-b
 title: C++编译报错unknown type name问题排查
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 常见问题 > C++编译报错unknown type name问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:70a3f9e1a22ac6eb8d08986eae457e0686b15375df953bb58e4fa343d7ea73f8
 ---
@@ -87,7 +87,7 @@ content_hash: sha256:70a3f9e1a22ac6eb8d08986eae457e0686b15375df953bb58e4fa343d7e
    ```
 7. 如果报错接口是系统API，查询该接口在当前版本是否可用。例如OH\_AudioWorkgroup\_AddCurrentThread从API 20开始支持。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/YV-IgeUZSoi-GJSACTLxWg/zh-cn_image_0000002772287400.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/YV-IgeUZSoi-GJSACTLxWg/zh-cn_image_0000002772287400.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=941E3B35A4238BDA9672755CD0F988769BAB88E6E051218B40786835FE0031EE "点击放大")
 
    结论：
 

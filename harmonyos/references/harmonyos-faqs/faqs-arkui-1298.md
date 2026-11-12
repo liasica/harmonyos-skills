@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1298
 title: 输入框输入时键盘异常收回又弹出
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 输入框输入时键盘异常收回又弹出
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:ccf115f3cef6175f06e451a2759bba8ec86f501a788a352fd47da4b32f57d487
 ---
@@ -100,7 +100,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/Ryh6lERAQr-MCnXuJTaefw/zh-cn_image_0000002628599010.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/Ryh6lERAQr-MCnXuJTaefw/zh-cn_image_0000002628599010.png?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=E32BF795BA491DE75A6A31B831B805046C6DCD0CBB685B687A15AAD34E25B46A "点击放大")
 
 ## 背景知识
 
@@ -253,7 +253,7 @@ loading自定义弹窗没有弹起时，此时输入框获取了焦点，但是l
 
    效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/li8h7bLETCuBMKQsdIyVJA/zh-cn_image_0000002628758908.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/li8h7bLETCuBMKQsdIyVJA/zh-cn_image_0000002628758908.png?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=C741FA2B90F701F855A8CC5DC93B99C33D82250CDBEA0673CCC7D34741BB37F4 "点击放大")
 
 ## 总结
 

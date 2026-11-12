@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“Failed to get a resolved OhmUrl by filepath xx”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“Failed to get a resolved OhmUrl by filepath xx”
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:52+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:442e741a99f6fabe3b497dff170e1a13ad6b07fb16f6765cb8949d4524f6df7b
 ---
@@ -20,22 +20,22 @@ content_hash: sha256:442e741a99f6fabe3b497dff170e1a13ad6b07fb16f6765cb8949d4524f
 
   删除工程中的oh\_modules，执行File > Sync and Refresh Project。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/ItiKNsAEQuCgMyUoiU_N5Q/zh-cn_image_0000002654837783.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/ItiKNsAEQuCgMyUoiU_N5Q/zh-cn_image_0000002654837783.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3E5D9B9BD266C3EC13141B6C2F7A6692D9C647386D403E42E33E1131C9DC38F)
 * **场景二：**
 
   **问题现象**
 
   当配置第三方包依赖时，如果将依赖配置到devDependencies，而源码中又引用了这些依赖中的 API，会导致编译失败。例如，第三方包@hms-security/ucs-appauth将依赖@network/gr配置在devDependencies中，源码中使用了@network/gr的 API 时，编译会失败，提示错误信息：“ERROR: ArkTS:ERROR Failed to get a resolved OhmUrl by filepath xxx”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/2X5vpAOZTOGFerjYwSdThQ/zh-cn_image_0000002624478476.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/2X5vpAOZTOGFerjYwSdThQ/zh-cn_image_0000002624478476.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=34A1230CC4FCA5821832193EF6D2AD430121FA6252CEBDBD6BD3FEE4570CC033)
 
   **问题确认**
   1. 进入上面标黄色的源码文件中，可以看到依赖有红色告警信息。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/t7yy4yNHR9y0UUIPo5j1dA/zh-cn_image_0000002654797837.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/t7yy4yNHR9y0UUIPo5j1dA/zh-cn_image_0000002654797837.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1574B1917FA9292FDC1E958FEA4022C3F235E2032B966CDF8EFAD7EFF43446E "点击放大")
   2. 进入包下的oh-package.json5文件，查看依赖配置为devDependencies。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/pGSsGdSgS_6CxDAm_F3tMw/zh-cn_image_0000002624638382.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/pGSsGdSgS_6CxDAm_F3tMw/zh-cn_image_0000002624638382.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CA5C90F13BD6BE9C9B36B012D3874CB32FDD3DDBCD27F1B96CF10B155C18B96)
 
   **解决措施**
 
@@ -61,9 +61,9 @@ content_hash: sha256:442e741a99f6fabe3b497dff170e1a13ad6b07fb16f6765cb8949d4524f
 
   工程A以相对路径引用了工程B的模块，这种引用会导致报错。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/lTyw8bKbRxqGbzVauZG9kg/zh-cn_image_0000002654837785.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/lTyw8bKbRxqGbzVauZG9kg/zh-cn_image_0000002654837785.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=D0B2FE091ECBA38918208E6C5B7C1685E82BD00578C5C5C2E301C5303FCD42A8)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/ssExB4c6QOez26Fb8-6KlA/zh-cn_image_0000002624478478.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Zi6-aAT_SGCLVX4Lmbb9kg/zh-cn_image_0000002654797839.png)**处理措施**
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/ssExB4c6QOez26Fb8-6KlA/zh-cn_image_0000002624478478.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=02C240CD0CE9C61D113171F1FFF5BBF0EF4DEA40BACF64962A14772829D04B5A)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Zi6-aAT_SGCLVX4Lmbb9kg/zh-cn_image_0000002654797839.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB8535FFA3993DFB10E52A4747D617D6AD167C63BB4085DD49958DB3DE0C2D67)**处理措施**
 
   + 将工程B的har转换为工程A的一个模块引用。
   + 把工程B的har提前打包，在A中 以.har的方式引用。
@@ -85,7 +85,7 @@ content_hash: sha256:442e741a99f6fabe3b497dff170e1a13ad6b07fb16f6765cb8949d4524f
 
   DevEco Studio编译失败，提示“Failed to get a resolved OhmUrl for‘xxx’imported by‘yyy’”。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/BOmzgbyyQoSeZZEe5VFtLg/zh-cn_image_0000002624638384.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/BOmzgbyyQoSeZZEe5VFtLg/zh-cn_image_0000002624638384.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=193F25CAEB29313DB80025B41B0B6DCE1209C675FA07A6EF7374615E50DE83DE "点击放大")
 
   **问题确认**
 
@@ -96,14 +96,14 @@ content_hash: sha256:442e741a99f6fabe3b497dff170e1a13ad6b07fb16f6765cb8949d4524f
 
   + 将xxx依赖配置到yyy模块oh-package.json5的dependencies中。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/zviYiCiOQle5tdM5JMr-og/zh-cn_image_0000002654837789.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/zviYiCiOQle5tdM5JMr-og/zh-cn_image_0000002654837789.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=81BB5362F9C324AF762741EC4FDD24B48BD6961CC173E47B89D4A626669BFD51 "点击放大")
   + 将yyy模块改为非字节码har，在模块级build-profile.json5文件中添加byteCodeHar字段并设置为false。
 
 * **场景七：**
 
   请确认当前使用的DevEco Studio和SDK版本是配套的，点击菜单栏**Help > About DevEco Studio**，**Help > About HarmonyOS SDK**分别查看DevEco Studio和SDK版本，版本配套关系请参考[版本概览](../harmonyos-releases/overview-502-release.md)。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/Srz_5jUlSh6XpXIMFxU_lQ/zh-cn_image_0000002624478480.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/Srz_5jUlSh6XpXIMFxU_lQ/zh-cn_image_0000002624478480.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=27CBB759B4A21EB594FCCEBA5C86FB51A4E74D68442E5126C60A2E74A71F74E9)
 * **场景八：**
 
   **问题现象：**
@@ -114,6 +114,6 @@ content_hash: sha256:442e741a99f6fabe3b497dff170e1a13ad6b07fb16f6765cb8949d4524f
 
   该问题由工程中引用了非标准模块目录（目录内无module.json5）引起，如下图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/lJf5gYycQ2auul0j3U6sSg/zh-cn_image_0000002654797841.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/lJf5gYycQ2auul0j3U6sSg/zh-cn_image_0000002654797841.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=B50874BCF048FB034EA57A37D4F6587EAD1554D176270E9E7B53D9CD0A957C91)
 
   请新建Static Library模块，并将utils/common里面的代码迁移至Static Library模块内，并使用HAP引用HAR方式进行模块间引用。

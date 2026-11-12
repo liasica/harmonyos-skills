@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/compiling-and-b
 title: 编译构建路径与依赖解析报错排查
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 常见问题 > 编译构建路径与依赖解析报错排查
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:a50fd54362c42a7af93b53955bf3d5674aaafc28ada8bb30bd9d2e575470cc3c
 ---
 
 **Q：构建报错：“hvigor ERROR: Error: EINVAL: invalid argument, mkdir ‘D:xxx\yyy\zzz\D:’”，如何解决？**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/8BQeLmS0QNCuR0elWZt9eA/zh-cn_image_0000002799412069.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/8BQeLmS0QNCuR0elWZt9eA/zh-cn_image_0000002799412069.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE8C226F1113607318713B04C0764AE6CA7048A7A2F9EA15D78631A1D9A1FCA8 "点击放大")
 
 常见错误场景：工程A通过引用外部模块的方式使用了工程B中的har模块，在工程B中执行ohpm后，在工程A中没有重新执行ohpm install直接编译（或者调试），导致编译报错。
 
@@ -20,20 +20,20 @@ content_hash: sha256:a50fd54362c42a7af93b53955bf3d5674aaafc28ada8bb30bd9d2e57547
 
 1. 在问题工程中重新执行ohpm install，或者sync。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/mvLODgYqS_anzRcZrvwmag/zh-cn_image_0000002799532117.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/mvLODgYqS_anzRcZrvwmag/zh-cn_image_0000002799532117.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CB525A908C6A8515999C1A3899B998A0518BCAA7E318AF58D3A8499E1DF461D "点击放大")
 2. 使用build菜单先进行构建，再调试运行。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/8mSqLO70RWKVayEfuDCjhQ/zh-cn_image_0000002770132280.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/8mSqLO70RWKVayEfuDCjhQ/zh-cn_image_0000002770132280.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=750DD367874D991A41F1EA01D4BCC2140A6FFD2D4AA119B445A017316CE5F72C "点击放大")
 
 **Q：编译报错“Local dependency in parameterFile does not exist”如何解决？**
 
 **A**：错误描述：parameterFile 中的本地依赖项不存在。可能原因：parameterFile中定义的值不存在。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/mOUsUf15TXmADP-LEK9acA/zh-cn_image_0000002770292288.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/mOUsUf15TXmADP-LEK9acA/zh-cn_image_0000002770292288.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=84B4C8643C47E02C63D358F08F95D2A29333CFBE162E6D92E5599B5EB9B557C9 "点击放大")
 
 解决措施：检查本地依赖路径是否存在，以及是否区分大小写。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/-plocQgYSNa5zyZZNi4QrQ/zh-cn_image_0000002799532217.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/-plocQgYSNa5zyZZNi4QrQ/zh-cn_image_0000002799532217.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA4568317230D6D49DA6C2216689DD54AF2E2EDF5D8323CEDB8DDECBA400D6F3 "点击放大")
 
 **Q：DevEco Studio编译时出现错误，提示“no such file or directory, realpath 'xxx'”错误信息。**
 
@@ -49,6 +49,6 @@ content_hash: sha256:a50fd54362c42a7af93b53955bf3d5674aaafc28ada8bb30bd9d2e57547
 
 可能原因：导入文件时，大小写不一致会导致问题（导入到单个文件夹时，默认寻址小写 “index.ets”文件，但该文件夹下仅存在大写“index.ets”文件）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/g3Mo8EPXTum0z445bUB3og/zh-cn_image_0000002770292346.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/g3Mo8EPXTum0z445bUB3og/zh-cn_image_0000002770292346.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5D4AD3441DC6E3C65F539761FA102635CB85BB31FA390DFA3B945B3A25732DA "点击放大")
 
 解决措施：检查import文件的大小写。

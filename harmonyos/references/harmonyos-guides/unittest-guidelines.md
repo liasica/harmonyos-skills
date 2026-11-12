@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/unittest-guid
 title: 单元测试框架使用指导
 breadcrumb: 指南 > 应用测试 > 单元测试和UI测试 > 自动化测试框架使用指导 > 单元测试框架使用指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:2263242a7e0ffa54d4f50c7f4863c71e637c78d51c03059e80c0688e42f225ae
 ---
@@ -28,7 +28,7 @@ content_hash: sha256:2263242a7e0ffa54d4f50c7f4863c71e637c78d51c03059e80c0688e42f
 
 **图1.单元测试框架主要功能**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/ucFmxFpYRAqwrEdxkCviwQ/zh-cn_image_0000002701641036.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/ucFmxFpYRAqwrEdxkCviwQ/zh-cn_image_0000002701641036.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=C03EC1330FE1B8BD1084F12B6CC93A4CE80D0BD50236E7720CC791B6B9D62BE9)
 
 ## 单元测试框架发布方式
 
@@ -108,13 +108,13 @@ export default function abilityTest() {
 
 下面给出测试类级别即测试文件执行示例，其他请参考[运行模式](ide-instrument-test.md#section1574003717165)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/5WMrmkoXRAe83x2F4t8s9w/zh-cn_image_0000002731360255.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/5WMrmkoXRAe83x2F4t8s9w/zh-cn_image_0000002731360255.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=4FC8466B54E4B3DA79F115A55621D331E0CB448E3A04C8F02A7000DF1A2890FC)
 
 * 查看测试结果
 
 测试执行后可直接在DevEco Studio中查看测试结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/OdaNdS0uSXuvBh4LP30WaA/zh-cn_image_0000002701800952.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/OdaNdS0uSXuvBh4LP30WaA/zh-cn_image_0000002701800952.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2FEA82B832419839EAE68D4399539508869426EFCCB033A4850E40538D4C899)
 
 * 查看测试用例覆盖率
 

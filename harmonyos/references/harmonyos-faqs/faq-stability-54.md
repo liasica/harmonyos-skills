@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-stability-5
 title: DevEco Studio使用热重载报错：JSONException
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > DevEco Studio使用热重载报错：JSONException
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:40+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:ac3f1eb2c2567dced3c3a6d7784c5d2cc3761868bd430abb69fbc3a779973655
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:ac3f1eb2c2567dced3c3a6d7784c5d2cc3761868bd430abb69fbc3a7799
 
 DevEco Studio热重载启动应用报错：JSONException。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/2y9d9Y8bT1qB4Sb20nNp5A/zh-cn_image_0000002628554894.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/2y9d9Y8bT1qB4Sb20nNp5A/zh-cn_image_0000002628554894.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=55FD125B5A45E84E03AE383F1E1E5F58BA9A39D6DBEB576DD2003EE2942E77D4 "点击放大")
 
 ## 背景知识
 

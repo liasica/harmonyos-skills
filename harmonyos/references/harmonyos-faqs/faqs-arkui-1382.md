@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1382
 title: 子组件的压缩优先级
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 子组件的压缩优先级
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:09e771b6b2e213e54e1e5c5be74b4fd3458cda1dabedef8af7abc67e404a7d86
 ---
@@ -37,7 +37,7 @@ struct Index {
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/mmqWrn5wQKe3_wwUtVGe2Q/zh-cn_image_0000002658961871.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/mmqWrn5wQKe3_wwUtVGe2Q/zh-cn_image_0000002658961871.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D1AB647493EF6D19D4D29A9389F7DB842FC136C82714F44F69781F6DAD6B287 "点击放大")
 
 ## 背景知识
 

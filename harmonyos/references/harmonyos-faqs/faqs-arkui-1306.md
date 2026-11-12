@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1306
 title: 如何适配内部有图案并且需要根据图案布局的.9图背景
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何适配内部有图案并且需要根据图案布局的.9图背景
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:0e0afe42ca20f62125c946665ec55cc65ca626eb8f5f0da9354642d54e419dec
 ---
@@ -12,18 +12,18 @@ content_hash: sha256:0e0afe42ca20f62125c946665ec55cc65ca626eb8f5f0da9354642d54e4
 
 有如下图所示的背景，需要在斜杠两侧各排布文字，并且在不同设备上，当该框格宽度变宽时，斜杠的位置不变，布局与之前相同。其他平台是通过.9图实现，HarmonyOS没有.9图，要如何实现该功能？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/sIldJjIMRQuAcR8SMbF9Ag/zh-cn_image_0000002628599012.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/sIldJjIMRQuAcR8SMbF9Ag/zh-cn_image_0000002628599012.png?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=E611A5BDD0C3E60F7D7CC2B665B3808503E4B01D238F422816221D4B530CCB37 "点击放大")
 
 ## 背景知识
 
 * .9图是一种特殊的PNG图像，用于根据内容大小自动拉伸背景或边框。它能定义哪些区域可以拉伸、内容如何填充。一张.9图会被系统划分为一个3×3的九宫格：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/d3iK1P9sTyCVAr0YYZFKGQ/zh-cn_image_0000002628758910.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/d3iK1P9sTyCVAr0YYZFKGQ/zh-cn_image_0000002628758910.png?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCD68ECEF1B4D25F7D5C791D5ED7DEDBF6BCC400BE63C5A4DF84D019ABFA55A4)
 
   其中四角TL/TR/BL/BR不会被拉伸，上下边T/B只会被水平拉伸，左右边L/R只会被垂直拉伸，中心C可以随意拉伸。
 * 通用属性[backgroundImageResizable](../harmonyos-references/ts-universal-attributes-background.md#backgroundimageresizable12)以及Image的[resizable](../harmonyos-references/ts-basic-components-image.md#resizable11)属性支持设置图像在拉伸时可调整大小，其参数[ResizableOptions](../harmonyos-references/ts-basic-components-image.md#resizableoptions11)类型的slice属性为[EdgeWidths](../harmonyos-references/ts-types.md#edgewidths9)，可设置top/right/bottom/left使图像顶部/右部/底部/左部拉伸时保持不变的距离，与.9图的拉伸规则类似。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/3L4nRl0IR9yaY4hTOYVODQ/zh-cn_image_0000002658958231.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/3L4nRl0IR9yaY4hTOYVODQ/zh-cn_image_0000002658958231.png?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=1165F957708D5EA00F34607E156AE5E86AB08EF737AFF46E958D9EDE64E44092 "点击放大")
 
 ## 解决方案
 
@@ -139,11 +139,11 @@ struct Point9 {
 
 在手机设备上的效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/Wo4sWY8SS0q_m-LOUKtdhQ/zh-cn_image_0000002658838285.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/Wo4sWY8SS0q_m-LOUKtdhQ/zh-cn_image_0000002658838285.png?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=E85E9F37A9B0A3F185314128CA8837CDA907D81ADAC70A5E3C5CD203ACF6A0EA "点击放大")
 
 在平板设备上的效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/DIzx6HBKRTida0TWDCzRHA/zh-cn_image_0000002628599014.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/DIzx6HBKRTida0TWDCzRHA/zh-cn_image_0000002628599014.png?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA8F3D1DD6E0B045BA5632FAF5DCEC3045125A04CB04D26FCF6C3FBC4BF4FE60 "点击放大")
 
 ## 总结
 

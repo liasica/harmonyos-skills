@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-live-form-
 title: 互动卡片开发实践
 breadcrumb: 最佳实践 > 技术创新 > 多窗 > 互动卡片开发实践
 category: best-practices
-scraped_at: 2026-11-10T10:42:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:02d8e35e207fb78dde6d77528d3b6b1aa16beb32266fb4d96eae2de604f95fe0
 ---
@@ -41,7 +41,7 @@ content_hash: sha256:02d8e35e207fb78dde6d77528d3b6b1aa16beb32266fb4d96eae2de604f
 
 **效果预览**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/BDl5LHGfTAK1RjaOyxzBfw/zh-cn_image_0000002623694219.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/BDl5LHGfTAK1RjaOyxzBfw/zh-cn_image_0000002623694219.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=85CD92994E8B5EC7C909409D6BCA2E749E960491EAA43E7883BD289BE634DC83 "点击放大")
 
 ### 快递卡片
 
@@ -55,7 +55,7 @@ content_hash: sha256:02d8e35e207fb78dde6d77528d3b6b1aa16beb32266fb4d96eae2de604f
 
 **效果预览**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/1qlxCd5jSeqgeUpvp2whEw/zh-cn_image_0000002623534345.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/1qlxCd5jSeqgeUpvp2whEw/zh-cn_image_0000002623534345.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=F11E7B4A764EFE87B83D256D292BB913DC5335CEE2B295A33E83CEC65E848859 "点击放大")
 
 ### 运动卡片
 
@@ -72,10 +72,10 @@ content_hash: sha256:02d8e35e207fb78dde6d77528d3b6b1aa16beb32266fb4d96eae2de604f
 
 * 开始运动
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/ss4Zc1znRmKSwJgUVRM8jw/zh-cn_image_0000002593094810.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/ss4Zc1znRmKSwJgUVRM8jw/zh-cn_image_0000002593094810.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=A235F383FC560E6053B7F5FBAF58E006FE3550512CF7DC234D91711B0CA5D4B9 "点击放大")
 * 结束运动
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/TMNVcEzeQkqXpEJfiwp6LQ/zh-cn_image_0000002593254736.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/TMNVcEzeQkqXpEJfiwp6LQ/zh-cn_image_0000002593254736.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=5AC8ABDE9B187CF3AFFE1B3EAC440034D3E0CCC3A589AD186A8321D4F84E3A17 "点击放大")
 
 ### 音乐卡片
 
@@ -92,10 +92,10 @@ content_hash: sha256:02d8e35e207fb78dde6d77528d3b6b1aa16beb32266fb4d96eae2de604f
 
 * 播放：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/RyKeV8uHQjG62Mauh_UWUg/zh-cn_image_0000002623694221.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/RyKeV8uHQjG62Mauh_UWUg/zh-cn_image_0000002623694221.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=977DEEB344F3BDA2F7666593DA6BB12F2A6AF1186656252FB4FE41FCE9DEBBB5 "点击放大")
 * 切歌：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/sWx6TNojTl6OYxrKjyR9tA/zh-cn_image_0000002623534347.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/sWx6TNojTl6OYxrKjyR9tA/zh-cn_image_0000002623534347.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=99D6364CF25769F1154A9A4E552B46438D454996B8C57BBA31ECDA42BFEDCC03 "点击放大")
 
 ## 整体方案
 
@@ -175,7 +175,7 @@ content_hash: sha256:02d8e35e207fb78dde6d77528d3b6b1aa16beb32266fb4d96eae2de604f
 
 以快递卡片为例，演示完整的互动卡片开发流程。快递卡片需要实现点击触发出框动画、陀螺仪交互驱动憨憨移动、摇一摇激活等功能。效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/qggpH6WGRcy9ej04hUc8Pg/zh-cn_image_0000002593094812.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/qggpH6WGRcy9ej04hUc8Pg/zh-cn_image_0000002593094812.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF11AAD732D9C4E41FFCD50B54E95C287E5FA7CB83979DEBCFFCFE124ADBE717 "点击放大")
 
 ### 实现原理
 

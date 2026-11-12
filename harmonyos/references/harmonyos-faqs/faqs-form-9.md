@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-form-9
 title: 卡片组件的圆角显示异常
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 卡片组件的圆角显示异常
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:50+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:978988509bb79de9eb2424f64793902424f98f7b63af36b8344336fa455a2a28
 ---
@@ -12,16 +12,16 @@ content_hash: sha256:978988509bb79de9eb2424f64793902424f98f7b63af36b8344336fa455
 
 在桌面添加应用的卡片组件，卡片四角有细微的白色边缘。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/sLWSFcxiTpukLAtLuo01cQ/zh-cn_image_0000002628631576.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/sLWSFcxiTpukLAtLuo01cQ/zh-cn_image_0000002628631576.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=D97A16BFE49E3AC17E9ECAD62ADFE53090F61BE6F0AB4D1CB105E9642A8A64B4 "点击放大")
 
 ## 背景知识
 
 * 使用图片资源时，应考虑图片的长宽和像素密度，卡片尺寸可参考[尺寸与基础参数](../design-guides/system-features-service-widget-0000002087671904.md#section250mcpsimp)，如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/fG7FlM0LTj60Q-sJRBtqGA/zh-cn_image_0000002658870853.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/fG7FlM0LTj60Q-sJRBtqGA/zh-cn_image_0000002658870853.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=620AA82B169C55AEFDB46B481527F730BFF59F42EA4DAEC51B5B7E42D1A81456 "点击放大")
 * 为了避免对内容造成影响，可以在设计工具里使用1x2、2x2宫格18vp，2x4、4x4宫格22vp圆角预览效果。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/MX_7-2zmRFiMo2amkz4zqg/zh-cn_image_0000002628791478.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/MX_7-2zmRFiMo2amkz4zqg/zh-cn_image_0000002628791478.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD53AFA5396D97AA442E9E7EBB703BAC74609ACE59CCE6608356537CEF5C3785 "点击放大")
 
 ## 问题定位
 
@@ -430,4 +430,4 @@ src/main/module.json5：
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/9PL1u7yMSoeu2tj9yuckAA/zh-cn_image_0000002658990793.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/9PL1u7yMSoeu2tj9yuckAA/zh-cn_image_0000002658990793.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=C313DE3A78051F093EC729809E841740C8079100C6321D4C1A989907041E1030 "点击放大")

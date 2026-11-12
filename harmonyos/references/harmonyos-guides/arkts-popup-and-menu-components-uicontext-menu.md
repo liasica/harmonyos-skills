@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-popup-a
 title: 不依赖UI组件的全局菜单 (openMenu)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 菜单 > 不依赖UI组件的全局菜单 (openMenu)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:13+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:4d28ade54421e070f801dd7f98693c0b79880ca3888747062d620c09a752338f
 ---
@@ -27,7 +27,7 @@ this.getUIContext().getPromptAction()
   });
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/syYaf0DfRoeMeBA-Sa13cw/zh-cn_image_0000002786518998.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/syYaf0DfRoeMeBA-Sa13cw/zh-cn_image_0000002786518998.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=F869AA2FF954123A0B764480126E12B50E112FFD9363BDC1D700CCFBC79CCF5F)
 
 ### 创建ComponentContent
 
@@ -167,7 +167,7 @@ this.getUIContext().getPromptAction()
   });
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/0Q-kUGWlROuag2bDwUQBHg/zh-cn_image_0000002786518998.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/0Q-kUGWlROuag2bDwUQBHg/zh-cn_image_0000002786518998.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=53DC13C00C0B0D57F378ABAFBB45896E26C7261CBFF5E316D5597F829CFCF95E)
 
 ## 关闭菜单
 
@@ -184,7 +184,7 @@ this.getUIContext().getPromptAction()
   });
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/2M3HOQv-SfGjXbVsv83PBw/zh-cn_image_0000002786518998.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/2M3HOQv-SfGjXbVsv83PBw/zh-cn_image_0000002786518998.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=396D0923F1646832611585F6C7D39ADC33662490B2733972545006596687E979)
 
 **说明** 
 

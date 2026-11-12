@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-vision-6
 title: 文档扫描后保存图片预览页面空白
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 场景化视觉（Vision） > 文档扫描后保存图片预览页面空白
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:a78f63b66e8c73465cec928c4a00d7e8f1f813d606eb129b05ce27c7ad288d2d
 ---
@@ -245,7 +245,7 @@ export struct DocDemoPage {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/wL2ytxj5QrSUNCsiUhkUFQ/zh-cn_image_0000002714110564.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/wL2ytxj5QrSUNCsiUhkUFQ/zh-cn_image_0000002714110564.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=4502A4263F314D40286F6B23BD4F26450D29074A8E9443DBD0B878CD9B56572E "点击放大")
 
 ## 常见FAQ
 

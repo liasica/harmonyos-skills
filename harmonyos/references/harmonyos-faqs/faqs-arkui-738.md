@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-738
 title: 如何封装bindPopup的options
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何封装bindPopup的options
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:41+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:bd7d25cd5d045e3190806a62c5ba36ee9f7018bbdb4dcebbdd6ea82b32d70971
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:bd7d25cd5d045e3190806a62c5ba36ee9f7018bbdb4dcebbdd6ea82b32d
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/ozY8pIwtS6WAxumHYuTItA/zh-cn_image_0000002628555358.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/ozY8pIwtS6WAxumHYuTItA/zh-cn_image_0000002628555358.png?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=D24EEB5189A08F101876677D5F62AAA3DE1CB1CC8F2E02B80302A4CD090CB085 "点击放大")
 
 ## 背景知识
 

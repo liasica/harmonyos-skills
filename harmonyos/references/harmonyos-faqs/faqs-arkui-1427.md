@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1427
 title: 如何给Span组件设置渐变背景色
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何给Span组件设置渐变背景色
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:b29210b6bb25b9091659b09198a3d2517f70291082425c8cf0cb3455d9f1ed96
 ---
@@ -198,7 +198,7 @@ Text里面的某个Span想设置一个渐变背景色，发现不生效，实现
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/3tPt7A6tTnKK9qoq3fWI5g/zh-cn_image_0000002658962961.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/3tPt7A6tTnKK9qoq3fWI5g/zh-cn_image_0000002658962961.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=B902CC54D102E615B0968F0DD8642CF13F4268627D5549381E91AB4DC4C2410A "点击放大")
 * **方案二**：可直接采用Text组件代替Span组件，实现渐变背景色设置。
 
   ```ts
@@ -237,7 +237,7 @@ Text里面的某个Span想设置一个渐变背景色，发现不生效，实现
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/blwqRjukSwGcMhLNWOqurQ/zh-cn_image_0000002628603746.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/blwqRjukSwGcMhLNWOqurQ/zh-cn_image_0000002628603746.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=E759C3AE81FBC337B156CF2DBBCAD635C8D6A19FDA5D8D998899E01CB5095312 "点击放大")
 * **方案三**：将文本绘制成图片显示。
 
   通过drawing绘制出一张包含文字的渐变背景的图片，使用[ImageSpan](../harmonyos-references/ts-basic-components-imagespan.md)或者属性字符串的[ImageAttachment](../harmonyos-references/ts-universal-styled-string.md#imageattachment)显示文字图片。
@@ -338,7 +338,7 @@ Text里面的某个Span想设置一个渐变背景色，发现不生效，实现
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/nqQc_TBLQ3aaf5TgZ1bQ2A/zh-cn_image_0000002658843013.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/nqQc_TBLQ3aaf5TgZ1bQ2A/zh-cn_image_0000002658843013.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=C464B7B0928EDD1465636EB49C2DAA0C4D74F35D43213A70ECF1824276CDF5E5 "点击放大")
 
 ## 总结
 

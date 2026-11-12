@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-page-t
 title: 页面间转场 (pageTransition)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 页面间转场 (pageTransition)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:8997d8ee35ad3b92cbb0f423304c47ff80e6e2684fea758847c3c0d8a48a66f5
 ---
@@ -369,7 +369,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/ukT4gXbfSdqom2hDXO-yjQ/zh-cn_image_0000002786521478.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/ukT4gXbfSdqom2hDXO-yjQ/zh-cn_image_0000002786521478.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=81AE0EE5920501C263A8CEA408234D20AF1E4A7996849F45F552D32D304CEC6C)
 
 自定义方式2：配置了当前页面的入场动画为从左侧滑入，退场为平移加透明度变化。
 
@@ -429,7 +429,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Ojs9kNsAQ3qtoK2Qz3AHHw/zh-cn_image_0000002786361550.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Ojs9kNsAQ3qtoK2Qz3AHHw/zh-cn_image_0000002786361550.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D132E9665AE491BFB3E53819E9A414056F286A0A8AB45DBA38A9AAE5FC9B241)
 
 ### 示例2（设置退入场平移效果）
 
@@ -515,7 +515,7 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/6AvWK8rER8ekEHDm-qIjgw/zh-cn_image_0000002815560971.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/6AvWK8rER8ekEHDm-qIjgw/zh-cn_image_0000002815560971.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=7503691BA75262E3B90D32DDD473CB7984E53EC571D780EBED2A71C2E7F02E88)
 
 自定义方式2：使用系统默认的退入场效果，将系统语言排版模式改为RTL。
 
@@ -575,4 +575,4 @@ struct Page1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/7-Y6HstwQFeV5VYGe-jx9Q/zh-cn_image_0000002815401055.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/7-Y6HstwQFeV5VYGe-jx9Q/zh-cn_image_0000002815401055.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=561B0967135441DFDFFCDC3C71EEF4F23BAA65FE99176B88AAA802E72ED889C5)

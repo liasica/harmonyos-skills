@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-basics-serv
 title: 如何不受系统设置的时区影响按照固定时区解析时间
 breadcrumb: FAQ > 系统开发 > 基础功能 > 基础服务（Basics Service） > 如何不受系统设置的时区影响按照固定时区解析时间
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:3b7c1f9b7b3c46929555b9473511931073333e2b766accc19c3bc5507afa27ce
 ---
@@ -63,4 +63,4 @@ struct Index {
 
 示例中将手机时区设置为西六区，与北京时间东八区相差14小时，运行效果如下
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/9qmbWtzWRNqmbb-mtK_H_Q/zh-cn_image_0000002628613952.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/9qmbWtzWRNqmbb-mtK_H_Q/zh-cn_image_0000002628613952.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=02D33968709806600BE331427E96F31D0A83E5A866ACB8279CFB08EE4FF09D3A "点击放大")

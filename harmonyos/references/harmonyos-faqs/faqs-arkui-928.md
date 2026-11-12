@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-928
 title: 如何解决点击非菜单控制区域事件穿透到下层组件的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决点击非菜单控制区域事件穿透到下层组件的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:13+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:91640df96c24ebc63d9799fd255d84e48586b093f076fe8f64b18be7ae9beef2
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:91640df96c24ebc63d9799fd255d84e48586b093f076fe8f64b18be7ae9
 
 现象如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/pA4dFCUJR0aJmNgu_uEifw/zh-cn_image_0000002658919533.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/pA4dFCUJR0aJmNgu_uEifw/zh-cn_image_0000002658919533.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=8BB119B896EA438D5D8119DC995082FD586E8352F683AD2BFECBFAD549178699 "点击放大")
 
 ## 背景知识
 
@@ -84,7 +84,7 @@ content_hash: sha256:91640df96c24ebc63d9799fd255d84e48586b093f076fe8f64b18be7ae9
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/3WZMf2_rQt6ZaE87KjxAhA/zh-cn_image_0000002628400332.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/3WZMf2_rQt6ZaE87KjxAhA/zh-cn_image_0000002628400332.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E8939533460D42E7F91ACDF58B4054F95E4CCE8D39E4B4389E7E7E6005246A9 "点击放大")
 * 方案二：bindContextMenu可以通过绑定一个状态变量来控制菜单的显隐，代码案例如下：
 
   ```ts
@@ -158,7 +158,7 @@ content_hash: sha256:91640df96c24ebc63d9799fd255d84e48586b093f076fe8f64b18be7ae9
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/V47-qKk7TZiJ1bizgFrVpA/zh-cn_image_0000002658799599.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/V47-qKk7TZiJ1bizgFrVpA/zh-cn_image_0000002658799599.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6A850394A34E218A93217C4B2D710E5193651B9D5D7D426A7EE7DBF8EFEBECA "点击放大")
 * 方案三：popup气泡弹窗默认会带一个透明蒙层，可以使用popup气泡弹窗模拟菜单弹窗。
 
   ```ts
@@ -234,4 +234,4 @@ content_hash: sha256:91640df96c24ebc63d9799fd255d84e48586b093f076fe8f64b18be7ae9
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/alOGjJAKT7SsbHZR4VBr2Q/zh-cn_image_0000002628560240.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/alOGjJAKT7SsbHZR4VBr2Q/zh-cn_image_0000002628560240.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=65DA500CD15D8E44D2A6C6A1A6469845FFB0C1CD774FF203FE50DBDBCE52CF93 "点击放大")

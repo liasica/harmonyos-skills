@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-165
 title: 离开页面时如何销毁所有的setTimeout
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 离开页面时如何销毁所有的setTimeout
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:53+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:3d2140f149912a29d9bb99cd00278194947e2c57855db7bebcba76b7ecfb60d4
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:3d2140f149912a29d9bb99cd00278194947e2c57855db7bebcba76b7ecf
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/HBuJ3EJHRI6uMs4zrN7Itw/zh-cn_image_0000002659138343.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/HBuJ3EJHRI6uMs4zrN7Itw/zh-cn_image_0000002659138343.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E0A6802749EEED65D5C6CD14868F84845079C41293AB53DFCA0A516D891D261 "点击放大")
 
 ## 背景知识
 

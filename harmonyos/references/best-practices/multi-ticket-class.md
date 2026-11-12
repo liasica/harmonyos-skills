@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/multi-ticket-cl
 title: 多设备股票类界面
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备界面开发案例 > 多设备股票类界面
 category: best-practices
-scraped_at: 2026-11-10T10:42:04+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-15
 content_hash: sha256:6e82983e2822e0860c4285e7ccecb09e12e326ec5b2c81f7f8807ed50ed5dbfa
 ---
@@ -36,7 +36,7 @@ content_hash: sha256:6e82983e2822e0860c4285e7ccecb09e12e326ec5b2c81f7f8807ed50ed
 
 股票类应用的UX设计可参考金融理财类多设备响应式设计指南的[自选股](../design-guides/responsive-design-examples6-0000001793536905.md#section0732192812391)章节，设计参考图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/TxqK8QLdTbyFHQlnSqwhHg/zh-cn_image_0000002579631774.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/TxqK8QLdTbyFHQlnSqwhHg/zh-cn_image_0000002579631774.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=600D15FAE4EC381E6772926AE4CAFFBFCE7C831A2D093187B29E431E1A3BC471 "点击放大")
 
 ## 工程管理
 
@@ -424,7 +424,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
 * 将电脑端自选股页划分为四个部分，效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/zIfUEfB_ScSlmsCgDA2G7A/zh-cn_image_0000002610071557.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/zIfUEfB_ScSlmsCgDA2G7A/zh-cn_image_0000002610071557.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D0EB6F8E97B894E5000EB948E7C731DB4D8AED7278DF1217F42F72E6F8C6EAB "点击放大")
 
 * 对各个区域使用的多种能力进行分析，实现方案如下表：
 
@@ -441,7 +441,7 @@ HarmonyOS的分层架构包括产品定制层、基础特性层和公共能力�
 
 * 将电脑端股票详情页划分为五个部分，效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/_sYE4G2DT4KpwBwvuD2nXQ/zh-cn_image_0000002579631780.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/_sYE4G2DT4KpwBwvuD2nXQ/zh-cn_image_0000002579631780.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=E904EEF38D50C513BC46856949107149FBA43C7FCB30238D17492980B66AF6E6 "点击放大")
 
 * 对各区域使用的能力进行分析，实现方案如表所示：
 

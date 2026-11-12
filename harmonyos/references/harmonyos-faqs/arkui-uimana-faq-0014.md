@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-fa
 title: ArkUI-Canvas组件绘制功能常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > ArkUI-Canvas组件绘制功能常见问题
 category: harmonyos-faqs
-scraped_at: 2026-11-12T09:58:58+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:a537a05009a45950ac01e74cf031974c64dc145ae24c87919838859ae60e01a4
 ---
@@ -30,7 +30,7 @@ struct CanvasDrawRoundedRectangle {
 
 **Q：如何基于Canvas实现六边形雷达图以展示不同能力的数据？**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/TfhY-quFSCKNEn-mynTBLQ/zh-cn_image_0000002765922228.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/TfhY-quFSCKNEn-mynTBLQ/zh-cn_image_0000002765922228.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=F548BBFBD539A56B1367B1FDDC7C21027ED808EAF3E19D47891A341ABCE5ADD2 "点击放大")
 
 **A**：实现方法如下：
 
@@ -386,7 +386,7 @@ struct Index {
 
 代码运行效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/SxGw9f0gQi2h-zV8VTHteQ/zh-cn_image_0000002795480725.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/SxGw9f0gQi2h-zV8VTHteQ/zh-cn_image_0000002795480725.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=CDF85D86B209E6DA3C772F94BCF352A504529060A740B4097CBCAE4EFF6895E7 "点击放大")
 
 **Q：将UI组件绘制到Canvas上后，如何截取Canvas获取图片？**
 
@@ -398,7 +398,7 @@ struct Index {
 
 **Q：Canvas如何实现橡皮擦效果，清除已绘制的路径？具体演示如下：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/Mf3mkS_ERJma1fp9MSMc4Q/zh-cn_image_0000002795480865.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/Mf3mkS_ERJma1fp9MSMc4Q/zh-cn_image_0000002795480865.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=146F979239C7B26A60C41FE9DE5F735A330CDA7088659F00CE165A3E7C9BD8F6 "点击放大")
 
 **A**：基于图层叠加实现橡皮擦效果，思路如下：
 

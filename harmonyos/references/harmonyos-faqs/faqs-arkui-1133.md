@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1133
 title: 如何解决RichText设置backgroundColor无效的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决RichText设置backgroundColor无效的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:37+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:0f8116c2ebdec229bbedf78c4ee0f1c10c6b38a6e0b422bff0535f3128bbe8cd
 ---
@@ -65,8 +65,8 @@ struct ToggleExample {
 
 浅色模式效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/udwELcBsQvCX38eqzWHs3A/zh-cn_image_0000002628569428.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/udwELcBsQvCX38eqzWHs3A/zh-cn_image_0000002628569428.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6DE739B9ADD154877C058EA19FF4003D32F2B5F85813ECCB8D833FBE5BE8913 "点击放大")
 
 深色模式效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/f3SMKx9JSdi1jjh7fTR5cA/zh-cn_image_0000002628409528.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/f3SMKx9JSdi1jjh7fTR5cA/zh-cn_image_0000002628409528.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=12BEBA9F913C3B4A017B8642BAD8CECEC18F4A2CF12DE75EE0DCC0F1C82457F9 "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-n
 title: 开发准备
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏近场快传（可选） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:24+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:28292f2dc5902831f2ef8eeb645d322802a5450ff4b5d2629ddafdecd2a60014
 ---
@@ -23,7 +23,7 @@ content_hash: sha256:28292f2dc5902831f2ef8eeb645d322802a5450ff4b5d2629ddafdecd2a
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)平台，在“开发与服务”中选择目标应用，获取“项目设置 > 常规 > 应用”的**APP ID**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/7pRGmdvXRquFhRG7tUE15A/zh-cn_image_0000002815399805.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/7pRGmdvXRquFhRG7tUE15A/zh-cn_image_0000002815399805.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDAC5A742CD638387858292B923E2DF4597E070A57693EE48D2551A0787CE537)
 2. 在工程的entry模块module.json5文件中，新增metadata并配置app\_id，同时新增requestPermissions并配置如下权限。
 
    ```typescript

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: 在内网环境中使用DevEco Studio开发会有哪些常见问题
 breadcrumb: FAQ > DevEco Studio > 环境准备 > 在内网环境中使用DevEco Studio开发会有哪些常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:49+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-05
 content_hash: sha256:e1c7cc57dddc524525512390c6df8b1f8ecc086815467133e1a0406d4b2bd102
 ---
@@ -24,7 +24,7 @@ content_hash: sha256:e1c7cc57dddc524525512390c6df8b1f8ecc086815467133e1a0406d4b2
 
 * **场景一：内网环境，项目构建失败：**
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/4gxz1Q3BRwCl3QRbr912rQ/zh-cn_image_0000002692927757.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/4gxz1Q3BRwCl3QRbr912rQ/zh-cn_image_0000002692927757.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB7A00B2A737540E8BE52D2C1953886141195AD3D0C693616CC72DD19F5808DB "点击放大")
 * **场景二：内网开发中模拟器不能下载：**
 
   在内网开发发现模拟器不能下载，需要提供模拟器下载使用相关的域名。

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-remote-com
 title: rcp表单格式数据传输
 breadcrumb: FAQ > 系统开发 > 网络 > 远场通信（Remote Communication） > rcp表单格式数据传输
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-30
 content_hash: sha256:958a630517210d267ef322d6f9a44ab962eb159574f2d9d8668f07aa05a40b53
 ---
@@ -58,7 +58,7 @@ content_hash: sha256:958a630517210d267ef322d6f9a44ab962eb159574f2d9d8668f07aa05a
 
   运行日志如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/1n6QEzNnRdqQ_I9eP9bdiA/zh-cn_image_0000002658851751.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/1n6QEzNnRdqQ_I9eP9bdiA/zh-cn_image_0000002658851751.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=B782697A89768F7CB8E4118A1A5B9C8398D2CBFCD570F117798EAE2FC98A90B4)
 * **方案2：使用rcp模块中的Form类型数据传输表单数据。**
   1. 使用参数新建Form类。
 
@@ -86,7 +86,7 @@ content_hash: sha256:958a630517210d267ef322d6f9a44ab962eb159574f2d9d8668f07aa05a
 
   运行日志如下，如果用户不在请求头设置数据大小，rcp模块会自动计算：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/Afpc5wO_QcWkks6l9B-mTQ/zh-cn_image_0000002628772386.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/Afpc5wO_QcWkks6l9B-mTQ/zh-cn_image_0000002628772386.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=60A33B5C0F10865304330868901EFEBD84C2E04CAB4AC625B16E9905D2CCA557 "点击放大")
 
 **场景二：复杂混合表单数据传输**
 
@@ -122,7 +122,7 @@ content_hash: sha256:958a630517210d267ef322d6f9a44ab962eb159574f2d9d8668f07aa05a
 
 运行日志如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/AYg2UodGQEi4Mea-gYhX6A/zh-cn_image_0000002658971707.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/AYg2UodGQEi4Mea-gYhX6A/zh-cn_image_0000002658971707.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=8DE51E647212D4ED99B5656FC00CF3276A79FC762E66F8B2C485F314578DF129 "点击放大")
 
 完整示例代码如下：
 

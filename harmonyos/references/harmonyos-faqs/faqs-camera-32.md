@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-32
 title: 自定义相机如何切换前后摄像头
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera） > 自定义相机如何切换前后摄像头
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:36078029bebb5165efd0b626c0d89382483f81bd78abab3bab669f5f1747c9b9
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:36078029bebb5165efd0b626c0d89382483f81bd78abab3bab669f5f174
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/UOiOU0dxQL6E5UPrzFJmbg/zh-cn_image_0000002658791847.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/UOiOU0dxQL6E5UPrzFJmbg/zh-cn_image_0000002658791847.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=16BEB516316FB81AEB8AA95E28EF3EA6EC8E938B963EEAE224A69BEAF0FCE4AD "点击放大")
 
 ## 背景知识
 

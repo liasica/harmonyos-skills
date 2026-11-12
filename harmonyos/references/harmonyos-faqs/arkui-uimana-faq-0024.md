@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-fa
 title: 深浅色模式切换页面渲染失败
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > 深浅色模式切换页面渲染失败
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:32+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:3924587ff02be0f8965eeeca4353554e9e45d592437de9017171db10946d4a70
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:3924587ff02be0f8965eeeca4353554e9e45d592437de9017171db10946
 
 **问题如图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/sBrKbdXGTDOigR9Njcl2NA/zh-cn_image_0000002772679746.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/sBrKbdXGTDOigR9Njcl2NA/zh-cn_image_0000002772679746.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=2DEE7DCBBD5F9AC5DA2A8B36F2AFB2DB2800F89E2948F2D8F440736620B8CEFF "点击放大")
 
 **A**：出现上述问题是因为在切换深浅色模式时，Canvas组件会被销毁并重新创建，此时在tabBar中使用的Canvas组件会在短时间内重新渲染并重新加载到组件树中，从而使得CanvasRenderingContext2D被旧的Canvas组件绑定，而新的Canvas组件无法正确绘制内容。为了解决上述问题，可以将CanvasRenderingContext2D和Canvas组件封装为一个自定义组件，以避免这种情况，示例如下：
 
@@ -93,4 +93,4 @@ struct TabBuilderLottiePage {
 
 示例实现效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/IFlwiCxITsiqJu7cFq2InQ/zh-cn_image_0000002802119575.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/IFlwiCxITsiqJu7cFq2InQ/zh-cn_image_0000002802119575.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9E6FD91408D514A21CB6564A1DD4075F594C52778962C99934B99962CB12724 "点击放大")

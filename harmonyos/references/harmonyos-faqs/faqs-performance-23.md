@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 双指缩放时抖动卡顿
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 双指缩放时抖动卡顿
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:43+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:2d85adb80a191b434f22e623be8b6d9c8e2a0b0dd5ffadc12c337726d3255c5a
 ---
@@ -20,21 +20,21 @@ content_hash: sha256:2d85adb80a191b434f22e623be8b6d9c8e2a0b0dd5ffadc12c337726d32
 
 ## 问题定位
 
-1. 使用DevEco Profiler中的Frame模板抓取双指缩放过程中的Trace，在UserEvents泳道可以看到手指操作事件的开始和结束时间，以此框定分析问题的范围。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/hN2ljST2T6-y_9kCEPUkRA/zh-cn_image_0000002628555060.png "点击放大")
-2. 在render\_service线程中根据H:PreferredFrameRate获取当前屏幕刷新率为90Hz，根据背景知识中【屏幕刷新率】换算得平均单次刷新耗时11.11ms。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/3Ss33b1BS-m8f_WYOujy0g/zh-cn_image_0000002628395156.png)
+1. 使用DevEco Profiler中的Frame模板抓取双指缩放过程中的Trace，在UserEvents泳道可以看到手指操作事件的开始和结束时间，以此框定分析问题的范围。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/hN2ljST2T6-y_9kCEPUkRA/zh-cn_image_0000002628555060.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=874617B69653A263A27CD374C10940D6466CB38C88B3F5F9AC647487B59E3070 "点击放大")
+2. 在render\_service线程中根据H:PreferredFrameRate获取当前屏幕刷新率为90Hz，根据背景知识中【屏幕刷新率】换算得平均单次刷新耗时11.11ms。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/3Ss33b1BS-m8f_WYOujy0g/zh-cn_image_0000002628395156.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=C694391E156278C012FAE8E3A2B1D7205DCDEA58D2E70F05F7FCB3D9E5B43759)
 3. 查看Frame泳道应用包名线程是否有标红的掉帧点。
    * **有标红掉帧点**，查看对应时间范围应用包名泳道的应用包名子线程Trace，可以看到单次ReceiveVsync（接收Vsync信号）耗时70ms左右，远超步骤1中换算得出的11.11ms，说明此时在多次屏幕刷新时页面信息没有更新，在视觉上体现为卡顿丢帧。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/l6pypq9hQSqhWopPCP5bag/zh-cn_image_0000002658914383.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/l6pypq9hQSqhWopPCP5bag/zh-cn_image_0000002658914383.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=67A1B703AD96F08C2F6962AE02C8AB16F4B408E4B34084D6948A63A9F6B7CE3B "点击放大")
 
-     根据H:ViewPU.viewPropertyHasChanged xxx isValidate 0耗时53.8ms可以判断具体原因为状态变量更新时执行耗时操作导致此次ReceiveVsync（接收Vsync信号）耗时过长。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/3Es4jAuqRaC4bT1OelfBsA/zh-cn_image_0000002658794425.png "点击放大")
+     根据H:ViewPU.viewPropertyHasChanged xxx isValidate 0耗时53.8ms可以判断具体原因为状态变量更新时执行耗时操作导致此次ReceiveVsync（接收Vsync信号）耗时过长。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/3Es4jAuqRaC4bT1OelfBsA/zh-cn_image_0000002658794425.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=01A12D660D720A733D2E155050BE7BEAF8718087DE252CB3C7FBCD1DE206B694 "点击放大")
    * **没有标红掉帧点**，需要对相关组件绘制渲染的频率进行分析。通过ArkUI Inspector抓取对应页面布局，得知使用的是Canvas组件。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/illcWmYdR1WnuwUSB6LMwQ/zh-cn_image_0000002628555062.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/illcWmYdR1WnuwUSB6LMwQ/zh-cn_image_0000002628555062.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0C9639C13D662FABDFFF624453A1ECB752B613414E7A784CF8F9DB83695AD67 "点击放大")
 
      在Frame模板分析结果的上方搜索框中根据关键字H:FrameNode[Canvas][id:组件ID]::RenderTask搜索Canvas组件渲染的频率，可以看到每次渲染间隔在25ms左右，通过计算可得出应用侧渲染该组件的频率为40Hz左右，不到当前屏幕刷新率90Hz的一半，因此在双指缩放过程中有明显抖动卡顿现象。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/69RFXLzZRV-U-CsR-iASLA/zh-cn_image_0000002628395158.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/69RFXLzZRV-U-CsR-iASLA/zh-cn_image_0000002628395158.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=C34C9FE6438672CAB7205B9E1C2844AFD19DF9449DEE28F23969CC173924F180 "点击放大")
 
 ## 分析结论
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1618
 title: ForEach实现刻度尺相关效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > ForEach实现刻度尺相关效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:26+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:18a84b4a6c12fcefa19fb1bb2ce9c08f8a5a017428e595a7524b70caa47ac838
 ---
@@ -12,10 +12,10 @@ content_hash: sha256:18a84b4a6c12fcefa19fb1bb2ce9c08f8a5a017428e595a7524b70caa47
 
 * 场景一：如何使用ForEach循环渲染实现刻度尺的效果，如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/Mea5BajbTFCXYd8goMgEwA/zh-cn_image_0000002628617570.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/Mea5BajbTFCXYd8goMgEwA/zh-cn_image_0000002628617570.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=3269B5F651575A42CB60514AB4438EF57787014F257F761968C8C564F3EE60C1 "点击放大")
 * 场景二：如何实现一个横向的刻度选择器，支持横向滑动的效果？
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/JyvrGl2FRBiiPllk4HLkFw/zh-cn_image_0000002628777466.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/JyvrGl2FRBiiPllk4HLkFw/zh-cn_image_0000002628777466.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=8AECE48504BE0201D98D035ACE0A282D90313658D76F23B0A07CC94B650BEF6F "点击放大")
 
 ## 背景知识
 

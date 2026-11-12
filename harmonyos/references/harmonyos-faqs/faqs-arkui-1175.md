@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1175
 title: RichEditor组件如何添加视频
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > RichEditor组件如何添加视频
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:18+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:a8045033615d744c93e1e0dc0d3dd9a3c244ec3fd1138f84a015d4736548f341
 ---
@@ -14,7 +14,7 @@ RichEditor组件是否可以添加视频，如何添加？
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/LM846iK1RX-kf_xmpezvFg/zh-cn_image_0000002628569784.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/LM846iK1RX-kf_xmpezvFg/zh-cn_image_0000002628569784.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2B355F79CBD35B3B6FCF85A53E999AE909E39D51401149CBABEC6AFB0327E48 "点击放大")
 
 ## 背景知识
 

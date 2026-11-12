@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: form开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 容器组件 > form开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:18+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-28
 content_hash: sha256:72b652bbc1fd052611f4dbf5c87182a65942e45e59cd022bce41f1afbd72a9d4
 ---
@@ -35,7 +35,7 @@ form是一个表单容器，支持容器内[Input](../harmonyos-references/js-co
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/jh70gMpEQ8WNtxqG1HaxWA/zh-cn_image_0000002786519224.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/jh70gMpEQ8WNtxqG1HaxWA/zh-cn_image_0000002786519224.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=B37BED89CC17BAAA83C7128C32C9A8D89F6DBF1552E3655A02F062300B9802CF)
 
 ## 实现表单缩放
 
@@ -72,7 +72,7 @@ form是一个表单容器，支持容器内[Input](../harmonyos-references/js-co
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/EaKluAenQvOZkgB4BljgYg/zh-cn_image_0000002786359296.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/EaKluAenQvOZkgB4BljgYg/zh-cn_image_0000002786359296.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF1754E1EE702A39B089DD0265204544DAF214284BA52263F8EE2C6BEF338F82)
 
 ## 添加响应事件
 
@@ -134,7 +134,7 @@ export default{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/vdu4GKMlRmK4ySbkAT1kIg/zh-cn_image_0000002815558717.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/vdu4GKMlRmK4ySbkAT1kIg/zh-cn_image_0000002815558717.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=565BB95F3F565693773A9D63FE606444DC56D699A2FFA0DD0EB2D455C311FDDC)
 
 ## 场景示例
 
@@ -213,4 +213,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/Xp1LNJS1RVGMmmYFgm3y1Q/zh-cn_image_0000002815398801.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/Xp1LNJS1RVGMmmYFgm3y1Q/zh-cn_image_0000002815398801.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=5628F31738B7C4F9260E54E13ED87EFC259B8A041677B518495586126E5B5B99)

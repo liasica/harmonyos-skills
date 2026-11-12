@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: 针对所有应用的变更
 breadcrumb: 版本说明 > 更多版本 > 26.0.0 > OS平台能力 > OS平台行为变更说明 > 26.0.0 Release引入的行为变更 > 针对所有应用的变更
 category: harmonyos-releases
-scraped_at: 2026-11-12T09:49:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:5a2c8570d9ed943e11515edbc2d4e76d1d9f9c8c0e65fc19dce1da75b125c16b
 ---
@@ -252,11 +252,11 @@ struct MaterialScopeExample {
 
 变更前，Column组件通过systemMaterial设置了沉浸光感，沉浸光感效果生效。示例图片如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/wiJwj7t3ShalPXGjWxFDqA/zh-cn_image_0000002744123695.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/wiJwj7t3ShalPXGjWxFDqA/zh-cn_image_0000002744123695.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA764F0A34BDC8D1FB2EC069AF4E7D716655A1E14835C5B4E8849035E4ACC3E8)
 
 变更后，Column组件通过systemMaterial设置了沉浸光感，由于不处于生效范围内，沉浸光感效果不生效。示例图片如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/dFNB4dONSMCM3oWFcXKntw/zh-cn_image_0000002714364828.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/dFNB4dONSMCM3oWFcXKntw/zh-cn_image_0000002714364828.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=87FA5D3DAD9FD9BECC35E51AC86FC1BBE6552E992C0346E41E6002B4806A86E9)
 
 **起始 API Level**
 
@@ -353,11 +353,11 @@ struct MaterialScopeExample {
 
   在自定义组件中，为Column组件设置了沉浸光感，处于生效范围外，沉浸光感效果不生效。示例图片如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/iErj1mPWRIqSCKBmpjdxdw/zh-cn_image_0000002743963725.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/iErj1mPWRIqSCKBmpjdxdw/zh-cn_image_0000002743963725.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=F17BE0C089BB095B67B7677281CA77E3C50BA6F935C2B1F833353576A05DBFE4)
 
   在Navigation标题栏中，为Column组件设置了沉浸光感，处于生效范围内，沉浸光感效果生效。示例图片如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/Iu3l8eYCQYerFKxtEH0jdw/zh-cn_image_0000002714524792.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/Iu3l8eYCQYerFKxtEH0jdw/zh-cn_image_0000002714524792.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=7BF6FD3190400315104FBCACDFA6B9D43E8F8D2422DA3F440ED0BB8DDFE58877)
 * 底部TabBar适配指导
 
   以下示例展示了将Column组件放置于底部TabBar，使得通过systemMaterial设置的沉浸光感效果生效。
@@ -455,11 +455,11 @@ struct MaterialScopeExample {
 
   在自定义组件中，为Column组件设置了沉浸光感，处于生效范围外，沉浸光感效果不生效。示例图片如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/3cbUxKXpQ5emVL4Sx-tUtA/zh-cn_image_0000002744123697.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/3cbUxKXpQ5emVL4Sx-tUtA/zh-cn_image_0000002744123697.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED2171A4AEF247F44551B0DDC021D97EE45846BE1BFD0FA402136C757C56C5A5)
 
   在底部TabBar中，为Column组件设置了沉浸光感，处于生效范围内，沉浸光感效果生效。示例图片如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/2g65_43NQcKBVxKV6IrnHg/zh-cn_image_0000002714364830.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/2g65_43NQcKBVxKV6IrnHg/zh-cn_image_0000002714364830.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=9152E5110B70AD4AE39DC4FA54E3F362B09FFA11F4C7B3A2FE899E7B4E8E79FD)
 * 弹窗类组件沉浸光感使用示例
 
   由于不处于Navigation/NavDestination标题栏或横向Tabs中barPosition为BarPosition.End的底部TabBar内，因此以下两个场景，设置于背板的沉浸光感效果不会生效：
@@ -532,7 +532,7 @@ struct MaterialScopeExample {
 
   使用CustomDialog的systemMaterial属性开启弹窗的沉浸光感效果，示例图片如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/4VsZEYfjRIKVZtaTgzhqtg/zh-cn_image_0000002743963727.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/4VsZEYfjRIKVZtaTgzhqtg/zh-cn_image_0000002743963727.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=8EF68B8760342043384CCCC18C7BC3D8BB6C8BCEA91110E6AD28B38880DEAF65)
 
 ## Core File Kit
 

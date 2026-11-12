@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-explic
 title: 显式动画 (animateTo)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 显式动画 (animateTo)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:35d9a5cda7fcee6bdb32ed3110d68e2a0967cb028e6fea0a6f70021114cbb43a
 ---
@@ -214,7 +214,7 @@ struct AnimateToExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/YcMmp2_gRZKMoy0iqSt0CQ/zh-cn_image_0000002786361548.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/YcMmp2_gRZKMoy0iqSt0CQ/zh-cn_image_0000002786361548.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=851DE727966B4177F8199E108CBC5C95D068FEC7FE85EE4B6DA199D2A58426E9)
 
 ### 示例2（动画执行结束后组件消失）
 
@@ -269,4 +269,4 @@ struct AttrAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/BQ0e9dayQhKJSIFTZyXLCQ/zh-cn_image_0000002815560969.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/BQ0e9dayQhKJSIFTZyXLCQ/zh-cn_image_0000002815560969.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D0D802F1C841A11CFE8C541F09F3B8E8DB12AB07B816C1DCDBE202227E561F6)

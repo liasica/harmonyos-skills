@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-946
 title: Flex布局Text自动换行时显示不全
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Flex布局Text自动换行时显示不全
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:13+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:e6432e92d96eba8261cbd9bf8ee1f7564f6b90014198cd07f8b1a0d791154f10
 ---
@@ -56,7 +56,7 @@ struct Index {
 
 下面是字符显示不全的效果图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/y9JduYy6Q8CcOcdxUa53jw/zh-cn_image_0000002628401232.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/y9JduYy6Q8CcOcdxUa53jw/zh-cn_image_0000002628401232.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=35B92482322860F0628939465D96E3877D053416918CDE7003E5DB918D2020BE "点击放大")
 
 ## 背景知识
 
@@ -121,4 +121,4 @@ struct StretchDemo {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/j1K4DI9kTyGwXAGXw0MlLw/zh-cn_image_0000002658800497.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/j1K4DI9kTyGwXAGXw0MlLw/zh-cn_image_0000002658800497.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E047BB860338DA516704F2F43BBF7ADFC74BF19BC8AC8EE8E5B2ECF85A15F9A "点击放大")

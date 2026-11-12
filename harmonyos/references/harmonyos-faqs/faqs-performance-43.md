@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 点击视频播放按钮后长时间初始化
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 点击视频播放按钮后长时间初始化
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:43+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-22
 content_hash: sha256:926c3bf6ea23bff6f98bdf02d10d8045b0459fce2c3044903a3c8155579d5dfe
 ---
@@ -31,13 +31,13 @@ content_hash: sha256:926c3bf6ea23bff6f98bdf02d10d8045b0459fce2c3044903a3c8155579
 
 1. 使用ArkUI Inspector可以看到视频初始化过程中的加载组件名为LoadingProgress。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/CH-MmhyzSYOPqXV2h6SksA/zh-cn_image_0000002658914511.png)
-2. 使用DevEco Profiler Frame模板抓取从点击播放按钮到视频开始播放的Trace，搜索关键字H:DispatchTouchEvent XXX type=1作为起始时间。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/MhP4nd_WRX-jfZuczL4Gtw/zh-cn_image_0000002628395280.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/CH-MmhyzSYOPqXV2h6SksA/zh-cn_image_0000002658914511.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5994926672A7C776B1CD0F5C66DC169C2E6201BB4A8DA2EF69A1EC40AEC97CE)
+2. 使用DevEco Profiler Frame模板抓取从点击播放按钮到视频开始播放的Trace，搜索关键字H:DispatchTouchEvent XXX type=1作为起始时间。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/MhP4nd_WRX-jfZuczL4Gtw/zh-cn_image_0000002628395280.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=DAABE295023918CA2CBF19A788F721355E74676695B4FA8866600DE3FC4C339A "点击放大")
 
-   搜索最后一次关于LoadingProgress渲染的Trace点H:FrameNode[LoadingProgress]作为结束时间。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/gOg8_le5QpiJ09Fi8v6OOg/zh-cn_image_0000002658794555.png "点击放大")
+   搜索最后一次关于LoadingProgress渲染的Trace点H:FrameNode[LoadingProgress]作为结束时间。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/gOg8_le5QpiJ09Fi8v6OOg/zh-cn_image_0000002658794555.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B530A71AD35FD819492247C40EA5888F59B218CC0185A2E759ACEF4833E2714 "点击放大")
 
-   可以看到在此时间范围内应用包名主线程并无耗时过长的Trace点，可以排除应用主线程阻塞导致的耗时。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/dz6ovfV3TeaYr9niPIBORQ/zh-cn_image_0000002628555192.png "点击放大")
-3. 查看media\_service泳道中PlayerEngine子泳道，可以明显看到16s多的耗时点，耗时主要集中在H:ffmpeg\_init，ffmpeg\_init是应用对资源进行解封装初始化。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/qRfFfoWMSM2IeTCcrjINfg/zh-cn_image_0000002658914513.png "点击放大")
+   可以看到在此时间范围内应用包名主线程并无耗时过长的Trace点，可以排除应用主线程阻塞导致的耗时。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/dz6ovfV3TeaYr9niPIBORQ/zh-cn_image_0000002628555192.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F6507DA4687246157F06272AA93C3B79D64954AC79FDE9338C3BC47094300D8 "点击放大")
+3. 查看media\_service泳道中PlayerEngine子泳道，可以明显看到16s多的耗时点，耗时主要集中在H:ffmpeg\_init，ffmpeg\_init是应用对资源进行解封装初始化。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/qRfFfoWMSM2IeTCcrjINfg/zh-cn_image_0000002658914513.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E872BED766CFD11B6A3319937A3AB1C3CA6AC3D9AAB3439F7A4456DC2302BE1 "点击放大")
 4. 根据背景知识中对解封装初始耗时原因的介绍，重点分析数据申请耗时。因为在不同网络环境下可复现问题，故排除网络环境差导致的耗时问题。
 
    在HiLog中搜索content-type|content-range：

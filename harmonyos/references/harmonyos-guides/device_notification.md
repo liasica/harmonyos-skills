@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device_notifi
 title: 穿戴设备模板化通知
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > 手机侧应用开发 > 应用开发 > 穿戴设备模板化通知
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:52+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:6654752f04d1a92516f7c64a16030fc715c886567d0d7e0372c5e0dfa7566112
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:6654752f04d1a92516f7c64a16030fc715c886567d0d7e0372c5e0dfa75
 
 该接口无需用户授权，仅需要确保应用已申请消息通知权限（参见[申请接入Wear Engine服务](wearengine_apply.md)），否则接口将调用失败。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/bjtQKFdITX2gyoTYChYJMg/zh-cn_image_0000002815559213.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/bjtQKFdITX2gyoTYChYJMg/zh-cn_image_0000002815559213.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC42EE90B73FB0253A7CDA036B9CCC178912BD4F616AF8C5E8068975E4A241F8)
 
 **说明** 
 

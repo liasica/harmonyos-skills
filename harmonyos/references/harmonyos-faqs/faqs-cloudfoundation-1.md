@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-cloudfound
 title: 如何开通手机号码认证服务
 breadcrumb: FAQ > 应用服务开发 > 云开发服务（Cloud Foundation Kit） > 如何开通手机号码认证服务
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:47+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:3ef63eded71b08fad9014eb7f17bd59b737e518baca87398e1ed62c4093c1b0e
 ---
@@ -23,19 +23,19 @@ content_hash: sha256:3ef63eded71b08fad9014eb7f17bd59b737e518baca87398e1ed62c4093
 
 1. 在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)中，启用手机号码认证。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/BGVtV8xVSIagxHXTwd_aag/zh-cn_image_0000002658555602.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/BGVtV8xVSIagxHXTwd_aag/zh-cn_image_0000002658555602.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=8CC3921FBD26C02D88B1CB882F903E277F78CBFBB69AABE9ECE98813C1A75911 "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/BMVjikkcRMKUUmIEARIMaw/zh-cn_image_0000002658395850.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/BMVjikkcRMKUUmIEARIMaw/zh-cn_image_0000002658395850.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD738BF73B57191581390C2EE0CF4A07A88D48628F6CD4D6ADD730894464A2F5 "点击放大")
 2. 获取SDK配置信息，添加到项目中。将"agconnect-services.json"文件拷贝到DevEco Studio项目的"AppScope/resources/rawfile"目录下，"AppScope/resources"目录下默认不存在"rawfile"文件夹，需要您手动创建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/buqMHYyiQf2m98Kv24lHyQ/zh-cn_image_0000002688435381.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/buqMHYyiQf2m98Kv24lHyQ/zh-cn_image_0000002688435381.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0E0165130EA80FDF990074113AD011D4CDA4BA64D677A2960AE792311CCECEE "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/1r3fa9LERmuoSRwdKeuiTA/zh-cn_image_0000002688435429.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/1r3fa9LERmuoSRwdKeuiTA/zh-cn_image_0000002688435429.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=C15FA1042EE571D31D7DCD432C4A092A663F82AA214EC686B449DD5C191931C8 "点击放大")
 3. 添加配置文件后，需要在DevEco Studio项目中配置SDK依赖。可参考：[配置SDK依赖](../app/agc-help-auth-integration-sdk-0000002236337006.md#section118271917153716)。
 
    并在"entry/src/main/module.json5"文件中添加网络权限：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/Bjsi72QGTh6g1AZ0Sxt8QA/zh-cn_image_0000002688555733.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/Bjsi72QGTh6g1AZ0Sxt8QA/zh-cn_image_0000002688555733.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8CB90359686683FC2D0A3E5852EFB281D63E76DE3A182ED2215B3D371AB6714 "点击放大")
 4. 集成HarmonyOS 开发者中心 SDK，在EntryAbility的onCreate中初始化SDK，可参考：[集成SDK](../app/agc-help-auth-integration-sdk-0000002236337006.md#section643311286432)。
 
 ## 常见FAQ

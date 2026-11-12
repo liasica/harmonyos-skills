@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1086
 title: 使用PersistentStorage持久化数据常见问题场景和注意事项
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 使用PersistentStorage持久化数据常见问题场景和注意事项
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:1d558d39a68841e003bf03a351cad5448762cb2b1e8afcb1a8c182c5b87100d7
 ---
@@ -128,7 +128,7 @@ content_hash: sha256:1d558d39a68841e003bf03a351cad5448762cb2b1e8afcb1a8c182c5b87
 
   场景一实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/wd09U3mMRbuCrJe1jFeygQ/zh-cn_image_0000002628567246.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/wd09U3mMRbuCrJe1jFeygQ/zh-cn_image_0000002628567246.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=3EF244168B2FB0BFA53F18D1F2DAB3395F3254C7C7D3A0E8D77C789C1D68814A "点击放大")
 * 场景二：如何解决PersistentStorage无法获取持久化的数据的问题？
 
   PersistentStorage和UI实例相关联，持久化操作需要在UI实例初始化成功后（即[loadContent](../harmonyos-references/arkts-apis-window-window.md#loadcontent9)传入的回调被调用时）才可以被调用，由于问题代码中PersistentStorage早于该时机调用，所以会导致持久化失败。详情参考官网行业常见问题：[PersistentStorage无法获取持久化的数据如何解决](faqs-arkui-900.md)。

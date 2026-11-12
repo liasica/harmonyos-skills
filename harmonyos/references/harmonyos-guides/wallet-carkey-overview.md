@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-carkey
 title: 概述
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 数字车钥匙 > 概述
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:38+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-28
 content_hash: sha256:246ed891d73838a97414ab0fa0d479ca12d0ba6f1e17d68fa5292797523c588c
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:246ed891d73838a97414ab0fa0d479ca12d0ba6f1e17d68fa5292797523
 
 ## 系统架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/KrNwB2LFTAKStL-j5GgmuQ/zh-cn_image_0000002815560031.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/KrNwB2LFTAKStL-j5GgmuQ/zh-cn_image_0000002815560031.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A7AADA0A01A40DE68EFF455976A611F3444EA7E8CCDE170041B752365EC59E6)
 
 | 角色 | 说明 |
 | --- | --- |
@@ -29,11 +29,11 @@ content_hash: sha256:246ed891d73838a97414ab0fa0d479ca12d0ba6f1e17d68fa5292797523
 
 ### 车钥匙开通
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/ZUL3iyZLQDOOz-kVZal0rQ/zh-cn_image_0000002815400115.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/ZUL3iyZLQDOOz-kVZal0rQ/zh-cn_image_0000002815400115.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B2C30DDABBDE8C9823AEE325203C75844276D8F79EF9E2C3EBC2920BB8846C4)
 
 ### 车钥匙展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/z3W3cKJkQUmPZRrDC-HcWQ/zh-cn_image_0000002786520540.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/z3W3cKJkQUmPZRrDC-HcWQ/zh-cn_image_0000002786520540.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=E454A63D9CB6BB0D7F44D947444344D1E6B66608E31088C944CA77ED9F980CB0)
 
 ## 典型交互场景
 

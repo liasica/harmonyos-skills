@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: ArkUI-Image组件图片显示与处理常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > ArkUI-Image组件图片显示与处理常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:6e90c2c3e1b823eb56e051fd9e5b58b135c23b85960e0637c41b2cf2ca9094c5
 ---
@@ -224,15 +224,15 @@ struct ChatBubbleStretchDemo {
 
 正常大小
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/9CK2h_YjQPiJiQwrQfk_uQ/zh-cn_image_0000002797250681.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/9CK2h_YjQPiJiQwrQfk_uQ/zh-cn_image_0000002797250681.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8166667E864BD5C4BA239FEC671D94A4FFE9F217A99EE826C3C1A8ADB593EAB "点击放大")
 
 左右拉伸操作
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/JzIc0v85Tqa-cYQA_lvMmg/zh-cn_image_0000002767970732.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/JzIc0v85Tqa-cYQA_lvMmg/zh-cn_image_0000002767970732.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=80A1A0DFC6C621C94921790472006F45028D110DC10C329F3AD98602C36FF87B)
 
 支持多行上下左右拉伸
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/JUza2639Q3q7uwhoG0oA0g/zh-cn_image_0000002797250683.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/JUza2639Q3q7uwhoG0oA0g/zh-cn_image_0000002797250683.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=866548095A6900F5B02E05235CDE4B847F8A5FFBE4025C9F2A4E000955C1FDC1)
 
 上述示例实现的是图片拉伸中间，四周保持不变。还有另一种拉伸方式，实现图片拉伸四周，中间保持不变，示例如下。
 
@@ -309,7 +309,7 @@ struct DrawingLatticeResizeDemo {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/cAi69LyFQia0XMtPLTBNdA/zh-cn_image_0000002797370663.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/cAi69LyFQia0XMtPLTBNdA/zh-cn_image_0000002797370663.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=BAD111CAEF1982216D26C4034E1A2FFD1A1086E0E6998717E41BA798AD25A598 "点击放大")
 
 **A**：要缓解图片放大时的锯齿问题，可将Image组件的interpolation属性设置为ImageInterpolation.High，以启用高质量的插值算法。
 
@@ -341,7 +341,7 @@ struct ImageScalingDemo {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/aaC6iEULRoW8qH4o5rkjqg/zh-cn_image_0000002797250685.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/aaC6iEULRoW8qH4o5rkjqg/zh-cn_image_0000002797250685.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E68A8D8C39466083A85982C6A3680B877A9C8F72FF772D709525DE7D7B65162 "点击放大")
 
 **Q：如何实现图片自适应不失真？**
 

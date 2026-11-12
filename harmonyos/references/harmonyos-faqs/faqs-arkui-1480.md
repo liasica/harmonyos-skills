@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1480
 title: promptAction.showToast在后台不显示
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > promptAction.showToast在后台不显示
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:24+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:a7e340e9fa9a7f68d4585bc8364aeb23557c568da4f4b701466b265ae3ae69e9
 ---
@@ -14,7 +14,7 @@ APP进入后台时，希望能弹出Toast提示用户进入后台，但是Toast�
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/u9IFLTNAT6KY4aa8yS6AjQ/zh-cn_image_0000002658845071.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/u9IFLTNAT6KY4aa8yS6AjQ/zh-cn_image_0000002658845071.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=D48BE7063EC3038FC4F8EC3C38AB4F7879CD571DB8154E87A3A6A063C40113E1 "点击放大")
 
 ## 背景知识
 

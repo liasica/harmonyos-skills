@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1102
 title: 如何监听屏幕截屏、录屏及投屏状态变化
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 屏幕管理 > 如何监听屏幕截屏、录屏及投屏状态变化
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:28+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:00adbbf659c9909941bdff5672d2831d1ffc930cc60ef390ea7b7872deffcb3a
 ---
@@ -64,7 +64,7 @@ content_hash: sha256:00adbbf659c9909941bdff5672d2831d1ffc930cc60ef390ea7b7872def
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/9EMjrq8iSD6DXV1AaF4Cxw/zh-cn_image_0000002698150521.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/9EMjrq8iSD6DXV1AaF4Cxw/zh-cn_image_0000002698150521.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9B9CEF180D09868D13A710B57A146A0901A321375E0EEDDD2BCFF660689970C "点击放大")
 * 方案二：通过display.isCaptured方法主动获取屏幕状态，具体实现如下：
 
   ```ts
@@ -102,7 +102,7 @@ content_hash: sha256:00adbbf659c9909941bdff5672d2831d1ffc930cc60ef390ea7b7872def
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/2L48DrVwRmKaMDQIhzo5-A/zh-cn_image_0000002698150609.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/2L48DrVwRmKaMDQIhzo5-A/zh-cn_image_0000002698150609.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4F84D392C5D555D27C736355B6E0F4170E5D7188D6DF720425BB23F9E9C6C7E "点击放大")
 * 方案三：在代码中同时添加window.on('screenshot')和录屏display.on('captureStatusChange')的监听，观察到截屏事件的执行总是发生在录屏事件之前，事件的触发顺序提供了一种方式来区分应用程序中的截屏与录屏动作。
   1. 在EntryAbility中通过window.on('screenshot')监听用户的截屏操作，并保存在AppStorage中，具体实现如下：
 
@@ -206,7 +206,7 @@ content_hash: sha256:00adbbf659c9909941bdff5672d2831d1ffc930cc60ef390ea7b7872def
 
      效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/kh8hkA2yQpKM__MKZbr2Fg/zh-cn_image_0000002698230865.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/kh8hkA2yQpKM__MKZbr2Fg/zh-cn_image_0000002698230865.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=D488A20133A7127E7AD7C4CF7A8221A7B55F34E26B428BDA92A5EF12A1E22FF5 "点击放大")
 
 ## 常见FAQ
 

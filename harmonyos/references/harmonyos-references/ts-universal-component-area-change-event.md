@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 组件区域变化事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 组件变化事件 > 组件区域变化事件
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:2da603ec9f474220580b78da01231404018521d6c85e87af9b749421991e4e57
 ---
@@ -146,7 +146,7 @@ struct AreaExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/r0qmzNrzS_yDQmHbmt0_vQ/zh-cn_image_0000002815560385.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/r0qmzNrzS_yDQmHbmt0_vQ/zh-cn_image_0000002815560385.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=67E45BAE68EB701522397BBD12BA72A5ED7167F7ADFA714F92170CB9DCB75072)
 
 ### 示例2（使用onAreaChange自定义间隔监听区域变化）
 
@@ -183,4 +183,4 @@ struct AreaExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/VQE6pq2fTnejgdMHgWCvTw/zh-cn_image_0000002815400469.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/VQE6pq2fTnejgdMHgWCvTw/zh-cn_image_0000002815400469.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=6678F16C2D7C47598B1A3B5352BBF83A4AA03A8E938ACC94D690FAB0971ACD0B)

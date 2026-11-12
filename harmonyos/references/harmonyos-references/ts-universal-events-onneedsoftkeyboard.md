@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 键盘判断事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互响应事件 > 键盘判断事件
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-01
 content_hash: sha256:688c9e5e167ac0d8ffcb3ce7a970fe61b0bbddd3a13f8965338c2381e6588ff6
 ---
@@ -103,4 +103,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/tXIePQTpT6K7bQ5lXF5Xfg/zh-cn_image_0000002786360962.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/tXIePQTpT6K7bQ5lXF5Xfg/zh-cn_image_0000002786360962.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3B1F300F058BF3B17BD475249355C12AD4472F266EC1DA79CC42CD7AE1B1806)

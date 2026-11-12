@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-27
 title: List组件如何实现多列效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > List组件如何实现多列效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:53+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:23f63f892257c76fa2d8d241f4eceb1177397beb73cabc74f20aeb4dd6b9be2d
 ---
@@ -46,4 +46,4 @@ struct ListExample {
 
 效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/9EU_LUoQSDi-VRtdKxk8SA/zh-cn_image_0000002624475914.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/9EU_LUoQSDi-VRtdKxk8SA/zh-cn_image_0000002624475914.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3B42671C495C58C16B65289B5C6BE16A66E1D59731EE4473AB541DBE4F083F2 "点击放大")

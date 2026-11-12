@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-media-
 title: Video
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图片与视频 > Video
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-14
 content_hash: sha256:41fc76184405d956e5d233d3f35a685840bee65188834d076848b8d7cb53c74c
 ---
@@ -953,7 +953,7 @@ interface FullscreenObject {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/aR4DkvRXTx2ey6ep9XJtBg/zh-cn_image_0000002786521318.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/aR4DkvRXTx2ey6ep9XJtBg/zh-cn_image_0000002786521318.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=F76D5E9B9779F1246A62F17D3030521DCEB24C366587D3A3E5E94B04514936E1)
 
 ### 示例2（图像分析功能）
 
@@ -1111,7 +1111,7 @@ struct VideoObject {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/dpF0H9VXSk2H32gpYLbz4g/zh-cn_image_0000002786361390.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/dpF0H9VXSk2H32gpYLbz4g/zh-cn_image_0000002786361390.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDA15A0FC180B0F7C9AE4CD697485CA17C5D1CA92D7C0EA5C7ABDCE36C829649)
 
 ### 示例5（onError事件上报错误码）
 
@@ -1154,7 +1154,7 @@ struct VideoErrorComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/LnPStwwXTY2fQgNBL60NKw/zh-cn_image_0000002815560811.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/LnPStwwXTY2fQgNBL60NKw/zh-cn_image_0000002815560811.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F3AC776D46FB3FE4A938B0D8BD3BF8E91F1B5F845B8C4C6E1F9BC2FCA2662DA)
 
 ### 示例6（使用attributeModifier动态设置Video组件的属性及方法）
 
@@ -1276,7 +1276,7 @@ interface FullscreenObject {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/vN7JNvJyTL2NXRqHtalnuQ/zh-cn_image_0000002815400895.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/vN7JNvJyTL2NXRqHtalnuQ/zh-cn_image_0000002815400895.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B6D292A0FCFFC923DCA908C132BC0C2F0E67ABAC191B24F103DFC28123B286C)
 
 ### 示例7（VideoControllerAsync用法）
 

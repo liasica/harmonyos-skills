@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: 如何使OffscreenCanvas绘制的内容同步到多个Canvas中
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > 如何使OffscreenCanvas绘制的内容同步到多个Canvas中
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-13
 content_hash: sha256:17380c2df88e748c11e5ce05793310b92e3a5f1fa6f457569dfdc7a4f9ed0b9e
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:17380c2df88e748c11e5ce05793310b92e3a5f1fa6f457569dfdc7a4f9e
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/n0mbPibJRdWS6Nop9F4m2A/zh-cn_image_0000002628393364.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/n0mbPibJRdWS6Nop9F4m2A/zh-cn_image_0000002628393364.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=E83B4280BE1489387F4C56A631E46CB0DED5C4297C6C65C6AC7C2022FCD2B8B6 "点击放大")
 
 ## 背景知识
 

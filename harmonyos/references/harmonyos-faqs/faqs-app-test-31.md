@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-3
 title: DevEco Testing Hypium中的UiViewer使用中的常见问题和解决方案
 breadcrumb: FAQ > DevEco Studio > 应用测试 > DevEco Testing Hypium中的UiViewer使用中的常见问题和解决方案
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:2d76af5a2f7e37866a480c8b529f695c4371a0b4ae60f1198ed9d4416763efff
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:2d76af5a2f7e37866a480c8b529f695c4371a0b4ae60f1198ed9d441676
 
 使用[DevEco Testing Hypium](../harmonyos-guides/hypium-python-guidelines.md#section16890204264419)插件展开UiViewer功能面板，提示“获取视频流失败，请重新选择设备进入”，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/s26j0tLHQZuFbAWR67LecA/zh-cn_image_0000002628409626.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/s26j0tLHQZuFbAWR67LecA/zh-cn_image_0000002628409626.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=2D24B59E5247241BF5233CCFEB972BC1734D18A69F960E8DD3BC8CA0ED350C1F "点击放大")
 
 ## 背景知识
 
@@ -24,10 +24,10 @@ PyCharm界面右侧栏的toolWindow区域可见UiViewer标签，点击后展开U
 
   打开PyCharm的settings->Plugins查看版本号。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/NeZhfpSeS8Gn5-0UTKeFJQ/zh-cn_image_0000002658808885.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/NeZhfpSeS8Gn5-0UTKeFJQ/zh-cn_image_0000002658808885.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=886288080036ABCD139F9D188AAEE78BABE3E74FF6C9AA5AB0DDFB2AC9064ED2 "点击放大")
 * 查看设备视频流设置。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/Ds9dy1sPTeemERTYi5zM5w/zh-cn_image_0000002628569518.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/Ds9dy1sPTeemERTYi5zM5w/zh-cn_image_0000002628569518.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=74F42FD4FB7E0D8E2AF864F3559D2E1A0920DE777618478E7E393DF4BDC72B2D "点击放大")
 
 ## 分析结论
 
@@ -43,12 +43,12 @@ PyCharm界面右侧栏的toolWindow区域可见UiViewer标签，点击后展开U
 
   将PyCharm的settings->DevEco Testing Hypium->UiViewer的是否使用视频流投屏模式设置为否，再重新使用插件进行手机投屏。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/AlJw-0kzTIySxkay_Lmbpw/zh-cn_image_0000002658928841.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/AlJw-0kzTIySxkay_Lmbpw/zh-cn_image_0000002658928841.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=57D7FE1C67E6A12661318B03ADE064109095405D4A98EAF86AA2D282B54D1B3F "点击放大")
 
 ## 常见FAQ
 
 Q：PyCharm专业版使用DevEco Testing Hypium时，UiViewer无法看到设备如何解决？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/cAkDrxQNSDiUXsTBkiWs9w/zh-cn_image_0000002628409628.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/cAkDrxQNSDiUXsTBkiWs9w/zh-cn_image_0000002628409628.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=6199BDC555E3C66E1C53E8798777A29E79B325CA1285DD841E236216EB9D0131 "点击放大")
 
 A：检查系统环境变量[OHOS\_HDC\_SERVER\_PORT](../harmonyos-guides/hdc.md#ohos_hdc_server_port)：如果电脑的8710端口已经被使用或希望使用其他端口，可以通过添加环境变量OHOS\_HDC\_SERVER\_PORT到系统环境变量中来修改服务器进程启动时监听的端口号，设置完之后重启PyCharm。

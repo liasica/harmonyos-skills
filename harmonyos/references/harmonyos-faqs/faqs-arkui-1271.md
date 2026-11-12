@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1271
 title: getRectangleById获取组件位置异常
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > getRectangleById获取组件位置异常
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:40+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:1b15a5a3af391fd0f646d8747cd2ec70777f91e701f22c9552b1bc309818e90c
 ---
@@ -67,7 +67,7 @@ struct Index {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/Kz5A86aLQlKjf35twUtuBA/zh-cn_image_0000002658955331.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/Kz5A86aLQlKjf35twUtuBA/zh-cn_image_0000002658955331.png?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=485EB8ACAB243E9D90FDDFA404C1F202C17687EFCDF949D68454C13BE8285519 "点击放大")
 
 日志信息如下：
 
@@ -148,6 +148,6 @@ struct CoordinateDisplay {
 
 返回信息如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/uvF5zGglSUOPpPPFnxyoEA/zh-cn_image_0000002628596114.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/uvF5zGglSUOPpPPFnxyoEA/zh-cn_image_0000002628596114.png?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=C33FA02933A099BD0DFB261FAC7651898E35CDD86C37083F523E4328574CFD5D "点击放大")
 
 可以看到，组件1和组件2的screenOffset不再相同。

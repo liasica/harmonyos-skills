@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1350
 title: 如何改变Scroll组件在分屏后的滚动方式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何改变Scroll组件在分屏后的滚动方式
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:ecb28152282140565bd87e9ec7284cb1bfbd046a98dca9cc6cbe2056b4087ca0
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:ecb28152282140565bd87e9ec7284cb1bfbd046a98dca9cc6cbe2056b40
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/7pU6dckeQQ2u2OGXPxSPYw/zh-cn_image_0000002628761414.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/7pU6dckeQQ2u2OGXPxSPYw/zh-cn_image_0000002628761414.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=165FA97F69B9ED8EAB8F06C27F4FF3B3B1C1CE085F32C9EDA46C1B1E6AC4E15B "点击放大")
 
 ## 背景知识
 

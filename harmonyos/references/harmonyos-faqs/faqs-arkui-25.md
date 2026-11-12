@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-25
 title: 如何实现分组列表的吸顶/吸底效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现分组列表的吸顶/吸底效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:54+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:531ed14c8dc70782e735e39dfda0312158b9e55042697cc50ab605d51fe38976
 ---
@@ -90,4 +90,4 @@ interface TimeTable {
 
 效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/9MZE1PPUR-ew8f4Seq-NEw/zh-cn_image_0000002654795283.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/9MZE1PPUR-ew8f4Seq-NEw/zh-cn_image_0000002654795283.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EE656C002F4736125FFB0EC6C3E2663F9147951CEFA80892CB39090EC2BA21A)

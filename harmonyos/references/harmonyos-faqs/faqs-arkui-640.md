@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-640
 title: 修改被@State修饰的gesture属性参数不生效
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 修改被@State修饰的gesture属性参数不生效
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:594f3905d6e4a38db582112c4a6a0ac598f2b7b5bd364d16154984981bc04e5a
 ---
@@ -72,7 +72,7 @@ struct PinchGesturePage {
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/-A6F1oYiT5Ojwx61zJGgmw/zh-cn_image_0000002628554400.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/-A6F1oYiT5Ojwx61zJGgmw/zh-cn_image_0000002628554400.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233158Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5A15D67AE3F9BA77C36E5467CA32961F45384D7D450BF8EF7E55B2FF9808D3D "点击放大")
 
 ## 背景知识
 

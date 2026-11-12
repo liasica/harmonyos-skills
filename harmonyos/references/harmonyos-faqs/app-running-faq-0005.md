@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/app-running-faq
 title: DevEco Studio设备管理获取模板数据、下载模拟器镜像提示网络异常
 breadcrumb: FAQ > DevEco Studio > 应用运行 > 常见问题 > DevEco Studio设备管理获取模板数据、下载模拟器镜像提示网络异常
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:58+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:aa471ae76b76e9efd484928f0b2bc4c2ec7358c09097f7125d74fcd5364a21c7
 ---
 
 **Q：设备管理获取模板数据失败，错误提示：“Network request failed. Verify your network connection and Emulator is available in your country/region.”**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/1RztnPfUQQyVMwEbsv-StA/zh-cn_image_0000002802354179.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/1RztnPfUQQyVMwEbsv-StA/zh-cn_image_0000002802354179.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=250200A4F0079DB0EE2881ABA1B41710AF50D5AC302C3CC424637E9F2D525F84)
 
 **A**：解决措施如下：
 
@@ -22,7 +22,7 @@ content_hash: sha256:aa471ae76b76e9efd484928f0b2bc4c2ec7358c09097f7125d74fcd5364
 
 **Q：模拟器镜像下载失败，提示“The network or server is abnormal.”**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/C22eumubScONMZZThQMJWw/zh-cn_image_0000002773154414.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/C22eumubScONMZZThQMJWw/zh-cn_image_0000002773154414.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=17C6785E88860688DE3BD1415EB2A742A5900740FFA5E052F3928237A3C301C7 "点击放大")
 
 **A**：解决措施如下：
 
@@ -34,7 +34,7 @@ content_hash: sha256:aa471ae76b76e9efd484928f0b2bc4c2ec7358c09097f7125d74fcd5364
 
 **Q：打开设备管理，界面显示为空，错误提示：“Network request failed. Verify your network connection and Emulator is available in your country/region.”**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/NSIGTUo9SIq87zg6HJO9Cg/zh-cn_image_0000002772994448.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/NSIGTUo9SIq87zg6HJO9Cg/zh-cn_image_0000002772994448.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=955164BD3C70DE17E02F62B185CEDAC7DB0794F7F3649BD9C9CF139ADF695899 "点击放大")
 
 **A**：解决措施如下：
 

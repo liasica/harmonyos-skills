@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-u
 title: "@ohos.graphics.uiEffect (效果级联)"
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.uiEffect (效果级联)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:56:57+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-23
 content_hash: sha256:6100f592236db9a0b95ac0bbbc9a7646d34e413ec20d199c3372f624c7f55528
 ---
@@ -118,7 +118,7 @@ struct UIEffectFilterExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/sjepvZ6NSTa2_3HFfgI9vg/zh-cn_image_0000002815401683.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/sjepvZ6NSTa2_3HFfgI9vg/zh-cn_image_0000002815401683.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB178BECB6965E323DB90BFEFF2C02EC656A63A4CA7FC3739B6FA90B22E1A2B9)
 
 ### hdrBrightnessRatio24+
 

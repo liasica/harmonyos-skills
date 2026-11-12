@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 窗口方向
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备窗口形态 > 窗口方向
 category: best-practices
-scraped_at: 2026-11-10T10:42:03+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-04
 content_hash: sha256:a3bd89705266b4e952e7ab383ffcf24e737d94688806ad1f3b53b0d1727911e3
 ---
@@ -35,7 +35,7 @@ content_hash: sha256:a3bd89705266b4e952e7ab383ffcf24e737d94688806ad1f3b53b0d1727
 
 目前HarmonyOS系统中设备的显示方向有以下四种，对应真机实际状态如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/_x_ARFWeTLWU9Kid1hBVMg/zh-cn_image_0000002566756945.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/_x_ARFWeTLWU9Kid1hBVMg/zh-cn_image_0000002566756945.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=40A975DB13C7E52E5101D2EC663EC845EA0E066CF470FA068E677E772EB9E87C)
 
 **基本定义：**
 
@@ -189,7 +189,7 @@ content_hash: sha256:a3bd89705266b4e952e7ab383ffcf24e737d94688806ad1f3b53b0d1727
 
 上述表格也可以抽象为如下的决策逻辑，如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/dY3TLMsgQkOOkJJ-L11d7w/zh-cn_image_0000002572763022.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/dY3TLMsgQkOOkJJ-L11d7w/zh-cn_image_0000002572763022.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=C78EED800660F127673FA221F5B4F4B129F7B21D14502C61A715DD1BE846B232 "点击放大")
 
 **说明** 
 
@@ -466,7 +466,7 @@ content_hash: sha256:a3bd89705266b4e952e7ab383ffcf24e737d94688806ad1f3b53b0d1727
 
 以备忘录应用为例，当系统关闭旋转锁定后，应用页面会随手机旋转自动切换横竖屏；打开旋转锁定时，则不会发生旋转行为，此时需配置为AUTO\_ROTATION\_RESTRICTED。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/8bsN5SHqSnSpnsdt9szePQ/zh-cn_image_0000002693704626.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/8bsN5SHqSnSpnsdt9szePQ/zh-cn_image_0000002693704626.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=D05E42ADBE93437176FFE2226B9984FFD8FDA09DFFB079B075A06BD0DA2634CA "点击放大")
 
 ### 窗口级配置
 
@@ -502,7 +502,7 @@ aboutToDisappear(): void {
 
 视频播窗横竖屏切换
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/nqO1fliJT0KxG4U84GDEtA/zh-cn_image_0000002566916979.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/nqO1fliJT0KxG4U84GDEtA/zh-cn_image_0000002566916979.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=10A953BC6175E9FFFC9486D253B857ADA579F5A8A76760E0B58B523259AF4A85 "点击放大")
 
 ### 页面级配置
 
@@ -647,11 +647,11 @@ aboutToDisappear(): void {
 
 例如：视频或者游戏类应用在横屏模式下开启悬浮窗后，页面没有适配横屏，导致内容显示不全或者观看体验不好。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/M-1-3A-iQ8OZYq2xgsPr_g/zh-cn_image_0000002566757003.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/M-1-3A-iQ8OZYq2xgsPr_g/zh-cn_image_0000002566757003.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=79D9A4D45BEBECAC9B4DC5F4C160554AC5BF89003BB4A7A1DBDD483D0B4DA6C4 "点击放大")
 
 优化后效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/9Y57KQb4SRCp0jZ-yYg4rA/zh-cn_image_0000002535837220.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/9Y57KQb4SRCp0jZ-yYg4rA/zh-cn_image_0000002535837220.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=D6E83BE8CDB396CD7FCBAB05EDAEDAB8FE5DF8461F9AD2F016033923E63820BF "点击放大")
 
 ## 为多设备配置旋转策略
 
@@ -915,7 +915,7 @@ function ImageItem(imageSrc: ResourceStr) {
 
 下图展示了应用层、多设备工具模块与系统层之间的整体协作流程：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/aR6x00GTSqqjuwIK6zBu3A/zh-cn_image_0000002723850036.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/aR6x00GTSqqjuwIK6zBu3A/zh-cn_image_0000002723850036.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D96121DA233161E6896C101E211EB4F3BABBE117C8102E4B99F3E4D263E2FC0)
 
 **响应式规则引擎**（responsiverule目录模块）
 
@@ -1837,7 +1837,7 @@ export struct VideoDetail {
 
 rotation的取值有4种，分别对应下图所示的4个方向（以直板机为例）。如果需要更精准的角度信息，则需要配合设备sensor获取。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/OxBgUPppRXO_qSihAfii9w/zh-cn_image_0000002535837336.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/OxBgUPppRXO_qSihAfii9w/zh-cn_image_0000002535837336.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=7BA9112B69F5155230834824659095DA423D8A6E9AF0AA106201E4E935D5C55C "点击放大")
 
 | 值 | 含义 |
 | --- | --- |
@@ -1857,7 +1857,7 @@ rotation的取值有4种，分别对应下图所示的4个方向（以直板机�
 
 display.Orientation 为屏幕当前的朝向状态，display.rotation 为屏幕相对自然方向的物理旋转角度。display.Orientation 和 display.rotation 均为只读属性，且用于描述屏幕当前旋转状态，但二者定义逻辑不同，在各类设备形态下不存在固定对应关系，开发过程中不可相互替代。若混用接口，在折叠屏等多形态设备适配场景中极易引发兼容性问题。以三折叠设备为例：当 display.rotation 取值为 0° 时，display.Orientation 既可能为竖屏状态，也可能为反向横屏状态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/593Dv8qFQkaYTMt3w8UeHg/zh-cn_image_0000002622960129.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/593Dv8qFQkaYTMt3w8UeHg/zh-cn_image_0000002622960129.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=4C1FB8B3BF58FE7B7725B0968F897959DAF28487A2D0FCF13671E13074173049 "点击放大")
 
 ### window.getLastWindow的方式获取窗口出现延迟
 
@@ -1902,7 +1902,7 @@ aboutToDisappear(): void {
 2. 打开Log页面，依次在筛选框中选择“当前的连接设备”、“No filters”、“当前的调试应用”、“Debug”或“Info”，最后在关键字栏填写“SetRequestedOrientation”。
 3. 操作问题页面后，在日志中查看系统日志，找到应用包名一行的日志，lastReqOrientation表示应用最后的窗口旋转策略，target表示目标窗口旋转策略，后面的数字可参考下方对照表。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/lwFZspZ8QjO7K6r8yuYWJA/zh-cn_image_0000002593796295.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/lwFZspZ8QjO7K6r8yuYWJA/zh-cn_image_0000002593796295.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=E545D5293B4F77124C8526828E549796AA323893497ED009DA9F6B95EC089165)
 
 日志中查看窗口方向对照表
 

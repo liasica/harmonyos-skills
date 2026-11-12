@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1034
 title: 如何实现文本颜色渐变
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现文本颜色渐变
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:cde9c0b7baac84663ce62a5c34b84d58d2018200c1ec097f0eb8ac91d5a55ccc
 ---
@@ -61,7 +61,7 @@ content_hash: sha256:cde9c0b7baac84663ce62a5c34b84d58d2018200c1ec097f0eb8ac91d5a
 
   运行效果：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/AnD88gxFRU6MovaxOyRaDw/zh-cn_image_0000002658924031.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/AnD88gxFRU6MovaxOyRaDw/zh-cn_image_0000002658924031.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEF22BB09CF7EC5C3705EE27E2554BE3EBB4FFFE81A1820B710ED4CA15FD0677 "点击放大")
 * 方案二：使用shaderStyle，通过Text组件的shaderStyle属性直接设置线性渐变参数。（仅支持API20+）
 
   ```ts
@@ -86,7 +86,7 @@ content_hash: sha256:cde9c0b7baac84663ce62a5c34b84d58d2018200c1ec097f0eb8ac91d5a
 
   运行效果：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/L-PuFz4qRCyCFzWX7BA_iA/zh-cn_image_0000002628404820.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/L-PuFz4qRCyCFzWX7BA_iA/zh-cn_image_0000002628404820.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2963395CAD97321614C63E7C2EDC0AA1BCD5452BE1C390B668B359C5152EA5E "点击放大")
 * 方案三：拓展功能实现。为背景渐变色添加动画，实现动态流光效果。
 
   ```ts
@@ -146,7 +146,7 @@ content_hash: sha256:cde9c0b7baac84663ce62a5c34b84d58d2018200c1ec097f0eb8ac91d5a
 
   运行效果：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/zsh2ZjkcTsmcUAiRLhUDQw/zh-cn_image_0000002658804089.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/zsh2ZjkcTsmcUAiRLhUDQw/zh-cn_image_0000002658804089.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F9F57BF58C0476AD12EF963C93709E55747083189DFA92C73ED480D107EA63E "点击放大")
 
 ## 常见FAQ
 

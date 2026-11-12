@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-mdm-3
 title: MDM设置网络白名单功能异常
 breadcrumb: FAQ > 系统开发 > 基础功能 > 企业设备管理（MDM） > MDM设置网络白名单功能异常
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-13
 content_hash: sha256:b0c2bdaa58543645ac02f37f87b78fecdb2c9cc929fa783760303baf3774f748
 ---
@@ -28,7 +28,7 @@ MDM应用可以通过[addAllowedWifiList](../harmonyos-references/js-apis-enterp
 1. 确保[restrictions](../harmonyos-references/js-apis-enterprise-restrictions.md)中启用Wi-Fi，wifiManager确保没有[Disallowed](../harmonyos-references/js-apis-enterprise-wifimanager.md#wifimanageradddisallowedwifilist19)和[Allowed](../harmonyos-references/js-apis-enterprise-wifimanager.md#wifimanageraddallowedwifilist19)的Wi-Fi。
 2. 使用[addAllowedWifiList](../harmonyos-references/js-apis-enterprise-wifimanager.md#wifimanageraddallowedwifilist19)添加一个Wi-Fi白名单，其参数类似[{"ssid":"mate60","BSSID":"92:EF:1C:F1:21:81"}]，BSSID值在此处获取：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/tX94dZQ7RaO8EOu5uhGBMg/zh-cn_image_0000002633616294.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/tX94dZQ7RaO8EOu5uhGBMg/zh-cn_image_0000002633616294.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B28E53BDC98C918D58B1FA6FEDEB5BC63D0CCFBEB08471D19C892F0D98C8990 "点击放大")
 3. 设置后，Wi-Fi白名单未生效。
 
 分析以上操作步骤，发现Wi-Fi白名单未生效的原因是**未正确传递BSSID值**。
@@ -37,10 +37,10 @@ BSSID的正确获取方法：
 
 1. 打开“开发者选项”-->"开启wlan详细日志记录"：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/1dh7oqgXRIOAIXs1mPaxLQ/zh-cn_image_0000002633456400.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/1dh7oqgXRIOAIXs1mPaxLQ/zh-cn_image_0000002633456400.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=8BDF470CD8F1C9C85C6D383C1578F61B6BF7E607D65359704A953A1B586C1385)
 2. 查看BSSID：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/AueEJllfR--MI08v470jXA/zh-cn_image_0000002663855485.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/AueEJllfR--MI08v470jXA/zh-cn_image_0000002663855485.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=050924F02D30588319DA125C49CEE69D34840D6821D6D85673D3FD7305A47B0C "点击放大")
 
 ## 分析结论
 

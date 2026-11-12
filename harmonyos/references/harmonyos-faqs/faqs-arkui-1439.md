@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1439
 title: RichText组件字体大小设置失败
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > RichText组件字体大小设置失败
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:e3b45e0df4dba0ecd38468f8edc0cd955d0731c15a783022a6cc5435d1057121
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:e3b45e0df4dba0ecd38468f8edc0cd955d0731c15a783022a6cc5435d10
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/F0lwKHkdR_6V4_QC_6GpNw/zh-cn_image_0000002628604256.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/F0lwKHkdR_6V4_QC_6GpNw/zh-cn_image_0000002628604256.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A7BA67B4325DD58D508A0E91BBBBEE1C3222EC4866C173855B0B3911F031091 "点击放大")
 
 ## 背景知识
 

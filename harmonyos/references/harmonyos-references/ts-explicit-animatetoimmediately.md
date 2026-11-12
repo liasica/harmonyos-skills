@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-explic
 title: 显式动画立即下发 (animateToImmediately)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 显式动画立即下发 (animateToImmediately)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:bca46c5bcbdfc94ea01c82a3842d501096708d1bc67b0e7be7179111394c0758
 ---
@@ -102,4 +102,4 @@ struct AnimateToImmediatelyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/3prJ-5bhSa-3Hot3SRSHZA/zh-cn_image_0000002786521488.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/3prJ-5bhSa-3Hot3SRSHZA/zh-cn_image_0000002786521488.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2F0EEF4868FD90F124D5F7D06DA7CFDB2C4F2A9FA7A4D2187787AAAE36FCC8A)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-previewer-
 title: 预览功能使用过程中，可能无法使用帮助菜单压缩日志按钮收集日志
 breadcrumb: FAQ > DevEco Studio > 界面预览 > 预览功能使用过程中，可能无法使用帮助菜单压缩日志按钮收集日志
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:035e216b77461c99a396f58cad8fa257e0117308431160bb0db357adc31e1b3f
 ---
@@ -12,11 +12,11 @@ content_hash: sha256:035e216b77461c99a396f58cad8fa257e0117308431160bb0db357adc31
 
 当同时预览多个工程时，点击帮助菜单中的“压缩日志”按钮，可能会因日志文件被占用而无法压缩。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/BnE-qz8yT6O5RjWcHc42GA/zh-cn_image_0000002654837765.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/BnE-qz8yT6O5RjWcHc42GA/zh-cn_image_0000002654837765.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=7FF961CE0331174BCD422D23E3EB4EF53AA39DE8FF938A0293E4E6AFE5A55B79)
 
 此时右下角会出现压缩失败的提示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/PUOz7HU_QminQc7zNLx1dA/zh-cn_image_0000002624478454.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/PUOz7HU_QminQc7zNLx1dA/zh-cn_image_0000002624478454.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B402E58C05E4A224C8F3B3DE51357D3143C694BA229F34A5F2F632BF56FD2FE)
 
 **解决措施**
 

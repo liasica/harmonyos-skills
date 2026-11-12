@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-li
 title: 如何重命名本地引用库
 breadcrumb: FAQ > DevEco Studio > 命令行工具 > 如何重命名本地引用库
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:02+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:34e09770a977c864556effd6a932723621da8a0ba61e39574ca30c01b3029dd6
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:34e09770a977c864556effd6a932723621da8a0ba61e39574ca30c01b30
 
 DevEco Studio升级到最新的release版本以后，添加本地的依赖重命名报错，有没有对本地引用库进行重命名的方法。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/BActxGGsSAGbKiFPe_3T8g/zh-cn_image_0000002658928871.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/BActxGGsSAGbKiFPe_3T8g/zh-cn_image_0000002658928871.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE3137DE487A6C27FD0179096C08B2256570FD449EE43C93810FC02D5DA9DB9A "点击放大")
 
 ## 背景知识
 
@@ -24,18 +24,18 @@ DevEco Studio升级到最新的release版本以后，添加本地的依赖重命
 
 错误示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/V5zddT-SSd2_v7cf272FRA/zh-cn_image_0000002628409656.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/V5zddT-SSd2_v7cf272FRA/zh-cn_image_0000002628409656.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B4DE7BF1B074E2A1AAA74D325298D1AB618EE2B855415E47AC4FCADA5FED811 "点击放大")
 
 图左框选内容为oh-package.json5中依赖的包使用的别名，图右框选内容为依赖包的oh-package.json5的name，两者不一致会有报错，若涉及重命名，需同步修改两处并保持名称一致。
 
 正确示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/bI02TsEXSjqy0zfasHyK-Q/zh-cn_image_0000002658808919.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/bI02TsEXSjqy0zfasHyK-Q/zh-cn_image_0000002658808919.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=09897067E3FEA87651171C370377DC30C0A9D65AD51652442AF46500744B7774 "点击放大")
 
 对本地引用库进行重命名时，同步修改oh-package.json5中依赖的包使用的别名和依赖包的oh-package.json5的name，使其保持一致。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/F-6z3UppRBCc2yxUqus-OQ/zh-cn_image_0000002628569548.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/F-6z3UppRBCc2yxUqus-OQ/zh-cn_image_0000002628569548.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=54FBE7735E1BF04FD939C54ED606C9061D3B7FA8151557BB9DCE705994FF2059 "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/mi21BiIBQMyvziJn3MDlvg/zh-cn_image_0000002658928873.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/mi21BiIBQMyvziJn3MDlvg/zh-cn_image_0000002658928873.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=82306AF5190D7CB1C4D119FD231683A70FA5125A3FD8A2AAA03F39AF4A4A8DCA "点击放大")
 
 在相关引用处，将导入的库名调整为重命名后的名称。

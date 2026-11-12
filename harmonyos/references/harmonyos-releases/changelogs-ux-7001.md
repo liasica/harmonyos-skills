@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: UX样式或效果的变更
 breadcrumb: 版本说明 > 更多版本 > 26.0.0 > OS平台能力 > OS平台行为变更说明 > 26.0.0 Beta1引入的行为变更 > UX样式或效果的变更
 category: harmonyos-releases
-scraped_at: 2026-11-12T09:49:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:a8f78126f5432486c715f2a4896c52178811e8d59a98139aa4ee20e2111a268d
 ---
@@ -51,7 +51,7 @@ content_hash: sha256:a8f78126f5432486c715f2a4896c52178811e8d59a98139aa4ee20e2111
 * 变更前：组件默认触摸热区高度最小为28vp。
 * 变更后：组件默认触摸热区高度最小为32vp。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/P8--m7EzTF2HhSASGwq9TQ/zh-cn_image_0000002607653205.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/P8--m7EzTF2HhSASGwq9TQ/zh-cn_image_0000002607653205.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=85CA353916268FEFD1931CCB673788C61A61882EBAB343ED149371E0425E92B6)
 
 **起始 API Level**
 
@@ -106,7 +106,7 @@ struct ButtonExample {
 
 孤字换行变更前后效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/nbHTIwloQJOj-251UNzETw/zh-cn_image_0000002577173246.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/nbHTIwloQJOj-251UNzETw/zh-cn_image_0000002577173246.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=5745A83533DA628A70B87F253DCC0DF30837170492404B10FF347778BC507054)
 
 **场景二：小语种行高优化**
 
@@ -116,7 +116,7 @@ struct ButtonExample {
 
 小语种行高优化变更前后效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/DB4tcddRQdSHyb1aM_IFGg/zh-cn_image_0000002577333224.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/DB4tcddRQdSHyb1aM_IFGg/zh-cn_image_0000002577333224.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A57DDC7BED5EC87DADD4963A387195D2B1957BB35F17C73CE3C3271DB41FEC8)
 
 **场景三：单词换行改为音节换行**
 
@@ -126,7 +126,7 @@ struct ButtonExample {
 
 文本按单词换行改为按音节换行变更前后效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/UY6LHplcS3-3cYR0OIql_A/zh-cn_image_0000002607733199.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/UY6LHplcS3-3cYR0OIql_A/zh-cn_image_0000002607733199.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=BCB3E54F02AF69B911C2BC4DFB4C0345B4AFA6C8C42AF6C54C7EC2593B7DE5CB)
 
 **起始 API Level**
 
@@ -185,19 +185,19 @@ ArkUI组件支持对接沉浸式系统材质功能，为减少应用适配成本
 
 Dialog变更前后的效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/DtAeib7RRUiDohw5rzNXHw/zh-cn_image_0000002607653207.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/DtAeib7RRUiDohw5rzNXHw/zh-cn_image_0000002607653207.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1BAABB6FB69959F16A22DB062B216F30AA0AB36121F028EC4519C1C85F105F2)
 
 Toast变更前后的效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/mLeZGFm_QaStGIzJYDKdMA/zh-cn_image_0000002577173248.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/mLeZGFm_QaStGIzJYDKdMA/zh-cn_image_0000002577173248.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=91A043BB65BE678AAECA8CAE1DCB01445883D842211FEE211A92F810F8214F42)
 
 AlphabetIndexer变更前后的效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/ed5j2Tb0SsGd50dIzuE3nQ/zh-cn_image_0000002577333226.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/ed5j2Tb0SsGd50dIzuE3nQ/zh-cn_image_0000002577333226.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA4F147B212AE9E0B2DAAE5D7E9EBBD854458BE0C1C291619C4D449A585ACB9F)
 
 文本选择菜单变更前后的效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/E6TJ5HC0RhODWt2169RpCA/zh-cn_image_0000002607733201.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/E6TJ5HC0RhODWt2169RpCA/zh-cn_image_0000002607733201.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=38DD73D1610946FDFA6B8D752F2E775A330ABA3287E990BCF93A883B6B8AB0A3)
 
 **适配指导**
 
@@ -254,13 +254,13 @@ UX规格变更，当前半模态最大高度限制为窗口短边长度的90%，
 
 半模态居中弹窗最大高度：取“短边长度\*90%”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/TU4xDAghQVClssgnwW1ZVg/zh-cn_image_0000002607653209.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/TU4xDAghQVClssgnwW1ZVg/zh-cn_image_0000002607653209.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=384D3E4296537E608E8C05013EFAAE73A6C178E063B52066919ED72D074413D2)
 
 变更后：
 
 半模态居中弹窗最大高度：取“短边长度\*90%”、“窗口高度-信号栏高度\*2”两者中的最小值。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/MB2QdwBIREqpB1aLj47VHQ/zh-cn_image_0000002577173250.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/MB2QdwBIREqpB1aLj47VHQ/zh-cn_image_0000002577173250.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=1BBEBFF132A2512601C6EAF3F087D5AFDC89768EC1C3604F33CBD5715B8A88F9)
 
 **起始 API Level**
 

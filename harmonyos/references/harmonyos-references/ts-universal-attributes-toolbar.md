@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 工具栏设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 其他 > 工具栏设置
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:55c25a6d5c695c16ad0cae51a96afe11009d53a87fdbbb176de78c0c59bdc7b9
 ---
@@ -164,4 +164,4 @@ struct ToolbarExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/PiK49xFdSOy1m-bD-Qq4mw/zh-cn_image_0000002786361082.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/PiK49xFdSOy1m-bD-Qq4mw/zh-cn_image_0000002786361082.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC104DC895BB6003FCE9A09E5044552A7F06C85BC1969BCF136A214BF044D9FC)

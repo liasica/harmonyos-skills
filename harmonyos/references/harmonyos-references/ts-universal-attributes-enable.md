@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 禁用控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 交互属性 > 禁用控制
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-17
 content_hash: sha256:0d50108f7afc98298e6558a2abbc544a0748ee5161375cfbea83816e913802f0
 ---
@@ -61,4 +61,4 @@ struct EnabledExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/dlnNXa4eSLKGR3b8jnvKDg/zh-cn_image_0000002786361018.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/dlnNXa4eSLKGR3b8jnvKDg/zh-cn_image_0000002786361018.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=256C4200FBF84F1760F865110E9E3E5AA6A8941AA19AA9B7627453687B9B850D)

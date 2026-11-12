@@ -27,9 +27,9 @@ _SIGNED_PARAM_PREFIX = "HW-CC-"
 
 
 def strip_signed_params(url: str) -> str:
-    """去掉华为 CDN 的临时签名参数（HW-CC-KV / HW-CC-Date / HW-CC-Expire / HW-CC-Sign）
+    """去掉华为 CDN 的签名参数（HW-CC-KV / HW-CC-Date / HW-CC-Expire / HW-CC-Sign）
 
-    这些参数按分钟变化且 24 小时过期，保留只会让正文 hash 不稳定
+    用于资源匹配与内容哈希，输出链接保留签名
     """
     if _SIGNED_PARAM_PREFIX not in url:
         return url

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-member
 title: 开通会员卡
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 会员卡 > 开发场景 > 开通会员卡
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:38+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:70b207aadbdb13ed3dd2cfb08e4e5f66931e175d5fce35fd2583605dfdceeab5
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:70b207aadbdb13ed3dd2cfb08e4e5f66931e175d5fce35fd2583605dfdc
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/_vnTT_mQTdq8XfckDL5FeA/zh-cn_image_0000002786520566.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/_vnTT_mQTdq8XfckDL5FeA/zh-cn_image_0000002786520566.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=89E341EAC78BE10AC2EE5D40A8CC9A58847D7F6A2BD13D7297A7AB3AF779AD45)
 
 ## 开发流程
 

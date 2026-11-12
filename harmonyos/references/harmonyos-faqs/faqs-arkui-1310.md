@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1310
 title: Tabs和同方向滑动的子组件的滑动动作隔离
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Tabs和同方向滑动的子组件的滑动动作隔离
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:47+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:ea7a6a7856285906868808b9130d574d91287acf081cd0b243cfbce600ce453a
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:ea7a6a7856285906868808b9130d574d91287acf081cd0b243cfbce600c
 
 如何设置在横向拖动子组件中的第三方图标时，禁止触发Tabs的切换功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/yytTyIEITKq7OrRnh5Ov-A/zh-cn_image_0000002658838299.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/yytTyIEITKq7OrRnh5Ov-A/zh-cn_image_0000002658838299.png?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=815DFB99F57DFF5EC0D67113F1AE9813CDF5B8628479A023F66A7DFBC9519D0A "点击放大")
 
 ## 背景知识
 

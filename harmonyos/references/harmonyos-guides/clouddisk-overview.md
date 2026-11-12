@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/clouddisk-ove
 title: 网盘服务底座概述
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 网盘服务底座 > 网盘服务底座概述
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:26+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:47cd6a0470c316fe47e80dbffbe5d88523511778192d16bc9dd3cee7c1148259
 ---
@@ -61,4 +61,4 @@ content_hash: sha256:47cd6a0470c316fe47e80dbffbe5d88523511778192d16bc9dd3cee7c11
 * **CloudDiskService（数据面）**：负责注册/解注册/监听同步根、文件变化通知、操作记录查询、设置/查询文件同步状态等数据面逻辑。
 * **内核文件系统**：负责文件目录树访问、文件增删改查与占位符文件处理，为占位符文件提供受保护的文件系统语义。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/hLaNKorGR1yEaVaRZyHd1A/zh-cn_image_0000002815399013.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/hLaNKorGR1yEaVaRZyHd1A/zh-cn_image_0000002815399013.png?HW-CC-KV=V1&HW-CC-Date=20261112T233228Z&HW-CC-Expire=31536000000&HW-CC-Sign=2AB81E70422B8B81651546BDE72ABD2BCBF9BC62E5289165BC9DE2B3259C9BE9)

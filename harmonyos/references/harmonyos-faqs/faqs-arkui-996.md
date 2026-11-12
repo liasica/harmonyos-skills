@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-996
 title: 如何解决OffscreenCanvas绘制鼠标路径时路径不平滑的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决OffscreenCanvas绘制鼠标路径时路径不平滑的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-13
 content_hash: sha256:b21fd34a8e8544c812b7a065f040caa0f3be2a8a0225ada0851f210e48cf7f93
 ---
@@ -14,7 +14,7 @@ PC应用使用OffscreenCanvas离屏画布绘制鼠标路径，绘制路径不平
 
 问题效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/zPQBcRUaRsOlMo0hT6OmQw/zh-cn_image_0000002658801089.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/zPQBcRUaRsOlMo0hT6OmQw/zh-cn_image_0000002658801089.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D510B2FCC4883356A83BEC2BC20E910E507FE7A9DE97534EDA60DA52EDDCDB8 "点击放大")
 
 问题代码如下：
 
@@ -172,15 +172,15 @@ struct Index {
 
 120Hz刷新率+离屏渲染：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/qbg8WBJ-S6GnNfSWolu0oQ/zh-cn_image_0000002628401816.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/qbg8WBJ-S6GnNfSWolu0oQ/zh-cn_image_0000002628401816.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5CF648B7056D6C60FAB2354CBC8E1FA3F6CAD2F5EB8DFB913D7FFEDBAD60CB5 "点击放大")
 
 60Hz刷新率+在屏渲染：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/dySLBBFTT9C3v0sSTfV1Ug/zh-cn_image_0000002628561724.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/dySLBBFTT9C3v0sSTfV1Ug/zh-cn_image_0000002628561724.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B5C26290CA0C9236CCA7B5BD509D1B52867C82C6D9B8AB1EEB10B534BB69457 "点击放大")
 
 120Hz刷新率+在屏渲染：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/uDCDM35oTVm_KtIDRBZTUg/zh-cn_image_0000002658921037.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/uDCDM35oTVm_KtIDRBZTUg/zh-cn_image_0000002658921037.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=91CE978CEF68EFA41DA88BF2BF7CA7B2A341E7374AFE6F12B20F91AE4ED02362 "点击放大")
 
 ## 修改建议
 

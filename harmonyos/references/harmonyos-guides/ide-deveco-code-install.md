@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-co
 title: 下载与安装
 breadcrumb: 指南 > DevEco Code > DevEco Code TUI > 下载与安装
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:ed66da0e0f95732714f7a0cbabc2ac8018702791ff5e5e7048ca3ad8c6501e43
 ---
@@ -205,19 +205,19 @@ npm uninstall -g @deveco/deveco-code   // 保留运行时数据，只卸载安�
 
 在鸿蒙电脑版DevEco Studio的菜单栏点击**安装DevEco Code**，等待完成安装。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/k1oMlIo6RduT_X6eEzBNVA/zh-cn_image_0000002779407184.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/k1oMlIo6RduT_X6eEzBNVA/zh-cn_image_0000002779407184.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=C47F2CE3468772D8EC45507C233E0AA22A855A3B7E21F48273A87AACD53ECC69 "点击放大")
 
 ### 启动与登录
 
 1. 安装完成后，点击**新对话**新建并开启一个会话。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/4SAJ7LzgTjK_bGRn-sxMVQ/zh-cn_image_0000002779567160.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/4SAJ7LzgTjK_bGRn-sxMVQ/zh-cn_image_0000002779567160.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A1C8BA4E5B5B589D5A6724CF14384C14AF1ED38364430B1BDE68BC3598F1D04)
 2. 选择信任当前文件夹，并点击链接登录华为账号。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/SFARz-4hT6m7SsCJ8PnX2Q/zh-cn_image_0000002779407182.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/SFARz-4hT6m7SsCJ8PnX2Q/zh-cn_image_0000002779407182.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=BEE95CD93E836A89022B60083C2E5115B769645285653D08E9417CE1B11F98C0)
 3. 登录完成后，在终端开始体验DevEco Code。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/O07u0o_mQPiGyDU5yuNPow/zh-cn_image_0000002779567162.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/O07u0o_mQPiGyDU5yuNPow/zh-cn_image_0000002779567162.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A98982E16A3F000033A07F87DAD1CE19FB36096411CA8DA54009FF24B3E7D84 "点击放大")
 
 ### 更新与卸载
 

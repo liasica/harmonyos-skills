@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bytecode-obfu
 title: ArkGuard字节码混淆常见问题
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard字节码混淆工具 > ArkGuard字节码混淆常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:8cdabd0c3b261db74bf237362c0c45c14b6663521784f68f315f63a61a3c7eb4
 ---
@@ -25,7 +25,7 @@ content_hash: sha256:8cdabd0c3b261db74bf237362c0c45c14b6663521784f68f315f63a61a3
 
 **目录差异**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/AHvSTiTUQFKPtmhO0SD8ww/zh-cn_image_0000002815557903.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/fSZeiQDuRWad_e0i-3TEWw/zh-cn_image_0000002815397987.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/AHvSTiTUQFKPtmhO0SD8ww/zh-cn_image_0000002815557903.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2698E32A5B22F34962D0746A011872069347B94259E2EFC85984A826B7DFFC5) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/fSZeiQDuRWad_e0i-3TEWw/zh-cn_image_0000002815397987.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=A64166D9DF5FE3A73C7BA2BBF9538B3025D93FE7130D3419DA7E11603B60DD64)
 
 字节码混淆后，obfuscation目录中多了obf、origin文件夹和config.json文件，具体详见[混淆效果](bytecode-obfuscation-guide.md#查看混淆效果)。
 
@@ -221,7 +221,7 @@ callargs2 0x2e, v2, v3
 * 混淆后的文件目录：build/default/[...]/release/obfuscation/obf。
 * 混淆名称映射表及系统API白名单目录：build/default/[...]/release/obfuscation。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/fOxc583ITtqpWKDyH4KC2w/zh-cn_image_0000002786518410.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/fOxc583ITtqpWKDyH4KC2w/zh-cn_image_0000002786518410.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5B530A989F4016EC59D592D8B72904DAAF0ADE2B8E5B9269DC2BA02A2C3B897)
 
 * 名称映射表文件：nameCache.json，该文件记录了字节码名称混淆的映射关系。
 * 系统API白名单文件：systemApiCache.json，该文件记录了SDK中的接口与属性名称，与其重名的源码不会被混淆。
@@ -514,7 +514,7 @@ city1
 
 HSP需要将给其他模块用的方法配置到白名单中。因为主模块里也需要配置相同的白名单，所以推荐将HSP配置了白名单的混淆文件（假设名称为hsp-white-list.txt）添加到依赖它的模块的混淆配置项里，即下图files字段里。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/P-k-zOjkTOmDk4ZxzmKQ-w/zh-cn_image_0000002786518412.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/P-k-zOjkTOmDk4ZxzmKQ-w/zh-cn_image_0000002786518412.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4F996BDC5622BB47367FE66A6791314C1B8809C9FF9834D052A092EAC51F186)
 
 **案例一：动态导入某个类，类定义的地方被混淆，导入类名时却没有混淆，导致报错**
 
@@ -706,7 +706,7 @@ person["m"] = 20;
 
 工程的目录结构如下图所示，模块library1的外层还有目录"directory"，开启文件名混淆后，"directory" 被混淆为f12，导致路径找不到。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/qiSxFhJvTbix5fMc8-RF0A/zh-cn_image_0000002786358484.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/qiSxFhJvTbix5fMc8-RF0A/zh-cn_image_0000002786358484.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA11F786C0CE967626EF671BA9B3C2B5C5E47DBE975868EB9C1ED01806561CBD)
 
 **解决方案**：
 

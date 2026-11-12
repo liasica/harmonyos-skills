@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-device-cer
 title: APP备案如何获取公钥和证书指纹
 breadcrumb: FAQ > 系统开发 > 安全 > 证书管理（Device Certificate） > APP备案如何获取公钥和证书指纹
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:b5fe4cb4f358465a8d48d6a0585fba67de6d64d648e8ccb08108b1f35602fdb4
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:b5fe4cb4f358465a8d48d6a0585fba67de6d64d648e8ccb08108b1f3560
 
 移动端应用在各大平台使用云资源时，需要在对应的平台进行应用备案，平台会要求提供应用对应的公钥和证书md5指纹的信息。示例如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/yfzd9pi1Tjqy6jviH8uUkQ/zh-cn_image_0000002679828592.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/yfzd9pi1Tjqy6jviH8uUkQ/zh-cn_image_0000002679828592.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5C08B233805453B69E5ECB15182CA472C36223A3868692D69F76515BCAD3581 "点击放大")
 
 ## 背景知识
 
@@ -22,14 +22,14 @@ content_hash: sha256:b5fe4cb4f358465a8d48d6a0585fba67de6d64d648e8ccb08108b1f3560
 
 1. 登录HarmonyOS 开发者中心，点击“证书、APP ID和Profile”，在页面左侧点击“证书”，下载需要备案的HarmonyOS应用的发布证书。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/oC6YdhEIQvGVd_c7JQPcvQ/zh-cn_image_0000002679988488.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/oC6YdhEIQvGVd_c7JQPcvQ/zh-cn_image_0000002679988488.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=F291EF3813E08C44FD6D1659AEBE7ACD3FCCE50BE8165DED84645453AE8EC9A6 "点击放大")
 2. 使用文本编辑器（如记事本）打开已下载的证书，删除前两段证书（根证书和中间证书），只保留最后一段证书（叶子证书），点击保存。
 3. 双击打开已保存的证书，点击“详细信息-公钥”，获取APP的公钥信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/LVBJb0UgQJCL_PhgzitRvw/zh-cn_image_0000002709668373.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/LVBJb0UgQJCL_PhgzitRvw/zh-cn_image_0000002709668373.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=E653388F69D6D3F0B6C8DD8A4E7A674EC8A8FBCC624573C74CCC44E59F7912CF "点击放大")
 4. 双击打开已保存的证书点击“详细信息-指纹”，获取APP的指纹信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/lGNs3SDzSJCZnTLoJEDbBQ/zh-cn_image_0000002679828768.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/lGNs3SDzSJCZnTLoJEDbBQ/zh-cn_image_0000002679828768.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=D45C39476F58EB20938AD8FAA1F79D6DF09353349FF28B3C06F91DCEF3E85785 "点击放大")
 
    **说明** 
 

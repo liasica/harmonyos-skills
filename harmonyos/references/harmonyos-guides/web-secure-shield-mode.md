@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-secure-sh
 title: 坚盾守护模式
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理Web组件的网络安全与隐私 > 坚盾守护模式
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-09
 content_hash: sha256:7b088186a1f2c118e0d8515e3af7183ece8a9d70ffac7944bbff67a8b60ded34
 ---
@@ -29,7 +29,7 @@ content_hash: sha256:7b088186a1f2c118e0d8515e3af7183ece8a9d70ffac7944bbff67a8b60
 
 要评估应用在坚盾守护模式下的受影响程度及兼容性，可前往“设置 > 隐私和安全 > 坚盾守护模式”开启。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/FQNRR3HERc-nOBcGqunNig/zh-cn_image_0000002786519370.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/FQNRR3HERc-nOBcGqunNig/zh-cn_image_0000002786519370.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=594ADAC41FEE6AE61D838D221BCA1328B3C52FB68C9FF9021DD6485604BC2BBF)
 
 **说明** 
 

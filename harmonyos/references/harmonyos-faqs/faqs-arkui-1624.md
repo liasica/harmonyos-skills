@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1624
 title: 如何实现随机生成数字图形验证码
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现随机生成数字图形验证码
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:48+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-13
 content_hash: sha256:086abb99675c5f0f60198441fe020c571c264342915c890dc0a04384a837b27f
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:086abb99675c5f0f60198441fe020c571c264342915c890dc0a04384a83
 
 如何实现下图的验证码功能？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/M8NyRoZcSB68O-7oqogAiQ/zh-cn_image_0000002658976785.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/M8NyRoZcSB68O-7oqogAiQ/zh-cn_image_0000002658976785.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=826D41C34585836109E792F6CA001BE2DAF3357ED99E62F3A1014454D4E3AC18 "点击放大")
 
 ## 背景知识
 

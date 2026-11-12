@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1636
 title: TabBar实现居左或居右样式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > TabBar实现居左或居右样式
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:36+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:4f51ea965d5e9172cb1723a96931fd547798053b853d009a53a4fcc28c397357
 ---
@@ -20,11 +20,11 @@ content_hash: sha256:4f51ea965d5e9172cb1723a96931fd547798053b853d009a53a4fcc28c3
 * 自定义页签可以利用容器组件的排列方式实现TabBar居左显示，以下提供两种方法：
   + 将页签按Row（横向从左往右）的方向放置在弹性布局[Flex](../harmonyos-guides/arkts-layout-development-flex-layout.md)容器内，利用Flex容器实现TabBar居左的效果。Flex容器内子元素的布局方向如下图所示：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/QvqgGGzcTM6QI2Xjknu09Q/zh-cn_image_0000002658976865.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/QvqgGGzcTM6QI2Xjknu09Q/zh-cn_image_0000002658976865.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=95189E5095510C7A0F6894B92451B651081764E3CC874194B5B4F7B253A2DF2B "点击放大")
 
     因此使用Flex容器实现问题描述中的期望目标可以拆解成如下结构：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/M3Ak6YQHTR6ggwMWoC1Dkw/zh-cn_image_0000002658856923.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/M3Ak6YQHTR6ggwMWoC1Dkw/zh-cn_image_0000002658856923.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA9CE620A3981DA7AFBF52AE87F6A9A71BFA44D2A752FD92E34C181A38EFCC14 "点击放大")
   + 通过横向的Scroll组件实现自定义TabBar。
 
 ## 解决方案
@@ -123,7 +123,7 @@ TabBar实现居左或居右的方式类似，本文以居左为例。
 
   参考图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/4aWkDcTzTgS0T5Zh6PKQ3Q/zh-cn_image_0000002628617652.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/4aWkDcTzTgS0T5Zh6PKQ3Q/zh-cn_image_0000002628617652.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD482D5529FECB1C399A890EE95864A79771442E1E2382D33AEFF3E345C7C71E "点击放大")
 * **方案二：Scroll容器实现自定义TabBar居左样式。**
   1. 自定义TabBar样式。
   2. TabBar放置在Scroll中，Scroll设置50%宽度，Scroll外部Row的reverse属性设置为false，可实现居左对齐。如果设置reverse为true，可实现居右对齐。
@@ -236,7 +236,7 @@ TabBar实现居左或居右的方式类似，本文以居左为例。
 
   参考图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/IyoyvARiQ12RUHmPRG-jew/zh-cn_image_0000002628777550.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/IyoyvARiQ12RUHmPRG-jew/zh-cn_image_0000002628777550.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=D5C0DABCBE3F7C5E83195484192380232E7B38F1354C1874C5D6E32DE4C906A7 "点击放大")
 * **方案三：行列与堆叠容器实现自定义TabBar居左样式**。实现方式参考demo[基于Tabs组件实现常见导航样式](https://gitee.com/harmonyos_samples/multi-tab-navigation)。
   + **Flex容器实现自定义TabBar居左样式。**
     1. 自定义TabBar样式。
@@ -320,7 +320,7 @@ TabBar实现居左或居右的方式类似，本文以居左为例。
 
     参考图如下：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/yvZclQjrRt-NNb2Fl_tGNw/zh-cn_image_0000002658976867.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/yvZclQjrRt-NNb2Fl_tGNw/zh-cn_image_0000002658976867.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D5048F60B70A097803567C8368DFE79029B833B70D4661B55592708330C5AAC "点击放大")
   + **Stack容器实现自定义TabBar居左样式。**
     1. 自定义TabBar样式。
     2. 将自定义的页签样式放入Stack容器中，alignContent属性设置为Alignment.TopStart，每个页签通过position设置偏移值，使得TabBar左对齐。如果设置为Alignment.TopEnd，实现居右对齐。
@@ -409,7 +409,7 @@ TabBar实现居左或居右的方式类似，本文以居左为例。
 
     参考图如下：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/e7-O5efoSKOuOJnnHcBmLg/zh-cn_image_0000002658856925.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/e7-O5efoSKOuOJnnHcBmLg/zh-cn_image_0000002658856925.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=90B0B2CE991C85F1A527456AA85F9C29F50D2A4BF1E568AA81BE4D1EC6802EA4 "点击放大")
 
 ## 总结
 

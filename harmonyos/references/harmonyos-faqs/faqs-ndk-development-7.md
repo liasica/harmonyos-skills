@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-develo
 title: 如何实现ArkTS到Native的跨模块长调用
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何实现ArkTS到Native的跨模块长调用
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:57+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:755b8f7c760de91aa56d15fce3d64d90b2d8dffac78d2777c5f773505a163f1b
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:755b8f7c760de91aa56d15fce3d64d90b2d8dffac78d2777c5f773505a1
 2. har ArkTS侧A.ets页面中接口调用har Native侧的方法。
 3. har Native侧方法通过napi\_load\_module\_with\_info来加载har ArkTS侧B.ets导出的自定义接口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/m9wOs0K2TGWtRadehSPNyQ/zh-cn_image_0000002659258289.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/m9wOs0K2TGWtRadehSPNyQ/zh-cn_image_0000002659258289.png?HW-CC-KV=V1&HW-CC-Date=20261112T233214Z&HW-CC-Expire=31536000000&HW-CC-Sign=4444089FC8AAD01932DEBF4A134BCAE2F2E5D7402D3A30F5673033BD10FA7C81 "点击放大")
 
 har的ArkTS侧将函数包裹在命名空间中导出，其Native侧用napi\_get\_named\_property加载函数，加载失败。
 

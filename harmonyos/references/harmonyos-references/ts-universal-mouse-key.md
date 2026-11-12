@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 鼠标事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 基础输入事件 > 鼠标事件
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:04+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-14
 content_hash: sha256:29a31488ea05a3409e70907fdf311e791b5a891186b33b38e70ab4c1a2964dca
 ---
@@ -240,7 +240,7 @@ struct MouseEventExample {
 
 鼠标点击时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/K1kedAafR8COFwT4z7F1bA/zh-cn_image_0000002786520880.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/K1kedAafR8COFwT4z7F1bA/zh-cn_image_0000002786520880.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F4490AAB280F3734AAF2DDC1EF1D7E12B42B5EC3A9E2BC59CF602CAC8F513D8)
 
 ### 示例2（获取当前帧历史点）
 
@@ -321,4 +321,4 @@ struct GetCurrentLocalPositionExample {
 
 鼠标触发事件时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/jleahvv8T3GZYT1t380Dcg/zh-cn_image_0000002786360952.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/jleahvv8T3GZYT1t380Dcg/zh-cn_image_0000002786360952.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=EFFCD936600447D63FA53B60701774D54FE0FDCC3EDF3A281B7193D4D3B125B4)

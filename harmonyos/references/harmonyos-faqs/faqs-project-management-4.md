@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-project-ma
 title: "打开历史工程，报错提示“Install failed FetchPackageInfo: hypium failed”"
 breadcrumb: "FAQ > DevEco Studio > 工程管理 > 打开历史工程，报错提示“Install failed FetchPackageInfo: hypium failed”"
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:49+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:113cbd4b981e7c31266348e872c6f3c3ede9e98ab1cca5587706576140077baa
 ---
@@ -16,8 +16,8 @@ content_hash: sha256:113cbd4b981e7c31266348e872c6f3c3ede9e98ab1cca55877065761400
 
 导致该问题的原因是包名使用错误。在工程级**oh-package.json5**中，将**devDependencies**字段下"hypium"修改为"@ohos/hypium"。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/1AKbBeEvQra69tMx7euNrQ/zh-cn_image_0000002654837735.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/1AKbBeEvQra69tMx7euNrQ/zh-cn_image_0000002654837735.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB2A3A9592EEF09B7CF3AF76B9DD3E397213237DEF103993C04BF6E4AB820679)
 
 @ohos/hypium版本号可通过ohpm命令获取，在DevEco Studio中打开Terminal，输入**ohpm info @ohos/hypium**命令，输出结果中dist-tags下方即为版本号。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/R0UcvEYxT4-7Ly1--nbh7g/zh-cn_image_0000002624478424.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/R0UcvEYxT4-7Ly1--nbh7g/zh-cn_image_0000002624478424.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=C6C67D194539CC440B3CBD3DAF6B321D3FF6997E12FBD2408306FE83DC94C5B8)

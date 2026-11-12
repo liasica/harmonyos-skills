@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkts-kit-faq-0
 title: ArkTS语法使用与错误排查常见问题
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 常见问题 > ArkTS语法使用与错误排查常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:45874d94787878eeb82eb0e55ef58d9f8efdfe101a7ab2cc6c8e6e1c84f2a53e
 ---
@@ -62,10 +62,10 @@ struct Index {
 
 1. ERROR: ArkTS:ERROR File: C:/Users/... ,Use“let”instead of“var”(arkts-no-var)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/9hLLjX2RRyixccjQSsTJqA/zh-cn_image_0000002774075424.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/9hLLjX2RRyixccjQSsTJqA/zh-cn_image_0000002774075424.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=90D36DD35B3FB03567D18ED9B9AA5D312B881A5439F44CEDBE18B365E4E49067 "点击放大")
 2. ERROR: ArkTS:ERROR File: D:/DTS/MyApplicationAPI12/... ,The“@Sendable”decorator can only be used on“class”,“function”and“typeAlias”(arkts-sendable-decorator-limited)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/uPvEFmj6QH-jw1-K70SSbQ/zh-cn_image_0000002773914854.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/uPvEFmj6QH-jw1-K70SSbQ/zh-cn_image_0000002773914854.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB453C713B862A9E2640E71DD9FF2F521F6DB675279E5F6224F98424E73B28EA "点击放大")
 
 **Q：ArkTS是否支持TypeScript中的闭包函数？**
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scsi-peripher
 title: 开发适用SCSI协议的设备驱动
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 扩展外设专项驱动开发 > 开发适用SCSI协议的设备驱动
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:3ffc9050a73c15685a26f18a72c0157d6423e77968f4b91e69ff242b33195e60
 ---
@@ -49,7 +49,7 @@ ScsiPeripheralDDK支持SPC（SCSI Primary Commands）、SBC（SCSI Block Command
 
 **图1** ScsiPeripheralDDK调用原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/2e9OMMjBSEO6wlzjZUsKOQ/zh-cn_image_0000002786359778.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/2e9OMMjBSEO6wlzjZUsKOQ/zh-cn_image_0000002786359778.png?HW-CC-KV=V1&HW-CC-Date=20261112T233012Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A4CD2275B3A4E1FD69E8DC25A269E5E337E8C996C2151F39026498F8E13E9D8)
 
 ### 约束与限制
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-572
 title: 判断滚动与滑动容器组件的子组件是否可见
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 判断滚动与滑动容器组件的子组件是否可见
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:38+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-31
 content_hash: sha256:7295f0bef53cbb4a67b564b9eb6a4c8179ffc836325a4f6b49a0b514cf583774
 ---
@@ -28,7 +28,7 @@ onScrollStop(() => {
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/Fh5EEDlTTPm0O0HIQRNniA/zh-cn_image_0000002658791435.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/Fh5EEDlTTPm0O0HIQRNniA/zh-cn_image_0000002658791435.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF59474441016E5EF732927FCB28D403EB9A9238FF4BCDB2ECBC12EAF1602097 "点击放大")
 
 ## 背景知识
 
@@ -194,4 +194,4 @@ onScrollStop(() => {
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/MxrK6xkASBuaxxc1H_hhog/zh-cn_image_0000002628552048.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/MxrK6xkASBuaxxc1H_hhog/zh-cn_image_0000002628552048.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E4B333FC3A502EF9FCA9D582EE601EC0E014738E134AD40ACCE27A8B5D1685B "点击放大")

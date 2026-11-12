@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/same-layer-re
 title: 同层渲染原生组件
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 同层渲染 > 同层渲染原生组件
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:24+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-23
 content_hash: sha256:0794b105657eda40576ee9c467f9d3565dd2f6ecbff1571683d0499a8505ef7c
 ---
@@ -35,7 +35,7 @@ content_hash: sha256:0794b105657eda40576ee9c467f9d3565dd2f6ecbff1571683d0499a850
 
 **图1** 同层渲染和非同层渲染区别
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/aP9-Xvf1TBeQdSmUmvaOZA/zh-cn_image_0000002786519396.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/aP9-Xvf1TBeQdSmUmvaOZA/zh-cn_image_0000002786519396.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=C6125B331B21C6573FF6CF23E6BC7259D55C96072858DE8941CB2708DD9A7019)
 
 ## 场景示例
 
@@ -43,7 +43,7 @@ content_hash: sha256:0794b105657eda40576ee9c467f9d3565dd2f6ecbff1571683d0499a850
 
 **图2** 页面效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/ujCANbyGT2qZBXQ5vlaXcA/zh-cn_image_0000002786359468.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/ujCANbyGT2qZBXQ5vlaXcA/zh-cn_image_0000002786359468.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A1678035FB8304319F7F7AB306A124018F4BF65D73155A80AB76825B3ADE806)
 
 提供承载的H5页面代码如下：
 
@@ -537,7 +537,7 @@ struct SearchComponent {
 
 \*\*图3 \*\*非同层渲染的Trace图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/uIenbEiKQpKAB-iglzeOlg/zh-cn_image_0000002815558889.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/uIenbEiKQpKAB-iglzeOlg/zh-cn_image_0000002815558889.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB4637A0DEC3024B9AFE7A59CF5A3D6DD3939FF6EF6E85ACABC06EA117D5A2F5)
 
 非同层渲染的分析：
 
@@ -548,7 +548,7 @@ struct SearchComponent {
 
 **图4** 同层渲染的Trace图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/HLiEEjLGRVuAjVlfsk4RVg/zh-cn_image_0000002815398973.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/HLiEEjLGRVuAjVlfsk4RVg/zh-cn_image_0000002815398973.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D9CF10698128425F2B60D0580B5C9D7A569E033FF15EB1356E384F5AA0CB266)
 
 同层渲染的分析：
 
@@ -559,7 +559,7 @@ struct SearchComponent {
 
 下表为各种方法完成原生组件加载（蓝线）前后几帧render\_service侧的耗时对比（-1为完成前一帧，1为完成后一帧，以此类推）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/BJpvhfxuTdSainwiuo63pQ/zh-cn_image_0000002786519398.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/BJpvhfxuTdSainwiuo63pQ/zh-cn_image_0000002786519398.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=F75090E62EBC78C43530D5776E058191D5D72D49606E37032DF8818DC065A943)
 
 从此表格可以看出，非同层渲染会导致render\_service侧每帧耗时大幅提升，同层渲染相比起非同层渲染，并不影响render\_service侧的每帧耗时。
 
@@ -571,7 +571,7 @@ struct SearchComponent {
 
 **图5** 非同层渲染滑动时单帧图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/25Vszil5QJWBdr-ajvZE8g/zh-cn_image_0000002786359470.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/25Vszil5QJWBdr-ajvZE8g/zh-cn_image_0000002786359470.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=1EFB5013D5CBE974A0B5DE601E8E765AC0BD40CC8B35E2AE9DD224EC6BF7C0DE)
 
 非同层渲染的分析：
 
@@ -582,7 +582,7 @@ struct SearchComponent {
 
 **图6** 同层渲染滑动时单帧图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/D_LyI6FnTCCo2fhJ9YgViQ/zh-cn_image_0000002815558891.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/D_LyI6FnTCCo2fhJ9YgViQ/zh-cn_image_0000002815558891.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=F10C145AE31489E8B4F3A6D0563A016E7CACB581FC147A7A66D4872C1106F283)
 
 同层渲染的分析：
 

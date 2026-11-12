@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: slider
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > slider
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:33+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:6819446405eb6a012df8523fdd72cefdfc9831f1f8838aa075f3d6c9e812fc26
 ---
@@ -80,4 +80,4 @@ content_hash: sha256:6819446405eb6a012df8523fdd72cefdfc9831f1f8838aa075f3d6c9e81
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/43qrGwVWR6Gug1CxMJKpBA/zh-cn_image_0000002786361760.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/43qrGwVWR6Gug1CxMJKpBA/zh-cn_image_0000002786361760.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A6B1813E607863943FD8F90F3CE2067F530CE463C3D421DD80236F2062DC105)

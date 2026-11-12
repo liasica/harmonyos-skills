@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: 滚动组件通用接口
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > 滚动组件通用接口
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:b877c11676d84041a2b4ccda90f0a89b98e40c2c38ceeb982f7b954f6436f439
 ---
@@ -976,7 +976,7 @@ List/Grid组件编辑模式选项属性参数对象。
 
 下图是组件配置了边距属性后的示意图，可理解每种枚举对应的裁剪区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/pOBAnCTbRMWdlDsRpFIDVA/zh-cn_image_0000002815560593.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/pOBAnCTbRMWdlDsRpFIDVA/zh-cn_image_0000002815560593.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1F68F5DE89D97B83FCE2E16357D507A6CA12B6C9693EA338198C19F788A01F2)
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1467,7 +1467,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/T-40kthxSlu9sJotXj8geQ/zh-cn_image_0000002786521040.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/T-40kthxSlu9sJotXj8geQ/zh-cn_image_0000002786521040.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0A01B76A0C2E9E6813F5B91BD0CF48EFE743801B63693539567FCD70AE05400)
 
 ### 示例2（设置边缘渐隐）
 
@@ -1512,7 +1512,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/F3pidacDR_Sd7jup0Jwllw/zh-cn_image_0000002815560535.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/F3pidacDR_Sd7jup0Jwllw/zh-cn_image_0000002815560535.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CBE6E1608AD714080681688668B1FA34553352E8D6852EC678331F22963FDB0)
 
 ### 示例3（设置裁剪区域）
 
@@ -1573,7 +1573,7 @@ struct ScrollExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/NYav23aTTei5IF8TplWBJA/zh-cn_image_0000002815400677.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/NYav23aTTei5IF8TplWBJA/zh-cn_image_0000002815400677.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=A59F951DE1F53ACEC86E766A262003248F7E1ADF021DE22E2E5B766981884DF8)
 
 ### 示例4（设置滚动条边距）
 
@@ -1630,4 +1630,4 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/xRm8g2_IShaBv2x7BfbTNg/zh-cn_image_0000002786521102.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/xRm8g2_IShaBv2x7BfbTNg/zh-cn_image_0000002786521102.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C1F0DC8CDFFCEFCDE48B9130013E2431764AD9A712B0292C96E4C5DD0F37B81)

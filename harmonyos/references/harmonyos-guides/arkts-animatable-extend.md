@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-animata
 title: "@AnimatableExtend装饰器：定义可动画属性"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > @AnimatableExtend装饰器：定义可动画属性
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:48ce96afee280c1c0f07945974c3a83287201997f2ffaad61a7f483462817852
 ---
@@ -76,7 +76,7 @@ struct AnimatablePropertyText {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/oHWedwQ5Qr-J_aSzPQYN8A/zh-cn_image_0000002786518482.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/oHWedwQ5Qr-J_aSzPQYN8A/zh-cn_image_0000002786518482.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=2563FAA866CC07F126F342A2EFD66DF4DEA389FA56A1D21356E7B201C4A42261)
 
 以下示例实现折线的动画效果。
 
@@ -201,4 +201,4 @@ struct  AnimatablePropertyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/BsEkOU8XSY-YYJ3xdspq9g/zh-cn_image_0000002786358554.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/BsEkOU8XSY-YYJ3xdspq9g/zh-cn_image_0000002786358554.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=240BD998CEB35701696E2FCCF1B14C019837D08377AB77543D31B640A2382FD5)

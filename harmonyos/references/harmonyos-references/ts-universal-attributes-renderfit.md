@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 组件内容填充方式
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 组件内容填充方式
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:758939244bf704b0d64b10207de9eaadc626de0d9874467335e692017f3cf8f6
 ---
@@ -122,4 +122,4 @@ struct RenderFitExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/ZQCfZmmZRzqhv7-84aWHsA/zh-cn_image_0000002786520946.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/ZQCfZmmZRzqhv7-84aWHsA/zh-cn_image_0000002786520946.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B59C8ADFE1B73210E2822254B5450103BB46CC80171689A7A2CDCAC2BF862FF)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-animate
 title: 组件动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 动效开发指导 > JS动画 > 组件动画
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:bcc74c990357da358c959577b54efed03c6c9cc0941eaff3d5b971fa4866c2ed
 ---
@@ -65,7 +65,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/J2tGtWhFRC-230b1Oa-Ttg/zh-cn_image_0000002786519282.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/J2tGtWhFRC-230b1Oa-Ttg/zh-cn_image_0000002786519282.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=13A983F229ADF136D489A9E1AE7AD5E375BF66E748F242C76617820A0B5BFF21)
 
 **说明** 
 
@@ -144,7 +144,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/GDQNEaWISVW_76QJ_QHoMg/zh-cn_image_0000002786359354.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/GDQNEaWISVW_76QJ_QHoMg/zh-cn_image_0000002786359354.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=88C1F865389CDA5026CD18C578C21EE1238C23F58273898DAD64353D9FE9EC53)
 
 **说明** 
 
@@ -212,7 +212,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/0sCiw0PRRzeDXdRrlhNolQ/zh-cn_image_0000002815558775.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/0sCiw0PRRzeDXdRrlhNolQ/zh-cn_image_0000002815558775.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=45A072ED809381DC5456859C7ADFFC88E393F72371BF7ECD66804BB471914121)
 
 **说明** 
 

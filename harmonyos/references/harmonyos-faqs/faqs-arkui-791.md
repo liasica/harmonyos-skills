@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-791
 title: 如何实现在class函数中直接调用自定义弹窗API
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现在class函数中直接调用自定义弹窗API
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:1ea2c021e4f9e85fe4294b51f958b24ba614aa19a24034ed235dd8e03fea9a8e
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:1ea2c021e4f9e85fe4294b51f958b24ba614aa19a24034ed235dd8e03fe
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/AdYzsHTHQPmbI4XkEQbD_Q/zh-cn_image_0000002628557636.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/AdYzsHTHQPmbI4XkEQbD_Q/zh-cn_image_0000002628557636.png?HW-CC-KV=V1&HW-CC-Date=20261112T233202Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B2B087D7CEE35AEBC96560BC6696C1586B1450A2BE730F4667B873AD842803F "点击放大")
 
 ## 背景知识
 

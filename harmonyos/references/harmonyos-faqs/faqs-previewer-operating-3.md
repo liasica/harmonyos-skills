@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-previewer-
 title: 预览告警“@Consume/@Link decorated property <propertyName> not initialized”
 breadcrumb: FAQ > DevEco Studio > 界面预览 > 预览告警“@Consume/@Link decorated property <propertyName> not initialized”
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:55ba0abd7cf831c546467e1cecb6fc1b5a6007223a2c0acfb7be1077727af310
 ---
@@ -12,11 +12,11 @@ content_hash: sha256:55ba0abd7cf831c546467e1cecb6fc1b5a6007223a2c0acfb7be1077727
 
 启动预览后，预览窗口显示白屏，上方出现错误信息：“Preview failed. View details in the PreviewerLog window.”
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/RjOb227tTpiOQoB7nP8R2g/zh-cn_image_0000002654797821.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/RjOb227tTpiOQoB7nP8R2g/zh-cn_image_0000002654797821.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CD31F642EB08EFC6711E65052EDEDC8D8CF882C5BDAFFDDA0184518BAAD2D8D "点击放大")
 
 此时，PreviewerLog 窗口显示如下告警信息：“@Consume/@Link 装饰的属性 \_<propertyName>\_未初始化。”
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/XiJjJqTaTgaVngukZIuh9Q/zh-cn_image_0000002624638362.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/XiJjJqTaTgaVngukZIuh9Q/zh-cn_image_0000002624638362.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=D953B823AD311404A14ABF95EF524FCFF053CCE9B7AA280546FAA378797AF7E3)
 
 **解决措施**
 

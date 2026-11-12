@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: HdsTabs (底部页签)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsTabs (底部页签)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:55:18+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:496ffef144db8ecadf3ffb06299070a995e7ab3a9535f3553a432117e934d717
 ---
@@ -1234,7 +1234,7 @@ struct Index {
 
 效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/t6gfVQhST9ameB5pt4vgig/zh-cn_image_0000002786522018.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/t6gfVQhST9ameB5pt4vgig/zh-cn_image_0000002786522018.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=C18F865E3293844DA4B5EA459938D801B2F46953670BB9808148BA011DDD040A)
 
 ### 支持出血效果
 
@@ -1283,7 +1283,7 @@ struct Index {
 
 效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/MrSCFFhESh2NMWspcOoOYA/zh-cn_image_0000002786362090.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/MrSCFFhESh2NMWspcOoOYA/zh-cn_image_0000002786362090.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=708489F67BAB5B1ABD7AE16F871E01FCC2154E03D1383AFCE0D373A6DFD5A7B7)
 
 ### 页签半屏居中对齐布局
 
@@ -1329,7 +1329,7 @@ struct Index {
 
 效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/rEMdamy6T0yykDE3CPdCsQ/zh-cn_image_0000002815561511.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/rEMdamy6T0yykDE3CPdCsQ/zh-cn_image_0000002815561511.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=4496F8DC49B4A3106D90C97AC8915788EB68E233550B96E8FDF9933B07FCB8A5)
 
 ### 页签栏悬浮样式
 
@@ -1415,4 +1415,4 @@ struct Index {
 
 效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/e4khh30jRnKopflmyOVRyg/zh-cn_image_0000002815401595.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/e4khh30jRnKopflmyOVRyg/zh-cn_image_0000002815401595.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=5EA81670BD91B147427778BF1E07545F9CA0F785A8CCAE5530349EB5EC8545AD)

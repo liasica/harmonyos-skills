@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/taskpool-vs-w
 title: TaskPool和Worker的对比
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 多线程并发 > TaskPool和Worker的对比
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:03+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-26
 content_hash: sha256:918c3ef875e0699cb153e03ee160eefbd05563fa74e252b1147985f62fe0a376
 ---
@@ -50,13 +50,13 @@ Worker拥有独立的运行环境，每个Worker线程和主线程一样拥有�
 
 **图 1** Worker工作原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/KqpTFwUOSiylBRmhO0sKuA/zh-cn_image_0000002815557873.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/KqpTFwUOSiylBRmhO0sKuA/zh-cn_image_0000002815557873.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=CDDD27D35C5E3F041E11EEF527ABDB58FA198DE51C8BB71F7F75E790DD083E02)
 
 在多核的情况下（下图中的CPU 1和CPU 2能同时工作），多个Worker线程（下图中的Worker thread1和Worker thread2）可以同时执行，因此Worker线程做到了真正的并发，如下图所示：
 
 **图 2** 多核CPU下Worker并发原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/Ct2s3EaDQheimfoN2-D2pA/zh-cn_image_0000002815397957.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/Ct2s3EaDQheimfoN2-D2pA/zh-cn_image_0000002815397957.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=1620F90DADE9954CC92CA0B86D5DB49AF5C3555BE5B7CBBE0BDB6C46106ACCCF)
 
 ### TaskPool工作原理
 
@@ -64,7 +64,7 @@ TaskPool在Worker之上实现了调度器和Worker线程池，无需管理生命
 
 **图 3** TaskPool工作原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/8qmbX4PLQc2CAhDUdzfkBQ/zh-cn_image_0000002786518382.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/8qmbX4PLQc2CAhDUdzfkBQ/zh-cn_image_0000002786518382.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D610022D43439C8236BE96B87733DA550C1850893C1AFF9A0D89B0F231195B5)
 
 ## 适用场景对比
 
@@ -118,7 +118,7 @@ Worker适用于需要长时间占据线程，并由开发者主动管理线程�
 
 **图 4** ArkTS图片编辑效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/VhjnyqjpSZy5W9rv65VieQ/zh-cn_image_0000002786358454.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/VhjnyqjpSZy5W9rv65VieQ/zh-cn_image_0000002786358454.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DF93B3863EB8C3892D6E62535FBB243AE0A5946D5E04F6E806C942C700D9ADD)
 
 **说明** 
 
@@ -393,11 +393,11 @@ TaskPool与Worker都具有转移控制权、深拷贝两种方式，Worker不支
 
 **图 5** 中载模型下Worker与TaskPool耗时对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/oPpL0egnQ2elRr4yVO0J9A/zh-cn_image_0000002815557875.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/oPpL0egnQ2elRr4yVO0J9A/zh-cn_image_0000002815557875.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=4DF478314CCD8491A0C8961B594341C0D05C6AB8BA46BA3E8AA91E8EEB9A02CB)
 
 **图 6** 重载模型下TaskPool与Worker耗时对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/Om7HHnLiTLCl_Mz_6BMYKA/zh-cn_image_0000002815397959.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/Om7HHnLiTLCl_Mz_6BMYKA/zh-cn_image_0000002815397959.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B2B0F488C71E15680ADE3CF58E4911785FB33E161580EAB015804D2A9EB66C7)
 
 从模型实验数据可以看出：
 
@@ -421,11 +421,11 @@ TaskPool与Worker都具有转移控制权、深拷贝两种方式，Worker不支
 
 **图 7** 中载模型下TaskPool与Worker运行时内存占用对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/bPz92FN8R9OPYQ5LbXAAhw/zh-cn_image_0000002786518384.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/bPz92FN8R9OPYQ5LbXAAhw/zh-cn_image_0000002786518384.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=258731F97CC2F68BA01001F59D08DFE6DFEAD3BBE1D682A7A8DE85D3D96D198B)
 
 **图 8** 重载模型下TaskPool与Worker运行时内存占用对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/onQaUbstQeCY2Y8NLHZ1Vg/zh-cn_image_0000002786358456.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/onQaUbstQeCY2Y8NLHZ1Vg/zh-cn_image_0000002786358456.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A389CB1090BBF1C5EB300E838EDE8A19B050D8A6C7E7E3065A028D56AEA3E4F)
 
 从以上实验数据可以看出：
 

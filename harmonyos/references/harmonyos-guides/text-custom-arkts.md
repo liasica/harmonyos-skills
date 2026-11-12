@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/text-custom-a
 title: 自定义文本绘制与显示（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 文本绘制与显示 > 自定义文本绘制与显示（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:d61d9a6582d27758b46d46d02a82ecb758b6298a7a83d7df16a4b277b132ee0f
 ---
@@ -105,4 +105,4 @@ content_hash: sha256:d61d9a6582d27758b46d46d02a82ecb758b6298a7a83d7df16a4b277b13
 
 效果展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/z1haGwj5T4OW0JdBsCSq3A/zh-cn_image_0000002786519996.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/z1haGwj5T4OW0JdBsCSq3A/zh-cn_image_0000002786519996.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F4B07929B4AD748E6F94D2913CBB9E225D6CFA4096365C1919AE0942B0099E5)

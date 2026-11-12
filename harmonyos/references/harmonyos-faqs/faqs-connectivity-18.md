@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-connectivi
 title: 如何实现WLAN随机MAC地址获取
 breadcrumb: FAQ > 系统开发 > 网络 > 短距通信（Connectivity） > 如何实现WLAN随机MAC地址获取
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:18+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:539905cda6b38e4d2ac02775ff108cbd826e39bcbbde0015a6ca18f420625380
 ---
@@ -50,7 +50,7 @@ struct Index {
 
 成功获取到WLAN随机MAC，输出结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/nh24xpUjQ2m44fVYD2ms9w/zh-cn_image_0000002628772524.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/nh24xpUjQ2m44fVYD2ms9w/zh-cn_image_0000002628772524.png?HW-CC-KV=V1&HW-CC-Date=20261112T233210Z&HW-CC-Expire=31536000000&HW-CC-Sign=66159CA074B859A4B7FBBE5F7582256FDF69D5F48657D9E0186C2E75603AC51D "点击放大")
 
 ## 常见FAQ
 

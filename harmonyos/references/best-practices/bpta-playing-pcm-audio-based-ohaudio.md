@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-playing-pc
 title: 基于OHAudio播放PCM音频
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频播放系列开发实践 > 基于OHAudio播放PCM音频
 category: best-practices
-scraped_at: 2026-11-10T10:42:02+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:88a91c0df0bc68a2c19b2d8cce119f161acf41c3c4175be3688dc1fab6954b34
 ---
@@ -14,7 +14,7 @@ OHAudio是用于音频播放的Native API，仅支持PCM格式的音频。指导
 
 本文是音频播放系列文章的第2篇，实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/4Gyc-Rs-TFiRwi9fGY-Kyw/zh-cn_image_0000002524057588.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/MOwgzAtBSQqwzYQEMwyyXA/zh-cn_image_0000002555217487.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/Cfgl83qGTOqYc8zq4Oqblg/zh-cn_image_0000002524217594.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/4Gyc-Rs-TFiRwi9fGY-Kyw/zh-cn_image_0000002524057588.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF103B36DC722DF645DCA408073261D5F866077859B69B245CB2CC5C1960FC1F "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/MOwgzAtBSQqwzYQEMwyyXA/zh-cn_image_0000002555217487.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=8BB86A2EEC379229B228625E8EEA850202D6D8F30E81899DDF8FD31BB4A8C550 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/Cfgl83qGTOqYc8zq4Oqblg/zh-cn_image_0000002524217594.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=3942E928C92798CAF6AF1A50921E1F6F23A7705FDCB4CF56E3CD18F95941D6A6 "点击放大")
 
 ## 场景分析
 
@@ -37,7 +37,7 @@ OHAudio是用于音频播放的Native API，仅支持PCM格式的音频。指导
 
 通过[OHAudio](../harmonyos-references/capi-ohaudio.md)接口实现核心音频播放控制能力，包括音频资源加载、播放、暂停、停止及退出等操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/Ffpu2PepQpuelkeDCRPOcA/zh-cn_image_0000002555337465.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/Ffpu2PepQpuelkeDCRPOcA/zh-cn_image_0000002555337465.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=B841BFD48EDEE7F5020F108A1C2CB6E5417F6AAEC2CE84DFF1FA9BF73036F7FC "点击放大")
 
 ### 实现原理
 
@@ -251,7 +251,7 @@ void OHAudioPlayer::ReleasePlayer() {
 
 通过点击或拖动进度条精准跳转到指定时间进行播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/9X6zu-80Q-ungnshsKSKLg/zh-cn_image_0000002524057598.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/9X6zu-80Q-ungnshsKSKLg/zh-cn_image_0000002524057598.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D69D28461E1E77F89ACBF2F8A1A56CD8548B816CDC054B6769C45A50B74011C "点击放大")
 
 ### 实现原理
 
@@ -367,7 +367,7 @@ static OH_AudioData_Callback_Result OnAudioRendererWriteDataEvent([[maybe_unused
 
 通过界面按钮切换音频播放静音状态，实现一键开启或关闭静音。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/q1V5njGJRTiJAZdEbgJF_A/zh-cn_image_0000002555217499.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/q1V5njGJRTiJAZdEbgJF_A/zh-cn_image_0000002555217499.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=5825063A4D12E3D0D8351480308FE3CF1F32375CC7AF870F59CA023A0DBC0990 "点击放大")
 
 ### 实现原理
 
@@ -400,7 +400,7 @@ void OHAudioPlayer::SetSilentMode(bool isSilentMode) {
 
 点击上一首、下一首或歌单列表中的其他歌曲来进行切换歌曲播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/5CIf-FgJQdiXC8Sk8ULZ7g/zh-cn_image_0000002524217620.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/5CIf-FgJQdiXC8Sk8ULZ7g/zh-cn_image_0000002524217620.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1834094DAA67FE35EA6437091F6AB12A020BF20F329A003DFA52FFEF3C45A1D "点击放大")
 
 ### 实现原理
 
@@ -497,7 +497,7 @@ static OH_AudioData_Callback_Result OnAudioRendererWriteDataEvent([[maybe_unused
 
 滑动倍速调节面板调节播放速度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/5U-OjIkHTr2_HIqpZoYarw/zh-cn_image_0000002555337493.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/5U-OjIkHTr2_HIqpZoYarw/zh-cn_image_0000002555337493.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=E74164A5959EDF726604C4CB01C189D6C1D23E8AB5577F1D81F30F6A7AA459A5 "点击放大")
 
 ### 实现原理
 
@@ -549,7 +549,7 @@ void OHAudioPlayer::SetPlayingSpeed(float speed) {
 
 滑动音量调节面板调节播放音量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/C6mmbQfNQ6S_phSkwo9bTA/zh-cn_image_0000002524057630.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/C6mmbQfNQ6S_phSkwo9bTA/zh-cn_image_0000002524057630.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F0316E72696E2F35BD5A1BF9818AA40BB56C9ECD80C9B6694448EF1B806C6CF "点击放大")
 
 ### 实现原理
 

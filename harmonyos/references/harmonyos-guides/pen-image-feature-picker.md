@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pen-image-fea
 title: 接入全局取色
 breadcrumb: 指南 > 系统 > 硬件 > Pen Kit（手写笔服务） > 手写功能开发 > 接入全局取色
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:db14bd8742224cb4d6371ece02c40ef869dc9715615acf7edbd52ac784d26d97
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:db14bd8742224cb4d6371ece02c40ef869dc9715615acf7edbd52ac784d
 
 在应用中拉起全局取色，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/-ULHAtI7S9mg1CqHpiQLhg/zh-cn_image_0000002815559201.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/-ULHAtI7S9mg1CqHpiQLhg/zh-cn_image_0000002815559201.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C7776F9931B45C4E9C40962C5FF3DD8E4B98442E78EACC6912B86257253F563)
 
 支持获取当前屏幕上选中位置的色值和色域空间。
 

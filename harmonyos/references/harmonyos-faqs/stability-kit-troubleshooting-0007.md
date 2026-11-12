@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/stability-kit-t
 title: 应用闪退与崩溃问题定位
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > 故障排查 > 应用闪退与崩溃问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:39+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:52e82c1dfef6b3d6b41206b18f724087a1be6926eb4eafaf6fa7077c936fe067
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:52e82c1dfef6b3d6b41206b18f724087a1be6926eb4eafaf6fa7077c936
 
 ### 定位过程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/I5qfGXa4TRuwrLID8T0xNA/zh-cn_image_0000002766022066.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/I5qfGXa4TRuwrLID8T0xNA/zh-cn_image_0000002766022066.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8F0A4FE81F0387746B6EC3304B2F3864DB06A224B22222F9EE842846F316024 "点击放大")
 
 定位的核心逻辑遵循标准化路径：**“锁定时间点 → 识别退出原因 → 提取详细堆栈 → 针对性修复”**。
 
@@ -81,7 +81,7 @@ content_hash: sha256:52e82c1dfef6b3d6b41206b18f724087a1be6926eb4eafaf6fa7077c936
 
 ### 定位过程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/E0BcAd4kTa2bDRRg1UYoTQ/zh-cn_image_0000002765863032.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/E0BcAd4kTa2bDRRg1UYoTQ/zh-cn_image_0000002765863032.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=4C2E28FC723B378F0F78AEFC0F2DDADA89BDE206F6500F8519E1237953FF0470 "点击放大")
 
 定位的核心逻辑遵循标准化路径：**“锁定时间点 → 识别退出原因 → 提取详细堆栈 → 针对性修复”**。
 
@@ -146,7 +146,7 @@ content_hash: sha256:52e82c1dfef6b3d6b41206b18f724087a1be6926eb4eafaf6fa7077c936
 
 ### 定位过程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/bsYF_mXsR4S0KfvjqGAx3Q/zh-cn_image_0000002765863250.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/bsYF_mXsR4S0KfvjqGAx3Q/zh-cn_image_0000002765863250.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=94555F8B7FDA6ED2E058735A0970C3748A51344B324B8E999DCCBDE6F84AA2D0 "点击放大")
 
 定位的核心逻辑遵循标准化路径：**“锁定时间点 → 识别退出原因 → 提取详细堆栈 → 针对性修复”**。
 

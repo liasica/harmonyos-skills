@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 内存释放后访问故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 地址越界故障模式说明 > 内存释放后访问故障模式说明
 category: best-practices
-scraped_at: 2026-11-10T10:42:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-09
 content_hash: sha256:23fc03059d258631503a9667d662cfc4df969abd17b4fd1b95e71c4f20483e3b
 ---
@@ -121,7 +121,7 @@ content_hash: sha256:23fc03059d258631503a9667d662cfc4df969abd17b4fd1b95e71c4f204
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，定位到具体业务代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/3uhyLlmtSM2XucMnbkXWRA/zh-cn_image_0000002729491381.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/3uhyLlmtSM2XucMnbkXWRA/zh-cn_image_0000002729491381.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=05610D3C5F373F113077B135EB7F03E8C9E5C94C1696224ACD6A31583E05B742)
 
    1号位置对应分配栈，通过new int(42)申请堆内存；2号位置对应释放栈，通过delete ptr释放堆内存；3号位置对应报错栈，通过\*ptr读取堆内存。
 3. 还原内存对象生命周期，确认问题根因。
@@ -201,7 +201,7 @@ content_hash: sha256:23fc03059d258631503a9667d662cfc4df969abd17b4fd1b95e71c4f204
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，定位到具体业务代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/SkjRZ8WVSHWtcCKASnwJpw/zh-cn_image_0000002699892008.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/SkjRZ8WVSHWtcCKASnwJpw/zh-cn_image_0000002699892008.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8AF5C5F0A4E732B97299871BA16F4ACB2A3A177199D7C96276F727EFD66E622 "点击放大")
 
    1号位置对应报错栈，通过ptr[0] = 42写入堆内存；2号位置对应分配栈，通过new char[50]申请堆内存；3号位置提交异步任务；4号位置对应释放栈，通过delete[] buffer释放堆内存。
 3. 还原内存对象生命周期，确认问题根因。
@@ -330,7 +330,7 @@ content_hash: sha256:23fc03059d258631503a9667d662cfc4df969abd17b4fd1b95e71c4f204
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，定位到具体业务代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/WxID4WpxRE-i4J2Br9uE8w/zh-cn_image_0000002729611335.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/WxID4WpxRE-i4J2Br9uE8w/zh-cn_image_0000002729611335.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=7FA8308A068AE0BAC044F757F4A5670623021CF7F971F2464C759D14B780A196)
 
    1号位置对应分配栈，通过new int(42)申请堆内存；2号位置对应释放栈，通过delete ptr释放堆内存；3号位置对应报错栈，通过\*ptr读取堆内存。
 3. 还原内存对象生命周期，确认问题根因。
@@ -439,7 +439,7 @@ content_hash: sha256:23fc03059d258631503a9667d662cfc4df969abd17b4fd1b95e71c4f204
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，定位到具体业务代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/ZMBGgsA6RuOtQWFl-kkekQ/zh-cn_image_0000002699732126.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/ZMBGgsA6RuOtQWFl-kkekQ/zh-cn_image_0000002699732126.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=85F8C9EA84FA6E8B8CD0CB122D53A07B5CB72B978A1C63C9BE039D8A2AC8B19D "点击放大")
 
    1号位置对应报错栈，通过ptr[0] = 42写入堆内存；2号位置对应分配栈，通过new char[50]申请堆内存；3号位置提交异步任务；4号位置对应释放栈，通过delete[] buffer释放堆内存。
 3. 还原内存对象生命周期，确认问题根因。
@@ -537,7 +537,7 @@ content_hash: sha256:23fc03059d258631503a9667d662cfc4df969abd17b4fd1b95e71c4f204
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，定位到具体业务代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/c1-agDB8SfKek5TPOlyeig/zh-cn_image_0000002729491383.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/c1-agDB8SfKek5TPOlyeig/zh-cn_image_0000002729491383.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=07F37E317CEA5858283C3DA242EBF6CE8D421EA4057EDDB6A4DAE65D298834B6 "点击放大")
 
    1号位置对应分配栈，通过malloc(1024)申请1024字节堆内存；2号位置对应释放栈，通过free(ptr)释放该内存；3号位置对应报错栈，通过ptr[0] = 1再次访问已经释放的内存。
 3. 还原内存对象生命周期，确认问题根因。
@@ -594,7 +594,7 @@ content_hash: sha256:23fc03059d258631503a9667d662cfc4df969abd17b4fd1b95e71c4f204
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，定位到具体业务代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/KqEf2N5yTTOKabtVgyTW_w/zh-cn_image_0000002699892010.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/KqEf2N5yTTOKabtVgyTW_w/zh-cn_image_0000002699892010.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=80C88AE5FFB8E6D6B8B34214865650DAD2C2BE8B8153A6CCDDC3E0F5A7312FDA "点击放大")
 
    1号位置通过new char[UAF\_ALLOC\_SIZE]申请50字节堆内存，2号位置提交异步任务，3号位置通过delete[]释放堆内存，4号位置对应报错栈，在异步回调中通过ctx->freed\_ptrs[i][0] = 42再次访问已经释放的内存。
 3. 分析报错栈、释放栈、分配栈，还原内存对象生命周期，确认问题根因。
@@ -714,7 +714,7 @@ set(CMAKE\_C\_FLAGS "${CMAKE\_C\_FLAGS} -g -fno-omit-frame-pointer -mllvm -hwasa
    本案例中，首先截取报错地址0x007f8600d250的后5位，得到栈内相对偏移0x0d250；随后在Previously allocated frames列表中自上而下比较各record中的高5位栈指针偏移，找到第一个大于目标偏移的记录。本案例匹配到0x0d3f0，对应record:0x0d3f005abe7301d0。解析该record对应的函数符号后，定位到TriggerStackUseAfterScope()，说明异常的栈对象在该函数中定义。
 4. 分析控制流路径，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/MgcEkGTXQDy1tk4veKcMTw/zh-cn_image_0000002729611337.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/MgcEkGTXQDy1tk4veKcMTw/zh-cn_image_0000002729611337.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F8C645E46F33D8BF8824801D54474BD9458EF98CE88C0D424B59E14DDE2D27B "点击放大")
 
    1. 定义函数内局部指针ptr。
    2. 在代码块中，定义局部数组local。
@@ -783,7 +783,7 @@ set(CMAKE\_C\_FLAGS "${CMAKE\_C\_FLAGS} -g -fno-omit-frame-pointer -mllvm -hwasa
    解析结果定位到napi\_init.cpp:378，对应stackUseAfterScope()函数的开栈位置，说明异常的栈对象在该函数中定义。
 4. 分析控制流路径，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/BNEjCTR2TjW1VVzQ0YlNBg/zh-cn_image_0000002699732128.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/BNEjCTR2TjW1VVzQ0YlNBg/zh-cn_image_0000002699732128.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=C05C5478AAD955EAA0B35F99633B7391F108298B4DE80E8B42FB0D808E895C1F "点击放大")
 
    1. 定义全局指针gp。
    2. 在代码块中，定义局部数组x。
@@ -850,7 +850,7 @@ set(CMAKE\_C\_FLAGS "${CMAKE\_C\_FLAGS} -g -fno-omit-frame-pointer -mllvm -hwasa
    解析结果定位到napi\_init.cpp:378，对应stackUseAfterScope()函数的开栈位置，说明异常的栈对象在该函数中定义。
 4. 分析控制流路径，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/Qf4A10XyQxm666Mfg42Kpg/zh-cn_image_0000002729491385.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/Qf4A10XyQxm666Mfg42Kpg/zh-cn_image_0000002729491385.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A00DBF1C686EE4DDC7E4BDFC9DA053B5EC8FAB3A3F47E7CFC907DD5101C34B8 "点击放大")
 
    1. 定义指针heapP，并通过new int[100]申请堆内存。
    2. 在代码块中，定义局部数组x。
@@ -949,7 +949,7 @@ set(CMAKE\_C\_FLAGS "${CMAKE\_C\_FLAGS} -g -fno-omit-frame-pointer -mllvm -hwasa
    日志显示异常地址位于当前函数栈帧偏移32的位置，该位置对应局部数组local，其定义位置为XsanTest.cpp:157。由此可以确认本次异常访问的对象为local。
 4. 分析控制流路径，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/IU2kmADsT6enOarRon8amA/zh-cn_image_0000002699892012.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/IU2kmADsT6enOarRon8amA/zh-cn_image_0000002699892012.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=D238C6C2003410BD1C0A54AC0F61DFF0E85134994E593AC24C0E0AA8559227DF "点击放大")
 
    1. 定义函数内局部指针对象ptr。
    2. 在代码块中定义局部数组local。
@@ -1048,7 +1048,7 @@ TriggerStackUseAfterScope()将代码块内局部数组local的地址保存到函
    说明：踩写的内存地址0x007fa9b7e350，该栈对象在LeafFuncOfTriggerStackUseAfterReturn()中定义。
 4. 分析控制流路径，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/jT1aoArySQum9bMV-MeEXw/zh-cn_image_0000002729611339.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/jT1aoArySQum9bMV-MeEXw/zh-cn_image_0000002729611339.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=2BAE25C435E8933765BB91D1E63379AB5B2D5F065D2CC0CFC91CB0204D70CC06 "点击放大")
 
    1. TriggerStackUseAfterReturn()调用LeafFuncOfTriggerStackUseAfterReturn()。
    2. LeafFuncOfTriggerStackUseAfterReturn()在函数栈中定义局部变量local\_buffer。
@@ -1118,7 +1118,7 @@ TriggerStackUseAfterScope()将代码块内局部数组local的地址保存到函
    解析结果定位到FunctionThatEscapesLocalObject()的开栈位置，说明异常的栈对象在该函数中定义。
 4. 分析控制流路径，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/buUP5v3hS6G8P3FYPe9TlA/zh-cn_image_0000002699732130.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/buUP5v3hS6G8P3FYPe9TlA/zh-cn_image_0000002699732130.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2D051A7CA1733E5FCEFA7BA70C4A127574FF881BCF68D3FEB6B6A98126B9213 "点击放大")
 
    1. 在StackUseAfterReturn()中定义局部指针ptr，并通过new int申请堆内存，使ptr初始指向该堆对象。
    2. 调用FunctionThatEscapesLocalObject()并传入ptr的地址，在函数内定义局部数组local。

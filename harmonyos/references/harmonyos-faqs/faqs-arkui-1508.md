@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1508
 title: 如何通过Swiper实现可见式卡片轮播效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何通过Swiper实现可见式卡片轮播效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:41+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:7b1b7e0ee2935cebb9d95cbfe891d5e8c933d1b97a512337b23d12ddea77f68f
 ---
@@ -267,7 +267,7 @@ content_hash: sha256:7b1b7e0ee2935cebb9d95cbfe891d5e8c933d1b97a512337b23d12ddea7
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/wi0cKaHKT2WrYXPzdC55Ng/zh-cn_image_0000002628606554.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/wi0cKaHKT2WrYXPzdC55Ng/zh-cn_image_0000002628606554.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A7F91F5C6ADBB46CC30FC233E27E76BFCFF7F6106D1846F7670A8233748026B "点击放大")
 * 方案二：通过自定义页面切换的动画来实现图片滑动过程中的缩放效果。
   1. 创建继承IDataSource的类MyDataSource，监听滑动的图片。
   2. 图片展示时，在onChange中根据当前图片的索引，来确定前后图片的缩放值。
@@ -428,4 +428,4 @@ content_hash: sha256:7b1b7e0ee2935cebb9d95cbfe891d5e8c933d1b97a512337b23d12ddea7
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/jgzfABrmRtidWRSpAO7_hg/zh-cn_image_0000002658845803.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/jgzfABrmRtidWRSpAO7_hg/zh-cn_image_0000002658845803.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=86B265E0DB2E048934CF64A07014C2EE07448D5937AA45E30DC8899D60C9038D "点击放大")

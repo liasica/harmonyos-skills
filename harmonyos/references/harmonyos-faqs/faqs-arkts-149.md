@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-149
 title: 是否支持#include <memory_resource>和std::pmr::vector
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > ArkTS线程模型和并发 > 是否支持#include <memory_resource>和std::pmr::vector
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:99a4f4c7a80fc9cd3eb576fd9014507bc8b39041ebbf031a85e031bbf60897bc
 ---
@@ -14,8 +14,8 @@ C++从C++17标准开始正式支持 <memory\_resource> 和std::pmr::vector等“
 
 Windows：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/U46FkGNJRW-VFj17jFnA0A/zh-cn_image_0000002654795261.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/U46FkGNJRW-VFj17jFnA0A/zh-cn_image_0000002654795261.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF5A12F2FF298E45B7E5E15A3F00ED33BBA0D2706F895D6DC3CE965787670D49 "点击放大")
 
 Mac：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/xYT0BX3lT2a4lWvDV2ontw/zh-cn_image_0000002624635792.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/xYT0BX3lT2a4lWvDV2ontw/zh-cn_image_0000002624635792.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=A16E674CBE5984E10614A3FCAEE0B19495456828DCEE94660217780311303229 "点击放大")

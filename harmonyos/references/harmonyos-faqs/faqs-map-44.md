@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-44
 title: 如何设置地图深色模式、浅色模式和自定义颜色
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 如何设置地图深色模式、浅色模式和自定义颜色
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:39+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-12
 content_hash: sha256:a53e5ca6a112279310662dde6e451847c48e6f5baccfdad194277d535b563a73
 ---
@@ -50,7 +50,7 @@ content_hash: sha256:a53e5ca6a112279310662dde6e451847c48e6f5baccfdad194277d535b5
     })
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/0hwJxOLMTaGnhhd3Keuoqw/zh-cn_image_0000002658793653.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/0hwJxOLMTaGnhhd3Keuoqw/zh-cn_image_0000002658793653.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=D56C1545C030A1DC5AF526CF1869EE4590E513D1851DEBA7BEA37BE0F1B9FC92 "点击放大")
 * 场景三：切换地图为浅色模式。
 
   配置调用setDayNightMode接口配置DayNightMode为DAY。
@@ -62,7 +62,7 @@ content_hash: sha256:a53e5ca6a112279310662dde6e451847c48e6f5baccfdad194277d535b5
     })
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/Is3SbDO0QfO2dIgTa0ctDQ/zh-cn_image_0000002628554286.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/Is3SbDO0QfO2dIgTa0ctDQ/zh-cn_image_0000002628554286.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=30D09742862866E763966317CCC681EA53C48CA192C08A13E1D9424D01F89FF5 "点击放大")
 * 场景四：地图颜色跟随系统深色模式配置。
 
   配置调用setDayNightMode接口配置DayNightMode为AUTO。
@@ -74,14 +74,14 @@ content_hash: sha256:a53e5ca6a112279310662dde6e451847c48e6f5baccfdad194277d535b5
     });
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/8tA6RPc9TgO4akMFEdyIjg/zh-cn_image_0000002658913609.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/8tA6RPc9TgO4akMFEdyIjg/zh-cn_image_0000002658913609.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=1AB3F36CAF458F06CCA889653FEF15C4B6392FCE7C8F3544A1B9A75C24E60D74 "点击放大")
 * 场景五：配置地图为自定义颜色。
   1. 登录[Petal Maps Studio](https://developer.petalmaps.com/console/studio/)网站，点击首页中的“Start”按钮。
   2. 点击页面右上角的“Create map”按钮，在新页面中点击预设的“Standard”、“Simple”、“Night”三种地图样式。
   3. 在地图样式配置和预览页面，左侧选择需要配置的地图元素，依次选择“Feature type”、“Element type”、“Stylers”，通过配置Stylers中的Color来自定义对应元素的颜色。
   4. 点击页面“SAVE”按钮后，参考产品文档中显示自定义地图的[开发步骤](../harmonyos-guides/map-style.md#开发步骤)进行自定义地图加载。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/VbEehOm-SOuLJpRrRBwxBg/zh-cn_image_0000002628394392.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/VbEehOm-SOuLJpRrRBwxBg/zh-cn_image_0000002628394392.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=65BD4C8E1A223CA7336F521AEC127D23669A09D37988E5FAC7E8B9994FA1B85D "点击放大")
 
   完整代码：
 

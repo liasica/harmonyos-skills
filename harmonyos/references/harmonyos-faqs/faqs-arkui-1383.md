@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1383
 title: 基于单选框的深浅色模式切换失败
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 基于单选框的深浅色模式切换失败
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:96389ff24c4c7fc1677ffd16ccdd50b8fc5731e61f8a827fa4e46bb568fd978d
 ---
@@ -86,7 +86,7 @@ struct RadioButton {
 
 问题现象如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/qWT7J8d3SZuPl7e1D_VeTA/zh-cn_image_0000002628602660.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/qWT7J8d3SZuPl7e1D_VeTA/zh-cn_image_0000002628602660.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF33D0727C47A116B833D5A0CBFB2D48C5A1F8190588035DD2DABCC73A24AE61 "点击放大")
 
 ## 背景知识
 
@@ -99,7 +99,7 @@ struct RadioButton {
 * 当调用[setColorMode](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#setcolormode18)切换颜色模式时，组件重新渲染，通过属性[checked](../harmonyos-references/ts-basic-components-radio.md#checked)强制重置状态。
 * [onChange](../harmonyos-references/ts-basic-components-radio.md#onchange)回调被频繁触发，但isChecked的值与实际颜色模式不一致。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/0AxuPYRLQ8GgpaV5UWKeEA/zh-cn_image_0000002658841931.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/0AxuPYRLQ8GgpaV5UWKeEA/zh-cn_image_0000002658841931.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=56DADF032BBF55BD04606C4B0F0C4EE77031D32ADABC94FC3195515D0573967B "点击放大")
 * 切换到深色模式后，Radio.checked仍为true，状态冲突。
 
 代码逻辑分析：
@@ -218,4 +218,4 @@ struct RadioButton {
 
 修正效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/3JLktzTVQ8SdWbQrnYtEvg/zh-cn_image_0000002628762562.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/3JLktzTVQ8SdWbQrnYtEvg/zh-cn_image_0000002628762562.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=2AB55BA9FF7DAC1BC9BB6B418F04AA39E98AE8B2BF1A33E03ECF1FBDC9925389 "点击放大")

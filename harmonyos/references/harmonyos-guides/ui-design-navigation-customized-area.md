@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-nav
 title: 设置自定义区域
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 组件导航 > 设置自定义区域
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:29+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:efd2eb0d65d9217f3d03c3d877be8e35c615d8899b0859c134568ac8d7680e8f
 ---
@@ -14,9 +14,9 @@ content_hash: sha256:efd2eb0d65d9217f3d03c3d877be8e35c615d8899b0859c134568ac8d76
 
 当应用开发者需要在标题栏区域增加自定义节点时，例如在标题栏上方区域增加分段按钮，标题下方区域增加搜索框、页签时，可以使用标题栏自定义区域设置能力。由于标题栏高度通常由系统或框架统一控制，开发者在添加自定义节点时需注意不要超出标题栏的可用空间，否则可能导致布局溢出或视觉混乱。自定义区域可能会覆盖或影响默认标题栏组件（如返回按钮、标题文字），需谨慎布局，避免交互冲突或遮挡关键元素。如果在标题栏中添加大量交互复杂、渲染频率高的组件，可能会对性能产生影响。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/NNXizc3oRrmuOhTFEwULGw/zh-cn_image_0000002815559027.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/NNXizc3oRrmuOhTFEwULGw/zh-cn_image_0000002815559027.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=068680016A369BB9298691CD1FC0EFE5D01093314960D322A26E407D8CA37651)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/gyIp77lGRg6Mh5UK7NgebQ/zh-cn_image_0000002815399111.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/gyIp77lGRg6Mh5UK7NgebQ/zh-cn_image_0000002815399111.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=CAA40CDB49E556F8F9E1FC6ABB355AF8135FC9545A8C36738FAD01573C491BBD)
 
 ## 开发步骤
 

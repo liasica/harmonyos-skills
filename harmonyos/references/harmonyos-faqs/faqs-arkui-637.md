@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-637
 title: 如何实现文字表面移动光线效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现文字表面移动光线效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:e818c589a9be395cf4f17533514bd4d89d4eabe7f21e1a79e656a64491c2c462
 ---
@@ -67,7 +67,7 @@ content_hash: sha256:e818c589a9be395cf4f17533514bd4d89d4eabe7f21e1a79e656a64491c
 
      效果预览：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/fo5vf9cRRZiOiJ34Cq8lWw/zh-cn_image_0000002658913723.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/fo5vf9cRRZiOiJ34Cq8lWw/zh-cn_image_0000002658913723.png?HW-CC-KV=V1&HW-CC-Date=20261112T233158Z&HW-CC-Expire=31536000000&HW-CC-Sign=183F3365320262DF6A6B835F896C36872CF2743CB1FDB7BBB495D49630BFEA74 "点击放大")
 
   完整示例参考如下：
 
@@ -127,7 +127,7 @@ content_hash: sha256:e818c589a9be395cf4f17533514bd4d89d4eabe7f21e1a79e656a64491c
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/FJCcguPQTpKdObiE-XQbYw/zh-cn_image_0000002628394510.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/FJCcguPQTpKdObiE-XQbYw/zh-cn_image_0000002628394510.png?HW-CC-KV=V1&HW-CC-Date=20261112T233158Z&HW-CC-Expire=31536000000&HW-CC-Sign=78255B3CEBED3D2F3B43B4DAAE6551240C4A35A3848A69CD7214092296D4F65F "点击放大")
 
   完整示例参考如下：
 

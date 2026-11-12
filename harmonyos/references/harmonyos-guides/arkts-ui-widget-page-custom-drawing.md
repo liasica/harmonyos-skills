@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: ArkTS卡片使用画布组件绘制自定义图形
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS卡片UI界面开发 > ArkTS卡片使用画布组件绘制自定义图形
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:27+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:2624f616546747af37562956039e197c61127acef2f1d989902c07e33d2c3f8c
 ---
@@ -95,4 +95,4 @@ struct CustomCanvasDrawingCard {
 
 运行效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/Kl2WM1ToTnqZAItccYX3pA/zh-cn_image_0000002786519456.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/Kl2WM1ToTnqZAItccYX3pA/zh-cn_image_0000002786519456.jpeg?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DE7AB6B6A023AD8098BB5A017D95D976624901352BB21EF9DF9B08FD3D75250)

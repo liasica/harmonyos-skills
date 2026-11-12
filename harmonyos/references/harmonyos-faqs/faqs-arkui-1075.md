@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1075
 title: Select如何自定义按钮样式和内容
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Select如何自定义按钮样式和内容
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:72888ec86736ea79e5ab770c7524b3b4a9cc77e47fd9c7dbabb4f38bc3617065
 ---
@@ -57,7 +57,7 @@ Select按钮如何实现以下场景：
 
      效果预览：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/z_s3YcIWSeCjpU9ZUofuUA/zh-cn_image_0000002658926449.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/z_s3YcIWSeCjpU9ZUofuUA/zh-cn_image_0000002658926449.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=404FFC04E5057124D2B96C318FB8E1ADB3BE45C82F99B8EB87E55C5D822D1E98 "点击放大")
   2. 自定义Select内容区。通过将原本的Select按钮设置为纯透明，在Select组件之上添加Row组件设置相同的宽高（[onSizeChange](../harmonyos-references/ts-universal-component-size-change-event.md#onsizechange)事件获取原Select宽高），对Row设置hitTestBehavior(HitTestMode.None)让事件可透传到Select（子组件也需添加）。自定义Row组件中的内容，实现Select组件按钮内容居中的效果。
 
      ```ts
@@ -122,7 +122,7 @@ Select按钮如何实现以下场景：
 
      效果预览：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/6E3hKYV6RvyAm9o0mS3yDg/zh-cn_image_0000002628407238.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/6E3hKYV6RvyAm9o0mS3yDg/zh-cn_image_0000002628407238.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF662C2C40DDF0B80E971C352612AC20F9F94E6EEFEBE7929505E378BB0CA9DE "点击放大")
 * **场景三**：API20以后也可以通过textModifier和arrowModifier自定义内容样式，把文本和下拉箭头改为透明。再通过Row自定义内容在原Select组件上层，参考场景二的第二种方式将Text改为TextArea。在输入框onChange事件中匹配内容对应的索引，并修改Select中的索引，让输入内容可以修改下拉框中的选项。实现既可输入内容也能在下拉菜单中选择。
 
   ```ts
@@ -203,7 +203,7 @@ Select按钮如何实现以下场景：
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/HOOrNgjaSOS-ZbMxmqabcg/zh-cn_image_0000002658806501.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/HOOrNgjaSOS-ZbMxmqabcg/zh-cn_image_0000002658806501.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=74DD034CEF375D4B4ADCB015349980B5B9B3B5A70A3018EE33403441EDC709C8 "点击放大")
 
 ## 常见FAQ
 

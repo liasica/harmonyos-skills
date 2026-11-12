@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-708
 title: Navigation如何携带参数返回首页
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Navigation如何携带参数返回首页
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:8bef6a2f3ca4677511c4bd18f368d06fd7b0f2a7364d58f2001d5ec544c2d7bd
 ---
@@ -92,7 +92,7 @@ content_hash: sha256:8bef6a2f3ca4677511c4bd18f368d06fd7b0f2a7364d58f2001d5ec544c
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/20Bz7bQZQDW_LR-rwdClsQ/zh-cn_image_0000002669866387.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/20Bz7bQZQDW_LR-rwdClsQ/zh-cn_image_0000002669866387.png?HW-CC-KV=V1&HW-CC-Date=20261112T233200Z&HW-CC-Expire=31536000000&HW-CC-Sign=E298B8CEFC26282C9EE2C75A2B68EA31800D799032B97CDDAD54B78B63B8755C "点击放大")
 * 场景2：首页跳转至其他页面之后，经过其他页面多次跳转，再立马返回首页。
 
   由于需要立马返回首页，无法一步步将路由栈中页面逐个出栈，所以无法通过出栈时的onPop回调，拿到上一个页面出栈时携带的参数。且首页无法推入路由栈，不能使用push类方法跳转，也没有onReady生命周期，所以也无法在onReady接收其他子页的传参。
@@ -212,7 +212,7 @@ content_hash: sha256:8bef6a2f3ca4677511c4bd18f368d06fd7b0f2a7364d58f2001d5ec544c
 
        效果预览：
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/Ns2VgyPpTQ2aZSc9eNr1RA/zh-cn_image_0000002669990323.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/Ns2VgyPpTQ2aZSc9eNr1RA/zh-cn_image_0000002669990323.png?HW-CC-KV=V1&HW-CC-Date=20261112T233200Z&HW-CC-Expire=31536000000&HW-CC-Sign=05B338F82413552F30190692A1846429A5D2D229DBC6220500F3F30E5619C69B "点击放大")
   + 方案2：在首页的aboutToAppear订阅事件，在clear清除路由栈时通过订阅的事件将参数传递回首页。
 
     ```ts
@@ -300,7 +300,7 @@ content_hash: sha256:8bef6a2f3ca4677511c4bd18f368d06fd7b0f2a7364d58f2001d5ec544c
 
     效果预览：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/nfqHB4hJSEaggKzBj3GLow/zh-cn_image_0000002639837140.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/nfqHB4hJSEaggKzBj3GLow/zh-cn_image_0000002639837140.png?HW-CC-KV=V1&HW-CC-Date=20261112T233200Z&HW-CC-Expire=31536000000&HW-CC-Sign=2CC4343682DD441F104DA827CD036CBB3B752F8344B928F30A5EDD0A0246D25B "点击放大")
 
 ## 常见FAQ
 

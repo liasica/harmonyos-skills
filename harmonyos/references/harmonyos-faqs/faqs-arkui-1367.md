@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1367
 title: 如何实现自定义分段按钮跟手滑动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现自定义分段按钮跟手滑动
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:7959a8c1bd09aa7d5a1875b2ddd0163336e22a1ba0c5e3e67d1aaf500e4f0fcc
 ---
@@ -174,4 +174,4 @@ content_hash: sha256:7959a8c1bd09aa7d5a1875b2ddd0163336e22a1ba0c5e3e67d1aaf500e4
 
   效果图如图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/-XxBj2XyTXa-dJHvVnam_w/zh-cn_image_0000002658961251.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/-XxBj2XyTXa-dJHvVnam_w/zh-cn_image_0000002658961251.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DBA30973F46523E9EA78B22FC69B2D87F81EC5D4386A58FDC91C50DE58846F8 "点击放大")

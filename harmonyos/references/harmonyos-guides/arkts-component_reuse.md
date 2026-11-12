@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-compone
 title: 自定义组件复用开发实践
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件复用 > 自定义组件复用开发实践
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-14
 content_hash: sha256:574ef8df22c1aafa333169701541ad76a1f103689c3878a3c7b388b604583b1d
 ---
@@ -40,13 +40,13 @@ content_hash: sha256:574ef8df22c1aafa333169701541ad76a1f103689c3878a3c7b388b6045
 * [列表项结构类型不同](arkts-component_reuse.md#列表项结构类型不同)
 * [列表项内子组件可拆分组合](arkts-component_reuse.md#列表项内子组件可拆分组合)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/NJyqCbxZQ9WtDmGQSRWnyw/zh-cn_image_0000002815557927.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/NJyqCbxZQ9WtDmGQSRWnyw/zh-cn_image_0000002815557927.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F0BDEB417B0C6F488D1ED548CC0BB98BCDA86DDCFA3E26ED77D4EBADD20384A)
 
 ### 实现原理
 
 ArkUI提供了[@Reusable装饰器](arkts-reusable.md)以实现自定义组件的复用，其原理如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/_5qdseTfQjGWK0KJNrbouA/zh-cn_image_0000002815398011.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/_5qdseTfQjGWK0KJNrbouA/zh-cn_image_0000002815398011.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=932163F7CB9AD5390A6E3F2324471170A04796F494991753DAAE936D3AFF35AA)
 
 1. 标记了@Reusable的自定义组件listItem列表项，在滑动出屏幕一定范围后，从组件树上被移除，组件的对象实例被放入CustomNode虚拟结点（与自定义组件一一对应的自定义结点）。
 2. 在不断滑动过程中，列表的RecycleManager将这些CustomNode虚拟结点回收，根据[复用标识](../harmonyos-references/ts-universal-attributes-reuse-id.md)分组，形成CachedRecycleNodes的集合，即视图对象的复用缓存池。
@@ -104,7 +104,7 @@ ArkUI提供了[@Reusable装饰器](arkts-reusable.md)以实现自定义组件的
 
 这种场景下，列表中的每一项都是由相同类型的元素和布局构成，列表项组件可以作为复用逻辑的基本单位。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/e7QEWwxJQByP1KYbsUEbog/zh-cn_image_0000002786518436.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/e7QEWwxJQByP1KYbsUEbog/zh-cn_image_0000002786518436.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=63EE4A76C9423D6FEDEC9D7996A1E06184B4FB9001E231C1BBC884B0F1C9835B)
 
 实现步骤：
 
@@ -160,7 +160,7 @@ struct ItemView {
 
 这种场景下，列表中会有多种类型的列表项，如下图包含了文本、单图、多图等三种列表项，其布局、组成元素存在一定差异，可以将每种类型的列表项分别作为复用单位。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/diIle3ZiRnyz_KQ1i5L0iw/zh-cn_image_0000002786358508.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/diIle3ZiRnyz_KQ1i5L0iw/zh-cn_image_0000002786358508.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=81CBE64EE3D03B1202818A9DBBD24C7DE86F38EF895CE6A32FFD18ABDCDDA024)
 
 在滑动的过程中，不同类型的列表项将分别回收进入各自的缓存池，当需要复用时，根据类型找到对应视图缓存进行显示。
 
@@ -223,11 +223,11 @@ struct ThreeImageTypeItemView {
 
 这种情况下，列表项也具有多种结构类型。通过观察可知，列表项内部子组件都是纵向分布排列，相同之处是顶部的文本标题、底部的发布时间，而不同之处是中间的区域部分：有单图、多图、视频三种情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/EJaRh0v-RIGyihGPTcZHZg/zh-cn_image_0000002815557929.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/EJaRh0v-RIGyihGPTcZHZg/zh-cn_image_0000002815557929.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=338D6387BCC02A4999A450645F18F75EF77A661E526A7FD603E5B57A290F5054)
 
 因此，可以创建五种复用子组件，通过子组件的选择组合，实现不同类型的列表项。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/eSQ5PPcjS5q2-cO0maOS8Q/zh-cn_image_0000002815398013.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/eSQ5PPcjS5q2-cO0maOS8Q/zh-cn_image_0000002815398013.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F67CD0E38572AA5DA1F9AC5F9AFA8347913AC0B1D7F936639D6CF87300FD79A)
 
 实现步骤：
 
@@ -438,7 +438,7 @@ struct MiddleVideoView {
 
 应用开发有这种场景：在不同的标题页面中展示数据，每一页面下实现了一个列表，这样在页面切换时，列表与列表之间如果存在结构相同的列表项，就有组件复用的优化可能。例如下图，News、Hot等页签下，绘制了类型相同的列表项。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/fLaCBGA4Sz6OOZs9OhL5xA/zh-cn_image_0000002786518438.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/fLaCBGA4Sz6OOZs9OhL5xA/zh-cn_image_0000002786518438.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=A800AE0A3F711DAECF2FA6B1ED92DD23CD846D29111399D5658C75F165608972)
 
 ### 实现原理
 
@@ -452,7 +452,7 @@ struct MiddleVideoView {
 
 当前Tabs内容页不支持使用LazyForEach()，只能使用ForEach+TabContent。如果使用ForEach()，Tabs页面显示时会一次性将所有的TabContent创建，TabContent子页面切换时也不会执行aboutToDisappear()，无法回收组件，进而不存在复用优化的可能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/kj_3cEcLT-ik94rk0Sp5cQ/zh-cn_image_0000002786358510.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/kj_3cEcLT-ik94rk0Sp5cQ/zh-cn_image_0000002786358510.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=DDB3A464C3F28C9131F5F933835CCB1E567959C573C0619B12E9B68AB3CC57BC)
 
 在需要布局自定义组件的位置，使用[NodeContainer](../harmonyos-references/ts-basic-components-nodecontainer.md)占位，然后继承[NodeController](../harmonyos-references/js-apis-arkui-nodecontroller.md)实现NodeItem结点类，其内部需要持有[BuilderNode](arkts-user-defined-arktsnode-buildernode.md)实例以实现结点的创建和复用，同时需要持有视图相应的数据对象以更新界面显示。
 
@@ -665,7 +665,7 @@ struct MiddleVideoView {
 
 当组件数量较多，集中预创建本身也耗时较长，容易导致主线程阻塞。ArkUI中提供了[onIdle()接口](../harmonyos-references/arkts-apis-uicontext-framecallback.md#onidle12)，会返回每一帧帧尾的空闲时间，可以将组件预创建分布到每一帧帧尾的空闲时间中执行，这样预创建过程就被平摊在多个周期里执行，避免集中运行的耗时影响，进而优化应用体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/oy-Uaty5SuSr4tRG6Z9L7w/zh-cn_image_0000002815557931.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/oy-Uaty5SuSr4tRG6Z9L7w/zh-cn_image_0000002815557931.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=F15E8EEB7B0D7E1E2B52CD19E13A6987AFD3C8160C83587F7FE30A43343D6D9F)
 
 **注意** 
 

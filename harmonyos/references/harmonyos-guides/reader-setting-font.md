@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-settin
 title: 自定义字体
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容排版 > 修改阅读设置 > 自定义字体
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-14
 content_hash: sha256:39abe52602963b2b914a5bb3c143f07b9643f7b15e1c0736b35b826b938b926b
 ---
@@ -17,7 +17,7 @@ content_hash: sha256:39abe52602963b2b914a5bb3c143f07b9643f7b15e1c0736b35b826b938
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/pe6LPSIRTnGfhekVMUecnw/zh-cn_image_0000002786520486.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/pe6LPSIRTnGfhekVMUecnw/zh-cn_image_0000002786520486.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE0CA16A1EADF0DFF47801EBF86914859A08F9CA5DFB8370B404D96E6DC71948)
 
 ## 接口说明
 

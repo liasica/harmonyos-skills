@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-config-ap
 title: 配置应用身份信息
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 开发准备 > 配置应用身份信息
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:27+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:07fadd1cc8c8f4c23f4766ea7fc7799a6201cee4f4ff7434a60d098fa0d86bfd
 ---
@@ -31,7 +31,7 @@ content_hash: sha256:07fadd1cc8c8f4c23f4766ea7fc7799a6201cee4f4ff7434a60d098fa0d
    * 下图中的APP ID可用于服务器API接口请求。
    * 如果开发者应用的compatibleSdkVersion>=14，则接入IAP Kit不要求开发者[添加公钥指纹](application-dev-overview.md#条件必选添加公钥指纹)以及配置应用身份信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/T6UIr-ndRg6eyI0lZdLaEg/zh-cn_image_0000002815399825.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/T6UIr-ndRg6eyI0lZdLaEg/zh-cn_image_0000002815399825.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=95C8DF2562DC868FF41CF4B4F0C5D8C9B4D9C87893FB0855A356824BE0BFE44E)
 2. 在工程“entry/src/main/module.json5”的**module**节点增加如下**client\_id**属性配置，用于IAP Kit接口的应用身份鉴权。
 
    ```json

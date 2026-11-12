@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/tool
 title: 实用工具
 breadcrumb: 指南 > 应用测试 > 专项测试 > DevEco Testing > 实用工具
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-28
 content_hash: sha256:41b0f308bba510c38d6871bddad76e607b9400f6163b0c988c720435426a3e2a
 ---
@@ -20,11 +20,11 @@ content_hash: sha256:41b0f308bba510c38d6871bddad76e607b9400f6163b0c988c720435426
 
 点击“创建图谱”，有以下选项：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/OnUIKdVRR9abNZqjse_N4g/zh-cn_image_0000002663932239.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/OnUIKdVRR9abNZqjse_N4g/zh-cn_image_0000002663932239.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=C62BCE466275577702E32D22A66446C7BF19A170F038C6D70B977BEFB4BD811B "点击放大")
 
 探索测试报告：选择相应的探索测试任务，输入待创建的图谱名称和说明。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/CqjBO-FxQYWbd6FHONdMvQ/zh-cn_image_0000002663932223.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/CqjBO-FxQYWbd6FHONdMvQ/zh-cn_image_0000002663932223.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=EAB8FA3EAB654B5F60DEC0A03FAEED1B8CB39A865E798DEC3A079CB412B9A1D6 "点击放大")
 
 从现有图谱文件：复用已有的图谱文件。
 
@@ -34,7 +34,7 @@ content_hash: sha256:41b0f308bba510c38d6871bddad76e607b9400f6163b0c988c720435426
 
 打包后zip文件，需要打开后直接是图谱文件，不能多一层目录。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/-FjlaI6lQ8ykB_bKJ__2nA/zh-cn_image_0000002664012325.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/-FjlaI6lQ8ykB_bKJ__2nA/zh-cn_image_0000002664012325.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5A13F41FC5FA80CB2599E59168EE2A465B9FD5EF0A697217137FFA77D594CD3 "点击放大")
 
 空白图谱：选择对应的应用创建空白图谱。
 
@@ -48,7 +48,7 @@ content_hash: sha256:41b0f308bba510c38d6871bddad76e607b9400f6163b0c988c720435426
 
 应用描述：对应用增加描述。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/SXdC3yqLThSOS25oB7K96Q/zh-cn_image_0000002664012319.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/SXdC3yqLThSOS25oB7K96Q/zh-cn_image_0000002664012319.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=2EA4C8553B5A69DD8C663936421CCC485E7E2D6BBC98D44C1BA419C3F618FD5B "点击放大")
 
 **说明** 
 
@@ -58,15 +58,15 @@ content_hash: sha256:41b0f308bba510c38d6871bddad76e607b9400f6163b0c988c720435426
 
 新增特性：点击新增特性按钮，输入特性名称和特性描述（非必填），点击提交按钮新增特性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/8L6tjZ2XTEa0v-ukYmF6lg/zh-cn_image_0000002645251092.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/8L6tjZ2XTEa0v-ukYmF6lg/zh-cn_image_0000002645251092.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=7351DB673FA5A8A8B18058A221CFC4A6327F1A7B16BED7CC9DE95EEA9AF247F7 "点击放大")
 
 删除特性：勾选特性后，点击删除特性按钮，勾选待删除特性，出现删除确认框，点击确定按钮完成删除。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/0TZEJFVMTTiKRkO4OTMIaQ/zh-cn_image_0000002645251734.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/0TZEJFVMTTiKRkO4OTMIaQ/zh-cn_image_0000002645251734.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=1245DD933095C05E4D3B601752AC0B1F9197CD0A68667C9E728C4D858EB24811 "点击放大")
 
 编辑特性：鼠标右键点击特性名称，选择修改特性按钮，修改特性名称、特性描述信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/LkPLVtpxRoyrcUvXR9kKyA/zh-cn_image_0000002633693092.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/LkPLVtpxRoyrcUvXR9kKyA/zh-cn_image_0000002633693092.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=300EF21F4CABD25D95474BBCAFD9DBBA79616A553A02B0854A1D493E285B0AA9 "点击放大")
 
 ### 应用图谱工具场景路径管理
 
@@ -74,7 +74,7 @@ content_hash: sha256:41b0f308bba510c38d6871bddad76e607b9400f6163b0c988c720435426
 
 步骤1：选择已有特性，点击新建场景路径按钮或鼠标右键选择新建场景路径，进入场景路径编辑页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/A4t1QA36Q0yHls-YsoikUw/zh-cn_image_0000002645224958.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/A4t1QA36Q0yHls-YsoikUw/zh-cn_image_0000002645224958.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7F43DA7712E306DACF440995961A4E6BD3FDB3AA07ACC4110103BA3A82C5FF6)
 
 步骤2：“编辑模式”窗口中的首个页面为设备桌面截图。点击窗口中的“➕”号创建场景路径，支持“通过屏幕录制添加”和“从已有图谱事件选择添加”两种方式。
 
@@ -82,13 +82,13 @@ content_hash: sha256:41b0f308bba510c38d6871bddad76e607b9400f6163b0c988c720435426
 
 （1）通过屏幕录制添加
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/3uxnQsWGQDuuuzf5DiHDHg/zh-cn_image_0000002675384643.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/3uxnQsWGQDuuuzf5DiHDHg/zh-cn_image_0000002675384643.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=9890C9137F0FA33DE6077F60DCCC3593D993B00CF1925378F96D3F40F5E1598A "点击放大")
 
 在点击“➕”号之后，选择“通过屏幕录制添加”。
 
 通过在左侧投屏设备的区域内，执行点击、滑动或者右键弹窗输入文本动作，添加相应的场景步骤，点击保存按钮完成场景创建。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/4xDixhpnTTSri4SnXbP7og/zh-cn_image_0000002645380782.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/4xDixhpnTTSri4SnXbP7og/zh-cn_image_0000002645380782.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B4564CE69628E6B465617D45CA9163731216B6CB63F1B0EBDAAD6CA36A350DF "点击放大")
 
 将鼠标移动到设备投屏上，右键单击后会出现以下功能选项：
 
@@ -98,37 +98,37 @@ content_hash: sha256:41b0f308bba510c38d6871bddad76e607b9400f6163b0c988c720435426
 
 重新获取当前页面控件：当页面控件识别不准确，或未识别到预期控件时，重新获取当前界面的控件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/t40f1P-SRW2HRH9IZ78eKg/zh-cn_image_0000002645220930.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/t40f1P-SRW2HRH9IZ78eKg/zh-cn_image_0000002645220930.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4E3D65D648EE4356378790C11C8A01ED4D8926D5201BBFE82F7A4C48AC7FAB0 "点击放大")
 
 （2）从已有图谱事件选择添加
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/cCpCwgaeT4CSNGZ0Ac2igQ/zh-cn_image_0000002675260835.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/cCpCwgaeT4CSNGZ0Ac2igQ/zh-cn_image_0000002675260835.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=B1A045A0847442C5D4E06D4807D86727D4934D9E8CED6EE2A18AB892EDC91003 "点击放大")
 
 如下图所示：展示对应选框点击前后的页面。
 
 点击“➕”号之后，选择“从已有图谱事件选择添加”，将出现图谱中记录的事件，选择图谱事件创建路径。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/b7zab0cVRTqmZXvksNPzNQ/zh-cn_image_0000002645381166.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/b7zab0cVRTqmZXvksNPzNQ/zh-cn_image_0000002645381166.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=8FFB50335ACA3A55B78D185FF78DF91EC66322B2F49A34EFB67C9BFF7F466466 "点击放大")
 
 步骤4：调试场景路径。
 
 场景路径创建完成后，支持对其进行调试，验证创建的场景路径能否在设备上运行正确。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/wMHxE6BeRX-PrpUUHrTvxw/zh-cn_image_0000002675381513.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/wMHxE6BeRX-PrpUUHrTvxw/zh-cn_image_0000002675381513.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F5759F4A9ABBAF2A2F65F6EFDD683410ADBF22354D475583B26E4AA997701A2 "点击放大")
 
 **编辑场景路径**
 
 选择已有的场景路径，点击鼠标右键或点击窗口右上角的按钮进行编辑。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/c4lPHbpBRg636Bft1RyIbA/zh-cn_image_0000002675261781.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/c4lPHbpBRg636Bft1RyIbA/zh-cn_image_0000002675261781.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=15A631F11109DDCFB35AE4D86D06F60D3114A421932227F11142C00E2A3AFA76 "点击放大")
 
 屏幕录制场景路径编辑：支持删除、刷新旧页面和“插入新节点”（注意：需手动将测试设备保持在所需页面）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/Bhp0djTzSPq83w-o1yPHRA/zh-cn_image_0000002675263185.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/Bhp0djTzSPq83w-o1yPHRA/zh-cn_image_0000002675263185.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=5BC1F280FF6A2287E024F2CF65B1158C763674615CBCCD22C605927965FAE1EB "点击放大")
 
 **场景路径压测**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/TxMAMNVbTaCpeQ9mn1xNFg/zh-cn_image_0000002633693094.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/TxMAMNVbTaCpeQ9mn1xNFg/zh-cn_image_0000002633693094.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=34C37833A19EF8D8B034E08AD1387C666A03AA4756F445A98A6F4E6B44A7CB91 "点击放大")
 
 探索测试服务创建场景压测任务**：**
 
@@ -152,11 +152,11 @@ content_hash: sha256:41b0f308bba510c38d6871bddad76e607b9400f6163b0c988c720435426
 
 步骤1：选择已有特性，点击新建控件黑名单或鼠标右键选择新控件黑名单，进入黑名单控件编辑页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/6HQxj56cTMKnbycYTriWnQ/zh-cn_image_0000002675267229.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/6HQxj56cTMKnbycYTriWnQ/zh-cn_image_0000002675267229.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=EAB961DDA6FDD8C742ADDC35BBB403144B02D2470849241B5700EF38E53BA407 "点击放大")
 
 步骤2：进入编辑窗口后根据右边灰色字体提示右击屏幕上的控件选择添加关键字和XPath；现提供关键字以及XPath两种方式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/v7IN2u9rSWKzeNNSf5nyaw/zh-cn_image_0000002645387578.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/v7IN2u9rSWKzeNNSf5nyaw/zh-cn_image_0000002645387578.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=2BC623097F3FEB1A1551EB26CFA57DF6DA20E8199F7AAB080E841C5A972FE10D "点击放大")
 
 步骤3：将鼠标移动到设备投屏上，右键单击后会出现以下功能选项：
 
@@ -172,27 +172,27 @@ content_hash: sha256:41b0f308bba510c38d6871bddad76e607b9400f6163b0c988c720435426
 
 选择关键字控件后，会展示所选控件text属性值以及图片，点击图片可查看所选控件在整个屏幕中的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/D6Xu6A7EQ32-ZC9vuudBiA/zh-cn_image_0000002675388793.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/D6Xu6A7EQ32-ZC9vuudBiA/zh-cn_image_0000002675388793.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=54EF8723A02C036480428F972C9FBE8D5308B3F538F5AA9BEE420D90701730CE "点击放大")
 
 （2）XPath
 
 选择XPath控件后，会展示所选控件的XPath路径以及图片，点击图片可查看所选控件在整个屏幕中的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/31FBfhcHQw2c45vb6ReHwQ/zh-cn_image_0000002675393627.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/31FBfhcHQw2c45vb6ReHwQ/zh-cn_image_0000002675393627.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2772AF3AFF94A4E0F20F9C73E134F2F063665934F3D0B4ED806F6CD8DBF3221 "点击放大")
 
 步骤5：选择控件黑名单后点击保存即可保存控件黑名单。
 
 步骤6：查看所选黑名单信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/G0XWmftAQBqnnC9CjlFTNQ/zh-cn_image_0000002645393570.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/G0XWmftAQBqnnC9CjlFTNQ/zh-cn_image_0000002645393570.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=05B6553220A3CC9EB20208B6D044E7271AE73AF30CE9F40CD508D29D26411E10 "点击放大")
 
 保存黑名单后展示了所选关键字以及XPath控件黑名单信息。点击图片放大可查看对应控件在整个屏幕中的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/_Mv0gRH9TGKePycMylM_3Q/zh-cn_image_0000002645235614.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/_Mv0gRH9TGKePycMylM_3Q/zh-cn_image_0000002645235614.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=3842180C28ED2C439134761F55A1649B1BAAEFFEB9F32130B8749B156A76A5C7 "点击放大")
 
 **编辑控件黑名单**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/U4qMWJJjSFOLubt9slHVcA/zh-cn_image_0000002645235976.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/U4qMWJJjSFOLubt9slHVcA/zh-cn_image_0000002645235976.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=C330D9E96B7F8CB3770AA79DE8DA14BB3C6BE7A3263DC48B8707A7CAE4649DE6 "点击放大")
 
 选择已有的黑名单，点击鼠标右键或点击窗口右上角的按钮进行编辑。
 
@@ -212,7 +212,7 @@ content_hash: sha256:41b0f308bba510c38d6871bddad76e607b9400f6163b0c988c720435426
 
 点击导航栏的实用工具，点击“性能测试报告对比”进入任务创建页。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/6kc4nrc-S2OZAs4E4C_I0A/zh-cn_image_0000002663932269.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/6kc4nrc-S2OZAs4E4C_I0A/zh-cn_image_0000002663932269.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=CB7A49D0A154C3866C0618948D94B5AA0CB4352E19F11889779B0C540D22A506 "点击放大")
 
 步骤2：点击选择需要分析的测试任务报告，再点击开始对比即可。
 
@@ -224,7 +224,7 @@ content_hash: sha256:41b0f308bba510c38d6871bddad76e607b9400f6163b0c988c720435426
 
 步骤1：在场景化性能测试和性能基础质量测试执行分析结束后，以性能基础质量测试为例，报告页面上会有“报告对比”按钮，点击后跳转至性能测试报告对比工具。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/-DIVN93VROq6TGrOaFElDQ/zh-cn_image_0000002663932219.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/-DIVN93VROq6TGrOaFElDQ/zh-cn_image_0000002663932219.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=2CF479DD0D4630BF51592B0C6C69D0C7AB8045A4A98F3B4BA13E9F6C6EB975EB "点击放大")
 
 步骤2**：**跳转到性能测试报告对比创建任务界面后，会自动选中刚执行完的任务；选择基线报告后，点击开始对比。
 
@@ -232,15 +232,15 @@ content_hash: sha256:41b0f308bba510c38d6871bddad76e607b9400f6163b0c988c720435426
 
 性能基础质量测试报告对比样例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/iJvuIOCnQnSOl0JX6kid-g/zh-cn_image_0000002663932231.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/iJvuIOCnQnSOl0JX6kid-g/zh-cn_image_0000002663932231.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=FBC2A46750F4A17D38206F6342C11B3953CD72B392B44452CE0BAE4F3B1A6AE8 "点击放大")
 
 场景化性能测试报告对比样例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/tD5zM_48R8KpSuaJSHuTnw/zh-cn_image_0000002633693098.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/tD5zM_48R8KpSuaJSHuTnw/zh-cn_image_0000002633693098.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF9C1F70213ED45B50E133438C91164A039BD356EE82883C69246D88590FF1F5 "点击放大")
 
 性能指标监控测试报告对比样例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/kLnC1wmVTLeqOYBgxRopGg/zh-cn_image_0000002664012299.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/kLnC1wmVTLeqOYBgxRopGg/zh-cn_image_0000002664012299.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=40F15DE689CDD964F84DDA98377FB7488FE09B013AD1E88274866706A6C66D13 "点击放大")
 
 ## 性能报告自动分析
 
@@ -272,13 +272,13 @@ content_hash: sha256:41b0f308bba510c38d6871bddad76e607b9400f6163b0c988c720435426
 
 性能报告自动分析只支持场景化性能测试服务和性能基础质量测试服务生成的报告。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/QXguLQklS72hDWlWvNSg2w/zh-cn_image_0000002633533154.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/QXguLQklS72hDWlWvNSg2w/zh-cn_image_0000002633533154.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=687A534576702386AA10D818F7ADF56CEF7BB1CAA26978AFB34FFB1FAE43D8E0 "点击放大")
 
 （2）从性能报告页页面创建任务
 
 步骤1：在场景化性能测试和性能基础质量测试执行分析结束后，以性能基础质量测试为例，报告页面上会有“性能报告自动分析”按钮，点击后跳转至性能报告自动分析工具。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/yCT1sTX6SaKStK7NhvpZ0g/zh-cn_image_0000002633533162.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/yCT1sTX6SaKStK7NhvpZ0g/zh-cn_image_0000002633533162.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=2266B6B91E4F954F24231A6BA421308C7ECE4DF505F155D66D7E7ED2B36462C9 "点击放大")
 
 步骤2：跳转到性能报告自动分析创建任务界面后，会自动选中跳转前的任务；点击创建任务开始分析。
 
@@ -286,7 +286,7 @@ content_hash: sha256:41b0f308bba510c38d6871bddad76e607b9400f6163b0c988c720435426
 
 **基础信息**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/SHg9MecJSg-b8AtVf2FeGA/zh-cn_image_0000002663932263.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/SHg9MecJSg-b8AtVf2FeGA/zh-cn_image_0000002663932263.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=516CD70617AD4DE8E8E3894988E76BD6E8D4ABBA6B75ED615F91D0E8424AA901 "点击放大")
 
 报告基础信息中主要包括如下部分**：**
 
@@ -299,7 +299,7 @@ content_hash: sha256:41b0f308bba510c38d6871bddad76e607b9400f6163b0c988c720435426
 
 **概览**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/SXGbkBB7Q9uNabfrQyLDDA/zh-cn_image_0000002664012317.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/SXGbkBB7Q9uNabfrQyLDDA/zh-cn_image_0000002664012317.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=69D7722F448265934E2B4F13BADD4D6A92970267BD792E0F9EBDDECFDD31F96C "点击放大")
 
 测试服务：分析的任务类型。
 
@@ -313,11 +313,11 @@ content_hash: sha256:41b0f308bba510c38d6871bddad76e607b9400f6163b0c988c720435426
 
 导出的目录内容结构如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/-L4BO0j-Ru6NSPGd3lU1lQ/zh-cn_image_0000002633533178.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/-L4BO0j-Ru6NSPGd3lU1lQ/zh-cn_image_0000002633533178.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=264E5D490CC3B6CF061238DF7DE4432B3C0D98882FBDDCFE7C857493B110CF8D "点击放大")
 
 **分析详情**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/HM9H3OZRQ5a8QkSgO4oZng/zh-cn_image_0000002633693062.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/HM9H3OZRQ5a8QkSgO4oZng/zh-cn_image_0000002633693062.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=37E9A0CB08FC839796CA18F3C740366D8C8D141B956132E18F8915C91D4E051A "点击放大")
 
 用例场景：测试用例名称。
 
@@ -335,7 +335,7 @@ content_hash: sha256:41b0f308bba510c38d6871bddad76e607b9400f6163b0c988c720435426
 
 分析详情：点击展开可以看到对应问题的详细分析结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/E4OE-TWLS4Og7EYtL7UsTQ/zh-cn_image_0000002664012323.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/E4OE-TWLS4Og7EYtL7UsTQ/zh-cn_image_0000002664012323.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=B36212E382C6EF64622B8EA383BBE971100D810E4B25C6EE136C13797105438E "点击放大")
 
 根因归属：导致此问题的主要原因在于应用还是系统。
 
@@ -345,4 +345,4 @@ content_hash: sha256:41b0f308bba510c38d6871bddad76e607b9400f6163b0c988c720435426
 
 耗时分段拆解：自顶向下逐步分解性能问题，聚焦真正影响性能的问题。橙色区块代表影响性能的主要原因，需要重点关注；蓝色区块代表耗时拆解的次要原因，对性能问题影响较小。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/8WvcUhpiRI-GaMSH-839yw/zh-cn_image_0000002633693090.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/8WvcUhpiRI-GaMSH-839yw/zh-cn_image_0000002633693090.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=6CA2E26A5BFEDA136138B340D78666EAE27DF086AA7F67523CF265707A91636D "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-cloudfound
 title: 如何处理部署云数据库对象失败：clouddb deploy failed. Reason is the index cannot be modified.
 breadcrumb: FAQ > 应用服务开发 > 云开发服务（Cloud Foundation Kit） > 如何处理部署云数据库对象失败：clouddb deploy failed. Reason is the index cannot be modified.
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:47+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:12e27b5a4b8e4823dab9b38f094243757ac6e570f4aee27beec4a43aa91e8355
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:12e27b5a4b8e4823dab9b38f094243757ac6e570f4aee27beec4a43aa91
 
 在DevEco新创建的云数据库对象类型，部署失败“clouddb deploy failed. Reason is the index cannot be modified”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/E2LCecLHT2a-FoneBBQq5w/zh-cn_image_0000002628554626.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/E2LCecLHT2a-FoneBBQq5w/zh-cn_image_0000002628554626.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D758FABBB191DBFC33581E1463EC8FD3551BE0F7C9EF2953BAAB760AA7EB571)
 
 ## 背景知识
 

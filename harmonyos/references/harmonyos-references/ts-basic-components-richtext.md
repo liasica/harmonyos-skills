@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: RichText
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > RichText
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:d42d8bd84156f5724c843d2307235f12f4124823a5f23e5d12e2b302fb1d783a
 ---
@@ -154,7 +154,7 @@ struct RichTextExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/ZM62ds8WTc2lXY1TirBoaw/zh-cn_image_0000002786361360.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/ZM62ds8WTc2lXY1TirBoaw/zh-cn_image_0000002786361360.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=7339B784A2BD2261441D57362CC51A1323B93DCAEA9FD7335757B1F82C8C25CD)
 
 加载本地资源文件。
 

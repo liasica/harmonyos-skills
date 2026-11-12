@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state
 title: "@State装饰器：组件内状态"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @State装饰器：组件内状态
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:67fb2e3576216a5e7cf0a94a2a6a97787a472d368508b49be504d1c149739ac3
 ---
@@ -48,7 +48,7 @@ content_hash: sha256:67fb2e3576216a5e7cf0a94a2a6a97787a472d368508b49be504d1c1497
 
 **图1** 初始化规则图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/6Lw-1AqwRCegxOsV44pg-w/zh-cn_image_0000002815557983.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/6Lw-1AqwRCegxOsV44pg-w/zh-cn_image_0000002815557983.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D0DFD545FDD4326B17F1B889EA4A796A428C54953434B39FB7B42D2BA2BF506)
 
 ## 观察变化和行为表现
 
@@ -205,7 +205,7 @@ content_hash: sha256:67fb2e3576216a5e7cf0a94a2a6a97787a472d368508b49be504d1c1497
   }
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/9UTX09SJQlOZU8W1Fi2Nlg/zh-cn_image_0000002815398067.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/9UTX09SJQlOZU8W1Fi2Nlg/zh-cn_image_0000002815398067.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=86565E68899CAB41BFA52D7CBB3A0ADA5D4E3F3B3108C5078B554378EE111BA0)
 
 ### 装饰class对象类型的变量
 
@@ -265,7 +265,7 @@ content_hash: sha256:67fb2e3576216a5e7cf0a94a2a6a97787a472d368508b49be504d1c1497
   }
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Non8oqrbTrqMyCTA2lFgOw/zh-cn_image_0000002786518492.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Non8oqrbTrqMyCTA2lFgOw/zh-cn_image_0000002786518492.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE68E8636DB646FD84A9ACFF0956E5C8E854DD9CA291D97316F25A08B3D2FC0F)
 
 ### 装饰Array类型变量
 
@@ -336,7 +336,7 @@ struct ArraySample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/L3UFUwdVSu--gnXYM13f5A/zh-cn_image_0000002786358564.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/L3UFUwdVSu--gnXYM13f5A/zh-cn_image_0000002786358564.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=363E67DE328B214ACEAF826B200E0B3BB20921CD97F09905DEA081FB81D59EF1)
 
 ### 装饰Map类型变量
 
@@ -403,7 +403,7 @@ struct MapSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/bSzBVf4qSaiQBuzvLV13Pg/zh-cn_image_0000002815557985.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/bSzBVf4qSaiQBuzvLV13Pg/zh-cn_image_0000002815557985.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=E75B987C201EBFF5033B40FB8481097EC347564FE8928B0A6B722DFACDA614F4)
 
 ### 装饰Set类型变量
 
@@ -463,7 +463,7 @@ struct SetSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/fCu2PwGeTK-wj5RQV1k2HQ/zh-cn_image_0000002815398069.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/fCu2PwGeTK-wj5RQV1k2HQ/zh-cn_image_0000002815398069.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=16FDD171E99C0E59E3DDA06C7232D50AC41C15E165796B3502B7E1498D1A4C8F)
 
 ### 装饰Date类型变量
 
@@ -519,7 +519,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/gWypeh5HQk6UOnPtecjuFA/zh-cn_image_0000002786518494.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/gWypeh5HQk6UOnPtecjuFA/zh-cn_image_0000002786518494.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD1F72E506098A97F719BAC9AC2E3A44BDD04021124403BFCDDDBFAE009CAA99)
 
 ### @State支持联合类型实例
 
@@ -557,4 +557,4 @@ struct UnionTypeSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/_IcP3KhnSjakC_q7kHkFqw/zh-cn_image_0000002786358566.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/_IcP3KhnSjakC_q7kHkFqw/zh-cn_image_0000002786358566.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=80332D2E2CBC4B26AEDE4DFD61CBE1FCAF2AD130D498434C4950FE3D317257CE)

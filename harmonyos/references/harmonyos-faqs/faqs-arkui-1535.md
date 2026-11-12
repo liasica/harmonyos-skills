@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1535
 title: 如何修改AlertDialog背景色
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何修改AlertDialog背景色
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:38+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:cbc881b3f7f0def7ab135688a7d5954c0c661df420d39c09a53e24564014f0d3
 ---
@@ -52,11 +52,11 @@ struct Index {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/kWXzekkCQlab9Jb0VR3p6A/zh-cn_image_0000002658846259.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/kWXzekkCQlab9Jb0VR3p6A/zh-cn_image_0000002658846259.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1441B82B367F5E751B7BE7E8C5D956DE7D242017B48168B109C048BCBF50429 "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/5wki1VF8RG6NiOO68UBXCQ/zh-cn_image_0000002628766896.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/5wki1VF8RG6NiOO68UBXCQ/zh-cn_image_0000002628766896.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D491AFF9A9EB562150921B95A946689E6FE02D024AF104B95EDF00D424DC2B2 "点击放大")
 
 ## 背景知识
 

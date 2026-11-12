@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1400
 title: 卡包展开折叠动画实现
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 卡包展开折叠动画实现
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:36+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:5c9f24ba0603e9d7ef7a478090a8bdd559647e06c274cfe5d8b63c080bf1b6f0
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:5c9f24ba0603e9d7ef7a478090a8bdd559647e06c274cfe5d8b63c080bf
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/vAGhUWUJSPep9ieHK7jvCw/zh-cn_image_0000002628763132.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/vAGhUWUJSPep9ieHK7jvCw/zh-cn_image_0000002628763132.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9322DBD5BB2CDA0734555FEC3E163CBB606675BC4E12F40521972EA66BE3BFF "点击放大")
 
 ## 背景知识
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: ContainerSpan
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > ContainerSpan
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:dcd7977d19da7c01cd3b23a5c2c5f89500cf80c06dc324e4cc0228c432789eca
 ---
@@ -108,7 +108,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/LlgjfdRpSiyk_Mpk-ROvbQ/zh-cn_image_0000002786361352.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/LlgjfdRpSiyk_Mpk-ROvbQ/zh-cn_image_0000002786361352.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=A1234B30769851947FB86FEE230934895D51A6647D4E3019CDB1E2E49A44DADA)
 
 ### 示例2（通过attributeModifier设置背景样式）
 
@@ -146,4 +146,4 @@ struct ContainerSpanModifierExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/Gufcg-B4Q0KEmT_JHgh_Mw/zh-cn_image_0000002815560773.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/Gufcg-B4Q0KEmT_JHgh_Mw/zh-cn_image_0000002815560773.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=355B47D9D356C28C74209E8F7F9677E27481D07A4FFEE8E43804DD8DFC889232)

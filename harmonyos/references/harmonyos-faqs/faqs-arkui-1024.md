@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1024
 title: TabBar常见角标场景实现
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > TabBar常见角标场景实现
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:53+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:7533fb9e167a1ea9ab3db1950f380316acba295937097ad3eaacc875c5f2c820
 ---
@@ -150,7 +150,7 @@ TabBar角标的各种样式、消失功能、更新数据功能实现方案如�
 
        效果预览：
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/_37zX066TKit5M-yNz-t9A/zh-cn_image_0000002628564716.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/_37zX066TKit5M-yNz-t9A/zh-cn_image_0000002628564716.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D4FDE6654BE8DAEC3845D6F9A373CF1E078A610A8EC1D1B26623F1B35A62CF6 "点击放大")
     2. Badge组件实现字符类型角标。
 
        ```ts
@@ -250,7 +250,7 @@ TabBar角标的各种样式、消失功能、更新数据功能实现方案如�
 
        效果预览：
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/1b_x2SXhQeKtVUPyBMHyXg/zh-cn_image_0000002658924021.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/1b_x2SXhQeKtVUPyBMHyXg/zh-cn_image_0000002658924021.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=8AB73824F9188E799CEAF3415FF20D031E4ED7253F5A2EADF83757763113A1BE "点击放大")
     3. Badge组件实现数字类型角标。
 
        ```ts
@@ -350,7 +350,7 @@ TabBar角标的各种样式、消失功能、更新数据功能实现方案如�
 
        效果预览：
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/Oa3seU2uQweGOuy93ntb2A/zh-cn_image_0000002628404812.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/Oa3seU2uQweGOuy93ntb2A/zh-cn_image_0000002628404812.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=634D8C4C35A20482C6AE9995DD3A592D623B0084E3AF0E55FA5372F7D7A0EA86 "点击放大")
   + **场景二**：实现点击清除角标的功能。
 
     上述三种类型的角标均可通过点击清除，接下来将以红点型角标为例，详细介绍其实现方式。
@@ -701,7 +701,7 @@ TabBar角标的各种样式、消失功能、更新数据功能实现方案如�
 
       上述三种方案效果预览：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/JEbfdfwbQwWN7F8AodfwBA/zh-cn_image_0000002658804081.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/JEbfdfwbQwWN7F8AodfwBA/zh-cn_image_0000002658804081.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=F13EF18E1E575E1DBBDDA586E4A1FAB4FC3F6D2D698C09C90F52E4981D9E0D29 "点击放大")
   + **场景三**：实现角标数据更新功能。
     - **方案一**：使用update方法进行更新。
 
@@ -884,7 +884,7 @@ TabBar角标的各种样式、消失功能、更新数据功能实现方案如�
 
       效果预览：
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/9-ac2aqRR6y8IUh7ObtNPg/zh-cn_image_0000002628564718.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/9-ac2aqRR6y8IUh7ObtNPg/zh-cn_image_0000002628564718.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF3A320ECCDAF67258625F7C8250C48C29568933A8022F3040EAAF3DE99E9B5D "点击放大")
     - **方案二**：使用@ObservedV2和@Trace对数据模型直接观测。
 
       该方案与场景二方案三的实现方式类似，不再赘述。
@@ -993,7 +993,7 @@ TabBar角标的各种样式、消失功能、更新数据功能实现方案如�
 
     效果预览：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/fxMDMXf_SeWpaNZS50jjNg/zh-cn_image_0000002658924025.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/fxMDMXf_SeWpaNZS50jjNg/zh-cn_image_0000002658924025.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=7AD3B6C4DFA88BB2E3F97C3737E7AA415CA6563F68DAA2028BF32F365D97C355 "点击放大")
   + 场景二、三：实现角标清除与更新。
 
     自定义角标的清除与数据更新功能，实现方式与Badge组件类似，此处不再赘述。

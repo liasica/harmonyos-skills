@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-deveco-tes
 title: Hypium运行报错：imported module hypium中找不到引用UiDriver
 breadcrumb: FAQ > DevEco Testing > Hypium运行报错：imported module hypium中找不到引用UiDriver
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:04+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:80633dcb0dc44b9ca3144cc994c9c39100f99e413fe1ce9cd99bb4733c238df7
 ---
@@ -20,17 +20,17 @@ content_hash: sha256:80633dcb0dc44b9ca3144cc994c9c39100f99e413fe1ce9cd99bb4733c2
 
 1. 查看运行环境上依赖的安装包是否存在，版本是否正确，执行pip list命令查看xdevice、hypium。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/FHdFU-HMRYaBuehA2NyPlw/zh-cn_image_0000002658923399.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/FHdFU-HMRYaBuehA2NyPlw/zh-cn_image_0000002658923399.png?HW-CC-KV=V1&HW-CC-Date=20261112T233210Z&HW-CC-Expire=31536000000&HW-CC-Sign=49D011BBC9743D80C632C73274C7989D603D7E362186BAADCFB25E3F6BC3703B)
 
    安装成功后示例如下（具体版本号根据实际情况检查）：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/wC4W12THTHGUPkKEYv1Epg/zh-cn_image_0000002658803449.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/wC4W12THTHGUPkKEYv1Epg/zh-cn_image_0000002658803449.png?HW-CC-KV=V1&HW-CC-Date=20261112T233210Z&HW-CC-Expire=31536000000&HW-CC-Sign=488751621BE691BCC7F308FDB96FC37696C77D13F83A185F281BBA6ADB03ACCF)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/a-pJ_zRgQYaGALXaZv2xNg/zh-cn_image_0000002628404186.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/a-pJ_zRgQYaGALXaZv2xNg/zh-cn_image_0000002628404186.png?HW-CC-KV=V1&HW-CC-Date=20261112T233210Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EFB25D075486AE2F197F13BD629DB3DF19B03FE6CE05EC53A89056FEED5214B)
 
    而伙伴的xdevice版本显示为0.0.0。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/wsL-WIERRUW9XIiFl0tN0Q/zh-cn_image_0000002628564090.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/wsL-WIERRUW9XIiFl0tN0Q/zh-cn_image_0000002628564090.png?HW-CC-KV=V1&HW-CC-Date=20261112T233210Z&HW-CC-Expire=31536000000&HW-CC-Sign=8080BABC9F0B319D87934A60CFDCFD9AE1D910CB3A3C5B5C56FCAD2DE1B87214)
 2. 检查import的导入方法使用是否正确。
 
    找到Hypium插件的安装包路径，打开hypium\_api的md文件（举例D:\devecotesting-hypium-6.0.7.202\hypium-6.0.7.202\doc下的hypium\_api\_6.0.7.202.md）。
@@ -56,4 +56,4 @@ content_hash: sha256:80633dcb0dc44b9ca3144cc994c9c39100f99e413fe1ce9cd99bb4733c2
 2. 按照[安装向导](../harmonyos-guides/hypium-python-guidelines.md#section191615399595)中的“安装Hypium”指导，重新进行xdevice和hypium的安装。
 3. 基于已安装的Hypium版本，使用“from hypium import UiDriver”或md文件中的“from hypium.action.device.uidriver import UiDriver”导入，举例：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/6ahj1zzgTVqYJUhrHaeBaw/zh-cn_image_0000002658923401.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/6ahj1zzgTVqYJUhrHaeBaw/zh-cn_image_0000002658923401.png?HW-CC-KV=V1&HW-CC-Date=20261112T233210Z&HW-CC-Expire=31536000000&HW-CC-Sign=ED8E2055C1C2F84B18D0C45EE58547FFBF349646C1ACD92A6949EC67EF968130)

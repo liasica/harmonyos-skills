@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-uiconte
 title: 不依赖UI组件的全局自定义弹出框 (openCustomDialog)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹出框 (Dialog) > 不依赖UI组件的全局自定义弹出框 (openCustomDialog)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:13+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:1287d9e84ac0486a8cd85b41de3b53fb60d41d6ff7387461a2f8d21ca6c0baa6
 ---
@@ -187,7 +187,7 @@ export struct CustomDialogComponentWithTransition {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/3SBIl7eGQ7el5WZ2ehP4aw/zh-cn_image_0000002815558471.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/3SBIl7eGQ7el5WZ2ehP4aw/zh-cn_image_0000002815558471.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E7E898310D0CB73924967786B17F1B8B6ECA1F086E93A16A93EC10301CB9B3A)
 
 ## 设置弹出框避让软键盘的距离
 
@@ -244,7 +244,7 @@ export struct CustomDialogWithKeyboardAvoidDistance {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/cun_CBQXQ-ixjiF9zCkeJQ/zh-cn_image_0000002815398555.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/cun_CBQXQ-ixjiF9zCkeJQ/zh-cn_image_0000002815398555.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=82D678FDA5569C810AEF77DB8DE5A948A8892F653FDA61A1CF5C203C5E7085EC)
 
 ## 完整示例
 
@@ -396,4 +396,4 @@ export struct OpenDialogAndUpdate {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/gjSn_YTJRwiWvpal8UNhAw/zh-cn_image_0000002786518980.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/gjSn_YTJRwiWvpal8UNhAw/zh-cn_image_0000002786518980.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=8879E6E2E3C5EAB3B78F7FCAA9C9E7926BD038092CFF428112CF350DA288DBEB)

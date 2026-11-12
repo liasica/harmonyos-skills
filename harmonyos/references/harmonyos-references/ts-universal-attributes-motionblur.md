@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 运动模糊
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 运动模糊
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:bb67b35899fa7e3a292dc54dda1bac54965dd5e9f39e93e2c4f05fc8c9936c16
 ---
@@ -155,4 +155,4 @@ struct MotionBlurTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/DGWyRu_3S3CvnPHMZy6-dg/zh-cn_image_0000002815560437.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/DGWyRu_3S3CvnPHMZy6-dg/zh-cn_image_0000002815560437.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=EFE62D1824F524D5C19A6289A8510B66D4B6DEE561969513CB41AB0A9A1CE35E)

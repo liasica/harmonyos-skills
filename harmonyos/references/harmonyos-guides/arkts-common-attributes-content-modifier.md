@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 内容修改器 (ContentModifier)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > Modifier机制 > 内容修改器 (ContentModifier)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:15+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:f44a8403d19b29f7d725860f39b86d7454e840be22153fb3360adb45780d81bf
 ---
@@ -104,4 +104,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/v2Xi9VfvSlucZcHUDrZo2Q/zh-cn_image_0000002815398731.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/v2Xi9VfvSlucZcHUDrZo2Q/zh-cn_image_0000002815398731.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2169E9E561E0DD75F9DE7299DBF12789FB4E26FD8F6069ADF1713437752C120)

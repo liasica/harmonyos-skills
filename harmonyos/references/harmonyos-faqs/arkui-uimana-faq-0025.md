@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-fa
 title: 状态栏颜色设置与适配常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > 状态栏颜色设置与适配常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:32+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:bd39baf1b333aa6d9bdb8ebff53697e2c4b02ccf57bc6bd825ddecc6dcc4314f
 ---
@@ -143,7 +143,7 @@ struct Solution1 {
 
 两种方案的实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/FyxUuG97Qaiw32fEKWWPvw/zh-cn_image_0000002802039479.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/FyxUuG97Qaiw32fEKWWPvw/zh-cn_image_0000002802039479.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=BAEBA31AFB91811CF9254D38591DB527E91C059FD71DC3F1FF208FE4DD44396F "点击放大")
 
 若是想要设置导航栏，则需要在SystemBarProperties中给navigationBarColor、navigationBarContentColor赋值。
 

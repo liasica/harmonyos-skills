@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1450
 title: 如何设置页面背景的透明度
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何设置页面背景的透明度
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:45+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:2abf2a13747e000731417bbfb1ea4bfb565a08059e004903894ef34667ca7f25
 ---
@@ -102,7 +102,7 @@ content_hash: sha256:2abf2a13747e000731417bbfb1ea4bfb565a08059e004903894ef34667c
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/H3QtgH5_RFGP45WtaPSJIg/zh-cn_image_0000002658843529.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/H3QtgH5_RFGP45WtaPSJIg/zh-cn_image_0000002658843529.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=359763ACBF82EBFF3868B16D105A0A0CC15FEC3736CAB58E718A79FB262B65DF "点击放大")
 * 方案二：在entry页面的根组件下设置透明度属性opacity，实现当前页面整体透明度变化，示例代码如下：
 
   ```ts
@@ -130,7 +130,7 @@ content_hash: sha256:2abf2a13747e000731417bbfb1ea4bfb565a08059e004903894ef34667c
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/vJewbZ7kQ0COtnSdqJO3UQ/zh-cn_image_0000002628764162.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/vJewbZ7kQ0COtnSdqJO3UQ/zh-cn_image_0000002628764162.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8510458AE84D52BA19FE514BB370328C6D03D2C600144D62F7832592E769484 "点击放大")
 * 方案三：由于官方已不推荐使用@ohos.router页面路由，建议使用Navigation完成页面跳转，可以通过NavDestination组件中的NavDestinationMode.DIALOG来设置透明，实现拉起弹窗的全透明效果，使用说明具体如下：
 
   | 名称 | 值 | 说明 |
@@ -201,7 +201,7 @@ content_hash: sha256:2abf2a13747e000731417bbfb1ea4bfb565a08059e004903894ef34667c
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/sgZafLOjT2umz6fQz8Fj_Q/zh-cn_image_0000002658963481.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/sgZafLOjT2umz6fQz8Fj_Q/zh-cn_image_0000002658963481.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=65349428E2AD6C9E6516369F0289AB2813E259D112A9CB3F78C0A945EFDB7EB1 "点击放大")
 * 方案四：A页面弹出B页面，将B页面作为一个子窗口加载并设置其组件背景为半透明，可以看到A页面内容。
 
   示例代码如下：
@@ -296,7 +296,7 @@ content_hash: sha256:2abf2a13747e000731417bbfb1ea4bfb565a08059e004903894ef34667c
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/h-U86T9cQ0eN6jCvCJheuw/zh-cn_image_0000002628604262.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/h-U86T9cQ0eN6jCvCJheuw/zh-cn_image_0000002628604262.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=647B73D6A082BB7E992260D196FE47DD93C73B0E84FC0BF62E777069728F063F "点击放大")
 
 ### 场景二
 
@@ -353,7 +353,7 @@ struct ScrollExample {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/VVrhsnseROOTj17sPtWMyA/zh-cn_image_0000002658843531.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/VVrhsnseROOTj17sPtWMyA/zh-cn_image_0000002658843531.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DEFBB5AD69F050AB72F50A02B8A5B482F1763B0AAEBFBD80D2193A883E24D61 "点击放大")
 
 ## 常见FAQ
 

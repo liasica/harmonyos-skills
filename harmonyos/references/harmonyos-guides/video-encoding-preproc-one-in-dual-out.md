@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encodin
 title: 编码支持一入二出
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 编码支持一入二出
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:02+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:aeabdb84689ce2514cbf15ec47fd952ec36b4a6ff35b5304c81f628558ae8190
 ---
@@ -23,7 +23,7 @@ content_hash: sha256:aeabdb84689ce2514cbf15ec47fd952ec36b4a6ff35b5304c81f628558a
 
 以下为一入二出架构图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/TL6jur_cTeKXmTM-q6NOTw/zh-cn_image_0000002815399373.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/TL6jur_cTeKXmTM-q6NOTw/zh-cn_image_0000002815399373.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D1E7DE11B37A3665E9D972D95184D0B016A36DB6AFA529A6464014566C0D353)
 
 ### 使用场景
 

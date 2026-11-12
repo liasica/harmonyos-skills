@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-fixes-s
 title: 固定样式弹出框
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 弹出框 (Dialog) > 固定样式弹出框
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:13+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:ef5db9d67dd8c87149e6b331ef075d567ad92d1f354e4c98b1827819e2be38e1
 ---
@@ -90,7 +90,7 @@ export struct ShowActionMenuExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/pTC50xf0SeyinscO_C87YA/zh-cn_image_0000002786359056.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/pTC50xf0SeyinscO_C87YA/zh-cn_image_0000002786359056.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1B57B330041478A4A21B3E40BFEB818D5ACDD975C179D86A8ADC410250F6229)
 
 ## 对话框 (showDialog)
 
@@ -154,7 +154,7 @@ export struct ShowDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/8OcGVv4zTgq8G5qXw8pmFA/zh-cn_image_0000002815558477.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/8OcGVv4zTgq8G5qXw8pmFA/zh-cn_image_0000002815558477.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC2A5182F7646F617ADD9B05E8226E589846567C694510E15E4A599D07D5729F)
 
 ## 选择器弹窗 (PickerDialog)
 
@@ -219,7 +219,7 @@ export struct CalendarDialog {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/F5HbSasETM6kVyyxxVBpyg/zh-cn_image_0000002815398561.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/F5HbSasETM6kVyyxxVBpyg/zh-cn_image_0000002815398561.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=45E2A181885D91D2AEE8500C8FD0B3CE66D1C69B485F592693361CEDDE67390F)
 
 ### 日期滑动选择器弹窗 (DatePickerDialog)
 
@@ -267,7 +267,7 @@ export struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/ww1luVqTR7Sb8GBChctKuA/zh-cn_image_0000002786518986.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/ww1luVqTR7Sb8GBChctKuA/zh-cn_image_0000002786518986.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=4CA57CC18E8AC38A19580DADA3A4CCAC74E6D4175A9E5330FCB2A7F5027E23BC)
 
 该示例通过配置textStyle、selectedTextStyle、acceptButtonStyle、cancelButtonStyle实现了自定义文本以及按钮样式。
 
@@ -310,7 +310,7 @@ export struct DatePickerCustomDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/e3OiotVLRcucHbux08lJcA/zh-cn_image_0000002786359058.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/e3OiotVLRcucHbux08lJcA/zh-cn_image_0000002786359058.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=45929AFEC4C943EEA4AE9669BE6615573879B28B33CD283519B4F1A1EF307FA4)
 
 ### 时间滑动选择器弹窗 (TimePickerDialog)
 
@@ -363,7 +363,7 @@ export struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/wdpJ9DumSNmXeCpXR9aLnQ/zh-cn_image_0000002815558479.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/wdpJ9DumSNmXeCpXR9aLnQ/zh-cn_image_0000002815558479.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=DBE310187CFBDBA5B9BC0D16ED1CC861D0F6F720EF2B6A277E18C4D2EFD41EF9)
 
 ### 文本滑动选择器弹窗 (TextPickerDialog)
 
@@ -417,7 +417,7 @@ export struct TextPickerCNDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/dwHIQv1ETfKmYIFe6Fb1Hg/zh-cn_image_0000002815398563.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/dwHIQv1ETfKmYIFe6Fb1Hg/zh-cn_image_0000002815398563.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C89B8B734C432A6AB7E43E8899E1EA5DFB049FA878F452BE22904DDD380A90A)
 
 ## 列表选择弹出框 (ActionSheet)
 
@@ -501,7 +501,7 @@ export struct showActionSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/ZvPnd0GTTVmC49yE-ZRVOQ/zh-cn_image_0000002786518988.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/ZvPnd0GTTVmC49yE-ZRVOQ/zh-cn_image_0000002786518988.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBB72095EE3F86482039D7EFDCDA73F0A370E2EE2D74FC3A3F7DB3771985458D)
 
 ## 警告弹窗 (AlertDialog)
 
@@ -575,4 +575,4 @@ export struct showAlertDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/9AB-mdsWSUC7jf__ZmPjTQ/zh-cn_image_0000002786359060.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/9AB-mdsWSUC7jf__ZmPjTQ/zh-cn_image_0000002786359060.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0CBC5D4FB747F38229DBF454E591959367E7F6D330557713864CAC36E30833C)

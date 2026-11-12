@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.usbManager.serial (串口管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 设备管理 > @ohos.usbManager.serial (串口管理)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:55:53+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:1434ccf4193bc7f816468d63ffcaed5b81bd57b82e6f56b5f20b7a6407037ca9
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:1434ccf4193bc7f816468d63ffcaed5b81bd57b82e6f56b5f20b7a64070
 
 **典型使用流程：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/33IcxQAvQu6hmorU0p-Cmg/zh-cn_image_0000002786362104.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/33IcxQAvQu6hmorU0p-Cmg/zh-cn_image_0000002786362104.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=17DA1E632974F3731841790CD11D3FE06E57FDDCB069B44020E4779DE1A47E75)
 
 **使用场景**：
 

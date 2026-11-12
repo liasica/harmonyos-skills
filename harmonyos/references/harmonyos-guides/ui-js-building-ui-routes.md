@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-buildin
 title: 页面路由
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 构建用户界面 > 页面路由
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:18+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-03
 content_hash: sha256:28e3db825e4848c7f6288f243208c7e660f93883f0d2a23d81852847848e3330
 ---
@@ -85,4 +85,4 @@ export default {
 
 运行效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/aP6nmySqRTC0fl2EsfgY7w/zh-cn_image_0000002815398795.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/aP6nmySqRTC0fl2EsfgY7w/zh-cn_image_0000002815398795.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=1BC079FF29C19F253AFBD2320AC09B83E1D2361AFFF94E94F0EFABB1E4E1507C)

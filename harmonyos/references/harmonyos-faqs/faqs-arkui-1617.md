@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1617
 title: 如何实现通过手势涂抹选择文字的效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现通过手势涂抹选择文字的效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:26+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:c792f2627ba88960a6f9ce6467d34240cef925f7836e65b4620e548b36d25cd1
 ---
@@ -18,7 +18,7 @@ content_hash: sha256:c792f2627ba88960a6f9ce6467d34240cef925f7836e65b4620e548b36d
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/xp-NPcT7Q-6W5syvm30HBA/zh-cn_image_0000002658852647.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/xp-NPcT7Q-6W5syvm30HBA/zh-cn_image_0000002658852647.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E1612CE994C95D6DEBC118E39C45154828A549AE5763FDCAFC8A7D784E3027E "点击放大")
 
 ## 背景知识
 
@@ -161,4 +161,4 @@ content_hash: sha256:c792f2627ba88960a6f9ce6467d34240cef925f7836e65b4620e548b36d
      要提取出选中的文本数据进行后续处理，只需遍历一遍文本选中状态数组selectedStatus即可。
 * 效果预览：单独点击文本项选取和取消文本；长按之后滑动文本；对于已选取的文本，再次滑过则会取消选取状态。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/P-4KW3vmSx6EUdvOpoCa5Q/zh-cn_image_0000002628773284.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/P-4KW3vmSx6EUdvOpoCa5Q/zh-cn_image_0000002628773284.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=25ECB29A8C7E565B3C7EA9047D7E3EFB255F0978790A890C0281EC578019C56A "点击放大")

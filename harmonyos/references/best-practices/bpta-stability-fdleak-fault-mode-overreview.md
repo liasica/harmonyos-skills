@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 句柄泄漏故障模式概述
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 句柄泄漏故障模式说明 > 句柄泄漏故障模式概述
 category: best-practices
-scraped_at: 2026-11-10T10:42:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-03
 content_hash: sha256:913225ecb2ae5cdd216203569987c7ecd70536cc1d2e1146fdaca15fb583f93b
 ---
@@ -134,7 +134,7 @@ HiAppEvent eventInfo={"domain":"OS","name":"APP_KILLED","eventType":2,"params":{
 6. 单击想要排查的句柄，展开其调用栈，如下图6处。
 7. 结合调用栈对代码进行分析，找到泄漏根因。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/7UuJprUIQIqRkd1VZVAgRg/zh-cn_image_0000002729611109.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/7UuJprUIQIqRkd1VZVAgRg/zh-cn_image_0000002729611109.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E53DEFC4776E3EB080361C0094711F10B53BC2F319EA8B91B78B4E8875F24CB)
 
 ## 开发态分析方法
 

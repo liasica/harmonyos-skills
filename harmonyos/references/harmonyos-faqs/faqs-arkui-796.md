@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-796
 title: 使用嵌套弹窗时，无法打开上层弹窗
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 使用嵌套弹窗时，无法打开上层弹窗
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:5c036ff349a9be9ba384c312a7a3c0cc6c303653b18f6748c33c73e6e2c125b4
 ---
@@ -94,7 +94,7 @@ export struct ADialogParamTwo {
 
 问题代码运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/ovIObIuCSn6WXmN5sgxcGA/zh-cn_image_0000002628557640.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/ovIObIuCSn6WXmN5sgxcGA/zh-cn_image_0000002628557640.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=864552CAC1ED47F27CC220F6FE799CC523EC68626F6D20A601D07E341EB79E7A "点击放大")
 
 ## 背景知识
 
@@ -225,4 +225,4 @@ export struct ADialogParamTwo {
 
 运行效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/vK1cbPV3SRqkTgFE59AI8A/zh-cn_image_0000002658916953.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/vK1cbPV3SRqkTgFE59AI8A/zh-cn_image_0000002658916953.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=8DE5430494619E3EDA8A5A3372267E74ABF32BB0E6542C639C741566162F4358 "点击放大")

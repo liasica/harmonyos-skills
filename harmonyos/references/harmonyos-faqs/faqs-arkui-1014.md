@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1014
 title: 如何解决TextInput组件密码模式下图标不能修改的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决TextInput组件密码模式下图标不能修改的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:15+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:148492a2f2ecb7b0466d20034335b691eb82b591ffa4dda4d401e76a4b0c0185
 ---
@@ -14,7 +14,7 @@ TextInput密码输入模式（Password）下系统控制密码显隐的PasswordI
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/nOgzZkSfS_m4682xDg82Ug/zh-cn_image_0000002658923997.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/nOgzZkSfS_m4682xDg82Ug/zh-cn_image_0000002658923997.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D1F030EBC3B114138DCCC7A926132D532FB237C4A7E0BB51F92B88ACABA47DB "点击放大")
 
 ## 背景知识
 

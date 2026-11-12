@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pastebutton
 title: 使用粘贴控件
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 使用安全控件 > 使用粘贴控件
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:30+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:97ba9e076aaaa4ef42b1c8226d7064f4642bad0c4796d7a5a7d8b235fef85cb4
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:97ba9e076aaaa4ef42b1c8226d7064f4642bad0c4796d7a5a7d8b235fef
 
 粘贴控件效果如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/xKoJ5hV0REihtDrthKIs0w/zh-cn_image_0000002815399135.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/xKoJ5hV0REihtDrthKIs0w/zh-cn_image_0000002815399135.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE8A8E4228A844EA9F0638D403E656F9369C8BCFC67E008F72BE1A8A932986C4)
 
 ## 约束与限制
 

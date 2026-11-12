@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-tr
 title: ArkUI-Scroll滑动透明度渐变重叠显示问题定位
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 故障排查 > ArkUI-Scroll滑动透明度渐变重叠显示问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:32+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:73b690376551aea469730bfbc5546c76ad2c48c254c58fc3b10f09e7f6971a03
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:73b690376551aea469730bfbc5546c76ad2c48c254c58fc3b10f09e7f69
 
 页面在向上滑动过程中，页面顶部区域透视出应用其他页面的内容，页面重叠显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/Y5X_snkeS-6W9_flRtDBzw/zh-cn_image_0000002766053810.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/Y5X_snkeS-6W9_flRtDBzw/zh-cn_image_0000002766053810.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=596B885566987C87206C4A0991B48BE8D91D8684DCD9FAD565EC339068EAE0A8)
 
 ## 定位过程
 

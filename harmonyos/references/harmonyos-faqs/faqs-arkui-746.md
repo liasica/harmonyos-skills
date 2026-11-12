@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-746
 title: 使用RichEditor实现@用户名效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 使用RichEditor实现@用户名效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:7b54559805619537c4068dd8b936c1e49939130ea739d05a02814add6db19fd8
 ---
@@ -182,7 +182,7 @@ struct RichEditorSpanExample {
 
 运行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/C8dlep8bS9S8Wfv71V32qA/zh-cn_image_0000002719009371.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/C8dlep8bS9S8Wfv71V32qA/zh-cn_image_0000002719009371.png?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=FBE1C8D6D38A56DE51B56AB34D49C33823234C3A91C6705078FBB8B5416A99BA "点击放大")
 
 ## 常见FAQ
 

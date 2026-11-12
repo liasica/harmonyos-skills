@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1067
 title: 识别和解决NodeController节点迁移双挂与卡顿问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 识别和解决NodeController节点迁移双挂与卡顿问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:1b53a7805739fbcb78aa58c61988f3d9ab496ca3fd94a4510ca5f9432002338e
 ---
@@ -21,7 +21,7 @@ content_hash: sha256:1b53a7805739fbcb78aa58c61988f3d9ab496ca3fd94a4510ca5f943200
      ```
   2. ArkUI Inspector工具可视化确认：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/kxDi8-wQQsytkHeGymY2Rw/zh-cn_image_0000002688056748.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/kxDi8-wQQsytkHeGymY2Rw/zh-cn_image_0000002688056748.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=622FFA01D4F877C9E2B573B7337128F2519414A8DD02E9C507B929E2DEE630EE)
 
      如图所示，通过工具可直观看到Column(9)同时被挂载NodeContainer(8)和NodeContainer(11)，形成节点的双挂现象。
 * 场景二：NodeController节点迁移调用reuse()导致卡顿。

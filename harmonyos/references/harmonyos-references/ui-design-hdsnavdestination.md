@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: HdsNavDestination (导航子页面容器)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsNavDestination (导航子页面容器)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:55:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:5f81e9da25ed8cd4d369e56b6fe3b8b43fdddcf1c93182c1eef738d81880f409
 ---
@@ -732,6 +732,6 @@ struct PageOne {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/eSAMvvCxTZuOYoesuEBClg/zh-cn_image_0000002786522014.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/eSAMvvCxTZuOYoesuEBClg/zh-cn_image_0000002786522014.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=B579B6B02031640002C331A08FF14EBDEE88F555254EB7E46E47AD7EF60F338F)
 
 HdsNavDestination更多示例可以参考HdsNavigation[示例](ui-design-hdsnavigation.md#示例)。

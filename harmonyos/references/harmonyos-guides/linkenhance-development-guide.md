@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/linkenhance-d
 title: 增强连接开发指导
 breadcrumb: 指南 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > 应用跨设备连接管理 > 增强连接开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:43+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:a4612c4f728f92d0507e9023fe208684b0fa1cb1d49c6a31e6d4c8536c108b48
 ---
@@ -20,7 +20,7 @@ HarmonyOS提供了分布式增强连接能力，实现跨设备互联，完成�
 
 两个设备的交互实现如下，在使用[linkEnhance](../harmonyos-references/js-apis-link-enhance.md)能力后，当两端同时发起连接时，会自动识别合并底层多余物理链路，减少实际物理链路的个数，减少蓝牙链路资源的消耗，增加可用连接数量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/zjW2FfscQHudER3AbOG-dA/zh-cn_image_0000002815559135.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/zjW2FfscQHudER3AbOG-dA/zh-cn_image_0000002815559135.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA90B4F58AA033F59AB8839EC6208F6BBD0BC4BBBAEEC90800AFE2FB857E7226)
 
 ### 约束与限制
 

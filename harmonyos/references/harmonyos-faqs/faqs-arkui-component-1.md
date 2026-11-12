@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-comp
 title: Button如何实现点击事件透传
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Button如何实现点击事件透传
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:27+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:66950085462cf861a39526c63407cb5225153019692655677ece47bdd2b3a074
 ---
@@ -103,4 +103,4 @@ struct HitTestBehaviorExample {
 
 运行结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/ZfauHQQNRR66yU_YfFnQTQ/zh-cn_image_0000002631375376.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/ZfauHQQNRR66yU_YfFnQTQ/zh-cn_image_0000002631375376.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=B54911043CA72E322DCFE1E23926A3FC6229056ECFBD45C97DB9CB309C8F3275 "点击放大")

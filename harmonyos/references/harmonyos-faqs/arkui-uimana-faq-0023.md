@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-fa
 title: 软键盘避让与布局弹起常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > 软键盘避让与布局弹起常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:32+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:7b2f080d9d49af3d13ee67d17e35e0473a2d5f7a830566b02edd4cac21cc0938
 ---
@@ -148,7 +148,7 @@ content_hash: sha256:7b2f080d9d49af3d13ee67d17e35e0473a2d5f7a830566b02edd4cac21c
 
     效果如下：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/nz2yRD6mRTqdi0EU4ABuGw/zh-cn_image_0000002801460809.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/nz2yRD6mRTqdi0EU4ABuGw/zh-cn_image_0000002801460809.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3AFAFD3EA7FC3D63DF57B6FC49C33C3343E2B0B27AFF2D1E9DED1CAE9A6D9F9 "点击放大")
   + 更多场景案例请参考官网：[软键盘布局适配](../best-practices/bpta-keyboard-layout-adapt.md)。
 
 **Q：设置软键盘避让模式时报错，报错信息如下所示：**

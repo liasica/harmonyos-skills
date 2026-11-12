@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkts-kit-faq-0
 title: ArkTS语言概念与关联关系常见问题
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 常见问题 > ArkTS语言概念与关联关系常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:90289d53f7af1e926e6243f70970114e82a687f5dab9db590bdc69809db420ab
 ---
@@ -32,4 +32,4 @@ content_hash: sha256:90289d53f7af1e926e6243f70970114e82a687f5dab9db590bdc69809db
   在HarmonyOS系统架构中，ArkTS作为核心开发语言，其运行时环境与工具链通常归属开发支持层；ArkUI等上层框架属于应用框架层，SDK则通过系统服务层提供的能力封装形成开发接口；ArkTS语言可以通过import语法加载并调用相应系统能力，让开发者更高效地开发HarmonyOS应用。
 * HarmonyOS架构的ArkTS、ArkUI及HarmonyOS SDK框架层级：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/KXFtuSqPQCOcPKG08xC72Q/zh-cn_image_0000002802119545.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/KXFtuSqPQCOcPKG08xC72Q/zh-cn_image_0000002802119545.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=962A16295FFC800F2E469AA8FD6E6955F8993E2C5AEB8BA17E829977B7D7CE9B "点击放大")

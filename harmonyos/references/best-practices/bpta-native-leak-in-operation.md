@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-native-lea
 title: 运维态高效处理Native泄漏
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 运维态稳定性分析 > 资源泄漏类问题分析 > 运维态高效处理Native泄漏
 category: best-practices
-scraped_at: 2026-11-10T10:42:13+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:d1cb34ca74afa72c96b9683f76fe5d7bf8eb21b983d62c5793174119481209cd
 ---
@@ -18,7 +18,7 @@ Native泄漏是一种常见的泄漏类型。本文档主要介绍在运维态�
 
 排查流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/xUxtMSMVTWmOrCf2KmnWTQ/zh-cn_image_0000002645091436.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/xUxtMSMVTWmOrCf2KmnWTQ/zh-cn_image_0000002645091436.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=7776AF0419AE5C629051F792514BC4AE54DCC031FEA3F6BC8A9358566F64F73A "点击放大")
 
 **排查步骤**
 
@@ -35,7 +35,7 @@ Native泄漏是一种常见的泄漏类型。本文档主要介绍在运维态�
 
 在故障分析页面中，APMS基于堆栈关键行对同类异常进行精准汇聚，将具有相同泄漏根因和主泄漏方法的异常报告自动聚合成同一类问题，并按照发生占比排序。开发者可查看应用的TOP问题列表，结合业务对问题进行描述，标记优先级与问题状态，优先处理未修复的高优先级问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/iO-fYDe8QmSpiejvtCXIJQ/zh-cn_image_0000002644931526.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/iO-fYDe8QmSpiejvtCXIJQ/zh-cn_image_0000002644931526.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A1827B43C59E35638E5DE66B0E25B96A0DC77A518CF6B08A17E7D76C354B96D "点击放大")
 
 **关键指标说明**
 
@@ -43,7 +43,7 @@ Native泄漏是一种常见的泄漏类型。本文档主要介绍在运维态�
 * 发生次数（占比）：泄漏问题发生的频率，帮助判断问题严重程度。
 * 影响设备数（占比）：受影响的设备数量，评估问题影响面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/QUWLaAeuSs-4iOLN8QVqFQ/zh-cn_image_0000002675091233.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/QUWLaAeuSs-4iOLN8QVqFQ/zh-cn_image_0000002675091233.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=58FD28EE7F99B2523D2602A949095376C31B80237174741DC577A41CCA02926B "点击放大")
 
 **故障详情页关键信息提取**
 
@@ -53,21 +53,21 @@ Native泄漏是一种常见的泄漏类型。本文档主要介绍在运维态�
 
   根据泄漏堆块的分配内存大小区分主次泄漏堆块。基于上述分析，平台将展示主次可疑泄漏方法详情以及对应的修复建议。排查优先从主泄漏堆块切入，核查主泄漏方法是否存在异常。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/jLBqjo7uTk-B_nyxWccoYw/zh-cn_image_0000002675011391.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/jLBqjo7uTk-B_nyxWccoYw/zh-cn_image_0000002675011391.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=82E3C4CC7A2F98E450A378BC15A95DC60D4FF98BED0759756B850FB99679A3D4 "点击放大")
 * 分配栈信息
 
   展示当前选中的泄漏堆块和泄漏方法对应的堆栈信息。通过堆栈分配详情、堆栈树分配和火焰树三种不同的形式展现，以便开发者更直观便捷地查看分配栈信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/yTvXEUHGRFWb_i036-5ZNg/zh-cn_image_0000002645091438.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/yTvXEUHGRFWb_i036-5ZNg/zh-cn_image_0000002645091438.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD484C585ABBA1FC1ED33E92AE902157CC87A6150F6DF837D88CA29D0E402445 "点击放大")
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/X5C2NT9hSjie0riVCIdEow/zh-cn_image_0000002644931528.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/X5C2NT9hSjie0riVCIdEow/zh-cn_image_0000002644931528.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=BFF43004E6886300AC24BBDAF8EA3227800F6EE39923B6C61C922A4E9DEA3EDF "点击放大")
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/fuWVKU6VThy8fdRUT3k0nw/zh-cn_image_0000002675091235.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/fuWVKU6VThy8fdRUT3k0nw/zh-cn_image_0000002675091235.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=215C0C670D0A6DD62106EF80E990AB1E9691924B4616F41801E70E45021CCD0B "点击放大")
 * 还原堆栈（符号表上传）
 
   通过上传SourceMap或.so符号表文件（JS/Web场景上传SourceMap，Native场景上传.so符号表文件），可将混淆后的堆栈地址还原为可读的代码行号与函数名。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/3CyhZO6iSKutfApf6Y2s2g/zh-cn_image_0000002675011393.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/3CyhZO6iSKutfApf6Y2s2g/zh-cn_image_0000002675011393.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=75F02D01049E799306E255E0A05EB2FB8F6385992C353720CB782CE05A3FED6E "点击放大")
 
 ## APMS平台Native泄漏分析案例
 
@@ -81,27 +81,27 @@ Native泄漏是一种常见的泄漏类型。本文档主要介绍在运维态�
 
 建议配置以下告警规则：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/x5K6GywoSdy7RFW9Y5nofw/zh-cn_image_0000002645091440.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/x5K6GywoSdy7RFW9Y5nofw/zh-cn_image_0000002645091440.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FA15F1EBC5DE9E06EFB6C0DEDB6640A24B4FC7FC1F7D9E58BCA9E024EC01A25 "点击放大")
 
 配置告警规则后，当应用触发Native泄漏事件，设备会上报故障信息。系统开始收集后台数据，满足告警触发条件后，系统将发出预警。可参照下图步骤查看故障告警：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/D8GRr5sPTS2KI2MTjh7SPQ/zh-cn_image_0000002644931530.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/D8GRr5sPTS2KI2MTjh7SPQ/zh-cn_image_0000002644931530.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=A99DF64E9FBECBD5E1F3A1C7536C009D8A03B528D331B7FD984A1EB5D31B3F12 "点击放大")
 
 收到预警后，可点击“查看”进入故障指标页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/QmZ6UZw6Srq-F7MkP-hUpA/zh-cn_image_0000002675091237.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/QmZ6UZw6Srq-F7MkP-hUpA/zh-cn_image_0000002675091237.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=4453C2A93280642C612555324E6FDEF95C5951F7532F6155E16D97B4061F28FF "点击放大")
 
 故障指标页面包含趋势分析、维度分布和TOP问题列表。开发者可以在界面设置不同的筛选条件对Native泄漏问题进行个性化分析。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/NBl4Qo1MTQSKz5zSuXyc8g/zh-cn_image_0000002675011395.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/NBl4Qo1MTQSKz5zSuXyc8g/zh-cn_image_0000002675011395.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF12309CF48F28A59DCF867E33D155CB2DE06EA486EE505D5D28ECECF3848D4C "点击放大")
 
 点击TOP问题列表中的查看，可以进入问题详情页查看问题详情，进一步分析。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/n9k1lRXQRPCmtal8VMgp2w/zh-cn_image_0000002645091442.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/n9k1lRXQRPCmtal8VMgp2w/zh-cn_image_0000002645091442.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=136DF0A9ED4165018BDFCC117DCDD43A482B4CF1B1CB4A0765D38DB2B56D2F19 "点击放大")
 
 开发者也可直接点击故障分析页面，通过条件筛选查看具体的TOP问题列表，点击查询按钮进入问题详情页进行进一步分析。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/VHB-Jt5WRtyCqaYh_i2oRA/zh-cn_image_0000002644931532.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/VHB-Jt5WRtyCqaYh_i2oRA/zh-cn_image_0000002644931532.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=F57DAF52D3F93C346E3449FE2B14959D24206E3EC927B6E292008D88D96DBB5D "点击放大")
 
 ### 问题查看与聚类
 
@@ -115,7 +115,7 @@ Native泄漏是一种常见的泄漏类型。本文档主要介绍在运维态�
 
 在问题列表中，每个问题都是同一类问题的汇总。APMS基于堆栈关键行进行准确的同类异常汇聚，将具有相同或相似泄漏堆栈的异常报告自动聚合成一个问题。开发者可点击“查看”进入问题详情页查看详情。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/Nf06P_0rSei2SVtVoxLN2A/zh-cn_image_0000002675091239.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/Nf06P_0rSei2SVtVoxLN2A/zh-cn_image_0000002675091239.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=052AF2AA60739A32947211F6CFEC7ABBB78350B1949CE61FA29988C3276669B9 "点击放大")
 
 ### 根因定位与分析
 
@@ -125,13 +125,13 @@ Native泄漏是一种常见的泄漏类型。本文档主要介绍在运维态�
 
 问题概要：展示问题的核心身份信息，包括故障类型、故障模块，帮助开发者快速判断崩溃的基本属性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/_oTE6TQPRWOBzJ5tEQVh_Q/zh-cn_image_0000002675011397.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/_oTE6TQPRWOBzJ5tEQVh_Q/zh-cn_image_0000002675011397.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=110B9161B01819FA6CDB81D8876444A157E1B622968CAD1EB4158F6DD34008B9 "点击放大")
 
 聚类数据：基于堆栈关键行和过滤筛选跳转至聚类同类故障，帮助开发者评估问题的影响范围与严重程度。
 
 分析报告：提供问题发生时的完整上下文，包括环境信息（设备型号、系统版本、ROM版本、前后台状态等）、堆栈信息、日志文件，并基于分析结果给出修复建议，辅助开发者高效完成问题排查与闭环。此处demo展示的故障模块是leak\_thread。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/IoZDdF3gRRGI6LeC2MOO6Q/zh-cn_image_0000002645091444.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/IoZDdF3gRRGI6LeC2MOO6Q/zh-cn_image_0000002645091444.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C7D0F09CEF4E66AE4B0EFB7F91D0368099081FE0F4DB8CCC1FF15740A4B32E2 "点击放大")
 
 **证据链分析**
 
@@ -139,21 +139,21 @@ Native泄漏是一种常见的泄漏类型。本文档主要介绍在运维态�
 
 根据故障详情分析，可以看出规格为4096B的堆块为核心泄漏堆块，libanon.so为核心泄漏库，leak \_thread为核心泄漏方法。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/wAtf_ECCSo2-3JYLiBoF-A/zh-cn_image_0000002644931534.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/wAtf_ECCSo2-3JYLiBoF-A/zh-cn_image_0000002644931534.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=F91B27ED063061CBB91CFE02DBBCD7C95251501D1311348E643FF37B2561C733 "点击放大")
 
 堆栈信息分析：三种形式（堆栈分配详情、堆栈树分配和火焰树）用于查看方法调用关系和疑似泄漏故障点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/LvkMyN7DRxmeXUCy6YlWiA/zh-cn_image_0000002675091241.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/LvkMyN7DRxmeXUCy6YlWiA/zh-cn_image_0000002675091241.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=03E8F9117303C44A99314D14685D1E543B8B2B5840AF44648B2244E679CE8305 "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/RTzUr3Q_R7ajg0H48rGEyg/zh-cn_image_0000002675011401.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/RTzUr3Q_R7ajg0H48rGEyg/zh-cn_image_0000002675011401.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=B0DF30E5C01B9D312FFE95D6CAD12F3EB39FCC06FB9375D8C3B4FE9A3B04571D "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/vT_ZOTZcRAW7GvTL-aMaGw/zh-cn_image_0000002645091446.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/vT_ZOTZcRAW7GvTL-aMaGw/zh-cn_image_0000002645091446.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE4E089D1B681683C9D2B2A113DE6FADF0E5C4247C1990A7FF7DC7BECEA35534 "点击放大")
 
 **下钻分析**
 
 下钻分析的核心逻辑是从一个汇总的指标或表象问题出发，将其拆分成多个组成部分，然后挑出最关键的线索继续向下拆分，不断重复这个过程，直到定位到具体的根因。平台会根据故障特征ID进行聚类并筛选TOP应用版本、系统版本以及设备型号。开发者可根据此重点关注问题高发的版本及设备，更精确的定位问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/unYwEx3DT9C5xrjPbxMWdg/zh-cn_image_0000002644931536.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/unYwEx3DT9C5xrjPbxMWdg/zh-cn_image_0000002644931536.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=0918CFB17C10BB7B9907C8C5C3F6055E1541828519AE4950AC904BEF0D896577 "点击放大")
 
 ### 修复与验证闭环
 
@@ -161,7 +161,7 @@ Native泄漏是一种常见的泄漏类型。本文档主要介绍在运维态�
 
 故障详情页面会提供修复建议，开发者可根据建议优化代码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/VGgBR93jQgyISm-h2AktpA/zh-cn_image_0000002675091245.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/VGgBR93jQgyISm-h2AktpA/zh-cn_image_0000002675091245.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=606592C1F453F8D2D7E457C982B3DE0FA882FF56E3B6CD17D2552AA73D817517 "点击放大")
 
 **修复建议与闭环**
 
@@ -180,7 +180,7 @@ Operation Analyzer是DevEco Studio的插件，通过该插件可查看应用故�
 
 打开DevEco Studio后，在左侧可看到Operation Analyzer图标，点击后选择应用，再点击资源泄漏即可查看该类故障数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/r6ZcyLrhSRGc-B5hhNlfjA/zh-cn_image_0000002675011403.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/r6ZcyLrhSRGc-B5hhNlfjA/zh-cn_image_0000002675011403.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=E86E3DC196CFA0C1C7FCD65DFDE5A0AD2F011E5910ABF8C782A84B4F245CB97F "点击放大")
 
 ### 问题分析
 
@@ -188,38 +188,38 @@ Operation Analyzer是DevEco Studio的插件，通过该插件可查看应用故�
 
 开发者可自定义筛选条件筛选需要查看的问题，可点击功能列表下具体的问题进一步查看问题详情。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/ydX_pW6tRW-MjhR88IM93A/zh-cn_image_0000002645091448.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/ydX_pW6tRW-MjhR88IM93A/zh-cn_image_0000002645091448.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=30668D53AA7166246458BA706738403D2ADF83399007E8E0ECCCDC3513DEC8CC "点击放大")
 
 **Operation Analyzer平台问题详情**
 
 平台的问题详情页同APMS平台功能相同，开发者可查看故障分析与修复建议排查问题。如果修复建议不能支撑解决问题，可进一步查看证据链、现场数据进行具体分析，符号表页签支持上传符号表，还原堆栈信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/CVewBd9lSUmveeCIki0M2g/zh-cn_image_0000002644931538.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/CVewBd9lSUmveeCIki0M2g/zh-cn_image_0000002644931538.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B2D7F4622FB105DBB69FE84FA1639985A9052FC822C8873EEBFC48A9A218FA4 "点击放大")
 
 开发者也可以查看问题分布图表，定位问题高发的应用版本、设备型号与系统版本，辅助进一步分析。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/cbSYq8MdS-iBv2WkG_r9iw/zh-cn_image_0000002675091247.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/cbSYq8MdS-iBv2WkG_r9iw/zh-cn_image_0000002675091247.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0356633A9AEBCB5161F95B2E871E5F45C5F5D721F3D0F91263E296AE4332C70 "点击放大")
 
 **Operation Analyzer关联离线符号表**
 
 Operation Analyzer平台提供了堆栈还原的能力，可以通过上传符号表（.so/.map/.json文件）完成堆栈还原，辅助分析问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/Y5yVDqx4Q9yULVBBaJG7mg/zh-cn_image_0000002675011405.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/Y5yVDqx4Q9yULVBBaJG7mg/zh-cn_image_0000002675011405.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E1FEF1DB59D417DAA509D54B0702755CA73DBBD44BAE363C56BE5560F71ADC0 "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/djx0KYvgQAWyAQkdrFkYOA/zh-cn_image_0000002645091450.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/djx0KYvgQAWyAQkdrFkYOA/zh-cn_image_0000002645091450.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=58438EBCDC5CBE1835E701A1E36EEE3A4753CBD30B917ADE3A77C4B91F6A746C "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/ZDAPqRmuRjuqZy6BfQ9-xA/zh-cn_image_0000002644931540.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/ZDAPqRmuRjuqZy6BfQ9-xA/zh-cn_image_0000002644931540.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB34551E6F875F2BCB107B8EFF565A4CBD20ADC886AEC1C6519B5742BF692E4B "点击放大")
 
 **Operation Analyzer关联代码**
 
 堆栈还原后，Operation Analyzer平台可将故障处与项目代码相关联，点击故障处可跳转到对应源码中，可辅助开发者更高效的定位问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/nOGj9-T-Qj2yFvStu26f2w/zh-cn_image_0000002675091249.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/nOGj9-T-Qj2yFvStu26f2w/zh-cn_image_0000002675091249.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBD14AECBA25527E1617967BA9E01EC518A5CA6F9A96A5BA79A4BC79EE1F79CA "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/4JKB5Tm5S62qo0SFb0LpnA/zh-cn_image_0000002675011407.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/4JKB5Tm5S62qo0SFb0LpnA/zh-cn_image_0000002675011407.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=DAC3D01793603D923098FBDA170883315EDD8C34417F86B50FB4B1F19AABE9B9 "点击放大")
 
 ### 问题修复
 
 Operation Analyzer平台会给出泄漏堆块、泄漏函数与修复建议，开发者可根据修复建议修复问题代码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/Nuik_irWQimhl9QG1jmRVA/zh-cn_image_0000002645091452.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/Nuik_irWQimhl9QG1jmRVA/zh-cn_image_0000002645091452.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E6B013AD9CDE1AC44241EF84745AA9EE8B33BE0CBF22AEBE891DCA9BA564628 "点击放大")

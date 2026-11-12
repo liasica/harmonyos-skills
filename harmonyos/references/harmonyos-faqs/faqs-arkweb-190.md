@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-190
 title: 如何解决Web组件设置Cookie属性无法生效的问题
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 如何解决Web组件设置Cookie属性无法生效的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:4b05ee0c3af10c9e0af0b9fdffb8493fb984a17b7367b449b1f94ea157a74b50
 ---
@@ -82,10 +82,10 @@ struct CookieGive {
 
 1. 首先点击configCookieSync1后再通过fetchCookieSync获取Cookie，日志如下则说明Cookie设置成功。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/jF0yTzyfQhetZdJeMIRhPw/zh-cn_image_0000002659138443.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/jF0yTzyfQhetZdJeMIRhPw/zh-cn_image_0000002659138443.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=B586C876C8C4135716F92C87497BC25F0FA222C405308BB3E521E9FE0D25F470 "点击放大")
 2. 然后点击configCookieSync2后再通过fetchCookieSync获取Cookie，日志如下则说明Cookie清除成功。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/-6PInVITTS-Yered_HWGsQ/zh-cn_image_0000002629059100.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/-6PInVITTS-Yered_HWGsQ/zh-cn_image_0000002629059100.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=0EADFD963FF2ED1ED889315D8E118391B88DD6F4A7E607BFB610DD39FCB52B9A "点击放大")
 
 ## 常见FAQ
 

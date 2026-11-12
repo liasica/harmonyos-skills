@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-598
 title: Swiper组件动态加载数据及currentIndex保持
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Swiper组件动态加载数据及currentIndex保持
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-05
 content_hash: sha256:c26124e7a6a6eea4fbc1f7cccb2984fa84abfba9e16ff7bd6993a395d732ed1b
 ---
@@ -229,7 +229,7 @@ struct SwiperExample {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/ghfmX4msRfm8M8l4Ht8L2A/zh-cn_image_0000002692946929.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/ghfmX4msRfm8M8l4Ht8L2A/zh-cn_image_0000002692946929.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=8714B25C1CB179D246C4399B86AF3540AA5D9B7E3730198ACCF9704E7D23095A "点击放大")
 
 另外，针对currentIndex跳变和算法增量更新场景，补充以下方案：
 

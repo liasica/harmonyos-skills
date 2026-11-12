@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-insight-s
 title: 内存分析数据筛选
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 基础内存：Allocation分析 > 内存分析数据筛选
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-10
 content_hash: sha256:b2d93427d9fc3040ea821a5a9dd80f4f1fb6933c82547aeb9a3fe70f880adb77
 ---
@@ -22,7 +22,7 @@ Allocation分析过程中提供多种数据筛选方式，方便开发者缩小�
 * Created & Existing：默认选中，详情区域展示当前框选时间段内分配未释放的内存。
 * Created & Released：详情区域展示当前框选时间段内分配已释放的内存。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/d0tW-EXQT7C5UZNTtswZhA/zh-cn_image_0000002779567442.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/d0tW-EXQT7C5UZNTtswZhA/zh-cn_image_0000002779567442.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=56FDCC13816B4C4F967117CC9A614FA6EC96B861B53593EDA336CF99FC27CF18 "点击放大")
 
 ## 通过统计方式筛选
 
@@ -31,19 +31,19 @@ Allocation分析过程中提供多种数据筛选方式，方便开发者缩小�
 * Native Size：详情区域按照对象的内存进行展示。
 * Native Library：详情区域按照对象的so库进行展示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/AsB4XfNHQQaYqVDzgz4nYg/zh-cn_image_0000002779567440.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/AsB4XfNHQQaYqVDzgz4nYg/zh-cn_image_0000002779567440.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=E2F2174F1A16ED357C18F4B1CF9D82C0BF06C1CA17DD39E97BD5ABB361D2ABC5 "点击放大")
 
 ## 通过so库名筛选
 
 非统计模式下，在All Heap & Anonymous VM泳道、All Heap泳道、All Anonymous VM泳道、System Resources泳道、Graphic Memory泳道的**Allocations List**区域，可以单击**Click to choose**选择要筛选的so库以过滤出与目标so库相关的数据：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/mJ21WeXJQx-h8XwE_7q5mA/zh-cn_image_0000002779407462.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/mJ21WeXJQx-h8XwE_7q5mA/zh-cn_image_0000002779407462.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=596384AE4F1BC682399BC7A8257E8822DF0332D3F1672474AF3F4FA6D49F82ED "点击放大")
 
 ## 通过搜索筛选
 
 在All Heap & Anonymous VM泳道、All Heap泳道、All Anonymous VM泳道、System Resources泳道、Graphic Memory泳道的页签中， 根据界面提示信息输入需要搜索的项目，可定位到相关内容位置，使用搜索框的<、>按键可依次显示搜索结果的详细内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/GcCM6dm1TCax4uZNT8ihSg/zh-cn_image_0000002808767025.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/GcCM6dm1TCax4uZNT8ihSg/zh-cn_image_0000002808767025.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=F438BFDFB3EA2DE2603616E96FDAAE78191636544D811F60A680F80AE43EBA21 "点击放大")
 
 ## 筛选内存分配堆栈
 
@@ -66,19 +66,19 @@ Call Trees选择框包含两种过滤条件：
 
   其中每一个类型的亮色和灰色分别代表开发者和系统的代码。其中，亮色代表开发者自定义的代码，灰色代表直接使用系统中代码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/Nwxlkt-RT7iB7igtXRnH9Q/zh-cn_image_0000002779567436.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/Nwxlkt-RT7iB7igtXRnH9Q/zh-cn_image_0000002779567436.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4730401FF0351E575E8114E02113B9A292A5A49A417DE4C7BE9212E170A691E "点击放大")
 
 Constraints选择框也包含了两种过滤条件：
 
 * Count：根据指定的内存申请次数过滤内存分配栈信息；
 * Bytes：根据指定的内存申请大小过滤内存分配栈信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/YCrO3Ds8S2K7s0pBhylUNA/zh-cn_image_0000002808887105.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/YCrO3Ds8S2K7s0pBhylUNA/zh-cn_image_0000002808887105.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A953F95FC17555DBD8861D96C919B2FF7853DBD8DE9132B854AC1797A34DC56 "点击放大")
 
 在Call Trees页签的More区域，单击**Heaviest Stack**旁的隐藏按钮可以单独控制是否显示More区域最大内存分配栈中的系统堆栈。System Resources泳道中不包含Bytes字段。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/0PoN9_YuQgKbvXhXHNyPyg/zh-cn_image_0000002808887099.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/0PoN9_YuQgKbvXhXHNyPyg/zh-cn_image_0000002808887099.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=929D0626C01375602454698448A1A650F93DF1FF9491A7BD0C7646E04CC932C1 "点击放大")
 
 在Call Trees页签，可以通过底部的**Flame Chart**切换到火焰图视图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/M0U1umNSQQ-NmiLr9Tq1Zg/zh-cn_image_0000002779407464.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/M0U1umNSQQ-NmiLr9Tq1Zg/zh-cn_image_0000002779407464.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=6EB317F9DEBBFFD33D55ED6A94EDC49EB829E2EC05392EA4488DE84968A5270A "点击放大")

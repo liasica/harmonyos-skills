@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-decrease-p
 title: 应用包体积优化
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 资源与存储优化 > 应用包体积优化
 category: best-practices
-scraped_at: 2026-11-10T10:42:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-09
 content_hash: sha256:aebd480956a0f7d9c5fa2da886b07cc9694a6a96d431fd9c8cda17b88f60a64a
 ---
@@ -48,7 +48,7 @@ content_hash: sha256:aebd480956a0f7d9c5fa2da886b07cc9694a6a96d431fd9c8cda17b88f6
 
 so库在应用包中可以压缩或非压缩存储。压缩存储时，编译出的应用包更小，但运行时需要未压缩的so库，安装时必须解压到安装目录，导致包内和安装目录存储冗余。非压缩存储时，HarmonyOS 7.0及以上支持安装包免解压能力，通过文件映射机制直接从包内加载，消除冗余。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/FRP4avyhT7mAWZERtR8agQ/zh-cn_image_0000002799032245.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/FRP4avyhT7mAWZERtR8agQ/zh-cn_image_0000002799032245.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F0076E1D58B2E8E86CA1E99B808D9C408FDCEEE405D7932DC84748D2FE8E4B2 "点击放大")
 
 **配置方法**
 
@@ -73,13 +73,13 @@ so库在应用包中可以压缩或非压缩存储。压缩存储时，编译出
 
 以一个libs体积约700MB的示例工程为例，配置"so压缩"（左图）因解压产生冗余导致安装后占用更大，而配置"so不压缩"（右图）借助免解压机制仅保留一份，占用反而更小。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/tfEHcSCGT4qcU-q2TSiCag/zh-cn_image_0000002769879828.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/tfEHcSCGT4qcU-q2TSiCag/zh-cn_image_0000002769879828.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=205F4C3F9D0F4AD34CA2189A6EC59FE95411EF90010A3FBE8D0492C14622138A "点击放大")
 
 ### 解决依赖冲突，减少依赖包重复编译
 
 对于ohpm 1.5.0之前的版本，如果hap依赖了不同版本的har（例如下图中的V1版本的harC和V2版本的harC），默认情况下，V1和V2两个版本的harC都会被打包到hap中。开发者可以使用ohpm的override机制，指定只打包一个版本。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/m6zIoHEdRKWVEeQNScFfMA/zh-cn_image_0000002194011048.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/m6zIoHEdRKWVEeQNScFfMA/zh-cn_image_0000002194011048.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=FAB35987DA411A2834736E48E7CD03B59EC7D312CD6A01F8107F1A438F3591AC "点击放大")
 
 如果使用的是ohpm 1.4.0版本，可以使用override机制，开发者可以在项目级别的oh-package.json5（即项目根目录下的oh-package.json5）文件中添加overrides配置，将依赖树中的依赖替换为另一个版本。替换的版本既可以是一个具体的版本号，也可以是本地存在的HAR包或源码目录。
 
@@ -135,8 +135,8 @@ HAR中的代码和资源跟随使用方编译，多个使用方会存在多份�
 
 如下图示例：应用模块HAP1和HAP2/HSP1都引用了HAR2和HAR3。打包后，HAR2和HAR3在App包中有多份重复拷贝，导致体积较大。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/xcdgyRFhT7u_SYoAwidZWQ/zh-cn_image_0000002229451341.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/xcdgyRFhT7u_SYoAwidZWQ/zh-cn_image_0000002229451341.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1FC7B3F527BC7E4CC3818EE5934D84BF6AF86966FE3A67E9DC90675457536B6 "点击放大")
 
 推荐使用HSP代替HAR实现代码和资源共享。如下图示例，使用HSP2对原应用进行升级改造，打包后，APP包中HAR2和HAR3仅保留一份拷贝。当HAR2和HAR3的总大小超过HSP时，可以减小应用包大小。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/nuI4t6kIShK8BzknfCS9xg/zh-cn_image_0000002229336845.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/nuI4t6kIShK8BzknfCS9xg/zh-cn_image_0000002229336845.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE0D1EBA75A5CC9D9E2B9D19865EBAB7D8062CC354D86E4577E691ECB316B7A3 "点击放大")

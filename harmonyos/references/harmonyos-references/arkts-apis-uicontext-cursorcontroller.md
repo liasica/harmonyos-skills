@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (CursorController)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (CursorController)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:56+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:c6574760b9ee8585425afd69b7b36e1a7723581172cad38820ef3440c031e79f
 ---
@@ -58,7 +58,7 @@ struct CursorControlExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/z23kdj3PTYm9JoU6-Rc6rQ/zh-cn_image_0000002815560291.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/z23kdj3PTYm9JoU6-Rc6rQ/zh-cn_image_0000002815560291.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=F083FCB45B882D8807AFD018ABEAD6963C9A655AA8668EAF7E791F533F76AF06)
 
 ## setCursor12+
 
@@ -111,7 +111,7 @@ struct CursorControlExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/beAWi4nGReChh3n6V7WAtg/zh-cn_image_0000002815400375.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/beAWi4nGReChh3n6V7WAtg/zh-cn_image_0000002815400375.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=70D300911E33857F9AE54FB81313132B54ADAD0A412ED87D82BAD9F2868E816C)
 
 ## setCustomCursor
 
@@ -232,4 +232,4 @@ struct CustomCursorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/o5cQOANzSPOHfPbnUsrYoA/zh-cn_image_0000002786520800.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/o5cQOANzSPOHfPbnUsrYoA/zh-cn_image_0000002786520800.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=CDDA35E11B34C6837CDE8BC4F5FF17E3C1EFD8132FBFE6651234B337671CDA7E)

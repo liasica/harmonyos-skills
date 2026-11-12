@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-smartwatch
 title: 智能穿戴应用开发
 breadcrumb: 最佳实践 > 多设备体验进阶 > 穿戴 > 智能穿戴应用开发
 category: best-practices
-scraped_at: 2026-11-10T10:42:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-03
 content_hash: sha256:6281039ccaefc79f7a0ec785ab2411a8b6ea32c8e6e03dd9ce0da2213622f74e
 ---
@@ -130,7 +130,7 @@ content_hash: sha256:6281039ccaefc79f7a0ec785ab2411a8b6ea32c8e6e03dd9ce0da221362
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/uf2k8DmgQMygT4xXhZsQ0Q/zh-cn_image_0000002585606726.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/uf2k8DmgQMygT4xXhZsQ0Q/zh-cn_image_0000002585606726.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=16EEC8D16145EC4FA22E4C490B4F4889C32AC74ED655FF6607C448E5EC02E4A6 "点击放大")
 
 * 滑动切焦：切换当前焦点，以确认下一步操作，通过将拇指沿食指第二关节向指尖快速滑动两下切换焦点，后续再进行确认操作，可以用于切换到取消按钮，或切换到播放下一首按钮上，用于取消消息、切换歌曲等操作场景。
 
@@ -150,7 +150,7 @@ content_hash: sha256:6281039ccaefc79f7a0ec785ab2411a8b6ea32c8e6e03dd9ce0da221362
 })
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/VEYE1aAEQ4-z_TBz53D3Aw/zh-cn_image_0000002615966431.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/VEYE1aAEQ4-z_TBz53D3Aw/zh-cn_image_0000002615966431.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C1FD717CEECC58F090BDE47CE58C78D5DAAD383CD6D05D84303D57BC058D1B4 "点击放大")
 
 智慧手势交互的前提是组件获焦。首先使用[activate()](../harmonyos-references/arkts-apis-uicontext-focuscontroller.md#activate14)激活当前界面的焦点激活态。
 
@@ -180,7 +180,7 @@ aboutToDisappear(): void {
 * 显示优化配置
   1. 默认启用深色主题模式降低显示能耗。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/eX874EfQRIekiUdryhxfjA/zh-cn_image_0000002585446792.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/eX874EfQRIekiUdryhxfjA/zh-cn_image_0000002585446792.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=BED002E4322A072001EC67931C5F0BAFD79AA6280146D5EFCFEE5B2FFF6568E1 "点击放大")
   2. 仅允许视频、游戏、导航等必要场景保持屏幕常亮。
 * 后台应用管理
   1. 关键服务类应用（闹钟、日程提醒、邮件、IM类应用）可依据实际需求启动。
@@ -592,14 +592,14 @@ aboutToDisappear(): void {
 
 1. 手表应用在发布时，仅可选择“手表”设备，无法对智能穿戴与轻量级智能穿戴做区分。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/jU9LCtoVSFKVwx47A8Lztw/zh-cn_image_0000002615886535.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/jU9LCtoVSFKVwx47A8Lztw/zh-cn_image_0000002615886535.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=D06E44251BBC30913F428A827DEEADA86C34F1166CBEC609511F768052F9B0EF "点击放大")
 2. 应用涉及两种穿戴设备时，应用发布是否需要上传两个对应的发布包。
 
 解决方案：
 
 1. 点击确认后跳转至发布页，可在发布页具体选择设备类型。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/RBVRwQVaQq2_vQAwDyvMXg/zh-cn_image_0000002585606732.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/RBVRwQVaQq2_vQAwDyvMXg/zh-cn_image_0000002585606732.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D317C353A1F8422B187B0A3C67322D3596F791B8E447A17A9F3283F01181D08 "点击放大")
 2. 智能穿戴支持ArkTS与JS，轻量级智能穿戴仅支持JS，若应用发布包支持在智能穿戴与轻量级智能穿戴上运行，则无需对应用发布包做区分，若应用发布包仅支持某一种穿戴设备，则需要分别为智能穿戴设备与轻量级智能穿戴设备创建AppID，并上传其对应的发布包。
 3. APP创建流程可参考[创建HarmonyOS应用](../app/agc-help-create-app-0000002247955506.md)。
 
@@ -684,16 +684,16 @@ try {
 
    儿童智能表应用开发完成后，提交应用时选择智能手表选项，儿童智能表应用在智能手表选项下。发布应用的通用配置和流程可参考[发布HarmonyOS应用](../app/agc-help-release-app-0000002271695230.md)。在提交时，忽略以下弹窗，点击确认或关闭按钮以继续下一步操作：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/ObbtzT3JTEyX4VSk9d137g/zh-cn_image_0000002615966439.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/ObbtzT3JTEyX4VSk9d137g/zh-cn_image_0000002615966439.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=13FC03317BA8631FD12B22505CD4172954A6F2F2742266B3608327286DFF41C5)
 4. 选择应用分类标签。
 
    **应用分类**：根据应用特性选择相关分类（如音乐、休闲娱乐、儿童等），“应用/儿童”为非必选项。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/I9FjGnUaQSuMbkKYwTuBmQ/zh-cn_image_0000002585446802.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/I9FjGnUaQSuMbkKYwTuBmQ/zh-cn_image_0000002585446802.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=060807ADCEEC2FA76ECB09F181CDC0F4A8C01099640C18748727E7CCB77678BB)
 
    **应用标签**：至少选择一个标签作为应用主标签，同时可以再选择一个或多个其它标签作为补充（非必须）。根据应用特性选择标签，“儿童”为非必选项。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/OMHq7iUMSiKuSes-cITkIw/zh-cn_image_0000002615886547.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/OMHq7iUMSiKuSes-cITkIw/zh-cn_image_0000002615886547.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=73818412B5728C2376DDB74464F16B446198176173557679B217D644B576E077 "点击放大")
 
 ## FA工程迁移
 
@@ -703,45 +703,45 @@ try {
 
 1. 使用DevEco Studio创建项目。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/6NlfTh2ZSB-JidWJDuj-QA/zh-cn_image_0000002585606740.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/6NlfTh2ZSB-JidWJDuj-QA/zh-cn_image_0000002585606740.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9C254707CCFA1EA1E00D817B21AA6411E0C480F9DCE0C99F9ED8C7AA2FD94FC "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/3gN0l82HRCS7G3vRnXV67Q/zh-cn_image_0000002615966443.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/3gN0l82HRCS7G3vRnXV67Q/zh-cn_image_0000002615966443.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=6FEC2A614AC6EF9B8129D8E6188B267F032827AAA9889568738B8CF8F70B5B51 "点击放大")
 
    工程名目录右键选择“New”->“Module”创建模块。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/IwVK_Oo9SfKVYyxzBgLQ5w/zh-cn_image_0000002585446806.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/IwVK_Oo9SfKVYyxzBgLQ5w/zh-cn_image_0000002585446806.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=40BC98B93B6D2EAFD84F3547A6EF27D289527B3F15AB17547A8DB6DE53BD8DCF "点击放大")
 
    选择“Empty Ability”，点击“Next”进入下一步。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/VzA2qI9CRvCh0JL7zWqCjA/zh-cn_image_0000002615886549.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/VzA2qI9CRvCh0JL7zWqCjA/zh-cn_image_0000002615886549.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=D58C52AE79962CDC61C4CA2D9783148DC4CB27EA492C9DA2BCB9F436627A6EB0 "点击放大")
 
    默认配置无需修改，点击“Next”进入下一步。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/jomzfBZ3RPituvuBXkG33A/zh-cn_image_0000002585606742.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/jomzfBZ3RPituvuBXkG33A/zh-cn_image_0000002585606742.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=47F2E945EE09B0D66D5CB0A877C18AFC364227F7AD303C314BB69DE2ADE395DA "点击放大")
 
    为了兼容智能穿戴，需要修改Ability name为“HiWearMainAbility”。点击“Finish”完成智能穿戴兼容模块创建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/CUOKa6rnTgSX4hhycSKvWQ/zh-cn_image_0000002615966445.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/CUOKa6rnTgSX4hhycSKvWQ/zh-cn_image_0000002615966445.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF32B1E89281A5E7883A28D208527011D62D7F0EE2CC35B2D25F3A65E9F8F47C "点击放大")
 
    删除工程默认创建的entry模块，此时实现轻量级智能穿戴项目迁移的基础框架创建完成。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/EIktdoK9RzCpbO0ch8O1gw/zh-cn_image_0000002585446808.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/EIktdoK9RzCpbO0ch8O1gw/zh-cn_image_0000002585446808.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=22A10A2A63AA063D93AF840EEFCAA0530067BB0BAB7EE585C427E05CC23FDBDF "点击放大")
 2. 将原轻量级智能穿戴项目/entry/src/main/js目录下的代码文件及资源文件按对应位置迁移至新工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/LnoHyIGgS1a_yu32yQo8jg/zh-cn_image_0000002615886553.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/LnoHyIGgS1a_yu32yQo8jg/zh-cn_image_0000002615886553.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFFC8287994A99950DA3BBA2B58AF456534DE214A33AD7FB6CCE89485E9E2F0F "点击放大")
 3. 修改适配智能穿戴所需的配置文件。
 
    迁移的文件后需要修改config.json。修改资源文件的引用；pages目录下如果有新页面文件需添加至config.json；修改页面设计基线宽度为466。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/rqeVTyIfQbywlc4JWGTvKA/zh-cn_image_0000002585606744.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/rqeVTyIfQbywlc4JWGTvKA/zh-cn_image_0000002585606744.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=B985D17BEA1F98033C6AAE93E82CFEA091E2D4D04D670E51AAFD00AD3C57C673 "点击放大")
 
    config.json文件中补充所需的权限。如果原项目中使用了震动功能，需添加震动权限。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/0HiaqHhQTYusYJ5QfgWHcg/zh-cn_image_0000002615966447.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/0HiaqHhQTYusYJ5QfgWHcg/zh-cn_image_0000002615966447.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=82D204465523BA0B7C0D7ECA5CFD87774AD80FE76200C22744480FA1391E9B0B "点击放大")
 
    如果项目中使用了[Wear Engine](../harmonyos-guides/we-business_introduction.md)，需要在config.json文件中“abilities”同级的位置补充metaData配置。Wear Engine接入准备可参考[申请接入Wear Engine服务](../harmonyos-guides/wearengine_apply.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/ux2NDLXURaCDoLKoaUkzUQ/zh-cn_image_0000002585446826.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/ux2NDLXURaCDoLKoaUkzUQ/zh-cn_image_0000002585446826.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0FBBE355D7879FDAD76BCE47BF10BD217E11D5CF07213AD77C1627565CAB33B "点击放大")
 4. 代码适配。由于轻量级智能穿戴和智能穿戴的同步/异步机制不同，因此在迁移时，需要对相关接口进行修改。以Huks接口为例，说明如何进行这些修改。
 
    ```typescript

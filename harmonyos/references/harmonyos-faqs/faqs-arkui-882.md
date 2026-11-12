@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-882
 title: 点击点赞按钮，动画播放完毕后点赞图标消失
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 点击点赞按钮，动画播放完毕后点赞图标消失
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:09264e8ad8aed2e90b1ac4bd2c698b213e76eb16770cdaa6a0390e87f0cad057
 ---
@@ -21,9 +21,9 @@ content_hash: sha256:09264e8ad8aed2e90b1ac4bd2c698b213e76eb16770cdaa6a0390e87f0c
 
 1. 使用DevEco Testing的UIViewer工具分别检查点赞按钮正常显示时和消失时的UI结构。确认点赞图标是Image组件，在点赞动画播放完毕后页面上没有Image组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/xQS6x9rcRHiZKuDTKsBjeA/zh-cn_image_0000002628559542.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/xQS6x9rcRHiZKuDTKsBjeA/zh-cn_image_0000002628559542.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DC588808B9B39E3126CAB61E90468153999B2A7F1EAB95697CB26705F0CBC57 "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/czbMNIMITqGK9HS8QeYrdQ/zh-cn_image_0000002658918853.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/czbMNIMITqGK9HS8QeYrdQ/zh-cn_image_0000002658918853.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=ADA21FF27ACA935FF9560AF36BFF6E9E4A7ECBFB45D56B2E75448D90E52D7047 "点击放大")
 2. 排查代码中点赞图片的显隐逻辑。点赞图片使用的Image组件通过if/else条件渲染，当变量满足条件时才会正常显示，点赞/取消点赞动画播放完毕后并未修改变量的值，Image组件没有正常渲染。
 
    ```ts

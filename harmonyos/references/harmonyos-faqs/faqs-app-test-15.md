@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-1
 title: DevEco Testing Hypium录制回放功能如何操作
 breadcrumb: FAQ > DevEco Studio > 应用测试 > DevEco Testing Hypium录制回放功能如何操作
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:5d9a01ff51fcf2c3056d8830a017be43824124c1eb965f3b9663299417f31def
 ---
@@ -20,13 +20,13 @@ Hypium UI自动化有录制回放工具，在HarmonyOS的UI自动化中使用Hyp
 
 UIViewer面板功能脚本录制按钮，点击后页面左上角将出现红色提示文字，提示进入录制状态，处于此状态时，点击画面中控件后，将在编辑器光标处生成Hypium用例测试语句。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/x1BZFczDQq-b-fK0d19h7w/zh-cn_image_0000002658808809.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/x1BZFczDQq-b-fK0d19h7w/zh-cn_image_0000002658808809.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC39A168449A168CB71DFCFB88973164319E45A5112A08E81F0757C114520FEA "点击放大")
 
 * 点击控件录制；
 
   处于录制状态后，点击需要录制点击的控件，同时会在代码区域生成点击该控件的代码步骤。如点击桌面设置图标进入设置页面，生成代码如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/7yN5x9AyQqCBzXgpgAWONA/zh-cn_image_0000002628409544.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/7yN5x9AyQqCBzXgpgAWONA/zh-cn_image_0000002628409544.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5955DC6CE574A9CE2BC3B8041971256A97486BECE714D12B19D3678EEE9E68A "点击放大")
 
   ```python
   # 根据条件点击控件
@@ -36,9 +36,9 @@ UIViewer面板功能脚本录制按钮，点击后页面左上角将出现红色
   ```
 * 录制文本输入操作；
 
-  处于录制状态后，输入文本功能按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/Boz-GIPHR2aY_dCaAxkUOw/zh-cn_image_0000002628569442.png)点击后，在[TextArea](../harmonyos-references/ts-basic-components-textarea.md)控件或[TextInput](../harmonyos-references/ts-basic-components-textinput.md)类型控件上方点击，会弹出文本输入框，用户输入完文本后，就会在当前代码编辑区的光标处插入一条由Hypium实现的输入代码。如搜索框输入搜索内容生成代码如下：
+  处于录制状态后，输入文本功能按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/Boz-GIPHR2aY_dCaAxkUOw/zh-cn_image_0000002628569442.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=19A4A278B6C88DDC681EB0BDF69434DE050CF1B7B72F90945B3DC3956C291A71)点击后，在[TextArea](../harmonyos-references/ts-basic-components-textarea.md)控件或[TextInput](../harmonyos-references/ts-basic-components-textinput.md)类型控件上方点击，会弹出文本输入框，用户输入完文本后，就会在当前代码编辑区的光标处插入一条由Hypium实现的输入代码。如搜索框输入搜索内容生成代码如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/Ox2e8SmOQVuPZ7wIem4eMA/zh-cn_image_0000002658928759.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/Ox2e8SmOQVuPZ7wIem4eMA/zh-cn_image_0000002658928759.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=013539F93DBB44F32E086507B22374749BDC5FCDFD4B6A6E6E511079E0EA5D0A "点击放大")
 
   ```python
   # 输入文本'Hello'

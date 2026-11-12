@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-buildin
 title: 添加标题行和文本区域
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 构建用户界面 > 构建布局 > 添加标题行和文本区域
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:18+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-03-09
 content_hash: sha256:327c0210456f74a89cdfb001dd72931a105d06cd66ba6f67a55daa33820639fc
 ---
@@ -52,4 +52,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/r2PaM0tXRyCwd9MJD-VW7w/zh-cn_image_0000002815558709.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/r2PaM0tXRyCwd9MJD-VW7w/zh-cn_image_0000002815558709.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=75B7B038F3BF95AF493573F2A880C33B7428928BD1238933F7494CE3F37FE10C)

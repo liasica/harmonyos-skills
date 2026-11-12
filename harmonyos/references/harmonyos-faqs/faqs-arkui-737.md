@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-737
 title: GestureEvent手势事件坐标之间的区别
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > GestureEvent手势事件坐标之间的区别
 category: harmonyos-faqs
-scraped_at: 2026-11-04T08:38:44+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-03
 content_hash: sha256:541105fd85e579831d149a450818ef127c4ee435cd036aeb7cad11baddd89cae
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:541105fd85e579831d149a450818ef127c4ee435cd036aeb7cad11baddd
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/qBU4YlIMQiCollWZPFqdsg/zh-cn_image_0000002658914551.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/qBU4YlIMQiCollWZPFqdsg/zh-cn_image_0000002658914551.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=575FC27CE28237C62FB5F304040A76938372DD5A486925C38F8E012B81872E05 "点击放大")
 
 ## 背景知识
 

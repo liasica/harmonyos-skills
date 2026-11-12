@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1110
 title: NavDestination生命周期使用常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > NavDestination生命周期使用常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:890ace47c99a36c73298966e5974eee2d1bc5ef8c46e16958763e66408d288f9
 ---
@@ -166,7 +166,7 @@ content_hash: sha256:890ace47c99a36c73298966e5974eee2d1bc5ef8c46e16958763e66408d
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/1c6BKElHQ3qa2GdDwzDlLw/zh-cn_image_0000002658806747.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/1c6BKElHQ3qa2GdDwzDlLw/zh-cn_image_0000002658806747.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A67EB7CC41CBE8804E1A2F73DB1B60C7960D03A2C9B1EC5AA6AAE3398C04F43 "点击放大")
 * **场景三**：申请权限弹窗触发onHidden和onShown。
 
   权限弹窗属于全局模态组件，会强制覆盖当前页面。当弹窗显示时，当前NavDestination页面会触发onHidden（页面被遮挡）和onInactive（失去焦点）。弹窗关闭后，页面重新可见并激活，触发onShown和onActive回调。
@@ -353,11 +353,11 @@ content_hash: sha256:890ace47c99a36c73298966e5974eee2d1bc5ef8c46e16958763e66408d
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/q0224TzBSyeGdGbUIm_F1g/zh-cn_image_0000002628407494.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/q0224TzBSyeGdGbUIm_F1g/zh-cn_image_0000002628407494.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=995E2AC8708D61195304DEBAD23960D0F9C32761C62B4ABDC6B64EAB80673B74 "点击放大")
 
   日志如下所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/F85HQcpySZKSWjE0p747hA/zh-cn_image_0000002628567390.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/F85HQcpySZKSWjE0p747hA/zh-cn_image_0000002628567390.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=0EF6A622FC8D083DC537AF9769B170F85F56C3869A258A7AB48BF9E66E60E60A "点击放大")
 
 ## 常见FAQ
 

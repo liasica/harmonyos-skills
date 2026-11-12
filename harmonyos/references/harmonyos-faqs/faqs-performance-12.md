@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: ArkUI页面的视频加载缓慢
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > ArkUI页面的视频加载缓慢
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-30
 content_hash: sha256:33326f0cb9e3a258d150ba90ec0cb7fd6a3d9433cdda3e95e1d428f366189f6b
 ---
@@ -38,20 +38,20 @@ content_hash: sha256:33326f0cb9e3a258d150ba90ec0cb7fd6a3d9433cdda3e95e1d428f3661
 
 1. 使用ArkUI Inspector抓取应用页面布局，得知应用使用Video组件进行视频播放。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/gNGW5PaST2WA9TbeEYcu6g/zh-cn_image_0000002628395104.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/gNGW5PaST2WA9TbeEYcu6g/zh-cn_image_0000002628395104.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=111E6FE898CEF355035A8011B01D48F46E8FB9AE5C8EC3619350506969CE23E1 "点击放大")
 2. 使用Profiler Frame抓取视频加载播放过程的应用Trace信息，然后搜索应用收到手指离开屏幕的事件、Video组件创建、播放器准备、播放器播放相关Trace点。
    * 应用收到手指离开屏幕：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/-Ox8VwKoT8GOpTKRyOXG-w/zh-cn_image_0000002658914323.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/-Ox8VwKoT8GOpTKRyOXG-w/zh-cn_image_0000002658914323.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=C2BFE605A88B1225A409AA518E45BB24AF35B051F1ED88C57AFEDEE7CADF6478 "点击放大")
    * Video组件创建：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/dZB7usFhRSmAmlQ95sm0-A/zh-cn_image_0000002658794371.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/dZB7usFhRSmAmlQ95sm0-A/zh-cn_image_0000002658794371.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=107E77CDCE58C2FF7F10AA54937A0ACAC22A3FED04660864F8B2422D932F8A8A "点击放大")
    * 播放器准备：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/9EIduKE0Qf-qka3b2c4RQg/zh-cn_image_0000002628555006.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/9EIduKE0Qf-qka3b2c4RQg/zh-cn_image_0000002628555006.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC78F54B5AE89628016E5B8DEC46EACDF9E68CA2F49B28171E1B26B828CDA3C5 "点击放大")
    * 播放器播放：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/vEsktDiFSUGyHQmSSXuZFg/zh-cn_image_0000002628395106.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/vEsktDiFSUGyHQmSSXuZFg/zh-cn_image_0000002628395106.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=905B79C84E8F1401E9CD5CFA3AEA01B03E5C7A6E49F1E2E43BCD762F6281E7EE "点击放大")
 
 3. 计算上述Trace关键字之间的时间，分析其中耗时最多的部分，具体情况如下：
    * 耗时主要集中在从应用收到手指离开屏幕事件到Video组件创建阶段，如下表所示。
@@ -60,15 +60,15 @@ content_hash: sha256:33326f0cb9e3a258d150ba90ec0cb7fd6a3d9433cdda3e95e1d428f3661
      | --- | --- | --- | --- |
      | 10s | 41ms | 314ms | 25ms |
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/4L_FIh2OQji8GsSF6Bu43w/zh-cn_image_0000002658914325.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/4L_FIh2OQji8GsSF6Bu43w/zh-cn_image_0000002658914325.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=1038563351933D53DCC454648C5A2388324C5FF3CCF560153A145B13284EFA9D "点击放大")
 
      查看上图中应用收到手指离开屏幕事件到Video组件创建阶段，应用主线程并无长时间Running的情况，在Video组件创建前可以看到状态变量有刷新，怀疑应用刷新该状态变量后会触发Video组件创建，而状态变量刷新可能与http请求有关。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/OgnjjrwhT9OYpZ88nzpQ1w/zh-cn_image_0000002658794373.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/OgnjjrwhT9OYpZ88nzpQ1w/zh-cn_image_0000002658794373.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=71C35129756C33BEB1F42C57CB7C01822F266DFA11D77A8C8823972EDF3D37E0 "点击放大")
 
      排查应用H:HttpRequest泳道信息发现应用有进行http请求，耗时接近10s，由此可知应用在加载视频前会进行http请求，从服务器获取数据后刷新组件的状态变量，创建Video组件开始播放视频。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/d9vs7lDQQRKufPc466wO7A/zh-cn_image_0000002628555008.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/d9vs7lDQQRKufPc466wO7A/zh-cn_image_0000002628555008.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA3A278498EBE0ECB1EDD669ABC02A53035D4BC9AA824AE0AF5986FEE4EA0FEB "点击放大")
 
      搜索应用包名/NETSTACK日志关键字，查看http请求时的相关耗时参数，发现此处http请求耗时集中在firstRecv部分，应用服务器响应应用请求时，处理耗时较多。
 
@@ -81,7 +81,7 @@ content_hash: sha256:33326f0cb9e3a258d150ba90ec0cb7fd6a3d9433cdda3e95e1d428f3661
      | --- | --- | --- | --- |
      | 394ms | 18.1ms | 12.4s | 44.4ms |
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/Zal5EhUSTqqr739ZUaX7TA/zh-cn_image_0000002628395108.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/Zal5EhUSTqqr739ZUaX7TA/zh-cn_image_0000002628395108.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F250068B03DFF39508A3B7821FBA40C8B22095C2105EF232CB16B7060B25F82 "点击放大")
 
      在日志中搜索BUFFERING\_START PAUSE|BUFFERING\_END PLAYING|HTTP Buffer is enough|bitrate =找到视频缓冲的起始点、结束点、起播水线、数据下载速度和视频码率，如下图中看到视频缓冲的时间为11.415s（BUFFERING\_START PAUSE和BUFFERING\_END PLAYING时间间隔），起播水线为5773077字节，下载速度为4209738bit/s，视频码率为9236923bps。
 

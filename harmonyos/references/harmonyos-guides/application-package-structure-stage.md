@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-p
 title: 应用程序包结构
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用程序包基础知识 > 应用程序包结构
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:50:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-12
 content_hash: sha256:abeb52cd7151947833756304811aaf592b45342527e9a19e74e73540caf46e6b
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:abeb52cd7151947833756304811aaf592b45342527e9a19e74e73540caf
 
 **图1** 项目工程结构示意图（以实际为准）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/k0rEC12xSSGXYiMWrnkT6w/zh-cn_image_0000002786518300.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/k0rEC12xSSGXYiMWrnkT6w/zh-cn_image_0000002786518300.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=27A01856B2AF48E3C3B6F26DF1C0CAE7E17ED45B1FCCD91629DC54C124C96CF5)
 
 **说明** 
 
@@ -38,7 +38,7 @@ content_hash: sha256:abeb52cd7151947833756304811aaf592b45342527e9a19e74e73540caf
 
 **图2** 开发态与编译态的工程结构视图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/7kUrzRMrS5W-PGmNkkmRCg/zh-cn_image_0000002786358372.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/7kUrzRMrS5W-PGmNkkmRCg/zh-cn_image_0000002786358372.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA88EE0F84DB169F656B5DDE6E30B5CA0FCA6F5EFB8CC9F901A429793152B4AA)
 
 从开发态到编译态，Module文件变更如下：
 
@@ -59,4 +59,4 @@ content_hash: sha256:abeb52cd7151947833756304811aaf592b45342527e9a19e74e73540caf
 
 **图3** 编译发布与上架部署流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/XIXkoguhQGeekUtEf4VoOg/zh-cn_image_0000002815557793.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/XIXkoguhQGeekUtEf4VoOg/zh-cn_image_0000002815557793.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=B12E0E9717A124C0BB74940E90BC91A0C57F5D39B03F68D45D31C463CF2C5A43)

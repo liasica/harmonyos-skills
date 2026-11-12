@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1120
 title: 页面和导航条区域的色调不一致
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 页面和导航条区域的色调不一致
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:29+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:80c4c321c05608d522f7a74720c1a26436f1ec66d2c437dcd971665f65ee63c1
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:80c4c321c05608d522f7a74720c1a26436f1ec66d2c437dcd971665f65e
 
 应用未适配沉浸式显示，底部导航栏突兀。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/oUXsM9tDTHi8Ix1rltrymQ/zh-cn_image_0000002675464354.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/oUXsM9tDTHi8Ix1rltrymQ/zh-cn_image_0000002675464354.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=E27D9F121627F76A7E82EF64BFB06B50F2B4791900E7CF59954034AB07C9F7E1)
 
 ## 背景知识
 

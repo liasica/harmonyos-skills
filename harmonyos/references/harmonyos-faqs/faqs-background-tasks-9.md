@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-background
 title: 如何查询后台任务中短时任务/长时任务/延迟任务/后台代理提醒相关的系统日志
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 后台任务开发（Background Tasks） > 如何查询后台任务中短时任务/长时任务/延迟任务/后台代理提醒相关的系统日志
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:50+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:2ac1fa669b9d85d4f33cef68430cb8b33802e26c27748aaed75fce79b02de76c
 ---
 
 以后台任务中短时任务为例。可以在日志中通过过滤关键字“C01711/TRANSIENT\_TASK”来查询短时任务的状态情况，包括查询申请短时任务状态、查询对应短时任务的剩余时间和取消短时任务状态等。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/PgzDgY-LRieg-mxDECBvRg/zh-cn_image_0000002654795247.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/PgzDgY-LRieg-mxDECBvRg/zh-cn_image_0000002654795247.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DE09DB9C0CD771C39D02F8DF627815C654E20EDFEC06AB9207BAE05A437B223 "点击放大")
 
 * “request suspend success ...”：表示短时任务申请成功。
 * “get remain time pkg ...”：表示对应短时任务的剩余时间。

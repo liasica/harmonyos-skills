@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: Swiper嵌套Scroll组件滑动问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > Swiper嵌套Scroll组件滑动问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:59+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:c7ab2ac69b76709b85631b3519458b0821cf088850a9acf07a2c997453e61cbd
 ---
@@ -73,4 +73,4 @@ export struct ScrollPage {
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/KKDvJnmFR5eIaSZlI34G4A/zh-cn_image_0000002797357197.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/KKDvJnmFR5eIaSZlI34G4A/zh-cn_image_0000002797357197.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4E7854F418704FBA486CCF2C708270661C1E4FF03B84AC58969A1C67999E039 "点击放大")

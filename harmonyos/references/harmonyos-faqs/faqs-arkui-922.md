@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-922
 title: List组件滚动优先级如何高于Scroll组件
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > List组件滚动优先级如何高于Scroll组件
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:13+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:2ba8e65bc484d332a87cf164e01ea62ef8cc75610bd1a4951be65ecfb5ae6e37
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:2ba8e65bc484d332a87cf164e01ea62ef8cc75610bd1a4951be65ecfb5a
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/52ePiPplSRCWKgmHH8khOg/zh-cn_image_0000002628400300.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/52ePiPplSRCWKgmHH8khOg/zh-cn_image_0000002628400300.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5AF1F8B9B7DDB9D23671CA951564179FE4D5F08CA2CA8DB7444CCF4B682644C "点击放大")
 
 ## 背景知识
 

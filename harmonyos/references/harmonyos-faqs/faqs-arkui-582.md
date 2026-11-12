@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-582
 title: 如何获取目标组件相对位置信息
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何获取目标组件相对位置信息
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:b88c0d3e0f0e0dc934e5941b68ab8b2ec2b3342198708222c2c06232eb3e6484
 ---
@@ -97,7 +97,7 @@ content_hash: sha256:b88c0d3e0f0e0dc934e5941b68ab8b2ec2b3342198708222c2c06232eb3
 
   示例实现效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/Y_Ve49jRQ1yD-J74lIiu4A/zh-cn_image_0000002628392494.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/Y_Ve49jRQ1yD-J74lIiu4A/zh-cn_image_0000002628392494.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=8ABA080B1468248C6ACF0FE1FB4B704340C051CB26C911255D34F6FBC0434DAF "点击放大")
 
 * 方案二：通过inspector.createComponentObserver绑定指定组件，返回对应的监听句柄，结合getRectangleById中返回参数获取目标组件相对父元素和相对于屏幕的信息。
 
@@ -164,7 +164,7 @@ content_hash: sha256:b88c0d3e0f0e0dc934e5941b68ab8b2ec2b3342198708222c2c06232eb3
 
   示例实现效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/NOwE41AQSU6wO_AFT5ciEg/zh-cn_image_0000002658911711.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/NOwE41AQSU6wO_AFT5ciEg/zh-cn_image_0000002658911711.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=729FA8F086F7BB3DFEA9C7BB7E3F93335E732C4672AE71A977F3517CEE6C5C32 "点击放大")
 
 ## 总结
 

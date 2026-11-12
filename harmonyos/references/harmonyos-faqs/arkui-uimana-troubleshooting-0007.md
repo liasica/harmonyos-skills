@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-tr
 title: ArkUI-Image组件图片闪烁问题定位
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 故障排查 > ArkUI-Image组件图片闪烁问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:33+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:800bcfad7276c65410016ae13ef8cf56d549150afac6187832f85779acf5724b
 ---
@@ -14,13 +14,13 @@ content_hash: sha256:800bcfad7276c65410016ae13ef8cf56d549150afac6187832f85779acf
 
 用户旋转设备时，当前页面指针转动闪烁，影响用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/jFqFxFSiQBqw8pb6qfyWFg/zh-cn_image_0000002795317937.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/jFqFxFSiQBqw8pb6qfyWFg/zh-cn_image_0000002795317937.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=08CD1FEA21D1081443B103F28A45DA8F5C7278A65D20FC3E31D1222E8F222F57 "点击放大")
 
 ### 定位过程
 
 1. 使用DevEco Testing查看问题组件，该组件为Image组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/GIGsGoL6QoaT0srFQitQvw/zh-cn_image_0000002766079180.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/GIGsGoL6QoaT0srFQitQvw/zh-cn_image_0000002766079180.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9C308FA68D08724BE8FD309532BAE645D4F2A1B1B377DFFFD84A7CA08C2309F "点击放大")
 2. 查看该Image组件的设置，该组件未使用animation属性对图片旋转设置动画效果，导致旋转设备时图片闪烁。
 
    ```ts
@@ -194,7 +194,7 @@ struct Index {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/XeDMIQZkRx2GqZlJZC-wpw/zh-cn_image_0000002766079538.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/XeDMIQZkRx2GqZlJZC-wpw/zh-cn_image_0000002766079538.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD7198F92C26C373F3F36280A5C4D613DD2C26AEF1303CE682BB1B41C909B8BD "点击放大")
 
 ## 页面上下滑动时，页面上的图片会闪跳
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1434
 title: Select组件默认加粗字体
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Select组件默认加粗字体
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:43+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:5b32753f2ceec44b6cf6fee2b21ef3bab8abf0aee54a07691ff8482198b97dd0
 ---
@@ -48,11 +48,11 @@ struct SelectExample {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/Fda95eAsS5SyToLDucwfbQ/zh-cn_image_0000002628603754.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/Fda95eAsS5SyToLDucwfbQ/zh-cn_image_0000002628603754.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=991809CF880CEBAFD5EBB458CEEE07272BD1BF97DDDA1FA1FC0BE4E1C08413C0 "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/HEf_KPxNStuDyhhIHdUC5g/zh-cn_image_0000002658843019.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/HEf_KPxNStuDyhhIHdUC5g/zh-cn_image_0000002658843019.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=7DAC59B65AE73316EF28E350015EC7354112644BB44C5F42082CEB6BD259C026 "点击放大")
 
 ## 背景知识
 

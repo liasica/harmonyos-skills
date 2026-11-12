@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1395
 title: 使用TextPicker实现DatePicker的效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 使用TextPicker实现DatePicker的效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:b42ea6ff9c857c3cbd0b215ff298a059a8804a96f804b95a8801d6ef186029d5
 ---
@@ -50,7 +50,7 @@ DatePicker可以用于在指定日期范围内选择日期，但是开发过程�
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/gMEnfxVOSLqHRYTEqoz9Ig/zh-cn_image_0000002628762570.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/gMEnfxVOSLqHRYTEqoz9Ig/zh-cn_image_0000002628762570.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3E2F548D575D953BFD77EBFF5008D453FE98837CBC38A1872CB917717E5EECD "点击放大")
 
 * 场景二解决方案：使用单列联动选择器实现年的选择，多列联动选择器实现年月或月日的选择。
 
@@ -135,7 +135,7 @@ DatePicker可以用于在指定日期范围内选择日期，但是开发过程�
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/ZsyqMrgOSGa3Q-SrFqGIsQ/zh-cn_image_0000002658961883.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/ZsyqMrgOSGa3Q-SrFqGIsQ/zh-cn_image_0000002658961883.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=D483E4C197D316C94AFB5A25451D2B0AF662F952C2A93C998A3CC90737FB92F9 "点击放大")
 
 * 场景三解决方案：当多列联动选择器触发[onChange](../harmonyos-references/ts-basic-components-textpicker.md#onchange18)时，判断如果年份发生改变，就把月份设置为之前的月。
 
@@ -210,4 +210,4 @@ DatePicker可以用于在指定日期范围内选择日期，但是开发过程�
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/bIr0P1rRRBuR8KpB1H4uDw/zh-cn_image_0000002628602672.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/bIr0P1rRRBuR8KpB1H4uDw/zh-cn_image_0000002628602672.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D638B25090D3E52BBAFCEDCA4EC0A612703C9499830DE4A85FC82387E0E51C9 "点击放大")

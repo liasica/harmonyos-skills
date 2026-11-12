@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pseudo-i18n-t
 title: 翻译伪本地化测试
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 本地化测试 > 伪本地化测试 > 翻译伪本地化测试
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:29+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-03-09
 content_hash: sha256:e1bc4802484f8fabfb77ba06d11a6e6e694d94191b1200843cf0b3459023a5b0
 ---
@@ -27,7 +27,7 @@ content_hash: sha256:e1bc4802484f8fabfb77ba06d11a6e6e694d94191b1200843cf0b345902
 
 ## 测试事项
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/qJoTekxmSfKAh1AgCy48HQ/zh-cn_image_0000002786359594.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/qJoTekxmSfKAh1AgCy48HQ/zh-cn_image_0000002786359594.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=1E5B616D21B7684D1512D0DA38C1D7C348A139A526D0CC3AB38D06DDE35979FE)
 
 1. 检查界面截断、变形或布局异常等问题。其中，界面截断可通过观察界面字符串是否以“]”正确结尾，看不到“]”说明界面字符串未完整显示。
 2. 检查硬编码问题。如果界面需要翻译的文字未处理为伪翻译格式，说明代码中存在对界面文字的硬编码。

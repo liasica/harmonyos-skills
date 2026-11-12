@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: DevEco Studio安装插件异常的原因有哪些
 breadcrumb: FAQ > DevEco Studio > 环境准备 > DevEco Studio安装插件异常的原因有哪些
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:49+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:9650dc2674aaf787712bb9991dacb66ca0d04f2e33cc34525992af988152204d
 ---
@@ -13,12 +13,12 @@ content_hash: sha256:9650dc2674aaf787712bb9991dacb66ca0d04f2e33cc34525992af98815
 * 仓库插件地址问题：
   + 场景一：在DevEco Studio插件市场，通过管理插件存储库添加JetBrains插件市场地址，连接失败。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/2Dpv6-4KRuCjnL_DMdR6rA/zh-cn_image_0000002628405438.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/2Dpv6-4KRuCjnL_DMdR6rA/zh-cn_image_0000002628405438.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E12E00CB189D6DFB5B38CD0AE7630AD03A3EA753165473CCE3ABDBD0E84F3E9 "点击放大")
 * 账号登录问题：
   + 场景二：正常安装插件后，在DevEco Studio找不到插件图标，无法使用。
   + 场景三：DevEco Studio插件市场为空，无法安装插件。问题现象：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/5aw2PlbLRs6A7zchHqoKvg/zh-cn_image_0000002658924645.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/5aw2PlbLRs6A7zchHqoKvg/zh-cn_image_0000002658924645.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8C9F686861DBAAB5B22F44B0EB7A27BE87255A42AC553E94A81B42716A58EE2 "点击放大")
 * 兼容性问题：
   + 场景四：从JetBrains插件市场下载插件，通过本地导入插件包的方式安装报错：
 

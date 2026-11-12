@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: Mac安装DevEco-Studio后启动报错“NSInternalInconsistencyException”如何解决
 breadcrumb: FAQ > DevEco Studio > 环境准备 > Mac安装DevEco-Studio后启动报错“NSInternalInconsistencyException”如何解决
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:48+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:1e6101867cd56f429436b0ce5b29019b2e865df8bf34c5940a68ab7bd1985fae
 ---
@@ -12,11 +12,11 @@ content_hash: sha256:1e6101867cd56f429436b0ce5b29019b2e865df8bf34c5940a68ab7bd19
 
 Mac环境下，安装DevEco Studio后启动报错：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/WpSiU82MQTW68uZMaIVbWA/zh-cn_image_0000002658924269.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/WpSiU82MQTW68uZMaIVbWA/zh-cn_image_0000002658924269.png?HW-CC-KV=V1&HW-CC-Date=20261112T233211Z&HW-CC-Expire=31536000000&HW-CC-Sign=4828E8917B3F8B8D130A776CC002BB718E412C488F55EB0B02201EA568303852 "点击放大")
 
 报错信息如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/XY1P2FWYQpaGUeagPQiTBg/zh-cn_image_0000002658804323.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/XY1P2FWYQpaGUeagPQiTBg/zh-cn_image_0000002658804323.png?HW-CC-KV=V1&HW-CC-Date=20261112T233211Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0761D792FA6229D724C2178101E4F488EB0CEEB926756291085A2DEFD0A8357 "点击放大")
 
 ## 背景知识
 
@@ -28,7 +28,7 @@ Mac环境下安装DevEco Studio[操作指导](../harmonyos-guides/ide-software-i
 
 1. 找到DevEco Studio安装目录，用命令行sh bin/inspect.sh启动DevEco Studio，分析终端打印的错误日志。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/tOnlTHQFQqym0wQWMantiQ/zh-cn_image_0000002628564966.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/tOnlTHQFQqym0wQWMantiQ/zh-cn_image_0000002628564966.png?HW-CC-KV=V1&HW-CC-Date=20261112T233211Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2869B0C62422C7C97C05B650E5B4CAC5FD280FCA3EA02D2AFD77F3177DBD8CC "点击放大")
 2. 根据报错内容DEVECOSTUDIO\_VM\_OPTIONS = /Users/{USER\_NAME}/Downloads/jihuo.live/jihuo-tool/vmoptions/devecostudio.vmoptions，可以判断启动脚本被修改了。
 3. 删除启动脚本，启动脚本默认路径为“/Users/{USER\_NAME}/Library/LaunchAgents/jetbrains.vmoptions.plist”，删除后重启Mac即可。
 

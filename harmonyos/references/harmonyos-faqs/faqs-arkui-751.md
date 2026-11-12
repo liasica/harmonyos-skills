@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-751
 title: List嵌套Canvas滑动抖动问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > List嵌套Canvas滑动抖动问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:44+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:fa6ba7475d981df30b5caa16d23b7b551f911995da6a2d4ca01d5d13b5708c37
 ---
@@ -92,11 +92,11 @@ export struct CanvasInListComponent {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/g53-OyydTjqk42lcE978rg/zh-cn_image_0000002628555364.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/g53-OyydTjqk42lcE978rg/zh-cn_image_0000002628555364.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC8CFB4F3DE255A62F23295B78487A8503F7DEF5F8AA42411362838278B39951 "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/fbC81tbwTJGyZqS6BYhTGQ/zh-cn_image_0000002628395470.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/fbC81tbwTJGyZqS6BYhTGQ/zh-cn_image_0000002628395470.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=A2A51B890BB2FC80693B778432219E79DF4A4BE668A5528B387C995BAAAECDD3 "点击放大")
 
 ## 背景知识
 
@@ -108,7 +108,7 @@ export struct CanvasInListComponent {
 
 1. 通过抓取性能Trace图，观察到在橙色标记的时间段内，存在多个方法执行耗时超出预期的情况。其中，Canvas的FireReadyEvent方法出现在关键路径上，表明当前帧的绘制任务未能按时完成，导致渲染延迟，从而引发界面卡顿。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/Ah3sA60uS5qpAsUd2CqjgQ/zh-cn_image_0000002658914687.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/Ah3sA60uS5qpAsUd2CqjgQ/zh-cn_image_0000002658914687.png?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=4325B2BD209798C30D3567827BFDD15FAC4BB75C1EC271747FCC9CA9C3C2AB69)
 2. 分析onReady中绘制方法：排查到使用了OffscreenCanvasRenderingContext2D方法，根据背景知识了解到离屏绘制的绘制速度较慢，尝试修改为在屏绘制，抖动消失。
 
 ## 分析结论

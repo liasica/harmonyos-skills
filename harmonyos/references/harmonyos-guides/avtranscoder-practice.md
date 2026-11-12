@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avtranscoder-
 title: 创建异步线程执行AVTranscoder视频转码(ArkTS)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 视频转码 > 创建异步线程执行AVTranscoder视频转码(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-20
 content_hash: sha256:23c60706d26bc65843e3645c013fa04acb01b15761af8836e1520c4381d47dba
 ---
@@ -55,13 +55,13 @@ content_hash: sha256:23c60706d26bc65843e3645c013fa04acb01b15761af8836e1520c4381d
 
   计算过程：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/L0MvyvqUSZmbikIQS4y3iQ/zh-cn_image_0000002815559365.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/L0MvyvqUSZmbikIQS4y3iQ/zh-cn_image_0000002815559365.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=24411BE985FD5030F7A2ED6CDBF48F2B303876CCA3E0F58879BB96F01CA82314)
 
   分辨率和帧率的系数由以下经验公式计算可得。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/n_eQNC1GR3mdEcoaZDUV6w/zh-cn_image_0000002815399449.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/n_eQNC1GR3mdEcoaZDUV6w/zh-cn_image_0000002815399449.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=122E31C139BB7C42F6E148B5B3AF62C0EECFDFFA0C2A39F2B13C01754EBD058A)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/sfvtQWpkTbKNTbW-RBSxSg/zh-cn_image_0000002786519874.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/sfvtQWpkTbKNTbW-RBSxSg/zh-cn_image_0000002786519874.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=79D93DC6F58665768B5FA29A3D602E0FF239C0713B6FC78A05FF034634B32685)
 
   上述计算帧率的公式y=clip(0.5, 2, x)表示：如果x∈[0.5, 2.0]，取y=x；如果x＜0.5，取y=0.5；如果x＞2.0，取y=2.0。
 * **码率计算**

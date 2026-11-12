@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-835
 title: 缩略图变成完整图时，显示变形
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 缩略图变成完整图时，显示变形
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:cf4b718b562dd5223f075b39fe770d0656451ed2f1098a9593223aa499592528
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:cf4b718b562dd5223f075b39fe770d0656451ed2f1098a9593223aa4995
 
 点击缩略图显示完整图片时，图片显示变形。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/LrrdBukHR-aCODZ2oqiq8A/zh-cn_image_0000002628398446.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/LrrdBukHR-aCODZ2oqiq8A/zh-cn_image_0000002628398446.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D0AF6FD927413886D87CAC172E7E7D594BE47BF4CAA2FDFE05FCE9F30DF9537 "点击放大")
 
 ## 背景知识
 
@@ -24,7 +24,7 @@ content_hash: sha256:cf4b718b562dd5223f075b39fe770d0656451ed2f1098a9593223aa4995
 
 1. 使用DevEco Testing查看问题组件，问题组件为Image组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/RyQdUuLdS-q4VaxYN5Cquw/zh-cn_image_0000002658797725.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/RyQdUuLdS-q4VaxYN5Cquw/zh-cn_image_0000002658797725.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=86B4EBC33DA84D35ADAA79C737753C7659A0A1D45394DA717AE4EC94E97BDA02 "点击放大")
 2. 查看该Image组件的设置，显示完整图片时的组件尺寸设置不合理，高度为屏幕的高度而不是等比例缩放下完整图片的高度。
 
    ```screen
@@ -255,4 +255,4 @@ src/main/module.json5：
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/hvbMWYFnSLeuA_hNNnQcmg/zh-cn_image_0000002628558360.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/hvbMWYFnSLeuA_hNNnQcmg/zh-cn_image_0000002628558360.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=FAA11E599624A44C719E38BC6ECBA05672330DBFC6958BE8CB98C46485A275B3 "点击放大")

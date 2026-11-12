@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-distribute
 title: 跨设备剪贴板
 breadcrumb: 最佳实践 > 技术创新 > 全场景 > 多端协同 > 跨设备剪贴板
 category: best-practices
-scraped_at: 2026-11-10T10:42:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:e5cb8ecfd82d8f87e880f27f5fe102918c3549542bd28112d41b42c0b6acea95
 ---
@@ -14,11 +14,11 @@ content_hash: sha256:e5cb8ecfd82d8f87e880f27f5fe102918c3549542bd28112d41b42c0b6a
 
 当开发者正在开发一款浏览器类应用，或是备忘录、笔记、邮件等富文本编辑类应用时，均可接入跨设备剪贴板，提升用户体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/Drc72CI3Tku5khId11mv6w/zh-cn_image_0000002757092113.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/Drc72CI3Tku5khId11mv6w/zh-cn_image_0000002757092113.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=A241392C3734CD38388F652CA9625273B384D38518D486A27DCA6879B15166B5 "点击放大")
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/qnoiLSXRRoCWbYx155Z4aw/zh-cn_image_0000002563685436.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/qnoiLSXRRoCWbYx155Z4aw/zh-cn_image_0000002563685436.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5FDF922FDEB7C4175D6022BEA6C8E69738D015B368C22FD9A9FD9D39A29FFA7 "点击放大")
 
 1. 用户在设备A复制数据。
 

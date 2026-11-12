@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1451
 title: 如何使用clip接口截断超出组件区域的内容
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何使用clip接口截断超出组件区域的内容
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:8dec206de4b361e218eac96ab01faa8b72e757471b6308e30df94f9cd467cf2f
 ---
@@ -88,11 +88,11 @@ struct ClipTheArea {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/CIUQEx0YSuqKxepYMY_O0Q/zh-cn_image_0000002628764164.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/CIUQEx0YSuqKxepYMY_O0Q/zh-cn_image_0000002628764164.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=84AF453428A23D74E20EEC2E6476CC1A5129087A4FE7178E2FD34A247CB51C69 "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/WDdjaHP4SUa51_2BglPOJQ/zh-cn_image_0000002658963483.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/WDdjaHP4SUa51_2BglPOJQ/zh-cn_image_0000002658963483.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=02F9F71709607C06C5ACDF26D3B9D0FC243FE4AD5440C9E274448575B69A365B "点击放大")
 
 ## 背景知识
 

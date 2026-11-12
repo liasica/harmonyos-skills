@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkweb-kit-trou
 title: ArkWeb视频横屏全屏播放问题定位
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 故障排查 > ArkWeb视频横屏全屏播放问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:04+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:6ff2f10b7aab37d826d10cdb63b407402147912b25b4075f765fea34af46b9c1
 ---
@@ -12,13 +12,13 @@ content_hash: sha256:6ff2f10b7aab37d826d10cdb63b407402147912b25b4075f765fea34af4
 
 H5页面视频点击全屏后，视频页面只能保持竖屏全屏显示，未能跟随屏幕横竖屏变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/ifNasVJkTBy2Ms4eGx0Gjg/zh-cn_image_0000002768114830.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/ifNasVJkTBy2Ms4eGx0Gjg/zh-cn_image_0000002768114830.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A868D39B64CD0DE6FEC55B2ABFD31557E809DF53DAEDB157ED31F8D312A7D5E "点击放大")
 
 ## 定位过程
 
 1. 通过DevEco Testing查看视频页面所在组件，该组件为Web组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/wtmCFRLlTZiOu9vc7oxxWA/zh-cn_image_0000002797434787.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/wtmCFRLlTZiOu9vc7oxxWA/zh-cn_image_0000002797434787.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=BFC9CD549C0306A9BFEE336B8127312DCAD87E9B3DBAE65E497A6278DD671A4F "点击放大")
 2. 全局搜索setPreferredOrientation方法，查看应用是否设置了横竖屏切换。
 
    ```ts
@@ -215,4 +215,4 @@ src/main/resources/rawfile：
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/1tOjCw83RIC8uOp1gZ6YOQ/zh-cn_image_0000002797394765.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/1tOjCw83RIC8uOp1gZ6YOQ/zh-cn_image_0000002797394765.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B2565E9720D4009F086E6012A370DFE903057ED085EEFAEE613C40B4DE2EF4D "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-software-
 title: 下载与安装DevEco Studio
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 下载与安装DevEco Studio
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:50+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:c0b4a56c2c4570d77092c9abf3d7e25120d47fe1b26da39d55d0af4b1fed28e7
 ---
@@ -29,13 +29,13 @@ DevEco Studio支持Windows和macOS系统，下面将针对两种操作系统的�
 
 1. 下载完成后，双击下载的“deveco-studio-xxxx.exe”，进入DevEco Studio安装向导。在如下界面选择安装路径，默认安装于C:\Program Files路径下，也可以单击**浏览（B）...**指定其他安装路径，然后单击**下一步**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/ns-LXo1QQ3u9A-4lO-VHdw/zh-cn_image_0000002779406846.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/ns-LXo1QQ3u9A-4lO-VHdw/zh-cn_image_0000002779406846.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=94431FA6625FD70A016E0F689EF34C33FFE3565E0ABED2A202B9E6ADD1EF7831)
 2. 在如下安装选项界面勾选**DevEco Studio**后，单击**下一步**，直至安装完成。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/4C4xsoduS626Dh-cr7JnbQ/zh-cn_image_0000002779406844.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/4C4xsoduS626Dh-cr7JnbQ/zh-cn_image_0000002779406844.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=DBA2E9D610ADA00FA3A8C4FABD262347E82684EDBBE867F78C709FF2AA94854B)
 3. 单击**Finish**完成安装。安装完成后，如有需要请根据[配置代理](ide-environment-config.md)，检查和配置开发环境。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/ZDBEv-FwTP2abmXbalRqOQ/zh-cn_image_0000002808766407.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/ZDBEv-FwTP2abmXbalRqOQ/zh-cn_image_0000002808766407.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=445938FF2A9763BED7BFF59C1298292E51D618ACAA51BC2DFBA9AE701BB32D55)
 
    **说明** 
 
@@ -58,7 +58,7 @@ DevEco Studio支持Windows和macOS系统，下面将针对两种操作系统的�
 
 1. 在安装界面中，将“**DevEco-Studio.app**”拖拽到“**Applications**”中，等待安装完成。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/omnBFPd_STOyWVpeGMBgpw/zh-cn_image_0000002779566822.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/omnBFPd_STOyWVpeGMBgpw/zh-cn_image_0000002779566822.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F123662EEDD80845208DBD5C0E84DE933249147CF0302EF2639C8093A4F24A2 "点击放大")
 2. 安装完成后，如有需要请根据[配置代理](ide-environment-config.md)，检查和配置开发环境。
 
    **说明** 
@@ -70,7 +70,7 @@ DevEco Studio支持Windows和macOS系统，下面将针对两种操作系统的�
 
 DevEco Studio提供开发环境诊断功能，帮助您检查开发环境是否完备。您可以在欢迎页面单击**Diagnose**进行诊断。如果您已经打开了工程开发界面，也可以在菜单栏单击**Help > Diagnostic Tools > Diagnose Development Environment**进行诊断。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/uFroTV0sRqeIYqs14Ia2lA/zh-cn_image_0000002779566826.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/uFroTV0sRqeIYqs14Ia2lA/zh-cn_image_0000002779566826.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=8212D6EB18BCF95294B5A53ADD546B5FDEC0EDC43F76825F7059C70E013F4A4A)
 
 DevEco Studio开发环境诊断项包括电脑的配置、网络的连通情况、依赖的工具是否安装等。如果检测结果为未通过，请根据检查项的描述和修复建议进行处理。
 
@@ -84,8 +84,8 @@ DevEco Studio开发环境诊断项包括电脑的配置、网络的连通情况�
 
   从DevEco Studio 6.1.0 Beta1版本开始，语言选择时**Chinese**变更为**Chinese(Simplified)**简体中文。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/m7uclG8AQmy3_V6YpZ-7Sw/zh-cn_image_0000002808886483.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/m7uclG8AQmy3_V6YpZ-7Sw/zh-cn_image_0000002808886483.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=C146961440968988D231B4D1772067F21E61764FA7EB86E12540964CECEF818F)
 
 * 若使用DevEco Studio 6.0.0 Beta1以下版本，请在菜单栏进入**File > Settings** （macOS为**DevEco Studio > Preferences****/Settings** ）**> Plugins**，选择**Installed**页签，在搜索框输入“Chinese”，搜索结果里将出现**Chinese(Simplified)**，在右侧单击**Enable**，点击**OK**，在弹窗中单击**Restart**，重启DevEco Studio后即可生效。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/p46F9luZTHaWPmzU8QW23Q/zh-cn_image_0000002779566820.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/p46F9luZTHaWPmzU8QW23Q/zh-cn_image_0000002779566820.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=396E3FCDFB4F07AC9A605B00F3EE7FD6E5153DA9B2D88D94DF5F24755CD28342)

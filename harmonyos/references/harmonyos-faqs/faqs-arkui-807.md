@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-807
 title: 如何实现页面上滑tabBar和顶部标题的悬停以及属性动画效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现页面上滑tabBar和顶部标题的悬停以及属性动画效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:38+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:f0cf61d1e8a25cb58b439b65c154fa3d53e2105e8f640966f271eff98470b227
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:f0cf61d1e8a25cb58b439b65c154fa3d53e2105e8f640966f271eff9847
 
 如果页面顶部还有一个标题栏（即下图中“首页”），现在要实现tab内容向上滚动时tabBar悬停到标题栏下方（即下图中“同城”，“推荐”，“活动”，“玩机”这一行），且可以实现标题栏在滚动过程中样式变化（如下图背景变化），该如何实现？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/KSUoNuYfTyOxIWc4YHYBuQ/zh-cn_image_0000002628557796.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/lTAnostRTliHQ7qilPHp2g/zh-cn_image_0000002658917113.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/KSUoNuYfTyOxIWc4YHYBuQ/zh-cn_image_0000002628557796.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=11DEBB3405A40651A5FEE1993C9F67FF02B97F82C22484715B36235499E4987B "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/lTAnostRTliHQ7qilPHp2g/zh-cn_image_0000002658917113.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E7DE2A9B97908CBDAD470BB1FA5A34AFED81238B4640754EF2845D5CCAC9BF4 "点击放大")
 
 ## 背景知识
 
@@ -166,7 +166,7 @@ content_hash: sha256:f0cf61d1e8a25cb58b439b65c154fa3d53e2105e8f640966f271eff9847
 
    效果如图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/U0VT9QIjRjmJcfHUT5boRg/zh-cn_image_0000002628397892.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/U0VT9QIjRjmJcfHUT5boRg/zh-cn_image_0000002628397892.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=EC4C189F62BFCE4D1CFFD72B32F6E0F53B19E4061C7DCD3A769DEFD9958382CF "点击放大")
 
 ## 总结
 

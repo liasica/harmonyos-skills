@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1006
 title: 如何实现页面跳转弹窗不关闭
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现页面跳转弹窗不关闭
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:4d44b1fbf06764c250749679a134dde18e951559d6c37ad77f41aca2ffcaf25e
 ---
@@ -110,7 +110,7 @@ export struct PageOne {
 
 效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/ySF9XApaTMiFlpxBjcVxqA/zh-cn_image_0000002658804041.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/ySF9XApaTMiFlpxBjcVxqA/zh-cn_image_0000002658804041.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=5BC752D63EAE358120704A680106F1C6DF507E379DA278285E23F52D30F46688 "点击放大")
 
 **方案二**：使用Navigation子页面实现跳转，整个Navigation本质上是同一个Page，因此跳转时弹窗不会关闭。
 
@@ -189,4 +189,4 @@ struct CustomDialog2 {
 
 效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/Uqf53_rRRB-Ua42KTmKKEw/zh-cn_image_0000002628404772.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/Uqf53_rRRB-Ua42KTmKKEw/zh-cn_image_0000002628404772.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=DFB29BCA80C4E8722F195F657A9230B20B0D1C405CE51F015021295353D8EC60 "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkweb-kit-trou
 title: ArkWeb页面跳转问题定位
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 故障排查 > ArkWeb页面跳转问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:04+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:b0996b60d1c225b1ae4242c04c1bcba2b32db18273215a1cdc9ce854fe57d682
 ---
@@ -18,19 +18,19 @@ content_hash: sha256:b0996b60d1c225b1ae4242c04c1bcba2b32db18273215a1cdc9ce854fe5
 
 1. 使用DevEco Profiler ArkWeb模板抓取应用内各页面相互跳转的Trace，搜索关键字H:NWebImpl | CreateNWeb无结果，说明应用内各页面跳转时并未创建新的Web。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/4XrC9bcqT3qu6ar_IevCuA/zh-cn_image_0000002768118980.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/4XrC9bcqT3qu6ar_IevCuA/zh-cn_image_0000002768118980.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=660CF46C449E0E429E4F5D0B99016FEF741B6261E8EEFDC1180647543D181B8F "点击放大")
 2. 使用ArkUI Inspector发现应用从首页开始即为Web页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/vbHytbI7REG07oiSxtTS9A/zh-cn_image_0000002768118982.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/vbHytbI7REG07oiSxtTS9A/zh-cn_image_0000002768118982.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=88357B6B7772B8CBCCE23B39D1B8D9E2C22E6CB776F282FB87679F7A142F8D0E "点击放大")
 
    使用DevEco Profiler Launch模板抓取应用启动过程Trace，搜索关键字H:NWebImpl | CreateNWeb，可以找到应用在加载主页面后创建了Web组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/O3hL4onwTI-ZBO52FgQ47A/zh-cn_image_0000002797438939.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/O3hL4onwTI-ZBO52FgQ47A/zh-cn_image_0000002797438939.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=35969B54A979B1AF368C035F01DC4444FEED816E638225E648540E87D0A93AD2 "点击放大")
 
    结合步骤1可以得出应用在启动时创建此Web，后续应用内的各页面跳转均在此Web中完成。
 3. 使用DevTools分析网页内各页面跳转的性能。在“性能”页签下的“网络”模块可以看到存在下载图片资源耗时1秒以上以及执行脚本耗时1.3s以上的情况。是子资源加载、脚本运行耗时导致的页面加载耗时长。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/yNS_3J_YQRGzPHtpJTKg9Q/zh-cn_image_0000002768118984.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/yNS_3J_YQRGzPHtpJTKg9Q/zh-cn_image_0000002768118984.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=D16CDBE6ECAE08E1C84183BD9F44835132685944B13ABCE07957575FF174B582 "点击放大")
 
 ### 分析结论
 
@@ -46,7 +46,7 @@ content_hash: sha256:b0996b60d1c225b1ae4242c04c1bcba2b32db18273215a1cdc9ce854fe5
 
 第一次进入Web页面之后，再次进入该页面会重新加载，造成闪烁现象。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/Uz2yoQ-PSJGeWEvpjHKXvw/zh-cn_image_0000002797438969.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/Uz2yoQ-PSJGeWEvpjHKXvw/zh-cn_image_0000002797438969.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=77169E8D116E45BF89695E77AD25152777E357D4F51C920DA47146732A68521C "点击放大")
 
 ### 定位过程
 
@@ -253,7 +253,7 @@ src/main/resources/rawfile/text3.html：
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/uEZ1_9ScTzei44ys97rivg/zh-cn_image_0000002797439231.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/uEZ1_9ScTzei44ys97rivg/zh-cn_image_0000002797439231.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C9D857DFBA1C68F712A194976EA091F9A8D6FDC0E2039F993783B12520595AA "点击放大")
 
 ## 进入Web页面后，点击返回出现空白页面，再次返回正常
 

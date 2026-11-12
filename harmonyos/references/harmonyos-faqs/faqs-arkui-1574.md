@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1574
 title: 如何通过计算和偏移实现消息气泡的效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何通过计算和偏移实现消息气泡的效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:24+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:73f6d79bb5e99d9193294551244865983185a13ea39f190e32a8699cd5a3023e
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:73f6d79bb5e99d9193294551244865983185a13ea39f190e32a8699cd5a
 
 如何通过组件的搭配使用，实现类似如下消息气泡效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/efHJLbBCS-6P8Rcbwrvshw/zh-cn_image_0000002631323906.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/efHJLbBCS-6P8Rcbwrvshw/zh-cn_image_0000002631323906.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=D1B2E2D99054C5F6B579E0A7D106BCF24964E53129494FC0A0483FA15EB474B0 "点击放大")
 
 ## 背景知识
 
@@ -83,4 +83,4 @@ struct MeasurePx2vpDemo {
 
 效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/aB3UZbZ0TBmXNMRW298Ipg/zh-cn_image_0000002631324324.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/aB3UZbZ0TBmXNMRW298Ipg/zh-cn_image_0000002631324324.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=5364EAF1C3A024CA232636193EDB0EC6DE19909AE8F65C9210112E85410E8887 "点击放大")

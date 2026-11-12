@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-intents-ki
 title: 小艺开放平台意图注册审核“APP名称”与应用名称不一致如何解决
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 意图框架服务（Intents Kit） > 小艺开放平台意图注册审核“APP名称”与应用名称不一致如何解决
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:0d3c85b3447b49901114e6487f3fbe135112f1ff2f30c17331e89e2b0a6e76b0
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:0d3c85b3447b49901114e6487f3fbe135112f1ff2f30c17331e89e2b0a6
 
 开发者在小艺开放平台进行意图注册配置并提交审核，被告知意图注册审核后台识别的“APP名称”与该应用的实际名称不一致，如何修改？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/9aXsq-XZTLmtbiwGcUCvRg/zh-cn_image_0000002658914055.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/9aXsq-XZTLmtbiwGcUCvRg/zh-cn_image_0000002658914055.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=5F85C3B43727DF36C72A31A5976FE30C9DEB1815EBA620C8CFAB1F735386B562 "点击放大")
 
 ## 背景知识
 
@@ -25,9 +25,9 @@ content_hash: sha256:0d3c85b3447b49901114e6487f3fbe135112f1ff2f30c17331e89e2b0a6
 
    检查代码工程“AppScope/app.json5”文件中“app”内“label”字段对应的值（默认引用的为“AppScope/Resources/base/element/string.json”中name为“app\_name”的value值），是否与应用名称一致，见下图字段。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/gZFggMsBSeStQDPvzXJ_DA/zh-cn_image_0000002658794103.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/gZFggMsBSeStQDPvzXJ_DA/zh-cn_image_0000002658794103.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=308E347BC688AB640AB88AEB4987B91C01037CEE01D2CC9ECC18F36A91B98F6D "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/cXz2LrF-Rbu5apNYtlN69g/zh-cn_image_0000002628394840.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/cXz2LrF-Rbu5apNYtlN69g/zh-cn_image_0000002628394840.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=04CCD31364C6D6B06238B2CA0F274FCAECA9FC0D797C0DD09BB73B6C40883732 "点击放大")
 
    若不一致，则参考修改建议的步骤一和步骤二进行修改；若一致，执行下一步检查。
 2. 检查意图注册提交时间：

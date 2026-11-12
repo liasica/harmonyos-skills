@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-asyn
 title: 使用Node-API接口进行异步任务开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景 > 使用Node-API接口进行异步任务开发
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:48+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:1802f2bd948b6a8f51476b7663e6a82fa3f39ae3fcb4e9a258a7113f10aca6aa
 ---
@@ -21,11 +21,11 @@ napi\_queue\_async\_work接口使用uv\_queue\_work能力，并管理回调中na
 
 异步调用支持callback和Promise两种方式，选择哪种方式由开发者决定。以下是两种方式的示例代码：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/tw6aaJOkS8e12I9UvWTZEw/zh-cn_image_0000002815400307.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/tw6aaJOkS8e12I9UvWTZEw/zh-cn_image_0000002815400307.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=B1459833B3D2AF08C04B181C90E936E879FD9EB7065596FE31A175E3A1800C98)
 
 ## 使用Promise方式示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/r3Z35Q1CR2yIgtrmXIHBTw/zh-cn_image_0000002786520732.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/r3Z35Q1CR2yIgtrmXIHBTw/zh-cn_image_0000002786520732.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=C16D885CF2B6A66CB0DB7B4BDE4D3646DB162E971E3D0793D42239EB4CC2FAB2)
 
 1. CMakeLists.txt配置
 
@@ -156,7 +156,7 @@ napi\_queue\_async\_work接口使用uv\_queue\_work能力，并管理回调中na
 
 ## 使用callback方式示例
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/ikYBIgQEQCeCpPg7sqPG1A/zh-cn_image_0000002786360804.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/ikYBIgQEQCeCpPg7sqPG1A/zh-cn_image_0000002786360804.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2F56DAAF092556182D751B11C0DBA07C2F5A75DF62D5A3CFBB54A6C7C414D02)
 
 1. 使用napi\_create\_async\_work创建异步任务，并使用napi\_queue\_async\_work将异步任务加入队列，等待执行。
 

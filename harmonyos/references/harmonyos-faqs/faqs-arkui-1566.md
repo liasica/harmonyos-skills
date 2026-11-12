@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1566
 title: 如何解决平板中多次点击按钮弹出多个弹窗导致弹窗区域背景色加深的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 如何解决平板中多次点击按钮弹出多个弹窗导致弹窗区域背景色加深的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:29+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:5035063c47ec8c03ce23a0e9de063375031f8ed22fccd21562cda8e89b143a05
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:5035063c47ec8c03ce23a0e9de063375031f8ed22fccd21562cda8e89b1
 
 平板应用在横屏状态下，可以多次点击按钮弹出多个弹窗，弹窗区域的背景色跟随点击次数增加而加深。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/fXn6BIISR_uDyO3wH2W4CA/zh-cn_image_0000002658969075.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/fXn6BIISR_uDyO3wH2W4CA/zh-cn_image_0000002658969075.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=37968D31EB85B04BEAC5CDBCDEC59EE173A6631307CE862651E4C35C11E72D17 "点击放大")
 
 ## 背景知识
 
@@ -76,7 +76,7 @@ this.windowStage?.createSubWindow(`subWindowDialog${Date.now()}`).then((windowCl
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/gIY58phjQEq7a5u7__wJkA/zh-cn_image_0000002658849125.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/gIY58phjQEq7a5u7__wJkA/zh-cn_image_0000002658849125.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=90333E623AD0D118DC02705D37E17938512DD076CF051F47E57DC5E883F6BF5E "点击放大")
 * 推荐使用openCustomDialog弹出框替代。并使用模态窗覆盖旧页面，遮挡住创建弹窗的组件，防止多次点击，部分代码实现如下。
 
   ```ts
@@ -110,7 +110,7 @@ this.windowStage?.createSubWindow(`subWindowDialog${Date.now()}`).then((windowCl
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/RHtTvERnQ_-ATjH-ML1xuA/zh-cn_image_0000002628609862.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/RHtTvERnQ_-ATjH-ML1xuA/zh-cn_image_0000002628609862.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7D9050400A76511D0B6BD315EC2A86683CF4309082F3E5EDA2CA22B89FA1D9A "点击放大")
 
 完整代码如下：
 

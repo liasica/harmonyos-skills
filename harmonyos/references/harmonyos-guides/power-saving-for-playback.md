@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/power-saving-
 title: 低功耗音频播放
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频播放 > 低功耗音频播放
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:59+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:df34c0c0a7f10516fefc05f2c1cacae99d5d0c50099d5916fc7a75892895f5f2
 ---
@@ -22,13 +22,13 @@ content_hash: sha256:df34c0c0a7f10516fefc05f2c1cacae99d5d0c50099d5916fc7a7589289
 
 **数据周期示意图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/euLGFkB5Rwyt-OKeIHL1iQ/zh-cn_image_0000002786519772.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/euLGFkB5Rwyt-OKeIHL1iQ/zh-cn_image_0000002786519772.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF303D31B842A8934D7F7AB2CC18602CCA7D2E5DC22547DEBF67A02104715B1E)
 
 在数据周期内，快速请求数据写满缓存时，进入休眠状态。当缓存数据消费完后，会触发下一个周期。
 
 **播放进度示意图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/cq6YVCW0Qb6HZJAHn4Geeg/zh-cn_image_0000002786359844.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/cq6YVCW0Qb6HZJAHn4Geeg/zh-cn_image_0000002786359844.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=CFA6EBBA3BB1019CB336F46242D86EAC432A36E4E857E87B7B6443FEC0F5D0E0)
 
 在数据周期内，快速请求数据写满缓存时，播放进度按实际播放量计算。当缓存数据消费完（即播放进度到达写入数据量）后，会触发下一个周期。
 
@@ -51,4 +51,4 @@ content_hash: sha256:df34c0c0a7f10516fefc05f2c1cacae99d5d0c50099d5916fc7a7589289
    * 获取时间戳接口调用频率建议大于200ms一次，以免影响系统性能。
    * 应用程序调用接口[flush](../harmonyos-references/arkts-apis-audio-audiorenderer.md#flush11)或[OH\_AudioRenderer\_Flush()](../harmonyos-references/capi-native-audiorenderer-h.md#oh_audiorenderer_flush)后，播放的数据量会重置为0。
    * 播放数据量均会小于写入数据量。由于系统帧长与时延机制，已播放的数据量不等于写入数据量。
-   * 写完数据后获取时间戳，如果2个周期内时间戳不变，即为播完；或者根据设置的倍速推算剩余播放时长，超过相应时长，即为播完。（如：记总写入数据量p1，写完后获取时间戳p2，设置倍速α且α>0，音频采样率fs且fs>0，剩余可播时长t。公式：![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/KrJ8CiWlRIaRxJr-VUAXSA/zh-cn_image_0000002815559265.png)）
+   * 写完数据后获取时间戳，如果2个周期内时间戳不变，即为播完；或者根据设置的倍速推算剩余播放时长，超过相应时长，即为播完。（如：记总写入数据量p1，写完后获取时间戳p2，设置倍速α且α>0，音频采样率fs且fs>0，剩余可播时长t。公式：![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/KrJ8CiWlRIaRxJr-VUAXSA/zh-cn_image_0000002815559265.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE0B99A53D87E9E4DE8701FF984347151B6EF8003FFB917222FD13CBDE265B1D)）

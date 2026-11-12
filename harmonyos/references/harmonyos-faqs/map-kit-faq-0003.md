@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/map-kit-faq-000
 title: 地图显示样式配置常见问题
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 常见问题 > 地图显示样式配置常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:37+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:3108801aecff5809d08934a4884d9ccd043aa52ac5f85423b63da0df55264001
 ---
 
 **Q：如何实现在地图上去掉地铁路线的显示？**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/Qk8jwVcrSFexGRndccWBjA/zh-cn_image_0000002773149730.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/Qk8jwVcrSFexGRndccWBjA/zh-cn_image_0000002773149730.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=B078E102DA51400E23B86A04B0AA98E3C6337B06DB30EA00A1FE129EB1095D16 "点击放大")
 
 **A**：地铁路线使用transit.metro-line属性控制，配置如下：
 
@@ -88,7 +88,7 @@ struct CustomMapStyleDemo {
 
 运行效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/968jH_x8RYO_LhlFFTeo5w/zh-cn_image_0000002802350339.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/968jH_x8RYO_LhlFFTeo5w/zh-cn_image_0000002802350339.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE748DF98BC2F3D25CFF2B81980067B4B4B01019BE1F4196371532C980FFC3CD "点击放大")
 
 **Q：地图缩放到全国的场景下，如何实现不显示各省份名称？**
 
@@ -147,4 +147,4 @@ struct Index {
 
 实现效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/uA_jqFZxRE6y07xCiwY5Cg/zh-cn_image_0000002772990922.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/uA_jqFZxRE6y07xCiwY5Cg/zh-cn_image_0000002772990922.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B1BC66599FE4C74928462C48D1708401268E5B76D5EC0C8F234B490B710757B "点击放大")

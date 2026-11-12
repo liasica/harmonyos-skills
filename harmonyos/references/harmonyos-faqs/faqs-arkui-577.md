@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-577
 title: 如何实现通过滑动操作让组件消失和重现
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现通过滑动操作让组件消失和重现
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:c61babf5a16f32ea83d2be6e96c2becdfc307e63b4e7105de4d37366f4715fb1
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:c61babf5a16f32ea83d2be6e96c2becdfc307e63b4e7105de4d37366f47
 
 如何实现通过滑动操作让组件消失和重现的功能，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/cBWEC9ddSMOCF4R1buZ35g/zh-cn_image_0000002628392484.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/cBWEC9ddSMOCF4R1buZ35g/zh-cn_image_0000002628392484.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=3FE94DDDC030EFB6F7BD0D80630A04625BF8FB362DA8EC472D30EF9D287E8C85 "点击放大")
 
 ## 背景知识
 
@@ -97,4 +97,4 @@ struct TransitionEffectPage {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/ensxkgSURuOznEwMVvySiA/zh-cn_image_0000002658911703.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/ensxkgSURuOznEwMVvySiA/zh-cn_image_0000002658911703.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=22DE39D194606E62FF73B622D7984EE5D86F96EA18353C53F6952C6B88ADD2D2 "点击放大")

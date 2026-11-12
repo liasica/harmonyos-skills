@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-514
 title: Navigation导航模式根页面onPageShow生命周期触发问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Navigation导航模式根页面onPageShow生命周期触发问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:41+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-13
 content_hash: sha256:5515cb22776f49b0bed2c5f5a29290562a654edafd86539b765736aa5b224f5c
 ---
@@ -81,13 +81,13 @@ content_hash: sha256:5515cb22776f49b0bed2c5f5a29290562a654edafd86539b765736aa5b2
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/Agw6_7RuRbCOTPfQJFka_A/zh-cn_image_0000002628548522.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/Agw6_7RuRbCOTPfQJFka_A/zh-cn_image_0000002628548522.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=1976C6D85552EE48CDC3DE967CE6E17D06BE75C69CA708513A914620CAEDA895 "点击放大")
 
 ## 效果预览
 
 退出到后台，重新进入页面后不会重新创建子页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/xEUY8qwmRxOGJXH1FDcqcg/zh-cn_image_0000002658907837.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/xEUY8qwmRxOGJXH1FDcqcg/zh-cn_image_0000002658907837.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D4DEE4892C1A32313A1183072507FCADC705384A7477E9E4F3145BE0E522723 "点击放大")
 
 ## 背景知识
 

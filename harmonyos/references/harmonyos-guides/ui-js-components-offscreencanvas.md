@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: OffscreenCanvasRenderingContext2D对象
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > Canvas开发指导 > OffscreenCanvasRenderingContext2D对象
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-03-09
 content_hash: sha256:6a9f94e35e2db0120653c40a070956a2a1e9ccff90f58442b961156beec3b146
 ---
@@ -96,7 +96,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/MTNavcnlQVS463K6vxRhTQ/zh-cn_image_0000002786359342.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/MTNavcnlQVS463K6vxRhTQ/zh-cn_image_0000002786359342.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8357D9A7A935A2B938136D314E6A29D09B46BB822ACF98DB7214565885EA48F)
 
 ## 判断位置
 
@@ -199,4 +199,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/ixk3WslITTyhZ4k7x4n-mw/zh-cn_image_0000002815558763.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/ixk3WslITTyhZ4k7x4n-mw/zh-cn_image_0000002815558763.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=A8F8598DD493625824A8FB60C45357E6462C73EEB631FB924C081AC1C7100DC5)

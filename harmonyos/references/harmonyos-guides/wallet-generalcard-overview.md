@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-genera
 title: 概述
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 通用凭证 > 概述
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:39+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-28
 content_hash: sha256:c40fa5e54bb00cf0448b6d19b04134f295f56e6c8ab59123f6f094dace0c5fc4
 ---
@@ -18,7 +18,7 @@ content_hash: sha256:c40fa5e54bb00cf0448b6d19b04134f295f56e6c8ab59123f6f094dace0
 
 ## 系统架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/-K4-ZqR_R3CMzYKakK-AvQ/zh-cn_image_0000002815400137.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/-K4-ZqR_R3CMzYKakK-AvQ/zh-cn_image_0000002815400137.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=5CE6B62115B2FD16262D9B140FA22538E35E2AEA5E92B4690A0340506B132C29)
 
 | 角色 | 说明 |
 | --- | --- |
@@ -33,11 +33,11 @@ content_hash: sha256:c40fa5e54bb00cf0448b6d19b04134f295f56e6c8ab59123f6f094dace0
 
 ### 通用凭证开通
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/_pYSflzVRhavukeVU6SKzw/zh-cn_image_0000002786520584.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/_pYSflzVRhavukeVU6SKzw/zh-cn_image_0000002786520584.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=103A20F71122F560EA1C7C79900BEE9F01D37003BE801F66383A534CC8B170DD)
 
 ### 通用凭证展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/Um-TYtYHQ4OfpDkETCwUbw/zh-cn_image_0000002786360656.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/Um-TYtYHQ4OfpDkETCwUbw/zh-cn_image_0000002786360656.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=0BD370BC01EB70A1AF70EAD18DD9A7B5D505B6B8E4654EFF39DD8D9CEA5F1EC3)
 
 ## 接入流程
 

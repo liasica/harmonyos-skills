@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-999
 title: RichEditor实现同时设置删除线和下划线
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > RichEditor实现同时设置删除线和下划线
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:15+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:49e3924d76a60b319b427e6ec584336ebd8abecf34798cdb9025795c2f8178be
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:49e3924d76a60b319b427e6ec584336ebd8abecf34798cdb9025795c2f8
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/3ICx869uSyqLWtfr3bJBFg/zh-cn_image_0000002628404768.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/3ICx869uSyqLWtfr3bJBFg/zh-cn_image_0000002628404768.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=88B8EE5F2C6F79CC35EE81166552D1B398C88D52AFFE963F5BD073D0CB9656AD "点击放大")
 
 ## 背景知识
 

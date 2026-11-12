@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/compiling-and-b
 title: 编译构建CPU与内存占用过高问题排查
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 常见问题 > 编译构建CPU与内存占用过高问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:33533323906d5d38787e82cbe85a2b65f536fed8e2740bb858c0bec04491cb88
 ---
@@ -49,7 +49,7 @@ content_hash: sha256:33533323906d5d38787e82cbe85a2b65f536fed8e2740bb858c0bec0449
 * 如果上述修改未能达到预期效果，可以尝试使用非并行模式执行编译。
   + 在菜单栏中依次点击“File > Settings > Build, Execution, Deployment > Build Tools > Hvigor”，取消勾选“Execute tasks in parallel mode”。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/sm-QVeTZQ8uMYwaeoJhFSw/zh-cn_image_0000002772910486.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/sm-QVeTZQ8uMYwaeoJhFSw/zh-cn_image_0000002772910486.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD030F382B858EC308791E77D7F881FE53D1C110CFA193908B7F3D1F1576538F "点击放大")
   + 在命令行最后添加--no-parallel，示例：
 
     ```shell

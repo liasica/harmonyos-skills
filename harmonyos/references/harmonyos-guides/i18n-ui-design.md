@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/i18n-ui-desig
 title: 国际化界面设计
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用国际化 > 国际化界面设计
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:28+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-04
 content_hash: sha256:62d286cc24f5d322138ba174e1eaefa598e73778a1251a3c7fc3dcf222e4e25c
 ---
@@ -36,20 +36,20 @@ content_hash: sha256:62d286cc24f5d322138ba174e1eaefa598e73778a1251a3c7fc3dcf222e
 
 **图1** 一般布局示例（英文）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/PEFWYT4hTTSabEH8aLFBOg/zh-cn_image_0000002815559011.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/PEFWYT4hTTSabEH8aLFBOg/zh-cn_image_0000002815559011.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=11CDE7928507B5C377260947376A39B0D750E28AC7954573E7CE9D09869E291C)
 
 **图2** 镜像布局示例（阿拉伯文）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/cGd28w0WTf2pkiD8CMpjmw/zh-cn_image_0000002815399095.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/cGd28w0WTf2pkiD8CMpjmw/zh-cn_image_0000002815399095.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=3918E04E5A3A82B397440D13C4054B4CD9E22BBB84C723786C653BB8C43CF2DE)
 
 **图3** 一般图标资源
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/7Q-bzBxTTqCFiteuXIxCsg/zh-cn_image_0000002786519520.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/7Q-bzBxTTqCFiteuXIxCsg/zh-cn_image_0000002786519520.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=21811F2DBAFFCFE02C41B2118756F126A0097F1FE1F2A51034CD29CEBFB20A80)
 
 **图4** RTL语言系统下提供的图标资源
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/I3RpJ1xVSnGHCu9Qs_bVsA/zh-cn_image_0000002786359592.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/I3RpJ1xVSnGHCu9Qs_bVsA/zh-cn_image_0000002786359592.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA25ACCAF5047E21367C2565828A0148B226DE1CDCD3E7C807579146D602B75C)
 
 **图5** RTL语言下提供的镜像控件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/f91nXqiPQ9Wm1XVAcRM79w/zh-cn_image_0000002815559013.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/f91nXqiPQ9Wm1XVAcRM79w/zh-cn_image_0000002815559013.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=9785C2748B824C968BCB61C6AE582F0B522A99343B58BCB8BEB701D2EC2F3CC9)

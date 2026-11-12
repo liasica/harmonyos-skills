@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 如何读写外置存储设备（如U盘）中的文件
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 如何读写外置存储设备（如U盘）中的文件
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:4602438087e7d7cb3201ef2cbc9956fb4b6581ad27d5e111cf01f3995bc54f41
 ---
@@ -73,13 +73,13 @@ content_hash: sha256:4602438087e7d7cb3201ef2cbc9956fb4b6581ad27d5e111cf01f3995bc
 4. 实现效果：
    * 点击**查看U盘文件并导入到沙箱**按钮后，拉起了DocumentViewPicker。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/GE6-XgGcQ7KhCiYOPbIuUg/zh-cn_image_0000002659258327.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/GE6-XgGcQ7KhCiYOPbIuUg/zh-cn_image_0000002659258327.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=79859D0C5DBB45050A05934FDBC5B51D2D8B45B383BFD6825F07CC07E51C23A3 "点击放大")
    * 点击**MyUSB**后可以浏览我的U盘。选中要拷贝的文件。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/iQdWOOyMQJy0fVwkM-JstA/zh-cn_image_0000002628899108.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/iQdWOOyMQJy0fVwkM-JstA/zh-cn_image_0000002628899108.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C00B93CB001EFC8220961FBF89DA3478FB452A2C511D4B4962FD042FCC709E7 "点击放大")
    * 点击**完成**后，成功将U盘中的两个文件拷贝到了沙箱。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/tQp2BxdHT562h6Gh_XqcrQ/zh-cn_image_0000002659138377.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/tQp2BxdHT562h6Gh_XqcrQ/zh-cn_image_0000002659138377.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=913489FBFB417B9D1B3B72B8F5555E92EB44426F7F699F5CB8D569738B5038A2 "点击放大")
 
 二、**拷贝文件到外置存储设备的文件**
 

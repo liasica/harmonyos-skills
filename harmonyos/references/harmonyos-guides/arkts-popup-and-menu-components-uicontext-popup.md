@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-popup-a
 title: 不依赖UI组件的全局气泡提示 (openPopup)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 气泡提示 > 不依赖UI组件的全局气泡提示 (openPopup)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:13+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:9e5b59ebed8eb49aa94a89e9860a60d38171f0a0f7c8aab810acab39829bda3d
 ---
@@ -329,4 +329,4 @@ export struct OpenPopup {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/5iu3soj4QrGKGqikQuln9g/zh-cn_image_0000002786359074.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/5iu3soj4QrGKGqikQuln9g/zh-cn_image_0000002786359074.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5A484DFC377E9FC8EFAEE885B5805D56125DB469912461730F121BB91DC0167)

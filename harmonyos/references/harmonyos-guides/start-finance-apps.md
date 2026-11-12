@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-finance
 title: 拉起金融类应用（startAbilityByType）
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起指定类型的应用 > 拉起金融类应用（startAbilityByType）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:50:59+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:e441e53cf87fc65934b1b0a9004d3cbf5e85a2aeea7bb9580e3c93f0ec3494c3
 ---
@@ -74,7 +74,7 @@ startAbilityByType接口中type字段为finance，对应的wantParam参数：
 
    效果示例图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/PGulS8QfTqCIzjEWV8towg/zh-cn_image_0000002786518346.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/PGulS8QfTqCIzjEWV8towg/zh-cn_image_0000002786518346.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC7CA49506D5C19C966842DF1CCF55286C3617E41B82CFB9CF6AA5404606C4DE)
 
 ## 目标方开发步骤
 

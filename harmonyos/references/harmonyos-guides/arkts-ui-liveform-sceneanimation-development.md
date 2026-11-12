@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-live
 title: 场景动效类型互动卡片开发指导
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > 互动卡片开发 > 场景动效类型互动卡片开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:27+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:824235c4b634af983f25814f6a00045541e849fed2b6c004f00d42a6e22b206e
 ---
@@ -20,11 +20,11 @@ content_hash: sha256:824235c4b634af983f25814f6a00045541e849fed2b6c004f00d42a6e22
 
 **图1** 互动卡片状态切换说明
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/q5HPxoD2RKyr05-8TnbJXQ/zh-cn_image_0000002786519478.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/q5HPxoD2RKyr05-8TnbJXQ/zh-cn_image_0000002786519478.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=EBA6FDDB068680D2D08E3AEF72EBDE6D29D8AB42D1C7ED1FB97EAFBB4DED0EB5)
 
 **图2** 互动卡片动效触发流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/hSybAhdaRQGpbwrWJ-yR5A/zh-cn_image_0000002786359550.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/hSybAhdaRQGpbwrWJ-yR5A/zh-cn_image_0000002786359550.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=19B1B6BA311E2CD9B0B9A44F9BA43115BAE366731F6592EEB1CB9E2181C8314E)
 
 ## 实现原理
 
@@ -32,15 +32,15 @@ content_hash: sha256:824235c4b634af983f25814f6a00045541e849fed2b6c004f00d42a6e22
 
 **图3** 点击触发互动卡片动效时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/k0c_ARw3Rx2K-aqaG4iSpQ/zh-cn_image_0000002815558971.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/k0c_ARw3Rx2K-aqaG4iSpQ/zh-cn_image_0000002815558971.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=532C3AB3F647C2088CF09A01CF3C6E46417AA4332C78E532B7C4283FC1A05C19)
 
 **图4** 定时定点触发互动卡片动效时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/XChthBmXSS2Pza5hltuaVw/zh-cn_image_0000002815399055.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/XChthBmXSS2Pza5hltuaVw/zh-cn_image_0000002815399055.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C9FAFDD02A2E558D1066658DE8AFBEEE4CAC00121DAAE8A85B937C5B54FEA86)
 
 **图5** 摇一摇触发互动卡片动效时序图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/sYUQuANiQ_eawdNbS2vi0Q/zh-cn_image_0000002786519480.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/sYUQuANiQ_eawdNbS2vi0Q/zh-cn_image_0000002786519480.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=D226AEC2C0BB9EDE1F4746BB3B6E2DAE91483785E3F8DEEC6CFE7EA40A847CFD)
 
 ## 约束和限制
 
@@ -65,7 +65,7 @@ content_hash: sha256:824235c4b634af983f25814f6a00045541e849fed2b6c004f00d42a6e22
 
 **图6** 互动卡片动效区域申请规则说明
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/ikepgtzcQMKR1J6zeq2uEg/zh-cn_image_0000002786359552.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/ikepgtzcQMKR1J6zeq2uEg/zh-cn_image_0000002786359552.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=2CC5BEB449891A44BCB16A3B7E1FE93A162FBE6FE7C4533116A5D20D03D5B392)
 
 例如：某设备上一个2\*2卡片宽度为158vp，高度为158vp。对应上图则有：
 
@@ -509,4 +509,4 @@ content_hash: sha256:824235c4b634af983f25814f6a00045541e849fed2b6c004f00d42a6e22
 
 以下是按照本文档代码示例开发而成的效果demo，demo执行动效时，点击按钮，将调用 [formProvider.cancelOverflow](../harmonyos-references/js-apis-app-form-formprovider.md#formprovidercanceloverflow20) 接口，打断当前破框动效，卡片切换为非激活态。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/Hu17GwoaT0m6jtrIuAL5qQ/zh-cn_image_0000002815558973.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/Hu17GwoaT0m6jtrIuAL5qQ/zh-cn_image_0000002815558973.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=978DC54B8CFB8DCA815B397CDE0EB7ABEF0CC419F189EFF1FDABCD964E20FD59)

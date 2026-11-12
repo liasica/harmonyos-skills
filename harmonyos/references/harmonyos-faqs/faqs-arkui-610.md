@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-610
 title: 实现可展开的首页缩略图
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 实现可展开的首页缩略图
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:52+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:9b7910aea26a53592a1affeb35483bf24bf78da810a9cb7bb0692379c3d18880
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:9b7910aea26a53592a1affeb35483bf24bf78da810a9cb7bb0692379c3d
 
 如何在新闻等列表页面中实现可展开的缩略图？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/8L7j7IjXQ_Gv_PcJ4eqtpw/zh-cn_image_0000002658911939.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/8L7j7IjXQ_Gv_PcJ4eqtpw/zh-cn_image_0000002658911939.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=4BD3A586404F2E4B961A24DA5FF90E7E19EA54D363C5237DF77CF59D5892150E "点击放大")
 
 ## 背景知识
 

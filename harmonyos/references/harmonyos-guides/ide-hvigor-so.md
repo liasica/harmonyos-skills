@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-so
 title: 预构建库快速链接
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 配置构建流程 > 预构建库快速链接
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-08
 content_hash: sha256:72c60b1482def576b34db688fcdfb4af5d8e4215d894d039be0c679e10387e24
 ---
@@ -40,7 +40,7 @@ content_hash: sha256:72c60b1482def576b34db688fcdfb4af5d8e4215d894d039be0c679e103
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/f0FpnXa5SCSlY-l1OWm31A/zh-cn_image_0000002808886613.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/f0FpnXa5SCSlY-l1OWm31A/zh-cn_image_0000002808886613.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D7A034A33B59BC98161163E70E4AEBCE83BB55EB52C892B18C20C1D9A0E1BEB)
 
 在工程的CMakeLists.txt脚本中声明链接：
 

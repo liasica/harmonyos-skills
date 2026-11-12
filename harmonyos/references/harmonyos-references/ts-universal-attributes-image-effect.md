@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 图像效果
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 视效与模糊 > 图像效果
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-16
 content_hash: sha256:99fa00bd229a32253fcd73beb97afcc45fd4e3e302476a71b1331b09883b676c
 ---
@@ -1360,7 +1360,7 @@ struct ImageEffectsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/MoPfopM2SoKRZboRgjy-fw/zh-cn_image_0000002786520930.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/MoPfopM2SoKRZboRgjy-fw/zh-cn_image_0000002786520930.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=28391448D2B78E574F1EE5991D6F14044A06731D1C5A670135D0403CCCBE57C6)
 
 ### 示例2（设置组件线性渐变模糊效果）
 
@@ -1390,7 +1390,7 @@ struct LinearGradientBlurExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/aUjwTuCYSWuOmH5Wjqm8yQ/zh-cn_image_0000002786361002.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/aUjwTuCYSWuOmH5Wjqm8yQ/zh-cn_image_0000002786361002.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=99902ADBAFA33D5E5256EC82D610CA25250C56B2AF5EE69068B4FEF550C67BF6)
 
 ### 示例3（设置离屏渲染效果）
 
@@ -1443,7 +1443,7 @@ struct RenderGroupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/PhIjm2w8TueDJiS-I_Qrdw/zh-cn_image_0000002815560423.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/PhIjm2w8TueDJiS-I_Qrdw/zh-cn_image_0000002815560423.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=07F2EB6BA7A409A1F8202C2DD83173B6C9D0520A84E270F80A74DCBA9D40D32A)
 
 ### 示例4（当前组件内容与下方画布内容混合）
 
@@ -1486,7 +1486,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/kpJ9FkZwSxqCE8JAXdVnHg/zh-cn_image_0000002815400507.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/kpJ9FkZwSxqCE8JAXdVnHg/zh-cn_image_0000002815400507.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=2FAC6F4B63D799767B06B690DB2CB67060D2BDADC4422D65909E83C5ADF27DB0)
 
 ### 示例5（前景智能取反色）
 
@@ -1526,7 +1526,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/bGHkjTZcQWCPnPefrAJ9fA/zh-cn_image_0000002786520932.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/bGHkjTZcQWCPnPefrAJ9fA/zh-cn_image_0000002786520932.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=C1C9C0DDA5A2A863520AF3C1004D3E6E9E4F3CACE8A530A40DFEE78FC881EC94)
 
 ### 示例6（设置同层阴影不重叠效果）
 
@@ -1622,7 +1622,7 @@ struct UseShadowBatchingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/D1slII0OSiayJzuwBcs6-A/zh-cn_image_0000002786361004.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/D1slII0OSiayJzuwBcs6-A/zh-cn_image_0000002786361004.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=8724770286A142B84A5F9698E165964525211B6E59F3F4417B8106FD93D2182B)
 
 ### 示例7（设置组件图像球面效果）
 
@@ -1655,11 +1655,11 @@ struct SphericalEffectExample {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/Tx-Kypj-Q4uCqfOI7sWgtw/zh-cn_image_0000002815560425.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/Tx-Kypj-Q4uCqfOI7sWgtw/zh-cn_image_0000002815560425.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9E9F8D7961E39A66A0E8D59CF9740ED7568F0EB24D8FC2F2ED9C5EBEF07BD65)
 
 去掉sphericalEffect的设置，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/P9fpXl-zSi2ZHtmUw00erQ/zh-cn_image_0000002815400509.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/P9fpXl-zSi2ZHtmUw00erQ/zh-cn_image_0000002815400509.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=0EEEEEEC15FC1D8388FB155D4601AB7438960842BD79076258D8C1CD2F155700)
 
 ### 示例8（设置组件图像渐亮效果）
 
@@ -1686,15 +1686,15 @@ struct LightUpExample {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/o3YQca_zRNGtdEyoj7EsXw/zh-cn_image_0000002786520934.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/o3YQca_zRNGtdEyoj7EsXw/zh-cn_image_0000002786520934.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9D9DAC32E394371C867A640CD65A4DBD682F17F054DDDF01EAD0AF5B29B6282)
 
 修改lightUpEffect参数值为0.2：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/aej0vkzQT4alKMvOeTAr-Q/zh-cn_image_0000002786361006.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/aej0vkzQT4alKMvOeTAr-Q/zh-cn_image_0000002786361006.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D3F322EC79831D4A0FEB962BBCC894EA86F26A1C9EA5F6E0B5C8CD4B87EAC7A)
 
 去掉lightUpEffect的设置，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/9AfKcTiiTKySS6-zeQvPlQ/zh-cn_image_0000002815560427.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/9AfKcTiiTKySS6-zeQvPlQ/zh-cn_image_0000002815560427.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=1C81BA60956965B1275609E75308FCB95A31A3E5E1DFFD8470A9F2684052106E)
 
 ### 示例9（设置组件图像边缘像素扩展效果）
 
@@ -1727,11 +1727,11 @@ struct PixelStretchExample {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/YZzWMjC2Tc-guNX2nKX8aA/zh-cn_image_0000002815400511.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/YZzWMjC2Tc-guNX2nKX8aA/zh-cn_image_0000002815400511.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=14FC3C2805642264E80A49D5975CB00E6F733C4133E3672CB802113799B728E7)
 
 去掉pixelStretchEffect的设置，原图效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/MMkyWBzgR0uyrctt6WXSPg/zh-cn_image_0000002786520936.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/MMkyWBzgR0uyrctt6WXSPg/zh-cn_image_0000002786520936.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=A74063F095D90C2B99195600E5AA671618044EA28A946BB34A321D9A69BEB0A4)
 
 ### 示例10（系统导航条智能反色）
 
@@ -1761,7 +1761,7 @@ struct Index {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/qLQUTstfQUyCHvkCcv4jlA/zh-cn_image_0000002786361008.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/qLQUTstfQUyCHvkCcv4jlA/zh-cn_image_0000002786361008.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=A95D7444550D9937632522E331F4F72FEF05994567BA8359FF0334096FD40BF6)
 
 ### 示例11（设置组件是否双面绘制）
 
@@ -1825,4 +1825,4 @@ struct DoubleSided {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/jUCTqXIUSUG4NfZMKJc2gw/zh-cn_image_0000002815560429.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/jUCTqXIUSUG4NfZMKJc2gw/zh-cn_image_0000002815560429.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=12B191C9C78E8BDA05861340796CA036A792460679E200C9095FAEAFA83F1BDD)

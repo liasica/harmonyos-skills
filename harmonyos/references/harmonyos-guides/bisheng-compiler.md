@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bisheng-compi
 title: 毕昇编译器
 breadcrumb: 指南 > NDK开发 > 构建NDK工程 > 毕昇编译器
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-14
 content_hash: sha256:abe8dbe6bb9eddbcd84bcbf72a8bd2a542e082e7b90ccb3cf0abfa9efb674319
 ---
@@ -30,13 +30,13 @@ content_hash: sha256:abe8dbe6bb9eddbcd84bcbf72a8bd2a542e082e7b90ccb3cf0abfa9efb6
 
 针对循环相关的编译优化，毕昇编译器在场景识别、结构变换等方面做了改进和增强。例如在社区LLVM已有的Loop Distribution优化上，毕昇编译器相比开源LLVM编译器，能额外识别出循环内不同代码块间数据依赖关系、以及不同代码块运行的迭代次数差别，从而能对更多的循环进行loop distribution优化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/2ArLCt4ESzqgPdbIffSMdg/zh-cn_image_0000002786360788.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/2ArLCt4ESzqgPdbIffSMdg/zh-cn_image_0000002786360788.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=EF999C3840E7B9B4BD79EE509FDD4677D8FDE0AAE23290AAF38CE06BFA83D76D)
 
 * **毕昇编译器矢量化优化增强示例**
 
 毕昇编译器在矢量化优化方面，相比开源LLVM编译器，不仅能将更多的循环做矢量化转换，还在矢量化指令选择上更高效。例如下面示例中，开源LLVM编译器虽然做了矢量化，但使用了5条矢量指令；而毕昇编译器只需要使用2条矢量指令，最终产生的二进制效率更优。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/TKPi3EjWQ6ynSdthn6pXOA/zh-cn_image_0000002815560209.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/TKPi3EjWQ6ynSdthn6pXOA/zh-cn_image_0000002815560209.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=39326076E47EAADA9B885A327E45E869DCB0E041699E4E469A5F86F09B916FEF)
 
 ## 毕昇编译器使用指导
 
@@ -44,11 +44,11 @@ content_hash: sha256:abe8dbe6bb9eddbcd84bcbf72a8bd2a542e082e7b90ccb3cf0abfa9efb6
 
 * 开发者获取或在线升级到DevEco Studio 5.1.1 release及之后的版本，新建C/C++工程默认使用毕昇编译器，打开C/C++老工程有弹窗提示，点击**Try Now**可以切换使用毕昇编译器，构建HarmonyOS工程的C/C++代码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/yyh1Pk4lS3CdPuK3l16T2w/zh-cn_image_0000002815400293.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/yyh1Pk4lS3CdPuK3l16T2w/zh-cn_image_0000002815400293.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=D418866A808FA229A56A9FC0BEACBC7A6788BAE5BE80A73F579736711D4E554A)
 
 * 开发者获取DevEco Studio 5.1.1 beta及之前的版本，默认使用还是开源llvm编译器，需要在HarmonyOS应用的工程级build-profile.json5中简单配置即可使用毕昇编译器：在runtimeOS为HarmonyOS的时候，设置nativeCompiler为BiSheng，即可使用毕昇编译器构建HarmonyOS工程的C/C++代码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/C_R0r0zoR76S8oE0082-2w/zh-cn_image_0000002786520718.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/C_R0r0zoR76S8oE0082-2w/zh-cn_image_0000002786520718.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C594EB5BA22FEB9CA650436370C8316B84E66958A0FF3C1FDB413A65F0CCE2A)
 
 此外，当开发者自己单独配置流水线切换毕昇编译器时，可能会遇到“找不到头文件”错误，此时添加sysroot路径选项即可解决（xxx为sdk的路径）：
 
@@ -62,7 +62,7 @@ content_hash: sha256:abe8dbe6bb9eddbcd84bcbf72a8bd2a542e082e7b90ccb3cf0abfa9efb6
 
 在DevEco的安装目录下，会有hms和HarmonyOS两个目录：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/hTPO8sVMSJGeY30EzRiVYg/zh-cn_image_0000002786360790.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/hTPO8sVMSJGeY30EzRiVYg/zh-cn_image_0000002786360790.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=3C22696B71B3BDCA071F1115041C450A33076DBD9D1581EF711F9FF674A6EAF5)
 
 毕昇编译器所在的路径为：xxx/sdk/default/hms/native/BiSheng。
 
@@ -144,7 +144,7 @@ IClang生成的二进制产物遵循X86-64 ELF规范，在此基础上额外提�
 
 PGO是一种自适应优化手段。它通过收集代码在实际运行过程中的性能数据，来准确得知例如哪些函数是真正被频繁执行的、哪些分支是真正频繁进入的等信息，从而指导编译器做出相应优化。相较于传统的PGO，毕昇PGO具有更强的准确性和优化性。
 
-毕昇编译器通过信号量触发文件写入操作：Dso在接受到特定信号量时将采样信息写入文件中，并清空相应计数器。 其主要流程如下图所示：![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/dHluUpl6RlehoCeYB37rSA/zh-cn_image_0000002815560211.png)
+毕昇编译器通过信号量触发文件写入操作：Dso在接受到特定信号量时将采样信息写入文件中，并清空相应计数器。 其主要流程如下图所示：![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/dHluUpl6RlehoCeYB37rSA/zh-cn_image_0000002815560211.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=A60F4D27D206767806D0117EC6F5640AE7D8E6B67E8F48D800AE67CB741723DE)
 
 这种方案能够精准的控制采样范围，解决了传统PGO依赖业务中存在的统一入口和出口，无法对某一段范围进行精准采样的痛点。
 
@@ -167,17 +167,17 @@ llvm-objdump -d xx.so  # 看反汇编是否有ldr add store代码序列
 
 编译完成后，在Deveco中用debug模式推送APP包：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/ceBrX8VcSY25YRkR8IbBVw/zh-cn_image_0000002815400295.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/ceBrX8VcSY25YRkR8IbBVw/zh-cn_image_0000002815400295.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=63D4CFAA73F3A9CF7EC62F2659D3B87581B037753B05EFC4F3B2BEB394D8A00D)
 
 启动后会出现debug窗口，确保是Native的debug模式，未出现则需要修改Deveco的debug Type配置为Native。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/2tjYKnd7QaauZJ6_35pFYw/zh-cn_image_0000002786520720.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/2tjYKnd7QaauZJ6_35pFYw/zh-cn_image_0000002786520720.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=3F491671F45290D106B9CA9AB07A82B46D0F39E25905F817D3B91EB82BE96387)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/KjPkqD8YSRmhlDEZO8zTRg/zh-cn_image_0000002786360792.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/KjPkqD8YSRmhlDEZO8zTRg/zh-cn_image_0000002786360792.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=70F611E67FB0E46984726C709FA00A51875E0F2E8680CDE9E006923B9A22AA4B)
 
 启动完成后，找到native debug的lldb位置，需要在lldb中设置参数，保证业务正常运行，不会在debug模式下被一些信号影响数据采集（信号一般是程序本身发送），设置方法为：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/SJM6CYOIRDOZDI8JoP98vQ/zh-cn_image_0000002815560213.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/SJM6CYOIRDOZDI8JoP98vQ/zh-cn_image_0000002815560213.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=1AE7547BDE95B60C15F10DFD98626FF839FBCEF1BAC4E1AE74FA4F7A11637DEF)
 
 由于程序没有设置断点，导致程序暂停的原因是信号量，可以屏蔽信号量暂停机制：
 
@@ -197,7 +197,7 @@ SIG\*为信号量name, 若要一次性屏蔽所有信号量，则无需指定信
 
 可以在对应的目录(/data/app/el2/100/base/应用进程名/files)找到default\*\_profile文件，每发送一次信号会产生一次文件。第一次发送采集到的数据为：应用启动到发送信号时间点的数据；第二次发送为：第一次发送信号量到第二次发送信号量期间的数据；以此类推。可以控制发送信号量时间，来采集我们需要场景的数据。 生成的文件没有权限删除，一次应用启动采集到的数据，是同名的，多次生成文件会覆盖，也可以保证采集的数据是目标场景的数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/HS_UIOVgQTuCpQZCNMXbFA/zh-cn_image_0000002815400297.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/HS_UIOVgQTuCpQZCNMXbFA/zh-cn_image_0000002815400297.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=59F12E6DA0FA0514AE6289A970ECD0B08382A7A1DEA5A1C32E85A0E26980928F)
 
 用hdc将该文件从手机拷贝到电脑上，使用与clang同级目录下的llvm-profdata.exe工具，执行 llvm-profdata merge --output=lib.profdata default\_\*.profraw 得到lib.profdata。
 

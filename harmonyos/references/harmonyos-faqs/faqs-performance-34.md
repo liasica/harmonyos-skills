@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 应用内浏览文档上滑时不流畅
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 应用内浏览文档上滑时不流畅
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:43+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:da34c771a0f04a8d32c5e12ac304de4de8c9fa1c0b4764ab2c911ef11ec15d7a
 ---
@@ -22,16 +22,16 @@ content_hash: sha256:da34c771a0f04a8d32c5e12ac304de4de8c9fa1c0b4764ab2c911ef11ec
 
 1. 通过UIViewer工具获取到发生问题页面的组件结构是Scroll组件中嵌套Web页面，并且Web组件同一层级还有两个Column容器。此时应用可滑动区域是由**三个容器组成**的。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/Jo3GZwR1QPW8BSZI62HZyQ/zh-cn_image_0000002658794529.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/Jo3GZwR1QPW8BSZI62HZyQ/zh-cn_image_0000002658794529.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFAA697796D0F6837810565E76D3D61E8428FEEDAB806AA92B732663E941B461 "点击放大")
 2. 使用DevTools工具抓取加载的Web页面，可以看到页面右侧有滚动条，且支持上下滑动。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/SlcHpU9XRISFCCDqgfGnBw/zh-cn_image_0000002628555164.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/SlcHpU9XRISFCCDqgfGnBw/zh-cn_image_0000002628555164.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=F77DD67221804463E22D5B85B61822FF61645F236B85C91376179D31C2321A74)
 3. 通过滚轮将Web页面滑动至顶部，此时再次在手机上尝试滑动，发现无卡顿现象，使用UIViewer根据抓取此时的组件结构。此时应用可滑动区域是由Web组件**单独**构成的。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/TJmJeNISQuW7ljJzbVfr4w/zh-cn_image_0000002658914487.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/TJmJeNISQuW7ljJzbVfr4w/zh-cn_image_0000002658914487.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=F65D70364F543628809D11E46339B3BC4BB305933193EE1431255C62685206B5 "点击放大")
 4. 使用DevEco Profiler Frame模板抓取滑动过程的Trace信息，搜索关键字**User events**、**H:WEB\_LIST\_FLING**、**H:TRAILING\_ANIMATION**。结合应用包名泳道中与浏览器内核相关的线程情况，可以看到前六次滑动手势操作的均为Scroll组件，后两次滑动手势才真正滑动了Web页面，此时浏览器内核相关线程才开始处理渲染Web页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/Ec2xvzL0RGmrlIRdATMC7w/zh-cn_image_0000002628395256.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/Ec2xvzL0RGmrlIRdATMC7w/zh-cn_image_0000002628395256.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F7C619D6E17DD465CDFA4FA3F58AEFB733348279EDF1D99A2120D6926846331 "点击放大")
 
    在代码中搜索关键字**NestedScrollMode**，发现设置滚动方式为PARENT\_FIRST，父组件优先滚动到边缘后自身滚动。以下是相关代码：
 

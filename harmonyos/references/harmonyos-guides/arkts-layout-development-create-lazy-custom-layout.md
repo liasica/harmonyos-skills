@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 创建懒加载自定义布局 (LazyDynamicLayout)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 列表与网格 > 创建懒加载自定义布局 (LazyDynamicLayout)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:2094c95586d735bec1df39a70434855fe9342b0b0559dae0ef2b2bb18ea415f9
 ---
@@ -587,7 +587,7 @@ LazyDynamicLayout(this.lazyAlgorithm) {
 
 上述示例中，点击底部按钮可以切换行间距。由于布局算法中实现了[setAdjustedOffset](../harmonyos-references/js-apis-arkui-lazylayoutalgorithm.md#setadjustedoffset)调整逻辑，切换间距后锚点子组件（正向布局时为可视区域第一个子组件，反向布局时为可视区域最后一个子组件）的位置保持不变，避免了滚动跳动。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/H-248YwnTbqK5_9EhVOS4A/zh-cn_image_0000002786518832.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/H-248YwnTbqK5_9EhVOS4A/zh-cn_image_0000002786518832.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7516DF40551873EFF547DC06023075B052C39D6D0842BC0DD536A149BF007DC)
 
 针对自定义懒加载布局的开发，有以下相关实例可供参考。
 

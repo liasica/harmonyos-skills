@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: 栅格布局
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 栅格布局
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-03-09
 content_hash: sha256:8b93efdf88420f7384a8d6bcf106bd48bd92c20c73dd3346c706792c9b3ae9ec
 ---
@@ -37,7 +37,7 @@ content_hash: sha256:8b93efdf88420f7384a8d6bcf106bd48bd92c20c73dd3346c706792c9b3
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/XappnB6MT5euVF4V2mZ7yg/zh-cn_image_0000002815398847.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/XappnB6MT5euVF4V2mZ7yg/zh-cn_image_0000002815398847.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9F8F446208A65B4841FE0B351813D3D2428A8B482D7271EB01ED907E52A2DF2)
 
 **说明** 
 
@@ -106,7 +106,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/r-7tccFRTMOezYcs3uezgQ/zh-cn_image_0000002786519272.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/r-7tccFRTMOezYcs3uezgQ/zh-cn_image_0000002786519272.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=08280F65747CBF3D9BCA22B92DA054F162C0E7572B48E85B0576C9D47174209C)
 
 ## 添加grid-col
 
@@ -162,7 +162,7 @@ text{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/T9Brbp7qQI-JpMsM805zxw/zh-cn_image_0000002786359344.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/T9Brbp7qQI-JpMsM805zxw/zh-cn_image_0000002786359344.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=CC2091E549D6FE3BCE23340BAEEF4D86547AEFE515A5A307E86F2693D2962066)
 
 **说明** 
 
@@ -237,4 +237,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/zPp4k6JZSROqSwXIul8gPg/zh-cn_image_0000002815558765.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/zPp4k6JZSROqSwXIul8gPg/zh-cn_image_0000002815558765.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=C14341133357F81AA65731848CE6095982D5D6D1F758F591426AD266A230A4DB)

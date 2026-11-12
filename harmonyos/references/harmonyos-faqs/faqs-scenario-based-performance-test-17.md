@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-scenario-b
 title: 场景化性能测试任务创建及执行失败的常见问题
 breadcrumb: FAQ > DevEco Testing > 专项测试 > 场景化性能测试 > 场景化性能测试任务创建及执行失败的常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:04+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:aa75e321c3a4fa0dc8319d4374754fca61d5cc7290728eabe7b8b641db712602
 ---
@@ -26,7 +26,7 @@ ModuleNotFoundError: No module named 'hypium.advance.pop_up_window_handler'
 1. 根据报错hypium.advance.pop\_up\_window\_handler import PopWindowService ModuleNotFoundError: No module named 'hypium.advance.pop\_up\_window\_handle，推断当前hypium框架中没有pop\_up\_window\_handler这个模块。
 2. 打开hypium安装目录的下面文件夹：hypium-5.1.5.300.tar.gz\hypium-5.1.5.300\hypium\advance，发现的确没有pop\_up\_window\_handler模块。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/YZO8MRTRQzmYWOevJUYijw/zh-cn_image_0000002658803279.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/YZO8MRTRQzmYWOevJUYijw/zh-cn_image_0000002658803279.png?HW-CC-KV=V1&HW-CC-Date=20261112T233218Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9348942774F8008DCA81004FFB01749B565097AA6B7DFB45EFEA1412287211D "点击放大")
 
 ## 分析结论
 
@@ -38,14 +38,14 @@ ModuleNotFoundError: No module named 'hypium.advance.pop_up_window_handler'
 
 1. 进入DevEco Testing客户端-场景化性能测试：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/2eiTIUCbQwqFYRm2YDRpRA/zh-cn_image_0000002628404020.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/2eiTIUCbQwqFYRm2YDRpRA/zh-cn_image_0000002628404020.png?HW-CC-KV=V1&HW-CC-Date=20261112T233218Z&HW-CC-Expire=31536000000&HW-CC-Sign=385CAA7CF09CBD4EDBDDC0BDB612378D7E946E1259FC9F16F49C62A19A03D2B1 "点击放大")
 2. 选择自定义场景测试，点击获取安装包后，出现新的文件夹目录：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/FPQnEoSRTnC3GkiOP_RJeA/zh-cn_image_0000002628563920.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/FPQnEoSRTnC3GkiOP_RJeA/zh-cn_image_0000002628563920.png?HW-CC-KV=V1&HW-CC-Date=20261112T233218Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9A14B319B33D868F2BFFED9D694DCECDBDE476E3B1D0E75330E574896CD63A5 "点击放大")
 
    hypium-6.0.1.20b0.tar.gz中存在pop\_up\_window\_handler模块：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/6xcY7FXlScG2yaYPbfZIBA/zh-cn_image_0000002658923235.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/6xcY7FXlScG2yaYPbfZIBA/zh-cn_image_0000002658923235.png?HW-CC-KV=V1&HW-CC-Date=20261112T233218Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4BDFD76B9B8998B58074A5AF09FDDE914B4A2192DB6543D9950ECB95F032A1A "点击放大")
 3. 根据[自定义性能脚本测试（基于Python）](../harmonyos-guides/hypium-perf-python-guidelines.md)重新安装hypium并运行自定义性能Demo。
 
 ## 常见FAQ

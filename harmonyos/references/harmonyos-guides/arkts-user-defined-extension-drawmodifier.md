@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-de
 title: 自定义绘制修改器 (DrawModifier)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > 自定义绘制 > 自定义绘制修改器 (DrawModifier)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:15+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:e8ee69ba5e2d560282b7c2c1c300b14223fc899e012e8575ee48a7b7128558bc
 ---
@@ -33,7 +33,7 @@ declare class DrawModifier {
 
 DrawModifier可设置遮罩层前景（[drawOverlay](../harmonyos-references/ts-universal-attributes-draw-modifier.md#drawoverlay23)）、前景（[drawForeground](../harmonyos-references/ts-universal-attributes-draw-modifier.md#drawforeground20)）、内容前景（[drawFront](../harmonyos-references/ts-universal-attributes-draw-modifier.md#drawfront)）、内容（[drawContent](../harmonyos-references/ts-universal-attributes-draw-modifier.md#drawcontent)）和内容背景（[drawBehind](../harmonyos-references/ts-universal-attributes-draw-modifier.md#drawbehind)）的绘制方法，开发者需要重载这些方法，并通过[Canvas](arkts-drawing-customization-on-canvas.md)的接口进行自定义绘制。自定义绘制层级图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/zoURGGDiQ_WjMzGakoaICg/zh-cn_image_0000002815398729.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/zoURGGDiQ_WjMzGakoaICg/zh-cn_image_0000002815398729.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4AC308E816017E0886E9B3CD67EB86266BC7687A72E307BA95294DCF4A9FC20)
 
 DrawModifier还提供主动触发重绘的方法[invalidate](../harmonyos-references/ts-universal-attributes-draw-modifier.md#invalidate)，该接口开发者无需也无法重载，调用会触发所绑定组件的重绘。
 
@@ -250,7 +250,7 @@ struct DrawModifierExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/3B4khq4tTHKOL9mBN2_Sxg/zh-cn_image_0000002786519154.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/3B4khq4tTHKOL9mBN2_Sxg/zh-cn_image_0000002786519154.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=D75E70A9AD3593A684BEE7FC1E3247C790F7C7F113F9856676E54F1E0AB39D72)
 
 ## 通过drawForeground进行自定义绘制
 
@@ -315,7 +315,7 @@ struct DrawModifierExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/SvpM-Ui7S46SJAP1wzEo5g/zh-cn_image_0000002786359226.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/SvpM-Ui7S46SJAP1wzEo5g/zh-cn_image_0000002786359226.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=274BAD8D553CAF5ECDDB4B7B5172034DA29AA6684A3C531C7EB5BDC4DA743756)
 
 ## 调整自定义绘制Canvas的变换矩阵
 
@@ -438,4 +438,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/QU9PO3MvT1G80pG6eJ1zVA/zh-cn_image_0000002815558647.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/QU9PO3MvT1G80pG6eJ1zVA/zh-cn_image_0000002815558647.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=C909D03AA0EF2DFB4B32839113047259D9AA6A5DD145B284027467F0F0BF0085)

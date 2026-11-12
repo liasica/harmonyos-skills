@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1571
 title: 如何解决键盘弹出后原UI布局错乱问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决键盘弹出后原UI布局错乱问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:39+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:b2da5a87ab20b99c2ba0e799a3273e04829d468a1202d7cd4cecce2dae94372f
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:b2da5a87ab20b99c2ba0e799a3273e04829d468a1202d7cd4cecce2dae9
 
 左图为初始状态，右图为错乱的场景：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/ZsoMzaeiT7WhqDIEbF78uA/zh-cn_image_0000002658849129.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/QnYNRgpLRMOS84HTjEdSYw/zh-cn_image_0000002628609864.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/ZsoMzaeiT7WhqDIEbF78uA/zh-cn_image_0000002658849129.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=35B2A3C9C46F6D072BFD7A72F8C0ECBE1DB2A4492C8A24F7449848940340AD44 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/QnYNRgpLRMOS84HTjEdSYw/zh-cn_image_0000002628609864.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=0363DDD6E98B35E89B25D4D654A4FB99127520BBFFE34AD0D51CEDD3C42ED761 "点击放大")
 
 ## 背景知识
 
@@ -33,7 +33,7 @@ content_hash: sha256:b2da5a87ab20b99c2ba0e799a3273e04829d468a1202d7cd4cecce2dae9
 
   效果如下：顶部自定义组件未被顶出屏幕，底部TextArea和其他组件被键盘顶起，List组件高度被压缩。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/4fgV8Y0zQOOjF5_UzG_4iw/zh-cn_image_0000002628769762.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/4fgV8Y0zQOOjF5_UzG_4iw/zh-cn_image_0000002628769762.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3AAF08F2D4C3DEF47F34C15203FEA7EA8D1DC789445E3186F13DFDCC57BCD5B "点击放大")
 * 场景二：键盘弹出时控制组件是否避让。
 
   当不需要被顶起的组件被键盘顶起时，可通过expandSafeArea使该组件不避让键盘。需要注意，在KeyboardAvoidMode.RESIZE模式下，expandSafeArea属性不生效。
@@ -46,12 +46,12 @@ content_hash: sha256:b2da5a87ab20b99c2ba0e799a3273e04829d468a1202d7cd4cecce2dae9
 
   右图中，List设置了键盘避让，此时最下方的TextInput组件输入时，该输入组件被键盘遮挡。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/WSIkk5OYT02uKzUuzMgyow/zh-cn_image_0000002658969079.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/9h_v0gywRu-3NeCCjvg_yA/zh-cn_image_0000002658849131.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/WSIkk5OYT02uKzUuzMgyow/zh-cn_image_0000002658969079.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=41DC788AC71BCA4358FAE3A13DDCDEED0A21CF896C997620CA633987D9A0E849 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/9h_v0gywRu-3NeCCjvg_yA/zh-cn_image_0000002658849131.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=51F35AC281530F4A7F4EE9854541CD0C0F8E279CF785F548D7665676FEDD6FA0 "点击放大")
 * 场景三：通过监听键盘高度或安全区域高度变化，自定义处理UI布局。
 
   自定义处理UI布局时，注意容器组件的高度是否为固定高度，推荐使用layoutWeight属性自适应容器或组件高度。当页面释放时，注意关闭键盘事件监听。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/jrOmDXYjSUKocq7-mgPcsA/zh-cn_image_0000002628609868.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/jrOmDXYjSUKocq7-mgPcsA/zh-cn_image_0000002628609868.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=98B4BA78B99E895229C0DB68502457319DA853CB8DF4ADAF93940C9BE1744956 "点击放大")
 
 完整示例代码如下：
 

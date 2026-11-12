@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1391
 title: 页面底部弹窗显示不全
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 页面底部弹窗显示不全
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:34+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:8ca2963cee4b9de2b325201628156a65f534b9ca6c6fba7fac881b79c04fadc9
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:8ca2963cee4b9de2b325201628156a65f534b9ca6c6fba7fac881b79c04
 
 页面底部的弹窗内容显示不全。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/TdEGo29qQgeFCFQdcp0Riw/zh-cn_image_0000002628762566.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/TdEGo29qQgeFCFQdcp0Riw/zh-cn_image_0000002628762566.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=EACB44897202D99063368CB84DDB34B70EA479435EC8AE5BCDD3CC9A1FFF59DD "点击放大")
 
 ## 背景知识
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-712
 title: Grid如何展开与收起二级子GridItem
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Grid如何展开与收起二级子GridItem
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:edcbef2614e9241acb8263f16309b463384c00676e44a175b31a6bf97b330356
 ---
@@ -201,7 +201,7 @@ struct Index {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/wMG_iQ1QQoeJhNUn9f5Lmw/zh-cn_image_0000002655584712.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/wMG_iQ1QQoeJhNUn9f5Lmw/zh-cn_image_0000002655584712.png?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=91501E59A960AA8A789CF087D03A7F00D17F3DB03485595AC2962D1E061DDC29 "点击放大")
 
 ## 总结
 

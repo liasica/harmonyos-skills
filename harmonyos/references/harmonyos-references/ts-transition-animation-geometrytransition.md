@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-transi
 title: 组件内隐式共享元素转场 (geometryTransition)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 组件内隐式共享元素转场 (geometryTransition)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-14
 content_hash: sha256:7f0ef528fbfc0d211f9c2c67ddd79c236acf3add6027e8c7bfb76b2149d77ec3
 ---
@@ -139,7 +139,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/R7WKoXC0SqGEh_u8mf0rjg/zh-cn_image_0000002786361554.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/R7WKoXC0SqGEh_u8mf0rjg/zh-cn_image_0000002786361554.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF9FECA7D6DB5C5284E4BA2F74DFA4D496AEA0AB126540A869B6E67D3A05DF45)
 
 ### 示例2（if范式下使用follow实现跟随效果）
 
@@ -225,4 +225,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/d5ECZlwPTwC7PvTmk_Cl-w/zh-cn_image_0000002815560975.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/d5ECZlwPTwC7PvTmk_Cl-w/zh-cn_image_0000002815560975.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=9516EC2FE7282DCC07E7BF6D5E339F7ACC35FB2EBEAA74CE69236521E72BD65F)

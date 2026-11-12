@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: LongPressGesture
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 基础手势 > LongPressGesture
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-30
 content_hash: sha256:b2be80552369ae6987c113027e9c6ff1b24fed6f00727adec923c28c20eadbdb
 ---
@@ -179,4 +179,4 @@ struct LongPressGestureExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/afwdX5eFTuShFORqqbFWFg/zh-cn_image_0000002815560505.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/afwdX5eFTuShFORqqbFWFg/zh-cn_image_0000002815560505.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=074C6FEA855AC309F55850FD929B60352F0712668E39B90EA92A5847EDAEF7B4)

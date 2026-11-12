@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-drawin
 title: Line
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图形绘制 > Line
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:76a5212ad78d7767a844380bb349a213a6a83bd75c356d09edb21fdca44004b9
 ---
@@ -179,7 +179,7 @@ struct LineExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/dAajSCLFRwKMuKI4ZCqFKA/zh-cn_image_0000002786361532.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/dAajSCLFRwKMuKI4ZCqFKA/zh-cn_image_0000002786361532.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD7DA2DC1C320B489857203ACF20068E38ED81E13BA492AE01A3E0DA662C4BD8)
 
 ### 示例2（线条端点绘制）
 
@@ -228,7 +228,7 @@ struct LineExample1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/6v_b_36nREazWKm4Vi5_pA/zh-cn_image_0000002815560953.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/6v_b_36nREazWKm4Vi5_pA/zh-cn_image_0000002815560953.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBC3B81EAD0951C61829C349D654F02968ED2B3AF0F802A177B9E6D541949B04)
 
 ### 示例3（线条间隙绘制）
 
@@ -289,7 +289,7 @@ struct LineExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/py7nSzPGQo2wpT1aErnHig/zh-cn_image_0000002815401037.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/py7nSzPGQo2wpT1aErnHig/zh-cn_image_0000002815401037.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBE3AA8C2B9ADE9E26C70CD648709415FEF59270649911141F645389D8275C3D)
 
 ### 示例4（宽和高使用不同参数类型绘制直线）
 
@@ -331,7 +331,7 @@ struct LineTypeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/15l44_C_SAqsl9Dj3i6IhA/zh-cn_image_0000002786521462.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/15l44_C_SAqsl9Dj3i6IhA/zh-cn_image_0000002786521462.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=B68A3A7B5A545BB56C7F1500C2CC5476545C30026BB60F8676A448C9FC44CC6F)
 
 ### 示例5（使用attributeModifier动态设置Line组件的属性）
 
@@ -369,4 +369,4 @@ struct LineModifierDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/RupHFaL9TjynOLnWvNlWwg/zh-cn_image_0000002786361534.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/RupHFaL9TjynOLnWvNlWwg/zh-cn_image_0000002786361534.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=5B0CFC45E3E6C4C9F48360FE9CCEF6DCEB2E40002868F47CD5E02699A5CDCF8F)

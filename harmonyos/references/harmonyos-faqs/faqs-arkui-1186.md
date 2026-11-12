@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1186
 title: 如何通过手势实现组件惯性滚动动画
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何通过手势实现组件惯性滚动动画
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:455dd162e92e9d56b1bc3f16d3a60b68ea90c4b7163b00f844aba0b1555a5c29
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:455dd162e92e9d56b1bc3f16d3a60b68ea90c4b7163b00f844aba0b1555
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/urPxhlwQTlCcWYv0Anbhfg/zh-cn_image_0000002658952169.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/urPxhlwQTlCcWYv0Anbhfg/zh-cn_image_0000002658952169.png?HW-CC-KV=V1&HW-CC-Date=20261112T233149Z&HW-CC-Expire=31536000000&HW-CC-Sign=81F50044C7371326215F9836F677DA42AE3B2811520BACB0951F0E3DBAB6DEF0 "点击放大")
 
 ## 背景知识
 

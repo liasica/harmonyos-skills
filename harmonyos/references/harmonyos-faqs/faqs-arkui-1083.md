@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1083
 title: 圆角边框问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 圆角边框问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:b401b95d6dac80caf3061c37d8ba7e0b6f7985f561e65af79c3eb4499be37ad8
 ---
@@ -105,7 +105,7 @@ borderRadius属性可以为组件设置边框的圆角半径，但某些场景�
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/ufY55xnlT7umJAN-yUV7KQ/zh-cn_image_0000002658926553.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/ufY55xnlT7umJAN-yUV7KQ/zh-cn_image_0000002658926553.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=7BB0EC280AFB5D79088BC060374F4C1B6A24D5309717E16799CBCA1864EDD3D1 "点击放大")
 * 场景二：同时设置border属性和borderRadius属性圆角不生效。
 
   border设置在borderRadius之后会导致border覆盖borderRadius，并且，border已经存在参数radius用于控制圆角。如果border属性的radius参数缺省，需要borderRadius设置在border后。
@@ -140,14 +140,14 @@ borderRadius属性可以为组件设置边框的圆角半径，但某些场景�
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/YP-bI8ugRYugd-KE5p8L0w/zh-cn_image_0000002658806607.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/YP-bI8ugRYugd-KE5p8L0w/zh-cn_image_0000002658806607.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=10F6F8D6BFC037A0DF4481F0A42DCE03A8D8C504B96B31DBCCD71E751AA71679 "点击放大")
 * 场景三：不同背景色重叠导致圆角出现黑边。
 
   示例一：Video组件与父容器Column背景色不同时，四角出现黑边。
 
   问题现象图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/_7yaElMQTfWiFNCvaC0bUg/zh-cn_image_0000002628407344.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/_7yaElMQTfWiFNCvaC0bUg/zh-cn_image_0000002628407344.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=77E6C08E62E5E16E370A9B9DE336BA6187E51EB28531B4EB3E2D794A23747E6E "点击放大")
 
   由于抗锯齿是半透明像素（GPU绘制正常原理），导致无法完全遮挡下方内容。需要将两者背景色统一或者将Video组件的背景色设为透明。
 
@@ -188,7 +188,7 @@ borderRadius属性可以为组件设置边框的圆角半径，但某些场景�
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/hNuelDhyRDeT07xKqtvQDQ/zh-cn_image_0000002628567242.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/hNuelDhyRDeT07xKqtvQDQ/zh-cn_image_0000002628567242.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B1A8A07EB6419F136C1DB2AFBC781DB73EB4E28DA3C8485EC9EA7849EAFF64E "点击放大")
 
   示例二：存在重叠关系的兄弟组件背景色不同时，四角出现黑边。
 
@@ -222,7 +222,7 @@ borderRadius属性可以为组件设置边框的圆角半径，但某些场景�
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/6tJaOG9OS5CvuSyC8uhUpg/zh-cn_image_0000002658926555.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/6tJaOG9OS5CvuSyC8uhUpg/zh-cn_image_0000002658926555.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=36F953EBC8F928C94A749C7A4651A7C21CD706BA897459951A1BF23D5185CFD5 "点击放大")
 
   方法一：同示例一解决方法，需要将两者背景色统一。
 
@@ -289,4 +289,4 @@ borderRadius属性可以为组件设置边框的圆角半径，但某些场景�
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/VrjZPCjaQrad1xCoyyHvaw/zh-cn_image_0000002658806609.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/VrjZPCjaQrad1xCoyyHvaw/zh-cn_image_0000002658806609.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=D79CCD798AD381D0FBBA054EAC05BB3FA2EF508A4AEDCD48C90FE14C634E297B "点击放大")

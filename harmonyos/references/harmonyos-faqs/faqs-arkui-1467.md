@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1467
 title: 如何让有自定义弹窗的应用进入多任务页面时，弹窗模糊显示
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何让有自定义弹窗的应用进入多任务页面时，弹窗模糊显示
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:b02ec4820bf965c7c69939db282e9120c1aeb4a3f6bf1d91090a89e5a82342f2
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:b02ec4820bf965c7c69939db282e9120c1aeb4a3f6bf1d91090a89e5a82
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/1a1wn44mTnm54sDZK67FOw/zh-cn_image_0000002628765246.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/1a1wn44mTnm54sDZK67FOw/zh-cn_image_0000002628765246.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7E1BCAD28DD778A5AE3C6F42C1C15B3318FE85F87724DD621799EEE860C2315 "点击放大")
 
 ## 背景知识
 

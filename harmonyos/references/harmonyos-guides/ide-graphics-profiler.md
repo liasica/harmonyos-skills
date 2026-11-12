@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-graphics-
 title: GPU帧捕获工具：Graphics Profiler抓帧入口
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 附录 > GPU帧捕获工具：Graphics Profiler抓帧入口
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:faec64d10743a7a86c679f8f31dd892bafead10dc159a3e5ce557a864163a509
 ---
@@ -24,15 +24,15 @@ Graphics Profiler（图形性能调优）是专为GPU分析和优化提供的一
 
    此处为可选配置，配置与否均可直接点击Launch APP拉起应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/nEN4p43zQ6m29w5V75ZxDg/zh-cn_image_0000002808767081.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/nEN4p43zQ6m29w5V75ZxDg/zh-cn_image_0000002808767081.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=211E4D6694236E787A4B029486DD2F249832D263F4A332170415BCFA41525349)
 4. 在帧捕获界面拉起应用，成功建立连接后，Capture按钮点亮。设置抓帧数量，点击Capture按钮，等待帧捕获完成。
    * Scope：不可修改，默认为Frame。
    * Count：抓帧数量设置，范围为1-10帧。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/nZj54Y2MTQaj9Xdc8L1l2Q/zh-cn_image_0000002779407526.png)
-5. 抓帧完成后，在下方显示界面中选择一条捕获帧，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/IWuOXhJsSCGEIQu6zMuwqw/zh-cn_image_0000002779567504.png)按钮，可自动打开Graphics Profiler工具解析捕获帧信息。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/nZj54Y2MTQaj9Xdc8L1l2Q/zh-cn_image_0000002779407526.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=C8EB616B299A7B943D8C9D5314370C63E544EBEED879A73A7B860BBA2707BCDA)
+5. 抓帧完成后，在下方显示界面中选择一条捕获帧，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/IWuOXhJsSCGEIQu6zMuwqw/zh-cn_image_0000002779567504.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=4E07F468C1A2EC96866AB658EE628D6377B6BE4FC0479FD2F3660CCC20448C5D)按钮，可自动打开Graphics Profiler工具解析捕获帧信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/iYwF-utxS6yfL-anb6YMgQ/zh-cn_image_0000002808887167.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/iYwF-utxS6yfL-anb6YMgQ/zh-cn_image_0000002808887167.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=0696A854097FFCC235953017730EE27C61146C1CA1E94F3C1FBB14D3E9D3BD42 "点击放大")
 
    **说明** 
 
@@ -40,4 +40,4 @@ Graphics Profiler（图形性能调优）是专为GPU分析和优化提供的一
    * Graphics Profiler工具一次只能解析一个rdc文件。
 6. 若首次使用，需根据界面提示下载Graphics Profiler执行工具，并在菜单栏**File > Settings**（macOS为**DevEco Studio > Preferences/Settings**） **> Tools > Graphics Profiler**中配置工具路径。默认路径为：工具安装路径/frame\_profiler/FrameProfiler.exe（macOS中为工具安装路径/Contents/MacOS/FrameProfiler）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/JXuTACG9SqGMIWAlSCgI-g/zh-cn_image_0000002779567502.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/JXuTACG9SqGMIWAlSCgI-g/zh-cn_image_0000002779567502.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=675DC7F79CBF29DCBCA0FC399777A9CEEB5D1BFFB6114107D292E88A30AD6988)

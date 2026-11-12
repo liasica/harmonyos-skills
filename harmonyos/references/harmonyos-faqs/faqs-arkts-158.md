@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-158
 title: 编译时class-transformer中-Type报错该如何解决
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 编译时class-transformer中-Type报错该如何解决
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:53+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:a4482a9e28b4c3e03a50e2eede7374aaa2d2ae2c9668dff208d5871764a41d5e
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:a4482a9e28b4c3e03a50e2eede7374aaa2d2ae2c9668dff208d5871764a
 
 在ArkTS中使用class-transformer库的@Type注解时，与ArkTS的V2版本状态管理中@Type的注解冲突，导致编译器代码检查不通过。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/xLSrg4jXRV-qGl9Vn0UgCg/zh-cn_image_0000002629058988.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/xLSrg4jXRV-qGl9Vn0UgCg/zh-cn_image_0000002629058988.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=86833B371886D4DC89BA38B9E79B937C07F3B17419DCA069303EA4F9B5FFC3A5 "点击放大")
 
 ## 背景知识
 

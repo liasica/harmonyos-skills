@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigat
 title: Navigation子页面
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 设置组件导航和页面路由 > 组件导航(Navigation) (推荐) > Navigation子页面
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:163616f2fea98fa308522f1056312152ae69c37d99a500acb74d3dfd8e64b31f
 ---
@@ -79,7 +79,7 @@ NavDestination提供了两种类型。
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/hpmuPSYCSOOAqxBGxbCv6w/zh-cn_image_0000002815398263.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/hpmuPSYCSOOAqxBGxbCv6w/zh-cn_image_0000002815398263.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=306F7782BCA71FC6595721CD09395A3BB4AE39F0F59F17EFE513579BB96BF0BB)
 
 ## 页面生命周期
 
@@ -87,7 +87,7 @@ NavDestination提供了两种类型。
 
 生命周期时序如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/CCnulOsLTsiT7x_ISPvwfA/zh-cn_image_0000002786518688.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/CCnulOsLTsiT7x_ISPvwfA/zh-cn_image_0000002786518688.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=74801216BCAAE8070CC13A83786F00339DA80D10FA277FA463E80ADF2A99F24E)
 
 * **[aboutToAppear](../harmonyos-references/ts-custom-component-lifecycle.md#abouttoappear)**：在创建自定义组件后，执行其build()函数之前执行（NavDestination创建之前），允许在该方法中改变状态变量，更改将在后续执行build()函数中生效。
 * **[onWillAppear](../harmonyos-references/ts-basic-components-navdestination.md#onwillappear12)**：NavDestination创建后，挂载到组件树之前执行，在该方法中更改状态变量会在当前帧显示生效。

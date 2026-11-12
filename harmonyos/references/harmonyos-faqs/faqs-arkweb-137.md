@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-137
 title: 使用ArkWeb下载文件提示完成但文件为何为空
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > 使用ArkWeb下载文件提示完成但文件为何为空
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:3985739c4441c3c4a25d19010f02b8b71c81cba238f6ed14e09f743950699c16
 ---
@@ -67,11 +67,11 @@ struct WebComponent {
 
 日志打印下载完成：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/QRJeLwTdTeCIrVDfvjaMlQ/zh-cn_image_0000002659138403.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/QRJeLwTdTeCIrVDfvjaMlQ/zh-cn_image_0000002659138403.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4E95686C78560375E2FF06680780600CFF8855A434DC1D2194DD6E7505A8E89 "点击放大")
 
 实际下载文件为空：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/k8xZtDjDTMK4wUSc3lRdjg/zh-cn_image_0000002629059052.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/k8xZtDjDTMK4wUSc3lRdjg/zh-cn_image_0000002629059052.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=F4FEE88538EAB3F82D49ADADE5914668B4E17F4D63F43D04C71444457B23AF05 "点击放大")
 
 ## 背景知识
 
@@ -84,13 +84,13 @@ struct WebComponent {
 * 确认文件是否由webDownloadItem.start下载生成：
   1. 在picker选择器后打断点执行，发现在webDownloadItem.start执行之前，手机中已经生成文件。由此判断，此时文件并非由webDownloadItem.start下载，而是picker选择器创建的空文件。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/-gahUViFQPu3DVbfQgzXyA/zh-cn_image_0000002659258355.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/-gahUViFQPu3DVbfQgzXyA/zh-cn_image_0000002659258355.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B936FF6A5A6231F85570686FC3511D1E79E9ADA86C35AB0BC897B79D13B273B "点击放大")
   2. 添加URI转换const uri = new fileUri.FileUri\(uris\[0\]\);，文件下载成功。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/qlsp2-beQOS_4h0RM_mM6g/zh-cn_image_0000002628899136.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/qlsp2-beQOS_4h0RM_mM6g/zh-cn_image_0000002628899136.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=D75A02446E8D95E49ABF8C1274FABA1CCB39CA6CA18F91AD3A28BE4FD8451F03 "点击放大")
 * 验证非当前HAP包名的文件夹是否可以作为文件下载路径：选择非当前HAP包名的文件夹进行下载，此时文件无法下载。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/dM4Mz7kfQWC71hToaDLf2w/zh-cn_image_0000002659138405.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/dM4Mz7kfQWC71hToaDLf2w/zh-cn_image_0000002659138405.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C6EBF5EC2494502DEE8FCC54BC0DCDBA1EB3BB63147BAEE5471A0E93E21625D "点击放大")
 
 ## 分析结论
 

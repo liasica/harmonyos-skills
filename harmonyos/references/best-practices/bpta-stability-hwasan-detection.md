@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 使用HWASan检测内存错误
 breadcrumb: 最佳实践 > 稳定性 > 稳定性检测 > 开发态稳定性检测 > 地址越界类问题检测 > 使用HWASan检测内存错误
 category: best-practices
-scraped_at: 2026-11-10T10:42:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-03
 content_hash: sha256:d7eeefdb090fcd522a683c1ca7b98841fd1b1b762b59f53039a445a41b5e171e
 ---
@@ -81,7 +81,7 @@ HWASAN\_OPTIONS支持在“app.json5”中配置。
 
 若构建日志中出现BinXO编译告警，请参见[适配常见问题](../doccenter-app-quality/bpta-stability-address-sanitizer-faq.md)中的BinXO相关说明。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/Bup0fX5uTq2Pz3Mgxhmomg/zh-cn_image_0000002613938015.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/Bup0fX5uTq2Pz3Mgxhmomg/zh-cn_image_0000002613938015.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=DD856AD6BD3C303502EFB4E01A903F767B21754509307D5E8F9BAFA675B9CBBC "点击放大")
 
 **流水线场景**
 
@@ -91,7 +91,7 @@ HWASAN\_OPTIONS支持在“app.json5”中配置。
    "hwasanEnabled": true
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/4MOTpTqnS5yyFDQytkDqFQ/zh-cn_image_0000002404125093.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/4MOTpTqnS5yyFDQytkDqFQ/zh-cn_image_0000002404125093.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=777B791E6ADC42CB7C7FAFEE2CF246B8A17D56D44D872DA1BC64B3D598958885)
 2. 在hvigorw命令后加上**-p** **ohos-enable-hwasan=true**的选项，执行hvigorw命令，更多options参考[hvigorw文档](../harmonyos-guides/ide-hvigor-commandline.md)。
 
    ```screen
@@ -108,7 +108,7 @@ HWASAN\_OPTIONS支持在“app.json5”中配置。
    "hwasanEnabled": true
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/BLi-Fvu4QpCChNR_N1T1Ow/zh-cn_image_0000002370405544.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/BLi-Fvu4QpCChNR_N1T1Ow/zh-cn_image_0000002370405544.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC40F0B116CE8CD347ACDD4D5EE9366DF2F43AAA50CD4B301C407FB78C691A89)
 2. 在需要使能HWASan的模块中，通过添加构建参数开启HWASan检测插桩，在对应模块的模块级build-profile.json5中添加命令参数。
 
    ```screen
@@ -172,7 +172,7 @@ llvm-readelf -s libthird_party.so | grep '__hwasan_init'
 1. 运行或调试当前应用。
 2. 当程序出现内存错误时，弹出HWASan log信息，点击信息中的链接即可跳转至引起内存错误的代码处。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/jNxQapdLRg-QrXile_zxVQ/zh-cn_image_0000002370565428.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/jNxQapdLRg-QrXile_zxVQ/zh-cn_image_0000002370565428.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C4FFC52ABB8F96B1828A9EEC5A274CE747CC65FEE64B42F066F358872E72934)
 
 ## HWASan异常检测类型
 
@@ -234,7 +234,7 @@ Cause: stack tag-mismatch
 
 如果有工程代码，直接开启HWASan检测，debug模式运行后复现该错误，可以触发HWASan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/-ZB2a8mSRAyyBlNtUB-dkg/zh-cn_image_0000002505468708.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/-ZB2a8mSRAyyBlNtUB-dkg/zh-cn_image_0000002505468708.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8344622959DB08C2E7ADC0F7DC0CAFDC49D08BEB41D51285730276EFB21FD47)
 
 **优化建议**
 
@@ -288,7 +288,7 @@ Cause: heap-buffer-overflow
 
 如果有工程代码，直接开启HWASan检测，debug模式运行后复现该错误，可以触发HWASan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/IVMF9pZNRxeIT2Y3ECD0pg/zh-cn_image_0000002537308659.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/IVMF9pZNRxeIT2Y3ECD0pg/zh-cn_image_0000002537308659.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=20FB638D30260F0BC802EBB6E39B43AF1CDDD00CE3B806B9B86177525A944FB4)
 
 **修改方法**
 
@@ -347,7 +347,7 @@ Cause: use-after-free
 
 如果有工程代码，直接开启HWASan检测，debug模式运行后复现该错误，可以触发HWASan，直接点击堆栈中的超链接定位到代码行，能看到错误代码的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/mj_U9Je7Ro6QBUrIbHi-EQ/zh-cn_image_0000002505469052.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/mj_U9Je7Ro6QBUrIbHi-EQ/zh-cn_image_0000002505469052.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=5411E82A2718548E078AC3552EABD380B6507281C63162B21BC9E010E61AD8C4)
 
 **修改方法**
 

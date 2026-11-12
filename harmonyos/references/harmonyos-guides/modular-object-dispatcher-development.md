@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/modular-objec
 title: 使用ModularObjectDispatcher实现动态接口调用 (C/C++)
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 基于ModularObjectExtensionAbility的模块化对象开发指导 (C/C++) > 使用ModularObjectDispatcher实现动态接口调用 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:643a6de80cf08635999e3b25c9556982c1ce22cc2e9911a1a9c9e073367dabe6
 ---
@@ -24,7 +24,7 @@ content_hash: sha256:643a6de80cf08635999e3b25c9556982c1ce22cc2e9911a1a9c9e073367
 
 ## 运行机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/Jt46pPIcRMG72k5gnItaZA/zh-cn_image_0000002815557855.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/Jt46pPIcRMG72k5gnItaZA/zh-cn_image_0000002815557855.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=F5D28DDED95D686CC7CF8831759693516BDBF1D6866459D701ED6B7BE2BBD6FE)
 
 ModularObjectDispatcher的调用流程分为以下几个阶段：
 

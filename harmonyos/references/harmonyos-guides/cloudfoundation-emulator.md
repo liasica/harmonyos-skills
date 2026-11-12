@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 使用模拟器调试
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 使用模拟器调试
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:d3ce90e823226513ae7e5c237d1ad749ab0539323a8e45314a4361d786ac8b95
 ---
@@ -27,7 +27,7 @@ content_hash: sha256:d3ce90e823226513ae7e5c237d1ad749ab0539323a8e45314a4361d786a
       * 模拟器网络连接是否正常。
       * 应用是否使用了错误的签名方式。当前Cloud Foundation Kit支持[关联注册应用进行自动签名](ide-signing-auto.md#section6333421192714)和[手动签名](ide-signing-manual.md)两种方式，请修改后再重试。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/cqJvH1lpRzC3k9NsLzhGBA/zh-cn_image_0000002786360270.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/cqJvH1lpRzC3k9NsLzhGBA/zh-cn_image_0000002786360270.png?HW-CC-KV=V1&HW-CC-Date=20261112T233228Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6415E4EEC0440DAA8572464136EDED548EB2322FF14FD48173C21C6F741A65C)
 2. 将获取的调试凭据注册到AGC云侧，具体可参见[注册模拟器调试凭据](../app/agc-help-add-credential-0000002415343501.md)。
 3. 调试凭据注册成功后，您即可使用模拟器调试应用/元服务。关于模拟器使用指导，请参见[使用模拟器运行应用](ide-run-emulator.md)。
 

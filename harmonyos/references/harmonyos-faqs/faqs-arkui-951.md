@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-951
 title: 如何使用List组件实现流畅的无限下拉滑动效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何使用List组件实现流畅的无限下拉滑动效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:48+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:f275ba41f50e3d0c50a6ebca9e9f3ba41e6994b3a5bc49d19bf897cc741b0452
 ---
@@ -109,7 +109,7 @@ content_hash: sha256:f275ba41f50e3d0c50a6ebca9e9f3ba41e6994b3a5bc49d19bf897cc741
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/q3QZkdU7TKO42Z3ZMw5kTw/zh-cn_image_0000002628401248.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/q3QZkdU7TKO42Z3ZMw5kTw/zh-cn_image_0000002628401248.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=324B6B0A4300528EE1B92B7855D38B0E37BF5F34324B38BA7F2EB385E3E28317 "点击放大")
 
 * 场景二：在状态管理V1场景中实现，具体实现方法与场景一相似，示例代码如下：
 
@@ -307,7 +307,7 @@ content_hash: sha256:f275ba41f50e3d0c50a6ebca9e9f3ba41e6994b3a5bc49d19bf897cc741
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/QrdJinBgSgm0RxORfIzJGQ/zh-cn_image_0000002658800515.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/QrdJinBgSgm0RxORfIzJGQ/zh-cn_image_0000002658800515.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C77C49A917D275725AF460F79CF6D3D6DCEDEA74D7E01AA370A1C6DFE204B3B "点击放大")
 * 场景三：当ListItem类型不同时，在[onScrollStart](../harmonyos-references/ts-container-list.md#onscrollstart9)触发时通过滚动偏移量和ListItem的高度进行比较，提前加载更多数据。
 
   ```ts
@@ -397,4 +397,4 @@ content_hash: sha256:f275ba41f50e3d0c50a6ebca9e9f3ba41e6994b3a5bc49d19bf897cc741
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/bS5ddgqZSjCtT_kT6xStEw/zh-cn_image_0000002628561156.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/bS5ddgqZSjCtT_kT6xStEw/zh-cn_image_0000002628561156.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=910919D4FE8312A86D35E9FC8020FD4577546EC88C1D03D3227255FD864D0B0B "点击放大")

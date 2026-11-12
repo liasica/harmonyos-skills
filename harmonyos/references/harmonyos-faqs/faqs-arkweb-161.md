@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-161
 title: Web组件如何解决切换可见状态出现残留帧
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web组件如何解决切换可见状态出现残留帧
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:39f7e97c6b0ad8e620d946b2fa9f0ad2bc99f9e908adcd7a4c55bb3ef42e8310
 ---
@@ -14,11 +14,11 @@ content_hash: sha256:39f7e97c6b0ad8e620d946b2fa9f0ad2bc99f9e908adcd7a4c55bb3ef42
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/7My0-VKOSx2Ci6w3UOTCIA/zh-cn_image_0000002659258387.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/7My0-VKOSx2Ci6w3UOTCIA/zh-cn_image_0000002659258387.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=026238E8EEC76A42C3A61B5C7933335A849D9D8BD3B9E18D301E4F3BC511E7ED "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/RLnc6LiNR3myJs-4mWwKfw/zh-cn_image_0000002659138433.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/RLnc6LiNR3myJs-4mWwKfw/zh-cn_image_0000002659138433.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=24627B4BFFB6136FBF0DD0AB00DEE5AAFA11CA9625A1B9ED58842EA6C002F979 "点击放大")
 
 ## 背景知识
 

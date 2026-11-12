@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/development-env
 title: DevEco Studio启动问题排查
 breadcrumb: FAQ > DevEco Studio > 环境准备 > 常见问题 > DevEco Studio启动问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:48+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:f144eb808a2dc3d60580e1ed898236e88ee55ee7d825bca97728c0d66d70d1b2
 ---
@@ -14,13 +14,13 @@ content_hash: sha256:f144eb808a2dc3d60580e1ed898236e88ee55ee7d825bca97728c0d66d7
 
 以配置内存上限为12G举例，打开DevEco Studio，通过菜单栏的Help > Edit Custom Properties...，打开idea.properties配置文件。在文件中新增一行 arkts.server.max.old.space.size=12288，然后重启DevEco Studio。编辑器Node进程的内存上限将设置为12288M（即12G）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/NOCJwdNqS8aAWCKBEMay4g/zh-cn_image_0000002773153902.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/NOCJwdNqS8aAWCKBEMay4g/zh-cn_image_0000002773153902.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7A9E95652441685DE1A2E06A4E942DF9E2496E0CB0DB8141C356DCEC5FB9A10 "点击放大")
 
 **Q：在DevEco Studio 新建 / 打开工程，反复执行"Updating indexes"、"Indexing"，如何解决？**
 
 **A**：导致该问题的原因是缓存路径下的文件被加密，请联系企业内的IT，确认是否有加密软件在运作，将该目录内容加入白名单中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/AMxaITVDQjigdrzld8Ir2w/zh-cn_image_0000002802393523.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/AMxaITVDQjigdrzld8Ir2w/zh-cn_image_0000002802393523.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=B1B1C7CCB0EE39A010C1B5842463AA8FD9CE2062DE5C5789851C18A97424175F "点击放大")
 
 * MAC的缓存路径为：~/Library/Caches/Huawei/DevEcoStudio<版本号> 和 ~/Library/Application Support/Huawei/DevEcoStudio<版本号>
 
@@ -39,9 +39,9 @@ content_hash: sha256:f144eb808a2dc3d60580e1ed898236e88ee55ee7d825bca97728c0d66d7
 
 1. 清除缓存重新启动DevEco Studio。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/IjqGNy83R6aJDNV0EsLJRg/zh-cn_image_0000002802353447.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/IjqGNy83R6aJDNV0EsLJRg/zh-cn_image_0000002802353447.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=8139C3B9FD5DC20070BD87731F434A989033D62F6615FD57BD72E5945A1BD88E)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/yak8y0xaT0aFk-C58u5CBg/zh-cn_image_0000002773153676.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/yak8y0xaT0aFk-C58u5CBg/zh-cn_image_0000002773153676.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=DDE602774DBD95649C2320BD3D680E4C2E7C63846154A6F36C6E9BCBE2D635DF)
 2. 收集日志，打开华为开发者联盟的"[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/7?level2=1017479797975693)"页面进行反馈。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/qYSuL_xZQVyLyceZ36sd8A/zh-cn_image_0000002773153678.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/qYSuL_xZQVyLyceZ36sd8A/zh-cn_image_0000002773153678.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A5E45D4B7040AEBA3FA0E8437733B05524D4BA8FDED819DD09460C19F363776 "点击放大")

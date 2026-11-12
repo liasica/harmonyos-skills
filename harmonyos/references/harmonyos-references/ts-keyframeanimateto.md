@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-keyfra
 title: 关键帧动画 (keyframeAnimateTo)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 关键帧动画 (keyframeAnimateTo)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-20
 content_hash: sha256:6f9086c03cc419d9c93a41ff16d53eb0153f28ff4730cbc3f7829d9caddc5943
 ---
@@ -129,4 +129,4 @@ struct KeyframeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/thURezIlRLqt8y3US8FmXg/zh-cn_image_0000002815401053.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/thURezIlRLqt8y3US8FmXg/zh-cn_image_0000002815401053.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=34FF1052D5FA202982A26FD5450F154A4309994F7E624936F4154701577D7DED)

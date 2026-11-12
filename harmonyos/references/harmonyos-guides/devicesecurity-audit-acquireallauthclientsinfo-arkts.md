@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 阻断类客户端信息查询场景
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全审计 > 阻断类客户端信息查询场景
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:37+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:bf611ca248bbaa9b0cecb330ff077d607f3e1e2c2d543b50a4ca5dfdd17546d2
 ---
@@ -21,7 +21,7 @@ content_hash: sha256:bf611ca248bbaa9b0cecb330ff077d607f3e1e2c2d543b50a4ca5dfdd17
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/mEf3BmhpRuW2eFKzpiVq1Q/zh-cn_image_0000002786359682.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/mEf3BmhpRuW2eFKzpiVq1Q/zh-cn_image_0000002786359682.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=419FA51785C83CABB37D3B18BB3971309A6501212B3AAB986DEF6F5B9C242D05)
 
 **流程说明：**
 

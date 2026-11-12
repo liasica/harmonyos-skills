@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-13
 title: 如何根据网络情况进行不同的提示
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > 如何根据网络情况进行不同的提示
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:b96d19319618c18c290900cb42868c085e48e594580a5f181fe9882cdc3a3c6e
 ---
@@ -133,4 +133,4 @@ struct Index {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/No36tN1sRTaZaUkuWIBzxA/zh-cn_image_0000002628610912.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/No36tN1sRTaZaUkuWIBzxA/zh-cn_image_0000002628610912.png?HW-CC-KV=V1&HW-CC-Date=20261112T233214Z&HW-CC-Expire=31536000000&HW-CC-Sign=E59AA21B82B67D1DD22ADB59362CD5E49ED8F3CB4AE6D1B4FB5169BBA1AAE088 "点击放大")

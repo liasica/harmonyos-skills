@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-691
 title: 如何实现画布的扩展以及内容的移动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现画布的扩展以及内容的移动
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-13
 content_hash: sha256:2923c450836741711c01d5cd5a22d5a3f9974ba400aab15f3cd3f9057dd80fce
 ---
@@ -124,7 +124,7 @@ content_hash: sha256:2923c450836741711c01d5cd5a22d5a3f9974ba400aab15f3cd3f9057dd
   ```
 
   实现效果如下：
-  :   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/rvvHwrQuQ6mitE53q1MvXg/zh-cn_image_0000002628554750.png "点击放大")
+  :   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/rvvHwrQuQ6mitE53q1MvXg/zh-cn_image_0000002628554750.png?HW-CC-KV=V1&HW-CC-Date=20261112T233200Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E55C137E607ABAD4C1A19D7A7A410FDCCF984DE920092EE7A7033F85B8BCEC3 "点击放大")
 * 方案二：固定Canvas宽度，通过手势来移动整个画布。
   1. 定义状态变量isMoving，当isMoving=true时为移动模式，当isMoving=false时为绘画模式。
   2. 为画布绑定滑动手势，根据状态变量isMoving值不同做不同逻辑。
@@ -300,7 +300,7 @@ content_hash: sha256:2923c450836741711c01d5cd5a22d5a3f9974ba400aab15f3cd3f9057dd
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/vcHHJjg8RM-V48YrcDPD0w/zh-cn_image_0000002628394856.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/vcHHJjg8RM-V48YrcDPD0w/zh-cn_image_0000002628394856.png?HW-CC-KV=V1&HW-CC-Date=20261112T233200Z&HW-CC-Expire=31536000000&HW-CC-Sign=278ACA0835604784E9ADEA02FB37BA988FE396D4688BB6F5D37000DC1E71FD85 "点击放大")
 
   两种实现方案对比如下：
 

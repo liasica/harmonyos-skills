@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-503
 title: 如何控制Swiper组件只能向一个方向滑动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何控制Swiper组件只能向一个方向滑动
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:ab3864be71229659004ff0c7a0dabe80e4dc453009a939f4291279f9d7f7c10d
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:ab3864be71229659004ff0c7a0dabe80e4dc453009a939f4291279f9d7f
 
 期望只能向右滑动，实际在使用onGestureRecognizerJudgeBegin拦截滑动手势时，先向右滑动不松手，再快速向左滑动Swiper组件会向左滑动并翻页与预期不符。具体现象如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/hVoSkTIlRTmyzJAcVVqECQ/zh-cn_image_0000002628388618.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/hVoSkTIlRTmyzJAcVVqECQ/zh-cn_image_0000002628388618.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=71D83246D7649465486D21FEE8278AAB46FE22FC794DEEE38A5B66316643D451 "点击放大")
 
 问题代码如下：
 
@@ -70,7 +70,7 @@ struct Index {
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/V71KjdIERfmyu2PIdI8vMA/zh-cn_image_0000002628548518.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/V71KjdIERfmyu2PIdI8vMA/zh-cn_image_0000002628548518.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=5147AAF9366CD9FDB009CF211D645255BB0E08D1821F7716522BA90D28BCC01C "点击放大")
 
 ## 背景知识
 

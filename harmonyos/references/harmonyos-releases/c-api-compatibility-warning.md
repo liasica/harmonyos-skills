@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/c-api-compa
 title: CAPI兼容性保护高阶用法
 breadcrumb: 版本说明 > 应用升级适配与兼容性 > 应用兼容性说明 > 应用开发中的兼容性场景开发指导 > CAPI兼容性保护高阶用法
 category: harmonyos-releases
-scraped_at: 2026-11-12T09:50:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:5fc243256e34ba6a815eaae8efebcb1782957a7d0292b8feb7bafa9994dd1e4c
 ---
@@ -55,11 +55,11 @@ API版本号格式从26.0.0开始进行调整（详见[版本号格式调整说�
   + 针对OpenHarmony工程，"compatibleSdkVersion"：N，"-DOHOS\_COMPATIBLE\_SDK\_VERSION=N.0.0"。
   + 示例：工程级build-profile.json5文件中的compatibleSdkVersion配置的版本号为6.0.2(22)，
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/Dx_p6mPBSZefTVSPIHUkCg/zh-cn_image_0000002618778533.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/Dx_p6mPBSZefTVSPIHUkCg/zh-cn_image_0000002618778533.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=99310BAE09918CCF823E93BD096AF261C77D1697313E3237864808973082E7F6)
 
 模块级build-profile.json5配置文件中增加编译参数 "arguments": "-DOHOS\_COMPATIBLE\_SDK\_VERSION=22.0.0"。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/uc02RHiVTy6ZNqsaDdiXnA/zh-cn_image_0000002588498776.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/uc02RHiVTy6ZNqsaDdiXnA/zh-cn_image_0000002588498776.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=11FC7F223B049E3EE601F27E05A6056683BB2A80FA37A188DA7BD0FA0D53CFFD)
 
 * **当DevEco Studio版本是 6.1.0.830(API 23 Release) 时，默认自动开启弱引用（必须按照步骤完成步骤1-步骤5，特别是增加使用的API的依赖库步骤，否则存在风险）：**
 
@@ -79,7 +79,7 @@ API版本号格式从26.0.0开始进行调整（详见[版本号格式调整说�
 
 在代码中使用了OH\_PictureInPicture\_SetPipInitialSurfaceRect()函数，需要把此函数依赖的库文件 libnative\_window\_manager.so 加到链接库中，需要在模块级CMakelists.txt配置文件中增加 **libnative\_window\_manager.so** 链接库依赖，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/Tq9sY2K7Rj6Szw1HZI7Etg/zh-cn_image_0000002618898433.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/Tq9sY2K7Rj6Szw1HZI7Etg/zh-cn_image_0000002618898433.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=D8FFDCCD70DBB460F390A67D40857DD60FAF624EAE609EE3E95945F41DC6C3A0 "点击放大")
 
 **步骤3** 配置弱库依赖库（**依赖库在低版本设备上不存在，且设备版本低于API 22不支持此功能**）
 
@@ -93,7 +93,7 @@ API版本号格式从26.0.0开始进行调整（详见[版本号格式调整说�
 
 在代码中使用了OH\_i18n\_GetFirstStartFromTimeArrayTimeZoneRule()函数，此函数是在全新新增的动态库 libohi18n.so 中，需要在模块级CMakelists.txt配置文件中增加链接选项 "-Wl,--ohos-weak-library=libohi18n.so", 同时在target\_link\_libraries中也需要增加libohi18n.so依赖，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/rnpAgf1DQI2IjDNczekLvw/zh-cn_image_0000002588338896.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/rnpAgf1DQI2IjDNczekLvw/zh-cn_image_0000002588338896.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F53850BBD2CECADEE16AFAC0469B63750D28A725B67FA4A765C7BCFC983D83B "点击放大")
 
 **步骤4** 兼容性保护
 
@@ -188,7 +188,7 @@ APIAVAILABLE宏是对编译器内置函数 \_\_builtin\_available 的简单封�
 
   编译报错场景1：代码中使用了高版本API，没有使用 APIAVAILABLE进行保护，报错如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/3FOeC3VPReKUWE7Fn2ZdeQ/zh-cn_image_0000002618778573.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/3FOeC3VPReKUWE7Fn2ZdeQ/zh-cn_image_0000002618778573.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=31FAA600C5B73BA181301AAA15393B0606419764DE1A4AB88CA9E52AF85685F0 "点击放大")
 
   需要调整代码如下：
 
@@ -204,7 +204,7 @@ APIAVAILABLE宏是对编译器内置函数 \_\_builtin\_available 的简单封�
 
   编译报错场景2：代码中使用了高版本API，没有正确使用 APIAVAILABLE进行保护，报错如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/Zy1K6H5OSSGmvV3cOG0Myw/zh-cn_image_0000002588498818.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/Zy1K6H5OSSGmvV3cOG0Myw/zh-cn_image_0000002588498818.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE19AF78BF5777362C214D463BFAF004DE39F775B1C975A8C42153BB7419E37A "点击放大")
 
   需要调整代码如下（OH\_PictureInPicture\_SetPipInitialSurfaceRect 是 API 20新增的函数）：
 
@@ -251,7 +251,7 @@ APIAVAILABLE宏是对编译器内置函数 \_\_builtin\_available 的简单封�
 
 具体传递过程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/iGlNyvv0RGOUlG0vr1GL9A/zh-cn_image_0000002618898475.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/iGlNyvv0RGOUlG0vr1GL9A/zh-cn_image_0000002618898475.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=E892EF60FBFF606C544F02C5FF84806FFA53605FB0D5C10176BC5056B354D4B3)
 
 **步骤2** 配置弱引用依赖库（依赖库在低版本设备上存在）
 

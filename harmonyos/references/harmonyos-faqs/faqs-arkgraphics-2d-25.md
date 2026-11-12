@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkgraphic
 title: Canvas中clearRect无法清除上一绘画内容
 breadcrumb: FAQ > 图形开发 > 2D图形（ArkGraphics 2D） > Canvas中clearRect无法清除上一绘画内容
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-13
 content_hash: sha256:564475555114c71c099c66528b916b56355be7ca04dd6e2e360d9821cc58811e
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:564475555114c71c099c66528b916b56355be7ca04dd6e2e360d9821cc5
 
   绘制时对画布进行矩阵变换，使用clearRect清除时未达预期，出现问题现象如下所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/ly2kxSCuTk2hX6GBOpk_CQ/zh-cn_image_0000002658912555.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/ly2kxSCuTk2hX6GBOpk_CQ/zh-cn_image_0000002658912555.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B96452A3B451AF77D8DD3BC4E29A2AB63E65285C3022C038C3383F9FA6227A4 "点击放大")
 
   问题相关代码如下：
 
@@ -45,7 +45,7 @@ content_hash: sha256:564475555114c71c099c66528b916b56355be7ca04dd6e2e360d9821cc5
 
   绘制时对画布进行缩放，使用clearRect清除时未达预期，出现问题现象如下所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/Ofp8zOPaTlyqQndoaaJeTQ/zh-cn_image_0000002658792615.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/Ofp8zOPaTlyqQndoaaJeTQ/zh-cn_image_0000002658792615.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=1237376C3B58AEAEDDEE1DADEB87C0C1F03126BD8795D388C58C892DF22F0C24 "点击放大")
 
   问题相关代码：
 

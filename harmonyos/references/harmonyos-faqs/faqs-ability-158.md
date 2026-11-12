@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-15
 title: 使用AppLinking拉起应用，为什么webview会展示一段json代码
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 使用AppLinking拉起应用，为什么webview会展示一段json代码
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:49+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:ebbaf343c51adbc8f35de12e74a6a4bcc470060fe8755f70dc155157c5f6090e
 ---
@@ -23,7 +23,7 @@ function deepLinkApp() {
 
 问题现象如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/H2di0blJRR-ezVL-7kPFmw/zh-cn_image_0000002628789250.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/H2di0blJRR-ezVL-7kPFmw/zh-cn_image_0000002628789250.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=06595BF61A53EA31B095213A87E51F27E80797A277A637984E97EB0C66DF8857 "点击放大")
 
 ## 解决方案
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: HAP包在真机上安装失败如何解决
 breadcrumb: FAQ > DevEco Studio > 应用调试 > HAP包在真机上安装失败如何解决
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:eb4a403d4eb1127cebd229cfd1be642fb463d8868bc819fd7d062f8aabcfcd7d
 ---
@@ -18,7 +18,7 @@ content_hash: sha256:eb4a403d4eb1127cebd229cfd1be642fb463d8868bc819fd7d062f8aabc
   [Info]App install path:xxx.hap, queuesize:0, msg:error: failed to install bundle. code:9568263 error: install version downgrade.
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/xHm1aqK_SsOSaizBfqgC3w/zh-cn_image_0000002628569312.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/xHm1aqK_SsOSaizBfqgC3w/zh-cn_image_0000002628569312.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=9AD48DD59B2A5DC306E58E72B2685997BF80567BC42DF07A4894CF64020215D1)
 
 * **问题二**：报9568283错误。
 

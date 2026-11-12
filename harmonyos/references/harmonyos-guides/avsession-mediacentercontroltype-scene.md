@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-med
 title: 自定义播控中心控制按钮显示布局
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 自定义播控中心控制按钮显示布局
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:03+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:76b5204fc49f0c69038a47364ceb83a2d549b569843a06c88d48db3120ef1aba
 ---
@@ -16,11 +16,11 @@ content_hash: sha256:76b5204fc49f0c69038a47364ceb83a2d549b569843a06c88d48db3120e
 
 * **五元组**：显示五个控制按钮，如播控中心二级界面会使用五元组进行显示。如下图所示，五元组从左到右显示的位置分别称为4号位、2号位、1号位、3号位、5号位。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/3Yc0zw0uToC5-51f2iieJg/zh-cn_image_0000002815559321.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/3Yc0zw0uToC5-51f2iieJg/zh-cn_image_0000002815559321.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6EB9EF675D9F8EFE7BB67590248E9F21D3967ED19C2E809D0990C36C109C113)
 
 * **三元组**：显示三个控制按钮，如播控中心一级界面会使用三元组进行显示。如下图所示，三元组从左到右显示的位置分别称为2号位、1号位、3号位。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/ZgyujvIySY6_NFgheBqcxA/zh-cn_image_0000002815399405.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/ZgyujvIySY6_NFgheBqcxA/zh-cn_image_0000002815399405.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=1EA0977BC020F0C2F9F7E8D94C5905FEF4C0A422F5CCEEF010634C13F67BC44F)
 
 播控中心根据应用设置的[AVSessionType](../harmonyos-references/arkts-apis-avsession-t.md#avsessiontype10)会话类型（本文提到的会话类型均指应用设置的AVSessionType）决定三元组/五元组控制按钮的显示：
 

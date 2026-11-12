@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1398
 title: 解决RichEditor输入换行符后监听异常的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 解决RichEditor输入换行符后监听异常的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:707d23289abce9b70f7c77c98d383784708f78f5b2cc6fb9284576f00c0ba452
 ---
@@ -51,15 +51,15 @@ struct StackExample {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/7Z11QLR0TdGd1HH7nkF14Q/zh-cn_image_0000002628763130.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/7Z11QLR0TdGd1HH7nkF14Q/zh-cn_image_0000002628763130.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=238773D0F35A5F48CEF250B8567108E24908026048474BB6BE54D57E7FBE82C0 "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/iEQX2QoBQVqFRc4xwu7sHg/zh-cn_image_0000002658962443.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/iEQX2QoBQVqFRc4xwu7sHg/zh-cn_image_0000002658962443.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E0A7E15B701C52AE142581D4FFAA3BAFEB0BA05109DA041718C78DB6BD2E2B6)
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/wzH3IPJWQhqt4_u9qGYZsQ/zh-cn_image_0000002628603234.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/wzH3IPJWQhqt4_u9qGYZsQ/zh-cn_image_0000002628603234.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E2C840C42DAC5D41066D34057C25890EFFC21244EEF73E1200E01B46E0AD78F "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/wQnhLqE4S2CW1jshca7tdQ/zh-cn_image_0000002658842497.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/wQnhLqE4S2CW1jshca7tdQ/zh-cn_image_0000002658842497.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=A51C0E4C7B28E0014DBC9DF3CE696A1E97D010FC3D59239C6744348FC5AC0BCE)
 
 ## 背景知识
 

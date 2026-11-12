@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-power-basi
 title: 功耗基础质量测试
 breadcrumb: 最佳实践 > 功耗 > 应用功耗检测 > 开发态功耗检测 > 功耗基础质量测试
 category: best-practices
-scraped_at: 2026-11-10T10:42:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-15
 content_hash: sha256:35bd15086758bc9383e33961b2c12e2aa73abd061630d3d4c3a3b73a543d235e
 ---
@@ -24,11 +24,11 @@ content_hash: sha256:35bd15086758bc9383e33961b2c12e2aa73abd061630d3d4c3a3b73a543
 
 测试完成后，功耗测试报告如下图所示，客观呈现了前后台功耗管控规则整体达成情况。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/Qb6kAUSRRlWyay4EKYsd7w/zh-cn_image_0000002370565348.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/Qb6kAUSRRlWyay4EKYsd7w/zh-cn_image_0000002370565348.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=20676F3006AD51754066766EAE39D0BE092DB44DDA18EDBCFCBC34E4BDF5E6EA "点击放大")
 
 其中，检测未通过项和异常项可以进一步查询详细的测试数据与日志，用户可通过测试过程截图进行问题复现，查看日志进行问题分析定位。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/3rOPV8pSRMuuc7FSDcL1LQ/zh-cn_image_0000002372036910.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/3rOPV8pSRMuuc7FSDcL1LQ/zh-cn_image_0000002372036910.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE16692A40D3174C6455B0FAEEFCABC1435DC355037980C50F72ECE91A844F03 "点击放大")
 
 **注意** 
 

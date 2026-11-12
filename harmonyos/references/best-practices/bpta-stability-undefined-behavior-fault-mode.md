@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 未定义异常访问故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 地址越界故障模式说明 > 未定义异常访问故障模式说明
 category: best-practices
-scraped_at: 2026-11-10T10:42:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-09
 content_hash: sha256:a6672210d9179e2e8374d4bf0fb04e6f35cd4c8e177ae6fa501e29e337f57c17
 ---
@@ -71,7 +71,7 @@ content_hash: sha256:a6672210d9179e2e8374d4bf0fb04e6f35cd4c8e177ae6fa501e29e337f
    ```
 2. 获取带符号的so，通过llvm-addr2line工具（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）解析栈获取详细代码位置。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/ub611v1VS3OT8jWShXKJSw/zh-cn_image_0000002699892014.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/ub611v1VS3OT8jWShXKJSw/zh-cn_image_0000002699892014.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=6088588D58B6B1505E5BC043AC5E37290597678E9C2027A19FB6784BF59191C8)
 
    ubsanTest.cpp第75行代码触发异常，结合代码确认为执行\*pointer=42时触发的异常。对异常代码逐行解析如下：
 
@@ -143,7 +143,7 @@ content_hash: sha256:a6672210d9179e2e8374d4bf0fb04e6f35cd4c8e177ae6fa501e29e337f
    ```
 2. 获取带符号的so，通过llvm-addr2line工具（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）解析栈得出，完成调用栈#0符号解析。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/rINffFi8RtypwriISzn_7g/zh-cn_image_0000002729611341.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/rINffFi8RtypwriISzn_7g/zh-cn_image_0000002729611341.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F45053B6857D9469BF89CF0348EA6C47213654ED316F3310F69932D2AC603C5 "点击放大")
 
    ubsanTest.cpp第109行代码触发异常，结合代码确认为执行pointer->i32=7时触发的异常。对异常代码逐行解析如下：
 
@@ -218,7 +218,7 @@ content_hash: sha256:a6672210d9179e2e8374d4bf0fb04e6f35cd4c8e177ae6fa501e29e337f
    ```
 2. 获取带符号的so，通过llvm-addr2line工具（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）解析栈得出，完成调用栈#0符号解析。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/rwi3SxKlTeaXdAiYMaZvxg/zh-cn_image_0000002699732132.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/rwi3SxKlTeaXdAiYMaZvxg/zh-cn_image_0000002699732132.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9A1CC6FDF0989831062F7E5321ABF33EF532AA6643823D7F142570A2931EE26 "点击放大")
 
    ubsanTest.cpp第58行代码触发异常，结合代码确认为执行res+=2时触发的异常。对异常代码逐行解析如下：
 
@@ -293,7 +293,7 @@ content_hash: sha256:a6672210d9179e2e8374d4bf0fb04e6f35cd4c8e177ae6fa501e29e337f
    ```
 2. 获取带符号的so，通过llvm-addr2line工具（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）解析栈得出，完成调用栈#0符号解析。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/5nRxrBZSQxWHUcbEy46C2A/zh-cn_image_0000002729491389.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/5nRxrBZSQxWHUcbEy46C2A/zh-cn_image_0000002729491389.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=E5CE37FA4169397F39C20B6DEA200B2DFC8E0100584C542C381B8630B36D3E7C)
 
    ubsanTest.cpp第48行代码触发异常，结合代码确认为执行int32\_t result=a+b时触发的异常。对异常代码逐行解析如下：
 
@@ -363,7 +363,7 @@ content_hash: sha256:a6672210d9179e2e8374d4bf0fb04e6f35cd4c8e177ae6fa501e29e337f
    ```
 2. 获取带符号的so，通过llvm-addr2line工具（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）解析栈得出，完成调用栈#0符号解析。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/CnCCsEreTqW7U7JqGs4U-A/zh-cn_image_0000002699892016.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/CnCCsEreTqW7U7JqGs4U-A/zh-cn_image_0000002699892016.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=74F3EAD63C323DD3A71ABBD3E51E24FFC52928EABB70DE643172F21BC16A7F1F)
 
    ubsanTest.cpp第39行代码触发异常，结合代码确认为执行int m=static\_cast<int>(n)时触发的异常。对异常代码逐行解析如下：
 
@@ -435,7 +435,7 @@ content_hash: sha256:a6672210d9179e2e8374d4bf0fb04e6f35cd4c8e177ae6fa501e29e337f
    ```
 2. 获取带符号的so，通过llvm-addr2line工具（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）解析栈得出，完成调用栈#0符号解析。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/f0bzFzymRiCPOshLV_8TXw/zh-cn_image_0000002729611343.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/f0bzFzymRiCPOshLV_8TXw/zh-cn_image_0000002729611343.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C5558DC7D16F236F45A15B7E677BDD70AC8725823965FDD5C626BA4269600C5)
 
    ubsanTest.cpp第17行代码触发异常，结合代码确认为执行sum/=i时触发的异常。对异常代码逐行解析如下：
 

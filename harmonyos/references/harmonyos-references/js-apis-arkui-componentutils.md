@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.arkui.componentUtils (componentUtils)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.componentUtils (componentUtils)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:1208f25f991790a7635ba9610f1aa85b46373398921ed0eb68f375d783a7ff4f
 ---
@@ -232,4 +232,4 @@ struct Utils {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/yAtay4pGSF2wXsrEQcHspg/zh-cn_image_0000002786520792.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/yAtay4pGSF2wXsrEQcHspg/zh-cn_image_0000002786520792.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA1526F3ACF3DCD42A1725C337751889A4C8B107BED082DC639B0B304454B05C)

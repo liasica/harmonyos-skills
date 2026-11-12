@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-playing-fo
 title: 基于AVPlayer播放格式化音频（ArkTS）
 breadcrumb: 最佳实践 > 媒体 > 音频和视频 > 音频播放系列开发实践 > 基于AVPlayer播放格式化音频（ArkTS）
 category: best-practices
-scraped_at: 2026-11-10T10:42:02+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:e72764afb8bf115cc163bcf202a8b12144690c30517500b562720e3c7fbd9119
 ---
@@ -14,7 +14,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 本文是音频播放系列文章的第3篇，实现的功能效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/X8KZX8qoQ2Sq6Qu5Hkyzww/zh-cn_image_0000002555217523.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/iZ4hvIfIRdOh-5l_aPCcEg/zh-cn_image_0000002524217626.gif "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/1plwetQNQ22H3x4Kf2fHrQ/zh-cn_image_0000002555337497.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/X8KZX8qoQ2Sq6Qu5Hkyzww/zh-cn_image_0000002555217523.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C07A62CFA11B8E57462603CE99C6E612C741369E84AA94CEB1C2924D64EF30D "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/iZ4hvIfIRdOh-5l_aPCcEg/zh-cn_image_0000002524217626.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=204FB100B5E6AEA69F3F2F0EE990CBB8C0654B4235C5C31EB301A5EB15812654 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/1plwetQNQ22H3x4Kf2fHrQ/zh-cn_image_0000002555337497.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=F535CE9B3F01B74A7A55CC5BF80022E52413CCE251BF29502C245B0D5A99E4EF "点击放大")
 
 ## 场景分析
 
@@ -36,7 +36,7 @@ AVPlayer可以用于播放格式化音频，支持WAV、MP3和FLAC等格式的�
 
 通过[Interface (AVPlayer)](../harmonyos-references/arkts-apis-media-avplayer.md)实现核心音频播放控制能力，包括音频资源加载、播放、暂停、停止及退出等操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/PcGHYd4tQ0un7pB8avc17Q/zh-cn_image_0000002524057632.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/PcGHYd4tQ0un7pB8avc17Q/zh-cn_image_0000002524057632.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA950B015623C8B78485717AF779D2F6491D31AD9615570658BF929F147E5224 "点击放大")
 
 ### 实现原理
 
@@ -232,7 +232,7 @@ public release() {
 
 通过点击或拖动进度条精准跳转到指定时间进行播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/3AYC7fHTRGGirjsiwxpT6g/zh-cn_image_0000002555217525.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/3AYC7fHTRGGirjsiwxpT6g/zh-cn_image_0000002555217525.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=5478F68744842E005D627B572559CE396449E48C9C47E96C3D3CE529C129EBE8 "点击放大")
 
 ### 实现原理
 
@@ -258,7 +258,7 @@ public seek(ms: number) {
 
 通过界面按钮快捷切换音频播放静音状态，实现一键开启或关闭静音。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/cCRwG734SZGT6Spup4ZlTw/zh-cn_image_0000002524217628.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/cCRwG734SZGT6Spup4ZlTw/zh-cn_image_0000002524217628.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=03697A024A1DDA6782ECCCA055535173049C70BC9BA034F22B0471E348D68463 "点击放大")
 
 ### 实现原理
 
@@ -285,7 +285,7 @@ public setSilentMode(isSilentMode: boolean) {
 
 点击上一首或下一首或歌单列表中的歌曲进行不同歌曲播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/uLg6sn0nSHeq0OwF2X9qsg/zh-cn_image_0000002555337501.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/uLg6sn0nSHeq0OwF2X9qsg/zh-cn_image_0000002555337501.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=571A71A0783B126C1038381CE458796CCA79923D51F6435829BC81A4F2FBDB5C "点击放大")
 
 ### 实现原理
 
@@ -329,7 +329,7 @@ async loadSongAsset(songRawFileDescriptor: resourceManager.RawFileDescriptor) {
 
 滑动倍速调节面板调节播放速度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/DqCa0LqYTjStDdkovZWjig/zh-cn_image_0000002524057634.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/DqCa0LqYTjStDdkovZWjig/zh-cn_image_0000002524057634.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=91F623C449B657226ED3BDEDA9425332934D01711CA20F6F2E919B0885DCB05F "点击放大")
 
 ### 实现原理
 
@@ -377,7 +377,7 @@ public setSpeed(speed: number) {
 
 滑动音量调节面板调节播放音量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/cnF-lv4ITwKYWh0eEg_UQA/zh-cn_image_0000002555217531.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/cnF-lv4ITwKYWh0eEg_UQA/zh-cn_image_0000002555217531.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F149FCD01BE2A7D721A4D05672B99858FE57173CC065F3E201CA39DEAA4FB0B "点击放大")
 
 ### 实现原理
 

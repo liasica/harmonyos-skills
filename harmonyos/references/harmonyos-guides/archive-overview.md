@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/archive-overv
 title: 压缩解压缩概述
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 文件压缩解压缩 > 压缩解压缩概述
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:26+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-28
 content_hash: sha256:2599429a601f6b2e70ace960b0de86a6de67dbe26381fccb268df84b66527e0a
 ---
@@ -24,7 +24,7 @@ content_hash: sha256:2599429a601f6b2e70ace960b0de86a6de67dbe26381fccb268df84b665
 
 采用分层设计，使模块具备良好的扩展性，开发者可以根据实际需求选择合适的压缩解压缩方式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/7866rnn_SUqvNiVEVbmKTA/zh-cn_image_0000002786519438.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/7866rnn_SUqvNiVEVbmKTA/zh-cn_image_0000002786519438.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=88B0AA8F925A5D04F0EA0F1598D5EAB1C6E467E27B5BA41DE0E9626104FCDA36)
 
 ## 与相关模块的关系
 

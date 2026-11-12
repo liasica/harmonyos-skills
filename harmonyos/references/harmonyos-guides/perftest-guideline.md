@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/perftest-guid
 title: 白盒性能测试框架使用指导
 breadcrumb: 指南 > 应用测试 > 单元测试和UI测试 > 自动化测试框架使用指导 > 白盒性能测试框架使用指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:9623a2293bcde887efe7415c487b582c8603d150f06ead2f0724193b603bf851
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:9623a2293bcde887efe7415c487b582c8603d150f06ead2f0724193b603
 
 PerfTest功能设计图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/Ukuvzu_QTPip-eHPszl2XA/zh-cn_image_0000002701641038.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/Ukuvzu_QTPip-eHPszl2XA/zh-cn_image_0000002701641038.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=039B2746B8F342DCD533E7A527915DCB50F320BECDE73F7492C246320263FDF4)
 
 PerfTest对外提供ArkTS API，包括性能测试策略设置、性能测试执行、测试结果获取等能力。具体请参考[API文档](../harmonyos-references/js-apis-perftest.md)。
 
@@ -31,7 +31,7 @@ PerfTest服务端负责白盒性能测试框架的主要功能处理，包含以
 
 使用PerfTest接口进行白盒性能测试流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/oPFZ-6dWSNiTo_r3fRroRw/zh-cn_image_0000002731360257.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/oPFZ-6dWSNiTo_r3fRroRw/zh-cn_image_0000002731360257.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=9EAB9F1A9563574AF4D12EC451CB8BD0959B812A79FA6E626882134A83AFFF60)
 
 1. 定义性能测试策略，明确测试指标列表、被测代码段、环境复位代码段、被测应用包名、测试迭代次数、代码段单次执行超时时间等，后续白盒性能测试中将依照此策略执行测试。
 2. 创建测试任务，配置测试策略并准备测试环境。

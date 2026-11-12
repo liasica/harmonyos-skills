@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: HarmonyOS 开发者中心页面菜单缺失或点击菜单报错问题排查指导
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > HarmonyOS 开发者中心页面菜单缺失或点击菜单报错问题排查指导
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:45+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:01a7ca1bb004145a21be71fd9d824bad3a720ecd84ca2ec851c58d527974408e
 ---
@@ -14,16 +14,16 @@ content_hash: sha256:01a7ca1bb004145a21be71fd9d824bad3a720ecd84ca2ec851c58d52797
 
 * 缺少提交审核按钮：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/X9cqNjIYTdSWbMM3pgkSNw/zh-cn_image_0000002690046132.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/X9cqNjIYTdSWbMM3pgkSNw/zh-cn_image_0000002690046132.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2E73A05E6CBDC15EB068F749F8C3D5691C2E6106B7EB24F933E84D64EE5D11F "点击放大")
 * 缺少"测试用户"菜单；
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/QDhOHDwGQMuZfOxs9C3ewg/zh-cn_image_0000002719885699.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/QDhOHDwGQMuZfOxs9C3ewg/zh-cn_image_0000002719885699.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3024738C3ECE2915F3079D44DC65142FEC8676D43546EB0B4FFB8D3B1C1E5A8 "点击放大")
 * 点击菜单报未知错误：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/ZJtqttMaQYWimGijEvmAjQ/zh-cn_image_0000002690206004.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/ZJtqttMaQYWimGijEvmAjQ/zh-cn_image_0000002690206004.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDBFDF58CCE1E52504B133F3F4FE254FA8E9806CC3DA1DE8DFE5AAE3A45B3F39 "点击放大")
 * 点击"应用分类"设置按钮无响应：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/t-2JRudcTiCALXqn18R6Ig/zh-cn_image_0000002719885701.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/t-2JRudcTiCALXqn18R6Ig/zh-cn_image_0000002719885701.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A8C98B8C2350AA658FF712788DC0EBA1AC52D4CA7147B17EA8C9D1CFEDF430D "点击放大")
 
 ## 背景知识
 
@@ -37,14 +37,14 @@ content_hash: sha256:01a7ca1bb004145a21be71fd9d824bad3a720ecd84ca2ec851c58d52797
    * 可以登录HarmonyOS 开发者中心，进入"用户与访问-个人信息"可以查看当前是否是团队账号，是何种角色，拥有哪个项目和应用的权限。
    * 登录的账号角色是"账号持有者"，即主账号，拥有最高权限。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/3KXkQR87SWCZxpB-ouy8xg/zh-cn_image_0000002719768367.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/3KXkQR87SWCZxpB-ouy8xg/zh-cn_image_0000002719768367.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7497C78BA00AD43791C262BE27DDA717A7225DA613686CDC1BA133098FC705C "点击放大")
    * 登录的账号角色是"运营"、"开发"和"客服"，只能进行数据查看，不能进行应用上架。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/TGY6PMCfRsa8s5ZGwUs6CA/zh-cn_image_0000002719769101.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/TGY6PMCfRsa8s5ZGwUs6CA/zh-cn_image_0000002719769101.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B7E1D684F12F0CE2A2C5FD14E6F355203858ED03F0C729B5844F51687F59C02 "点击放大")
 
 2. 排查是否进行了自定义菜单权限。HarmonyOS 开发者中心左下角有自定义菜单功能，选中的菜单右边的图钉时会展示菜单，不选中不展示。如"测试用户"菜单未选中时，左侧菜单栏不展示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/jWxzkM1ZQJOCVqHrRFxa7Q/zh-cn_image_0000002690049642.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/jWxzkM1ZQJOCVqHrRFxa7Q/zh-cn_image_0000002690049642.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=63647076B380C3A0B82997E387997ABCFA809C54EFD0650730F339D2BF0604F4 "点击放大")
 3. 出现未知错误时，可以通过浏览器日志来获取具体的报错原因，打开浏览器日志（一般是按F12）->进入Network->选中报错的接口->查看报错信息描述。
 
 ## 分析结论
@@ -55,7 +55,7 @@ content_hash: sha256:01a7ca1bb004145a21be71fd9d824bad3a720ecd84ca2ec851c58d52797
 ## 修改建议
 
 1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)，通过右上角个人账号位置点击[个人信息](https://developer.huawei.com/consumer/cn/personalcenter/myInfo/personalInfo)，在"角色管理"页签查看当前是否为团队账号，是何种角色，拥有哪个项目和应用的权限。建议至少"APP管理员"以上才具备应用管理权限，拥有上架测试、应用分类设置等权限。
-2. 在HarmonyOS 开发者中心左下角自定义菜单功能，查看是否没选择对应的菜单，如"测试用户"，如没选中，选中即可。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/anmVpusHTuqujUpDxQx16Q/zh-cn_image_0000002719893471.png "点击放大")
+2. 在HarmonyOS 开发者中心左下角自定义菜单功能，查看是否没选择对应的菜单，如"测试用户"，如没选中，选中即可。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/anmVpusHTuqujUpDxQx16Q/zh-cn_image_0000002719893471.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=12E7B11960870400BB8D8D15B40F7BD01E75DCDE62C598A7DC6EDE216608C952 "点击放大")
 3. 若出现未知错误，也可以通过浏览器日志查看是否是当前登录用户没有权限导致，如果使用了团队账号登录，登录的角色可能是开发或者运营，建议联系账号持有者提高权限，一般至少需要提高至APP管理员角色。然后退出账号重新登录再试一下。
 
 ## 常见FAQ

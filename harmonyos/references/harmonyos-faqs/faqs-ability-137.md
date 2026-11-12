@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-13
 title: 应用和元服务列表中无图标显示
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 应用和元服务列表中无图标显示
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:48+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-31
 content_hash: sha256:3f5c96bb001b77f311c0aca88f2bd3dd2f0863dffd8c452e987ddb1a093bd5e3
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:3f5c96bb001b77f311c0aca88f2bd3dd2f0863dffd8c452e987ddb1a093
 
 在系统的“设置->应用和元服务”中，列表中无图标显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/CpTNX__RTvWdZ3KFwDH9_A/zh-cn_image_0000002628789134.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/CpTNX__RTvWdZ3KFwDH9_A/zh-cn_image_0000002628789134.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE24CD34DACF3751DD489706DFFEB3AE5B52A9EBB663798BD6C90621316F814E "点击放大")
 
 ## 背景知识
 
@@ -33,4 +33,4 @@ content_hash: sha256:3f5c96bb001b77f311c0aca88f2bd3dd2f0863dffd8c452e987ddb1a093
 
 工程AppScope路径文件结构如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/ZIa5mZEMR7ue6Y5-zwgEGw/zh-cn_image_0000002658988445.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/ZIa5mZEMR7ue6Y5-zwgEGw/zh-cn_image_0000002658988445.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE93A94C097C1EC5B1693F9A73D096A2571550E02BBA886511D6A698ED3F27E1 "点击放大")

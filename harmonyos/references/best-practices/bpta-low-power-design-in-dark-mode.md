@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-low-power-
 title: 省电和深色模式下低功耗设计
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 > 省电和深色模式下低功耗设计
 category: best-practices
-scraped_at: 2026-11-10T10:42:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:2794bd17a176850bc65671f9abf47c608c5646642f7ebc27518998873e82eda9
 ---
@@ -33,7 +33,7 @@ content_hash: sha256:2794bd17a176850bc65671f9abf47c608c5646642f7ebc27518998873e8
 通过设置省电模式、深色模式、调节屏幕亮度、停止冗余动画，最终测量的总耗电量对比如下图所示：
 
 **图1** 总耗电量对比（相对于正常模式）  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/ho-vLQMmQdi2cXZG80hI4Q/zh-cn_image_0000002194011364.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/ho-vLQMmQdi2cXZG80hI4Q/zh-cn_image_0000002194011364.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=004F475D5AC10D66582F7496D9B21C8A5BE3E6454E75A66E1ACA714BCFE6BC9B "点击放大")
 
 ## 功耗测量工具
 
@@ -53,7 +53,7 @@ DevEco Profiler 应用调优工具（以下简称 Profiler）已内置在 DevEco
 Profiler耗电量示意图如下所示，详细信息及使用可参考[性能问题定界：实时监控](../harmonyos-guides/realtime-monitor.md)。
 
 **图2** ProfilerEnergy模块示意图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/ewrXyvKBSwqxTRenp-nDLw/zh-cn_image_0000002193851784.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/ewrXyvKBSwqxTRenp-nDLw/zh-cn_image_0000002193851784.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A9C2584A717578D2B35983EC9F14807350E992826B2D16D94964E465BB8384D "点击放大")
 
 **说明** 
 
@@ -170,7 +170,7 @@ export struct ArticleCardView {
 
 **图3** 使用省电模式前后耗电量对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/3i8T7YadQDaKYb0HHisr_w/zh-cn_image_0000002194011352.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/3i8T7YadQDaKYb0HHisr_w/zh-cn_image_0000002194011352.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=B36FCF529ECFF558814B1CFF31FB15BFD0FDCDB0058BFF4578296EA1EC30FC2D "点击放大")
 
 从测试数据可以看出：
 
@@ -196,7 +196,7 @@ export struct ArticleCardView {
 1. 创建深色模式资源文件夹：在项目的resources文件下，创建深色模式的Dark资源文件夹，如下图1所示。
 
    **图4** 创建深色模式资源文件夹  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/vVK_uI2lQKKTQ80Y-w7bMg/zh-cn_image_0000002229337161.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/vVK_uI2lQKKTQ80Y-w7bMg/zh-cn_image_0000002229337161.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC8CBB54FEA073064D2F229F4C9EBEF8A1A8BD9E5ADFA8EFB0D8499C64726BA0 "点击放大")
 2. 资源文件适配：为深色模式下的界面设计相应的颜色和图标资源文件。
 3. 在主题中设置深色模式样式：在应用的主题中定义深色模式的样式，包括背景色、文本颜色、图标颜色等。
 4. 动态切换模式：在应用中实现动态切换深色模式和浅色模式的功能，使用户可以根据自己的喜好随时切换应用的界面模式。
@@ -204,7 +204,7 @@ export struct ArticleCardView {
 
 **图5** 深色模式示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/80Urhu0bTkCM4zzMeXocpg/zh-cn_image_0000002229451645.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/80Urhu0bTkCM4zzMeXocpg/zh-cn_image_0000002229451645.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1D04CA937A667582A6CC3CD6E8A1D970127E358DAB7C069955041BAF9A79127 "点击放大")
 
 ### 功耗分析
 
@@ -212,7 +212,7 @@ export struct ArticleCardView {
 
 **图6** 使用深色模式前后耗电量对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/P6M8YEbTS_uAGBLUKh3-LA/zh-cn_image_0000002615254841.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/P6M8YEbTS_uAGBLUKh3-LA/zh-cn_image_0000002615254841.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=8420865EEC8C843C00A8036939C8EBFCA280BC9820A677CCC17BA081BD257893 "点击放大")
 
 根据测试数据分析，得出以下结论：
 
@@ -285,7 +285,7 @@ export default class EntryAbility extends UIAbility {
 3. 根据实际场景，停止或者替换冗余的动效。
 
 **图7** 省电和深色模式下停止冗余动效  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/PFH4mZJaQ-2Y1Ee6JaFc8g/zh-cn_image_0000002193851772.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/PFH4mZJaQ-2Y1Ee6JaFc8g/zh-cn_image_0000002193851772.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=504FED11D33873DE8C3DD8BE3AA138449D5132EA6D281B14BCCA27A725127CB5 "点击放大")
 
 在省电模式下，停止点赞和收藏动画，具体代码实现如下：
 
@@ -378,11 +378,11 @@ export struct ArticleCardView {
 
 **图8** 主动降低应用亮度前后耗电量对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/H-fPOLG3QaKY7ywkNmtt6A/zh-cn_image_0000002614971219.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/H-fPOLG3QaKY7ywkNmtt6A/zh-cn_image_0000002614971219.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=996FC3870D5AD8CF47F4CDF1B31321302423F362A209DA074E4E700453356D4C "点击放大")
 
 **图9** 去掉冗余动画前后耗电量对比
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/TkQ9jCqKTue3Bb8GUsZmkA/zh-cn_image_0000002615186285.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/TkQ9jCqKTue3Bb8GUsZmkA/zh-cn_image_0000002615186285.png?HW-CC-KV=V1&HW-CC-Date=20261112T233139Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD066F9799DAE2D69A69A0A43E93333E98E2B90E2089B85E0451BD42F5CEE6CC "点击放大")
 
 测试数据显示：
 

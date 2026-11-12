@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-729
 title: 如何限制RichEditor组件placeholder属性的显示行数
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何限制RichEditor组件placeholder属性的显示行数
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:b832df8eac760a7867cd9ef8f1e59effa2da3fdc044eb63b07e9dfb0a28cd9de
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:b832df8eac760a7867cd9ef8f1e59effa2da3fdc044eb63b07e9dfb0a28
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/gv4UlrneTredXF4l5NjFyw/zh-cn_image_0000002628555222.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/gv4UlrneTredXF4l5NjFyw/zh-cn_image_0000002628555222.png?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F6838D914746623DF18271F6C1488A1479FD3BAAEBCE97B026C2C47A2E841B9 "点击放大")
 
 ## 背景知识
 

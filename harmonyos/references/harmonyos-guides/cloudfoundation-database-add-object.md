@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 新增对象类型
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 云数据库 > 新增对象类型
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-04-20
 content_hash: sha256:99c3b4b74784c2467d7bcfba2cebc3b06e23f6f9864a143b540da078b1684e3b
 ---
@@ -21,10 +21,10 @@ content_hash: sha256:99c3b4b74784c2467d7bcfba2cebc3b06e23f6f9864a143b540da078b16
 3. 在左侧导航栏选择“云开发（Serverless）> 云数据库”，进入云数据库页面。
 4. 点击“新增”，创建新的对象类型。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/lKJAwKNUTIuQ341ajLsSgA/zh-cn_image_0000002786360254.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/lKJAwKNUTIuQ341ajLsSgA/zh-cn_image_0000002786360254.png?HW-CC-KV=V1&HW-CC-Date=20261112T233228Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A23EA117BFF9A97C954B1EB871C3BBB388A07A5E75D250F31FCAFBB64D310D3)
 5. 输入“对象类型名”为“BookInfo”后，点击“下一步”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/G_ZTWldXR5C-slNtaaiSnA/zh-cn_image_0000002815559675.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/G_ZTWldXR5C-slNtaaiSnA/zh-cn_image_0000002815559675.png?HW-CC-KV=V1&HW-CC-Date=20261112T233228Z&HW-CC-Expire=31536000000&HW-CC-Sign=47636A931FDAD3F6CCE1F1781296981A468C4B47AAD62FC58A4F5504C3C9607B)
 6. 点击“+新增字段”，新增如下表字段后，点击“下一步”。
 
    | 字段名称 | 类型 | 主键 | 非空 | 加密 | 默认值 |
@@ -38,7 +38,7 @@ content_hash: sha256:99c3b4b74784c2467d7bcfba2cebc3b06e23f6f9864a143b540da078b16
    | borrowerTime | Date | – | – | – | – |
 7. 点击“+”新增索引，设置“索引名”为“bookName”，点击“下一步”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/lY05xTxZRiKFWuCB2-h3rw/zh-cn_image_0000002815399759.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/lY05xTxZRiKFWuCB2-h3rw/zh-cn_image_0000002815399759.png?HW-CC-KV=V1&HW-CC-Date=20261112T233228Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4AC27360BF6AC85B3B057A57F89B40227794A23B85F6F4B29389C932DF610B2)
 8. 按照如下要求设置各角色权限后，点击“确定”。
 
    | 角色 | query | upsert | delete | 说明 |
@@ -50,7 +50,7 @@ content_hash: sha256:99c3b4b74784c2467d7bcfba2cebc3b06e23f6f9864a143b540da078b16
 9. 创建完成后返回对象类型列表，可以查看已创建的对象类型。
 10. 勾选创建的BookInfo对象类型，点击“导出”。若不勾选对象类型，默认导出所有对象类型。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/dZdILRDPRXq7h5Dy-uSW1g/zh-cn_image_0000002786520184.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/dZdILRDPRXq7h5Dy-uSW1g/zh-cn_image_0000002786520184.png?HW-CC-KV=V1&HW-CC-Date=20261112T233228Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCCBE5A8E3F81FE5A045B7AD3D4934FC18CC4B990E1A86B7BDE74482223140A6)
 11. 导出“json格式”文件，点击“确定”。后续[引入对象类型文件](cloudfoundation-database-add-file.md)时，需要使用此文件。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/q32M6tTcSHuKpWovgZY2OQ/zh-cn_image_0000002786360256.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/q32M6tTcSHuKpWovgZY2OQ/zh-cn_image_0000002786360256.png?HW-CC-KV=V1&HW-CC-Date=20261112T233228Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA5F1026210C23E67D004E364D6601C8B1495D6CDF383AA48DE322D3DFEA18D9)

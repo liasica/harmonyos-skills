@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom
 title: 自定义组件的自定义布局
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义组件 > 自定义组件的自定义布局
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:8ba20ca3b3d51c0131897904fbcbdbd4caaaa3c78a09d7f04393466508d42fc5
 ---
@@ -525,7 +525,7 @@ struct CustomLayout {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/N1cQSMKyQJGSuiGZ7e46xw/zh-cn_image_0000002815561043.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/N1cQSMKyQJGSuiGZ7e46xw/zh-cn_image_0000002815561043.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=1AA5864A0BB8A99247713415F81DC4003F7732B343698B65DDA0FD971F9D78DF)
 
 ### 示例2（判断是否参与布局计算）
 
@@ -628,7 +628,7 @@ struct CustomLayout {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/ARTswfeUQOimMKCdv2Me2w/zh-cn_image_0000002815401127.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/ARTswfeUQOimMKCdv2Me2w/zh-cn_image_0000002815401127.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=189FE8A2F19F54E793003E9BE881568FA14B78D3B7514BBC34D65DE6E3A26362)
 
 ### 示例3（获取子组件FrameNode并设置相关属性）
 
@@ -705,7 +705,7 @@ struct CustomLayout {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/fQOIHvoGRg6pIHTcUdhpYg/zh-cn_image_0000002786521552.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/fQOIHvoGRg6pIHTcUdhpYg/zh-cn_image_0000002786521552.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=1ECF1E3F098F02232AB3EBA462B58EB59A94DA4114F67619E7726C786071999F)
 
 ### 示例4（子组件超过父组件大小约束）
 
@@ -779,4 +779,4 @@ struct CustomLayoutText {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/YULKo9YUTIiI09K6yW8aCw/zh-cn_image_0000002786361624.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/YULKo9YUTIiI09K6yW8aCw/zh-cn_image_0000002786361624.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5DE40AA2977506725344038A9B406E2F4833F63AC7D3D0255063710214FC36A)

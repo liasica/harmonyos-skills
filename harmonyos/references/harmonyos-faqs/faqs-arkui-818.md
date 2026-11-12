@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-818
 title: padding边距显示不准确
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > padding边距显示不准确
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:03c34886e038693423f817f621e86c41384b37ba5e8626cad22141081260f87e
 ---
@@ -14,7 +14,7 @@ Row组件内包含Image和Text组件，当Text内容为多行时，Row组件设�
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/GjWdQbl-T5S6Cv_AFU00SQ/zh-cn_image_0000002628398432.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/GjWdQbl-T5S6Cv_AFU00SQ/zh-cn_image_0000002628398432.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B8CDEDF66FBFDA2850806198BDFDF96EC63F590BC5CC279E390D313D8E9A971 "点击放大")
 
 ## 背景知识
 

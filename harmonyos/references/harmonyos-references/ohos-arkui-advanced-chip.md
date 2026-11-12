@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: Chip
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > Chip
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:26+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-14
 content_hash: sha256:4b8eeb08ae772267f69ae34dcbc91a201cf9e330a11f68a9f8ce9853168c215a
 ---
@@ -347,7 +347,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/KcH2BeuhQjaS2_H9oQ_a7Q/zh-cn_image_0000002786521554.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/KcH2BeuhQjaS2_H9oQ_a7Q/zh-cn_image_0000002786521554.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC5346F3B911A41DB9F12465A492F642043FBEE6619B16E34ADFDBAA3DD39E25)
 
 ### 示例2（设置默认后缀图标）
 
@@ -396,7 +396,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/O2uJcamkToSKce3pz8SPtA/zh-cn_image_0000002786361626.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/O2uJcamkToSKce3pz8SPtA/zh-cn_image_0000002786361626.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=BEAE732A3048BE89E83B64ADD676317391977015149BC816EB8C0945E423E39A)
 
 ### 示例3（不显示后缀图标）
 
@@ -444,7 +444,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/kdUWl7TqSBy3NvlrF-BtxA/zh-cn_image_0000002815561047.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/kdUWl7TqSBy3NvlrF-BtxA/zh-cn_image_0000002815561047.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB96595BACEFC8604DED6ECD42F7A4A28ED4E062EAA5E8E999AE7B27FA3680D6)
 
 ### 示例4（激活态操作块）
 
@@ -502,7 +502,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/5mlNHJs6QBm5hoAdq_ZLag/zh-cn_image_0000002815401131.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/5mlNHJs6QBm5hoAdq_ZLag/zh-cn_image_0000002815401131.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=ECE8E91CEC090880B09D2798BE861E9C9E0AE2DFE91731358E5F356CCC7C27E0)
 
 ### 示例5（设置symbol类型图标）
 
@@ -557,7 +557,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/y0IUhi5RRX69ceSGqwIFvA/zh-cn_image_0000002786521556.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/y0IUhi5RRX69ceSGqwIFvA/zh-cn_image_0000002786521556.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A2922092E4EDAAC0078BC579B9F61A115ED3CD3E45BF01810CC8C4FA9E487E1)
 
 ### 示例6（设置镜像效果）
 
@@ -609,7 +609,7 @@ struct ChipPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/gk9V3FdXT96RoE2IhFEIFQ/zh-cn_image_0000002786361628.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/gk9V3FdXT96RoE2IhFEIFQ/zh-cn_image_0000002786361628.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F1BC841D081CE95B1DA08C7CBE0BB53A4F5882366A47F2A8EB977DF88C89CE7)
 
 ### 示例7（Image类型无障碍朗读）
 
@@ -701,7 +701,7 @@ struct ChipExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/UUdmoCZSQlqdggjarAL6rQ/zh-cn_image_0000002815561049.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/UUdmoCZSQlqdggjarAL6rQ/zh-cn_image_0000002815561049.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=2AD01AFCFF9D6281106F3FB4A75AA01A839DF0FCD2DBC53250DD38FA2B4DD116)
 
 ### 示例8（symbol类型无障碍朗读）
 
@@ -831,7 +831,7 @@ struct ChipExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/j5yzEvW0Ssyn1pW6JpgLoQ/zh-cn_image_0000002815401133.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/j5yzEvW0Ssyn1pW6JpgLoQ/zh-cn_image_0000002815401133.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=796BB231ABAC13F0F7C9F4A597477327A654AE19B4A1FB047082FF29B014FC96)
 
 ### 示例9（Chip组件无障碍朗读）
 
@@ -933,7 +933,7 @@ struct ChipAccessibilityExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/x_jdVrHNRvW9qEaG0n8Q-w/zh-cn_image_0000002786521558.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/x_jdVrHNRvW9qEaG0n8Q-w/zh-cn_image_0000002786521558.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=83B886EE91A1B0D7D9DC724F1C4904738B1A289F709B54D42544117119B25492)
 
 ### 示例10（设置系统材质样式）
 
@@ -1002,4 +1002,4 @@ struct ChipMaterialExample {
 
 该示例配图为高算力设备强档效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/TFR80C_ARVSlN1ZokdH5Yg/zh-cn_image_0000002786361630.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/TFR80C_ARVSlN1ZokdH5Yg/zh-cn_image_0000002786361630.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=518996BD46174B6BA2ECA8B6CF0B9A98E5EB9286C1363F4CA271163014277E53)

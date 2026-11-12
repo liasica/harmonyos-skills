@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite
 title: 音频编创开发概述(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频编创 > 音频编创开发概述(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:0b8bb1dc640341b29b16b7002fbc8eb69c8008872886c731e4cc8cab8d58d6b9
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:0b8bb1dc640341b29b16b7002fbc8eb69c8008872886c731e4cc8cab8d5
 
 **图1**：音频编创实现原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/fqY6s_zySwqu_zKP3G_zGg/zh-cn_image_0000002786519780.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/fqY6s_zySwqu_zKP3G_zGg/zh-cn_image_0000002786519780.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=1713A6FC333D45DB7ADF8FB21B08EEC6DB5F003C730BFC2A508761280FFAF1A2)
 
 ## 引擎
 
@@ -54,7 +54,7 @@ content_hash: sha256:0b8bb1dc640341b29b16b7002fbc8eb69c8008872886c731e4cc8cab8d5
 
 **图2**：管线运行状态图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/NJZJ9_ZgR2qbrFBAfmKyvg/zh-cn_image_0000002786359852.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/NJZJ9_ZgR2qbrFBAfmKyvg/zh-cn_image_0000002786359852.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=4E88279C3D1BF02BE859010C0004C5A1A75E9D2D3B77DABC8E0C3CC99212E82D)
 
 状态的功能如下表所示。
 

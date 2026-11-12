@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-3
 title: wukong测试中的常见问题
 breadcrumb: FAQ > DevEco Studio > 应用测试 > wukong测试中的常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:f77909fa7d72360f9021eb87b915d9648fbc7b32c2ca63eaae2834510c6f394b
 ---
@@ -18,7 +18,7 @@ content_hash: sha256:f77909fa7d72360f9021eb87b915d9648fbc7b32c2ca63eaae2834510c6
 
    报错信息：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/F0apxkuqQzO-rTocU7fZew/zh-cn_image_0000002628569520.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/F0apxkuqQzO-rTocU7fZew/zh-cn_image_0000002628569520.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=5C2A8E9D28FB3522CDF560DF6D77F70D8ECA1DEC3D8A19EB82900A2580ADCC56 "点击放大")
 2. 运行单元测试时报错"Error in testUiExample, Can not connect to AAMS"。
 
 ## 背景知识

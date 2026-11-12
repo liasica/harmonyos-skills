@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 健康使用设备授权列表页中应用授权开关打开/关闭时触发回调
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 用户授权管理 > 健康使用设备授权列表页中应用授权开关打开/关闭时触发回调
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:36+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:0547b640326de371506d9f7d844f2deda0d191b017dffa1d8923d971eddcae0b
 ---
@@ -14,15 +14,15 @@ content_hash: sha256:0547b640326de371506d9f7d844f2deda0d191b017dffa1d8923d971edd
 
 **说明** 
 
-1. 健康使用设备授权列表页（访问入口为：设置-健康使用设备-右上角四点设置![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/cid_qsCcTz2egb94Vvfkuw/zh-cn_image_0000002815560001.png)-可访问健康使用设备的应用），用于统一管理所有管控应用的用户授权。
+1. 健康使用设备授权列表页（访问入口为：设置-健康使用设备-右上角四点设置![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/cid_qsCcTz2egb94Vvfkuw/zh-cn_image_0000002815560001.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=01C5A94E449123DDA55319F8FFC67DEF7147F322DFB475905F1BE581A4ACF452)-可访问健康使用设备的应用），用于统一管理所有管控应用的用户授权。
 2. 若用户已设置健康使用设备的密码，则在此页面取消应用授权时需要输入相应的密码。
 3. 管控应用调用Screen Time Guard Kit接口获取授权或者取消授权时，不会触发onUserAuthSwitchOn/onUserAuthSwitchOff回调方法。只有在健康使用设备授权列表页操作授权开关时才会触发。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/3RzPuvYXQtC5bl1NWHxeRQ/zh-cn_image_0000002815400085.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/3RzPuvYXQtC5bl1NWHxeRQ/zh-cn_image_0000002815400085.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=130577D3B41BD364F4AA7BFADE757B453DA7F09F17FC10D75FF90CACD17D1382)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/9hzkLAPET-2efBZbZdY_ew/zh-cn_image_0000002786520510.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/9hzkLAPET-2efBZbZdY_ew/zh-cn_image_0000002786520510.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF4B072E792886E1D81D5C9AEA015973242636966F86A8D52C7EA60E40527A6D)
 
 流程说明（以关闭授权开关为例）：
 

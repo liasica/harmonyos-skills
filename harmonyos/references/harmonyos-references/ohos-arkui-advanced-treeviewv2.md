@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: TreeViewV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > TreeViewV2
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:29+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:9ced9de0db9cbeb92e2087c37ca839894a446317f8c1d6f88c515a6c2355088a
 ---
@@ -820,7 +820,7 @@ struct TreeViewV2Demo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/QLIRyFRuQMSetz-R290IyA/zh-cn_image_0000002786521624.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/QLIRyFRuQMSetz-R290IyA/zh-cn_image_0000002786521624.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=601BFDE92BF9A28554C9348A8B70B5A6C7858780926D044115E090F083C2ECD4)
 
 ### 示例2（设置Symbol类型图标）
 
@@ -1035,4 +1035,4 @@ struct TreeViewV2Demo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/8ISfySqmQ0SoErRa-F_Pfw/zh-cn_image_0000002786361696.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/8ISfySqmQ0SoErRa-F_Pfw/zh-cn_image_0000002786361696.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C9F550B919419746A4FA09A3808EE87E7778A8EAA55623BCEFA91FEA14303AC)

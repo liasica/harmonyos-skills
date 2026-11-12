@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/theme-font-c
 title: 使用主题字体（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 字体管理 > 使用主题字体（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:4bedf6a9b7c5a50245911a4b5b29be6aef87359273d0df5cf059342a5e6a8fe1
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:4bedf6a9b7c5a50245911a4b5b29be6aef87359273d0df5cf059342a5e6
 
 **图1** 主题字体的切换和使用
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/a388vACrQhu2_KzJhLnPRA/zh-cn_image_0000002815399547.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/a388vACrQhu2_KzJhLnPRA/zh-cn_image_0000002815399547.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233032Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A75A995010913241136D937EEB174D9323A89ABF859AE5FF2A8C82BEC9E95D8)
 
 针对主题字体的切换使用，应用方应确保订阅主题字体变更事件，当接收字体变更事件后，由应用方主动调用页面刷新才能实现主题字体的切换，否则主题字体只能在重启应用后才生效；主题字体的绘制需要使用OH\_Drawing\_GetFontCollectionGlobalInstance来获取全局字体集对象，仅该接口返回的对象拥有主题字体信息。
 
@@ -97,8 +97,8 @@ content_hash: sha256:4bedf6a9b7c5a50245911a4b5b29be6aef87359273d0df5cf059342a5e6
 
 **图2** 主题字体1的效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/q1N8xeBKTruqLoliBaaDFQ/zh-cn_image_0000002815559467.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/q1N8xeBKTruqLoliBaaDFQ/zh-cn_image_0000002815559467.png?HW-CC-KV=V1&HW-CC-Date=20261112T233032Z&HW-CC-Expire=31536000000&HW-CC-Sign=30202931E5D1B14C330788B5947CE65494C1D40B438A10A73CECF953A2EACD92)
 
 **图3** 主题字体2的效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/uXCNqEQ7Rk2OuWhtHGmzIQ/zh-cn_image_0000002815399551.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/uXCNqEQ7Rk2OuWhtHGmzIQ/zh-cn_image_0000002815399551.png?HW-CC-KV=V1&HW-CC-Date=20261112T233032Z&HW-CC-Expire=31536000000&HW-CC-Sign=88C789FC7FB5E6F168194522DA45615747F06223ED98AF2B222C4078735D17FC)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-access-th
 title: 接入ArkTS页面
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > NDK对接ArkTS > 接入ArkTS页面
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:f0eddc79833c9e60323ce6db2ff2d32c94b1f9c85efc6d8b44131c76d5fab306
 ---
@@ -163,7 +163,7 @@ OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, arkUINativ
 
 **图1** Native文本列表
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/zyIRUnUQQJyqQ47liWKVYA/zh-cn_image_0000002786359264.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/zyIRUnUQQJyqQ47liWKVYA/zh-cn_image_0000002786359264.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2B645ECA3FEC64066B93854A965A0945291D0DEA7AE66D2045CB678B0D20A3E)
 
 1. 在ArkTS页面上声明用于Native页面挂载的占位组件，并在页面创建时通知Native侧创建文本列表。
 

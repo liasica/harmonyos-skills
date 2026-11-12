@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (ComponentSnapshot)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (ComponentSnapshot)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:56+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:92cd901c501ab5e299ad7ed8dd4d1f97f382898a88e2e66d9fb69c804bdfdbe8
 ---
@@ -93,7 +93,7 @@ struct SnapshotExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/PqTbpMDAQrmbAYn90BPP8w/zh-cn_image_0000002786520798.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/PqTbpMDAQrmbAYn90BPP8w/zh-cn_image_0000002786520798.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=AF047C2337178C702C0B459BA71F6A485665F916625BBB93CBE5AEDA1DF67EA0)
 
 ## get12+
 

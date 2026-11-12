@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-travel
 title: 概述
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 出行凭证 > 概述
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:39+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-28
 content_hash: sha256:963bd3d6b7a886e91f4863f20d8e9896363a922e36449b599f9263930a98bda2
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:963bd3d6b7a886e91f4863f20d8e9896363a922e36449b599f9263930a9
 
 ## 系统架构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/R0rBodhiSzueK985LGmWNQ/zh-cn_image_0000002815400137.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/R0rBodhiSzueK985LGmWNQ/zh-cn_image_0000002815400137.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=C2B732147394C8B15460A68F60F3ED0F1134938941AF3ECCC4B86AC958FB02AE)
 
 | 角色 | 说明 |
 | --- | --- |
@@ -27,15 +27,15 @@ content_hash: sha256:963bd3d6b7a886e91f4863f20d8e9896363a922e36449b599f9263930a9
 
 ### 出行凭证开通
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/8CbhkAa6RuSXinhMH9wL9w/zh-cn_image_0000002815560067.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/8CbhkAa6RuSXinhMH9wL9w/zh-cn_image_0000002815560067.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=DDBDDD9B18C1D6336769667B36746155425D2F8025D3BB126E65EDC4317117E7)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/wAoBjVfITPWwrHf3lG4wfg/zh-cn_image_0000002815400151.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/wAoBjVfITPWwrHf3lG4wfg/zh-cn_image_0000002815400151.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0342DDF5C2E2F63E24365807757BCC83B4EFF14AC849C43EAFC207975364316)
 
 ### 出行凭证展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/XzPXqOrmRXOP6ATdTaeI3g/zh-cn_image_0000002786520576.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/XzPXqOrmRXOP6ATdTaeI3g/zh-cn_image_0000002786520576.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=686C516E96B48109153B5DC4732BC801AF4F52EBE2C8298414D2085C308F4B3E)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/_MPaFrefR0SH8pIuBAZ9Qg/zh-cn_image_0000002786360648.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/_MPaFrefR0SH8pIuBAZ9Qg/zh-cn_image_0000002786360648.png?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B5A8E45E9A48543BF346D671A604A70239E7B82350E45D33133E2834C82C42D)
 
 ## 接入流程
 

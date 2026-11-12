@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1131
 title: 如何解决Menu组件在数据为空时依旧显示的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Menu组件在数据为空时依旧显示的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:80437e69a3f434630def632833103bad56839f2c633501bac0c21c64e1ee5c82
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:80437e69a3f434630def632833103bad56839f2c633501bac0c21c64e1e
 
 当Menu组件内数据为空时，点击蓝色的菜单按钮，左下角依旧弹出一个白色圆点，如下图所示。该现象符合组件设计逻辑，当展示组件内容为空时，仍然弹出空白的Menu组件容器。但如果需求要求菜单为空时不显示菜单，则该现象不符合要求。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/qj9lNgn5RR2veo8AP8kS2A/zh-cn_image_0000002633439122.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/qj9lNgn5RR2veo8AP8kS2A/zh-cn_image_0000002633439122.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE55F00BB0FF91844AE173B69FA0D74CB0E45D96694E8E4094B4272DE0F97CAB "点击放大")
 
 ## 背景知识
 
@@ -91,13 +91,13 @@ content_hash: sha256:80437e69a3f434630def632833103bad56839f2c633501bac0c21c64e1e
 
   + visibility = Visible：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/zFVZ3gfKSDO7efYuW0NQuw/zh-cn_image_0000002663798967.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/zFVZ3gfKSDO7efYuW0NQuw/zh-cn_image_0000002663798967.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B6DEE891E0C4EE510724D3A9E87A54E42A5B1505B23DC8EA6EFE9156F949298 "点击放大")
   + visibility = Hidden：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/KKB_h30lSaidnu0Khl31WQ/zh-cn_image_0000002633599772.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/KKB_h30lSaidnu0Khl31WQ/zh-cn_image_0000002633599772.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F3417CD13D337E2658EDBC4705DB30517FECB458183B5FB5748445EEEE67E0C "点击放大")
   + visibility = None：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/9wDQILzDQTOAbB1KCV11EA/zh-cn_image_0000002663799007.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/9wDQILzDQTOAbB1KCV11EA/zh-cn_image_0000002663799007.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=65782831205F9ECA430E7450ADD120E9B5D7A99AD996870FC031C9A85957755F "点击放大")
 * **禁用控制：**
 
   ```ts
@@ -136,10 +136,10 @@ content_hash: sha256:80437e69a3f434630def632833103bad56839f2c633501bac0c21c64e1e
 
   + enabled = true：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/H5vliKZRRgSgdk8Bg7ZtnA/zh-cn_image_0000002633440070.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/H5vliKZRRgSgdk8Bg7ZtnA/zh-cn_image_0000002633440070.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2D57C311EB8C3EA1ABF753402468F7A0932051AC399F2DCAFD74F938FBF32F1 "点击放大")
   + enabled = false：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/qstjhrKBSQyZl1_0XQeD-w/zh-cn_image_0000002633600014.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/qstjhrKBSQyZl1_0XQeD-w/zh-cn_image_0000002633600014.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=09BBA33D5F054FC27D6234A58897B726345EA3011B2FDBF69E452DCECD6A3AF4 "点击放大")
 * **触摸测试控制：**
 
   ```ts
@@ -182,10 +182,10 @@ content_hash: sha256:80437e69a3f434630def632833103bad56839f2c633501bac0c21c64e1e
 
   + HitTestMode = Default：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/NzC4__FsTqOVbOojlQdZYQ/zh-cn_image_0000002633600724.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/NzC4__FsTqOVbOojlQdZYQ/zh-cn_image_0000002633600724.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D5102E6BF5EE316931AB812C23DE18C907F33262CB5EA0C7CEE3224CF9FA558 "点击放大")
   + HitTestMode = None：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/WQa2ac2rSyusw-d_DBeosw/zh-cn_image_0000002663719991.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/WQa2ac2rSyusw-d_DBeosw/zh-cn_image_0000002663719991.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=7AC154826CDEB277C0267EA51E3CB324EBBFEA36EE94B4C980B7D1EF478C0DF6 "点击放大")
 
 ## 总结
 

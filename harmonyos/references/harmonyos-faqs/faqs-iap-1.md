@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-iap-1
 title: 数字商品配置后如何生效与测试
 breadcrumb: FAQ > 应用服务开发 > 应用内支付服务（IAP Kit） > 数字商品配置后如何生效与测试
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:44+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:a82472f569b79e8d4cc70221fd649342468785ce113723dcb849c9c0f0782b37
 ---
@@ -25,10 +25,10 @@ content_hash: sha256:a82472f569b79e8d4cc70221fd649342468785ce113723dcb849c9c0f07
 1. 数字商品审核分为两种类型[首次提交数字商品或新增数字商品类型](../app/first-digital-products-for-review-0000002071877226.md)和[提交已生效类型的数字商品](../app/effective-digital-products-for-review-0000002107756845.md)：
    * 首次提交数字商品或新增数字商品类型：如果一个应用首次提交数字商品审核应跟随应用版本一起提交或者该应用版本新增数字商品类型（如已有消耗型商品，新增非消耗型商品），新增的非消耗型的数字商品应跟随应用版本一起提交，商品添加路径可以参考如下图片。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/k09pILKORqKU8hGAIw1f_g/zh-cn_image_0000002658913787.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/k09pILKORqKU8hGAIw1f_g/zh-cn_image_0000002658913787.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=7DB89D30E6B34F565E37A7D3C9CDC90E03EDE4EC312EE805A47C5F6D8A247D84 "点击放大")
    * 提交已生效类型的数字商品：应用已有某类型的一个或多个数字商品通过审核，后续该类型的数字商品可以直接提交，无需随新的应用版本一同提交，可以在商品列表页面直接提交审核或者编辑商品信息后再提交审核，具体可以参考如下图片。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/l3blm_GdQ4KwliyjofwodQ/zh-cn_image_0000002658793843.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/l3blm_GdQ4KwliyjofwodQ/zh-cn_image_0000002658793843.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B5CF095866907BC0983AE08943CF742ADB21CC8128E08252D07016D9CFA05F7 "点击放大")
 2. 不会的，审核侧在审核应用版本的时候会关注该版本是否有关联数字商品，有关联数字商品的话，会先将应用版本审核通过，然后再进行数字商品测试审核的，不会因无测试条件而将该版本驳回，仍被驳回可能是商品类型配置之类错误（如永久类的商品配置为非续期类的商品），该类问题请参考审核意见进行修改后再重新提交审核。
 3. 不能的，数字商品正式环境测试，必须要跟随应用版本审核通过后才能使用，前期测试商品服务建议使用应用内支付服务提供的[沙盒测试](../harmonyos-guides/iap-sandbox.md)来调测。
 

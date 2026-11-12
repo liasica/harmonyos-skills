@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-network-11
 title: 如何解决TCPSocket发送数据报错"send failed, socket is 72, errno is 32"
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > 如何解决TCPSocket发送数据报错"send failed, socket is 72, errno is 32"
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-13
 content_hash: sha256:ec6b4c060def97bb10fb2e676dd5b27459568438a59570d9b9a416716fed505c
 ---
@@ -33,7 +33,7 @@ content_hash: sha256:ec6b4c060def97bb10fb2e676dd5b27459568438a59570d9b9a416716fe
 
 通过抓取TCPDump日志进行分析，关键日志如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/n5WkWa28RbaqG56EArXsWg/zh-cn_image_0000002706380593.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/n5WkWa28RbaqG56EArXsWg/zh-cn_image_0000002706380593.png?HW-CC-KV=V1&HW-CC-Date=20261112T233214Z&HW-CC-Expire=31536000000&HW-CC-Sign=43C468FCBAD7D5726AB26F3EBC2A55649DB5BA2432D85B5F8A67A95DBD76FEDD "点击放大")
 
 结论如下：
 

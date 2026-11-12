@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom
 title: 自定义组件的生命周期
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义组件 > 自定义组件的生命周期
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:87dabd5cb53931666899b207a697f4d592e03e98888a8e4effbce602ccd7232f
 ---
@@ -148,7 +148,7 @@ struct IndexComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/anaLGP5cR0y8DrM1FIacqw/zh-cn_image_0000002815401125.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/anaLGP5cR0y8DrM1FIacqw/zh-cn_image_0000002815401125.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=B1641C4D8F63A1140A03567DD4E08390B3A918BE3D34D549B58A839ADAD34F07)
 
 ## onNewParam19+
 
@@ -558,7 +558,7 @@ struct IndexComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/cYaTSXJ4TWC_FFUY8owVow/zh-cn_image_0000002786521550.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/cYaTSXJ4TWC_FFUY8owVow/zh-cn_image_0000002786521550.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E04EA1B6024B1C72738F4A76FE0FE2B8FDDC287EE9491F34C40A8BFABC89ED4)
 
 V2：
 
@@ -631,7 +631,7 @@ struct IndexComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/K8X8VNvIRp2SZ8pptVdG1w/zh-cn_image_0000002786361622.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/K8X8VNvIRp2SZ8pptVdG1w/zh-cn_image_0000002786361622.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE3124EB3FE06A8B381901606BDF24C47108A919A53BD0107B3F32EA93330555)
 
 ## pageTransition9+
 

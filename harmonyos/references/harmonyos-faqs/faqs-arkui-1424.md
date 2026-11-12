@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1424
 title: Image加载失败时显示不同图片
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Image加载失败时显示不同图片
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:4e22bbd8860f1f0cc5f57bc0818ecf210b005591d6a4b35efc45d6c7c1e22091
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:4e22bbd8860f1f0cc5f57bc0818ecf210b005591d6a4b35efc45d6c7c1e
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/4oVxUPSdTZyxJomUE-7pRA/zh-cn_image_0000002628603744.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/4oVxUPSdTZyxJomUE-7pRA/zh-cn_image_0000002628603744.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E990ED03A15417003B8AEA313C8C2CB8E0BB67289261394D8ED750233916CFF "点击放大")
 
 ## 背景知识
 

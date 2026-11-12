@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 数据竞争异常访问故障模式说明
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 稳定性故障模式说明 > 地址越界故障模式说明 > 数据竞争异常访问故障模式说明
 category: best-practices
-scraped_at: 2026-11-10T10:42:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-09
 content_hash: sha256:667cc19f4683102ac4dd4f3e7eb4454fb382429df4a739090088c290b6d1d158
 ---
@@ -97,7 +97,7 @@ content_hash: sha256:667cc19f4683102ac4dd4f3e7eb4454fb382429df4a739090088c290b6d
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，分别对日志中线程T56和线程T58的调用栈帧（重点关注各线程调用栈中的 #0、#1 帧）地址信息进行符号解析，定位到具体代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/WjaZeN2YS-6E3qwzLEQ1jg/zh-cn_image_0000002699732134.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/WjaZeN2YS-6E3qwzLEQ1jg/zh-cn_image_0000002699732134.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=E25E8D534245E573C926B10CB51787B6ABEE4085EE4082A9F3BD8321EA781336)
 
    a. 代码第143行：创建多个线程共享访问全局变量DataRaceGlobal。
 
@@ -197,7 +197,7 @@ content_hash: sha256:667cc19f4683102ac4dd4f3e7eb4454fb382429df4a739090088c290b6d
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，完成调用栈解析，定位到具体代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/SEwZhJegQiCJ7Crl3gMBfg/zh-cn_image_0000002729491391.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/SEwZhJegQiCJ7Crl3gMBfg/zh-cn_image_0000002729491391.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=78F47B2DF6F42201FABEEAA1AED46F998EEA7F80C05E6AA2028A19BAEA25A164 "点击放大")
 
    a. 代码第126行：线程1执行obj->F()，通过基类指针调用派生类虚函数。由于虚函数调用依赖对象内部的 vptr，需要读取对象内存中的虚函数表指针信息。
 
@@ -268,7 +268,7 @@ obj->F()和delete obj并发执行时，一个线程可能在调用虚函数，�
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，完成调用栈解析，定位到具体代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/Lo2o6XXcQ3W3Uol0Ii3zQA/zh-cn_image_0000002699892018.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/Lo2o6XXcQ3W3Uol0Ii3zQA/zh-cn_image_0000002699892018.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=E43BD303503755CC480EAF7D765D20FB3FA3279B7E34D02755CD9A369F3B1483 "点击放大")
 
    a. 代码第236行：线程1调用非线程安全容器std::vector的读写操作push\_back()。
 
@@ -339,7 +339,7 @@ obj->F()和delete obj并发执行时，一个线程可能在调用虚函数，�
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，完成调用栈解析，定位到具体代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/ydazKsHkSLaIROdLuSycFw/zh-cn_image_0000002729611345.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/ydazKsHkSLaIROdLuSycFw/zh-cn_image_0000002729611345.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=805D221A4E0E8FDB9B91AE627E34DD44EA16C4AEEAFD1EE325449D5E814F936E "点击放大")
 
    a. 代码第279行：线程1依赖容器迭代器进行读取。
 
@@ -440,7 +440,7 @@ obj->F()和delete obj并发执行时，一个线程可能在调用虚函数，�
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，完成调用栈解析，定位到具体代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/rboW1DYTQcSGIa57hRSNUw/zh-cn_image_0000002699732136.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/rboW1DYTQcSGIa57hRSNUw/zh-cn_image_0000002699732136.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=487FDF738DBE65DBB4DE60C3076F57F119291C45E77D9D693A136BE60073CC9D "点击放大")
 
    a. 代码第88行：Previous write of size 8栈顶位置。
 
@@ -514,7 +514,7 @@ obj->F()和delete obj并发执行时，一个线程可能在调用虚函数，�
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，对调用栈中的#0、#1和#2栈帧信息进行符号解析，定位到具体代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/6auPMHiLQxqNuOEkDvYliQ/zh-cn_image_0000002729491393.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/6auPMHiLQxqNuOEkDvYliQ/zh-cn_image_0000002729491393.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=55113B60BA878CBCF7A968FFF2DFEC42754D8537D78882BF54AE37ED76C67E65)
 
    第63行代码表示信号处理函数破坏主程序原本的errno状态，errno是用于保存最近一次系统调用或库函数失败原因的错误码。如果信号处理函数修改了errno，会覆盖主程序原本有效的错误信息。
 
@@ -585,7 +585,7 @@ MyHandler中errno = 1的赋值破坏了错误码errno的设计用途，导致被
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，完成调用栈解析#1，定位到具体代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/1CyySAV-TdmyhYMr5zd9lQ/zh-cn_image_0000002699892020.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/1CyySAV-TdmyhYMr5zd9lQ/zh-cn_image_0000002699892020.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=1871EB1489E3FC720B86FB25F148F87FD3071BC667A00EF775C5EF84C16F047C "点击放大")
 
    a. 代码第56行：调用了malloc()函数。
 
@@ -671,7 +671,7 @@ MyHandler中errno = 1的赋值破坏了错误码errno的设计用途，导致被
 
    通过llvm-addr2line（参考：[C++堆栈解析流程](../harmonyos-guides/ide-exception-stack-parsing-principle.md#section1735713501344)中对于llvm-addr2line的使用）等解析工具，完成调用栈解析#1，#2定位到具体代码行，如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/s4FuhY6rSEa9z_xToZ40GQ/zh-cn_image_0000002729611347.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/s4FuhY6rSEa9z_xToZ40GQ/zh-cn_image_0000002729611347.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=7FD1CD5DF4C92815100D06EFC734A32EE27976D40A36E4FA0622207B3C19DE68 "点击放大")
 
    a. 代码第43行：执行第一次local\_lock.unlock()后，互斥锁已处于未锁定状态。
 

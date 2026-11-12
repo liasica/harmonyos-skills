@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-682
 title: 如何实现应用级别的全局置顶弹窗
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现应用级别的全局置顶弹窗
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:43+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:06989046c56a74d621f0712f155f1538c4ff922588bb387c9ffb9f3cc3df2f6b
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:06989046c56a74d621f0712f155f1538c4ff922588bb387c9ffb9f3cc3d
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/YneI2QbgRZCIhccjLKXdLA/zh-cn_image_0000002658914065.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/YneI2QbgRZCIhccjLKXdLA/zh-cn_image_0000002658914065.png?HW-CC-KV=V1&HW-CC-Date=20261112T233200Z&HW-CC-Expire=31536000000&HW-CC-Sign=A915ED2A6A968E1DAF16A991A8AF7632188C41F63379E252C72348FEDB1F495B "点击放大")
 
 ## 背景知识
 

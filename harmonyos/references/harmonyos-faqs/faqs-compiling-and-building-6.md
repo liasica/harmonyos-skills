@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“Module 'xxx' has no exported member 'yyy'”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“Module 'xxx' has no exported member 'yyy'”
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:52+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:65294e007e5183b94370bd516728370834588794e80dffc9848a53ceef689927
 ---
@@ -24,4 +24,4 @@ Stage模板工程编译构建失败，提示 “Module 'xxx' has no exported mem
 
 * 方法2：新增x.js对应的声明文件（.d.ts），并在引用时不指定后缀。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/2Xze1hXsSFeRl83ZAlDljA/zh-cn_image_0000002624478474.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/2Xze1hXsSFeRl83ZAlDljA/zh-cn_image_0000002624478474.png?HW-CC-KV=V1&HW-CC-Date=20261112T233210Z&HW-CC-Expire=31536000000&HW-CC-Sign=97BC498904421F3E95FFB527D753906110FAB6D810653BCFFD28AC5F1D0CACE9)

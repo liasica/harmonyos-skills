@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 创建弧形轮播 (ArcSwiper)（圆形屏幕推荐使用）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 媒体展示 > 创建弧形轮播 (ArcSwiper)（圆形屏幕推荐使用）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:dc727fba509d349069899206c1043c44f94706945f4dd7c8405c8e92498f22c2
 ---
@@ -55,7 +55,7 @@ ArcSwiper提供了默认的弧形导航点样式，导航点默认显示在ArcSw
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/7hK4H5UPRhOYN50179vn0Q/zh-cn_image_0000002815398511.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/7hK4H5UPRhOYN50179vn0Q/zh-cn_image_0000002815398511.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=F444248179A20C92905A588FF5EE6856AF9E5CB2BECE3A35149ADE754E16774F)
 * 自定义导航点样式
 
   导航点位于ArcSwiper组件6点钟方向，导航点颜色设为红色，被选中导航点颜色为蓝色。
@@ -72,7 +72,7 @@ ArcSwiper提供了默认的弧形导航点样式，导航点默认显示在ArcSw
   )
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/B3BJaEDATIyjstHEATL-zg/zh-cn_image_0000002786518936.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/B3BJaEDATIyjstHEATL-zg/zh-cn_image_0000002786518936.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB7D1AF484404AC86257C1DD3C9514FCAB0579A176088F0A4803F81AC7CB021A)
 
 ## 控制页面切换方式
 
@@ -149,7 +149,7 @@ ArcSwiper支持滑动手指、点击导航点、旋转表冠和控制控制器�
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/w1pw-YEYTpen3wicDB4V7w/zh-cn_image_0000002786359008.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/w1pw-YEYTpen3wicDB4V7w/zh-cn_image_0000002786359008.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=369C6E70BB3DA562C59C8F2C4A57448D2F52A8B86572FE81CABA7CB292F2AD8F)
 * 旋转表冠翻页。
 
   ArcSwiper在获得焦点时能够响应旋转表冠的操作，用户可以通过旋转表冠来滑动ArcSwiper，从而浏览数据。
@@ -196,7 +196,7 @@ ArcSwiper支持水平和垂直方向上进行轮播，主要通过[vertical](../
   .vertical(false)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/a6BegD8dQTa-Ld6SMFHCBw/zh-cn_image_0000002815398511.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/a6BegD8dQTa-Ld6SMFHCBw/zh-cn_image_0000002815398511.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=25E0809E91D5F7F724AA71A6DDE244029FBBA28D2375C2021687D2C1576D9756)
 * 设置垂直方向轮播，导航点设为3点钟方向。
 
   ```typescript
@@ -208,7 +208,7 @@ ArcSwiper支持水平和垂直方向上进行轮播，主要通过[vertical](../
   .vertical(true)
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/UcjAMwpoSN6SPPpG0Xib7w/zh-cn_image_0000002815558429.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/UcjAMwpoSN6SPPpG0Xib7w/zh-cn_image_0000002815558429.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0F8288E8E76BAB5FB614EBEA169EFABEF21C56187940D5F6987BDB9BE3A1C3A)
 
 ## 自定义切换动画
 
@@ -277,7 +277,7 @@ export struct ArcSwiperAction {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/Bs4JntvxRvWjpHXweNjWsg/zh-cn_image_0000002815398513.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/Bs4JntvxRvWjpHXweNjWsg/zh-cn_image_0000002815398513.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=2BB86524593CBF3D64D323F410E79CB6ECABD8DB70E6354D39280AD8CBCD5D04)
 
 ## 实现侧滑返回
 
@@ -339,4 +339,4 @@ export struct ArcSwiperSideSlip {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/v52SDE9kTkahss04BhTT0Q/zh-cn_image_0000002786518938.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/v52SDE9kTkahss04BhTT0Q/zh-cn_image_0000002786518938.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=878D4C28E72480A489DCE15E23393BBE3A06FA786737343BF078515BBDF52C8C)

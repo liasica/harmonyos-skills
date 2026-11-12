@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1146
 title: window弹窗打开时onBackPress失效
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > window弹窗打开时onBackPress失效
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:30+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:55407349ed51a675345005ad4270d7402b75582befe94de72a8fecd6788a77c9
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:55407349ed51a675345005ad4270d7402b75582befe94de72a8fecd6788
 
 如下图所示，当Window弹窗不关闭的时候，跳转页面，通过侧滑手势返回无法触发页面的onBackPress进行页面返回：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/w9rt8DwQQJqScM9bb3eKtg/zh-cn_image_0000002628409708.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/w9rt8DwQQJqScM9bb3eKtg/zh-cn_image_0000002628409708.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=8F2C1FDBABA5834D608BF00281318BE57AC49BDCE7375F4C77CD3D7801D655DB "点击放大")
 
 问题代码示例参考如下：
 
@@ -82,7 +82,7 @@ export class NYWindowDialog {
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/YU-ff_4BTNaNu0UNqFLEhw/zh-cn_image_0000002658928929.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/YU-ff_4BTNaNu0UNqFLEhw/zh-cn_image_0000002658928929.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8A7B514C6D75C8BA9BFE97B3849B0DDFE1CEFF563B97EBD1517FCBD6AEB3D47 "点击放大")
 
 ## 背景知识
 

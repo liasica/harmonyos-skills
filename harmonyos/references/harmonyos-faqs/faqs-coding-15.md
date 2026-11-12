@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-coding-15
 title: DevEco Studio上使用生成NAPI功能时， 提示“Could not find usage of napi_module_register in napi_init.cpp.”错误
 breadcrumb: FAQ > DevEco Studio > 代码编辑 > DevEco Studio上使用生成NAPI功能时， 提示“Could not find usage of napi_module_register in napi_init.cpp.”错误
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:50+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:ea867bd5c59d21ac732755528a79772567782e44e9f01f2d04d0d26b6d668158
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:ea867bd5c59d21ac732755528a79772567782e44e9f01f2d04d0d26b6d6
 
 右键单击函数， 在弹出的菜单中依次选择 Generate... > NAPI， 生成胶水代码报错。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/yH4_1npaT5C9HmR0L6f2gg/zh-cn_image_0000002624478448.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/yH4_1npaT5C9HmR0L6f2gg/zh-cn_image_0000002624478448.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=BEE6169A87C87D67727A31ABDA697DC5BD9475BF030D0BC343D8C452FD8FF6B7)
 
 **解决措施**
 
@@ -34,6 +34,6 @@ nm\_priv: 私有数据指针
 
 reserved: 保留字段
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/EHqWdD3_T3CVzRGE_Nmp_w/zh-cn_image_0000002654797815.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/EHqWdD3_T3CVzRGE_Nmp_w/zh-cn_image_0000002654797815.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD82FB6B384EA6A59F463AC3E13DF0F6E5C8237952B7C155A60D39810F4E07B7)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/1HNi9hhGRx60lpRcN8ieWw/zh-cn_image_0000002624638356.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/1HNi9hhGRx60lpRcN8ieWw/zh-cn_image_0000002624638356.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=C953638C32AF9D57BAC6B18706FB73203023EBA64395DFFD9BA5D93ABF00DF18)

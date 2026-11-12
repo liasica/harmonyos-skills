@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1452
 title: HarmonyOS多窗口截图合并方案
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 屏幕管理 > HarmonyOS多窗口截图合并方案
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:28+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:d9560348f0d60fbda43855b2a2445361d57cb3df796e0b6897056d77131cab67
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:d9560348f0d60fbda43855b2a2445361d57cb3df796e0b6897056d77131
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/ieCYlSUwTF6DBiVD7BT_vg/zh-cn_image_0000002628604264.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/ieCYlSUwTF6DBiVD7BT_vg/zh-cn_image_0000002628604264.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=F69C4A4B2A3AB945EDE3BB3300165CD9D6AF84888C2E6A9D4FC95FCADB87F285 "点击放大")
 
 ## 背景知识
 

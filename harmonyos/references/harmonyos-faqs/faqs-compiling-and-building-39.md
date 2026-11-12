@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译报错“Only one default card can be configured in the form_config.json file”
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译报错“Only one default card can be configured in the form_config.json file”
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:52+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:ca630ebf8c25b205d080ca5e60b2652700de5537e1386b70547b3b6d384b93d9
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:ca630ebf8c25b205d080ca5e60b2652700de5537e1386b70547b3b6d384
 
 DevEco Studio编译失败。提示：Only one default card can be configured in the form\_config.json file。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/_zs_86DARXyHFUI03I5crA/zh-cn_image_0000002624638410.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/_zs_86DARXyHFUI03I5crA/zh-cn_image_0000002624638410.png?HW-CC-KV=V1&HW-CC-Date=20261112T233209Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BAF0FEC585C74998786C296B3E3C5951548E0F4F2057C769B08925749AAA775 "点击放大")
 
 **问题原因**
 

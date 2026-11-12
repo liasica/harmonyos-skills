@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 稳定性概览
 breadcrumb: 最佳实践 > 稳定性 > 稳定性概览
 category: best-practices
-scraped_at: 2026-11-10T10:42:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-03-12
 content_hash: sha256:6c84d6bfdee9d230bdcec1e597552215f8a2ebaee07c1040059fefacb735f3a6
 ---
@@ -14,4 +14,4 @@ content_hash: sha256:6c84d6bfdee9d230bdcec1e597552215f8a2ebaee07c1040059fefacb73
 
 以下稳定性最佳实践，结合HarmonyOS生态实践要求，按照故障稳定性检测、稳定性分析、稳定性优化、稳定性案例、稳定性运维等内容，介绍HarmonyOS生态稳定性治理的完整方案。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/dnC4AcZ8QvGzXS2So2Wchg/zh-cn_image_0000002370405532.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/dnC4AcZ8QvGzXS2So2Wchg/zh-cn_image_0000002370405532.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=B596395715CE30418C0C68562EDFE14D2E44CC6422AF6883B70E9783AF9B46B4 "点击放大")

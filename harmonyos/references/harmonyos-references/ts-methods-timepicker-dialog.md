@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-method
 title: 时间滑动选择器弹窗 (TimePickerDialog)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 弹窗 > 时间滑动选择器弹窗 (TimePickerDialog)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-17
 content_hash: sha256:f6228a9554f1f5be433ae6bd84f7998dc4359576997f8fb69495afae6c72fda4
 ---
@@ -157,7 +157,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/_dDGJ8KlTPmImNlrIWpf4Q/zh-cn_image_0000002786521516.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/_dDGJ8KlTPmImNlrIWpf4Q/zh-cn_image_0000002786521516.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=DC4090957F3F11691B10DE5F94E4234E9F384E11FABEC0258CDD13B7080C19E7)
 
 ### 示例2（自定义样式）
 
@@ -216,7 +216,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/J2LeFLwMRQu3kz5-UWLBOA/zh-cn_image_0000002786361588.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/J2LeFLwMRQu3kz5-UWLBOA/zh-cn_image_0000002786361588.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=515B7D56CAA58A7EF56D9ABFFE17164B7F38E2AC057668AE69CAB2281FC08B3C)
 
 ### 示例3（悬停态弹窗）
 
@@ -272,7 +272,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/z9LgMVKdQ4-HbAZO1IOHGQ/zh-cn_image_0000002815561009.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/z9LgMVKdQ4-HbAZO1IOHGQ/zh-cn_image_0000002815561009.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA156131130FE08AF2454A0CA75A7E5E7AC1D81C5CFFA33AF493FD70E3A8A620)
 
 ### 示例4（设置弹窗位置）
 
@@ -307,7 +307,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/zF4wVLMVR8CRI79s3QTeKA/zh-cn_image_0000002815401093.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/zF4wVLMVR8CRI79s3QTeKA/zh-cn_image_0000002815401093.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=187A1D0E7D9BECD512BA8BE6A37C2BC28C09691478CFA6564D5587A37064C020)
 
 ### 示例5（设置遮蔽区）
 
@@ -341,7 +341,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/DCNAkLLlRaqFZM85F136TQ/zh-cn_image_0000002786521518.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/DCNAkLLlRaqFZM85F136TQ/zh-cn_image_0000002786521518.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=CEADDF07CE58DB58E35E329A4FF607BF23F95F7A6E73D33E10AE3AC795B4BA31)
 
 ### 示例6（设置弹窗背板）
 
@@ -377,7 +377,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/8W2H-Tc3RbiKy8qPGxBLww/zh-cn_image_0000002786361590.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/8W2H-Tc3RbiKy8qPGxBLww/zh-cn_image_0000002786361590.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=096135EA4E8EE2A7E6B270606FB62DC3A4A3FFFEE8A73A1D3A54664835799AD8)
 
 ### 示例7（设置时间滑动选择器弹窗的起始时间）
 
@@ -414,7 +414,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/jOWL6OaPTRmlJjJoCkmuwg/zh-cn_image_0000002815561011.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/jOWL6OaPTRmlJjJoCkmuwg/zh-cn_image_0000002815561011.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=60E36A5CC705FFAAB3386BE056EAAABB734D76DEC7202EEE0B7816BC953D6651)
 
 ### 示例8（设置时间滑动选择器弹窗的结束时间）
 
@@ -451,7 +451,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/rfvDyQLxQkCqB7tOL5spOg/zh-cn_image_0000002815401095.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/rfvDyQLxQkCqB7tOL5spOg/zh-cn_image_0000002815401095.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=69C21B526B48722BE2CDD5BEE382AB52526C7B025EAADDC6B139E95017F600BC)
 
 ### 示例9（设置上午下午跟随时间联动）
 
@@ -487,7 +487,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/IofEFQKMQX6jnJJhi2o51Q/zh-cn_image_0000002786521520.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/IofEFQKMQX6jnJJhi2o51Q/zh-cn_image_0000002786521520.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B5E2DBE781E827C38456C2AC027AF7CA0A49155290561874CCAA08C7E60F8C9)
 
 ### 示例10（自定义背景模糊效果参数）
 
@@ -522,7 +522,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/enOwIKl6RR2X5EXj8XB4kg/zh-cn_image_0000002786361592.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/enOwIKl6RR2X5EXj8XB4kg/zh-cn_image_0000002786361592.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=7D1FB91E977235F1ACB021211AE0F60AC5732A8CD5673E6F06B7450E288BB8E5)
 
 ### 示例11（自定义背景效果参数）
 
@@ -558,7 +558,7 @@ struct TimePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/enGerExCRLa2JQMvZ04Epg/zh-cn_image_0000002815561013.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/enGerExCRLa2JQMvZ04Epg/zh-cn_image_0000002815561013.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=963D725A7355360E6269CA3CC95FCEB3ECD0398928CFDA2322B74F0A637EE4D1)
 
 ### 示例12（设置沉浸光感）
 
@@ -593,4 +593,4 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/s_H8leyaT3mro9JdhYT98Q/zh-cn_image_0000002815401097.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/s_H8leyaT3mro9JdhYT98Q/zh-cn_image_0000002815401097.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB1E007D77EEE7AD241CB9FE09F3719056A9E0AE1440ED29A514E8911A9C4B26)

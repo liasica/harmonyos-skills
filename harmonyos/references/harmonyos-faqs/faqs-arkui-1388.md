@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1388
 title: 列表展开动效异常，与正在下移的组件重叠
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 列表展开动效异常，与正在下移的组件重叠
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:34+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:a7ffb5920c52357c9c93c79b4ed0c6728c6f33c4e0097fc0d22f5470d64e8c60
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:a7ffb5920c52357c9c93c79b4ed0c6728c6f33c4e0097fc0d22f5470d64
 
 列表展开时，与正在下移的组件存在重叠，部分列表内容被下移的组件遮挡。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/w9JvH_ZiT8ySuChc1N3-gg/zh-cn_image_0000002658841935.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/w9JvH_ZiT8ySuChc1N3-gg/zh-cn_image_0000002658841935.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=67F1990BF106F870393A288852B904E3A7AC42976CB332CCE1170CE9EFB07BFC "点击放大")
 
 ## 背景知识
 
@@ -24,7 +24,7 @@ content_hash: sha256:a7ffb5920c52357c9c93c79b4ed0c6728c6f33c4e0097fc0d22f5470d64
 
 1. 使用DevEco Testing查看发生异常的页面，发现问题组件为List组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/3_0QrfSTSXyCvQk0-MHuYQ/zh-cn_image_0000002628762564.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/3_0QrfSTSXyCvQk0-MHuYQ/zh-cn_image_0000002628762564.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=A080E905863372024B56F0463AF0BE23AF3F9BFE3CEA68AB54FF57D8F6EA78B0 "点击放大")
 2. 查看该List组件的相关设置，List组件使用了OPACITY进行透明度形式的转场，其父组件使用animation在高度变化时使用动画，达到组件平移的动画效果。
 
    ```screen

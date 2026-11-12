@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/realtime-moni
 title: 性能问题定界：实时监控
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 使用Profiler进行性能调优 > 性能问题定界：实时监控
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:713ab83148104c51501864d8e03b4ceae2a373d4ebed8442adf0641849d365c2
 ---
@@ -57,15 +57,15 @@ FPS、GPU、Temperature、\*Device Current泳道显示的是所使用设备的�
 
 * 启停控制
 
-  点击会话区“Realtime Monitor”页签上的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/Lc76xCX4QNmtSrBM1T0Vhw/zh-cn_image_0000002808766921.png)、![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/ksoD3En8Sh6ewMsY5VmN5Q/zh-cn_image_0000002779407364.png)按钮或工具控制栏上的 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/S-CJ705PTeC3h2wSH0TYyw/zh-cn_image_0000002779567346.png)、![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/W26xDQ-iQ-aQI36rcej-VA/zh-cn_image_0000002779407360.png)来即时控制实时监控界面的录制状态。
+  点击会话区“Realtime Monitor”页签上的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/Lc76xCX4QNmtSrBM1T0Vhw/zh-cn_image_0000002808766921.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=0031979B10E206A2C5677F74DD280889B3E2AD5005B2E1694D7F90A26B509197)、![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/ksoD3En8Sh6ewMsY5VmN5Q/zh-cn_image_0000002779407364.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=82FC4CAE223416C06FFF9D37585A3B6DD383842292ADD599C834AAD306151299)按钮或工具控制栏上的 ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/S-CJ705PTeC3h2wSH0TYyw/zh-cn_image_0000002779567346.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=F020660D763A8CA7826E68C1C699B17EE4DC073EB82ADD9D282036ACEE76CFC0)、![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/W26xDQ-iQ-aQI36rcej-VA/zh-cn_image_0000002779407360.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=67146889719FB3DE527C1439FE46ADECCB38638EAAABC694CAB80B64193E2C6D)来即时控制实时监控界面的录制状态。
 * 泳道筛选
 
-  点击工具控制栏上的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/fwL385AmQZK_VeHdn7c2Kg/zh-cn_image_0000002808766925.png "点击放大")按钮，可以选择泳道进行筛选。筛选无需录制的泳道，可以降低数据采集本身的开销，但同时会造成数据分析维度的减少。
+  点击工具控制栏上的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/fwL385AmQZK_VeHdn7c2Kg/zh-cn_image_0000002808766925.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=43987565DCE8FD5320DACE41CF18E73D990F7D4B8F7DD5F2077715B0A4D98653 "点击放大")按钮，可以选择泳道进行筛选。筛选无需录制的泳道，可以降低数据采集本身的开销，但同时会造成数据分析维度的减少。
 * 详细数据展示
 
   将鼠标悬浮于所关心的泳道数据上时，界面上会出现当前时间点的时间标线以及含有当前时间点上泳道详细数据的Tooltips。更进一步，当您将鼠标悬浮于时间轴上时，实时监控页面内的所有泳道均会以Tooltips展示出该时刻的数据。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/JwAnRCunQFeEu69d6YTx7A/zh-cn_image_0000002779407368.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/JwAnRCunQFeEu69d6YTx7A/zh-cn_image_0000002779407368.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD1D586EAF4957A43EF16579C285E947B1A9737F4C7E6BDA9BFAD9CAEF0F057D "点击放大")
 
 * 图例选择
 
@@ -80,4 +80,4 @@ FPS、GPU、Temperature、\*Device Current泳道显示的是所使用设备的�
 3. 在设备上启动您想要监测的应用。
 4. 在DevEco Profiler界面左上角选择调优设备、应用、进程。如果您的应用不止有一个主进程（还存在Extension或者Render进程），那么需要手动选择一个想要监控的进程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/przA1gecQsuMgkEB6G7zyQ/zh-cn_image_0000002779567342.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/przA1gecQsuMgkEB6G7zyQ/zh-cn_image_0000002779567342.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F54D497413655988A280BEF522FB35598A2B339E53CD1B5C18FE5BA92C03FBB)

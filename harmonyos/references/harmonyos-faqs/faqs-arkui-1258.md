@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1258
 title: 如何获取LocalStorage实例对象
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何获取LocalStorage实例对象
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:5684a19ca5e27ca2fa60d844e676149e7d14129773e3d4ef36654504d28e0e1a
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:5684a19ca5e27ca2fa60d844e676149e7d14129773e3d4ef36654504d28
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/TyhReXmnSVaRMpNQRLqpng/zh-cn_image_0000002658955245.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/TyhReXmnSVaRMpNQRLqpng/zh-cn_image_0000002658955245.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233150Z&HW-CC-Expire=31536000000&HW-CC-Sign=55DE44CF4F5DB84DA66A743C556CA7D5E8697DD81FA27402E885917536AA28A7 "点击放大")
 
 ## 背景知识
 

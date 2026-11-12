@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-lite-c
 title: stack
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Lite） > 容器组件 > stack
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:e225a10a07c923b10e99ec3840eb37855f5e20bcad7db820d7ad3561aaf10153
 ---
@@ -99,4 +99,4 @@ content_hash: sha256:e225a10a07c923b10e99ec3840eb37855f5e20bcad7db820d7ad3561aaf
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/mesiRMBHR0mL4XU2z3CtRA/zh-cn_image_0000002786521894.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/mesiRMBHR0mL4XU2z3CtRA/zh-cn_image_0000002786521894.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA7BDBDCD598986074925239016738E4858B54E4112DFFE2E7A93DFE794C0CFC)

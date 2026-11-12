@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-opera
 title: AscendC算子工程编译
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC算子实现 > AscendC算子工程开发 > AscendC算子工程编译安装 > AscendC算子工程编译
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:14e312eb13d42394ae9df450e99ff5106b7c022cf7a56aa881b5bdd17ec1f1a5
 ---
@@ -23,7 +23,7 @@ content_hash: sha256:14e312eb13d42394ae9df450e99ff5106b7c022cf7a56aa881b5bdd17ec
 
 **图1** 算子工程编译示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/tg08_XFbSn-2BH5coZbZWQ/zh-cn_image_0000002786360700.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/tg08_XFbSn-2BH5coZbZWQ/zh-cn_image_0000002786360700.png?HW-CC-KV=V1&HW-CC-Date=20261112T233225Z&HW-CC-Expire=31536000000&HW-CC-Sign=CF684CF601432C44E2241A8E21D191D10EDC9EF7BC2ECD6034CEB9D026A959A2)
 
 ## 编译步骤
 

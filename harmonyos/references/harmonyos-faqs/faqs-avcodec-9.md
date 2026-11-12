@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-avcodec-9
 title: 应用内选择某个音频文件后无法播放
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频编解码（AVCodec） > 应用内选择某个音频文件后无法播放
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:33+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:e1e24293ee2ac2b1ea3fc6ebded9f9e8d430dacc9100026315c3cdb368fda19b
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:e1e24293ee2ac2b1ea3fc6ebded9f9e8d430dacc9100026315c3cdb368f
 
 音频播放格式中，表明支持APE格式，但是打开该格式的音频无法播放。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/C1ZMjGmrT9mKDQnBqsCycQ/zh-cn_image_0000002628552686.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/C1ZMjGmrT9mKDQnBqsCycQ/zh-cn_image_0000002628552686.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=DDEB96C10C7771F8F5595E6518D25625992B646F2DC277E13A75E8D0E30C99E9 "点击放大")
 
 ## 背景知识
 

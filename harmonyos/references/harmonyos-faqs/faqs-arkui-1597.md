@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1597
 title: 如何禁止文本组件长按弹出菜单选项
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何禁止文本组件长按弹出菜单选项
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:159cee321fdf39c91c2d2d24549a0a6baa9814695fc9d2fd8dc143ad90a16ed2
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:159cee321fdf39c91c2d2d24549a0a6baa9814695fc9d2fd8dc143ad90a
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/D-c3OemESRGJbE55CVi-iQ/zh-cn_image_0000002670005975.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/D-c3OemESRGJbE55CVi-iQ/zh-cn_image_0000002670005975.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0C2C8D06864B63DB932CCAB5E5DA2CE9D677D85032DC3F83A718F613A7DBA09 "点击放大")
 
 ## 背景知识
 

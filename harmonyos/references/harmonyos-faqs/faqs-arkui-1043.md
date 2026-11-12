@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1043
 title: TextInput组件实现验证码输入框
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > TextInput组件实现验证码输入框
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:1400b558e6c1eaa68381eb856fe66e47a37ab589d5ed775bf631af65318914dc
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:1400b558e6c1eaa68381eb856fe66e47a37ab589d5ed775bf631af65318
 
 效果如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/ffwYcCK4T26W2gaPy-C4Gw/zh-cn_image_0000002628565450.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/ffwYcCK4T26W2gaPy-C4Gw/zh-cn_image_0000002628565450.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=304C1CFF08660DCFF422125BF93C0C46B81E6F9EC8C6DC426D6004C61E4784A3 "点击放大")
 
 ## 背景知识
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-889
 title: 使用restore时出现801和1300004错误码时如何处理
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 使用restore时出现801和1300004错误码时如何处理
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:29+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:781657a1ee9a25d726125053fb3dd196165bdcec3c7d4982bd26111938315d77
 ---
@@ -14,11 +14,11 @@ content_hash: sha256:781657a1ee9a25d726125053fb3dd196165bdcec3c7d4982bd261119383
 
 使用平板出现错误码801：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/wLYBr8vkRSSc4xQR0fclYQ/zh-cn_image_0000002658918855.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/wLYBr8vkRSSc4xQR0fclYQ/zh-cn_image_0000002658918855.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=286C8F4AEB4A2F913D274F5DC85404319171E9B3B00F11C638384E1C6B485D43 "点击放大")
 
 使用PC设备出现错误码1300004：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/QBTI4-ocTGKsRUD-Ib_wVw/zh-cn_image_0000002628399640.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/QBTI4-ocTGKsRUD-Ib_wVw/zh-cn_image_0000002628399640.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A33BA1B7BCF842996B77975E4389EF2B93FEB3D66E3444CFB6FEBB41B2DD26E "点击放大")
 
 ## 背景知识
 

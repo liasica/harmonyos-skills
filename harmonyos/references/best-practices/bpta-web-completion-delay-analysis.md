@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-web-comple
 title: Web加载完成时延分析
 breadcrumb: 最佳实践 > 性能 > 性能分析 > Web加载完成时延分析
 category: best-practices
-scraped_at: 2026-11-10T10:42:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-15
 content_hash: sha256:f228e10d0c0116d6f90528227f68677b88d14a093f572cdf5f1daa7bf93e8e46
 ---
@@ -17,7 +17,7 @@ Web加载完成时延是从页面请求开始到页面视口内容加载完成�
 Web页面加载流程包括Web组件初始化，请求对应的网页资源后解析HTML与CSS文件、执行JS脚本构建出渲染树，同时网络进程会并行下载其他资源，然后系统会根据渲染树进行布局计算，确定每个元素在页面中的大小与位置，通过光栅化将几何信息转化为像素信息最后合成送显，对应泳道图如下图所示。
 
 **图1** Web页面加载泳道图  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/vdHo_aUcRCKS4ZVte2suNQ/zh-cn_image_0000002229450741.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/vdHo_aUcRCKS4ZVte2suNQ/zh-cn_image_0000002229450741.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=851E535A0586257F686BE0B99FED11D45DEA04C0383958AFC0E1494F7F069973 "点击放大")
 
 **表1** Web页面加载关键Trace点
 
@@ -47,7 +47,7 @@ DevTools是一个Web前端开发调试工具，提供在电脑上调试移动设
 ## Web加载性能分析方法
 
 **图2** Web加载完成时延分析流程  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/QAlqlf8eToKg0HlQrlMTmw/zh-cn_image_0000002193850892.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/QAlqlf8eToKg0HlQrlMTmw/zh-cn_image_0000002193850892.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE63E09219D75666C6F7D9AD995E710825628B11AD87A4452FAE20747C5F99BF "点击放大")
 
 1. 确定是否存在时延问题。使用DevEco Profiler或录屏工具辅助分析，确认Web组件加载完成时是否存在时延问题。若存在问题，则执行后续分析逻辑。
 2. 确认关键性能瓶颈：使用DevTools分析，关注关键泳道及其中的关键性能问题，了解程序的耗时情况。
@@ -60,14 +60,14 @@ DevTools是一个Web前端开发调试工具，提供在电脑上调试移动设
    1. 确定Web加载完成时延Trace起点。点击切换到新的Web页面，以DispatchTouchEvent, type=1为起点。Web页面初始化加载以H:NWebImpl | CreateNWeb为起点。该Trace点位于应用主线程泳道内。该泳道负责应用主逻辑、接收多模信号、生成帧、分发子信号等。对应图3中的红色旗标处。
 
       **图3** Web页面初始化加载起点  
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/NYs6CMcKQZKaT1I2AV3S5Q/zh-cn_image_0000002229336253.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/NYs6CMcKQZKaT1I2AV3S5Q/zh-cn_image_0000002229336253.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E3C6C0622C91E2A75374CEE1D6020FA36540E20894D2AD1AD509D24C269ED89 "点击放大")
    2. 确定Web加载完成时延Trace结束点。最后一个SkiaOutputSurfaceImplOnGpu::SwapBuffers为终点。该Trace点位于CompositorGpuTh泳道内。该泳道负责GPU光栅化处理，生成信号送图形子系统执行渲染。对应图4的紫色旗标处。
 
       **图4** Web页面初始化加载终点  
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/8tEVqp6KQ6KgSvdrnP6f6w/zh-cn_image_0000002193850860.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/8tEVqp6KQ6KgSvdrnP6f6w/zh-cn_image_0000002193850860.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=793418E268184A3E09309322903203A1CDCF40011FC5020F3D733D9171B7BEDF "点击放大")
 2. 缩小Trace图，找到起点和终点，选中起点到终点范围内的Trace图，可查看当前Web页面的点击完成时延。如果该区域内加载完成时延超过900毫秒，使用下文介绍的DevTools进行性能分析。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/8XYLqcV0QruYqL5xI66Tfg/zh-cn_image_0000002229450753.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/8XYLqcV0QruYqL5xI66Tfg/zh-cn_image_0000002229450753.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A60027E7F014F7515E71E6549593EB79B64E50C7EF8A5D8FD84A37833BC725B "点击放大")
 
 ### 使用DevTools分析耗时区域
 
@@ -77,12 +77,12 @@ DevTools是一个Web前端开发调试工具，提供在电脑上调试移动设
 
    **图5** 确定泳道起始点
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/lNajpWvESaipIJfZd1sAVg/zh-cn_image_0000002193850880.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/lNajpWvESaipIJfZd1sAVg/zh-cn_image_0000002193850880.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=3AA290A2B1CEBBF5A750E3190F8F25FF4C7A8A50CEF22D8A9690D94189D380F7 "点击放大")
 
    **图6** 确定泳道结束点
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/IAaTgr-USLWDicAYQ4WZOA/zh-cn_image_0000002194010464.png "点击放大")
-2. 常用泳道概览。DevTools提供了多个泳道为开发者提供性能分析数据，常用泳道如下图所示。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/0Q-3TKEEQFassxQw1V2ykQ/zh-cn_image_0000002229336257.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/IAaTgr-USLWDicAYQ4WZOA/zh-cn_image_0000002194010464.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=42F4405472C69966060B80E0B37BB4487BDF76E31BA4929E58978561D8E7184E "点击放大")
+2. 常用泳道概览。DevTools提供了多个泳道为开发者提供性能分析数据，常用泳道如下图所示。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/0Q-3TKEEQFassxQw1V2ykQ/zh-cn_image_0000002229336257.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=4DA867228C3223C847333CE55F8E35E44ED2E94147D07640F411EFC5E953DA60 "点击放大")
 
    由于Web加载完成时延主要问题集中在静态资源请求与主线程任务执行，因此，需要重点关注以下泳道。
    * Main（主要）泳道：显示主线程上的任务活动情况，包括脚本执行、样式计算、布局和绘制等。
@@ -111,7 +111,7 @@ DevTools是一个Web前端开发调试工具，提供在电脑上调试移动设
 
    **图7** 网络请求阻塞UI渲染示意Trace图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/i5BVyGLPSMCUDg0rgX3YZw/zh-cn_image_0000002229336241.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/i5BVyGLPSMCUDg0rgX3YZw/zh-cn_image_0000002229336241.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=006CE8CC8251516A5ED889369968255EA17A8762795DE4482A226B0DEFD9C5C1 "点击放大")
 2. 网络请求过多、服务器响应慢、无强依赖关系接口串行请求。此时的优化方案如下：
    1. 懒加载，减少文件大小，提高加载速度。
    2. 合并和压缩CSS、JavaScript等资源文件，减少请求数量。
@@ -120,13 +120,13 @@ DevTools是一个Web前端开发调试工具，提供在电脑上调试移动设
 
    **图8** 网络请求数量过多示意Trace图
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/5zPwtF-1SGOjSVgxa5hkEQ/zh-cn_image_0000002194010488.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/5zPwtF-1SGOjSVgxa5hkEQ/zh-cn_image_0000002194010488.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=7909E551E948E6F725F0845EF077F0E0F1175C07931374BC704A7C7CD29446BC "点击放大")
 
    **图9** 服务器响应网络请求过慢示意Trace图  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/Q6YGxtUaQCeTjw6P2wjmXQ/zh-cn_image_0000002229336249.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/Q6YGxtUaQCeTjw6P2wjmXQ/zh-cn_image_0000002229336249.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A0B44305A4F312240FEA0BF9CC95FC78F57AF25EC9B74FB35DD4A873A294BDD "点击放大")
 
    **图10** 无强依赖接口串行请求示意Trace图  
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/yBcGsZ1zQDSEv5zyyAOswQ/zh-cn_image_0000002194010492.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/yBcGsZ1zQDSEv5zyyAOswQ/zh-cn_image_0000002194010492.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7D6B12667DA35B9C0DDF43B3CE7E7F9195892891A5797E7D6AA2553ACFAC995)
 
 **JS编译与执行**（分析Main泳道）
 
@@ -134,10 +134,10 @@ DevTools是一个Web前端开发调试工具，提供在电脑上调试移动设
 
 1. 主线程任务执行稀疏，频繁发生任务切换和上下文切换。如下图所示，红框内任务执行情况稀疏，而红框右侧存在任务执行，表明该区域内的主线程任务执行受到其他因素阻塞，通常是由于网络请求过慢或定时器导致的任务滞后。建议检查空白区域对应时间范围内的网络请求，以确定是否存在网络请求缓慢问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/H2lp5OMhTOK-hKFrWtnLaQ/zh-cn_image_0000002229450721.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/H2lp5OMhTOK-hKFrWtnLaQ/zh-cn_image_0000002229450721.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=01D45EB9E0E2CBA0961273EC03C5B643F940EB842ED7315F06FB76104421348D "点击放大")
 2. 长任务会阻塞UI渲染。JS脚本执行时会阻止HTML解析，导致页面白屏或显示未渲染完成的内容。脚本执行时间过长可能由脚本过大或算法时间复杂度过高引起。开发者需要排查脚本内容，延后不必要的脚本执行，优先保障视口内的内容加载。可采取的通用方案包括：[预编译JavaScript生成字节码缓存（Code Cache）](bpta-web-develop-optimization.md#section563844632917)、减少冗余JavaScript代码，推迟非必要JavaScript代码执行，利用代码分割只加载当前页面需要的代码等。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/GkvwO_NGRqykaaf2HKJkPQ/zh-cn_image_0000002229336281.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/GkvwO_NGRqykaaf2HKJkPQ/zh-cn_image_0000002229336281.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=8828905F41CF45C62CB085752200D036E5A69426C3ABB870F2A83307FE3685C6 "点击放大")
 
 ## 优化实践案例
 
@@ -149,7 +149,7 @@ DevTools是一个Web前端开发调试工具，提供在电脑上调试移动设
 
 **问题Trace**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/B4Zi4rZVSGKmg3-R7ql7kA/zh-cn_image_0000002229336269.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/B4Zi4rZVSGKmg3-R7ql7kA/zh-cn_image_0000002229336269.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=1519A1B80424D60473B6A632589C158970A932E10AD59590C3A6ACA8089A5AC7 "点击放大")
 
 **加载流程分析**
 
@@ -183,7 +183,7 @@ DevTools是一个Web前端开发调试工具，提供在电脑上调试移动设
 
 **问题Trace**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/-8AqVAX4TX6Vbdom83Z9PQ/zh-cn_image_0000002194010476.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/-8AqVAX4TX6Vbdom83Z9PQ/zh-cn_image_0000002194010476.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=C181B331565C9C24657C92104AB139CAF36F18F7F64500DE36022ADD734FFBE8 "点击放大")
 
 **加载流程分析**
 

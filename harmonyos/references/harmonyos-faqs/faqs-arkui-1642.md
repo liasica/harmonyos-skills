@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1642
 title: 新请求数据和上次数据相同时LazyForEach内子组件不更新的问题如何解决
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 新请求数据和上次数据相同时LazyForEach内子组件不更新的问题如何解决
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:38+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:b356ae71cf7a21e30c678ede4d06c0f85977022c26f78e2961934c3b3ef7f291
 ---
@@ -210,10 +210,10 @@ export class CommonDataSource<T> implements IDataSource {
 
 * 首次运行的代码的结果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/QQAzldpPSgK7Qlc4bd0txw/zh-cn_image_0000002628821232.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/QQAzldpPSgK7Qlc4bd0txw/zh-cn_image_0000002628821232.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=94EFF80C69F0BC29E27B4EDA3ABDEBB6DBF2B9C23CD14CEB7AC95EA5A3DF83C6 "点击放大")
 * 点击“分组1 code1”和“分组1 code2”，对应属性发生变化。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/-ox6LcdtRVOK2xqtN8WlfQ/zh-cn_image_0000002659020541.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/-ox6LcdtRVOK2xqtN8WlfQ/zh-cn_image_0000002659020541.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=5167C0197607F2D208D945E7FC21CBCA3E3EFA1B012B1C44E829CDFD1779FA1E "点击放大")
 * 接下来，点击“重新请求数据”，返回的数据和原始数据相同，对应的“分组1 code1ss”和“分组1 code2ss”应该恢复到原始状态，如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/pFOg2TB0TV6pM5nSAEdyig/zh-cn_image_0000002628661342.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/pFOg2TB0TV6pM5nSAEdyig/zh-cn_image_0000002628661342.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=9887D595F0669DB7ED2BC2C7B15B188825F37D6904053ACCA9CEF2F7703A9269 "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-2
 title: 如何解决mock中继承Base64Helper不生效的问题
 breadcrumb: FAQ > DevEco Studio > 应用测试 > 如何解决mock中继承Base64Helper不生效的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:ba629d5b9a9d416f4c37bbc891e42ffaba231bbd96d299e7d57368721574041c
 ---
@@ -56,7 +56,7 @@ export default function localUnitTest() {
 
 运行报错如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/ZMqVk2n6QdOuQx48g4hKSg/zh-cn_image_0000002658808815.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/ZMqVk2n6QdOuQx48g4hKSg/zh-cn_image_0000002658808815.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E7A6FE2D66F1BB94DFE9F0F62B872401927F79F2FF312376FB5D30FB7B03CE0 "点击放大")
 
 ## 背景知识
 
@@ -70,11 +70,11 @@ export default function localUnitTest() {
 
    查看被mock接口的导出方式，可以用Ctrl+鼠标左键点击被mock的接口。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/jL3Zamw2SAiM1ZrOAxM7Qw/zh-cn_image_0000002628409548.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/jL3Zamw2SAiM1ZrOAxM7Qw/zh-cn_image_0000002628409548.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DA5BD152B623D516C7A76810A7E90E4409FB1D1C822FD5752201E7D8F90940F "点击放大")
 
    查看mock文件的导出方式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/zJpZTZNxREGJIJxOsu3PVQ/zh-cn_image_0000002628569446.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/zJpZTZNxREGJIJxOsu3PVQ/zh-cn_image_0000002628569446.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=1304CBB0BD2786E8D2DC6091E19BC8BA578BB2D4BF2C81ACDF40C02BB8B11422 "点击放大")
 
 ## 分析结论
 

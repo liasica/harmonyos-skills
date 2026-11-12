@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-8
 title: ohosTest测试文件引用了entry模块的方法，测试时报cppcrash
 breadcrumb: FAQ > DevEco Studio > 应用测试 > ohosTest测试文件引用了entry模块的方法，测试时报cppcrash
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-15
 content_hash: sha256:faa174681ec1f02493fa79eacc5783d7f4c6b395094f5dee135cd4536f74d3f4
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:faa174681ec1f02493fa79eacc5783d7f4c6b395094f5dee135cd4536f7
 
 如果ohosTest测试文件引用了entry的方法，并且entry中存在以普通形式（例如"entry/ets/workers/Worker.ets"）加载worker时，测试执行期间会报cppcrash。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/pQE3iOy1QJaJ974ujUbFIA/zh-cn_image_0000002654798189.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/pQE3iOy1QJaJ974ujUbFIA/zh-cn_image_0000002654798189.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=20963EC00442A9F446246A62C9CD86DAB1F21B9E415A53CEF05EB1FFAD69D0F4)
 
 **解决措施**
 
@@ -20,7 +20,7 @@ content_hash: sha256:faa174681ec1f02493fa79eacc5783d7f4c6b395094f5dee135cd4536f7
 
 * @标识路径加载形式("@entry/ets/workers/Worker.ets")：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/UKLBSEGZTj6J6qktszcMiQ/zh-cn_image_0000002624638728.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/UKLBSEGZTj6J6qktszcMiQ/zh-cn_image_0000002624638728.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE9FB7ED2BC9CAD9C94125FD4CC195E439BF7F10BDAA522E690B470CB6BBDECF)
 * 相对路径加载形式("../workers/Worker.ets")：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/4CbAPdgUQ2-qzJQKLxha4Q/zh-cn_image_0000002654838145.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/4CbAPdgUQ2-qzJQKLxha4Q/zh-cn_image_0000002654838145.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=3D96A58E6425066F649082BC9207D87C7A6D097E881CE52DC4C067D9A8D72D7A)

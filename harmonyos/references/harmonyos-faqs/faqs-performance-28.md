@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 滑动地图卡顿
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 滑动地图卡顿
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:43+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:d35b818211e59ab63676028b4323689f3ea4edac0b952e8f3d96fe9f2395cb70
 ---
@@ -27,14 +27,14 @@ content_hash: sha256:d35b818211e59ab63676028b4323689f3ea4edac0b952e8f3d96fe9f239
 
 ## 问题定位
 
-1. 运行hdc shell param set persist.ace.debug.enabled 1命令、重启应用，使用DevEco Profiler Frame分析工具抓取滑动地图过程的Trace信息。User Events（用户交互）泳道中的Touch为触摸事件类型，其等同于滑动地图的过程，然后查看Frame泳道中的Display子泳道发现屏幕刷新率为120Hz，但应用侧绘制帧率只有17.7FPS，绘制帧率较低。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/SY6V28O8TWeUuKLmgMMM7Q/zh-cn_image_0000002658794435.png "点击放大")
+1. 运行hdc shell param set persist.ace.debug.enabled 1命令、重启应用，使用DevEco Profiler Frame分析工具抓取滑动地图过程的Trace信息。User Events（用户交互）泳道中的Touch为触摸事件类型，其等同于滑动地图的过程，然后查看Frame泳道中的Display子泳道发现屏幕刷新率为120Hz，但应用侧绘制帧率只有17.7FPS，绘制帧率较低。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/SY6V28O8TWeUuKLmgMMM7Q/zh-cn_image_0000002658794435.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=54DFBA544346CB259BCEA1DDDB5F6E5C2A1D45566151B826CF819CB78D0E9FF4 "点击放大")
 2. 查看应用主线程两次接收Vsync信号处理的时间间隔，从下图中可看到为67.4ms。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/oItbQtXdSSyLj7eXNq_8Rw/zh-cn_image_0000002628555072.png "点击放大")
-3. 分析该部分Trace信息可看到耗时主要集中在应用Canvas组件绘制（33ms）和状态变量更新（21ms）。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/-KE5R1S6QZ2-rGx3ecOesA/zh-cn_image_0000002628395166.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/cYTZlVC-QxGHjT0pJrqYdQ/zh-cn_image_0000002658914395.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/oItbQtXdSSyLj7eXNq_8Rw/zh-cn_image_0000002628555072.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=64CBECEF9C9B6691EDAFAB028507C171292CE951BDFE10DEFC09A440D3ABC333 "点击放大")
+3. 分析该部分Trace信息可看到耗时主要集中在应用Canvas组件绘制（33ms）和状态变量更新（21ms）。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/-KE5R1S6QZ2-rGx3ecOesA/zh-cn_image_0000002628395166.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4C047489830B52345D897935C4BE2002429AAB9461933022875F44EF321EAAA "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/cYTZlVC-QxGHjT0pJrqYdQ/zh-cn_image_0000002658914395.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=DF689097AA971AF4A767E77F0A4D14BF7706DD7FE02C311B9F1742314AFC728A "点击放大")
 4. 在该过程应用长时间处于Running状态，可知应用在执行耗时操作，导致滑动地图卡顿。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/MynFzpSjTTy7T_gLWnhDqg/zh-cn_image_0000002658794437.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/MynFzpSjTTy7T_gLWnhDqg/zh-cn_image_0000002658794437.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=772494F5C3E8E77EE97F1E4B65FC89AC7852A28F42C13A86A4A1302DA1E3F919 "点击放大")
 
 ## 分析结论
 

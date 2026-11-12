@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/account-kit-faq
 title: 华为账号登录与授权常见问题
 breadcrumb: FAQ > 应用服务开发 > 华为账号服务（Account Kit） > 常见问题 > 华为账号登录与授权常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:39+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-22
-content_hash: sha256:a07b9037ba4bd65e29bbdeeacad66be7aecb246fd0421fa6923fde68bafaa7e9
+content_hash: sha256:88dc7f9fe113a8a66fec5eed76dc4a8578f97447194e722796cbaebac7b3cdd3
 ---
 
 **Q：华为账号登录报错，常见错误码是1001500001，主要报错信息如下：**
@@ -22,10 +22,10 @@ Failed to auth, errorCode=1001500001, errorMsg=Failed to check the fingerprint o
 
 1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)查看[配置公钥指纹](../app/agc-help-cert-fingerprint-0000002278002933.md)：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/P5Ero_AcTmGs8-5cTAFgCw/zh-cn_image_0000002794282667.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/vmPk5kCkSImziMn7lBqiYw/zh-cn_image_0000002794282667.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF2E37AC18719988E5F596523F31537B98F127942E97EAB46B84D5C0F981483B "点击放大")
 2. 使用DevEco Studio打开项目工程，打开File->Project Structure->Project->Signing Configs界面，不能勾选"Automatically generate signature"进行自动签名，需要手动配置签名。可以按照开发准备里面的说明配置：[配置签名信息](../harmonyos-guides/application-dev-overview.md#配置签名信息)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/q2vfeBfpSEWhKDf5OCa5JQ/zh-cn_image_0000002794282669.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/UyvSHgImT2CYObUVioe_HQ/zh-cn_image_0000002794282669.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6D0FBFB4D9C596B8743C58DA7990C3B8E182C5CB8C3C492F869629EE746EAE4)
 3. 查看应用签名证书指纹，安装应用后执行：
    * Windows系统
 
@@ -189,7 +189,7 @@ GOpen.User.getInfo service is not found
 
 **Q：华为账号一键登录获取公钥指纹报错：Failed to login with LoginWithHuaweiIDButton. errorCode=1001500001, errorMsg is Failed to check the fingerprint of the app bundle.Incomplete response information from gateway.？**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/jpOA0aN0TuGCaMiof49fAA/zh-cn_image_0000002765095280.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/dmKOKP1mR32o-kGJwdhaBA/zh-cn_image_0000002765095280.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=762FAE7F9731E83B661AC3862BAAF01D41E760EC3477AC79373859CB5332249E "点击放大")
 
 **A**：首先排查是否企业开发者，个人开发者暂不支持一键登录，再根据当前知识解决方案思路依次排查。
 
@@ -225,11 +225,11 @@ GOpen.User.getInfo service is not found
 
 Q：登录授权模拟器时，若提示华为账号需要实名制认证，请在账号中心检查账号状态。若状态显示“已实名”，请核对相关信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/HIlmZsnnQ96z80pIp_SVAw/zh-cn_image_0000002764937408.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/ZrPnwKyETTahPGzEW27tGA/zh-cn_image_0000002764937408.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=26C70C7923BAF807F15484C604FBDF979BF182514C212525FEBF66989D1D4C67)
 
 **A**：华为账号实名分两种，一个是账号实名认证，即上图展示的状态，还有一个是开发者实名认证。这两种实名认证方式是不一样的，模拟器的登录授权是需要开发者实名认证，请根据[实名认证指导](../start/itrna-0000001076878172.md)进行处理。开发者实名认证后的结果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/UD8ZuKVcQymUcBBivn-KzA/zh-cn_image_0000002794455925.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/xPth11K2S2adssIBNN17Qw/zh-cn_image_0000002794455925.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=6DC69DD9C6377871FB10ED64DDD5A29807F381D47AECF9CE84E1438F5E022372)
 
 **Q：使用浏览器登录华为账号后，如果账号已实名认证但未出现授权的“允许”按钮，界面也未跳转或提示，该如何处理？**
 
@@ -239,16 +239,16 @@ Q：登录授权模拟器时，若提示华为账号需要实名制认证，请�
    * Windows平台：以Windows 10为例，打开“控制面板 > 程序 > 默认程序 > 设置默认程序”，更改或设置默认浏览器。
    * macOS平台：以macOS 15为例，打开系统设置，选择“桌面与程序坞”，再选择“默认网页浏览器”，更改或设置默认浏览器。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/cTTCQYfzR2Kd5P8eGl92Sg/zh-cn_image_0000002764939608.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/QLMAbNWiQTSyvKlObHmLZg/zh-cn_image_0000002764939608.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=A453DD3A55F30B6F033155906F4761C62B0C2CCD46E354DAD0C3323A4AF9E3F5 "点击放大")
 
      使用Safari浏览器时，点击Safari 浏览器 > 偏好设置>隐私/高级，取消“防止跨站跟踪”和“阻止所有Cookie”设置。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/Sf7iOKVpSiGjh79ndrFQ4g/zh-cn_image_0000002764940340.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/O524KfxoSmmfdPVM6jwyDA/zh-cn_image_0000002764940340.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=07B8B76D2601394676CE82D6CA54D0B69DDA89B1C9222CE7B7B4C07F78A3C100 "点击放大")
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/rrDjiTOFQfa8q0Gl8hynlQ/zh-cn_image_0000002794379077.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/eHbpbjYzSUeCVQgHIgUtsQ/zh-cn_image_0000002794379077.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=396875327608EEBF0F65078860F951E60D4642FA8742787D0ED58ABB1E720A84 "点击放大")
 2. 在DevEco Studio界面，点击Cancel按钮，然后重新登录授权。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/Z4b_GIaST2ScfbYX2d5j2w/zh-cn_image_0000002764941134.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/F02BsvRfSROZ8urzV716tA/zh-cn_image_0000002764941134.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=3BB9FDB75817C7B9FA97936BD2E3B68D8AC2E31FBD12A587B9C5E0A02FDD5F2C "点击放大")
 
 **Q：获取匿名手机号只能与openid同时使用。在获取匿名手机号时如何同时获取头像和昵称？**
 

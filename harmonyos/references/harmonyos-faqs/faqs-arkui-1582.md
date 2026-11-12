@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1582
 title: 将点击事件中的坐标转换为相对坐标
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 将点击事件中的坐标转换为相对坐标
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:c3e96ad50f0f6b33ec274a3e11312ab473c2b1cb36278296f56bca2207a2f5be
 ---
@@ -113,4 +113,4 @@ content_hash: sha256:c3e96ad50f0f6b33ec274a3e11312ab473c2b1cb36278296f56bca2207a
 
 两者实现思路相同，只是调用的方法不同。均是使点击位置在子组件中的坐标与子组件在父组件中的坐标相加，得到点击位置相对于父组件中的坐标。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/qDdum8OJTxSKqB-olc6nTg/zh-cn_image_0000002628770194.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/qDdum8OJTxSKqB-olc6nTg/zh-cn_image_0000002628770194.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=88A48A33BBB307EB65BDC1C92249FFCAEA9CDA0AF36D9F69F987EBE0DC7C351D "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/inputmethod-a
 title: 实现一个输入法应用
 breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > 实现一个输入法应用
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:28+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:0aca61ba4d0ec9a4a98ac786ef1bff0045a25b49aed007922312caa097811215
 ---
@@ -71,7 +71,7 @@ content_hash: sha256:0aca61ba4d0ec9a4a98ac786ef1bff0045a25b49aed007922312caa0978
    ```
 2. KeyboardController.ets文件。KeyboardController中除创建输入法窗口，设置输入法事件监听，实现文本插入、删除之外，还可以使用Panel对象的[getSystemPanelCurrentInsets](../harmonyos-references/js-apis-inputmethodengine.md#getsystempanelcurrentinsets21)获取输入法键盘与系统面板的偏移区域，输入法系统面板在不同设备上存在差异，当设备有系统面板时，输入法软键盘相对系统面板的偏移区域如图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/yxBHC98nTUOpbqHIybQYRw/zh-cn_image_0000002786359584.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/yxBHC98nTUOpbqHIybQYRw/zh-cn_image_0000002786359584.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7E5F35CD5C1266D25883B800ED12C14C69C2CCB7EE3E21F03A402CEC00C7F5F)
 
    ```typescript
    // 定义输入法的两个子类型
@@ -954,4 +954,4 @@ content_hash: sha256:0aca61ba4d0ec9a4a98ac786ef1bff0045a25b49aed007922312caa0978
 
 ## 示例效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/hLByjB1LRUGl-I4ly1RVgA/zh-cn_image_0000002815559005.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/hLByjB1LRUGl-I4ly1RVgA/zh-cn_image_0000002815559005.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=8361460EC5F7EC9338284D8F23D9A1B8DF725F3C817CB8C615736C2FA33C03F3)

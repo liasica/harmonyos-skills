@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1363
 title: 如何实现多列卡片列表无限循环滚动功能
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现多列卡片列表无限循环滚动功能
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:e3fefaa69c65dd66cb409941b404ca096c9c82d067037c639a968e963b4279dc
 ---
@@ -353,4 +353,4 @@ content_hash: sha256:e3fefaa69c65dd66cb409941b404ca096c9c82d067037c639a968e963b4
 
    效果如下图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/lirRS8DsRISdGQpBB2XQXg/zh-cn_image_0000002678018893.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/lirRS8DsRISdGQpBB2XQXg/zh-cn_image_0000002678018893.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=3013046C90BB232683A0F055D56D872A1574DFAB6EFA950EC17AB006F479A238 "点击放大")

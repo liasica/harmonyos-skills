@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-scenario-s
 title: 应用冻屏类问题案例
 breadcrumb: 最佳实践 > 稳定性 > 稳定性案例 > 应用冻屏类问题案例
 category: best-practices
-scraped_at: 2026-11-10T10:42:14+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:76f343fd9cf072c5473acfbf0ef6ac033a4cf7dd13f836ef975cca80c1f99561
 ---
@@ -362,15 +362,15 @@ Tid:2918, Name:example.sceneboard
 
 首先找到上报APP\_INPUT\_BLOCK的时间点，大约在13:40:59.448。事件上报完后，dfx将卡死的scb杀掉。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/d6L8LSEHTWWPZEI68q0eOA/zh-cn_image_0000002370565628.png)往前推6s左右，可以看到在14:40:53.498左右，有一个点击事件发给了scb。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/d6L8LSEHTWWPZEI68q0eOA/zh-cn_image_0000002370565628.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=27CC5272B18117C3ADE3EFF56716A0AB6CCC5E6F82755128F55E1AD1D323203E)往前推6s左右，可以看到在14:40:53.498左右，有一个点击事件发给了scb。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/AAK4JBUeTRCEQYojGS7_cA/zh-cn_image_0000002404125265.png)这之间的6s存在大量的scb日志，判断是在进行更新渲染。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/AAK4JBUeTRCEQYojGS7_cA/zh-cn_image_0000002404125265.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=AAAC4B424AC432D94B045ABA0E4392336FE4D4EE033C4C006EA96B5EC7E91731)这之间的6s存在大量的scb日志，判断是在进行更新渲染。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/HiJy_f4cTl2UWsNlaT1CHQ/zh-cn_image_0000002411349608.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/HiJy_f4cTl2UWsNlaT1CHQ/zh-cn_image_0000002411349608.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=B17FCAC5003346F9C7F47F24FA2857B8293295653C5FCAAB4D1090A289058E0A)
 
 查看对应时间点的trace：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/0Le7Yz8uQQWf2AtKS-bN5g/zh-cn_image_0000002404045457.png)发现scb主线程被占满，非常繁忙。耗时较长的任务是**CustomNodeUpdate SwiperPage**，后续需排查该组件里为何一直在刷新。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/0Le7Yz8uQQWf2AtKS-bN5g/zh-cn_image_0000002404045457.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=EDAEBD3BFFBB3F9E92BFF2EC0420E985EE8E68F6EB968335FFE7A8D4D31819ED)发现scb主线程被占满，非常繁忙。耗时较长的任务是**CustomNodeUpdate SwiperPage**，后续需排查该组件里为何一直在刷新。
 
 对应领域排查后发现：swiperPage上将themeStyle加入到了key里面，key变化就会触发控件新建流程。
 
@@ -543,7 +543,7 @@ Tid:5235, Name:edialibrarydata
 
 查看对应时间点的流水信息：进程调用datashare加载云图后卡死，与堆栈信息吻合。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/vr9V_leUSG6r-zc_ll9pGg/zh-cn_image_0000002370565632.png)查看具体代码：
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/vr9V_leUSG6r-zc_ll9pGg/zh-cn_image_0000002370565632.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC59168EA948ACAE82DD15E6C2C5F52550D471621AD1170A5B54656D1B052EC6)查看具体代码：
 
 在循环中同步加载fileUri是不合理的，当弱网环境或者同时加载大量数据时，极易出现卡死情况，应用侧需进行整改。
 

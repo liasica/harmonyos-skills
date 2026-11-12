@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-547
 title: 视频切换时闪屏
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 视频切换时闪屏
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:33+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:23420028478b7a368f2e7a62970cb232ea4f37fabfbd6bed137940f6b674f19d
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:23420028478b7a368f2e7a62970cb232ea4f37fabfbd6bed137940f6b67
 
 视频切换后，视频页面会短暂黑屏，之后才播放视频。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/dnW69PxZR_eJQW655uqySQ/zh-cn_image_0000002628551522.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/dnW69PxZR_eJQW655uqySQ/zh-cn_image_0000002628551522.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D8A67659D265752F4B22484BB86553C7EE8F8D3829D3C2C819462EE70FBD077 "点击放大")
 
 ## 背景知识
 
@@ -25,7 +25,7 @@ content_hash: sha256:23420028478b7a368f2e7a62970cb232ea4f37fabfbd6bed137940f6b67
 
 1. 使用DevEco Testing查看问题组件，该问题组件为Stack组件下的Video组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/8LdCX8-nRK-J1QsRJA1MDg/zh-cn_image_0000002628391626.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/8LdCX8-nRK-J1QsRJA1MDg/zh-cn_image_0000002628391626.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=506435A318A8478063DC263EDA06E58A9EFBC8EB470E6F1FF51172EEC0A1765E "点击放大")
 2. 通过该Video组件查看该页面的设置，该页面还设置了Image组件，视频切换时使用预览图片进行展示，切换完成后视频加载完成前不显示该预览图片，视频页面无内容，出现短暂黑屏。
 
    ```ts

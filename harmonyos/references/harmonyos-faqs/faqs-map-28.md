@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-28
 title: 如何实现通过自定义滑块控制地图缩放
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 如何实现通过自定义滑块控制地图缩放
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:38+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-30
 content_hash: sha256:31aa06131bdd51c708b307e20296cd18df7dfbd3c2d8cb9ec35e63d6bbe5cf38
 ---
@@ -41,7 +41,7 @@ content_hash: sha256:31aa06131bdd51c708b307e20296cd18df7dfbd3c2d8cb9ec35e63d6bbe
 
 实现效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/Uj6V2NbvTTK3MgG9w_i5_g/zh-cn_image_0000002628394368.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/Uj6V2NbvTTK3MgG9w_i5_g/zh-cn_image_0000002628394368.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=8CAEA4CD3FB92071C2EA0CBBAADFAC294FE0A7AFA700E6B2DF60724289E4E767 "点击放大")
 
 完整示例参考如下：
 

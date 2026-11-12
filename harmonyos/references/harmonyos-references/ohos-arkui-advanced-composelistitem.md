@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ComposeListItem
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ComposeListItem
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:26+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:d3b9c0fcfbe79f525264a11428390e0040cf1a9661446a2a8aceaf70fbf42747
 ---
@@ -199,7 +199,7 @@ struct ComposeListItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/sxW5JxQPTpSmBwG0hyTFWA/zh-cn_image_0000002815401143.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/sxW5JxQPTpSmBwG0hyTFWA/zh-cn_image_0000002815401143.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=DCD0B764CB2D846C9A1BEB59143AED52E4C32B66581C420A7E31BD6CD84860BB)
 
 ### 示例2（设置右侧不同元素自定义播报）
 
@@ -282,7 +282,7 @@ struct ComposeListItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/YM0Zv6z9TjuJtEmaWVFHMQ/zh-cn_image_0000002786521568.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/YM0Zv6z9TjuJtEmaWVFHMQ/zh-cn_image_0000002786521568.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=31A6CD21D0E48D8CE1948A809C64073E286CA43C27CBD9B7A96C0AD62ECEB8B7)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -357,4 +357,4 @@ struct ComposeListItemExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/SBoJ9YyUR8uGrHldR3dO3w/zh-cn_image_0000002786361640.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/SBoJ9YyUR8uGrHldR3dO3w/zh-cn_image_0000002786361640.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC60DB2D6F1A4B0690B155262E4B904A025A04A6709957ABBA71C494487AAFE4)

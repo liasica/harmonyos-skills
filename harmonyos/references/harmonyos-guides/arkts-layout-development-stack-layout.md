@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 层叠布局 (Stack)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 组件布局 > 构建布局 > 层叠布局 (Stack)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:3682c6691d11053f9aebf77b367f06c5f674409627e5e34078da89b5415c14bc
 ---
@@ -18,7 +18,7 @@ content_hash: sha256:3682c6691d11053f9aebf77b367f06c5f674409627e5e34078da89b5415
 
 **图1** 层叠布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/ZQLw50yQQm2rxm4AcNxTIg/zh-cn_image_0000002815398293.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/ZQLw50yQQm2rxm4AcNxTIg/zh-cn_image_0000002815398293.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=885ED591D7F4E66B139FE0F7C14C6199140D23089F9324F87AE0A493EBDC8656)
 
 **说明** 
 
@@ -47,7 +47,7 @@ struct StackLayoutExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/fpQc67ruRYu6y3Qq5TPShg/zh-cn_image_0000002786518718.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/fpQc67ruRYu6y3Qq5TPShg/zh-cn_image_0000002786518718.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=B283C25A5DBE52E50304A2052AD9FCCB7E176EA63AC47AEA5085CA6BEBF107A2)
 
 ## 对齐方式
 
@@ -55,7 +55,7 @@ Stack组件通过[alignContent参数](../harmonyos-references/ts-container-stack
 
 **图2** Stack容器内元素的对齐方式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/OPcwE0IkSbeIICo-6P7_Zg/zh-cn_image_0000002786358790.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/OPcwE0IkSbeIICo-6P7_Zg/zh-cn_image_0000002786358790.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=6FB766863B398F3689A66FF590CFC55BE21233ED5275438A807466FA7CBC5E75)
 
 ```typescript
 // xxx.ets
@@ -97,7 +97,7 @@ Stack({ alignContent: Alignment.BottomStart }) {
 }.width(350).height(350).backgroundColor(0xe0e0e0)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/UIqTXjX-QTS_CPZNmStNdA/zh-cn_image_0000002815558211.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/UIqTXjX-QTS_CPZNmStNdA/zh-cn_image_0000002815558211.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=7EA3F327EED86009BD7BB69E5925AB73023BC3CEBBD809B485D954B5050B155E)
 
 上图中，最后的子元素3的尺寸大于前面的所有子元素，所以，前面两个元素完全隐藏。改变子元素1、子元素2的zIndex属性后，可以将元素展示出来。
 
@@ -120,7 +120,7 @@ Stack({ alignContent: Alignment.BottomStart }) {
 }.width(350).height(350).backgroundColor(0xe0e0e0)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/jz1aQ-uvSL2zc4lkxfc5bg/zh-cn_image_0000002815398295.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/jz1aQ-uvSL2zc4lkxfc5bg/zh-cn_image_0000002815398295.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=4E7BD44A72696B48E8A79BE94708096C7E13074571CE57B8094B6E0227BF9E3B)
 
 ## 场景示例
 
@@ -165,7 +165,7 @@ struct StackSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/xZKCFL-_RPurETcCY3N-yQ/zh-cn_image_0000002786518720.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/xZKCFL-_RPurETcCY3N-yQ/zh-cn_image_0000002786518720.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=24E3A22A2DCA298442A76F8BE82771D8042C645634656B4A71E53205A9B51E6D)
 
 ## 示例代码
 

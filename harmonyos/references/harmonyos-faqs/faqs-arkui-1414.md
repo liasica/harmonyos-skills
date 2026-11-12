@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1414
 title: 如何实现文本的动态播报
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现文本的动态播报
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:40+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:6c65c2e7b206534b7e99db419e802ab759037c0946d1bb90db29ab5c745f4d2b
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:6c65c2e7b206534b7e99db419e802ab759037c0946d1bb90db29ab5c745
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/geeDonabQRi_tcGVMiYrXw/zh-cn_image_0000002658842535.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/geeDonabQRi_tcGVMiYrXw/zh-cn_image_0000002658842535.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=01E8DC05F91B5B1A01E54AE40DD75D5F842F815A6FFC8101AFBCFD74D260169E "点击放大")
 
 ## 背景知识
 

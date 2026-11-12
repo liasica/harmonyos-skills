@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-memory
 title: 记忆（Memory）配置
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 自定义智能体配置 > 记忆（Memory）配置
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-08
 content_hash: sha256:669690a757f4d9b630e3329fb864ea068393d9ac9244f741a23d89ef00adca2e
 ---
@@ -27,12 +27,12 @@ content_hash: sha256:669690a757f4d9b630e3329fb864ea068393d9ac9244f741a23d89ef00a
 
 ## 操作步骤
 
-1. 点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/x6BqTzmER0-uAhPPwSK6xQ/zh-cn_image_0000002779566788.png)按钮，选择**Memory**，进入配置页面。
+1. 点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/x6BqTzmER0-uAhPPwSK6xQ/zh-cn_image_0000002779566788.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5CE4743420E436DBA184DCB09D8FAA3F36E3D19F43582E94D2D92752483F10E)按钮，选择**Memory**，进入配置页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/Q4aDkMWuQs2C8Y8_UWYhdQ/zh-cn_image_0000002808886451.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/Q4aDkMWuQs2C8Y8_UWYhdQ/zh-cn_image_0000002808886451.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB1C6E80766A7B19C09452CC5D41E87A5BCC5DAF69EFA9E66D121FC3DE585F8E)
 2. 点击Memory后开关，开启和关闭记忆。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/cRJI4pbyS0ecygkIU1aDBA/zh-cn_image_0000002808766371.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/cRJI4pbyS0ecygkIU1aDBA/zh-cn_image_0000002808766371.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=D59238913F4BD3789902591736B4EFE97601D001C05B476754E7D149E7358CFB "点击放大")
 3. 在**Memory List**（记忆列表）下展示所有记忆，包括**Global**（记录用户相关信息）、**Project**（记录项目相关信息）。将鼠标悬浮在记忆上会显示具体信息，以及出现编辑、删除按钮，方便开发者管理记忆。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/qjQLJfpyS8eZrlbrvnUvLA/zh-cn_image_0000002808886453.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/qjQLJfpyS8eZrlbrvnUvLA/zh-cn_image_0000002808886453.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4249C57420863C545E9F48659035F8CAB2801CD8ADE5EBE59037AD4619BD168 "点击放大")

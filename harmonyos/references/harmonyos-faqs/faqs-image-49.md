@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-49
 title: 图片数据通过线程传输后打包的图片显示纯黑
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 图片数据通过线程传输后打包的图片显示纯黑
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:28+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:86fea6deb521a57273f62e19ba60aa59d6f8eba8c01b3b279361ec87003f7d24
 ---
@@ -14,11 +14,11 @@ content_hash: sha256:86fea6deb521a57273f62e19ba60aa59d6f8eba8c01b3b279361ec87003
 
 原始图片如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/F6I9wTIcQPSK-Q_cjVrUCA/zh-cn_image_0000002658791877.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/F6I9wTIcQPSK-Q_cjVrUCA/zh-cn_image_0000002658791877.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=E54B00E23BC5DFC4E7DA2F737B3E9EDD864B3503F7224F78AD96EBE07B1776DE "点击放大")
 
 异常图片如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/lLeB9sriQbWf23s0cOtouw/zh-cn_image_0000002628552510.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/lLeB9sriQbWf23s0cOtouw/zh-cn_image_0000002628552510.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEEF43CBF01FFCEE298C1C8346E76D74E1FEABFB3D618BA19FF95AB79E6F7916 "点击放大")
 
 ## 背景知识
 

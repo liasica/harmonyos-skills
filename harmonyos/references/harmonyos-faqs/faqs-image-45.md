@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-image-45
 title: 超大分辨率图片压缩时应用Crash
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 图片处理（Image） > 超大分辨率图片压缩时应用Crash
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:27+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-22
 content_hash: sha256:f0284a64c652d4f447b91944a855cb3fd34109b6d331299be1eff6f0fd2ea627
 ---
@@ -41,7 +41,7 @@ content_hash: sha256:f0284a64c652d4f447b91944a855cb3fd34109b6d331299be1eff6f0fd2
 4. 分析日志，写入数据超出最大值"write data:[29144176] out of max size:[26214400]."；
 5. [DevEco Profiler工具](../harmonyos-guides/ide-profiler.md)分析，packToData压缩图片时内存溢出。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/nCyHiaJySeGkTpBHPe9uQA/zh-cn_image_0000002738075238.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/nCyHiaJySeGkTpBHPe9uQA/zh-cn_image_0000002738075238.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D6562B3B6AD3F224AB78CB72BF41D48CB446944CA1AE1943B49C6FC9EC81609 "点击放大")
 
    PrivateDirty持续增长，存在内存泄漏风险。
 
@@ -49,7 +49,7 @@ content_hash: sha256:f0284a64c652d4f447b91944a855cb3fd34109b6d331299be1eff6f0fd2
 
 超大分辨率图片通过packToData编码时存在内存溢出问题，需要在解码前对图片进行优化处理，通过desiredSize属性提前设置缩小后的分辨率，避免内存溢出且提高压缩效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/zcWEuUbIStyBJMOeytFQxQ/zh-cn_image_0000002767595137.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/zcWEuUbIStyBJMOeytFQxQ/zh-cn_image_0000002767595137.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBE8E2C85F8ECF9D5E98E371AD4B1601130D0D66EC3846B098B1FE73FF2078BD "点击放大")
 
 ## 修改建议
 

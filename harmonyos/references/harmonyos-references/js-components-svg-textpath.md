@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: textPath
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > textPath
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-16
 content_hash: sha256:0c74740bfc611fa0530b09a1bda8841b25e2da2c004bae29a32ae92fe6ad326d
 ---
@@ -71,7 +71,7 @@ textPath属性示例，textpath文本内容沿着属性path中的路径绘制文
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/1EZKEEZvT5CUPSXdGTTBog/zh-cn_image_0000002815561229.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/1EZKEEZvT5CUPSXdGTTBog/zh-cn_image_0000002815561229.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=A73F89CA56877F7B0976B87020B3AD85A5142683E445DE370CFAFBE53DD75D46)
 
 textpath与tspan组合示例与效果图
 
@@ -91,7 +91,7 @@ textpath与tspan组合示例与效果图
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/KXu_HOv6TMa0BK81qARRhw/zh-cn_image_0000002815401313.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/KXu_HOv6TMa0BK81qARRhw/zh-cn_image_0000002815401313.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=FC9C67122224BDA4970C27438FA95D496947F9BC8782C9EFC7A6C1545C230C7E)
 
 ```html
 <!-- xxx.hml -->
@@ -111,7 +111,7 @@ textpath与tspan组合示例与效果图
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/rhan6qe_TlCcIY7UcrTyog/zh-cn_image_0000002786521738.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/rhan6qe_TlCcIY7UcrTyog/zh-cn_image_0000002786521738.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=545E30ED511BF74FE768DBE0D54F1447D1228FE3ADED8659BA9E472786B8C49F)
 
 ```html
 <!-- xxx.hml -->
@@ -132,7 +132,7 @@ textpath与tspan组合示例与效果图
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/8ap2vON0SomKj3nWJr7Agw/zh-cn_image_0000002786361810.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/8ap2vON0SomKj3nWJr7Agw/zh-cn_image_0000002786361810.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B4CBED05BD4C117C03469CAF1214340F96F12E98B83A5C9E61B78BF2680514F)
 
 startOffset属性动画，文本绘制时起点偏移从10%运动到40%，不绘制超出path长度范围的文本。
 
@@ -164,7 +164,7 @@ startOffset属性动画，文本绘制时起点偏移从10%运动到40%，不绘
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/87byUFsxSMK6WMsUmf0oJw/zh-cn_image_0000002815561231.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/87byUFsxSMK6WMsUmf0oJw/zh-cn_image_0000002815561231.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=1D5430596E291B95D44117E1365B0F69D7E4A46C5C2B58E881C3E7CC93DD50D5)
 
 textpath与tspan组合属性动画与效果图
 
@@ -195,7 +195,7 @@ textpath与tspan组合属性动画与效果图
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/pZWYJ63yTWWRfmRwbxfXvw/zh-cn_image_0000002815401315.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/pZWYJ63yTWWRfmRwbxfXvw/zh-cn_image_0000002815401315.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=B20E5A980577EABAE9D78D9A3D34A94B1A3D87C248A556B5B5CBD131F1CA4F56)
 
 (1) "tspan attribute x|rotate" 文本绘制起点偏移从50px运动到100px，顺时针旋转0度到360度。
 
@@ -231,7 +231,7 @@ textpath与tspan组合属性动画与效果图
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/QY5nyW7fQIm8EhiQGo3n1w/zh-cn_image_0000002786521740.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/QY5nyW7fQIm8EhiQGo3n1w/zh-cn_image_0000002786521740.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=30FEAAED2CBFF27F687578C94309C1C1A72DA3F0978F6AB1C267620180683D85)
 
 (1) "This is TextPath." 在path上无偏移绘制第一段文本内容，大小30px，颜色"#D2691E"。
 
@@ -268,7 +268,7 @@ textpath与tspan组合属性动画与效果图
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/4rzktXs7QAaNGJ_llcr6eA/zh-cn_image_0000002786361812.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/4rzktXs7QAaNGJ_llcr6eA/zh-cn_image_0000002786361812.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=9C259F90456E6718710E27404BAAC39C95413D8E2144F9A913F1A9A88402DF06)
 
 (1) "tspan attribute stroke" 轮廓颜色从红色逐渐转变成绿色。
 

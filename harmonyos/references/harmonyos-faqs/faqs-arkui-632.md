@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-632
 title: 长列表使用scrollToIndex卡顿问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 长列表使用scrollToIndex卡顿问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:d2e9558abbb8ccc680d5ee00c9a60b64e2e269caccdd55e7d3761d424faf6a63
 ---
@@ -149,10 +149,10 @@ export struct ListTest {
 * 开动效直接跳到目标位置和先关动效跳到附近位置再开启动效跳转到目标位置对比，通过DevEco Studio的Profiler抓取launch数据可以得到如下，可以明显看出实现了性能优化。
   + 直接跳转：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/HCTDB0nsSiyIYyyA7h0NuA/zh-cn_image_0000002658793543.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/HCTDB0nsSiyIYyyA7h0NuA/zh-cn_image_0000002658793543.png?HW-CC-KV=V1&HW-CC-Date=20261112T233158Z&HW-CC-Expire=31536000000&HW-CC-Sign=41A8E5EBE1CF541E37651D3E5DE4F2E1C45AD7B857CA419A2FCC96C01F455FEC "点击放大")
   + 间接跳转：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/wGxKuxomQJ25RM18Jqj9yA/zh-cn_image_0000002628554176.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/wGxKuxomQJ25RM18Jqj9yA/zh-cn_image_0000002628554176.png?HW-CC-KV=V1&HW-CC-Date=20261112T233158Z&HW-CC-Expire=31536000000&HW-CC-Sign=6146E2E7E7D15BB513B19387F377599DAF414BBAF1EABC02C7E67E1C817C8D83 "点击放大")
   + 数据对比：
 
     | 对比数据 | 直接跳转 | 间接跳转 |

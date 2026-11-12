@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1198
 title: Slider组件自定义气泡开发
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Slider组件自定义气泡开发
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:18+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:850d5be45311f6f53eb2e6bd74a7c98f426a02c262ebb33ffd52e6696a954e8f
 ---
@@ -179,7 +179,7 @@ content_hash: sha256:850d5be45311f6f53eb2e6bd74a7c98f426a02c262ebb33ffd52e6696a9
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/oyOl5sT6R0aSpYzLR9IeUw/zh-cn_image_0000002658952787.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/oyOl5sT6R0aSpYzLR9IeUw/zh-cn_image_0000002658952787.png?HW-CC-KV=V1&HW-CC-Date=20261112T233149Z&HW-CC-Expire=31536000000&HW-CC-Sign=C088814797F5A7B7472C640F5D412952FEA3BF719C6A3539E7662FE5309E6E8B "点击放大")
 * **场景二**：滑块移动时的动态UI展示。
 
   此场景在场景一的基础上，增强了内容刷新的功能：
@@ -294,7 +294,7 @@ content_hash: sha256:850d5be45311f6f53eb2e6bd74a7c98f426a02c262ebb33ffd52e6696a9
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/YFK_eV6xTtiXvsY3bk66-Q/zh-cn_image_0000002658832825.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/YFK_eV6xTtiXvsY3bk66-Q/zh-cn_image_0000002658832825.png?HW-CC-KV=V1&HW-CC-Date=20261112T233149Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8E0AE1BE5B83FF893E6889DE86A7BD56C0EB6FB34A7EDA6FAB266B501747DE7 "点击放大")
 * **场景三**：气泡内容长文本展示。
 
   此场景在场景二的基础上，聚焦长文本样式的增强：
@@ -411,4 +411,4 @@ content_hash: sha256:850d5be45311f6f53eb2e6bd74a7c98f426a02c262ebb33ffd52e6696a9
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/liJ11SS6RGaeVq5R9NUGfw/zh-cn_image_0000002628593584.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/liJ11SS6RGaeVq5R9NUGfw/zh-cn_image_0000002628593584.png?HW-CC-KV=V1&HW-CC-Date=20261112T233149Z&HW-CC-Expire=31536000000&HW-CC-Sign=82294FC69596CE9441EC81FC04F5EB6B27C33E60F29AF7D5C87E1754EE4325E6 "点击放大")

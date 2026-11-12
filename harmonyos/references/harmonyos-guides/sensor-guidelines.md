@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sensor-guidel
 title: 传感器开发指导(ArkTS)
 breadcrumb: 指南 > 系统 > 硬件 > Sensor Service Kit（传感器服务） > 传感器 > 传感器开发指导(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:52+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:734b0e296895156567d657e0a34adb2e941d353c3e1fda18045f9580eb3dd4d4
 ---
@@ -32,7 +32,7 @@ content_hash: sha256:734b0e296895156567d657e0a34adb2e941d353c3e1fda18045f9580eb3
 
 1. 新建一个工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/GMG_B1sqQj21mrk5qmmpHg/zh-cn_image_0000002786519712.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/GMG_B1sqQj21mrk5qmmpHg/zh-cn_image_0000002786519712.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=106C02F858B10360A6AB133D09CBDEFC93D4EB4FCDCE3FCF38DB0384B10322D6)
 2. 配置加速度传感器权限，具体配置方式请参考[声明权限](declare-permissions.md)。
 
    ```json5
@@ -75,7 +75,7 @@ content_hash: sha256:734b0e296895156567d657e0a34adb2e941d353c3e1fda18045f9580eb3
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/nYF8ziLsQ-u-e3quEF6qaQ/zh-cn_image_0000002786359784.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/nYF8ziLsQ-u-e3quEF6qaQ/zh-cn_image_0000002786359784.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=0DAE069D5411640F83C0002493C08842FC154FBDC7FA56CCE7F25244494118D4)
 
    该传感器支持的最小采样周期为5000000纳秒，最大采样周期是200000000纳秒。不同传感器支持的采样周期范围也不同，interval应该设置在传感器支持范围内，大于最大值时以最大值上报数据，小于最小值时以最小值上报数据。设置数值越小数据上报越频繁，其功耗越大。
 
@@ -140,7 +140,7 @@ content_hash: sha256:734b0e296895156567d657e0a34adb2e941d353c3e1fda18045f9580eb3
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/_QPbE0iERSiSna7Z2BRh5w/zh-cn_image_0000002815559205.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/_QPbE0iERSiSna7Z2BRh5w/zh-cn_image_0000002815559205.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=69C92AB484A2215689B92928331E6EF8814C9B8F42E001E9A958C6E66AC4269A)
 
    通过once()接口，实现对传感器的一次监听。
 
@@ -156,7 +156,7 @@ content_hash: sha256:734b0e296895156567d657e0a34adb2e941d353c3e1fda18045f9580eb3
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/F44nwodSRPiBeExDcsgcZg/zh-cn_image_0000002815399289.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/F44nwodSRPiBeExDcsgcZg/zh-cn_image_0000002815399289.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0204CD570F8B5DE1C9A6FB3735398EDAE1D7D2E806E479CDDD5720744F4022F)
 7. 取消持续监听。
 
    取消持续监听，此场景下未订阅而取消监听为异常行为，需处理异常。

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-high-perfo
 title: 高性能JSON解析
 breadcrumb: 最佳实践 > 性能 > 性能场景优化案例 > 对象序列化性能优化 > 高性能JSON解析
 category: best-practices
-scraped_at: 2026-11-10T10:42:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-03
 content_hash: sha256:80be0feee070fd8a58f7b46c0f6dfb3a86726deb1eff3e319f6843e2a804ae70
 ---
@@ -240,7 +240,7 @@ TurboTransJSON库在大文件解析方面采用了以下技术：
 | large json | 52.06MB/s | 9.51MB/s | 44.36MB/s |
 | huge json | 86.40MB/s | 18.90MB/s | 116.10MB/s |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/cmh9ItdbTXCEWOcenMsdPg/zh-cn_image_0000002501490386.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/cmh9ItdbTXCEWOcenMsdPg/zh-cn_image_0000002501490386.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=8ECAF2EAF28CF872F30BC3F8B66F32C2159CE72F9186E00929B616C754EA4CB7 "点击放大")
 
 **反序列化性能对比**
 
@@ -251,7 +251,7 @@ TurboTransJSON库在大文件解析方面采用了以下技术：
 | large json | 82.39MB/s | 57.49MB/s | 68.81MB/s |
 | huge json | 170.10MB/s | 140.40MB/s | 207.90MB/s |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/kquULbDFTE6pXX6OtKDkCw/zh-cn_image_0000002501330544.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/kquULbDFTE6pXX6OtKDkCw/zh-cn_image_0000002501330544.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=67E0ADC76EFF9267A53E80849BB880A414736BC7F2B5F0A5A52D3C90AF9CE4FD "点击放大")
 
 通过上述比对数据发现：
 

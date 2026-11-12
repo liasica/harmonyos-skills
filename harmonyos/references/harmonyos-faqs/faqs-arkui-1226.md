@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1226
 title: TimePickerDialog组件如何隐藏顶部的标题日期
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > TimePickerDialog组件如何隐藏顶部的标题日期
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:45+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:e9e860e3a4baccd3e079e49feaf750e64884ad083281a4a6dfd29f131e7f08e5
 ---
@@ -14,7 +14,7 @@ TimePickerDialog组件标题的日期如何才能隐藏？
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/mMd1DM5mRe2mx6-n8dc5GA/zh-cn_image_0000002658953237.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/mMd1DM5mRe2mx6-n8dc5GA/zh-cn_image_0000002658953237.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233150Z&HW-CC-Expire=31536000000&HW-CC-Sign=C801C3D4A91431AB768FB0D4D4B37305A4196D2284FBE4AE43791E24DA265F37 "点击放大")
 
 ## 背景知识
 

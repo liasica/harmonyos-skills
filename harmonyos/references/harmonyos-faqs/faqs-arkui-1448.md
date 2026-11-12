@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1448
 title: ArrayList类型的状态变量改变后无法触发UI的渲染刷新
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > ArrayList类型的状态变量改变后无法触发UI的渲染刷新
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:45+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:707f6f3280f14e40b9922123fc5b78e53cbab0fc0118bd5e3df26a8a2fe0ed5c
 ---
@@ -58,7 +58,7 @@ struct ArrayListPage1 {
 
 运行效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/mjr-xtjjSxi1bRVDo63jDQ/zh-cn_image_0000002628604260.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/mjr-xtjjSxi1bRVDo63jDQ/zh-cn_image_0000002628604260.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=898096161705DE53496700EEC39687254686D1E6286310143CEED477F5377C58 "点击放大")
 
 ## 背景知识
 

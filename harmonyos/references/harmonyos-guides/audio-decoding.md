@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-decodin
 title: 音频解码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 音频解码
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:4cf171a7122568a5790764020c50046b22faf62fe0a905fb7b510da7de76cede
 ---
@@ -43,7 +43,7 @@ content_hash: sha256:4cf171a7122568a5790764020c50046b22faf62fe0a905fb7b510da7de7
 * 虚线表示可选。
 * 实线表示必选。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/1tPrkdi-Q7OOHjuXz0KaNw/zh-cn_image_0000002815559279.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/1tPrkdi-Q7OOHjuXz0KaNw/zh-cn_image_0000002815559279.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=8B1966480A40F3E574D2D354C74D2763F4B90436F37E10A33A20E5407B86655E)
 
 ### 在 CMake 脚本中链接动态库
 
@@ -290,11 +290,11 @@ target_link_libraries(sample PUBLIC libnative_media_acodec.so)
 
    配置选项key值说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/0lSFttmYQUCbWBPiQFm7JQ/zh-cn_image_0000002815559281.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/0lSFttmYQUCbWBPiQFm7JQ/zh-cn_image_0000002815559281.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=2B4680C2381B8E85D5728656B6B83C79A6840688BE519F179629E9E1C5006378)
 
    各音频解码类型参数范围说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/1k6NnMgTSPuT6qQYfSQAkA/zh-cn_image_0000002815399365.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/1k6NnMgTSPuT6qQYfSQAkA/zh-cn_image_0000002815399365.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=9F6B6E735E99814F10C2D5F5DAD2197335C022339998176D9F7F4D9E5F880BC5)
 
    从API version 20开始，支持通过[OH\_AVCapability\_GetAudioSupportedSampleRateRanges](../harmonyos-references/capi-native-avcapability-h.md#oh_avcapability_getaudiosupportedsamplerateranges)接口进行采样率范围能力查询，以下几种音频解码类型支持对范围内的任意采样率进行解码：
 

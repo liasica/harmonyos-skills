@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: ArkUI-List组件滚动与滑动常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > ArkUI-List组件滚动与滑动常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:59+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:afba99c061f4969010df75741d809fb13428127cca955a1e1f29053a7cd71d86
 ---
@@ -482,7 +482,7 @@ content_hash: sha256:afba99c061f4969010df75741d809fb13428127cca955a1e1f29053a7cd
 
    效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/N--rzSGMTJupIkpsjj4iOA/zh-cn_image_0000002795262643.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/N--rzSGMTJupIkpsjj4iOA/zh-cn_image_0000002795262643.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF1C08439D9744276669CA68AAA12BD488152E9F5F9215489F9273732E0A2053 "点击放大")
 
 **Q：在List组件中使用ListItemGroup的情况下，如何获取其中ListItem的索引值？**
 
@@ -512,7 +512,7 @@ content_hash: sha256:afba99c061f4969010df75741d809fb13428127cca955a1e1f29053a7cd
 
   控制offsetRemain，滑动速度很缓慢，效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/rsTh35rGRD62k9V1I5cwIA/zh-cn_image_0000002766024018.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/rsTh35rGRD62k9V1I5cwIA/zh-cn_image_0000002766024018.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=68E3715D3E56EF1832265C91B02C2A4FF862F1C81FD0B75761673845A6E42C64 "点击放大")
 * onScrollIndex的入参firstIndex超过预期值时，表示已经滑动出了预期范围，用this.scroller.scrollToIndex()把滑动强制拉回到预期值。核心代码如下：
 
   ```ts
@@ -525,7 +525,7 @@ content_hash: sha256:afba99c061f4969010df75741d809fb13428127cca955a1e1f29053a7cd
 
   下滑超过10之后继续滑动，会强制跳回10，效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/UQ4bWGvdTWWOnR8J8o7UKA/zh-cn_image_0000002795262887.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/UQ4bWGvdTWWOnR8J8o7UKA/zh-cn_image_0000002795262887.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=FB2962D1B8D02B13DA48B2787C2F44AD436964070BE12244F267601ED8745230 "点击放大")
 
   全量代码如下：
 
@@ -660,7 +660,7 @@ content_hash: sha256:afba99c061f4969010df75741d809fb13428127cca955a1e1f29053a7cd
   ```
 * 效果图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/8--O2s1-QDObGpQqQ3lH8Q/zh-cn_image_0000002795423231.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/8--O2s1-QDObGpQqQ3lH8Q/zh-cn_image_0000002795423231.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=73FC670866D0C657D1B3E08E8FCD1CF9A5F1941B112429089548B01545DB65A0 "点击放大")
 
 场景二：消息列表从底部开始加载，点击按钮回到最新位置。
 
@@ -728,7 +728,7 @@ content_hash: sha256:afba99c061f4969010df75741d809fb13428127cca955a1e1f29053a7cd
   ```
 * 效果图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/_6uF-dh8R4OKwXv4fnvCww/zh-cn_image_0000002765865230.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/_6uF-dh8R4OKwXv4fnvCww/zh-cn_image_0000002765865230.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA462D7D3BA084FE49FDF6D7731FBEF47D096DA728993997C34B882368801FF7 "点击放大")
 
 场景三：图片异步加载完成后列表以顶部为锚点拉伸，最新消息被推出可视区域。
 
@@ -961,4 +961,4 @@ struct BindSheetTwoPage {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/WRSy3rV-SKW7YJTimr83Pg/zh-cn_image_0000002795424595.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/WRSy3rV-SKW7YJTimr83Pg/zh-cn_image_0000002795424595.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=403A717CD658C597E501CC712447E086A39998756AD41599C2185533BFF9A52D "点击放大")

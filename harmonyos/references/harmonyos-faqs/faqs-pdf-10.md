@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-pdf-10
 title: PdfView组件如何实时显示编辑后的PDF文件
 breadcrumb: FAQ > 应用服务开发 > PDF文档解析服务（PDF Kit） > PdfView组件如何实时显示编辑后的PDF文件
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:36+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-12
 content_hash: sha256:7e4a653e649d16c8040300537e1f9e5cb423924e57b7f38eec867480efed47fa
 ---
@@ -14,7 +14,7 @@ PdfView组件加载一个PDF文件，对这个文件做编辑操作，如何使�
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/gHSyigdAQwWDjrlAxhXhNA/zh-cn_image_0000002658793615.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/gHSyigdAQwWDjrlAxhXhNA/zh-cn_image_0000002658793615.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=A47BF74581A0D91A6C3E36C44CC4212121597384F63863955A21AE44189EEEC0 "点击放大")
 
 ## 背景知识
 

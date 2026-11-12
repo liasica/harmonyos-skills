@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.arkui.dialog (弹出框)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.dialog (弹出框)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:b54584562a8d2a1f0e13bb3cd84f5eba70e59c64a6c1fe6669ce228bc4c00f17
 ---
@@ -300,7 +300,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/YfeYaJ9ESqeHIVxkvn541A/zh-cn_image_0000002786360864.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/YfeYaJ9ESqeHIVxkvn541A/zh-cn_image_0000002786360864.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AC6ACD3FC4134AE8E111BD19B797A25C2F56589C0F3923E9BC6DC02C36620B8)
 
 ## DialogResult
 

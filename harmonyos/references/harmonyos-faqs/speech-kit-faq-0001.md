@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/speech-kit-faq-
 title: 如何解决朗读控件播放列表中加载失败的问题
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 场景化语音（Speech） > 常见问题 > 如何解决朗读控件播放列表中加载失败的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:bb040ce27629e0c1bec20ccfbc2aafab7e34694f12516d26a59fd41e969ea87b
 ---
 
 **Q：参考[官网](../harmonyos-guides/speech-textreader-guide.md)示例，实际运行时，点击朗读控件的播放列表时，会展示“加载失败”字样，如何解决该问题？效果图如下所示：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/SIHFQrbqQGiPWdCN69-LTA/zh-cn_image_0000002764471196.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/SIHFQrbqQGiPWdCN69-LTA/zh-cn_image_0000002764471196.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=6354588D1ABF9985C1CA5909F790EDDEEF73F137A65390DC59041213BB3A383E)
 
 **A**：案例中展示“加载失败”是由于未自定义设置请求更多文章回调函数导致的，需要补充请求更多文章回调函数，并添加空列表项即可。示例代码如下：
 
@@ -129,4 +129,4 @@ struct Index {
 
 修改后效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/8ucOUcQnTB2xmOs-p0rRDw/zh-cn_image_0000002793710131.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/8ucOUcQnTB2xmOs-p0rRDw/zh-cn_image_0000002793710131.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA5E9B84F3D6164B5AF7B2579BA08AE4A881386DD56D35D65C2A9D5E582A9791 "点击放大")

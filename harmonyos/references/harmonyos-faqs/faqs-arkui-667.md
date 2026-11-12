@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-667
 title: Scroll嵌套RichEditor时滚动冲突问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Scroll嵌套RichEditor时滚动冲突问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:afca953a2bedd0e5e8602f026f1b20b2710b7dd2918b508574708b6b401cf573
 ---
@@ -41,7 +41,7 @@ struct Problem {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/QhbDHX8hTACk99J1JsX8RQ/zh-cn_image_0000002658913883.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/QhbDHX8hTACk99J1JsX8RQ/zh-cn_image_0000002658913883.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233159Z&HW-CC-Expire=31536000000&HW-CC-Sign=33532C47E03EEA7D38839F8B2F55722301D071473AD10ADF51E29CD013419834 "点击放大")
 
 ## 背景知识
 
@@ -79,7 +79,7 @@ struct Problem {
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/oI2GCl-vTduSjkHIFaGemw/zh-cn_image_0000002658793941.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/oI2GCl-vTduSjkHIFaGemw/zh-cn_image_0000002658793941.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233159Z&HW-CC-Expire=31536000000&HW-CC-Sign=0BA071CB358578362A26E802D9CB49C1B86DB3F526F89C3B01E479A75B57688D "点击放大")
 
 * **方案二**：去掉子组件RichEditor的高度。此时RichEditor组件大小随着文本变化，超过父组件Scroll的高度后，只会出现父组件Scroll的滚动条，此时关掉Scroll组件的滚动条后就没有滚动条。
 
@@ -109,7 +109,7 @@ struct Problem {
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/YnBJa1srR7q2Btqsr1VDIQ/zh-cn_image_0000002628394676.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/YnBJa1srR7q2Btqsr1VDIQ/zh-cn_image_0000002628394676.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233159Z&HW-CC-Expire=31536000000&HW-CC-Sign=074681F6F24A8DA9BAED317C9C2078657D56A1C7EAC0E250F29BA32719DBFC87 "点击放大")
 
 * **方案三**：去掉父组件Scroll的高度，此时只会出现子组件RichEditor的滚动条，RichEditor组件大小固定。
 
@@ -139,7 +139,7 @@ struct Problem {
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/U98gHPE1SK6sH3HJ0xGR5w/zh-cn_image_0000002628554562.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/U98gHPE1SK6sH3HJ0xGR5w/zh-cn_image_0000002628554562.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233159Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0C02A4AFD3B8ABC79FD7C42D102FEEA291F89800CC30F3E67BC787AE8E40961 "点击放大")
 
 ## 总结
 

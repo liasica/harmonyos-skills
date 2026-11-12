@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-location-1
 title: 动态申请后台位置权限失败该如何处理
 breadcrumb: FAQ > 应用服务开发 > 位置服务（Location Kit） > 动态申请后台位置权限失败该如何处理
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:1e4502cca675fd01f31dadf5b2e53bbc066cd7a5b439f0975deed6967261768c
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:1e4502cca675fd01f31dadf5b2e53bbc066cd7a5b439f0975deed696726
 
 按如下截图方式申请后台位置权限时，未弹出授权窗口，导致无法获取位置信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/8ifAhEuyRMGL6no5QMVpoA/zh-cn_image_0000002658913749.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/8ifAhEuyRMGL6no5QMVpoA/zh-cn_image_0000002658913749.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF399A0C5957C366348C2D400119CC1FBCA910EE2F2BDAF7C77822A7BA94580E "点击放大")
 
 ## 背景知识
 
@@ -74,16 +74,16 @@ content_hash: sha256:1e4502cca675fd01f31dadf5b2e53bbc066cd7a5b439f0975deed696726
 
    效果预览：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/2DQt5kLKSJChTjOjbNETqQ/zh-cn_image_0000002658793803.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/2DQt5kLKSJChTjOjbNETqQ/zh-cn_image_0000002658793803.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=479B78709B6AFA288B1EB8D93F440759E1DF6CBF9C84C9E7AE4A41C84E3AAA14 "点击放大")
 2. 当用户点击弹窗授予前台位置权限后，如果APP运行到后台时也需要获取用户的位置信息，应用可以通过弹窗、提示窗等形式告知用户前往设置界面授予后台位置权限，在设置界面中将位置信息访问权限设置为**始终允许**，点击**确认按钮**，调用openPermissionsInSystemSettings()方法跳转到应用设置界面。
 
    效果预览：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/COw5sbrURLS4om4KsQWt-w/zh-cn_image_0000002628394532.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/COw5sbrURLS4om4KsQWt-w/zh-cn_image_0000002628394532.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=A9ECFEDEA88F7C00E944BD05EC4B4BF06D9B2BE035DB9212C5DA72F151979037 "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/Mz_SCJdkSYSq9EUEn0Jovg/zh-cn_image_0000002628554426.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/Mz_SCJdkSYSq9EUEn0Jovg/zh-cn_image_0000002628554426.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=637DB339E58003BD1327273BA39ABAC3A0EA27CD706959DDCFE04EDEFEEAC176 "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/x3gCk60AQyGm-68GZnsmWA/zh-cn_image_0000002658913751.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/x3gCk60AQyGm-68GZnsmWA/zh-cn_image_0000002658913751.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=985A33182BB3F3A2B9D9DE92D44E60AC34A529B678BBB1076FED8543ECCA813A "点击放大")
 
    ```screen
    import { AlertDialog } from '@kit.ArkUI';
@@ -141,7 +141,7 @@ content_hash: sha256:1e4502cca675fd01f31dadf5b2e53bbc066cd7a5b439f0975deed696726
 
    注：在entry模块的module.json5，需要将后台位置权限配置进去，位置信息访问权限设置界面才会看到**始终允许**的选项。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/yzZQSyuXQMujdUaIqKPf1A/zh-cn_image_0000002658793805.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/yzZQSyuXQMujdUaIqKPf1A/zh-cn_image_0000002658793805.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=A3CBDD2D024CF1FAB5F09FCB27FE5DC4704DDAF9FFA04B18F8F5FC7E1ED0EE82 "点击放大")
 
 ## 总结
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1323
 title: 重新初始化XComponent导致闪退
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 重新初始化XComponent导致闪退
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:9b3b370a2c745c877d25c1a451522c216376dedbd08b9cfbd1cccab6a90237b4
 ---
@@ -14,11 +14,11 @@ content_hash: sha256:9b3b370a2c745c877d25c1a451522c216376dedbd08b9cfbd1cccab6a90
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/mYU3T2cHRlWxFYPrpNu6GQ/zh-cn_image_0000002628599686.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/mYU3T2cHRlWxFYPrpNu6GQ/zh-cn_image_0000002628599686.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=25E8B13F58F7B58EB2E588F61049EB1A1FEF00F5CFAFD021E2631D18D1BC95A4 "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/wFwU9nrrTyyXYsCl1JBT0w/zh-cn_image_0000002628759652.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/wFwU9nrrTyyXYsCl1JBT0w/zh-cn_image_0000002628759652.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233151Z&HW-CC-Expire=31536000000&HW-CC-Sign=AE210032C51EDE8B0A890155AD1B4CF2C0CFF496D547CAD07BCCC796178A272E "点击放大")
 
 ## 背景知识
 

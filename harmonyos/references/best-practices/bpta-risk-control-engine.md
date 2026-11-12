@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-risk-contr
 title: 星盾机密风控引擎
 breadcrumb: 最佳实践 > 技术创新 > 安全 > 星盾机密风控引擎
 category: best-practices
-scraped_at: 2026-11-10T10:41:59+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-03
 content_hash: sha256:5319a0028596a592c60bcf3358b6dfc483fba2e9139cb034e04f88dd5cf60393
 ---
@@ -17,7 +17,7 @@ content_hash: sha256:5319a0028596a592c60bcf3358b6dfc483fba2e9139cb034e04f88dd5cf
 * 云侧管理：应用在云侧管理台注册应用风险因子并配置风控策略规则，启用后可将策略配置加密下发至端侧设备；
 * 端侧执行：端侧在机密计算空间中接收风险因子和风控策略配置，应用通过Device Security Kit的[riskControlEngine.importRiskFactors()](../harmonyos-references/devicesecurity-riskcontrolengine-api.md#riskcontrolengineimportriskfactors)接口写入业务风险因子数据，调用Device Security Kit的[riskControlEngine.getRiskControlResult()](../harmonyos-references/devicesecurity-riskcontrolengine-api.md#riskcontrolenginegetriskcontrolresult)接口执行策略规则，输出风险评估结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/Kt42Xqd0TJaXL0ZVKchGJw/zh-cn_image_0000002624974657.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/Kt42Xqd0TJaXL0ZVKchGJw/zh-cn_image_0000002624974657.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=F23D05B84817A8B05F43588FA661B390CE05F65AAF5736858E9E0370F5A5B82C "点击放大")
 
 基于星盾机密风控引擎的架构设计，具备以下三个特点：
 
@@ -37,7 +37,7 @@ content_hash: sha256:5319a0028596a592c60bcf3358b6dfc483fba2e9139cb034e04f88dd5cf
 
 本场景示例展示金融类应用基于星盾机密风控引擎，融合三方风险因子、系统风险因子进行联合风险决策。通过这种多方协作机制，各类应用均可接入星盾机密风控引擎，基于自有风险因子、系统风险因子及其他应用授权的风险因子，实现跨应用、跨平台的策略检测，构建全方位的反诈防护。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/_RGMz-5PTmWe8G3Wu7879A/zh-cn_image_0000002624976475.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/_RGMz-5PTmWe8G3Wu7879A/zh-cn_image_0000002624976475.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE87F5CB620212B54D2C1BC9AE861B0CE72FC6ED1509EE60F2DE9C4D0A1B9FBC "点击放大")
 
 ### 实现原理
 
@@ -45,7 +45,7 @@ content_hash: sha256:5319a0028596a592c60bcf3358b6dfc483fba2e9139cb034e04f88dd5cf
 
 端侧执行：①两类应用在风险发生时通过调用接口将风险因子写入端侧机密空间；②金融类应用在关键节点（例如：转账）主动调用接口获取策略执行结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Ayj26Hv4SRCP1Y9Kn2xkcw/zh-cn_image_0000002594457686.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/Ayj26Hv4SRCP1Y9Kn2xkcw/zh-cn_image_0000002594457686.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=2F3525E16BE238AF8E31F015EEAB40892AE0E4355C11C1E5AEDCFA6CE1784CEA)
 
 ### 开发步骤
 
@@ -57,17 +57,17 @@ content_hash: sha256:5319a0028596a592c60bcf3358b6dfc483fba2e9139cb034e04f88dd5cf
 
    1、通联类APP和金融类APP注册风险因子，通联类APP将其风险因子授权给金融类APP，本场景主要涉及的风险因子： ①通联类风险因子：由通联类应用检测发现当前用户存在被诈骗风险；②系统风险因子：由系统检测出安装未知应用；③金融类风险因子：由金融类应用检测当前用户正在首次向陌生账户转账等异常行为特征。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/gHFJdO-MSCCljY83ndeFOw/zh-cn_image_0000002594229184.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/xM_b0rMbQWGK2C2dwH6iNg/zh-cn_image_0000002595064112.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/gHFJdO-MSCCljY83ndeFOw/zh-cn_image_0000002594229184.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA6D77D8F39400687811D5D15BD9EE8549FAE570C461C7691B6B8F29BC05C4E7 "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/xM_b0rMbQWGK2C2dwH6iNg/zh-cn_image_0000002595064112.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9E47D81D1E523CC91335F0B826BED0FDECB45816497DD5114233E6DE485FF1A "点击放大")
 
    2、金融类APP通过融合以上三个维度的风险因子，可在端侧机密计算环境中执行多因子联动策略，综合评估用户当前面临的诈骗风险等级。本场景的风控策略配置采用"一策略三规则"的设计，在实际场景中开发者可基于自有业务场景灵活定义：①策略配置：当前策略采用权重累加模式，即将三条规则的执行结果分值相加作为策略结果，同时通过策略结果映射将累加结果映射为0~3的风险等级输出，便于应用根据不同等级采取差异化应对措施；②规则配置：通过规则表达式描述风险因子的命中条件，当风险因子满足表达式定义的条件时，则返回预设的分值，该分值将参与策略结果的累加计算。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/mlixdYHRTxSagHtyzlD86A/zh-cn_image_0000002624508809.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/mlixdYHRTxSagHtyzlD86A/zh-cn_image_0000002624508809.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=EB64B7C5AB5A121CFB507EB524ECB85F8C0F9309FD6224DA9338A377667E8625 "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/KXhdyAziSjK5iKamJyRDzw/zh-cn_image_0000002594069274.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/KXhdyAziSjK5iKamJyRDzw/zh-cn_image_0000002594069274.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=293AFE8F475A0315561F9BF5906E79896A92DEC923AD6B384ACBD0F0B994CACC "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/VFPsvS86RdCrmWSXf-hjdg/zh-cn_image_0000002594229190.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/VFPsvS86RdCrmWSXf-hjdg/zh-cn_image_0000002594229190.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=5D02E0A2AFA899E8F4CB0FE4E6B65B30543C0B7C71244FA080EB0F628497907A "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/nolfJo11T6io1h6T-C5scQ/zh-cn_image_0000002624628653.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/nolfJo11T6io1h6T-C5scQ/zh-cn_image_0000002624628653.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=9537655035AF0D036F343419A3C4CE0C9286956EDA66D78A10D2149FE6E358A0 "点击放大")
 
 3. 通过调用接口的方式，应用写入风险因子值和执行策略返回结果。
 

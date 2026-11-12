@@ -105,5 +105,6 @@ harmonyos/references/
 ## 增量同步
 
 - 同一天内重复运行会跳过已检查的文档
-- 内容哈希未变化时不会重写文件；manifest 缺失时以磁盘副本 frontmatter 的 `content_hash` 为准
+- 正文、元数据和资源签名均未变化时不会重写文件；manifest 缺失时以磁盘副本 frontmatter 的 `content_hash` 为准。
 - 使用 `--force` 强制全量更新
+- 图片、视频和音频链接保留 CDN 签名；内容哈希忽略签名参数，同一资源的签名剩余有效期超过一天时复用，临近过期时刷新链接。

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-custom-
 title: "@CustomEnv：自定义环境变量"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习响应式环境变量 > @CustomEnv：自定义环境变量
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:fa6de5cef13364ffcd14b8581a9844e4bdf16b59865dc6100d1d083f2b5bb194
 ---
@@ -202,7 +202,7 @@ struct Child {
 
 流程图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/KX3oHDPZS2aFWzUqMMm_2g/zh-cn_image_0000002815398249.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/KX3oHDPZS2aFWzUqMMm_2g/zh-cn_image_0000002815398249.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E37C3BA93823D1640949C52C4859C7AFD5E93EE230696EAF410396665E218FD)
 
 ## 使用场景
 
@@ -229,7 +229,7 @@ struct CustomValue {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/IFAdjg2sTBS8-lyeVsL_1w/zh-cn_image_0000002786518674.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/IFAdjg2sTBS8-lyeVsL_1w/zh-cn_image_0000002786518674.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B836595BFFE9B73E92C635EAD0AECAC6E94844BDFCF66802EE8D8B3E8D5F880)
 
 ### @CustomEnv支持多种数据类型
 
@@ -268,7 +268,7 @@ struct ClassIndex {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/9en2AYAzRMGBvGUpR4IZ3w/zh-cn_image_0000002786358746.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/9en2AYAzRMGBvGUpR4IZ3w/zh-cn_image_0000002786358746.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5E45528DB1C03E5026704CBAE7DE49497E5B34285547E20D8A9C8B2E83C9BA4)
 
 ### @CustomEnv支持默认初始值
 
@@ -302,7 +302,7 @@ struct DefaultChild {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/MwdZ6Bv4T_WBOPfXqe-yEQ/zh-cn_image_0000002815558167.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/MwdZ6Bv4T_WBOPfXqe-yEQ/zh-cn_image_0000002815558167.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=766D446A3F405C691FA6F3985583A4E7ED6223C77CBED466F7620DC363EF88F4)
 
 ### 环境变量查找遵循就近原则
 
@@ -347,7 +347,7 @@ struct NearChild {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/6SCQ-6GYQOmpLJJAArowCQ/zh-cn_image_0000002815398251.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/6SCQ-6GYQOmpLJJAArowCQ/zh-cn_image_0000002815398251.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=6268F08A41034E4445E4EBAB54F5E56C3F48DF2543387759F825A05922DD3CA9)
 
 ### 响应式更新能力
 
@@ -393,7 +393,7 @@ struct UpdateChild {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/HUHUM7tORV-ZFURncaLQrw/zh-cn_image_0000002786518676.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/HUHUM7tORV-ZFURncaLQrw/zh-cn_image_0000002786518676.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=09028ABED476103EF394CC89BB4296562687533030912329D6C391A3E24176CE)
 
 ### @Watch与@Monitor监听@CustomEnv装饰的变量
 
@@ -453,7 +453,7 @@ struct WatchChild {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/BEiszD-NQqyFXOPNTKYi8g/zh-cn_image_0000002786358748.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/BEiszD-NQqyFXOPNTKYi8g/zh-cn_image_0000002786358748.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=B8DD57AC1A3659D6E1061B2CA8E492ED29C6C2C914096C8618724A2C535D7CE9)
 
 当@CustomEnv装饰的变量内部属性发生变化时，也会触发回调。
 
@@ -503,7 +503,7 @@ struct Child {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/fS1_E-m_SCi461WSLdkJ_A/zh-cn_image_0000002815558169.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/fS1_E-m_SCi461WSLdkJ_A/zh-cn_image_0000002815558169.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=2473C7A8CBCCC4E8E54C4D607DB8BC22BE9976EBA396029C50245A4AA9E6A9AC)
 
 在@ComponentV2中，可通过@Monitor监听@CustomEnv装饰变量的变化。需要注意的是，仅当@CustomEnv装饰的变量被整体赋值时才会触发@Monitor监听回调，其内部属性的变化不会触发回调。
 
@@ -562,7 +562,7 @@ struct MonitorChild {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/dCxsBpvOTGyKf2GG8jRWpw/zh-cn_image_0000002815398253.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/dCxsBpvOTGyKf2GG8jRWpw/zh-cn_image_0000002815398253.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=11136B4410B4DA1598AE2DE38805151684C650B086D28205DCEEDB90A73533DE)
 
 ### @CustomEnv支持组件冻结
 
@@ -635,7 +635,7 @@ struct FreezeChild {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/YPnKRmV7RuGaaCf4jWPc1Q/zh-cn_image_0000002786518678.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/YPnKRmV7RuGaaCf4jWPc1Q/zh-cn_image_0000002786518678.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=0A7AB7F079E793A5267CC3BF5B6F855C173CFC345F0FD135CDC865400C8206B2)
 
 ### 装饰Array类型变量
 
@@ -696,7 +696,7 @@ struct FruitPage {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/j_ES-yZ0SO-5Nw-k8Tv6mQ/zh-cn_image_0000002786358750.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/j_ES-yZ0SO-5Nw-k8Tv6mQ/zh-cn_image_0000002786358750.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=B86C053D46480E98DC3B3DF3DEE13BED5FDA960214E51477BBB57809C61040C8)
 
 ### 装饰Date类型变量
 
@@ -749,7 +749,7 @@ struct DatePickerExample {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/KcdbCwxvTSC--EwKBpxO6w/zh-cn_image_0000002815558171.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/KcdbCwxvTSC--EwKBpxO6w/zh-cn_image_0000002815558171.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=5BF3D595DF7F17BD71E67E2A500710BCAFB40D6EBAD1ACABE3587CE4D8DBB0B7)
 
 ### 装饰Map类型变量
 
@@ -809,7 +809,7 @@ struct MapSample {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/ZSoXhn9vTCC55-sqR02c7Q/zh-cn_image_0000002815398255.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/ZSoXhn9vTCC55-sqR02c7Q/zh-cn_image_0000002815398255.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=F89DEFF5D8BDD03A7516FAF1389D92E6B6EF070A09B648B137ECFB90EC4CC0B3)
 
 ### 装饰Set类型变量
 
@@ -862,7 +862,7 @@ struct SetSample {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/XuqVO9ZLQHybwqYGYE-U3w/zh-cn_image_0000002786518680.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/XuqVO9ZLQHybwqYGYE-U3w/zh-cn_image_0000002786518680.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=642182BE33A93AB590CE4DFBB4C071A8999FC0F7235C507F8289FDC8990F5B86)
 
 ### @CustomEnv的V1/V2混用
 
@@ -913,7 +913,7 @@ struct PageTwoChild {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/NZ_VYH1VT5KW8JEYvDdXlg/zh-cn_image_0000002786358752.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/NZ_VYH1VT5KW8JEYvDdXlg/zh-cn_image_0000002786358752.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=259E64C21B7F0C3BEF69209D5A11926BABE7F7ABC813B5EEAEE8EF1754D745B0)
 
 * @CustomEnv装饰的变量传递给V2时，遵循V2只有@Param可以接收外部变量的规则。
 
@@ -960,7 +960,7 @@ struct PageOneChild {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/pXbVmOlGTU6wpa4XQ4FN1Q/zh-cn_image_0000002815558173.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/pXbVmOlGTU6wpa4XQ4FN1Q/zh-cn_image_0000002815558173.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=74D265E28932064EBAAC81FA7DAF8AC060F912010E4AC10E4CAD20583DE3D6B4)
 
 * @CustomEnv提供状态管理V2的观察能力，当@CustomEnv装饰的变量的类型被@Observed装饰时，需要调用[enableV2Compatibility](../harmonyos-references/js-apis-statemanagement.md#enablev2compatibility19)使其具有观察类属性的能力，否则将无法观察类属性的变化。
 
@@ -1009,4 +1009,4 @@ struct ComponentPageChild {
 
 运行效果图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/bd86inmWRJ2k92gVoMdruQ/zh-cn_image_0000002815398257.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/bd86inmWRJ2k92gVoMdruQ/zh-cn_image_0000002815398257.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E6CE3914B0ECE603A1D6F554D20123C294B8AFC6CD82C0D6118A3C45C83877E)

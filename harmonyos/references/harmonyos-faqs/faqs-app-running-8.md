@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-runnin
 title: 模拟器启动后，设备无法识别
 breadcrumb: FAQ > DevEco Studio > 应用运行 > 模拟器启动后，设备无法识别
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:58+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:a2efe8be2e989e545de6a1694efdfc260b63963060512c6f1a159b004802c6d0
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:a2efe8be2e989e545de6a1694efdfc260b63963060512c6f1a159b00480
 
 场景一：调试运行时，如果安装HAP失败，提示“Device not found or connected”，请检查设备是否已正确连接。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/gKsRRxIvSPeHS43IS4Ji-A/zh-cn_image_0000002654838061.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/gKsRRxIvSPeHS43IS4Ji-A/zh-cn_image_0000002654838061.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C1C8AE87DDF66730D6373D653682384E0C218393D15AAFDADD2550FC38576DB)
 
 场景二：DevEco Studio无法识别已连接的设备，显示“No device”。
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 创建轮播 (Swiper)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 媒体展示 > 创建轮播 (Swiper)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:e272af9016b0ffee0bcd7292ff822df16065fc2818d12edc343772eb7b329339
 ---
@@ -51,7 +51,7 @@ Swiper() {
 .loop(true)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/pg0KNGjNTXClAymbkLqprA/zh-cn_image_0000002786518928.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/pg0KNGjNTXClAymbkLqprA/zh-cn_image_0000002786518928.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CE5E5FAD78F3F30F494F4E2CB4A2E8D97477A9E7842AA8CC07876A82D326BFA)
 
 * loop为false
 
@@ -63,7 +63,7 @@ Swiper() {
   .loop(false)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/ASCzZ9HsS_qE3UwBhSIq-w/zh-cn_image_0000002786359000.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/ASCzZ9HsS_qE3UwBhSIq-w/zh-cn_image_0000002786359000.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=32E197825105B45432855B3389C20EDA16365B72CCE11EDD78074E0652D3EC08)
 
 ## 自动轮播
 
@@ -81,7 +81,7 @@ autoPlay为true时，会自动切换播放子组件，子组件与子组件之�
   .interval(1000)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/ByTrpakBTmi5wXHg84QT2Q/zh-cn_image_0000002815558421.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/ByTrpakBTmi5wXHg84QT2Q/zh-cn_image_0000002815558421.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=447AAB33E0069B947111C869200423663877480131910644BF61386AA8153A33)
 
 ## 导航点样式
 
@@ -116,7 +116,7 @@ Swiper() {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/Bh1cXEKtTxCfQiAo6j_fbQ/zh-cn_image_0000002815398505.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/Bh1cXEKtTxCfQiAo6j_fbQ/zh-cn_image_0000002815398505.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=AA38890E69805B257D85C53B0F713411CB5904D080F2B91182F59D90AF2BAB6B)
 
 * 自定义导航点样式
 
@@ -139,7 +139,7 @@ Swiper() {
   )
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/QoGEgisISl6nCjpJ0DK-LA/zh-cn_image_0000002786518930.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/QoGEgisISl6nCjpJ0DK-LA/zh-cn_image_0000002786518930.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=236DA9C4507F73E8432C6159B287FDC214E6767DBCEFDBED63BF831FF1D269A5)
 
 Swiper通过设置[displayArrow](../harmonyos-references/ts-container-swiper.md#displayarrow10)属性，可以控制导航点箭头的大小、位置、颜色，底板的大小及颜色，以及鼠标悬停时是否显示箭头。
 
@@ -153,7 +153,7 @@ Swiper通过设置[displayArrow](../harmonyos-references/ts-container-swiper.md#
   .displayArrow(true, false)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/rCUWzbRXSmO9qIm47Rt2oQ/zh-cn_image_0000002786359002.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/rCUWzbRXSmO9qIm47Rt2oQ/zh-cn_image_0000002786359002.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B756837D63E79C4128572868354622DC27CBE527580ACDB1858C266CF3D489C)
 
 * 自定义箭头样式
 
@@ -174,7 +174,7 @@ Swiper通过设置[displayArrow](../harmonyos-references/ts-container-swiper.md#
   }, false)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/N28PusPZSUqNGTaxwRReFA/zh-cn_image_0000002815558423.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/N28PusPZSUqNGTaxwRReFA/zh-cn_image_0000002815558423.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=D17EFF7EA07A43C7F83833D1A9087F49AE820A88F4C3D7F6A6D240FD37106F49)
 
 ## 页面切换方式
 
@@ -267,7 +267,7 @@ export struct SwiperPageSwitchMethod {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/VrVin9TtQXCC6HvOoXfD5A/zh-cn_image_0000002815398507.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/VrVin9TtQXCC6HvOoXfD5A/zh-cn_image_0000002815398507.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=298192AA76E54CD3FAE1914AD25BE66F4ED0C4FA2A378D9177BD5143AB791FA4)
 
 ## 轮播方向
 
@@ -288,7 +288,7 @@ Swiper(
 .vertical(false)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/k4BGOI4ESHSVSqKHZNhvoA/zh-cn_image_0000002786518932.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/k4BGOI4ESHSVSqKHZNhvoA/zh-cn_image_0000002786518932.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=B28F3DB2BDDE550D727FAF66A6B11412B4997503FD2F54AEAA1C0EA3CCC4F7E0)
 
 * 设置垂直方向轮播。
 
@@ -303,7 +303,7 @@ Swiper(
 .vertical(true)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/NODaNmhhQdmR3cxkIWmG6A/zh-cn_image_0000002786359004.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/NODaNmhhQdmR3cxkIWmG6A/zh-cn_image_0000002786359004.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=937E212B11F719BFC649ADC3C4C4D856F230F02CCF1F7DAD072CD52D48FFD8EF)
 
 ## 每页显示多个子页面
 
@@ -341,7 +341,7 @@ Swiper() {
 .displayCount(2)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/6Z7QZ0RMTSqtVk13fDJRgA/zh-cn_image_0000002815558425.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/6Z7QZ0RMTSqtVk13fDJRgA/zh-cn_image_0000002815558425.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=5166120D94E2BF9DC69AA853AA7251CE9254C6DD2E67AC56B9A7EF88B3F2F8E6)
 
 ## 自定义切换动画
 
@@ -427,7 +427,7 @@ export struct SwiperCustomAnimation {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/amjwsPpvRPitb_MHpqsM3g/zh-cn_image_0000002815398509.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/amjwsPpvRPitb_MHpqsM3g/zh-cn_image_0000002815398509.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=19BEDE8B6DB30E3BE5EC93CDE8D520E47B0292D8EE46A833ED31656F74FB0341)
 
 ## Swiper与Tabs联动
 
@@ -539,7 +539,7 @@ export struct SwiperAndTabsLinkage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/n4oUdfmpQjWlOFIwUZ8spQ/zh-cn_image_0000002786518934.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/n4oUdfmpQjWlOFIwUZ8spQ/zh-cn_image_0000002786518934.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=CADAF7879A2F33ED0BA0541AE3AAA08DD38873C10F7122639E81FFB565AE23F3)
 
 ## 设置圆点导航点间距
 
@@ -694,7 +694,7 @@ export struct SwiperIgnoreComponentSize {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/jOSycBouRE-289v06v6V8Q/zh-cn_image_0000002786359006.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/jOSycBouRE-289v06v6V8Q/zh-cn_image_0000002786359006.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=C7F932866A2E3A4485DD5D430D704F8C9152317EA98DF40E5C82FB81529BAF90)
 
 ## 保持可见内容位置不变
 
@@ -797,7 +797,7 @@ export struct SwiperVisibleContentPosition {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/wDOrXZBMRaiEgXfVLSRyHw/zh-cn_image_0000002815558427.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/wDOrXZBMRaiEgXfVLSRyHw/zh-cn_image_0000002815558427.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9D7921AD3503F042BC21B62C762BD2E32AD37C699F11351998F6C98CE089724)
 
 ## 示例代码
 

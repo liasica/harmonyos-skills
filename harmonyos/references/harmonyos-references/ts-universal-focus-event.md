@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 焦点事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 交互响应事件 > 焦点事件
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:04+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-24
 content_hash: sha256:36455e06cd993b69fc93c379a57d474446181073c0eebfad80703c3f5973e592
 ---
@@ -119,4 +119,4 @@ struct FocusEventExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/a3ZjRg_JQAKNGA4dlR7gcw/zh-cn_image_0000002815400463.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/a3ZjRg_JQAKNGA4dlR7gcw/zh-cn_image_0000002815400463.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=D23D5862BCB9AF4D6D0E6BFA10D49BB626ED4C77BD2BFA7AEC6EBF80082CBB61)

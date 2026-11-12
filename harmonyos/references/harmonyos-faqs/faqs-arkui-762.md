@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-762
 title: 如何实现组件弹簧拉伸回缩动效
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现组件弹簧拉伸回缩动效
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:44+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:171eed4aec5afca38ce235249a737262f613953098605c3535d2e085bfcfe9b0
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:171eed4aec5afca38ce235249a737262f613953098605c3535d2e085bfc
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/0uEOZ6pPQimTMzNaV7hgXw/zh-cn_image_0000002658795063.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/0uEOZ6pPQimTMzNaV7hgXw/zh-cn_image_0000002658795063.png?HW-CC-KV=V1&HW-CC-Date=20261112T233202Z&HW-CC-Expire=31536000000&HW-CC-Sign=9489B28895AFA74079CAF23CB6B7DD805A6B21640DCFE9AF8FD660A0B9531EA9 "点击放大")
 
 ## 背景知识
 

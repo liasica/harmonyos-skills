@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 应用市场提交版本时报错，软件包中含有不允许使用的权限，怎么定位
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 应用市场提交版本时报错，软件包中含有不允许使用的权限，怎么定位
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:86e1abc9948ab7580c1cc9e5cd4a2e79d0ccd4d8951731630e44f59722ad6c47
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:86e1abc9948ab7580c1cc9e5cd4a2e79d0ccd4d8951731630e44f59722a
 
 应用市场提交版本时报错"软件包中含有不允许使用的权限"，如何获知是什么权限有问题？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/YqHKO0kUSgSiFSiUq0kohg/zh-cn_image_0000002628554524.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/YqHKO0kUSgSiFSiUq0kohg/zh-cn_image_0000002628554524.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A06892A185A645ADAF3A8A31AF543273433F312AB1FFFE2C18FCCA5865A67C0 "点击放大")
 
 ## 背景知识
 
@@ -22,11 +22,11 @@ content_hash: sha256:86e1abc9948ab7580c1cc9e5cd4a2e79d0ccd4d8951731630e44f59722a
 
 开发者可通过软件包管理页面，点击**报告**，查询详细的检测报告。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/zuteC2Z1QnK3zF6DtUjW2A/zh-cn_image_0000002658913843.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/zuteC2Z1QnK3zF6DtUjW2A/zh-cn_image_0000002658913843.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A399C81751B87B23C67688891046A372E82473C6B34DF952EAAADF00490AE0F "点击放大")
 
 在检测结果页面，鼠标放置或点击修改意见一栏，即可看到详细的修改意见。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/Ni0341Q3TGaGM5CmJn7L3Q/zh-cn_image_0000002658793901.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/Ni0341Q3TGaGM5CmJn7L3Q/zh-cn_image_0000002658793901.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=80C3DF0A81C5FD02A2F0F1170674A9B92B9B9D2010F0F57971B09D7DB8D0EDB3 "点击放大")
 
 ## 分析结论
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-14
 title: 申请用户授权拒绝后二次申请授权方案
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 申请用户授权拒绝后二次申请授权方案
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:48+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-29
 content_hash: sha256:e95e0eea5e55a894c9f9797df1d45c548b0eac485e57d63acdd7f07150f020b2
 ---
@@ -126,7 +126,7 @@ function reqNotification(context: common.UIAbilityContext) {
 };
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/XXm0pOtuSA-3srLZRMoNaQ/zh-cn_image_0000002776400561.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/XXm0pOtuSA-3srLZRMoNaQ/zh-cn_image_0000002776400561.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=8717289E9BBE932BCFDFC7D753E62A63E835432226092C7939745FB7B727DBF1 "点击放大")
 
 Q：因为首次申请和二次申请权限调用方法不同，那么如何区分是否首次申请权限？
 

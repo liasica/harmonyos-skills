@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1026
 title: 智能表如何适配智慧手势
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 智能表如何适配智慧手势
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:53+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:13acacea3335ca3f48dfdcbf288d07b145cd13403edf6be8d472c76901875cc7
 ---
@@ -16,16 +16,16 @@ content_hash: sha256:13acacea3335ca3f48dfdcbf288d07b145cd13403edf6be8d472c769018
 
 1. 佩戴智能表，开启智慧手势识别开关：设置-手势-智慧手势识别。打开应用：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/niReUCi1SsiEZjFYTWA3wg/zh-cn_image_0000002658804083.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/niReUCi1SsiEZjFYTWA3wg/zh-cn_image_0000002658804083.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=2543357C2EBDEFFE192E6CC09EE1F49FB0664B73F9123834A64B618166AF48EE "点击放大")
 2. 捏合确认，第一个按钮文字变为“Confirmed”：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/X1_TH83cQDyD2llhcT3gUQ/zh-cn_image_0000002628564720.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/X1_TH83cQDyD2llhcT3gUQ/zh-cn_image_0000002628564720.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=B19A8F762A9D3DE28381EEBCE17DDDC41E3919ADCE836B6D26D811232926BA77 "点击放大")
 3. 滑动切焦，焦点从第一个按钮切换到第二个按钮：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/oyYYumzFR0CnT699mlPBCQ/zh-cn_image_0000002658924027.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/oyYYumzFR0CnT699mlPBCQ/zh-cn_image_0000002658924027.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=357AA6704ADF969F66E64F40488301D11A7DD48C79E50873427E56169B6C9841 "点击放大")
 4. 捏合确认，第二个按钮文字变为“Confirmed”：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/1NDLDrEPQwiKtcRrrNmUyw/zh-cn_image_0000002628404816.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/1NDLDrEPQwiKtcRrrNmUyw/zh-cn_image_0000002628404816.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=52714C08BDE0F5B63416DD27F157AAEDF624257FCBD9E08FE71DA90377D8ECC4 "点击放大")
 
 ## 背景知识
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-618
 title: 如何实现背景以圆弧形式向外扩展的翻页动画效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现背景以圆弧形式向外扩展的翻页动画效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:54+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:471d244967a2afc053f7204835a0fe91588235ed26a9c5f43f8fe065dc667efe
 ---
@@ -363,4 +363,4 @@ struct Page {
 
 实现效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/pPyBvWF1QZyMl1zVmXO-yA/zh-cn_image_0000002628394264.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/pPyBvWF1QZyMl1zVmXO-yA/zh-cn_image_0000002628394264.png?HW-CC-KV=V1&HW-CC-Date=20261112T233158Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7C85B49E47450A5A449D5CCFA79ACAC3DF40AB822A4F09F01AB84D815F2B4C5 "点击放大")

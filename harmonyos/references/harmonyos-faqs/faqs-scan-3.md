@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-scan-3
 title: 在自定义扫码界面退到后台再回到前台时扫码停止该如何解决
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 扫码服务（Scan） > 在自定义扫码界面退到后台再回到前台时扫码停止该如何解决
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:29+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:191e2c2158286a58d895e9b87f19726e4e2f1a6d51d9cc1633576523ce118352
 ---
@@ -59,7 +59,7 @@ export struct CustomScanPage {
 
 扫码时序图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/MGySOeS_TsOBiIwk5_wS2A/zh-cn_image_0000002658791883.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/MGySOeS_TsOBiIwk5_wS2A/zh-cn_image_0000002658791883.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=A96A87BD9588269DE641AF7CADF808DD2EF6C1797B554061CB8AC8DE597075DA "点击放大")
 
 详情请参考：[customScan (自定义界面扫码)](../harmonyos-references/scan-customscan-api.md)。
 

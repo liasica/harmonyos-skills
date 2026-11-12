@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-page-cu
 title: 自定义组件的自定义布局
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件的自定义布局
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:dcd7ebdaa7d531f3ec7ea275c71689ac8d74ce1831c78cfa52d539abedee23ae
 ---
@@ -83,4 +83,4 @@ struct CustomLayout {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/RIqIQyRjTl6mymEDZeAZ6A/zh-cn_image_0000002815398001.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/RIqIQyRjTl6mymEDZeAZ6A/zh-cn_image_0000002815398001.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=183003178AED35312ACB5491B372E3E440944E8CC2B7A84A7CF9A26F6E3B6E0D)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-har-publi
 title: 发布共享包
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 开发发布和管理共享包 > 发布共享包
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:fcb5d500a75a4da7e9e4f8ed0fa273722063ce39f20e7595bc4a582dccbe7abd
 ---
@@ -38,7 +38,7 @@ OpenHarmony三方库中心仓仅支持HAR共享包发布，不支持HSP共享包
    3. ohpm包管理器只支持加密密钥认证，请在生成公私钥时输入密码。
 4. 登录[OpenHarmony三方库中心仓](https://ohpm.openharmony.cn/#/cn/home)官网，单击主页右上角的**个人中心**，新增OHPM公钥，将公钥文件（mykey.pub）的内容粘贴到公钥输入框中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/eewJN0_ZRF-QBqLpWCzE_A/zh-cn_image_0000002779406494.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/eewJN0_ZRF-QBqLpWCzE_A/zh-cn_image_0000002779406494.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=E74E5EA9E3FF2A8A1B14A444E08EE87682B365DB0F288E9C39FCAE5E37F9DB55)
 5. 打开命令行工具，将对应私钥文件路径配置到 .ohpmrc 文件中 key\_path 字段上，可执行以下命令进行配置：
 
    ```screen
@@ -59,14 +59,14 @@ OpenHarmony三方库中心仓仅支持HAR共享包发布，不支持HSP共享包
 
 如需在应用内共享HSP，需编译生成\*.tgz包后，将HSP共享包上传至私仓。
 
-1. 点击工具栏![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/oHfoQdCHQVGHBK6dnZwz2g/zh-cn_image_0000002808766049.png)图标将编译模式切换成release模式。
+1. 点击工具栏![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/oHfoQdCHQVGHBK6dnZwz2g/zh-cn_image_0000002808766049.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9B3CA2BAAB6BB8BAB3D51D98092961762FA1569D0C570E8D8C1EBBD0FD64AAF)图标将编译模式切换成release模式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/kYnoexxhSO-LCKnoFivzaA/zh-cn_image_0000002779566470.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/kYnoexxhSO-LCKnoFivzaA/zh-cn_image_0000002779566470.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=385F56365FDECC415C400B7A03A5CED27945C3EA0D9F46F2133E27D8FFD97BE7)
 2. 选中HSP模块的根目录，点击**Build > Make Module ${libraryName}**启动构建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/wGKP9NOXTNaiWYh9VMfL-w/zh-cn_image_0000002779566464.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/wGKP9NOXTNaiWYh9VMfL-w/zh-cn_image_0000002779566464.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=5FF6B2106F263D03803C3A820953B67400A1A640C645B48C4C3FE11F8DA5077F)
 
    构建完成后，build目录下生成HSP包产物，其中.tgz用来上传至私仓。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/EakMg4N_RUSI5J2CuT2Rcg/zh-cn_image_0000002808886129.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/EakMg4N_RUSI5J2CuT2Rcg/zh-cn_image_0000002808886129.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=876C255751DD50FA22D7C03ABA238FB13ED18E091DC0709484FA48DEF859F310)
 3. 将HSP共享包上传至私仓，具体参考[将三方库发布到 ohpm-repo](ide-ohpm-repo-quickstart.md#zh-cn_topic_0000001792256157_从ohpm-repo获取三方库)。

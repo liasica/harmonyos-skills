@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-com
 title: "@Computed装饰器：计算属性"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理数据对象的状态 > @Computed装饰器：计算属性
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:42e83168f566babd256990073112dd257af95b10e8c091a1c718d845a94339ac
 ---
@@ -118,7 +118,7 @@ get varName(): T {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/cZMRW-k1TCW4HecCwdX6Ag/zh-cn_image_0000002786358654.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/cZMRW-k1TCW4HecCwdX6Ag/zh-cn_image_0000002786358654.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3FB46E83AB162EAFA20A434ABBD10637DC54B81ECA8D1CB58EDF754BED615D5)
 * 在@Computed装饰的getter方法中，不能改变参与计算的属性，以防止重复执行计算属性导致的appfreeze。
 
   在下面例子中，计算fullName1时触发了this.lastName的改变，this.lastName的改变，触发fullName2的计算，在fullName2的计算中，改变了this.firstName，再次触发fullName1的重新计算，从而导致循环计算，最终引起appfreeze。
@@ -258,7 +258,7 @@ get varName(): T {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/VsPOhLZSRnS5ZidBQm0ihQ/zh-cn_image_0000002815558075.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/VsPOhLZSRnS5ZidBQm0ihQ/zh-cn_image_0000002815558075.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=00ECCED111D52286C3F93DB9B5070009132C0CA3A71013D8F1E9739745558130)
 
 ## 使用场景
 
@@ -325,7 +325,7 @@ get varName(): T {
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/q0fe6v9WS6OBxjRIomO2lw/zh-cn_image_0000002815398159.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/q0fe6v9WS6OBxjRIomO2lw/zh-cn_image_0000002815398159.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=969E83582AF63432EE9B008907B0FF4882D00188A7EC9BD338725F9F74BFB85C)
 
    计算属性本身会带来性能开销，在实际应用开发中需要注意：
 
@@ -382,7 +382,7 @@ get varName(): T {
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/S2nC63NIRy-KeT3hXKIykw/zh-cn_image_0000002786518584.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/S2nC63NIRy-KeT3hXKIykw/zh-cn_image_0000002786518584.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=85D77DE42052414C022DDA50E819B95FCAD9CACE70B1AEA4577B41EC67D78223)
 
 ### @Computed装饰的属性可以被@Monitor监听变化
 
@@ -446,7 +446,7 @@ get varName(): T {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/lkD5TZxvRQCiRvok3JPDuA/zh-cn_image_0000002786358656.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/lkD5TZxvRQCiRvok3JPDuA/zh-cn_image_0000002786358656.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=BF2CD12583883353C6B27309CA8E46A1439A10EF7F0BE7F5A501DC52CC6C9CEF)
 
 ### @Computed装饰的属性可以初始化@Param
 
@@ -537,4 +537,4 @@ get varName(): T {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/38VyBOr3RxaSNC2r8xDFXg/zh-cn_image_0000002815558077.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/38VyBOr3RxaSNC2r8xDFXg/zh-cn_image_0000002815558077.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=FCB059E50273E4A8725D2A5D91DB7178B518798DCB089AA2F88CD68F5122F86D)

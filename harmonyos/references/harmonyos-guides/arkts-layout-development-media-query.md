@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-layout-
 title: 媒体查询 (@ohos.mediaquery)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI系统场景化能力 > 媒体查询 (@ohos.mediaquery)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:e88553212c86604f5e93737ce7d443db9dc55c09a60876be6add8cf50dc63f7f
 ---
@@ -210,11 +210,11 @@ struct MediaQueryExample {
 
 **图1** 竖屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/FpV9Oo3qTu2OAaYlv4-grQ/zh-cn_image_0000002815398763.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/FpV9Oo3qTu2OAaYlv4-grQ/zh-cn_image_0000002815398763.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=3B8FF3011819C45B57C10E45B5F093992B37CAB074C29234FADDB50C5F92B68F)
 
 **图2** 横屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/NUT46FjlQ1iZoYglv7-ZvA/zh-cn_image_0000002786519188.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/NUT46FjlQ1iZoYglv7-ZvA/zh-cn_image_0000002786519188.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=652B90008742802C6DFD9343CFFB7ABAED0B92809174D67FCF2F1B4783F006DB)
 
 示例二使用媒体查询实现屏幕横竖屏切换时Flex组件的不同布局，竖屏时Flex采用垂直方向布局，横屏时采用水平方向布局。
 
@@ -310,8 +310,8 @@ struct ObtainMediaQueryFlex {
 
 **图3** 竖屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/fYdjngbbQz2dzf67f1HVKQ/zh-cn_image_0000002786359260.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/fYdjngbbQz2dzf67f1HVKQ/zh-cn_image_0000002786359260.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C4BA4F08358C5BC4DFF811423B9CDDA2E7319AE569F60FF827E700724C37DDD)
 
 **图4** 横屏
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/1J9bkJlcRYakg_E_lf9ajQ/zh-cn_image_0000002815558681.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/1J9bkJlcRYakg_E_lf9ajQ/zh-cn_image_0000002815558681.png?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=47B2D4FDE48550F411EB88629AE7E292CDAF8E3A1510CA7F20713983415E72ED)

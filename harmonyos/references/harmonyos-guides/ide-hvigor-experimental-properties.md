@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-ex
 title: 实验特性
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 提升构建效率 > 实验特性
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-14
 content_hash: sha256:484f5e658ee261086cc369c667a25b2a523e8f18111a305cc166eb0e49543b35
 ---
@@ -158,17 +158,17 @@ content_hash: sha256:484f5e658ee261086cc369c667a25b2a523e8f18111a305cc166eb0e495
 1. 按照以上方式开启开关**Enable ohpm execution by hvigor**。
 2. 在工程级build-profile.json5的module字段下，添加工程中不存在的模块，如testModule。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/ABADG2VPRKudhh4wSj2suQ/zh-cn_image_0000002808886515.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/ABADG2VPRKudhh4wSj2suQ/zh-cn_image_0000002808886515.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=B283DE5C9F321530FD242CB70CD9F011611A1552E44239E7B1A8CCA2F57487DC)
 3. 调用excludeNodeByName方法，排除不存在的模块testModule。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/nmy-LFegRX2UFCf9r2_uOw/zh-cn_image_0000002808766433.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/nmy-LFegRX2UFCf9r2_uOw/zh-cn_image_0000002808766433.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=CAD630241FE009980424382887F121E154FF523519FD4EF0BF59D3C3A155AC80)
 4. 执行构建成功。
 
 **使用场景二**
 
 调用[setDependenciesOpt](ide-build-expanding-context.md#section18789410129)、[setOverrides](ide-build-expanding-context.md#section469812496459)等方法动态修改oh-package.json5中的依赖信息后，执行sync或build等操作时，DevEco Studio会执行两次ohpm install操作，开启开关后，Hvigor仅执行一次ohpm install，可提升构建的效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/5plohpZ-Q9S968cu96-RnA/zh-cn_image_0000002808886513.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/5plohpZ-Q9S968cu96-RnA/zh-cn_image_0000002808886513.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=70B120383788D9803EE39F9AEF52042EE066CDDF366E65BFADC2B903409AE61D)
 
 ## 通过IClang提升C++增量编译效率
 

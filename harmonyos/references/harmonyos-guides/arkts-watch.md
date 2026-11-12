@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-watch
 title: "@Watch装饰器：状态变量更改通知"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @Watch装饰器：状态变量更改通知
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:066fe3a8c80c5a881db85bb97dede9f918e5daf2d7133252578b021bdb19f311
 ---
@@ -141,7 +141,7 @@ struct CountModifier {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/gsuWn0yUSHySCwMGG6wdiA/zh-cn_image_0000002786518520.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/gsuWn0yUSHySCwMGG6wdiA/zh-cn_image_0000002786518520.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=C9CE20D13F0A25E66D874DA5E39B0174ECD84EE0E6E87BCEA90CA746B13EF0C0)
 
 处理步骤：
 
@@ -223,7 +223,7 @@ struct BasketModifier {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/PbjRwqoURGmrAKadjHDG9Q/zh-cn_image_0000002786358592.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/PbjRwqoURGmrAKadjHDG9Q/zh-cn_image_0000002786358592.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=159AE6B5018200A5F401301E988CD43945C8CD341F971E1617679FAC07AD2584)
 
 ### @Watch的触发时机
 
@@ -342,7 +342,7 @@ struct ChildComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/cXBG7wvoTSK5U88218KgAg/zh-cn_image_0000002815558013.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/cXBG7wvoTSK5U88218KgAg/zh-cn_image_0000002815558013.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=E11B177F8AA7DCBBC4004BFA57B99552986701FE3C6419C97BB5E09F05196318)
 
 处理步骤如下：
 
@@ -406,7 +406,7 @@ struct UsePropertyName {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/Ggwp_5-BS0i8J9CMFnNcuQ/zh-cn_image_0000002815398097.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/Ggwp_5-BS0i8J9CMFnNcuQ/zh-cn_image_0000002815398097.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=42C1292BD2BF7E4B52E4AB0CA27B362C068237F6DF054DAAD00072AAB75EA6C2)
 
 处理步骤如下：
 

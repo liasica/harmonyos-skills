@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-universal-
 title: 关于huks.exportKeyItem函数401报错的原因
 breadcrumb: FAQ > 系统开发 > 安全 > 密钥管理（Universal Keystore） > 关于huks.exportKeyItem函数401报错的原因
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:13+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:e84733807fc089d1cbda16297ca308e150966640ccebc0d90b6cd332b5f19dbc
 ---
@@ -131,11 +131,11 @@ huks.exportKeyItem导出密钥时，总是报401，Invalid parameters.部分代�
 
   使用SM4和AES的报错截图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/JwBMLa3AR7GaU-q3cLzrwg/zh-cn_image_0000002658969105.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/JwBMLa3AR7GaU-q3cLzrwg/zh-cn_image_0000002658969105.png?HW-CC-KV=V1&HW-CC-Date=20261112T233219Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C7A53ADD40D97CFE5242EFC34F0E239184A7ABA9A9877B5AD6EFAFFE640A339 "点击放大")
 
   使用RSA算法输出正常：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/8Hm3-6euTGK66QkMkdp39A/zh-cn_image_0000002658849155.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/8Hm3-6euTGK66QkMkdp39A/zh-cn_image_0000002658849155.png?HW-CC-KV=V1&HW-CC-Date=20261112T233219Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A2DEBDC5186FA2EA68C670180D031FA95F9E80C598831CD882CCC2DB1DEF8BB "点击放大")
 
 ## 解决方案
 

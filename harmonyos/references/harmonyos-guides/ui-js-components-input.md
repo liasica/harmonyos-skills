@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: input开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > input开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-04-13
 content_hash: sha256:b79a8455b736ece61dd823737bf29f9d0b887c585d7cb0844659156c6cf87f40
 ---
@@ -35,7 +35,7 @@ input是交互式组件，用于接收用户数据。其类型可设置为日期
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/K9eRC4OySCahgqOnzr-DOg/zh-cn_image_0000002786519236.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/K9eRC4OySCahgqOnzr-DOg/zh-cn_image_0000002786519236.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FDFE74B6D3A5AF4EAAC423A91E064F598CD3E5095036E64BC24E8C470E9E91F)
 
 ## 设置input类型
 
@@ -104,7 +104,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/QPAKkWIITDWItwzZr2xtzA/zh-cn_image_0000002786359308.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/QPAKkWIITDWItwzZr2xtzA/zh-cn_image_0000002786359308.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=86EF1759707F1B15352F9209507A8F18A421BCBC31D74E0EE2E21E95CDAB941B)
 
 **说明** 
 
@@ -160,7 +160,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/7fu-avGrTIO_-AFVmG4xeQ/zh-cn_image_0000002815558729.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/7fu-avGrTIO_-AFVmG4xeQ/zh-cn_image_0000002815558729.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=DAB56A7FBC9E23680049DF509BF321DBC89A9B104516674E7C099E1DC994B513)
 
 ## 设置输入提示
 
@@ -227,7 +227,7 @@ import promptAction from '@ohos.promptAction'
  }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/c7aDQ96LQ3Ghvxiuw-4Lhw/zh-cn_image_0000002815398813.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/c7aDQ96LQ3Ghvxiuw-4Lhw/zh-cn_image_0000002815398813.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A07EF7C76C1A470791C9A1C6DCA141B9B5584CBE46A1BC352A6C3C3EB0A79FA)
 
 **说明** 
 
@@ -309,4 +309,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/vfNarxqSTjisYrRWjOMzHQ/zh-cn_image_0000002786519238.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/vfNarxqSTjisYrRWjOMzHQ/zh-cn_image_0000002786519238.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=034CB23D6D409B3E7B993AB96253FFBDD8A5B5EF623FC68C3C3A4F74A2790988)

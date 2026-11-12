@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/synchronous-a
 title: 音频编码同步模式
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 音频编码同步模式
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:b231f10ec3dde28872fb766e7591d069d01fe49890d2bd67263f74c22d056c96
 ---
@@ -47,7 +47,7 @@ content_hash: sha256:b231f10ec3dde28872fb766e7591d069d01fe49890d2bd67263f74c22d0
 * 虚线表示可选。音频编码不涉及解密，无需调用OH\_AudioCodec\_SetDecryptionConfig。
 * 实线表示必选。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/WYuT9DYwQ2C943AoKYihmw/zh-cn_image_0000002786359860.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/WYuT9DYwQ2C943AoKYihmw/zh-cn_image_0000002786359860.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=7108E3F739F1BB8F98056EB64A0337B72656D859F90AA130399A58B60AFB3DC4)
 
 ### 在CMake脚本中链接动态库
 
@@ -112,11 +112,11 @@ target_link_libraries(sample PUBLIC libnative_media_acodec.so)
 
    配置选项key值说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/99PIyz4YQOyEpQ96wEZCTQ/zh-cn_image_0000002815399363.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/99PIyz4YQOyEpQ96wEZCTQ/zh-cn_image_0000002815399363.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2D558239EDCFDC632FE92F77D4C8BABD661A35929594BA8A94D250C103E4FA5)
 
    各音频编码类型参数范围说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/ycdnVUKCSuG1TWRL0vEhLA/zh-cn_image_0000002786519788.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/ycdnVUKCSuG1TWRL0vEhLA/zh-cn_image_0000002786519788.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A04DBEBE4C37FECCEE931D70FD8D5BE9381F09024CEC2C60B8473A3B34D5E9F)
 
    例如，对44100Hz采样率、2声道立体声、SAMPLE\_S16LE采样格式的PCM音频，以32000bps的码率进行AAC编码的调用流程如下：
 

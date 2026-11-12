@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/network-kit-faq
 title: HTTP请求错误排查
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > 常见问题 > HTTP请求错误排查
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:13+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:873a8325a126454a4045f38b5f1d557f6e1fb5322ca69bb6240c9e07750bd30d
 ---
@@ -36,7 +36,7 @@ HTTPS校验主要包括以下几个步骤：
 SSL劫持原理：第三方攻击者会先接入请求方和接收方之间，通过伪造的证书与请求方交换数据，再以请求方的身份与接收方进行数据交互。SSL劫持通常发生在用户安装了未经权威CA认证的证书时，因此需要进行证书校验。
 
 **图1** SSL劫持  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/BPw_6zI_R2Gauenej1KdLw/zh-cn_image_0000002773114580.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/BPw_6zI_R2Gauenej1KdLw/zh-cn_image_0000002773114580.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=72338D976627A0B996F45DFAA5D4F3998FB532B0CE8EDB516BAD2A0C5FE4C18D)
 
 SSL剥离通常发生在HTTP请求中，现代网站多强制使用HTTPS。
 

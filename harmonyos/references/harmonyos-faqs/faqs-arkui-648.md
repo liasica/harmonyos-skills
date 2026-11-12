@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-648
 title: 三维旋转loading动效
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 三维旋转loading动效
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:a74e24b55c74e51337485cc7977c073fc04051e1fa06695a33cb2c4ac1f64858
 ---
@@ -158,4 +158,4 @@ content_hash: sha256:a74e24b55c74e51337485cc7977c073fc04051e1fa06695a33cb2c4ac1f
 
    效果图为：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/RU6jm0bKTfK9ANj-g3wgfQ/zh-cn_image_0000002628394516.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/RU6jm0bKTfK9ANj-g3wgfQ/zh-cn_image_0000002628394516.png?HW-CC-KV=V1&HW-CC-Date=20261112T233158Z&HW-CC-Expire=31536000000&HW-CC-Sign=80BE285E638F9D18DDA2977126AB89C302FA2930FD133D5BD0F2EAB853FE24E9 "点击放大")

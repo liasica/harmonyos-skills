@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/callservice-e
 title: 企业联系人信息来去电页面显示
 breadcrumb: 指南 > 应用服务 > Call Service Kit（通话服务） > 企业联系人信息来去电页面显示
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:9c179e2a87ff24a046ef845843c2afdae3ab84949725dd7fc4fee86f5f8cec30
 ---
@@ -36,11 +36,11 @@ content_hash: sha256:9c179e2a87ff24a046ef845843c2afdae3ab84949725dd7fc4fee86f5f8
 
 3.进入“项目设置 > 开放能力管理”页面，点击“企业来电显示”对应的“申请”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/uwO9irACRM-MH6lZIH1GGw/zh-cn_image_0000002786520156.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/uwO9irACRM-MH6lZIH1GGw/zh-cn_image_0000002786520156.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=3FFF11B31CCAF08220DD089FEF4F1C96D288CDD53D7B8673C51D4F3C8672A40C)
 
 4.请根据实际业务需求在弹框中填写对应信息，完成后，点击右上角“提交”，提交后将在3个工作日内回复。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/wRhvSZ3FRxSk06yEnbBXTg/zh-cn_image_0000002786360228.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/wRhvSZ3FRxSk06yEnbBXTg/zh-cn_image_0000002786360228.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=9749B1E9704225CB3976F05A30C8CE843AF7C25F76F4B4B8DA95B9A23D59D55C)
 
 ## 替换调试Profile
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-dialog-enc
 title: 弹窗组件封装
 breadcrumb: 最佳实践 > 行业场景解决方案 > 新闻阅读 > 弹窗组件封装
 category: best-practices
-scraped_at: 2026-11-10T10:42:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-03
 content_hash: sha256:f98e3daa5faee27f8715a10361971adba717b6755d56a1497d7fa77802bf335c
 ---
@@ -20,7 +20,7 @@ content_hash: sha256:f98e3daa5faee27f8715a10361971adba717b6755d56a1497d7fa77802b
 
 以使用方点击按钮后展示自定义弹窗场景为例，若需实现下图效果，基于promptAction封装弹窗工具类和使用步骤如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/D2XSE8MUSWaOKE7VOhExAQ/zh-cn_image_0000002396265913.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/D2XSE8MUSWaOKE7VOhExAQ/zh-cn_image_0000002396265913.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=30704A4CAB98CBD07ADD1D9E91C11BA5A5CAD26E0E851AF5E8EDD8B90B7BD24E "点击放大")
 
 1. 使用方通过全局@Builder封装弹窗结构。
 

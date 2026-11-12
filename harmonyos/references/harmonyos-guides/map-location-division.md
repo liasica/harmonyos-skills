@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-location-
 title: 区划选择
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图Picker > 区划选择
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:30+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:3f21ffe0a714d2769facd4c0e9784dd3f83364bea98480656b1d2c48f7504093
 ---
@@ -22,19 +22,19 @@ content_hash: sha256:3f21ffe0a714d2769facd4c0e9784dd3f83364bea98480656b1d2c48f75
 
 **图1** 选择国家
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/Z2mtTzZIRr-hcchjecnluQ/zh-cn_image_0000002815559875.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/Z2mtTzZIRr-hcchjecnluQ/zh-cn_image_0000002815559875.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=6AC635B81FA05538DD0F0E04C410DBBC0D2D7A32BF9AE49C4A550A8AF27E0203 "点击放大")
 
 **图2** 选择省市
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/fN6vMB2-S8eg9EbxzsZtRA/zh-cn_image_0000002815399959.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/fN6vMB2-S8eg9EbxzsZtRA/zh-cn_image_0000002815399959.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=BFB49C08E744463B67645C41AAA54CB1D3356682EC1BE287AC3CE52633C053AE "点击放大")
 
 **图3** 搜索地区
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/mARYpxpCTfK28peHAYUgvA/zh-cn_image_0000002786520384.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/mARYpxpCTfK28peHAYUgvA/zh-cn_image_0000002786520384.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=72980C7D609ACC3DFC99714577DA21AB5A81A6DFC01B9AC59BFE4322F7395FC4 "点击放大")
 
 **图4** 子窗拉起区划控件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/WjFX3PgHSrmvFOVp3VAWSg/zh-cn_image_0000002786360456.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/WjFX3PgHSrmvFOVp3VAWSg/zh-cn_image_0000002786360456.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=5105D0A7FDC81E8C3B4CBDF13C8076D4F275D81ED7BD67B5795E8E9BB6909500 "点击放大")
 
 ## 约束与限制
 

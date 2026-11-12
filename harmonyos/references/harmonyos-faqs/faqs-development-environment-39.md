@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: Mac安装运行DevEco Studio异常问题汇总
 breadcrumb: FAQ > DevEco Studio > 环境准备 > Mac安装运行DevEco Studio异常问题汇总
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:49+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:a31493edd662f599337614cea6be7afe1a873dfe9d9ee624a8c9cb8723ee874e
 ---
@@ -58,7 +58,7 @@ Mac DevEco Studio使用出现异常，原因有哪些。
   Command failed with exit code null: java -Dfile.encoding=utf-8 -jar /Applications/DevEco-Studio.app/Contents/sdk/default/openharmony/toolchains/lib/app_packing_tool.jar --mode hap --force true --lib-path 
   /Users/MyProject/entry/build/default/intermediates/stripped_native_libs/default --json-path /Users/MyProject/entry/build/default/intermediates/package/default/module.json --resources-path /Users/MyProject/entry/build/default/intermediates/res/default/resources --index-path /Users/MyProject/entry/build/default/intermediates/res/default/resources.index --pack-info-path /Users/MyProject/entry/build/default/outputs/default/pack.info --out-path /Users/MyProject/entry/build/default/outputs/default/entry-default-unsigned.hap --ets-path /Users/MyProject/entry/build/default/intermediates/loader_out/default/ets --pkg-context-path /Users/MyProject/entry/build/default/intermediates/loader/default/pkgContextInfo.json
   ```
-* **场景四：Mac DevEco Studio无法打开预览器和构建应用，报错hvigor ERROR:Failed：**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/Kzq1anhFS1KZpgmlWLOGmw/zh-cn_image_0000002658924637.png "点击放大")
+* **场景四：Mac DevEco Studio无法打开预览器和构建应用，报错hvigor ERROR:Failed：**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/Kzq1anhFS1KZpgmlWLOGmw/zh-cn_image_0000002658924637.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=642A3F036690C6068DEF77EAB09F831DA98C9B29D52BF0927598A32EE043BD82 "点击放大")
 
 ## 分析结论
 
@@ -71,7 +71,7 @@ Mac DevEco Studio使用出现异常，原因有哪些。
 
 * **场景一：建议根据工程代码量和机器内存大小设置内存上限：**
 
-  设置方法，打开DevEco Studio，通过菜单栏的Help > Edit Custom Properties...，打开idea.properties配置文件。在文件中新增一行arkts.server.max.old.space.size=12288，然后重启DevEco Studio。具体数值可以视情况增大或减小。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/G10bGa5hQLG2w7TZgPK5og/zh-cn_image_0000002658804701.png)
+  设置方法，打开DevEco Studio，通过菜单栏的Help > Edit Custom Properties...，打开idea.properties配置文件。在文件中新增一行arkts.server.max.old.space.size=12288，然后重启DevEco Studio。具体数值可以视情况增大或减小。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/G10bGa5hQLG2w7TZgPK5og/zh-cn_image_0000002658804701.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=48A65576A2F7F862569D7C6BC62EF1A7435AB911F1F46A112E674C619386D1EE)
 * **场景二：**
   1. 删除用户Home目录下的hvigor，即删除下列文件：
      + /Users/xxx/node\_modules；

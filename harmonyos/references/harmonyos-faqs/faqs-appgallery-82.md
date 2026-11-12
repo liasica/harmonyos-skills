@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 应用证书到期后的影响及处理方式
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 应用证书到期后的影响及处理方式
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:df6c4afad5e119f811b42ffcf4e9dce9adb114cc9433b5b54715c5814b4ac547
 ---
@@ -32,7 +32,7 @@ content_hash: sha256:df6c4afad5e119f811b42ffcf4e9dce9adb114cc9433b5b54715c5814b4
 
    可以在HarmonyOS 开发者中心平台的用户与访问->个人信息->通知中，开启证书即将过期通知项。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/NrCC4pLNSyOWHgfeKN-0dA/zh-cn_image_0000002670430911.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/NrCC4pLNSyOWHgfeKN-0dA/zh-cn_image_0000002670430911.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=016E67FA6A88DA24513F62C9B5050A3A7EE4289EAF546CE1FAF5578E307F065E "点击放大")
 4. 如何查看证书指纹的有效期？
 
    可以在HarmonyOS 开发者中心网站首页，点击“证书、APPID和Profile”查看证书失效日期。

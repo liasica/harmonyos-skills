@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-906
 title: Navigation自定义标题栏不生效问题如何修改
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Navigation自定义标题栏不生效问题如何修改
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:38+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:a46e9fefb53c5c61db5eb938049e44d5fce12ff261f655644a9f137af566e310
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:a46e9fefb53c5c61db5eb938049e44d5fce12ff261f655644a9f137af56
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/qO0BWktpTLuRZDXQDQXyiw/zh-cn_image_0000002628399758.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/qO0BWktpTLuRZDXQDQXyiw/zh-cn_image_0000002628399758.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=FD1222D63CAD045A496BE91B6AAD331EC5D1DD0482A4E40F739DF6C13D918B23 "点击放大")
 
 问题代码示例参考如下：
 
@@ -58,7 +58,7 @@ struct Index {
 
 使用ArkUI Inspector查看应用布局，发现TitleBar不可见，标题栏未创建。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/2l0uVZomTWmGbN5upqp9AA/zh-cn_image_0000002658799027.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/2l0uVZomTWmGbN5upqp9AA/zh-cn_image_0000002658799027.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=E508EAEE8BF4A6C2DF5F1920C7DE6F6AD78378EFE05A5E09B3BBE541DD9201FB "点击放大")
 
 查看[title](../harmonyos-references/ts-basic-components-navigation.md#title)传入参数类型，其中NavigationCustomTitle和CustomBuilder这两种类型均支持自定义标题栏样式。
 
@@ -101,7 +101,7 @@ struct Index {
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/LpQgMXsiTFqKHQ2G_cjl-w/zh-cn_image_0000002628559674.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/LpQgMXsiTFqKHQ2G_cjl-w/zh-cn_image_0000002628559674.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=F6F5EF9CCBEB7487127007770D0CF5C94F570FEE090DEE7FE36D638936629796 "点击放大")
 * **方案二**：在title中直接传入自定义布局的方法。
 
   ```ts
@@ -137,7 +137,7 @@ struct Index {
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/jgQ-fMTeTOKbbGTY_bAYCQ/zh-cn_image_0000002658918981.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/jgQ-fMTeTOKbbGTY_bAYCQ/zh-cn_image_0000002658918981.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=1FE9AA9BC739C0C7A19F5535929DD78856C3AFB4F90B606BED9BFF633078EBC6 "点击放大")
 
 ## 常见FAQ
 

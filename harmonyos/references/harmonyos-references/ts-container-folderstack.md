@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: FolderStack
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > FolderStack
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:26+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:978db4c39e8ac968dc7c6c0faeec05f7585322a1c0377f05f22108ee1016e36e
 ---
@@ -350,11 +350,11 @@ struct Index {
 
 **图1** 横屏展开
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/I2seh8tzQv2SGsgIq9sNgA/zh-cn_image_0000002815401161.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/I2seh8tzQv2SGsgIq9sNgA/zh-cn_image_0000002815401161.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=5352BF04556D75C232F7A73DBE4EC117E645F61D3FBF0E624E780E112A14E110)
 
 **图2** 横屏半折叠
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/CG4By4-QQn-1jZiEaM3Aiw/zh-cn_image_0000002786521586.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/CG4By4-QQn-1jZiEaM3Aiw/zh-cn_image_0000002786521586.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=7EA6825208108104043399ECCEF7715A69C8391E4425FF84F02B6D4432A4AF7E)
 
 ### 示例2（使用attributeModifier动态设置FolderStack组件的属性及方法）
 
@@ -454,7 +454,7 @@ this appRotation:3
 
 this windowStatusType:1
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/dOylXlMhQJyS5CNqT0yYcA/zh-cn_image_0000002786361658.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/dOylXlMhQJyS5CNqT0yYcA/zh-cn_image_0000002786361658.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=818450C68F0BF7AE2FF3C1FDC0BD489106A31526AF350A7051B90DB56D904DCE)
 
 **图2** 横屏半折叠
 
@@ -470,4 +470,4 @@ this appRotation:3
 
 this windowStatusType:1
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/k4g5s9HvQ2K8-FhAyAYlKA/zh-cn_image_0000002815561079.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/k4g5s9HvQ2K8-FhAyAYlKA/zh-cn_image_0000002815561079.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=5086523EC935ADB0225EBCF5B92787764CF0062B580C80C25931968B6E8A4428)

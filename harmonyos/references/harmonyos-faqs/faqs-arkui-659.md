@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-659
 title: Video组件如何获取视频的时长和播放进度
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Video组件如何获取视频的时长和播放进度
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:6b93857e62a825215c4fc66e29d573ea1a0bd74ba338b7df7576b897e09ed9e9
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:6b93857e62a825215c4fc66e29d573ea1a0bd74ba338b7df7576b897e09
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/zwAjldFKQFWFxyyq1V4s_g/zh-cn_image_0000002658913865.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/zwAjldFKQFWFxyyq1V4s_g/zh-cn_image_0000002658913865.png?HW-CC-KV=V1&HW-CC-Date=20261112T233159Z&HW-CC-Expire=31536000000&HW-CC-Sign=A76EFEEBC4F4B7CA8CFA175492BA52E2A9C9F4DE658FACB7AE8AB1E3F3350452 "点击放大")
 
 ## 背景知识
 

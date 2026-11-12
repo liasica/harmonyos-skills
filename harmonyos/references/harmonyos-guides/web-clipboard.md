@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-clipboard
 title: 使用Web组件与系统剪贴板交互处理网页内容
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 处理网页内容 > 使用Web组件与系统剪贴板交互处理网页内容
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:24+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:896015c1c64d24cf3ffb99e334340fbe7eb7e6cd2085fead82f0dda213387abe
 ---
@@ -196,7 +196,7 @@ module.json5权限配置：
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/F9puxIXuSC2zxYkUQfemcw/zh-cn_image_0000002815558881.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/F9puxIXuSC2zxYkUQfemcw/zh-cn_image_0000002815558881.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=ECA59AAC5ADB76F689B1F1904C3AF9829A1CBAB8C90F303891436AFB98AC6ECF)
 
 ## 通过W3C剪贴板事件接口与系统剪贴板交互
 
@@ -279,7 +279,7 @@ struct WebComponent {
 </html>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/ipnlYxlDTaaj9rS2ADrx4w/zh-cn_image_0000002815398965.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/ipnlYxlDTaaj9rS2ADrx4w/zh-cn_image_0000002815398965.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=75541F9705C57A7A7394951293B16DE4F480087311A80B28E7B26F6271BB8441)
 
 ## 设置剪贴板复制范围选项
 

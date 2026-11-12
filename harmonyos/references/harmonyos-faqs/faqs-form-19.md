@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-form-19
 title: 如何根据不同尺寸的卡片适配不同的UI
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 如何根据不同尺寸的卡片适配不同的UI
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:50+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:593193249ca54b9d4a9d5433e2308a9d4617387802b3127aa88656dd2a0091dd
 ---
@@ -148,7 +148,7 @@ Q：元服务添加到桌面的卡片大小是否可以更改？
 
 A：加桌之后的元服务卡片的大小是固定尺寸，当前开发者在没有适配其他大小尺寸的卡片前提下，无法改变桌面卡片的大小。所以建议在创建卡片的时候，就规划多个尺寸的卡片，以支持创建多种不同大小的卡片。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/dZHENiJ3TYqE1rKArFD1EQ/zh-cn_image_0000002628791562.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/dZHENiJ3TYqE1rKArFD1EQ/zh-cn_image_0000002628791562.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=DA53091C9BBD52DFE1D2029DBA7ACE962FD2E5C7762AEE9A4D292317D3E2E3C9 "点击放大")
 
 Q：如何解决小尺寸卡片中图片显示不完全？
 

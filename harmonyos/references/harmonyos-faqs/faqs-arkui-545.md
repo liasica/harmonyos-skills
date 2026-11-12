@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-545
 title: 视频全屏播放状态下熄屏解锁后页面显示异常
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 视频全屏播放状态下熄屏解锁后页面显示异常
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:29+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:b909aa9257e3acc9c1f872e7b3d2bb6207fadec664c01ca3e88d4c70ca64de4b
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:b909aa9257e3acc9c1f872e7b3d2bb6207fadec664c01ca3e88d4c70ca6
 
 问题现象：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/o-nlcIbfRLW4JcMDaDv9Kw/zh-cn_image_0000002658790885.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/o-nlcIbfRLW4JcMDaDv9Kw/zh-cn_image_0000002658790885.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=0810635E1AD8C134AD4A144028FA3CEF37E289DA59641679A5A48EC2FB6A963B "点击放大")
 
 ## 背景知识
 
@@ -26,13 +26,13 @@ content_hash: sha256:b909aa9257e3acc9c1f872e7b3d2bb6207fadec664c01ca3e88d4c70ca6
 2. 使用DevEco Testing中的UIViewer工具，查看全屏状态下熄屏前后以及小屏状态下的页面布局，发现重新亮屏后的页面布局小屏状态一致。
    * 小屏时页面布局：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/AQuoTbzKQ2iVlNI23NKhTQ/zh-cn_image_0000002628551520.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/AQuoTbzKQ2iVlNI23NKhTQ/zh-cn_image_0000002628551520.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=790A60AE77D8C028E2985E8DF0E7C238DE5275FF668079A76FF69086DC1A4947 "点击放大")
    * 全屏时页面布局：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/YcDUonUCQ2WyGyBb452UZw/zh-cn_image_0000002628391624.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/YcDUonUCQ2WyGyBb452UZw/zh-cn_image_0000002628391624.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=4DA728A6B6388BC198DB8C4E8BF1F6E2285F220310EBB905A381029AD602DC80 "点击放大")
    * 熄屏后重新亮起时页面布局：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/45bddEoGTXmOKfVQ9BHkKg/zh-cn_image_0000002658910839.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/45bddEoGTXmOKfVQ9BHkKg/zh-cn_image_0000002658910839.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=F918CC0417341B79556DF403462942581EE08495D0074E194C93B6B05BB3050C "点击放大")
 3. 排查代码，变量isFull用于控制页面在全屏与小屏状态间切换，其初始化操作被放在了onPageShow()方法内：
 
    ```ts
@@ -258,4 +258,4 @@ content_hash: sha256:b909aa9257e3acc9c1f872e7b3d2bb6207fadec664c01ca3e88d4c70ca6
 
    运行效果图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/7NYiHllHT9O6KCGvsVf6fw/zh-cn_image_0000002658790887.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/7NYiHllHT9O6KCGvsVf6fw/zh-cn_image_0000002658790887.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=42FB37F60DB6FF5A5948A686EA41998E6BFF9C091509388CCFA2C5371A68BAAF "点击放大")

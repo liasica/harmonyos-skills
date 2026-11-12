@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-37
 title: 如何修改地图的折线纹理间距
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 如何修改地图的折线纹理间距
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:38+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-12
 content_hash: sha256:32cd983f2b5d468794db191f3d789b1b52009a9c2610bf7b7e8d45a618860f69
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:32cd983f2b5d468794db191f3d789b1b52009a9c2610bf7b7e8d45a6188
 
 使用地图服务addPolyline添加箭头样式的纹理，会出现折线上箭头之间的间距太小、箭头过于密集的情况，如何修改折线纹理的间距？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/ju5B5I3NQfiK8CWj49d6Og/zh-cn_image_0000002628554274.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/ju5B5I3NQfiK8CWj49d6Og/zh-cn_image_0000002628554274.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=F662525303E75E739233BCB10BE46DB01572A92272A0A5356D82E06ED9334E30 "点击放大")
 
 ## 背景知识
 
@@ -24,7 +24,7 @@ content_hash: sha256:32cd983f2b5d468794db191f3d789b1b52009a9c2610bf7b7e8d45a6188
 
 方案逻辑：通过customTexture配置折线纹理时，折线上纹理图片的间距默认为线宽的2倍，并且没有接口可以直接设置纹理图片的间距。而使用customTextures配置纹理时，添加的纹理图片间没有间距，可以配置纹理图片为带纯色底色的纹理，调整图片宽度，使图片之间的真实纹理的距离为预期的宽度。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/aWAGyc2RRpq8DyzE7QTtxg/zh-cn_image_0000002658913595.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/aWAGyc2RRpq8DyzE7QTtxg/zh-cn_image_0000002658913595.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=16852B074AB46B24BF58596B5DAFE146F939D225FE919F4119417E57DA57B7BC)
 
 1. 获取路线的坐标点列表。
 2. 添加调整后的纹理图到customTextures列表。
@@ -60,7 +60,7 @@ content_hash: sha256:32cd983f2b5d468794db191f3d789b1b52009a9c2610bf7b7e8d45a6188
 
    效果图如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/KUFRL7g_SEGqBRizTE24Vg/zh-cn_image_0000002628394382.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/KUFRL7g_SEGqBRizTE24Vg/zh-cn_image_0000002628394382.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9084832BAF51EF70FE6708D5C1752E64720B4706D9DBD2963C4B5753E443B6A "点击放大")
 
 完整代码如下：
 

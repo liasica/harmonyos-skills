@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-modulei
 title: 产品特性按需分发(ArkTS)
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 产品特性按需分发 > 产品特性按需分发(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:34f589a6f2ae627ce4b8ec1dc8eabd8d8595ec4dfe6dac476560acfe03951d1b
 ---
@@ -22,7 +22,7 @@ content_hash: sha256:34f589a6f2ae627ce4b8ec1dc8eabd8d8595ec4dfe6dac476560acfe039
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/0GxLPKtGR3KFYnmQjsenyw/zh-cn_image_0000002786520098.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/0GxLPKtGR3KFYnmQjsenyw/zh-cn_image_0000002786520098.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=F1426613ACCBA26ED82CB52D5F3F4107288B9E72B6CFB5A383D0BEB419B047B0)
 
 1. 用户下载A应用的基础包。
 2. 用户使用增强功能。
@@ -480,7 +480,7 @@ entry中主要实现如下：
 
 运行结果效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/UdBvoO4OSo2wP1cjL47eGw/zh-cn_image_0000002786360170.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/UdBvoO4OSo2wP1cjL47eGw/zh-cn_image_0000002786360170.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=C86C312E0B6634E1685851F8AC971DACE6EE522255704A0CF4E3FE44BA9010C2)
 
 ### 接入调试功能
 
@@ -494,5 +494,5 @@ entry中主要实现如下：
 2. 打开[开发者调试模式](ide-developer-mode.md#section530763213432)：进入设置 -> 机型 -> 关于手机，连续点击软件版本7次，弹出“开启“开发者模式””，点击“确认开启”。
 3. [访问设备沙箱路径](ide-device-file-explorer.md#section48216711204)，在[应用el2级别加密数据目录](app-sandbox-directory.md#应用沙箱路径和真实物理路径的对应关系)下，创建cache/moduleinstall/<ModuleName>目录（这里<ModuleName>是AModulelib），将模块调试包AModulelib.hsp上传至对应模块目录下（请确保模块调试包文件应有读写权限）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/hnBXXjlCQJCnMPVkoNw6mg/zh-cn_image_0000002815559591.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/hnBXXjlCQJCnMPVkoNw6mg/zh-cn_image_0000002815559591.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=862E71158A8498AFD2CA2B3236629AAFB1DD8C0F84A4C304608F1A6833709A7F)
 4. 按照[创建按需加载的请求实例](store-moduleinstall_arkts.md#创建按需加载的请求实例)、[请求按需加载的接口](store-moduleinstall_arkts.md#请求按需加载模块)、[取消下载任务](store-moduleinstall_arkts.md#取消下载任务)、[恢复下载任务](store-moduleinstall_arkts.md#恢复下载任务)和[使用动态模块](store-moduleinstall_arkts.md#使用动态模块)，无需改动参数即可安装好模块调试包，实现取消及恢复下载任务。监听到安装成功后，对应模块目录下的文件会被自动删除。

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1460
 title: TextInput组件中如何实现点击输入框弹出Popup气泡，选中内容时关闭Popup
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > TextInput组件中如何实现点击输入框弹出Popup气泡，选中内容时关闭Popup
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:45+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:ff697d5226f550810667a4d6a5b542659b05fd096efa231acb2b5e6f8c680acd
 ---
@@ -26,7 +26,7 @@ content_hash: sha256:ff697d5226f550810667a4d6a5b542659b05fd096efa231acb2b5e6f8c6
 
 运行效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/7qHtPtbOSFeLDUAfvbNweg/zh-cn_image_0000002658964561.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/7qHtPtbOSFeLDUAfvbNweg/zh-cn_image_0000002658964561.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4E8FC58803B59E28619C6B0EDEDA084D9A7BC0A17FEC66441B126E7072D1DD8 "点击放大")
 
 完整示例参考如下：
 

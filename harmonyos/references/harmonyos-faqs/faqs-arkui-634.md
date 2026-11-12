@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-634
 title: animation播放动画异常突变
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > animation播放动画异常突变
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:43+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:9451772bb6079552fc90ee40f9e089c8999558733fad6dab92d792b81bcb56f5
 ---
@@ -74,11 +74,11 @@ class JumpTrans {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/pRodQBQ0TLqazSZlpjD09g/zh-cn_image_0000002628394280.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/pRodQBQ0TLqazSZlpjD09g/zh-cn_image_0000002628394280.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233158Z&HW-CC-Expire=31536000000&HW-CC-Sign=9153C339C0CEEF147CCF707344E078068E7E9201DB22CB99B5236C7B48E5826C "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/kbSb4QsTTIybbe67GfmGuA/zh-cn_image_0000002658913495.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/kbSb4QsTTIybbe67GfmGuA/zh-cn_image_0000002658913495.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233158Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B8180A8AD11E8BE7655E8B2112A3BE91F6C22B0312B5EB1BC43232BCF5EE505 "点击放大")
 
 ## 背景知识
 

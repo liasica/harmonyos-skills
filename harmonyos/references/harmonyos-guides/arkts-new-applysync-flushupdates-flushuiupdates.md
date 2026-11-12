@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-app
 title: applySync/flushUpdates/flushUIUpdates接口：同步刷新
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 辅助接口 > applySync/flushUpdates/flushUIUpdates接口：同步刷新
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:49511145511b7dd740f0c396d051dab50eb064041a94e700fa5add1fb0bddac6
 ---
@@ -77,7 +77,7 @@ import { UIUtils } from '@kit.ArkUI';
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/rpLbdpH6QQORjopcarlcMg/zh-cn_image_0000002815398177.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/rpLbdpH6QQORjopcarlcMg/zh-cn_image_0000002815398177.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=246777348D7195AEEA4B36E7E11CE93E82B06AD8244CF36662BFFAB7A8AE3E51)
 * flushUpdates接口用于同步刷新在调用该函数之前所有的状态变量修改，包括更新@Computed计算、@Monitor回调以及重新渲染UI节点。
 
   ```typescript
@@ -128,7 +128,7 @@ import { UIUtils } from '@kit.ArkUI';
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/c3jWp_HsQzW3Ha28yvoDug/zh-cn_image_0000002815398177.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/c3jWp_HsQzW3Ha28yvoDug/zh-cn_image_0000002815398177.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=8881F9DCB8BB817C1842E9CF685238B641776046597CE73BAAAE3AB365C67BAB)
 * 上述的applySync、flushUpdates接口都会同步执行@Computed计算和@Monitor回调，这会使得在上述示例代码中，一次点击事件里触发了两次@Monitor回调，这可能会与开发者的预期不符，因此引入了flushUIUpdates接口，该接口仅用于同步刷新在调用该函数之前所有的UI节点，不会执行@Computed计算和@Monitor回调。
 
   ```typescript
@@ -390,7 +390,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/RK0PhwowR5GKhZiIfv1kog/zh-cn_image_0000002786518602.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/RK0PhwowR5GKhZiIfv1kog/zh-cn_image_0000002786518602.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=38CE6B897C970B2DFE8EF6374068F5840304A09ADF68879CBE5CEE39FECFAF0F)
 
 ### 路由场景
 
@@ -464,4 +464,4 @@ struct PageBExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/M9OeVsdET7G2OZI87cm5tw/zh-cn_image_0000002786358674.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/M9OeVsdET7G2OZI87cm5tw/zh-cn_image_0000002786358674.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=6E594C745D4640655A1C4E170F4C359CF1D4B6BB0037012B60FA50370B8AE137)

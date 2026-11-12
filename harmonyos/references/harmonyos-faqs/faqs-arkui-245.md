@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-245
 title: 使用0x八位颜色设置渐变透明度为什么与#八位资源颜色值不同
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 使用0x八位颜色设置渐变透明度为什么与#八位资源颜色值不同
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:03+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:25cd8e7349bd00c541ca64ae5ca5a28c586df89ade9652806fcd01ef4c7af26b
 ---
@@ -51,4 +51,4 @@ struct ColorGradientExample {
 
 效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/U6mQqOqSSHqvqvgI9E4E5A/zh-cn_image_0000002624635834.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/U6mQqOqSSHqvqvgI9E4E5A/zh-cn_image_0000002624635834.png?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=23D2C5CB8B9A2732289D98671E0C51356D5B06CBF5BE93E636A4B2E44C243EC4)

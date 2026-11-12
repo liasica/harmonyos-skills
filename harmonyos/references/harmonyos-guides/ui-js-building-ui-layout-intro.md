@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-buildin
 title: 布局说明
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 构建用户界面 > 构建布局 > 布局说明
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:18+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-03-09
 content_hash: sha256:a6e926f467a752264730970de0a40f7409068583f4f7e297b48d9eb62ced6720
 ---
@@ -26,8 +26,8 @@ content_hash: sha256:a6e926f467a752264730970de0a40f7409068583f4f7e297b48d9eb62ce
 
 **图1** 页面布局分解
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/RdLNu_HrQJOqV2hwtpVsCg/zh-cn_image_0000002786519216.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/RdLNu_HrQJOqV2hwtpVsCg/zh-cn_image_0000002786519216.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=EFBD2358C6D186301732F87B8D36C109CBB26B97ABF1E993BB49C0AC83F261C7)
 
 **图2** 留言区布局分解
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/yTOhU1pJQeucBFGpF9m3mw/zh-cn_image_0000002786359288.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/yTOhU1pJQeucBFGpF9m3mw/zh-cn_image_0000002786359288.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=F645C0725FD35FFF164477528ED8B79C105471DFF84A0FBE3EC95B57D79A109C)

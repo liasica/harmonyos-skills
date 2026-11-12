@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 配置CPP
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 配置构建流程 > 配置CPP
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-06
 content_hash: sha256:62146a8ed1749dd4b3b0f4331027fa3b38130c6d19c496c7fba057a93339bd33
 ---
@@ -67,7 +67,7 @@ filter是Native 库（.so）文件的筛选选项。配置后优先级高于[nap
   + 三方包（包括远程三方包及本地har包）的优先级高于本地依赖模块的优先级。
   + 按照广度优先的遍历方式来收集依赖，如下图，优先级顺序为current > library0 > library1 > library5 > library2 > library3 > library4。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/W_tZH_PoS7-YqPk24yPlzg/zh-cn_image_0000002810750645.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/W_tZH_PoS7-YqPk24yPlzg/zh-cn_image_0000002810750645.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=1EC5A6C138BB280E59DE5F21FA8B3A3580876D5BC20A3B20CDE307FC2CD3D6EC "点击放大")
 * **select**
 
   **表4** select字段说明

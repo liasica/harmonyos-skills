@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1510
 title: 如何解决父子组件传递私有@Builder函数，内容不显示的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决父子组件传递私有@Builder函数，内容不显示的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:48+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:2e262a92ed95d8210f4da3da2e0b2b37330e8c3700b7c118acf4734ee8aeb37e
 ---
@@ -76,11 +76,11 @@ export struct SectionView {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/_l_4sM1DQnivUIg4Q_lIdg/zh-cn_image_0000002628766434.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/_l_4sM1DQnivUIg4Q_lIdg/zh-cn_image_0000002628766434.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=16A7471A602CFFE2B47EC6461CB8A9DE41A9F69598B144A3F1190BE42DCF3442 "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/cHOAycizQdOO9IVgAzhV1g/zh-cn_image_0000002658965769.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/cHOAycizQdOO9IVgAzhV1g/zh-cn_image_0000002658965769.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=F093463E08D0A5E0432C722B2146111D8C8D84A148ED88EC632423C38DE3A511 "点击放大")
 
 ## 背景知识
 
@@ -97,7 +97,7 @@ export struct SectionView {
 
 本地运行代码，没有报错信息，@Builder函数被成功调用，但是内部的Text文本未显示，推测是传入自定义组件的参数值有问题，通过debug发现contentComponent方法中this.message的值为undefined。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/mtGOmC5eQD-T46JsbPQxwg/zh-cn_image_0000002628606556.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/mtGOmC5eQD-T46JsbPQxwg/zh-cn_image_0000002628606556.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=5927233447332D268FD5946086D960180EAC2425D4839B6ABCF448A6908405B6 "点击放大")
 
 ## 分析结论
 

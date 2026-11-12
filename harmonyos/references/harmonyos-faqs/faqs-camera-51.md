@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-camera-51
 title: 使用部分视频配置信息项录制视频文件损坏
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 相机开发（Camera） > 使用部分视频配置信息项录制视频文件损坏
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:00dc18a3b2090fb1c0484800fe259b7beae548f84249a9bf6226f829816d66c9
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:00dc18a3b2090fb1c0484800fe259b7beae548f84249a9bf6226f829816
 
 在进行自定义相机开发时，选择部分视频配置信息项[VideoProfile](../harmonyos-references/arkts-apis-camera-i.md#videoprofile)进行视频录制，录制出的文件会损坏，无法在视频列表中找到录制的视频，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/9dsPeW__SdiFaEQTPVMS1A/zh-cn_image_0000002658791855.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/9dsPeW__SdiFaEQTPVMS1A/zh-cn_image_0000002658791855.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=C6603DC838AD97536BD325D57052BDEBC8520DCDFAA4855AB5B9DE0D49AA3DCC "点击放大")
 
 ## 解决方案
 
@@ -24,4 +24,4 @@ Current video format is 2002 with width 640 and height 480
 
 在选择视频配置信息项时，部分[VideoProfile](../harmonyos-references/arkts-apis-camera-i.md#videoprofile)的[CameraFormat](../harmonyos-references/arkts-apis-camera-e.md#cameraformat)为2002（CAMERA\_FORMAT\_YCRCB\_P010）类型，需要使用[HDR录像](../harmonyos-guides/camera-hdr-recording.md)的开发能力，不然会导致文件损坏。普通录像需要选择CameraFormat为1003（CAMERA\_FORMAT\_YUV\_420\_SP）的VideoProfile，重新选择VideoProfile后的录制效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/t6dHeTKRRsSiKxppQezJZA/zh-cn_image_0000002628552476.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/t6dHeTKRRsSiKxppQezJZA/zh-cn_image_0000002628552476.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=8803301CFFA4A2CEF3F2770D7C1CB67378295313134C5AFDA9E2F67FEC6EF1FC "点击放大")

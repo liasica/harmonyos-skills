@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: ImageBitmap
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > ImageBitmap
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-17
 content_hash: sha256:5aea666e008ba5485142d7fdcd0929440846bc4be8f4a496382816d5d0aef6ee
 ---
@@ -197,7 +197,7 @@ struct ImageExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/24GmG5VCQby_D7wtPZ0_wQ/zh-cn_image_0000002815560901.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/24GmG5VCQby_D7wtPZ0_wQ/zh-cn_image_0000002815560901.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA10E65ACEC0130B8D6B077DDD3CA289E4C92BBBD71194DA76E230A3BC91F142)
 
 ### 示例2（创建ImageBitmap）
 
@@ -236,7 +236,7 @@ struct Demo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Xbv2k8u2RUul7ZT51yKNjA/zh-cn_image_0000002815400985.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/Xbv2k8u2RUul7ZT51yKNjA/zh-cn_image_0000002815400985.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=17A654F2E7BB8716DB3D826DDA2390BD4C50F5E921B146B7AFDFB6931F168455)
 
 ### 示例3（支持并发线程绘制）
 
@@ -298,7 +298,7 @@ workerPort.onmessage = (e: MessageEvents) => {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/YzK2JhlvTNSb5njXpgyX7g/zh-cn_image_0000002815560901.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/YzK2JhlvTNSb5njXpgyX7g/zh-cn_image_0000002815560901.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=968A911C121F68A2F2F4B83D45C6972AB2758284D19D314AC461BA7D62CF2FBF)
 
 ### 示例4（加载Resource图片）
 
@@ -333,4 +333,4 @@ struct ImageBitmapResourceExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/FQ4EiXqZTiut_xnAE8KUcw/zh-cn_image_0000002786521410.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/FQ4EiXqZTiut_xnAE8KUcw/zh-cn_image_0000002786521410.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=8470516398D94C1D16C620E88C8AF39A447AB6E8E4A47A2EA2B59FAE34469A0F)

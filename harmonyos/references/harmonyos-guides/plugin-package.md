@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/plugin-packag
 title: 开发与使用应用插件（PC/2in1）
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发指导 > 开发与使用应用插件（PC/2in1）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:50:56+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:58b324d8e5bcd05ef8b1b28da0ef15b44c58266f3b3632a9b119bde26af6f2d7
 ---
@@ -30,7 +30,7 @@ content_hash: sha256:58b324d8e5bcd05ef8b1b28da0ef15b44c58266f3b3632a9b119bde26af
 
 1. 插件包本质上是动态共享包HSP，参考[创建HSP模块](ide-hsp.md#section79378499185)在工程中创建插件模块plugin。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/aOdi-vaYR1yZu2-uqWlb8g/zh-cn_image_0000002815397885.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/aOdi-vaYR1yZu2-uqWlb8g/zh-cn_image_0000002815397885.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=391EA722A8C986BF0AF1C1473FECE4A19FE45C24EE7A7F13716AF96FD16A5E8D)
 2. 在[app.json5](app-configuration-file.md)中配置bundleType字段为appPlugin，该字段表示当前包为应用的插件包，bundleName为插件的包名。
 
    ```json5
@@ -49,16 +49,16 @@ content_hash: sha256:58b324d8e5bcd05ef8b1b28da0ef15b44c58266f3b3632a9b119bde26af
    ```
 3. 选择DevEco Studio菜单栏中的File > Project Structure，在Signing Configs页面勾选Automatically generate signature。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/OR30sxVuSsGbTaBbi9Kr1Q/zh-cn_image_0000002786518310.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/OR30sxVuSsGbTaBbi9Kr1Q/zh-cn_image_0000002786518310.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=52CDF68C9EBAB2F40CCDC9AAE8A6C72EC79CF43FE8E5E1E007D05803F0947580)
 
 ### 编译打包
 
 1. 选中工程目录中插件模块的文件目录，通过DevEco Studio菜单栏的Build > Make Module ${libraryName}进行编译构建。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/oBB4AZbTT6ySRG5aiIoPUA/zh-cn_image_0000002786358382.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/oBB4AZbTT6ySRG5aiIoPUA/zh-cn_image_0000002786358382.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=3295C5B636DA807769E2F15906023D7ECBB6714CA4A4CACA43742698164E5B71)
 2. 编译完成后，会在工程目录中生成对应的产物。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/4VLZ0K9tSzmK3L1jzuxQig/zh-cn_image_0000002815557803.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/4VLZ0K9tSzmK3L1jzuxQig/zh-cn_image_0000002815557803.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9B5295F7FAA93F72CE267AB78717E9B3325082BA4963D0B8EFDAE7D2E6D6813)
 
 ## 使用应用插件
 

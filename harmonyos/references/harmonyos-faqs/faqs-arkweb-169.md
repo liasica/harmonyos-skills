@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-169
 title: H5页面如何调用应用自定义弹窗并传递参数
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > H5页面如何调用应用自定义弹窗并传递参数
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:5f8d2abd073e4afe8c9934d97105d2a778d15714215fa4dc0efc8f5fbe1dd3d3
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:5f8d2abd073e4afe8c9934d97105d2a778d15714215fa4dc0efc8f5fbe1
 
 H5触发应用端自定义弹窗时，如何将参数从H5侧传递至应用弹窗，并实现[WebViewController](../harmonyos-references/arkts-apis-webview-webviewcontroller.md)与[CustomDialogController](../harmonyos-references/ts-methods-custom-dialog-box.md#customdialogcontroller)的逻辑分离，使其各自独立于不同文件？项目文件结构大致如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/zS7wTAo5QIieJBQBlsU7-A/zh-cn_image_0000002628899166.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/zS7wTAo5QIieJBQBlsU7-A/zh-cn_image_0000002628899166.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=46972FCEC9809431866462CAD21C51B43C80B09EAA20C516510A728F94653CA8 "点击放大")
 
 ## 背景知识
 

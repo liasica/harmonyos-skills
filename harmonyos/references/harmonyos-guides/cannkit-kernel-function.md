@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-kerne
 title: 核函数
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > 基本概念 > 编程模型 > 核函数
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:41+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:75054d6f99095860f6fd9c70d8a15589d96f426df7d2f7ae642e65d73b4e414c
 ---
@@ -36,7 +36,7 @@ extern "C" __global__ __aicore__ void add_custom(__gm__ uint8_t* x, __gm__ uint8
 
   **图1** 核函数（device侧执行）、host侧执行函数、device侧执行函数（除核函数之外的）调用关系
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/_FWggbwSQp26WQjkqIh1lw/zh-cn_image_0000002815560101.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/_FWggbwSQp26WQjkqIh1lw/zh-cn_image_0000002815560101.png?HW-CC-KV=V1&HW-CC-Date=20261112T233225Z&HW-CC-Expire=31536000000&HW-CC-Sign=827DB017442B4A1FA4882E63E6EE7F33A8B2BE8080BAF4236A0628F2737F8068)
 * **使用变量类型限定符**
 
   指针入参变量需要增加变量类型限定符\_\_gm\_\_，表明该指针变量指向Global Memory上某处内存地址。

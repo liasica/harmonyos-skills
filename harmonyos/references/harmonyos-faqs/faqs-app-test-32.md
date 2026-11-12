@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-3
 title: UI测试中如何在feature模块启动当前模块的ability
 breadcrumb: FAQ > DevEco Studio > 应用测试 > UI测试中如何在feature模块启动当前模块的ability
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:b9376645a86d504eb82801005a9e4e66aa4bd1c275070437d93dff11d0e15e8c
 ---
@@ -20,7 +20,7 @@ UI测试框架（UITest）为开发者提供UI界面查找和模拟操作能力�
 
 1. 在项目工程中新建feature模块：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/cS3L8R2NThavWhTucBUJ3g/zh-cn_image_0000002658808887.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/cS3L8R2NThavWhTucBUJ3g/zh-cn_image_0000002658808887.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=D3311FD3C999FAB428C5CB64981407C1C9FE4966A2867E59522B383FE623E83D "点击放大")
 2. 打开feature\src\main\module.json5，查看abilities标签的name属性值，确认需要启动的abilityName：
 
    ```json

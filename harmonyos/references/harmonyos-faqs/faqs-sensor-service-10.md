@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-sensor-ser
 title: 如何实现小球随设备角度变化而运动
 breadcrumb: FAQ > 系统开发 > 硬件 > 传感器（Sensor Service） > 如何实现小球随设备角度变化而运动
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:24+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:08f125f8e89b341171acd3cf18335f0a9a358427d487eba74215629fa1b20c09
 ---
@@ -287,11 +287,11 @@ struct Solution2 {
 
 Canvas方案：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/1Erae7jtTEeuBAa5FUU4xQ/zh-cn_image_0000002628775008.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/1Erae7jtTEeuBAa5FUU4xQ/zh-cn_image_0000002628775008.png?HW-CC-KV=V1&HW-CC-Date=20261112T233218Z&HW-CC-Expire=31536000000&HW-CC-Sign=47701FCCCA4847883F17F0F3D4B4CC32402B81ABD3C4EC690EA9748C9BE831FF "点击放大")
 
 Circle方案：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/0waf3uu3Qcuuz6746eD48A/zh-cn_image_0000002658974321.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/0waf3uu3Qcuuz6746eD48A/zh-cn_image_0000002658974321.png?HW-CC-KV=V1&HW-CC-Date=20261112T233218Z&HW-CC-Expire=31536000000&HW-CC-Sign=6734FD12803203F9BB495550781E9D9432764756BD2C4D6C0330BABE7348E5AC "点击放大")
 
 ## 总结
 

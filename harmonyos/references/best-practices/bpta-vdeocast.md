@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-vdeocast
 title: 视频投播
 breadcrumb: 最佳实践 > 技术创新 > 全场景 > 多端协同 > 视频投播
 category: best-practices
-scraped_at: 2026-11-10T10:42:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:dff5fff6afce01a34cd409f5d0fe2893f527b97d751a4c23d3f8a8787a9cf524
 ---
@@ -52,7 +52,7 @@ content_hash: sha256:dff5fff6afce01a34cd409f5d0fe2893f527b97d751a4c23d3f8a8787a9
 
 投播功能通过AVSession建立设备连接，由AVCastController控制远端播放。详见[运作机制](../harmonyos-guides/distributed-playback-overview.md#运作机制)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/gn10yk_nTfWZarMR4bZOCA/zh-cn_image_0000002345973089.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/gn10yk_nTfWZarMR4bZOCA/zh-cn_image_0000002345973089.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=51B8DB3A273972AD419710502EEE41644C717C074CE884CAAA77963C904ABBEC "点击放大")
 
 ## 模块设计
 
@@ -64,13 +64,13 @@ content_hash: sha256:dff5fff6afce01a34cd409f5d0fe2893f527b97d751a4c23d3f8a8787a9
 
 完成投播功能，建议参考如下流程接入，其中本端视频显示和控制可参考[视频播放（Video）](../doccenter-capabilities/arkts-common-components-video-player.md)组件、[使用AVPlayer播放视频(ArkTS)](../harmonyos-guides/video-playback.md)、[使用AVPlayer播放视频(C/C++)](../harmonyos-guides/using-ndk-avplayer-for-video-playback.md)等视频实现方案根据功能诉求自行实现，本文从接入播控中心进行介绍。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/M66q6IJ0QS6jHZ3x12wZPg/zh-cn_image_0000002345853277.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/M66q6IJ0QS6jHZ3x12wZPg/zh-cn_image_0000002345853277.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=CA67E1DE0CB4C8CE3C02A555F7783705B2B18450F130FBD76853C6A5827D36B9 "点击放大")
 
 ## 接入播控中心
 
 投播功能依赖于播控中心，因此必须接入播控中心才能实现投播功能。播控中心不仅能够控制本端设备的播放，还能控制远端设备的播放。本章节将简要介绍应用接入播控中心的开发流程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/840vzEx2Ry-TXa6OZktQZg/zh-cn_image_0000002346524017.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/840vzEx2Ry-TXa6OZktQZg/zh-cn_image_0000002346524017.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE4E93F0322B77B297E4BEA6049213D417AE14B1591C879813F1FBC6DBF62284 "点击放大")
 
 ### 媒体会话初始化
 
@@ -155,7 +155,7 @@ this.videoSession.on('pause', () => avPlayerController.setAVPlayerPause());
 
 **时序图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/18qYmF32RH2MGO-pF6aA7g/zh-cn_image_0000002345973101.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/18qYmF32RH2MGO-pF6aA7g/zh-cn_image_0000002345973101.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=E3E75D999628263CAF6A80AF49E703EF325B89654BF936F5D58F79C889E6B168 "点击放大")
 
 **开发步骤**
 
@@ -168,7 +168,7 @@ this.videoSession.on('pause', () => avPlayerController.setAVPlayerPause());
    ```
 2. 绘制AVCastPicker，AVCastPicker是投播组件，点击后系统会弹出设备选择半模态。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/IummGpHBQi-FVS_pf_-8WQ/zh-cn_image_0000002473018785.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/IummGpHBQi-FVS_pf_-8WQ/zh-cn_image_0000002473018785.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=C72C899505A4FCF446DD33D644B4BAA4234241F72219F9DCB99EBE6955F583BE "点击放大")
 
    ```typescript
    AVCastPicker({
@@ -295,7 +295,7 @@ this.videoSession.on('pause', () => avPlayerController.setAVPlayerPause());
 
 **时序图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/TMaDP5r0Qa2gHZ7iPDbiJQ/zh-cn_image_0000002311894312.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/TMaDP5r0Qa2gHZ7iPDbiJQ/zh-cn_image_0000002311894312.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=A7F64C0F6D12AD9031F0ED81F20F12BD6602A95C27C2BEBAA11AB96814161626 "点击放大")
 
 **开发步骤**
 
@@ -360,7 +360,7 @@ try {
 
 **时序图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/QGJR9fH3SQ2BfZ2TEv6VoA/zh-cn_image_0000002345853289.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/QGJR9fH3SQ2BfZ2TEv6VoA/zh-cn_image_0000002345853289.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=86A67247594624287E7837071B8554EBF8C21DA64F0A217D32001BEE3399619D "点击放大")
 
 **开发步骤**
 
@@ -396,7 +396,7 @@ export class VideoCastController {
 
 **时序图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/ewFW5fXcTSaXPPYUn092vQ/zh-cn_image_0000002311894316.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/ewFW5fXcTSaXPPYUn092vQ/zh-cn_image_0000002311894316.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=777269E84B87CA130D189ADF068D1FCA62AA3DF60DD3339AF5B06AE7C1CEAC9B "点击放大")
 
 **开发步骤**
 
@@ -460,7 +460,7 @@ public async setAVCastSpeed(speed: media.PlaybackSpeed) {
 
 建议应用集成悬浮球快捷控制功能，便于用户快速返回投播页面进行操作控制，实现效果如图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/rG3-5F3fTK6mj2mUuzJYQw/zh-cn_image_0000002346644421.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/rG3-5F3fTK6mj2mUuzJYQw/zh-cn_image_0000002346644421.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE047B62FB1E9151D9B0D9C7AECC87A6665577A43722B8B9B12C04C42DBD49BD "点击放大")
 
 可以通过为页面设置浮层实现。
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkts-163
 title: 混淆编译keep配置使用通配符*不生效
 breadcrumb: FAQ > 应用框架开发 > ArkTS语言 > 方舟编程语言（ArkTS） > 混淆编译keep配置使用通配符*不生效
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:53+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:742c8e1f41f5cc4acf41d778952406328327c08c6901825a0b72a22ad16e01db
 ---
@@ -43,11 +43,11 @@ content_hash: sha256:742c8e1f41f5cc4acf41d778952406328327c08c6901825a0b72a22ad16
 
    不使用保留选项：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/nAo8FK8NTZOPK8nGhj7nxg/zh-cn_image_0000002659138341.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/DAp4HbQOTLeXDhg0j9WIGQ/zh-cn_image_0000002629058990.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/nAo8FK8NTZOPK8nGhj7nxg/zh-cn_image_0000002659138341.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AA09C8E3EE0328E752315920EC90C8336C9025A55758FD377FF05C1B1ECCFA7 "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/DAp4HbQOTLeXDhg0j9WIGQ/zh-cn_image_0000002629058990.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=A5F727D76D4CA014E93570D9E278DB9F85B69E65F81F9980FD8040727D54E903 "点击放大")
 
    使用保留选项：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/gyVAf6meSxabLPkpQZzjfQ/zh-cn_image_0000002628899072.png "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/dQw_x4cMSkeipfqaCOGQyA/zh-cn_image_0000002659258283.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/gyVAf6meSxabLPkpQZzjfQ/zh-cn_image_0000002628899072.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=C577B982AFAB9AC9A85983D1ACAF92018BEA3A6ECBEB2A963050740BA905E1DF "点击放大")![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/dQw_x4cMSkeipfqaCOGQyA/zh-cn_image_0000002659258283.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A4B25A29A0AA11A540E4E0EACC4681D48FDCC9258654CE8C2AC6A896FE947B6 "点击放大")
 
    对比两者，使用保留选项后，文件夹及文件名被混淆，而变量名、类名、属性名未被混淆，即-keep生效，而-keep-file-name未生效。
 2. -keep-file-name指定要保留的文件/文件夹的名称，将-keep-file-name配置修改为名称配置而非路径配置，即将路径../src/main/ets/model/\*\*修改为文件夹名称model和文件名称TestModel：

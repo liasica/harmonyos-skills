@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-fa
 title: List组件下拉刷新与加载
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > List组件下拉刷新与加载
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:32+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:91febb1b15ab0b641694b297b6d80d069be350f2d76d1b8054d98eab062565e8
 ---
@@ -79,7 +79,7 @@ struct ScalingComponent {
 };
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/82t5OFMQQ9GlMxudISA9vQ/zh-cn_image_0000002795322703.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/82t5OFMQQ9GlMxudISA9vQ/zh-cn_image_0000002795322703.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=9AB2127ABB8662FEA1A86C942253A4229C7F088B01C76DC1D5937E57801388D1 "点击放大")
 
 **Q：在List组件中，如何实现下拉刷新和上拉加载的功能？**
 

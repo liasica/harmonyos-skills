@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-animati
 title: 动画衔接
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 动画衔接
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:15+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:e851e28b1ad6ca11ddf55fdcab6140646b14e4b86ae568ddfb7a68abb51b03a1
 ---
@@ -65,7 +65,7 @@ struct AnimationToAnimationDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/vex4OrCIS7CjHuth1i0JJg/zh-cn_image_0000002786359172.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/vex4OrCIS7CjHuth1i0JJg/zh-cn_image_0000002786359172.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=E954FD9252460DA28F2A32701EB27589A12E896ED562A6593EA8859C543776D2)
 
 ## 手势与动画的衔接
 
@@ -141,4 +141,4 @@ struct SpringMotionDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/XLr6Pm7DRbKcPJo-eOgsyA/zh-cn_image_0000002815558593.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/XLr6Pm7DRbKcPJo-eOgsyA/zh-cn_image_0000002815558593.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F3AC065A04CF12FEC7678660351CB14774D4B05E2979274325484FAEDB93D16)

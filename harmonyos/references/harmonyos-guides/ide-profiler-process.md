@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-
 title: 性能优化过程简介
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 使用Profiler进行性能调优 > 性能优化过程简介
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-10
 content_hash: sha256:337637d68fbed4680397d7cabd448b845da8eb18999f5e9cc0639f4c79da2a44
 ---
@@ -17,4 +17,4 @@ DevEco Profiler也遵循以上流程，在使用DevEco Profiler进行性能优�
 3. 根据性能分析的结果优化代码；
 4. 再次通过实时监控查看各项资源的使用情况是否符合预期，来验证代码修改的可行性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/gfSFcnK0S46r7AvFF7JrnQ/zh-cn_image_0000002779567216.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/gfSFcnK0S46r7AvFF7JrnQ/zh-cn_image_0000002779567216.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7B83DC2BF968781552BAEAE0029099C9751E4DD2406670725ADAFFAF048DE6C)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-nat
 title: 调试Native子进程
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 调试Native子进程
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:03+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:1ee93231b389c10265e7d1e61c84e32d92619998d8baace95e08015a56d3a024
 ---
@@ -38,7 +38,7 @@ content_hash: sha256:1ee93231b389c10265e7d1e61c84e32d92619998d8baace95e08015a56d
 settings append target.exec-search-paths "<符号文件所在文件夹路径>"
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/OjXldLSPSkeXnE7BGquT-Q/zh-cn_image_0000002808766233.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/OjXldLSPSkeXnE7BGquT-Q/zh-cn_image_0000002808766233.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=F9FEE15647E04ED44764D9236C564A7007C8EB020D65F5A8EE48BEF3CD9E0084 "点击放大")
 
 ### 添加源码映射
 
@@ -53,7 +53,7 @@ settings set target.source-map "<编译时路径>" "<本地源码路径>"
 * 编译时路径：符号文件中记录的源码路径，可通过dwarfdump或LLDB image dump symfile查看。
 * 本地源码路径：本地对应源码文件的实际路径。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/i6b5J90pRv6KwPCJMVhfQA/zh-cn_image_0000002808766239.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/i6b5J90pRv6KwPCJMVhfQA/zh-cn_image_0000002808766239.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=885B99CD6D9A60B1C91CCD2D20C43BF1BB1ECC131BD70949B2EFCB426502C45E "点击放大")
 
 调试过程中如果找不到源码文件，DevEco Studio也会在反汇编窗口顶部弹出通知，点击后可直接选择本地文件完成映射。
 
@@ -61,11 +61,11 @@ settings set target.source-map "<编译时路径>" "<本地源码路径>"
 
 通过attach方式对Native子进程进行调试，在attach窗口中直接选择子进程进行调试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/ECsa_uaWSpuW512R1yAbVA/zh-cn_image_0000002808886317.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/ECsa_uaWSpuW512R1yAbVA/zh-cn_image_0000002808886317.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=F444772E545AAF4D4DDB3FB325AF06C32591B33BE148FF700B3E55B7F5D473CC)
 
-或者先attach调试主进程，再点击调试面板的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/pdZcP7QjTPqhpC75iIj6ig/zh-cn_image_0000002808886313.png)，打开attach窗口选择子进程进行调试。
+或者先attach调试主进程，再点击调试面板的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/pdZcP7QjTPqhpC75iIj6ig/zh-cn_image_0000002808886313.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=71E6D3E9487D83DC980DB88F0DB771EB87AAB6BB21291224300F780AFEC5D30C)，打开attach窗口选择子进程进行调试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/qZVChRlISlqvrsQxtOmqcw/zh-cn_image_0000002779406670.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/qZVChRlISlqvrsQxtOmqcw/zh-cn_image_0000002779406670.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=510F59AC0FEA776E526238EBA548D539C660DA34E98559AEDFBB44D8D0D0769C)
 
 ## 常见问题
 

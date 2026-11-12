@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avsession-ove
 title: AVSession Kit简介
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > AVSession Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:02+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:75f21b64c09f9b60d20ca1597ef88e0c3153d6a356b41fc5bdfb96c52c48ce8a
 ---
@@ -52,7 +52,7 @@ AVSession Kit（Audio & Video Session Kit，音视频播控服务）是系统提
 
 媒体会话分为本地和分布式两种场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/_2ZS-vsxR0Kszxd_C3-ipw/zh-cn_image_0000002815399393.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/_2ZS-vsxR0Kszxd_C3-ipw/zh-cn_image_0000002815399393.png?HW-CC-KV=V1&HW-CC-Date=20261112T233223Z&HW-CC-Expire=31536000000&HW-CC-Sign=C511C86709883614D3952107EABC9EC81F5581421B0BF5D9995FC440E8C1CC88)
 
 * 本地媒体会话
 

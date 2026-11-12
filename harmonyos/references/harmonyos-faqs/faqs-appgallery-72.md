@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 应用包无法上传到HarmonyOS 开发者中心怎么办，是否网络限制
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 应用包无法上传到HarmonyOS 开发者中心怎么办，是否网络限制
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:34db32e2ed6c74bbe914d7cfe9dd3b03355c47de0751644e36738153fba38c95
 ---
@@ -20,4 +20,4 @@ content_hash: sha256:34db32e2ed6c74bbe914d7cfe9dd3b03355c47de0751644e36738153fba
 2. 网络是否进行了代理等VPN环境设置。如果有，建议断开VPN代理后再尝试上传，尝试切换网络（如手机热点）验证是否为网络VPN问题。
 3. 软件包上传完成后系统也会进行软件包解析，应用包的检测耗时会随着检测项目数量的增加而相应延长。通常情况下，检测时间在10分钟内完成属于正常范围。可以继续等待解析结果，或者切换其他页面后在“软件包管理”菜单查看解析报告。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/ETHDP877RTyKTXxQYkgUuA/zh-cn_image_0000002628394630.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/ETHDP877RTyKTXxQYkgUuA/zh-cn_image_0000002628394630.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=91C0109CEBB456671ED02E67654AD7E51AA27EA70D6D6EE1A129551FD642D6BC "点击放大")

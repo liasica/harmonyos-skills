@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-swiper
 title: Indicator
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 导航与切换 > Indicator
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:ec83eb865b455be786610f098cb853358ac520359f0c651de9abb6014e6aa831
 ---
@@ -297,7 +297,7 @@ struct DotIndicatorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/lslb-RxpRHK2F3k2kvOKQw/zh-cn_image_0000002786361174.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/lslb-RxpRHK2F3k2kvOKQw/zh-cn_image_0000002786361174.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F7D54BCB439990894A546A1B17AB8EAD83160914D7E40FE432B1B9D939EE8CA)
 
 ### 示例2（数字单独导航点与Swiper绑定使用）
 
@@ -359,4 +359,4 @@ struct DigitIndicatorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/V12i3fAZQYO576_ZqNrl9Q/zh-cn_image_0000002815560595.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/V12i3fAZQYO576_ZqNrl9Q/zh-cn_image_0000002815560595.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=62CA8BE9F0A9303A8C40A0D4E01CC4CECC166E77DCC33B751C1AE1E239167128)

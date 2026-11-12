@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-14
 title: 如何获取APP的系统名称与桌面名称
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > 如何获取APP的系统名称与桌面名称
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:49+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:66292331cf60722219740f3a1bac978d9e6e31159c7cda529d5d6d771fe301b7
 ---
@@ -79,7 +79,7 @@ struct Index1 {
 
 验证图示和桌面APP图示如下:
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/ahEeskD8QJasn1cjLRMwLQ/zh-cn_image_0000002658988569.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/VzvKJZw1R4aKEnmTNXSKGw/zh-cn_image_0000002658868625.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/ahEeskD8QJasn1cjLRMwLQ/zh-cn_image_0000002658988569.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=3230B823AB28DD290B5E31BB6FA832226A03156A5DAAF11F88F94213005E65CA "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/VzvKJZw1R4aKEnmTNXSKGw/zh-cn_image_0000002658868625.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=ACA6FC3EE46FA2192BE2C6DEFB71396B4A36A9856AA5956AEC6C7F851372712D "点击放大")
 
 ## 常见FAQ
 

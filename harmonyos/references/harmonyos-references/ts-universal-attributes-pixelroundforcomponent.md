@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 组件级像素取整
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 布局与边框 > 组件级像素取整
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:91154b530d24ebca1693dd447232db50a8be58b14a1a90dae7ad3b556b32adcd
 ---
@@ -140,8 +140,8 @@ struct PixelRoundExample {
 
 **图1** 使用pixelRound指导布局效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/zqDagAleThSEJ2rOV2cRfQ/zh-cn_image_0000002815400497.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/zqDagAleThSEJ2rOV2cRfQ/zh-cn_image_0000002815400497.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=3AC537E3538A9EF735FE9C4E61551958845E4572953B597FA06A46E240C6DC49)
 
 **图2** 不使用pixelRound指导布局效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/tmHNpCq1SEG_cWk0RbRMtg/zh-cn_image_0000002786520922.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/tmHNpCq1SEG_cWk0RbRMtg/zh-cn_image_0000002786520922.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=A699353763EE9396170FD0BD29EFA38A34088E0E3F6D8A38889337CB3B187CA9)

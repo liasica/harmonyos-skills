@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: Popup
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > Popup
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:27+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:3a43bba2ceee78ca5a413a18718c22c959e82ad38a8a5bca239185113a8697dd
 ---
@@ -175,7 +175,7 @@ struct PopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/-73MLVdjTlS9uo9kLYZMXg/zh-cn_image_0000002815401171.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/-73MLVdjTlS9uo9kLYZMXg/zh-cn_image_0000002815401171.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEFFD41C807B0E71E3B603FA8DB5B6AE3A43AE67700D47E9B92CE7327CC02B10)
 
 ### 示例2（设置镜像效果）
 
@@ -250,7 +250,7 @@ struct PopupPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/m7MwsYxMQo2aqVQRFc0WCw/zh-cn_image_0000002786521596.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/m7MwsYxMQo2aqVQRFc0WCw/zh-cn_image_0000002786521596.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=ACCD8280668BD8D7C60FCE1280FFF59BF8A3E8649C03B0CDE7870D588EC1B5D5)
 
 ### 示例3（设置自定义宽度）
 
@@ -316,4 +316,4 @@ struct PopupPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/3g8t1cFXT167m1uwWrdPDg/zh-cn_image_0000002786361668.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/3g8t1cFXT167m1uwWrdPDg/zh-cn_image_0000002786361668.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=B35F1F07201B3A813011BFB3325ABC0320A5FE81D7CCA3C222A7E7B2F6D16AFC)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-925
 title: 富文本RichEditor能否实现有序标签和无序标签
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 富文本RichEditor能否实现有序标签和无序标签
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:13+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:b7bcdb248dd801a59d526457b750806b2f4c84a3296dd73f736bc34c84b5d2d3
 ---
@@ -14,7 +14,7 @@ RichEditor能否实现文本的有序标签和无序标签？如果不能有没�
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/rA7Ki6toQiq8Rp25B0GjZg/zh-cn_image_0000002628400318.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/rA7Ki6toQiq8Rp25B0GjZg/zh-cn_image_0000002628400318.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2A81509DEA287B13FCD2A91517E2058BB0A58D68B430C3E3B25AAF60FD73D3B "点击放大")
 
 ## 背景知识
 

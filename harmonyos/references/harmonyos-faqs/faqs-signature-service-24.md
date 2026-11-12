@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-signature-
 title: 元服务编译打包时报错
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 元服务编译打包时报错
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:57+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:7740ea0136a37a0679aef075767d9304756f925bcf7caf08f21798c6a62f9a88
 ---
@@ -23,9 +23,9 @@ HarmonyOS通过数字证书与Profile文件等签名信息来保证应用/元服
 1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)，选择“证书、APP ID和Profile”。
 2. 选择查看Profile中绑定的包名是否正确。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/ugfFq-yrRhegr_Due7No6Q/zh-cn_image_0000002628409402.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/ugfFq-yrRhegr_Due7No6Q/zh-cn_image_0000002628409402.png?HW-CC-KV=V1&HW-CC-Date=20261112T233218Z&HW-CC-Expire=31536000000&HW-CC-Sign=64CB4135C8B9B02CC1027238C19A0B3176D3937B6CF5F2457F58E5E88BA5343C "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/3LLeDnk-S06WDhfrReLlAQ/zh-cn_image_0000002658808671.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/3LLeDnk-S06WDhfrReLlAQ/zh-cn_image_0000002658808671.png?HW-CC-KV=V1&HW-CC-Date=20261112T233218Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE5A850DA5010698016F01B084EFFB107075E3240403BD43BCEE7025713DB693 "点击放大")
 3. 如果当前Profile绑定的应用包名不符合要求，可以重新[申请发布Profile](../app/agc-help-release-cert-0000002283336729.md)。
 
 ## 分析结论

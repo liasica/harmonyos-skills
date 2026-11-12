@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-512
 title: 页面滚动到某个距离后禁止继续向下滚动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 页面滚动到某个距离后禁止继续向下滚动
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:e6b343dce9485568288035b3d9b48df56817f01a66213f5168c9e0fff43e0aa3
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:e6b343dce9485568288035b3d9b48df56817f01a66213f5168c9e0fff43
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/X0yxDG3sQxuUp6Cf9hEyCA/zh-cn_image_0000002628548520.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/X0yxDG3sQxuUp6Cf9hEyCA/zh-cn_image_0000002628548520.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=32767935C2E20FEF097D335D77573D016FCDC9BE781B3604CDC8D8A53120FA9A "点击放大")
 
 ## 背景知识
 

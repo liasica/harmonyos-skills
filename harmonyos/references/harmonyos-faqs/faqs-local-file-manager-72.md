@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-local-file
 title: 关系型数据库文件如何清理
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 本地文件管理 > 关系型数据库文件如何清理
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:66bb2acb92b61a0862e1aceb42956f1321fdfe5532eab847ee46ba8c6de4e475
 ---
@@ -14,13 +14,13 @@ content_hash: sha256:66bb2acb92b61a0862e1aceb42956f1321fdfe5532eab847ee46ba8c6de
 
 调用deleteRdbStore删除后的文件夹结构如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/a08L3JtgRgamyKxwOJg03A/zh-cn_image_0000002628899110.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/a08L3JtgRgamyKxwOJg03A/zh-cn_image_0000002628899110.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=24CE4066C7AE8AF6D1855CDBAA5E66345B09CB1A0708F868AEA89FF363FEA5DC)
 
 ## 背景知识
 
 * [relationalStore.getRdbStore](../harmonyos-references/arkts-apis-data-relationalstore-f.md#relationalstoregetrdbstore)：创建或打开已有的关系型数据库，开发者可以根据自己的需求配置config参数，然后通过RdbStore调用相关接口执行数据操作。使用Promise异步回调。系统会根据配置创建关系型数据库文件目录，如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/QKybuvYDS1ilh2MdUiNkcg/zh-cn_image_0000002659138379.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/QKybuvYDS1ilh2MdUiNkcg/zh-cn_image_0000002659138379.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=955E71708F249F105CEDF87843D71F9E5705909A28EE044EFCBDE0FA3448C57C)
 * [relationalStore.deleteRdbStore](../harmonyos-references/arkts-apis-data-relationalstore-f.md#relationalstoredeleterdbstore10-1)：使用指定的数据库文件配置删除数据库，使用Promise异步回调。
 * 关系型数据库目录："/data/app/el2/100/database/(bundleName)/entry/rdb/"，参考：[获取应用文件路径](../harmonyos-guides/application-context-stage.md#获取应用文件路径)。
 

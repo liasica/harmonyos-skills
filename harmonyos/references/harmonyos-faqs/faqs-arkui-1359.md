@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1359
 title: 如何实现长按进度动画
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现长按进度动画
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:6cf5cf6d90c5af2203a7eed56ab6127cfbaa39c27e5e85cc4c9b7317f40dfede
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:6cf5cf6d90c5af2203a7eed56ab6127cfbaa39c27e5e85cc4c9b7317f40
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/mfKJXG0qTjKoP8pbyN-XyA/zh-cn_image_0000002628601994.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/mfKJXG0qTjKoP8pbyN-XyA/zh-cn_image_0000002628601994.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=33B317614E3BE11FCD829958F39184D90E7900976C1B59095AA0F21358817D98 "点击放大")
 
 ## 背景知识
 

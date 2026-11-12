@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-power-foot
 title: 应用前台CPU高负载
 breadcrumb: FAQ > 应用质量 > 技术质量 > 功耗 > 应用前台CPU高负载
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:39+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:4de599d189cd9bb10181b9406b45a5ca192a4ad657cab94d16f0c7746bc7a524
 ---
@@ -26,46 +26,46 @@ content_hash: sha256:4de599d189cd9bb10181b9406b45a5ca192a4ad657cab94d16f0c7746bc
 
 1. 使用DevEco Profiler实时检测工具(Realtime Monitor)查看运行应用一段时间后的在CPU上的运行占比以及设备温度，如果手机温度在持续上升达到发热、应用进程运行在CPU运行占比较高，如下图所示，则存在功耗问题。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/G4ibmwPeSFuxDhJc6CxV1A/zh-cn_image_0000002628316224.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/G4ibmwPeSFuxDhJc6CxV1A/zh-cn_image_0000002628316224.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=489E201CEA0EC6CDEE34FB648E7C2AD38B85DA53B720B7AA78FBD08DEFD7E26C "点击放大")
 2. 使用Smartperf的Hiperf工具抓取该过程的火焰图数据，通过Hiperf的火焰图功能查看运行占比较高的线程是应用子线程还是渲染相关的线程，展开Hiperf泳道，框选前面两个泳道，下方会以运行频率从高到低来显示各个进程的情况。
    * 如果运行占比较高的线程为应用的子线程，则会看到如下图所示的情况，在运行占比最高的应用进程7139中，子线程7394运行占比最多。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/L4_A0c9GRESR4j9CrNvGsg/zh-cn_image_0000002658675461.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/L4_A0c9GRESR4j9CrNvGsg/zh-cn_image_0000002658675461.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=87004FF37863D00698AAE6557EBBC62BC1BA1CC693AE4341B5A75599960CFDCC "点击放大")
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/FCL0Ws6vS4e714vSC596ow/zh-cn_image_0000002658555519.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/FCL0Ws6vS4e714vSC596ow/zh-cn_image_0000002658555519.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=14B5023B5479CE9CECEA946B37E53FF98CCBF738103CA31C9760BDFF84D8DD3C "点击放大")
 
      a.在应用线程中该子线程的泳道，框选运行状态，查看该线程主要运行在什么CPU上，如果在CPU10和CPU11（大核）上，则确定是由于该线程长时间运行导致功耗问题。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/soAUbD4DQe2m3hLCsO7EYA/zh-cn_image_0000002628476140.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/soAUbD4DQe2m3hLCsO7EYA/zh-cn_image_0000002628476140.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=DB09497F48B987EB3DFCDBD54355976A54F669B448FF11EAFA4B7414B201EAFF "点击放大")
 
      b.通过Perf Profile来查看该线程的调用栈，耗时集中在执行什么函数上。从下图中可以看到uv\_run运行时间最长，堆栈中涉及到了libuv.so库，该库基于事件驱动来实现异步I/O，适用于网络编程和文件系统操作。应用通常使用该库访问云侧查询数据，因此需要排查应用侧业务处理逻辑是否合理，是否存在死循环，任务是否过多。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/sn-DUOaVQq2itV2gvjfsCw/zh-cn_image_0000002628316228.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/sn-DUOaVQq2itV2gvjfsCw/zh-cn_image_0000002628316228.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=B4A47F648DADC23E10B55BD3C2C621414B47599B904CD12802AAFD385D09FD42 "点击放大")
    * 如果运行占比较高的线程为绘制、渲染相关的线程，如下图所示，渲染服务进程render\_service和应用进程29187运行占比最高。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/x1Ddr1fsTmCATqGRxBbqOQ/zh-cn_image_0000002658675465.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/x1Ddr1fsTmCATqGRxBbqOQ/zh-cn_image_0000002658675465.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E7CE825821D01116F266F9448013306BAD37C8AF9E8E17BF9442E72773677A8 "点击放大")
 
      a.点击/system/bin/render\_service(1466)查看render\_service的子线程运行占比，可看到RSUniRenderThread线程和主线程占比最高。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/K_LrvqO8Qb6G_-y7Yusl7A/zh-cn_image_0000002658555523.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/K_LrvqO8Qb6G_-y7Yusl7A/zh-cn_image_0000002658555523.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=002EE56B8FABB16E5E6B95A1B38E4EE872EC8CF37558FC5A5CBA964EA9944EF0 "点击放大")
 
      b.点击应用进程29187查看应用的子线程运行占比，可看到主线程运行占比最高。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/8iv4DynoQJS6vYkLsbWFqw/zh-cn_image_0000002628476142.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/8iv4DynoQJS6vYkLsbWFqw/zh-cn_image_0000002628476142.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=E029C9AB08E5FF06A8E68B592F57670FABE8F7DF577BF98BF8C3F603D999A5F7 "点击放大")
 
      c.在Trace中框选应用主线程泳道，在下方搜索框输入anima、FrameNode来确认是否有动画、组件绘制的情况，如果存在动画、组件多次绘制的情况，使用ArkUI Inspector工具查看执行动画、进行多次绘制的组件是什么，是否显示在屏幕上，如果不存在屏幕上则存在动画空跑、冗余绘制的情况，会导致功耗问题。
 
      如在下图中可以看到应用主线程有执行动画，同时组件Canvas（id为1441）、Image（id为338、284、516）有多次绘制。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/wjh1k59-SxugogcMS3zb3g/zh-cn_image_0000002628316230.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/wjh1k59-SxugogcMS3zb3g/zh-cn_image_0000002628316230.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8FFF6FC8D2B15DB2BFC0D8575BD1A33B8A4B3CE9C4B655FAF733D5AE69C3676 "点击放大")
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/g1JxqwweSLevBiyndAE9cQ/zh-cn_image_0000002658675467.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/g1JxqwweSLevBiyndAE9cQ/zh-cn_image_0000002658675467.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=ABCFD663858E0551460B02128EEF444EEA19F9899E953DBA2BF5FCA9E5D0B4F0 "点击放大")
 
      d.使用ArkUI Inspector工具来查看绘制的组件，可以看到组件Canvas未显示在屏幕上，而Image组件显示在屏幕上。Image显示组件在屏幕上，有执行动画，属于正常的业务流程，而Canvas组件未显示在屏幕上，存在冗余绘制的问题。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/XXn3OkiNTBiyY7yaWqsnRQ/zh-cn_image_0000002658555525.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/XXn3OkiNTBiyY7yaWqsnRQ/zh-cn_image_0000002658555525.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=597ACCE375D961B48599CB98F6F79072DC09636EFB72B3374F5879187F535114 "点击放大")
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/QEKu6IM9RNKF2DZlRkPJkw/zh-cn_image_0000002628476144.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/QEKu6IM9RNKF2DZlRkPJkw/zh-cn_image_0000002628476144.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=02B2EF1801E9687A52A38419EF51335B68A7025F5898380DDF2FCC939EF31BEA "点击放大")
 
 ## 分析结论
 

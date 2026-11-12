@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-statest
 title: stateStyles：多态样式
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > stateStyles：多态样式
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:b77c7165b8263125eda8b16347d1a23ff54b440b156ebbd9dd77857a4fab0094
 ---
@@ -74,7 +74,7 @@ struct StateStylesSample {
 
 **图1** 获焦态和按压态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/kBDaZHw_T3qbikzE8POnWw/zh-cn_image_0000002786358552.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/kBDaZHw_T3qbikzE8POnWw/zh-cn_image_0000002786358552.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=F43635FEE5165C8393614997CE7E959ACB21A612D9E49A0A6698EF1418F0776D)
 
 ### @Styles和stateStyles联合使用
 
@@ -107,7 +107,7 @@ struct MyComponent {
 
 **图2** 正常态和按压态
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/_6Pau5GlTx2g2l_w4nH68Q/zh-cn_image_0000002815557973.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/_6Pau5GlTx2g2l_w4nH68Q/zh-cn_image_0000002815557973.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=A32508D03B42C01EDB3EDF5EB2CD7FD64C3ED568C4744BC264FFE62B689AEF4F)
 
 ### 在stateStyles里使用常规变量和状态变量
 
@@ -146,4 +146,4 @@ Button默认normal态显示蓝色，第一次按下Tab键让Button获焦显示�
 
 **图3** 点击改变获焦态样式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/RjCfm_1RR6mNGB-zMQWLdw/zh-cn_image_0000002815398057.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/RjCfm_1RR6mNGB-zMQWLdw/zh-cn_image_0000002815398057.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=4470A87C850DDC2FFB79212B2CE35B06C428C7C6B0E199330482B83163D02FE3)

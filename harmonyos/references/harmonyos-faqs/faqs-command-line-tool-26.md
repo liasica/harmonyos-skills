@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-li
 title: 工程在IDE的终端无法识别ohpm
 breadcrumb: FAQ > DevEco Studio > 命令行工具 > 工程在IDE的终端无法识别ohpm
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:03+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:c7a8e72b6d74d330a2b2739af942bd9e7fb00ff576fcdd2bc8eacdee79a4ddba
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:c7a8e72b6d74d330a2b2739af942bd9e7fb00ff576fcdd2bc8eacdee79a
 
 工程在ide的终端无法识别ohpm，错误截图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/ts9m-jN5RxSwqdQOFJ8R2g/zh-cn_image_0000002658928947.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/ts9m-jN5RxSwqdQOFJ8R2g/zh-cn_image_0000002658928947.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=318C2269220C972D3DCF2177E888D01992A2DC3B0E14D31F09C3B8845D3AD726 "点击放大")
 
 ## 背景知识
 
@@ -31,16 +31,16 @@ content_hash: sha256:c7a8e72b6d74d330a2b2739af942bd9e7fb00ff576fcdd2bc8eacdee79a
 ## 修改建议
 
 1. 在电脑中找到DevEco Studio的ohpm存放地址路径下的bin目录，例如：D:\DevEco Studio\tools\ohpm\bin。
-2. 配置环境变量，根据ohpm存放地址路径，在Path中添加bin目录。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/ASaZTvuHQhuM3ajSVgxlKw/zh-cn_image_0000002658808991.png "点击放大")
+2. 配置环境变量，根据ohpm存放地址路径，在Path中添加bin目录。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/ASaZTvuHQhuM3ajSVgxlKw/zh-cn_image_0000002658808991.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=355126FC458FF7042C579D03D34890915EA225D9361A74A93248D83E0D090CF3 "点击放大")
 3. 重启DevEco Studio，在终端中输入ohpm -v查看版本号，是否能够识别。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/qZu0uiLhSECIiJgZpW4_yg/zh-cn_image_0000002628409726.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/qZu0uiLhSECIiJgZpW4_yg/zh-cn_image_0000002628409726.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=61BF74B47A19AC6269A00A743B647733D4A83E9634C30AB7D4D2190CAD505F84)
 
 ## 常见FAQ
 
 Q：配置ohpm的环境变量提示路径太长如何解决？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/Wx73cHypQx-fKXXO3dTWpA/zh-cn_image_0000002628569628.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/Wx73cHypQx-fKXXO3dTWpA/zh-cn_image_0000002628569628.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=37773FE17F72CBCEE3718AC2F48632134561CE03DE5C880D37C8CDA527852336)
 
 A：可以采用以下方案：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/signature-servi
 title: 自动签名报错问题定位
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 故障排查 > 自动签名报错问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:57+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
-content_hash: sha256:f1c7610f4b8982815a9642ec928a996be3e085aa2c62abb52bf32d6f842ffd81
+content_hash: sha256:0143f927390f5c6984f9284e912bdf985e8f9aac551d349b97bfee10706ba0b3
 ---
 
 ## 签名配置名称超长或含特殊字符
@@ -86,7 +86,7 @@ HarmonyOS 开发者中心平台对自动化签名使用次数有限制，同一�
 
 签名时在DevEco Studio的build-profile.json5文件中无法生成签名信息或出现如下报错。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/VttpHjRWTUOlzehY3VPVmw/zh-cn_image_0000002770285108.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/Sr9P0Q7wSxSam-f8R17cqQ/zh-cn_image_0000002770285108.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=220468F08DF34F6421E24DDC50F81BE661172921B252AAF00B64F73E6C68F209 "点击放大")
 
 ### 定位过程
 
@@ -155,13 +155,13 @@ material文件损坏，删除签名文件所在地的material文件后重新签�
 1. 关闭自动签名弹窗；
 2. 右键点击电脑右下角时间，选择（调整日期、时间）；
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/BipwWCLPQbe6lzwYVTYFxA/zh-cn_image_0000002799525267.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/Q4LPrzFiSP6_Wqb6kk1rLA/zh-cn_image_0000002799525267.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=0640ED7580C93B275C92E65EBA9CC7D4C8968FCE1DDC9DC4EA3B57280D56D787 "点击放大")
 3. 点击立即同步；
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/lz4JM5_VT8-Ur_IQSk3zzw/zh-cn_image_0000002770125392.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/lw0hruilQX-Y_QhBRN1uyQ/zh-cn_image_0000002770125392.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=E4E10D35E131E5D4FFC558C90F23E72DC331546158B9CBE9C5EA24EB2671F249 "点击放大")
 4. 同步完成后会有√。此操作需要电脑联网。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/85_EmwOWQxyB-ugmBPMaCQ/zh-cn_image_0000002770125394.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/i21SnJ-zTYuoTmN_xpwoPA/zh-cn_image_0000002770125394.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F07EAC028CED862C504C113A1A5B1155467A51BED6EECD5FF382C3FCD75164A)
 5. 重新自动签名即可。
 6. 使用Mac电脑开发时，如果以上方法仍未解决问题，需关闭自动同步时间，手动修改系统时间与北京时间一致，精确到秒。
 7. 如果重置时间后仍不能正确签名，有可能是因为VPN把系统时间覆盖了。请检查是否打开或打开过VPN。若有，请重置一下VPN或把VPN的节点设置到国内IP。
@@ -194,7 +194,7 @@ material文件损坏，删除签名文件所在地的material文件后重新签�
 
 自动签名失败，无法生成密钥：Error occurred while generating the key. Unable to generate the key.
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/g-XuY8jVRRe-IH4IdyiYew/zh-cn_image_0000002799525637.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/JtAxEO7pRW-oHv59PzMQ_A/zh-cn_image_0000002799525637.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8DF25FA328C1586ABEA1264F59917CDE3B9130147C1E73413CB5AE740925C56 "点击放大")
 
 ### 定位过程
 

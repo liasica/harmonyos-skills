@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1213
 title: 利用Flex布局实现子项的展开与折叠
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 利用Flex布局实现子项的展开与折叠
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:18+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:478cff6ebb794c8a90c4af2d9cf5d77f21a9f5597b5cfc963573958e081070a2
 ---
@@ -139,7 +139,7 @@ content_hash: sha256:478cff6ebb794c8a90c4af2d9cf5d77f21a9f5597b5cfc963573958e081
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/BpFZ_WtHSlaFxUzttcVnsw/zh-cn_image_0000002628753484.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/BpFZ_WtHSlaFxUzttcVnsw/zh-cn_image_0000002628753484.png?HW-CC-KV=V1&HW-CC-Date=20261112T233149Z&HW-CC-Expire=31536000000&HW-CC-Sign=F90193EADE2E128D5B5EAEC32042EBCDB626F3EBCC4ADF3BF8C662406D3B109D "点击放大")
 
 * 方案二：获取Flex展示的最后一个子组件索引，通过部分渲染的方式实现展开与折叠。
   1. 通过屏幕宽度计算Flex组件宽，从而得到每一行Flex组件布局时的可用宽度，使用measureText方法计算文本宽度，获取子组件宽度；
@@ -257,4 +257,4 @@ content_hash: sha256:478cff6ebb794c8a90c4af2d9cf5d77f21a9f5597b5cfc963573958e081
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/tqL1xNt3SH2ddpkscSGgRQ/zh-cn_image_0000002658952797.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/tqL1xNt3SH2ddpkscSGgRQ/zh-cn_image_0000002658952797.png?HW-CC-KV=V1&HW-CC-Date=20261112T233149Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C531E25450BF61BF1B8E40FBD5C66FCCEC0108BFC09FBCC25095D0F5B47E720 "点击放大")

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Marquee
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > Marquee
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:78efda1a8bf5cdc122ed8464769f276d473954a21fe91b6021f485425161453d
 ---
@@ -347,7 +347,7 @@ struct MarqueeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/bINJv2SsTA2asx9rHK-aEw/zh-cn_image_0000002786361456.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/bINJv2SsTA2asx9rHK-aEw/zh-cn_image_0000002786361456.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=814CC09AFA5E720D3C5DC194393288A08D7E2754CCCDC5F7FD9605A3155FB184)
 
 ### 示例2（设置跑马灯停止回调）
 
@@ -424,4 +424,4 @@ struct MarqueeStop4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/QK8aoM5wSNOFs7pBcp4AIA/zh-cn_image_0000002815560877.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/QK8aoM5wSNOFs7pBcp4AIA/zh-cn_image_0000002815560877.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=9B68C42FA6781BDB0D9A6A02CCCAF6E633029249094B5A993FFB8ADCFA6A2195)

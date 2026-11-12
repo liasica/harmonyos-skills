@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-ui-widget-
 title: JS卡片概述
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > JS卡片开发 > JS卡片概述
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:27+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-24
 content_hash: sha256:b43ca8a0ba5ed2b44e629cfe09f644e7a30d10af61037789a64704575e8739f1
 ---
@@ -16,7 +16,7 @@ JS卡片实现原理如图1所示。
 
 **图1** JS卡片实现原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/H7HUEYQDRDG3ESwjjm-tig/zh-cn_image_0000002786359582.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/H7HUEYQDRDG3ESwjjm-tig/zh-cn_image_0000002786359582.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=1BD190DB11B3AA7BC823B5A2BBA2075A1D9FF0B641EAE81B7E7B5D032FB57B12)
 
 卡片使用方包含以下模块：
 

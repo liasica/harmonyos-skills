@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (DialogPresenter)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (DialogPresenter)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:56+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:90792f5e74d37d8e0d2774e9b2a4d31d6a6e894912268ba0d0a75f002aa63c80
 ---
@@ -105,7 +105,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/k2SiLkFMQP2SoNOSN4IDTw/zh-cn_image_0000002786360872.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/k2SiLkFMQP2SoNOSN4IDTw/zh-cn_image_0000002786360872.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=11153821B045A3CA44D9374FD8F6DE062B20C71970FF9A39D86F533733B0DAC7)
 
 ## present
 
@@ -238,7 +238,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/O7ztfmCxTZWecD9s0m6JaA/zh-cn_image_0000002815560293.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/O7ztfmCxTZWecD9s0m6JaA/zh-cn_image_0000002815560293.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=24FF484405CCC7D751748FE1C8B9B6BE4E293215A88A44508A4D9794AB8CC5B5)
 
 ## update
 
@@ -379,4 +379,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/psSkt2FLRAKdEs9qKi_EgQ/zh-cn_image_0000002815400377.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/psSkt2FLRAKdEs9qKi_EgQ/zh-cn_image_0000002815400377.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=47C581AB5724D9ADA6B1A1E37DAF2671FA75192C5FEADBB7E1114285D9DFFF8B)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-message-
 title: （可选）测试消息分析
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 端云调试 > （可选）测试消息分析
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:34+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:13dfee9cddf9771db76fe75cc7ec8db56bec3d076c273f0450dd1d3fcaf66237
 ---
@@ -54,7 +54,7 @@ content_hash: sha256:13dfee9cddf9771db76fe75cc7ec8db56bec3d076c273f0450dd1d3fcaf
    * 发送category：开发者调用REST API发送通知消息或语音播报消息时，在请求体中传入的category参数值，用于标识消息的业务分类。
    * 实际下发category：消息下发时真正生效的category值。该值可能与发送时指定的category不同，参考[典型场景](push-message-analysis.md#典型场景)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/NCnxC35yQv2i_bpsyRFgZg/zh-cn_image_0000002815559971.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/NCnxC35yQv2i_bpsyRFgZg/zh-cn_image_0000002815559971.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=80608EABDDAC677321C07FA73FB9AFFAFF24FEEBE32B2EF51616F651F20E5F18)
 
 ## 典型场景
 
@@ -62,4 +62,4 @@ content_hash: sha256:13dfee9cddf9771db76fe75cc7ec8db56bec3d076c273f0450dd1d3fcaf
 
 因此，当您的请求体中需要使用某个category值时，请提前确认该category对应的权益已开通。如未开通，请前往申请对应[推送场景化消息权益](push-apply-right.md#申请通知消息自分类权益)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/9I7Q9IdoQ9OXkH6c6FRGBg/zh-cn_image_0000002815400055.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/9I7Q9IdoQ9OXkH6c6FRGBg/zh-cn_image_0000002815400055.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=C09AB40DFE9976F1A0B19A6DD943B241AE63882FF83522B6519A4D52A63B58BB)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1167
 title: 如何使两个TextInput组件有序输入内容
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何使两个TextInput组件有序输入内容
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:18+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:d21e739cf791ee6c272ca8fda8a6fb9811da0a5d3ba77fd651c1bafa59f009a3
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:d21e739cf791ee6c272ca8fda8a6fb9811da0a5d3ba77fd651c1bafa59f
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/DzzzjDSJTmey8vchMNudEg/zh-cn_image_0000002658809139.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/DzzzjDSJTmey8vchMNudEg/zh-cn_image_0000002658809139.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CAB7E3D19119B9B5460F53DEE75714401E3D044224147B5E9E13D3773C7808D "点击放大")
 
 ## 背景知识
 

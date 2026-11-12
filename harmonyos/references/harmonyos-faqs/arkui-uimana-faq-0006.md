@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-fa
 title: ArkUI状态管理与组件通信常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > ArkUI状态管理与组件通信常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:32+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:7a5e38123e0fb261df86eda98cffdbbb27846c1e6446dbc9e4290ee6396b4b40
 ---
@@ -690,7 +690,7 @@ content_hash: sha256:7a5e38123e0fb261df86eda98cffdbbb27846c1e6446dbc9e4290ee6396
 
    方案一和方案二实现效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/qmvjSoKETyu6OLdHq2frHw/zh-cn_image_0000002795290405.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/qmvjSoKETyu6OLdHq2frHw/zh-cn_image_0000002795290405.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFE62CBCDF45E9205C4BE63ABA9246FB4F01DDB54A31AE0FAB8B3586C87D9E07 "点击放大")
 
 **Q：除了状态管理是否还有其它实现页面间数据共享的方式？**
 
@@ -772,7 +772,7 @@ struct ChildComponent {
 
 实现效果如下：点击父组件中的Button时，触发了子组件的弹窗效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/0M-gPBKMRayc0bMj3e_vNQ/zh-cn_image_0000002795289405.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/0M-gPBKMRayc0bMj3e_vNQ/zh-cn_image_0000002795289405.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD0859B2A99DD5C1884545504D131DD460FC107BF8DCACF4C8C8AEE6995D27E1 "点击放大")
 
 方案二：父组件通知子组件调用子组件函数。
 
@@ -1288,4 +1288,4 @@ struct SecondPage {
 
 效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/w1khMdSRTzmRwgDqtvMNqA/zh-cn_image_0000002766052340.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/w1khMdSRTzmRwgDqtvMNqA/zh-cn_image_0000002766052340.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=60ACBD3EA922490235D1B56630E1C692998FB07FFA517C628E1001625FDD6199 "点击放大")

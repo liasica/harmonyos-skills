@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/share-kit-faq-0
 title: 系统分享与数据接收常见问题
 breadcrumb: FAQ > 应用服务开发 > 内容分享服务（Share Kit） > 常见问题 > 系统分享与数据接收常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:40+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:15bd236186735272db4f9138a9196b4c0e9c25fb3771dccdde140f9fa9c0e90e
 ---
@@ -79,7 +79,7 @@ context: common.UIAbilityContext = this.getUIContext().getHostContext() as commo
        ```
     3. 实现效果图：
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/yOkseyRxR56qUiRflXuTNA/zh-cn_image_0000002792063557.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/yOkseyRxR56qUiRflXuTNA/zh-cn_image_0000002792063557.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE0644C5CD290C21121910B8118A82518F280C36E0EF0FC77423241DD1E8B001 "点击放大")
   + 更多实现示例代码可以参考实现华为分享功能。
 * 针对场景二：将[SelectionMode](../harmonyos-references/share-system-share.md#selectionmode)设置为BATCH可支持批量模式，分享全部数据记录，可实现分享多张图片。示例代码如下：
 

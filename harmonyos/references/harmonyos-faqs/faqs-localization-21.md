@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-localizati
 title: 如何跟随系统深/浅色模式获取对应的资源文件
 breadcrumb: FAQ > 应用框架开发 > 无障碍和本地化 > 本地化开发（Localization） > 如何跟随系统深/浅色模式获取对应的资源文件
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:03+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:312fa18c37cbfa3b3518d2a4020f01e553b30caf8e324afa60f3791c86740e2a
 ---
@@ -12,11 +12,11 @@ content_hash: sha256:312fa18c37cbfa3b3518d2a4020f01e553b30caf8e324afa60f3791c867
 
 深色模式下获取dark目录下的资源，浅色模式下获取base目录下的资源。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/ralLgz-zSxqF3tcWem1dsg/zh-cn_image_0000002628823000.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/ralLgz-zSxqF3tcWem1dsg/zh-cn_image_0000002628823000.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A37E7952FE732A9F8A205165140C9BD9EC28558F7A7F178C4E11595ADD558F9 "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/wHRXHAFBT_WpLy96JH-ddQ/zh-cn_image_0000002628663114.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/wHRXHAFBT_WpLy96JH-ddQ/zh-cn_image_0000002628663114.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=77D180051FD6FAA154BD139456EB17408A0D0FCFDB8DDD8541C3BE2E0C67B348 "点击放大")
 
 ## 背景知识
 

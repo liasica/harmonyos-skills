@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/ndk-development
 title: Native侧SO库配置与依赖管理常见问题
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 常见问题 > Native侧SO库配置与依赖管理常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:b39d7c42e674a80cca7090c822f201450c827455717528d36dfad289a90de231
 ---
@@ -100,7 +100,7 @@ content_hash: sha256:b39d7c42e674a80cca7090c822f201450c827455717528d36dfad289a90
 
    移动完成后，目录结构如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/_f58GW3_SHGbRs6f2hUVKg/zh-cn_image_0000002802119557.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/_f58GW3_SHGbRs6f2hUVKg/zh-cn_image_0000002802119557.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=7B921B6F8F6D2723FD02E848620ED7DE78224FC30D2B408BD28E8E267E278A97 "点击放大")
 3. 修改CMakeLists.txt文件，将编译生成的.so文件引入到工程中。
 
    ```cmake

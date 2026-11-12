@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 应用冷启动慢
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 应用冷启动慢
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:52b1379d3f2398bc2b8996240d751ef148857fc8aa627b1a3444255ca5e42865
 ---
@@ -32,7 +32,7 @@ content_hash: sha256:52b1379d3f2398bc2b8996240d751ef148857fc8aa627b1a3444255ca5e
 
   具体如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/z3ySBwN0QBG80L9Anld5FQ/zh-cn_image_0000002658794363.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/z3ySBwN0QBG80L9Anld5FQ/zh-cn_image_0000002658794363.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=5E6232A645AF6A9E97DCFE58FFE272CC57606A01386D9088638429004206BA76)
 * [Launch分析](../harmonyos-guides/ide-launch-overview.md)是DevEco Profiler工具提供的冷启动场景性能分析能力，可以拆解应用冷启动过程，抓取不同阶段的耗时数据，帮助开发者快速分析启动过程的耗时瓶颈，识别出导致启动缓慢的原因。
 
   Launch分析将应用的冷启动过程拆解为以下几个阶段：
@@ -75,44 +75,44 @@ content_hash: sha256:52b1379d3f2398bc2b8996240d751ef148857fc8aa627b1a3444255ca5e
 
    在DevEco Profiler工具的分析结果中输入navDestinationName关键字找到进入引导页和进入主页时的Trace信息，分析该过程线程的运行状态。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/5PuBibAGSl6yiVKu7WH5IQ/zh-cn_image_0000002628554998.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/5PuBibAGSl6yiVKu7WH5IQ/zh-cn_image_0000002628554998.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF752BAAD81DCA4E06D94F3723A93EE31CC7E8C45FE3EE98D8B2B323E5429454 "点击放大")
 
    如该过程应用大部分时间处于休眠态（Sleeping），并且问题场景引导页停留时长相对固定（比如15s），则推测属于应用业务逻辑异常场景下设计相关问题（比如启动过程需要访问服务器获取数据，等待一段时间未有返回结果则停止等待，进入主页），需要排查应用业务逻辑。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/apFrbBJKT0y-1bw9MWwTyw/zh-cn_image_0000002628395098.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/apFrbBJKT0y-1bw9MWwTyw/zh-cn_image_0000002628395098.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=00896FDBA9CC11B4ABCE4BFDBACE686247EACA976F71C93552B26D5A3A1E0112 "点击放大")
 4. 如未搜到日志关键字，按以下图示步骤借助DevEco Profiler Launch分析抓取应用冷启动过程的耗时数据，查看Launch泳道中从Process Creating到First Frame - Render Phase过程耗时集中在哪一部分。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/L0oDJrAfQn64GPmbx2BZ3Q/zh-cn_image_0000002658914317.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/L0oDJrAfQn64GPmbx2BZ3Q/zh-cn_image_0000002658914317.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=49175C6F806DD495ADB7931E021EDEDF7E041CEB6F56E9C0CEE16644CD7C8CD2 "点击放大")
 
    * 如下图所示，如果耗时主要集中在应用进入前台阶段（UI Ability OnForeground），达到了1.2s。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/RQKXUjJeQiqrKwcaMTP47g/zh-cn_image_0000002658794365.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/RQKXUjJeQiqrKwcaMTP47g/zh-cn_image_0000002658794365.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=64FACE1F00896BD25B15FFC095CF31DA66C627DEBC5D9183492D3D269984A659 "点击放大")
 
      找到应用进程泳道，将应用进入前台阶段（UI Ability OnForeground）阶段框选起来查看该阶段应用线程的运行状态。如发现大多数时间都处于Running状态，可知应用在此处执行耗时操作。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/ymesRJI1RYi-3EXRh-ZGlA/zh-cn_image_0000002628555000.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/ymesRJI1RYi-3EXRh-ZGlA/zh-cn_image_0000002628555000.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD4D5F0496D91371596FACC2385BC3F2CB016A206EDAE343EB2E7D8E0B984D99 "点击放大")
 
      然后找到ArkTS Callstack泳道并点击，可以看到应用在该阶段的调用栈，查看调用栈中的函数名以及耗时占比情况可得到该部分耗时是由于Manager管理类在初始化间接调用了SDK.so的初始化方法，SDK初始化时间较长导致。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/Wz4CE6I-RhujJ5N2GDJ3BQ/zh-cn_image_0000002628395100.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/Wz4CE6I-RhujJ5N2GDJ3BQ/zh-cn_image_0000002628395100.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=7E1EEEA9762E6211AF9D88BB486749EA0C19F976F3E5CCE60F5B6226B672FF60 "点击放大")
    * 如果耗时主要集中在UIAbility启动阶段（UI Ability Launching），如下图所示该阶段达到1.3s。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/DHqN5ATLSpySuxa3gieiWw/zh-cn_image_0000002658914319.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/DHqN5ATLSpySuxa3gieiWw/zh-cn_image_0000002658914319.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=CBB5ADEB18DDBF3D748885D01D6685D5F3E2075790706710343433A6FAF59329 "点击放大")
 
      找到应用主线程泳道，将UIAbility启动阶段框起来查看该阶段线程的运行状态和Trace信息，Trace信息从上到下显示表示上面Trace打点对应的函数直接或间接调用了下面Trace打点对应的函数，因此分析耗时原因主要分析下面的Trace打点。如发现大多数时间处于Running状态，耗时主要集中在H:SourceTextModule::Evaluate部分，则应用在启动过程时加载import的模块时耗时较多，导致应用启动慢。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/WzEDpJHxSuq1NEZMNDYXMg/zh-cn_image_0000002658794367.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/WzEDpJHxSuq1NEZMNDYXMg/zh-cn_image_0000002658794367.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEFB1ED2B8A15F65E0F09431CCBFA4DF26383E23B6E0D8D453CA5F0D5869C8B8 "点击放大")
    * 如果整体耗时与用户体验上差距较大，如下图所示，Process Creating到First Frame - Render Phase总耗时385ms，但用户体验加载时长达到3秒，该情况下应用可能长时间停留在启动页，一段时间后才跳转到主页，或者页面组件创建加载耗时较多，显示较慢。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/B_s12lrMTi-h4DGx-G4oKw/zh-cn_image_0000002628555002.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/B_s12lrMTi-h4DGx-G4oKw/zh-cn_image_0000002628555002.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=CAD4473C061A3715ABCC1685D2FE90AE40D355C6F0EFA1EFBFF562ACF7C32C08 "点击放大")
 
      **场景一：RN应用启动耗时**：可点击主线程泳道，在Slice List中过滤组件创建的Trace关键字，在下图中可看到有RNSurface组件创建，可知该应用属于RN应用。RN应用中RNOH\_JS线程负责构造节点树并提交到应用主线程完成渲染，可排查RNOH\_JS线程。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/hn7XCc1KQEaoxqHXNllDXQ/zh-cn_image_0000002628395102.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/hn7XCc1KQEaoxqHXNllDXQ/zh-cn_image_0000002628395102.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=5688B2775DC195092BE2B2DD2635D47504719F7B1479D0EDCBC68D4159312FE2 "点击放大")
 
      查看RNOH\_JS线程Trace信息，可看到耗时主要集中在loadBundle部分（加载包含应用程序代码的JS文件，支持应用启动、更新等功能）。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/xTUYuH6CTk2BF6f3TKLEKw/zh-cn_image_0000002658914321.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/xTUYuH6CTk2BF6f3TKLEKw/zh-cn_image_0000002658914321.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=213A9A2FA7BD36437855D948BA505A647A62200DD1CD775E1CA13A64FDAC3715 "点击放大")
 
      **场景二：初始Web页面加载耗时**：根据下表中对应关键字找到Trace点，计算Web加载各阶段耗时。
 
@@ -124,11 +124,11 @@ content_hash: sha256:52b1379d3f2398bc2b8996240d751ef148857fc8aa627b1a3444255ca5e
      | 页面加载完成到开始显示网页 | H:RenderFrameImpl::didStopLoading到之后第一个SkiaOutputSurfaceImplOnGpu::SwapBuffers | 12ms |
      | 总耗时 |  | 776ms |
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/dt9IsUfdR5aOgG1d1-uQqw/zh-cn_image_0000002658794369.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/dt9IsUfdR5aOgG1d1-uQqw/zh-cn_image_0000002658794369.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=E98AAB1C5AE1845887F1923719F1643B23DC7A06782B2070EB61381188B5D544 "点击放大")
 
      使用DevTools工具抓取页面加载过程，在“性能”选项卡下选择“主要”，可以看到有时长246ms的长任务耗时警告，整体耗时主要是在执行脚本，时间为500ms。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/7n4OSF-fSXSTDMynBZ7RBw/zh-cn_image_0000002628555004.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/7n4OSF-fSXSTDMynBZ7RBw/zh-cn_image_0000002628555004.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=2A27D9159D3E82125B1821491485E373ED9FF1C5B282EB3C56698E7C97705079 "点击放大")
 
 ## 分析结论
 

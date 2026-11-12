@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/drm-overview
 title: DRM Kit 简介
 breadcrumb: 指南 > 媒体 > DRM Kit（数字版权保护服务） > DRM Kit 简介
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-18
 content_hash: sha256:de43652745bb74450bb80938bf2819c1764cdfe6ec96182e83f72c8f71af79ba
 ---
@@ -74,7 +74,7 @@ DRM插件管理功能一般由DRM解决方案集成方实现。
 
 应用集成DRM Kit工作流程如图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/n7gzXG8ZSnWdOx8uel7kYg/zh-cn_image_0000002786519860.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/n7gzXG8ZSnWdOx8uel7kYg/zh-cn_image_0000002786519860.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=C4B98451F7DDD68F9B34501DFE6378DB624A32BF645B2DD17CD7CF930F958DA8)
 
 工作流程主要包括：
 

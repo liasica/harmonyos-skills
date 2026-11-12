@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-719
 title: TextInput设置手机号格式输入-如何解决修改数据后光标位置错乱的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > TextInput设置手机号格式输入-如何解决修改数据后光标位置错乱的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:10+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:aa0299ba21811dfeb4756270b8caeca003977aa20a75605591975033abe8841d
 ---
@@ -17,19 +17,19 @@ HarmonyOS系统使用TextInput输入手机号，通过onChange函数实现手机
 
 当前效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/ApVChT-_RT-596Z_I4LV_A/zh-cn_image_0000002658794575.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/ApVChT-_RT-596Z_I4LV_A/zh-cn_image_0000002658794575.png?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=745BA458A6F95963D2200DDC42A12C51FE0A63892B0576D01D2A94B33077F0EE "点击放大")
 
 针对号码123/4567/8910，删除了7和8之间的空格，TextInput空格先被删除，之后value值刷新，展示：123/4567/8910，光标位于末尾。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/7izegssVQqaY-4LPlhiRcQ/zh-cn_image_0000002628555208.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/7izegssVQqaY-4LPlhiRcQ/zh-cn_image_0000002628555208.png?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDC30807DA069EC1B74C5F33684B76BFF7837EF2D8B5B47E5C7635FAFDE6866B "点击放大")
 
 预期效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/8AYIMXU1QvKvLeIH0Y2q9A/zh-cn_image_0000002658914529.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/8AYIMXU1QvKvLeIH0Y2q9A/zh-cn_image_0000002658914529.png?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=7A872D5FA5923A5C419D8389CEC508C5428C99763AFAE92E9CE0892A7FB4DC2D "点击放大")
 
 针对号码123/4567/8910，删除了7和8之间的空格，实际删除数字7，展示：123/4568/910，光标在数字6后面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/TKxtoqwMQ0q6tb3y2MDiTg/zh-cn_image_0000002628395304.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/TKxtoqwMQ0q6tb3y2MDiTg/zh-cn_image_0000002628395304.png?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3A94A166C9EA03580FC1DEE41EFCFA8BC6D42036D5681E9A9D0A774F09C4FDD "点击放大")
 
 删除数字6，展示123/4578/910，光标位于数字5后面。
 

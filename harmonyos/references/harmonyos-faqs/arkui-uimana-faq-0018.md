@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-fa
 title: ArkUI页面路由跳转常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > ArkUI页面路由跳转常见问题
 category: harmonyos-faqs
-scraped_at: 2026-11-12T09:58:58+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:f6617f07f0f51045a61a88d87f502266a6feee0967011efd238a7333c9b2ade0
 ---
@@ -385,7 +385,7 @@ A：对于router跳转到的页面需要使用Navigation作为根容器，才能
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/SA_-5Q0FSpKAISVkSWN-iA/zh-cn_image_0000002795328639.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/SA_-5Q0FSpKAISVkSWN-iA/zh-cn_image_0000002795328639.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=530A5DDF8F3A97E77F39B5939E5FD2C367DE967BBBA29291C2D1BE26C00D0F31 "点击放大")
 
 * 场景三：Navigation页面与router页面间的跳转为：入口页面->PageOne->pageTwo->RouterPage->PageThree。
 
@@ -657,7 +657,7 @@ A：对于router跳转到的页面需要使用Navigation作为根容器，才能
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/w68SrbLpRSKhOfKKYhbBSg/zh-cn_image_0000002795485233.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/w68SrbLpRSKhOfKKYhbBSg/zh-cn_image_0000002795485233.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=B06AFF4CD2F6D3890382DDC5E0DA99C7BB6A58ED1F3A5ECDD1C01E3363B86A77 "点击放大")
 
 **Q：页面使用组件导航实现路由跳转，期望自定义一个半屏组件能够始终保持在所有页面的顶部。**
 
@@ -949,7 +949,7 @@ A：在业务体系庞大或复杂的情况下，会将业务拆分成多个子�
 
 新增工程项目后，此时存在一个entry类型的HAP包（作为拉起方），再新增一个feature类型的HAP（被拉起方）。参考不同类型[HAP](../harmonyos-guides/hap-package.md)的说明。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/SdcZySRzQCSIZj23shER8Q/zh-cn_image_0000002766086698.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/SdcZySRzQCSIZj23shER8Q/zh-cn_image_0000002766086698.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=AC13B9442F81529AB40D6E034ECB5124985AAFE3F953A61F3FD198316BF80A78)
 
 1. 拉起方（entry模块）的示例代码如下，请根据实际的HAP信息更新want参数：
 
@@ -1064,7 +1064,7 @@ A：在业务体系庞大或复杂的情况下，会将业务拆分成多个子�
 3. 按照方案的描述修改被拉起方的UIAbility文件（示例中为TargetAbility.ets）的onNewWant方法（若UIAbility文件无此方法，则参照背景知识中介绍自行增加onNewWant即可）。
 4. 分别编译target模块和entry模块，再运行entry模块即可。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/ca5qVfJ-RvmAoMNncnx8Sw/zh-cn_image_0000002766086704.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/ca5qVfJ-RvmAoMNncnx8Sw/zh-cn_image_0000002766086704.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=9138811B47443F640CB15DAD7320AC33BB0D5BB8B5FB3F37D2AF89FD7F31BA3A)
 
 **Q：热启动，如何每次启动都重新打开目标页面？**
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1200
 title: 如何解决点击Select下拉菜单会导致TextInput失焦的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决点击Select下拉菜单会导致TextInput失焦的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:18+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:1ad7d5c2b5c45bfaeb2aaf42d11af1d36b2a6e0c5acd14b8c15ac547881dabd3
 ---
@@ -14,7 +14,7 @@ TextInput获焦时点击Select弹出菜单选项，此时TextInput会失焦，�
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/szeAfkoWRAWN2Vq3-Tjcgg/zh-cn_image_0000002658832829.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/szeAfkoWRAWN2Vq3-Tjcgg/zh-cn_image_0000002658832829.png?HW-CC-KV=V1&HW-CC-Date=20261112T233149Z&HW-CC-Expire=31536000000&HW-CC-Sign=48A18FE4C617531E81512AA7C547E255895C8B6BBC012D382EB35CF4567156BB "点击放大")
 
 问题代码示例如下：
 
@@ -77,7 +77,7 @@ struct SelectExample {
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/wS33RaDeSnS6ue-Wc--LBQ/zh-cn_image_0000002628593588.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/wS33RaDeSnS6ue-Wc--LBQ/zh-cn_image_0000002628593588.png?HW-CC-KV=V1&HW-CC-Date=20261112T233149Z&HW-CC-Expire=31536000000&HW-CC-Sign=A120ACC2E741BB9B81A7DFB986FD0B0FD90DCF55B7C4913E931ADD644DD56C0C "点击放大")
 
 ## 背景知识
 

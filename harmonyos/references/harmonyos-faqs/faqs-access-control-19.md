@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-access-con
 title: 如何撤销已经申请的权限
 breadcrumb: FAQ > 系统开发 > 安全 > 程序访问控制 > 如何撤销已经申请的权限
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:7fd11bd982c9f0a0cfabc68c47cfca2c254c036240543e989d2e696704cb5c6e
 ---
@@ -24,13 +24,13 @@ content_hash: sha256:7fd11bd982c9f0a0cfabc68c47cfca2c254c036240543e989d2e696704c
 
 1. 设置中选择应用与元服务选项进入：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/UAjB7kHfT56ic7-Hh_hY2A/zh-cn_image_0000002628608464.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/UAjB7kHfT56ic7-Hh_hY2A/zh-cn_image_0000002628608464.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=634D80065A7FC18EBA526BA2B740ECE40644F3363C93034FEB9B25E991396220 "点击放大")
 2. 选择考勤打卡应用进入：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/UaI35DdZQrWmlmvaCvffog/zh-cn_image_0000002658847723.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/UaI35DdZQrWmlmvaCvffog/zh-cn_image_0000002658847723.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=2C2A062D3B3C3FECDBEF99DCC6BBDC91B389FB89FEDCCA2DB527E0A02804F583 "点击放大")
 3. 点击位置权限进入：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/-biBoZgOS_aWo8Yvo4eTnQ/zh-cn_image_0000002628768358.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/-biBoZgOS_aWo8Yvo4eTnQ/zh-cn_image_0000002628768358.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB240D9B52F786D70F594D046315BAD3A33231861F8D892C6FB000145092109A "点击放大")
 4. 点击禁止，关闭对应权限：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/-1xgb8ebT1ylPeXHgp0ilA/zh-cn_image_0000002658967683.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/-1xgb8ebT1ylPeXHgp0ilA/zh-cn_image_0000002658967683.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=5AFAAE3B3388CE9AE85E905F215025D30C7977D42A2718690126B770A4BEA3D0 "点击放大")

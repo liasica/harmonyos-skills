@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-libr
 title: 如何解决photoAccessHelper.getAssets获取竖向视频宽高不正确问题
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 媒体文件管理（Media Library） > 如何解决photoAccessHelper.getAssets获取竖向视频宽高不正确问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:02+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:1b7148a4c10ecad2a0cc4aaab4fb2c820e87b8f8a1f09776ddcdb90875e98363
 ---
@@ -12,11 +12,11 @@ content_hash: sha256:1b7148a4c10ecad2a0cc4aaab4fb2c820e87b8f8a1f09776ddcdb90875e
 
 图库显示宽高1080\*1920。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/WUvSosLFSE6bKpInuCykTw/zh-cn_image_0000002659258335.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/WUvSosLFSE6bKpInuCykTw/zh-cn_image_0000002659258335.png?HW-CC-KV=V1&HW-CC-Date=20261112T233214Z&HW-CC-Expire=31536000000&HW-CC-Sign=55C738E9842CB30DC01EA64AD6A26AD7CD95BB62517E5CBFF8B3F7031A57348B "点击放大")
 
 通过API获取到的视频高为1080，宽为1920，API获取的值宽高与实际相反。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/phi2rBotTK2-79K1D18u-A/zh-cn_image_0000002628899116.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/phi2rBotTK2-79K1D18u-A/zh-cn_image_0000002628899116.png?HW-CC-KV=V1&HW-CC-Date=20261112T233214Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9B07BEF69B795B6365A23134E9A828748B86D78B098F28165EC456733382F05 "点击放大")
 
 ## 背景知识
 
@@ -27,17 +27,17 @@ content_hash: sha256:1b7148a4c10ecad2a0cc4aaab4fb2c820e87b8f8a1f09776ddcdb90875e
 
 获取横屏视频做对比，两个视频在手机上显示的尺寸宽高数值相反。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/g0-kqcWeS32vHiShjzbmfQ/zh-cn_image_0000002659138385.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/g0-kqcWeS32vHiShjzbmfQ/zh-cn_image_0000002659138385.png?HW-CC-KV=V1&HW-CC-Date=20261112T233214Z&HW-CC-Expire=31536000000&HW-CC-Sign=837A576BFB5D44C711EB05406E45B7EDB91B3814B10B29E9199DEB3F96B705E5 "点击放大")
 
 通过API获取到的两个视频同样高为1080，宽为1920，但是竖向视频有90°旋转，因此怀疑是旋转导致的问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/xRwCvw4qQoCVEhGYxqPpsw/zh-cn_image_0000002629059034.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/xRwCvw4qQoCVEhGYxqPpsw/zh-cn_image_0000002629059034.png?HW-CC-KV=V1&HW-CC-Date=20261112T233214Z&HW-CC-Expire=31536000000&HW-CC-Sign=5DFEE02F8472C7636A58FF5F7061C484AFBB2199F0B397C7FB826EE08256B5E3 "点击放大")
 
 再对比下旋转180°和270°的情况，旋转度数除以180余数为90的时候，需要长宽的数值互换，才能得出手机上看到的结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/bh1OcYzoQ4eQ49JysgxNGw/zh-cn_image_0000002659258337.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/bh1OcYzoQ4eQ49JysgxNGw/zh-cn_image_0000002659258337.png?HW-CC-KV=V1&HW-CC-Date=20261112T233214Z&HW-CC-Expire=31536000000&HW-CC-Sign=095964425C7FFE819601199730322E6FFAE9E3E54A615B29BF96227A09AC36F0 "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/UtyoaDXtSb-0CoQQTho2GQ/zh-cn_image_0000002628899118.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/UtyoaDXtSb-0CoQQTho2GQ/zh-cn_image_0000002628899118.png?HW-CC-KV=V1&HW-CC-Date=20261112T233214Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC575DC04B412BA2971C9E029F73FAED29CFFA40204858D1D988FA5572C0F4AA "点击放大")
 
 ## 分析结论
 

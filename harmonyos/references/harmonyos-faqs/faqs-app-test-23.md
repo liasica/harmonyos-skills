@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-2
 title: Hypium是否支持在模拟器上执行测试用例
 breadcrumb: FAQ > DevEco Studio > 应用测试 > Hypium是否支持在模拟器上执行测试用例
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:194cf7c17a5f07c5cdde53fd8e0deddf944e8fbe06187169fbe546493da581ce
 ---
@@ -25,19 +25,19 @@ Hypium自动化测试用例支持在模拟器中运行。步骤如下：
 
    点击菜单栏的Tools > Device Manager > Run如图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/zCEy2FAPS12KOAs-eY-sjw/zh-cn_image_0000002658808819.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/zCEy2FAPS12KOAs-eY-sjw/zh-cn_image_0000002658808819.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A50CB9FE06528A99A17D13533690DD88BD231519BCAFF4A0D0BC51A74B41D3E "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/KVzivaURR26NhSl71C7yPA/zh-cn_image_0000002628409552.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/KVzivaURR26NhSl71C7yPA/zh-cn_image_0000002628409552.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=AD3997AF2EF6DAD9CD1D0055D21A659C6C0FDFD755ACE1D3A7580ECA90F96F11 "点击放大")
 2. 步骤二：PyCharm运行用例。
 
    模拟器启动后PyCharm可以查看本地模拟器已连接。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/flS6nxRLQlOsWL0l9wft1w/zh-cn_image_0000002628569450.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/flS6nxRLQlOsWL0l9wft1w/zh-cn_image_0000002628569450.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=54D646FF3BA2023E0D275ED52098E9E78ED945795C96C58E3A997977EFC62A24 "点击放大")
 
    单台设备直接执行用例正常运行成功，同时模拟器正常展示用例运行过程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/FK5yh0ICR4uP7SUHhAN8pA/zh-cn_image_0000002658928767.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/FK5yh0ICR4uP7SUHhAN8pA/zh-cn_image_0000002658928767.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=3AAC2BCBCC82BE12AEF4436D0BB665C57BD1777EEDF0BB44AEE89312B9A511C4 "点击放大")
 
    多台设备需在user\_config.xml指定运行设备的sn，若指定运行设备是模拟器配置如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/8yTC9h5eRhudJm-w5T7cAQ/zh-cn_image_0000002658808821.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/8yTC9h5eRhudJm-w5T7cAQ/zh-cn_image_0000002658808821.png?HW-CC-KV=V1&HW-CC-Date=20261112T233144Z&HW-CC-Expire=31536000000&HW-CC-Sign=75C30D15BC288B0BD0092955837A8168C23228D68324FC0DC57377509DE6CAE2 "点击放大")

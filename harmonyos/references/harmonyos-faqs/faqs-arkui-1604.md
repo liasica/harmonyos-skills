@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1604
 title: Swiper组件实现试卷打分功能
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > Swiper组件实现试卷打分功能
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:39+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:3a6c33d5fb3735dc8d4d200b5f3940f223bd49327cc2d92847cc3ff2fc2df530
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:3a6c33d5fb3735dc8d4d200b5f3940f223bd49327cc2d92847cc3ff2fc2
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/XWg4XuJgQy6F2h5N04bkTA/zh-cn_image_0000002658972557.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/XWg4XuJgQy6F2h5N04bkTA/zh-cn_image_0000002658972557.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233155Z&HW-CC-Expire=31536000000&HW-CC-Sign=4F4F2DA7A6BA78C2813B91288D7CE68DDE1F77D1F25A3CF1911B06D439BBAEB0 "点击放大")
 
 ## 背景知识
 

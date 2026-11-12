@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-notif
 title: Account Kit通知事件
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit通知事件
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:b3aa177327648eadcf2208f0c2d5e40e39b2ad6849f43df74ea5cbd772c926c3
 ---
@@ -184,16 +184,16 @@ content_hash: sha256:b3aa177327648eadcf2208f0c2d5e40e39b2ad6849f43df74ea5cbd772c
 
 1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)，进入“开发者管理”页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/y0FxelpJTaanPWcMelaYTw/zh-cn_image_0000002786520080.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/y0FxelpJTaanPWcMelaYTw/zh-cn_image_0000002786520080.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=6968570DAC8181E8FA7C31A8251E2AE62E03870ED75667308F57E1A0242E3A21)
 2. 左侧导航栏选择“ID、证书和Profile > APP ID”，页面中选择“HarmonyOS”，点击“开放能力管理”页签；选择需要订阅用户信息变更事件的应用，找到“RISC”并勾选，点击“保存”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/Pc2GKeu4SlSTfO23AisMqA/zh-cn_image_0000002786360152.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/Pc2GKeu4SlSTfO23AisMqA/zh-cn_image_0000002786360152.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=98FC0B2EA925EE6B05B17BD9FE2ACA4C388C74DD8574FFA6197E9F4F44AA65B4)
 3. 点击“RISC”对应的“管理”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/gAmjg06cQe-oncy5y8Jy5Q/zh-cn_image_0000002815559573.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/gAmjg06cQe-oncy5y8Jy5Q/zh-cn_image_0000002815559573.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=86274B053257070A0BD000B49DD98274FA4B7189CC71717BFE16BF144B8FA528)
 4. 在弹窗中配置“回调地址”及“订阅范围”，然后点击“提交”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/iG5KvLjtTMiXXZWb9CEbgw/zh-cn_image_0000002815399657.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/iG5KvLjtTMiXXZWb9CEbgw/zh-cn_image_0000002815399657.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=B40BCB5EA6E2BD6A1F007BB14F58E7D40B287F7F6CF7A42A9BC295C40E47F1D4)
 
    **说明** 
 

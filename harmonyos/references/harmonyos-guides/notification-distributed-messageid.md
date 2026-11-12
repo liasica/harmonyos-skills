@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-
 title: 清除跨设备场景下的重复通知
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > 跨设备协同通知 > 清除跨设备场景下的重复通知
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:31+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:3d09aa4c0abf0bc5d248bbaec9137c9cca2a0353b8630c9262e49b9d1e718de3
 ---
@@ -18,7 +18,7 @@ content_hash: sha256:3d09aa4c0abf0bc5d248bbaec9137c9cca2a0353b8630c9262e49b9d1e7
 
 **图1** 全场景通知去重流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/oDblS4UYRcioViTAjtgMNA/zh-cn_image_0000002786520398.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/oDblS4UYRcioViTAjtgMNA/zh-cn_image_0000002786520398.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=0F703CDE2E979240BD3122B031322CA4EA60032E16DCC99825233825D3811B05)
 
 ## 约束条件
 

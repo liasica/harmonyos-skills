@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1430
 title: Tab嵌套List的页面滚动问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Tab嵌套List的页面滚动问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:23+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:0629f4825db5db2b4a1e3a4a13ee79929e7dfd802a7f398ad82915021230ed2f
 ---
@@ -65,11 +65,11 @@ struct TabListDemo {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/C5zHaKjZRzqc0061qT-tZQ/zh-cn_image_0000002658962965.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/C5zHaKjZRzqc0061qT-tZQ/zh-cn_image_0000002658962965.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=8370E768E232B4EE8FBD0497C36238E9D7E27D156B550CB5329364D245E2A9D7 "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/zb4I19QGQpuCFkpy9oadGQ/zh-cn_image_0000002628603752.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/zb4I19QGQpuCFkpy9oadGQ/zh-cn_image_0000002628603752.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=FEA1885AC7EB4F38F65972E0E981E883DD1277CB769DC680E7AF42F8002687C3 "点击放大")
 
 ## 背景知识
 

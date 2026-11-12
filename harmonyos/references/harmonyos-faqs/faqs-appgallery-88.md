@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 用户如何退出AppGallery邀请测试
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 用户如何退出AppGallery邀请测试
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:3a7b593888b06eaacc53dabfa57602699055377dbb6799f60814065702a81f9d
 ---
@@ -18,7 +18,7 @@ content_hash: sha256:3a7b593888b06eaacc53dabfa57602699055377dbb6799f60814065702a
 
 1. 用户主动退出：点击邀请测试链接，进入应用详情页，或通过“应用市场-我的-应用尝鲜”路径访问应用测试详情页。在应用测试详情页中，找到关于-测试通知，点击“停止接收”即可退出该应用的测试群组，后续将不再收到测试推送，如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/0EzmFgs7QrGm-gjxOi7GvA/zh-cn_image_0000002658793917.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/0EzmFgs7QrGm-gjxOi7GvA/zh-cn_image_0000002658793917.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=C535B502DEF64140F614A6EA3C7733C8F5E6CB5B7ACD354D43E6A3921400310B "点击放大")
 2. 联系开发者删除：直接联系该应用开发者，登录HarmonyOS 开发者中心，在测试用户群组中删除用户的测试账号，如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/hfhSzTnBRpCOLXz2GfF8jg/zh-cn_image_0000002628394648.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/hfhSzTnBRpCOLXz2GfF8jg/zh-cn_image_0000002628394648.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=ABE678E09E4516D24950B30C5230E117B137664EA1204BE6A4C67135D6551204 "点击放大")

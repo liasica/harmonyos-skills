@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-audio-31
 title: 应用打开时中断了听书功能
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音频（Audio） > 应用打开时中断了听书功能
 category: harmonyos-faqs
-scraped_at: 2026-11-04T08:40:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-03
 content_hash: sha256:8080963d5f069d8c35c5ee58d0a55b2dc14392efbbbc290ee41c358324e170fc
 ---
@@ -48,7 +48,7 @@ content_hash: sha256:8080963d5f069d8c35c5ee58d0a55b2dc14392efbbbc290ee41c358324e
    ```
 2. 应用中搜索AudioConcurrencyMode并发模式，查看应用有无使用音频会话，自定义音频中断策略。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/yHX9SsrpQ7C-eA2B77-DNQ/zh-cn_image_0000002658911833.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/yHX9SsrpQ7C-eA2B77-DNQ/zh-cn_image_0000002658911833.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=915BBD15878F12117C1B978EE18D3236EE8A3BD21C9227FE5B0FA180129063F5)
 
 ## 分析结论
 

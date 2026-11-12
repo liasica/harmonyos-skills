@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/ide-changel
 title: 变更说明
 breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > DevEco Studio > 变更说明
 category: harmonyos-releases
-scraped_at: 2026-11-12T09:50:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-27
 content_hash: sha256:eddd39f160d7591947b4d2a51eef11040350780d77d52c9cd949994eef578200
 ---
@@ -33,11 +33,11 @@ void test()
 
 此时，老版本存在C API兼容性告警和使用APIAVAILABLE的Quick Fix能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/RoWqsSxETpOLUI8SmfK_Kg/zh-cn_image_0000002603735633.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/RoWqsSxETpOLUI8SmfK_Kg/zh-cn_image_0000002603735633.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=926CC0FC59B58E4EF9116A6C89EA4535673A0ABDFE5E1D6774A93ED59852F00F)
 
 新版本保留C API告警，去掉自动修改代码的Quick Fix功能，并新增指导文档跳转链接。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/VbmprG15SVSu3_6mY15Z6w/zh-cn_image_0000002603737439.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/VbmprG15SVSu3_6mY15Z6w/zh-cn_image_0000002603737439.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=A30ABD893795E04B8D4BFCA3DEF70E0401F3D8336F340E5F66F2E5B34AD75E1C)
 
 **适配指导**
 

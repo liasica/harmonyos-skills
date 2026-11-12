@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-101
 title: 如何在List组件中分组展示不同种类的数据
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何在List组件中分组展示不同种类的数据
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:c1d73c0f093a0813a6af735f7dd5b2c2ca75dbc662c744a0b2a11da47f551dae
 ---
@@ -93,7 +93,7 @@ interface TimeTable {
 
 效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/0pjss-72QSi4tecuNZcSKg/zh-cn_image_0000002654835227.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/0pjss-72QSi4tecuNZcSKg/zh-cn_image_0000002654835227.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=26B28762C3CFD675F2FA407181BCF63328CCB23C7EB8B3F463EBBC367037B380 "点击放大")
 
 **参考链接**
 

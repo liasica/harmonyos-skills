@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mechanic-kit-
 title: Mechanic Kit简介
 breadcrumb: 指南 > 系统 > 硬件 > Mechanic Kit（机械设备管理服务） > Mechanic Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:52+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-04-20
 content_hash: sha256:e4d3828698aa1d82ebfba449dadf318eb34bd4840c970ce1e9855feae03b1bab
 ---
@@ -48,7 +48,7 @@ Mechanic Kit为开发者提供全面的机械体设备操控能力，核心功�
 
 ## 运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/Fw75V90qRFSWEA_y8LuCZA/zh-cn_image_0000002786519716.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/Fw75V90qRFSWEA_y8LuCZA/zh-cn_image_0000002786519716.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=E53DC6D91B228D84885C22D3B2A2D7D4AA99E627D67E19E2FC56FDF32ACD5130)
 
 图注：灰色代表暂未支持。
 

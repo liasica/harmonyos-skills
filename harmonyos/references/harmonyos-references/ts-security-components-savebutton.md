@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-securi
 title: SaveButton
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 安全 > SaveButton
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:24+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-30
 content_hash: sha256:5f089f5925e604b4750a52da489ce3f8f5632c49fa0f18f2435cd93ddaea375f
 ---
@@ -385,7 +385,7 @@ symbolRenderingStrategy(strategy: SymbolRenderingStrategy)
 
 不同渲染策略效果可参考以下示意图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/RmXXi51WQOmykQkKFVQsjw/zh-cn_image_0000002815400859.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/RmXXi51WQOmykQkKFVQsjw/zh-cn_image_0000002815400859.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=4985B71AE6836C659CA4258090BE213DB632A9534C4282CB09771859EB7B34B3)
 
 ## 事件
 
@@ -486,7 +486,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/_jIcFr4MQfmLl3FDvQf73A/zh-cn_image_0000002815401111.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/_jIcFr4MQfmLl3FDvQf73A/zh-cn_image_0000002815401111.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=66E5A8CCF09064345507F9E5AB7CD259365681350426DA8D32FDC76EA6D855BA)
 
 ## 示例2
 
@@ -561,7 +561,7 @@ struct SetIcon {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/FsN4FGJxSbq4l7moPd7q_w/zh-cn_image_0000002786521536.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/FsN4FGJxSbq4l7moPd7q_w/zh-cn_image_0000002786521536.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=E8C978D4E29A4779B7B2A757DDCEF3FFA872DB5010675BF865C06CFFC3E6181F)
 
 ## 示例3
 
@@ -625,4 +625,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/HDzZGq2XRRK1BrxlMrhfUg/zh-cn_image_0000002786361608.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/HDzZGq2XRRK1BrxlMrhfUg/zh-cn_image_0000002786361608.jpeg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA4F0A165F6B6D47F9AD59D8CC6148BEF5D49649470F33DEE96E57E529047BF4)

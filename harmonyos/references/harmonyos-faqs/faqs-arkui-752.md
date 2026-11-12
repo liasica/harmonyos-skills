@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-752
 title: PersistentStorage持久化数据无法删除
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > PersistentStorage持久化数据无法删除
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:eda11b935d2a79cd34e54613521d6376a90a38830b72d7b45a9f046d2fe80fb6
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:eda11b935d2a79cd34e54613521d6376a90a38830b72d7b45a9f046d2fe
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/IVxxOoPlTca6JC5Sv_gzfQ/zh-cn_image_0000002658794737.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/IVxxOoPlTca6JC5Sv_gzfQ/zh-cn_image_0000002658794737.png?HW-CC-KV=V1&HW-CC-Date=20261112T233201Z&HW-CC-Expire=31536000000&HW-CC-Sign=38B9C987DF9D8801BB941663DF3F46FF668334BD25441B485698D7523B18DE29 "点击放大")
 
 ## 背景知识
 

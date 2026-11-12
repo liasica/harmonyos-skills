@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-kit-assis
 title: 快速插入场景化代码片段
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 快速插入场景化代码片段
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-08
 content_hash: sha256:cebe874d8e366e85af7d09d9346dd41c4efeed73c840e7a084a76bbd431f550f
 ---
@@ -12,10 +12,10 @@ DevEco Studio提供Kit Assistant能力，支持通过拖拽方式将基础的场
 
 1. 在菜单栏点击**View > Tool Windows > Kit Assistant**，或使用快捷键**Alt + K**（macOS为**O****ption + K**），进入Kit Assistant页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/BeckkCNgSgaYqfveS33tsQ/zh-cn_image_0000002808886819.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/BeckkCNgSgaYqfveS33tsQ/zh-cn_image_0000002808886819.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=5EBC666BFF9914C158C2FF7CAF6156E1989AE81F290392C87FE341F690BAD545)
 2. 在左侧目录中支持搜索、查看不同Kit提供的场景化控件或代码片段。Kit Assistant面板右侧展示该控件的使用约束、适用场景等详细信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/m1OM0hZcTeq7QxO0yLS4Mw/zh-cn_image_0000002779567158.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/m1OM0hZcTeq7QxO0yLS4Mw/zh-cn_image_0000002779567158.png?HW-CC-KV=V1&HW-CC-Date=20261112T233232Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5CA3F5D0FFFE094CE746E59159A5B03073B131370B72D2F09A70CE46495EC3D)
 3. 在目录中点击选中需要的控件或功能代码，并拖拽至.ets文件中适当位置，即可在当前位置插入相应的代码片段。
 
    **说明** 

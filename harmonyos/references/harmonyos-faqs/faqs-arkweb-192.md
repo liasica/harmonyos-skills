@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-192
 title: Web组件使用loadData加载富文本失败如何处理
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web组件使用loadData加载富文本失败如何处理
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:f0017ee3e676132294146c6884b1e188193c0ce03fb40e4142a1705b5a1bd5b0
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:f0017ee3e676132294146c6884b1e188193c0ce03fb40e4142a1705b5a1
 
 在Web组件中使用loadData方式加载富文本失败。问题效果如下图，开始是下方展示example网页，点击loadData按钮后无法展示富文本内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/NYcbfCkPQY2kJrmshDt0JA/zh-cn_image_0000002628899176.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/NYcbfCkPQY2kJrmshDt0JA/zh-cn_image_0000002628899176.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=549EFF0822B98C790177F70CA88D19232DBCABCA586D053F375E2F89FB8447CB "点击放大")
 
 问题代码如下：
 
@@ -176,4 +176,4 @@ struct WebComponent {
 
 整改后效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/9qFXGlCWQqqO_l8-MXR8Aw/zh-cn_image_0000002659258403.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/9qFXGlCWQqqO_l8-MXR8Aw/zh-cn_image_0000002659258403.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=7F5AD1951B237F83EB73912AC759EA0DB7952F13A48FD9E9BDFC349DB52468D8 "点击放大")

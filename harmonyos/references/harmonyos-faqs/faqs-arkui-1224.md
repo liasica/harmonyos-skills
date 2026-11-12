@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1224
 title: 如何实现获取验证码倒计时等待效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现获取验证码倒计时等待效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:45+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:b24362b9b0d33d6188c614de6f32bc614e3973e5afd58aaa0f1ec55d9586db5e
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:b24362b9b0d33d6188c614de6f32bc614e3973e5afd58aaa0f1ec55d958
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/aBNJem2RQqOOhenfYZxIsg/zh-cn_image_0000002658833273.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/aBNJem2RQqOOhenfYZxIsg/zh-cn_image_0000002658833273.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233150Z&HW-CC-Expire=31536000000&HW-CC-Sign=B2A18924C7A45D3A6B150BAAE54829DEA5CF3C6A682B4022790DC503B1632B38 "点击放大")
 
 ## 背景知识
 

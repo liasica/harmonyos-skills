@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-easygo-par
 title: 平行视界
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 兼容方案 > 平行视界
 category: best-practices
-scraped_at: 2026-11-10T10:42:04+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-09
 content_hash: sha256:4e5693756e935269ccdaae8b1c8132b60b0db8048171f60f02fd7b5fc1bd6b71
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:4e5693756e935269ccdaae8b1c8132b60b0db8048171f60f02fd7b5fc1b
 
 平行视界是针对应用在未适配[分栏布局](bpta-multi-device-page-layout.md#section11897247142110)的场景下，通过标准化配置实现宽屏、大屏设备分栏显示的系统级兼容方案。开启平行视界并分栏显示时，应用会在一个窗口中同时显示两个页面，默认情况下，两页按1:1平分窗口，如下图所示。从API版本23开始，支持开发者自配置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/Q3rItZhmTKqKJ29dxn4VRA/zh-cn_image_0000002693538162.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/Q3rItZhmTKqKJ29dxn4VRA/zh-cn_image_0000002693538162.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=A89CC09CAA6990C87A4860B3FFEBED43D60E346695BA80B0CC444AE7267B84B7 "点击放大")
 
 平行视界适用于办公、邮箱、IM即时通讯、电商等需要频繁切换页面的应用。当前平行视界支持两种路由模式：导航模式和购物模式。以购物类应用在双折叠上运行为例：
 
@@ -42,7 +42,7 @@ content_hash: sha256:4e5693756e935269ccdaae8b1c8132b60b0db8048171f60f02fd7b5fc1b
 
    在profile目录下创建兼容方案的配置文件easy\_go.json（示例文件名，可自行命名）。在[module.json5配置文件](../harmonyos-guides/module-configuration-file.md)中添加easyGo字段，并指向引用的easy\_go.json配置文件。当前仅支持在entry模块下配置，配置后应用级生效。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/ORjqUOQgTOio_jUlUYjgZQ/zh-cn_image_0000002693698030.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/ORjqUOQgTOio_jUlUYjgZQ/zh-cn_image_0000002693698030.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=C225CDCCFFCE963DA8068EBBA3AEDE883166A9310F6F5E85CE80E6DD7D4F5277 "点击放大")
 2. 在easy\_go.json配置文件中，配置平行视界的相关属性，详情可参考[配置内容说明](bpta-easygo-parallel.md#section9181949173215)。
 
 ## 配置内容说明
@@ -276,7 +276,7 @@ splitDividerColor内部字段说明：
 
 购物类应用中，用户浏览路径通常层层深入，即从商品分类进入商品列表进行筛选比较，最终进入商品详情页完成商品挑选。相比左侧主页保持不变的导航模式，在购物模式下，页面路由跳转时右侧页面始终向左推入，屏幕右侧展示路由栈栈顶页面，左侧展示路由栈次栈顶页面，更贴合“层层深入、随时回退”的浏览体验。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/Z3YuuR2pQjyWUjboGWzUeA/zh-cn_image_0000002723337523.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/Z3YuuR2pQjyWUjboGWzUeA/zh-cn_image_0000002723337523.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BB64870F77588D626433B0D547F8917AB01FD0B23E5A2220332C51A567F8518 "点击放大")
 
 **实现原理**
 
@@ -308,7 +308,7 @@ splitDividerColor内部字段说明：
 
 购物模式下，页面路由跳转时右侧页面始终向左推入，屏幕右侧展示路由栈栈顶页面，左侧展示路由栈次栈顶页面。但是由于某些页面（如地址编辑页）属于临时编辑操作，将此类页面固定在右侧显示，左侧分栏内容保持不变，交互体验更连贯。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/kgJA8DGZRaKPfSy02FMeXg/zh-cn_image_0000002693698032.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/kgJA8DGZRaKPfSy02FMeXg/zh-cn_image_0000002693698032.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=33B4F09254BB89F120D4DE5F5FE4E3689871FD28452DDCA29AB320921ECDF688 "点击放大")
 
 **实现原理**
 
@@ -340,7 +340,7 @@ splitDividerColor内部字段说明：
 
 在商品详情页，为清晰呈现商品细节，点击商品图片后，需将图片全屏展示。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/XzBB-BtSRIOniK4F_FvlIg/zh-cn_image_0000002693538166.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/XzBB-BtSRIOniK4F_FvlIg/zh-cn_image_0000002693538166.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=232D85EDC184380B63F75F300A2D9D940A58A2FFA0DB96F8F34F64F8CBADD1B1 "点击放大")
 
 **实现原理**
 
@@ -370,7 +370,7 @@ splitDividerColor内部字段说明：
 
 在商品详情页中，“参数对比”、“配置表”类图片往往需要横屏展示，以解决竖屏模式下文字过小等问题。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/MgzvQl0mQoK7YvJTKKpN8Q/zh-cn_image_0000002723217603.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/MgzvQl0mQoK7YvJTKKpN8Q/zh-cn_image_0000002723217603.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=7FDB2BA32FA3995A2EF349187274F930FDEEE001774CC149E1C6DDA3137570C6 "点击放大")
 
 **实现原理**
 
@@ -420,7 +420,7 @@ splitDividerColor内部字段说明：
 
 在平板或三折叠三屏态（G态）等大屏设备上，当应用已进入平行视界分栏显示（左侧主页、右侧商品详情页）时，若用户希望在浏览商品详情的同时，打开其他页面进行比价、查询物流等操作，可以在商品详情页顶部提供分屏入口。用户点击后以主窗口形式进入系统窗口分屏，并在分屏窗口中继续保持平行视界效果，实现应用内的多任务体验。如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/32ugDcinS824hTTnSKRnTw/zh-cn_image_0000002723337525.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/32ugDcinS824hTTnSKRnTw/zh-cn_image_0000002723337525.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEB2B55C2D979760D244F399C05998EE0EC8233B68F4D2C1EEE8E8651344A5D1 "点击放大")
 
 **实现原理**
 
@@ -488,7 +488,7 @@ splitDividerColor内部字段说明：
 
 开启平行视界并分栏显示时，页面内的元素超出页面范围，导致被截断，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/EmAyECwQSMCiXj8hZQ6hpg/zh-cn_image_0000002693698036.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/EmAyECwQSMCiXj8hZQ6hpg/zh-cn_image_0000002693698036.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A1D270AA067BC69E26272BD4EC82E48F49654454F421C256069ADE2DF2C831C "点击放大")
 
 **原因分析**
 
@@ -516,7 +516,7 @@ splitDividerColor内部字段说明：
 
 左右两个分栏页面中，同一资源只在一页面中显示，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/7V5go8V3QbOWnXTuuI6AxA/zh-cn_image_0000002693538168.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/7V5go8V3QbOWnXTuuI6AxA/zh-cn_image_0000002693538168.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=338E966295C01445E3235A67F4474B594245A3D43140A7592E8F315B972CEF5F "点击放大")
 
 **原因分析**
 

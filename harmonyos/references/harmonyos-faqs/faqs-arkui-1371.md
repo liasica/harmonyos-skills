@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1371
 title: 如何解决Checkbox组件无法全部选中的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Checkbox组件无法全部选中的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:a38b8a4179df8e0ccc95e3071dba73ac6666d3a748df6626ee826b74ee2aa7c2
 ---
@@ -14,11 +14,11 @@ List中有Checkbox组件，全选只能选中屏幕中的选项，超出屏幕�
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/j11oEnCKSI-BBkyLVcMf-w/zh-cn_image_0000002658961253.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/j11oEnCKSI-BBkyLVcMf-w/zh-cn_image_0000002658961253.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=4442557927F1A43A7D6D8CA0804B7297EA5B16C451D50AA4A7C3FFD2071E425F "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/VHjMCKHZSs6kdmPLoSsghg/zh-cn_image_0000002658841305.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/VHjMCKHZSs6kdmPLoSsghg/zh-cn_image_0000002658841305.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BFF4EAF1A1407768C4837C3FBEBD7D58DC0B489D1E60A554B4F6D456DA00D05 "点击放大")
 
 ## 背景知识
 

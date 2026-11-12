@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-li
 title: 如何解决使用ohpm发布包到私仓报404错误
 breadcrumb: FAQ > DevEco Studio > 命令行工具 > 如何解决使用ohpm发布包到私仓报404错误
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:02+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:e0c1b7a7b973501486bde30ff28601b606a6065e72fd3d4c521e81c1d7ac9422
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:e0c1b7a7b973501486bde30ff28601b606a6065e72fd3d4c521e81c1d7a
 
 使用ohpm publish发布包到私仓，出现了404报错信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/zBBAJke-SwukDqNOvo7VYQ/zh-cn_image_0000002658808989.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/zBBAJke-SwukDqNOvo7VYQ/zh-cn_image_0000002658808989.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A30E2DE1A27FCE3D641F5233F001AE60589FAE5CC912E1E88AF5951F2BF4B73 "点击放大")
 
 ## 背景知识
 

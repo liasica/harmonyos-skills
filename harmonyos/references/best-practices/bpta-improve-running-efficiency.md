@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-improve-ru
 title: 运行效率提高
 breadcrumb: 最佳实践 > 性能 > 性能优化 > 运行效率提高
 category: best-practices
-scraped_at: 2026-11-10T10:42:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:7b29ffa299fc3e6523111556507190cd06bbb0cb7581765b1f12fde38ac1d85a
 ---
@@ -145,7 +145,7 @@ oh-package.json如下增加模块依赖library包：
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/yE4XeDB8Tty5vOtReGhTDQ/zh-cn_image_0000002515417448.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/yE4XeDB8Tty5vOtReGhTDQ/zh-cn_image_0000002515417448.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=666C627D63CA6B8BA3CFCCEBFF81E07CD8396004FB0C40ADE195543CA4E82D43 "点击放大")
 
 **使用路径展开**
 
@@ -184,4 +184,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/KHGKXl36SVmPvbladVJlkg/zh-cn_image_0000002515577362.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/KHGKXl36SVmPvbladVJlkg/zh-cn_image_0000002515577362.png?HW-CC-KV=V1&HW-CC-Date=20261112T233138Z&HW-CC-Expire=31536000000&HW-CC-Sign=4AF87D75B03E90825804932859B6B6ACF3B8CA95F7D3E65E76C3FE658FDD348B "点击放大")

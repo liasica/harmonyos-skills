@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 动态属性设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 动态属性与自定义 > 动态属性设置
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:1dd037532e8a059ad0d0b501ac3ce783df88c5c6c2acdf35ba0653fa0d2a678d
 ---
@@ -415,7 +415,7 @@ struct AttributeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/cAh-BZ2PSTqgnTP87_vezg/zh-cn_image_0000002786361074.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/cAh-BZ2PSTqgnTP87_vezg/zh-cn_image_0000002786361074.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=03264F6A3A15949BC46F0E596E5D890A2D6FE81AB7B4B62ACCEF15167606BE51)
 
 ### 示例2（组件绑定Modifier实现按压态效果）
 
@@ -452,7 +452,7 @@ struct AttributePressedDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/ZofXIBP6QXi5oqwfuEO2Xw/zh-cn_image_0000002786361074.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/ZofXIBP6QXi5oqwfuEO2Xw/zh-cn_image_0000002786361074.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3EA5F00DAC6200E4020AEA084800A6F4C845CDA067A3C70D6FC5D6665427607)
 
 ### 示例3（自定义Modifier不支持感知@State装饰的状态数据变化）
 
@@ -509,7 +509,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/PVM3Iwg_Sgm2PjPvhD-_3A/zh-cn_image_0000002815560495.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/PVM3Iwg_Sgm2PjPvhD-_3A/zh-cn_image_0000002815560495.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=B3A92E5932735375727E8542CB4225E1E19EF7764157E5F0AABF760A74D1B92A)
 
 ### 示例4（Modifier和自定义Modifier的属性同时生效）
 
@@ -574,7 +574,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/urUoI41ASMeIZQzXe6vV4A/zh-cn_image_0000002815400579.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/urUoI41ASMeIZQzXe6vV4A/zh-cn_image_0000002815400579.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=625481ABD94AC2DDD7545F75F6277B95D0F86AFCAEEA374CD0CF2C8CE48D823C)
 
 ### 示例5（组件绑定Modifier获焦样式）
 
@@ -619,7 +619,7 @@ struct AttributeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/iTwgJ-u-RbOVhNetfqwxxQ/zh-cn_image_0000002786521004.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/iTwgJ-u-RbOVhNetfqwxxQ/zh-cn_image_0000002786521004.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=0AAAF407824FA5E4C87C191F4017EC71074C4C3B17F56FB63916579AAD0C0E56)
 
 ### 示例6（组件绑定Modifier禁用状态的样式）
 
@@ -658,7 +658,7 @@ struct AttributeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/Gh6DDStfTDaUIqz75YPCtA/zh-cn_image_0000002786361076.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/Gh6DDStfTDaUIqz75YPCtA/zh-cn_image_0000002786361076.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=80C8DB98FD21E6B00C5CF606C04AAD697FD143818D5A0E9E21904705421EB056)
 
 ### 示例7（组件绑定Modifier选中状态样式）
 
@@ -704,7 +704,7 @@ struct AttributeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/WkmXFTADThK9UMPXdzokNQ/zh-cn_image_0000002815560497.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/WkmXFTADThK9UMPXdzokNQ/zh-cn_image_0000002815560497.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=794CF3C41D370857FFA24310FF4292B6812B0AA2B3BED9C4E4768B5F2693A8B5)
 
 ### 示例8（自定义组件绑定Modifier实现按压态效果）
 
@@ -754,7 +754,7 @@ struct ChildComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/Zx2BDsNTQdCf_12hkbBZhA/zh-cn_image_0000002815400581.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/Zx2BDsNTQdCf_12hkbBZhA/zh-cn_image_0000002815400581.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=8ACFF9629B87BEE01A9E97F214DE66B12C95C8339E51A05DF09A0B9CB8BCA4FB)
 
 ### 示例9（组件绑定Modifier实现鼠标悬浮态效果）
 
@@ -794,4 +794,4 @@ struct AttributeHoveredDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/schJ8GY1RQORxH7NUjrppA/zh-cn_image_0000002786521006.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/schJ8GY1RQORxH7NUjrppA/zh-cn_image_0000002786521006.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=3481BCA80DBE75184CD2184869AB412086D62B2D506EA0CC8B16BB7E59025E8B)

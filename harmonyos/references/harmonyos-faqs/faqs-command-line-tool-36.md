@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-li
 title: 如何解决私仓上传包失败的问题
 breadcrumb: FAQ > DevEco Studio > 命令行工具 > 如何解决私仓上传包失败的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:03+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-30
 content_hash: sha256:edc811799cad4954769c5e6bedd7de0fad8a25403a4d650c389099e6d676fcef
 ---
@@ -17,7 +17,7 @@ ohpm-repo私仓上传包报错，具体表现包括但不限于以下几种场�
 * 场景三：上传包时报错：ohpm ERROR: Publish failed, detail: HttpCode 400, The package "xxx" was once published, but has been unpublished, please change the package version and publish it again.
 * 场景四：上传包时报错：解析失败！请重新上传。报错页面如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/IseHtUpbRf2enITRsC518g/zh-cn_image_0000002628569634.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/IseHtUpbRf2enITRsC518g/zh-cn_image_0000002628569634.png?HW-CC-KV=V1&HW-CC-Date=20261112T233206Z&HW-CC-Expire=31536000000&HW-CC-Sign=38081486BAD46E2F42BCCD4B65EE41B7DCEDC63D262ADAE5F5CE1A99A739F4C2)
 
 ## 背景知识
 

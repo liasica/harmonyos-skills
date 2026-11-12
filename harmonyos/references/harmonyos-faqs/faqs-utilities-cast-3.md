@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-utilities-
 title: DevEco Testing设备投屏时切换流畅模式提示暂不支持如何解决
 breadcrumb: FAQ > DevEco Testing > 实用工具 > 设备投屏 > DevEco Testing设备投屏时切换流畅模式提示暂不支持如何解决
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:4fb070b110383f3a0bf721ee6f0dd0793176445b13ab4c096a66cf155d80d95f
 ---
@@ -20,13 +20,13 @@ DevEco Testing的[实用工具](../harmonyos-guides/tool.md)支持将设备界�
 
 1. 连接设备，执行“hdc shell param set persist.ace.testmode.enabled 1”命令是否success。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/wCiNBpx6SL-MqNN5nxhfFg/zh-cn_image_0000002658803453.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/wCiNBpx6SL-MqNN5nxhfFg/zh-cn_image_0000002658803453.png?HW-CC-KV=V1&HW-CC-Date=20261112T233219Z&HW-CC-Expire=31536000000&HW-CC-Sign=67FE71E8314D97F2C2929D60F446D702C512DC159CD87F2ACAB714A3350CBBD8)
 2. 执行“hdc shell pidof uitest”命令，查看是否存在被占用的线程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/wvfSpwOSTqqZPqPazBz_fg/zh-cn_image_0000002628404190.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/wvfSpwOSTqqZPqPazBz_fg/zh-cn_image_0000002628404190.png?HW-CC-KV=V1&HW-CC-Date=20261112T233219Z&HW-CC-Expire=31536000000&HW-CC-Sign=7BBF2FFFB501D8E15CC1F7D98919757FCE597181692FFEDF59AED58F53D125DD)
 3. 执行“hdc shell uitest start-daemon singleness”命令，检查是否有信息打印。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/oEwGTrZ5R_29BvoKT2z2gQ/zh-cn_image_0000002628564092.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/oEwGTrZ5R_29BvoKT2z2gQ/zh-cn_image_0000002628564092.png?HW-CC-KV=V1&HW-CC-Date=20261112T233219Z&HW-CC-Expire=31536000000&HW-CC-Sign=4B3AD83FEA3A3BD19E6220123AAAE654D9FF9015CB003B2FE27DBC4FAE72C6B1)
 
 ## 分析结论
 

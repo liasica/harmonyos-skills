@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-jsvm-9
 title: 加载so库后App出现闪退如何解决
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > JSVM > 加载so库后App出现闪退如何解决
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:59+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:0bb4584497334964c1ed02ae1e818a1481aa30836fffb700b177127e52bf9178
 ---
@@ -22,34 +22,34 @@ content_hash: sha256:0bb4584497334964c1ed02ae1e818a1481aa30836fffb700b177127e52b
 
    如下图，本次闪退为cppcrash，说明so加载链接完成，但是在代码运行时出现错误，根据下图Reason反馈得知由于空指针访问导致的报错。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/3X30TRK3TrCNo8jzR4bc6Q/zh-cn_image_0000002658907821.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/3X30TRK3TrCNo8jzR4bc6Q/zh-cn_image_0000002658907821.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=0C17F4F7B9CD418CD5D5B0AC988C2534053C5AF3B6FFD3D83BCB01006E2A4005 "点击放大")
 
    若闪退并非cppcrash而是jscrash，如下图，则说明js在访问so或者so加载链接出现问题，需要进一步定位。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/dAk06TD_Rte4Y3t_Rr6nHw/zh-cn_image_0000002658787883.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/dAk06TD_Rte4Y3t_Rr6nHw/zh-cn_image_0000002658787883.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=FFFFEF4BCEFFE5108A369BDDAA9CC96920EF845D47F1BC30A748B852E0FB0478 "点击放大")
 
    ArkTS出错位置和so对外导出的头文件如下二图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/UbaEBDbNS2igFYSpluph_A/zh-cn_image_0000002628388610.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/UbaEBDbNS2igFYSpluph_A/zh-cn_image_0000002628388610.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=987B19B93C6078C82F1D03ACDFD45E44F5FB0051456A442A8BF4528DC178AAA5 "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/xWs2YYXjTamwMdy2hNRuvA/zh-cn_image_0000002628548510.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/xWs2YYXjTamwMdy2hNRuvA/zh-cn_image_0000002628548510.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=7C44CEC5E2243FDEBA128D673041AC71AC1019CF4EA8E5E707011C2DFDE8D3D5 "点击放大")
 2. 解压HAP包，查看lib目录下是否存在对应的so文件。
    1. 在HAP文件后添加.rar扩展名，点击压缩文件打开。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/0UA44bkYSAGwDwdLRZloMQ/zh-cn_image_0000002658907823.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/0UA44bkYSAGwDwdLRZloMQ/zh-cn_image_0000002658907823.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=BC5B5BB6DFD9FF991B6760E1E485E7387ECF5262043C88A07158529D7CEDA82E)
    2. 查看libs\arm64-v8a目录下是否存在对应的so文件，如果缺失so文件说明在编译链接过程中没有将so文件打包进HAP，需要定位具体原因。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/5xy-p8-TRAiCP8pg-9nnxQ/zh-cn_image_0000002658787885.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/5xy-p8-TRAiCP8pg-9nnxQ/zh-cn_image_0000002658787885.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=0956757541A5ACE30216A742F0BDEB450490221CC68043DD86BDC00B3D6EB8A1 "点击放大")
 3. 确认HAP中的so文件是真实的库文件。
 
    由于在不同平台中软链接格式不同，此处以Linux为例。在Linux平台进行交叉编译时，一些源码通过编译链接后会生成多个链接文件，如下图。libjpeg.so/libjpeg.so.62均为链接文件，占用空间很小，而实际的so文件则为libjpeg.so.62.4.0,如果只拷贝链接文件会导致无法链接到真正的so文件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/dKVsI5KQRnm_s2RLWQW5ag/zh-cn_image_0000002628388612.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/dKVsI5KQRnm_s2RLWQW5ag/zh-cn_image_0000002628388612.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=9FB25F371406B0BE48DE4FC68C2365582C63A1F67725D65F894D96F9573EF356 "点击放大")
 4. 确认so文件依赖so文件均已导入进HAP包中。
 
    通过readelf -d xxx.so命令可以读取so文件中依赖的so文件，以下图libavcodec.so为例。该so同时依赖了libswreasample.so\libavutil.so\libz.so\libc.so，需要确保如上so均打包进入HAP中或者存在于HarmonyOS的系统库中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/qCq6J17eTgGhV-376iztJw/zh-cn_image_0000002628548512.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/qCq6J17eTgGhV-376iztJw/zh-cn_image_0000002628548512.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E6D50B4AC588EB2AA6F001FE80A922C9F8EE3ACE89E4C02BD733C5FCC63DD87 "点击放大")
 
 ## 分析结论
 

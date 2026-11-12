@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-project-ma
 title: 超大字符串文件拆分解决资源引用卡顿问题
 breadcrumb: FAQ > DevEco Studio > 工程管理 > 超大字符串文件拆分解决资源引用卡顿问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:50+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:21acf1a7bdfb694af8594a0693de6a6de79cba2faa0c5f58bfa2650e93e93c83
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:21acf1a7bdfb694af8594a0693de6a6de79cba2faa0c5f58bfa2650e93e
 
 开发者资源相关文件全部放在一个单独的har内，总共五种语言，每种大概七千左右的key、value键值对。在工程其他的module中，借助资源访问符访问字符串，IDE会卡顿加载出来耗时较长，基本点不动。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/KBznXTVST9-XyMr3469alA/zh-cn_image_0000002628567962.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/KBznXTVST9-XyMr3469alA/zh-cn_image_0000002628567962.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=E1C2F897774DA74BE33DB209FBE7EE45D4F50FBD9BE155A0D257D9D6E2FF8817 "点击放大")
 
 ## 背景知识
 
@@ -24,10 +24,10 @@ content_hash: sha256:21acf1a7bdfb694af8594a0693de6a6de79cba2faa0c5f58bfa2650e93e
 
 1. 右键element，选择New，然后选择Element Resource File。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/J49O845ARly63iY2Mt2Keg/zh-cn_image_0000002658927285.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/J49O845ARly63iY2Mt2Keg/zh-cn_image_0000002658927285.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=C5A5F37909D8DF3D3D9DF8EA05499EF39F845B4018A28450904AE6294F2E33E9 "点击放大")
 2. File name写与string不一样的名称就可以了，比如string1，Root element选择string。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/-hIhEN1IS2marxI7N3yDMw/zh-cn_image_0000002658807329.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/-hIhEN1IS2marxI7N3yDMw/zh-cn_image_0000002658807329.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B6BCEF932746E2607E1EA1B395552CA8D7272177BD3AA9EBB2AA1B376C6F5B1 "点击放大")
 3. 在新建的string1.json文件中新增键值对（如test\_string\_new），其他地方使用时，只要大小符合规范IDE很快会加载出来。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/TrI5fEJJS7-Qc8OwOM2XzQ/zh-cn_image_0000002628408068.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/TrI5fEJJS7-Qc8OwOM2XzQ/zh-cn_image_0000002628408068.png?HW-CC-KV=V1&HW-CC-Date=20261112T233217Z&HW-CC-Expire=31536000000&HW-CC-Sign=A6542DA433877742536FF0A8343A87B6D2222826A544E95AC89E44BC21EE80E5 "点击放大")

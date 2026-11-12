@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Magnifier)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (Magnifier)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:57+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:68e9b01512fe7e101b52c0eaeeb6045830db0f0f97b1b8b72a50a5fcfd7e4431
 ---
@@ -80,7 +80,7 @@ struct MagnifierExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/tZvDFcORS-6yys4usxoDKQ/zh-cn_image_0000002786360876.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/tZvDFcORS-6yys4usxoDKQ/zh-cn_image_0000002786360876.png?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=64FEF645C9FCB8D7F35ACDDFE7BD47FDA6A09F6B6FE030186DF7CF9CA4B28BFE)
 
 ## show
 

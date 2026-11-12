@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1092
 title: 如何实现Flex分页展示的功能
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现Flex分页展示的功能
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:54+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:55efb23a19fd07949eeb03aae77cf3152dda3a968d0a52c61ea0490c30562008
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:55efb23a19fd07949eeb03aae77cf3152dda3a968d0a52c61ea0490c305
 
 参考图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/MsQb-wkNTFOz-K-v2elAcg/zh-cn_image_0000002658926573.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/MsQb-wkNTFOz-K-v2elAcg/zh-cn_image_0000002658926573.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE246E73DDFBA347C2D052E91520E260F3A852046AD961CA8DA8BD3F09DB62CB "点击放大")
 
 ## 背景知识
 
@@ -174,7 +174,7 @@ struct FlexPage {
 
 效果图展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/SVTCZWFnQlqhopEd_L-crg/zh-cn_image_0000002658806631.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/SVTCZWFnQlqhopEd_L-crg/zh-cn_image_0000002658806631.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=E52F13976F6AC128E76B0DCB9580CC45DDD898CEDF8C1121EE35874ED139DA14 "点击放大")
 
 ## 常见FAQ
 

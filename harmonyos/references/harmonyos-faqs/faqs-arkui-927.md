@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-927
 title: 如何解决Button嵌套Text组件后requestFocus无法获取焦点的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决Button嵌套Text组件后requestFocus无法获取焦点的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:13+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:841a16cefb931d6ec033aad74d8a5e6aac5154541d1dd9655e44122518773dc2
 ---
@@ -137,7 +137,7 @@ struct RequestFocusDemo {
 
   效果图如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/vNj2jxEwR_2z4-EWBJ31xA/zh-cn_image_0000002628560230.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/vNj2jxEwR_2z4-EWBJ31xA/zh-cn_image_0000002628560230.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=7598170132EDC20A50D74CAD9E7D6909EAC452424349517390E1CCD32351F847 "点击放大")
 
 ## 总结
 

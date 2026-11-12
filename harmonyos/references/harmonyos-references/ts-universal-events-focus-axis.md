@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 焦点轴事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 基础输入事件 > 焦点轴事件
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:04+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-23
 content_hash: sha256:e2378924da60deff023eb49e991858e0cad433c999de85c7051b52a68f2200a4
 ---
@@ -98,4 +98,4 @@ struct FocusAxisEventExample {
 
 游戏手柄操纵杆移动时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/DnExT9umQ6-ekVDJCEQ9mA/zh-cn_image_0000002815560375.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/DnExT9umQ6-ekVDJCEQ9mA/zh-cn_image_0000002815560375.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=7DCD74ED32690946EC12312DC3E2F4C5FFA0A44008AD196BE9E691C15F88960F)

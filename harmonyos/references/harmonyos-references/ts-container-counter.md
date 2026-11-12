@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: Counter
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > Counter
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:a9e992790c1ee2ce424d9db2dd92ca736e7867c28974723b8892050e4a294aa2
 ---
@@ -152,4 +152,4 @@ struct CounterExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/HyzmX1EfQdWo-1IlW4yuSQ/zh-cn_image_0000002786521376.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/HyzmX1EfQdWo-1IlW4yuSQ/zh-cn_image_0000002786521376.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0420DC3DF429BB244FEBAAB25AA70B937FA9066C134A7BAD3C9C230000AFAC5)

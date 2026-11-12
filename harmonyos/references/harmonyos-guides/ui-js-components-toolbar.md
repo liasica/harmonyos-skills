@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: toolbar开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > toolbar开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:19+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-03-09
 content_hash: sha256:e0df41c69bd20afec967b01baaf768f933d4a8ad117c1688aae60777179cad50
 ---
@@ -39,7 +39,7 @@ toolbar-item{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/ElmfSParSea75YPl6BTJbw/zh-cn_image_0000002786359326.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/ElmfSParSea75YPl6BTJbw/zh-cn_image_0000002786359326.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=537AFABB8DB88D943184B72BE698F06CC7A55B3BBB78E97071D7B522B98152E1)
 
 ## 添加子组件
 
@@ -74,7 +74,7 @@ toolbar-item{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/KtQbTW6DTJWEBQTOocDSwg/zh-cn_image_0000002815558747.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/KtQbTW6DTJWEBQTOocDSwg/zh-cn_image_0000002815558747.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=8C507FB1B2F4D5D18D755ADEC55CE2ED945EBC986D8FC3C297E7F8A71B17E146)
 
 ## 设置样式
 
@@ -107,7 +107,7 @@ toolbar-item{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/rz9nRrM-QUmurfuGSaN5Gg/zh-cn_image_0000002815398831.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/rz9nRrM-QUmurfuGSaN5Gg/zh-cn_image_0000002815398831.png?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=466E5182C41EA6EBFC707F0D075D9C108179A82618CAF940398091B20DF9F7A7)
 
 ## 绑定事件
 
@@ -157,7 +157,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/VdgK-WJ3QDmGcjXalC_ZlQ/zh-cn_image_0000002786519256.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/VdgK-WJ3QDmGcjXalC_ZlQ/zh-cn_image_0000002786519256.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=CD8573B6986DF21487E2A89BCE4E0B58274A1ED3E39070112671997B9779F7AB)
 
 **说明** 
 
@@ -212,4 +212,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/x5tfh7JaSFuYY9uDTqcFxQ/zh-cn_image_0000002786359328.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/x5tfh7JaSFuYY9uDTqcFxQ/zh-cn_image_0000002786359328.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233236Z&HW-CC-Expire=31536000000&HW-CC-Sign=31279E66E9C51E7B9F1CE32A424D60D2CDA2398F6322BB57ED6A05D518E6A57A)

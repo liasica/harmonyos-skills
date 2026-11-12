@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pixelmap-draw
 title: 图片绘制（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 图元绘制 > 图片绘制（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:a7ef078385c075799cb30c59b56e0723a6ff5466e2eae81557b2f00f28be7c63
 ---
@@ -96,7 +96,7 @@ content_hash: sha256:a7ef078385c075799cb30c59b56e0723a6ff5466e2eae81557b2f00f28b
 
    绘制效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/6D_m-23_Tna3fWTkPX6Pnw/zh-cn_image_0000002815399529.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/6D_m-23_Tna3fWTkPX6Pnw/zh-cn_image_0000002815399529.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=60387A552766F377358BB9DBC243E93DFB67056E34D9858106D58D10741EED54)
 
 ## 示例代码
 

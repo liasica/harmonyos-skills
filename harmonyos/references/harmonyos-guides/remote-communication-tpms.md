@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/remote-commun
 title: 基于TracingConfiguration实现性能维测
 breadcrumb: 指南 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > 提升HTTP传输性能 > 基于TracingConfiguration实现性能维测
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:4a4cc7340b8d632bc444130bd092b77d5a2b00e53ad2290bff780a2ad679624c
 ---
@@ -86,7 +86,7 @@ content_hash: sha256:4a4cc7340b8d632bc444130bd092b77d5a2b00e53ad2290bff780a2ad67
 
 下面，我们将通过图片、时间线及一段示例代码，详细解析请求过程中的关键时间点。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/-MTNLwutTyGMh0TmwvohRw/zh-cn_image_0000002815559157.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/-MTNLwutTyGMh0TmwvohRw/zh-cn_image_0000002815559157.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=34CDB3AF8A44DF6564D35A0D00D756451FEE524A7E52DE2ECB68ABBF9B707857)
 
 从图中可以看到HTTP请求过程的基本过程，并且有一些关键的时间点，下面将以时间线的方式对其进行说明：
 

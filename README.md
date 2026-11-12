@@ -189,9 +189,9 @@ uv sync                              # 按 uv.lock 安装依赖（含 pytest）�
 两阶段，全部走华为文档站自己的接口（`config/whitelist.yaml` 的 `api_base`），不需要浏览器：
 
 1. **discover**（各根并行）：每个根调一次 `getCatalogTree`，整棵目录树一次返回；展平后得到每篇文档的 objectId、标题与面包屑（根标题 > 各级目录 > 本节点）。任一根失败或树里没有文档则整体退出（退出码 1），不改 manifest 与 INDEX，避免残缺清单把整个分类误标 stale。
-2. **fetch**（concurrency=16）：并发调 `getDocumentById` 拉正文 HTML，转 Markdown 后按 sha256 增量写盘到 `harmonyos/references/`；manifest 里没有记录时以磁盘副本 frontmatter 的 `content_hash` 为准，全新环境（如 CI）不会整库重写。正文没变但 url、标题、面包屑或更新时间变化时也会重写文件以刷新 frontmatter。每完成 50 篇 flush 一次 manifest，便于中断恢复。抓取失败的文档若磁盘上还有上次的副本，仍保留在 INDEX 中。
+2. **fetch**（concurrency=16）：并发调 `getDocumentById` 拉正文 HTML，转 Markdown 后按 sha256 增量写盘到 `harmonyos/references/`；manifest 里没有记录时以磁盘副本 frontmatter 的 `content_hash` 为准，全新环境（如 CI）不会整库重写。正文没变但 url、标题、面包屑或更新时间变化时也会重写文件以刷新 frontmatter，资源签名临近过期时会更新链接。每完成 50 篇 flush 一次 manifest，便于中断恢复。抓取失败的文档若磁盘上还有上次的副本，仍保留在 INDEX 中。
 
-转换规则：正文开头的 h1 即标题，不重复输出；接口原文顶层章节是 h4，标题文本前的 `[h2]` 标记表示再低一级，处理后整体上移到从 `##` 开始；「说明 / 注意 / 须知 / 警告」提示框的图标图片换成对应文字标签；代码块语言取自 `<pre>` 的 class；链接转绝对 URL 并剥离 CDN 签名参数，再把白名单内的链接改写为仓库内相对路径。
+转换规则：正文开头的 h1 即标题，不重复输出；接口原文顶层章节是 h4，标题文本前的 `[h2]` 标记表示再低一级，处理后整体上移到从 `##` 开始；「说明 / 注意 / 须知 / 警告」提示框的图标图片换成对应文字标签；代码块语言取自 `<pre>` 的 class；链接转绝对 URL 并保留 CDN 签名参数，再把白名单内的链接改写为仓库内相对路径。内容哈希忽略签名参数；同一资源的签名链接剩余有效期超过一天时复用，临近过期时使用本次抓取的链接。
 
 时间预估（参考实测）：
 
@@ -276,7 +276,7 @@ content_hash: sha256:...
 ## 已知限制
 
 - 文档 URL 统一为 `https://developer.huawei.com/consumer/cn/doc/<分类>/<objectId>`，不带站点侧边栏链接里的 `?istab=1&m=1`
-- 图片等资源链接上的 CDN 临时签名参数（`HW-CC-KV` / `HW-CC-Date` / `HW-CC-Expire` / `HW-CC-Sign`）在转换时剥离：它们按分钟变化且 24 小时过期，保留会让每次抓取的 hash 都不同。因此 Markdown 里的图片链接只用于标识资源，不保证可直接访问
+- 图片、视频和音频通过华为 CDN 在线加载，链接保留完整签名；签名过期后需同步文档并更新本地副本。
 - 站点已下线的文档只从 INDEX 移除（manifest 标 `stale`），磁盘上的 `.md` 不删除
 - 同一 objectId 若在多个目录节点下出现，只保留首次出现位置的面包屑
 - objectId 为 `index` 的文档存为 `index-doc.md`：在 macOS 这类大小写不敏感的文件系统上，`index.md` 与分类索引 `INDEX.md` 是同一个文件

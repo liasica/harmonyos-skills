@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 开发者中心审核驳回：在同意隐私政策前，应用获取了用户的个人信息
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 开发者中心审核驳回：在同意隐私政策前，应用获取了用户的个人信息
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:45+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:c78f5f06da70554a43572f6d28cf0590ccdab65423c9724b6e69166e0c7548d9
 ---
@@ -26,7 +26,7 @@ content_hash: sha256:c78f5f06da70554a43572f6d28cf0590ccdab65423c9724b6e69166e0c7
 
 在HarmonyOS开发中，系统和用户授权的权限需要开发者完成以下准备操作：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/2ozNqUROQiesa3Cj3daD7w/zh-cn_image_0000002678026887.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/2ozNqUROQiesa3Cj3daD7w/zh-cn_image_0000002678026887.png?HW-CC-KV=V1&HW-CC-Date=20261112T233145Z&HW-CC-Expire=31536000000&HW-CC-Sign=79B0FF0DFD7DDB09101C83417E546533CF57470A2BCB7FB0A50E4703B1A0A2FA "点击放大")
 
 1. **权限声明**：
 

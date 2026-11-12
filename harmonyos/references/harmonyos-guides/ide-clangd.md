@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-clangd
 title: 代码索引（clangd）
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码索引（clangd）
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:01+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:910834d33cffc07627de9b4ed3fb4c33122e969a719a8ec93aacedb3df30d2aa
 ---
@@ -22,8 +22,8 @@ content_hash: sha256:910834d33cffc07627de9b4ed3fb4c33122e969a719a8ec93aacedb3df3
 
 点击菜单栏**File** **>** **Settings（macOS为DevEco Studio > Preferences/Settings）****>** **Advanced Settings** **>** **Clangd**，进行索引模式切换。切换索引模式后，需要重启DevEco Studio。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/AhCyd89qRxuoHLkXIcqRQQ/zh-cn_image_0000002808766443.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/AhCyd89qRxuoHLkXIcqRQQ/zh-cn_image_0000002808766443.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=4C0594BCB01D4FAA5FBD9B859571CB681C19BF20ED32F30F7C38B185183AC4C8)
 
 打开C/C++大工程时，DevEco Studio右下角会弹出提示，建议切换索引模式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/Fct7tPoGTayVvnhLLREliA/zh-cn_image_0000002779406884.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/Fct7tPoGTayVvnhLLREliA/zh-cn_image_0000002779406884.png?HW-CC-KV=V1&HW-CC-Date=20261112T233231Z&HW-CC-Expire=31536000000&HW-CC-Sign=C10A497CDE52DE80A89E22DECEF29DA9036421A06CD90E514B3A12F0EFF9C232)

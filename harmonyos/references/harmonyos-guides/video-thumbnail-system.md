@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-thumbna
 title: 基于系统能力获取视频缩略图
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 媒体开发实践 > 基于系统能力获取视频缩略图
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-16
 content_hash: sha256:49cf2db8cb61766b5c83c8888757ee588f91eec7c2362562b57959578509bd9a
 ---
@@ -77,7 +77,7 @@ content_hash: sha256:49cf2db8cb61766b5c83c8888757ee588f91eec7c2362562b5795957850
 
 ### 实现效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/n_w9N5LuT9GUDXagONlCtA/zh-cn_image_0000002786359960.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/n_w9N5LuT9GUDXagONlCtA/zh-cn_image_0000002786359960.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=A4B78510CE2089B6FB669A4354E59E7D9412C9DC592B992CF6C280E3E54D7254)
 
 ## 选取视频帧作为缩略图
 
@@ -148,7 +148,7 @@ HarmonyOS提供视频缩略图获取类[Interface (AVImageGenerator)](../harmony
 
 ### 实现效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/GO4p07IDTE-PUkOyFGOYqQ/zh-cn_image_0000002815559381.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/GO4p07IDTE-PUkOyFGOYqQ/zh-cn_image_0000002815559381.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233237Z&HW-CC-Expire=31536000000&HW-CC-Sign=408DF21FB7868CE491510F208ECF676318379FE35D7D39B3D16DB783CEE1F94B)
 
 ## 常见问题
 

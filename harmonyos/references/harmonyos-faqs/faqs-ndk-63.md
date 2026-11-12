@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-63
 title: 如何通过多个xxx.d.ts文件导出Native侧接口
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 如何通过多个xxx.d.ts文件导出Native侧接口
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:57+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:9f03f092b9946fd4f054f02c7f7dff588574dbd9ace0e4197f6d5c7bc8777634
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:9f03f092b9946fd4f054f02c7f7dff588574dbd9ace0e4197f6d5c7bc87
 
 在oh-package.json5中的types字段只能指定一个出口。如果需要封装多个.d.ts文件中的接口，可以使用重导出的方式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/Bf_pSfyJQgCL0vstEgfbyw/zh-cn_image_0000002654835215.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/Bf_pSfyJQgCL0vstEgfbyw/zh-cn_image_0000002654835215.png?HW-CC-KV=V1&HW-CC-Date=20261112T233214Z&HW-CC-Expire=31536000000&HW-CC-Sign=FF2F37F30112BC9004554067575BD75BC0FF986372C1C5A1B44EDE5D492C4F44 "点击放大")
 
 实现方式：
 

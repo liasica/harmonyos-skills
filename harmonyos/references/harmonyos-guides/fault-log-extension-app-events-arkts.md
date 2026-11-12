@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fault-log-ext
 title: 使用FaultLogExtensionAbility订阅事件
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用FaultLogExtensionAbility订阅事件
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:709919412aaa0f0360eefa7f10849b1ccac0a19b99c23e6881dcb726d922f1cd
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:709919412aaa0f0360eefa7f10849b1ccac0a19b99c23e6881dcb726d92
 
 FaultLogExtensionAbility的原理机制如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/vuz9pby3TGaKjMt0uOsesw/zh-cn_image_0000002786359812.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/vuz9pby3TGaKjMt0uOsesw/zh-cn_image_0000002786359812.png?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=6A860508FD35110F3A5C3959FF9906833DDEB91431C6561C2765318989E70CDA)
 
 1. 主进程启动后，在主进程中添加事件观察者A和事件观察者B，其中A包含正常实现的回调处理函数以及事件订阅过滤条件[appEventFilter](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md#appeventfilter)，应用发生故障后正常重启会由A的回调处理HiAppEvent事件；B的回调处理函数为空实现，仅用于生成需要保存的事件订阅过滤条件。
 2. 事件观察者A和B的事件订阅过滤条件会被保存到应用沙箱中。当应用移除事件观察者时，应用沙箱中保存的相应观察者的事件订阅过滤条件也会被删除。

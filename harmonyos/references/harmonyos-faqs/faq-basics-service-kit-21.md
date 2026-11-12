@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-basics-serv
 title: 更换头像时头像资源加载异常
 breadcrumb: FAQ > 系统开发 > 基础功能 > 基础服务（Basics Service） > 更换头像时头像资源加载异常
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:73c4d353744a7561c2eaa3155c7a6978168befc6799cd866234464a11ee3ef5c
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:73c4d353744a7561c2eaa3155c7a6978168befc6799cd866234464a11ee
 
 点击头像更换，提示头像资源加载异常。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/A8MqzQPfTkWr0P7JNPdFzQ/zh-cn_image_0000002658852669.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/A8MqzQPfTkWr0P7JNPdFzQ/zh-cn_image_0000002658852669.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=7CEDCB82EB5C0FABF31472C41396AFB8831927D67A3EBE307C3DAA7C955B112D "点击放大")
 
 ## 背景知识
 

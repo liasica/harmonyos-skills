@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1541
 title: 如何解决Column子组件超出容器边界
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决Column子组件超出容器边界
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:41+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:99b12ea34df0cd141ac1438057feba3a6464ce09ac508f3035dfafffaa56dabc
 ---
@@ -46,7 +46,7 @@ struct ProblemCode {
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/gnbgn4ohRdONN4H4Hz8Dbg/zh-cn_image_0000002628769118.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/gnbgn4ohRdONN4H4Hz8Dbg/zh-cn_image_0000002628769118.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=6CEA5F1578A4EB4FDFC5DCE928C8B6C74241393698E7B5BE73B1E4A270AF0C0E "点击放大")
 
 ## 背景知识
 
@@ -95,7 +95,7 @@ struct OptionOne {
 
 修改后的预览效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/1N6LevzwQK6Ru3jxFsJeiQ/zh-cn_image_0000002658968437.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/1N6LevzwQK6Ru3jxFsJeiQ/zh-cn_image_0000002658968437.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=0352C1D546926481E665C2032D95C649F2CF3AEA6CE79392F8D9FDF159DC0FD2 "点击放大")
 
 另外，在使用constraintSize的时候，注意constraintSize(minWidth/maxWidth/minHeight/maxHeight)取值对width/height影响。
 
@@ -138,7 +138,7 @@ struct OptionTwo {
 
 预览效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/bFs4TD2PRcmyf99HGSLCPQ/zh-cn_image_0000002658848483.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/bFs4TD2PRcmyf99HGSLCPQ/zh-cn_image_0000002658848483.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=A0B1315184C1DCB3B7E065B1E25AF975A1CA6FAC2D2AED45783C08CE375313B9 "点击放大")
 
 如果需要处理这个问题，可以在外部使用Scroll组件，并在Scroll组件上设置constraintSize。此时当子组件的占用空间超过constraintSize设置的约束值时，就会出现滚动条，从而不会破坏整个布局的结构。
 
@@ -177,6 +177,6 @@ struct OptionThree {
 
 修改后的预览效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/WuENvcDKSTOYOrH7NAYNww/zh-cn_image_0000002628609222.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/WuENvcDKSTOYOrH7NAYNww/zh-cn_image_0000002628609222.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=84A1B90F7AD6DB0F5AA488D07B8C45AADD9062B322D2620227E566268A1514B9 "点击放大")
 
 这样不仅保持了constraintSize的有效性，还通过滚动条提供了一种查看超出部分内容的方式，确保了用户体验不受影响。

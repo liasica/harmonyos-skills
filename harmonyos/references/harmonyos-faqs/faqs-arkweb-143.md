@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkweb-143
 title: Web组件如何实现拦截网络超链接后在浏览器中打开
 breadcrumb: FAQ > 应用框架开发 > Web框架 > Web开发（ArkWeb） > Web组件如何实现拦截网络超链接后在浏览器中打开
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:06+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:8d484a494620b065b70779b0a6be686e56f1e7c38027e267fc672ed085a1e467
 ---
@@ -14,7 +14,7 @@ Web中加载包含网络图片链接的HTML网页，如何实现点击网络图�
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/i0llbsE-R1iOD1uM167sqw/zh-cn_image_0000002659258357.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/i0llbsE-R1iOD1uM167sqw/zh-cn_image_0000002659258357.png?HW-CC-KV=V1&HW-CC-Date=20261112T233204Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEC6EF5781D3EF3DF77B617BA32625F062CB4E72249E75A2B4507147F40D4AE1 "点击放大")
 
 ## 背景知识
 

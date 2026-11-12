@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (UIContext)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.UIContext (UIContext) > Class (UIContext)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:53:58+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:1e48f2d67b98f58ae22852dc34d9fb26967b0d20f9b90fdad79d2e3b46b16789
 ---
@@ -459,7 +459,7 @@ struct UIContextCompare {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/6fc4xOlEQLav0bXTS8uFRA/zh-cn_image_0000002815400387.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/6fc4xOlEQLav0bXTS8uFRA/zh-cn_image_0000002815400387.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=F7CCC46CC55BB25884771C4B0184A9157906E25948AB3666B4FCF7B24E38A4D4)
 
 ## getFont
 
@@ -846,7 +846,7 @@ struct AnimateToImmediatelyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/JwzHuTKjRwmSV6TeiQe96g/zh-cn_image_0000002786520812.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/JwzHuTKjRwmSV6TeiQe96g/zh-cn_image_0000002786520812.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=BBA658BAB5281BF0995A5968902DCA7F6D9B0E4DF57C743582A19D62AD91C59D)
 
 ## animateTo
 
@@ -1357,7 +1357,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/Z_AJM4ffTA2VLcNYiMxavA/zh-cn_image_0000002786360884.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/Z_AJM4ffTA2VLcNYiMxavA/zh-cn_image_0000002786360884.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=B85AD6C5992A005AAFE43C14EDD79EE3EEC0E18D97D1304F983B54E936BF4A93)
 
 ## showActionSheet
 
@@ -1429,7 +1429,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/WhzUMUS7REO96sTFqfuYhw/zh-cn_image_0000002815560305.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/WhzUMUS7REO96sTFqfuYhw/zh-cn_image_0000002815560305.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=B7FD3F7B4D66889692BAB1853C49B7C8F022A67D893D0ABE19460ED4603D454B)
 
 ## showDatePickerDialog
 
@@ -1506,7 +1506,7 @@ struct DatePickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/-w88M171SHWP2KqYn2CsNw/zh-cn_image_0000002815400389.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/-w88M171SHWP2KqYn2CsNw/zh-cn_image_0000002815400389.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=585C4287D1F04809A1007C2BF3528D507D8F289701A08FFF6C858B110B586D3D)
 
 ## showTimePickerDialog
 
@@ -1652,7 +1652,7 @@ struct TextPickerDialogExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/c7zgU0LLQnabgnIFjwvvsA/zh-cn_image_0000002786520814.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/c7zgU0LLQnabgnIFjwvvsA/zh-cn_image_0000002786520814.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0695E8ED4A6D55146A8B6D7D8F96308076AC7135CF3C2D63CAE6463B6612B57)
 
 ## showTextPickerDialog20+
 
@@ -3627,7 +3627,7 @@ struct TabsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/iwTdKFY1S9ip4Dr9s5HePw/zh-cn_image_0000002786360886.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/iwTdKFY1S9ip4Dr9s5HePw/zh-cn_image_0000002786360886.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=4D2DC882595CD85800CB7D2836A01B1539F7DCB14DB433BF5AAAB5661029ECC6)
 
 ## unbindTabsFromScrollable13+
 
@@ -4258,7 +4258,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/TE1Rkl7gTPKsQAD1E8DOdg/zh-cn_image_0000002815560307.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/TE1Rkl7gTPKsQAD1E8DOdg/zh-cn_image_0000002815560307.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=B6CC39484B3DE74A3A91183DA5631E421029AF5A4A2BD7D4F245FEFDA0A0E7B3)
 
 ## getPageRootNode24+
 
@@ -4411,7 +4411,7 @@ export struct PageThree {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/r6hwo3-rTUSmw5RP-Eo1Gw/zh-cn_image_0000002815400391.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/r6hwo3-rTUSmw5RP-Eo1Gw/zh-cn_image_0000002815400391.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=B03115B2A9B135714D2663D9C07ED4528921DA0DDC6F0ED410C9022E72D3CBD7)
 
 ## isEasySplit24+
 

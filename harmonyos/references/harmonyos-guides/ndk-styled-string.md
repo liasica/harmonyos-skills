@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-styled-st
 title: 使用属性字符串
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 使用文本 > 使用属性字符串
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:31f73187b64a299eaef94bb7352c2e186cc3e11a702161a0c5343269b839d7b8
 ---
@@ -18,7 +18,7 @@ content_hash: sha256:31f73187b64a299eaef94bb7352c2e186cc3e11a702161a0c5343269b83
 
 下图展示了 NODE\_TEXT\_CONTENT\_WITH\_STYLED\_STRING 接口的主要使用流程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/mzvMiPHXQNidqtxlkIzdRw/zh-cn_image_0000002815558691.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/mzvMiPHXQNidqtxlkIzdRw/zh-cn_image_0000002815558691.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=43B54757DB5FDCBBBE8D7A2B9C24CC15B75D18D1E977D085D32166EEDEC256EF)
 
 ## 创建StyledString对象
 
@@ -98,7 +98,7 @@ OH_ArkUI_StyledString_AddText(styledString, "World!");
 OH_ArkUI_StyledString_PopTextStyle(styledString);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/lBc3vZuaS02RE9dEvbh5WA/zh-cn_image_0000002815398775.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/lBc3vZuaS02RE9dEvbh5WA/zh-cn_image_0000002815398775.png?HW-CC-KV=V1&HW-CC-Date=20261112T233234Z&HW-CC-Expire=31536000000&HW-CC-Sign=4930B30E6B46C8AE833523E9A9D253B142D770761E62FB29BC0E7AC71BDBA7D8)
 
 ## 添加占位符
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-848
 title: Swiper如何实现弧形旋转切换动画效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Swiper如何实现弧形旋转切换动画效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:9568b204d79d573dfb23ce45a8280b7af4eeda88c67e43f4fb881a204dbf5ac5
 ---
@@ -230,4 +230,4 @@ struct SwiperArcPage {
 
 运行效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/wa55NzeFTBiKbysZ6nBvCA/zh-cn_image_0000002658917859.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/wa55NzeFTBiKbysZ6nBvCA/zh-cn_image_0000002658917859.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=42FF89C02403BE4FCCAA309E5D370178DF24144F98A0D5BA56599FF96A4C4607 "点击放大")

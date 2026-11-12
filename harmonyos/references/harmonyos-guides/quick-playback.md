@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/quick-playbac
 title: 快捷播放
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 应用接入播控自检 > 应用接入播控检查项详细说明 > 快捷播放
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:03+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-28
 content_hash: sha256:8c41096464d5ab191fb55610d1827b7c4b495e49f7175f8796a44bc0c4159234
 ---
@@ -25,7 +25,7 @@ content_hash: sha256:8c41096464d5ab191fb55610d1827b7c4b495e49f7175f8796a44bc0c41
   3. 未播放过的且未销毁的应用信息
   4. 最近播放过的且已销毁的应用信息（应用已接入冷启动）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/HWO7I_yoTRieXBS9MVpHpw/zh-cn_image_0000002786359898.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/HWO7I_yoTRieXBS9MVpHpw/zh-cn_image_0000002786359898.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=310EFCB19B41DFF53E21FBA09AEA53877CC8D4B81E5AA71182D6BDC5D55B41CC)
 
 ## 历史歌单/歌单推荐
 
@@ -47,4 +47,4 @@ content_hash: sha256:8c41096464d5ab191fb55610d1827b7c4b495e49f7175f8796a44bc0c41
 
   如果用户开启了 “[播控推荐服务](avsession-recommendation.md)”，歌单列表展示 “为你推荐”。最多可展示 8 个基于算法推荐的歌单。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/XcNr_5rlSyyVwKBgFzJR0Q/zh-cn_image_0000002815559319.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/XcNr_5rlSyyVwKBgFzJR0Q/zh-cn_image_0000002815559319.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=BDD35EEBDA71C4A0F87297F6C065E28474AA7D8877FD914648196ACCF2E42484)

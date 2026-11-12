@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-589
 title: 通过滑动Swiper进行router路由跳转时页面闪烁如何解决
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 通过滑动Swiper进行router路由跳转时页面闪烁如何解决
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:91927196d2cfeeb29e5da53c756a273fe25a5474ffbfb3f0a3c2e19fbc6fb1ec
 ---
@@ -132,13 +132,13 @@ content_hash: sha256:91927196d2cfeeb29e5da53c756a273fe25a5474ffbfb3f0a3c2e19fbc6
 
    问题效果预览：翻到最后一页时会闪一下。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/9EJo7okzQhG4dRagt2cYGg/zh-cn_image_0000002628392506.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/9EJo7okzQhG4dRagt2cYGg/zh-cn_image_0000002628392506.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=A2649AA630748CAF9C93391C60C4FF2F1B3A23CFDE174D0608995D0F53C6C0EA "点击放大")
 
 ## 效果预览
 
 在切换动画完成后进行跳转则正常展示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/5Hbsb7YWQdq21aASgfqY8w/zh-cn_image_0000002658911721.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/5Hbsb7YWQdq21aASgfqY8w/zh-cn_image_0000002658911721.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=293E3600026AAE899699FA55F45A3BC1BFCBB2106BA95361664179F68E86EC06 "点击放大")
 
 ## 背景知识
 

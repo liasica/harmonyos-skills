@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-device-sec
 title: createAttestKey接口返回错误码1011500006
 breadcrumb: FAQ > 系统开发 > 安全 > 设备安全服务（Device Security） > createAttestKey接口返回错误码1011500006
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:ad3b451993be26bb9a281fd559beede4f975a4b3510a9a67f1ee8c481788a9ed
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:ad3b451993be26bb9a281fd559beede4f975a4b3510a9a67f1ee8c48178
 
 [1011500006 IPC通信失败](../harmonyos-references/errorcode-devicesecurity-taas.md#section1011500006-ipc通信失败)可能原因和处理措施，无法指导开发者解决：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/5tN51I-RSgyaV6sZFa-xCQ/zh-cn_image_0000002661522207.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/5tN51I-RSgyaV6sZFa-xCQ/zh-cn_image_0000002661522207.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=C3BD494AFDCD1BDC7C00368812DC9EEE9769F31599BC4068B676C2AE049CF773)
 
 ## 背景知识
 
@@ -37,6 +37,6 @@ content_hash: sha256:ad3b451993be26bb9a281fd559beede4f975a4b3510a9a67f1ee8c48178
 1. 申请“可信应用服务”白名单：将Developer ID、公司名称、应用名称、申请使用的服务和使用该服务的场景，发送到AGC官方邮箱。AGC运营将审核相关材料，通过后将配置受限开放服务使用的名单，审核周期为1-3个工作日。
 2. “可信应用服务”白名单申请通过后，在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)上开通可信应用服务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/oWSC-Bn8TbCgFhtbMEj3ew/zh-cn_image_0000002661522755.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/oWSC-Bn8TbCgFhtbMEj3ew/zh-cn_image_0000002661522755.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=987548C1449E7E1375D01964936F628F40C65D966D6167516738B86FC02B1D3D "点击放大")
 3. 在开通服务后，[重新申请profile（.p7b）文件](../app/agc-help-debug-profile-0000002248181278.md)。
 4. 本地替换profile签名文件，重新编译执行。

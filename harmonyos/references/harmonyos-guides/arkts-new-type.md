@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-typ
 title: "@Type装饰器：标记类属性的类型"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理数据对象的状态 > @Type装饰器：标记类属性的类型
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:560311461679b64051cdc852a57b24179def3db26b8bf99421233a32b121a066
 ---
@@ -105,7 +105,7 @@ struct TestCase {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/9wFyXa65RS6cB-l5w1dzCw/zh-cn_image_0000002815398161.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/9wFyXa65RS6cB-l5w1dzCw/zh-cn_image_0000002815398161.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=5437F927AB359CAD1E364932A9438922C2CA5FAF1C9F2698BBC22158C3524441)
 
 ## 常见问题
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-stability-
 title: 地址越界类问题分析方法
 breadcrumb: 最佳实践 > 稳定性 > 稳定性分析 > 开发态稳定性分析 > 应用崩溃类问题分析 > 地址越界类问题分析方法
 category: best-practices
-scraped_at: 2026-11-10T10:42:12+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:f1d280a2e670da165e8865d8b39c4c984bb42111cb4e9403e0340508ff19bb3a
 ---
@@ -24,11 +24,11 @@ content_hash: sha256:f1d280a2e670da165e8865d8b39c4c984bb42111cb4e9403e0340508ff1
 
 如下，由于地址越界问题在应用的故障现象通常为崩溃闪退（Crash），且Crash的栈可能不是第一现场，而是受害者的栈，因此这类问题分析难度较高，且经常依赖于天网版本复现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/TSAvI8tPRAmEVepExvZpsg/zh-cn_image_0000002404045321.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/TSAvI8tPRAmEVepExvZpsg/zh-cn_image_0000002404045321.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=1BA93C490D654FDF1441294C0C47FF08766C8D4324DBAB2E8EF8529F96C0E4E8 "点击放大")
 
 以下为踩内存问题的通用分析流程，力求提升踩内存问题检测和定位效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/roSuierNS1KCGqARa0b-4Q/zh-cn_image_0000002375398170.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/roSuierNS1KCGqARa0b-4Q/zh-cn_image_0000002375398170.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CC805CD5E2BCA6496532DE2806E8508A47FD60EBC46E97F3B1633AFA29F2490)
 
 **第一步：****问题类型分析**
 
@@ -64,7 +64,7 @@ content_hash: sha256:f1d280a2e670da165e8865d8b39c4c984bb42111cb4e9403e0340508ff1
 
    如下图所示，IDA（反汇编工具）展示了一个典型的函数指针数组操作，w8是数组下标，从1开始，x9是reference解引用出来的，如果blr x8这条挂了，说明x9[x8]上面的值是坏的，而如果是ldr x8, [x9,x8,LSL#3]这条挂了，说明x9[x8]这个地址是无效的。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/hclYOP7rRT2x9FcvozQ7Ug/zh-cn_image_0000002404125165.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/hclYOP7rRT2x9FcvozQ7Ug/zh-cn_image_0000002404125165.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=54EF4A3D4AB06BBBE9FD2479F04A525BF664DC554BDA8D1182F812D927F35F2F)
 
 **找出现问题的内存大小**
 
@@ -72,7 +72,7 @@ content_hash: sha256:f1d280a2e670da165e8865d8b39c4c984bb42111cb4e9403e0340508ff1
 
 以native内存分配器jemalloc为例，内存统计布局如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/EzxKRiodQtajFl7iJiMHhQ/zh-cn_image_0000002370405612.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/EzxKRiodQtajFl7iJiMHhQ/zh-cn_image_0000002370405612.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BC09223EF0DB6AAB707A6175C605E6F03561F7E4BCD759034CD4DD25C48B880)
 
 假设踩内存大小为32，查看上图右边红框标记出来的地方表示128个32字节的内存会挤在1个page上，刚好是32\*128=4096字节。同样，下面80字节的内存块，每256个都挤在5个page上，80\*256=20480=4096\*5。17-32字节的内存分配，都会从这个32档位sizeclass的内存页上去分配，也就是说，如果发生overflow，凶手前后多半也是32字节的，因此受害者是32字节的，如果发生uaf（use-after-free），那么free的内存会被另一个17-32字节的申请者拿走，这个申请者就成为了受害者。
 
@@ -187,4 +187,4 @@ SUMMARY: HWAddressSanitizer: tag-mismatch (/data/local/tmp/test.out+0x1ad0)
 
 对应的日志结构如下，以#0栈为例，可使用CppCrash类问题分析方法章节[步骤四：基于崩溃栈定位行号](bpta-stability-app-crash-cpp-way.md#section14952241528)中介绍的反编译工具llvm-addr2line，输入地址的偏移0x1ad0，即可解析出对应的源代码行号。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/c8G5ohcyQBGlUyGcKYYpMg/zh-cn_image_0000002412946788.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/c8G5ohcyQBGlUyGcKYYpMg/zh-cn_image_0000002412946788.png?HW-CC-KV=V1&HW-CC-Date=20261112T233140Z&HW-CC-Expire=31536000000&HW-CC-Sign=845762728EAE68D6CA2A7DBDA9054893F8329F55D76543D73C012DC110F8D527)

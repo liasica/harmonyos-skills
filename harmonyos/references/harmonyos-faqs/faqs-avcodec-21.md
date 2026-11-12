@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-avcodec-21
 title: 视频解码如何传入SPS，PPS数据
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频编解码（AVCodec） > 视频解码如何传入SPS，PPS数据
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:34+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-30
 content_hash: sha256:e157d6f4299c1ab4b4cd4bf77a1f719f489c720b7e598f0cd395c3efbf9d3f7a
 ---
@@ -21,7 +21,7 @@ SPS和PPS都为H264编码中的重要数据信息。
 
 H264原始码流是由若干NALU组成的结构，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/1zhbJ0YgSC2mCI7PaNgL6A/zh-cn_image_0000002658791637.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/1zhbJ0YgSC2mCI7PaNgL6A/zh-cn_image_0000002658791637.png?HW-CC-KV=V1&HW-CC-Date=20261112T233205Z&HW-CC-Expire=31536000000&HW-CC-Sign=17E72825BCC91FB7C06A3FFC053322D6873CD0EB30950B0611593C1D878AE72C)
 
 * NALU（Network Abstraction Layer Units）：网络抽象层。
 

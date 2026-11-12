@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-troub
 title: 开启“高对比度文字”时应用文字显示模糊
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 故障排查 > 开启“高对比度文字”时应用文字显示模糊
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:00+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:bf94e701d4ad93df7d40c6f9c49d485b94012d59de49f36a19fcdd8816224fe8
 ---
@@ -16,17 +16,17 @@ content_hash: sha256:bf94e701d4ad93df7d40c6f9c49d485b94012d59de49f36a19fcdd88162
 
 图一：未开启“高对比度文字”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/hvUnYk3jQwWAsT5ByI7UOQ/zh-cn_image_0000002793681787.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/hvUnYk3jQwWAsT5ByI7UOQ/zh-cn_image_0000002793681787.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=2AD107A07B4476936B462B011A8010B13738F0E5CA6821AEDE89FFA298DF0BFF "点击放大")
 
 图二：开启“高对比度文字”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/iIrglYBdRjq7HUbY9M1PQA/zh-cn_image_0000002764443194.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/iIrglYBdRjq7HUbY9M1PQA/zh-cn_image_0000002764443194.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=E6AE19020E8449ED260B12A1E25EB4D5F418537CB37B2C49236D1EB1767D8F89 "点击放大")
 
 ## 定位过程
 
 1. 使用DevEco Testing查看问题组件，该组件为TextInput组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/6N4ZYhlaTx2io7LPSwKRGA/zh-cn_image_0000002793681903.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/6N4ZYhlaTx2io7LPSwKRGA/zh-cn_image_0000002793681903.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB8E71B4282E2122D21095273C402BD6C16A74BF22F3790B33FC7D8E7113DF22 "点击放大")
 2. 查看该TextInput组件的设置，placeholder文本颜色设置为#d6d6d6，三原色之和大于594，开启“高对比度文字”时显示为外黑内白。且组件背景色设置为#f1f3f5灰色，导致文字颜色与背景色相近，显示模糊。
 
    ```ts
@@ -95,7 +95,7 @@ struct TextinputExample {
 
 效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/J7PPt5tTQkGG0MHoybM4sQ/zh-cn_image_0000002764443800.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/J7PPt5tTQkGG0MHoybM4sQ/zh-cn_image_0000002764443800.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=AED5CEB297B8B9FF9B68E91495C5D7E05CB277548693E3B78EC7EBF571FD4063 "点击放大")
 
 ## 描边文字预览与实际效果不一致
 

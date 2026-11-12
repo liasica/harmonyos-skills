@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: TrustedAppService（可信应用服务）
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > TrustedAppService（可信应用服务）
 category: harmonyos-references
-scraped_at: 2026-11-12T09:55:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-26
 content_hash: sha256:f99cf4b5419ba40587e9dd86e84a1c420232c4b075684e0a0e4546d7120a0c43
 ---
@@ -895,7 +895,7 @@ await trustedAppService.procSecImageTransform(srcSecImageBuffer, procParams).the
 | width | number | 否 | 否 | 裁剪区域的宽度，即横向的长度，取值范围在 0 到 640 之间的偶数，且需满足 x 与 width 的和不大于 640。单位：像素（pixel）。 |
 | height | number | 否 | 否 | 裁剪区域的高度，即纵向的长度，取值范围在 0 到 480 之间的偶数，且需满足 y 与 height 的和不大于 480。单位：像素（pixel）。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/TdKBbg5sTC6k6C0-c5D3Bg/zh-cn_image_0000002815561515.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/TdKBbg5sTC6k6C0-c5D3Bg/zh-cn_image_0000002815561515.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233238Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D08F0EC1177FEA2CC2B9937A2A3507A45AF7CA0B90EB72ED7AE36F7733B280B)
 
 ## SecImageBuffer
 

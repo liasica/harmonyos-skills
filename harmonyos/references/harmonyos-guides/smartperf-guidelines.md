@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/smartperf-gui
 title: HiSmartPerf Device性能使用指导
 breadcrumb: 指南 > 应用测试 > 专项测试 > 命令行工具 > HiSmartPerf Device性能使用指导
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:34:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-30
 content_hash: sha256:033edad9d789b6f518380d838400fab7a5a37b0f30c7916afa4c1d6d40535ec9
 ---
@@ -25,7 +25,7 @@ HiSmartPerf Device是一款性能功耗测试工具，支持监测性能、功�
 
 下图展示了HiSmartPerf Device工具的主要功能组成。Device hap端设置好采集项和采集参数后，启动应用，FPS、RAM、Trace等指标通过消息发送给Device daemon端，Device daemon端进行数据采集、数据持久化和数据分析，将生成的报告回传给Device hap端，Device hap端进行可视化显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/mdk79_w-RSmOPGMhgbxI9w/zh-cn_image_0000002806111839.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/mdk79_w-RSmOPGMhgbxI9w/zh-cn_image_0000002806111839.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=D21FD39B66AB5CD1B8C7E831B0638ED683C0E1BD64C0AF4F884D270F10E1A890)
 
 ## 约束与限制
 

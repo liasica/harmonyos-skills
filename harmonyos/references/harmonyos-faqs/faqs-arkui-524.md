@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-524
 title: 使用Scroll嵌套List实现可滚动表格
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 使用Scroll嵌套List实现可滚动表格
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:34+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:4362011984840a4d305bc8a3e89268b2b5f466e7c5f4481c825699a789642f10
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:4362011984840a4d305bc8a3e89268b2b5f466e7c5f4481c825699a7896
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/18gnUpBmS260_3W1WSMZSA/zh-cn_image_0000002628391172.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/18gnUpBmS260_3W1WSMZSA/zh-cn_image_0000002628391172.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=D4AEA22721202CC2F5BDF8CCE3AB3BB7A651E078D3B864BE6FE70DF17F2A2CA7 "点击放大")
 
 ## 背景知识
 

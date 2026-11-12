@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-kit-faq-0
 title: Menu菜单使用常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 常见问题 > Menu菜单使用常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:59+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:7fabc774fe40a0c0d2adc7a3b51d5a37eb79dd32b6697316d9c63b032200a655
 ---
@@ -163,4 +163,4 @@ content_hash: sha256:7fabc774fe40a0c0d2adc7a3b51d5a37eb79dd32b6697316d9c63b03220
 
    效果如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/Qu5cxA68SHmf4ESRY6MtnQ/zh-cn_image_0000002801091505.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/Qu5cxA68SHmf4ESRY6MtnQ/zh-cn_image_0000002801091505.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=E9EE94A313FE38F9C540C6FA8BA65764F3DD48D11F392B30D3EEA397229C30AD "点击放大")

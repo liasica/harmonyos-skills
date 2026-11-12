@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-localizati
 title: 应用界面如何显示系统语言之外的语言
 breadcrumb: FAQ > 应用框架开发 > 无障碍和本地化 > 本地化开发（Localization） > 应用界面如何显示系统语言之外的语言
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:03+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:6b1e57e817ac509c659fdca872a0093d293eb93bba5536c179e36298ebb68d52
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:6b1e57e817ac509c659fdca872a0093d293eb93bba5536c179e36298ebb
 
 系统设置中语言支持简体中文、繁体中文、英文、维吾尔文、藏文、俄文等语言，应用如何显示系统预置语言之外的其他语言？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/uR6cRLF1QgGeiDn6gMcphw/zh-cn_image_0000002659062373.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/uR6cRLF1QgGeiDn6gMcphw/zh-cn_image_0000002659062373.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=2AFB5DA3C8A50B1A4D79D9B5FDC72F5CC70A6DA39D58E1B2CD25E2A11DCFEE8A "点击放大")
 
 ## 背景知识
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-609
 title: 如何解决Repeat渲染数据重复显示问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决Repeat渲染数据重复显示问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:52+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-07-31
 content_hash: sha256:efb849477194110586644d155ef8fe8b6cf4e81b2c649d13212311111f9c82eb
 ---
@@ -19,10 +19,10 @@ content_hash: sha256:efb849477194110586644d155ef8fe8b6cf4e81b2c649d13212311111f9
 
 1. 场景一：滑动加载新数据，在aboutToAppear方法里处理数据逻辑，问题如图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/byNnmxbKTY2lOOKFSDGDnw/zh-cn_image_0000002673095881.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/byNnmxbKTY2lOOKFSDGDnw/zh-cn_image_0000002673095881.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=A2E6FEEA35E17B99B33943CE000D70A6736D4DE2C9C786D1C338DD8981932283 "点击放大")
 2. 场景二：进行Repeat与@Builder混用场景下，传参使用错误，导致数据重复，问题如图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/Z7agfcd-S4yaB1uN_2yN-Q/zh-cn_image_0000002643056034.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/Z7agfcd-S4yaB1uN_2yN-Q/zh-cn_image_0000002643056034.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=BE238AC84C11A530C4A4F273D352AFA316006194CB4C5FA5C53D9D46EBB65F9E "点击放大")
 
 ## 背景知识
 
@@ -294,8 +294,8 @@ content_hash: sha256:efb849477194110586644d155ef8fe8b6cf4e81b2c649d13212311111f9
 
 场景一：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/OdK4AEGtQU2aw4a4aI-Buw/zh-cn_image_0000002673098375.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/OdK4AEGtQU2aw4a4aI-Buw/zh-cn_image_0000002673098375.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=48874E04E96928A5141BC338BB55C4303AB08347C716F8A7F41D8497B5921C76 "点击放大")
 
 场景二：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/hzw3K6hST3GJqiLKDjAOEg/zh-cn_image_0000002643058520.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/hzw3K6hST3GJqiLKDjAOEg/zh-cn_image_0000002643058520.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=5EEB2A9FB6812443109BFC406F6237D88F124690449815379334E928F59C8860 "点击放大")

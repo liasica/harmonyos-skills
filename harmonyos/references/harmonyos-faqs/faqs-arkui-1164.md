@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1164
 title: 自定义组件添加链式调用导致布局异常
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 自定义组件添加链式调用导致布局异常
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:17+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:4151f27db261f364bd8c8b530ff2084f451345d44b159985d06dc09452b3fee9
 ---
@@ -56,11 +56,11 @@ struct ChildComponent {
 
 添加背景色：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/1ycJEfRhRDyd2o_2rNdkug/zh-cn_image_0000002658929085.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/1ycJEfRhRDyd2o_2rNdkug/zh-cn_image_0000002658929085.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=B5D43C68E103F077359469AAF80154C19EC0858D498F53031B3DCE679DCBF105 "点击放大")
 
 不添加背景色：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/NsZLT4yDSQiOJSBHUMeAvA/zh-cn_image_0000002658809135.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/NsZLT4yDSQiOJSBHUMeAvA/zh-cn_image_0000002658809135.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=0B01A0BF86DA87A3A1165D6BEB9F08854F5838AB4C49C8C58CE6094963A133B6 "点击放大")
 
 ## 背景知识
 
@@ -70,7 +70,7 @@ ArkUI给[自定义组件设置样式](../harmonyos-guides/arkts-create-custom-co
 
 打开DevEco Studio中的ArkUI Inspector工具，对比设置背景色与无背景色的自定义子组件的节点树。发现设置背景色的自定义子组件外层嵌套了一层容器组件。左图设置背景色，右图无背景色。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/C0UdZwuoQmuPmpwFZWyE-w/zh-cn_image_0000002628569774.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/MaSWuKhUQ9eQBN14Gap5Hg/zh-cn_image_0000002628409870.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/C0UdZwuoQmuPmpwFZWyE-w/zh-cn_image_0000002628569774.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=19A664F2DF77A2916C25C280795790834A467FBE5B713A8676F41C3AA0D0643F "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/MaSWuKhUQ9eQBN14Gap5Hg/zh-cn_image_0000002628409870.png?HW-CC-KV=V1&HW-CC-Date=20261112T233148Z&HW-CC-Expire=31536000000&HW-CC-Sign=4DB30CAE1DFAC457FA92412815539D0351BAFDAEEDD7D5219E7E77D093289BDC "点击放大")
 
 ## 分析结论
 

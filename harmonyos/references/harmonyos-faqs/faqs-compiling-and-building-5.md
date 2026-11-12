@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: "编译报错“ERROR: Failed :entry:default@CompileResource”"
 breadcrumb: "FAQ > DevEco Studio > 编译构建 > 编译报错“ERROR: Failed :entry:default@CompileResource”"
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:52+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:9f4a281e9cd8905a6c28ed44d480b11198774758b907b07b1641d70ecfd6bcaa
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:9f4a281e9cd8905a6c28ed44d480b11198774758b907b07b1641d70ecfd
 
 在构建依赖HSP的HAP模块时，如果出现“ERROR: Failed :entry:default@CompileResource”错误，提示某资源文件不存在，但该资源文件实际存在于HSP内，请检查以下几点：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/EYf0Ga82QgG7zS7GPH6QCQ/zh-cn_image_0000002624638376.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/EYf0Ga82QgG7zS7GPH6QCQ/zh-cn_image_0000002624638376.png?HW-CC-KV=V1&HW-CC-Date=20261112T233210Z&HW-CC-Expire=31536000000&HW-CC-Sign=154758F997CCCDC20D44B569FAEAC8A2021E0CE2159AAB3C417B719664A9E90E)
 
 **问题原因**
 
@@ -24,4 +24,4 @@ content_hash: sha256:9f4a281e9cd8905a6c28ed44d480b11198774758b907b07b1641d70ecfd
 * 可以在引用方HAP内或appScope中添加相应资源以规避问题；
 * 在引用方HAP的module.json5中声明相同的内容，可以在合并冲突时优先使用引用方HAP中的内容。例如，上图中的报错是由于HSP申请权限引起的，可以通过在引用方HAP中申请相同的权限来避免合并HSP中的这部分内容。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/X9Cc4NfQQFKYrBz5BaCD0g/zh-cn_image_0000002654837781.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/X9Cc4NfQQFKYrBz5BaCD0g/zh-cn_image_0000002654837781.png?HW-CC-KV=V1&HW-CC-Date=20261112T233210Z&HW-CC-Expire=31536000000&HW-CC-Sign=4060297A65F5F0F8D914689522576916EF428C43BAC77B9CE094C59370D5B5DE)

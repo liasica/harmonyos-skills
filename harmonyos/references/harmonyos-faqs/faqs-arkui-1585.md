@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1585
 title: Button组件背景色设置
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Button组件背景色设置
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:04f0a73609fa9d19a4ed263c8f96120678c469ceb3692d6e0fbbbd5e12f0445d
 ---
@@ -60,7 +60,7 @@ content_hash: sha256:04f0a73609fa9d19a4ed263c8f96120678c469ceb3692d6e0fbbbd5e12f
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/kT0yG8wzRB6jahMLHVKEwQ/zh-cn_image_0000002658849565.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/kT0yG8wzRB6jahMLHVKEwQ/zh-cn_image_0000002658849565.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=2E1BDAB0A3AB90C91B623EB36F5D4B5ED8C9C12E5909CC6CA309067EEBEB7378 "点击放大")
 * **场景二**：Button设置disabled多态样式会受到Button组件禁用控制属性样式影响导致显示颜色偏淡，建议用Text组件多态样式代替Button组件实现想要的效果。
 
   ```ts
@@ -169,7 +169,7 @@ content_hash: sha256:04f0a73609fa9d19a4ed263c8f96120678c469ceb3692d6e0fbbbd5e12f
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/kVd0-CFqTtu8NEwBeuoL5g/zh-cn_image_0000002628770200.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/kVd0-CFqTtu8NEwBeuoL5g/zh-cn_image_0000002628770200.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=D7E98F99E9019713F2EF0CD089999C2D0EB558FAAD44B408A32ADB1442A94B0C "点击放大")
 * **场景三**：Button默认有背景色，直接设置渐变色会影响渐变效果，解决方案是设置渐变色的同时设置Button组件背景色为透明。
 
   ```ts
@@ -226,7 +226,7 @@ content_hash: sha256:04f0a73609fa9d19a4ed263c8f96120678c469ceb3692d6e0fbbbd5e12f
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/k80xPNaBQAah4DSN1XtvKg/zh-cn_image_0000002658969523.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/k80xPNaBQAah4DSN1XtvKg/zh-cn_image_0000002658969523.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=1953B45A23EFEE1DD89CFE0D96DBADB055ABE0FD0E2C07854B18FF5F61C11AAC "点击放大")
 * **场景四**：Button组件可以设置不透明度属性达到置灰效果，如设置不透明度属性opacity(0.4)实现与禁用控制属性enabled(false)时的相同样式效果。
 
   ```ts
@@ -252,7 +252,7 @@ content_hash: sha256:04f0a73609fa9d19a4ed263c8f96120678c469ceb3692d6e0fbbbd5e12f
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/SV6LWCnaSx634jXwqk4wXA/zh-cn_image_0000002628610304.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/SV6LWCnaSx634jXwqk4wXA/zh-cn_image_0000002628610304.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=05F4ED120C8AC6D5E680982B2B3229DF38A8FBA04C912E63CA04D149463EA0C7 "点击放大")
 * **场景五**：定义调色板数据源，用数组存储自定义颜色，通过@State响应式状态管理维护当前选中颜色的索引，实现状态与视图的双向联动。用Flex和ForEach组件完成调色板布局。给按钮和调色板都绑定点击事件，点击按钮时索引递增，超出数组长度自动重置，循环遍历调色板；点击调色板色块通过当前索引值，切换到对应颜色。
 
   ```ts
@@ -328,7 +328,7 @@ content_hash: sha256:04f0a73609fa9d19a4ed263c8f96120678c469ceb3692d6e0fbbbd5e12f
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/UCaP-SvORvCQAHEbZZDShA/zh-cn_image_0000002658849567.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/UCaP-SvORvCQAHEbZZDShA/zh-cn_image_0000002658849567.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=98E4232A4B26662CD7E776A150C9C2D774A39C19D590EF6147B8D05B28FDD7B2 "点击放大")
 * **场景六**：使用stateStyles属性方法可以依据组件的内部状态的不同，快速设置不同样式，使用此方法将各个状态下的背景设为透明，此外通过stateEffect属性设置组件是否开启按压态显示效果。stateEffect默认值为true，将其设置为false即可关闭按压效果。
 
   ```ts
@@ -393,7 +393,7 @@ content_hash: sha256:04f0a73609fa9d19a4ed263c8f96120678c469ceb3692d6e0fbbbd5e12f
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/QLae5E-kS8aXvApRRmZPsg/zh-cn_image_0000002628770202.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/QLae5E-kS8aXvApRRmZPsg/zh-cn_image_0000002628770202.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=674F8CB46EA2E03464BE357835C68296CAFFD7E895B20093401E9DE330B12FC2 "点击放大")
 
 ## 常见FAQ
 

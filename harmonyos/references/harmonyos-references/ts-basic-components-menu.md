@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Menu
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 菜单 > Menu
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:22+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:bde9e3c0bb1084f9dac83fb73b2c904e1cad70c85006027d7a559dcefb08f1eb
 ---
@@ -275,7 +275,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/4XgvhVJFQP6vgK9buI9r3A/zh-cn_image_0000002815560965.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/4XgvhVJFQP6vgK9buI9r3A/zh-cn_image_0000002815560965.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=2BE16695C8697FB52AAC5CE900A7877C1094E9D259E1673358B943EDDCF32977)
 
 ### 示例2（设置symbol类型图标）
 
@@ -349,7 +349,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/blCwEmqGQmivfZhLAUHwuQ/zh-cn_image_0000002815401049.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/blCwEmqGQmivfZhLAUHwuQ/zh-cn_image_0000002815401049.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=6787516722D4FE2AAFB23E127B070E0CB033F3491C5E09A2B4189CB59FC7561C)
 
 ### 示例3（设置Menu子菜单展开符号）
 
@@ -415,7 +415,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/bYjnhvU9R8KZMOSbBnKlFw/zh-cn_image_0000002786521474.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/bYjnhvU9R8KZMOSbBnKlFw/zh-cn_image_0000002786521474.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=6B23DC01120DB5D22570E90533DB5D17182FA578145EB362D12646F7492E50EF)
 
 ### 示例4（设置分割线样式）
 
@@ -465,7 +465,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/eEAZdbs0QA-4qtKcFfnPAw/zh-cn_image_0000002786361546.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/eEAZdbs0QA-4qtKcFfnPAw/zh-cn_image_0000002786361546.png?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=067B8B00FB3BD7430D1D722C600A58C37F4C3895422355E6ECE9FE8FE7E4E810)
 
 ### 示例5（设置自定义菜单项的多级菜单）
 
@@ -522,4 +522,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/ML6KXIabSf6vPDP_AbrT7Q/zh-cn_image_0000002815560967.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/ML6KXIabSf6vPDP_AbrT7Q/zh-cn_image_0000002815560967.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=23D9073649F9C1169D8040F5B389E14413B5CBB5A4D139C14A46A9CC3649655A)

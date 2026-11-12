@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/itc-with-emit
 title: 使用Emitter进行线程间通信
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 进程线程通信 > 使用Emitter进行线程间通信
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:47+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:6002d51a004e632094dee221329205bdb817ba76044bfd725940e4bf15fa6f96
 ---
@@ -18,7 +18,7 @@ Emitter用于同一进程内相同线程或不同线程间的事件处理，事�
 
 Emitter通过维护一个内部事件队列，来进行任务分发。应用需要先订阅某个事件并设置好该事件的回调方法，当应用程序发布事件后，就会往队列里面插入一个事件。任务队列会串行执行队列里面的任务，执行任务时会调用该任务订阅者的回调方法进行事件处理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/dRL4zUNPReKCa2Go_zI_Ig/zh-cn_image_0000002815559173.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/dRL4zUNPReKCa2Go_zI_Ig/zh-cn_image_0000002815559173.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=7910F78F70FA2BFD7581988974C0EAEE9408FF7451BAA78C12BD2C29A66CBD96)
 
 ## 接口说明
 

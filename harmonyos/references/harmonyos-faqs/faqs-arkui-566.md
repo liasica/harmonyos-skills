@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-566
 title: 如何解决改变@Provide修饰的值，对应UI未刷新的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何解决改变@Provide修饰的值，对应UI未刷新的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:c7909dd8e4375892e278115f15f76b8f33bb24b1657bd0820a86b61444e3b720
 ---
@@ -94,17 +94,17 @@ content_hash: sha256:c7909dd8e4375892e278115f15f76b8f33bb24b1657bd0820a86b61444e
 
 点击“Change PlayInfo”文本时，希望文本“没有播放”更新为“正在播放第XX首”，问题现象如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/yJCoLeMkS5Ggl7UouZR0hQ/zh-cn_image_0000002628392140.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/yJCoLeMkS5Ggl7UouZR0hQ/zh-cn_image_0000002628392140.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=187D297F0CF96B2D1CA167B86C501F963015820F2A6EB4CC2ABFD37958F946A1 "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/E9AIJ_FTRlWyMBt3VP-06Q/zh-cn_image_0000002658791421.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/E9AIJ_FTRlWyMBt3VP-06Q/zh-cn_image_0000002658791421.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=CE3356DF7AD57F212727B1FDD44773A5ED6DE9EC1A3F1FAC706AB68331810CFD "点击放大")
 
 ## 背景知识
 
 * [状态管理概述](../harmonyos-guides/arkts-state-management-overview.md)：在声明式UI编程框架中，UI是程序状态的运行结果，用户构建了一个UI模型，其中应用的运行时的状态是参数。当参数改变时，UI作为返回结果，也将进行对应的改变。这些运行时的状态变化所带来的UI的重新渲染，在ArkUI中统称为状态管理机制。自定义组件拥有变量，变量必须被装饰器装饰才可以成为状态变量，状态变量的改变会引起UI的渲染刷新。如果不使用状态变量，UI只能在初始化时渲染，后续将不会再刷新。下图展示了State和View(UI)之间的关系。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/W9M_mhLLQSyyLww5pZcfwA/zh-cn_image_0000002628552036.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/W9M_mhLLQSyyLww5pZcfwA/zh-cn_image_0000002628552036.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=2BCCCD25C5C95BDC9E7D5A7F0F008B019486C906AB3B4DA5B66BF70FF44C662D "点击放大")
   + View(UI)：UI渲染，是指把build方法内的UI描述和@Builder装饰的方法内的UI描述映射到界面。
   + State：状态，指驱动UI更新的数据。用户通过触发组件的事件方法，改变状态数据。状态数据的改变，将引起UI的重新渲染。
   + 状态变量：被状态装饰器装饰的变量，状态变量值的改变会引起UI的渲染更新。示例：@State num: number = 1，其中@State是状态装饰器，num是状态变量。

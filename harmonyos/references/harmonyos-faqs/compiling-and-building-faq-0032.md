@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/compiling-and-b
 title: HAP/HAR/HSP包编译常见问题
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 常见问题 > HAP/HAR/HSP包编译常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:52+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:7c311b446e82a978783b259fec0726f4f84a9728f68be85ab88283c6d8a1c11e
 ---
@@ -29,7 +29,7 @@ content_hash: sha256:7c311b446e82a978783b259fec0726f4f84a9728f68be85ab88283c6d8a
 
 1. libxxx.so库文件放入HAR或HSP的libs/arm64-v8a目录。设备类型不同时，需添加对应子目录。新版的arm64为libs/arm64-v8a，老版的arm64为libs/armeabi-v7a，x86模拟器为libs/x86\_64。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/U29gmM7XT2KXWZ7hWv2QTA/zh-cn_image_0000002803249445.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/U29gmM7XT2KXWZ7hWv2QTA/zh-cn_image_0000002803249445.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=136FE50D3D59381E730ED592E377D6E708145828C883A5558449075925C67C88)
 
 2. 在src/main/cpp/CMakeLists.txt文件中链接so库文件。例如：target\_link\_libraries(entry PUBLIC libxxx)。
 

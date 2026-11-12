@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 鼠标光标控制
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 交互属性 > 鼠标光标控制
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:08+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:4b2ea7b725d137490d869fbfa71cd0a024ecd06a8c3e75369ab557416165a278
 ---
@@ -111,8 +111,8 @@ struct CursorControlExample {
 
 当鼠标悬浮在蓝色区域时，显示：向西箭头光标样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/QJTbCCQKT8-BhAjEflBKvA/zh-cn_image_0000002786520968.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/QJTbCCQKT8-BhAjEflBKvA/zh-cn_image_0000002786520968.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=FA2B966B72AB962CD547C86DEC6E136DD9480427FC563E98BBFB7661A70CF9D4)
 
 当鼠标悬浮在绿色区域时，显示：向东箭头光标样式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/6_0znekkR_SsmJP-5j4QZA/zh-cn_image_0000002786361040.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/6_0znekkR_SsmJP-5j4QZA/zh-cn_image_0000002786361040.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=8E3154F357B625AB5C7E972E0982EA0EF8AA852370B1A7630A845C8C64907A62)

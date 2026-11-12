@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-share-10
 title: 如何隔空传送打开App Linking链接直达应用
 breadcrumb: FAQ > 应用服务开发 > 内容分享服务（Share Kit） > 如何隔空传送打开App Linking链接直达应用
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:40+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
-content_hash: sha256:1b1cf939511e9a8afd1c36cb10d45115eec634e8d79234ec85cb02320a64669d
+content_hash: sha256:fbd638349c41820046cefad7eeb77037f8dd917fb20cb61942b4547b560ab35b
 ---
 
 ## 问题现象
@@ -20,7 +20,7 @@ content_hash: sha256:1b1cf939511e9a8afd1c36cb10d45115eec634e8d79234ec85cb02320a6
 
 ## 解决方案
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/nKfwCYBrSNSSPcUMimtQkw/zh-cn_image_0000002643336236.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/-zlGM3kyTiee__i2Zycy_Q/zh-cn_image_0000002643336236.png?HW-CC-KV=V1&HW-CC-Date=20261112T233218Z&HW-CC-Expire=31536000000&HW-CC-Sign=AFD7E96B2875538CE8988DF3BD5AB972997861868BD99772D00EAAE541AE5DCE "点击放大")
 
 实现跨设备链接隔空传送分享流程如上，其中A设备应用为宿主应用，B设备应用为目标应用。需要分别实现目标方和宿主方应用配置。
 

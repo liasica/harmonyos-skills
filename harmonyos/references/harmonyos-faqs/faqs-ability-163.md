@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ability-16
 title: HarmonyOS媒体库相关权限申请及配置
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 程序框架（Ability） > HarmonyOS媒体库相关权限申请及配置
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:49+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:0c02c90756bfa58e489016413111b6dc48aa4da5baa12e50851a10be3ddb4dde
 ---
@@ -16,7 +16,7 @@ content_hash: sha256:0c02c90756bfa58e489016413111b6dc48aa4da5baa12e50851a10be3dd
 
 应用在访问数据或者执行操作时，需要评估该行为是否需要应用具备相关的权限。如果确认需要目标权限，则需要在应用安装包中申请目标权限，开发者可以依据下述流程图判断是否可以申请[受限权限](../harmonyos-guides/restricted-permissions.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/QCIkjcZCTvq1oDnRzgBvPw/zh-cn_image_0000002628631568.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/QCIkjcZCTvq1oDnRzgBvPw/zh-cn_image_0000002628631568.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=3DA911E6C7833B04D5F0220F9B7A240C7D6D466BA81507869F51EF6BF1FBDEBC "点击放大")
 
 ## 解决方案
 

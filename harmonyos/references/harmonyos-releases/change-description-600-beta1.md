@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/change-desc
 title: 变更说明
 breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > DevEco Studio > 变更说明
 category: harmonyos-releases
-scraped_at: 2026-11-12T09:50:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:fdd6b63b8a31a0d88398b388179142771c9a33f308958794c2e03f55f74c95fc
 ---
@@ -117,7 +117,7 @@ DevEco Studio 6.0.0 Beta1版本适配IntelliJ 2024.3.3底座升级后，语言�
 
 如果ArkUI-X工程是使用DevEco Studio 6.0.0 Beta1以下版本创建的，升级到Beta1及以上版本，编译会失败，并提示Could not open settings generic class cache for settings file。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/rv_4DFOLRcW54WfkfOzB5w/zh-cn_image_0000002391137566.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/rv_4DFOLRcW54WfkfOzB5w/zh-cn_image_0000002391137566.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=61DDB6A512181A59375BBC85A0DC292BF9440F4D9455CA04D30B8A5BE6A89046)
 
 **适配指导**
 
@@ -133,4 +133,4 @@ DevEco Studio 6.0.0 Beta1版本适配IntelliJ 2024.3.3底座升级后，语言�
 
   如果本地有jdk17，可以在gradle.properties中通过org.gradle.java.home变量指定使用jdk17。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/kgGwDAi7QwWNWG7QbQHPZA/zh-cn_image_0000002457140953.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/kgGwDAi7QwWNWG7QbQHPZA/zh-cn_image_0000002457140953.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=1F561BADB21075DC652F0B4DED925D3B494E0F028BFF6A9FAC0F6B3CE77867FC)

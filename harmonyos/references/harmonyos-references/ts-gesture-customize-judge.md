@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-gestur
 title: 自定义手势判定
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 手势处理 > 手势控制 > 自定义手势判定
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-08-29
 content_hash: sha256:104241990aeeb83b75dcb385296cff005ca30926c0f6c7dba102b3161e28c131
 ---
@@ -139,7 +139,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/H84Qn8SOTkK-jqig9F_Vfw/zh-cn_image_0000002815400593.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/H84Qn8SOTkK-jqig9F_Vfw/zh-cn_image_0000002815400593.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=CADDD40CBAD1DE714A74D05934D8A57E2C02CE59A9FAFB3A0B4702A2CD957518)
 
 ### 示例2（自定义区域手势判定）
 
@@ -217,7 +217,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/mTtyMNWvShCCGlMeeROIZg/zh-cn_image_0000002786521018.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/mTtyMNWvShCCGlMeeROIZg/zh-cn_image_0000002786521018.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=1DD00BAB5B617C8C3D79BC5DD693073F57463F3E0A753616615E6966C705C3CF)
 
 ### 示例3（实时监测参与手势的有效触点的数量及其简要信息）
 
@@ -304,4 +304,4 @@ struct GestureDetectorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/_tmsvPppSsKp2l9SqE07Kg/zh-cn_image_0000002786361090.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/_tmsvPppSsKp2l9SqE07Kg/zh-cn_image_0000002786361090.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C8AC7712D4B558A777B97ACCBEDF855BF1C20128D262A859ADCC068A0D05592)

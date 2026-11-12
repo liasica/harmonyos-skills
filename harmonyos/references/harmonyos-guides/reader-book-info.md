@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/reader-book-i
 title: 获取书籍信息
 breadcrumb: 指南 > 应用服务 > Reader Kit（阅读服务） > 书籍内容解析 > 获取书籍信息
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:35+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-14
 content_hash: sha256:2b8ccf03d61917e9857ef42e5f6b19f27d9163ebccba9c5f52acdd49c2f70753
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:2b8ccf03d61917e9857ef42e5f6b19f27d9163ebccba9c5f52acdd49c2f
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/AJbykmDNTTCmaWyLR7NoiQ/zh-cn_image_0000002786360556.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/AJbykmDNTTCmaWyLR7NoiQ/zh-cn_image_0000002786360556.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=24E365B7D57F99C7C727200BB179731552F96F9ABAAAA490252D6FF82AED7426)
 
 ## 接口说明
 

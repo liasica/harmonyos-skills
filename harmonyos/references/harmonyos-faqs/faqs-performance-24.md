@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 应用首次启动，隐私政策内容加载延迟
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 应用首次启动，隐私政策内容加载延迟
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:43+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:00fadde4a0e6f4e448439d31fc60999482b219c10bd293a59003f1311e2dee29
 ---
@@ -38,26 +38,26 @@ content_hash: sha256:00fadde4a0e6f4e448439d31fc60999482b219c10bd293a59003f1311e2
 
 1. 使用ArkUI Inspector获取应用启动时隐私政策页面组件布局，可知隐私政策内容为Web页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/vyPutPHxR0ynL86k6aOBWg/zh-cn_image_0000002658914385.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/vyPutPHxR0ynL86k6aOBWg/zh-cn_image_0000002658914385.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=10F45FFACEF92051406943DE393486C0ACEAC6EE3948520A1395867E39CABB88 "点击放大")
 2. 通过DevTools工具获取隐私政策页面url。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/Br_wAL-BRryGMquSSGz5VQ/zh-cn_image_0000002658794427.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/Br_wAL-BRryGMquSSGz5VQ/zh-cn_image_0000002658794427.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=A39DEB827233C095E6163B81FB33FCCC17BB56E55A0FA1A9292A243D1AC7537F "点击放大")
 3. 使用DevEco Profiler Launch分析，抓取应用启动过程Trace。
    * 搜索关键字H:NWebImpl | CreateNWeb找到Web组件创建的时间点4.874s。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/5lAi6jBcS1-VtEurWbOIQQ/zh-cn_image_0000002628555066.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/5lAi6jBcS1-VtEurWbOIQQ/zh-cn_image_0000002628555066.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=7BA0ED6C235774823310F9114754C08E64FD9E1DD7FDA3CC97104ACBD6674E50 "点击放大")
    * 搜索关键字H:NavigationControllerImpl::LoadURLWithParams | url=www.\*\*\*.com找到应用开始加载url的时间点4.900s。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/KFpEYIbDRxWft8zyFThXBg/zh-cn_image_0000002628395160.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/KFpEYIbDRxWft8zyFThXBg/zh-cn_image_0000002628395160.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=CAFF72B88D1248884292B24141E3E5A9A018E7DF7BD7BD2D76FF32479DD2C2CC "点击放大")
    * 搜索关键字H:NavigationBodyLoader::StartLoadingBody | url=www.\*\*\*.com找到应用开始加载网页的时间点6.232s。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/_mDo9WK0TDGWDE3N98J_SQ/zh-cn_image_0000002658914389.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/_mDo9WK0TDGWDE3N98J_SQ/zh-cn_image_0000002658914389.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=5BC2A4FD9330B4DA5B6F8648099B17B866AD778ADA033C564AF13A2A7175702E "点击放大")
    * 搜索关键字H:RenderFrameImpl::didStopLoading找到网页加载完成的时间点6.380s。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/rWn_vRXTQ7OTwze88P86xw/zh-cn_image_0000002658794431.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/rWn_vRXTQ7OTwze88P86xw/zh-cn_image_0000002658794431.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=41E3BEC2FA10E26484BDB70B31DF7E9F1D2149A48C777331175091E51EE2DBF0 "点击放大")
    * 搜索关键字：网页加载完成后的第一个SkiaOutputSurfaceImplOnGpu::SwapBuffers找到开始显示网页的时间点6.409s。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/ueGLZkR8SCOmeIFYIHryJg/zh-cn_image_0000002628555068.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/ueGLZkR8SCOmeIFYIHryJg/zh-cn_image_0000002628555068.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=48AEDB170635F63638854686EF9B5A22017809D39575BA2413D68CD7FF237E25 "点击放大")
 4. 计算各阶段耗时并分析耗时过长的部分。
    * 导航流程耗时：
 
@@ -66,7 +66,7 @@ content_hash: sha256:00fadde4a0e6f4e448439d31fc60999482b219c10bd293a59003f1311e2
 
      H:NavigationBodyLoader::StartLoadingBody到H:RenderFrameImpl::didStopLoading耗时，与网页有关，可使用DevTools分析网页侧性能。可以看到性能选项中的网络部分存在一个长时间网络请求，点击请求，在下方摘要中显示内容下载耗时477ms，导致页面显示延迟。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/2LDbZFepSqKlOCJBHOgDtg/zh-cn_image_0000002628395162.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/2LDbZFepSqKlOCJBHOgDtg/zh-cn_image_0000002628395162.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=6D63834FFDAC2F026459D725AAE5719E2E8BF530DFCFDA204466DE1436F4280E "点击放大")
 
 ## 分析结论
 

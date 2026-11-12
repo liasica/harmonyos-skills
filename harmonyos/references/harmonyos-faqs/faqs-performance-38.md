@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 左右滑动图片切换时文字没有跟随图片同步更新
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 左右滑动图片切换时文字没有跟随图片同步更新
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:43+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:08cc2d9ec9a2414652b874bc52d21a64611ef16322ae0254b4d41d1d3573fce4
 ---
@@ -29,11 +29,11 @@ content_hash: sha256:08cc2d9ec9a2414652b874bc52d21a64611ef16322ae0254b4d41d1d357
 ## 问题定位
 
 1. 使用ArkUI Inspector抓取应用布局组件树，查看图片列表和上方文字相应的组件，发现图片列表是采用Swiper组件实现，而上方的文字则是Text组件，两者均为Stack组件的子组件，Text组件覆盖在Swiper组件上。
-2. 使用DevEco Profiler Frame分析工具抓取该过程的Trace信息，搜索H:APP\_SWIPER\_SCROLL和H:APP\_SWIPER\_FLING确定图片滑动切换阶段如下所示。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/LcHz_4wkRSCiWO2-8IllNA/zh-cn_image_0000002628555176.png "点击放大")
+2. 使用DevEco Profiler Frame分析工具抓取该过程的Trace信息，搜索H:APP\_SWIPER\_SCROLL和H:APP\_SWIPER\_FLING确定图片滑动切换阶段如下所示。![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/LcHz_4wkRSCiWO2-8IllNA/zh-cn_image_0000002628555176.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=33A8F830F4F455240B897CF75ADD7622DC7ADD3B9E3F0DC80F4EBBCF57F33986 "点击放大")
 
    在上方搜索框中搜索文本组件渲染任务执行的Trace点H:FrameNode[Text][id:3147]::RenderTask，发现是在图片滑动切换完成之后，可知是在图片切换完成后才更新文字，导致文字更新有延迟。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/4XGoVdvgSLmAnxHz4q6ROQ/zh-cn_image_0000002658914499.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/4XGoVdvgSLmAnxHz4q6ROQ/zh-cn_image_0000002658914499.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=B1A66EE8CD49BCBC6621C8EDB09923F00DA7A410B932715C2DA120D5EC72A1C1 "点击放大")
 
 ## 分析结论
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1377
 title: tabBar导航页签栏中页签销毁重构，如何继续执行属性动画
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > tabBar导航页签栏中页签销毁重构，如何继续执行属性动画
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:47+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:5ea4285e87b41647698462e9ee5379586fb0afe242f2bd0c190974574ff1a23d
 ---
@@ -14,13 +14,13 @@ Tabs组件的tabBar导航页签栏中第一个页签使用if/else条件渲染，
 
 问题效果预览：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/uE3IPZHiQiq1puYsOUbv0A/zh-cn_image_0000002628602042.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/uE3IPZHiQiq1puYsOUbv0A/zh-cn_image_0000002628602042.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BB9E4683656BBC1DCE9C1A690736780795908735B57FEDE44A898CDC2C4492D "点击放大")
 
 ## 效果预览
 
 tabBar导航页签栏切换到其他页签之后再次切回第一个页签，动画效果仍存在：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/L6mndzvqRrusPtfPfRFmxQ/zh-cn_image_0000002628761928.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/L6mndzvqRrusPtfPfRFmxQ/zh-cn_image_0000002628761928.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=F0DC59D35946B1A028B95D6D27A08B740728F233C99AE9A638FDDF8B89856E33 "点击放大")
 
 ## 背景知识
 

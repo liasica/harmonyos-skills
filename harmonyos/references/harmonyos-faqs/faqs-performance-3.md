@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-performanc
 title: 应用在页面跳转时发生卡顿的现象
 breadcrumb: FAQ > 应用质量 > 技术质量 > 性能 > 应用在页面跳转时发生卡顿的现象
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:f0fe5211876fc85ebb5cf15771ec0b4ce76e9f22b390c1ad48fa2a79f7b3d904
 ---
@@ -41,23 +41,23 @@ content_hash: sha256:f0fe5211876fc85ebb5cf15771ec0b4ce76e9f22b390c1ad48fa2a79f7b
 
 1. 使用DevEco Profiler Frame模板抓取应用页面切换的Trace信息，根据Trace关键字H:ABILITY\_OR\_PAGE\_SWITCH确定页面切换的过程，查看该过程应用主线程Trace信息，发现主线程在该过程并没有多次触发绘制送显，因此推测不是应用主线程卡顿导致的页面切换卡顿，而是Render Service卡顿。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/60oGQxTkQKiQo2kJk41nrQ/zh-cn_image_0000002628554944.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/60oGQxTkQKiQo2kJk41nrQ/zh-cn_image_0000002628554944.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=511C81DD8BD59AA0ABB2347C1B28E5E2A3669A1FF3B310C723F87CFE3C051842 "点击放大")
 2. 查看render\_service线程，发现渲染服务线程在接收Vsync信号处理时，长时间处于PostAndWait阶段（175ms左右），在等待RsUniRenderThread子线程唤醒。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/uYUnYy1GT2244muC00lKug/zh-cn_image_0000002628395044.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/uYUnYy1GT2244muC00lKug/zh-cn_image_0000002628395044.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=6148D275689C18248A168730A2020A4360020E791E8D6A49694372DB019CCF52 "点击放大")
 
    而RsUniRenderThread子线程在执行绘制时，应用窗口的绘制时长时间处于Running状态，时长达到了179ms，同时有创建8191x7176大小的纹理，推测是页面负载过高，并且与图片有关。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/6o6r0fxjQkCjuC0r2eeAvA/zh-cn_image_0000002658914263.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/6o6r0fxjQkCjuC0r2eeAvA/zh-cn_image_0000002658914263.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=6C0244B2C995ED76D154CE77E6C5C69033FADB90C275ACA86C8A5DE1B36CE660 "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/Jq99Oyk9TLalLllgrrDaPQ/zh-cn_image_0000002658794311.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/Jq99Oyk9TLalLllgrrDaPQ/zh-cn_image_0000002658794311.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=A49015E38218E36882B80A12CF2F3F99716D72996F6EA8CD586581A51C6FE1DE "点击放大")
 3. 使用ArkUI Inspector抓取页面的布局，发现页面层级不深、布局不复杂，Image组件的图片为http图片资源。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/7iGRs0B6Tm2hJahhLtF3Ig/zh-cn_image_0000002628554946.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/7iGRs0B6Tm2hJahhLtF3Ig/zh-cn_image_0000002628554946.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=1B899D210125E2E305B5910E9155A574EC5AA166D8EC256B37A2FF0992C5822F "点击放大")
 
    将图片下载后查看得知该图片的分辨率达到了10800\*7176，图片分辨率较大，超出了Image组件DMA策略生效的图片大小范围，在绘制时会出现纹理上传，导致渲染服务绘制耗时，出现卡顿。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/xumpYs0EREGnAuoy5VPsOA/zh-cn_image_0000002628395046.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/xumpYs0EREGnAuoy5VPsOA/zh-cn_image_0000002628395046.png?HW-CC-KV=V1&HW-CC-Date=20261112T233216Z&HW-CC-Expire=31536000000&HW-CC-Sign=827BDEAE2C6571FC72FEB2BFED6B8E50BEFD25AAE894E5D9CD8274683A6B407E "点击放大")
 
 ## 分析结论
 

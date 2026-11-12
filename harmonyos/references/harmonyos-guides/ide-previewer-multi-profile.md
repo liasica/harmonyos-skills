@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-previewer
 title: 查看多端设备预览效果
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 界面预览 > 查看多端设备预览效果
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:53:02+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-08
 content_hash: sha256:80c07d3a45d01efec4f31aa0fcb99f904badbf9cfbe80c362b875e4f4770a835
 ---
@@ -28,8 +28,8 @@ DevEco Studio支持HarmonyOS分布式应用/元服务开发，同一个应用/�
 
    多端设备预览不支持动画的预览，如果需要查看动画在设备上的预览效果，请关闭Multi-profile preview功能后在单设备预览界面进行查看。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/Iij5c28BSk-zSirLhgzEZg/zh-cn_image_0000002808886607.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/Iij5c28BSk-zSirLhgzEZg/zh-cn_image_0000002808886607.png?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=92FB36EADDB96FE1AE247E28685FE910BDBAA63E29D588E6F4084D3CF388D885 "点击放大")
 
    多设备预览效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/EV7Z54N0Qy6ik9GBFlKLBg/zh-cn_image_0000002808766527.gif "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/EV7Z54N0Qy6ik9GBFlKLBg/zh-cn_image_0000002808766527.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233233Z&HW-CC-Expire=31536000000&HW-CC-Sign=F3E6AC6B72C0BB527AAF037B744BA32281FB14C6FDE35CBF28DF73EB5AF8F31C "点击放大")

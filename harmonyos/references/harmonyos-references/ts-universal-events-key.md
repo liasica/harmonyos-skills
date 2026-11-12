@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 按键事件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用事件 > 基础输入事件 > 按键事件
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:05+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-23
 content_hash: sha256:64e2ab0e903678e96f02264ff9e6d12d32e54ad2b4644e7a3ea8849ce6f75295
 ---
@@ -220,7 +220,7 @@ struct KeyEventExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/rIUB4tdASOazufmOZkqR6Q/zh-cn_image_0000002815400457.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/rIUB4tdASOazufmOZkqR6Q/zh-cn_image_0000002815400457.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=CAD1602C8F162D58630B3411AE59F5384F0F55E675F9C314A8382CAE2C0A9EC5)
 
 ### 示例2（获取Unicode码值）
 
@@ -265,7 +265,7 @@ struct KeyEventExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/rVXKqBAjQoGL82SSC273iA/zh-cn_image_0000002786520882.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/rVXKqBAjQoGL82SSC273iA/zh-cn_image_0000002786520882.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=9DA6EB4A667CCE701CFC9744ACBCB89C9A2D64EE2EFEAF3B5D90A3865AEF23BF)
 
 ### 示例3（触发onKeyPreIme回调）
 
@@ -364,4 +364,4 @@ struct KeyEventExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/Gsq5KuvWT3mYxSx1p46kXw/zh-cn_image_0000002786360954.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/Gsq5KuvWT3mYxSx1p46kXw/zh-cn_image_0000002786360954.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=D687955C9798D56D4B9DC86835840E58BD321AAA0665D121D14AD3D24B304D2D)

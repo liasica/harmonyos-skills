@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-834
 title: 点击图片，图片异常上下跳动
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 点击图片，图片异常上下跳动
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:33+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:a2cf71cad28ece3979d27a60f0aafd2dce545a4a1426e68970292433f3e7cc5c
 ---
@@ -12,7 +12,7 @@ content_hash: sha256:a2cf71cad28ece3979d27a60f0aafd2dce545a4a1426e68970292433f3e
 
 点击图片，图片放大跳动并显示弹窗，关闭弹窗时图片缩小跳动，放大缩小时无动画，显示异常。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/XSyaurEpRhyYaOALPYYjGA/zh-cn_image_0000002628558358.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/XSyaurEpRhyYaOALPYYjGA/zh-cn_image_0000002628558358.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=8A35202D50346172848CC6F1D563FB996CC4F5B0B7AB9E487D4673E832361D37 "点击放大")
 
 ## 背景知识
 
@@ -24,7 +24,7 @@ content_hash: sha256:a2cf71cad28ece3979d27a60f0aafd2dce545a4a1426e68970292433f3e
 
 1. 使用DevEco Testing查看问题组件，该组件为Image组件。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/mNvTz7F4TbinszlrZvKc5A/zh-cn_image_0000002658917669.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/mNvTz7F4TbinszlrZvKc5A/zh-cn_image_0000002658917669.png?HW-CC-KV=V1&HW-CC-Date=20261112T233203Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE796296FCDA6D1D95F911D0124E4B837C6001F649988A8D399C1514EF6B828F "点击放大")
 2. 查看该Image组件的设置，该组件设置点击显示弹窗和关闭弹窗时改变图片组件的尺寸，且未对尺寸变化通过animateTo设置动画，而是直接改变尺寸。
 
    ```screen

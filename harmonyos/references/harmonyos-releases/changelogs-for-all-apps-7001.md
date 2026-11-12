@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: 针对所有应用的变更
 breadcrumb: 版本说明 > 更多版本 > 26.0.0 > OS平台能力 > OS平台行为变更说明 > 26.0.0 Beta1引入的行为变更 > 针对所有应用的变更
 category: harmonyos-releases
-scraped_at: 2026-11-12T09:49:55+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:0fccba21eb416eab7c6879c834649ecb67296868f87e967f67193be59162eaa7
 ---
@@ -1700,7 +1700,7 @@ Binary（可执行二进制，以下简称bin）是操作系统中可通过execv
 
 下图流程供应用参考进行排查，如果需要适配，则根据下文中的具体步骤进行适配。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/DNYdqduPTmijuV6tZsyE4w/zh-cn_image_0000002623074963.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/DNYdqduPTmijuV6tZsyE4w/zh-cn_image_0000002623074963.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=9CEC65F26A70573B7A4EEF4C1F183C3C55E7963CE632FA13B6AF64CDFDC70A8A)
 
 适配步骤：
 

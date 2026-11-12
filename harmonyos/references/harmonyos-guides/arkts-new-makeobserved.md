@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-mak
 title: makeObserved接口：将非观察数据变为可观察数据
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 辅助接口 > makeObserved接口：将非观察数据变为可观察数据
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:b03376ac21e230f9281ac9b6f2a18b1cc03e2549eae77b9d7a1b264a6056a26d
 ---
@@ -110,7 +110,7 @@ makeObserved可以在@Trace无法标记的情况下使用。在阅读本文档�
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/uQ4pYiifS6mu5jzk2esNKg/zh-cn_image_0000002786358668.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/uQ4pYiifS6mu5jzk2esNKg/zh-cn_image_0000002786358668.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=D2D5B475985760364E6BC08D993EB8C396ABEA6B5494E2B22147ECFCA66A4619)
 
 ### makeObserved仅对入参对象进行深度观察
 
@@ -158,7 +158,7 @@ struct Page2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/N4k_5NYgQby9T21NR_Hofg/zh-cn_image_0000002815558089.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/N4k_5NYgQby9T21NR_Hofg/zh-cn_image_0000002815558089.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=0133C57610045AE4906F2F58A5B1953A3B5CC6A21F24418D5E2677D709E6B39B)
 
 ## 支持类型和观察变化
 
@@ -269,7 +269,7 @@ struct Page3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/pHPurGUISKKOxQ-98LlRNQ/zh-cn_image_0000002815398173.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/pHPurGUISKKOxQ-98LlRNQ/zh-cn_image_0000002815398173.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=FE7881CDD7B6504E2008E6523425F87F796D4A20F2CC84DE47E920369FA953BE)
 
 需要注意：数据的构建和处理可以在子线程中完成，但有观察能力的数据不能传给子线程，只有在主线程里才可以操作可观察的数据。所以上述例子中只是将this.send的属性name传给子线程操作。
 
@@ -439,7 +439,7 @@ struct Page4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/0ZmST4eGRjiB94Go__-W2g/zh-cn_image_0000002786518598.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/0ZmST4eGRjiB94Go__-W2g/zh-cn_image_0000002786518598.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=D51E9D900938B7F61C7F40E132F8A98C5E5AE6C5652EFACC325FFF57D9279109)
 
 **collections.Map**
 
@@ -508,7 +508,7 @@ struct Page5 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/3Dz2utOjTta3kMp6WA7IeQ/zh-cn_image_0000002786358670.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/3Dz2utOjTta3kMp6WA7IeQ/zh-cn_image_0000002786358670.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=E7E9D700A9958261A4C224296930E9846EE3C0FB534834D93E1E361049AE9943)
 
 **collections.Set**
 
@@ -575,7 +575,7 @@ struct Page6 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/FuwcRsyDQp-UHv8mnMFjOA/zh-cn_image_0000002815558091.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/FuwcRsyDQp-UHv8mnMFjOA/zh-cn_image_0000002815558091.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=39B4FC3B377AC348E37A33DF07900404F90B94EDA0BA1343814138553D77999A)
 
 ### makeObserved的入参为JSON.parse的返回值
 
@@ -628,7 +628,7 @@ struct Page7 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/_T9U42jrRNGPG_iyliEvqA/zh-cn_image_0000002815398175.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/_T9U42jrRNGPG_iyliEvqA/zh-cn_image_0000002815398175.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=922FA5465F4D2C51D8BD742EC6DEBBA6D75DE4ED3E43676A1A2637631A5089CB)
 
 ### makeObserved和V2装饰器配合使用
 
@@ -716,7 +716,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/YaGbd2tYR8qWQNGgFQvlIw/zh-cn_image_0000002786518600.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/YaGbd2tYR8qWQNGgFQvlIw/zh-cn_image_0000002786518600.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=D9AE21EFEE807A70BD9E33CF2E852475F0E6654DC1410858BF2DF87ACA795A46)
 
 ### makeObserved在@Component内使用
 
@@ -754,7 +754,7 @@ struct Page9 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/6dE5QV33T--gIDWcfmT9jw/zh-cn_image_0000002786358672.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/6dE5QV33T--gIDWcfmT9jw/zh-cn_image_0000002786358672.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=89F9675A6E25E6D0C6A03809FC1DF60EFD43264E15447E319C2D70F855E5E5A7)
 
 ## 常见问题
 
@@ -806,4 +806,4 @@ struct Page10 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/n90epmm2SaWhvdMxGvR2Og/zh-cn_image_0000002815558093.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/n90epmm2SaWhvdMxGvR2Og/zh-cn_image_0000002815558093.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA9B97B6986CEA66BAF4E8A9AC834679F4B4ACD76DB1B047B03937AFD4C66737)

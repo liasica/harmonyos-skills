@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1561
 title: SegmentButton页签与显示的Tabs页不匹配
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > SegmentButton页签与显示的Tabs页不匹配
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:33+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:5023e3a172cf07cefc9be5f8587af6ec962d1593f2ae414584acfd964f08da2d
 ---
@@ -14,12 +14,12 @@ content_hash: sha256:5023e3a172cf07cefc9be5f8587af6ec962d1593f2ae414584acfd964f0
 
   问题现象如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/lQVyWjfKQDSHXYmb9pBv6g/zh-cn_image_0000002628769748.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/lQVyWjfKQDSHXYmb9pBv6g/zh-cn_image_0000002628769748.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=8511A6DD10963EBC71112953EB7D817AD5BBC191D80D9F063FB0FC4A1611B56C "点击放大")
 * 场景二：拖动顶部页签按钮进行滑动切换时，Tabs页面未同步切换。
 
   问题现象如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/OXD6Td50TsWC1iEXVMISRw/zh-cn_image_0000002658969069.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/OXD6Td50TsWC1iEXVMISRw/zh-cn_image_0000002658969069.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=740A8BC6033338E8A3AE604B4F778CF07FB6F1EBF19DAB016ACC0CA5E8454E33 "点击放大")
 
 ## 背景知识
 
@@ -30,7 +30,7 @@ content_hash: sha256:5023e3a172cf07cefc9be5f8587af6ec962d1593f2ae414584acfd964f0
 
 通过[DevEco Testing](../harmonyos-guides/deveco-testing.md)的UIViewer工具查看页面结构。确认顶部页签按钮不是Tabs组件本身的TabBar。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/MeN_XKChRI2pGHS5qLnm4A/zh-cn_image_0000002658849113.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/MeN_XKChRI2pGHS5qLnm4A/zh-cn_image_0000002658849113.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=50218B6CC6EE7FB0B8EDA71906AA9CEB7CDAC94E3D21980259C6FE577DFAB630 "点击放大")
 
 * 场景一：查看Tabs组件绑定的onChange/onAnimationStart事件。确认页面切换时事件中只改变了currentIndex，但没有更新分段按钮的选中项绑定的segmentIndex变量，导致页面切换时，顶部页签未跟随切换。问题代码如下：
 
@@ -263,4 +263,4 @@ struct TabPage {
 
 运行效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/r-iGR5rXT96MF5vdokqrSQ/zh-cn_image_0000002628609854.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/r-iGR5rXT96MF5vdokqrSQ/zh-cn_image_0000002628609854.png?HW-CC-KV=V1&HW-CC-Date=20261112T233154Z&HW-CC-Expire=31536000000&HW-CC-Sign=505404AA478BB3C42A0ED49BA60EA6B853C12138DF86CF8999D80FC74F83BD39 "点击放大")

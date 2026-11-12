@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1338
 title: Search组件是否支持设置placeholder文本和搜索图标的间距
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > Search组件是否支持设置placeholder文本和搜索图标的间距
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:c6f0f4773c4ec5c4eaebf3d9ecf1227de451ee69556e42df7da480ca44568d96
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:c6f0f4773c4ec5c4eaebf3d9ecf1227de451ee69556e42df7da480ca445
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/cIhGSwBHQ-Wg5jeyaXtfBA/zh-cn_image_0000002658840775.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/cIhGSwBHQ-Wg5jeyaXtfBA/zh-cn_image_0000002658840775.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=B162CAF27E5DC7266D632FACD5BCBE578507953C14787BD7474C51F118247BAE "点击放大")
 
 ## 背景知识
 

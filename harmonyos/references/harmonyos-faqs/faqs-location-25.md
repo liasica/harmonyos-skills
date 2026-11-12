@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-location-2
 title: 获取位置信息的一般指导和常见问题解决方案
 breadcrumb: FAQ > 应用服务开发 > 位置服务（Location Kit） > 获取位置信息的一般指导和常见问题解决方案
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:42+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:327b7e932eac620ed551e678b131fc5aa8406bd6a9faf0136f71e86b5a800fd0
 ---
@@ -120,7 +120,7 @@ Q：确认应用已授权，使用checkAccessToken接口返回结果也是已授
 
 A：检查设备位置服务是否开启。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/AuzKxE9yTS-lMT6FdnWM-Q/zh-cn_image_0000002658913757.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/HsAkZOZiQYyo3WNFrZrCfg/zh-cn_image_0000002658793811.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/AuzKxE9yTS-lMT6FdnWM-Q/zh-cn_image_0000002658913757.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=9423F78DB1BFCA4158B05DDE52D455B6D434078D310BF2816D7EFA541B9E67F6 "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/HsAkZOZiQYyo3WNFrZrCfg/zh-cn_image_0000002658793811.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=3E17A13408A2B00381240ABDE4380565BA72E44A23C45ECAAA4306D27D6737B9 "点击放大")
 
 Q：如何判断位置服务是否处于关闭状态？
 

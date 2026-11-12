@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-de
 title: 自定义渲染节点 (RenderNode)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > 自定义节点 > 自定义渲染节点 (RenderNode)
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:16+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:873366a35b98282adbf7fcd3cd2581b554c2f797008e7e7847d754a6457ddebd
 ---
@@ -111,7 +111,7 @@ export struct OperationNodeTree {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/LizbhdjdRw-I4LFOjYcmkA/zh-cn_image_0000002815398707.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/LizbhdjdRw-I4LFOjYcmkA/zh-cn_image_0000002815398707.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=E39930B71702706387A0F8CD2715DDC1120135A709ADAB751AF17FF0AB5B269E)
 
 ## 设置和获取渲染相关属性
 
@@ -328,7 +328,7 @@ export struct RenderingProperties {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/yuwKLfyIS-WdY5TwKKgqdA/zh-cn_image_0000002786519132.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/yuwKLfyIS-WdY5TwKKgqdA/zh-cn_image_0000002786519132.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A4E4B9C9D14DD2CD224A89E9C6CD9C38FB532338431F75337346533C9DE1E90)
 
 ## 自定义绘制
 
@@ -431,7 +431,7 @@ export struct CustomDraw {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/VvMl9zL2TBmXPz5Xq1n78g/zh-cn_image_0000002786359204.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/VvMl9zL2TBmXPz5Xq1n78g/zh-cn_image_0000002786359204.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=89AA1BFAC0176F29D59E00C101BDF11B82A49B34AC2292772279F4EAB022FC1D)
 
 ## 调整自定义绘制Canvas的变换矩阵
 
@@ -586,7 +586,7 @@ export struct CustomDrawCanvas {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/E7xJ56mwRHKt_QmNzocEcA/zh-cn_image_0000002815558625.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/E7xJ56mwRHKt_QmNzocEcA/zh-cn_image_0000002815558625.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A9236ADBDC36D40BB37CE48864E9339DB02906DF7A0591BCB64207E7F623EAF)
 
 **Node-API调用示例：**
 
@@ -760,7 +760,7 @@ export struct CustomDrawCanvasNative {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/BaHWirZmT2-HbUZGE6qSgw/zh-cn_image_0000002815398709.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/BaHWirZmT2-HbUZGE6qSgw/zh-cn_image_0000002815398709.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=E0ADC44D90F43B65C6EE8B638871F8655215567C099B8FE88CAECB2A957B2F95)
 
 ## 设置标签
 
@@ -815,7 +815,7 @@ export struct SetLabel {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/OfwkBw2LSX-g6pgFIXiu1g/zh-cn_image_0000002786519134.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/OfwkBw2LSX-g6pgFIXiu1g/zh-cn_image_0000002786519134.png?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=4075746698F35914DF38697C06576BE5084061A96B869EBD7E72A6336A88B79B)
 
 ## 查询当前RenderNode是否解除引用
 
@@ -893,4 +893,4 @@ export struct CheckRenderNodeDisposed {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/XzPEFx19SgybOe2aIyg4HQ/zh-cn_image_0000002786359206.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/XzPEFx19SgybOe2aIyg4HQ/zh-cn_image_0000002786359206.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233222Z&HW-CC-Expire=31536000000&HW-CC-Sign=2828AB50C835DD0577A26CC3122968BD478FC4912C7D109A91FBA15AE29E206F)

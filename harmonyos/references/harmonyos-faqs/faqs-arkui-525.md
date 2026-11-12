@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-525
 title: 关于绘制表格内容的问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 关于绘制表格内容的问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:46+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:076ff468fd8936859cf8aea77909706c5abef0ff0003816e911e525c4e90187f
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:076ff468fd8936859cf8aea77909706c5abef0ff0003816e911e525c4e9
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/VZlTq34lTDuwBbrbB1r_tQ/zh-cn_image_0000002658790421.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/VZlTq34lTDuwBbrbB1r_tQ/zh-cn_image_0000002658790421.png?HW-CC-KV=V1&HW-CC-Date=20261112T233156Z&HW-CC-Expire=31536000000&HW-CC-Sign=BB12916B659CFE7B8BF4BD3EC79D89776D5B35F8898E3BB9780778AB7E7D3A98 "点击放大")
 
 ## 背景知识
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-static-sce
 title: 静态场景低功耗规则
 breadcrumb: 最佳实践 > 功耗 > 应用功耗优化 > 前台任务低功耗 > 前台资源合理使用 > 静态场景低功耗规则
 category: best-practices
-scraped_at: 2026-11-10T10:42:09+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-03-27
 content_hash: sha256:ee289a985484cd6d130508c48ae1b912b9163b7618846118e2d3912dbac48312
 ---
@@ -48,16 +48,16 @@ content_hash: sha256:ee289a985484cd6d130508c48ae1b912b9163b7618846118e2d3912dbac
 
 * 开机后，桌面静置。连接Wi-Fi后，lottie动效异常，导致UI和RS空跑。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/24CWwDW3R56tUb8PHM5S1g/zh-cn_image_0000002194011528.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/24CWwDW3R56tUb8PHM5S1g/zh-cn_image_0000002194011528.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=0D6E2BFC18BD4EFB573995B57E3A81F86F5B2276F323D442481EC70E32FC55C6 "点击放大")
 * 应用静置界面时，应用以120 fps响应vsync事件但无实际显示，导致应用进程和RS负载较高。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/RiPfTtBCQFWuSNu9yPCKfA/zh-cn_image_0000002229451821.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/RiPfTtBCQFWuSNu9yPCKfA/zh-cn_image_0000002229451821.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=F8C7BC09AC5BA58109FE91C3A211713D42EB7F9286A6EE2AAF5B0D4F688BF5F1 "点击放大")
 
 ## 调测验证
 
 * 查看日志：在控制台输入top指令，可直接获取进程负载。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/-bTU8-DmTnyK4RLL91XflA/zh-cn_image_0000002193851952.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/-bTU8-DmTnyK4RLL91XflA/zh-cn_image_0000002193851952.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=274DDA68DF215197E69281600CF8ACDE17CE30A006120F6F2A5A77DA10293160 "点击放大")
 * 抓取trace：通过trace中的进程耗时和绝对耗时，计算进程负载。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/NQln0xArS1SJ54dnuNq6uA/zh-cn_image_0000002229337329.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/NQln0xArS1SJ54dnuNq6uA/zh-cn_image_0000002229337329.png?HW-CC-KV=V1&HW-CC-Date=20261112T233141Z&HW-CC-Expire=31536000000&HW-CC-Sign=3752A82793B97E93A33CF82040BCDA6D704DCAC1A6FC95D26F15EB9CEB132D7F "点击放大")

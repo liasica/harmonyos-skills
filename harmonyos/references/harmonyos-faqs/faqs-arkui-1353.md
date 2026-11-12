@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1353
 title: 通过colorFilter和颜色矩阵修改Image的颜色
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 通过colorFilter和颜色矩阵修改Image的颜色
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:5f2afae1bb2dd311cdaa62b7e810984f17e7b0138bf5b49127777bcf50b66bca
 ---
@@ -28,17 +28,17 @@ Image($r('app.media.icon_toast_warning'))
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/zu8LyCtOQvm44aOtFsvO0w/zh-cn_image_0000002628601520.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/zu8LyCtOQvm44aOtFsvO0w/zh-cn_image_0000002628601520.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=59A1B5770EFDE70C354EB46698A086E2642AD7EA01B357AD29F145E6CDD5F11D "点击放大")
 
 ## 背景知识
 
 在计算机图形学中，每个像素由四个维度的数据构成，可表示为四维向量：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/YwXAYn9RTo-tkBmafwWR2A/zh-cn_image_0000002658840793.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/YwXAYn9RTo-tkBmafwWR2A/zh-cn_image_0000002658840793.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=9BC50A5186E75C6D4B3AC6270A9E225E564E6828130B5B9ADBCA74B518161BA1 "点击放大")
 
 颜色矩阵本质是执行以下运算的线性变换器：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/3PQLsJCERvO9ta_euY8szg/zh-cn_image_0000002628761416.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/3PQLsJCERvO9ta_euY8szg/zh-cn_image_0000002628761416.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=4490CF33E0D5AD8B4F60D1B99EBFDBE57CA0387A31A74F642BB3FC1153CC9C8F "点击放大")
 
 颜色矩阵M的参数语义：
 
@@ -62,7 +62,7 @@ A' = m30*R + m31*G + m32*B + m33*A + m34
 
 **纯色替换矩阵**：将图像转换为目标色（如#2196F3）需满足：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/_ofu9dqmRt-xdVNCSoTVtA/zh-cn_image_0000002658960741.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/_ofu9dqmRt-xdVNCSoTVtA/zh-cn_image_0000002658960741.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=5154CCAB6F6CBB2FC4EEAD63E88A29343BA399C8B487118FEE2A81008B5D221F "点击放大")
 
 对应矩阵：
 

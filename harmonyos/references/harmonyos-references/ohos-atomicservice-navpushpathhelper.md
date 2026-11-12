@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-atom
 title: NavPushPathHelper
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > AtomicService > NavPushPathHelper
 category: harmonyos-references
-scraped_at: 2026-11-12T09:54:25+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:e56487f594de3d1eacb38234454755810ad9ba7c677832acf5b7aa2c08ca5790
 ---
@@ -745,4 +745,4 @@ export struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/vDbtqZFkSFOyFcIfKl0wyA/zh-cn_image_0000002786361620.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/vDbtqZFkSFOyFcIfKl0wyA/zh-cn_image_0000002786361620.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233240Z&HW-CC-Expire=31536000000&HW-CC-Sign=693ACD479EF8FB2F7458D687CFD0EDBEAABDC66DD1E35E009A894546432C586A)

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: 针对API 12应用的变更
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Beta引入的接口行为变更 > 针对API 12应用的变更
 category: harmonyos-releases
-scraped_at: 2026-11-12T09:50:34+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-27
 content_hash: sha256:afc2c6dc7ae9bb5a0def26c16fc91ed063582e9da03390d82e890e44387f30ae
 ---
@@ -482,7 +482,7 @@ SystemCapability.Security.Huks.Core为必选基础能力，SystemCapability.Secu
 1. 输入法Extension进程使用独立沙箱，与应用的主入口进程不可互相访问对方独立沙箱。
 2. 新增输入法Extension与应用的主入口的共享沙箱，基础访问模式下输入法Extension对共享沙箱只读，完整访问模式下可读可写；应用的主入口对共享沙箱保持可读可写。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/_miI-a67RSGhjXDxZhNohw/zh-cn_image_0000002117367217.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/_miI-a67RSGhjXDxZhNohw/zh-cn_image_0000002117367217.png?HW-CC-KV=V1&HW-CC-Date=20261112T233241Z&HW-CC-Expire=31536000000&HW-CC-Sign=0949F91189F6B591B504F74BE62ECB960DC9F7BD54A0EA15C998F2F63FB1305F)
 3. 基础访问模式下，输入法应用Extension进程无法拉起其他Extension应用进程以及其他UIAbility。
 4. 基础访问模式下，输入法Extension进程会受到系统管控，不能使用涉及访问或泄漏用户个人数据的各种接口，同时无法将数据传递出进程。管控功能包括但不限于：网络、短信、电话、麦克风、定位、相机、蓝牙、壁纸、支付、日历、游戏、扬声器、Wi-Fi、剪切板、多媒体、联系人、公共事件、系统账号、健康数据、地图服务、推送服务、融合搜索、共享内存、分布式特性、广告设备标识等。
 5. 基础访问模式下，输入法Extension可以使用基础输入功能相关的必要系统能力，例如，IME Kit、ArkUI、窗口、图形、屏幕管理等。

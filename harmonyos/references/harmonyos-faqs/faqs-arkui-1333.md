@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1333
 title: 如何实现类似雷达扫描的效果
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 如何实现类似雷达扫描的效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:21+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:a73773b4c8f785f0ff77104dfb7524a7d5543e8237c8bc272c4881f6e9d2e60b
 ---
@@ -106,7 +106,7 @@ content_hash: sha256:a73773b4c8f785f0ff77104dfb7524a7d5543e8237c8bc272c4881f6e9d
 
   效果预览：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/Uga8VvZjQwS2INKs8Xf7WA/zh-cn_image_0000002628599992.gif "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/Uga8VvZjQwS2INKs8Xf7WA/zh-cn_image_0000002628599992.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=E85597D089DB532389B206CF9C2458B10F1B930D7347153565D5A16C35317657 "点击放大")
 * **场景二**：雷达扫描。
   + 雷达扫描方案一：通过Stack组件叠加静态底图与动态旋转扇形图，并配合animation设置无限循环的线性动画（iterations: -1），使扇形图持续旋转实现。
 
@@ -153,7 +153,7 @@ content_hash: sha256:a73773b4c8f785f0ff77104dfb7524a7d5543e8237c8bc272c4881f6e9d
 
     效果预览：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/-crc30SuS-GcF5aXkjcj9Q/zh-cn_image_0000002628759922.gif "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/-crc30SuS-GcF5aXkjcj9Q/zh-cn_image_0000002628759922.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA0EAB5AA49EC2E7A14ACBFE495276081CF0F2DF21CDBE67BD68EF4589DA82C7 "点击放大")
   + 雷达扫描方案二：通过Canvas组件实现雷达扫描动画效果，包含网格绘制、扫描线旋转、扇形渐变区域和随机目标点。并使用定时器驱动角度变化实现动画效果，createRadialGradient创建扫描扇形渐变效果。
 
     ```ts
@@ -265,7 +265,7 @@ content_hash: sha256:a73773b4c8f785f0ff77104dfb7524a7d5543e8237c8bc272c4881f6e9d
 
     效果预览：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/9O57jKxBQk6dgy5olPCLZw/zh-cn_image_0000002658959237.gif "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/9O57jKxBQk6dgy5olPCLZw/zh-cn_image_0000002658959237.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=329A30FB604B331AB304F94A8B93D2F84A2F28CBB1A69504C52AA99F455AF5CB "点击放大")
   + 雷达扫描方案三：通过Row的linearGradient属性创建扇形渐变效果，结合rotate动画实现扫描效果。渐变颜色使用半透明绿色模拟雷达波束，Stack容器实现图层叠加。
 
     ```ts
@@ -325,7 +325,7 @@ content_hash: sha256:a73773b4c8f785f0ff77104dfb7524a7d5543e8237c8bc272c4881f6e9d
 
     效果预览：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/QrTKlYXOQ5euvZvg05QaTw/zh-cn_image_0000002658839285.gif "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/QrTKlYXOQ5euvZvg05QaTw/zh-cn_image_0000002658839285.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=9A143E43BE821705F9FF2877F172A438130121C4F7F4A1376D94A38AC1A6541D "点击放大")
 * 整体方案对比：
 
   | 方案 | 优点 | 缺点 |

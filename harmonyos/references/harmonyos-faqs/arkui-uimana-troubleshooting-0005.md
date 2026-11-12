@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-tr
 title: 窗口横竖屏旋转问题排查与解决
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 故障排查 > 窗口横竖屏旋转问题排查与解决
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:33+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:9f995f70e9bb05b3becc932289988e20590b2f871e35f9864f5c8eacc6bca4d3
 ---
@@ -73,21 +73,21 @@ content_hash: sha256:9f995f70e9bb05b3becc932289988e20590b2f871e35f9864f5c8eacc6b
 
 1. 使用DevEco Profiler的Frame模板抓取横竖屏切换旋转过程的Trace。在Frame泳道应用包名子泳道搜索H:WindowSessionImpl::UpdateRectForRotation作为横竖屏切换的起点，可以明显看到在此后有标红Trace点，出现丢帧现象。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/A7Qey0nZTRCtPeHgd7coKg/zh-cn_image_0000002795449901.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/A7Qey0nZTRCtPeHgd7coKg/zh-cn_image_0000002795449901.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=C84254008F4D23661A0CB94020F0EB484A71E7ABF963C010976D141C52F99479 "点击放大")
 2. 点击编号为133的Trace点，在下方的Details中点击Corresponding Slice左侧的箭头按钮，可跳转至应用包名主泳道应用包名主线。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/VrNj7SVAStK-n4d9HtfX9A/zh-cn_image_0000002766051354.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/VrNj7SVAStK-n4d9HtfX9A/zh-cn_image_0000002766051354.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=EEA2C1A0AEAA0FD186AD894CD81C18C67A8CFA01A13BA100CA2FE406536A5D31 "点击放大")
 3. 跳转至应用包名主线程查看对应帧绘制的Trace信息，观察到泳道中存在大量Measure和Layout相关的Trace点，这是应用在测量组件宽高并进行布局。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/ENmf4BmSQqG74W4Owa93XA/zh-cn_image_0000002795449907.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/ENmf4BmSQqG74W4Owa93XA/zh-cn_image_0000002795449907.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=7EC1291E833B65C083F5055778C2E00537B59B0C764956E6DFF43277651399E8 "点击放大")
 4. 根据这一帧的起始时间和结束时间框选出分析范围，在下方Slice List中过滤出测量任务（H:Measure）和布局（H:Layout）任务。可以看到这一帧进行了254次测量、布局任务，单帧耗时达到23ms。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/Pcbns8yZQfijOmfgomD5-Q/zh-cn_image_0000002795449909.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/Pcbns8yZQfijOmfgomD5-Q/zh-cn_image_0000002795449909.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=00E4CE2A2D2187045E34DBAEB2DFAD0C09FC88C8228706523165E5E2ADDC3A25 "点击放大")
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/dqFf8V87Tg-IkDZhBV2YZg/zh-cn_image_0000002765891426.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/dqFf8V87Tg-IkDZhBV2YZg/zh-cn_image_0000002765891426.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=1BEF23C95A8FA1EF05C8A1EEBFB79EFB636F4D351CF085BDE68B04D586113C74 "点击放大")
 5. 重复以上步骤查看后续帧的绘制情况，发现在长达640ms的旋转过程中单帧绘制耗时均在23ms左右，远超过屏幕刷新率120Hz所要求的8.33ms。综上所述是应用页面结构复杂导致在横竖屏切换时大量组件需要重新测量宽高并布局，造成单帧绘制超时，因而出现丢帧现象。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/CdyX7kAgTUeEpYb0yoNifQ/zh-cn_image_0000002766051356.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/CdyX7kAgTUeEpYb0yoNifQ/zh-cn_image_0000002766051356.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=6623BECF0D11CAA5B750E36D830F10DD982D288E90E9026588F715ABBD6B62D7 "点击放大")
 
 ### 分析结论
 

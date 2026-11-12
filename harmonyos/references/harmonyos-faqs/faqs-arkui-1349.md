@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1349
 title: 实现List头部插入数据时显示的项不变
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > 实现List头部插入数据时显示的项不变
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:e608e7771ea7aa579d1ff2d6d62407bb4129e07af5c0334ebd7be431cb96b1bb
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:e608e7771ea7aa579d1ff2d6d62407bb4129e07af5c0334ebd7be431cb9
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/yP1ySyB8S3GQtcZplo0Q7A/zh-cn_image_0000002658840791.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/yP1ySyB8S3GQtcZplo0Q7A/zh-cn_image_0000002658840791.png?HW-CC-KV=V1&HW-CC-Date=20261112T233152Z&HW-CC-Expire=31536000000&HW-CC-Sign=389312BC97805F5ABA55DBB7E202C239AA6460F8EB267C6F60A9C31E3571AD93 "点击放大")
 
 ## 背景知识
 

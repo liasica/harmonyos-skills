@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/applinking-in
 title: App Linking Kit简介
 breadcrumb: 指南 > 应用服务 > App Linking Kit（应用链接服务） > App Linking Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-09-09
 content_hash: sha256:f3cdc4384ed5cb18192253633e728140e22dbfd8a6e2d1b1d1c16ea4480108df
 ---
@@ -30,19 +30,19 @@ App Linking Kit（应用链接服务）提供了一系列增强的链接特性�
 
 随着全场景智慧生活的不断演进，跨设备内容分享已成为用户的核心需求之一。传统分享方式普遍存在操作繁琐（需手动选择设备或应用）、依赖特定网络环境、传输效率低等问题，影响了用户体验。HarmonyOS提供的[Share Kit（分享服务）](share-introduction.md)结合App Linking Kit技术，能够实现内容的快速跨设备分享，直达目标应用，无需依赖第三方应用中转，提供高效、便捷、无缝的分享体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/ffvKtr4RQFusXasHSGTsrw/zh-cn_image_0000002786520118.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/ffvKtr4RQFusXasHSGTsrw/zh-cn_image_0000002786520118.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=CCF944258991AE9E9DD83025C6A7D0B3CD3FEF9EBEC5FC19EA95F1BCDF4ED198)
 
 ### 游戏碰一碰快速组队
 
 在《多乐中国象棋》这款组队竞技类游戏中，玩家只需轻轻碰触两台设备，即可实现秒速组队，省去了传统邀请流程中的繁琐操作，一步直达指定页面。与传统的通信软件邀请流程相比，操作步骤大幅减少。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/7A8AvgjjShW9gB6XHt4TMQ/zh-cn_image_0000002786360190.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/7A8AvgjjShW9gB6XHt4TMQ/zh-cn_image_0000002786360190.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=9E347EC9AF4D84561372346E9196C122F4072024955767C86FC49FD3BE8F6660)
 
 ### 通过扫码使服务快速触达用户
 
 美团App结合App Linking技术，实现用户无需打开App，通过系统扫码即可直接解锁共享单车。在负一屏、控制中心、系统相机中均可解锁，相比打开App扫码，操作入口增加了3倍，一步扫码直达，操作效率提升了30%以上。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/dvDM4E9WS6m-o6j2FTrCiA/zh-cn_image_0000002815559611.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/dvDM4E9WS6m-o6j2FTrCiA/zh-cn_image_0000002815559611.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233221Z&HW-CC-Expire=31536000000&HW-CC-Sign=BA7BD50649E41B636F72D6C1A0B97FED3D42A4EA133B9CFBAB08079C0C9EBAE7)
 
 ## 约束与限制
 

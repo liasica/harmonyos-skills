@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-575
 title: ImageSpan使用场景
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 组件使用 > ImageSpan使用场景
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:07+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:4f86eabbbca3a958e880f1a91d7ac79a0da79a9fecb184a93360d3623d16633c
 ---
@@ -12,11 +12,11 @@ content_hash: sha256:4f86eabbbca3a958e880f1a91d7ac79a0da79a9fecb184a93360d3623d1
 
 如何实现下图中的追加评论效果？
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/q0ktzGYZQQerAI8Tl0qFcQ/zh-cn_image_0000002658791437.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/q0ktzGYZQQerAI8Tl0qFcQ/zh-cn_image_0000002658791437.png?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=5AA60AD87128B32AD0B26954817B610BFB88D0D509C2B5A44BDEF85AD60480F8 "点击放大")
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/Y-ZRks9oRlmis7fpCoeelg/zh-cn_image_0000002628552050.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/Y-ZRks9oRlmis7fpCoeelg/zh-cn_image_0000002628552050.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233157Z&HW-CC-Expire=31536000000&HW-CC-Sign=C096B89C070172370E565D94CD5DB921ADDAB23ACE766627026A0543A09A387C "点击放大")
 
 ## 背景知识
 

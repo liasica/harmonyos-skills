@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scene_introdu
 title: 场景介绍
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > Wear Engine Kit简介 > 场景介绍
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:51:52+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-04-20
 content_hash: sha256:6e225c113243d648ce5e39dee688cccb8a7a1bddb98a72fb0a9754330104fbf3
 ---
@@ -12,13 +12,13 @@ content_hash: sha256:6e225c113243d648ce5e39dee688cccb8a7a1bddb98a72fb0a975433010
 
 * 重要通知实现腕上提醒，实现即时通知推送，如：在手机侧App中设置日程提醒、用药提醒、任务提醒等数据，可以同步到穿戴设备侧App中，不用打开手机，也可以随时在穿戴设备上查看重要信息。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/lW-NWd89S8i_qWUsB6tXYg/zh-cn_image_0000002786359788.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/lW-NWd89S8i_qWUsB6tXYg/zh-cn_image_0000002786359788.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=752DD366D16D749B6CF85F996E6241B0B4576EC5BCD849EF5D68798FA5C7FFFC)
 * 为手机应用带来全新的“腕上交互”，如：用手机侧App看视频、听音频时，可以通过穿戴设备侧App操控手机侧App，比如暂停，下一首，停止等。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/gXNyy3hnSAq-p2BbK0SqWw/zh-cn_image_0000002815559209.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/gXNyy3hnSAq-p2BbK0SqWw/zh-cn_image_0000002815559209.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=C14B51BCF4CF326DCC948E46DF9C00653831AC29EDDA7ADAE5190048174DF3C3)
 * 手机侧和穿戴侧的实时协同体验。如：在手机侧App开启导航，可以通过穿戴设备侧App提示用户左转、直行、右转等。在走路或骑行时，不用每次拿出手机查看路线。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/813R3OU2SLGf6MnNdEbzcg/zh-cn_image_0000002815399293.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/813R3OU2SLGf6MnNdEbzcg/zh-cn_image_0000002815399293.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=EE26DEA6750FB28B759FC69BF1BF6C3CEBCA767C456A17027BF3680FFD6BD5A7)
 
 ## 手机与穿戴设备虚拟化
 
@@ -26,7 +26,7 @@ content_hash: sha256:6e225c113243d648ce5e39dee688cccb8a7a1bddb98a72fb0a975433010
 
 * 穿戴设备状态实时掌握，如：手机侧App实时获取穿戴设备侧连接状态、佩戴状态、电量状态等，给用户提供更多增值服务。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/wfo2vqwETIeC3dgC-mO17A/zh-cn_image_0000002786519718.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/wfo2vqwETIeC3dgC-mO17A/zh-cn_image_0000002786519718.png?HW-CC-KV=V1&HW-CC-Date=20261112T233235Z&HW-CC-Expire=31536000000&HW-CC-Sign=73DDDC3265D076DF5DB4B322CDEB2CBF358E01E7F2463C48511FD89F2AA790D1)
 * 穿戴设备传感器：手机侧App读取穿戴设备的传感器数据（如ECG、PPG、ACC数据等）。
 
   **说明** 

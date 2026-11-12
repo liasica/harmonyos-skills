@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/compiling-and-b
 title: Target AOT编译AP文件生成失败问题排查
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 常见问题 > Target AOT编译AP文件生成失败问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:51+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-27
 content_hash: sha256:5fec20735e39f97fd464c639ad379cc7daa654f7453d27364336c59c27a8b539
 ---
 
 **Q：Target AOT编译，AP文件生成失败，并报错提示“errno: 13”表示权限不足，如下图所示。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/8hd-8NGhSTWud1nA_YpuFA/zh-cn_image_0000002772702484.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/8hd-8NGhSTWud1nA_YpuFA/zh-cn_image_0000002772702484.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=6BC612137403FD340ED9B317E379E21B0B90220616C20C8746CFEDC8A1C892D9 "点击放大")
 
 **A**：errno: 13表示权限不足，请通过下述措施解决：
 

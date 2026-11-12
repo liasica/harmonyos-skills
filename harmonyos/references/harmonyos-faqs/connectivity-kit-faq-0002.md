@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/connectivity-ki
 title: 蓝牙BLE扫描与状态监听常见问题
 breadcrumb: FAQ > 系统开发 > 网络 > 短距通信（Connectivity） > 常见问题 > 蓝牙BLE扫描与状态监听常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:18+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-10-20
 content_hash: sha256:889c00b7d274bc1d80b0ba75d091cc8610670ebb565fb973785109ec9ccad0c3
 ---
@@ -494,7 +494,7 @@ this.stopScan();
 
 [ble.startBLEScan](../harmonyos-references/js-apis-bluetooth-ble.md#blestartblescan)发起BLE扫描流程时，可以选择SCAN\_MODE\_LOW\_LATENCY扫描模式，减少蓝牙扫描的时间，提高扫描发现效率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/B1LKE0W9QJKN9XteLojGbQ/zh-cn_image_0000002765862042.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/B1LKE0W9QJKN9XteLojGbQ/zh-cn_image_0000002765862042.png?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A48D0AA6EBE6A56FE1351411E9F3545CB5332DF297802760975C656AF1DC0DA "点击放大")
 
 方案三：
 

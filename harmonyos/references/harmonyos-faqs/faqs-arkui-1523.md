@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1523
 title: 如何解决AttributeModifier封装scale动画问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何解决AttributeModifier封装scale动画问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:41+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:0c02ab46fcee3fa9ab350b0cf491029f23db28c9434037f8d422282605748c03
 ---
@@ -84,7 +84,7 @@ content_hash: sha256:0c02ab46fcee3fa9ab350b0cf491029f23db28c9434037f8d4222826057
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/0ZzibPyQRnORynRELnYrBQ/zh-cn_image_0000002628606986.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/0ZzibPyQRnORynRELnYrBQ/zh-cn_image_0000002628606986.png?HW-CC-KV=V1&HW-CC-Date=20261112T233153Z&HW-CC-Expire=31536000000&HW-CC-Sign=3A1ECD7DDA1251FDCAF8D95C966614154D1531489FAEA8B16772E574478C0396 "点击放大")
 
 ## 背景知识
 

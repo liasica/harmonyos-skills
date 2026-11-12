@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/displaysync-o
 title: 可变帧率简介
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 使用可变帧率能力定制不同内容的绘制帧率 > 可变帧率简介
 category: harmonyos-guides
-scraped_at: 2026-11-12T09:52:11+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-03-09
 content_hash: sha256:9ab0a6d0d7115e16e5b791b768227aea84eca772c85222b188d2858f1f961b93
 ---
@@ -33,7 +33,7 @@ HarmonyOS支持可变帧率能力，开发者通过使用可变帧率接口，�
 
 开发者通过设置有效的期望绘制帧率后，系统会收集设置的请求帧率，进行决策和分发，在渲染管线上进行分频，尽量能够满足开发者的期望帧率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/H2Jz9z_jTlSTA-l28CBqFA/zh-cn_image_0000002786519924.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/H2Jz9z_jTlSTA-l28CBqFA/zh-cn_image_0000002786519924.jpg?HW-CC-KV=V1&HW-CC-Date=20261112T233230Z&HW-CC-Expire=31536000000&HW-CC-Sign=BECA3B5547E083CFE7AD52E95252ABFDC3EA70C7CB61D96786238195CF04EC90)
 
 如上图所示，应用层的多种UI（动画组件、UI绘制、XComponent自绘制及非UI线程绘制）可以通过相对应的可变帧率接口（expectedFrameRateRange、displaySync、OH\_NativeXComponent\_SetExpectedFrameRateRange及DisplaySoloist）接入到控帧系统。控帧系统收集UI设置的期望绘制帧率，参与到框架层的整机刷新率决策；服务端根据决策出的刷新率结果进行绘制帧率分发，逐级传递到应用层的各类UI。同时，硬件层也会根据整机刷新率的决策结果，完成硬件器件的刷新率切换。
 

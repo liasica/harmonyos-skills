@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faq-basics-serv
 title: 如何显示图片验证码
 breadcrumb: FAQ > 系统开发 > 基础功能 > 基础服务（Basics Service） > 如何显示图片验证码
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:20+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:d5dfd844bf8e1f6dbef9f04674a9da01f6e53b2d8a59072e7df7eac001684879
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:d5dfd844bf8e1f6dbef9f04674a9da01f6e53b2d8a59072e7df7eac0016
 
 ## 效果预览
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/D80tygHwQpOOY8sFOeBYdQ/zh-cn_image_0000002658853165.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/D80tygHwQpOOY8sFOeBYdQ/zh-cn_image_0000002658853165.gif?HW-CC-KV=V1&HW-CC-Date=20261112T233142Z&HW-CC-Expire=31536000000&HW-CC-Sign=07188DC1218588C95CC1C3AF90F14655C638333B8D26BE87EE2CF18CA1D82B17 "点击放大")
 
 ## 背景知识
 

@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.distributedsched.abilityConnectionManager (应用多端协同管理)"
 breadcrumb: API参考 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > ArkTS API > @ohos.distributedsched.abilityConnectionManager (应用多端协同管理)
 category: harmonyos-references
-scraped_at: 2026-11-12T09:55:36+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-11-11
 content_hash: sha256:973506b402f6bf9c209f627b73e21c8bfc7133fedda10075c2f61639d5fb8d1f
 ---
@@ -12,7 +12,7 @@ abilityConnectionManager模块提供了应用协同接口管理能力。设备�
 
 多端协同的逻辑分层架构视图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/erWOLDWEQUGb7IhXmwpm_A/zh-cn_image_0000002815401601.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/erWOLDWEQUGb7IhXmwpm_A/zh-cn_image_0000002815401601.png?HW-CC-KV=V1&HW-CC-Date=20261112T233239Z&HW-CC-Expire=31536000000&HW-CC-Sign=5559F798050381F46F4594E4DA256A46B1040EE26AE935E7A9F074EB3840BD1B)
 
 逻辑分层架构视图的关键原理说明如下：
 

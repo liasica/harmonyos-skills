@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-26
 title: AVScreenCapture录屏获取到的视频数据无法正常显示
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 媒体（Media ） > AVScreenCapture录屏获取到的视频数据无法正常显示
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:32+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:459f32f67ed8aba081a5f512eda0ee8eff57ad909202c9e69df1f548a0e65f18
 ---
@@ -22,7 +22,7 @@ OH_VideoCaptureInfo videocapinfo = {
 
 问题显示如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/o7jksb7TSMSxYWQwUT-k9g/zh-cn_image_0000002628552652.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/o7jksb7TSMSxYWQwUT-k9g/zh-cn_image_0000002628552652.png?HW-CC-KV=V1&HW-CC-Date=20261112T233213Z&HW-CC-Expire=31536000000&HW-CC-Sign=7FF77C9DF1C0292D4A31CF92281A347873FB6F2D7E6E106D74CA231EC8A57D40 "点击放大")
 
 ## 背景知识
 

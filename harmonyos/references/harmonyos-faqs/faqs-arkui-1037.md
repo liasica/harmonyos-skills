@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1037
 title: 如何实现V1、V2版本之间父子组件的数据传递与共享
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 如何实现V1、V2版本之间父子组件的数据传递与共享
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:53+08:00
+scraped_at: 2026-11-13T07:34:14+08:00
 doc_updated_at: 2026-06-26
 content_hash: sha256:83d4b39fce6e11053ff78d2d045cc320c9c7e0a300558703867492479dc236b9
 ---
@@ -105,7 +105,7 @@ content_hash: sha256:83d4b39fce6e11053ff78d2d045cc320c9c7e0a300558703867492479dc
 
        实现效果如下：
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/UIM8uBxoSruGLz3TRXfkJQ/zh-cn_image_0000002658924035.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/UIM8uBxoSruGLz3TRXfkJQ/zh-cn_image_0000002658924035.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=94805C5C93FB4F958C0119034777C7AE8E6B214346589D8A510173B975FB5259 "点击放大")
   + 方案三：传参方式，该方案一共三种传递形式，适用于API19以前，API19以后建议使用方案一。
 
     该场景下由于[@Observed/@ObjectLink](../harmonyos-guides/arkts-observed-and-objectlink.md)装饰器需要搭配使用，但是V2版本的子组件不能使用@ObjectLink装饰器，所以该场景下，不建议使用@Observed装饰器装饰的类作为传递的参数。使用ObservedV2/@Trace装饰器装饰的类，作为传递的参数。实现思路如下：
@@ -242,7 +242,7 @@ content_hash: sha256:83d4b39fce6e11053ff78d2d045cc320c9c7e0a300558703867492479dc
 
   实现效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/ns_7VHp9T4KCsPavkSKZzQ/zh-cn_image_0000002628404826.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/ns_7VHp9T4KCsPavkSKZzQ/zh-cn_image_0000002628404826.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=32BEDECAC0420085E00AB77C64A309FF77AFEBFDEBB1882DD0060904D57468E8 "点击放大")
 * 场景二：实现V2版本组件向V1版本组件传递与共享数据。
   + 方案一：API19之后，使用UIUtils.enableV2Compatibility方法，详情可参考官网链接：[V2中使用V1的自定义组件](../harmonyos-guides/arkts-v1-v2-mixusage.md#v2中使用v1的自定义组件)。
   + 方案二：全局获取方式，通过AppStorage/AppStorageV2实现，适用于API19以前，API19以后建议使用方案一。
@@ -306,7 +306,7 @@ content_hash: sha256:83d4b39fce6e11053ff78d2d045cc320c9c7e0a300558703867492479dc
 
     实现效果如下：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/2yUdsyC2Th27wejKb3KAxQ/zh-cn_image_0000002658804093.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/2yUdsyC2Th27wejKb3KAxQ/zh-cn_image_0000002658804093.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=E78D3C77FABEB7E588642F189A93E0262AB7CB22EA47E89BE5D984A047253BB9 "点击放大")
 
 * 方案三：传参方式，适用于API19以前，API19以后建议使用方案一。
 
@@ -440,7 +440,7 @@ content_hash: sha256:83d4b39fce6e11053ff78d2d045cc320c9c7e0a300558703867492479dc
 
      实现效果如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/y7aCN_68T_6FQMrUab1i0Q/zh-cn_image_0000002628564732.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/y7aCN_68T_6FQMrUab1i0Q/zh-cn_image_0000002628564732.png?HW-CC-KV=V1&HW-CC-Date=20261112T233147Z&HW-CC-Expire=31536000000&HW-CC-Sign=009B0DC43C28C68817A409DD312E7710C20411FC0DACEB8A5084124AE6CBC11E "点击放大")
 
      **须知** 
 
