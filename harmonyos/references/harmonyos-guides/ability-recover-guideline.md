@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-recov
 title: UIAbility备份恢复
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > UIAbility组件 > UIAbility备份恢复
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:03+08:00
-doc_updated_at: 2026-09-20
+scraped_at: 2026-11-12T09:50:57+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:a461fb6c79fa8f587dbd6ad58c4595902fcfa0ae6916419750fddf69d422f48e
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: Rect
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 结构体 > Rect
 category: harmonyos-references
-scraped_at: 2026-09-24T06:55:06+08:00
-doc_updated_at: 2026-09-23
+scraped_at: 2026-11-12T09:57:03+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:e298aa3fbc7b8146bf06207dc4d0967e843b8a17011011f75a0131e18e8011d1
 ---
 

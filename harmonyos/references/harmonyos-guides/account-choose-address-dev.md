@@ -3,25 +3,25 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-choos
 title: 获取收货地址
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 获取华为账号用户信息 > 获取收货地址
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:22+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:34d340c40e81191bf2e3bcff4a8019e760821c1b446906260dcdfcf6031ade1a
+scraped_at: 2026-11-12T09:52:16+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:94315f41344f9bc716d5f0e8ec64071b38de81c38defca0f281a4a12ed598caf
 ---
 
 ## 场景介绍
 
 当应用需要获取用户收货地址时，可使用Account Kit提供的获取收货地址的能力，引导用户添加或选择已有的收货地址，并最终获取用户的收货地址。以下对Account Kit提供的获取收货地址能力进行介绍，获取收货地址功能还可使用场景化控件[选择收货地址Button](scenario-fusion-button-ship-to.md)进行实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/xG4loKQ2SoyVr4VsUnHYkQ/zh-cn_image_0000002809010849.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/KRi13IHZRmioSctKFOd0Xg/zh-cn_image_0000002815559565.png "点击放大")
 
 ## 约束与限制
 
 1. 收货地址中的手机号信息仅支持输入中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）手机号、地址信息只支持填写中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。
-2. 获取收货地址的能力支持Phone、Tablet、PC/2in1设备。并且从26.0.0版本开始，新增支持TV设备。
+2. 获取收货地址的能力支持Phone、Tablet、PC/2in1设备。并且从26.0.0版本开始，新增支持TV设备；从26.0.1版本开始，新增支持Car设备。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/ruxR0cBZQpCJOrDjuGNzDw/zh-cn_image_0000002809050763.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/R0D9kF3bTYCQJ-cNt-cgDw/zh-cn_image_0000002815399649.png)
 
 流程说明：
 

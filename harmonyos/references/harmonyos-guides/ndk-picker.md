@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-picker
 title: 使用滑动选择器 (Picker)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 使用选择类组件 > 使用滑动选择器 (Picker)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:20+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:51:17+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:b317ae98d2ee9321352299748c7e9eaaa65a649e95afae2509f49fd141340a1f
 ---
 

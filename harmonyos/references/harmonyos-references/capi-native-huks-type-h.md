@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_huks_type.h
 breadcrumb: API参考 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > C API > 头文件 > native_huks_type.h
 category: harmonyos-references
-scraped_at: 2026-09-24T06:53:34+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:4229593d6b63d33ad0ff845c9664d1407b527818b9b00f9740287dc141289a8d
+scraped_at: 2026-11-12T09:55:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:904af0c17885a727cb077950835a985757c5f6d96c5ec833d8b5ed759135c043
 ---
 
 ## 概述
@@ -700,6 +700,7 @@ enum OH_Huks_Tag
 | OH\_HUKS\_TAG\_AE\_TAG\_LEN = OH\_HUKS\_TAG\_TYPE\_UINT | 521 | CCM模式下指定的AEAD长度，单位：Byte。  **起始版本：** 22 |
 | OH\_HUKS\_TAG\_KEY\_CLASS = OH\_HUKS\_TAG\_TYPE\_UINT | 522 | 密钥类别，用于区分设备本地由HUKS管理的密钥或者外部装置中存储的密钥。  **起始版本：** 22 |
 | OH\_HUKS\_TAG\_KEY\_ACCESS\_GROUP = OH\_HUKS\_TAG\_TYPE\_BYTES | 523 | 表示群组标识，在同一开发者ID下归属于相同的群组可共享该群组下的密钥。  **起始版本：** 23 |
+| OH\_HUKS\_TAG\_TIMEOUT = OH\_HUKS\_TAG\_TYPE\_UINT | 529 | 表示异步超时时间，单位为秒，可由业务逻辑自定义。  **起始版本：** 26.0.1 |
 | OH\_HUKS\_TAG\_IS\_KEY\_ALIAS = OH\_HUKS\_TAG\_TYPE\_BOOL | 1001 | 是否是密钥别名。 |
 | OH\_HUKS\_TAG\_KEY\_STORAGE\_FLAG = OH\_HUKS\_TAG\_TYPE\_UINT | 1002 | 密钥存储方式的标签，类型可在枚举 [OH\_Huks\_KeyStorageType](capi-native-huks-type-h.md#oh_huks_keystoragetype)选择。 |
 | OH\_HUKS\_TAG\_IS\_ALLOWED\_WRAP = OH\_HUKS\_TAG\_TYPE\_BOOL | 1003 | 是否允许密钥封装。 |

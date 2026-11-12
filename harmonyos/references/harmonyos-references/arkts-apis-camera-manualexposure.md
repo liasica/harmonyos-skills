@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (ManualExposure)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (ManualExposure)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:26+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:43a21f35a8d0f7daa0d25c43ca025add0173997fe9be7c154a1974bd1b512022
+scraped_at: 2026-11-12T09:56:32+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c3835ebe0cee74b3dd3a1e82a0392aa9f54532989de209895d845d156476c3e6
 ---
 
 ManualExposure继承自[ManualExposureQuery](arkts-apis-camera-manualexposurequery.md)。
@@ -82,7 +82,7 @@ setExposureDuration(exposureDuration: number): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| exposureDuration | number | 是 | 曝光时长值。单位：微秒。 |
+| exposureDuration | number | 是 | 曝光时长值。单位：微秒（μs）。通过[getSupportedExposureDurationRange](arkts-apis-camera-manualexposurequery.md#getsupportedexposuredurationrange24)接口获取支持的曝光时长范围。 |
 
 **错误码：**
 
@@ -99,6 +99,11 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 function setExposureDuration(photoSession: camera.PhotoSession, exposureDuration: number): void {
   try {
+    let durationRange = photoSession.getSupportedExposureDurationRange();
+    if (!durationRange.includes(exposureDuration)) {
+      console.error(`invalid exposureDuration.`);
+      return;
+    }
     photoSession.setExposureDuration(exposureDuration);
   } catch (error) {
     // 失败返回错误码error.code并处理。

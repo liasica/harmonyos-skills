@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-unnece
 title: "@typescript-eslint/no-unnecessary-type-arguments"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-unnecessary-type-arguments
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:57+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:3a01824d663b272bf912c57e528070889a070c08710a44747ec30951ad4158ba
+scraped_at: 2026-11-12T09:52:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c9b4a8d2328cc832d66cf77827c937d0e914085264518e890b385fa1a92f6357
 ---
 
 当类型参数和默认值相同时，不允许显式使用。
@@ -87,4 +87,4 @@ new C<number>();
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

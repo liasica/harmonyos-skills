@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ocal-know
 title: 本地知识库配置
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 本地知识库配置
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:31+08:00
+scraped_at: 2026-11-12T09:53:12+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:bedfe7e82f52895e3e39c4c5d692646bad6a2bdf342a79fa9e7233560c43c10b
+content_hash: sha256:5bf65a3cde7cab7932161a8dc5ebc5f2970ea08e4944605fe63207cee4e301be
 ---
 
 从DevEco Studio 6.0.0 Beta5开始，CodeGenie允许用户导入设计文档和代码等文件形成文档集，多个文档集组合成本地知识库。智能问答时，根据用户输入内容检索本地知识库以提升AI生成的能力。
@@ -14,14 +14,14 @@ content_hash: sha256:bedfe7e82f52895e3e39c4c5d692646bad6a2bdf342a79fa9e7233560c4
 
 1. 点击**File > Settings**（macOS为**DevEco Studio > Preferences/Settings**） **> CodeGenie****> Knowledge >** **Docs**，或在DevEco Studio右侧边栏点击**CodeGenie**（或输入快捷键**Alt/Option+U**） **>** **@****Add Context** **> Docs > Set Local Knowledge Base**，进入配置页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/ynIsKFcDQq2G5FxxFbmq3g/zh-cn_image_0000002731542537.png)
-2. 首次打开时，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/M0Bg4JXIQ82RqCmBCJ3ODA/zh-cn_image_0000002731542533.png "点击放大")按钮，填写相关信息，创建文档集。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/XDr8ZwfCTOK8omT4-iS1pQ/zh-cn_image_0000002779407332.png)
+2. 首次打开时，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/AYWUKTeWSFm1NexXkuNdVg/zh-cn_image_0000002808886971.png "点击放大")按钮，填写相关信息，创建文档集。
    * **Knowledge Base Path**：知识库保存路径。在同一个路径下保存的文档集，会形成一个知识库。
    * **Document set name**：文档集名称。
    * **Description**：可选，文档集描述。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/yCJ71u5GQMGtRndjV04-rQ/zh-cn_image_0000002731542541.png)
-3. 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/x2J3ZR6QR4abrxoYeUEWfw/zh-cn_image_0000002731542545.png "点击放大")按钮，添加文档集中的文件，添加成功的文件在下方展示。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/SOw4AUrhQdOpmsJGED-5Ig/zh-cn_image_0000002779407334.png)
+3. 点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/SaCD3swDQOiTlvX7HOm8pQ/zh-cn_image_0000002779567314.png "点击放大")按钮，添加文档集中的文件，添加成功的文件在下方展示。
 
    **说明** 
 
@@ -31,11 +31,11 @@ content_hash: sha256:bedfe7e82f52895e3e39c4c5d692646bad6a2bdf342a79fa9e7233560c4
    4. 单个知识库中文档集个数：不超过20个。
    5. 单个知识库大小：不超过50M。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/PMt-LTcBQ3WkzqVI-Ik91w/zh-cn_image_0000002731542547.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/RDjdDEP9Q_mpXsxiJHc_HA/zh-cn_image_0000002808766895.png)
 4. 点击“**OK**”，完成本地知识库配置和同步，在DevEco Studio页面下方**Storing document set**可查看同步进度。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/MKnvjYS5QfiNm9DPBrOrkA/zh-cn_image_0000002701663346.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/nxvtFUyiSn-flke2yLvUZw/zh-cn_image_0000002779567312.png "点击放大")
 5. 同步完成后，在对话框中输入**@**符号选择**Docs** ，或点击上方**@****Add Context** **> Docs** ，选择需要的文档集。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/sib0f6pJShaFS6EM06fiRQ/zh-cn_image_0000002701663350.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/137pItZtSPyRxtnZZ13sLA/zh-cn_image_0000002808886975.png)
 6. 选择代码文件进行问答，具体请参考[智能问答](ide-harmonyos-ask.md)。

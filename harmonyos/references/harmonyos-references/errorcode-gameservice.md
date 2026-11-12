@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:15+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1fbeb44ef8a70c746e30e1937595698b3763ab5224de41387bfdb80dc222b7ba
+scraped_at: 2026-11-12T09:57:17+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e7d3188f8fe5e97fc1ec8bb35fdca729a612feb6a86075545ab06e593b6f9863
 ---
 
 **说明** 
@@ -28,7 +28,7 @@ Game Service Kit系统内部错误。
 
 **处理步骤**
 
-请优先重试或重启设备重试，若重试不成功，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/add/101704353566310877?level2=101704353626565886&level3=101704354579010004&keyWord=Game Service Kit)提交问题，华为工程师会及时处理。
+请优先重试或重启设备重试，若重试不成功，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/add/121769590374599033?level2=101704353626565886&level3=101704354579010004&keyWord=Game Service Kit)提交问题，华为工程师会及时处理。
 
 ## 1010300002 鉴权失败
 
@@ -47,7 +47,7 @@ Auth failed.
 **处理步骤**
 
 1. 首次使用设备进行登录时，请确认网络连接正常。
-2. 请检查[init](gameservice-gameperformance.md#gameperformanceinit)接口传参是否正确。
+2. 请检查[init()](gameservice-gameperformance.md#gameperformanceinit)接口传参是否正确。
 
 ## 1010300003 非法请求
 
@@ -62,12 +62,12 @@ Invalid request.
 **可能原因**
 
 * 未初始化或初始化未成功时，调用了其他接口。
-* 调用[getDeviceInfoByScope](gameservice-gameperformance.md#gameperformancegetdeviceinfobyscope)接口查询温度信息时，设备刚刚启动。
+* 调用[getDeviceInfoByScope()](gameservice-gameperformance.md#gameperformancegetdeviceinfobyscope)接口查询温度信息时，设备刚刚启动。
 
 **处理步骤**
 
-* 请先调用[init](gameservice-gameperformance.md#gameperformanceinit)接口，并确保调用成功。
-* 调用[getDeviceInfoByScope](gameservice-gameperformance.md#gameperformancegetdeviceinfobyscope)接口查询温度信息时，请确保设备已启动至少一分钟。
+* 请先调用[init()](gameservice-gameperformance.md#gameperformanceinit)接口，并确保调用成功。
+* 调用[getDeviceInfoByScope()](gameservice-gameperformance.md#gameperformancegetdeviceinfobyscope)接口查询温度信息时，请确保设备已启动至少一分钟。
 
 ## 1002000001 游戏内部通用错误
 
@@ -83,15 +83,18 @@ System internal error.
 
 常见原因如下：
 
-* [unionLogin](gameservice-gameplayer.md#gameplayerunionlogin)登录接口的入参accountIcon总大小超过35KB。
-* 接口中的入参context不符合要求。
+* [unionLogin()](gameservice-gameplayer.md#gameplayerunionlogin)登录接口的入参accountIcon总大小超过35KB。
+* 接口中入参context的获取方式不符合要求。
+* 调试阶段使用自动签名生成证书时，未关联注册应用。
+* 未配置签名证书指纹。
+* 工程entry模块module.json5文件的client\_id、app\_id与实际应用不对应。
 * 使用模拟器调测Game Service Kit接口。
 * 用户禁用“游戏服务”系统程序访问网络。
 
 **处理步骤**
 
 1. 排查游戏官方账号的图标大小，要求图标大小不超过35KB。
-2. 排查各接口中的入参context是否符合要求：
+2. 排查各接口中入参context的获取方式是否符合要求：
 
    * 建议UI组件内按照如下方式获取context：
 
@@ -101,9 +104,12 @@ System internal error.
    * UI组件外无法直接获取context。
 
      建议先在EntryAbility中获取context并保存至AppStorage，再使用AppStorage获取context，详情请参见[AppStorage：应用全局的UI状态存储](../harmonyos-guides/arkts-appstorage.md)。
-3. 排查是否使用模拟器调测接口。Game Service Kit接口不支持使用模拟器进行调测。
-4. 打开“设置 > 移动网络 > 流量管理 > 应用联网 > WLAN”，右上角选择“显示系统程序”，排查“游戏服务”系统程序开关是否启用。
-5. 通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/add/101704353566310877?level2=101704353626565886&level3=101704354579010004)提交问题，华为工程师会及时处理。
+3. 调试阶段使用自动签名生成证书时，需要正确关联注册应用，详情请参见[生成签名证书](../harmonyos-guides/gameservice-gameplayer-huawei.md#生成签名证书)。
+4. 配置签名证书指纹的具体操作请参见[配置签名证书指纹](../harmonyos-guides/gameservice-gameplayer-huawei.md#配置签名证书指纹)，配置后最长需要等待25个小时生效。
+5. 配置APP ID和Client ID的具体操作请参见[配置APP ID和Client ID](../harmonyos-guides/gameservice-gameplayer-huawei.md#配置app-id和client-id)。
+6. 排查是否使用模拟器调测接口。Game Service Kit接口不支持使用模拟器进行调测。
+7. 打开“设置 > 移动网络 > 流量管理 > 应用联网 > WLAN”，右上角选择“显示系统程序”，排查“游戏服务”系统程序开关是否启用。
+8. 通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/add/121769590374599033?level2=101704353626565886&level3=101704354579010004&keyWord=Game Service Kit)提交问题，华为工程师会及时处理。
 
 ## 1002000002 网络错误
 
@@ -165,7 +171,7 @@ User cancels real name authentication or not real name.
 
 **处理步骤**
 
-调用[unionLogin](gameservice-gameplayer.md#gameplayerunionlogin)接口再次引导用户进行实名认证。
+调用[unionLogin()](gameservice-gameplayer.md#gameplayerunionlogin)接口再次引导用户进行实名认证。
 
 ## 1002000005 只支持服务地和注册地均为中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）的华为账号
 
@@ -203,8 +209,8 @@ User is underage and has no playable time.
 
 检查当前未成年人的游戏时间是否为周五、周六、周日和法定节假日的20时至21时：
 
-* 若不是，Game Service Kit已经做了游戏退出逻辑，开发者无需额外处理。
-* 若是，可通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/add/101704353566310877?level2=101704353626565886&level3=101704354579010004)提交问题，华为工程师会及时处理。
+* 若不在该时段，Game Service Kit已经做了游戏退出逻辑，开发者无需额外处理。
+* 若在该时段，可通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/add/121769590374599033?level2=101704353626565886&level3=101704354579010004&keyWord=Game Service Kit)提交问题，华为工程师会及时处理。
 
 ## 1002000007 商品所属的应用未在指定国家/地区上架
 
@@ -242,7 +248,7 @@ The HUAWEI ID is in the blocklist.
 **处理步骤**
 
 * 若有风控、国家公祭日等弹框提示，游戏无需处理。
-* 其它情况可通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/add/101704353566310877?level2=101704353626565886&level3=101704354579010004)提交问题，华为工程师会及时处理。
+* 其它情况可通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/add/121769590374599033?level2=101704353626565886&level3=101704354579010004&keyWord=Game Service Kit)提交问题，华为工程师会及时处理。
 
 ## 1002000009 当前游戏不支持第三方游戏账号
 
@@ -274,11 +280,11 @@ The playerId is not current player.
 
 **可能原因**
 
-调用[bindPlayer](gameservice-gameplayer.md#gameplayerbindplayer)或[unbindPlayer](gameservice-gameplayer.md#gameplayerunbindplayer)接口时，teamPlayerId传错。
+调用[bindPlayer()](gameservice-gameplayer.md#gameplayerbindplayer)或[unbindPlayer()](gameservice-gameplayer.md#gameplayerunbindplayer)接口时，teamPlayerId传错。
 
 **处理步骤**
 
-请检查teamPlayerId是否正确，并重新调用[bindPlayer](gameservice-gameplayer.md#gameplayerbindplayer)或[unbindPlayer](gameservice-gameplayer.md#gameplayerunbindplayer)接口传递正确teamPlayerId。
+请检查teamPlayerId是否正确，并重新调用[bindPlayer()](gameservice-gameplayer.md#gameplayerbindplayer)或[unbindPlayer()](gameservice-gameplayer.md#gameplayerunbindplayer)接口传递正确teamPlayerId。
 
 ## 1002000011 玩家未同意隐私声明
 
@@ -292,11 +298,11 @@ Agreement not agreed.
 
 **可能原因**
 
-玩家在弹出隐私协议窗口时选择了取消，或init接口未调用成功前调用了其他接口。
+玩家在弹出隐私协议窗口时选择了取消，或init()接口未调用成功前调用了其他接口。
 
 **处理步骤**
 
-重新调用[init](gameservice-gameplayer.md#gameplayerinit)接口。
+重新调用[init()](gameservice-gameplayer.md#gameplayerinit)接口。
 
 ## 1002000012 游戏官方账号与华为teamPlayerId已绑定
 
@@ -310,7 +316,7 @@ The thirdOpenId or teamPlayerId has been bound.
 
 **可能原因**
 
-调用[bindPlayer](gameservice-gameplayer.md#gameplayerbindplayer)接口时，游戏官方账号与华为teamPlayerId已绑定。
+调用[bindPlayer()](gameservice-gameplayer.md#gameplayerbindplayer)接口时，游戏官方账号与华为teamPlayerId已绑定。
 
 **处理步骤**
 
@@ -328,7 +334,7 @@ The thirdOpenId and teamPlayerId are not bound.
 
 **可能原因**
 
-调用[unbindPlayer](gameservice-gameplayer.md#gameplayerunbindplayer)接口时，游戏官方账号与华为teamPlayerId未绑定。
+调用[unbindPlayer()](gameservice-gameplayer.md#gameplayerunbindplayer)接口时，游戏官方账号与华为teamPlayerId未绑定。
 
 **处理步骤**
 
@@ -350,10 +356,10 @@ This interface is not available for this game.
 
 **处理步骤**
 
-1. 请确认当前游戏调用[unionLogin](gameservice-gameplayer.md#gameplayerunionlogin)接口是否报错。
-2. 若调用unionLogin接口出现报错，请游戏再次尝试unionLogin以外的接口。
-3. 若调用unionLogin以外的接口还是报错，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/add/101704353566310877?level2=101704353626565886&level3=101704354579010004)提交问题，华为工程师会及时处理。若调用unionLogin以外的接口不报错，说明当前游戏没有使用unionLogin接口的权限，请使用其它接口。
-4. 若游戏没有使用unionLogin接口的权限，但游戏又想重新使用unionLogin接口，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/add/101704353566310877?level2=101704353626565886&level3=101704354579010004)提交问题，华为工程师会及时处理。
+1. 请确认当前游戏调用[unionLogin()](gameservice-gameplayer.md#gameplayerunionlogin)接口是否报错。
+2. 若调用unionLogin()接口出现报错，请游戏再次尝试unionLogin()以外的接口。
+3. 若调用unionLogin()以外的接口还是报错，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/add/121769590374599033?level2=101704353626565886&level3=101704354579010004&keyWord=Game Service Kit)提交问题，华为工程师会及时处理。若调用unionLogin()以外的接口不报错，说明当前游戏没有使用unionLogin()接口的权限，请使用其它接口。
+4. 若游戏没有使用unionLogin()接口的权限，但游戏又想重新使用unionLogin()接口，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/add/121769590374599033?level2=101704353626565886&level3=101704354579010004&keyWord=Game Service Kit)提交问题，华为工程师会及时处理。
 
 ## 1002000015 当前玩家信息无效
 
@@ -371,7 +377,7 @@ The current player information is invalid. Execute the login process again to ob
 
 **处理步骤**
 
-请重新调用[unionLogin](gameservice-gameplayer.md#gameplayerunionlogin)接口，获取玩家信息。
+请重新调用[unionLogin()](gameservice-gameplayer.md#gameplayerunionlogin)接口，获取玩家信息。
 
 ## 1002000016 玩家取消联合登录
 
@@ -389,7 +395,7 @@ Union login canceled by user.
 
 **处理步骤**
 
-如需继续登录，请重新调用[unionLogin](gameservice-gameplayer.md#gameplayerunionlogin)接口。
+如需继续登录，请重新调用[unionLogin()](gameservice-gameplayer.md#gameplayerunionlogin)接口。
 
 ## 1002000017 非法应用
 
@@ -521,9 +527,9 @@ Failed to purchase a product because the user already owns the product.
 
 **处理步骤**
 
-可通过[queryPurchases](iap-iap.md#iapquerypurchases)接口确认用户是否购买了该商品。
+可通过[queryPurchases()](iap-iap.md#iapquerypurchases)接口确认用户是否购买了该商品。
 
-* 若商品为消耗型商品或非续期订阅商品，检查商品是否发货，确认发货成功之后调用[finishPurchase](iap-iap.md#iapfinishpurchase)接口完成购买，下次可正常购买。
+* 若商品为消耗型商品或非续期订阅商品，检查商品是否发货，确认发货成功之后调用[finishPurchase()](iap-iap.md#iapfinishpurchase)接口完成购买，下次可正常购买。
 * 若商品为非消耗型商品或自动续期订阅商品，已经购买则不能再次购买。
 
 ## 1002000052 由于未支付该商品，发货失败
@@ -542,7 +548,7 @@ The purchase cannot be finished because the user has not paid for it.
 
 **处理步骤**
 
-可通过[queryPurchases](iap-iap.md#iapquerypurchases)接口确认用户是否购买了该商品。
+可通过[queryPurchases()](iap-iap.md#iapquerypurchases)接口确认用户是否购买了该商品。
 
 ## 1002000053 此次购买已经完成发货，无需重复发货
 
@@ -560,7 +566,7 @@ The purchase has been finished and cannot be finished again.
 
 **处理步骤**
 
-可通过[queryPurchases](iap-iap.md#iapquerypurchases)接口查询是否有该商品的确认发货记录。
+可通过[queryPurchases()](iap-iap.md#iapquerypurchases)接口查询是否有该商品的确认发货记录。
 
 ## 1002000054 用户账号所在服务地不在IAP Kit支持结算的国家/地区中
 
@@ -615,7 +621,7 @@ System internal error.
 **处理步骤**
 
 1. 检查参数传入是否正确。
-2. 若上述方法无法解决问题，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/add/101704353566310877?level2=101704353626565886&level3=101704354579010004&keyWord=Game Service Kit)提交问题，华为工程师会及时处理。
+2. 若上述方法无法解决问题，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/add/121769590374599033?level2=101704353626565886&level3=101704354579010004&keyWord=Game Service Kit)提交问题，华为工程师会及时处理。
 
 ## 1018300002 鉴权失败
 
@@ -634,7 +640,7 @@ Authentication failed.
 **处理步骤**
 
 1. 首次使用设备进行登录时，请确认网络连接正常。
-2. 请检查[create](gameservice-nearbytransfer.md#gamenearbytransfercreate)接口传参是否正确。
+2. 请检查[create()](gameservice-nearbytransfer.md#gamenearbytransfercreate)接口传参是否正确。
 
 ## 1018300003 请求不合法
 
@@ -652,7 +658,7 @@ Invalid request.
 
 **处理步骤**
 
-请先调用[create](gameservice-nearbytransfer.md#gamenearbytransfercreate)接口初始化，并确保调用成功。
+请先调用[create()](gameservice-nearbytransfer.md#gamenearbytransfercreate)接口初始化，并确保调用成功。
 
 ## 1018300004 服务不可用
 

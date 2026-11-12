@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-sync-wit
 title: 端云数据同步云侧环境部署指导
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 同应用端云数据同步（分布式） > 端云数据同步云侧环境部署指导
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:12+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:7c5424918e88c628baaea6cc954678b86ad5375f9a250ccfa8f0b8cea7b6c16e
+scraped_at: 2026-11-12T09:51:01+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0388ee47c955b5c696ddff502b26322236a957fc447cd52a58c89adbbe970b68
 ---
 
 ## 场景介绍
@@ -67,7 +67,7 @@ content_hash: sha256:7c5424918e88c628baaea6cc954678b86ad5375f9a250ccfa8f0b8cea7b
 
 ### 前置条件
 
-* 已经在开发者联盟官网注册账号并通过实名认证，详细请参见[账号注册认证](../start/registration-and-verification-0000001053628148.md)。
+* 已经在开发者联盟官网注册账号并通过实名认证，详细请参见[账号注册认证](../doccenter-getting-started/hdc-registration-verification-0000002722787594.md)。
 * 已经在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站上创建项目和应用，详细请参见[创建项目](../AppGallery-connect-Guides/agc-harmonyos-0000001139004974.md)。
 
 ### 云侧操作

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-genera
 title: 使用硬件熵源生成安全随机数(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 随机数 > 使用硬件熵源生成安全随机数(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:38+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:51:34+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:d65d35b0555ffd2b84f153b7653d73cacb5639e94ba8e5744c0a256391716b2e
 ---
 

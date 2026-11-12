@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicemanager
-title: USB设备管理
-breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB服务 > USB Host模式开发 > USB设备管理
+title: USB设备管理（ArkTS）
+breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB服务 > USB Host模式开发 > USB设备管理（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:49+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:a1bb636e1f3244c07021012fe6230f79c927b5cebad1c0b24c9f11281bbe31a4
+scraped_at: 2026-11-12T09:51:48+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:9d2c71631da34bb57d1faef6d8cd0937f1e4da5a22760648448db5dec9d811a2
 ---
 
 ## 场景介绍
@@ -53,6 +53,7 @@ USB类开放能力如下，具体请查阅[@ohos.usbManager](../harmonyos-refere
 | setConfiguration(pipe: USBDevicePipe, config: USBConfiguration): number | 设置设备的配置。 |
 | setInterface(pipe: USBDevicePipe, iface: USBInterface): number | 设置设备的接口。 |
 | claimInterface(pipe: USBDevicePipe, iface: USBInterface, force ?: boolean): number | 注册通信接口。 |
+| claimInterfaceExclusive(pipe: USBDevicePipe, iface: USBInterface, force?: boolean, onConflict?: Callback<InterfaceConflictInfo>): void | 独占方式声明USB设备接口。 |
 | closePipe(pipe: USBDevicePipe): number | 关闭设备消息控制通道。 |
 | releaseInterface(pipe: USBDevicePipe, iface: USBInterface): number | 释放注册过的通信接口。 |
 | getFileDescriptor(pipe: USBDevicePipe): number | 获取文件描述符。 |
@@ -192,8 +193,27 @@ USB设备可作为Host连接Device进行设备管理，开发示例如下：
      /*
        打开对应接口，在设备信息（deviceList）中选取对应的interface。
        interface1为设备配置中的一个接口。
+       开关关闭时调用claimInterface（共享式占用，返回0成功），
+       开关打开时调用claimInterfaceExclusive（独占式占用，失败抛出BusinessError）。
       */
-     usbManager.claimInterface(pipe, interface1, true);
+     if (this.isExclusiveClaim_) {
+       usbManager.claimInterfaceExclusive(pipe, interface1, true, (conflict: usbManager.InterfaceConflictInfo) => {
+         // 其他应用claim同一接口时的异步冲突通知
+         const conflictMsg = `busNum = ${conflict.busNum}, devAddr = ${conflict.devAddr}, ` +
+           `interfaceId = ${conflict.interfaceId}`;
+         console.info(`interface conflict: ${conflictMsg}`);
+         this.logInfo_ += `\n[INFO] interface conflict: ${conflictMsg}`;
+       });
+       console.info('claimInterfaceExclusive success');
+       this.logInfo_ += '\n[INFO] claimInterfaceExclusive success';
+     } else {
+       let claimInterfaceResult: number = usbManager.claimInterface(pipe, interface1, true);
+       if (claimInterfaceResult !== 0) {
+         console.error(`claimInterface error = ${claimInterfaceResult}`);
+         this.logInfo_ += '\n[ERROR] claimInterface error = ' + JSON.stringify(claimInterfaceResult);
+         return;
+       }
+     }
      this.pipe_ = pipe;
      this.interface_ = interface1;
      console.info('open device success');

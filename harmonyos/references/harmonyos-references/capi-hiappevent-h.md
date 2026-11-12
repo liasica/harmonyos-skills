@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hiap
 title: hiappevent.h
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > C API > 头文件 > hiappevent.h
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:56+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c83b1ca61abb21b41778f63906af8addf20cdf6530efd533808702db82faf142
+scraped_at: 2026-11-12T09:56:17+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:98a376937ce0ef2ebd5c60b2a181c98aa6c0ea8637ac97c48def916d785fa12f
 ---
 
 ## 概述
@@ -42,6 +42,7 @@ HiAppEvent模块为应用开发者提供的事件订阅和事件打点函数定�
 | [HiAppEvent\_Watcher](capi-hiappevent-hiappevent-watcher.md) | HiAppEvent\_Watcher | 接收应用事件的事件观察者。用于对应用事件进行监听和处理。 |
 | [HiAppEvent\_Processor](capi-hiappevent-hiappevent-processor.md) | HiAppEvent\_Processor | 应用事件上报的处理者。用于事件的上报和管理，开发者可自定义数据处理配置，满足不同的数据处理需求。 |
 | [HiAppEvent\_Config](capi-hiappevent-hiappevent-config.md) | HiAppEvent\_Config | 设置系统事件自定义规格的配置对象。可以用来自定义系统事件规格参数，参数列表设置可参考应用事件的[宏定义](capi-hiappevent-param-h.md#宏定义)。 |
+| [OH\_HiAppEvent\_ExternalLog](capi-hiappevent-hiappevent-externallog.md) | OH\_HiAppEvent\_ExternalLog | external\_log故障文件信息。该结构体包含文件路径，文件生成时间戳，文件大小。 |
 
 ### 枚举
 
@@ -50,6 +51,7 @@ HiAppEvent模块为应用开发者提供的事件订阅和事件打点函数定�
 | [HiAppEvent\_ErrorCode](capi-hiappevent-h.md#hiappevent_errorcode) | HiAppEvent\_ErrorCode | 错误码定义。 |
 | [EventType](capi-hiappevent-h.md#eventtype) | - | 事件类型。建议开发者根据不同的使用场景选择不同的事件类型。 |
 | [OH\_HiAppEvent\_FrameworkType](capi-hiappevent-h.md#oh_hiappevent_frameworktype) | - | 应用框架类型。建议开发者根据实际的使用场景选择对应的应用框架类型。 |
+| [OH\_HiAppEvent\_SysEvent](capi-hiappevent-h.md#oh_hiappevent_sysevent) | - | 故障事件类型定义。 |
 
 ### 函数
 
@@ -105,6 +107,8 @@ HiAppEvent模块为应用开发者提供的事件订阅和事件打点函数定�
 | [int OH\_HiAppEvent\_SetConfigItem(HiAppEvent\_Config\* config, const char\* itemName, const char\* itemValue)](capi-hiappevent-h.md#oh_hiappevent_setconfigitem) | - | 设置配置对象中的配置项。 |
 | [int OH\_HiAppEvent\_SetEventConfig(const char\* name, HiAppEvent\_Config\* config)](capi-hiappevent-h.md#oh_hiappevent_seteventconfig) | - | 事件相关的配置参数设置方法。  不同的事件有不同的配置项，目前仅支持以下事件：  MAIN\_THREAD\_JANK（参数配置详见[主线程超时事件检测](../harmonyos-guides/hiappevent-watcher-mainthreadjank-events.md#oh_hiappevent_seteventconfig接口参数设置说明)）  MAIN\_THREAD\_JANK\_V2（参数配置详见[主线程超时事件检测](../harmonyos-guides/hiappevent-watcher-mainthreadjank-events.md#oh_hiappevent_seteventconfig接口参数设置说明)）  EVENT\_APP\_CRASH（参数配置详见[崩溃事件介绍](../harmonyos-guides/hiappevent-watcher-crash-events.md#oh_hiappevent_seteventconfig接口参数设置说明)），从API version 24开始支持该事件。 |
 | [int OH\_HiAppEvent\_ReportFrameworkMemAnomaly(enum OH\_HiAppEvent\_FrameworkType frameworkType, const char\* frameworkVersion, const char\* description)](capi-hiappevent-h.md#oh_hiappevent_reportframeworkmemanomaly) | - | 报告应用框架内存占用异常的信息。  该接口的调用频率限制为：1分钟最多能成功调用1次，超过频率限制会返回错误码HIAPPEVENT\_REPORT\_FREQUENCY\_EXCEEDED。  当应用检测到应用框架内存占用异常，并且调用该接口返回操作成功时：  1. 若开发者已经订阅了事件领域domain为“HIVIEWDFX”，且事件名称names为“FW\_MEM\_ANOMALY”的应用事件，则应用中将会收到应用框架内存占用异常信息的回调。  2. 若开发者未订阅该应用事件，则应用中将不会收到应用框架内存占用异常信息的回调。 |
+| [typedef void (\*OH\_HiAppEvent\_ExternalLogCapacityReachedCallback)(OH\_HiAppEvent\_ExternalLog\* externalLogArr, uint32\_t arrLen)](capi-hiappevent-h.md#oh_hiappevent_externallogcapacityreachedcallback) | OH\_HiAppEvent\_ExternalLogCapacityReachedCallback | external\_log故障文件目录达到阈值后，将触发该回调，将事件内容传递给调用方。  **注意**：回调中的指针所指对象的生命周期仅限于该回调函数内，请勿在该回调函数外直接使用该指针，若需缓存该信息，请对指针指向的内容进行深拷贝。 |
+| [int OH\_HiAppEvent\_RegExternalLogCapacityReachedCallback(OH\_HiAppEvent\_ExternalLogCapacityReachedCallback callback)](capi-hiappevent-h.md#oh_hiappevent_regexternallogcapacityreachedcallback) | - | external\_log日志管理者注册接口，确保故障日志沙箱目录容量达到阈值时通知应用清理删除external\_log文件。 |
 
 ## 枚举类型说明
 
@@ -168,6 +172,27 @@ enum OH_HiAppEvent_FrameworkType
 | OH\_FLUTTER\_DART = 0 | Flutter\_dart类型。 |
 | OH\_REACT\_NATIVE\_HERMES = 1 | React\_native\_hermes类型。 |
 | OH\_KMP\_KOTLIN = 2 | Kmp\_kotlin类型。 |
+
+### OH\_HiAppEvent\_SysEvent
+
+```c
+OH_HiAppEvent_SysEvent
+```
+
+**描述**
+
+系统事件类型。
+
+**起始版本：** 26.0.1
+
+| 枚举项 | 描述 |
+| --- | --- |
+| OH\_APP\_CRASH = 1 | 崩溃事件。 |
+| OH\_APP\_FREEZE = 2 | 应用冻屏事件。 |
+| OH\_RESOURCE\_OVERLIMIT = 3 | 资源泄漏事件。 |
+| OH\_ADDRESS\_SANITIZER = 4 | 地址越界事件。 |
+| OH\_APP\_HICOLLIE = 5 | 任务执行超时事件。 |
+| OH\_CPU\_USAGE\_HIGH = 6 | CPU高负载事件。 |
 
 ## 函数说明
 
@@ -1430,3 +1455,48 @@ int OH_HiAppEvent_ReportFrameworkMemAnomaly(
 | 类型 | 说明 |
 | --- | --- |
 | int | HIAPPEVENT\_SUCCESS：操作成功。  HIAPPEVENT\_INVALID\_PARAM\_VALUE：参数值无效。  HIAPPEVENT\_OPERATE\_FAILED：系统/应用事件写入失败，或获取时间戳失败。  HIAPPEVENT\_REPORT\_FREQUENCY\_EXCEEDED：报告频率超限。  具体可参考[HiAppEvent\_ErrorCode](capi-hiappevent-h.md#hiappevent_errorcode)。 |
+
+### OH\_HiAppEvent\_ExternalLogCapacityReachedCallback()
+
+```c
+typedef void (*OH_HiAppEvent_ExternalLogCapacityReachedCallback)(OH_HiAppEvent_ExternalLog* externalLogArr, uint32_t arrLen);
+```
+
+**描述**
+
+external\_log故障文件目录达到阈值后，将触发该回调，将事件内容传递给调用方。
+
+回调中的指针所指对象的生命周期仅限于该回调函数内，请勿在该回调函数外直接使用该指针，若需缓存该信息，请对指针指向的内容进行深拷贝。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_HiAppEvent\_ExternalLog](capi-hiappevent-hiappevent-externallog.md)\* externalLogArr | 故障文件信息数组。 |
+| uint32\_t arrLen | 故障文件信息数组的长度。 |
+
+### OH\_HiAppEvent\_RegExternalLogCapacityReachedCallback()
+
+```c
+int OH_HiAppEvent_RegExternalLogCapacityReachedCallback(OH_HiAppEvent_ExternalLogCapacityReachedCallback callback)
+```
+
+**描述**
+
+external\_log故障文件管理者注册接口。确保故障日志沙箱目录容量达到阈值时通知应用清理删除文件。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_HiAppEvent\_ExternalLogCapacityReachedCallback](capi-hiappevent-h.md#oh_hiappevent_externallogcapacityreachedcallback) callback | external\_log故障文件目录达到阈值时的回调函数指针。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| int | 注册管理者成功返回0，失败返回-100。 |

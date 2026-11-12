@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: LazyDynamicLayout
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > LazyDynamicLayout
 category: harmonyos-references
-scraped_at: 2026-11-04T08:32:56+08:00
+scraped_at: 2026-11-12T09:54:11+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:726f55d00f13bff815d97ad4e09fc49dd4734d32ac67b68ad5089244ca950a9a
+content_hash: sha256:b2db2647da9eccf9e82c83fac6364dfb6ba9870d371e10ace1e6ff174866d824
 ---
 
 该组件用于实现支持懒加载的动态布局容器，支持开发者自定义布局算法。适用于在可滚动组件中展示大量子组件的场景，通过按需加载和布局可视区域内的子组件，减少首帧渲染时间和内存开销。
@@ -443,4 +443,4 @@ export class MyDataSource<T> extends BasicDataSource<T> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/v3GkakCuQxS2byLVdiY-Bg/zh-cn_image_0000002809011895.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/I_7wSjz1RoiVZE7Ob7IfDw/zh-cn_image_0000002815400669.gif)

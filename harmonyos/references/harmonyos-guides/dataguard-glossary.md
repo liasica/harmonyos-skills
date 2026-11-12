@@ -3,10 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dataguard-glo
 title: Enterprise Data Guard Kit术语
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > Enterprise Data Guard Kit术语
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:31+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:fbf48bef14bf0928862ac744f6194b704dbb0da85e18a428648e7bb2b6ffd437
+scraped_at: 2026-11-12T09:51:38+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a561cdeecf6d5f56aae9a4e83be1b437b54fa3360cd1d4c352977795e6287e5c
 ---
+
+## D
+
+### Data Volume；数据盘
+
+扩展硬盘，用于存储用户数据的物理或逻辑磁盘，成功挂载后可对数据进行加密管理和访问。
 
 ## F
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hp-arkts-
 title: "@performance/hp-arkts-no-use-any-export-other"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-arkts-no-use-any-export-other
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:12+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:042065b2d50592dabec7e61f88ae682cf8c2f270ab05e598fb8e3a28e370fbfa
+scraped_at: 2026-11-12T09:52:57+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:539aecfcdb7d82d9fd23e66e51142199661f0ad901f1a861230fdc854f7fb245
 ---
 
 避免使用export \* 导出其他模块中定义的类型和数据。
@@ -60,4 +60,4 @@ plugin:@performance/recommended
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

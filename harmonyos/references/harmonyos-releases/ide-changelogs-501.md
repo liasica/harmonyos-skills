@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/ide-changel
 title: 变更说明
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.1(13) > DevEco Studio > 变更说明
 category: harmonyos-releases
-scraped_at: 2026-10-09T08:12:35+08:00
+scraped_at: 2026-11-12T09:50:33+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:9c666fd6aed3eef2e00c6a3c83c704ef1804f0f34865bc1b093f297b01bd6727
+content_hash: sha256:1a70361498dea4c9c7b9bf1fab416063c9c8336bd1649683d0ca2588686fd663
 ---
 
 ## 5.0.5.200至5.0.5.300
@@ -18,7 +18,7 @@ content_hash: sha256:9c666fd6aed3eef2e00c6a3c83c704ef1804f0f34865bc1b093f297b01b
 
 如果历史工程使用了Form卡片并且在卡片页面文件（form\_config.json文件src字段对应的值）中直接或间接引用了HSP模块，则编译会报错，并提示相关文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/qmN_OTtNR7iyW6Q3WJZ3ng/zh-cn_image_0000002300332792.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/ScP5E3oQQEW48Ek9gvvx9Q/zh-cn_image_0000002300332792.png "点击放大")
 
 **适配指导**
 

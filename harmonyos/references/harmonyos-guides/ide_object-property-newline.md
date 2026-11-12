@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_object-pr
 title: "@hw-stylistic/object-property-newline"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > ArkTS代码风格规则@hw-stylistic > @hw-stylistic/object-property-newline
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:13+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:8d9a17c7bd7923d1300bd51ee9faa50d2a3f637ace224c821573b6a9a3a60798
+scraped_at: 2026-11-12T09:52:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c741d81f480782b9c38f7a8f8ca35d3c9bebfbafa70cfb4aed49958e53ac79cc
 ---
 
 强制对象属性换行。该规则仅检查.ets文件类型。
@@ -79,4 +79,4 @@ const b: II = { p1: 'p1', p2: 'p2', p3: 'p3', p4: 'p4', p5: 'p5' };
 "plugin:@hw-stylistic/all"
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

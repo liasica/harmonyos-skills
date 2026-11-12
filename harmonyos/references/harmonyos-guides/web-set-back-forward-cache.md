@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-set-back-
 title: 设置Web组件前进后退缓存
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > 设置Web组件前进后退缓存
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:41+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:a436424afb6f018503139ff90f1b58a9f52ebf8870d505cf63aa6b70aad5c8a9
+scraped_at: 2026-11-12T09:51:23+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f49fd0ac78baaff185ab75e974fdaf8b5929e528918fe13b8dc5318352fce2a4
 ---
 
 Web组件为开发者提供了启用和配置前进后退缓存（以下简称BFCache）的功能。启用此功能后，能够显著提升用户返回至先前浏览网页的速度，尤其对于网络条件不佳的用户，可提供更为流畅的浏览体验。
@@ -14,7 +14,7 @@ BFCache功能启用后，Web组件会在用户离开当前页面时在内存中�
 
 ## Web组件开启BFCache
 
-开发者需要在调用[initializeWebEngine()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#initializewebengine)初始化ArkWeb内核之前调用[enableBackForwardCache()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#enablebackforwardcache12)来开启BFCache。enableBackForwardCache可以接收一个[BackForwardCacheSupportedFeatures](../harmonyos-references/arkts-apis-webview-backforwardcachesupportedfeatures.md)参数，用于控制是否允许具备同层渲染特性和视频托管特性的页面进入BFCache。
+开发者需要在调用[initializeWebEngine()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#initializewebengine)初始化ArkWeb内核之前调用[enableBackForwardCache()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#enablebackforwardcache12)来开启BFCache。enableBackForwardCache()可以接收一个[BackForwardCacheSupportedFeatures](../harmonyos-references/arkts-apis-webview-backforwardcachesupportedfeatures.md)参数，用于控制是否允许具备同层渲染特性和视频托管特性的页面进入BFCache。
 
 ```typescript
 // EntryAbility.ets

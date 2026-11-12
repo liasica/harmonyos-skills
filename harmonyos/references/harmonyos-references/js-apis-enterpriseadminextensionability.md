@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.EnterpriseAdminExtensionAbility (企业设备管理扩展能力)"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.EnterpriseAdminExtensionAbility (企业设备管理扩展能力)
 category: harmonyos-references
-scraped_at: 2026-10-11T07:26:41+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:e79c27013d604a484809ea33344d8e4ff4a8abbbf2e5a4da382c3cf113e72832
+scraped_at: 2026-11-12T09:56:07+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:666b810b88d61d50152ca6dcba642700c0d445e48115ec8c58134f66d3642d30
 ---
 
 本模块提供[企业设备管理扩展能力](../harmonyos-guides/mdm-kit-term.md#enterpriseadminextensionability企业设备管理扩展能力)，是企业设备管理应用的核心组件。
@@ -1056,6 +1056,36 @@ export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbil
   onAdminPolicyChanged(event: common.PolicyChangedEvent) {
     // 例如当MDM应用调用setPasswordPolicy接口设置密码策略时，输出示例为： Policy changed, bundleName : com.example.test, functionName: setPasswordPolicy, parameters: {"policy":{"complexityRegex":"^(?=.*[a-zA-Z])(?=.*\\d).{8},$","validityPeriod":1808309786000,"additionalDescription":"至少8个字符，且包含数字和字母。"}}, time: 1776773305379.
     console.info(`Policy changed, bundleName : ${event.bundleName}, functionName: ${event.functionName}, parameters: ${event.parameters}, time: ${event.time}.`);
+  }
+}
+```
+
+### onUnmountExternalStorageDevice
+
+onUnmountExternalStorageDevice(deviceInfo: common.ExternalStorageDeviceInfo): void
+
+外置存储设备插入事件回调。通过[usbManager.setExternalStorageInterceptEnable](js-apis-enterprise-usbmanager.md#usbmanagersetexternalstorageinterceptenable)接口开启外置存储设备拦截后，当有外置存储设备插入时，系统会通过该回调将插入的外置存储设备信息上报给开启了该拦截的设备管理应用。仅当插入的外置存储设备类型为[DiskType](js-apis-enterprise-common.md#disktype)枚举所列的三种类型（SD卡、U盘、光盘）时，才会触发该回调进行上报。
+
+**起始版本：** 26.0.1
+
+**系统能力**：SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| deviceInfo | [common.ExternalStorageDeviceInfo](js-apis-enterprise-common.md#externalstoragedeviceinfo) | 是 | 插入但尚未挂载的外置存储设备信息，包含磁盘类型（type）、挂载路径（devicePath）、卷ID（volumeId）、挂载状态（mountStatus）、厂商ID（vendorId）、产品ID（productId）和序列号（serial），设备管理应用可据此识别插入的设备并做相应处理。 |
+
+**示例：**
+
+```ts
+import { EnterpriseAdminExtensionAbility, common } from '@kit.MDMKit';
+
+export default class EnterpriseAdminAbility extends EnterpriseAdminExtensionAbility {
+  onUnmountExternalStorageDevice(deviceInfo: common.ExternalStorageDeviceInfo): void {
+    console.info(`Succeeded in calling onUnmountExternalStorageDevice callback, deviceInfo:${JSON.stringify(deviceInfo)}`);
   }
 }
 ```

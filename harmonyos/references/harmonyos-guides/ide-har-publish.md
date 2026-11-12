@@ -3,10 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-har-publi
 title: 发布共享包
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 开发发布和管理共享包 > 发布共享包
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:12+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:8a51393786d6bcd8251fcab18cf72f4af9c8c7c88c9e3e36886e9fc3a22d3cae
+scraped_at: 2026-11-12T09:52:51+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:fcb5d500a75a4da7e9e4f8ed0fa273722063ce39f20e7595bc4a582dccbe7abd
 ---
+
+## 发布HAR共享包
 
 发布打包的HAR，可供其他开发者安装和引用。接下来将介绍如何发布HAR共享包。
 
@@ -36,7 +38,7 @@ OpenHarmony三方库中心仓仅支持HAR共享包发布，不支持HSP共享包
    3. ohpm包管理器只支持加密密钥认证，请在生成公私钥时输入密码。
 4. 登录[OpenHarmony三方库中心仓](https://ohpm.openharmony.cn/#/cn/home)官网，单击主页右上角的**个人中心**，新增OHPM公钥，将公钥文件（mykey.pub）的内容粘贴到公钥输入框中。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/EyqHPVdQSca0MP20XSZYtg/zh-cn_image_0000002731541839.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/eewJN0_ZRF-QBqLpWCzE_A/zh-cn_image_0000002779406494.png)
 5. 打开命令行工具，将对应私钥文件路径配置到 .ohpmrc 文件中 key\_path 字段上，可执行以下命令进行配置：
 
    ```screen
@@ -52,3 +54,19 @@ OpenHarmony三方库中心仓仅支持HAR共享包发布，不支持HSP共享包
    ```screen
    ohpm publish <HAR路径>
    ```
+
+## 发布HSP共享包
+
+如需在应用内共享HSP，需编译生成\*.tgz包后，将HSP共享包上传至私仓。
+
+1. 点击工具栏![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/oHfoQdCHQVGHBK6dnZwz2g/zh-cn_image_0000002808766049.png)图标将编译模式切换成release模式。
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/kYnoexxhSO-LCKnoFivzaA/zh-cn_image_0000002779566470.png)
+2. 选中HSP模块的根目录，点击**Build > Make Module ${libraryName}**启动构建。
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/wGKP9NOXTNaiWYh9VMfL-w/zh-cn_image_0000002779566464.png)
+
+   构建完成后，build目录下生成HSP包产物，其中.tgz用来上传至私仓。
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/EakMg4N_RUSI5J2CuT2Rcg/zh-cn_image_0000002808886129.png)
+3. 将HSP共享包上传至私仓，具体参考[将三方库发布到 ohpm-repo](ide-ohpm-repo-quickstart.md#zh-cn_topic_0000001792256157_从ohpm-repo获取三方库)。

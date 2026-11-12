@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/request-user-
 title: 再次向用户申请授权
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 申请应用权限 > 再次向用户申请授权
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:33+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:9501ea65991d89d1a008517a620523b13008b8e5d5274751156e3f9f7f03b89c
+scraped_at: 2026-11-12T09:51:30+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:2d5838b7dcdf7ba8911e5603f9b63d2896ec61cae1a8f3f2efb1903a5bbb7e99
 ---
 
 当应用通过[requestPermissionsFromUser()](../harmonyos-references/js-apis-abilityaccessctrl.md#requestpermissionsfromuser9)拉起弹框[请求用户授权](request-user-authorization.md)时，如果用户拒绝授权，应用将无法再次通过requestPermissionsFromUser()拉起弹框。用户需要在系统设置中手动授权。
@@ -19,7 +19,7 @@ content_hash: sha256:9501ea65991d89d1a008517a620523b13008b8e5d5274751156e3f9f7f0
 
 效果展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/sBGGDuG2RUG07l5f8BwSsQ/zh-cn_image_0000002809010335.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/6Y0f6yoWTpCNVtlCZooE7g/zh-cn_image_0000002815399131.png)
 
 以下示例代码展示了如何再次拉起弹框申请ohos.permission.APPROXIMATELY\_LOCATION权限。
 

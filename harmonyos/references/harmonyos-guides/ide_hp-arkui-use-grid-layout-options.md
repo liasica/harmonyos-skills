@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_hp-arkui-
 title: "@performance/hp-arkui-use-grid-layout-options"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-arkui-use-grid-layout-options
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:12+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:f65ba536d0cd40e51d703be40ea780ac65c8e04b995d93d9e36f5aeaa8734c50
+scraped_at: 2026-11-12T09:52:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:508e69dede7c556f256fc520fe8f50d5f08c244672f50bbf9b02f3555d2fb6bc
 ---
 
 建议在指定位置时使用GridLayoutOptions提升Grid性能。
@@ -173,4 +173,4 @@ plugin:@performance/recommended
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

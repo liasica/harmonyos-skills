@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: Path2D对象
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > Canvas开发指导 > Path2D对象
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:22+08:00
+scraped_at: 2026-11-12T09:51:19+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:4897b3e2398a52d1ac033557e35b6e520c1697911efa6cce153b793b40f2c448
+content_hash: sha256:767857ee74c2bee0da5a5467cb883a9c2d4e33f0b09cb6b3a4050a2ebfd01492
 ---
 
 路径对象，支持通过对象的接口进行路径的描述，并通过Canvas的[stroke](../harmonyos-references/ts-components-canvas-common-method.md#stroke-1)接口进行绘制。具体请参考[Path2D对象](../harmonyos-references/js-components-canvas-path2d.md)。
@@ -81,7 +81,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/_IHXV8X0T_CXw2mFR6r-7g/zh-cn_image_0000002809010049.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/IKfDT8YRRsibtBSbJN5VCQ/zh-cn_image_0000002815398845.png)
 
 ## 画图形
 
@@ -200,4 +200,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/i8yHa-LCSpaCEcv1nz5oJw/zh-cn_image_0000002809049965.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/ePjU6w9nQAOvCI_wD_F9Uw/zh-cn_image_0000002786519270.gif)

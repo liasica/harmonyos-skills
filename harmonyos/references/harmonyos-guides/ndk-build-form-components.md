@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-build-for
 title: 构建表单组件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 构建表单组件
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:20+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:51:17+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:fd1b6cc032580ed4aa913dfc80daa2f73dae89f96c00dbbdba18d34298304526
 ---
 

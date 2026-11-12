@@ -1,57 +1,72 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-external-hardware-key-management-overview
-title: 外部密钥管理扩展简介
-breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 外部密钥管理扩展 > 外部密钥管理扩展简介
+title: 密钥管理扩展介绍
+breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 密钥管理扩展 > 密钥管理扩展介绍
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:45+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:350ebb18cab200f6f3d0e04185d66bcddc4b0c9aad6a1ce978fe2d4aef5e2ff3
+scraped_at: 2026-11-12T09:51:41+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:011bbedfc7086b48eb30d1098ef9a702bf46780c2ff5dc9709b59a720725b788
 ---
 
-HUKS提供统一的Ability扩展接口，驱动HAP可基于此实现外部密钥管理扩展，注册、注销自定义的硬件密钥管理模块，满足金融领域UKey证书的浏览器双向SSL认证等场景的身份认证需求。
+应用在数字签名、证书认证等场景中需要使用外部密钥管理设备（如UKey）。不同厂商的外部密钥管理设备接口和实现差异较大，应用直接对接需要适配多种协议，开发成本高且难以维护。
 
-UKey：USB key，基于USB接口的硬件设备，可用于存储用户私钥、证书及身份认证等信息。
+HUKS提供统一的Ability扩展接口，让外部密钥管理能力能够接入HarmonyOS系统：通过CryptoExtensionAbility适配底层实现差异，向上层应用提供统一的密钥管理与证书管理API。
 
-本指南将介绍应用如何基于UKey证书的浏览器双向SSL认证等场景，完成身份认证的过程。
+本文档面向密钥管理扩展能力的两类开发者：
 
-## 运作机制
+* **实现方**：负责将外部密钥管理能力接入HUKS框架，通过实现CryptoExtensionAbility回调接口完成能力开放。
+* **使用方**：通过调用HUKS提供的huksExternalCrypto和huks模块标准接口，配合调用证书管理模块的标准接口拉起证书选择与PIN码认证等弹窗流程，使用外部密钥管理扩展能力。
 
-应用调用接口进行身份认证的流程可参考下图，图中流程请参见图后的标注。
+HUKS框架保持设备无关，既支持UKey物理设备，也支持软件形态，覆盖[浏览器双向SSL登录](huks-extension-ability-best-dev.md)等典型应用场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/y093djT7QBalN9pmwKNWXA/zh-cn_image_0000002779690786.png)
+## 整体框架
 
-* 标注1：UKey设备插入。
-* 标注2：驱动HAP通过Provider管理接口，注册外部密钥管理扩展能力（UKey Extension）。
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/I7tugv34Qn-zCq4w9S6TnQ/zh-cn_image_0000002786519630.png)
 
-  通过Provider管理能力，驱动HAP可注册、注销外部密钥管理扩展能力。具体参考[Provider管理](huks-provider-management-overview.md)。
-* 标注3：应用拉起证书授权选择弹框，弹框中展示证书列表，由用户进行选择。
+密钥管理扩展采用分层架构，自上而下划分为生态伙伴层、应用层、系统服务层与密钥管理扩展应用层，各层之间通过IPC协同。
 
-  3.1：通过IPC调用从UKey硬件中读取证书信息。
-* 标注4：应用层向HUKS发起查询，获取证书详细信息。
+* 生态伙伴层：以上层应用（如浏览器）为代表，是密钥管理扩展能力的最终使用方。
+* 应用层：包含Universal Keystore Kit与Device Certificate Kit，向应用提供统一的密钥管理与证书管理API。使用方通过Kit调用能力，无需感知底层密钥存放在何处、由谁提供。
+* 系统服务层：以密钥管理服务与证书管理服务为核心，两者通过IPC协同，共同支撑上层Kit的能力。证书管理服务承载证书选择、PIN码认证等需要UI交互的弹窗能力。
+* 密钥管理扩展应用层：由各外部密钥管理能力方实现并运行，是CryptoExtensionAbility实例的宿主。一个密钥管理扩展应用可根据业务需要注册一个或多个CryptoExtensionAbility实例，将厂商自有的外部密钥管理能力接入密钥管理服务。
 
-  4.1：通过IPC调用从UKey硬件中读取证书信息。
-* 标注5：用户选择具体证书后，应用将获取到证书索引标识KeyUri（即资源ID resourceId），用于打开资源、查询PIN码认证状态。
+## 能力开放总览
 
-  HUKS提供PIN码认证能力和认证状态查询能力。应用PIN码认证之前，可以先查询认证状态。具体参考[UKey PIN码认证](huks-ukey-pin-authentication-management-overview.md)。
+在应用或系统模块（如证书管理）使用外部密钥管理能力前，能力实现方需完成以下工作：
 
-  5.1：如果资源未认证，即PIN码未认证，应用需要调用证书管理能力，拉起PIN码认证弹窗，由用户输入PIN码完成认证。完成认证后，进入5的流程，调用HUKS统一接口，执行对应操作。
-* 标注6：应用通过调用HUKS提供的统一接口，执行资源管理、签名验签等操作。如：
+* 根据业务场景设计并开发应用自身的外部密钥管理能力。
 
-  + 打开与关闭资源：[资源管理](huks-resource-management-overview.md)。
-  + 验证消息内容以及消息发送者身份的真实性：[签名验签](huks-ukey-signing-signature-verification-overview.md)。
-
-  除此以外，HUKS支持应用查询UKey的密钥相关属性，具体参考[通用查询](huks-ukey-general-query-overview.md)。
-* 标注7：在HUKS SA层执行证书查询、资源管理、PIN码认证及签名等核心操作。
-
-在应用基于UKey发起身份认证前，三方驱动HAP需完成：
-
-* 根据业务场景设计并开发应用自身的外部密钥管理扩展能力。
-
-  驱动HAP需继承HUKS提供的CryptoExtensionAbility，并完成能力接口实现。具体参考[CryptoExtensionAbility扩展能力](huks-extension-ability-support-overview.md)。
-
-  CryptoExtensionAbility是Stage模型中扩展组件[ExtensionAbility](extensionability-overview.md)的派生类。开发者可以通过继承CryptoExtensionAbility并实现自定义接口，实现定制化的外部硬件密钥管理功能，包括：调用外部硬件密钥管理的资源打开与关闭接口、外部硬件密钥管理的PIN认证实现、调用外部硬件密钥管理的通用接口等，可以参考[CryptoExtensionAbility适配开发指导](huks-extension-ability-support-dev.md)。
+  密钥管理扩展应用需继承HUKS提供的CryptoExtensionAbility，并按需完成能力接口实现。具体参考[CryptoExtensionAbility扩展能力介绍](huks-extension-ability-support-overview.md)。
 * 将密钥管理扩展能力注册到系统HUKS服务中。
 
-  CryptoExtensionAbility可以隔离不同的UKey驱动厂商实现的差异。驱动HAP实现的能力将通过HUKS和[证书管理](certmanager-overview.md)的SDK开放给应用使用。
+  CryptoExtensionAbility可以隔离不同外部密钥管理能力实现方的实现差异。密钥管理扩展应用完成接口实现后，需在设备或服务可用时将CryptoExtensionAbility注册到HUKS，**注册成功后能力即对外开放**；在设备拔出、服务停止等不可用场景下，需注销已注册的能力，避免资源残留。注册/注销的具体实现可参考[CryptoExtensionAbility注册与注销](huks-extension-registration-and-unregistration-arkts-ndk.md)。
 
-如此，浏览器等应用才能通过HUKS和[证书管理](certmanager-overview.md)提供的API去使用驱动HAP提供的外部密钥管理能力，包括证书查询、PIN码认证、签名验签等操作。
+  能力注册成功后，将通过HUKS和[证书管理](certmanager-overview.md)的SDK开放给上层应用与系统模块使用，覆盖证书查询、PIN码认证、签名验签等典型操作。
+
+如此，能力使用方才能通过HUKS和[证书管理](certmanager-overview.md)提供的API去使用密钥管理扩展应用提供的外部密钥管理能力，包括证书查询、PIN码认证、签名验签等操作。
+
+## 文档组织
+
+以下文档按照开发流程编排，建议按顺序阅读：
+
+* 对于能力实现方，文档将从能力介绍到接口实现再到注册上线，帮助您逐步完成能力开发全流程。
+* 对于能力使用方，文档将从密钥操作到签名验签再到访问控制，帮助您由浅入深掌握各业务场景的调用方式。
+
+请根据您的角色选择对应路径。
+
+### 能力实现方
+
+1. [CryptoExtensionAbility扩展能力介绍](huks-extension-ability-support-overview.md)：理解CryptoExtensionAbility扩展组件的定位、能力开放、能力生命周期及约束限制。
+2. [CryptoExtensionAbility适配开发指导](huks-extension-ability-support-dev.md)：参考项目搭建、状态管理与功能接口的实现示例。
+3. [CryptoExtensionAbility注册与注销](huks-extension-registration-and-unregistration-arkts-ndk.md)：在设备或服务可用时调用registerProvider将已实现的CryptoExtensionAbility注册到HUKS，以对外开放能力；不可用时调用unregisterProvider注销，避免资源残留。
+
+### 能力使用方
+
+1. [密钥生成与导入导出](huks-extension-key-generation-import-export.md)：密钥生成与导入导出的能力介绍与开发指导。
+2. [签名/验签](huks-extension-ability-signing-signature-verification.md)：通过HUKS提供的密钥管理扩展场景下的三段式接口，提供签名验签的能力介绍与开发指导。
+3. [PIN码访问控制](huks-extension-ability-pin-authentication-management.md)：密钥管理扩展场景下的PIN码访问控制能力与开发指导。
+4. [通用操作](huks-extension-ability-general-operation.md)：介绍打开/关闭资源、查询、属性设置、获取错误信息等通用能力，并提供开发指导。
+
+### 应用场景
+
+[浏览器双向SSL登录](huks-extension-ability-best-dev.md)：以浏览器双向SSL登录为例，端到端串联证书选择、PIN码认证、签名验签的完整流程。

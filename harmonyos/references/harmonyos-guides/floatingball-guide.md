@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/floatingball-
 title: 闪控球开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 闪控球开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:23+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:998be14321c615cec9e1ec2f70d93058fa36c270dcf562d7fa6514d7a655ddac
+scraped_at: 2026-11-12T09:51:20+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:9bde736015ece3fbb5e07917f0434e3d18daec9892e643eaf4262242ff600922
 ---
 
 ## 场景介绍
 
 闪控球是一种在设备屏幕上悬浮的非全屏应用窗口，为应用提供临时的全局能力，完成跨应用交互。
 
-应用可以将关键信息以小窗（闪控球）模式呈现。切换为小窗（闪控球）模式后，用户可以进行其他界面操作，提升使用体验。
+应用可以将关键信息以闪控球模式呈现。切换为闪控球模式后，用户可以进行其他界面操作，提升使用体验。
 
 **说明** 
 
@@ -50,7 +50,7 @@ content_hash: sha256:998be14321c615cec9e1ec2f70d93058fa36c270dcf562d7fa6514d7a65
 
 * 单击闪控球：触发闪控球点击事件。
 * 长按闪控球：长按闪控球震动变为待删除态，可以点击图标单个删除或全部删除。
-* 拖动闪控球：可以手动拖拽闪控球改变位置，拖拽时自动避让状态栏、固定态软键盘（改变软键盘为固定态或者悬浮态的详细介绍请参见[输入法服务](../harmonyos-references/js-apis-inputmethodengine.md#changeflag10)）、导航条等其他组件，设备处于横屏场景时不会自动避让输入法。拖拽松手时闪控球自动吸附在最近的侧边，拖拽到垃圾桶区域（底部中部区域）松手即可删除。
+* 拖动闪控球：可以手动拖拽闪控球改变位置，拖拽时自动避让状态栏、固定态软键盘（改变软键盘为固定态或者悬浮态的详细介绍请参见[输入法服务](../harmonyos-references/js-apis-inputmethodengine.md#changeflag10)）、导航条等其他组件。拖拽松手时闪控球自动吸附在最近的侧边。非PC/2in1设备下，拖拽到垃圾桶区域（底部中部区域）松手即可删除；PC/2in1设备下，无法通过拖动删除闪控球，可右键单击闪控球唤出二级菜单进行删除。
 * 闪控球位置记忆：关闭闪控球会记录当前位置，下一次打开功能时自动展示在上次关闭时的位置。旋转屏幕或重启设备会恢复到默认位置，默认位置位于屏幕右上侧。
 
 ## 闪控球规格与样式布局
@@ -68,49 +68,49 @@ content_hash: sha256:998be14321c615cec9e1ec2f70d93058fa36c270dcf562d7fa6514d7a65
 
 **图1** 静态布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/eOxbK0P8TnuAtkBMrzpv_w/zh-cn_image_0000002809050003.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/KPui8u4nTLqWw5p1f4GOWQ/zh-cn_image_0000002786519308.png)
 
 **图2** 静态布局-超长文本标题
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/cXCGgbknQl6Tz2MghGAhdA/zh-cn_image_0000002779850438.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/w5k-Zf7YTuCV_ZcVJ7LBYQ/zh-cn_image_0000002786359380.png)
 
 **图3** 普通文本布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/rOn-a_K_R8ao8JZfOPT6iA/zh-cn_image_0000002779690470.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/LtXwW9--SFmgP7QV95NjtQ/zh-cn_image_0000002815558801.png)
 
 **图4** 普通文本布局-超长文本内容
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/eLHUXpG7SsCa-ungv2dhyA/zh-cn_image_0000002809010089.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/qixj0lvnQY-yhrdqj1acKw/zh-cn_image_0000002815398885.png)
 
 **图5** 强调文本布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/jWZe5TIyTtuV68vMnqGsvw/zh-cn_image_0000002809050005.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/MGR2sftNSmKOUT-Hvxa5Zg/zh-cn_image_0000002786519310.png)
 
 **图6** 强调文本布局-超长文本内容
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/z_6tleaQTv6Yfdaa2-9-_g/zh-cn_image_0000002779850440.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/lqb21iWiRHiB4vWgZjvqjg/zh-cn_image_0000002786359382.png)
 
 **图7** 强调文本布局-图标
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/6r3i1hqpTmWGZjxraXlX6g/zh-cn_image_0000002779690472.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/uO8xemA7STqE4IcTQgW12Q/zh-cn_image_0000002815558803.png)
 
 **图8** 强调文本布局-图标和超长文本内容
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/zJsp7kDpRS2f8ABFjHVaFA/zh-cn_image_0000002809010091.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/IA7-unA3Swqos0TGXjA4YA/zh-cn_image_0000002815398887.png)
 
 **图9** 纯文本布局
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/ikRxEKfWRNuaXzwny75yjQ/zh-cn_image_0000002809050007.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/Qp9340PYTciPq3pV3ykqNw/zh-cn_image_0000002786519312.png)
 
 **图10** 纯文本布局-超长文本标题
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/W0IfR3HTQyqmw4914rt3tQ/zh-cn_image_0000002779850442.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/6CEC7qpYQSi-X_lCsa2KdA/zh-cn_image_0000002786359384.png)
 
 当有两个应用启动了闪控球后，闪控球将合并展示，如下图所示。整体高度为76vp。
 
 **图11** 闪控球上下合并展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/6b_RJi4ITUGbvV0TX09nqQ/zh-cn_image_0000002779690474.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/OL1zpV8cRciK00CBbI_0ag/zh-cn_image_0000002815558805.png)
 
 ## 开发步骤
 
@@ -122,8 +122,8 @@ content_hash: sha256:998be14321c615cec9e1ec2f70d93058fa36c270dcf562d7fa6514d7a65
 ```typescript
 // Utils.ts
 // 该页面提供工具类，展示闪控球的创建、更新、关闭逻辑
-import hilog from '@ohos.hilog';
-import image from '@ohos.multimedia.image';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { image } from '@kit.ImageKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { floatingBall } from '@kit.ArkUI';
 import { Want } from '@kit.AbilityKit';
@@ -146,7 +146,6 @@ export class Utils {
         }
     }
 
-    // 闪控球启动逻辑
     public static async onClickCreateFloatingBall(
         floatingBallController: floatingBall.FloatingBallController | undefined,
         template: floatingBall.FloatingBallTemplate,
@@ -178,7 +177,7 @@ export class Utils {
         try {
             floatingBallController?.on('stateChange',
             (state: floatingBall.FloatingBallState) => {
-                hilog.debug(DOMAIN, TAG, `FloatingBall stateCange: ${state}`);
+                hilog.debug(DOMAIN, TAG, `FloatingBall stateChange: ${state}`);
                 if(state === floatingBall.FloatingBallState.STOPPED) {
                     floatingBallController?.off('click')
                     floatingBallController?.off('stateChange')
@@ -215,13 +214,13 @@ export class Utils {
         }
     }
 
-// 闪控球更新逻辑
-public static onClickUpdateFloatingBall(
-    floatingBallController: floatingBall.FloatingBallController | undefined,
-    template: floatingBall.FloatingBallTemplate,
-    title: string = 'newTitle',
-    content: string = 'newContent',
-    icon?: image.PixelMap): void {
+    // 闪控球更新逻辑
+    public static onClickUpdateFloatingBall(
+        floatingBallController: floatingBall.FloatingBallController | undefined,
+        template: floatingBall.FloatingBallTemplate,
+        title: string = 'newTitle',
+        content: string = 'newContent',
+        icon?: image.PixelMap): void {
         // 更新时给标题、内容 随机使用数字后缀
         let random_string: string = Math.floor(Math.random() * 100).toString();
         let updateParams: floatingBall.FloatingBallParams = icon ? {
@@ -251,7 +250,7 @@ public static onClickUpdateFloatingBall(
     public static onClickStopFloatingBall(floatingBallController: floatingBall.FloatingBallController | undefined): void {
         // stop 是异步流程，需要通过 stateChange 状态回调获取实际删除结果
         floatingBallController?.stopFloatingBall().then(() => {
-            hilog.debug(DOMAIN, TAG, `Succeed in stopping FloatingBall`);
+            hilog.info(DOMAIN, TAG, `Succeed in stopping FloatingBall`);
         }).catch((err: BusinessError) => {
             hilog.error(DOMAIN, TAG, `failed to stop FloatingBall. code: ${err.code}, message: ${err.message}`);
         })
@@ -259,11 +258,11 @@ public static onClickUpdateFloatingBall(
 }
 ```
 
-```ts
+```typescript
 // Index.ets
 // 该页面利用按钮点击事件展示闪控球基本操作
-import hilog from '@ohos.hilog';
-import image from '@ohos.multimedia.image';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { image } from '@kit.ImageKit';
 import { floatingBall } from '@kit.ArkUI';
 import { Utils } from '../util/Utils';
 
@@ -286,8 +285,8 @@ struct Index {
   private activeRowChange = (value: number) => {this.activeRow = value};
 
   // 判断某个布局是否可用（是否置灰）
-  private isEnabled(rowInex: number): boolean {
-    return this.activeRow === -1 || this.activeRow === rowInex;
+  private isEnabled(rowIndex: number): boolean {
+    return this.activeRow === -1 || this.activeRow === rowIndex;
   }
 
   build() {

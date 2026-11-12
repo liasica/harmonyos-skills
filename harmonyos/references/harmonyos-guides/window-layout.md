@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-layout
 title: 窗口布局
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口基础能力 > 窗口布局
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:14+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:3ec162970dff0f08e55472949a81cca8bf0b05fdcc8c42462e0f10885d99d584
+scraped_at: 2026-11-12T09:51:22+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ce5f7291dc8ccdd65df4835f5d1f73abfb614be173d5576dd229f4d76548cba6
 ---
 
 ## 场景介绍
@@ -153,7 +153,7 @@ const TAG = 'IndexPage';
 
   | 接口 | 坐标系原点 | 说明 |
   | --- | --- | --- |
-  | [moveWindowTo()](../harmonyos-references/arkts-apis-window-window.md#movewindowto9-1) | [自由窗口](freeform-window-overview.md#自由窗口)状态下：原点为屏幕左上顶点  非[自由窗口](freeform-window-overview.md#自由窗口)状态下：子窗、模态窗口移动时原点为父窗口左上顶点，其他窗口移动时原点为屏幕左上顶点 | 移动窗口位置，调用成功即返回，返回后无法立即获取最终生效结果。 |
+  | [moveWindowTo()](../harmonyos-references/arkts-apis-window-window.md#movewindowto9-1) | [自由窗口](freeform-window-overview.md#自由窗口)状态下：原点为屏幕左上顶点  非自由窗口状态下：子窗、模态窗口移动时原点为父窗口左上顶点，其他窗口移动时原点为屏幕左上顶点 | 移动窗口位置，调用成功即返回，返回后无法立即获取最终生效结果。 |
   | [moveWindowToAsync()](../harmonyos-references/arkts-apis-window-window.md#movewindowtoasync12)传入参数x、y  [moveWindowToAsync()](../harmonyos-references/arkts-apis-window-window.md#movewindowtoasync15)传入参数x、y、moveConfiguration | [自由窗口](freeform-window-overview.md#自由窗口)状态下：原点为屏幕左上顶点  非[自由窗口](freeform-window-overview.md#自由窗口)状态下：原点为主窗口左上顶点 | 移动窗口位置，调用生效后返回。 |
   | [moveWindowToGlobal()](../harmonyos-references/arkts-apis-window-window.md#movewindowtoglobal15)传入参数x、y  [moveWindowToGlobal()](../harmonyos-references/arkts-apis-window-window.md#movewindowtoglobal15)传入参数x、y、moveConfiguration | 目标屏幕左上顶点 | 基于屏幕坐标移动窗口位置，调用生效后返回。 |
   | [moveWindowToGlobalDisplay()](../harmonyos-references/arkts-apis-window-window.md#movewindowtoglobaldisplay20) | 主屏幕左上顶点（全局坐标系） | 基于[全局坐标系](window-terminology.md#global-coordinate-system全局坐标系)移动窗口位置。 |

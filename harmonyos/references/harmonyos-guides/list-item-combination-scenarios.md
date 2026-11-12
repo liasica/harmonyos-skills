@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/list-item-com
 title: 列表项组件整体聚焦
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 列表项组件整体聚焦
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:11+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:51:00+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:96e1b48955a3ec22b0d470f9b2f7bf0a26dd57fc25323b3660910cacac6ac2c4
 ---
 

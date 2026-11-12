@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-high-pe
 title: ArkTS高性能编程实践
 breadcrumb: 指南 > 基础入门 > 学习ArkTS语言 > ArkTS高性能编程实践
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:09+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:50:57+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:8bb3df30cd901c92dd3f4b0af71b888fbfe9a0e35d6b3725e4eae7be703e2826
 ---
 

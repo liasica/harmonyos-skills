@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-more-ca
 title: 适配指导案例
 breadcrumb: 指南 > 基础入门 > 学习ArkTS语言 > 从TypeScript到ArkTS的适配指导 > 适配指导案例
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:03+08:00
-doc_updated_at: 2026-09-20
+scraped_at: 2026-11-12T09:50:57+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:be530e617e7826fbcf490ae583ce5d28cacbe8a5aa88a1bfe26615f2edb2f88d
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pointerstyle-
 title: 鼠标光标开发指导
 breadcrumb: 指南 > 系统 > 基础功能 > Input Kit（多模输入服务） > 鼠标光标开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:06+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:67dd57c073832ed4bd77e9798663532dd2adbc3f409caf96b953543914b65ed1
+scraped_at: 2026-11-12T09:51:49+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d92f00af339c8f503642499e41c7f36a2caf4731ffdf1f5cedcea35b399e5a98
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ import { pointer } from '@kit.InputKit';
 
 ## 接口说明
 
-鼠标光标控制常用接口如下表所示，接口详细介绍请参见[@ohos.multimodalInput.pointer (鼠标光标)](../harmonyos-references/js-apis-pointer.md)。
+鼠标光标控制常用接口如下表所示，接口详细介绍请参见[@ohos.multimodalInput.pointer (鼠标光标和光标类的外设)](../harmonyos-references/js-apis-pointer.md)。
 
 | 接口名称 | 描述 |
 | --- | --- |

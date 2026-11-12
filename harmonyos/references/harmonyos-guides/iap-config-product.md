@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-config-pr
 title: 配置商品信息
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 开发准备 > 配置商品信息
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:56+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:0218d7fae99ac1a50d46f0ff5c32af0eb6ba95cb828d49a29029c7d949f64685
+scraped_at: 2026-11-12T09:52:26+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7f170c929961c7789b195d45978538b403ee3c43fec3d786989586a5b7fcdf85
 ---
 
-在接入商品购买前，开发者需要在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中录入商品信息（包括商品ID、商品类型、不同国家/地区的商品价格、商品名称等）。在客户端调用购买接口时，只需传入此处配置的商品ID和商品类型，IAP Kit会根据用户当前的账号服务地自动展示对应国家/地区的商品信息（包括商品价格、商品名称等），无需开发者处理因账号所在服务地变动带来的商品价格适配问题。
+在接入商品购买前，开发者需要在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)中录入商品信息（包括商品ID、商品类型、不同国家/地区的商品价格、商品名称等）。在客户端调用购买接口时，只需传入此处配置的商品ID和商品类型，IAP Kit会根据用户当前的账号服务地自动展示对应国家/地区的商品信息（包括商品价格、商品名称等），无需开发者处理因账号所在服务地变动带来的商品价格适配问题。
 
 ## 配置消耗型/非消耗型/非续期订阅商品
 
@@ -24,4 +24,4 @@ content_hash: sha256:0218d7fae99ac1a50d46f0ff5c32af0eb6ba95cb828d49a29029c7d949f
 
 **说明** 
 
-在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)完成商品配置后，[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)不会跟随汇率实时刷新商品价格，需要开发者定期手动刷新价格，具体请参见[修改单个商品](../app/single-0000001931995708.md)。
+在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)完成商品配置后，HarmonyOS 开发者中心不会跟随汇率实时刷新商品价格，需要开发者定期手动刷新价格，具体请参见[修改单个商品](../app/single-0000001931995708.md)。

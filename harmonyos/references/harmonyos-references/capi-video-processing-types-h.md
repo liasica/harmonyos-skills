@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-vide
 title: video_processing_types.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > video_processing_types.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:0381245dc6b6da7d18282275d27f6390722c8cea16ef812a5f74fee020ee07c2
+scraped_at: 2026-11-12T09:56:48+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:79401e80fcf24932a04e9480977456340625004ee4f8056c5df05aac55d6713e
 ---
 
 ## 概述
@@ -60,6 +60,9 @@ content_hash: sha256:0381245dc6b6da7d18282275d27f6390722c8cea16ef812a5f74fee020e
 | const int32\_t VIDEO\_PROCESSING\_TYPE\_DETAIL\_ENHANCER | 表示创建细节增强视频处理实例。  调用[OH\_VideoProcessing\_Create](capi-video-processing-h.md#oh_videoprocessing_create)创建细节增强视频处理实例，如果不支持该能力返回[VideoProcessing\_ErrorCode](capi-video-processing-types-h.md#videoprocessing_errorcode).VIDEO\_PROCESSING\_ERROR\_UNSUPPORTED\_PROCESSING。  **起始版本：** 12 |
 | const char\* VIDEO\_DETAIL\_ENHANCER\_PARAMETER\_KEY\_QUALITY\_LEVEL | 指定视频细节增强的质量等级，参考[VideoDetailEnhancer\_QualityLevel](capi-video-processing-types-h.md#videodetailenhancer_qualitylevel)查看具体取值。  调用[OH\_VideoProcessing\_SetParameter](capi-video-processing-h.md#oh_videoprocessing_setparameter)设置质量等级。  调用[OH\_VideoProcessing\_GetParameter](capi-video-processing-h.md#oh_videoprocessing_getparameter)获取当前质量等级。  **起始版本：** 12 |
 | const char \* VIDEO\_METADATA\_GENERATOR\_STYLE\_CONTROL | 指定视频元数据生成的风格模式。具体取值请参考[VideoMetadataGeneratorStyleControl](capi-video-processing-types-h.md#videometadatageneratorstylecontrol)。调用[OH\_AVFormat\_SetIntValue](capi-native-avformat-h.md#oh_avformat_setintvalue)设置视频元数据生成的风格模式到AVFormat参数。调用[OH\_VideoProcessing\_SetParameter](capi-video-processing-h.md#oh_videoprocessing_setparameter)设置当前视频元数据生成的风格模式。调用[OH\_VideoProcessing\_GetParameter](capi-video-processing-h.md#oh_videoprocessing_getparameter)获取当前视频元数据生成的风格模式。  **起始版本：** 22 |
+| const int32\_t VIDEO\_PROCESSING\_TYPE\_AUTOEFFECT\_AISR | 表示在XComponent中使用的视频AISR（Artificial Intelligence Super Resolution）自动增强效果类型。AISR称作AI超分，是AutoEffect中的一种。  调用[OH\_VideoProcessing\_IsAutoEffectSupported](capi-video-processing-h.md#oh_videoprocessing_isautoeffectsupported)查询是否支持AISR自动增强效果。  **起始版本：** 26.0.1 |
+| const char \*VIDEO\_AUTOEFFECT\_ENABLE | 设置启用或禁用自动增强效果的关键字。  调用[OH\_AVFormat\_SetIntValue](capi-native-avformat-h.md#oh_avformat_setintvalue)将启用值（0为false表示禁用，1为true表示启用）设置到AVFormat参数中。调用[OH\_VideoProcessing\_SetAutoEffectParam](capi-video-processing-h.md#oh_videoprocessing_setautoeffectparam)将参数设置到视频处理实例中。  **起始版本：** 26.0.1 |
+| const char \*VIDEO\_AUTOEFFECT\_AISR\_STRENGTH | 设置AISR强度。  调用[OH\_AVFormat\_SetFloatValue](capi-native-avformat-h.md#oh_avformat_setfloatvalue)将强度值设置到AVFormat参数中。当取值在[0.0, 1.0]范围内时，值越大图像质量越好；如果设置为小于0的值，则图像质量增强为自适应模式。调用[OH\_VideoProcessing\_SetAutoEffectParam](capi-video-processing-h.md#oh_videoprocessing_setautoeffectparam)将参数设置到视频处理实例中。  **起始版本：** 26.0.1 |
 
 ## 枚举类型说明
 

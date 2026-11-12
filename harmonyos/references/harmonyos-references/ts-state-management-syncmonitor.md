@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-state-
 title: "@SyncMonitor：状态变量修改同步监听"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 状态管理与渲染控制 > 状态管理V2装饰器 > @SyncMonitor：状态变量修改同步监听
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:10+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:ea61dc0b44490f2502d4865656ad352092308de4bd35667a6b0b61fb12f1d7ad
+scraped_at: 2026-11-12T09:54:30+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:77c122e2980dd4fc4672d855de4851f5049a8230d678e1d53de039b6af3372f1
 ---
 
 @SyncMonitor用于[状态管理V2](../harmonyos-guides/arkts-state-management-overview.md#状态管理v2)，同步监听状态变量修改，使得状态变量支持深度监听。适用于需要精确监听对象嵌套属性变化、数组元素修改等深层状态变化的场景，解决了传统监听方式无法感知深层属性变化的问题，提升状态管理的精确性和开发效率。
@@ -20,15 +20,13 @@ content_hash: sha256:ea61dc0b44490f2502d4865656ad352092308de4bd35667a6b0b61fb12f
 
 const SyncMonitor: MonitorDecorator
 
+@SyncMonitor装饰器的类型为[MonitorDecorator](ts-state-management-monitor.md#monitordecorator)。
+
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-| 类型 | 说明 |
-| --- | --- |
-| [MonitorDecorator](ts-state-management-monitor.md#monitordecorator) | @SyncMonitor装饰器类型。 |
 
 **错误码：**
 

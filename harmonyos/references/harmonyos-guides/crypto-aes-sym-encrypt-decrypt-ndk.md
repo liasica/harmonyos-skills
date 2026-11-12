@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-aes-sy
 title: 使用AES对称密钥加解密(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密 > 使用AES对称密钥加解密(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:54+08:00
-doc_updated_at: 2026-09-23
+scraped_at: 2026-11-12T09:51:33+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:7e4af77b5d26bbe87daee53ba99cc133af3a6c21bdd281f685bea1e05b7b49d7
 ---
 

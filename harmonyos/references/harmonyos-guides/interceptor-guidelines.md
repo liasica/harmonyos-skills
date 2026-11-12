@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/interceptor-g
 title: 事件拦截开发指导（C/C++）
 breadcrumb: 指南 > 系统 > 基础功能 > Input Kit（多模输入服务） > 事件拦截开发指导（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:06+08:00
-doc_updated_at: 2026-09-24
+scraped_at: 2026-11-12T09:51:49+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:84fd4f49bd0c05b6180a3578af096ef656972ed9879daa33de37b56500b3d454
 ---
 

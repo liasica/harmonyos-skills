@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-unsafe
 title: "@security/no-unsafe-huks"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 安全规则@security > @security/no-unsafe-huks
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:11+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:1b35f18e6655408629f3502e3e30552995d4549ed674e206334e335023c14eb6
+scraped_at: 2026-11-12T09:52:57+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:5c55202b421ca2922c4d7fa0edcfd16036d82a44bc6a60ca730e721befb7b04d
 ---
 
 此规则禁止在HUKS中使用不安全的加密模式ECB，不安全的摘要算法MD5、SHA1，填充算法NONE、PKCS1-V1\_5。推荐使用HUKS的AES-GCM算法，详情参见：[对称加解密算法](../AppGallery-connect-Guides/aegis-encryption-and-decryption-symmetry-0000001861247310.md)。
@@ -109,4 +109,4 @@ huks.generateKeyItem(keyAlias, options);
 plugin:@security/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

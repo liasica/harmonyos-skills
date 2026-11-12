@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-picture
 title: 使用ImagePacker完成多图对象编码
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片编码 > 使用ImagePacker完成多图对象编码
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:58+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:52:06+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:bcb66fc083dced6193219f7b135f034b0cc6b3f1412786f7467722ad9a76d692
 ---
 

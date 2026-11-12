@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-petal
 title: petalMaps（拉起地图应用）
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > petalMaps（拉起地图应用）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:23+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:1491854b8516853ac7a6a84eb8ddb734be92d5513d3012f18c870b30f1fd315e
+scraped_at: 2026-11-12T09:57:27+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d59bdb1d53c66de79e719348b893c3a29fbd2193ac72bdf74a45241654fd9cd7
 ---
 
 本模块提供拉起地图应用功能。
@@ -64,7 +64,7 @@ await petalMaps.openMapHomePage(this.getUIContext().getHostContext());
 
 openMapPoiDetail(context: common.Context, poiDetailParams: PoiDetailParams): Promise<void>
 
-应用的POI详情页面。使用Promise异步回调。
+打开应用的POI详情页面。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -361,7 +361,7 @@ POI详情的参数。
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | destinationPosition | [mapCommon.LatLng](map-common.md#latlng) | 否 | 否 | POI的坐标。  取值范围：经度[-180, 180)，纬度[-85.2, 85.2]。对异常值进行处理，返回错误码401。 |
-| destinationName | string | 否 | 是 | POI的名称，名称超出单行时，以省略号"..."截断显示。 |
+| destinationName | string | 否 | 是 | POI的名称，默认值：'标记点'，名称超出单行时，以省略号"..."截断显示。 |
 | destinationPoiId | string | 否 | 是 | POI ID。  POI ID和经纬度都作为入参时，POI ID具有更高优先级。 |
 | zoom | number | 否 | 是 | 地图缩放级别。取值范围：[3, 20]，默认值：17，异常值按照默认值处理。  **说明：**  当传入destinationPoiId时zoom层级不支持自定义。  **起始版本：** 6.0.1(21) |
 | coordinateType | [mapCommon.CoordinateType](map-common.md#coordinatetype) | 否 | 是 | 地图坐标系类型。默认值[mapCommon.CoordinateType](map-common.md#coordinatetype).GCJ02，异常值按照默认值处理。  **起始版本：** 6.0.1(21) |
@@ -396,7 +396,7 @@ let params: petalMaps.PoiDetailParams = {
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| destinationName | string | 否 | 是 | 终点的名称，名称超出单行时，以省略号"..."截断显示。 |
+| destinationName | string | 否 | 是 | 终点的名称，默认值：'终点'，名称超出单行时，以省略号"..."截断显示。 |
 
 **示例：**
 
@@ -421,10 +421,10 @@ let params: petalMaps.TextSearchParams = {
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | originPosition | [mapCommon.LatLng](map-common.md#latlng) | 否 | 是 | 起点的坐标。默认值为用户当前坐标。  取值范围：经度[-180, 180)，纬度[-85.2, 85.2]。对异常值进行处理，返回错误码401。 |
-| originName | string | 否 | 是 | 起点的名称，名称超出单行时，以省略号"..."截断显示。 |
+| originName | string | 否 | 是 | 起点的名称，默认值：'起始点'，名称超出单行时，以省略号"..."截断显示。 |
 | originPoiId | string | 否 | 是 | 起点的POI ID。  POI ID和经纬度都入参时，POI ID具有更高优先级。 |
 | destinationPosition | [mapCommon.LatLng](map-common.md#latlng) | 否 | 否 | 终点的坐标。  取值范围：经度[-180, 180)，纬度[-85.2, 85.2]。对异常值进行处理，返回错误码401。 |
-| destinationName | string | 否 | 是 | 终点的名称，名称超出单行时，以省略号"..."截断显示。 |
+| destinationName | string | 否 | 是 | 终点的名称，默认值：'终点'，名称超出单行时，以省略号"..."截断显示。 |
 | destinationPoiId | string | 否 | 是 | 终点的POI ID。  POI ID和经纬度都入参时，POI ID具有更高优先级。 |
 | vehicleType | [VehicleType](map-petal-maps.md#vehicletype) | 否 | 是 | 出行方式。  默认值为[VehicleType](map-petal-maps.md#vehicletype).DRIVING，异常值按默认值处理。 |
 | coordinateType | [mapCommon.CoordinateType](map-common.md#coordinatetype) | 否 | 是 | 地图坐标系类型。默认值[mapCommon.CoordinateType](map-common.md#coordinatetype).GCJ02，异常值按照默认值处理。  **起始版本：** 6.0.1(21) |
@@ -455,11 +455,11 @@ let params: petalMaps.RoutePlanParams = {
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | destinationPosition | [mapCommon.LatLng](map-common.md#latlng) | 否 | 否 | 终点的坐标。  取值范围：经度[-180, 180)，纬度[-85.2, 85.2]。对异常值进行处理，返回错误码401。 |
-| destinationName | string | 否 | 是 | 终点名称，名称超出单行时，以省略号"..."截断显示。 |
+| destinationName | string | 否 | 是 | 终点名称，默认值：'终点'，名称超出单行时，以省略号"..."截断显示。 |
 | destinationPoiId | string | 否 | 是 | 终点的POI ID。  POI ID和经纬度都入参时，POI ID具有更高优先级。 |
 | vehicleType | [VehicleType](map-petal-maps.md#vehicletype) | 否 | 是 | 出行方式。  默认值为[VehicleType](map-petal-maps.md#vehicletype).DRIVING，异常值按默认值处理。 |
 | originPosition | [mapCommon.LatLng](map-common.md#latlng) | 否 | 是 | 起点的坐标。默认值为用户当前坐标。  取值范围：经度[-180, 180)，纬度[-85.2, 85.2]。对异常值进行处理，返回错误码401。  **起始版本：** 6.0.1(21) |
-| originName | string | 否 | 是 | 起点的名称，名称超出单行时，以省略号"..."截断显示。  **起始版本：** 6.0.1(21) |
+| originName | string | 否 | 是 | 起点的名称，默认值：'起始点'，名称超出单行时，以省略号"..."截断显示。  **起始版本：** 6.0.1(21) |
 | originPoiId | string | 否 | 是 | 起点的POI ID。  POI ID和经纬度都入参时，POI ID具有更高优先级。  **起始版本：** 6.0.1(21) |
 | coordinateType | [mapCommon.CoordinateType](map-common.md#coordinatetype) | 否 | 是 | 地图坐标系类型。默认值[mapCommon.CoordinateType](map-common.md#coordinatetype).GCJ02，异常值按照默认值处理。  **起始版本：** 6.0.1(21) |
 
@@ -489,7 +489,7 @@ let params: petalMaps.NaviParams = {
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | scenarios | string | 否 | 否 | 场景描述。  **说明：**  目前场景仅支持'WATCH'、'PHONE'、'TABLET'、'PC'、'VOICE'，且可适配大写及小写字符串。  WATCH：打开手表离线地图管理页，管理手表离线地图。  PHONE：打开地图资源管理页，管理设备本地离线地图。  TABLET：打开地图资源管理页，管理设备本地离线地图。  PC：打开地图资源管理页，管理设备本地离线地图。  VOICE：打开导航语音页，管理设备本地离线导航语音。 |
-| recommendedRegionIds | string[] | 否 | 是 | 推荐下载离线地图的地区集合，最大长度为20，异常值返回401。 |
+| recommendedRegionIds | string[] | 否 | 是 | 推荐下载离线地图的地区集合，默认值：[]，最大长度为20，异常值返回401。 |
 
 **示例：**
 
@@ -533,10 +533,10 @@ let params: petalMaps.OfflineDataParams = {
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | destinationPosition | [mapCommon.LatLng](map-common.md#latlng) | 否 | 否 | 终点的坐标。  取值范围：经度[-180, 180)，纬度[-85.2, 85.2]。对异常值进行处理，返回错误码401。 |
-| destinationName | string | 否 | 是 | 终点名称，名称超出单行时，以省略号"..."截断显示。 |
+| destinationName | string | 否 | 是 | 终点名称，默认值：'终点'，名称超出单行时，以省略号"..."截断显示。 |
 | destinationPoiId | string | 否 | 是 | 终点的POI ID。  POI ID和经纬度都入参时，POI ID具有更高优先级。 |
 | originPosition | [mapCommon.LatLng](map-common.md#latlng) | 否 | 是 | 起点的坐标。默认值为用户当前坐标。  取值范围：经度[-180, 180)，纬度[-85.2, 85.2]。对异常值进行处理，返回错误码401。 |
-| originName | string | 否 | 是 | 起点的名称，名称超出单行时，以省略号"..."截断显示。 |
+| originName | string | 否 | 是 | 起点的名称，默认值：'起始点'，名称超出单行时，以省略号"..."截断显示。 |
 | originPoiId | string | 否 | 是 | 起点的POI ID。  POI ID和经纬度都入参时，POI ID具有更高优先级。 |
 | coordinateType | [mapCommon.CoordinateType](map-common.md#coordinatetype) | 否 | 是 | 地图坐标系类型。默认值[mapCommon.CoordinateType](map-common.md#coordinatetype).GCJ02，异常值按照默认值处理。 |
 

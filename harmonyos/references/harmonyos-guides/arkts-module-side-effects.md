@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-module-
 title: 模块加载副作用及优化
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS运行时 > ArkTS模块化 > 模块加载副作用及优化
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:06:20+08:00
-doc_updated_at: 2026-09-24
+scraped_at: 2026-11-12T09:51:05+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:45aacbe3af95ec9db2ab12e154614a1080259ce23a96a68714b2005f4f1304d1
 ---
 

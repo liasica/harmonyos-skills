@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-use-anima
 title: 使用动画开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 使用动画 > 使用动画开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:20+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:601a2ce4661f3eeda3dd608b1ee69844be1612215834df2125be9cc00890bcbb
+scraped_at: 2026-11-12T09:51:18+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f65d4c8b968792367dbfa25a21e91327ce7b3b6c27bd0c702f19eb5cd6b92890
 ---
 
 本篇中的所有示例仅提供核心接口的调用方法，完整的示例工程请参考[AnimationNDK](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/ArkUISample/AnimationNDK)。
@@ -120,7 +120,7 @@ content_hash: sha256:601a2ce4661f3eeda3dd608b1ee69844be1612215834df2125be9cc0089
    animateApi->animateTo(context, option, update, completeCallback);
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/euDKinw_TxKng7-FhPH1oA/zh-cn_image_0000002809009981.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Dc7YX5tQRDeo8CV5n2YvzA/zh-cn_image_0000002815398777.gif)
 
 ## 组件出现/消失转场
 
@@ -258,7 +258,7 @@ content_hash: sha256:601a2ce4661f3eeda3dd608b1ee69844be1612215834df2125be9cc0089
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/JVp0_maQTeeSEzVIdsVbmQ/zh-cn_image_0000002809049897.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/ovDoDhBPSsi6GI2s01iY7g/zh-cn_image_0000002786519202.gif)
 
 ## 一镜到底转场
 
@@ -406,7 +406,7 @@ content_hash: sha256:601a2ce4661f3eeda3dd608b1ee69844be1612215834df2125be9cc0089
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/CWOFJjtwSdaiCkXix8qfGQ/zh-cn_image_0000002779850332.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/SG2ulrSqRR-BvNBeGeLecg/zh-cn_image_0000002786359274.gif)
 
 ## 使用关键帧动画
 
@@ -521,7 +521,7 @@ column->AddChild(textNode);
 column->AddChild(button);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/zwj9rSsoRGuWXi0wvk_Jlw/zh-cn_image_0000002779690364.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/8mNNYIalQtq3mzdClcwbAQ/zh-cn_image_0000002815558695.gif)
 
 ## 使用帧动画
 
@@ -623,9 +623,9 @@ std::shared_ptr<ArkUIBaseNode> CreateAnimator()
     createButton->RegisterNodeEventReceiver(onTouch);
     createButton->SetButtonLabel("create");
     // 创建容器，用于存放Button按键
-    auto buttoColumn = std::make_shared<ArkUIColumnNode>();
-    buttoColumn->SetPadding(NUM_30, false); // 设置布局格式，调整组件内间距，NUM_30 = 30
-    buttoColumn->SetWidth(NUM_300); // NUM_300 = 300
+    auto buttonColumn = std::make_shared<ArkUIColumnNode>();
+    buttonColumn->SetPadding(NUM_30, false); // 设置布局格式，调整组件内间距，NUM_30 = 30
+    buttonColumn->SetWidth(NUM_300); // NUM_300 = 300
     // 创建容器，用于存放playButton按键
     auto playButtonColumn = std::make_shared<ArkUIColumnNode>();
     playButtonColumn->SetPadding(NUM_10, false); // 设置布局格式，调整组件内间距，NUM_10 = 10
@@ -724,19 +724,19 @@ std::shared_ptr<ArkUIBaseNode> CreateAnimator()
     column->AddChild(g_animator_text);
     column->AddChild(textNode);
     column->AddChild(button);
-    buttoColumn->AddChild(createButton);
+    buttonColumn->AddChild(createButton);
     playButtonColumn->AddChild(playButton);
-    buttoColumn->AddChild(playButtonColumn);
-    buttoColumn->AddChild(finishButton);
+    buttonColumn->AddChild(playButtonColumn);
+    buttonColumn->AddChild(finishButton);
     resetButtonColumn->AddChild(resetButton);
-    buttoColumn->AddChild(resetButtonColumn);
-    buttoColumn->AddChild(pauseButton);
+    buttonColumn->AddChild(resetButtonColumn);
+    buttonColumn->AddChild(pauseButton);
     cancelButtonColumn->AddChild(cancelButton);
-    buttoColumn->AddChild(cancelButtonColumn);
-    buttoColumn->AddChild(reverseButton);
-    column->AddChild(buttoColumn);
+    buttonColumn->AddChild(cancelButtonColumn);
+    buttonColumn->AddChild(reverseButton);
+    column->AddChild(buttonColumn);
     return column;
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/KV_nPBZDSKCg5xBZo9y5oA/zh-cn_image_0000002809009983.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/IZyD_TYMTPyra864OWQRPA/zh-cn_image_0000002815398779.gif)

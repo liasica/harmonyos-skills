@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: DLP服务错误码
 breadcrumb: API参考 > 系统 > 安全 > Data Protection Kit（数据保护服务） > 错误码 > DLP服务错误码
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:49+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:80f8a85b79c2968e1c2c0b74549efc8469269777508d563c7fd2503fc8ce0eda
+scraped_at: 2026-11-12T09:55:22+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:6f35db1eef8aa6bb53360925b61ddc06d4aa7f4cfdee87ecee7e3daa5be47927
 ---
 
 **说明** 
@@ -457,3 +457,25 @@ The specified userId belongs to a personal space user and cannot be managed.
 **处理步骤**
 
 请确保传入的用户ID不属于个人空间用户。
+
+## 19100025 文件无效
+
+**错误信息**
+
+The file is invalid.
+
+**错误描述**
+
+传入的文件无效，可能是路径不存在，或进程对文件无读取权限导致无法访问。
+
+**可能原因**
+
+1. 文件路径不存在或拼写错误。
+2. 进程对目标文件无读取权限。可能原因包括：进程身份被拒绝访问、文件被其他进程占用等。
+
+**处理步骤**
+
+请检查以下内容：
+
+1. 确认文件路径存在且拼写正确。
+2. 确认进程对该文件具有读取权限，且文件未被其他进程占用。

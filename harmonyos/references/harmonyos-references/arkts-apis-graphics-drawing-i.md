@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interfaces (其他)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Interfaces (其他)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:42+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:7ac59127fbe6b62aa048815b07ee0740aba8f7f475f00a15a72e7a0dc2f79052
+scraped_at: 2026-11-12T09:56:57+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d2a4339ee419ce5297b128190d8a43394998d7136ec741611cba102119fbdb4b
 ---
 
 提供图形绘制相关的其他接口。
@@ -67,3 +67,28 @@ content_hash: sha256:7ac59127fbe6b62aa048815b07ee0740aba8f7f475f00a15a72e7a0dc2f
 | --- | --- | --- | --- | --- |
 | name | string | 否 | 否 | 字体特征的名称。通常为4个ASCII字符组成的标签（如liga、frac、case等），需对应的ttf文件支持才能生效。建议通过字体查看工具或查阅字体文档，确定有效名称。 |
 | value | number | 否 | 否 | 字体特征的数值，浮点数。需要对应的ttf文件支持才能生效。建议通过字体查看工具或查阅字体文档，确定具体的有效取值范围。 |
+
+## RecordCmd
+
+描述一组已录制的绘制指令。该对象为不可变对象，由[RecordCmdUtils.finishRecording](arkts-apis-graphics-drawing-recordcmdutils.md#finishrecording)创建，可传递给[Canvas.drawRecordCmd](arkts-apis-graphics-drawing-canvas.md#drawrecordcmd)进行指令回放，从而复现已录制的绘制操作。
+
+**系统能力：** SystemCapability.Graphics.Drawing
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**起始版本：** 26.0.1
+
+## TypefaceFallbackInfo
+
+定义字体回退信息的结构体，表示一组使用相同回退字体的字形片段。
+
+**系统能力：** SystemCapability.Graphics.Drawing
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**起始版本：** 26.0.1
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| glyphIds | Array<number> | 否 | 否 | 该字形片段的字形ID数组。 |
+| typeface | [Typeface](arkts-apis-graphics-drawing-typeface.md) | 否 | 否 | 该字形片段匹配到的字体对象。 |

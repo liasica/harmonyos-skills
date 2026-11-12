@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_type.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_type.h
 category: harmonyos-references
-scraped_at: 2026-09-25T07:10:40+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:07f7a5d1958f196f3eb25e57e43aa000c331a29b749c2f7acd1bed72b6429207
+scraped_at: 2026-11-12T09:54:45+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:9dd209861435ba7089d91a2ca81f4c05106c918389b9d13499f1ded7132ed12e
 ---
 
 ## 概述
@@ -34,8 +34,6 @@ content_hash: sha256:07f7a5d1958f196f3eb25e57e43aa000c331a29b749c2f7acd1bed72b64
 | [ArkUI\_NativeDialog](capi-arkui-nativemodule-arkui-nativedialog.md) | - | 提供ArkUI在Native侧的自定义弹窗控制器对象定义。 |
 | [ArkUI\_NativeDialog\*](capi-arkui-nativemodule-arkui-nativedialog8h.md) | ArkUI\_NativeDialogHandle | 定义ArkUI在Native侧的自定义弹窗控制器对象指针。 |
 | [ArkUI\_GestureCollectInterceptInfo](capi-arkui-nativemodule-arkui-gesturecollectinterceptinfo.md) | ArkUI\_GestureCollectInterceptInfo | 定义手势收集拦截信息。 |
-| [ArkUI\_ListItemSwipeActionItem](capi-arkui-nativemodule-arkui-listitemswipeactionitem.md) | ArkUI\_ListItemSwipeActionItem | 定义ListItemSwipeActionOption方法内Item的配置信息。 |
-| [ArkUI\_ListItemSwipeActionOption](capi-arkui-nativemodule-arkui-listitemswipeactionoption.md) | ArkUI\_ListItemSwipeActionOption | 定义ListItemSwipeActionOption方法的配置信息。 |
 | [ArkUI\_CustomProperty](capi-arkui-nativemodule-arkui-customproperty.md) | ArkUI\_CustomProperty | 定义自定义属性的ArkUI\_CustomProperty结构体信息，用于表示组件的自定义属性。通过相关接口，可以为ArkUI组件添加、移除、获取自定义属性，并获取自定义属性的字符串值。 |
 | [ArkUI\_HostWindowInfo](capi-arkui-nativemodule-arkui-hostwindowinfo.md) | ArkUI\_HostWindowInfo | 定义窗口属性的HostWindowInfo类信息。 |
 | [ArkUI\_ActiveChildrenInfo](capi-arkui-nativemodule-arkui-activechildreninfo.md) | ArkUI\_ActiveChildrenInfo | 定义ArkUI\_ActiveChildrenInfo结构体，用于保存内部活跃状态为true的FrameNode子节点信息，支持查询子节点数量和按下标获取子节点。该结构体实例由OH\_ArkUI\_NodeUtils\_GetActiveChildrenInfo生成，使用完毕后必须调用OH\_ArkUI\_ActiveChildrenInfo\_Destroy销毁。 |
@@ -62,9 +60,6 @@ content_hash: sha256:07f7a5d1958f196f3eb25e57e43aa000c331a29b749c2f7acd1bed72b64
 | [ArkUI\_ColorMode](capi-native-type-h.md#arkui_colormode) | ArkUI\_ColorMode | 定义深浅色模式。 |
 | [ArkUI\_SystemColorMode](capi-native-type-h.md#arkui_systemcolormode) | ArkUI\_SystemColorMode | 定义系统深浅色模式。 |
 | [ArkUI\_LengthMetricUnit](capi-native-type-h.md#arkui_lengthmetricunit) | ArkUI\_LengthMetricUnit | 定义组件的单位模式。 |
-| [ArkUI\_ListItemSwipeActionState](capi-native-type-h.md#arkui_listitemswipeactionstate) | ArkUI\_ListItemSwipeActionState | 定义[Listitem](ts-container-listitem.md#listitem10)组件[swipeAction](ts-container-listitem.md#swipeaction9)方法的显隐模式。 |
-| [ArkUI\_ListItemSwipeEdgeEffect](capi-native-type-h.md#arkui_listitemswipeedgeeffect) | ArkUI\_ListItemSwipeEdgeEffect | 定义[Listitem](ts-container-listitem.md#listitem10)组件[swipeAction](ts-container-listitem.md#swipeaction9)方法的滚动模式。 |
-| [ArkUI\_ListItemSwipeActionDirection](capi-native-type-h.md#arkui_listitemswipeactiondirection) | ArkUI\_ListItemSwipeActionDirection | ListItem划出菜单的展开方向。 |
 | [ArkUI\_SafeAreaType](capi-native-type-h.md#arkui_safeareatype) | ArkUI\_SafeAreaType | 定义扩展安全区域的枚举值。 |
 | [ArkUI\_KeyboardAvoidMode](capi-native-type-h.md#arkui_keyboardavoidmode) | ArkUI\_KeyboardAvoidMode | 键盘避让模式。 |
 | [ArkUI\_HoverModeAreaType](capi-native-type-h.md#arkui_hovermodeareatype) | ArkUI\_HoverModeAreaType | 悬停态显示区域。 |
@@ -76,6 +71,7 @@ content_hash: sha256:07f7a5d1958f196f3eb25e57e43aa000c331a29b749c2f7acd1bed72b64
 | [ArkUI\_MenuPolicy](capi-native-type-h.md#arkui_menupolicy) | ArkUI\_MenuPolicy | 菜单弹出策略。 |
 | [ArkUI\_RenderStrategy](capi-native-type-h.md#arkui_renderstrategy) | ArkUI\_RenderStrategy | 定义组件绘制圆角的模式。 |
 | [OH\_ArkUI\_CrossLanguageOperatingStatus](capi-native-type-h.md#oh_arkui_crosslanguageoperatingstatus) | OH\_ArkUI\_CrossLanguageOperatingStatus | 跨语言配置项的节点树操作状态。 |
+| [OH\_ArkUI\_ArcDirection](capi-native-type-h.md#oh_arkui_arcdirection) | OH\_ArkUI\_ArcDirection | 弧形方向类型枚举。 |
 | [OH\_ArkUI\_NodeMountPolicy](capi-native-type-h.md#oh_arkui_nodemountpolicy) | OH\_ArkUI\_NodeMountPolicy | 子节点挂载策略类型枚举。 |
 | [ArkUI\_CrownSensitivity](capi-native-type-h.md#arkui_crownsensitivity) | ArkUI\_CrownSensitivity | 定义表冠灵敏度枚举值。 |
 
@@ -104,29 +100,6 @@ content_hash: sha256:07f7a5d1958f196f3eb25e57e43aa000c331a29b749c2f7acd1bed72b64
 | [ArkUI\_FontWeight OH\_ArkUI\_SwiperDigitIndicator\_GetFontWeight(ArkUI\_SwiperDigitIndicator\* indicator)](capi-native-type-h.md#oh_arkui_swiperdigitindicator_getfontweight) | - | 获取Swiper组件数字导航指示器字体粗细属性。 |
 | [void OH\_ArkUI\_SwiperDigitIndicator\_SetSelectedFontWeight(ArkUI\_SwiperDigitIndicator \*indicator, ArkUI\_FontWeight selectedFontWeight)](capi-native-type-h.md#oh_arkui_swiperdigitindicator_setselectedfontweight) | - | 设置被选中Swiper组件数字导航指示器字体粗细属性。 |
 | [ArkUI\_FontWeight OH\_ArkUI\_SwiperDigitIndicator\_GetSelectedFontWeight(ArkUI\_SwiperDigitIndicator\* indicator)](capi-native-type-h.md#oh_arkui_swiperdigitindicator_getselectedfontweight) | - | 获取被选中Swiper组件数字导航指示器字体粗细属性。 |
-| [ArkUI\_ListItemSwipeActionItem\* OH\_ArkUI\_ListItemSwipeActionItem\_Create()](capi-native-type-h.md#oh_arkui_listitemswipeactionitem_create) | - | 创建ListItemSwipeActionItem接口设置的配置项。 |
-| [void OH\_ArkUI\_ListItemSwipeActionItem\_Dispose(ArkUI\_ListItemSwipeActionItem\* item)](capi-native-type-h.md#oh_arkui_listitemswipeactionitem_dispose) | - | 销毁ListItemSwipeActionItem实例。 |
-| [void OH\_ArkUI\_ListItemSwipeActionItem\_SetContent(ArkUI\_ListItemSwipeActionItem\* item, ArkUI\_NodeHandle node)](capi-native-type-h.md#oh_arkui_listitemswipeactionitem_setcontent) | - | 设置ListItemSwipeActionItem的布局内容。 |
-| [void OH\_ArkUI\_ListItemSwipeActionItem\_SetActionAreaDistance(ArkUI\_ListItemSwipeActionItem\* item, float distance)](capi-native-type-h.md#oh_arkui_listitemswipeactionitem_setactionareadistance) | - | 设置组件长距离滑动删除距离阈值。 |
-| [float OH\_ArkUI\_ListItemSwipeActionItem\_GetActionAreaDistance(ArkUI\_ListItemSwipeActionItem\* item)](capi-native-type-h.md#oh_arkui_listitemswipeactionitem_getactionareadistance) | - | 获取组件长距离滑动删除距离阈值。 |
-| [void OH\_ArkUI\_ListItemSwipeActionItem\_SetOnEnterActionArea(ArkUI\_ListItemSwipeActionItem\* item, void (\*callback)())](capi-native-type-h.md#oh_arkui_listitemswipeactionitem_setonenteractionarea) | - | 设置滑动条目进入删除区域时调用的事件。 |
-| [void OH\_ArkUI\_ListItemSwipeActionItem\_SetOnEnterActionAreaWithUserData (ArkUI\_ListItemSwipeActionItem\* item,void\* userData, void (\*callback)(void\* userData))](capi-native-type-h.md#oh_arkui_listitemswipeactionitem_setonenteractionareawithuserdata) | - | 设置滑动条目进入删除区域时调用的事件，回调事件会传入用户自定义数据。 |
-| [void OH\_ArkUI\_ListItemSwipeActionItem\_SetOnAction(ArkUI\_ListItemSwipeActionItem\* item, void (\*callback)())](capi-native-type-h.md#oh_arkui_listitemswipeactionitem_setonaction) | - | 设置组件进入长距删除区后删除ListItem时调用的事件。 |
-| [void OH\_ArkUI\_ListItemSwipeActionItem\_SetOnActionWithUserData(ArkUI\_ListItemSwipeActionItem\* item,void\* userData, void (\*callback)(void\* userData))](capi-native-type-h.md#oh_arkui_listitemswipeactionitem_setonactionwithuserdata) | - | 设置组件进入长距删除区后删除ListItem时调用的事件，回调事件会传入用户自定义数据。 |
-| [void OH\_ArkUI\_ListItemSwipeActionItem\_SetOnExitActionArea(ArkUI\_ListItemSwipeActionItem\* item, void (\*callback)())](capi-native-type-h.md#oh_arkui_listitemswipeactionitem_setonexitactionarea) | - | 设置滑动条目退出删除区域时调用的事件。 |
-| [void OH\_ArkUI\_ListItemSwipeActionItem\_SetOnExitActionAreaWithUserData (ArkUI\_ListItemSwipeActionItem\* item,void\* userData, void (\*callback)(void\* userData))](capi-native-type-h.md#oh_arkui_listitemswipeactionitem_setonexitactionareawithuserdata) | - | 设置滑动条目退出删除区域时调用的事件，回调事件会传入用户自定义数据。 |
-| [void OH\_ArkUI\_ListItemSwipeActionItem\_SetOnStateChange (ArkUI\_ListItemSwipeActionItem\* item,void (\*callback)(ArkUI\_ListItemSwipeActionState swipeActionState))](capi-native-type-h.md#oh_arkui_listitemswipeactionitem_setonstatechange) | - | 设置列表项滑动状态变化时候触发的事件。 |
-| [void OH\_ArkUI\_ListItemSwipeActionItem\_SetOnStateChangeWithUserData (ArkUI\_ListItemSwipeActionItem\* item,void\* userData, void (\*callback)(ArkUI\_ListItemSwipeActionState swipeActionState, void\* userData))](capi-native-type-h.md#oh_arkui_listitemswipeactionitem_setonstatechangewithuserdata) | - | 设置列表项滑动状态变化时候触发的事件，回调事件会传入用户自定义数据。 |
-| [ArkUI\_ListItemSwipeActionOption\* OH\_ArkUI\_ListItemSwipeActionOption\_Create()](capi-native-type-h.md#oh_arkui_listitemswipeactionoption_create) | - | 创建ListItemSwipeActionOption接口设置的配置项。 |
-| [void OH\_ArkUI\_ListItemSwipeActionOption\_Dispose(ArkUI\_ListItemSwipeActionOption\* option)](capi-native-type-h.md#oh_arkui_listitemswipeactionoption_dispose) | - | 销毁ListItemSwipeActionOption实例。 |
-| [void OH\_ArkUI\_ListItemSwipeActionOption\_SetStart(ArkUI\_ListItemSwipeActionOption\* option, ArkUI\_ListItemSwipeActionItem\* item)](capi-native-type-h.md#oh_arkui_listitemswipeactionoption_setstart) | - | 设置ListItemSwipeActionItem的左侧（垂直布局）或上方（横向布局）布局内容。 |
-| [void OH\_ArkUI\_ListItemSwipeActionOption\_SetEnd(ArkUI\_ListItemSwipeActionOption\* option, ArkUI\_ListItemSwipeActionItem\* item)](capi-native-type-h.md#oh_arkui_listitemswipeactionoption_setend) | - | 设置ListItemSwipeActionItem的右侧（垂直布局）或下方（横向布局）布局内容。 |
-| [void OH\_ArkUI\_ListItemSwipeActionOption\_SetEdgeEffect(ArkUI\_ListItemSwipeActionOption\* option, ArkUI\_ListItemSwipeEdgeEffect edgeEffect)](capi-native-type-h.md#oh_arkui_listitemswipeactionoption_setedgeeffect) | - | 设置边缘滑动效果。 |
-| [int32\_t OH\_ArkUI\_ListItemSwipeActionOption\_GetEdgeEffect(ArkUI\_ListItemSwipeActionOption\* option)](capi-native-type-h.md#oh_arkui_listitemswipeactionoption_getedgeeffect) | - | 获取边缘滑动效果。 |
-| [void OH\_ArkUI\_ListItemSwipeActionOption\_SetOnOffsetChange(ArkUI\_ListItemSwipeActionOption\* option, void (\*callback)(float offset))](capi-native-type-h.md#oh_arkui_listitemswipeactionoption_setonoffsetchange) | - | 滑动操作偏移量更改时调用的事件。 |
-| [void OH\_ArkUI\_ListItemSwipeActionOption\_SetOnOffsetChangeWithUserData (ArkUI\_ListItemSwipeActionOption\* option, void\* userData, void (\*callback)(float offset, void\* userData))](capi-native-type-h.md#oh_arkui_listitemswipeactionoption_setonoffsetchangewithuserdata) | - | 滑动操作偏移量更改时调用的事件，回调事件会传入用户自定义数据。 |
-| [int32\_t OH\_ArkUI\_ListItemSwipeAction\_Expand(ArkUI\_NodeHandle node, ArkUI\_ListItemSwipeActionDirection direction)](capi-native-type-h.md#oh_arkui_listitemswipeaction_expand) | - | 展开指定ListItem的划出菜单。 |
-| [int32\_t OH\_ArkUI\_ListItemSwipeAction\_Collapse(ArkUI\_NodeHandle node)](capi-native-type-h.md#oh_arkui_listitemswipeaction_collapse) | - | 收起指定ListItem的划出菜单。 |
 | [ArkUI\_AccessibilityState\* OH\_ArkUI\_AccessibilityState\_Create(void)](capi-native-type-h.md#oh_arkui_accessibilitystate_create) | - | 创建无障碍状态。 |
 | [void OH\_ArkUI\_AccessibilityState\_Dispose(ArkUI\_AccessibilityState\* state)](capi-native-type-h.md#oh_arkui_accessibilitystate_dispose) | - | 销毁无障碍状态指针。 |
 | [void OH\_ArkUI\_AccessibilityState\_SetDisabled(ArkUI\_AccessibilityState\* state, int32\_t isDisabled)](capi-native-type-h.md#oh_arkui_accessibilitystate_setdisabled) | - | 设置无障碍状态是否禁用。 |
@@ -493,58 +466,6 @@ enum ArkUI_LengthMetricUnit
 | ARKUI\_LENGTH\_METRIC\_UNIT\_VP = 1 | 单位为vp。 |
 | ARKUI\_LENGTH\_METRIC\_UNIT\_FP = 2 | 单位为fp。 |
 
-### ArkUI\_ListItemSwipeActionState
-
-```c
-enum ArkUI_ListItemSwipeActionState
-```
-
-**描述：**
-
-定义[Listitem](ts-container-listitem.md#listitem10)组件[SwipeAction](ts-container-listitem.md#swipeaction9)方法的显隐模式，默认值为ARKUI\_LIST\_ITEM\_SWIPE\_ACTION\_STATE\_COLLAPSED。
-
-**起始版本：** 12
-
-| 枚举项 | 描述 |
-| --- | --- |
-| ARKUI\_LIST\_ITEM\_SWIPE\_ACTION\_STATE\_COLLAPSED = 0 | 收起状态，当ListItem与主轴方向相反滑动时操作项处于隐藏状态。 |
-| ARKUI\_LIST\_ITEM\_SWIPE\_ACTION\_STATE\_EXPANDED = 1 | 展开状态，当ListItem与主轴方向相反滑动时操作项处于显示状态。 |
-| ARKUI\_LIST\_ITEM\_SWIPE\_ACTION\_STATE\_ACTIONING = 2 | 长距离状态，当ListItem进入长距删除区后删除ListItem的状态。 |
-
-### ArkUI\_ListItemSwipeEdgeEffect
-
-```c
-enum ArkUI_ListItemSwipeEdgeEffect
-```
-
-**描述：**
-
-定义Listitem组件[swipeAction](ts-container-listitem.md#swipeaction9)方法的滚动模式，默认值为ARKUI\_LIST\_ITEM\_SWIPE\_EDGE\_EFFECT\_SPRING。
-
-**起始版本：** 12
-
-| 枚举项 | 描述 |
-| --- | --- |
-| ARKUI\_LIST\_ITEM\_SWIPE\_EDGE\_EFFECT\_SPRING = 0 | ListItem划动距离超过划出组件大小后可以继续划动。 |
-| ARKUI\_LIST\_ITEM\_SWIPE\_EDGE\_EFFECT\_NONE = 1 | ListItem划动距离不能超过划出组件大小。 |
-
-### ArkUI\_ListItemSwipeActionDirection
-
-```c
-enum ArkUI_ListItemSwipeActionDirection
-```
-
-**描述：**
-
-ListItem划出菜单的展开方向。
-
-**起始版本：** 21
-
-| 枚举项 | 描述 |
-| --- | --- |
-| ARKUI\_LIST\_ITEM\_SWIPE\_ACTION\_DIRECTION\_START = 0 | 当列表方向是垂直方向时，LTR模式下表示ListItem的左边，RTL模式下表示ListItem的右边。当列表是水平方向时，表示ListItem的上边。 |
-| ARKUI\_LIST\_ITEM\_SWIPE\_ACTION\_DIRECTION\_END = 1 | 当列表方向是垂直方向时，LTR模式下表示ListItem的右边，RTL模式下表示ListItem的左边。当列表是水平方向时，表示ListItem的下边。 |
-
 ### ArkUI\_CrownSensitivity
 
 ```c
@@ -778,6 +699,24 @@ enum OH_ArkUI_NodeMountPolicy
 | --- | --- |
 | OH\_ARKUI\_NODE\_MOUNT\_POLICY\_SINGLE\_IF\_RENDER\_NODE = 0 | 如果需要将[RenderNode](js-apis-arkui-rendernode.md)作为子节点挂载，此RenderNode必须是唯一子节点。 |
 | OH\_ARKUI\_NODE\_MOUNT\_POLICY\_MIXED = 1 | 允许同时挂载多个[typeNode](js-apis-arkui-framenode.md#typenode12)与RenderNode。 |
+
+### OH\_ArkUI\_ArcDirection
+
+```c
+enum OH_ArkUI_ArcDirection
+```
+
+**描述**
+
+弧形方向类型枚举。
+
+**起始版本：** 26.0.1
+
+| 枚举项 | 描述 |
+| --- | --- |
+| OH\_ARKUI\_ARCDIRECTION\_THREE\_CLOCK\_DIRECTION = 0 | 3点钟方向。 |
+| OH\_ARKUI\_ARCDIRECTION\_SIX\_CLOCK\_DIRECTION = 1 | 6点钟方向。 |
+| OH\_ARKUI\_ARCDIRECTION\_NINE\_CLOCK\_DIRECTION = 2 | 9点钟方向。 |
 
 ## 函数说明
 
@@ -1238,469 +1177,6 @@ ArkUI_FontWeight OH_ArkUI_SwiperDigitIndicator_GetSelectedFontWeight(ArkUI_Swipe
 | 类型 | 说明 |
 | --- | --- |
 | [ArkUI\_FontWeight](capi-text-h.md#arkui_fontweight) | 字体粗细样式[ArkUI\_FontWeight](capi-text-h.md#arkui_fontweight)。 |
-
-### OH\_ArkUI\_ListItemSwipeActionItem\_Create()
-
-```c
-ArkUI_ListItemSwipeActionItem* OH_ArkUI_ListItemSwipeActionItem_Create()
-```
-
-**描述：**
-
-创建ListItemSwipeActionItem接口设置的配置项。
-
-**起始版本：** 12
-
-**返回：**
-
-| 类型 | 说明 |
-| --- | --- |
-| [ArkUI\_ListItemSwipeActionItem](capi-arkui-nativemodule-arkui-listitemswipeactionitem.md)\* | ListItemSwipeActionItem配置项实例。 |
-
-### OH\_ArkUI\_ListItemSwipeActionItem\_Dispose()
-
-```c
-void OH_ArkUI_ListItemSwipeActionItem_Dispose(ArkUI_ListItemSwipeActionItem* item)
-```
-
-**描述：**
-
-销毁ListItemSwipeActionItem实例。
-
-**起始版本：** 12
-
-**参数：**
-
-| 参数项 | 描述 |
-| --- | --- |
-| [ArkUI\_ListItemSwipeActionItem](capi-arkui-nativemodule-arkui-listitemswipeactionitem.md)\* item | 要销毁的ListItemSwipeActionItem实例。 |
-
-### OH\_ArkUI\_ListItemSwipeActionItem\_SetContent()
-
-```c
-void OH_ArkUI_ListItemSwipeActionItem_SetContent(ArkUI_ListItemSwipeActionItem* item, ArkUI_NodeHandle node)
-```
-
-**描述：**
-
-设置ListItemSwipeActionItem的布局内容。
-
-**起始版本：** 12
-
-**参数：**
-
-| 参数项 | 描述 |
-| --- | --- |
-| [ArkUI\_ListItemSwipeActionItem](capi-arkui-nativemodule-arkui-listitemswipeactionitem.md)\* item | ListItemSwipeActionItem实例。 |
-| [ArkUI\_NodeHandle](capi-arkui-nativemodule-arkui-node8h.md) node | 布局信息。 |
-
-### OH\_ArkUI\_ListItemSwipeActionItem\_SetActionAreaDistance()
-
-```c
-void OH_ArkUI_ListItemSwipeActionItem_SetActionAreaDistance(ArkUI_ListItemSwipeActionItem* item, float distance)
-```
-
-**描述：**
-
-设置组件长距离滑动删除距离阈值。
-
-**起始版本：** 12
-
-**参数：**
-
-| 参数项 | 描述 |
-| --- | --- |
-| [ArkUI\_ListItemSwipeActionItem](capi-arkui-nativemodule-arkui-listitemswipeactionitem.md)\* item | ListItemSwipeActionItem实例。 |
-| float distance | 组件长距离滑动删除距离阈值，单位vp。 |
-
-### OH\_ArkUI\_ListItemSwipeActionItem\_GetActionAreaDistance()
-
-```c
-float OH_ArkUI_ListItemSwipeActionItem_GetActionAreaDistance(ArkUI_ListItemSwipeActionItem* item)
-```
-
-**描述：**
-
-获取组件长距离滑动删除距离阈值。
-
-**起始版本：** 12
-
-**参数：**
-
-| 参数项 | 描述 |
-| --- | --- |
-| [ArkUI\_ListItemSwipeActionItem](capi-arkui-nativemodule-arkui-listitemswipeactionitem.md)\* item | ListItemSwipeActionItem实例。 |
-
-**返回：**
-
-| 类型 | 说明 |
-| --- | --- |
-| float | 组件长距离滑动删除距离阈值，单位vp，异常时返回值：0。 |
-
-### OH\_ArkUI\_ListItemSwipeActionItem\_SetOnEnterActionArea()
-
-```c
-void OH_ArkUI_ListItemSwipeActionItem_SetOnEnterActionArea(ArkUI_ListItemSwipeActionItem* item, void (*callback)())
-```
-
-**描述：**
-
-设置滑动条目进入删除区域时调用的事件。
-
-**起始版本：** 12
-
-**参数：**
-
-| 参数项 | 描述 |
-| --- | --- |
-| [ArkUI\_ListItemSwipeActionItem](capi-arkui-nativemodule-arkui-listitemswipeactionitem.md)\* item | ListItemSwipeActionItem实例。 |
-| void (\*callback)() | 回调事件。 |
-
-### OH\_ArkUI\_ListItemSwipeActionItem\_SetOnEnterActionAreaWithUserData()
-
-```c
-void OH_ArkUI_ListItemSwipeActionItem_SetOnEnterActionAreaWithUserData(ArkUI_ListItemSwipeActionItem* item,void* userData, void (*callback)(void* userData))
-```
-
-**描述：**
-
-设置滑动条目进入删除区域时调用的事件，回调事件会传入用户自定义数据。
-
-**起始版本：** 12
-
-**参数：**
-
-| 参数项 | 描述 |
-| --- | --- |
-| [ArkUI\_ListItemSwipeActionItem](capi-arkui-nativemodule-arkui-listitemswipeactionitem.md)\* item | ListItemSwipeActionItem实例。 |
-| void\* userData | 用户自定义数据。 |
-| void (\*callback)(void\* userData) | 回调事件。 |
-
-### OH\_ArkUI\_ListItemSwipeActionItem\_SetOnAction()
-
-```c
-void OH_ArkUI_ListItemSwipeActionItem_SetOnAction(ArkUI_ListItemSwipeActionItem* item, void (*callback)())
-```
-
-**描述：**
-
-设置组件进入长距删除区后删除[ListItem](ts-container-listitem.md)时调用的事件。
-
-**起始版本：** 12
-
-**参数：**
-
-| 参数项 | 描述 |
-| --- | --- |
-| [ArkUI\_ListItemSwipeActionItem](capi-arkui-nativemodule-arkui-listitemswipeactionitem.md)\* item | ListItemSwipeActionItem实例。 |
-| void (\*callback)() | 回调事件。 |
-
-### OH\_ArkUI\_ListItemSwipeActionItem\_SetOnActionWithUserData()
-
-```c
-void OH_ArkUI_ListItemSwipeActionItem_SetOnActionWithUserData(ArkUI_ListItemSwipeActionItem* item,void* userData, void (*callback)(void* userData))
-```
-
-**描述：**
-
-设置组件进入长距删除区后删除ListItem时调用的事件，回调事件会传入用户自定义数据。
-
-**起始版本：** 12
-
-**参数：**
-
-| 参数项 | 描述 |
-| --- | --- |
-| [ArkUI\_ListItemSwipeActionItem](capi-arkui-nativemodule-arkui-listitemswipeactionitem.md)\* item | ListItemSwipeActionItem实例。 |
-| void\* userData | 用户自定义数据。 |
-| void (\*callback)(void\* userData) | 回调事件。 |
-
-### OH\_ArkUI\_ListItemSwipeActionItem\_SetOnExitActionArea()
-
-```c
-void OH_ArkUI_ListItemSwipeActionItem_SetOnExitActionArea(ArkUI_ListItemSwipeActionItem* item, void (*callback)())
-```
-
-**描述：**
-
-设置滑动条目退出删除区域时调用的事件。
-
-**起始版本：** 12
-
-**参数：**
-
-| 参数项 | 描述 |
-| --- | --- |
-| [ArkUI\_ListItemSwipeActionItem](capi-arkui-nativemodule-arkui-listitemswipeactionitem.md)\* item | ListItemSwipeActionItem实例。 |
-| void (\*callback)() | 回调事件。 |
-
-### OH\_ArkUI\_ListItemSwipeActionItem\_SetOnExitActionAreaWithUserData()
-
-```c
-void OH_ArkUI_ListItemSwipeActionItem_SetOnExitActionAreaWithUserData(ArkUI_ListItemSwipeActionItem* item,void* userData, void (*callback)(void* userData))
-```
-
-**描述：**
-
-设置滑动条目退出删除区域时调用的事件，回调事件会传入用户自定义数据。
-
-**起始版本：** 12
-
-**参数：**
-
-| 参数项 | 描述 |
-| --- | --- |
-| [ArkUI\_ListItemSwipeActionItem](capi-arkui-nativemodule-arkui-listitemswipeactionitem.md)\* item | ListItemSwipeActionItem实例。 |
-| void\* userData | 用户自定义数据。 |
-| void (\*callback)(void\* userData) | 回调事件。 |
-
-### OH\_ArkUI\_ListItemSwipeActionItem\_SetOnStateChange()
-
-```c
-void OH_ArkUI_ListItemSwipeActionItem_SetOnStateChange(ArkUI_ListItemSwipeActionItem* item,void (*callback)(ArkUI_ListItemSwipeActionState swipeActionState))
-```
-
-**描述：**
-
-设置列表项滑动状态变化时候触发的事件。
-
-**起始版本：** 12
-
-**参数：**
-
-| 参数项 | 描述 |
-| --- | --- |
-| [ArkUI\_ListItemSwipeActionItem](capi-arkui-nativemodule-arkui-listitemswipeactionitem.md)\* item | ListItemSwipeActionItem实例。 |
-| void (\*callback)(ArkUI\_ListItemSwipeActionState swipeActionState) | 回调事件。传入参数为swipeActionState，表示列表项滑动状态。 |
-
-### OH\_ArkUI\_ListItemSwipeActionItem\_SetOnStateChangeWithUserData()
-
-```c
-void OH_ArkUI_ListItemSwipeActionItem_SetOnStateChangeWithUserData(ArkUI_ListItemSwipeActionItem* item,void* userData, void (*callback)(ArkUI_ListItemSwipeActionState swipeActionState, void* userData))
-```
-
-**描述：**
-
-设置列表项滑动状态变化时候触发的事件，回调事件会传入用户自定义数据。
-
-**起始版本：** 12
-
-**参数：**
-
-| 参数项 | 描述 |
-| --- | --- |
-| [ArkUI\_ListItemSwipeActionItem](capi-arkui-nativemodule-arkui-listitemswipeactionitem.md)\* item | ListItemSwipeActionItem实例。 |
-| void\* userData | 用户自定义数据。 |
-| callback | 回调事件。传入参数为swipeActionState，表示列表项滑动状态。 |
-
-### OH\_ArkUI\_ListItemSwipeActionOption\_Create()
-
-```c
-ArkUI_ListItemSwipeActionOption* OH_ArkUI_ListItemSwipeActionOption_Create()
-```
-
-**描述：**
-
-创建ListItemSwipeActionOption接口设置的配置项。
-
-**起始版本：** 12
-
-**返回：**
-
-| 类型 | 说明 |
-| --- | --- |
-| [ArkUI\_ListItemSwipeActionOption](capi-arkui-nativemodule-arkui-listitemswipeactionoption.md)\* | ListItemSwipeActionOption配置项实例。 |
-
-### OH\_ArkUI\_ListItemSwipeActionOption\_Dispose()
-
-```c
-void OH_ArkUI_ListItemSwipeActionOption_Dispose(ArkUI_ListItemSwipeActionOption* option)
-```
-
-**描述：**
-
-销毁ListItemSwipeActionOption实例。
-
-**起始版本：** 12
-
-**参数：**
-
-| 参数项 | 描述 |
-| --- | --- |
-| [ArkUI\_ListItemSwipeActionOption](capi-arkui-nativemodule-arkui-listitemswipeactionoption.md)\* option | 要销毁的ListItemSwipeActionOption实例。 |
-
-### OH\_ArkUI\_ListItemSwipeActionOption\_SetStart()
-
-```c
-void OH_ArkUI_ListItemSwipeActionOption_SetStart(ArkUI_ListItemSwipeActionOption* option, ArkUI_ListItemSwipeActionItem* item)
-```
-
-**描述：**
-
-设置ListItemSwipeActionItem的左侧（垂直布局）或上方（横向布局）布局内容。
-
-**起始版本：** 12
-
-**参数：**
-
-| 参数项 | 描述 |
-| --- | --- |
-| [ArkUI\_ListItemSwipeActionOption](capi-arkui-nativemodule-arkui-listitemswipeactionoption.md)\* option | ListItemSwipeActionOption实例。 |
-| [ArkUI\_ListItemSwipeActionItem](capi-arkui-nativemodule-arkui-listitemswipeactionitem.md)\* item | 布局信息。 |
-
-### OH\_ArkUI\_ListItemSwipeActionOption\_SetEnd()
-
-```c
-void OH_ArkUI_ListItemSwipeActionOption_SetEnd(ArkUI_ListItemSwipeActionOption* option,ArkUI_ListItemSwipeActionItem* item)
-```
-
-**描述：**
-
-设置ListItemSwipeActionItem的右侧（垂直布局）或下方（横向布局）布局内容。
-
-**起始版本：** 12
-
-**参数：**
-
-| 参数项 | 描述 |
-| --- | --- |
-| [ArkUI\_ListItemSwipeActionOption](capi-arkui-nativemodule-arkui-listitemswipeactionoption.md)\* option | ListItemSwipeActionOption实例。 |
-| [ArkUI\_ListItemSwipeActionItem](capi-arkui-nativemodule-arkui-listitemswipeactionitem.md)\* item | 布局信息。 |
-
-### OH\_ArkUI\_ListItemSwipeActionOption\_SetEdgeEffect()
-
-```c
-void OH_ArkUI_ListItemSwipeActionOption_SetEdgeEffect(ArkUI_ListItemSwipeActionOption* option,ArkUI_ListItemSwipeEdgeEffect edgeEffect)
-```
-
-**描述：**
-
-设置边缘滑动效果。
-
-**起始版本：** 12
-
-**参数：**
-
-| 参数项 | 描述 |
-| --- | --- |
-| [ArkUI\_ListItemSwipeActionOption](capi-arkui-nativemodule-arkui-listitemswipeactionoption.md)\* option | ListItemSwipeActionOption实例。 |
-| [ArkUI\_ListItemSwipeEdgeEffect](capi-native-type-h.md#arkui_listitemswipeedgeeffect) edgeEffect | 边缘滑动效果。 |
-
-### OH\_ArkUI\_ListItemSwipeActionOption\_GetEdgeEffect()
-
-```c
-int32_t OH_ArkUI_ListItemSwipeActionOption_GetEdgeEffect(ArkUI_ListItemSwipeActionOption* option)
-```
-
-**描述：**
-
-获取边缘滑动效果。
-
-**起始版本：** 12
-
-**参数：**
-
-| 参数项 | 描述 |
-| --- | --- |
-| [ArkUI\_ListItemSwipeActionOption](capi-arkui-nativemodule-arkui-listitemswipeactionoption.md)\* option | ListItemSwipeActionOption实例。 |
-
-**返回：**
-
-| 类型 | 说明 |
-| --- | --- |
-| int32\_t | 边缘滑动效果。默认返回值：[ARKUI\_LIST\_ITEM\_SWIPE\_EDGE\_EFFECT\_SPRING](capi-native-type-h.md#arkui_listitemswipeedgeeffect)。 |
-
-### OH\_ArkUI\_ListItemSwipeActionOption\_SetOnOffsetChange()
-
-```c
-void OH_ArkUI_ListItemSwipeActionOption_SetOnOffsetChange(ArkUI_ListItemSwipeActionOption* option,void (*callback)(float offset))
-```
-
-**描述：**
-
-滑动操作偏移量更改时调用的事件。
-
-**起始版本：** 12
-
-**参数：**
-
-| 参数项 | 描述 |
-| --- | --- |
-| [ArkUI\_ListItemSwipeActionOption](capi-arkui-nativemodule-arkui-listitemswipeactionoption.md)\* option | ListItemSwipeActionOption实例。 |
-| callback | 回调事件。offset 滑动偏移量，单位vp。 |
-
-### OH\_ArkUI\_ListItemSwipeActionOption\_SetOnOffsetChangeWithUserData()
-
-```c
-void OH_ArkUI_ListItemSwipeActionOption_SetOnOffsetChangeWithUserData(ArkUI_ListItemSwipeActionOption* option,void* userData, void (*callback)(float offset, void* userData))
-```
-
-**描述：**
-
-滑动操作偏移量更改时调用的事件，回调事件会传入用户自定义数据。
-
-**起始版本：** 12
-
-**参数：**
-
-| 参数项 | 描述 |
-| --- | --- |
-| [ArkUI\_ListItemSwipeActionOption](capi-arkui-nativemodule-arkui-listitemswipeactionoption.md)\* option | ListItemSwipeActionOption实例。 |
-| void\* userData | 用户自定义数据。 |
-| callback | 回调事件。offset 滑动偏移量，单位vp。 |
-
-### OH\_ArkUI\_ListItemSwipeAction\_Expand()
-
-```c
-int32_t OH_ArkUI_ListItemSwipeAction_Expand(ArkUI_NodeHandle node, ArkUI_ListItemSwipeActionDirection direction)
-```
-
-**描述：**
-
-展开指定ListItem的划出菜单。
-
-**起始版本：** 21
-
-**参数：**
-
-| 参数项 | 描述 |
-| --- | --- |
-| [ArkUI\_NodeHandle](capi-arkui-nativemodule-arkui-node8h.md) node | ListItem节点对象。 |
-| [ArkUI\_ListItemSwipeActionDirection](capi-native-type-h.md#arkui_listitemswipeactiondirection) direction | ListItem划出菜单的展开方向。 |
-
-**返回：**
-
-| 类型 | 说明 |
-| --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 函数参数异常。  [ARKUI\_ERROR\_CODE\_PARAM\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 传入的节点对象类型错误。  [ARKUI\_ERROR\_CODE\_NODE\_NOT\_ON\_MAIN\_TREE](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 传入的节点未挂载到组件树上。 |
-
-**说明** 
-
-* 如果List组件NODE\_LIST\_CACHED\_COUNT属性设置显示预加载ListItem，List显示区域外已预加载完成的ListItem支持展开，否则List显示区域外节点不支持展开。
-
-### OH\_ArkUI\_ListItemSwipeAction\_Collapse()
-
-```c
-int32_t OH_ArkUI_ListItemSwipeAction_Collapse(ArkUI_NodeHandle node)
-```
-
-**描述：**
-
-收起指定ListItem的划出菜单。
-
-**起始版本：** 21
-
-**参数：**
-
-| 参数项 | 描述 |
-| --- | --- |
-| [ArkUI\_NodeHandle](capi-arkui-nativemodule-arkui-node8h.md) node | ListItem节点对象。 |
-
-**返回：**
-
-| 类型 | 说明 |
-| --- | --- |
-| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 函数参数异常。  [ARKUI\_ERROR\_CODE\_PARAM\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 传入的节点对象类型错误。  [ARKUI\_ERROR\_CODE\_NODE\_NOT\_ON\_MAIN\_TREE](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 传入的节点未挂载到组件树上。 |
 
 ### OH\_ArkUI\_AccessibilityState\_Create()
 

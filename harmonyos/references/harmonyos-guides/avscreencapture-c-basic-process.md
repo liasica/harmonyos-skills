@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avscreencaptu
 title: AVScreenCapture录屏基础流程
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 录制 > 使用AVScreenCapture录屏取码流(C/C++) > AVScreenCapture录屏基础流程
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:14+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:0fca9ba0b0f8375dc27156b48666d41c02093bc05cd9006c1324b5684a6c17b7
+scraped_at: 2026-11-12T09:52:08+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:33597430b03900f953e1c67e5bd0bb1e743d6f422bf2ce7173d1f13c39c21dcd
 ---
 
 屏幕录制功能支持开发者获取屏幕数据，适用于屏幕录制、会议共享、直播等场景。开发者可通过调用[AVScreenCapture](media-kit-intro.md#avscreencapture)模块的C API，采集设备内外的音视频数据源。该模块需与窗口管理（Window）、图形处理（Graphic）等模块协同工作，以完成完整的视频采集流程。
@@ -23,7 +23,7 @@ content_hash: sha256:0fca9ba0b0f8375dc27156b48666d41c02093bc05cd9006c1324b5684a6
 
 基础流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/6-1037J6SW-Awf4vxneUQQ/zh-cn_image_0000002779691054.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/Nk2Z7ntUTeaZM79VIvUgPQ/zh-cn_image_0000002815399467.png)
 
 录屏采集的内容输出方式如下。
 
@@ -38,7 +38,7 @@ content_hash: sha256:0fca9ba0b0f8375dc27156b48666d41c02093bc05cd9006c1324b5684a6
 
   隐私保护弹框：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/ApDa5bY2RzGv-Ape0PFpYg/zh-cn_image_0000002809010675.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/RLyk4UH7StSVUu2T6XLPiQ/zh-cn_image_0000002786519892.png)
 
 ## 通用开发步骤
 
@@ -416,7 +416,7 @@ config.videoInfo.videoCapInfo.displayId = 0;
 
 如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/l1u1AysnSeOwRK27oIVx8w/zh-cn_image_0000002809050589.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/hG86koAITIO6Dvo1SDZ2qQ/zh-cn_image_0000002786359964.png)
 
 ### 录制主屏幕
 
@@ -476,7 +476,7 @@ config.videoInfo.videoCapInfo.missionIDsLen = static_cast<int32_t>(g_missionIds.
 // 在配置参数结束后执行"g_missionIds.clear()"。
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/S17bc4t-RLuGvWqtj_mFKw/zh-cn_image_0000002779851024.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/Wzc-ogjNSsOfNvHt0V6YlQ/zh-cn_image_0000002815559385.png)
 
 若期望同时录制多个窗口，需要传入期望录制的窗口ID列表。
 
@@ -505,6 +505,30 @@ config.videoInfo.videoCapInfo.missionIDsLen = static_cast<int32_t>(g_missionIds2
 
 // 在配置参数结束后执行"g_missionIds2.clear()"。
 ```
+
+### 录制虚拟扩展屏幕
+
+从API版本26.0.1开始，支持[OH\_CaptureMode](../harmonyos-references/capi-native-avscreen-capture-base-h.md#oh_capturemode).OH\_CAPTURE\_VIRTUAL\_EXTENDED\_SCREEN模式，即可以创建虚拟扩展屏幕并对其内容进行录制。
+
+在此模式下，系统会创建一个虚拟扩展屏幕，应用可对其内容进行录制。关于虚拟屏和扩展屏的概念说明请参见[屏幕管理开发术语](display-terminology.md)。
+
+```
+// 在config中配置待录制的虚拟扩展屏幕的宽度、高度。
+int32_t width = 1920;
+int32_t height = 1080;
+config.videoInfo.videoCapInfo.videoFrameWidth = width;
+config.videoInfo.videoCapInfo.videoFrameHeight = height;
+
+// 设置录屏模式为虚拟扩展屏幕录制。
+config.captureMode = OH_CAPTURE_VIRTUAL_EXTENDED_SCREEN;
+// 创建的虚拟扩展屏幕绑定到displayId为0的屏幕上。
+config.videoInfo.videoCapInfo.displayId = 0;
+```
+
+**说明** 
+
+* 无论[OH\_AVScreenCapture\_StrategyForPickerPopUp()](../harmonyos-references/capi-native-avscreen-capture-h.md#oh_avscreencapture_strategyforpickerpopup)设置为任何值，该模式下都不会弹出Picker。
+* 录制虚拟扩展屏幕时，扩展屏幕的显示模式受系统限制。针对有内置屏的设备，只能同时存在1个扩展屏幕；针对无内置屏的设备，最多可同时存在2个扩展屏幕。
 
 ## 弹窗模式说明
 
@@ -558,6 +582,10 @@ OH_AVScreenCapture_ReleaseCaptureStrategy(strategy);
   + **录制主屏幕（OH\_CAPTURE\_HOME\_SCREEN）**：启动录屏后不会弹出选择共享内容弹窗，仅弹出隐私保护弹窗，displayId参数不生效，默认使用主屏ID。
   + **录制指定窗口（OH\_CAPTURE\_SPECIFIED\_WINDOW）**：传入单个窗口ID时，弹出选择共享内容弹窗并默认选中指定窗口；传入多个窗口ID时，不弹出选择共享内容弹窗，仅弹出隐私保护弹窗。
 * 在Phone/Tablet设备上，不同录屏模式下统一不弹出Picker，仅弹出隐私保护弹窗。
+
+**说明** 
+
+从API版本26.0.1开始，当录屏模式为[OH\_CaptureMode](../harmonyos-references/capi-native-avscreen-capture-base-h.md#oh_capturemode).OH\_CAPTURE\_VIRTUAL\_EXTENDED\_SCREEN时，无论OH\_AVScreenCapture\_StrategyForPickerPopUp设置为任何值，都不会弹出Picker。
 
 ## 更多资源
 

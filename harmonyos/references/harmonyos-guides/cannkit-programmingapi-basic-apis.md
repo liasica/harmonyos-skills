@@ -1,16 +1,16 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-programmingapi-basic-apis
 title: 基础API
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 基本概念 > 编程API > 基础API
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > 基本概念 > 编程API > 基础API
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:35+08:00
-doc_updated_at: 2026-06-27
-content_hash: sha256:5d481ff9b3ae73ead748f5e5af7e4b37e29021e5fe412872ba601fc47b5996f7
+scraped_at: 2026-11-12T09:52:41+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c4774ca1961a82074c30b42bc6acc3adf6a10de1af80557e0bf14fbf2f96a147
 ---
 
 ## 数据搬运
 
-数据搬运接口，包括[普通数据搬运](cannkit-common-data-movement.md)、[随路格式转换](cannkit-channel-associated-format-conversion.md)。
+数据搬运接口，包括[普通数据搬运](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)、[随路格式转换](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)。
 
 * 普通数据搬运接口，适用于连续和不连续数据搬运。
 * 随路格式转换接口，适用于在搬运时进行格式转换。

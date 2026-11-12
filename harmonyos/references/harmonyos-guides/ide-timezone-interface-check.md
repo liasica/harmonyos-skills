@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-timezone-
 title: "@performance/timezone-interface-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/timezone-interface-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:13+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:56240b51fecd3b015c8ffdbeed1bc96a9744bdb7b5f6db1da1e16b260921de33
+scraped_at: 2026-11-12T09:52:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:bc3fed3cc0712d0f23337a1e15b299dc06ad918c0074858c663c8393c1e21c5d
 ---
 
 在获取非本地时间时，建议使用统一标准的i18n.Calendar接口获取时间时区相关信息。
@@ -79,4 +79,4 @@ moment().utcOffset(-5, true);
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

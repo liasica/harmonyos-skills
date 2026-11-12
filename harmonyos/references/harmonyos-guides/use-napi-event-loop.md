@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-even
 title: 使用扩展的Node-API接口在异步线程中运行和停止事件循环
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景 > 使用扩展的Node-API接口在异步线程中运行和停止事件循环
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:33:42+08:00
-doc_updated_at: 2026-10-30
+scraped_at: 2026-11-12T09:52:47+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:011bb96a5d4b28810729fd797cbd1b855dd96cfeb142d2113983bf2da3248db4
 ---
 

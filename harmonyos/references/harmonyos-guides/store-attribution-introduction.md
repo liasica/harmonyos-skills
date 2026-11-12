@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-attribu
 title: 开发概述
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用归因服务 > 开发概述
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:5f889ea595974a9ecc2a37f94db6d46b01175fcc2334785a00f91980058a075f
+scraped_at: 2026-11-12T09:52:19+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:921bfefad9cef4c9b83e9ba179528ec1ba73950c030947bfc9158f0f4e993575
 ---
 
 应用归因服务是华为提供的不依赖用户标识符的端侧归因能力。
@@ -14,7 +14,7 @@ content_hash: sha256:5f889ea595974a9ecc2a37f94db6d46b01175fcc2334785a00f91980058
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/CyD-s06cQlS_othNA_9zJw/zh-cn_image_0000002809010877.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/yclagx3jTmuB6cZRFscS2Q/zh-cn_image_0000002815559593.jpg)
 
 业务流程中各任务描述如下：
 
@@ -32,4 +32,4 @@ content_hash: sha256:5f889ea595974a9ecc2a37f94db6d46b01175fcc2334785a00f91980058
 * 接入应用归因服务的所有开发者应严格遵循法律法规、已签署的协议条款和开发者文档的要求处理用户的个人信息。
 * 禁止通过应用归因服务上报、透传个人信息。
 * 应用归因服务接入调试功能接口当前支持ARM版本、X86版本的模拟器。
-* 应用归因服务支持Phone、Tablet设备。并且从6.1.0(23)版本开始，新增支持PC/2in1、TV设备。
+* 应用归因服务支持Phone、Tablet设备。从6.1.0(23)版本开始，新增支持PC/2in1、TV设备；并且从API版本26.0.1开始，新增支持Car设备。

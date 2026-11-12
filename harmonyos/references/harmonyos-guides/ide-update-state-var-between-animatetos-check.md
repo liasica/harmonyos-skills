@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-update-st
 title: "@performance/update-state-var-between-animatetos-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/update-state-var-between-animatetos-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:13+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:d49f0f91bfe63019617e23b5c28867adac396fa70dc15df929ff277742943961
+scraped_at: 2026-11-12T09:52:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:421d841555edbfdd7bcbef62103c89eebf8dac7d5e8a05094d251e2f6ee1d74b
 ---
 
 如果多个animateTo之间存在状态更新，会导致执行下一个animateTo之前又存在需要更新的脏节点，可能造成冗余更新。因此不建议在两次animateTo之间进行状态变量更新。
@@ -146,4 +146,4 @@ plugin:@performance/recommended
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

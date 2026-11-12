@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-multi
 title: 多应用管控
 breadcrumb: 指南 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > 多应用管控
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:41+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ec7c0148d552c173253257a68b90b963689b633df13266f5890b0cef5c0919bb
+scraped_at: 2026-11-12T09:51:50+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:fc9a5e6b66e5448428adc68afd2cbc9b4e6941b8aac33cf82b63c98597fe6cdc
 ---
 
 ## 概述
@@ -16,9 +16,8 @@ content_hash: sha256:ec7c0148d552c173253257a68b90b963689b633df13266f5890b0cef5c0
 
 Admin组件可以通过不同的方式激活，不同的激活方式，成为的角色也不同。
 
-1.通过[adminManager.enableDeviceAdmin](../harmonyos-references/js-apis-enterprise-adminmanager.md#adminmanagerenabledeviceadmin23)接口，激活后成为[DA角色](mdm-kit-term.md#device-admin-da普通设备管理员)。当MDM应用仅需对设备进行管控，无需管理其他DA应用时，可选择被激活为DA。
-
-2.通过[adminManager.startAdminProvision](../harmonyos-references/js-apis-enterprise-adminmanager.md#adminmanagerstartadminprovision15)接口，激活后成为[BDA角色](mdm-kit-term.md#byod-device-admin-bdabyod设备管理员)。当MDM应用需要对员工使用的个人设备在特殊场景进行有限管控（如禁用拍照、录音等）时，可选择被激活为BDA。
+1. 通过[adminManager.enableDeviceAdmin](../harmonyos-references/js-apis-enterprise-adminmanager.md#adminmanagerenabledeviceadmin23)接口，激活后成为[DA角色](mdm-kit-term.md#device-admin-da普通设备管理员)。当MDM应用仅需对设备进行管控，无需管理其他DA应用时，可选择被激活为DA。
+2. 通过[adminManager.startAdminProvision](../harmonyos-references/js-apis-enterprise-adminmanager.md#adminmanagerstartadminprovision15)接口，激活后成为[BDA角色](mdm-kit-term.md#byod-device-admin-bdabyod设备管理员)。当MDM应用需要对员工使用的个人设备在特殊场景进行有限管控（如禁用拍照、录音等）时，可选择被激活为BDA。
 
 ## 管控策略冲突
 

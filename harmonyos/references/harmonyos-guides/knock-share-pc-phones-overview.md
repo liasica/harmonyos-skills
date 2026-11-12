@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/knock-share-p
 title: 概述
 breadcrumb: 指南 > 应用服务 > Share Kit（分享服务） > 碰一碰分享 > 手机与PC/2in1碰一碰分享 > 概述
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:44+08:00
+scraped_at: 2026-11-12T09:52:37+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:9a5da79a8e6df9798736b0f1b9f1ef0dd56af28879f23e65c820de825232a43d
+content_hash: sha256:564908596abfaabd889c8c48a08d577485dc0eb113ee930184b9386386a96042
 ---
 
 ## 场景介绍
@@ -14,16 +14,16 @@ Share Kit支持Phone和PC/2in1之间的碰一碰分享。利用PC/2in1设备的�
 
 **从6.1.0(23)版本开始，支持Phone与Tablet设备之间的碰一碰分享。**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/1GWaPCUwTBKASiilrRCcOg/zh-cn_image_0000002809011287.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/AGocrn2xQJC1DB_ddwfM0Q/zh-cn_image_0000002786520520.gif)
 
 ## 业务流程
 
 * PC/2in1设备作为数据接收端
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/NJEtI1z3S92UTfNWrSSzeg/zh-cn_image_0000002809051213.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/JfyoPmOvQDq5U-ycAlM5fA/zh-cn_image_0000002786360604.png)
 * PC/2in1设备作为数据发送端
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/n1pAUtCjQb6kWVUliKPT0A/zh-cn_image_0000002779851648.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/UYuLt_yBRwmrGL3UTOFsdg/zh-cn_image_0000002815560025.png)
 
 ## 双向分享限制
 
@@ -40,21 +40,21 @@ Share Kit支持Phone和PC/2in1之间的碰一碰分享。利用PC/2in1设备的�
 * 手机与PC/2in1设备间碰一碰分享需登录相同的华为账号。
 * 仅支持直板手机或折叠手机直板态与PC/2in1屏幕碰一碰分享。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/dMvym0AFT9-RvRWK5a5qgA/zh-cn_image_0000002779691680.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/qEbDJWB6QGGV7YcMCloN7w/zh-cn_image_0000002815400109.png)
 * 轻碰屏幕交互约束：
 
   + 手机与PC/2in1屏幕俯视夹角应≤5°。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/-3AWEPYhQAegNNMuRNEawg/zh-cn_image_0000002809011301.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/QAXqxVdYTQO3pxt6ar_RKw/zh-cn_image_0000002786520534.png)
   + 手机与PC/2in1屏幕侧视夹角应＞35°。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/tZEkDwsZQmOc-F0rS6MAzQ/zh-cn_image_0000002809051215.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/CORnFpSeSLmcTzzOQb_q2w/zh-cn_image_0000002786360606.png)
   + 手机与PC/2in1屏幕正视夹角应≤25°。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/8NLMI5mxT5CWBDhAOr9m3w/zh-cn_image_0000002779851650.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/8VWQ0gBrT_id4i33ZfxpzQ/zh-cn_image_0000002815560027.png)
   + 手机不能超出PC/2in1设备屏幕。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/_Rs7K4siT8OBKltdGNS01Q/zh-cn_image_0000002779691682.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/KovIHC-hR5KgbFDMaTWEsw/zh-cn_image_0000002815400111.png)
 * 支持官方手机保护壳，不支持过厚的手机外壳。
 
 ## 环境要求

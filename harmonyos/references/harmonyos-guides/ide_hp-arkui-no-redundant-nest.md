@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_hp-arkui-
 title: "@performance/hp-arkui-remove-redundant-nest-container"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-arkui-remove-redundant-nest-container
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:12+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:f392d227413bbcb8851c9a0c1eeb8bdee11ae3d3249d767967955396319e4bab
+scraped_at: 2026-11-12T09:52:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b4db23d63a474f12f6343996f5c5b66fc47d606249689136b9a61de7a2186c15
 ---
 
 避免冗余的嵌套。
@@ -92,4 +92,4 @@ struct MyComponent {
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

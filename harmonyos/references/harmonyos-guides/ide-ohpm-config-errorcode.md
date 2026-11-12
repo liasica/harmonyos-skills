@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-conf
 title: ohpm config错误码
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm config错误码
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:24+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:aa2cc3d6d09fa427d9dde9b92d63839801a24345a8aa29b577ea257340a71935
+scraped_at: 2026-11-12T09:53:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ea748e876814edc618ca2f13428527d0d57a5909bf37e6ad632783c9e26e7d77
 ---
 
 ## 00602001 未配置子命令
@@ -26,7 +26,7 @@ Config子命令为空。
 
 确认ohpm config可用的子命令，配置子命令后再执行。
 
-## 00602002 Config子命令不支持。
+## 00602002 Config子命令不支持
 
 **错误信息**
 

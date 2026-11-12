@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.accountManager (账号管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.accountManager (账号管理)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:54:10+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:9d7455dd8be0f4b0e55109120d91c6598cd26d61ed1f3afdd9ebb4668a49c1d6
+scraped_at: 2026-11-12T09:56:05+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a0c9756ee32260777721517ade3e6147ead9dc63cc7ca955904cfeae413df5c5
 ---
 
 本模块提供设备账号管理能力，包括禁止创建本地账号等。
@@ -310,7 +310,8 @@ async function setDomainAccountPolicy() {
     // 需根据实际情况进行替换
     authenticationValidityPeriod: 300,
     passwordValidityPeriod: 420,
-    passwordExpirationNotification: 60
+    passwordExpirationNotification: 60,
+    supportUKeyAuthentication: true
   };
   // 设置全局域账号策略
   let accountInfo: osAccount.DomainAccountInfo = {
@@ -449,6 +450,7 @@ async function getDomainAccountPolicy() {
 | authenticationValidityPeriod | number | 否 | 是 | 表示域账号认证Token的有效期（单位：s），用于控制用户在Token有效期内无需重复认证即可访问系统资源。取值范围是[-1, 2147483647]。有效期起始时间为最后一次域账号的认证时间点，如登录、锁屏后解锁等。  默认值为-1，表示Token永久有效。取值为0，表示Token立即失效。Token过期/失效后，用户进入系统时必须进行域账号认证，验证域账号和密码。 |
 | passwordValidityPeriod | number | 否 | 是 | 表示域账号密码有效期（单位：s），用于用户定期修改密码以提升账号安全性。取值范围是[-1, 2147483647]，有效期起始时间为设备侧最后一次修改密码的时间点。  默认值为-1，表示域账号密码永久有效。 |
 | passwordExpirationNotification | number | 否 | 是 | 表示域账号密码过期前提示时间（单位：s），取值范围是[0, 2147483647]。  默认值为0，表示域账号密码过期不提示。  \*\*说明：\*\*passwordExpirationNotification需与passwordValidityPeriod配合使用，当系统时间大于或等于（设备侧最后一次修改域账号密码时间 + passwordValidityPeriod - passwordExpirationNotification）时，会发页面通知提示密码即将过期。 |
+| supportUKeyAuthentication | boolean | 否 | 是 | 域账号是否支持USB Key认证。  设置为true，表示域账号支持USB Key认证，若域服务器支持USB Key认证，系统会自动添加USB Key凭据作为系统凭据，此时锁屏界面的系统凭据列表中会出现USB Key选项，可以使用USB Key登录解锁设备；设置为false，表示域账号不支持USB Key认证，系统不会自动添加USB Key凭据作为系统凭据，此时锁屏界面的系统凭据列表中不会出现USB Key选项，无法使用USB Key登录解锁设备。  默认值为false。  **起始版本：** 26.0.1 |
 
 ## accountManager.createNormalOsAccount
 

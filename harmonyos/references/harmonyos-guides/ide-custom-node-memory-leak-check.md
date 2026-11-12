@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-custom-no
 title: "@performance/custom-node-memory-leak-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/custom-node-memory-leak-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:11+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:e8dd2d3ccfe7a875834701785569572437cd0aedeca37be76c17a2d99a66e56c
+scraped_at: 2026-11-12T09:52:57+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7fe5e3906d3ec37242746309dae9768ad810244df70b7bb3b2a92d5c3f78ac0e
 ---
 
 建议在Component中新建自定义节点时主动释放节点，避免因未释放节点导致的内存泄漏。
@@ -92,4 +92,4 @@ struct LeakyBuilderExample {
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

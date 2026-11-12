@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/social-sharin
 title: 社交分享跳转
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 应用间跳转典型场景 > 社交分享跳转
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:00+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:210c359b2373a6c07d4d49733fb2076f4c0c1b21e75542d9ab9971bab22881ce
+scraped_at: 2026-11-12T09:50:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:fc04b4841bdb4f8d43146ddfc462e04b9c50a970965cac4420f1a008cd681d0b
 ---
 
 ## 概述
 
-随着内容社交和移动应用的发展，用户越来越习惯于通过社交平台快捷地分享文章、商品或活动等内容，并期待受邀好友能够“一键直达”目标内容。为满足这一需求，系统提供了[App Linking](app-linking-startup.md)技术，实现高效、安全且用户体验极佳的社交分享跳转。
+随着内容社交和移动应用的发展，用户越来越习惯于通过社交平台快捷地分享文章、商品或活动等内容，并期待受邀好友能够“一键直达”目标内容。为满足这一需求，系统提供了[App Linking Kit（应用链接服务）](../doccenter-capabilities/app-linking-kit-guide.md)模块，实现高效、安全且用户体验极佳的社交分享跳转（实现参考[通过App Linking应用链接拉起指定应用](../doccenter-capabilities/app-linking-startupapp.md)）。
 
 应用场景举例：
 
@@ -26,27 +26,27 @@ App Linking支持三种典型跳转场景，根据用户设备状态智能路由
 
 用户点击分享链接后，系统直接拉起目标应用并定位到内容详情页，无需经过浏览器中转，实现一键直达，极大提高便捷度和转化率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/xxLWh-UzS1WtexlGNAmwEA/zh-cn_image_0000002779689512.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/Ax3RbcFXTUi1taBZTbSJ3w/zh-cn_image_0000002786358422.gif)
 
 ### 场景二：目标应用未安装，已配置直达应用市场
 
-当用户未安装目标应用且开发者配置了[直达应用市场](applinking-direct-to-ag.md)功能时，点击链接将直接跳转到应用市场的应用详情页。
+当用户未安装目标应用且开发者配置了直达应用市场（实现参考[通过直达应用市场能力跳转至应用市场下载详情页](applinking-direct-to-ag.md)）功能时，点击链接将直接跳转到应用市场的应用详情页。
 
-安装完成后，首次打开应用将通过[延迟链接](applinking-deferredlink.md)功能自动导航至原始分享内容，无需用户重新搜索或操作。
+安装完成后，首次打开应用将通过延迟链接功能（实现参考[通过延迟链接跳转至应用详情页](applinking-deferredlink.md)）自动导航至原始分享内容，无需用户重新搜索或操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/BX03sOaRQUW8Fj2bhC5t8A/zh-cn_image_0000002809009133.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/dlUiip8-RVKf0AkV7wRaDA/zh-cn_image_0000002815557843.gif)
 
 ### 场景三：目标应用未安装，未配置直达应用市场（有Web页面）
 
 用户点击链接后，系统通过浏览器打开Web页面，用户可直接查看内容。
 
-在Web页面可提供“下载”按钮，引导用户安装应用获取更佳体验，安装后仍可通过[延迟链接](applinking-deferredlink.md)直达原内容。
+在Web页面可提供“下载”按钮，引导用户安装应用获取更佳体验，安装后仍可通过延迟链接（实现参考[通过延迟链接跳转至应用详情页](applinking-deferredlink.md)）直达原内容。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/Q09zzj4hTR2VFaHskZegnw/zh-cn_image_0000002809049049.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/4T9AySFaQUKmTvwy86F-EQ/zh-cn_image_0000002815397927.gif)
 
 **说明** 
 
-对于不提供Web页面的应用，建议开启[直达应用市场](applinking-direct-to-ag.md)功能，避免因无法访问内容而造成体验断裂。
+对于不提供Web页面的应用，建议开启直达应用市场（实现参考[通过直达应用市场能力跳转至应用市场下载详情页](applinking-direct-to-ag.md)）功能，避免因无法访问内容而造成体验断裂。
 
 ## 实现原理
 
@@ -54,11 +54,11 @@ App Linking基于HTTPS域名校验和云端配置，自动判断目标应用是�
 
 * 唯一绑定与安全防护：每个分享链接与内容和目标应用强关联，有效杜绝劫持与伪造。
 * 智能路由：系统根据设备状态，自动选择拉起本地应用、跳转应用市场或打开浏览器Web页面。
-* [延迟链接](applinking-deferredlink.md)还原：即便用户经历先装应用再首次启动，也能还原到用户首次点开的具体内容页，极大提升转化率。
+* 延迟链接（实现参考[通过延迟链接跳转至应用详情页](applinking-deferredlink.md)）还原：即便用户经历先装应用再首次启动，也能还原到用户首次点开的具体内容页，极大提升转化率。
 
 社交分享应用跳转的流程图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/NbZ4o1S-QTKdvIvTfoDcjw/zh-cn_image_0000002779849484.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/d3-abewrTBiQBWkXfgpmCQ/zh-cn_image_0000002786518352.png)
 
 上图展示了从用户分享内容到好友接收并跳转的完整流程。系统根据接收方设备状态，自动选择最佳路径，确保无论哪种情况，用户都能获得连贯流畅的体验。
 
@@ -143,9 +143,9 @@ App Linking基于HTTPS域名校验和云端配置，自动判断目标应用是�
 
 ### 接入分享面板
 
-社交应用可通过集成[Share Kit（分享服务）](share-introduction.md)拉起分享面板，用于分享文章详情的App Linking链接。接收方点击链接后可直接跳转至目标应用。详细请参见[分享App Linking直达应用](share-utd-link.md#分享app-linking直达应用)。
+社交应用可通过集成[Share Kit（分享服务）](../doccenter-capabilities/share-kit-guide.md)拉起分享面板，用于分享文章详情的App Linking链接。接收方点击链接后可直接跳转至目标应用。详细请参见[分享App Linking直达应用](share-utd-link.md#分享app-linking直达应用)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/TM2rP2ISQ_SUsFM6k4vvZg/zh-cn_image_0000002779689514.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/bW_B7eesQsioFR8khe-ASQ/zh-cn_image_0000002786358424.png)
 
 分享内容类型设为utd.UniformDataType.HYPERLINK，content字段传递生成的App Linking链接（带内容唯一标识）。
 
@@ -199,7 +199,7 @@ struct Detail {
 
 当用户点击分享链接并拉起应用时，跳转到文章详情页有以下两种情况：
 
-1. 应用未在后台运行：如果应用从冷启动开始（即不在后台），需要在onCreate()方法中获取链接中的文章唯一标识符aid。
+1. 应用未在后台运行：如果应用从冷启动开始（即不在后台），需要在[onCreate()](../doccenter-references/api/js-apis-app-ability-uiability.md#oncreate)方法中获取链接中的文章唯一标识符aid。
 
    ```typescript
    // entry/src/main/ets/entryability/EntryAbility.ets
@@ -248,7 +248,7 @@ struct Detail {
    }
    ```
 
-   在onWindowStageCreate()回调中使用windowStage.loadContent()方法加载详情页的URL为“pages/Detail”。
+   在[onWindowStageCreate()](../doccenter-references/api/js-apis-app-ability-uiability.md#onwindowstagecreate)回调中使用windowStage.loadContent()方法加载详情页的URL为“pages/Detail”。
 
    ```typescript
    // entry/src/main/ets/entryability/EntryAbility.ets
@@ -275,7 +275,7 @@ struct Detail {
      });
    }
    ```
-2. 应用已在后台运行：如果应用已经在后台，它将从后台切换到前台。此时，需要在onNewWant()方法中获取链接中的文章唯一标识符aid，保存到AppStorage。
+2. 应用已在后台运行：如果应用已经在后台，它将从后台切换到前台。此时，需要在[onNewWant()](../doccenter-references/api/js-apis-app-ability-uiability.md#onnewwant)方法中获取链接中的文章唯一标识符aid，保存到AppStorage。
 
    ```typescript
    export default class EntryAbility extends UIAbility {
@@ -345,21 +345,21 @@ struct Detail {
 
 ### 配置直达应用市场与延迟链接（可选）
 
-为提升用户未安装应用时的体验，可配置[直达应用市场](applinking-direct-to-ag.md)功能，引导用户下载安装应用。
+为提升用户未安装应用时的体验，可配置直达应用市场（实现参考[通过直达应用市场能力跳转至应用市场下载详情页](applinking-direct-to-ag.md)）功能，引导用户下载安装应用。
 
 在AGC控制台的App Linking服务中，开启"直达应用市场"功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/7bE2Zay5Q_-mkPWWq_qmBA/zh-cn_image_0000002809009135.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/08xiSgfhR0ylg1xorDdNgg/zh-cn_image_0000002815557845.png)
 
 配置完成后，当用户点击畅连中分享的App Linking链接时，若设备未安装目标应用，系统将直接跳转至应用市场的应用详情页，支持一键下载安装。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/zpsDqKvbQf-IP_oqjIMPqw/zh-cn_image_0000002809049051.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/TEC4s7EzSG6Vo8hDBV3oNQ/zh-cn_image_0000002815397929.gif)
 
-同时，需要实现[延迟链接](applinking-deferredlink.md)功能，确保安装后首次启动可直达内容。
+同时，需要实现延迟链接（实现参考[通过延迟链接跳转至应用详情页](applinking-deferredlink.md)）功能，确保安装后首次启动可直达内容。
 
 安装完应用之后，开发者可以在用户首次打开应用时，使用延迟链接，可以直接跳转到文章详情，这一流程不仅优化了用户体验，还有助于提升链接的转化率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/OY5guH26SwiSyLg69Y5yrA/zh-cn_image_0000002779849486.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/yKYqqkrISRunyf3kpLkzhA/zh-cn_image_0000002786518354.gif)
 
 通过deferredLink.[popDeferredLink()](../harmonyos-references/applinking-deferredlink-api.md#popdeferredlink)接口获取原始App Linking链接，并根据解析该链接直接跳转至对应的内容详情页。
 
@@ -400,7 +400,7 @@ struct Index {
 
 ### Web页面开发与部署（可选）
 
-当应用未安装且未配置直达应用市场时，系统会打开浏览器Web页面。合理的Web页面开发是完善用户体验的关键环节，特别是与[延迟链接](applinking-deferredlink.md)结合使用。
+当应用未安装且未配置直达应用市场时，系统会打开浏览器Web页面。合理的Web页面开发是完善用户体验的关键环节，特别是与延迟链接（实现参考[通过延迟链接跳转至应用详情页](applinking-deferredlink.md)）结合使用。
 
 **Web页面UA适配**
 
@@ -442,7 +442,7 @@ Web页面需提供两个关键功能：
 1. “打开”按钮 - 尝试拉起已安装的应用。
 2. “下载”按钮 - 引导未安装用户前往应用市场。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/E6ObsOLvQ3u9gNxVTDXtkQ/zh-cn_image_0000002779689516.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/lIdhr2-lQl2zGnm92l0-KQ/zh-cn_image_0000002786358426.png)
 
 当应用已安装时，点击“打开”按钮，可以直接跳转社交应用，直达文章详情页。跳转链接使用前面[配置App Linking服务](social-sharing-redirection.md#配置app-linking服务)中配置的链接，例如“https://www.example.com/”，通过设置window.location.href属性进行页面跳转。
 
@@ -469,7 +469,7 @@ function toAppgallery() {
 
 **延迟链接与Web页面结合**
 
-Web页面与延迟链接的结合是创建完整用户体验的关键。当用户通过Web页面安装应用后，可通过[延迟链接](applinking-deferredlink.md)实现首次打开应用时自动跳转到原始内容。
+Web页面与延迟链接的结合是创建完整用户体验的关键。当用户通过Web页面安装应用后，可通过延迟链接（实现参考[通过延迟链接跳转至应用详情页](applinking-deferredlink.md)）实现首次打开应用时自动跳转到原始内容。
 
 **说明** 
 
@@ -489,7 +489,7 @@ Web页面与延迟链接的结合是创建完整用户体验的关键。当用�
 2. 在项目列表中点击HarmonyOS应用所在的项目。
 3. 在左侧导航栏中选择“增长 > App Linking”菜单栏查看App Linking链接地址的配置状态，若为成功则表明AGC上App Linking配置成功。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/b6yYHIArQvia5JKRHO8TXg/zh-cn_image_0000002809009137.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/jCF0CE0GRniJLEq54kLI1g/zh-cn_image_0000002815557847.png)
 
 ### AGC中App Linking显示配置失败如何解决
 
@@ -497,13 +497,13 @@ Web页面与延迟链接的结合是创建完整用户体验的关键。当用�
 
 App Linking菜单栏查看App Linking链接地址的配置状态如下图，显示红色圆点并文本提示失败。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/ZkdmCerITp2gkgGlExjt-g/zh-cn_image_0000002809049053.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/HYV0AgoDTbCzlktRcc_sIw/zh-cn_image_0000002815397931.png)
 
 **解决措施**
 
 * 首先，显示App Linking状态失败并不一定意味着配置错误。也有可能是配置正确，但 AppGallery Connect（AGC）未及时更新。若不确定是否为此问题，可以采取删除链接后重新添加的方式。如果问题依旧存在，那么大概率是服务器配置问题。
 * applinking.json配置文件配置错误，请参考[建立域名与应用关联关系](app-linking-startupapp.md#建立域名与应用关联关系)进行配置。
-* App Linking地址仅支持https链接、若为http链接，请自行申请SSL证书。
+* App Linking地址仅支持https链接，若为http链接，请自行申请SSL证书。
 * 检查配置文件所处的文件目录与文件权限确保外部可以访问。
 
 若上述检查无误，建议求助网站运维侧人员，共同解决。
@@ -576,7 +576,7 @@ AGC上显示链接地址配置成功，但是配置到目标方后，尝试使�
 
 **问题现象**
 
-社交应用的链接点击后，打开的浏览器Web页面显示空白、无法正常交互，或页面加载异常。
+社交应用的链接点击后，打开的浏览器Web页面显示空白、无法正常交互或页面加载异常。
 
 **可能原因**
 

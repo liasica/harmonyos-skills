@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-page-gene
 title: 页面生成
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 页面生成
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:31+08:00
+scraped_at: 2026-11-12T09:53:12+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:273896907cdfad04d533b93be316d5458d201ec8b08ca1e6f2df29d4d4917e67
+content_hash: sha256:c76f794ad497bc66dd8cca43363e2d9372708965dd3e8d547c0e39705cd55e4d
 ---
 
 CodeGenie当前支持生成美食、旅游、购物、新闻和教育五大垂域的页面。通过自由输入、快捷模板、上传页面参考图片的方式生成应用/元服务可用的页面代码，生成结果支持实时预览，帮助开发者快速完成页面搭建。
@@ -21,19 +21,19 @@ CodeGenie当前支持生成美食、旅游、购物、新闻和教育五大垂�
    * 在对话框左下角下拉框选择**Generate UI Code****。**DevEco Studio 6.0.1 Beta1版本新增。
    * 在模块右键选择**New > Page** **>** **Generate Pages with AI**。DevEco Studio 6.0.2 Beta1版本新增。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/7ILsVzlKRWyvMXSrTF00dg/zh-cn_image_0000002701663964.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/JZWlLUWDR3WaE6AsGDjMGg/zh-cn_image_0000002808767091.png "点击放大")
 2. 可以通过如下方式生成页面：
-   * 在对话框输入页面主题要求，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/FHfNz9IzRdiJ9dZHzE93YA/zh-cn_image_0000002731383181.png)图标，等待生成页面；
+   * 在对话框输入页面主题要求，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/Do7s0dWCQ0-t63wmsUj5ug/zh-cn_image_0000002808767089.png)图标，等待生成页面；
    * 勾选模板中的APP分类（APP Category）和功能模块（Feature Modules），点击**Generate Prompt**，根据提示信息生成页面；
    * 点击对话框中 **@Add Context** **> Add Image**，直接上传一张页面参考图片，等待生成页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/mt-Wo0yZQmqV8qX0uaYGvQ/zh-cn_image_0000002731543163.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/NQp_WfwGTOGBgdytWM0Twg/zh-cn_image_0000002808767093.png "点击放大")
 3. 对生成的页面进行预览，预览时支持切换亮色和暗色模式；点击历史对话中的**Back to Current Session**回退到之前的页面；点击**Generate** **UI files**查看生成的UI文件内容；新增和修改页面/页面中的关键信息，通过多轮对话完善页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/nYCaRLUmTLu5he6WocwsJA/zh-cn_image_0000002701823892.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/lvrobGDdTuadJ6A6gUliDg/zh-cn_image_0000002808887179.png "点击放大")
 4. 点击**Save to Project**，在弹窗中设置页面名称及指定页面所保存的模块。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/Gvni_qjLSeaNa6s7ywQ_-A/zh-cn_image_0000002701663960.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/3zXjh9aJTjSt9X4LFKZ1BQ/zh-cn_image_0000002808887175.png)
 5. 点击**Next**将生成的代码文件及资源保存至工程中。弹窗中绿色文件为新增，蓝色文件表示该文件存在更改，点击**Finish**完成添加。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/nEDkN1nDToirrF4f9YITgA/zh-cn_image_0000002731543161.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/iUFrHs5mT3uQ-sN-jbPKRQ/zh-cn_image_0000002808887177.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-insi
 title: 基础内存分析：Allocation分析
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 优化应用性能 > 基础内存分析：Allocation分析
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:41+08:00
+scraped_at: 2026-11-12T09:53:23+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:166a32b9f3d79c2aab7343a17e1078585173d63bcbf80ea56926b2b0a084f028
+content_hash: sha256:46987f054b5397b7168aa520a86436f706c418c4d461600bc8698092c618535f
 ---
 
 应用在开发过程中，可能因API使用错误、变量未及时释放、异常频繁创建/释放内存等情况引发各种内存问题。
@@ -16,7 +16,7 @@ Allocation模板支持的泳道包括：Memory、Native Allocation。
 
 **说明** 
 
-任务分析前，需创建Allocation分析任务并录制相关数据，操作方法可参考[性能问题定位：深度录制](ide-hmos-deep-recording.md)，或在[会话区](ide-hmos-profiler-session.md)点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/6Is_RY-8SVyKINYRdA5TJw/zh-cn_image_0000002781471112.png)图标，导入历史数据。
+任务分析前，需创建Allocation分析任务并录制相关数据，操作方法可参考[性能问题定位：深度录制](ide-hmos-deep-recording.md)，或在[会话区](ide-hmos-profiler-session.md)点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/Wxj_w9cvQQKimdnTxTIJiQ/zh-cn_image_0000002781471112.png)图标，导入历史数据。
 
 * **[内存分析介绍](ide-hmos-insight-session-allocations-memory.md)**
 * **[内存分析数据筛选](ide-hmos-insight-session-allocations-data-filtering.md)**

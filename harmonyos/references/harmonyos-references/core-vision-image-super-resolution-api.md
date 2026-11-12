@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/core-visi
 title: imageSuperResolution（图像超分）
 breadcrumb: API参考 > AI > Core Vision Kit（基础视觉服务） > ArkTS API > imageSuperResolution（图像超分）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:11+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:ecf53c5cd62526f6d8d29fef977f1f9c2349de188dacd375d19051c1cd7db497
+scraped_at: 2026-11-12T09:57:44+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:21f252e1e120b648f03d7832ae0eb931685c0b7c0b11ae7611b2c5d96287afc3
 ---
 
 图像超分支持对输入的低分辨率图像进行超分辨率重建，使图像更加清晰。适用于提升图片质量、修复老照片等场景。
@@ -171,7 +171,6 @@ async function processImageSuperResolution() {
     const request: visionBase.Request = {
       inputData: imageData
     };
-    request.inputData = imageData
     const response = await analyzer.process(request);
     hilog.info(0x0000, 'ImageSR',
       `Super resolution completed size:${JSON.stringify(response.pixelMap.getImageInfoSync().size)}`);

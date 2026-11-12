@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 网络连接管理错误码
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 错误码 > 网络连接管理错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:56+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:166006ce478ee90bbb381fff7abe48b1f6d5eb72056984de3ea46a83cf7b1da6
+scraped_at: 2026-11-12T09:55:43+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:856c2957bb9b3584a719dc7ddb3dbf33a77ae094cb6186402c4df55bcae8e82d
 ---
 
 **说明** 
@@ -60,15 +60,13 @@ System internal error.
 
 **可能原因**
 
-1.内存异常。
-
-2.空指针。
+1. 内存异常。
+2. 空指针。
 
 **处理步骤**
 
-1.检查内存空间是否充足，清理内存后重试。
-
-2.系统异常，请稍后重试或重启设备。
+1. 检查内存空间是否充足，清理内存后重试。
+2. 系统异常，请稍后重试或重启设备。
 
 ## 2101007 callback不存在
 
@@ -104,9 +102,8 @@ The callback already exists.
 
 **处理步骤**
 
-1.确保待注册的callback对象未进行过注册。
-
-2.若callback对象已进行过注册，执行已存在的注册。
+1. 确保待注册的callback对象未进行过注册。
+2. 若callback对象已进行过注册，执行已存在的注册。
 
 ## 2101022 请求数量超过最大值
 
@@ -120,15 +117,13 @@ The number of requests exceeded the maximum allowed.
 
 **可能原因**
 
-1.激活&监听指定属性网络请求数超过了最大值。
-
-2.NetConnection.register接口超过了最大注册数量限制。
+1. 激活&监听指定属性网络请求数超过了最大值。
+2. NetConnection.register接口超过了最大注册数量限制。
 
 **处理步骤**
 
-1.建议通过日志信息“Over the max request number”定位问题。
-
-2.使用完NetConnection.register接口后，及时调用unregister接口取消注册。
+1. 建议通过日志信息“Over the max request number”定位问题。
+2. 使用完NetConnection.register接口后，及时调用unregister接口取消注册。
 
 ## 2100301 调用方身份验证不通过（非VPN应用）
 

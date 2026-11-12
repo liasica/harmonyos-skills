@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-intro
 title: Payment Kit简介
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > Payment Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:38+08:00
-doc_updated_at: 2026-06-13
-content_hash: sha256:318e052b8b1e99f9eae6aad4f490a9c30c021452f9b1fe850312507e14c6ccd5
+scraped_at: 2026-11-12T09:52:31+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:72bad1edf6d035eaf806392b215dc44ca84b398359f6b90c2c2b7e4cf5160c0b
 ---
 
 Payment Kit（鸿蒙支付服务）提供了方便、安全和快捷的支付方式，助力开发者在商户应用/元服务中快速实现支付功能。
@@ -83,23 +83,23 @@ Payment Kit支持的支付能力如下：
 
 华为支付接入顺序如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/BflCSV_VSNezW8TDNSyfLg/zh-cn_image_0000002809051089.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/7EDSVIL9Tz-8awQzVATyFA/zh-cn_image_0000002786520408.png)
 
 [数字人民币支付](payment-digital-cny-pay.md)接入顺序如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/hmCZjmTlTHiwvVImVwiOdA/zh-cn_image_0000002779851524.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/p_ump-HWSfW3Py-w7DDInw/zh-cn_image_0000002786360480.png)
 
 通用收银台[混合支付场景](payment-common-pay-mix.md)接入顺序如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/tYRsTEwXQreVeArUSMrBOw/zh-cn_image_0000002779691556.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/rNINIeXsT0W7L_7xeLfQEA/zh-cn_image_0000002815559901.png)
 
 通用收银台[纯外部支付场景](payment-common-pay-external.md)接入顺序如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/6MdyrsqHSbarfBaWd1WpqA/zh-cn_image_0000002809011177.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/y2vXkiccQTqbug4Lvmw-dg/zh-cn_image_0000002815399985.png)
 
 用户身份验证服务、人脸核身实人验证接入顺序如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/ArOC_LbWRqmX6QqfsRO2gg/zh-cn_image_0000002809051091.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/e0ihdXCDRAK5vGwECyz4Jw/zh-cn_image_0000002786520410.png)
 
 ## 约束与限制
 
@@ -111,8 +111,8 @@ Payment Kit的能力只支持实物商品和服务（酒店服务、出行服务
 
 | 能力/服务 | 支持设备 |
 | --- | --- |
-| 基础支付 | Phone、Tablet、PC/2in1 |
-| 平台类商户合单支付 | Phone、Tablet、PC/2in1 |
+| 基础支付 | Phone、Tablet、PC/2in1、Car |
+| 平台类商户合单支付 | Phone、Tablet、PC/2in1、Car |
 | 免密支付 | Phone、Tablet、PC/2in1 |
 | 数字人民币支付 | Phone |
 | 通用收银台 | Phone、Tablet、PC/2in1 |

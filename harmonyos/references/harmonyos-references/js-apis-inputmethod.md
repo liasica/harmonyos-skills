@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.inputMethod (输入法框架)"
 breadcrumb: API参考 > 应用框架 > IME Kit（输入法开发服务） > ArkTS API > @ohos.inputMethod (输入法框架)
 category: harmonyos-references
-scraped_at: 2026-09-15T07:06:09+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:4a2d1114e690c9a8416205007f9883d68ca0b2723dbfc2b6ccc4d1a60d9bc844
+scraped_at: 2026-11-12T09:55:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:102412296709550a77b1a1008b9666514a26856dea18fa1cdc20b7dacbdc0046
 ---
 
 @ohos.inputMethod模块是面向普通前台应用（如备忘录、短信、设置等应用）的输入法客户端模块，提供输入法控制和管理能力。
@@ -320,7 +320,7 @@ switchInputMethod(target: InputMethodProperty, callback: AsyncCallback<boolean>)
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | permissions check fails. [since 9 - 10]. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. [since 9 - 10]. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800005 | configuration persistence error. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
@@ -346,7 +346,7 @@ inputMethod.switchInputMethod(currentIme, (err: BusinessError, result: boolean) 
 
 **说明** 
 
-在 API11 中 201 permissions check fails. 这个错误码被移除。
+在 API11 中 201 Permission verification failed. The application does not have the permission required to call the API. 这个错误码被移除。
 
 ## inputMethod.switchInputMethod9+
 
@@ -390,7 +390,7 @@ switchInputMethod(target: InputMethodProperty): Promise<boolean>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | permissions check fails. [since 9 - 10] |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. [since 9 - 10] |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800005 | configuration persistence error. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
@@ -414,7 +414,7 @@ inputMethod.switchInputMethod(currentIme).then((result: boolean) => {
 
 **说明** 
 
-在 API11 中 201 permissions check fails. 这个错误码被移除。
+在 API11 中 201 Permission verification failed. The application does not have the permission required to call the API. 这个错误码被移除。
 
 ## inputMethod.getCurrentInputMethod9+
 
@@ -473,7 +473,7 @@ switchCurrentInputMethodSubtype(target: InputMethodSubtype, callback: AsyncCallb
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | permissions check fails. [since 9 - 10] |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. [since 9 - 10] |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800005 | configuration persistence error. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
@@ -510,7 +510,7 @@ inputMethod.switchCurrentInputMethodSubtype({
 
 **说明** 
 
-在 API11 中 201 permissions check fails. 这个错误码被移除。
+在 API11 中 201 Permission verification failed. The application does not have the permission required to call the API. 这个错误码被移除。
 
 ## inputMethod.switchCurrentInputMethodSubtype9+
 
@@ -548,7 +548,7 @@ switchCurrentInputMethodSubtype(target: InputMethodSubtype): Promise<boolean>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | permissions check fails. [since 9 - 10] |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. [since 9 - 10] |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800005 | configuration persistence error. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
@@ -583,7 +583,7 @@ inputMethod.switchCurrentInputMethodSubtype({
 
 **说明** 
 
-在 API11 中 201 permissions check fails. 这个错误码被移除。
+在 API11 中 201 Permission verification failed. The application does not have the permission required to call the API. 这个错误码被移除。
 
 ## inputMethod.getCurrentInputMethodSubtype9+
 
@@ -639,7 +639,7 @@ switchCurrentInputMethodAndSubtype(inputMethodProperty: InputMethodProperty, inp
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | permissions check fails. [since 9 - 10]. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. [since 9 - 10]. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800005 | configuration persistence error. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
@@ -667,7 +667,7 @@ inputMethod.switchCurrentInputMethodAndSubtype(currentIme, imSubType, (err: Busi
 
 **说明** 
 
-在 API11 中 201 permissions check fails. 这个错误码被移除。
+在 API11 中 201 Permission verification failed. The application does not have the permission required to call the API. 这个错误码被移除。
 
 ## inputMethod.switchCurrentInputMethodAndSubtype9+
 
@@ -706,7 +706,7 @@ switchCurrentInputMethodAndSubtype(inputMethodProperty: InputMethodProperty, inp
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | permissions check fails. [since 9 - 10]. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. [since 9 - 10]. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 12800005 | configuration persistence error. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
@@ -732,7 +732,7 @@ inputMethod.switchCurrentInputMethodAndSubtype(currentIme, imSubType).then((resu
 
 **说明** 
 
-在 API11 中 201 permissions check fails. 这个错误码被移除。
+在 API11 中 201 Permission verification failed. The application does not have the permission required to call the API. 这个错误码被移除。
 
 ## inputMethod.getInputMethodController(deprecated)
 
@@ -2323,7 +2323,7 @@ showSoftKeyboard(callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | permissions check fails. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
 
@@ -2367,7 +2367,7 @@ showSoftKeyboard(): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | permissions check fails. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
 
@@ -2423,7 +2423,7 @@ hideSoftKeyboard(callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | permissions check fails. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
 
@@ -2467,7 +2467,7 @@ hideSoftKeyboard(): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | permissions check fails. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 12800003 | input method client error. Possible causes: 1.the edit box is not focused. 2.no edit box is bound to current input method application. 3.ipc failed due to the large amount of data transferred or other reasons. |
 | 12800008 | input method manager service error. Possible cause: a system error, such as null pointer, IPC exception. |
 

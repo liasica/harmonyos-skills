@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_max-len
 title: "@hw-stylistic/max-len"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > ArkTS代码风格规则@hw-stylistic > @hw-stylistic/max-len
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:13+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:d484d8802c110681961755903c9fde4a09dada9ca1c848a62fe9c520c45c5f34
+scraped_at: 2026-11-12T09:52:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ad520f38a7085e565fd74d965bd4a09fdee562eca3dd87d793203e7fa8220552
 ---
 
 强制代码行最大长度为120个字符。该规则仅检查.ets文件类型。
@@ -53,4 +53,4 @@ export const longLongLongLongLongLongLongLongLongLongLongLongLongLongLongLongLon
 "plugin:@hw-stylistic/all"
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

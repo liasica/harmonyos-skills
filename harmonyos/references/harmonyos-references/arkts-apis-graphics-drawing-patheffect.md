@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (PathEffect)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (PathEffect)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:47+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ffe1d866be7a0190647ed5d234a2caf45841ba2eb9ef38cc3e83c45dde2fb4b7
+scraped_at: 2026-11-12T09:56:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8d0ba1e18da8aab8c04679bba6dda16eb5ecbabf30b35c32264ad74632691c62
 ---
 
 路径效果对象，用于创建多种路径效果，包括虚线、圆角、离散、叠加和组合路径效果等。可通过[Pen.setPathEffect](arkts-apis-graphics-drawing-pen.md#setpatheffect12)将其应用到画笔上，从而在绘制路径时改变路径的渲染样式。
@@ -42,7 +42,7 @@ static createDashPathEffect(intervals: Array<number>, phase: number): PathEffect
 
 | 类型 | 说明 |
 | --- | --- |
-| [PathEffect](arkts-apis-graphics-drawing-patheffect.md) | 返回创建的虚线路径效果对象，可通过[Pen.setPathEffect](arkts-apis-graphics-drawing-pen.md#setpatheffect12)将其应用到画笔上以改变路径渲染样式。 |
+| [PathEffect](arkts-apis-graphics-drawing-patheffect.md) | 返回创建的虚线路径效果对象，可通过[Pen.setPathEffect](arkts-apis-graphics-drawing-pen.md#setpatheffect12)将其应用到画笔上以改变路径渲染样式。创建失败时返回undefined。 |
 
 **错误码：**
 

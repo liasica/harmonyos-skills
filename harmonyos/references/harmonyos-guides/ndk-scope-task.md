@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-scope-tas
 title: NDK多实例场景开发
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > NDK多实例场景开发
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:11+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:51:17+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:689009b4e1d1b6129311ee801bcb139762f01d3730c3819b891da139b4f07175
 ---
 

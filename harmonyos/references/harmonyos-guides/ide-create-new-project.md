@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-create-ne
 title: 创建一个新的工程
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 创建一个新的工程
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:12+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:11c6a245c2c14e4019a89a7e68d33515fe0d36bb03ec80363ff38535652bcf57
+scraped_at: 2026-11-12T09:52:51+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d9722ff8e3f5ffa53bbc3b78570c4dbecc6aa6e810d60d3f6af3bd6271731b60
 ---
 
 当您开始开发一个应用/元服务时，首先需要根据工程创建向导，创建一个新的工程，工具会自动生成对应的代码和资源模板。
@@ -29,7 +29,7 @@ DevEco Studio提供了基础的工程模板资源，不同模板支持的设备�
    * Atomic Service元服务工程暂不支持Native开发。
    * [CloudDev]Empty Ability模板：该功能仅支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/JKGrcvbrSF2eEzOzE9qfSA/zh-cn_image_0000002701663196.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/KiJH5uaiSmiyjryL5GAOPA/zh-cn_image_0000002808886581.png)
 3. 在工程配置页面，需要根据向导配置工程的基本信息。
    * **Project name**：工程的名称，可以自定义，由大小写字母、数字和下划线组成，必须由大小写字母开头，长度为1~200个字符。
    * **Bundle name**：标识应用的包名，用于标识应用的唯一性。
@@ -53,14 +53,14 @@ DevEco Studio提供了基础的工程模板资源，不同模板支持的设备�
    * 从26.0.0版本开始，除[Lite]Empty Ability工程模板外，其余工程模板新增**View API version distribution**，点击可查看HarmonyOS设备各API版本使用量占比，其中Percentage为设备量占比，Cumulative Percentage为设备量累计占比。Compatible SDK默认显示设备量累计占比超过90%的最高的API版本。
    * View API version distribution功能仅支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/CkC0LpkdR4OUvPzRT3cLhQ/zh-cn_image_0000002701823120.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/KqHBxrqmQw-pL0wW66ADag/zh-cn_image_0000002808766503.png "点击放大")
 4. 单击**Finish**，工具会自动生成示例代码和相关资源，等待工程创建完成。
 
 ## （可选）创建OpenHarmony工程
 
 如需创建OpenHarmony工程进行应用开发，请按照以下步骤操作。
 
-1. 在完成[创建HarmonyOS工程](ide-create-new-project.md#section11644183711342)后，根据如下操作修改工程级build-profile.json5文件中相关字段：
+1. 在完成[创建HarmonyOS工程](ide-create-new-project.md#section181328285169)后，根据如下操作修改工程级build-profile.json5文件中相关字段：
 
    **API 26.0.0及之后版本：**
    1. 在工程级build-profile.json5文件添加**compileSdkVersion**字段，并赋值为字符串类型。
@@ -73,9 +73,9 @@ DevEco Studio提供了基础的工程模板资源，不同模板支持的设备�
        {
          "name": "default",
          "signingConfig": "default",
-         "compileSdkVersion": "26.0.0",    //指定OpenHarmony应用编译时的版本，当前以API 26.0.0为例
-         "targetSdkVersion": "26.0.0",     //指定OpenHarmony应用运行所需的目标SDK版本，当前以API 26.0.0为例
-         "compatibleSdkVersion": "26.0.0", //指定OpenHarmony应用兼容的最低版本，当前以API 26.0.0为例
+         "compileSdkVersion": "26.0.1",    //指定OpenHarmony应用编译时的版本，当前以API 26.0.1为例
+         "targetSdkVersion": "26.0.1",     //指定OpenHarmony应用运行所需的目标SDK版本，当前以API 26.0.1为例
+         "compatibleSdkVersion": "26.0.1", //指定OpenHarmony应用兼容的最低版本，当前以API 26.0.1为例
          "runtimeOS": "OpenHarmony",
          "buildOption": {
            "strictMode": {
@@ -114,7 +114,7 @@ DevEco Studio提供了基础的工程模板资源，不同模板支持的设备�
    ```
 2. 单击Sync Now进行同步。在Sync Check弹窗中点击**Yes**，同意将module.json5/config.json文件中的phone切换为OpenHarmony支持的default类型，并删除在OpenHarmony不适用的其他设备类型，同步成功无其他报错则工程创建完成。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/mIgLeBTUReO1ztJ-Vjp-1A/zh-cn_image_0000002731542391.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/O26qUDPXQ8eWAiIb5TEJkw/zh-cn_image_0000002779566918.png)
 
 **说明** 
 

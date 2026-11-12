@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-n
 title: 开发准备
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏近场快传（可选） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:30+08:00
-doc_updated_at: 2026-07-17
-content_hash: sha256:a5efe1093e6ef810e7673e10a679d22007e00da7033089b31dd5cf34eac9e715
+scraped_at: 2026-11-12T09:52:24+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:28292f2dc5902831f2ef8eeb645d322802a5450ff4b5d2629ddafdecd2a60014
 ---
 
 ## 创建游戏
 
-若在华为应用市场发布游戏，或使用AGC控制台提供的服务，需要前往AGC控制台创建游戏类应用，具体操作请参见[创建项目](../app/agc-help-create-project-0000002242804048.md)和[创建HarmonyOS应用](../app/agc-help-create-app-0000002247955506.md)。其中：
+若在华为应用市场发布游戏，或使用AGC控制台提供的服务，需要前往AGC控制台创建游戏类应用，具体操作请参见[创建HarmonyOS应用](../app/agc-help-create-app-0000002247955506.md)。其中：
 
 * “应用类型”：选择“HarmonyOS应用”。
 * “应用分类”：选择“游戏”。
@@ -23,7 +23,7 @@ content_hash: sha256:a5efe1093e6ef810e7673e10a679d22007e00da7033089b31dd5cf34eac
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)平台，在“开发与服务”中选择目标应用，获取“项目设置 > 常规 > 应用”的**APP ID**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/a1_6OTt4S2a3_oWgHqI8KQ/zh-cn_image_0000002809050913.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/7pRGmdvXRquFhRG7tUE15A/zh-cn_image_0000002815399805.png)
 2. 在工程的entry模块module.json5文件中，新增metadata并配置app\_id，同时新增requestPermissions并配置如下权限。
 
    ```typescript

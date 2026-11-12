@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/har-package
 title: HAR
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用程序包基础知识 > 应用程序包开发与使用 > HAR
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:08+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:50:55+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:3919a3eff788c333348e8eeed9ab3f42ed7a432690e0c9edbb5cc8c43499864f
 ---
 

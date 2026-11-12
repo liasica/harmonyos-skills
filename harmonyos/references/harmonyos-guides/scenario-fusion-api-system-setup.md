@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 通过API获取系统设置属性
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 场景化API > 通过API获取系统设置属性
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:28+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:551d7196ecb6aef6a11995973ac5836f378156d94a2d98f74b61892940323e5a
+scraped_at: 2026-11-12T09:52:35+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:928087d802036fab936febe17bb23899a20301e7dbb7aa4c427ce504e1b8ae74
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ Scenario Fusion Kit提供获取系统设置属性API，调用该接口可以获�
 
 ## 约束与限制
 
-场景化API支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持Wearable和TV设备。
+场景化API支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持Wearable和TV设备，从API版本26.0.1开始，新增支持Car设备。
 
 ## 接口说明
 

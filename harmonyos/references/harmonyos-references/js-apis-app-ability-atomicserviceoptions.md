@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.AtomicServiceOptions (openAtomicService可选参数)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.AtomicServiceOptions (openAtomicService可选参数)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:51:41+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:34d11a3e9e61853597a5b847af5c286a3a33f35728dba1fd8db91cd39b7b9adc
+scraped_at: 2026-11-12T09:53:28+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4adff06324529698aecbd7779586d2bbf81d2b05923712056bf00efcff16e78b
 ---
 
 AtomicServiceOptions可以作为[openAtomicService()](js-apis-inner-application-uiabilitycontext.md#openatomicservice12)的入参，用于携带参数。继承于[StartOptions](js-apis-app-ability-startoptions.md)。
@@ -50,7 +50,7 @@ export default class EntryAbility extends UIAbility {
         hilog.info(0x0000, 'testTag', `appId:${appId}`);
       },
       onAtomicServiceRequestFailure(appId: string, failureCode: FailureCode, failureMessage: string) {
-        hilog.info(0x0000, 'testTag', `appId:${appId}, failureCode:${failureCode}, failureMessage:${failureMessage}`);
+        hilog.error(0x0000, 'testTag', `appId:${appId}, failureCode:${failureCode}, failureMessage:${failureMessage}`);
       }
     };
 

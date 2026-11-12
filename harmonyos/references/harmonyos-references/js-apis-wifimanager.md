@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-w
 title: "@ohos.wifiManager (WLAN)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.wifiManager (WLAN)
 category: harmonyos-references
-scraped_at: 2026-10-27T07:42:23+08:00
-doc_updated_at: 2026-10-26
-content_hash: sha256:50a0baad7ccb79026895b015630a1e7c399e98960291839c20cfb20a89f99ad0
+scraped_at: 2026-11-12T09:55:33+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c140b21b887e0e00e7363287cbc4ef446234f98ef2e530cac47811472b09c867
 ---
 
 该模块主要提供Wi-Fi基础功能（无线接入、无线加密、无线漫游等）、P2P（peer-to-peer）服务的基础功能和Wi-Fi消息通知的相应服务，让应用可以通过Wi-Fi和其他设备互联互通。
@@ -548,7 +548,7 @@ Wi-Fi配置信息。
 | bssid | string | 否 | 是 | 热点的BSSID，例如：00:11:22:33:44:55。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | bssidType10+ | [DeviceAddressType](js-apis-wifimanager.md#deviceaddresstype10) | 否 | 是 | 热点的BSSID类型。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | preSharedKey | string | 否 | 否 | 热点的密钥，最大长度为64字节。  当securityType为WIFI\_SEC\_TYPE\_OPEN时该字段需为空串，其他加密类型不能为空串。  当securityType为WIFI\_SEC\_TYPE\_WEP时，该字段长度只允许为5、10、13、26、16和32字节其中之一，并且当字段长度为偶数时，该字段必须为纯十六进制数字构成。  当securityType为WIFI\_SEC\_TYPE\_SAE时，该字段最小长度为1字节。  当securityType为WIFI\_SEC\_TYPE\_PSK时，该字段最小长度为8字节。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| isHiddenSsid | boolean | 否 | 是 | 是否是隐藏网络。true表示是隐藏网络，false表示不是隐藏网络。 |
+| isHiddenSsid | boolean | 否 | 是 | 是否是隐藏网络。true表示是隐藏网络，false表示不是隐藏网络。  在添加网络配置阶段，如果值为true，建议在调用[addDeviceConfig](js-apis-wifimanager.md#wifimanageradddeviceconfig15)或[addCandidateConfig](js-apis-wifimanager.md#wifimanageraddcandidateconfig)添加网络配置后，调用[startScan](js-apis-wifimanager.md#wifimanagerstartscan21)接口成功收到[wifiScanStateChange](js-apis-wifimanager.md#wifimanageronwifiscanstatechange)扫描回调后才发起连接。 |
 | securityType | [WifiSecurityType](js-apis-wifimanager.md#wifisecuritytype) | 否 | 否 | 加密类型。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | netId22+ | number | 否 | 是 | 分配的网络ID。 |
 | eapConfig10+ | [WifiEapConfig](js-apis-wifimanager.md#wifieapconfig10) | 否 | 是 | 可扩展身份验证协议配置。只有securityType为WIFI\_SEC\_TYPE\_EAP时需要填写。 |
@@ -697,7 +697,7 @@ WAPI认证方式的枚举。
 | networkId | number | 否 | 否 | 候选网络配置的ID。 |
 | withUserAction | boolean | 否 | 是 | 连接时是否提示用户进行信任确认，true表示与connectToCandidateConfigWithUserAction接口功能一致，false表示不提示用户进行信任确认，默认false 。 |
 | userActionTimeout | number | 否 | 是 | 提示用户进行信任确认弹框显示时间（单位秒）有效值范围1-30秒，默认10秒 。 |
-| addNetworkToSystem | boolean | 否 | 是 | 是否添加网络到系统，true表示将建议网络添加到系统网络中，false表示保持建议网络，默认false 。 |
+| addNetworkToSystem | boolean | 否 | 是 | 是否添加网络到系统，true表示将候选网络添加到系统网络中，false表示保持候选网络，默认false 。 |
 
 ## wifiManager.addCandidateConfig
 
@@ -1186,6 +1186,8 @@ addDeviceConfig(config: WifiDeviceConfig): Promise<number>
 
 添加网络配置。使用Promise异步回调。
 
+类似地，还可以通过[addCandidateConfig](js-apis-wifimanager.md#wifimanageraddcandidateconfig)配合[connectToCandidateConfig](js-apis-wifimanager.md#wifimanagerconnecttocandidateconfig)接口，设置[ConnectSettings](js-apis-wifimanager.md#connectsettings)中addNetworkToSystem为true，实现添加候选网络到系统网络的功能。
+
 **需要权限：** ohos.permission.SET\_WIFI\_INFO 和 ohos.permission.SET\_WIFI\_CONFIG
 
 **系统能力：** SystemCapability.Communication.WiFi.STA
@@ -1240,6 +1242,8 @@ addDeviceConfig(config: WifiDeviceConfig): Promise<number>
 addDeviceConfig(config: WifiDeviceConfig, callback: AsyncCallback<number>): void
 
 添加网络配置。使用callback异步回调。
+
+可以通过[addCandidateConfig](js-apis-wifimanager.md#wifimanageraddcandidateconfig)配合[connectToCandidateConfig](js-apis-wifimanager.md#wifimanagerconnecttocandidateconfig)接口，设置[ConnectSettings](js-apis-wifimanager.md#connectsettings)中addNetworkToSystem为true，实现添加候选网络到系统网络的功能。
 
 **需要权限：** ohos.permission.SET\_WIFI\_INFO 和 ohos.permission.SET\_WIFI\_CONFIG
 
@@ -1740,6 +1744,8 @@ getDeviceMacAddress(): string[]
 获取设备的MAC地址。
 
 **需要权限：** ohos.permission.GET\_WIFI\_LOCAL\_MAC 和 ohos.permission.GET\_WIFI\_INFO
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
 
 API8-15 ohos.permission.GET\_WIFI\_LOCAL\_MAC权限仅向系统应用开放，从API16开始，在PC/2in1设备上面向普通应用开放，在其余设备上仍仅面向系统应用开放。
 

@@ -3,12 +3,11 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-jsvm
 title: JSVM
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > JSVM
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:58+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:95085a531d8b91d8f694cae2f5ade92f7b4545ee86736188a50a6e9daecac37f
+scraped_at: 2026-11-12T09:58:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:fe0cb244178b7ac9769a7902f2bd9621b24b3f1471c560a544081d218790f5e7
 ---
 
-* **[故障排查](jsvm-troubleshooting.md)**
 * **[如何管理JSVM\_CallbackStruct生命周期](faqs-jsvm-1.md)**
 * **[如何自排查\_Bool类型没有找到的编译问题](faqs-jsvm-2.md)**
 * **[如何自排查OOM(v8::FatalProcessOutOfMemory)错误](faqs-jsvm-4.md)**

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-revoke-a
 title: 撤回通知消息
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 推送场景化消息 > 推送通知消息 > 撤回通知消息
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:26+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:0ac108b6a1e7958dd2b3068e5e380fefae2cb10c7e9d494c65e4611e342af721
+scraped_at: 2026-11-12T09:52:34+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a2ab0c49932235e9d14253687f21581c875b624585531c72df13f185f8d20bff
 ---
 
 当推送的通知消息内容有误或者存在违规情况时，可能会引起用户投诉或监管部门处罚等不良后果。Push Kit为您提供消息撤回功能，降低此类推送可能造成的影响。
@@ -23,7 +23,7 @@ content_hash: sha256:0ac108b6a1e7958dd2b3068e5e380fefae2cb10c7e9d494c65e4611e342
 
 ## 约束与限制
 
-撤回通知消息能力支持Phone、Tablet、PC/2in1设备。并且从5.1.0(18)版本开始，新增支持Wearable设备；从5.1.1(19)版本开始，新增支持TV设备。
+撤回通知消息能力支持Phone、Tablet、PC/2in1设备。并且从API版本5.1.0(18)开始，新增支持Wearable设备；从API版本5.1.1(19)开始，新增支持TV设备；从API版本26.0.1开始，新增支持Car设备。
 
 ## 开发步骤
 

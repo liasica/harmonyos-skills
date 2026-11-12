@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_member-de
 title: "@typescript-eslint/member-delimiter-style"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/member-delimiter-style
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:09+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:133a9789bdfeb1fb7a4806a70b31c08e57c764abeed1c0284f78424c1e163aa9
+scraped_at: 2026-11-12T09:52:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:fb600617be4d6504b8b329ac1b377d2889501e15ec1f48c28c63e9a4066ef11b
 ---
 
 要求接口和类型别名中的成员之间使用特定的分隔符。
@@ -157,4 +157,4 @@ export interface Baz {
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

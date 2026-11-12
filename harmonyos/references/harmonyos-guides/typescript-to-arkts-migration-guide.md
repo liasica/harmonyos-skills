@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/typescript-to
 title: 从TypeScript到ArkTS的适配规则
 breadcrumb: 指南 > 基础入门 > 学习ArkTS语言 > 从TypeScript到ArkTS的适配指导 > 从TypeScript到ArkTS的适配规则
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:04+08:00
-doc_updated_at: 2026-09-20
+scraped_at: 2026-11-12T09:50:57+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:311abdadbe54de19b7145f0ab147676562e94f7c66149fa0b4368a473ec59f9a
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-f
 title: 开放权限（系统授权）
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 应用权限列表 > 开放权限（系统授权）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:58+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:05dc07e2af11f6324983f6ae324797b256091dd0566de60477ed147a85ba9d15
+scraped_at: 2026-11-12T09:51:31+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:fa15cb9acc79057a3c41283f61c807890974faffb8d4241960bafe5f17fb9269
 ---
 
 此列表内所有权限均为系统授权（system\_grant）的开放权限，面向所有应用开放。
@@ -748,6 +748,34 @@ content_hash: sha256:05dc07e2af11f6324983f6ae324797b256091dd0566de60477ed147a85b
 
 **起始版本**：26.0.0
 
+## ohos.permission.QUERY\_PUBLIC\_CLI\_TOOL
+
+允许应用查询可用的CLI工具。
+
+获取该权限后，可帮助三方智能体应用接入Claw功能。
+
+**权限级别**：normal
+
+**授权方式**：系统授权（system\_grant）
+
+**支持设备**：PC/2in1
+
+**起始版本**：26.0.1
+
+## ohos.permission.EXEC\_PUBLIC\_CLI\_TOOL
+
+允许应用执行可用的CLI工具。
+
+获取该权限后，可帮助三方智能体应用接入Claw功能。
+
+**权限级别**：normal
+
+**授权方式**：系统授权（system\_grant）
+
+**支持设备**：PC/2in1
+
+**起始版本**：26.0.1
+
 ## ohos.permission.GET\_ENTERPRISE\_CONFIG
 
 允许应用获取行业定制配置文件。
@@ -789,3 +817,115 @@ content_hash: sha256:05dc07e2af11f6324983f6ae324797b256091dd0566de60477ed147a85b
 **支持设备**：Phone | PC/2in1 | Tablet
 
 **起始版本**：26.0.0
+
+## ohos.permission.REQUEST\_LOCAL\_ACCOUNT\_AUTHORIZATION
+
+允许应用获取本地账号授权。
+
+获取该权限后，应用可调用接口请求本地账号授权。用户将通过系统授权弹窗进行本地账号身份认证后授予目标特权，应用可执行目标特权对应的敏感操作（如网络抓包等）。
+
+**权限级别**：normal
+
+**授权方式**：系统授权（system\_grant）
+
+**支持设备**：Phone | PC/2in1 | Tablet | Car | TV | Wearable
+
+**起始版本**：26.0.1
+
+## ohos.permission.vehicle.ACCESS\_CAR\_SECURITY\_PRIVACY
+
+允许应用访问车载安全隐私服务的接口。
+
+获取该权限后，应用可以查询整车隐私相关协议或政策、主驾隐私模式、一键除痕状态等。
+
+**权限级别**：normal
+
+**授权方式**：系统授权（system\_grant）
+
+**支持设备**：Car
+
+**起始版本**：26.0.1
+
+## ohos.permission.vehicle.HIMA\_DATA\_READ
+
+允许应用读取HIMA云数据。
+
+通过此权限，应用程序可以从HIMA云读取车辆相关数据。
+
+**权限级别**：normal
+
+**授权方式**：系统授权（system\_grant）
+
+**支持设备**：Car
+
+**起始版本**：26.0.1
+
+## ohos.permission.vehicle.HIMA\_DATA\_WRITE
+
+允许应用将数据写入HIMA云。
+
+通过此权限，应用程序可以向HIMA云写入车辆相关数据。
+
+**权限级别**：normal
+
+**授权方式**：系统授权（system\_grant）
+
+**支持设备**：Car
+
+**起始版本**：26.0.1
+
+## ohos.permission.kernel.USB\_CAPTURE
+
+允许应用抓取USB数据包。
+
+获取此权限后，应用程序需用户认证后才可以进行USB抓包，无此权限不允许抓取。
+
+**权限级别**：normal
+
+**授权方式**：系统授权（system\_grant）
+
+**支持设备**：PC/2in1
+
+**起始版本**：26.0.1
+
+## ohos.permission.ACCESS\_USER\_PASSIVE\_RECOGNITION
+
+允许应用识别当前使用者是否为用户本人。
+
+获取该权限后，应用可以使用用户被动识别能力，识别当前使用者是否为用户本人，并获取用户ID、认证可信等级等信息。
+
+**权限级别**：normal
+
+**授权方式**：系统授权（system\_grant）
+
+**支持设备**：Phone | PC/2in1 | Tablet | Car
+
+**起始版本**：26.0.1
+
+## ohos.permission.UPDATE\_SCOPE\_FONT
+
+允许应用管理应用级和会话级字体。
+
+获取该权限后，应用可使用字体管理接口安装、卸载和查询应用级和会话级字体，并注册字体服务状态监听器。
+
+**权限级别**：normal
+
+**授权方式**：系统授权（system\_grant）
+
+**支持设备**：Phone | PC/2in1 | Tablet
+
+**起始版本**：26.0.1
+
+## ohos.permission.GET\_STORAGE\_VOLUME\_INFO
+
+允许应用查询存储设备基础属性信息。
+
+获取该权限后，应用可查询外置存储设备的物理磁盘信息（如磁盘ID、设备类型、厂商ID、产品ID等）和卷信息（如卷ID、挂载状态、容量、挂载路径、文件系统类型等），以及本地系统盘和数据盘的硬件信息（如物理路径、型号、品牌、介质类型、运行状态、容量等）。
+
+**权限级别**：normal
+
+**授权方式**：系统授权（system\_grant）
+
+**支持设备**：Phone | PC/2in1 | Tablet | Car | TV
+
+**起始版本**：26.0.1

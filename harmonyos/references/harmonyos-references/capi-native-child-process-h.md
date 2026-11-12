@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_child_process.h
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > C API > 头文件 > native_child_process.h
 category: harmonyos-references
-scraped_at: 2026-09-10T06:24:37+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8d3ccebbf6df0f2c5099316635c8a8a50f80e747c31b64a7380a4f4d0eb9e80b
+scraped_at: 2026-11-12T09:53:36+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:6e7b9037c44059818a45f5b9f18e9dd6f6c5d630b7dde63c7ff6e9e0375fb12b
 ---
 
 ## 概述
@@ -75,6 +75,7 @@ content_hash: sha256:8d3ccebbf6df0f2c5099316635c8a8a50f80e747c31b64a7380a4f4d0eb
 | [Ability\_NativeChildProcess\_ErrCode OH\_Ability\_ChildProcessConfigs\_SetIsolationUid(Ability\_ChildProcessConfigs\* configs, bool isolationUid)](capi-native-child-process-h.md#oh_ability_childprocessconfigs_setisolationuid) | - | 设置子进程配置信息对象的uid是否隔离。该设置仅在NativeChildProcess\_IsolationMode为NCP\_ISOLATION\_MODE\_ISOLATED时生效，且仅当调用[OH\_Ability\_StartNativeChildProcessWithConfigs](capi-native-child-process-h.md#oh_ability_startnativechildprocesswithconfigs)、[OH\_Ability\_CreateNativeChildProcessWithConfigs](capi-native-child-process-h.md#oh_ability_createnativechildprocesswithconfigs)接口时生效。 |
 | [Ability\_NativeChildProcess\_ErrCode OH\_Ability\_KillChildProcess(int32\_t pid)](capi-native-child-process-h.md#oh_ability_killchildprocess) | - | 终止当前进程创建的子进程。 |
 | [bool OH\_Ability\_IsNativeChildProcessSupported()](capi-native-child-process-h.md#oh_ability_isnativechildprocesssupported) | - | 查询是否允许调用者在此设备上创建Native子进程。 |
+| [Ability\_NativeChildProcess\_ErrCode OH\_Ability\_AcquireChildProcessInfos(OH\_AbilityRuntime\_ChildProcessInfosHandle\* infos, uint32\_t\* count)](capi-native-child-process-h.md#oh_ability_acquirechildprocessinfos) | - | 获取当前应用的所有子进程信息。 |
 
 ## 枚举类型说明
 
@@ -306,7 +307,7 @@ int OH_Ability_CreateNativeChildProcess(const char* libName,OH_Ability_OnNativeC
 
 主进程：
 
-7. onProcessStartedCallback(ipcRemote, errCode)
+7. onProcessStartedCallback(errCode, ipcRemote)
 
 子进程：
 
@@ -643,3 +644,36 @@ bool OH_Ability_IsNativeChildProcessSupported()
 | 类型 | 说明 |
 | --- | --- |
 | bool | 是否允许调用者创建Native子进程。  true：允许创建Native子进程。  false：不允许创建Native子进程。  默认值：false。 |
+
+### OH\_Ability\_AcquireChildProcessInfos()
+
+```c
+Ability_NativeChildProcess_ErrCode OH_Ability_AcquireChildProcessInfos(OH_AbilityRuntime_ChildProcessInfosHandle* infos, uint32_t* count)
+```
+
+**描述**
+
+获取当前应用的所有子进程信息。包括通过以下方式启动的子进程：
+
+* [OH\_Ability\_CreateNativeChildProcess](capi-native-child-process-h.md#oh_ability_createnativechildprocess) / [OH\_Ability\_CreateNativeChildProcessWithConfigs](capi-native-child-process-h.md#oh_ability_createnativechildprocesswithconfigs)
+* [OH\_Ability\_StartNativeChildProcess](capi-native-child-process-h.md#oh_ability_startnativechildprocess) / [OH\_Ability\_StartNativeChildProcessWithConfigs](capi-native-child-process-h.md#oh_ability_startnativechildprocesswithconfigs)
+* [childProcessManager.startChildProcess](js-apis-app-ability-childprocessmanager.md#childprocessmanagerstartchildprocess)（非SELF\_FORK模式）
+* [childProcessManager.startArkChildProcess](js-apis-app-ability-childprocessmanager.md#childprocessmanagerstartarkchildprocess12)
+* [childProcessManager.startNativeChildProcess](js-apis-app-ability-childprocessmanager.md#childprocessmanagerstartnativechildprocess13)
+
+获取到的 infos 使用完毕后需要调用[OH\_AbilityRuntime\_ReleaseChildProcessInfos](capi-child-process-info-h.md#oh_abilityruntime_releasechildprocessinfos)释放，避免内存泄漏。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_AbilityRuntime\_ChildProcessInfosHandle](capi-nativechildprocess-infos.md)\* infos | 输出参数，子进程信息集合句柄的指针，不能为nullptr。调用成功后，\*infos 指向子进程信息集合。使用完毕后需要调用[OH\_AbilityRuntime\_ReleaseChildProcessInfos](capi-child-process-info-h.md#oh_abilityruntime_releasechildprocessinfos)释放。 |
+| uint32\_t\* count | 输出参数，子进程数量，不能为nullptr。调用成功后，\*count 表示当前应用的子进程数量；当无子进程时，\*count 为 0。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Ability\_NativeChildProcess\_ErrCode](capi-native-child-process-h.md#ability_nativechildprocess_errcode) | NCP\_NO\_ERROR - 操作成功。  NCP\_ERR\_INVALID\_PARAM - 传入参数infos或count为nullptr。  NCP\_ERR\_INTERNAL - 内部错误，例如连接系统服务失败。  详见Ability\_NativeChildProcess\_ErrCode定义。 |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/liveview-intr
 title: Live View Kit简介
 breadcrumb: 指南 > 应用服务 > Live View Kit（实况窗服务） > Live View Kit简介
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:33:05+08:00
-doc_updated_at: 2026-10-30
-content_hash: sha256:5a1992d0223ca25ee96f35582a91fdc059c1b9282a3a691f4175ee721a6d3320
+scraped_at: 2026-11-12T09:52:28+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:38e82cbcbbb386b7786bcdf5ca4453a4a616a0450c22ce7c6e4b7a77c132aaf5
 ---
 
 Live View Kit（实况窗服务）支持应用将订单或者服务的实时状态信息变化在设备的关键界面展示，并对展示信息的生命周期、用户界面UI效果等进行管理。
@@ -107,6 +107,7 @@ Live View Kit（实况窗服务）支持应用将订单或者服务的实时状�
 * 创建和更新本地实况窗场景，从API版本26.0.0开始，传入图片PixelMap实例大小不大于192KB；对于API版本26.0.0之前，传入图片PixelMap实例大小不大于30KB。
 
   + 为避免在HarmonyOS 7.0.0之前旧系统版本上实况窗无法显示PixelMap类型图片，要求在新旧系统版本上传入不同大小的图片PixelMap实例进行适配，请参考[应用使用API如何在不同系统版本设备上做兼容性保护判断（ArkTS/C++）](../harmonyos-faqs/faq-basics-service-kit-18.md)。
+* 创建、更新或结束实况窗时，若传入图片为SVG格式，应遵循[SVG格式图片限制](../doccenter-feature-dev/bpta-desktop-shortcuts.md#section647533719295)中的相关约束，超出限制的图片将无法正常展示。
 
 ### 通过Push Kit创建和更新实况窗的约束限制
 

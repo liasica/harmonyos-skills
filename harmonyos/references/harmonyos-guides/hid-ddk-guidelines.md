@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hid-ddk-guide
 title: 开发适用HID协议的设备驱动
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 扩展外设专项驱动开发 > 开发适用HID协议的设备驱动
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:55+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:28e5d2e211bde280f9b8ed4799a7b26d1d41d920c1fac7585d640a6af645cfd8
+scraped_at: 2026-11-12T09:51:50+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:921f63b9aa8d20f7898947cc008393951cfcd49201bb48d2d5a21160d5f59bd2
 ---
 
 ## 简介
@@ -31,7 +31,7 @@ HidDdk（HID Driver Development Kit）是为开发者提供的HID设备驱动程
 
 **图1** HidDdk调用原理
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/92fUqu23S4iMjfjgFKfj_w/zh-cn_image_0000002809010489.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/3z9vy19KRLqFhxHEhWAJuw/zh-cn_image_0000002786359778.png)
 
 ## 约束与限制
 
@@ -149,6 +149,8 @@ libhid.z.so
 ```
 #include <hid/hid_ddk_api.h>
 #include <hid/hid_ddk_types.h>
+#include <usb/usb_ddk_api.h>
+#include <usb/usb_ddk_types.h>
 ```
 
 1. 初始化DDK。
@@ -165,19 +167,49 @@ libhid.z.so
    ```
 2. 打开设备。
 
-   初始化HidDdk后，使用 **hid\_ddk\_api.h** 的 **OH\_Hid\_Open** 打开HID设备。
+   使用 **hid\_ddk\_api.h** 的 **OH\_Hid\_Open** 打开HID设备，需要传入 deviceId 和 interfaceIndex 接口编号。其中 deviceId 可通过USB DDK接口 **OH\_Usb\_GetDevices** 获取（需先调用 **OH\_Usb\_Init** 初始化USB DDK），interfaceIndex 可通过 **OH\_Usb\_GetConfigDescriptor** 获取配置描述符后从中读取各接口的 bInterfaceNumber。
 
    ```
-   uint32_t bInterfaceNum1 = 0x00;
-   // 打开deviceId和interfaceIndex1指定的HID设备（一般为/dev/hidraw0设备文件）
+   // 初始化USB DDK并获取deviceId
+   ret = OH_Usb_Init();
+   if (ret != USB_DDK_SUCCESS) {
+       OH_LOG_ERROR(LOG_APP, "OH_Usb_Init failed, ret: %{public}d", ret);
+       return ret;
+   }
+   constexpr size_t maxUsbDeviceNum = 255;
+   struct Usb_DeviceArray deviceArray;
+   deviceArray.deviceIds = new uint64_t[maxUsbDeviceNum];
+   ret = OH_Usb_GetDevices(&deviceArray);
+   if (ret != USB_DDK_SUCCESS) {
+       OH_LOG_ERROR(LOG_APP, "OH_Usb_GetDevices failed, ret: %{public}d", ret);
+       delete[] deviceArray.deviceIds;
+       return ret;
+   }
+   deviceID_ = deviceArray.deviceIds[0];
+   delete[] deviceArray.deviceIds;
+
+   // 获取配置描述符（configIndex默认取1），读取HID接口的bInterfaceNumber（这里用前两个HID类型的Interface为例）
+   struct UsbDdkConfigDescriptor *config = nullptr;
+   ret = OH_Usb_GetConfigDescriptor(deviceID_, 1, &config);
+   if (ret != USB_DDK_SUCCESS) {
+       OH_LOG_ERROR(LOG_APP, "OH_Usb_GetConfigDescriptor failed, ret: %{public}d", ret);
+       return ret;
+   }
+   uint8_t bInterfaceNum1 = config->interface[0].altsetting[0].interfaceDescriptor.bInterfaceNumber;
+   uint8_t bInterfaceNum2 = config->interface[1].altsetting[0].interfaceDescriptor.bInterfaceNumber;
+   OH_Usb_FreeConfigDescriptor(config);
+   ```
+
+   获取到 deviceId 和 bInterfaceNumber 后，调用 **OH\_Hid\_Open** 打开对应的HID设备。示例设备包含两个HID接口，因此调用了两次；实际使用时调用次数取决于设备的接口数量，若只有一个HID接口只需调用一次。
+
+   ```
+   // 使用从配置描述符中读取的bInterfaceNum打开HID设备（一般为/dev/hidraw*文件）
    ret = OH_Hid_Open(deviceID_, bInterfaceNum1, &hid_);
    if (ret != HID_DDK_SUCCESS) {
        OH_LOG_ERROR(LOG_APP, "Failed to open hid device, interface number:%{public}u ret:%{public}d",
            bInterfaceNum1, ret);
        return ret;
    }
-   uint32_t bInterfaceNum2 = 0x01;
-   // 打开deviceId和interfaceIndex2指定的HID设备（一般为/dev/hidraw1设备文件）
    ret = OH_Hid_Open(deviceID_, bInterfaceNum2, &hid2_);
    if (ret != HID_DDK_SUCCESS) {
        OH_LOG_ERROR(LOG_APP, "Failed to open hid device, interface number:%{public}u ret:%{public}d",

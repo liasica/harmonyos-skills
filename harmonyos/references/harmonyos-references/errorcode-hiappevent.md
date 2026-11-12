@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 应用事件打点错误码
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 错误码 > 应用事件打点错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:17+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:5ac446eb487909601c7074f15d5021e2628552e64162716fa61bf96ffbe2c5c6
+scraped_at: 2026-11-12T09:56:17+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:11dc116a2e542520c4700e509cf3c18168ca328fab29e6196a57fc8c235a0a5f
 ---
 
 **说明** 
@@ -337,3 +337,21 @@ Invalid parameter value. Possible causes: 1. Incorrect parameter length; 2. Inco
 **处理步骤**
 
 传入符合规格的参数值。
+
+## 11106001 注册external\_log日志管理者失败
+
+**错误信息**
+
+State error. Possible causes: 1. Log manager already registered.
+
+**错误描述**
+
+在注册external\_log日志管理者之前，已被应用内其它业务注册过external\_log日志管理者。
+
+**可能原因**
+
+external\_log日志管理者已被注册。
+
+**处理步骤**
+
+先调用查询接口查看external\_log日志管理者是否已被注册，若已注册则无需重复注册，未注册则尝试重新注册。

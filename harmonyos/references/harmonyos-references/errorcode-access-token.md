@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 访问控制错误码
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > 错误码 > 访问控制错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:38+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:8204ffbeba849723fd5c3c4f1e4335f83fe067360f37afe6b104c084ee7e0bc8
+scraped_at: 2026-11-12T09:53:38+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:935ccf256cf9f78e81b7c5bff0d0de9a71cb7846927d6b9fb38ff4da1483ba2a
 ---
 
 **说明** 
@@ -24,18 +24,18 @@ Invalid Parameter. Error message: messageInfo.
 
 **可能原因**
 
-1. tokenId值为0。
-2. 指定的权限名为空或者权限名长度大于256。
-3. 请求授权/撤销权限的flag取值非法。
-4. 注册监听的参数检查错误。
-5. 指定的Context不属于当前应用。
-6. 请求的权限不属于同一个权限组。
-7. 请求的权限中存在应用未声明的权限。
-8. 请求的全局开关类型非法。
-9. 指定的权限名不是[user\_grant权限](../harmonyos-guides/permissions-for-all-user.md)。
-10. 指定的数组成员个数超过1024或成员均为无效值。
-11. 请求查看权限使用记录的起始结束时间不合法。
-12. 指定的权限名未在应用中声明。
+* tokenId值为0。
+* 指定的权限名为空或者权限名长度大于256。
+* 请求授权/撤销权限的flag取值非法。
+* 注册监听的参数检查错误。
+* 指定的Context不属于当前应用。
+* 请求的权限不属于同一个权限组。
+* 请求的权限中存在应用未声明的权限。
+* 请求的全局开关类型非法。
+* 指定的权限名不是[user\_grant权限](../harmonyos-guides/permissions-for-all-user.md)。
+* 指定的数组成员个数超过1024或成员均为无效值。
+* 请求查看权限使用记录的起始结束时间不合法。
+* 指定的权限名未在应用中声明。
 
 **处理步骤**
 
@@ -53,8 +53,8 @@ The API is not used in pair with others.
 
 **可能原因**
 
-1. 当前接口在未解除配套关系前，使用相同入参重复调用。
-2. 当前接口在未配套使用的情况下，单独调用。
+* 当前接口在未解除配套关系前，使用相同入参重复调用。
+* 当前接口在未配套使用的情况下，单独调用。
 
 **处理步骤**
 

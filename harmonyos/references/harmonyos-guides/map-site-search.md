@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-site-sear
 title: POI搜索
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 位置搜索 > POI搜索
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:22+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:e769fb5f9a834de3f8b897b757244436d84f7850f16a201b18839f668aec16b4
+scraped_at: 2026-11-12T09:52:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:00e35be22bfbc59056594714e5eb29337136c493f9043d128ce683aa11d1caab
 ---
 
 ## 场景介绍
@@ -48,7 +48,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 ```typescript
 let params: site.SearchByTextParams = {
   // 根据自定义关键字进行搜索，例如：“故宫”、“夫子庙”
-  query: 'Piazzale Dante, 41, 55049 Viareggio, Tuscany, Italy',
+  query: '夫子庙, 旅馆',
   // 经纬度坐标
   location: {
     latitude: 31.984,
@@ -57,7 +57,7 @@ let params: site.SearchByTextParams = {
   // 指定地理位置的范围半径
   radius: 10000,
   // 搜索结果的语言类型
-  language: 'en'
+  language: 'zh'
 };
 // 返回关键字搜索结果
 try {
@@ -80,7 +80,7 @@ let params: site.NearbySearchParams = {
     longitude: -0.07594896472392065
   },
   poiTypes: [
-    'Watch_Store',
+    'WATCH_STORE',
     'SUBWAY',
     'PRIMARY_SCHOOL',
     'GENERAL_AUTO_REPAIR_SERVICE_CENTER'

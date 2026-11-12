@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/speech-aicapt
 title: AI字幕控件
 breadcrumb: 指南 > AI > Speech Kit（场景化语音服务） > AI字幕控件
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:11+08:00
-doc_updated_at: 2026-09-07
-content_hash: sha256:6e4d90ce086e0941e50b1289713641879c3f596c674e0286c2ab461892f064d0
+scraped_at: 2026-11-12T09:52:45+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e02d054406e6c8694179eae181531fa925a5e712faf49b1375f1f6e23bfaa36b
 ---
 
 ## 适用场景
@@ -14,7 +14,7 @@ AI字幕控件应用广泛，例如在用户不熟悉音频源语言或者静音
 
 本章节将向您介绍如何使用AI字幕组件[AICaptionComponent](../harmonyos-references/speech-aicaptioncomponent.md)和[AICaptionController](../harmonyos-references/speech-aicaptioncomponent.md#aicaptioncontroller)展示AI字幕，效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/UT7N7sV4Ts-1qN4qZH7pbQ/zh-cn_image_0000002809051425.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/q97bfviiRW6LYS1RnyoSWA/zh-cn_image_0000002815560199.jpg)
 
 ## 接口说明
 
@@ -83,21 +83,21 @@ AI字幕功能主要由[AICaptionComponent](../harmonyos-references/speech-aicap
 
      build() {
        Column({ space: 20 }) {
-        if (this.isSupport) {
-          // 调用AICaptionComponent组件初始化字幕
-          AICaptionComponent({
-            isShown: this.isShown,
-            controller: this.controller,
-            options: this.captionOption
-          })
-            .width('100%')
-            .height(100)
-          Divider()
-          if (this.isShown) {
-            Text('上面是字幕区域')
-              .fontColor(Color.White)
-          }
-        }
+         if (this.isSupport) {
+           // 调用AICaptionComponent组件初始化字幕
+           AICaptionComponent({
+             isShown: this.isShown,
+             controller: this.controller,
+             options: this.captionOption
+           })
+             .width('100%')
+             .height(100)
+           Divider()
+           if (this.isShown) {
+             Text('上面是字幕区域')
+               .fontColor(Color.White)
+           }
+         }
        }
        .width('100%')
        .height('100%')
@@ -124,6 +124,7 @@ AI字幕功能主要由[AICaptionComponent](../harmonyos-references/speech-aicap
        this.isReading = true;
        let fileData: Uint8Array | undefined = undefined;
        try {
+        // ChineseAudio.pcm文件需放置于entry/src/main/resources/base/media路径下，且为PCM格式音频文件
          fileData =
            await this.getUIContext()?.getHostContext()?.resourceManager.getMediaContent($r('app.media.ChineseAudio').id);
        } catch (e) {

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkgraphi
 title: 结构体
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-10-11T07:27:53+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:c0c651740cc15870023d801007f6e7a2da89e8af4db5a54e20800040d97a4f61
+scraped_at: 2026-11-12T09:57:02+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8613e1e72d709efa143415bb99621bbb75345d775d343ff16c6525606bba7404
 ---
 
 * **[OH\_NativeBuffer\_ColorXY](capi-oh-nativebuffer-oh-nativebuffer-colorxy.md)**
@@ -108,6 +108,7 @@ content_hash: sha256:c0c651740cc15870023d801007f6e7a2da89e8af4db5a54e20800040d97
 * **[OH\_Drawing\_RecordCmdUtils](capi-drawing-oh-drawing-recordcmdutils.md)**
 * **[OH\_Drawing\_RecordCmd](capi-drawing-oh-drawing-recordcmd.md)**
 * **[OH\_Drawing\_Array](capi-drawing-oh-drawing-array.md)**
+* **[OH\_Drawing\_TypefaceFallbackInfo](capi-drawing-oh-drawing-typefacefallbackinfo.md)**
 * **[OH\_Filter](capi-effectkit-oh-filter.md)**
 * **[OH\_NativeImage](capi-oh-nativeimage-oh-nativeimage.md)**
 * **[NativeWindow](capi-nativewindow-nativewindow.md)**

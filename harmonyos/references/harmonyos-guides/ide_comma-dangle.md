@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_comma-dan
 title: "@typescript-eslint/comma-dangle"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/comma-dangle
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:08+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:a5ed9237135e51cd6d1db80d641c8b0d10d45cc22c3e7881d6cdb829ee02cf16
+scraped_at: 2026-11-12T09:52:54+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:278261343ae67bf023790397e86cb72179dcfc81ff79a9511ff65e1dae689fb7
 ---
 
 允许或禁止使用尾随逗号。
@@ -68,4 +68,4 @@ export { foo, arr, };
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

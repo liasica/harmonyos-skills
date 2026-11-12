@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-tool
 title: 读取和编辑图片Exif信息
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片元数据处理 > 读取和编辑图片Exif信息
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:44+08:00
-doc_updated_at: 2026-10-30
-content_hash: sha256:3ce6b6e5be58b339aaae74843ab20a82c07faf0c2c88e0ea8272d0ed6c0e5360
+scraped_at: 2026-11-12T09:52:06+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:149c1df0067a45cf66053adbbf3379a7ed2a92f92a465be24ed040e648f90506
 ---
 
 Image Kit提供图片Exif信息的读取与编辑能力。
@@ -56,61 +56,61 @@ Exif信息的读取与编辑相关的API如下，详细介绍请参考[ImageSour
 2. 获取指定属性键的Exif信息。
 
    ```typescript
-   // 获取指定key的Exif信息接口示例
+   // 获取指定key的Exif信息接口示例。
    async getExif(imageSourceApi: image.ImageSource | undefined, key: image.PropertyKey): Promise<string> {
      let info: string = '';
      if (imageSourceApi) {
        console.info('getExif: The imageSourceApi is not undefined.');
-       // 根据传入的key获取其Exif信息
+       // 根据传入的key获取其Exif信息。
        let options: image.ImagePropertyOptions = { index: 0, defaultValue: 'This key has no value!' };
        try {
          let data = await imageSourceApi.getImageProperty(key, options);
          info = `Succeeded in getting the ${key}'s value: ${data}.`;
          console.info(info);
-         return info; // 获取key值成功时返回获取到的key值
+         return info; // 获取key值成功时返回获取到的key值。
        } catch (error) {
          info =
            `Failed to get the value of the ${key} with error: ${error}.`;
          console.error(info);
-         return info; // 获取key值失败时返回错误信息
+         return info; // 获取key值失败时返回错误信息。
        }
      } else {
        info = 'getExif: The imageSourceApi is undefined.';
        console.info(info);
-       return info; // 如果 imageSourceApi 是 undefined，则直接返回信息
+       return info; // 如果 imageSourceApi 是 undefined，则直接返回信息。
      }
    }
    ```
 3. 修改指定属性键的Exif信息。
 
    ```typescript
-   // 修改指定key的Exif信息的接口示例
+   // 修改指定key的Exif信息的接口示例。
    async modifyExif(imageSourceApi: image.ImageSource | undefined, key: image.PropertyKey, value: string)
      : Promise<string> {
      let info: string = '';
      if (imageSourceApi) {
-       // 编辑Exif信息
+       // 编辑Exif信息。
        try {
          await imageSourceApi.modifyImageProperty(key, value);
          try {
            let modifyValue = await imageSourceApi.getImageProperty(key)
            info = `The ${key}'s value is modified to ${modifyValue}.`
            console.info(info);
-           return info; // 获取key值成功时返回修改成功信息
+           return info; // 获取key值成功时返回修改成功信息。
          } catch (error) {
            console.error(`Failed to get the ${key}'s value with ${error}`);
            console.error(info);
-           return info; // 获取key值失败时返回错误信息
+           return info; // 获取key值失败时返回错误信息。
          }
        } catch (error) {
          info = `Failed to modify the ${key}'s value with ${error}`;
          console.error(info);
-         return info; // 修改key值失败时返回错误信息
+         return info; // 修改key值失败时返回错误信息。
        }
      } else {
        info = 'modifyExif: The imageSourceApi is undefined.';
        console.info(info);
-       return info; // 如果 imageSourceApi 是 undefined，直接返回信息
+       return info; // 如果 imageSourceApi 是 undefined，直接返回信息。
      }
    }
    ```

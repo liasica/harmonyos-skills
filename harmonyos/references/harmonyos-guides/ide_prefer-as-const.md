@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_prefer-as
 title: "@typescript-eslint/prefer-as-const"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/prefer-as-const
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:10+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:f10af5903da06715cfbb09f9b25eb67a0f15744f7c1abea8efcdd1ab31550e1a
+scraped_at: 2026-11-12T09:52:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:98610cfdab5fc9aeee988b0f603d866a581d7b7b5cf9884832da2bad7d717650
 ---
 
 对于字面量类型，强制使用“as const”。
@@ -53,4 +53,4 @@ export const foo2 = { bar: 'baz' as 'baz' };
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

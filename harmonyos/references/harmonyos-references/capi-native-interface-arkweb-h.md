@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_interface_arkweb.h
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > C API > 头文件 > native_interface_arkweb.h
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:23+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d2bdd4ecff8f25fcfb9d3adbe40af804845468b9b0328381940db70342917f36
+scraped_at: 2026-11-12T09:55:00+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:600079465701c672a7fc47d23cea8a5c222a4854c5396ad7380dd0d73f24c7cf
 ---
 
 ## 概述
@@ -632,6 +632,7 @@ void OH_NativeArkWeb_LazyInitializeWebEngineInCookieManager(bool lazy)
 
 * 该接口为全局静态方法，须在使用ArkWeb组件和初始化ArkWeb内核前调用，否则该设置无效。
 * 该接口仅适用于调用后会初始化CookieManager的接口，比如[ArkWeb\_CookieManagerAPI](capi-web-arkweb-cookiemanagerapi.md)模块中的接口。调用本接口后，再调用适用的接口，会在初始化CookieManager时跳过初始化ArkWeb内核，后续需自行初始化ArkWeb内核。
+* 从API版本26.0.1开始，调用本接口设置为true后，[ArkWeb\_CookieManagerAPI](capi-web-arkweb-cookiemanagerapi.md)模块中的接口支持在非UI线程使用。
 
 **起始版本：** 22
 

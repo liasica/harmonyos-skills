@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hp-attrib
 title: "@performance/hp-arkui-use-attributeUpdater-control-refresh-scope"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-arkui-use-attributeUpdater-control-refresh-scope
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:12+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:bc8b8d0e6d7499822e9b65482cc66faeae7b308502c187a352d70829669ce7a1
+scraped_at: 2026-11-12T09:52:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b0ea9e6bedf6782042dda26a07db57df192003daca01361bd26445bc7be3ad98
 ---
 
 建议使用attributeUpdater精准控制组件属性的刷新。
@@ -186,4 +186,4 @@ export struct OneMomentNoModifier {
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

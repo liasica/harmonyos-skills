@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-plugin-based-quantization
-title: 插件式量化
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化 > 插件式量化
+title: CNN插件式量化
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化 > CNN结构量化 > CNN插件式量化
 category: harmonyos-guides
-scraped_at: 2026-09-08T06:39:18+08:00
-doc_updated_at: 2026-07-17
-content_hash: sha256:68eb3731ad51d0e5ccd9617e72e1da2bc9aeaf8c158588813190af7602be724d
+scraped_at: 2026-11-12T09:52:40+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:1c3da709d65e466fd4b6d5e47945aa04e1b38de7829d49daf0ff5eb38ebc48d6
 ---
 
 ## 依赖环境准备
@@ -32,7 +32,7 @@ TensorFlow模型优化训练如下步骤：
 
 准备Linux环境，使用轻量化工具插件式量化功能，开发者需要准备如下依赖。
 
-* python 3.10版本
+* python版本 >= 3.10
 * 依赖python库说明：
 
   ```console
@@ -246,19 +246,19 @@ PyTorch模型优化训练如下步骤：
 
 使用轻量化工具插件式量化功能，开发者需要准备如下依赖。
 
-* python 3.10版本
+* python版本 >= 3.10
 * 依赖python库说明：
 
   ```console
   pip3 install ruamel_yaml
   pip3 install pathlib
   pip3 install protobuf>=3.20.0
-  pip3 install onnx==1.14.0
+  pip3 install onnx>=1.14.0
   ```
-* 轻量化工具当前仅支持PyTorch 1.11版本。使用如下的命令安装：
+* 轻量化工具当前支持PyTorch 1.11或者2.5及其以上版本。使用如下的命令安装：比如安装2.7.1
 
   ```console
-  pip3 install torch==1.11.0
+  pip3 install torch==2.7.1
   ```
 
 **说明** 
@@ -296,13 +296,14 @@ generate_config_file(model, input_shape, dst_path="./config_gen.json") # model�
 ```json
 {
     "quant_strategy_for op '<class 'torch.nn.modules.conv.Conv2d'>'": [
-        "Quant_INT8-8"
+        "Quant_INT8-8",
+        "Quant_INT16-8"
     ],
     "quant_strategy_for op '<class 'torch.nn.modules.linear.Linear'>'": [
-        "Quant_INT8-8"
+        "Quant_INT8-8",
+        "Quant_INT16-8"
     ],
     "input_shape": "x:1,3,224,224",
-    "params_version": "v1",
     "layer_strategy": {
         "conv1/Conv2D": {
             "op_type": "<class 'torch.nn.modules.conv.Conv2d'>",
@@ -320,7 +321,8 @@ generate_config_file(model, input_shape, dst_path="./config_gen.json") # model�
 开发者可根据需要的量化修改配置。
 
 * 支持逐层配置量化策略，默认为"float"。
-* 支持的量化策略Quant\_INT8-8为8a8w。
+* 支持的量化策略Quant\_INT8-8为8a8w，Quant\_INT16-8为16a8w，其中a为激活张量，w为权重张量，且权重量化粒度为均perchannel。Linear算子的pertensor量化不再提供支持，受影响范围为9020前的历史平台。
+* params\_version 量化参数格式控制，v1为历史旧版本 v2是新版本，缺省默认v2。v2支持9020及其以后平台。故只有历史平台需要额外显示配置，新平台无需配置。取值区分大小写：v1必须为小写"v1"（配置大写"V1"不生效，产物仍为v2格式）；v2同样为小写"v2"。
 
 以上述json为例，开发者可修改成：
 
@@ -350,8 +352,7 @@ generate_config_file(model, input_shape, dst_path="./config_gen.json") # model�
 
 * layer\_strategy中包含的为当前版本所支持的所有可量化层，开发者不应额外添加层。
 * 开发者需要根据op\_type选择支持的量化策略，若配置op\_type为不支持的量化策略，那么在后续量化环节会报错。
-* json文件中，除了input\_shape和layer\_strategy两个key之外，其余内容为提示作用，不会进行解析。
-* 参数格式升级，为适应新平台，在 input\_shape 同级key下添加"params\_version": "v2"。
+* json文件中，除了input\_shape、layer\_strategy和params\_version之外，其余内容为提示作用，不会进行解析。params\_version将被读取用于控制量化参数文件格式（历史平台部署需配置为小写"v1"）。
 
 ### 训练模型
 
@@ -372,7 +373,7 @@ quant_model = optimize_model(model, config_path) ## config_path为上一步中�
 | **参数名称** | **是否必填** | **参数描述** |
 | --- | --- | --- |
 | model | 是 | torch.nn.Module，未经过torch.nn.parallel.DistributedDataParallel等分布式API封装的模型。 |
-| config\_path | 是 | 最终部署模型的shape，而非训练阶段的训练数据shape。 |
+| config\_path | 是 | 开发者手动配置完成量化层的json文件绝对路径。 |
 
 开发者可根据需要调用API，获取量化相关的损失函数，加入到优化训练中（可选项，简单任务不推荐使用）。
 
@@ -445,3 +446,4 @@ generate_final_model(
 
 * 调用generate\_final\_model函数的入参model须为重新构建的浮点模型。
 * 生成的PyTorch模型中不带有量化参数，但是会做部分图融合以及伪量化处理。
+* 量化参数文件格式由config\_file中的params\_version字段控制（缺省为v2格式；历史平台部署需在config\_file中配置小写"v1"），产物包括量化参数文件quant\_param\_file与量化ONNX模型final\_quant\_model.onnx。

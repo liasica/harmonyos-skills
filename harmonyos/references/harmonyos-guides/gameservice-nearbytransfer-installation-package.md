@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-n
 title: 传输安装包
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏近场快传（可选） > 开发指导 > 传输安装包
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:30+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:de67c8758e1afdb6f302b2565ae7374301ea7d537889e901452d9894516f0d13
+scraped_at: 2026-11-12T09:52:24+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0bb9dfbce17c3278e30c492e792318e08718c53f6740116be6ef8b3f240993f5
 ---
 
 游戏近场快传支持已安装游戏的玩家通过碰一碰或隔空传送将游戏安装包传输给未安装游戏的玩家，实现游戏传播效率的提升。
@@ -25,10 +25,10 @@ content_hash: sha256:de67c8758e1afdb6f302b2565ae7374301ea7d537889e901452d9894516
 
 1. 发送端设备打开游戏后在任意游戏界面与接收端设备通过[碰一碰](knock-share-between-phones-overview.md)触发安装包传输。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/nLR_lS7rS1GhmVmFaAOUWQ/zh-cn_image_0000002779691380.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/ktY2BcWXRq-He-p2qWoV8A/zh-cn_image_0000002786360302.png)
 2. 若当前接收端已安装该游戏，则会打开该游戏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/O_a2KaTwTpmDioVm51aRDw/zh-cn_image_0000002809011001.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/q2irGWEQRZeovrjri-dtKw/zh-cn_image_0000002815559723.png)
 
 ## 集成Game Service Kit实现安装包传输
 
@@ -36,14 +36,14 @@ content_hash: sha256:de67c8758e1afdb6f302b2565ae7374301ea7d537889e901452d9894516
 
 ### 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/LnWb740eSyS2ivtbL0XfpA/zh-cn_image_0000002809050915.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/ANa1lupPTS-xQus0yPQTUA/zh-cn_image_0000002815399807.png)
 
 1. 发送端设备打开游戏后与接收端设备通过[碰一碰](knock-share-between-phones-overview.md)或[隔空传送](gestures-share-overview.md)触发安装包传输。
-2. 发送端调用[create](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)创建安装包传输任务。
-3. 创建成功后，游戏客户端调[onRemoteInstallationInfoNotify](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferonremoteinstallationinfonotify)注册远程安装信息事件监听。
+2. 发送端调用[create()](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)创建安装包传输任务。
+3. 创建成功后，游戏客户端调[onRemoteInstallationInfoNotify()](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferonremoteinstallationinfonotify)注册远程安装信息事件监听。
 4. 游戏应用获取到安装游戏所需要的linkingForInstallation地址。
 5. 通过linkingForInstallation地址拉起接收端游戏服务。
-6. 接收端发送游戏安装包是否安装的信息，发送端接收到[onRemoteInstallationInfoNotify](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferonremoteinstallationinfonotify)远程安装信息事件监听回调。
+6. 接收端发送游戏安装包是否安装的信息，发送端接收到[onRemoteInstallationInfoNotify()](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferonremoteinstallationinfonotify)远程安装信息事件监听回调。
 7. 根据接收端游戏是否已安装，后续分为两种情况：
 
    * 接收端未安装游戏
@@ -56,12 +56,12 @@ content_hash: sha256:de67c8758e1afdb6f302b2565ae7374301ea7d537889e901452d9894516
      6. 接收端游戏服务自动关闭。
    * 接收端已安装游戏
 
-     发送端调用[destroy](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferdestroy)销毁服务，并确认是否进行资源包传输。若确认进行资源包传输，则发送端创建资源包传输任务，详情请参见[传输资源包](gameservice-nearbytransfer-resource-package.md)。接收端打开已安装的游戏。
+     发送端调用[destroy()](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferdestroy)销毁服务，并确认是否进行资源包传输。若确认进行资源包传输，则发送端创建资源包传输任务，详情请参见[传输资源包](gameservice-nearbytransfer-resource-package.md)。接收端打开已安装的游戏。
 
    **说明** 
 
    * destroy接口会清除已接收数据，请确保对已接收数据做好处理或转移后再调用该接口。
-   * 发送端或接收端每次调用[create](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)接口都会自动清理自身历史数据。
+   * 发送端或接收端每次调用[create()](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)接口都会自动清理自身历史数据。
 
 ### 接口说明
 
@@ -79,7 +79,7 @@ content_hash: sha256:de67c8758e1afdb6f302b2565ae7374301ea7d537889e901452d9894516
 1. 导入Game Service Kit、Share Kit及公共模块。
 
    ```typescript
-   import { uniformTypeDescriptor } from '@kit.ArkData';
+   import { uniformTypeDescriptor as utd } from '@kit.ArkData';
    import { systemShare, harmonyShare } from '@kit.ShareKit';
    import { fileUri } from '@kit.CoreFileKit';
    import { gameNearbyTransfer } from '@kit.GameServiceKit';
@@ -125,36 +125,52 @@ content_hash: sha256:de67c8758e1afdb6f302b2565ae7374301ea7d537889e901452d9894516
      }
    };
    ```
-3. 收到碰一碰/隔空传送分享事件回调后，调用[create](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)接口创建安装包传输任务，然后注册[onRemoteInstallationInfoNotify](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferonremoteinstallationinfonotify)回调事件。
+3. 收到碰一碰/隔空传送分享事件回调后，调用[create()](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)接口创建安装包传输任务，然后注册[onRemoteInstallationInfoNotify()](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferonremoteinstallationinfonotify)回调事件。
 
    **说明** 
 
-   [create](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)接口是调用其他接口的前提，如果未创建游戏近场快传服务或创建失败，将无法调用其他接口。
+   [create()](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)接口是调用其他接口的前提，如果未创建游戏近场快传服务或创建失败，将无法调用其他接口。
 
    ```typescript
-   public async create(): Promise<string | undefined> {
-     let uiAbilityContext = this.getUIContext()?.getHostContext() as common.UIAbilityContext;
-     let initParam: gameNearbyTransfer.CreateParameters = {
-       abilityName: uiAbilityContext.abilityInfo.name,
-       moduleName: uiAbilityContext.abilityInfo.moduleName,
-       contentType: gameNearbyTransfer.ContentType.INSTALLATION_PACKAGE, // 指定传输类型为安装包
-       gameLinking: 'nearbytransfer://com.huawei.nearbytransferdemo?type=nearbyTransfer' // 安装包场景需要传入游戏deeplink
-     };
-     try {
-       let createResult = await gameNearbyTransfer.create(initParam);
+   @Component
+   struct Create {
+     public async create(): Promise<string | undefined> {
+       let uiAbilityContext = this.getUIContext()?.getHostContext() as common.UIAbilityContext;
+       let initParam: gameNearbyTransfer.CreateParameters = {
+         abilityName: uiAbilityContext.abilityInfo.name,
+         moduleName: uiAbilityContext.abilityInfo.moduleName,
+         contentType: gameNearbyTransfer.ContentType.INSTALLATION_PACKAGE, // 指定传输类型为安装包
+         gameLinking: 'nearbytransfer://com.huawei.nearbytransferdemo?type=nearbyTransfer' // 安装包场景需要传入游戏deeplink
+       };
        try {
-         gameNearbyTransfer.onRemoteInstallationInfoNotify(remoteCallBack);
+         let createResult = await gameNearbyTransfer.create(initParam);
+         try {
+           gameNearbyTransfer.onRemoteInstallationInfoNotify(remoteCallBack);
+         } catch (error) {
+           let err = error as BusinessError;
+           hilog.error(0x0000, 'nearby',
+             `Failed to subscribe onRemoteInstallationInfoNotify error. Code: ${err.code}, message: ${err.message}`);
+         }
+         hilog.info(0x0000, '[nearby]', `create success linking: ${createResult.linkingForInstallation}`);
+         return createResult.linkingForInstallation;
        } catch (error) {
          let err = error as BusinessError;
-         hilog.error(0x0000, 'nearby',
-           `Failed to subscribe onRemoteInstallationInfoNotify error. Code: ${err.code}, message: ${err.message}`);
+         hilog.error(0x0000, 'nearby', `create failed. Code: ${err.code}, message: ${err.message}`);
+         return undefined;
        }
-       hilog.info(0x0000, '[nearby]', `create success linking: ${createResult.linkingForInstallation}`);
-       return createResult.linkingForInstallation;
-     } catch (error) {
-       let err = error as BusinessError;
-       hilog.error(0x0000, 'nearby', `create failed. Code: ${err.code}, message: ${err.message}`);
-       return undefined;
+     }
+
+     build() {
+       Row() {
+         Button('create')
+           .onClick(() => {
+             this.create();
+           })
+           .width('100%')
+       }
+       .margin(16)
+       .height('100%')
+       .justifyContent(FlexAlign.Center)
      }
    }
 
@@ -174,20 +190,36 @@ content_hash: sha256:de67c8758e1afdb6f302b2565ae7374301ea7d537889e901452d9894516
      this.immersiveDisablingListening();
    }
    ```
-5. 接收端完成安装包的接收后，发送端调用[destroy](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferdestroy)接口销毁服务。若服务销毁后再次使用近场快传服务，需重新[发送端注册相关回调](gameservice-nearbytransfer-resource-package.md#发送端注册相关回调)。
+5. 接收端完成安装包的接收后，发送端调用[destroy()](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferdestroy)接口销毁服务。若服务销毁后再次使用近场快传服务，需重新[发送端注册相关回调](gameservice-nearbytransfer-resource-package.md#发送端注册相关回调)。
 
    ```typescript
-   public destroy(): void {
-     try {
-       gameNearbyTransfer.offRemoteInstallationInfoNotify(remoteCallBack);
-       gameNearbyTransfer.destroy().then(() => {
-         hilog.info(0x0000, 'nearby', `destroy success`);
-       }).catch((err: BusinessError) => {
-         hilog.error(0x0000, 'nearby', `destroy failed. Code: ${err.code}, message: ${err.message}`);
-       });
-     } catch (error) {
-       let err = error as BusinessError;
-       hilog.error(0x0000, 'nearby', `destroy exception. Code: ${err.code}, message: ${err.message}`);
+   @Component
+   struct Destroy {
+     public destroy(): void {
+       try {
+         gameNearbyTransfer.offRemoteInstallationInfoNotify(remoteCallBack);
+         gameNearbyTransfer.destroy().then(() => {
+           hilog.info(0x0000, 'nearby', `destroy success`);
+         }).catch((err: BusinessError) => {
+           hilog.error(0x0000, 'nearby', `destroy failed. Code: ${err.code}, message: ${err.message}`);
+         });
+       } catch (error) {
+         let err = error as BusinessError;
+         hilog.error(0x0000, 'nearby', `destroy exception. Code: ${err.code}, message: ${err.message}`);
+       }
+     }
+
+     build() {
+       Row() {
+         Button('destroy')
+           .onClick(() => {
+             this.destroy();
+           })
+           .width('100%')
+       }
+       .margin(16)
+       .height('100%')
+       .justifyContent(FlexAlign.Center)
      }
    }
 

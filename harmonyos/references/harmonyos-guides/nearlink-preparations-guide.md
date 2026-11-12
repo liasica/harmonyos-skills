@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-prep
 title: 开发准备
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 星闪 > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:47+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:51:43+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:2dddc42882026b2680a302db9619cae2c2d4a7055708818183c5cd1262b3b345
 ---
 

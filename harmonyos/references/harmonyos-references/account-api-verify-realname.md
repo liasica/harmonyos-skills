@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 实名信息校验
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 实名认证 > 实名信息校验
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:50+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c3ab4050d7804a697cc7b3b458ed080b598bb61acde48176ec55bb01fd6c658d
+scraped_at: 2026-11-12T09:57:12+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:9578dbf52ae97bbfc0d9e0ebf9fe96f170486d1b2ce8c8ece9e61c53fa534d3e
 ---
 
 **注意** 
@@ -24,7 +24,7 @@ content_hash: sha256:c3ab4050d7804a697cc7b3b458ed080b598bb61acde48176ec55bb01fd6
 
 ## 场景描述
 
-应用已经通过授权码（Authorization Code）获取到Access Token，并且已申请账号开放信息对应权限后，将用户填写的实名信息与华为账号实名信息进行校验，并获取用户实名信息校验结果。
+应用已经通过授权码（Authorization Code）获取到Access Token，将用户填写的实名信息与华为账号实名信息进行校验，并获取用户实名信息校验结果。
 
 ## 使用约束
 
@@ -71,7 +71,7 @@ POST /rest.php?nsp_svc=OpenRealName.User.verifyRealName HTTP/1.1
 Host: openrealname.cloud.huawei.com
 Content-Type: application/x-www-form-urlencoded
 
-access_token=<access_token>&sceneID=1&ctfType=1&realName=<realName>&ctfCode=<ctfCode>&idType=2&idValue=<idValue>&supportAlg=RS256
+access_token=<access_token>&sceneID=1&ctfType=1&realName=<realName>&ctfCode=<ctfCode>&idType=2&idValue=<idValue>&supportAlg=PS256
 ```
 
 ## 响应参数

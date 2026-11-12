@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hicollie-guid
 title: 使用HiCollie检测业务线程卡死卡顿问题（C/C++）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 业务线程超时检测 > 使用HiCollie检测业务线程卡死卡顿问题（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:42+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:242a40ad9826b5a974ac501342e51d35090b32803f701de996e5d1bc6ee59f3d
+scraped_at: 2026-11-12T09:51:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:bee0ae2706e4a020cd699a9c9608df21941080e466ff2fe6e1066d1f8d659099
 ---
 
 ## 简介
@@ -62,7 +62,7 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
            - napi_init.cpp
          ets:
            entryability:
-             - EntryAbility.ts
+             - EntryAbility.ets
            pages:
              - Index.ets
    ```
@@ -529,10 +529,10 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
 
    static napi_value TestHiCollieAssociateProcessReport(napi_env env, napi_callback_info info)
    {
-      // 上报BUSINESS_THREAD_BLOCK_3S事件
+      // 上报BUSSINESS_THREAD_BLOCK_3S事件
       OH_HiCollie_AssociateProcessReport(false);
       sleep(3);
-      // 上报BUSINESS_THREAD_BLOCK_6S事件
+      // 上报BUSSINESS_THREAD_BLOCK_6S事件
       OH_HiCollie_AssociateProcessReport(true);
       return 0;
    }

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-sandb
 title: 沙盒环境验证
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 沙盒环境验证
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:f89a0fd0a64ca7930b51d7ce48376d53e72a8c0e3943e731d185b0a4f431698b
+scraped_at: 2026-11-12T09:52:32+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:9658d27de7cc6237a4b73fcc0880c26e6e6de252c47f76dbff8874fd2ab92a43
 ---
 
 华为支付提供沙盒环境，开发者无需真实完成商户入网即可开始调试华为支付接入，模拟真实环境下华为支付交易过程，提前介入方案设计和开发联调，提升接入效率。
@@ -28,7 +28,7 @@ content_hash: sha256:f89a0fd0a64ca7930b51d7ce48376d53e72a8c0e3943e731d185b0a4f43
 | 配置项 | 是否必选 | 说明 |
 | --- | --- | --- |
 | 商户模式  (mercNo) | 是 | 沙盒验证使用的商户模式。  - DIRECT：直连（普通）  - AGENT：服务商  - PLAT\_AGENT：平台商户 |
-| 应用ID  (appId) | 是 | 应用的AppID（在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站点击“开发与服务”，在项目列表中找到项目，在“项目设置 > 常规”页面的“应用”区域获取“APP ID”的值）。  生成的沙盒验证配置需要与开发者应用关联。 |
+| 应用ID  (appId) | 是 | 应用的AppID（在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)平台，点击“应用管理 > 基础信息”，在基本信息页面获取“APP ID”的值）。  生成的沙盒验证配置需要与开发者应用关联。 |
 | 华为账号  (hwAccount) | 是 | 开发者华为账号。用于生成测试用账号及支付密码等测试信息。 |
 | 邮箱地址 | 是 | 开发者邮箱地址。用于后续配置或其他信息邮件答复。 |
 | 业务说明 | 是 | 应用业务简介（可附应用页面截图）。 |
@@ -41,9 +41,9 @@ content_hash: sha256:f89a0fd0a64ca7930b51d7ce48376d53e72a8c0e3943e731d185b0a4f43
 
 构建debug签名应用步骤如下：
 
-1. 参见[手动签名方式调试HarmonyOS应用/元服务](../app/agc-help-cert-0000002270829389.md)，申请应用调试证书->注册调试设备->申请调试Profile。
+1. 参见[手动签名方式调试HarmonyOS应用/元服务](../doccenter-getting-started/agc-help-cert-0000002270829389.md)，申请应用调试证书->注册调试设备->申请调试Profile。
 2. 参见[配置签名信息](ide-signing-manual.md#section15586174616)，在DevEco Studio侧配置签名信息。
-3. 在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中[配置应用签名证书指纹](../app/agc-help-cert-fingerprint-0000002278002933.md)。
+3. 在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)中[配置应用签名证书指纹](../doccenter-getting-started/agc-help-cert-fingerprint-0000002278002933.md)。
 
 ## 沙盒环境接口请求及支持维度说明
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rc4-sy
 title: 使用RC4对称密钥加解密(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密 > 使用RC4对称密钥加解密(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:26+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:51:33+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:44c2005f22d527f46f105e7ea5ab898bc46c1870f351a880a637b4772309d38a
 ---
 

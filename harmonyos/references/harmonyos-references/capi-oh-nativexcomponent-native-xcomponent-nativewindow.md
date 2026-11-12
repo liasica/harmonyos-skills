@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-nativexcomponent-native-xcomponent-nativewindow
-title: OHNativeWindow
-breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > OHNativeWindow
+title: NativeWindow
+breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > NativeWindow
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:51+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:54:51+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:8aa4f29576862ebc9836428ebe3a45d7b696d81f727607c150d378d534b82fa6
 ---
 

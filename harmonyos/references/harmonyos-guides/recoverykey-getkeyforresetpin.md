@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/recoverykey-g
 title: 获取重置锁屏密码的企业恢复密钥
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > 企业恢复密钥 > 获取重置锁屏密码的企业恢复密钥
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:30+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:46e0f429cf9b9a8d13e62762aab96d32183149d1cd8dbc20a4fc6f77f350e70a
+scraped_at: 2026-11-12T09:51:38+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:02d828cdf36669514f8bbe6bf4e8849559f718ca609004b7d0790582935d8e7f
 ---
 
 ## 场景介绍
@@ -18,9 +18,10 @@ content_hash: sha256:46e0f429cf9b9a8d13e62762aab96d32183149d1cd8dbc20a4fc6f77f35
 
 | 接口名 | 描述 |
 | --- | --- |
-| [verifyUserIdentityEnterprise](../harmonyos-references/dataguard-recoverykey.md#recoverykeyverifyuseridentityenterprise)(userId: number, userType: number, pinCode: string): Promise<void> | 使用Promise方式验证企业用户身份。 |
-| [verifyUserByDialog](../harmonyos-references/dataguard-recoverykey.md#recoverykeyverifyuserbydialog)(userId: number): Promise<void> | 通过Dialog弹框验证企业用户身份。 |
-| [getEnterpriseRecoveryKeyForResettingPin](../harmonyos-references/dataguard-recoverykey.md#recoverykeygetenterpriserecoverykeyforresettingpin)(userId: number, userType: number): Promise<[EnterpriseRecoveryKeyInfo](../harmonyos-references/dataguard-recoverykey.md#enterpriserecoverykeyinfo)> | 使用Promise方式获取用于重置锁屏密码的企业恢复密钥。 |
+| [verifyUserIdentityEnterprise](../harmonyos-references/dataguard-recoverykey.md#recoverykeyverifyuseridentityenterprise)(userId: number, userType: number, pinCode: string): Promise<void> | 验证企业用户身份。使用Promise异步回调。 |
+| [verifyUserByDialog](../harmonyos-references/dataguard-recoverykey.md#recoverykeyverifyuserbydialog)(userId: number): Promise<void> | 通过Dialog弹框验证企业用户身份。使用Promise异步回调。 |
+| [verifyUserByEnterpriseAuthentication](../harmonyos-references/dataguard-recoverykey.md#recoverykeyverifyuserbyenterpriseauthentication)(userId: number, inputData: string): Promise<void> | 通过企业账号验证用户身份。使用Promise异步回调。 |
+| [getEnterpriseRecoveryKeyForResettingPin](../harmonyos-references/dataguard-recoverykey.md#recoverykeygetenterpriserecoverykeyforresettingpin)(userId: number, userType: number): Promise<[EnterpriseRecoveryKeyInfo](../harmonyos-references/dataguard-recoverykey.md#enterpriserecoverykeyinfo)> | 获取用于重置锁屏密码的企业恢复密钥。使用Promise异步回调。 |
 
 ## 开发步骤
 
@@ -117,6 +118,50 @@ content_hash: sha256:46e0f429cf9b9a8d13e62762aab96d32183149d1cd8dbc20a4fc6f77f35
      } catch (e) {
        hilog.error(DOMAIN, TAG,
          `Failed to getEnterpriseRecoveryKeyForPinByDialog. Code: ${e.code}, message: ${e.message}`);
+     }
+   }
+   ```
+4. 通过企业身份认证验证用户身份，获取重置锁屏密码的恢复密钥。调用接口[verifyUserByEnterpriseAuthentication](../harmonyos-references/dataguard-recoverykey.md#recoverykeyverifyuserbyenterpriseauthentication)，传入用户ID及企业账号对应的密码，验证成功后，并在30秒内调用接口[getEnterpriseRecoveryKeyForResettingPin](../harmonyos-references/dataguard-recoverykey.md#recoverykeygetenterpriserecoverykeyforresettingpin)以获取用于重置锁屏密码的企业恢复密钥。若超时后调用，系统会返回异常代码[1014400001](../harmonyos-references/errorcode-enterprise-dataguard.md#section1014400001-系统服务异常)。
+
+   ```typescript
+   const TAG: string = 'EnterpriseRecoveryKey_ResetPinCodeRecoveryKey';
+   const DOMAIN: number = 0x0000;
+
+   /**
+    * 通过企业身份认证验证用户身份，获取重置锁屏密码的恢复密钥。使用Promise异步回调。
+    * @param inputData 企业账号对应的密码
+    */
+   async function testGetEnterpriseRecoveryKeyForPinByEnterpriseAuth(inputData: string) {
+     try {
+       let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+       let userId: number = await accountManager.getOsAccountLocalId();
+       let accountType: osAccount.OsAccountType = await accountManager.getOsAccountType();
+       let userType: number = accountType.valueOf();
+
+       recoveryKey.verifyUserByEnterpriseAuthentication(userId, inputData).then(() => {
+         hilog.info(DOMAIN, TAG, `Succeeded in verifying user by enterprise authentication.`);
+         recoveryKey.getEnterpriseRecoveryKeyForResettingPin(userId, userType)
+           .then((info: recoveryKey.EnterpriseRecoveryKeyInfo) => {
+             hilog.info(DOMAIN, TAG, `Succeeded in getting enterprise recovery key for resetting pin.`);
+             hilog.info(DOMAIN, TAG,
+               `EnterpriseRecoveryKeyInfo enterpriseRecoveryKey: ${buffer.from(info.enterpriseRecoveryKey)
+                 .toString('hex')}`);
+             hilog.info(DOMAIN, TAG,
+               `EnterpriseRecoveryKeyInfo exportPublicKey: ${buffer.from(info.exportPublicKey).toString('hex')}`);
+             hilog.info(DOMAIN, TAG, `EnterpriseRecoveryKeyInfo iv: ${buffer.from(info.iv).toString('hex')}`);
+             hilog.info(DOMAIN, TAG, `EnterpriseRecoveryKeyInfo tag: ${buffer.from(info.tag).toString('hex')}`);
+           })
+           .catch((err: BusinessError) => {
+             hilog.error(DOMAIN, TAG,
+               `Failed to get enterprise recovery key for resetting pin. Code: ${err.code}, message: ${err.message}`);
+           })
+       }).catch((error: BusinessError) => {
+         hilog.error(DOMAIN, TAG,
+           `Failed to verify user by enterprise authentication. Code: ${error.code}, message: ${error.message}`);
+       })
+     } catch (e) {
+       hilog.error(DOMAIN, TAG,
+         `Failed to getEnterpriseRecoveryKeyForPinByEnterpriseAuth. Code: ${e.code}, message: ${e.message}`);
      }
    }
    ```

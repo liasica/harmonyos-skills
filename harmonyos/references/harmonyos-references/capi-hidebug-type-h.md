@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hide
 title: hidebug_type.h
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > C API > 头文件 > hidebug_type.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:16+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:ef369375eeef8c98170c2d4eb305fafc5c5ca30e2be557c701366be569e1fa4c
+scraped_at: 2026-11-12T09:56:16+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:26ecc5a36e801cea224f0bd0b746a2935905a310435c32250415f2cb618f76ab
 ---
 
 ## 概述
@@ -54,6 +54,7 @@ HiDebug模块代码结构体定义。
 | [HiDebug\_CrashObjType](capi-hidebug-type-h.md#hidebug_crashobjtype) | HiDebug\_CrashObjType | 维测信息数据类型的枚举。 |
 | [OH\_HiDebug\_ResourceType](capi-hidebug-type-h.md#oh_hidebug_resourcetype) | OH\_HiDebug\_ResourceType | 定义资源采集类型的枚举。 |
 | [OH\_HiDebug\_MemListenerType](capi-hidebug-type-h.md#oh_hidebug_memlistenertype) | OH\_HiDebug\_MemListenerType | 内存监听回调的类型枚举。开发者根据回调类型处理相关逻辑。 |
+| [OH\_HiDebug\_ProfilerStackTraceMode](capi-hidebug-type-h.md#oh_hidebug_profilerstacktracemode) | OH\_HiDebug\_ProfilerStackTraceMode | 定义调用栈追踪模式枚举。 |
 
 ### 宏定义
 
@@ -137,14 +138,17 @@ enum HiDebug_ErrorCode
 | HIDEBUG\_RES\_PROF\_PERMISSION\_DENIED = 11400420 | 资源采集权限不足，采集资源的目标进程仅支持调用接口进程本身。  **起始版本：** 24 |
 | HIDEBUG\_RES\_PROF\_ALREADY\_STARTED = 11400421 | 资源采集重复启动。  **起始版本：** 24 |
 | HIDEBUG\_RES\_PROF\_NOT\_STARTED = 11400422 | 资源采集未启动，停止失败。  **起始版本：** 24 |
-| HIDEBUG\_RES\_PROF\_PROCESS\_OVERLIMIT = 11400423 | 资源采集进程数超出 4 个限制。  **起始版本：** 24 |
+| HIDEBUG\_RES\_PROF\_PROCESS\_OVERLIMIT = 11400423 | 资源采集并行进程数超出限制，整机最多4个不同应用并行采集，应用内最多2个进程并行采集。  **起始版本：** 24 |
 | HIDEBUG\_RES\_PROF\_CONFLICT = 11400424 | 资源采集与命令行工具或系统采集任务冲突。  **起始版本：** 24 |
 | HIDEBUG\_RES\_PROF\_AUTO\_STOPPED\_BY\_DURATION = 11400425 | 资源采集到达指定最大持续时间限制自动停止。  **起始版本：** 24 |
-| HIDEBUG\_RES\_PROF\_DAILY\_QUOTA\_EXCEEDED = 11400426 | 资源采集每日配额超出 10 次限制。  **起始版本：** 24 |
-| HIDEBUG\_RES\_PROF\_CPU\_OVERLOADED = 11400427 | 系统 CPU 处于高负载状态，CPU 占用率超过 70%。  **起始版本：** 24 |
-| HIDEBUG\_RES\_PROF\_MEM\_PRESSURE\_CRITICAL = 11400428 | 内存可用空间紧张，可用空间少于 15%。  **起始版本：** 24 |
-| HIDEBUG\_RES\_PROF\_STORAGE\_PRESSURE\_CRITICAL = 11400429 | 存储可用空间紧张，可用空间少于 15%。  **起始版本：** 24 |
+| HIDEBUG\_RES\_PROF\_DAILY\_QUOTA\_EXCEEDED = 11400426 | 资源采集每日配额超出限制，整机每日最多4次，应用每日最多2次。  **起始版本：** 24 |
+| HIDEBUG\_RES\_PROF\_CPU\_OVERLOADED = 11400427 | 整机系统CPU占用率超过70%。  **起始版本：** 24 |
+| HIDEBUG\_RES\_PROF\_MEM\_PRESSURE\_CRITICAL = 11400428 | 整机系统可用内存低于2GB。  **起始版本：** 24 |
+| HIDEBUG\_RES\_PROF\_STORAGE\_PRESSURE\_CRITICAL = 11400429 | 整机系统可用存储空间低于存储阈值，阈值为总存储容量的3%与15GB中的较大值。  **起始版本：** 24 |
 | HIDEBUG\_RES\_PROF\_FAILURE = 11400430 | 资源采集启动/停止失败。  **起始版本：** 24 |
+| HIDEBUG\_RES\_PROF\_INVALID\_MAX\_ASYNC\_NESTING\_DEPTH = 11400431 | 资源采集异步嵌套深度参数无效。  **起始版本：** 26.0.1 |
+| HIDEBUG\_RES\_PROF\_INVALID\_MAX\_ASYNC\_TASK\_STACK\_DEPTH = 11400432 | 资源采集异步任务回栈深度参数无效。  **起始版本：** 26.0.1 |
+| HIDEBUG\_RES\_PROF\_INVALID\_STACK\_TRACE\_MODE = 11400433 | 无效的调用栈追踪模式。  **起始版本：** 26.0.1 |
 
 ### HiDebug\_TraceFlag
 
@@ -220,6 +224,9 @@ enum OH_HiDebug_ResourceType
 | OH\_RES\_TYPE\_NATIVE | Native 内存  **起始版本：** 24 |
 | OH\_RES\_TYPE\_GPU | GPU 内存  **起始版本：** 24 |
 | OH\_RES\_TYPE\_GLOBAL\_HANDLE | 全局句柄  **起始版本：** 24 |
+| OH\_RES\_TYPE\_DMA | DMA内存  **起始版本：** 26.0.1 |
+| OH\_RES\_TYPE\_ASHMEM | 匿名共享内存  **起始版本：** 26.0.1 |
+| OH\_RES\_TYPE\_COMPOSITE\_HEAP | 组合堆  **起始版本：** 26.0.1 |
 
 ### OH\_HiDebug\_MemListenerType
 
@@ -238,6 +245,23 @@ enum OH_HiDebug_MemListenerType
 | OH\_HIDEBUG\_DO\_NOTHING = 0 | 无特定操作，仅通知回调。  **起始版本：** 26.0.0 |
 | OH\_HIDEBUG\_RUNNING\_GC = 1 | 垃圾回收（GC）操作。  **起始版本：** 26.0.0 |
 | OH\_HIDEBUG\_DUMP\_SNAPSHOT = 2 | 导出内存快照。  **起始版本：** 26.0.0 |
+
+### OH\_HiDebug\_ProfilerStackTraceMode
+
+```c
+enum OH_HiDebug_ProfilerStackTraceMode
+```
+
+**描述**
+
+定义调用栈追踪模式枚举。
+
+**起始版本：** 26.0.1
+
+| 枚举项 | 描述 |
+| --- | --- |
+| OH\_HIDEBUG\_STACK\_TRACE\_KEEP\_ALL = 0 | 保留所有调用栈追踪，包括已销毁的。  **起始版本：** 26.0.1 |
+| OH\_HIDEBUG\_STACK\_TRACE\_DISCARD\_DESTROYED = 1 | 丢弃已销毁的调用栈追踪。  **起始版本：** 26.0.1 |
 
 ## 宏定义说明
 

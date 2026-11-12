@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-basic-system-var
 title: 系统变量
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC昇腾到麒麟兼容性迁移指南 > Ascend910B/Ascend910C到KirinX90/Kirin9030迁移指导 > 基础API迁移指导 > 系统变量
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC昇腾到麒麟兼容性迁移指南 > Ascend910B/Ascend910C到KirinX90/Kirin9030迁移指导 > 基础API迁移指导 > 系统变量
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:43:01+08:00
+scraped_at: 2026-11-12T09:52:43+08:00
 doc_updated_at: 2026-04-20
 content_hash: sha256:9bf68aaa284aa32ddbd98d4e1d65a58d7b5b4bf6f35d452ea805755962479151
 ---

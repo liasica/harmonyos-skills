@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-previewer
 title: 概述
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 界面预览 > 概述
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:14+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:6a3c0d93098afe8d411ef7a36474fb338b9b6e0c9f56b30d5bff7ca5e4b0750f
+scraped_at: 2026-11-12T09:53:01+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a4c6196f711c84879d483b16f889e95aca1151b6cc36da96d835b8baac58f72c
 ---
 
-DevEco Studio为开发者提供了UI界面预览功能，可以查看UI界面效果，方便开发者随时调整界面UI布局。预览器支持界面代码的实时预览，只需要将开发的源代码进行保存，就可以通过预览器实时查看组件/界面运行效果，方便开发者随时调整代码。
+DevEco Studio为开发者提供了UI界面预览功能，可以查看UI界面效果，方便开发者随时调整UI界面布局。预览器支持界面代码的实时预览，只需要将开发的源代码进行保存，就可以通过预览器实时查看组件/界面运行效果，方便开发者随时调整代码。
 
 **说明** 
 

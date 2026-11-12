@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: OS平台API行为的变更
 breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > OS平台能力 > OS平台行为变更说明 > 6.0.0(20) Beta2引入的行为变更 > OS平台API行为的变更
 category: harmonyos-releases
-scraped_at: 2026-10-09T08:12:15+08:00
+scraped_at: 2026-11-12T09:50:14+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:c913c31285b7a33dc2edf45a203427c187fbd23034a29c1ab4310a61674a56fc
+content_hash: sha256:1d551f7280538db0e9a19a2327281b4e1736fd8ada787e330f3d5c5fd0a06ccc
 ---
 
 ## Ability Kit
@@ -372,7 +372,7 @@ CanvasRenderingContext2D和OffscreenCanvasRenderingContext2D的font接口。
 
 保存控件系统提示弹框：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/0zuanOzbSiO_RlXV4dzNaQ/zh-cn_image_0000002394557509.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/xWZj4SZDTU6vOfyz5OqFXw/zh-cn_image_0000002394557509.png)
 
 经评估，强制弹出系统弹框会与应用内已有弹框冲突，体验不够友好，系统将取消该系统强制弹框的行为。
 

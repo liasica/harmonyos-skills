@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-example-of-the-precision-comparison
 title: 精度比对结果输出样例
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 附录 > 调测工具样例与参数说明 > 精度比对结果输出样例
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > 附录 > 精度比对结果输出样例
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:35+08:00
-doc_updated_at: 2026-03-09
+scraped_at: 2026-11-12T09:52:42+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:cf107ca3b288fc8125d47ae2e5f8594f7db378e0d0aefdcbd4473c73a8679443
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-compi
 title: 配置项目NAPI
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部署 > App集成 > 配置项目NAPI
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:34+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:f16a9e6ef272faa072acd1ed5b1b86d2f2814bc1c822c4d4805a402897bbcdf7
+scraped_at: 2026-11-12T09:52:41+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a47563f6eaaae5a981f1620e5585957e92cea5f04773506a651bf96bd6a33244
 ---
 
 编译HAP时，NAPI层的so需要编译依赖NDK中的libneural\_network\_core.so和libhiai\_foundation.so。
@@ -14,7 +14,7 @@ content_hash: sha256:f16a9e6ef272faa072acd1ed5b1b86d2f2814bc1c822c4d4805a402897b
 
 按需引用[NNCore](../harmonyos-references/capi-neuralnetworkruntime.md)和[CANN Kit](../harmonyos-references/cannkit-hiai-aipp-param-8h.md)的头文件。
 
-```cpp
+```c
 #include "neural_network_runtime/neural_network_core.h"
 #include "CANNKit/hiai_options.h"
 ```
@@ -23,7 +23,7 @@ content_hash: sha256:f16a9e6ef272faa072acd1ed5b1b86d2f2814bc1c822c4d4805a402897b
 
 CMakeLists.txt示例代码如下。
 
-```make
+```text
 # the minimum version of CMake.
 cmake_minimum_required(VERSION 3.4.1)
 project(CANNDemo)

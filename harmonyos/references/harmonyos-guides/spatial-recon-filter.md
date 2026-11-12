@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/spatial-recon
 title: 添加滤镜效果
 breadcrumb: 指南 > 图形 > Spatial Recon Kit（空间建模服务） > 添加滤镜效果
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:22+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:c300905dd59bef4b31bec63e1365ed99f024558d980d16f09381f92b5d1041b7
+scraped_at: 2026-11-12T09:52:15+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f2bd65fac7b5fc8c8662cac16ae9ded94e61cfab384f9b7dabb0fa190195cfaf
 ---
 
 为3DGS模型渲染画面添加风格化滤镜，包括：复古滤镜、漫画风格、黑白bit效果、颜色编辑。
@@ -46,6 +46,6 @@ content_hash: sha256:c300905dd59bef4b31bec63e1365ed99f024558d980d16f09381f92b5d1
          await rf.createEffect({ effectId: spatialRender.GSPlugin.RETRO_EFFECT_ID }) as spatialRender.RetroEffect;
        let camera = await rf.createCamera({ name: "gsCam", path: "//gsCam" }, { renderingPipeline: RenderingPipelineType.FORWARD });
        camera.effects.append(effect)
-     });
+     }).catch((reason: string) => { console.error("Error: " + reason) }));
    }
    ```

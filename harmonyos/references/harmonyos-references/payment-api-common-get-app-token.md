@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-a
 title: 获取应用级凭证
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 通用接口 > 获取应用级凭证
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:28+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4c09eea23afec1386765151fdf266205c37ae8305f16471815631efadc41832c
+scraped_at: 2026-11-12T09:57:35+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:36d351256f587a187c78638aa9d67dae8b88b907963584345a6d87e480f4788b
 ---
 
 此接口用于获取访问token，该token相当于一个访问许可，部分接口请求时华为支付服务器会对其进行校验。
@@ -34,8 +34,8 @@ content_hash: sha256:4c09eea23afec1386765151fdf266205c37ae8305f16471815631efadc4
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | grant\_type | 是 | String | 填写为“client\_credentials”，表示为客户端模式。 |
-| client\_id | 是 | String | 应用的OAuth 2.0客户端ID（在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站点击“我的项目”，在项目列表中找到项目，在“项目设置 > 常规”页面的“应用”区域获取“OAuth 2.0客户端ID（凭据）：Client ID”的值） |
-| client\_secret | 是 | String | 应用的OAuth 2.0客户端ID分配的密钥（在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站点击“我的项目”，在项目列表中找到项目，在“项目设置 > 常规”页面的“应用”区域获取“OAuth 2.0客户端ID（凭据）：Client Secret”的值） |
+| client\_id | 是 | String | 应用的OAuth 2.0客户端ID（在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)平台点击“开发者管理”，选择“ID、证书和Profile > APP ID”，在APP ID列表页面点击应用名称，进入应用详情页面，获取“OAuth 2.0客户端ID（凭据）：Client ID”的值） |
+| client\_secret | 是 | String | 应用的OAuth 2.0客户端ID分配的密钥（在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)平台点击“开发者管理”，选择“ID、证书和Profile > APP ID”，在APP ID列表页面点击应用名称，进入应用详情页面，获取“OAuth 2.0客户端ID（凭据）：Client Secret”的值） |
 
 ## 请求示例
 

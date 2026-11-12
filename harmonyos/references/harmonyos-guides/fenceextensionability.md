@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fenceextensio
 title: 云侧围栏开发指导
 breadcrumb: 指南 > 应用服务 > Location Kit（位置服务） > 地理围栏开发指导 > 云侧围栏开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:35+08:00
+scraped_at: 2026-11-12T09:52:28+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:adc6b42e3275ee9a285a8b8d697d128735c2535dba8d18be89df75bf932cd6a0
+content_hash: sha256:6078ef83f718f8acba150f9d841076c58b2653d174c933572004dafe3df7b45f
 ---
 
 ## 概述
@@ -24,26 +24,26 @@ content_hash: sha256:adc6b42e3275ee9a285a8b8d697d128735c2535dba8d18be89df75bf932
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“开发与服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/8O2Ywns2QiafdaLcvuTJ7Q/zh-cn_image_0000002809051009.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/NaJMAQBpQvS29qnYqrlalQ/zh-cn_image_0000002815399901.png)
 2. 在项目列表中找到您的项目，在项目下的应用列表中选择需要配置定位服务参数的应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/HW1ZEXnaQdm8ijvisOxlMA/zh-cn_image_0000002779851444.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/7bxuSdl8RQ2RJbYRDKUFuw/zh-cn_image_0000002786520326.png)
 3. 在左侧导航栏选择“定位服务”，并点击收藏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/xmUzTICuSp2PbJblSS6wrA/zh-cn_image_0000002779691476.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/fvqq7dXASVmzXxCeP3ufRQ/zh-cn_image_0000002786360398.png)
 4. 在左侧导航栏选择“构建 > 定位服务”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/jIkD7411S3y6EVMxtjaOGg/zh-cn_image_0000002809011097.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/vs26nepUQzet3EB6xYOgfA/zh-cn_image_0000002815559819.png)
 
 ## 使用场景
 
 1. 开发者可以通过该围栏扩展能力来使用云侧公共围栏。
 2. 开发者首先需要在AGC（AppGallery Connect）平台定位服务选择右侧“添加围栏组触发”开始创建地理围栏。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/LMV-8shKS46IKqe9criIwQ/zh-cn_image_0000002809051011.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/nqb8JgYOTgqsRdaCKAC5cg/zh-cn_image_0000002815399903.png)
 3. 可以根据商圈、景点等类别，配置围栏组下发围栏策略。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/zsulycJlS0qaqXt5Yo8QUA/zh-cn_image_0000002779851446.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/6NCaVdUoQxGzAdbGSNGKNA/zh-cn_image_0000002786520328.png)
 4. 定位服务在满足围栏触发条件后，通过FenceExtensionAbility把围栏事件通知给APP，APP接收到围栏事件后完成相关的业务处理。
 
 ## 接口介绍

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pen-stylus-in
 title: 接入手写交互
 breadcrumb: 指南 > 系统 > 硬件 > Pen Kit（手写笔服务） > 手写功能开发 > 接入手写交互
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:43+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:51:51+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:e1070c50926535cab80e0193df8c77a4caeb410dc89f9682fccf86ebdbb0aef5
 ---
 
@@ -113,7 +113,7 @@ content_hash: sha256:e1070c50926535cab80e0193df8c77a4caeb410dc89f9682fccf86ebdbb
        console.info(`got accelerometer event, time: ${event.timestamp}`);
        for (let i = 0; i < event.accelerometerData.length; i++) {
          console.info(`accelerometer data: x=${event.accelerometerData[i].x}, y=${event.accelerometerData[i].y}
-         , z=${event.accelerometerData[i].z}`);
+     , z=${event.accelerometerData[i].z}`);
        }
      });
    } catch (error) {
@@ -134,17 +134,17 @@ content_hash: sha256:e1070c50926535cab80e0193df8c77a4caeb410dc89f9682fccf86ebdbb
 5. 订阅手写笔陀螺仪传感器数据。
 
    ```typescript
-   try {
-     stylusInteraction.onGyroscope((event: stylusInteraction.GyroscopeEvent) => {
-       console.info(`got gyroscope event, time: ${event.timestamp}`);
-       for (let i = 0; i < event.gyroscopeData.length; i++) {
-         console.info(`gyroscope data: x=${event.gyroscopeData[i].x}, y=${event.gyroscopeData[i].y}
-     , z=${event.gyroscopeData[i].z}`);
-       }
-     });
-   } catch (error) {
-     console.error(`${error.code}: ${error.message}`);
-   }
+     try {
+       stylusInteraction.onGyroscope((event: stylusInteraction.GyroscopeEvent) => {
+         console.info(`got gyroscope event, time: ${event.timestamp}`);
+         for (let i = 0; i < event.gyroscopeData.length; i++) {
+           console.info(`gyroscope data: x=${event.gyroscopeData[i].x}, y=${event.gyroscopeData[i].y}
+   , z=${event.gyroscopeData[i].z}`);
+         }
+       });
+     } catch (error) {
+       console.error(`${error.code}: ${error.message}`);
+     }
    ```
 6. 取消订阅手写笔陀螺仪传感器数据。
 
@@ -167,7 +167,7 @@ content_hash: sha256:e1070c50926535cab80e0193df8c77a4caeb410dc89f9682fccf86ebdbb
          let accel = event.sensorData[i].accelerometerData;
          let gyro = event.sensorData[i].gyroscopeData;
          console.info(`sensor data: accel.x=${accel.x}, accel.y=${accel.y}, accel.z=${accel.z}, gyro.x=${gyro.x},
-         gyro.y=${gyro.y}, gyro.z=${gyro.z}`);
+     gyro.y=${gyro.y}, gyro.z=${gyro.z}`);
        }
      });
    } catch (error) {

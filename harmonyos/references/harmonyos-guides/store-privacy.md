@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-privacy
 title: 隐私管理服务
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 隐私管理服务
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2ba3697d823bafb2989f376f57fccc3f686a9a056da140cb87586c4cc39e91a8
+scraped_at: 2026-11-12T09:52:19+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f74e687bf89e73272543d5b77b27b998b82e520ced426b91eb5e55d1391eaef8
 ---
 
 隐私管理服务为使用[标准化隐私声明托管服务](../app/agc-help-privacy-policy-0000002316794885.md)的应用/元服务提供查询隐私链接、查询隐私签署状态、撤销同意记录和拉起标准化隐私弹框请求用户同意功能。
@@ -31,7 +31,7 @@ content_hash: sha256:2ba3697d823bafb2989f376f57fccc3f686a9a056da140cb87586c4cc39
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/fjnwhGUKR3C3SzwLdil6-Q/zh-cn_image_0000002779691266.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/SBTo4kcVQRi8S5cxWP-meg/zh-cn_image_0000002786360182.png)
 
 ### 查询隐私链接信息
 
@@ -63,7 +63,7 @@ content_hash: sha256:2ba3697d823bafb2989f376f57fccc3f686a9a056da140cb87586c4cc39
 
 * 同一个Ability内不允许重复调用[loadContent()](../harmonyos-references/js-apis-app-ability-uiextensioncontentsession.md#loadcontent)方法加载页面。
 * 应用/元服务需要接入隐私声明托管服务。
-* 隐私管理服务支持Phone、Tablet、PC/2in1设备。并且从5.1.1(19)版本开始，新增支持TV设备。
+* 隐私管理服务支持Phone、Tablet、PC/2in1设备。从5.1.1(19)版本开始，新增支持TV设备；并且从API版本26.0.1开始，新增支持Car设备。
 * 隐私管理服务暂不支持模拟器，请使用真机调试。
 
 ## 接口说明
@@ -91,15 +91,18 @@ content_hash: sha256:2ba3697d823bafb2989f376f57fccc3f686a9a056da140cb87586c4cc39
 
    ```typescript
    try {
-     let appPrivacyManageInfo: privacyManager.AppPrivacyMgmtInfo = privacyManager.getAppPrivacyMgmtInfo();
-     hilog.info(0, 'TAG', 'Succeeded in getting AppPrivacyManageInfo type: ' + appPrivacyManageInfo['type']);
-     let privacyLinkInfoArray : privacyManager.AppPrivacyLink[] = appPrivacyManageInfo.privacyInfo;
-     hilog.info(0, 'TAG', 'Succeeded in getting AppPrivacyManageInfo size = ' + privacyLinkInfoArray.length);
+     let appPrivacyMgmtInfo: privacyManager.AppPrivacyMgmtInfo = privacyManager.getAppPrivacyMgmtInfo();
+     hilog.info(0, TAG, 'Succeeded in getting AppPrivacyMgmtInfo type: ' + appPrivacyMgmtInfo['type']);
+     let privacyLinkInfoArray : privacyManager.AppPrivacyLink[] = appPrivacyMgmtInfo.privacyInfo;
+     hilog.info(0, TAG, 'Succeeded in getting AppPrivacyMgmtInfo size = ' + privacyLinkInfoArray.length);
      for (let i = 0; i < privacyLinkInfoArray.length; i++) {
-       hilog.info(0, 'TAG', 'Succeeded in getting AppPrivacyManageInfo type = ' + privacyLinkInfoArray[i]['type'] + ', version = ' + privacyLinkInfoArray[i]['versionCode'] + ', url = ' + privacyLinkInfoArray[i]['url']);
+       hilog.info(0, TAG,
+         'Succeeded in getting AppPrivacyMgmtInfo type = ' + privacyLinkInfoArray[i]['type'] + ', version = ' +
+           privacyLinkInfoArray[i]['versionCode'] + ', url = ' + privacyLinkInfoArray[i]['url']);
      }
    } catch (error) {
-     hilog.error(0, 'TAG', 'GetAppPrivacyManageInfoPublic exception code: ' + error.code + ', exception message: ' + error.message);
+     hilog.error(0, TAG,
+       'getAppPrivacyMgmtInfo exception code: ' + error.code + ', exception message: ' + error.message);
    }
    ```
 
@@ -116,12 +119,12 @@ content_hash: sha256:2ba3697d823bafb2989f376f57fccc3f686a9a056da140cb87586c4cc39
    ```typescript
    try {
      let appPrivacyResults: privacyManager.AppPrivacyResult[] = privacyManager.getAppPrivacyResult();
-     hilog.info(0, 'TAG', 'Succeeded in getting AppPrivacyResult size = ' + appPrivacyResults.length);
+     hilog.info(0, TAG, 'Succeeded in getting AppPrivacyResult size = ' + appPrivacyResults.length);
      for (let i = 0; i < appPrivacyResults.length; i++) {
-       hilog.info(0, 'TAG', 'Succeeded in getting AppPrivacyResult type = ' + appPrivacyResults[i]['type'] + ', version = ' + appPrivacyResults[i]['versionCode'] + ', result = '+appPrivacyResults[i]['result']);
+       hilog.info(0, TAG, 'Succeeded in getting AppPrivacyResult type = ' + appPrivacyResults[i]['type'] + ', version = ' + appPrivacyResults[i]['versionCode'] + ', result = '+appPrivacyResults[i]['result']);
      }
    } catch (error) {
-     hilog.error(0, 'TAG', 'GetAppPrivacyResultPublic exception code: ' + error.code + ', exception message: ' + error.message);
+     hilog.error(0, TAG, 'GetAppPrivacyResultPublic exception code: ' + error.code + ', exception message: ' + error.message);
    }
    ```
 
@@ -138,9 +141,9 @@ content_hash: sha256:2ba3697d823bafb2989f376f57fccc3f686a9a056da140cb87586c4cc39
    ```typescript
    try {
      privacyManager.disableService();
-     hilog.info(0, 'TAG', 'Succeeded in disabling Service success.');
+     hilog.info(0, TAG, 'Succeeded in disabling Service success.');
    } catch (error) {
-     hilog.error(0, 'TAG', 'DisableService exception code: ' + error.code + ', exception message: ' + error.message);
+     hilog.error(0, TAG, 'DisableService exception code: ' + error.code + ', exception message: ' + error.message);
    }
    ```
 
@@ -162,13 +165,13 @@ content_hash: sha256:2ba3697d823bafb2989f376f57fccc3f686a9a056da140cb87586c4cc39
      privacyManager.requestAppPrivacyConsent(uiContext).then((consentResult : privacyManager.ConsentResult) => {
        let appPrivacyResults: privacyManager.AppPrivacyResult[] = consentResult['results'];
        for (let i = 0; i < appPrivacyResults.length; i++) {
-         hilog.info(0, 'TAG', 'GetAppPrivacyResult type = ' + appPrivacyResults[i]['type'] + ', version = ' + appPrivacyResults[i]['versionCode'] + ', result = ' + appPrivacyResults[i]['result'] + ', signingTimestamp = ' + appPrivacyResults[i]['signingTimestamp']);
+         hilog.info(0, TAG, 'GetAppPrivacyResult type = ' + appPrivacyResults[i]['type'] + ', version = ' + appPrivacyResults[i]['versionCode'] + ', result = ' + appPrivacyResults[i]['result'] + ', signingTimestamp = ' + appPrivacyResults[i]['signingTimestamp']);
        }
      }).catch((error: BusinessError<Object>) => {
-       hilog.error(0, 'TAG', `requestAppPrivacyConsent failed, Code: ${error.code}, message: ${error.message}`);
+       hilog.error(0, TAG, `requestAppPrivacyConsent failed, Code: ${error.code}, message: ${error.message}`);
      });
    } catch (error) {
-     hilog.error(0, 'TAG', 'requestAppPrivacyConsent exception code: ' + error.code + ', exception message: ' + error.message);
+     hilog.error(0, TAG, 'requestAppPrivacyConsent exception code: ' + error.code + ', exception message: ' + error.message);
    }
    ```
 
@@ -178,7 +181,7 @@ content_hash: sha256:2ba3697d823bafb2989f376f57fccc3f686a9a056da140cb87586c4cc39
 
 弹框样式如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/RcS4qD66Tl6TtXS_CzmSHg/zh-cn_image_0000002809010887.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/S9VF27kcRWyKJCHydoQMhQ/zh-cn_image_0000002815559603.png)
 
 用户点击同意隐私弹框，应用市场会发送隐私弹框签署结果公共事件。应用可通过监听该事件，感知用户隐私签署结果。
 

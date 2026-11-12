@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (PixelMap)
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.image (图片处理) > Interface (PixelMap)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c2c065ccbd233a7d69594a48ebb69964b015827f2f053497987b8eb85436440c
+scraped_at: 2026-11-12T09:56:40+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e3214dd26de5dce77313c92a950d7a6de1f71f34f147b4153bcfb8c660d300a9
 ---
 
 图像像素类，用于读取或写入图像数据以及获取图像信息，同时支持图像变换（缩放、平移、旋转、翻转、裁剪）、设置不透明度、提取Alpha通道、色彩空间设置等操作，适用于图像处理、图像编辑、图像显示等需要进行像素级数据操作的场景。在调用PixelMap的方法前，需要先通过[image.createPixelMapFromPixels](arkts-apis-image-f.md#imagecreatepixelmapfrompixels)或[image.createPixelMapUsingAllocator](arkts-apis-image-f.md#imagecreatepixelmapusingallocator20)系列接口传入像素数据创建一个PixelMap对象，也可以通过[ImageSource](arkts-apis-image-imagesource.md)进行图片解码创建PixelMap对象。目前PixelMap序列化大小最大为128MiB，超过会渲染失败。PixelMap大小的计算方式为：宽 \* 高 \* 每像素占用字节数（详情请参考[PixelMapFormat](arkts-apis-image-e.md#pixelmapformat7)）。
@@ -139,8 +139,8 @@ function readAllPixelsToBufferSync(pixelMap: image.PixelMap) {
   try {
     pixelMap.readAllPixelsToBufferSync(readBuffer);
     console.info('Succeeded in reading pixel data from the PixelMap to readBuffer.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to read pixel data. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -270,8 +270,8 @@ function readPixelsToBufferSync(pixelMap: image.PixelMap) {
   try {
     pixelMap.readPixelsToBufferSync(readBuffer);
     console.info('Succeeded in reading image pixel data.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to read image pixel data. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -436,8 +436,8 @@ function readPixelsToAreaSyncRGBA(pixelMap: image.PixelMap) {
     pixelMap.readPixelsToAreaSync(area);
     console.info('Succeeded in reading pixel data from the specified area of the PixelMap to area.pixels.');
     console.info('BGRA data: ', new Uint8Array(area.pixels));
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to read pixel data. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -458,8 +458,8 @@ function readPixelsToAreaSyncYUV(pixelMap: image.PixelMap) {
     pixelMap.readPixelsToAreaSync(area);
     console.info('Succeeded in reading pixel data from the specified area of the PixelMap to area.pixels.');
     console.info('YUV data: ', new Uint8Array(area.pixels));
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to read pixel data. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -651,8 +651,8 @@ function readPixelsSync(pixelMap: image.PixelMap) {
   try {
     pixelMap.readPixelsSync(area);
     console.info('Succeeded in reading the image data from the specified area.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to read the image data from the specified area. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -840,8 +840,8 @@ function writePixelsFromAreaSyncRGBA(pixelMap: image.PixelMap) {
   try {
     pixelMap.writePixelsFromAreaSync(area);
     console.info('Succeeded in writing pixel data from area.pixels to the specified area of the PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to write pixel data. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -869,8 +869,8 @@ function writePixelsFromAreaSyncYUV(pixelMap: image.PixelMap) {
   try {
     pixelMap.writePixelsFromAreaSync(area);
     console.info('Succeeded in writing pixel data from area.pixels to the specified area of the PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to write pixel data. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -1080,8 +1080,8 @@ function writePixelsSync(pixelMap: image.PixelMap) {
   try {
     pixelMap.writePixelsSync(area);
     console.info('Succeeded in writing pixels into the specified area.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to write pixels into the specified area. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -1208,8 +1208,8 @@ function writeAllPixelsFromBufferSync(pixelMap: image.PixelMap) {
   try {
     pixelMap.writeAllPixelsFromBufferSync(writeBuffer);
     console.info('Succeeded in writing pixel data from writeBuffer to the PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to write pixel data. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -1349,8 +1349,8 @@ function writeBufferToPixelsSync(pixelMap: image.PixelMap) {
   try {
     pixelMap.writeBufferToPixelsSync(color);
     console.info('Succeeded in writing data from the buffer to the PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to write data from the buffer to the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -1457,8 +1457,8 @@ function getImageInfoSync(pixelMap: image.PixelMap) {
   try {
     let imageInfo: image.ImageInfo = pixelMap.getImageInfoSync();
     console.info(`Succeeded in obtaining information of the PixelMap with size ${imageInfo.size} and pixel format ${imageInfo.pixelFormat}.`);
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to obtain information of the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -1653,8 +1653,8 @@ function setOpacitySync(pixelMap: image.PixelMap) {
   try {
     pixelMap.setOpacitySync(opacity);
     console.info('Succeeded in setting opacity.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to set opacity. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -1785,8 +1785,8 @@ function opacitySync(pixelMap: image.PixelMap) {
   try {
     pixelMap.opacitySync(rate);
     console.info('Succeeded in setting opacity.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to set opacity. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -1895,8 +1895,8 @@ function extractAlphaPixelMapSync(pixelMap: image.PixelMap) {
   try {
     const alphaMap = pixelMap.extractAlphaPixelMapSync();
     console.info('Succeeded in creating alpha PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to create alpha PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -2024,8 +2024,8 @@ function createAlphaPixelmapSync(pixelMap: image.PixelMap) {
       return;
     }
     console.info('Succeeded in creating alpha PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to create alpha PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -2148,8 +2148,8 @@ function applyScaleSync(pixelMap: image.PixelMap) {
   try {
     pixelMap.applyScaleSync(scaleX, scaleY, image.AntiAliasingLevel.LOW);
     console.info('Succeeded in scaling the PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to scale the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -2286,8 +2286,8 @@ function scaleSync(pixelMap: image.PixelMap) {
   try {
     pixelMap.scaleSync(scaleX, scaleY);
     console.info('Succeeded in scaling the PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to scale the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -2338,7 +2338,7 @@ scale(x: number, y: number, level: AntiAliasingLevel): Promise<void>
 ```ts
 import { BusinessError } from '@kit.BasicServicesKit';
 
-function scaleSync(pixelMap: image.PixelMap) {
+function scale(pixelMap: image.PixelMap) {
   const scaleX: number = 2.0;
   const scaleY: number = 1.0;
   pixelMap.scale(scaleX, scaleY, image.AntiAliasingLevel.LOW).then(() => {
@@ -2392,8 +2392,8 @@ function scaleSync(pixelMap: image.PixelMap) {
   try {
     pixelMap.scaleSync(scaleX, scaleY, image.AntiAliasingLevel.LOW);
     console.info('Succeeded in scaling the PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to scale the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -2496,8 +2496,8 @@ function createScaledPixelMapSync(pixelMap: image.PixelMap) {
   try {
     let scaledPixelMap = pixelMap.createScaledPixelMapSync(scaleX, scaleY, image.AntiAliasingLevel.LOW);
     console.info('Succeeded in creating scaled PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to create scaled PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -2620,8 +2620,8 @@ function createCroppedAndScaledPixelMapSync(pixelMap: image.PixelMap) {
   try {
     const croppedAndScaled = pixelMap.createCroppedAndScaledPixelMapSync(region, scaleX, scaleY, image.AntiAliasingLevel.HIGH);
     console.info('Succeeded in creating cropped and scaled PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to create cropped and scaled PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -2710,8 +2710,8 @@ function cloneSync(pixelMap: image.PixelMap) {
   try {
     let clonedPixelMap: image.PixelMap = pixelMap.cloneSync();
     console.info('Succeeded in cloning the PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to clone the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -2832,8 +2832,8 @@ function applyTranslateSync(pixelMap: image.PixelMap) {
   try {
     pixelMap.applyTranslateSync(translateX, translateY);
     console.info('Succeeded in translating the PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to translate the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -2970,8 +2970,8 @@ function translateSync(pixelMap: image.PixelMap) {
   try {
     pixelMap.translateSync(translateX, translateY);
     console.info('Succeeded in translating the PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to translate the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -3092,8 +3092,8 @@ function applyRotateSync(pixelMap: image.PixelMap) {
   try {
     pixelMap.applyRotateSync(angle);
     console.info('Succeeded in rotating the PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to rotate the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -3230,8 +3230,8 @@ function rotateSync(pixelMap: image.PixelMap) {
   try {
     pixelMap.rotateSync(angle);
     console.info('Succeeded in rotating the PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to rotate the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -3344,8 +3344,8 @@ function applyFlipSync(pixelMap: image.PixelMap) {
   try {
     pixelMap.applyFlipSync(horizontal, vertical);
     console.info('Succeeded in flipping the PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to flip the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -3479,8 +3479,8 @@ function flipSync(pixelMap: image.PixelMap) {
   try {
     pixelMap.flipSync(horizontal, vertical);
     console.info('Succeeded in flipping the PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to flip the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -3607,8 +3607,8 @@ function applyCropSync(pixelMap: image.PixelMap) {
   try {
     pixelMap.applyCropSync(region);
     console.info('Succeeded in cropping the PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to crop the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -3736,8 +3736,8 @@ function cropSync(pixelMap: image.PixelMap) {
   try {
     pixelMap.cropSync(region);
     console.info('Succeeded in cropping the PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to crop the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -3776,8 +3776,8 @@ function getColorSpace(pixelMap: image.PixelMap) {
   try {
     const csm = pixelMap.getColorSpace();
     console.info(`Succeeded in getting color space: ${csm.getColorSpaceName()}.`);
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to get color space. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -3818,8 +3818,8 @@ function setColorSpace(pixelMap: image.PixelMap) {
   try {
     pixelMap.setColorSpace(csm);
     console.info('Succeeded in setting color space.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to set color space. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -4030,8 +4030,8 @@ function getMetadata(context: Context) {
     try {
       let staticMetadata = pixelMap.getMetadata(image.HdrMetadataKey.HDR_STATIC_METADATA);
       console.info('Succeeded in getting the metadata.');
-    } catch (e) {
-      const err = e as BusinessError;
+    } catch (error) {
+      const err = error as BusinessError;
       console.error(`Failed to get the metadata. Code: ${err.code}, message: ${err.message}`);
     }
   } else {
@@ -4083,14 +4083,14 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 function setMetadata(pixelMap: image.PixelMap) { // 入参pixelMap内存类型需为DMA_ALLOC内存类型，其创建方法请参考上方说明。
   let staticMetadata: image.HdrStaticMetadata = {
-    displayPrimariesX: [1.1, 1.1, 1.1],
-    displayPrimariesY: [1.2, 1.2, 1.2],
-    whitePointX: 1.1,
-    whitePointY: 1.2,
-    maxLuminance: 2.1,
-    minLuminance: 1.0,
-    maxContentLightLevel: 2.1,
-    maxFrameAverageLightLevel: 2.1,
+    displayPrimariesX: [0.1, 0.2, 0.3],
+    displayPrimariesY: [0.4, 0.5, 0.6],
+    whitePointX: 0.5,
+    whitePointY: 0.5,
+    maxLuminance: 65535,
+    minLuminance: 0,
+    maxContentLightLevel: 65535,
+    maxFrameAverageLightLevel: 8192,
   };
   pixelMap.setMetadata(image.HdrMetadataKey.HDR_STATIC_METADATA, staticMetadata).then(() => {
     console.info('Succeeded in setting the metadata.');
@@ -4514,8 +4514,8 @@ function setMemoryNameSync(pixelMap: image.PixelMap) {
   try {
     pixelMap.setMemoryNameSync("PixelMapName Test");
     console.info('Succeeded in setting memory name.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to set memory name. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -4552,8 +4552,8 @@ function getUniqueId(pixelMap: image.PixelMap) {
   try {
     const uniqueId: number = pixelMap.getUniqueId();
     console.info(`Succeeded in getting the unique ID: ${uniqueId}.`);
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to get the unique ID. Code: ${err.code}, message: ${err.message}`);
   }
 }

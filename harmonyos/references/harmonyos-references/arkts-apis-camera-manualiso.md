@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (ManualIso)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (ManualIso)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:26+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:0b31e77c1f3524c54fe926f60127391dd9e56c70b4c274ca36f2233a4fef9d0c
+scraped_at: 2026-11-12T09:56:32+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:527168a2eb9eff787816af944847a7db03ffa6a61a0c98b1de5d6e774e375657
 ---
 
 ManualIso继承自[ManualIsoQuery](arkts-apis-camera-manualisoquery.md)。
@@ -99,6 +99,11 @@ setIso(iso: number): void
 import { BusinessError } from '@kit.BasicServicesKit';
 
 function setIso(photoSession: camera.PhotoSession, iso: number): void {
+  let isoArray = photoSession.getSupportedIsoRange();
+  if (!isoArray.includes(iso)) {
+    console.error(`invalid iso.`);
+    return;
+  }
   try {
     photoSession.setIso(iso);
   } catch (error) {

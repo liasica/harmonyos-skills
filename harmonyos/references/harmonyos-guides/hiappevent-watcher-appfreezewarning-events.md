@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 应用冻屏告警事件介绍
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 应用冻屏告警事件 > 应用冻屏告警事件介绍
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:39+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:6b3152b3e0948a4740c11858eb18e3e794889772ee75b5e262e00fcd244e312f
+scraped_at: 2026-11-12T09:51:54+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:1fc93477aed49c8f09c4e312aeda96627c265ad0bd17935e1059df0b9fe3d93c
 ---
 
 ## 简介
@@ -35,8 +35,8 @@ content_hash: sha256:6b3152b3e0948a4740c11858eb18e3e794889772ee75b5e262e00fcd244
 | --- | --- | --- |
 | time | number | 事件触发时间，单位为ms。 |
 | foreground | boolean | 应用是否处于前台状态。true表示应用处于前台；false表示应用处于后台。 |
-| bundle\_version | string | 应用版本。 |
-| bundle\_version\_code | number | 应用版本字符串。 |
+| bundle\_version | string | 应用版本字符串。 |
+| bundle\_version\_code | number | 应用版本。 |
 | bundle\_name | string | 应用名称。 |
 | process\_name | string | 应用的进程名称。 |
 | pid | number | 应用的进程ID。 |

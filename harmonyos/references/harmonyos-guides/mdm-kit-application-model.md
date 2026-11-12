@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit-appli
 title: 应用模型
 breadcrumb: 指南 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > 应用模型
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:54+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:7f1699d0efa0ca968de1e6c6ad57ee91eacbc27c4dad0f513158b8d2f3d68110
+scraped_at: 2026-11-12T09:51:50+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:5bf2f3249d192898b232033a5957998fd3fd50c21642141b218dce72458a200b
 ---
 
 ## 概述
@@ -22,7 +22,7 @@ MDM应用进程模型继承于普通应用[进程模型](process-model-overview.
 
 **图1** MDM应用进程模型
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/RZRSSj6aTvewpPSjdXCiWQ/zh-cn_image_0000002809010473.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/Ur5IT0YYQx2DwHn3XgzwPg/zh-cn_image_0000002786359768.png)
 
 ### EnterpriseAdmin进程的生命周期
 
@@ -30,19 +30,19 @@ Admin组件被激活后有独立的进程，支持系统状态变更回调。与
 
 **图2** MDM应用处于前台并且已经激活时
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/WecssCVUQA6nAMyDIprfDQ/zh-cn_image_0000002809050387.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/Bx-pcrj1QS-NrUMnMWYtQw/zh-cn_image_0000002815559189.png)
 
 **图3** 存在MDM应用的前台进程和EnterpriseAdmin进程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/TmEhI5SURJGsrvmyFQfyng/zh-cn_image_0000002779850822.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/JFxQfMSLRlS1CcNDlsBrmQ/zh-cn_image_0000002815399273.png)
 
 **图4** 应用主进程停止时，EnterpriseAdmin进程仍然运行
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/0uLqzFGgTFaGgFk9aRzr9g/zh-cn_image_0000002779690854.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/1hb32wraThyYfxM9joPy6Q/zh-cn_image_0000002786519698.png)
 
 **图5** EnterpriseAdmin进程支持系统事件回调
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/xzxfVhaSRQqvophUI-m6qA/zh-cn_image_0000002809010475.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/MbeGuG4DRzGXPr77Q26Elw/zh-cn_image_0000002786359770.png)
 
 * onAdminEnabled：当MDM应用的Admin组件被激活时的事件回调。
 * onAdminDisabled：当MDM应用的Admin组件被取消激活时的事件回调。
@@ -64,9 +64,8 @@ Admin组件有不同的激活方式，可以通过不同的接口，例如[admin
 
 **说明** 
 
-1.BDA与其他Admin角色不能同时存在。
-
-2.SDA和DA同时存在的数量加起来最多10个。SDA具备管理其他DA应用的能力（激活/去激活），而DA仅能对设备进行管控，无法管理其他DA应用。当MDM应用激活为SDA时，具备管控其他DA的能力，可以通过调用[adminManager.enableDeviceAdmin](../harmonyos-references/js-apis-enterprise-adminmanager.md#adminmanagerenabledeviceadmin23)接口激活其他DA应用，或调用[adminManager.disableDeviceAdmin](../harmonyos-references/js-apis-enterprise-adminmanager.md#adminmanagerdisabledeviceadmin23)接口去激活其他DA应用。
+1. BDA与其他Admin角色不能同时存在。
+2. SDA和DA同时存在的数量加起来最多10个。SDA具备管理其他DA应用的能力（激活/去激活），而DA仅能对设备进行管控，无法管理其他DA应用。当MDM应用激活为SDA时，具备管控其他DA的能力，可以通过调用[adminManager.enableDeviceAdmin](../harmonyos-references/js-apis-enterprise-adminmanager.md#adminmanagerenabledeviceadmin23)接口激活其他DA应用，或调用[adminManager.disableDeviceAdmin](../harmonyos-references/js-apis-enterprise-adminmanager.md#adminmanagerdisabledeviceadmin23)接口去激活其他DA应用。
 
 ## 管控接口授权原理
 
@@ -78,4 +77,4 @@ MDM管控接口使用[ACL授权](app-permission-mgmt-overview.md#权限机制中
 
 **图6** EDM服务校验逻辑
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/DzcedqwQQuCkqJ1r16DlqQ/zh-cn_image_0000002809050389.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/BNhOektTRx2s4Ell3-h-Cw/zh-cn_image_0000002815559191.png)

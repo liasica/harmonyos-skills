@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-ag
 title: 使用X25519进行密钥协商(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥协商 > 使用X25519进行密钥协商(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:27+08:00
-doc_updated_at: 2026-10-10
+scraped_at: 2026-11-12T09:51:34+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:b349df19a27f53407f51d2451afc75a40cadf67190eb3db9ffea47d6987a5d1d
 ---
 

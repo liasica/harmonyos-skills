@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-router-
 title: Router切换Navigation
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 设置组件导航和页面路由 > Router切换Navigation
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:12+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:b8b45a9453982d8b5e64768bbf09eb643259935055e35866ab5e93475e6bc002
+scraped_at: 2026-11-12T09:51:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:51655b569c314af37942e3ee07f297e5b3227a0f249998c45ad7e9be0ffa7db7
 ---
 
 鉴于组件导航（[Navigation](../harmonyos-references/ts-basic-components-navigation.md)）支持更丰富的动效、一次开发多端部署能力和更灵活的栈操作。本文主要从页面跳转、动效和生命周期等方面介绍如何从Router切换到Navigation。
@@ -183,16 +183,16 @@ export struct PageOne {
 Router通过@ohos.router模块提供的方法来操作页面，建议使用[UIContext](../harmonyos-references/arkts-apis-uicontext-uicontext.md)中的[getRouter](../harmonyos-references/arkts-apis-uicontext-uicontext.md#getrouter)获取[Router](../harmonyos-references/arkts-apis-uicontext-router.md)对象。
 
 ```typescript
-// push page
+// 跳转页面
 this.getUIContext().getRouter().pushUrl({ url:'pages/PageOne', params: null });
 
-// pop page
+// 返回页面
 this.getUIContext().getRouter().back({ url: 'pages/PageOne' });
 
-// replace page
+// 替换当前页面
 this.getUIContext().getRouter().replaceUrl({ url: 'pages/PageOne' });
 
-// clear all page
+// 清空所有页面
 this.getUIContext().getRouter().clear();
 
 // 获取页面栈大小
@@ -223,18 +223,18 @@ struct Index {
 
 ```typescript
 this.pathStack.pop();
-// push page
+// 跳转页面
 this.pathStack.pushPath({ name: 'PageOne' });
 
-// pop page
+// 返回页面
 this.pathStack.pop();
 this.pathStack.popToIndex(1);
 this.pathStack.popToName('PageOne');
 
-// replace page
+// 替换当前页面
 this.pathStack.replacePath({ name: 'PageOne' });
 
-// clear all page
+// 清空所有页面
 this.pathStack.clear();
 
 // 获取路由栈大小
@@ -361,7 +361,7 @@ struct CustomNode {
   pathStack: NavPathStack = new NavPathStack();
 
   aboutToAppear() {
-    // query navigation info
+    // 查询navigation信息
     let navigationInfo: NavigationInfo = this.queryNavigationInfo() as NavigationInfo;
     if (navigationInfo !== undefined) {
       this.pathStack = navigationInfo.pathStack ;
@@ -411,7 +411,7 @@ onPageHide(): void {
 
 其生命周期时序如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/mRLCAo6DQF258Xwnr9LmrQ/zh-cn_image_0000002779849830.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/ktFCKM8dT1ykHWfBAc9kbw/zh-cn_image_0000002786518698.png)
 
 Navigation作为路由容器，其生命周期承载在NavDestination组件上，以组件事件的形式开放。
 
@@ -658,10 +658,10 @@ function callbackFunc(info: uiObserver.RouterPageInfo) {
   hilog.info(DOMAIN, TAG,'RouterPageInfo is : ' + JSON.stringify(info));
 }
 
-// used in ability context.
+// 在abilityContext中使用
 uiObserver.on('routerPageUpdate', this.context, callbackFunc);
 
-// used in UIContext.
+// 在UIContext中使用
 uiObserver.on('routerPageUpdate', this.getUIContext(), callbackFunc);
 ```
 

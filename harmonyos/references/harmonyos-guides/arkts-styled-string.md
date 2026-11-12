@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-styled-
 title: 属性字符串 (StyledString/MutableStyledString)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用文本 > 属性字符串 (StyledString/MutableStyledString)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:14+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b9f8f0d14b7c03a501ed47c8b5e6d192fffbd9b9339deda3d03ca75cb6f3eb49
+scraped_at: 2026-11-12T09:51:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8b53d8cd643d8589945cba0ee4d5a4121dc16435f759c7c2590d98cfdfd22fdc
 ---
 
 属性字符串StyledString/MutableStyledString（其中MutableStyledString继承自StyledString，下文统称为StyledString），可用于在字符或段落级别上设置文本样式。将StyledString应用到文本组件上，可以采用多种方式修改文本，包括调整字号、添加字体颜色、使文本具备可点击性，以及通过自定义方式绘制文本等。具体使用方法请参考[属性字符串](../harmonyos-references/ts-universal-styled-string.md)的API文档。
@@ -29,9 +29,9 @@ struct styled_string_demo1 {
   // 请将$r('app.string.CreateApply_Text_Forty_Five')替换为实际资源文件，在本示例中该资源文件的value值为"运动45分钟"
   styledString1: StyledString = new StyledString( this.getUIContext()
     .getHostContext()!.resourceManager.getStringSync($r('app.string.CreateApply_Text_Forty_Five').id));
-  // 请将$r('app.string.CreateApply_Text_Third_Five')替换为实际资源文件，在本示例中该资源文件的value值为"运动35分钟"
+  // 请将$r('app.string.CreateApply_Text_Thirty_Five')替换为实际资源文件，在本示例中该资源文件的value值为"运动35分钟"
   mutableStyledString1: MutableStyledString = new MutableStyledString( this.getUIContext()
-    .getHostContext()!.resourceManager.getStringSync($r('app.string.CreateApply_Text_Third_Five').id));
+    .getHostContext()!.resourceManager.getStringSync($r('app.string.CreateApply_Text_Thirty_Five').id));
   controller1: TextController = new TextController();
   controller2: TextController = new TextController();
 
@@ -55,7 +55,7 @@ struct styled_string_demo1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/ZnnYfywPTbmVRc58krLVVA/zh-cn_image_0000002779690054.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/9wyijIZSTFO0iRytm64OPg/zh-cn_image_0000002815558387.png)
 
 ## 设置文本样式
 
@@ -113,7 +113,7 @@ struct styled_string_demo1 {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/s_G4CLLsT9SslzoUZzIvIA/zh-cn_image_0000002809009675.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/8-AWyzxVSLStWvmid6ytmQ/zh-cn_image_0000002815398471.png)
 * 创建及应用文本阴影对象（TextShadowStyle）
 
   ```typescript
@@ -122,7 +122,7 @@ struct styled_string_demo1 {
   @Component
   struct styled_string_demo3 {
     @State str: string =
-      this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('CreateApply_Text_Third_Five') as string;
+      this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('CreateApply_Text_Thirty_Five') as string;
     mutableStyledString: MutableStyledString = new MutableStyledString(this.str, [
       {
         start: 0,
@@ -153,7 +153,7 @@ struct styled_string_demo1 {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/o2DCN5oKTzKMON8uzK9FGQ/zh-cn_image_0000002809049591.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/9WCiCJcySC2GhoRLZ33mEw/zh-cn_image_0000002786518896.png)
 * 创建及应用文本装饰线对象（DecorationStyle）
 
   ```typescript
@@ -163,7 +163,7 @@ struct styled_string_demo1 {
   struct styled_string_demo4 {
     @State str: string =
       this.getUIContext()
-        .getHostContext()?.resourceManager.getStringByNameSync('CreateApply_Text_Third_Five') as string;
+        .getHostContext()?.resourceManager.getStringByNameSync('CreateApply_Text_Thirty_Five') as string;
     mutableStyledString: MutableStyledString = new MutableStyledString(this.str, [
       {
         start: 0,
@@ -216,7 +216,7 @@ struct styled_string_demo1 {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/lgdYD2GTSnO9DNTVcy5LzA/zh-cn_image_0000002779850026.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/eF94rEiPS6qCkFDmfeSvAQ/zh-cn_image_0000002786358968.jpg)
 * 创建及应用文本基线偏移量对象（BaselineOffsetStyle）
 
   ```typescript
@@ -227,7 +227,7 @@ struct styled_string_demo1 {
   @Component
   struct styled_string_demo5 {
     @State str: string =
-      this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('CreateApply_Text_Third_Five') as string;
+      this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('CreateApply_Text_Thirty_Five') as string;
 
     mutableStyledString: MutableStyledString = new MutableStyledString(this.str, [
       {
@@ -253,7 +253,7 @@ struct styled_string_demo1 {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/qcjadwnMQQmFY83xCa6Y0A/zh-cn_image_0000002779690056.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/NTzxiUQ8Rfy_wUBfJjb3DA/zh-cn_image_0000002815558389.png)
 * 创建及应用文本行高对象（LineHeightStyle）
 
   ```typescript
@@ -291,7 +291,7 @@ struct styled_string_demo1 {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/w2LeHFRUReiXpbRN4ypThQ/zh-cn_image_0000002809009677.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/lvTL956IT_2i8bRpYuOKDw/zh-cn_image_0000002815398473.png)
 * 创建及应用文本字符间距对象（LetterSpacingStyle）
 
   ```typescript
@@ -302,7 +302,7 @@ struct styled_string_demo1 {
   @Component
   struct styled_string_demo7 {
     @State str: string =
-      this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('CreateApply_Text_Third_Five') as string;
+      this.getUIContext().getHostContext()?.resourceManager.getStringByNameSync('CreateApply_Text_Thirty_Five') as string;
     mutableStyledString: MutableStyledString = new MutableStyledString(this.str, [
       {
         start: 0,
@@ -327,13 +327,13 @@ struct styled_string_demo1 {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/TXUaJxe2SkWge6okxL34fg/zh-cn_image_0000002809049593.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/np7otp6VROOUgyk6NwbZKg/zh-cn_image_0000002786518898.png)
 
 ## 设置段落样式
 
 可通过[ParagraphStyle](../harmonyos-references/ts-universal-styled-string.md#paragraphstyle)设置段落样式布局。下图显示了如何分割文本中的段落，段落之间以换行符\n分隔。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/Rmagmpv2RTebV8NhePCrqA/zh-cn_image_0000002779850028.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/RwG81A0RTIu5G-jrK7ljgg/zh-cn_image_0000002786358970.png)
 
 以下代码示例展示了如何创建ParagraphStyle并应用。如果将ParagraphStyle附加到段落开头、末尾或之间的任何位置，均会应用样式，非段落区间内则不会应用样式。
 
@@ -401,7 +401,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/j7zl8pCXRwKMFcLKlFkcig/zh-cn_image_0000002779690058.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/E-vIKUddTlaZkCSSFcYK4g/zh-cn_image_0000002815558391.png)
 
 除了可以在创建属性字符串时就预设样式，也可以后续通过[replaceStyle](../harmonyos-references/ts-universal-styled-string.md#replacestyle)清空原样式替换新样式，同时需要在附加的文本组件controller上主动触发更新绑定的属性字符串。
 
@@ -489,7 +489,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/_DEqwNhuRMOUKVkDrJtPKw/zh-cn_image_0000002809009679.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/wp7EX2zHQQ201ZbOIqXpmA/zh-cn_image_0000002815398475.gif)
 
 ## 支持将属性字符串转换成Paragraph
 
@@ -705,7 +705,7 @@ struct Index {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/5Ryzlhu4TAuzJpG8HcPk0w/zh-cn_image_0000002809049595.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/oPa5dV4_SgKWtW8j5CPBdQ/zh-cn_image_0000002786518900.png)
 
 ## 使用图片
 
@@ -751,8 +751,8 @@ struct StyledStringImageAttachment {
 
   private async getPixmapFromMedia(resource: Resource) {
     try {
-      let unit8Array = await this.getUIContext().getHostContext()?.resourceManager?.getMediaContent(resource.id);
-      let imageSource = image.createImageSource(unit8Array?.buffer?.slice(0, unit8Array?.buffer?.byteLength));
+      let uint8Array = await this.getUIContext().getHostContext()?.resourceManager?.getMediaContent(resource.id);
+      let imageSource = image.createImageSource(uint8Array?.buffer?.slice(0, uint8Array?.buffer?.byteLength));
       let createPixelMap: image.PixelMap = await imageSource.createPixelMap({
         desiredPixelFormat: image.PixelMapFormat.RGBA_8888
       });
@@ -891,7 +891,7 @@ struct StyledStringImageAttachment {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/me7YAl62RmupekA92L4Xrg/zh-cn_image_0000002779850030.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/KJoMxYBfQuOzOGlO_fpD5A/zh-cn_image_0000002786358972.png)
 
 ## 设置事件
 
@@ -1050,7 +1050,7 @@ struct StyledStringGestureStyle {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/PQqwzSwUQwaIy1Yv6zizrQ/zh-cn_image_0000002779690060.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/QVZXJmPJTy6EqEfHYGgqbw/zh-cn_image_0000002815558393.gif)
 
 ## 格式转换
 
@@ -1081,8 +1081,8 @@ struct StyledStringHtml {
 
   private async getPixmapFromMedia(resource: Resource) {
     try {
-      let unit8Array = await this.uiContext.getHostContext()?.resourceManager?.getMediaContent(resource.id);
-      let imageSource = image.createImageSource(unit8Array?.buffer?.slice(0, unit8Array?.buffer?.byteLength));
+      let uint8Array = await this.uiContext.getHostContext()?.resourceManager?.getMediaContent(resource.id);
+      let imageSource = image.createImageSource(uint8Array?.buffer?.slice(0, uint8Array?.buffer?.byteLength));
       let createPixelMap: image.PixelMap = await imageSource.createPixelMap({
         desiredPixelFormat: image.PixelMapFormat.RGBA_8888
       });
@@ -1146,7 +1146,7 @@ struct StyledStringHtml {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/TqxV5svoQD-I7ylcZbpx7A/zh-cn_image_0000002809009681.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/9CTqRWN1Qq68ksQDLyGAhg/zh-cn_image_0000002815398477.gif)
 
 * 将HTML中<strong>、<b>、<a>、<i>、<em>、<s>、<u>、<del>、<sup>、<sub>标签及其style属性中的background-color转换为属性字符串并转回HTML。
 
@@ -1219,7 +1219,7 @@ struct StyledStringHtml {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/THq9WnsATheg5Qb3KN9veQ/zh-cn_image_0000002809049597.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/RbDgfLyVQ5mvwwROUry_sw/zh-cn_image_0000002786518902.gif)
 
 ## 场景示例
 
@@ -1388,4 +1388,4 @@ struct StyledStringSceneExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/MWk81xluSBagC8Irjs_eww/zh-cn_image_0000002779850032.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/9MzVrfuHTRaikDZUp9j5xw/zh-cn_image_0000002786358974.png)

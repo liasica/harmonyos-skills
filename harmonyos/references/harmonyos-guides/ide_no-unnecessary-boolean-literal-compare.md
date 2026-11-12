@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-unnece
 title: "@typescript-eslint/no-unnecessary-boolean-literal-compare"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-unnecessary-boolean-literal-compare
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:10+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:04790c156d38a7bc1a3cd9d7f335e2fd1965a8a40d86aaeb0db072887aad26e7
+scraped_at: 2026-11-12T09:52:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d1cf79e8c60a6851fe30000cc656803441df70cb49c0e71f3f98d25897524d01
 ---
 
 禁止将布尔值和布尔字面量直接进行比较。
@@ -56,4 +56,4 @@ if (someCondition === true) {
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

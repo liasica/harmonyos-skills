@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-gloss
 title: CANN Kit术语
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > CANN Kit术语
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:14+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:79d7a6c4ad2ad0090964306a877e76551295769fbff8daa0b15d2ce79fe9c455
+scraped_at: 2026-11-12T09:52:43+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3f70842db8b05b110396f3aee8335ade96969cee68d1a1af1c054b8108263007
 ---
 
 ## A
@@ -18,11 +18,15 @@ AIPP（AI Pre-Process）是针对AI推理输入数据进行预处理的模块，
 
 华为昇腾、麒麟AI处理器提供的C++算子开发接口，封装了硬件架构抽象、编程范式及基础/高阶API，用于自定义算子开发。
 
+### Ascend Tensor Compiler(ATC)；昇腾张量编译器
+
+ATC是CANN Kit提供的离线模型转换工具，用于将Caffe、TensorFlow、ONNX、MindSpore等框架训练的网络模型转换为达芬奇架构的离线模型（.om格式）。
+
 ## C
 
 ### CPU Twin Debugging；CPU孪生调试
 
-在AsendC算子开发中，CPU孪生调试是一种在CPU上模拟运行算子进行调试的功能，支持自动精度比对、printf打印、DumpTensor、assert断言、gdb单步调试等调测项，可帮助开发者在NPU上板前快速定位代码逻辑和精度问题，提高算子NPU上板成功率。
+在AscendC算子开发中，CPU孪生调试是一种在CPU上模拟运行算子进行调试的功能，支持自动精度比对、printf打印、DumpTensor、assert断言、gdb单步调试等调测项，可帮助开发者在NPU上板前快速定位代码逻辑和精度问题，提高算子NPU上板成功率。
 
 ## G
 
@@ -51,12 +55,6 @@ LoRA（Low-Rank Adaptation）是一种大模型轻量化微调技术，通过在
 ### Maintenance Testing Debugging and Optimization；维测调优
 
 维测调优是CANN Kit提供的对AI模型进行性能统计，并获取性能数据的能力。开发人员可分析模型和单算子的性能数据，并通过模型的层级输出对比精度来完成问题定位。
-
-## O
-
-### OMG；离线模型转换工具
-
-OMG（Offline Model Generator）是CANN Kit提供的离线模型转换工具，用于将Caffe、TensorFlow、ONNX、MindSpore等框架训练的网络模型转换为达芬奇架构的离线模型（.om格式）。
 
 ## Z
 

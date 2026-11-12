@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_audio_session_manager.h
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 头文件 > native_audio_session_manager.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:19+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4ed7c155b40faac6fdb8867dfd463226e86be765d758302803065e9fad3d49f4
+scraped_at: 2026-11-12T09:56:22+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7e422a31eb027f871c643ceb08553258050e406a4e4fce7747fa86bffc8dc37b
 ---
 
 ## 概述
@@ -101,6 +101,7 @@ enum OH_AudioSession_Scene
 | AUDIO\_SESSION\_SCENE\_MEDIA = 0 | 媒体音频会话场景。 |
 | AUDIO\_SESSION\_SCENE\_GAME = 1 | 游戏音频会话场景。 |
 | AUDIO\_SESSION\_SCENE\_VOICE\_COMMUNICATION = 2 | VoIP语音通话音频会话场景。 |
+| AUDIO\_SESSION\_SCENE\_VOICE\_MESSAGE = 3 | 语音消息音频会话场景。  **起始版本：** 26.0.1 |
 
 ### OH\_AudioSession\_StateChangeHint
 
@@ -512,7 +513,7 @@ OH_AudioCommon_Result OH_AudioSessionManager_SetDefaultOutputDevice(OH_AudioSess
 
 **说明** 
 
-* 本接口适用范围如下：当设置的[OH\_AudioSession\_Scene](capi-native-audio-session-manager-h.md#oh_audiosession_scene)为VoIP场景时，激活AudioSession后立即生效；如果[OH\_AudioSession\_Scene](capi-native-audio-session-manager-h.md#oh_audiosession_scene)为非VoIP场景，激活AudioSession时不会生效，直到启动播放的[OH\_AudioStream\_Usage](capi-native-audiostream-base-h.md#oh_audiostream_usage)为语音消息、VoIP语音通话或VoIP视频通话时才生效。支持听筒、扬声器和系统默认设备。
+* 本接口适用范围如下：当设置的[OH\_AudioSession\_Scene](capi-native-audio-session-manager-h.md#oh_audiosession_scene)为VoIP或语音消息场景时，激活AudioSession后立即生效；如果[OH\_AudioSession\_Scene](capi-native-audio-session-manager-h.md#oh_audiosession_scene)为其他场景，激活AudioSession时不会生效，直到启动播放的[OH\_AudioStream\_Usage](capi-native-audiostream-base-h.md#oh_audiostream_usage)为语音消息、VoIP语音通话或VoIP视频通话时才生效。支持听筒、扬声器和系统默认设备。
 * 本接口允许在[OH\_AudioSessionManager](capi-ohaudio-oh-audiosessionmanager.md)创建后随时调用。系统记录应用设置的默认本机内置发声设备，但只有激活AudioSession后才能生效。应用启动播放时，若外接设备如蓝牙耳机或有线耳机已接入，系统优先从外接设备发声；否则，系统遵循应用设置的默认本机内置发声设备。
 
 **设备行为差异：** 当该接口在无听筒的设备上设置默认发声设备为听筒时，将继续从扬声器发声。

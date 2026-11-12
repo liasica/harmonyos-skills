@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-popup-a
 title: 气泡提示（Popup）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用弹窗 > 气泡提示 > 气泡提示（Popup）
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:15+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:f2f6ba5e874a7ecaffc4b77a5189c082dd4fd0015616eae904d02077c63e5f75
+scraped_at: 2026-11-12T09:51:13+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:93da8f29f8d0b8796be3ed5db6c748048b5ac98cb79c9eb4af2fbd14b2372c04
 ---
 
 Popup属性可绑定在组件上显示气泡弹窗提示，设置弹窗内容、交互逻辑和显示状态。主要用于屏幕录制、信息弹出提醒等显示状态。
@@ -47,7 +47,7 @@ export struct TextPopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/D2jOjJJiTYy43ff-g7D17A/zh-cn_image_0000002779850128.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/Ej7kZymXTyaXV4BaaUUiFA/zh-cn_image_0000002786359070.png)
 
 ## 添加气泡状态变化的事件
 
@@ -83,7 +83,7 @@ export struct StatePopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/QxFRkLalQT2n6q26350dJA/zh-cn_image_0000002779690158.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/nYDo7ndWSBecCO0u6Dx_tA/zh-cn_image_0000002815558491.gif)
 
 ## 带按钮的提示气泡
 
@@ -133,7 +133,7 @@ export struct ButtonPopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/8CBSSyabSF2O3fupm2hHhg/zh-cn_image_0000002809009779.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/LmJNPKUCT5aLqdkJMNWAsg/zh-cn_image_0000002815398575.jpeg)
 
 ## 气泡的动画
 
@@ -207,7 +207,7 @@ export struct AnimationPopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/X6Xj1-QTRUSl0Vjfwlko0A/zh-cn_image_0000002809049695.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/27__qGEBSdezyIHoCUFjBQ/zh-cn_image_0000002786519000.gif)
 
 ## 自定义气泡
 
@@ -259,7 +259,7 @@ export struct CustomPopupExample {
 
 使用者通过配置placement参数将弹出的气泡放到需要提示的位置。弹窗构造器会触发弹出提示信息，来引导使用者完成操作，也让使用者有更好的UI体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/GLHO9RwERFCjCOXKQA6H2A/zh-cn_image_0000002779850130.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/uQh78H4jTICKgDcFIcaPJQ/zh-cn_image_0000002786359072.jpeg)
 
 ## 气泡样式
 
@@ -308,7 +308,7 @@ export struct StylePopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/yxKRTo7KSweqGi5uR8IgIw/zh-cn_image_0000002779690160.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/rlrHIxxNTliNVnqzEZ_enw/zh-cn_image_0000002815558493.gif)
 
 ## 气泡避让软键盘
 
@@ -356,7 +356,7 @@ export struct AvoidSoftKeyboardPopupExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/7hVP99cSR5WmXfkv95_AqA/zh-cn_image_0000002809009781.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/Uoy01mcsThqNiADHVIczyg/zh-cn_image_0000002815398577.gif)
 
 ## 设置气泡内的多态效果
 
@@ -461,7 +461,7 @@ struct PopupItemChild {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/cnV_qpGcTIGWUVIoUQi1rA/zh-cn_image_0000002809049697.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/-cy46g3kS5ySwIhUcxFG-g/zh-cn_image_0000002786519002.gif)
 
 ## 气泡支持避让中轴
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 图形绘制与显示错误码
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 错误码 > 图形绘制与显示错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:47+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:57:05+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:7bddc55e23df50a00deadfc9272dba2bb67cbc2638f3c951831d111056517fce
 ---
 

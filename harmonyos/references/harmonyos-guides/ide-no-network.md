@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-no-networ
 title: 离线环境配置指导
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 离线环境配置指导
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:14+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:61262dd8f5c9efe99adcd6b3a54cc23de68ab4eb45b66bc27c16ae331f63ce80
+scraped_at: 2026-11-12T09:52:54+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:957731f2ca9d0e759b18d0c155f46fb6d3590e2299ff668442f440f9030aada5
 ---
 
 如果开发者所使用的电脑处于完全无网络的离线环境中，需要先在一台可访问网络的电脑上准备好以下文件，将这些文件拷贝到无网络电脑中。
@@ -26,7 +26,7 @@ content_hash: sha256:61262dd8f5c9efe99adcd6b3a54cc23de68ab4eb45b66bc27c16ae331f6
 
 [配置环境变量并打开命令行工具](ide-commandline-get.md#section17776863449)，执行ohpm install命令，会生成oh\_modules文件夹和oh-package-lock.json5文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/0SAJFI3DSZ-nYRD-kThGkQ/zh-cn_image_0000002701663914.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/hfVknpXHRlO_lWLpvoEnug/zh-cn_image_0000002779407304.png)
 
 将oh\_modules文件夹和oh-package-lock.json5文件拷贝到无网络电脑的工程根目录下。
 
@@ -38,7 +38,7 @@ content_hash: sha256:61262dd8f5c9efe99adcd6b3a54cc23de68ab4eb45b66bc27c16ae331f6
 
 通过如下两种方式使用三方库：
 
-* 方式一：使用[ohpm-repo](ide-ohpm-repo.md)搭建私仓，将需要依赖的三方包发布至私仓中，并将[.ohpmrc文件](ide-ohpmrc.md#zh-cn_topic_0000001792216397_文件)中的registry配置项的值替换为该私仓地址，以此从私仓中获取依赖。
+* 方式一：使用[ohpm-repo](ide-ohpm-repo.md)搭建私仓，将需要依赖的三方包发布至私仓中，并将[.ohpmrc文件](ide-ohpmrc.md#section11112159104)中的registry配置项的值替换为该私仓地址，以此从私仓中获取依赖。
 * 方式二：在可访问网络的电脑上创建一个空文件夹（如命名为third\_library），在文件夹中创建一个oh-package.json5文件，设置三方包依赖，配置示例如下：
 
   ```screen
@@ -52,7 +52,7 @@ content_hash: sha256:61262dd8f5c9efe99adcd6b3a54cc23de68ab4eb45b66bc27c16ae331f6
 
   打开命令行工具，执行ohpm install命令，会生成oh\_modules文件夹和oh-package-lock.json5文件。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/G_50qr5ySiCKhIfZ-oHThA/zh-cn_image_0000002701823834.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/266zKV4PQASCUmJOYXfuFg/zh-cn_image_0000002779407306.png)
 
   将oh\_modules文件夹和oh-package-lock.json5文件拷贝到无网络电脑的工程根目录下。
 

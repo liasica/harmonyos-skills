@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/configuration
 title: 配置Client ID
 breadcrumb: 指南 > 系统 > 硬件 > Wear Engine Kit（穿戴服务） > 手机侧应用开发 > 接入准备 > 配置Client ID
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:56+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:fe7a7fe34931f49b8df7e31fabff11a3d6ff4dc68dc8aa44573cd6246695106f
+scraped_at: 2026-11-12T09:51:52+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8bb9497b8f03162409fb848e16e7197515a283dfbc4391ac901e9ed5262e6224
 ---
 
-1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)平台，在“开发与服务”中选择目标应用，获取“项目设置 > 常规 > 应用”的Client ID。
+1. 登录[HarmonyOS开发者中心](https://developer.huawei.com/consumer/cn/hdc-console#/home/101653523124949886)平台，进入“开发者管理 > ID、证书和Profile > APP ID > 项目管理”，获取客户端ID中的“Client ID"信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/JGJzmal0QwyJ6lhwWOUySw/zh-cn_image_0000002809050417.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/jd3dFgXpSbic-7Y3O1sxvg/zh-cn_image_0000002786519720.png)
 2. 在工程中entry模块的module.json5文件中，新增metadata，配置name为client\_id，value为上一步获取的Client ID的值，如下所示：
 
    ```json5

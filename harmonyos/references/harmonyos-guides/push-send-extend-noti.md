@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-send-ext
 title: 发送语音播报消息
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 推送场景化消息 > 推送语音播报消息 > 发送语音播报消息
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:53+08:00
-doc_updated_at: 2026-10-26
-content_hash: sha256:bc39a38b448e325938bdb70db45ff8155cb533be799ba95f9a1dd43a887775e5
+scraped_at: 2026-11-12T09:52:34+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:5881c4260d54dda80af3ea6f61a0677f39bcf090d2a8dfc9452572f40c96fe93
 ---
 
 ## 场景介绍
@@ -17,7 +17,7 @@ content_hash: sha256:bc39a38b448e325938bdb70db45ff8155cb533be799ba95f9a1dd43a887
 
 ## 约束与限制
 
-推送语音播报消息能力支持Phone、Tablet、PC/2in1。并且从5.1.0(18)版本开始，新增支持Wearable设备；从6.1.0(23)版本开始，新增支持TV设备。
+推送语音播报消息能力支持Phone、Tablet、PC/2in1。并且从API版本5.1.0(18)开始，新增支持Wearable设备；从API版本6.1.0(23)开始，新增支持TV设备；从API版本26.0.1开始，新增支持Car设备。
 
 ## 开通权益
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-skill
 title: 基于Link的装饰器方案
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 技能调用方案 > 接入方案 > 任务执行类场景方案（装饰器接入方式） > 基于Link的装饰器方案
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:10+08:00
-doc_updated_at: 2026-05-26
-content_hash: sha256:18a5f15c5bb10da93d0cdbe73cf66b98351f3719a26027dcc2c8f8ae20a7113d
+scraped_at: 2026-11-12T09:52:45+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ead25487d80ea601b39d64eebdbaeeb695061819d0f952f1003e3507c03d4019
 ---
 
 ## 概述
@@ -72,20 +72,20 @@ content_hash: sha256:18a5f15c5bb10da93d0cdbe73cf66b98351f3719a26027dcc2c8f8ae20a
      ]
    })
    export class PurchaseMovieTicketsLinkIntent {
-      private purchaseMovieTickets(uri: string): void {
-        // 从want中获取传入的链接信息。
-        // 如传入的url为：decorator://ability.entry/main?location=XXX影城&title=XXX&time=2025.06.01
-        try {
-          let urlObject = url.URL.parseURL(uri);
-          let location = urlObject.params.get('location');
-          if (location === 'XXX影城') {
-            // ...
-          }
-        } catch (error) {
-          console.error('Failed to parse URL:', error);
-        }
-      }
-    }
+     private purchaseMovieTickets(uri: string): void {
+       // 从want中获取传入的链接信息。
+       // 如传入的url为：decorator://ability.entry/main?location=XXX影城&title=XXX&time=2025-07-01 19:30
+       try {
+         let urlObject = url.URL.parseURL(uri);
+         let location = urlObject.params.get('location');
+         if (location === 'XXX影城') {
+           // ...
+         }
+       } catch (error) {
+         console.error('Failed to parse URL:', error);
+       }
+     }
+   }
    ```
 2. 装饰器的字段说明以及示例：@InsightIntentLink字段以及具体说明如下。
 
@@ -114,25 +114,25 @@ content_hash: sha256:18a5f15c5bb10da93d0cdbe73cf66b98351f3719a26027dcc2c8f8ae20a
 
    1. 打开CodeGenie插件：在DevEco Studio右侧边栏点击CodeGenie或输入快捷键Alt/Option+U，可以进入DevEco CodeGenie。若使用非最新版本的DevEco Studio，可通过[下载中心](https://developer.huawei.com/consumer/cn/download/deveco-codegenie)获取并使用相关功能，具体请参考[插件获取及安装](ide-codegenie.md#section18337533718)。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/Xh44uCwJQ4OfUMKj_E0-4Q/zh-cn_image_0000002779691850.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/g6I6fuO3SXKc5aoF8UTCzw/zh-cn_image_0000002815400241.png)
    2. 框选想要接入意图框架功能的代码。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/B_smLJ17RBm9bh6qeVyN1g/zh-cn_image_0000002809011471.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/qrCKJFMBQ_uT4D_FePUyxw/zh-cn_image_0000002786520666.png)
    3. 在选中的代码块上右键CodeGenie > Insight Intent，选择适合的装饰器。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/Q23n9C_PQRab--AL3-2dqA/zh-cn_image_0000002809051385.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/KnsJU8nlRsmEESdId3asgg/zh-cn_image_0000002786360738.png)
    4. 在DevEco CodeGenie对话框中对意图定义、功能和参数等进行描述。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/P8dlcNZWTWqpsqHbPFBTeA/zh-cn_image_0000002779851820.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/_IXlqe2aQJukBMGtjuehjg/zh-cn_image_0000002815560159.png)
    5. 回车或者点击发送按钮，即可生成对应的装饰器内容。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/qOmCNhuITVq39B-L4OiBBQ/zh-cn_image_0000002779691852.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/Nhr5eQ3qS8O3OZq_DGy9ng/zh-cn_image_0000002815400243.png)
    6. 将光标放置于要插入装饰器的位置，点击插入图标，即可在对应位置插入装饰器。
 
    插入前：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/G4AIeE5FQ9OCnhpuhC-Phg/zh-cn_image_0000002809011473.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/FDrola3DREyQYhFf3bRivw/zh-cn_image_0000002786520668.png)
 
    插入后：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/a4vNwXtFThaxSaLi4A6rig/zh-cn_image_0000002809051387.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/RkgjUltIQQGhP87rfTRGXg/zh-cn_image_0000002786360740.png)

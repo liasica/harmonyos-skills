@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-data-
 title: 数据类型说明
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > ArkTS API > 数据类型说明
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:18+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a3712b206529c6a88837e492558baad0c946530bf12bb226cd43a842cc2ed310
+scraped_at: 2026-11-12T09:57:22+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:1e07bb8ad33bebfd9e3b30a5bd779e2b7e66f43380c1a0928ff14a7e3a1069a5
 ---
 
 ## InAppPurchaseData
@@ -32,7 +32,7 @@ content_hash: sha256:a3712b206529c6a88837e492558baad0c946530bf12bb226cd43a842cc2
 | purchaseToken | 是 | string | 用于唯一标识商品和用户对应关系的购买令牌，在支付完成时由IAP服务器生成。  **说明：**  - 当前92位，后续存在扩展可能，如要进行存储，建议预留128位的长度。  - 如要进行存储，为保证安全，建议加密存储。 |
 | purchaseType | 否 | number | 购买类型。  0：沙盒环境（暂不支持）。  1：促销（暂不支持）。  正式购买不会返回该参数。 |
 | currency | 否 | string | 币种。例如CNY。  **说明：** 为避免资金损失，在对支付结果验签成功后，必须对其进行校验 |
-| price | 否 | number | 价格，单位：分。价格受如下因素影响：  - 开发者在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中配置的商品价格  - 使用优惠后的价格，优惠类型包含[推介促销](../harmonyos-guides/iap-subscription-functions.md#提供优惠)、[优惠促销](../harmonyos-guides/iap-subscription-functions.md#提供优惠)、[挽留促销](../harmonyos-guides/iap-subscription-functions.md#提供优惠)  - 批量购买商品的总价格  **说明：** 为避免资金损失，在对支付结果验签成功后，必须对其进行校验。 |
+| price | 否 | number | 价格，单位：分。价格受如下因素影响：  - 开发者在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)中配置的商品价格  - 使用优惠后的价格，优惠类型包含[推介促销](../harmonyos-guides/iap-subscription-functions.md#提供优惠)、[优惠促销](../harmonyos-guides/iap-subscription-functions.md#提供优惠)、[挽留促销](../harmonyos-guides/iap-subscription-functions.md#提供优惠)  - 批量购买商品的总价格  **说明：** 为避免资金损失，在对支付结果验签成功后，必须对其进行校验。 |
 | country | 否 | string | 国家/地区码，用于区分国家/地区信息，请参见[ISO 3166](https://www.iso.org/iso-3166-country-codes.html)标准。 |
 | payType | 否 | string | 支付方式，取值请参见[payType说明](iap-data-model.md#paytype)。 |
 | payOrderId | 否 | string | 交易单号，用户支付后生成。 |
@@ -73,7 +73,7 @@ payType取值说明。
 | purchaseTime | 是 | number | 购买时间，UTC时间戳，以ms为单位。  如果没有完成购买，则没有值。 |
 | finishStatus | 否 | string | 发货状态。具体取值如下：  1：已发货  2：未发货 |
 | needFinish | 否 | boolean | 是否需要确认发货，完成购买。具体取值如下：  - true：必须确认发货，完成购买  - false：可选确认发货，完成购买 |
-| price | 是 | number | 价格，单位：分。价格受如下因素影响：  - 开发者在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中配置的商品价格  - 使用优惠后的价格，优惠类型包含[推介促销](../harmonyos-guides/iap-subscription-functions.md#提供优惠)、[优惠促销](../harmonyos-guides/iap-subscription-functions.md#提供优惠)、[挽留促销](../harmonyos-guides/iap-subscription-functions.md#提供优惠)  - 批量购买商品的总价格 |
+| price | 是 | number | 价格，单位：分。价格受如下因素影响：  - 开发者在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)中配置的商品价格  - 使用优惠后的价格，优惠类型包含[推介促销](../harmonyos-guides/iap-subscription-functions.md#提供优惠)、[优惠促销](../harmonyos-guides/iap-subscription-functions.md#提供优惠)、[挽留促销](../harmonyos-guides/iap-subscription-functions.md#提供优惠)  - 批量购买商品的总价格 |
 | currency | 是 | string | 币种，请参见[ISO 4217](https://www.iso.org/iso-4217-currency-codes.html)标准。例如CNY、USD、MYR。 |
 | developerPayload | 否 | string | 商户侧保留信息，由开发者在调用[支付接口](iap-iap.md#iapcreatepurchase)时传入。 |
 | purchaseOrderRevocationReasonCode | 否 | string | 购买订单撤销原因。  0：其他  1：用户遇到问题退款 |

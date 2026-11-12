@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-netman
 title: 管理网络连接(C/C++)
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 连接网络 > 管理网络连接(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:48+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:78a57cf4344fc83c9a49c9fe6b3d578dc95471c84967a0d7950a8dfead6c2b30
+scraped_at: 2026-11-12T09:51:44+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8381499592ef59d041f4441b1cc4838b9e13353a32f76035c7cf028e81324de9
 ---
 
 ## 场景介绍
@@ -30,7 +30,7 @@ NetConnection常用接口如下表所示，详细的接口说明请参考[net\_c
 | OHOS\_NetConn\_RegisterDnsResolver(OH\_NetConn\_CustomDnsResolver resolver) | 注册自定义DNS解析器。  **弃用：** 从API version 13开始废弃。  **替代：** 推荐使用OH\_NetConn\_RegisterDnsResolver。 |
 | OHOS\_NetConn\_UnregisterDnsResolver(void) | 取消注册自定义DNS解析器。  **弃用：** 从API version 13开始废弃。  **替代：** 推荐使用OH\_NetConn\_UnregisterDnsResolver。 |
 | OH\_NetConn\_RegisterDnsResolver(OH\_NetConn\_CustomDnsResolver resolver) | 注册自定义DNS解析器。 |
-| OH\_NetConn\_UnregisterDnsResolver(void) | 取消注册自定义DNS解析器。 |
+| OH\_NetConn\_UnregisterCustomDnsResolver(void) | 取消注册自定义DNS解析器。 |
 | OH\_NetConn\_SetPacUrl(const char \*pacUrl) | 设置系统级代理自动配置(PAC)脚本地址。 |
 | OH\_NetConn\_GetPacUrl(char \*pacUrl) | 获取系统级代理自动配置(PAC)脚本地址。 |
 | OH\_NetConn\_QueryProbeResult(char \*destination, int32\_t duration, NetConn\_ProbeResultInfo \*probeResultInfo) | 查询探测结果。 |
@@ -81,7 +81,7 @@ libnet_connection.so
        napi_get_value_int32(env, args[0], &param); // 从 args[0] 获取整数值并存储到 param 中
        
        NetConn_NetHandle netHandle;
-       if (param == 0) { // 如果参数是0，传入NULL用于演示参数错误场景，接口将返回401
+       if (param == 0) { // 如果参数是0
            param = OH_NetConn_GetDefaultNet(NULL);
        } else {
            param = OH_NetConn_GetDefaultNet(&netHandle);
@@ -197,7 +197,6 @@ libnet_connection.so
      }
 
      CodeNumber() {
-       // 非0表示传入有效的netHandle指针；0表示传入NULL，用于演示参数错误（401）
        let testParam = 1;
        // ...
          let codeNumber = testNetManager.GetDefaultNet(testParam);
@@ -230,7 +229,7 @@ libnet_connection.so
 
    如图所示，在add\_library中的entry是工程自动生成的modname。若要做修改，需和步骤3中.nm\_modname保持一致。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/S2DRYNnkQqKQBXzGRE7iNA/zh-cn_image_0000002809050345.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/duI_7cCtRxSmfCRxTzRnKw/zh-cn_image_0000002815559147.png)
 
 经过以上步骤，整个工程的搭建已经完成，接下来就可以连接设备运行工程进行日志查看了。
 
@@ -242,10 +241,10 @@ libnet_connection.so
    * 点击GetDefaultNet时获取的是默认网络ID。
    * 点击codeNumber时获取的是接口返回的响应状态码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/__uDvoAcSgOKjX55Lli6FA/zh-cn_image_0000002779850780.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/Ye6BNGGrQIu37m9hD4mRaQ/zh-cn_image_0000002815399231.png)
 3. 点击GetDefaultNet按钮，控制台会打印日志。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/fl8Yv-1fRSO2el5RuzP5VQ/zh-cn_image_0000002779690812.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/uCOjtjsrT5mujrsI7G8Qhw/zh-cn_image_0000002786519656.png)
 4. 点击codeNumber按钮，控制台会打印相应的响应状态码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/3BVeubYZR7GVCXERfys37g/zh-cn_image_0000002809010433.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/g8MXLf14QuK-ACOiRgLGjg/zh-cn_image_0000002786359728.png)

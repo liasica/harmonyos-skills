@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (ManualFocus)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (ManualFocus)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:26+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:bc4cbd7a45445345959a29072272c2c32219377da6716a27b5158bd04d5132d0
+scraped_at: 2026-11-12T09:56:32+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:459ab0a23f49c4167dbc3dcf0990f21cc78407dce7ef453ce4d0b8dea53506b6
 ---
 
 ManualFocus继承自[ManualFocusQuery](arkts-apis-camera-manualfocusquery.md)。
@@ -28,6 +28,8 @@ import { camera } from '@kit.CameraKit';
 getFocusDistance(): number
 
 获取当前对焦距离。取值范围为[0.0, 1.0]，其中0.0表示镜头可以对焦的最短距离，1.0表示最远距离。默认值为1.0。
+
+获取前可以通过[isFocusDistanceSupported](arkts-apis-camera-manualfocusquery.md#isfocusdistancesupported24)检测是否支持设置对焦距离。
 
 **元服务API：** 从API version 24开始，该接口支持在元服务中使用。
 
@@ -56,7 +58,9 @@ import { BusinessError } from '@kit.BasicServicesKit';
 function getFocusDistance(photoSession: camera.PhotoSession): number {
   let focusDistance = 1.0;
   try {
-    focusDistance = photoSession.getFocusDistance();
+    if (photoSession.isFocusDistanceSupported()) {
+      focusDistance = photoSession.getFocusDistance();
+    }
   } catch (error) {
     // 失败返回错误码error.code并处理。
     let err = error as BusinessError;
@@ -71,6 +75,8 @@ function getFocusDistance(photoSession: camera.PhotoSession): number {
 setFocusDistance(distance: number): void
 
 设置对焦距离。取值范围为[0.0, 1.0]，其中0.0表示镜头可以对焦的最短距离，1.0表示最远距离。默认值为1.0。输入参数超出值域时，统一按边界值处理。
+
+设置前可以通过[isFocusDistanceSupported](arkts-apis-camera-manualfocusquery.md#isfocusdistancesupported24)检测是否支持设置对焦距离。
 
 **元服务API：** 从API version 24开始，该接口支持在元服务中使用。
 
@@ -98,7 +104,9 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 function setFocusDistance(photoSession: camera.PhotoSession, distance: number): void {
   try {
-    photoSession.setFocusDistance(distance);
+    if (photoSession.isFocusDistanceSupported()) {
+      photoSession.setFocusDistance(distance);
+    }
   } catch (error) {
     // 失败返回错误码error.code并处理。
     let err = error as BusinessError;

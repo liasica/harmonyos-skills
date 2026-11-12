@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-tiling-implementation-on-the-host
 title: Host侧Tiling实现
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子实现 > 工程化算子开发 > 基于工程实现算子 > Host侧Tiling实现
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC算子实现 > AscendC算子工程开发 > AscendC算子工程实现 > Host侧Tiling实现
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:50+08:00
-doc_updated_at: 2026-08-18
-content_hash: sha256:2af5af176b769267f7ecb6a9662d3c7684624fa9c06e07bd64b41217b187ef7b
+scraped_at: 2026-11-12T09:52:42+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c465da57084a8e5f2a99fec3c0fc8868db0daa8b8af6fb6c8a927b5dc41dedd4
 ---
 
 在[算子实现](cannkit-operator-implementation-overview.md)章节已经介绍了host侧tiling核心的实现方法，本章节侧重于介绍接入DDK框架时编程模式和API的使用。
@@ -16,7 +16,7 @@ Tiling实现完成后，获取到的Tiling切分算法相关参数，会传递�
 
 **图1** Tiling实现的输入输出
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/bSKh3CmbT9aI3eiOoSgVOw/zh-cn_image_0000002779851742.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/7Y3tBLvpTzC7HxWBgTY6FA/zh-cn_image_0000002815400203.png)
 
 如上图所示，Tiling实现即为根据算子shape等信息来确定切分算法相关参数的过程，这里的算子shape等信息可以理解为是**Tiling实现的输入**，切分算法相关参数可以理解为是**Tiling实现的输出**。输入和输出都通过Tiling函数的参数（TilingContext\* context上下文结构）来承载。也就是说，开发者可以从上下文结构中获取算子的输入、输出以及属性信息，也就是**Tiling实现的输入**，经过Tiling计算后，获取到TilingData数据结构（切分算法相关参数）、BlockDim变量、用于选择不同的kernel实现分支的TilingKey、算子workspace的大小，也就是**Tiling实现的输出**，并将这些输出设置到上下文结构中。
 
@@ -83,7 +83,7 @@ TilingData结构定义支持单结构定义方法，也支持结构体嵌套：
 
 BlockDim是逻辑核的概念，取值范围为[1, 65535]。为了充分利用硬件资源，一般设置为物理核的核数或其倍数。对于耦合架构和分离架构，BlockDim在运行时的意义和设置规则有一些区别，具体说明如下。
 
-* 耦合架构：由于其Vector、Cube单元是集成在一起的，BlockDim用于设置启动多个AICore核实例执行，不区分Vector、Cube。AI Core的核数可以通过[GetCoreNumAic](cannkit-getcorenumaic.md)或者[GetCoreNumAiv](cannkit-getcorenumaiv.md)获取。
+* 耦合架构：由于其Vector、Cube单元是集成在一起的，BlockDim用于设置启动多个AICore核实例执行，不区分Vector、Cube。AI Core的核数可以通过[GetCoreNumAic](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)或者[GetCoreNumAiv](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)获取。
 * 分离架构：
 
   + 针对仅包含Vector计算的算子，BlockDim用于设置启动多少个Vector(AIV)实例执行，比如某款AI处理器上有40个Vector核，建议设置为40。
@@ -93,7 +93,7 @@ BlockDim是逻辑核的概念，取值范围为[1, 65535]。为了充分利用�
     **说明** 
 
     该场景下，设置的BlockDim逻辑核的核数不能超过物理核（2个Vector核和1个Cube核组合为1个物理核）的核数。
-  + AIC/AIV的核数分别通过[GetCoreNumAic](cannkit-getcorenumaic.md)和[GetCoreNumAiv](cannkit-getcorenumaiv.md)接口获取。
+  + AIC/AIV的核数分别通过[GetCoreNumAic](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)和[GetCoreNumAiv](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)接口获取。
   + Kirin9020/Kirin9030/KirinX90仅支持BlockDim设为1。
 
 ### TilingKey（可选）
@@ -110,7 +110,7 @@ if (condition) {
  }
 ```
 
-如果函数ProcessA、ProcessB两个函数是个非常大的函数，那么上述代码在编译后会变得更大，而每次kernel运行只会选择1个分支，条件的判断和跳转在代码大到一定程度（16-32K，不同芯片存在差异）后会出现icache miss。通过TilingKey可以对这种情况进行优化，给2个kernel的处理函数设置不同的TilingKey 1和2：
+如果函数ProcessA、ProcessB两个函数是个非常大的函数，那么上述代码在编译后会变得更大，而每次kernel运行只会选择1个分支，条件的判断和跳转在代码大到一定程度（16KB-32KB，不同芯片存在差异）后会出现icache miss。通过TilingKey可以对这种情况进行优化，给2个kernel的处理函数设置不同的TilingKey 1和2：
 
 ```cpp
 if (TILING_KEY_IS(1)) {
@@ -143,7 +143,7 @@ workspace内存分为两部分：AscendC API需要的workspace内存和算子实
 
 * AscendC API需要预留workspace内存
 
-  API在计算过程需要一些workspace内存作为缓存，因此算子Tiling函数需要为API预留workspace内存，预留内存大小通过[GetLibApiWorkSpaceSize](cannkit-getlibapiworkspacesize.md)接口获取。
+  API在计算过程需要一些workspace内存作为缓存，因此算子Tiling函数需要为API预留workspace内存，预留内存大小通过[GetLibApiWorkSpaceSize](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)接口获取。
 * 算子实现使用到的workspace内存（按需）
 
   算子内部需要通过额外的device内存进行数据交换或者缓存的时候才需要分配，根据算子计算的空间自行分配。
@@ -161,7 +161,7 @@ Tiling实现开发的流程图如下。
 
 **图2** Tiling开发流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/IjXfayI2T8uHkU9ms2cVnQ/zh-cn_image_0000002779691774.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/VEvVGg3-T9aObcxMeKGSwg/zh-cn_image_0000002786520628.png)
 
 下面将从一个简单的Add算子为例介绍Tiling的实现流程。本样例中待处理数据的Shape大小可以平均分配到每个核上，并且可以对齐到一个datablock(32B)的大小。
 
@@ -199,7 +199,7 @@ REGISTER_TILING_DATA_CLASS(AddCustom, TilingData)
    #endif // ADD_CUSTOM_TILING_H
    ```
 2. TilingData参数设计，TilingData参数本质上是和并行数据切分相关的参数，本示例算子使用了2个tiling参数：totalLength、tileNum。totalLength是指需要计算的数据量大小，tileNum是指每个核上总计算数据分块个数。比如，totalLength这个参数传递到kernel侧后，可以通过除以参与计算的核数，得到每个核上的计算量，这样就完成了多核数据的切分。
-3. TilingData结构定义，通过BEGIN\_TILING\_DATA\_DEF接口定义一个TilingData的类，通过TILING\_DATA\_FIELD\_DEF接口增加TilingData的两个字段totalLength、tileNum，通过END\_TILING\_DATA\_DEF接口结束TilingData定义。相关接口的详细说明请参考[TilingData结构定义](cannkit-tilingdata-structure-definition.md)。
+3. TilingData结构定义，通过BEGIN\_TILING\_DATA\_DEF接口定义一个TilingData的类，通过TILING\_DATA\_FIELD\_DEF接口增加TilingData的两个字段totalLength、tileNum，通过END\_TILING\_DATA\_DEF接口结束TilingData定义。相关接口的详细说明请参考[TilingData结构定义](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)。
 
    ```cpp
    BEGIN_TILING_DATA_DEF(TilingData) // 注册一个tiling的类，以tiling的名字作为入参
@@ -207,7 +207,7 @@ REGISTER_TILING_DATA_CLASS(AddCustom, TilingData)
      TILING_DATA_FIELD_DEF(uint32_t, tileNum); // 添加tiling字段，每个核上总计算数据分块个数
    END_TILING_DATA_DEF;
    ```
-4. 注册TilingData结构，通过REGISTER\_TILING\_DATA\_CLASS接口，注册TilingData类，和自定义算子相关联。REGISTER\_TILING\_DATA\_CLASS第一个参数为op\_type（算子类型），本样例中传入AddCustom，第二个参数为TilingData的类名。REGISTER\_TILING\_DATA\_CLASS接口介绍请参考[TilingData结构注册](cannkit-tilingdata-structure-registration.md)。
+4. 注册TilingData结构，通过REGISTER\_TILING\_DATA\_CLASS接口，注册TilingData类，和自定义算子相关联。REGISTER\_TILING\_DATA\_CLASS第一个参数为op\_type（算子类型），本样例中传入AddCustom，第二个参数为TilingData的类名。REGISTER\_TILING\_DATA\_CLASS接口介绍请参考[TilingData结构注册](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)。
 
    ```cpp
    // 注册算子tilingdata类到对应的AddCustom算子
@@ -241,7 +241,7 @@ static ge::graphStatus TilingFunc(gert::TilingContext *context)
 1. 获取TilingContext的上下文，即Tiling函数的入参gert::TilingContext\* context。
 2. 设置TilingData。上文步骤3中，定义了TilingData的类，此时可以用TilingData定义一个具体的实例，通过调用TilingData类的set\_+field\_name接口来设置TilingData的字段值，通过调用TilingData类的SaveToBuffer接口完成TilingData的序列化和保存。
 
-   1. 通过上下文获取输入输出shape信息。本样例中通过TilingContext的[GetInputShape](cannkit-getinputshape.md)接口获取输入的shape大小。
+   1. 通过上下文获取输入输出shape信息。本样例中通过TilingContext的[GetInputShape](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)接口获取输入的shape大小。
 
       ```cpp
       // 获取输入shape信息
@@ -256,24 +256,24 @@ static ge::graphStatus TilingFunc(gert::TilingContext *context)
       tiling.set_totalLength(totalLength);
       tiling.set_tileNum(TILE_NUM);
       ```
-   3. 调用TilingData类的SaveToBuffer接口完成序列化并保存至TilingContext上下文。SaveToBuffer的第一个参数为存储Buffer的首地址，第二个参数为Buffer的长度。通过调用[GetRawTilingData](cannkit-getrawtilingdata.md)获取无类型的TilingData的地址，再通过[GetData](cannkit-tilingdata-getdata.md)获取数据指针，作为Buffer的首地址；通过调用[GetRawTilingData](cannkit-getrawtilingdata.md)获取无类型的TilingData的地址，再通过[GetCapacity](cannkit-getcapacity.md)获取TilingData的长度，作为Buffer的长度。完成SaveToBuffer操作后需要通过[SetDataSize](cannkit-setdatasize.md)设置TilingData的长度，该长度通过TilingData类的[GetDataSize](cannkit-getdatasize.md)接口获取。
+   3. 调用TilingData类的SaveToBuffer接口完成序列化并保存至TilingContext上下文。SaveToBuffer的第一个参数为存储Buffer的首地址，第二个参数为Buffer的长度。通过调用[GetRawTilingData](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)获取无类型的TilingData的地址，再通过[GetData](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)获取数据指针，作为Buffer的首地址；通过调用[GetRawTilingData](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)获取无类型的TilingData的地址，再通过[GetCapacity](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)获取TilingData的长度，作为Buffer的长度。完成SaveToBuffer操作后需要通过[SetDataSize](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)设置TilingData的长度，该长度通过TilingData类的[GetDataSize](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)接口获取。
 
       ```cpp
       // 序列化并保存
       tiling.SaveToBuffer(context->GetRawTilingData()->GetData(), context->GetRawTilingData()->GetCapacity());
       context->GetRawTilingData()->SetDataSize(tiling.GetDataSize());
       ```
-3. 通过[SetBlockDim](cannkit-setblockdim.md)接口设置BlockDim。
+3. 通过[SetBlockDim](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)接口设置BlockDim。
 
    ```cpp
    context->SetBlockDim(BLOCK_DIM);
    ```
-4. （可选）通过[SetTilingKey](cannkit-settilingkey.md)设置TilingKey。
+4. （可选）通过[SetTilingKey](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)设置TilingKey。
 
    ```cpp
    context->SetTilingKey(1);
    ```
-5. （可选）通过[GetWorkspaceSizes](cannkit-getworkspacesizes.md)获取workspace size指针，并设置size大小。此处仅作为举例，设置workspace的大小为0。
+5. （可选）通过[GetWorkspaceSizes](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)获取workspace size指针，并设置size大小。此处仅作为举例，设置workspace的大小为0。
 
    ```cpp
    size_t *currentWorkspace = context->GetWorkspaceSizes(1);

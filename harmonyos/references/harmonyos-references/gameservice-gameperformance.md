@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservi
 title: gamePerformance（游戏场景感知）
 breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > ArkTS API > gamePerformance（游戏场景感知）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:54+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:9449e22c392b04a7638cdfbcc28b79cdc7b560c4699fd60aa9c682bd193debf0
+scraped_at: 2026-11-12T09:57:17+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4ef780e7c384dd77cd146cb077771532fcd313a2ab1f05e51a166639826d86ff
 ---
 
 本模块提供接入Game Service Kit的游戏场景感知能力。
@@ -213,6 +213,39 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 | deviceInfoType | [DeviceInfoType](gameservice-gameperformance.md#deviceinfotype) | 否 | 否 | 设备状态信息类型。 |
 | parameters | Record<string, string> | 否 | 是 | 设备状态信息参数。  **说明**：  仅deviceInfoType传参DeviceInfoType.THERMAL时支持传入。  - deviceInfoType传参DeviceInfoType.GPU时，parameters必须为空。  - deviceInfoType传参DeviceInfoType.THERMAL时，parameters可为空，也可传值。  - key取值固定为[DeviceInfoParameterKey](gameservice-gameperformance.md#deviceinfoparameterkey).THERMAL\_TEMP\_LEVEL。  - value为指定的温控档位值，取值参见[温控档位](gameservice-gameperformance.md#deviceinfo)。若不传值则指定为系统默认温控档位。 |
 
+## GameTouchArea
+
+游戏触控区域类。原点是屏幕自然方向的左上角。左上角为[0, 0]，右下角为[1, 1]。x轴是横轴，y轴是纵轴。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GameService.GamePerformance
+
+**起始版本：** 26.0.1
+
+| **名称** | **类型** | 只读 | 可选 | **说明** |
+| --- | --- | --- | --- | --- |
+| areaShape | [GameTouchAreaShape](gameservice-gameperformance.md#gametouchareashape) | 否 | 否 | 区域形状。 |
+| coordinateType | [GameTouchAreaCoordinateType](gameservice-gameperformance.md#gametouchareacoordinatetype) | 否 | 否 | 坐标类型。 |
+| xMin | number | 否 | 否 | 边界框左边缘坐标。必须严格小于xMax。取值范围：[0, 1]。 |
+| xMax | number | 否 | 否 | 边界框右边缘坐标。必须严格大于xMin。取值范围：[0, 1]。 |
+| yMin | number | 否 | 否 | 边界框上边缘坐标。必须严格小于yMax。取值范围：[0, 1]。 |
+| yMax | number | 否 | 否 | 边界框下边缘坐标。必须严格大于yMin。取值范围：[0, 1]。 |
+
+## GameTouchInfo
+
+游戏触控信息类，继承[BaseGameInfo](gameservice-gameperformance.md#basegameinfo)。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GameService.GamePerformance
+
+**起始版本：** 26.0.1
+
+| **名称** | **类型** | 只读 | 可选 | **说明** |
+| --- | --- | --- | --- | --- |
+| touchAreas | Array<[GameTouchArea](gameservice-gameperformance.md#gametoucharea)> | 否 | 否 | 触控区域。字符长度范围：[1, 20]。 |
+
 ## DeviceInfoType
 
 设备状态信息类型枚举对象。
@@ -255,6 +288,34 @@ gamePlayerId、teamPlayerId和thirdOpenId不能同时为空。
 | **名称** | **值** | **说明** |
 | --- | --- | --- |
 | CRASH | 1 | 崩溃。 |
+
+## GameTouchAreaCoordinateType
+
+游戏触控区域坐标类型枚举对象。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GameService.GamePerformance
+
+**起始版本：** 26.0.1
+
+| **名称** | **值** | **说明** |
+| --- | --- | --- |
+| NORMALIZED | 0 | 归一化坐标。 |
+
+## GameTouchAreaShape
+
+游戏触控区域形状枚举对象。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GameService.GamePerformance
+
+**起始版本：** 26.0.1
+
+| **名称** | **值** | **说明** |
+| --- | --- | --- |
+| RECTANGLE | 0 | 矩形形状。 |
 
 ## GamePerformanceErrorCode
 

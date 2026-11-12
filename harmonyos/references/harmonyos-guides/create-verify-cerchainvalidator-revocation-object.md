@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/create-verify
 title: 证书链在线校验证书吊销状态
 breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 证书算法库框架 > 证书链在线校验证书吊销状态
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:39+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:51:36+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:35189aab1580a7523cd34ca10070d1cb62e94b3b759c248e9cbdca83da306a83
 ---
 

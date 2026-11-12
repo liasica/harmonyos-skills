@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-download
 title: 使用Web组件的下载能力
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页文件上传与下载 > 使用Web组件的下载能力
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:41+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:b78ff8f861f934a04752dec2e58f1b9917e00ed3ce1afb3969b8b9baaaff0631
+scraped_at: 2026-11-12T09:51:23+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:6e602f20a8fea3301d639367651fe80bcc58db950a03ee3ec4c1a65b5ab91bdd
 ---
 
 当需要通过Web页面进行文件下载时，可以通过此方式调用Web接口。
@@ -233,11 +233,11 @@ function getDownloadPathFromPicker(): Promise<string> {
 
 **说明** 
 
-Web组件的下载功能要求应用通过调用[WebDownloadItem.start](../harmonyos-references/arkts-apis-webview-webdownloaditem.md#start11)来指定下载文件的保存路径。
+Web组件的下载功能要求应用通过调用[WebDownloadItem.start()](../harmonyos-references/arkts-apis-webview-webdownloaditem.md#start11)来指定下载文件的保存路径。
 
-值得注意的是，WebDownloadItem.start并非启动下载，下载过程实际上在用户点击页面链接时即已开始。WebDownloadItem.start的作用是将已经下载到临时文件的部分移动到指定目标路径，后续未完成的下载的内容将直接保存到指定目标路径，临时目录位于/data/storage/el2/base/cache/web/Temp/。如果决定取消当前下载，应调用[WebDownloadItem.cancel](../harmonyos-references/arkts-apis-webview-webdownloaditem.md#cancel11)，此时临时文件将被删除。
+值得注意的是，WebDownloadItem.start()并非启动下载，下载过程实际上在用户点击页面链接时即已开始。WebDownloadItem.start()的作用是将已经下载到临时文件的部分移动到指定目标路径，后续未完成的下载的内容将直接保存到指定目标路径，临时目录位于/data/storage/el2/base/cache/web/Temp/。如果决定取消当前下载，应调用[WebDownloadItem.cancel()](../harmonyos-references/arkts-apis-webview-webdownloaditem.md#cancel11)，此时临时文件将被删除。
 
-如果不希望在WebDownloadItem.start之前将文件下载到临时目录，可以通过WebDownloadItem.cancel中断下载，后续可通过[WebDownloadManager.resumeDownload](../harmonyos-references/arkts-apis-webview-webdownloadmanager.md#resumedownload11)恢复中断的下载。
+如果不希望在WebDownloadItem.start()之前将文件下载到临时目录，可以通过WebDownloadItem.cancel()中断下载，后续可通过[WebDownloadManager.resumeDownload()](../harmonyos-references/arkts-apis-webview-webdownloadmanager.md#resumedownload11)恢复中断的下载。
 
 ## 使用Web组件恢复进程退出时未下载完成的任务
 

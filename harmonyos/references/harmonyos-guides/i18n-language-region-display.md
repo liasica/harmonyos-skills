@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/i18n-language
 title: 本地化语言与地区名称
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用国际化 > 本地化名称 > 本地化语言与地区名称
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:21+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:51:28+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:0d253c0f7ad681cc4e974ac2c59e9bed005928e6a4abcfe7cd54b9db89d0bd85
 ---
 

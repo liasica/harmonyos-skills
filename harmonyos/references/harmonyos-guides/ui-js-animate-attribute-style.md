@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-animate
 title: 属性样式动画
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 动效开发指导 > CSS动画 > 属性样式动画
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:22+08:00
+scraped_at: 2026-11-12T09:51:19+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:5ad941e07dca3b431949d9fa85d95d1d6ccaefa2aace148472e4d5d16ea495ee
+content_hash: sha256:06b18abc8336e46ed8f5472febbf83eee59f4296c7b9b96f3c23d466bbdea05c
 ---
 
 在关键帧（Keyframes）中动态设置父组件的width和height，实现组件变大缩小。子组件设置scale属性使父子组件同时缩放，再设置opacity实现父子组件的显示与隐藏。
@@ -88,7 +88,7 @@ text {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/1B7L_6bITmKhbRPliK0vrA/zh-cn_image_0000002779850406.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/v-XdIkMZSBuQN-Bb1x0Rcg/zh-cn_image_0000002786359348.gif)
 
 **说明** 
 

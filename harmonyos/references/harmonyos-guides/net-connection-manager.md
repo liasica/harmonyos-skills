@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/net-connectio
 title: 管理网络连接
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 连接网络 > 管理网络连接
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:01+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:f3831ecd513e1b8d19f51abc6b26fe6682172fb68c4d29cd57dae1af235b1121
+scraped_at: 2026-11-12T09:51:44+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3463528a6641bb15d82f1ca45ba2847ba2de452c1ecd2411993b972d5f04c172
 ---
 
 ## 简介
@@ -370,9 +370,11 @@ function socketTest() {
    此权限级别为normal，在申请权限前，请保证符合[权限使用的基本原则](app-permission-mgmt-overview.md#权限使用的基本原则)。然后参考[访问控制-声明权限](declare-permissions.md)声明对应权限。
 2. 代码示例
 
-   调用[getDefaultNetSync](../harmonyos-references/js-apis-net-connection.md#connectiongetdefaultnetsync9)方法，获取当前默认网络的netHandle，netHandle有效的情况下，调用[getNetCapabilitiesSync](../harmonyos-references/js-apis-net-connection.md#connectiongetnetcapabilitiessync10)方法，获取NetHandle对应网络的能力信息，根据获取到的能力信息，判断networkCap数组中的值判断网络是否可用。
+   调用[getDefaultNetSync](../harmonyos-references/js-apis-net-connection.md#connectiongetdefaultnetsync9)方法获取当前默认网络的netHandle。若netHandle有效，再调用[getNetCapabilitiesSync](../harmonyos-references/js-apis-net-connection.md#connectiongetnetcapabilitiessync10)方法获取该NetHandle对应网络的能力信息，并根据能力信息中networkCap数组的取值判断网络是否可用。
 
-   NET\_CAPABILITY\_CHECKING\_CONNECTIVITY表示在进行连通性判断的过程中，当不处于连通性判断过程中，且networkCap数组中包含NET\_CAPABILITY\_VALIDATED表示网络连通性校验通过，可以访问互联网。
+   NET\_CAPABILITY\_CHECKING\_CONNECTIVITY：表示系统正在进行连通性校验，此时网络可用性尚不确定。
+
+   NET\_CAPABILITY\_VALIDATED：表示连通性校验通过，当networkCap数组中不包含NET\_CAPABILITY\_CHECKING\_CONNECTIVITY（即未处于连接性校验过程中）、且包含NET\_CAPABILITY\_VALIDATED时，表示网络可用，可以访问互联网。
 
    ```typescript
    // 从@kit.NetworkKit中导入connection命名空间。

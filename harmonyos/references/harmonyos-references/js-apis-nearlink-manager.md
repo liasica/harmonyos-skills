@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.nearlink.manager (星闪基础管理能力)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.nearlink.manager (星闪基础管理能力)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:03+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:34285239052c28d1db876758c6753ca6904d41b2760d0ade855f364573a8dd63
+scraped_at: 2026-11-12T09:55:34+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8d96ff2d0a34feda97a046bd937a4e17aa1ad21defa193f657fd58a308460523
 ---
 
 本模块提供了星闪基础管理能力，包括查询是否支持星闪、获取本端设备信息、管理星闪开关状态及订阅状态变化事件等。
@@ -23,6 +23,8 @@ import { manager } from '@kit.ConnectivityKit';
 getState(): NearlinkState
 
 查询星闪开关状态。
+
+调用此接口前，您可以调用[isNearLinkSupported](js-apis-nearlink-manager.md#managerisnearlinksupported)查询设备是否支持星闪。
 
 **起始版本：** 26.0.0
 
@@ -42,7 +44,7 @@ getState(): NearlinkState
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported because the chip does not support it. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 36100099 | Operation failed. |
 
 **示例：**
@@ -101,6 +103,8 @@ getLocalName(): string
 
 查询本机星闪名称。
 
+调用此接口前，您可以调用[isNearLinkSupported](js-apis-nearlink-manager.md#managerisnearlinksupported)查询设备是否支持星闪。
+
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -121,8 +125,8 @@ getLocalName(): string
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 801 | Capability not supported because the chip does not support it. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 36100003 | NearLink disabled. |
 | 36100099 | Operation failed. |
 
@@ -146,6 +150,8 @@ getPairedDevices(): string[]
 
 获取与当前设备配对的设备列表。
 
+调用此接口前，您可以调用[isNearLinkSupported](js-apis-nearlink-manager.md#managerisnearlinksupported)查询设备是否支持星闪。
+
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -166,8 +172,8 @@ getPairedDevices(): string[]
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 801 | Capability not supported because the chip does not support it. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 36100003 | NearLink disabled. |
 | 36100099 | Operation failed. |
 
@@ -195,6 +201,8 @@ onStateChange(callback: Callback<NearlinkState>): void
 
 订阅星闪开关状态变化事件。使用callback异步回调。
 
+调用此接口前，您可以调用[isNearLinkSupported](js-apis-nearlink-manager.md#managerisnearlinksupported)查询设备是否支持星闪。
+
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -213,7 +221,7 @@ onStateChange(callback: Callback<NearlinkState>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported because the chip does not support it. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 36100099 | Operation failed. |
 
 **示例：**
@@ -246,6 +254,8 @@ offStateChange(callback?: Callback<NearlinkState>): void
 
 取消订阅星闪开关状态变化事件。使用callback异步回调。
 
+调用此接口前，您可以调用[isNearLinkSupported](js-apis-nearlink-manager.md#managerisnearlinksupported)查询设备是否支持星闪。
+
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -264,7 +274,7 @@ offStateChange(callback?: Callback<NearlinkState>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported because the chip does not support it. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 36100099 | Operation failed. |
 
 **示例：**

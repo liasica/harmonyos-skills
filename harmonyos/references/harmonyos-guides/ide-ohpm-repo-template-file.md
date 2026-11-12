@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: 模板文件
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 自定义存储插件 > 模板文件
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:06+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:3d99bbfef6add434b0b6889888b1490876f4b96a1f7dc558e690a5c41075f13b
+scraped_at: 2026-11-12T09:52:52+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:92a7fc9cc24c6a759c2182daabb98ccae0416551e5d32bb9e8d6fc366a0ee3d0
 ---
 
-模板文件中包含自定义storage插件需要的两个文件：CustomStorage.ts和tsconfig.json。
+模板文件中包含storage插件需要的两个文件：CustomStorage.ts和tsconfig.json。
 
 ## 插件模板CustomStorage.ts
 

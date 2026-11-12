@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d
 title: 创建并使用材质资源
 breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > 资源创建与使用 > 创建并使用材质资源
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:19+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:52:13+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:ee7737ff10aaa1602b128947fa70b91476aa8a166570e0b97f5e836da6b08e8e
 ---
 

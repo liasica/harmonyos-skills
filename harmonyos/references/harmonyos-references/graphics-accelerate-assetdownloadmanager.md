@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/graphics-
 title: assetDownloadManager（资源包下载管理）
 breadcrumb: API参考 > 图形 > Graphics Accelerate Kit（图形加速服务） > ArkTS API > assetDownloadManager（资源包下载管理）
 category: harmonyos-references
-scraped_at: 2026-09-24T06:55:09+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:7baffa04892c6124f12b50b4964387536d41c15b7509979f00ef125d1452c301
+scraped_at: 2026-11-12T09:57:07+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0cf98321d5af75b48a28e65c80e667c0a6fd1d91b2fd9556f42882b0fc56e847
 ---
 
 本模块提供资源包下载管理能力。
@@ -1627,6 +1627,156 @@ async IsAssetDownloadSupported() {
     } catch (error) {
       console.error('AssetAccelDemo', `Failed to test isAssetDownloadSupported, errCode:${error.code}, errMessage:${error.message}`);
     }
+  }
+}
+```
+
+## assetDownloadManager.isSupportDownloadSwitchSetting
+
+isSupportDownloadSwitchSetting(): Promise<boolean>
+
+查询是否支持设置和查询资源包后台下载开关状态的能力。使用Promise异步回调。
+
+**模型约束：** 本模块接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
+
+**起始版本：** 26.0.1
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回是否支持设置和查询资源包后台下载开关状态的能力。  true：支持。  false：不支持。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-graphics-accelerate.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1016600094 | Task service ability error. |
+
+**示例**：
+
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+
+async IsSupportDownloadSwitchSetting() {
+  try {
+    const supportResult: boolean = await assetDownloadManager.isSupportDownloadSwitchSetting();
+    console.info('AssetAccelDemo', 'Succeeded in testing isSupportDownloadSwitchSetting');
+    if (supportResult) {
+      // 支持设置和查询资源包后台下载开关状态的能力。
+      console.info('AssetAccelDemo', 'The device supports download switch setting');
+    } else {
+      // 不支持设置和查询资源包后台下载开关状态的能力。
+      console.info('AssetAccelDemo', 'The device does not support download switch setting');
+    }
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to test isSupportDownloadSwitchSetting, errCode:${error.code}, errMessage:${error.message}`);
+  }
+}
+```
+
+## assetDownloadManager.queryDownloadSwitchEnabled
+
+queryDownloadSwitchEnabled(): Promise<boolean>
+
+查询当前游戏资源包后台下载开关是否打开。使用Promise异步回调。
+
+**模型约束：** 本模块接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
+
+**起始版本：** 26.0.1
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回当前游戏资源包后台下载开关的状态。  true：开关已打开。  false：开关已关闭。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-graphics-accelerate.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1016600094 | Task service ability error. |
+
+**示例**：
+
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+
+async QueryDownloadSwitchEnabled() {
+  try {
+    const enabled: boolean = await assetDownloadManager.queryDownloadSwitchEnabled();
+    console.info('AssetAccelDemo', 'Succeeded in querying download switch enabled');
+    if (enabled) {
+      // 当前游戏资源包后台下载开关已打开。
+      console.info('AssetAccelDemo', 'Download switch is enabled');
+    } else {
+      // 当前游戏资源包后台下载开关已关闭。
+      console.info('AssetAccelDemo', 'Download switch is disabled');
+    }
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to query download switch enabled, errCode:${error.code}, errMessage:${error.message}`);
+  }
+}
+```
+
+## assetDownloadManager.setDownloadSwitchEnabled
+
+setDownloadSwitchEnabled(status: boolean): Promise<boolean>
+
+设置当前游戏资源包后台下载开关状态。使用Promise异步回调。
+
+**模型约束：** 本模块接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.GraphicsGame.AssetAcceleration
+
+**起始版本：** 26.0.1
+
+**参数**：
+
+| **参数名** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| status | boolean | 是 | 要设置的开关状态。  true：打开开关。  false：关闭开关。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回开关状态设置结果。  true：设置成功。  false：设置失败。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-graphics-accelerate.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 1016600094 | Task service ability error. |
+
+**示例**：
+
+```typescript
+import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
+
+async SetDownloadSwitchEnabled() {
+  try {
+    const result: boolean = await assetDownloadManager.setDownloadSwitchEnabled(true);
+    console.info('AssetAccelDemo', 'Succeeded in setting download switch enabled');
+    if (result) {
+      // 资源包后台下载开关设置成功。
+      console.info('AssetAccelDemo', 'Download switch is set successfully');
+    } else {
+      // 资源包后台下载开关设置失败。
+      console.info('AssetAccelDemo', 'Download switch is set failed');
+    }
+  } catch (error) {
+    console.error('AssetAccelDemo', `Failed to set download switch enabled, errCode:${error.code}, errMessage:${error.message}`);
   }
 }
 ```

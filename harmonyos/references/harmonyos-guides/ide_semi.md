@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_semi
 title: "@typescript-eslint/semi"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/semi
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:11+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:1219603d2c1632024e01efcafdec2b7d37d73841774a28c7256cea73e11a88b9
+scraped_at: 2026-11-12T09:52:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:328b7b990ef99132c6ec3ada669383af6d4f01bfab70f59fc6035fadc091013e
 ---
 
 要求或不允许使用分号。
@@ -53,4 +53,4 @@ export class Foo {
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

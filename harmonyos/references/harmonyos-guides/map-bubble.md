@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-bubble
 title: 气泡
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 气泡
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:36+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:01b51af3638251c6977c508ef33e59e589f7c7a586c60652364085976be4794d
+scraped_at: 2026-11-12T09:52:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b10542c4e98ec0e09d698b8f3baafdd657763c66a3f63d69373009e8b8808c67
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:01b51af3638251c6977c508ef33e59e589f7c7a586c60652364085976be
 * 支持设置图标动画。
 * 支持添加点击事件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/BdS5cxgpTcuN9qG812I5oQ/zh-cn_image_0000002809051059.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/YTKOBTboTMaYLCACGksz1A/zh-cn_image_0000002786360446.jpg "点击放大")
 
 ## 接口说明
 
@@ -70,10 +70,13 @@ content_hash: sha256:01b51af3638251c6977c508ef33e59e589f7c7a586c60652364085976be
            let bubbleOptions: mapCommon.BubbleParams = {
              // 气泡位置
              positions: [[{
-               latitude: 39.918,
-               longitude: 116.397
+               latitude: 39.9179,
+               longitude: 116.4067
+             }], [{
+               latitude: 39.9181,
+               longitude: 116.4069
              }]],
-             // 设置图标，必须提供4个方向的图标，图标存放在resources/rawfile
+             // 设置图标，必须提供4个方向的图标且宽高相等，图标存放在resources/rawfile
              icons: [
                'speed_limit_10.png',
                'speed_limit_20.png',
@@ -116,7 +119,7 @@ content_hash: sha256:01b51af3638251c6977c508ef33e59e589f7c7a586c60652364085976be
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/V9D2-o_xQdW3_u6hGEkYfA/zh-cn_image_0000002779851494.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/PbGEtK0rS1qMnOZYs11Eyw/zh-cn_image_0000002815559867.jpg "点击放大")
 
 ### 设置监听气泡点击事件
 

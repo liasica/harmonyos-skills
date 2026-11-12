@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SelectionMenu
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SelectionMenu
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:17+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:74dee6061b562e2455578d5e49110d525523a10ab26e27c687867e5de8b904da
+scraped_at: 2026-11-12T09:54:28+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:90c0a3dba0c81c17f220608113d07b28a6015c3365b4572cbf9be9e536572673
 ---
 
 文本选择菜单，适用于[RichEditor](ts-basic-components-richeditor.md)组件通过[bindSelectionMenu](ts-basic-components-richeditor.md#bindselectionmenu)或[Text](ts-basic-components-text.md)组件通过[bindSelectionMenu](ts-basic-components-text.md#bindselectionmenu11)绑定自定义文本选择菜单，支持编辑菜单和扩展下拉菜单两种类型，可通过配置实现复制、粘贴、剪切、全选等内置功能，也可通过自定义菜单项和事件回调实现扩展功能。建议绑定鼠标右键或鼠标选中方式弹出，不支持作为普通组件单独使用。适用于富文本编辑场景，可为用户提供便捷的文本操作入口，提升文本编辑效率。
@@ -456,7 +456,7 @@ struct Index {
 
 示例图为鼠标操作触发的自定义菜单弹出效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/pWY1zeK-Q3mV8Z6INmrZHg/zh-cn_image_0000002779692786.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/djoXaIPJRlGC3-u2HGROVg/zh-cn_image_0000002786521610.gif)
 
 ### 示例2（设置Symbol类型图标）
 
@@ -793,7 +793,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/scy98-AYSBqQWdpE5jtb3A/zh-cn_image_0000002809012407.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/cOSc0Kq-QKqtvX2b42QB0g/zh-cn_image_0000002786361682.jpg)
 
 ### 示例3（设置背景板材质）
 
@@ -805,10 +805,8 @@ struct Index {
 
 ```ts
 import {
-  SelectionMenu, EditorEventInfo, SelectionMenuOptions
+  SelectionMenu, EditorEventInfo, SelectionMenuOptions, uiMaterial
 } from '@kit.ArkUI';
-
-import { uiMaterial } from '@kit.ArkUI';
 
 @Entry
 @Component
@@ -911,8 +909,8 @@ struct Index {
 
 未设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/fpiWfGZITPOKW9S5N7DasQ/zh-cn_image_0000002809052321.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/_ptimjVHRFO78B_hNkfMsg/zh-cn_image_0000002815561103.jpg)
 
 设置系统材质时：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/NSeoiMMIQk68WHzgPTEkzg/zh-cn_image_0000002779852756.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/ae1pExcOSBaqORe8DrzTpw/zh-cn_image_0000002815401187.jpg)

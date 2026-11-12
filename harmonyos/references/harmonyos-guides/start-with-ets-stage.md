@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-with-et
 title: 构建第一个HarmonyOS应用（ArkTS）
 breadcrumb: 指南 > 基础入门 > 快速入门 > 构建第一个HarmonyOS应用（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:28:57+08:00
+scraped_at: 2026-11-12T09:50:55+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:3ed2215074303e162f76b45d3cd9c895426f818bc86270cccaa8cc103a1905f4
+content_hash: sha256:57cbb68497c0eb924dfb3e459105d05b5d3e6980be7616582676a985a5136603
 ---
 
 **说明** 
@@ -19,15 +19,15 @@ content_hash: sha256:3ed2215074303e162f76b45d3cd9c895426f818bc86270cccaa8cc103a1
 
    若开发者需要进行Native相关工程的开发，请选择**Native C++** 模板，更多模板的使用和说明请见[工程模板介绍](ide-template.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/2vGccHQ7R1aKq4Jxz-jl6w/zh-cn_image_0000002779689456.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/1xWdye44Spyiez_8eds_sg/zh-cn_image_0000002786358366.png)
 3. 进入配置工程界面，**Compatible SDK**表示兼容的最低API Version，此处以选择**26.0.0** 为例，其他参数保持默认设置即可。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/PBN4__FjTmq9EwvdoF7Gdw/zh-cn_image_0000002809009077.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/EC_k5Aa-RLOR72XxMRfUFA/zh-cn_image_0000002815557787.png)
 4. 单击**Finish**，工具会自动生成示例代码和相关资源，等待工程创建完成。
 
 ## ArkTS工程目录结构（Stage模型）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/vlvLaEcZTxGZEE710hoygg/zh-cn_image_0000002809048993.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/tJJ2tZGORYWPvfe_FCE7LA/zh-cn_image_0000002815397871.png)
 
 * **AppScope > app.json5**：应用的全局配置信息，详见[app.json5配置文件](app-configuration-file.md)。
 * **entry**：HarmonyOS工程模块，编译构建生成一个[HAP](hap-package.md)包。
@@ -116,7 +116,7 @@ content_hash: sha256:3ed2215074303e162f76b45d3cd9c895426f818bc86270cccaa8cc103a1
    ```
 3. 在编辑窗口**右上角**的侧边工具栏，单击**Previewer**，打开预览器。第一个页面效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/GjDQo1pdTD2g--JBd1rYhw/zh-cn_image_0000002779849428.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/t5RcxX4LS1G895dg7Ay74g/zh-cn_image_0000002786518296.png)
 
 ## 构建第二个页面
 
@@ -124,7 +124,7 @@ content_hash: sha256:3ed2215074303e162f76b45d3cd9c895426f818bc86270cccaa8cc103a1
 
    * 新建第二个页面文件。在**Project**窗口，打开**entry > src > main > ets**，右键单击**pages**文件夹，选择**New > ArkTS File**，命名为**Second**，单击**回车键**。可以看到文件目录结构如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/rkNTjxDrS0uH_SfyKbAxuw/zh-cn_image_0000002779689458.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/mVyDf7-qS5uEMVn1g0U3hg/zh-cn_image_0000002786358368.png)
 
      **说明** 
 
@@ -289,18 +289,18 @@ content_hash: sha256:3ed2215074303e162f76b45d3cd9c895426f818bc86270cccaa8cc103a1
      }
    }
    ```
-3. 打开**Index.ets**文件，单击预览器中的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/jD8Ry3FHQ96kiSGzZDIc4g/zh-cn_image_0000002809009079.png)按钮进行刷新。效果如下图所示：
+3. 打开**Index.ets**文件，单击预览器中的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/kUXq5le5Qvuu6RBSRSto_g/zh-cn_image_0000002815557789.png)按钮进行刷新。效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/AXKFMniiSue2SF81KE1tDQ/zh-cn_image_0000002809048995.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/-NeZ6iFnQ7OFsE1scNhpGg/zh-cn_image_0000002815397873.png)
 
 ## 使用真机运行应用
 
 1. 将搭载HarmonyOS系统的真机与电脑连接。具体指导及要求，可查看[使用本地真机运行应用/服务](ide-run-device.md)。
 2. 进入**File > Project Structure... > Project > Signing Configs**界面，勾选“**Automatically generate signature**”，即可完成签名。如果未登录，请先单击**Sign In**进行登录，然后自动完成签名。具体请见[配置调试签名](ide-signing-auto.md#section1172562862811)。如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/kfLldw9dTKOLOGl9qy0wEQ/zh-cn_image_0000002779849430.png)
-3. 在编辑窗口右上角的工具栏，单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/oeLoLqyxQxOqmOKOlsSDiQ/zh-cn_image_0000002779689460.png)按钮运行。效果如下图所示：
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/jm_GolJTQBGEXO197auGxg/zh-cn_image_0000002786518298.png)
+3. 在编辑窗口右上角的工具栏，单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/GfNSpUzmSvCXD3ZyvJp-7A/zh-cn_image_0000002786358370.png)按钮运行。效果如下图所示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/LDKx9JRtTLaLQa6YRwx3kA/zh-cn_image_0000002809009081.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/c9mKB9X4RmKfGUsyYBFIpg/zh-cn_image_0000002815557791.png)
 
 恭喜您已经基于ArkTS语言构建完成第一个HarmonyOS应用，快来探索更多的HarmonyOS功能吧。

@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_explicit-
 title: "@typescript-eslint/explicit-module-boundary-types"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/explicit-module-boundary-types
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:09+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:40eb1904c283a0008f71c3c59df7bbcc6c401eace7a757f01712cc3accc3726d
+scraped_at: 2026-11-12T09:52:54+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:2117c4993e2385dea122465c69bdc68a6cca82f626a37c1aa63f6fc2c0739a01
 ---
 
-导出到外部的函数和公共类方法，需要显式的定义返回类型和参数类型。
+导出到外部的函数和公共类方法，需要显式定义返回类型和参数类型。
 
 该规则仅支持对.ts文件进行检查。
 
@@ -86,4 +86,4 @@ plugin:@typescript-eslint/recommended
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

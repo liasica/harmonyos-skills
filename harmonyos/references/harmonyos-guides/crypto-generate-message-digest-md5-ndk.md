@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-genera
 title: 消息摘要计算MD5(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 消息摘要计算 > 消息摘要计算MD5(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:43+08:00
-doc_updated_at: 2026-09-20
+scraped_at: 2026-11-12T09:51:34+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:88aa1fb38c8cb08bea2ded104b3447ee468deaed65d36990aaf3308a718fa975
 ---
 

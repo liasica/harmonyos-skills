@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.nearlink.advertising (星闪广播能力)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.nearlink.advertising (星闪广播能力)
 category: harmonyos-references
-scraped_at: 2026-10-01T07:38:23+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:9c85aed8b05fb3e341f3b185bd9270deb56156f0600147be2ddb39d8c9486058
+scraped_at: 2026-11-12T09:55:34+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7bee7b00cae648da4b26f97089d186fb7e2b0173e25bd8ea02ad1aa6b9ee37b8
 ---
 
 本模块提供了发送星闪广播的相关功能，包括启动广播、停止广播、订阅广播状态等。
@@ -148,6 +148,8 @@ startAdvertising(advertisingParams: AdvertisingParams): Promise<number>
 
 发送星闪广播。使用Promise异步回调。适用于设备发现、设备信息广播等需要将本端设备能力或数据对外发布的业务场景，配合[advertising.onAdvertisingStateChange](js-apis-nearlink-advertising.md#advertisingonadvertisingstatechange)可监听广播启停状态。
 
+调用此接口前，您可以调用[isNearLinkSupported](js-apis-nearlink-manager.md#managerisnearlinksupported)查询设备是否支持星闪。
+
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -174,8 +176,8 @@ startAdvertising(advertisingParams: AdvertisingParams): Promise<number>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 801 | Capability not supported because the chip does not support it. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 36100003 | NearLink disabled. |
 | 36100040 | Integer out of range. |
 | 36100043 | Invalid UUID. |
@@ -239,6 +241,8 @@ stopAdvertising(advertisingId: number): Promise<void>
 
 停止发送星闪广播。使用Promise异步回调。
 
+调用此接口前，您可以调用[isNearLinkSupported](js-apis-nearlink-manager.md#managerisnearlinksupported)查询设备是否支持星闪。
+
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -265,8 +269,8 @@ stopAdvertising(advertisingId: number): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 801 | Capability not supported because the chip does not support it. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 36100003 | NearLink disabled. |
 | 36100040 | Invalid advertising ID. |
 | 36100099 | Operation failed. |
@@ -297,6 +301,8 @@ onAdvertisingStateChange(callback: Callback<AdvertisingStateChangeInfo>): void
 
 应用需具备ohos.permission.ACCESS\_NEARLINK权限，方可接收此事件上报。
 
+调用此接口前，您可以调用[isNearLinkSupported](js-apis-nearlink-manager.md#managerisnearlinksupported)查询设备是否支持星闪。
+
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -315,7 +321,7 @@ onAdvertisingStateChange(callback: Callback<AdvertisingStateChangeInfo>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported because the chip does not support it. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 
 **示例：**
 
@@ -341,6 +347,8 @@ offAdvertisingStateChange(callback?: Callback<AdvertisingStateChangeInfo>): void
 
 取消订阅星闪广播状态变化事件。使用callback异步回调。
 
+调用此接口前，您可以调用[isNearLinkSupported](js-apis-nearlink-manager.md#managerisnearlinksupported)查询设备是否支持星闪。
+
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -359,7 +367,7 @@ offAdvertisingStateChange(callback?: Callback<AdvertisingStateChangeInfo>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported because the chip does not support it. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 
 **示例：**
 

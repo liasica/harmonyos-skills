@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-accessibi
 title: "@correctness/accessibility-focus-redundancy-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 正确性规则@correctness > @correctness/accessibility-focus-redundancy-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:14+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:38bbc72472d70efe530f29f0f50189dc5c3e6926ec79086dbe9eac5bcd4774c8
+scraped_at: 2026-11-12T09:52:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:db6cd105cfebc5557608f4b811689fb0a4ae8bdf7e51df4d35a4d94f6347d6fb
 ---
 
 在无障碍场景开发中，避免控件焦点冗余。
@@ -76,4 +76,4 @@ struct FocusRedundancyNegative {
 plugin:@correctness/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

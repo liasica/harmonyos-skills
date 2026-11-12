@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.busManager.serial (串口通信管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 设备管理 > @ohos.busManager.serial (串口通信管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:01+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:eb47f72b27620cdb6fe4dad91af1e5c7210eb18f5d9dc37a4296153cccafcdb2
+scraped_at: 2026-11-12T09:55:51+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a2f642f1a42afc4f0e7996cd128e6f761d1e2b1b795e47e1b8b7e772876e5302
 ---
 
 本模块提供串口通信管理功能，适用于需要与串口设备进行数据交互的场景，如工业控制、传感器数据采集、嵌入式设备通信等。支持获取串口设备列表、打开和关闭串口、读写数据、硬件流控信号管理等功能，帮助开发者便捷地实现与外部串口设备的通信，提高设备互联效率。
@@ -225,6 +225,7 @@ write(data: Uint8Array, timeout?: number): Promise<number>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 401 | Parameter error. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. undefined is passed as the optional parameter. |
 | 35700001 | Service error. |
 | 35700002 | Invalid parameter. |
 | 35700003 | Virtual serial port disconnected. |
@@ -330,14 +331,17 @@ offDataRead(callback?: Callback<Uint8Array>): void
 
 ```ts
 // port为串口对象，需要先通过serial.getSerialPortList()获取
-// 取消监听串口数据接收
-port.offDataRead();
-
-// 取消指定的监听回调
+// 先注册回调
 let callback = (data: Uint8Array) => {
   console.info(`received data length: ${data.length}`);
 };
+port.onDataRead(callback);
+
+// 取消指定的监听回调
 port.offDataRead(callback);
+
+// 或者取消所有监听
+port.offDataRead();
 ```
 
 ### flush
@@ -761,14 +765,17 @@ offDisconnect(callback?: Callback<void>): void
 
 ```ts
 // port为串口对象，需要先通过serial.getSerialPortList()获取
-// 取消监听串口断开事件
-port.offDisconnect();
-
-// 取消指定的监听回调
+// 先注册回调
 let disconnectedCallback = () => {
   console.info('serial port disconnected');
 };
+port.onDisconnect(disconnectedCallback);
+
+// 取消指定的监听回调
 port.offDisconnect(disconnectedCallback);
+
+// 或者取消所有监听
+port.offDisconnect();
 ```
 
 ## SerialPortInfo

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-f
 title: 企业类应用可用权限
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 应用权限列表 > 企业类应用可用权限
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:17+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:0e2a474e71d27b2cf76aa3eb15b02765802ad68139d42096155d6559a74cce88
+scraped_at: 2026-11-12T09:51:31+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7c4d54dba36aecdd0cbbbda65d6f5bcf6fc9f1df69c7ae9cff7e6e1588368811
 ---
 
 以下权限面向企业类应用开放。
@@ -253,7 +253,7 @@ content_hash: sha256:0e2a474e71d27b2cf76aa3eb15b02765802ad68139d42096155d6559a74
 
 **起始版本**：12
 
-**变更信息**：API 7-13该权限仅向系统应用开放；从API 14开始，开放范围从系统应用变更为企业普通应用。
+**变更信息**：API 12-13该权限仅向系统应用开放；从API 14开始，开放范围从系统应用变更为企业普通应用。
 
 ## ohos.permission.MANAGE\_ENTERPRISE\_WIFI\_CONNECTION
 
@@ -684,3 +684,19 @@ UDID（Unified Device ID）是设备的唯一标识。
 **支持设备**：PC/2in1
 
 **起始版本**：26.0.0
+
+## ohos.permission.ENTERPRISE\_MANAGE\_BACKUP
+
+允许应用使用备份还原能力。
+
+获取该权限后，应用可以对用户数据和应用沙箱数据进行备份和还原操作。
+
+**申请后AGC的审核时长：** 预计3个工作日内反馈审核结果。
+
+**权限级别**：system\_basic
+
+**授权方式**：系统授权（system\_grant）
+
+**支持设备**：PC/2in1
+
+**起始版本**：26.0.1

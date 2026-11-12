@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xml-conversio
 title: XML转换
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS基础类库 > XML生成、解析与转换 > XML转换
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:28+08:00
-doc_updated_at: 2026-09-23
+scraped_at: 2026-11-12T09:51:02+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:b262de1795e4ed816273d477325ebd97b2e4ce17a7a068ffba44223dd68bddfc
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multi-window-
 title: 应用布局适配智慧多窗
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口模式 > 智慧多窗应用开发指导 > 应用布局适配智慧多窗
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:23+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:017ad6b85c68015601f0d19eb50162c47d03593c327e6328244c32d47c4a5191
+scraped_at: 2026-11-12T09:51:20+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:69bbcb77400306f777335d593b6aaeeb1db728ca7538adb185882808b21b092f
 ---
 
 ## 应用布局适配智慧多窗的意义
@@ -18,25 +18,25 @@ content_hash: sha256:017ad6b85c68015601f0d19eb50162c47d03593c327e6328244c32d47c4
 
 | 版本 | 设备 | 竖向悬浮窗宽高比 | 横向悬浮窗宽高比 |
 | --- | --- | --- | --- |
-| - | 手机 | 3:4.575 | 16:9 |
-| - | 双折叠手机展开态、三折叠手机双屏态（M态） | 9:16 | 16:9 |
-| HarmonyOS 7.0.0以下 | 三折叠手机三屏态（G态）、Tablet设备 | 9:16 | 16:9 |
-| HarmonyOS 7.0.0及以上 | 三折叠手机三屏态（G态）、Tablet设备 | 9:16、3:4、3:2 | 16:9 |
+| - | 直板机、折叠手机折叠态 | 3:4.575 | 16:9 |
+| HarmonyOS 7.0.0以下 | 三折叠手机展开态（G/M态）、双折叠手机展开态、Tablet设备 | 9:16 | 16:9 |
+| HarmonyOS 7.0.0 - HarmonyOS 7.0.0.115（不含） | 三折叠手机双屏态（M态）、双折叠手机展开态 | 9:16 | 16:9 |
+| HarmonyOS 7.0.0 - HarmonyOS 7.0.0.115（不含） | 三折叠手机三屏态（G态）、Tablet设备 | 9:16、3:4、3:2 | 16:9 |
+| HarmonyOS 7.0.0.115及以上 | 三折叠手机展开态（G/M态）、双折叠手机展开态、Tablet设备 | 9:16、3:4、3:2 | 16:9 |
 
 **说明** 
 
 * 顶部窗口控制条的避让区域不包含在应用布局区域内，窗口高度去除避让区域的32vp为应用布局区域的高度。
-* 手机：悬浮窗模式下，应用窗口真实宽度为屏幕宽度。竖向时，高度根据宽高比3 : 4.575动态调整；横向时，高度根据宽高比16 : 9动态调整（该比例超出屏幕时，以当前全屏屏幕比例计算）。手机设备默认支持以上两种比例，以下为特殊形态设备作说明。
-* 双折叠手机展开态、三折叠手机双屏态（M态）：悬浮窗模式下，应用窗口真实宽度为折叠屏手机折叠态时的屏幕宽度。竖向时，高度根据宽高比9 : 16动态调整；横向时，高度根据宽高比16 : 9动态调整。
-* 搭载HarmonyOS 7.0.0以下的三折叠手机三屏态（G态）、Tablet设备：悬浮窗模式下，窗口尺寸根据屏幕尺寸进行动态调整。
-* 搭载HarmonyOS 7.0.0及以上的三折叠手机三屏态（G态）、Tablet设备：竖向悬浮窗新增比例3:4和3:2，窗口尺寸根据屏幕尺寸进行动态调整，用户可通过拖拽悬浮窗边框进行调节宽高比例。
+* 悬浮窗模式下，窗口宽度因比例而异：比例为3:4.575、9:16、16:9时，宽度取设备屏幕宽度（折叠屏设备取折叠态下的屏幕宽度）；比例为3:4、3:2时，宽度随屏幕尺寸动态调整。窗口高度根据宽度与宽高比动态计算。悬浮窗在屏幕上的最终显示尺寸由系统对真实尺寸整体缩放得到；应用布局应以窗口真实宽高为准，无需感知显示尺寸。
+* 在支持多种竖向比例的设备上，用户可拖拽悬浮窗边框，在设备支持的宽高比之间切换。
+* 悬浮窗模式的竖向/横向显示不受[preferMultiWindowOrientation](../doccenter-getting-started/module-configuration-file.md)字段控制，由系统根据窗口宽高比自动决定。
 * 外屏为小方形屏的阔折叠手机，在外屏中不支持智慧多窗。阔折叠手机折叠状态请参考[阔折叠应用开发](../best-practices/bpta-purax-guide.md)，三折叠手机折叠状态请参考[三折叠应用开发](../best-practices/bpta-matext-guide.md)。
 
 ### 分屏的比例
 
 目前支持两种分屏样式：“上下分屏”和“左右分屏”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/erM6v5gARLy59eBvTb_TVg/zh-cn_image_0000002809050027.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/pKfr3nw-S0q7YnNC84vvqg/zh-cn_image_0000002786519332.jpg)
 
 分屏比例指的是分屏下两应用间尺寸的比例，调整分屏比例会调整应用窗口的大小。
 
@@ -119,4 +119,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/qsuJQSHCTYG0RAArFZ8BGw/zh-cn_image_0000002779850462.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/AeHnv0OaROS4ZhgbwWywwg/zh-cn_image_0000002786359404.gif)

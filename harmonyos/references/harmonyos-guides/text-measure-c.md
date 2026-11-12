@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/text-measure-
 title: 文本测量（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 文本测量 > 文本测量（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:05+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c752b150701458c82df9b19e27bf26e4d841296dd83627f1b258e715124609d4
+scraped_at: 2026-11-12T09:52:12+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:00034db309d2f8aef2b8d80ccb794c21da9e87f5f1303a38bc4c93f23c2b8a86
 ---
 
 ## 场景介绍
@@ -51,10 +51,12 @@ content_hash: sha256:c752b150701458c82df9b19e27bf26e4d841296dd83627f1b258e715124
 3. 创建段落生成器ParagraphBuilder，并设置段落样式。
 
    ```
-   // 创建文本样式，设置文本颜色为黑色并设置字体大小为50
+   // 设置字体大小为50
+   constexpr double fontSize = 50.0;
+   // 创建文本样式，设置文本颜色为黑色
    OH_Drawing_TextStyle *myTextStyle = OH_Drawing_CreateTextStyle();
    OH_Drawing_SetTextStyleColor(myTextStyle, OH_Drawing_ColorSetArgb(0xFF, 0x00, 0x00, 0x00));
-   OH_Drawing_SetTextStyleFontSize(myTextStyle, 50.0);
+   OH_Drawing_SetTextStyleFontSize(myTextStyle, fontSize);
    // 创建一个段落样式对象，以设置排版风格
    OH_Drawing_TypographyStyle *typographyStyle = OH_Drawing_CreateTypographyStyle();
    // 设置段落样式的对齐方式为左对齐
@@ -68,6 +70,9 @@ content_hash: sha256:c752b150701458c82df9b19e27bf26e4d841296dd83627f1b258e715124
    OH_Drawing_TypographyHandlerAddText(handler, text);
    // 通过段落生成器生成段落
    OH_Drawing_Typography *typography = OH_Drawing_CreateTypography(handler);
+   // 段落生成完成后，释放段落生成器和段落样式
+   OH_Drawing_DestroyTypographyHandler(handler);
+   OH_Drawing_DestroyTypographyStyle(typographyStyle);
    ```
 4. 调用排版接口并设置段落排版宽度，对段落进行塑形排版。
 
@@ -96,6 +101,8 @@ content_hash: sha256:c752b150701458c82df9b19e27bf26e4d841296dd83627f1b258e715124
        DRAWING_LOGI("第%{public}d行 lineMetrics ascender: %{public}f", i + 1, curLineAscender);
        DRAWING_LOGI("第%{public}d行 lineMetrics width: %{public}f", i + 1, curLineWidth);
    }
+   // 释放行度量信息对象
+   OH_Drawing_DestroyLineMetrics(lineMetrics);
 
    // case4:获取段落最长行宽度与带缩进最长行行宽
    double longestLineWithIndent = OH_Drawing_TypographyGetLongestLineWithIndent(typography);

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encodin
 title: 编码支持一入二出
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 编码支持一入二出
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:07+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c73cadbf032882cb32cbf14ef6054a60cfda8c9bc391dcdb47ccc47918551c95
+scraped_at: 2026-11-12T09:52:02+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:aeabdb84689ce2514cbf15ec47fd952ec36b4a6ff35b5304c81f628558ae8190
 ---
 
 从API版本26.0.0开始，对于视频编码场景，支持一入二出编码，即通过同一份视频输入数据，同时驱动**两个独立编码器**产生两路不同编码码流的能力。
@@ -23,7 +23,7 @@ content_hash: sha256:c73cadbf032882cb32cbf14ef6054a60cfda8c9bc391dcdb47ccc479185
 
 以下为一入二出架构图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/92ULKKvASCKZrGC0GdUvhw/zh-cn_image_0000002779690960.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/TL6jur_cTeKXmTM-q6NOTw/zh-cn_image_0000002815399373.png)
 
 ### 使用场景
 
@@ -45,7 +45,7 @@ content_hash: sha256:c73cadbf032882cb32cbf14ef6054a60cfda8c9bc391dcdb47ccc479185
 | 2 | 创建顺序：必须先创建Primary，再从Primary派生Secondary。 |
 | 3 | 生命周期关系：Primary是Secondary的所有者（Owner），Secondary不得脱离Primary独立存在。  - **推荐销毁顺序**：先Destroy(Secondary) → 再Destroy(Primary)，销毁后立即将对应指针赋值nullptr。  - **容错机制**：若违反顺序先Destroy Primary，系统会级联释放关联的Secondary，但仍应显式遵循正确顺序。 |
 | 4 | 重建能力：Secondary销毁后，可以从同一个Primary重新创建新的Secondary。 |
-| 5 | 仅支持surface模式。 |
+| 5 | 仅支持Surface模式。 |
 
 **接口可用性约束**
 
@@ -82,7 +82,7 @@ content_hash: sha256:c73cadbf032882cb32cbf14ef6054a60cfda8c9bc391dcdb47ccc479185
 | Surface共享 | 主/副编码器共享同一个Consumer Surface，仅需从GetSurface获取一次并绑定到数据源（Camera/XComponent）。 |
 | Window生命周期 | OH\_VideoEncoder\_GetSurface获取的window实例需由开发者负责释放，在所有编码器Destroy之后调用OH\_NativeWindow\_DestroyNativeWindow(window)销毁。 |
 | 前处理独立性 | 每个编码器可分别配置不同的降采样/裁剪/丢帧策略；但每个编码器内部降采样与裁剪仍然互斥。 |
-| 回调独立性 | 两路的onNewOutputBuffer回调在不同线程中触发，需各自释放FreeOutputBuffer。 |
+| 回调独立性 | 两路的onNewOutputBuffer()回调在不同线程中触发，需各自释放FreeOutputBuffer。 |
 
 ## 开发步骤
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-body
 title: 人体跟踪与骨骼关键点识别（ArkTS）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 人体骨骼点识别与跟踪 > 人体跟踪与骨骼关键点识别（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:04+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d4696f02345fe59f8a5610f36426b04dee0fc42d7d059b93b7f74c2f04606259
+scraped_at: 2026-11-12T09:52:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:130ad09357a80e7d00201f7f2163c0c86a4aa3c0ab5d37a70928115153863bb3
 ---
 
 ## 约束与限制
@@ -237,7 +237,7 @@ struct ARBody {
   }
 
   private async initARView(): Promise<void> {
-    Scene.load().then(async (scene: Scene) => {
+    Scene.load().then((scene: Scene) => {
       let viewContext: arViewController.ARViewContext = new arViewController.ARViewContext();
       viewContext.scene = scene;
       let callback = new ARViewCallbackImpl();
@@ -323,7 +323,7 @@ class ARViewCallbackImpl extends arViewController.ARViewCallback {
   onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
   }
 
-  async onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): Promise<void> {
+  onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): void {
     if (!ctx.session) {
       return;
     }

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-decodin
 title: 使用ImageSource完成图片解码
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片解码 > 使用ImageSource完成图片解码
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:44+08:00
-doc_updated_at: 2026-10-30
-content_hash: sha256:cb00993f913a220169449bf50436495dfbe25ccc498e63cf46a54a873708bd61
+scraped_at: 2026-11-12T09:52:06+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:5e1856de540634903766499b5838747aa4c59d1cccad64a8f1771ac83c36e723
 ---
 
 当应用需要读取图片内容、显示图片，或对图片进行缩放、裁剪等处理时，可使用[ImageSource](../harmonyos-references/arkts-apis-image-imagesource.md)完成图片解码。应用可通过图片在应用沙箱中的路径、文件描述符或缓冲区创建ImageSource，并将图片解码为PixelMap。
@@ -178,7 +178,7 @@ content_hash: sha256:cb00993f913a220169449bf50436495dfbe25ccc498e63cf46a54a87370
      };
 
      try {
-       // 生成 pixelMap 并返回
+       // 生成 pixelMap 并返回。
        const pixelMap = await imageSource.createPixelMap(decodingOptions);
        if (pixelMap) {
          console.info('Create PixelMap successfully.');

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-sm2-si
 title: SM2签名数据格式转换(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 签名验签 > SM2签名数据格式转换(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:43+08:00
-doc_updated_at: 2026-09-20
+scraped_at: 2026-11-12T09:51:34+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:150b1ecdcc9de895d978da3e4624f4ffcc638057776df1b6db9e8aaf692c40c0
 ---
 

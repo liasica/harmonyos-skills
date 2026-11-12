@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-withh
 title: 签约代扣场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 免密支付接入 > 签约代扣场景
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:38+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:414c233b4d9f16f2efe54bd781483a2f8803bbd8a5bd7f16b44e2a332f63dc35
+scraped_at: 2026-11-12T09:52:31+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:70b2479ce2ccbfff1b0d66a8685def719cd7469bdabe822adca4e423baaf19bb
 ---
 
 ## 场景介绍
@@ -18,13 +18,13 @@ content_hash: sha256:414c233b4d9f16f2efe54bd781483a2f8803bbd8a5bd7f16b44e2a332f6
 
 华为支付签约页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/PMv7vHJuQYiMnqfI-Frfsw/zh-cn_image_0000002779851542.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/uHBUvZeOQ265amDlJ429HA/zh-cn_image_0000002815559919.png)
 
 ## 业务流程
 
 开发者通过接入Payment Kit 签约代扣能力，在获取用户签约授权的前提下，可以向用户的华为支付账户发起支付扣款，无需用户输入支付密码就可以优先使用签约的支付方式完成扣款。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/cCUTOAeNSsyX9bn3E_pgGA/zh-cn_image_0000002779691574.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/-9XwBcMgSGaI_x55RAMImA/zh-cn_image_0000002815400003.png)
 
 1. 商户客户端请求商户服务端创建签约订单。
 2. 商户服务端按照商户模型调用Payment Kit服务端[直连商户预签约](../harmonyos-references/payment-withhold-presign.md)或[服务商预签约](../harmonyos-references/payment-partner-withhold-presign.md)接口。
@@ -116,7 +116,7 @@ content_hash: sha256:414c233b4d9f16f2efe54bd781483a2f8803bbd8a5bd7f16b44e2a332f6
 
 商户客户端使用[contractStr](../harmonyos-references/payment-model.md#contractstr)作为参数调用[requestContract](../harmonyos-references/payment-paymentservice.md#requestcontract)接口拉起Payment Kit签约收银台。
 
-当接口通过.then()方法返回时，则表示当前订单支付成功，通过.catch()方法返回表示订单支付失败。当此次请求有异常时，可通过**error.code**获取错误码，错误码相关信息请参见[错误码](../harmonyos-references/errorcode-payment.md)。示例代码如下：
+当接口通过.then()方法返回时，则表示当前订单签约成功，通过.catch()方法返回表示订单签约失败。当此次请求有异常时，可通过**error.code**获取错误码，错误码相关信息请参见[错误码](../harmonyos-references/errorcode-payment.md)。示例代码如下：
 
 ```typescript
 import { BusinessError } from '@kit.BasicServicesKit';

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo restore
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo restore
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:12+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:ec3f58658237b743216947f3d68564a46b9ca948fa9a332777afe12d271e7b81
+scraped_at: 2026-11-12T09:52:51+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:edea3f64fab6b5246c97aa787c32393ce72eac66053fc4803725cb613f7d9920
 ---
 
 将ohpm-repo pack打包产物替换<deploy\_root>目录下相应文件，重启服务。
@@ -31,7 +31,7 @@ ohpm-repo restore <file_path>
 
 支持相对和绝对路径配置，当配置为相对路径时，以当前命令行工作路径为根目录。
 
-* <deploy\_root>：ohpm-repo部署根目录 执行install命令后，会创建一个名为OHPM\_REPO\_DEPLOY\_ROOT的环境变量，记录的是[ohpm-repo私仓部署目录](ide-ohpm-repo-configuration.md#zh-cn_topic_0000001745376470_关于-deploy_root)。
+* <deploy\_root>：ohpm-repo部署根目录 执行install命令后，会创建一个名为OHPM\_REPO\_DEPLOY\_ROOT的环境变量，记录的是[ohpm-repo私仓部署目录](ide-ohpm-repo-configuration.md#section77641227123)。
 
 ## 参数
 
@@ -52,4 +52,4 @@ ohpm-repo restore "D:\pack_1702625827995.zip"
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/m73Z9tE3RD6_W2MA6ZJ3ww/zh-cn_image_0000002731541779.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/ivpoj3mOS7-o-V6bvlqZSg/zh-cn_image_0000002808764905.png "点击放大")

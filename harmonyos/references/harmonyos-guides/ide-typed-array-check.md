@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-typed-arr
 title: "@performance/typed-array-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/typed-array-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:13+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:e6c192de6566ae474c604e27d82b4f5533cbd253b1cd88b2a9ea74d9cd848c0e
+scraped_at: 2026-11-12T09:52:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:dadff2b61e357f04be27e5d1f4a43094092d333d44bc8cb7f5bde934cee5cdb6
 ---
 
 数值数组推荐使用TypedArray。
@@ -55,4 +55,4 @@ for (let i = 0; i < 3; i++) {
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

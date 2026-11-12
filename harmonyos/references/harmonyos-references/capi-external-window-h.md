@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-exte
 title: external_window.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > external_window.h
 category: harmonyos-references
-scraped_at: 2026-09-24T06:55:06+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:549abfa109a0fb10b979eca9bbaf12511df0127053d8d3bfefbe13322451f2fd
+scraped_at: 2026-11-12T09:57:02+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7c02df18cb2331687fc9542b03498bfc16f10eb0a88db389a99329367f1889f5
 ---
 
 ## 概述
@@ -132,6 +132,7 @@ OH\_NativeWindow\_NativeWindowHandleOpt函数中的操作码。
 | SET\_HDR\_WHITE\_POINT\_BRIGHTNESS | 设置HDR白点亮度，函数中的可变参数是[输入] float brightness。取值范围为[0.0f, 1.0f]。  **起始版本：** 12 |
 | SET\_SDR\_WHITE\_POINT\_BRIGHTNESS | 设置SDR白点亮度，函数中的可变参数是[输入] float brightness。取值范围为[0.0f, 1.0f]。  **起始版本：** 12 |
 | SET\_DESIRED\_PRESENT\_TIMESTAMP = 24 | 设置本地窗口缓冲区期望上屏时间的时间戳。  当且仅当RenderService为本地窗口的消费者时，该时间戳生效  本操作执行后需要配合调用[OH\_NativeWindow\_NativeWindowFlushBuffer](capi-external-window-h.md#oh_nativewindow_nativewindowflushbuffer)生效。  生产者下一次放入队列的buffer，达到该期望上屏时间后，才会被RenderService消费并上屏。  如果buffer队列中存在多个生产者放入的buffer，都设置了desiredPresentTimestamp并已达到期望上屏时间，则较早入队的buffer将被消费者丢弃回队列。  如果期望上屏时间大于消费者提供的时间 1 秒以上，则该期望上屏时间戳将被忽略。  函数中的可变参数是[输入] int64\_t desiredPresentTimestamp，取值范围大于0，应由std::chrono::steady\_clock标准库时钟生成，且单位为纳秒。  **起始版本：** 13 |
+| OH\_NATIVEWINDOW\_SET\_DMABUFFER\_NAME = 25 | 设置DMA buffer名称。通过该操作码设置名称后，后续通过[OH\_NativeWindow\_NativeWindowRequestBuffer](capi-external-window-h.md#oh_nativewindow_nativewindowrequestbuffer)申请的buffer会使用该名称，名称会记录在内核DMA-BUF信息中，用于在内存泄漏排查中定位buffer的来源。  DMA buffer（Direct Memory Access buffer，直接内存访问缓冲区）是允许多进程、多硬件之间共享访问的内存，OHNativeWindowBuffer对应的图形缓冲区底层基于内核DMA-BUF机制分配。  函数中的可变参数是[输入] const char\* name，必须以字母开头，仅包含字母与数字，且长度不超过64字节，模拟器最大支持31字节。  **起始版本：** 26.0.1 |
 
 ### OHScalingMode
 
@@ -178,7 +179,7 @@ enum OHScalingModeV2
 | OH\_SCALING\_MODE\_SCALE\_TO\_WINDOW\_V2 | 缓冲区进行拉伸缩放以匹配窗口大小。 |
 | OH\_SCALING\_MODE\_SCALE\_CROP\_V2 | 缓冲区按原比例缩放，使得缓冲区的较小边与窗口匹配，较长边超出窗口部分被视为透明。 |
 | OH\_SCALING\_MODE\_NO\_SCALE\_CROP\_V2 | 按窗口大小将缓冲区裁剪，裁剪矩形之外的像素被视为完全透明。 |
-| OH\_SCALING\_MODE\_SCALE\_FIT\_V2 | 缓冲区按原比例缩放。优先显示所有缓冲区内容。如果比例与窗口比例不同，用背景颜色填充窗口的未填充区域。  模拟器不支持该模式。 |
+| OH\_SCALING\_MODE\_SCALE\_FIT\_V2 | 缓冲区按原比例缩放。优先显示所有缓冲区内容。如果比例与窗口比例不同，用背景颜色填充窗口的未填充区域。模拟器不支持该模式。 |
 
 ### OHHDRMetadataKey
 

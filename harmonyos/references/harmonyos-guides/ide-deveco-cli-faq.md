@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-cl
 title: 常见问题
 breadcrumb: 指南 > DevEco CLI > 常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:43+08:00
+scraped_at: 2026-11-12T09:53:26+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:902f61da0ee9cf075b604b9fa60285d27aefa66284e7c5bbe42d569cf8ceeecf
+content_hash: sha256:d4dc5a9d46ad6aad8b7d0db08b7a47ef9a6b3d3c5701d0f8f5a670beafc6b4ad
 ---
 
 ## 在鸿蒙电脑执行DevEco CLI命令时，提示"Signal 5（core dumped）"
@@ -14,7 +14,7 @@ content_hash: sha256:902f61da0ee9cf075b604b9fa60285d27aefa66284e7c5bbe42d569cf8c
 
 DevEco CLI命令执行错误，提示"Signal 5（core dumped）"。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/AUla0a83Tuye5JWWIKPdwg/zh-cn_image_0000002778756703.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/FAZBbNMYQT64L-aBJDK6yA/zh-cn_image_0000002779566638.png "点击放大")
 
 **可能原因**
 
@@ -30,7 +30,7 @@ DevEco CLI命令执行错误，提示"Signal 5（core dumped）"。
 
 执行安装命令或检验环境搭建等命令时，提示没有node权限。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/xQsMq0iIR5y53n-8ICar6w/zh-cn_image_0000002749157634.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/EfMQXF4lTH2LNVmU9i28pQ/zh-cn_image_0000002808886303.png)
 
 **可能原因**
 
@@ -50,7 +50,7 @@ tar -zxvf commandline-tools-harmonyos-xxx.tar.gz
 
 在鸿蒙电脑上执行npm install -g @deveco/deveco-cli@stable命令安装DevEco CLI时，有报错提示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/wN0uAqQEQPuVs63PiJTzBw/zh-cn_image_0000002778648371.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/qqw-FHbJSEeXqvi0JC7svw/zh-cn_image_0000002808766217.png)
 
 **可能原因**
 

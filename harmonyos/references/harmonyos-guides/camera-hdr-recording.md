@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-hdr-re
 title: HDR Vivid相机录像(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > HDR Vivid相机录像(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:45+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:6973a3e5d9d5377baa2b0cb675bd82bc6fbe012d1f780e6496d5d12ca7cbf5d9
+scraped_at: 2026-11-12T09:52:05+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:55f7b5338b6e542cdde72d8e6c21a089a1ba7a6ed390b99410fd4d8134da56d8
 ---
 
 HarmonyOS支持调用接口，录制HDR Vivid视频，可以拍出层次表现更细腻、光影细节更丰富的画面，提升画面质感，呈现更卓越的视觉效果。
@@ -286,7 +286,7 @@ HarmonyOS支持调用接口，录制HDR Vivid视频，可以拍出层次表现�
      }
      // 监听视频输出错误信息
      videoOutput.on('error', (error: BusinessError) => {
-       console.error(`Preview output error code: ${error.code}`);
+       console.error(`Video output error code: ${error.code}`);
      });
 
      // 创建会话

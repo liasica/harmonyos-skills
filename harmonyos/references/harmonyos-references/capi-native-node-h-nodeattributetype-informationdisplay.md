@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: ArkUI_NodeAttributeType（信息展示类组件相关属性）
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_node.h > ArkUI_NodeAttributeType（信息展示类组件相关属性）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:46+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f8fc4d4271354773f75c9af1916e7d7573b47f2c5b272817b8623cbc285432f3
+scraped_at: 2026-11-12T09:54:42+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0246f6026095f0a4e6f04b3695e251850f3efded1779ebd86be524f96fea053f
 ---
 
 ```c
@@ -38,13 +38,13 @@ NODE_LOADING_PROGRESS_COLOR = MAX_NODE_SCOPE_NUM * ARKUI_NODE_LOADING_PROGRESS =
 
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].u32 | 前景颜色数值，0xargb格式，形如 0xFFFF0000 表示红色。默认值：跟随主题。 |
+| .value[0].u32 | 前景颜色数值，0xARGB格式，形如 0xFFFF0000 表示红色。默认值：跟随主题。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].u32 | 前景颜色数值，0xargb格式。 |
+| .value[0].u32 | 前景颜色数值，0xARGB格式。 |
 
 ## NODE\_LOADING\_PROGRESS\_ENABLE\_LOADING
 
@@ -134,13 +134,13 @@ NODE_PROGRESS_COLOR = 10002
 
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].u32 | 颜色数值，0xargb格式，形如 0xFFFF0000 表示红色。默认值：跟随主题。 |
+| .value[0].u32 | 颜色数值，0xARGB格式，形如 0xFFFF0000 表示红色。默认值：跟随主题。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].u32 | 颜色数值，0xargb格式。 |
+| .value[0].u32 | 颜色数值，0xARGB格式。 |
 
 ## NODE\_PROGRESS\_TYPE
 

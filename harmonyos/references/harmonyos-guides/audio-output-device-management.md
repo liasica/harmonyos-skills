@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-output-
 title: 查询和监听音频输出设备
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频设备路由管理 > 查询和监听音频输出设备
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:43+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:52:00+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:05c05dd9c6b57c4b8f37a92e640a713e571fe310d8df337b94fc54a695a87505
 ---
 

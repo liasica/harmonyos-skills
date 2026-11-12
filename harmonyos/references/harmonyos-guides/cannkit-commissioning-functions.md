@@ -1,14 +1,13 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-commissioning-functions
-title: 调测功能介绍
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子调试调优 > 调测功能介绍
+title: AscendC调测调优功能
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC算子调试调优 > AscendC调测调优功能
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:30+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:27a9f108fc086bb9ee7dd1625eff6271a7aa6591ae855ac011f511e433399860
+scraped_at: 2026-11-12T09:52:42+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:5db10237bdca1c39fbf06d65b264341d351926098d26a5cd347c11f54d8c296b
 ---
 
 * **[Tiling调测功能](cannkit-tiling-tuning.md)**
 * **[CPU孪生调试功能](cannkit-cpu-twin-debugging.md)**
-* **[Simulator性能仿真功能](cannkit-simulator-performance-simulation.md)**
-* **[更多功能](cannkit-more-functions.md)**
+* **[Simulator仿真功能](cannkit-simulator-performance-simulation.md)**

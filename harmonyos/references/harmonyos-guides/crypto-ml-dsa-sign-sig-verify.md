@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-ml-dsa
 title: 使用ML-DSA密钥对签名验签(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 签名验签 > 使用ML-DSA密钥对签名验签(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:26+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:51:34+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:ed85aa2ac8df082fbc8d2d26d8bed1e433969768c6c82bfa51f91a1b40d09393
 ---
 

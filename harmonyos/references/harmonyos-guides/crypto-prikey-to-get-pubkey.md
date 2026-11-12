@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-prikey
 title: 使用私钥对象获取公钥对象(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥生成与转换 > 使用私钥对象获取公钥对象(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:54+08:00
-doc_updated_at: 2026-09-23
+scraped_at: 2026-11-12T09:51:33+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:f06b5838d005bb3d5bb4906345dc824034850fe627497406567de7b1f6427568
 ---
 

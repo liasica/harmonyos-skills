@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-habit
 title: 场景体验
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 习惯推荐方案 > 场景体验
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:09+08:00
+scraped_at: 2026-11-12T09:52:44+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d74f0add8bee0ef896f157fd5d6c6d4131ab5f2b282383804373038ace59dff1
+content_hash: sha256:b91734f36137e356e978d90d5a2cf8ec50230f96fe7218d46c740135d9bdeed7
 ---
 
 ## 典型场景
 
 当前习惯推荐可在小艺建议入口分发，在不同垂域中，填充功能详细参数或内容的逻辑不同，主要典型场景可分为常用接续、常用复访、常用推新三类。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/pFY8shQ1QE6VmVGPPKn2RQ/zh-cn_image_0000002809011461.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/oIQbcqBgT_Sjqwxm3pXDMQ/zh-cn_image_0000002786520656.png)
 
 以常看视频续播为例，系统预测当前用户使用华为视频的播放视频功能概率较高，会选择用户最近观看且还没看完的视频内容来补充功能细节，在小艺建议中以模板卡形式推荐展示，用户点击卡片后，实现一步跳转进应用的视频播放页。
 
@@ -22,4 +22,4 @@ content_hash: sha256:d74f0add8bee0ef896f157fd5d6c6d4131ab5f2b282383804373038ace5
 
 以下为播放歌曲-习惯推荐的卡片示例。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/2UFtc1X_QyuEi4fZ7zYQbQ/zh-cn_image_0000002809051375.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/M0lPtzeaTZiOCaJ_qhUzsA/zh-cn_image_0000002786360728.png)

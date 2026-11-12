@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_space-bef
 title: "@hw-stylistic/space-before-blocks"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > ArkTS代码风格规则@hw-stylistic > @hw-stylistic/space-before-blocks
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:13+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:a5d689aef7906bbc52b9bddcee004db6d4d715f835f9114f8bd05ccdc371613a
+scraped_at: 2026-11-12T09:52:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0eccc97d514430e431132313f4f036dfecb834a912f4c41bd50ee21cbfe0df32
 ---
 
 强制在“{”之前加空格。该规则仅检查.ets文件类型。
@@ -87,4 +87,4 @@ struct Index{
 "plugin:@hw-stylistic/all"
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

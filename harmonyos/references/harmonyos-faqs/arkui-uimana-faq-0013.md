@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-fa
 title: 如何控制窗口旋转方向
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > 如何控制窗口旋转方向
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:11:10+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:a81cd5e06139f0f0bf783bc91e25cb72c964e58f5342bfaddc549ebda1a7b11c
+scraped_at: 2026-11-12T09:58:57+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:6999c84ba4626d3e45d48439edf2bbad2ddf1f9d17e6c040b0b1051ad97e399b
 ---
 
 **Q：如何监听当前屏幕的横竖屏状态？如何实现页面跟随屏幕横竖屏自动旋转？**
@@ -86,7 +86,7 @@ struct ScreenTest {
 }
 ```
 
-参考链接：[display.on](../harmonyos-references/js-apis-display.md#displayonaddremovechange)、[设置窗口的显示方向属性](../harmonyos-references/arkts-apis-window-window.md#setpreferredorientation9)。
+参考链接：[display.on](../doccenter-references/api/js-apis-display.md#displayonadd--remove--change)、[设置窗口的显示方向属性](../harmonyos-references/arkts-apis-window-window.md#setpreferredorientation9)。
 
 **Q：如何锁定设备竖屏，使得窗口不随屏幕旋转？**
 

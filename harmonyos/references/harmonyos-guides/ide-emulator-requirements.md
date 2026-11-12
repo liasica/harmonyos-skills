@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-
 title: 使用环境
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 使用模拟器运行应用 > 概述 > 使用环境
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:23:02+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:70951f56bc72e02804356de40d9c9e4be2e7bd71c118de96781e09b6ff40f417
+scraped_at: 2026-11-12T09:53:02+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:fa60d83886ee3a274746bc9c9426de5ddbe4eea0b8650c228cc0cecdf39993b6
 ---
 
 模拟器在本地计算机上创建和运行，能够在运行和调试应用/元服务时保持良好的流畅性和稳定性，但会占用一定的计算机资源，请确保预留充足的系统CPU和内存资源，具体的运行环境要求如下。如果计算机未达到模拟器使用的最低要求配置，可能导致使用体验不佳。
@@ -31,3 +31,5 @@ Mac运行环境：
 | 磁盘空间 | 16GB | 32GB及以上 |
 | 屏幕 | 屏幕分辨率1280\*800像素以上 | 屏幕分辨率1920\*1080像素以上 |
 | GPU | 支持OpenGL版本4.1 | 支持OpenGL版本4.1及以上 |
+
+Linux模拟器的运行环境和使用方式请参考[模拟器工具（Emulator）](../doccenter-deveco-studio/ide-commandline-emulator.md)。

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-mult
 title: "@performance/multiple-associations-state-var-check"
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/multiple-associations-state-var-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:32+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:863761a37df5895ee52d9bb87cdb46d300dba4e46905ea32157f90c45a9ef081
+scraped_at: 2026-11-12T09:53:18+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0d27692e3b73cb7f2664165b8fbd43e29293767603ff5b8b5c2dec9eb745c436
 ---
 
 多个组件关联同一数据时，建议在组件中使用@Watch装饰器添加更新条件，避免不必要的组件更新。
 
-[通用丢帧场景](../best-practices/bpta-status-management.md#section117631443131915)下，建议优先修改。
+通用丢帧场景下，建议优先修改。
 
 ## 规则配置
 

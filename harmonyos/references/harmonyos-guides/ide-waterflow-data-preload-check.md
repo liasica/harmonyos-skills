@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-waterflow
 title: "@performance/waterflow-data-preload-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/waterflow-data-preload-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:13+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:a4125c2526ed5ff8f49f534d85a51025699120416fe134fbaa70812ae80cee58
+scraped_at: 2026-11-12T09:52:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:cf6edd10595aef3da7be243461265ed354fec2a64aab1059afd3eaa0f14dac87
 ---
 
-建议对waterflow子组件进行数据预加载。
+建议对WaterFlow子组件进行数据预加载。
 
 滑动丢帧场景下，建议优先修改。
 
@@ -477,4 +477,4 @@ plugin:@performance/recommended
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: HdsTabs (底部页签)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsTabs (底部页签)
 category: harmonyos-references
-scraped_at: 2026-11-04T08:34:19+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:01769b6fcf5f6ddf54a623a4d862071b280e2474af16e5f206cab312032eb701
+scraped_at: 2026-11-12T09:55:18+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:496ffef144db8ecadf3ffb06299070a995e7ab3a9535f3553a432117e934d717
 ---
 
 本模块提供Tabs容器组件的分割线样式，模糊样式和页签侧边栏半屏居中对齐样式的效果。
@@ -558,6 +558,7 @@ barFloatingStyle(barFloatingStyle?: Optional<HdsTabsFloatingStyle>)
 | barOpacity | number | 否 | 是 | 页签栏透明度，1表示不透明，0表示完全透明，取值范围为[0, 1]。  默认值：1。 |
 | thermoCtrl | boolean | 否 | 是 | 温控开关。  true：开启温控。  false：不开启温控。  默认值：false。 |
 | systemMaterialEffect | [SystemMaterialParams](ui-design-hdstabs.md#systemmaterialparams) | 否 | 是 | 材质参数。  默认值：undefined，没有新材质。 |
+| barBackgroundColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 迷你栏和页签栏的背景色。  **起始版本：** 26.0.1 |
 
 ## HdsBarWidthRangeOptions
 
@@ -1233,7 +1234,7 @@ struct Index {
 
 效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/uPypRUnoQy-s_6hgsnseew/zh-cn_image_0000002809052727.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/t6gfVQhST9ameB5pt4vgig/zh-cn_image_0000002786522018.png)
 
 ### 支持出血效果
 
@@ -1282,7 +1283,7 @@ struct Index {
 
 效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/KrkrbOoISlGZ-jPU67LLNg/zh-cn_image_0000002779853162.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/MrSCFFhESh2NMWspcOoOYA/zh-cn_image_0000002786362090.jpg)
 
 ### 页签半屏居中对齐布局
 
@@ -1328,7 +1329,7 @@ struct Index {
 
 效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/Z8odiFqtRxupyahLwiOkNA/zh-cn_image_0000002779693194.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/rEMdamy6T0yykDE3CPdCsQ/zh-cn_image_0000002815561511.jpg)
 
 ### 页签栏悬浮样式
 
@@ -1414,4 +1415,4 @@ struct Index {
 
 效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/-E98Ca7ZQj665ldQOEiZSg/zh-cn_image_0000002809012815.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/e4khh30jRnKopflmyOVRyg/zh-cn_image_0000002815401595.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-unsafe
 title: "@typescript-eslint/no-unsafe-call"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-unsafe-call
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:10+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:44b357dc837d3563fd102fdcf2e9639918a96d6c6f3b1388fe78777af18a6f63
+scraped_at: 2026-11-12T09:52:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f43e42315b43b0e2e007f2e766bdd984d33cf503ef333cd6e7888e38b4a14ff6
 ---
 
 禁止调用“any”类型的表达式。
@@ -64,4 +64,4 @@ plugin:@typescript-eslint/recommended
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

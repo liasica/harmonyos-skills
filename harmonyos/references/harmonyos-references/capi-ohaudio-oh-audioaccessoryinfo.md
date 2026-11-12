@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohau
 title: OH_AudioAccessoryInfo
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 结构体 > OH_AudioAccessoryInfo
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:21+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:cc5cbad20819e0b7eb40e97ee88b15efa1dfaadf90d10157f402af5855e20095
+scraped_at: 2026-11-12T09:56:24+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c9ed76eca5aab2a07fd27c141ae57518cfe2a828a583951c7eda4637c3ef46b8
 ---
 
 ```c
-typedef struct OH_AudioAccessoryInfo {...} OH_AudioAccessoryInfo
+typedef struct {...} OH_AudioAccessoryInfo
 ```
 
 ## 概述

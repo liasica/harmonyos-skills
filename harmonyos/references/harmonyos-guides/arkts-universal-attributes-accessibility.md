@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-univers
 title: 无障碍开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 无障碍与适老化 > 无障碍开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:40+08:00
-doc_updated_at: 2026-09-23
+scraped_at: 2026-11-12T09:51:16+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:91ca5041170b7e78b43652b1f9e7be936d5392918e8b5928a3e4982edf2104b0
 ---
 

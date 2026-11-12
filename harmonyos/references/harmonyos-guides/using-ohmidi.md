@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ohmidi
 title: 使用OH_MIDI进行MIDI开发(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > MIDI设备通信 > 使用OH_MIDI进行MIDI开发(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:47+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:38d561081a2e8d58699a8c750fd800a065f36a0f1328180464fcc4c8d6f22dde
+scraped_at: 2026-11-12T09:52:01+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a3e1300e9c1b65eddcb90c1f624d07b38f79e35be01714b848d9a5033e41847d
 ---
 
 ## 场景介绍
@@ -95,7 +95,7 @@ MIDI功能的权限需求根据使用场景不同而有所区别。
 * onDeviceChange：当MIDI设备连接或断开时由系统自动调用。开发者在此回调中处理设备的接入和移除逻辑。
 * onError：当MIDI服务发生错误时调用。开发者在此回调中处理错误日志记录和异常恢复逻辑，如重新创建客户端。
 
-通过调用[OH\_MIDIClient\_Create](../harmonyos-references/capi-native-midi-h.md#oh_midiclient_create)接口创建MIDI客户端实例，传入回调结构体和用户数据。
+通过调用[OH\_MIDIClient\_Create](../harmonyos-references/capi-native-midi-h.md#oh_midiclient_create)接口创建MIDI客户端实例，传入回调结构体和用户数据。接口拉起MIDI服务会较为耗时，建议放在非主线程中运行。
 
 ```
 // 创建MIDI客户端。
@@ -831,23 +831,6 @@ static void OnMIDIReceived(void *userData, const OH_MIDIEvent *events, size_t ev
     }
 }
 ```
-
-## 完整示例
-
-完整的示例代码可以在示例项目中查看：
-
-* 示例项目路径：https://gitcode.com/openharmony/applications\_app\_samples/blob/master/code/DocsSample/Media/Audio/Midi。
-
-示例项目展示了：
-
-* 创建和销毁MIDI客户端。
-* 设备枚举和设备变化回调。
-* 打开/关闭设备（USB和BLE）。
-* 获取端口信息。
-* 打开/关闭输入输出端口。
-* 发送MIDI消息（包括Note On/Off和SysEx）。
-* 接收MIDI消息回调。
-* 使用userData传递上下文数据。
 
 ## 相关参考
 

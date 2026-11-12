@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 预加载实现类
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 预加载 > 调用预加载 > 添加预加载依赖类 > 预加载实现类
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:25+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:053de52955f1efce109eace4b4b2175df27477e9eaeb1f33f734ea0db96319f0
+scraped_at: 2026-11-12T09:52:22+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:654c27ca220a64756fc92a06562a53bd599df92e54dcfe6d079a2bac2052e068
 ---
 
-在“entry/src/main/ets/prefetchUtil”目录下新增PrefetchUtil.ets和PrefetchWrapper.ets。
+在“entry/src/main/ets/PrefetchUtil”目录下新增PrefetchUtil.ets和PrefetchWrapper.ets。
 
 PrefetchUtil和PrefetchWrapper实现类功能如下：
 

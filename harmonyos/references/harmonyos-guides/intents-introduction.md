@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-intro
 title: Intents Kit简介
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > Intents Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:09+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c16718a48cfeec8f0d886f90fdc128f8fe50b14749ed342aba42f7295d53dba0
+scraped_at: 2026-11-12T09:52:44+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:89e99c899f96256acdd52dbfcd3e7862163a01cf30ae191efa05337f6cfc52cb
 ---
 
 Intents Kit（意图框架服务）是HarmonyOS级的意图标准体系 ，意图连接了应用/元服务内的业务功能。
@@ -14,7 +14,7 @@ Intents Kit（意图框架服务）是HarmonyOS级的意图标准体系 ，意�
 
 系统入口、意图框架、鸿蒙生态的关系如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/h_d8hquvRQGg87Z_bJt7Ug/zh-cn_image_0000002809051371.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/iFD9FSoCTHCHaJVc6i166w/zh-cn_image_0000002786360724.png)
 
 ## Intents Kit优势
 
@@ -29,7 +29,7 @@ Intents Kit（意图框架服务）是HarmonyOS级的意图标准体系 ，意�
 | 习惯推荐 | 小艺建议 | 应用或元服务向系统共享意图，系统学习意图规律，在合适的时机推荐服务。比如向系统共享用户浏览资讯意图的数据，经过习惯规律性学习后，小艺建议会在合适的时机给用户推荐合适的浏览资讯服务与内容。 |
 | 事件推荐 | 小艺建议 | 应用或元服务向系统共享意图，系统提取意图内容中的事件，结合时间、位置等信息向用户推荐提醒服务。比如向系统共享用户购买的电影票订单数据，由系统提取订单数据中的关键特征如时间、位置等，小艺建议会在合适的时机给用户推荐观影提醒服务。 |
 | 位置推荐 | 小艺建议 | 位置感知推荐能力基于华为意图框架与花瓣地图定位识别能力，通过小艺建议等智慧入口，适时、适需地将服务内容以卡片形式推荐给用户。位置感知基于GNSS、WLAN和基站等融合定位技术，设置圆形、多边形等地理围栏，提供室内外高精度定位能力。 |
-| 技能调用-语音 | 小艺对话 | 系统基于AI大模型对理解用户显性或隐性的输入，帮用户完成应用或元服务的功能调用。比如用户在小艺对话中询问“从深圳去北京的飞机要多少钱”，可以理解用户搜索机票的意图，调用应用或元服务提供的搜索机票意图获取机票数据并向用户呈现。 |
+| 技能调用-语音 | 小艺对话 | 系统基于AI大模型理解用户显性或隐性的输入，帮用户完成应用或元服务的功能调用。比如用户在小艺对话中询问“从深圳去北京的飞机要多少钱”，可以理解用户搜索机票的意图，调用应用或元服务提供的搜索机票意图获取机票数据并向用户呈现。 |
 | 本地搜索 | 小艺搜索 | 应用或元服务向系统共享意图，系统对意图的实体内容构建本地索引，满足用户搜索的需求。比如向系统共享“华为开发者大会”相关报道资讯后，用户在该入口输入相关关键词，即可将应用或元服务内的资讯内容检索出来。 |
 
 为了满足更细粒度的分发诉求，每类特性类别下提供多个具体特性，具体特性的分发系统入口、开发依赖见[各垂域的智慧分发特性列表](../service/intents-ai-distribution-characteristic-0000001901922213.md#section2656133582215)。具体特性开发依赖的意图相关字段见[各垂域意图Schema](../service/intents-schema-0000001901962713.md)。
@@ -38,7 +38,7 @@ Intents Kit（意图框架服务）是HarmonyOS级的意图标准体系 ，意�
 
 HarmonyOS、应用/元服务的交互中，意图运行方式分为意图调用和意图共享：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/FxIsPCw4TDqaW34N93F7PQ/zh-cn_image_0000002779851806.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/uXdS0GlfQD6x4Wo-ZNQ9Rw/zh-cn_image_0000002815560145.png)
 
 | “**意图”运行方式** | **发起者** | **定义** |
 | --- | --- | --- |
@@ -49,7 +49,10 @@ HarmonyOS、应用/元服务的交互中，意图运行方式分为意图调用�
 
 ### 支持的设备
 
-Phone、Tablet、PC/2in1。
+| 特性 | 支持的设备 |
+| --- | --- |
+| 意图共享、意图调用 | Phone、Tablet、PC/2in1 |
+| 可视可说 | Phone、Tablet、PC/2in1、TV、Wearable |
 
 ### 支持的国家/地区
 

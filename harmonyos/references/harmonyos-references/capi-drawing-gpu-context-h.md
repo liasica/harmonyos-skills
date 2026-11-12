@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: drawing_gpu_context.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > drawing_gpu_context.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:43+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:1bf7ac451c7a4a289f19246cbb612967c9998f1dd9e4b332f6c4f795929b1c26
+scraped_at: 2026-11-12T09:56:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:662a9d31c1f0299f5ee6a4df3d7073ca693c8697888586d0a37430f703f98647
 ---
 
 ## 概述
@@ -36,7 +36,7 @@ content_hash: sha256:1bf7ac451c7a4a289f19246cbb612967c9998f1dd9e4b332f6c4f795929
 
 | 名称 | 描述 |
 | --- | --- |
-| [OH\_Drawing\_GpuContext\* OH\_Drawing\_GpuContextCreateFromGL(OH\_Drawing\_GpuContextOptions gpuContextOptions)](capi-drawing-gpu-context-h.md#oh_drawing_gpucontextcreatefromgl) | 用于创建一个使用OpenGL作为后端接口的图形处理器上下文对象。创建的图形处理器上下文对象使用完毕后，需要调用[OH\_Drawing\_GpuContextDestroy](capi-drawing-gpu-context-h.md#oh_drawing_gpucontextdestroy)销毁并回收内存。 |
+| [OH\_Drawing\_GpuContext\* OH\_Drawing\_GpuContextCreateFromGL(OH\_Drawing\_GpuContextOptions gpuContextOptions)](capi-drawing-gpu-context-h.md#oh_drawing_gpucontextcreatefromgl) | 用于创建一个使用OpenGL作为后端接口的图形处理器上下文对象。创建的图形处理器上下文对象使用完毕后，需要调用[OH\_Drawing\_GpuContextDestroy](capi-drawing-gpu-context-h.md#oh_drawing_gpucontextdestroy)销毁并回收内存。（已废弃） |
 | [OH\_Drawing\_GpuContext\* OH\_Drawing\_GpuContextCreate(void)](capi-drawing-gpu-context-h.md#oh_drawing_gpucontextcreate) | 用于创建一个图形处理器上下文对象，使用的后端类型取决于运行设备。创建的图形处理器上下文对象使用完毕后，需要调用[OH\_Drawing\_GpuContextDestroy](capi-drawing-gpu-context-h.md#oh_drawing_gpucontextdestroy)销毁并回收内存。 |
 | [void OH\_Drawing\_GpuContextDestroy(OH\_Drawing\_GpuContext\* gpuContext)](capi-drawing-gpu-context-h.md#oh_drawing_gpucontextdestroy) | 用于销毁图形处理器上下文对象并回收该对象占用的内存。调用后该图形处理器上下文对象指针失效，不可再次使用或重复调用。 |
 

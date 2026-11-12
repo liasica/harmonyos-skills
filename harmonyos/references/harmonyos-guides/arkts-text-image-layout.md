@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-text-im
 title: 图文混排
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用文本 > 图文混排
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:14+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c7ec4a3eb24dc0a946905e4b8bb387f05cc563ef15102b59139f0bd061daecc1
+scraped_at: 2026-11-12T09:51:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0079a423f70b7e95a8ae541ad91ed88288d0c08a538f6b516871e7cf5ffcbf75
 ---
 
 图文混排是指图片与文字混合排列，文字可展示于图片四周。此排列方式能够直观呈现页面信息，增强视觉冲击力，使页面展示效果更加多样化。
@@ -36,7 +36,7 @@ Text() {
 }.textVerticalAlign(TextVerticalAlign.CENTER)
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/e2XQNrhTTzq465bz8rcKGg/zh-cn_image_0000002779690062.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/ajf38NWvT-q0lKI5VeP0fQ/zh-cn_image_0000002815558395.png)
 
 ## 使用属性字符串实现图文混排
 
@@ -68,8 +68,8 @@ struct styled_string_demo {
 
   private async getPixmapFromMedia(resource: Resource) {
     try {
-      let unit8Array = await this.getUIContext().getHostContext()?.resourceManager?.getMediaContent(resource.id);
-      let imageSource = image.createImageSource(unit8Array?.buffer?.slice(0, unit8Array?.buffer?.byteLength));
+      let uint8Array = await this.getUIContext().getHostContext()?.resourceManager?.getMediaContent(resource.id);
+      let imageSource = image.createImageSource(uint8Array?.buffer?.slice(0, uint8Array?.buffer?.byteLength));
       let createPixelMap: image.PixelMap = await imageSource.createPixelMap({
         desiredPixelFormat: image.PixelMapFormat.RGBA_8888
       });
@@ -224,4 +224,4 @@ struct styled_string_demo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/niImfoSeShS3GG3NaW-1dQ/zh-cn_image_0000002809009683.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/_-G4iR-WTxOogF5pQk3ZyA/zh-cn_image_0000002815398479.png)

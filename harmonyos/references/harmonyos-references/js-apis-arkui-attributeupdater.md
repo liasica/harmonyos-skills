@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: AttributeUpdater
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > arkui > AttributeUpdater
 category: harmonyos-references
-scraped_at: 2026-11-04T08:32:39+08:00
+scraped_at: 2026-11-12T09:54:00+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:f087b81da2a0cfa4c5934b7f98fd6d1f5f17fdc867bbdb0b6f9f3f5c23b8254e
+content_hash: sha256:5ffdf48dbc936fda5a8c93aa355cc55271221c986f94b0f729d7f46e0fb4d769
 ---
 
 将属性直接设置给组件，无需标记为状态变量即可直接触发UI更新。适用于需要在不定义状态变量的情况下动态更新组件属性的场景，如动态修改组件构造参数、避免为一次性属性更新定义状态变量等。
@@ -148,7 +148,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/yC1mCSytQG2QqJt_Uw4Smg/zh-cn_image_0000002779692056.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/GZ2wBm_2T9-vGS35hAjFeg/zh-cn_image_0000002786520874.gif)
 
 ### attribute
 
@@ -203,7 +203,7 @@ struct UpdaterDemo2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/1mIniEniS860NHLDENBlGw/zh-cn_image_0000002809011677.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/4IyMRvypSie7PE73QQOzuw/zh-cn_image_0000002786360946.gif)
 
 ### 属性
 
@@ -252,7 +252,7 @@ struct AttributeDemo3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/d2WQsNesRgqlRR_9mxTEQA/zh-cn_image_0000002809051591.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/4s5CLxdvSxyY-zcFqy5MLw/zh-cn_image_0000002815560367.gif)
 
 ### onComponentChanged
 
@@ -319,4 +319,4 @@ struct UpdaterDemo4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/fF7e8vzKReusSMRznQdvDg/zh-cn_image_0000002779852026.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/G2G8tvXPTHiBU4zqEGY0ow/zh-cn_image_0000002815400451.gif)

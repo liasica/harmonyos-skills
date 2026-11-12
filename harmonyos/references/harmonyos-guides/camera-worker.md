@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-worker
 title: 在Worker线程中使用相机(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 在Worker线程中使用相机(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:09+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:4a855a033c30b24a6ac5311853805612016c4b2875d38565b70242fff97c3870
+scraped_at: 2026-11-12T09:52:04+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:489f453595e679884b1d8136616b8890cde4bd7ee77d316d15a693aa87ed614b
 ---
 
 [Worker](worker-introduction.md)主要作用是为应用程序提供一个多线程的运行环境，可满足应用程序在执行过程中与主线程分离，在后台线程中运行一个脚本进行耗时操作，极大避免类似计算密集型或高延迟的任务阻塞主线程的运行。
@@ -161,10 +161,12 @@ content_hash: sha256:4a855a033c30b24a6ac5311853805612016c4b2875d38565b70242fff97
      }
    }
 
-   workerPort.onmessageerror = (e: MessageEvents) => {
+   workerPort.onmessageerror = (error: MessageEvents) => {
+    console.error(`onmessage error is called, ${error}`);
    }
 
-   workerPort.onerror = (e: ErrorEvent) => {
+   workerPort.onerror = (error: ErrorEvent) => {
+    console.error(`onerror is called, ${error}`);
    }
    ```
 4. 创建组件，用于显示预览流，在页面相关生命周期中构造ThreadWorker实例，在worker线程中完成相机初始化和释放。
@@ -181,10 +183,10 @@ content_hash: sha256:4a855a033c30b24a6ac5311853805612016c4b2875d38565b70242fff97
      private workerInstance: worker.ThreadWorker = new worker.ThreadWorker('entry/ets/workers/CameraWorker.ets');
      private uiContext: UIContext = this.getUIContext();
      private context: Context | undefined = this.uiContext.getHostContext();
-    private mXComponentOptions: XComponentOptions = {
-      type: XComponentType.SURFACE,
-      controller: this.mXComponentController
-    }
+     private mXComponentOptions: XComponentOptions = {
+       type: XComponentType.SURFACE,
+       controller: this.mXComponentController
+     }
 
      onPageShow(): void {
        if ('' !== this.surfaceId) {
@@ -249,8 +251,8 @@ content_hash: sha256:4a855a033c30b24a6ac5311853805612016c4b2875d38565b70242fff97
 
 不使用Worker：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/ngqVQQq2SJOTpC2wu2ILTQ/zh-cn_image_0000002779850974.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/RuzOOPGMQd2KAhmLBaaK5Q/zh-cn_image_0000002815559335.png)
 
 使用Worker：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/QaRZOJJiRZiTcsw0-YefTw/zh-cn_image_0000002779691006.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/OtVDeupXQNi7hlvowFyk1w/zh-cn_image_0000002815399419.png)

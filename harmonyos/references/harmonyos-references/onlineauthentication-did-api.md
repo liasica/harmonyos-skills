@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/onlineaut
 title: DID
 breadcrumb: API参考 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > ArkTS API > DID
 category: harmonyos-references
-scraped_at: 2026-09-25T07:11:31+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:4b220f26c062f86dc6f9c43e0354e5ce56ed292e0b0cd6cde27ced89603d383c
+scraped_at: 2026-11-12T09:55:25+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:85a09d0d00d634fb9f2734497be29b7c2c5acbda5499b6c395672fb27b6c4542
 ---
 
-DID（Decentralized Identifier，去中心化身份）能力。
+DID（Decentralized Identifier，分布式数字身份）能力。
 
-DID提供基于W3C DID标准的身份认证和可验证凭证管理能力，支持DID密钥生成、数字凭证导入/查询/删除、数据签名等功能，提供去中心化身份认证和可验证凭证管理能力。
+DID提供基于W3C DID标准的身份认证和可验证凭证管理能力，支持DID密钥生成、数字凭证导入/查询/删除、数据签名等功能，提供分布式数字身份认证和可验证凭证管理能力。
 
 **起始版本：** 26.0.0
 

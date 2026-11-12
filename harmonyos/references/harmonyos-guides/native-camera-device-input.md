@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 设备输入(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用必选能力(C/C++) > 设备输入(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:50+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:f6b07c3942cae70cc120353d1adeee074d327112c235b65422b66610fa148979
+scraped_at: 2026-11-12T09:52:04+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:72b796b4052c4115865c43fef89d93057ab6e1e4b0d63214feb53f51e1b38c67
 ---
 
 在开发相机应用时，需要先[申请相关权限](camera-preparation.md)。
@@ -44,7 +44,7 @@ content_hash: sha256:f6b07c3942cae70cc120353d1adeee074d327112c235b65422b66610fa1
    // 监听cameraInput错误信息。
    void OnCameraInputError(const Camera_Input* cameraInput, Camera_ErrorCode errorCode)
    {
-      OH_LOG_INFO(LOG_APP, "OnCameraInput errorCode: %{public}d", errorCode);
+      OH_LOG_ERROR(LOG_APP, "OnCameraInput errorCode: %{public}d", errorCode);
    }
 
    CameraInput_Callbacks* GetCameraInputListener(void)

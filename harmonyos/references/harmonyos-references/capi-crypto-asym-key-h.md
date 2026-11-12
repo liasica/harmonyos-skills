@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cryp
 title: crypto_asym_key.h
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > C API > 头文件 > crypto_asym_key.h
 category: harmonyos-references
-scraped_at: 2026-09-05T06:18:34+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:e1f7bc0ad7ba9c6d6018bca3ff1ecaf3bd3a8353356e510dbe5d8c6c65b0d52c
+scraped_at: 2026-11-12T09:55:20+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:5be8b4b51162502e44012fae4b8c47bb9c4a44674c35b70e7009f54e1c5f6ca6
 ---
 
 ## 概述
@@ -65,7 +65,7 @@ content_hash: sha256:e1f7bc0ad7ba9c6d6018bca3ff1ecaf3bd3a8353356e510dbe5d8c6c65b
 | [OH\_Crypto\_ErrCode OH\_CryptoPrivKeyEncodingParams\_SetParam(OH\_CryptoPrivKeyEncodingParams \*ctx, CryptoPrivKeyEncoding\_ParamType type, Crypto\_DataBlob \*value)](capi-crypto-asym-key-h.md#oh_cryptoprivkeyencodingparams_setparam) | 设置私钥编码参数。 |
 | [void OH\_CryptoPrivKeyEncodingParams\_Destroy(OH\_CryptoPrivKeyEncodingParams \*ctx)](capi-crypto-asym-key-h.md#oh_cryptoprivkeyencodingparams_destroy) | 销毁私钥编码参数。 |
 | [OH\_Crypto\_ErrCode OH\_CryptoPrivKey\_Encode(OH\_CryptoPrivKey \*key, Crypto\_EncodingType type, const char \*encodingStandard, OH\_CryptoPrivKeyEncodingParams \*params, Crypto\_DataBlob \*out)](capi-crypto-asym-key-h.md#oh_cryptoprivkey_encode) | 对私钥进行编码。  注意：使用完成后必须通过[OH\_Crypto\_FreeDataBlob](capi-crypto-common-h.md#oh_crypto_freedatablob)释放out内存。 |
-| [OH\_Crypto\_ErrCode OH\_CryptoPrivKey\_GetParam(OH\_CryptoPrivKey \*key, CryptoAsymKey\_ParamType item, Crypto\_DataBlob \*value)](capi-crypto-asym-key-h.md#oh_cryptoprivkey_getparam) | 获取私钥的指定参数。  注意：使用完成后必须通过[OH\_Crypto\_FreeDataBlob](capi-crypto-common-h.md#oh_crypto_freedatablob)释放out内存。 |
+| [OH\_Crypto\_ErrCode OH\_CryptoPrivKey\_GetParam(OH\_CryptoPrivKey \*key, CryptoAsymKey\_ParamType item, Crypto\_DataBlob \*value)](capi-crypto-asym-key-h.md#oh_cryptoprivkey_getparam) | 获取私钥的指定参数。  注意：使用完成后必须通过[OH\_Crypto\_FreeDataBlob](capi-crypto-common-h.md#oh_crypto_freedatablob)释放value内存。 |
 | [OH\_Crypto\_ErrCode OH\_CryptoAsymKeySpec\_GenEcCommonParamsSpec(const char \*curveName, OH\_CryptoAsymKeySpec \*\*spec)](capi-crypto-asym-key-h.md#oh_cryptoasymkeyspec_geneccommonparamsspec) | 生成EC通用参数规格。  注意：使用完成后必须通过[OH\_CryptoAsymKeySpec\_Destroy](capi-crypto-asym-key-h.md#oh_cryptoasymkeyspec_destroy)销毁spec内存。 |
 | [OH\_Crypto\_ErrCode OH\_CryptoAsymKeySpec\_GenDhCommonParamsSpec(int pLen, int skLen, OH\_CryptoAsymKeySpec \*\*spec)](capi-crypto-asym-key-h.md#oh_cryptoasymkeyspec_gendhcommonparamsspec) | 生成DH通用参数规格。  注意：使用完成后必须通过[OH\_CryptoAsymKeySpec\_Destroy](capi-crypto-asym-key-h.md#oh_cryptoasymkeyspec_destroy)销毁spec内存。 |
 | [OH\_Crypto\_ErrCode OH\_CryptoAsymKeySpec\_Create(const char \*algoName, CryptoAsymKeySpec\_Type type, OH\_CryptoAsymKeySpec \*\*spec)](capi-crypto-asym-key-h.md#oh_cryptoasymkeyspec_create) | 根据给定的算法名称和规格类型创建非对称密钥规格。  注意：创建的资源必须通过[OH\_CryptoAsymKeySpec\_Destroy](capi-crypto-asym-key-h.md#oh_cryptoasymkeyspec_destroy)销毁。 |

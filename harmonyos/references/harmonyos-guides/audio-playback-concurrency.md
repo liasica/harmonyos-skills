@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-playbac
 title: 音频焦点介绍
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频焦点和音频会话管理 > 音频焦点介绍
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:04+08:00
-doc_updated_at: 2026-10-26
-content_hash: sha256:e492cf6489d72eb41396d8701fe945045970ff74e373ef2fdf7d51c81a8eada4
+scraped_at: 2026-11-12T09:51:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:418175f4706343931ca30a55e6d35fdf0d34d6b403dc7088fad6c52121c006de
 ---
 
 ## 音频焦点概述
@@ -143,8 +143,8 @@ import { audio } from '@kit.AudioKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 // ...
 
-let isPlaying: boolean; // 是否正在播放，实际开发中，对应与音频播放状态相关的模块。
-let isDucked: boolean; // 是否降低音量，实际开发中，对应与音频音量相关的模块。
+let isPlaying: boolean; // 是否正在播放，实际开发中，对应于音频播放状态相关的模块。
+let isDucked: boolean; // 是否降低音量，实际开发中，对应于音频音量相关的模块。
 let started: boolean; // 标识符，记录“开始播放（start）”操作是否成功。
 
 async function onAudioInterrupt(): Promise<void> {
@@ -228,7 +228,7 @@ async function onAudioInterrupt(): Promise<void> {
 
 **规格图例：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/wr6DOeFlTkO_tnDTtTKBlg/zh-cn_image_0000002809050467.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/GG0usOBQR0msY0s-_gY4jQ/zh-cn_image_0000002786359842.png)
 
 推荐使用共享焦点模式（SHARE\_MODE）。应用可按需自行管控各流的播放、暂停、恢复等操作，避免系统默认策略（如STOP）导致音频流无法恢复。
 

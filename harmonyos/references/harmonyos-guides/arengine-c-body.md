@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-c-bo
 title: 人体跟踪与骨骼关键点识别（C/C++）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 人体骨骼点识别与跟踪 > 人体跟踪与骨骼关键点识别（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:02+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:d2f88401fdfeff61e0d83883c51236b133c55b40cbc00d027a7aba190caee8d2
+scraped_at: 2026-11-12T09:52:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ec816fdc949f38ea06bf1605fbbcba76e7f1fc5a2866fae417d50a1ab3c10907
 ---
 
 ## 约束与限制
@@ -358,13 +358,15 @@ for (int i = 0; i < trackableListSize; i++) {
     CHECK(HMS_AREngine_ARBody_GetSkeletonConnection(mArSession, arBody, &skeletonConnections2D));
     const AREngine_ARBodySkeletonType *skeletonTypes = nullptr;
     CHECK(HMS_AREngine_ARBody_GetSkeletonTypes(mArSession, arBody, &skeletonTypes));
+    int32_t pointCnt = 0;
+    CHECK(HMS_AREngine_ARBody_GetSkeletonPointCount(mArSession, arBody, &pointCnt));
     std::vector<int32_t> skeletonValid2Ds;
     for (int j = 0; j < connectionSize * connectionPointSize; j++) {
         skeletonValid2Ds.push_back(skeletonConnections2D[j]);
     }
     std::vector<int32_t> skeletonTypesVec;
-    for (int j = 0; j < sizeof(std::underlying_type_t<AREngine_ARBodySkeletonType>); j++) {
-        skeletonTypesVec.push_back(skeletonConnections2D[j]);
+    for (int j = 0; j < pointCnt; j++) {
+        skeletonTypesVec.push_back(skeletonTypes[j]);
     }
     connections.push_back(skeletonValid2Ds);
     types.push_back(skeletonTypesVec);

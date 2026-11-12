@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/file-processi
 title: 拉起文件处理类应用（startAbility）
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起指定类型的应用 > 拉起文件处理类应用（startAbility）
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:00+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6f46ccb1265d0ee7ed23aec6ced5586e1fec66bfa5b935d5960a5fa11f9e435c
+scraped_at: 2026-11-12T09:50:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:552e1375230646090b7d7cf5470d0b91f2c34dc6966a3716f5111a6889f0e195
 ---
 
 ## 使用场景
@@ -16,7 +16,7 @@ content_hash: sha256:6f46ccb1265d0ee7ed23aec6ced5586e1fec66bfa5b935d5960a5fa11f9
 
 图1 效果示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/jbn0RJ_oQOW1w8eTj-q-5g/zh-cn_image_0000002779849480.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/tTlcZF2wRNmiR_9mMCvRsA/zh-cn_image_0000002786518348.jpeg)
 
 ## 接口关键参数说明
 
@@ -26,13 +26,13 @@ content_hash: sha256:6f46ccb1265d0ee7ed23aec6ced5586e1fec66bfa5b935d5960a5fa11f9
 
 | 参数名称 | 类型 | 是否必填 | 说明 |
 | --- | --- | --- | --- |
-| uri | string | 是 | 表示待打开文件的URI路径，一般配合type使用。  uri格式为：file://bundleName/path  - file：文件URI的标志。  - bundleName：该文件资源的属主。  - path：文件资源在应用沙箱中的路径。 |
+| uri | string | 是 | 表示待打开文件的URI路径，一般配合type使用。  uri格式为：file://bundleName/path  - file：文件URI的标志。  - bundleName：该文件资源的属主。  - path：文件资源在应用沙箱中的路径。  **说明：**  如果是通过Picker获取文件uri，需要先对uri[持久化权限](file-persistpermission.md)。 |
 | type | string | 否 | 表示打开文件的类型，推荐使用[UTD类型](uniform-data-type-descriptors.md)，比如：'general.plain-text'、'general.image'。目前也可以兼容使用[MIME type类型](https://www.iana.org/assignments/media-types/media-types.xhtml?utm_source=ld246.com)，如：'text/xml' 、 'image/\*'等。  **说明：**  1. type为可选字段，如果不传type，系统会尝试根据uri后缀名判断文件类型进行匹配；如果传入type，必须确保与uri的文件类型一致，否则会导致无法匹配到合适的应用。文件后缀与文件类型的映射关系参见[Uniform Type Descriptor(UTD)预置列表](uniform-data-type-list.md)。  2. 不支持传\*/\*。 |
 | parameters | Record<string, Object> | 否 | 表示由系统定义，由开发者按需赋值的自定义参数，文件打开场景请参考表2。 |
 | flags | number | 否 | 表示处理方式，文件打开场景请参考表3。 |
-| action | string | 是 | 表示要执行的通用操作。文件打开场景固定值：'ohos.want.action.viewData' ，表示查看数据的操作。 |
+| action | string | 是 | 表示要执行的通用操作。文件打开场景固定值：'ohos.want.action.viewData' ，表示查看数据的操作。  **说明：**  接口调用传参的action不是'ohos.want.action.viewData'时，也能拉起应用选择框，但是无法体验弹框全部功能。 |
 
-**表2** [parameters](../harmonyos-references/js-apis-app-ability-wantconstant.md#params)相关参数说明
+**表2** [parameters](../harmonyos-references/js-apis-app-ability-want.md#want)相关参数说明
 
 | 参数名称 | 类型 | 说明 |
 | --- | --- | --- |
@@ -135,7 +135,7 @@ content_hash: sha256:6f46ccb1265d0ee7ed23aec6ced5586e1fec66bfa5b935d5960a5fa11f9
 
    支持打开文件的应用需要在[module.json5](module-configuration-file.md)配置文件中声明文件打开能力。其中uris字段表示接收URI的类型，其中scheme固定为file。type字段表示支持打开的文件类型（参见[UTD类型](uniform-data-type-descriptors.md)（推荐）或[MIME type类型](https://www.iana.org/assignments/media-types/media-types.xhtml?utm_source=ld246.com)），如下举例中类型为txt文件。
 
-   ```json
+   ```json5
    {
    "module": {
        // ...
@@ -149,7 +149,7 @@ content_hash: sha256:6f46ccb1265d0ee7ed23aec6ced5586e1fec66bfa5b935d5960a5fa11f9
                ],
                "uris": [
                {
-                   // 允许打开uri中以file://协议开头标识的本地文件
+                   // 允许打开uri中以 file:// 协议开头标识的本地文件
                    "scheme": "file", // 必填，声明协议类型为文件
                    "type": "general.plain-text", // 必填，表示支持打开的文件类型
                    "linkFeature": "FileOpen" // 必填且大小写敏感，表示此URI的功能为文件打开

@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-nat
 title: so信息可视化
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > so信息可视化
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:22+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:ac892e8361abc59c4a8e2f970a8a48e6f55a1a01337cec4cfa82391b9f77dacb
+scraped_at: 2026-11-12T09:53:03+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:2e9b8442c83a5dbd18e27ff1503aa40ca849191fd6211a72ce94a5948e9b32ed
 ---
 
-在native调试窗口中，点击**Layout Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/9R5Jcsp2R92RH3xTms_DPw/zh-cn_image_0000002701663280.png)，勾选**Modules**，打开模块视图。
+在native调试窗口中，点击**Layout Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/xbYBOxMtSvafwKFZQAFLbQ/zh-cn_image_0000002808766791.png)，勾选**Modules**，打开模块视图。
 
 在native调试期间，**Modules**窗口会列出并显示有关应用使用的so信息。点击各属性可按升序/降序来排序，支持字符串匹配搜索。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/Loem6Q0KR-exxLXKLWYx1g/zh-cn_image_0000002701823202.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/_1f-aI96Ss2hVXcmEARe6A/zh-cn_image_0000002808886871.png)
 
 * 加载符号表文件
 
-  如果符号未加载，可右键点击模块，选择**Load Modules**，加载本地携带符号信息的so文件。加载成功后，Symbol Status列会显示"Symbols Loaded"。
+  如果符号未加载，可右键点击模块，选择**Load Module**，加载本地携带符号信息的so文件。加载成功后，Symbol Status列会显示"Symbols Loaded"。
 
   如需将符号恢复为初始状态，可右键点击模块，选择**Reset** **Modules**。
 * 添加源码地址映射

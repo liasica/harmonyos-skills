@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshe
 title: 媒体资源使用指导
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 受限开放能力 > 媒体资源使用指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:47+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:702e13d8c0b38cbd627c622fb4a25fa1924191b1e31efe362b2132fd9cfb7099
+scraped_at: 2026-11-12T09:52:09+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:45eb6687e2fdc9db3685e40f0ee16301c25705e226fd93a2439683337b275bff
 ---
 
 应用可以通过photoAccessHelper的接口，对媒体资源（图片、视频）进行相关操作。
@@ -140,11 +140,11 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 * 获取相册管理模块photoAccessHelper实例。
 * [申请相册管理模块功能相关权限](photoaccesshelper-preparation.md#申请相册管理模块功能相关权限)'ohos.permission.WRITE\_IMAGEVIDEO'和'ohos.permission.READ\_IMAGEVIDEO'。
 
-下面以重命名标题为'oldTestPhoto'的图片为例。
+下面以重命名标题为'test'的图片为例。
 
 **开发步骤**
 
-1. 建立检索条件，获取标题为'oldTestPhoto'的图片资源。
+1. 建立检索条件，获取标题为'test'的图片资源。
 2. 调用[PhotoAccessHelper.getAssets](../harmonyos-references/arkts-apis-photoaccesshelper-photoaccesshelper.md#getassets-1)接口获取目标图片资源。
 3. 调用[FetchResult.getFirstObject](../harmonyos-references/arkts-apis-photoaccesshelper-fetchresult.md#getfirstobject-1)接口获取要重命名的图片对象。
 4. 调用[MediaAssetChangeRequest.setTitle](../harmonyos-references/arkts-apis-photoaccesshelper-mediaassetchangerequest.md#settitle11)接口将图片重命名。

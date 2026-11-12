@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-dataprotectionkit-7001
 title: Data Protection Kit
-breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > OS平台能力 > API变更清单 > 26.0.0 Beta1引入的API > Data Protection Kit
+breadcrumb: 版本说明 > 更多版本 > 26.0.0 > OS平台能力 > API变更清单 > 26.0.0 Beta1引入的API > Data Protection Kit
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:49:06+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-11-12T09:50:00+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:98f6ced2f9649a4eafaa21b4aa95f4f7e418ead14efc4c1813eeac922d62c571
 ---
 

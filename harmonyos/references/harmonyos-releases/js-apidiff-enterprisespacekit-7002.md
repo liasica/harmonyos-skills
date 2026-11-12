@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-enterprisespacekit-7002
 title: Enterprise Space Kit
-breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > OS平台能力 > API变更清单 > 26.0.0 Beta2引入的API > Enterprise Space Kit
+breadcrumb: 版本说明 > 更多版本 > 26.0.0 > OS平台能力 > API变更清单 > 26.0.0 Beta2引入的API > Enterprise Space Kit
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:49:04+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-11-12T09:49:57+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:f38c427a3e44ca0f49d52c7313275300b99d57c153b13f36b1cc4d0c293a3620
 ---
 

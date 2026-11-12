@@ -1,14 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-basic-datatype
 title: 数据类型
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC昇腾到麒麟兼容性迁移指南 > Ascend910B/Ascend910C到KirinX90/Kirin9030迁移指导 > 基础API迁移指导 > 数据类型
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC昇腾到麒麟兼容性迁移指南 > Ascend910B/Ascend910C到KirinX90/Kirin9030迁移指导 > 基础API迁移指导 > 数据类型
 category: harmonyos-guides
-scraped_at: 2026-09-08T06:39:34+08:00
-doc_updated_at: 2026-08-14
-content_hash: sha256:b9d037194d32af6bb63bd31c39842c033ded300a2189f569d460c9b189d82d8a
+scraped_at: 2026-11-12T09:52:42+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ffc083a43f28a710c05c0b39dfab1d6bf0b60194190f358e365d8f7561ad724f
 ---
 
-KirinX90/Kirin9030除了不支持bfloat16\_t，MrgSort、Mmad基础api（如不支持float等）、Cast基础API（如不支持s64）等部分API还存在其它数据类型差异，详见[《Ascend C算子接口》](cannkit-ascend-c-apis.md)。若开发者在Ascend910B/Ascend910C使用bfloat16\_t数据类型，在Kirin平台上需要替换成其它数据类型（比如half）。
+KirinX90/Kirin9030除了不支持bfloat16\_t，MrgSort、Mmad基础api（如不支持float等）、Cast基础API（如不支持s64）等部分API还存在其他数据类型差异，详见[《Ascend C算子接口》](cannkit-ascend-c-apis.md)。若开发者在Ascend910B/Ascend910C使用bfloat16\_t数据类型，在Kirin平台上需要替换成其他数据类型（比如half）。
 
 **表1** 数据类型差异兼容说明
 

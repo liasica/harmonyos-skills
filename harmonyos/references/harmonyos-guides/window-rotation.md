@@ -3,12 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-rotati
 title: 窗口旋转
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口基础能力 > 窗口旋转与实践案例 > 窗口旋转
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:14+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:f556720f379c68f3beb3fcd66d36af66a5081e7ba779abe573f7ca9c2379aaca
+scraped_at: 2026-11-12T09:51:21+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0339ce8f06a96aae632b681611e1afadc308586bbf02c777ef6ab1d7c019e286
 ---
 
 ## 窗口旋转简介
+
+窗口旋转功能允许应用程序根据设备的物理方向或用户的交互行为自动调整界面布局，从而提升用户在不同使用场景下的操作体验。
 
 移动设备在用户手中可以任意改变握持方向。在特定场景下，应用需要根据用户握持的方向调整显示页面，或者主动指定在固定方向显示页面，以提供更好的用户体验。比如，双手操作的游戏更倾向于在横屏显示，视频类应用更倾向于在全屏播放和小窗播放间自由切换。
 
@@ -16,7 +18,7 @@ content_hash: sha256:f556720f379c68f3beb3fcd66d36af66a5081e7ba779abe573f7ca9c237
 
 设备有四个显示方向：当用户正向握持设备时，若屏幕的宽度大于高度时，称为横屏（LANDSCAPE），与之倒置的方向则称为反向横屏（LANDSCAPE\_INVERTED）；若屏幕高度大于宽度时，称为竖屏（PORTRAIT），与之倒置的方向称为反向竖屏（PORTRAIT\_INVERTED）。
 
-系统会根据应用设置的旋转策略、设备当前握持方向（重力传感器Sensor角度）、系统旋转锁定开关状态（可下拉控制中心查看/设置）、应用所处的场景（比如分屏、智慧多窗悬浮窗、应用后台等），综合判断并决定应用的显示方向。针对搭载HarmonyOS 7.0.0及以上版本的设备，系统还会结合系统智感旋转开关状态（支持智感传感器的设备，可通过**设置>系统>智感旋转**开启智感旋转开关）决定应用的显示方向。
+系统会根据应用设置的旋转策略、设备当前握持方向（重力传感器角度）、系统旋转锁定开关状态（可下拉控制中心查看/设置）、应用所处的场景（比如分屏、智慧多窗悬浮窗、应用后台等），综合判断并决定应用的显示方向。针对搭载HarmonyOS 7.0.0及以上版本的设备，系统还会结合系统智感旋转开关状态（支持智感传感器的设备，可通过**设置>系统>智感旋转**开启智感旋转开关）决定应用的显示方向。
 
 仅主窗口支持设置旋转策略，对非主窗口设置旋转策略不生效不报错，不影响显示方向。
 
@@ -27,13 +29,20 @@ content_hash: sha256:f556720f379c68f3beb3fcd66d36af66a5081e7ba779abe573f7ca9c237
 
 不同旋转策略之间的差异及设备相关差异性可见[旋转策略及设备差异性](window-rotation.md#旋转策略及设备差异性)。不同应用场景的旋转策略呈现与限制可见[旋转接口的行为限制](window-rotation.md#旋转接口的行为限制)。
 
+**说明** 
+
+本文档中出现的"类直板机形态"和"类平板形态"主要针对折叠屏设备。折叠屏设备在不同形态下，屏幕宽高比和可用尺寸会发生变化，从而影响系统对旋转策略的判断：
+
+* **类直板机形态**：屏幕宽高比接近直板手机，系统按直板机规范处理旋转策略。例如设备处于折叠态、使用外屏，或为小折叠屏（翻盖式）展开态。在此模式下，仅支持旋转到竖屏、横屏、反向横屏三个方向，不支持反向竖屏；且当旋转锁定时，无法锁定在横屏状态。
+* **类平板形态**：屏幕宽高比接近平板设备，系统按平板规范处理旋转策略。例如设备处于展开态时，支持旋转到竖屏、横屏、反向竖屏、反向横屏四个方向；旋转锁定时支持锁定在横屏。
+
 ## 窗口旋转与屏幕方向的关系
 
 通常说的窗口旋转是指应用调用[setPreferredOrientation()](../harmonyos-references/arkts-apis-window-window.md#setpreferredorientation9-1)接口设置旋转策略，来改变应用在屏幕上的显示方向。更准确的说法是，应用通过旋转策略改变了屏幕的显示方向，系统通过屏幕显示方向变化，来改变屏幕上应用和系统组件（桌面、状态栏、下拉控制中心、下拉通知中心等）的显示方向和布局。这里的关键点是应用设置旋转策略后，影响的不仅是应用自身，还会影响屏幕上所有可见元素，也包括后台不可见的元素。这些元素最终通过一个旋转动画，从一个方向过渡到另外一个方向。
 
 系统提供了屏幕属性[@ohos.display](../harmonyos-references/js-apis-display.md)来获取屏幕的基本信息，其中[Orientation](../harmonyos-references/js-apis-display.md#orientation10)即表示当前设备屏幕的显示方向。窗口旋转后屏幕属性对应的Orientation也会相应改变。需要注意，旋转策略的[Orientation](../harmonyos-references/arkts-apis-window-e.md#orientation9)与屏幕属性的[Orientation](../harmonyos-references/js-apis-display.md#orientation10)是不同的概念，尤其是四个方向代表的名称都一样，代表的含义是有所区别的。区别差异请参考[窗口方向](../best-practices/bpta-multi-device-window-direction.md)。
 
-应用窗口的宽高比与屏幕属性的Orientation没有直接关系，不建议根据屏幕属性的Orientation来做窗口布局适配。屏幕属性的Orientation仅用于辅助sensor和相机的方向修正。
+应用窗口的宽高比与屏幕属性的[Orientation](../harmonyos-references/js-apis-display.md#orientation10)没有直接关系，不建议根据屏幕属性的[Orientation](../harmonyos-references/js-apis-display.md#orientation10)来做窗口布局适配。屏幕属性的[Orientation](../harmonyos-references/js-apis-display.md#orientation10)仅用于辅助传感器和相机的方向修正。
 
 ## 旋转接口的行为限制
 
@@ -50,11 +59,11 @@ content_hash: sha256:f556720f379c68f3beb3fcd66d36af66a5081e7ba779abe573f7ca9c237
 
   场景2：在自由多窗模式下，应用都会被强制成小窗显示。此时，若应用修改旋转策略，均不会触发旋转。
 
-此外，应用的显示方向跟sensor强相关，在无sensor的设备上，设置旋转策略同样不会生效。比如：TV等设备没有sensor，可正常调用[setPreferredOrientation()](../harmonyos-references/arkts-apis-window-window.md#setpreferredorientation9-1)接口，但实际应用方向不会变化。
+此外，应用的显示方向跟传感器强相关。在无传感器的设备上（如TV）或传感器旋转被禁用的设备上（如[电脑模式](window-terminology.md#pc-mode电脑模式)），设置旋转策略不会生效：可正常调用[setPreferredOrientation()](../harmonyos-references/arkts-apis-window-window.md#setpreferredorientation9-1)接口，但实际应用方向不会变化。
 
 ## 旋转策略及设备差异性
 
-应用可以通过在[module.json5配置文件](module-configuration-file.md)中配置"orientation"字段或者在运行时调用[setPreferredOrientation()](../harmonyos-references/arkts-apis-window-window.md#setpreferredorientation9-1)接口设置"orientation"字段，设置应用的显示方向。无论是哪种方式设置的[orientation](../harmonyos-references/arkts-apis-window-e.md#orientation9)字段含义都一样，即旋转显示方向类型枚举（也叫旋转策略）。详情可参考[设置窗口的旋转策略](../best-practices/bpta-landscape-and-portrait-development.md#section58861731201715)。
+应用可通过[module.json5配置文件](module-configuration-file.md)中的“orientation”字段，或在运行时调用[setPreferredOrientation()](../harmonyos-references/arkts-apis-window-window.md#setpreferredorientation9-1)接口，设置显示方向。详情可参考[设置窗口的旋转策略](../best-practices/bpta-landscape-and-portrait-development.md#section58861731201715)。
 
 系统提供了18种的方向类型枚举，以应对不同场景的需要。根据使用场景的不同，这些方向类型可分为：固定方向类型、自动旋转方向类型、临时方向类型和其他方向类型。
 
@@ -80,18 +89,17 @@ content_hash: sha256:f556720f379c68f3beb3fcd66d36af66a5081e7ba779abe573f7ca9c237
 | AUTO\_ROTATION | 5 | 跟随传感器自动旋转，可以旋转到竖屏、横屏、反向竖屏、反向横屏四个方向。 |
 | AUTO\_ROTATION\_PORTRAIT | 6 | 跟随传感器自动竖向旋转，可以旋转到竖屏、反向竖屏，无法旋转到横屏、反向横屏。 |
 | AUTO\_ROTATION\_LANDSCAPE | 7 | 跟随传感器自动横向旋转，可以旋转到横屏、反向横屏，无法旋转到竖屏、反向竖屏。 |
-| AUTO\_ROTATION\_RESTRICTED | 8 | 跟随传感器自动旋转，可以旋转到竖屏、横屏、反向竖屏、反向横屏四个方向，且受控制中心的旋转开关控制。 |
-| AUTO\_ROTATION\_PORTRAIT\_RESTRICTED | 9 | 跟随传感器自动竖向旋转，可以旋转到竖屏、反向竖屏，无法旋转到横屏、反向横屏，且受控制中心的旋转开关控制。 |
-| AUTO\_ROTATION\_LANDSCAPE\_RESTRICTED | 10 | 跟随传感器自动横向旋转，可以旋转到横屏、反向横屏，无法旋转到竖屏、反向竖屏，且受控制中心的旋转开关控制。 |
-| AUTO\_ROTATION\_UNSPECIFIED | 12 | 跟随传感器自动旋转，受控制中心的旋转开关控制，且可旋转方向受系统判定（如在某种设备，可以旋转到竖屏、横屏、反向横屏三个方向，无法旋转到反向竖屏）。 |
+| AUTO\_ROTATION\_RESTRICTED | 8 | 跟随传感器自动旋转，可以旋转到竖屏、横屏、反向竖屏、反向横屏四个方向，且受系统旋转锁定开关控制。 |
+| AUTO\_ROTATION\_PORTRAIT\_RESTRICTED | 9 | 跟随传感器自动竖向旋转，可以旋转到竖屏、反向竖屏，无法旋转到横屏、反向横屏，且受系统旋转锁定开关控制。 |
+| AUTO\_ROTATION\_LANDSCAPE\_RESTRICTED | 10 | 跟随传感器自动横向旋转，可以旋转到横屏、反向横屏，无法旋转到竖屏、反向竖屏，且受系统旋转锁定开关控制。 |
+| AUTO\_ROTATION\_UNSPECIFIED | 12 | 跟随传感器自动旋转，受系统旋转锁定开关控制，且可旋转方向受系统判定（例如在直板机设备，可以旋转到竖屏、横屏、反向横屏三个方向，无法旋转到反向竖屏）。 |
 
 这7种显示方向类型，通常用于设置应用可以跟随重力传感器调整应用方向，以使得用户握持设备时应用始终保持正向显示页面。针对搭载HarmonyOS 7.0.0及以上版本的设备，新增支持设置应用跟随智感传感器调整应用方向，最终应用方向由重力传感器和智感传感器共同作用决定。
 
 这7种方向类型根据不同的使用场景，也存在一些差异。比如：
 
-* 带有“RESTRICTED”字样的类型“AUTO\_ROTATION\_RESTRICTED”、“AUTO\_ROTATION\_PORTRAIT\_RESTRICTED”和“AUTO\_ROTATION\_LANDSCAPE\_RESTRICTED”受控制中心的旋转开关控制。当旋转锁定打开时，设置了该类型的应用会固定在锁定的方向，不再跟随重力传感器调整页面。针对搭载HarmonyOS 7.0.0及以上版本的设备，当旋转锁定打开时，设置了该类型的应用会固定在锁定的方向，除了不再跟随重力传感器调整页面外，也不再跟随智感传感器调整页面。
+* 带有“RESTRICTED”后缀的类型“AUTO\_ROTATION\_RESTRICTED”、“AUTO\_ROTATION\_PORTRAIT\_RESTRICTED”和“AUTO\_ROTATION\_LANDSCAPE\_RESTRICTED”受系统旋转锁定开关控制。当旋转锁定打开时，设置了该类型的应用会固定在锁定的方向，不再跟随重力传感器调整页面。针对搭载HarmonyOS 7.0.0及以上版本的设备，当旋转锁定打开时，设置了该类型的应用会固定在锁定的方向，除了不再跟随重力传感器调整页面外，也不再跟随智感传感器调整页面。
 * 带有“PORTRAIT”或“LANDSCAPE”的类型，将应用限制在“竖屏/反向竖屏”，“横屏/反向横屏”两个方向旋转。
-* “AUTO\_ROTATION\_UNSPECIFIED”是比较特殊的自动旋转类型。该类型既支持自动旋转，又受控制中心旋转锁定控制，与“AUTO\_ROTATION\_RESTRICTED”非常类似。
 
 **说明** 
 
@@ -108,12 +116,12 @@ content_hash: sha256:f556720f379c68f3beb3fcd66d36af66a5081e7ba779abe573f7ca9c237
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| USER\_ROTATION\_PORTRAIT | 13 | 调用时临时旋转到竖屏，之后跟随传感器自动旋转，受控制中心的旋转开关控制，且可旋转方向受系统判定。 |
-| USER\_ROTATION\_LANDSCAPE | 14 | 调用时临时旋转到横屏，之后跟随传感器自动旋转，受控制中心的旋转开关控制，且可旋转方向受系统判定。 |
-| USER\_ROTATION\_PORTRAIT\_INVERTED | 15 | 调用时临时旋转到反向竖屏，之后跟随传感器自动旋转，受控制中心的旋转开关控制，且可旋转方向受系统判定。 |
-| USER\_ROTATION\_LANDSCAPE\_INVERTED | 16 | 调用时临时旋转到反向横屏，之后跟随传感器自动旋转，受控制中心的旋转开关控制，且可旋转方向受系统判定。 |
+| USER\_ROTATION\_PORTRAIT | 13 | 调用时临时旋转到竖屏，之后跟随传感器自动旋转，受系统旋转锁定开关控制，且可旋转方向受系统判定。（例如在直板机设备，可以旋转到竖屏、横屏、反向横屏三个方向，无法旋转到反向竖屏） |
+| USER\_ROTATION\_LANDSCAPE | 14 | 调用时临时旋转到横屏，之后跟随传感器自动旋转，受系统旋转锁定开关控制，且可旋转方向受系统判定。（例如在直板机设备，可以旋转到竖屏、横屏、反向横屏三个方向，无法旋转到反向竖屏） |
+| USER\_ROTATION\_PORTRAIT\_INVERTED | 15 | 调用时临时旋转到反向竖屏，之后跟随传感器自动旋转，受系统旋转锁定开关控制，且可旋转方向受系统判定。（例如在直板机设备，可以旋转到竖屏、横屏、反向横屏三个方向，无法旋转到反向竖屏） |
+| USER\_ROTATION\_LANDSCAPE\_INVERTED | 16 | 调用时临时旋转到反向横屏，之后跟随传感器自动旋转，受系统旋转锁定开关控制，且可旋转方向受系统判定。（例如在直板机设备，可以旋转到竖屏、横屏、反向横屏三个方向，无法旋转到反向竖屏） |
 
-这4种方向类型受控制中心旋转锁定控制，同时支持根据重力传感器实现自动旋转。针对搭载HarmonyOS 7.0.0及以上版本的设备，新增支持根据智感传感器实现自动旋转（支持智感传感器的设备，可通过**设置>系统>智感旋转**开启智感旋转开关）。它们与“AUTO\_ROTATION\_RESTRICTED”的区别在于，这4种方向类型在应用设置时，会立即临时将应用旋转到指定方向。例如，用户竖屏握持手机且应用竖屏显示，当应用设置旋转策略为调整“USER\_ROTATION\_LANDSCAPE”时，应用会立刻旋转到横屏显示。这4种类型通常用于视频类应用在小窗播放进入全屏播放时使用。
+这4种方向类型受系统旋转锁定开关控制，同时支持根据重力传感器实现自动旋转。针对搭载HarmonyOS 7.0.0及以上版本的设备，新增支持根据智感传感器实现自动旋转（支持智感传感器的设备，可通过**设置>系统>智感旋转**开启智感旋转开关）。它们与“AUTO\_ROTATION\_RESTRICTED”的区别在于，这4种方向类型在应用设置时，会立即临时将应用旋转到指定方向。例如，用户竖屏握持手机且应用竖屏显示，当应用设置旋转策略为调整“USER\_ROTATION\_LANDSCAPE”时，应用会立刻旋转到横屏显示。这4种类型通常用于视频类应用在小窗播放进入全屏播放时使用。
 
 **说明** 
 
@@ -132,6 +140,11 @@ content_hash: sha256:f556720f379c68f3beb3fcd66d36af66a5081e7ba779abe573f7ca9c237
 
 这3种方向类型是在以下特定场景下使用的：
 
-* “UNSPECIFIED”是未定义方向类型，即当应用既没有在module.json5文件设置，也没有在运行时调用setPreferredOrientation()设置时，系统默认应用使用该类型。此时，应用的显示方向由系统判定。通常直板机上默认竖屏显示且不支持旋转；平板上支持旋转到四个方向，且受控制中心系统旋转锁定开关控制。
+* “UNSPECIFIED”是未定义方向类型，即当应用既没有在module.json5文件设置，也没有在运行时调用[setPreferredOrientation()](../harmonyos-references/arkts-apis-window-window.md#setpreferredorientation9-1)设置时，系统默认应用使用该类型。此时，应用的显示方向由系统判定。通常直板机上默认竖屏显示且不支持旋转；平板上支持旋转到四个方向，且受系统旋转锁定开关控制。
 * “LOCKED”是锁定模式，通常用于应用拉起应用场景。设置该策略的应用，被其他应用拉起时，保持和前一个应用相同的方向。此策略生效时，应用的方向也可能因为应用的切换等原因而改变。
-* “FOLLOW\_DESKTOP”是跟随桌面模式。通常直板机桌面固定竖屏显示不可旋转，平板桌面可以旋转。而折叠机比较特别，在折叠态时桌面与直板机一样不可旋转，但是在展开态时与平板规格一样可以旋转。
+* “FOLLOW\_DESKTOP”是跟随桌面模式。通常直板机桌面固定竖屏显示不可旋转，平板桌面可以旋转。而折叠机如双折叠、三折叠、阔折叠等设备比较特别，在折叠态时桌面与直板机一样不可旋转，但是在展开态时与平板规格一样可以旋转，实际的桌面旋转效果可参考真机表现。
+
+## 约束与限制
+
+* [setPreferredOrientation()](../harmonyos-references/arkts-apis-window-window.md#setpreferredorientation9-1)接口仅在支持传感器旋转的设备（如手机、平板）上生效；在无传感器的设备上（如TV）或传感器旋转被禁用的设备上（如PC模式）可正常调用，但应用显示方向不会变化，详见[旋转接口的行为限制](window-rotation.md#旋转接口的行为限制)。
+* 不同设备形态（直板机/类直板机形态、平板/类平板形态、折叠机折叠态/展开态）下可旋转的方向存在差异，详见[旋转策略及设备差异性](window-rotation.md#旋转策略及设备差异性)。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-pict
 title: picture_native.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > picture_native.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:31+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:351a690ced6234b3bc1ef2da53dd8a0a9b94ad826382926f84722faa6d1e57ca
+scraped_at: 2026-11-12T09:56:40+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4a423eb02f22500b4b1af151fb7c01f6f81baef796e3e352fe5b20bd5f0954b7
 ---
 
 ## 概述
@@ -108,6 +108,8 @@ enum Image_AuxiliaryPictureType
 | AUXILIARY\_PICTURE\_TYPE\_UNREFOCUS\_MAP = 3 | 人像未对焦的原图，提供了一种在人像拍摄中突出背景模糊效果的方式，能够帮助用户在后期处理中选择焦点区域，增加创作自由度。 |
 | AUXILIARY\_PICTURE\_TYPE\_LINEAR\_MAP = 4 | 线性图，用于提供额外的数据视角或补充信息，通常用于视觉效果的增强，它可以包含场景中光照、颜色或其他视觉元素的线性表示。 |
 | AUXILIARY\_PICTURE\_TYPE\_FRAGMENT\_MAP = 5 | 水印裁剪图，表示在原图中被水印覆盖的区域，该图像用于修复或移除水印影响，恢复图像的完整性和可视性。 |
+| OH\_IMAGE\_NATIVEMODULE\_AUXILIARY\_PICTURE\_TYPE\_OXY\_MAP = 11 | 血氧图，记录人脸区域像素的血氧饱和度。可用于肤质分析，当前仅作为相机拍照流程的中间结果，不支持用于编解码。  **起始版本：** 26.0.1 |
+| OH\_IMAGE\_NATIVEMODULE\_AUXILIARY\_PICTURE\_TYPE\_MEL\_MAP = 12 | 色斑图，记录人脸区域的色斑分布。可用于肤质分析，当前仅作为相机拍照流程的中间结果，不支持用于编解码。  **起始版本：** 26.0.1 |
 
 ## 函数说明
 

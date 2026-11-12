@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-clip-sh
 title: 形状裁剪（clipShape）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 几何图形绘制 > 形状裁剪（clipShape）
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:16+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:6c592414891f4b3082c13d53d5d2a34e19ac3e1fd6d71c60710b981298ee664f
+scraped_at: 2026-11-12T09:51:13+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:03dec4c8e1be83df0dea21bc7445932bd14a2774645d464aaddf3eb2a65c87dc
 ---
 
 可利用[clipShape](../harmonyos-references/ts-universal-attributes-sharp-clipping.md#clipshape12)接口将组件裁剪为所需的形状。调用该接口后，可以保留该形状覆盖的组件部分，同时移除组件的其余部分。裁剪形状本身是不可见的。
@@ -49,7 +49,7 @@ struct ClipShapeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/UeXyPRlGRjuQQtWZCnWrwQ/zh-cn_image_0000002779690188.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/9O54X-vySUWaeUIZ1VxsGA/zh-cn_image_0000002815558521.png)
 
 ## 裁剪椭圆形
 
@@ -80,7 +80,7 @@ struct ClipShapeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/8IkSQoD_QsmOq_ZFRZTAQA/zh-cn_image_0000002809009809.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/jKqi9b5gRX-UOclnW42EuA/zh-cn_image_0000002815398605.png)
 
 ## 裁剪矩形
 
@@ -111,7 +111,7 @@ struct ClipShapeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/erYDosd7TF2emiY9pcAiuA/zh-cn_image_0000002809049725.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/jzkDe437QnCsr7-bVt6gmQ/zh-cn_image_0000002786519030.png)
 
 ## 裁剪不规则形状
 
@@ -141,4 +141,4 @@ struct ClipShapeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/4lg0BEw0QGW3IQWZIC5bwQ/zh-cn_image_0000002779850160.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/EntWUw6zReu4SylFhdGHgg/zh-cn_image_0000002786359102.png)

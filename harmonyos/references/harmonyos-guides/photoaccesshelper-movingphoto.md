@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshe
 title: 访问和管理动态照片资源
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 动态照片 > 访问和管理动态照片资源
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:47+08:00
-doc_updated_at: 2026-10-30
+scraped_at: 2026-11-12T09:52:09+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:6c2f00c0c2eb7b51d01d86beed1a39151c68ddb7e6d133e18bd3ef08c50c57a0
 ---
 

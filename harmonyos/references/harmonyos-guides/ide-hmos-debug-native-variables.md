@@ -3,28 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-debu
 title: 检查变量
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 检查变量
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:38+08:00
+scraped_at: 2026-11-12T09:53:20+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:1b3e5568b860a618c9793a355622b719c615c9cc8e652e2696ed2de4c16be74b
+content_hash: sha256:896687389fc5d320db73b4e451068c5a54e936e2a40c171fe9c9c4adec1f4bc5
 ---
 
 调试时，在“变量”页面查看变量，支持查看全局/静态变量、寄存器变量和局部变量。
 
 ## 查看全局/静态变量
 
-点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/JQy-IIpdR_eMfhahqwqnLA/zh-cn_image_0000002781311206.png "点击放大")按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/X41CTUh_TsqcKtqISScO3g/zh-cn_image_0000002810630693.png)按钮打开配置界面。在**调试器**中勾选**在变量面板中显示静态/全局变量**，调试过程中变量列表会展示静态/全局变量。
+点击编辑器上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/SGxxozT9SC28EuPXa5NiqQ/zh-cn_image_0000002781311206.png "点击放大")按钮，在菜单中点击**Application**并选择相应模块，点击右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/2cNAocXCStaJaH_jkCz53w/zh-cn_image_0000002810630693.png)按钮打开配置界面。在**调试器**中勾选**在变量面板中显示静态/全局变量**，调试过程中变量列表会展示静态/全局变量。
 
 ## 变量监视/表达式求值
 
 通过在变量页面的输入框输入需要监控的变量或变量表达式，在每次程序停住之后会计算表达式的值。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/_8aibQ-ZQlmcua6-izemLQ/zh-cn_image_0000002781471138.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/fpvm0mhLSmucJlXCkJwKDw/zh-cn_image_0000002781471138.png)
 
 ## 查看函数返回值
 
 当使用“Step Out”从一个函数内步出后，变量列表中的“ReturnValues”会展示所步出函数的返回值。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/p0zdqOH9TrKntwMkHyyLGA/zh-cn_image_0000002781311204.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/A2ezCI-ATJqXbJucYCqVPw/zh-cn_image_0000002781311204.png)
 
 **说明** 
 

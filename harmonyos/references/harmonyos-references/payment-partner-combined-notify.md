@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-p
 title: 合单支付结果回调通知
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 平台类商户/服务商 > 合单支付（仅支持平台类商户） > 合单支付结果回调通知
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:05+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e1dec3240a4b7c6a156d8181eb041a62ebabe5364f91d9c639a1f1479f1bfb32
+scraped_at: 2026-11-12T09:57:35+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a4821850d72df261a76bbf4319181effc79749589f2833cee6123013b78b26b6
 ---
 
 ## 功能介绍
@@ -21,7 +21,7 @@ content_hash: sha256:e1dec3240a4b7c6a156d8181eb041a62ebabe5364f91d9c639a1f1479f1
 
 * **承载协议：** HTTPS POST
 * **接口方向：** 华为支付服务器 -> 开发者服务器
-* **接口URL：** URL由开发者在请求预下单接口时传递的callbackUrl
+* **接口URL：** URL由开发者在请求预下单接口时传递的callbackUrl参数决定
 * **数据格式：**
 
   请求消息：Content-Type: application/json

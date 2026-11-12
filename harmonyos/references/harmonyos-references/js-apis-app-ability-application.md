@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.application (应用工具类)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.application (应用工具类)
 category: harmonyos-references
-scraped_at: 2026-10-01T07:36:11+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:f12ef322fb04cab4c753cd9c512bd3c8eb8b1b98257f9b5f6217eec178efbbb9
+scraped_at: 2026-11-12T09:53:28+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b93c5118c572f09b3ab3c16dbc2d238c51dc923910c689a7286f0e173b75cbc1
 ---
 
 开发者可以通过该模块管理和获取应用的上下文[Context](../harmonyos-guides/application-context-stage.md)，以及控制应用进程的状态。
@@ -437,6 +437,58 @@ import { AbilityStage, application } from '@kit.AbilityKit';
 export default class MyAbilityStage extends AbilityStage{
   onCreate() {
     let appPreloadType = application.getAppPreloadType();
+  }
+}
+```
+
+## application.createModuleContextSync
+
+createModuleContextSync(context: Context, moduleName: string): Context
+
+创建指定模块的上下文。该接口通过继承入参上下文中的[resourceManager.Configuration](js-apis-resource-manager.md#configuration)配置，便于开发者直接访问[跨HAP/HSP包资源](../harmonyos-guides/resource-categories-and-access.md#访问跨haphsp包资源)；同时，新上下文中的资源作为独立副本存在，不会随着入参上下文资源的变化而改变。该接口为同步接口。
+
+**说明** 
+
+建议在主线程或高流畅性要求的场景下，避免频繁、重复调用createModuleContextSync接口。由于创建模块上下文涉及资源查询与初始化等耗时操作，多次实例化可能会引发界面卡顿，进而影响用户体验。
+
+**起始版本**： 26.0.1
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**元服务API**：从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| context | [Context](js-apis-inner-application-context.md) | 是 | 表示应用上下文。 |
+| moduleName | string | 是 | 表示应用模块名。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Context](js-apis-inner-application-context.md) | 返回创建的Context。 |
+
+**错误码：**
+
+以下错误码详细介绍请参考[元能力子系统错误码](errorcode-ability.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16000011 | The context does not exist. |
+| 16000021 | The module does not exist. |
+
+**示例：**
+
+```ts
+import { AbilityConstant, UIAbility, application, Want } from '@kit.AbilityKit';
+
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    let moduleContext = application.createModuleContextSync(this.context, 'entry');
   }
 }
 ```

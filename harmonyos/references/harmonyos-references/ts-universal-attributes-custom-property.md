@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 自定义属性设置
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 动态属性与自定义 > 自定义属性设置
 category: harmonyos-references
-scraped_at: 2026-11-04T08:32:51+08:00
+scraped_at: 2026-11-12T09:54:08+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:58dcb5f608b672d17ee717c9e44d6216d2cacbf2686151ce384f0175c0da6e27
+content_hash: sha256:54ca1aef6531f7fac427019caf6b68898ccf1f232db745338782b40bba343da6
 ---
 
 当开发者希望在组件上设置自定义的属性时，可以使用自定义属性设置功能。这些自定义属性可以在组件对应的FrameNode上获取，从而便于根据自定义属性管理组件。
@@ -183,4 +183,4 @@ struct CustomLayout {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/RIsB9oiETDqauiYWhJFQQw/zh-cn_image_0000002809011811.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/xMNwAtiuQ3-b2pVWA1SFwQ/zh-cn_image_0000002815400585.png)

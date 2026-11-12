@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/capi-nativech
 title: 子进程开发指导（C/C++）
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 进程模型 > 扩展进程开发指导 > 子进程开发指导（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:08+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-11-12T09:50:58+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:3ef67dce4055cea6f9f7d82e6ebabd6a382afcfe37e7c63d4e65c8ff9ed6db91
 ---
 

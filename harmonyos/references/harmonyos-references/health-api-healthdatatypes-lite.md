@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-ap
 title: healthDataTypes (运动健康数据类型常量)(Lite)
 breadcrumb: API参考 > 应用服务 > Health Service Kit（运动健康服务） > ArkTS API > 运动健康数据类型常量及模型定义 > healthDataTypes (运动健康数据类型常量)(Lite)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:55+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:59bb5de9064f63f036517478aa2096ee84abe0980e2911611e424caa865544d3
+scraped_at: 2026-11-12T09:57:19+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:55c5a73cc7490ef4dd40c76a0f440e4f9178fc4121202f437fca4fc43f1dc44e
 ---
 
 本模块提供运动健康数据类型常量。
@@ -42,3 +42,14 @@ import healthStore from '@hms.health.store';
 | STAIR\_CLIMBING | [healthStore.SubDataType](health-api-healthstore-lite.md#subdatatype) | 爬楼子数据类型。 |
 | STRENGTH\_TRAINING | [healthStore.SubDataType](health-api-healthstore-lite.md#subdatatype) | 力量训练子数据类型。 |
 | TENNIS | [healthStore.SubDataType](health-api-healthstore-lite.md#subdatatype) | 网球子数据类型。 |
+| OUTDOOR\_SNOWBOARD | [healthStore.SubDataType](health-api-healthstore-lite.md#subdatatype) | 户外单板滑雪子数据类型。  **起始版本：** 26.0.1 |
+| INDOOR\_SNOWBOARD | [healthStore.SubDataType](health-api-healthstore-lite.md#subdatatype) | 室内单板滑雪子数据类型。  **起始版本：** 26.0.1 |
+| OUTDOOR\_SKIING | [healthStore.SubDataType](health-api-healthstore-lite.md#subdatatype) | 户外双板滑雪子数据类型。  **起始版本：** 26.0.1 |
+| INDOOR\_SKIING | [healthStore.SubDataType](health-api-healthstore-lite.md#subdatatype) | 室内双板滑雪子数据类型。  **起始版本：** 26.0.1 |
+| CROSS\_COUNTRY\_SKIING | [healthStore.SubDataType](health-api-healthstore-lite.md#subdatatype) | 越野滑雪子数据类型。  **起始版本：** 26.0.1 |
+| SKI\_MOUNTAINEERING | [healthStore.SubDataType](health-api-healthstore-lite.md#subdatatype) | 滑雪登山子数据类型。  **起始版本：** 26.0.1 |
+| PADEL | [healthStore.SubDataType](health-api-healthstore-lite.md#subdatatype) | 笼式网球子数据类型。  **起始版本：** 26.0.1 |
+| PILATES | [healthStore.SubDataType](health-api-healthstore-lite.md#subdatatype) | 普拉提子数据类型。  **起始版本：** 26.0.1 |
+| RUNNING | [healthStore.SubDataType](health-api-healthstore-lite.md#subdatatype) | 户外跑步子数据类型。  **起始版本：** 26.0.1 |
+| FREE\_TRAINING | [healthStore.SubDataType](health-api-healthstore-lite.md#subdatatype) | 自由训练子数据类型。  **起始版本：** 26.0.1 |
+| CYCLING | [healthStore.SubDataType](health-api-healthstore-lite.md#subdatatype) | 户外骑行子数据类型。  **起始版本：** 26.0.1 |

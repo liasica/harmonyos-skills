@@ -1,16 +1,16 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-storage-unit
 title: 存储单元
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 基本概念 > 硬件架构 > 存储单元
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > 基本概念 > 硬件架构 > 存储单元
 category: harmonyos-guides
-scraped_at: 2026-09-08T06:39:19+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:6833a12ecd7c717f534b7602be762088debfdf84c65a123ab9f8dcab9df46515
+scraped_at: 2026-11-12T09:52:41+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e5cce2b816d1410a0224b71f3dbfa923b4875d057b6b123c26dc7b8e01b184bd
 ---
 
 AI处理器中的计算资源要想发挥强劲算力，必要条件是保证输入数据能够及时准确地出现在计算单元中，需要精心设计存储系统，保证计算单元所需的数据供应。
 
-AI Core中包含多级**内部存储**，AI Core需要把**外部存储**中的数据加载到内部存储中，才能完成相应的计算。AI Core的主要内部存储包括：L1 Buffer（L1缓冲区）、L0 Buffer（L0缓冲区）、Unified Buffer（统一缓冲区）等。为了配合AI Core中的数据传输和搬运，AI Core中还包含MTE（Memory Transfer Engine，存储转换引擎）搬运单元，在搬运过程中可执行[随路数据格式类型转换](cannkit-channel-associated-format-conversion.md)。
+AI Core中包含多级**内部存储**，AI Core需要把**外部存储**中的数据加载到内部存储中，才能完成相应的计算。AI Core的主要内部存储包括：L1 Buffer（L1缓冲区）、L0 Buffer（L0缓冲区）、Unified Buffer（统一缓冲区）等。为了配合AI Core中的数据传输和搬运，AI Core中还包含MTE（Memory Transfer Engine，存储转换引擎）搬运单元，在搬运过程中可执行随路数据格式/类型转换。
 
 AI Core的内部存储列表如表1所示。
 
@@ -36,5 +36,5 @@ AI Core的内部存储列表如表1所示。
 
 **说明** 
 
-* 不同类型的AI处理器，存储单元大小不同，开发者可通过[GetCoreMemSize](cannkit-getcorememsize.md)接口获取。
-* 所有通过搬运单元读写GM的数据都缺省被缓存在L2Cache，以此加快访问速度，提高访问效率。核外L2Cache以cacheline为单位加载数据，根据硬件规格不同，cacheline大小不同（128/256/512Byte等）。
+* 不同类型的AI处理器，存储单元大小不同。
+* Kirin9050：L0A/L0C与L1合一，不再存在单独的L0A与L0C单元。

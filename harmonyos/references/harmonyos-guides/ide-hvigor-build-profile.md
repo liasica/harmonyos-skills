@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-bu
 title: 模块级build-profile.json5文件
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 配置文件 > 模块级build-profile.json5文件
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:23:07+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:35c13fc5d18be3da160b64f3febaa4732ee14c4e6de1bbf0e0f0bec967a9438e
+scraped_at: 2026-11-12T09:53:07+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:adf7ef6e01c747097ae507845054b4cf93841e6dbe788f0a791bc6a4cbd084bb
 ---
 
 ## 配置文件结构
@@ -493,7 +493,7 @@ resOptions是资源编译配置项。
 | 字段名称 | 类型 | 可选/必选 | 含义 |
 | --- | --- | --- | --- |
 | [compression](ide-hvigor-build-profile.md#section2095319147103) | 对象 | 可选 | 对工程预置图片资源进行纹理压缩的编译配置参数。 |
-| resCompileThreads | 整型数值 | 可选 | 资源编译的线程数量 ，最小为1，最大为主机的CPU核数。  该字段从DevEco Studio 5.1.0 Release版本开始支持。 |
+| resCompileThreads | 整型数值 | 可选 | 资源编译的线程数量 ，最小为1，最大为主机的CPU核数。  从DevEco Studio 5.1.0 Release版本开始支持。 |
 | [copyCodeResource](ide-hvigor-build-profile.md#table1476161719356) | 对象 | 可选 | 对模块的src/main/ets目录下的资源文件（非源码文件）拷贝的编译配置参数。  说明：  该字段对[不开启混淆的源码HAR](ide-hvigor-build-har.md#section197792874110)不生效。 |
 | ignoreResourcePattern | 字符串数组 | 可选 | 根据glob语法，对资源目录resources或开发者自定义的资源目录下的文件/文件夹名称进行过滤，匹配到的文件不会被打包到产物中。  从DevEco Studio 5.1.1 Beta1版本开始支持。  说明：  * 如果规则中带有路径（例如./src/main/a.png），该规则不生效。 * 如果未配置该字段，打包HAP/HSP时存在默认的过滤规则：默认不打包.git、.svn、.scc、.ds\_store、desktop.ini、picasa.ini、cvs、thumbs.db以及以.开头的隐藏文件/目录和以~结尾的文件。 * 配置该字段后，会覆盖默认的过滤规则；如果字段配置为空数组，则不应用任何过滤规则，即全部资源都打包。 |
 | excludeHarRes | 字符串数组 | 可选 | 编译HAP/HSP模块时，指定不参与资源编译的三方HAR包的包名，配置后，依赖HAR包中的资源不会被打包到产物中，支持直接依赖和间接依赖。  从DevEco Studio 6.0.0 Beta2版本开始支持。  说明：  仅支持在HAP/HSP中配置。 |
@@ -621,15 +621,15 @@ arkOptions是ArkTS编译配置。
 | [obfuscation](ide-build-obfuscation.md) | 对象 | 可选 | 代码混淆配置。 |
 | [buildProfileFields](ide-hvigor-get-build-profile-para.md) | 对象 | 可选 | 运行时可获取的自定义构建参数，支持键值对配置，key可由数字、英文、下划线、中划线组成，value类型仅支持string、number、boolean。 |
 | integratedHsp | 布尔值 | 可选 | 是否为[集成态HSP](integrated-hsp.md)。   * true：是。 * false（缺省默认值）：否。   说明：  * 从API 12开始支持。 * 需在工程级build-profile.json5中配置useNormalizedOHMUrl为true后使用。 * 该字段仅在HSP模块中配置后生效。 |
-| [transformLib](customize-bytecode-during-compilation.md) | 字符串 | 可选 | 字节码插桩插件配置，允许开发者在编译时对字节码进行插桩修改，仅支持Stage模型，格式为相对路径，不同系统要求的文件类型如下，文件内容需要在对应平台生成，不能拷贝修改后缀名混用。   * Windows：.dll文件。 * Linux/Mac：.so文件。   说明：  * Mac环境下添加配置后插桩未生效的问题请参考[FAQ](../harmonyos-faqs/faqs-compiling-and-building-133.md)。 * HAR模块仅字节码HAR配置生效，非字节码HAR配置不生效。 |
+| transformLib | 字符串 | 可选 | 字节码插桩插件配置，允许开发者在编译时对字节码进行插桩修改，仅支持Stage模型，格式为相对路径，不同系统要求的文件类型如下，文件内容需要在对应平台生成，不能拷贝修改后缀名混用。详细使用方式请参考[编译期自定义修改方舟字节码](customize-bytecode-during-compilation.md)。   * Windows：.dll文件。 * Linux/Mac：.so文件。   说明：  HAR模块仅字节码HAR配置生效，非字节码HAR配置不生效。 |
 | branchElimination | 布尔值 | 可选 | 是否启用代码分支裁剪，减少编译产物大小，开启后，在release编译模式下，不会被执行到的代码分支会被裁剪掉，示例请参考[branchElimination示例](ide-hvigor-build-profile.md#li71611425123512)。   * true：启用（将导致使用"ApplyChanges"功能时，对const声明的常量的值进行的修改可能不生效）。 * false（缺省默认值）：不启用。   说明：  * 仅支持API 11及以上的Stage模型。 * HAR模块仅字节码HAR配置生效，非字节码HAR配置不生效。 * 仅支持const声明的bool类型常量和const声明的string/number类型常量的判断表达式。 * 不支持间接导入，例如A文件中定义const变量A1，B文件导入A1，导出B1，ets导入B1进行判断，无法进行裁剪。 |
 | byteCodeHar | 布尔值 | 可选 | 是否构建字节码HAR，仅在HAR模块中配置后生效。详情请参考[构建字节码HAR](ide-hvigor-build-har.md#section16598338112415)。   * true：支持。 * false：不支持。   说明：  * 从API 12开始支持。 * 从DevEco Studio NEXT Beta1（5.0.3.800）版本开始，当工程级build-profile.json5中useNormalizedOHMUrl配置为true时，byteCodeHar缺省默认值为true；当useNormalizedOHMUrl配置为false时，byteCodeHar缺省默认值为false。 |
 | bundledDependencies | 布尔值 | 可选 | 是否支持将多个源码HAR（本地+远程）打包成一个字节码HAR。字节码HAR、HSP、npm不会被打包进去，仅会合并源码HAR。   * true：支持。 * false（缺省默认值）：不支持。   说明：  * 仅支持[字节码HAR](ide-hvigor-build-har.md#section16598338112415)配置该字段。 * 从API 12开始支持。 * 仅支持Stage模型。 |
 | [bundle](ide-hvigor-build-profile.md#table94991638520) | 对象 | 可选 | bundle化相关的配置，包含bundledDeclare和bundledAllDependencies。该配置是bundledDependencies配置的增强版。使用时，不能同时配置bundle和bundledDependencies。  从26.0.0版本开始支持。 |
-| packSourceMap | 布尔值 | 可选 | 编译[字节码HAR](ide-hvigor-build-har.md#section16598338112415)时，是否将sourceMap文件打包到产物中。仅HAR模块支持配置，并且只对字节码HAR生效。   * true：打包。 * false：不打包。   该字段从DevEco Studio 5.1.0 Release版本开始支持。  说明：  * 如果不配置，debug模式默认值为true，release模式默认值为false。 * 将sourceMap打包到release的HAR包中，可能会导致HAR中的代码资产泄露。 |
+| packSourceMap | 布尔值 | 可选 | 编译[字节码HAR](ide-hvigor-build-har.md#section16598338112415)时，是否将sourceMap文件打包到产物中。仅HAR模块支持配置，并且只对字节码HAR生效。   * true：打包。 * false：不打包。   从DevEco Studio 5.1.0 Release版本开始支持。  说明：  * 如果不配置，debug模式默认值为true，release模式默认值为false。 * 将sourceMap打包到release的HAR包中，可能会导致HAR中的代码资产泄露。 |
 | autoLazyImport | 布尔值 | 可选 | 编译时是否自动将符合lazy-import语法规范的import语句添加"lazy"关键字。仅支持在源码中添加"lazy"关键字，不包含依赖的字节码HAR包或HSP。关于lazy-import的介绍及相关影响请参考[延迟加载（lazy import）](arkts-lazy-import.md)。   * true：添加。 * false（缺省默认值）：不添加。   说明：  * 如果配置为true，编译时不会做场景识别，即源码中任何符合语法规范的import语句都会被添加"lazy"。 * 仅支持Stage模型。 |
 | [autoLazyFilter](ide-hvigor-build-profile.md#table1551310818378) | 对象 | 可选 | 自定义添加"lazy"关键字的模块，仅当autoLazyImport为true时生效。  从DevEco Studio 6.0.1 Beta1版本开始支持。 |
-| reExportCheckMode | 字符串 | 可选 | 针对以下场景，编译时是否进行拦截报错：使用lazy import导入的变量，在同文件中被再次导出。   * noCheck（缺省默认值）：不检查，不报错。 * compatible：兼容模式，报Warning。 * strict：严格模式，报Error。   该字段从DevEco Studio 5.0.5 Release版本开始支持。 |
+| reExportCheckMode | 字符串 | 可选 | 针对以下场景，编译时是否进行拦截报错：使用lazy import导入的变量，在同文件中被再次导出。   * noCheck（缺省默认值）：不检查，不报错。 * compatible：兼容模式，报Warning。 * strict：严格模式，报Error。   从DevEco Studio 5.0.5 Release版本开始支持。 |
 | skipOhModulesLint | 布尔值 | 可选 | 是否跳过工程中oh\_modules目录的[ArkTS规则检查](typescript-to-arkts-migration-guide.md)。从DevEco Studio 6.0.0 Beta1版本开始支持。   * true：跳过。 * false（缺省默认值）：不跳过。 |
 | [expandImportPath](ide-hvigor-build-profile.md#table106074515578) | 对象 | 可选 | import路径展开相关配置选项。  从DevEco Studio 6.0.0 Beta3版本开始支持。  说明：  HAR模块不支持配置。 |
 | [widget](ide-hvigor-build-profile.md#table5454171012531) | 对象 | 可选 | 卡片编译相关配置。 |
@@ -686,7 +686,7 @@ arkOptions是ArkTS编译配置。
 
 | 字段名称 | 类型 | 可选/必选 | 含义 |
 | --- | --- | --- | --- |
-| transitiveDeps | 布尔值 | 可选 | 卡片依赖字节码HAR，编译卡片时是否收集字节码HAR的直接和间接依赖。   * true：收集。 * false（缺省默认值）：不收集。   从DevEco Studio 6.1.1 Release (6.1.1.290)版本开始支持。 |
+| transitiveDeps | 布尔值 | 可选 | 卡片依赖字节码HAR，编译卡片时是否收集字节码HAR的直接和间接依赖。   * true：收集。 * false（缺省默认值）：不收集。   从DevEco Studio 6.1.1 Release版本开始支持。 |
 
 arkOptions字段示例：
 
@@ -719,7 +719,7 @@ arkOptions字段示例：
 
 ### packingOptions
 
-packingOptions是打包配置项，仅支持HAR模块。该字段从DevEco Studio 5.1.0 Release版本开始支持。
+packingOptions是打包配置项，仅支持HAR模块。从DevEco Studio 5.1.0 Release版本开始支持。
 
 **表28** packingOptions
 

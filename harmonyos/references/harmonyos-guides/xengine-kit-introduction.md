@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-i
 title: XEngine Kit简介
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务） > XEngine Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:08+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d922c837748a113491cb315ba8013efd45d87057e54301eb6c33fb265130d28b
+scraped_at: 2026-11-12T09:52:15+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:cf86ce939d00fe6fde979494af225a33cc4b16092bcb69d9dd54e10ace36dac2
 ---
 
 XEngine Kit（GPU加速引擎服务）提供基于Maleoon GPU的性能提升方案，包括GPU/AI超分能力、自适应VRS（Variable Rate Shading，可变速率着色）、Subpass Shading、光线追踪技术（包括反射、阴影、环境光遮蔽和全局光照，Ray-Traced Reflection, Shadow, Ambient Occlusion and Global Illumination）、高性能着色器（High performance shaders，简称HPS）和控显分离（Control-Display Separation）等，通过图形算法以及软硬件优化，让用户拥有更高画质、更高性能、更低功耗的3D游戏/应用、AR/VR体验。
@@ -51,7 +51,7 @@ XEngine Kit针对折叠屏游戏场景推出“控显分离”创新方案。在
 
 ### 支持的设备
 
-Phone、Tablet、PC/2in1、TV。
+Phone、Tablet、PC/2in1、TV、Car。
 
 ### 支持的国家/地区
 

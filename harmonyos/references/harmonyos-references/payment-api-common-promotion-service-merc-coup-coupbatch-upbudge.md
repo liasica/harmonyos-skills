@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-a
 title: 修改券批次预算
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 通用接口 > 运营工具 > 商家券 > 券批次 > 修改券批次预算
 category: harmonyos-references
-scraped_at: 2026-10-15T07:12:40+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:c02e2be88529bf72b2c8b25bcfe353f97498725ad0442ceac32d8199a36b8013
+scraped_at: 2026-11-12T09:57:36+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4c9ab4dfc08d6470fd188f7e4f2a3998aacb16c5606e0b9fa0a2d6b1ec6b8c09
 ---
 
 ## 功能介绍
@@ -112,6 +112,6 @@ Content-Type: application/json; charset=UTF-8
 | 400000 | INVALID\_ARGUMENTS | 参数不合法 | 检查请求参数。 |
 | 400000 | INVALID\_MERC\_NO | 无效商户号 | 检查入参商户号是否正确。 |
 | 400000 | CHECK\_MERC\_STATUS | 商户状态校验失败 | 请检查商户状态是否正常。 |
-| 400000 | COUPON\_BATCH\_NOT\_EXIST | 未找到待发券批次 | 请检查批次创建商户和归属商户是否有归属关系。 |
-| 400000 | COUPON\_BATCH\_INVALID\_STATUS | 批次已过期或暂停 | 请检查回调地址是否为https协议地址。 |
+| 400000 | COUPON\_BATCH\_NOT\_EXIST | 未找到待发券批次 | 确认券批次是否已创建，券批次号传递是否正确。 |
+| 400000 | COUPON\_BATCH\_INVALID\_STATUS | 批次已过期或暂停 | 确认券批次状态或重新创建券批次。 |
 | 400000 | COUPON\_BATCH\_UPDATING | 批次正在更新中，无法处理新的更新请求 | 确认批次更新状态，等待批次更新完成。 |

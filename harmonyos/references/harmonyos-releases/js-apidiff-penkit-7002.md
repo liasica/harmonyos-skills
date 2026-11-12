@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-penkit-7002
 title: Pen Kit
-breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > OS平台能力 > API变更清单 > 26.0.0 Beta2引入的API > Pen Kit
+breadcrumb: 版本说明 > 更多版本 > 26.0.0 > OS平台能力 > API变更清单 > 26.0.0 Beta2引入的API > Pen Kit
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:49:04+08:00
-doc_updated_at: 2026-08-04
+scraped_at: 2026-11-12T09:49:59+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:c246ad8ea9c625ea60dd98af97d1269f9eb8f6019b0fc83de4df2075b40a73fa
 ---
 

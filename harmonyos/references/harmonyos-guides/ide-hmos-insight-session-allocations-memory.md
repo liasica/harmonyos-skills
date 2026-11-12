@@ -3,35 +3,35 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-insi
 title: 内存分析介绍
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 优化应用性能 > 基础内存分析：Allocation分析 > 内存分析介绍
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:41+08:00
+scraped_at: 2026-11-12T09:53:24+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:89b47b317291cba53a17c67c54fcd264a3bf319b193876480ca334f332e7756c
+content_hash: sha256:bc9928872274dd24a92650c8bf21424506c4d3a377ee82ca1c7a8d2e5d8ad671
 ---
 
 在设备连接完成后，可按照如下方法查看内存分析结果：
 
 1. 构建应用前请参考模块级[build-profile.json5文件](ide-hmos-hvigor-build-profile.md)，增加strip字段并赋值为false（strip：是否移除当前模块.so文件中的符号表、调试信息，配置为false代表不移除）。采集函数栈解析符号需要附带符号表信息，无符号表信息可能采集不到函数名称，因此请录制模板前按照下图进行配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/PZCv3cDYRd-iYO4uL32IUw/zh-cn_image_0000002781311214.png)
-2. 创建Allocation分析任务并录制相关数据，操作方法可参考[性能问题定位：深度录制](ide-hmos-deep-recording.md)，或在[会话区](ide-hmos-profiler-session.md)点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/ClC41yAZR6KP6dEBKKK_oA/zh-cn_image_0000002781311212.png)图标，导入历史数据。在录制前单击录制按钮旁![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/Z89qOOd8R0C11neAzZTkZw/zh-cn_image_0000002781311208.png)按钮，点击**录制设置**指定要录制的泳道。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/1oVYzH2ZRLO0P7WcDBhyzQ/zh-cn_image_0000002781311214.png)
+2. 创建Allocation分析任务并录制相关数据，操作方法可参考[性能问题定位：深度录制](ide-hmos-deep-recording.md)，或在[会话区](ide-hmos-profiler-session.md)点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/UdQNRQrXQZGa0mawIDB-eQ/zh-cn_image_0000002781311212.png)图标，导入历史数据。在录制前单击录制按钮旁![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/giBsjg78Q1O-Ve3kW-4G6A/zh-cn_image_0000002781311208.png)按钮，点击**录制设置**指定要录制的泳道。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/KYxzIfd0RCa7Ni7dUFw4GA/zh-cn_image_0000002810630703.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/3qAWyIRlQ2S_GKh15kYlsg/zh-cn_image_0000002810630703.png "点击放大")
 
    * **Memory泳道**：显示当前进程的物理内存使用情况，其度量方式包含：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/H8ecIQmARNeqNVXfSUEAIg/zh-cn_image_0000002810630695.png)PSS：进程独占内存和按比例分配共享库占用内存之和。
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/y99mzrSrT26G5TMcwyFlkg/zh-cn_image_0000002810630695.png)PSS：进程独占内存和按比例分配共享库占用内存之和。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/Uwi9CMjiTnOCDR9owWTf3g/zh-cn_image_0000002810630697.png)RSS：进程独占内存和相关共享库占用内存之和。
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/khTp5GsgQtyP7aXITf8zUA/zh-cn_image_0000002810630697.png)RSS：进程独占内存和相关共享库占用内存之和。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/6fOiQqfKQCSygWXPm0pfng/zh-cn_image_0000002810750803.png)USS：进程独占内存。
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/6AUlXWK-RayISnG8MkWFZA/zh-cn_image_0000002810750803.png)USS：进程独占内存。
 
      默认只显示PSS的统计图，如需要查看USS或RSS，需要在Memory泳道的右上角点选相关数据类型。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/Sj7HtsTZQ_Cb1xpP2sZsJg/zh-cn_image_0000002781471146.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/kFSy-S5LSGGJz-Dc3bTN6A/zh-cn_image_0000002781471146.png "点击放大")
 
-     展开Memory泳道，子泳道展示的是按照内存类型将进程PSS值拆分开的各个维度的内存信息，类型包含ArkTS Heap/Native Heap/GL/Graph/Guard/AnonPage Other/FilePage Other/Dev/Stack/.hap/.so/.ttf。默认展示其中的五个子泳道，如要显示其他子泳道，可以点击主泳道的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/sWLv1zyiTBy095YrmSCjcw/zh-cn_image_0000002781471140.png "点击放大")图标并勾选其他泳道来查看。
+     展开Memory泳道，子泳道展示的是按照内存类型将进程PSS值拆分开的各个维度的内存信息，类型包含ArkTS Heap/Native Heap/GL/Graph/Guard/AnonPage Other/FilePage Other/Dev/Stack/.hap/.so/.ttf。默认展示其中的五个子泳道，如要显示其他子泳道，可以点击主泳道的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/otzzNWbeQWW3zCgu0ZVJrg/zh-cn_image_0000002781471140.png "点击放大")图标并勾选其他泳道来查看。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/lWq7qutqRxOI4HHFNmKtMA/zh-cn_image_0000002810630691.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/t-2gla96Qcy_nLGRLZvrMQ/zh-cn_image_0000002810630691.png "点击放大")
 
      | 子泳道 | 说明 |
      | --- | --- |
@@ -49,7 +49,7 @@ content_hash: sha256:89b47b317291cba53a17c67c54fcd264a3bf319b193876480ca334f332e
      | .ttf | 进程加载的.ttf字体文件所占内存。 |
    * **Native Allocation泳道**：显示具体的Native内存分配情况，包括静态统计数据、分配栈、每层函数栈消耗的Native内存等信息。由于隐私安全政策，已上架应用市场的应用不支持录制此泳道。
 
-     点击录制按钮旁![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/BzqDGfm0QA2oPIliscOSJQ/zh-cn_image_0000002781471144.png)按钮，选择**录制设置**，可以设置是否为统计模式、统计间隔、最小跟踪内存、回栈深度、回栈模式。
+     点击录制按钮旁![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/HD7pcNSSRPKW8Zll34pi3g/zh-cn_image_0000002781471144.png)按钮，选择**录制设置**，可以设置是否为统计模式、统计间隔、最小跟踪内存、回栈深度、回栈模式。
 
      | **设置项名称** | **说明** |
      | --- | --- |
@@ -65,21 +65,21 @@ content_hash: sha256:89b47b317291cba53a17c67c54fcd264a3bf319b193876480ca334f332e
      + 统计模式用于不关注单次分配、关注应用较长时间的内存变化情况的场景，将指定的采样间隔内的数据做合并统计，以达到降低处理数据量，提高录制效率和时长的目的。设置的采样间隔为近似值，即尽可能地在接近这个时间内做统计汇总，存在一定的偏差，偏差不超过1s，这个偏差不会对内存分配的正确性产生影响。
      + 使用统计模式时，录制的结束时间需要是采样间隔即采样周期的整数倍，例如当采样周期是10s时，停止录制时间建议在11s+/21s+，以此类推，留出余量给系统做数据处理与传输。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/WnXqqN9ESbOEZdSFtdRJvw/zh-cn_image_0000002781311210.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/J9X-qI8jRi2mRUke1rrC6g/zh-cn_image_0000002781311210.png "点击放大")
 3. 在目标泳道上长按鼠标左键并拖拽，框选要展示分析的时间段，Details区域中显示此时间段内指定类型的内存分析统计信息。
    * **Memory泳道：**
      + 主泳道的详情区域显示当前框选时间段内各采样点的应用内存PSS总和以及各种内存页面状态的内存占用总和。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/bJ5wU0oiS6WgY2GzVAhPWQ/zh-cn_image_0000002781471142.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/UO3WECxnRb2qQmLMgdNrmQ/zh-cn_image_0000002781471142.png "点击放大")
      + 子泳道的详情区域显示该泳道所代表的内存类型的框选时间段内各采样点的PSS总和以及各种内存页面状态的实际占用情况。
 
        **须知** 
 
        Graph字段统计方式为：计算/proc/process\_dmabuf\_info节点下该进程使用的内存大小。
 
-       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/i4Q1sDTaR7q_WS81nCfQnA/zh-cn_image_0000002810750799.png "点击放大")
+       ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/7h7BSRvMT8-I9lbikneheA/zh-cn_image_0000002810750799.png "点击放大")
    * Native Allocation泳道：框选子泳道后显示具体的内存分配，包括静态统计数据、分配栈等。
      + Statistics页签中显示该段时间内的静态分配情况，包括分配方式（Malloc或Mmap）、总分配内存大小、总分配次数、尚未释放的内存大小、尚未释放次数、已释放的内存大小、已释放次数。
      + Call Trees页签显示线程的内存分配栈情况，包括函数地址或符号、分配大小、占比以及函数栈帧的类别等。单击任一行栈帧，**More**区域将显示经过该栈帧的分配内存最大的调用栈。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/jWTO3l28Q1qFS4tlZOgSUw/zh-cn_image_0000002810750801.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/Mcy5i7LXR5m_w13zere4Fw/zh-cn_image_0000002810750801.png "点击放大")

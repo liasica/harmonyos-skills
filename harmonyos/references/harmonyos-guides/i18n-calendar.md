@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/i18n-calendar
 title: 设置日历和历法
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用国际化 > 设置日历和历法
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:21+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:51:28+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:a6ad860cb12f086df61e633532aeaba22abee1a3ff52107494027032fda4814c
 ---
 

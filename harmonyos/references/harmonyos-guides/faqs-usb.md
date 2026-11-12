@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/faqs-usb
 title: 常见问题
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:36+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:103d728bb5d41644819909d2260114c563e6e7f150995eb56c9d1ef2ec95c058
+scraped_at: 2026-11-12T09:51:47+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:cba432214df50c89c3a71f78317fc6e4a11d45ca9087528a9f946857446dd31e
 ---
 
 ## 手机USB连接个人电脑时使用usbManager.getDevices获取的设备列表为空
@@ -70,3 +70,18 @@ usbManager.getDevices接口的作用，是在当前设备作为主设备时去�
 ### 解决措施
 
 排查是否受到干扰，修改停止位增加抗干扰性（如从1位改为2位）。
+
+## 调用ClaimInterface接口后对应的外设无法使用
+
+### 问题现象
+
+外设无法使用，例如鼠标键盘。
+
+### 可能原因
+
+应用调用ClaimInterface接口后将USB接口从内核驱动中释放并交由用户空间程序控制，导致内核无法控制对应的设备。
+
+### 解决措施
+
+1. 调用接口时可选参数传入false可以不强制获取。
+2. 出现该问题后重新插拔设备可以恢复。

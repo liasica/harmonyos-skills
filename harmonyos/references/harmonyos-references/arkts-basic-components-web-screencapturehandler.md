@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-bas
 title: Class (ScreenCaptureHandler)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS 组件 > Web > Class (ScreenCaptureHandler)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:28+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:5ce3b4169606f21c03961b19c0d9462f75f600624e8136273020fe368fcc9b59
+scraped_at: 2026-11-12T09:54:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:603529b5799128e94bb2ea7c8edc6146de95ba3a04c4ec516f4de25a5daea9f1
 ---
 
 ScreenCaptureHandler是Web组件提供的屏幕捕获权限处理类，用于响应网页发起的屏幕捕获请求。该类适用于在线教育、远程会议、屏幕共享等需要获取用户屏幕内容的应用场景。该类允许开发者通过grant或deny方法控制是否授予网页屏幕捕获权限，并通过getOrigin方法获取请求来源信息，帮助开发者在保护用户隐私的同时，灵活处理网页的屏幕捕获访问需求，提升应用的安全性和用户体验。示例代码参考[onScreenCaptureRequest](arkts-basic-components-web-events.md#onscreencapturerequest10)事件。
@@ -38,7 +38,7 @@ deny(): void
 
 getOrigin(): string
 
-获取网页来源。用于验证请求来源的可信度，或实现白名单机制以控制哪些网页可以进行屏幕捕获。
+获取网页来源。用于校验发起请求的网页来源，开发者可通过来源允许列表控制哪些网页允许发起屏幕捕获请求。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 

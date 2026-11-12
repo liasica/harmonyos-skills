@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-comput
 title: 消息认证码计算CMAC(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 消息认证码计算 > 消息认证码计算CMAC(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:27+08:00
-doc_updated_at: 2026-10-10
+scraped_at: 2026-11-12T09:51:34+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:7d2b9c6d2e9b9e1145441fe6faa770ddadf74d3350dc47553c0d2a9247c3266a
 ---
 

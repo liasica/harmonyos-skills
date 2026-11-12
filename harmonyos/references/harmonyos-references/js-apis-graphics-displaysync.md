@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-g
 title: "@ohos.graphics.displaySync (可变帧率)"
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.displaySync (可变帧率)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:40+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:06d89a1766e74d95c98a9d21ee2d46793d08b38dd9c9b9b84a5d2e198015d374
+scraped_at: 2026-11-12T09:56:53+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d485628747637a6d27d9e9104d703489451dc6f9d43cce7fcd3266f27aba61cb
 ---
 
 可变帧率支持让开发者以指定帧率来运行UI业务，一般用于开发者自绘制UI，并且对于帧率有特定需求的场景，系统会根据设置的期望帧率、最小帧率和最大帧率来调整绘制频率，以满足不同场景的需求。
@@ -26,6 +26,8 @@ create(): DisplaySync
 
 创建DisplaySync对象，通过此对象设置UI自绘制内容帧率。
 
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
@@ -45,6 +47,8 @@ let backDisplaySync: displaySync.DisplaySync = displaySync.create();
 
 开发者可以从回调函数中获取帧绘制的时间戳信息，包含当前帧到达的时间timestamp和下一帧预期到达的时间targetTimestamp。
 
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -61,6 +65,8 @@ let backDisplaySync: displaySync.DisplaySync = displaySync.create();
 setExpectedFrameRateRange(rateRange: ExpectedFrameRateRange): void
 
 设置期望的帧率范围。设置的期望帧率范围将作为系统调度的参考，系统会尽量在此范围内调整绘制帧率。未调用该方法或传入ExpectedFrameRateRange(0, 0, 0)时将跟随应用当前运行的帧率。建议在调用[start](js-apis-graphics-displaysync.md#start)前设置，以便立即生效；调用[start](js-apis-graphics-displaysync.md#start)之后设置也可生效但可能存在延迟。
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -101,6 +107,8 @@ on(type: 'frame', callback: Callback<IntervalInfo>): void
 
 订阅每一帧的变化。注册回调函数后，还需调用[start](js-apis-graphics-displaysync.md#start)方法启动DisplaySync，系统才会在每一帧触发该回调。和[off('frame')](js-apis-graphics-displaysync.md#offframe)方法配对使用，用于取消注册回调函数。回调函数在UI主线程执行。回调频率受[setExpectedFrameRateRange](js-apis-graphics-displaysync.md#setexpectedframeraterange)设置的帧率范围影响。若回调执行耗时过长，可能导致卡顿，建议回调中只进行轻量业务逻辑。
 
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -131,6 +139,8 @@ off(type: 'frame', callback?: Callback<IntervalInfo>): void
 
 取消订阅每一帧的变化。与[on('frame')](js-apis-graphics-displaysync.md#onframe)方法配对使用。取消成功后，将不再触发回调函数。
 
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -160,6 +170,8 @@ backDisplaySync?.off("frame", callback)
 start(): void
 
 使通过[setExpectedFrameRateRange](js-apis-graphics-displaysync.md#setexpectedframeraterange)设置的期望帧率范围生效；如果通过[on('frame')](js-apis-graphics-displaysync.md#onframe)注册了回调函数，则开始请求VSync信号，触发已注册的回调，每帧执行一次。和[stop](js-apis-graphics-displaysync.md#stop)方法配对使用。
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -226,6 +238,8 @@ struct Index {
 stop(): void
 
 关闭期望帧率范围并且停止每帧回调。需在调用[start](js-apis-graphics-displaysync.md#start)后使用，停止后DisplaySync的配置（如期望帧率范围、回调函数）仍然保留，可随时通过[start](js-apis-graphics-displaysync.md#start)重新启动。[stop](js-apis-graphics-displaysync.md#stop)方法会解除DisplaySync与UI上下文和窗口的关联，通常无需特定的UI上下文。
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅启动耗时事件（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 启动耗时事件 > 订阅启动耗时事件（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:39+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-11-12T09:51:55+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:af1231f8a9681a9a420e13f0d1d527787c23a7765a99eb05f7f73b4511457178
 ---
 

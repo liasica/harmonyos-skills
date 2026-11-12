@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 半模态转场
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 通用属性 > 模态转场设置 > 半模态转场
 category: harmonyos-references
-scraped_at: 2026-11-04T08:32:51+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:4acdece7f89bb3a75cc07b584f16f678fc61a7a449068e2f0fb3f2a1a7ba9a41
+scraped_at: 2026-11-12T09:54:09+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:12275e6ca5968d869a1d3c0585fb112f1ad40be5725f0dfcce65a5cbe8d6b222
 ---
 
 通过bindSheet属性为组件绑定半模态页面，支持底部、居中、跟手、侧边、全屏等多种弹窗样式，在组件插入时可通过设置自定义或默认的内置高度确定半模态大小（侧边弹窗和全屏弹窗不支持自定义高度）。
@@ -100,7 +100,9 @@ bindSheet(isShow: boolean, builder: CustomBuilder, options?: SheetOptions): T
 | enableFloatingDragBar20+ | boolean | 否 | 是 | 控制条是否悬浮显示，true为悬浮显示，false为不悬浮显示。  默认值：false  **说明：**  悬浮效果只在控制条显示的场景生效，且控制条不占位。  title传入[CustomBuilder](ts-types.md#custombuilder8)时enableFloatingDragBar始终为false。  侧边弹窗样式下不支持浮动控制条。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
 | modalTransition20+ | [ModalTransition](ts-universal-attributes-sheet-transition.md#modaltransition) | 否 | 是 | bindSheet全屏模态样式的系统转场方式。该属性仅在[preferType](ts-universal-attributes-sheet-transition.md#sheetoptions)设置为[SheetType.CONTENT\_COVER](ts-universal-attributes-sheet-transition.md#sheettype11枚举说明)（全屏弹窗样式）时生效，其他弹窗样式设置该属性无效。  默认值：ModalTransition.DEFAULT  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
 | radiusRenderStrategy23+ | [RenderStrategy](ts-appendix-enums.md#renderstrategy22) | 否 | 是 | 设置组件绘制圆角的模式。  默认值：RenderStrategy.FAST  **说明：** 当半模态设置模糊时，可通过设置为OFFSCREEN离屏模式解决半模态顶部或顶部圆角区域内显示效果异常问题。popup样式不支持设置组件绘制圆角模式。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
-| systemMaterial | [SystemUiMaterial](ts-universal-attributes-image-effect.md#systemuimaterial) | 否 | 是 | 设置组件的系统材质。  默认值：undefined，会清除由该接口设置的材质效果。  **说明：** 不同系统材质对应不同的属性影响效果，该接口影响背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)，不建议与上述接口一起使用。使用示例请参考[示例10（半模态设置系统材质）](ts-universal-attributes-sheet-transition.md#示例10半模态设置系统材质)。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| systemMaterial | [SystemUiMaterial](ts-universal-attributes-image-effect.md#systemuimaterial) | 否 | 是 | 设置组件的系统材质。  默认值：undefined，会清除由该接口设置的材质效果。  **说明：**  - 不同系统材质对应不同的属性影响效果，该接口影响背景色[backgroundColor](ts-universal-attributes-background.md#backgroundcolor)、边框颜色[borderColor](ts-universal-attributes-border.md#bordercolor)、边框宽度[borderWidth](ts-universal-attributes-border.md#borderwidth)、阴影[shadow](ts-universal-attributes-image-effect.md#shadow)，不建议与上述接口一起使用。使用示例请参考[示例10（半模态设置系统材质）](ts-universal-attributes-sheet-transition.md#示例10半模态设置系统材质)。  - 使用该接口设置材质会赋予关闭按钮一种系统内置的材质效果。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| titleBarHoverMode | [SheetTitleBarHoverMode](ts-universal-attributes-sheet-transition.md#sheettitlebarhovermode) | 否 | 是 | 标题栏悬浮模式。仅当标题栏存在时生效。  默认值：SheetTitleBarHoverMode.STANDARD  **起始版本：** 26.0.1  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| scrollBarState | [BarState](ts-appendix-enums.md#barstate) | 否 | 是 | 半模态内容区Scroll滚动条的显示状态。  默认值：BarState.Off  **起始版本：** 26.0.1  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## SheetSize枚举说明
 
@@ -241,6 +243,8 @@ bindSheet(isShow: boolean, builder: CustomBuilder, options?: SheetOptions): T
 | effectEdge | 不支持边缘回弹效果。 |
 | enableFloatingDragBar | 不支持悬浮控制条。 |
 | onWillSpringBackWhenDismiss | 无回弹效果。 |
+| titleBarHoverMode | 不支持标题栏悬浮模式。 |
+| scrollBarState | 不支持内置滚动条显示状态。 |
 
 ## SheetDismiss11+
 
@@ -336,6 +340,23 @@ bindSheet(isShow: boolean, builder: CustomBuilder, options?: SheetOptions): T
 
 设置POPUP\_SHEET避让方式时，半模态只避让由面板内的文本框组件拉起的软键盘场景，其他场景半模态无需避让。
 
+## SheetTitleBarHoverMode
+
+标题栏悬浮模式枚举。
+
+**起始版本：** 26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| STANDARD | 0 | 标准模式，标题栏与内容区竖直排列不重叠。 |
+| STACK | 1 | 堆叠模式，标题栏悬浮在内容区上方，设置为该样式时开发者需要在内容区顶部添加内边距以避免遮挡。 |
+
 ## 示例
 
 ### 示例1（不同高度的半模态弹窗）
@@ -410,7 +431,7 @@ struct SheetTransitionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/MeGjwybFSmiZ_suUm57QRg/zh-cn_image_0000002809051711.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/fykHDz7XSxSFo3_-Bb--Bw/zh-cn_image_0000002815560487.gif)
 
 ### 示例2（设置三个不同高度的挡位）
 
@@ -463,7 +484,7 @@ struct SheetTransitionExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/EBqtpQ5wQveekHAogGnbTw/zh-cn_image_0000002779852146.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/e40E5AH5QgKQY0nLojeh_A/zh-cn_image_0000002815400571.gif)
 
 ### 示例3（使用边框宽度和颜色）
 
@@ -519,11 +540,11 @@ struct SheetTransitionExample {
 
 从左至右显示语言模式示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/HV_3wBuWSmOzmn0PbMK9LQ/zh-cn_image_0000002779692178.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/9xgXlN4eSYKLu1vbttpAZg/zh-cn_image_0000002786520996.png)
 
 从右至左显示语言模式示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/QjkdJPDSTwaAwGhI_pvhbw/zh-cn_image_0000002809011799.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/2E44pQccSw-gvnqoL2rjeA/zh-cn_image_0000002786361068.png)
 
 ### 示例4（使用关闭回调函数）
 
@@ -577,7 +598,7 @@ struct BindSheetExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/UON2E4RqSwGXRLvOEwFGEQ/zh-cn_image_0000002809051713.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/AM-zuAE-TPuZLD2OGNJ9WA/zh-cn_image_0000002815560489.gif)
 
 ### 示例5（设置内容区刷新时机）
 
@@ -630,11 +651,11 @@ struct Index {
 
 跟手触发挡位切换时，松手才触发面板内容高度刷新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/f9oBKZzNS3Gbd-mqucvBeg/zh-cn_image_0000002779852148.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/VqfvgkMrQKqoB0L1RIt3kg/zh-cn_image_0000002815400573.gif)
 
 跟手触发挡位切换时，跟手时期就会触发面板内容高度刷新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/VfRPfQ-GQAej2pqIP5m0KQ/zh-cn_image_0000002779692180.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/T0h-bT37QIG5_36a0c9Dwg/zh-cn_image_0000002786520998.gif)
 
 ### 示例6（设置压缩模态内容）
 
@@ -750,7 +771,7 @@ struct ListenKeyboardHeightChange {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/vf0i34JmQfmv3zMLkgPlOw/zh-cn_image_0000002809011801.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/-vK_SwqfQE-Is6-4q6Xt6g/zh-cn_image_0000002786361070.gif)
 
 ### 示例7（镜像场景下如何设置圆角属性）
 
@@ -803,11 +824,11 @@ struct SheetTransitionExample {
 
 从左至右显示语言模式示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/vcAaHM3OQPOkUOZ5Eh1ZfQ/zh-cn_image_0000002809051715.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/85w7ySxqQUm8ZEoVssqVQw/zh-cn_image_0000002815560491.png)
 
 从右至左显示语言模式示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/sFojdFqSQlCtYyEqq5g-rw/zh-cn_image_0000002779852150.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/bUuqRN7DTTWd0hFy3skHgw/zh-cn_image_0000002815400575.png)
 
 ### 示例8（半模态Side侧边样式）
 
@@ -909,7 +930,7 @@ struct SheetSideExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/HBItWiLuSpu4FOg05TirrQ/zh-cn_image_0000002779692182.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/qVsLSHVES_C6FAEh7GswRA/zh-cn_image_0000002786521000.gif)
 
 ### 示例9（半模态ContentCover全屏样式）
 
@@ -971,7 +992,7 @@ struct ContentCoverExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/DgwfV3KzROWWNWZIpY02QQ/zh-cn_image_0000002809011803.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/cZQIeyUwQR6b7K4ncxpnNA/zh-cn_image_0000002786361072.gif)
 
 ### 示例10（半模态设置系统材质）
 
@@ -1023,8 +1044,6 @@ struct SheetMaterialExample {
             // borderColor: Color.Red,
             // backgroundColor: Color.Green,
             // shadow: { radius: 30, type: ShadowType.COLOR, color: Color.Yellow },
-            // 某些材质效果不自带背景，会被backgroundColor设置的颜色覆盖，若要呈现此类材质效果，建议将背景色改为透明色
-            backgroundColor: Color.Transparent,
             systemMaterial: this.myMaterial // 从API版本26.0.0开始，新增systemMaterial属性
           })
       }
@@ -1036,4 +1055,159 @@ struct SheetMaterialExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/SMSi85XpQzSeaBcADbcROg/zh-cn_image_0000002809051717.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/WaJvaWpITViNfuSJoVfBCw/zh-cn_image_0000002815560493.jpg)
+
+### 示例11（半模态设置标题栏悬浮模式）
+
+该示例通过titleBarHoverMode属性设置半模态标题栏为STACK堆叠模式，标题栏悬浮在内容区上方。
+
+从API版本26.0.1开始，[SheetOptions](ts-universal-attributes-sheet-transition.md#sheetoptions)新增titleBarHoverMode属性。
+
+```ts
+// xxx.ets
+@Entry
+@Component
+struct SheetMaterialExample {
+  @State isShow: boolean = false;
+
+  @Builder
+  myBuilder() {
+    Column() {
+      Column()
+        .backgroundColor(Color.Pink)
+        .height(200)
+        .width('100%')
+      Column()
+        .backgroundColor(Color.Orange)
+        .height(200)
+        .width('100%')
+      Column()
+        .backgroundColor(Color.Pink)
+        .height(200)
+        .width('100%')
+      Column()
+        .backgroundColor(Color.Orange)
+        .height(200)
+        .width('100%')
+      Column()
+        .backgroundColor(Color.Pink)
+        .height(200)
+        .width('100%')
+      Column()
+        .backgroundColor(Color.Orange)
+        .height(200)
+        .width('100%')
+    }
+    .width('100%')
+  }
+
+  build() {
+    Stack() {
+      Column() {
+        Button('拉起半模态')
+          .onClick(() => {
+            this.isShow = true;
+          })
+          .fontSize(20)
+          .margin(10)
+          .bindSheet($$this.isShow, this.myBuilder(), {
+            height: SheetSize.MEDIUM,
+            title: { title: '标题' },
+            titleBarHoverMode: SheetTitleBarHoverMode.STACK,
+          })
+      }
+      .justifyContent(FlexAlign.Center)
+      .width('100%')
+      .height('100%')
+    }
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/gOXr6MWGQAOtXkAF4pnoXg/zh-cn_image_0000002815400577.jpg)
+
+### 示例12（半模态自定义滚动条状态）
+
+该示例通过scrollBarState属性设置半模态内容区滚动条的显示状态，点击按钮在[BarState](ts-appendix-enums.md#barstate)的Off、On、Auto和未设置之间切换。
+
+从API版本26.0.1开始，[SheetOptions](ts-universal-attributes-sheet-transition.md#sheetoptions)新增scrollBarState属性。
+
+```ts
+// xxx.ets
+@Entry
+@Component
+struct SheetMaterialExample {
+  @State isShow: boolean = false;
+  @State myScrollBarMode: BarState | undefined = BarState.Off;
+
+  @Builder
+  myBuilder() {
+    Column() {
+      Row() {
+        Button('当前的ScrollBarMode：' + this.myScrollBarMode)
+          .onClick(() => {
+            if (this.myScrollBarMode == undefined) {
+              this.myScrollBarMode = BarState.Off
+            } else if (this.myScrollBarMode == BarState.Off) {
+              this.myScrollBarMode = BarState.On
+            } else if (this.myScrollBarMode == BarState.On) {
+              this.myScrollBarMode = BarState.Auto
+            } else if (this.myScrollBarMode == BarState.Auto) {
+              this.myScrollBarMode = undefined
+            }
+          })
+      }.width('100%').justifyContent(FlexAlign.Center).margin(25)
+
+      Column() {
+        Column()
+          .backgroundColor(Color.Pink)
+          .height(200)
+          .width('100%')
+        Column()
+          .backgroundColor(Color.Orange)
+          .height(200)
+          .width('100%')
+        Column()
+          .backgroundColor(Color.Pink)
+          .height(200)
+          .width('100%')
+        Column()
+          .backgroundColor(Color.Orange)
+          .height(200)
+          .width('100%')
+        Column()
+          .backgroundColor(Color.Pink)
+          .height(200)
+          .width('100%')
+        Column()
+          .backgroundColor(Color.Orange)
+          .height(200)
+          .width('100%')
+      }
+    }
+    .width('100%')
+  }
+
+  build() {
+    Stack() {
+      Column() {
+        Button('拉起半模态')
+          .onClick(() => {
+            this.isShow = true;
+          })
+          .fontSize(20)
+          .margin(10)
+          .bindSheet($$this.isShow, this.myBuilder(), {
+            height: SheetSize.MEDIUM,
+            scrollBarState: this.myScrollBarMode,
+          })
+      }
+      .justifyContent(FlexAlign.Center)
+      .width('100%')
+      .height('100%')
+    }
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/_kUelsLqTgWxDcnDxqK9Rg/zh-cn_image_0000002786521002.gif)

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-code-model
-title: 模型配置
-breadcrumb: 指南 > DevEco Code > DevEco Code TUI > 模型配置
+title: 配置Models
+breadcrumb: 指南 > DevEco Code > DevEco Code TUI > 配置Models
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:13:14+08:00
-doc_updated_at: 2026-10-31
+scraped_at: 2026-11-12T09:53:25+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:bdff91aa0438304bdb25248e54109056bf334548adedad9134db3d66e9207cca
 ---
 

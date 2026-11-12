@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_triple-sl
 title: "@typescript-eslint/triple-slash-reference"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/triple-slash-reference
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:11+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:3edf88e7fae2e7bc1a62277c625a35250dc9be38ee3cc6e55a7a7170f1999e28
+scraped_at: 2026-11-12T09:52:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c495844693f4f70dd5d4512b3e2dd51124a4c76d020fd66d8ca4249b18c209e0
 ---
 
 不允许某些三斜杠引用，推荐使用ES6风格的导入声明。
@@ -54,4 +54,4 @@ globalThis.value;
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

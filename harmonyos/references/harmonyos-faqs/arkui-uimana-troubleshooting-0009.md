@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-tr
 title: NavDestination首页跳转动画异常问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 故障排查 > NavDestination首页跳转动画异常问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:33+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:4514b9f45589dfefb57274b185155038430e148cd18f1e9f668d0314e75274a0
+scraped_at: 2026-11-12T09:58:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e0cd65c7d0784db2505985b7fd6959bed532c3190aecef90b5439a80486e23b6
 ---
 
 ## 问题现象
@@ -65,7 +65,7 @@ content_hash: sha256:4514b9f45589dfefb57274b185155038430e148cd18f1e9f668d0314e75
 
    上述实现方式，在打开应用时导航页总是会显示一瞬间，如何实现子页代替导航页成为首页的功能，并避免这种跳转异常？
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/MEYnf6-RQnGM0xP_2HHoFQ/zh-cn_image_0000002768133986.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/_L_xCG3URTGINuERKdU_0Q/zh-cn_image_0000002768133986.png "点击放大")
 
 ## 定位过程
 
@@ -148,7 +148,7 @@ struct HideNavBarPage {
 
    **说明** 
 
-   请参考[系统路由表](../harmonyos-guides/arkts-navigation-navigation.md#系统路由表)的配置方法，两种方案运行还需在模块的module.json5文件中添加路由表配置"routerMap": "$profile:route\_map"，并在工程resources/base/profile中创建route\_map.json文件。添加如下配置信息：
+   请参考[系统路由表](../doccenter-capabilities/arkts-navigation-cross-package.md#系统路由表)的配置方法，两种方案运行还需在模块的module.json5文件中添加路由表配置"routerMap": "$profile:route\_map"，并在工程resources/base/profile中创建route\_map.json文件。添加如下配置信息：
 
    ```json
    {

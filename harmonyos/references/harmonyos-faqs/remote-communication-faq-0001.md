@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/remote-communic
 title: rcp如何实现文件上传
 breadcrumb: FAQ > 系统开发 > 网络 > 远场通信（Remote Communication） > 常见问题 > rcp如何实现文件上传
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:17+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:64b379235c62e5cab4e6f310b228beceee634bcf283f3f63efe4231029510e2c
+scraped_at: 2026-11-12T09:59:35+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d903f64c2b7b88fd3b5418e1774e546441b3f2c278ea09933aaf695cd4305361
 ---
 
 **Q：如何使用rcp模块不同接口在不同应用场景上传文件，并详细说明上传接口中重要参数的使用场景和含义？**
@@ -49,9 +49,9 @@ content_hash: sha256:64b379235c62e5cab4e6f310b228beceee634bcf283f3f63efe42310295
 
    场景1运行效果：使用uploadFromFile方法上传文件content-type系统默认为'application/octet-stream'，运行日志如下图所示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/jsDFIUncRuiF64gfnGNz6A/zh-cn_image_0000002768139480.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/pZu5g54cRIOnjUgPUSvu5A/zh-cn_image_0000002768139480.png "点击放大")
 
-场景2：使用读取文件数据回调函数作为入参上传文件，具体参考官方指南[上传功能实现](../harmonyos-guides/remote-communication-filetransferfast.md#section10114164401311)。
+场景2：使用读取文件数据回调函数作为入参上传文件，具体参考官方指南[上传功能实现](../doccenter-capabilities/remote-communication-filetransferfast.md#上传功能实现)。
 
 方案二：使用多部件表单上传文件。
 
@@ -96,7 +96,7 @@ content_hash: sha256:64b379235c62e5cab4e6f310b228beceee634bcf283f3f63efe42310295
 
 使用沙箱路径上传表单文件，系统默认会根据文件名类型匹配content-type，此为图片类型文件上传，即为image/jpeg，运行日志如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/ukbR2C0jQkyW2dedEER74w/zh-cn_image_0000002797580145.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/3U2S-T5NTS2LwBSSR7EY9g/zh-cn_image_0000002797580145.png "点击放大")
 
 场景2：使用文件数据上传表单文件。
 
@@ -124,10 +124,10 @@ content_hash: sha256:64b379235c62e5cab4e6f310b228beceee634bcf283f3f63efe42310295
 
 * 如果配置参数remoteFileName，系统默认会根据文件名类型匹配content-type，此为图片类型文件上传，即为'image/jpeg'，运行日志如下图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/nzZXJr_STnutKbM7OvCuKQ/zh-cn_image_0000002797461851.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/_U6UZuHpSrm8GQpM7sRffw/zh-cn_image_0000002797461851.png "点击放大")
 * 如果不配置参数remoteFileName，或者设置为undefined，系统无法识别为图片类型文件，即使设置contentType参数为'image/jpeg'，上传数据依然无法识别，运行日志如下图所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/g1mPAGbkQEKT3jK_rbzeww/zh-cn_image_0000002797581829.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/W-dYYS6iRNuoK-UAld8pGQ/zh-cn_image_0000002797581829.png "点击放大")
 
 完整示例代码：
 

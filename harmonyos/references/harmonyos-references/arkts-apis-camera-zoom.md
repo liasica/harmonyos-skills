@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (Zoom)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (Zoom)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:26+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d307483b98777e03047c35fc51bf7c385f93f0b8686d522c83b8acd07e1d2b91
+scraped_at: 2026-11-12T09:56:32+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3842f61b013051f76fa6b26ea8adb0f04f7cc39638c79b19b7bed6193b9e762d
 ---
 
 Zoom继承自[ZoomQuery](arkts-apis-camera-zoomquery.md)。
@@ -52,11 +52,12 @@ setZoomRatio(zoomRatio: number): void
 ```ts
 import { BusinessError } from '@kit.BasicServicesKit';
 
-function setZoomRatio(photoSession: camera.PhotoSession, zoomRatioRange: Array<number>): void {
-  if (zoomRatioRange === undefined || zoomRatioRange.length <= 0) {
+function setZoomRatio(photoSession: camera.PhotoSession, zoomRatio: number): void {
+  let zoomRatioRange = photoSession.getZoomRatioRange();
+  if (zoomRatio < zoomRatioRange[0] || zoomRatio > zoomRatioRange[1]) {
+    console.error(`invalid zoomRatio`);
     return;
   }
-  let zoomRatio = zoomRatioRange[0];
   try {
     photoSession.setZoomRatio(zoomRatio);
   } catch (error) {
@@ -139,7 +140,21 @@ setSmoothZoom(targetRatio: number, mode?: SmoothZoomMode): void
 **示例：**
 
 ```ts
-function setSmoothZoom(sessionExtendsZoom: camera.Zoom, targetZoomRatio: number, mode: camera.SmoothZoomMode): void {
-  sessionExtendsZoom.setSmoothZoom(targetZoomRatio, mode);
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function setSmoothZoom(sessionExtendsZoom: camera.Zoom, targetZoomRatio: number,
+  photoSession: camera.PhotoSession, mode: camera.SmoothZoomMode): void {
+  let zoomRatioRange = photoSession.getZoomRatioRange();
+  if (targetZoomRatio < zoomRatioRange[0] || targetZoomRatio > zoomRatioRange[1]) {
+    console.error(`invalid targetZoomRatio.`);
+    return;
+  }
+  try {
+    sessionExtendsZoom.setSmoothZoom(targetZoomRatio, mode);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The setSmoothZoom call failed. error code: ${err.code}`);
+  }
 }
 ```

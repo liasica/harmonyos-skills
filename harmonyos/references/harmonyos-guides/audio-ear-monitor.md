@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-ear-mon
 title: 实现自定义耳返
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频录制 > 实现自定义耳返
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:52+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:52:00+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:81bbf0a60b7db474d1138e5764bf436c7466ac9992dd629b16c64fd0bd9f584b
 ---
 

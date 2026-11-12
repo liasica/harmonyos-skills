@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-user-de
 title: 自定义组件节点 (FrameNode)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用自定义能力 > 自定义节点 > 自定义组件节点 (FrameNode)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:19+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:57430ac83e05d1ab6825d33cdd7754ba0aa8d1a8e9cca25db376ee685609205e
+scraped_at: 2026-11-12T09:51:16+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:bde64c25c2b857f082ff637c4e3ae235f7f5269a509967779134c956c96c3393
 ---
 
 ## 概述
 
 对于拥有自定义前端的第三方框架（如JSON、XML、DOM树等），需将特定的DSL转换为ArkUI的声明式描述。如下图描述了JSON定义的前端框架和ArkUI声明式描述的对应关系。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/AUu2Zk58S7-f1_VXeVQ0cQ/zh-cn_image_0000002809049823.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/SWPihbhfR8uVN7zLI9Gg4w/zh-cn_image_0000002786519128.png)
 
 上述转换过程需要依赖额外的数据驱动，绑定至[Builder](arkts-builder.md)中，较为复杂且性能欠佳。这类框架通常依赖于ArkUI的布局、事件处理、基础的节点操作和自定义能力。大部分组件通过自定义实现，但需结合使用部分系统组件以实现混合显示，如下图示例既使用了[FrameNode](../harmonyos-references/js-apis-arkui-framenode.md)的自定义方法进行绘制，又使用了系统组件[Column](../harmonyos-references/ts-container-column.md)及其子组件[Text](../harmonyos-references/ts-basic-components-text.md)，通过[BuilderNode](../harmonyos-references/js-apis-arkui-buildernode.md)的方式将其挂载到根节点的FrameNode上混合显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/hM8EIYDTQ7Sj9SnmKCTgQA/zh-cn_image_0000002779850258.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9/v3/W41FwtWIRGuZFGl4CJRaRA/zh-cn_image_0000002786359200.png)
 
 [FrameNode](../harmonyos-references/js-apis-arkui-framenode.md)的设计初衷正是为了解决上述转换问题。FrameNode表示组件树中的实体节点，与自定义占位容器组件[NodeContainer](../harmonyos-references/ts-basic-components-nodecontainer.md)相配合，实现在占位容器内构建一棵自定义的节点树。该节点树支持动态操作，如节点的增加、修改和删除。基础的FrameNode具备设置通用属性和事件回调的功能，同时提供完整的自定义能力，涵盖自定义测量、布局和绘制等方面。
 
@@ -435,7 +435,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/LNepNYgvQUmYtBKvmczNdA/zh-cn_image_0000002779690288.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/uTM_7PcNTFaNyEog6HHNqA/zh-cn_image_0000002815558621.gif)
 
 ## 设置节点通用属性和事件回调
 
@@ -630,18 +630,18 @@ struct Index {
 
 ## 自定义测量布局与绘制
 
-通过重写[onDraw()](../harmonyos-references/js-apis-arkui-framenode.md#ondraw12)方法，可以自定义FrameNode的绘制内容。[invalidate()](../harmonyos-references/js-apis-arkui-framenode.md#invalidate12)接口可以主动触发节点的重新绘制。
+通过重写[onDraw](../harmonyos-references/js-apis-arkui-framenode.md#ondraw12)方法，可以自定义FrameNode的绘制内容。[invalidate](../harmonyos-references/js-apis-arkui-framenode.md#invalidate12)接口可以主动触发节点的重新绘制。
 
-通过重写[onMeasure()](../harmonyos-references/js-apis-arkui-framenode.md#onmeasure12)可以自定义FrameNode的测量方式，使用[measure()](../harmonyos-references/js-apis-arkui-framenode.md#measure12)可以主动传递布局约束触发重新测量。
+通过重写[onMeasure](../harmonyos-references/js-apis-arkui-framenode.md#onmeasure12)可以自定义FrameNode的测量方式，使用[measure](../harmonyos-references/js-apis-arkui-framenode.md#measure12)可以主动传递布局约束触发重新测量。
 
-通过重写[onLayout()](../harmonyos-references/js-apis-arkui-framenode.md#onlayout12)方法可以自定义FrameNode的布局方式，使用[layout()](../harmonyos-references/js-apis-arkui-framenode.md#layout12)方法可以主动传递位置信息并触发重新布局。
+通过重写[onLayout](../harmonyos-references/js-apis-arkui-framenode.md#onlayout12)方法可以自定义FrameNode的布局方式，使用[layout](../harmonyos-references/js-apis-arkui-framenode.md#layout12)方法可以主动传递位置信息并触发重新布局。
 
-[setNeedsLayout()](../harmonyos-references/js-apis-arkui-framenode.md#setneedslayout12)可以将当前节点标记，在下一帧触发重新布局。
+[setNeedsLayout](../harmonyos-references/js-apis-arkui-framenode.md#setneedslayout12)可以将当前节点标记，在下一帧触发重新布局。
 
 **说明** 
 
 * 对节点进行dispose解引用后，由于FrameNode对象不再对应一个实体节点，invalidate无法触发原有绑定节点的刷新。
-* 通过onDraw()方法进行的自定义绘制，绘制内容大小无法超出组件大小。
+* 通过onDraw方法进行的自定义绘制，绘制内容大小无法超出组件大小。
 
 ```typescript
 import { DrawContext, FrameNode, NodeController, Position, Size, UIContext, LayoutConstraint } from '@kit.ArkUI';
@@ -819,7 +819,7 @@ FrameNode提供了查询节点相对窗口、父组件以及屏幕位置偏移�
 
 [getPositionToWindow](../harmonyos-references/js-apis-arkui-framenode.md#getpositiontowindow12)，[getPositionToParent](../harmonyos-references/js-apis-arkui-framenode.md#getpositiontoparent12)，[getPositionToScreen](../harmonyos-references/js-apis-arkui-framenode.md#getpositiontoscreen12)三个接口获取到的位置信息关系如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/qZNe3ZyCSeilijXPlSIPdA/zh-cn_image_0000002809009909.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/4SlywSEeRs-xxoqDiMgumg/zh-cn_image_0000002815398705.png)
 
 ```typescript
 import { NodeController, FrameNode, UIContext } from '@kit.ArkUI';
@@ -1954,7 +1954,7 @@ struct Index {
 
 ## 调整自定义绘制Canvas的变换矩阵
 
-从API version 12开始，通过重写FrameNode的[onDraw()](../harmonyos-references/js-apis-arkui-framenode.md#ondraw12)方法，可以重写默认绘制方法。
+从API version 12开始，通过重写FrameNode的[onDraw](../harmonyos-references/js-apis-arkui-framenode.md#ondraw12)方法，可以重写默认绘制方法。
 
 通过[concatMatrix](../harmonyos-references/arkts-apis-graphics-drawing-canvas.md#concatmatrix12)可以调整自定义绘制画布的变换矩阵。
 
@@ -2099,7 +2099,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/I71FOtqBSgaGd_hvT0gbUA/zh-cn_image_0000002809049825.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/xQIwAUdwTjWKOvkIoezrFw/zh-cn_image_0000002786519130.png)
 
 ## 更新当前帧节点
 
@@ -2199,7 +2199,7 @@ struct ListNodeTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/Z5uQBdhjSq6AdtPKSV59Dw/zh-cn_image_0000002779850260.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/4cy8sMyPS8aYK2DH6p2l9g/zh-cn_image_0000002786359202.png)
 
 ## 判断节点是否处于渲染状态
 
@@ -2270,4 +2270,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/qaiJ_4XwT1WkQkZcuC0s0w/zh-cn_image_0000002779690290.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/1gEyq41DRhm7ik141d4HfQ/zh-cn_image_0000002815558623.png)

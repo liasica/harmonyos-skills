@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-llm-onnx-model
 title: 原始模型导出为友好结构ONNX模型
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > LLM大模型能力开放 > CANN LLM模型转换 > 原始模型导出为友好结构ONNX模型
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > LLM大模型对接 > CANN LLM模型转换 > 原始模型导出为友好结构ONNX模型
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:44+08:00
+scraped_at: 2026-11-12T09:52:43+08:00
 doc_updated_at: 2026-06-05
 content_hash: sha256:2361d0dc7e6005cb5a87358188fc8258751d8e1510bc8ceadf7062fbe3d28113
 ---

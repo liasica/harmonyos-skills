@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-basic-resource-management
 title: 资源管理
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC昇腾到麒麟兼容性迁移指南 > Ascend910B/Ascend910C到KirinX90/Kirin9030迁移指导 > 基础API迁移指导 > 资源管理
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC昇腾到麒麟兼容性迁移指南 > Ascend910B/Ascend910C到KirinX90/Kirin9030迁移指导 > 基础API迁移指导 > 资源管理
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:43:01+08:00
+scraped_at: 2026-11-12T09:52:43+08:00
 doc_updated_at: 2026-04-20
 content_hash: sha256:0cb2171228af65258cc9a8aea0e50f011d0956c061d5d501fc7247e1b48129ca
 ---

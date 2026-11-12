@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-development-process
 title: 开发流程
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子部署 > 算子入图（GE图）开发 > 开发流程
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC算子部署 > AscendC算子入图（GE图）开发 > 开发流程
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:50+08:00
-doc_updated_at: 2026-05-18
-content_hash: sha256:5f71f0b2390c604aaa3141060ddc4e9c8fd7232358de8b72df4d30a48ae1ac3f
+scraped_at: 2026-11-12T09:52:42+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:09459822a6d92dd77e4ab194c7b3865be722f813b7f82d640d75b937ae9dcfa5
 ---
 
 该开发流程以[工程化算子开发](cannkit-overview-of-engineering-operator.md)为基础，除了需要提供[算子实现](cannkit-operator-prototype-definition.md)中的算子实现文件外，还需要额外交付算子入图的代码文件。本节仅提供算子入图代码文件的开发指导。
@@ -16,7 +16,7 @@ content_hash: sha256:5f71f0b2390c604aaa3141060ddc4e9c8fd7232358de8b72df4d30a48ae
 
 **图1** shape与datatype推导示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/s32u9Xd5SECPZRwtFRe3dQ/zh-cn_image_0000002809051311.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/xz2KMubpQEmk2Sv-Cluhug/zh-cn_image_0000002815400205.png)
 
 除了tiling实现外，算子入图时需要额外提供的实现代码有以下几种：
 
@@ -33,7 +33,7 @@ content_hash: sha256:5f71f0b2390c604aaa3141060ddc4e9c8fd7232358de8b72df4d30a48ae
 | 根据输入shape可以推导出输出shape。 | - shape推导  - datatype推导 |
 | 依赖输入的value才能推导出输出shape，即数据依赖算子。 如Reshape算子，依赖shape输入的value才能推导出输出shape。 | - shape推导  - datatype推导  - 声明数据依赖 |
 
-实际开发时通过固定的datatype和shape推导原型实现推导函数，然后再通过[SetInferShape](cannkit-setinfershape.md)、[SetInferDataType](cannkit-setinferdatatype.md)接口来关联对应的shape推导函数，样例如下。
+实际开发时通过固定的datatype和shape推导原型实现推导函数，然后再通过[SetInferShape](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)、[SetInferDataType](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)接口来关联对应的shape推导函数，样例如下。
 
 ```cpp
 namespace ge {
@@ -70,7 +70,7 @@ public:
             .Format({ge::FORMAT_ND, ge::FORMAT_ND, ge::FORMAT_ND});
         // 根据开发者的算子调用方式决定需不需要注册 图模式调用方式下需要
         this->SetInferShape(ge::InferShape);
-       this->SetInferDataType(ge::InferDataType);
+        this->SetInferDataType(ge::InferDataType);
         this->AICore()
             .SetTiling(optiling::TilingFunc);
         // 请替换为实际的Kirin AI处理器型号
@@ -110,7 +110,7 @@ ge::graphStatus InferDataTypeForFoo(gert::InferDataTypeContext* context) {
 
 ## shape推导
 
-简单的shape推导逻辑可以使用[Follow](cannkit-follow.md)接口来表达，比如输出shape和输入shape相同的情况。示例如下。
+简单的shape推导逻辑可以使用[Follow](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)接口来表达，比如输出shape和输入shape相同的情况。示例如下。
 
 输出“y1”Follow输入“x1”场景，指定Follow模式为SHAPE，此时“y1”的shape将会和“x1”保持一致。
 
@@ -130,7 +130,7 @@ this->Output("y1")
     .Follow("x1", FollowType::SHAPE);
 ```
 
-无法在原型定义中通过Follow表达的情况需要开发者编写InferShape函数，其原型是确定的，接受一个[InferShapeContext](cannkit-infershapecontext-getinputshape.md)作为输入，从此context上可以获取到输入、输出的shape指针等内容。输入shape为const类型，因此InferShape时，输入shape是只读、不允许修改的。InferShape成功后，返回ge::GRAPH\_SUCCESS，其他返回值被认为推导失败。推导失败后，执行过程结束退出。
+无法在原型定义中通过Follow表达的情况需要开发者编写InferShape函数，其原型是确定的，接受一个[InferShapeContext](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)作为输入，从此context上可以获取到输入、输出的shape指针等内容。输入shape为const类型，因此InferShape时，输入shape是只读、不允许修改的。InferShape成功后，返回ge::GRAPH\_SUCCESS，其他返回值被认为推导失败。推导失败后，执行过程结束退出。
 
 以Reshape算子为例，InferShape的实现如下所示。根据第1个输入（shape输入）的值，Reshape算子将第0个输入（x输入）的shape做变换，并输出到其第0个输出（y输出）上。Reshape的InferShape实现为：
 
@@ -161,7 +161,7 @@ if (shape_tensor->GetDataType() == ge::DT_INT32) {
 }
 ```
 
-[InferShapeContext](cannkit-infershapecontext-getinputshape.md) public继承自[ExtendedKernelContext](cannkit-getinputdesc.md)，因此ExtendedKernelContext中提供的方法如获取算子type、name、属性等接口均可以在[InferShapeContext](cannkit-infershapecontext-getinputshape.md)实例中调用。
+[InferShapeContext](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md) public继承自[ExtendedKernelContext](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)，因此ExtendedKernelContext中提供的方法如获取算子type、name、属性等接口均可以在[InferShapeContext](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)实例中调用。
 
 **说明** 
 
@@ -217,7 +217,7 @@ ge::graphStatus ExampleGetTransDataAttr(TilingContext *context) {
 
 ## 数据依赖
 
-一般来说，具备输入shape后，算子可以通过InferShape推导出输出shape。然而部分算子在InferShape时，需要依赖某个输入的具体值才可以进行，这类算子被称为“数据依赖算子”，对应的输入被称为“数据依赖输入”。以Reshape算子为例，其依据shape输入的描述，对输入的shape做调整，因此Reshape算子依赖shape输入的值。这类算子需要在原型定义时通过[ValueDepend](cannkit-valuedepend.md)接口声明对应的输入为数据依赖输入项。
+一般来说，具备输入shape后，算子可以通过InferShape推导出输出shape。然而部分算子在InferShape时，需要依赖某个输入的具体值才可以进行，这类算子被称为“数据依赖算子”，对应的输入被称为“数据依赖输入”。以Reshape算子为例，其依据shape输入的描述，对输入的shape做调整，因此Reshape算子依赖shape输入的值。这类算子需要在原型定义时通过[ValueDepend](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)接口声明对应的输入为数据依赖输入项。
 
 ```cpp
 namespace ops {
@@ -239,34 +239,9 @@ OP_ADD(Reshape);
 
 根据第1个输入（shape输入）的值，Reshape算子将第0个输入（x输入）的shape做变换，并输出到其第0个输出（y输出）上。Reshape的InferShape实现为：
 
-```cpp
-ge::graphStatus InferShapeForReshape(InferShapeContext *context) {
-const gert::Shape *x_shape = context->GetInputShape(0); // 获取第0个输入的shape
-const gert::Tensor *shape_tensor = context->GetInputTensor(1); // 获取第1个输入的tensor
-gert::Shape *output_shape = context->GetOutputShape(0);
-if (x_shape == nullptr || shape_tensor == nullptr || output_shape == nullptr) {
-    // 防御式编程，不应该出现的场景，打印错误并返回失败
-    return ge::GRAPH_FAILED;
-}
- 
-auto reshape_size = static_cast<int32_t>(shape_tensor->GetShapeSize());
-if (reshape_size < 1) {
-    // 防御式编程，不应该出现的场景，打印错误并返回失败
-    return ge::GRAPH_FAILED;
-}
- 
-// 根据原型信息，Reshape的shape输入支持INT32与INT64两类，根据不同的类型进入对应的模板函数中做真正的shape变换操作
-if (shape_tensor->GetDataType() == ge::DT_INT32) {
-    int32_t *reshape_data = shape_tensor->GetData<int32_t>();
-    return ReshapeInferShapeImpl<int32_t>(reshape_data, *x_shape, *output_shape, reshape_size);
-} else {
-    int64_t *reshape_data = shape_tensor->GetData<int64_t>();
-    return ReshapeInferShapeImpl<int64_t>(reshape_data, *x_shape, *output_shape, reshape_size);
-}
-}
-```
+具体实现请参见[shape推导](cannkit-development-process.md#shape推导)章节中的InferShapeForReshape示例。
 
 **说明** 
 
 * 只有声明过数据依赖的输入，才可以在InferShape时调用GetInputTensor等获取tensor的接口获取其对应的tensor数据。若对一个未声明数据依赖的输入调用GetInputTensor等获取tensor的接口，只能在tensor中获取到正确的shape、format、datatype信息，无法获取到真实的tensor数据地址（获取到的地址为nullptr）。
-* 从tensor中获取tensor\_data时(GetData<int32\_t>或GetData<int64\_t>)，使用者需要保证获取的数据类型是正确的，否则行为是未定义的。
+* 从tensor中获取tensor\_data时（GetData<int32\_t>或GetData<int64\_t>），使用者需要保证获取的数据类型是正确的，否则行为是未定义的。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (WebviewController)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (WebviewController)
 category: harmonyos-references
-scraped_at: 2026-10-31T07:36:08+08:00
-doc_updated_at: 2026-10-30
-content_hash: sha256:d648b37873424d15e88056c858a547e9b82cbc09ee5e646ba0a727442ec823ea
+scraped_at: 2026-11-12T09:54:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:cf83f0aa53772d6e261b59bc814dc299a6b979118ddab1fa9a7153e1f1504928
 ---
 
 WebviewController是Web组件各种行为的核心控制器，提供网页加载与导航控制、JavaScript交互、生命周期、滚动控制、页面缩放与内容查找、消息端口通信、缓存与证书管理等广泛功能。一个WebviewController对象只能控制一个Web组件，且必须在Web组件和WebviewController绑定后，才能调用WebviewController上的方法（静态方法除外）。
@@ -3870,7 +3870,7 @@ struct WebComponent {
 
 removeCache(clearRom: boolean): void
 
-清除应用内所有Webview产生的资源缓存。
+清除与当前WebView上下文相关的资源缓存。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -11414,7 +11414,9 @@ struct WebComponent {
 </html>
 ```
 
-**说明**
+**说明** 
+
+示例中使用的iframe\_error.html文件需放置在应用资源的resources/rawfile/目录下，该HTML文件中包含一个加载失败URL的iframe，用于触发subframe错误页。
 
 ## getSubframeErrorPageEnabled
 

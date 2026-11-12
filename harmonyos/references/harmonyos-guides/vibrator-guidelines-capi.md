@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/vibrator-guid
 title: 振动开发指导(C/C++)
 breadcrumb: 指南 > 系统 > 硬件 > Sensor Service Kit（传感器服务） > 振动 > 振动开发指导(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:55+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:d886b37d2d31ab8f36c3a79ea6216389d5698c7bee4fcf46f73c4a27f4eaf700
+scraped_at: 2026-11-12T09:51:51+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:187384b2a495c97a710c75bc936a67a9d8966d227346e338e56d771f38c62526
 ---
 
 ## 场景介绍
@@ -38,7 +38,7 @@ content_hash: sha256:d886b37d2d31ab8f36c3a79ea6216389d5698c7bee4fcf46f73c4a27f4e
 
 1. 新建一个Native C++工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/55QPa5ZlS6uxSP3N6V-Ikw/zh-cn_image_0000002779850846.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/bqPTuau1T0Ov4NMIXEnf0Q/zh-cn_image_0000002815399291.png)
 2. 控制设备上的振动器，需要申请权限ohos.permission.VIBRATE。具体配置方式请参考[声明权限](declare-permissions.md)。
 
    ```json5

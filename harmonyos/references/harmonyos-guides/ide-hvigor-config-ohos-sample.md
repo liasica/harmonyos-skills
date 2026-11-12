@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-co
 title: 实践说明
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 定制构建 > 动态修改编译配置 > 实践说明
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:20+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:969a82ce760b257dd1bf1bb87ec4f0089a97f1be5c9bac66930f655edd548b1e
+scraped_at: 2026-11-12T09:53:07+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4f24a4aae41773e32312269fdd246651b8edb47d3e927e1f7ea5f5c90aeb2aee
 ---
 
-## 通过hook以及插件上下文动态修改配置(推荐使用)
+## 通过hook以及插件上下文动态修改配置（推荐使用）
 
 ### 修改每个hvigorNode中的build-profile.json5
 
@@ -151,7 +151,7 @@ export default {
 }
 ```
 
-## 通过overrides动态配置签名材料和版本信息(不推荐使用)
+## 通过overrides动态配置签名材料和版本信息（不推荐使用）
 
 通过在hvigorfile.ts中使用函数方法，动态配置签名材料和版本号、版本名等信息：
 

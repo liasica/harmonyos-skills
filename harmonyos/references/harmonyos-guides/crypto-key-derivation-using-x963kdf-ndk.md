@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-de
 title: 使用X963KDF进行密钥派生(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥派生 > 使用X963KDF进行密钥派生(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:27+08:00
-doc_updated_at: 2026-10-10
+scraped_at: 2026-11-12T09:51:35+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:3c4c298f23525b2d89ca4958968e2947259bcc9620c8ac351ab4e380f7433578
 ---
 

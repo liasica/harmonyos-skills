@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 获取用户实名年龄段
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 实名认证 > 获取用户实名年龄段
 category: harmonyos-references
-scraped_at: 2026-10-29T08:02:32+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:49db5aa04bb250d9b486b936793958e19deeae07d65f0071952be8d6a20e4ca9
+scraped_at: 2026-11-12T09:57:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:9b9d6ed9da8e78912e5c4087433b9607cc8f349ab522a256156ea6d7279fc12e
 ---
 
 **注意** 
@@ -20,7 +20,7 @@ content_hash: sha256:49db5aa04bb250d9b486b936793958e19deeae07d65f0071952be8d6a20
 
 ## 场景描述
 
-应用通过授权码（Authorization Code）获取到Access Token后，可以获取账号信息（年龄段）。用于游戏应用，具体业务流程请参见[获取用户实名年龄段](../harmonyos-guides/account-get-realname-age.md)。
+应用通过授权码（Authorization Code）获取到Access Token后，获取账号信息（年龄段）。用于游戏应用，具体业务流程请参见[获取用户实名年龄段](../harmonyos-guides/account-get-realname-age.md)。
 
 ## 使用约束
 
@@ -129,7 +129,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GetDetailInfoDemo {
+public class GetRealNameAgeRangeDemo {
     public static void main(String[] args) throws IOException {
         // 替换为实际的Client ID
         String clientId = "<Client ID>";

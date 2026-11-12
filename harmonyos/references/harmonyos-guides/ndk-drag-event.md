@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-drag-even
 title: 绑定拖拽事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 添加事件响应 > 绑定拖拽事件
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:10+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:51:18+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:42df160ede16485ffdebba59f18e4c4740c67acacb52fa73ba7219438f8b5b0e
 ---
 

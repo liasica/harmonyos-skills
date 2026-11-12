@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-es
 title: 模块化编译
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 提升构建效率 > 默认特性 > 模块化编译
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:20+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:fd99bb3c4110055a25ee6cee4a27e58536033bae4d797b90ad9e06279ad0d4dd
+scraped_at: 2026-11-12T09:53:07+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d764dc4910500c8e492802215927904087fe9f215a57e029766af81591bf2cc4
 ---
 
 应用模块化编译是指基于ES Module的Bundleless编译模式，使用原生ES Module规则构建源码。API 10及以上版本的Stage模型工程默认开启模块化编译，可有效缩短增量编译时间、减小编译后的包体积。
@@ -18,7 +18,7 @@ content_hash: sha256:fd99bb3c4110055a25ee6cee4a27e58536033bae4d797b90ad9e06279ad
 
 模块化编译模式有以下价值：
 
-* 修改单个模块代码无需整包编译构建，增量编译构建时间极大减少；
+* 修改单个模块代码无需整包编译构建，增量编译构建时间大幅减少；
 * 基于ES Module规则，模块缓存利用率高，模块内变量变化能够及时反映到模块本身，动态实时绑定；
 * 解决了单例问题；
 * 减少了包的ROM size；

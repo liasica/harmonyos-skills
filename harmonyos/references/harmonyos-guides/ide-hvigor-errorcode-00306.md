@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-er
 title: 规格错误码
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 构建报错排查 > 编译构建错误码 > 规格错误码
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:22+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:afd74e6eca26457ab290201025e1883b60db266db3ad5a4d85ff19554a596ff3
+scraped_at: 2026-11-12T09:53:08+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:617aaff87388ad71ee2f62674b84e25f0f204ff7739c86e2882715000be88e05
 ---
 
 ## 00306001 文件路径长度超过最大限制
@@ -779,7 +779,7 @@ ohpm安装依赖失败。
 
 **可能原因**
 
-网络不通，或[ohpm镜像仓库地址](ide-ohpmrc.md#zh-cn_topic_0000001792216397_默认配置项)、oh-package.json5中依赖的包名、版本号不正确。
+网络不通，或[ohpm镜像仓库地址](ide-ohpmrc.md#section44263447172)、oh-package.json5中依赖的包名、版本号不正确。
 
 **处理步骤**
 

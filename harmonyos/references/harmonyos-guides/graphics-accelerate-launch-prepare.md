@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 开发准备
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏启动加速服务 > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:20+08:00
+scraped_at: 2026-11-12T09:52:14+08:00
 doc_updated_at: 2026-06-16
-content_hash: sha256:a992c0ebafa43b3d17f25c9fea48db975e23eca6ebf0d2f657ca774c3aca5c11
+content_hash: sha256:af4c56a46f00fbf2e44f825ed59c359692054aea8c6d21bc5db4006b1dcd65f7
 ---
 
 请先参考[应用开发准备](application-dev-overview.md)完成基本准备工作，再继续以下开发准备项。
@@ -26,15 +26,15 @@ content_hash: sha256:a992c0ebafa43b3d17f25c9fea48db975e23eca6ebf0d2f657ca774c3ac
 3. 进入“项目设置 > 开放能力管理”页面。
 4. 点击“游戏启动加速服务”对应的“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/u5qMZYv4Tz2bQLAp0L5LRw/zh-cn_image_0000002809010815.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/l5et-tYZTqiWhFC-BS8w4g/zh-cn_image_0000002815559531.png)
 5. 参考“申请原因”中的模板，提供申请必需的相关信息，包括应用介绍、使用场景、申请用途，然后点击“提交”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/blAcDyiKRDiKb3p-BccAqA/zh-cn_image_0000002809050729.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/U027jM_1TlWDrvsA7bTv4w/zh-cn_image_0000002815399615.png)
 
    返回“开放能力管理”页面，申请状态显示“审核中”，1~3个工作日内反馈申请结果，请留意互动中心的“服务开通申请”信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/1e_RvRpTTBqCIoNA-msd0Q/zh-cn_image_0000002779851164.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/b76G1SqvRnK8CuARP1RsFA/zh-cn_image_0000002786520040.png)
 
    申请通过后，互动中心会发送通知给您，同时申请状态显示“已通过”，至此，应用已成功开启游戏启动加速服务开放能力。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/Spa1eOeMQzqTNHR4Yp7Xvw/zh-cn_image_0000002779691196.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/eIvFnKrbTr2ti1tjQOhuDA/zh-cn_image_0000002786360112.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/spatial-recon
 title: 加载3DGS模型
 breadcrumb: 指南 > 图形 > Spatial Recon Kit（空间建模服务） > 加载3DGS模型
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:21+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:f71f7b0e1a38b5599e28fdec5dfd18f081e217b92296d30da23cc606aa602704
+scraped_at: 2026-11-12T09:52:15+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:de255e81658439fc3bf271cf4c95477d2ab3f3ae4edb997fa7ceb8b84e574456
 ---
 
 ## 适用场景
@@ -14,7 +14,7 @@ content_hash: sha256:f71f7b0e1a38b5599e28fdec5dfd18f081e217b92296d30da23cc606aa6
 
 效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/OdCah2RsTJuB9y9rUvrVJw/zh-cn_image_0000002809010825.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/gchFk__2RNCB2a20EmpCJQ/zh-cn_image_0000002815559541.png)
 
 ## 接口说明
 
@@ -46,6 +46,6 @@ content_hash: sha256:f71f7b0e1a38b5599e28fdec5dfd18f081e217b92296d30da23cc606aa6
        let uri = "OhosRawFile://assets/gltf/model.glb"; // 3DGS模型的uri，根据实际情况修改
        let offset = 0;
        let gsNodeext: spatialRender.GSNode = await spatialRender.GSPlugin.loadGSNode(scene, {uri, offset}, scene.root);
-     });
+     }.catch((reason: string) => { console.error("Error: " + reason) }));
    }
    ```

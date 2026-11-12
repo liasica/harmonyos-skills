@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-faq-2
 title: 商户号绑定AppID提示“主体不一致”？
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > Payment Kit常见问题 > 商户号绑定AppID提示“主体不一致”？
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:39+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:8ba080e91ec92c38da22dd8c7e680c32792f41e7cba031dd230ce2ba59a779d3
+scraped_at: 2026-11-12T09:52:33+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e18529a30bbd8a87c3b31f4f3cc17eea8275b4c4e17975ab86dbbb4e9840db9c
 ---
 
-可能是开发者联盟上商户应用管理员的企业证件号码（营业执照注册号）未正确维护导致。
+可能是HarmonyOS 开发者中心上商户应用管理员的企业证件号码（营业执照注册号）未正确维护导致。
 
-1. 商户应用管理员实名认证（在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html) “个人信息 > 管理 > 实名认证”查询）需为[企业开发者](../start/edrna-0000001062678489.md)。
+1. 商户应用管理员实名认证（在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console) 点击头像下拉框中的“去认证”，进入“实名认证”查询页面）需为[企业开发者](../doccenter-getting-started/hdc-edrna-0000002752527889.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/HnLrp_YJScGAFveIfGUrug/zh-cn_image_0000002779851554.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/uCIMKt-6TWq8a3_PwDqCHA/zh-cn_image_0000002815559931.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/ttNlwxzZTROFwhg94ZpoDw/zh-cn_image_0000002779691586.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/9BJXiFCxQmGfj7uDig3UEg/zh-cn_image_0000002815400015.png)
 2. 检查商户应用管理员关联的主体企业证件号码和[商户号关联营业主体](../pay-docs/hwzf-chaxunzhutixinxi-0000001200337478.md)的企业证件号码是否一致。

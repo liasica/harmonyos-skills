@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.nearlink.scan (星闪扫描能力)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.nearlink.scan (星闪扫描能力)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:04+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1e54c0b2fac39f1b5280b4f4180b5ba9b1db88175a4430b1fbd6a8ef06318df1
+scraped_at: 2026-11-12T09:55:34+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:1bbffd4bb00ddbd4e9c55a2872d825bfc7fe4a27d7222a9aa1126e3b1ee2d637
 ---
 
 本模块提供了星闪扫描相关功能，包括发起/停止扫描、订阅扫描结果等。
@@ -23,6 +23,8 @@ import { scan } from '@kit.ConnectivityKit';
 startScan(filters: ScanFilters[] | null, options?: ScanOptions): Promise<void>
 
 发起星闪扫描。使用Promise异步回调。需先调用[scan.onDeviceFound](js-apis-nearlink-scan.md#scanondevicefound)订阅扫描结果回调，本接口发起扫描后，扫描到的设备信息通过[scan.onDeviceFound](js-apis-nearlink-scan.md#scanondevicefound)回调上报。扫描完成后可调用[scan.stopScan](js-apis-nearlink-scan.md#scanstopscan)停止扫描。
+
+调用此接口前，您可以调用[isNearLinkSupported](js-apis-nearlink-manager.md#managerisnearlinksupported)查询设备是否支持星闪。
 
 **起始版本：** 26.0.0
 
@@ -51,8 +53,8 @@ startScan(filters: ScanFilters[] | null, options?: ScanOptions): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 801 | Capability not supported because the chip does not support it. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 36100003 | NearLink disabled. |
 | 36100040 | Integer out of range. |
 | 36100041 | Invalid address. |
@@ -98,6 +100,8 @@ stopScan(): Promise<void>
 
 停止星闪扫描。使用Promise异步回调。
 
+调用此接口前，您可以调用[isNearLinkSupported](js-apis-nearlink-manager.md#managerisnearlinksupported)查询设备是否支持星闪。
+
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -118,8 +122,8 @@ stopScan(): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 801 | Capability not supported because the chip does not support it. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 36100003 | NearLink disabled. |
 | 36100099 | Operation failed. |
 
@@ -148,6 +152,8 @@ onDeviceFound(callback: Callback<ScanResults[]>): void
 
 应用需具备ohos.permission.ACCESS\_NEARLINK权限，方可接收此事件上报。
 
+调用此接口前，您可以调用[isNearLinkSupported](js-apis-nearlink-manager.md#managerisnearlinksupported)查询设备是否支持星闪。
+
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -166,7 +172,7 @@ onDeviceFound(callback: Callback<ScanResults[]>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported because the chip does not support it. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 
 **示例：**
 
@@ -190,6 +196,8 @@ offDeviceFound(callback?: Callback<ScanResults[]>): void
 
 取消订阅星闪扫描结果。使用callback异步回调。
 
+调用此接口前，您可以调用[isNearLinkSupported](js-apis-nearlink-manager.md#managerisnearlinksupported)查询设备是否支持星闪。
+
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -208,7 +216,7 @@ offDeviceFound(callback?: Callback<ScanResults[]>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported because the chip does not support it. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 
 **示例：**
 

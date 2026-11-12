@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-conver
 title: 指定二进制数据转换非对称密钥对(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥生成与转换 > 指定二进制数据转换非对称密钥对(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:41+08:00
-doc_updated_at: 2026-09-20
+scraped_at: 2026-11-12T09:51:32+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:d3a875ec67e76362ad44c53a89fe5c401189bef295b5d971298ad1834f836421
 ---
 

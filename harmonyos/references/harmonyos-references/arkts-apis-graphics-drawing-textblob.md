@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (TextBlob)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (TextBlob)
 category: harmonyos-references
-scraped_at: 2026-10-11T07:27:45+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:f40f5e9fc5219a25123350e572f30a5397ed5089f27e169e9d5a6d2eda8a98b3
+scraped_at: 2026-11-12T09:56:57+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d0951b0c763b758bd4b68b56aefb8c54a8dd9065e8d352a17b4db82a065d0d91
 ---
 
 TextBlob是由一个或多个具有相同字型的字符组成的字块。支持通过文本、字符串、RunBuffer等多种方式创建字形集合，适用于需要批量渲染文本或获取文字边界框的场景。
@@ -72,6 +72,66 @@ class DrawingRenderNode extends RenderNode {
     }
     let textBlob : drawing.TextBlob = drawing.TextBlob.makeFromPosText(text, points.length, points, font);
     canvas.drawTextBlob(textBlob, 100, 100);
+  }
+}
+```
+
+## makeFromPosTextWithFallback
+
+static makeFromPosTextWithFallback(text: string, len: number, points: common2D.Point[], font: Font): Array<TextBlob>
+
+使用文本创建一组TextBlob对象，支持字体回退。若当前字型的字体不支持文本中的某些字符（无对应字形）时，会自动从系统字体中查找能支持该字符的回退字体，并使用回退字体的字形索引；若未找到回退字体，则仍使用当前字型字体的notdef占位字形。每段使用相同字体（当前字体或回退字体）的连续字形片段会创建一个对应的TextBlob对象。每个字形的坐标由points中对应的坐标信息决定。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Graphics.Drawing
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| text | string | 是 | 绘制字形的文本内容。 |
+| len | number | 是 | 字形个数，由[countText](arkts-apis-graphics-drawing-font.md#counttext12)获取，该参数为整数。传入浮点数，按照向下取整处理。 |
+| points | [common2D.Point](js-apis-graphics-common2d.md#point12)[] | 是 | 点数组，用于指定每个字形的坐标，长度必须为len。 |
+| font | [Font](arkts-apis-graphics-drawing-font.md) | 是 | 字型对象。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Array<[TextBlob](arkts-apis-graphics-drawing-textblob.md)> | 返回由文本和坐标信息创建的TextBlob对象数组。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[图形绘制与显示错误码](errorcode-drawing.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 25900001 | Parameter error. Possible causes: Incorrect parameter range. |
+
+**示例：**
+
+```ts
+import { RenderNode, DrawContext } from '@kit.ArkUI';
+import { drawing, common2D } from '@kit.ArkGraphics2D';
+
+class DrawingRenderNode extends RenderNode {
+  draw(context : DrawContext) {
+    const canvas = context.canvas;
+    let text : string = 'makeFromPosText';
+    let font : drawing.Font = new drawing.Font();
+    font.setSize(100);
+    let length = font.countText(text);
+    let points : common2D.Point[] = [];
+    for (let i = 0; i !== length; ++i) {
+      points.push({ x: i * 35, y: i * 35 });
+    }
+    let textBlobs : Array<drawing.TextBlob> = drawing.TextBlob.makeFromPosTextWithFallback(text, points.length, points, font);
+    for (let blob of textBlobs) {
+      canvas.drawTextBlob(blob, 100, 100);
+    }
   }
 }
 ```
@@ -154,6 +214,62 @@ class DrawingRenderNode extends RenderNode {
 }
 ```
 
+## makeFromStringWithFallback
+
+static makeFromStringWithFallback(text: string, font: Font): Array<TextBlob>
+
+使用字符串创建一组TextBlob对象，支持字体回退。若当前字型的字体不支持文本中的某些字符（无对应字形）时，会自动从系统字体中查找能支持该字符的回退字体，并使用回退字体的字形索引；若未找到回退字体，则仍使用当前字型字体的notdef占位字形。每段使用相同字体（当前字体或回退字体）的连续字形片段会创建一个对应的TextBlob对象。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Graphics.Drawing
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| text | string | 是 | 绘制字形的文本内容。 |
+| font | [Font](arkts-apis-graphics-drawing-font.md) | 是 | 字型对象。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Array<[TextBlob](arkts-apis-graphics-drawing-textblob.md)> | 返回创建的TextBlob对象数组。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[图形绘制与显示错误码](errorcode-drawing.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 25900001 | Parameter error. Possible causes: Incorrect parameter range. |
+
+**示例：**
+
+```ts
+import { RenderNode, DrawContext } from '@kit.ArkUI';
+import { drawing } from '@kit.ArkGraphics2D';
+
+class DrawingRenderNode extends RenderNode {
+  draw(context : DrawContext) {
+    const canvas = context.canvas;
+    const brush = new drawing.Brush();
+    brush.setColor({ alpha: 255, red: 255, green: 0, blue: 0 });
+    const font = new drawing.Font();
+    font.setSize(20);
+    const textBlobs = drawing.TextBlob.makeFromStringWithFallback("drawing", font);
+    canvas.attachBrush(brush);
+    for (let blob of textBlobs) {
+      canvas.drawTextBlob(blob, 20, 20);
+    }
+    canvas.detachBrush();
+  }
+}
+```
+
 ## makeFromRunBuffer
 
 static makeFromRunBuffer(pos: Array<TextBlobRunBuffer>, font: Font, bounds?: common2D.Rect): TextBlob
@@ -224,7 +340,7 @@ bounds(): common2D.Rect
 
 | 类型 | 说明 |
 | --- | --- |
-| [common2D.Rect](js-apis-graphics-common2d.md#rect) | 文字边界框的矩形区域。 |
+| [common2D.Rect](js-apis-graphics-common2d.md#rect) | 文字边界框的矩形区域。获取失败时返回undefined。 |
 
 **示例：**
 

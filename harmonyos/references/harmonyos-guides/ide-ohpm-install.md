@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-inst
 title: ohpm install
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm install
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:29+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:95dfd5b3c712a85882021153407c83d7a6f07fabdb64a255ab5b5d353e51d8ab
+scraped_at: 2026-11-12T09:53:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ab29ec40efba6d2ad49d0a8a88de82309ff066e57e2eb43ff1bf43c652a41d67
 ---
 
 安装三方库。
@@ -262,7 +262,7 @@ ohpm install @ohos/lottie
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/WBWZ9hVOSse_39pBJ8LgqQ/zh-cn_image_0000002731383019.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/qvLcgE8qQ8aeoS4NnK1FsA/zh-cn_image_0000002808766853.png "点击放大")
 
 ## oh\_modules
 
@@ -309,7 +309,7 @@ dependencyMap.json5内容示例：
 
 1、<target\_path>/dependencyMap.json5中rootDependency配置的oh-package.json5的优先级高于<project\_root>/oh-package.json5。
 
-2、.ohpmrc中projectPackageJson指定的项目级配置文件中overrides、overrideDependencyMap配置优先级同时高于<target\_path>/dependencyMap.json5中rootDependency配置的oh-package.json5中对应配置 和 <project\_root>/oh-package.json5中对应配置。
+2、.ohpmrc中projectPackageJson指定的项目级配置文件中overrides、overrideDependencyMap配置优先级同时高于<target\_path>/dependencyMap.json5中rootDependency配置的oh-package.json5中对应配置和 <project\_root>/oh-package.json5中对应配置。
 
 3、<target\_path>/moduleName/oh-package.json5的优先级高于overrideDependencyMap中的依赖配置文件。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_value-for
 title: "@previewer/mandatory-default-value-for-local-initialization"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 预览规则@previewer > @previewer/mandatory-default-value-for-local-initialization
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:13+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:a4da1f884806557175281452095394a73eb877dba94b5626c69d079fdd7ef759
+scraped_at: 2026-11-12T09:52:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0a9ea4b5e12404203f0f8a94ff42ab20cf63efb399cba5176c33d668eca51c8a
 ---
 
 如果组件的属性支持本地初始化，需要设置一个合法的不依赖运行时的默认值。
@@ -81,4 +81,4 @@ plugin:@previewer/recommended
 plugin:@previewer/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

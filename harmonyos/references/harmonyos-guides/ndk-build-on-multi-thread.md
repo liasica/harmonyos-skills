@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-build-on-
 title: NDK多线程创建组件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > NDK多线程创建组件
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:21+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:703d07e0a91ed629618ed75e7293b176e78f02e64a6db52e513588b99860c1cc
+scraped_at: 2026-11-12T09:51:18+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0f80f407865cd889bf6bf3e868373f2df8e12c814911d6ededfb04eff50c6297
 ---
 
 ## 概述
@@ -176,7 +176,7 @@ content_hash: sha256:703d07e0a91ed629618ed75e7293b176e78f02e64a6db52e513588b9986
 
 点击CreateNodeTree按钮触发在多个非UI线程并行创建Button组件，之后在UI线程将创建完成的Button组件挂载到UI主树上，使组件显示在页面上。点击DisposeNodeTree按钮将已创建的组件从UI主树上卸载并销毁，清空页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/2X0LK_JkTKK8Ce9poNLBGA/zh-cn_image_0000002779690370.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/AAzWE7o-TTq8aeVvj4eCCQ/zh-cn_image_0000002815558701.gif)
 
 示例主要展示了如何获取和使用多线程NDK接口，并使用[OH\_ArkUI\_PostAsyncUITask](../harmonyos-references/capi-native-node-h.md#oh_arkui_postasyncuitask)、[OH\_ArkUI\_PostUITask](../harmonyos-references/capi-native-node-h.md#oh_arkui_postuitask)和[OH\_ArkUI\_PostUITaskAndWait](../harmonyos-references/capi-native-node-h.md#oh_arkui_postuitaskandwait)等接口将组件创建和属性设置等任务分发到多线程并行执行。
 
@@ -392,7 +392,7 @@ void CreateNodeTree(void *asyncUITaskData) {
     // 创建组件树根节点。
     auto rowNode = std::make_shared<ArkUIRowNode>();
     asyncData->child = rowNode;
-
+    
     // 创建button组件。
     auto buttonNode1 = std::make_shared<ArkUIButtonNode>();
     ArkUI_AttributeItem label_item = { .string = asyncData->label.c_str() };
@@ -410,8 +410,8 @@ void CreateNodeTree(void *asyncUITaskData) {
     }
     // 设置button组件的width属性。
     buttonNode1->SetWidth(150);
-
-    // 创建button组件。
+   
+   // 创建button组件。
     auto buttonNode2 = std::make_shared<ArkUIButtonNode>();
     ArkUI_AttributeItem label_item2 = { .string = asyncData->label.c_str() };
     // 设置button组件的label属性。
@@ -518,7 +518,7 @@ napi_value CreateNodeTreeOnMultiThread(napi_env env, napi_callback_info info) {
         OH_LOG_ERROR(LOG_APP, "OH_ArkUI_GetNodeContentFromNapiValue Failed %{public}d", result);
         return nullptr;
     }
-
+    
     // 获取上下文对象指针。
     if (!g_contextHandle) {
         result = OH_ArkUI_GetContextFromNapiValue(env, args[1], &g_contextHandle);
@@ -529,7 +529,7 @@ napi_value CreateNodeTreeOnMultiThread(napi_env env, napi_callback_info info) {
             return nullptr;
         }
     }
-
+    
     // 创建Native侧组件树根节点。
     auto scrollNode = std::make_shared<ArkUIScrollNode>();
     // 将Native侧组件树根节点挂载到UI主树上。
@@ -540,7 +540,7 @@ napi_value CreateNodeTreeOnMultiThread(napi_env env, napi_callback_info info) {
     }
     // 保存Native侧组件树。
     g_nodeMap[contentHandle] = scrollNode;
-
+    
     auto columnNode = std::make_shared<ArkUIColumnNode>();
     scrollNode->AddChild(columnNode);
     // 在框架提供的线程池中创建组件。
@@ -564,7 +564,7 @@ napi_value DisposeNodeTreeOnMultiThread(napi_env env, napi_callback_info info)
         OH_LOG_ERROR(LOG_APP, "OH_ArkUI_GetNodeContentFromNapiValue Failed %{public}d", result);
         return nullptr;
     }
-
+    
     auto it = g_nodeMap.find(contentHandle);
     if (it == g_nodeMap.end()) {
         return nullptr;
@@ -595,20 +595,20 @@ static napi_value Init(napi_env env, napi_value exports)
     // 绑定Native侧的创建组件和销毁组件。
     napi_property_descriptor desc[] = {
         {"createNativeRoot", nullptr,
-            NativeModule::CreateNativeRoot, nullptr, nullptr,
-            nullptr, napi_default, nullptr},
-
+        NativeModule::CreateNativeRoot, nullptr, nullptr,
+        nullptr, napi_default, nullptr},
+        
         {"destroyNativeRoot", nullptr,
-            NativeModule::DestroyNativeRoot, nullptr, nullptr,
-            nullptr, napi_default, nullptr},
-
+        NativeModule::DestroyNativeRoot, nullptr, nullptr,
+        nullptr, napi_default, nullptr},
+        
         {"createNodeTreeOnMultiThread", nullptr,
-            NativeModule::CreateNodeTreeOnMultiThread, nullptr, nullptr,
-            nullptr, napi_default, nullptr},
-
+        NativeModule::CreateNodeTreeOnMultiThread, nullptr, nullptr,
+        nullptr, napi_default, nullptr},
+        
         {"disposeNodeTreeOnMultiThread", nullptr,
-            NativeModule::DisposeNodeTreeOnMultiThread, nullptr, nullptr,
-            nullptr, napi_default, nullptr}
+        NativeModule::DisposeNodeTreeOnMultiThread, nullptr, nullptr,
+        nullptr, napi_default, nullptr}
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

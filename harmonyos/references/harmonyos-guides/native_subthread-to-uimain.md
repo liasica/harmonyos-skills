@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native_subthr
 title: Native侧子线程与UI主线程通信
 breadcrumb: 指南 > NDK开发 > 编译工具链 > Native侧子线程与UI主线程通信
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:15+08:00
+scraped_at: 2026-11-12T09:52:50+08:00
 doc_updated_at: 2026-09-14
-content_hash: sha256:f561bef0459acc50babe5b1147b7a7d10773a9f151c5a15b4f0763791cbfb4c6
+content_hash: sha256:04af037beb9f0b14e16a36cebc12fa88b0b1cd9f8df5249b2acd500f59a2b5f0
 ---
 
 ## 概述
@@ -42,7 +42,7 @@ HarmonyOS Node-API提供了一系列[线程安全函数](napi-data-types-interfa
 
 **调用流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/LLof49s2SaqDkSXURW7Vvw/zh-cn_image_0000002779691954.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/CYm76e9-Qj-hkn7PJBb1vQ/zh-cn_image_0000002786520770.png)
 
 首先ArkTS侧会传递一个回调函数到Native侧，然后在Native侧创建一个线程安全函数，此线程安全函数会绑定一个回调函数（通过napi\_call\_threadsafe\_function()调用线程安全函数时，会触发该回调函数），接着需要保存后续需要用到的上下文信息及参数，然后拆分子线程（子线程绑定了要用到的上下文信息及参数）。
 
@@ -63,7 +63,7 @@ libuv库提供了一个函数uv\_async\_send()，用于在非阻塞事件循环�
 
 **调用流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/DmOoWaYORPmlMBUaLaUT9g/zh-cn_image_0000002809011575.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/RssF-RjzQ3mHixGGLZ83UQ/zh-cn_image_0000002786360842.png)
 
 首先ArkTS侧会传递一个回调函数到Native侧，Native侧接收到后会保存后续需要用到的上下文信息及参数，接着通过napi\_get\_uv\_event\_loop()接口获取主线程Loop，该Loop会在主线程中执行，然后初始化async句柄并绑定后续需要在主线程调用的回调函数，运行Loop。接着拆分子线程（子线程绑定了要用到的上下文信息及参数）。
 
@@ -188,7 +188,7 @@ Native侧子线程分配到系统资源之后在子线程中调用uv\_async\_sen
 
 **结果展示**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/_FxT9S-BS-ez0NJY863GRQ/zh-cn_image_0000002809051489.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/0iMYwKq2T9aQwjGwrIAqzg/zh-cn_image_0000002815560263.png)
 
 ### 基于libuv异步库的uv\_async\_send方法实现
 
@@ -309,7 +309,7 @@ target_link_libraries(entry PUBLIC libace_napi.z.so libhilog_ndk.z.so libuv.so)
 
 **结果展示**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/0E78XRSxRoutNusNF82mTg/zh-cn_image_0000002779851924.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/68liA_QfRvmU7l0S4nhjLg/zh-cn_image_0000002815400347.png)
 
 ## 常见问题
 

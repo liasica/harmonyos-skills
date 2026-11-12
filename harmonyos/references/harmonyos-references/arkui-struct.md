@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkui-str
 title: 结构体
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-10-11T07:25:09+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:6db09136c65306d9dc2b9d3c95efd20450d1a7454543ea1daa69b0c7f0c79a5b
+scraped_at: 2026-11-12T09:54:49+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b6598090cc7aae8a2d2b02f7f5e27f8647734bb91f1b8f35bc173bc938e4cc3d
 ---
 
 * **[ArkUI\_NodeEvent](capi-arkui-nativemodule-arkui-nodeevent.md)**
@@ -32,6 +32,10 @@ content_hash: sha256:6db09136c65306d9dc2b9d3c95efd20450d1a7454543ea1daa69b0c7f0c
 * **[ArkUI\_AnimatorEvent](capi-arkui-nativemodule-arkui-animatorevent.md)**
 * **[ArkUI\_AnimatorOnFrameEvent](capi-arkui-nativemodule-arkui-animatoronframeevent.md)**
 * **[ArkUI\_TransitionEffect](capi-arkui-nativemodule-arkui-transitioneffect.md)**
+* **[OH\_ArkUI\_PropertyAnimation\*](capi-arkui-nativemodule-arkui-propertyanimation8h.md)**
+* **[OH\_ArkUI\_KeyframeAnimation\*](capi-arkui-nativemodule-arkui-keyframeanimation8h.md)**
+* **[OH\_ArkUI\_PathAnimation\*](capi-arkui-nativemodule-arkui-pathanimation8h.md)**
+* **[OH\_ArkUI\_AnimationGroup\*](capi-arkui-nativemodule-arkui-animationgroup8h.md)**
 * **[ArkUI\_NativeDialogAPI\_1](capi-arkui-nativemodule-arkui-nativedialogapi-1.md)**
 * **[ArkUI\_NativeDialogAPI\_2](capi-arkui-nativemodule-arkui-nativedialogapi-2.md)**
 * **[ArkUI\_NativeDialogAPI\_3](capi-arkui-nativemodule-arkui-nativedialogapi-3.md)**
@@ -74,7 +78,7 @@ content_hash: sha256:6db09136c65306d9dc2b9d3c95efd20450d1a7454543ea1daa69b0c7f0c
 * **[OH\_NativeXComponent\_ExtraMouseEventInfo](capi-oh-nativexcomponent-native-xcomponent-oh-nativexcomponent-extramouseeventinfo.md)**
 * **[OH\_ArkUI\_SurfaceHolder](capi-oh-nativexcomponent-native-xcomponent-oh-arkui-surfaceholder.md)**
 * **[OH\_ArkUI\_SurfaceCallback](capi-oh-nativexcomponent-native-xcomponent-oh-arkui-surfacecallback.md)**
-* **[OHNativeWindow](capi-oh-nativexcomponent-native-xcomponent-nativewindow.md)**
+* **[NativeWindow](capi-oh-nativexcomponent-native-xcomponent-nativewindow.md)**
 * **[ArkUI\_XComponentSurfaceConfig](capi-oh-nativexcomponent-native-xcomponent-arkui-xcomponentsurfaceconfig.md)**
 * **[ArkUI\_AttributeItem](capi-arkui-nativemodule-arkui-attributeitem.md)**
 * **[ArkUI\_NodeComponentEvent](capi-arkui-nativemodule-arkui-nodecomponentevent.md)**
@@ -233,3 +237,4 @@ content_hash: sha256:6db09136c65306d9dc2b9d3c95efd20450d1a7454543ea1daa69b0c7f0c
 * **[ArkUI\_ParallelGestureEvent](capi-arkui-nativemodule-arkui-parallelgestureevent.md)**
 * **[OH\_ArkUI\_LinearGradientOptions](capi-arkui-nativemodule-oh-arkui-lineargradientoptions.md)**
 * **[OH\_ArkUI\_RadialGradientOptions](capi-arkui-nativemodule-oh-arkui-radialgradientoptions.md)**
+* **[OH\_ArkUI\_NativeModule\_LineSpacingOptions](capi-arkui-nativemodule-oh-arkui-nativemodule-linespacingoptions.md)**

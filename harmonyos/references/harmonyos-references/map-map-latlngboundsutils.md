@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-l
 title: Class (LatLngBoundsUtils)
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Class (LatLngBoundsUtils)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:58+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:7d925879b6c7e9d9a931e72e7081f135a8cbdca7f27a7e06db25c16936dbdf90
+scraped_at: 2026-11-12T09:57:25+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:db50027167b2c46b6c02b67b33679cda729d8e558c821752d1085649300800bf
 ---
 
 ## 导入模块
@@ -120,12 +120,12 @@ static contains(src: mapCommon.LatLngBounds, target: mapCommon.LatLngBounds): bo
 ```typescript
 let src: mapCommon.LatLngBounds = {
   southwest: {
-    latitude: 31.98,
+    latitude: 30,
     longitude: 118
   },
   northeast: {
-    latitude: 31.08,
-    longitude: 119
+    latitude: 35,
+    longitude: 112
   }
 };
 let target: mapCommon.LatLngBounds = {
@@ -139,7 +139,7 @@ let target: mapCommon.LatLngBounds = {
   }
 };
 
-let result: boolean = map.LatLngBoundsUtils.contains(src, target);
+let result: boolean = map.LatLngBoundsUtils.contains(src,target);
 ```
 
 ### getCenter

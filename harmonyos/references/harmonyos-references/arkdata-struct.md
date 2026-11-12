@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkdata-s
 title: 结构体
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-10-11T07:23:50+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:f8279eadb820b25e553afc5b204c94b9d0a93c39c3031dbd099e74e929f2ced3
+scraped_at: 2026-11-12T09:53:46+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:623ce309c3a0a5a5afc6639aef7cb691fc5f9c541c240482d6406b927f671b21
 ---
 
 * **[OH\_Cursor](capi-rdb-oh-cursor.md)**
@@ -46,6 +46,7 @@ content_hash: sha256:f8279eadb820b25e553afc5b204c94b9d0a93c39c3031dbd099e74e929f
 * **[OH\_UdmfOptions](capi-udmf-oh-udmfoptions.md)**
 * **[OH\_UdmfDataLoadParams](capi-udmf-oh-udmfdataloadparams.md)**
 * **[OH\_UdmfDataLoadInfo](capi-udmf-oh-udmfdataloadinfo.md)**
+* **[OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md)**
 * **[OH\_UdsPlainText](capi-udmf-oh-udsplaintext.md)**
 * **[OH\_UdsHyperlink](capi-udmf-oh-udshyperlink.md)**
 * **[OH\_UdsHtml](capi-udmf-oh-udshtml.md)**

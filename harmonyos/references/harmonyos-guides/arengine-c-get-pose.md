@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-c-ge
 title: 获取设备位姿（C/C++）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 运动跟踪 > 获取设备位姿（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:03+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:848f8aa9fd2cb649ba2f360975f6f00b454fa147ca8cb84d15c6ebbbe99e46bf
+scraped_at: 2026-11-12T09:52:10+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:cc2cbceb08d0019cbea1655f1b2812eb6bd170395960894c79d0b797d02748fd
 ---
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/harmonyos_samples/arengine_-sample-code_-clientdemo_cpp)。
@@ -33,7 +33,7 @@ content_hash: sha256:848f8aa9fd2cb649ba2f360975f6f00b454fa147ca8cb84d15c6ebbbe99
    ```
 3. 从cameraPose中获取相机位姿的不同分量，包括平移分量和旋转分量。
 
-   ```cpp
+   ```
    float poseRaw[7] = { 0.0f };
-   HMS_AREngine_ARPose_GetPoseRaw(arSession, cameraPose, poseRaw, 7);
+   HMS_AREngine_ARPose_GetPoseRaw(arSession, cameraPose, poseRaw, ARENGINE_POSE_RAW_SIZE);
    ```

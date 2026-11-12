@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-
 title: remoteDevice（对端设备的连接能力）
 breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API > remoteDevice（对端设备的连接能力）
 category: harmonyos-references
-scraped_at: 2026-10-17T06:46:40+08:00
-doc_updated_at: 2026-10-16
+scraped_at: 2026-11-12T09:55:37+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:bbb6229c8d204b5d4b5aea72b31b120e625d89ca97f03d9a990a8e5ce8a84116
 ---
 

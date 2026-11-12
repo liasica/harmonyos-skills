@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-wrapbui
 title: wrapBuilder：封装全局@Builder
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 组件扩展 > wrapBuilder：封装全局@Builder
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:09+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8f9b4138d9ad3d34502254eeac65ae0167711e9167b9f26c8f9da9d8fea12173
+scraped_at: 2026-11-12T09:51:07+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c45509012052907bfe74e9891c4096c87416800e07610056b4031ec03eb28054
 ---
 
 当在一个struct内使用多个全局@Builder函数实现UI的不同效果时，代码维护将变得非常困难，且页面不够整洁。此时，可以使用[wrapBuilder](../harmonyos-references/ts-universal-wrapbuilder.md)封装全局@Builder。
@@ -106,7 +106,7 @@ struct TestIndex {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/8NEDgCZXRaS8RtYYcjCgLA/zh-cn_image_0000002809009257.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/2AXiIX8AT-ehctTo6ICP-g/zh-cn_image_0000002815557967.png)
 
 ## @Builder方法赋值给变量在UI语法中使用
 
@@ -154,7 +154,7 @@ struct IndexItem {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/L-hSrUs3SquD7Z5g-M67nw/zh-cn_image_0000002809049173.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/6HvDpFdwR3W3WUDaPpe_-A/zh-cn_image_0000002815398051.png)
 
 ## @Builder方法赋值给类或者接口的属性
 
@@ -199,7 +199,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/6Knk5V8yTvSPH_4Z9lz92w/zh-cn_image_0000002779849608.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/7kUr5wmHSTCJXrDV26zORg/zh-cn_image_0000002786518476.png)
 
 ## 引用传递
 
@@ -243,13 +243,13 @@ struct Parent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/bdB0WbgXTRmm4iKiCEQmZQ/zh-cn_image_0000002779689638.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/PQt_l-GFQQO2gIg4k97_nw/zh-cn_image_0000002786358548.gif)
 
 ## 常见问题
 
 ### 重复定义wrapBuilder失效
 
-在同一个自定义组件内，同一个wrapBuilder只能初始化一次。例如，builderObj通过wrapBuilder(myBuilderFirst)初始化后，再次对builderObj赋值wrapBuilder(myBuilderSecond)将不会生效。
+在同一个自定义组件内，同一个wrapBuilder只能初始化一次。例如，builderObj的globalBuilder属性通过wrapBuilder(myBuilderFirst)初始化后，再次对该属性赋值wrapBuilder(myBuilderSecond)将不会触发UI刷新。
 
 ```typescript
 @Builder
@@ -295,4 +295,4 @@ struct TestBuilderIndex {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/Dv8Xm7UZSrSdWCqVJ4-yBA/zh-cn_image_0000002809009259.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/29UY-NSDTTSGOJmHsNRsMw/zh-cn_image_0000002815557969.png)

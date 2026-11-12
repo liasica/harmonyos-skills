@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-get-a
 title: 获取头像昵称
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 获取华为账号用户信息 > 获取头像昵称
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:22+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6764628f3392f55bf7249c15efd413ec51604b6f23440f09ce0d7b341f41544e
+scraped_at: 2026-11-12T09:52:17+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:9c29a81aed344b176e9bee58072141f5de904067c7971af9bd13cc185005c95d
 ---
 
 ## 场景介绍
@@ -14,19 +14,19 @@ content_hash: sha256:6764628f3392f55bf7249c15efd413ec51604b6f23440f09ce0d7b341f4
 
 **图1** 手机端获取头像昵称（请以实际效果为准）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/8uJmyvccRGKuoRIMDQd_vw/zh-cn_image_0000002779851194.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/5Vs0tD-CS-G-aTBvECjHFA/zh-cn_image_0000002786520070.png "点击放大")
 
 **图2** Wearable设备获取头像昵称（请以实际效果为准）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/r-iZgvcGQqW0CYbCE9OIGQ/zh-cn_image_0000002779691226.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/Yj-YOZjhRoCeHgnMABA_Kw/zh-cn_image_0000002786360142.png "点击放大")
 
 ## 约束与限制
 
-获取头像昵称能力支持Phone、Tablet、PC/2in1设备。并且从5.1.0(18)版本开始，新增支持Wearable设备；从5.1.1(19)版本开始，新增支持TV设备。
+获取头像昵称能力支持Phone、Tablet、PC/2in1设备。并且从5.1.0(18)版本开始，新增支持Wearable设备；从5.1.1(19)版本开始，新增支持TV设备；从26.0.1版本开始，新增支持Car设备。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/0CX9B8J3Qk2ENeyjQZjp7w/zh-cn_image_0000002809010847.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/GfmmghCjQUSc6MXal9ke_g/zh-cn_image_0000002815559563.png)
 
 流程说明：
 

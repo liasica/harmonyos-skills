@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hp-arkui-
 title: "@performance/hp-arkui-use-taskpool-for-web-request"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-arkui-use-taskpool-for-web-request
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:12+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:439aa163a9fb1e95b14c29835a8f545c1e2a46de651931ea9019b7b213865efe
+scraped_at: 2026-11-12T09:52:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:fcd3f7183861e2b2835454ebe3bbe8ffdab12d503369694f231c83845da73d38
 ---
 
 建议网络资源的请求和返回使用taskpool线程池异步处理。
@@ -79,4 +79,4 @@ httpRequest.request("EXAMPLE_URL", (err: Error, data: http.HttpResponse) => {
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

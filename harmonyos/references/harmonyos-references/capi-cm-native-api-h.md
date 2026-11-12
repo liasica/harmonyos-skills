@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-cm-n
 title: cm_native_api.h
 breadcrumb: API参考 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > C API > 头文件 > cm_native_api.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:45+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:70592fbd1f81618989acc74a53176f008897439effdc1161895a900bf4fd3aa8
+scraped_at: 2026-11-12T09:55:26+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4156897ceadcf9446254ecc533e481d11610773bf92e9873c73767aaea1a79c8
 ---
 
 ## 概述
@@ -31,8 +31,8 @@ content_hash: sha256:70592fbd1f81618989acc74a53176f008897439effdc1161895a900bf4f
 | [int32\_t OH\_CertManager\_GetUkeyCertificate(const OH\_CM\_Blob \*keyUri, const OH\_CM\_UkeyInfo \*ukeyInfo, OH\_CM\_CredentialDetailList \*certificateList)](capi-cm-native-api-h.md#oh_certmanager_getukeycertificate) | 获取USB证书凭据的详情信息列表。 |
 | [int32\_t OH\_CertManager\_GetPrivateCertificate(const OH\_CM\_Blob \*keyUri, OH\_CM\_Credential \*certificate)](capi-cm-native-api-h.md#oh_certmanager_getprivatecertificate) | 获取特定应用私有证书凭据详细信息。 |
 | [int32\_t OH\_CertManager\_GetPublicCertificate(const OH\_CM\_Blob \*keyUri, OH\_CM\_Credential \*certificate)](capi-cm-native-api-h.md#oh_certmanager_getpubliccertificate) | 获取特定用户公共证书凭据详细信息。 |
-| [void OH\_CertManager\_FreeUkeyCertificate(OH\_CM\_CredentialDetailList \*certificateList)](capi-cm-native-api-h.md#oh_certmanager_freeukeycertificate) | 销毁证书详情信息列表。 |
-| [void OH\_CertManager\_FreeCredential(OH\_CM\_Credential \*certificate)](capi-cm-native-api-h.md#oh_certmanager_freecredential) | 销毁证书详情。 |
+| [void OH\_CertManager\_FreeUkeyCertificate(OH\_CM\_CredentialDetailList \*certificateList)](capi-cm-native-api-h.md#oh_certmanager_freeukeycertificate) | 销毁证书凭据详情信息列表。 |
+| [void OH\_CertManager\_FreeCredential(OH\_CM\_Credential \*certificate)](capi-cm-native-api-h.md#oh_certmanager_freecredential) | 销毁证书凭据详情。 |
 
 ## 函数说明
 
@@ -126,7 +126,7 @@ void OH_CertManager_FreeUkeyCertificate(OH_CM_CredentialDetailList *certificateL
 
 **描述**
 
-销毁证书凭据详细信息列表。
+销毁证书凭据详情信息列表。
 
 **起始版本：** 22
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-
 title: arEngine（AR增强现实能力）
 breadcrumb: API参考 > 图形 > AR Engine（AR引擎服务） > ArkTS API > arEngine（AR增强现实能力）
 category: harmonyos-references
-scraped_at: 2026-10-29T08:02:16+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:8678081d0a0bbc2a8695a018b830da1a1b9b27689edceb669a703b2c394fef72
+scraped_at: 2026-11-12T09:56:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3a61deddca3c4aebe1f29027b317cf4d131a07e897d7272ac952c89eb69870fc
 ---
 
 本模块提供AR Engine（AR引擎服务）的arEngine（AR增强现实能力）相关接口。
@@ -627,7 +627,7 @@ deserialize(buffer: ArrayBuffer): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters, for example, the input parameter is empty or invalid. |
+| 401 | [Sync] Parameter error. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
 | 1009200001 | Failure. |
 | 1009200008 | Resource exhausted. |
 
@@ -714,7 +714,7 @@ addImage(name: string, pixelMap: image.PixelMap, widthInMeters: number): Promise
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters, for example, the input parameter is empty or invalid. |
+| 401 | [Sync] Parameter error. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
 | 1009200001 | Failure. |
 | 1009200008 | Resource exhausted. |
 | 1009200011 | The number of images added exceeds the maximum. |
@@ -854,6 +854,10 @@ if (ret) {
 }
 ```
 
+**参考：**
+
+[setImageAddMode](arengine-api-arengine.md#araugmentedimagedatabasesetimageaddmode)
+
 ### ARAugmentedImageDatabase.setImageAddMode
 
 setImageAddMode(mode: ARAddAugmentedImageMode): void
@@ -891,6 +895,10 @@ if (ret) {
   imageDatabase.setImageAddMode(arEngine.ARAddAugmentedImageMode.UPDATE);
 }
 ```
+
+**参考：**
+
+[getImageAddMode](arengine-api-arengine.md#araugmentedimagedatabasegetimageaddmode)
 
 ### ARAugmentedImageDatabase.release
 
@@ -1141,7 +1149,7 @@ createAnchor(pose: ARPose): ARAnchor
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters, for example, the input parameter is empty or invalid. |
+| 401 | [Sync] Parameter error. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
 | 1009200001 | Failure. |
 
 **示例：**
@@ -1195,7 +1203,7 @@ detachAnchor(anchor: ARAnchor): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters, for example, the input parameter is empty or invalid. |
+| 401 | [Sync] Parameter error. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
 | 1009200001 | Failure. |
 
 **示例：**
@@ -1285,7 +1293,7 @@ getAllTrackables(type: ARTrackableType): Array<ARTrackable>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters, for example, the input parameter is empty or invalid. |
+| 401 | [Sync] Parameter error. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
 | 1009200001 | Failure. |
 | 1009200008 | Resource exhausted. |
 
@@ -1341,6 +1349,10 @@ if (ret) {
 }
 ```
 
+**参考：**
+
+[closeFlash](arengine-api-arengine.md#arsessioncloseflash)
+
 ### ARSession.closeFlash
 
 closeFlash(): Promise<boolean>
@@ -1380,6 +1392,10 @@ if (ret) {
   await arSession.closeFlash();
 }
 ```
+
+**参考：**
+
+[openFlash](arengine-api-arengine.md#arsessionopenflash)
 
 ### ARSession.release
 
@@ -1615,8 +1631,8 @@ if (ret) {
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| extendX | number | 是 | 否 | 在X轴上估计的物理图像宽度，单位：m。如果图像的追踪状态为PAUSED或STOPPED，返回的宽度信息是最后一次追踪的宽度。如果图像从未被追踪，返回0。 |
-| extendZ | number | 是 | 否 | 在Z轴上估计的物理图像宽度，单位：m。如果图像的追踪状态为PAUSED或STOPPED，返回的宽度信息是最后一次追踪的宽度。如果图像从未被追踪，返回0。 |
+| extendX | number | 是 | 否 | 在X轴上估计的物理图像长度，单位：m。如果图像的追踪状态为PAUSED或STOPPED，返回最后一次追踪的估计值。如果图像从未被追踪，返回0。 |
+| extendZ | number | 是 | 否 | 在Z轴上估计的物理图像长度，单位：m。如果图像的追踪状态为PAUSED或STOPPED，返回最后一次追踪的估计值。如果图像从未被追踪，返回0。 |
 | index | number | 是 | 否 | 增强图像在增强图像数据库中的图像索引，取值范围：[0,49]，为图像在数据库中的唯一标识符。 |
 | name | string | 是 | 否 | 增强图像的图像名称，最大值为255Byte，该值可能不唯一。 |
 
@@ -2055,7 +2071,7 @@ getProjectionMatrix(near: number, far: number): Matrix4
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters, for example, the input parameter is empty or invalid. |
+| 401 | [Sync] Parameter error. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
 | 1009200001 | Failure. |
 
 **示例：**
@@ -2479,7 +2495,7 @@ getUpdatedTrackables(type: ARTrackableType): Array<ARTrackable>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters, for example, the input parameter is empty or invalid. |
+| 401 | [Sync] Parameter error. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
 | 1009200001 | Failure. |
 
 **示例：**
@@ -2505,7 +2521,7 @@ hitTest(x: number, y: number): Array<ARHitResult>
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -2528,7 +2544,7 @@ hitTest(x: number, y: number): Array<ARHitResult>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters, for example, the input parameter is empty or invalid. |
+| 401 | [Sync] Parameter error. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
 | 1009200001 | Failure. |
 | 1009200008 | Resource exhausted. |
 
@@ -2555,7 +2571,7 @@ acquireSceneMesh(): ARSceneMesh
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -2599,7 +2615,7 @@ acquireDepthImage16Bits(): ARImage
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -2642,7 +2658,7 @@ acquireDepthConfidenceImage(): ARImage
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -2683,7 +2699,7 @@ acquireSemanticDense(): ARSemanticDenseData
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 6.0.0(20)
 
@@ -3106,7 +3122,7 @@ getHitPose(): ARPose
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3148,7 +3164,7 @@ getTrackable(): ARTrackable
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3190,7 +3206,7 @@ createAnchor(): ARAnchor
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3232,7 +3248,7 @@ release(): Promise<void>
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3357,7 +3373,7 @@ getPolygonXZ(): ArrayBuffer
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3399,7 +3415,7 @@ getSubsumedBy(): ARPlane
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3441,7 +3457,7 @@ isPoseInExtents(pose: ARPose): boolean
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3463,7 +3479,7 @@ isPoseInExtents(pose: ARPose): boolean
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters, for example, the input parameter is empty or invalid. |
+| 401 | [Sync] Parameter error. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
 | 1009200001 | Failure. |
 
 **示例：**
@@ -3491,7 +3507,7 @@ isPoseInPolygon(pose: ARPose): boolean
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3513,7 +3529,7 @@ isPoseInPolygon(pose: ARPose): boolean
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters, for example, the input parameter is empty or invalid. |
+| 401 | [Sync] Parameter error. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
 | 1009200001 | Failure. |
 
 **示例：**
@@ -3555,7 +3571,7 @@ getPlane(): ARPlane
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3740,7 +3756,7 @@ getVertices(): ArrayBuffer
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3782,7 +3798,7 @@ getVertexNormals(): ArrayBuffer
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3824,7 +3840,7 @@ getTriangleIndices(): ArrayBuffer
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3866,7 +3882,7 @@ release(): Promise<void>
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 5.1.0(18)
 
@@ -3926,7 +3942,7 @@ acquirePointData(): ARSemanticDensePointData
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 6.0.0(20)
 
@@ -3968,7 +3984,7 @@ acquireCubeData(): Array<ARSemanticDenseCubeData>
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 6.0.0(20)
 
@@ -4010,7 +4026,7 @@ release(): Promise<void>
 
 **系统能力：** SystemCapability.AREngine.Core
 
-**设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
+**设备行为差异：** 该接口在部分Phone、部分Tablet中可正常调用，在不支持的设备中无法正常调用。可使用[arViewController.isARTypeSupported](arengine-api-arviewcontroller.md#arviewcontrollerisartypesupported)接口查询能力是否支持。
 
 **起始版本：** 6.0.0(20)
 
@@ -4173,7 +4189,7 @@ createAnchor(pose: ARPose): ARAnchor
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters, for example, the input parameter is empty or invalid. |
+| 401 | [Sync] Parameter error. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
 | 1009200001 | Failure. |
 
 **示例：**
@@ -4299,7 +4315,7 @@ createARPose(rotation: Quaternion, translation: Vec3): ARPose
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters, for example, the input parameter is empty or invalid. |
+| 401 | [Sync] Parameter error. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameter types.  3. Parameter verification failed. |
 | 1009200001 | Failure. |
 
 **示例：**

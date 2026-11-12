@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo start
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo start
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:12+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:4246b61a62842e4b4e001eb9357bfe2c7b184b6000ea56a01fe1dd9f4310a067
+scraped_at: 2026-11-12T09:52:51+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3432ebe98503283bff2ca6081635eda1cdeec92b9de757fec5d146811c485836
 ---
 
 启动ohpm-repo服务。
@@ -26,7 +26,7 @@ ohpm-repo start
 
 **说明** 
 
-启动时将ohpm-repo服务的pid存放到<deploy\_root>/runtime/.pid文件中，其中<deploy\_root>为[ohpm-repo私仓部署目录](ide-ohpm-repo-configuration.md#zh-cn_topic_0000001745376470_关于-deploy_root)。
+启动时将ohpm-repo服务的pid存放到<deploy\_root>/runtime/.pid文件中，其中<deploy\_root>为[ohpm-repo私仓部署目录](ide-ohpm-repo-configuration.md#section77641227123)。
 
 ## 示例
 
@@ -38,4 +38,4 @@ ohpm-repo start
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/ItkE1DisR4m59g4J0meUnQ/zh-cn_image_0000002731541445.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/-Hukz_9nQumtOEsbwFUgcw/zh-cn_image_0000002779405244.png "点击放大")

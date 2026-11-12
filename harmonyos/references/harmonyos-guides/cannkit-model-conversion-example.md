@@ -3,86 +3,86 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-model
 title: 模型转换示例
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型转换 > 离线模型转换 > 模型转换示例
 category: harmonyos-guides
-scraped_at: 2026-09-08T06:39:19+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4d32dfd26a009ba125aacd5f9f4a1de5d8579393216ea9ebdd3b7b1323599e8e
+scraped_at: 2026-11-12T09:52:40+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b75431f352699d5a4f0d14fe85c26f6958f15d33f5299c0c9709f636ac05345e
 ---
 
-使用CANN Kit工具时，可以预先使用OMG工具将Caffe、TensorFlow、ONNX、MindSpore模型转换为OM离线模型，移动端AI程序直接读取离线模型进行推理。OMG工具位于[Tools下载](cannkit-preparations.md#tools下载)的tools/tools\_omg下，可运行在64位Linux平台上。
+使用CANN Kit工具时，可以预先使用CANN包中的ATC工具将Caffe、TensorFlow、ONNX、MindSpore模型转换为OM离线模型，移动端AI程序直接读取离线模型进行推理。ATC工具包含在CANN工具包中（安装方式请参见[CANN工具包安装流程](cannkit-preparations.md#cann工具包安装流程)），可运行在64位Linux平台上。
 
 ## Caffe模型转换
 
 当前支持[Caffe](https://gitee.com/mirrors/caffe) 1.0版本。
 
-命令行中的参数说明请参见[OMG参数](cannkit-overall-parameter.md)，转换命令：
+命令行中的参数说明请参见[ATC参数](cannkit-overall-parameter.md)，转换命令：
 
 ```shell
-./omg --model xxx.prototxt --weight yyy.caffemodel --framework 0 --output ./modelname
+atc --model=xxx.prototxt --weight=yyy.caffemodel --framework=0 --output=./modelname
 ```
 
 转换示例：
 
 ```shell
-./omg --model deploy.prototxt --weight squeezenet_v1.1.caffemodel --framework 0 --output ./squeezenet
+atc --model=deploy.prototxt --weight=squeezenet_v1.1.caffemodel --framework=0 --output=./squeezenet
 ```
 
-当看到“OMG generate offline model success”时，则说明转换成功，会在当前目录下生成squeezenet.om。
+当看到“generate offline model success”时，则说明转换成功，会在当前目录下生成squeezenet.om。
 
 ## TensorFlow模型转换
 
 当前支持[TensorFlow](https://www.tensorflow.org/?hl=zh-cn) 2.x版本。
 
-命令行中的参数说明请参见[OMG参数](cannkit-overall-parameter.md)，转换命令：
+命令行中的参数说明请参见[ATC参数](cannkit-overall-parameter.md)，转换命令：
 
 ```shell
-./omg --model xxx.pb --framework 3 --output ./modelname --input_shape "xxx:n,h,w,c" --out_nodes "node_name1:0"
+atc --model=xxx.pb --framework=3 --output=./modelname --input_shape="xxx:n,h,w,c" --out_nodes="node_name1:0"
 ```
 
 转换示例：
 
 ```shell
-./omg --model mobilenet_v2_1.0_224_frozen.pb --framework 3 --output ./mobilenet_v2 --input_shape "input:1,224,224,3" --out_nodes "MobilenetV2/Predictions/Reshape_1:0"
+atc --model=mobilenet_v2_1.0_224_frozen.pb --framework=3 --output=./mobilenet_v2 --input_shape="input:1,224,224,3" --out_nodes="MobilenetV2/Predictions/Reshape_1:0"
 ```
 
-当看到“OMG generate offline model success”时，则说明转换成功，会在当前目录下生成mobilenet\_v2.om。
+当看到“generate offline model success”时，则说明转换成功，会在当前目录下生成mobilenet\_v2.om。
 
 ## ONNX模型转换
 
 当前支持[ONNX](https://github.com/onnx/onnx) opset版本7~18（最高支持到V1.13.1）。
 
-命令行中的参数说明请参见[OMG参数](cannkit-overall-parameter.md)，转换命令：
+命令行中的参数说明请参见[ATC参数](cannkit-overall-parameter.md)，转换命令：
 
 ```shell
-./omg --model xxx.onnx --framework 5 --output ./modelname
-```
-
-转换示例:
-
-```shell
-./omg --model resnet18.onnx --framework 5 --output ./resnet18
-```
-
-当看到“OMG generate offline model success”时，则说明转换成功，会在当前目录下生成resnet18.om。
-
-## 量化模型转换（以Caffe模型为例）
-
-目前大部分模型在NPU上都是使用16bit float类型进行计算的，使用量化既可以减少模型的体积，也可以加快模型推理速度。
-
-量化模型转换依赖轻量化工具，利用轻量化工具生成模型及轻量化配置，通过"compress\_conf"参数传递给OMG并生成量化模型，更多说明请参见[模型轻量化](cannkit-lightweight-tool-overview.md)。
-
-命令行中的参数说明请参见[OMG参数](cannkit-overall-parameter.md)，转换命令：
-
-```shell
-./omg --model xxx.prototxt --weight xxx.caffemodel --framework 0 --output ./modelname  --compress_conf=param
+atc --model=xxx.onnx --framework=5 --output=./modelname
 ```
 
 转换示例：
 
 ```shell
-./omg --model deploy.prototxt --weight squeezenet_v1.1.caffemodel --framework 0 --output ./squeezenet --compress_conf=param
+atc --model=resnet18.onnx --framework=5 --output=./resnet18
 ```
 
-当看到“OMG generate offline model success”时，说明模型量化成功，会在当前目录下生成量化模型squeezenet.om。
+当看到“generate offline model success”时，则说明转换成功，会在当前目录下生成resnet18.om。
+
+## 量化模型转换（以Caffe模型为例）
+
+目前大部分模型在NPU上都是使用16bit float类型进行计算的，使用量化既可以减少模型的体积，也可以加快模型推理速度。
+
+量化模型转换依赖轻量化工具，利用轻量化工具生成模型及轻量化配置，通过"compress\_conf"参数传递给ATC并生成量化模型，更多说明请参见[模型轻量化](cannkit-lightweight-tool-overview.md)。
+
+命令行中的参数说明请参见[ATC参数](cannkit-overall-parameter.md)，转换命令：
+
+```shell
+atc --model=xxx.prototxt --weight=xxx.caffemodel --framework=0 --output=./modelname --compress_conf=param
+```
+
+转换示例：
+
+```shell
+atc --model=deploy.prototxt --weight=squeezenet_v1.1.caffemodel --framework=0 --output=./squeezenet --compress_conf=param
+```
+
+当看到“generate offline model success”时，说明模型量化成功，会在当前目录下生成量化模型squeezenet.om。
 
 ## 推理前可变Shape模型转换（以ONNX模型为例）
 
@@ -90,12 +90,12 @@ content_hash: sha256:4d32dfd26a009ba125aacd5f9f4a1de5d8579393216ea9ebdd3b7b13235
 
 在模型转换时，将推理过程可能遇到的所有Shape种类预先通过dynamic\_dims和input\_shape指定出来，生成一个标准IR模型，其携带多种shape输入。
 
-命令行中的参数说明请参见[OMG参数](cannkit-overall-parameter.md)。
+命令行中的参数说明请参见[ATC参数](cannkit-overall-parameter.md)。
 
 转换示例：
 
 ```shell
-./omg --model=./1batch.onnx --input_shape="inputName:-1,3,128,128" --dynamic_dims="1;2;5" --framework=5 --output=./FlexibleShapeModelName
+atc --model=./1batch.onnx --input_shape="inputName:-1,3,128,128" --dynamic_dims="1;2;5" --framework=5 --output=./FlexibleShapeModelName
 ```
 
 **说明** 
@@ -110,44 +110,44 @@ MindSpore支持的算子数量有限，建议通过[TensorFlow模型转换](cann
 
 如果模型推理需要对图像或其他输入数据进行变换（如图像尺寸变换、色域转换、减均值/乘系数等），可使用AIPP模型转换功能。转换后的模型增加算子替换此类操作，可提升效率。
 
-命令行中的参数说明请参见[OMG参数](cannkit-overall-parameter.md)，转换命令：
+命令行中的参数说明请参见[ATC参数](cannkit-overall-parameter.md)，转换命令：
 
 ```shell
-./omg --model xxx.prototxt --weight xxx.caffemodel --framework 0 --insert_op_conf aipp_conf_static.cfg --output ./modelname
+atc --model=xxx.prototxt --weight=xxx.caffemodel --framework=0 --insert_op_conf=aipp_conf_static.cfg --output=./modelname
 ```
 
 转换示例：
 
 ```shell
-./omg --model deploy.prototxt --weight squeezenet_v1.1.caffemodel --framework 0 --insert_op_conf aipp_conf_static.cfg --output ./squeezenet
+atc --model=deploy.prototxt --weight=squeezenet_v1.1.caffemodel --framework=0 --insert_op_conf=aipp_conf_static.cfg --output=./squeezenet
 ```
 
-当出现“OMG generate offline model success”时，说明AIPP模型转换成功，会在当前目录下生成AIPP squeezenet.om模型。
+当出现“generate offline model success”时，说明AIPP模型转换成功，会在当前目录下生成AIPP squeezenet.om模型。
 
 **说明** 
 
-aipp\_conf\_static.cfg是AIPP的配置文件，位置存放在"tools/tools\_omg/sample"文件夹中，具体说明参见[AIPP配置文件说明](cannkit-aipp-configuration-file.md)。
+aipp\_conf\_static.cfg是AIPP的配置文件，位置存放在CANN工具包安装目录下的atc/data/sample文件夹中，具体说明参见[AIPP配置文件说明](cannkit-aipp-configuration-file.md)。
 
 ## OMC模型转换（以ONNX模型为例）
 
-OMC模型：硬件强相关Davinci模型，仅可在--platform指定的平台部署。
+OMC模型：硬件强相关Davinci模型，仅可在--soc\_version指定的平台部署。
 
 适用场景：适用于编译耗时长，占用资源大的模型，可离线完成编译，免除在线编译耗时。
 
 若想编译omc模型，需要先参考[环境准备](cannkit-environment-preparation.md)完成环境配置，再进行转换命令。
 
-命令行中的参数说明请参见[OMG参数](cannkit-overall-parameter.md)，转换命令：
+命令行中的参数说明请参见[ATC参数](cannkit-overall-parameter.md)，转换命令：
 
 ```shell
-./omg --model xxx.onnx --platform=kirinxxxx --target=omc --framework 5 --output ./modelname
+atc --model=xxx.onnx --soc_version=KirinXXXX --target=omc --framework=5 --output=./modelname
 ```
 
-其中，platform选择对应的芯片平台，包括kirin9030、kirin9020、kirinx90。
+其中，soc\_version选择对应的芯片平台，包括Kirin9030、Kirin9020、Kirin9050、KirinX90。
 
 转换示例：
 
 ```shell
-./omg --model resnet18.onnx --platform=kirin9030 --target=omc --framework 5 --output ./resnet18
+atc --model=resnet18.onnx --soc_version=Kirin9030 --target=omc --framework=5 --output=./resnet18
 ```
 
-当看到“OMG generate offline model success”时，则说明转换成功，会在当前目录下生成resnet18.omc，可在对应kirin9030平台执行。
+当看到“generate offline model success”时，则说明转换成功，会在当前目录下生成resnet18.omc，可在对应Kirin9030平台执行。

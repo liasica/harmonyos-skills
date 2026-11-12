@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-canvas
 title: CanvasRenderingContext2D
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > CanvasRenderingContext2D
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:07+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:855251c78909c009395d41a0abe56bc30e7d5a8243118d3148f8dcea89210262
+scraped_at: 2026-11-12T09:54:21+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:2cff41430949f3bca9ff3b0e757c861c9572e914c7154eb861d80e9505cb222e
 ---
 
 CanvasRenderingContext2D是Canvas组件的2D绘图上下文对象，用于在Canvas组件上进行自定义绘图。支持绘制形状（矩形、圆形、椭圆、路径等）、文本、图片、渐变、阴影等多种绘制类型，适用于数据可视化、游戏开发、图像编辑、自定义UI绘制等场景。通过该对象，开发者可以灵活控制绘制过程，实现复杂的2D图形效果。
@@ -109,7 +109,7 @@ struct LengthMetricsUnitDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/BypSdkzxRgGy_s6Ek2F5vw/zh-cn_image_0000002779852548.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/yR7QcOiqR5KB654Zt9ywnw/zh-cn_image_0000002815400979.png)
 
 ## 属性
 
@@ -177,7 +177,7 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/l8dTcc_2Ss-yGPWu_02EIw/zh-cn_image_0000002779692580.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/PH7CnaR7Tw6zHar-Ewqdig/zh-cn_image_0000002786521404.png)
 
 ## on('onAttach')13+
 
@@ -402,7 +402,7 @@ struct AttachDetachExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/oZFGIL88RB63QE8EYfLbSA/zh-cn_image_0000002809012201.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/x9b3tSQbSkqfTSBGzq2iYQ/zh-cn_image_0000002786361476.gif)
 
 ## startImageAnalyzer12+
 
@@ -534,7 +534,7 @@ struct ImageAnalyzerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/SbSGIJtkSvKzgO2W25vwYA/zh-cn_image_0000002809052115.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/63-5ZyfSSbW_pGzeckaJAg/zh-cn_image_0000002815560897.png)
 
 ## getContext2DFromDrawingContext23+
 
@@ -602,7 +602,7 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/JhKGvTrISdS39jnmRlo_yg/zh-cn_image_0000002779852550.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/cNwje0IbS1S-4P9QD7-IoA/zh-cn_image_0000002815400981.png)
 
 ## RenderingContextOptions23+
 
@@ -652,6 +652,22 @@ constructor(antialias?: boolean)
 | --- | --- | --- | --- | --- |
 | antialias | boolean | 否 | 是 | 表明canvas是否开启抗锯齿。  异常值undefined或null按默认值处理。  true：表示开启抗锯齿，false：表示不开启抗锯齿功能。  默认值：false  **说明：**  绘制文本默认开启抗锯齿效果，RenderingContextSettings的antialias无法影响绘制文本的抗锯齿效果，如需修改文本抗锯齿效果，请使用[antialias24+](ts-components-canvas-common-property.md#antialias24)接口。 |
 
+## FrameNode13+
+
+type FrameNode = import('../api/arkui/FrameNode').FrameNode
+
+为Canvas导入的FrameNode类型对象。
+
+**元服务API：** 从API version 13开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | 说明 |
+| --- | --- |
+| import('../api/arkui/FrameNode').[FrameNode](js-apis-arkui-framenode.md) | FrameNode类型对象。 |
+
 ## 示例
 
 ### 示例1（width属性用法）
@@ -681,7 +697,7 @@ struct WidthExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/6Dfwwx6LQl-YnzmtLkLSfQ/zh-cn_image_0000002779692582.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/YHjgyFtIQSuHrr_NJHQnTQ/zh-cn_image_0000002786521406.png)
 
 ### 示例2（height属性用法）
 
@@ -710,7 +726,7 @@ struct HeightExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/cUXbg_ovSW61SwM7EYqEHg/zh-cn_image_0000002809012203.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/N5Mtt7xST5mhX04yYk2dnA/zh-cn_image_0000002786361478.png)
 
 ### 示例3（canvas属性用法）
 
@@ -754,4 +770,4 @@ struct CanvasExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/LxYcd3ZTTh6twe0jqRiB3Q/zh-cn_image_0000002809052117.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/QaT5EX65QLiYz_FJnc9_-A/zh-cn_image_0000002815560899.png)

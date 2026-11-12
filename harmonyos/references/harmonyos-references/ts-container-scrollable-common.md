@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: 滚动组件通用接口
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > 滚动组件通用接口
 category: harmonyos-references
-scraped_at: 2026-11-04T08:32:58+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c9a02f2a121ee1c47ca38a6879a7c76b9c657693339fb5a5dbcd1bfc581a64fa
+scraped_at: 2026-11-12T09:54:12+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b877c11676d84041a2b4ccda90f0a89b98e40c2c38ceeb982f7b954f6436f439
 ---
 
 滚动组件通用接口目前只支持[List](ts-container-list.md)、[Grid](ts-container-grid.md)、[Scroll](ts-container-scroll.md)和[WaterFlow](ts-container-waterflow.md)组件，提供滚动条样式、边缘滑动效果、嵌套滚动、摩擦系数控制、内容裁剪等通用属性，以及滚动开始、停止、到达边界等事件回调。开发者可通过这些接口统一管理各类滚动组件的行为，适用于列表展示、网格布局、瀑布流排列和页面滚动等场景。
@@ -535,7 +535,7 @@ enableScrollWithMouse(enabled: boolean | undefined): T
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| enabled | boolean | undefined | 是 | 是否支持鼠标左键按下拖动滚动。  true：支持鼠标左键按下拖动滚动。  false：不支持鼠标左键按下拖动滚动。  undefined：不支持鼠标左键按下拖动滚动。 |
+| enabled | boolean | undefined | 是 | 是否支持鼠标左键按下拖动滚动。  true：支持鼠标左键按下拖动滚动。  false：不支持鼠标左键按下拖动滚动。  undefined：首次设置为undefined时，使用默认值false。非首次设置为undefined时，保持上一次设置的效果不变。 |
 
 **返回值：**
 
@@ -976,7 +976,7 @@ List/Grid组件编辑模式选项属性参数对象。
 
 下图是组件配置了边距属性后的示意图，可理解每种枚举对应的裁剪区域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/Dkpo8mnMRCm_JBle-ENpKA/zh-cn_image_0000002779692282.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/pOBAnCTbRMWdlDsRpFIDVA/zh-cn_image_0000002815560593.png)
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
@@ -1467,7 +1467,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/Ue42HRHZREe6uQrXM4ZBnA/zh-cn_image_0000002809051755.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/T-40kthxSlu9sJotXj8geQ/zh-cn_image_0000002786521040.gif)
 
 ### 示例2（设置边缘渐隐）
 
@@ -1512,7 +1512,7 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/Oc0X9gfUSSCHcOVPgDVHqQ/zh-cn_image_0000002779692224.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/F3pidacDR_Sd7jup0Jwllw/zh-cn_image_0000002815560535.gif)
 
 ### 示例3（设置裁剪区域）
 
@@ -1573,7 +1573,7 @@ struct ScrollExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/fddRQJceTFqOk1ODHrR7tw/zh-cn_image_0000002809011903.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/NYav23aTTei5IF8TplWBJA/zh-cn_image_0000002815400677.gif)
 
 ### 示例4（设置滚动条边距）
 
@@ -1630,4 +1630,4 @@ struct ListExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/LYPo8CG1SvmKtwKIa92tYQ/zh-cn_image_0000002809051817.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/xRm8g2_IShaBv2x7BfbTNg/zh-cn_image_0000002786521102.gif)

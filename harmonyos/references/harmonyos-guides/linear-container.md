@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/linear-contai
 title: 线性容器
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS基础类库 > ArkTS容器类库 > 线性容器
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:34+08:00
-doc_updated_at: 2026-10-21
+scraped_at: 2026-11-12T09:51:03+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:a93765d6e57ace2a3719d2bf9416ef923af16358350803469ad35fbb644252dc
 ---
 

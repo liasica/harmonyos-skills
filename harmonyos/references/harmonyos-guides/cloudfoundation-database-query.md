@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 查询数据
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 云数据库 > 查询数据
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:28+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:5cabb98aba12cbcd067efe08af7724ba2494f6aba880187b7040326c38ddfd6b
+scraped_at: 2026-11-12T09:52:22+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:87390b69048b379a8c88c7f35cc124938f1b31a17a68a437ad59cd93754f6c08
 ---
 
 云数据库通过[query()](../harmonyos-references/cloudfoundation-clouddatabase.md#query)方法查询对象，并提供了丰富的谓词查询，比如[equalTo()](../harmonyos-references/cloudfoundation-clouddatabase.md#equalto)、[notEqualTo()](../harmonyos-references/cloudfoundation-clouddatabase.md#notequalto)、[in()](../harmonyos-references/cloudfoundation-clouddatabase.md#in)等。通过单个或者多个链式过滤条件，开发者可以从存储区查询到满足特定条件的对象，也可以通过排序谓词对查询结果排序，或者通过限定查询返回数量谓词限定查询结果返回的数量。详细的查询条件请参见[DatabaseQuery](../harmonyos-references/cloudfoundation-clouddatabase.md#databasequeryt-extends-databaseobject)。
@@ -284,7 +284,7 @@ content_hash: sha256:5cabb98aba12cbcd067efe08af7724ba2494f6aba880187b7040326c38d
        hilog.error(0x0000, 'cloudDb', `Failed to query, code: ${err.code}, message: ${err.message}`);
      });
      ```
-   * 构造查询条件，并调用[query()](../harmonyos-references/cloudfoundation-clouddatabase.md#query)方法，查询价格不超过50且按照价格降序排列的书籍。
+   * 构造查询条件，并调用[query()](../harmonyos-references/cloudfoundation-clouddatabase.md#query)方法，查询价格小于50且按照价格降序排列的书籍。
 
      ```typescript
      let condition = new cloudDatabase.DatabaseQuery(BookInfo);
@@ -326,7 +326,7 @@ content_hash: sha256:5cabb98aba12cbcd067efe08af7724ba2494f6aba880187b7040326c38d
        hilog.error(0x0000, 'cloudDb', `Failed to query, code: ${err.code}, message: ${err.message}`);
      });
      ```
-   * 构造查询条件，并调用[query()](../harmonyos-references/cloudfoundation-clouddatabase.md#query)方法，查询价格不超过50且按照价格降序排列的书籍，最多展示两条数据。
+   * 构造查询条件，并调用[query()](../harmonyos-references/cloudfoundation-clouddatabase.md#query)方法，查询价格小于50且按照价格降序排列的书籍，最多展示两条数据。
 
      ```typescript
      let condition = new cloudDatabase.DatabaseQuery(BookInfo);

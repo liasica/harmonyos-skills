@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 网络共享错误码
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 错误码 > 网络共享错误码
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:16+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:4b3d1a81a2fb4a13ddac8e50bd65165f5c07f268eb37497bc7b12ec33b7f69ee
+scraped_at: 2026-11-12T09:55:44+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:005895eba394369c89390a299ed99bd03cea6f48c72e6541e680f0d34e387deb
 ---
 
 **说明** 
@@ -60,15 +60,13 @@ System internal error.
 
 **可能原因**
 
-1.内存异常。
-
-2.空指针。
+1. 内存异常。
+2. 空指针。
 
 **处理步骤**
 
-1.检查内存空间是否充足，清理内存后重试。
-
-2.系统异常，请稍后重试或重启设备。
+1. 检查内存空间是否充足，清理内存后重试。
+2. 系统异常，请稍后重试或重启设备。
 
 ## 2202004 共享的Iface不可用
 
@@ -86,9 +84,8 @@ Try to share an unavailable iface.
 
 **处理步骤**
 
-1.通过指令（ifconfig -a）查看共享的网卡是否被创建。
-
-2.检查网卡名是否拼写错误。
+1. 通过指令（ifconfig -a）查看共享的网卡是否被创建。
+2. 检查网卡名是否拼写错误。
 
 ## 2202005 WiFi共享失败
 

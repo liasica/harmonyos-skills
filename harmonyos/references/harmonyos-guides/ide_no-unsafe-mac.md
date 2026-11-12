@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-unsafe
 title: "@security/no-unsafe-mac"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 安全规则@security > @security/no-unsafe-mac
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:58+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:18cf3a61dfbadaf4c302e0aa2a07abaefa4c1f434e72b6d44a9c11ba468a66d8
+scraped_at: 2026-11-12T09:52:57+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:de514184d50ec6af86448a07bc079fe8666f95f02d6bcbe6d35d9f6c14253d56
 ---
 
 该规则禁止在[MAC消息认证算法](../AppGallery-connect-Guides/aegis-message-authentication-code-calculation-0000001907018769.md)中使用不安全的哈希算法，例如SHA1。
@@ -50,4 +50,4 @@ plugin:@security/recommended
 plugin:@security/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

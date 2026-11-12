@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Font)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (Font)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:46+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1f30d973aff930cac53a0f07f3d2e952fe02f8a41dbce5ff285ecd92286a89b4
+scraped_at: 2026-11-12T09:56:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:92e7635c8a722baac2347976c2511076bc3b605c7f413a9803f94457062b18b8
 ---
 
 Font类用于描述字型绘制时所使用的属性（如大小、字体、粗细、倾斜、缩放等），并支持文本测量、字形转换、路径轮廓获取、主题字体跟随等能力。
@@ -485,6 +485,40 @@ import { drawing } from '@kit.ArkGraphics2D';
 
 let font = new drawing.Font();
 font.measureText("drawing", drawing.TextEncoding.TEXT_ENCODING_UTF8);
+```
+
+## measureTextWithFallback
+
+measureTextWithFallback(text: string, encoding: TextEncoding): number
+
+测量文本的宽度，支持字体回退。若当前字型的字体不支持文本中的某些字符（无对应字形）时，会自动从系统字体中查找能支持该字符的回退字体，并使用回退字体测量该字符宽度；若未找到回退字体，则仍使用当前字型的字体进行测量。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Graphics.Drawing
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| text | string | 是 | 待测量的文本内容，将按encoding指定的编码方式进行解析。 |
+| encoding | [TextEncoding](arkts-apis-graphics-drawing-e.md#textencoding) | 是 | 指定文本的编码格式。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回包含回退字体的文本宽度，浮点数。单位为物理像素px。 |
+
+**示例：**
+
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
+
+let font = new drawing.Font();
+font.measureTextWithFallback("drawing", drawing.TextEncoding.TEXT_ENCODING_UTF8);
 ```
 
 ## measureSingleCharacter12+
@@ -983,7 +1017,7 @@ getWidths(glyphs: Array<number>): Array<number>
 
 | 类型 | 说明 |
 | --- | --- |
-| Array<number> | 返回字形宽度数组，浮点数。单位为物理像素px。 |
+| Array<number> | 返回字形宽度数组，浮点数。单位为物理像素px。获取失败时返回undefined。 |
 
 **错误码：**
 
@@ -1047,6 +1081,67 @@ let font : drawing.Font = new drawing.Font();
 let text : string = 'hello world';
 let glyphs : number[] = font.textToGlyphs(text);
 console.info("drawing text toglyphs OnTestFunction num =  " + glyphs.length );
+```
+
+## textToGlyphsWithFallback
+
+textToGlyphsWithFallback(text: string, glyphCount?: number): Array<TypefaceFallbackInfo>
+
+将文本转换为字形索引，支持字体回退。若当前字型的字体不支持文本中的某些字符（无对应字形）时，会自动从系统字体中查找能支持该字符的回退字体，并使用回退字体的字形索引；若未找到回退字体，则仍使用当前字型字体的notdef占位字形。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Graphics.Drawing
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| text | string | 是 | 待转换为字形索引的文本字符串。 |
+| glyphCount | number | 否 | 文本表示的字符数量，该参数为整数。传入时必须与[countText](arkts-apis-graphics-drawing-font.md#counttext12)获取的值相等，不传入时默认为text表示的字符数量。传入浮点数，按照向下取整处理。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Array<[TypefaceFallbackInfo](arkts-apis-graphics-drawing-i.md#typefacefallbackinfo)> | 返回字体回退信息数组。数组中的每个元素包含使用相同回退字体的字形索引数组。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[图形绘制与显示错误码](errorcode-drawing.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 25900001 | Parameter error. Possible causes: Incorrect parameter range. |
+
+**示例：**
+
+```ts
+import { RenderNode, DrawContext } from '@kit.ArkUI';
+import { common2D, drawing } from '@kit.ArkGraphics2D';
+
+class DrawingRenderNode extends RenderNode {
+  draw(context : DrawContext) {
+    const canvas = context.canvas;
+    let font : drawing.Font = new drawing.Font();
+    let text : string = 'hello world';
+    let infos : Array<drawing.TypefaceFallbackInfo> = font.textToGlyphsWithFallback(text);
+    console.info("drawing textToGlyphsWithFallback infos length = " + infos.length );
+    let offset = 0;
+    for (let run of infos) {
+      font.setTypeface(run.typeface);
+      let positions: Array<common2D.Point> = [];
+      let glyphWidths = font.getWidths(run.glyphIds);
+      for (let j = 0; j < run.glyphIds.length; j++) {
+        positions.push({x: offset, y: 80});
+        offset += glyphWidths[j];
+      }
+      canvas.drawGlyphs(run.glyphIds, 0, positions, 0, run.glyphIds.length, font);
+    }
+  }
+}
 ```
 
 ## getBounds18+
@@ -1209,7 +1304,7 @@ createPathForGlyph(index: number): Path
 
 | 类型 | 说明 |
 | --- | --- |
-| [Path](arkts-apis-graphics-drawing-path.md) | 返回指定字形的路径轮廓。 |
+| [Path](arkts-apis-graphics-drawing-path.md) | 返回指定字形的路径轮廓。获取失败时返回undefined。 |
 
 **示例：**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/vision-kit-faq-
 title: 卡证识别PixelMap转换问题排查
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 场景化视觉（Vision） > 常见问题 > 卡证识别PixelMap转换问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:16:21+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:816386e02f3d3dadb840e78547c2208df52cbf8463e200f7474760aa26ca857d
+scraped_at: 2026-11-12T10:00:18+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ee2993b955d6edd7098957f3503f3d371296db6f1fcac77f22a7e82f71383b85
 ---
 
 **Q：对于CardRecognition识别身份证返回的结果photoUri，希望将其转换成图片和另一张图片进行相似度对比，但将获取的photoUri转换成PixelMap时报错，image.createImageSource(photoUri)返回为undefined。**
@@ -88,7 +88,7 @@ struct Index {
 
 **Q：卡证识别能否对身份证和银行卡在提取文字的同时，返回给开发者卡证四个边范围内的图片？**
 
-**A**：Vision Kit目前已提供该能力，以身份证为例，可以通过cardImageUri或originalImageUri获取不含背景/含背景的人像面图片，可以参考[开发实例](../harmonyos-guides/vision-cardrecognition.md#section12918203941611)。
+**A**：Vision Kit目前已提供该能力，以身份证为例，可以通过cardImageUri或originalImageUri获取不含背景/含背景的人像面图片，可以参考[开发实例](../doccenter-capabilities/vision-cardrecognition.md#开发实例)。
 
 **Q：卡证识别能否判断所识别身份证的真伪？**
 
@@ -100,7 +100,7 @@ struct Index {
 
 **Q：卡证识别后的结果边角有裁剪，如何解决？**
 
-**A**：在卡证识别控件[CardRecognition](../harmonyos-references/vision-card-recognition.md#section143611912403)中，可以通过cardRecognitionConfig的[setCardMargins](../harmonyos-references/vision-card-recognition.md#section14439151274411)参数设置经裁剪的卡证图片预留边距，范围[10,10000]，默认值为10，单位为px。
+**A**：在卡证识别控件[CardRecognition](../doccenter-references/api/vision-card-recognition.md#cardrecognition)中，可以通过cardRecognitionConfig的[setCardMargins](../doccenter-references/api/vision-card-recognition.md#cardrecognitionconfig)参数设置经裁剪的卡证图片预留边距，范围[10,10000]，默认值为10，单位为px。
 
 **Q：卡证识别CardRecognition接口，识别的身份证信息有时出现错误，如何解决？**
 

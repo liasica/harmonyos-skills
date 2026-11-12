@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-p
 title: promotionService(营销服务)
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > ArkTS API > promotionService(营销服务)
 category: harmonyos-references
-scraped_at: 2026-10-15T07:12:33+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:ed8904491741b7b4fb4c5bb61cc5532b067a421535b6ace0c7169d3bceba9396
+scraped_at: 2026-11-12T09:57:32+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d782906758a46897ff0cae7f7eb50546f8284f56769d73619ebcc32ca7a7ccb1
 ---
 
 本模块支持拉起营销服务，包括活动入口组件以及选券组件。
@@ -196,7 +196,7 @@ startPromotionEntryDialog(mercNo: string, offset?: number): Promise<UserAction>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
 | 1019200001 | System internal error. |
 | 1019200002 | Network connection error. |
 
@@ -222,7 +222,7 @@ struct StartPromotionEntryDialogDemo {
             // 点击关闭、去使用后会分别返回doNothing、useButtonClicked为true
             console.info(`userAction ${JSON.stringify(userAction)}`);
           } catch (e) {
-            console.error(`startUserSelectCouponsPopup error ${JSON.stringify(e)}`);
+            console.error(`startPromotionEntryDialog error ${JSON.stringify(e)}`);
           }
         })
     }
@@ -263,7 +263,7 @@ startUserChooseCouponsPopup(context: common.Context, orderContext: OrderContext)
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
 | 1019200001 | System internal error. |
 | 1019200002 | Network connection error. |
 | 1019200003 | Trade amount is invalid. |
@@ -338,7 +338,7 @@ startPromotionDetailPopup(context: common.Context, mercNo: string): Promise<User
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
 | 1019200001 | System internal error. |
 | 1019200002 | Network connection error. |
 
@@ -363,7 +363,7 @@ export struct StartPromotionDetailPopupDemo {
                         .then((val) => {
                             console.info(`receive resulr is ${JSON.stringify(val)}`);
                         }).catch((e: BusinessError) => {
-                            console.error(`sendMessageRequest failed, message: ${JSON.stringify(e)}`)
+                            console.error(`startPromotionDetailPopup failed, message: ${JSON.stringify(e)}`)
                         });
                 })
         }
@@ -404,7 +404,7 @@ getOrderAvailableCoupons(context: common.Context, orderContext: OrderContext): P
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported. |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
 | 1019200001 | System internal error. |
 | 1019200002 | Network connection error. |
 | 1019200003 | Trade amount is invalid. |

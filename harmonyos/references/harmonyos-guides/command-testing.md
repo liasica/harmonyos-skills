@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/command-testi
 title: 命令行执行测试
 breadcrumb: 指南 > 应用测试 > 专项测试 > DevEco Testing > 命令行执行测试
 category: harmonyos-guides
-scraped_at: 2026-11-06T08:56:33+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:b30af4045f4866ce367e6d53171c524c02f2a035df56dc96087b19fbc3873da2
+scraped_at: 2026-11-12T09:53:14+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8f8c67efa37a57538d42986b324df94e564b9ae913201875cfd23f7e2a7ba291
 ---
 
 ## 环境准备
@@ -40,7 +40,7 @@ PS：性能测试对内存消耗比较大，为了避免出现任务执行失败
 
 安装DevEco Testing客户端后，登录进入首页->点击设置，在基本设置页面开启登录状态保活。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/CZdJHQInT-6JvbvxrKDKpw/zh-cn_image_0000002645378872.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/9XMS7AKlRfq21af2_I0quw/zh-cn_image_0000002645378872.png "点击放大")
 
 ### 命令行启动测试任务
 
@@ -50,11 +50,11 @@ PS：性能测试对内存消耗比较大，为了避免出现任务执行失败
 
 2、在当前文件路径中输入cmd后点击回车进入cmd命令窗口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/COOxCNVkSCWQNc211_ef-Q/zh-cn_image_0000002645114060.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/sMaloz1OTj6GBDNeFOwGnQ/zh-cn_image_0000002645114060.png "点击放大")
 
 3、进入cmd窗口后，输入：DevEcoTestingConsole.bat -params 参数json文件路径。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/xVLzPZ3ES62hcBJiblf9mA/zh-cn_image_0000002672388211.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/H4nsXuU-RECp5hXZ0tazcQ/zh-cn_image_0000002672388211.png "点击放大")
 
 **注意** 
 
@@ -66,7 +66,7 @@ json文件路径中不要含有特殊字符、中文、空格，可以直接拖�
 
 1、安装完客户端后，在应用程序中找到DevEco\_Testing\_for\_App.app，选中后control+右键，选择显示包内容进入 DevEco\_Testing\_for\_App.app/Contents/PlugIns/java.jdk/Contents/Home 目录，在该目录下选中bin目录后control + 右键，选择新建位于文件夹位置的终端窗口。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/gRwdGKrpS4SQCpQtyHFnUg/zh-cn_image_0000002663950171.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/BJ30mlfeT_ygd29YN03Z0g/zh-cn_image_0000002663950171.png "点击放大")
 
 2、执行 ./DevEcoTestingConsole.sh 脚本
 
@@ -74,11 +74,11 @@ json文件路径中不要含有特殊字符、中文、空格，可以直接拖�
 
 初次执行可能会有permission denied权限问题，需给./DevEcoTestingConsole.sh脚本添加可执行权限，在终端窗口执行 chmod +x ./DevEcoTestingConsole.sh 。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/zeR7BCeLTc6bokW8_l-zkA/zh-cn_image_0000002664332745.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/WOPSZLWyTtSpyiPh4-Bqxg/zh-cn_image_0000002664332745.png "点击放大")
 
 权限添加完成即可通过命令行方式执行 “./DevEcoTestingConsole.sh -params json文件路径 ”命令启动测试服务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/C84UU-OpT5yU6KH-m7cToQ/zh-cn_image_0000002634013774.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/e1VNmD8xRleKlVHzltvlbA/zh-cn_image_0000002634013774.png "点击放大")
 
 ### 配置 json 文件
 
@@ -88,7 +88,7 @@ json文件路径中不要含有特殊字符、中文、空格，可以直接拖�
 
 查看任务状态前需要获取任务的taskId，在任务创建成功后可以在对应的打印日志中获取：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/9TpoBdgFSayiVi41h0kjBg/zh-cn_image_0000002672530917.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/zBGRa0kaRNyizS-QSHS_4g/zh-cn_image_0000002672530917.png "点击放大")
 
 **Mac查看任务状态** 终端窗口执行命令：./DevEcoTestingConsole.sh -taskIds "f3\*\*\*469eca"
 
@@ -96,7 +96,7 @@ json文件路径中不要含有特殊字符、中文、空格，可以直接拖�
 
 查询结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/s2IpfKACQx2yZQMRvZWPNA/zh-cn_image_0000002663950173.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/z_XdrCxARWGgUwozM87Ydg/zh-cn_image_0000002663950173.png "点击放大")
 
 ### 命令行停止任务
 
@@ -106,7 +106,7 @@ json文件路径中不要含有特殊字符、中文、空格，可以直接拖�
 
 结果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/A4n5UpgYT7eK9asp6dfIBQ/zh-cn_image_0000002664030217.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/mDdGO-OFQkGxGKSERCg7zg/zh-cn_image_0000002664030217.png "点击放大")
 
 **说明** 
 
@@ -122,7 +122,7 @@ Windows 和 Mac 命令行启动任务参数，拼接-update 参数；本地测�
 
 ### 场景化性能测试
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/zCe0qlbJRz6_yag4_vgicg/zh-cn_image_0000002663950223.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/xPo6FcTORHiJ1jfjVZF1Fw/zh-cn_image_0000002663950223.png "点击放大")
 
 参数说明：
 
@@ -145,50 +145,50 @@ Windows 和 Mac 命令行启动任务参数，拼接-update 参数；本地测�
 
 ```screen
 {
-    "taskParams": {
-        "solutionName": "场景化性能测试",
-        "executeRounds": 1,
-        "manualScriptPath": "D:\\test\\testcase",
-        "caseList": [
-            "OH_PerfDemoTest01",
-            "OH_PerfDemoTest02"
-        ],
-        "std": [
-            "较好体验", 
-            "一般体验", 
-            "极优体验"
-        ],
-        "watchingKpi": {
-            "perf": [
-                "响应时延",
-                "完成时延",
-                "丢帧卡顿",
-                "音视频",
-                "黑白块"
-            ],
-            "system": [
-                "CPU",
-                "内存",
-                "温度",
-                "网络",
-                "电量" 
-            ]
-        },
-        "extraTaskParam": {
-            "saveAllImages": true,
-            "generateIdeFile": true
-        },
-        "sn": [
-            "3AP0*****302"
-        ],
-        "taskName": "Task-0312-184049"
-    }
+  "taskParams": {
+    "solutionName": "场景化性能测试",
+    "executeRounds": 1,
+    "manualScriptPath": "D:\\test\\testcase",
+    "caseList": [
+      "OH_PerfDemoTest01",
+      "OH_PerfDemoTest02"
+    ],
+    "std": [
+      "较好体验",
+      "一般体验",
+      "极优体验"
+    ],
+    "watchingKpi": {
+      "perf": [
+        "响应时延",
+        "完成时延",
+        "丢帧卡顿",
+        "音视频",
+        "黑白块"
+      ],
+      "system": [
+        "CPU",
+        "内存",
+        "温度",
+        "网络",
+        "电量"
+      ]
+    },
+    "extraTaskParam": {
+      "saveAllImages": true,
+      "generateIdeFile": true
+    },
+    "sn": [
+      "3AP0*****302"
+    ],
+    "taskName": "Task-0312-184049"
+  }
 }
 ```
 
 ### 性能基础质量测试
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/P_CikzNFTWOQSvG2kndNrg/zh-cn_image_0000002670965461.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/cZ4piDYzS3er8wNfoYD3Pw/zh-cn_image_0000002670965461.png "点击放大")
 
 参数说明：
 
@@ -216,50 +216,50 @@ Windows 和 Mac 命令行启动任务参数，拼接-update 参数；本地测�
 
 ```screen
 {
-    "taskParams": {
-        "sn": [
-            "3AP0*****302"
-        ],
-        "traversalSceneType": "scene",
-        "taskName": "Task-0804-171639",
-        "std": [
-            "较好体验",
-            "一般体验"
-        ],
-        "watchingKpi": {
-            "perf": [
-                "响应时延",
-                "完成时延",
-                "丢帧卡顿",
-                "音视频",
-                "黑白块"
-            ],
-            "system": [
-                "CPU",
-                "内存",
-                "温度",
-                "网络",
-                "电量"
-            ]
-        },
-        "extraTaskParam": {
-            "enableBackgroundTest": true,
-            "saveAllImages": false,
-            "generateIdeFile": false
-        },
-        "traversalAction": "basic",
-        "startTimes": "1",
-        "traversalTimes": "10",
-        "solutionName": "性能基础质量测试",
-        "package.name": "com.hmos.***", // 选择已安装的应用时传此参数，不传installAppPath
-        "installAppPath": "D:\\test\\com.hmos.***" // 选择安装新应用时传此参数，不传package.name
-    }
+  "taskParams": {
+    "solutionName": "场景化性能测试",
+    "executeRounds": 1,
+    "manualScriptPath": "D:\\test\\testcase",
+    "caseList": [
+      "OH_PerfDemoTest01",
+      "OH_PerfDemoTest02"
+    ],
+    "std": [
+      "较好体验",
+      "一般体验",
+      "极优体验"
+    ],
+    "watchingKpi": {
+      "perf": [
+        "响应时延",
+        "完成时延",
+        "丢帧卡顿",
+        "音视频",
+        "黑白块"
+      ],
+      "system": [
+        "CPU",
+        "内存",
+        "温度",
+        "网络",
+        "电量"
+      ]
+    },
+    "extraTaskParam": {
+      "saveAllImages": true,
+      "generateIdeFile": true
+    },
+    "sn": [
+      "3AP0*****302"
+    ],
+    "taskName": "Task-0312-184049"
+  }
 }
 ```
 
 ### 稳定性基础质量测试
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/KrlSIeEhTB2buW-YE8jUKA/zh-cn_image_0000002633711132.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/daBTl31xTvGra2WCdx0CLw/zh-cn_image_0000002633711132.png "点击放大")
 
 参数说明：
 
@@ -284,58 +284,58 @@ Windows 和 Mac 命令行启动任务参数，拼接-update 参数；本地测�
 *示例1：稳定性基础质量测试**-是否安装新应用*
 
 ```screen
-{ 
-     "taskParams": { 
-         "solutionName": "稳定性基础质量测试", 
-         "package.name": "com.hmos.***", // 选择已安装的应用时传此参数，不传installAppPath
-         "installAppPath": "D:\\test\\com.hmos.***.hap",   // 选择安装新应用时传此参数，不传package.name
-         "testDuration": "10", 
-         "uninstallApp": "false", 
-         "threadDetect": "true", 
-         "asanEnable": "true", 
-         "sn": [ 
-             "3AP0*****302" 
-         ], 
-         "taskName": "Task-***-184050" 
-     } 
- }
+{
+  "taskParams": {
+    "solutionName": "稳定性基础质量测试",
+    "package.name": "com.hmos.***", // 选择已安装的应用时传此参数，不传installAppPath
+    "installAppPath": "D:\\test\\com.hmos.***.hap",   // 选择安装新应用时传此参数，不传package.name
+    "testDuration": "10",
+    "uninstallApp": "false",
+    "threadDetect": "true",
+    "asanEnable": "true",
+    "sn": [
+      "3AP0*****302"
+    ],
+    "taskName": "Task-***-184050"
+  }
+}
 ```
 
 *示例2：稳定性基础质量测试-通用*
 
 ```screen
 {
-    "taskParams": {
-        "sn": [
-            "LNGxxxxxx03" 
-        ],
-        "uninstallApp": "false", 
-        "taskName": "稳定性测试", 
-        "threadDetect": "true", 
-        "testDuration": "10", 
-        "deeplink": [ 
-            "snssdk1128://camera",
-            "snssdk1128://search"
-        ],
-        "deeplinkRollbackProbability": "60", 
-        "deeplinkRollbackPeriodMin": "30", 
-        "graphPath": "/root/.testing/graphTool/dy", 
-        "appFeaturePath": "/root/.testing/graphTool/graph/appfeature.json", 
-        "blackSelected": [
-            {
-                "feature": "文本测试",  
-                "blackName": "新建黑名单1" 
-            }
-        ],
-        "solutionName": "稳定性基础质量测试", 
-        "package.name": "com.hm.xxx" 
-    }
+  "taskParams": {
+    "sn": [
+      "LNGxxxxxx03"
+    ],
+    "uninstallApp": "false",
+    "taskName": "稳定性测试",
+    "threadDetect": "true",
+    "testDuration": "10",
+    "deeplink": [
+      "snssdk1128://camera",
+      "snssdk1128://search"
+    ],
+    "deeplinkRollbackProbability": "60",
+    "deeplinkRollbackPeriodMin": "30",
+    "graphPath": "/root/.testing/graphTool/dy",
+    "appFeaturePath": "/root/.testing/graphTool/graph/appfeature.json",
+    "blackSelected": [
+      {
+        "feature": "文本测试",
+        "blackName": "新建黑名单1"
+      }
+    ],
+    "solutionName": "稳定性基础质量测试",
+    "package.name": "com.hm.xxx"
+  }
 }
 ```
 
 ### 内存泄漏测试
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/mMOUC-8iTXOnfa9r8LiQjw/zh-cn_image_0000002709499739.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/nReEdMhiRbaP82fBBFwPwA/zh-cn_image_0000002709499739.png "点击放大")
 
 参数说明：
 
@@ -358,16 +358,16 @@ Windows 和 Mac 命令行启动任务参数，拼接-update 参数；本地测�
 
 ```screen
 {
-   "taskParams": {
-        "sn": [
-            "3AP0124816000023"
-        ],
-        "taskName": "内存泄漏测试0",
-        "testDuration": "60",
-        "solutionName": "内存泄漏测试",
-        "package.name": "com.ss.****",    //应用包名
-        "installAppPath": "D:\\test\\com.hmos.***"  //安装新应用时需添加，已安装则不需要
-    }
+  "taskParams": {
+    "sn": [
+      "3AP0124816000023"
+    ],
+    "taskName": "内存泄漏测试0",
+    "testDuration": "60",
+    "solutionName": "内存泄漏测试",
+    "package.name": "com.ss.****",    //应用包名
+    "installAppPath": "D:\\test\\com.hmos.***"  //安装新应用时需添加，已安装则不需要
+  }
 }
 ```
 
@@ -375,38 +375,38 @@ Windows 和 Mac 命令行启动任务参数，拼接-update 参数；本地测�
 
 ```screen
 {
-    "taskParams": {
-        "sn": [
-            "23*****180"
-        ],
-        "taskName": "内存泄漏测试",
-        "testDuration": "10",
-        "solutionName": "内存泄漏测试",
-        "package.name": "com.****w.com",
-        "deeplink": [
-            "snssdk1128://search/trending",
-            "snssdk1128://mainPage?tabid=homepage_tablive"
-        ],
-        "deeplinkRollbackProbability": "20",
-        "deeplinkRollbackPeriodMin": "",
-        "appFeaturePath": "E://DevEco Testing//graphTool//appfeature.json",
-        "blackSelected": [
-            {
-                "feature": "黑名单1",
-                "blackName": "消息"
-            },
-            {
-                "feature": "黑名单1",
-                "blackName": "个人中心"
-            }
-        ]
-    }
+  "taskParams": {
+    "sn": [
+      "23*****180"
+    ],
+    "taskName": "内存泄漏测试",
+    "testDuration": "10",
+    "solutionName": "内存泄漏测试",
+    "package.name": "com.****w.com",
+    "deeplink": [
+      "snssdk1128://search/trending",
+      "snssdk1128://mainPage?tabid=homepage_tablive"
+    ],
+    "deeplinkRollbackProbability": "20",
+    "deeplinkRollbackPeriodMin": "",
+    "appFeaturePath": "E://DevEco Testing//graphTool//appfeature.json",
+    "blackSelected": [
+      {
+        "feature": "黑名单1",
+        "blackName": "消息"
+      },
+      {
+        "feature": "黑名单1",
+        "blackName": "个人中心"
+      }
+    ]
+  }
 }
 ```
 
 ### 应用上架预检（本地）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/KH5vzPreTwSAbTdMOsm63A/zh-cn_image_0000002633871058.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/QWC__y6MRCy792_ucSH6XQ/zh-cn_image_0000002633871058.png "点击放大")
 
 参数说明：
 
@@ -464,54 +464,54 @@ softwareCatagory参数取值说明：
 
 ```screen
 {
-    "taskParams": {
-        "sn": [
-            "2MM0*****380"
-        ],
-        "devecoProviderOptions": {},
-        "isUploadApp": "false",
-        "customTest": {
-            "compatibility": {
-                "isExecute": true,
-                "executeData": {
-                    "uninstall.app": false
-                }
-            },
-            "power": {
-                "isExecute": true,
-                "executeData": {}
-            },
-            "performance": {
-                "isExecute": true,
-                "executeData": {
-                    "startTimes": 10,
-                    "traversalTimes": 90
-                }
-            },
-            "ux": {
-                "isExecute": true,
-                "executeData": {
-                    "uxTestDuration": 60
-                }
-            },
-            "stability": {
-                "isExecute": true,
-                "executeData": {
-                    "stabilityTestDuration": 240
-                }
-            }
-        },
-        "taskName": "Task-0801-174411",
-        "packageName": "com.hmos.***",
-        "app.history.package.path": "",
-        "softwareCatagory": {
-            "levelFirst": "应用",
-            "levelSecond": "影音娱乐",
-            "levelThird": "视频"
-        },
-        "app_path": "D:\\hap\\com.hmos.***.hap",
-        "solutionName": "应用上架预检（本地）"
-    }   
+  "taskParams": {
+    "sn": [
+      "2MM0*****380"
+    ],
+    "devecoProviderOptions": {},
+    "isUploadApp": "false",
+    "customTest": {
+      "compatibility": {
+        "isExecute": true,
+        "executeData": {
+          "uninstall.app": false
+        }
+      },
+      "power": {
+        "isExecute": true,
+        "executeData": {}
+      },
+      "performance": {
+        "isExecute": true,
+        "executeData": {
+          "startTimes": 10,
+          "traversalTimes": 90
+        }
+      },
+      "ux": {
+        "isExecute": true,
+        "executeData": {
+          "uxTestDuration": 60
+        }
+      },
+      "stability": {
+        "isExecute": true,
+        "executeData": {
+          "stabilityTestDuration": 240
+        }
+      }
+    },
+    "taskName": "Task-0801-174411",
+    "packageName": "com.hmos.***",
+    "app.history.package.path": "",
+    "softwareCatagory": {
+      "levelFirst": "应用",
+      "levelSecond": "影音娱乐",
+      "levelThird": "视频"
+    },
+    "app_path": "D:\\hap\\com.hmos.***.hap",
+    "solutionName": "应用上架预检（本地）"
+  }
 }
 ```
 
@@ -519,23 +519,23 @@ softwareCatagory参数取值说明：
 
 ```screen
 {
-    "taskParams": {
-        "sn": [
-            "2MM0*****380"
-        ],
-        "devecoProviderOptions": {},
-        "isUploadApp": "true",
-        "taskName": "Task-0801-174411",
-        "packageName": "com.hmos.***",
-        "app.history.package.path": "",
-        "softwareCatagory": {
-            "levelFirst": "应用",
-            "levelSecond": "影音娱乐",
-            "levelThird": "视频"
-        },
-        "app_path": "D:\\hap\\com.hmos.***.hap",
-        "solutionName": "应用上架预检（本地）"
-    }   
+  "taskParams": {
+    "sn": [
+      "2MM0*****380"
+    ],
+    "devecoProviderOptions": {},
+    "isUploadApp": "true",
+    "taskName": "Task-0801-174411",
+    "packageName": "com.hmos.***",
+    "app.history.package.path": "",
+    "softwareCatagory": {
+      "levelFirst": "应用",
+      "levelSecond": "影音娱乐",
+      "levelThird": "视频"
+    },
+    "app_path": "D:\\hap\\com.hmos.***.hap",
+    "solutionName": "应用上架预检（本地）"
+  }
 }
 ```
 
@@ -545,7 +545,7 @@ softwareCatagory参数取值说明：
 
 打开任务数据存储目录，任务报告html和任务产物（2d\_report\_data.json）可在 taskPath目录下export文件夹下找到，例如：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/qsN6bxYFQPWMHf-QgD0jzA/zh-cn_image_0000002633871884.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/UzIj6CoTQ36yUKbwiURZiw/zh-cn_image_0000002633871884.png "点击放大")
 
 任务产物（2d\_report\_data.json）说明如下。
 
@@ -555,15 +555,16 @@ softwareCatagory参数取值说明：
 
 ```screen
 {
-      "isTaskPass" : false,
-      "generalData" : {
-      "taskInfo": { } // 任务基础信息
-      "appInfo" : { } // 应用信息 
-   },
-      "expandData" : [ {
-      "serviceType" : "performanceScript",
-      "resultSummary" : { } // 整体情况，包含总共操作次数、执行轮次、用例个数、较好体验、一般体验、极优体验等
-      "resultDetails": [ ] // 用例详细数据，包含用例id、用例名称、用例执行结果状态、用例步骤详情、用例的资源数据统计等
+  "isTaskPass": false, //任务所有指标是否都达到标准
+  "generalData": { //任务参数
+    "taskInfo": { }, // 任务参数
+    "appInfo": { }//应用信息
+  },
+  "expandData": [ //结果详情
+    {
+      "serviceType": "performance",//性能详情
+      "resultSummary": {}, // 专项结果总览
+      "resultDetails": [] // 用例详细数据，包含用例id、用例名称、用例执行结果状态、用例步骤详情、用例的资源数据统计等
     }
   ]
 }
@@ -576,24 +577,24 @@ softwareCatagory参数取值说明：
 | generalData | JsonObject | 整体信息，包含任务基础信息、应用信息等 |
 | expandData | Jsonarray | 结果详情，包含整体情况、用例详细数据等 |
 
-更多参数详情及完整 json文件示例请点击下载：[场景化性能json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20260828145433.59411504587465094891254092933727:50001231000000:2800:980675686A834575DEA07727BDC4AA307BD3171AB9814E350AAE6C1A0CA94F2A.zip?needInitFileName=true)
+更多参数详情及完整 json文件示例请点击下载：[场景化性能json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20261110184605.02036416119648890942244077595144:50001231000000:2800:BAEF15C2F5D44ACECCFF64FEEB0D0EC986D6CFBCB8FB74B82426BF227C425B4D.zip?needInitFileName=true)
 
 ### 性能基础质量测试
 
 ```screen
 {
-       "isTaskPass": false, //任务所有指标是否都达到标准
-        "generalData": { //任务参数
-        "taskInfo": { }, // 任务参数
-        "appInfo": { }//应用信息
-    },
-    "expandData": [ //结果详情
-        {
-            "serviceType": "performance",//性能详情
-            "resultSummary": {}, // 专项结果总览
-            "resultDetails": [] // 用例详细数据，包含用例id、用例名称、用例执行结果状态、用例步骤详情、用例的资源数据统计等
-        }
-    ]
+  "isTaskPass": false, //任务所有指标是否都达到标准
+  "generalData": { //任务参数
+    "taskInfo": { }, // 任务参数
+    "appInfo": { }//应用信息
+  },
+  "expandData": [ //结果详情
+    {
+      "serviceType": "performance",//性能详情
+      "resultSummary": {}, // 专项结果总览
+      "resultDetails": [] // 用例详细数据，包含用例id、用例名称、用例执行结果状态、用例步骤详情、用例的资源数据统计等
+    }
+  ]
 }
 ```
 
@@ -604,24 +605,24 @@ softwareCatagory参数取值说明：
 | generalData | JsonObject | 整体信息，包含任务基础信息、应用信息等 |
 | expandData | Jsonarray | 结果详情，包含整体情况、用例详细数据等 |
 
-更多参数详情及完整 json文件示例请点击下载：[性能基础json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20260828145433.77776542038461664646258699728448:50001231000000:2800:12E1C971A027AEDEF62E6E49E94631BE6B33921AA3EA7C72E11F5D2CED5848DE.zip?needInitFileName=true)
+更多参数详情及完整 json文件示例请点击下载：[性能基础json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20261110184605.69801632263802498999563324570484:50001231000000:2800:9AEE1ED26EC8AAE02B9331EFA607AA6D66FD711D61B0EC57C614CCBD9CC9B74E.zip?needInitFileName=true)
 
 ### 稳定性基础质量测试
 
 ```screen
 {
-       "isTaskPass": false, //任务所有指标是否都达到标准
-        "generalData": { //任务参数
-        "taskInfo": { }, // 任务参数
-        "appInfo": { }//应用信息
-    },
-    "expandData": [ //结果详情
-        {
-            "serviceType": "stability",//稳定性详情
-            "resultSummary": {}, // 专项结果总览
-            "resultDetails": [] 
-        }
-    ]
+  "isTaskPass": false, //任务所有指标是否都达到标准
+  "generalData": { //任务参数
+    "taskInfo": { }, // 任务参数
+    "appInfo": { }//应用信息
+  },
+  "expandData": [ //结果详情
+    {
+      "serviceType": "stability",//稳定性详情
+      "resultSummary": {}, // 专项结果总览
+      "resultDetails": []
+    }
+  ]
 }
 ```
 
@@ -633,24 +634,24 @@ softwareCatagory参数取值说明：
 | taskPath | string | 报告路径 |
 | taskParams | JsonObject | 执行参数 |
 
-更多详细参数查询可参考以下文档：[稳定性基础质量json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20260828145433.20831291131987972057529442985167:50001231000000:2800:CFC2AB5EB3AD83B5DCDF4C2A69005ECB90C4348AE6E0FAC15B0B5AB6BC136D51.zip?needInitFileName=true)
+更多详细参数查询可参考以下文档：[稳定性基础质量json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20261110184605.31055112298347852287412403502691:50001231000000:2800:C2CAF62062BF9B082E5E8429EAE79A02EE8D58B02A99B7C1FC8C4AC509F1AB22.zip?needInitFileName=true)
 
 ### 内存泄漏测试
 
 ```screen
 {
-       "isTaskPass": false, //任务所有指标是否都达到标准
-        "generalData": { //任务参数
-        "taskInfo": { }, // 任务参数
-        "appInfo": { }//应用信息
-    },
-    "expandData": [ //结果详情
-        {
-            "serviceType": "performance",//性能详情
-            "resultSummary": {}, // 专项结果总览
-            "resultDetails": [] 
-        }
-    ]
+  "isTaskPass": false, //任务所有指标是否都达到标准
+  "generalData": { //任务参数
+    "taskInfo": { }, // 任务参数
+    "appInfo": { }//应用信息
+  },
+  "expandData": [ //结果详情
+    {
+      "serviceType": "performance",//性能详情
+      "resultSummary": {}, // 专项结果总览
+      "resultDetails": []
+    }
+  ]
 }
 ```
 
@@ -663,30 +664,30 @@ softwareCatagory参数取值说明：
 | taskPath | String | 测试任务存储数据的文件夹路径。 |
 | taskParams | Object | 在创建任务选择的一些执行参数，详见下方文档。 |
 
-更多详细参数查询可参考以下文档：[内存泄漏json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20260828145433.97240897388857626149443883315803:50001231000000:2800:C918099BE4B933F314908537FBA49C6EC04622C4146CDBA9F44D5F9BCACE5A85.zip?needInitFileName=true)
+更多详细参数查询可参考以下文档：[内存泄漏json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20261110184605.57593051408107734097713344606084:50001231000000:2800:4F1200904469DCD01CDF87E42797F1EF638D1C6823AE7759C78CBF4768FCD526.zip?needInitFileName=true)
 
 ### 应用上架预检（本地）
 
 ```screen
-{ 
-     "isTaskPass": false, //任务所有指标是否都达到标准 
-     "generalData": { //任务参数 
-         "taskInfo": { 
-             "taskId": "0019d332-d92b-457d-8f2d-3e2a30d7c650", //任务id 
-             "taskName": "Task-1120-175437", //任务名称 
-             "taskPath": "D:\\ProgramData\\DevEco Testing\\xxx\\tasks\\0019d332-d92b-457d-8f2d-3e2a30d7c650", //报告路径 
-             "taskParams": {}//执行参数 
-         }, 
-         "appInfo": {} //应用信息 
-     }, 
-     "expandData": [ //结果详情 
-         { 
-             "serviceType": "compatibility",//专项类型 
-             "resultSummary": {},//子项结果总览 
-             "resultDetails": []//每条规则详情 
-         }, 
-     ]
- }
+{
+  "isTaskPass": false, //任务所有指标是否都达到标准
+  "generalData": { //任务参数
+    "taskInfo": {
+      "taskId": "0019d332-d92b-457d-8f2d-3e2a30d7c650", //任务id
+      "taskName": "Task-1120-175437", //任务名称
+      "taskPath": "D:\\ProgramData\\DevEco Testing\\xxx\\tasks\\0019d332-d92b-457d-8f2d-3e2a30d7c650", //报告路径
+      "taskParams": {}//执行参数
+    },
+    "appInfo": {} //应用信息
+  },
+  "expandData": [ //结果详情
+    {
+      "serviceType": "compatibility",//专项类型
+      "resultSummary": {},//子项结果总览
+      "resultDetails": []//每条规则详情
+    },
+  ]
+}
 ```
 
 |  |  |  |
@@ -697,7 +698,7 @@ softwareCatagory参数取值说明：
 | taskPath | string | 报告路径 |
 | taskParams | JsonObject | 执行参数 |
 
-更多参数详情及完整 json文件示例请点击下载：[上架预检json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20260828145433.31964345009353290029951893083973:50001231000000:2800:B8550E5E9BAEAD77AE0DBCC1EFBCD0843B47C5B4D0568A70BA8B8E7B05EA3B53.zip?needInitFileName=true)
+更多参数详情及完整 json文件示例请点击下载：[上架预检json配置参数查询](https://alliance-communityfile-drcn.dbankcdn.com/FileServer/getFile/cmtyPub/011/111/111/0000000000011111111.20261110184605.53207558142756082178755571361477:50001231000000:2800:B5C8ECEA9C8388626D6C50B480F8AC3EB2C1835C547D5AE43B8BDF573189F335.zip?needInitFileName=true)
 
 ## 支持自动清理报告数据
 
@@ -874,9 +875,9 @@ Error: Could not create the Java Virtual Machine ：命令启动窗口目录错�
 
 任务报告html可在 taskPath目录下export文件下找到，例如：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/btVFBDPURPKDZkFhitDHYA/zh-cn_image_0000002663951775.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/5mvxQo4KThOutU_FKUOCrA/zh-cn_image_0000002663951775.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/Zedx7i8fRfKflVy87Nm9tA/zh-cn_image_0000002664031823.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/zPgqGJ_bQCWJQLAgi1Ef6w/zh-cn_image_0000002664031823.png "点击放大")
 
 ## 常见问题
 

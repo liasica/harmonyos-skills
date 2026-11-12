@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-pr
 title: 添加元服务卡片至桌面
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用市场推荐 > 添加元服务卡片至桌面
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:24+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:5baf1f1e41ee832eafc245479ca606d3ca052c115ddbcbbde9a70d482808e903
+scraped_at: 2026-11-12T09:52:18+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ce3f95df172f114939a3317abad05bf5311af314f08ce18f931cdc5c2fc8771a
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:5baf1f1e41ee832eafc245479ca606d3ca052c115ddbcbbde9a70d48280
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/wPEjEXCLQgePCP5KVov9XA/zh-cn_image_0000002779851218.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/TNrVmARrSu-w7XRazHZQdA/zh-cn_image_0000002786520094.png)
 
 1. 用户使用元服务卡片加桌功能。
 2. 应用调用AppGallery Kit的[loadService](../harmonyos-references/store-productviewmanager.md#productviewmanagerloadservice)接口。
@@ -24,7 +24,7 @@ content_hash: sha256:5baf1f1e41ee832eafc245479ca606d3ca052c115ddbcbbde9a70d48280
 ## 约束与限制
 
 * 应用市场推荐服务不支持模拟器，请使用真机调试。在模拟器中使用该服务将会提示：无法获取内容，请点击屏幕重试。
-* 应用市场推荐服务支持Phone、Tablet、PC/2in1设备。并且从6.0.2(22)版本开始，新增支持TV设备。
+* 应用市场推荐服务支持Phone、Tablet、PC/2in1设备。从6.0.2(22)版本开始，新增支持TV设备；并且从API版本26.0.1开始，新增支持Car设备。
 
 ## 接口说明
 

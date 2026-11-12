@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-site-geoc
 title: 地理编码
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 位置搜索 > 地理编码
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:22+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:94b9b5304c69471090b9e96967a0a1388d51f6999b369c26beccecb5dabdc67a
+scraped_at: 2026-11-12T09:52:30+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c79a8cddfdf47d54dad711690b581144a07636589ac970c08c36a2fa0b2b3de9
 ---
 
 ## 场景介绍
@@ -48,8 +48,8 @@ import { BusinessError } from '@kit.BasicServicesKit';
 ```typescript
 let params: site.GeocodeParams = {
   // 地址信息
-  query: 'Piazzale Dante, 41, 55049 Viareggio',
-  language: 'en'
+  query: '天安门, 北京',
+  language: 'zh'
 };
 try {
   // 调用正地理编码接口进行地址查询
@@ -70,7 +70,7 @@ let params: site.ReverseGeocodeParams = {
     latitude: 31.984410259206815,
     longitude: 118.76625379397866
   },
-  language: 'en',
+  language: 'zh',
   radius: 0,
   isExtension: true,
   isNearbyAoi: true

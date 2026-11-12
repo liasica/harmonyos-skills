@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-lpp
 title: 使用LPP播放器播放视频 (C/C++)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 播放 > 使用LPP播放器播放视频 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:14+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:2c9dcbdc264d9d16240b43d9dd83d831943f7b50ccde18f1eb292bc046eabcc2
+scraped_at: 2026-11-12T09:52:08+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a50c6c55e37080820593b7643bc28280143dcf68b15bf83ec9c20a21edede6b2
 ---
 
 从API version 20开始，使用LPP（low power player）播放器可以通过低功耗实现从媒体源到渲染的视频通路能力。本指南通过播放本地视频的示例，讲解如何使用LowPowerPlayer播放视频。
@@ -18,7 +18,7 @@ LowPowerPlayer播放器不支持纯视频和纯音频播放。纯音频低功耗
 
 **图1** 播放状态变化示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/XJqujmADTIeU-6jsKMK0Tw/zh-cn_image_0000002779851022.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/_sKJcPBBTkGgkMG5O6ieHQ/zh-cn_image_0000002815559383.png)
 
 播放流程包含：创建（created）、初始化（initialized）、就绪（ready）、解码（decoding）和渲染（rendering）五个阶段。
 
@@ -106,7 +106,9 @@ target_link_libraries(sample PUBLIC ${BASE_LIBRARY})
 
    ```
    source_ = OH_AVSource_CreateWithFD(info.inputFd, info.inputFileOffset, info.inputFileSize);
+   // ...
    demuxer_ = OH_AVDemuxer_CreateWithSource(source_);
+   // ...
    int32_t ret = GetTrackInfo(sourceFormat, info);
    ```
 2. 根据视频元信息，调用 [OH\_LowPowerAudioSink\_CreateByMime](../harmonyos-references/capi-lowpower-audio-sink-h.md#oh_lowpoweraudiosink_createbymime)或[OH\_LowPowerVideoSink\_CreateByMime](../harmonyos-references/capi-lowpower-video-sink-h.md#oh_lowpowervideosink_createbymime)来创建播放器。
@@ -126,8 +128,10 @@ target_link_libraries(sample PUBLIC ${BASE_LIBRARY})
    lppAudioStreamerCallback_ = OH_LowPowerAudioSinkCallback_Create();
    OH_LowPowerAudioSinkCallback_SetDataNeededListener(lppAudioStreamerCallback_,
        LppCallback::OnDataNeeded, lppUserData);
+   // ...
    OH_LowPowerAudioSinkCallback_SetPositionUpdateListener(lppAudioStreamerCallback_,
        LppCallback::OnPositionUpdated, lppUserData);
+   // ...
    ret = OH_LowPowerAudioSink_RegisterCallback(lppAudioStreamer_, lppAudioStreamerCallback_);
    ```
 4. 配置播放器。
@@ -136,13 +140,15 @@ target_link_libraries(sample PUBLIC ${BASE_LIBRARY})
 
    ```
    OH_AVFormat *format = OH_AVFormat_Create();
-    
+
+   // ...
    OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, sampleInfo.videoWidth);
    OH_AVFormat_SetIntValue(format, OH_MD_KEY_HEIGHT, sampleInfo.videoHeight);
    OH_AVFormat_SetDoubleValue(format, OH_MD_KEY_FRAME_RATE, sampleInfo.frameRate);
    OH_AVFormat_SetIntValue(format, OH_MD_KEY_PIXEL_FORMAT, sampleInfo.pixelFormat);
    OH_AVFormat_SetIntValue(format, OH_MD_KEY_ROTATION, sampleInfo.rotation);
-    
+
+   // ...
    int ret = OH_LowPowerVideoSink_Configure(lppVideoStreamer_, format);
    ```
 5. 准备播放。

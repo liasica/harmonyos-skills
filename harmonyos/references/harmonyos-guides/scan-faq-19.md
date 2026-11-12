@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-faq-19
 title: 如何将码图背景颜色设置成透明色
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > Scan Kit常见问题 > 如何将码图背景颜色设置成透明色
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:19+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:0b93a3cfcff2a01ad7f24bec56d567b8432d9917e54c0d8e73d1993ed2d8ef93
+scraped_at: 2026-11-12T09:52:10+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:bbe60e047bd8d29e48d79dbb16849ca3a5c1db5175de33cb1eebcd7cf64bb966
 ---
 
 **问题现象**
@@ -21,6 +21,8 @@ content_hash: sha256:0b93a3cfcff2a01ad7f24bec56d567b8432d9917e54c0d8e73d1993ed2d
 ```typescript
 import { image } from '@kit.ImageKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
+
+const TAG: string = 'Scan Kit Sample convertBackgroundColorToTransparent';
 
 /**
  * 通过传入createBarcode生成的PixelMap对象及其背景色，获取透明背景色的PixelMap对象
@@ -94,7 +96,7 @@ export async function convertBackgroundColorToTransparent(originalPixelMap: imag
     // 返回新的PixelMap对象
     return newPixelMap;
   } catch (err) {
-    hilog.error(0x0001, 'CreateBarcode', `Failed to convertBackgroundColorToTransparent. Code: ${err.code}.`);
+    hilog.error(0x0001, TAG, `Failed to convertBackgroundColorToTransparent. Code: ${err.code}.`);
     return undefined;
   }
 }

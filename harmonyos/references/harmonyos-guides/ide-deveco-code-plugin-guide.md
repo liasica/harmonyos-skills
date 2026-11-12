@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-code-plugin-guide
 title: 操作指南
-breadcrumb: 指南 > DevEco Code > DevEco Studio Plugin > 操作指南
+breadcrumb: 指南 > DevEco Code > DevEco Code Plugin > 操作指南
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:13:14+08:00
+scraped_at: 2026-11-12T09:53:25+08:00
 doc_updated_at: 2026-10-31
 content_hash: sha256:99eef9512b2ad2840f91c0d19ca16722e7aedc3a192326abf9d97f592172e7d9
 ---

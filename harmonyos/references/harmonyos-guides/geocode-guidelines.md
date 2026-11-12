@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/geocode-guide
 title: 正地理编码与逆地理编码开发指导
 breadcrumb: 指南 > 应用服务 > Location Kit（位置服务） > 正地理编码与逆地理编码开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:21+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:5a4db42e9465a4fb0a7c257b25814929c8fdde2c4a5713b548630b4005efb8d7
+scraped_at: 2026-11-12T09:52:28+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f1a628c56d5fbb39edd164e1a6f84d865d77ed27ee2863c498ae388fc115daed
 ---
 
 ## 场景概述
@@ -46,8 +46,11 @@ content_hash: sha256:5a4db42e9465a4fb0a7c257b25814929c8fdde2c4a5713b548630b4005e
      import { geoLocationManager } from '@kit.LocationKit';
      try {
          let isAvailable = geoLocationManager.isGeocoderAvailable();
+         if (!isAvailable) {
+             console.error("current device do not support geocoder");
+         }
      } catch (err) {
-         console.error("errCode:" + JSON.stringify(err));
+         console.error("errCode:" + err.code + ", message:"  + err.message);
      }
      ```
 3. 获取转化结果。
@@ -57,31 +60,35 @@ content_hash: sha256:5a4db42e9465a4fb0a7c257b25814929c8fdde2c4a5713b548630b4005e
      ```ts
      let reverseGeocodeRequest:geoLocationManager.ReverseGeoCodeRequest = {"latitude": 31.12, "longitude": 121.11, "maxItems": 1};
      try {
-         geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest, (err, data) => {
+         if (geoLocationManager.isGeocoderAvailable()) {
+           geoLocationManager.getAddressesFromLocation(reverseGeocodeRequest, (err,data) => {
              if (err) {
-                 console.error('getAddressesFromLocation err: ' + JSON.stringify(err));
+               console.error("getAddressesFromLocation errCode:" + err.code + ", message:"  + err.message);
              } else {
-                 console.info('getAddressesFromLocation data: ' + JSON.stringify(data));
+               console.info('getAddressesFromLocation data: ' + JSON.stringify(data));
              }
-         });
+           });
+         }
      } catch (err) {
-         console.error("errCode:" + JSON.stringify(err));
+         console.error("errCode:" + err.code + ", message:"  + err.message);
      }
      ```
    * 调用getAddressesFromLocationName把地理编码（即位置信息）转化为经纬度坐标。
 
      ```ts
-     let geocodeRequest:geoLocationManager.GeoCodeRequest = {"description": "上海市浦东新区xx路xx号", "maxItems": 1};
+     let geocodeRequest:geoLocationManager.GeoCodeRequest = {"description": "上海市浦东新区张江路", "maxItems": 1};
      try {
-         geoLocationManager.getAddressesFromLocationName(geocodeRequest, (err, data) => {
+         if (geoLocationManager.isGeocoderAvailable()) {
+           geoLocationManager.getAddressesFromLocationName(geocodeRequest, (err, data) => {
              if (err) {
-                 console.error('getAddressesFromLocationName err: ' + JSON.stringify(err));
+               console.error("getAddressesFromLocationName errCode:" + err.code + ", message:"  + err.message);
              } else {
-                 console.info('getAddressesFromLocationName data: ' + JSON.stringify(data));
+               console.info('getAddressesFromLocationName data: ' + JSON.stringify(data));
              }
-         });
+           });
+         }
      } catch (err) {
-         console.error("errCode:" + JSON.stringify(err));
+         console.error("errCode:" + err.code + ", message:"  + err.message);
      }
      ```
 

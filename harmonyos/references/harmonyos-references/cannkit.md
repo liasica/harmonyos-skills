@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cannkit
 title: CANN
 breadcrumb: API参考 > AI > CANN Kit（CANN异构计算框架服务） > C API > 模块 > CANN
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:10+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:6151f5a2472d842ffc22c360cb3818065b7a951917d86d4f703a78d27fbfbd7e
+scraped_at: 2026-11-12T09:57:44+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e62c377ade2ca4c22110e1e99bd9b22d6860bf80f85ebc972d2c7dd2843cceb9
 ---
 
 ## 概述
@@ -802,7 +802,7 @@ HiAI_AippParam* HMS_HiAIAippParam_Create (uint32_t batchNum)
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -826,7 +826,7 @@ void HMS_HiAIAippParam_Destroy (HiAI_AippParam ** aippParam)
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -846,7 +846,7 @@ uint32_t HMS_HiAIAippParam_GetBatchCount (HiAI_AippParam * aippParam)
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -870,7 +870,7 @@ OH_NN_ReturnCode HMS_HiAIAippParam_GetChannelPadding (HiAI_AippParam * aippParam
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -897,7 +897,7 @@ OH_NN_ReturnCode HMS_HiAIAippParam_GetChannelSwapConfig (HiAI_AippParam * aippPa
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -923,7 +923,7 @@ OH_NN_ReturnCode HMS_HiAIAippParam_GetCropConfig (HiAI_AippParam * aippParam, ui
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -952,7 +952,7 @@ OH_NN_ReturnCode HMS_HiAIAippParam_GetCscConfig (HiAI_AippParam * aippParam, HiA
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -979,7 +979,7 @@ void* HMS_HiAIAippParam_GetData (HiAI_AippParam * aippParam)
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1003,7 +1003,7 @@ uint32_t HMS_HiAIAippParam_GetDataSize (HiAI_AippParam * aippParam)
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1027,7 +1027,7 @@ OH_NN_ReturnCode HMS_HiAIAippParam_GetDtcMeanPixel (HiAI_AippParam * aippParam, 
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1054,7 +1054,7 @@ OH_NN_ReturnCode HMS_HiAIAippParam_GetDtcMinPixel (HiAI_AippParam * aippParam, u
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1081,7 +1081,7 @@ OH_NN_ReturnCode HMS_HiAIAippParam_GetDtcVarReciPixel (HiAI_AippParam * aippPara
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1108,7 +1108,7 @@ int HMS_HiAIAippParam_GetInputAippIndex (HiAI_AippParam * aippParam)
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1132,7 +1132,7 @@ HiAI_ImageFormat HMS_HiAIAippParam_GetInputFormat (HiAI_AippParam * aippParam)
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1156,7 +1156,7 @@ int HMS_HiAIAippParam_GetInputIndex (HiAI_AippParam * aippParam)
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1180,7 +1180,7 @@ OH_NN_ReturnCode HMS_HiAIAippParam_GetInputShape (HiAI_AippParam * aippParam, ui
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1206,7 +1206,7 @@ OH_NN_ReturnCode HMS_HiAIAippParam_GetPadConfig (HiAI_AippParam * aippParam, uin
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1235,7 +1235,7 @@ OH_NN_ReturnCode HMS_HiAIAippParam_GetResizeConfig (HiAI_AippParam * aippParam, 
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1262,7 +1262,7 @@ OH_NN_ReturnCode HMS_HiAIAippParam_GetRotationAngle (HiAI_AippParam * aippParam,
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1288,7 +1288,7 @@ bool HMS_HiAIAippParam_GetSingleBatchMultiCrop (HiAI_AippParam * aippParam)
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1312,7 +1312,7 @@ OH_NN_ReturnCode HMS_HiAIAippParam_SetChannelPadding (HiAI_AippParam * aippParam
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1354,7 +1354,7 @@ YUV400\_U8是灰度图，不支持通道交换。
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1380,7 +1380,7 @@ OH_NN_ReturnCode HMS_HiAIAippParam_SetCropConfig (HiAI_AippParam * aippParam, ui
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1409,7 +1409,7 @@ OH_NN_ReturnCode HMS_HiAIAippParam_SetCscConfig (HiAI_AippParam * aippParam, HiA
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1440,7 +1440,7 @@ OH_NN_ReturnCode HMS_HiAIAippParam_SetDtcMeanPixel (HiAI_AippParam * aippParam, 
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1467,7 +1467,7 @@ OH_NN_ReturnCode HMS_HiAIAippParam_SetDtcMinPixel (HiAI_AippParam * aippParam, u
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1494,7 +1494,7 @@ OH_NN_ReturnCode HMS_HiAIAippParam_SetDtcVarReciPixel (HiAI_AippParam * aippPara
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1521,7 +1521,7 @@ OH_NN_ReturnCode HMS_HiAIAippParam_SetInputAippIndex (HiAI_AippParam * aippParam
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1546,7 +1546,7 @@ OH_NN_ReturnCode HMS_HiAIAippParam_SetInputFormat (HiAI_AippParam * aippParam, H
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1571,7 +1571,7 @@ OH_NN_ReturnCode HMS_HiAIAippParam_SetInputIndex (HiAI_AippParam * aippParam, ui
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1596,7 +1596,7 @@ OH_NN_ReturnCode HMS_HiAIAippParam_SetInputShape (HiAI_AippParam * aippParam, ui
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1622,7 +1622,7 @@ OH_NN_ReturnCode HMS_HiAIAippParam_SetPadConfig (HiAI_AippParam * aippParam, uin
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1651,7 +1651,7 @@ OH_NN_ReturnCode HMS_HiAIAippParam_SetResizeConfig (HiAI_AippParam * aippParam, 
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1678,7 +1678,7 @@ OH_NN_ReturnCode HMS_HiAIAippParam_SetRotationAngle (HiAI_AippParam * aippParam,
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1704,7 +1704,7 @@ OH_NN_ReturnCode HMS_HiAIAippParam_SetSingleBatchMultiCrop (HiAI_AippParam * aip
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1727,7 +1727,7 @@ HiAI_Compatibility HMS_HiAICompatibility_CheckFromBuffer (const void * data, siz
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1750,7 +1750,7 @@ HiAI_Compatibility HMS_HiAICompatibility_CheckFromFile (const char * file)
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1772,7 +1772,7 @@ HiAI_BandMode HMS_HiAIOptions_GetBandMode (const OH_NNCompilation * compilation)
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1794,7 +1794,7 @@ HiAI_DeviceMemoryReusePlan HMS_HiAIOptions_GetDeviceMemoryReusePlan (const OH_NN
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1816,7 +1816,7 @@ HiAI_DynamicShapeCacheMode HMS_HiAIOptions_GetDynamicShapeCacheMode (const OH_NN
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1838,7 +1838,7 @@ size_t HMS_HiAIOptions_GetDynamicShapeMaxCache (const OH_NNCompilation * compila
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1860,7 +1860,7 @@ HiAI_DynamicShapeStatus HMS_HiAIOptions_GetDynamicShapeStatus (const OH_NNCompil
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1882,7 +1882,7 @@ HiAI_FallbackMode HMS_HiAIOptions_GetFallbackMode (const OH_NNCompilation * comp
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1904,7 +1904,7 @@ HiAI_FormatMode HMS_HiAIOptions_GetFormatMode (const OH_NNCompilation * compilat
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1926,7 +1926,7 @@ NN_TensorDesc* HMS_HiAIOptions_GetInputTensorShape (const OH_NNCompilation * com
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1949,7 +1949,7 @@ size_t HMS_HiAIOptions_GetInputTensorShapeSize (const OH_NNCompilation * compila
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1971,7 +1971,7 @@ size_t HMS_HiAIOptions_GetModelDeviceCount (const OH_NNCompilation * compilation
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -1993,7 +1993,7 @@ HiAI_ExecuteDevice* HMS_HiAIOptions_GetModelDeviceOrder (const OH_NNCompilation 
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2015,7 +2015,7 @@ size_t HMS_HiAIOptions_GetOperatorDeviceCount (const OH_NNCompilation * compilat
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2038,7 +2038,7 @@ HiAI_ExecuteDevice* HMS_HiAIOptions_GetOperatorDeviceOrder (const OH_NNCompilati
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2061,7 +2061,7 @@ void* HMS_HiAIOptions_GetQuantConfigData (const OH_NNCompilation * compilation)
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2083,7 +2083,7 @@ size_t HMS_HiAIOptions_GetQuantConfigSize (const OH_NNCompilation * compilation)
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2105,7 +2105,7 @@ const char* HMS_HiAIOptions_GetTuningCacheDir (const OH_NNCompilation * compilat
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2127,7 +2127,7 @@ HiAI_TuningMode HMS_HiAIOptions_GetTuningMode (const OH_NNCompilation * compilat
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2149,7 +2149,7 @@ HiAI_TuningStrategy HMS_HiAIOptions_GetTuningStrategy (const OH_NNCompilation * 
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2173,7 +2173,7 @@ OH_NN_ReturnCode HMS_HiAIOptions_SetBandMode (OH_NNCompilation * compilation, Hi
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2198,7 +2198,7 @@ OH_NN_ReturnCode HMS_HiAIOptions_SetDeviceMemoryReusePlan (OH_NNCompilation * co
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2223,7 +2223,7 @@ OH_NN_ReturnCode HMS_HiAIOptions_SetDynamicShapeCacheMode (OH_NNCompilation * co
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2248,7 +2248,7 @@ OH_NN_ReturnCode HMS_HiAIOptions_SetDynamicShapeMaxCache (OH_NNCompilation * com
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2273,7 +2273,7 @@ OH_NN_ReturnCode HMS_HiAIOptions_SetDynamicShapeStatus (OH_NNCompilation * compi
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2298,7 +2298,7 @@ OH_NN_ReturnCode HMS_HiAIOptions_SetFallbackMode (OH_NNCompilation * compilation
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2323,7 +2323,7 @@ OH_NN_ReturnCode HMS_HiAIOptions_SetFormatMode (OH_NNCompilation * compilation, 
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2348,7 +2348,7 @@ OH_NN_ReturnCode HMS_HiAIOptions_SetInputTensorShapes (OH_NNCompilation * compil
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2374,7 +2374,7 @@ OH_NN_ReturnCode HMS_HiAIOptions_SetModelDeviceOrder (OH_NNCompilation * compila
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2400,7 +2400,7 @@ OH_NN_ReturnCode HMS_HiAIOptions_SetOmOptions (OH_NNCompilation * compilation, H
 
 **起始版本：** 5.1.0(18)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2426,7 +2426,7 @@ OH_NN_ReturnCode HMS_HiAIOptions_SetOperatorDeviceOrder (OH_NNCompilation * comp
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2453,7 +2453,7 @@ OH_NN_ReturnCode HMS_HiAIOptions_SetQuantConfig (OH_NNCompilation * compilation,
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2479,7 +2479,7 @@ OH_NN_ReturnCode HMS_HiAIOptions_SetTuningCacheDir (OH_NNCompilation * compilati
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2504,7 +2504,7 @@ OH_NN_ReturnCode HMS_HiAIOptions_SetTuningMode (OH_NNCompilation * compilation, 
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2529,7 +2529,7 @@ OH_NN_ReturnCode HMS_HiAIOptions_SetTuningStrategy (OH_NNCompilation * compilati
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2554,7 +2554,7 @@ HiAI_SingleOpBuffer* HMS_HiAISingleOpBuffer_Create (size_t dataSize)
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2578,7 +2578,7 @@ OH_NN_ReturnCode HMS_HiAISingleOpBuffer_Destroy (HiAI_SingleOpBuffer ** buffer)
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2602,7 +2602,7 @@ void* HMS_HiAISingleOpBuffer_GetData (const HiAI_SingleOpBuffer * buffer)
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2626,7 +2626,7 @@ size_t HMS_HiAISingleOpBuffer_GetSize (const HiAI_SingleOpBuffer * buffer)
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2650,7 +2650,7 @@ HiAI_SingleOpDescriptor* HMS_HiAISingleOpDescriptor_CreateActivation (HiAI_Singl
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2675,7 +2675,7 @@ HiAI_SingleOpDescriptor* HMS_HiAISingleOpDescriptor_CreateConvolution (HiAISingl
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2699,7 +2699,7 @@ void HMS_HiAISingleOpDescriptor_Destroy (HiAI_SingleOpDescriptor ** opDesc)
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2721,7 +2721,7 @@ HiAI_SingleOpExecutor* HMS_HiAISingleOpExecutor_CreateConvolution (HiAI_SingleOp
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2747,7 +2747,7 @@ HiAI_SingleOpExecutor* HMS_HiAISingleOpExecutor_CreateFusedConvolutionActivation
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2773,7 +2773,7 @@ OH_NN_ReturnCode HMS_HiAISingleOpExecutor_Destroy (HiAI_SingleOpExecutor ** exec
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2797,7 +2797,7 @@ OH_NN_ReturnCode HMS_HiAISingleOpExecutor_Execute (HiAI_SingleOpExecutor * execu
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2827,7 +2827,7 @@ size_t HMS_HiAISingleOpExecutor_GetWorkspaceSize (const HiAI_SingleOpExecutor * 
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2851,7 +2851,7 @@ OH_NN_ReturnCode HMS_HiAISingleOpExecutor_Init (HiAI_SingleOpExecutor * executor
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2877,7 +2877,7 @@ HiAI_SingleOpSupportStatus HMS_HiAISingleOpExecutor_PreCheckConvolution (HiAI_Si
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2901,7 +2901,7 @@ HiAI_SingleOpSupportStatus HMS_HiAISingleOpExecutor_PreCheckFusedConvolutionActi
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2925,7 +2925,7 @@ OH_NN_ReturnCode HMS_HiAISingleOpExecutor_UpdateOutputTensorDesc (const HiAI_Sin
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2969,7 +2969,7 @@ void HMS_HiAISingleOpOptions_Destroy (HiAI_SingleOpOptions ** options)
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -2995,7 +2995,7 @@ HiAI_SingleOpTensor* HMS_HiAISingleOpTensor_CreateFromConst (const HiAI_SingleOp
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -3025,7 +3025,7 @@ HiAI_SingleOpTensor* HMS_HiAISingleOpTensor_CreateFromSingleOpBuffer (const HiAI
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -3055,7 +3055,7 @@ HiAI_SingleOpTensor* HMS_HiAISingleOpTensor_CreateFromTensorDesc (const HiAI_Sin
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -3079,7 +3079,7 @@ OH_NN_ReturnCode HMS_HiAISingleOpTensor_Destroy (HiAI_SingleOpTensor ** tensor)
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -3103,7 +3103,7 @@ HiAI_SingleOpBuffer* HMS_HiAISingleOpTensor_GetBuffer (const HiAI_SingleOpTensor
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -3127,7 +3127,7 @@ HiAI_SingleOpTensorDesc* HMS_HiAISingleOpTensor_GetTensorDesc (const HiAI_Single
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -3155,7 +3155,7 @@ HiAI_SingleOpTensorDesc* HMS_HiAISingleOpTensorDesc_Create (const int64_t * dims
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -3183,7 +3183,7 @@ void HMS_HiAISingleOpTensorDesc_Destroy (HiAI_SingleOpTensorDesc ** tensorDesc)
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -3203,7 +3203,7 @@ size_t HMS_HiAISingleOpTensorDesc_GetByteSize (const HiAI_SingleOpTensorDesc * t
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -3227,7 +3227,7 @@ HiAI_SingleOpDataType HMS_HiAISingleOpTensorDesc_GetDataType (const HiAI_SingleO
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -3251,7 +3251,7 @@ int64_t HMS_HiAISingleOpTensorDesc_GetDimension (const HiAI_SingleOpTensorDesc *
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -3276,7 +3276,7 @@ size_t HMS_HiAISingleOpTensorDesc_GetDimensionCount (const HiAI_SingleOpTensorDe
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -3300,7 +3300,7 @@ HiAI_SingleOpFormat HMS_HiAISingleOpTensorDesc_GetFormat (const HiAI_SingleOpTen
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -3324,7 +3324,7 @@ bool HMS_HiAISingleOpTensorDesc_IsVirtual (const HiAI_SingleOpTensorDesc * tenso
 
 **起始版本：** 5.0.0(12)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -3346,7 +3346,7 @@ size_t HMS_HiAITensor_GetSizeWithImageFormat (NN_TensorDesc * desc, HiAI_ImageFo
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |
@@ -3371,7 +3371,7 @@ AIPP参数设置给NN\_Tensor后，其内存在tensor使用完成后，调用[HM
 
 **起始版本：** 4.1.0(11)
 
-**参数:**
+**参数：**
 
 | 名称 | 描述 |
 | --- | --- |

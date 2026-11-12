@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-skill
 title: Account Kit Skill能力开放
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit Skill能力开放
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:32+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:f8f3c1d0d789e479d5dc8812704810311cdfe432e9bd154fadae94aef3fb88f9
+scraped_at: 2026-11-12T09:52:17+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:38af7a922ba70c51624d0b2d31982c9865a881f59def1d08f5eb5768e917a992
 ---
 
 ## 概述
@@ -18,18 +18,20 @@ Account Kit接入Skills，旨在帮助开发者快速集成Account Kit开放能�
   + [客户端Skill](https://matrix.openharmony.cn/#/skillSquare/details?id=6a215e9b8428f219b71f84a2)负责生成ArkTS华为账号一键登录页面、配置工程依赖与添加权限，并实现页面跳转逻辑。
   + [服务端Skill](https://gitcode.com/HarmonyOS_Samples/accountkit-samplecode-serverdemo/tree/Java/huawei-account-kit-quicklogin-server)负责生成服务端工程代码，实现授权码换取用户信息的接口。
 * **华为账号登录Skill**：帮助开发者快速接入华为账号登录能力。
-  + [客户端Skill](https://gitcode.com/HarmonyOS_Skills/harmonyos-agent-skills/tree/main/02-development/account-kit/hmos-account-kit-login-button-client)负责生成华为账号标准登录页面（使用华为标准登录按钮）、配置工程依赖与添加权限，实现页面跳转逻辑。
+  + [客户端Skill](https://matrix.openharmony.cn/#/skillSquare/details?id=6ae053e12f935261e2a3f7d9)负责生成华为账号标准登录页面（使用华为标准登录按钮）、配置工程依赖与添加权限，实现页面跳转逻辑。
+  + [服务端Skill](https://gitcode.com/HarmonyOS_Samples/accountkit-samplecode-serverdemo/tree/Java/huawei-account-kit-login-server)负责生成服务端工程代码，实现授权码换取用户UnionID、OpenID等信息的接口。
 * **自定义按钮登录Skill**：帮助开发者快速接入华为账号自定义按钮登录能力。
-  + [客户端Skill](https://gitcode.com/HarmonyOS_Skills/harmonyos-agent-skills/tree/main/02-development/account-kit/hmos-account-kit-login-api-client) 负责生成自定义登录按钮组件（支持纯图标、纯文本、图文混合三种模式）、配置工程依赖与添加权限，实现登录请求逻辑。
+  + [客户端Skill](https://matrix.openharmony.cn/#/skillSquare/details?id=6ae053e42f935261e2a3f7dc)负责生成自定义登录按钮组件（支持纯图标、纯文本、图文混合三种模式）、配置工程依赖与添加权限，实现登录请求逻辑。
+  + [服务端Skill](https://gitcode.com/HarmonyOS_Samples/accountkit-samplecode-serverdemo/tree/Java/huawei-account-kit-login-server)负责生成服务端工程代码，实现授权码换取用户UnionID、OpenID等信息的接口。
 
 ## 快速开始
 
 1. 下载并配置Skill：请在[能力覆盖范围](account-skill.md#能力覆盖范围)章节中点击对应Skill的超链接进行下载，并放到AI编码工具（如OpenCode、Claude Code等）的Skill配置目录下（不同工具规范不一致，按工具要求处理）。
 2. 配置DevEco CLI（服务端Skill无需此项配置）：在终端执行以下命令安装DevEco CLI，更多详情请参考[DevEco CLI](ide-deveco-cli.md)官方文档。
 
-```json5
- npm install -g @deveco/deveco-cli@latest
-```
+   ```json5
+   npm install -g @deveco/deveco-cli@latest
+   ```
 
 **验证是否生效：**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-obtain-k
 title: 获取密钥属性(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 其他操作 > 获取密钥属性 > 获取密钥属性(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:33+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:e7836bad1094c5c5d46d8543f2a5c3a0f7a9b8205e633354999bd10800ece954
+scraped_at: 2026-11-12T09:51:41+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e3eb7965426f0458279df5b0215cc9f1ac5518b9287890f38f538c02037af03d
 ---
 
 HUKS提供了接口供业务获取指定密钥的相关属性。在获取指定密钥属性前，需要确保已在HUKS中生成或导入持久化存储的密钥。
@@ -37,7 +37,6 @@ target_link_libraries(entry PUBLIC libhuks_ndk.z.so)
 #include "huks/native_huks_param.h"
 #include "napi/native_api.h"
 #include <cstring>
-
 OH_Huks_Result InitParamSet(struct OH_Huks_ParamSet **paramSet, const struct OH_Huks_Param *params,
                             uint32_t paramCount)
 {
@@ -75,7 +74,7 @@ static OH_Huks_Result GenerateKeyHelper(const char *alias)
         if (ohResult.errorCode != OH_HUKS_SUCCESS) {
             break;
         }
-        /* 1.生成密钥 */
+        /* 2.生成密钥 */
         ohResult = OH_Huks_GenerateKeyItem(&aliasBlob, testGenerateKeyParamSet, nullptr);
     } while (0);
     OH_Huks_FreeParamSet(&testGenerateKeyParamSet);

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservi
 title: 解绑账号
 breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > REST API > 解绑账号
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:16+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:48e78bd25553a2a592f990c1251087937ca5c7190b1bd1eca389efd908e36d18
+scraped_at: 2026-11-12T09:57:17+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f5008d86d4814888147104e39f5fff3461844abb731287be9268c8605fa08d8d
 ---
 
 ## 功能介绍
@@ -16,7 +16,7 @@ content_hash: sha256:48e78bd25553a2a592f990c1251087937ca5c7190b1bd1eca389efd908e
 
 玩家选择华为账号登录游戏后，游戏会绑定游戏官方账号与华为teamPlayerId。
 
-若需要解绑游戏官方账号与华为teamPlayerId的绑定关系，客户端侧可以调用[unbindPlayer](gameservice-gameplayer.md#gameplayerunbindplayer)接口实现，服务端可以调用本接口实现。
+若需要解绑游戏官方账号与华为teamPlayerId的绑定关系，客户端侧可以调用[unbindPlayer()](gameservice-gameplayer.md#gameplayerunbindplayer)接口实现，服务端可以调用本接口实现。
 
 ## 接口原型
 
@@ -37,7 +37,7 @@ content_hash: sha256:48e78bd25553a2a592f990c1251087937ca5c7190b1bd1eca389efd908e
 | method | 是 | String | 固定传入“external.hms.gs.player.unbindPlayer”。  最大长度64个字符。 |
 | appId | 否 | String | 游戏在AppGallery Connect中的APP ID，获取方法请参见[查看应用信息](../app/agc-help-view-app-info-0000002282674569.md)。若解绑“游戏级别”类型，该参数必填。  最大长度32个字符。 |
 | cpId | 是 | String | 游戏开发者在AppGallery Connect中的Developer ID，获取方法请参见[查看应用信息](../app/agc-help-view-app-info-0000002282674569.md)。  最大长度32个字符。 |
-| teamPlayerId | 是 | String | HarmonyOS 5.0及以上游戏的玩家标识，通过调用[unionLogin](gameservice-gameplayer.md#gameplayerunionlogin)接口返回，  最大长度256个字符。 |
+| teamPlayerId | 是 | String | HarmonyOS 5.0及以上游戏的玩家标识，通过调用[unionLogin()](gameservice-gameplayer.md#gameplayerunionlogin)接口返回，  最大长度256个字符。 |
 | ts | 是 | Long | 当前时间的时间戳，即当前时间距离GMT时间1970年1月1号0时0分0秒所差的毫秒数。 |
 | sign | 是 | String | 用于华为游戏服务器对请求参数验签的签名字符串。  为防止请求被篡改，游戏需要根据[签名机制](gameservice-unbindplayer.md#签名机制)中的方法生成签名字符串，华为服务器在收到请求后会对签名字符串进行验签，验签成功后才会进行后续处理，否则将返回失败错误码。请求中除sign和method以外的所有Body参数均参与签名。  最大长度1024个字符。 |
 

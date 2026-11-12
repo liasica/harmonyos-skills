@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-aes-wr
 title: 使用AES-WRAP算法对对称密钥加解密(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密 > 使用AES-WRAP算法对对称密钥加解密(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:54+08:00
-doc_updated_at: 2026-09-23
+scraped_at: 2026-11-12T09:51:33+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:0fb0f3adae7e8ac7270fcbe9d291d0909bd205c68ef01c9ba9c1d4d92f274d5c
 ---
 

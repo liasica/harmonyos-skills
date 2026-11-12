@@ -3,12 +3,19 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-co
 title: 版本说明
 breadcrumb: 指南 > DevEco Code > DevEco Code TUI > 版本说明
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:13:14+08:00
-doc_updated_at: 2026-10-31
-content_hash: sha256:bc16ce98b8376a41b870cbd5e4c7f928b920a6d90649bebd1a519040968906af
+scraped_at: 2026-11-12T09:53:25+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e408ed4bbf682c2082c32ea9cba084dd5af8f2d6ae22a24a3cfb8dd983e1dd8f
 ---
 
 以下为Windows/macOS版DevEco Code的版本说明，鸿蒙电脑版的版本说明请点击[此链接](https://gitcode.com/openharmony-sig/deveco-code/releases)查看。
+
+## 0.3.0（2026年10月）
+
+### 新增特性
+
+* 新增记忆功能，支持在多个会话之间持续记录开发者的使用偏好。
+* 新增/analyze命令。
 
 ## 0.2.0（2026年8月）
 

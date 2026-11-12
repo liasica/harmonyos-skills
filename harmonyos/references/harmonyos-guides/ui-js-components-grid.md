@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: 栅格布局
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 栅格布局
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:22+08:00
+scraped_at: 2026-11-12T09:51:19+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:3ab05a41deec9788e3ca47de08edddb2afcc7eeca4699d9dbf6ef6fe5cb4af8b
+content_hash: sha256:8b93efdf88420f7384a8d6bcf106bd48bd92c20c73dd3346c706792c9b3ae9ec
 ---
 
 栅格布局容器根节点，使用grid-row与grid-col进行栅格布局。API具体描述请参考[grid-container](../harmonyos-references/js-components-grid-container.md)。
@@ -37,7 +37,7 @@ content_hash: sha256:3ab05a41deec9788e3ca47de08edddb2afcc7eeca4699d9dbf6ef6fe5cb
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/AINQAcWtTNm8hRUVfDlD5Q/zh-cn_image_0000002809010051.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/XappnB6MT5euVF4V2mZ7yg/zh-cn_image_0000002815398847.png)
 
 **说明** 
 
@@ -106,7 +106,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/9eXFkTFrQo2JnfmCfSJL-w/zh-cn_image_0000002809049967.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/r-7tccFRTMOezYcs3uezgQ/zh-cn_image_0000002786519272.gif)
 
 ## 添加grid-col
 
@@ -162,7 +162,7 @@ text{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/FKd3370rRfi0olwEPQMOiQ/zh-cn_image_0000002779850402.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/T9Brbp7qQI-JpMsM805zxw/zh-cn_image_0000002786359344.png)
 
 **说明** 
 
@@ -237,4 +237,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/3BnqQi8mTgmnAj5ZC-zS8g/zh-cn_image_0000002779690434.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/08/v3/zPp4k6JZSROqSwXIul8gPg/zh-cn_image_0000002815558765.gif)

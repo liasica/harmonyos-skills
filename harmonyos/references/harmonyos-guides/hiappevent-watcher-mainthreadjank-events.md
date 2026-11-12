@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 主线程超时事件介绍
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 主线程超时事件 > 主线程超时事件介绍
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:41+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:d93ff6309b91957a0fa3512c84d3ef1f16b6b8464b95370a1e1adae272dc05da
+scraped_at: 2026-11-12T09:51:54+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3c029eb2e39eb1a37d511cd90057d104b7af26fce17f498dabdc819476d964d7
 ---
 
 ## 简介
@@ -68,7 +68,7 @@ log\_type=1时，所有参数均需设置。
 
    （1）2500的含义：根据系统规定，主线程超时事件从检测到上报的时间不可以超过2.5s（即：2500ms）。因此sample\_count的设置值不能超过系统按计算公式得出的最大值。
 
-   （2）4的含义：第一次超时间隔检测时间 + 第二次超时间隔（系统提供两次再次发生超时事件的检测机会）时间 + 收集并上报堆栈信息的时间。
+   （2）4的含义：代表系统预留的4个采样间隔，用于覆盖：从超时发生到首次检测触发（1个间隔） + 两次容错检测之间的等待与判定（2个间隔） + 堆栈收集与上报的耗时窗口（1个间隔）。
 
    （3）开发者要结合需求场景，进行合理的设置。
 2. 参数设置示例
@@ -123,7 +123,7 @@ log\_type=1时，所有参数均需设置。
    hiAppEvent.setEventConfig(hiAppEvent.event.MAIN_THREAD_JANK, params).then(() => {
      hilog.info(0x0000, 'hiAppEvent', `Set to only collect trace successfully.`);
    }).catch((err: BusinessError) => {
-     hilog.error(0x0000, 'hiAppEvent', `Failed to set only collect trace. code: ${err.code}, message: ${err.message}`);
+     hilog.error(0x0000, 'hiAppEvent', `Failed to set only collect trace. Code: ${err.code}, message: ${err.message}`);
    });
    ```
 
@@ -201,7 +201,7 @@ let policy: hiAppEvent.EventPolicy = {
 hiAppEvent.configEventPolicy(policy).then(() => {
   hilog.info(0x0000, 'hiAppEvent', `Set to only collect trace successfully.`);
 }).catch((err: BusinessError) => {
-  hilog.error(0x0000, 'hiAppEvent', `Failed to set only collect trace. code: ${err.code}, message: ${err.message}`);
+  hilog.error(0x0000, 'hiAppEvent', `Failed to set only collect trace. Code: ${err.code}, message: ${err.message}`);
 });
 ```
 

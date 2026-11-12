@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-h
 title: "@ohos.security.huks (通用密钥库系统)"
 breadcrumb: API参考 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > ArkTS API > @ohos.security.huks (通用密钥库系统)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:53:36+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:9ad8c22d4d942f2fefd4e79c67cb609ef6006eaaf35b99d1baa1b5b205eefd9a
+scraped_at: 2026-11-12T09:55:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ea30db27c19268cdaaf1d690c722d788b4cbe5d7d9a832696c616e2b8c5625c3
 ---
 
 向应用提供密钥库能力，包括密钥管理及密钥的密码学操作等功能。
@@ -3885,16 +3885,11 @@ async function testListAliases() {
 
 表示安全导入密钥的算法套件。
 
-**系统能力：**
-
-* API版本12+：SystemCapability.Security.Huks.Core
-* API版本9-11：SystemCapability.Security.Huks.Extension
-
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| HUKS\_UNWRAP\_SUITE\_X25519\_AES\_256\_GCM\_NOPADDING | 1 | 安全导入密钥时，X25519密钥协商后使用AES-256 GCM解密。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| HUKS\_UNWRAP\_SUITE\_ECDH\_AES\_256\_GCM\_NOPADDING | 2 | 安全导入密钥时，ECDH密钥协商后使用AES-256 GCM解密。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| HUKS\_UNWRAP\_SUITE\_SM2\_SM4\_ECB\_NOPADDING23+ | 5 | 安全导入密钥时，使用临时SM4密钥加密导入密钥，使用已导入HUKS的SM2密钥加密SM4密钥。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
+| HUKS\_UNWRAP\_SUITE\_X25519\_AES\_256\_GCM\_NOPADDING | 1 | 安全导入密钥时，X25519密钥协商后使用AES-256 GCM解密。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **系统能力：**  - API版本12+：SystemCapability.Security.Huks.Core  - API版本9-11：SystemCapability.Security.Huks.Extension |
+| HUKS\_UNWRAP\_SUITE\_ECDH\_AES\_256\_GCM\_NOPADDING | 2 | 安全导入密钥时，ECDH密钥协商后使用AES-256 GCM解密。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **系统能力：**  - API版本12+：SystemCapability.Security.Huks.Core  - API版本9-11：SystemCapability.Security.Huks.Extension |
+| HUKS\_UNWRAP\_SUITE\_SM2\_SM4\_ECB\_NOPADDING23+ | 5 | 安全导入密钥时，使用临时SM4密钥加密导入密钥，使用已导入HUKS的SM2密钥加密SM4密钥。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。  **系统能力：** SystemCapability.Security.Huks.Core |
 
 ## HuksImportKeyType9+
 
@@ -4149,6 +4144,7 @@ async function testListAliases() {
 | HUKS\_TAG\_KEY\_SECURITY\_LEVEL | HuksTagType.HUKS\_TAG\_TYPE\_UINT | 526 | 表示密钥安全级别。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **系统能力：** SystemCapability.Security.Huks.Core |
 | HUKS\_TAG\_AAD24+ | HuksTagType.HUKS\_TAG\_TYPE\_BYTES | 527 | 标记指示GCM或CCM模式的附加验证数据。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。  **系统能力：** SystemCapability.Security.Huks.Core |
 | HUKS\_TAG\_CONTEXT | HuksTagType.HUKS\_TAG\_TYPE\_BYTES | 528 | 表示ML-DSA签名验签的context参数。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **系统能力：** SystemCapability.Security.Huks.Core |
+| HUKS\_TAG\_TIMEOUT | HuksTagType.HUKS\_TAG\_TYPE\_UINT | 529 | 表示异步超时时间，单位为秒，可由业务逻辑自定义。  **起始版本：** 26.0.1  **系统能力：** SystemCapability.Security.Huks.CryptoExtension |
 | HUKS\_TAG\_IS\_KEY\_ALIAS | HuksTagType.HUKS\_TAG\_TYPE\_BOOL | 1001 | 表示是否使用生成key时传入的别名的tag。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **系统能力：** SystemCapability.Security.Huks.Core |
 | HUKS\_TAG\_KEY\_STORAGE\_FLAG | HuksTagType.HUKS\_TAG\_TYPE\_UINT | 1002 | 表示密钥存储方式的tag。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **系统能力：** SystemCapability.Security.Huks.Core |
 | HUKS\_TAG\_IS\_ALLOWED\_WRAP | HuksTagType.HUKS\_TAG\_TYPE\_BOOL | 1003 | 预留。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  **系统能力：**  - API版本12+：SystemCapability.Security.Huks.Core  - API版本8-11：SystemCapability.Security.Huks.Extension |

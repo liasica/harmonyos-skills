@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/start-flight-
 title: 拉起航班类应用（startAbilityByType）
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起指定类型的应用 > 拉起航班类应用（startAbilityByType）
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:00+08:00
+scraped_at: 2026-11-12T09:50:58+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:d5c3c1db55f51c51a4014af7720a80594f7ed6998c9126f4fc38db34d44c7f38
+content_hash: sha256:216ed4848bb8097351f5f99f792f16d62d028f6ccd0db7b171d495c96c8fdc30
 ---
 
 本章节介绍如何拉起航班类应用扩展面板。
@@ -88,7 +88,7 @@ startAbilityByType接口中type字段为flight，支持按航班号查询、按�
 
    效果示例图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/0bBc1iO_SAiP_xK1ynJ0Cw/zh-cn_image_0000002779689508.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/LpfHGSHORWWyGVlGzdRqdQ/zh-cn_image_0000002786358418.png)
 
 ## 目标方开发步骤
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservi
 title: 通过gamePlayerId获取playerId/openId/unionId
 breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > REST API > 通过gamePlayerId获取playerId/openId/unionId
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:54+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:7b739a4c7b01d3454576af124bc0cc1e834e01494bc7373c662e41181b6a7706
+scraped_at: 2026-11-12T09:57:17+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a5b73269ec21f13244c0cea037c383d874128568def51129f7dad6eef02bb246
 ---
 
 ## 功能介绍
@@ -37,7 +37,7 @@ content_hash: sha256:7b739a4c7b01d3454576af124bc0cc1e834e01494bc7373c662e41181b6
 | method | 是 | String | 固定传入“external.hms.gs.player.transfer.convertId”。 |
 | accessToken | 是 | String | 游戏调用华为账号的[获取用户级凭证](account-api-obtain-user-token.md)接口获取到的Access Token。 |
 | appId | 是 | String | HarmonyOS 5.0及以上游戏的APP ID，获取方法请参见[查看应用信息](../app/agc-help-view-app-info-0000002282674569.md)。 |
-| gamePlayerId | 是 | String | HarmonyOS 5.0及以上游戏的玩家标识，通过调用[unionLogin](gameservice-gameplayer.md#gameplayerunionlogin)接口返回。 |
+| gamePlayerId | 是 | String | HarmonyOS 5.0及以上游戏的玩家标识，通过调用[unionLogin()](gameservice-gameplayer.md#gameplayerunionlogin)接口返回。 |
 
 ## 请求示例
 

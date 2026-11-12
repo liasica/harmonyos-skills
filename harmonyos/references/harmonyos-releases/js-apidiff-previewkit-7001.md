@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-previewkit-7001
 title: Preview Kit
-breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > OS平台能力 > API变更清单 > 26.0.0 Beta1引入的API > Preview Kit
+breadcrumb: 版本说明 > 更多版本 > 26.0.0 > OS平台能力 > API变更清单 > 26.0.0 Beta1引入的API > Preview Kit
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:49:06+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-11-12T09:50:01+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:cc19d01cd3548fccc37b2e837fac1d9304da178e0b69a3df64a635ea6b6d5d4a
 ---
 

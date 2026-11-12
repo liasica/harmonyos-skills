@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservi
 title: gamePlayer（基础游戏服务）
 breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > ArkTS API > gamePlayer（基础游戏服务）
 category: harmonyos-references
-scraped_at: 2026-10-27T07:43:46+08:00
-doc_updated_at: 2026-10-26
-content_hash: sha256:2031cd45e67acc9a5fae51abce521749e380fb7a02d5c9a5c09380a0cf2ecf6e
+scraped_at: 2026-11-12T09:57:17+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:45f70e4710a1e392a9c7c058fbaa46fd8f671e334404c85bc57f903d3f592c85
 ---
 
 本模块提供Game Service Kit（游戏服务）的基础游戏服务能力，包括游戏登录、华为账号实名认证、未成年人防沉迷等功能，让开发者聚焦游戏本身的业务能力。
@@ -100,7 +100,7 @@ gamePlayerId、teamPlayerId、thirdOpenId的参数值要求如下：
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | thirdAccountInfos | Array<[ThirdAccountInfo](gameservice-gameplayer.md#thirdaccountinfo)> | 否 | 否 | 游戏官方账号信息，用于在联合登录面板中展示。不同账号的账号名称不能相同。  **说明**：若只需实现华为账号快速登录，此参数传空数组。 |
-| showLoginDialog | boolean | 否 | 否 | 是否强制弹出联合登录面板，允许玩家选择重新登录。  - true：调用[unionLogin](gameservice-gameplayer.md#gameplayerunionlogin)接口时，强制弹出联合登录面板。当需要切换账号或进行其他操作时，请将此值设置为true。  - false：调用[unionLogin](gameservice-gameplayer.md#gameplayerunionlogin)接口时，优先使用玩家上一次的选择，不强制弹出联合登录面板。  默认为false。 |
+| showLoginDialog | boolean | 否 | 否 | 是否强制弹出联合登录面板，允许玩家选择重新登录。  - true：调用[unionLogin()](gameservice-gameplayer.md#gameplayerunionlogin)接口时，强制弹出联合登录面板。当需要切换账号或进行其他操作时，请将此值设置为true。  - false：调用[unionLogin()](gameservice-gameplayer.md#gameplayerunionlogin)接口时，优先使用玩家上一次的选择，不强制弹出联合登录面板。  默认为false。 |
 | loginPanelType | [LoginPanelType](gameservice-gameplayer.md#loginpaneltype) | 否 | 是 | 联合登录面板类型：  - ICON  - BUTTON  默认为ICON。 |
 
 ## ThirdAccountInfo
@@ -1046,11 +1046,11 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 let playerChangedEventCallback = (result: gamePlayer.PlayerChangedResult): void => {
   if (result.event === gamePlayer.PlayerChangedEvent.SWITCH_GAME_ACCOUNT) {
     // ...
-    // 游戏号已切换，完成本地缓存清理工作后，再次调用unionLogin接口等
+    // 游戏号已切换，完成本地缓存清理工作后，再次调用unionLogin()接口等
   }
 };
 
-// 调用on接口注册playerChanged事件监听
+// 调用on()接口注册playerChanged事件监听
 try {
   gamePlayer.on('playerChanged', playerChangedEventCallback);
 } catch (error) {
@@ -1111,7 +1111,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 let playerChangedEventCallback = (result: gamePlayer.PlayerChangedResult): void => {
   if (result.event === gamePlayer.PlayerChangedEvent.SWITCH_GAME_ACCOUNT) {
     // ...
-    // 游戏号已切换，完成本地缓存清理工作后，再次调用unionLogin接口等
+    // 游戏号已切换，完成本地缓存清理工作后，再次调用unionLogin()接口等
   }
 };
 
@@ -1197,7 +1197,7 @@ let miniGameAddictionPreventedCallback = (result: string): void => {
   hilog.info(0x0000, 'testTag', `Callback miniGameAddictionPrevented result: ${result}`);
 };
 
-// 调用on接口注册小游戏防沉迷事件监听
+// 调用on()接口注册小游戏防沉迷事件监听
 try {
   gamePlayer.on('miniGameAddictionPrevented', miniGameAddictionPreventedCallback);
 } catch (error) {

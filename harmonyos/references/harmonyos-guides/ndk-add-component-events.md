@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-add-compo
 title: 添加事件监听
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 添加事件响应 > 添加事件监听
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:31:56+08:00
-doc_updated_at: 2026-10-30
+scraped_at: 2026-11-12T09:51:17+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:ff21db0b8275900d6b2c270065340d745079f8938ebf44a33e09e28cd48c17e6
 ---
 
@@ -360,7 +360,7 @@ nodeAPI->unregisterNodeEventReceiver();
        }
 
    protected:
-      // 处理List相关事件。
+       // 处理List相关事件。
        void OnNodeEvent(ArkUI_NodeEvent *event) override
        {
            auto eventType = OH_ArkUI_NodeEvent_GetEventType(event);

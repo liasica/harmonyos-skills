@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/multi-thread-
 title: 多线程取消TaskPool任务场景
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 应用多线程开发实践案例 > 多线程取消TaskPool任务场景
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:33:56+08:00
-doc_updated_at: 2026-09-30
+scraped_at: 2026-11-12T09:51:04+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:b18f64b634a374227b4acc30ae7ba77dcb36bbc6afe4cb53db750e9eece4361e
 ---
 

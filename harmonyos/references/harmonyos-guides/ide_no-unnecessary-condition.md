@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-unnece
 title: "@typescript-eslint/no-unnecessary-condition"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-unnecessary-condition
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:57+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:8f314eca0b8b3deada09f515b0e4c457db7d06ebedee2de2b1bf6ff2f7b1f958
+scraped_at: 2026-11-12T09:52:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3f7dab94f427416b4a5e2d3dedcb6c8f87fa4b9c30d2a344df46ae8cb4454d65
 ---
 
 不允许使用类型始终为真或始终为假的表达式作为判断条件。
@@ -81,4 +81,4 @@ export function bar(arg: string) {
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

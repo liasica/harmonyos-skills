@@ -3,20 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-window
 title: 使用WindowManager管理多模输入事件 (C/C++)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 其他开发场景 > 使用WindowManager管理多模输入事件 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:14+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1414c3b731ca69824e1e30f737f412f1088cc567e89afe51917d899db6d5ccd8
+scraped_at: 2026-11-12T09:51:21+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:eae0aead6c2ff8fc65c2ab00ec0860800af4f3f11f6f186f646df4710dd0a450
 ---
 
 ## 场景介绍
 
-[WindowManager](../harmonyos-references/capi-windowmanager.md)提供应用窗口的管理能力，可以用于管理多模输入事件。
+[WindowManager](../harmonyos-references/capi-windowmanager.md)提供应用窗口的管理能力，当前支持使用WindowManager对多种多模输入事件（[Input\_KeyEvent（按键输入事件）](../harmonyos-references/capi-input-input-keyevent.md)、[Input\_MouseEvent（鼠标输入事件）](../harmonyos-references/capi-input-input-mouseevent.md)、[Input\_TouchEvent（触屏输入事件）](../harmonyos-references/capi-input-input-touchevent.md)）进行过滤，本文档以按键输入事件的过滤为例进行说明；此外，还支持将多模[Input\_TouchEvent（触屏输入事件）](../harmonyos-references/capi-input-input-touchevent.md)注入目标窗口。具体开发步骤可见下文。
 
-当前支持使用WindowManager进行多模输入事件的过滤，还可以将多模触摸事件注入目标窗口，具体开发步骤可见下文。
+## 过滤多模按键输入事件
 
-## 过滤多模输入事件
-
-使用WindowManager模块提供的能力去拦截按键事件，让按键事件不往应用内部组件分发。
+使用WindowManager模块提供的能力去拦截按键输入事件，让按键输入事件不往应用内部组件分发。
 
 ### 在CMake脚本中链接动态库
 
@@ -28,13 +26,14 @@ target_link_libraries(entry PUBLIC libnative_window_manager.so libohinput.so)
 
 | 接口名 | 描述 |
 | --- | --- |
-| OH\_NativeWindowManager\_RegisterKeyEventFilter(int32\_t windowId, OH\_NativeWindowManager\_KeyEventFilter keyEventFilter) | 为指定的窗口注册过滤回调函数keyEventFilter。 |
-| OH\_NativeWindowManager\_UnregisterKeyEventFilter(int32\_t windowId) | 取消指定窗口上的过滤回调函数。 |
+| [OH\_NativeWindowManager\_KeyEventFilter](../harmonyos-references/capi-oh-window-event-filter-h.md#oh_nativewindowmanager_keyeventfilter) | 定义多模按键的过滤函数。 |
+| [OH\_NativeWindowManager\_RegisterKeyEventFilter(int32\_t windowId, OH\_NativeWindowManager\_KeyEventFilter keyEventFilter)](../harmonyos-references/capi-oh-window-event-filter-h.md#oh_nativewindowmanager_registerkeyeventfilter) | 为指定的窗口注册按键事件过滤函数。 |
+| [OH\_NativeWindowManager\_UnregisterKeyEventFilter(int32\_t windowId)](../harmonyos-references/capi-oh-window-event-filter-h.md#oh_nativewindowmanager_unregisterkeyeventfilter) | 取消注册指定窗口的按键事件过滤函数。 |
 
 * 应用窗口创建后，使用窗口ID绑定按键事件过滤函数。
 * 应用窗口需要收到按键事件时，才触发按键事件的拦截。
-* 当回调函数返回true表示拦截，false表示不拦截。
-* 同一个窗口ID注册的回调函数只允许一个，最后注册的回调函数会覆盖之前注册过的回调函数。如需过滤多个按键的组合场景，建议在一个回调函数里面处理。
+* 当按键事件过滤函数返回true表示拦截，false表示不拦截。
+* 同一个窗口ID注册的按键事件过滤函数只允许一个，最后注册的过滤函数会覆盖之前注册过的过滤函数。如需过滤多个按键的组合场景，建议在一个过滤函数里面处理。
 
 ### 示例代码
 
@@ -42,7 +41,6 @@ target_link_libraries(entry PUBLIC libnative_window_manager.so libohinput.so)
 
 ```
 #include "napi/native_api.h"
-#include "window_manager/oh_window_comm.h"
 #include "window_manager/oh_window_event_filter.h"
 #include "multimodalinput/oh_input_manager.h"
 #include "multimodalinput/oh_key_code.h"
@@ -102,9 +100,9 @@ static napi_value Init(napi_env env, napi_value exports)
 EXTERN_C_END
 ```
 
-## 将多模触摸事件注入给目标窗口
+## 将多模触屏输入事件注入给目标窗口
 
-使用WindowManager模块提供的能力为指定窗口注入触摸事件，仅支持同进程窗口。此操作不会触发窗口焦点、层级变化或拖拽，事件会直接发送给ArkUI。
+使用WindowManager模块提供的能力为指定窗口注入触屏输入事件，仅支持同进程窗口。此操作不会触发窗口焦点、层级变化或拖拽，事件会直接发送给ArkUI。
 
 ### 在CMake脚本中链接动态库
 
@@ -116,21 +114,21 @@ target_link_libraries(entry PUBLIC libnative_window_manager.so libohinput.so)
 
 | 接口名 | 描述 |
 | --- | --- |
-| OH\_WindowManager\_InjectTouchEvent(int32\_t windowId, Input\_TouchEvent\* touchEvent, int32\_t windowX, int32\_t windowY) | 为指定的窗口注入触摸事件。 |
+| [OH\_WindowManager\_InjectTouchEvent(int32\_t windowId, Input\_TouchEvent\* touchEvent, int32\_t windowX, int32\_t windowY)](../harmonyos-references/capi-oh-window-h.md#oh_windowmanager_injecttouchevent) | 为指定的窗口注入触屏输入事件。 |
 
 * 构造事件参数，向目标窗口ID注入事件。
 * 仅支持注入同进程窗口。注入不会触发窗口焦点、层级变化或拖拽，事件直接发送给ArkUI。
 * 接口需要在指定窗口加载UI后调用。
-* 完成窗口和多模触摸事件校验，确保事件参数正确，再将事件发送给ArkUI。具体参数说明如下：
+* 完成窗口和多模触屏输入事件校验，确保事件参数正确，再将事件发送给ArkUI。具体参数说明如下：
 
   | 参数名 | 描述 |
   | --- | --- |
   | windowId | 目标窗口ID，仅支持同进程的窗口，否则返回错误码1300002。窗口需完成UI加载，否则返回错误码1300003。 |
-  | touchEvent | 多模触摸事件，具体可见[Input\_TouchEvent](../harmonyos-references/capi-input-input-touchevent.md)，事件定义在oh\_input\_manager.h中。调用[OH\_Input\_CreateTouchEvent](../harmonyos-references/capi-oh-input-manager-h.md#oh_input_createtouchevent)接口创建touchEvent对象，使用完后调用[OH\_Input\_DestroyTouchEvent](../harmonyos-references/capi-oh-input-manager-h.md#oh_input_destroytouchevent)接口销毁该对象。具体参数说明见下表。 |
+  | touchEvent | 多模触屏输入事件，具体可见[Input\_TouchEvent](../harmonyos-references/capi-input-input-touchevent.md)，事件定义在oh\_input\_manager.h中。调用[OH\_Input\_CreateTouchEvent](../harmonyos-references/capi-oh-input-manager-h.md#oh_input_createtouchevent)接口创建touchEvent对象，使用完后调用[OH\_Input\_DestroyTouchEvent](../harmonyos-references/capi-oh-input-manager-h.md#oh_input_destroytouchevent)接口销毁该对象。具体参数说明见下表。 |
   | windowX | 注入事件相对于注入窗口的落点横坐标。参数应为大于等于0的整数，否则返回错误码1300003。 |
   | windowY | 注入事件相对于注入窗口的落点纵坐标。参数应为大于等于0的整数，否则返回错误码1300003。 |
 
-  其中，touchEvent多模触摸事件具体参数说明如下：
+  其中，touchEvent多模触屏输入事件具体参数说明如下：
 
   | 参数名 | 方法 | 描述 |
   | --- | --- | --- |
@@ -138,13 +136,13 @@ target_link_libraries(entry PUBLIC libnative_window_manager.so libohinput.so)
   | id | [OH\_Input\_SetTouchEventFingerId](../harmonyos-references/capi-oh-input-manager-h.md#oh_input_settoucheventfingerid) | 表示手指ID，默认值为0。  应为大于等于0的整数，否则返回错误码1300003。 |
   | displayX | [OH\_Input\_SetTouchEventDisplayX](../harmonyos-references/capi-oh-input-manager-h.md#oh_input_settoucheventdisplayx) | 表示事件落点相对于屏幕的横坐标，默认值为0。  参数应为非负整数，否则返回错误码1300003。建议与windowX保持对应关系，即使不一致也不会返回错误码，仅校验入参合法范围。转换方法推荐使用[getWindowProperties()](../harmonyos-references/arkts-apis-window-window.md#getwindowproperties9)方法获取windowRect属性，通过displayX减去windowRect中窗口左上角横坐标计算对应的windowX。 |
   | displayY | [OH\_Input\_SetTouchEventDisplayY](../harmonyos-references/capi-oh-input-manager-h.md#oh_input_settoucheventdisplayy) | 表示事件落点相对于屏幕的纵坐标，默认值为0。  参数应为非负整数，否则返回错误码1300003。建议与windowY保持对应关系，即使不一致也不会返回错误码，仅校验入参合法范围。转换方法推荐使用[getWindowProperties()](../harmonyos-references/arkts-apis-window-window.md#getwindowproperties9)方法获取windowRect属性，通过displayY减去windowRect中窗口左上角纵坐标计算对应的windowY。 |
-  | actionTime | [OH\_Input\_SetTouchEventActionTime](../harmonyos-references/capi-oh-input-manager-h.md#oh_input_settoucheventactiontime) | 表示时间戳，默认值为-1。参数应为非负整数，否则返回错误码1300003。 |
+  | actionTime | [OH\_Input\_SetTouchEventActionTime](../harmonyos-references/capi-oh-input-manager-h.md#oh_input_settoucheventactiontime) | 表示时间戳，默认值为-1。 |
   | windowId | [OH\_Input\_SetTouchEventWindowId](../harmonyos-references/capi-oh-input-manager-h.md#oh_input_settoucheventwindowid) | 表示事件注入窗口ID，默认值为-1。若参数不为默认值且不等于[OH\_WindowManager\_InjectTouchEvent](../harmonyos-references/capi-oh-window-h.md#oh_windowmanager_injecttouchevent)接口参数windowId，将校验传入参数错误。 |
   | displayId | [OH\_Input\_SetTouchEventDisplayId](../harmonyos-references/capi-oh-input-manager-h.md#oh_input_settoucheventdisplayid) | 表示事件注入屏幕ID，默认值为-1。无限制，但是应该尽量保证与[OH\_WindowManager\_InjectTouchEvent](../harmonyos-references/capi-oh-window-h.md#oh_windowmanager_injecttouchevent)接口参数windowId有相互对应关系，推荐使用[getWindowProperties()](../harmonyos-references/arkts-apis-window-window.md#getwindowproperties9)方法获取displayId属性。 |
 
 ### 示例代码
 
-以下示例代码介绍了如何将多模触摸事件注入目标窗口，以单次事件注入为例。
+以下示例代码介绍了如何将多模触屏输入事件注入目标窗口，以单次事件注入为例。
 
 ```
 #include "napi/native_api.h"

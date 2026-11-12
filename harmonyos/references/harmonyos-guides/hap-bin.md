@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hap-bin
 title: 应用程序包集成bin文件（PC/2in1）
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发指导 > 应用程序包集成bin文件（PC/2in1）
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:28:57+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:882d469cb75edfdd8bfe1443a550eecc584f64f04d5823c5cc465b4b497fe834
+scraped_at: 2026-11-12T09:50:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e0e8df12180e4e2d63ba9110f2ef172599f2746453a03987a8526095d337f1c7
 ---
 
 从API版本24开始，HAP包支持集成、加载并独立运行bin文件，有效拓展了应用的能力边界。开发者可在标准HAP应用内嵌入各类平台二进制工具与可执行程序，依托HarmonyOS运行时环境完成程序调度、脚本解析与任务执行，弥补无法直接调用本地化二进制工具的短板。基于此能力，应用可实现外部脚本解析、第三方工具调用等扩展功能；同时，bin文件的运行全程受系统安全机制管控，兼顾功能拓展性与系统安全性。
@@ -141,7 +141,7 @@ bin文件被拉起后，如需使用受保护的系统能力，应独立声明�
 
 例如，需要将HAP部署在abi类型为arm64-v8a的PC/2in1设备上时，bin文件EXAMPLE应放置在如下目录：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/6YlzpUXqR5WFXqpCBWm8uw/zh-cn_image_0000002779689468.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/axWGo_KpSRaTgjv_Ougj3Q/zh-cn_image_0000002786358378.png)
 
 在[module.json5](module-configuration-file.md)中配置[executablebinarypaths标签](module-configuration-file.md#executablebinarypaths标签)，用于声明HAP中包含的可执行bin文件。该标签配置bin文件的路径，为相对路径，必须以libs/{abi}/为前缀，其中{abi}为设备CPU架构类型（如arm64-v8a、x86\_64、armeabi-v7a）：
 
@@ -156,6 +156,50 @@ bin文件被拉起后，如需使用受保护的系统能力，应独立声明�
     ],
     // ...
   },
+}
+```
+
+### 在HAP工程中使用bin文件
+
+bin文件随HAP安装并自动解压至应用安装目录后，应用还需在native源码中通过fork和execv创建子进程的方式拉起并运行bin文件。例如，在entry模块src/main/cpp/目录下的C/C++源文件中实现。 该方式下，子进程的创建、程序装载与回收均由应用自行完成：
+
+* fork：复制当前进程（包括内存映像与文件描述符）得到子进程。该函数调用一次、返回两次：在子进程中返回0，在父进程中返回子进程的PID，失败时返回-1。
+* execv：仅在子进程分支中调用，用bin文件替换子进程的程序映像，并从其入口开始执行。执行成功时不会返回；一旦返回即表示装载失败，因此后续的perror与\_exit(127)仅在失败路径上执行。
+* waitpid：在父进程分支中调用，阻塞等待指定子进程结束，并通过status回传退出状态。应使用WIFEXITED判断是否正常退出，再用 WEXITSTATUS取出退出码。
+
+示例代码如下：
+
+```c
+static napi_value ForkHapBin(napi_env env, napi_callback_info info) {
+    napi_value retVal = nullptr;
+    pid_t pid = fork();
+    // 1. fork失败
+    if (pid == -1) {
+        napi_get_null(env, &retVal);
+        return retVal;
+    }
+    // 2. 子进程分支
+    if (pid == 0) {
+        const char *childProgram = "/data/storage/el1/bundle/libs/arm64/EXAMPLE";
+        // execv参数：argv[0]一般填程序名，最后一个元素必须为NULL
+        char *const childArgv[] = {(char *)childProgram, nullptr};
+        // execv成功时不会返回，返回即代表出错
+        execv(childProgram, childArgv);
+        // 仅在execv调用失败时执行
+        _exit(127); // 子进程使用_exit，避免冲刷父进程的stdio缓冲区
+    }
+    int status = 0;
+    // 阻塞等待子进程退出
+    waitpid(pid, &status, 0);
+    // 子进程退出状态解析
+    if (WIFEXITED(status)) {
+        int exitCode = WEXITSTATUS(status);
+    } else if (WIFSIGNALED(status)) {
+        int sig = WTERMSIG(status);
+    }
+    // 返回子进程PID给JS层
+    napi_create_int32(env, (int32_t)pid, &retVal);
+    return retVal;
 }
 ```
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-createpdf
 title: 使用Web组件保存前端页面为PDF
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 处理网页内容 > 使用Web组件保存前端页面为PDF
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:23+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:51:23+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:8ac4044435dcf88a0bd8f211da690a00e64642ae08ae66115e55a62c2845daa8
 ---
 

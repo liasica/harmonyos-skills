@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-er
 title: 依赖错误码
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 构建报错排查 > 编译构建错误码 > 依赖错误码
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:20+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:736483920b95918241c870c21b7b13f427e05f78f20e38e317a32cef27b9ee17
+scraped_at: 2026-11-12T09:53:07+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d818e46ea10ebe200100b493c9fed38b8d30c88e2c11366d1588f883f63dc366
 ---
 
 ## 00301001 SDK中找不到签名工具
@@ -168,5 +168,5 @@ The useNormalizedOHMUrl settings of packages XXX and the project useNormalizedOH
 
 **处理步骤**
 
-1. 将报错的依赖包的工程级build-profile.json5中的useNormalizedOHMUrl修改为与当前工程一致，重新生成依赖包并替换(useNormalizedOHMUrl缺省默认值为false)。
+1. 将报错的依赖包的工程级build-profile.json5中的useNormalizedOHMUrl修改为与当前工程一致，重新生成依赖包并替换（useNormalizedOHMUrl缺省默认值为false）。
 2. 如果与工程不一致的依赖包较多，建议修改工程的工程级build-profile.json5中的useNormalizedOHMUrl值以及替换其他的不一致的依赖包。

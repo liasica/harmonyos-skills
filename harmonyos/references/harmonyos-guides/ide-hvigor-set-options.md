@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-se
 title: hvigor-config.json5文件
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 配置文件 > hvigor-config.json5文件
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:23:06+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:9567028a896abcdea199bb5d84cdf7a1b04fd654d7a21839d1e99006ba9c46d4
+scraped_at: 2026-11-12T09:53:06+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:24f3481788db80318683f73fab61a38b98ef65e41b43df709e7b097922d59f6c
 ---
 
 ## 配置文件结构
@@ -84,7 +84,7 @@ hvigor-config.json5配置文件包含以下字段。
 | --- | --- | --- | --- |
 | modelVersion | 必选 | 字符串 | 开发态版本号。  默认版本号为DevEco Studio配套的modelVersion，以[DevEco Studio 6.1.1 Release](../harmonyos-releases/deveco-studio-new-features-611.md#section1376764215234)为例，配套的modelVersion为"6.1.1"。如需修改modelVersion，修改后的值不能小于5.0.0，且不能大于DevEco Studio配套的modelVersion。 |
 | dependencies | 必选 | 对象 | 当前工程执行构建任务时，依赖的构建插件及版本，为npm源组件。  说明：  修改dependencies后，请根据界面提示，点击编辑器右上角**Sync Now**安装依赖。 |
-| [execution](ide-hvigor-set-options.md#section6901191119219) | 可选 | 对象 | 执行构建的相关配置参数，仅在命令行场景下生效。 |
+| [execution](ide-hvigor-set-options.md#section6901191119219) | 可选 | 对象 | 执行构建的相关配置参数。 |
 | [logging](ide-hvigor-set-options.md#section85176471028) | 可选 | 对象 | 日志相关配置参数。 |
 | [debugging](ide-hvigor-set-options.md#section76575554217) | 可选 | 对象 | 调测相关配置参数。 |
 | [nodeOptions](ide-hvigor-set-options.md#section74431812314) | 可选 | 对象 | Node相关配置参数。 |
@@ -171,7 +171,7 @@ nodeOptions是Node相关配置参数。
 | 字段名称 | 可选/必选 | 类型 | 含义 |
 | --- | --- | --- | --- |
 | maxOldSpaceSize | 可选 | 整型数值 | 启用守护进程编译时，为守护进程设置最大的老生代内存大小，单位为MB，默认为8192MB。当工程代码量较大出现JS内存溢出时，可以调整该参数。 |
-| maxSemiSpaceSize | 可选 | 整型数值 | 启用守护进程编译时，为守护进程设置新生代内存最大的半空间大小，单位为MB，默认为16MB。增加半空间大小可能会提高Node.js的吞吐量，但会消耗更多内存。  该字段从DevEco Studio 5.1.0 Release版本开始支持。 |
+| maxSemiSpaceSize | 可选 | 整型数值 | 启用守护进程编译时，为守护进程设置新生代内存最大的半空间大小，单位为MB，默认为16MB。增加半空间大小可能会提高Node.js的吞吐量，但会消耗更多内存。  从DevEco Studio 5.1.0 Release版本开始支持。 |
 | exposeGC | 可选 | 布尔值 | 是否启用GC（Garbage Collection，内存回收），启用后会优化编译过程的峰值内存。   * true（缺省默认值）：启用。 * false：不启用。 |
 
 nodeOptions字段示例：
@@ -236,10 +236,10 @@ properties是额外配置参数。除了在hvigor-config.json5中配置propertie
 | ohos.sign.har | 可选 | 布尔值 | 是否启用HAR签名任务。详情请参考[构建签名HAR](ide-hvigor-build-har.md#section116791730173713)。   * true：启用。 * false（缺省默认值）：不启用。 |
 | hvigor.keepDependency | 可选 | 布尔值 | 是否保持hsp中的所有依赖。如果保持则不对依赖进行处理，如果不保持，则只会保留hsp模块中的hsp相关依赖。   * true（缺省默认值）：保持。 * false：不保持。 |
 | ohos.arkCompile.emptyBundleName | 可选 | 布尔值 | ArkTS编译转换后的产物，bundleName字段是否为空值。   * true：bundleName字段的值是空值。 * false（缺省默认值）：bundleName字段是应用实际的包名。   说明：  * 仅支持在EntryAbility中使用loadContentByName加载首页，同时使用Navigation导航进行页面跳转时设置为true，否则会导致应用闪退。 * 预览时暂不支持配置该字段，字段默认取值为false。 |
-| ohos.uiTransform.Optimization | 可选 | 布尔值 | 是否对ArkTS编译转换后的产物中的bundleName字段开启优化。   * true：开启，bundleName字段的值是变量。 * false（缺省默认值）：不开启，bundleName字段是应用实际的包名。   该字段从DevEco Studio 5.0.5 Beta1版本开始支持。  说明：  * 该字段对字节码HAR不生效，字节码HAR产物的bundleName字段的值默认是变量。 * 预览时暂不支持配置该字段，字段默认取值为false。 |
-| ohos.har.excludeHspDependencies | 可选 | 布尔值 | 构建har包时，产物module.json中是否排除依赖的hsp，排除后，module.json中不包含dependencies字段。   * true：排除。 * false（缺省默认值）：不排除。   该字段从DevEco Studio 5.1.0 Release版本开始支持。 |
+| ohos.uiTransform.Optimization | 可选 | 布尔值 | 是否对ArkTS编译转换后的产物中的bundleName字段开启优化。   * true：开启，bundleName字段的值是变量。 * false（缺省默认值）：不开启，bundleName字段是应用实际的包名。   从DevEco Studio 5.0.5 Beta1版本开始支持。  说明：  * 该字段对字节码HAR不生效，字节码HAR产物的bundleName字段的值默认是变量。 * 预览时暂不支持配置该字段，字段默认取值为false。 |
+| ohos.har.excludeHspDependencies | 可选 | 布尔值 | 构建har包时，产物module.json中是否排除依赖的hsp，排除后，module.json中不包含dependencies字段。   * true：排除。 * false（缺省默认值）：不排除。   从DevEco Studio 5.1.0 Release版本开始支持。 |
 | ohos.processLib.optimization | 可选 | 布尔值 | 是否启用[ProcessLibs任务](ide-hvigor-task-process.md#li671313965913)性能优化，启用后可以减少ProcessLibs任务中so增量判定的耗时。   * true：启用。 * false（缺省默认值）：不启用。 |
-| ohos.obfuscationRules.optimization | 可选 | 布尔值 | release模式开启混淆时，是否优化三方依赖中混淆配置文件的收集方式，优化后可以减少收集耗时，加快编译速度。   * true：优化。 * false（缺省默认值）：不优化。   该字段从DevEco Studio 5.1.0 Release版本开始支持。 |
+| ohos.obfuscationRules.optimization | 可选 | 布尔值 | release模式开启混淆时，是否优化三方依赖中混淆配置文件的收集方式，优化后可以减少收集耗时，加快编译速度。   * true：优化。 * false（缺省默认值）：不优化。   从DevEco Studio 5.1.0 Release版本开始支持。 |
 | hvigor.incremental.optimization | 可选 | 布尔值 | 是否开启任务增量判断优化，优化方案及开启后的影响请参考[任务增量判断优化](ide-hvigor-experimental-properties.md#section95571022144613)。   * true：开启。 * false（缺省默认值）：不开启。 |
 | hvigor.task.schedule.optimization | 可选 | 布尔值 | 是否开启任务调度优化，优化方案及开启后的影响请参考[任务调度优化](ide-hvigor-experimental-properties.md#section09371546164610)。   * true：开启。 * false（缺省默认值）：不开启。 |
 | ohos.byteCodeHar.integratedOptimization | 可选 | 布尔值 | 是否开启字节码HAR集成行为优化，开启后，字节码HAR使用的依赖支持配置在工程级oh-package.json5的dependencies或dynamicDependencies中，同时会优化部分依赖收集行为，具体请参考[编译行为差异说明](ide-hvigor-dependencies.md#section957371853712)。   * true：开启。 * false（缺省默认值）：不开启。   从DevEco Studio 5.1.1 Beta1版本开始支持。 |

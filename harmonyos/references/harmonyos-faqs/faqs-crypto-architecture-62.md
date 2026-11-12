@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-crypto-arc
 title: 如何解决RSA加解密报错问题
 breadcrumb: FAQ > 系统开发 > 安全 > 加解密算法（Crypto Architecture） > 如何解决RSA加解密报错问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:35+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:4462720701cd288b958c2d1882ee929342a3e517abead21f41fe20b9aebf01c7
+scraped_at: 2026-11-12T09:59:30+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:bdba96317e8b05ab89a8423f10d2ede548f6e651129f9559e9caee7b62be67a1
 ---
 
 ## 问题现象
@@ -36,7 +36,7 @@ RSA常见报错与错误码有：
   2. 检查入参是否格式正确，例如RSA2048|PKCS1是否输入为RSA2048/PKCS1。
   3. 根据选择的填充模式，检查算法入参是否与密钥长度匹配，例如NoPadding的填充模式下，数据长度必须等于密钥长度（如RSA2048需256字节）。
   4. 检查明文或密文转换编码格式方法是否正确，入参为Uint8Array格式，实际应用中需要将Base64等数据编码格式转换，检查转码方法是否正确。
-  5. 检查加密参数与解密参数是否一致，包含加密算法密钥长度、填充模式、密钥、PKCS1\_OAEP模式对应的[填充模式的参数](../harmonyos-guides/crypto-asym-encrypt-decrypt-spec.md#获取设置oaep填充模式的参数)等。
+  5. 检查加密参数与解密参数是否一致，包含加密算法密钥长度、填充模式、密钥、PKCS1\_OAEP模式对应的[填充模式的参数](../doccenter-capabilities/crypto-encryption-decryption.md#填充模式)等。
 
 ## 分析结论
 

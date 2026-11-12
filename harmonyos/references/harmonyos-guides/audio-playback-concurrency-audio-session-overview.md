@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-playbac
 title: 音频焦点和音频会话开发概述
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频焦点和音频会话管理 > 音频焦点和音频会话开发概述
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:02+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:228c738455cfe2fcbb1a004fdae81bd568faa6d7f9f3b2bf63c7c0d4ee4f0d74
+scraped_at: 2026-11-12T09:51:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3b419b5cec8dcfd8a2f8bb2b7216ce21071964fe2af2d969a40318f54b414053
 ---
 
 在应用播放或录制声音时，会遇到与其他应用或本应用内的其他音频流发生焦点冲突。本章节概括了该场景的处理方式，帮助开发者了解如何使用系统的音频焦点冲突管理能力来解决各类音频打断问题。
@@ -89,7 +89,6 @@ content_hash: sha256:228c738455cfe2fcbb1a004fdae81bd568faa6d7f9f3b2bf63c7c0d4ee4
 | 默认场景 | 启动通话 | 开启录制 | 录制失败 | - |
 | 方案一 | 无需配置 | 使用[setWillMuteWhenInterrupted](../harmonyos-references/arkts-apis-audio-audiocapturer.md#setwillmutewheninterrupted20)接口 | 录制可以启动，录制数据为静音流 | - |
 | 方案二 | 无需配置 | 使用音频录制接口[setIndependentAudioSessionStrategy](../harmonyos-references/arkts-apis-audio-audiocapturer.md#setindependentaudiosessionstrategy24)，AudioSessionBehaviorFlags使用MUTE\_WHEN\_INTERRUPTED | 录制可以启动，录制数据为静音流 | 与方案一效果相当，推荐方案二 |
-| 方案三 | 无需配置 | 使用音频录制接口[setIndependentAudioSessionStrategy](../harmonyos-references/arkts-apis-audio-audiocapturer.md#setindependentaudiosessionstrategy24)，AudioSessionBehaviorFlags使用PAUSE\_WHEN\_INTERRUPTED | 录制被暂停，应用A通话结束后，应用B收到RESUME事件恢复录制 | - |
 
 ### 场景4：音乐播放过程中开启录制，打断音乐播放
 

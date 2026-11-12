@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-integrate
 title: 接入自动续期订阅
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > 商品购买 > 自动续期订阅商品购买 > 接入自动续期订阅
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:33+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:694381e96ac0f8f5e4b0a95f022798e1cc819a026c176f47f7ee0685ff5caed0
+scraped_at: 2026-11-12T09:52:27+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:446426fa27bea39df7cb3d922cd4b771d15e62921a5a90275896cbf58a9919df
 ---
 
 ## 约束与限制
@@ -18,14 +18,14 @@ content_hash: sha256:694381e96ac0f8f5e4b0a95f022798e1cc819a026c176f47f7ee0685ff5
 
 如下业务流程对于单机应用同样适用。在单机应用中，应用服务器和应用客户端的交互放在应用客户端完成，应用服务器和IAP服务器交互的部分可不处理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/L73VWf0DSJq8oTNkkadCDw/zh-cn_image_0000002779691404.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/E8zv3H5pTEu5w3D145pMRA/zh-cn_image_0000002786360326.png)
 
 **展示商品**
 
 1. 应用客户端向IAP Kit发起[queryEnvironmentStatus](../harmonyos-references/iap-iap.md#iapqueryenvironmentstatus)请求，检查当前用户登录的华为账号所在的服务地是否在IAP Kit支持结算的国家/地区中。
 
    如果接口返回错误码“[1001860054](../harmonyos-references/errorcode-iap.md#section1001860054-用户账号所在服务地不在iap-kit支持结算的国家地区中)：用户账号所在服务地不在IAP Kit支持结算的国家/地区中”，应用需隐藏相关IAP功能入口。
-2. 应用客户端向IAP Kit发起[queryProducts](../harmonyos-references/iap-iap.md#iapqueryproducts)请求来获取在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)上配置的商品信息。
+2. 应用客户端向IAP Kit发起[queryProducts](../harmonyos-references/iap-iap.md#iapqueryproducts)请求来获取在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)上配置的商品信息。
 3. 应用客户端根据返回的商品信息展示可供购买的商品列表，包含商品名称、价格等信息。
 
 **检查权益发放状态**
@@ -121,7 +121,7 @@ import Logger from '../common/Logger';
 
 1. 展示商品列表。
 
-   应用客户端通过[queryProducts](../harmonyos-references/iap-iap.md#iapqueryproducts)来获取在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)上配置的商品信息。发起请求时，需在请求参数[QueryProductsParameter](../harmonyos-references/iap-iap.md#queryproductsparameter)中携带相关的商品ID，并指定其productType为[iap.ProductType.AUTORENEWABLE](../harmonyos-references/iap-iap.md#producttype)。
+   应用客户端通过[queryProducts](../harmonyos-references/iap-iap.md#iapqueryproducts)来获取在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)上配置的商品信息。发起请求时，需在请求参数[QueryProductsParameter](../harmonyos-references/iap-iap.md#queryproductsparameter)中携带相关的商品ID，并指定其productType为[iap.ProductType.AUTORENEWABLE](../harmonyos-references/iap-iap.md#producttype)。
 
    当接口请求成功时，IAP Kit将返回商品信息[Product](../harmonyos-references/iap-iap.md#product)的列表。 应用可以使用[Product](../harmonyos-references/iap-iap.md#product)包含的商品价格、名称和描述等信息，向用户展示可供购买的商品列表。
 
@@ -163,7 +163,7 @@ import Logger from '../common/Logger';
 
 ### 发起购买
 
-用户发起购买时，应用可通过向IAP Kit发送[createPurchase](../harmonyos-references/iap-iap.md#iapcreatepurchase)请求来拉起IAP Kit收银台或通过[IAP嵌入式收银台组件](../harmonyos-references/iap-cashier-component.md)发起购买请求（只支持TV）。发起请求时，应用需在请求参数[PurchaseParameter](../harmonyos-references/iap-iap.md#purchaseparameter)中携带此前已在华为[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站上配置并生效的自动续期订阅的商品ID，并指定其productType为[iap.ProductType.AUTORENEWABLE](../harmonyos-references/iap-iap.md#producttype)。
+用户发起购买时，应用可通过向IAP Kit发送[createPurchase](../harmonyos-references/iap-iap.md#iapcreatepurchase)请求来拉起IAP Kit收银台或通过[IAP嵌入式收银台组件](../harmonyos-references/iap-cashier-component.md)发起购买请求（只支持TV）。发起请求时，应用需在请求参数[PurchaseParameter](../harmonyos-references/iap-iap.md#purchaseparameter)中携带此前已在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)网站上配置并生效的自动续期订阅的商品ID，并指定其productType为[iap.ProductType.AUTORENEWABLE](../harmonyos-references/iap-iap.md#producttype)。
 
 **说明** 
 

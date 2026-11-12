@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/perceive-adju
 title: 感知和调整认证过程
 breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 感知和调整认证过程
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:19+08:00
-doc_updated_at: 2026-10-30
+scraped_at: 2026-11-12T09:51:42+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:23ec3e5216946cba7b3b0e32957531f6cca4510ef045d541904bfc6e2d1cce83
 ---
 

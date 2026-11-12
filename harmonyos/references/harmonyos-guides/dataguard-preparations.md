@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dataguard-pre
 title: 开发准备
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:02+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:396f731e25eb37235e7bbb021e28c06c65835bc331349b881299bcdaf4bfcb2c
+scraped_at: 2026-11-12T09:51:38+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8ded79d180953cc256a90d8655eb781997b7354fbcbc0e8f36a18a5f16695652
 ---
 
 ## 环境准备
@@ -26,10 +26,13 @@ content_hash: sha256:396f731e25eb37235e7bbb021e28c06c65835bc331349b881299bcdaf4b
 
 在申请权限前，请确保符合[权限使用的基本原则](app-permission-mgmt-overview.md#权限使用的基本原则)。然后在工程模块对应的[module.json5配置文件](module-configuration-file.md)中"requestPermissions"标签下申请实际所需的开发权限。
 
-| 应用能力 | 需要权限 |
-| --- | --- |
-| 文件分级管控 | ohos.permission.FILE\_GUARD\_MANAGER  ohos.permission.SET\_FILE\_GUARD\_POLICY |
-| 企业恢复密钥 | ohos.permission.ENTERPRISE\_RECOVERY\_KEY |
+| 应用能力 | 使用场景 | 需要权限 |
+| --- | --- | --- |
+| 文件分级管控 | 企业应用进行公共目录扫描及设置文件扩展属性。 | ohos.permission.FILE\_GUARD\_MANAGER |
+| 文件分级管控 | 企业应用下发文件管控策略。 | ohos.permission.SET\_FILE\_GUARD\_POLICY |
+| 文件分级管控 | 企业应用可以获取指定文件的写权限，并修改文件。 | ohos.permission.FILE\_GUARD\_FILE\_WRITE |
+| 企业恢复密钥 | 企业应用管理企业级恢复密钥。 | ohos.permission.ENTERPRISE\_RECOVERY\_KEY |
+| 加密U盘管理 | 企业应用挂载或卸载加密U盘的加密区与交换区。 | ohos.permission.ENTERPRISE\_ENCRYPT\_BLOCK\_DEVICE |
 
 例如：
 
@@ -42,7 +45,13 @@ content_hash: sha256:396f731e25eb37235e7bbb021e28c06c65835bc331349b881299bcdaf4b
     "name": "ohos.permission.SET_FILE_GUARD_POLICY"
   },
   {
+    "name": "ohos.permission.FILE_GUARD_FILE_WRITE"
+  },
+  {
     "name": "ohos.permission.ENTERPRISE_RECOVERY_KEY"
+  },
+  {
+    "name": "ohos.permission.ENTERPRISE_ENCRYPT_BLOCK_DEVICE"
   }
 ]
 ```

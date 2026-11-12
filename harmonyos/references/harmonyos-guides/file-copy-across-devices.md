@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/file-copy-acr
 title: 跨设备文件拷贝
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 分布式文件系统 > 跨设备文件拷贝
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:18+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:0b9d5ffc75dd16b2bf0a2c96aa1ce0818a394685e3b598cb5df97c877b3c5aae
+scraped_at: 2026-11-12T09:51:25+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:562768ae9fc5708e9f96dfab85a124153abd474657cf4a5d06c3f2e9a91fee35
 ---
 
 分布式文件系统为应用提供了跨设备文件拷贝的能力，开发者可以通过[@ohos.file.fs (文件管理)](../harmonyos-references/js-apis-file-fs.md)进行跨设备拷贝文件。例如：多设备数据流转的场景，设备组网互联之后，设备A上的应用可将沙箱文件拷贝到设备A的分布式目录下。设备B在粘贴时，从B设备的分布式目录下将文件拷贝到对应的沙箱文件中。
@@ -45,10 +45,9 @@ content_hash: sha256:0b9d5ffc75dd16b2bf0a2c96aa1ce0818a394685e3b598cb5df97c877b3
    将A设备的待拷贝沙箱文件拷贝到A设备的分布式目录下。
 
    ```ts
-   import { fileIo } from '@kit.CoreFileKit';
+   import { fileIo, fileUri } from '@kit.CoreFileKit';
    import { common } from '@kit.AbilityKit';
    import { BusinessError } from '@kit.BasicServicesKit';
-   import { fileUri } from '@kit.CoreFileKit';
    ```
 
    ```typescript
@@ -86,10 +85,9 @@ content_hash: sha256:0b9d5ffc75dd16b2bf0a2c96aa1ce0818a394685e3b598cb5df97c877b3
    B设备在获取A设备沙箱文件时，从B设备的分布式目录下将对应的文件拷贝走，以此完成跨设备拷贝。
 
    ```ts
-   import { fileIo } from '@kit.CoreFileKit';
+   import { fileIo, fileUri } from '@kit.CoreFileKit';
    import { common } from '@kit.AbilityKit';
    import { BusinessError } from '@kit.BasicServicesKit';
-   import { fileUri } from '@kit.CoreFileKit';
    import { distributedDeviceManager } from '@kit.DistributedServiceKit';
    ```
 

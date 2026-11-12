@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.appMemoryOptimizer (应用内存优化器)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.appMemoryOptimizer (应用内存优化器)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:51:41+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:3c819337c9573820019feb12e5e8647387b6af010303b65280cb3c4ae3e65a53
+scraped_at: 2026-11-12T09:53:28+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d9e78344a2f1dd5ddd3da6f6daa49cbc2866b4c9526b0cce216fa98b366464b9
 ---
 
 appMemoryOptimizer提供应用内存优化的能力，包括释放指定文件的文件页缓存、释放指定模块的文件页缓存等。例如，应用进入后台或设备内存紧张时，调用evictFilePages释放已加载文件的文件页缓存，可降低应用自身的内存占用。
@@ -130,6 +130,6 @@ try {
       console.error(`EvictModuleFilePages failed, error code: ${err.code}, error msg: ${err.message}.`);
     });
 } catch (error) {
-  console.error('EvictFilePages failed, error: ' + JSON.stringify(error));
+  console.error('EvictModuleFilePages failed, error: ' + JSON.stringify(error));
 }
 ```

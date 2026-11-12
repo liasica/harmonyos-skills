@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicemanager
 title: 分布式设备管理开发指南
 breadcrumb: 指南 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > 分布式设备管理开发指南
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:35+08:00
-doc_updated_at: 2026-09-17
+scraped_at: 2026-11-12T09:51:44+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:d286a72692bdc35e0f428c77d86f70e43e22760b36f25609e7362df44b8f63c2
 ---
 

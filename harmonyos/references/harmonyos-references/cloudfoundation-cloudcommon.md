@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cloudfoun
 title: cloudCommon (公共模块)
 breadcrumb: API参考 > 应用服务 > Cloud Foundation Kit（云开发服务） > ArkTS API > cloudCommon (公共模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:52+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:10d62b25beff8f39583ec7011c0352327e82add1f10e33941e4fefb3b61020bd
+scraped_at: 2026-11-12T09:57:14+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:47195b3e8de43a772a06e3d759acb7e82f1073b203a85758353b731e280451d2
 ---
 
 本模块提供初始化云开发服务的能力。
@@ -63,7 +63,7 @@ cloudCommon.init({
   authProvider: authProvider,
   functionOptions: { timeout: 10 * 1000 },
   storageOptions: { mode: request.agent.Mode.BACKGROUND, network: request.agent.Network.ANY },
-  databaseOptions: { schema: 'schema.json', traceId: 'traceId' }
+  databaseOptions: { schema: 'schema.json', traceId: '1234567890abcdef' }
 });
 ```
 
@@ -169,7 +169,7 @@ getAccessToken(isForceRefresh: boolean): Promise<string>
        authProvider: authProvider,
        functionOptions: { timeout: 10 * 1000 },
        storageOptions: { mode: request.agent.Mode.BACKGROUND, network: request.agent.Network.ANY },
-       databaseOptions: { schema: 'schema.json', traceId: 'traceId' }
+       databaseOptions: { schema: 'schema.json', traceId: '1234567890abcdef' }
      });
      ```
 * 方式二：
@@ -225,7 +225,7 @@ getAccessToken(isForceRefresh: boolean): Promise<string>
        authProvider: authProvider,
        functionOptions: { timeout: 10 * 1000 },
        storageOptions: { mode: request.agent.Mode.BACKGROUND, network: request.agent.Network.ANY },
-       databaseOptions: { schema: 'schema.json', traceId: 'traceId' }
+       databaseOptions: { schema: 'schema.json', traceId: '1234567890abcdef' }
      });
      ```
 

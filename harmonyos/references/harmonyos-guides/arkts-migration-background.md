@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-migrati
 title: ArkTS语法适配背景
 breadcrumb: 指南 > 基础入门 > 学习ArkTS语言 > 从TypeScript到ArkTS的适配指导 > ArkTS语法适配背景
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:41+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:50:56+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:bd4c785a937c932e2ecb5e83f41fb947fa7728eb83d1f266f2556008f067a771
 ---
 

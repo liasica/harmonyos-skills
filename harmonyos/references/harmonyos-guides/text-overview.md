@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/text-overview
 title: 文本开发概述
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 文本开发概述
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:18+08:00
+scraped_at: 2026-11-12T09:52:12+08:00
 doc_updated_at: 2026-03-09
-content_hash: sha256:e57be74f77157298bb6bdb9d2dbef639f0592567c6f6f38f5fdfa97664e083c8
+content_hash: sha256:973d15f5a43ab8a760eecc0359ea83830838a26b0a2f2f7e3b34dede1a743294
 ---
 
 应用在开发和布局时，经常需要针对文本元素和内容进行排版、测量、绘制和显示等。字体引擎开发框架提供了一系列接口能力用于支持应用布局文本和管理字体。
@@ -14,7 +14,7 @@ content_hash: sha256:e57be74f77157298bb6bdb9d2dbef639f0592567c6f6f38f5fdfa97664e
 
 **图1** 字体引擎能力结构图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/m_QbEvmHRMC3dfbMtoNcYg/zh-cn_image_0000002779691126.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/7hM_MCK3QHq_kK1OgfjsHQ/zh-cn_image_0000002786360042.png)
 
 当前字体引擎开发框架支持在应用中对文字、emoji表情、placeholder等文本元素进行塑形、排版、测量和绘制显示。
 
@@ -34,4 +34,4 @@ content_hash: sha256:e57be74f77157298bb6bdb9d2dbef639f0592567c6f6f38f5fdfa97664e
 
 **图2** 文本测量与文本绘制显示的实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/I7Y7I4f5Qe-0KYSazt1UDA/zh-cn_image_0000002809010747.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/E2w5MoHOR3CX-u_r1NFnog/zh-cn_image_0000002815559463.jpg)

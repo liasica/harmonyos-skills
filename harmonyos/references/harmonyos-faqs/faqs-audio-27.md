@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-audio-27
 title: 应用拉起麦克风导致播放中的音频中断
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音频（Audio） > 应用拉起麦克风导致播放中的音频中断
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:43+08:00
-doc_updated_at: 2026-07-30
-content_hash: sha256:93080b823b4c83080df5163e249fb074eb80a15e099ffdb8d5306cea0fcaeb22
+scraped_at: 2026-11-12T09:59:46+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:5b205327787e40e7f45cedd15a9f1ef759e6fcb166023f3b34d74d1562cf677a
 ---
 
 ## 问题现象
@@ -17,7 +17,7 @@ content_hash: sha256:93080b823b4c83080df5163e249fb074eb80a15e099ffdb8d5306cea0fc
 * [Audio Kit简介](../harmonyos-guides/audio-kit-intro.md)：Audio Kit（音频服务）旨在提供场景化的音频播放和录制接口，助力开发者快速构建音频高清采集及沉浸式播放能力。
 * [AVSession Kit简介](../harmonyos-guides/avsession-overview.md)：AVSession Kit（Audio & Video Session Kit，音视频播控服务）是系统提供的音视频管控服务，用于统一管理系统中所有音视频行为，帮助开发者快速构建音视频统一展示和控制能力。
 * [音频焦点和音频会话介绍](../harmonyos-guides/audio-playback-concurrency.md)：在应用播放或录制声音时，常出现与其他音频流的并发或中断情况，这对用户体验造成显著影响。系统预设的默认音频焦点策略，主要依据音频流类型（即播放流的StreamUsage和录制流的SourceType）及音频流启动的顺序进行决策。若默认的音频焦点策略无法满足特定场景的需求，应用程序可利用音频会话（AudioSession），调整本应用音频流所采用的音频焦点策略。
-* [焦点模式](../harmonyos-guides/audio-playback-concurrency.md#焦点模式)：针对同一应用创建的多个音频流，应用可通过设置焦点模式（InterruptMode），选择由应用自主管控，或由系统统一管理。
+* [焦点模式](../doccenter-capabilities/audio-playback-concurrency.md#同应用内焦点管理)：针对同一应用创建的多个音频流，应用可通过设置焦点模式（InterruptMode），选择由应用自主管控，或由系统统一管理。
 * [音频会话（AudioSession）使用流程](../harmonyos-guides/audio-playback-concurrency-audio-session-overview.md#音频会话使用场景概述)。
 * [使用AudioSession管理应用音频焦点(ArkTS)](../harmonyos-guides/audio-session-management.md)：对于涉及多个音频流并发播放的场景，系统已预设了默认的音频焦点策略，该策略将对所有音频流（包括播放和录制）实施统一的焦点管理。
 

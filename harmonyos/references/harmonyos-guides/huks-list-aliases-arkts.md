@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-list-ali
 title: 查询密钥别名集(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 其他操作 > 查询密钥别名集 > 查询密钥别名集(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:33+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d5aa99128d06caee7ad5b43cf96ec524617ffedafff36ff2a827f4d5d12d68ca
+scraped_at: 2026-11-12T09:51:41+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:2051f21b5b1f92ef28fdd83c63a250599ae7584616dcd9b4a1806a118953daa6
 ---
 
 HUKS提供了接口供应用查询密钥别名集。
@@ -25,7 +25,7 @@ HUKS提供了接口供应用查询密钥别名集。
 /*
  * 以下查询密钥别名集Promise操作使用为例
  */
-import { huks } from '@kit.UniversalKeystoreKit'
+import { huks } from '@kit.UniversalKeystoreKit';
 
 async function testListAliases() {
   /* 1.初始化密钥属性集 */
@@ -42,7 +42,7 @@ async function testListAliases() {
   try {
     /* 2.查询密钥别名集 */
     let result: huks.HuksListAliasesReturnResult = await huks.listAliases(queryOptions);
-    console.info(`promise: listAliases success`);
+    console.info(`promise: listAliases success, result = ${JSON.stringify(result)}`);
   } catch (error) {
     console.error(`promise: listAliases fail`);
     throw (error as Error);

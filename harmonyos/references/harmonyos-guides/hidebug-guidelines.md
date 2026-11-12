@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hidebug-guide
 title: HiDebug能力概述
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 系统调试信息获取 > HiDebug能力概述
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:00+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:1111399b4d832ad926eb16c4834e7768830965e6fb8d731f5f87383907b3cf65
+scraped_at: 2026-11-12T09:51:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8d78ae754b7b8ffec6f910cfe814dc58e91c2516e83e091f802f22d922753f59
 ---
 
 HiDebug可用于获取系统或应用进程的内存、CPU和GPU等数据，以及开启进程Trace采集。
@@ -217,7 +217,7 @@ ARM64架构函数栈帧的结构如下图所示：
 
 **图1**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/_DJMHbWiStOmyzqAf2mseg/zh-cn_image_0000002779690904.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/b8ppB_NLSBOjxVqCtNe_Sw/zh-cn_image_0000002815399317.png)
 
 FP：栈顶指针，指向一个栈帧的顶部，当函数发生跳转时，会记录当时的栈的起始位置。
 
@@ -360,6 +360,17 @@ HiDebug提供修改转储堆快照级别的接口。
 | --- | --- |
 | OH\_HiDebug\_StartProfiler | 按指定类型启动资源分配栈信息采集，须与OH\_HiDebug\_StopProfiler配对使用。  **说明**：从API version 24开始，支持该接口。 |
 | OH\_HiDebug\_StopProfiler | 停止资源分配栈信息采集，须与OH\_HiDebug\_StartProfiler配对使用。  **说明**：从API version 24开始，支持该接口。 |
+| OH\_HiDebug\_CreateProfilerOptions | 创建资源Profiler配置对象。须与OH\_HiDebug\_DestroyProfilerOptions配对使用。  **说明**：从API版本26.0.1开始，支持该接口。 |
+| OH\_HiDebug\_DestroyProfilerOptions | 释放通过OH\_HiDebug\_CreateProfilerOptions创建的配置对象。  **说明**：从API版本26.0.1开始，支持该接口。 |
+| OH\_HiDebug\_SetMaxAsyncNestingDepth | 设置异步调用最大嵌套深度（也称为最大嵌套层数）。  **说明**：从API版本26.0.1开始，支持该接口。 |
+| OH\_HiDebug\_SetMaxAsyncTaskStackDepth | 设置异步任务函数的最大回栈深度。  **说明**：从API版本26.0.1开始，支持该接口。 |
+| OH\_HiDebug\_SetSampleIntervalBytes | 设置采样间隔，单位字节。  **说明**：从API版本26.0.1开始，支持该接口。 |
+| OH\_HiDebug\_SetStatisticsIntervalSec | 设置统计间隔，单位秒。  **说明**：从API版本26.0.1开始，支持该接口。 |
+| OH\_HiDebug\_SetMaxStackDepth | 设置最大回栈深度。  **说明**：从API版本26.0.1开始，支持该接口。 |
+| OH\_HiDebug\_SetFilterSize | 设置内存分配过滤大小。  **说明**：从API版本26.0.1开始，支持该接口。 |
+| OH\_HiDebug\_SetMaxDurationSec | 设置最大采集时长，单位秒。  **说明**：从API版本26.0.1开始，支持该接口。 |
+| OH\_HiDebug\_SetStackTraceMode | 设置调用栈追踪模式，用于配置资源采集时已销毁调用栈追踪的处理方式。  **说明**：从API版本26.0.1开始，支持该接口。 |
+| OH\_HiDebug\_StartProfilerWithOptions | 按指定资源类型和配置开启资源分配栈信息采集。须与OH\_HiDebug\_StopProfiler配对使用。  **说明**：从API版本26.0.1开始，支持该接口。 |
 
 ## 导出内存快照
 

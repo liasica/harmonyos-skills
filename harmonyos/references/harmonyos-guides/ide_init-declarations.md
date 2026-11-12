@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_init-decl
 title: "@typescript-eslint/init-declarations"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/init-declarations
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:09+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:11725b35129249d8cce07c70629cfe89ad4a88f14e8e310259438f104d622054
+scraped_at: 2026-11-12T09:52:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b1f4ad4a061930838dad0a404530b283102b06ded676cf5d17d442159a5b3b87
 ---
 
 禁止或者要求在变量声明中进行初始化。
@@ -55,4 +55,4 @@ export let qux: number;
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

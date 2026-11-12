@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/accessibility
 title: 自定义无障碍滚动步数
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 自定义无障碍滚动步数
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:44+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:51:00+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:33ae003562b3d2a6b7cf997176678c50d836a2a23841a1c812558edd1d44e799
 ---
 

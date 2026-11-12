@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.adminManager (admin权限管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.adminManager (admin权限管理)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:50:23+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:3ca961e1d70c931bf33ce8b1d541bc2cf46323d273e1fb11006c6c44118784db
+scraped_at: 2026-11-12T09:56:05+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:38a6c985487816a3f43e6a5f6e400bef585e7d085ae235dd3753167044f20762
 ---
 
 本模块为企业MDM应用提供admin权限管理能力，包括激活/解除激活admin权限、事件订阅、委托授权等。
@@ -432,12 +432,6 @@ startAdminProvision(admin: Want, type: AdminType, context: common.Context, param
 | context | [common.Context](js-apis-app-ability-common.md#context) | 是 | 管理应用的上下文信息。 |
 | parameters | Record<string, string> | 是 | 自定义参数信息，其中Key值必须包含："activateId"，可以包含"customizedInfo"、"localDeactivationPolicy"。  - activateId：项目激活ID。  - customizedInfo：企业自定义信息。  - localDeactivationPolicy：本地延迟取消激活时间（单位：小时），端侧传入时长要小于等于云侧配置时长，否则会激活失败并提示为无效的激活参数，实际生效以端侧传入时长为准，从API version 22开始支持。 |
 
-**注意** 
-
-1、此接口只能在企业设备上生效。
-
-2、参数credential为激活凭证，该激活凭证支持管理员通过HEM平台申请，[申请指导](https://developer.huawei.com/business/cn/doc/HEM/hem_developer_faq_emmwenti_pc_mdmazhjh-0000002540608338#section184382913281)。 |
-
 **错误码**：
 
 以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
@@ -591,7 +585,7 @@ adminManager.disableDeviceAdmin(wantTemp).catch((err: BusinessError) => {
 
 enableSelfDeviceAdmin(admin: Want, credential: string): void
 
-在企业设备中，MDM应用没有预置激活的场景下，MDM应用可以通过该接口实现自激活。该接口仅支持激活MDM应用自身，不支持激活其他MDM应用；支持的激活类型包括超级设备管理应用和普通设备管理应用。
+在企业设备中，MDM应用没有预置激活的场景下，MDM应用可以通过该接口实现自激活。调用此接口前，此设备必须通过[HEM商用部署](https://developer.huawei.com/business/cn/doc/HEM/hem_user-guide_add-reseller_management-resellerr-0000002469112100)。该接口仅支持激活MDM应用自身，不支持激活其他MDM应用；支持的激活类型包括超级设备管理应用和普通设备管理应用。
 
 **注意** 
 
@@ -653,6 +647,86 @@ try {
 }
 ```
 
+## adminManager.getAdminInfos
+
+getAdminInfos(): Array<AdminInfo>
+
+查询当前用户下已激活的设备管理应用列表，仅包含超级设备管理应用和普通设备管理应用，不包含BYOD设备管理应用。该接口仅支持超级设备管理应用调用。
+
+**起始版本：** 26.0.1
+
+**需要权限：** ohos.permission.ENTERPRISE\_MANAGE\_DEVICE\_ADMIN
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Array<[AdminInfo](js-apis-enterprise-adminmanager.md#admininfo)> | 已激活的设备管理应用列表。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[企业设备管理错误码](errorcode-enterprisedevicemanager.md)和[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 9200001 | The application is not an administrator application of the device. |
+| 9200002 | The administrator application does not have permission to manage the device. |
+| 9200016 | Service timeout. |
+
+**示例：**
+
+```ts
+import { adminManager } from '@kit.MDMKit';
+ 
+try {
+  let result: boolean = adminManager.isSelfSuperAdmin();
+  if (result) {
+    let adminInfos: Array<adminManager.AdminInfo> = adminManager.getAdminInfos();
+    console.info(`Succeeded in getting admin infos :${JSON.stringify(adminInfos)}`);
+  } else {
+    console.error('current application is not SDA');
+  }
+} catch (err) {
+  console.error(`Failed to get admin infos. Code: ${err.code}, message: ${err.message}`);
+}
+```
+
+## adminManager.isSelfSuperAdmin
+
+isSelfSuperAdmin(): boolean
+
+查询当前应用是否被激活为[超级设备管理应用](../harmonyos-guides/mdm-kit-term.md#super-device-admin-sda超级设备管理员)。
+
+**起始版本：** 26.0.1
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 返回true表示当前应用被激活为超级设备管理应用，返回false表示当前应用未被激活为超级设备管理应用。 |
+
+**示例：**
+
+```ts
+import { adminManager } from '@kit.MDMKit';
+ 
+try {
+  let result: boolean = adminManager.isSelfSuperAdmin();
+  console.info(`Succeeded in querying admin is super admin or not : ${result}`);
+} catch (err) {
+  console.error(`Failed to query admin is super admin or not. Code: ${err.code}, message: ${err.message}`);
+}
+```
+
 ## ManagedEvent
 
 可订阅的系统管理事件。
@@ -682,6 +756,8 @@ try {
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
+| ADMIN\_TYPE\_NORMAL | 0x00 | [普通设备管理应用](../harmonyos-guides/mdm-kit-term.md#device-admin-da普通设备管理员)。  **起始版本：** 26.0.1 |
+| ADMIN\_TYPE\_SUPER | 0x01 | [超级设备管理应用](../harmonyos-guides/mdm-kit-term.md#super-device-admin-sda超级设备管理员)。  **起始版本：** 26.0.1 |
 | ADMIN\_TYPE\_BYOD | 0x02 | BYOD设备管理应用。 |
 
 ## Policy20+
@@ -696,3 +772,19 @@ try {
 | --- | --- | --- |
 | BLOCK\_LIST | 0 | 禁用名单。 |
 | TRUST\_LIST | 1 | 允许名单。 |
+
+## AdminInfo
+
+设备管理应用信息。
+
+**起始版本：** 26.0.1
+
+**系统能力：** SystemCapability.Customization.EnterpriseDeviceManager
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| type | [AdminType](js-apis-enterprise-adminmanager.md#admintype15) | 否 | 否 | 设备管理应用类型。 |
+| bundleName | string | 否 | 否 | 设备管理应用所在应用的包名。 |
+| abilityName | string | 否 | 否 | 企业设备管理扩展能力的abilityName。 |

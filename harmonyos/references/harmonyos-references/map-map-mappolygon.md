@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-m
 title: Interface (MapPolygon)
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (MapPolygon)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:58+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:de5076aeddeb6b9f828cd0acfbc838b644d457d496c25ac348f7b11cdd496d2c
+scraped_at: 2026-11-12T09:57:26+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:1df1e9534604d6c5aac6cfd891d66a4e39307270ad3e2a0a9a1b092f61d9ad32
 ---
 
 ## 导入模块
@@ -439,20 +439,20 @@ setPoints(points: Array<mapCommon.LatLng>): void
 ```typescript
 let points: Array<mapCommon.LatLng> = [
   {
-    latitude: 31.98,
-    longitude: 115.76
+    latitude: 30,
+    longitude: 120
   },
   {
-    latitude: 31.98,
-    longitude: 118.76
+    latitude: 30,
+    longitude: 124
   },
   {
-    latitude: 35.98,
-    longitude: 118.76
+    latitude: 35,
+    longitude: 124
   },
   {
-    latitude: 35.98,
-    longitude: 118.76
+    latitude: 35,
+    longitude: 120
   }
 ];
 mapPolygon.setPoints(points);

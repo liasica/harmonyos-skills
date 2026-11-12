@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-uiconte
 title: 使用组件截图（ComponentSnapshot）
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > UI系统场景化能力 > 使用组件截图（ComponentSnapshot）
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:04+08:00
-doc_updated_at: 2026-09-04
+scraped_at: 2026-11-12T09:51:16+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:e3ddfbdf2716089c7acf6305fb668fae25ffec0705ffe57d599852a05c00677b
 ---
 

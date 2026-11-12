@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 获取手机号和风险等级Button
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 场景化Button > 获取手机号和风险等级Button
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:28+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:0f66d6363fdc349547a368133797f449b9b138fbbad07ecd92125cd8e29dab85
+scraped_at: 2026-11-12T09:52:35+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:299f4699aeb772c9464bc68f0ad9e772925f94cde2dc59cd3879acf79393df5a
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:0f66d6363fdc349547a368133797f449b9b138fbbad07ecd92125cd8e29
 
 ## 约束与限制
 
-获取手机号和风险等级Button支持Phone、Tablet、PC/2in1和TV设备。
+获取手机号和风险等级Button支持Phone、Tablet、PC/2in1和TV设备，并且从API版本26.0.1开始，新增支持Car设备。
 
 ## 前提条件
 

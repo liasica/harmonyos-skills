@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pen-stylu
 title: stylusInteraction (手写笔交互功能)
 breadcrumb: API参考 > 系统 > 硬件 > Pen Kit（手写笔服务） > ArkTS API > stylusInteraction (手写笔交互功能)
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:38+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:56:11+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:57db3c0865ff4c6dbddbd68087b45f5aac0d931d26736424d8c8d4e641fb347c
 ---
 
@@ -225,7 +225,7 @@ try {
     console.info(`got accelerometer event, time: ${event.timestamp}`);
     for (let i = 0; i < event.accelerometerData.length; i++) {
       console.info(`accelerometer data: x=${event.accelerometerData[i].x}, y=${event.accelerometerData[i].y}
-      , z=${event.accelerometerData[i].z}`);
+  , z=${event.accelerometerData[i].z}`);
     }
   });
 } catch (error) {
@@ -315,17 +315,17 @@ onGyroscope(receiver: Callback<GyroscopeEvent>): void
 **示例：**
 
 ```typescript
-try {
-  stylusInteraction.onGyroscope((event: stylusInteraction.GyroscopeEvent) => {
-    console.info(`got gyroscope event, time: ${event.timestamp}`);
-    for (let i = 0; i < event.gyroscopeData.length; i++) {
-      console.info(`gyroscope data: x=${event.gyroscopeData[i].x}, y=${event.gyroscopeData[i].y}
-  , z=${event.gyroscopeData[i].z}`);
-    }
-  });
-} catch (error) {
-  console.error(`${error.code}: ${error.message}`);
-}
+  try {
+    stylusInteraction.onGyroscope((event: stylusInteraction.GyroscopeEvent) => {
+      console.info(`got gyroscope event, time: ${event.timestamp}`);
+      for (let i = 0; i < event.gyroscopeData.length; i++) {
+        console.info(`gyroscope data: x=${event.gyroscopeData[i].x}, y=${event.gyroscopeData[i].y}
+, z=${event.gyroscopeData[i].z}`);
+      }
+    });
+  } catch (error) {
+    console.error(`${error.code}: ${error.message}`);
+  }
 ```
 
 ## stylusInteraction.offGyroscope

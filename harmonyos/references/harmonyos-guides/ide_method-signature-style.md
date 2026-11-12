@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_method-si
 title: "@typescript-eslint/method-signature-style"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/method-signature-style
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:09+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:2b49925013adb9e7b36b3783ead8b2e41dec9c6f69ac75cfd5007f18319eaccc
+scraped_at: 2026-11-12T09:52:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:19cdf00f86fe418903d329256e71942516265a7bf9850c16de14f18894d5e6ba
 ---
 
 定义函数类型的属性时，强制使用特定的风格。
@@ -53,4 +53,4 @@ export interface T1 {
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

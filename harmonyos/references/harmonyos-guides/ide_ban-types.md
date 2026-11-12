@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_ban-types
 title: "@typescript-eslint/ban-types"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/ban-types
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:08+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:9cfa99c9727f47d3b9493cb80f902898e00dbaaf8ec4cca856fb8e16a472a260
+scraped_at: 2026-11-12T09:52:54+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:bd7c19d1769fed7479b5960a768e6de69478f3b5a8341ba338e6aa0ae6b211bf
 ---
 
 不允许使用某些类型。
@@ -98,4 +98,4 @@ export { str, bool, num, bigInt, func };
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

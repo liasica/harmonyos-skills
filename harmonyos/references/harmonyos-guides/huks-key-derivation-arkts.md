@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-deri
 title: 密钥派生(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥使用 > 密钥派生 > 密钥派生(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:37+08:00
-doc_updated_at: 2026-10-14
+scraped_at: 2026-11-12T09:51:40+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:d9d9e249d8227399bb9d82bd8919a23e0d9952966f5e0101d00189a2e1736a1e
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-err
 title: hdc命令失败错误码
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 调试错误码 > hdc命令失败错误码
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:16+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:cd797604f474ea7ee5dc9369da0988500cb33a08353593c0d43b92ca47a0fd7c
+scraped_at: 2026-11-12T09:53:04+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3b11cb1fad7dd1cc5424ba035b35fbc9a9233898e3ee45914c55cf66bc66d6d7
 ---
 
 ## 00404035 安装hap包超时
@@ -200,10 +200,48 @@ This app is not installed or not signed with a debug signature.
 
 **可能原因**
 
-1. 通过命令设置应用进入等待调试模式失败，应用没安装或者不是debug签名；
+1. 通过命令设置应用进入等待调试模式失败，应用没安装或者不是debug签名。
 2. 设备连接异常，执行命令失败。
 
 **处理步骤**
 
-1. 检查应用是否已安装，应用签名是否使用debug签名；
+1. 检查应用是否已安装，应用签名是否使用debug签名。
 2. 检查设备连接是否正常，可以尝试重新连接设备，再启动等待调试。
+
+## 00404056 安装bin包失败
+
+**错误信息**
+
+Install bin failed.
+
+**错误描述**
+
+安装bin包失败。
+
+**可能原因**
+
+1. 设备处于省电模式。
+2. 设备连接异常或者hdc服务异常。
+
+**处理步骤**
+
+1. 检查设备连接是否正常，可以尝试重新连接设备，再重新启动。
+2. 若有具体安装错误码，参考[轻量级智能穿戴安装app包常见错误](../lite-wearable-guides/lite-wearable-bpta-guide.md#section10166603100)。
+
+## 00404057 Lite Wearable应用调试失败
+
+**错误信息**
+
+Lite Wearable apps run on wearable devices and cannot be debugged.
+
+**错误描述**
+
+Wearable设备运行Lite Wearable应用时不支持调试，仅支持运行。
+
+**可能原因**
+
+当前使用的Wearable设备仅支持运行Lite Wearable应用，不支持调试。
+
+**处理步骤**
+
+通过Run运行应用，不要使用Debug。

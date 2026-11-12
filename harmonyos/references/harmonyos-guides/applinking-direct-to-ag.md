@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/applinking-di
 title: 通过直达应用市场能力跳转至应用市场下载详情页
 breadcrumb: 指南 > 应用服务 > App Linking Kit（应用链接服务） > 通过直达应用市场能力跳转至应用市场下载详情页
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:26+08:00
-doc_updated_at: 2026-08-03
-content_hash: sha256:4bfde2fd4e6fd68fb6d0b26b0b9dbe043a35f334b38d2cce06f5a0920086edb5
+scraped_at: 2026-11-12T09:52:20+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:be0a9e4b7e605432bf10cd56d405a063a199e395c58968a8b74b6586ed815ab1
 ---
 
 ## 场景介绍
@@ -31,24 +31,27 @@ content_hash: sha256:4bfde2fd4e6fd68fb6d0b26b0b9dbe043a35f334b38d2cce06f5a092008
 
 ## 约束与限制
 
-只能获取通过App Linking域名校验的应用链接，请参见[在AGC为应用创建关联的网址域名](app-linking-startupapp.md#在agc为应用创建关联的网址域名)。
+只能获取通过App Linking域名校验的应用链接，请参见[在HarmonyOS 开发者中心为应用创建关联的网址域名](app-linking-startupapp.md#在harmonyos-开发者中心为应用创建关联的网址域名)。
+
+支持接入直达应用市场能力的服务：华为分享、碰一碰分享、短信、畅联以及其他支持openLink API的场景。
+
+暂不支持接入的服务：浏览器、扫码（规划中，上线后自动生效，无需适配）。
 
 ## 开发步骤
 
 1. 配置直达应用市场能力。
 
-   1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，点击“开发与服务”。
-   2. 在项目列表中点击目标方应用所在的项目。
-   3. 在左侧导航栏中选择“增长 > App Linking > 应用链接”，点击“操作”列的“直达应用市场”。
+   1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console#/)，进入“应用管理”页面。
+   2. 选择目标应用后，左侧导航栏选择“推广运营 > 增长运营 > App Linking > 应用链接”，点击“操作”列的“直达应用市场”。
 
       **说明** 
 
-      只有[在AGC创建关联的网址域名](app-linking-startupapp.md#在agc为应用创建关联的网址域名)状态为“成功”时，才支持配置直达应用市场链接。
+      只有[在HarmonyOS 开发者中心创建关联的网址域名](app-linking-startupapp.md#在harmonyos-开发者中心为应用创建关联的网址域名)状态为“成功”时，才支持配置直达应用市场链接。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/VteakcTQTC-BYb-T73lISg/zh-cn_image_0000002779691280.png)
-   4. 在配置页面，下拉选择与该域名关联的在架应用，为应用配置直达应用市场链接。
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/KQBFtj4MQV-X2elnN38TYQ/zh-cn_image_0000002786360196.png)
+   3. 在配置页面，下拉选择与该域名关联的在架应用，为应用配置直达应用市场链接。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/So3rdK1TR6u5Ih3lc8QWhQ/zh-cn_image_0000002809010901.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/NUWL4isEQQydqKESC8vpWw/zh-cn_image_0000002815559617.png)
 
       * 可以点击“添加应用”为多个应用配置直达链接，当该域名下关联的在架应用全部配置后，无法再添加应用。
       * 可以根据以下规则配置直达链接。
@@ -71,7 +74,7 @@ content_hash: sha256:4bfde2fd4e6fd68fb6d0b26b0b9dbe043a35f334b38d2cce06f5a092008
           path，手动输入精确匹配的路径（不允许以“/”开头，不允许出现双斜杠“//”和“..”，允许包含字母（a-z、A-Z）、数字（0-9）、正斜杠“/”、点“.”、下划线“\_”和连字符“-”）
         + 其他场景需要根据[在module.json5中配置关联的网址域名](app-linking-startupapp.md#在modulejson5中配置关联的网址域名)时配置的path匹配规则进行选择。
       * 可以点击“删除链接”删除当前关联应用的直达应用市场链接。
-   5. 配置完成后，点击页面顶部的“发布”，会跳转到“应用链接”列表页面。
+   4. 配置完成后，点击页面顶部的“发布”，会跳转到“应用链接”列表页面。
 
       如下图，“是否配置直达应用市场”显示“是”，表示链接配置成功。
 
@@ -79,7 +82,7 @@ content_hash: sha256:4bfde2fd4e6fd68fb6d0b26b0b9dbe043a35f334b38d2cce06f5a092008
 
       链接配置成功后，一般需要24~48小时才能生效，请耐心等待。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/m_4tC635QwipaByeDNhbIA/zh-cn_image_0000002809050815.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/Wsm6gBHtQeanmr_e0Drc5A/zh-cn_image_0000002815399701.png)
 2. 验证应用被拉起效果。
 
    * 方式一：将直达应用市场链接地址存入备忘录中，并点击验证该链接是否可以拉起应用。
@@ -151,16 +154,6 @@ content_hash: sha256:4bfde2fd4e6fd68fb6d0b26b0b9dbe043a35f334b38d2cce06f5a092008
 ### 使用ArkWeb拉起目标应用，当目标应用未安装时，会直接跳转到应用市场下载详情页面吗？
 
 当开发者通过系统浏览器或ArkWeb拉起目标应用时，如果目标应用未安装，不会直接跳转应用市场，需要开发者根据自身业务自行实现跳转应用市场的能力。详细可参见“Web和应用的跳转与拉起”开发实践中的“[ArkWeb页面指定应用跳转](navigating-between-web-and-apps.md#arkweb页面指定应用跳转)”章节。
-
-### 哪些服务支持接入App Linking Kit的直达应用市场能力？
-
-支持的服务如下：
-
-华为分享、碰一碰分享、短信、畅联以及其他支持openLink API的场景。
-
-不支持的服务如下：
-
-浏览器、扫码（规划中，上线后自动生效，无需适配）。
 
 ### 直达链接的路径（path、pathStartWith或pathRegex）可以配置多少条？
 

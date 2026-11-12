@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-appl
 title: application_context.h
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > C API > 头文件 > application_context.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e6078d30126117efa17de84b0263afeed0bf9d98556de4f89e562e3347a022cd
+scraped_at: 2026-11-12T09:53:36+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:68add0e1bc76918db36de151efdfc2e55cd89a8a9ac1cbde8f8fbf97dcba29f8
 ---
 
 ## 概述
@@ -47,6 +47,7 @@ content_hash: sha256:e6078d30126117efa17de84b0263afeed0bf9d98556de4f89e562e3347a
 | [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_ApplicationContextGetLaunchParameter(char\* buffer, const int32\_t bufferSize, int32\_t\* writeLength)](capi-application-context-h.md#oh_abilityruntime_applicationcontextgetlaunchparameter) | 获取本应用首次启动UIAbility的WantParams参数。 |
 | [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_ApplicationContextGetLatestParameter(char\* buffer, const int32\_t bufferSize, int32\_t\* writeLength)](capi-application-context-h.md#oh_abilityruntime_applicationcontextgetlatestparameter) | 获取本应用最近一次启动UIAbility的WantParams参数。 |
 | [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_ApplicationContextNotifyPageChanged(const char\* targetPageName, int32\_t targetPageNameLength, int32\_t windowId)](capi-application-context-h.md#oh_abilityruntime_applicationcontextnotifypagechanged) | 该接口仅支持三方框架调用。三方框架每次切换页面时，将目标页面信息（包含目标页面路径、目标页面路径长度、目标页面对应的窗口ID）通知给系统。使系统能够感知到当前应用窗口处于哪个页面，从而进行页面管理。 |
+| [AbilityRuntime\_ErrorCode OH\_AbilityRuntime\_AcquireUIAbilityChildProcessInfos(OH\_AbilityRuntime\_ChildProcessInfosHandle\* infos, uint32\_t\* count)](capi-application-context-h.md#oh_abilityruntime_acquireuiabilitychildprocessinfos) | 获取当前应用的UIAbility子进程信息。 |
 
 ## 函数说明
 
@@ -724,3 +725,30 @@ static bool NotifyPageChanged(napi_env env, napi_callback_info info)
     return true;
 }
 ```
+
+### OH\_AbilityRuntime\_AcquireUIAbilityChildProcessInfos()
+
+```c
+AbilityRuntime_ErrorCode OH_AbilityRuntime_AcquireUIAbilityChildProcessInfos(OH_AbilityRuntime_ChildProcessInfosHandle* infos, uint32_t* count)
+```
+
+**描述**
+
+获取当前应用的UIAbility子进程信息，包括通过[startSelfUIAbilityInChildProcess](js-apis-inner-application-uiabilitycontext.md#startselfuiabilityinchildprocess)接口启动的子进程，以及通过[startAbility](js-apis-inner-application-uiabilitycontext.md#startability-2)接口启动且[StartOptions](js-apis-app-ability-startoptions.md)参数中[processMode](js-apis-app-ability-contextconstant.md#processmode12)设置为NEW\_PROCESS\_ATTACH\_TO\_PARENT模式启动的子进程。
+
+获取到的 infos 使用完毕后需要调用[OH\_AbilityRuntime\_ReleaseChildProcessInfos](capi-child-process-info-h.md#oh_abilityruntime_releasechildprocessinfos)释放，避免内存泄漏。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_AbilityRuntime\_ChildProcessInfosHandle](capi-nativechildprocess-infos.md)\* infos | 输出参数，子进程信息集合句柄的指针，不能为nullptr。调用成功后，\*infos 指向子进程信息集合；使用完毕后需要调用[OH\_AbilityRuntime\_ReleaseChildProcessInfos](capi-child-process-info-h.md#oh_abilityruntime_releasechildprocessinfos)释放。 |
+| uint32\_t\* count | 输出参数，子进程数量，不能为nullptr。调用成功后，\*count 表示当前应用的UIAbility子进程数量；当无子进程时，\*count 为 0。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [AbilityRuntime\_ErrorCode](capi-ability-runtime-common-h.md#abilityruntime_errorcode) | 返回执行结果。  ABILITY\_RUNTIME\_ERROR\_CODE\_NO\_ERROR - 操作成功。  ABILITY\_RUNTIME\_ERROR\_CODE\_PARAM\_INVALID - 传入参数infos或count为nullptr。  ABILITY\_RUNTIME\_ERROR\_CODE\_INTERNAL - 内部错误，例如连接系统服务失败。  详细内容参考AbilityRuntime\_ErrorCode。 |

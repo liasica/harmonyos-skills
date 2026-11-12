@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/online-video-
 title: 在线视频播放卡顿优化
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 媒体开发实践 > 在线视频播放卡顿优化
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:13+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:3075c9941b8957aacb62417799f2b88157e49cfe754adcc9c7ef7d66237b2201
+scraped_at: 2026-11-12T09:52:07+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ab0af2bd5b2726af09d66d06e85a1a5c9be02924a058b1398c216a7214339f85
 ---
 
 ## 概述
@@ -23,7 +23,7 @@ content_hash: sha256:3075c9941b8957aacb62417799f2b88157e49cfe754adcc9c7ef7d66237
 
 **图 1** 缓冲区原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/zbKhwkpnQayVVm7oo6HLuw/zh-cn_image_0000002809050583.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/W-sZJntARWKsKrqbqlCRcg/zh-cn_image_0000002786359958.png)
 
 如上图所示：
 
@@ -59,7 +59,7 @@ AVPlayer的缓冲区工作原理如下：
 
 **图 2** 多码率流切换示例图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/vl7XQjpYRECOwaZDUwKeRw/zh-cn_image_0000002779851018.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/6U4YuX_OS7SutHc6BcBrDg/zh-cn_image_0000002815559379.png)
 
 如上图所示：
 
@@ -144,7 +144,7 @@ public async initAVPlayer(id: string, source: media.MediaSource, strategy: media
 
 **图 3** 视频卡顿率折线图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/fTX556vaRPS9Y1pfZMqXvw/zh-cn_image_0000002779691050.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/wsqp-9pMTCmuFKaxfos2BQ/zh-cn_image_0000002815399463.png)
 
 从实验数据可以看出，当媒体文件大小超过可设置的缓冲区最大值时，缓冲区越大，视频卡顿率越低，将缓冲区设置为最大值20MB，可最大程度减少视频卡顿。
 
@@ -166,7 +166,7 @@ AVPlayer当前默认支持HLS/DASH视频流的码率自适应调节，但此功�
 
 **图 4** 码率调整策略示例流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/gE203NdJQKu7vKlKtiCs4g/zh-cn_image_0000002809010671.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/IB5HhqPXS2CEBFNtYaV7BA/zh-cn_image_0000002786519888.png)
 
 1. 注册码率信息相关回调，包括on('availableBitrates')、on('bitrateDone')、on('videoSizeChange')。
 
@@ -206,7 +206,9 @@ AVPlayer当前默认支持HLS/DASH视频流的码率自适应调节，但此功�
          this.videoInfo.downloadRate = Number(playbackInfo[media.PlaybackInfoKey.DOWNLOAD_RATE]);
          this.downloadRate = this.getRecentDownRate(this.videoInfo.downloadRate);
          this.maxDownloadRate = Math.max(this.downloadRate, this.maxDownloadRate);
-       });
+       }).catch((error: BusinessError) => {
+        Logger.error(`getPlaybackInfo error: ${JSON.stringify(error)}`);
+      });
      }, AVPlayerConstants.PLAYBACK_INTERVAL_MS);
    }
    ```

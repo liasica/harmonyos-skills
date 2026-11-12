@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-oh-packag
 title: oh-package.json5
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > oh-package.json5
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:23:12+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:4ea56a6baece9b8cf9c636c37cf848570e413d4af051661e61ec8440c78369f6
+scraped_at: 2026-11-12T09:53:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:2f40756571b14afe770f55bf8a2896f5763fabc6f69dfe806a99753bdab0bab8
 ---
 
 从OHPM 5.0.0版本开始，支持区分工程级与模块级oh-package.json5配置。其中：
@@ -56,16 +56,17 @@ content_hash: sha256:4ea56a6baece9b8cf9c636c37cf848570e413d4af051661e61ec8440c78
 | **文件配置** | main | 入口 | 必选 | 字符串 | 无 | 指定加载的入口文件。 |
 | types | 类型定义 | 可选 | 字符串 | "" | 指定类型定义的文件名。当用 typescript 定义新的类型，需要提供给其他开发者使用，则需要指定其声明文件，一般为 .d.ts，.d.ets 文件。 |
 | oh-exports | 控制导出模块 | 可选 | 对象 | {} | 通过oh-exports字段控制导出模块中文件，实现包的可见性控制。支持导出目录文件（导出时不校验文件，全量导出目录内容）和特定后缀文件（ets/ts/js）。详情见[oh-exports](ide-oh-package-json5.md#section203908482324)配置示例。 |
-| **兼容性检测相关配置** | compatibleSdkVersion | SDK版本 | 可选 | 字符串 | 无 | 三方库开发者使用的SDK版本，构建时由Hvigor自动填充，提供给SDK做兼容性检测。  在prepublish、publish时，ohpm会对该字段进行检测（非空和长度校验），并根据.ohpmrc中开关 [compability\_log\_level](ide-ohpmrc.md#section96369529419)配置的值进行提示或报错处理。  详情见[兼容性字段配置示例](ide-oh-package-json5.md#section194621247204911)。 |
-| compatibleSdkType | SDK类型 | 可选 | 字符串 | 无 | 三方库开发者使用的SDK类型，构建时由Hvigor自动填充，提供给SDK做兼容性检测, 示例值："OpenHarmony"、"HarmonyOS"。  在prepublish、publish时，ohpm会对该字段进行检测（非空和长度校验），并根据.ohpmrc中开关 [compability\_log\_level](ide-ohpmrc.md#section96369529419)配置的值进行提示或报错处理。  详情见[兼容性字段配置示例](ide-oh-package-json5.md#section194621247204911)。 |
-| obfuscated | 混淆标识 | 可选 | 布尔 | 无 | 三方库是否开启混淆标识，构建时由Hvigor自动填充，提供给SDK做兼容性检测。  在prepublish、publish时，ohpm会对该字段进行检测（非空校验），并根据.ohpmrc中开关 [compability\_log\_level](ide-ohpmrc.md#section96369529419)配置的值进行提示或报错处理。  详情见[兼容性字段配置示例](ide-oh-package-json5.md#section194621247204911)。 |
-| nativeComponents | native so依赖配置 | 可选 | 数组 | 无 | 三方库使用的so包配置，构建时由Hvigor自动填充，提供给SDK做兼容性检测。  对于用户自行引入的so依赖（存放于libs目录），需要用户手动维护该数组，数组单个元素类型为对象，对象内可配置的字段有：name、compatibleSdkVersion、compatibleSdkType。  在prepublish、publish时，如果包内存在so包，则ohpm会对该字段进行检测，并根据.ohpmrc中开关 [compability\_log\_level](ide-ohpmrc.md#section96369529419) 配置的值进行提示或报错处理；反之则不检测该字段。  详情见[兼容性字段配置示例](ide-oh-package-json5.md#section194621247204911)。 |
-| **其他** | artifactType | 类型 | 可选 | 字符串 | "original" | OpenHarmony包制品类型，有两个选项：original、obfuscation。original：源码，即发布源码（.ts/.ets）；obfuscation：混淆代码，即源码经过混淆之后发布上传。 |
+| **兼容性检测相关配置** | compatibleSdkVersion | SDK版本 | 可选 | 字符串 | 无 | 三方库开发者使用的SDK版本，构建时由Hvigor自动填充，提供给SDK做兼容性检测。  在prepublish、publish时，ohpm会对该字段进行检测（非空和长度校验），并根据.ohpmrc中开关[compability\_log\_level](ide-ohpmrc.md#section96369529419)配置的值进行提示或报错处理。  详情见[兼容性字段配置示例](ide-oh-package-json5.md#section194621247204911)。 |
+| compatibleSdkType | SDK类型 | 可选 | 字符串 | 无 | 三方库开发者使用的SDK类型，构建时由Hvigor自动填充，提供给SDK做兼容性检测, 示例值："OpenHarmony"、"HarmonyOS"。  在prepublish、publish时，ohpm会对该字段进行检测（非空和长度校验），并根据.ohpmrc中开关[compability\_log\_level](ide-ohpmrc.md#section96369529419)配置的值进行提示或报错处理。  详情见[兼容性字段配置示例](ide-oh-package-json5.md#section194621247204911)。 |
+| obfuscated | 混淆标识 | 可选 | 布尔 | 无 | 三方库是否开启混淆标识，构建时由Hvigor自动填充，提供给SDK做兼容性检测。  在prepublish、publish时，ohpm会对该字段进行检测（非空校验），并根据.ohpmrc中开关[compability\_log\_level](ide-ohpmrc.md#section96369529419)配置的值进行提示或报错处理。  详情见[兼容性字段配置示例](ide-oh-package-json5.md#section194621247204911)。 |
+| nativeComponents | native so依赖配置 | 可选 | 数组 | 无 | 三方库使用的so包配置，构建时由Hvigor自动填充，提供给SDK做兼容性检测。  对于用户自行引入的so依赖（存放于libs目录），需要用户手动维护该数组，数组单个元素类型为对象，对象内可配置的字段有：name、compatibleSdkVersion、compatibleSdkType。  在prepublish、publish时，如果包内存在so包，则ohpm会对该字段进行检测，并根据.ohpmrc中开关[compability\_log\_level](ide-ohpmrc.md#section96369529419)配置的值进行提示或报错处理；反之则不检测该字段。  详情见[兼容性字段配置示例](ide-oh-package-json5.md#section194621247204911)。 |
+| **其他** | artifactType | 类型 | 可选 | 字符串 | "original" | OpenHarmony包制品类型，有三个选项：original、obfuscation、bytecode。original：源码，即发布源码（.ts/.ets）；obfuscation：混淆代码，即源码经过混淆之后发布上传；bytecode：字节码，对源代码进行混淆处理后，将混淆后的代码编译为.abc文件。 |
 | scripts | 自定义脚本 | 可选 | 对象 | {} | 维护一个脚本别名到脚本内容的映射表，开发者可以通过ohpm run <脚本别名>来触发对应脚本内容的执行。 |
 | hooks | 钩子 | 可选 | 对象 | {} | 安装或卸载的钩子设置，包含 "preInstall", "postInstall", "preUninstall", "postUninstall","preVersion", "postVersion", "prePublish", "postPublish" 字段。仅支持执行当前工程中的 hooks，不支持执行依赖中的 hooks。 |
 | category | 检查规则白名单 | 可选 | 字符串 | {} | 在私仓管理界面配置后自动生成，白名单为分号隔开的字符串列表，每个列表项必须是一个由大小写字母或下划线组成的字符串，包含在白名单中的配置项，不再做规则检查。 |
 | packageType | 包类型 | 可选 | 字符串 | InterfaceHar | 标识模块是否为HSP包，在新建Shared Library时会自动生成该字段，并默认赋值为"InterfaceHar"；Static Library中没有该字段，表示为普通HAR包。 |
 | dependencyMode | BundledHar类型 | 可选 | 字符串 | loose | 该字段由编译构建自动生成，不推荐开发者手动配置。  用于标识当前HAR包编译时是否开启[bundledAllDependencies](ide-hvigor-build-har.md#section121297571296)。若开启填入bundled，若未开启填入loose或缺省。  三方中心仓仅支持bundled和loose两种取值，其他取值会导致校验失败。 |
+| addonSdk | OHPM系统存根包 | 可选 | 布尔 | false | 表示包是否为OHPM系统存根包，true表示是，false表示否。  仅OpenHarmony工程支持。 |
 
 **注意** 
 
@@ -137,13 +138,13 @@ content_hash: sha256:4ea56a6baece9b8cf9c636c37cf848570e413d4af051661e61ec8440c78
 
    ```screen
    {
-    "name": "package_name",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.ts",
-    "author": "",
-    "license": "ISC",
-    "dependencies": {}
+     "name": "package_name",
+     "version": "1.0.0",
+     "description": "",
+     "main": "index.ts",
+     "author": "",
+     "license": "ISC",
+     "dependencies": {}
    }
    ```
 

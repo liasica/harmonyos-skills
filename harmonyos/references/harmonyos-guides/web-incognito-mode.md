@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-incognito
 title: 使用隐私模式
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 设置基本属性和事件 > 使用隐私模式
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:15+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:e4a6f22743d381d1e151048cb5247c687209aa35fd529cccb5f2154986f1bda9
+scraped_at: 2026-11-12T09:51:22+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:6c974f8e7070710f22db05fcdf30528c160841dbdb246a21365cd3bafff2b86f
 ---
 
 使用隐私模式浏览网页时，Cookie、缓存等数据不会写入本地持久化存储；隐私模式的Web组件销毁后，这些数据将被清除，不会保留。
@@ -31,7 +31,7 @@ content_hash: sha256:e4a6f22743d381d1e151048cb5247c687209aa35fd529cccb5f2154986f
     }
   }
   ```
-* 通过[isIncognitoMode](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#isincognitomode11) 判断当前Web组件是否是隐私模式。
+* 通过[isIncognitoMode()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#isincognitomode11) 判断当前Web组件是否是隐私模式。
 
   ```typescript
   import { webview } from '@kit.ArkWeb';
@@ -141,7 +141,7 @@ content_hash: sha256:e4a6f22743d381d1e151048cb5247c687209aa35fd529cccb5f2154986f
               // 以回调方式异步获取指定源的地理位置权限状态。
               webview.GeolocationPermissions.getAccessibleGeolocation(this.origin, (error, result) => {
                 if (error) {
-                  console.error(`getAccessibleGeolocationAsync error: + Code: ${error.code}, message: ${error.message}`);
+                  console.error(`getAccessibleGeolocationAsync error: Code: ${error.code}, message: ${error.message}`);
                   return;
                 }
                 console.info('getAccessibleGeolocationAsync result: ' + result);
@@ -159,7 +159,7 @@ content_hash: sha256:e4a6f22743d381d1e151048cb5247c687209aa35fd529cccb5f2154986f
 
 ## 隐私模式下清除内存中的Web数据
 
-* 通过[deleteAllData](../harmonyos-references/arkts-apis-webview-webstorage.md#deletealldata)清除隐私模式下Web SQL当前使用的所有存储。
+* 通过[deleteAllData()](../harmonyos-references/arkts-apis-webview-webstorage.md#deletealldata)清除隐私模式下Web SQL当前使用的所有存储。
 
   ```typescript
   import { webview } from '@kit.ArkWeb';
@@ -236,7 +236,7 @@ content_hash: sha256:e4a6f22743d381d1e151048cb5247c687209aa35fd529cccb5f2154986f
 
 ## 隐私模式下管理Cookie
 
-* 通过[fetchCookieSync](../harmonyos-references/arkts-apis-webview-webcookiemanager.md#fetchcookiesync11)获取隐私模式下指定url对应cookie的值。
+* 通过[fetchCookieSync()](../harmonyos-references/arkts-apis-webview-webcookiemanager.md#fetchcookiesync11)获取隐私模式下指定url对应cookie的值。
 
   ```typescript
   import { webview } from '@kit.ArkWeb';
@@ -265,7 +265,7 @@ content_hash: sha256:e4a6f22743d381d1e151048cb5247c687209aa35fd529cccb5f2154986f
     }
   }
   ```
-* 通过[configCookieSync](../harmonyos-references/arkts-apis-webview-webcookiemanager.md#configcookiesync11)设置隐私模式下指定url的单个cookie的值。
+* 通过[configCookieSync()](../harmonyos-references/arkts-apis-webview-webcookiemanager.md#configcookiesync11)设置隐私模式下指定url的单个cookie的值。
 
   ```typescript
   import { webview } from '@kit.ArkWeb';
@@ -293,7 +293,7 @@ content_hash: sha256:e4a6f22743d381d1e151048cb5247c687209aa35fd529cccb5f2154986f
     }
   }
   ```
-* 通过[existCookie](../harmonyos-references/arkts-apis-webview-webcookiemanager.md#existcookie)查询隐私模式下是否存在cookie。
+* 通过[existCookie()](../harmonyos-references/arkts-apis-webview-webcookiemanager.md#existcookie)查询隐私模式下是否存在cookie。
 
   ```typescript
   import { webview } from '@kit.ArkWeb';
@@ -316,7 +316,7 @@ content_hash: sha256:e4a6f22743d381d1e151048cb5247c687209aa35fd529cccb5f2154986f
     }
   }
   ```
-* 通过[clearAllCookiesSync](../harmonyos-references/arkts-apis-webview-webcookiemanager.md#clearallcookiessync11)清除隐私模式下所有cookie。
+* 通过[clearAllCookiesSync()](../harmonyos-references/arkts-apis-webview-webcookiemanager.md#clearallcookiessync11)清除隐私模式下所有cookie。
 
   ```typescript
   import { webview } from '@kit.ArkWeb';

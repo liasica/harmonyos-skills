@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avcastpicker
 title: 音视频投播
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 应用接入播控自检 > 应用接入播控检查项详细说明 > 音视频投播
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:09+08:00
+scraped_at: 2026-11-12T09:52:03+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:071d757ff490bc3c8e4074d67048c7adfa8e951dffb14e55ad931954bef96e45
+content_hash: sha256:73e2c42e7c15c21bed2f4e37011615251079e876adbd5150003ac23a085f89cf
 ---
 
 针对音视频类应用，播控中心提供系统级设备切换、投播能力选择入口，提供音视频发声设备统一投播组件。应用通过接入统一投播组件，可以实现在应用内及系统播控中心，将应用音视频资源通过Cast+协议/DLNA协议投播到远端设备。应用需先按自检要求接入[基础播控](basic-playback-control.md)，才可正常接入音视频投播组件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/TK2Yz9rrTM6QDiPEUEtlPg/zh-cn_image_0000002779690990.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/mudXFqy3S--940Jd4w3xdg/zh-cn_image_0000002809010611.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/pSppywDzT_yAdgq_Iia8ag/zh-cn_image_0000002815399403.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/M1cQ1MTJTdG2Pg1yl-qyKQ/zh-cn_image_0000002786519828.png)
 
 ## 基础投播能力
 

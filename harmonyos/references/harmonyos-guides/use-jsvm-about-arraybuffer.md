@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-abou
 title: 使用JSVM-API接口进行ArrayBuffer相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口进行ArrayBuffer相关开发
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:13+08:00
-doc_updated_at: 2026-10-16
+scraped_at: 2026-11-12T09:52:49+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:7d2a98ba190e3db068daa82b313c928bb810165a9cb1b77fa167514ecf16ee6f
 ---
 

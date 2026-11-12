@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-p
 title: 查询对账单
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 平台类商户/服务商 > 账单 > 查询对账单
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:05+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4dc2e526d77978e288ae6cf5ec81323023d9e0ee37ee4e4b4d7778a96c3b60a4
+scraped_at: 2026-11-12T09:57:35+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a48f8fbc567eba14be3324d1887195ea50e6abc28445b2f4d0d18b0f807f1b09
 ---
 
 ## 功能介绍
@@ -111,7 +111,7 @@ Content-Type: application/json; charset=UTF-8
 | 400000 | INVALID\_ARGUMENTS | 参数不合法 | 请检查请求参数。 |
 | 400000 | BILL\_SWITCH\_NOT\_TURN\_ON | 账单开关没有打开 | 请检查并[打开账单开关](payment-partner-agent-query-trade-bill.md#功能介绍)。 |
 | 400000 | INVALID\_SUB\_MERCNO | 权限异常，请求传递的子商户号不是验签商户的子商户 | 请检查子商户号是否和验签商户正确关联。 |
-| 400000 | UNKNOWN\_ERROR | 服务暂不可用，请稍后重试 | 稍后重试。 |
+| 400000 | UNKNOW\_ERROR | 服务暂不可用，请稍后重试 | 稍后重试。 |
 
 ## 下载文件示例
 

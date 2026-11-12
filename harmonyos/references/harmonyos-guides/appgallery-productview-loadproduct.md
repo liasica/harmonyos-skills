@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-pr
 title: 展示应用详情页面
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用市场推荐 > 展示应用详情页面
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c64c76dd19c17693b04b5012b91650243f32ef14e77f26b7431fce5dd142b1ac
+scraped_at: 2026-11-12T09:52:18+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e3a41aa7c300d545e316a27cd6b89c77b36d5658153fad89bbd5244fc913a7f7
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:c64c76dd19c17693b04b5012b91650243f32ef14e77f26b7431fce5dd14
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/W0UDH0lhTjGyneZfDDdo5A/zh-cn_image_0000002779851218.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/L-YnIFQ4S-aMUIdXEUbrhA/zh-cn_image_0000002786520094.png)
 
 1. 用户使用打开应用详情页功能。
 2. 应用调用AppGallery Kit的[loadProduct](../harmonyos-references/store-productviewmanager.md#productviewmanagerloadproduct)接口。
@@ -28,7 +28,7 @@ content_hash: sha256:c64c76dd19c17693b04b5012b91650243f32ef14e77f26b7431fce5dd14
 ## 约束与限制
 
 * 应用市场推荐服务不支持模拟器，请使用真机调试。在模拟器中使用该服务将会提示：无法获取内容，请点击屏幕重试。
-* 应用市场推荐服务支持Phone、Tablet、PC/2in1设备。并且从6.0.2(22)版本开始，新增支持TV设备。
+* 应用市场推荐服务支持Phone、Tablet、PC/2in1设备。从6.0.2(22)版本开始，新增支持TV设备；并且从API版本26.0.1开始，新增支持Car设备。
 
 ## 接口说明
 
@@ -65,36 +65,36 @@ content_hash: sha256:c64c76dd19c17693b04b5012b91650243f32ef14e77f26b7431fce5dd14
                    .onClick(() => {
                        try {
                            const exposureData: productViewManager.SKExposure = {
-                               adTechId: '20****e8',
+                               adTechId: '2A3B4C5D',
                                campaignId: '123456',
-                               destinationId: '10******',
-                               mmpIds: ['2f****5', '2f7***5'],
-                               serviceTag: '123***2',
-                               nonce: '123***2',
-                               timestamp: 1705536488,
+                               destinationId: '12345678',
+                               mmpIds: ['abcd1234', 'abcd5678'],
+                               serviceTag: 'serviceTag',
+                               nonce: '12345678901234567890123456789012',
+                               timestamp: Date.now(),
                                signature: 'MEQCIEQlmZ****zKBSE8QnhLTIHZZZ****ZpRqRxHss65Ko****JgJKjdrWdkL****juEx2RmFS7da****ZRVZ8RyMyUXg=='
                            };
                            const uiContext = this.getUIContext().getHostContext() as common.UIAbilityContext
                            const wantParam: Want = {
                                parameters: {
-                                   // 必填，此处填入要加载的应用包名，例如： bundleName: 'com.huawei.hmsapp.books'
-                                   bundleName: 'com.huawei.hmsapp.appgallery',
+                                   // 必填，此处填入要加载的应用包名，例如： bundleName: 'com.example.hmsapp.books'
+                                   bundleName: 'com.example.hmsapp.books',
                                    // 可选，向应用归因服务传递登记归因来源数据
                                    skExposure: exposureData
                                }
                            };
                            const callback: productViewManager.ProductViewCallback = {
                                onError: (error: BusinessError) => {
-                                 hilog.error(0, 'TAG',
+                                 hilog.error(0, TAG,
                                    `loadProduct onError.code is ${error.code}, message is ${error.message}`)
                                },
                                // 当应用详情页成功打开时回调
                                onAppear: () => {
-                                   hilog.info(0, 'TAG', `loadProduct onAppear.`);
+                                   hilog.info(0, TAG, `loadProduct onAppear.`);
                                },
                                // 当应用详情页关闭时回调
                                onDisappear: () => {
-                                   hilog.info(0, 'TAG', `loadProduct onDisappear.`);
+                                   hilog.info(0, TAG, `loadProduct onDisappear.`);
                                }
                            }
                            // ...
@@ -147,17 +147,17 @@ content_hash: sha256:c64c76dd19c17693b04b5012b91650243f32ef14e77f26b7431fce5dd14
                    .onClick(() => {
                        const context: common.UIAbilityContext =
                            this.getUIContext().getHostContext() as common.UIAbilityContext;
-                       // 按实际需求获取应用的bundleName，例如bundleName: 'com.**.hmsapp.books'
-                       const bundleName = 'xxxx';
+                       // 按实际需求获取应用的bundleName，例如bundleName: 'com.example.hmsapp.books'
+                       const bundleName = 'com.example.hmsapp.books';
                        let want: Want = {
                            action: 'ohos.want.action.appdetail', // 隐式指定action为ohos.want.action.appdetail
                            // bundleName为需要打开应用详情的应用包名
                            uri: 'store://appgallery.huawei.com/app/detail?id=' + bundleName,
                        };
                        context.startAbility(want).then(() => {
-                           hilog.info(0x0001, 'TAG', 'Succeeded in starting Ability successfully.')
+                           hilog.info(0x0001, TAG, 'Succeeded in starting Ability successfully.')
                        }).catch((error: BusinessError) => {
-                           hilog.error(0x0001, 'TAG',
+                           hilog.error(0x0001, TAG,
                                `Failed to startAbility.Code: ${error.code}, message is ${error.message}`);
                        });
                    })
@@ -217,17 +217,17 @@ content_hash: sha256:c64c76dd19c17693b04b5012b91650243f32ef14e77f26b7431fce5dd14
                    .onClick(() => {
                        let context: common.UIAbilityContext =
                            this.getUIContext().getHostContext() as common.UIAbilityContext;
-                       // 需要拼接不同的应用包名，用以打开不同的应用详情页,例如：bundleName: 'com.**.hmsapp.books'
-                       let bundleName: string = 'com.**.hmsapp.books';
+                       // 需要拼接不同的应用包名，用以打开不同的应用详情页,例如：bundleName: 'com.example.hmsapp.books'
+                       let bundleName: string = 'com.example.hmsapp.books';
                        // 需要替换成真实的跳转链接
                        let link: string = '***://appgallery.huawei.com/app/detail?id=' + bundleName;
                        // 以App Linking优先的方式在应用市场打开指定包名的应用详情页
                        context.openLink(link, { appLinkingOnly: false })
                            .then(() => {
-                               hilog.info(0x0001, 'TAG', 'openlink success.');
+                               hilog.info(0x0001, TAG, 'openlink success.');
                            })
                            .catch((error: BusinessError) => {
-                               hilog.error(0x0001, 'TAG',
+                               hilog.error(0x0001, TAG,
                                    `openlink failed. Code: ${error.code}, message is ${error.message}`);
                            });
                    })

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/usbserial-com
 title: USB串口通信管理
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB串口通信服务 > USB串口通信管理
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:50+08:00
-doc_updated_at: 2026-10-16
+scraped_at: 2026-11-12T09:51:48+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:f7cac990069df184fcd033a048acfb293518edf546ef4e80dd27faea84c553bd
 ---
 

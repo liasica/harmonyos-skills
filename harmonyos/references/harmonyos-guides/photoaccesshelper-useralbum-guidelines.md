@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshe
 title: 用户相册资源使用指导
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 受限开放能力 > 用户相册资源使用指导
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:33+08:00
-doc_updated_at: 2026-10-26
-content_hash: sha256:d0e2a3117fe713f1c052a6d5276494b0a1ebb8cff730dca6eb1b4bda1e77de4b
+scraped_at: 2026-11-12T09:52:09+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f50a79e4e8b85ed31f58f78c169cff1b1dcb41bd9e230e6f6d359214d3daa19d
 ---
 
 photoAccessHelper提供用户相册相关的接口，支持查询和重命名相册，以及添加和删除相册中的图片和视频资源。
@@ -29,7 +29,7 @@ photoAccessHelper提供用户相册相关的接口，支持查询和重命名相
 * 获取相册管理模块photoAccessHelper实例。
 * [申请相册管理模块功能相关权限](photoaccesshelper-preparation.md#申请相册管理模块功能相关权限)'ohos.permission.READ\_IMAGEVIDEO'。
 
-下面以获取一个相册名为'albumName'的用户相册为例。
+下面以获取一个相册名为'test'的用户相册为例。
 
 **开发步骤**
 
@@ -89,7 +89,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 * 获取相册管理模块photoAccessHelper实例。
 * [申请相册管理模块功能相关权限](photoaccesshelper-preparation.md#申请相册管理模块功能相关权限)'ohos.permission.READ\_IMAGEVIDEO'和'ohos.permission.WRITE\_IMAGEVIDEO'。
 
-下面以将一个相册名为'albumName'的用户相册重命名为例。
+下面以将一个相册名为'test'的用户相册重命名为例。
 
 **开发步骤**
 
@@ -144,7 +144,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 * 获取相册管理模块photoAccessHelper实例。
 * [申请相册管理模块功能相关权限](photoaccesshelper-preparation.md#申请相册管理模块功能相关权限)'ohos.permission.READ\_IMAGEVIDEO'和'ohos.permission.WRITE\_IMAGEVIDEO'。
 
-下面以将往相册名为'albumName'的用户相册中添加一张图片为例。
+下面以往相册名为'test'的用户相册中添加一张图片为例。
 
 **开发步骤**
 
@@ -211,7 +211,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 * 获取相册管理模块photoAccessHelper实例。
 * [申请相册管理模块功能相关权限](photoaccesshelper-preparation.md#申请相册管理模块功能相关权限)'ohos.permission.READ\_IMAGEVIDEO'和'ohos.permission.WRITE\_IMAGEVIDEO'。
 
-下面以获取相册名为'albumName'的用户相册中的一张图片为例。
+下面以获取相册名为'test'的用户相册中的一张图片为例。
 
 **开发步骤**
 
@@ -273,7 +273,7 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 * 获取相册管理模块photoAccessHelper实例。
 * [申请相册管理模块功能相关权限](photoaccesshelper-preparation.md#申请相册管理模块功能相关权限)'ohos.permission.READ\_IMAGEVIDEO'和'ohos.permission.WRITE\_IMAGEVIDEO'。
 
-下面以从相册名为'albumName'的用户相册中移除一张图片为例。
+下面以从相册名为'test'的用户相册中移除一张图片为例。
 
 **开发步骤**
 

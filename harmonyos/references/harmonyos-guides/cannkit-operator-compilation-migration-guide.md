@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-operator-compilation-migration-guide
 title: 算子编译迁移指导
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC昇腾到麒麟兼容性迁移指南 > Ascend910B/Ascend910C到KirinX90/Kirin9030迁移指导 > 算子编译迁移指导
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC昇腾到麒麟兼容性迁移指南 > Ascend910B/Ascend910C到KirinX90/Kirin9030迁移指导 > 算子编译迁移指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:44+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:1044d837ec68149da03c7739aa071f995e215b8f97784d7e66f9f113a0121c73
+scraped_at: 2026-11-12T09:52:43+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7261f0621bc67b027ef96d6245564edc54db26b8f67903500232f263f74fb318
 ---
 
 进行算子编译时，开发者需要感知不同架构、不同的AI处理器型号。
@@ -29,7 +29,7 @@ content_hash: sha256:1044d837ec68149da03c7739aa071f995e215b8f97784d7e66f9f113a01
       {
           // ...
           this->AICore().AddConfig("ascend910b");
-          // 示例：添加KirinX90处理器系列
+          // 示例：添加kirinx90处理器系列
           this->AICore().AddConfig("kirinx90");
       }
   };

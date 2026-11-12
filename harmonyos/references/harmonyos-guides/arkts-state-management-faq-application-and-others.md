@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state-m
 title: 应用内状态管理和其他常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理常见问题 > 应用内状态管理和其他常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:16+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:51:09+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:71038163fe03b979765c9c68de254012fd1bf44e0b10cf0e87b68a6c6c0b2d26
 ---
 

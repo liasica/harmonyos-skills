@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-data-e
 title: 数据库加密 (C/C++)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 数据可靠性与安全性 > 数据库加密 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:55+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:51:02+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:f2cf717396fdf08678c5bf8599561ee12e90fd56b2dff29dc7b7e8d0b17b206e
 ---
 

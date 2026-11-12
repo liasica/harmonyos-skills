@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (ControlCenter)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (ControlCenter)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:26+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:997b6a5a74d2943dd8fbe78165e4d54c8a4fa997a073858bd9af77b3eac436f8
+scraped_at: 2026-11-12T09:56:31+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:cca049e36e8832b98785640f0e66a458db381dff192faae02adb746dc4c27284
 ---
 
 ControlCenter继承自[ControlCenterQuery](arkts-apis-camera-controlcenterquery.md)。
@@ -28,6 +28,8 @@ import { camera } from '@kit.CameraKit';
 enableControlCenter(enabled: boolean): void
 
 使能相机控制器。
+
+使能前需先通过[isControlCenterSupported](arkts-apis-camera-controlcenterquery.md#iscontrolcentersupported20)查询当前会话是否支持相机控制器。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 

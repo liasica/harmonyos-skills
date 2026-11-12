@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.security.certManagerDialog (证书管理对话框模块)"
 breadcrumb: API参考 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > ArkTS API > @ohos.security.certManagerDialog (证书管理对话框模块)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:54+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b424d5d2e9ec0f15c7ca72f88bab06de77ee048e6b920f5c782fc7f58c440eac
+scraped_at: 2026-11-12T09:55:26+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:9a40820ca520e334bbd54fb6aaffda5ef5e57026473c830af99e29db749e66e1
 ---
 
 证书管理对话框主要提供打开证书管理界面的能力，用户在打开的证书管理对话框可对证书进行查看和管理（安装、卸载、授权）。
@@ -82,6 +82,8 @@ import { certificateManagerDialog } from '@kit.DeviceCertificateKit';
 | ERROR\_NOT\_COMPLY\_SECURITY\_POLICY18+ | 29700005 | 表示该操作不符合设备安全策略。  例如设备不允许用户管理GLOBAL\_USER的CA证书。 |
 | ERROR\_PARAMETER\_VALIDATION\_FAILED22+ | 29700006 | 表示输入参数校验失败。  例如参数格式不正确或取值范围无效。 |
 | ERROR\_NO\_AVAILABLE\_CERTIFICATE22+ | 29700007 | 表示没有可用证书。 |
+| ERROR\_OPERATION\_TIMEOUT | 29700009 | 表示证书管理对话框操作超时。  **起始版本：** 26.0.1 |
+| ERROR\_NOT\_CONCURRENT\_SUPPORT | 29700010 | 表示API不支持并发调用。  **起始版本：** 26.0.1 |
 
 ## CertificateDialogProperty18+
 
@@ -119,6 +121,8 @@ USB Key PIN码认证请求。
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | keyUri | string | 否 | 否 | 表示USB Key证书凭据的唯一标识符，长度限制256字节以内。该参数值可通过调用[openAuthorizeDialog](js-apis-certmanagerdialog.md#certificatemanagerdialogopenauthorizedialog22)接口返回的CertReference中获取。 |
+| customData | Uint8Array | 否 | 是 | 表示传入Ukey鉴权对话框的自定义数据，最大长度2048字节。一般情况下，该字段仅在调用[openAuthDialogForUkeyProvider](js-apis-certmanagerdialog.md#certificatemanagerdialogopenauthdialogforukeyprovider)接口时需要提供。  **起始版本：** 26.0.1 |
+| timeoutDuration | number | 否 | 是 | 表示Ukey认证对话框的操作超时时间，单位为秒。取值范围为[180, 600]内的整数，默认值为300。  **起始版本：** 26.0.1 |
 
 ## AuthorizeRequest22+
 
@@ -135,6 +139,35 @@ USB Key PIN码认证请求。
 | keyAlgIDs | Array<string> | 否 | 是 | 表示证书公钥的算法类型，用于筛选凭据授权对话框中的证书列表，仅显示匹配的证书。支持的取值为RSA、EC或ECDSA（区分大小写）。若不传此参数，则不按算法类型筛选证书。  若 keyAlgIDs包含不支持的算法，则该筛选器无效。  数组最大长度为20。  **起始版本：** 26.0.0 |
 | issuers | Array<Uint8Array> | 否 | 是 | 表示以DER格式编码的证书颁发者，用于筛选凭据授权对话框中的证书列表，仅显示匹配的证书。  如果issuers数组中存在长度为0的元素，则issuers筛选器不会生效。  数组最大长度为20。  **起始版本：** 26.0.0 |
 | uri | string | 否 | 是 | 该URI在授权对话框中进行显示，用于为用户提供更多有关申请授权使用证书凭据的上下文。  **起始版本：** 26.0.0 |
+
+## AbilityType
+
+表示Ukey认证对话框的Ability类型。
+
+**起始版本：** 26.0.1
+
+**系统能力：** SystemCapability.Security.CertificateManagerDialog
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| UKEY\_AUTH\_EXTENSION\_ABILITY | 1 | [UkeyAuthExtensionAbility](js-apis-ukeyauthextensionability.md)类型的Ability。 |
+
+## UkeyAuthDialogInfo
+
+表示需要打开的Ukey认证对话框信息。
+
+**起始版本：** 26.0.1
+
+**系统能力：** SystemCapability.Security.CertificateManagerDialog
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| abilityType | [AbilityType](js-apis-certmanagerdialog.md#abilitytype) | 否 | 否 | 表示Ukey认证对话框的Ability类型。 |
+| abilityName | string | 否 | 否 | 表示Ukey认证对话框的Ability名称，最大长度256字节，且不能为空。 |
 
 ## certificateManagerDialog.openCertificateManagerDialog
 
@@ -584,10 +617,10 @@ openUkeyAuthDialog(context: common.Context, ukeyAuthRequest: UkeyAuthRequest): P
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
-| 801 | Capability not supported. |
+| 801 | Capability not supported because the certificate management application hap is not preinstalled in the system. |
 | 29700001 | Internal error. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
-| 29700002 | The user cancels the authentication operation. |
-| 29700003 | The authentication operation failed, such as the USB key certificate does not exist, the USB key status is abnormal. |
+| 29700002 | The user cancels the authentication operation or operation timed out. |
+| 29700003 | The authentication operation failed, such as: The USB key certificate does not exist. The USB key status is abnormal, Please ask the user to check the status of the Ukey. The Ukey authentication dialog box cannot be opened concurrently. Please try again later. |
 | 29700006 | Indicates that the input parameters validation failed. For example, the parameter format is incorrect or the value range is invalid. |
 
 **示例**：
@@ -656,5 +689,88 @@ try {
   let error = err as BusinessError;
   console.error(
     `Failed to check whether the device supports CA dialog. Code: ${error.code}, message: ${error.message}`);
+}
+```
+
+## certificateManagerDialog.openAuthDialogForUkeyProvider
+
+openAuthDialogForUkeyProvider(dialogInfo: UkeyAuthDialogInfo, ukeyAuthRequest: UkeyAuthRequest): Promise<void>
+
+打开USB Key证书凭据的Ukey认证对话框，用于实现支付、证书更新等场景下的自定义对话框功能。该接口仅供UKey驱动应用调用，Ukey认证对话框需由UKey驱动应用通过[UkeyAuthExtensionAbility](js-apis-ukeyauthextensionability.md)实现。使用Promise异步回调。
+
+**起始版本：** 26.0.1
+
+**需要权限：** ohos.permission.CRYPTO\_EXTENSION\_REGISTER
+
+**系统能力：** SystemCapability.Security.CertificateManagerDialog
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**设备行为差异：** 该接口在PC/2in1设备可正常调用，在其他设备中返回29700005错误码。
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| dialogInfo | [UkeyAuthDialogInfo](js-apis-certmanagerdialog.md#ukeyauthdialoginfo) | 是 | 表示需要打开的Ukey认证对话框信息。 |
+| ukeyAuthRequest | [UkeyAuthRequest](js-apis-certmanagerdialog.md#ukeyauthrequest22) | 是 | 表示USB Key证书凭据的认证请求信息。 |
+
+**返回值**：
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[证书管理对话框错误码](errorcode-certmanagerdialog.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported because the certificate management application hap is not preinstalled in the system. |
+| 29700001 | The certificate manager service processing failed. Possible causes: 1. IPC communication failed; 2. Memory operation error; 3. File operation error. Please try again. |
+| 29700002 | The user cancels the authentication operation. |
+| 29700003 | The authentication operation failed, such as: The USB key certificate does not exist. The USB key status is abnormal, Please ask the user to check the status of the Ukey. |
+| 29700005 | The operation does not comply with the device security policy. Only the PC/2in1 device can open the dialog box of the UkeyAuthExtensionAbility type. |
+| 29700006 | Indicates that the input parameters validation failed. For example, the parameter format is incorrect or the value range is invalid. |
+| 29700009 | The operation in the Ukey authentication dialog box timed out. |
+| 29700010 | The Ukey authentication dialog box cannot be opened concurrently. Please try again later. |
+
+**示例**：
+
+```ts
+import { certificateManagerDialog } from '@kit.DeviceCertificateKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+/* abilityType为Ukey认证对话框的Ability类型，此处赋值UKEY_AUTH_EXTENSION_ABILITY */
+let abilityType: certificateManagerDialog.AbilityType =
+  certificateManagerDialog.AbilityType.UKEY_AUTH_EXTENSION_ABILITY;
+/* abilityName为UKey驱动应用实现的UkeyAuthExtensionAbility名称，此处仅为示例 */
+let abilityName: string = 'com.example.ukeydriver.UkeyAuthExtensionAbility';
+let dialogInfo: certificateManagerDialog.UkeyAuthDialogInfo = {
+  abilityType: abilityType,
+  abilityName: abilityName
+};
+/* keyUri为USB Key证书凭据的唯一标识符，调用方自行获取，此处仅为示例 */
+let keyUri: string = 'test';
+/* 传入Ukey鉴权对话框的自定义数据，此处仅为示例 */
+let customData: Uint8Array = new Uint8Array([0x01, 0x02, 0x03]);
+let ukeyAuthRequest: certificateManagerDialog.UkeyAuthRequest = {
+  keyUri: keyUri,
+  customData: customData,
+  /* Ukey认证对话框的操作超时时间，单位为秒，取值范围为[180, 600]内的整数 */
+  timeoutDuration: 300
+};
+try {
+  certificateManagerDialog.openAuthDialogForUkeyProvider(dialogInfo, ukeyAuthRequest).then(() => {
+    console.info(`Succeeded in opening ukey auth dialog`);
+  }).catch((error: Error) => {
+    let err = error as BusinessError;
+    console.error(`Failed to open ukey auth dialog. Code: ${err.code}, message: ${err.message}`);
+  });
+} catch (err) {
+  let error = err as BusinessError;
+  console.error(`Failed to open ukey auth dialog. Code: ${error.code}, message: ${error.message}`);
 }
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/interthread-c
 title: ArkTS线程间通信概述
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > ArkTS线程间通信概述
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:05+08:00
+scraped_at: 2026-11-12T09:51:03+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:01ee690ce88cdb7f8d0c00e319784cbec544ee9236aef86fe1d73c72b704f967
+content_hash: sha256:a4bc5f80cb8bd42fc7beaeba40767f414caa96525eccf867ec88be3d7e9c52e0
 ---
 
 线程间通信指并发多线程间的数据交换行为。由于ArkTS语言兼容TS/JS，其运行时实现与其它JS引擎一样，采用基于Actor内存隔离的并发模型。
@@ -16,7 +16,7 @@ content_hash: sha256:01ee690ce88cdb7f8d0c00e319784cbec544ee9236aef86fe1d73c72b70
 
 图1 序列化反序列化原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/cebgBCL8Sc6DR37vBUFftw/zh-cn_image_0000002809009167.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/YRtrKUKTRw2xKfuDy3ZpiA/zh-cn_image_0000002815557877.png)
 
 ArkTS目前主要提供两种并发能力支持线程间通信：TaskPool和Worker。
 

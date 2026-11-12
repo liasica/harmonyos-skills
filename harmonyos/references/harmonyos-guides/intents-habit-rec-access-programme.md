@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-habit
 title: 接入方案
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 习惯推荐方案 > 接入方案
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:09+08:00
-doc_updated_at: 2026-09-07
-content_hash: sha256:2540e0bcedf2e49487bce26b717d5e77a205a1f9f477fa2660935e6054c3ffc3
+scraped_at: 2026-11-12T09:52:44+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:59561fe18aebc35984f04255e183349205a0b0c4645e0b0864b286f31b16951e
 ---
 
 ## 方案概述
 
 当用户在应用/元服务内使用功能时，开发者需要按照标准意图Schema向系统共享行为数据，并支持意图调用（空调用与传参调用），以实现用户点击模板卡后跳转回对应页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/6qqG71i9SHO9ZCFduC1nvw/zh-cn_image_0000002779851810.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/ys3NgW5FRZmOmCNqYMgz9w/zh-cn_image_0000002815560149.png)
 
 ## 意图注册
 
@@ -86,7 +86,7 @@ struct Index {
                 entityGroupId: 'C10194321312',
                 displayName: '测试歌曲1',
                 description: 'NA',
-                logoURL: 'https://www-file.abc.com/-/media/corporate/images/home/logo/abc_logo.png',
+                logoURL: 'https://www-file.example.com/-/media/corporate/images/home/logo/example_logo.png',
                 keywords: ['华为音乐', '化妆'],
                 rankingHint: 99,
                 expirationTime: 1637393212000,
@@ -151,23 +151,23 @@ struct Index {
       * @param pageLoader 窗口
       * @returns 意图调用结果
       */
-      onExecuteInUIAbilityForegroundMode(name: string, param: Record<string, Object>, pageLoader: window.WindowStage):
-        Promise<insightIntent.ExecuteResult> {
-        // 根据意图名称分发处理逻辑。接入方可根据实际业务实现页面跳转
-        switch (name) {
-          case InsightIntentExecutorImpl.PLAY_MUSIC:
-            return this.playMusic(param, pageLoader);
-          default:
-            break;
-        }
-        const data: insightIntent.ExecuteResult = {
-          code: -1,
-          result: {
-            message: 'unknown intent'
-          }
-        };
-        return Promise.resolve(data);
-      }
+     onExecuteInUIAbilityForegroundMode(name: string, param: Record<string, Object>, pageLoader: window.WindowStage):
+       Promise<insightIntent.ExecuteResult> {
+       // 根据意图名称分发处理逻辑。接入方可根据实际业务实现页面跳转
+       switch (name) {
+         case InsightIntentExecutorImpl.PLAY_MUSIC:
+           return this.playMusic(param, pageLoader);
+         default:
+           break;
+       }
+       const data: insightIntent.ExecuteResult = {
+         code: -1,
+         result: {
+           message: 'unknown intent'
+         }
+       };
+       return Promise.resolve(data);
+     }
 
      /**
       * 实现调用播放歌曲功能
@@ -177,30 +177,30 @@ struct Index {
       */
      private playMusic(param: Record<string, Object>, pageLoader: window.WindowStage): Promise<insightIntent.ExecuteResult> {
        return new Promise((resolve, reject) => {
-        let localStorage: LocalStorage = new LocalStorage(param);
-        pageLoader.loadContent('pages/Index', localStorage)
-          .then(() => {
-            const items: Array<PlayMusicEntity> = (param.items instanceof Array) ? param.items : [];
-            const entityId: string = items[0]?.entityId;
-            console.info(`Intent param, entityId: ${entityId}`);
-            const data: insightIntent.ExecuteResult = {
-              code: 0,
-              result: {
-                message: 'Intent execute succeed'
-              }
-            };
-            resolve(data);
-          })
-          .catch((err: BusinessError) => {
-            console.error(`Intent execute failed, Code: ${err?.code}, message: ${err?.message}`);
-            const data: insightIntent.ExecuteResult = {
-              code: -1,
-              result: {
-                message: 'Intent execute failed'
-              }
-            };
-            reject(data);
-          });
+         let localStorage: LocalStorage = new LocalStorage(param);
+         pageLoader.loadContent('pages/Index', localStorage)
+           .then(() => {
+             const items: PlayMusicEntity[] = (param.items instanceof Array) ? param.items : [];
+             const entityId: string = items[0]?.entityId;
+             console.info(`Intent param, entityId: ${entityId}`);
+             const data: insightIntent.ExecuteResult = {
+               code: 0,
+               result: {
+                 message: 'Intent execute succeed'
+               }
+             };
+             resolve(data);
+           })
+           .catch((err: BusinessError) => {
+             console.error(`Intent execute failed, Code: ${err?.code}, message: ${err?.message}`);
+             const data: insightIntent.ExecuteResult = {
+               code: -1,
+               result: {
+                 message: 'Intent execute failed'
+               }
+             };
+             reject(data);
+           });
        })
      }
    }

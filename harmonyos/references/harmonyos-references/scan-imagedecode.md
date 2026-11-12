@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scan-imag
 title: detectBarcode (图像识码)
 breadcrumb: API参考 > 媒体 > Scan Kit（统一扫码服务） > ArkTS API > detectBarcode (图像识码)
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:03+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:75b61ef55324340560b90161c720fe5615b9c4547073eb1bc2eb834ba69ccb05
+scraped_at: 2026-11-12T09:56:52+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:11ff99a4f7358b5de97279b9a27fd5c453d7ca9defcb97c28d22d82a8d695bf0
 ---
 
 ## 模块概述
@@ -64,7 +64,7 @@ photoPicker.select(photoSelectOptions).then((data: photoAccessHelper.PhotoSelect
 });
 ```
 
-## decode
+## detectBarcode.decode
 
 decode(inputImage: InputImage, options?: scanBarcode.ScanOptions): Promise<Array<scanBarcode.ScanResult>>
 
@@ -136,7 +136,7 @@ photoPicker.select(photoOption).then((data) => {
 });
 ```
 
-## decode
+## detectBarcode.decode
 
 decode(inputImage: InputImage, options: scanBarcode.ScanOptions, callback: AsyncCallback<Array<scanBarcode.ScanResult>>): void
 
@@ -205,7 +205,7 @@ photoPicker.select(photoOption).then((data) => {
 });
 ```
 
-## decode
+## detectBarcode.decode
 
 decode(inputImage: InputImage, callback: AsyncCallback<Array<scanBarcode.ScanResult>>): void
 
@@ -337,9 +337,9 @@ let byteImg: detectBarcode.ByteImage = {
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | scanResults | Array<scanBarcode.[ScanResult](scan-scanbarcode-api.md#scanresult)> | 否 | 否 | 扫码结果。 |
-| zoomValue | number | 否 | 否 | 期望图像放大倍数，在值大于1时，可通过[setZoomRatio](arkts-apis-camera-zoom.md#setzoomratio11)控制相机进行变焦放大图像。  **说明：**  1. 使用Camera Kit [getZoomRatio](arkts-apis-camera-zoom.md#getzoomratio11)接口获取相机当前变焦比zoomRatio。  2. 使用Camera Kit [setZoomRatio](arkts-apis-camera-zoom.md#setzoomratio11)接口设置targetRatio，目标值为zoomRatio \* zoomValue。 |
+| zoomValue | number | 否 | 否 | 期望图像放大倍数，在值大于1时，可通过[setZoomRatio()](arkts-apis-camera-zoom.md#setzoomratio11)控制相机进行变焦放大图像。  **说明：**  1. 使用Camera Kit [getZoomRatio()](arkts-apis-camera-zoom.md#getzoomratio11)接口获取相机当前变焦比zoomRatio。  2. 使用Camera Kit [setZoomRatio()](arkts-apis-camera-zoom.md#setzoomratio11)接口设置targetRatio，目标值为zoomRatio \* zoomValue。 |
 
-## decodeImage
+## detectBarcode.decodeImage
 
 decodeImage(image: ByteImage, options?: scanBarcode.ScanOptions): Promise<DetectResult>
 

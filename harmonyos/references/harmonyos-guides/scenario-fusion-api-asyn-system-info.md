@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 通过API异步获取系统信息属性
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 场景化API > 通过API异步获取系统信息属性
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:28+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:cfb0bcf25f70515a79aaf690e8ab05457d4e882c8111ec73d07c16ede353ce80
+scraped_at: 2026-11-12T09:52:35+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:55cb94f2493e909663ce0a62828f8d7392f90f3370de4ec4070ff8e800f6fc0c
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ Scenario Fusion Kit提供获取系统信息属性API，调用该接口可以获�
 
 ## 约束与限制
 
-场景化API支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持Wearable和TV设备。
+场景化API支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持Wearable和TV设备，从API版本26.0.1开始，新增支持Car设备。
 
 ## 接口说明
 
@@ -41,31 +41,28 @@ Scenario Fusion Kit提供获取系统信息属性API，调用该接口可以获�
      ['brand', 'deviceModel', 'screenWidth', 'screenHeight', 'statusBarHeight', 'screenSafeArea', 'language', 'osFullName',
        'fontSizeSetting', 'sdkApiVersion', 'bluetoothEnabled', 'wifiEnabled', 'locationEnabled', 'deviceOrientation',
        'theme', 'windowWidth', 'windowHeight'];
-   try {
-     atomicService.getSystemInfo(stateArray).then((data: atomicService.SystemInfo) => {
-       hilog.info(0x0000, 'testTag', 'succeeded in getting system info asynchronously');
-       // 当前参数未调用，开发者自行实现参数的逻辑处理
-       let brand: string | undefined = data.brand;
-       let deviceModel: string | undefined = data.deviceModel;
-       let screenWidth: number | undefined = data.screenWidth;
-       let screenHeight: number | undefined = data.screenHeight;
-       let statusBarHeight: number | undefined = data.statusBarHeight;
-       let screenSafeArea: window.AvoidArea | undefined = data.screenSafeArea;
-       let language: string | undefined = data.language;
-       let osFullName: string | undefined = data.osFullName;
-       let fontSizeSetting: number | undefined = data.fontSizeSetting;
-       let sdkApiVersion: number | undefined = data.sdkApiVersion;
-       let bluetoothEnabled: boolean | undefined = data.bluetoothEnabled;
-       let wifiEnabled: boolean | undefined = data.wifiEnabled;
-       let locationEnabled: boolean | undefined = data.locationEnabled;
-       let deviceOrientation: string | undefined = data.deviceOrientation;
-       let theme: ColorMode | undefined = data.theme;
-       let windowWidth: number | undefined = data.windowWidth;
-       let windowHeight: number | undefined = data.windowHeight;
-     }).catch((error: BusinessError) => {
-       hilog.error(0x0000, 'testTag', 'Promise error: %{public}d %{public}s', error.code, error.message);
-     });
-   } catch (error) {
-     hilog.error(0x0000, 'testTag', 'Failed to get system info asynchronously, failReason: %{public}d %{public}s', error.code, error.message);
-   }
+
+   atomicService.getSystemInfo(stateArray).then((data: atomicService.SystemInfo) => {
+     hilog.info(0x0000, 'testTag', 'succeeded in getting system info asynchronously');
+     // 当前参数未调用，开发者自行实现参数的逻辑处理
+     let brand: string | undefined = data.brand;
+     let deviceModel: string | undefined = data.deviceModel;
+     let screenWidth: number | undefined = data.screenWidth;
+     let screenHeight: number | undefined = data.screenHeight;
+     let statusBarHeight: number | undefined = data.statusBarHeight;
+     let screenSafeArea: window.AvoidArea | undefined = data.screenSafeArea;
+     let language: string | undefined = data.language;
+     let osFullName: string | undefined = data.osFullName;
+     let fontSizeSetting: number | undefined = data.fontSizeSetting;
+     let sdkApiVersion: number | undefined = data.sdkApiVersion;
+     let bluetoothEnabled: boolean | undefined = data.bluetoothEnabled;
+     let wifiEnabled: boolean | undefined = data.wifiEnabled;
+     let locationEnabled: boolean | undefined = data.locationEnabled;
+     let deviceOrientation: string | undefined = data.deviceOrientation;
+     let theme: ColorMode | undefined = data.theme;
+     let windowWidth: number | undefined = data.windowWidth;
+     let windowHeight: number | undefined = data.windowHeight;
+   }).catch((error: BusinessError) => {
+     hilog.error(0x0000, 'testTag', 'Failed to get system info asynchronously. Promise error: %{public}d %{public}s', error.code, error.message);
+   });
    ```

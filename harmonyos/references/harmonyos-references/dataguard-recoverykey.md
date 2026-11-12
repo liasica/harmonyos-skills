@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataguard
 title: recoveryKey（企业恢复密钥）
 breadcrumb: API参考 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > ArkTS API > recoveryKey（企业恢复密钥）
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:51+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:9606f906956e735af4b8496bf340c094c164c0936112275361f5b976297ff25c
+scraped_at: 2026-11-12T09:55:23+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b856f9520d5ac8e301c25e9be568ea1da222fa76530c6e3f99b2b9104a66d58f
 ---
 
 在确保用户数据安全性的基础上，提供用于加密硬盘数据的安全解密机制和重置锁屏密码的企业恢复密钥。
@@ -37,6 +37,21 @@ import { recoveryKey } from '@kit.EnterpriseDataGuardKit';
 | iv | Uint8Array | 否 | 否 | AES-GCM-256加密时使用的iv。 |
 | tag | Uint8Array | 否 | 否 | AES-GCM-256加密时使用的tag。 |
 
+## DataVolumeEnterpriseRecoveryKeyInfo
+
+数据盘企业恢复密钥信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.PCService.RecoveryKeyService
+
+**起始版本：** 26.0.1
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| keyInfo | [EnterpriseRecoveryKeyInfo](dataguard-recoverykey.md#enterpriserecoverykeyinfo) | 否 | 否 | 企业恢复密钥数据。 |
+| uuid | string | 否 | 否 | 数据盘标识信息。 |
+
 ## recoveryKey.getEnterpriseRecoveryKey
 
 getEnterpriseRecoveryKey(userId: number): Promise<EnterpriseRecoveryKeyInfo>
@@ -65,7 +80,7 @@ getEnterpriseRecoveryKey(userId: number): Promise<EnterpriseRecoveryKeyInfo>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[企业数据保护服务错误码](errorcode-enterprise-dataguard.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -104,6 +119,61 @@ async function getEnterpriseRecoveryKey() {
 }
 ```
 
+## recoveryKey.getDataVolumeEnterpriseRecoveryKey
+
+getDataVolumeEnterpriseRecoveryKey(path?: string): Promise<Array<DataVolumeEnterpriseRecoveryKeyInfo>>
+
+获取数据盘的企业恢复密钥。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**需要权限：** ohos.permission.ENTERPRISE\_RECOVERY\_KEY
+
+**系统能力：** SystemCapability.PCService.RecoveryKeyService
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| path | string | 否 | 数据盘挂载路径。长度范围：(0, 4096)。默认值：undefined，表示所有数据盘的密钥。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<[DataVolumeEnterpriseRecoveryKeyInfo](dataguard-recoverykey.md#datavolumeenterpriserecoverykeyinfo)>> | Promise对象，返回数据盘的企业恢复密钥信息列表。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 1014400001 | System service error. |
+| 1014400201 | Invalid device type. The current device is not an enterprise device. |
+| 1014402001 | Invalid data volume. |
+
+**示例：**
+
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { recoveryKey } from '@kit.EnterpriseDataGuardKit';
+
+// 获取所有数据盘的企业恢复密钥
+recoveryKey.getDataVolumeEnterpriseRecoveryKey().then((infoList: recoveryKey.DataVolumeEnterpriseRecoveryKeyInfo[]) => {
+  console.info(`Succeeded in getting data volume enterprise recovery key. count: ${infoList.length}`);
+  for (let i = 0; i < infoList.length; i++) {
+    console.info(`DataVolume[${i}] uuid: ${infoList[i].uuid}`);
+  }
+}).catch((error: BusinessError) => {
+  console.error(`Failed to get data volume enterprise recovery key. Code: ${error.code}, message: ${error.message}`);
+});
+```
+
 ## recoveryKey.getAuthChallenge
 
 getAuthChallenge(): Promise<Uint8Array>
@@ -126,7 +196,7 @@ getAuthChallenge(): Promise<Uint8Array>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[企业数据保护服务错误码](errorcode-enterprise-dataguard.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -178,7 +248,7 @@ updateEnterpriseCertificate(signature: Uint8Array, cert: Uint8Array): Promise<nu
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[企业数据保护服务错误码](errorcode-enterprise-dataguard.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -236,7 +306,7 @@ deleteEnterpriseRecoveryKey(userId: number, signature: Uint8Array): Promise<numb
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[企业数据保护服务错误码](errorcode-enterprise-dataguard.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -301,7 +371,7 @@ verifyUserIdentityEnterprise(userId: number, userType: number, pinCode: string):
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[企业数据保护服务错误码](errorcode-enterprise-dataguard.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -367,7 +437,7 @@ verifyUserByDialog(userId: number): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[企业数据保护服务错误码](errorcode-enterprise-dataguard.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -400,11 +470,75 @@ async function getEnterpriseRecoveryKeyForPinByDialog() {
 }
 ```
 
+## recoveryKey.verifyUserByEnterpriseAuthentication
+
+verifyUserByEnterpriseAuthentication(userId: number, inputData: string): Promise<void>
+
+通过企业账号验证用户身份。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**需要权限：** ohos.permission.ENTERPRISE\_RECOVERY\_KEY
+
+**系统能力：** SystemCapability.PCService.RecoveryKeyService
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| userId | number | 是 | 需要导出恢复密钥的用户ID，需为正整数。 |
+| inputData | string | 是 | 企业账号对应的密码。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 1014400001 | System service error. |
+| 1014400103 | Identity authentication failed. |
+| 1014400202 | Invalid userId. |
+| 1014400207 | Failed to authenticate the enterprise identity. |
+
+**示例：**
+
+```typescript
+import { BusinessError, osAccount } from '@kit.BasicServicesKit';
+import { recoveryKey } from '@kit.EnterpriseDataGuardKit';
+
+async function verifyUserByEnterpriseAuthentication() {
+  try {
+    let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    // 企业账号对应的用户ID
+    let userId: number = await accountManager.getOsAccountLocalId();
+    // 在实际应用中，inputData应替换为企业账号对应的密码
+    let inputData: string = '';
+    recoveryKey.verifyUserByEnterpriseAuthentication(userId, inputData).then(() => {
+      console.info(`Succeeded in verifying user by enterprise authentication.`);
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to verify user by enterprise authentication. Code: ${error.code}, message: ${error.message}`);
+    });
+  } catch (e) {
+    console.error(`Failed to verifyUserByEnterpriseAuthentication. Code: ${e.code}, message: ${e.message}`);
+  }
+}
+```
+
 ## recoveryKey.getEnterpriseRecoveryKeyForResettingPin
 
 getEnterpriseRecoveryKeyForResettingPin(userId: number, userType: number): Promise<EnterpriseRecoveryKeyInfo>
 
-导出用于重置锁屏密码的企业恢复密钥。先需要调用[verifyUserIdentityEnterprise](dataguard-recoverykey.md#recoverykeyverifyuseridentityenterprise)或[verifyUserByDialog](dataguard-recoverykey.md#recoverykeyverifyuserbydialog)接口验证身份，并在30秒内调用此接口。若超时后调用，系统会返回异常代码[1014400001](errorcode-enterprise-dataguard.md#section1014400001-系统服务异常)。使用Promise异步回调。
+导出用于重置锁屏密码的企业恢复密钥。先需要调用[verifyUserIdentityEnterprise](dataguard-recoverykey.md#recoverykeyverifyuseridentityenterprise)、[verifyUserByDialog](dataguard-recoverykey.md#recoverykeyverifyuserbydialog)或[verifyUserByEnterpriseAuthentication](dataguard-recoverykey.md#recoverykeyverifyuserbyenterpriseauthentication)接口验证身份，并在30秒内调用此接口。若超时后调用，系统会返回异常代码[1014400001](errorcode-enterprise-dataguard.md#section1014400001-系统服务异常)。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -429,7 +563,7 @@ getEnterpriseRecoveryKeyForResettingPin(userId: number, userType: number): Promi
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[企业数据保护服务错误码](errorcode-enterprise-dataguard.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |

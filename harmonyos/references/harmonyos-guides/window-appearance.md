@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-appear
 title: 控制窗口外观 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 其他开发场景 > 控制窗口外观 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:24+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:189aac8deea43a95ecd85bcf12e0f5daec6d53fc0acf83ec0667611e1fe21e33
+scraped_at: 2026-11-12T09:51:21+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0ef56298e06ae31ae364b722e966a629afc75c6deda29d6ecaae8ac638f375c9
 ---
 
 ## 场景介绍
@@ -14,14 +14,14 @@ content_hash: sha256:189aac8deea43a95ecd85bcf12e0f5daec6d53fc0acf83ec0667611e1fe
 
 开发者可以根据界面设计和交互需求，对窗口外观进行定制。例如：
 
-* 通过设置窗口掩码，将子窗或全局悬浮窗显示为异形窗口。
-* 通过设置窗口边缘阴影的模糊半径，调整子窗或全局悬浮窗的阴影效果。
-* 通过设置窗口圆角，调整子窗或全局悬浮窗的边缘显示效果。
+* 通过设置窗口掩码，将子窗口或[全局悬浮窗](global-floating-window-guide.md)显示为异形窗口。
+* 通过设置窗口边缘阴影的模糊半径，调整子窗口或全局悬浮窗的阴影效果。
+* 通过设置窗口圆角，调整子窗口或全局悬浮窗的边缘显示效果。
 * 通过设置窗口背景色，使窗口背景与应用页面或主题样式保持一致。
 
 ## 异形窗口
 
-异形窗口为非常规形状的窗口，掩码用于描述异形窗口的形状。仅应用子窗和全局悬浮窗可设置为异形窗口。
+异形窗口为非常规形状的窗口，掩码用于描述异形窗口的形状。仅子窗口和全局悬浮窗可设置为异形窗口。
 
 可通过[setWindowMask()](../harmonyos-references/arkts-apis-window-window.md#setwindowmask12)或[setWindowMaskWithAlpha()](../harmonyos-references/arkts-apis-window-window.md#setwindowmaskwithalpha)接口设置异形窗口的掩码，以定义窗口的可见区域。
 
@@ -31,25 +31,24 @@ content_hash: sha256:189aac8deea43a95ecd85bcf12e0f5daec6d53fc0acf83ec0667611e1fe
 
   掩码仅支持取值为整数0和整数1的二维数组输入，数组行数对应窗口高度，列数对应窗口宽度。整数0代表对应像素透明且不可交互，整数1代表对应像素不透明且可交互。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/tywdzcSrS_adoD_Iyf1Rag/zh-cn_image_0000002809010125.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/8SSAe_pjSAKotUvtu9gjPQ/zh-cn_image_0000002815398921.png)
 * 从API版本26.0.0开始，支持使用[setWindowMaskWithAlpha()](../harmonyos-references/arkts-apis-window-window.md#setwindowmaskwithalpha)接口设置异形窗口的掩码。
 
   掩码支持取值在[0, 255]范围的数组输入，数组长度等于窗口宽度乘以窗口高度。整数0代表对应像素透明且不可交互，整数255代表对应像素不透明且可交互，0~255之间代表对应像素部分透明且可交互。此接口性能优于[setWindowMask()](../harmonyos-references/arkts-apis-window-window.md#setwindowmask12)，推荐使用。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/v2h-aI7jS7OjDIJF0kHHsA/zh-cn_image_0000002809050041.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/zCmfWavOQQWUmRATJgRXDw/zh-cn_image_0000002786519346.png)
 
-此处以设置子窗的异形窗口为例。此例主要实现以下效果：
+此处以设置子窗口的异形窗口为例。此例主要实现以下效果：
 
-1. 点击“Create Sub Window”按钮可以创建子窗。
-2. 创建子窗后，点击“setWindowMask for Sub Window”按钮，可通过[setWindowMaskWithAlpha()](../harmonyos-references/arkts-apis-window-window.md#setwindowmaskwithalpha)接口设置子窗掩码。子窗发生以下变化：
+1. 点击“Create Sub Window”按钮可以创建子窗口。
+2. 创建子窗口后，点击“setWindowMask for Sub Window”按钮，可通过[setWindowMaskWithAlpha()](../harmonyos-references/arkts-apis-window-window.md#setwindowmaskwithalpha)接口设置子窗口掩码。子窗口发生以下变化：
 
-   * 子窗变为三角形。
-   * 子窗的阴影和圆角消失。
-   * 子窗矩形区域的左上部分变为透明不可交互，通过点击“Create Test Window”按钮，事件透传到该按钮，创建出绿色的测试窗口。
+   * 子窗口变为三角形。
+   * 子窗口的阴影和圆角消失。
+   * 子窗口矩形区域的左上部分变为透明不可交互，通过点击“Create Test Window”按钮，事件透传到该按钮，创建出绿色的测试窗口。
 
 ```typescript
 import { window } from '@kit.ArkUI';
-import { BusinessError } from '@kit.BasicServicesKit';
 
 @Entry
 @Component
@@ -100,13 +99,13 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/5SnB92UbTuG1ufvzxuNamg/zh-cn_image_0000002779850476.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/AuqnopTvTFeg34yLc22jcQ/zh-cn_image_0000002786359418.gif)
 
 ## 窗口阴影
 
 窗口阴影是显示在窗口边缘的投影效果，可以增强窗口与背景之间的层次感，使窗口呈现悬浮于背景之上的视觉效果。
 
-* 可通过[setWindowShadowRadius()](../harmonyos-references/arkts-apis-window-window.md#setwindowshadowradius17)接口设置窗口边缘阴影的模糊半径，仅支持子窗和全局悬浮窗使用。
+* 可通过[setWindowShadowRadius()](../harmonyos-references/arkts-apis-window-window.md#setwindowshadowradius17)接口设置窗口边缘阴影的模糊半径，仅支持子窗口和全局悬浮窗使用。
 
   此处以全局悬浮窗为例，设置其窗口边缘阴影的模糊半径。
 
@@ -131,11 +130,11 @@ struct Index {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/DV8zP4kqSGCARA2pml47MA/zh-cn_image_0000002779690508.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/hYBKliRqTM2xPdWRR8GeHQ/zh-cn_image_0000002815558839.gif)
 
 ## 设置窗口圆角
 
-* 可通过[setWindowCornerRadius()](../harmonyos-references/arkts-apis-window-window.md#setwindowcornerradius17)接口设置窗口的圆角半径，仅支持子窗和全局悬浮窗使用。
+* 可通过[setWindowCornerRadius()](../harmonyos-references/arkts-apis-window-window.md#setwindowcornerradius17)接口设置窗口的圆角半径，仅支持子窗口和全局悬浮窗使用。
 
   此处以全局悬浮窗为例，设置其窗口圆角。
 
@@ -160,7 +159,7 @@ struct Index {
   }
   ```
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/B2yn2Vx6TniA0Cip52MItA/zh-cn_image_0000002809010129.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/mwrtjYztRHOWVqIZyw0lsg/zh-cn_image_0000002815398923.gif)
 
 ## 窗口背景色
 
@@ -178,7 +177,7 @@ struct Index {
 * 未调用[setWindowContainerColor()](../harmonyos-references/arkts-apis-window-window.md#setwindowcontainercolor20)或[setWindowContainerModalColor()](../harmonyos-references/arkts-apis-window-window.md#setwindowcontainermodalcolor)接口设置窗口容器区域背景色时，容器区域背景色默认跟随系统颜色模式：浅色模式下为'#FFF0F0F0'，深色模式下为'#FF1A1A1A'。
 * 需要在[loadContent()](../harmonyos-references/arkts-apis-window-window.md#loadcontent9-1)或[setUIContent()](../harmonyos-references/arkts-apis-window-window.md#setuicontent9-1)调用生效后才能设置背景色。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/Oua4rURYRlSUNpQ4pVvMqg/zh-cn_image_0000002809050043.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/ESpWCxkuT_6aLZgY8hIm4g/zh-cn_image_0000002786519348.gif)
 
 示例代码如下：
 

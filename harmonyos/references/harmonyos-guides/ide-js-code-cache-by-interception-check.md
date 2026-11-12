@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-js-code-c
 title: "@performance/js-code-cache-by-interception-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/js-code-cache-by-interception-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:12+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:f1a92ef5a71bdf955d49a74389f756e8fa0287db56d0e8abb800ac03bb74b4dc
+scraped_at: 2026-11-12T09:52:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4be220317426e039786b6ce0242fc18f29fa5e660a0994d00654cd7d2f45e46f
 ---
 
 在资源拦截场景下，建议生成JavaScript字节码缓存，可以降低Web页面非首次的加载时间。
@@ -228,4 +228,4 @@ struct JsCodeCacheByInterceptionCheckReport2 {
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

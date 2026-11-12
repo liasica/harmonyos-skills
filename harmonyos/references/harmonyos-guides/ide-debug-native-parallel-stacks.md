@@ -3,18 +3,18 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-nat
 title: 堆栈可视化
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > Native代码调试 > 堆栈可视化
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:22+08:00
+scraped_at: 2026-11-12T09:53:03+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:f2513cdde92044d76f20ff941e0d0868ecc464579a587d922972e2dd126f7f5e
+content_hash: sha256:047cdd32be61c99b4e4701acb959bfe2a5c6e836d2dc4e774f75897d13bffd33
 ---
 
-在native调试窗口中，点击**Layout Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/Y1zKD9ymQa6j25p6YL8Upw/zh-cn_image_0000002731542421.png)，勾选**Parallel Stacks**，打开并行栈视图。
+在native调试窗口中，点击**Layout Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/O9811wzrQMCN-CDF2Xy8PQ/zh-cn_image_0000002779407004.png)，勾选**Parallel Stacks**，打开并行栈视图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/mb8Z46MuRaeN6ja2UAFeEA/zh-cn_image_0000002701663228.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/ipfk4giYTFaxHJrhyFCUxw/zh-cn_image_0000002779407006.png)
 
 在程序停下时，并行栈视图可以同时展示多个线程的调用栈信息，合并重复调用栈，帮助您更好地理解程序的并发执行情况，以及发现潜在的多线程问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/kT_WfGYLTiGvtC7Ik0VRgQ/zh-cn_image_0000002731382447.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/zVoDa6Z3SRCzgatW9IBQyw/zh-cn_image_0000002779566982.png)
 
 ## 调用栈跳转
 
@@ -24,4 +24,4 @@ content_hash: sha256:f2513cdde92044d76f20ff941e0d0868ecc464579a587d922972e2dd126
 
 在多个线程合并的位置处悬停鼠标，可以显示这些线程的具体信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/umw-Lox7S2u5LMXgKyrOVw/zh-cn_image_0000002701823146.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/3qAyJStRQ5Oakw5xZaMZ0Q/zh-cn_image_0000002779566984.png)

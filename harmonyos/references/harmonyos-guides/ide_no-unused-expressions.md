@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-unused
 title: "@typescript-eslint/no-unused-expressions"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-unused-expressions
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:58+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:d62cf17ed93d5ac79f168a267d336a8eee11dd9534cc6e5f034817e086801864
+scraped_at: 2026-11-12T09:52:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a74ec2f841ff5edd5973aad7b5f21bb44943c8861d50eb5cc7d4cb2ac781f2ef
 ---
 
 代码中禁止包含未使用的表达式。
@@ -56,4 +56,4 @@ if ('0') '0';
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

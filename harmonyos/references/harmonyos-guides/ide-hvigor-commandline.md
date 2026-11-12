@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-co
 title: 命令行构建工具（hvigorw）
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 命令行构建工具（hvigorw）
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:23:11+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:5300c3aa1e5f1c3ab9e9232759192bf51a7ff2100dcd7d6f198f02e7d82eba63
+scraped_at: 2026-11-12T09:53:10+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ef5f8dde445b175ed10667325c852ece3f7b2cfddbcb8f8a6566075352f3c248
 ---
 
 hvigorw作为Hvigor的wrapper包装工具，支持自动安装Hvigor构建工具和相关插件依赖，以及执行Hvigor构建命令。
 
-执行命令前，需要先配置JDK，配置Node.js、hvigor等环境变量，具体请参考[搭建流水线](ide-command-line-building-app.md)。
+执行命令前，需要先配置JDK，配置hvigor环境变量等，具体请参考[搭建流水线](ide-command-line-building-app.md)。
 
 ## 命令行使用方式
 
@@ -60,7 +60,7 @@ hvigorw [taskNames...] <options>
 | --- | --- |
 | -p buildMode={debug | release} | 采用debug/release模式进行编译构建。  缺省时：构建Hap/Hsp/Har时为debug模式，构建App时为release模式。  关于构建模式的详细说明，请参考[指定构建模式](ide-hvigor-compilation-options-customizing-guide.md#section192461528194916)。针对HAR构建，请参考[构建HAR](ide-hvigor-build-har.md)。 |
 | -p debuggable=true/false | 该配置会覆盖构建模式中对应的buildOption中的debuggable配置。  关于debuggable的合并优先级，请参考[合并编译选项规则](ide-hvigor-compilation-options-customizing-guide.md#section1727865610255)。 |
-| -p product={ProductName} | 指定product进行编译, 编译product下配置的module target。  缺省时：默认为default。 |
+| -p product={ProductName} | 指定product进行编译，编译product下配置的module target。  缺省时：默认为default。 |
 | -p module={ModuleName}@{TargetName} | 指定模块及target进行编译，可指定多个相同类型的模块进行编译，以逗号隔开；TargetName不指定时默认为default。  限制：此参数需要与--mode module参数搭配使用。  缺省时：执行AssembleHap任务会编译工程下所有模块，默认指定target为default。 |
 | -p ohos-test-coverage={true | false} | 执行测试框架代码覆盖率插桩编译，详细使用请参考[使用命令行执行测试](ide-instrument-test.md#section14255191913322)。 |
 | -p coverage={true | false} |

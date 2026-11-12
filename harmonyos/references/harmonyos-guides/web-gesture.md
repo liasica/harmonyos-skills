@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-gesture
 title: 使用Web组件的手势与应用交互
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页交互 > 使用Web组件的手势与应用交互
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:26+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a726030f1c826da545203447d83bdb4de7709dc46895b87b172e8e9b2724f35a
+scraped_at: 2026-11-12T09:51:23+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:9a5bbecff6174fcae19eabc45128af6d038466ef0df6f80b4332313c8cd4a173
 ---
 
 在移动端或支持触控的Web应用中，用户通过触摸屏与页面交互，Web组件支持了常见的手势识别，例如长按、滑动、点击等，以支持丰富的用户交互体验。
@@ -84,7 +84,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/KG4IUWGZRKifjnZnRz6Hkg/zh-cn_image_0000002779690526.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/C3X-hkM-QY6grZgOrK3W5w/zh-cn_image_0000002815558857.gif)
 
 ## Web组件的手势拦截
 

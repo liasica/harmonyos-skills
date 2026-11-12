@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: backgroundTaskManager错误码
 breadcrumb: API参考 > 应用框架 > Background Tasks Kit（后台任务开发服务） > 错误码 > backgroundTaskManager错误码
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d2b6c3c7a60f51277a9434e5711e7c20d40799128d21090370e7ac99290c28c3
+scraped_at: 2026-11-12T09:55:03+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:55cb1bc8059ce565b7207d5d0e89bad343ae92ec506f88e310330665e8c9da2e
 ---
 
 **说明** 
@@ -121,10 +121,10 @@ Continuous task verification failed.
 
 **处理步骤**
 
-1. 请检查应用代码。
-2. 请检查应用是否拥有系统权限。
-3. 请检查应用所在设备类型。
-4. 请检查应用配置属性backgroundModes。
+1. 请检查应用代码与日志，确认是否存在重复申请操作。
+2. 请检查应用代码与日志，确认是否存在重复取消操作。
+3. 请检查应用配置属性backgroundModes是否已配置申请的长时任务类型，是否配置在申请长时任务所属的UIAbility配置项。
+4. 请检查应用所在设备类型。
 5. 请检查长时任务主类型和子类型是否已配置。
 6. 请检查长时任务主类型和子类型的长度是否一致或者类型是否匹配。
 7. 请检查长时任务主类型和子类型是否超出范围。
@@ -152,11 +152,17 @@ Notification verification failed for a continuous task.
 
 1. 缓存在资源子系统的长时任务通知信息资源加载失败。
 2. 通知子系统服务异常。
+3. 更新长时任务通知时，长时任务ID、通知进度信息不正确。
+4. 更新长时任务通知时，长时任务未包含数据传输类型。
+5. 在[updateBackgroundRunning](js-apis-resourceschedule-backgroundtaskmanager.md#backgroundtaskmanagerupdatebackgroundrunning21)接口中使用[ProgressInfo](js-apis-resourceschedule-backgroundtaskmanager.md#progressinfo)属性。
 
 **处理步骤**
 
 1. 请检查系统长时任务资源"ohos.backgroundtaskmgr.resources"是否存在。
 2. 系统服务内部工作异常，请稍候重试，或者重启设备尝试。
+3. 请检查更新长时任务通知时，长时任务ID、通知进度信息是否正确，重新传入正确的参数。
+4. 请检查更新长时任务通知时，长时任务是否包含“数据传输”类型。若未包含，请重新申请或者更新长时任务。
+5. 请使用[startBackgroundRunning](js-apis-resourceschedule-backgroundtaskmanager.md#backgroundtaskmanagerstartbackgroundrunning21)接口申请长时任务。
 
 ## 9800007 长时任务信息存储失败
 
@@ -178,6 +184,24 @@ Continuous task storage failed.
 
 1. 请检查文件/data/service/el1/public/background\_task\_mgr/running\_task。
 2. 系统内部工作异常，请稍候重试，或者重启设备尝试。
+
+## 9800008 请求的长时任务不支持此设备类型
+
+**错误信息**
+
+The requested continuous task is not supported on this device type.
+
+**错误描述**
+
+请求的长时任务不支持此设备类型。
+
+**可能原因**
+
+请求的长时任务类型在当前设备不支持。
+
+**处理步骤**
+
+修改申请的长时任务类型。
 
 ## 9900001 短时任务调用方信息校验失败
 

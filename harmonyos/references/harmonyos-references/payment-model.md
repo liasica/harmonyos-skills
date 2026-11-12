@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-m
 title: 数据模型说明
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > 数据模型说明
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:39+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:3146a9731b3bcd60598adf060837d4e7bf8ba45974c05d91e04a9e4ac614ebdd
+scraped_at: 2026-11-12T09:57:37+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:efb3c5fccebe85fa6c293256af947755a3f398e7ee2e5e520f73d0453cacceae
 ---
 
 ## orderStr
@@ -86,7 +86,7 @@ JSON类型数据，保存了开发者鉴权信息，用于请求头入参。
 
 | 参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
-| clientId | 是 | String | 应用的OAuth 2.0客户端ID（在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站点击“我的项目”，在项目列表中找到项目，在“项目设置 > 常规”页面的“应用”区域获取“OAuth 2.0客户端ID（凭据）：Client ID”的值）。 |
+| clientId | 是 | String | 应用的OAuth 2.0客户端ID（在[HarmonyOS开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)平台“开发者管理”，选择“ID、证书和Profile > APP ID”，在APP ID列表页面点击应用名称，进入应用详情页面，获取“OAuth 2.0客户端ID（凭据）：Client ID”的值）。 |
 | accessToken | 是 | String | 应用级的token。获取方式请参见[获取应用级凭证](payment-api-common-get-app-token.md)。 |
 | traceId | 是 | String | 与请求对应，需要保证每次请求唯一，建议时间戳+随机数。最大长度32。 |
 | time | 是 | Long | 当前时间戳，以ms为单位，防止重复请求。 |

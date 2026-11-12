@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/abr__gles
 title: abr_gles.h
 breadcrumb: API参考 > 图形 > Graphics Accelerate Kit（图形加速服务） > C API > 头文件和结构体 > 头文件 > abr_gles.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:47+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:57:07+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:ec8e202f43e6137e1032f79686fd18107fcdff1a90d937e1b7b6d0aa09d36a2a
 ---
 

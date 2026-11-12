@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-cashi
 title: CashierComponent (iap嵌入式收银台组件)
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > ArkTS组件 > CashierComponent (iap嵌入式收银台组件)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:56+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:ce94ec3a6f3a5aeb6cc54bbceed082f8b536c45d15433f09ef76f8001de0ed94
+scraped_at: 2026-11-12T09:57:21+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d72199feac82823cc9c45464f17f2c23638bb00ab82cf214e8e318f8d0167a7f
 ---
 
 CashierComponent是IAP Kit提供的ArkUI嵌入式收银台组件，需配合cashierComponentManager使用，用于在应用页面内直接展示商品选择与支付界面，无需跳转外部收银台。该组件目前仅适用于TV设备的扫码支付场景，支持通过CashierDisplayOptions配置显示参数，并通过CashierListener回调处理购买结果。
@@ -88,7 +88,7 @@ const purchaseListener = new PurchaseListener();
 @Component
 struct CashierComponentPage {
   @State params: iap.PurchaseParameter = {
-    // productId需要替换成开发者在AppGallery Connect网站配置商品信息时设置的“商品ID”
+    // productId需要替换成开发者配置商品信息时设置的“商品ID”
     productId: 'testProduct01',
     // iap.ProductType.CONSUMABLE：消耗型商品
     // iap.ProductType.NONCONSUMABLE：非消耗型商品

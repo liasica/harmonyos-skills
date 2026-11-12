@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: LazyVGridLayout
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > LazyVGridLayout
 category: harmonyos-references
-scraped_at: 2026-11-04T08:32:54+08:00
+scraped_at: 2026-11-12T09:54:11+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:c8854dff7125f3fd785764fa0d1393593247b4e92cc481f06b35be5c250a9105
+content_hash: sha256:af3a127cdfccdd84aaadd47905d71b66dbeb32a29d41e246fa50490f67602f41
 ---
 
 该组件用于实现支持懒加载的网格布局，适用于在滚动容器中按需渲染大量网格项的场景，可减少首帧渲染时间和内存开销。
@@ -430,7 +430,7 @@ export class MyDataSource<T> extends BasicDataSource<T> {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/oUpPs1rgSSCOfwIREH1qGA/zh-cn_image_0000002809011891.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/fxYKIR2ES8634v56LmBBIg/zh-cn_image_0000002815400665.gif)
 
 ### 示例2（设置头部组件或尾部组件及吸附效果）
 
@@ -510,7 +510,7 @@ struct LazyVGridLayoutStickyDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/MewbhSF_RtOoi6bhR0MzQg/zh-cn_image_0000002809051805.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/WT9_xbqOR_m33g6byS1Dhw/zh-cn_image_0000002786521090.gif)
 
 ### 示例3（设置自适应列数）
 
@@ -644,4 +644,4 @@ struct LazyVGridLayoutColumnsTemplateDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/zjJ7WumUSZeNunMTonfavQ/zh-cn_image_0000002779852240.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/9ALlcpDsQWqtUVIsbmMgUw/zh-cn_image_0000002786361162.gif)

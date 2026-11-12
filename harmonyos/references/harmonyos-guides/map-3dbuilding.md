@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-3dbuildin
 title: 3D建筑
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 3D建筑
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:36+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d43b397670e396a420eaa8efc097e6f174d59455e3030bbad9d7254c217090f0
+scraped_at: 2026-11-12T09:52:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a643924da3813b42e8d430eaa2a1d734fb058a9abd51097ba57b1c5ae9439b1d
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:d43b397670e396a420eaa8efc097e6f174d59455e3030bbad9d7254c217
 
 3D建筑主要用于展示城市建筑外观，帮助用户直观了解城市面貌，同时还可应用于楼盘、小区等三维模型的呈现，辅助用户全面了解周边环境。此外，在导航定位、旅游导览以及商业选址分析等场景中也有广泛应用，能够为用户提供更加真实、直观的地图体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/Hgf7P3hbSXSgzKGySYTNMQ/zh-cn_image_0000002809051061.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/p7c-LpyPSy-bd2LwAgFkxQ/zh-cn_image_0000002786360448.gif "点击放大")
 
 ## 接口说明
 
@@ -209,7 +209,7 @@ content_hash: sha256:d43b397670e396a420eaa8efc097e6f174d59455e3030bbad9d7254c217
                // 3D建筑的选中楼层颜色
                floorColor: 0xff000000,
                // 3D建筑的展示层级
-               showLevel: 14,
+               showLevel: 15,
                // 3D建筑选中楼层从底部升起的动画时长
                animationDuration: 5000,
                // 3D建筑侧面的纹理，需要替换您自己的资源图片，存放在resources/base/media目录下

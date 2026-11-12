@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiretrieval-g
 title: 使用HiRetrieval进行应用灰度采集（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 应用灰度采集 > 使用HiRetrieval进行应用灰度采集（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:48+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b67f698cd96fb04df22b3dc5232a6204e4dbb91fe5d51ec8dcbda3607c21f84c
+scraped_at: 2026-11-12T09:51:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:06271ec8765b096f31a8eefa8877c8612cf1d2757ff08cd065af24a446ab68bb
 ---
 
 ## 简介
@@ -17,6 +17,7 @@ content_hash: sha256:b67f698cd96fb04df22b3dc5232a6204e4dbb91fe5d51ec8dcbda3607c2
   + GPU泄漏：内存采样日志、内存栈日志。
   + ArkTS OOM泄漏：ArkTS虚拟机内存快照日志。
   + RSS泄漏：smaps日志、内存栈日志、ArkTS虚拟机内存快照日志、Kotlin语言内存快照日志。
+  + DMA泄漏：内存采样日志、内存栈日志。（系统版本在HarmonyOS 7.0.0.125及以上开始支持）
 
 开发者在云端新建任务时，可以选择上述故障中的任一。在任务激活期间，被圈选的设备发生了对应故障，则会自动采集对应的日志并上传到云端。
 

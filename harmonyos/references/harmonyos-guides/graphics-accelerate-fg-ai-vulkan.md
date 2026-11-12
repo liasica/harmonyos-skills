@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: Vulkan平台
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏渲染加速服务 > 超帧功能开发 > AI超帧模式 > Vulkan平台
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:20+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:7597fc8bbceff55881df80a2838366cb478ed697d542da8eaa91a710d63943d8
+scraped_at: 2026-11-12T09:52:14+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0497a637bd061c172bc4e6d592ba0a3a15971478cb802dce7987f36ef306ae6b
 ---
 
 ## 业务流程
@@ -14,7 +14,7 @@ AI超帧调用流程上依赖系统送显模式功能，但与基本的系统送
 
 下面是基于Vulkan图形API平台，集成AI超帧的主要业务流程：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/xrYj5bV2Qmqyu9ZrsZS2EA/zh-cn_image_0000002809010801.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/0_DY0gGZQrqQjUe4vd4wKA/zh-cn_image_0000002815559517.png)
 
 1. 用户进入超帧适用的游戏场景。
 2. 游戏应用调用[HMS\_FG\_IsFrameGenerationSupported](../harmonyos-references/_graphics_accelerate.md#hms_fg_isframegenerationsupported)查询是否支持AI超帧特性。如果当前设备支持此特性，则继续步骤3创建超帧上下文实例，否则返回false，结束流程。
@@ -22,10 +22,13 @@ AI超帧调用流程上依赖系统送显模式功能，但与基本的系统送
 4. 游戏应用调用接口配置超帧实例属性。包括调用[HMS\_FG\_SetAlgorithmMode\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_setalgorithmmode_vk)设置超帧算法模式并选择内插模式；按需调用其他插帧相关配置接口。
 5. 设置集成模式，选择系统侧集成调用[HMS\_FG\_SetIntegrationMode\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_setintegrationmode_vk)设置超帧预测的集成信息[FG\_IntegrationInfo](../harmonyos-references/_graphics_accelerate.md#fg_integrationinfo)并选择系统侧送显；系统送显预测帧模式下可通过[HMS\_FG\_SetUiPredictionEnabled\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_setuipredictionenabled_vk)启用UI预测功能，不启用时预测帧会复用上一帧的UI进行展示；系统送显模式下可通过[HMS\_FG\_SetTargetFps\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_settargetfps_vk)设置超帧后的目标帧率，未调用该接口则默认设置为60帧。
 6. 游戏应用调用[HMS\_FG\_Activate\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_activate_vk)接口激活超帧上下文实例。
-7. 游戏应用渲染真实帧，调用[HMS\_FG\_Dispatch\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_dispatch_vk)接口并传入真实帧颜色信息、相机矩阵信息，生成预测帧。请避免传入深度信息，否则会触发增强超帧算法。
-8. 游戏应用完成UI绘制，并送显当前真实帧。
-9. 用户退出超帧适用的游戏场景。
-10. 游戏应用调用[HMS\_FG\_DestroyContext\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_destroycontext_vk)接口销毁超帧上下文实例并释放内存资源。
+7. 游戏应用调用[HMS\_FG\_CreateImage\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_createimage_vk)接口创建真实渲染帧颜色缓冲区图像实例。该接口将游戏应用中的VkImage、VkImageView图像资源和超帧算法实现之间建立关联。
+8. 游戏运行，对游戏帧画面进行渲染。
+9. 游戏应用渲染真实帧，调用[HMS\_FG\_Dispatch\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_dispatch_vk)接口并传入真实帧颜色信息、相机矩阵信息，生成预测帧。请避免传入深度信息，否则会触发增强超帧算法。
+10. 游戏应用完成UI绘制，并送显当前真实帧。
+11. 用户退出超帧适用的游戏场景。
+12. 游戏应用调用[HMS\_FG\_DestroyImage\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_destroyimage_vk)接口销毁真实渲染帧颜色缓冲区图像实例并释放内存资源。
+13. 游戏应用调用[HMS\_FG\_DestroyContext\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_destroycontext_vk)接口销毁超帧上下文实例并释放内存资源。
 
 ## 开发步骤
 
@@ -75,19 +78,22 @@ AI超帧调用流程上依赖系统送显模式功能，但与基本的系统送
 5. 调用[HMS\_FG\_CreateContext\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_createcontext_vk)接口创建超帧上下文实例。如果返回nullptr，则说明超帧上下文实例创建失败，或当前硬件设备不支持开启超帧。
 
    ```cpp
-    // 变量声明
-    VkInstance vkInstance = VK_NULL_HANDLE; // vkInstance通过调用vkCreateInstance创建
-    VkPhysicalDevice vkPhysicalDevice = VK_NULL_HANDLE; // vkPhysicalDevice通过调用vkEnumeratePhysicalDevices枚举
-    VkDevice vkDevice = VK_NULL_HANDLE; // vkDevice通过调用vkCreateDevice创建
+   // 声明超帧上下文实例
+   FG_Context_VK *m_context = nullptr;
+   ```
 
-    // 创建超帧上下文实例
+   ```cpp
+   // 创建超帧上下文实例
    FG_ContextDescription_VK contextDescription{};
-   contextDescription.vkInstance = vkInstance;
-   contextDescription.vkPhysicalDevice = vkPhysicalDevice;
-   contextDescription.vkDevice = vkDevice;
-   contextDescription.framesInFlight = 1;
+   // vkInstance通过调用vkCreateInstance创建
+   contextDescription.vkInstance = VulkanFG::Device::Instance().GetNativeInstance();
+   // vkPhysicalDevice通过调用vkEnumeratePhysicalDevices枚举
+   contextDescription.vkPhysicalDevice = VulkanFG::Device::Instance().GetNativePhysicalDevice();
+   // vkDevice通过调用vkCreateDevice创建
+   contextDescription.vkDevice = VulkanFG::Device::Instance().GetNativeDevice();
+   contextDescription.framesInFlight = static_cast<uint8_t>(VulkanFG::FRAMES_IN_FLIGHT);
    contextDescription.fnVulkanLoaderFunction = vkGetInstanceProcAddr;
-   FG_Context_VK* m_context = HMS_FG_CreateContext_VK(&contextDescription);
+   m_context = HMS_FG_CreateContext_VK(&contextDescription);
    if (m_context == nullptr) {
        GOLOGE("HMS_FG_CreateContext_VK execution failed.");
        return false;
@@ -168,7 +174,7 @@ AI超帧调用流程上依赖系统送显模式功能，但与基本的系统送
 
    ```
    // 真实帧渲染阶段
-   // 渲染当前帧渲染画面，缓存颜色、深度、相机矩阵等信息，用于下一帧预测帧生成，绘制真实帧
+   // 渲染当前帧渲染画面，缓存颜色、相机矩阵等信息，用于下一帧预测帧生成，绘制真实帧
    // ...
 
    // 绘制UI
@@ -181,13 +187,13 @@ AI超帧调用流程上依赖系统送显模式功能，但与基本的系统送
            .inputColorInfo = {
                .image = m_ffSceneColor,
                // 设置预测帧生成前真实帧颜色缓冲区同步状态
-               .initialSync {
+               .initialSync = {
                    .accessMask = VK_ACCESS_SHADER_READ_BIT,
                    .layout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL,
                    .stages = VK_PIPELINE_STAGE_FRAGMENT_SHADER_BIT
                },
                // 设置预测帧生成后真实帧颜色缓冲区同步状态
-               .finalSync {
+               .finalSync = {
                    .accessMask = VK_ACCESS_SHADER_READ_BIT,
                    .layout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL,
                    .stages = VK_PIPELINE_STAGE_FRAGMENT_SHADER_BIT
@@ -214,7 +220,17 @@ AI超帧调用流程上依赖系统送显模式功能，但与基本的系统送
    // 送显真实帧
    // ...
    ```
-10. 调用[HMS\_FG\_DestroyContext\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_destroycontext_vk)接口销毁超帧实例，释放内存资源。
+10. 调用[HMS\_FG\_DestroyImage\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_destroyimage_vk)接口销毁真实渲染帧颜色缓冲区图像实例，释放内存资源。
+
+    ```
+    // 销毁真实帧颜色缓冲区图像实例
+    FG_ErrorCode errorCode = HMS_FG_DestroyImage_VK(m_context, m_ffSceneColor);
+    if (errorCode != FG_SUCCESS) {
+        GOLOGE("HMS_FG_DestroyImage_VK m_ffSceneColor execution failed.");
+        return false;
+    }
+    ```
+11. 调用[HMS\_FG\_DestroyContext\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_destroycontext_vk)接口销毁超帧实例，释放内存资源。
 
     ```cpp
     // 销毁超帧上下文实例并释放内存资源

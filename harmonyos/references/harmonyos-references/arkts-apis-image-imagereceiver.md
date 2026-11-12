@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (ImageReceiver)
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.image (图片处理) > Interface (ImageReceiver)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:29+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:7376a2288947b9dedaaf10eeacc82a5c01e0f9807f4f0463df5b1e7f521425c7
+scraped_at: 2026-11-12T09:56:38+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e56f9d5f6c3fe569d18b9edd63a1399430736cacfcf96be594fbdfa668f71315
 ---
 
 ImageReceiver类，用于获取组件surface id、接收最新的图片和读取下一张图片以及释放ImageReceiver实例。ImageReceiver作为图片的接收方和消费者，其参数属性实际上不会对接收到的图片产生影响。图片属性的配置应在发送方和生产者上进行，如相机预览流[createPreviewOutput](arkts-apis-camera-cameramanager.md#createpreviewoutput)。
@@ -400,5 +400,68 @@ async function Release(receiver : image.ImageReceiver) {
   }).catch((error: BusinessError) => {
     console.error(`Failed to release the receiver.code ${error.code},message is ${error.message}`);
   })
+}
+```
+
+## setMemoryName
+
+setMemoryName(name: string): void
+
+为ImageReceiver接收的图像缓冲区设置内存标识符，便于在内存调试或问题定位时识别相关缓冲区。建议在注册[on](arkts-apis-image-imagereceiver.md#on9)回调，以及调用[readNextImage](arkts-apis-image-imagereceiver.md#readnextimage9)或[readLatestImage](arkts-apis-image-imagereceiver.md#readlatestimage9)读取图像前进行设置。
+
+**说明** 
+
+* 为确保传入值与实际生效的内存标识符一致，请按照以下规则设置name：
+
+  + 仅使用可见ASCII字符（0x21～0x7E），不要包含空格、换行符、制表符或其他控制字符。
+  + 名称长度为1～255字节。
+  + 当名称仅由数字组成时，接口会自动在名称前添加前缀ImageReceiver:。添加前缀后的内存标识符总长度不能超过255字节，即纯数字名称最长为241字节。
+* 若希望传入值与实际生效的内存标识符完全一致，建议名称中至少包含一个非数字字符。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Image.ImageReceiver
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| name | string | 是 | ImageReceiver接收的图像缓冲区的内存标识符。请使用可见ASCII字符（0x21～0x7E），长度为1～255字节。当名称仅由数字组成时，接口会自动添加前缀ImageReceiver:；添加后的内存标识符总长度不能超过255字节，即纯数字名称最长为241字节。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Image错误码](errorcode-image.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7900201 | Invalid parameter. Possible causes:  Name is empty.  Name contains no visible characters after filtering.  The length of name exceeds 256 bytes.  Ensure the name parameter contains visible ASCII characters. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+
+function setMemoryNameSync(receiver: image.ImageReceiver) {
+  try {
+    // 建议在注册imageArrival回调并读取图片前设置内存标识符。
+    receiver.setMemoryName('ImageReceiverNameTest');
+    console.info('Succeeded in setting memory name.');
+  } catch (error) {
+    const err = error as BusinessError;
+    console.error(`Failed to set memory name. Code: ${err.code}, message: ${err.message}`);
+    return;
+  }
+
+  receiver.on('imageArrival', () => {
+    receiver.readNextImage().then((nextImage: image.Image) => {
+      console.info('Succeeded in reading the next Image.');
+      // 处理图片数据。
+      nextImage.release();
+    }).catch((error: BusinessError) => {
+      console.error(`Failed to read the next Image. Code: ${error.code}, message: ${error.message}`);
+    });
+  });
 }
 ```

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-multi-ass
 title: "@performance/multiple-associations-state-var-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/multiple-associations-state-var-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:12+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:e07650582af16b566dc2ddf2c2ac9933b00df045275c493b2e5ac14d3bd42347
+scraped_at: 2026-11-12T09:52:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f8d7ce8640a09e2cd4ce63a3f28a6a84cd92d330293d891e3f78e153904a88d6
 ---
 
 多个组件关联同一数据时，建议在组件中使用@Watch装饰器添加更新条件，避免不必要的组件更新。
 
-[通用丢帧场景](../best-practices/bpta-status-management.md#section117631443131915)下，建议优先修改。
+通用丢帧场景下，建议优先修改。
 
 ## 规则配置
 
@@ -230,4 +230,4 @@ struct CompC {
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

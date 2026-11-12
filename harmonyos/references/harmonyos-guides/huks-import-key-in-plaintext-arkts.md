@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-import-k
 title: 明文导入密钥(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥生成/导入 > 密钥导入 > 明文导入密钥(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:37+08:00
-doc_updated_at: 2026-10-14
+scraped_at: 2026-11-12T09:51:39+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:341271092909526702360d50590a9dca69d7c71072e1366ecb7e079a02911060
 ---
 

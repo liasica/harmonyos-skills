@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-text-c
 title: 文本组件公共接口
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > 文本组件公共接口
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:33+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:47a62c80868a37d9f0accfd243a71bd6d97034b3e4f8b8e2cff2c80bf2ba9cf9
+scraped_at: 2026-11-12T09:54:19+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:2d8f47730ee3f75f433dd1d8b4add36d3227cff64d2abe47312701ad6aa3b113
 ---
 
 **说明** 
@@ -1549,6 +1549,8 @@ type FontVariation = import('../api/@ohos.graphics.text').default.FontVariation
 可变字体的属性。
 
 **起始版本：** 26.0.0
+
+**卡片能力：** 从API版本26.0.1开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 

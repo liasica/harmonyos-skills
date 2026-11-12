@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-interac
 title: 支持游戏手柄输入事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 输入设备与事件 > 支持游戏手柄输入事件
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:16+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:1005949990810316ca9c967911bbe58b74dd9e865bb106583c45decc84e3918c
+scraped_at: 2026-11-12T09:51:13+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0930b81ed672540190cdddbf141791a6e3860a98c015afb5153bd3e352c4b9e4
 ---
 
 从API version 15开始，支持使用游戏手柄作为输入设备。当用户使用手柄进行操作时，系统会识别其输入行为并上报为按键事件或焦点轴事件。开发者可以通过注册相应的回调函数，接收并处理这些事件，进而实现与游戏手柄的交互逻辑。
@@ -14,7 +14,7 @@ content_hash: sha256:1005949990810316ca9c967911bbe58b74dd9e865bb106583c45decc84e
 
 下面以常见的游戏手柄为例，说明其按键及操纵杆的常见映射关系：按键通常被映射为离散的键值（方向键有时也可映射为轴值），操纵杆则映射为连续的轴值。[KeyCode](../harmonyos-references/js-apis-keycode.md#keycode)针对游戏手柄提供了可支持的键值，[AxisModel](../harmonyos-references/ts-appendix-enums.md#axismodel15)则提供了可支持的轴值。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/CxjJmIjSTzOjSVvuYJUIaA/zh-cn_image_0000002809009829.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/eimHmx-iT9iGnZ8Lh2Up9Q/zh-cn_image_0000002815398625.png)
 
 ## 处理按键输入
 
@@ -62,7 +62,7 @@ struct CommonKey {
 
 手柄的方向键输入在触发按键事件时也会带来默认的走焦效果。当开发者仅需利用方向键进行游戏内操作（如控制角色移动、旋转视角等）时，这种默认的走焦行为可能会干扰正常操作。使用焦点组可以解决这一问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/kL2eUodaSHOEGZVyXIFjXg/zh-cn_image_0000002809049745.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/zlUhSryfSTS2r7tlhk0USQ/zh-cn_image_0000002786519050.png)
 
 如图所示，在没有焦点组的情况下，方向键操作会使焦点在组件A、B、C之间自由移动。当使用焦点组容器将特定组件包裹起来时，就可以在该容器内部独立控制焦点行为。通过[focusScopeId](../harmonyos-references/ts-universal-attributes-focus.md#focusscopeid14)可以设置焦点组，并通过设置arrowStepOut参数为false来限制方向键走焦行为，以下示例展示了如何实现这一逻辑：
 
@@ -197,7 +197,7 @@ struct GamepadSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/SLlIiRvjT3Stn0CssTfO7g/zh-cn_image_0000002779850180.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/CH7j3GDNQL2Fj_QyyT-29Q/zh-cn_image_0000002786359122.gif)
 
 运行示例，分别使用游戏手柄进行以下操作：
 

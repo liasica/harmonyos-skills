@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-avoid-ove
 title: "@performance/avoid-overusing-custom-component-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/avoid-overusing-custom-component-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:11+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:2635b2f9e5e51a74f2bd07c56f69207e8dbbab65ef0c1616f15a91e872ae2d97
+scraped_at: 2026-11-12T09:52:57+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0c7893083d90eebffb0b3fa28fd85d9983307eb5a74a9308bd2ec881f1d5762c
 ---
 
 当在应用中使用自定义组件时，可以优先使用@Builder函数代替自定义组件，@Builder函数不会在后端FrameNode节点树上创建一个新的树节点，有助于缩短页面的加载和渲染时长。
@@ -166,4 +166,4 @@ plugin:@performance/recommended
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

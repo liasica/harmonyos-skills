@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-text
 title: text.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > text.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:21+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:2c2aa04f5391a0ac8f84c636b67f6e9a818d24cacdf9a37f190e41d2e139af74
+scraped_at: 2026-11-12T09:54:47+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:92281df9d0d929d7b00f63ce71ac06912642f5cca5486a1b6b2fada4f9c315ac
 ---
 
 ## 概述
@@ -35,6 +35,7 @@ content_hash: sha256:2c2aa04f5391a0ac8f84c636b67f6e9a818d24cacdf9a37f190e41d2e13
 | [OH\_ArkUI\_FontWeightConfigs](capi-arkui-nativemodule-oh-arkui-fontweightconfigs.md) | OH\_ArkUI\_FontWeightConfigs | 定义文本的字体粗细配置，适用于需要精确控制文本字体粗细或需要文本字体粗细跟随设备字体设置变化的应用场景。可以通过[OH\_ArkUI\_FontWeightConfigs\_Create](capi-text-h.md#oh_arkui_fontweightconfigs_create)接口创建文本字体粗细配置对象，使用完毕后必须调用[OH\_ArkUI\_FontWeightConfigs\_Destroy](capi-text-h.md#oh_arkui_fontweightconfigs_destroy)接口销毁对象以释放资源，避免内存泄漏。配置创建后，可通过以下接口进行设置和查询：通过[OH\_ArkUI\_FontWeightConfigs\_SetEnableVariableFontWeight](capi-text-h.md#oh_arkui_fontweightconfigs_setenablevariablefontweight)接口设置是否启用可变字重调节，通过[OH\_ArkUI\_FontWeightConfigs\_GetEnableVariableFontWeight](capi-text-h.md#oh_arkui_fontweightconfigs_getenablevariablefontweight)接口查看是否启用了可变字重调节，通过[OH\_ArkUI\_FontWeightConfigs\_SetEnableDeviceFontWeightCategory](capi-text-h.md#oh_arkui_fontweightconfigs_setenabledevicefontweightcategory)接口设置文本字体粗细是否跟随设备的字体粗细级别更新，通过[OH\_ArkUI\_FontWeightConfigs\_GetEnableDeviceFontWeightCategory](capi-text-h.md#oh_arkui_fontweightconfigs_getenabledevicefontweightcategory)接口查看文本字体粗细是否跟随设备的字体粗细级别更新。当该配置对象被使用且不为空指针时，若用户未通过接口显式设置，各项配置将使用默认值（可变字重调节默认为禁用，文本字体粗细跟随设备字体粗细级别更新默认为启用）。当该配置为空指针时，不应用默认值，文本字体粗细行为与父组件保持一致。 |
 | [OH\_ArkUI\_FontConfigs](capi-arkui-nativemodule-oh-arkui-fontconfigs.md) | OH\_ArkUI\_FontConfigs | 定义文本的字体配置，当前支持通过相关接口设置和获取字体粗细配置，适用于需要自定义字体粗细显示效果的场景。可以通过[OH\_ArkUI\_FontConfigs\_Create](capi-text-h.md#oh_arkui_fontconfigs_create)接口创建字体配置对象，通过[OH\_ArkUI\_FontConfigs\_Destroy](capi-text-h.md#oh_arkui_fontconfigs_destroy)接口销毁字体配置对象。配置创建后，可通过以下接口进行设置和查询：通过[OH\_ArkUI\_FontConfigs\_SetFontWeightConfigs](capi-text-h.md#oh_arkui_fontconfigs_setfontweightconfigs)接口设置字体粗细配置，通过[OH\_ArkUI\_FontConfigs\_GetFontWeightConfigs](capi-text-h.md#oh_arkui_fontconfigs_getfontweightconfigs)接口获取字体粗细配置。 |
 | [OH\_ArkUI\_TextController](capi-arkui-nativemodule-oh-arkui-textcontroller.md) | OH\_ArkUI\_TextController | 定义文本组件的控制器，用于在Native侧对文本组件进行控制和交互。控制器需要先通过节点属性绑定到文本组件，才能进行后续操作。一个控制器只能绑定到一个文本组件，绑定后该控制器将管理对应文本组件的样式和内容。可通过[OH\_ArkUI\_TextController\_Create](capi-text-h.md#oh_arkui_textcontroller_create)创建控制器对象，创建后必须在使用完毕后调用[OH\_ArkUI\_TextController\_Destroy](capi-text-h.md#oh_arkui_textcontroller_destroy)接口销毁对象以释放资源，二者必须成对使用，否则会导致内存泄漏。创建控制器后，可通过节点属性将控制器绑定到文本组件，然后使用[OH\_ArkUI\_TextController\_SetStyledString](capi-native-type-h.md#oh_arkui_textcontroller_setstyledstring)等接口设置文本组件的属性字符串，实现对文本内容的动态管理和样式控制。适用于需要在Native层操作文本组件的场景。 |
+| [OH\_ArkUI\_NativeModule\_LineSpacingOptions](capi-arkui-nativemodule-oh-arkui-nativemodule-linespacingoptions.md) | OH\_ArkUI\_NativeModule\_LineSpacingOptions | 定义文本行间距选项对象，用于配置文本行间距是否仅在行与行之间生效。可以通过[OH\_ArkUI\_NativeModule\_LineSpacingOptions\_Create](capi-text-h.md#oh_arkui_nativemodule_linespacingoptions_create)接口创建行间距选项对象，创建后必须在使用完毕后调用[OH\_ArkUI\_NativeModule\_LineSpacingOptions\_Destroy](capi-text-h.md#oh_arkui_nativemodule_linespacingoptions_destroy)接口销毁对象以释放资源，二者必须成对使用，否则会导致内存泄漏。创建对象后，可使用[OH\_ArkUI\_NativeModule\_LineSpacingOptions\_SetOnlyBetweenLines](capi-text-h.md#oh_arkui_nativemodule_linespacingoptions_setonlybetweenlines)接口设置行间距是否仅在行与行之间生效，通过[OH\_ArkUI\_NativeModule\_LineSpacingOptions\_GetOnlyBetweenLines](capi-text-h.md#oh_arkui_nativemodule_linespacingoptions_getonlybetweenlines)接口获取行间距配置。适用于需要精确控制文本行间距显示效果的场景，如排版要求首尾行不加行间距的文本显示。 |
 
 ### 枚举
 
@@ -85,6 +86,10 @@ content_hash: sha256:2c2aa04f5391a0ac8f84c636b67f6e9a818d24cacdf9a37f190e41d2e13
 | [OH\_ArkUI\_FontWeightConfigs\* OH\_ArkUI\_FontConfigs\_GetFontWeightConfigs(OH\_ArkUI\_FontConfigs\* option)](capi-text-h.md#oh_arkui_fontconfigs_getfontweightconfigs) | 获取文本字体配置对象的文本字体粗细配置。 |
 | [OH\_ArkUI\_TextController\* OH\_ArkUI\_TextController\_Create()](capi-text-h.md#oh_arkui_textcontroller_create) | 创建一个文本控制器对象。当该对象不再使用时，请调用[OH\_ArkUI\_TextController\_Destroy](capi-text-h.md#oh_arkui_textcontroller_destroy)销毁，以释放资源避免内存泄漏。 |
 | [void OH\_ArkUI\_TextController\_Destroy(OH\_ArkUI\_TextController\* controller)](capi-text-h.md#oh_arkui_textcontroller_destroy) | 销毁文本控制器对象。与[OH\_ArkUI\_TextController\_Create](capi-text-h.md#oh_arkui_textcontroller_create)成对使用，否则会导致内存泄漏。 |
+| [OH\_ArkUI\_NativeModule\_LineSpacingOptions\* OH\_ArkUI\_NativeModule\_LineSpacingOptions\_Create()](capi-text-h.md#oh_arkui_nativemodule_linespacingoptions_create) | 创建文本行间距选项对象。使用完毕后需要调用[OH\_ArkUI\_NativeModule\_LineSpacingOptions\_Destroy](capi-text-h.md#oh_arkui_nativemodule_linespacingoptions_destroy)销毁对象。 |
+| [void OH\_ArkUI\_NativeModule\_LineSpacingOptions\_Destroy(OH\_ArkUI\_NativeModule\_LineSpacingOptions\* options)](capi-text-h.md#oh_arkui_nativemodule_linespacingoptions_destroy) | 销毁文本行间距选项对象。 |
+| [ArkUI\_ErrorCode OH\_ArkUI\_NativeModule\_LineSpacingOptions\_SetOnlyBetweenLines(OH\_ArkUI\_NativeModule\_LineSpacingOptions\* options, bool onlyBetweenLines)](capi-text-h.md#oh_arkui_nativemodule_linespacingoptions_setonlybetweenlines) | 设置文本行间距选项的onlyBetweenLines参数。当设置为true时，行间距仅在行之间应用，首行上方和尾行下方无额外的行间距。当设置为false时，首行上方和尾行下方也会存在行间距。 |
+| [ArkUI\_ErrorCode OH\_ArkUI\_NativeModule\_LineSpacingOptions\_GetOnlyBetweenLines(const OH\_ArkUI\_NativeModule\_LineSpacingOptions\* options, bool\* onlyBetweenLines)](capi-text-h.md#oh_arkui_nativemodule_linespacingoptions_getonlybetweenlines) | 获取文本行间距选项的onlyBetweenLines参数。 |
 
 ## 枚举类型说明
 
@@ -915,3 +920,89 @@ void OH_ArkUI_TextController_Destroy(OH_ArkUI_TextController* controller)
 | 参数项 | 描述 |
 | --- | --- |
 | [OH\_ArkUI\_TextController](capi-arkui-nativemodule-oh-arkui-textcontroller.md)\* controller | 指向文本组件控制器对象的指针。 |
+
+### OH\_ArkUI\_NativeModule\_LineSpacingOptions\_Create()
+
+```c
+OH_ArkUI_NativeModule_LineSpacingOptions* OH_ArkUI_NativeModule_LineSpacingOptions_Create()
+```
+
+**描述**
+
+创建文本行间距选项对象。使用完毕后需要调用[OH\_ArkUI\_NativeModule\_LineSpacingOptions\_Destroy](capi-text-h.md#oh_arkui_nativemodule_linespacingoptions_destroy)销毁对象。
+
+**起始版本：** 26.0.1
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [OH\_ArkUI\_NativeModule\_LineSpacingOptions\*](capi-arkui-nativemodule-oh-arkui-nativemodule-linespacingoptions.md) | 返回指向[OH\_ArkUI\_NativeModule\_LineSpacingOptions](capi-arkui-nativemodule-oh-arkui-nativemodule-linespacingoptions.md)对象的指针。 |
+
+### OH\_ArkUI\_NativeModule\_LineSpacingOptions\_Destroy()
+
+```c
+void OH_ArkUI_NativeModule_LineSpacingOptions_Destroy(OH_ArkUI_NativeModule_LineSpacingOptions* options)
+```
+
+**描述**
+
+销毁文本行间距选项对象。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_ArkUI\_NativeModule\_LineSpacingOptions](capi-arkui-nativemodule-oh-arkui-nativemodule-linespacingoptions.md)\* options | 指向[OH\_ArkUI\_NativeModule\_LineSpacingOptions](capi-arkui-nativemodule-oh-arkui-nativemodule-linespacingoptions.md)对象的指针。 |
+
+### OH\_ArkUI\_NativeModule\_LineSpacingOptions\_SetOnlyBetweenLines()
+
+```c
+ArkUI_ErrorCode OH_ArkUI_NativeModule_LineSpacingOptions_SetOnlyBetweenLines(OH_ArkUI_NativeModule_LineSpacingOptions* options, bool onlyBetweenLines)
+```
+
+**描述**
+
+设置文本行间距选项的onlyBetweenLines参数。当设置为true时，行间距仅在行之间应用，首行上方和尾行下方无额外的行间距。当设置为false时，首行上方和尾行下方也会存在行间距。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_ArkUI\_NativeModule\_LineSpacingOptions](capi-arkui-nativemodule-oh-arkui-nativemodule-linespacingoptions.md)\* options | 指向[OH\_ArkUI\_NativeModule\_LineSpacingOptions](capi-arkui-nativemodule-oh-arkui-nativemodule-linespacingoptions.md)对象的指针。 |
+| bool onlyBetweenLines | 行间距是否仅在行与行之间应用。true表示仅在行之间应用行间距，false表示首行上方和尾行下方也会存在行间距。 默认值为false。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [ArkUI\_ErrorCode](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) | [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 表示操作成功。[ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 表示options参数为空。 |
+
+### OH\_ArkUI\_NativeModule\_LineSpacingOptions\_GetOnlyBetweenLines()
+
+```c
+ArkUI_ErrorCode OH_ArkUI_NativeModule_LineSpacingOptions_GetOnlyBetweenLines(const OH_ArkUI_NativeModule_LineSpacingOptions* options, bool* onlyBetweenLines)
+```
+
+**描述**
+
+获取文本行间距选项的onlyBetweenLines参数。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_ArkUI\_NativeModule\_LineSpacingOptions](capi-arkui-nativemodule-oh-arkui-nativemodule-linespacingoptions.md)\* options | 指向[OH\_ArkUI\_NativeModule\_LineSpacingOptions](capi-arkui-nativemodule-oh-arkui-nativemodule-linespacingoptions.md)对象的指针。 |
+| bool\* onlyBetweenLines | 输出参数，指向bool类型变量的指针，用于接收值。true表示仅在行之间应用行间距，false表示首行上方和尾行下方也会存在行间距。默认值为false。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [ArkUI\_ErrorCode](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) | [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 表示操作成功。[ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 表示任意参数为空。 |

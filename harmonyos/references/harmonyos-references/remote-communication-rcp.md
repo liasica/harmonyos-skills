@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-co
 title: rcp（数据请求）
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > ArkTS API > rcp（数据请求）
 category: harmonyos-references
-scraped_at: 2026-10-27T07:42:34+08:00
-doc_updated_at: 2026-10-26
+scraped_at: 2026-11-12T09:55:47+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:35fce8fe3f4d1d03b9c4aa9fc649f52723f0597e9eba6b1b290dd8c0f4501cd4
 ---
 

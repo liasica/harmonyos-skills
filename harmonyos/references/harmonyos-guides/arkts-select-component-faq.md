@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-select-
 title: 按钮与选择组件常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI开发常见问题 > 按钮与选择组件常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:23+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:97998b392fff79e6fc065c3b6cf04b30ffe04a6c5ca543c756f3b42c80085516
+scraped_at: 2026-11-12T09:51:20+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:27c99b78b0280f037f53a6e66e4fe1f485c7b894c1789532da2e1642a47a4cf2
 ---
 
 本文档介绍按钮与选择组件的常见问题并提供参考。
@@ -16,11 +16,11 @@ Slider的滑块与滑轨显示样式[SliderStyle](../harmonyos-references/ts-bas
 
 SliderStyle.OutSet模式下，滑块的中心与滑轨的端点对齐，示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/PU4O72kDRY-HH6k3GzXkdQ/zh-cn_image_0000002779850428.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/kROdaahiS_Ws-TppK_yVLQ/zh-cn_image_0000002786359370.jpg)
 
 SliderStyle.InSet模式下，滑块与滑轨的中心对齐，即距离端点滑轨高度的一半的位置，示例图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/AukTTJbrSPKbtusDNQ3oTw/zh-cn_image_0000002779690460.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/ifKFgq7iSgOQ5Wj-Jk-evA/zh-cn_image_0000002815558791.jpg)
 
 **示例**
 
@@ -117,7 +117,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/RnB8JtsRTf2p6U7afSkU0Q/zh-cn_image_0000002809010079.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/0HtUE0InTuK6gls2Kunb_w/zh-cn_image_0000002815398875.png)
 
 ## Button组件设置type时，ButtonType枚举值与数字值不一致
 
@@ -186,4 +186,4 @@ struct ButtonTypeDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/1FakMZgLRDyH6wKQbZtq8A/zh-cn_image_0000002809049995.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/qso6uMh4SeC4LGnbhvaHag/zh-cn_image_0000002786519300.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Enums
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Enums
 category: harmonyos-references
-scraped_at: 2026-10-17T06:47:54+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:2bec053d266240c00ca2722a03738719f2173db8ddce370fb541597c605ebb78
+scraped_at: 2026-11-12T09:56:34+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f382ac1e753f6f1c68cf4a818d57883ba2d56dc3aaa65276f12a4bc398705750
 ---
 
 **说明** 
@@ -61,15 +61,14 @@ content_hash: sha256:2bec053d266240c00ca2722a03738719f2173db8ddce370fb541597c605
 
 枚举，远端相机设备类型。
 
-**元服务API：** 从API version 19开始，该接口支持在元服务中使用。
-
 **系统能力：** SystemCapability.Multimedia.Camera.Core
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| UNKNOWN\_TYPE | 0 | 未知设备类型。 |
-| PHONE | 0x0E | 手机设备。 |
-| TABLET | 0x11 | 平板设备。 |
+| UNKNOWN\_TYPE | 0 | 未知设备类型。  **元服务API：** 从API版本19开始，该接口支持在元服务中使用。 |
+| PHONE | 0x0E | 手机设备。  **元服务API：** 从API版本19开始，该接口支持在元服务中使用。 |
+| TABLET | 0x11 | 平板设备。  **元服务API：** 从API版本19开始，该接口支持在元服务中使用。 |
+| GLASSES | 0xA31 | 眼镜设备。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。 |
 
 ## CameraStatus
 
@@ -134,6 +133,8 @@ content_hash: sha256:2bec053d266240c00ca2722a03738719f2173db8ddce370fb541597c605
 | DEVICE\_DISABLED | 7400108 | 安全原因相机被禁用。  **元服务API：** 从API version 19开始，该接口支持在元服务中使用。 |
 | DEVICE\_PREEMPTED | 7400109 | 相机被抢占导致无法使用。  **元服务API：** 从API version 19开始，该接口支持在元服务中使用。 |
 | UNRESOLVED\_CONFLICTS\_WITH\_CURRENT\_CONFIGURATIONS12+ | 7400110 | 与当前配置存在冲突。  **元服务API：** 从API version 19开始，该接口支持在元服务中使用。 |
+| UNSUPPORTED\_MULTI\_CAMERA\_COMBINATION | 7400113 | 不支持的多摄组合。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。 |
+| PARAM\_OUT\_OF\_RANGE | 7400115 | 参数超出范围。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。 |
 | SERVICE\_FATAL\_ERROR | 7400201 | 相机服务异常返回。  **元服务API：** 从API version 19开始，该接口支持在元服务中使用。 |
 
 ## TorchMode11+
@@ -428,7 +429,7 @@ content_hash: sha256:2bec053d266240c00ca2722a03738719f2173db8ddce370fb541597c605
 | --- | --- | --- |
 | BEAUTY | 0 | 美颜。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
 | PORTRAIT | 1 | 人像虚化。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
-| AUTO\_FRAMING24+ | 2 | 自动构图。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
+| AUTO\_FRAMING24+ | 2 | 自动对焦。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
 | COLOR\_EFFECT | 3 | 色彩效果。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
 
 ## PhotoQualityPrioritization21+
@@ -568,3 +569,20 @@ content_hash: sha256:2bec053d266240c00ca2722a03738719f2173db8ddce370fb541597c605
 | AUTOMOTIVE\_CAMERA\_POSITION\_INTERIOR\_ROW\_3\_LEFT | 12 | Car设备内部第三排左侧摄像头。 |
 | AUTOMOTIVE\_CAMERA\_POSITION\_INTERIOR\_ROW\_3\_CENTER | 13 | Car设备内部第三排中央摄像头。 |
 | AUTOMOTIVE\_CAMERA\_POSITION\_INTERIOR\_ROW\_3\_RIGHT | 14 | Car设备内部第三排右侧摄像头。 |
+
+## CameraAuxiliaryPhotoType
+
+表示辅助图类型的枚举。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| OXYGEN | 0 | 血氧图。 |
+| PIGMENTATION | 1 | 色斑图。 |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-compon
 title: Matrix2D
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 画布绘制 > Matrix2D
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:08+08:00
+scraped_at: 2026-11-12T09:54:22+08:00
 doc_updated_at: 2026-09-17
-content_hash: sha256:561d81c5f2b6c61023b612ef04f434d2b35d7c797e6905f95877963f2d4b8857
+content_hash: sha256:4d552bbeeaa2ce43ccceb33a70b1c754b170fb884ba33f9de64524a19dcf079e
 ---
 
 用于[CanvasRenderingContext2D](ts-canvasrenderingcontext2d.md)、[OffscreenCanvasRenderingContext2D](ts-offscreencanvasrenderingcontext2d.md)、[CanvasPattern](ts-components-canvas-canvaspattern.md)和[Path2D](ts-components-canvas-path2d.md)图形变换的矩阵对象，可以对矩阵进行缩放、旋转和平移等变换。
@@ -110,7 +110,7 @@ struct Parameter {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/7oxHkCUkS3uWioC4sOmn6Q/zh-cn_image_0000002809052121.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/RCoz-IaEQrmOhUkB5dzmgg/zh-cn_image_0000002815560903.png)
 
 ## identity
 
@@ -160,7 +160,7 @@ struct Identity {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/ZzAxK41CRiefIIwSKWo6RQ/zh-cn_image_0000002779852556.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/40kDJ1M4Toysii8ZchTY6Q/zh-cn_image_0000002815400987.png)
 
 ## invert
 
@@ -216,7 +216,7 @@ struct Invert {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/_jrJ6ArjTM24Wh2iam2kMg/zh-cn_image_0000002779692588.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/AaFcyJIzQJO4TDSStkQvKQ/zh-cn_image_0000002786521412.png)
 
 ## multiply(deprecated)
 
@@ -301,7 +301,7 @@ struct Rotate {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/TJS0eosDSMa7WvZh0E8Wsg/zh-cn_image_0000002809012209.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/Qq0tXcxuQDKYG63ULE_vLg/zh-cn_image_0000002786361484.png)
 
 ## rotate10+
 
@@ -369,7 +369,7 @@ struct Rotate {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/xwH6PlphQQGA3TfIImYBBQ/zh-cn_image_0000002809052123.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/O0KLDVGsSfOf5ZIxyHOm6g/zh-cn_image_0000002815560905.png)
 
 ## translate
 
@@ -432,7 +432,7 @@ struct Translate {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/YKftkZyeR0m4FHeqoABV7g/zh-cn_image_0000002779852558.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/yIO9FRwgQR-iQk5OVGvR_Q/zh-cn_image_0000002815400989.png)
 
 ## scale
 
@@ -495,4 +495,4 @@ struct Scale {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/drBBDxvZSFibm5_dfcC7wA/zh-cn_image_0000002779692590.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/jLrpckyDQF-cclWU264Qcw/zh-cn_image_0000002786521414.png)

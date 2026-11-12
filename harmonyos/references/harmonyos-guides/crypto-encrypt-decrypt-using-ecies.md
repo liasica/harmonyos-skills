@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-encryp
 title: 使用ECIES混合加解密(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密 > 使用ECIES混合加解密(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:26+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:51:33+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:1d510643ad8c5dc52272bb3aa0978dc83db288982dd18ae5e6dba31f46a0369b
 ---
 

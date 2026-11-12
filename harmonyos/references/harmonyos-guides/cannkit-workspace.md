@@ -1,18 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-workspace
 title: 如何申请workspace作为临时内存
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 附录 > 如何申请workspace作为临时内存
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > 附录 > 如何申请workspace作为临时内存
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:35+08:00
-doc_updated_at: 2026-06-27
-content_hash: sha256:5a04bcefa653f61e7e13cc0b5b24d0c3001eca6971c1e247027249b1b9955bba
+scraped_at: 2026-11-12T09:52:42+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4f5f994a8d6f5e4f4470462ab9cb0c6f64245fc1e06082d41505b6af8b6cfe12
 ---
 
 workspace是设备侧Global Memory上的一块内存。workspace内存分为两部分：系统workspace和开发者workspace。
 
 * 系统workspace：AscendC API需要预留的workspace内存
 
-  API在计算过程需要一些workspace内存作为缓存，因此算子需要为API预留workspace内存，预留内存大小通过[GetLibApiWorkSpaceSize](cannkit-getlibapiworkspacesize.md)接口获取。
+  API在计算过程需要一些workspace内存作为缓存，因此算子需要为API预留workspace内存，预留内存大小通过[GetLibApiWorkSpaceSize](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)接口获取。
 * 开发者workspace：算子实现使用到的workspace内存
 
   算子内部需要通过额外的device内存进行数据交换或者缓存的时候才需要分配，根据实际情况自行分配。使用场景如下。
@@ -20,11 +20,11 @@ workspace是设备侧Global Memory上的一块内存。workspace内存分为两�
   + 需要使用Unified Buffer和L1 Buffer上空间且空间不够用时，可以将数据暂存至workspace上。
   + 其他需要使用Global Memory上内存空间的场景。
 
-不同开发方式下，具体的使用方法如下。
+工程化算子开发方式下，具体的使用方法如下。
 
 * 工程化算子开发方式
 
-  在tiling函数中先通过[GetWorkspaceSizes](cannkit-getworkspacesizes.md)接口获取workspace大小的存放位置，再设置workspace的大小，框架侧会为其申请对应大小的设备侧Global Memory，在对应的算子kernel侧实现时可以使用这块workspace内存。在使用[Matmul](cannkit-matmul-usage-description.md)等需要系统workspace的高阶API时，设置的workspace空间大小为系统workspace和开发者workspace之和。
+  在tiling函数中先通过[GetWorkspaceSizes](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)接口获取workspace大小的存放位置，再设置workspace的大小，框架侧会为其申请对应大小的设备侧Global Memory，在对应的算子kernel侧实现时可以使用这块workspace内存。在使用[Matmul](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)等需要系统workspace的高阶API时，设置的workspace空间大小为系统workspace和开发者workspace之和。
 
   ```cpp
   // 开发者自定义的tiling函数

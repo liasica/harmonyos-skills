@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-bas
 title: Types
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS 组件 > Web > Types
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:28+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:756fefe2c619e0f2076ef973937b6627241f6b9ca768fd2201b48aea28bbd4ca
+scraped_at: 2026-11-12T09:55:00+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b3e4140c8ec2bdf128ed547462490b25ff3e67ed05d6f10e2d31ae9b08373c25
 ---
 
 本文档提供 ArkWeb 组件中使用的类型定义，包括 Web 控制器及各类事件回调函数类型。其中，WebviewController 用于控制 Web 组件的行为；各类回调函数类型为开发者提供 Web 组件运行过程中多种事件场景的事件监听和处理能力。
@@ -324,6 +324,28 @@ type OnDetectBlankScreenCallback = (event: BlankScreenDetectionEventInfo) => voi
 **示例：**
 
 完整示例代码参考[onDetectedBlankScreen](arkts-basic-components-web-events.md#ondetectedblankscreen22)。
+
+## OnMonitorBlankScreenCallback
+
+type OnMonitorBlankScreenCallback = (event: MonitoredBlankScreenEventInfo) => void
+
+Web组件检测到白屏时会触发回调。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | [MonitoredBlankScreenEventInfo](arkts-basic-components-web-i.md#monitoredblankscreeneventinfo) | 是 | 检测到白屏时的详细信息。 |
+
+**示例：**
+
+完整示例代码参考[onMonitoredBlankScreen](arkts-basic-components-web-events.md#onmonitoredblankscreen)。
 
 ## OnCameraCaptureStateChangeCallback23+
 

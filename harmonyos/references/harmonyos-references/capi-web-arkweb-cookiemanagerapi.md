@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-web-
 title: ArkWeb_CookieManagerAPI
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > C API > 结构体 > ArkWeb_CookieManagerAPI
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:29+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:1d91b3031d52bb605f05c94060ef5e7bc5376648da743e3862c13f165694f1cc
+scraped_at: 2026-11-12T09:55:02+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:585cadf0d927b24094d6922db797f811c95d3e88272c1697bdebd701ea0cff74
 ---
 
 ```c
@@ -16,7 +16,7 @@ typedef struct {...} ArkWeb_CookieManagerAPI
 
 ArkWeb\_CookieManagerAPI是Cookie管理相关Native API结构体。该结构体提供了Cookie的读取、设置、清除和同步等操作能力，适用于需要在WebView组件中管理用户会话、跟踪用户首选项等场景，能够帮助开发者便捷地实现数据持久化和状态同步。
 
-CookieManager相关接口需在UI线程中调用OH\_ArkWeb\_GetNativeAPI方法获取，调用前建议通过[ARKWEB\_MEMBER\_MISSING](capi-arkweb-type-h.md#宏定义)校验函数指针的可用性，避免SDK与设备ROM不匹配导致崩溃。
+默认情况下，CookieManager相关接口需在UI线程中调用OH\_ArkWeb\_GetNativeAPI方法获取，调用前建议通过[ARKWEB\_MEMBER\_MISSING](capi-arkweb-type-h.md#宏定义)校验函数指针的可用性，避免SDK与设备ROM不匹配导致崩溃。从API版本26.0.1开始，调用[OH\_NativeArkWeb\_LazyInitializeWebEngineInCookieManager](capi-native-interface-arkweb-h.md#oh_nativearkweb_lazyinitializewebengineincookiemanager)设置为true后，CookieManager相关接口支持在非UI线程使用。
 
 **起始版本：** 12
 
@@ -52,7 +52,7 @@ ArkWeb_ErrorCode (*fetchCookieSync)(const char* url, bool incognito, bool includ
 
 **描述：**
 
-获取指定URL对应的cookie值。用于用户登录状态维护、会话管理、个性化配置读取等场景。该方法需在UI线程调用，调用前建议校验函数指针的可用性。
+获取指定URL对应的cookie值。用于用户登录状态维护、会话管理、个性化配置读取等场景。默认情况下，该方法需在UI线程调用，调用前建议校验函数指针的可用性。从API版本26.0.1开始，调用[OH\_NativeArkWeb\_LazyInitializeWebEngineInCookieManager](capi-native-interface-arkweb-h.md#oh_nativearkweb_lazyinitializewebengineincookiemanager)设置为true后，支持在非UI线程调用。
 
 **参数：**
 
@@ -77,7 +77,7 @@ ArkWeb_ErrorCode (*configCookieSync)(const char* url, const char* cookieValue, b
 
 **描述：**
 
-设置指定URL的cookie值。用于保存用户偏好设置、维持登录状态、会话信息保存等场景。该方法需在UI线程调用，调用前建议校验函数指针的可用性。
+设置指定URL的cookie值。用于保存用户偏好设置、维持登录状态、会话信息保存等场景。默认情况下，该方法需在UI线程调用，调用前建议校验函数指针的可用性。从API版本26.0.1开始，调用[OH\_NativeArkWeb\_LazyInitializeWebEngineInCookieManager](capi-native-interface-arkweb-h.md#oh_nativearkweb_lazyinitializewebengineincookiemanager)设置为true后，支持在非UI线程调用。
 
 **参数：**
 
@@ -102,7 +102,7 @@ bool (*existCookies)(bool incognito)
 
 **描述：**
 
-检查cookie是否存在。用于判断用户是否已登录、检查会话是否有效、验证身份状态等场景。该方法需在UI线程调用，调用前建议校验函数指针的可用性。
+检查cookie是否存在。用于判断用户是否已登录、检查会话是否有效、验证身份状态等场景。默认情况下，该方法需在UI线程调用，调用前建议校验函数指针的可用性。从API版本26.0.1开始，调用[OH\_NativeArkWeb\_LazyInitializeWebEngineInCookieManager](capi-native-interface-arkweb-h.md#oh_nativearkweb_lazyinitializewebengineincookiemanager)设置为true后，支持在非UI线程调用。
 
 **参数：**
 
@@ -124,7 +124,7 @@ void (*clearAllCookiesSync)(bool incognito)
 
 **描述：**
 
-清除所有cookies（包括持久化cookies和会话cookies）。用于用户退出登录、清除隐私数据、重置用户状态等场景。若仅需清除会话cookies，建议使用[clearSessionCookiesSync](capi-web-arkweb-cookiemanagerapi.md#clearsessioncookiessync)。该方法需在UI线程调用，调用前建议校验函数指针的可用性。
+清除所有cookies（包括持久化cookies和会话cookies）。用于用户退出登录、清除隐私数据、重置用户状态等场景。若仅需清除会话cookies，建议使用[clearSessionCookiesSync](capi-web-arkweb-cookiemanagerapi.md#clearsessioncookiessync)。默认情况下，该方法需在UI线程调用，调用前建议校验函数指针的可用性。从API版本26.0.1开始，调用[OH\_NativeArkWeb\_LazyInitializeWebEngineInCookieManager](capi-native-interface-arkweb-h.md#oh_nativearkweb_lazyinitializewebengineincookiemanager)设置为true后，支持在非UI线程调用。
 
 **参数：**
 
@@ -140,4 +140,4 @@ void (*clearSessionCookiesSync)()
 
 **描述：**
 
-清除所有会话cookies。用于清除临时会话数据、关闭所有会话、会话超时清理等场景。该方法需在UI线程调用，调用前建议校验函数指针的可用性。
+清除所有会话cookies。用于清除临时会话数据、关闭所有会话、会话超时清理等场景。默认情况下，该方法需在UI线程调用，调用前建议校验函数指针的可用性。从API版本26.0.1开始，调用[OH\_NativeArkWeb\_LazyInitializeWebEngineInCookieManager](capi-native-interface-arkweb-h.md#oh_nativearkweb_lazyinitializewebengineincookiemanager)设置为true后，支持在非UI线程调用。

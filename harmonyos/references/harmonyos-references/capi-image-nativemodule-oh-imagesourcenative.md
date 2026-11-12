@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: OH_ImageSourceNative
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 结构体 > OH_ImageSourceNative
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:57+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:56:42+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:ce8b1704933d207fd0291c5b3f893227e6658d85f7b9354c834d70d0ed0b094f
 ---
 

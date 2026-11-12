@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-transi
 title: 短时任务(C/C++)
 breadcrumb: 指南 > 应用框架 > Background Tasks Kit（后台任务开发服务） > 短时任务(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:17+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:781dcffc4b0338800a6e3837662768210a81a4d24013e6023ccb6ce6f370e5f2
+scraped_at: 2026-11-12T09:51:24+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a4a9b5c980810a9371f1a9450715dec1bf6f664a4893424eeda3ed7bc84b9a91
 ---
 
 ## 场景介绍
@@ -168,7 +168,7 @@ content_hash: sha256:781dcffc4b0338800a6e3837662768210a81a4d24013e6023ccb6ce6f37
 ### 在index.d.ts文件中声明函数
 
 ```typescript
-import backgroundTaskManager from '@kit.BackgroundTasksKit';
+import { backgroundTaskManager } from '@kit.BackgroundTasksKit';
 
 export const RequestSuspendDelay: () => number;
 export const GetRemainingDelayTime: () => number;

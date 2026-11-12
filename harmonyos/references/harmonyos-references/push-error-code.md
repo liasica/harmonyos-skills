@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-erro
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-09-24T06:55:38+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:2ab10a5f753934d6761f99015a6ee99a506a7d621f3278980ed5dcb1c6514ffb
+scraped_at: 2026-11-12T09:57:39+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:801d006b728109d07774a86edbd335cdef34c47aba9540527d623e77c3ee7b75
 ---
 
 **说明** 
@@ -275,7 +275,7 @@ The device does not support getting token.
 
 **处理步骤**
 
-请使用Phone、Tablet或PC/2in1设备进行调试。从5.1.0(18)版本开始，新增支持Wearable设备；从5.1.1(19)版本开始，新增支持TV设备。
+请使用Phone、Tablet或PC/2in1设备进行调试。从API版本5.1.0(18)开始，新增支持Wearable设备；从API版本5.1.1(19)开始，新增支持TV设备；从API版本26.0.1开始，新增支持Car设备。
 
 ## 1000900015 绑定的应用内账号数量达到上限
 

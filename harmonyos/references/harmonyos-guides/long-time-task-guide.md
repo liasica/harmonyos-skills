@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/long-time-tas
 title: 长时任务开发指导 (TaskPool)
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 长时任务并发场景 > 长时任务开发指导 (TaskPool)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:46+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:51:04+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:6c3131f2df42f15ff6e64be55b70d0f5da50a98532b0a9ac8e26a16c616c5ef7
 ---
 

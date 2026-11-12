@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-ag
 title: 使用X25519进行密钥协商(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥协商 > 使用X25519进行密钥协商(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:37+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:51:34+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:2dc1d9c97290eb1cc4dde2726aed8c5ffc283565fdcc6f338db573aeab99cab6
 ---
 

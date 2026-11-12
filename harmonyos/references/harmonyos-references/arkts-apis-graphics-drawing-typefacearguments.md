@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (TypefaceArguments)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (TypefaceArguments)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:42+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:6394d2ffcd2c1783c1bf086591716fb6df5a1c0572c594ccde6656f1f3b1378d
+scraped_at: 2026-11-12T09:56:57+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e490779c18f3fb21e5e5893cc8d2f01f14e43b15d6b732e33ad6784ea89fd757
 ---
 
 提供字体属性配置的类，用于配置可变字体的属性参数（如字重维度等轴标签及对应属性值）。
@@ -55,7 +55,7 @@ addVariation(axis: string, value: number)
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | axis | string | 是 | 字体属性对象可变维度轴标签。具体支持哪些标签取决于加载的字体文件。具体支持的属性及标签值请参考对应的字体文件。 |
-| value | number | 是 | 字体属性对象可变维度轴标签对应的属性值，需要在字体文件支持的范围内，否则不会生效。如果属性值小于支持的最小值，则默认和最小值一致。如果属性值大于支持的最大值，则默认和最大值效果一致。请打开对应的字体文件具体查看支持的属性值。 |
+| value | number | 是 | 字体属性对象可变维度轴标签对应的属性值，需要在字体文件支持的范围内，否则不会生效。如果属性值小于支持的最小值，则默认和最小值一致。如果属性值大于支持的最大值，则默认和最大值一致。请打开对应的字体文件具体查看支持的属性值。 |
 
 **错误码：**
 

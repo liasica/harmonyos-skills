@@ -3,18 +3,22 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-n
 title: 传输资源包
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 游戏近场快传（可选） > 开发指导 > 传输资源包
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:30+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d26b76b8e5d9ff0595ebeaaf11057d450df2a6d50cde706a26241168f42a2629
+scraped_at: 2026-11-12T09:52:24+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:41dcbb8452dcf4278fcc523340e657887ff2838264cfc1747f516123d15300b4
 ---
 
 从API版本26.0.0开始，资源包传输接入流程更新，开发者无需手动绑定设备，可直接通过碰一碰开启传输，并通过want参数内的信息确认设备为接收端或发送端。
 
 游戏近场快传支持已安装游戏的玩家间传输游戏内资源包，节省玩家下载资源包所需的流量和时间。
 
+**说明** 
+
+请确保在使用近场快传传输资源包时接收端游戏未在前台运行，否则将无法进行传输。
+
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/YpMhUKGOQq6dSCYk5Na14Q/zh-cn_image_0000002779851348.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/FiKZDRnmQuiEuRTDW3sFXw/zh-cn_image_0000002786520230.png)
 
 1. 发送端游戏调用以下接口注册监听。
 
@@ -26,29 +30,29 @@ content_hash: sha256:d26b76b8e5d9ff0595ebeaaf11057d450df2a6d50cde706a26241168f42
 
    **说明** 
 
-   仅发送端有建链成功connectNotify事件回调，接收端收到[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)或[onNewWant](../harmonyos-references/js-apis-app-ability-uiability.md#onnewwant)回调即代表建链成功。
-3. 发送端游戏调用[create](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)创建资源包传输任务。
-4. 接收端设备拉起游戏，获取[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)或[onNewWant](../harmonyos-references/js-apis-app-ability-uiability.md#onnewwant)回调中的want参数，并确认want内parameters参数中的isGameNearbyReceiver参数值。若值为true，则确认当前设备为接收端。
+   仅发送端有建链成功connectNotify事件回调，接收端收到[onCreate()](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)或[onNewWant()](../harmonyos-references/js-apis-app-ability-uiability.md#onnewwant)回调即代表建链成功。
+3. 发送端游戏调用[create()](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)创建资源包传输任务。
+4. 接收端设备拉起游戏，获取[onCreate()](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)或[onNewWant()](../harmonyos-references/js-apis-app-ability-uiability.md#onnewwant)回调中的want参数，并确认want内parameters参数中的isGameNearbyReceiver参数值。若值为true，则确认当前设备为接收端。
 
-   当游戏未打开时，请获取[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)回调；当游戏已打开时，请获取[onNewWant](../harmonyos-references/js-apis-app-ability-uiability.md#onnewwant)回调。
+   当游戏未打开时，请获取[onCreate()](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)回调；当游戏已打开时，请获取[onNewWant()](../harmonyos-references/js-apis-app-ability-uiability.md#onnewwant)回调。
 5. 接收端游戏调用以下接口注册监听。
 
    * 注册连接通知监听接口：[on](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferonconnectnotify)('connectNotify')
    * 注册收到包信息监听接口：[on](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferonreceivepackageinfo)('receivePackageInfo')
    * 注册传输通知监听接口：[on](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferontransfernotify)('transferNotify')
    * 注册错误事件监听接口：[on](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferonerror)('error')
-6. 接收端游戏调用[create](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)创建资源包传输任务。
-7. 接收端游戏调用[sendPackageInfo](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfersendpackageinfo)发送自身文件信息，如版本信息、包信息。
+6. 接收端游戏调用[create()](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)创建资源包传输任务。
+7. 接收端游戏调用[sendPackageInfo()](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfersendpackageinfo)发送自身文件信息，如版本信息、包信息。
 8. 发送端游戏收到receivePackageInfo事件回调。
-9. 发送端游戏比较版本。如对比结果为不需要发送，则调用[destroy](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferdestroy)销毁服务。
-10. 如发送端游戏对比结果为需要发送，则调用[transferPackageData](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfertransferpackagedata)向接收端发送需要传输的资源包。
+9. 发送端游戏比较版本。如对比结果为不需要发送，则调用[destroy()](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferdestroy)销毁服务。
+10. 如发送端游戏对比结果为需要发送，则调用[transferPackageData()](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfertransferpackagedata)向接收端发送需要传输的资源包。
 11. 接收端游戏和发送端游戏可在transferNotify回调中获取当前已传输的包体大小、包体总大小、传输速率、传输剩余时间等信息。传输完成后，接收端游戏可获取已接收资源包的存储目录，对传输完成的资源文件做处理。
-12. 处理传输完成的资源文件后，可调用[destroy](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferdestroy)销毁服务。
+12. 处理传输完成的资源文件后，可调用[destroy()](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferdestroy)销毁服务。
 
     **说明** 
 
     * destroy接口会清除已接收数据，请确保对已接收数据做好处理或转移后再调用该接口。
-    * 每次调用[create](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)接口会自动清理自身历史数据。
+    * 每次调用[create()](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)接口会自动清理自身历史数据。
 
 ## 接口说明
 
@@ -76,7 +80,7 @@ content_hash: sha256:d26b76b8e5d9ff0595ebeaaf11057d450df2a6d50cde706a26241168f42
 导入Game Service Kit及公共模块。
 
 ```typescript
-import { abilityAccessCtrl, AbilityConstant, UIAbility, common } from "@kit.AbilityKit";
+import { abilityAccessCtrl, AbilityConstant, UIAbility, common } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { gameNearbyTransfer } from '@kit.GameServiceKit';
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -113,7 +117,7 @@ try {
 
 ```typescript
 // 注册监听
-public registerCallback() {
+function registerCallback() {
   try {
     gameNearbyTransfer.on('connectNotify', connectNotifyCallBack);
     gameNearbyTransfer.on('receivePackageInfo', receivePackageInfoCallBack);
@@ -126,25 +130,29 @@ public registerCallback() {
 }
 
 function connectNotifyCallBack(callback: gameNearbyTransfer.ConnectNotification) {
-  // 发送端收到连接回调，并调用create接口
+  // 连接状态回调，接收端收到建链成功回调后，在此处调用sendPackageInfo接口发送自身文件信息，如版本信息、包信息
+  hilog.info(0x0000, 'nearby', `connectNotify. State: ${callback.connectState}`);
 }
 
 function receivePackageInfoCallBack(callback: gameNearbyTransfer.PackageInfo) {
   // 接收包信息回调，发送端收到接收端发送的版本信息后进行对比，根据对比结果决定是否需要传输资源包数据。
+  hilog.info(0x0000, 'nearby', `get package info. version: ${callback.version}`);
 }
 
 function transferNotifyCallBack(callback: gameNearbyTransfer.TransferNotification) {
   // 传输回调，处理传输进度信息
+  hilog.info(0x0000, 'nearby', `get transfer state: ${callback.transferState}`);
 }
 
 function errorCallBack(callback: gameNearbyTransfer.ReturnResult) {
   // 异常信息回调，处理相关异常信息
+  hilog.error(0x0000, 'nearby', `Error info. Code: ${callback.code}, message: ${callback.message}`);
 }
 ```
 
 ### 发送端创建游戏近场快传服务
 
-收到建链成功回调后，发送端调用[create](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)接口创建游戏近场快传服务。
+收到建链成功回调后，发送端调用[create()](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)接口创建游戏近场快传服务。
 
 ```typescript
 function connectNotifyCallBack(callback: gameNearbyTransfer.ConnectNotification) {
@@ -174,68 +182,70 @@ function connectNotifyCallBack(callback: gameNearbyTransfer.ConnectNotification)
 
 ### 接收端获取want参数并发送自身文件信息
 
-接收端拉起游戏，获取[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)或[onNewWant](../harmonyos-references/js-apis-app-ability-uiability.md#onnewwant)回调中的want参数，并注册各回调事件，调用[create](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)接口创建游戏近场快传服务。近场快传服务创建完成后，调用[sendPackageInfo](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfersendpackageinfo)接口发送自身文件信息，如版本信息、包信息。
+接收端拉起游戏，获取[onCreate()](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)或[onNewWant()](../harmonyos-references/js-apis-app-ability-uiability.md#onnewwant)回调中的want参数，并注册各回调事件，调用[create()](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfercreate)接口创建游戏近场快传服务。近场快传服务创建完成后，调用[sendPackageInfo()](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfersendpackageinfo)接口发送自身文件信息，如版本信息、包信息。
 
 ```typescript
-onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-  this.startTransfer(want);
-}
+export default class EntryAbility extends UIAbility {
+  onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    this.startTransfer(want);
+  }
 
-onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
-  this.startTransfer(want);
-}
+  onNewWant(want: Want, launchParam: AbilityConstant.LaunchParam): void {
+    this.startTransfer(want);
+  }
 
-async startTransfer(want: Want) {
-  const records = want.parameters;
-  if (records) {
-    const isGameNearbyReceiver = records.isGameNearbyReceiver as boolean;
-    if (isGameNearbyReceiver) {
-      // 注册回调并创建快传服务
-      try {
-        gameNearbyTransfer.on('connectNotify', connectNotifyCallBack);
-        gameNearbyTransfer.on('receivePackageInfo', receivePackageInfoCallBack);
-        gameNearbyTransfer.on('transferNotify', transferNotifyCallBack);
-        gameNearbyTransfer.on('error', errorCallBack);
-      } catch (error) {
-        let err = error as BusinessError;
-        hilog.error(0x0000, 'nearby', `registerCallback error. Code: ${err.code}, message: ${err.message}`);
-      }
-      let uiAbilityContext = this.context;
-      AppStorage.setOrCreate('context', uiAbilityContext);
-      let initParam: gameNearbyTransfer.CreateParameters = {
-        abilityName: uiAbilityContext.abilityInfo.name,
-        context: uiAbilityContext,
-        moduleName: uiAbilityContext.abilityInfo.moduleName,
-        needShowSystemUI: false,
-      };
+  async startTransfer(want: Want) {
+    const records = want.parameters;
+    if (records) {
+      const isGameNearbyReceiver = records.isGameNearbyReceiver as boolean;
+      if (isGameNearbyReceiver) {
+        // 注册回调并创建快传服务
+        try {
+          gameNearbyTransfer.on('connectNotify', connectNotifyCallBack);
+          gameNearbyTransfer.on('receivePackageInfo', receivePackageInfoCallBack);
+          gameNearbyTransfer.on('transferNotify', transferNotifyCallBack);
+          gameNearbyTransfer.on('error', errorCallBack);
+        } catch (error) {
+          let err = error as BusinessError;
+          hilog.error(0x0000, 'nearby', `registerCallback error. Code: ${err.code}, message: ${err.message}`);
+        }
+        let uiAbilityContext = this.context;
+        AppStorage.setOrCreate('context', uiAbilityContext);
+        let initParam: gameNearbyTransfer.CreateParameters = {
+          abilityName: uiAbilityContext.abilityInfo.name,
+          context: uiAbilityContext,
+          moduleName: uiAbilityContext.abilityInfo.moduleName,
+          needShowSystemUI: false,
+        };
 
-      try {
-        await gameNearbyTransfer.create(initParam);
-      } catch (error) {
-        let err = error as BusinessError;
-        hilog.error(0x0000, 'nearby', `create exception. Code: ${err.code}, message: ${err.message}`);
-      }
-      // 发送资源包信息给发送端
-      let packageInfo: gameNearbyTransfer.PackageInfo = {
-        name: 'com.huawei.xxxx',
-        files: [],
-        version: '1.1.0',
-        extraData: 'extraData'
-      };
-      let fileInfo: gameNearbyTransfer.FileInfo = {
-        path: '/xxx/xxxx/files/data.zip', // 沙箱路径
-        hash: 'fileHash' // 可选
-      };
-      packageInfo.files?.push(fileInfo);
-      try {
-        gameNearbyTransfer.sendPackageInfo(packageInfo).then(() => {
-          hilog.info(0x0000, 'nearby', `sendPackageInfo success`);
-        }).catch((err: BusinessError) => {
-          hilog.error(0x0000, 'nearby', `sendPackageInfo failed. Code: ${err.code}, message: ${err.message}`);
-        });
-      } catch (error) {
-        let err = error as BusinessError;
-        hilog.error(0x0000, 'nearby', `sendPackageInfo exception. Code: ${err.code}, message: ${err.message}`);
+        try {
+          await gameNearbyTransfer.create(initParam);
+        } catch (error) {
+          let err = error as BusinessError;
+          hilog.error(0x0000, 'nearby', `create exception. Code: ${err.code}, message: ${err.message}`);
+        }
+        // 发送资源包信息给发送端
+        let packageInfo: gameNearbyTransfer.PackageInfo = {
+          name: 'com.huawei.xxxx',
+          files: [],
+          version: '1.1.0',
+          extraData: 'extraData'
+        };
+        let fileInfo: gameNearbyTransfer.FileInfo = {
+          path: '/xxx/xxxx/files/data.zip', // 沙箱路径
+          hash: 'fileHash' // 可选
+        };
+        packageInfo.files?.push(fileInfo);
+        try {
+          gameNearbyTransfer.sendPackageInfo(packageInfo).then(() => {
+            hilog.info(0x0000, 'nearby', `sendPackageInfo success`);
+          }).catch((err: BusinessError) => {
+            hilog.error(0x0000, 'nearby', `sendPackageInfo failed. Code: ${err.code}, message: ${err.message}`);
+          });
+        } catch (error) {
+          let err = error as BusinessError;
+          hilog.error(0x0000, 'nearby', `sendPackageInfo exception. Code: ${err.code}, message: ${err.message}`);
+        }
       }
     }
   }
@@ -264,7 +274,7 @@ function errorCallBack(callback: gameNearbyTransfer.ReturnResult) {
 
 ### 发送端对比后传输资源包
 
-发送端收到接收端发送的版本信息后进行对比，根据对比结果决定是否需要调用[transferPackageData](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfertransferpackagedata)接口发送资源包数据。如果不需要发送资源包数据，则直接调用[destroy](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferdestroy)接口销毁服务。
+发送端收到接收端发送的版本信息后进行对比，根据对比结果决定是否需要调用[transferPackageData()](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransfertransferpackagedata)接口发送资源包数据。如果不需要发送资源包数据，则直接调用[destroy()](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferdestroy)接口销毁服务。
 
 ```typescript
 function receivePackageInfoCallBack(callback: gameNearbyTransfer.PackageInfo) {
@@ -302,7 +312,7 @@ function receivePackageInfoCallBack(callback: gameNearbyTransfer.PackageInfo) {
 
 ### 处理资源包传输进度信息
 
-发送端和接收端在传输回调中处理传输进度信息，若传输异常，则需要调用[destroy](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferdestroy)接口释放并清理资源。
+发送端和接收端在传输回调中处理传输进度信息，若传输异常，则需要调用[destroy()](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferdestroy)接口释放并清理资源。
 
 ```typescript
 function transferNotifyCallBack(callback: gameNearbyTransfer.TransferNotification) {
@@ -336,12 +346,12 @@ function transferNotifyCallBack(callback: gameNearbyTransfer.TransferNotificatio
 
 ### 处理已接收资源包后销毁服务
 
-对已接收数据做好处理或转移后，调用[destroy](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferdestroy)接口销毁服务。若服务销毁后再次使用近场快传服务，需重新从[发送端注册相关回调](gameservice-nearbytransfer-resource-package.md#发送端注册相关回调)开始进行相关操作。
+对已接收数据做好处理或转移后，调用[destroy()](../harmonyos-references/gameservice-nearbytransfer.md#gamenearbytransferdestroy)接口销毁服务。若服务销毁后再次使用近场快传服务，需重新从[发送端注册相关回调](gameservice-nearbytransfer-resource-package.md#发送端注册相关回调)开始进行相关操作。
 
 ```typescript
-public destroy() {
+function destroy() {
   // 取消回调注册
-  this.unregisterCallback();
+  unregisterCallback();
   // 销毁服务
   try {
     gameNearbyTransfer.destroy().then(() => {
@@ -354,7 +364,8 @@ public destroy() {
     hilog.error(0x0000, 'nearby', `destroy exception. Code: ${err.code}, message: ${err.message}`);
   }
 }
-public unregisterCallback() {
+
+function unregisterCallback() {
   try {
     gameNearbyTransfer.off('connectNotify', connectNotifyCallBack);
     gameNearbyTransfer.off('receivePackageInfo', receivePackageInfoCallBack);

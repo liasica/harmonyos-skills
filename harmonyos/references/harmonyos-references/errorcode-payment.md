@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-10-15T07:12:34+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:59e232be0cfada82854de8bcc82cf9697afcee9c8eab592aae79436999e16701
+scraped_at: 2026-11-12T09:57:32+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:1ebc0f361f6b917dd91c38922562b5aaea758789f2503b9667fe4498c40b75b1
 ---
 
 **说明** 
@@ -281,12 +281,12 @@ The application does not have the required capability.
 
 **可能原因**
 
-1. 用户没有在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)开启相关服务。
+1. 用户没有在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)开启相关服务。
 2. profile文件配置不正确。
 
 **处理步骤**
 
-1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，开启服务，具体可参见[开启用户身份验证服务权限开关](../harmonyos-guides/payment-real-name-preparations.md#开启用户身份验证服务权限开关)。
+1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)，开启服务，具体可参见[开启用户身份验证服务权限开关](../harmonyos-guides/payment-real-name-preparations.md#开启用户身份验证服务权限开关)。
 2. 检查profile配置是否正确，参考[申请调试证书和调试Profile文件](../harmonyos-guides/ide-signing-manual.md#section294112511046)。
 
 ## 1020100001 用户未同意

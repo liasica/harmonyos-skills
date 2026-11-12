@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservi
 title: 批量转换teamPlayerId
 breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > REST API > 批量转换teamPlayerId
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:54+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d77a012ae9f5178e0c70e2e9e91083da8fd1a6249b54aedfd35556e10d5f0163
+scraped_at: 2026-11-12T09:57:17+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:50acbd5b9295079ca8d9d8f57f128524dc315cf3f0d7a8931b6e35d1e9b25932
 ---
 
 ## 功能介绍
@@ -16,7 +16,7 @@ content_hash: sha256:d77a012ae9f5178e0c70e2e9e91083da8fd1a6249b54aedfd35556e10d5
 
 ## 接口约束
 
-* 调用此接口前，请确保转出方/转入方已完成[游戏转移](../app/game-center-transferring-0000001194325290.md)，否则均将无权转换teamPlayerId。
+* 调用此接口前，请确保转出方/转入方已完成[转移应用](../app/game-center-transfer-0000002660168715.md)，否则均将无权转换teamPlayerId。
 * 单次接口请求最多可以获取1000条teamPlayerId数据。
 * 请勿频繁调用此接口，调用的时间间隔请控制在3秒以上。
 

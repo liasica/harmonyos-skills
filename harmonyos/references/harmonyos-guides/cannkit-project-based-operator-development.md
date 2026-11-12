@@ -1,14 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-project-based-operator-development
-title: 工程化算子开发
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子实现 > 工程化算子开发
+title: AscendC算子工程开发
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC算子实现 > AscendC算子工程开发
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:30+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:faa7d8ab19a9f3f703059b0a969ce5159634c8f419619a09884af67e1243e494
+scraped_at: 2026-11-12T09:52:42+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8173c0ad5435f009808762cbc76703fa507430d137f813e99acdd8dba26eb898
 ---
 
-* **[工程化算子开发概述](cannkit-overview-of-engineering-operator.md)**
-* **[创建算子工程](cannkit-creating-an-operator-project.md)**
-* **[基于工程实现算子](cannkit-operator-based-on-engineering.md)**
-* **[算子编译安装](cannkit-compilation-and-deployment.md)**
+* **[AscendC算子工程开发概述](cannkit-overview-of-engineering-operator.md)**
+* **[AscendC算子工程创建](cannkit-creating-an-operator-project.md)**
+* **[AscendC算子工程实现](cannkit-operator-based-on-engineering.md)**
+* **[AscendC算子工程编译安装](cannkit-compilation-and-deployment.md)**

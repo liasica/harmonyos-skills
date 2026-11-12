@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 能力说明
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 定制构建 > 灵活定制编译选项 > 能力说明
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:40+08:00
+scraped_at: 2026-11-12T09:53:21+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:0241429103d514e1a997cb7583f9feed3c7b98bdc9c10269ed061e7826ea8e85
+content_hash: sha256:24c8d818d66b3fae4f01b9676bf9023ec929754765e0d66b038e265b471c7c7d
 ---
 
 Hvigor支持灵活定制构建模式，当您创建新工程时，鸿蒙电脑DevEco Studio会自动创建"debug" 、"release"和"test" 构建模式。"test"模式虽然没有出现在工程级build-profile.json5配置文件中，但是用测试框架开启测试时，会自动使用"test"构建模式。
@@ -14,9 +14,9 @@ Hvigor支持灵活定制构建模式，当您创建新工程时，鸿蒙电脑De
 
 ### 界面设置
 
-DevEco Studio支持界面配置构建模式，点击界面上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/FkKQCiXDQ0iMWDeZ-MpgZg/zh-cn_image_0000002781471106.png)右侧的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/qN474uLGQBOz9JNl5gvzxQ/zh-cn_image_0000002810630659.png)，选择**Product配置**：
+DevEco Studio支持界面配置构建模式，点击界面上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/BeKEw9xcQvegX5q1WWNvog/zh-cn_image_0000002781471106.png)右侧的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/7E6L5IiORmeoNxHWht6EJg/zh-cn_image_0000002810630659.png)，选择**Product配置**：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/0NA1zLuCT1-U8dtrsUzSwg/zh-cn_image_0000002810750765.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/WKfBx8raTJWSmmFUikZVsA/zh-cn_image_0000002810750765.png)
 
 内置两个选项：debug和release。
 
@@ -93,4 +93,4 @@ Hvigor支持定制构建模式，采用buildOption字段声明编译选项，并
 
 优先级：命令行配置>targets配置>buildOptionSet配置>buildOption配置>products配置>buildModeSet配置
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/lO-q8PNvR0yKvwwKTUouIA/zh-cn_image_0000002781311170.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/wW6OzRpRRLuqOIbbSkFK8g/zh-cn_image_0000002781311170.png)

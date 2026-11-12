@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-cach
 title: ohpm cache clean
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm cache clean
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:29+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:10e3a84d61c6be231313d5d832c0f51efbc3535daf8c9f269d11963b94e0c0c6
+scraped_at: 2026-11-12T09:53:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f463dc7fe34ad7440a5b12a0929d4d9454fdbf11f02eb34884ce9136b9e0d33f
 ---
 
 清理 ohpm 缓存文件夹。
@@ -19,7 +19,7 @@ ohpm cache clean  [<@group>/]<pkg> [options]
 **说明** 
 
 * @group：三方库的命名空间，可选。ohpm 26.0.0.410版本新增。
-* pkg：三方库名称，必选。ohpm 26.0.0.410版本新增。
+* pkg：三方库名称，可选。ohpm 26.0.0.410版本新增。
 
 ## 功能描述
 
@@ -60,7 +60,7 @@ ohpm cache clean
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/714gcm3YRvKQsxrkQQSjBA/zh-cn_image_0000002731542789.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/WP0YA4QmRuy9KDTgGmhjQw/zh-cn_image_0000002808886825.png)
 
 **示例2**
 

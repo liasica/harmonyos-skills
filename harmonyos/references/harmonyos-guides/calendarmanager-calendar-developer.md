@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/calendarmanag
 title: 日历账户管理
 breadcrumb: 指南 > 应用服务 > Calendar Kit（日历服务） > 日历账户管理
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:42:26+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:87eda989c9157beb7118505f3b1224a46182f6cf5fe0173c7d376b80586f98a0
+scraped_at: 2026-11-12T09:52:21+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:36557a4a96819ca281ef979f30e7ac6dad0eb3f1a58e54839042eb5e08b6a3b7
 ---
 
 日历账户‌用于存储和管理个人或团队的日程，通过日历账户，用户可以方便地查看、编辑和共享日程信息。
@@ -126,7 +126,15 @@ content_hash: sha256:87eda989c9157beb7118505f3b1224a46182f6cf5fe0173c7d376b80586
      console.error(`Failed to create calendar. Code: ${error.code}, message: ${error.message}`);
    });
    ```
-5. 日历账户创建之后，日历账户颜色默认为黑色，不指定日历账户颜色可能导致部分版本/设备深色模式下显示效果不佳。开发者需要调用setConfig()接口设置日历配置信息，包括是否打开日历账户下的日程提醒能力、设置日历账户颜色。
+5. 日历账户创建之后，存在默认颜色，不指定日历账户颜色可能导致部分版本/设备深色模式下显示效果不佳。开发者需要调用setConfig()接口设置日历配置信息，包括是否打开日历账户下的日程提醒能力、设置日历账户颜色。
+
+   **说明** 
+
+   针对搭载HarmonyOS 5.1.0以下版本的设备，默认颜色为黑色。
+
+   针对搭载HarmonyOS 5.1.0至HarmonyOS 7.0.0（不含）版本的设备，默认颜色为红色。
+
+   针对搭载HarmonyOS 7.0.0及以上版本的设备，默认颜色值为0xFF0A59F7。
 
    ```typescript
    const calendarAccount: calendarManager.CalendarAccount = {

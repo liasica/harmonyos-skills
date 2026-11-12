@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-model
 title: 模型推理
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部署 > 模型推理
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:48+08:00
-doc_updated_at: 2026-08-03
-content_hash: sha256:73cc9ce2946ffdde010ef9690f92795bd39b535a06ae0d27a7e45bf7af28359f
+scraped_at: 2026-11-12T09:52:41+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3f5d0892ff0e7dcfe1b0be4533cd042eb343d267559c34b84222b48e987edca2
 ---
 
 ## 基本概念
@@ -16,7 +16,7 @@ content_hash: sha256:73cc9ce2946ffdde010ef9690f92795bd39b535a06ae0d27a7e45bf7af2
 
 模型推理的主要开发流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/oIxOtR3OQ2GUyxC4se1psg/zh-cn_image_0000002779851714.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/nhe4XyhUQkmPDCZ2vp7dyw/zh-cn_image_0000002815400175.png)
 
 ## 接口说明
 
@@ -42,7 +42,7 @@ content_hash: sha256:73cc9ce2946ffdde010ef9690f92795bd39b535a06ae0d27a7e45bf7af2
 
 1. 准备模型和开发环境。
 
-   * 准备离线模型(OM模型)，可以通过tools\_omg工具生成或从[Model Zoo](cannkit-model-zoo.md)获取。
+   * 准备离线模型(OM模型)，可以通过CANN包中的ATC工具生成或从[Model Zoo](cannkit-model-zoo.md)获取。
    * 下载并配置[DevEco Studio](https://developer.huawei.com/consumer/cn/deveco-studio/) 环境，确保可以正常开发和调试HarmonyOS应用。
 2. [创建DevEco Studio项目](cannkit-creating-a-project.md)。
 3. 创建模型编译实例。

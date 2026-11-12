@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_hp-arkui-
 title: "@performance/hp-arkui-limit-refresh-scope（已下线）"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-arkui-limit-refresh-scope（已下线）
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:11+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:85091c73f5eb62f0b835d73da2e2f3a427cf29d0ed68e3e658055039cd2d660b
+scraped_at: 2026-11-12T09:52:57+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e1a2b9d308106e168e610aecb9cf0e35ec4d2fa6e93befe7a8396b83af2c5587
 ---
 
 建议减少组件刷新范围。该规则已于5.0.3.500版本下线。
@@ -85,4 +85,4 @@ struct StackExample5 {
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

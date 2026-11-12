@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-jwt-d
 title: 生成服务端请求的token
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > 生成服务端请求的token
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:18+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:00f4d54436ed6c92702b0ba4949c3dc86215803920d5a40a0438d6dd022bdafd
+scraped_at: 2026-11-12T09:57:21+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:9abcb47a074f9668fb6a7da3425ae72bdc76dde2720cde397ca01547eed3db77
 ---
 
-服务端API请求的Authorization标头中必须包含JWT格式的token用于鉴权。JSON Web Token（JWT）是一个开放标准（RFC 7519），定义了一种安全传输信息的方法，具体请参见[jwt.io](https://jwt.io/)。可以使用从[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)下载的私钥签名生成JWT。密钥的生成和下载请参见[配置密钥](../harmonyos-guides/iap-set-necessary-parameters.md#配置密钥)。创建JWT格式的token需要以下几步：
+服务端API请求的Authorization标头中必须包含JWT格式的token用于鉴权。JSON Web Token（JWT）是一个开放标准（RFC 7519），定义了一种安全传输信息的方法，具体请参见[jwt.io](https://jwt.io/)。可以使用从[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)下载的私钥签名生成JWT。密钥的生成和下载请参见[配置密钥](../harmonyos-guides/iap-set-necessary-parameters.md#配置密钥)。创建JWT格式的token需要以下几步：
 
 1. 创建JWT Header
 2. 创建JWT Payload

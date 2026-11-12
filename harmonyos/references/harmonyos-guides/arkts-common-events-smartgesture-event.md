@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-common-
 title: 支持智慧手势输入事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 输入设备与事件 > 支持智慧手势输入事件
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:16+08:00
-doc_updated_at: 2026-10-30
-content_hash: sha256:95c128624ed6bca67a835fc4bb357d374854f0650f9fc731f7b4ad94b844e1d5
+scraped_at: 2026-11-12T09:51:14+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c4ea3a2e1e53863f21b3239a5e3dcf1f026781c450241454939cf27c51a8163a
 ---
 
 从API版本26.0.0开始支持智慧手势。智慧手势指用户通过设备上的“敲一敲”，“划一划”和“翻腕”的隔空手势，实现对界面组件的选中、点击、滚动、翻页和返回等交互动作的能力。系统会根据用户的操作意图自动推断目标组件和执行动作，开发者也可接收当前手势的默认动作处理并进行自定义干预。
@@ -222,12 +222,12 @@ struct Demo1 {
           resolution.selectedProposal = new SelectActionProposal(node);
         }
       }
-    // 划一划手势意图，需滚动容器内容，滚动距离200px
+    // 划一划手势意图，需滚动容器内容，滚动距离200vp
     } else if (proposal.action === SmartGestureAction.SCROLL_FORWARD) {
       // ScrollActionProposal的目标节点为滚动容器而非按钮，此处通过容器id获取Scroll的FrameNode
       const node = this.getUIContext().getFrameNodeById('long_scroll');
       if (node) {
-        // 构造滚动动作提案，指定目标容器节点和滚动距离(200px)
+        // 构造滚动动作提案，指定目标容器节点和滚动距离(200vp)
         resolution.selectedProposal = new ScrollActionProposal(node, 200);
       }
     }
@@ -333,7 +333,7 @@ struct Demo1 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/KNJnpN13Ta61UO6KhNv4mA/zh-cn_image_0000002809009831.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/3N9NM07dT2aROv-UxjBYJQ/zh-cn_image_0000002815398627.png)
 
 ### 长列表场景
 
@@ -394,12 +394,12 @@ struct Demo2 {
           resolution.selectedProposal = new SelectActionProposal(node);
         }
       }
-    // 划一划手势意图，需滚动容器内容，滚动距离100px
+    // 划一划手势意图，需滚动容器内容，滚动距离100vp
     } else if (proposal.action === SmartGestureAction.SCROLL_FORWARD) {
       // ScrollActionProposal的目标节点为滚动容器而非列表项，此处通过容器id获取List的FrameNode
       const node = this.getUIContext().getFrameNodeById('long_list');
       if (node) {
-        // 构造滚动动作提案，指定目标容器节点和滚动距离(100px)
+        // 构造滚动动作提案，指定目标容器节点和滚动距离(100vp)
         resolution.selectedProposal = new ScrollActionProposal(node, 100);
       }
     }
@@ -479,7 +479,7 @@ struct Demo2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/f7BhKCqSQnW5S-OcTtafsw/zh-cn_image_0000002809049747.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/cmXrxet7SnWOW2TvncwXEA/zh-cn_image_0000002786519052.png)
 
 ### 多组件类型场景手动控制选中态
 
@@ -664,7 +664,7 @@ struct Demo3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/M6_OriBUSbqh3ylRtOLikg/zh-cn_image_0000002779850182.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/fUyC2g7zTLemZxUWO3Aa0g/zh-cn_image_0000002786359124.png)
 
 ### Swiper组件翻页场景
 
@@ -866,4 +866,4 @@ struct Demo4 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/PdbHRjDsQMOOqdss8v-nVA/zh-cn_image_0000002779690212.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/_Kde6ocGQQa4BUX_sSeMXw/zh-cn_image_0000002815558545.png)

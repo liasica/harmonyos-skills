@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-get-
 title: 获取设备位姿（ArkTS）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 运动跟踪 > 获取设备位姿（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:48+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:12e7b51be79063a088f864dac7fe614a243d0a95c751e58f918a95630e963a24
+scraped_at: 2026-11-12T09:52:10+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:08e1240dc0d2a72e16bb2b589c40b394a12a892a9bb45aa8238374ab5efe4271
 ---
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/HarmonyOS_Samples/arengine_samplecode_clientdemo_arkts)。
@@ -175,7 +175,7 @@ class ARViewCallbackImpl extends arViewController.ARViewCallback {
   onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
   }
 
-  async onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): Promise<void> {
+  onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): void {
     if (!ctx.session) {
       return;
     }

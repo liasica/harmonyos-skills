@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-launc
 title: 基于URL跳转方式
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 通用收银台接入 > 拉起三方支付收银台 > 基于URL跳转方式
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:24+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:52:32+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:4d258adde946ac89086a71621fd59d4ea887f0994329f9a6ec2f87582e8917dd
 ---
 
@@ -20,8 +20,8 @@ content_hash: sha256:4d258adde946ac89086a71621fd59d4ea887f0994329f9a6ec2f87582e8
    @Entry
    @Component
    struct Index {
-    context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
-    requestPaymentPromise() {
+     context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+     requestPaymentPromise() {
       // 请使用开发者自己的订单信息（orderStr），跳转三方支付方式。
       const orderStr = '{"nextAction":"L","linkUrl":"","scheme":"","clientToken":"***"}';
       paymentService.requestPayment(this.context, orderStr, 'AP')
@@ -32,7 +32,7 @@ content_hash: sha256:4d258adde946ac89086a71621fd59d4ea887f0994329f9a6ec2f87582e8
           // 支付失败
           console.error(`requestPayment failed, error.code: ${error.code}, error.message: ${error.message}`);
         });
-    }
+     }
 
     build() {
       Column() {
@@ -46,7 +46,7 @@ content_hash: sha256:4d258adde946ac89086a71621fd59d4ea887f0994329f9a6ec2f87582e8
         }
       .width('100%')
       .height('100%')
-    }
+     }
    }
    ```
 2. 开发者按照三方支付平台要求完成订单支付后的下一步业务处理，如对返回的支付结果信息验签等。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 添加策略
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 守护策略管理 > 添加策略
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:44+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:3995e0c4efa11ceaa2022c25803007ea15b37c5edb6f100fcceac9ac0a76faf9
+scraped_at: 2026-11-12T09:52:36+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7958f10c407d1f7e7def6ecc95e819ae5db8fed57c6e962ee3bbb00669f3b416
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:3995e0c4efa11ceaa2022c25803007ea15b37c5edb6f100fcceac9ac0a7
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/nxQBXPn3R8-jX4ksOX-jHQ/zh-cn_image_0000002809051193.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/4IOcyt5-SiK40CfsRUhQLQ/zh-cn_image_0000002786360584.png)
 
 流程说明：
 
@@ -61,7 +61,7 @@ content_hash: sha256:3995e0c4efa11ceaa2022c25803007ea15b37c5edb6f100fcceac9ac0a7
        repeat: [1, 2, 3, 4, 5, 6, 7] // 重复执行时间，此处表示管控在周一至周日均生效
      },
      appInfo: { appTokens: [] }, // 应用token，可通过startAppPicker接口获取
-     appRestrictionType: guardService.RestrictionType.BLOCKLIST_TYPE // 限制类型，此处为禁用清单类型，表示对appInfo指定的应用进行管控
+     appRestrictionType: guardService.RestrictionType.BLOCKLIST_TYPE // 限制类型，此处为禁止清单类型，表示对appInfo指定的应用进行管控
    };
    ```
 3. 调用addGuardStrategy，添加屏幕时间管控策略。

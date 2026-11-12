@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: ImageSpan
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > ImageSpan
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:02+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:5d567e718469715101a5bcf6028a8cfb829e7d0fe63321848bde1a27c37917e0
+scraped_at: 2026-11-12T09:54:17+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b0fe5ba9f45c3402602b74b9772d4ca2708bc9e813d7aeffe80e855623196b2e
 ---
 
 ImageSpan是[Text](ts-basic-components-text.md)、[ContainerSpan](ts-basic-components-containerspan.md)组件的子组件，用于在文本中显示行内图片，支持设置图片对齐方式、缩放类型、加载占位图和颜色滤镜等，适用于需要在文本段落中嵌入图片实现图文混排的场景。
@@ -118,6 +118,30 @@ ImageSpan组件创建后，不支持动态修改该属性的值。
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | enable | Optional<boolean> | 是 | 是否开启[SVG标签解析能力增强功能](ts-image-svg2-capabilities.md)。  true：支持SVG解析新能力；false：保持原有SVG解析能力。 |
+
+### resizable
+
+resizable(value: ResizableOptions)
+
+设置图片拉伸时的大小调整选项。拉伸对拖拽缩略图以及占位图有效。
+
+当设置top + bottom大于原图的高或者left + right大于原图的宽时[ResizableOptions](ts-basic-components-image.md#resizableoptions11)属性设置不生效。
+
+当组件加载的图片为动图、[AnimatedDrawableDescriptor](js-apis-arkui-drawabledescriptor.md#animateddrawabledescriptor12)和SVG时设置该属性不生效。
+
+**起始版本：** 26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [ResizableOptions](ts-basic-components-image.md#resizableoptions11) | 是 | 图像拉伸时可调整大小的图像选项。 |
 
 ## 事件
 
@@ -243,7 +267,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/1GxU8Np8TYiMkqXJQkK1LQ/zh-cn_image_0000002809012075.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/--5tBXE3Tu-d-KTTfN3vvg/zh-cn_image_0000002815400853.png)
 
 ### 示例2（设置背景样式）
 
@@ -272,7 +296,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/S5hy9jecRDKp3sDfWli63A/zh-cn_image_0000002809051989.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/jqfLySSYRkGWh1rofGVGgg/zh-cn_image_0000002786521278.png)
 
 ### 示例3（为图片添加事件）
 
@@ -348,7 +372,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/KSolPcOLT16W_6o4nEE4JQ/zh-cn_image_0000002779852424.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/6GAPLWXLRg22HnRWx7OAmQ/zh-cn_image_0000002786361350.png)
 
 ### 示例5（设置加载占位图）
 
@@ -421,7 +445,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/fUZk_rBESkOp5GDbYDjMWw/zh-cn_image_0000002779692456.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/emI3VUWpQqyJSawabumCKA/zh-cn_image_0000002815560771.gif)
 
 ### 示例6（使用supportSvg2属性时，SVG图片的显示效果）
 
@@ -462,4 +486,71 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/KlQWs1KpTN-JZEQIxY-3Vg/zh-cn_image_0000002809012077.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/6rEhONfFTnCqHjr9sY1dRA/zh-cn_image_0000002815400855.png)
+
+### 示例7（设置图片拉伸）
+
+该示例分别通过[resizable](ts-basic-components-imagespan.md#resizable)属性的slice和lattice选项，对ImageSpan图片进行拉伸。
+
+从API版本26.0.1开始，新增resizable属性。
+
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
+
+@Entry
+@Component
+struct ImageSpanResizablePage {
+  private xDivs: Array<number> = [1, 2, 200];
+  private yDivs: Array<number> = [1, 2, 200];
+  private fXCount: number = 3;
+  private fYCount: number = 3;
+  private drawingLattice: DrawingLattice =
+    drawing.Lattice.createImageLattice(this.xDivs, this.yDivs, this.fXCount, this.fYCount);
+
+  build() {
+    Column({ space: 20 }) {
+      Text('使用Text + ImageSpan，分别设置resizable的slice和lattice属性实现图片拉伸：')
+        .fontSize(18)
+        .fontColor('#666666')
+        .width('90%')
+
+      Text() {
+        Span('原图\n')
+          .fontSize(25)
+        ImageSpan($r('app.media.landscape'))
+          .width(200)
+          .height(200)
+        Span('\n设置slice后\n')
+          .fontSize(25)
+        ImageSpan($r('app.media.landscape'))
+          .width(200)
+          .height(200)
+          .resizable({
+            slice: {
+              left: '200px',
+              top: '200px',
+              right: '20px',
+              bottom: '20px'
+            }
+          })
+        Span('\n设置lattice后\n')
+          .fontSize(25)
+        ImageSpan($r('app.media.landscape'))
+          .width(200)
+          .height(200)
+          .resizable({
+            lattice: this.drawingLattice
+          })
+      }
+      .width('90%')
+      .textAlign(TextAlign.Center)
+    }
+    .width('100%')
+    .height('100%')
+    .padding(20)
+    .alignItems(HorizontalAlign.Center)
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/zD8WjmjiRZ6ZqYfpLDHDGA/zh-cn_image_0000002786521280.png)

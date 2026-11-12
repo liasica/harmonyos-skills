@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-genera
 title: 指定密钥参数生成非对称密钥对(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥生成与转换 > 指定密钥参数生成非对称密钥对(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:36+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:51:32+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:057269577e298e0c957a959eb94b99378ea4aa7c9aa5b52b3cd75faa82754b31
 ---
 

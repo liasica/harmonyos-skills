@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: "@ohos.web.webNativeMessagingExtensionManager (Web Native Messaging Extension Manager)"
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webNativeMessagingExtensionManager (Web Native Messaging Extension Manager)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:27+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:96c8f19def2f0eb35b6fe7a51f3b55285b4c25249cee05c4c0c34a4d90a9a9b6
+scraped_at: 2026-11-12T09:54:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a9c0e3f1fd4e42294c3ee4926c4eed247c0a2ff416d5d06995b2a71b4607b7e4
 ---
 
 webNativeMessagingExtensionManager模块是ArkWeb提供的Web原生消息扩展管理模块，用于在应用侧（调用方）发起并管理到[WebNativeMessagingExtensionAbility](arkts-apis-web-webnativemessagingextensionability.md)的连接。开发者可通过[connectNative](arkts-apis-web-webnativemessagingextensionmanager.md#webnativemessagingextensionmanagerconnectnative)方法指定目标扩展Ability并建立连接，通过返回的连接ID与[WebExtensionConnectionCallback](arkts-apis-web-webnativemessagingextensionmanager.md#webextensionconnectioncallback)监听连接建立、断开及失败事件，也可通过[disconnectNative](arkts-apis-web-webnativemessagingextensionmanager.md#webnativemessagingextensionmanagerdisconnectnative)主动释放连接。该模块适用于浏览器扩展与应用通信的场景；使用前需申请[ohos.permission.WEB\_NATIVE\_MESSAGING](../harmonyos-guides/restricted-permissions.md#ohospermissionweb_native_messaging)权限，且仅在Stage模型下可用。
@@ -101,7 +101,7 @@ export default class EntryAbility extends UIAbility {
                 console.info('onDisconnect');
             },
             onFailed(code, errMsg) {
-                console.info(`onFailed, code:${code} errMsg:${errMsg}`);
+                console.error(`onFailed, code:${code} errMsg:${errMsg}`);
             }
         };
 
@@ -162,7 +162,7 @@ export default class EntryAbility extends UIAbility {
                 console.info('onDisconnect');
             },
             onFailed(code, errMsg) {
-                console.info(`onFailed, code:${code} errMsg:${errMsg}`);
+                console.error(`onFailed, code:${code} errMsg:${errMsg}`);
             }
         };
 
@@ -224,7 +224,7 @@ export default class EntryAbility extends UIAbility {
                 console.info('onDisconnect');
             },
             onFailed(code, errMsg) {
-                console.info(`onFailed, code:${code} errMsg:${errMsg}`);
+                console.error(`onFailed, code:${code} errMsg:${errMsg}`);
             }
         };
 
@@ -303,7 +303,7 @@ export default class EntryAbility extends UIAbility {
                 console.info('onDisconnect');
             },
             onFailed(code, errMsg) {
-                console.info(`onFailed, code:${code} errMsg:${errMsg}`);
+                console.error(`onFailed, code:${code} errMsg:${errMsg}`);
             }
         };
 

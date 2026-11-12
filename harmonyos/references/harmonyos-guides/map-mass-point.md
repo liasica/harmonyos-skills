@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-mass-poin
 title: 海量点图层
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 海量点图层
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:36+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2d3941385609dce7c58301450c715ccc1bb2d375999fc1690e6ea7b6e290d56c
+scraped_at: 2026-11-12T09:52:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:55d3d2eca40148e99e9d2ba5cb5ff8dd024666b8949f0ab54fa2efb75c13b66e
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:2d3941385609dce7c58301450c715ccc1bb2d375999fc1690e6ea7b6e29
 
 6.0.0(20)开始，支持海量点图层功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/H9Osnjy9T4WGLmfG1mumbw/zh-cn_image_0000002809011151.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/wmme1OOPQZCve9rZNT6Dag/zh-cn_image_0000002786520380.jpg "点击放大")
 
 ## 接口说明
 
@@ -48,7 +48,6 @@ content_hash: sha256:2d3941385609dce7c58301450c715ccc1bb2d375999fc1690e6ea7b6e29
      private mapController?: map.MapComponentController;
      private callback?: AsyncCallback<map.MapComponentController>;
      private massPointOverlay?: map.MassPointOverlay;
-     @State currentTimestamp: number = 0;
      @State mapHeight: string = '65%'
      @State mapWidth: string = '100%'
 

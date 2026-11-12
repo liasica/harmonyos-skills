@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-environment-preparation
 title: 环境准备
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 环境准备
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > 环境准备
 category: harmonyos-guides
-scraped_at: 2026-09-08T06:39:19+08:00
-doc_updated_at: 2026-08-18
-content_hash: sha256:3b70625c238978638da17eaf387b6ad44c22259ce5fa7db8ed0cdb5d9eb2c0b1
+scraped_at: 2026-11-12T09:52:41+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b4c008b8f471cb7a6f4c8c4cacc6368b7c33bdc20aa269156753b29775590164
 ---
 
 进行环境准备前，你需要了解如下基本概念，以便更好的理解后续操作。
@@ -19,49 +19,7 @@ content_hash: sha256:3b70625c238978638da17eaf387b6ad44c22259ce5fa7db8ed0cdb5d9eb
 
   开发运行环境需要满足以下要求：
 
-  + ubuntu版本大于等于22.04，ubuntu架构为x86\_64， python版本在3.7与3.10之间（包含），gcc/g++版本大于等于7.0。
+  + ubuntu版本不低于22.04，ubuntu架构为x86\_64， python版本不低于3.7，gcc/g++版本不低于7.3.0。
   + 设备连接与调试参考[hdc](hdc.md)。
 
-进行自定义算子开发前，需要完成驱动及DDK的安装。
-
-1. [下载tools\_ascendc](cannkit-preparations.md#tools下载)，并在Linux环境上解压。
-
-   **说明** 
-
-   在Windows平台解压会导致软链接失效。
-2. 下载需要的[平台插件包](cannkit-preparations.md#tools下载)，在linux开发环境上解压，并将需要的平台插件拷贝到${install\_path}/ddk/tools/platform下。其中${install\_path}为tools包的解压目录。拷贝后的目录结构如下。
-
-   ```text
-   tools
-   ├── platform
-   │   ├── kirin9020
-   │   ├── kirin9030
-   │   ├── kirinx90
-   ```
-3. 进入目录ddk/tools/tools\_ascendc，修改安装脚本权限，执行安装脚本进行安装，命令如下。
-
-   ```shell
-   cd ddk/tools/tools_ascendc
-   chmod +x install.sh
-   source ./install.sh
-   ```
-4. 在使用tools工具前，需要先设置环境变量，执行**source ${install\_path}/ddk/tools/tools\_ascendc/set\_ascendc\_env.sh**。
-
-   例如安装目录为/usr/local/：
-
-   ```shell
-   source  /usr/local/ddk/tools/tools_ascendc/set_ascendc_env.sh
-   ```
-5. python软件依赖，执行步骤3的安装脚本install.sh时会自动安装。若执行ascendebug时提示无对应模块，可执行下表中的命令手动安装。
-
-   **表1** 第三方软件
-
-   | 第三方软件 | 用途 | 如何安装 |
-   | --- | --- | --- |
-   | toml | 加载和转储TOML文件的功能。 | pip3 install toml |
-   | jinja2 | CPU调测模板使用。 | pip3 install jinja2 |
-   | numpy | 精度比对时使用。 | pip3 install numpy |
-   | torch | 输入、输出数据格式转换使用。 | pip3 install torch |
-   | sympy | 用于进行符号计算。 | pip3 install sympy |
-   | paramiko | 与远程linux环境连接。 | pip3 install paramiko |
-   | protobuf | 模型解析。 | pip3 install protobuf |
+进行自定义算子开发前，请参考完成[环境准备](https://gitcode.com/cann/cann-recipes-harmony-infer/blob/master/docs/quick_install.md)。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS API错误码
 breadcrumb: API参考 > 媒体 > Scan Kit（统一扫码服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:39+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:3aca40dea0ac00da2f550d7d0fd4a3877bf0651c2aadc3fb3785cc3abac25031
+scraped_at: 2026-11-12T09:56:52+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e8fb2ddfb07ecfaa432051f9b0a5f8dac861e45d3643b019d39a19b00ebd2698
 ---
 
 **说明** 
@@ -32,7 +32,7 @@ Internal error. Failed to encode.
 
 **处理步骤**
 
-尝试重新调用码图生成接口[createBarcode](scan-generatebarcode.md#createbarcode)。
+尝试重新调用码图生成接口[generateBarcode.createBarcode()](scan-generatebarcode.md#generatebarcodecreatebarcode)。
 
 ### Failed to decode
 
@@ -50,7 +50,7 @@ Internal error. Failed to decode.
 
 **处理步骤**
 
-尝试重新调用图片识码接口[decode](scan-imagedecode.md#decode)。
+尝试重新调用图片识码接口[detectBarcode.decode()](scan-imagedecode.md#detectbarcodedecode)。
 
 ### Failed to decode image
 
@@ -68,7 +68,7 @@ Internal error. Failed to decode image.
 
 **处理步骤**
 
-尝试重新调用图像数据识码接口[decodeImage](scan-imagedecode.md#decodeimage)。
+尝试重新调用图像数据识码接口[detectBarcode.decodeImage()](scan-imagedecode.md#detectbarcodedecodeimage)。
 
 ### Failed to create pixelMap
 
@@ -86,7 +86,7 @@ Internal error. Failed to create pixelMap.
 
 **处理步骤**
 
-尝试重新调用码图生成接口[createBarcode](scan-generatebarcode.md#createbarcode)。
+尝试重新调用码图生成接口[generateBarcode.createBarcode()](scan-generatebarcode.md#generatebarcodecreatebarcode)。
 
 ### Failed to read file
 
@@ -168,15 +168,15 @@ Internal error. This interface must be invoked after the customScan.start interf
 
 **错误描述**
 
-接口调用顺序错误，调用当前接口时没有先调用start接口。
+接口调用顺序错误，调用当前接口时没有先调用start()接口。
 
 **可能原因**
 
-未按业务流程调用接口，如未调用start接口，直接调用getFlashLightStatus。
+未按业务流程调用接口，如未调用start()接口，直接调用getFlashLightStatus()。
 
 **处理步骤**
 
-调整接口调用顺序，可参考自定义界面扫码的[业务流程](../harmonyos-guides/scan-customscan.md#业务流程)。例如：先调用[start](scan-customscan-api.md#start)接口，再调用[getFlashLightStatus](scan-customscan-api.md#getflashlightstatus)。
+调整接口调用顺序，可参考自定义界面扫码的[业务流程](../harmonyos-guides/scan-customscan.md#业务流程)。例如：先调用[customScan.start()](scan-customscan-api.md#customscanstart)接口，再调用[customScan.getFlashLightStatus()](scan-customscan-api.md#customscangetflashlightstatus)。
 
 ### This interface cannot be used after the camera session is paused
 
@@ -186,15 +186,15 @@ Internal error. This interface cannot be used after the camera session is paused
 
 **错误描述**
 
-接口调用顺序错误，调用当前接口时先调用了stop接口。
+接口调用顺序错误，调用当前接口时先调用了stop()接口。
 
 **可能原因**
 
-未按业务流程调用接口，如调用了stop接口后，又调用getFlashLightStatus。
+未按业务流程调用接口，如调用了stop()接口后，又调用getFlashLightStatus()。
 
 **处理步骤**
 
-调整接口调用顺序，可参考自定义界面扫码的[业务流程](../harmonyos-guides/scan-customscan.md#业务流程)。例如：在调用[getFlashLightStatus](scan-customscan-api.md#getflashlightstatus)接口前，确保没有调用[stop](scan-customscan-api.md#stop)。
+调整接口调用顺序，可参考自定义界面扫码的[业务流程](../harmonyos-guides/scan-customscan.md#业务流程)。例如：在调用[customScan.getFlashLightStatus()](scan-customscan-api.md#customscangetflashlightstatus)接口前，确保没有调用[customScan.stop()](scan-customscan-api.md#customscanstop)。
 
 ### ScanOption is null, please call customScan.init first
 
@@ -204,15 +204,15 @@ Internal error. ScanOption is null, please call customScan.init first.
 
 **错误描述**
 
-接口调用顺序错误，调用start接口时没有先调用init。
+接口调用顺序错误，调用start()接口时没有先调用init()。
 
 **可能原因**
 
-未调用init接口，直接调用start。
+未调用init()接口，直接调用start()。
 
 **处理步骤**
 
-调整接口调用顺序，可参考自定义界面扫码的[业务流程](../harmonyos-guides/scan-customscan.md#业务流程)。先调用[init](scan-customscan-api.md#init)接口，再调用[start](scan-customscan-api.md#start)。
+调整接口调用顺序，可参考自定义界面扫码的[业务流程](../harmonyos-guides/scan-customscan.md#业务流程)。先调用[customScan.init()](scan-customscan-api.md#customscaninit)接口，再调用[customScan.start()](scan-customscan-api.md#customscanstart)。
 
 ### The interface can't be used in promise interface
 
@@ -222,15 +222,15 @@ Internal error. The interface can't be used in promise interface.
 
 **错误描述**
 
-该接口不允许在start的Promise方式中调用。
+该接口不允许在start()的Promise方式中调用。
 
 **可能原因**
 
-start的Promise方式中调用了rescan接口。
+start()的Promise方式中调用了rescan()接口。
 
 **处理步骤**
 
-使用[start](scan-customscan-api.md#start-1)的Callback方式再调用[rescan](scan-customscan-api.md#rescan)接口。
+使用[customScan.start()](scan-customscan-api.md#customscanstart-1)的Callback方式再调用[customScan.rescan()](scan-customscan-api.md#customscanrescan)接口。
 
 ### CustomScan stop session failed
 
@@ -518,4 +518,4 @@ The user canceled the barcode scanning.
 
 **处理步骤**
 
-使用[startScanForResult](scan-scanbarcode-api.md#startscanforresult)会返回此错误码，请根据使用场景处理用户取消默认界面扫码后的业务流程。
+使用[scanBarcode.startScanForResult()](scan-scanbarcode-api.md#scanbarcodestartscanforresult)会返回此错误码，请根据使用场景处理用户取消默认界面扫码后的业务流程。

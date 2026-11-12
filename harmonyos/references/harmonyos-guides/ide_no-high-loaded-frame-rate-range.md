@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-high-l
 title: "@performance/no-high-loaded-frame-rate-range"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/no-high-loaded-frame-rate-range
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:12+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:dce0f99362cc3459d44806213bbd1ea859ab60e1e042fc7ff70edc10db5f864f
+scraped_at: 2026-11-12T09:52:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b46012c5022cd8ab88ec5afaefaabcafbd218d405dba10c9956175f4741f70b9
 ---
 
 不允许锁定最高帧率运行。
@@ -56,4 +56,4 @@ plugin:@performance/all
 plugin:@performance/recommended
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

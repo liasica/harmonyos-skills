@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fileguard-pri
 title: 订阅或取消订阅打印服务启动事件
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > 文件分级管控 > 订阅或取消订阅打印服务启动事件
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:30+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d68752aa5a87d4ec98560d335919d808bcb89fde92fa842811f8ff3e8e653943
+scraped_at: 2026-11-12T09:51:38+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:415c7f4ab11b1cebefcf0b5325dd57c6a66de44c356978bb22adb3f7923c7a77
 ---
 
 从6.1.1(24)版本开始，新增订阅或取消订阅打印服务启动事件接口，帮助用户获取打印服务启动时机，便于及时注册水印回调，从而启用打印水印功能。
@@ -94,7 +94,7 @@ content_hash: sha256:d68752aa5a87d4ec98560d335919d808bcb89fde92fa842811f8ff3e8e6
        watermarkInfo.rotation = -45;
        watermarkInfo.isOnTop = true;
        watermarkInfo.verticalAlignment = pdfService.WatermarkAlignment.WATERMARK_ALIGNMENT_VCENTER;
-       watermarkInfo.horizontalAlignment = pdfService.WatermarkAlignment.WATERMARK_ALIGNMENT_VCENTER;
+       watermarkInfo.horizontalAlignment = pdfService.WatermarkAlignment.WATERMARK_ALIGNMENT_HCENTER;
 
        pdfDoc.addWatermark(watermarkInfo, 0, pdfDoc.getPageCount() - 1, true, true);
        pdfDoc.saveDocument(outPath);
@@ -117,7 +117,11 @@ content_hash: sha256:d68752aa5a87d4ec98560d335919d808bcb89fde92fa842811f8ff3e8e6
        print.notifyWatermarkComplete(jobId, print.WatermarkHandleResult.WATERMARK_HANDLE_FAILURE);
      } finally {
        // Important: close fd after callback to avoid handle leak.
-       fileIo.close(fd);
+       try {
+         fileIo.closeSync(fd);
+       } catch (e) {
+         hilog.error(DOMAIN, TAG, `Failed to close fd: ${fd}. Code: ${e.code}, message: ${e.message}.`);
+       }
      }
    }
    ```
@@ -135,9 +139,8 @@ content_hash: sha256:d68752aa5a87d4ec98560d335919d808bcb89fde92fa842811f8ff3e8e6
      try {
        hilog.info(DOMAIN, TAG, `offPrintStartup start.`);
        let guard: fileGuard.FileGuard = new fileGuard.FileGuard();
-       guard.offPrintStartup(() => {
-         unregisterWatermark();
-       });
+       guard.offPrintStartup();
+       unregisterWatermark();
      } catch (e) {
        hilog.error(DOMAIN, TAG, `Failed to cancel listen print-startup.`);
      }

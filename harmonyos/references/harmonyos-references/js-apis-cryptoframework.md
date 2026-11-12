@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.security.cryptoFramework (加解密算法库框架)"
 breadcrumb: API参考 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > ArkTS API > @ohos.security.cryptoFramework (加解密算法库框架)
 category: harmonyos-references
-scraped_at: 2026-11-04T08:34:24+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:2e57aa40e9920e18b3a560f66fdeab1400419ebf61ba7f86a68da39b2d915e63
+scraped_at: 2026-11-12T09:55:21+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:5e5bd8734ca061c6e70f2fdcc7264cd9ab533858052bf6cfc05eb910e758f4b1
 ---
 
 提供统一的密码算法库加解密接口，以屏蔽底层硬件和算法库。
@@ -1023,12 +1023,18 @@ RSA算法使用密钥参数生成私钥时，私钥对象支持getEncoded。
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 async function testGenerateAesKey() {
-  let symKeyGenerator = cryptoFramework.createSymKeyGenerator('AES256');
-  let symKey = await symKeyGenerator.generateSymKey();
-  let encodedKey = symKey.getEncoded();
-  console.info('key hex: ' + encodedKey.data);
+  try {
+    let symKeyGenerator = cryptoFramework.createSymKeyGenerator('AES256');
+    let symKey = await symKeyGenerator.generateSymKey();
+    let encodedKey = symKey.getEncoded();
+    console.info('key hex: ' + encodedKey.data);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`testGenerateAesKey failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -1066,12 +1072,18 @@ getKeySize(): number
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 async function testGenerateAesKey() {
-  let symKeyGenerator = cryptoFramework.createSymKeyGenerator('AES256');
-  let symKey = await symKeyGenerator.generateSymKey();
-  let symKeyLen = symKey.getKeySize();
-  console.info('keysize is: ' + symKeyLen);
+  try {
+    let symKeyGenerator = cryptoFramework.createSymKeyGenerator('AES256');
+    let symKey = await symKeyGenerator.generateSymKey();
+    let symKeyLen = symKey.getKeySize();
+    console.info('keysize is: ' + symKeyLen);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`testGenerateAesKey failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -1098,21 +1110,27 @@ clearMem(): void
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 async function testGenerateAesKeyFun() {
-  let symKeyGenerator = cryptoFramework.createSymKeyGenerator('AES256');
-  let key = await symKeyGenerator.generateSymKey();
-  let encodedKey = key.getEncoded();
-  console.info('key blob: '+ encodedKey.data);
-  key.clearMem();
-  encodedKey = key.getEncoded();
-  console.info('key blob: ' + encodedKey.data);
+  try {
+    let symKeyGenerator = cryptoFramework.createSymKeyGenerator('AES256');
+    let key = await symKeyGenerator.generateSymKey();
+    let encodedKey = key.getEncoded();
+    console.info('key blob: '+ encodedKey.data);
+    key.clearMem();
+    encodedKey = key.getEncoded();
+    console.info('key blob: ' + encodedKey.data);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`testGenerateAesKeyFun failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
 ## PubKey
 
-公钥，是[Key](js-apis-cryptoframework.md#key)的子类，在非对称加密、签名验证、密钥协商时需要将其对象作为输入使用。
+公钥，是[Key](js-apis-cryptoframework.md#key)的子类，在非对称加密、验签、密钥协商时需要将其对象作为输入使用。
 
 公钥可以通过非对称密钥生成器[AsyKeyGenerator](js-apis-cryptoframework.md#asykeygenerator)、[AsyKeyGeneratorBySpec](js-apis-cryptoframework.md#asykeygeneratorbyspec10)来生成。
 
@@ -1147,7 +1165,7 @@ getAsyKeySpec(itemType: AsyKeySpecItem): bigint | string | number
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 801 | This operation is not supported.  适用版本：12+ |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
@@ -1157,6 +1175,7 @@ getAsyKeySpec(itemType: AsyKeySpecItem): bigint | string | number
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 // 根据关键规范构造EccCommonSpec结构体。EccCommonSpec结构体定义了ECC私钥和公钥的公共参数。
 function genEccCommonSpec(): cryptoFramework.ECCCommonParamsSpec {
@@ -1182,12 +1201,17 @@ function genEccCommonSpec(): cryptoFramework.ECCCommonParamsSpec {
 }
 
 async function testGetAsyKeySpec() {
-  let commKeySpec = genEccCommonSpec(); // 使用参数属性，构造ECC公私钥公共密钥参数对象。
-  let generatorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(commKeySpec); // 使用密钥参数对象创建生成器。
-  let keyPair = await generatorBySpec.generateKeyPair();
-  let pubKey = keyPair.pubKey;
-  let eccPrimeP = pubKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.ECC_FP_P_BN);
-  console.info('ecc item --- p: ' + eccPrimeP.toString(16));
+  try {
+    let commKeySpec = genEccCommonSpec(); // 使用参数属性，构造ECC公私钥公共密钥参数对象。
+    let generatorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(commKeySpec); // 使用密钥参数对象创建生成器。
+    let keyPair = await generatorBySpec.generateKeyPair();
+    let pubKey = keyPair.pubKey;
+    let eccPrimeP = pubKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.ECC_FP_P_BN);
+    console.info('ecc item --- p: ' + eccPrimeP.toString(16));
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`testGetAsyKeySpec failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -1226,7 +1250,7 @@ getEncodedDer(format: string): DataBlob
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 | 17620003 | Parameter check failed.  适用版本：26.0.0+ |
@@ -1235,15 +1259,21 @@ getEncodedDer(format: string): DataBlob
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 async function testGetEncodedDer() {
-  let pkData = new Uint8Array([48, 90, 48, 20, 6, 7, 42, 134, 72, 206, 61, 2, 1, 6, 9, 43, 36, 3, 3, 2, 8, 1, 1, 7, 3, 66, 0, 4, 143, 39, 57, 249, 145, 50, 63, 222, 35, 70, 178, 121, 202, 154, 21, 146, 129, 75, 76, 63, 8, 195, 157, 111, 40, 217, 215, 148, 120, 224, 205, 82, 83, 92, 185, 21, 211, 184, 5, 19, 114, 33, 86, 85, 228, 123, 242, 206, 200, 98, 178, 184, 130, 35, 232, 45, 5, 202, 189, 11, 46, 163, 156, 152]);
-  let pubKeyBlob: cryptoFramework.DataBlob = { data: pkData };
-  let generator = cryptoFramework.createAsyKeyGenerator('ECC_BrainPoolP256r1');
-  let keyPair = await generator.convertKey(pubKeyBlob, null);
-  let key = keyPair.pubKey;
-  let returnBlob = key.getEncodedDer('X509|UNCOMPRESSED');
-  console.info('returnBlob data: ' + returnBlob.data);
+  try {
+    let pkData = new Uint8Array([48, 90, 48, 20, 6, 7, 42, 134, 72, 206, 61, 2, 1, 6, 9, 43, 36, 3, 3, 2, 8, 1, 1, 7, 3, 66, 0, 4, 143, 39, 57, 249, 145, 50, 63, 222, 35, 70, 178, 121, 202, 154, 21, 146, 129, 75, 76, 63, 8, 195, 157, 111, 40, 217, 215, 148, 120, 224, 205, 82, 83, 92, 185, 21, 211, 184, 5, 19, 114, 33, 86, 85, 228, 123, 242, 206, 200, 98, 178, 184, 130, 35, 232, 45, 5, 202, 189, 11, 46, 163, 156, 152]);
+    let pubKeyBlob: cryptoFramework.DataBlob = { data: pkData };
+    let generator = cryptoFramework.createAsyKeyGenerator('ECC_BrainPoolP256r1');
+    let keyPair = await generator.convertKey(pubKeyBlob, null);
+    let key = keyPair.pubKey;
+    let returnBlob = key.getEncodedDer('X509|UNCOMPRESSED');
+    console.info('returnBlob data: ' + returnBlob.data);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`testGetEncodedDer failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -1251,7 +1281,7 @@ async function testGetEncodedDer() {
 
 getEncodedPem(format: string): string
 
-同步方法，获取密钥数据的字符串。密钥可以是RSA公钥或私钥。公钥需符合X.509、PKCS #1规范，并采用PEM编码。
+获取PEM编码的密钥数据。此API以同步方式返回结果。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1275,7 +1305,7 @@ getEncodedPem(format: string): string
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 | 17620003 | Parameter check failed.  适用版本：26.0.0+ |
@@ -1284,6 +1314,7 @@ getEncodedPem(format: string): string
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 let publicPkcs1Str1024: string =
   '-----BEGIN RSA PUBLIC KEY-----\n'
@@ -1294,10 +1325,15 @@ let publicPkcs1Str1024: string =
 
 function testPubKeyPkcs1ToX509BySync1024() {
   let rsaGenerator = cryptoFramework.createAsyKeyGenerator('RSA1024');
-  let keyPair = rsaGenerator.convertPemKeySync(publicPkcs1Str1024, null);
-  let pubPemKey = keyPair.pubKey;
-  let pubString = pubPemKey.getEncodedPem('X509');
-  console.info('[sync]testPubKeyPkcs1ToX509BySync1024 pubString output = ' + pubString);
+  try {
+    let keyPair = rsaGenerator.convertPemKeySync(publicPkcs1Str1024, null);
+    let pubPemKey = keyPair.pubKey;
+    let pubString = pubPemKey.getEncodedPem('X509');
+    console.info('[sync]testPubKeyPkcs1ToX509BySync1024 pubString output = ' + pubString);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`testPubKeyPkcs1ToX509BySync1024 failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -1342,12 +1378,18 @@ getKeyData(itemType: AsyKeyDataItem): Promise<Uint8Array>
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 async function eccGetKeyDataTest() {
-  let eccGenerator = cryptoFramework.createAsyKeyGenerator('ECC_BrainPoolP256r1');
-  let keyPair = await eccGenerator.generateKeyPair();
-  let returnBlob = await keyPair.pubKey.getKeyData(cryptoFramework.AsyKeyDataItem.EC_PUBLIC_X_Y);
-  console.info('EC_PUBLIC_X_Y data: ' + returnBlob);
+  try {
+    let eccGenerator = cryptoFramework.createAsyKeyGenerator('ECC_BrainPoolP256r1');
+    let keyPair = await eccGenerator.generateKeyPair();
+    let returnBlob = await keyPair.pubKey.getKeyData(cryptoFramework.AsyKeyDataItem.EC_PUBLIC_X_Y);
+    console.info('EC_PUBLIC_X_Y data: ' + returnBlob);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`eccGetKeyDataTest failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -1392,12 +1434,18 @@ getKeyDataSync(itemType: AsyKeyDataItem): Uint8Array
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function eccGetKeyDataTest() {
   let eccGenerator = cryptoFramework.createAsyKeyGenerator('ECC_BrainPoolP256r1');
-  let keyPair = eccGenerator.generateKeyPairSync();
-  let returnBlob = keyPair.pubKey.getKeyDataSync(cryptoFramework.AsyKeyDataItem.EC_PUBLIC_X_Y);
-  console.info('EC_PUBLIC_X_Y data: ' + returnBlob);
+  try {
+    let keyPair = eccGenerator.generateKeyPairSync();
+    let returnBlob = keyPair.pubKey.getKeyDataSync(cryptoFramework.AsyKeyDataItem.EC_PUBLIC_X_Y);
+    console.info('EC_PUBLIC_X_Y data: ' + returnBlob);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`eccGetKeyDataTest failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -1424,6 +1472,7 @@ clearMem(): void
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 async function testClearMem() {
   let eccGenerator = cryptoFramework.createAsyKeyGenerator('ECC256');
@@ -1434,6 +1483,8 @@ async function testClearMem() {
     let returnBlob = priKey.getEncodedDer('PKCS8');
     console.info('returnBlob data: ' + returnBlob.data);
     priKey.clearMem(); // 对于非对称私钥，clearMem()释放内部密钥结构。执行clearMem后，不支持getEncoded()。
+  }).catch((error: BusinessError) => {
+    console.error(`generateKeyPair failed, ${error.code}, ${error.message}`);
   });
 }
 ```
@@ -1469,7 +1520,7 @@ getAsyKeySpec(itemType: AsyKeySpecItem): bigint | string | number
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 801 | This operation is not supported. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
@@ -1479,6 +1530,7 @@ getAsyKeySpec(itemType: AsyKeySpecItem): bigint | string | number
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 // 根据关键规范构造EccCommonSpec结构体。EccCommonSpec结构体定义了ECC私钥和公钥的公共参数。
 function genEccCommonSpec(): cryptoFramework.ECCCommonParamsSpec {
   let fieldFp: cryptoFramework.ECFieldFp = {
@@ -1503,12 +1555,17 @@ function genEccCommonSpec(): cryptoFramework.ECCCommonParamsSpec {
 }
 
 async function testGetAsyKeySpec() {
-  let commKeySpec = genEccCommonSpec(); // 使用参数属性，构造ECC公私钥公共密钥参数对象。
-  let generatorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(commKeySpec); // 使用密钥参数对象创建生成器。
-  let keyPair = await generatorBySpec.generateKeyPair();
-  let priKey = keyPair.priKey;
-  let eccPrimeP = priKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.ECC_FP_P_BN);
-  console.info('ecc item --- p: ' + eccPrimeP.toString(16));
+  try {
+    let commKeySpec = genEccCommonSpec(); // 使用参数属性，构造ECC公私钥公共密钥参数对象。
+    let generatorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(commKeySpec); // 使用密钥参数对象创建生成器。
+    let keyPair = await generatorBySpec.generateKeyPair();
+    let priKey = keyPair.priKey;
+    let eccPrimeP = priKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.ECC_FP_P_BN);
+    console.info('ecc item --- p: ' + eccPrimeP.toString(16));
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`testGetAsyKeySpec failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -1547,7 +1604,7 @@ getEncodedDer(format: string): DataBlob
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 | 17620003 | Parameter check failed.  适用版本：26.0.0+ |
@@ -1556,6 +1613,7 @@ getEncodedDer(format: string): DataBlob
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 async function testGetEncodedDer() {
   let eccGenerator = cryptoFramework.createAsyKeyGenerator('ECC256');
@@ -1565,6 +1623,8 @@ async function testGetEncodedDer() {
     let priKey = keyPair.priKey;
     let returnBlob = priKey.getEncodedDer('PKCS8');
     console.info('returnBlob data: ' + returnBlob.data);
+  }).catch((error: BusinessError) => {
+    console.error(`generateKeyPair failed, ${error.code}, ${error.message}`);
   });
 }
 ```
@@ -1573,7 +1633,7 @@ async function testGetEncodedDer() {
 
 getEncodedPem(format: string): string
 
-同步方法，获取密钥数据的字符串。密钥可以是RSA公钥或私钥。私钥格式需符合PKCS #8、PKCS #1规范，并采用PEM编码。
+获取PEM编码的私钥数据。此API以同步方式返回结果。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -1597,7 +1657,7 @@ getEncodedPem(format: string): string
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 | 17620003 | Parameter check failed.  适用版本：26.0.0+ |
@@ -1606,6 +1666,7 @@ getEncodedPem(format: string): string
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 let priKeyPkcs1Str1024: string =
   '-----BEGIN RSA PRIVATE KEY-----\n'
@@ -1626,10 +1687,15 @@ let priKeyPkcs1Str1024: string =
 
 function testPriKeyPkcs1ToPkcs8BySync1024() {
   let rsaGenerator = cryptoFramework.createAsyKeyGenerator('RSA1024');
-  let keyPair = rsaGenerator.convertPemKeySync(null, priKeyPkcs1Str1024);
-  let priPemKey = keyPair.priKey;
-  let priString = priPemKey.getEncodedPem('PKCS8');
-  console.info('[sync]testPriKeyPkcs1ToPkcs8BySync1024 priString output = ' + priString);
+  try {
+    let keyPair = rsaGenerator.convertPemKeySync(null, priKeyPkcs1Str1024);
+    let priPemKey = keyPair.priKey;
+    let priString = priPemKey.getEncodedPem('PKCS8');
+    console.info('[sync]testPriKeyPkcs1ToPkcs8BySync1024 priString output = ' + priString);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`testPriKeyPkcs1ToPkcs8BySync1024 failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -1637,7 +1703,7 @@ function testPriKeyPkcs1ToPkcs8BySync1024() {
 
 getEncodedPem(format: string, config: KeyEncodingConfig): string
 
-同步方法，获取密钥数据的字符串。支持RSA公钥和私钥。私钥格式满足PKCS #8规范、PKCS #1规范和PEM编码方式。
+获取PEM编码的加密的私钥数据。此API以同步方式返回结果。目前仅支持RSA密钥。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
@@ -1662,7 +1728,7 @@ getEncodedPem(format: string, config: KeyEncodingConfig): string
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 801 | This operation is not supported. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
@@ -1671,6 +1737,7 @@ getEncodedPem(format: string, config: KeyEncodingConfig): string
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 let priKeyPkcs1Str1024: string =
   '-----BEGIN RSA PRIVATE KEY-----\n'
@@ -1691,14 +1758,19 @@ let priKeyPkcs1Str1024: string =
 
 function testPriKeyPkcs1Encoded() {
   let rsaGenerator = cryptoFramework.createAsyKeyGenerator('RSA1024');
-  let keyPair = rsaGenerator.convertPemKeySync(null, priKeyPkcs1Str1024);
-  let options: cryptoFramework.KeyEncodingConfig = {
-    password: '123456',
-    cipherName: 'AES-128-CBC'
+  try {
+    let keyPair = rsaGenerator.convertPemKeySync(null, priKeyPkcs1Str1024);
+    let options: cryptoFramework.KeyEncodingConfig = {
+      password: '123456',
+      cipherName: 'AES-128-CBC'
+    }
+    let priPemKey = keyPair.priKey;
+    let priString = priPemKey.getEncodedPem('PKCS1', options);
+    console.info('[sync]testPriKeyPkcs1Encoded priString output = ' + priString);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`testPriKeyPkcs1Encoded failed: errCode: ${e.code}, errMsg: ${e.message}`);
   }
-  let priPemKey = keyPair.priKey;
-  let priString = priPemKey.getEncodedPem('PKCS1', options);
-  console.info('[sync]testPriKeyPkcs1Encoded priString output = ' + priString);
 }
 ```
 
@@ -1733,6 +1805,7 @@ getPubKey(): Promise<PubKey>
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 import { buffer } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function compareUint8Array(a: Uint8Array, b: Uint8Array): boolean {
   let buf1 = buffer.from(a);
@@ -1792,7 +1865,8 @@ async function generateAsyKey() {
     console.info('pk1 bin data ' + pkBlob.data);
     let ret: boolean = compareUint8Array(pkBlob.data, expectPkdata);
     console.info('result = ' + ret);
-  } catch (e) {
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
     console.error(`get pubkey from prikey failed, ${e.code}, ${e.message}`);
   }
 }
@@ -1829,6 +1903,7 @@ getPubKeySync(): PubKey
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 import { buffer } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function compareUint8Array(a: Uint8Array, b: Uint8Array): boolean {
   let buf1 = buffer.from(a);
@@ -1888,7 +1963,8 @@ function generateAsyKey() {
     console.info('pk1 bin data' + pkBlob.data);
     let ret: boolean = compareUint8Array(pkBlob.data, expectPkdata);
     console.info('result = ' + ret);
-  } catch (e) {
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
     console.error(`get pubkey from prikey failed, ${e.code}, ${e.message}`);
   }
 }
@@ -1935,12 +2011,18 @@ getKeyData(itemType: AsyKeyDataItem): Promise<Uint8Array>
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 async function eccGetKeyDataTest() {
-  let eccGenerator = cryptoFramework.createAsyKeyGenerator('ECC_BrainPoolP256r1');
-  let keyPair = await eccGenerator.generateKeyPair();
-  let returnBlob = await keyPair.priKey.getKeyData(cryptoFramework.AsyKeyDataItem.EC_PRIVATE_04_X_Y_K);
-  console.info('EC_PRIVATE_04_X_Y_K data: ' + returnBlob);
+  try {
+    let eccGenerator = cryptoFramework.createAsyKeyGenerator('ECC_BrainPoolP256r1');
+    let keyPair = await eccGenerator.generateKeyPair();
+    let returnBlob = await keyPair.priKey.getKeyData(cryptoFramework.AsyKeyDataItem.EC_PRIVATE_04_X_Y_K);
+    console.info('EC_PRIVATE_04_X_Y_K data: ' + returnBlob);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`eccGetKeyDataTest failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -1985,12 +2067,18 @@ getKeyDataSync(itemType: AsyKeyDataItem): Uint8Array
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function eccGetKeyDataTest() {
   let eccGenerator = cryptoFramework.createAsyKeyGenerator('ECC_BrainPoolP256r1');
-  let keyPair = eccGenerator.generateKeyPairSync();
-  let returnBlob = keyPair.priKey.getKeyDataSync(cryptoFramework.AsyKeyDataItem.EC_PRIVATE_04_X_Y_K);
-  console.info('EC_PRIVATE_04_X_Y_K data: ' + returnBlob);
+  try {
+    let keyPair = eccGenerator.generateKeyPairSync();
+    let returnBlob = keyPair.priKey.getKeyDataSync(cryptoFramework.AsyKeyDataItem.EC_PRIVATE_04_X_Y_K);
+    console.info('EC_PRIVATE_04_X_Y_K data: ' + returnBlob);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`eccGetKeyDataTest failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -2053,15 +2141,21 @@ createSymKeyGenerator(algName: string): SymKeyGenerator
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 801 | This operation is not supported. |
 
 **示例：**
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-let symKeyGenerator = cryptoFramework.createSymKeyGenerator('3DES192');
+try {
+  let symKeyGenerator = cryptoFramework.createSymKeyGenerator('3DES192');
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
+  console.error(`createSymKeyGenerator failed: errCode: ${e.code}, errMsg: ${e.message}`);
+}
 ```
 
 ## SymKeyGenerator
@@ -2122,7 +2216,11 @@ import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 
 let symKeyGenerator = cryptoFramework.createSymKeyGenerator('3DES192');
   symKeyGenerator.generateSymKey((err, symKey) => {
-    console.info('Generate symKey result: success, algName: ' + symKey.algName);
+    if (err) {
+      console.error(`generateSymKey failed, errCode: ${err.code}, errMsg: ${err.message}`);
+      return;
+    }
+    console.info('generateSymKey result: success, algName: ' + symKey.algName);
   });
 ```
 
@@ -2208,14 +2306,20 @@ generateSymKeySync(): SymKey
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function testGenerateSymKeySync() {
   // 创建SymKeyGenerator实例。
   let symKeyGenerator = cryptoFramework.createSymKeyGenerator('AES256');
-  // 使用密钥生成器随机生成对称密钥。
-  let key = symKeyGenerator.generateSymKeySync();
-  let encodedKey = key.getEncoded();
-  console.info('key hex:' + encodedKey.data);
+  try {
+    // 使用密钥生成器随机生成对称密钥。
+    let key = symKeyGenerator.generateSymKeySync();
+    let encodedKey = key.getEncoded();
+    console.info('key hex:' + encodedKey.data);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`testGenerateSymKeySync failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -2251,7 +2355,7 @@ convertKey(key: DataBlob, callback: AsyncCallback<SymKey>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620003 | Parameter check failed.  适用版本：26.0.0+ |
 
@@ -2273,6 +2377,10 @@ function testConvertKey() {
   let symKeyGenerator = cryptoFramework.createSymKeyGenerator('3DES192');
   let keyMaterialBlob = genKeyMaterialBlob();
   symKeyGenerator.convertKey(keyMaterialBlob, (err, symKey) => {
+    if (err) {
+      console.error(`convertKey failed, errCode: ${err.code}, errMsg: ${err.message}`);
+      return;
+    }
     console.info('Convert symKey result: success, algName: ' + symKey.algName);
   });
 }
@@ -2309,7 +2417,7 @@ convertKey(key: DataBlob): Promise<SymKey>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620003 | Parameter check failed.  适用版本：26.0.0+ |
 
@@ -2372,7 +2480,7 @@ convertKeySync(key: DataBlob): SymKey
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620003 | Parameter check failed.  适用版本：26.0.0+ |
 
@@ -2381,6 +2489,7 @@ convertKeySync(key: DataBlob): SymKey
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 import { buffer } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function testConvertKeySync() {
   // 对称密钥长度为64字节，512比特。
@@ -2389,9 +2498,14 @@ function testConvertKeySync() {
     data : new Uint8Array(buffer.from(keyMessage, 'utf-8').buffer)
   }
   let symKeyGenerator = cryptoFramework.createSymKeyGenerator('HMAC');
-  let key = symKeyGenerator.convertKeySync(keyBlob);
-  let encodedKey = key.getEncoded();
-  console.info('key encoded data: ' + encodedKey.data);
+  try {
+    let key = symKeyGenerator.convertKeySync(keyBlob);
+    let encodedKey = key.getEncoded();
+    console.info('key encoded data: ' + encodedKey.data);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`testConvertKeySync failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -2428,7 +2542,7 @@ createAsyKeyGenerator(algName: string): AsyKeyGenerator
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 801 | This operation is not supported. |
 | 17620001 | Memory operation failed. |
 
@@ -2436,8 +2550,14 @@ createAsyKeyGenerator(algName: string): AsyKeyGenerator
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-let asyKeyGenerator = cryptoFramework.createAsyKeyGenerator('ECC256');
+try {
+  let asyKeyGenerator = cryptoFramework.createAsyKeyGenerator('ECC256');
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
+  console.error(`createAsyKeyGenerator failed: errCode: ${e.code}, errMsg: ${e.message}`);
+}
 ```
 
 ## AsyKeyGenerator
@@ -2482,7 +2602,7 @@ generateKeyPair(callback: AsyncCallback<KeyPair>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  Incorrect parameter types; |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  Incorrect parameter types; |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -2526,7 +2646,7 @@ generateKeyPair(): Promise<KeyPair>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -2567,7 +2687,7 @@ generateKeyPairSync(): KeyPair
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -2575,6 +2695,7 @@ generateKeyPairSync(): KeyPair
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 let asyKeyGenerator = cryptoFramework.createAsyKeyGenerator('ECC256');
 try {
@@ -2584,7 +2705,8 @@ try {
   } else {
     console.error('[Sync]: get key pair result: fail.');
   }
-} catch (e) {
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
   console.error(`sync failed: errCode: ${e.code}, errMsg: ${e.message}`);
 }
 ```
@@ -2616,7 +2738,7 @@ convertKey(pubKey: DataBlob, priKey: DataBlob, callback: AsyncCallback<KeyPair>)
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620003 | Parameter check failed.  适用版本：26.0.0+ |
 | 17630001 | Crypto operation error. |
@@ -2648,7 +2770,7 @@ convertKey(pubKey: DataBlob | null, priKey: DataBlob | null, callback: AsyncCall
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 | 17620003 | Parameter check failed.  适用版本：26.0.0+ |
@@ -2710,7 +2832,7 @@ convertKey(pubKey: DataBlob, priKey: DataBlob): Promise<KeyPair>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620003 | Parameter check failed.  适用版本：26.0.0+ |
 | 17630001 | Crypto operation error. |
@@ -2747,7 +2869,7 @@ convertKey(pubKey: DataBlob | null, priKey: DataBlob | null): Promise<KeyPair>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 | 17620003 | Parameter check failed.  适用版本：26.0.0+ |
@@ -2806,7 +2928,7 @@ convertKeySync(pubKey: DataBlob | null, priKey: DataBlob | null): KeyPair
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 | 17620003 | Parameter check failed.  适用版本：26.0.0+ |
@@ -2815,6 +2937,7 @@ convertKeySync(pubKey: DataBlob | null, priKey: DataBlob | null): KeyPair
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 let pubKeyArray =
   new Uint8Array([48, 89, 48, 19, 6, 7, 42, 134, 72, 206, 61, 2, 1, 6, 8, 42, 134, 72, 206, 61, 3, 1, 7, 3, 66, 0, 4,
@@ -2834,7 +2957,8 @@ try {
   } else {
     console.error('[Sync]: convert key pair result: fail.');
   }
-} catch (e) {
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
   console.error(`sync failed: errCode: ${e.code}, errMsg: ${e.message}`);
 }
 ```
@@ -2874,7 +2998,7 @@ convertPemKey(pubKey: string | null, priKey: string | null): Promise<KeyPair>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 | 17620003 | Parameter check failed.  适用版本：26.0.0+ |
@@ -2956,7 +3080,7 @@ convertPemKey(pubKey: string | null, priKey: string | null, password: string): P
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -3029,7 +3153,7 @@ convertPemKeySync接口与convertPemKey接口注意事项相同，见[convertPem
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 | 17620003 | Parameter check failed.  适用版本：26.0.0+ |
@@ -3038,6 +3162,7 @@ convertPemKeySync接口与convertPemKey接口注意事项相同，见[convertPem
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 let priKeyPkcs1Str1024: string =
   '-----BEGIN RSA PRIVATE KEY-----\n'
@@ -3071,7 +3196,8 @@ function testConvertPemKeyBySync() {
     } else {
       console.error('[Sync]: convert pem key pair result: fail.');
     }
-  } catch (e) {
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
     console.error(`Sync failed: errCode: ${e.code}, errMsg: ${e.message}`);
   }
 }
@@ -3111,7 +3237,7 @@ convertPemKeySync接口与convertPemKey接口注意事项相同，见[convertPem
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -3119,6 +3245,7 @@ convertPemKeySync接口与convertPemKey接口注意事项相同，见[convertPem
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 let priKeyPkcs1EncodingStr: string =
   '-----BEGIN RSA PRIVATE KEY-----\n'
@@ -3148,7 +3275,8 @@ function testConvertPemKeyBySync() {
     } else {
       console.error('[Sync]: convert pem key pair result: fail.');
     }
-  } catch (e) {
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
     console.error(`Sync failed: errCode: ${e.code}, errMsg: ${e.message}`);
   }
 }
@@ -3185,7 +3313,7 @@ createAsyKeyGeneratorBySpec(asyKeySpec: AsyKeySpec): AsyKeyGeneratorBySpec
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 801 | This operation is not supported. |
 | 17620001 | Memory operation failed. |
 
@@ -3193,6 +3321,7 @@ createAsyKeyGeneratorBySpec(asyKeySpec: AsyKeySpec): AsyKeyGeneratorBySpec
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 // 配置DSA1024公钥和私钥中包含的公共参数。
 function genDsa1024CommonSpecBigE() {
@@ -3220,7 +3349,12 @@ function genDsa1024KeyPairSpecBigE() {
 }
 
 let asyKeyPairSpec = genDsa1024KeyPairSpecBigE(); // JS输入必须是大端格式的正数。
-let asyKeyGeneratorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(asyKeyPairSpec);
+try {
+  let asyKeyGeneratorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(asyKeyPairSpec);
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
+  console.error(`createAsyKeyGeneratorBySpec failed: errCode: ${e.code}, errMsg: ${e.message}`);
+}
 ```
 
 ## AsyKeyGeneratorBySpec10+
@@ -3267,7 +3401,7 @@ generateKeyPair(callback: AsyncCallback<KeyPair>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  Incorrect parameter types; |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  Incorrect parameter types; |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -3341,7 +3475,7 @@ generateKeyPair(): Promise<KeyPair>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -3412,7 +3546,7 @@ generateKeyPairSync(): KeyPair
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -3459,7 +3593,7 @@ function testGenerateKeyPairSync() {
     }
   } catch (error) {
     let e: BusinessError = error as BusinessError;
-    console.error(`sync failed: errCode: ${error.code}, errMsg: ${error.message}`);
+    console.error(`sync failed: errCode: ${e.code}, errMsg: ${e.message}`);
   }
 }
 ```
@@ -3491,7 +3625,7 @@ generatePriKey(callback: AsyncCallback<PriKey>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  Mandatory parameters are left unspecified; |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  Mandatory parameters are left unspecified; |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -3530,7 +3664,7 @@ function testGeneratePriKey() {
   let asyKeyGeneratorBySpec = cryptoFramework.createAsyKeyGeneratorBySpec(asyKeyPairSpec);
   asyKeyGeneratorBySpec.generatePriKey((err, prikey) => {
     if (err) {
-      console.error(`generateKeyPair failed, errCode: ${err.code}, errMsg: ${err.message}`);
+      console.error(`generatePriKey failed, errCode: ${err.code}, errMsg: ${err.message}`);
       return;
     }
     console.info('generatePriKey result: success.');
@@ -3565,7 +3699,7 @@ generatePriKey(): Promise<PriKey>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -3636,7 +3770,7 @@ generatePriKeySync(): PriKey
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -3644,6 +3778,7 @@ generatePriKeySync(): PriKey
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 // 配置DSA1024公钥和私钥中包含的公共参数。
 function genDsa1024CommonSpecBigE() {
@@ -3680,7 +3815,8 @@ function testGeneratePriKeySync() {
     } else {
       console.error('[Sync]: get pri key result: fail.');
     }
-  } catch (e) {
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
     console.error(`sync failed: errCode: ${e.code}, errMsg: ${e.message}`);
   }
 }
@@ -3713,7 +3849,7 @@ generatePubKey(callback: AsyncCallback<PubKey>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  Incorrect parameter types; |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  Incorrect parameter types; |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -3787,7 +3923,7 @@ generatePubKey(): Promise<PubKey>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -3858,7 +3994,7 @@ generatePubKeySync(): PubKey
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -3866,6 +4002,7 @@ generatePubKeySync(): PubKey
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 // 配置DSA1024公钥和私钥中包含的公共参数。
 function genDsa1024CommonSpecBigE() {
@@ -3902,7 +4039,8 @@ function testGeneratePubKeySync() {
     } else {
       console.error('[Sync]: get pub key result: fail.');
     }
-  } catch (e) {
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
     console.error(`sync failed: errCode: ${e.code}, errMsg: ${e.message}`);
   }
 }
@@ -3943,7 +4081,7 @@ static genECCCommonParamsSpec(curveName: string): ECCCommonParamsSpec
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 801 | This operation is not supported. |
 | 17620001 | Memory operation failed. |
 
@@ -3997,7 +4135,7 @@ static convertPoint(curveName: string, encodedPoint: Uint8Array): Point
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -4005,14 +4143,20 @@ static convertPoint(curveName: string, encodedPoint: Uint8Array): Point
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 // 随机生成的非压缩点数据。
 let pkData =
   new Uint8Array([4, 143, 39, 57, 249, 145, 50, 63, 222, 35, 70, 178, 121, 202, 154, 21, 146, 129, 75, 76, 63, 8, 195,
     157, 111, 40, 217, 215, 148, 120, 224, 205, 82, 83, 92, 185, 21, 211, 184, 5, 19, 114, 33, 86, 85, 228, 123, 242,
     206, 200, 98, 178, 184, 130, 35, 232, 45, 5, 202, 189, 11, 46, 163, 156, 152]);
-let returnPoint = cryptoFramework.ECCKeyUtil.convertPoint('NID_brainpoolP256r1', pkData);
-console.info('returnPoint: ' + returnPoint.x.toString(16));
+try {
+  let returnPoint = cryptoFramework.ECCKeyUtil.convertPoint('NID_brainpoolP256r1', pkData);
+  console.info('returnPoint: ' + returnPoint.x.toString(16));
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
+  console.error(`convertPoint failed: errCode: ${e.code}, errMsg: ${e.message}`);
+}
 ```
 
 ### getEncodedPoint12+
@@ -4045,7 +4189,7 @@ static getEncodedPoint(curveName: string, point: Point, format: string): Uint8Ar
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -4053,21 +4197,27 @@ static getEncodedPoint(curveName: string, point: Point, format: string): Uint8Ar
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 async function doTest() {
-  let generator = cryptoFramework.createAsyKeyGenerator('ECC_BrainPoolP256r1');
-  let keyPair = await generator.generateKeyPair();
-  let eccPkX = keyPair.pubKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.ECC_PK_X_BN);
-  let eccPkY = keyPair.pubKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.ECC_PK_Y_BN);
-  console.info('ECC_PK_X_BN 16: ' + eccPkX.toString(16));
-  console.info('ECC_PK_Y_BN 16: ' + eccPkY.toString(16));
-  // 将eccPkX.toString(16)结果放入x，eccPkY.toString(16)结果放入y。
-  let returnPoint: cryptoFramework.Point = {
-    x: BigInt('0x' + eccPkX.toString(16)),
-    y: BigInt('0x' + eccPkY.toString(16))
-  };
-  let returnData = cryptoFramework.ECCKeyUtil.getEncodedPoint('NID_brainpoolP256r1', returnPoint, 'UNCOMPRESSED');
-  console.info('returnData: ' + returnData);
+  try {
+    let generator = cryptoFramework.createAsyKeyGenerator('ECC_BrainPoolP256r1');
+    let keyPair = await generator.generateKeyPair();
+    let eccPkX = keyPair.pubKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.ECC_PK_X_BN);
+    let eccPkY = keyPair.pubKey.getAsyKeySpec(cryptoFramework.AsyKeySpecItem.ECC_PK_Y_BN);
+    console.info('ECC_PK_X_BN 16: ' + eccPkX.toString(16));
+    console.info('ECC_PK_Y_BN 16: ' + eccPkY.toString(16));
+    // 将eccPkX.toString(16)结果放入x，eccPkY.toString(16)结果放入y。
+    let returnPoint: cryptoFramework.Point = {
+      x: BigInt('0x' + eccPkX.toString(16)),
+      y: BigInt('0x' + eccPkY.toString(16))
+    };
+    let returnData = cryptoFramework.ECCKeyUtil.getEncodedPoint('NID_brainpoolP256r1', returnPoint, 'UNCOMPRESSED');
+    console.info('returnData: ' + returnData);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`doTest failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -4107,7 +4257,7 @@ static genDHCommonParamsSpec(pLen: number, skLen?: number): DHCommonParamsSpec
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 801 | This operation is not supported. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
@@ -4159,7 +4309,7 @@ static genCipherTextBySpec(spec: SM2CipherTextSpec, mode?: string): DataBlob
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -4214,7 +4364,7 @@ static getCipherTextSpec(cipherText: DataBlob, mode?: string): SM2CipherTextSpec
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -4277,7 +4427,7 @@ createCipher(transformation: string): Cipher
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 801 | This operation is not supported. |
 | 17620001 | Memory operation failed. |
 
@@ -4351,7 +4501,7 @@ init(opMode: CryptoMode, key: Key, params: ParamsSpec, callback: AsyncCallback<v
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620003 | Parameter check failed. Possible causes:  1. Invalid opMode value;  2. Invalid iv length;  3. Invalid key length.  适用版本：22+ |
@@ -4387,7 +4537,7 @@ init(opMode: CryptoMode, key: Key, params: ParamsSpec | null, callback: AsyncCal
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620003 | Parameter check failed. Possible causes:  1. Invalid opMode value;  2. Invalid iv length;  3. Invalid key length.  适用版本：22+ |
@@ -4428,7 +4578,7 @@ init(opMode: CryptoMode, key: Key, params: ParamsSpec): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620003 | Parameter check failed. Possible causes:  1. Invalid opMode value;  2. Invalid iv length;  3. Invalid key length.  适用版本：22+ |
@@ -4469,7 +4619,7 @@ init(opMode: CryptoMode, key: Key, params: ParamsSpec | null): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620003 | Parameter check failed. Possible causes:  1. Invalid opMode value;  2. Invalid iv length;  3. Invalid key length.  适用版本：22+ |
@@ -4501,7 +4651,7 @@ initSync(opMode: CryptoMode, key: Key, params: ParamsSpec | null): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620003 | Parameter check failed. Possible causes:  1. Invalid opMode value;  2. Invalid iv length;  3. Invalid key length.  适用版本：22+ |
@@ -4554,7 +4704,7 @@ update(data: DataBlob, callback: AsyncCallback<DataBlob>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620003 | Parameter check failed. Possible causes:  1. The data is too long.  适用版本：22+ |
@@ -4612,7 +4762,7 @@ update(data: DataBlob): Promise<DataBlob>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620003 | Parameter check failed. Possible causes:  1. The data is too long.  适用版本：22+ |
@@ -4650,7 +4800,7 @@ updateSync(data: DataBlob): DataBlob
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620003 | Parameter check failed. Possible causes:  1. The data is too long.  适用版本：22+ |
@@ -4682,7 +4832,7 @@ doFinal(data: DataBlob, callback: AsyncCallback<DataBlob>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620003 | Parameter check failed. Possible causes:  1. The data is too long.  适用版本：22+ |
@@ -4732,10 +4882,10 @@ doFinal(data: DataBlob | null, callback: AsyncCallback<DataBlob>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
-| 17620003 | Parameter check failed. Possible causes:  1. The data is too long. |
+| 17620003 | Parameter check failed. Possible causes:  1. The data is too long.  适用版本：22+ |
 | 17630001 | Crypto operation error. |
 
 **示例：**
@@ -4745,11 +4895,18 @@ doFinal(data: DataBlob | null, callback: AsyncCallback<DataBlob>): void
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 import { buffer } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-function generateRandom(len: number) {
+function generateRandom(len: number): cryptoFramework.DataBlob {
   let rand = cryptoFramework.createRandom();
-  let generateRandSync = rand.generateRandomSync(len);
-  return generateRandSync;
+  try {
+    return rand.generateRandomSync(len);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`generateRandomSync failed: errCode: ${e.code}, errMsg: ${e.message}`);
+    let dataBlob: cryptoFramework.DataBlob = { data: new Uint8Array(len) };
+    return dataBlob;
+  }
 }
 
 function genGcmParamsSpec() {
@@ -4776,11 +4933,27 @@ function cipherByCallback() {
   let symKeyGenerator = cryptoFramework.createSymKeyGenerator('AES128');
   let cipher = cryptoFramework.createCipher('AES128|GCM|PKCS7');
   symKeyGenerator.generateSymKey((err, symKey) => {
+    if (err) {
+      console.error(`generateSymKey failed, errCode: ${err.code}, errMsg: ${err.message}`);
+      return;
+    }
     cipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, gcmParams, (err) => {
+      if (err) {
+        console.error(`init failed, errCode: ${err.code}, errMsg: ${err.message}`);
+        return;
+      }
       let message = 'This is a test';
       let plainText: cryptoFramework.DataBlob = { data: new Uint8Array(buffer.from(message, 'utf-8').buffer) };
       cipher.update(plainText, (err, encryptUpdate) => {
+        if (err) {
+          console.error(`update failed, errCode: ${err.code}, errMsg: ${err.message}`);
+          return;
+        }
         cipher.doFinal(null, (err, tag) => {
+          if (err) {
+            console.error(`doFinal failed, errCode: ${err.code}, errMsg: ${err.message}`);
+            return;
+          }
           gcmParams.authTag = tag;
           console.info('encryptUpdate plainText: ' + encryptUpdate.data);
         });
@@ -4821,7 +4994,7 @@ doFinal(data: DataBlob): Promise<DataBlob>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620003 | Parameter check failed. Possible causes:  1. The data is too long.  适用版本：22+ |
@@ -4882,7 +5055,7 @@ doFinal(data: DataBlob | null): Promise<DataBlob>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620003 | Parameter check failed. Possible causes:  1. The data is too long.  适用版本：22+ |
@@ -4895,11 +5068,18 @@ doFinal(data: DataBlob | null): Promise<DataBlob>
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 import { buffer } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-function generateRandom(len: number) {
+function generateRandom(len: number): cryptoFramework.DataBlob {
   let rand = cryptoFramework.createRandom();
-  let generateRandSync = rand.generateRandomSync(len);
-  return generateRandSync;
+  try {
+    return rand.generateRandomSync(len);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`generateRandomSync failed: errCode: ${e.code}, errMsg: ${e.message}`);
+    let dataBlob: cryptoFramework.DataBlob = { data: new Uint8Array(len) };
+    return dataBlob;
+  }
 }
 
 function genGcmParamsSpec() {
@@ -4922,16 +5102,21 @@ function genGcmParamsSpec() {
 }
 
 async function cipherByPromise() {
-  let gcmParams = genGcmParamsSpec();
-  let symKeyGenerator = cryptoFramework.createSymKeyGenerator('AES128');
-  let cipher = cryptoFramework.createCipher('AES128|GCM|PKCS7');
-  let symKey = await symKeyGenerator.generateSymKey();
-  await cipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, gcmParams);
-  let message = 'This is a test';
-  let plainText: cryptoFramework.DataBlob = { data: new Uint8Array(buffer.from(message, 'utf-8').buffer) };
-  let encryptUpdate = await cipher.update(plainText);
-  gcmParams.authTag = await cipher.doFinal(null);
-  console.info('encryptUpdate plainText: ' + encryptUpdate.data);
+  try {
+    let gcmParams = genGcmParamsSpec();
+    let symKeyGenerator = cryptoFramework.createSymKeyGenerator('AES128');
+    let cipher = cryptoFramework.createCipher('AES128|GCM|PKCS7');
+    let symKey = await symKeyGenerator.generateSymKey();
+    await cipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, gcmParams);
+    let message = 'This is a test';
+    let plainText: cryptoFramework.DataBlob = { data: new Uint8Array(buffer.from(message, 'utf-8').buffer) };
+    let encryptUpdate = await cipher.update(plainText);
+    gcmParams.authTag = await cipher.doFinal(null);
+    console.info('encryptUpdate plainText: ' + encryptUpdate.data);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`cipherByPromise failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -4976,10 +5161,10 @@ doFinalSync(data: DataBlob | null): DataBlob
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
-| 17620003 | Parameter check failed. Possible causes:  1. The data is too long. |
+| 17620003 | Parameter check failed. Possible causes:  1. The data is too long.  适用版本：22+ |
 | 17630001 | Crypto operation error. |
 
 **示例：**
@@ -4989,11 +5174,18 @@ doFinalSync(data: DataBlob | null): DataBlob
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 import { buffer } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-function generateRandom(len: number) {
+function generateRandom(len: number): cryptoFramework.DataBlob {
   let rand = cryptoFramework.createRandom();
-  let generateRandSync = rand.generateRandomSync(len);
-  return generateRandSync;
+  try {
+    return rand.generateRandomSync(len);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`generateRandomSync failed: errCode: ${e.code}, errMsg: ${e.message}`);
+    let dataBlob: cryptoFramework.DataBlob = { data: new Uint8Array(len) };
+    return dataBlob;
+  }
 }
 
 function genGcmParamsSpec() {
@@ -5016,16 +5208,21 @@ function genGcmParamsSpec() {
 }
 
 async function cipherBySync() {
-  let gcmParams = genGcmParamsSpec();
-  let symKeyGenerator = cryptoFramework.createSymKeyGenerator('AES128');
-  let cipher = cryptoFramework.createCipher('AES128|GCM|PKCS7');
-  let symKey = await symKeyGenerator.generateSymKey();
-  await cipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, gcmParams);
-  let message = 'This is a test';
-  let plainText: cryptoFramework.DataBlob = { data: new Uint8Array(buffer.from(message, 'utf-8').buffer) };
-  let encryptUpdate = cipher.updateSync(plainText);
-  gcmParams.authTag = cipher.doFinalSync(null);
-  console.info('encryptUpdate plainText: ' + encryptUpdate.data);
+  try {
+    let gcmParams = genGcmParamsSpec();
+    let symKeyGenerator = cryptoFramework.createSymKeyGenerator('AES128');
+    let cipher = cryptoFramework.createCipher('AES128|GCM|PKCS7');
+    let symKey = await symKeyGenerator.generateSymKey();
+    await cipher.init(cryptoFramework.CryptoMode.ENCRYPT_MODE, symKey, gcmParams);
+    let message = 'This is a test';
+    let plainText: cryptoFramework.DataBlob = { data: new Uint8Array(buffer.from(message, 'utf-8').buffer) };
+    let encryptUpdate = cipher.updateSync(plainText);
+    gcmParams.authTag = cipher.doFinalSync(null);
+    console.info('encryptUpdate plainText: ' + encryptUpdate.data);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`cipherBySync failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -5055,21 +5252,27 @@ setCipherSpec(itemType: CipherSpecItem, itemValue: Uint8Array): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 801 | This operation is not supported. |
 | 17620001 | Memory operation failed. |
-| 17620003 | Parameter check failed. Possible causes:  1. Unsupported itemType. |
+| 17620003 | Parameter check failed. Possible causes:  1. Unsupported itemType.  适用版本：22+ |
 | 17630001 | Crypto operation error. |
 
 **示例：**
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function testSetCipherSpec() {
   let cipher = cryptoFramework.createCipher('RSA2048|PKCS1_OAEP|SHA256|MGF1_SHA1');
   let pSource = new Uint8Array([1, 2, 3, 4]);
-  cipher.setCipherSpec(cryptoFramework.CipherSpecItem.OAEP_MGF1_PSRC_UINT8ARR, pSource);
+  try {
+    cipher.setCipherSpec(cryptoFramework.CipherSpecItem.OAEP_MGF1_PSRC_UINT8ARR, pSource);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`testSetCipherSpec failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -5104,21 +5307,27 @@ getCipherSpec(itemType: CipherSpecItem): string | Uint8Array
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 801 | This operation is not supported. |
 | 17620001 | Memory operation failed. |
-| 17620003 | Parameter check failed. Possible causes:  1. Unsupported itemType. |
+| 17620003 | Parameter check failed. Possible causes:  1. Unsupported itemType.  适用版本：22+ |
 | 17630001 | Crypto operation error. |
 
 **示例：**
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function testGetCipherSpec() {
   let cipher = cryptoFramework.createCipher('RSA2048|PKCS1_OAEP|SHA256|MGF1_SHA1');
-  let mdName = cipher.getCipherSpec(cryptoFramework.CipherSpecItem.OAEP_MD_NAME_STR);
-  console.info('getCipherSpec: mdName =' + mdName);
+  try {
+    let mdName = cipher.getCipherSpec(cryptoFramework.CipherSpecItem.OAEP_MD_NAME_STR);
+    console.info('getCipherSpec: mdName =' + mdName);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`testGetCipherSpec failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -5153,7 +5362,7 @@ createSign(algName: string): Sign
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 801 | This operation is not supported. |
 | 17620001 | Memory operation failed. |
 
@@ -5161,16 +5370,18 @@ createSign(algName: string): Sign
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-let signer1 = cryptoFramework.createSign('RSA1024|PKCS1|SHA256');
-
-let signer2 = cryptoFramework.createSign('RSA1024|PSS|SHA256|MGF1_SHA256');
-
-let signer3 = cryptoFramework.createSign('ECC224|SHA256');
-
-let signer4 = cryptoFramework.createSign('DSA2048|SHA256');
-
-let signer5 = cryptoFramework.createSign('RSA1024|PKCS1|SHA256|OnlySign');
+try {
+  let signer1 = cryptoFramework.createSign('RSA1024|PKCS1|SHA256');
+  let signer2 = cryptoFramework.createSign('RSA1024|PSS|SHA256|MGF1_SHA256');
+  let signer3 = cryptoFramework.createSign('ECC224|SHA256');
+  let signer4 = cryptoFramework.createSign('DSA2048|SHA256');
+  let signer5 = cryptoFramework.createSign('RSA1024|PKCS1|SHA256|OnlySign');
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
+  console.error(`createSign failed: errCode: ${e.code}, errMsg: ${e.message}`);
+}
 ```
 
 ## Sign
@@ -5230,7 +5441,7 @@ Sign实例不支持重复初始化。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17630001 | Crypto operation error. |
@@ -5269,7 +5480,7 @@ Sign实例不支持重复初始化。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17630001 | Crypto operation error. |
@@ -5299,7 +5510,7 @@ Sign实例不支持重复调用initSync。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17630001 | Crypto operation error. |
@@ -5345,7 +5556,7 @@ OnlySign模式下，不支持update操作，需要直接使用sign传入数据�
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620004 | Invalid function call.  适用版本：26.0.0+ |
@@ -5396,7 +5607,7 @@ OnlySign模式下，不支持update操作，需要直接使用sign传入数据�
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620004 | Invalid function call.  适用版本：26.0.0+ |
@@ -5438,7 +5649,7 @@ OnlySign模式下，不支持updateSync操作，需要直接使用signSync传入
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620004 | Invalid function call.  适用版本：26.0.0+ |
@@ -5470,7 +5681,7 @@ sign(data: DataBlob, callback: AsyncCallback<DataBlob>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620003 | Parameter check failed.  适用版本：26.0.0+ |
@@ -5502,7 +5713,7 @@ sign(data: DataBlob | null, callback: AsyncCallback<DataBlob>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620003 | Parameter check failed.  适用版本：26.0.0+ |
@@ -5539,7 +5750,7 @@ sign(data: DataBlob): Promise<DataBlob>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620003 | Parameter check failed.  适用版本：26.0.0+ |
@@ -5576,7 +5787,7 @@ sign(data: DataBlob | null): Promise<DataBlob>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17630001 | Crypto operation error. |
@@ -5610,7 +5821,7 @@ signSync(data: DataBlob | null): DataBlob
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17630001 | Crypto operation error. |
@@ -5669,9 +5880,25 @@ function signByCallback() {
   let rsaGenerator = cryptoFramework.createAsyKeyGenerator('RSA1024');
   let signer = cryptoFramework.createSign('RSA1024|PKCS1|SHA256');
   rsaGenerator.convertKey(pubKeyBlob, priKeyBlob, (err, keyPair) => {
+    if (err) {
+      console.error(`convertKey failed: errCode: ${err.code}, errMsg: ${err.message}`);
+      return;
+    }
     signer.init(keyPair.priKey, err => {
+      if (err) {
+        console.error(`init failed: errCode: ${err.code}, errMsg: ${err.message}`);
+        return;
+      }
       signer.update(inputUpdate, err => {
+        if (err) {
+          console.error(`update failed: errCode: ${err.code}, errMsg: ${err.message}`);
+          return;
+        }
         signer.sign(inputVerify, (err, signData) => {
+          if (err) {
+            console.error(`sign failed: errCode: ${err.code}, errMsg: ${err.message}`);
+            return;
+          }
           console.info('sign output = ' + signData.data);
         });
       });
@@ -5687,6 +5914,7 @@ function signByCallback() {
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 import { buffer } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 async function genKeyPairByData(pubKeyData: Uint8Array, priKeyData: Uint8Array) {
   let pubKeyBlob: cryptoFramework.DataBlob = { data: pubKeyData };
@@ -5733,16 +5961,21 @@ async function signByPromise() {
       243, 121, 174, 67, 66, 11, 99, 202, 17, 52, 234, 78, 29, 3, 57, 51, 123, 149, 86, 64, 192, 73, 199, 108, 101, 55,
       232, 41, 114, 153, 237, 253, 52, 205, 148, 45, 86, 186, 241, 182, 183, 42, 77, 252, 195, 29, 158, 173, 3, 182,
       207, 254, 61, 71, 184, 167, 184]);
-  let keyPair = await genKeyPairByData(pkData, skData);
-  let inputUpdate: cryptoFramework.DataBlob =
-    { data: new Uint8Array(buffer.from('This is Sign test plan1', 'utf-8').buffer) };
-  let inputSign: cryptoFramework.DataBlob =
-    { data: new Uint8Array(buffer.from('This is Sign test plan2', 'utf-8').buffer) };
-  let signer = cryptoFramework.createSign('RSA1024|PKCS1|SHA256');
-  await signer.init(keyPair.priKey);
-  await signer.update(inputUpdate);
-  let signData = await signer.sign(inputSign);
-  console.info('signData result: ' + signData.data);
+  try {
+    let keyPair = await genKeyPairByData(pkData, skData);
+    let inputUpdate: cryptoFramework.DataBlob =
+      { data: new Uint8Array(buffer.from('This is Sign test plan1', 'utf-8').buffer) };
+    let inputSign: cryptoFramework.DataBlob =
+      { data: new Uint8Array(buffer.from('This is Sign test plan2', 'utf-8').buffer) };
+    let signer = cryptoFramework.createSign('RSA1024|PKCS1|SHA256');
+    await signer.init(keyPair.priKey);
+    await signer.update(inputUpdate);
+    let signData = await signer.sign(inputSign);
+    console.info('signData result: ' + signData.data);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`signByPromise failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -5753,6 +5986,7 @@ async function signByPromise() {
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 import { buffer } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function genKeyPairByData(pubKeyData: Uint8Array, priKeyData: Uint8Array) {
   let pubKeyBlob: cryptoFramework.DataBlob = { data: pubKeyData };
@@ -5805,10 +6039,15 @@ function signBySync() {
   let inputSign: cryptoFramework.DataBlob =
     { data: new Uint8Array(buffer.from('This is Sign test plan2', 'utf-8').buffer) };
   let signer = cryptoFramework.createSign('RSA1024|PKCS1|SHA256');
-  signer.initSync(keyPair.priKey);
-  signer.updateSync(inputUpdate);
-  let signData = signer.signSync(inputSign);
-  console.info('signData result: ' + signData.data);
+  try {
+    signer.initSync(keyPair.priKey);
+    signer.updateSync(inputUpdate);
+    let signData = signer.signSync(inputSign);
+    console.info('signData result: ' + signData.data);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`signBySync failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -5840,7 +6079,7 @@ setSignSpec(itemType: SignSpecItem, itemValue: number): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 801 | This operation is not supported. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
@@ -5874,7 +6113,7 @@ setSignSpec(itemType: SignSpecItem, itemValue: number | Uint8Array): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 801 | This operation is not supported. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
@@ -5886,11 +6125,17 @@ setSignSpec(itemType: SignSpecItem, itemValue: number | Uint8Array): void
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function testSetSignSpec() {
   let signer = cryptoFramework.createSign('RSA|PSS|SHA256|MGF1_SHA256');
   let setN = 20;
-  signer.setSignSpec(cryptoFramework.SignSpecItem.PSS_SALT_LEN_NUM, setN);
+  try {
+    signer.setSignSpec(cryptoFramework.SignSpecItem.PSS_SALT_LEN_NUM, setN);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`testSetSignSpec failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -5932,10 +6177,16 @@ setSignSpec(itemType: SignSpecItem, itemValue: number | Uint8Array | boolean): v
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function testSetSignSpec() {
   let signer = cryptoFramework.createSign('ML-DSA');
-  signer.setSignSpec(cryptoFramework.SignSpecItem.ML_DSA_DETERMINISTIC_BOOL, true);
+  try {
+    signer.setSignSpec(cryptoFramework.SignSpecItem.ML_DSA_DETERMINISTIC_BOOL, true);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`testSetSignSpec failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -5970,7 +6221,7 @@ getSignSpec(itemType: SignSpecItem): string | number
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 801 | This operation is not supported. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
@@ -5980,12 +6231,18 @@ getSignSpec(itemType: SignSpecItem): string | number
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function testGetSignSpec() {
   let signer = cryptoFramework.createSign('RSA|PSS|SHA256|MGF1_SHA256');
   let setN = 32;
-  signer.setSignSpec(cryptoFramework.SignSpecItem.PSS_SALT_LEN_NUM, setN);
-  signer.getSignSpec(cryptoFramework.SignSpecItem.PSS_SALT_LEN_NUM);
+  try {
+    signer.setSignSpec(cryptoFramework.SignSpecItem.PSS_SALT_LEN_NUM, setN);
+    signer.getSignSpec(cryptoFramework.SignSpecItem.PSS_SALT_LEN_NUM);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`testGetSignSpec failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -6006,7 +6263,7 @@ createVerify(algName: string): Verify
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| algName | string | 是 | 指定签名验证算法：RSA、ECC、DSA、SM210+、Ed2551911+和ML-DSA26.0.0+。使用RSA PKCS #1模式时需设置摘要；使用RSA PSS模式时需设置摘要和掩码摘要。使用RSA算法验签时，设置Recover参数可支持验签恢复。  支持的规格详见[签名验签规格](../harmonyos-guides/crypto-sign-sig-verify-overview.md)。 |
+| algName | string | 是 | 指定验签算法：RSA、ECC、DSA、SM210+、Ed2551911+和ML-DSA26.0.0+。使用RSA PKCS #1模式时需设置摘要；使用RSA PSS模式时需设置摘要和掩码摘要。使用RSA算法验签时，设置Recover参数可支持验签恢复。  支持的规格详见[签名验签规格](../harmonyos-guides/crypto-sign-sig-verify-overview.md)。 |
 
 **返回值**：
 
@@ -6020,7 +6277,7 @@ createVerify(algName: string): Verify
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 801 | This operation is not supported. |
 | 17620001 | Memory operation failed. |
 
@@ -6028,12 +6285,16 @@ createVerify(algName: string): Verify
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-let verifier1 = cryptoFramework.createVerify('RSA1024|PKCS1|SHA256');
-
-let verifier2 = cryptoFramework.createVerify('RSA1024|PSS|SHA256|MGF1_SHA256');
-
-let verifier3 = cryptoFramework.createVerify('RSA1024|PKCS1|SHA256|Recover');
+try {
+  let verifier1 = cryptoFramework.createVerify('RSA1024|PKCS1|SHA256');
+  let verifier2 = cryptoFramework.createVerify('RSA1024|PSS|SHA256|MGF1_SHA256');
+  let verifier3 = cryptoFramework.createVerify('RSA1024|PKCS1|SHA256|Recover');
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
+  console.error(`createVerify failed: errCode: ${e.code}, errMsg: ${e.message}`);
+}
 ```
 
 ## Verify
@@ -6089,7 +6350,7 @@ init(pubKey: PubKey, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620003 | Parameter check failed. Possible causes:  1. Incorrect key type.  适用版本：26.0.0+ |
@@ -6126,7 +6387,7 @@ init(pubKey: PubKey): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17630001 | Crypto operation error. |
@@ -6154,7 +6415,7 @@ initSync(pubKey: PubKey): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17630001 | Crypto operation error. |
@@ -6200,7 +6461,7 @@ OnlyVerify模式下，不支持update操作，直接使用verify传入数据即�
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620004 | Invalid function call.  适用版本：26.0.0+ |
@@ -6251,7 +6512,7 @@ OnlyVerify模式下，不支持update操作，直接使用verify传入数据即�
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620004 | Invalid function call.  适用版本：26.0.0+ |
@@ -6293,7 +6554,7 @@ OnlyVerify模式下，不支持updateSync操作，需要直接使用verifySync�
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620004 | Invalid function call.  适用版本：26.0.0+ |
@@ -6326,7 +6587,7 @@ verify(data: DataBlob, signatureData: DataBlob, callback: AsyncCallback<boolean>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620003 | Parameter check failed.  适用版本：26.0.0+ |
@@ -6359,7 +6620,7 @@ verify(data: DataBlob | null, signatureData: DataBlob, callback: AsyncCallback<b
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620003 | Parameter check failed.  适用版本：26.0.0+ |
@@ -6397,7 +6658,7 @@ verify(data: DataBlob, signatureData: DataBlob): Promise<boolean>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620003 | Parameter check failed.  适用版本：26.0.0+ |
@@ -6435,7 +6696,7 @@ verify(data: DataBlob | null, signatureData: DataBlob): Promise<boolean>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17630001 | Crypto operation error. |
@@ -6470,7 +6731,7 @@ verifySync(data: DataBlob | null, signatureData: DataBlob): boolean
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17630001 | Crypto operation error. |
@@ -6539,9 +6800,25 @@ function verifyByCallback() {
   let rsaGenerator = cryptoFramework.createAsyKeyGenerator('RSA1024');
   let verifier = cryptoFramework.createVerify('RSA1024|PKCS1|SHA256');
   rsaGenerator.convertKey(pubKeyBlob, priKeyBlob, (err, keyPair) => {
+    if (err) {
+      console.error(`convertKey failed: errCode: ${err.code}, errMsg: ${err.message}`);
+      return;
+    }
     verifier.init(keyPair.pubKey, err => {
+      if (err) {
+        console.error(`init failed: errCode: ${err.code}, errMsg: ${err.message}`);
+        return;
+      }
       verifier.update(inputUpdate, err => {
+        if (err) {
+          console.error(`update failed: errCode: ${err.code}, errMsg: ${err.message}`);
+          return;
+        }
         verifier.verify(inputVerify, signMessageBlob, (err, res) => {
+          if (err) {
+            console.error(`verify failed: errCode: ${err.code}, errMsg: ${err.message}`);
+            return;
+          }
           console.info('verify result = ' + res);
         });
       });
@@ -6557,6 +6834,7 @@ function verifyByCallback() {
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 import { buffer } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 async function genKeyPairByData(pubKeyData: Uint8Array, priKeyData: Uint8Array) {
   let pubKeyBlob: cryptoFramework.DataBlob = { data: pubKeyData };
@@ -6619,10 +6897,15 @@ async function verifyByPromise() {
       232, 50, 39, 172, 232, 178, 112, 73, 251, 235, 131, 209])
   };
   let verifier = cryptoFramework.createVerify('RSA1024|PKCS1|SHA256');
-  await verifier.init(keyPair.pubKey);
-  await verifier.update(inputUpdate);
-  let res = await verifier.verify(inputVerify, signMessageBlob);
-  console.info('verify result: ' + res);
+  try {
+    await verifier.init(keyPair.pubKey);
+    await verifier.update(inputUpdate);
+    let res = await verifier.verify(inputVerify, signMessageBlob);
+    console.info('verify result: ' + res);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`verifyByPromise failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -6633,6 +6916,7 @@ async function verifyByPromise() {
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 import { buffer } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function genKeyPairByData(pubKeyData: Uint8Array, priKeyData: Uint8Array) {
   let pubKeyBlob: cryptoFramework.DataBlob = { data: pubKeyData };
@@ -6695,10 +6979,15 @@ function verifyBySync() {
       232, 50, 39, 172, 232, 178, 112, 73, 251, 235, 131, 209])
   };
   let verifier = cryptoFramework.createVerify('RSA1024|PKCS1|SHA256');
-  verifier.initSync(keyPair.pubKey);
-  verifier.updateSync(inputUpdate);
-  let res = verifier.verifySync(inputVerify, signMessageBlob);
-  console.info('verify result: ' + res);
+  try {
+    verifier.initSync(keyPair.pubKey);
+    verifier.updateSync(inputUpdate);
+    let res = verifier.verifySync(inputVerify, signMessageBlob);
+    console.info('verify result: ' + res);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`verifyBySync failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -6734,7 +7023,7 @@ recover(signatureData: DataBlob): Promise<DataBlob | null>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620004 | Invalid function call.  适用版本：26.0.0+ |
@@ -6850,7 +7139,7 @@ recoverSync(signatureData: DataBlob): DataBlob | null
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620004 | Invalid function call.  适用版本：26.0.0+ |
@@ -6862,7 +7151,7 @@ setVerifySpec(itemType: SignSpecItem, itemValue: number): void
 
 设置验签参数。常用的验签参数直接通过[createVerify](js-apis-cryptoframework.md#cryptoframeworkcreateverify) 来指定，剩余参数通过本接口指定。
 
-支持RSA算法和SM2算法，从API version 11开始，支持SM2算法设置签名验证参数。
+支持RSA算法和SM2算法，从API version 11开始，支持SM2算法设置验签参数。
 
 验签的参数应当与签名的参数保持一致。
 
@@ -6886,7 +7175,7 @@ setVerifySpec(itemType: SignSpecItem, itemValue: number): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 801 | This operation is not supported. |
 | 17620001 | Memory operation failed. |
 | 17620003 | Parameter check failed.  适用版本：26.0.0+ |
@@ -6898,7 +7187,7 @@ setVerifySpec(itemType: SignSpecItem, itemValue: number | Uint8Array): void
 
 设置验签参数。常用的验签参数直接通过[createVerify](js-apis-cryptoframework.md#cryptoframeworkcreateverify) 来指定，剩余参数通过本接口指定。
 
-支持RSA算法和SM2算法，从API version 11开始，支持SM2算法设置签名验证参数。
+支持RSA算法和SM2算法，从API version 11开始，支持SM2算法设置验签参数。
 
 验签的参数应当与签名的参数保持一致。
 
@@ -6922,7 +7211,7 @@ setVerifySpec(itemType: SignSpecItem, itemValue: number | Uint8Array): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 801 | This operation is not supported. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
@@ -6934,11 +7223,17 @@ setVerifySpec(itemType: SignSpecItem, itemValue: number | Uint8Array): void
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function testSetVerifySpec() {
   let verifier = cryptoFramework.createVerify('RSA2048|PSS|SHA256|MGF1_SHA256');
   let setN = 20;
-  verifier.setVerifySpec(cryptoFramework.SignSpecItem.PSS_SALT_LEN_NUM, setN);
+  try {
+    verifier.setVerifySpec(cryptoFramework.SignSpecItem.PSS_SALT_LEN_NUM, setN);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`testSetVerifySpec failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -6982,10 +7277,16 @@ setVerifySpec(itemType: SignSpecItem, itemValue: number | Uint8Array | boolean):
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function testSetVerifySpec() {
   let verifier = cryptoFramework.createVerify('ML-DSA');
-  verifier.setVerifySpec(cryptoFramework.SignSpecItem.ML_DSA_MU_BOOL, false);
+  try {
+    verifier.setVerifySpec(cryptoFramework.SignSpecItem.ML_DSA_MU_BOOL, false);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`setVerifySpec failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -7020,7 +7321,7 @@ getVerifySpec(itemType: SignSpecItem): string | number
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 801 | This operation is not supported. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
@@ -7030,12 +7331,18 @@ getVerifySpec(itemType: SignSpecItem): string | number
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function testGetVerifySpec() {
   let verifier = cryptoFramework.createVerify('RSA2048|PSS|SHA256|MGF1_SHA256');
   let setN = 20;
-  verifier.setVerifySpec(cryptoFramework.SignSpecItem.PSS_SALT_LEN_NUM, setN);
-  verifier.getVerifySpec(cryptoFramework.SignSpecItem.PSS_SALT_LEN_NUM);
+  try {
+    verifier.setVerifySpec(cryptoFramework.SignSpecItem.PSS_SALT_LEN_NUM, setN);
+    verifier.getVerifySpec(cryptoFramework.SignSpecItem.PSS_SALT_LEN_NUM);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`getVerifySpec failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -7070,7 +7377,7 @@ createKeyAgreement(algName: string): KeyAgreement
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 801 | This operation is not supported. |
 | 17620001 | Memory operation failed. |
 
@@ -7078,8 +7385,14 @@ createKeyAgreement(algName: string): KeyAgreement
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-let keyAgreement = cryptoFramework.createKeyAgreement('ECC256');
+try {
+  let keyAgreement = cryptoFramework.createKeyAgreement('ECC256');
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
+  console.error(`createKeyAgreement failed: errCode: ${e.code}, errMsg: ${e.message}`);
+}
 ```
 
 ## KeyAgreement
@@ -7126,7 +7439,7 @@ generateSecret(priKey: PriKey, pubKey: PubKey, callback: AsyncCallback<DataBlob>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17630001 | Crypto operation error. |
@@ -7163,7 +7476,7 @@ generateSecret(priKey: PriKey, pubKey: PubKey): Promise<DataBlob>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17630001 | Crypto operation error. |
@@ -7197,7 +7510,7 @@ generateSecretSync(priKey: PriKey, pubKey: PubKey): DataBlob
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17630001 | Crypto operation error. |
@@ -7206,18 +7519,24 @@ generateSecretSync(priKey: PriKey, pubKey: PubKey): DataBlob
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 async function testGenerateSecret() {
   let eccGen = cryptoFramework.createAsyKeyGenerator('ECC256');
-  let globalKeyPair = await eccGen.generateKeyPair();
-  let keyAgreement = cryptoFramework.createKeyAgreement('ECC256');
-  keyAgreement.generateSecret(globalKeyPair.priKey, globalKeyPair.pubKey, (err, secret) => {
-    if (err) {
-      console.error(`keyAgreement failed, errCode: ${err.code}, errMsg: ${err.message}`);
-      return;
-    }
-    console.info('keyAgreement output = ' + secret.data);
-  });
+  try {
+    let globalKeyPair = await eccGen.generateKeyPair();
+    let keyAgreement = cryptoFramework.createKeyAgreement('ECC256');
+    keyAgreement.generateSecret(globalKeyPair.priKey, globalKeyPair.pubKey, (err, secret) => {
+      if (err) {
+        console.error(`keyAgreement failed, errCode: ${err.code}, errMsg: ${err.message}`);
+        return;
+      }
+      console.info('keyAgreement output = ' + secret.data);
+    });
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`testGenerateSecret failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -7229,14 +7548,19 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 async function testGenerateSecret() {
   let eccGen = cryptoFramework.createAsyKeyGenerator('ECC256');
-  let globalKeyPair = await eccGen.generateKeyPair();
-  let keyAgreement = cryptoFramework.createKeyAgreement('ECC256');
-  let keyAgreementPromise = keyAgreement.generateSecret(globalKeyPair.priKey, globalKeyPair.pubKey);
-  keyAgreementPromise.then(secret => {
-    console.info('keyAgreement output = ' + secret.data);
-  }).catch((error: BusinessError) => {
-    console.error(`keyAgreement failed: errCode: ${error.code}, errMsg: ${error.message}`);
-  });
+  try {
+    let globalKeyPair = await eccGen.generateKeyPair();
+    let keyAgreement = cryptoFramework.createKeyAgreement('ECC256');
+    let keyAgreementPromise = keyAgreement.generateSecret(globalKeyPair.priKey, globalKeyPair.pubKey);
+    keyAgreementPromise.then(secret => {
+      console.info('keyAgreement output = ' + secret.data);
+    }).catch((error: BusinessError) => {
+      console.error(`keyAgreement failed: errCode: ${error.code}, errMsg: ${error.message}`);
+    });
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`testGenerateSecret failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -7244,13 +7568,19 @@ async function testGenerateSecret() {
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 async function testGenerateSecretSync() {
   let eccGen = cryptoFramework.createAsyKeyGenerator('ECC256');
-  let globalKeyPair = await eccGen.generateKeyPair();
-  let keyAgreement = cryptoFramework.createKeyAgreement('ECC256');
-  let secret = keyAgreement.generateSecretSync(globalKeyPair.priKey, globalKeyPair.pubKey);
-  console.info('[Sync]keyAgreement output = ' + secret.data);
+  try {
+    let globalKeyPair = await eccGen.generateKeyPair();
+    let keyAgreement = cryptoFramework.createKeyAgreement('ECC256');
+    let secret = keyAgreement.generateSecretSync(globalKeyPair.priKey, globalKeyPair.pubKey);
+    console.info('[Sync]keyAgreement output = ' + secret.data);
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`testGenerateSecretSync failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -7292,7 +7622,7 @@ createMd(algName: string): Md
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 
 **示例：**
@@ -7363,7 +7693,7 @@ Md算法多次调用update更新的代码示例详见开发指导[分段摘要�
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -7406,7 +7736,7 @@ Md算法多次调用update更新的代码示例详见开发指导[分段摘要�
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -7438,7 +7768,7 @@ Md算法多次调用updateSync更新的代码示例详见开发指导[分段摘�
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -7484,7 +7814,15 @@ import { buffer } from '@kit.ArkTS';
 function mdByCallback() {
   let md = cryptoFramework.createMd('SHA256');
   md.update({ data: new Uint8Array(buffer.from('mdTestMessage', 'utf-8').buffer) }, (err) => {
+    if (err) {
+      console.error(`update failed: errCode: ${err.code}, errMsg: ${err.message}`);
+      return;
+    }
     md.digest((err, digestOutput) => {
+      if (err) {
+        console.error(`digest failed: errCode: ${err.code}, errMsg: ${err.message}`);
+        return;
+      }
       console.info('[Callback]: MD result: ' + digestOutput.data);
       console.info('[Callback]: MD len: ' + md.getMdLength());
     });
@@ -7531,13 +7869,19 @@ ArkTS示例：
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 import { buffer } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 async function mdByPromise() {
-  let md = cryptoFramework.createMd('SHA256');
-  await md.update({ data: new Uint8Array(buffer.from('mdTestMessage', 'utf-8').buffer) });
-  let mdOutput = await md.digest();
-  console.info('[Promise]: MD result: ' + mdOutput.data);
-  console.info('[Promise]: MD len: ' + md.getMdLength());
+  try {
+    let md = cryptoFramework.createMd('SHA256');
+    await md.update({ data: new Uint8Array(buffer.from('mdTestMessage', 'utf-8').buffer) });
+    let mdOutput = await md.digest();
+    console.info('[Promise]: MD result: ' + mdOutput.data);
+    console.info('[Promise]: MD len: ' + md.getMdLength());
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`mdByPromise failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -7649,7 +7993,7 @@ digestSync(): DataBlob
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17630001 | Crypto operation error. |
@@ -7661,13 +8005,19 @@ ArkTS示例：
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 import { buffer } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function mdBySync() {
   let md = cryptoFramework.createMd('SHA256');
-  md.updateSync({ data: new Uint8Array(buffer.from('mdTestMessage', 'utf-8').buffer) });
-  let mdOutput = md.digestSync();
-  console.info('[Sync]: MD result: ' + mdOutput.data);
-  console.info('[Sync]: MD len: ' + md.getMdLength());
+  try {
+    md.updateSync({ data: new Uint8Array(buffer.from('mdTestMessage', 'utf-8').buffer) });
+    let mdOutput = md.digestSync();
+    console.info('[Sync]: MD result: ' + mdOutput.data);
+    console.info('[Sync]: MD len: ' + md.getMdLength());
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`digestSync failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -7724,12 +8074,16 @@ function StringToUint8Array(str) {
 function mdTestSync() {
     let mdAlgName = 'SHA256';
     let message = 'mdTestMessage';
-    let md = cryptoFramework.createMd(mdAlgName);
-    md.updateSync({ data: StringToUint8Array(message) });
-    let mdResult = md.digestSync();
-    console.info('Digest successfully. result:' + mdResult.data);
-    let mdLen = md.getMdLength();
-    console.info('Digest successfully. md len: ' + mdLen);
+    try {
+        let md = cryptoFramework.createMd(mdAlgName);
+        md.updateSync({ data: StringToUint8Array(message) });
+        let mdResult = md.digestSync();
+        console.info('Digest successfully. result:' + mdResult.data);
+        let mdLen = md.getMdLength();
+        console.info('Digest successfully. md len: ' + mdLen);
+    } catch (error) {
+        console.error(`mdTestSync failed. Code: ${error.code}, message: ${error.message}`);
+    }
 }
 
 export default {
@@ -7778,10 +8132,16 @@ getMdLength(): number
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function getLength() {
   let md = cryptoFramework.createMd('SHA256');
-  console.info('[Promise]: MD len: ' + md.getMdLength());
+  try {
+    console.info('[Promise]: MD len: ' + md.getMdLength());
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`getMdLength failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -7818,7 +8178,7 @@ createMac(algName: string): Mac
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 
 **示例：**
@@ -7866,7 +8226,7 @@ createMac(macSpec: MacSpec): Mac
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17630001 | Crypto operation error. |
@@ -7886,7 +8246,7 @@ try {
   let mac = cryptoFramework.createMac(spec);
 } catch (error) {
   let e: BusinessError = error as BusinessError;
-  console.error(`sync failed: errCode: ${error.code}, errMsg: ${error.message}`);
+  console.error(`sync failed: errCode: ${e.code}, errMsg: ${e.message}`);
 }
 ```
 
@@ -7939,7 +8299,7 @@ init(key: SymKey, callback: AsyncCallback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -7974,7 +8334,7 @@ init(key: SymKey): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -8000,7 +8360,7 @@ initSync(key: SymKey): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -8034,7 +8394,7 @@ HMAC算法多次调用update更新的代码示例详见[消息认证码计算](.
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -8073,7 +8433,7 @@ HMAC算法多次调用update更新的代码示例详见[消息认证码计算](.
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -8103,7 +8463,7 @@ HMAC算法多次调用updateSync更新的代码示例详见[消息认证码计�
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -8148,9 +8508,25 @@ function hmacByCallback() {
   let keyBlob: cryptoFramework.DataBlob = { data: new Uint8Array(buffer.from('12345678abcdefgh', 'utf-8').buffer) };
   let symKeyGenerator = cryptoFramework.createSymKeyGenerator('AES128');
   symKeyGenerator.convertKey(keyBlob, (err, symKey) => {
+    if (err) {
+      console.error(`convertKey failed: errCode: ${err.code}, errMsg: ${err.message}`);
+      return;
+    }
     mac.init(symKey, (err) => {
+      if (err) {
+        console.error(`init failed: errCode: ${err.code}, errMsg: ${err.message}`);
+        return;
+      }
       mac.update({ data: new Uint8Array(buffer.from('hmacTestMessage', 'utf-8').buffer) }, (err) => {
+        if (err) {
+          console.error(`update failed: errCode: ${err.code}, errMsg: ${err.message}`);
+          return;
+        }
         mac.doFinal((err, output) => {
+          if (err) {
+            console.error(`doFinal failed: errCode: ${err.code}, errMsg: ${err.message}`);
+            return;
+          }
           console.info('[Callback]: HMAC result: ' + output.data);
           console.info('[Callback]: MAC len: ' + mac.getMacLength());
         });
@@ -8195,17 +8571,23 @@ doFinal(): Promise<DataBlob>
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 import { buffer } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 async function hmacByPromise() {
-  let mac = cryptoFramework.createMac('SHA256');
-  let keyBlob: cryptoFramework.DataBlob = { data: new Uint8Array(buffer.from('12345678abcdefgh', 'utf-8').buffer) };
-  let symKeyGenerator = cryptoFramework.createSymKeyGenerator('AES128');
-  let symKey = await symKeyGenerator.convertKey(keyBlob);
-  await mac.init(symKey);
-  await mac.update({ data: new Uint8Array(buffer.from('hmacTestMessage', 'utf-8').buffer) });
-  let macOutput = await mac.doFinal();
-  console.info('[Promise]: HMAC result: ' + macOutput.data);
-  console.info('[Promise]: MAC len: ' + mac.getMacLength());
+  try {
+    let mac = cryptoFramework.createMac('SHA256');
+    let keyBlob: cryptoFramework.DataBlob = { data: new Uint8Array(buffer.from('12345678abcdefgh', 'utf-8').buffer) };
+    let symKeyGenerator = cryptoFramework.createSymKeyGenerator('AES128');
+    let symKey = await symKeyGenerator.convertKey(keyBlob);
+    await mac.init(symKey);
+    await mac.update({ data: new Uint8Array(buffer.from('hmacTestMessage', 'utf-8').buffer) });
+    let macOutput = await mac.doFinal();
+    console.info('[Promise]: HMAC result: ' + macOutput.data);
+    console.info('[Promise]: MAC len: ' + mac.getMacLength());
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`hmacByPromise failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -8231,7 +8613,7 @@ doFinalSync(): DataBlob
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17630001 | Crypto operation error. |
@@ -8243,17 +8625,23 @@ doFinalSync(): DataBlob
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
 import { buffer } from '@kit.ArkTS';
+import { BusinessError } from '@kit.BasicServicesKit';
 
 function hmacBySync() {
   let mac = cryptoFramework.createMac('SHA256');
   let keyBlob: cryptoFramework.DataBlob = { data: new Uint8Array(buffer.from('12345678abcdefgh', 'utf-8').buffer) };
   let symKeyGenerator = cryptoFramework.createSymKeyGenerator('AES128');
-  let symKey = symKeyGenerator.convertKeySync(keyBlob);
-  mac.initSync(symKey);
-  mac.updateSync({ data: new Uint8Array(buffer.from('hmacTestMessage', 'utf-8').buffer) });
-  let macOutput = mac.doFinalSync();
-  console.info('[Sync]: HMAC result: ' + macOutput.data);
-  console.info('[Sync]: MAC len: ' + mac.getMacLength());
+  try {
+    let symKey = symKeyGenerator.convertKeySync(keyBlob);
+    mac.initSync(symKey);
+    mac.updateSync({ data: new Uint8Array(buffer.from('hmacTestMessage', 'utf-8').buffer) });
+    let macOutput = mac.doFinalSync();
+    console.info('[Sync]: HMAC result: ' + macOutput.data);
+    console.info('[Sync]: MAC len: ' + mac.getMacLength());
+  } catch (err) {
+    let e: BusinessError = err as BusinessError;
+    console.error(`hmacBySync failed: errCode: ${e.code}, errMsg: ${e.message}`);
+  }
 }
 ```
 
@@ -8417,7 +8805,7 @@ generateRandom(len: number, callback: AsyncCallback<DataBlob>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -8471,7 +8859,7 @@ generateRandom(len: number): Promise<DataBlob>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -8594,7 +8982,7 @@ generateRandomSync(len: number): DataBlob
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17630001 | Crypto operation error. |
 
@@ -8818,7 +9206,7 @@ createKdf(algName: string): Kdf
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 801 | This operation is not supported. |
 | 17620001 | Memory operation failed. |
 
@@ -8828,8 +9216,14 @@ createKdf(algName: string): Kdf
 
 ```ts
 import { cryptoFramework } from '@kit.CryptoArchitectureKit';
+import { BusinessError } from '@kit.BasicServicesKit';
 
-let kdf = cryptoFramework.createKdf('PBKDF2|SHA256');
+try {
+  let kdf = cryptoFramework.createKdf('PBKDF2|SHA256');
+} catch (err) {
+  let e: BusinessError = err as BusinessError;
+  console.error(`createKdf failed: errCode: ${e.code}, errMsg: ${e.message}`);
+}
 ```
 
 ## Kdf11+
@@ -8875,7 +9269,7 @@ generateSecret(params: KdfSpec, callback: AsyncCallback<DataBlob>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620003 | Parameter check failed. Possible causes:  1. Invalid key length in the params;  2. Invalid info length in the params;  3. Invalid keySize in the params.  适用版本：22+ |
 | 17630001 | Crypto operation error. |
@@ -8956,7 +9350,7 @@ generateSecret(params: KdfSpec): Promise<DataBlob>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync/Async] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620003 | Parameter check failed. Possible causes:  1. Invalid key length in the params;  2. Invalid info length in the params;  3. Invalid keySize in the params.  适用版本：22+ |
 | 17630001 | Crypto operation error. |
@@ -9034,7 +9428,7 @@ generateSecretSync(params: KdfSpec): DataBlob
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
+| 401 | [Sync] Invalid parameters. Possible causes:  1. Mandatory parameters are left unspecified;  2. Incorrect parameter types;  3. Parameter verification failed. |
 | 17620001 | Memory operation failed. |
 | 17620002 | Failed to obtain the native object or convert parameters. |
 | 17620003 | Parameter check failed. Possible causes:  1. Invalid key length in the params;  2. Invalid info length in the params;  3. Invalid keySize in the params.  适用版本：22+ |
@@ -9077,7 +9471,7 @@ generateSecretSync(params: KdfSpec): DataBlob
 
 ## SignatureUtils20+
 
-用于SM2数据转换的工具类。
+用于ECC/SM2签名数据转换的工具类。
 
 ### genEccSignatureSpec20+
 

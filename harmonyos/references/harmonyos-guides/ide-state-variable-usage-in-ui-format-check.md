@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-state-var
 title: "@performance/state-variable-usage-in-ui-format-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/state-variable-usage-in-ui-format-check
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:23:00+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:28f23ef2dfc741385851e8746d24226425e234a241e8e69f258294164bdfd336
+scraped_at: 2026-11-12T09:52:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:1c47d42507c2e76803240058487818fdd944e9bcad61057c46931f0ae6174f4c
 ---
 
 建议删除不使用的UI变量。
@@ -113,4 +113,4 @@ struct Parent {
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

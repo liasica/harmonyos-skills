@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mdm-kit
 title: MDM Kit（企业设备管理服务）
 breadcrumb: 指南 > 系统 > 基础功能 > MDM Kit（企业设备管理服务）
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:41+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:ec7b11c7ca2f9df608919e2c5b66a3f9ba69efaa63905ceafb717dd2b7c57b14
+scraped_at: 2026-11-12T09:51:50+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:1885e57cec08606b635b6b4d59ba6ef3b82fdfa9859f5310b70398b80da44ace
 ---
 
 * **[MDM Kit简介](mdm-kit-intro.md)**
@@ -14,5 +14,6 @@ content_hash: sha256:ec7b11c7ca2f9df608919e2c5b66a3f9ba69efaa63905ceafb717dd2b7c
 * **[多应用管控](mdm-kit-multi-mdm.md)**
 * **[EnterpriseAdminExtensionAbility开发指南](mdm-kit-admin.md)**
 * **[个人数据处理说明](mdm-description-of-personal-data.md)**
+* **[三方自定义身份认证](mdm-kit-third-party-auth.md)**
 * **[MDM Kit术语](mdm-kit-term.md)**
 * **[附录](mdm-kit-appendix.md)**

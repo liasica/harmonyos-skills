@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: NavDestination
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 导航与切换 > NavDestination
 category: harmonyos-references
-scraped_at: 2026-11-04T08:32:58+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b1496c2f86cabd3d34e17fb3b662bfdf4be0da0e1ec14f753fcc6a5db1e3c573
+scraped_at: 2026-11-12T09:54:14+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:879c7ee0a1802dff5a2222e303a06384304ca8fa10edbfcef8ed0ac8792030ae
 ---
 
 作为子页面的根容器，用于显示[Navigation](ts-basic-components-navigation.md)的内容区。
@@ -829,7 +829,10 @@ NavDestination处于激活态（处于栈顶可操作，且上层无特殊组件
 
 **说明** 
 
-从API version 22开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
+* onActive与[onInactive](ts-basic-components-navdestination.md#oninactive17)仅在NavDestination激活态与非激活态相互切换时触发，NavDestination保持同一状态时不会重复触发。
+* 页面跳转触发的激活态变化，仅根据NavDestination在路由栈中的位置判断，不会考虑上层特殊节点（半模态[bindSheet](ts-universal-attributes-sheet-transition.md#bindsheet)、全模态[bindContentCover](ts-universal-attributes-modal-transition.md#bindcontentcover)、[Dialog](arkts-apis-uicontext-promptaction.md#opencustomdialog12)、[overlay](arkts-apis-uicontext-overlaymanager.md)）。
+* 上层Overlay节点移除时，若NavDestination上方仍存在其他Overlay节点，则该NavDestination仍处于非激活态，不会触发onActive。
+* 从API版本22开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
 **元服务API：** 从API version 17开始，该接口支持在元服务中使用。
 
@@ -851,7 +854,10 @@ NavDestination处于非激活态（处于非栈顶不可操作，或处于栈顶
 
 **说明** 
 
-从API version 22开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
+* [onActive](ts-basic-components-navdestination.md#onactive17)与onInactive仅在NavDestination激活态与非激活态相互切换时触发，NavDestination保持同一状态时不会重复触发。
+* 页面跳转触发的激活态变化，仅根据NavDestination在路由栈中的位置判断，不会考虑上层特殊节点（半模态[bindSheet](ts-universal-attributes-sheet-transition.md#bindsheet)、全模态[bindContentCover](ts-universal-attributes-modal-transition.md#bindcontentcover)、[Dialog](arkts-apis-uicontext-promptaction.md#opencustomdialog12)、[overlay](arkts-apis-uicontext-overlaymanager.md)）。
+* OverlayManager场景下，仅调用[addComponentContent](arkts-apis-uicontext-overlaymanager.md#addcomponentcontent12)添加节点，不会触发下层NavDestination的onInactive，需配合[showComponentContent](arkts-apis-uicontext-overlaymanager.md#showcomponentcontent12)显示节点后才会触发。
+* 从API版本22开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
 **元服务API：** 从API version 17开始，该接口支持在元服务中使用。
 
@@ -1258,7 +1264,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/E1ulfM0pTSuWh7ERWaERyg/zh-cn_image_0000002809011915.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/VzPQwZ_AR4qSV-zs2FvUzw/zh-cn_image_0000002786521114.gif)
 
 ### 示例2（设置NavDestination自定义转场）
 
@@ -1399,7 +1405,7 @@ struct NavDest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/cjhSmJiPS_uD0H2faPDNHQ/zh-cn_image_0000002809051829.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/Jg58uIxtRWWdzcShnwUjYQ/zh-cn_image_0000002786361186.gif)
 
 ### 示例3（设置指定的NavDestination系统转场）
 
@@ -1647,13 +1653,13 @@ struct HomeBody {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/TEPHUjjVTWiUpJwrKoJgtw/zh-cn_image_0000002779852264.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/kMrGFoDzS-uOiUC5kpQf-Q/zh-cn_image_0000002815560607.gif)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/hAf39d_bSfG5_owyjRa7aA/zh-cn_image_0000002779692296.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/oLKlSA7GTH-AJhZTH2ucYA/zh-cn_image_0000002815400691.gif)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/3GosYuFhTpqjI12w2Ap64Q/zh-cn_image_0000002809011917.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/Yz6Xz9aGRbSeJF8of_I1-A/zh-cn_image_0000002786521116.gif)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/Kv1zd_QlQnKlvC2KEjy_3w/zh-cn_image_0000002809051831.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/sGK6-wTeQ3uMtF4Pm-lwuQ/zh-cn_image_0000002786361188.gif)
 
 ### 示例4（NavDestination配置页面方向和对应状态栏、导航条显隐）
 
@@ -1744,7 +1750,7 @@ struct ExamplePage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/nv1vOo0NSmmrYlii_b10CA/zh-cn_image_0000002779852266.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/OawmUo8oRFuf_a11OtvBHg/zh-cn_image_0000002815560609.gif)
 
 ### 示例5（NavDestination的onActive与onInActive生命周期）
 
@@ -1961,6 +1967,6 @@ struct NavBody {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/vHmyowi2Quu2R1PVYWj6vQ/zh-cn_image_0000002779692298.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/BVP__hs8R1eFk5vXgWmFQg/zh-cn_image_0000002815400693.gif)
 
 NavDestination其他用法可参考[Navigation示例](ts-basic-components-navigation.md#示例)。

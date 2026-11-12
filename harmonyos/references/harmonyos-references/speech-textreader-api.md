@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/speech-te
 title: TextReader（朗读控件）
 breadcrumb: API参考 > AI > Speech Kit（场景化语音服务） > ArkTS API > TextReader（朗读控件）
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:53+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:3450f745c38d649a8150ed784fecb59c03ce990caae7656a9578ce8cf3da593e
+scraped_at: 2026-11-12T09:57:47+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:efc73cca3bae77eec67828665fde0ca5f38a14a41fb8116de63d03382ea759a3
 ---
 
 朗读控件使用AI能力将文本实时转化成语音并进行朗读，支持多种语言、音色和语速调节，适用于一些新闻、教育、阅读类文本内容浏览类APP，帮助用户在如驾驶、运动等一些不方便直接浏览文本内容的场景下，通过文本朗读来高效获取信息。支持多种播放模式，如Minibar，播放面板等。
@@ -59,8 +59,8 @@ init(context: common.BaseContext, readParams: ReaderParam): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. Interface caller does not have permission ohos.permission.KEEP\_BACKGROUND\_RUNNING. |
-| 401 | Parameter error. |
+| 201 | Permission verification failed: The app lacks permission to keep running in the background. (Permission: ohos.permission.KEEP\_BACKGROUND\_RUNNING) |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 | 1010600011 | Initialize failed. |
 
 **示例：**
@@ -135,7 +135,7 @@ start(readInfoList: ReadInfo[], articleId?: string): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 | 1010600012 | The TextReader is not initialized. |
 | 1010600013 | Text-to-speech engine error. |
 | 1010600014 | AudioRenderer play error. |
@@ -209,7 +209,7 @@ start(readInfoList: ReadInfo[], articleId: string | undefined, startParams: Star
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 | 1010600012 | The TextReader is not initialized. |
 | 1010600013 | Text-to-speech engine error. |
 | 1010600014 | AudioRenderer play error. |
@@ -320,7 +320,7 @@ resetParam(paramName: ResetParamType) : void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -689,7 +689,7 @@ queryReadState(id?: string): ReadState
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -731,7 +731,7 @@ setArticleContent(id: string, content?: string): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -771,7 +771,7 @@ setArticle(readInfo: ReadInfo): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -830,7 +830,7 @@ loadMore(readInfos: ReadInfo[], isEnd: boolean): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -959,7 +959,7 @@ queryReadStateByCategoryId(categoryId: string): ReadState
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 ```typescript
 import { TextReader } from '@kit.SpeechKit';
@@ -1001,7 +1001,7 @@ on(type: 'setArticle', callback: Callback<string>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -1044,7 +1044,7 @@ off(type: 'setArticle', callback?: Callback<string>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -1087,7 +1087,7 @@ on(type: 'clickArticle', callback: Callback<string>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -1130,7 +1130,7 @@ off(type: 'clickArticle', callback?: Callback<string>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -1173,7 +1173,7 @@ on(type: 'clickAuthor', callback: Callback<string>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -1216,7 +1216,7 @@ off(type: 'clickAuthor', callback?: Callback<string>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -1259,7 +1259,7 @@ on(type: 'clickNotification', callback: Callback<string>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -1302,7 +1302,7 @@ off(type: 'clickNotification', callback?: Callback<string>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -1345,7 +1345,7 @@ on(type: 'showPanel', callback: Callback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -1388,7 +1388,7 @@ off(type: 'showPanel', callback?: Callback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -1432,7 +1432,7 @@ on(type: 'hidePanel', callback: Callback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -1475,7 +1475,7 @@ off(type: 'hidePanel', callback?: Callback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -1519,7 +1519,7 @@ on(type: 'stop', callback: Callback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -1562,7 +1562,7 @@ off(type: 'stop', callback?: Callback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -1605,7 +1605,7 @@ on(type:'release', callback: Callback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -1648,7 +1648,7 @@ off(type: 'release', callback?: Callback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -1691,7 +1691,7 @@ on(type: 'stateChange', callback: Callback<ReadState>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -1734,7 +1734,7 @@ off(type: 'stateChange', callback?: Callback<ReadState>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -1777,7 +1777,7 @@ on(type: 'requestMore', callback: Callback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -1822,7 +1822,7 @@ on(type: 'requestMore', callback: Callback<string>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 ```typescript
 import { TextReader } from '@kit.SpeechKit';
@@ -1863,7 +1863,7 @@ off(type: 'requestMore', callback?: Callback<void>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -1904,7 +1904,7 @@ off(type: 'requestMore', callback: Callback<string>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -1912,9 +1912,7 @@ off(type: 'requestMore', callback: Callback<string>): void
 import { TextReader } from '@kit.SpeechKit';
 
 try {
-  TextReader.off('requestMore', (callback:string) => {
-    console.info(`Succeeded in setting requestMoreListener. Callback is ${callback}`);
-  });
+  TextReader.off('requestMore');
 } catch (e) {
   console.error(`TextReader failed to unset eventListener. Code: ${e.code}, message: ${e.message}`);
 }
@@ -1949,7 +1947,7 @@ on(type: 'eventNotification' , callback: Callback<NotificationEvent>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -1983,7 +1981,7 @@ off(type: 'eventNotification', callback?: Callback<NotificationEvent>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| type | string | 是 | 事件回调类型。事件回调类型，支持的事件为'eventNotification'，注销该事件。 |
+| type | string | 是 | 事件回调类型。支持的事件为'eventNotification'，注销该事件。 |
 | callback | Callback<[NotificationEvent](speech-textreader-api.md#notificationevent)> | 否 | 回调函数，取消监听播控中心状态变化事件，需与订阅时传入的回调函数是同一个，若不填，则取消当前应用监听该事件的所有回调函数。 |
 
 **错误码：**
@@ -1992,7 +1990,7 @@ off(type: 'eventNotification', callback?: Callback<NotificationEvent>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -2035,7 +2033,7 @@ on(type: 'eventPanel', callback: Callback<PanelEvent>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -2078,7 +2076,7 @@ off(type: 'eventPanel', callback?: Callback<PanelEvent>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -2122,7 +2120,7 @@ on(type: 'eventReadList', callback: Callback<Array<ListEventState>>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -2167,7 +2165,7 @@ off(type: 'eventReadList', callback?: Callback<Array<ListEventState>>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -2210,7 +2208,7 @@ on(type: 'readProgress', callback: Callback<ReadProgress>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 
@@ -2253,7 +2251,7 @@ off(type: 'readProgress', callback?: Callback<ReadProgress>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 
 **示例：**
 

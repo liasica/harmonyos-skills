@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-publish-a
 title: 发布应用
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 发布应用 > 发布应用
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:29+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:5594de15cc70113a2632708e2c2bf3138e6142280b3c1d1c19e0f20dfebb8061
+scraped_at: 2026-11-12T09:53:10+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ae46d3555587807abf9be5fc954d786ec95d827c8d27e35e15870ea40cf9b992
 ---
 
 HarmonyOS通过数字证书（.cer文件）和Profile文件（.p7b文件）等签名信息来保证应用/元服务的完整性，应用/元服务上架到AppGallery Connect（AGC）必须通过签名校验。因此，您需要使用发布证书和Profile文件对应用/元服务进行签名后才能发布。
@@ -29,7 +29,7 @@ HarmonyOS通过数字证书（.cer文件）和Profile文件（.p7b文件）等�
    构建模式是<Default>时，构建APP包，默认Release模式；构建HAP/HSP/HAR包，默认Debug模式。更多说明请参考[构建模式](ide-hvigor-compilation-options-customizing-guide.md#section192461528194916)。
 2. 编译构建完成后，可以在工程目录**build > outputs > {product}**下，获取应用包。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/44eGlSveRD-VmV1ZpdJs_Q/zh-cn_image_0000002701663704.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/zHufsgJRRdGbqztiGDTjXA/zh-cn_image_0000002808887157.png)
 
 ### 上传软件包
 
@@ -43,16 +43,16 @@ HarmonyOS通过数字证书（.cer文件）和Profile文件（.p7b文件）等�
 
 1. 在DevEco Studio菜单栏，点击**Build > Upload Product。**若未登录，请点击**Sign in**登录华为开发者账号。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/v-ybeHomRtGq8Jdl74RL4g/zh-cn_image_0000002731382921.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/t7gfx3loTOaBN5y0Ej-q2g/zh-cn_image_0000002808887133.png)
 2. 登录成功后，返回DevEco Studio进入软件包上传界面，确认用户名称和团队信息，在当前工程已构建的App包列表中选择需要上传的软件包，点击**Distribute App**开始上传。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/1p4h8I7cS9uWwugnZ8M_lw/zh-cn_image_0000002701663712.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/HewDOi9yS8WTVIm-2NEZqw/zh-cn_image_0000002808887149.png)
 3. 选择所需的上传类型，上传类型包含AppGallery Connect、Testing Only、Custom三种，然后点击**Next**。
    * **AppGallery Connect**：使用云管理证书和Profile，对应用重新签名；将软件包上传到AGC用于测试和发布，同时上传符号表信息。
    * **Testing Only**：使用云管理证书和Profile，对应用重新签名；将软件包上传到AGC用于测试，同时上传符号表信息。
    * **Custom**：自定义上传配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/QEfDBomzQOuBVLLFWiSBfw/zh-cn_image_0000002731542889.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/GSwZ2HC8TU-FN2K3MHS70Q/zh-cn_image_0000002808887139.png)
 4. 检查应用是否[在AGC注册或关联创建待发布的应用](../app/agc-help-create-app-0000002247955506.md#section16423184171915)，未注册或未关联待发布的应用可在DevEco Studio中创建或关联。
    * 应用未在AGC注册，在窗口中配置应用名称、应用包名等信息，创建应用和发布应用，点击**Next**。
      + **Project**：项目名称，可创建新项目或选择团队已有项目。
@@ -63,14 +63,14 @@ HarmonyOS通过数字证书（.cer文件）和Profile文件（.p7b文件）等�
      + **Device Type**：设备类型。
      + **Language**：默认语言。
 
-     各选项更多说明请参考[为HarmonyOS应用创建APP ID](../app/agc-help-create-app-0000002247955506.md#section16423184171915)。
+     各选项更多说明请参考[为HarmonyOS应用创建APP ID](../app/agc-help-create-app-0000002247955506.md)。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/vnO4oo2ySXGJVG_y-mM8xQ/zh-cn_image_0000002731542887.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/fmEHeijZR4CHx1nYKDieOA/zh-cn_image_0000002808767055.png)
    * 应用在AGC已注册但未关联创建待发布的应用，在窗口中配置**App name**（应用名称）、**App package name**（应用包名）、**Device Type**（设备类型）、**Language**（默认语言），点击**Next**，会同步在AGC上关联创建待发布的应用。
 
      各选项更多说明请参考[为APP ID关联创建待发布的HarmonyOS应用](../app/agc-help-create-app-0000002247955506.md#section1502161513011)。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/IZ3NThuYQr2Eq2gJp6wbWw/zh-cn_image_0000002701663694.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/q5ls_HWwTvihbrMLCosuTw/zh-cn_image_0000002808887141.png)
    * 应用已在AGC注册并且已关联创建待发布的应用，选择**AppGallery Connect**或**Testing Only**的上传类型，会跳转至[步骤8](ide-publish-app.md#li1944219257111)查看软件包上传结果；选择**Custom**上传类型，进入下一步配置软件包的使用场景。
 5. 选择Custom上传类型，点击**Next**，进入签名配置界面。使用场景如下：
    * **Upload to AppGallery Connect for test and publish**：上传的软件包用于测试和发布。
@@ -78,12 +78,12 @@ HarmonyOS通过数字证书（.cer文件）和Profile文件（.p7b文件）等�
    * **Upload Symbol table**：上传符号表。
    * **Manage Build Version**：自动管理构建版本，Build Version值由AGC计算后更新。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/NIFcSceOSD-DzQzVpAQMgQ/zh-cn_image_0000002731382925.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/NPc0NqDNSVGjP5J66o1Vbg/zh-cn_image_0000002808767065.png)
 6. 选择签名管理方式。
    * **Automatically manage signing**：自动管理签名，使用云管理证书和Profile，对应用重新签名。
    * **Manually manage signing**：手动管理签名，开发者自行配置签名信息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/B91LqFERR0e1YLzDqcMFDg/zh-cn_image_0000002701823618.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/ZHip8SETSEKa6ytdsyFzBg/zh-cn_image_0000002808887143.png)
 
    手动管理签名时，在Distribution Certificate选择**Create Certificate**（创建证书）或**Import Certificate**（导入证书），在Distribution Profile选择**Import Profile**（导入Profile）和**Download Profile**（下载Profile）。
    * **创建或导入证书**
@@ -92,20 +92,20 @@ HarmonyOS通过数字证书（.cer文件）和Profile文件（.p7b文件）等�
 
      导入证书，则需要导入本地已有的密钥库文件（.p12的密钥库文件）和证书（.cer文件）。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/csdwyKHpSNuLEK7DI_bjDA/zh-cn_image_0000002701663714.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/IIGipBNTS5OcWXzwohgMWw/zh-cn_image_0000002808767059.png)
    * **导入或下载Profile**
 
      导入Profile，在本地选择与证书匹配的.p7b文件，或在AGC下载Profile后导入。
 
      下载Profile，开发者可以选择.p7b文件，选择后会从AGC下载到本地。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/otclG1WORlSIzL75IclFtg/zh-cn_image_0000002731382935.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/nq9lOIJXQb-LD8QEdpMFAA/zh-cn_image_0000002808887147.png)
 7. 签名成功后，在选择的软件包路径下会生成"re-signed.app"为后缀的软件包，检查软件包信息，点击**Upload**上传软件包。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/AqwvtLv8RG-HqUuwRF2QMQ/zh-cn_image_0000002701663702.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/vw-cxk2nSMGMXwCBtv2EdQ/zh-cn_image_0000002808887155.png)
 8. 上传软件包成功后，点击**AppGallery Connect**可进入AGC查看软件包上传记录和检测结果，具体请参考[上传软件包](../app/agc-help-release-app-upload-pkg-0000002277983368.md)。点击**OK**，关闭上传页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/XhZIJ8beTn-mbEdz_swxLw/zh-cn_image_0000002701823616.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/o-hMfp04T7mqmopMj3d7dA/zh-cn_image_0000002808767069.png)
 
 ### 发布.app文件到应用市场
 
@@ -121,7 +121,7 @@ HarmonyOS通过数字证书（.cer文件）和Profile文件（.p7b文件）等�
 
 开发者完成HarmonyOS应用/元服务开发后，需要将应用/元服务打包成App Pack（.app文件），用于上架到AppGallery Connect。发布应用/元服务的流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/xfYI7LeCRy2R6kyz-i2erg/zh-cn_image_0000002731542903.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/fNSTiocQSeOeqxIxdRMusg/zh-cn_image_0000002808767049.png)
 
 ### 生成密钥和证书请求文件
 
@@ -151,7 +151,7 @@ CertificateTool生成密钥和证书请求文件的操作界面与DevEco Studio 
    如果本地已有对应的密钥，无需新生成密钥，可以在**Generate Key**界面中单击下方的Skip跳过密钥生成过程，直接使用已有密钥生成证书请求文件。
 2. 填写密钥库文件，若已有的密钥库文件（存储有密钥的.p12文件），单击**Select an existing key**进行选择。下面以新创建密钥库文件为例进行说明。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/EvXgtdNxRUiugXUHzBq1Ww/zh-cn_image_0000002701823638.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/0nZqCX1PT-ynDO8M7EItbg/zh-cn_image_0000002808767061.png)
 3. 在**Generate Key**窗口，填写密钥库信息后，点击**Next**。
    * **Keystore Name**：填写p12文件名称，仅允许包含字母、数字、下划线（\_）、中划线（-）、句点（．）。
    * **Select file save path**：设置密钥库文件存储路径。
@@ -171,15 +171,15 @@ CertificateTool生成密钥和证书请求文件的操作界面与DevEco Studio 
 
      First and last name、Organizational unit、Organization、City or locality、State or province填写要求小于64个字符，不可使用双引号（"）、单引号（`）、斜杠（\）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/Ia22aiN1S-6nz-K5rLgWRQ/zh-cn_image_0000002701663718.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/EyJ9KzwWQ4u3HzAFoz0uZA/zh-cn_image_0000002808887151.png)
 4. 在**Generate** **Certificate Request File (CSR)**窗口，设置CSR文件名和CSR文件存储路径后，点击**Finish**。
    * **CSR File Name**：填写CSR文件名称，仅允许包含字母、数字、下划线（\_）、中划线（-）、句点（．）。
    * **Select file save path**：设置CSR文件存储路径。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/0InZPZAyTzyyTje_PIXhSA/zh-cn_image_0000002701823614.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/KoAvYNhCTlC-uLF-Q7b6ig/zh-cn_image_0000002808767071.png)
 5. 创建CSR文件成功，可以在存储路径下获取生成的密钥库文件（.p12）、证书请求文件（.csr）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/NkTVj8oORI-nPEi9ivrRsg/zh-cn_image_0000002701663698.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/boqHrTU3SKiCrl3CUfPIGw/zh-cn_image_0000002808767057.png)
 
 **DevEco Studio 6.1.0 Beta2以下版本**
 
@@ -190,13 +190,13 @@ CertificateTool生成密钥和证书请求文件的操作界面与DevEco Studio 
    如果本地已有对应的密钥，无需新生成密钥，可以在**Generate Key**界面中单击下方的Skip跳过密钥生成过程，直接使用已有密钥生成证书请求文件。
 2. 在**Key Store File**中，可以单击**Choose Existing**选择已有的密钥库文件（存储有密钥的.p12文件）；如果没有密钥库文件，单击**New**进行创建。下面以新创建密钥库文件为例进行说明。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/xAP2AADoReuPHaX2o-cFgA/zh-cn_image_0000002731542911.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/jgarfkXrRRKyYJ2osWEFBA/zh-cn_image_0000002808887153.png "点击放大")
 3. 在**Create Key Store**窗口中，填写密钥库信息后，单击**OK**。
    * **Key Store File**：设置密钥库文件存储路径，并填写p12文件名。
    * **Password**：设置密钥库密码，必须由大写字母、小写字母、数字和特殊符号中的两种以上字符的组合，长度至少为8位。请记住该密码，后续签名配置需要使用。
    * **Confirm Password**：再次输入密钥库密码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/2DLBt2cWQ-Oy3swI6E8QOQ/zh-cn_image_0000002701663692.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/-Ls9J6YMTCWTfKmsEW5NaQ/zh-cn_image_0000002808767051.png "点击放大")
 4. 在**Generate Key** **and CSR**界面中，继续填写密钥信息后，单击**Next**。
    * **Alias**：必填，别名，用于标识密钥名称。请记住该别名，后续签名配置需要使用。
    * **Password**：必填，密码，与密钥库密码保持一致，无需手动输入。
@@ -212,19 +212,19 @@ CertificateTool生成密钥和证书请求文件的操作界面与DevEco Studio 
 
    First and last name、Organizational unit、Organization、City or locality、State or province要求：字符长度为（0，64），且不可使用（双引号）"、（斜杠）\、（反引号）`。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/ggkFozIFS6CQ-JrH7JvzHg/zh-cn_image_0000002701823630.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/BA-6fHYJQi6ANaVpAu1dbw/zh-cn_image_0000002808887135.png)
 5. 在**Generate Key** **and CSR**界面，设置CSR文件存储路径和CSR文件名。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/B4-8GI1TQ72_rFDTrd8hiA/zh-cn_image_0000002701823634.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/g_5Y9sc3SzadGOfKOdlamg/zh-cn_image_0000002808767073.png "点击放大")
 6. 单击**OK**按钮，创建CSR文件成功，可以在存储路径下获取生成的密钥库文件（.p12）和证书请求文件（.csr）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/pp6Mb9xTQlK7bzCYidTwQA/zh-cn_image_0000002731542895.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/e31tLSEbQcKoPhPS3YP4Sw/zh-cn_image_0000002808767067.png)
 
 ### 申请发布证书和发布Profile文件
 
 1. 创建HarmonyOS应用/元服务。在AGC中创建一个HarmonyOS应用/元服务，用于申请发布证书和Profile文件，具体请参考[创建HarmonyOS应用](../app/agc-help-create-app-0000002247955506.md)和[创建元服务](../app/agc-help-create-atomic-service-0000002247795706.md)。
 2. 申请发布证书和发布Profile文件。在AGC中申请、下载发布证书和Profile文件，具体请参考[申请发布证书](../app/agc-help-release-cert-0000002283336729.md)和[申请发布Profile](../app/agc-help-release-profile-0000002248341090.md)。
-3. 申请完发布证书和发布Profile文件后，请在DevEco Studio中进行签名，具体请参考[配置签名信息](ide-publish-app.md#section945904791115)。
+3. 申请完发布证书和发布Profile文件后，请在DevEco Studio中进行签名。
 
    **说明** 
 
@@ -245,7 +245,7 @@ CertificateTool生成密钥和证书请求文件的操作界面与DevEco Studio 
 * **Profile File**：选择申请的发布Profile文件，文件后缀为.p7b。
 * **Certpath File**：选择申请的发布数字证书文件，文件后缀为.cer。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/nuiq_e-1Txe3X6wwkv4xIA/zh-cn_image_0000002701823620.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/-JcomdL8R-aZ3X-Kq4rSDA/zh-cn_image_0000002808887137.png "点击放大")
 
 设置完签名信息后，单击**OK**进行保存，然后使用DevEco Studio生成APP，请参考[编译构建.app文件](ide-publish-app.md#section212415961214)。
 
@@ -264,7 +264,7 @@ CertificateTool生成密钥和证书请求文件的操作界面与DevEco Studio 
    即**Build APP(s)**时，默认构建的APP包为Release类型，符合上架要求，开发者无需进行另外设置。
 2. 编译构建完成后，可以在工程目录**build > outputs > default**下，获取带签名的应用包。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/zfGLujRpQzWOc0XksH0hpw/zh-cn_image_0000002701823626.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/GknpTireT4qKjlZviUGPoA/zh-cn_image_0000002808767047.png)
 
 ### 上传软件包
 
@@ -281,7 +281,7 @@ DevEco Studio 5.0.5.200版本开始，支持在DevEco Studio内上传应用软�
 
 1. 在DevEco Studio菜单栏，点击**Build > Upload Product。**若未登录，请点击**Sign in**登录华为开发者账号。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/bPhFuNcmQ7-g0fms0f6pPA/zh-cn_image_0000002731382917.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/QtC6FwqOQpGZtMx404QSkQ/zh-cn_image_0000002808887131.png "点击放大")
 2. 登录成功后，返回DevEco Studio进入软件包上传界面。确认当前工程的product信息，选择需要上传的软件包类型，点击**OK**开始上传。
    * 若当前上传的软件包仅做测试发布，请选择**Generate app package and upload it to AppGallery Connect for test**。
    * 若软件包需要在全网正式发布，请选择**Generate app package and upload it to AppGallery Connect for test and publish**。
@@ -289,14 +289,14 @@ DevEco Studio 5.0.5.200版本开始，支持在DevEco Studio内上传应用软�
    **说明** 
 
    * 如需上传符号表信息，请勾选**Upload your app's symbols**选项。
-   * 上传的product可以通过点击DevEco Studio编辑区域右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/98-WghqRRqers8pHi9I5iA/zh-cn_image_0000002701663706.png)图标进行查看及切换。
+   * 上传的product可以通过点击DevEco Studio编辑区域右上方![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/hU9R4dcDRPu9ficSOo2PoQ/zh-cn_image_0000002808767063.png)图标进行查看及切换。
    * 可通过app.json5中bundleName/versionName字段修改当前product对应的包名/版本号信息。必须使用当前开发者账号下已在AppGallery注册且真实存在的包名。
    * Build Version值由AGC计算后回传填入。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/pm-l-E4sQP2L0tajunwScg/zh-cn_image_0000002731382923.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/YWWOoRsVT-aj8l0iamDnUg/zh-cn_image_0000002808767053.png)
 3. 上传完成后，出现云测试的结果，点击**View Full result in AppGallery Connect**可进入AGC查看软件包上传记录和检测结果，具体请参考[上传软件包](../app/agc-help-release-app-upload-pkg-0000002277983368.md)。点击**Close**关闭上传页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/Rv3Gp-KcS3ujRsV7BxqxuQ/zh-cn_image_0000002701823624.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/iLP4LIdjSSWcRPviGGIIzQ/zh-cn_image_0000002808887145.png)
 
 ### 发布.app文件到应用市场
 

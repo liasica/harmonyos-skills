@@ -1,24 +1,24 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-programming-paradigm
 title: 编程范式
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 基本概念 > 编程模型 > 编程范式
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > 基本概念 > 编程模型 > 编程范式
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:49+08:00
-doc_updated_at: 2026-05-12
-content_hash: sha256:b421f6803f900e8a73559898c92f5b40e81bdb2cdc4b30cc4fe6e0ffb8310e89
+scraped_at: 2026-11-12T09:52:42+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:82de6753414b4ae41a779e1d6d9d74d46679e2e52d677f8d1fc3947918a821dd
 ---
 
 编程范式描述了算子实现的固定流程，基于编程范式进行编程，可以快速搭建算子实现的代码框架。
 
 根据[硬件架构抽象](cannkit-hardware-architecture-abstraction.md)可以了解到，AI Core内部的执行单元异步并行地执行接收到的指令。如下图所示，从输入数据到输出数据需要经过3个阶段任务的处理（T1、T2、T3），多个执行单元并行处理，每个执行单元只会专注于一个任务的处理，会处理所有的数据分片。可以看出，流水线并行和工业生产中的流水线是类似的，每一个执行单元都可以看成是流水线上的节点，通过流水线并行的方式来提高计算效率：执行单元1完成对某个数据分片的处理后，将其加入到通信队列，执行单元2空闲时就会从队列中取出数据继续处理；可以类比为生产流水线中的工人只完成某一项固定工序，完成后就交由下一项工序负责人继续处理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/N66tqNLHT6CUu96okvobmw/zh-cn_image_0000002779691756.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/8x9fYXw6SiKJB57uzyb0Lg/zh-cn_image_0000002786520610.png)
 
 AscendC编程范式就是这样一种流水线式的编程范式，把算子核内的处理程序，分成多个**流水任务**，通过队列(Queue)完成**任务间通信和同步**，并通过统一的**资源管理**模块(Pipe)来统一管理内存、事件等资源。
 
 ## Vector编程范式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/B52WmGeaSPuOHMg_PcV_qg/zh-cn_image_0000002809011377.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/Sg5ERv3fSRyUCkN0GNQMUw/zh-cn_image_0000002786360682.png)
 
 如上图所示，Vector编程范式把算子的实现流程分为3个基本任务：CopyIn，Compute，CopyOut。
 
@@ -39,12 +39,12 @@ AscendC编程范式就是这样一种流水线式的编程范式，把算子核�
 
 从编程的角度来讲，具体流程（如下文的伪代码）和流程图如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/ganZyuNkRUWPF6ppm9z2bw/zh-cn_image_0000002809051291.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/8yymQ792QqiZ4xR5azqwew/zh-cn_image_0000002815560103.png)
 
 ```cpp
 AscendC::TPipe pipe; // 创建全局的资源管理
-AscendC::TQue<AscendC::QuePosition::VecIn, 1> queIn; // 创建CopyIn阶段的队列
-AscendC::TQue<AscendC::QuePosition::VecOut, 1> queOut; // 创建CopyOut阶段的队列
+AscendC::TQue<AscendC::QuePosition::VECIN, 1> queIn; // 创建CopyIn阶段的队列
+AscendC::TQue<AscendC::QuePosition::VECOUT, 1> queOut; // 创建CopyOut阶段的队列
 // Init阶段：
 pipe.InitBuffer(queIn, 2, 1024); // 开启double buffer，将待处理的数据一分为二，实现流水并行
 for-loop {
@@ -68,27 +68,27 @@ for-loop {
 }
 ```
 
-任务间数据传递使用到的内存、事件等资源统一由管理模块Pipe进行管理。如下所示的内存管理示意图，TPipe通过[InitBuffer](cannkit-tpipe-initbuffer.md)接口对外提供Queue内存初始化功能，开发者可以通过该接口为指定的Queue分配内存。
+任务间数据传递使用到的内存、事件等资源统一由管理模块Pipe进行管理。如下所示的内存管理示意图，TPipe通过[InitBuffer](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/resource_management/TPipe/InitBuffer.md)接口对外提供Queue内存初始化功能，开发者可以通过该接口为指定的Queue分配内存。
 
-Queue队列内存初始化完成后，需要使用内存时，通过调用[AllocTensor](cannkit-tque-alloctensor.md)来为LocalTensor分配内存，当创建的LocalTensor完成相关计算无需再使用时，再调用[FreeTensor](cannkit-tque-freetensor.md)来回收LocalTensor的内存。
+Queue队列内存初始化完成后，需要使用内存时，通过调用[AllocTensor](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/resource_management/TQue/AllocTensor.md)来为LocalTensor分配内存，当创建的LocalTensor完成相关计算无需再使用时，再调用[FreeTensor](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/resource_management/TQue/FreeTensor.md)来回收LocalTensor的内存。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/ifhFMf2wRd6l5n3hl5Xcpw/zh-cn_image_0000002779851726.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/_l5qWE11TuGybzpg9xwDsQ/zh-cn_image_0000002815400187.png)
 
-编程过程中使用到的临时变量内存同样通过Pipe进行管理。临时变量可以使用TBuf数据结构来申请指定TPosition上的存储空间。使用TBuf申请的内存空间只能参与计算，无法执行Queue队列的入队出队操作。具体的接口使用说明请参考[TBuf](cannkit-tbuf-overview.md)。
+编程过程中使用到的临时变量内存同样通过Pipe进行管理。临时变量可以使用TBuf数据结构来申请指定TPosition上的存储空间。使用TBuf申请的内存空间只能参与计算，无法执行Queue队列的入队出队操作。具体的接口使用说明请参考[TBuf](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/resource_management/TBuf/TBuf_intro.md)。
 
 按照上述编程范式进行编程即可实现单核上数据的并行处理。需要处理的数据被切分成n片，每个并行任务（Stage1、2、3）需要依次完成n个数据切片的处理。Stage间的箭头表达数据间的依赖关系，比如Stage1(CopyIn)处理完第一个数据分片之后，Stage2(Compute)才能对该分片进行处理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/-EU3J2VQTH6nkJLJWEA3EA/zh-cn_image_0000002779691758.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/duq7_gH-TqKUnSGDRPtIHw/zh-cn_image_0000002786520612.png)
 
 上图中的流水任务运行起来的示意图如下，Progress1、2、3代表处理的数据分片，从运行图中可以看出，对于同一片数据，Stage1、Stage2、Stage3之间的处理具有依赖关系，需要串行处理。不同的数据切片，同一时间点，可以有多个任务在并行处理，由此达到任务并行、提升性能的目的。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/hUm3_vkNS9ejn-ntqfj-kA/zh-cn_image_0000002809011379.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/dMid2saBTsa6yK4j2wnU5g/zh-cn_image_0000002786360684.png)
 
 ## Cube编程范式
 
 Cube计算的典型数据流图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/cbnfpIVeScKimJGtnXVk_g/zh-cn_image_0000002809051293.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/bFYr5myIT8SczTAB_AZAyQ/zh-cn_image_0000002815560105.png)
 
 和矢量编程范式一样，同样也使用逻辑位置(TPosition)来表达数据流，Cube编程范式中主要使用的逻辑位置定义如下。
 
@@ -113,17 +113,17 @@ Cube计算的典型数据流图如下所示：
 | VECCALC | Unified Buffer |
 | VECOUT | Unified Buffer |
 | A1 | L1 Buffer |
-| A2 | L0A Buffer |
+| A2 | L0A Buffer，Kirin9050系列产品为L1 Buffer |
 | B1 | L1 Buffer |
 | B2 | L0B Buffer |
-| C1 | Kirin9020系列产品，L1 Buffer。 |
-| C2 | Kirin9020系列产品，BT Buffer。 |
-| CO1 | L0C Buffer |
-| CO2 | Kirin9020系列产品，Global Memory。 |
+| C1 | L1 Buffer |
+| C2 | BT Buffer |
+| CO1 | L0C Buffer，Kirin9050系列产品为L1 Buffer |
+| CO2 | Global Memory |
 
 Cube计算流程同样也可以理解为CopyIn、Compute、CopyOut这几个阶段，因为流程相对复杂，Matmul高阶API提供对此的高阶封装，编程范式如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/ZBMeOxbNQBSbJFYSHtNQXQ/zh-cn_image_0000002779851728.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/XOP7ivugTXqeolIE1vkpWQ/zh-cn_image_0000002815400189.png)
 
 图中线条表示数据流向
 
@@ -160,11 +160,11 @@ mm.End();
 * Cube的输出可以作为Vector的输入：CO2->VECIN
 * Vector的输出可以作为Cube的输入：VECOUT->A1->A2、VECOUT->B1->B2
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/Z4NozNX9RPOGNhEjwSa1fw/zh-cn_image_0000002779691760.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/f78YRsONS8y36sl_HL868w/zh-cn_image_0000002786520614.png)
 
 基于Matmul高阶API的融合算子编程范式，对上述数据流简化表达如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/1cBnf_AaTfCpQLwiX-lupg/zh-cn_image_0000002809011381.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/issYvZGNQkC2A_mL0nT2bg/zh-cn_image_0000002786360686.png)
 
 1. 初始化一个MatMul对象，将输入数据从Global Memory搬运到Cube核上。
 2. 进行MatMul内部的计算。
@@ -179,7 +179,6 @@ template<typename aType, typename bType, typename cType, typename biasType>
 __aicore__ inline void MatmulLeakyKernel<aType, bType, cType, biasType>::Process()
 {
     // 步骤1：初始化一个MatMul对象，将输入数据从Global Memory搬运到Cube核上。
-    uint32_t computeRound = 0;
     REGIST_MATMUL_OBJ(&pipe, GetSysWorkSpacePtr(), matmulObj);
     matmulObj.Init(&tiling);
     matmulObj.SetTensorA(aGlobal);
@@ -198,8 +197,6 @@ __aicore__ inline void MatmulLeakyKernel<aType, bType, cType, biasType>::Process
         // ...
         AscendC::DataCopy(cGlobal[startOffset], reluOutLocal, copyParam);
         reluOutQueue_.FreeTensor(reluOutLocal);
- 
-        computeRound++;
     }
     matmulObj.End();
 }
@@ -211,14 +208,14 @@ __aicore__ inline void MatmulLeakyKernel<aType, bType, cType, biasType>::Process
 
 每个并行任务Stage的编程范式如下。
 
-1. 获取Local Memory的内存，调用[AllocTensor](cannkit-tque-alloctensor.md)申请内存，或者从上游队列[DeQue](cannkit-tque-deque.md)一块内存数据。
+1. 获取Local Memory的内存，调用[AllocTensor](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/resource_management/TQue/AllocTensor.md)申请内存，或者从上游队列[DeQue](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/resource_management/TQue/DeQue.md)一块内存数据。
 2. 完成计算或者数据搬运。
-3. 把上一步处理好的数据调用[EnQue](cannkit-tque-enque.md)入队。
-4. 调用[FreeTensor](cannkit-tque-freetensor.md)释放不再需要的内存。
+3. 把上一步处理好的数据调用[EnQue](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/resource_management/TQue/EnQue.md)入队。
+4. 调用[FreeTensor](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/resource_management/TQue/FreeTensor.md)释放不再需要的内存。
 
 以最简单的矢量编程范式为例，在调用上述接口时，实际上会给各执行单元下发一些指令，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/AGMrAc4ESQSKisRwE1JIBA/zh-cn_image_0000002809051295.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/gjOaKk4MT4uhcaWSaRZfCg/zh-cn_image_0000002815560107.png)
 
 ### EnQue/DeQue处理流程
 
@@ -231,11 +228,11 @@ __aicore__ inline void MatmulLeakyKernel<aType, bType, cType, biasType>::Process
    * DeQue调用会发射同步指令wait，等待数据写入完成。
    * wait需要等到set信号才能执行否则阻塞。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/IiK1gRgESJarVIaEOe1xjQ/zh-cn_image_0000002779851730.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/HOgaTCikTJChFQCUCgBQRA/zh-cn_image_0000002815400191.png)
 
 由此可以看出，EnQue/DeQue主要解决了存在数据依赖时，并行执行单元的写后读同步控制问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/2-9sfcbiRhGg2Xo7LeW2IA/zh-cn_image_0000002779691762.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/0JSNkn24RiqKn1Qb9viqyg/zh-cn_image_0000002786520616.png)
 
 ### AllocTensor/FreeTensor处理流程
 
@@ -248,10 +245,10 @@ __aicore__ inline void MatmulLeakyKernel<aType, bType, cType, biasType>::Process
    * FreeTensor调用会发射同步指令set，通知内存释放，可以重复写。
    * wait需要等到set信号才能执行否则阻塞。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/kMqEet0qRpqEIGXx4uO3Aw/zh-cn_image_0000002809011383.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/62iB_QsOR8SXl21H-s8gCg/zh-cn_image_0000002786360688.png)
 
 由此可以看出，AllocTensor/FreeTensor主要解决了存在数据依赖时，并行执行单元的读后写同步控制问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/LAruWA7vR7mpSY0AIkl5IQ/zh-cn_image_0000002809051297.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/4IF9l715S46G1VhfhnqTbA/zh-cn_image_0000002815560109.png)
 
 通过上文的详细说明，可以看出异步并行程序需要考虑复杂的同步控制，而AscendC编程模型将这些流程进行了封装，同时对外接口通过EnQue/DeQue/AllocTensor/FreeTensor这种开发者熟悉的资源控制方式来体现，同时达到了简化编程和易于理解的目的。

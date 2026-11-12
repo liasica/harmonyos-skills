@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-websoc
 title: 使用WebSocket访问网络(C/C++)
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 访问网络 > 使用WebSocket访问网络(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:48+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:9ba3647d01e289235bdce9c0cb14f05b936194beb740794ca8eca8acf6a40d9f
+scraped_at: 2026-11-12T09:51:44+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:58bdcc3fc97ca3e14c698977cdf2f223e84d28daf537a98f889b195b806de907
 ---
 
 ## 场景介绍
@@ -333,7 +333,7 @@ libnet_websocket.so
 
    注意：如图所示，在add\_library中的entry是工程自动生成的modename，若要做修改，需和步骤3中.nm\_modname保持一致。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/pmYQuHPzQXiHfloFranOeA/zh-cn_image_0000002779850768.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/p-WhMVIZQ42wD_zUiMW6nA/zh-cn_image_0000002815399219.png)
 7. 调用WebSocket C API接口要求应用拥有ohos.permission.INTERNET权限，在module.json5中的requestPermissions项添加该权限。
 
    经过以上步骤，整个工程的搭建已经完成，接下来就可以连接设备运行工程进行日志查看了。
@@ -343,7 +343,7 @@ libnet_websocket.so
 1. 连接设备，使用DevEco Studio打开搭建好的工程。
 2. 运行工程，设备上会弹出以下图片所示界面：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/GBAnfNkpTGCjQsvxa45Zww/zh-cn_image_0000002779690800.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/ocjHgqjSSliI-Z5iwxA20Q/zh-cn_image_0000002786519644.jpg)
 
    简要说明：
 
@@ -352,6 +352,6 @@ libnet_websocket.so
    * 在Content输入框里输入要发送给服务器的内容，点击Send按钮发送。如果服务器返回消息，会触发onMessage回调，打印日志。
    * 点击Close按钮，WebSocket连接释放，可以重新输入新的WebSocket URL。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/HsigCJN3TwyAism3sG7kJw/zh-cn_image_0000002809010421.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/7IbrQdVZRtawxCHjihROxA/zh-cn_image_0000002786359716.jpg)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/S_4T2ZP_R86b6mUL71NquQ/zh-cn_image_0000002809050335.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/DdmINbdyRhqeOJDoBexdSg/zh-cn_image_0000002815559137.png)

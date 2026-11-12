@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.inputMethodEngine (输入法服务)"
 breadcrumb: API参考 > 应用框架 > IME Kit（输入法开发服务） > ArkTS API > @ohos.inputMethodEngine (输入法服务)
 category: harmonyos-references
-scraped_at: 2026-10-27T07:42:05+08:00
-doc_updated_at: 2026-10-26
-content_hash: sha256:956bc2e859ddf7f51ec7598935abea18f97a999d3726be1c1506c37277490962
+scraped_at: 2026-11-12T09:55:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0508235d288ce60f19f34b13d68d64cb90df3b7919db4dbb6e422c5b47a5ed06
 ---
 
 @ohos.inputMethodEngine模块是面向输入法应用（包括系统输入法和第三方输入法）的服务端API模块，提供了输入法应用与系统输入法框架之间的交互能力。
@@ -122,6 +122,7 @@ import { inputMethodEngine } from '@kit.IMEKit';
 | PATTERN\_NEW\_PASSWORD20+ | number | 11 | 新密码编辑框。  **模型约束：** 该参数仅可在Stage模型下使用。 |
 | PATTERN\_NUMBER\_DECIMAL20+ | number | 12 | 带小数点的数字编辑框。  **模型约束：** 该参数仅可在Stage模型下使用。 |
 | PATTERN\_ONE\_TIME\_CODE20+ | number | 13 | 验证码编辑框。  **模型约束：** 该参数仅可在Stage模型下使用。 |
+| PATTERN\_ONE\_TIME\_CODE\_NUMBER | number | 15 | 数字验证码编辑框。  **起始版本：** 26.0.1  **模型约束：** 该参数仅可在Stage模型下使用。 |
 | OPTION\_ASCII | number | 20 | 允许输入ASCII值。 |
 | OPTION\_NONE | number | 0 | 不指定编辑框输入属性。 |
 | OPTION\_AUTO\_CAP\_CHARACTERS | number | 2 | 自动将字符首字母大写。 |
@@ -824,7 +825,7 @@ on(type: 'callingDisplayDidChange', callback: Callback<number>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | capability not supported. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 
 **示例：**
 
@@ -1926,7 +1927,7 @@ startMoving(): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | capability not supported. 适用版本：18+ |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. 适用版本：18+ |
 | 12800002 | input method engine error. Possible causes: 1.input method panel not created. 2.the input method application does not subscribe to related events. |
 | 12800013 | window manager service error. |
 | 12800017 | invalid panel type or panel flag. |
@@ -2771,7 +2772,7 @@ setPrivacyMode(isPrivacyMode: boolean): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | permissions check fails. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 
 **示例：**
@@ -2862,7 +2863,7 @@ setImmersiveEffect(effect: ImmersiveEffect): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | capability not supported. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 12800002 | input method engine error. Possible causes:1.input method panel not created. 2.the input method application does not subscribe to related events. |
 | 12800013 | window manager service error. |
 | 12800020 | invalid immersive effect. 1.The gradient mode and the fluid light mode can only be used when the immersive mode is enabled. 2.The fluid light mode can only be used when the gradient mode is enabled. 3.When the gradient mode is not enabled, the gradient height can only be 0. |
@@ -5166,11 +5167,11 @@ getAttachOptions(): AttachOptions
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported.  适用版本：19-19 |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported.  适用版本：19-19 |
 
 **注意** 
 
-从API version 20 开始，错误码801 Capability not supported.被移除。
+从API version 20 开始，错误码801 Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported.被移除。
 
 **示例：**
 
@@ -5200,11 +5201,11 @@ on(type: 'attachOptionsDidChange', callback: Callback<AttachOptions>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported. 适用版本：19-19。 |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. 适用版本：19-19。 |
 
 **注意** 
 
-从API version 20 开始，错误码801 Capability not supported.被移除。
+从API version 20 开始，错误码801 Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported.被移除。
 
 **示例：**
 

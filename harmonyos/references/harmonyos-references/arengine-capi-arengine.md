@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-
 title: AR Engine
 breadcrumb: API参考 > 图形 > AR Engine（AR引擎服务） > C API > 模块 > AR Engine
 category: harmonyos-references
-scraped_at: 2026-10-11T07:27:42+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:dee2c7071f4162d7f91490886fab950e55bdccef1dc05c70e94e03cd0f77e76c
+scraped_at: 2026-11-12T09:56:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:520dcfe44e4e9b434934fd453e0f1867b5985f8d4e3f24fa6bdf3524a3b85235
 ---
 
 ## 概述
@@ -1405,7 +1405,7 @@ AR能力类型。
 | ARENGINE\_TYPE\_WORLD | 环境识别与运动跟踪能力。 |
 | ARENGINE\_TYPE\_BODY | 人体骨骼识别与跟踪能力。  **起始版本：** 6.1.0(23) |
 | ARENGINE\_TYPE\_FACE | 人脸识别与跟踪能力。  **起始版本：** 6.1.0(23) |
-| ARENGINE\_TYPE\_IMAGE | 图像识别与跟踪跟踪能力。  **起始版本：** 5.1.0(18) |
+| ARENGINE\_TYPE\_IMAGE | 图像识别与跟踪能力。  **起始版本：** 5.1.0(18) |
 
 ### AREngine\_ARUpdateMode
 
@@ -1671,6 +1671,10 @@ AREngine_ARStatus HMS_AREngine_ARAnchorList_Create(const AREngine_ARSession *ses
 | ARENGINE\_ERROR\_INVALID\_ARGUMENT | 无效参数状态。如方法入参为空或非法。 |
 | ARENGINE\_ERROR\_RESOURCE\_EXHAUSTED | 资源耗尽状态。 |
 
+**参考：**
+
+[HMS\_AREngine\_ARAnchorList\_Destroy](arengine-capi-arengine.md#hms_arengine_aranchorlist_destroy)
+
 ### HMS\_AREngine\_ARAnchorList\_Destroy
 
 ```cpp
@@ -1690,6 +1694,10 @@ void HMS_AREngine_ARAnchorList_Destroy(AREngine_ARAnchorList *anchorList)
 | 名称 | 描述 |
 | --- | --- |
 | anchorList | 待释放的锚点列表对象，参见[AREngine\_ARAnchorList](arengine-capi-arengine.md#arengine_aranchorlist)。 |
+
+**参考：**
+
+[HMS\_AREngine\_ARAnchorList\_Create](arengine-capi-arengine.md#hms_arengine_aranchorlist_create)
 
 ### HMS\_AREngine\_ARAnchorList\_GetSize
 
@@ -1828,7 +1836,7 @@ AREngine_ARStatus HMS_AREngine_ARAugmentedImage_GetExtendZ(const AREngine_ARSess
 
 以图像的中心点为坐标原点，获取Z轴上的估计值。
 
-返回物理图像的宽度，单位为m。
+返回物理图像的长度，单位为m。
 
 **设备行为差异：** 该接口在部分Phone、部分Tablet、TV中可正常调用，在不支持的设备中无法正常调用。可使用[HMS\_AREngine\_CheckSupported](arengine-capi-arengine.md#hms_arengine_checksupported)接口查询能力是否支持。
 
@@ -1840,7 +1848,7 @@ AREngine_ARStatus HMS_AREngine_ARAugmentedImage_GetExtendZ(const AREngine_ARSess
 | --- | --- |
 | session | 与AR Engine服务交互的[AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession)对象。 |
 | augmentedImage | 图像类型的可追踪对象，参见[AREngine\_ARAugmentedImage](arengine-capi-arengine.md#arengine_araugmentedimage)。 |
-| outExtendZ | 返回Z轴上物理图像的估计宽度，以m为单位。 |
+| outExtendZ | 返回Z轴上物理图像的估计长度，以m为单位。 |
 
 **返回：**
 
@@ -1945,6 +1953,10 @@ AREngine_ARStatus HMS_AREngine_ARAugmentedImageDatabase_Create(AREngine_ARAugmen
 | ARENGINE\_ERROR\_FATAL | 失败状态。 |
 | ARENGINE\_ERROR\_RESOURCE\_EXHAUSTED | 资源耗尽状态。 |
 
+**参考：**
+
+[HMS\_AREngine\_ARAugmentedImageDatabase\_Destroy](arengine-capi-arengine.md#hms_arengine_araugmentedimagedatabase_destroy)
+
 ### HMS\_AREngine\_ARAugmentedImageDatabase\_Deserialize
 
 ```cpp
@@ -2004,6 +2016,10 @@ AREngine_ARStatus HMS_AREngine_ARAugmentedImageDatabase_Destroy(AREngine_ARAugme
 | --- | --- |
 | ARENGINE\_SUCCESS | 成功状态。 |
 | ARENGINE\_ERROR\_INVALID\_ARGUMENT | 无效参数状态。如方法入参为空或非法。 |
+
+**参考：**
+
+[HMS\_AREngine\_ARAugmentedImageDatabase\_Create](arengine-capi-arengine.md#hms_arengine_araugmentedimagedatabase_create)
 
 ### HMS\_AREngine\_ARAugmentedImageDatabase\_GetAddMode
 
@@ -2410,6 +2426,10 @@ void HMS_AREngine_ARCamera_Release(AREngine_ARCamera *camera)
 | --- | --- |
 | camera | 待释放的相机引用，参见[AREngine\_ARCamera](arengine-capi-arengine.md#arengine_arcamera)。 |
 
+**参考：**
+
+[HMS\_AREngine\_ARFrame\_AcquireCamera](arengine-capi-arengine.md#hms_arengine_arframe_acquirecamera)
+
 ### HMS\_AREngine\_ARCameraConfig\_Create
 
 ```cpp
@@ -2440,6 +2460,10 @@ AREngine_ARStatus HMS_AREngine_ARCameraConfig_Create(const AREngine_ARSession *s
 | ARENGINE\_SUCCESS | 成功状态。 |
 | ARENGINE\_ERROR\_INVALID\_ARGUMENT | 无效参数状态。如方法入参为空或非法。 |
 | ARENGINE\_ERROR\_RESOURCE\_EXHAUSTED | 资源耗尽状态。 |
+
+**参考：**
+
+[HMS\_AREngine\_ARCameraConfig\_Destroy](arengine-capi-arengine.md#hms_arengine_arcameraconfig_destroy)
 
 ### HMS\_AREngine\_ARConfig\_GetCameraLensFacing
 
@@ -2585,6 +2609,10 @@ void HMS_AREngine_ARCameraConfig_Destroy(AREngine_ARCameraConfig *cameraConfig)
 | --- | --- |
 | cameraConfig | 待释放的指向相机配置对象的指针，参见[AREngine\_ARCameraConfig](arengine-capi-arengine.md#arengine_arcameraconfig)。 |
 
+**参考：**
+
+[HMS\_AREngine\_ARCameraConfig\_Create](arengine-capi-arengine.md#hms_arengine_arcameraconfig_create)
+
 ### HMS\_AREngine\_ARCameraConfig\_GetImageDimensions
 
 ```cpp
@@ -2680,6 +2708,10 @@ AREngine_ARStatus HMS_AREngine_ARCameraIntrinsics_Create(const AREngine_ARSessio
 | ARENGINE\_ERROR\_INVALID\_ARGUMENT | 无效参数状态。如方法入参为空或非法。 |
 | ARENGINE\_ERROR\_RESOURCE\_EXHAUSTED | 资源耗尽状态。 |
 
+**参考：**
+
+[HMS\_AREngine\_ARCameraIntrinsics\_Destroy](arengine-capi-arengine.md#hms_arengine_arcameraintrinsics_destroy)
+
 ### HMS\_AREngine\_ARCameraIntrinsics\_Destroy
 
 ```cpp
@@ -2699,6 +2731,10 @@ void HMS_AREngine_ARCameraIntrinsics_Destroy(AREngine_ARCameraIntrinsics *intrin
 | 名称 | 描述 |
 | --- | --- |
 | intrinsics | 待释放的相机内参对象，参见[AREngine\_ARCameraIntrinsics](arengine-capi-arengine.md#arengine_arcameraintrinsics)。 |
+
+**参考：**
+
+[HMS\_AREngine\_ARCameraIntrinsics\_Create](arengine-capi-arengine.md#hms_arengine_arcameraintrinsics_create)
 
 ### HMS\_AREngine\_ARCameraIntrinsics\_GetDistortion
 
@@ -2861,6 +2897,10 @@ AREngine_ARStatus HMS_AREngine_ARConfig_Create(const AREngine_ARSession *session
 | ARENGINE\_ERROR\_INVALID\_ARGUMENT | 无效参数状态。如方法入参为空或非法。 |
 | ARENGINE\_ERROR\_RESOURCE\_EXHAUSTED | 资源耗尽状态。 |
 
+**参考：**
+
+[HMS\_AREngine\_ARConfig\_Destroy](arengine-capi-arengine.md#hms_arengine_arconfig_destroy)
+
 ### HMS\_AREngine\_ARConfig\_Destroy
 
 ```cpp
@@ -2880,6 +2920,10 @@ void HMS_AREngine_ARConfig_Destroy(AREngine_ARConfig *config)
 | 名称 | 描述 |
 | --- | --- |
 | config | 待释放的配置对象，参见[AREngine\_ARConfig](arengine-capi-arengine.md#arengine_arconfig)。 |
+
+**参考：**
+
+[HMS\_AREngine\_ARConfig\_Create](arengine-capi-arengine.md#hms_arengine_arconfig_create)
 
 ### HMS\_AREngine\_ARConfig\_GetARType
 
@@ -4527,6 +4571,10 @@ AREngine_ARStatus HMS_AREngine_ARFrame_AcquireCamera(const AREngine_ARSession *s
 | ARENGINE\_ERROR\_INVALID\_ARGUMENT | 无效参数状态。如方法入参为空或非法。 |
 | ARENGINE\_ERROR\_RESOURCE\_EXHAUSTED | 资源耗尽状态。 |
 
+**参考：**
+
+[HMS\_AREngine\_ARCamera\_Release](arengine-capi-arengine.md#hms_arengine_arcamera_release)
+
 ### HMS\_AREngine\_ARFrame\_AcquireCameraImage
 
 ```cpp
@@ -4558,6 +4606,10 @@ AREngine_ARStatus HMS_AREngine_ARFrame_AcquireCameraImage(const AREngine_ARSessi
 | ARENGINE\_SUCCESS | 成功状态。 |
 | ARENGINE\_ERROR\_INVALID\_ARGUMENT | 无效参数状态。如方法入参为空或非法。 |
 | ARENGINE\_ERROR\_UNSUPPORTED\_CONFIGURATION | 不支持的配置状态。 |
+
+**参考：**
+
+[HMS\_AREngine\_ARImage\_Release](arengine-capi-arengine.md#hms_arengine_arimage_release)
 
 ### HMS\_AREngine\_ARFrame\_AcquireCameraPhotoImage
 
@@ -4625,6 +4677,10 @@ AREngine_ARStatus HMS_AREngine_ARFrame_AcquireDepthConfidenceImage(const AREngin
 | ARENGINE\_SUCCESS | 成功状态。 |
 | ARENGINE\_ERROR\_INVALID\_ARGUMENT | 无效参数状态。如方法入参为空或非法。 |
 
+**参考：**
+
+[HMS\_AREngine\_ARImage\_Release](arengine-capi-arengine.md#hms_arengine_arimage_release)
+
 ### HMS\_AREngine\_ARFrame\_AcquireDepthImage16Bits
 
 ```cpp
@@ -4655,6 +4711,10 @@ AREngine_ARStatus HMS_AREngine_ARFrame_AcquireDepthImage16Bits(const AREngine_AR
 | --- | --- |
 | ARENGINE\_SUCCESS | 成功状态。 |
 | ARENGINE\_ERROR\_INVALID\_ARGUMENT | 无效参数状态。如方法入参为空或非法。 |
+
+**参考：**
+
+[HMS\_AREngine\_ARImage\_Release](arengine-capi-arengine.md#hms_arengine_arimage_release)
 
 ### HMS\_AREngine\_ARFrame\_AcquirePointCloud
 
@@ -4688,6 +4748,10 @@ AREngine_ARStatus HMS_AREngine_ARFrame_AcquirePointCloud(const AREngine_ARSessio
 | ARENGINE\_ERROR\_INVALID\_ARGUMENT | 无效参数状态。如方法入参为空或非法。 |
 | ARENGINE\_ERROR\_RESOURCE\_EXHAUSTED | 资源耗尽状态。 |
 
+**参考：**
+
+[HMS\_AREngine\_ARPointCloud\_Release](arengine-capi-arengine.md#hms_arengine_arpointcloud_release)
+
 ### HMS\_AREngine\_ARFrame\_AcquireSceneMesh
 
 ```cpp
@@ -4719,6 +4783,10 @@ AREngine_ARStatus HMS_AREngine_ARFrame_AcquireSceneMesh(const AREngine_ARSession
 | ARENGINE\_SUCCESS | 成功状态。 |
 | ARENGINE\_ERROR\_INVALID\_ARGUMENT | 无效参数状态。如方法入参为空或非法。 |
 | ARENGINE\_ERROR\_RESOURCE\_EXHAUSTED | 资源耗尽状态。 |
+
+**参考：**
+
+[HMS\_AREngine\_ARSceneMesh\_Release](arengine-capi-arengine.md#hms_arengine_arscenemesh_release)
 
 ### HMS\_AREngine\_ARFrame\_AcquireSemanticDenseData
 
@@ -4752,6 +4820,10 @@ AREngine_ARStatus HMS_AREngine_ARFrame_AcquireSemanticDenseData(const AREngine_A
 | ARENGINE\_ERROR\_INVALID\_ARGUMENT | 无效参数状态。如方法入参为空或非法。 |
 | ARENGINE\_ERROR\_RESOURCE\_EXHAUSTED | 资源耗尽状态。 |
 
+**参考：**
+
+[HMS\_AREngine\_ARSemanticDense\_Release](arengine-capi-arengine.md#hms_arengine_arsemanticdense_release)
+
 ### HMS\_AREngine\_ARFrame\_Create
 
 ```cpp
@@ -4783,6 +4855,10 @@ AREngine_ARStatus HMS_AREngine_ARFrame_Create(const AREngine_ARSession *session,
 | ARENGINE\_ERROR\_INVALID\_ARGUMENT | 无效参数状态。如方法入参为空或非法。 |
 | ARENGINE\_ERROR\_RESOURCE\_EXHAUSTED | 资源耗尽状态。 |
 
+**参考：**
+
+[HMS\_AREngine\_ARFrame\_Destroy](arengine-capi-arengine.md#hms_arengine_arframe_destroy)
+
 ### HMS\_AREngine\_ARFrame\_Destroy
 
 ```cpp
@@ -4802,6 +4878,10 @@ void HMS_AREngine_ARFrame_Destroy(AREngine_ARFrame *frame)
 | 名称 | 描述 |
 | --- | --- |
 | frame | 待销毁的当前帧对象，参见[AREngine\_ARFrame](arengine-capi-arengine.md#arengine_arframe)。 |
+
+**参考：**
+
+[HMS\_AREngine\_ARFrame\_Create](arengine-capi-arengine.md#hms_arengine_arframe_create)
 
 ### HMS\_AREngine\_ARFrame\_GetDisplayGeometryChanged
 
@@ -5067,6 +5147,10 @@ AREngine_ARStatus HMS_AREngine_ARHitResult_Create(const AREngine_ARSession *sess
 | ARENGINE\_ERROR\_INVALID\_ARGUMENT | 无效参数状态。如方法入参为空或非法。 |
 | ARENGINE\_ERROR\_RESOURCE\_EXHAUSTED | 资源耗尽状态。 |
 
+**参考：**
+
+[HMS\_AREngine\_ARHitResult\_Destroy](arengine-capi-arengine.md#hms_arengine_arhitresult_destroy)
+
 ### HMS\_AREngine\_ARHitResult\_Destroy
 
 ```cpp
@@ -5086,6 +5170,10 @@ void HMS_AREngine_ARHitResult_Destroy(AREngine_ARHitResult *hitResult)
 | 名称 | 描述 |
 | --- | --- |
 | hitResult | 待释放的命中检测结果对象，参见[AREngine\_ARHitResult](arengine-capi-arengine.md#arengine_arhitresult)。 |
+
+**参考：**
+
+[HMS\_AREngine\_ARHitResult\_Create](arengine-capi-arengine.md#hms_arengine_arhitresult_create)
 
 ### HMS\_AREngine\_ARHitResult\_GetDistance
 
@@ -5188,6 +5276,10 @@ AREngine_ARStatus HMS_AREngine_ARHitResultList_Create(const AREngine_ARSession *
 | ARENGINE\_ERROR\_INVALID\_ARGUMENT | 无效参数状态。如方法入参为空或非法。 |
 | ARENGINE\_ERROR\_RESOURCE\_EXHAUSTED | 资源耗尽状态。 |
 
+**参考：**
+
+[HMS\_AREngine\_ARHitResultList\_Destroy](arengine-capi-arengine.md#hms_arengine_arhitresultlist_destroy)
+
 ### HMS\_AREngine\_ARHitResultList\_Destroy
 
 ```cpp
@@ -5207,6 +5299,10 @@ void HMS_AREngine_ARHitResultList_Destroy(AREngine_ARHitResultList *hitResultLis
 | 名称 | 描述 |
 | --- | --- |
 | hitResultList | 待释放的命中检测结果对象列表，参见[AREngine\_ARHitResultList](arengine-capi-arengine.md#arengine_arhitresultlist)。 |
+
+**参考：**
+
+[HMS\_AREngine\_ARHitResultList\_Create](arengine-capi-arengine.md#hms_arengine_arhitresultlist_create)
 
 ### HMS\_AREngine\_ARHitResultList\_GetItem
 
@@ -5587,6 +5683,14 @@ void HMS_AREngine_ARImage_Release(AREngine_ARImage *image)
 | 名称 | 描述 |
 | --- | --- |
 | image | 待释放的当前帧图像对象，参见[AREngine\_ARImage](arengine-capi-arengine.md#arengine_arimage)。 |
+
+**参考：**
+
+[HMS\_AREngine\_ARFrame\_AcquireCameraImage](arengine-capi-arengine.md#hms_arengine_arframe_acquirecameraimage)
+
+[HMS\_AREngine\_ARFrame\_AcquireDepthConfidenceImage](arengine-capi-arengine.md#hms_arengine_arframe_acquiredepthconfidenceimage)
+
+[HMS\_AREngine\_ARFrame\_AcquireDepthImage16Bits](arengine-capi-arengine.md#hms_arengine_arframe_acquiredepthimage16bits)
 
 ### HMS\_AREngine\_ARPlane\_AcquireSubsumedBy
 
@@ -6092,6 +6196,10 @@ void HMS_AREngine_ARPointCloud_Release(AREngine_ARPointCloud *pointCloud)
 | --- | --- |
 | pointCloud | 待释放的点云对象，参见[AREngine\_ARPointCloud](arengine-capi-arengine.md#arengine_arpointcloud)。 |
 
+**参考：**
+
+[HMS\_AREngine\_ARFrame\_AcquirePointCloud](arengine-capi-arengine.md#hms_arengine_arframe_acquirepointcloud)
+
 ### HMS\_AREngine\_ARPose\_Create
 
 ```cpp
@@ -6126,6 +6234,10 @@ AREngine_ARStatus HMS_AREngine_ARPose_Create(const AREngine_ARSession *session, 
 | ARENGINE\_SUCCESS | 成功状态。 |
 | ARENGINE\_ERROR\_INVALID\_ARGUMENT | 无效参数状态。如方法入参为空或非法。 |
 
+**参考：**
+
+[HMS\_AREngine\_ARPose\_Destroy](arengine-capi-arengine.md#hms_arengine_arpose_destroy)
+
 ### HMS\_AREngine\_ARPose\_Destroy
 
 ```cpp
@@ -6145,6 +6257,10 @@ void HMS_AREngine_ARPose_Destroy(AREngine_ARPose *pose)
 | 名称 | 描述 |
 | --- | --- |
 | pose | 待释放的位姿对象，参见[AREngine\_ARPose](arengine-capi-arengine.md#arengine_arpose)。 |
+
+**参考：**
+
+[HMS\_AREngine\_ARPose\_Create](arengine-capi-arengine.md#hms_arengine_arpose_create)
 
 ### HMS\_AREngine\_ARPose\_GetMatrix
 
@@ -6393,6 +6509,10 @@ void HMS_AREngine_ARSceneMesh_Release(AREngine_ARSceneMesh *sceneMesh)
 | --- | --- |
 | sceneMesh | 当前帧的Mesh信息，参见[AREngine\_ARSceneMesh](arengine-capi-arengine.md#arengine_arscenemesh)。 |
 
+**参考：**
+
+[HMS\_AREngine\_ARFrame\_AcquireSceneMesh](arengine-capi-arengine.md#hms_arengine_arframe_acquirescenemesh)
+
 ### HMS\_AREngine\_ARSemanticDense\_AcquireCubeData
 
 ```cpp
@@ -6535,6 +6655,10 @@ void HMS_AREngine_ARSemanticDense_Release(AREngine_ARSemanticDenseData *semantic
 | --- | --- |
 | semanticDenseData | 释放高精几何重建对象，参见[AREngine\_ARSemanticDenseData](arengine-capi-arengine.md#arengine_arsemanticdensedata)。 |
 
+**参考：**
+
+[HMS\_AREngine\_ARFrame\_AcquireSemanticDenseData](arengine-capi-arengine.md#hms_arengine_arframe_acquiresemanticdensedata)
+
 ### HMS\_AREngine\_ARSession\_AcquireNewAnchor
 
 ```cpp
@@ -6600,6 +6724,10 @@ AREngine_ARStatus HMS_AREngine_ARSession_Configure(AREngine_ARSession *session, 
 | ARENGINE\_ERROR\_FATAL | 失败状态。 |
 | ARENGINE\_ERROR\_SESSION\_NOT\_PAUSED | 会话未暂停状态。 |
 
+**参考：**
+
+[HMS\_AREngine\_ARSession\_Update](arengine-capi-arengine.md#hms_arengine_arsession_update)
+
 ### HMS\_AREngine\_ARSession\_Create
 
 ```cpp
@@ -6635,6 +6763,12 @@ AREngine_ARStatus HMS_AREngine_ARSession_Create(void *env, void *applicationCont
 | ARENGINE\_ERROR\_INVALID\_ARGUMENT | 无效参数状态。如方法入参为空或非法。 |
 | ARENGINE\_ERROR\_DEVICE\_NOT\_SUPPORTED | 不可用：设备不兼容状态。 |
 | ARENGINE\_ERROR\_FATAL | 失败状态。 |
+
+**参考：**
+
+[HMS\_AREngine\_ARSession\_Stop](arengine-capi-arengine.md#hms_arengine_arsession_stop)
+
+[HMS\_AREngine\_ARSession\_Destroy](arengine-capi-arengine.md#hms_arengine_arsession_destroy)
 
 ### HMS\_AREngine\_ARSession\_Create\_Human\_Perception
 
@@ -6672,6 +6806,12 @@ AREngine_ARStatus HMS_AREngine_ARSession_Create_Human_Perception(void *env, void
 | ARENGINE\_ERROR\_DEVICE\_NOT\_SUPPORTED | 不可用：设备不兼容状态。 |
 | ARENGINE\_ERROR\_FATAL | 失败状态。 |
 
+**参考：**
+
+[HMS\_AREngine\_ARSession\_Stop](arengine-capi-arengine.md#hms_arengine_arsession_stop)
+
+[HMS\_AREngine\_ARSession\_Destroy](arengine-capi-arengine.md#hms_arengine_arsession_destroy)
+
 ### HMS\_AREngine\_ARSession\_Destroy
 
 ```cpp
@@ -6691,6 +6831,10 @@ void HMS_AREngine_ARSession_Destroy(AREngine_ARSession *session)
 | 名称 | 描述 |
 | --- | --- |
 | session | 与AR Engine服务交互的[AREngine\_ARSession](arengine-capi-arengine.md#arengine_arsession)对象。 |
+
+**参考：**
+
+[HMS\_AREngine\_ARSession\_Create](arengine-capi-arengine.md#hms_arengine_arsession_create)
 
 ### HMS\_AREngine\_ARSession\_GetAllAnchors
 
@@ -6815,6 +6959,10 @@ AREngine_ARStatus HMS_AREngine_ARSession_Pause(AREngine_ARSession *session)
 | ARENGINE\_ERROR\_INVALID\_ARGUMENT | 无效参数状态。如方法入参为空或非法。 |
 | ARENGINE\_ERROR\_FATAL | 失败状态。 |
 
+**参考：**
+
+[HMS\_AREngine\_ARSession\_Resume](arengine-capi-arengine.md#hms_arengine_arsession_resume)
+
 ### HMS\_AREngine\_ARSession\_Resume
 
 ```cpp
@@ -6845,6 +6993,10 @@ AREngine_ARStatus HMS_AREngine_ARSession_Resume(AREngine_ARSession *session)
 | ARENGINE\_ERROR\_INVALID\_ARGUMENT | 无效参数状态。如方法入参为空或非法。 |
 | ARENGINE\_ERROR\_FATAL | 失败状态。 |
 | ARENGINE\_ERROR\_CAMERA\_NOT\_AVAILABLE | 相机不可用状态。 |
+
+**参考：**
+
+[HMS\_AREngine\_ARSession\_Pause](arengine-capi-arengine.md#hms_arengine_arsession_pause)
 
 ### HMS\_AREngine\_ARSession\_SetCameraGLTexture
 
@@ -6946,6 +7098,10 @@ AREngine_ARStatus HMS_AREngine_ARSession_Stop(AREngine_ARSession *session)
 | ARENGINE\_ERROR\_INVALID\_ARGUMENT | 无效参数状态。如方法入参为空或非法。 |
 | ARENGINE\_ERROR\_FATAL | 失败状态。 |
 
+**参考：**
+
+[HMS\_AREngine\_ARSession\_Create](arengine-capi-arengine.md#hms_arengine_arsession_create)
+
 ### HMS\_AREngine\_ARSession\_Update
 
 ```cpp
@@ -6985,6 +7141,10 @@ AREngine_ARStatus HMS_AREngine_ARSession_Update(AREngine_ARSession *session, ARE
 | ARENGINE\_ERROR\_CAMERA\_NOT\_AVAILABLE | 相机不可用状态。 |
 | ARENGINE\_ERROR\_IMAGE\_INVALID\_DATABASE | 没有有效的图像数据库。  **起始版本：** 5.1.0(18) |
 
+**参考：**
+
+[HMS\_AREngine\_ARSession\_Configure](arengine-capi-arengine.md#hms_arengine_arsession_configure)
+
 ### HMS\_AREngine\_ARSession\_OpenFlash
 
 ```cpp
@@ -7014,6 +7174,10 @@ AREngine_ARStatus HMS_AREngine_ARSession_OpenFlash(const AREngine_ARSession *ses
 | ARENGINE\_SUCCESS | 成功状态。 |
 | ARENGINE\_ERROR\_INVALID\_ARGUMENT | 无效参数状态。如方法入参为空或非法。 |
 
+**参考：**
+
+[HMS\_AREngine\_ARSession\_CloseFlash](arengine-capi-arengine.md#hms_arengine_arsession_closeflash)
+
 ### HMS\_AREngine\_ARSession\_CloseFlash
 
 ```cpp
@@ -7042,6 +7206,10 @@ AREngine_ARStatus HMS_AREngine_ARSession_CloseFlash(const AREngine_ARSession *se
 | --- | --- |
 | ARENGINE\_SUCCESS | 成功状态。 |
 | ARENGINE\_ERROR\_INVALID\_ARGUMENT | 无效参数状态。如方法入参为空或非法。 |
+
+**参考：**
+
+[HMS\_AREngine\_ARSession\_OpenFlash](arengine-capi-arengine.md#hms_arengine_arsession_openflash)
 
 ### HMS\_AREngine\_ARTarget\_GetAxisAlignedBoundingBox
 
@@ -7378,6 +7546,10 @@ AREngine_ARStatus HMS_AREngine_ARTrackableList_Create(const AREngine_ARSession *
 | ARENGINE\_ERROR\_INVALID\_ARGUMENT | 无效参数状态。如方法入参为空或非法。 |
 | ARENGINE\_ERROR\_RESOURCE\_EXHAUSTED | 资源耗尽状态。 |
 
+**参考：**
+
+[HMS\_AREngine\_ARTrackableList\_Destroy](arengine-capi-arengine.md#hms_arengine_artrackablelist_destroy)
+
 ### HMS\_AREngine\_ARTrackableList\_Destroy
 
 ```cpp
@@ -7397,6 +7569,10 @@ void HMS_AREngine_ARTrackableList_Destroy(AREngine_ARTrackableList *trackableLis
 | 名称 | 描述 |
 | --- | --- |
 | trackableList | 待释放的可跟踪对象列表，参见[AREngine\_ARTrackableList](arengine-capi-arengine.md#arengine_artrackablelist)。 |
+
+**参考：**
+
+[HMS\_AREngine\_ARTrackableList\_Create](arengine-capi-arengine.md#hms_arengine_artrackablelist_create)
 
 ### HMS\_AREngine\_ARTrackableList\_GetSize
 

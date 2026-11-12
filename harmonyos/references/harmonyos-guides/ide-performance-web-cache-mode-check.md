@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-performan
 title: "@performance/web-cache-mode-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/web-cache-mode-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:13+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:d22b755e6bf12529755946872bc32175f4e457979692ce32a6c7c1b1d158f996
+scraped_at: 2026-11-12T09:52:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:bd616f0f51d81696251a2fc266e6f5d1f79685934d4bba65122e23b9d2c5de6b
 ---
 
 web组件的cacheMode属性参数不建议设置为Online。
@@ -146,4 +146,4 @@ struct WebCacheModeNoReport {
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

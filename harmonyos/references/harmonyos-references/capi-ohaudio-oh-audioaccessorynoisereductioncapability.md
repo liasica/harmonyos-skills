@@ -3,13 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-ohau
 title: OH_AudioAccessoryNoiseReductionCapability
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 结构体 > OH_AudioAccessoryNoiseReductionCapability
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:21+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:6b033b1c65d3a65a8a5b0a75b734c54d2404da60b4ad079e5b30d09526cf15a4
+scraped_at: 2026-11-12T09:56:23+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b7adffb90702a5d924032215caeb67687e0bfb8afc387bc9363089ed58b99bf8
 ---
 
 ```c
-typedef struct OH_AudioAccessoryNoiseReductionCapability {...} OH_AudioAccessoryNoiseReductionCapability
+typedef struct {...} OH_AudioAccessoryNoiseReductionCapability
 ```
 
 ## 概述

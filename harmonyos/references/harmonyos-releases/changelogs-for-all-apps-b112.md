@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: OS平台API行为的变更
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.1(13) > OS平台能力 > OS平台行为变更说明 > HarmonyOS 5.0.1(13) Release引入的行为变更 > OS平台API行为的变更
 category: harmonyos-releases
-scraped_at: 2026-10-09T08:12:34+08:00
+scraped_at: 2026-11-12T09:50:33+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:6cca12b639ef9717ed3432421a971e73d9ccc0b48aa7ca24cd5add204674069d
+content_hash: sha256:4785bfb1d001f9ce0bd29c7ee0fef6f4c2566968377d70d8329e316347646a38
 ---
 
 ## ArkUI
@@ -344,7 +344,7 @@ Openharmony SDK目录下toolchains/modulecheck/app.json scheme文件。
 
 升级SDK版本后，如果DevEco Studio编辑器中提示如下报错，请按照新规则修改应用的bundleName。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/3gTbPHL0QZSHWe22cCSheA/zh-cn_image_0000002143569014.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/AyEpbpPpStulcn3HF4eA_g/zh-cn_image_0000002143569014.png)
 
 ## 工具
 

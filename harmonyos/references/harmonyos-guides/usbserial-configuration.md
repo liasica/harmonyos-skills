@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/usbserial-con
 title: USB串口配置管理
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB串口通信服务 > USB串口配置管理
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:49+08:00
-doc_updated_at: 2026-10-16
+scraped_at: 2026-11-12T09:51:47+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:85a7bd5e069f647ebd3fe1d84e8c11e966872921dcd4baac6b03fc95758a4e1d
 ---
 

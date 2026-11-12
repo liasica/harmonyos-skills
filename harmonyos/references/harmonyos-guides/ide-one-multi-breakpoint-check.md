@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-one-multi
 title: "@cross-device-app-dev/one-multi-breakpoint-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 一次开发多端部署规则@cross-device-app-dev > @cross-device-app-dev/one-multi-breakpoint-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:13+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:3c8f8ca312c39a4e7b533990435e2faacf7a0cdc2238949522e2ef4ad8d65fb5
+scraped_at: 2026-11-12T09:52:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ea284e09afd5fb481750595dcb94d8da24af6563e0bfaf6c78f8a4e7461d31b4
 ---
 
 一多特性必须使用系统断点判断是否开启，不能通过设备类型、设备方向或是否可折叠等属性来判断。
@@ -64,4 +64,4 @@ plugin:@cross-device-app-dev/recommended
 plugin:@cross-device-app-dev/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

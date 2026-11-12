@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (PhotoSession)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (PhotoSession)
 category: harmonyos-references
-scraped_at: 2026-10-17T06:47:53+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:2b547b68fc86135163b398a7bf9c9a1eb7421ffbd065ff0f53ee804d8814d8b9
+scraped_at: 2026-11-12T09:56:33+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7afb331ff9c91f48743f61a3b0beed41a4947144d38a7c4385b536cc7233d4b7
 ---
 
 PhotoSession继承自[Session](arkts-apis-camera-session.md)、[Flash](arkts-apis-camera-flash.md)、[AutoExposure](arkts-apis-camera-autoexposure.md)、[WhiteBalance](arkts-apis-camera-whitebalance.md)、[Focus](arkts-apis-camera-focus.md)、[Zoom](arkts-apis-camera-zoom.md)、[ColorManagement](arkts-apis-camera-colormanagement.md)、[AutoDeviceSwitch](arkts-apis-camera-autodeviceswitch.md)、[Macro](arkts-apis-camera-macro.md)、[ManualExposure](arkts-apis-camera-manualexposure.md)、[ManualFocus](arkts-apis-camera-manualfocus.md)、[ManualIso](arkts-apis-camera-manualiso.md)、[OIS](arkts-apis-camera-ois.md)、[Aperture](arkts-apis-camera-aperture.md)。
@@ -13,6 +13,8 @@ PhotoSession继承自[Session](arkts-apis-camera-session.md)、[Flash](arkts-api
 普通拍照模式会话类，提供了对闪光灯、曝光、白平衡、对焦、变焦、色彩空间、微距、手动曝光、手动对焦、手动ISO、光学防抖及光圈的操作。
 
 默认的拍照模式，用于拍摄标准照片。支持多种照片格式和分辨率，适合大多数日常拍摄场景。
+
+在创建拍照模式会话前，需要通过[getSupportedSceneModes](arkts-apis-camera-cameramanager.md#getsupportedscenemodes11)接口获取当前相机支持的模式来确定是否支持拍照模式的会话。
 
 **说明** 
 
@@ -309,6 +311,8 @@ on(type: 'autoDeviceSwitchStatusChange', callback: AsyncCallback<AutoDeviceSwitc
 
 监听相机自动切换镜头状态变化，通过注册回调函数获取结果。使用callback异步回调。
 
+可以先通过[isAutoDeviceSwitchSupported](arkts-apis-camera-autodeviceswitchquery.md#isautodeviceswitchsupported13)获取当前设备是否支持自动切换镜头。
+
 **说明** 
 
 当前注册监听接口，不支持在on监听的回调方法里，调用off注销回调。
@@ -338,7 +342,9 @@ function callback(err: BusinessError, autoDeviceSwitchStatus: camera.AutoDeviceS
 }
 
 function registerAutoDeviceSwitchStatus(photoSession: camera.PhotoSession): void {
-  photoSession.on('autoDeviceSwitchStatusChange', callback);
+  if (photoSession.isAutoDeviceSwitchSupported()) {
+    photoSession.on('autoDeviceSwitchStatusChange', callback);
+  }
 }
 ```
 
@@ -347,6 +353,8 @@ function registerAutoDeviceSwitchStatus(photoSession: camera.PhotoSession): void
 off(type: 'autoDeviceSwitchStatusChange', callback?: AsyncCallback<AutoDeviceSwitchStatus>): void
 
 注销监听相机自动切换镜头状态变化。
+
+可以先通过[isAutoDeviceSwitchSupported](arkts-apis-camera-autodeviceswitchquery.md#isautodeviceswitchsupported13)获取当前设备是否支持自动切换镜头。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -363,7 +371,9 @@ off(type: 'autoDeviceSwitchStatusChange', callback?: AsyncCallback<AutoDeviceSwi
 
 ```ts
 function unregisterAutoDeviceSwitchStatus(photoSession: camera.PhotoSession): void {
-  photoSession.off('autoDeviceSwitchStatusChange');
+  if (photoSession.isAutoDeviceSwitchSupported()) {
+    photoSession.off('autoDeviceSwitchStatusChange');
+  }
 }
 ```
 
@@ -437,6 +447,8 @@ on(type: 'macroStatusChanged', callback: AsyncCallback<boolean>): void
 
 监听相机微距状态变化，通过注册回调函数获取结果。使用callback异步回调。
 
+监听前可以通过[isMacroSupported](arkts-apis-camera-macroquery.md#ismacrosupported19)查询是否支持微距能力。
+
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
@@ -462,7 +474,9 @@ function callback(err: BusinessError, macroStatus: boolean): void {
 }
 
 function registerMacroStatusChanged(photoSession: camera.PhotoSession): void {
-  photoSession.on('macroStatusChanged', callback);
+  if (photoSession.isMacroSupported()) {
+    photoSession.on('macroStatusChanged', callback);
+  }
 }
 ```
 
@@ -471,6 +485,8 @@ function registerMacroStatusChanged(photoSession: camera.PhotoSession): void {
 off(type: 'macroStatusChanged', callback?: AsyncCallback<boolean>): void
 
 注销相机微距状态变化的监听。
+
+可以通过[isMacroSupported](arkts-apis-camera-macroquery.md#ismacrosupported19)查询是否支持微距能力。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
@@ -487,7 +503,9 @@ off(type: 'macroStatusChanged', callback?: AsyncCallback<boolean>): void
 
 ```ts
 function unregisterMacroStatusChanged(photoSession: camera.PhotoSession): void {
-  photoSession.off('macroStatusChanged');
+  if (photoSession.isMacroSupported()) {
+    photoSession.off('macroStatusChanged');
+  }
 }
 ```
 
@@ -596,5 +614,63 @@ offExposureInfoChange(callback?: Callback<ExposureInfo>): void
 ```ts
 function offExposureInfoChange(photoSession: camera.PhotoSession): void {
   photoSession.offExposureInfoChange();
+}
+```
+
+## onCameraSwitchRequest
+
+onCameraSwitchRequest(callback: Callback<CameraDevice>): void
+
+订阅相机切换请求事件回调。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<[CameraDevice](arkts-apis-camera-i.md#cameradevice)> | 是 | 回调函数，用于获取目标相机设备。 |
+
+**示例：**
+
+```ts
+function onCameraSwitchRequest(photoSession: camera.PhotoSession): void {
+  photoSession.onCameraSwitchRequest((cameraDevice: camera.CameraDevice) => {
+    console.info(`Camera switch request to cameraId: ${cameraDevice.cameraId}`);
+  });
+}
+```
+
+## offCameraSwitchRequest
+
+offCameraSwitchRequest(callback?: Callback<CameraDevice>): void
+
+取消订阅相机切换请求事件回调。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<[CameraDevice](arkts-apis-camera-i.md#cameradevice)> | 否 | 回调函数，如果指定参数则取消对应callback（callback对象不可是匿名函数），否则取消所有callback。 |
+
+**示例：**
+
+```ts
+function offCameraSwitchRequest(photoSession: camera.PhotoSession): void {
+  photoSession.offCameraSwitchRequest();
 }
 ```

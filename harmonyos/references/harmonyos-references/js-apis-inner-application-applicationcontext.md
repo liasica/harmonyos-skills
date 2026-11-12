@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: ApplicationContext (应用上下文)
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > application > ApplicationContext (应用上下文)
 category: harmonyos-references
-scraped_at: 2026-10-01T07:36:16+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:0f6f17b0f2118737f0684440e615fc0324786a6a72d55bb1d961977d6a59cd44
+scraped_at: 2026-11-12T09:53:33+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d0e7f39a1d3b443b71e5ede0edb430c5ae658db1ed630275804db65b87da9840
 ---
 
 ApplicationContext作为应用上下文，继承自[Context](js-apis-inner-application-context.md)，提供了应用生命周期监听、进程管理、应用环境设置等应用级别的管控能力。
@@ -800,6 +800,58 @@ export default class MyAbility extends UIAbility {
         console.info(`The process running information is: ${JSON.stringify(data)}`);
       }
     })
+  }
+}
+```
+
+## ApplicationContext.getUIAbilityChildProcessInfos
+
+getUIAbilityChildProcessInfos(): Promise<Array<ChildProcessInformation>>
+
+获取当前应用的UIAbility子进程信息。使用Promise异步回调。
+
+返回通过[startSelfUIAbilityInChildProcess](js-apis-inner-application-uiabilitycontext.md#startselfuiabilityinchildprocess)接口启动的进程，以及通过[startAbility](js-apis-inner-application-uiabilitycontext.md#startability-2)接口启动且[StartOptions](js-apis-app-ability-startoptions.md)参数中[processMode](js-apis-app-ability-contextconstant.md#processmode12)设置为NEW\_PROCESS\_ATTACH\_TO\_PARENT模式启动的子进程。无子进程时返回空数组。
+
+**起始版本**：26.0.1
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<[ChildProcessInformation](js-apis-inner-application-childprocessrunninginfo.md)>> | Promise对象，返回当前应用UIAbility子进程信息。无子进程时返回空数组。 |
+
+**错误码**：
+
+以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[元能力子系统错误码](errorcode-ability.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16000011 | The context does not exist. |
+| 16000050 | Connect to system service failed. |
+
+**示例：**
+
+```ts
+import { UIAbility } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+export default class EntryAbility extends UIAbility {
+  onCreate() {
+    // 获取应用上下文
+    let applicationContext = this.context.getApplicationContext();
+    // 获取UIAbility子进程信息
+    applicationContext.getUIAbilityChildProcessInfos().then((data) => {
+      console.info(`getUIAbilityChildProcessInfos success, count: ${data.length}`);
+      for (let info of data) {
+        console.info(`pid: ${info.pid}, parentPid: ${info.parentPid}, processName: ${info.processName}`);
+      }
+    }).catch((err: BusinessError) => {
+      console.error(`getUIAbilityChildProcessInfos failed, code: ${err.code}, msg: ${err.message}`);
+    });
   }
 }
 ```

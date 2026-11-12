@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sync-task-dev
 title: 同步任务开发指导 (TaskPool和Worker)
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 耗时任务并发场景 > 同步任务开发指导 (TaskPool和Worker)
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:33:56+08:00
-doc_updated_at: 2026-09-30
+scraped_at: 2026-11-12T09:51:04+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:6b8b6e472925d5e575905dd8d512aaa751efe7107952d58d685060562d59c54a
 ---
 

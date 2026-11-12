@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-butt
 title: 按钮标注
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 按钮标注
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:01+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:48f0a6d488600049cd5e40ec5c04274fa1d1216dd4ed2c3bbab4b3af829e4a50
+scraped_at: 2026-11-12T09:50:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:81dd5b5ee49870406e1765257bf58b005171b366a8ea4b07147d5bd357a995f1
 ---
 
 ## 设计场景
 
 对于用户可点击等操作的任何按钮，如果不是文本类控件，则须通过给出标注信息，包括用户自定义的控件中的虚拟按钮区域，否则可能会导致屏幕朗读用户无法完成对应的功能。此类控件在进行标注时，标注文本不要包含控件类型、“单指双击即可打开”之类的字符串，此部分指引由屏幕朗读根据控件类型、控件状态，并结合用户是否开启了“新手指引”自动追加朗读。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/JSsXzyOBSp2B38GCevWKVw/zh-cn_image_0000002779849496.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/Le-OneTDToqk03ibbBTThg/zh-cn_image_0000002786518364.png)
 
 ## 开发流程
 

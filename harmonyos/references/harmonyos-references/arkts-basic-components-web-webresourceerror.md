@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-bas
 title: Class (WebResourceError)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS 组件 > Web > Class (WebResourceError)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:28+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e39605217798d399b8e113cc478acf05a19b0e521ee3e5d97b4b929ffeaea3a4
+scraped_at: 2026-11-12T09:55:00+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:23602c9e2584156295a03450e0f42c7e69cae4cbd819b08016d4b80765f3497c
 ---
 
 WebResourceError是Web组件中提供资源加载失败错误信息的类。该错误对象通过onErrorReceive和onHttpErrorReceive事件回调提供给应用，封装了错误详情用于调试和错误处理。通常与WebResourceRequest配合使用以确定哪个资源加载失败。示例代码参考[onErrorReceive事件](arkts-basic-components-web-events.md#onerrorreceive)。
@@ -51,3 +51,23 @@ getErrorInfo(): string
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回加载资源的错误信息。 |
+
+## getCustomErrorCode
+
+getCustomErrorCode(): number
+
+获取加载资源的自定义错误码。自定义错误码通过[WebSchemeHandlerResponse](arkts-apis-webview-webschemehandlerresponse.md)的[setCustomErrorCode](arkts-apis-webview-webschemehandlerresponse.md#setcustomerrorcode)设置，并通过[onErrorReceive](arkts-basic-components-web-events.md#onerrorreceive)事件直接传递给应用。
+
+**起始版本：** 26.0.1
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| number | 返回加载资源的自定义错误码。 |
+
+**示例：**
+
+完整示例代码参考[onErrorReceive事件](arkts-basic-components-web-events.md#onerrorreceive)。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-textarea-
 title: 添加输入框文本事件监听
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 使用文本 > 添加输入框文本事件监听
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:19+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:bba1e493a0c14612003cb9454084e2e97f23a47fdda21d6b71ebd6df78971612
+scraped_at: 2026-11-12T09:51:17+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c2b6cdc2c45b14f4e3d183005c841ecb7ff0aca419c1093a2aa7f200a34124bf
 ---
 
 输入框包含多种交互行为，开发者可注册事件监听并获取状态。以下以多行文本输入框为例进行说明，单行文本输入框添加文本事件监听的步骤与此类似。
@@ -105,7 +105,7 @@ content_hash: sha256:bba1e493a0c14612003cb9454084e2e97f23a47fdda21d6b71ebd6df789
       napi_value args[ConstIde::NUMBER_1] = {nullptr};
       napi_status st = napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
       if (st != napi_ok || argc < ConstIde::NUMBER_1) {
-          OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, ConstIde::K_LOG_DOMAIN, "%{public}s napi_get_cb_info failed",
+          OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, ConstIde::K_LOG_DOMAIN, "%{public}s napi_get_cb_info failed",
                        who);
           return nullptr;
       }
@@ -120,7 +120,7 @@ content_hash: sha256:bba1e493a0c14612003cb9454084e2e97f23a47fdda21d6b71ebd6df789
 
       OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, ConstIde::K_LOG_DOMAIN, "%{public}s after GetNodeContent", who);
 
-      // 可选：保留对 nodeAPI_ 的健壮性检查（与你现有代码一致）
+      // 可选：保留对 nodeAPI_ 的健壮性检查（与现有代码一致）
       if (Manager::nodeAPI_ == nullptr) {
           OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, ConstIde::K_LOG_DOMAIN, "%{public}s nodeAPI_ is null", who);
           return nullptr;
@@ -217,4 +217,4 @@ content_hash: sha256:bba1e493a0c14612003cb9454084e2e97f23a47fdda21d6b71ebd6df789
   }
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/DlYm6vS-SwO57OvH1_WfMQ/zh-cn_image_0000002809049895.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/hzBetWk6SAuIJAcyRgsBXQ/zh-cn_image_0000002786519200.gif)

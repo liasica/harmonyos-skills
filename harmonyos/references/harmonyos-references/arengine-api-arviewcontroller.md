@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-
 title: arViewController（AR场景管理能力）
 breadcrumb: API参考 > 图形 > AR Engine（AR引擎服务） > ArkTS API > arViewController（AR场景管理能力）
 category: harmonyos-references
-scraped_at: 2026-10-29T08:02:14+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:9bb52a475015197e3931de78a2c707a96a197f3a7ec3eb0c7a05e10cab522c13
+scraped_at: 2026-11-12T09:56:53+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4c64e56a2fdfdccd3fb452b445b549d804fde96e4e346b62cbb0daa34f835695
 ---
 
 本模块提供AR Engine（AR引擎服务）的arViewController（AR场景管理能力）相关接口。
@@ -83,8 +83,8 @@ init(): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permissions not granted, such as the camera permission. |
-| 801 | Device not compatible. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes:  1. The hardware does not support the capability.  2. The chip does not support the capability.  3. A dependent service feature is not supported. |
 | 1009200001 | Failure. |
 | 1009200007 | Configuration not supported. |
 | 1009200008 | Resource exhausted. |
@@ -107,6 +107,12 @@ if (ret) {
   await context.init();
 }
 ```
+
+**参考：**
+
+[pause](arengine-api-arviewcontroller.md#arviewcontextpause)
+
+[destroy](arengine-api-arviewcontroller.md#arviewcontextdestroy)
 
 ### ARViewContext.pause
 
@@ -143,6 +149,12 @@ if (ret) {
   context.pause();
 }
 ```
+
+**参考：**
+
+[resume](arengine-api-arviewcontroller.md#arviewcontextresume)
+
+[init](arengine-api-arviewcontroller.md#arviewcontextinit)
 
 ### ARViewContext.destroy
 
@@ -186,6 +198,10 @@ if (ret) {
 }
 ```
 
+**参考：**
+
+[init](arengine-api-arviewcontroller.md#arviewcontextinit)
+
 ### ARViewContext.resume
 
 resume(): void
@@ -222,6 +238,10 @@ if (ret) {
   context.resume();
 }
 ```
+
+**参考：**
+
+[pause](arengine-api-arviewcontroller.md#arviewcontextpause)
 
 ### ARViewContext.scene
 
@@ -436,6 +456,12 @@ if (ret) {
 }
 ```
 
+**参考：**
+
+[removeAsset](arengine-api-arviewcontroller.md#arviewcontextremoveasset)
+
+[clearResource](arengine-api-arviewcontroller.md#arviewcontextclearresource)
+
 ### ARViewContext.removeAsset
 
 removeAsset(landmark: LandmarkType):Promise<void>
@@ -482,6 +508,10 @@ if (ret) {
 }
 ```
 
+**参考：**
+
+[loadAsset](arengine-api-arviewcontroller.md#arviewcontextloadasset)
+
 ### ARViewContext.clearResource
 
 clearResource():Promise<void>
@@ -521,6 +551,10 @@ if (ret) {
   context.clearResource();
 }
 ```
+
+**参考：**
+
+[loadAsset](arengine-api-arviewcontroller.md#arviewcontextloadasset)
 
 ### ARViewContext.setBlendShapeWeight
 
@@ -573,6 +607,10 @@ onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine
   }
 ```
 
+**参考：**
+
+[getBlendShapeWeight](arengine-api-arviewcontroller.md#arviewcontextgetblendshapeweight)
+
 ### ARViewContext.getBlendShapeWeight
 
 getBlendShapeWeight(node: Node, type: arEngine.ARBlendShapeType): number | null
@@ -622,6 +660,10 @@ onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine
     ctx.getBlendShapeWeight(node, arEngine.ARBlendShapeType.EYE_BLINK_LEFT);
   }
 ```
+
+**参考：**
+
+[setBlendShapeWeight](arengine-api-arviewcontroller.md#arviewcontextsetblendshapeweight)
 
 ### ARViewContext.transformPose
 
@@ -729,6 +771,10 @@ if (ret) {
 }
 ```
 
+**参考：**
+
+[removeGSModel](arengine-api-arviewcontroller.md#arviewcontextremovegsmodel)
+
 ### ARViewContext.removeGSModel
 
 removeGSModel(modelID: number):Promise<boolean>
@@ -774,6 +820,10 @@ if (ret) {
   await context.removeGSModel(1);
 }
 ```
+
+**参考：**
+
+[loadGSModel](arengine-api-arviewcontroller.md#arviewcontextloadgsmodel)
 
 ### ARViewContext.callback
 
@@ -974,7 +1024,7 @@ AR场景每帧刷新前自动触发该回调，开发者可在此调整AR实体�
 import { arEngine, arViewController } from '@kit.AREngine';
 
 // 参考ARViewContext.callback接口示例代码创建callback类再实现该接口
-onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): void {
+async onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): Promise<void> {
   let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SLAM);
   if (!ret) {
     return;
@@ -986,7 +1036,7 @@ onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): void {
       console.error('Failed to get arSession.frame, it is undefined or null');
     } else {
       console.info(`Succeeded in getting arSession.frame = ${frame.timestamp}`);
-      frame.release();
+      await frame.release();
     }
   } else {
     console.error('Failed to get arSession, arSession is undefined');

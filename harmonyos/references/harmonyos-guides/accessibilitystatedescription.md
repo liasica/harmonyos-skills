@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/accessibility
 title: 自定义控件播报状态
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 自定义控件播报状态
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:25+08:00
-doc_updated_at: 2026-09-23
+scraped_at: 2026-11-12T09:51:00+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:ee33a92677ed3811e057df1cd37d935e509c33cd8a02bed78adc6dbf25687b7e
 ---
 

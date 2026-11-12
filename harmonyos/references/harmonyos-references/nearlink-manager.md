@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/nearlink-
 title: manager（星闪开关能力）
 breadcrumb: API参考 > 系统 > 网络 > NearLink Kit（星闪服务） > ArkTS API > manager（星闪开关能力）
 category: harmonyos-references
-scraped_at: 2026-10-17T06:46:40+08:00
-doc_updated_at: 2026-10-16
+scraped_at: 2026-11-12T09:55:37+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:138d63d7dc1b3ba5bb07dccfca4f0339cfaeefdeecd25889ab42d3900c8a9b9b
 ---
 

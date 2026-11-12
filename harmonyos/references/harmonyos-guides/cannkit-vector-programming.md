@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-vector-programming
 title: 矢量编程
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子实现 > 矢量编程
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC算子实现 > 矢量编程
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:49+08:00
-doc_updated_at: 2026-08-18
-content_hash: sha256:9b6733c9baa375729e4786e359b35e9b70f049adfdbb8eee70e68539aa440068
+scraped_at: 2026-11-12T09:52:42+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:fe37fd361ca8869ccfc7eea31bde2fef592e07e5b8299f4c9e6e7f33cccce744
 ---
 
 ## 算子实现流程概述
@@ -14,7 +14,7 @@ content_hash: sha256:9b6733c9baa375729e4786e359b35e9b70f049adfdbb8eee70e68539aa4
 
 **图1** 矢量算子实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/cjQbtLI9Twa29DcNf8b8EA/zh-cn_image_0000002809051299.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/Cqe_96C9SQeluTWGrheb-g/zh-cn_image_0000002815560111.png)
 
 * 算子分析：分析算子的数学表达式、输入、输出以及计算逻辑的实现，明确需要调用的AscendC接口。
 * 核函数定义：定义AscendC算子入口函数。
@@ -34,11 +34,11 @@ content_hash: sha256:9b6733c9baa375729e4786e359b35e9b70f049adfdbb8eee70e68539aa4
    z = x + y
    ```
 
-   计算逻辑是：AscendC提供的[矢量计算](cannkit-vector-calculation-exp.md)接口的操作元素都为LocalTensor，输入数据需要先搬运进片上存储，然后使用计算接口完成两个输入参数相加，得到最终结果，再搬出到外部存储上。AscendC Add算子的计算逻辑如下图所示。
+   计算逻辑是：AscendC提供的[矢量计算](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/memory_vector_compute/Vector_logical_arch/Vector_logical_arch.md)接口的操作元素都为LocalTensor，输入数据需要先搬运进片上存储，然后使用计算接口完成两个输入参数相加，得到最终结果，再搬出到外部存储上。AscendC Add算子的计算逻辑如下图所示。
 
    **图2** 算子计算逻辑
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/thqt3OdhSg2Xr68jnlnDFw/zh-cn_image_0000002779851734.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/wRzqSIhaQWyCTaV-nJHN1g/zh-cn_image_0000002815400195.png)
 2. 明确输入和输出。
 
    * Add算子有两个输入：x与y，输出为z。
@@ -51,9 +51,9 @@ content_hash: sha256:9b6733c9baa375729e4786e359b35e9b70f049adfdbb8eee70e68539aa4
    * 根据对算子输入输出的分析，确定核函数有3个参数x，y，z；x，y为输入在Global Memory上的内存地址，z为输出在Global Memory上的内存地址。
 4. 确定算子实现所需接口。
 
-   * 实现涉及外部存储和内部存储间的数据搬运，查看AscendC API参考中的数据搬移接口，需要使用[DataCopy](cannkit-common-data-movement.md)来实现数据搬移。
-   * 本样例只涉及矢量计算的加法操作，通过查看AscendC API参考中的[矢量计算](cannkit-vector-calculation-exp.md)接口定义，初步分析可使用双目指令[Add](cannkit-add.md)接口实现x+y。
-   * 计算中使用到的Tensor数据结构，使用Queue队列进行管理，会使用到[EnQue](cannkit-tque-enque.md)、[DeQue](cannkit-tque-deque.md)等接口。
+   * 实现涉及外部存储和内部存储间的数据搬运，查看AscendC API参考中的数据搬移接口，需要使用[DataCopy](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/memory_vector_compute/data_move/DataCopy_GMAndUB_continuous.md)来实现数据搬移。
+   * 本样例只涉及矢量计算的加法操作，通过查看AscendC API参考中的[矢量计算](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/memory_vector_compute/Vector_logical_arch/Vector_logical_arch.md)接口定义，初步分析可使用双目指令[Add](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/memory_vector_compute/basic_arithmetic/Add.md)接口实现x+y。
+   * 计算中使用到的Tensor数据结构，使用Queue队列进行管理，会使用到[EnQue](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/resource_management/TQue/EnQue.md)、[DeQue](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/resource_management/TQue/DeQue.md)等接口。
 
    通过以上分析，得到AscendC Add算子的设计规格如下。
 
@@ -105,7 +105,7 @@ content_hash: sha256:9b6733c9baa375729e4786e359b35e9b70f049adfdbb8eee70e68539aa4
 
 **图3** Add算子实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/559xLLW6SWCCxL0Ki4FVxg/zh-cn_image_0000002779691766.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/jg547Xk2RS6-X6jcRFaOmQ/zh-cn_image_0000002786520620.png)
 
 算子类中主要实现上述流程，包含对外开放的初始化Init函数和核心处理函数Process，Process函数中会对上图中的三个基本任务进行调用；同时包括一些算子实现中会用到的私有成员，比如上图中的Global Tensor和VECIN、VECOUT队列等。KernelAdd算子类具体成员如下。
 
@@ -148,11 +148,11 @@ private:
   xGm.SetGlobalBuffer((__gm__ half*)x + BLOCK_LENGTH * GetBlockIdx(), BLOCK_LENGTH);
   ```
 
-  本样例中的分配方案是：数据整体长度TOTAL\_LENGTH为8 \* 2048，平均分配到8个核上运行，每个核上处理的数据大小BLOCK\_LENGTH为2048字节。x + BLOCK\_LENGTH \* GetBlockIdx()即为单核处理程序中x在Global Memory上的内存偏移地址，获取偏移地址后，使用[GlobalTensor](cannkit-globaltensor.md)类的接口设定该核上Global Memory的起始地址以及长度。具体示意图请参考图4。
+  本样例中的分配方案是：数据整体长度TOTAL\_LENGTH为8 \* 2048，由于Kirin9020/Kirin9030/KirinX90系列处理器支持的核数为1（Kirin9050系列支持的核数为4），实际使用1个核运行，每个核上处理的数据大小BLOCK\_LENGTH为16384字节（TOTAL\_LENGTH / USE\_CORE\_NUM）。x + BLOCK\_LENGTH \* GetBlockIdx()即为单核处理程序中x在Global Memory上的内存偏移地址，获取偏移地址后，使用[GlobalTensor](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/data_structures/GlobalTensor/GlobalTensor_intro.md)类的接口设定该核上Global Memory的起始地址以及长度。具体示意图请参考图4。
 
   **图4** 多核并行处理示意图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/LmAn4M3bSt65tCmTbtL42w/zh-cn_image_0000002809011387.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/2ninXwE_Qn2czJG2FJKP5Q/zh-cn_image_0000002786360692.png)
 * 通过Pipe内存管理对象为输入输出Queue分配内存。
 
   比如，为输入x的Queue分配内存，可以通过如下代码段实现：
@@ -167,9 +167,9 @@ private:
 
   **图5** 单核数据切分示意图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/oIWkhWk5R--mOYZj77sEPg/zh-cn_image_0000002809051301.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/MlRMcqSDTGOjbk_SzPYwhA/zh-cn_image_0000002815560113.png)
 
-Kirin9020/Kirin9030/KirinX90系列处理器支持的核数为1，具体的初始化函数代码如下。
+Kirin9020/Kirin9030/KirinX90系列处理器支持的核数为1（Kirin9050系列支持的核数为4），具体的初始化函数代码如下。
 
 ```cpp
 constexpr int32_t TOTAL_LENGTH = 8 * 2048; // 数据总长度
@@ -211,8 +211,8 @@ __aicore__ inline void Init(GM_ADDR x, GM_ADDR y, GM_ADDR z)
 
 1. CopyIn函数实现。
 
-   1. 使用[DataCopy](cannkit-common-data-movement.md)接口将GlobalTensor数据拷贝到LocalTensor。
-   2. 使用[EnQue](cannkit-tque-enque.md)将LocalTensor放入VecIn的Queue中。
+   1. 使用[DataCopy](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/memory_vector_compute/data_move/DataCopy_GMAndUB_continuous.md)接口将GlobalTensor数据拷贝到LocalTensor。
+   2. 使用[EnQue](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/resource_management/TQue/EnQue.md)将LocalTensor放入VecIn的Queue中。
 
    ```cpp
    __aicore__ inline void CopyIn(int32_t progress)
@@ -230,10 +230,10 @@ __aicore__ inline void Init(GM_ADDR x, GM_ADDR y, GM_ADDR z)
    ```
 2. Compute函数实现。
 
-   1. 使用[DeQue](cannkit-tque-deque.md)从VecIn中取出LocalTensor。
-   2. 使用[Add](cannkit-add.md)接口完成矢量计算。
-   3. 使用[EnQue](cannkit-tque-enque.md)将计算结果LocalTensor放入到VecOut的Queue中。
-   4. 使用[FreeTensor](cannkit-tque-freetensor.md)释放不再使用的LocalTensor。
+   1. 使用[DeQue](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/resource_management/TQue/DeQue.md)从VecIn中取出LocalTensor。
+   2. 使用[Add](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/memory_vector_compute/basic_arithmetic/Add.md)接口完成矢量计算。
+   3. 使用[EnQue](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/resource_management/TQue/EnQue.md)将计算结果LocalTensor放入到VecOut的Queue中。
+   4. 使用[FreeTensor](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/resource_management/TQue/FreeTensor.md)释放不再使用的LocalTensor。
 
    ```cpp
    __aicore__ inline void Compute(int32_t progress)
@@ -253,9 +253,9 @@ __aicore__ inline void Init(GM_ADDR x, GM_ADDR y, GM_ADDR z)
    ```
 3. CopyOut函数实现。
 
-   1. 使用[DeQue](cannkit-tque-deque.md)接口从VecOut的Queue中取出LocalTensor。
-   2. 使用[DataCopy](cannkit-common-data-movement.md)接口将LocalTensor拷贝到GlobalTensor上。
-   3. 使用[FreeTensor](cannkit-tque-freetensor.md)将不再使用的LocalTensor进行回收。
+   1. 使用[DeQue](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/resource_management/TQue/DeQue.md)接口从VecOut的Queue中取出LocalTensor。
+   2. 使用[DataCopy](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/memory_vector_compute/data_move/DataCopy_GMAndUB_continuous.md)接口将LocalTensor拷贝到GlobalTensor上。
+   3. 使用[FreeTensor](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/resource_management/TQue/FreeTensor.md)将不再使用的LocalTensor进行回收。
 
    ```cpp
     __aicore__ inline void CopyOut(int32_t progress)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-memory
 title: 记忆（Memory）配置
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 使用AI智能辅助编程（不推荐） > 自定义智能体配置 > 记忆（Memory）配置
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:31+08:00
+scraped_at: 2026-11-12T09:53:12+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:10eb6936a95ea0a5b15648bc937886542edd930fbd77fe695445d6e82b9e468d
+content_hash: sha256:669690a757f4d9b630e3329fb864ea068393d9ac9244f741a23d89ef00adca2e
 ---
 
 ## 功能介绍
@@ -27,12 +27,12 @@ content_hash: sha256:10eb6936a95ea0a5b15648bc937886542edd930fbd77fe695445d6e82b9
 
 ## 操作步骤
 
-1. 点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/DF55RtzIQxqGO-6yrVzVQA/zh-cn_image_0000002701662968.png)按钮，选择**Memory**，进入配置页面。
+1. 点击界面右上方**Settings**![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/x6BqTzmER0-uAhPPwSK6xQ/zh-cn_image_0000002779566788.png)按钮，选择**Memory**，进入配置页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/2jlzQz34T0-hgYBLeNYuzg/zh-cn_image_0000002731542161.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/Q4aDkMWuQs2C8Y8_UWYhdQ/zh-cn_image_0000002808886451.png)
 2. 点击Memory后开关，开启和关闭记忆。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/q8PT4T6IR5WFIy4BUQDFkg/zh-cn_image_0000002731542165.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/cRJI4pbyS0ecygkIU1aDBA/zh-cn_image_0000002808766371.png "点击放大")
 3. 在**Memory List**（记忆列表）下展示所有记忆，包括**Global**（记录用户相关信息）、**Project**（记录项目相关信息）。将鼠标悬浮在记忆上会显示具体信息，以及出现编辑、删除按钮，方便开发者管理记忆。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/rdBM-_vvQqG-FVrxf1hYbg/zh-cn_image_0000002731542167.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/qjQLJfpyS8eZrlbrvnUvLA/zh-cn_image_0000002808886453.png "点击放大")

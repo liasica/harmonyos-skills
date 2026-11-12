@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口进行primitive类相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口进行primitive类相关开发
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:16+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:52:47+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:0f33879852f82869246331e407bd37e077f0956ba10d8a68b8869d01902ac67b
 ---
 

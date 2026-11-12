@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cloudfoundati
 title: 新增存储区
 breadcrumb: 指南 > 应用服务 > Cloud Foundation Kit（云开发服务） > 云数据库 > 新增存储区
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:27+08:00
+scraped_at: 2026-11-12T09:52:21+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:d6b9f8971190b2d47d5a7b05950b3b4e55cc1453e9aa84be8add3317530127d6
+content_hash: sha256:03b469b6bc77e46f5c5117869eb0ec0d7dec5580182108aae2a33f5ae5497009
 ---
 
 此章节以建立一个“存储区名称”为“QuickStartDemo”的存储区举例说明。
@@ -21,7 +21,7 @@ content_hash: sha256:d6b9f8971190b2d47d5a7b05950b3b4e55cc1453e9aa84be8add3317530
 3. 在左侧导航栏选择“云开发（Serverless）> 云数据库”，进入云数据库页面。
 4. 点击“存储区”页签，点击“新增”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/a5nLxf6tSSOy2jaZZXNIJA/zh-cn_image_0000002809010961.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/5lYlfeOAQRuh2aQAc-TBTQ/zh-cn_image_0000002815559677.png)
 5. 在“新增存储区”弹框中填写“存储区名称”为“QuickStartDemo”，点击“确定”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/4_RlRimIRwmPmPEgo7vqHg/zh-cn_image_0000002809050875.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/eRd46yyuThiENbh_yRIPUQ/zh-cn_image_0000002815399761.png)

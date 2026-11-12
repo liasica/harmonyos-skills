@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/recoverykey-g
 title: 获取挑战值
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > 企业恢复密钥 > 获取挑战值
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:30+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d1dcc0de076cfdbe01de883ff47742d3c7ef05665701d71393b924d3cefc6cd5
+scraped_at: 2026-11-12T09:51:38+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:2a5a8829a73b9a073c99ff4dda065908a026512cd880d81ac0ea21218a32d0b3
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:d1dcc0de076cfdbe01de883ff47742d3c7ef05665701d71393b924d3cef
 
 | 接口名 | 描述 |
 | --- | --- |
-| [getAuthChallenge](../harmonyos-references/dataguard-recoverykey.md#recoverykeygetauthchallenge)(): Promise<Uint8Array> | 使用Promise方式获取挑战值。 |
+| [getAuthChallenge](../harmonyos-references/dataguard-recoverykey.md#recoverykeygetauthchallenge)(): Promise<Uint8Array> | 获取挑战值。使用Promise异步回调。 |
 
 ## 开发步骤
 

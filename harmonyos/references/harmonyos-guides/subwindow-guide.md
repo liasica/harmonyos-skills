@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/subwindow-gui
 title: 子窗口开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 子窗口开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:13+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a4e7191316fbf9b41ef763f80a4f2176b5a64970e363d7130a51e26a5018f049
+scraped_at: 2026-11-12T09:51:20+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b1fd6335c92d80b6669cf486b02f8a0a13ff956dccf903b1700785f410ca6f91
 ---
 
 ## 场景介绍
@@ -42,7 +42,7 @@ content_hash: sha256:a4e7191316fbf9b41ef763f80a4f2176b5a64970e363d7130a51e26a501
              }
              subWindowClass = data;
              if (!subWindowClass) {
-               console.error('sub_windowClass is null');
+               console.error('subWindowClass is null');
                return;
              }
              console.info('Succeeded in creating the subwindow. Data: ' + JSON.stringify(data));
@@ -67,7 +67,7 @@ content_hash: sha256:a4e7191316fbf9b41ef763f80a4f2176b5a64970e363d7130a51e26a501
            promise.then((data: window.Window | undefined) => {
              independentWindowClass = data;
              if (!independentWindowClass) {
-               console.error('independent_sub_windowClass is null');
+               console.error('independentSubWindowClass is null');
                return;
              }
              console.info(`Succeeded in creating the subwindow. Data: ${JSON.stringify(data)}`);
@@ -94,7 +94,7 @@ content_hash: sha256:a4e7191316fbf9b41ef763f80a4f2176b5a64970e363d7130a51e26a501
      }
      console.info('Succeeded in moving the window.');
      if (!independentWindowClass) {
-       console.error('independent_windowClass is null');
+       console.error('independentWindowClass is null');
        return;
      }
      independentWindowClass.resize(1000, 500, (err) => {
@@ -121,7 +121,7 @@ content_hash: sha256:a4e7191316fbf9b41ef763f80a4f2176b5a64970e363d7130a51e26a501
      }
      console.info('Succeeded in loading the content.');
      if (!independentWindowClass) {
-       console.error('independent_windowClass is null');
+       console.error('independentWindowClass is null');
        return;
      }
      // 显示子窗口。
@@ -141,7 +141,7 @@ content_hash: sha256:a4e7191316fbf9b41ef763f80a4f2176b5a64970e363d7130a51e26a501
    此处以销毁独立子窗为例。示例代码如下：
 
    ```typescript
-   // 4.销毁子窗口。当不再需要子窗口时，可根据具体实现逻辑，使用destroy对其进行销毁。
+   // 4.销毁子窗口。当不再需要子窗口时，可根据具体实现逻辑，使用destroyWindow对其进行销毁。
    independentWindowClass.destroyWindow((err) => {
      if (err?.code) {
        console.error(`Failed to destroy the window. Cause code: ${err.code}, message: ${err.message}`);

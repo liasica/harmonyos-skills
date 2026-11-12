@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/history-ver
 title: 历史版本
 breadcrumb: 版本说明 > 更多版本 > 历史版本
 category: harmonyos-releases
-scraped_at: 2026-10-09T08:12:21+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-11-12T09:50:20+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:9a627ed0e714995fdd7b1190f6ffd89ae7b6f7eee6e83f1e2465e07c437dda83
 ---
 

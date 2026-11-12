@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uinput
 title: uinput
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > uinput
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:08+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:c2c57bab614b20a5b4a886ada0e5f40b42a55b1242cf3bc217e057ff47e1d496
+scraped_at: 2026-11-12T09:51:57+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:aa71bdb26f64f3fa855945372c847822381609fa5f4e2e1c8543388518f03de6
 ---
 
 uinput 可模拟用户操作，例如鼠标、键盘、触控板等设备，适用于稳定性等压力测试。
@@ -27,6 +27,7 @@ uinput <option> <command> <arg> ...
 
 | 命令简写 | 命令全写 | 含义说明 |
 | --- | --- | --- |
+| -D | --display | [指定注入事件的目标显示器](uinput.md#指定目标显示器)。 |
 | -M | --mouse | 注入鼠标事件。 |
 | -K | --keyboard | 注入键盘事件。 |
 | -S | --stylus | 注入触控笔事件。 |
@@ -58,6 +59,9 @@ uinput -?
 
 # 执行结果
 Usage: uinput <option> <command> <arg>...
+-D <displayId>  --display <displayId>  -inject event to target display (optional, before device option)
+example: uinput -D 0 -M -m 100 200
+
 The option are:
 -K  --keyboard
 commands for keyboard:
@@ -69,6 +73,33 @@ commands for keyboard:
 
 ...
 ```
+
+## 指定目标显示器
+
+指定注入事件的目标显示器，为可选参数，使用时需放在设备类型选项（如-M、-K）之前。指定后，注入的鼠标、触摸、触控板等事件将作用于目标显示器对应的屏幕，注入的键盘事件将作用于屏幕组；未指定时，事件注入行为与原有默认行为一致。
+
+**命令**
+
+```bash
+uinput -D <displayId> <option> <command> <arg> ...
+uinput --display <displayId> <option> <command> <arg> ...
+
+# <displayId>目标显示器的ID，仅支持非负整数。
+```
+
+**使用示例**
+
+```bash
+# 在显示器0上模拟鼠标移动到以指定屏幕左上角为原点的相对坐标系的位置(100, 100)。
+uinput -D 0 -M -m 100 100
+
+# 在显示器1上模拟手指在(100, 100)位置单击。
+uinput --display 1 -T -c 100 100
+```
+
+**说明** 
+
+若传入的displayId无效（非整数或负数），命令报错：invalid displayId。
 
 ## 鼠标事件
 

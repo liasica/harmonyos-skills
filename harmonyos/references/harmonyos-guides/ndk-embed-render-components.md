@@ -3,16 +3,19 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-embed-ren
 title: 构建渲染节点
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 构建渲染节点
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:31:56+08:00
-doc_updated_at: 2026-10-30
-content_hash: sha256:5d83c54c2351e33177e895a716ac96be56760c120394b1eaa813624211e14a14
+scraped_at: 2026-11-12T09:51:18+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:993e59e709c4d1c60ccebfbf804133c996363e8c93f1b63dbc6b5855d52c677f
 ---
 
-从API version 20开始，ArkUI开发框架针对NDK接口，提供了直接构建渲染节点的能力，包括节点树操作、属性设置及含动画的自定义绘制。开发者通过调用渲染节点相关能力，可以绕过[registerNodeCustomEvent](../harmonyos-references/capi-arkui-nativemodule-arkui-nativenodeapi-1.md#registernodecustomevent)的测量布局过程，直接对节点进行绘制并调整其大小和位置。
+从API版本20开始，ArkUI开发框架针对NDK接口，提供了直接构建渲染节点的能力，包括节点树操作、属性设置及含动画的自定义绘制。开发者通过调用渲染节点相关能力，可以绕过[registerNodeCustomEvent](../harmonyos-references/capi-arkui-nativemodule-arkui-nativenodeapi-1.md#registernodecustomevent)的测量布局过程，直接对节点进行绘制并调整其大小和位置。
 
-* **渲染节点树操作相关的能力** ，例如[OH\_ArkUI\_RenderNodeUtils\_AddRenderNode](../harmonyos-references/capi-native-render-h.md#oh_arkui_rendernodeutils_addrendernode)、[OH\_ArkUI\_RenderNodeUtils\_AddChild](../harmonyos-references/capi-native-render-h.md#oh_arkui_rendernodeutils_addchild)等接口用于编辑渲染节点树的结构。仅类型为ARKUI\_NODE\_CUSTOM且无其他子节点的自定义节点能够挂载渲染节点，且最多挂载一个渲染节点。即渲染节点以子树形式挂载在类型为ARKUI\_NODE\_CUSTOM的叶子自定义节点上。
-* **渲染节点属性设置的能力** ，详情请参考[函数](../harmonyos-references/capi-native-render-h.md#函数)，查看当前渲染节点支持的属性能力。
-* **自定义绘制能力**，参考[OH\_ArkUI\_RenderNodeUtils\_SetContentModifierOnDraw](../harmonyos-references/capi-native-render-h.md#oh_arkui_rendernodeutils_setcontentmodifierondraw)及其相关接口，同时可以通过[OH\_ArkUI\_RenderNodeUtils\_SetFloatPropertyValue](../harmonyos-references/capi-native-render-h.md#oh_arkui_rendernodeutils_setfloatpropertyvalue)这一类绑定在ContentModifier的接口对自定义绘制的内容进行动态修改。
+从API版本26.0.1开始，ArkUI开发框架对基于渲染节点开发的滚动类型组件提供了性能优化方案，开发者可以开启Dvsync开关，提高渲染节点在抛滑场景的流畅度。
+
+* [渲染节点树操作相关的能力](ndk-embed-render-components.md#节点挂载与基础属性设置) ，例如[OH\_ArkUI\_RenderNodeUtils\_AddRenderNode](../harmonyos-references/capi-native-render-h.md#oh_arkui_rendernodeutils_addrendernode)、[OH\_ArkUI\_RenderNodeUtils\_AddChild](../harmonyos-references/capi-native-render-h.md#oh_arkui_rendernodeutils_addchild)等接口用于编辑渲染节点树的结构。仅类型为ARKUI\_NODE\_CUSTOM且无其他子节点的自定义节点能够挂载渲染节点，且最多挂载一个渲染节点。即渲染节点以子树形式挂载在类型为ARKUI\_NODE\_CUSTOM的叶子自定义节点上。
+* [渲染节点属性设置的能力](ndk-embed-render-components.md#节点挂载与基础属性设置) ，详情请参考[函数](../harmonyos-references/capi-native-render-h.md#函数)，查看当前渲染节点支持的属性能力。
+* [自定义绘制能力](ndk-embed-render-components.md#自定义绘制及动画)，参考[OH\_ArkUI\_RenderNodeUtils\_SetContentModifierOnDraw](../harmonyos-references/capi-native-render-h.md#oh_arkui_rendernodeutils_setcontentmodifierondraw)及其相关接口，同时可以通过[OH\_ArkUI\_RenderNodeUtils\_SetFloatPropertyValue](../harmonyos-references/capi-native-render-h.md#oh_arkui_rendernodeutils_setfloatpropertyvalue)这一类绑定在ContentModifier的接口对自定义绘制的内容进行动态修改。
+* [使用Dvsync优化渲染节点性能](ndk-embed-render-components.md#使用dvsync优化渲染节点性能)，参考[OH\_ArkUI\_NodeUtils\_SetUiDvsyncSwitch](../harmonyos-references/capi-native-node-h.md#oh_arkui_nodeutils_setuidvsyncswitch)接口打开Dvsync开关，提高抛滑场景下渲染节点的滚动流畅度。Dvsync的原理、功能以及使用限制请参考下文。
 
 ## 节点挂载与基础属性设置
 
@@ -355,7 +358,7 @@ content_hash: sha256:5d83c54c2351e33177e895a716ac96be56760c120394b1eaa813624211e
 
 ## 混排挂载原生组件与渲染节点
 
-从API version 22开始，开发者可以高效地混排挂载原生组件与渲染节点。具体操作为：获取原生组件对应的渲染节点，并将其挂载至非原生组件的渲染节点下，从而实现原生组件的渲染节点与非原生组件的渲染节点混排。
+从API版本22开始，开发者可以高效地混排挂载原生组件与渲染节点。具体操作为：获取原生组件对应的渲染节点，并将其挂载至非原生组件的渲染节点下，从而实现原生组件的渲染节点与非原生组件的渲染节点混排。
 
 进行混排挂载前，需要对原生组件进行接纳操作。父节点接纳目标子节点后，子节点会成为父节点的附属节点，只有附属节点能够获取渲染节点，并将这个渲染节点挂载至渲染节点树的其他位置上。
 
@@ -473,7 +476,6 @@ content_hash: sha256:5d83c54c2351e33177e895a716ac96be56760c120394b1eaa813624211e
    // 定义传递参数的接口
    interface ParamsInterface {
      text: string;
-     func: Function;
    }
    class MyNodeController extends NodeController {
      private imperativeNode: FrameNode | null = null;
@@ -492,27 +494,25 @@ content_hash: sha256:5d83c54c2351e33177e895a716ac96be56760c120394b1eaa813624211e
        let buildNode = new BuilderNode<[ParamsInterface]>(uiContext);
        // 创建节点树
        buildNode.build(wrapBuilder<[ParamsInterface]>(buildText), {
-         text: message, func: () => {
-           return 'FUNCTION';
-         }
+         text: message
        }, { nestingBuilderSupported: true });
        this.buildNode = buildNode.getFrameNode();
        entry.adopt(buildNode);
      }
-     removeAdoptedNode(uiContext:UIContext):void {
+     removeAdoptedNode(): void {
        entry.removeAdopt();
      }
    }
 
    @Builder
-   function buildTextWithFunc(fun: Function) {
+   function buildTextWithFunc() {
      Web({ src: 'https://www.example.com', controller: new webview.WebviewController() })
    }
 
    @Builder
    function buildText(params: ParamsInterface) {
      Column() {
-       buildTextWithFunc(params.func)
+       buildTextWithFunc()
      }
    }
 
@@ -562,7 +562,7 @@ content_hash: sha256:5d83c54c2351e33177e895a716ac96be56760c120394b1eaa813624211e
              Button(this.adoptmsg)
                .onClick(() => {
                  if (this.isAdopt) {
-                   this.myNodeController.removeAdoptedNode(this.getUIContext());
+                   this.myNodeController.removeAdoptedNode();
                    this.adoptmsg = 'adopt web component';
                  } else {
                    this.myNodeController.adoptNode(this.getUIContext(),this.message);
@@ -586,14 +586,27 @@ content_hash: sha256:5d83c54c2351e33177e895a716ac96be56760c120394b1eaa813624211e
        size_t argc = 1;
        napi_value args[1] = {nullptr};
        napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-       // 获取ArkTS侧组件挂载点。
+       // 获取ArkTS侧节点句柄。
        int32_t result = OH_ArkUI_GetNodeHandleFromNapiValue(env, args[0], &nodeHandle_);
        if (result != ARKUI_ERROR_CODE_NO_ERROR) {
            return nullptr;
        }
        result = OH_ArkUI_NativeModule_AdoptChild(custom_->GetHandle(), nodeHandle_);
-       OH_ArkUI_RenderNodeUtils_GetRenderNode(nodeHandle_, &renderHandle_);
-       OH_ArkUI_RenderNodeUtils_AddChild(render_->GetHandle(), renderHandle_);
+       if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+           return nullptr;
+       }
+       result = OH_ArkUI_RenderNodeUtils_GetRenderNode(nodeHandle_, &renderHandle_);
+       if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+           OH_ArkUI_NativeModule_RemoveAdoptedChild(custom_->GetHandle(), nodeHandle_);
+           return nullptr;
+       }
+       result = OH_ArkUI_RenderNodeUtils_AddChild(render_->GetHandle(), renderHandle_);
+       if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+           OH_ArkUI_RenderNodeUtils_DisposeNode(renderHandle_);
+           renderHandle_ = nullptr;
+           OH_ArkUI_NativeModule_RemoveAdoptedChild(custom_->GetHandle(), nodeHandle_);
+           return nullptr;
+       }
        return nullptr;
    }
    ```
@@ -602,11 +615,30 @@ content_hash: sha256:5d83c54c2351e33177e895a716ac96be56760c120394b1eaa813624211e
    ```
    napi_value RemoveAdopt(napi_env env, napi_callback_info info)
    {
-       OH_ArkUI_NativeModule_RemoveAdoptedChild(custom_->GetHandle(), nodeHandle_);
+       int32_t result = OH_ArkUI_NativeModule_RemoveAdoptedChild(custom_->GetHandle(), nodeHandle_);
+       if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+           return nullptr;
+       }
        // 解除节点的接纳状态后，需要额外调用OH_ArkUI_RenderNodeUtils_DisposeNode释放对应的渲染节点，否则会导致内存泄漏。
-       OH_ArkUI_RenderNodeUtils_DisposeNode(renderHandle_);
+       result = OH_ArkUI_RenderNodeUtils_DisposeNode(renderHandle_);
+       if (result != ARKUI_ERROR_CODE_NO_ERROR) {
+           return nullptr;
+       }
        nodeHandle_ = nullptr;
        renderHandle_ = nullptr;
        return nullptr;
    }
    ```
+
+## 使用Dvsync优化渲染节点性能
+
+从API版本26.0.1开始，开发者在开发滚动类型自定义组件时，能够通过[OH\_ArkUI\_NodeUtils\_SetUiDvsyncSwitch](../harmonyos-references/capi-native-node-h.md#oh_arkui_nodeutils_setuidvsyncswitch)打开Dvsync开关，对渲染节点的抛滑场景进行插帧，提高抛滑的滚动流畅度。
+
+Dvsync是Decoupled Vsync的缩写，表示一种与硬件Vsync解耦的帧时序管理策略。开发者可以通过[OH\_ArkUI\_NodeUtils\_SetUiDvsyncSwitch](../harmonyos-references/capi-native-node-h.md#oh_arkui_nodeutils_setuidvsyncswitch)开启Dvsync，开启后系统会更及时地响应Vsync请求并更频繁地执行渲染任务，帮助减少掉帧，改善动画的流畅度。
+
+当前Dvsync仅用于渲染节点的抛滑场景。在其他场景通过[OH\_ArkUI\_NodeUtils\_SetUiDvsyncSwitch](../harmonyos-references/capi-native-node-h.md#oh_arkui_nodeutils_setuidvsyncswitch)开启Dvsync开关，Dvsync不会生效，请勿在非渲染节点抛滑场景开启Dvsync。使用Dvsync前，请确认当前应用和窗口满足以下条件，使用过程中不满足以下条件会自动关闭，需要重新调用接口开启Dvsync。
+
+| 检查项 | 规则 |
+| --- | --- |
+| 窗口状态 | 只有前台应用可以开启Dvsync。应用退到后台后，Dvsync会自动关闭。 |
+| 窗口焦点 | 开启Dvsync的窗口失去焦点后，Dvsync会自动关闭。 |

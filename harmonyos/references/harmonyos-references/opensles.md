@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/opensles
 title: OpenSL ES
 breadcrumb: API参考 > 标准库 > OpenSL ES
 category: harmonyos-references
-scraped_at: 2026-09-05T06:21:39+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:bf3fee4eb627279c618b0735e518d425222ecf05cb3e8c253c8426fee4325ad7
+scraped_at: 2026-11-12T09:57:50+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4358cfd11ab68b469f8c8031398eaa3a45f47c30748ab2aa18be3ca14fa64515
 ---
 
 **说明** 
@@ -38,7 +38,7 @@ libOpenSLES.so
 | --- | --- | --- | --- | --- |
 | SLEngineItf | CreateAudioPlayer | CreateAudioPlayer(SLEngineItf self, SLObjectItf \*pPlayer, SLDataSource \*pAudioSrc, SLDataSink \*pAudioSnk, SLuint32 numInterfaces, const SLInterfaceID \*pInterfaceIds, const SLboolean \*pInterfaceRequired) | 是 | 创建音频播放机。 |
 | SLEngineItf | CreateAudioRecorder | CreateAudioRecorder(SLEngineItf self, SLObjectItf \*pRecorder, SLDataSource \*pAudioSrc, SLDataSink \*pAudioSnk, SLuint32 numInterfaces, const SLInterfaceID \*pInterfaceIds, const SLboolean \*pInterfaceRequired) | 是 | 创建音频录制器。 |
-| SLEngineItf | CreateAudioOutputMix | CreateOutputMix(SLEngineItf self, SLObjectItf \*pMix, SLuint32 numInterfaces, const SLInterfaceID \*pInterfaceIds, const SLboolean \*pInterfaceRequired) | 是 | 创建混音器。 |
+| SLEngineItf | CreateOutputMix | CreateOutputMix(SLEngineItf self, SLObjectItf \*pMix, SLuint32 numInterfaces, const SLInterfaceID \*pInterfaceIds, const SLboolean \*pInterfaceRequired) | 是 | 创建混音器。 |
 | SLObjectItf | Realize | Realize(SLObjectItf self, SLboolean async) | 是 | 创建音频播放机。 |
 | SLObjectItf | getState | GetState(SLObjectItf self, SLuint32 \*pState) | 是 | 获取状态。 |
 | SLObjectItf | getInterface | GetInterface(SLObjectItf self, const SLInterfaceID iid, void \*pInterface) | 是 | 获取接口。 |

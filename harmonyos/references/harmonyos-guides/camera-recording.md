@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-record
 title: 录像(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 录像(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:19+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:607847ee77771241444aa42e639ff65b3a2668b21c5b315645fdb5cfbfbc86bc
+scraped_at: 2026-11-12T09:52:04+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:465c6b928b67d5d39d873a3087cf861379f4c83910dad47176af847d6ad74e2f
 ---
 
 在开发相机应用时，需要先[申请相关权限](camera-preparation.md)。
 
 相机应用可通过调用和控制相机设备，完成预览、拍照和录像等基础操作。
 
-录像也是相机应用的最重要功能之一，录像是循环帧的捕获。对于录像的自定义配置，开发者可以参考[拍照](camera-shooting.md)中的步骤4，设置分辨率、闪光灯、焦距、照片质量及旋转角度等信息。
+录像也是相机应用的最重要功能之一，录像是循环帧的捕获。对于录像的自定义配置，开发者可以参考[拍照](camera-shooting.md)中的步骤6，设置分辨率、闪光灯、焦距、照片质量及旋转角度等信息。
 
 ## 开发步骤
 
@@ -27,7 +27,24 @@ content_hash: sha256:607847ee77771241444aa42e639ff65b3a2668b21c5b315645fdb5cfbfb
    import { camera } from '@kit.CameraKit';
    import { media } from '@kit.MediaKit';
    ```
-2. 创建Surface。
+2. 查询相机是否支持录像模式。
+
+   通过[getSupportedSceneModes](../harmonyos-references/arkts-apis-camera-cameramanager.md#getsupportedscenemodes11)接口获取传入镜头支持的模式，查询是否支持录像模式。
+
+   ```ts
+   function isCaptureModeSupported(cameraManager: camera.CameraManager, cameraDevice: camera.CameraDevice): boolean
+   {
+     try {
+       let modeArray = cameraManager.getSupportedSceneModes(cameraDevice);
+       return modeArray.includes(camera.SceneMode.NORMAL_VIDEO);
+     } catch (error) {
+       let err = error as BusinessError;
+       console.error(`failed to getSupportedSceneModes, err code: ${err.code}`);
+       return false;
+     }
+   }
+   ```
+3. 创建Surface。
 
    系统提供的media接口可以创建一个录像[AVRecorder](../harmonyos-references/arkts-apis-media-avrecorder.md)实例，通过该实例的[getInputSurface](../harmonyos-references/arkts-apis-media-avrecorder.md#getinputsurface9)方法获取SurfaceId，与录像输出流做关联，处理录像输出流输出的数据。
 
@@ -40,7 +57,7 @@ content_hash: sha256:607847ee77771241444aa42e639ff65b3a2668b21c5b315645fdb5cfbfb
    await this.prepareAVRecorder();
    let videoSurfaceId = await this.avRecorder.getInputSurface();
    ```
-3. 创建录像输出流。
+4. 创建录像输出流。
 
    通过[CameraOutputCapability](../harmonyos-references/arkts-apis-camera-i.md#cameraoutputcapability)中的videoProfiles属性，可获取当前设备支持的录像输出流。然后，定义创建录像的参数，通过[createVideoOutput](../harmonyos-references/arkts-apis-camera-cameramanager.md#createvideooutput)方法创建录像输出流。
 
@@ -65,7 +82,7 @@ content_hash: sha256:607847ee77771241444aa42e639ff65b3a2668b21c5b315645fdb5cfbfb
      return videoOutput;
    }
    ```
-4. 开始录像。
+5. 开始录像。
 
    **说明** 
 
@@ -90,7 +107,7 @@ content_hash: sha256:607847ee77771241444aa42e639ff65b3a2668b21c5b315645fdb5cfbfb
      Logger.info(TAG, 'startVideo End of call');
    }
    ```
-5. 停止录像。
+6. 停止录像。
 
    先通过avRecorder的[stop](../harmonyos-references/arkts-apis-media-avrecorder.md#stop9-1)方法停止录像，再通过videoOutput的[stop](../harmonyos-references/arkts-apis-camera-videooutput.md#stop-1)方法停止录像输出流。
 

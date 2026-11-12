@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/gameservi
 title: 解绑账号通知
 breadcrumb: API参考 > 应用服务 > Game Service Kit（游戏服务） > REST API > 解绑账号通知
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:14+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:9ca87fa1816619ea283d844daced4b47a6e58189e5d073c5aa04c50111543a5e
+scraped_at: 2026-11-12T09:57:18+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e732773cebda72c036489b667126849f3e328e835d740cc4df364118b872f6cc
 ---
 
 ## 功能介绍
@@ -81,7 +81,7 @@ Content-Type: application/json;charset=UTF-8
 1. 获取请求中的签名字符串，即sign参数。
 2. 将请求参数Body中除sign以外的参数，按参数名首字母的ASCII码将参数升序排序。若遇到相同首字母，则比较第二个字母，以此类推。
 3. 排序完成之后，将所有参与签名的参数值进行urlencode之后以“&”字符连接成字符串，例如“a=xxxxxx&b=xxxxxxx&c=xxxxxx”，此字符串便是待验签字符串。
-4. 将待验签字符串使用游戏公钥按照RSA算法（SHA256WithRSA/PSS）进行签名，并与sign参数中的签名字符串进行一致性验证。
+4. 将待验签字符串使用游戏公钥按照RSA算法（SHA256WithRSA/PSS）进行验签，并与sign参数中的签名字符串进行一致性验证。
 
    **说明** 
 

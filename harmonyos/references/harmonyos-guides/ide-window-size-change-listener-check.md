@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-window-si
 title: "@cross-device-app-dev/window-size-change-listener-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 一次开发多端部署规则@cross-device-app-dev > @cross-device-app-dev/window-size-change-listener-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:13+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:d882d80c43479d4df2a69e26fa3cf8891a15453b9668e1ea13a9a7fc304583a7
+scraped_at: 2026-11-12T09:52:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ab978e49d433ffccb7750b4eab4014dfc7c5e8028bb654df0bd17947c8724656
 ---
 
 应用代码中如果创建了window实例，建议开启窗口尺寸变化（'windowSizeChange'）的监听。
@@ -94,4 +94,4 @@ export default class EntryAbility extends UIAbility {
 plugin:@cross-device-app-dev/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

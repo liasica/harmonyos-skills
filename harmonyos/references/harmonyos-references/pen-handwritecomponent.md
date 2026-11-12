@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pen-handw
 title: HandwriteComponent（手写套件组件）
 breadcrumb: API参考 > 系统 > 硬件 > Pen Kit（手写笔服务） > ArkTS组件 > HandwriteComponent（手写套件组件）
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:49+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:0fd2cddbcaede1d5e5c67074fa682fc21d31f64e0deae25ba98a560a247ee95e
+scraped_at: 2026-11-12T09:56:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:be94d74ad6c5b9621289bee0eead5caafe25ac81da39654edcdc94834d72dc72
 ---
 
 本模块提供手写套件组件，组件包含画布和手写工具栏，集成之后可快速实现手写能力。
@@ -242,18 +242,26 @@ struct HandWriteDemoComp {
         // 保存及获取缩略图。非必要组件，用户可自行调整或删除。
         Button('save')
           .onClick(async () => {
-            // 需根据应用存储规则，获取到手写文件保存的路径，此处仅为实例参考。
+            // 需根据应用存储规则，获取到手写文件保存的路径，此处仅为实例参考
             const path = this.getUIContext().getHostContext()?.filesDir + '/aa';
-            await this.controller?.save(path).then().catch((error: Error) => {
-              console.error('err: ' + error);
+
+            await this.controller.save(path).then(() => {
+              console.info('save success');
+            }).catch((err: BusinessError) => {
+              console.error(`save failed. Code is ${err.code}, message is ${err.message}`);
             })
-            // 获取缩略图。
-            this.controller.getThumbnail(this.controller?.getContentRange())?.then((pixelMap: PixelMap) => {
-              if (pixelMap) {
-                pixelMap.release();
-                console.info('getThumbnail success');
-              }
-            })
+            // 获取缩略图
+            const rect = this.controller.getContentRange();
+            if (rect) {
+              this.controller.getThumbnail(rect).then((pixelMap: PixelMap) => {
+                if (pixelMap) {
+                  pixelMap.release();
+                  console.info('getThumbnail success');
+                }
+              }).catch((err: BusinessError) => {
+                console.error(`getThumbnail failed. Code is ${err.code}, message is ${err.message}`);
+              })
+            }
           })
         // 设置长画布的滚动位置。当前可滚动最大距离为px2vp(1000000)减去list组件高度。
         Search()

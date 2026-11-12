@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-encrypti
 title: 加解密(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥使用 > 加密/解密 > 加解密(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:42+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:866dc4ee933dba1999fb407dff18e6ca75e391e21b3c1527b0124997f9fc3b02
+scraped_at: 2026-11-12T09:51:40+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:1f31944d81b35adbf476c666062916995bc2362d7a4776cd909a0d8b4619ab10
 ---
 
 以AES256、RSA1024、SM2和DES64为例，完成加解密。具体的场景介绍及支持的算法规格，请参考[加解密支持的算法](huks-encryption-decryption-overview.md#支持的算法)。
@@ -307,7 +307,7 @@ static const uint32_t NONCE_SIZE = 12;
 static const uint32_t AAD_SIZE = 16;
 static const uint32_t AE_TAG_SIZE = 16;
 static char AEAD[AE_TAG_SIZE] = {0};
-static char AAD[AAD_SIZE] = "cdcdcdcdcdcdcdc"; // this is a test value, for real use it should be different every time
+static char AAD[AAD_SIZE] = "cdcdcdcdcdcdcdc"; // 此处仅为测试值，实际使用时每次都应不同
 static uint8_t NONCE[NONCE_SIZE] = {0};
 static OH_Crypto_ErrCode ret = genRandomNumber(NONCE_SIZE, NONCE);
 static struct OH_Huks_Param g_genEncDecParams[] = {
@@ -326,12 +326,12 @@ static struct OH_Huks_Param g_encryptParams[] = {
     {.tag = OH_HUKS_TAG_NONCE,
      .blob = {
          .size = NONCE_SIZE,
-         .data = (uint8_t *)NONCE // this is a test value, for real use the iv should be different every time
+         .data = (uint8_t *)NONCE // 此处仅为测试值，实际使用时每次都应不同
      }},
     {.tag = OH_HUKS_TAG_ASSOCIATED_DATA,
      .blob = {
          .size = AAD_SIZE,
-         .data = (uint8_t *)AAD // this is a test value, for real use the iv should be different every time
+         .data = (uint8_t *)AAD // 此处仅为测试值，实际使用时每次都应不同
      }}};
 
 static struct OH_Huks_Param g_decryptParams[] = {
@@ -343,17 +343,17 @@ static struct OH_Huks_Param g_decryptParams[] = {
     {.tag = OH_HUKS_TAG_NONCE,
      .blob = {
          .size = NONCE_SIZE,
-         .data = (uint8_t *)NONCE // this is a test value, for real use the iv should be different every time
+         .data = (uint8_t *)NONCE // 此处仅为测试值，实际使用时每次都应不同
      }},
     {.tag = OH_HUKS_TAG_ASSOCIATED_DATA,
      .blob = {
          .size = AAD_SIZE,
-         .data = (uint8_t *)AAD // this is a test value, for real use the iv should be different every time
+         .data = (uint8_t *)AAD // 此处仅为测试值，实际使用时每次都应不同
      }},
     {.tag = OH_HUKS_TAG_AE_TAG,
      .blob = {
          .size = AE_TAG_SIZE,
-         .data = (uint8_t *)AEAD // this is a test value, for real use the iv should be different every time
+         .data = (uint8_t *)AEAD // 此处仅为测试值，实际使用时每次都应不同
      }}};
 
 static const uint32_t AES_GCM_SIZE = 1024;
@@ -477,7 +477,7 @@ napi_value TestAesGcm(napi_env env, napi_callback_info info)
 
 static const uint32_t IV_SIZE = 16;
 static const uint32_t AEAD_TAG_LEN = 14;
-static char IV[IV_SIZE] = { 0 }; // this is a test value, for real use the iv should be different every time.
+static char IV[IV_SIZE] = { 0 }; // 这是一个测试值，真正使用时每次的IV都应该不同
 static char AEAD[AEAD_TAG_LEN] = { 0 };
 static char NONCE[OH_HUKS_AE_NONCE_LEN] = { 0 };
 static struct OH_Huks_Param g_genEncDecParams[] = {
@@ -518,7 +518,7 @@ static struct OH_Huks_Param g_encryptParams[] = {
         .tag = OH_HUKS_TAG_IV,
         .blob = {
             .size = IV_SIZE,
-            .data = (uint8_t *)IV // this is a test value, for real use the iv should be different every time.
+            .data = (uint8_t *)IV // 这是一个测试值，真正使用时每次的IV都应该不同
         }
     }, {
         .tag = OH_HUKS_TAG_NONCE,
@@ -551,7 +551,7 @@ static struct OH_Huks_Param g_decryptParams[] = {
         .tag = OH_HUKS_TAG_IV,
         .blob = {
             .size = IV_SIZE,
-            .data = (uint8_t *)IV // this is a test value, for real use the iv should be different every time.
+            .data = (uint8_t *)IV // 这是一个测试值，真正使用时每次的IV都应该不同
         }
     }, {
         .tag = OH_HUKS_TAG_NONCE,

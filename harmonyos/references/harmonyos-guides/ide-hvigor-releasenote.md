@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-re
 title: 版本说明
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 版本说明
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:24+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:2cff476ca0ef66356ad069c8a3822ddeda3feb99a8fbbc7be6436e9769f35a18
+scraped_at: 2026-11-12T09:53:06+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:bc5e9844204253fad1e0a081c40d77245c5d77b495cdc62f5e118ff9fcf8dbcb
 ---
 
 ## DevEco Studio 26.0.0 Release
@@ -22,6 +22,7 @@ content_hash: sha256:2cff476ca0ef66356ad069c8a3822ddeda3feb99a8fbbc7be6436e9769f
 
 ## DevEco Studio 26.0.0 Beta1
 
+* hvigor-config.json5文件的properties下新增ohos.rollup.transform.useUnifiedAst字段，用于指定是否开启ArkTS编译转换过程中的AST（抽象语法树）合一优化。具体请参考[hvigor-config.json5文件](ide-hvigor-set-options.md)。
 * 工程级build-profile.json5文件的strictMode下新增apiCompatibilityCheck字段，用于设置ArkTS API兼容性检测级别。具体请参考[工程级build-profile.json5文件](ide-hvigor-build-profile-app.md)。
 * 工程级build-profile.json5文件的tscConfig下新增tsImportSoCheck字段，用于指定编译时是否对.ts文件中导入.so文件内的符号进行类型解析。具体请参考[工程级build-profile.json5文件](ide-hvigor-build-profile-app.md)。
 * HAP/HSP模块级build-profile.json5文件的nativeLib下新增enableSoDirCollection字段，用于指定ets文件中是否能够加载libs/{ABI}/子目录下的so文件。具体请参考[配置CPP](ide-hvigor-cpp.md)。
@@ -197,7 +198,7 @@ content_hash: sha256:2cff476ca0ef66356ad069c8a3822ddeda3feb99a8fbbc7be6436e9769f
 
 如果历史工程的工程级build-profile.json5文件中signingConfigs下的name字段为空字符串，编译时会报错。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/pb1E5hFrS3Kwy8ISv5Bu_w/zh-cn_image_0000002731382773.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/fYD524xZSOWqdCqZDY7gig/zh-cn_image_0000002808766909.png)
 
 **适配指导**
 
@@ -224,7 +225,7 @@ content_hash: sha256:2cff476ca0ef66356ad069c8a3822ddeda3feb99a8fbbc7be6436e9769f
 
 如果历史工程使用了Form卡片并且在卡片页面文件（form\_config.json文件src字段对应的值）中直接或间接引用了HSP模块，则编译会报错，并提示相关文件。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/rK2FDOXLTDuiFuHSrp7xYA/zh-cn_image_0000002701823468.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/UlF5GMuiRBuag54h9V2IUA/zh-cn_image_0000002808886989.png "点击放大")
 
 **适配指导**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-bas
 title: Interfaces（其他）
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS 组件 > Web > Interfaces（其他）
 category: harmonyos-references
-scraped_at: 2026-09-15T07:05:55+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:331a08c9594041ac424aa5aaca7c7ae700195f2e716b944f588191cf40ded910
+scraped_at: 2026-11-12T09:55:01+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:972afa98ab4222407ee747636e414216f3505f01c5a62f5d95fdc91ec52bc934
 ---
 
 **说明** 
@@ -62,7 +62,7 @@ content_hash: sha256:331a08c9594041ac424aa5aaca7c7ae700195f2e716b944f588191cf40d
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| secondLevelDomain | string | 否 | 否 | 二级域名的精确匹配。例如，"[https://www.example.com"的二级域名为example.com；"https://www.example.com.cn"二级域名为example.com.cn。网址没有二级域名则为空。](https://www.example.com) |
+| secondLevelDomain | string | 否 | 否 | 二级域名的精确匹配。例如，https://www.example.com的二级域名为example.com；https://www.example.com.cn二级域名为example.com.cn。网址没有二级域名则为空。 |
 | rule | string | 否 | 否 | url正则表达式。 在secondLevelDomain匹配成功后，才进行url正则匹配。 |
 
 ## NestedScrollOptionsExt14+
@@ -909,6 +909,22 @@ Web组件返回的请求/响应头对象。适用于需要读取或修改HTTP头
 | detectionTiming | number[] | 否 | 是 | 用以设置需要在加载后多少秒的时机来检测是否白屏。  单位：秒。  注：  1.重复值会忽略。  2.需大于0，小于0的值会被忽略。  默认值：[1.0,3.0,5.0]。 |
 | detectionMethods | [BlankScreenDetectionMethod](arkts-basic-components-web-e.md#blankscreendetectionmethod22)[] | 否 | 是 | 使用检测策略的方法，是一个数组。  注：  1.重复值会忽略。  默认值：[BlankScreenDetectionMethod.DETECTION\_CONTENTFUL\_NODES\_SEVENTEEN]。 |
 | contentfulNodesCountThreshold | number | 否 | 是 | 在使用到检测有内容的节点检测策略时，才会生效。  可以设置0-${检测策略最大节点}，如果小于等于阈值则会触发近似白屏。  默认值：0。  注：检测策略最大节点依赖于所选择的检测策略。 |
+
+## MonitoredBlankScreenEventInfo
+
+白屏检测归因信息，包括页面URL、白屏根因、归因详情。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| url | string | 否 | 否 | 页面URL。 |
+| reason | [BlankScreenReason](arkts-basic-components-web-e.md#blankscreenreason) | 否 | 否 | 白屏的具体原因。 |
+| extraMsg | string | 否 | 否 | 归因详情，JSON格式的字符串。 |
 
 ## CameraCaptureStateChangeInfo23+
 

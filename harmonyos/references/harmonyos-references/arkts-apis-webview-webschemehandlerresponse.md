@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (WebSchemeHandlerResponse)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (WebSchemeHandlerResponse)
 category: harmonyos-references
-scraped_at: 2026-10-31T07:36:07+08:00
-doc_updated_at: 2026-10-30
-content_hash: sha256:4f9a36278441a644dbb12c08e87f24116e26573f2670fe1889528e2b94ac8d8b
+scraped_at: 2026-11-12T09:54:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b66d567ed9dcc4fe3217f72f2e9327d5075b462fd2288b385056be9343527f94
 ---
 
 WebSchemeHandlerResponse是自定义scheme拦截场景中用于构造HTTP响应数据的类。开发者通过该类创建Response对象，设置HTTP状态码、状态文本、媒体类型、字符集、自定义响应头、网络错误码以及重定向URL等属性，然后通过WebResourceHandler将自定义响应返回给Web组件。该类是自定义资源拦截的核心数据载体。
@@ -56,6 +56,7 @@ struct WebComponent {
           response.setEncoding("utf-8")
           response.setHeaderByName("header1", "value1", false)
           response.setNetErrorCode(WebNetErrorList.NET_OK)
+          response.setCustomErrorCode(1001)
           console.info("[schemeHandler] getUrl:" + response.getUrl())
           console.info("[schemeHandler] getStatus:" + response.getStatus())
           console.info("[schemeHandler] getStatusText:" + response.getStatusText())
@@ -63,6 +64,7 @@ struct WebComponent {
           console.info("[schemeHandler] getEncoding:" + response.getEncoding())
           console.info("[schemeHandler] getHeaderByName:" + response.getHeaderByName("header1"))
           console.info("[schemeHandler] getNetErrorCode:" + response.getNetErrorCode())
+          console.info("[schemeHandler] getCustomErrorCode:" + response.getCustomErrorCode())
 
         } catch (error) {
           console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
@@ -387,6 +389,50 @@ getHeaderByName(name: string): string
 | 类型 | 说明 |
 | --- | --- |
 | string | 指定名称的响应头字段对应的值。 |
+
+**示例：**
+
+完整示例代码参考[constructor](arkts-apis-webview-webschemehandlerresponse.md#constructor12)。
+
+## setCustomErrorCode
+
+setCustomErrorCode(customErrorCode: number): void
+
+给当前的Response设置自定义错误码。详情参考[WebResourceError.getCustomErrorCode](arkts-basic-components-web-webresourceerror.md#getcustomerrorcode)。
+
+**起始版本：** 26.0.1
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| customErrorCode | number | 是 | 该响应的自定义错误码。 |
+
+**示例：**
+
+完整示例代码参考[constructor](arkts-apis-webview-webschemehandlerresponse.md#constructor12)。
+
+## getCustomErrorCode
+
+getCustomErrorCode(): number
+
+获取当前Response的自定义错误码。
+
+**起始版本：** 26.0.1
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| number | 当前Response的自定义错误码。 |
 
 **示例：**
 

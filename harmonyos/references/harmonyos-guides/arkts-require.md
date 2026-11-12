@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-require
 title: "@Require装饰器：校验构造传参"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > @Require装饰器：校验构造传参
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:09+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:9999c2d1c34f73b23e9b225a2babc9a6bc47b5774cc37bf9b6b931f981d7dbb6
+scraped_at: 2026-11-12T09:51:07+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:25f9dfcb30097747b3f1c5deb39d6b062a1dbb0c8bef5d8f602b40f38c0e1263
 ---
 
 [@Require](../harmonyos-references/ts-universal-require-dynamic.md#require)是校验@Prop、@State、@Provide、@BuilderParam、@Param和普通变量（无状态装饰器修饰的变量）是否需要构造传参的一个装饰器。
@@ -28,7 +28,7 @@ content_hash: sha256:9999c2d1c34f73b23e9b225a2babc9a6bc47b5774cc37bf9b6b931f981d
 
 @Require装饰器仅用于装饰struct内的@Prop、@State、@Provide、@BuilderParam、@Param和普通变量（无状态装饰器修饰的变量）。
 
-预览器的限制场景请参考[PreviewChecker检测规则](../harmonyos-guides-V5/ide-previewer-previewchecker-V5.md)。
+预览器的限制场景请参考[PreviewChecker](../doccenter-deveco-studio/ide-previewer-previewchecker.md)检测规则。
 
 ## 使用场景
 
@@ -152,7 +152,7 @@ struct ParentPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/qTwVppyATfCkawaT15GV1w/zh-cn_image_0000002809009265.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/_jtQhUpZTQS5niOIgWUGaQ/zh-cn_image_0000002815557975.gif)
 
 从API version 18开始，使用@Require装饰@State、@Prop、@Provide装饰的状态变量，可以在无本地初始值的情况下直接在组件内使用，不会编译报错。
 

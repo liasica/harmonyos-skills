@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_hp-arkui-
 title: "@performance/hp-arkui-no-stringify-in-lazyforeach-key-generator"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-arkui-no-stringify-in-lazyforeach-key-generator
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:59+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:2749585fc6dd84a1727df272d7dd6d8b5f125d5a15e370db79d55a19c8885370
+scraped_at: 2026-11-12T09:52:57+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c85580c75eefffc955e37bfb0ee4647c91435e1bf65f36125c4bf05f7720e8f3
 ---
 
 在使用LazyForEach进行组件复用的key生成器函数里，不要使用stringify。
@@ -262,4 +262,4 @@ plugin:@performance/recommended
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

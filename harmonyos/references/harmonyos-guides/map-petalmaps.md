@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-petalmaps
 title: 通过地图应用实现导航等能力
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 通过地图应用实现导航等能力
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:37+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:5c5797cd5f8b4de9a534c42af22f58f3920d4ba291126da388e8e3cbed51da20
+scraped_at: 2026-11-12T09:52:30+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c7ddbfd0754a7486f66b5a4656f224da50ac61502cf9dff6ea5372ccb33c950a
 ---
 
 ## 场景介绍
@@ -71,7 +71,7 @@ try {
 
 **图1** 打开地图应用首页
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/WpLru4BuR4SSVfBc_pPmug/zh-cn_image_0000002779851504.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/V-joo9-6S2yJvDwVF_8Byw/zh-cn_image_0000002815559877.jpg "点击放大")
 
 ### 打开地图应用进行地点搜索
 
@@ -90,7 +90,7 @@ try {
 
 **图2** 打开地图应用进行地点搜索
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/U05g6ohSRjqUSKCWnVD9KA/zh-cn_image_0000002779691536.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/8WwkU8-8TBORJpyf5fmv_Q/zh-cn_image_0000002815399961.jpg "点击放大")
 
 ### 打开地图应用查看地点详情
 
@@ -106,6 +106,7 @@ try {
     destinationName: '标记点',
     zoom: 17,
     coordinateType: mapCommon.CoordinateType.GCJ02,
+    // 可选，系统将自动通过逆地理编码生成描述
     destinationAddress: '这是我选择的演示名称'
   };
   await petalMaps.openMapPoiDetail(this.getUIContext().getHostContext(), params);
@@ -116,7 +117,7 @@ try {
 
 **图3** 打开地图应用查看地点详情
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/gZTNCUEcTHeE79MabdO_3Q/zh-cn_image_0000002809011157.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/FwhUEYebQN2eu3KpsuBdpA/zh-cn_image_0000002786520386.jpg "点击放大")
 
 ### 打开地图应用规划路线
 
@@ -138,7 +139,7 @@ try {
 
 **图4** 打开地图应用规划路线
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/5k6fYVsjSJOXbdLhdDITxQ/zh-cn_image_0000002809051071.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/CteElcpRT46HKNM8XoEGdQ/zh-cn_image_0000002786360458.jpg "点击放大")
 
 ### 打开地图应用进行导航
 
@@ -160,7 +161,7 @@ try {
 
 **图5** 打开地图应用进行导航
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/WCyGR5XKQg6YFlBE5MOcGQ/zh-cn_image_0000002779851506.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/PW614DCIS7qltW1NSaZPGw/zh-cn_image_0000002815559879.jpg "点击放大")
 
 ### 打开地图应用打车页面
 
@@ -182,7 +183,7 @@ try {
 
 **图6** 打开地图应用进行打车
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/NO7Diq-tRdGDF_xJ_8y1yQ/zh-cn_image_0000002779691538.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/uGJ79R0iQWmMGTPCiiPJeA/zh-cn_image_0000002815399963.png "点击放大")
 
 ### 打开地图应用离线地图管理页面
 
@@ -226,12 +227,12 @@ try {
 
 **图7** 打开地图应用手表离线地图管理页面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/zBzKPcwMTieux1slHIhdJg/zh-cn_image_0000002809011159.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/SHWkRfWtTfS96RFJxQ8GQQ/zh-cn_image_0000002786520388.jpg "点击放大")
 
 **图8** 打开地图应用地图资源（手机离线地图）管理页面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/ydRTdp1WS56JHVRGQpgv1A/zh-cn_image_0000002809051073.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/wbgDtqjNRMeahN4KKQeysA/zh-cn_image_0000002786360460.jpg "点击放大")
 
 **图9** 打开地图应用导航语音管理页面
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/NQ0P_11CRuuA0_7WwVs9Mg/zh-cn_image_0000002779851508.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/Ik40C3L4R9eNyXUwKFbuqg/zh-cn_image_0000002815559881.jpg "点击放大")

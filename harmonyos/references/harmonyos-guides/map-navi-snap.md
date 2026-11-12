@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-navi-snap
 title: 轨迹绑路
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 路径规划 > 轨迹绑路
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:9f3d46a83c478ffc7bcfcdfcd568127526a16817ad3a28f89fe531af058e6ac4
+scraped_at: 2026-11-12T09:52:30+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b8dc4c1990f724afbb08a52141695b79821a23013c778be0b7d14cff006789d1
 ---
 
 ## 场景介绍
@@ -41,8 +41,11 @@ async testSnapToRoads() {
   let params: navi.SnapToRoadsParams = {
     // 道路贴合点集合，不能超过100个，且相邻两个点距离需小于等于500米
     points: [{
-      latitude: 31.984410259206815,
-      longitude: 118.76625379397866
+      latitude: 39.918,
+      longitude: 116.397
+    }, {
+      latitude: 39.917,
+      longitude: 116.396
     }]
   };
   try {

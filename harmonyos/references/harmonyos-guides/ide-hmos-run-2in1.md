@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-run-
 title: 使用本机运行应用
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 使用本机运行应用
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:38+08:00
+scraped_at: 2026-11-12T09:53:19+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:02fba7f3607127f6f331c4587db1aa6f8eba85afb7804eaae7a72582401f350f
+content_hash: sha256:f15e527d0fbb07cdae639296bb76042d79c3dc7ba6197733fb8dad475009396a
 ---
 
 鸿蒙电脑DevEco Studio允许开发者直接在本机上运行或调试应用/元服务。
@@ -18,4 +18,4 @@ content_hash: sha256:02fba7f3607127f6f331c4587db1aa6f8eba85afb7804eaae7a72582401
 
 打开DevEco Studio，无需其他操作，在顶部设备选择框中显示**此电脑**，说明已自动连接本机。连接后可将应用推送到本机运行或调试。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/oDW_h0dJTmClQtxA8Btp8Q/zh-cn_image_0000002810630523.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/7VLGxr5QQCCIQyvJykvWRg/zh-cn_image_0000002810630523.png "点击放大")

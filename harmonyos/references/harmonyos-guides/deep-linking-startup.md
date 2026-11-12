@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/deep-linking-
 title: 使用Deep Linking实现应用间跳转
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起指定应用 > 使用Deep Linking实现应用间跳转
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:10+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:00953dc1e9ad8ee9a6357ba0db41a9ff0b355a2a03897c30ef91421940e479c7
+scraped_at: 2026-11-12T09:50:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:781b5a76a98fb5acc3898b1b2af7abb99434ef9cda4d536274fe9e4c57694ebe
 ---
 
 采用Deep Linking进行跳转时，系统会根据接口中传入的uri信息，在本地已安装的应用中寻找到符合条件的应用并进行拉起。当匹配到多个应用时，会拉起应用选择框。
@@ -83,11 +83,15 @@ export default class DeepAbility extends UIAbility {
     let uri = want?.uri;
     if (uri) {
       // 从链接中解析query参数，拿到参数后，开发者可根据自己的业务需求进行后续的处理。
-      let urlObject = url.URL.parseURL(want?.uri);
-      let action = urlObject.params.get('action');
-      // 例如，当action为showall时，展示所有的节目。
-      if (action === 'showall') {
-        // ···
+      try {
+        let urlObject = url.URL.parseURL(want?.uri);
+        let action = urlObject.params.get('action');
+        // 例如，当action为showall时，展示所有的节目。
+        if (action === 'showall') {
+          // ···
+        }
+      } catch (error) {
+        hilog.error(DOMAIN, 'testTag', 'Failed to parse URL: %{public}s', JSON.stringify(error));
       }
     }
   }

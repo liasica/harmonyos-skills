@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-sendabl
 title: 共享模块
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > Sendable对象 > 共享模块
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:03:58+08:00
-doc_updated_at: 2026-10-14
+scraped_at: 2026-11-12T09:51:03+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:9d34bcf0af02d57d4065c325da9fff5b36f056131afe7d8a47faae28cc75b005
 ---
 

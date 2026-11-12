@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-vers
 title: OHPM版本号规则
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 附录 > OHPM版本号规则
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:23:06+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:8657fe2dcade71bb37eea9be58c06cf78331747edf7205b997b55fdb0d8d92b8
+scraped_at: 2026-11-12T09:53:06+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:06fb57cb8adbe22bc8a5aee168d31e8572e13675788c3d13edb65689e6e255a3
 ---
 
-ohpm管理的三方包的版本号遵循[语义化版本控制](https://semver.org/lang/zh-CN/)（SemVer 2.0.0）规则。
+OHPM管理的三方包的版本号遵循[语义化版本控制](https://semver.org/lang/zh-CN/)（SemVer 2.0.0）规则。
 
 ## 版本号格式
 
@@ -201,8 +201,8 @@ oh-package.json5配置：{
 ```screen
 // ~使用示例
 ~1.2.301 等价于：1.2.301 <= 版本 < 1.3.0 // 固定主版本号.次版本号：1.2不变
-~1.2 等价于： ~1.2.0` 等价于：1.2.0 <= 版本 < 1.3.0 // 固定主版本号.次版本号：1.2不变
-~1 等价于： ~1.x` 等价于：1.0.0 <= 版本 < 2.0.0-0 // 固定主版本号：1不变（特殊）
+~1.2 等价于： ~1.2.0 等价于：1.2.0 <= 版本 < 1.3.0 // 固定主版本号.次版本号：1.2不变
+~1 等价于： ~1.x 等价于：1.0.0 <= 版本 < 2.0.0-0 // 固定主版本号：1不变（特殊）
 ~0.10.100 等价于：0.10.100 <= 版本 < 0.11.0 // 固定主版本号.次版本号：0.10不变
 ~0.0 等价于：0.0.0 <= 版本 < 0.1.0 // 固定主版本号.次版本号：0.0不变
 ~0 等价于：0.x 等价于：0.0.0 <= 版本 < 1.0.0-0 // 固定主版本号：0不变（特殊）

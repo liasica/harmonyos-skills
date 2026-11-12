@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-dynamic
 title: 图片动态元数据生成
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(C/C++) > 图片编辑和处理 > 使用ImageProcessing处理图片 > 图片动态元数据生成
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:12+08:00
+scraped_at: 2026-11-12T09:52:06+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:0a28c98080fefc98749737fd48122baf43223b514c2a669c4279576abab3226a
+content_hash: sha256:8c036c9d667e7810723853807d6affdbe71ac34d838d762acd15c96c165f13d2
 ---
 
 调用者可以调用本模块提供的[C API接口](../harmonyos-references/capi-imageprocessing.md)，实现HDR图片动态元数据生成。
 
 该能力常用于图片编辑中，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/QxfyqiZqTHW6BKyEchFpUg/zh-cn_image_0000002809010649.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/dA6BbK7xQe2NlTnOo3zP1w/zh-cn_image_0000002786519866.png)
 
 ## 规格说明
 

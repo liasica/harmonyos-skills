@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/medialibrary-
 title: 如何正确判断媒体资源类型
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > Media Library Kit常见问题 > 如何正确判断媒体资源类型
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:19+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:52:09+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:6d22ab80c8363a5ee9b82b01b74222ea03ccf234042ff2a9e5fdbb0a52353cfc
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-calculate
 title: 距离计算
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图计算工具 > 距离计算
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:22+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:0e9bef8258b747ee39703747eba7ce13a01213829b2381927f11168b0d6d407c
+scraped_at: 2026-11-12T09:52:30+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:61dc814a07db68fde1676fcf772e3b28ab3fda6086d6194b45279d2cc5e6f2a8
 ---
 
 ## 场景介绍
@@ -32,12 +32,12 @@ content_hash: sha256:0e9bef8258b747ee39703747eba7ce13a01213829b2381927f11168b0d6
 
    ```typescript
    let fromLatLng: mapCommon.LatLng = {
-     latitude: 38,
-     longitude: 118
+     latitude: 38.123456,
+     longitude: 118.123456
    };
    let toLatLng: mapCommon.LatLng = {
-     latitude: 39,
-     longitude: 119
+     latitude: 39.147258,
+     longitude: 119.159357
    };
    // 计算坐标点之间的距离
    let distance = map.calculateDistance(fromLatLng, toLatLng);

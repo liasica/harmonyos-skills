@@ -3,21 +3,21 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-compile-b
 title: 构建产物说明
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 概述 > 构建产物说明
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:24+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:c4d9e2d91f0adb3e0ef19409f46d8255d8959a926491a1e3fa6e3ca7acc32738
+scraped_at: 2026-11-12T09:53:05+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7d3b2508f8b841548e74a769f2140df5c3c463137f003569ad16e9fe188f677f
 ---
 
 ## HAP/HSP构建产物说明
 
 以HAP为例，release模式的构建产物一般包含以下文件：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/kl4qSwuDRoa3QyWjD13EDw/zh-cn_image_0000002701662784.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/kGoTyHnfRk22Iud66ADsSg/zh-cn_image_0000002779406710.png)
 
 * resources：构建产物中的资源文件目录，如图片、媒体资源、配置文件等。
 * modules.abc：构建产物中通过源码编译出的字节码文件。
 * module.json：构建产物中通过模块src目录中的module.json5处理后的运行时配置文件，具体参考[module.json5配置文件](module-configuration-file.md)。
-* resources.index：构建产物中的资源索引文件, 包含模块中所有的资源ID、资源名称、资源类型以及资源值等信息。
+* resources.index：构建产物中的资源索引文件，包含模块中所有的资源ID、资源名称、资源类型以及资源值等信息。
 * pack.info：构建产物中的包内容描述文件，在安装升级时提供相关信息。
 * pkgContextInfo.json：构建产物中的语境信息表文件，用于运行时查找依赖库信息。
 
@@ -36,7 +36,7 @@ content_hash: sha256:c4d9e2d91f0adb3e0ef19409f46d8255d8959a926491a1e3fa6e3ca7acc
 
 APP构建产物如下，其中包名取决于个人项目中的模块名，与下图可能不同：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/mI1qMdDySCeupD29CSKVVA/zh-cn_image_0000002731541977.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/4EWek2i8TryswYLCT6GExQ/zh-cn_image_0000002808886351.png)
 
 * entry-default.hap：由字节码、资源、三方库、配置文件等打包生成的entry类型的hap包，是App应用安装和运行的基本单元，application-default.hap是feature类型的hap包。
 * library-default.hsp：由字节码、资源、三方库、配置文件等打包生成的动态共享包，可实现代码和资源共享。

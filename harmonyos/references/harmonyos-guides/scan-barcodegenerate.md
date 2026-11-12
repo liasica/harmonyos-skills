@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-barcodeg
 title: 通过文本生成码图
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 码图生成 > 通过文本生成码图
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:15+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:bf5c71e0f2dec3d211490a056f86660796d7ae6f332c854b5aef99525ffc9c6c
+scraped_at: 2026-11-12T09:52:09+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3bbc34b1cfb358c51e75de2beccd87e5d23a9057d4749f9239b8bbc0a3afc602
 ---
 
 码图生成能力支持将字符串转换为自定义格式的码图。
@@ -18,14 +18,14 @@ content_hash: sha256:bf5c71e0f2dec3d211490a056f86660796d7ae6f332c854b5aef99525ff
 
 ## 约束与限制
 
-码图生成能力支持Phone、Tablet、Wearable、PC/2in1、TV（从API版本5.1.0(18)开始支持Wearable，从API版本5.1.1(19)开始支持PC/2in1、TV）。
+码图生成能力支持Phone、Tablet、Wearable、PC/2in1、TV、Car（从API版本5.1.0(18)开始，新增支持Wearable；从API版本5.1.1(19)开始，新增支持PC/2in1、TV；从API版本26.0.1开始，新增支持Car）。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/9QT1FuDWSMOZRldZYkn6Cw/zh-cn_image_0000002809050605.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/M5Mo5u0HSvGa_fNLMbxNHg/zh-cn_image_0000002786359980.png)
 
 1. 用户向应用发起生成码图请求后，输入需要生成的码图信息，包括码图的类型、宽高等。
-2. 应用通过调用Scan Kit的createBarcode接口启动码图生成能力。
+2. 应用通过调用Scan Kit的createBarcode()接口启动码图生成能力。
 3. Scan Kit通过将字符串转换为所需格式的码图并返回给应用。
 4. 应用向用户返回生成码图结果。
 
@@ -35,8 +35,8 @@ content_hash: sha256:bf5c71e0f2dec3d211490a056f86660796d7ae6f332c854b5aef99525ff
 
 | 接口名 | 接口描述 |
 | --- | --- |
-| [createBarcode](../harmonyos-references/scan-generatebarcode.md#createbarcode)(content: string, options: [CreateOptions](../harmonyos-references/scan-generatebarcode.md#createoptions)): Promise<image.[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)> | 码图生成接口，返回生成的码图，类型为image.PixelMap，可以使用Image组件渲染成图片。使用Promise异步回调。 |
-| [createBarcode](../harmonyos-references/scan-generatebarcode.md#createbarcode-1)(content: string, options: CreateOptions, callback: AsyncCallback<image.PixelMap>): void | 码图生成接口，返回生成的码图，类型为image.PixelMap，可以使用Image组件渲染成图片。使用callback异步回调。 |
+| [createBarcode](../harmonyos-references/scan-generatebarcode.md#generatebarcodecreatebarcode)(content: string, options: [CreateOptions](../harmonyos-references/scan-generatebarcode.md#createoptions)): Promise<image.[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)> | 码图生成接口，返回生成的码图，类型为image.PixelMap，可以使用Image组件渲染成图片。使用Promise异步回调。 |
+| [createBarcode](../harmonyos-references/scan-generatebarcode.md#generatebarcodecreatebarcode-1)(content: string, options: CreateOptions, callback: AsyncCallback<image.PixelMap>): void | 码图生成接口，返回生成的码图，类型为image.PixelMap，可以使用Image组件渲染成图片。使用callback异步回调。 |
 
 ## 开发步骤
 
@@ -44,7 +44,7 @@ content_hash: sha256:bf5c71e0f2dec3d211490a056f86660796d7ae6f332c854b5aef99525ff
 
 为了方便开发者接入，我们提供了详细的样例工程供参考，推荐参考[示例工程](https://gitcode.com/HarmonyOS_Samples/scankit-samplecode-clientdemo-arkts)接入。
 
-以下示例为调用码图生成能力的createBarcode接口实现码图生成。
+以下示例为调用码图生成能力的createBarcode()接口实现码图生成。
 
 1. 导入码图生成接口模块，该模块提供了码图生成的参数和方法，导入方法如下。
 
@@ -55,11 +55,13 @@ content_hash: sha256:bf5c71e0f2dec3d211490a056f86660796d7ae6f332c854b5aef99525ff
    import { image } from '@kit.ImageKit';
    import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
-2. 调用码图生成能力的createBarcode接口实现码图生成。
+2. 调用码图生成能力的createBarcode()接口实现码图生成。
 
    * 通过Promise方式回调，获取生成的码图。
 
      ```typescript
+     const TAG: string = 'Scan Kit Sample GenerateBarcode';
+
      @Entry
      @Component
      struct Index {
@@ -86,12 +88,13 @@ content_hash: sha256:bf5c71e0f2dec3d211490a056f86660796d7ae6f332c854b5aef99525ff
                  // 码图生成接口，成功返回PixelMap格式图片
                  generateBarcode.createBarcode(content, options).then((pixelMap: image.PixelMap) => {
                    this.pixelMap = pixelMap;
+                   hilog.info(0x0001, TAG, 'Succeeded in creating barcode.');
                  }).catch((err: BusinessError) => {
-                   hilog.error(0x0001, '[generateBarcode]',
+                   hilog.error(0x0001, TAG,
                      `Failed to get PixelMap by promise with options. Code: ${err.code}, message: ${err.message}`);
                  });
                } catch (err) {
-                 hilog.error(0x0001, '[generateBarcode]',
+                 hilog.error(0x0001, TAG,
                    `Failed to createBarcode by promise with options. Code: ${err.code}, message: ${err.message}`);
                }
              })
@@ -108,6 +111,8 @@ content_hash: sha256:bf5c71e0f2dec3d211490a056f86660796d7ae6f332c854b5aef99525ff
    * 通过Callback方式回调，获取生成的码图。
 
      ```typescript
+     const TAG: string = 'Scan Kit Sample GenerateBarcode';
+
      @Entry
      @Component
      struct Index {
@@ -134,14 +139,15 @@ content_hash: sha256:bf5c71e0f2dec3d211490a056f86660796d7ae6f332c854b5aef99525ff
                  // 码图生成接口，成功返回PixelMap格式图片
                  generateBarcode.createBarcode(content, options, (err: BusinessError, pixelMap: image.PixelMap) => {
                    if (err) {
-                     hilog.error(0x0001, '[generateBarcode]',
+                     hilog.error(0x0001, TAG,
                        `Failed to get PixelMap by callback with options. Code: ${err.code}, message: ${err.message}`);
                      return;
                    }
                    this.pixelMap = pixelMap;
+                   hilog.info(0x0001, TAG, 'Succeeded in creating barcode.');
                  });
                } catch (err) {
-                 hilog.error(0x0001, '[generateBarcode]',
+                 hilog.error(0x0001, TAG,
                    `Failed to createBarcode by callback with options. Code: ${err.code}, message: ${err.message}`);
                }
              })

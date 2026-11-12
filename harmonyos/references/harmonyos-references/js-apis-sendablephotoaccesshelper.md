@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.file.sendablePhotoAccessHelper (基于Sendable对象的相册管理模块)"
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS API > @ohos.file.sendablePhotoAccessHelper (基于Sendable对象的相册管理模块)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:42+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:cf42e05ac3e1b8534c65170f1c7d1d0e8fadab1999f600b4fa607b42263a2ef0
+scraped_at: 2026-11-12T09:56:51+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:75e77deb49da2c26a4f9290baee5ac060e44d651471a881f9050c891d3cbdc68
 ---
 
 该模块基于[Sendable](../harmonyos-guides/arkts-sendable.md)对象，提供相册管理功能，包括创建相册和访问、修改相册中的媒体数据。
@@ -596,7 +596,7 @@ set(member: string, value: string): void
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | member | string | 是 | 成员属性名称例如：[PhotoKeys](arkts-apis-photoaccesshelper-e.md#photokeys).TITLE。字符串长度的取值范围为[1, 255]。 |
-| value | string | 是 | 设置成员属性的值，只能修改[PhotoKeys](arkts-apis-photoaccesshelper-e.md#photokeys).TITLE的值。title的参数规格为：  - 不应包含扩展名。  - 文件名字符串长度的取值范围为[1, 255]（资产文件名为标题+扩展名）。  - 不允许出现的非法英文字符，包括：. \ / : \* ? " ' ` < > | { } [ ] |
+| value | string | 是 | 设置成员属性的值，只能修改[PhotoKeys](arkts-apis-photoaccesshelper-e.md#photokeys).TITLE的值。value的参数规格为：  - 不应包含扩展名。  - 文件名字符串长度的取值范围为[1, 255]（资产文件名为标题+扩展名）。  - 不允许出现的非法英文字符，包括：. \ / : \* ? " ' ` < > | { } [ ] |
 
 **错误码：**
 

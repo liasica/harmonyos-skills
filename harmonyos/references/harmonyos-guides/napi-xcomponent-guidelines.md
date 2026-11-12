@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-xcompone
 title: 自定义渲染 (XComponent)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加组件 > 自定义渲染 (XComponent)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:15+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:55a83e32f5565870684a212c32e1cb74165412c7e7858e7654b561c46b4bdce2
+scraped_at: 2026-11-12T09:51:12+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a46428cfe9fc264423835855ff7199c5f1ad2d2dad35849e0bea7fa02e2b1236
 ---
 
 ## 概述
@@ -61,25 +61,25 @@ XComponent推荐使用两种方式获取XComponent持有Surface的生命周期�
 
   ArkTS侧onSurfaceCreated的时序如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/7dU6E34FT2atBymklewDgw/zh-cn_image_0000002779690128.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/0IeC4tr8QMGq6Y-hxhMAHg/zh-cn_image_0000002815558461.png)
 * onSurfaceChanged回调
 
   触发时刻：Surface大小变化触发重新布局之后触发。
 
   ArkTS侧onSurfaceChanged的时序如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/UQHDe1ypT4WkS3rnByvjcQ/zh-cn_image_0000002809009749.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/TVrQYnr9TO2fcmeHBxuf2A/zh-cn_image_0000002815398545.png)
 * onSurfaceDestroyed回调
 
   触发时刻：XComponent组件被销毁时触发，与一般ArkUI的组件销毁时机一致。
 
   ArkTS侧onSurfaceDestroyed的时序图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/ffgGz08HQ-i3l7KZdr4cyQ/zh-cn_image_0000002809049665.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/V4VE3UW4TGSucw4W9oktqA/zh-cn_image_0000002786518970.png)
 
 对于复杂的交互逻辑需跨语言开发，追求极致渲染性能或业务需求自主控制Surface的创建和销毁的，建议在Native侧使用[OH\_ArkUI\_SurfaceHolder](../harmonyos-references/capi-oh-nativexcomponent-native-xcomponent-oh-arkui-surfaceholder.md)管理Surface生命周期。其生命周期触发时机如下：
 
-* OnSurfaceCreated回调
+* OnSurfaceCreated()回调
 
   触发时刻：XComponent创建完成且Surface绑定生命周期回调后，满足以下任一条件时触发。
 
@@ -88,21 +88,21 @@ XComponent推荐使用两种方式获取XComponent持有Surface的生命周期�
 
   Native侧OnSurfaceCreated的时序如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/633zL7FGSyWSyIdHctt8lg/zh-cn_image_0000002779850100.png)
-* OnSurfaceChanged回调
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/bKssRkiAQZCAXSm6RX4nvg/zh-cn_image_0000002786359042.png)
+* OnSurfaceChanged()回调
 
-  触发时刻：OnSurfaceCreated回调成功触发且Surface大小变化触发重新布局之后触发。
+  触发时刻：OnSurfaceCreated()回调成功触发且Surface大小变化触发重新布局之后触发。
 
   Native侧OnSurfaceChanged的时序如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/j9KcxhSiTV22k_idjyVuww/zh-cn_image_0000002779690130.png)
-* OnSurfaceDestroyed回调
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/Mb43NDKqRMm45Vtyg62hBg/zh-cn_image_0000002815558463.png)
+* OnSurfaceDestroyed()回调
 
   触发时刻：组件下树且autoInitialize=true 或者调用[OH\_ArkUI\_XComponent\_Finalize](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_arkui_xcomponent_finalize)后触发。
 
   Native侧OnSurfaceDestroyed的时序图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/e0RT_2joSKaAhsOkdHN5NQ/zh-cn_image_0000002809009751.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/JTBnfgOLRUams6vUlqT1VQ/zh-cn_image_0000002815398547.png)
 
 ### XComponent的开发范式
 
@@ -224,9 +224,9 @@ XComponent推荐使用两种方式获取XComponent持有Surface的生命周期�
       callbackMap_[holder] = callback;
       auto render = new EGLRender();
       OH_ArkUI_SurfaceHolder_SetUserData(holder, render);                                // 将render保存在holder中
-      OH_ArkUI_SurfaceCallback_SetSurfaceCreatedEvent(callback, OnSurfaceCreatedNative); // 注册OnSurfaceCreated回调
-      OH_ArkUI_SurfaceCallback_SetSurfaceChangedEvent(callback, OnSurfaceChangedNative); // 注册OnSurfaceChanged回调
-      OH_ArkUI_SurfaceCallback_SetSurfaceDestroyedEvent(callback, OnSurfaceDestroyedNative); // 注册OnSurfaceDestroyed回调
+      OH_ArkUI_SurfaceCallback_SetSurfaceCreatedEvent(callback, OnSurfaceCreatedNative); // 注册OnSurfaceCreated()回调
+      OH_ArkUI_SurfaceCallback_SetSurfaceChangedEvent(callback, OnSurfaceChangedNative); // 注册OnSurfaceChanged()回调
+      OH_ArkUI_SurfaceCallback_SetSurfaceDestroyedEvent(callback, OnSurfaceDestroyedNative); // 注册OnSurfaceDestroyed()回调
       OH_ArkUI_SurfaceHolder_AddSurfaceCallback(holder, callback);                // 注册SurfaceCallback回调
       // ...
       return nullptr;
@@ -352,9 +352,9 @@ XComponent推荐使用两种方式获取XComponent持有Surface的生命周期�
       callbackMap_[holder] = callback;
       auto render = new EGLRender();
       OH_ArkUI_SurfaceHolder_SetUserData(holder, render);                                // 将render保存在holder中
-      OH_ArkUI_SurfaceCallback_SetSurfaceCreatedEvent(callback, OnSurfaceCreatedNative); // 注册OnSurfaceCreated回调
-      OH_ArkUI_SurfaceCallback_SetSurfaceChangedEvent(callback, OnSurfaceChangedNative); // 注册OnSurfaceChanged回调
-      OH_ArkUI_SurfaceCallback_SetSurfaceDestroyedEvent(callback, OnSurfaceDestroyedNative); // 注册OnSurfaceDestroyed回调
+      OH_ArkUI_SurfaceCallback_SetSurfaceCreatedEvent(callback, OnSurfaceCreatedNative); // 注册OnSurfaceCreated()回调
+      OH_ArkUI_SurfaceCallback_SetSurfaceChangedEvent(callback, OnSurfaceChangedNative); // 注册OnSurfaceChanged()回调
+      OH_ArkUI_SurfaceCallback_SetSurfaceDestroyedEvent(callback, OnSurfaceDestroyedNative); // 注册OnSurfaceDestroyed()回调
       OH_ArkUI_SurfaceHolder_AddSurfaceCallback(holder, callback);                // 注册SurfaceCallback回调
       // ...
       return nullptr;
@@ -450,9 +450,9 @@ XComponent推荐使用两种方式获取XComponent持有Surface的生命周期�
       PluginManager::callbackMap_[holder] = callback;
       auto render = new EGLRender();
       OH_ArkUI_SurfaceHolder_SetUserData(holder, render);                                // 将render保存在holder中
-      OH_ArkUI_SurfaceCallback_SetSurfaceCreatedEvent(callback, OnSurfaceCreatedNative); // 注册OnSurfaceCreated回调
-      OH_ArkUI_SurfaceCallback_SetSurfaceChangedEvent(callback, OnSurfaceChangedNative); // 注册OnSurfaceChanged回调
-      OH_ArkUI_SurfaceCallback_SetSurfaceDestroyedEvent(callback, OnSurfaceDestroyedNative); // 注册OnSurfaceDestroyed回调
+      OH_ArkUI_SurfaceCallback_SetSurfaceCreatedEvent(callback, OnSurfaceCreatedNative); // 注册OnSurfaceCreated()回调
+      OH_ArkUI_SurfaceCallback_SetSurfaceChangedEvent(callback, OnSurfaceChangedNative); // 注册OnSurfaceChanged()回调
+      OH_ArkUI_SurfaceCallback_SetSurfaceDestroyedEvent(callback, OnSurfaceDestroyedNative); // 注册OnSurfaceDestroyed()回调
       OH_ArkUI_SurfaceHolder_AddSurfaceCallback(holder, callback); // 添加SurfaceCallback回调
       if (nodeAPI->addNodeEventReceiver(xc, onEvent)) {            // 添加事件监听，返回0表示成功，非0表示失败
           OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "onBind", "addNodeEventReceiver error");
@@ -598,9 +598,9 @@ XComponent推荐使用两种方式获取XComponent持有Surface的生命周期�
       callbackMap_[holder] = callback;
       auto render = new EGLRender();
       OH_ArkUI_SurfaceHolder_SetUserData(holder, render);                                // 将render保存在holder中
-      OH_ArkUI_SurfaceCallback_SetSurfaceCreatedEvent(callback, OnSurfaceCreatedNative); // 注册OnSurfaceCreated回调
-      OH_ArkUI_SurfaceCallback_SetSurfaceChangedEvent(callback, OnSurfaceChangedNative); // 注册OnSurfaceChanged回调
-      OH_ArkUI_SurfaceCallback_SetSurfaceDestroyedEvent(callback, OnSurfaceDestroyedNative); // 注册OnSurfaceDestroyed回调
+      OH_ArkUI_SurfaceCallback_SetSurfaceCreatedEvent(callback, OnSurfaceCreatedNative); // 注册OnSurfaceCreated()回调
+      OH_ArkUI_SurfaceCallback_SetSurfaceChangedEvent(callback, OnSurfaceChangedNative); // 注册OnSurfaceChanged()回调
+      OH_ArkUI_SurfaceCallback_SetSurfaceDestroyedEvent(callback, OnSurfaceDestroyedNative); // 注册OnSurfaceDestroyed()回调
       OH_ArkUI_SurfaceHolder_AddSurfaceCallback(holder, callback);                // 注册SurfaceCallback回调
       // ...
       return nullptr;
@@ -691,28 +691,28 @@ XComponent推荐使用两种方式获取XComponent持有Surface的生命周期�
 
 | 接口名 | 描述 |
 | --- | --- |
-| OH\_ArkUI\_QueryModuleInterfaceByName(ArkUI\_NativeAPIVariantKind type, const char\* structName) | 获取指定类型的Native模块接口集合。 |
-| OH\_ArkUI\_XComponent\_GetNativeWindow(OH\_ArkUI\_SurfaceHolder\* surfaceHolder) | 获取与OH\_ArkUI\_SurfaceHolder实例关联的NativeWindow。 |
-| OH\_ArkUI\_SurfaceHolder\_RemoveSurfaceCallback(OH\_ArkUI\_SurfaceHolder\* surfaceHolder, OH\_ArkUI\_SurfaceCallback\* callback) | 从OH\_ArkUI\_SurfaceHolder实例中移除先前添加的Surface生命周期回调。 |
-| OH\_ArkUI\_SurfaceCallback\_Dispose(OH\_ArkUI\_SurfaceCallback\* callback) | 释放OH\_ArkUI\_SurfaceCallback对象。 |
-| OH\_ArkUI\_SurfaceHolder\_Dispose(OH\_ArkUI\_SurfaceHolder\* surfaceHolder) | 释放OH\_ArkUI\_SurfaceHolder对象。 |
-| OH\_ArkUI\_NodeEvent\_GetEventType(ArkUI\_NodeEvent\* event) | 从组件事件获取事件类型。 |
-| OH\_ArkUI\_NodeEvent\_GetNodeHandle(ArkUI\_NodeEvent\* event) | 获取触发组件事件的组件对象。 |
-| OH\_ArkUI\_GetNodeHandleFromNapiValue(napi\_env env, napi\_value frameNode, ArkUI\_NodeHandle\* handle) | 获取ArkTS侧创建的FrameNode节点对象映射到Native侧的ArkUI\_NodeHandle。 |
-| OH\_ArkUI\_SurfaceHolder\_Create(ArkUI\_NodeHandle node) | 从XComponent节点创建一个OH\_ArkUI\_SurfaceHolder对象。 |
-| OH\_ArkUI\_SurfaceCallback\_Create() | 创建一个OH\_ArkUI\_SurfaceCallback对象。 |
-| OH\_ArkUI\_SurfaceCallback\_SetSurfaceCreatedEvent(OH\_ArkUI\_SurfaceCallback\* callback, void (\*onSurfaceCreated)(OH\_ArkUI\_SurfaceHolder\* surfaceHolder)) | 往OH\_ArkUI\_SurfaceCallback对象中注册onSurfaceCreated回调。 |
-| OH\_ArkUI\_SurfaceCallback\_SetSurfaceChangedEvent(OH\_ArkUI\_SurfaceCallback\* callback, void (\*onSurfaceChanged)(OH\_ArkUI\_SurfaceHolder\* surfaceHolder, uint64\_t width, uint64\_t height)) | 往OH\_ArkUI\_SurfaceCallback对象中注册onSurfaceChanged回调。 |
-| OH\_ArkUI\_SurfaceCallback\_SetSurfaceDestroyedEvent(OH\_ArkUI\_SurfaceCallback\* callback, void (\*onSurfaceDestroyed)(OH\_ArkUI\_SurfaceHolder\* surfaceHolder)) | 往OH\_ArkUI\_SurfaceCallback对象中注册onSurfaceDestroyed回调。 |
-| OH\_ArkUI\_SurfaceCallback\_SetSurfaceShowEvent(OH\_ArkUI\_SurfaceCallback\* callback, void (\*onSurfaceShow)(OH\_ArkUI\_SurfaceHolder\* surfaceHolder)) | 往OH\_ArkUI\_SurfaceCallback对象中注册onSurfaceShow回调。 |
-| OH\_ArkUI\_SurfaceCallback\_SetSurfaceHideEvent(OH\_ArkUI\_SurfaceCallback\* callback, void (\*onSurfaceHide)(OH\_ArkUI\_SurfaceHolder\* surfaceHolder)) | 往OH\_ArkUI\_SurfaceCallback对象中注册onSurfaceHide回调。 |
-| OH\_ArkUI\_XComponent\_RegisterOnFrameCallback(ArkUI\_NodeHandle node, void (\*callback)(ArkUI\_NodeHandle node, uint64\_t timestamp, uint64\_t targetTimestamp)) | 为XComponent节点注册onFrame回调。 |
-| OH\_ArkUI\_SurfaceHolder\_AddSurfaceCallback(OH\_ArkUI\_SurfaceHolder\* surfaceHolder, OH\_ArkUI\_SurfaceCallback\* callback) | 往OH\_ArkUI\_SurfaceHolder实例注册OH\_ArkUI\_SurfaceCallback对象。 |
-| OH\_ArkUI\_AccessibilityProvider\_Create(ArkUI\_NodeHandle node) | 从XComponent节点创建一个ArkUI\_AccessibilityProvider对象。 |
-| OH\_ArkUI\_XComponent\_UnregisterOnFrameCallback(ArkUI\_NodeHandle node) | 取消注册XComponent节点的onFrame回调。 |
-| OH\_ArkUI\_AccessibilityProvider\_Dispose(ArkUI\_AccessibilityProvider\* provider) | 释放ArkUI\_AccessibilityProvider对象。 |
-| OH\_ArkUI\_XComponent\_SetExpectedFrameRateRange(ArkUI\_NodeHandle node, OH\_NativeXComponent\_ExpectedRateRange range) | 为XComponent节点设置预期的帧率范围。 |
-| OH\_ArkUI\_XComponent\_SetNeedSoftKeyboard(ArkUI\_NodeHandle node, bool needSoftKeyboard) | 设置XComponent节点在获得焦点时是否需要显示软键盘。 |
+| [OH\_ArkUI\_QueryModuleInterfaceByName](../harmonyos-references/capi-native-interface-h.md#oh_arkui_querymoduleinterfacebyname)(ArkUI\_NativeAPIVariantKind type, const char\* structName) | 获取指定类型的Native模块接口集合。 |
+| [OH\_ArkUI\_XComponent\_GetNativeWindow](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_arkui_xcomponent_getnativewindow)(OH\_ArkUI\_SurfaceHolder\* surfaceHolder) | 获取与OH\_ArkUI\_SurfaceHolder实例关联的NativeWindow。 |
+| [OH\_ArkUI\_SurfaceHolder\_RemoveSurfaceCallback](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_arkui_surfaceholder_removesurfacecallback)(OH\_ArkUI\_SurfaceHolder\* surfaceHolder, OH\_ArkUI\_SurfaceCallback\* callback) | 从OH\_ArkUI\_SurfaceHolder实例中移除先前添加的Surface生命周期回调。 |
+| [OH\_ArkUI\_SurfaceCallback\_Dispose](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_arkui_surfacecallback_dispose)(OH\_ArkUI\_SurfaceCallback\* callback) | 释放OH\_ArkUI\_SurfaceCallback对象。 |
+| [OH\_ArkUI\_SurfaceHolder\_Dispose](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_arkui_surfaceholder_dispose)(OH\_ArkUI\_SurfaceHolder\* surfaceHolder) | 释放OH\_ArkUI\_SurfaceHolder对象。 |
+| [OH\_ArkUI\_NodeEvent\_GetEventType](../harmonyos-references/capi-native-node-h.md#oh_arkui_nodeevent_geteventtype)(ArkUI\_NodeEvent\* event) | 从组件事件获取事件类型。 |
+| [OH\_ArkUI\_NodeEvent\_GetNodeHandle](../harmonyos-references/capi-native-node-h.md#oh_arkui_nodeevent_getnodehandle)(ArkUI\_NodeEvent\* event) | 获取触发组件事件的组件对象。 |
+| [OH\_ArkUI\_GetNodeHandleFromNapiValue](../harmonyos-references/capi-native-node-napi-h.md#oh_arkui_getnodehandlefromnapivalue)(napi\_env env, napi\_value frameNode, ArkUI\_NodeHandle\* handle) | 获取ArkTS侧创建的FrameNode节点对象映射到Native侧的ArkUI\_NodeHandle。 |
+| [OH\_ArkUI\_SurfaceHolder\_Create](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_arkui_surfaceholder_create)(ArkUI\_NodeHandle node) | 从XComponent节点创建一个OH\_ArkUI\_SurfaceHolder对象。 |
+| [OH\_ArkUI\_SurfaceCallback\_Create](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_arkui_surfacecallback_create)() | 创建一个OH\_ArkUI\_SurfaceCallback对象。 |
+| [OH\_ArkUI\_SurfaceCallback\_SetSurfaceCreatedEvent](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_arkui_surfacecallback_setsurfacecreatedevent)(OH\_ArkUI\_SurfaceCallback\* callback, void (\*onSurfaceCreated)(OH\_ArkUI\_SurfaceHolder\* surfaceHolder)) | 往OH\_ArkUI\_SurfaceCallback对象中注册onSurfaceCreated回调。 |
+| [OH\_ArkUI\_SurfaceCallback\_SetSurfaceChangedEvent](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_arkui_surfacecallback_setsurfacechangedevent)(OH\_ArkUI\_SurfaceCallback\* callback, void (\*onSurfaceChanged)(OH\_ArkUI\_SurfaceHolder\* surfaceHolder, uint64\_t width, uint64\_t height)) | 往OH\_ArkUI\_SurfaceCallback对象中注册onSurfaceChanged回调。 |
+| [OH\_ArkUI\_SurfaceCallback\_SetSurfaceDestroyedEvent](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_arkui_surfacecallback_setsurfacedestroyedevent)(OH\_ArkUI\_SurfaceCallback\* callback, void (\*onSurfaceDestroyed)(OH\_ArkUI\_SurfaceHolder\* surfaceHolder)) | 往OH\_ArkUI\_SurfaceCallback对象中注册onSurfaceDestroyed回调。 |
+| [OH\_ArkUI\_SurfaceCallback\_SetSurfaceShowEvent](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_arkui_surfacecallback_setsurfaceshowevent)(OH\_ArkUI\_SurfaceCallback\* callback, void (\*onSurfaceShow)(OH\_ArkUI\_SurfaceHolder\* surfaceHolder)) | 往OH\_ArkUI\_SurfaceCallback对象中注册onSurfaceShow回调。 |
+| [OH\_ArkUI\_SurfaceCallback\_SetSurfaceHideEvent](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_arkui_surfacecallback_setsurfacehideevent)(OH\_ArkUI\_SurfaceCallback\* callback, void (\*onSurfaceHide)(OH\_ArkUI\_SurfaceHolder\* surfaceHolder)) | 往OH\_ArkUI\_SurfaceCallback对象中注册onSurfaceHide回调。 |
+| [OH\_ArkUI\_XComponent\_RegisterOnFrameCallback](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_arkui_xcomponent_registeronframecallback)(ArkUI\_NodeHandle node, void (\*callback)(ArkUI\_NodeHandle node, uint64\_t timestamp, uint64\_t targetTimestamp)) | 为XComponent节点注册onFrame回调。 |
+| [OH\_ArkUI\_SurfaceHolder\_AddSurfaceCallback](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_arkui_surfaceholder_addsurfacecallback)(OH\_ArkUI\_SurfaceHolder\* surfaceHolder, OH\_ArkUI\_SurfaceCallback\* callback) | 往OH\_ArkUI\_SurfaceHolder实例注册OH\_ArkUI\_SurfaceCallback对象。 |
+| [OH\_ArkUI\_AccessibilityProvider\_Create](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_arkui_accessibilityprovider_create)(ArkUI\_NodeHandle node) | 从XComponent节点创建一个ArkUI\_AccessibilityProvider对象。 |
+| [OH\_ArkUI\_XComponent\_UnregisterOnFrameCallback](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_arkui_xcomponent_unregisteronframecallback)(ArkUI\_NodeHandle node) | 取消注册XComponent节点的onFrame回调。 |
+| [OH\_ArkUI\_AccessibilityProvider\_Dispose](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_arkui_accessibilityprovider_dispose)(ArkUI\_AccessibilityProvider\* provider) | 释放ArkUI\_AccessibilityProvider对象。 |
+| [OH\_ArkUI\_XComponent\_SetExpectedFrameRateRange](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_arkui_xcomponent_setexpectedframeraterange)(ArkUI\_NodeHandle node, OH\_NativeXComponent\_ExpectedRateRange range) | 为XComponent节点设置预期的帧率范围。 |
+| [OH\_ArkUI\_XComponent\_SetNeedSoftKeyboard](../harmonyos-references/capi-native-interface-xcomponent-h.md#oh_arkui_xcomponent_setneedsoftkeyboard)(ArkUI\_NodeHandle node, bool needSoftKeyboard) | 设置XComponent节点在获得焦点时是否需要显示软键盘。 |
 
 **开发步骤**
 
@@ -959,12 +959,12 @@ XComponent推荐使用两种方式获取XComponent持有Surface的生命周期�
        callbackMap_[holder] = callback;
        auto render = new EGLRender();
        OH_ArkUI_SurfaceHolder_SetUserData(holder, render); // 将render保存在holder中
-       OH_ArkUI_SurfaceCallback_SetSurfaceCreatedEvent(callback, OnSurfaceCreatedNative);     // 注册OnSurfaceCreated回调
-       OH_ArkUI_SurfaceCallback_SetSurfaceChangedEvent(callback, OnSurfaceChangedNative);     // 注册OnSurfaceChanged回调
-       OH_ArkUI_SurfaceCallback_SetSurfaceDestroyedEvent(callback, OnSurfaceDestroyedNative); // 注册OnSurfaceDestroyed回调
-       OH_ArkUI_SurfaceCallback_SetSurfaceShowEvent(callback, OnSurfaceShowNative);           // 注册OnSurfaceShow回调
-       OH_ArkUI_SurfaceCallback_SetSurfaceHideEvent(callback, OnSurfaceHideNative);           // 注册OnSurfaceHide回调
-       OH_ArkUI_XComponent_RegisterOnFrameCallback(handle, OnFrameCallbackNative);            // 注册OnFrameCallback回调
+       OH_ArkUI_SurfaceCallback_SetSurfaceCreatedEvent(callback, OnSurfaceCreatedNative);     // 注册OnSurfaceCreated()回调
+       OH_ArkUI_SurfaceCallback_SetSurfaceChangedEvent(callback, OnSurfaceChangedNative);     // 注册OnSurfaceChanged()回调
+       OH_ArkUI_SurfaceCallback_SetSurfaceDestroyedEvent(callback, OnSurfaceDestroyedNative); // 注册OnSurfaceDestroyed()回调
+       OH_ArkUI_SurfaceCallback_SetSurfaceShowEvent(callback, OnSurfaceShowNative);           // 注册OnSurfaceShow()回调
+       OH_ArkUI_SurfaceCallback_SetSurfaceHideEvent(callback, OnSurfaceHideNative);           // 注册OnSurfaceHide()回调
+       OH_ArkUI_XComponent_RegisterOnFrameCallback(handle, OnFrameCallbackNative);            // 注册OnFrame()回调
        OH_ArkUI_SurfaceHolder_AddSurfaceCallback(holder, callback);                     // 注册SurfaceCallback回调
        if (nodeAPI->addNodeEventReceiver(handle, onEvent)) { // 添加事件监听，返回0表示成功，非0表示失败
            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "onBind", "addNodeEventReceiver error");
@@ -1649,7 +1649,7 @@ XComponent推荐使用两种方式获取XComponent持有Surface的生命周期�
 
    上述用例具体实现可参考[NativeXComponent](https://gitcode.com/openharmony/applications_app_samples/tree/master/code/DocsSample/ArkUISample/NativeXComponentSample)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/5-FRF9vuQvChLq-l5t_8JA/zh-cn_image_0000002809049667.jpeg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/AcQ40gB_QcGx1vDEORM8jQ/zh-cn_image_0000002786518972.jpeg)
 
 ### 在ArkTS侧使用SurfaceId进行渲染绘制
 

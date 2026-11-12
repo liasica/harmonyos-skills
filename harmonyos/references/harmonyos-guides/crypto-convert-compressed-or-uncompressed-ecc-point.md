@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-conver
 title: 使用ECC压缩/非压缩点格式转换(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥生成与转换 > 使用ECC压缩/非压缩点格式转换(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:36+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:51:32+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:eb168e74fcccbceb94d60bc3b0a4e5afe944d46fa8f33255fa8d8f7fa2ce5e39
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/core-vision-f
 title: 人脸比对
 breadcrumb: 指南 > AI > Core Vision Kit（基础视觉服务） > 人脸比对
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:09+08:00
-doc_updated_at: 2026-09-07
-content_hash: sha256:ec0250f5ace29c283feccc96af4292142514c687130f08c2af9c956a5486bdb2
+scraped_at: 2026-11-12T09:52:43+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c385292f34be477b558c40c42d7640459b6d1ed6e32f98739d61e8cbc74c8cd3
 ---
 
 ## 适用场景
@@ -14,7 +14,7 @@ content_hash: sha256:ec0250f5ace29c283feccc96af4292142514c687130f08c2af9c956a548
 
 效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/A0IP3-whSYWvZ03tM8j8wA/zh-cn_image_0000002779691834.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/oH1x0RcFQOa2B6blaYkOUg/zh-cn_image_0000002815400225.png)
 
 ## 开发步骤
 
@@ -115,11 +115,11 @@ content_hash: sha256:ec0250f5ace29c283feccc96af4292142514c687130f08c2af9c956a548
        let visionInfo: faceComparator.VisionInfo = {
          pixelMap: this.chooseImage
        };
-       let visionInfo1: faceComparator.VisionInfo = {
-         pixelMap: this.chooseImage1
-       };
+        let visionInfo1: faceComparator.VisionInfo = {
+          pixelMap: this.chooseImage1
+        };
         faceComparator.compareFaces(visionInfo, visionInfo1)
-        .then((data: faceComparator.FaceCompareResult) => {
+          .then((data: faceComparator.FaceCompareResult) => {
           if (data !== undefined) {
             let faceString = `degree of similarity: ${this.toPercentage(data.similarity)}${(data.isSamePerson) ? '. is' : '. no'} same person`;
             hilog.info(0x0000, TAG, 'faceString data is ' + faceString);

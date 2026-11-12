@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-coding-
 title: ArkTS编程规范
 breadcrumb: 指南 > 基础入门 > 学习ArkTS语言 > ArkTS编程规范
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:08+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:50:57+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:21bc6f35e6d7d397f7a1e93623ad71e6348ee30775a3a09202204b16854a4ef5
 ---
 

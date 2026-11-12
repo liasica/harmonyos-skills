@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_prefer-fu
 title: "@typescript-eslint/prefer-function-type"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/prefer-function-type
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:58+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:afea282d2e7d4edebabcc40562b9cdf4b60d19c881001c5d57405207f9a540fa
+scraped_at: 2026-11-12T09:52:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:09c18290600987778be5f85541f0502628b7a6155b62921aa63b75ab15ef6e38
 ---
 
 强制使用函数类型而不是带有签名的对象类型。
@@ -62,4 +62,4 @@ export interface Foo {
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

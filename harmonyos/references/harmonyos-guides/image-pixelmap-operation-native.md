@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-pixelma
 title: 位图操作
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(依赖JS对象)(不再推荐) > 位图操作
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:59+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:324ae604f87b69976823bc33296cd18e7311ffb0f4c0e561146b3f2a435769f7
+scraped_at: 2026-11-12T09:52:07+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:22eaddac6ca8b407679b9b4dd20f14d873608c4e2af07ca8d62f753375325bbf
 ---
 
 **说明** 
@@ -67,7 +67,7 @@ EXTERN_C_END
    ```
    napi_value CreatePixelMapTest(napi_env env, napi_callback_info info) {
        const int32_t PIXEL_FORMAT_BGRA_8888 = 4;
-        const uint32_t ALPHA_TYPE_UNKNOWN = 0;
+       const uint32_t ALPHA_TYPE_UNKNOWN = 0;
 
        napi_value udfVar = nullptr;
        napi_value pixelMap = nullptr;
@@ -179,9 +179,9 @@ EXTERN_C_END
        float scaleY = 0.5;
        OH_PixelMap_Scale(native, scaleX, scaleY);
 
-       // 设置偏移。
-       // translateX：向下偏移50像素。
-       // translateY：向右偏移50像素。
+       // 设置平移。
+       // translateX：向右平移50像素。
+       // translateY：向下平移50像素。
        float translateX = 50;
        float translateY = 50;
        OH_PixelMap_Translate(native, translateX, translateY);

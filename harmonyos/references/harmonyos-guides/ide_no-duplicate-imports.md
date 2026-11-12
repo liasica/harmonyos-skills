@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-duplic
 title: "@typescript-eslint/no-duplicate-imports"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-duplicate-imports
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:09+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:c23e83993d4900ff2962c14897ed029152e095ddf2a104027a0e4275b7aef530
+scraped_at: 2026-11-12T09:52:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:cc36a4efe651ff81657ffb2065d28c1be948f1a0655c3fdf24fa9581bcbeb87d
 ---
 
 禁止重复的模块导入。
@@ -47,4 +47,4 @@ import { bar } from './foo';
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

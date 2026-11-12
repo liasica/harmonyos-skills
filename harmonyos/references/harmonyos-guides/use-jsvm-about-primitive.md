@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-abou
 title: 使用JSVM-API接口进行primitive类型相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口进行primitive类型相关开发
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:17+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:52:49+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:125708f8763a18e1142a6298bb15c342ef5b7d4c49b32c3c14fa32d9438157eb
 ---
 

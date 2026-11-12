@@ -1,18 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-control-unit
 title: 控制单元
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 基本概念 > 硬件架构 > 控制单元
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > 基本概念 > 硬件架构 > 控制单元
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:49+08:00
-doc_updated_at: 2026-08-07
-content_hash: sha256:02679768d87d09abf010292dfa7e64059e256f588bb60e963ea48380a2028ad2
+scraped_at: 2026-11-12T09:52:41+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:95b6c564bc8b231d025551f31913f2494d5ee4695771fbcba02e65b58572ae5c
 ---
 
 控制单元为整个计算过程提供了指令控制，负责整个AI Core的运行。AI Core包含的控制单元如图1所示，每个模块的具体介绍请参考表1。
 
 **图1** 控制单元
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/05Lh5QJcQEq_NuJuFbxdaA/zh-cn_image_0000002779851722.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/ruVIEukmRd6qRDu_WTKtWw/zh-cn_image_0000002815400183.png)
 
 **表1** 控制单元及相关的指令队列介绍
 
@@ -37,4 +37,6 @@ content_hash: sha256:02679768d87d09abf010292dfa7e64059e256f588bb60e963ea48380a20
   + SetFlag：当前序指令的所有读写操作都完成之后，当前指令开始执行，并将硬件中的对应标志位设置为1。
   + WaitFlag：当执行到该指令时，如果发现对应标志位为0，该队列的后续指令将一直被阻塞；如果发现对应标志位为1，则将对应标志位设置为0，同时后续指令开始执行。
 
-AscendC API提供了用于[同步控制](cannkit-tpipe-constructor.md)的接口，开发者可以使用这类API来自行完成同步控制。推荐开发者基于[编程模型](cannkit-spmd-model.md)中介绍的范式进行编程，该编程模型帮助开发者完成了同步控制，从而避免自行同步控制带来的编程复杂度，但理解同步的基本原理，会便于更好地设计并行计算程序。
+AscendC提供同步控制API，开发者可自行控制同步。但更推荐使用[编程模型](cannkit-spmd-model.md)中介绍的编程模型和范式进行开发，其已自动完成同步控制，通常无需再关注同步；自行同步控制可能会带来一定的编程复杂度。
+
+希望开发者可以理解同步的基本原理，便于后续更好地理解、设计并行计算程序；同时少数情况需要开发者手动插入同步，您可以通过[什么时候需要开发者手动插入同步](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/sync_control/intra_core_sync/intra_core_sync_overview.md)章节来了解具体内容。

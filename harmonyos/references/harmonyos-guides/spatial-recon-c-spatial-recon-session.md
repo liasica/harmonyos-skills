@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/spatial-recon
 title: 管理Spatial Recon会话
 breadcrumb: 指南 > 图形 > Spatial Recon Kit（空间建模服务） > 管理Spatial Recon会话
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:08+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1ca2929224d5395f38d995543c1752f92ec3279a7a29219b28d8d595242a55af
+scraped_at: 2026-11-12T09:52:15+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e0e656f25b0d173884d72712b5207d926cb25dfe6bae198e682df02458dbc05b
 ---
 
 ## 概要
@@ -76,6 +76,7 @@ HMS_SpatialReconStatus ret = HMS_SpatialRecon_CreateSession(SPATIAL_RECON_MODEL_
 
 ```cpp
 HMS_SpatialRecon_DestroySession(spatialReconSession);
+spatialReconSession = nullptr;
 ```
 
 请注意，如果某session正在执行任务（如重建、保存）时要求销毁，会导致未定义行为。一旦调用了此函数销毁session，则不应该对此session进行任何操作，否则结果是未定义的。

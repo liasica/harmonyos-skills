@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅24h功耗器件分解统计事件（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 24h功耗器件分解统计事件 > 订阅24h功耗器件分解统计事件（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:13+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:7f3c44d606c85a94c7d9994f2955a99d9914d4a7c778182be6fd5e2050872254
+scraped_at: 2026-11-12T09:51:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a76de5114b3f6e04e23930d11a7f3756fbbb92b09e4d1a999360306222200186
 ---
 
 ## 接口说明
@@ -23,32 +23,34 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
 
 1. 编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets”文件，在onCreate函数中添加系统事件的订阅，示例代码如下：
 
-   ```ts
+   ```typescript
    import { hiAppEvent, hilog } from '@kit.PerformanceAnalysisKit';
+   ```
 
+   ```typescript
    hiAppEvent.addWatcher({
-      // 开发者可以自定义观察者名称，系统会使用名称来标识不同的观察者
-      name: "watcher",
-      // 开发者可以订阅感兴趣的系统事件，此处是订阅了应用24h功耗器件分解统计事件
-      appEventFilters: [
-        {
-          domain: hiAppEvent.domain.OS,
-          names: [hiAppEvent.event.BATTERY_USAGE]
-        }
-      ],
-      // 开发者可以自行实现订阅实时回调函数，以便对订阅获取到的事件数据进行自定义处理
-      onReceive: (domain: string, appEventGroups: Array<hiAppEvent.AppEventGroup>) => {
-        hilog.info(0x0000, 'testTag', `HiAppEvent onReceive: domain=${domain}`);
-        for (const eventGroup of appEventGroups) {
-          // 开发者可以根据事件集合中的事件名称区分不同的系统事件
-          hilog.info(0x0000, 'testTag', `HiAppEvent eventName=${eventGroup.name}`);
-          for (const eventInfo of eventGroup.appEventInfos) {
-            // 开发者可以对事件集合中的事件数据进行自定义处理，此处是将事件数据打印在日志中
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo=${JSON.stringify(eventInfo)}`);
-          }
-        }
-      }
-    });
+     // 开发者可以自定义观察者名称，系统会使用名称来标识不同的观察者
+     name: "watcher_battery_usage",
+     // 开发者可以订阅感兴趣的系统事件，此处是订阅了应用24h功耗器件分解统计事件
+     appEventFilters: [
+       {
+         domain: hiAppEvent.domain.OS,
+         names: [hiAppEvent.event.BATTERY_USAGE]
+       }
+     ],
+     // 开发者可以自行实现订阅实时回调函数，以便对订阅获取到的事件数据进行自定义处理
+     onReceive: (domain: string, appEventGroups: Array<hiAppEvent.AppEventGroup>) => {
+       hilog.info(0x0000, 'testTag', `HiAppEvent onReceive: domain=${domain}`);
+       for (const eventGroup of appEventGroups) {
+         // 开发者可以根据事件集合中的事件名称区分不同的系统事件
+         hilog.info(0x0000, 'testTag', `HiAppEvent eventName=${eventGroup.name}`);
+         for (const eventInfo of eventGroup.appEventInfos) {
+           // 开发者可以对事件集合中的事件数据进行自定义处理，此处是将事件数据打印在日志中
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo=${JSON.stringify(eventInfo)}`);
+         }
+       }
+     }
+   });
    ```
 2. 工程中构造高耗电测试场景，并进行相关测试，使设备产生实际耗电，演示示例如下：
 
@@ -56,11 +58,11 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
 
    开发者自测试可跳过此步骤，仅需完成应用安装后并断开充电（充电状态下测试会导致无数据上报），使用应用5分钟以上。
 
-   1）工程中添加“entry > src > main > ets > workers> worker.ets”文件，构造一个死循环，接收到主线程的消息后触发CPU高负载事件，完整示例代码如下
+   1）工程中添加“entry > src > main > ets > works> worker.ets”文件，构造一个死循环，接收到主线程的消息后触发CPU高负载事件，完整示例代码如下
 
-   ```ts
+   ```typescript
    import { worker } from '@kit.ArkTS';
-
+      
    let workerPort = worker.workerPort;
    workerPort.onmessage = (message) => {
      eatCpu();
@@ -75,11 +77,11 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
 
    2）工程中添加“entry > src > main > ets > tester> CpuTester.ets”文件，在CpuTester 类中的start方法中开启多个线程的死循环，以触发多线程的CPU高负载事件，完整示例代码如下：
 
-   ```ts
+   ```typescript
    import { worker } from '@kit.ArkTS';
-
+      
    export default class CpuTester {
-     workerInstance: worker.ThreadWorker = new worker.ThreadWorker('entry/ets/workers/worker.ets');
+     private workerInstance: worker.ThreadWorker = new worker.ThreadWorker('entry/ets/workers/worker.ets');
      start(threadNum: number) {
        for (let index = 0; index < threadNum; index++) {
          this.workerInstance = new worker.ThreadWorker('entry/ets/workers/worker.ets');
@@ -89,43 +91,28 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
    }
    ```
 
-   3）编辑工程中的“entry > src > main > ets > pages > Index.ets”文件，添加“CPU加压”按钮并在其onClick函数构造多线程执行死循环，以触发CPU高负载事件，完整示例代码如下：
+   3）编辑工程中的“entry > src > main > ets > pages > Index.ets”文件，添加“CPU加压”按钮并在其onClick函数构造多线程执行死循环，以触发CPU高负载事件，示例代码如下：
 
-   ```ts
+   ```typescript
    import CpuTester from '../tester/CpuTester';
+   ```
 
-   @Entry
-   @Component
-   struct Index {
-     @State message: string = 'Hello World';
+   ```typescript
+   @State enable: boolean = true;
+   @State threadNum: number = 5;
+   cpuTester: CpuTester = new CpuTester();
+   ```
 
-     @State enable: boolean = true;
-
-     @State threadNum: number = 5;
-
-     cpuTester: CpuTester = new CpuTester();
-
-   build() {
-     Row() {
-       Column() {
-         Text(this.message)
-           .fontSize(50)
-           .fontWeight(FontWeight.Bold)
-         Button('CPU加压')
-           .fontSize(18)
-           .margin(12)
-           .fontWeight(FontWeight.Bold)
-           .enabled(this.enable)
-           .onClick(() => {
-             this.cpuTester.start(this.threadNum);
-             this.enable = false;
-             })
-         }
-         .width('100%')
-       }
-       .height('100%')
-     }
-   }
+   ```typescript
+   Button('CPU加压')
+    .fontSize(18)
+    .margin(12)
+    .fontWeight(FontWeight.Bold)
+    .enabled(this.enable)
+    .onClick(() => {
+      this.cpuTester.start(this.threadNum);
+      this.enable = false;
+      })
    ```
 
    4）安装运行测试应用到测试机上，断开USB（2in1设备还需要断开充电线）；

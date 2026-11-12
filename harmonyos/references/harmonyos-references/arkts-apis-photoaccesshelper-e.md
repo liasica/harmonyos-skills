@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Enums
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS API > @ohos.file.photoAccessHelper (相册管理模块) > Enums
 category: harmonyos-references
-scraped_at: 2026-09-18T06:51:18+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:dba6ffab847a7adcb9f27f8ffafea205304056a1201ab314dd52c88f595b3cdd
+scraped_at: 2026-11-12T09:56:52+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d2434c37ff775bd0046092bede1d294f0e62d535fd38c958b9e0bfa314ed5b5c
 ---
 
 **说明** 
@@ -512,3 +512,21 @@ async function example(phAccessHelper: photoAccessHelper.PhotoAccessHelper) {
 | DEFAULT | 0 | 根据系统的资产兼容性配置自动判断是否执行转码。如果当前设备不支持资产的原始格式，则会自动转码为兼容格式。 |
 | CURRENT | 1 | 不进行转码。资产将以其原始格式返回。 |
 | COMPATIBLE | 2 | 所有资产都被转码为最广泛兼容的格式（如JPEG）。 |
+
+## PickerColorMode
+
+表示Picker的颜色模式的枚举。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| AUTO | 0 | 颜色跟随系统。不填写时默认采用此模式。 |
+| LIGHT | 1 | 浅色模式。 |
+| DARK | 2 | 深色模式。 |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-notif
 title: Account Kit通知事件
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > Account Kit通知事件
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:23+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:e9d54450c5b4ae1285feb03035e5fb93e4640ebf74a914f821903c2d20cbfed7
+scraped_at: 2026-11-12T09:52:17+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b3aa177327648eadcf2208f0c2d5e40e39b2ad6849f43df74ea5cbd772c926c3
 ---
 
 ## 概述
@@ -32,6 +32,10 @@ content_hash: sha256:e9d54450c5b4ae1285feb03035e5fb93e4640ebf74a914f821903c2d20c
 | --- | --- |
 | [COMMON\_EVENT\_DISTRIBUTED\_ACCOUNT\_LOGIN](../harmonyos-references/commoneventmanager-definitions.md#common_event_distributed_account_login) | 表示分布式账号登录成功的动作。华为账号登录成功也会发送此广播事件。 |
 | [COMMON\_EVENT\_DISTRIBUTED\_ACCOUNT\_LOGOUT](../harmonyos-references/commoneventmanager-definitions.md#common_event_distributed_account_logout) | 表示分布式账号登出成功的动作。华为账号登出成功也会发送此广播事件。 |
+
+### 约束与限制
+
+华为账号登录/登出事件支持Phone、Tablet、PC/2in1设备。并且从5.1.0(18)版本开始，新增支持Wearable设备；从5.1.1(19)版本开始，新增支持TV设备；从26.0.1版本开始，新增支持Car设备。
 
 ### 开发前提
 
@@ -100,6 +104,10 @@ content_hash: sha256:e9d54450c5b4ae1285feb03035e5fb93e4640ebf74a914f821903c2d20c
 **说明** 
 
 主动开启系统未成年人模式（PC/2in1设备暂不支持从控制中心开启系统未成年人模式），当前设备会发送系统未成年人模式开启事件。
+
+### 约束与限制
+
+系统未成年人模式开启/关闭事件支持Phone、Tablet、PC/2in1设备。并且从5.1.1(19)版本开始，新增支持TV设备。
 
 ### 开发前提
 
@@ -176,16 +184,16 @@ content_hash: sha256:e9d54450c5b4ae1285feb03035e5fb93e4640ebf74a914f821903c2d20c
 
 1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)，进入“开发者管理”页面。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/xTuEd9ZCT3W68lTcF5W2lQ/zh-cn_image_0000002779851204.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/y0FxelpJTaanPWcMelaYTw/zh-cn_image_0000002786520080.png)
 2. 左侧导航栏选择“ID、证书和Profile > APP ID”，页面中选择“HarmonyOS”，点击“开放能力管理”页签；选择需要订阅用户信息变更事件的应用，找到“RISC”并勾选，点击“保存”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/vlUNPTLxRHu2X9NQJuXZxw/zh-cn_image_0000002779691236.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/Pc2GKeu4SlSTfO23AisMqA/zh-cn_image_0000002786360152.png)
 3. 点击“RISC”对应的“管理”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/49hW1AQrRmimo1I2qOZFQw/zh-cn_image_0000002809010857.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/gAmjg06cQe-oncy5y8Jy5Q/zh-cn_image_0000002815559573.png)
 4. 在弹窗中配置“回调地址”及“订阅范围”，然后点击“提交”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/ig_HLMz5R1qKw2itjbzH8Q/zh-cn_image_0000002809050771.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/iG5KvLjtTMiXXZWb9CEbgw/zh-cn_image_0000002815399657.png)
 
    **说明** 
 

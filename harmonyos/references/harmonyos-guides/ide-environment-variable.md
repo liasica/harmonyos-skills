@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-environme
 title: Terminal环境变量说明
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 附录 > Terminal环境变量说明
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:24+08:00
+scraped_at: 2026-11-12T09:53:05+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:086b6c6960713f5280eeb32a41757a18865d8ae3c242bb73ef2fdc142e71825c
+content_hash: sha256:4673b63571d569b7d2c6bfd2576a7d71b6bcc5cf6a56ebb4b9a313d17eb23063
 ---
 
 在DevEco Studio的Terminal中执行hvigor、ohpm等命令时，默认使用内置的环境变量，无需额外配置。
@@ -14,7 +14,7 @@ DevEco Studio内置环境变量的设置方式如下：
 
 点击菜单栏**File > Settings**（macOS为**DevEco Studio > Preferences/Settings** ） **> Tools > Terminal**，勾选以下选项表示开启内置环境变量，重启DevEco Studio后生效。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/LEDJZOg8SgOnZmOVkpSgzQ/zh-cn_image_0000002701663164.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/Q32hlbh0SrKxq9n9h2N7oQ/zh-cn_image_0000002779567038.png)
 
 除了内置的环境变量外，开发者也可以在本地系统中配置PATH环境变量。如果同时配置了内置环境变量和本地系统环境变量，两者存在优先级关系，实际生效的环境变量如下。
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口进行Date相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口进行Date相关开发
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:16+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:52:46+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:2a7e5328b10bd4f94d3973847d0a6c33b822afb4086005d34b39deb0c6c75bb7
 ---
 

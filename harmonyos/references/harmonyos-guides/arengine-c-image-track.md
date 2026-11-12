@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-c-im
 title: 图像跟踪（C/C++）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 图像跟踪 > 图像跟踪（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:02+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:c18869046009ebbb26ea170cda423c2758297db0eb2a42dc176f0956fdf7d0e3
+scraped_at: 2026-11-12T09:52:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f8a3d51fc989fe81ad9df14497c6cf0932a256830a4c7e8997defce4ef62efae
 ---
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/harmonyos_samples/arengine_-sample-code_-clientdemo_cpp)。
@@ -36,8 +36,8 @@ content_hash: sha256:c18869046009ebbb26ea170cda423c2758297db0eb2a42dc176f0956fdf
 | [HMS\_AREngine\_ARAugmentedImageDatabase\_AddImage](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_araugmentedimagedatabase_addimage) | 将图像添加到图像数据库并输出对应图像的索引。 |
 | [HMS\_AREngine\_ARTrackableList\_GetSize](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_artrackablelist_getsize) | 获取此列表中的可跟踪对象的数量。 |
 | [HMS\_AREngine\_ARAugmentedImage\_GetCenterPose](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_araugmentedimage_getcenterpose) | 获取跟踪图像中心点在世界坐标系中的位姿信息。 |
-| [HMS\_AREngine\_ARAugmentedImage\_GetExtendX](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_araugmentedimage_getextendx) | 以图像的中心点为坐标原点，获取在X轴上的宽度值。单位：米。 |
-| [HMS\_AREngine\_ARAugmentedImage\_GetExtendZ](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_araugmentedimage_getextendz) | 以图像的中心点为坐标原点，获取在Z轴上的高度值。单位：米。 |
+| [HMS\_AREngine\_ARAugmentedImage\_GetExtendX](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_araugmentedimage_getextendx) | 以图像的中心点为坐标原点，获取在X轴上的估计值。单位：米。 |
+| [HMS\_AREngine\_ARAugmentedImage\_GetExtendZ](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_araugmentedimage_getextendz) | 以图像的中心点为坐标原点，获取在Z轴上的估计值。单位：米。 |
 | [HMS\_AREngine\_ARAugmentedImageDatabase\_Serialize](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_araugmentedimagedatabase_serialize) | 序列化特征数据库，在添加完图片后，可以将特征库序列化为buffer，用户可以保存此buffer以供下次使用。 |
 | [HMS\_AREngine\_ARAugmentedImageDatabase\_Deserialize](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_araugmentedimagedatabase_deserialize) | 反序列化特征数据库，用户可以将上次生成的或者保存的buffer数据反序列化为特征数据库后直接使用。 |
 
@@ -598,16 +598,16 @@ HMS_AREngine_ARPose_Create(arSession, nullptr, 0, &imagePose);
 auto getPoseResult = HMS_AREngine_ARAugmentedImage_GetCenterPose(arSession, image, imagePose);
 ```
 
-### 获取跟踪图像的宽度
+### 获取跟踪图像的长度
 
-调用[HMS\_AREngine\_ARAugmentedImage\_GetExtendX](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_araugmentedimage_getextendx)函数，获取图像的中心点为坐标原点，物理图像的宽度（单位：米），得到X轴上的估计值。
+调用[HMS\_AREngine\_ARAugmentedImage\_GetExtendX](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_araugmentedimage_getextendx)函数，获取图像的中心点为坐标原点，X轴上的估计值（单位：米）。
 
 ```
 float extent_x;
 HMS_AREngine_ARAugmentedImage_GetExtendX(arSession, image, &extent_x);
 ```
 
-调用[HMS\_AREngine\_ARAugmentedImage\_GetExtendZ](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_araugmentedimage_getextendz)函数，获取图像的中心点为坐标原点，物理图像的高度（单位：米），得到Z轴上的估计值。
+调用[HMS\_AREngine\_ARAugmentedImage\_GetExtendZ](../harmonyos-references/arengine-capi-arengine.md#hms_arengine_araugmentedimage_getextendz)函数，获取图像的中心点为坐标原点，Z轴上的估计值（单位：米）。
 
 ```
 float extent_z;

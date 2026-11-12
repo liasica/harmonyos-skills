@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-video-d
 title: 媒体数据解封装
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 媒体数据封装与解封装 > 媒体数据解封装
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:48+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:4c87e45c6f67c73096c29e8b0c7a54f6a25db723adef884518dd99634e525e02
+scraped_at: 2026-11-12T09:52:02+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ae06451d02d7b3a1ac7e199e70b2ffb0e38f0510595964cc2d4fc68b2cd4e315
 ---
 
 开发者可以调用本模块的Native API接口，完成媒体数据的解封装相关操作，即从比特流数据中取出音频、视频、字幕等媒体sample，获得DRM相关信息。
@@ -92,7 +92,7 @@ target_link_libraries(sample PUBLIC libnative_media_core.so)
 
    // 为自定义数据源创建 source 资源实例（可选）。使用该方式前，需要先实现AVSourceReadAt接口函数实现。
    // 当使用OH_AVSource_CreateWithDataSource时需要补充g_filePath。
-   // g_filePath = filePath ;
+   // g_filePath = filePath;
    // OH_AVDataSource dataSource = {fileSize, AVSourceReadAt};
    // OH_AVSource *source = OH_AVSource_CreateWithDataSource(&dataSource);
    ```

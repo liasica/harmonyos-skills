@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-g
 title: "@ohos.graphics.text (文本模块)"
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.text (文本模块)
 category: harmonyos-references
-scraped_at: 2026-11-04T08:36:35+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:71a95df0deb1000fe702436bd853b775595f1b7e5aa37f53cd65fc48f8a59204
+scraped_at: 2026-11-12T09:56:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:951abc6671770feb475123df9ccf2a2e86ac532e259023ba3cc23faa5dc6850a
 ---
 
 本模块提供一系列用于文本布局和字体管理的编程接口。文本布局相关的接口旨在提供高质量的排版，包括字符到字形的转换、字距调整、换行、对齐、文本测量等。字体管理接口提供字体注册、字体描述符、字体集管理等功能。
@@ -876,6 +876,8 @@ EllipsisMode.START和EllipsisMode.MIDDLE仅在单行超长文本生效。
 
 可变字体属性。
 
+**卡片能力：** 从API版本26.0.1开始，该接口支持在ArkTS卡片中使用。
+
 **系统能力：** SystemCapability.Graphics.Drawing
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -917,36 +919,34 @@ EllipsisMode.START和EllipsisMode.MIDDLE仅在单行超长文本生效。
 
 **系统能力：** SystemCapability.Graphics.Drawing
 
-**元服务API**：从API version 22开始，该接口支持在元服务中使用。
-
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| decoration | [Decoration](js-apis-graphics-text.md#decoration) | 否 | 是 | 装饰线设置，默认不使用装饰线。 |
-| color | [common2D.Color](js-apis-graphics-common2d.md#color) | 否 | 是 | 文字颜色，默认为白色。 |
-| fontWeight | [FontWeight](js-apis-graphics-text.md#fontweight) | 否 | 是 | 字重，默认为W400。 在HarmonyOS 6.1.1之前，仅系统字体中的可变字体支持字重调节；从HarmonyOS 6.1.1开始，系统字体与三方注册字体中的可变字体均支持字重调节。非可变字体设置字重值小于semi-bold（即W600）时字体粗细无变化，设置字重值大于等于semi-bold（即W600）时可能会触发伪加粗效果。 |
-| fontWidth21+ | [FontWidth](js-apis-graphics-text.md#fontwidth) | 否 | 是 | 字体宽度，默认为NORMAL。 |
-| fontStyle | [FontStyle](js-apis-graphics-text.md#fontstyle) | 否 | 是 | 字体样式，默认为常规样式。 |
-| baseline | [TextBaseline](js-apis-graphics-text.md#textbaseline) | 否 | 是 | 文本基线类型，默认为ALPHABETIC。 |
-| fontFamilies | Array<string> | 否 | 是 | 字体家族名称列表，默认为空，匹配系统字体。使用自定义字体时，需将加载字体时指定的名称填入此列表中。当与fontTypefaces同时设置时，fontTypefaces优先级更高，fontFamilies不生效。 |
+| decoration | [Decoration](js-apis-graphics-text.md#decoration) | 否 | 是 | 装饰线设置，默认不使用装饰线。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| color | [common2D.Color](js-apis-graphics-common2d.md#color) | 否 | 是 | 文字颜色，默认为白色。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| fontWeight | [FontWeight](js-apis-graphics-text.md#fontweight) | 否 | 是 | 字重，默认为W400。 在HarmonyOS 6.1.1之前，仅系统字体中的可变字体支持字重调节；从HarmonyOS 6.1.1开始，系统字体与三方注册字体中的可变字体均支持字重调节。非可变字体设置字重值小于semi-bold（即W600）时字体粗细无变化，设置字重值大于等于semi-bold（即W600）时可能会触发伪加粗效果。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| fontWidth21+ | [FontWidth](js-apis-graphics-text.md#fontwidth) | 否 | 是 | 字体宽度，默认为NORMAL。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| fontStyle | [FontStyle](js-apis-graphics-text.md#fontstyle) | 否 | 是 | 字体样式，默认为常规样式。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| baseline | [TextBaseline](js-apis-graphics-text.md#textbaseline) | 否 | 是 | 文本基线类型，默认为ALPHABETIC。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| fontFamilies | Array<string> | 否 | 是 | 字体家族名称列表，默认为空，匹配系统字体。使用自定义字体时，需将加载字体时指定的名称填入此列表中。当与fontTypefaces同时设置时，fontTypefaces优先级更高，fontFamilies不生效。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
 | fontTypefaces | Array<[drawing.Typeface](arkts-apis-graphics-drawing-typeface.md)> | 否 | 是 | 指定排版字体对象数组，用于优先使用指定的字体对象进行文本塑形，跳过字体匹配流程。当数组中某个字体对象无法塑形部分文字时，未能塑形的文字将使用系统字体进行塑形。默认为空数组，表示不指定字体对象，使用默认字体匹配流程。  当fontTypefaces与[TextStyle](js-apis-graphics-text.md#textstyle).fontFamilies同时设置时，fontTypefaces优先级更高。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
-| fontSize | number | 否 | 是 | 字体大小，浮点数，默认为14.0，单位为物理像素px。 |
-| letterSpacing | number | 否 | 是 | 字符间距，正数拉开字符距离，如果为负数则拉近字符距离，浮点数，单位为物理像素px，默认为0.0。 |
-| wordSpacing | number | 否 | 是 | 单词间距，浮点数，单位为物理像素px，默认为0.0。 |
-| heightScale | number | 否 | 是 | 行高缩放倍数，浮点数，默认为1.0，heightOnly为true时生效。 |
-| heightOnly | boolean | 否 | 是 | true表示根据字体大小和heightScale设置文本框的高度，false表示根据行高和行距设置文本框高度，默认为false。 |
-| halfLeading | boolean | 否 | 是 | true表示将行间距平分至行的顶部与底部，false则不平分，默认为false。 |
-| ellipsis | string | 否 | 是 | 省略号文本，表示省略号生效后使用该字段值替换省略号部分，默认为空字符串，即使用系统默认省略号…（U+2026）。与ParagraphStyle的tab属性共同配置时，tab属性无效。 |
-| ellipsisMode | [EllipsisMode](js-apis-graphics-text.md#ellipsismode) | 否 | 是 | 省略号类型，默认为END，行尾省略号。 |
-| locale | string | 否 | 是 | 语言类型，例如'en-Latn'代表英文(拉丁文字)，'zh-Hans'代表简体中文，'zh-Hant'代表繁体中文。支持language-script格式的两段式语言标签，language遵循ISO 639-1规范，script遵循ISO 15924规范。未指定locale或者设置为空字符串或为undefined时，默认locale为'zh-Hans'。 |
-| baselineShift | number | 否 | 是 | 文本基线的垂直偏移距离，浮点数，单位为物理像素px，默认为0.0。 |
-| fontFeatures | Array<[FontFeature](js-apis-graphics-text.md#fontfeature)> | 否 | 是 | 文本字体特征数组。当需要启用或禁用特定字体特性（如连字、字距调整等）时传入。 |
-| fontVariations | Array<[FontVariation](js-apis-graphics-text.md#fontvariation)> | 否 | 是 | 可变字体属性数组。当需要调整可变字体的可变轴参数（如字重轴、字宽轴等）时传入。 |
-| textShadows | Array<[TextShadow](js-apis-graphics-text.md#textshadow)> | 否 | 是 | 文本阴影数组。当需要为文本添加阴影效果时传入。 |
-| backgroundRect | [RectStyle](js-apis-graphics-text.md#rectstyle) | 否 | 是 | 文本矩形框样式。当需要为文本添加背景矩形框（如设置背景色、圆角等）时传入。 |
-| badgeType20+ | [TextBadgeType](js-apis-graphics-text.md#textbadgetype20) | 否 | 是 | 设置文本排版时是否使能上标或下标。TEXT\_SUPERSCRIPT表示使能上标，TEXT\_SUBSCRIPT表示使能下标，默认值为TEXT\_BADGE\_NONE表示不使能。 |
-| lineHeightMaximum21+ | number | 否 | 是 | 行高上限，单位为物理像素px。若同时应用行高缩放，行高上限在[TextStyle](js-apis-graphics-text.md#textstyle).heightScale大于0时生效。取值为正数浮点数，默认值为Number.MAX\_VALUE。 |
-| lineHeightMinimum21+ | number | 否 | 是 | 行高下限，单位为物理像素px。若同时应用行高缩放，行高下限在[TextStyle](js-apis-graphics-text.md#textstyle).heightScale大于0时生效。取值范围为非负浮点数，默认值为0。 |
-| lineHeightStyle21+ | [LineHeightStyle](js-apis-graphics-text.md#lineheightstyle21) | 否 | 是 | 行高缩放基数样式。默认为FONT\_SIZE。 |
+| fontSize | number | 否 | 是 | 字体大小，浮点数，默认为14.0，单位为物理像素px。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| letterSpacing | number | 否 | 是 | 字符间距，正数拉开字符距离，如果为负数则拉近字符距离，浮点数，单位为物理像素px，默认为0.0。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| wordSpacing | number | 否 | 是 | 单词间距，浮点数，单位为物理像素px，默认为0.0。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| heightScale | number | 否 | 是 | 行高缩放倍数，浮点数，默认为1.0，heightOnly为true时生效。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| heightOnly | boolean | 否 | 是 | true表示根据字体大小和heightScale设置文本框的高度，false表示根据行高和行距设置文本框高度，默认为false。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| halfLeading | boolean | 否 | 是 | true表示将行间距平分至行的顶部与底部，false则不平分，默认为false。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| ellipsis | string | 否 | 是 | 省略号文本，表示省略号生效后使用该字段值替换省略号部分，默认为空字符串，即使用系统默认省略号…（U+2026）。与ParagraphStyle的tab属性共同配置时，tab属性无效。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| ellipsisMode | [EllipsisMode](js-apis-graphics-text.md#ellipsismode) | 否 | 是 | 省略号类型，默认为END，行尾省略号。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| locale | string | 否 | 是 | 语言类型，例如'en-Latn'代表英文(拉丁文字)，'zh-Hans'代表简体中文，'zh-Hant'代表繁体中文。支持language-script格式的两段式语言标签，language遵循ISO 639-1规范，script遵循ISO 15924规范。未指定locale或者设置为空字符串或为undefined时，默认locale为'zh-Hans'。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| baselineShift | number | 否 | 是 | 文本基线的垂直偏移距离，浮点数，单位为物理像素px，默认为0.0。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| fontFeatures | Array<[FontFeature](js-apis-graphics-text.md#fontfeature)> | 否 | 是 | 文本字体特征数组。当需要启用或禁用特定字体特性（如连字、字距调整等）时传入。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| fontVariations | Array<[FontVariation](js-apis-graphics-text.md#fontvariation)> | 否 | 是 | 可变字体属性数组。当需要调整可变字体的可变轴参数（如字重轴、字宽轴等）时传入。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| textShadows | Array<[TextShadow](js-apis-graphics-text.md#textshadow)> | 否 | 是 | 文本阴影数组。当需要为文本添加阴影效果时传入。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| backgroundRect | [RectStyle](js-apis-graphics-text.md#rectstyle) | 否 | 是 | 文本矩形框样式。当需要为文本添加背景矩形框（如设置背景色、圆角等）时传入。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| badgeType20+ | [TextBadgeType](js-apis-graphics-text.md#textbadgetype20) | 否 | 是 | 设置文本排版时是否使能上标或下标。TEXT\_SUPERSCRIPT表示使能上标，TEXT\_SUBSCRIPT表示使能下标，默认值为TEXT\_BADGE\_NONE表示不使能。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| lineHeightMaximum21+ | number | 否 | 是 | 行高上限，单位为物理像素px。若同时应用行高缩放，行高上限在[TextStyle](js-apis-graphics-text.md#textstyle).heightScale大于0时生效。取值为正数浮点数，默认值为Number.MAX\_VALUE。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| lineHeightMinimum21+ | number | 否 | 是 | 行高下限，单位为物理像素px。若同时应用行高缩放，行高下限在[TextStyle](js-apis-graphics-text.md#textstyle).heightScale大于0时生效。取值范围为非负浮点数，默认值为0。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| lineHeightStyle21+ | [LineHeightStyle](js-apis-graphics-text.md#lineheightstyle21) | 否 | 是 | 行高缩放基数样式。默认为FONT\_SIZE。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
 | fontEdging24+ | [drawing.FontEdging](arkts-apis-graphics-drawing-e.md#fontedging12) | 否 | 是 | 绘制文本的边缘处理方式，默认值为ANTI\_ALIAS。  **元服务API**：从API version 24开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## StrutStyle
@@ -985,7 +985,7 @@ EllipsisMode.START和EllipsisMode.MIDDLE仅在单行超长文本生效。
 | fontFamily | string | 否 | 是 | 字体家族，可取任意字符串，默认为空字符串。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
 | fontSubfamily | string | 否 | 是 | 子字体家族，可取任意字符串，默认为空字符串。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
 | weight | [FontWeight](js-apis-graphics-text.md#fontweight) | 否 | 是 | 字体字重，默认值为0。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
-| width | number | 否 | 是 | 字体宽度，取值范围1-9整数，默认值为0。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
+| width | number | 否 | 是 | 字体宽度，取值范围1-9整数，默认值为0，0表示未指定字体宽度。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
 | italic | number | 否 | 是 | 是否是斜体字体，0表示非斜体，1表示斜体，默认值为0。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
 | monoSpace | boolean | 否 | 是 | 是否是等宽字体，true表示等宽，false表示非等宽，默认值为false。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
 | symbolic | boolean | 否 | 是 | 是否支持符号，true表示支持，false表示不支持，默认值为false。  **元服务API**：从API version 22开始，该接口支持在元服务中使用。 |
@@ -1634,13 +1634,13 @@ struct Index {
 | CENTER\_OF\_ROW\_BOX | 5 | 居中对齐。 |
 | FOLLOW\_PARAGRAPH20+ | 6 | 跟随文本排版对齐。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/YNUDrQNjQySL8171E1w_EA/zh-cn_image_0000002779693560.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/waOCBBY_SKWKlXDxCrhyhw/zh-cn_image_0000002786522102.png)
 
 **说明** 
 
 示意图展示了后三种对齐方式，前三种对齐方式在文本基线对齐方式上类似，比较位置是文本基线，即绿色线条部分。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/FuJhawi4Q2OKzEakYSWQmw/zh-cn_image_0000002809013179.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/EDY45AGRT8ys1bAmdwbl6g/zh-cn_image_0000002786362174.png)
 
 ## PlaceholderSpan
 
@@ -1836,7 +1836,7 @@ async prepareLayoutPromise() {
 
 示意图展示了点击按钮后layout接口示例代码的运行结果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/s6_E0n52TwyjyQMPUmV6WQ/zh-cn_image_0000002809053093.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/3_Y9En2cQ6ykqwPDXjk2cg/zh-cn_image_0000002815561595.png)
 
 ### layoutWithConstraints24+
 
@@ -2068,7 +2068,7 @@ let maxIntrinsicWidth = paragraph.getMaxIntrinsicWidth();
 
 getAlphabeticBaseline(): number
 
-获取拉丁字母基线位置。
+获取拉丁字母的基线位置。
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -2078,7 +2078,7 @@ getAlphabeticBaseline(): number
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 拉丁字母下的基线位置，浮点数，单位为物理像素px。 |
+| number | 拉丁字母的基线位置，浮点数，单位为物理像素px。 |
 
 **示例：**
 
@@ -2090,7 +2090,7 @@ let alphabeticBaseline = paragraph.getAlphabeticBaseline();
 
 getIdeographicBaseline(): number
 
-获取表意字（如CJK（中文，日文，韩文））下的基线位置。
+获取表意字（如CJK（中文，日文，韩文））的基线位置。
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -2100,7 +2100,7 @@ getIdeographicBaseline(): number
 
 | 类型 | 说明 |
 | --- | --- |
-| number | 表意字下的基线位置，浮点数，单位为物理像素px。 |
+| number | 表意字的基线位置，浮点数，单位为物理像素px。 |
 
 **示例：**
 
@@ -2553,7 +2553,7 @@ struct Index {
         .onClick(() => {
           let glyphRange: text.Range = { start: 0, end: 5 };
           let encoding: drawing.TextEncoding = drawing.TextEncoding.TEXT_ENCODING_UTF8;
-          let textData = "Heน้ำl‍‍lo1️⃣World";
+          let textData = "Heน้ำllo1️⃣World";
           let myTextStyle: text.TextStyle = {
             color: { alpha: 255, red: 255, green: 0, blue: 0 },
             fontSize: 33,
@@ -2621,7 +2621,7 @@ struct Index {
         .onClick(() => {
           let characterRange: text.Range = { start: 0, end: 5 };
           let encoding: drawing.TextEncoding = drawing.TextEncoding.TEXT_ENCODING_UTF8;
-          let textData = "Heน้ำl‍‍lo1️⃣World";
+          let textData = "Heน้ำllo1️⃣World";
           let myTextStyle: text.TextStyle = {
             color: { alpha: 255, red: 255, green: 0, blue: 0 },
             fontSize: 33,
@@ -2689,7 +2689,7 @@ struct Index {
       Button("get character position")
         .onClick(() => {
           let encoding: drawing.TextEncoding = drawing.TextEncoding.TEXT_ENCODING_UTF8;
-          let textData = "Heน้ำl‍‍lo1️⃣World";
+          let textData = "Heน้ำllo1️⃣World";
           let myTextStyle: text.TextStyle = {
             color: { alpha: 255, red: 255, green: 0, blue: 0 },
             fontSize: 33,
@@ -3566,15 +3566,15 @@ struct Index {
 
 示意图展示文本行排版参数：width（包含左右空格的文本行宽度）、ascent（上升高度最高点）、descent（下降高度最低点）、leading（行间距）、top（当前行最高点）、baseline（字符基线）、bottom（当前行最低点）、next line top（下一行最高点）。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/9sixR9DoQpap0u3nWX5ldw/zh-cn_image_0000002779853530.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/MmSUx_TiQIe2cQ0VQzCSSw/zh-cn_image_0000002815401679.png)
 
 示意图展示了字符串为" a b "的排版边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/JTBqyZwBTeKeeiUH8EPw4g/zh-cn_image_0000002779693562.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/juq-LAQDRHakKPb2MLKtDA/zh-cn_image_0000002786522104.png)
 
 示意图展示了字符串为"j"或"E"的排版边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/aEwHEYuOSMeUKx_RSTlYOg/zh-cn_image_0000002809013181.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/a1tzt0XCS6KXHmIiRP1PIw/zh-cn_image_0000002786362176.png)
 
 ## CaretOffsetsCallback18+
 
@@ -3789,11 +3789,11 @@ getTypographicBounds(): TypographicBounds
 
 示意图展示了字符串为" a b "的排版边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/35S7-Ok1RnusAqgIw_to7g/zh-cn_image_0000002779693562.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/GBetJyIyRGyGZFshu3zvag/zh-cn_image_0000002786522104.png)
 
 示意图展示了字符串为"j"或"E"的排版边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/kcc2wscNQBK_fwrQtOjbMA/zh-cn_image_0000002809013181.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/booBxsMhSE-8CD8rxltuNA/zh-cn_image_0000002786362176.png)
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -3822,11 +3822,11 @@ getImageBounds(): common2D.Rect
 
 示意图展示了字符串为" a b "的图像边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/wYgtFKYfRguwkr8nX0VnbA/zh-cn_image_0000002809053095.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/g7h4ulBFRsinzj7dTdTTBg/zh-cn_image_0000002815561597.png)
 
 示意图展示了字符串为"j"或"E"的图像边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/OnJPi8nEQDi9ehhI1ekpVA/zh-cn_image_0000002779853532.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/kHcpvhsVT2m-KZMCEiiMVw/zh-cn_image_0000002815401681.png)
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -4329,11 +4329,11 @@ getImageBounds(): common2D.Rect
 
 示意图展示了字符串为" a b "的图像边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/eMymbJmCT3qqQaxHMAKKuA/zh-cn_image_0000002809053095.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/0So_BYNWRReL7oTVgrlp4A/zh-cn_image_0000002815561597.png)
 
 示意图展示了字符串为"j"或"E"的图像边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/eTvAf3y8T-GMc31i4PEKtA/zh-cn_image_0000002779853532.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/9R17EIdgQBKbmAoLudQgdg/zh-cn_image_0000002815401681.png)
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -4355,17 +4355,17 @@ let bounds = runs[0].getImageBounds();
 
 getTypographicBounds(): TypographicBounds
 
-获取该排版单元的排版边界，排版边界与排版字体、排版字号有关，与字符本身无关，例如字符串为" a b "，'a'字符前面有1个空格，'b'字符后面有1个空格，排版边界就包括行首和末尾空格的边界。
+获取该排版单元的排版边界，排版边界与排版字体、排版字号有关，与字符本身无关，例如字符串为" a b "，'a'字符前面有1个空格，'b'字符后面有1个空格，排版边界就包括行首和末尾空格的边界。例如字符串为"j"或"E"，排版边界相同，即与字符本身无关。
 
 **说明** 
 
 示意图展示了字符串为" a b "的排版边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/TPVmEDK_QwONCF_RlHdz5Q/zh-cn_image_0000002779693562.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/9G-SqS7WRum4ARVqIccNmQ/zh-cn_image_0000002786522104.png)
 
 示意图展示了字符串为"j"或"E"的排版边界。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/mkVjEOtBTuC0nwtoOChQXA/zh-cn_image_0000002809013181.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/eB8w-kQZTwiXMThG3jtDSQ/zh-cn_image_0000002786362176.png)
 
 **系统能力**：SystemCapability.Graphics.Drawing
 
@@ -4532,15 +4532,15 @@ function numberToRGBA(colorNum: number): common2D.Color {
 
 alignment为CENTER，location为200，文本为"12/t345"：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/DpA1YFXXS8SK_416vovVcw/zh-cn_image_0000002779693564.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/uvzvOAQ0S3iON3wepV64wQ/zh-cn_image_0000002786522106.png)
 
 alignment为LEFT，location为100，文本为"abccccccccc/tdef"：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/uN9Ga0UfRFiGJ3b5KFGzBw/zh-cn_image_0000002809013183.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/8_RnEeNnQT6zKYEnkdfPSA/zh-cn_image_0000002786362178.png)
 
 alignment为RIGHT，location为100，文本为"aabcdef/tg hi/tjkl/tmno/tp qr"：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/vIfKHhFMRI282a1fOfYsrg/zh-cn_image_0000002809053097.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/5wC8LdR6SUaSbdcb2rCViQ/zh-cn_image_0000002815561599.png)
 
 ## SystemFontType14+
 

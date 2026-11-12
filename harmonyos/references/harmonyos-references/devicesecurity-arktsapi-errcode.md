@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: ArkTS API错误码
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-10-11T07:25:48+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:992f307c5ffd1b1da64d3b52244f0e19b23a2a7aed3b4ba436d4402c67e8585d
+scraped_at: 2026-11-12T09:55:22+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f79c9d0278504f96f10415373d765a0a011a8f4a05f9d85734dedc7f365bb66e
 ---
 
 * **[DeviceVerify（应用设备状态检测）](errorcode-devicesecurity-deviceverify.md)**
@@ -18,3 +18,4 @@ content_hash: sha256:992f307c5ffd1b1da64d3b52244f0e19b23a2a7aed3b4ba436d4402c67e
 * **[TrustedAuthentication （数字盾服务）](errorcode-devicesecurity-trusted-auth.md)**
 * **[DlpAntiPeep（防窥保护）](errorcode-devicesecurity-dlpantipeep.md)**
 * **[SuperPrivacyMode（超级隐私模式）](errorcode-devicesecurity-superprivacy.md)**
+* **[Sideloading（侧载安全管控）](errorcode-devicesecurity-sideloading.md)**

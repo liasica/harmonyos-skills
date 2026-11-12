@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scenario-
 title: functionalButtonComponentManager(场景化融合Button组件管理)
 breadcrumb: API参考 > 应用服务 > Scenario Fusion Kit（融合场景服务） > ArkTS组件 > functionalButtonComponentManager(场景化融合Button组件管理)
 category: harmonyos-references
-scraped_at: 2026-11-04T08:37:29+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:cfba1c7afa7f86524784696b3ab50fc97e0f616251f240f770226603a9e3ca75
+scraped_at: 2026-11-12T09:57:41+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:28429366f851bece4d25fb8d69f765aea8cb4d40a729749d874df429b4068475
 ---
 
 本模块提供Button组件的逻辑管理，辅助HarmonyOS应用和元服务通过Button组件完成相应功能。
@@ -201,7 +201,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV、Car中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -219,7 +219,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV、Car中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -237,7 +237,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV、Car中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -273,7 +273,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV、Car中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -461,7 +461,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV、Car中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 5.0.2(14)
 
@@ -512,7 +512,7 @@ import { functionalButtonComponentManager } from '@kit.ScenarioFusionKit';
 | description | string | 否 | 是 | 元服务描述，支持开发者传入，默认是元服务描述。  **元服务API：** 从版本6.0.0(20)开始，该接口支持在元服务中使用。 |
 | previewUri | string | 否 | 是 | 元服务预览图，由开发者传入图片，如果传入值为空则返回默认元服务icon图标；支持传入本地文件路径和代码包文件路径的图片。  **元服务API：** 从版本6.0.0(20)开始，该接口支持在元服务中使用。 |
 | uniformDataType | uniformTypeDescriptor.[UniformDataType](js-apis-data-uniformtypedescriptor.md#uniformdatatype) | 否 | 是 | 元服务数据类型，取值范围：[HYPERLINK, IMAGE, VIDEO, TEXT, FILE]，默认值：HYPERLINK。  HYPERLINK：分享当前元服务。  IMAGE：图片分享。  VIDEO：视频分享。  TEXT：文本分享。  FILE：文件分享。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
-| content | string | 否 | 是 | 元服务分享内容，链接（包含元服务App Linking）、文本类型的内容通过该字段传递。  HYPERLINK：自定义参数json字符串作为content字段，长度限制1~1024。  IMAGE：图片uri作为content字段。  VIDEO：视频uri作为content字段。  TEXT：文本内容作为content字段。  FILE：文件uri作为content字段。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| content | string | 否 | 是 | 元服务分享内容，链接（包含元服务App Linking）、文本类型的内容通过该字段传递。  HYPERLINK：自定义参数json字符串作为content字段，长度限制0~1024。  IMAGE：图片uri作为content字段。  VIDEO：视频uri作为content字段。  TEXT：文本内容作为content字段。  FILE：文件uri作为content字段。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
 | title | string | 否 | 是 | 元服务分享的标题，如果是文本、链接等内容，建议填入title标识其标题。缺省时，若分享内容为文本类型，则文本内容作为title字段；若分享内容为文件类型，则文件名作为title字段。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
 
 ## GetPhoneNumberAndRiskLevelResult
@@ -563,7 +563,7 @@ onGetPhoneNumber(callback: AsyncCallback<GetPhoneNumberResult>): FunctionalButto
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV、Car中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -637,7 +637,7 @@ onGetRealtimePhoneNumber(callback: AsyncCallback<GetRealtimePhoneNumberResult>):
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV、Car中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -713,7 +713,7 @@ onLaunchApp(callback: AsyncCallback<void>): FunctionalButtonController
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV、Car中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -793,7 +793,7 @@ onOpenSetting(callback: AsyncCallback<OpenSettingResult>): FunctionalButtonContr
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV、Car中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -1697,8 +1697,8 @@ struct Index {
             },
             subscribeLiveViewParam: {
               event: 'SUBSCRIBE_TIMER',
-              alertTime: 172178838111,
-              startTime: 172170198111
+              alertTime: 1789435800000,
+              startTime: 1789437600000
             }
           },
           // 当OpenType为SUBSCRIBE_LIVE_VIEW时，回调必须为onSubscribeLiveView。
@@ -1736,7 +1736,7 @@ onPermissionSetting(callback: AsyncCallback<PermissionSettingResult>): Functiona
 
 **系统能力：** SystemCapability.AtomicserviceComponent.UIComponent
 
-**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、TV、Car中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 5.0.2(14)
 
@@ -2876,7 +2876,7 @@ markAnchor(value: Position): ButtonConfig
 
 offset(value: Position): ButtonConfig
 
-设置FunctionalButton在位置坐标偏移量。
+相对偏移，FunctionalButton相对原本的布局位置进行偏移。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -2890,7 +2890,7 @@ offset(value: Position): ButtonConfig
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| value | [Position](ts-types.md#position) | 是 | 设置元素在位置定位时的锚点，以元素顶部起点作为基准点进行偏移，单位：vp。  默认值：  {  x: 0,  y: 1  } |
+| value | [Position](ts-types.md#position) | 是 | 相对偏移，组件基于原本的布局位置进行偏移，单位：vp。  默认值：  {  x: 0,  y: 1  } |
 
 **返回值：**
 
@@ -3105,4 +3105,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/ujCOUqEdRwOD6_dqt-C3EA/zh-cn_image_0000002779693590.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/kC6CWFNjSOeU817KrwysDA/zh-cn_image_0000002786522132.png)

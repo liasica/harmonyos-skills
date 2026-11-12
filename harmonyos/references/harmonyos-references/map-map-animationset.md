@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-a
 title: Class (AnimationSet)
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Class (AnimationSet)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:59+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:088754fc521f48bffa1e0bd8595abe8ef3f094f86531e242cf788497a9f76b9c
+scraped_at: 2026-11-12T09:57:25+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4beee8af9610d0027c417e738e4d7f73a899c2d65c73c9eef2e97e35b35d94e8
 ---
 
 ## 导入模块
@@ -59,7 +59,7 @@ let animation1: map.AlphaAnimation = new map.AlphaAnimation(0.2, 1);
 let animation2: map.RotateAnimation = new map.RotateAnimation(15, 150);
 // 创建缩放动画：从原大小(1)缩放到3倍
 let animation3: map.ScaleAnimation = new map.ScaleAnimation(1, 3, 1, 3);
-// 创建动画集合，true表示同一时刻仅播放一个动画
+// 创建动画集合，true表示共享插值器（所有动画使用同一动画曲线）
 let animation: map.AnimationSet = new map.AnimationSet(true);
 // 设置动画插值器为线性插值（匀速播放）
 animation.setInterpolator(Curve.Linear);
@@ -100,7 +100,7 @@ let animation1: map.AlphaAnimation = new map.AlphaAnimation(0.2, 1);
 let animation2: map.RotateAnimation = new map.RotateAnimation(15, 150);
 // 创建缩放动画：从原大小(1,1)缩放到(3,3)
 let animation3: map.ScaleAnimation = new map.ScaleAnimation(1, 3, 1, 3);
-// 创建动画集合，true表示同一时刻仅播放一个动画（取消前一动画再播放下一）
+// 创建动画集合，true表示共享插值器（所有动画使用同一动画曲线）
 let animation: map.AnimationSet = new map.AnimationSet(true);
 // 向动画集合中添加透明度动画
 animation.addAnimation(animation1);
@@ -133,7 +133,7 @@ let animation1: map.AlphaAnimation = new map.AlphaAnimation(0.2, 1);
 let animation2: map.RotateAnimation = new map.RotateAnimation(15, 150);
 // 创建缩放动画：从原大小(1,1)缩放到(3,3)
 let animation3: map.ScaleAnimation = new map.ScaleAnimation(1, 3, 1, 3);
-// 创建动画集合，true表示同一时刻仅播放一个动画（取消前一动画再播放下一动画）
+// 创建动画集合，true表示共享插值器（所有动画使用同一动画曲线）
 let animation: map.AnimationSet = new map.AnimationSet(true);
 // 向动画集合中添加透明度动画
 animation.addAnimation(animation1);

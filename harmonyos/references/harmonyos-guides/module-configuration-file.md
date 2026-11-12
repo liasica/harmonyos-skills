@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/module-config
 title: module.json5配置文件
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用配置文件 > module.json5配置文件
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:20:52+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:788b161e60f150d8466520d396c0f270850e80e3ff55749a05e4b2686d71e8b7
+scraped_at: 2026-11-12T09:50:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e8a4f42ccd1d0a5400e87da194abf7d78a812b2896f742bcb9c4a3597ccb085c
 ---
 
 模块级配置文件，包含模块的基本配置信息、UIAbility组件和ExtensionAbility组件信息，以及应用运行过程中需要的权限信息，用于向编译工具、操作系统和应用市场提供应用的基本信息。每个模块下必须包括一个module.json5配置文件，文件所在目录为工程名称/模块名称（例如entry）/src/main/module.json5。
@@ -295,7 +295,7 @@ abilities标签描述UIAbility组件的配置信息，标签值为数组类型�
 | startWindowBackground | 标识当前UIAbility组件启动页面背景颜色资源文件的索引，取值为长度不超过255字节的字符串。  取值示例：$color:red。 | 字符串 | 该标签不可缺省。 |
 | removeMissionAfterTerminate | 标识当前UIAbility组件销毁后，是否从任务列表中移除任务。  - true表示销毁后移除任务。  - false表示销毁后不移除任务。  **说明：**  2in1设备和平板设备的自由多窗模式下配置不生效，默认移除任务。 | 布尔值 | 该标签可缺省，缺省值为false。 |
 | allowSelfRedirect | 标识应用是否允许通过[App Linking](app-linking-startup.md)跳转自己。  - true表示允许通过App Linking跳转自己。  - false表示不允许通过App Linking跳转自己。  **说明：**  从API version 23开始，支持该标签。 | 布尔值 | 该标签可缺省，缺省值为true。 |
-| orientation | 标识当前UIAbility组件启动时的方向，支持配置枚举，或启动方向资源索引。  **启动方向枚举支持的取值如下：**  - unspecified：未指定方向，由系统自动判断显示方向。  - landscape：横屏。  - portrait：竖屏。  - follow\_recent：跟随背景窗口的旋转模式。  - landscape\_inverted：反向横屏。  - portrait\_inverted：反向竖屏。  - auto\_rotation：随传感器旋转。  - auto\_rotation\_landscape：传感器横屏旋转，包括横屏和反向横屏。  - auto\_rotation\_portrait：传感器竖屏旋转，包括竖屏和反向竖屏。  - auto\_rotation\_restricted：传感器开关打开，方向可随传感器旋转。  - auto\_rotation\_landscape\_restricted：传感器开关打开，方向可随传感器旋转为横屏，包括横屏和反向横屏。  - auto\_rotation\_portrait\_restricted：传感器开关打开，方向可随传感器旋转为竖屏，包括竖屏和反向竖屏。  - locked：传感器开关关闭，方向锁定。  - auto\_rotation\_unspecified：受开关控制和由系统判定的自动旋转模式。  - follow\_desktop：跟随桌面的旋转模式。  **配置启动方向的资源索引时**，取值为长度不超过255字节的字符串，配置示例：$string:orientation。  **说明：**  - 从API version 14开始，支持配置启动方向资源索引。 | 字符串 | 该标签可缺省，缺省值为unspecified。 |
+| orientation | 标识当前UIAbility组件启动时的方向，支持配置枚举，或启动方向资源索引。  **启动方向枚举支持的取值如下：**  - unspecified：未指定方向，由系统自动判断显示方向。  - landscape：横屏。  - portrait：竖屏。  - follow\_recent：随背景窗口旋转。  - landscape\_inverted：反向横屏。  - portrait\_inverted：反向竖屏。  - auto\_rotation：随传感器旋转。  - auto\_rotation\_landscape：随传感器横屏旋转，包括横屏和反向横屏。  - auto\_rotation\_portrait：随传感器竖屏旋转，包括竖屏和反向竖屏。  - auto\_rotation\_restricted：系统旋转锁定开关关闭，方向可随传感器旋转。  - auto\_rotation\_landscape\_restricted：系统旋转锁定开关关闭，方向可随传感器旋转为横屏，包括横屏和反向横屏。  - auto\_rotation\_portrait\_restricted：系统旋转锁定开关关闭，方向可随传感器旋转为竖屏，包括竖屏和反向竖屏。  - locked：系统旋转锁定开关打开，方向锁定。  - auto\_rotation\_unspecified：受系统旋转锁定开关控制和由系统判定的自动旋转模式。  - follow\_desktop：随桌面旋转。  **配置启动方向的资源索引时**，取值为长度不超过255字节的字符串，配置示例：$string:orientation。  **说明：**  - 从API version 14开始，支持配置启动方向资源索引。 | 字符串 | 该标签可缺省，缺省值为unspecified。 |
 | supportWindowMode | 标识当前UIAbility组件所支持的窗口模式。支持的取值如下：  - fullscreen：全屏模式。  - split：分屏模式。  - floating：悬浮窗模式。  在[自由窗口](window-terminology.md#freeform-window自由窗口)状态下同时配置fullscreen和split时，如果应用的[targetAPIVersion](app-configuration-file.md#配置文件标签)小于15，窗口将以悬浮窗模式启动；如果应用的[targetAPIVersion](app-configuration-file.md#配置文件标签)大于等于15，窗口将以全屏模式启动。  此外，还可以通过metadata配置窗口模式，具体的配置规则和优先级请参考[metadata](module-configuration-file.md#metadata标签)。 | 字符串数组 | 该标签可缺省，缺省值为  ["fullscreen", "split", "floating"]。 |
 | maxWindowRatio | 标识当前UIAbility组件支持的最大的宽高比。该标签最小取值为0。 | 数值 | 该标签可缺省，缺省值为平台支持的最大的宽高比。 |
 | minWindowRatio | 标识当前UIAbility组件支持的最小的宽高比。该标签最小取值为0。 | 数值 | 该标签可缺省，缺省值为平台支持的最小的宽高比。 |
@@ -474,7 +474,7 @@ skills示例：
 | skills | 标识当前ExtensionAbility组件能够接收的[Want](want-overview.md)的特征集。  配置规则：entry包可以配置多个具有入口能力的skills标签（配置了ohos.want.action.home和entity.system.home）的ExtensionAbility，其中第一个配置了skills标签的ExtensionAbility中的label和icon作为服务或应用的label和icon。  **说明：**  服务的Feature包不支持配置具有入口能力的skills标签。  应用的Feature包支持配置具有入口能力的skills标签。 | 数组 | 该标签可缺省，缺省值为空。 |
 | [metadata](module-configuration-file.md#metadata标签) | 标识当前ExtensionAbility组件的元信息。  **说明：**  该标签在type为form时，不可缺省，且必须存在一个name为ohos.extension.form的对象值，其对应的resource值不能缺省，为服务卡片的二级资源引用。 | 对象数组 | 该标签可缺省，缺省值为空。 |
 | exported | 标识当前ExtensionAbility组件是否可以被其他应用调用。  - true：表示可以被其他应用调用。  - false：表示不可以被其他应用调用，包括无法被aa工具命令拉起应用。 | 布尔值 | 该标签可缺省，缺省值为false。 |
-| extensionProcessMode | 标识当前ExtensionAbility组件的进程模型，根据ExtensionAbility的类型不同，支持的配置项有所区别。支持的取值范围如下，默认值为bundle。  - instance：表示该ExtensionAbility每个实例都各自运行在单独进程。  - type：表示该ExtensionAbility的所有实例都运行在同一独立进程，与其他name的ExtensionAbility组件实例运行在不同进程。  - bundle：表示该ExtensionAbility的实例与同包名下相同extensionType的ExtensionAbility实例运行在同一进程。  对于UIExtensionAbility及其子类，支持instance、type、bundle三种进程模型。  对于类型为appService的ExtensionAbility，支持type和bundle两种进程模型。  - runWithMainProcess：表示该ExtensionAbility和应用主进程共进程，只有[状态栏开放服务](statusbar-extension-introduction.md)的ExtensionAbility可以配置runWithMainProcess。 | 字符串 | 该标签可缺省，缺省值为bundle。 |
+| extensionProcessMode | 标识当前ExtensionAbility组件的进程模型，根据ExtensionAbility的类型不同，支持的配置项有所区别。支持的取值范围如下，默认值为bundle。  - instance：表示该ExtensionAbility每个实例都各自运行在单独进程。  - type：表示该ExtensionAbility的所有实例都运行在同一独立进程，与其他name的ExtensionAbility组件实例运行在不同进程。  - bundle：表示该ExtensionAbility的实例与同包名下相同extensionType的ExtensionAbility实例运行在同一进程。  对于UIExtensionAbility及其子类，支持instance、type、bundle三种进程模型。  对于类型为appService的ExtensionAbility，支持type和bundle两种进程模型。从API版本26.0.0开始，支持该标签。  - runWithMainProcess：表示该ExtensionAbility和应用主进程共进程，只有[状态栏开放服务](statusbar-extension-introduction.md)的ExtensionAbility可以配置runWithMainProcess。 | 字符串 | 该标签可缺省，缺省值为bundle。 |
 | dataGroupIds | 标识当前ExtensionAbility组件的dataGroupId集合。如果当前ExtensionAbility组件所在的应用在应用市场申请的证书里groupIds也申请了某个dataGroupId，那么当前ExtensionAbility组件可以和应用共享这一个dataGroupId生成的目录，所以ExtensionAbility组件的dataGroupId需要是应用的签名证书中groupIds标签里配置的才能生效。 且该标签仅在当前ExtensionAbility组件存在独立的沙箱目录时生效。详见[共享沙箱介绍](ime-kit-security.md#共享沙箱介绍)第3点共享沙箱的配置流程中的步骤a申请data-group-id。 | 字符串数组 | 该标签可缺省，缺省值为空。 |
 | process | 标识组件的进程名称，只有type为embeddedUI时可以配置该标签。具体使用方式参考[独立进程配置](process-model-overview.md#独立进程配置)中的"静态指定进程"。  **说明：**  1. 仅在[PC/2in1](module-configuration-file.md#devicetypes标签)和[Tablet](module-configuration-file.md#devicetypes标签)设备上生效。  2. UIAbility组件和ExtensionAbility组件标签一致时运行在同一个进程中。  3. 从API version 14开始，支持该标签。 | 字符串 | 该标签可缺省，缺省值为空。 |
 | isolationProcess | 标识ExtensionAbility组件能否运行在独立的进程中。  - true：表示能运行在独立的进程中。  - false：表示不能运行在独立的进程中。  **说明：**  仅当ExtensionAbility组件的type为"sys/commonUI"时该标签配置生效，且仅支持由系统应用配置type为"sys/commonUI"。  从API version 20开始，支持该标签。 | 布尔值 | 该标签可缺省，缺省值为false。 |
@@ -595,6 +595,7 @@ extensionAbilities示例：
 | awc/webpage | 通用网页浏览的ExtensionAbility。 |
 | awc/newsfeed | 信息流资讯业务的ExtensionAbility。 |
 | assetCache24+ | 提供通用应用数据缓存能力的ExtensionAbility。三方应用配置不生效，当前配置仅在系统应用中有效。 |
+| ukeyAuth | UKey认证扩展能力[UkeyAuthExtensionAbility](../harmonyos-references/js-apis-ukeyauthextensionability.md)。从API版本26.0.1开始，支持该标签。 |
 | statusBarView | [状态栏开放服务](statusbar-extension-introduction.md)的ExtensionAbility。 |
 | liveViewLockScreen | [实况窗锁屏沉浸态](../harmonyos-references/liveview-lock-screen-ability.md)的ExtensionAbility。 |
 | liveViewCard | [实况窗卡片自定义扩展区](../harmonyos-references/liveview-card-ability.md)的ExtensionAbility，从API版本26.0.0开始，支持该标签。 |
@@ -603,6 +604,7 @@ extensionAbilities示例：
 | sysPicker/appSelector | 拉起系统应用选择弹框的ExtensionAbility，三方应用配置不生效，当前配置仅在系统应用中有效。 |
 | sys/visualExtension | 智能图片类控件视觉搜索的ExtensionAbility，三方应用配置不生效，当前配置仅在系统应用中有效。 |
 | screenTimeGuard20+ | [屏幕时间守护开放服务](../harmonyos-references/screentimeguard-timeguardextensionability.md)的ExtensionAbility。 |
+| fileManager | [文件管理器](../doccenter-references/api/filemanagerservice-arkts-extensionability.md)的ExtensionAbility。  **起始版本：** 26.0.1 |
 
 ## shortcuts标签
 

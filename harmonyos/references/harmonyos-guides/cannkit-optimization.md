@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-optimization
-title: 异构
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部署 > 异构
+title: NPU异构部署
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部署 > 部署性能优化 > NPU异构部署
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:48+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:0c6ced752f4d22fbb1f3f0fd7b79f4ea368dbf663e6c80669bd0178dcd7ffa8e
+scraped_at: 2026-11-12T09:52:41+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:01bf719e144fb0b61df6f740b1e7f1a8c8aeb4193c364ba5cae5dc03cbaf8fc3
 ---
 
 ## 概述
@@ -14,7 +14,7 @@ content_hash: sha256:0c6ced752f4d22fbb1f3f0fd7b79f4ea368dbf663e6c80669bd0178dcd7
 
 异构的原理如下图所示，指定OP1、OP2、OP5~OPn在CPU上进行推理，OP3、OP4在NPU上进行推理。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/ATpY-euISneCkXYWWxwDqQ/zh-cn_image_0000002809011367.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/deDqak_PRRGBJ0m8KiDj3A/zh-cn_image_0000002786360672.png)
 
 实现异构可以通过在线调优方式，以下为在线调优参数设置接口，接口使用见[在线调优开发步骤](cannkit-optimization.md#在线调优开发步骤)。如要使用更丰富的设置和查询接口，请参见[API参考](../harmonyos-references/cannkit.md)。
 
@@ -29,7 +29,7 @@ content_hash: sha256:0c6ced752f4d22fbb1f3f0fd7b79f4ea368dbf663e6c80669bd0178dcd7
 
 1. 设置芯片调优模式。
 
-   * 调用[OH\_NNCompilation\_ConstructWithOfflineModelFile](../harmonyos-references/capi-neural-network-core-h.md#oh_nncompilation_constructwithofflinemodelfile)，读取模型buffer，创建模型编译实例。
+   * 调用[OH\_NNCompilation\_ConstructWithOfflineModelFile](../harmonyos-references/capi-neural-network-core-h.md#oh_nncompilation_constructwithofflinemodelfile)，通过模型文件路径读取模型，创建模型编译实例。
    * 调用[HMS\_HiAIOptions\_SetTuningMode](../harmonyos-references/cannkit.md#hms_hiaioptions_settuningmode)向模型编译实例中设置芯片调优模式调优选项。
 2. 调用[HMS\_HiAIOptions\_SetTuningCacheDir](../harmonyos-references/cannkit.md#hms_hiaioptions_settuningcachedir)向模型编译实例中设置芯片调优缓存目录调优选项。
 3. 执行模型编译。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hide
 title: HiDebug_StackFrame
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > C API > 结构体 > HiDebug_StackFrame
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:17+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:ccfe32929518fd0fd9eb35ce9d8622e4be50c9e58c2ed653189f279bff726071
+scraped_at: 2026-11-12T09:56:16+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:dfb9e2783a6ba6dfdd04b39766e6bcb425d9c69dcdf7c55039fb07731d9866a5
 ---
 
 ```c
@@ -28,6 +28,6 @@ typedef struct HiDebug_StackFrame {...} HiDebug_StackFrame
 
 | 名称 | 描述 |
 | --- | --- |
-| [HiDebug\_StackFrameType](capi-hidebug-type-h.md#hidebug_stackframetype) type | 当前栈的类型。 |
-| struct [HiDebug\_JsStackFrame](capi-hidebug-hidebug-jsstackframe.md) js | 由[HiDebug\_JsStackFrame](capi-hidebug-hidebug-jsstackframe.md)定义的js栈帧内容。 |
-| struct [HiDebug\_NativeStackFrame](capi-hidebug-hidebug-nativestackframe.md) native | 由[HiDebug\_NativeStackFrame](capi-hidebug-hidebug-nativestackframe.md)定义的native栈帧内容。 |
+| HiDebug\_StackFrameType type | 当前栈的类型。 |
+| frame.js | 由[HiDebug\_JsStackFrame](capi-hidebug-hidebug-jsstackframe.md)定义的js栈帧内容。 |
+| frame.native | 由[HiDebug\_NativeStackFrame](capi-hidebug-hidebug-nativestackframe.md)定义的native栈帧内容。 |

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-heap
 title: 使用JSVM-API接口进行JavaScript代码调试调优
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口进行JavaScript代码调试调优
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:18+08:00
-doc_updated_at: 2026-10-28
+scraped_at: 2026-11-12T09:52:49+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:fe86bc986eff0c0c937b3fc886beb9c363a3fe01980029871486283f634c6a5d
 ---
 

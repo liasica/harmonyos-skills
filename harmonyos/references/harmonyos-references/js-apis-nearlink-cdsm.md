@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.nearlink.cdsm (星闪合作设备集合管理能力)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.nearlink.cdsm (星闪合作设备集合管理能力)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:04+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:98c7a77eb9c03aee6bdec1ebc1eabf7de80af0c7b523559191916ffdc387a426
+scraped_at: 2026-11-12T09:55:34+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:585dd3bb631a2e73fd659301e2ad1d5eeeecfea09ba312691e72dba0c4cd2182
 ---
 
 本模块提供了星闪合作设备集合管理（Coordinated Devices Set Management，CDSM）的能力，包括查询和订阅星闪合作设备集合信息的功能。
@@ -23,6 +23,8 @@ import { cdsm } from '@kit.ConnectivityKit';
 createCdsmClient(address: string): CdsmClient
 
 创建CDSM客户端实例。
+
+调用此接口前，您可以调用[isNearLinkSupported](js-apis-nearlink-manager.md#managerisnearlinksupported)查询设备是否支持星闪。
 
 **起始版本：** 26.0.0
 
@@ -50,8 +52,8 @@ createCdsmClient(address: string): CdsmClient
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
-| 801 | Capability not supported because the chip does not support it. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 36100003 | NearLink disabled. |
 | 36100041 | Invalid address. |
 | 36100050 | Coordinated Devices Set Management not supported. |
@@ -115,7 +117,7 @@ getCdsmInfo(): CdsmInfo
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 36100003 | NearLink disabled. |
 | 36100099 | Operation failed. |
 

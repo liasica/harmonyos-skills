@@ -3,14 +3,33 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 媒体库错误码
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > 错误码 > 媒体库错误码
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:43+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:adc9f63da5c5b337e349d0660b506c1ce1759f68c198170ec187f3be38942987
+scraped_at: 2026-11-12T09:56:52+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:fd0586226fae90de2fc36d5979e99ef8d41668c5b95c0b7b71ca73fc38e752c2
 ---
 
 **说明** 
 
 以下仅介绍本模块特有错误码，通用错误码请参考[通用错误码说明文档](errorcode-universal.md)。
+
+## 23800108 指定的资产不存在
+
+**错误信息**
+
+The specified asset does not exist.
+
+**错误描述**
+
+指定的资产不存在。
+
+**可能原因**
+
+1. 图片或者视频已经被删除。
+2. PhotoAsset对象来源不可信，非媒体库查询返回的结构体。
+
+**处理步骤**
+
+出现该错误码时建议跳过该图片和视频处理。
 
 ## 23800301 系统内部错误
 

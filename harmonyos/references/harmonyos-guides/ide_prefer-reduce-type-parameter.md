@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_prefer-re
 title: "@typescript-eslint/prefer-reduce-type-parameter"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/prefer-reduce-type-parameter
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:10+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:a57112666d2f7c682ab3804448181d43b021fb7ec1980b4dc452afb5faf164c1
+scraped_at: 2026-11-12T09:52:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:6c8708636270cf962a1905f0cfb9f64bc692ebb4677bfe4574e240448c420b6e
 ---
 
 调用“Array#reduce”时推荐使用类型参数而不是类型断言。
@@ -51,4 +51,4 @@ content_hash: sha256:a57112666d2f7c682ab3804448181d43b021fb7ec1980b4dc452afb5faf
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

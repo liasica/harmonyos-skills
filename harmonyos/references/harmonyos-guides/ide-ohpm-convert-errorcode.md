@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-conv
 title: ohpm convert错误码
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm convert错误码
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:25+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:90a552587e77ef4bcfa849c41052e1aa8df7bf7f2189f9332206939b7c896a2d
+scraped_at: 2026-11-12T09:53:12+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:064546791ca54abab01eabb370601663b9d49de65efec0f14d003536989e4898
 ---
 
 ## 00636001 无子目录
@@ -96,7 +96,7 @@ npm包中package.json配置文件字段缺失。
 
 **处理步骤**
 
-检查npm包中package.json配置文件字段存在，且取值符合要求。具体字段说明请参考[oh-package.json5](ide-oh-package-json5.md#zh-cn_topic_0000001792256137_oh-packagejson5-字段说明)。
+检查npm包中package.json配置文件字段存在，且取值符合要求。具体字段说明请参考[oh-package.json5](ide-oh-package-json5.md)。
 
 ## 00636006 Node\_modules目录配置错误
 

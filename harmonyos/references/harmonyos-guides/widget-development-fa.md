@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/widget-develo
 title: JS卡片开发指导（FA模型）
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > JS卡片开发 > JS卡片开发指导（FA模型）
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:31+08:00
+scraped_at: 2026-11-12T09:51:28+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:ff460291e0e61955d94e09d41eca04ca8ae5999022d55c47637d1ee9d7baa432
+content_hash: sha256:58ce90a0a5bce15d43679cc61b288b56bee18ac9c669f51db2a797a89337d893
 ---
 
 FA模型从API version 7开始支持，已经不再主推。该应用模型通过导出匿名对象、固定入口文件的方式指定应用组件，开发者无法进行派生，不利于扩展能力。建议使用新的Stage模型进行开发。
@@ -412,7 +412,7 @@ onUpdate(formId: string) {
 
 开发者可以使用类Web范式（HML+CSS+JSON）开发JS卡片页面。生成如下卡片页面，可以这样配置卡片页面文件：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/ZgOctAAxRq-gl1D2DJ-62g/zh-cn_image_0000002809050205.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/VcMxCcetTm2ScvMj6tMvOw/zh-cn_image_0000002815399087.png)
 
 **说明** 
 

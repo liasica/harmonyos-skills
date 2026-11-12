@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avcodec-kit-i
 title: AVCodec Kit简介
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > AVCodec Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:06+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:0f92209cadc247ac8a93231c269ab33ab5e6492f4712fda4a82fa725c309c0dc
+scraped_at: 2026-11-12T09:52:01+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d406c3d00192fd1e493417f10ea4d3055d6ce1461cdc3035b56c63c1ef7c3675
 ---
 
 AVCodec Kit（Audio & Video Codec Kit，音视频编解码，封装，解封装）是媒体系统中的音视频的编解码、媒体文件的封装、解封装、媒体数据输入等原子能力。
@@ -54,7 +54,7 @@ AVCodec Kit（Audio & Video Codec Kit，音视频编解码，封装，解封装�
 
   视频编解码的逻辑如图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/Q7KM-G-KQU-jiPIQmPsAgw/zh-cn_image_0000002809050481.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/d-jO2XgNSxirf3C8aFP82g/zh-cn_image_0000002786359856.png)
 
   具体开发指导请参考[视频解码Surface模式](video-decoding.md#surface模式)、[视频编码Surface模式](video-encoding.md#surface模式)。
 * 音频编解码
@@ -65,7 +65,7 @@ AVCodec Kit（Audio & Video Codec Kit，音视频编解码，封装，解封装�
 
   音频编解码逻辑如图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/e2qvIt1cQ4Sa0d6am6C-cg/zh-cn_image_0000002779850916.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/h7d_VelFQyKz2-ph4z0cXQ/zh-cn_image_0000002815559277.png)
 
   具体开发指导请参考[音频解码](audio-decoding.md)、[音频编码](audio-encoding.md)。
 * 文件封装与解封装
@@ -76,7 +76,7 @@ AVCodec Kit（Audio & Video Codec Kit，音视频编解码，封装，解封装�
 
   文件封装、解封装逻辑如图所示。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/WJ8h5Uk8SKuD_Jz1BJDqUw/zh-cn_image_0000002779690948.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/I0_YA6yaTVmKDAATGXQrgA/zh-cn_image_0000002815399361.png)
 
   具体开发指导请参考[媒体数据封装](audio-video-muxer.md)和[媒体数据解封装](audio-video-demuxer.md)。
 
@@ -86,6 +86,9 @@ AVCodec Kit（Audio & Video Codec Kit，音视频编解码，封装，解封装�
 
 * 通用差异：请参见[模拟器与真机的差异](ide-emulator-specification.md#section1227613205203)。
 * 音频编解码支持模拟器，具体规格参考[音频编解码](avcodec-support-formats.md#音频解码)。
-* 视频编解码仅软件解码支持模拟器（h265格式除外），具体规格参考[视频解码](avcodec-support-formats.md#视频解码)。
-* 媒体数据封装支持模拟器，具体规格参考[媒体数据封装](avcodec-support-formats.md#媒体数据封装)。
-* 媒体数据解封装支持模拟器，具体规格参考[媒体数据解封装](avcodec-support-formats.md#媒体数据解封装)。
+* 支持的视频解码格式如下：
+
+  MSVIDEO122+、WMV322+、MJPEG22+、MPEG123+、MPEG2、MPEG4、H.263、AVC(H.264)、RV3023+、RV4023+、DVVIDEO23+、RAWVIDEO23+、Cinepak24+。
+* 支持的媒体数据解封装格式如下：
+
+  mp4、fmp4、mkv、mpeg-ts、flv、mpeg-ps、avi、3gp22+、3g222+、m4v22+、wmv22+、rm23+、rmvb23+、m4a、aac、mp3、ogg、flac、wav、amr、ape、wma22+、sunAU24+、dts23+、srt、webvtt。

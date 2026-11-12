@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-hide
 title: hidebug.h
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > C API > 头文件 > hidebug.h
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:56+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:af9913e741550ad9a7c375866a7cde0d410d0e35539718b7e6e6ae951fe5f454
+scraped_at: 2026-11-12T09:56:16+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a3c140cdfc78774a6b5184ad26230a73b4388c4e5de3086d7e4b4f047ff6fbfc
 ---
 
 ## 概述
@@ -23,6 +23,12 @@ content_hash: sha256:af9913e741550ad9a7c375866a7cde0d410d0e35539718b7e6e6ae951fe
 **相关模块：** [HiDebug](capi-hidebug.md)
 
 ## 汇总
+
+### 结构体
+
+| 名称 | typedef关键字 | 描述 |
+| --- | --- | --- |
+| [OH\_HiDebug\_ProfilerOptions](capi-hidebug-oh-hidebug-profileroptions.md) | OH\_HiDebug\_ProfilerOptions | 资源采集配置结构体前向声明。 |
 
 ### 函数
 
@@ -62,6 +68,17 @@ content_hash: sha256:af9913e741550ad9a7c375866a7cde0d410d0e35539718b7e6e6ae951fe
 | [void OH\_HiDebug\_PushAsyncContext(uint64\_t ctx)](capi-hidebug-h.md#oh_hidebug_pushasynccontext) | - | Profiler辅助接口，将AsyncContext压入运行上下文栈表。 |
 | [void OH\_HiDebug\_PopAsyncContext(uint64\_t ctx)](capi-hidebug-h.md#oh_hidebug_popasynccontext) | - | Profiler辅助接口，将AsyncContext从运行上下文栈表中弹出。 |
 | [void OH\_HiDebug\_ReleaseAsyncContext(uint64\_t ctx)](capi-hidebug-h.md#oh_hidebug_releaseasynccontext) | - | Profiler辅助接口，将AsyncContext释放给系统。 |
+| [OH\_HiDebug\_ProfilerOptions\* OH\_HiDebug\_CreateProfilerOptions(void)](capi-hidebug-h.md#oh_hidebug_createprofileroptions) | - | 创建资源Profiler配置对象。 |
+| [HiDebug\_ErrorCode OH\_HiDebug\_DestroyProfilerOptions(OH\_HiDebug\_ProfilerOptions\* opts)](capi-hidebug-h.md#oh_hidebug_destroyprofileroptions) | - | 释放通过[OH\_HiDebug\_CreateProfilerOptions](capi-hidebug-h.md#oh_hidebug_createprofileroptions)创建的配置对象。 |
+| [HiDebug\_ErrorCode OH\_HiDebug\_SetMaxAsyncNestingDepth(OH\_HiDebug\_ProfilerOptions\* opts, uint32\_t depth)](capi-hidebug-h.md#oh_hidebug_setmaxasyncnestingdepth) | - | 设置异步调用的最大嵌套深度（也称为最大嵌套层数）。 |
+| [HiDebug\_ErrorCode OH\_HiDebug\_SetMaxAsyncTaskStackDepth(OH\_HiDebug\_ProfilerOptions\* opts, uint32\_t depth)](capi-hidebug-h.md#oh_hidebug_setmaxasynctaskstackdepth) | - | 设置异步任务函数的最大回栈深度。 |
+| [HiDebug\_ErrorCode OH\_HiDebug\_SetSampleIntervalBytes(OH\_HiDebug\_ProfilerOptions\* opts, uint32\_t bytes)](capi-hidebug-h.md#oh_hidebug_setsampleintervalbytes) | - | 设置采样间隔，单位为Byte。 |
+| [HiDebug\_ErrorCode OH\_HiDebug\_SetStatisticsIntervalSec(OH\_HiDebug\_ProfilerOptions\* opts, uint32\_t seconds)](capi-hidebug-h.md#oh_hidebug_setstatisticsintervalsec) | - | 设置统计间隔，单位为s。 |
+| [HiDebug\_ErrorCode OH\_HiDebug\_SetMaxStackDepth(OH\_HiDebug\_ProfilerOptions\* opts, uint32\_t depth)](capi-hidebug-h.md#oh_hidebug_setmaxstackdepth) | - | 设置最大回栈深度。 |
+| [HiDebug\_ErrorCode OH\_HiDebug\_SetFilterSize(OH\_HiDebug\_ProfilerOptions\* opts, uint32\_t size)](capi-hidebug-h.md#oh_hidebug_setfiltersize) | - | 设置内存分配过滤大小。 |
+| [HiDebug\_ErrorCode OH\_HiDebug\_SetMaxDurationSec(OH\_HiDebug\_ProfilerOptions\* opts, uint32\_t seconds)](capi-hidebug-h.md#oh_hidebug_setmaxdurationsec) | - | 设置最大采集时长，单位为s。 |
+| [HiDebug\_ErrorCode OH\_HiDebug\_SetStackTraceMode(OH\_HiDebug\_ProfilerOptions \*opts, OH\_HiDebug\_ProfilerStackTraceMode mode)](capi-hidebug-h.md#oh_hidebug_setstacktracemode) | - | 设置调用栈追踪模式。 |
+| [HiDebug\_ErrorCode OH\_HiDebug\_StartProfilerWithOptions(OH\_HiDebug\_ResourceType type, OH\_HiDebug\_ProfilerOptions\* opts, OH\_HiDebug\_ProfilingCallback callback)](capi-hidebug-h.md#oh_hidebug_startprofilerwithoptions) | - | 按指定资源类型和配置开启当前进程资源分配栈信息采集功能。 |
 
 ## 函数说明
 
@@ -608,15 +625,31 @@ HiDebug_ErrorCode OH_HiDebug_StartProfiler(OH_HiDebug_ResourceType type, OH_HiDe
 
 若采集异常，则文件路径为NULL。
 
-**注意** 
+**规格和约束：**
 
-1. 当前接口每24小时可调用10次；
-2. 采集资源的目标进程仅支持调用接口进程本身；
-3. 系统CPU占用率超过70%或内存可用空间少于15%或存储可用空间少于15%时，接口将调用失败并返回对应错误码；
-4. 当接口与命令行工具或系统采集任务发生冲突时，将调用失败，并返回相应的错误码；
-5. 同一个应用如存在多个进程，此接口最多可同时启动4个；
-6. 采集结果将保存在应用沙箱/data/storage/el2/base/files/目录下，文件名为“资源采集类型-进程名-进程号-时间戳.htrace”。
-7. 从API版本26.0.0开始，该接口将尽量丢弃已释放内存调用栈数据，减少采集文件大小，进一步降低采集过程中的性能开销。
+1. 采集配额限制：
+
+   * 应用（单应用独享）：每日最多可采集2次；同一时刻，最高支持应用内2个进程并行采集。
+   * 进程（单进程独享）：同一时刻，仅支持启动1个采集任务。
+
+     以上配额限制仅对非debug应用生效，debug应用不受此约束。
+2. 系统负载熔断机制：
+
+   当系统触发以下任一负载保护条件时，API采集请求将被拒绝，并返回相应错误码：
+
+   * CPU限制：整机系统CPU占用率超过70%。
+   * 内存限制：整机系统可用内存低于2GB。
+   * 存储限制：整机系统可用存储空间低于存储阈值，阈值为系统总存储容量的3%与15GB中的较大值。
+3. 并发冲突约束：
+
+   * 当API采集与命令行工具或系统采集任务发生冲突时，API采集请求将被拒绝，并返回相应错误码。
+4. 采集结果保存：
+
+   * 存储路径：采集到的调用栈日志文件将自动保存在应用沙箱/data/storage/el2/base/files/目录下。
+   * 文件名规则：“资源采集类型-进程名-进程号-时间戳.htrace”。
+5. 权限约束：
+
+   * 采集资源的目标进程仅支持调用接口进程本身，不支持跨进程采集。
 
 **起始版本：** 24
 
@@ -632,7 +665,7 @@ HiDebug_ErrorCode OH_HiDebug_StartProfiler(OH_HiDebug_ResourceType type, OH_HiDe
 
 | 类型 | 说明 |
 | --- | --- |
-| [HiDebug\_ErrorCode](capi-hidebug-type-h.md#hidebug_errorcode) | 返回结果码：  HIDEBUG\_RES\_PROF\_SUCCESS：启动资源采集成功。  HIDEBUG\_RES\_PROF\_INVALID\_ARG：资源采集参数无效。  HIDEBUG\_RES\_PROF\_INVALID\_MAX\_DURATION：资源采集最大持续时间参数无效。  HIDEBUG\_RES\_PROF\_INVALID\_FILTER\_SIZE：资源采集过滤大小参数无效。  HIDEBUG\_RES\_PROF\_INVALID\_MAX\_STACK\_DEPTH：资源采集最大回栈深度参数无效。  HIDEBUG\_RES\_PROF\_INVALID\_STATISTICS\_INTERVAL：资源采集统计间隔参数无效。  HIDEBUG\_RES\_PROF\_INVALID\_SAMPLE\_INTERVAL：资源采集采样大小参数无效。  HIDEBUG\_RES\_PROF\_INVALID\_RESOURCE\_TYPE：资源采集类型参数无效。  HIDEBUG\_RES\_PROF\_PERMISSION\_DENIED：资源采集权限不足，采集资源的目标进程仅支持调用接口进程本身。  HIDEBUG\_RES\_PROF\_ALREADY\_STARTED：资源采集重复启动。  HIDEBUG\_RES\_PROF\_PROCESS\_OVERLIMIT：资源采集进程数超出 4 个限制。  HIDEBUG\_RES\_PROF\_CONFLICT：资源采集与命令行工具或系统采集任务冲突。  HIDEBUG\_RES\_PROF\_DAILY\_QUOTA\_EXCEEDED：资源采集每日配额超出 10 次限制。  HIDEBUG\_RES\_PROF\_CPU\_OVERLOADED：系统 CPU 处于高负载状态，CPU 占用率超过 70%。  HIDEBUG\_RES\_PROF\_MEM\_PRESSURE\_CRITICAL：内存可用空间紧张，可用空间少于 15%。  HIDEBUG\_RES\_PROF\_STORAGE\_PRESSURE\_CRITICAL：存储可用空间紧张，可用空间少于 15%。  HIDEBUG\_RES\_PROF\_FAILURE：启动资源采集失败。 |
+| [HiDebug\_ErrorCode](capi-hidebug-type-h.md#hidebug_errorcode) | 返回结果码：  HIDEBUG\_RES\_PROF\_SUCCESS：启动资源采集成功。  HIDEBUG\_RES\_PROF\_INVALID\_ARG：资源采集参数无效。  HIDEBUG\_RES\_PROF\_INVALID\_MAX\_DURATION：资源采集最大持续时间参数无效。  HIDEBUG\_RES\_PROF\_INVALID\_FILTER\_SIZE：资源采集过滤大小参数无效。  HIDEBUG\_RES\_PROF\_INVALID\_MAX\_STACK\_DEPTH：资源采集最大回栈深度参数无效。  HIDEBUG\_RES\_PROF\_INVALID\_STATISTICS\_INTERVAL：资源采集统计间隔参数无效。  HIDEBUG\_RES\_PROF\_INVALID\_SAMPLE\_INTERVAL：资源采集采样大小参数无效。  HIDEBUG\_RES\_PROF\_INVALID\_RESOURCE\_TYPE：资源采集类型参数无效。  HIDEBUG\_RES\_PROF\_PERMISSION\_DENIED：资源采集权限不足，采集资源的目标进程仅支持调用接口进程自身。  HIDEBUG\_RES\_PROF\_ALREADY\_STARTED：资源采集重复启动。  HIDEBUG\_RES\_PROF\_PROCESS\_OVERLIMIT：资源采集并行进程数超出限制，整机最多4个不同应用并行采集，应用内最多2个进程并行采集。  HIDEBUG\_RES\_PROF\_CONFLICT：资源采集与命令行工具或系统采集任务冲突。  HIDEBUG\_RES\_PROF\_DAILY\_QUOTA\_EXCEEDED：资源采集每日配额超出限制，整机每日最多4次，应用每日最多2次。  HIDEBUG\_RES\_PROF\_CPU\_OVERLOADED：整机系统CPU占用率超过70%。  HIDEBUG\_RES\_PROF\_MEM\_PRESSURE\_CRITICAL：整机系统可用内存低于2GB。  HIDEBUG\_RES\_PROF\_STORAGE\_PRESSURE\_CRITICAL：整机系统可用存储空间低于存储阈值，阈值为总存储容量的3%与15GB中的较大值。  HIDEBUG\_RES\_PROF\_FAILURE：启动资源采集失败。 |
 
 ### OH\_HiDebug\_StopProfiler()
 
@@ -807,3 +840,271 @@ Profiler辅助接口，将AsyncContext释放给系统。
 | 参数项 | 描述 |
 | --- | --- |
 | uint64\_t ctx | 由[OH\_HiDebug\_AcquireAsyncContext()](capi-hidebug-h.md#oh_hidebug_acquireasynccontext)获取的异步线程上下文。 |
+
+### OH\_HiDebug\_CreateProfilerOptions()
+
+```c
+OH_HiDebug_ProfilerOptions* OH_HiDebug_CreateProfilerOptions(void)
+```
+
+**描述**
+
+创建资源Profiler配置对象。
+
+**起始版本：** 26.0.1
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [OH\_HiDebug\_ProfilerOptions\*](capi-hidebug-oh-hidebug-profileroptions.md) | 指向OH\_HiDebug\_ProfilerOptions结构体的指针，当创建失败时返回NULL。 |
+
+### OH\_HiDebug\_DestroyProfilerOptions()
+
+```c
+HiDebug_ErrorCode OH_HiDebug_DestroyProfilerOptions(OH_HiDebug_ProfilerOptions* opts)
+```
+
+**描述**
+
+释放通过[OH\_HiDebug\_CreateProfilerOptions](capi-hidebug-h.md#oh_hidebug_createprofileroptions)创建的配置对象。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_HiDebug\_ProfilerOptions](capi-hidebug-oh-hidebug-profileroptions.md)\* opts | 指向OH\_HiDebug\_ProfilerOptions结构体的指针，不能为NULL。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [HiDebug\_ErrorCode](capi-hidebug-type-h.md#hidebug_errorcode) | 返回结果码：  HIDEBUG\_SUCCESS：操作成功。  HIDEBUG\_RES\_PROF\_INVALID\_ARG：opts为空指针。 |
+
+### OH\_HiDebug\_SetMaxAsyncNestingDepth()
+
+```c
+HiDebug_ErrorCode OH_HiDebug_SetMaxAsyncNestingDepth(OH_HiDebug_ProfilerOptions* opts, uint32_t depth)
+```
+
+**描述**
+
+设置异步调用的最大嵌套深度（也称为最大嵌套层数）。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_HiDebug\_ProfilerOptions](capi-hidebug-oh-hidebug-profileroptions.md)\* opts | 指向OH\_HiDebug\_ProfilerOptions结构体的指针，不能为NULL。 |
+| uint32\_t depth | 允许的最大异步嵌套深度，取值范围为[1, 16]。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [HiDebug\_ErrorCode](capi-hidebug-type-h.md#hidebug_errorcode) | 返回结果码：  HIDEBUG\_SUCCESS：操作成功。  HIDEBUG\_RES\_PROF\_INVALID\_ARG：opts为空指针。  HIDEBUG\_RES\_PROF\_INVALID\_MAX\_ASYNC\_NESTING\_DEPTH：资源采集异步嵌套深度参数无效。 |
+
+### OH\_HiDebug\_SetMaxAsyncTaskStackDepth()
+
+```c
+HiDebug_ErrorCode OH_HiDebug_SetMaxAsyncTaskStackDepth(OH_HiDebug_ProfilerOptions* opts, uint32_t depth)
+```
+
+**描述**
+
+设置异步任务函数的最大回栈深度。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_HiDebug\_ProfilerOptions](capi-hidebug-oh-hidebug-profileroptions.md)\* opts | 指向OH\_HiDebug\_ProfilerOptions结构体的指针，不能为NULL。 |
+| uint32\_t depth | 最大异步任务回栈深度，取值范围为[1, 256]。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [HiDebug\_ErrorCode](capi-hidebug-type-h.md#hidebug_errorcode) | 返回结果码：  HIDEBUG\_SUCCESS：操作成功。  HIDEBUG\_RES\_PROF\_INVALID\_ARG：opts为空指针。  HIDEBUG\_RES\_PROF\_INVALID\_MAX\_ASYNC\_TASK\_STACK\_DEPTH：资源采集异步任务回栈深度参数无效。 |
+
+### OH\_HiDebug\_SetSampleIntervalBytes()
+
+```c
+HiDebug_ErrorCode OH_HiDebug_SetSampleIntervalBytes(OH_HiDebug_ProfilerOptions* opts, uint32_t bytes)
+```
+
+**描述**
+
+设置采样间隔，单位为Byte。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_HiDebug\_ProfilerOptions](capi-hidebug-oh-hidebug-profileroptions.md)\* opts | 指向OH\_HiDebug\_ProfilerOptions结构体的指针，不能为NULL。 |
+| uint32\_t bytes | 采样间隔，取值范围为[384, 4294967295]，单位为Byte。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [HiDebug\_ErrorCode](capi-hidebug-type-h.md#hidebug_errorcode) | 返回结果码：  HIDEBUG\_SUCCESS：操作成功。  HIDEBUG\_RES\_PROF\_INVALID\_ARG：opts为空指针。  HIDEBUG\_RES\_PROF\_INVALID\_SAMPLE\_INTERVAL：采样间隔参数无效。 |
+
+### OH\_HiDebug\_SetStatisticsIntervalSec()
+
+```c
+HiDebug_ErrorCode OH_HiDebug_SetStatisticsIntervalSec(OH_HiDebug_ProfilerOptions* opts, uint32_t seconds)
+```
+
+**描述**
+
+设置统计间隔，单位为s。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_HiDebug\_ProfilerOptions](capi-hidebug-oh-hidebug-profileroptions.md)\* opts | 指向OH\_HiDebug\_ProfilerOptions结构体的指针，不能为NULL。 |
+| uint32\_t seconds | 统计间隔，取值范围为[1, 3600]，单位为s。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [HiDebug\_ErrorCode](capi-hidebug-type-h.md#hidebug_errorcode) | 返回结果码：  HIDEBUG\_SUCCESS：操作成功。  HIDEBUG\_RES\_PROF\_INVALID\_ARG：opts为空指针。  HIDEBUG\_RES\_PROF\_INVALID\_STATISTICS\_INTERVAL：统计间隔参数无效。 |
+
+### OH\_HiDebug\_SetMaxStackDepth()
+
+```c
+HiDebug_ErrorCode OH_HiDebug_SetMaxStackDepth(OH_HiDebug_ProfilerOptions* opts, uint32_t depth)
+```
+
+**描述**
+
+设置最大回栈深度。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_HiDebug\_ProfilerOptions](capi-hidebug-oh-hidebug-profileroptions.md)\* opts | 指向OH\_HiDebug\_ProfilerOptions结构体的指针，不能为NULL。 |
+| uint32\_t depth | 最大回栈深度，取值范围为[1, 30]。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [HiDebug\_ErrorCode](capi-hidebug-type-h.md#hidebug_errorcode) | 返回结果码：  HIDEBUG\_SUCCESS：操作成功。  HIDEBUG\_RES\_PROF\_INVALID\_ARG：opts为空指针。  HIDEBUG\_RES\_PROF\_INVALID\_MAX\_STACK\_DEPTH：最大回栈深度参数无效。 |
+
+### OH\_HiDebug\_SetFilterSize()
+
+```c
+HiDebug_ErrorCode OH_HiDebug_SetFilterSize(OH_HiDebug_ProfilerOptions* opts, uint32_t size)
+```
+
+**描述**
+
+设置内存分配过滤大小。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_HiDebug\_ProfilerOptions](capi-hidebug-oh-hidebug-profileroptions.md)\* opts | 指向OH\_HiDebug\_ProfilerOptions结构体的指针，不能为NULL。 |
+| uint32\_t size | 过滤大小阈值，取值范围为[1, 4294967295]，单位为Byte。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [HiDebug\_ErrorCode](capi-hidebug-type-h.md#hidebug_errorcode) | 返回结果码：  HIDEBUG\_SUCCESS：操作成功。  HIDEBUG\_RES\_PROF\_INVALID\_ARG：opts为空指针。  HIDEBUG\_RES\_PROF\_INVALID\_FILTER\_SIZE：过滤大小参数无效。 |
+
+### OH\_HiDebug\_SetMaxDurationSec()
+
+```c
+HiDebug_ErrorCode OH_HiDebug_SetMaxDurationSec(OH_HiDebug_ProfilerOptions* opts, uint32_t seconds)
+```
+
+**描述**
+
+设置最大采集时长，单位为s。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_HiDebug\_ProfilerOptions](capi-hidebug-oh-hidebug-profileroptions.md)\* opts | 指向OH\_HiDebug\_ProfilerOptions结构体的指针，不能为NULL。 |
+| uint32\_t seconds | 最大采集时长，取值范围为[1, 3600]，单位为s。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [HiDebug\_ErrorCode](capi-hidebug-type-h.md#hidebug_errorcode) | 返回结果码：  HIDEBUG\_SUCCESS：操作成功。  HIDEBUG\_RES\_PROF\_INVALID\_ARG：opts为空指针。  HIDEBUG\_RES\_PROF\_INVALID\_MAX\_DURATION：最大持续采集时间参数无效。 |
+
+### OH\_HiDebug\_SetStackTraceMode()
+
+```c
+HiDebug_ErrorCode OH_HiDebug_SetStackTraceMode(OH_HiDebug_ProfilerOptions *opts, OH_HiDebug_ProfilerStackTraceMode mode)
+```
+
+**描述**
+
+设置调用栈追踪模式。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_HiDebug\_ProfilerOptions](capi-hidebug-oh-hidebug-profileroptions.md) \*opts | 指向OH\_HiDebug\_ProfilerOptions结构体的指针，不能为NULL。 |
+| [OH\_HiDebug\_ProfilerStackTraceMode](capi-hidebug-type-h.md#oh_hidebug_profilerstacktracemode) mode | 调用栈追踪模式。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [HiDebug\_ErrorCode](capi-hidebug-type-h.md#hidebug_errorcode) | 返回结果码：  HIDEBUG\_SUCCESS：操作成功。  HIDEBUG\_RES\_PROF\_INVALID\_ARG：opts为空指针。  HIDEBUG\_RES\_PROF\_INVALID\_STACK\_TRACE\_MODE：无效的调用栈追踪模式。 |
+
+### OH\_HiDebug\_StartProfilerWithOptions()
+
+```c
+HiDebug_ErrorCode OH_HiDebug_StartProfilerWithOptions(OH_HiDebug_ResourceType type, OH_HiDebug_ProfilerOptions* opts, OH_HiDebug_ProfilingCallback callback)
+```
+
+**描述**
+
+按指定资源类型和配置开启当前进程资源分配栈信息采集功能。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_HiDebug\_ResourceType](capi-hidebug-type-h.md#oh_hidebug_resourcetype) type | 资源采集类型（OH\_HiDebug\_ResourceType）。 |
+| [OH\_HiDebug\_ProfilerOptions](capi-hidebug-oh-hidebug-profileroptions.md)\* opts | 指向已配置的OH\_HiDebug\_ProfilerOptions结构体的指针，不能为NULL。 |
+| [OH\_HiDebug\_ProfilingCallback](capi-hidebug-type-h.md#oh_hidebug_profilingcallback) callback | 接收采集结果的回调函数。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [HiDebug\_ErrorCode](capi-hidebug-type-h.md#hidebug_errorcode) | 返回结果码：  HIDEBUG\_RES\_PROF\_SUCCESS：启动资源采集成功。  HIDEBUG\_RES\_PROF\_INVALID\_ARG：opts或callback为空指针。  HIDEBUG\_RES\_PROF\_INVALID\_MAX\_DURATION：最大持续采集时间参数无效。  HIDEBUG\_RES\_PROF\_INVALID\_FILTER\_SIZE：过滤大小参数无效。  HIDEBUG\_RES\_PROF\_INVALID\_MAX\_STACK\_DEPTH：最大回栈深度参数无效。  HIDEBUG\_RES\_PROF\_INVALID\_STATISTICS\_INTERVAL：统计间隔参数无效。  HIDEBUG\_RES\_PROF\_INVALID\_SAMPLE\_INTERVAL：采样间隔参数无效。  HIDEBUG\_RES\_PROF\_INVALID\_MAX\_ASYNC\_NESTING\_DEPTH：资源采集异步嵌套深度参数无效。  HIDEBUG\_RES\_PROF\_INVALID\_MAX\_ASYNC\_TASK\_STACK\_DEPTH：资源采集异步任务回栈深度参数无效。  HIDEBUG\_RES\_PROF\_INVALID\_STACK\_TRACE\_MODE：无效的调用栈追踪模式。  HIDEBUG\_RES\_PROF\_INVALID\_RESOURCE\_TYPE：资源采集类型参数无效。  HIDEBUG\_RES\_PROF\_PERMISSION\_DENIED：资源采集权限不足。  HIDEBUG\_RES\_PROF\_ALREADY\_STARTED：资源采集重复启动。  HIDEBUG\_RES\_PROF\_PROCESS\_OVERLIMIT：资源采集并行进程数超出限制，整机最多4个不同应用并行采集，应用内最多2个进程并行采集。  HIDEBUG\_RES\_PROF\_CONFLICT：资源采集与命令行工具或系统采集任务冲突。  HIDEBUG\_RES\_PROF\_DAILY\_QUOTA\_EXCEEDED：资源采集每日配额超出限制，整机每日最多4次，应用每日最多2次。  HIDEBUG\_RES\_PROF\_CPU\_OVERLOADED：整机系统CPU占用率超过70%。  HIDEBUG\_RES\_PROF\_MEM\_PRESSURE\_CRITICAL：整机系统可用内存低于2GB。  HIDEBUG\_RES\_PROF\_STORAGE\_PRESSURE\_CRITICAL：整机系统可用存储空间低于存储阈值，阈值为总存储容量的3%与15GB中的较大值。  HIDEBUG\_RES\_PROF\_FAILURE：启动资源采集失败。 |

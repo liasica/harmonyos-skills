@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: SVG标签说明
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图片与视频 > SVG标签说明
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:06+08:00
+scraped_at: 2026-11-12T09:54:18+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:2a11d620f7d470cb8ecffdecfa8cf83a57f891cfba179cc4252b6fdca129280d
+content_hash: sha256:bba9a758ff513cae78364d09065a58cf180eeb201309631a7c966817e902cf2a
 ---
 
 SVG（Scalable Vector Graphics）是可缩放矢量图形，它是一种基于XML（可扩展标记语言）的图形格式，用于描述二维图形和图像。[Image](ts-basic-components-image.md)组件支持的SVG范围，为SVG1.1规范的部分功能。支持的标签以及属性如下：
@@ -123,7 +123,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/1zd362TVRM-d3fBRrJV2Uw/zh-cn_image_0000002779692496.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/QvnNX_GeSFSe1nvPV3G4Fw/zh-cn_image_0000002786521320.png)
 
 ## 图形效果
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/spatial-recon
 title: 重建三维场景（C/C++）
 breadcrumb: 指南 > 图形 > Spatial Recon Kit（空间建模服务） > 重建三维场景（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:08+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:803c77e17f3b88d721e18b5fed5fdeeb85c9919c2e39d2185be2a7f9e35c47dc
+scraped_at: 2026-11-12T09:52:15+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:66d673452cb6cb34c1ccce0863534caaa617d03805c5ea9ec50a9c29850a0b74
 ---
 
 ## 概要
@@ -29,21 +29,22 @@ Spatial Recon Kit要求开发者输入一系列图像和对应的信息（相机
 
 ### 输入AR Engine的数据结构进行重建
 
-直接使用AR Engine的数据帧时，需要确保推入数据帧之前，先更新一次AR引擎的计算结果。
+直接使用AR Engine的数据帧时，需要确保推入数据帧之前，先更新一次AR引擎的计算结果。首先需要创建并配置AR Engine会话。
 
 ```cpp
 // 包含AREngine头文件
 #include "ar/ar_engine_core.h"
 
-#ifndef CHECK
-#define CHECK(condition)                                                                                               \
-    do {                                                                                                               \
-        auto ret = (condition);                                                                                        \
-        if (ret) {                                                                                                     \
-            LOGE("*** CHECK FAILED at %{public}s:%{public}d: %{public}s ",                                             \
-                 __FILE__, __LINE__, #condition);                                                                      \
-            abort();                                                                                                   \
-        }                                                                                                              \
+// 执行调用并检查返回值，非零（即非ARENGINE_SUCCESS或SPATIAL_RECON_STATUS_SUCCESS）视为失败
+#ifndef DO_AND_CHECK
+#define DO_AND_CHECK(call) \
+    do { \
+        auto ret = (call); \
+        if (ret) { \
+            LOGE("*** CHECK FAILED at %{public}s:%{public}d: %{public}s, ret=%{public}d", \
+                 __FILE__, __LINE__, #call, ret); \
+            abort(); \
+        } \
     } while (false);
 #endif
 
@@ -54,27 +55,39 @@ AREngine_ARSession *arSession = nullptr;
 
 AREngine_ARFrame *arFrame = nullptr;
 
-CHECK(HMS_AREngine_ARSession_Create(nullptr, nullptr, &arSession));
+DO_AND_CHECK(HMS_AREngine_ARSession_Create(nullptr, nullptr, &arSession));
 // 配置AREngine_ARSession
 AREngine_ARConfig *arConfig = nullptr;
-CHECK(HMS_AREngine_ARConfig_Create(arSession, &arConfig));
+DO_AND_CHECK(HMS_AREngine_ARConfig_Create(arSession, &arConfig));
 // 设置预览画面尺寸
 // 推荐使用 width = 1080, height = 1440图像
-CHECK(HMS_AREngine_ARConfig_SetPreviewSize(arSession, arConfig, 1080, 1440));
+DO_AND_CHECK(HMS_AREngine_ARConfig_SetPreviewSize(arSession, arConfig, 1080, 1440));
 // 设置画面更新模式。
-CHECK(HMS_AREngine_ARConfig_SetUpdateMode(arSession, arConfig, ARENGINE_UPDATE_MODE_LATEST));
-CHECK(HMS_AREngine_ARConfig_SetFocusMode(arSession, arConfig, ARENGINE_FOCUS_MODE_AUTO));
-CHECK(HMS_AREngine_ARSession_Configure(arSession, arConfig));
+DO_AND_CHECK(HMS_AREngine_ARConfig_SetUpdateMode(arSession, arConfig, ARENGINE_UPDATE_MODE_LATEST));
+DO_AND_CHECK(HMS_AREngine_ARConfig_SetFocusMode(arSession, arConfig, ARENGINE_FOCUS_MODE_AUTO));
+DO_AND_CHECK(HMS_AREngine_ARSession_Configure(arSession, arConfig));
 HMS_AREngine_ARConfig_Destroy(arConfig);
 // 创建一个新的AREngine_ARFrame对象
-CHECK(HMS_AREngine_ARFrame_Create(arSession, &arFrame));
+DO_AND_CHECK(HMS_AREngine_ARFrame_Create(arSession, &arFrame));
+```
 
+在创建好AR Engine会话以后，先更新一次AR引擎的计算结果，再推入数据帧。
+
+```cpp
 // 更新AR引擎计算结果
 AREngine_ARStatus arRet = HMS_AREngine_ARSession_Update(arSession, arFrame);
 
-// 推入数据帧
-HMS_SpatialReconStatus ret = HMS_SpatialRecon_PushARFrame(spatialReconSession,
-   arSession, arFrame);
+// 若需要继续推入数据帧，先更新AR引擎输出再推入
+while (hasMoreFrames) {
+    // 更新AR引擎计算结果
+    DO_AND_CHECK(HMS_AREngine_ARSession_Update(arSession, arFrame));
+    // 推入数据帧
+    DO_AND_CHECK(HMS_SpatialRecon_PushARFrame(spatialReconSession, arSession, arFrame));
+}
+
+// 不再需要推入数据帧后，释放AR Engine资源
+HMS_AREngine_ARFrame_Destroy(arFrame);
+HMS_AREngine_ARSession_Destroy(arSession);
 ```
 
 ### 根据Spatial Recon Kit 定义的数据结构进行重建
@@ -82,6 +95,18 @@ HMS_SpatialReconStatus ret = HMS_SpatialRecon_PushARFrame(spatialReconSession,
 开发者也可以手动依据[HMS\_SpatialRecon\_DataFrame](../harmonyos-references/capi-spatialrecon-hms-spatialrecon-dataframe.md)结构体的定义进行自定义配置。
 
 ```cpp
+#ifndef DO_AND_CHECK
+#define DO_AND_CHECK(call) \
+    do { \
+        auto ret = (call); \
+        if (ret) { \
+            LOGE("*** CHECK FAILED at %{public}s:%{public}d: %{public}s, ret=%{public}d", \
+                 __FILE__, __LINE__, #call, ret); \
+            abort(); \
+        } \
+    } while (false);
+#endif
+
 HMS_SpatialRecon_DataFrame inputFrame;
 
 inputFrame.focalX = usrFocalX;
@@ -97,7 +122,7 @@ inputFrame.imageHeight = usrHeight;
 inputFrame.format = SPATIAL_RECON_IMAGEDATA_FORMAT_RGB;
 inputFrame.imageData = rgbData;
 
-HMS_SpatialReconStatus ret= HMS_SpatialRecon_PushFrame(reconSession, &inputFrame);
+DO_AND_CHECK(HMS_SpatialRecon_PushFrame(reconSession, &inputFrame));
 ```
 
 调用HMS\_SpatialRecon\_PushFrame和HMS\_SpatialRecon\_PushARFrame时，需要保证输入数据是有效的。否则会返回SPATIAL\_RECON\_STATUS\_FAILED。
@@ -115,6 +140,18 @@ HMS_SpatialReconStatus ret= HMS_SpatialRecon_PushFrame(reconSession, &inputFrame
 由于重建过程中对系统资源消耗较大，Spatial Recon Kit仅支持同一时刻只有一个session正在进行重建。如果同一时刻有多个session同时进行重建，会导致未定义行为。
 
 ```cpp
+#ifndef DO_AND_CHECK
+#define DO_AND_CHECK(call) \
+    do { \
+        auto ret = (call); \
+        if (ret) { \
+            LOGE("*** CHECK FAILED at %{public}s:%{public}d: %{public}s, ret=%{public}d", \
+                 __FILE__, __LINE__, #call, ret); \
+            abort(); \
+        } \
+    } while (false);
+#endif
+
 auto noCaptureFinishedCB = [](HMS_SpatialReconStatus status) {
    // 在这里放callBack需要执行的任务，打印信息/调用其他回调
    return;
@@ -124,15 +161,15 @@ HMS_SpatialRecon_ModelWriteInfo info;
 // ... 组装对应的保存时需要的配置
 info.modelFormat = SPATIAL_RECON_OUTPUT_FORMAT_MP4;
 
-HMS_SpatialReconStatus ret = HMS_SpatialRecon_StartSession(spatialReconSession,
-   &info, noCaptureFinishedCB) // 如果writeInfo不为空，则重建完成会自动保存
+DO_AND_CHECK(HMS_SpatialRecon_StartSession(spatialReconSession,
+   &info, noCaptureFinishedCB)); // 如果writeInfo不为空，则重建完成会自动保存
 
 // 更新RunningMode。如果应用当前处于前台，则设定为前台模式。否则设定为后台模式。
-HMS_SpatialRecon_SetRunningMode(SPATIAL_RECON_RUNNING_FOREGROUND_MODE);
+DO_AND_CHECK(HMS_SpatialRecon_SetRunningMode(spatialReconSession, SPATIAL_RECON_RUNNING_FOREGROUND_MODE));
 
 // 可以按需获取当前进度
 float progress = 0.0f;
-HMS_SpatialRecon_GetProgress(spatialReconSession, &progress, NULL);
+DO_AND_CHECK(HMS_SpatialRecon_GetProgress(spatialReconSession, &progress, NULL));
 ```
 
 ## 暂停与继续
@@ -144,11 +181,23 @@ Spatial Recon Kit支持重建过程中任意时刻要求暂停或继续。由于
 Spatial Recon Kit提供了相关的接口，在调用[HMS\_SpatialRecon\_StartSession](../harmonyos-references/capi-spatial-recon-interface-h.md#hms_spatialrecon_startsession)启动重建以后，可以通过调用[HMS\_SpatialRecon\_PauseSession](../harmonyos-references/capi-spatial-recon-interface-h.md#hms_spatialrecon_pausesession)接口暂停重建，通过调用[HMS\_SpatialRecon\_ResumeSession](../harmonyos-references/capi-spatial-recon-interface-h.md#hms_spatialrecon_resumesession)接口继续重建。
 
 ```cpp
+#ifndef DO_AND_CHECK
+#define DO_AND_CHECK(call) \
+    do { \
+        auto ret = (call); \
+        if (ret) { \
+            LOGE("*** CHECK FAILED at %{public}s:%{public}d: %{public}s, ret=%{public}d", \
+                 __FILE__, __LINE__, #call, ret); \
+            abort(); \
+        } \
+    } while (false);
+#endif
+
 // 暂停
-HMS_SpatialRecon_PauseSession(spatialReconSession);
+DO_AND_CHECK(HMS_SpatialRecon_PauseSession(spatialReconSession));
 
 // 继续
-HMS_SpatialRecon_ResumeSession(spatialReconSession);
+DO_AND_CHECK(HMS_SpatialRecon_ResumeSession(spatialReconSession));
 ```
 
 ## 保存重建结果
@@ -156,12 +205,22 @@ HMS_SpatialRecon_ResumeSession(spatialReconSession);
 调用[HMS\_SpatialRecon\_StartSession](../harmonyos-references/capi-spatial-recon-interface-h.md#hms_spatialrecon_startsession)函数时，如果传入的writeInfo非空，重建结束以后会根据writeInfo配置的信息自动保存结果。如果传入的writeInfo为空，可以在重建结束以后手动保存结果。
 
 ```cpp
-HMS_SpatialRecon_ModelWriteInfo info;
-// ... 组装对应的保存时需要的配置，开发者可以根据需要保存为PLY（点云）或运镜视频文件（MP4）。
-info.modelFormat = SPATIAL_RECON_OUTPUT_FORMAT_MP4;
+#ifndef DO_AND_CHECK
+#define DO_AND_CHECK(call) \
+    do { \
+        auto ret = (call); \
+        if (ret) { \
+            LOGE("*** CHECK FAILED at %{public}s:%{public}d: %{public}s, ret=%{public}d", \
+                 __FILE__, __LINE__, #call, ret); \
+            abort(); \
+        } \
+    } while (false);
+#endif
 
-HMS_SpatialReconStatus ret = HMS_SpatialRecon_SaveResultToFile(spatialReconSession,
-&info, NULL); // 保存重建结果到文件
+HMS_SpatialRecon_ModelWriteInfo info;
+
+DO_AND_CHECK(HMS_SpatialRecon_SaveResultToFile(spatialReconSession,
+&info, NULL)); // 保存重建结果到文件
 ```
 
 由于保存MP4的过程需要消耗系统的渲染、编解码资源，Spatial Recon Kit仅支持同一时刻只有一个session正在保存MP4。如果同一时刻有多个session同时进行保存MP4，会导致未定义行为。
@@ -182,7 +241,7 @@ typedef void (*HMS_SpatialReconNGCallbackFunc)(HMS_SpatialReconStatus, void*); /
 
 ```cpp
 HMS_SpatialReconStatus HMS_SpatialRecon_RegisterNGCallbackFunc(HMS_SpatialRecon_Session*
-    spatialReconSession, HMS_SpatialReconNGCallbackFunc onSpatialReconFinished, void* data);
+    spatialReconSession, HMS_SpatialReconNGCallbackFunc onTaskFinished, void* data);
 ```
 
 注册NGCallback时，Spatial Recon Kit 将保存data指针。在调用NGCallback回调函数时，作为入参传入给NGCallback回调函数。
@@ -192,6 +251,12 @@ HMS_SpatialReconStatus HMS_SpatialRecon_RegisterNGCallbackFunc(HMS_SpatialRecon_
 ```cpp
 #include <map>
 #include <hilog/log.h>
+
+// 日志域ID，使用#ifndef保护，避免与hilog头文件中的默认定义冲突
+#ifndef LOG_DOMAIN
+#define LOG_DOMAIN 0xF811
+#endif
+
 #ifndef LOGI
 #define LOGI(...) ((void)OH_LOG_Print(LOG_APP, LOG_INFO, LOG_DOMAIN, "[SpatialReconKitSample][C]", __VA_ARGS__))
 #endif
@@ -200,12 +265,24 @@ HMS_SpatialReconStatus HMS_SpatialRecon_RegisterNGCallbackFunc(HMS_SpatialRecon_
 #define LOGE(...) ((void)OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_DOMAIN, "[SpatialReconKitSample][C]", __VA_ARGS__))
 #endif
 
+#ifndef DO_AND_CHECK
+#define DO_AND_CHECK(call) \
+    do { \
+        auto ret = (call); \
+        if (ret) { \
+            LOGE("*** CHECK FAILED at %{public}s:%{public}d: %{public}s, ret=%{public}d", \
+                 __FILE__, __LINE__, #call, ret); \
+            abort(); \
+        } \
+    } while (false);
+#endif
+
 // -----------------初始化--------------------
-std::map<HMS_SpatialRecon_Session, HMS_SpatialReconStatus> sessionStatsMap = {};
+std::map<HMS_SpatialRecon_Session*, HMS_SpatialReconStatus> sessionStatsMap = {};
 
 auto it = sessionStatsMap.find(spatialReconSession);
 if (it == sessionStatsMap.end()) {
-    map[spatialReconSession] = SPATIAL_RECON_STATUS_STAGE_BUILDING;
+    sessionStatsMap[spatialReconSession] = SPATIAL_RECON_STATUS_STAGE_BUILDING;
 }
 
 auto callbackWithData = [](HMS_SpatialReconStatus status, void* data) {
@@ -224,34 +301,32 @@ HMS_SpatialReconStage sessionStage = SPATIAL_RECON_STAGE_BUILDING;
 
 // 检查stage处于INIT状态，则此时注册回调会在重建结束时调用
 float progress = 0.f;
-HMS_SpatialReconStatus ret = HMS_SpatialRecon_GetProgress(spatialReconSession, &progress, &sessionStage);
+DO_AND_CHECK(HMS_SpatialRecon_GetProgress(spatialReconSession, &progress, &sessionStage));
 
 if (sessionStage != SPATIAL_RECON_STAGE_INIT) {
     LOGE("Registering finish reconstruction callback when not at initialzied");
 }
 
-ret = HMS_SpatialRecon_RegisterNGCallbackFunc(spatialReconSession, callbackWithData,
-    statusPtr);
+DO_AND_CHECK(HMS_SpatialRecon_RegisterNGCallbackFunc(spatialReconSession, callbackWithData, statusPtr));
 
-ret = HMS_SpatialRecon_StartSession(spatialReconSession,
-   nullptr, nullptr) // 注册了NGCallback以后，旧风格的callback将会被覆盖。因此，在这里无需注册旧风格callback
+DO_AND_CHECK(HMS_SpatialRecon_StartSession(spatialReconSession,
+   nullptr, nullptr)); // 注册了NGCallback以后，旧风格的callback将会被覆盖。因此，在这里无需注册旧风格callback
 
 // ----------------保存--------------------
 // 检查stage处于FINISHED状态，则此时注册回调会在保存结束时调用
 
-HMS_SpatialReconStatus ret = HMS_SpatialRecon_GetProgress(spatialReconSession, &progress, &sessionStage);
+DO_AND_CHECK(HMS_SpatialRecon_GetProgress(spatialReconSession, &progress, &sessionStage));
 
 if (sessionStage != SPATIAL_RECON_STAGE_FINISHED) {
     LOGE("Registering finish saving callback when not at finished");
 }
 
-ret = HMS_SpatialRecon_RegisterNGCallbackFunc(spatialReconSession, callbackWithData,
-    statusPtr);
+DO_AND_CHECK(HMS_SpatialRecon_RegisterNGCallbackFunc(spatialReconSession, callbackWithData, statusPtr));
 
 HMS_SpatialRecon_ModelWriteInfo info;
 // ... 组装对应的保存时需要的配置，开发者可以根据需要保存为PLY（点云）或运镜视频文件（MP4）。
 info.modelFormat = SPATIAL_RECON_OUTPUT_FORMAT_MP4;
 
-HMS_SpatialReconStatus ret = HMS_SpatialRecon_SaveResultToFile(spatialReconSession,
-    &info, NULL); // 已经注册了新的回调，则不必注册旧的回调
+DO_AND_CHECK(HMS_SpatialRecon_SaveResultToFile(spatialReconSession,
+    &info, NULL)); // 已经注册了新的回调，则不必注册旧的回调
 ```

@@ -3,14 +3,28 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-i
 title: "@hms.core.account.intimate (华为账号亲密圈)"
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > ArkTS API > @hms.core.account.intimate (华为账号亲密圈)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:06+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:12b0f852c30252905554eec10f92c98b6aa7d93e82afbf1ec7b45ec2a76e8149
+scraped_at: 2026-11-12T09:57:10+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:1af364c64a54560eb812c5082457340ed7d75510f148d6dfd3562b6adb381274
 ---
 
 ## 模块概述
 
-@hms.core.account.intimate模块提供拉起亲密圈成员选择器的能力。用户可在成员选择器中添加、关联亲友。开发者可获取用户选择亲友的华为账号用户标识UnionID和OpenID值、匿名化账号、昵称、头像信息。
+@hms.core.account.intimate模块提供获取亲密圈成员信息的能力。开发者可以通过拉起亲密圈成员选择页面，由用户管理、选择亲密圈成员，获取对应成员的华为账号用户标识UnionID和OpenID值、匿名化账号、昵称、头像信息，用于业务展示人员信息及通过华为账号用户标识建立用户关联关系。
+
+## 约束与限制
+
+1. 亲密圈成员选择器的能力仅支持Phone和Tablet设备。
+2. 当前仅限中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）华为账号使用。
+3. 亲密圈成员选择器获取的头像与昵称仅用户自己可见，不具备传播性。若开发者使用该信息进行传播，需要自行满足相应的法规要求。
+
+## 开发前提
+
+开发前请确认是否完成[获取亲密圈关系列表权限申请](../harmonyos-guides/account-config-permissions.md)，如果无亲密圈关系列表权限，调用亲密圈成员选择器API将返回[1026900009 应用没有权限](errorcode-account-kit.md#section1026900009-应用没有权限)错误码，无法拉起亲密圈成员选择器。
+
+**说明** 
+
+权限申请成功后需要重新[申请Profile](../app/agc-help-profile-0000002270709473.md)，并重新[手动配置签名信息](../harmonyos-guides/ide-signing-manual.md)。
 
 **起始版本：** 26.0.0
 

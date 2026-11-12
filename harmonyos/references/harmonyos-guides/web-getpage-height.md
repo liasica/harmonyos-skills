@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-getpage-h
 title: 获取网页内容高度
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web渲染和布局 > 获取网页内容高度
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:00+08:00
-doc_updated_at: 2026-10-30
-content_hash: sha256:64625df4033d805e0ea3ed6a057715943e9c17484002e7abd0188e7e85f5f481
+scraped_at: 2026-11-12T09:51:22+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4712441d61858e2367dbda96c8eac48d36f742b79bc674813d443d68cef594e1
 ---
 
 通过调用[getPageHeight](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#getpageheight)可获取当前网页内容的实际高度，开发者可以根据具体需求选择合适的方法。
@@ -123,7 +123,7 @@ struct Scene2JsBridge {
         if (typeof jsbObj !== 'undefined') {
             jsbObj.notifyToGet();
         } else {
-            console.info("jsbObj is undefined");
+            console.error("jsbObj is undefined");
         }
     })
 </script>
@@ -154,7 +154,7 @@ struct Scene2JsBridge {
         if (typeof jsbObj !== 'undefined') {
             jsbObj.notifyToGet();
         } else {
-            console.info("jsbObj is error");
+            console.error("jsbObj is undefined");
         }
     });
 </script>
@@ -193,7 +193,7 @@ struct Scene2JsBridge {
             if (typeof jsbObj !== 'undefined') {
                 jsbObj.notifyToGet();
             } else {
-                console.info("jsbObj is error");
+                console.error("jsbObj is undefined");
             }
         })
     }

@@ -3,13 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/xengine-kit-g
 title: XEngine Kit（GPU加速引擎服务）
 breadcrumb: 指南 > 图形 > XEngine Kit（GPU加速引擎服务）
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:06+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:5d37fb96c9f9a23ba1226c09f716c271a79fc5d2d0a271bd42549347f6d54721
+scraped_at: 2026-11-12T09:52:15+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:5d947833a9f36a6bc128c1aca080bc21be3e8561d6dd1c4b420ec3d3aeea1eb8
 ---
 
 * **[XEngine Kit简介](xengine-kit-introduction.md)**
-* **[开发准备](xengine-kit-preparations.md)**
 * **[空域GPU超分](xengine-kit-gpu-spatial-upscaling.md)**
 * **[时域AI超分](xengine-kit-ai-temporal-upscaling.md)**
 * **[空域AI超分](xengine-kit-ai-spatial-upscaling.md)**

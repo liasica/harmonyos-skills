@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: dialog
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 容器组件 > dialog
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:21+08:00
+scraped_at: 2026-11-12T09:54:32+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:38b6dd050ab62602387fdfb0bdd1fc30eacf2765e2b810ee24ecac1e1f511447
+content_hash: sha256:3b8bda0bd07f061667f1d668db9c66a16e875a66bcbe74947e89ceb0743cd779
 ---
 
 **说明** 
@@ -164,4 +164,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/7vVEdBASQveFx5zRGPQDCA/zh-cn_image_0000002779852810.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/Hsc4otb0TIyyXFMmzj8JOw/zh-cn_image_0000002786361738.gif)

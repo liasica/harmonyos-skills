@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/recoverykey-u
 title: 更新企业公钥证书
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > 企业恢复密钥 > 更新企业公钥证书
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:30+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:fce4335ca20506e1b983ff07a5da2340f508d7905a0212ded719a64eecbde4bb
+scraped_at: 2026-11-12T09:51:38+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:43ee7af96844da0b0962ee60fdb80434efbe8d45d8de93c4365e4f7cf6b0f260
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:fce4335ca20506e1b983ff07a5da2340f508d7905a0212ded719a64eecb
 
 | 接口名 | 描述 |
 | --- | --- |
-| [updateEnterpriseCertificate](../harmonyos-references/dataguard-recoverykey.md#recoverykeyupdateenterprisecertificate)(signature: Uint8Array, cert: Uint8Array): Promise<number> | 使用Promise方式更新企业公钥证书。 |
+| [updateEnterpriseCertificate](../harmonyos-references/dataguard-recoverykey.md#recoverykeyupdateenterprisecertificate)(signature: Uint8Array, cert: Uint8Array): Promise<number> | 更新企业公钥证书。使用Promise异步回调。 |
 
 ## 开发步骤
 

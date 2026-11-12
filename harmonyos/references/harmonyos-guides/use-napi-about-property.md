@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口设置ArkTS对象的属性
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口设置ArkTS对象的属性
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:13+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:52:48+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:23a6102132b26576a65b1073186018a2f9f18933d43801258fdd47b065d27a9f
 ---
 

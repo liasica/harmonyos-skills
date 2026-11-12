@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-fileio
 title: 应用文件访问(C/C++)
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用文件访问与管理 > 应用文件访问(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:38+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-11-12T09:51:25+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:4b906469ba182eaa3629f06664868afbf2b10f495066632f0cc82cf6afac8a36
 ---
 

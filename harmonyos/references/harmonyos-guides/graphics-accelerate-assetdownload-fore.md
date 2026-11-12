@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 应用前台下载资源包
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏资源加速服务 > 资源包后台下载 > 应用前台下载资源包
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:20+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:319deb22f052102957e20ef02a15e14a0da38f0debeebf8198d99bfa72fc2b5e
+scraped_at: 2026-11-12T09:52:14+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:fee80db434866ba176135acec0698b2d5f7ada1175595d2abb80b6fefb36e0bd
 ---
 
 启动游戏后，为游戏提供管理、创建资源包下载任务功能。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/9gzlu-ReROejclawcaxmmg/zh-cn_image_0000002779691186.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/wOi9NnxSTa2Gw30Pi5oB8Q/zh-cn_image_0000002786360102.png)
 
 1. 用户打开游戏App。
 2. 游戏调用[fetchManifestUrl](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanagerfetchmanifesturl)方法，从游戏资源加速服务获取manifestUrl资源清单。
@@ -50,6 +50,7 @@ content_hash: sha256:319deb22f052102957e20ef02a15e14a0da38f0debeebf8198d99bfa72f
    ```typescript
    import { assetDownloadManager } from '@kit.GraphicsAccelerateKit';
    import { common } from '@kit.AbilityKit';
+   import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 实现应用前台下载资源包功能。
 
@@ -71,24 +72,24 @@ content_hash: sha256:319deb22f052102957e20ef02a15e14a0da38f0debeebf8198d99bfa72f
    2. 游戏调用[on('progress')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageronprogress)方法，监听资源包下载进度。游戏调用[on('pause')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageronpause)方法，监听下载任务是否暂停。游戏调用[on('complete')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageroncomplete)方法，监听资源是否成功下载。游戏调用[on('fail')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageronfail)方法，监听下载任务是否失败。
 
       ```typescript
+      // assetDownloadManager.on('progress').
       onProgressCallback: (progressArray: assetDownloadManager.DownloadProgressInfo[]) => void = (progressArray) => {
         hilog.info(DOMAINID, TAG, `onProgressCallback progressArray length: ${progressArray.length}`);
         // 添加资源包下载进度处理逻辑。
         // ...
       }
-
+      // assetDownloadManager.on('pause').
       onPauseCallback: (downloadTaskInfo: assetDownloadManager.AssetDownloadTask) => void = (downloadTaskInfo) => {
         hilog.info(DOMAINID, TAG, `task identifier = ${downloadTaskInfo.config.identifier} has paused.`);
         // 添加资源包下载暂停处理逻辑。
-        // ...
       }
-
+      // assetDownloadManager.on('complete').
       onCompleteCallback: (completeInfo: assetDownloadManager.DownloadCompletedInfo) => void = async (completeInfo) => {
         hilog.info(DOMAINID, TAG, `task identifier = ${completeInfo.downloadTask.config.identifier} has completed.`);
         // 添加资源包下载完成处理逻辑。
         // ...
       }
-
+      // assetDownloadManager.on('fail').
       onFailedCallback: (failedInfo: assetDownloadManager.DownloadFailedInfo) => void = async (failedInfo) => {
         hilog.info(DOMAINID, TAG, `task identifier = ${failedInfo.downloadTask.config.identifier} has failed.`);
         // 添加资源包下载失败处理逻辑。

@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-prof
 title: 会话区
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 优化应用性能 > DevEco Profiler调优工具简介 > 会话区
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:41+08:00
+scraped_at: 2026-11-12T09:53:23+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:9eece741e17efecce1834ea8c3fef9e968839f5fd98a0b151020f974037d9498
+content_hash: sha256:b07933722759093f222406a843a31ecd358227da2a4cb6c722208a848cdab79a
 ---
 
 DevEco Profiler左侧为会话区，分为两个部分：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/gyCID-LGSAOELbTJUatvDQ/zh-cn_image_0000002810630719.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/77Uc5B4LSxyNU6ojytKtvA/zh-cn_image_0000002810630719.png "点击放大")
 
 ① 调优目标选择区域：选择被调优的设备、应用包及应用进程作为后续调优会话的分析对象。
 
@@ -18,12 +18,12 @@ DevEco Profiler左侧为会话区，分为两个部分：
 
 **说明** 
 
-会话录制完成出现![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/t8p6LDRKQZCWc2Ik-ZKztw/zh-cn_image_0000002810750823.png)图标，表示数据处于解析状态，请耐心等待解析完成。
+会话录制完成出现![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/7LM8ZZEPQE6tCrGoHQ4fTw/zh-cn_image_0000002810750823.png)图标，表示数据处于解析状态，请耐心等待解析完成。
 
-* **创建会话**：点击会话列表![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/41fXSyBbQLm19CyrJEtVjg/zh-cn_image_0000002810750825.png)图标，在弹窗中选中任意模板，点击下方**新建会话**按钮，即可创建出一个全新的会话。
+* **创建会话**：点击会话列表![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/ft3GGY_cRQSq3AZNVAYmmA/zh-cn_image_0000002810750825.png)图标，在弹窗中选中任意模板，点击下方**新建会话**按钮，即可创建出一个全新的会话。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/pKzGDDvVTqWTMrrstLPAYg/zh-cn_image_0000002810750831.png "点击放大")
-* **数据导入**：单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/0ysVj0TrSi6rar1Ta780AQ/zh-cn_image_0000002810750829.png)图标选择.insight文件，即可导入历史数据。
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/WwJ5UeU3QSyjgXloj3eGtw/zh-cn_image_0000002810750831.png "点击放大")
+* **数据导入**：单击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/zWD0u0sbQrqKtQoeC249iQ/zh-cn_image_0000002810750829.png)图标选择.insight文件，即可导入历史数据。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/D0zf7WjIQfaE2qykOn3dyA/zh-cn_image_0000002810630723.png "点击放大")
-* **数据导出**：待数据解析完成后，会话便会进入数据展示状态，将数据可视化展示到右侧的数据区中。此时可以点击会话面板中出现的数据导出按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/CMt47tdHThSZQGAW2WNAIg/zh-cn_image_0000002781471168.png "点击放大")，将录制到的数据导出到本地进行保存，借助这个能力，开发者可以方便地在团队内共享录制到的性能数据，也可以防止采集到的性能数据丢失。
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/RaaDLJQXQiCqH19fis9H6Q/zh-cn_image_0000002810630723.png "点击放大")
+* **数据导出**：待数据解析完成后，会话便会进入数据展示状态，将数据可视化展示到右侧的数据区中。此时可以点击会话面板中出现的数据导出按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/NJVq6kVwS9yO01AM6XbpFg/zh-cn_image_0000002781471168.png "点击放大")，将录制到的数据导出到本地进行保存，借助这个能力，开发者可以方便地在团队内共享录制到的性能数据，也可以防止采集到的性能数据丢失。

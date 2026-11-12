@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-get-aaid
 title: 获取AAID
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 获取AAID
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:f8cdbffb5de3f55dc340a949c98e81142c348caf405d1b58c3fea85c99759ddd
+scraped_at: 2026-11-12T09:52:34+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8ec1de663997be3dc7592e8f8128122c381db1d72144d5a51024a763bfcfa27d
 ---
 
 AAID（Anonymous Application Identifier）：应用匿名标识符，标识运行在移动智能终端设备上的应用实例，只有该应用实例才能访问该标识符，AAID只存在于应用的安装期，总长度36个字符。与无法重置的设备级硬件ID相比，AAID具有更好的隐私属性。
@@ -29,7 +29,7 @@ AAID会在包括但不限于下述场景中发生变化：
 
 ## 约束与限制
 
-获取AAID能力支持Phone、Tablet、PC/2in1设备。并且从5.1.0(18)版本开始，新增支持Wearable设备；从5.1.1(19)版本开始，新增支持TV设备。
+获取AAID能力支持Phone、Tablet、PC/2in1设备。并且从API版本5.1.0(18)开始，新增支持Wearable设备；从API版本5.1.1(19)开始，新增支持TV设备；从API版本26.0.1开始，新增支持Car设备。
 
 ## 接口说明
 

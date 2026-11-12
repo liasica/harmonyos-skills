@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/spatial-r
 title: spatialEdit
 breadcrumb: API参考 > 图形 > Spatial Recon Kit（空间建模服务） > ArkTS API > spatialEdit
 category: harmonyos-references
-scraped_at: 2026-09-24T06:55:10+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:4d5502481653a95858c49b560de5fe50e14ed6348bc80476f9214368768f0ed0
+scraped_at: 2026-11-12T09:57:08+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:54537c5d7379e83cc6293aab1c0fdf363f266007a4fb17d4e97d69733e4719a8
 ---
 
 spatialEdit模块提供了编辑3DGS（3D Gaussian Splatting）模型的能力，支持选择、变换、上色和删除高斯点等操作。
@@ -37,6 +37,80 @@ import { spatialEdit } from '@kit.SpatialReconKit';
 | REPLACE | 0 | 直接替换原始颜色。 |
 | MULTIPLY | 1 | 将原始颜色乘以给定颜色。 |
 | ADD | 2 | 将给定颜色添加到原始颜色。 |
+
+## FloaterRemovalMode
+
+定义消除floater的方式。
+
+**系统能力：** SystemCapability.Graphics.SpatialEdit
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
+
+**起始版本：** 26.0.1
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| GS\_EDIT\_SINGLE\_VIEW | 'SingleView' | 单视角模式。默认使用当前视角。 |
+
+## FloaterRemovalParameters
+
+消除floater的选项。
+
+**系统能力：** SystemCapability.Graphics.SpatialEdit
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
+
+**起始版本：** 26.0.1
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| mode | [FloaterRemovalMode](spatial-recon-spatialedit.md#floaterremovalmode) | 是 | 消除floater的方式。 |
+
+## FloaterRemovalTask
+
+消除floater的任务。
+
+**系统能力：** SystemCapability.Graphics.SpatialEdit
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
+
+**起始版本：** 26.0.1
+
+### isSuccess
+
+isSuccess: Promise<boolean>
+
+消除floater的任务处理结果。
+
+**系统能力：** SystemCapability.Graphics.SpatialEdit
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
+
+**起始版本：** 26.0.1
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | 消除floater的任务处理结果。  - **true**：消除floater成功。  - **false**：消除floater失败。 |
+
+### getProgress
+
+getProgress(): number
+
+获取消除floater任务的处理进度，浮点型取值范围为0~1。
+
+**系统能力：** SystemCapability.Graphics.SpatialEdit
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
+
+**起始版本：** 26.0.1
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| number | 消除floater任务的处理进度，浮点型取值范围为0~1。 |
 
 ## GSEdit
 
@@ -564,6 +638,98 @@ function getRecommended3DBox() : void {
     let rayDirection: Vec3 = { x : 1 , y : 1 , z : 1 };
     // 获取射线相交物体的包围盒
     let aabb: Aabb = editor.getRecommended3DBox(rayOrigin, rayDirection);
+  });
+}
+```
+
+### removeFloaters
+
+removeFloaters(option: FloaterRemovalParameters): FloaterRemovalTask
+
+根据选项消除高斯模型中的floater。
+
+**系统能力：** SystemCapability.Graphics.SpatialEdit
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| option | [FloaterRemovalParameters](spatial-recon-spatialedit.md#floaterremovalparameters) | 是 | 消除floater的选项。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [FloaterRemovalTask](spatial-recon-spatialedit.md#floaterremovaltask) | 消除floater的任务实例。 |
+
+**示例：**
+
+```typescript
+import { spatialRender, spatialEdit } from '@kit.SpatialReconKit';
+import { Scene, SceneResourceFactory } from '@kit.ArkGraphics3D';
+
+function RemoveFloaters() : void {
+  // 加载3DGS插件
+  Scene.getDefaultRenderContext()?.loadPlugin(spatialRender.GSPlugin.PLUGIN_ID);
+  // 加载场景
+  Scene.load().then(async (scene: Scene) => {
+    let rf: SceneResourceFactory = scene.getResourceFactory();
+    // 获取GSNode实例
+    let gsNode: spatialRender.GSNode = await rf.createNode({ name: "gs", path: "//gs" })
+    // 获取GSEdit实例
+    let editor: spatialEdit.GSEdit | undefined = spatialEdit.GSEdit.editGSNode(gsNode);
+    if (editor) {
+      // 消除高斯模型中的floater
+      let task: spatialEdit.FloaterRemovalTask =
+        editor.removeFloaters({ mode: spatialEdit.FloaterRemovalMode.GS_EDIT_SINGLE_VIEW });
+      // 获取任务处理结果
+      let isSuccess: boolean = await task.isSuccess;
+      if (isSuccess) {
+        console.info("消除floater成功");
+      } else {
+        console.error("消除floater失败");
+      }
+    }
+  });
+}
+```
+
+### destroy
+
+destroy(): void
+
+显式释放GSEdit对应的native资源。
+
+**系统能力：** SystemCapability.Graphics.SpatialEdit
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
+
+**起始版本：** 26.0.1
+
+**示例：**
+
+```typescript
+import { spatialRender, spatialEdit } from '@kit.SpatialReconKit';
+import { Scene, SceneResourceFactory } from '@kit.ArkGraphics3D';
+
+function Destroy() : void {
+  // 加载3DGS插件
+  Scene.getDefaultRenderContext()?.loadPlugin(spatialRender.GSPlugin.PLUGIN_ID);
+  // 加载场景
+  Scene.load().then(async (scene: Scene) => {
+    let rf: SceneResourceFactory = scene.getResourceFactory();
+    // 获取GSNode实例
+    let gsNode: spatialRender.GSNode = await rf.createNode({ name: "gs", path: "//gs" })
+    // 获取GSEdit实例
+    let editor: spatialEdit.GSEdit | undefined = spatialEdit.GSEdit.editGSNode(gsNode);
+    // 显式释放GSEdit对应的native资源
+    if (editor) {
+      editor.destroy();
+    }
   });
 }
 ```

@@ -3,44 +3,44 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/rendering-vid
 title: 渲染视频画面
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码开发实践 > 渲染视频画面
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:08+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:a348c19a4279dc182fb62e8e1f974ee2a31bb211ba0ede276fb1fa815c33b101
+scraped_at: 2026-11-12T09:52:02+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:9c73df10ea67aca9b845bdf116e7a37c9ee25c4cddf6fddb0b2132fec5f1c88d
 ---
 
 ## 概述
 
-渲染视频画面是将原始视频数据（如 YUV、RGB 等格式）转换为可在屏幕上显示的图像，并最终输出到显示设备（如手机屏幕）的过程。此过程是视频解码播放、视频直播、相机预览等场景中的关键环节，决定了画面视觉效果。
+渲染视频画面是将原始视频数据（如YUV、RGB等格式）转换为可在屏幕上显示的图像，并最终输出到显示设备（如手机屏幕）的过程。此过程是视频解码播放、视频直播、相机预览等场景中的关键环节，决定了画面视觉效果。
 
-本文以视频解码播放为场景案例，介绍了视频在解码后，如何将解码的视频数据渲染送显到设备屏幕上。目前，系统中提供了多种方式渲染视频画面，包括使用XComponent渲染视频画面、使用OpenGL渲染视频画面、使用Vulkan渲染视频画面。这三个方案的优点、缺点和适用场景如下表所示。
+本文以视频解码播放为场景案例，介绍了视频在解码后，如何将解码的视频数据渲染送显到设备屏幕上。目前，系统中提供了多种方式渲染视频画面，包括使用[XComponent](../doccenter-references/api/ts-basic-components-xcomponent.md)渲染视频画面、使用[OpenGL](../doccenter-references/api/opengl.md)渲染视频画面、使用[Vulkan](../doccenter-references/api/capi-vulkan.md)渲染视频画面。这三个方案的优点、缺点和适用场景如下表所示。
 
 | 方案 | 优点 | 缺点 | 使用场景 |
 | --- | --- | --- | --- |
-| **使用XComponent渲染视频画面** | 开发门槛不高，可以通过XComponent的NativeWindow直接对接解码器。  解码后的YUV视频数据，无需额外进行处理，可以直接提交给XComponent进行渲染显示。 | 定制化能力弱，无法满足复杂的开发场景。  性能优化的空间不多，在较为复杂或高规格的场景中，无法干预渲染流程，导致性能不高。 | 该方案适用于简单的视频播放，不需要对视频画面做复杂的处理。 |
-| **使用OpenGL渲染视频画面** | 可以满足复杂的场景，根据开发者的需求定制化开发。  OpenGL是跨编程语言和跨平台的应用编程接口，便于应用的开发与迁移。  开发门槛适中，生态资料丰富。 | 需要额外处理视频数据的格式，视频解码后的数据通常需要转化成RGBA的格式。 | 该方案可以满足复杂的开发场景，开发者可以根据实际需求实现，如视频直播、视频弹幕等场景。 |
-| **使用Vulkan渲染视频画面** | 可细粒度控制渲染全流程，优化渲染链路以获得更高性能。  可适配复杂的场景。  Vulkan是跨编程语言和跨平台的应用编程接口，便于应用的开发与迁移。 | 需要额外处理视频数据的格式，视频解码后的数据通常需要转化成RGBA的格式。  开发门槛较高，需要手动管理内存、命令缓冲等，且需要开发的代码量大，出现问题难定位。 | 该方案可以满足复杂的开发场景，开发者可以根据实际需求实现，如视频直播、视频弹幕等场景。 |
+| **使用XComponent渲染视频画面** | 开发门槛不高，可以通过XComponent的[NativeWindow](../doccenter-references/api/capi-codecbase-nativewindow.md)直接对接解码器。  解码后的YUV视频数据，无需额外进行处理，可以直接提交给XComponent进行渲染显示。 | 定制化能力弱，无法满足复杂的开发场景。  性能优化的空间不多，在较为复杂或高规格的场景中，无法干预渲染流程，导致性能不高。 | 该方案适用于简单的视频播放，不需要对视频画面做复杂的处理。 |
+| **使用OpenGL渲染视频画面** | 可以满足复杂的场景，根据开发者的需求定制化开发。  OpenGL是跨编程语言和跨平台的应用编程接口，便于应用的开发与迁移。  开发门槛适中，生态资料丰富。 | 需要额外处理视频数据的格式，视频解码后的数据通常需要转化成[rgba](../doccenter-references/api/js-apis-arkui-graphics.md#rgba12)的格式。 | 该方案可以满足复杂的开发场景，开发者可以根据实际需求实现，如视频直播、视频弹幕等场景。 |
+| **使用Vulkan渲染视频画面** | 可细粒度控制渲染全流程，优化渲染链路以获得更高性能。  可适配复杂的场景。  Vulkan是跨编程语言和跨平台的应用编程接口，便于应用的开发与迁移。 | 需要额外处理视频数据的格式，视频解码后的数据通常需要转化成rgba的格式。  开发门槛较高，需要手动管理内存、命令缓冲等，且需要开发的代码量大，出现问题难定位。 | 该方案可以满足复杂的开发场景，开发者可以根据实际需求实现，如视频直播、视频弹幕等场景。 |
 
 ## 使用XComponent渲染视频画面
 
 ### 场景描述
 
-系统提供了AVPlayer、Video组件用于播放视频文件，但由于支持的文件格式有限，在播放其他格式（如rmvb格式）或有数字版权保护的视频时，不能满足开发者的诉求。此时，开发者可以通过AVCodec将视频文件进行解码，然后将解码后的视频数据通过XComponent组件直接进行渲染送显即可。使用XComponent渲染视频画面是简单、常用的方式，开发者可以将解码的YUV视频数据传入给XComponent，无需关注YUV格式转化等问题。
+系统提供了[AVPlayer](../doccenter-references/api/arkts-apis-media-avplayer.md)、[Video](../doccenter-references/api/ts-media-components-video.md)组件用于播放视频文件，但由于支持的文件格式有限，在播放其他格式（如rmvb格式）或有数字版权保护的视频时，不能满足开发者的诉求。此时，开发者可以通过AVCodec将视频文件进行解码，然后将解码后的视频数据通过XComponent组件直接进行渲染送显即可。使用XComponent渲染视频画面是简单、常用的方式，开发者可以将解码的YUV视频数据传入给XComponent，无需关注YUV格式转化等问题。
 
 ### 实现原理
 
 在使用XComponent渲染视频画面的方案中，需要提前获取XComponent对应的NativeWindow对象，并在创建视频解码器时，将NativeWindow设置给视频解码器。其具体开发流程如下所示。
 
-1. 在XComponent创建时，通过回调函数OnSurfaceCreatedCB获取对应的NativeWindow对象。
+1. 在XComponent创建时，通过回调函数[OnSurfaceCreatedCB](../doccenter-references/api/ts-basic-components-xcomponent.md#onsurfacecreated12)获取对应的NativeWindow对象。
 2. 初始化视频解码的环境，包括初始化解封装器、初始化解码器。
 3. 启动解码器、解码输入子线程、解码输出子线程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/JWkqc8k9SWueLlj0Zq_1bQ/zh-cn_image_0000002779690968.jpg)
-4. 通过OnNeedInputBuffer获取可用的AVBuffer后，在解码输入子线程中，将解封装器读取视频数据填充到AVBuffer中，并提交给解码器进行解码。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/cTQMAPZ7SECP-3XukS8D_Q/zh-cn_image_0000002815399381.jpg)
+4. 通过OnNeedInputBuffer获取可用的AVBuffer（参考：[native\_avbuffer.h](../doccenter-references/api/capi-native-avbuffer-h.md)）后，在解码输入子线程中，将解封装器读取视频数据填充到AVBuffer中，并提交给解码器进行解码。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/YZeeXgsrQK-g6MknxtTDjQ/zh-cn_image_0000002809010589.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/-JimTbSfTpWkEXnihysgHw/zh-cn_image_0000002786519806.jpg)
 5. 通过OnNewOutputBuffer获取解码的视频数据后，在解码输出子线程中，将解码后的视频数据提交给输出Surface（即XComponent的NativeWindow）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/0RecenBRQFOugKONvesbAw/zh-cn_image_0000002809050503.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/oArxmgebTl2L2-nLVJHy4w/zh-cn_image_0000002786359878.png)
 
 ### 开发步骤
 
@@ -374,7 +374,7 @@ content_hash: sha256:a348c19a4279dc182fb62e8e1f974ee2a31bb211ba0ede276fb1fa815c3
    }
    ```
 
-   通过OH\_VideoDecoder\_RenderOutputBuffer通知解码器将视频数据提交给输出Surface。
+   通过[OH\_VideoDecoder\_RenderOutputBuffer()](../doccenter-references/api/capi-native-avcodec-videodecoder-h.md#oh_videodecoder_renderoutputbuffer)通知解码器将视频数据提交给输出Surface。
 
    ```
    int32_t VideoDecoder::FreeOutputBuffer(uint32_t bufferIndex, bool render) {
@@ -413,7 +413,7 @@ OpenGL(Open Graphics Library)是一种跨语言、跨平台的应用程序编程
 2. 创建NativeImage对象，并根据NativeImage获取NativeWindow对象。
 3. 获取XComponent的NativeWindow对象，并根据XComponent的NativeWindow对象创建EGLSurface。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/9-iKv5BxSMWfdcIuV6stgg/zh-cn_image_0000002779850938.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/w5KGBGxNSDGhaj9lDxc-3Q/zh-cn_image_0000002815559299.jpg)
 4. 初始化视频解码的环境，包括初始化解封装器、初始化配置解码器。
 
    **说明** 
@@ -421,15 +421,15 @@ OpenGL(Open Graphics Library)是一种跨语言、跨平台的应用程序编程
    在初始化配置解码器时，与直接使用XComponent渲染的方案不同，解码器设置Surface的入参是NativeImage的NativeWindow对象，而不是XComponent的NativeWindow对象。
 5. 启动解码器、解码输入子线程、解码输出子线程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/lRGtTuZ-QTC_Lx5xIyn2FA/zh-cn_image_0000002779690970.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/8VwBe_qtRZSpXkJolEUiYg/zh-cn_image_0000002815399383.jpg)
 6. 通过OnNeedInputBuffer获取可用的AVBuffer后，在解码输入子线程中，将解封装器读取视频数据填充到AVBuffer中，并提交给解码器进行解码。
 7. 通过OnNewOutputBuffer获取解码的视频数据后，在解码输出子线程中，将解码后的视频数据提交给输出Surface（当前Surface为NativeImage的NativeWindow对象）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/kHoeXgNxQ0CFBV1oZTjn1g/zh-cn_image_0000002809010591.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/6EUmh7AlQlemPZbYHAssaQ/zh-cn_image_0000002786519808.png)
 8. 通过NativeImage，将视频图像缓存更新至OpenGL的纹理上。
 9. 通过eglSwapBuffers交换前后缓冲区的内容，并将渲染结果显示在屏幕。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/l1qHg6RwThm3IZUP2FI9Ig/zh-cn_image_0000002809050505.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/X_pT7fsQRJ6OJdLw1O3x3w/zh-cn_image_0000002786359880.jpg)
 
 ### 开发步骤
 
@@ -769,7 +769,7 @@ NativeImage是提供Surface关联OpenGL外部纹理的模块，表示图形队�
 2. 创建NativeImage对象，并根据NativeImage获取NativeWindow对象。
 3. 获取XComponent的NativeWindow对象，并根据XComponent的NativeWindow对象创建Vulkan的Surface用于显示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/pymH7lSdTf60g7jW35nlkQ/zh-cn_image_0000002779850940.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/7X3kGCBlQtWCjUm5KawrLA/zh-cn_image_0000002815559301.jpg)
 4. 初始化视频解码的环境，包括初始化解封装器、初始化解码器。
 
    **说明** 
@@ -779,9 +779,9 @@ NativeImage是提供Surface关联OpenGL外部纹理的模块，表示图形队�
 6. 在解码输入子线程中，通过解封装器读取视频数据，并提交给解码器。
 7. 通过OnNewOutputBuffer获取解码的视频数据后，在解码输出子线程中，将解码后的视频数据提交给输出Surface（当前Surface为NativeImage的NativeWindow对象）。
 8. 在NativeImage的回调onFrameAvailable()有可用数据后，通过OH\_NativeImage\_AcquireNativeWindowBuffer()获取视频数据，并通过OH\_NativeBuffer\_FromNativeWindowBuffer()转化为NativeBuffer的类型。
-9. Vulkan根据NativeBuffer创建对应的ImageView用于采样，同时，创建对应格式的采样器，通过采样器将YUV格式的图像转化成RGBA的图像，最后，通过渲染管道进行显示。
+9. Vulkan根据NativeBuffer创建对应的ImageView用于采样，同时，创建对应格式的采样器，通过采样器将YUV格式的图像转化成rgba的图像，最后，通过渲染管道进行显示。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/RMTuWelkR--xoudJ2CMQlA/zh-cn_image_0000002779690972.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/haBCkrA2RpKzgKyUXnxJ8Q/zh-cn_image_0000002815399385.jpg)
 
 ### 开发步骤
 
@@ -1011,7 +1011,7 @@ NativeImage是提供Surface关联OpenGL外部纹理的模块，表示图形队�
        lastInBuffer_ = inBuffer;
    }
    ```
-9. Vulkan根据NativeBuffer创建对应的ImageView用于渲染显示，同时，创建对应格式的采样器，将YUV格式的图像转化成RGBA的图像，用于正确的渲染显示。
+9. Vulkan根据NativeBuffer创建对应的ImageView用于渲染显示，同时，创建对应格式的采样器，将YUV格式的图像转化成rgba的图像，用于正确的渲染显示。
 
    ```
    void VulkanRender::hwBufferToTexture(OH_NativeBuffer *buffer, float transformMatrix[16]) {

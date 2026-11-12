@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-genera
 title: 安全随机数生成(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 随机数 > 安全随机数生成(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:38+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:51:34+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:4fd277f76ba512512b4f4aeec61202014b12a21aa0a2e76ed9c21e648bd65767
 ---
 

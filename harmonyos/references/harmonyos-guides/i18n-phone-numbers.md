@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/i18n-phone-nu
 title: 电话号码格式化
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用国际化 > 电话号码格式化
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:21+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:51:28+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:b62c92a3471bcad80b4f33cb3b656c80a94ae07338b3148ab72341b8bd5d52ba
 ---
 

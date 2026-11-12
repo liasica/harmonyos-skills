@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 自动补全地址表单所在地区
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 智能填充服务 > 自动补全地址表单所在地区
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:43+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:a042d8235d05b21ef68ef1188f9c57ddbeb6134230878be3b0b5c453de2b8a92
+scraped_at: 2026-11-12T09:52:36+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d4d5a2f26beca6fb9e9886dfd7558e1d830d9590ad278e97df34e2c8f5d27c95
 ---
 
 在填写地址表单场景时，当应用使用了所在地区的省市区选择器，需要开发者对表单中的地址字段进行开发。
@@ -20,7 +20,7 @@ content_hash: sha256:a042d8235d05b21ef68ef1188f9c57ddbeb6134230878be3b0b5c453de2
 
 地址表单中的所在地区能根据详细地址内容自动补全，当补全内容不符合预期时，可通过地址选择器进行修改。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/_OdyDMfGRMqnBUkX3ZtPTw/zh-cn_image_0000002779691648.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/BIDjy0cXRlyMCGuQeVaSew/zh-cn_image_0000002815400077.png)
 
 ## 示例代码
 
@@ -79,7 +79,7 @@ async function reqPermissionsFromUser(permissions: Array<Permissions>,
   return await atManager.requestPermissionsFromUser(context, permissions);
 }
 
-// 节流函数。
+// 防抖函数。
 function debounce(func: () => void, wait: number = TIME_OUT): Function {
   let timeout: number | null = null;
   return () => {

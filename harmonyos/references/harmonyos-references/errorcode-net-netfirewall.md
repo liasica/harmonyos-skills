@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 防火墙错误码
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 错误码 > 防火墙错误码
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:16+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a3949bea2b68143f028ea5caaff0a755068e2e74a9dceaefce1590d84357de5c
+scraped_at: 2026-11-12T09:55:44+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:9fa7a8cbb95e9c5973cd5b9510d121b550fdb7ac559064ffb00cf6a661d6a288
 ---
 
 **说明** 
@@ -42,9 +42,8 @@ The number of firewall rules exceeds the maximum.
 
 **可能原因**
 
-1.单个用户userid的防火墙规则rule的数量超过1000条；
-
-2.所有用户userid的防火墙规则rule的数量超过2000条。
+1. 单个用户userid的防火墙规则rule的数量超过1000条；
+2. 所有用户userid的防火墙规则rule的数量超过2000条。
 
 **处理步骤**
 
@@ -98,9 +97,8 @@ domain类型的防火墙规则中，域名规则数量超过最大值。
 
 **可能原因**
 
-1.添加/更新的一条域名规则里的域名参数NetFirewallDomainParams的个数大于100个。
-
-2.单个用户userid的所有域名规则里的域名参数NetFirewallDomainParams的个数大于1000个。
+1. 添加/更新的一条域名规则里的域名参数NetFirewallDomainParams的个数大于100个。
+2. 单个用户userid的所有域名规则里的域名参数NetFirewallDomainParams的个数大于1000个。
 
 **处理步骤**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-came
 title: camera.h
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 头文件 > camera.h
 category: harmonyos-references
-scraped_at: 2026-10-17T06:47:55+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:3f0cbb2d362cded84f7f632abed8c7423fb69050a6080ca566bc9f087119d8b3
+scraped_at: 2026-11-12T09:56:35+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:69fa485ccd0ba7090ff0203c979391eff01b20e2e83e24749b0a753806f2ccc6
 ---
 
 ## 概述
@@ -97,6 +97,7 @@ content_hash: sha256:3f0cbb2d362cded84f7f632abed8c7423fb69050a6080ca566bc9f08711
 | [OH\_Camera\_ExposureState](capi-camera-h.md#oh_camera_exposurestate) | OH\_Camera\_ExposureState | 枚举相机曝光状态。 |
 | [OH\_Camera\_MetadataObjectEmotion](capi-camera-h.md#oh_camera_metadataobjectemotion) | OH\_Camera\_MetadataObjectEmotion | 元数据对象情绪类型枚举。 |
 | [OH\_Camera\_AutomotiveCameraPosition](capi-camera-h.md#oh_camera_automotivecameraposition) | OH\_Camera\_AutomotiveCameraPosition | Car设备摄像头位置的枚举。 |
+| [OH\_Camera\_AuxiliaryPhotoType](capi-camera-h.md#oh_camera_auxiliaryphototype) | OH\_Camera\_AuxiliaryPhotoType | 辅助图类型的枚举。在用于拍摄皮肤健康评估的辅助图时，使用该枚举类型来指定检测目标。 |
 
 ### 函数
 
@@ -135,6 +136,8 @@ enum Camera_ErrorCode
 | CAMERA\_ERROR\_OPTIONAL\_PROPERTY\_NOT\_EXIST = 7400113 | 可选属性不存在。  **起始版本：** 26.0.0 |
 | CAMERA\_SERVICE\_FATAL\_ERROR = 7400201 | 相机服务异常。  比如没有相机权限、相机服务重启、跨进程调用异常等。 |
 | CAMERA\_ERROR\_CAPABILITY\_NOT\_SUPPORTED = 7400114 | 表示设备当前不支持该能力。  **起始版本：** 26.0.0 |
+| CAMERA\_ERROR\_UNSUPPORTED\_MULTI\_CAMERA\_COMBINATION = 7400115 | 不支持的多摄组合。当因为硬件限制或驱动约束而尝试使用不支持的多摄组合时会返回此错误。请考虑使用其他相机组合，或查看设备支持的相机配置。  **起始版本：** 26.0.1 |
+| CAMERA\_ERROR\_PARAM\_OUT\_OF\_RANGE = 7400116 | 参数超出范围。当参数值（如ISO、曝光时间或对焦距离）超出有效范围时会返回此错误。请确保取值在当前相机配置支持的范围内。  **起始版本：** 26.0.1 |
 
 ### Camera\_Status
 
@@ -524,7 +527,7 @@ enum Camera_SystemPressureLevel
 | SYSTEM\_PRESSURE\_NORMAL = 0 | 系统压力正常。 |
 | SYSTEM\_PRESSURE\_MILD = 1 | 系统压力升高，但是系统不会主动管控。 |
 | SYSTEM\_PRESSURE\_SEVERE = 2 | 系统压力可能对图像总质量、性能产生影响。 |
-| SYSTEM\_PRESSURE\_CRITICAL = 3 | 系统压力可能对图像质量、性能产生显著影响。 |
+| SYSTEM\_PRESSURE\_CRITICAL = 3 | 系统图像质量、性能产生显著影响。 |
 | SYSTEM\_PRESSURE\_SHUTDOWN = 4 | 系统压力过高，停止工作。 |
 
 ### Camera\_PreconfigType
@@ -541,9 +544,9 @@ enum Camera_PreconfigType
 
 | 枚举项 | 描述 |
 | --- | --- |
-| PRECONFIG\_720P = 0 | 预配置分辨率为720P。 |
-| PRECONFIG\_1080P = 1 | 预配置分辨率为1080P。 |
-| PRECONFIG\_4K = 2 | 预配置分辨率为4K。 |
+| PRECONFIG\_720P = 0 | 预配置照片分辨率为720P。 |
+| PRECONFIG\_1080P = 1 | 预配置照片分辨率为1080P。 |
+| PRECONFIG\_4K = 2 | 预配置照片分辨率为4K。 |
 | PRECONFIG\_HIGH\_QUALITY = 3 | 预配置照片为高质量。 |
 | PRECONFIG\_HIGH\_QUALITY\_PHOTOSESSION\_BT2020 = 4 | 预配置支持预览高动态范围显示和HDR动图拍摄。  **起始版本：** 23 |
 
@@ -582,6 +585,7 @@ enum Camera_HostDeviceType
 | HOST\_DEVICE\_TYPE\_UNKNOWN\_TYPE = 0 | 未知设备类型。 |
 | HOST\_DEVICE\_TYPE\_PHONE = 0x0E | 手机设备。 |
 | HOST\_DEVICE\_TYPE\_TABLET = 0x11 | 平板设备。 |
+| HOST\_DEVICE\_TYPE\_GLASSES = 0xA31 | 眼镜设备。  **起始版本：** 26.0.1 |
 
 ### Camera\_FoldStatus
 
@@ -676,7 +680,7 @@ enum Camera_ControlCenterEffectType
 | --- | --- |
 | CONTROL\_CENTER\_EFFECT\_TYPE\_BEAUTY = 0 | 控制器效果类型：美颜。 |
 | CONTROL\_CENTER\_EFFECT\_TYPE\_PORTRAIT = 1 | 控制器效果类型：人像虚化。 |
-| CONTROL\_CENTER\_EFFECT\_TYPE\_AUTO\_FRAMING = 2 | 控制器效果类型：自动构图。  **起始版本：** 24 |
+| CONTROL\_CENTER\_EFFECT\_TYPE\_AUTO\_FRAMING = 2 | 控制器效果类型：自动对焦。  **起始版本：** 24 |
 | CONTROL\_CENTER\_EFFECT\_TYPE\_COLOR\_EFFECT = 3 | 控制器效果类型：XMAGE风格。  **起始版本：** 26.0.0 |
 
 ### Camera\_PhotoQualityPrioritization
@@ -796,6 +800,23 @@ Car设备摄像头位置的枚举。
 | OH\_CAMERA\_AUTOMOTIVE\_CAMERA\_POSITION\_INTERIOR\_ROW\_3\_LEFT = 12 | Car设备内部第三排左侧摄像头。  **起始版本：** 26.0.0 |
 | OH\_CAMERA\_AUTOMOTIVE\_CAMERA\_POSITION\_INTERIOR\_ROW\_3\_CENTER = 13 | Car设备内部第三排中央摄像头。  **起始版本：** 26.0.0 |
 | OH\_CAMERA\_AUTOMOTIVE\_CAMERA\_POSITION\_INTERIOR\_ROW\_3\_RIGHT = 14 | Car设备内部第三排右侧摄像头。  **起始版本：** 26.0.0 |
+
+### OH\_Camera\_AuxiliaryPhotoType
+
+```c
+enum OH_Camera_AuxiliaryPhotoType
+```
+
+**描述**
+
+辅助图类型的枚举。在用于拍摄皮肤健康评估的辅助图时，使用该枚举类型来指定检测目标。
+
+**起始版本：** 26.0.1
+
+| 枚举项 | 描述 |
+| --- | --- |
+| OH\_CAMERA\_AUXILIARY\_PHOTO\_TYPE\_OXYGEN = 0 | 血氧图。  **起始版本：** 26.0.1 |
+| OH\_CAMERA\_AUXILIARY\_PHOTO\_TYPE\_PIGMENTATION = 1 | 色斑图。  **起始版本：** 26.0.1 |
 
 ## 函数说明
 

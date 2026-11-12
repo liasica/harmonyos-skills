@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-region-
 title: 图片区域解码与下采样(C/C++)
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(C/C++) > 图片解码 > 图片区域解码与下采样(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:26+08:00
-doc_updated_at: 2026-09-24
+scraped_at: 2026-11-12T09:52:06+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:0a371ab8f3b160991955d03624dd6059e177c53ea2b59675773c72c9331bca87
 ---
 

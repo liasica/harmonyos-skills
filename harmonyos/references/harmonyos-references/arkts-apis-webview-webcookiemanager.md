@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (WebCookieManager)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS API > @ohos.web.webview (Webview) > Class (WebCookieManager)
 category: harmonyos-references
-scraped_at: 2026-10-31T07:36:07+08:00
-doc_updated_at: 2026-10-30
-content_hash: sha256:c6a42b7bc0a073e54f47f515beb4a193f5225cefbd557eec3e3fc10a3d2d6bbf
+scraped_at: 2026-11-12T09:54:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:473c72333547caad4298303f4a0d57cfa3db55dfa1b969c476ed1b30a7e5015f
 ---
 
 WebCookieManager是Web组件的cookie管理器，提供对Web组件中cookie的全局管理能力。开发者通过该类可以实现cookie的获取、设置、保存、清除以及权限控制等操作。该类的所有方法均为静态方法，应用中的所有Web组件共享一个WebCookieManager实例。cookie的格式遵循[RFC6265](https://www.rfc-editor.org/info/rfc6265/)标准。
@@ -17,7 +17,7 @@ WebCookieManager是Web组件的cookie管理器，提供对Web组件中cookie的�
 * 本模块首批接口从API version 9开始支持。后续版本如有新增内容，则采用上角标单独标记该内容的起始版本。
 * 本Class首批接口从API version 9开始支持。
 * 示例效果请以真机运行为准。
-* 静态方法必须在用户界面（UI）线程上使用。
+* 默认情况下，静态方法必须在用户界面（UI）线程上使用。从API版本26.0.1开始，调用[setLazyInitializeWebEngine](arkts-apis-webview-webcookiemanager.md#setlazyinitializewebengine22)设置为true后，静态方法支持在非用户界面（UI）线程使用。
 
 ## 导入模块
 
@@ -1497,6 +1497,7 @@ static setLazyInitializeWebEngine(lazy: boolean): void
 
 * 该接口是全局静态方法，须在使用ArkWeb组件和初始化ArkWeb内核前调用，否则该设置无效。
 * 该接口仅适用于调用后会初始化CookieManager的接口，比如本类WebCookieManager的其他接口。调用本接口设置为true后，再调用适用的接口，会在初始化CookieManager时跳过初始化ArkWeb内核，后续需自行初始化ArkWeb内核。
+* 从API版本26.0.1开始，调用本接口设置为true后，WebCookieManager的接口支持在非UI线程使用。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 

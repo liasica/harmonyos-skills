@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: ABR进行Buffer分辨率调整引起其他Pass渲染效果异常，该如何解决
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > Graphics Accelerate Kit常见问题 > 游戏渲染加速服务 > ABR进行Buffer分辨率调整引起其他Pass渲染效果异常，该如何解决
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:20+08:00
+scraped_at: 2026-11-12T09:52:15+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:505f0c2bb583f2d6e915f2e98379bee84b616243c5e084facc355076b82e158d
+content_hash: sha256:87ca7f0f0073d779e1a4616a919f269fa0a6b517737b9a3f9edff8c851b67731
 ---
 
 **现象描述**
 
 以团结引擎URP管线为例，ABR对DrawOpaqueObjects绑定的Buffer进行分辨率调整时会引起SSAO shadow效果异常。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/1ejA9nlUT1W13QzgTf3MXA/zh-cn_image_0000002779691202.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/Uv3_DuatQt61O3GcxD6qvA/zh-cn_image_0000002786360118.png)
 
 **原因分析**
 
@@ -26,7 +26,7 @@ content_hash: sha256:505f0c2bb583f2d6e915f2e98379bee84b616243c5e084facc355076b82
 
     在URP资产中勾选“After Opaque”：
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/PfoqVS6VRpqR2NJJmOZQTg/zh-cn_image_0000002809010823.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/eh6FMjgQTfKh_k_pnLW9wQ/zh-cn_image_0000002815559539.png)
   + **方案2**：获取实时的ABR Buffer分辨率因子，并根据Buffer分辨率因子对相关渲染数据进行同步调整。
 
     SSAO的shader会根据scaledScreenParams参数进行计算，该变量与渲染分辨率相关，在集成ABR后，scaledScreenParams需要根据实时的ABR Buffer分辨率因子调整。

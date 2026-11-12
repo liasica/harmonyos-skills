@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/onlineauthent
 title: Online Authentication Kit简介
 breadcrumb: 指南 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > Online Authentication Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:31+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:9165f4c682910bd93a80b7093b79aea28c801f1ba2eda78cbf13a3fe61694714
+scraped_at: 2026-11-12T09:51:38+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e4bcdeba39ee51a7f0af59542bb0bf67fc99b76cd320bf922ea628526fb63580
 ---
 
 Online Authentication Kit（在线认证服务）遵循多种端云在线身份认证协议，提供相应的免密认证、数字身份相关协议的移动端的能力。应用部署符合协议的服务器后，可以使用移动端相应的能力，实现免密认证和数字身份业务场景。
@@ -41,7 +41,7 @@ DID是一种基于区块链的分布式数字身份协议，具备去中心化�
 
 | 能力 | 支持设备 |
 | --- | --- |
-| FIDO免密认证、IFAA免密认证、SOTER免密认证 | Phone（5.0.0(12)）、Tablet（5.0.0(12)）、PC/2in1（5.0.1(13)） |
+| FIDO免密认证、IFAA免密认证、SOTER免密认证 | Phone（5.0.0(12)）、Tablet（5.0.0(12)）、PC/2in1（5.0.1(13)）、Car(26.0.1) |
 | 通行密钥 | Phone（6.0.0(20)）、Tablet（6.0.0(20)）、PC/2in1（6.0.0(20)） |
 | 数字身份 | Phone（26.0.0）、Tablet（26.0.0） |
 

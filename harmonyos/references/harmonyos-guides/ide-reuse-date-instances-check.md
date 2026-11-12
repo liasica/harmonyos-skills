@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-reuse-dat
 title: "@performance/reuse-date-instances-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/reuse-date-instances-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:12+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:9a587462aad1dca07d6829814d0f2187211821b118044971cfd42ff8ba8c0679
+scraped_at: 2026-11-12T09:52:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0767930c867d21eb6899cbcb0d5e14ac800ab86f8433e9a97458ca498dc10547
 ---
 
 用于检测在循环或频繁调用的方法中重复创建Date对象，建议开发者重用现有实例或使用时间戳进行计算，降低Date对象的创建成本。
@@ -88,4 +88,4 @@ plugin:@performance/recommended
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

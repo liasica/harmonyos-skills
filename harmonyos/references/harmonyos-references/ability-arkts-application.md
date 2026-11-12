@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ability-a
 title: application
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > application
 category: harmonyos-references
-scraped_at: 2026-10-11T07:23:33+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:846453a55daf405c0f166fc06d84e302cb99db25d11b202524c3b697b8009be7
+scraped_at: 2026-11-12T09:53:32+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:de1685c5527ac7cdfa359df521b7142754744785bc9a6b6ce92404d43a466d9b
 ---
 
 * **[AbilityMonitor](js-apis-inner-application-abilitymonitor.md)**
@@ -25,6 +25,7 @@ content_hash: sha256:846453a55daf405c0f166fc06d84e302cb99db25d11b202524c3b697b80
 * **[AutoFillRequest](js-apis-inner-application-autofillrequest.md)**
 * **[AutoFillType](js-apis-inner-application-autofilltype.md)**
 * **[AutoFillTriggerType](js-apis-inner-application-autofilltriggertype.md)**
+* **[ChildProcessInformation](js-apis-inner-application-childprocessrunninginfo.md)**
 * **[BaseContext](js-apis-inner-application-basecontext.md)**
 * **[Context (Stage模型的上下文基类)](js-apis-inner-application-context.md)**
 * **[EmbeddableUIAbilityContext](js-apis-inner-application-embeddableuiabilitycontext.md)**
@@ -43,4 +44,6 @@ content_hash: sha256:846453a55daf405c0f166fc06d84e302cb99db25d11b202524c3b697b80
 * **[ProcessData](js-apis-inner-application-processdata.md)**
 * **[PhotoEditorExtensionContext](js-apis-app-ability-photoeditorextensioncontext.md)**
 * **[SendableContext](js-apis-inner-application-sendablecontext.md)**
+* **[CliToolEvent (CLI工具会话事件)](js-apis-inner-application-clitoolevent.md)**
+* **[ToolEventCallback (CLI工具事件回调)](js-apis-inner-application-tooleventcallback.md)**
 * **[ViewData](js-apis-inner-application-viewdata.md)**

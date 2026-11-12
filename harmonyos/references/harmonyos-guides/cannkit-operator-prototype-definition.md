@@ -1,14 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-operator-prototype-definition
-title: 算子原型定义实现
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子实现 > 工程化算子开发 > 基于工程实现算子 > 算子原型定义实现
+title: AscendC算子原型定义实现
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC算子实现 > AscendC算子工程开发 > AscendC算子工程实现 > AscendC算子原型定义实现
 category: harmonyos-guides
-scraped_at: 2026-09-08T06:39:20+08:00
-doc_updated_at: 2026-08-18
-content_hash: sha256:9cf24d759238b2faa9ba5ab5bd6a7c95031758889880c3a5b962b64fa7fb8f14
+scraped_at: 2026-11-12T09:52:42+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c057130679f66622f028599874215aff51ddc646b05128a027703f651b710b42
 ---
 
-算子原型主要描述了算子的输入输出、属性等信息以及算子在AI处理器上相关实现信息，并关联[Host侧Tiling实现](cannkit-tiling-implementation-on-the-host.md)等函数。算子原型通过自定义的算子类来承载，该算子类继承自[OpDef](cannkit-input.md)。完成算子的原型定义等操作后，需要调用[原型注册接口(OP\_ADD)](cannkit-prototype-api-registration.md)接口，传入算子类型（自定义算子类的类名），进行算子原型注册。下面是一个简单的Add算子原型定义和注册的例子。
+算子原型主要描述了算子的输入输出、属性等信息以及算子在AI处理器上相关实现信息，并关联[Host侧Tiling实现](cannkit-tiling-implementation-on-the-host.md)等函数。算子原型通过自定义的算子类来承载，该算子类继承自[OpDef](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)。完成算子的原型定义等操作后，需要调用[原型注册接口(OP\_ADD)](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)接口，传入算子类型（自定义算子类的类名），进行算子原型注册。下面是一个简单的Add算子原型定义和注册的例子。
 
 ```cpp
 namespace ops {
@@ -43,7 +43,7 @@ OP_ADD(AddCustom);
 
 **说明** 
 
-注册算子类型后，框架会根据算子类型获取算子注册信息，同时在编译和运行时按照一定的规则匹配算子实现文件名称和kernel侧核函数名称。为了保证正确匹配，算子类型、算子实现文件名称和核函数名称需要遵循如下定义规则。通常情况下，开发者只需要保证创建算子工程时原型定义json文件中算子类型op的参数值为大驼峰命名方式即可，工程创建后自动生成的代码即满足该规则。在手动编写算子原型定义和算子实现文件时需要按照如下规则定义。
+注册算子类型后，框架会根据算子类型获取算子注册信息，同时在编译和运行时按照一定的规则匹配算子实现文件名称和kernel侧核函数名称。为了保证正确匹配，算子类型、算子实现文件名称和核函数名称需要遵循如下定义规则。通常情况下，开发者只需要保证算子类型的命名为大驼峰命名方式，并使工程内的文件命名与该规则保持一致（可直接参考算子工程模板中的样例），即满足该规则。在手动编写算子原型定义和算子实现文件时需要按照如下规则定义。
 
 * 算子类型需要采用**大驼峰**的命名方式，即采用大写字符区分不同的语义。
 * 算子实现文件名称、核函数名称需相同，均为算子类型转换为**下划线**命名方式后的值。下文描述了通过算子类型转换成算子实现文件名称和核函数名称的过程：
@@ -71,12 +71,12 @@ this->Input("x")
 | 原型定义 | 参数 | 具体描述 |
 | --- | --- | --- |
 | Input/Output | ParamType | 参数类型，Option取值为：OPTIONAL（可选）、REQUIRED（必选）、DYNAMIC（动态输入）。  - 类似于上文中的Add样例，其输入输出是必选的。  - 有些算子的输入或者输出个数是动态的，例如AddN，将N个输入Tensor累加到一起，输出一个Tensor；SplitV，将一个Tensor在某个轴上，拆分为N个Tensor输出。  - 有些算子的输入是可选的，例如BatchNorm算子，在训练的时候没有均值和方差输入，在推理的时候有均值和方差的输入。 |
-| Input/Output | DataType | 算子输入输出支持的datatype。datatype的取值请参考[DataType](cannkit-ge-datatype.md)。 |
-| Input/Output | Format | 算子输入输出支持的format。format的取值请参考[Format](cannkit-ge-format.md)。 |
+| Input/Output | DataType | 算子输入输出支持的datatype。datatype的取值请参考[DataType](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)。 |
+| Input/Output | Format | 算子输入输出支持的format。format的取值请参考[Format](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)。 |
 
 从上文的原型定义中可以看出，列出了输入输出所有datatype和format的组合，保持一一对应。使用如下接口，可以达到简化这种代码逻辑的目的。
 
-通过[Follow](cannkit-follow.md)接口指定当前输入/输出的datatype/format/shape信息与之前定义过的某个输入一致。示例如下。输出“y1”Follow输入“x1”场景，此时“y1”的datatype、format以及shape都将会和“x1”保持一致。使用Follow接口指定shape一致时通常比[shape推导](cannkit-development-process.md#shape推导)函数逻辑更加简单，能用Follow表达的逻辑，建议使用Follow接口，则无需再编写注册InferShape函数。
+通过[Follow](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)接口指定当前输入/输出的datatype/format/shape信息与之前定义过的某个输入一致。示例如下。输出“y1”Follow输入“x1”场景，此时“y1”的datatype、format以及shape都将会和“x1”保持一致。使用Follow接口指定shape一致时通常比[shape推导](cannkit-development-process.md#shape推导)函数逻辑更加简单，能用Follow表达的逻辑，建议使用Follow接口，则无需再编写注册InferShape函数。
 
 ```cpp
 this->Input("x1")
@@ -111,11 +111,11 @@ this->Attr("isKeepDim")
 | 原型定义 | 注册方式 | 具体描述 |
 | --- | --- | --- |
 | Attr | AttrType | 设置算子属性类型，取值为：OPTIONAL（可选）、REQUIRED（必选）。 |
-| Attr | Bool/Float/Int... | 设置算子属性数据类型为Bool/Float/Int...。具体说明请参考[OpAttrDef](cannkit-opattrdef.md)。 |
+| Attr | Bool/Float/Int... | 设置算子属性数据类型为Bool/Float/Int...。具体说明请参考[OpAttrDef](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)。 |
 
 ## AI处理器上相关实现信息
 
-通过[AddConfig](cannkit-addconfig.md)注册算子支持的AI处理器型号以及相关的配置信息。AddConfig接口原型如下。
+通过[AddConfig](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)注册算子支持的AI处理器型号以及相关的配置信息。AddConfig接口原型如下。
 
 soc参数表示AI处理器型号，aicore\_config表示其他配置信息。
 
@@ -132,7 +132,7 @@ this->AICore().AddConfig("ascendxxx");
 
 ## 关联Tiling实现、Shape推导等函数
 
-通过[SetInferShape](cannkit-setinfershape.md)、[SetInferDataType](cannkit-setinferdatatype.md)、[SetTiling](cannkit-settiling.md)接口来关联对应的shape推导函数和Tiling函数，样例如下。
+通过[SetInferShape](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)、[SetInferDataType](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)、[SetTiling](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)接口来关联对应的shape推导函数和Tiling函数，样例如下。
 
 ```cpp
 this->SetInferShape(ge::InferShape);
@@ -158,7 +158,7 @@ class MyAdd : public OpDef {
 public:
     MyAdd(const char* name) : OpDef(name)
     {
-        // ascendxxx1 ascendxxx2 AI处理器型号原型定义
+        // kirinxxx1 kirinxxx2 AI处理器型号原型定义
         this->Input("x")
             .ParamType(REQUIRED)
             .DataType({ge::DT_FLOAT16})
@@ -174,8 +174,8 @@ public:
             .Format({ge::FORMAT_ND});
         this->AICore()
             .SetTiling(optiling::TilingFunc);
-        this->AICore().AddConfig("ascendxxx1");
-        this->AICore().AddConfig("ascendxxx2");
+        this->AICore().AddConfig("kirinxxx1");
+        this->AICore().AddConfig("kirinxxx2");
         // ascendxxx3芯片定义OpAICoreConfig变量，定制化原型
         OpAICoreConfig config;
         config.Input("x")

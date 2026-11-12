@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/hms-ai-te
 title: textToSpeech（文本转语音）
 breadcrumb: API参考 > AI > Core Speech Kit（基础语音服务） > ArkTS API > textToSpeech（文本转语音）
 category: harmonyos-references
-scraped_at: 2026-09-24T06:55:43+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:f7e6144734f2972f30a8cd1e19e570eebbc8de57e3ab92e80ffe5b14a8d4f335
+scraped_at: 2026-11-12T09:57:44+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:20b0d4258fd0072990b6799258e24de21524ee5639ae3b4b108de3b0274e835c
 ---
 
 文本转语音服务提供将文本信息转换为语音并进行播报的能力，便于用户与设备进行互动，实现实时语音交互，文本播报。
@@ -798,6 +798,120 @@ struct Page {
         .onClick( () => {
           // 调用shutdown接口
           ttsEngine.shutdown();
+        })
+    }
+  }
+}
+```
+
+### pause
+
+pause(): void
+
+关闭引擎，释放引擎资源。
+
+**系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**起始版本：** 26.0.1
+
+**示例：**
+
+```typescript
+import { textToSpeech } from '@kit.CoreSpeechKit';
+
+let ttsEngine: textToSpeech.TextToSpeechEngine;
+// 设置播报内容
+let originalText: string = '\n\t\t古人学问无遗力，少壮工夫老始成；\n\t\t' +
+  '纸上得来终觉浅，绝知此事要躬行。\n\t\t';
+
+// 合成及播报相关的参数
+let extraParam: Record<string, Object> = {
+  'speed': 1,
+  'volume': 2,
+  'pitch': 1, 'languageContext': 'zh-CN',
+  'audioType': 'pcm'
+};
+let speakParams: textToSpeech.SpeakParams = {
+  requestId: '123456', // requestId在同一实例内仅能用一次，请勿重复设置
+  extraParams: extraParam
+};
+
+@Entry
+@Component
+struct Page {
+  build() {
+    Column(){
+      Button()
+        .id('Button')
+        .onClick( () => {
+          // 传入文本originalText，调用speak接口
+          ttsEngine.speak(originalText, speakParams);
+        })
+
+      Button()
+        .id('pause')
+        .onClick( () => {
+          // 调用pause接口
+          ttsEngine.pause();
+        })
+    }
+  }
+}
+```
+
+### resume
+
+resume(): void
+
+关闭引擎，释放引擎资源。
+
+**系统能力：** SystemCapability.AI.TextToSpeech
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**起始版本：** 26.0.1
+
+**示例：**
+
+```typescript
+import { textToSpeech } from '@kit.CoreSpeechKit';
+
+let ttsEngine: textToSpeech.TextToSpeechEngine;
+// 设置播报内容
+let originalText: string = '\n\t\t古人学问无遗力，少壮工夫老始成；\n\t\t' +
+  '纸上得来终觉浅，绝知此事要躬行。\n\t\t';
+
+// 合成及播报相关的参数
+let extraParam: Record<string, Object> = {
+  'speed': 1,
+  'volume': 2,
+  'pitch': 1, 'languageContext': 'zh-CN',
+  'audioType': 'pcm'
+};
+let speakParams: textToSpeech.SpeakParams = {
+  requestId: '123456', // requestId在同一实例内仅能用一次，请勿重复设置
+  extraParams: extraParam
+};
+
+@Entry
+@Component
+struct Page {
+  build() {
+    Column(){
+      Button()
+        .id('Button')
+        .onClick( () => {
+          // 传入文本originalText，调用speak接口
+          ttsEngine.speak(originalText, speakParams);
+        })
+
+      Button()
+        .id('resume')
+        .onClick( () => {
+          // 调用resume接口
+          ttsEngine.resume();
         })
     }
   }

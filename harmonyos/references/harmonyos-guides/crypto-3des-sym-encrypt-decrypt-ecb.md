@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-3des-s
 title: 使用3DES对称密钥加解密(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密 > 使用3DES对称密钥加解密(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:36+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:51:33+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:c28cf928133ea5b21d19fd42e000a32053d49d12e06aec4d406fc50cd2180b4e
 ---
 

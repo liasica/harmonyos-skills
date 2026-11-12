@@ -3,10 +3,19 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-codelinte
 title: 规则变更说明
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 规则变更说明
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:56+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:3fd4c1415b45a2b4bb68975f1886212e22831ac7588897565bcb6afd80b27329
+scraped_at: 2026-11-12T09:52:54+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:68f1d847cceb47d966d14c3bb133575c8846e561fe136fcd2f34cb9cd203156a
 ---
+
+## 26.0.1.290
+
+新增规则
+
+* [@performance/suggest-use-socket-in-async-thread](ide-suggest-use-socket-in-async-thread.md)
+* [@correctness/request-user-authorization-second-time-check](ide-request-user-authorization-second-time-check.md)
+* [@correctness/reasons-for-user-grant-check](ide-reasons-for-user-grant-check.md)
+* [@correctness/paste-board-for-user-grant-check](ide-paste-board-for-user-grant-check.md)
 
 ## 26.0.0.621
 

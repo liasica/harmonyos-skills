@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: TSC错误码介绍
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > 错误码 > TSC错误码介绍
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:48+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4e7439dac53cf12e22b74302259676d46d58216551723ace414e8f00d0b3d35b
+scraped_at: 2026-11-12T09:53:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:432acca849a94cc721ae9fc805eb6f82d8d5642e2b52c17e69d805cba9ea5df3
 ---
 
 TSC（TypeScript Compiler）的错误码以105开头，是TSC编译流程中的报错提示，会在编辑器、控制台或日志文件中显示输出错误码和相对应的报错描述。
@@ -138,21 +138,19 @@ Cannot find module ${moduleName} or its corresponding type declarations.
 
 若HAR包中的js文件需要提供对外导出功能，开发者需要：
 
-1.在js文件同级目录中手动编写对应的.d.ts声明文件，并随HAR包一起编译发布，示例如下：
+1. 在js文件同级目录中手动编写对应的.d.ts声明文件，并随HAR包一起编译发布，示例如下：
 
-```typescript
-// har1's src/main/ets/FileJs.d.ts
-export declare let fileJs: number;
-```
+   ```typescript
+   // har1's src/main/ets/FileJs.d.ts
+   export declare let fileJs: number;
+   ```
+2. 在har1包顶层的Index.ets文件中增加export导出语句，示例如下：
 
-2.在har1包顶层的Index.ets文件中增加export导出语句，示例如下：
+   ```typescript
+   export { fileJs } from './src/main/ets/FileJs';
+   ```
+3. 在har2包中引用har1包中该接口，示例如下：
 
-```typescript
-export { fileJs } from './src/main/ets/FileJs';
-```
-
-3.在har2包中引用har1包中该接口，示例如下：
-
-```typescript
-import { fileJs } from 'har1/src/main/ets/FileJs';
-```
+   ```typescript
+   import { fileJs } from 'har1/src/main/ets/FileJs';
+   ```

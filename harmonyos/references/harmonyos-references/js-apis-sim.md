@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.telephony.sim (SIM卡管理)"
 breadcrumb: API参考 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > ArkTS API > @ohos.telephony.sim (SIM卡管理)
 category: harmonyos-references
-scraped_at: 2026-10-27T07:42:36+08:00
-doc_updated_at: 2026-10-26
-content_hash: sha256:2b698b196fd14d69beb7484ee6cedd434f4ac8be79d40b1424a6e14aca27ab2c
+scraped_at: 2026-11-12T09:55:50+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a2271f90889914ccc1b35e05eb8548c41ab0a60ed6e26deac09d39cd87c877ee
 ---
 
 SIM卡管理模块提供了SIM卡管理的基础能力，包括获取指定卡槽SIM卡的ISO国家码、归属PLMN号、服务提供商名称、SIM卡状态、卡类型、是否插卡、是否激活、SIM卡账户信息、运营商权限、OpKey/OpName、默认语音业务卡信息、卡槽数量、SIM卡标签等，适用于需要在应用中查询和管理SIM卡基础信息及状态的场景。
@@ -986,6 +986,7 @@ getSimAccountInfo(slotId: number, callback: AsyncCallback<IccAccountInfo>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 201 | Permission denied.  适用版本：10-22 |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 | 8300001 | Invalid parameter value. |
 | 8300002 | Service connection failed. |
@@ -1041,6 +1042,7 @@ getSimAccountInfo(slotId: number): Promise<IccAccountInfo>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| 201 | Permission denied.  适用版本：10-22 |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 | 8300001 | Invalid parameter value. |
 | 8300002 | Service connection failed. |

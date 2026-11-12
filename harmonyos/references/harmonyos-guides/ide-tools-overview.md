@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-tools-ove
 title: 工具概述
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工具概述
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:11+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:46e26475696d3e9a2f2910479781f7092dd6af73073fdb7c181a78e041e69e18
+scraped_at: 2026-11-12T09:52:50+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:2216cd0af6268d4dff4fbdadaa3b291325e19e7a824b015bac0ff17bf78337d3
 ---
 
 ## HarmonyOS应用/元服务开发
@@ -28,7 +28,7 @@ HUAWEI DevEco Studio（获取工具请单击[链接下载](https://developer.hua
 
 开发一个应用/元服务流程如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/2I5RFcT6QYOcheQ8VHwDmA/zh-cn_image_0000002731543105.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/uUihRdwIT9eEdTOBlB538Q/zh-cn_image_0000002779407372.png)
 
 **一、开发准备**
 
@@ -54,7 +54,7 @@ HarmonyOS应用/元服务开发完成后，在发布到应用/元服务市场前
 
 HarmonyOS应用/元服务开发、测试完成后，需要[将应用/元服务发布至应用市场](ide-publish-app.md)，以便应用市场对应用/元服务进行分发，普通消费者可以通过应用市场获取到对应的HarmonyOS应用/元服务。需要注意的是，发布到华为应用市场的HarmonyOS应用/元服务，必须使用应用市场颁发的发布证书进行签名。
 
-## 命令行开发
+### 命令行开发
 
 针对流水线或命令行开发场景，推荐使用Command Line Tools[命令行工具](https://developer.huawei.com/consumer/cn/download/command-line-tools-for-hmos)，其中集合了HarmonyOS应用开发所用到的系列工具，包括代码检查工具codelinter、三方包管理工具ohpm、堆栈解析工具hstack、命令行构建工具hvigorw。
 

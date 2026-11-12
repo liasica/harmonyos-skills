@@ -3,12 +3,11 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/system-ha
 title: 硬件
 breadcrumb: API参考 > 系统 > 硬件
 category: harmonyos-references
-scraped_at: 2026-10-11T07:26:44+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:1faffcd958adc7db20bc99d5c835141b5aceff135cb06d56623e49752eea7384
+scraped_at: 2026-11-12T09:56:07+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:25a2870d75dc62a687a88741b3b790cc7769fe95c295d39d5d8df28a48ed7a6c
 ---
 
-* **[Car Kit（车服务）](car-api.md)**
 * **[Driver Development Kit（驱动开发服务）](driver-development-api.md)**
 * **[Multimodal Awareness Kit（多模态融合感知服务）](multimodal-awareness-api.md)**
 * **[Pen Kit（手写笔服务）](pen-api.md)**

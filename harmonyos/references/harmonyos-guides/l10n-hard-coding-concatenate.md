@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/l10n-hard-cod
 title: 避免硬编码与拼接
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用本地化 > 提升可翻译性 > 避免硬编码与拼接
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:32+08:00
+scraped_at: 2026-11-12T09:51:29+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:b496497176ae30e7da8b2aefb766b363499e5121e657816010f38c5244f2b6fe
+content_hash: sha256:aa03d7d2591466c136547d55c635ad261f8583a7f4ac3beec9a3023dcffdcae4
 ---
 
 ## 使用场景
@@ -14,7 +14,7 @@ content_hash: sha256:b496497176ae30e7da8b2aefb766b363499e5121e657816010f38c5244f
 
 例如，下图中将"Rain tomorrow"和"Bring an umbrella"两句直接拼接在一起，造成语句大小写问题。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/IFr9oNW-RDehzz-T5E3o_A/zh-cn_image_0000002809050215.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/ZNJUw8bdSOKzKchGeMoPWg/zh-cn_image_0000002786519522.png)
 
 ## 约束与限制
 

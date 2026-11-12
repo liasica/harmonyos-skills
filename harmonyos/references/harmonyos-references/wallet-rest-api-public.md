@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/wallet-re
 title: 公共接口
 breadcrumb: API参考 > 应用服务 > Wallet Kit（钱包服务） > REST API > 公共接口
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:09+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:44b133ed7405953669bf3ebed6604fa29873e9c36a1fe92ba592013f0bc19204
+scraped_at: 2026-11-12T09:57:42+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3d5b025ce27ae15ccfd2dd431b7e81be136a19cf1177a54c5b4bb1da2600cfa6
 ---
 
 ## 获取AccessToken
@@ -667,8 +667,8 @@ public HwWalletObject getHwCallback(@RequestBody CallbackRequest request, @Reque
 
        // 响应成功
        BaseResponse response = new BaseResponse();
-       response.setReturnCode(“0”);
-       response.setReturnDesc(“success”);
+       response.setReturnCode("0");
+       response.setReturnDesc("success");
        return response;
 }
 // 签名验签过程中对请求体字段按序排列生成待签名明文字符串工具类

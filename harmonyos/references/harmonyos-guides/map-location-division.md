@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-location-
 title: 区划选择
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图Picker > 区划选择
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:36+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:22beefcc612f2cf9d77ed4015e0582b6f2b95139050da0ec77b15a269d74c7f3
+scraped_at: 2026-11-12T09:52:30+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3f21ffe0a714d2769facd4c0e9784dd3f83364bea98480656b1d2c48f7504093
 ---
 
 ## 场景介绍
@@ -22,25 +22,25 @@ content_hash: sha256:22beefcc612f2cf9d77ed4015e0582b6f2b95139050da0ec77b15a269d7
 
 **图1** 选择国家
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/mY5UGxCxTSu_IA6_mBA-WA/zh-cn_image_0000002779851502.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/Z2mtTzZIRr-hcchjecnluQ/zh-cn_image_0000002815559875.jpg "点击放大")
 
 **图2** 选择省市
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/M16t2MVsTZqCgCRmw3dzPA/zh-cn_image_0000002779691534.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/fN6vMB2-S8eg9EbxzsZtRA/zh-cn_image_0000002815399959.jpg "点击放大")
 
 **图3** 搜索地区
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/20Ho8iWGSuabXcedW4I69g/zh-cn_image_0000002809011155.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/mARYpxpCTfK28peHAYUgvA/zh-cn_image_0000002786520384.jpg "点击放大")
 
 **图4** 子窗拉起区划控件
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/tWzLktDfSzCFIz6foyOKVw/zh-cn_image_0000002809051069.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/WjFX3PgHSrmvFOVp3VAWSg/zh-cn_image_0000002786360456.jpg "点击放大")
 
 ## 约束与限制
 
 使用该功能需满足以下条件：
 
-* 仅支持手机、平板和PC/2in1设备。
+* 区划选择功能支持Phone、Tablet、PC/2in1设备；从API版本26.0.1开始，新增支持Car设备。
 
 ## 接口说明
 

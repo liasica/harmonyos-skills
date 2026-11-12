@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-bu
 title: 工程级build-profile.json5文件
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 配置文件 > 工程级build-profile.json5文件
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:19+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:82e96cfec12f1416d81181dbdf2442d606e9ccf7a295b9bd02d66716d3dd8dd5
+scraped_at: 2026-11-12T09:53:06+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:bf82cada673b45bc6d5b76d4730966003438256bead3af91ee37baf777f382a3
 ---
 
 ## 配置文件结构
@@ -352,8 +352,8 @@ products字段示例：
       "name": "default",
       "signingConfig": "default",
       "bundleName": "com.example.myapplication",
-      "compatibleSdkVersion": "26.0.0",
-      "targetSdkVersion": "26.0.0",
+      "compatibleSdkVersion": "26.0.1",
+      "targetSdkVersion": "26.0.1",
       "runtimeOS": "HarmonyOS",
       "arkTSVersion": "1.1",
       "bundleType": "app",
@@ -448,7 +448,7 @@ packOptions是打包相关配置项。
 | buildAppSkipSignHap | 布尔值 | 可选 | 构建APP时，是否跳过生成签名HAP：   * true：跳过，即不生成签名HAP。 * false（缺省默认值）：不跳过，即生成签名HAP。   编译构建APP时，无需生成签名HAP，可将此参数修改为true，从而提升编译构建性能。 |
 | fastBuildApp | 布尔值 | 可选 | 构建APP时，是否在模块下生成HAP/HSP产物。   * true：不生成HAP/HSP产物，直接生成APP产物，可加快构建速度。 * false（缺省默认值）：生成HAP/HSP产物，同时生成APP产物。   说明：  * 当fastBuildApp配置为true时，无论buildAppSkipSignHap配置为true还是false，都不会生成HAP产物。 * 当fastBuildApp配置为false时，是否生成HAP产物，以buildAppSkipSignHap配置为准。 |
 | enableSourceCodeCheck | 布尔值 | 可选 | 是否检查HAP/HSP/HAR包（不包括未开启混淆的源码HAR）产物中的源码文件，如果检查，当产物中存在源码文件时，编译时会进行Warning提示。   * true（缺省默认值）：检查。 * false：不检查。   从DevEco Studio 6.0.0 Beta3版本开始支持。  说明：  * 源码文件是指包含以下后缀的文件：['.c', '.h', '.cpp', '.cs', '.java', '.rs', '.py', '.go', '.ets', '.js', '.ts']。 * [release模式编译的混淆源码har包](ide-hvigor-build-har.md#section19788284410)中的'.js', '.ts'和'.d.ets'文件不会被检查。 * resources目录下的'.js'文件不会被检查。 |
-| deduplicateHar | 布尔值 | 可选 | 构建APP/HAP/HSP时，当HAP/HSP依赖相同的HAR时（包括HAP和HSP依赖相同的HAR，多个HSP依赖相同的HAR），是否去除HSP中重复的HAR，减少包体积。   * true：去除，HAR仅会打包到HAP中，同时需要配置以下字段。   + 工程级build-profile.json5中配置[idDefinedFilePath](ide-hvigor-build-profile-app.md#section5494153192911)。   + 工程级build-profile.json5的useNormalizedOHMUrl配置为true。   + [module.json5](module-configuration-file.md)的libIsolation配置为false。 * false（缺省默认值）：不去除，HAR会打包到每个HAP/HSP中。   说明：  * 从DevEco Studio 6.0.1 Beta1版本开始支持，并且设备系统需要升级到6.0.1(21)，工程级build-profile.json5的compatibleSdkVersion需要配置为6.0.1(21)。 * 多个HSP依赖相同的HAR时，依赖HSP的HAP需要显式配置依赖该HAR。 * 仅支持本地HSP模块，不支持已打包的HSP包。 * 不支持去除重复HAR的场景：   + 一个应用包含多个HAP时   + 单独运行或调试HSP   + 仪器测试和本地单元测试   + 预览场景 |
+| deduplicateHar | 布尔值 | 可选 | 构建APP/HAP/HSP时，当HAP/HSP依赖相同的HAR时（包括HAP和HSP依赖相同的HAR，多个HSP依赖相同的HAR），是否去除HSP中重复的HAR，减少包体积。   * true：去除，HAR仅会打包到HAP中，同时需要配置以下字段。   + 工程级build-profile.json5中配置[idDefinedFilePath](ide-hvigor-build-profile-app.md#section5494153192911)。   + 工程级build-profile.json5的useNormalizedOHMUrl配置为true。   + [module.json5](module-configuration-file.md)的libIsolation配置为false。 * false（缺省默认值）：不去除，HAR会打包到每个HAP/HSP中。   说明：  * 从DevEco Studio 6.0.1 Beta1版本开始支持，工程级build-profile.json5的compatibleSdkVersion需要配置为6.0.1(21)或以上。 * 多个HSP依赖相同的HAR时，依赖HSP的HAP需要显式配置依赖该HAR。 * 仅支持本地HSP模块，不支持已打包的HSP包。 * 不支持去除重复HAR的场景：   + 一个应用包含多个HAP时   + 单独运行或调试HSP   + 仪器测试和本地单元测试   + 预览场景 |
 | appWithSignedPkg | 布尔值 | 可选 | 构建APP时，除了默认的app包之外，是否额外生成产物名称带all的app包（xxx-all-unsigned.app和xxx-all-signed.app），app包里的hap和hsp都是签名的包。   * true：除了默认的app包之外，额外生成产物名称带all的app包，包里的hap和hsp都是签名的包。 * false（缺省默认值）：只生成默认的app包，包里的hap和hsp都是未签名的包。   从DevEco Studio 6.0.2 Beta1版本开始支持。  说明：  要生成xxx-all-unsigned.app和xxx-all-signed.app，除了appWithSignedPkg配置为true之外，需要确保已配置签名材料，并且hvigor-config.json5中的enableSignTask未配置为false。 |
 | enableIncrementalSoCompress | 布尔值 | 可选 | 构建HAP/HSP时，如果工程中包含大量so并开启了压缩so体积的配置开关（module.json5的compressNativeLibs或hvigor-config.json5的ohos.pack.compressLevel），可以开启此开关复用上一次构建已经压缩好的so，加快打包速度。   * true：开启增量压缩，如果so包内容未改变，HAP/HSP将会复用已经压缩好的so包。 * false（缺省默认值）：不开启增量压缩，每次构建对所有so重新进行压缩。   从DevEco Studio 6.1.0 Beta1版本开始支持。 |
 | deduplicateSo | 布尔值 | 可选 | 构建APP时，是否去除HAP和HSP中重复的so文件，以减小APP包体积。   * true：去除，so文件只保留一份，并且随机打包在HAP或HSP中。 * false（缺省默认值）：不去除。   从26.0.0版本开始支持。  说明：  OpenHarmony工程不支持配置此字段。 |
@@ -471,7 +471,7 @@ resOptions是资源编译配置项。
 | 字段名称 | 类型 | 可选/必选 | 含义 |
 | --- | --- | --- | --- |
 | [compression](ide-hvigor-build-profile-app.md#section2095319147103) | 对象 | 可选 | 对工程预置图片资源进行纹理压缩的编译配置参数。 |
-| resCompileThreads | 整型数值 | 可选 | 资源编译的线程数量 ，最小为1，最大为主机的CPU核数。  该字段从DevEco Studio 5.1.0 Release版本开始支持。 |
+| resCompileThreads | 整型数值 | 可选 | 资源编译的线程数量 ，最小为1，最大为主机的CPU核数。  从DevEco Studio 5.1.0 Release版本开始支持。 |
 | [copyCodeResource](ide-hvigor-build-profile-app.md#table263894423012) | 对象 | 可选 | 对模块的src/main/ets目录下的资源文件（非源码文件）拷贝的编译配置参数。  说明：  该字段对[不开启混淆的源码HAR](ide-hvigor-build-har.md#section197792874110)不生效。 |
 | ignoreResourcePattern | 字符串数组 | 可选 | 根据glob语法，对资源目录resources或开发者自定义的资源目录下的文件/文件夹名称进行过滤，匹配到的文件不会被打包到产物中。  从DevEco Studio 5.1.1 Beta1版本开始支持。  说明：  * 如果规则中带有路径（例如./src/main/a.png），该规则不生效。 * 如果未配置该字段，打包HAP/HSP时存在默认的过滤规则：默认不打包.git、.svn、.scc、.ds\_store、desktop.ini、picasa.ini、cvs、thumbs.db以及以.开头的隐藏文件/目录和以~结尾的文件。 * 配置该字段后，会覆盖默认的过滤规则；如果字段配置为空数组，则不应用任何过滤规则，即全部资源都打包。 |
 | excludeHarRes | 字符串数组 | 可选 | 编译HAP/HSP模块时，指定不参与资源编译的三方HAR包的包名，配置后，依赖HAR包中的资源不会被打包到产物中，支持直接依赖和间接依赖。  从DevEco Studio 6.0.0 Beta2版本开始支持。  说明：  该字段仅对编译HAP/HSP生效。 |
@@ -581,7 +581,7 @@ arkOptions是ArkTS编译配置。
 | [tscConfig](ide-hvigor-build-profile-app.md#table1714014154115) | 对象 | 可选 | 与编译TS语法相关的配置选项。 |
 | autoLazyImport | 布尔值 | 可选 | 编译时是否自动将符合lazy-import语法规范的import语句添加"lazy"关键字。仅支持在源码中添加"lazy"关键字，不包含依赖的字节码HAR包或HSP。关于lazy-import的介绍及相关影响请参考[延迟加载（lazy import）](arkts-lazy-import.md)。   * true：添加。 * false（缺省默认值）：不添加。   说明：  * 如果配置为true，编译时不会做场景识别，即源码中任何符合语法规范的import语句都会被添加"lazy"。 * 仅支持Stage模型。 |
 | [autoLazyFilter](ide-hvigor-build-profile-app.md#table1551310818378) | 对象 | 可选 | 自定义添加"lazy"关键字的模块，仅当build-profile.json5中的autoLazyImport或hvigor-config.json5中的ohos.defaults.autoLazyImport配置为true时生效。  从DevEco Studio 6.0.1 Beta1版本开始支持。 |
-| reExportCheckMode | 字符串 | 可选 | 针对以下场景，编译时是否进行拦截报错：使用lazy import导入的变量，在同文件中被再次导出。   * noCheck（缺省默认值）：不检查，不报错。 * compatible：兼容模式，报Warning。 * strict：严格模式，报Error。   该字段从DevEco Studio 5.0.5 Release版本开始支持。 |
+| reExportCheckMode | 字符串 | 可选 | 针对以下场景，编译时是否进行拦截报错：使用lazy import导入的变量，在同文件中被再次导出。   * noCheck（缺省默认值）：不检查，不报错。 * compatible：兼容模式，报Warning。 * strict：严格模式，报Error。   从DevEco Studio 5.0.5 Release版本开始支持。 |
 | branchElimination | 布尔值 | 可选 | 是否启用代码分支裁剪，减少编译产物大小，开启后，在release编译模式下，不会被执行到的代码分支会被裁剪掉，示例请参考[branchElimination示例](ide-hvigor-build-profile-app.md#li12224142193612)。   * true：启用（将导致使用"ApplyChanges"功能时，对const声明的常量的值进行的修改可能不生效）。 * false（缺省默认值）：不启用。   说明：  * 仅支持API 11及以上的Stage模型。 * HAR模块仅字节码HAR配置生效，非字节码HAR配置不生效。 * 仅支持const声明的bool类型常量和const声明的string/number类型常量的判断表达式。 * 不支持间接导入，例如A文件中定义const变量A1，B文件导入A1，导出B1，ets导入B1进行判断，无法进行裁剪。 |
 | skipOhModulesLint | 布尔值 | 可选 | 是否跳过工程中oh\_modules目录的[ArkTS规则检查](typescript-to-arkts-migration-guide.md)。从DevEco Studio 6.0.0 Beta1版本开始支持。   * true：跳过。 * false（缺省默认值）：不跳过。 |
 | [expandImportPath](ide-hvigor-build-profile-app.md#table81640115915) | 对象 | 可选 | import路径展开相关配置选项。  从DevEco Studio 6.0.0 Beta3版本开始支持。 |
@@ -610,7 +610,7 @@ arkOptions是ArkTS编译配置。
 | 字段名称 | 类型 | 可选/必选 | 含义 |
 | --- | --- | --- | --- |
 | targetESVersion | 字符串 | 可选 | 指定TS语法编译产物的目标运行时EcmaScript版本，包括：   * ES2017 * ES2021（缺省默认值）。 |
-| maxFlowDepth | 整型数值 | 可选 | 设置最大控制流递归深度，范围为[2000,65535]，默认为2000。  该字段从DevEco Studio 5.1.0 Release版本开始支持。  说明：  maxFlowDepth不支持动态修改，即在hvigorfile.ts/hvigorconfig.ts文件中，不支持通过[setBuildProfileOpt](ide-build-expanding-context.md#section16692151412211)方法设置maxFlowDepth。 |
+| maxFlowDepth | 整型数值 | 可选 | 设置最大控制流递归深度，范围为[2000,65535]，默认为2000。  从DevEco Studio 5.1.0 Release版本开始支持。  说明：  maxFlowDepth不支持动态修改，即在hvigorfile.ts/hvigorconfig.ts文件中，不支持通过[setBuildProfileOpt](ide-build-expanding-context.md#section16692151412211)方法设置maxFlowDepth。 |
 | tsImportSoCheck | 布尔值 | 可选 | 在.ts文件导入.so文件中的符号，编译时是否对导入的符号进行类型解析。   * false（缺省默认值）：不解析，导入的符号在使用时默认是any类型，可能会导致编译失败。 * true：解析，.ts文件可以获取到符号的准确类型并且编译成功。   从26.0.0版本开始支持。 |
 
 **表22** autoLazyFilter

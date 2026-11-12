@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_array-typ
 title: "@typescript-eslint/array-type"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/array-type
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:08+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:dcb74e7a9d9afa71e43fd967feb3f9bd3428535175912f7d1d448098c426380e
+scraped_at: 2026-11-12T09:52:54+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:dac1288fb44f9dd6c35d291dc554f9000df2eebdba7f1c3a644946fd2dea2418
 ---
 
 定义数组类型时，建议使用相同的样式。比如都使用T[]或者都使用Array<T>。
@@ -49,4 +49,4 @@ export { x, y };
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

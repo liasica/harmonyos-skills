@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-co
 title: 常用配置
 breadcrumb: 指南 > DevEco Code > DevEco Code TUI > 常用配置
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:13:14+08:00
-doc_updated_at: 2026-10-31
-content_hash: sha256:59aac6a28eae163853964b8ac7026493ccc06aaff5c066d7a3466962e123c221
+scraped_at: 2026-11-12T09:53:25+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ca0167f23c168c6a91db31bf3b5226cf7ef65e9542a4e85e2e137fb237dd9601
 ---
 
 DevEco Code支持在deveco.jsonc文件中配置绿灯模式、Skill、MCP的相关能力。
@@ -56,14 +56,15 @@ deveco.jsonc文件在项目和用户目录下各有一份，若不存在需新�
 
 ## 配置Skill
 
-在DevEco Code对话框输入**/skills**可查看所有Skill。DevEco Code已内置部分Skill，如下表，同时也支持自定义创建Skill。
+在DevEco Code对话框输入**/skills**可查看所有Skill。DevEco Code已内置部分Skill，最新版本内置Skill如下。同时，也支持自定义创建Skill。
 
-| 内置Skill | 说明 | 适用场景 |
-| --- | --- | --- |
-| deveco-create-project | 快速创建标准化HarmonyOS模板工程 | 项目初始化 |
-| arkts-grammar-standards | ArkTS语法规则、TypeScript迁移差异及ArkUI组件开发最佳实践参考 | ArkTS语法规范、ArkUI界面开发 |
-| arkts-error-fixes | 编译与类型错误快速查询 | 快速调试 |
-| arkts-runtime-fix | 运行时常见问题修复方案 | 稳定性保障 |
+| 内置Skill名称 | 描述 |
+| --- | --- |
+| hmos-design-to-arkts | 将Pixso设计稿转换为ArkTS页面代码，自动完成设计稿解析、工程理解、方案设计、页面实现、交互补全、HDS（HarmonyOS Design System）组件适配、质量审计与多轮视觉校准。 |
+| hmos-dfx-analyzer | DFX故障分析。 |
+| hmos-arkui-develop-skill | 编写、审查或改进ArkUI代码，遵循状态管理(V1/V2)、组件结构、布局选择、性能优化的最佳实践。 |
+| deveco-cli | 在HarmonyOS应用开发中使用devecocli命令。语言描述中出现HarmonyOS、UI测试、组件调试等场景时，支持调用devecocli命令。 |
+| customize-deveco | 编辑、创建DevEco Code的配置文件或权限规则等，如deveco.jsonc。 |
 
 ### 创建自定义Skill
 

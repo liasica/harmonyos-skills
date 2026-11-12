@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AutoDeviceSwitch)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (AutoDeviceSwitch)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:16+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:7ae243a60418f0fb658faf85ebeb1e25026b4c32b3cb1c28d5f8af305c180cde
+scraped_at: 2026-11-12T09:56:31+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b122cd091349a8754af8e5b6273d06686440fce0ef3ab7d0f8f5e8de0583b049
 ---
 
 自动切换镜头类，继承自[AutoDeviceSwitchQuery](arkts-apis-camera-autodeviceswitchquery.md)，用于使能或去使能自动切换镜头。自动切换镜头能力仅支持折叠屏设备使用，详细开发指导请参考[自动切换摄像头实践](../harmonyos-guides/camera-auto-switch.md)。
@@ -61,7 +61,9 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 function enableAutoDeviceSwitch(session: camera.PhotoSession, isEnable: boolean): void {
   try {
-    session.enableAutoDeviceSwitch(isEnable);
+    if (session.isAutoDeviceSwitchSupported()) {
+      session.enableAutoDeviceSwitch(isEnable);
+    }
   } catch (error) {
     let err = error as BusinessError;
     console.error(`The enableAutoDeviceSwitch call failed, error code: ${err.code}, error message: ${err.message}`);

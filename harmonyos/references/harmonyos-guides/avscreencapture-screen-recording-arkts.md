@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avscreencaptu
 title: 基于AVScreenCapture实现屏幕录制（ArkTS）
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 媒体开发实践 > 基于AVScreenCapture实现屏幕录制（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:13+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:c359df3e91b8b11bbbaa1f2cabf5437727693a764fd070802f0715a418e62a61
+scraped_at: 2026-11-12T09:52:08+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d57e9bc3432db7e790234f60e7734a21aaa667d09c99b7977673d3af02237fcf
 ---
 
 ## 概述
 
-[AVScreenCapture](media-kit-intro.md#avscreencapture)是系统提供的用于实现屏幕录制功能的核心模块，属于媒体的核心能力之一。本文主要针对ArkTS开发场景，详细讲解使用AVScreenCaptureRecorder模块实现录屏写文件的原理和开发流程；如需更底层的数据控制和更优的性能表现，请参考[《基于 AVScreenCapture 实现屏幕录制（C/C++）》](avscreencapture-screen-recording-c.md)。
+[AVScreenCapture](../doccenter-capabilities/media-kit-intro.md#avscreencapture)是系统提供的用于实现屏幕录制功能的核心模块，属于媒体的核心能力之一。本文主要针对ArkTS开发场景，详细讲解使用AVScreenCaptureRecorder模块实现录屏写文件的原理和开发流程；如需更底层的数据控制和更优的性能表现，请参考[基于AVScreenCapture实现屏幕录制（C/C++）](../doccenter-capabilities/avscreencapture-screen-recording-c.md)。
 
 | 实现方案 | 优点 | 缺点 | 适用场景 |
 | --- | --- | --- | --- |
@@ -24,19 +24,19 @@ content_hash: sha256:c359df3e91b8b11bbbaa1f2cabf5437727693a764fd070802f0715a418e
 
 ## 场景描述
 
-HarmonyOS 提供了用于实现录屏功能的ArkTS接口，能够支持屏幕录制及音频数据采集。然而，ArkTS侧的实现方案仅能通过文件形式将数据流转至其他模块进行播放或处理。
+HarmonyOS提供了用于实现录屏功能的ArkTS接口，能够支持屏幕录制及音频数据采集。然而，ArkTS侧的实现方案仅能通过文件形式将数据流转至其他模块进行播放或处理。
 
 本章将通过一个案例介绍如何在ArkTS侧实现录屏存文件。在该案例中，用户点击屏幕录制按钮即可启动屏幕录制，期间可以切换至后台录制桌面或其他应用页面。当用户点击停止按钮或屏幕左上角录屏胶囊中的停止按钮时，屏幕录制将停止。录屏内容将保存至应用沙箱文件中，点击结束录屏后出现的播放按钮，即可播放录制的视频文件。
 
 **案例展示图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/DcykZdNtRtmNnNPgJkcNoQ/zh-cn_image_0000002779691052.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/E5WWY1E_SfWrDCAuTMdlJg/zh-cn_image_0000002815399465.gif)
 
 ## 实现原理
 
 **调用流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/MueModN3RJOcBDBwS71ixg/zh-cn_image_0000002809010673.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/XHWYRimZRiSsKWUkP7HwVg/zh-cn_image_0000002786519890.png)
 
 当点击录制按钮时，会调用异步方法进行屏幕录制。关键过程如下：
 
@@ -75,7 +75,7 @@ EventLoop事件循环是ArkTS异步编程模型的核心（单线程+任务队�
        this.captureConfig.fd = this.file.fd;
      } catch (error) {
        let err = error as BusinessError;
-       hilog.error(0x0000, 'testTag', `openSync fail. code = ${err.code}, message = ${err.message}`);
+       hilog.error(0xFF00, CommonConstants.LOG_TAG, `openSync fail. code = ${err.code}, message = ${err.message}`);
      }
    }
    ```
@@ -91,7 +91,7 @@ EventLoop事件循环是ArkTS异步编程模型的核心（单线程+任务队�
        this.screenCapture = await media.createAVScreenCaptureRecorder();
      } catch (error) {
        let err = error as BusinessError;
-       hilog.error(0x0000, 'testTag', `createAVScreenCaptureRecorder fail. code = ${err.code}, message = ${err.message}`);
+       hilog.error(0xFF00, CommonConstants.LOG_TAG, `createAVScreenCaptureRecorder fail. code = ${err.code}, message = ${err.message}`);
      }
 
      if (this.screenCapture != undefined) {
@@ -101,18 +101,25 @@ EventLoop事件循环是ArkTS异步编程模型的核心（单线程+任务队�
        return;
      }
 
+     // Listen for state changes of the screenCapture.
      this.screenCapture?.on('stateChange', async (infoType: media.AVScreenCaptureStateCode) => {
        switch (infoType) {
          case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_STARTED:
            hilog.info(0xFF00, CommonConstants.LOG_TAG, 'Callback received after screen recording starts successfully.');
            break;
          case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_CANCELED:
-           this.screenCapture?.release();
+           this.screenCapture?.release().catch(() => {
+             hilog.error(0xFF00, CommonConstants.LOG_TAG, `screenCapture release fail.`);
+           });
            this.screenCapture = undefined;
            hilog.info(0xFF00, CommonConstants.LOG_TAG, 'The screen recording function is not allowed.');
+           AppStorage.setOrCreate('isRecordOne', false);
+           AppStorage.setOrCreate('fileNameOne', '');
            break;
          case media.AVScreenCaptureStateCode.SCREENCAPTURE_STATE_STOPPED_BY_USER:
-           this.screenCapture?.release();
+           this.screenCapture?.release().catch(() => {
+             hilog.error(0xFF00, CommonConstants.LOG_TAG, `screenCapture release fail.`);
+           });
            this.screenCapture = undefined;
            AppStorage.setOrCreate('isRecordOne', false);
            AppStorage.setOrCreate('fileNameOne', this.fileName);
@@ -149,13 +156,13 @@ EventLoop事件循环是ArkTS异步编程模型的核心（单线程+任务队�
        }
      })
 
-     this.screenCapture?.on('error', (err) => {
+     this.screenCapture?.on('error', () => {
        hilog.info(0xFF00, CommonConstants.LOG_TAG, 'Handle exception cases.');
      })
    ```
 3. 配置录制参数并初始化AVScreenCaptureRecorder对象。
 
-   示例中通过 getDefaultDisplaySync() 方法获取屏幕宽高。开发者也可以自定义屏幕宽高，但需注意，若设置不当，可能会导致录制的视频界面出现黑边。
+   示例中通过getDefaultDisplaySync()方法获取屏幕宽高。开发者也可以自定义屏幕宽高，但需注意，若设置不当，可能会导致录制的视频界面出现黑边。
 
    ```typescript
    let displayInfo = display.getDefaultDisplaySync();
@@ -202,12 +209,16 @@ EventLoop事件循环是ArkTS异步编程模型的核心（单线程+任务队�
      try {
        await this.screenCapture?.stopRecording();
 
+       // Call the release() method to destroy the instance and release resources.
        await this.screenCapture?.release();
 
-       fileIo.close((this.file as fileIo.File).fd);
+       // Close the file descriptor (fd).
+       fileIo.close((this.file as fileIo.File).fd).catch(() => {
+         hilog.error(0xFF00, CommonConstants.LOG_TAG, `fileIo close fail.`);
+       });
      } catch (error) {
        let err = error as BusinessError;
-       hilog.error(0x0000, 'testTag', `stop fail. code = ${err.code}, message = ${err.message}`);
+       hilog.error(0xFF00, CommonConstants.LOG_TAG, `stop fail. code = ${err.code}, message = ${err.message}`);
      }
    }
    ```

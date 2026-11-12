@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-h
 title: "@ohos.hiviewdfx.hiAppEvent (应用事件打点)"
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > ArkTS API > @ohos.hiviewdfx.hiAppEvent (应用事件打点)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:55+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a87b231ded88e8785193162ff2bdbd64531d420051d3633def4629a7db2122c2
+scraped_at: 2026-11-12T09:56:15+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:442ecf9cd525c86103ae458d5308ff015848845baff928fa425405fc7092d7e9
 ---
 
 本模块提供应用打点和事件订阅能力，包括事件存储、事件订阅、事件清理、打点配置等功能。HiAppEvent将应用运行过程中触发的事件信息统一归纳到[AppEventInfo](js-apis-hiviewdfx-hiappevent.md#appeventinfo)中，并将事件分为系统事件和应用事件两类。
@@ -1336,3 +1336,586 @@ type ParamType = number | string | boolean | Array<string>
 | USER\_ID | string | 是 | 用户自定义ID。 |
 | DISTRIBUTED\_SERVICE\_NAME | string | 是 | 分布式服务名称。 |
 | DISTRIBUTED\_SERVICE\_INSTANCE\_ID | string | 是 | 分布式服务实例ID。 |
+
+## ExternalLogManager
+
+external\_log日志管理者类，用于对当前应用的external\_log进行管理。
+
+external\_log由[addWatcher](js-apis-hiviewdfx-hiappevent.md#hiappeventaddwatcher)接口订阅到的系统事件信息获取，表示系统事件的故障日志文件路径。
+
+**起始版本**：26.0.1
+
+**系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
+### onCapacityReached
+
+onCapacityReached(container: ExternalLogContainer): void
+
+当应用沙箱内某一个external\_log目录容量达到阈值时回调此函数，用于管理给定的external\_log容器中包含的external\_log。
+
+external\_log目录当前规格可参考[规格](../harmonyos-guides/external-log.md#日志规格)，各目录的阈值可参考[阈值](../harmonyos-guides/external-log.md#约束与限制)。
+
+**起始版本**：26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| container | [ExternalLogContainer](js-apis-hiviewdfx-hiappevent.md#externallogcontainer) | 是 | external\_log容器类，包含当前应用所有的external\_log信息。 |
+
+**示例：**
+
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+// 定义ExternalLogManager实现
+let myLogManager: hiAppEvent.ExternalLogManager = {
+  onCapacityReached(container: hiAppEvent.ExternalLogContainer): void {
+    hilog.info(0x0000, 'testTag', `[MyLogManager] 容量达到阈值`);
+  }
+};
+```
+
+## ExternalLogContainer
+
+external\_log容器，包含当前应用所有的external\_log信息，支持获取应用内特定规格的external\_log。
+
+**起始版本**：26.0.1
+
+**系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
+### getAllLogs
+
+getAllLogs(): Set<ExternalLogWrapper>
+
+获取当前应用内所有external\_log的文件信息。
+
+**起始版本**：26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Set<ExternalLogWrapper>](js-apis-hiviewdfx-hiappevent.md#externallogwrapper) | external\_log日志信息包装类的集合。 |
+
+**示例：**
+
+```ts
+// 定义ExternalLogManager实现
+let myLogManager: hiAppEvent.ExternalLogManager = {
+  onCapacityReached(container: hiAppEvent.ExternalLogContainer): void {
+    // 获取所有日志信息详情
+    let allLogs: Set<hiAppEvent.ExternalLogWrapper> = container.getAllLogs();
+  }
+};
+```
+
+### getAllLogFiles
+
+getAllLogFiles(): Set<string>
+
+获取当前应用内所有external\_log的日志文件路径。
+
+**起始版本**：26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Set<string> | 当前应用内所有的external\_log日志文件路径字符串集合。 |
+
+**示例：**
+
+```ts
+// 定义ExternalLogManager实现
+let myLogManager: hiAppEvent.ExternalLogManager = {
+  onCapacityReached(container: hiAppEvent.ExternalLogContainer): void {
+    // 获取所有external_log日志文件路径
+    let allFiles: Set<string> = container.getAllLogFiles();
+  }
+};
+```
+
+### getLogFilesOfSysEvent
+
+getLogFilesOfSysEvent(event: string): Set<string>
+
+获取当前应用内指定事件类型的external\_log日志文件路径。
+
+**起始版本**：26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| event | string | 是 | 事件类型，如"APP\_CRASH"。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Set<string> | 当前应用内指定类型的external\_log日志文件路径字符串集合。 |
+
+**示例：**
+
+```ts
+// 定义ExternalLogManager实现
+let myLogManager: hiAppEvent.ExternalLogManager = {
+  onCapacityReached(container: hiAppEvent.ExternalLogContainer): void {
+    // 获取指定事件类型external_log日志文件路径
+    let crashFiles: Set<string> = container.getLogFilesOfSysEvent('APP_CRASH');
+  }
+};
+```
+
+### getLogFilesGeneratedAfter
+
+getLogFilesGeneratedAfter(timePoint: number): Set<string>
+
+获取当前应用内指定时间后生成的external\_log日志文件路径。
+
+**起始版本**：26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| timePoint | number | 是 | 精确到毫秒的时间戳。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Set<string> | 当前应用内指定时间后生成的external\_log日志文件路径字符串集合。 |
+
+**示例：**
+
+```ts
+// 定义ExternalLogManager实现
+let myLogManager: hiAppEvent.ExternalLogManager = {
+  onCapacityReached(container: hiAppEvent.ExternalLogContainer): void {
+    // 获取指定时间后生成的external_log日志文件路径
+    let timePoint = Date.now() - 60 * 60 * 1000; // 当前时间戳减1小时
+    let files: Set<string> = container.getLogFilesGeneratedAfter(timePoint);
+  }
+};
+```
+
+### getLogFilesGeneratedBefore
+
+getLogFilesGeneratedBefore(timePoint: number): Set<string>
+
+获取当前应用内指定时间前生成的external\_log日志文件路径。
+
+**起始版本**：26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| timePoint | number | 是 | 精确到毫秒的时间戳。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Set<string> | 当前应用内指定时间前生成的external\_log日志文件路径字符串集合。 |
+
+**示例：**
+
+```ts
+// 定义ExternalLogManager实现
+let myLogManager: hiAppEvent.ExternalLogManager = {
+  onCapacityReached(container: hiAppEvent.ExternalLogContainer): void {
+    // 获取指定时间前生成的external_log日志文件路径
+    let timePoint = Date.now() - 60 * 60 * 1000; // 当前时间戳减1小时
+    let files: Set<string> = container.getLogFilesGeneratedBefore(timePoint);
+  }
+};
+```
+
+### getLogFilesLargerThan
+
+getLogFilesLargerThan(sizeKb: number): Set<string>
+
+获取当前应用内大于指定大小的external\_log日志文件路径。
+
+**起始版本**：26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sizeKb | number | 是 | 文件大小，单位KB。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Set<string> | 当前应用内大于指定大小的external\_log日志文件路径字符串集合。 |
+
+**示例：**
+
+```ts
+// 定义ExternalLogManager实现
+let myLogManager: hiAppEvent.ExternalLogManager = {
+  onCapacityReached(container: hiAppEvent.ExternalLogContainer): void {
+    // 获取大于指定大小的external_log日志文件路径
+    let files: Set<string> = container.getLogFilesLargerThan(100);
+  }
+};
+```
+
+### getLogFilesSmallerThan
+
+getLogFilesSmallerThan(sizeKb: number): Set<string>
+
+获取当前应用内小于指定大小的external\_log日志文件路径。
+
+**起始版本**：26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| sizeKb | number | 是 | 文件大小，单位KB。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Set<string> | 当前应用内小于指定大小的external\_log日志文件路径字符串集合。 |
+
+**示例：**
+
+```ts
+// 定义ExternalLogManager实现
+let myLogManager: hiAppEvent.ExternalLogManager = {
+  onCapacityReached(container: hiAppEvent.ExternalLogContainer): void {
+    // 获取小于指定大小的external_log日志文件路径
+    let files: Set<string> = container.getLogFilesSmallerThan(100);
+  }
+};
+```
+
+### getLogNumber
+
+getLogNumber(): number
+
+获取当前应用内external\_log目录日志文件数量。
+
+**起始版本**：26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| number | 当前应用内external\_log目录日志文件数量。 |
+
+**示例：**
+
+```ts
+// 定义ExternalLogManager实现
+let myLogManager: hiAppEvent.ExternalLogManager = {
+  onCapacityReached(container: hiAppEvent.ExternalLogContainer): void {
+    // 获取external_log目录日志文件数量
+    let num: number = container.getLogNumber();
+  }
+};
+```
+
+### getFirstGeneratedLogFiles
+
+getFirstGeneratedLogFiles(num: number): Set<string>
+
+获取当前应用内给定数量最早生成的external\_log日志文件路径。
+
+**起始版本**：26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| num | number | 是 | 给定最早生成的文件数量。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Set<string> | 当前应用内给定数量最早生成的external\_log日志文件路径字符串集合。 |
+
+**示例：**
+
+```ts
+// 定义ExternalLogManager实现
+let myLogManager: hiAppEvent.ExternalLogManager = {
+  onCapacityReached(container: hiAppEvent.ExternalLogContainer): void {
+    // 获取最早生成的6个external_log日志文件路径
+    let files: Set<string> = container.getFirstGeneratedLogFiles(6);
+  }
+};
+```
+
+## ExternalLogWrapper
+
+external\_log包装类，记录当前应用内external\_log日志文件的路径、生成时间、事件类型、文件大小信息。
+
+**起始版本**：26.0.1
+
+**系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
+### getFilePath
+
+getFilePath(): string
+
+获取external\_log日志文件路径。
+
+**起始版本**：26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| string | 当前应用内external\_log日志文件路径。 |
+
+**示例：**
+
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+// 定义 ExternalLogManager 实现
+let myLogManager: hiAppEvent.ExternalLogManager = {
+  onCapacityReached(container: hiAppEvent.ExternalLogContainer): void {
+    // 获取所有日志信息详情
+    let allLogs: Set<hiAppEvent.ExternalLogWrapper> = container.getAllLogs();
+    for (const log of Array.from(allLogs)) {
+      hilog.info(0x0000, 'hiAppEvent', `[MyLogManager] 文件: ${log.getFilePath()}`);
+    }
+  }
+};
+```
+
+### getGenerationTime
+
+getGenerationTime(): number
+
+获取当前应用内external\_log日志文件生成时间。
+
+**起始版本**：26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| number | external\_log日志文件生成时间。 |
+
+**示例：**
+
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+// 定义 ExternalLogManager 实现
+let myLogManager: hiAppEvent.ExternalLogManager = {
+  onCapacityReached(container: hiAppEvent.ExternalLogContainer): void {
+    // 获取所有日志信息详情
+    let allLogs: Set<hiAppEvent.ExternalLogWrapper> = container.getAllLogs();
+    for (const log of Array.from(allLogs)) {
+      hilog.info(0x0000, 'hiAppEvent', `[MyLogManager] 时间: ${log.getGenerationTime()}`);
+    }
+  }
+};
+```
+
+### getSizeInKb
+
+getSizeInKb(): number
+
+获取当前应用内external\_log日志文件大小，单位KB。
+
+**起始版本**：26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| number | external\_log日志文件大小，单位KB。 |
+
+**示例：**
+
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+// 定义 ExternalLogManager 实现
+let myLogManager: hiAppEvent.ExternalLogManager = {
+  onCapacityReached(container: hiAppEvent.ExternalLogContainer): void {
+    // 获取所有日志信息详情
+    let allLogs: Set<hiAppEvent.ExternalLogWrapper> = container.getAllLogs();
+    for (const log of Array.from(allLogs)) {
+      hilog.info(0x0000, 'hiAppEvent', `[MyLogManager] 大小: ${log.getSizeInKb()}KB,`);
+    }
+  }
+};
+```
+
+### getSysEvent
+
+getSysEvent(): string
+
+获取当前应用内external\_log日志文件事件类型。
+
+**起始版本**：26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| string | external\_log日志文件事件类型。 |
+
+**示例：**
+
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+// 定义 ExternalLogManager 实现
+let myLogManager: hiAppEvent.ExternalLogManager = {
+  onCapacityReached(container: hiAppEvent.ExternalLogContainer): void {
+    // 获取所有日志信息详情
+    let allLogs: Set<hiAppEvent.ExternalLogWrapper> = container.getAllLogs();
+    for (const log of Array.from(allLogs)) {
+      hilog.info(0x0000, 'hiAppEvent', `[MyLogManager] 事件: ${log.getSysEvent()}`);
+    }
+  }
+};
+```
+
+## hiAppEvent.registerExternalLogManager
+
+registerExternalLogManager(logMngr: ExternalLogManager): void
+
+注册external\_log日志文件管理者，只允许注册一次，已注册成功重复注册返回失败。
+
+注册不会持久化，应用启动不会继承上一次的注册状态，需要重新注册。
+
+**起始版本**：26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| logMngr | [ExternalLogManager](js-apis-hiviewdfx-hiappevent.md#externallogmanager) | 是 | external\_log日志管理者类。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[应用事件打点错误码](errorcode-hiappevent.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 11106001 | State error. Possible causes: 1. Log manager already registered. |
+
+**示例：**
+
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+// 定义ExternalLogManager实现
+let myLogManager: hiAppEvent.ExternalLogManager = {
+  onCapacityReached(container: hiAppEvent.ExternalLogContainer): void {
+  }
+};
+
+// 注册管理者，当external_log目录达到阈值时，回调onCapacityReached
+try {
+  hiAppEvent.registerExternalLogManager(myLogManager);
+  hilog.info(0x0000, 'hiAppEvent', '[App] ExternalLogManager 注册成功');
+} catch (e) {
+  hilog.info(0x0000, 'hiAppEvent', `[App] 注册失败: ${e.code}, ${e.message}`);
+}
+```
+
+## hiAppEvent.isExternalLogManagerRegistered
+
+isExternalLogManagerRegistered(): boolean
+
+查询external\_log日志文件管理者是否注册。
+
+**起始版本**：26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.HiviewDFX.HiAppEvent
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 已注册返回true，未注册返回false。 |
+
+**示例：**
+
+```ts
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+// 检查是否已注册
+let registered: boolean = hiAppEvent.isExternalLogManagerRegistered();
+hilog.info(0x0000, 'hiAppEvent', `[App] 已注册: ${registered}`);
+```

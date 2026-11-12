@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-c-ge
 title: 识别目标形状（C/C++）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 物体语义 > 识别目标形状（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:02+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:a92f9b29a205dd01f289b8ab985e320ac81f4ca623274bfc418bd68100253d56
+scraped_at: 2026-11-12T09:52:10+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:39db01d95895df3eec623035a12bb3d6ca000a4638a1f5c3169aaf07132a0ad1
 ---
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/harmonyos_samples/arengine_-sample-code_-clientdemo_cpp)。
@@ -28,7 +28,6 @@ CHECK(HMS_AREngine_ARSession_Create(nullptr, nullptr, &mArSession));
 AREngine_ARConfig *arConfig = nullptr;
 CHECK(HMS_AREngine_ARConfig_Create(mArSession, &arConfig));
 // ...
-CHECK(HMS_AREngine_ARSession_Configure(mArSession, arConfig));
 ```
 
 ## 创建可跟踪对象列表
@@ -69,7 +68,7 @@ CHECK(HMS_AREngine_ARTrackableList_GetSize(arSession, planeList, &planeListSize)
 
 1. 当环境中存在一个或多个可跟踪对象时，依次遍历planeList中所有可跟踪对象进行物体语义识别。
 
-   ```cpp
+   ```
    for (int i = 0; i < planeListSize; ++i) {
        // ...
    }

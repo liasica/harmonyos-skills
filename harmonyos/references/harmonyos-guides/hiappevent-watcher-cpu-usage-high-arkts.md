@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅CPU高负载事件（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > CPU高负载事件 > 订阅CPU高负载事件（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:40+08:00
-doc_updated_at: 2026-05-14
-content_hash: sha256:1820b612af1e6f6d33f0b4650876d214b5d60c100cba034996182c0607445d96
+scraped_at: 2026-11-12T09:51:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:165b3a2150e5bf1e11a9ff516d2cf2743fa2ed0c7b591fe12f85b551c1cad0cc
 ---
 
 ## 接口说明
@@ -23,44 +23,45 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
 
 1. 新建一个ArkTS应用工程，编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets”文件，导入依赖模块，示例代码如下：
 
-   ```ts
+   ```typescript
    import { hiAppEvent, hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets”文件，可以在例如onCreate函数中添加系统事件的订阅，示例代码如下：
 
-   ```ts
+   ```typescript
    hiAppEvent.addWatcher({
-      // 开发者可以自定义观察者名称，系统会使用名称来标识不同的观察者
-      name: "watcher",
-      // 开发者可以订阅感兴趣的系统事件，此处是订阅了崩溃事件
-      appEventFilters: [
-        {
-          domain: hiAppEvent.domain.OS,
-          names: [hiAppEvent.event.CPU_USAGE_HIGH]
-        }
-      ],
-      // 开发者可以自行实现订阅实时回调函数，以便对订阅获取到的事件数据进行自定义处理
-      onReceive: (domain: string, appEventGroups: Array<hiAppEvent.AppEventGroup>) => {
-        hilog.info(0x0000, 'testTag', `HiAppEvent onReceive: domain=${domain}`);
-        for (const eventGroup of appEventGroups) {
-          // 开发者可以根据事件集合中的事件名称区分不同的系统事件
-          hilog.info(0x0000, 'testTag', `HiAppEvent eventName=${eventGroup.name}`);
-          for (const eventInfo of eventGroup.appEventInfos) {
-            // 开发者可以对事件集合中的事件数据进行自定义处理，此处是将事件数据打印在日志中
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo=${JSON.stringify(eventInfo)}`);
-          }
-        }
-      }
-    });
+     // 开发者可以自定义观察者名称，系统会使用名称来标识不同的观察者
+     name: "watcher_cpu_usage_high",
+     // 开发者可以订阅感兴趣的系统事件，此处是订阅了崩溃事件
+     appEventFilters: [
+       {
+         domain: hiAppEvent.domain.OS,
+         names: [hiAppEvent.event.CPU_USAGE_HIGH]
+       }
+     ],
+     // 开发者可以自行实现订阅实时回调函数，以便对订阅获取到的事件数据进行自定义处理
+     onReceive: (domain: string, appEventGroups: Array<hiAppEvent.AppEventGroup>) => {
+       hilog.info(0x0000, 'testTag', `HiAppEvent onReceive: domain=${domain}`);
+       for (const eventGroup of appEventGroups) {
+         // 开发者可以根据事件集合中的事件名称区分不同的系统事件
+         hilog.info(0x0000, 'testTag', `HiAppEvent eventName=${eventGroup.name}`);
+         for (const eventInfo of eventGroup.appEventInfos) {
+           // 开发者可以对事件集合中的事件数据进行自定义处理，此处是将事件数据打印在日志中
+           hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo=${JSON.stringify(eventInfo)}`);
+         }
+       }
+     }
+   });
    ```
 3. （可选）以下示例用于模拟自定义CPU高负载事件的配置策略
 
    编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets”文件，自定义CPU高负载事件的配置策略，用法详见[CpuUsageHighPolicy](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md#cpuusagehighpolicy22)章节，示例代码如下：
 
-   ```ts
+   ```typescript
    import { BusinessError } from '@kit.BasicServicesKit';
-   import { hilog } from '@kit.PerformanceAnalysisKit';
+   ```
 
+   ```typescript
    let policy: hiAppEvent.EventPolicy = {
      "cpuUsageHighPolicy":{
        "foregroundLoadThreshold" : 10,  // 设置应用前台CPU负载异常阈值为10%
@@ -82,11 +83,11 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
    抓取采样栈有内存开销，影响功耗性能，只建议开发者在本地调试时使用自定义参数功能。
 
    此外，Debug版本应用，采样栈每日采集次数阈值范围为：[-1, 100]； Release版本应用，采样栈每日采集次数阈值范围为阈值范围：[0, 20]，详见[CpuUsageHighPolicy](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md#cpuusagehighpolicy22)。
-4. 工程中添加“entry > src > main > ets > workers> worker.ets”文件，构造一个死循环，接收到主线程的消息后触发CPU高负载事件，完整示例代码如下：
+4. 工程中添加“entry > src > main > ets > works> worker.ets”文件，构造一个死循环，接收到主线程的消息后触发CPU高负载事件，完整示例代码如下：
 
-   ```ts
+   ```typescript
    import { worker } from '@kit.ArkTS';
-
+      
    let workerPort = worker.workerPort;
    workerPort.onmessage = (message) => {
      eatCpu();
@@ -100,11 +101,11 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
    ```
 5. 工程中添加“entry > src > main > ets > tester> CpuTester.ets”文件，在CpuTester 类中的start方法中开启多个线程的死循环，以触发多线程的CPU高负载事件，完整示例代码如下：
 
-   ```ts
+   ```typescript
    import { worker } from '@kit.ArkTS';
-
+      
    export default class CpuTester {
-     workerInstance: worker.ThreadWorker = new worker.ThreadWorker('entry/ets/workers/worker.ets');
+     private workerInstance: worker.ThreadWorker = new worker.ThreadWorker('entry/ets/workers/worker.ets');
      start(threadNum: number) {
        for (let index = 0; index < threadNum; index++) {
          this.workerInstance = new worker.ThreadWorker('entry/ets/workers/worker.ets');
@@ -113,43 +114,28 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
      }
    }
    ```
-6. 编辑工程中的“entry > src > main > ets > pages > Index.ets”文件，添加“CPU加压”按钮并在其onClick函数构造多线程执行死循环，以触发CPU高负载事件，完整示例代码如下：
+6. 编辑工程中的“entry > src > main > ets > pages > Index.ets”文件，添加“CPU加压”按钮并在其onClick函数构造多线程执行死循环，以触发CPU高负载事件，示例代码如下：
 
-   ```ts
+   ```typescript
    import CpuTester from '../tester/CpuTester';
+   ```
 
-   @Entry
-   @Component
-   struct Index {
-     @State message: string = 'Hello World';
+   ```typescript
+   @State enable: boolean = true;
+   @State threadNum: number = 5;
+   cpuTester: CpuTester = new CpuTester();
+   ```
 
-     @State enable: boolean = true;
-
-     @State threadNum: number = 5;
-
-     cpuTester: CpuTester = new CpuTester();
-
-   build() {
-     Row() {
-       Column() {
-         Text(this.message)
-           .fontSize(50)
-           .fontWeight(FontWeight.Bold)
-         Button('CPU加压')
-           .fontSize(18)
-           .margin(12)
-           .fontWeight(FontWeight.Bold)
-           .enabled(this.enable)
-           .onClick(() => {
-             this.cpuTester.start(this.threadNum);
-             this.enable = false;
-             })
-         }
-         .width('100%')
-       }
-       .height('100%')
-     }
-   }
+   ```typescript
+   Button('CPU加压')
+    .fontSize(18)
+    .margin(12)
+    .fontWeight(FontWeight.Bold)
+    .enabled(this.enable)
+    .onClick(() => {
+      this.cpuTester.start(this.threadNum);
+      this.enable = false;
+      })
    ```
 7. 点击DevEco Studio界面中的运行按钮，运行应用工程，然后在应用界面中点击“CPU加压”按钮，触发CPU高负载事件。应用保持在前台且屏幕处于亮屏状态，五到十分钟之后可以在Log窗口看到对系统事件数据的处理日志：
 

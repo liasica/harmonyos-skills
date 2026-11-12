@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-scene
 title: sceneMap（场景化控件）
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > sceneMap（场景化控件）
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:26+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6fe3528634cbe334c148510de4903d79c4fdf5e96ebf63d6fa3b02d89ed88792
+scraped_at: 2026-11-12T09:57:27+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:9ea93e68de4bbbc45a3778d252e7dd2d8e5dc6005263626661d6ff47933ac77a
 ---
 
 本模块提供地图场景化控件功能，包括地点详情展示控件、地点选取控件和区划选择控件。
@@ -34,7 +34,7 @@ queryLocation(context: common.UIAbilityContext, options: LocationQueryOptions): 
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 该接口在phone、tablet和PC/2in1设备上可以正常使用，在其他设备中返回801错误码。
+**设备行为差异：** 在4.1.0(11)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。在26.0.1及之后版本该接口在phone、tablet、PC/2in1和Car均可正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -96,7 +96,7 @@ chooseLocation(context: common.UIAbilityContext, options: LocationChoosingOption
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 该接口在phone、tablet和PC/2in1设备上可以正常使用，在其他设备中返回801错误码。
+**设备行为差异：** 在4.1.0(11)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。在26.0.1及之后版本该接口在phone、tablet、PC/2in1和Car均可正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -162,7 +162,7 @@ selectDistrict(context: common.Context, options: DistrictSelectOptions): Promise
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 该接口在phone、tablet和PC/2in1设备上可以正常使用，在其他设备中返回801错误码。
+**设备行为差异：** 在5.0.0(12)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。在26.0.1及之后版本该接口在phone、tablet、PC/2in1和Car均可正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 
@@ -216,7 +216,7 @@ sceneMap.selectDistrict(this.getUIContext().getHostContext(), districtSelectOpti
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 该接口在phone、tablet和PC/2in1设备上可以正常使用，在其他设备中返回801错误码。
+**设备行为差异：** 在4.1.0(11)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。在26.0.1及之后版本该接口在phone、tablet、PC/2in1和Car均可正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -253,7 +253,7 @@ let queryLocationOptions: sceneMap.LocationQueryOptions = { siteId: "92220715406
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 该接口在phone、tablet和PC/2in1设备上可以正常使用，在其他设备中返回801错误码。
+**设备行为差异：** 在4.1.0(11)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。在26.0.1及之后版本该接口在phone、tablet、PC/2in1和Car均可正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -261,7 +261,7 @@ let queryLocationOptions: sceneMap.LocationQueryOptions = { siteId: "92220715406
 | --- | --- | --- | --- | --- |
 | location | [mapCommon.LatLng](map-common.md#latlng) | 否 | 是 | 地图中心点坐标。  如果参数未传，使用设备当前位置作为中心点；如果未获取到设备当前位置，默认以故宫博物院为中心点。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | language | string | 否 | 是 | 语言，请参见[地图Picker支持语言](../harmonyos-guides/map-language.md#地图picker支持语言)，如果未设置，默认使用系统语言。异常值按默认值处理。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
-| poiTypes | Array<string> | 否 | 是 | 指定需要展示的POI类别。取值范围参见[HwLocationType](map-poi.md#hwlocationtype)。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| poiTypes | Array<string> | 否 | 是 | 指定需要展示的POI类别。默认值：[]，取值范围参见[HwLocationType](map-poi.md#hwlocationtype)。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | searchEnabled | boolean | 否 | 是 | 是否展示搜索控件，默认值为false，异常值按默认值处理。  - true：展示  - false：不展示  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | showNearbyPoi | boolean | 否 | 是 | 是否展示附近POI，默认值为false，异常值按默认值处理。  - true：展示  - false：不展示  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | snapshotEnabled | boolean | 否 | 是 | 是否返回映射快照，默认值为false。  - true：返回  - false：不返回  **起始版本：** 5.0.0(12)  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
@@ -285,7 +285,7 @@ let locationChoosingOptions: sceneMap.LocationChoosingOptions = {
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 该接口在phone、tablet和PC/2in1设备上可以正常使用，在其他设备中返回801错误码。
+**设备行为差异：** 在4.1.0(11)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。在26.0.1及之后版本该接口在phone、tablet、PC/2in1和Car均可正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 4.1.0(11)
 
@@ -307,13 +307,13 @@ let locationChoosingOptions: sceneMap.LocationChoosingOptions = {
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 该接口在phone、tablet和PC/2in1设备上可以正常使用，在其他设备中返回801错误码。
+**设备行为差异：** 在5.0.0(12)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。在26.0.1及之后版本该接口在phone、tablet、PC/2in1和Car均可正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| countryCode | string | 否 | 是 | 查询指定国家或地区的行政区划，国家或地区码必须符合ISO 3166-1 alpha-2规则。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| countryCode | string | 否 | 是 | 查询指定国家或地区的行政区划，默认值：''，国家或地区码必须符合ISO 3166-1 alpha-2规则。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 | language | string | 否 | 是 | 设置页面语言，请参见[地图Picker支持语言](../harmonyos-guides/map-language.md#地图picker支持语言)，如果未设置，默认使用系统语言。异常值按默认值处理。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 | address | string | 否 | 是 | 指定地址查询。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 | themeColor | [CustomColors](js-apis-arkui-theme.md#customcolors) | 否 | 是 | 自定义主题颜色对象，默认为brand（品牌色）。  **起始版本：** 5.0.3(15)  **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。 |
@@ -343,7 +343,7 @@ let districtSelectOptions: sceneMap.DistrictSelectOptions = {
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 该接口在phone、tablet和PC/2in1设备上可以正常使用，在其他设备中返回801错误码。
+**设备行为差异：** 在5.0.0(12)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。在26.0.1及之后版本该接口在phone、tablet、PC/2in1和Car均可正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 
@@ -362,7 +362,7 @@ let districtSelectOptions: sceneMap.DistrictSelectOptions = {
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 该接口在phone、tablet和PC/2in1设备上可以正常使用，在其他设备中返回801错误码。
+**设备行为差异：** 在5.0.0(12)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。在26.0.1及之后版本该接口在phone、tablet、PC/2in1和Car均可正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 

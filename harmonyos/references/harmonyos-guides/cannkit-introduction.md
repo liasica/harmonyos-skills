@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-intro
 title: CANN Kit简介
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > CANN Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:04+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:0f69fb95e88fb54b7853e9768b149deac7979785ffc7f821c0df651114bcf0d3
+scraped_at: 2026-11-12T09:52:40+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ca453a1a7433cf9edf407516fa50ecf8aef2018490fd683439bf84fdf8948da2
 ---
 
 CANN（Compute Architecture for Neural Networks）是华为面向AI推出的端云一致的异构计算架构。在HarmonyOS设备上，CANN Kit（CANN异构计算框架服务）面向Kirin芯片平台为各种人工智能模型和算法提供统一的接入和运行环境。开发者的应用程序使用CANN Kit的API和开发者数据，在设备端实现智能推理以及模型优化等操作，充分发挥设备的本地智能处理能力。
@@ -29,13 +29,13 @@ CANN Kit是HarmonyOS智能生态的重要基石，为众多领域的智能应用
 
 ### 模型转换
 
-* 离线模型转换：CANN Kit通过OMG工具可以把神经网络各种算子，比如卷积、池化、激活、全连接等离线编译成硬件专用的AI指令序列，同时将数据和权重重新排布，指令与数据融合在一起生成离线模型。
+* 离线模型转换：CANN Kit通过CANN包中的ATC（Ascend Tensor Compiler，昇腾张量编译器）工具可以把神经网络各种算子，比如卷积、池化、激活、全连接等离线编译成硬件专用的AI指令序列，同时将数据和权重重新排布，指令与数据融合在一起生成离线模型。
 * AIPP（AI Pre-Process）：AI预处理，支持输入数据硬件预处理，包括图像裁剪、通道交换、色域转换、图片缩放、数据类型转换、旋转和图片补边。由于AIPP硬件专用，可以获得更好的推理性能收益。通过模型转化配置文件生成动静态AIPP模型，及完成AIPP功能参数设置。
-* 可变data\_type：用于模型输入输出数据类型多样性的场景，无需修改训练好的模型，在使用OMG工具进行[模型转换](cannkit-overall-parameter.md)时，通过指定输入、输出数据类型使得同一个模型适用于不同输入输出的场景。
+* 可变data\_type：用于模型输入输出数据类型多样性的场景，无需修改训练好的模型，在使用ATC工具进行[模型转换](cannkit-overall-parameter.md)时，通过指定输入、输出数据类型使得同一个模型适用于不同输入输出的场景。
 
 ### 端侧部署
 
-* 模型推理：主要包含模型编译和推理，是其它端侧部署的基础场景。
+* 模型推理：主要包含模型编译和推理，是其他端侧部署的基础场景。
 * AIPP部署：端侧AIPP部署主要为动态AIPP功能提供支持，即同一动态AIPP模型可以支持不同输入且使能不同AIPP功能的推理场景。
 * 异构：CANN Kit能够自动识别运行环境上的计算能力，对神经网络进行自适应的子图拆分和设备协同调度能力。能够支持NPU、CPU的计算加速，在没有NPU的情况下，也能通过CPU提供更广泛的硬件适应能力。
 * 内存零拷贝：将存放数据的ION内存封装为输入输出张量，直接进行推理，不需要进行输入张量和输出张量的数据拷贝，以便节省内存以及推理时间。
@@ -71,9 +71,11 @@ AscendC 是CANN Kit针对算子开发场景推出的编程语言，支持C和C++
 
 ## 约束与限制
 
-本Kit仅适用于带有Kirin NPU的Phone、Tablet、PC/2in1、TV设备。
+本Kit仅适用于带有Kirin NPU的Phone、Tablet、PC/2in1、TV、Car设备。
 
-从5.1.1(19)版本开始，新增支持TV设备。
+API版本5.1.1(19)开始，新增支持TV设备。
+
+API版本26.0.1开始，新增支持Car设备。
 
 ## 模拟器支持情况
 
@@ -91,4 +93,4 @@ Neural Network Runtime Kit可支持系统内置的MindSpore Lite推理框架（M
 
 MindSpore Lite Kit对接NNRt可无需构图，两者共享同一份模型图格式（MindIR），因此使用MindSpore Lite在NNRt上加载模型将快于其他AI推理框架。此外，MindSpore Lite也支持通用硬件CPU/GPU与NNRt AI加速硬件之间的模型异构推理功能。
 
-CANN Kit作为麒麟平台的后端接入Neural Network Runtime Kit，支撑Neural Network Runtime Kit于麒麟平台的AI计算能力。CANN Kit构建在底层的硬件驱动和优化的计算库之上，与云侧昇腾芯片统一支持AscendC自定义算子编程语言和相关工具链，是HarmonyOS智能生态的重要基石，为众多领域的智能应用提供核心支撑。
+CANN Kit作为麒麟平台的后端接入Neural Network Runtime Kit，支撑Neural Network Runtime Kit于麒麟平台的AI计算能力。

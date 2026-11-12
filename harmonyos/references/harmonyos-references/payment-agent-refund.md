@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-a
 title: 申请退款
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 平台类商户/服务商 > 基础支付 > 申请退款
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:27+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:67c9a9578d189090c5537d232c5de535b389fea97637491e924699e0d49962ee
+scraped_at: 2026-11-12T09:57:34+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:fd1121e85424850526bc74fda2fac455ce0c5be3d20ce0d564049384da5c2e71
 ---
 
 ## 功能介绍
@@ -102,7 +102,7 @@ Accept: application/json
 | sysRefundOrderNo | 是 | String | 华为支付退款订单号。 |
 | sysTransOrderNo | 是 | String | 华为支付系统订单号。 |
 | mercOrderNo | 是 | String | 商户订单号，由商户自己生成，商户需保证订单信息唯一性。最小长度为1，最大长度46。 |
-| refundAmount | 是 | Long | 退款总金额。订单需要退款的金额，该金额不能大于订单金额，单位：分。  **说明：** 如果正向交易使用了营销，该退款金额包含营销金额，华为支付会按业务规则分配营销和买家自有资金分别退多少，默认按比例退款。如不填则默认payerRefundAmount。 |
+| refundAmount | 是 | Long | 退款总金额。订单需要退款的金额，该金额不能大于订单金额，单位：分。  **说明：** 如果正向交易使用了营销，该退款金额包含营销金额，华为支付会按业务规则分配营销和用户自有资金分别退多少，默认按比例退款。 |
 | payerRefundAmount | 否 | Long | 退款给用户的金额，单位：分。 |
 
 ## 响应示例

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-game
 title: game_pad.h
 breadcrumb: API参考 > 应用服务 > Game Controller Kit（游戏控制器服务） > C API > 头文件 > game_pad.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:53+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:37348c77337feb109630cbfd0a62918ee36ec46f0d953fc5bdc5bf60242ae8f4
+scraped_at: 2026-11-12T09:57:17+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:fcbe3e4284377dade5bcdcc31308b1e194085bbe37e0f4336bd1cb13a4e3dba7
 ---
 
 ## 概述
@@ -54,6 +54,8 @@ content_hash: sha256:37348c77337feb109630cbfd0a62918ee36ec46f0d953fc5bdc5bf60242
 | [GameController\_ErrorCode OH\_GamePad\_ButtonY\_UnregisterButtonInputMonitor(void)](capi-game-pad-h.md#oh_gamepad_buttony_unregisterbuttoninputmonitor) | 取消注册Y按键事件的监听回调。 |
 | [GameController\_ErrorCode OH\_GamePad\_ButtonC\_RegisterButtonInputMonitor(GamePad\_ButtonInputMonitorCallback inputMonitorCallback)](capi-game-pad-h.md#oh_gamepad_buttonc_registerbuttoninputmonitor) | 注册C按键事件的监听回调。 |
 | [GameController\_ErrorCode OH\_GamePad\_ButtonC\_UnregisterButtonInputMonitor(void)](capi-game-pad-h.md#oh_gamepad_buttonc_unregisterbuttoninputmonitor) | 取消注册C按键事件的监听回调。 |
+| [GameController\_ErrorCode OH\_GamePad\_ButtonNonstandard\_RegisterButtonInputMonitor(GamePad\_ButtonInputMonitorCallback inputMonitorCallback)](capi-game-pad-h.md#oh_gamepad_buttonnonstandard_registerbuttoninputmonitor) | 注册非标准按键事件的监听回调。 |
+| [GameController\_ErrorCode OH\_GamePad\_ButtonNonstandard\_UnregisterButtonInputMonitor(void)](capi-game-pad-h.md#oh_gamepad_buttonnonstandard_unregisterbuttoninputmonitor) | 取消注册非标准按键事件的监听回调。 |
 | [GameController\_ErrorCode OH\_GamePad\_Dpad\_LeftButton\_RegisterButtonInputMonitor(GamePad\_ButtonInputMonitorCallback inputMonitorCallback)](capi-game-pad-h.md#oh_gamepad_dpad_leftbutton_registerbuttoninputmonitor) | 注册方向按键的向左按键事件的监听回调。 |
 | [GameController\_ErrorCode OH\_GamePad\_Dpad\_LeftButton\_UnregisterButtonInputMonitor(void)](capi-game-pad-h.md#oh_gamepad_dpad_leftbutton_unregisterbuttoninputmonitor) | 取消注册方向按键的向左按键事件的监听回调。 |
 | [GameController\_ErrorCode OH\_GamePad\_Dpad\_RightButton\_RegisterButtonInputMonitor(GamePad\_ButtonInputMonitorCallback inputMonitorCallback)](capi-game-pad-h.md#oh_gamepad_dpad_rightbutton_registerbuttoninputmonitor) | 注册方向按键的向右按键事件的监听回调。 |
@@ -666,6 +668,52 @@ GameController_ErrorCode OH_GamePad_ButtonC_UnregisterButtonInputMonitor(void)
 **系统能力：** SystemCapability.Game.GameController
 
 **起始版本：** 21
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [GameController\_ErrorCode](capi-game-controller-type-h.md#gamecontroller_errorcode) | 如果执行成功，返回[GAME\_CONTROLLER\_SUCCESS](capi-game-controller-type-h.md#gamecontroller_errorcode)。 |
+
+### OH\_GamePad\_ButtonNonstandard\_RegisterButtonInputMonitor()
+
+```c
+GameController_ErrorCode OH_GamePad_ButtonNonstandard_RegisterButtonInputMonitor(GamePad_ButtonInputMonitorCallback inputMonitorCallback)
+```
+
+**描述**
+
+注册非标准按键事件的监听回调。
+
+**系统能力：** SystemCapability.Game.GameController
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [GamePad\_ButtonInputMonitorCallback](capi-game-pad-event-h.md#gamepad_buttoninputmonitorcallback) inputMonitorCallback | 回调函数[GamePad\_ButtonInputMonitorCallback](capi-game-pad-event-h.md#gamepad_buttoninputmonitorcallback)，不能为空。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [GameController\_ErrorCode](capi-game-controller-type-h.md#gamecontroller_errorcode) | * 如果执行成功，返回[GAME\_CONTROLLER\_SUCCESS](capi-game-controller-type-h.md#gamecontroller_errorcode)。 * 如果参数inputMonitorCallback为null，返回[GAME\_CONTROLLER\_PARAM\_ERROR](capi-game-controller-type-h.md#gamecontroller_errorcode)。 |
+
+### OH\_GamePad\_ButtonNonstandard\_UnregisterButtonInputMonitor()
+
+```c
+GameController_ErrorCode OH_GamePad_ButtonNonstandard_UnregisterButtonInputMonitor(void)
+```
+
+**描述**
+
+取消注册非标准按键事件的监听回调。
+
+**系统能力：** SystemCapability.Game.GameController
+
+**起始版本：** 26.0.1
 
 **返回：**
 

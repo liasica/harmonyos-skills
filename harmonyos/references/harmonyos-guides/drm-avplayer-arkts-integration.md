@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/drm-avplayer-
 title: 基于AVPlayer播放DRM节目(ArkTS)
 breadcrumb: 指南 > 媒体 > DRM Kit（数字版权保护服务） > 基于AVPlayer播放DRM节目(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:11+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:52:05+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:d2e3cfb0b65cccdf9d5c14b54ce0ebfcc07da9410b9c608483dbaef2d298a14a
 ---
 

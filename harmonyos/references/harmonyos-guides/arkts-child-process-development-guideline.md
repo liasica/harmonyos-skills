@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-child-p
 title: 子进程开发指导（ArkTS）
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 进程模型 > 扩展进程开发指导 > 子进程开发指导（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:51+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:bdfccda51f02c8b70a3d59499663529d64e47b7411e96cf5e0af1c0b88251a59
+scraped_at: 2026-11-12T09:50:57+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:2e926dff9b92d3e95f8412b7515f6c10bb118db6b3658b6bce175200e9d81644
 ---
 
 ## 概述
@@ -68,6 +68,7 @@ content_hash: sha256:bdfccda51f02c8b70a3d59499663529d64e47b7411e96cf5e0af1c0b882
 
    ```typescript
    import { childProcessManager } from '@kit.AbilityKit';
+   // ...
    import { BusinessError } from '@kit.BasicServicesKit';
    import DemoProcessNoArg from '../process/DemoProcessNoArg';
    // ...
@@ -112,6 +113,7 @@ content_hash: sha256:bdfccda51f02c8b70a3d59499663529d64e47b7411e96cf5e0af1c0b882
 
    ```typescript
    import { childProcessManager } from '@kit.AbilityKit';
+   // ...
    import { BusinessError } from '@kit.BasicServicesKit';
    import DemoProcessNoArg from '../process/DemoProcessNoArg';
    // ...
@@ -184,11 +186,11 @@ content_hash: sha256:bdfccda51f02c8b70a3d59499663529d64e47b7411e96cf5e0af1c0b882
 
    ```typescript
    import { childProcessManager } from '@kit.AbilityKit';
+   import { common, ChildProcessArgs, ChildProcessOptions } from '@kit.AbilityKit';
    import { BusinessError } from '@kit.BasicServicesKit';
    // ...
    import DemoProcessArg from  '../process/DemoProcessArg';
    import { fileIo } from '@kit.CoreFileKit';
-   import { common, ChildProcessArgs, ChildProcessOptions } from '@kit.AbilityKit';
    @Entry
    @Component
    struct Index {
@@ -219,7 +221,7 @@ content_hash: sha256:bdfccda51f02c8b70a3d59499663529d64e47b7411e96cf5e0af1c0b882
                  let options: ChildProcessOptions = {
                    isolationMode: false
                  };
-                 childProcessManager.startArkChildProcess("module1/ets/process/DemoProcess.ets", args, options)
+                 childProcessManager.startArkChildProcess("module1/ets/process/DemoProcessArg.ets", args, options)
                    .then((pid) => {
                      console.info(`startArkChildProcess success, pid: ${pid}`);
                    })

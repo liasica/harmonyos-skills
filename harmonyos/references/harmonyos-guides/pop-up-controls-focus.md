@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pop-up-contro
 title: 弹窗类控件走焦
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 弹窗类控件走焦
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:44+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:51:00+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:9c835e0738289b8a54cffd82772eab39469a1794cdc077ca284f817bfabb4363
 ---
 

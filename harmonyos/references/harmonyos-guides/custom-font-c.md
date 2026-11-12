@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/custom-font-c
 title: 自定义字体的注册和使用（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 字体管理 > 自定义字体的注册和使用（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:05+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2e7843db9256141fb1f625cf25aaedd091eea10e9ab3b2f572a6dee33bcd1694
+scraped_at: 2026-11-12T09:52:12+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:48f96ef3f5720acd5fd87833e370176b2f79e810e4e0513e5b757fd969560a5a
 ---
 
 ## 场景介绍
@@ -75,6 +75,12 @@ content_hash: sha256:2e7843db9256141fb1f625cf25aaedd091eea10e9ab3b2f572a6dee33bc
 
    ```
    int errorCode = OH_Drawing_RegisterFont(fontCollection, fontFamily, fontPath);
+   // 0表示注册成功，非0表示注册失败，失败时打印错误码并释放字体集对象后返回
+   if (errorCode != 0) {
+       DRAWING_LOGE("OH_Drawing_RegisterFont failed, errorCode: %{public}d", errorCode);
+       OH_Drawing_DestroyFontCollection(fontCollection);
+       return;
+   }
    ```
 6. 确保自定义字体注册成功后，使用OH\_Drawing\_CreateTextStyle()接口创建文本样式对象，并使用OH\_Drawing\_SetTextStyleFontFamilies()接口加入自定义字体。
 
@@ -108,6 +114,9 @@ content_hash: sha256:2e7843db9256141fb1f625cf25aaedd091eea10e9ab3b2f572a6dee33bc
    OH_Drawing_TypographyLayout(typography, maxWidth);
    // 将文本绘制到画布(0,100)上
    OH_Drawing_TypographyPaint(typography, cCanvas_, 0, 100);
+   // 释放段落对象和段落生成器
+   OH_Drawing_DestroyTypography(typography);
+   OH_Drawing_DestroyTypographyHandler(handler);
    ```
 8. 如果需要释放自定义字体，可以使用OH\_Drawing\_UnregisterFont接口。
 
@@ -125,4 +134,10 @@ content_hash: sha256:2e7843db9256141fb1f625cf25aaedd091eea10e9ab3b2f572a6dee33bc
    OH_Drawing_TypographyLayout(typography1, maxWidth);
    // 将文本绘制到画布(0,300)上
    OH_Drawing_TypographyPaint(typography1, cCanvas_, 0, 300);
+   // 释放内存
+   OH_Drawing_DestroyTypography(typography1);
+   OH_Drawing_DestroyTypographyHandler(handler1);
+   OH_Drawing_DestroyTypographyStyle(typographyStyle);
+   OH_Drawing_DestroyTextStyle(textStyle);
+   OH_Drawing_DestroyFontCollection(fontCollection);
    ```

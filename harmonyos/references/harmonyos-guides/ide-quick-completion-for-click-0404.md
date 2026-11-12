@@ -3,18 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-quick-com
 title: 点击操作完成快
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 附录 > 体检规则 > 点击操作完成快
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:24+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:116efd6fb81f6d979a0d604d326f3b203c4cd55b26cc3d675e66d8a2495f8682
+scraped_at: 2026-11-12T09:53:05+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e6c3175888bd3fa98e391420fa3943fd1f1e9ac1c19659f989ead51932d45c76
 ---
 
-## DevEco Studio 6.0.1 Beta1及以上版本
-
-### 规则详情
+## 规则详情
 
 应用内点击操作完成时延应≤900ms；时间起点：点击离手；时间终点：转场页面所有占位符加载完成。
 
-### 检测逻辑
+## 检测逻辑
 
 点击后，缓存本次操作与下次操作前的截图，检测图片中的页面是否加载完成。页面加载检测逻辑为：
 
@@ -30,22 +28,6 @@ content_hash: sha256:116efd6fb81f6d979a0d604d326f3b203c4cd55b26cc3d675e66d8a2495
 3. 若上一步判断非轮播区与非视频区加载完成，再根据是否有内容填充判断轮播区与视频区是否加载完成。
 4. 若上一步判断轮播区与视频区加载完成，则该检索图片加载完成，利用二分法继续向前搜索，找到第一张加载完成的图片。
 
-### 计算逻辑
+## 计算逻辑
 
 以点击时刻为准，若第一张加载完成图片的时间小于等于900ms，则检测通过；若大于900ms，小于等于1600ms，则检测告警；若大于1600ms，则检测失败。
-
-## DevEco Studio 6.0.1 Beta1以下版本
-
-### 规则详情
-
-时间起点：点击离手；时间终点：转场页面所有占位符加载完成；应用/元服务内点击操作完成时延应≤ 1600ms。
-
-### 检测逻辑
-
-点击后，经过1600ms后截图，检测图片是否存在白块。白块检测逻辑为：AppAnalyzer通过真实应用训练的白块检测AI模型，进行页面白块识别。例如：如下左图输入到白块检测AI模型后，可以识别到白块位置，如下右图。
-
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/U-PXNUiPS2izld9VEywxXw/zh-cn_image_0000002731542447.png)![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/Bu3zPyv9R7OSNGk0ubupIw/zh-cn_image_0000002731382471.png)
-
-### 计算逻辑
-
-点击后，经过1600ms后截图，截图页面查找白块数量为0，则检测通过。

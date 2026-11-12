@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/custom-font-a
 title: 自定义字体的注册和使用（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 字体管理 > 自定义字体的注册和使用（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:18+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ef4ad0fa8f529dbcae2c16e220886e4d9374bb2e221090de45aabc6a1467d437
+scraped_at: 2026-11-12T09:52:12+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:56edb44b9d1461483c4e2c1b8d46e96c93e7ba5f375168857aa571e876fdd85b
 ---
 
 ## 场景介绍
@@ -38,7 +38,14 @@ content_hash: sha256:ef4ad0fa8f529dbcae2c16e220886e4d9374bb2e221090de45aabc6a146
    import { UIContext } from '@kit.ArkUI'
    import { text } from '@kit.ArkGraphics2D'
    ```
-2. 注册自定义字体。有以下两种方式：
+2. 获取全局字体集实例。
+
+   ```typescript
+   // 获取全局字体集实例
+   let fontCollection = text.FontCollection.getGlobalInstance()
+   const familyName = "myFamilyName"
+   ```
+3. 注册自定义字体。有以下两种方式：
 
    ```typescript
    // 注册自定义字体
@@ -47,7 +54,7 @@ content_hash: sha256:ef4ad0fa8f529dbcae2c16e220886e4d9374bb2e221090de45aabc6a146
    // 方式二：确保已经将自定义字体myFontFile.ttf文件放在本应用工程的entry/src/main/resources/rawfile目录
    // fontCollection.loadFontSync(familyName, $rawfile('myFontFile.ttf'))
    ```
-3. 使用自定义字体。
+4. 使用自定义字体。
 
    ```typescript
    // 使用自定义字体
@@ -65,19 +72,19 @@ content_hash: sha256:ef4ad0fa8f529dbcae2c16e220886e4d9374bb2e221090de45aabc6a146
      fontFamilies: myFontFamily
    };
    ```
-4. 创建段落样式，并使用字体管理器实例构造段落生成器ParagraphBuilder实例。
+5. 创建段落样式，并使用字体管理器实例构造段落生成器ParagraphBuilder实例。
 
    ```typescript
    // 创建一个段落样式对象，以设置排版风格
    let myParagraphStyle: text.ParagraphStyle = {
      textStyle: myTextStyle,
-     align: 3,
+     align: text.TextAlign.JUSTIFY,
      wordBreak: text.WordBreak.NORMAL
    };
    // 创建一个段落生成器
    let paragraphBuilder = new text.ParagraphBuilder(myParagraphStyle, fontCollection)
    ```
-5. 生成段落。
+6. 生成段落。
 
    ```typescript
    // 在段落生成器中设置文本样式
@@ -87,7 +94,7 @@ content_hash: sha256:ef4ad0fa8f529dbcae2c16e220886e4d9374bb2e221090de45aabc6a146
    // 通过段落生成器生成段落
    let paragraph = paragraphBuilder.build();
    ```
-6. 如果需要注销自定义字体，可以使用unloadFontSync接口。
+7. 如果需要注销自定义字体，可以使用unloadFontSync接口。
 
    ```typescript
    // 注销自定义字体
@@ -98,6 +105,6 @@ content_hash: sha256:ef4ad0fa8f529dbcae2c16e220886e4d9374bb2e221090de45aabc6a146
 
 ## 效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/2uGgLBICQoGVCH4wDoNR6g/zh-cn_image_0000002809010749.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/CbOH1WfhTDyUgjzjaL8dJg/zh-cn_image_0000002815559465.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/YfjLPJyZS0OseqQzvXRijQ/zh-cn_image_0000002809050663.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/34Ew5wosQ7GjYCatr4-MXw/zh-cn_image_0000002815399549.png)

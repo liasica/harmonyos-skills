@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-erms
 title: 生态查询服务
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 生态查询服务
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:24+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8e741af99b300a77b7676f4e8485a9dab6b849ed85d339c062527ab110b9315d
+scraped_at: 2026-11-12T09:52:19+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ee9b3f32d13ea901c2c974664ca8728421864c72cecb90fa8a89a14fa03f5949
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:8e741af99b300a77b7676f4e8485a9dab6b849ed85d339c062527ab110b
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/7ToQy1DBSGu8cla_IYZNlA/zh-cn_image_0000002809050789.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/mna2wQKpR9ufuG-njjcqSg/zh-cn_image_0000002815399675.png)
 
 1. 用户需要查询应用/元服务自身场景值或者查询广告验签版本。
 2. 应用调用[getSelfSceneCode](../harmonyos-references/store-scenemanager.md#scenemanagergetselfscenecode)接口和[getAdsVerificationVersion](../harmonyos-references/store-scenemanager.md#scenemanagergetadsverificationversion)接口分别获取自身场景值和广告验签版本。
@@ -23,7 +23,7 @@ content_hash: sha256:8e741af99b300a77b7676f4e8485a9dab6b849ed85d339c062527ab110b
 
 ## 约束与限制
 
-* 生态查询服务支持Phone、Tablet、PC/2in1设备。并且从5.1.1(19)版本开始，新增支持TV设备。
+* 生态查询服务支持Phone、Tablet、PC/2in1设备。从5.1.1(19)版本开始，新增支持TV设备；并且从API版本26.0.1开始，新增支持Car设备。
 * 如果应用或者元服务没有产生场景值，调用[getSelfSceneCode](../harmonyos-references/store-scenemanager.md#scenemanagergetselfscenecode)接口返回的场景值为空。
 * 生态查询服务不支持模拟器，请使用真机调试。
 
@@ -51,9 +51,9 @@ content_hash: sha256:8e741af99b300a77b7676f4e8485a9dab6b849ed85d339c062527ab110b
    ```typescript
    try {
      const sceneCode: string = sceneManager.getSelfSceneCode();
-     hilog.info(0, 'TAG', 'Succeeded in getting SelfSceneCode res = ' + sceneCode);
+     hilog.info(0, TAG, 'Succeeded in getting SelfSceneCode res = ' + sceneCode);
    } catch (error) {
-     hilog.error(0, 'TAG', `getSelfSceneCode failed. code is ${error.code}, message is ${error.message}`);
+     hilog.error(0, TAG, `getSelfSceneCode failed. code is ${error.code}, message is ${error.message}`);
    }
    ```
 
@@ -70,8 +70,8 @@ content_hash: sha256:8e741af99b300a77b7676f4e8485a9dab6b849ed85d339c062527ab110b
    ```typescript
    try {
      const version: number = sceneManager.getAdsVerificationVersion();
-     hilog.info(0, 'TAG', 'Succeeded in getting AdsVerificationVersion res = ' + version);
+     hilog.info(0, TAG, 'Succeeded in getting AdsVerificationVersion res = ' + version);
    } catch (error) {
-     hilog.error(0, 'TAG', `getAdsVerificationVersion failed. code is ${error.code}, message is ${error.message}`);
+     hilog.error(0, TAG, `getAdsVerificationVersion failed. code is ${error.code}, message is ${error.message}`);
    }
    ```

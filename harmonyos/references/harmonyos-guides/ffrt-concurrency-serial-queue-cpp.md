@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ffrt-concurre
 title: Function Flow Runtime串行队列(C++)
 breadcrumb: 指南 > 系统 > 基础功能 > Function Flow Runtime Kit（任务并发调度服务） > Function Flow Runtime开发样例(C++) > Function Flow Runtime串行队列(C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:36+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:51:49+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:3fe11b44575c56ea243d44051afe6cd6d049c70cde141171e8b2632b791d5b8d
 ---
 

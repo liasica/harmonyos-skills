@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-datashare
 title: "@performance/datashare-query-unrelease-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/datashare-query-unrelease-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:11+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:c75f58f863313313ef9c1e1d859a12b0fda41912e60942c978f4e6c32b1297ed
+scraped_at: 2026-11-12T09:52:57+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d726c4b4592fd913e3fc7378a2a3413a64cf5f590a52ee84a2626673292927aa
 ---
 
 使用DataShareHelper的query接口查询数据后必须及时关闭结果集，以防止内存泄漏。
@@ -126,4 +126,4 @@ plugin:@performance/recommended
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

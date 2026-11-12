@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-audio-int
 title: "@correctness/audio-interrupt-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 正确性规则@correctness > @correctness/audio-interrupt-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:13+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:1f8f03c84f79f9c8144693de6c4ebe697b5438f09c17dbdea24564022300cfb6
+scraped_at: 2026-11-12T09:53:00+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:9d3133279e6411b0c5d510a4e441892828f4f162ea75bda6aef26ab561096c72
 ---
 
 建议应用在播放或录制音频的场景中，监听音频焦点中断回调事件，并响应。
 
-改善[音视频播放](audio-playback-concurrency.md#处理音频焦点变化)体验场景下，建议优先修改。
+改善[音视频播放](avsession-access-scene.md#控制命令的处理)体验场景下，建议优先修改。
 
 ## 规则配置
 
@@ -126,4 +126,4 @@ export class AudioInterruptReport {
 plugin:@correctness/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

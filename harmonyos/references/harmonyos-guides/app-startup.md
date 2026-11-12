@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-startup
 title: 应用启动框架AppStartup
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用生命周期 > 应用启动 > 应用启动框架AppStartup
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:28:59+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:48c5dcc4f81240851a5da9cb31ef8135e5d83f202ba1c3d83d46947f3cf31cbf
+scraped_at: 2026-11-12T09:50:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a6745fe51fb0053989c7cfe400f083f76119fc0686a85de7e4446fa648aaf164
 ---
 
 ## 概述
@@ -16,7 +16,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 **图1** 启动框架使用场景
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/LIBIo64STzurz4Mtw3X1WA/zh-cn_image_0000002779689494.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/vdEfoQsEQDKFnEVjcrkKkA/zh-cn_image_0000002786358404.png)
 
 ## 运行机制
 
@@ -24,13 +24,13 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 **图2** 启动框架自动模式执行时机
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/_mcmYCUnRkegBGT9zF8joA/zh-cn_image_0000002809009115.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/1Wol6fmcRX6LnPxvBelWDA/zh-cn_image_0000002815557825.png)
 
 开发者也可以在AbilityStage创建完后调用[startupManager.run](../harmonyos-references/js-apis-app-appstartup-startupmanager.md#startupmanagerrun)方法，执行手动模式的启动任务。
 
 **图3** 启动框架手动模式执行时机
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/5sc4FFhKQXWrTi31cE2VvA/zh-cn_image_0000002809049031.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/5ALmaDtxRSaBi0GnCI44LA/zh-cn_image_0000002815397909.png)
 
 ## 支持的范围
 
@@ -117,7 +117,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 **图4** 启动任务依赖关系图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/oLzVHG_0QRGdoGKGLKx3LQ/zh-cn_image_0000002779849466.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/bIBbzihdTTuTYcIW3FuRUA/zh-cn_image_0000002786518334.png)
 
 1. 在“ets/startup”路径下，依次创建6个启动任务文件。文件名称必须确保唯一性。本例中的6个文件名分别为StartupTask\_001.ets~StartupTask\_006.ets。
 2. 在启动框架配置文件startup\_config.json中，添加启动任务配置。
@@ -193,7 +193,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 | --- | --- | --- | --- |
 | name | 启动任务名称，可自定义，推荐与类名保持一致。 | 字符串 | 该标签不可缺省。 |
 | srcEntry | 启动任务对应的文件路径。  **说明：**  如果应用开启了[文件名混淆](source-obfuscation-rule-options.md#section-enable-filename-obfuscation)，则需要将文件路径添加到保留白名单中。具体操作详见[ArkGuard混淆保留选项](source-obfuscation-keep-options.md)的[-keep-file-name](source-obfuscation-keep-options.md#section-keep-file-name)部分。 | 字符串 | 该标签不可缺省。 |
-| dependencies | 启动任务依赖的其他启动任务的类名数组。 | 对象数组 | 该标签可缺省，缺省值为空。 |
+| dependencies | 启动任务依赖的其他启动任务的类名数组。 | 字符串数组 | 该标签可缺省，缺省值为空。 |
 | excludeFromAutoStart | 是否排除自动模式，详细介绍可以查看[修改启动模式](app-startup.md#修改启动模式)。  - true：手动模式。  - false：自动模式。  **说明：**  HSP、HAR中startupTask里的excludeFromAutoStart标签必须配置为true。 | 布尔值 | 该标签可缺省，缺省值为false。 |
 | runOnThread | 执行初始化所在的线程。  - mainThread：在主线程中执行。  - taskPool：在异步线程中执行。 | 字符串 | 该标签可缺省，缺省值为mainThread。 |
 | waitOnMainThread | 主线程是否需要等待启动框架执行。当runOnThread取值为taskPool时，该字段生效。  - true：主线程等待启动框架执行完之后，才会加载应用首页。  - false：主线程不等待启动任务执行。 | 布尔值 | 该标签可缺省，缺省值为true。 |
@@ -206,7 +206,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 
 **图5** so预加载任务依赖关系图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/47vCxtwaSWeEE6Og-Ajffw/zh-cn_image_0000002779689496.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/1LW04DO_SBmM_NA_2mcgYQ/zh-cn_image_0000002786358406.png)
 
 1. 参考[Node-API](use-napi-process.md)创建so文件。本例中的6个so文件名称分别为libentry\_001.so~libentry\_006.so。
 2. 在启动框架配置文件startup\_config.json中，添加预加载so任务配置。
@@ -276,7 +276,7 @@ AppStartup提供了一种简单高效的应用启动方式，可以支持任务�
 | --- | --- | --- | --- |
 | name | 预加载so文件名。 | 字符串 | 该标签不可缺省。 |
 | srcEntry | 带后缀预加载so文件名。 | 字符串 | 该标签不可缺省。 |
-| dependencies | 预加载任务依赖的其他预加载任务的so名数组。 | 对象数组 | 该标签可缺省，缺省值为空。 |
+| dependencies | 预加载任务依赖的其他预加载任务的so名数组。 | 字符串数组 | 该标签可缺省，缺省值为空。 |
 | excludeFromAutoStart | 是否排除自动模式，详细介绍可以查看[修改启动模式](app-startup.md#修改启动模式)。  - true：手动模式。  - false：自动模式。  **说明：**  HSP、HAR中appPreloadHintStartupTask的excludeFromAutoStart标签必须配置为true。 | 布尔值 | 该标签可缺省，缺省值为false。 |
 | runOnThread | 执行预加载所在的线程。  - taskPool：在异步线程中执行。  **说明：**  so预加载只允许在taskPool线程执行。 | 字符串 | 该标签不可缺省。 |
 | matchRules | 该字段用于筛选需要以自动模式启动的预加载so任务，加速应用启动过程。适用于快速拉起某个页面的场景，例如，通过桌面卡片、通知或意图调用等方式触发的页面跳转，实现功能服务的一步直达体验。操作指导详见[添加任务匹配规则](app-startup.md#添加任务匹配规则)。  **说明：**  - 从API version 20开始，支持该字段。当前仅支持在HAP中配置该字段。  - 该字段的优先级高于excludeFromAutoStart。如果所有预加载so任务均匹配失败，则按任务的excludeFromAutoStart配置处理。 | 对象 | 该标签可缺省。 |
@@ -372,7 +372,7 @@ export default class StartupTask_001 extends StartupTask {
 
 **图6** 启动任务与so预加载依赖关系图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/vtqbjQzFTly3JtOdxP9uMg/zh-cn_image_0000002809009117.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/dpIAFHb6SUCM6WWA6XzEJQ/zh-cn_image_0000002815557827.png)
 
 开发步骤如下：
 
@@ -574,7 +574,7 @@ struct Index {
 
 **图7** 启动任务设置匹配规则
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/wK-e-KdsRg-E12dZqSl6AQ/zh-cn_image_0000002809049033.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/R8PCMZQlTX2lgUZc7_goqA/zh-cn_image_0000002815397911.png)
 
 可以通过以下两种方式添加匹配规则：
 
@@ -688,7 +688,7 @@ struct Index {
 
 **图8** 设置启动任务提前调度
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/O0tj24UNSB-IxBfd6Vuigw/zh-cn_image_0000002779849468.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/qXC1-PjWQfesob4sEPqZSA/zh-cn_image_0000002786518336.png)
 
 例如，应用首页需要通过网络请求获取Feed流数据，且希望该任务能在异步线程中与AbilityStage模块加载并发执行。假设网络请求任务为[定义启动任务配置](app-startup.md#定义启动任务配置)步骤中的StartupTask\_004，开发步骤如下：
 

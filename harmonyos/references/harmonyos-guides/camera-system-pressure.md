@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-system
 title: 压力管控(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 压力管控(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:16+08:00
-doc_updated_at: 2026-03-09
-content_hash: sha256:c431460ed4fe53ebb8eef847dba5b03e5221c77324e03ceec43ce3f464db5cb0
+scraped_at: 2026-11-12T09:52:04+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b6090220fae70526ad5dcb4cc3cf6d647a97366d9b95c8941babec6f5bf6b81c
 ---
 
 从API version 20开始，相机框架提供对系统压力等级的监听。
@@ -21,6 +21,7 @@ content_hash: sha256:c431460ed4fe53ebb8eef847dba5b03e5221c77324e03ceec43ce3f464d
 参数的具体内容可参考相机管理器回调接口实例[SystemPressureLevel](../harmonyos-references/arkts-apis-camera-e.md#systempressurelevel20)。
 
 ```ts
+import { camera } from '@kit.CameraKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 function callback(err: BusinessError, systemPressureLevel: camera.SystemPressureLevel): void {

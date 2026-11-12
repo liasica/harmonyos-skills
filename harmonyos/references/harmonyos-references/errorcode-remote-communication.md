@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: API错误码
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > API错误码
 category: harmonyos-references
-scraped_at: 2026-10-29T08:01:10+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:5d6bded327303671719c4a3321d48ed6fcc56fc51a44bb6fe4052be832dc6ac6
+scraped_at: 2026-11-12T09:55:49+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:56be083d369184551f9327920597c02624d9ecd5b36cc1811c45999894d0e704
 ---
 
 **说明** 
@@ -480,11 +480,11 @@ Failure when receiving data from the peer.
 
 **可能原因**
 
-网络传输问题。
+网络问题。
 
 **处理步骤**
 
-检查网络连接状况、网络质量是否正常。
+排查网络问题。
 
 ## 1007900058 本地SSL证书错误
 

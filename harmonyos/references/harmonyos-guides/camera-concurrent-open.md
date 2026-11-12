@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-concur
 title: 多摄同开(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 多摄同开(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:20+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:c8144256a21c5bf0208fa991d22ad6b4c30429966d4448fcc21efd43f16206a9
+scraped_at: 2026-11-12T09:52:04+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:dda0b26cefc4f4c01c0fbf521ace00103cb4073f8dd5d9f6aead2ce40d403319
 ---
 
 从API version 18开始支持多摄同开，即应用同时开启前置/后置相机进行预览和录像（前置/后置相机同时拍照功能待开放）。
@@ -36,6 +36,7 @@ Context获取方式请参考：[获取UIAbility的上下文信息](uiability-usa
    import { media } from '@kit.MediaKit';
    import { fileIo } from '@kit.CoreFileKit';
    import { common } from '@kit.AbilityKit';
+   import { colorSpaceManager } from '@kit.ArkGraphics2D';
    import { BusinessError } from '@kit.BasicServicesKit';
    ```
 2. 通过[getCameraDevice](../harmonyos-references/arkts-apis-camera-cameramanager.md#getcameradevice18)获取对应的前置和后置相机。如果接口返回undefined，基于示例中的配置信息，表示当前设备不支持指定位置（前置/后置）的默认类型相机，无法实现多摄同开功能。
@@ -320,6 +321,8 @@ Context获取方式请参考：[获取UIAbility的上下文信息](uiability-usa
        handlePhotoAssetCb(photoAsset);
      });
      } catch (err) {
+      let error = err as BusinessError;
+      console.error(`photoOutputCallback failed, err code: ${error.code}`);
      }
    }
 
@@ -500,5 +503,27 @@ Context获取方式请参考：[获取UIAbility的上下文信息](uiability-usa
         return;
       }
       session?.setFocusMode(focusMode);
+    }
+
+    // 设置防抖。
+    function setStabilizationFn(session: camera.VideoSession, stabilizationMode: camera.VideoStabilizationMode)
+    {
+      try {
+        session.setVideoStabilizationMode(stabilizationMode);
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`setVideoStabilizationMode failed, err code: ${err.code}`);
+      }
+    }
+
+    // 设置色彩空间。
+    function setColorSpaceFn(session: camera.PhotoSession | camera.VideoSession, color: colorSpaceManager.ColorSpace)
+    {
+      try {
+        session.setColorSpace(color);
+      } catch (error) {
+        let err = error as BusinessError;
+        console.error(`setColorspace failed, err code: ${err.code}`);
+      }
     }
     ```

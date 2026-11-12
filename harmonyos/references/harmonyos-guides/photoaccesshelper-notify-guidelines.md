@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshe
 title: 媒体资源变更通知相关指导
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 受限开放能力 > 媒体资源变更通知相关指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:47+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:52:09+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:28959b719914edd0f66d9042a641b3520166d6772692c649d176fd28e7d97bcb
 ---
 

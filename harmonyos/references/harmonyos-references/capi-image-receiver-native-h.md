@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-imag
 title: image_receiver_native.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > image_receiver_native.h
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:28+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:bfbfd10c835aa1be77e1afd800bf7555785b8766cf86149327aabe980f543c13
+scraped_at: 2026-11-12T09:56:40+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:84e5bee0645c061c6809503c6c73afd92db4ef4011a941c20edc8e9de6023b3d
 ---
 
 ## 概述
@@ -54,6 +54,7 @@ content_hash: sha256:bfbfd10c835aa1be77e1afd800bf7555785b8766cf86149327aabe980f5
 | [Image\_ErrorCode OH\_ImageReceiverNative\_Release(OH\_ImageReceiverNative\* receiver)](capi-image-receiver-native-h.md#oh_imagereceivernative_release) | - | 释放Native OH\_ImageReceiverNative对象。 |
 | [Image\_ErrorCode OH\_ImageReceiverNative\_OnImageArrive(OH\_ImageReceiverNative \*receiver, OH\_ImageReceiver\_ImageArriveCallback callback, void \*userData)](capi-image-receiver-native-h.md#oh_imagereceivernative_onimagearrive) | - | 注册[OH\_ImageReceiver\_ImageArriveCallback](capi-image-receiver-native-h.md#oh_imagereceiver_imagearrivecallback)回调。 |
 | [Image\_ErrorCode OH\_ImageReceiverNative\_OffImageArrive(OH\_ImageReceiverNative \*receiver, OH\_ImageReceiver\_ImageArriveCallback callback)](capi-image-receiver-native-h.md#oh_imagereceivernative_offimagearrive) | - | 注销[OH\_ImageReceiver\_ImageArriveCallback](capi-image-receiver-native-h.md#oh_imagereceiver_imagearrivecallback)回调。 |
+| [Image\_ErrorCode OH\_ImageReceiverNative\_SetMemoryName(const OH\_ImageReceiverNative\* receiver, const char \*name, uint32\_t size)](capi-image-receiver-native-h.md#oh_imagereceivernative_setmemoryname) | - | 设置OH\_ImageReceiverNative对象的内存名称。仅支持ASCII可见字符，空格、换行、制表符及其他控制字符将被过滤掉。如果过滤后的结果完全由数字组成，将自动添加前缀"ImageReceiver:"。过滤后的名称长度（包括结束符'\0'）不得超过256字节。 |
 
 ## 函数说明
 
@@ -522,3 +523,29 @@ Image_ErrorCode OH_ImageReceiverNative_OffImageArrive(OH_ImageReceiverNative *re
 | 类型 | 说明 |
 | --- | --- |
 | [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：操作成功。  IMAGE\_RECEIVER\_INVALID\_PARAMETER：参数错误，receiver或callback未注册。 |
+
+### OH\_ImageReceiverNative\_SetMemoryName()
+
+```c
+Image_ErrorCode OH_ImageReceiverNative_SetMemoryName(const OH_ImageReceiverNative* receiver, const char *name, uint32_t size)
+```
+
+**描述**
+
+设置OH\_ImageReceiverNative对象的内存名称。仅支持ASCII可见字符，空格、换行、制表符及其他控制字符将被过滤掉。如果过滤后的结果完全由数字组成，将自动添加前缀"ImageReceiver:"。过滤后的名称长度（包括结束符'\0'）不得超过256字节。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| const [OH\_ImageReceiverNative](capi-image-nativemodule-oh-imagereceivernative.md)\* receiver | 指向OH\_ImageReceiverNative对象的指针，不能为NULL。 |
+| const char \*name | 指向要设置的内存名称字符串的指针，不能为NULL。字符串必须以'\0'结尾。 |
+| uint32\_t size | 名称字符串的字节大小，包括结束符'\0'。必须大于0。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Image\_ErrorCode](capi-image-common-h.md#image_errorcode) | IMAGE\_SUCCESS：操作成功。  IMAGE\_RECEIVER\_INVALID\_PARAMETER：receiver/name为NULL、size为0、name过滤后无可视字符或过滤后大小超过256字节。 |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Menu
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 菜单 > Menu
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:09+08:00
+scraped_at: 2026-11-12T09:54:22+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:56925066484a73d0242e85d2de0d4299f95c2b620429028be2fc02560aa7f8fb
+content_hash: sha256:bde9e3c0bb1084f9dac83fb73b2c904e1cad70c85006027d7a559dcefb08f1eb
 ---
 
 以垂直列表形式显示的菜单。Menu组件支持配置菜单项、子菜单、图标、分隔线等内容，可用于展示操作选项、功能入口等场景。
@@ -275,7 +275,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/dVn57xuwT5i6-JiVEwt3UQ/zh-cn_image_0000002809052183.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/4XgvhVJFQP6vgK9buI9r3A/zh-cn_image_0000002815560965.png)
 
 ### 示例2（设置symbol类型图标）
 
@@ -349,7 +349,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/6FGPugc5SbiloGfFo1i5iQ/zh-cn_image_0000002779852618.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/blCwEmqGQmivfZhLAUHwuQ/zh-cn_image_0000002815401049.png)
 
 ### 示例3（设置Menu子菜单展开符号）
 
@@ -415,7 +415,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/EmwifZIBT6C09ewVdWtC-Q/zh-cn_image_0000002779692650.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/bYjnhvU9R8KZMOSbBnKlFw/zh-cn_image_0000002786521474.gif)
 
 ### 示例4（设置分割线样式）
 
@@ -465,7 +465,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/Lz1k1i96R_CfEaprP5sFcw/zh-cn_image_0000002809012271.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/eEAZdbs0QA-4qtKcFfnPAw/zh-cn_image_0000002786361546.png)
 
 ### 示例5（设置自定义菜单项的多级菜单）
 
@@ -522,4 +522,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/d9GBhy5fR_-m6MHRmWHp9w/zh-cn_image_0000002809052185.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/ML6KXIabSf6vPDP_AbrT7Q/zh-cn_image_0000002815560967.jpg)

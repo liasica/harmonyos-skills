@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-service-e
 title: 使用AppServiceExtensionAbility组件实现后台服务
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > ExtensionAbility组件 > 使用AppServiceExtensionAbility组件实现后台服务
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:28:59+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:d1c0e2b254ca5a5ecb79e8ac72e1524dbd09ef7e96c0a711f4b85c0f9a6deeb0
+scraped_at: 2026-11-12T09:50:57+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3e49e10af26e4c9255d1ce68f1cfaebc2d97dfbb2f94ecfdfddf6d5d1c53b45f
 ---
 
 ## 概述
@@ -60,7 +60,7 @@ AppServiceExtensionAbility组件当前仅支持2in1设备。
 1. 在工程Module对应的ets目录下，右键选择“New > Directory”，新建一个目录并命名为myappserviceextability。
 2. 在myappserviceextability目录，右键选择“New > ArkTS File”，新建一个文件并命名为MyAppServiceExtAbility.ets。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/rAQNQYbdRqqDkae8P4E2mA/zh-cn_image_0000002779849456.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/0lw481boRfKTbfuP3FtyuQ/zh-cn_image_0000002786518324.png)
 
    其目录结构如下所示：
 
@@ -381,7 +381,7 @@ AppServiceExtensionAbility组件以start方式启动，并且没有连接的时�
           // ···
             .onClick(() => {
               let context = this.getUIContext().getHostContext() as common.UIAbilityContext; // UIAbilityContext
-              // connectionId为调用connectServiceExtensionAbility接口时的返回值，需开发者自行维护
+              // connectionId为调用connectAppServiceExtensionAbility接口时的返回值，需开发者自行维护
               context.disconnectAppServiceExtensionAbility(connectionId).then(() => {
                 hilog.info(DOMAIN_NUMBER, TAG, 'disconnectAppServiceExtensionAbility success');
                 // 成功断连后台服务

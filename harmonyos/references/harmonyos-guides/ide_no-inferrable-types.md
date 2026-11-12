@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-inferr
 title: "@typescript-eslint/no-inferrable-types"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-inferrable-types
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:09+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:27e5fa299e4318764a067257b8a26b00c2d14b68142acac9ecf3c39bf8aaf01a
+scraped_at: 2026-11-12T09:52:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b3e1c039d1e38930faa17a0090080c3db3f639827ecd4878b52bd371f3a08ba4
 ---
 
 不允许对初始化为数字、字符串或布尔值的变量或参数进行显式类型声明。
 
-变量或者参数如果在初始化时定义为布尔、数字或者字符串类型，Typescript可以推断出其类型，不用显式声明其类型。
+变量或者参数如果在初始化时定义为布尔、数字或者字符串类型，TypeScript可以推断出其类型，不用显式声明其类型。
 
 该规则仅支持对.js/.ts文件进行检查。
 
@@ -75,4 +75,4 @@ export function fn(a: number = num, b: boolean = true): void {
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

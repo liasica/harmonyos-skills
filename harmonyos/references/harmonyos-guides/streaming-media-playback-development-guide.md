@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/streaming-med
 title: 使用AVPlayer播放流媒体(ArkTS)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 播放 > 使用AVPlayer播放流媒体(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:09+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:66dfc1eb3721b49641f4d26e7c348126834e599c7d8758ccb743149074a62350
+scraped_at: 2026-11-12T09:52:07+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:878fe04a950dbc32bf363afafd613b8a75a305768a319b11809e1308c2017f75
 ---
 
 本开发指导将介绍如何使用[AVPlayer](media-kit-intro.md#avplayer)开发流媒体直播和点播功能。示例展示如何完整播放流媒体视频，实现端到端的流媒体资源播放。
@@ -47,7 +47,7 @@ content_hash: sha256:66dfc1eb3721b49641f4d26e7c348126834e599c7d8758ccb743149074a
 
    * 使用网络播放路径，需[声明权限](declare-permissions.md)：ohos.permission.INTERNET。
    * 使用支持的播放格式和协议。
-4. 设置窗口：获取并设置SurfaceID属性，用于配置显示画面。
+4. 设置窗口：获取并设置surfaceID属性，用于配置显示画面。
 
    应用从XComponent组件获取surfaceID，获取方式请参考[XComponent](../harmonyos-references/ts-basic-components-xcomponent.md)。
 5. 准备播放：调用prepare()，使AVPlayer进入prepared状态，此时可获取duration，设置缩放模式、音量等。
@@ -67,7 +67,7 @@ content_hash: sha256:66dfc1eb3721b49641f4d26e7c348126834e599c7d8758ccb743149074a
 
 ```typescript
 this.avPlayer.on('bufferingUpdate', (infoType: media.BufferingInfoType, value: number) => {
-  console.info(`${this.tag}: bufferingUpdate called, infoType value: ${infoType}, value:${value}}`);
+  console.info(`${this.tag}: bufferingUpdate called, infoType value: ${infoType}, value:${value}`);
 })
 ```
 
@@ -78,15 +78,15 @@ this.avPlayer.on('bufferingUpdate', (infoType: media.BufferingInfoType, value: n
 1. 通过[on('availableBitrates')](../harmonyos-references/arkts-apis-media-avplayer.md#onavailablebitrates9)监听当前HLS协议流可用的码率。如果监听的码率列表长度为0，则不支持设置指定码率。
 
    ```typescript
-   this.avPlayer.on('availableBitrates', (bitrates: Array<number>) => {
+   this.avPlayer?.on('availableBitrates', (bitrates: Array<number>) => {
      console.info('availableBitrates called, and availableBitrates length is: ' + bitrates.length);
-     this.bitrate = bitrates[0]; // 保存需要切换的码率
+     this.bitrate = bitrates[0]; // 保存需要切换的码率。
    })
    ```
 2. 通过[setBitrate](../harmonyos-references/arkts-apis-media-avplayer.md#setbitrate9)接口设置播放码率。若用户设置的码率不在可用码率中，播放器将选择最小且最接近的码率。该接口只能在prepared/playing/paused/completed状态下调用，可通过监听[bitrateDone](../harmonyos-references/arkts-apis-media-avplayer.md#onbitratedone9)事件确认是否生效。
 
    ```typescript
-   // 设置播放码率
+   // 设置播放码率。
    try {
      this.avPlayer.setBitrate(bitrate);
    } catch (error) {
@@ -100,12 +100,12 @@ this.avPlayer.on('bufferingUpdate', (infoType: media.BufferingInfoType, value: n
 
 下述示例代码描述了设置视频宽度1920px、高度1080px起播。AVPlayer会选择MPD资源中一路分辨率为1920x1080的视频资源进行播放。
 
-```ts
-import { media } from '@kit.MediaKit';
-
-let mediaSource : media.MediaSource = media.createMediaSourceWithUrl("http://example/abc.mpd",  {"User-Agent" : "User-Agent-Value"});
+```typescript
+let mediaSource : media.MediaSource = media.createMediaSourceWithUrl('http://example/abc.mpd',  {'User-Agent' : 'User-Agent-Value'});
+// 设置视频宽度1920px、高度1080px起播。
 let playbackStrategy : media.PlaybackStrategy = {preferredWidth: 1920, preferredHeight: 1080};
-this.avPlayer.setMediaSource(mediaSource, playbackStrategy);
+// 为avPlayer设置媒体来源和播放策略。
+this.avPlayer?.setMediaSource(mediaSource, playbackStrategy);
 ```
 
 ### DASH切换音视频轨道
@@ -116,13 +116,13 @@ DASH流媒体资源包含多路不同分辨率、码率、采样率、编码格�
 
    ```typescript
    this.avPlayer.on('trackChange', (index: number, isSelect: boolean) => {
-   console.info(`trackChange info, index: ${index}, isSelect: ${isSelect}`);
+     console.info(`trackChange info, index: ${index}, isSelect: ${isSelect}`);
    })
    ```
 2. 调用[getTrackDescription](../harmonyos-references/arkts-apis-media-avplayer.md#gettrackdescription9)获取所有音视频轨道列表。开发者可根据实际需求，基于[MediaDescription](../harmonyos-references/arkts-apis-media-i.md#mediadescription8)各字段信息，确定目标轨道索引。
 
    ```typescript
-   this.avPlayer.getTrackDescription((error: BusinessError, arrList: Array<media.MediaDescription>) => {
+   this.avPlayer?.getTrackDescription((error: BusinessError, arrList: Array<media.MediaDescription>) => {
      if (arrList != null) {
        for (let i = 0; i < arrList.length; i++) {
          let propertyIndex: Object = arrList[i][media.MediaDescriptionKey.MD_KEY_TRACK_INDEX];
@@ -134,14 +134,14 @@ DASH流媒体资源包含多路不同分辨率、码率、采样率、编码格�
          }
        }
      } else {
-       console.error(`getTrackDescription fail, error:${error}`);
+       console.error(`getTrackDescription failed, error:${error}`);
      }
    });
    ```
 3. 在音视频播放过程中调用[selectTrack](../harmonyos-references/arkts-apis-media-avplayer.md#selecttrack12)选择对应的音视频轨道，或者调用[deselectTrack](../harmonyos-references/arkts-apis-media-avplayer.md#deselecttrack12)取消选择的音视频轨道。
 
    ```typescript
-   // 切换至目标视频轨道
+   // 切换至目标视频轨道。
    try {
      this.avPlayer.selectTrack(track);
    } catch (error) {

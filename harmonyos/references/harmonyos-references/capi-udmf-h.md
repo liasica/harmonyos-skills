@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-udmf
 title: udmf.h
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 头文件 > udmf.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:43+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c6e04cfb411c8f37963049c78c7a0ac7b4a632d0ef861f6a6da9758e7cb8b0c5
+scraped_at: 2026-11-12T09:53:46+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e2f5569b91fee0fdc589e6bd038e44256f97c470ccd6fac146b742b117b6a24f
 ---
 
 ## 概述
@@ -37,6 +37,7 @@ content_hash: sha256:c6e04cfb411c8f37963049c78c7a0ac7b4a632d0ef861f6a6da9758e7cb
 | [OH\_UdmfOptions](capi-udmf-oh-udmfoptions.md) | OH\_UdmfOptions | 数据操作选项，定义数据操作的可选参数。 |
 | [OH\_UdmfDataLoadParams](capi-udmf-oh-udmfdataloadparams.md) | OH\_UdmfDataLoadParams | 表示数据加载参数结构体。 |
 | [OH\_UdmfDataLoadInfo](capi-udmf-oh-udmfdataloadinfo.md) | OH\_UdmfDataLoadInfo | 表示数据加载信息结构体。 |
+| [OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md) | OH\_UDMF\_Summary | 描述统一数据对象的数据摘要，包括数据类型和大小。 |
 
 ### 枚举
 
@@ -48,7 +49,7 @@ content_hash: sha256:c6e04cfb411c8f37963049c78c7a0ac7b4a632d0ef861f6a6da9758e7cb
 | [Udmf\_ProgressIndicator](capi-udmf-h.md#udmf_progressindicator) | Udmf\_ProgressIndicator | 定义进度条指示选项，可选择是否采用系统默认进度显示。 |
 | [Udmf\_Visibility](capi-udmf-h.md#udmf_visibility) | Udmf\_Visibility | 定义数据的可见性等级。 |
 
-## 宏定义
+### 宏定义
 
 | 名称 | 描述 |
 | --- | --- |
@@ -145,6 +146,11 @@ content_hash: sha256:c6e04cfb411c8f37963049c78c7a0ac7b4a632d0ef861f6a6da9758e7cb
 | [void OH\_UdmfDataLoadInfo\_SetRecordCount(OH\_UdmfDataLoadInfo\* dataLoadInfo, unsigned int recordCount)](capi-udmf-h.md#oh_udmfdataloadinfo_setrecordcount) | - | 设置数据加载信息[OH\_UdmfDataLoadInfo](capi-udmf-oh-udmfdataloadinfo.md)中的记录数量。 |
 | [OH\_UdmfData\* OH\_UDMF\_GetDataElementAt(OH\_UdmfData\*\* dataArray, unsigned int index)](capi-udmf-h.md#oh_udmf_getdataelementat) | - | 从统一数据对象[OH\_UdmfData](capi-udmf-oh-udmfdata.md)数组中获取指定下标的统一数据对象数据。 |
 | [int OH\_UdmfProperty\_SetAuthPermission(OH\_UdmfProperty\* pThis, uint32\_t authPolicy)](capi-udmf-h.md#oh_udmfproperty_setauthpermission) | - | 在[OH\_UdmfProperty](capi-udmf-oh-udmfproperty.md)中设置权限，对[OH\_UdmfData](capi-udmf-oh-udmfdata.md)生效。 |
+| [OH\_UDMF\_Summary \*OH\_UDMF\_CreateSummary(void)](capi-udmf-h.md#oh_udmf_createsummary) | - | 创建指向统一数据对象的数据摘要[OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md)实例的指针。  当不再需要使用指针时，必须调用[OH\_UDMF\_DestroySummary](capi-udmf-h.md#oh_udmf_destroysummary)释放。 |
+| [void OH\_UDMF\_DestroySummary(OH\_UDMF\_Summary \*summary)](capi-udmf-h.md#oh_udmf_destroysummary) | - | 销毁数据摘要[OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md)指针指向的实例对象。请注意，对于同一个指针，不能重复调用此函数。 |
+| [int OH\_UDMF\_GetSummaryOverviewTypes(const OH\_UDMF\_Summary \*summary, const char \*const \*\*types, int64\_t \*count)](capi-udmf-h.md#oh_udmf_getsummaryoverviewtypes) | - | 获取数据摘要[OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md)中的所有数据类型。 |
+| [int OH\_UDMF\_GetSummaryOverviewSize(const OH\_UDMF\_Summary \*summary, const char \*type, int64\_t \*dataSize)](capi-udmf-h.md#oh_udmf_getsummaryoverviewsize) | - | 获取与数据摘要[OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md)中数据类型关联的数据大小。 |
+| [int OH\_UDMF\_GetSummaryFilenameExtensions(const OH\_UDMF\_Summary \*summary, const char \*const \*\*filenameExtensions, int64\_t \*count)](capi-udmf-h.md#oh_udmf_getsummaryfilenameextensions) | - | 获取数据摘要[OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md)实例中的所有文件扩展名。 |
 
 ## 枚举类型说明
 
@@ -2293,6 +2299,122 @@ int OH_UdmfProperty_SetAuthPermission(OH_UdmfProperty* pThis, uint32_t authPolic
 | --- | --- |
 | [OH\_UdmfProperty](capi-udmf-oh-udmfproperty.md)\* pThis | 表示指向[OH\_UdmfProperty](capi-udmf-oh-udmfproperty.md)实例的指针。  说明：此授权策略仅在拖拽场景下生效，其他场景不生效。 |
 | uint32\_t authPolicy | 表示拖拽场景下的URI授权策略，默认值READ+WRITE+PERSIST，只对单次数据生效，优先级较低。具体策略见[Udmf\_AuthPermission](capi-uds-h.md#udmf_authpermission)。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
+
+### OH\_UDMF\_CreateSummary()
+
+```c
+OH_UDMF_Summary *OH_UDMF_CreateSummary(void)
+```
+
+**描述**
+
+创建指向统一数据对象的数据摘要[OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md)实例的指针。
+
+当不再需要使用指针时，必须调用[OH\_UDMF\_DestroySummary](capi-udmf-h.md#oh_udmf_destroysummary)释放。
+
+**起始版本：** 26.0.1
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md) | 如果操作成功，返回一个指向[OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md)实例的指针，调用者拥有该实例的所有权。 |
+
+### OH\_UDMF\_DestroySummary()
+
+```c
+void OH_UDMF_DestroySummary(OH_UDMF_Summary *summary)
+```
+
+**描述**
+
+销毁数据摘要[OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md)指针指向的实例对象。请注意，对于同一个指针，不能重复调用此函数。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md) \*summary | [入参]表示指向[OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md)实例的指针。 |
+
+### OH\_UDMF\_GetSummaryOverviewTypes()
+
+```c
+int OH_UDMF_GetSummaryOverviewTypes(const OH_UDMF_Summary *summary, const char *const **types, int64_t *count)
+```
+
+**描述**
+
+获取数据摘要[OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md)中的所有数据类型。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| const [OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md) \*summary | [入参]表示指向数据摘要[OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md)实例的指针。该指针不能为NULL。 |
+| const char \*const \*\*types | [出参]表示数据类型的输出数组。每个元素都是非空的、以'\0'结尾的UTF-8字符串。 |
+| int64\_t \*count | [出参]表示输出数组中的数据类型的数量。summary为空时，count为0。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
+
+### OH\_UDMF\_GetSummaryOverviewSize()
+
+```c
+int OH_UDMF_GetSummaryOverviewSize(const OH_UDMF_Summary *summary, const char *type, int64_t *dataSize)
+```
+
+**描述**
+
+获取与数据摘要[OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md)中数据类型关联的数据大小。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| const [OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md) \*summary | [入参]表示指向数据摘要[OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md)实例的指针。该指针不能为NULL。 |
+| const char \*type | [入参]表示查询的数据类型。该参数是以'\0'结尾的UTF-8字符串，不能为空。 |
+| int64\_t \*dataSize | [出参] 数据大小，单位为字节。如果未找到对应数据类型，\*dataSize为-1。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| int | 返回执行的状态代码。  若返回UDMF\_E\_OK，表示执行成功。  若返回UDMF\_E\_INVALID\_PARAM，表示传入了无效参数。  若返回UDMF\_ERR，表示内部数据错误。可能的原因是服务故障或者内存不足等。具体请参阅错误码定义[Udmf\_ErrCode](capi-udmf-err-code-h.md#udmf_errcode)。 |
+
+### OH\_UDMF\_GetSummaryFilenameExtensions()
+
+```c
+int OH_UDMF_GetSummaryFilenameExtensions(const OH_UDMF_Summary *summary, const char *const **filenameExtensions, int64_t *count)
+```
+
+**描述**
+
+获取数据摘要[OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md)实例中的所有文件扩展名。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| const [OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md) \*summary | [入参]表示指向数据摘要[OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md)实例的指针。该指针不能为NULL。 |
+| const char \*const \*\*filenameExtensions | [出参]指向文件扩展名数组的指针。包含前导句点，使用小写ASCII字母，每个数组元素都是非空的、以'\0'结尾的字符串。调用[OH\_UDMF\_DestroySummary](capi-udmf-h.md#oh_udmf_destroysummary)接口后该参数失效。 |
+| int64\_t \*count | [出参]指向文件扩展名数量的指针。该值为非负整数。未获取到有效扩展名时，该值为0。 |
 
 **返回：**
 

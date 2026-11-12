@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-scen
 title: 请求体参数说明
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > REST API > 场景化消息推送 > 请求体参数说明
 category: harmonyos-references
-scraped_at: 2026-11-04T08:37:28+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:eb210ad3fc83e55da4bff73a9845f00599d4ab380c045c43666934f0f4bd9293
+scraped_at: 2026-11-12T09:57:40+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:88c18d7d1f003c7db1dc52f6cda966d86fe631f2f05a9a399eebebf0ace44401
 ---
 
 ## pushOptions
@@ -39,7 +39,7 @@ content_hash: sha256:eb210ad3fc83e55da4bff73a9845f00599d4ab380c045c43666934f0f4b
 | category | 是 | String | 通知消息类型。完成[申请通知消息自分类权益](../harmonyos-guides/push-apply-right.md#申请通知消息自分类权益)后，用于标识消息类型，不同的通知消息类型影响消息展示和提醒方式。取值如下：  **服务与通讯类**  · IM：即时聊天  · VOIP：语音通话邀请、视频通话邀请  · MISS\_CALL：未接通话消息提醒  · SUBSCRIPTION：订阅  · TRAVEL：出行  · HEALTH：健康  · WORK：工作事项提醒  · ACCOUNT：账号动态  · EXPRESS：订单&物流  · FINANCE：财务  · DEVICE\_REMINDER：设备提醒  · MAIL：邮件  · PLAY\_VOICE：语音播报  **说明：**  PLAY\_VOICE（语音播报）消息仅可发送push-type为2的语音播报消息。  **资讯营销类**  · MARKETING：新闻、内容推荐、社交动态、产品促销、财经动态、生活资讯、调研、功能推荐、运营活动（仅对内容进行标识，不会加快消息发送），统称为资讯营销类消息。  **说明：**  若您仅需发送MARKETING（资讯营销类）消息，则无需申请通知消息自分类权益。MARKETING消息与其他分类的通知消息存在不同的频控策略，详情请参见[通知消息推送数量管理规则](../harmonyos-guides/push-apply-right.md#通知消息推送数量管理规则)。若消息被频控，请参考[频控FAQ](../harmonyos-guides/push-faq-5.md)进行问题排查。 |
 | title | 是 | String | 通知消息标题。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)） |
 | body | 是 | String | 通知消息内容。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)） |
-| image | 否 | String | 通知右侧大图标URL，URL使用的协议必须是HTTPS协议。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）  **说明：**  · Wearable不支持右侧大图标样式。  · 支持图片格式为PNG、JPG、JPEG、BMP，图片像素的总字节数不超过192KB，若超过则图片不展示。  · 6.1.0(23)版本新增支持WEBP格式图片。 |
+| image | 否 | String | 通知右侧大图标URL，URL使用的协议必须是HTTPS协议。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）  **说明：**  · Wearable、Car设备不支持右侧大图标样式。  · 支持图片格式为PNG、JPG、JPEG、BMP，图片像素的总字节数不超过192KB，若超过则图片不展示。  · 6.1.0(23)版本新增支持WEBP格式图片。 |
 | overlayIcon | 否 | String | 通知重叠图标URL，URL使用的协议必须是HTTPS协议。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）  **说明：**  · 支持图片格式为PNG、JPG、JPEG、BMP、WEBP，图片像素的总字节数不超过192KB，若超过则图片不展示。  · 仅当category为IM或VOIP或MISS\_CALL时，消息生效。  **起始版本：** 6.1.0(23) |
 | style | 否 | Integer | 通知消息样式：  0：普通通知（**默认值**）  1：大文本样式  3：多行文本样式（使用场景请参见[开发指南](../harmonyos-guides/push-send-alert.md#多行文本样式)）  **说明：**  · style=1 大文本样式将要废弃，建议直接使用 style=0 普通通知。  · Wearable不支持大文本样式和多行文本样式。 |
 | bigTitle | 否 | String | 大文本样式的标题，当style为1时必选。设置bigTitle后通知栏展示时，使用bigTitle而不用title。（注意消息体大小限制，详情参见[使用约束](push-scenariozed-api-intro.md#使用约束)）  **说明：**  · 此字段将要废弃，建议直接使用title字段。  · Wearable不支持大文本样式。 |
@@ -54,6 +54,7 @@ content_hash: sha256:eb210ad3fc83e55da4bff73a9845f00599d4ab380c045c43666934f0f4b
 | soundDuration | 否 | Integer | 自定义消息通知铃声时长。需要配合sound字段使用，只有当请求同时携带sound字段，soundDuration字段才会生效。仅支持数字，单位：s，取值范围 [1, 60]。  sound字段传入的自定义消息通知铃声会播放至soundDuration字段值后停止，若自定义消息通知铃声对应的时长不足soundDuration字段值则会循环播放，在达到soundDuration字段值后停止。 |
 | foregroundShow | 否 | Boolean | 应用在前台时是否展示通知消息。  true：默认值，应用在前后台都展示通知消息，此时[receiveMessage](push-pushservice.md#pushservicereceivemessage)不会被触发，无法获取消息数据。  false：应用只在后台展示通知消息；应用在前台时，通知消息将不会展示，但可以通过[receiveMessage](push-pushservice.md#pushservicereceivemessage)接收通知消息自行完成业务处理，详情请参见[应用在前台时处理通知消息](../harmonyos-guides/push-send-alert.md#应用在前台时处理通知消息)。  **说明：**  foregroundShow字段仅对push-type为0的通知消息生效。 |
 | priorityScene | 否 | String | 消息的优先通知类型。取值如下：  · PRIMARY\_CONTACT：重要联系人消息  · AT\_ME：@我  · URGENT\_MESSAGE：加急消息  · SCHEDULE\_REMINDER：日程待办提醒  **说明：**  发送优先通知消息需要开通[优先通知权益](../harmonyos-guides/priority-notification-permission-guidelines.md)。 |
+| notificationFlags | 否 | [NotificationFlags](push-scenariozed-api-request-param.md#notificationflags) Object | 描述通知标志位。应用可以使用notificationFlags按需削减通知的提醒方式。详见[NotificationFlags](push-scenariozed-api-request-param.md#notificationflags)结构体。 |
 
 ### inboxContent示例
 
@@ -89,6 +90,13 @@ content_hash: sha256:eb210ad3fc83e55da4bff73a9845f00599d4ab380c045c43666934f0f4b
 | --- | --- | --- | --- |
 | addNum | 否 | Integer | 应用角标累加数字（大于0小于100的整数），非应用角标实际显示数字。  **说明：**  · 某应用当前有N条未读消息，若addNum设置为3，则每发一次消息，应用角标显示的数字累加3，为N+3（若N+3 > 99，角标显示“99+”）。  · 当不传入addNum时默认值为0，角标不会增加。 |
 | setNum | 否 | Integer | 角标设置数字（大于等于0小于100的整数），应用角标实际显示数字。  **说明：**  setNum优先级高于addNum：  · 若未传入setNum，说明未下发setNum，则本次以addNum为准。  · 若setNum>=0，说明下发了setNum，则本次以setNum为准。发布通知时不携带addNum字段。 |
+
+### NotificationFlags
+
+| 参数 | 是否必选 | 参数类型 | 描述 |
+| --- | --- | --- | --- |
+| isSoundEnabled | 否 | Boolean | 是否启用通知声音提醒。  false：关闭铃声。  true：启用通知声音提醒（**默认值**）。实际消息推送场景下，仅当该字段为true且用户的设备及应用的声音均已开启时，才可能触发通知声音。 |
+| isVibrationEnabled | 否 | Boolean | 是否启用通知振动提醒。  false：关闭振动。  true：启用通知振动提醒（**默认值**）。实际消息推送场景下，仅当该字段为true且用户的设备及应用的振动均已开启时，才可能触发通知振动。 |
 
 ## BadgePayload 角标刷新消息
 
@@ -318,7 +326,7 @@ content_hash: sha256:eb210ad3fc83e55da4bff73a9845f00599d4ab380c045c43666934f0f4b
 
 ### Extend
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/T0ZxhaGcReCZobm0YR0dnA/zh-cn_image_0000002779853550.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/3BqrhaZQQnG_aFsb7oV88g/zh-cn_image_0000002815401699.png)
 
 * 1 实况卡片辅助区类型，对应type字段：
   + 当辅助区类型为1时，辅助区显示普通文本，使用API字段text传入文本内容。
@@ -337,7 +345,7 @@ content_hash: sha256:eb210ad3fc83e55da4bff73a9845f00599d4ab380c045c43666934f0f4b
 
 ### Game
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/3z4FcXOKTLKeuGDOCKN59w/zh-cn_image_0000002779693582.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/kZ2JPDnxRDepG0ZpfV8pkg/zh-cn_image_0000002786522124.png)
 
 * 1 左侧队伍名称，对应host中的[name](push-scenariozed-api-request-param.md#team)字段。
 * 2 左侧队伍图标，对应host中的[icon](push-scenariozed-api-request-param.md#team)和[iconUrl](push-scenariozed-api-request-param.md#team)字段。
@@ -416,7 +424,7 @@ content_hash: sha256:eb210ad3fc83e55da4bff73a9845f00599d4ab380c045c43666934f0f4b
 
 ### SingleTextBlock
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/8kL0qhmsT7eSItXJENT1Jw/zh-cn_image_0000002809013203.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/pxJSQdbFTMOLZVvKWiAarg/zh-cn_image_0000002786362198.png)
 
 * 1 辅助标记文本，对应firstLine字段。
 * 2 强调文本内容，对应secondLine字段。
@@ -431,7 +439,7 @@ content_hash: sha256:eb210ad3fc83e55da4bff73a9845f00599d4ab380c045c43666934f0f4b
 
 ### FirstTextBlock
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/2FX4iU79TwS7lB_Ha1icww/zh-cn_image_0000002809053117.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/3zGWgpmUQUKqf38TjTbLJw/zh-cn_image_0000002815561619.png)
 
 * 1 左侧首行文本，对应firstLine字段。
 * 2 左侧次行文本内容，对应secondLine字段。
@@ -446,7 +454,7 @@ content_hash: sha256:eb210ad3fc83e55da4bff73a9845f00599d4ab380c045c43666934f0f4b
 
 ### LastTextBlock
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/d3_DGUVITaSn3NcWmDpKFQ/zh-cn_image_0000002779853554.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/RF5gx16dTMq-XKZXbqThkA/zh-cn_image_0000002815401703.png)
 
 * 3 右侧首行文本，对应firstLine字段。
 * 4 右侧次行文本内容，对应secondLine字段。
@@ -466,7 +474,7 @@ content_hash: sha256:eb210ad3fc83e55da4bff73a9845f00599d4ab380c045c43666934f0f4b
 
 ### RichProgress
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/Mb7cYfmCRsqhmRlhZNmBWQ/zh-cn_image_0000002779693586.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/UhlPQm01Ri6Z0rrYDI2PPw/zh-cn_image_0000002786522128.png)
 
 * 1 进度百分比，对应progress字段。
 * 2 进度指示器左侧的进度点及节点图标的颜色，对应color字段。
@@ -494,7 +502,7 @@ content_hash: sha256:eb210ad3fc83e55da4bff73a9845f00599d4ab380c045c43666934f0f4b
 
 ### ExternalData
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/wfQNZAPJRUOxrHQB9M0oSQ/zh-cn_image_0000002809013205.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/9rwmtMZPScqfQny4xlAQTg/zh-cn_image_0000002786362200.png)
 
 * 1 自定义的外屏通知标题，对应title字段。
 * 2 自定义的外屏通知内容，对应body字段。

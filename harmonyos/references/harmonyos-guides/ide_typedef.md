@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_typedef
 title: "@typescript-eslint/typedef"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/typedef
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:11+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:4269e7b083f3133809bdf05d3fef68717d3c676be9cf6b834bf66d28486b8317
+scraped_at: 2026-11-12T09:52:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b247b1808bd4ec9536d1a87352ce3b9649afdabce389fe6beaf9856d77849410
 ---
 
 在某些位置需要类型注释。
@@ -25,7 +25,7 @@ content_hash: sha256:4269e7b083f3133809bdf05d3fef68717d3c676be9cf6b834bf66d28486
 
 ## 选项
 
-详情请参考[@typescript-eslint/typedef选项](https://typescript-eslint.nodejs.cn/rules/typedef#options)。
+请参考[@typescript-eslint/typedef选项](https://typescript-eslint.nodejs.cn/rules/typedef#options)。
 
 ## 正例
 
@@ -45,4 +45,4 @@ export const text = 'text';
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

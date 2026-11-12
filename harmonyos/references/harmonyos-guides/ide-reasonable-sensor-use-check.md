@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-reasonabl
 title: "@performance/reasonable-sensor-use-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/reasonable-sensor-use-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:12+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:1248e53a94f5990561d9fadc1f7c34f1bf31c6bfe33f7ca053afc81b15b00d43
+scraped_at: 2026-11-12T09:52:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f78e3b7a3b6d97e2354a25fa8968efca55003fa29738b232f4b3dabc949842e9
 ---
 
 应用退到后台时，禁止使用传感器资源。
@@ -65,4 +65,4 @@ export default class EntryAbility extends UIAbility {
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

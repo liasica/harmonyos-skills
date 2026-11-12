@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/bulktransfer
-title: USB批量传输
-breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB服务 > USB Host模式开发 > USB批量传输
+title: USB批量传输（ArkTS）
+breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB服务 > USB Host模式开发 > USB批量传输（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:49+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:515def9b556ebf765d253868e42b6a287acb7413aa77696354a543f5866acb59
+scraped_at: 2026-11-12T09:51:48+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c5cf6083f57dd00499a087a2ec1e71dfac6c9c8d2073a9ca7a2b269f7850767c
 ---
 
 ## 场景介绍
@@ -185,8 +185,27 @@ content_hash: sha256:515def9b556ebf765d253868e42b6a287acb7413aa77696354a543f5866
      /*
        打开对应接口，在设备信息（deviceList）中选取对应的interface。
        interface1为设备配置中的一个接口。
+       开关关闭时调用claimInterface（共享式占用，返回0成功），
+       开关打开时调用claimInterfaceExclusive（独占式占用，失败抛出BusinessError）。
       */
-     usbManager.claimInterface(pipe, interface1, true);
+     if (this.isExclusiveClaim_) {
+       usbManager.claimInterfaceExclusive(pipe, interface1, true, (conflict: usbManager.InterfaceConflictInfo) => {
+         // 其他应用claim同一接口时的异步冲突通知
+         const conflictMsg = `busNum = ${conflict.busNum}, devAddr = ${conflict.devAddr}, ` +
+           `interfaceId = ${conflict.interfaceId}`;
+         console.info(`interface conflict: ${conflictMsg}`);
+         this.logInfo_ += `\n[INFO] interface conflict: ${conflictMsg}`;
+       });
+       console.info('claimInterfaceExclusive success');
+       this.logInfo_ += '\n[INFO] claimInterfaceExclusive success';
+     } else {
+       let claimInterfaceResult: number = usbManager.claimInterface(pipe, interface1, true);
+       if (claimInterfaceResult !== 0) {
+         console.error(`claimInterface error = ${claimInterfaceResult}`);
+         this.logInfo_ += '\n[ERROR] claimInterface error = ' + JSON.stringify(claimInterfaceResult);
+         return;
+       }
+     }
      this.pipe_ = pipe;
      this.interface_ = interface1;
      console.info('open device success');
@@ -214,8 +233,8 @@ content_hash: sha256:515def9b556ebf765d253868e42b6a287acb7413aa77696354a543f5866
    let pipe: usbManager.USBDevicePipe = this.pipe_;
    let interface1: usbManager.USBInterface = this.interface_;
    /*
-   读取数据，在device信息中选取对应数据接收的endpoint来做数据传输
-   （endpoint.direction == 0x80）；dataUint8Array是要读取的数据，类型为Uint8Array。
+     读取数据，在device信息中选取对应数据接收的endpoint来做数据传输
+    （endpoint.direction == 0x80）；dataUint8Array是要读取的数据，类型为Uint8Array。
     */
    let inEndpoint: usbManager.USBEndpoint = interface1.endpoints?.[1];
    let outEndpoint: usbManager.USBEndpoint = interface1.endpoints?.[0];

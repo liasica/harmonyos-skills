@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-quotes-st
 title: "@hw-stylistic/quotes"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > ArkTS代码风格规则@hw-stylistic > @hw-stylistic/quotes
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:13+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:e071b592c1e83a2b35e6895a307ddd6ed8f58552ecb6e66be8410fe643a81c2c
+scraped_at: 2026-11-12T09:52:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ddb79bb5d1a4d401b25ab9f067dff1290ae0a6552b8c83ebb283dddaf4a5d478
 ---
 
 强制字符串使用单引号。该规则仅检查.ets文件类型。
@@ -48,4 +48,4 @@ export const a = "hello";
 "plugin:@hw-stylistic/all"
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

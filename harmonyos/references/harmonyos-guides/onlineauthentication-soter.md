@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/onlineauthent
 title: SOTER免密认证
 breadcrumb: 指南 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > 免密认证 > SOTER免密认证
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:42+08:00
+scraped_at: 2026-11-12T09:51:39+08:00
 doc_updated_at: 2026-09-24
-content_hash: sha256:cc97cfde78ba7cfa860da4d48d5418fb9223a38c4019fe051d8655c93394d8d2
+content_hash: sha256:4306c6bf1e86d6dc8c7702433969eb6776e798270e79dbca5e8089f7cc47e092
 ---
 
 SOTER旨在提供一套生物认证平台和标准，使得业务可以采用设备上的传感器（如人脸传感器/指纹传感器）进行安全、高效的免密登录、免密支付等操作，当前已广泛应用于微信小程序/公众号、指纹支付等业务场景。
@@ -44,7 +44,7 @@ SOTER旨在提供一套生物认证平台和标准，使得业务可以采用设
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/EhPPDA0uSLuBiyWCmdubzQ/zh-cn_image_0000002809010397.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/XuuhwIHXTAmj-ewzEte24w/zh-cn_image_0000002786359692.png)
 
 **生成应用密钥流程说明：**
 

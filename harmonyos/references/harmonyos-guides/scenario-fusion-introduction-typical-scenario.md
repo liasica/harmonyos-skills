@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 典型场景展示
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 智能填充服务 > 典型场景展示
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:42+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:1466ab3c6088bc97c66d698797b318cbd40d6ff9c313bffda60d777e8f61ca1c
+scraped_at: 2026-11-12T09:52:36+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:321b4f07e49dd1c1ff57da21b94c2bf563ae6270948e2d9b0d3305aa970bcfcd
 ---
 
 如下展示两种智能填充的典型场景。
@@ -18,11 +18,11 @@ content_hash: sha256:1466ab3c6088bc97c66d698797b318cbd40d6ff9c313bffda60d777e8f6
 
 剪贴板数据源推荐场景目前仅支持中文姓名和中文地址。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/W-mgz1hqTNK_Fe0UauCDLw/zh-cn_image_0000002779851614.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/p7Vd1VlXTf23PYkhT-Daxg/zh-cn_image_0000002815559991.png)
 
 示例二：根据用户输入，智能关联设备上历史表单输入、华为账号等信息提供输入建议，一键填充。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/oRjw_fwGSZ21dovlO59wwg/zh-cn_image_0000002779691646.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/93AZZ1PfRkS_sy3UvEV2Hw/zh-cn_image_0000002815400075.png)
 
 ## 填写收货地址场景
 
@@ -32,11 +32,11 @@ content_hash: sha256:1466ab3c6088bc97c66d698797b318cbd40d6ff9c313bffda60d777e8f6
 
 剪贴板数据源推荐场景目前仅支持中文姓名和中文地址。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/TaxF2i80T4iefSRowwks7g/zh-cn_image_0000002809011267.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/9JLKMPZ-QN2sabKtxKL63Q/zh-cn_image_0000002786520500.png)
 
 示例二：根据用户输入，智能关联设备上历史表单输入、华为账号等信息提供输入建议，一键填充。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/cANNhjlPQry_r5npIZu-pQ/zh-cn_image_0000002809051181.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/DMpm7YmPShS_VGiChDwspQ/zh-cn_image_0000002786360572.png)
 
 ## 示例代码
 
@@ -89,7 +89,7 @@ struct SmartFill {
             if (!this.isClicked) {
               // 主动触发保存历史表单输入。
               try {
-                autoFillManager.requestAutoSave(this.getUIContext())
+                autoFillManager.requestAutoSave(this.getUIContext());
               } catch (err) {
                 let e: BusinessError = err as BusinessError;
                 hilog.error(0x0000, 'DemoTest', 'error: %{public}d %{public}s', e.code, e.message);
@@ -98,11 +98,11 @@ struct SmartFill {
               // 设置超时时间以防止重复点击按钮保存历史表单输入。
               setTimeout(() => {
                 this.isClicked = false;
-              }, 1000)
+              }, 1000);
               // 或者通过路由跳转其他页面触发保存历史表单输入。
               this.getUIContext().getRouter().pushUrl({
-                url: 'xxx'
-              })
+                url: 'pages/xxxxxx'
+              });
             }
           })
           .width('50%')

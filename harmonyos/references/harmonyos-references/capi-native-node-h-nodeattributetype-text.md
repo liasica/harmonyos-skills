@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: ArkUI_NodeAttributeType（文本显示类组件相关属性）
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_node.h > ArkUI_NodeAttributeType（文本显示类组件相关属性）
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:03+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1fc3648064c19d5a730d2a9e4c1618f1a9817a3b8a2c8afa35e8c8ed1b170910
+scraped_at: 2026-11-12T09:54:43+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:28746479d7abd4a673749ecec196d14c1a006a213618169a1bdbcf377958c1e5
 ---
 
 ```c
@@ -14,7 +14,7 @@ enum ArkUI_NodeAttributeType
 
 ## 概述
 
-定义ArkUI在Native侧可以设置的文本显示类组件相关属性样式集合，包含Text、Span、ImageSpan等组件属性设置。用于在Native开发场景中通过属性设置、属性获取接口配置文本组件的样式属性，如字体大小、颜色、行高、装饰线等，实现对文本显示效果的精细化控制和自定义。
+定义ArkUI在Native侧可以设置的文本显示类组件相关属性样式集合，包含Text、Span、ImageSpan组件属性设置。用于在Native开发场景中通过属性设置、属性获取接口配置文本组件的样式属性，如字体大小、颜色、行高、装饰线等，实现对文本显示效果的精细化控制和自定义。
 
 **起始版本：** 12
 
@@ -62,13 +62,13 @@ NODE_FONT_COLOR = 1001
 
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].u32 | 字体颜色数值，0xargb格式，形如 0xFFFF0000 表示红色。 |
+| .value[0].u32 | 字体颜色数值，0xARGB格式，形如 0xFFFF0000 表示红色。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].u32 | 字体颜色数值，0xargb格式。 |
+| .value[0].u32 | 字体颜色数值，0xARGB格式。 |
 
 ## NODE\_FONT\_SIZE
 
@@ -183,7 +183,7 @@ NODE_TEXT_DECORATION = 1006
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].i32 | 文本装饰线类型，具体枚举值请参考[ArkUI\_TextDecorationType](capi-text-common-h.md#arkui_textdecorationtype)。默认值为ARKUI\_TEXT\_DECORATION\_TYPE\_NONE，无装饰线。 |
-| .value[1]?.u32 | 可选值，装饰线颜色，0xargb格式，形如 0xFFFF0000 表示红色。默认值：0xFF000000，表示黑色。 |
+| .value[1]?.u32 | 可选值，装饰线颜色，0xARGB格式，形如 0xFFFF0000 表示红色。默认值：0xFF000000，表示黑色。 |
 | .value[2]?.i32 | 文本装饰线样式，具体枚举值请参考[ArkUI\_TextDecorationStyle](capi-text-common-h.md#arkui_textdecorationstyle)。默认值为ARKUI\_TEXT\_DECORATION\_STYLE\_SOLID，实线装饰线。 |
 | .value[3]?.f32 | 可选值，文本装饰线粗细比例，默认值：1.0，取值范围：[0, +∞)。传入负数时参数不生效。 |
 
@@ -192,7 +192,7 @@ NODE_TEXT_DECORATION = 1006
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 文本装饰线类型[ArkUI\_TextDecorationType](capi-text-common-h.md#arkui_textdecorationtype)。 |
-| .value[1].u32 | 装饰线颜色，0xargb格式。 |
+| .value[1].u32 | 装饰线颜色，0xARGB格式。 |
 | .value[2].i32 | 文本装饰线样式[ArkUI\_TextDecorationStyle](capi-text-common-h.md#arkui_textdecorationstyle)。 |
 | .value[3].f32 | 文本装饰线粗细比例。 |
 
@@ -405,7 +405,7 @@ NODE_TEXT_TEXT_SHADOW = 1015
 | --- | --- |
 | .value[0].f32 | 阴影模糊半径，单位为vp。取值范围：[0, +∞)。默认值为0，表示无模糊效果。 |
 | .value[1].i32 | 阴影类型，具体枚举值请参考[ArkUI\_ShadowType](capi-native-type-visual-h.md#arkui_shadowtype)。默认值为ARKUI\_SHADOW\_TYPE\_COLOR，表示颜色阴影。 |
-| .value[2].u32 | 阴影颜色，0xargb格式，形如 0xFFFF0000 表示红色。 |
+| .value[2].u32 | 阴影颜色，0xARGB格式，形如 0xFFFF0000 表示红色。 |
 | .value[3].f32 | 阴影X轴偏移量，单位为vp。 |
 | .value[4].f32 | 阴影Y轴偏移量，单位为vp。 |
 
@@ -415,7 +415,7 @@ NODE_TEXT_TEXT_SHADOW = 1015
 | --- | --- |
 | .value[0].f32 | 阴影模糊半径，单位为vp。 |
 | .value[1].i32 | 阴影类型[ArkUI\_ShadowType](capi-native-type-visual-h.md#arkui_shadowtype)。 |
-| .value[2].u32 | 阴影颜色，0xargb格式。 |
+| .value[2].u32 | 阴影颜色，0xARGB格式。 |
 | .value[3].f32 | 阴影X轴偏移量，单位为vp。 |
 | .value[4].f32 | 阴影Y轴偏移量，单位为vp。 |
 
@@ -610,12 +610,14 @@ NODE_TEXT_LINE_SPACING = 1023
 | 参数项 | 描述 |
 | --- | --- |
 | .value[0].f32 | 表示行间距值，单位为fp。取值范围：[0, +∞)。传入负数时参数不生效。 |
+| ?.object | 可选。指向[OH\_ArkUI\_NativeModule\_LineSpacingOptions](capi-arkui-nativemodule-oh-arkui-nativemodule-linespacingoptions.md)对象的指针，用于设置行间距选项。从API版本26.0.1开始支持。使用[OH\_ArkUI\_NativeModule\_LineSpacingOptions\_Create](capi-text-h.md#oh_arkui_nativemodule_linespacingoptions_create)创建对象，使用[OH\_ArkUI\_NativeModule\_LineSpacingOptions\_Destroy](capi-text-h.md#oh_arkui_nativemodule_linespacingoptions_destroy)销毁对象。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].f32 | 表示行间距值，单位为fp。 |
+| .object | 指向[OH\_ArkUI\_NativeModule\_LineSpacingOptions](capi-arkui-nativemodule-oh-arkui-nativemodule-linespacingoptions.md)对象的指针，用于获取行间距选项。从API版本26.0.1开始支持。 |
 
 ## NODE\_FONT\_FEATURE
 
@@ -705,13 +707,13 @@ NODE_TEXT_SELECTED_BACKGROUND_COLOR = 1027
 
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].u32 | 颜色数值，0xargb格式，形如 0xFFFF0000 表示红色。 |
+| .value[0].u32 | 颜色数值，0xARGB格式，形如 0xFFFF0000 表示红色。 |
 
 **返回：**
 
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].u32 | 颜色数值，0xargb格式。 |
+| .value[0].u32 | 颜色数值，0xARGB格式。 |
 
 ## NODE\_TEXT\_CONTENT\_WITH\_STYLED\_STRING
 
@@ -853,7 +855,7 @@ NODE_TEXT_LINEAR_GRADIENT = 1033
 | .value[1].i32 | 线性渐变的方向[ArkUI\_LinearGradientDirection](capi-native-type-visual-h.md#arkui_lineargradientdirection)。设置除ARKUI\_LINEAR\_GRADIENT\_DIRECTION\_CUSTOM之外的线性渐变方向后，angle不生效。默认值：ARKUI\_LINEAR\_GRADIENT\_DIRECTION\_LEFT\_BOTTOM。 |
 | .value[2].i32 | 是否为渐变的颜色重复着色，0表示不重复着色，1表示重复着色。默认值：0。 |
 | .object | 参数类型为[ArkUI\_ColorStop](capi-arkui-nativemodule-arkui-colorstop.md)。指定某百分比位置处的渐变色颜色，设置非法颜色直接跳过。 |
-| colors | 渐变色颜色数组，数组元素为0xargb格式，形如0xFFFF0000表示红色。 |
+| colors | 渐变色颜色数组，数组元素为0xARGB格式，形如0xFFFF0000表示红色。 |
 | stops | stops表示指定颜色所处位置的数组，数组元素取值范围为[0,1.0]，0表示需要设置渐变色的容器的开始处，1.0表示容器的结尾处。想要实现多个颜色渐变效果时，数组元素建议递增设置，如后一个数组元素比前一个数组元素小的话，按照等于前一个数组元素的值处理。 |
 | size | 颜色个数，若小于colors数组长度则仅生效前size个颜色，不建议设置大于colors数组长度或小于等于0的值以及异常值。 |
 
@@ -865,7 +867,7 @@ NODE_TEXT_LINEAR_GRADIENT = 1033
 | .value[1].i32 | 线性渐变的方向[ArkUI\_LinearGradientDirection](capi-native-type-visual-h.md#arkui_lineargradientdirection)。 |
 | .value[2].i32 | 为渐变的颜色重复着色，0表示不重复着色，1表示重复着色。默认值：0。 |
 | .object | 参数类型为[ArkUI\_ColorStop](capi-arkui-nativemodule-arkui-colorstop.md)。指定某百分比位置处的渐变色颜色，设置非法颜色直接跳过。 |
-| colors | 渐变色颜色数组，数组元素为0xargb格式，形如0xFFFF0000表示红色。 |
+| colors | 渐变色颜色数组，数组元素为0xARGB格式，形如0xFFFF0000表示红色。 |
 | stops | stops表示指定颜色所处位置的数组，数组元素取值范围为[0,1.0]，0表示需要设置渐变色的容器的开始处，1.0表示容器的结尾处。 |
 | size | 生效后渐变色的颜色个数。 |
 
@@ -890,7 +892,7 @@ NODE_TEXT_RADIAL_GRADIENT = 1034
 | .value[2]?.f32 | 径向渐变的半径，默认值0。取值范围：[0, +∞)。传入负数时参数不生效。 |
 | .value[3]?.i32 | 是否为渐变的颜色重复着色，0表示不重复着色，1表示重复着色。默认值：0。 |
 | .object | 参数类型为[ArkUI\_ColorStop](capi-arkui-nativemodule-arkui-colorstop.md)。指定某百分比位置处的渐变色颜色，设置非法颜色直接跳过。 |
-| colors | 渐变色颜色数组，数组元素为0xargb格式，形如0xFFFF0000表示红色。 |
+| colors | 渐变色颜色数组，数组元素为0xARGB格式，形如0xFFFF0000表示红色。 |
 | stops | stops表示指定颜色所处位置的数组，数组元素取值范围为[0,1.0]，0表示需要设置渐变色的容器的开始处，1.0表示容器的结尾处。想要实现多个颜色渐变效果时，数组元素建议递增设置，如后一个数组元素比前一个数组元素小的话，按照等于前一个数组元素的值处理。 |
 | size | 颜色个数，若小于colors数组长度则仅生效前size个颜色，不建议设置大于colors数组长度或小于等于0的值以及异常值。 |
 
@@ -903,7 +905,7 @@ NODE_TEXT_RADIAL_GRADIENT = 1034
 | .value[2]?.f32 | 径向渐变的半径，单位为vp。默认值0。 |
 | .value[3]?.i32 | 为渐变的颜色重复着色，0表示不重复着色，1表示重复着色。默认值：0。 |
 | .object | 参数类型为[ArkUI\_ColorStop](capi-arkui-nativemodule-arkui-colorstop.md)。指定某百分比位置处的渐变色颜色，设置非法颜色直接跳过。 |
-| colors | 渐变色颜色数组，数组元素为0xargb格式，形如0xFFFF0000表示红色。 |
+| colors | 渐变色颜色数组，数组元素为0xARGB格式，形如0xFFFF0000表示红色。 |
 | stops | stops表示指定颜色所处位置的数组，数组元素取值范围为[0,1.0]，0表示需要设置渐变色的容器的开始处，1.0表示容器的结尾处。 |
 | size | 生效后渐变色的颜色个数。 |
 
@@ -1433,7 +1435,7 @@ NODE_SPAN_TEXT_BACKGROUND_STYLE = 2001
 
 | 参数项 | 描述 |
 | --- | --- |
-| .value[0].u32 | 表示文本背景颜色，0xargb格式，形如0xFFFF0000表示红色。 |
+| .value[0].u32 | 表示文本背景颜色，0xARGB格式，形如0xFFFF0000表示红色。 |
 | .value[1].f32 | 文本背景圆角半径，单位为vp。取值范围：[0, +∞)。传入负数时参数不生效。支持两种设置方式：  1）仅设置.value[1].f32，未设置.value[2].f32~.value[4].f32时，表示四个方向的圆角半径统一设置；  2）设置了.value[2].f32~.value[4].f32中任意项时，.value[1].f32仅表示左上角圆角半径。 |
 | .value[2].f32 | 设置右上角圆角半径，单位为vp。取值范围：[0, +∞)。传入负数时参数不生效。 |
 | .value[3].f32 | 设置左下角圆角半径，单位为vp。取值范围：[0, +∞)。传入负数时参数不生效。 |
@@ -1442,7 +1444,7 @@ NODE_SPAN_TEXT_BACKGROUND_STYLE = 2001
 
 | 类型 | 说明 |
 | --- | --- |
-| .value[0].u32 | 文本背景颜色，0xargb格式。 |
+| .value[0].u32 | 文本背景颜色，0xARGB格式。 |
 | .value[1].f32 | 左上角圆角半径，单位为vp。 |
 | .value[2].f32 | 右上角圆角半径，单位为vp。 |
 | .value[3].f32 | 左下角圆角半径，单位为vp。 |
@@ -1681,3 +1683,35 @@ NODE_IMAGE_SPAN_SUPPORT_SVG2 = 3005
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 是否启用SVG新解析能力开关。1表示支持SVG解析新能力，0表示保持原有SVG解析能力。 |
+
+## NODE\_IMAGE\_SPAN\_RESIZABLE
+
+```c
+NODE_IMAGE_SPAN_RESIZABLE = 3006
+```
+
+ImageSpan组件图像拉伸时，支持通过设置边缘宽度或者使用栅格对象调整其大小，支持属性设置、属性重置和属性获取接口。接口调用时需要保证设置和获取的参数类型是相同的。
+
+作为属性设置方法参数、属性获取方法返回值的[ArkUI\_AttributeItem](capi-arkui-nativemodule-arkui-attributeitem.md)格式如下。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| .value[0].f32 | 左边缘宽度，单位为vp。取值范围：[0, +∞)。传入负数时使用默认值0。 |
+| .value[1].f32 | 上边缘宽度，单位为vp。取值范围：[0, +∞)。传入负数时使用默认值0。 |
+| .value[2].f32 | 右边缘宽度，单位为vp。取值范围：[0, +∞)。传入负数时使用默认值0。 |
+| .value[3].f32 | 下边缘宽度，单位为vp。取值范围：[0, +∞)。传入负数时使用默认值0。 |
+| .object | 栅格对象，参数类型为[OH\_Drawing\_Lattice](capi-drawing-oh-drawing-lattice.md)。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| .value[0].f32 | 左边缘宽度，单位为vp。 |
+| .value[1].f32 | 上边缘宽度，单位为vp。 |
+| .value[2].f32 | 右边缘宽度，单位为vp。 |
+| .value[3].f32 | 下边缘宽度，单位为vp。 |
+| .object | 栅格对象，参数类型为[OH\_Drawing\_Lattice](capi-drawing-oh-drawing-lattice.md)。 |

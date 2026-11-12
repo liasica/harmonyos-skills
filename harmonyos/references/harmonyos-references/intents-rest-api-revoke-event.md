@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/intents-r
 title: 事件撤销
 breadcrumb: API参考 > AI > Intents Kit（意图框架服务） > REST API > 事件撤销
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:34+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:57:45+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:9a32c67f0c4ee1939c5d9078886b91b48353b0b56cdafa7178cc0529f132086a
 ---
 

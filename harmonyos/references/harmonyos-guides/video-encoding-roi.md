@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encodin
 title: ROI视频编码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > ROI视频编码
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:07+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:b1428b5fac29ff5b535dec196f9717a1c9ba5bd13d6b374a8e677dffc4fc5006
+scraped_at: 2026-11-12T09:52:02+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7c5eaaeb5acfc2d1090e8d82f0952b537926f36a7984d394f47eee784d397286
 ---
 
 ## 基础概念
@@ -83,7 +83,7 @@ ROI是一个矩形区域，Top,Left和Bottom,Right分别定义了ROI的区域在
 
 **图1：ROI坐标和最大允许面积占比示意图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/9WGr7XVNQhacLgZ_1V7qSg/zh-cn_image_0000002779690958.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/_G-a-kfqQrS0kO3bOGYAaQ/zh-cn_image_0000002815399371.png)
 
 ## 生效机制说明
 
@@ -124,7 +124,7 @@ Surface模式下，相机将视频帧输出到OH\_NativeImage的Surface上，开
 
 **图2：NativeBuffer元数据接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/mRYeQk2JRme6BwsYhfMErg/zh-cn_image_0000002809010579.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/ywJR08INSqyzb1Rv_4WnUw/zh-cn_image_0000002786519796.png)
 
 详细开发步骤如下：
 
@@ -278,7 +278,7 @@ Surface模式下，相机将视频帧输出到OH\_NativeImage的Surface上，开
 
 **图3：编码输入参数回调接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/x5YJS1mzTQC1iS_DfOc94A/zh-cn_image_0000002809050493.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/3O0H6qOJQsK78yFVGCDIOg/zh-cn_image_0000002786359868.png)
 
 详细开发步骤如下：
 
@@ -384,7 +384,7 @@ Buffer模式下，视频帧通过OH\_VideoEncoder\_PushInputBuffer送入编码�
 
 **图4：编码输入Buffer回调接口配置ROI流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/RuWwAytPRROsi0LJ9W6nOw/zh-cn_image_0000002779850928.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/xxLtn-4GRUa8D6ZWDdfG2A/zh-cn_image_0000002815559289.png)
 
 详细开发步骤如下：
 

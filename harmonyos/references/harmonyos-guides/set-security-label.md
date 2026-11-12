@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/set-security-
 title: 设置分布式文件数据等级
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 分布式文件系统 > 设置分布式文件数据等级
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:29+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:51:25+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:4ae7d1d86ff64f3355be15142035190641d15ba91e56993fb0b53ec3204dae17
 ---
 

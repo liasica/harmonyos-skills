@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-deferr
 title: 分段式拍照(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 分段式拍照(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:56+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:5ff36940702d44fff38971421824b2e8d8203409fffed3f93284be2bbee11e6e
+scraped_at: 2026-11-12T09:52:04+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:2481173ada1accd6f6c03f038c30bc28fbdbbd1549c1e6270982efee78cdc9b9
 ---
 
 分段式拍照是相机的重要功能之一，即应用下发拍照任务后，系统将分多阶段上报不同质量的图片。
@@ -36,7 +36,24 @@ content_hash: sha256:5ff36940702d44fff38971421824b2e8d8203409fffed3f93284be2bbee
    import { BusinessError } from '@kit.BasicServicesKit';
    import { photoAccessHelper } from '@kit.MediaLibraryKit';
    ```
-2. 确定拍照输出流。
+2. 查询相机是否支持拍照模式。
+
+   通过[getSupportedSceneModes](../harmonyos-references/arkts-apis-camera-cameramanager.md#getsupportedscenemodes11)接口获取传入镜头支持的模式，查询是否支持拍照模式。
+
+   ```ts
+   function isCaptureModeSupported(cameraManager: camera.CameraManager, cameraDevice: camera.CameraDevice): boolean
+   {
+     try {
+       let modeArray = cameraManager.getSupportedSceneModes(cameraDevice);
+       return modeArray.includes(camera.SceneMode.NORMAL_PHOTO);
+     } catch (error) {
+       let err = error as BusinessError;
+       console.error(`failed to getSupportedSceneModes, err code: ${err.code}`);
+       return false;
+     }
+   }
+   ```
+3. 确定拍照输出流。
 
    通过[CameraOutputCapability](../harmonyos-references/arkts-apis-camera-i.md#cameraoutputcapability)中的photoProfiles属性，可获取当前设备支持的拍照输出流，通过[createPhotoOutput](../harmonyos-references/arkts-apis-camera-cameramanager.md#createphotooutput11)方法创建拍照输出流。
 
@@ -63,7 +80,7 @@ content_hash: sha256:5ff36940702d44fff38971421824b2e8d8203409fffed3f93284be2bbee
      return photoOutput;
    }
    ```
-3. 设置拍照photoAssetAvailable的回调。
+4. 设置拍照photoAssetAvailable的回调。
 
    **注意** 
 
@@ -132,7 +149,7 @@ content_hash: sha256:5ff36940702d44fff38971421824b2e8d8203409fffed3f93284be2bbee
    落盘图片参考媒体库接口：[saveCameraPhoto](../harmonyos-references/arkts-apis-photoaccesshelper-mediaassetchangerequest.md#savecameraphoto12)
 
    请求图片参考媒体库接口：[requestImageData](../harmonyos-references/arkts-apis-photoaccesshelper-mediaassetmanager.md#requestimagedata11) 和 [onDataPrepared](../harmonyos-references/arkts-apis-photoaccesshelper-mediaassetdatahandler.md#ondataprepared11)
-4. 拍照时的会话配置及触发拍照的方式，与普通拍照相同，请参考[拍照](camera-shooting.md)的步骤4-5。
+5. 拍照时的会话配置及触发拍照的方式，与普通拍照相同，请参考[拍照](camera-shooting.md)的步骤6-7。
 
 ## 状态监听
 

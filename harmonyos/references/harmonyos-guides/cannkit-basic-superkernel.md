@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-basic-superkernel
 title: SuperKernel
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC昇腾到麒麟兼容性迁移指南 > Ascend910B/Ascend910C到KirinX90/Kirin9030迁移指导 > 基础API迁移指导 > SuperKernel
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC昇腾到麒麟兼容性迁移指南 > Ascend910B/Ascend910C到KirinX90/Kirin9030迁移指导 > 基础API迁移指导 > SuperKernel
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:43:02+08:00
+scraped_at: 2026-11-12T09:52:43+08:00
 doc_updated_at: 2026-04-20
 content_hash: sha256:2e013d68fce86628860963efd34395b006d924752d7ea69fbd6155dcec56af7f
 ---

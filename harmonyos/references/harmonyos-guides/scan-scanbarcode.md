@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-scanbarc
 title: 默认界面扫码
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 默认界面扫码
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:15+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:e8988b235eec453fa116dda1227040ad6b6a416bd4c08a0984e84e00288f1e54
+scraped_at: 2026-11-12T09:52:09+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d7fda881cf2e4bc447411ff8daff86f69e4b6e7edcd415f08bdda547323dc63f
 ---
 
 默认界面扫码能力提供系统级体验一致的扫码界面，包含相机预览流，相册扫码入口，暗光环境闪光灯开启提示。Scan Kit默认界面扫码对系统相机权限进行了预授权且调用期间处于安全访问状态，无需开发者再次申请相机权限。适用于不同扫码场景的应用开发。
@@ -20,13 +20,13 @@ content_hash: sha256:e8988b235eec453fa116dda1227040ad6b6a416bd4c08a0984e84e00288
 
 默认界面扫码UX：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/plwrvbPpTaCg1ID1AhHj8A/zh-cn_image_0000002779691068.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/nXyI1m1DRWiJWfs6Ut_V-A/zh-cn_image_0000002815399481.png)
 
 **说明** 
 
 1. 系统首次使用默认界面扫码功能时，会向用户弹出隐私横幅提醒。
 2. 用户可以点击“进一步了解”查看安全访问相机说明，也可以关闭隐私横幅，关闭后重新打开应用的扫码界面将不再显示隐私横幅提醒，显示安全访问提示，3s后消失。
-3. 从API版本6.1.0(23)开始，默认界面扫码的标题支持根据[ScanOptions](../harmonyos-references/scan-scanbarcode-api.md#scanoptions)的scanTypes进行动态显示。
+3. 从API版本6.1.0(23)开始，默认界面扫码的标题新增支持根据[ScanOptions](../harmonyos-references/scan-scanbarcode-api.md#scanoptions)的scanTypes进行动态显示。
 
    * 在API版本6.1.0(23)之前，标题统一显示为“扫描二维码/条形码”。
    * 在API版本6.1.0(23)及之后：
@@ -37,10 +37,10 @@ content_hash: sha256:e8988b235eec453fa116dda1227040ad6b6a416bd4c08a0984e84e00288
 
 ## 约束与限制
 
-* 从API版本26.0.0开始，支持使用[isDefaultScanSupported](../harmonyos-references/scan-scancore.md#isdefaultscansupported)接口查询当前设备是否支持默认界面扫码。
-* 从API版本6.1.0(23)开始，默认界面扫码的标题支持根据[ScanOptions](../harmonyos-references/scan-scanbarcode-api.md#scanoptions)的scanTypes进行动态显示。
-* 从API版本6.1.0(23)开始，默认界面扫码能力支持带后置相机的Wearable，可以通过[getSupportedCameras](../harmonyos-references/arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
-* 从API版本6.0.0(20)开始，默认界面扫码能力支持悬浮屏、分屏场景。
+* 从API版本26.0.0开始，新增支持使用[scanCore.isDefaultScanSupported()](../harmonyos-references/scan-scancore.md#scancoreisdefaultscansupported)接口查询当前设备是否支持默认界面扫码。
+* 从API版本6.1.0(23)开始，默认界面扫码的标题新增支持根据[ScanOptions](../harmonyos-references/scan-scanbarcode-api.md#scanoptions)的scanTypes进行动态显示。
+* 从API版本6.1.0(23)开始，默认界面扫码能力新增支持带后置相机的Wearable，可以通过[getSupportedCameras()](../harmonyos-references/arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+* 从API版本6.0.0(20)开始，默认界面扫码能力新增支持悬浮屏、分屏场景。
 * 相册扫码只支持单码识别。
 * 不支持界面UX添加自定义设置。
 
@@ -48,10 +48,10 @@ content_hash: sha256:e8988b235eec453fa116dda1227040ad6b6a416bd4c08a0984e84e00288
 
 使用默认界面扫码的主要业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/_zb3WZ7STG2Mup8hACgj8A/zh-cn_image_0000002809010689.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/m8jmbIXOT56yiVB__i7sFw/zh-cn_image_0000002786519906.png)
 
 1. 用户向开发者的应用发起扫码请求。
-2. 开发者的应用通过调用Scan Kit的startScanForResult接口启动扫码界面。
+2. 开发者的应用通过调用Scan Kit的startScanForResult()接口启动扫码界面。
 3. 系统首次使用默认界面扫码功能时，会向用户弹出隐私横幅提醒。
 4. 用户可以点击关闭隐私横幅，重新打开应用的扫码界面将不再显示隐私横幅提醒，显示安全访问提示，3s后消失。
 5. Scan Kit通过Callback回调函数或Promise方式返回扫码结果。
@@ -60,17 +60,17 @@ content_hash: sha256:e8988b235eec453fa116dda1227040ad6b6a416bd4c08a0984e84e00288
 
 ## 接口说明
 
-接口返回值有两种返回形式：Callback和Promise回调。下表中为默认界面扫码Callback和Promise形式接口，Callback和Promise只是返回值方式不一样，功能相同。startScanForResult接口打开的是应用内呈现的扫码界面样式。具体API说明详见[接口文档](../harmonyos-references/scan-scanbarcode-api.md)。
+接口返回值有两种返回形式：Callback和Promise回调。下表中为默认界面扫码Callback和Promise形式接口，Callback和Promise只是返回值方式不一样，功能相同。startScanForResult()接口打开的是应用内呈现的扫码界面样式。具体API说明详见[接口文档](../harmonyos-references/scan-scanbarcode-api.md)。
 
 | 接口名 | 描述 |
 | --- | --- |
-| [startScanForResult](../harmonyos-references/scan-scanbarcode-api.md#startscanforresult)(context: [common.Context](../harmonyos-references/js-apis-app-ability-common.md#context), options?: [ScanOptions](../harmonyos-references/scan-scanbarcode-api.md#scanoptions)): Promise<[ScanResult](../harmonyos-references/scan-scanbarcode-api.md#scanresult)> | 启动默认界面扫码，通过ScanOptions进行扫码参数设置，返回扫码结果。使用Promise异步回调。 |
-| [startScanForResult](../harmonyos-references/scan-scanbarcode-api.md#startscanforresult-2)(context: common.Context, options: ScanOptions, callback: AsyncCallback<ScanResult>): void | 启动默认界面扫码，通过ScanOptions进行扫码参数设置，返回扫码结果。使用callback异步回调。 |
-| [startScanForResult](../harmonyos-references/scan-scanbarcode-api.md#startscanforresult-1)(context: common.Context, callback: AsyncCallback<ScanResult>): void | 启动默认界面扫码，返回扫码结果。使用callback异步回调。 |
+| [startScanForResult](../harmonyos-references/scan-scanbarcode-api.md#scanbarcodestartscanforresult)(context: [common.Context](../harmonyos-references/js-apis-app-ability-common.md#context), options?: [ScanOptions](../harmonyos-references/scan-scanbarcode-api.md#scanoptions)): Promise<[ScanResult](../harmonyos-references/scan-scanbarcode-api.md#scanresult)> | 启动默认界面扫码，通过ScanOptions进行扫码参数设置，返回扫码结果。使用Promise异步回调。 |
+| [startScanForResult](../harmonyos-references/scan-scanbarcode-api.md#scanbarcodestartscanforresult-2)(context: common.Context, options: ScanOptions, callback: AsyncCallback<ScanResult>): void | 启动默认界面扫码，通过ScanOptions进行扫码参数设置，返回扫码结果。使用callback异步回调。 |
+| [startScanForResult](../harmonyos-references/scan-scanbarcode-api.md#scanbarcodestartscanforresult-1)(context: common.Context, callback: AsyncCallback<ScanResult>): void | 启动默认界面扫码，返回扫码结果。使用callback异步回调。 |
 
 **说明** 
 
-startScanForResult接口需要在页面和组件的生命周期内调用。若需要设置扫码页面为全屏或沉浸式，请参见[开发应用沉浸式效果](arkts-develop-apply-immersive-effects.md)。
+startScanForResult()接口需要在页面和组件的生命周期内调用。若需要设置扫码页面为全屏或沉浸式，请参见[开发应用沉浸式效果](arkts-develop-apply-immersive-effects.md)。
 
 ## 开发步骤
 
@@ -78,7 +78,7 @@ Scan Kit提供了默认界面扫码的能力，由扫码接口直接控制相机
 
 为了方便开发者接入，我们提供了详细的样例工程供参考，推荐参考[示例工程](https://gitcode.com/HarmonyOS_Samples/scankit-samplecode-clientdemo-arkts)接入。
 
-以下示例为调用Scan Kit的startScanForResult接口跳转扫码页面。
+以下示例为调用Scan Kit的startScanForResult()接口跳转扫码页面。
 
 1. 导入默认界面扫码模块，[scanCore](../harmonyos-references/scan-scancore.md)提供扫码类型定义，[scanBarcode](../harmonyos-references/scan-scanbarcode-api.md)提供拉起默认界面扫码的方法和参数，导入方法如下。
 
@@ -88,11 +88,13 @@ Scan Kit提供了默认界面扫码的能力，由扫码接口直接控制相机
    import { hilog } from '@kit.PerformanceAnalysisKit';
    import { BusinessError } from '@kit.BasicServicesKit';
    ```
-2. 调用startScanForResult方法拉起默认界面扫码。
+2. 调用startScanForResult()方法拉起默认界面扫码。
 
    * 通过Promise方式得到扫码结果。
 
      ```typescript
+     const TAG: string = 'Scan Kit Sample DefaultScan';
+
      @Entry
      @Component
      struct ScanBarCodePage {
@@ -118,14 +120,14 @@ Scan Kit提供了默认界面扫码的能力，由扫码接口直接控制相机
                    scanBarcode.startScanForResult(this.getUIContext().getHostContext(), options)
                      .then((data: scanBarcode.ScanResult) => {
                        // 解析码值结果跳转应用服务页
-                       hilog.info(0x0001, '[Scan Sample]',
+                       hilog.info(0x0001, TAG,
                          `Succeeded in getting ScanResult by promise with options, scanType: ${data.scanType}`);
                      }).catch((err: BusinessError) => {
-                     hilog.error(0x0001, '[Scan Sample]',
+                     hilog.error(0x0001, TAG,
                        `Failed to get ScanResult by promise with options. Code:${err.code}, message: ${err.message}`);
                    });
                  } catch (err) {
-                   hilog.error(0x0001, '[Scan Sample]',
+                   hilog.error(0x0001, TAG,
                      `Failed to start the scanning service. Code:${err.code}, message: ${err.message}`);
                  }
                })
@@ -139,6 +141,8 @@ Scan Kit提供了默认界面扫码的能力，由扫码接口直接控制相机
    * 通过Callback回调函数得到扫码结果。
 
      ```typescript
+     const TAG: string = 'Scan Kit Sample DefaultScan';
+
      @Entry
      @Component
      struct ScanBarCodePage {
@@ -164,16 +168,16 @@ Scan Kit提供了默认界面扫码的能力，由扫码接口直接控制相机
                    scanBarcode.startScanForResult(this.getUIContext().getHostContext(), options,
                      (err: BusinessError, data: scanBarcode.ScanResult) => {
                        if (err) {
-                         hilog.error(0x0001, '[Scan Sample]',
+                         hilog.error(0x0001, TAG,
                            `Failed to get ScanResult by callback with options. Code: ${err.code}, message: ${err.message}`);
                          return;
                        }
                        // 解析码值结果跳转应用服务页
-                       hilog.info(0x0001, '[Scan Sample]',
+                       hilog.info(0x0001, TAG,
                          `Succeeded in getting ScanResult by callback with options, scanType: ${data.scanType}`);
                      });
                  } catch (err) {
-                   hilog.error(0x0001, '[Scan Sample]',
+                   hilog.error(0x0001, TAG,
                      `Failed to start the scanning service. Code:${err.code}, message: ${err.message}`);
                  }
                })
@@ -187,6 +191,6 @@ Scan Kit提供了默认界面扫码的能力，由扫码接口直接控制相机
 
 ## 模拟器开发
 
-从API版本6.0.0(20)开始，模拟器支持默认界面扫码能力开发，模拟器使用指导请参见[使用模拟器运行应用](ide-run-emulator.md)。
+从API版本6.0.0(20)开始，模拟器新增支持默认界面扫码能力开发，模拟器使用指导请参见[使用模拟器运行应用](ide-run-emulator.md)。
 
 模拟器中默认界面扫码的相机流存在镜像问题，且由于仅支持固定分辨率比例，画面会出现上下黑边。

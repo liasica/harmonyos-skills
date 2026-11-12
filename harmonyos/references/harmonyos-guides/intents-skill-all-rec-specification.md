@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-skill
 title: 自定义意图相关信息定义规范
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 技能调用方案 > 接入方案 > 任务执行类场景方案（装饰器接入方式） > 自定义意图相关信息定义规范
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:44+08:00
-doc_updated_at: 2026-06-27
-content_hash: sha256:0efbd72fd34d996eda2460871c467d51b37d647dc8b44a469837e7976d5117d3
+scraped_at: 2026-11-12T09:52:44+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:dbbc773361f0a578433620171d9396d1105c653fc697f5948ccefd79400a85c1
 ---
 
 Intents Kit支持开发者自定义意图，开发者可通过在其代码上添加自然语言装饰器接入，装饰器中相关信息建议参考以下规范，以便于大模型更好的理解和分发调用。
@@ -86,18 +86,18 @@ import { url } from '@kit.ArkTS';
   ]
 })
 export class PurchaseMovieTicketsLinkIntent {
-   private purchaseMovieTickets(uri: string): void {
-     // 从want中获取传入的链接信息。
-     // 如传入的url为：decorator://ability.entry/main?location=XXX影城&title=XXX&time=2025.06.01
-     try {
-       let urlObject = url.URL.parseURL(uri);
-       let location = urlObject.params.get('location');
-       if (location === 'XXX影城') {
-         // ...
-       }
-     } catch (error) {
-       console.error('Failed to parse URL:', error);
-     }
-   }
- }
+  private purchaseMovieTickets(uri: string): void {
+    // 从want中获取传入的链接信息。
+    // 如传入的url为：decorator://ability.entry/main?location=XXX影城&title=XXX&time=2025-07-01 19:30
+    try {
+      let urlObject = url.URL.parseURL(uri);
+      let location = urlObject.params.get('location');
+      if (location === 'XXX影城') {
+        // ...
+      }
+    } catch (error) {
+      console.error('Failed to parse URL:', error);
+    }
+  }
+}
 ```

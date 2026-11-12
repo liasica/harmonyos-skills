@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-co
 title: Agent模式
 breadcrumb: 指南 > DevEco Code > DevEco Code TUI > Agent模式
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:43+08:00
-doc_updated_at: 2026-10-31
-content_hash: sha256:f57c05573c28e67cc50eb3782a83da973e4641b08a26d560f3cad0842328e7e4
+scraped_at: 2026-11-12T09:53:25+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3c6d8ab96e71e5b47d15b96ee27a627a3249da0a6f48883fabb007fd8a9ccaf0
 ---
 
 ## 功能概述
@@ -16,37 +16,35 @@ DevEco Code支持三种Agent模式，分别为Build模式、Plan模式、Goal模
 
 ## Build模式
 
-开发者输入需求描述后，Agent直接进入任务执行阶段，自动完成需求理解、代码生成、代码修复、构建出包和推送至模拟器的操作。然后，用户对实现结果测试验证，输入指令后可继续修改。
+开发者输入需求描述后，Agent直接进入任务执行阶段，自动完成需求理解、代码生成（如添加一个跳转按钮）、代码修复、构建出包和推送至模拟器的操作。然后，用户对实现结果测试验证，输入指令后可继续修改。
 
 ### 约束与限制
 
-Windows/macOS版DevEco Code可配置模拟器进行推包验证。
-
-鸿蒙电脑版DevEco Code可使用本地真机进行推包验证。
+* Windows/macOS版DevEco Code可配置模拟器进行推包验证。
+* 鸿蒙电脑版DevEco Code可使用本地真机进行推包验证。
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/vqZmVwzYS1SYMsJggMn1OQ/zh-cn_image_0000002731383159.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/oHLpJaPJRBiQl09VY9W_Gw/zh-cn_image_0000002779567392.png "点击放大")
 
 ### 示例
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/46/v3/QkV9G-iJTauO4e4ON9GuAw/zh-cn_media_0000002701663942.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/07/v3/OLbv4sHyRDm2n1_gmuBdWQ/zh-cn_media_0000002808887057.mp4)
 
 ## Plan + Build模式
 
-该模式面向复杂的任务需求，可深度理解开发者意图，实现从需求理解、自动编码、编译、构建、推包至模拟器的全流程开发。
+该模式面向复杂的任务需求，可深度理解开发者意图，实现从需求理解、自动编码、编译、构建、推包到模拟器/预览器的全流程开发。
 
-使用时需先选择Plan模式，通过交互方式规划可执行的任务列表，再切换至Build模式，Agent按照任务列表开始自动执行流水线。
+使用时需先选择Plan模式，通过交互方式规划可执行的任务列表，此时仅读取和分析代码，不修改文件；然后，再切换至Build模式，Agent按照任务列表开始自动执行流水线。
 
 ### 约束与限制
 
-Windows/macOS版DevEco Code可配置模拟器进行推包验证。
-
-鸿蒙电脑版DevEco Code可使用本地真机进行推包验证。
+* Windows/macOS版DevEco Code可配置模拟器进行推包验证。
+* 鸿蒙电脑版DevEco Code可使用本地真机进行推包验证。
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/Wql0RZbuRhSmHqgga3tztg/zh-cn_image_0000002701823856.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/7_eUsqcET8W3MKujbEOaAg/zh-cn_image_0000002808766971.png "点击放大")
 
 Plan + Build模式实现流程分为三大阶段：
 
@@ -56,7 +54,7 @@ Plan + Build模式实现流程分为三大阶段：
 
 ### 示例
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/b6/v3/gPBWE9qbRbmWtHREzLHAzA/zh-cn_media_0000002701823862.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/68/v3/qld7SLtFRSezX7zEUZu-ew/zh-cn_media_0000002779567394.mp4)
 
 ## Goal模式
 
@@ -66,19 +64,19 @@ Plan + Build模式实现流程分为三大阶段：
 
 ### 约束与限制
 
-Windows/macOS版DevEco Code可配置模拟器进行推包验证。
-
-鸿蒙电脑版DevEco Code可使用本地真机进行推包验证。
+* 需要使用DevEco Studio 6.1.0及以上版本。
+* Windows/macOS版DevEco Code可配置模拟器进行推包验证。
+* 鸿蒙电脑版DevEco Code可使用本地真机进行推包验证。
 
 ### 实现流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/hCZZsdSFTwWEjjspqMa-zw/zh-cn_image_0000002701663938.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/iORykznEShKR7FQNdrXJNA/zh-cn_image_0000002779407414.png "点击放大")
 
-Goal Agent实现流程分为两大阶段：
+Goal模式实现流程分为两大阶段：
 
 1. 人机交互阶段：需求分析时，结合用户需求、工程目录结构、代码文件、依赖关系和技术约束等理解需求背景，主动识别需求中的模糊点，通过Question工具以交互的方式补全需求信息，确认设计方案、验收标准和任务列表等。
 2. 自主迭代阶段：Agent自动进行代码开发、检查语法错误并修复，自动构建出包、推送到模拟器，自动验证功能的正确性，发现问题后自动修复代码，持续迭代直到完成用户的需求。
 
 ### 示例
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/46/v3/YdaF7bTZSJa1t-1yJR9w0g/zh-cn_media_0000002731543137.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/2a/v3/xccSMU6oTlqGsL0tdfaw6A/zh-cn_media_0000002779407416.mp4)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/system-font-c
 title: 系统字体的信息获取和使用（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 字体管理 > 系统字体的信息获取和使用（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:18+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:eee5cb51ef5644cad66bfdfeddb7220cc2c0f4efc2bd5e0f9900056d4c1af212
+scraped_at: 2026-11-12T09:52:12+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ea4a730e48e49a7feeb40b224f6450ff3be9c031dec94e6912a3dd2fb8e3f2da
 ---
 
 ## 场景介绍
@@ -95,7 +95,7 @@ content_hash: sha256:eee5cb51ef5644cad66bfdfeddb7220cc2c0f4efc2bd5e0f9900056d4c1
 
    以下打印的示例为应用设备系统对应的部分系统字体配置信息情况，不同设备系统配置信息可能不同，此处仅示意。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/IR3TifmWRxW14wVz3wAKlA/zh-cn_image_0000002779851100.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/aZ3BQdZwTd6l2bnwkv9glQ/zh-cn_image_0000002786519976.png)
 5. 如若后续不再需要系统字体的系统配置信息时，则释放其占用的内存。
 
    ```
@@ -216,12 +216,12 @@ content_hash: sha256:eee5cb51ef5644cad66bfdfeddb7220cc2c0f4efc2bd5e0f9900056d4c1
    OH_Drawing_TextStyle *textStyle = OH_Drawing_CreateTextStyle();
    // 禁用系统字体后的几种情况如下：
    // 情况一：如果此时设置使用了自定义字体，文本会正常显示
-   // 该路径是待注册的自定义字体文件在应用设备下的路径，确保该自定义字体文件已正确放置在该路径下
-   // 后续使用自定义字体时，需使用到该字体家族名
+   // 该路径是系统字体文件在应用设备下的路径，此处将系统字体文件注册到字体集中使用
+   // 后续使用该字体时，需使用到该字体家族名
    // 情况二：如果此时不调用OH_Drawing_SetTextStyleFontFamilies或传入空参，文本会默认使用系统默认字体，而此时系统字体已被禁用，因此文本将无法显示
    const char* fontFamily = "HarmonyOS_Sans";
    const char* fontPath = "/system/fonts/HarmonyOS_Sans.ttf";
-   // 返回0为成功，1为文件不存在，2为打开文件失败，3为读取文件失败，4为寻找文件失败，5为获取大小失败，9文件损坏
+   // 返回0为成功，1为文件不存在，2为打开文件失败，3为读取文件失败，4为寻找文件失败，5为获取大小失败，9为文件损坏
    int errorCode = OH_Drawing_RegisterFont(fontCollection, fontFamily, fontPath);
    DRAWING_LOGI("errorCode = %{public}d", errorCode);
    const char *myFontFamilies[] = {"HarmonyOS_Sans"}; // 确保已成功注册自定义字体，填入自定义字体的字体家族名

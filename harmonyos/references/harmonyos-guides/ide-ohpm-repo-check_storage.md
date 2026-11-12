@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo check_storage
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo check_storage
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:12+08:00
+scraped_at: 2026-11-12T09:52:51+08:00
 doc_updated_at: 2026-07-28
-content_hash: sha256:f8bc18fbf0edc6c9d1242235be80a9b19aec2463082357fc2493f470beeb4aaf
+content_hash: sha256:f45d17ab15814c2f1e532d909750741a116bd0e56db4391438762505569f822f
 ---
 
 检查sftp中存储包的完整性。
@@ -59,4 +59,4 @@ ohpm-repo check_storage @ohos/basic-ftp
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/aCKybXrBR6KyzJGufc2p1Q/zh-cn_image_0000002701662428.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/asr9ZWCYSyuTfrH6d9x0VA/zh-cn_image_0000002779565482.png "点击放大")

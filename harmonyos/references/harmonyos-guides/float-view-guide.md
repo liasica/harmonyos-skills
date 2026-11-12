@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/float-view-gu
 title: 闪控窗开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 闪控窗开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:55+08:00
-doc_updated_at: 2026-10-26
-content_hash: sha256:79ec0630e3985b38d8ddae1989748a2940ecbfc0fa84579ade4502dc342c74fc
+scraped_at: 2026-11-12T09:51:20+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:5c38c8dbe9356574f0385bba51e71fc0c955ba0b27d5685f2e5ea618723d170e
 ---
 
 ## 场景介绍
@@ -211,7 +211,8 @@ content_hash: sha256:79ec0630e3985b38d8ddae1989748a2940ecbfc0fa84579ade4502dc342
    // 查询用户授权状态
    requestPermission(): void {
      let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
-     atManager.requestPermissionsFromUser(getContext(this), ['ohos.permission.FLOAT_VIEW'] as Permissions[])
+     let ctx = this.getUIContext().getHostContext() as common.UIAbilityContext;
+     atManager.requestPermissionsFromUser(ctx, ['ohos.permission.FLOAT_VIEW'] as Permissions[])
        .then((data) => {
          console.info(TAG + `grant result: ${data.authResults}.`);
          this.result = data.authResults[0] === 0 ? '权限已授权' : '权限被拒绝';

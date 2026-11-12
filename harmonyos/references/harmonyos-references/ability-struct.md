@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ability-s
 title: 结构体
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-10-11T07:23:38+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:bc2e790ff8d37124083d238aec19af2f0a52bd54c011fc2e05c575d149b6fafe
+scraped_at: 2026-11-12T09:53:36+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b5d69bc0092c53eba45de7c658c2ca8ba02b178b70b7159abe2316e18bd0de1a
 ---
 
 * **[AbilityBase\_Element](capi-abilitybase-element.md)**
@@ -16,6 +16,8 @@ content_hash: sha256:bc2e790ff8d37124083d238aec19af2f0a52bd54c011fc2e05c575d149b
 * **[NativeChildProcess\_Options](capi-nativechildprocess-options.md)**
 * **[NativeChildProcess\_Args](capi-nativechildprocess-args.md)**
 * **[Ability\_ChildProcessConfigs](capi-ability-childprocessconfigs.md)**
+* **[OH\_AbilityRuntime\_ChildProcessInfo\*](capi-nativechildprocess-info.md)**
+* **[OH\_AbilityRuntime\_ChildProcessInfos\*](capi-nativechildprocess-infos.md)**
 * **[OH\_NativeBundle\_ApplicationInfo](capi-native-bundle-oh-nativebundle-applicationinfo.md)**
 * **[OH\_NativeBundle\_ElementName](capi-native-bundle-oh-nativebundle-elementname.md)**
 * **[OH\_NativeBundle\_Metadata](capi-native-bundle-oh-nativebundle-metadata.md)**

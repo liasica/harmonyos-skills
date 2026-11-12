@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-offscr
 title: OffscreenCanvasRenderingContext2D对象
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 画布组件 > OffscreenCanvasRenderingContext2D对象
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:24+08:00
+scraped_at: 2026-11-12T09:54:34+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:a557391fd48156c8a66c4124a33790f364c54081b37b70da4ef53801501078ac
+content_hash: sha256:d262482a0335e3760de41b0f0fb374a4d25922aa7355502aba863f92817415fc
 ---
 
 **说明** 
@@ -77,7 +77,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/UBC9tmJOQcm7DOWPhqHMkw/zh-cn_image_0000002809012521.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/v_8R58PuRkC9E3HJLd8rfw/zh-cn_image_0000002815401301.png)
 
 ## 方法
 
@@ -158,7 +158,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/93l4jForRjSbDmO0zuLrdQ/zh-cn_image_0000002809052435.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/69lOQtsmRn2g6qhQNwTPsA/zh-cn_image_0000002786521726.png)
 
 ### isPointInStroke
 
@@ -235,7 +235,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/GDDNZ9dnTT-sshGLs8w4wQ/zh-cn_image_0000002779852870.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/fkaKUJRMRSirw5hgkTskFg/zh-cn_image_0000002786361798.png)
 
 ### resetTransform
 
@@ -305,4 +305,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/LRzOHDT9R5CAAcGwXZn99Q/zh-cn_image_0000002779692902.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/50Y-EqtjSKiv5ulWzvvcKA/zh-cn_image_0000002815561219.png)

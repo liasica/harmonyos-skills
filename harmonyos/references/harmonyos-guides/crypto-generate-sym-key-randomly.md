@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-genera
 title: 随机生成对称密钥(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥生成与转换 > 随机生成对称密钥(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:36+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:51:32+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:cf8a074f8f83700a4ebcb68bc669d4d11f426560aadfbb3ce86b511013fa5bfe
 ---
 

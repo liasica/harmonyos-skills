@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-source-
 title: 使用Image_NativeModule完成多图对象解码
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(C/C++) > 图片解码 > 使用Image_NativeModule完成多图对象解码
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:26+08:00
-doc_updated_at: 2026-09-24
+scraped_at: 2026-11-12T09:52:06+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:f8190950dd33760eacbef3b647052904f1ed95a4a003a11dc20010629b7e478c
 ---
 

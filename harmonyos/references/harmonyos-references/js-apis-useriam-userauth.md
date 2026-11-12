@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-u
 title: "@ohos.userIAM.userAuth (用户认证)"
 breadcrumb: API参考 > 系统 > 安全 > User Authentication Kit（用户认证服务） > ArkTS API > @ohos.userIAM.userAuth (用户认证)
 category: harmonyos-references
-scraped_at: 2026-11-04T08:34:39+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:66ad45c36e7b08937b8bafd7c06480f9136921bffec167c1287765c0cf69fac1
+scraped_at: 2026-11-12T09:55:31+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:2c1a01b53bf34f9491248c42b204af21d5ac135c24722db393a8ffacf987f006
 ---
 
 **userAuth**模块是HarmonyOS系统中用于用户身份认证的核心模块，提供了设备解锁、支付验证、应用登录等场景下的身份认证能力。
@@ -32,6 +32,7 @@ content_hash: sha256:66ad45c36e7b08937b8bafd7c06480f9136921bffec167c1287765c0cf6
 * **[UserAuthResultCode](js-apis-useriam-userauth.md#userauthresultcode9)**：认证结果码枚举。
 * **[ReuseMode](js-apis-useriam-userauth.md#reusemode12)**：认证结果复用模式枚举。
 * **[UserAuthTipCode](js-apis-useriam-userauth.md#userauthtipcode20)**：认证提示码枚举。
+* **[UserRecognitionStatus](js-apis-useriam-userauth.md#userrecognitionstatus)**：用户识别状态枚举。
 
 ### 核心接口类型
 
@@ -41,12 +42,14 @@ content_hash: sha256:66ad45c36e7b08937b8bafd7c06480f9136921bffec167c1287765c0cf6
 * **[ReuseUnlockResult](js-apis-useriam-userauth.md#reuseunlockresult12)**：认证结果复用信息接口。
 * **[EnrolledState](js-apis-useriam-userauth.md#enrolledstate12)**：已注册凭据状态接口。
 * **[AuthLockState](js-apis-useriam-userauth.md#authlockstate22)**：认证锁定状态接口。
+* **[UserRecognitionResult](js-apis-useriam-userauth.md#userrecognitionresult)**：用户识别结果接口。
 
 ### 核心类
 
 * **[UserAuthInstance](js-apis-useriam-userauth.md#userauthinstance10)**：用户认证实例类，提供认证执行、取消、事件订阅等能力。
+* **[UserRecognitionMgr](js-apis-useriam-userauth.md#userrecognitionmgr)**：用户识别管理类，提供查询和订阅识别结果的能力。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/DKYkUcSWQX64c5hjarA1iw/zh-cn_image_0000002809012819.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/xkiVxZiJRUeTtrkP4KlhaA/zh-cn_image_0000002815401599.png)
 
 ## API组合使用关系说明
 
@@ -231,11 +234,11 @@ import { userAuth } from '@kit.UserAuthenticationKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 
 let queryType = userAuth.UserAuthType.PIN;
-let authLockState : userAuth.AuthLockState = {
-  isLocked : false,
-  remainingAuthAttempts : 0,
-  lockoutDuration : 0
-}
+let authLockState: userAuth.AuthLockState = {
+  isLocked: false,
+  remainingAuthAttempts: 0,
+  lockoutDuration: 0
+};
 
 userAuth.getAuthLockState(queryType)
   .then((result: userAuth.AuthLockState) => {
@@ -243,8 +246,8 @@ userAuth.getAuthLockState(queryType)
     console.info('get auth lock state successfully.');
   })
   .catch((err: BusinessError) => {
-    console.error(`get auth lock state failed, err code is : ${err?.code}, err message is : ${err?.message}`);
-  })
+    console.error(`Failed to get auth lock state. Code: ${err?.code}, message: ${err?.message}`);
+  });
 ```
 
 ## userAuth.getEnrolledState12+
@@ -294,7 +297,7 @@ try {
   console.info('get current enrolled state successfully.');
 } catch (error) {
   const err: BusinessError = error as BusinessError;
-  console.error(`get current enrolled state failed, Code is ${err?.code}, message is ${err?.message}`);
+  console.error(`Failed to get current enrolled state. Code: ${err?.code}, message: ${err?.message}`);
 }
 ```
 
@@ -310,7 +313,7 @@ try {
 | authType | [UserAuthType](js-apis-useriam-userauth.md#userauthtype8)[] | 否 | 否 | 认证类型列表，用来指定用户认证界面提供的认证方法。可同时指定多种认证类型，如[UserAuthType.PIN, UserAuthType.FACE, UserAuthType.FINGERPRINT]，用户可选择任意一种完成认证。认证类型的选择会影响认证结果复用的匹配条件。暂不支持同时发起伴随设备认证和其他认证类型。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | authTrustLevel | [AuthTrustLevel](js-apis-useriam-userauth.md#authtrustlevel8) | 否 | 否 | 期望达到的认证可信等级。认证可信等级决定了认证的安全强度，应根据业务场景的安全需求选择合适的等级：  - ATL1：适用于业务风控、一般个人数据查询等低安全场景。  - ATL2：适用于应用登录、维持设备解锁状态等中等安全场景。  - ATL3：适用于设备解锁等较高安全场景。  - ATL4：适用于小额支付等高安全场景。  典型操作需要的身份认证可信等级，以及身份认证可信等级的划分请参见[认证可信等级划分原则](../harmonyos-guides/user-authentication-overview.md#生物认证可信等级划分原则)。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | reuseUnlockResult12+ | [ReuseUnlockResult](js-apis-useriam-userauth.md#reuseunlockresult12) | 否 | 是 | 表示可以复用解锁认证的结果。配置后，若满足复用条件，系统将直接返回之前的认证结果，无需用户再次进行认证交互。默认为不复用。启用认证结果复用可以提升用户体验，但应根据业务场景的安全需求合理配置复用模式和有效时长。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| skipLockedBiometricAuth20+ | boolean | 否 | 是 | 是否跳过已禁用的认证方式自动切换至其他方式的认证。若无可切换的认证方式则关闭控件，返回认证冻结错误码。  - true：生物认证冻结时，跳过倒计时界面直接切换到其他方式的认证（如从冻结的指纹切换到PIN）。适用于希望快速完成认证的场景。  - false（默认）：不跳过，用户需要等待冻结倒计时结束后才能继续尝试该认证方式或手动切换。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
+| skipLockedBiometricAuth20+ | boolean | 否 | 是 | 是否跳过已冻结的认证方式自动切换至其他方式的认证。若无可切换的认证方式则关闭控件，返回认证冻结错误码。  - true：生物认证冻结时，跳过倒计时界面直接切换到其他方式的认证（如从冻结的指纹切换到PIN）。适用于希望快速完成认证的场景。  - false（默认）：不跳过，用户需要等待冻结倒计时结束后才能继续尝试该认证方式或手动切换。  **元服务API：** 从API version 20开始，该接口支持在元服务中使用。 |
 
 ## WidgetParam10+
 
@@ -405,7 +408,7 @@ try {
   console.info('auth start successfully.');
 } catch (error) {
   const err: BusinessError = error as BusinessError;
-  console.error(`auth failed. Code is ${err?.code}, message is ${err?.message}`);
+  console.error(`Failed to auth. Code: ${err?.code}, message: ${err?.message}`);
 }
 ```
 
@@ -459,7 +462,7 @@ try {
   console.info('auth start successfully.');
 } catch (error) {
   const err: BusinessError = error as BusinessError;
-  console.error(`auth failed. Code is ${err?.code}, message is ${err?.message}`);
+  console.error(`Failed to auth. Code: ${err?.code}, message: ${err?.message}`);
 }
 ```
 
@@ -513,7 +516,7 @@ try {
   console.info('auth start successfully.');
 } catch (error) {
   const err: BusinessError = error as BusinessError;
-  console.error(`auth failed. Code is ${err?.code}, message is ${err?.message}`);
+  console.error(`Failed to auth. Code: ${err?.code}, message: ${err?.message}`);
 }
 ```
 
@@ -588,7 +591,7 @@ try {
   console.info('auth start successfully.');
 } catch (error) {
   const err: BusinessError = error as BusinessError;
-  console.error(`auth failed. Code is ${err?.code}, message is ${err?.message}`);
+  console.error(`Failed to auth. Code: ${err?.code}, message: ${err?.message}`);
 }
 ```
 
@@ -677,7 +680,7 @@ try {
   console.info('auth start successfully.');
 } catch (error) {
   const err: BusinessError = error as BusinessError;
-  console.error(`auth failed. Code is ${err?.code}, message is ${err?.message}`);
+  console.error(`Failed to auth. Code: ${err?.code}, message: ${err?.message}`);
 }
 ```
 
@@ -724,8 +727,8 @@ struct Index {
       console.info('get userAuth instance successfully.');
       // 需要调用UserAuthInstance的start()接口，启动认证后，才能通过onResult获取到认证结果。
       userAuthInstance.on('result', {
-        onResult (result) {
-          console.info(`userAuthInstance callback result =${result.result}`);
+        onResult: (result) => {
+          console.info(`userAuthInstance callback result = ${result.result}`);
         }
       });
       console.info('auth on successfully.');
@@ -733,7 +736,7 @@ struct Index {
       console.info('auth start successfully.');
     } catch (error) {
       const err: BusinessError = error as BusinessError;
-      console.error(`auth failed. Code is ${err?.code}, message is ${err?.message}`);
+      console.error(`Failed to auth. Code: ${err?.code}, message: ${err?.message}`);
     }
   }
 
@@ -742,7 +745,7 @@ struct Index {
       Button('start auth')
         .onClick(() => {
           this.modelApplicationAuth();
-        })
+        });
     }
   }
 }
@@ -818,7 +821,7 @@ try {
   console.info('auth off successfully.');
 } catch (error) {
   const err: BusinessError = error as BusinessError;
-  console.error(`auth failed. Code is ${err?.code}, message is ${err?.message}`);
+  console.error(`Failed to auth. Code: ${err?.code}, message: ${err?.message}`);
 }
 ```
 
@@ -897,7 +900,7 @@ try {
   console.info('auth start successfully.');
 } catch (error) {
   const err: BusinessError = error as BusinessError;
-  console.error(`auth failed. Code is ${err?.code}, message is ${err?.message}`);
+  console.error(`Failed to auth. Code: ${err?.code}, message: ${err?.message}`);
 }
 ```
 
@@ -947,7 +950,7 @@ try {
   if(!randData){
     return;
   }
-  const authParam : userAuth.AuthParam = {
+  const authParam: userAuth.AuthParam = {
     challenge: randData,
     authType: [userAuth.UserAuthType.PIN],
     authTrustLevel: userAuth.AuthTrustLevel.ATL3,
@@ -964,7 +967,7 @@ try {
   console.info('auth cancel successfully.');
 } catch (error) {
   const err: BusinessError = error as BusinessError;
-  console.error(`auth failed. Code is ${err?.code}, message is ${err?.message}`);
+  console.error(`Failed to auth. Code: ${err?.code}, message: ${err?.message}`);
 }
 ```
 
@@ -1038,7 +1041,7 @@ try {
   console.info('auth start successfully.');
 } catch (error) {
   const err: BusinessError = error as BusinessError;
-  console.error(`auth failed. Code is ${err?.code}, message is ${err?.message}`);
+  console.error(`Failed to auth. Code: ${err?.code}, message: ${err?.message}`);
 }
 ```
 
@@ -1109,7 +1112,7 @@ try {
   console.info('auth off successfully.');
 } catch (error) {
   const err: BusinessError = error as BusinessError;
-  console.error(`auth failed. Code is ${err?.code}, message is ${err?.message}`);
+  console.error(`Failed to auth. Code: ${err?.code}, message: ${err?.message}`);
 }
 ```
 
@@ -1185,7 +1188,275 @@ try {
   console.info('get userAuth instance successfully.');
 } catch (error) {
   const err: BusinessError = error as BusinessError;
-  console.error(`auth failed. Code is ${err?.code}, message is ${err?.message}`);
+  console.error(`Failed to auth. Code: ${err?.code}, message: ${err?.message}`);
+}
+```
+
+## UserRecognitionStatus
+
+用户识别状态枚举。
+
+**起始版本：** 26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.UserIAM.UserAuth.Core
+
+**设备行为差异：** 该接口仅在Car设备中可正常调用，在其他设备类型中返回null。
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| UNCERTAIN | 0 | 不确定机主。 |
+| MISMATCH | 1 | 识别的用户与前台用户不匹配。 |
+| MATCH | 2 | 识别的用户与前台用户匹配。 |
+
+## UserRecognitionResult
+
+用户识别结果。
+
+**起始版本：** 26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.UserIAM.UserAuth.Core
+
+**设备行为差异：** 该接口仅在Car设备中可正常调用，在其他设备类型中返回null。
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| status | [UserRecognitionStatus](js-apis-useriam-userauth.md#userrecognitionstatus) | 否 | 否 | 识别状态。 |
+| userId | number | 否 | 否 | 识别的系统用户ID，为非负整数。 |
+| userInfo | string | 否 | 否 | 识别用户的信息。 |
+| authTrustLevel | [AuthTrustLevel](js-apis-useriam-userauth.md#authtrustlevel8) | 否 | 是 | 认证信任等级。仅在status为MATCH时有效。 |
+
+## UserRecognitionResultCallback
+
+type UserRecognitionResultCallback = (result: UserRecognitionResult) => void
+
+用户识别结果回调类型。
+
+**起始版本：** 26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.UserIAM.UserAuth.Core
+
+**设备行为差异：** 该接口仅在Car设备中可正常调用，在其他设备类型中返回null。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| result | [UserRecognitionResult](js-apis-useriam-userauth.md#userrecognitionresult) | 是 | 用户识别结果。 |
+
+## UserRecognitionMgr
+
+提供查询和订阅用户识别结果的接口。通过[getUserRecognitionMgr](js-apis-useriam-userauth.md#userauthgetuserrecognitionmgr)获取实例。
+
+**说明** 
+
+每次调用getUserRecognitionMgr返回新的UserRecognitionMgr实例。on和off需使用同一实例。
+
+**起始版本：** 26.0.1
+
+**系统能力：** SystemCapability.UserIAM.UserAuth.Core
+
+**设备行为差异：** 该接口仅在Car设备中可正常调用，在其他设备类型中返回null。
+
+### getUserRecognitionResult
+
+getUserRecognitionResult(): Promise<UserRecognitionResult>
+
+获取最新的用户识别结果。使用Promise异步回调。
+
+**起始版本：** 26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.UserIAM.UserAuth.Core
+
+**设备行为差异：** 该接口仅在Car设备中可正常调用，在其他设备类型中返回null。
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[UserRecognitionResult](js-apis-useriam-userauth.md#userrecognitionresult)> | Promise对象，返回用户识别结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[用户认证错误码](errorcode-useriam.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 12500002 | General operation error. |
+
+**示例：**
+
+```ts
+import { userAuth } from '@kit.UserAuthenticationKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+let mgr = userAuth.getUserRecognitionMgr();
+if (mgr == null) {
+  console.error('device does not support user recognition');
+} else {
+  mgr.getUserRecognitionResult()
+    .then((result: userAuth.UserRecognitionResult) => {
+      console.info(`status: ${result.status}, userId: ${result.userId}`);
+    })
+    .catch((err: BusinessError) => {
+      console.error(`getUserRecognitionResult failed, Code: ${err?.code}, message: ${err?.message}`);
+    });
+}
+```
+
+### onUserRecognitionChange
+
+onUserRecognitionChange(callback: UserRecognitionResultCallback): void
+
+订阅用户识别结果变化事件。
+
+**起始版本：** 26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.UserIAM.UserAuth.Core
+
+**设备行为差异：** 该接口仅在Car设备中可正常调用，在其他设备类型中返回null。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | [UserRecognitionResultCallback](js-apis-useriam-userauth.md#userrecognitionresultcallback) | 是 | 用户识别结果回调。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[用户认证错误码](errorcode-useriam.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 12500002 | General operation error. |
+
+**示例：**
+
+```ts
+import { userAuth } from '@kit.UserAuthenticationKit';
+
+let mgr = userAuth.getUserRecognitionMgr();
+if (mgr == null) {
+  console.error('device does not support user recognition');
+} else {
+  let callback: userAuth.UserRecognitionResultCallback = (result: userAuth.UserRecognitionResult) => {
+    console.info(`status: ${result.status}, userId: ${result.userId}`);
+  };
+  mgr.onUserRecognitionChange(callback);
+}
+```
+
+### offUserRecognitionChange
+
+offUserRecognitionChange(callback?: UserRecognitionResultCallback): void
+
+取消订阅用户识别结果变化事件。
+
+**起始版本：** 26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.UserIAM.UserAuth.Core
+
+**设备行为差异：** 该接口仅在Car设备中可正常调用，在其他设备类型中返回null。
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | [UserRecognitionResultCallback](js-apis-useriam-userauth.md#userrecognitionresultcallback) | 否 | 要取消的回调。仅可取消通过本实例[onUserRecognitionChange](js-apis-useriam-userauth.md#onuserrecognitionchange)订阅的回调；不指定则取消本实例下所有已注册的回调。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[用户认证错误码](errorcode-useriam.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 12500002 | General operation error. |
+
+**示例：**
+
+```ts
+import { userAuth } from '@kit.UserAuthenticationKit';
+
+let mgr = userAuth.getUserRecognitionMgr();
+if (mgr == null) {
+  console.error('device does not support user recognition');
+} else {
+  let callback: userAuth.UserRecognitionResultCallback = (result: userAuth.UserRecognitionResult) => {
+    console.info(`status: ${result.status}, userId: ${result.userId}`);
+  };
+  mgr.onUserRecognitionChange(callback);
+  // 取消指定回调
+  mgr.offUserRecognitionChange(callback);
+  // 取消所有回调
+  mgr.offUserRecognitionChange();
+}
+```
+
+## userAuth.getUserRecognitionMgr
+
+getUserRecognitionMgr(): UserRecognitionMgr | null
+
+获取[UserRecognitionMgr](js-apis-useriam-userauth.md#userrecognitionmgr)实例，用于查询和订阅用户识别结果。每次调用返回新的UserRecognitionMgr实例。
+
+**需要权限：** ohos.permission.ACCESS\_USER\_PASSIVE\_RECOGNITION
+
+**起始版本：** 26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.UserIAM.UserAuth.Core
+
+**设备行为差异：** 该接口仅在Car设备中可正常调用，在其他设备类型中返回null。
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [UserRecognitionMgr](js-apis-useriam-userauth.md#userrecognitionmgr) | null | 用户识别管理实例。如果设备不支持此能力则返回null。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+
+**示例：**
+
+```ts
+import { userAuth } from '@kit.UserAuthenticationKit';
+
+let mgr = userAuth.getUserRecognitionMgr();
+if (mgr == null) {
+  console.error('device does not support user recognition');
+} else {
+  console.info(`get user recognition mgr: ${mgr}`);
 }
 ```
 
@@ -1269,7 +1540,7 @@ type AuthEventKey = 'result' | 'tip'
 
 ### callback(deprecated)
 
-callback(result : EventInfo) : void
+callback(result: EventInfo): void
 
 通过该回调获取认证结果信息或认证过程中的提示信息。
 
@@ -1304,14 +1575,14 @@ try {
   auth.start();
   console.info('auth start successfully.');
 } catch (error) {
-  console.error(`auth failed, error = ${error}`);
+  console.error(`Failed to auth. Code: ${error?.code}, message: ${error?.message}`);
   // do error.
 }
 // 通过callback获取认证过程中的提示信息。
 try {
   let auth = userAuth.getAuthInstance(challenge, authType, authTrustLevel);
   auth.on('tip', {
-    callback : (result : userAuth.TipInfo) => {
+    callback: (result: userAuth.TipInfo) => {
       switch (result.tip) {
         case userAuth.FaceTips.FACE_AUTH_TIP_TOO_BRIGHT:
           // do something;
@@ -1327,7 +1598,7 @@ try {
   auth.start();
   console.info('auth start successfully.');
 } catch (error) {
-  console.error(`auth failed, error = ${error}`);
+  console.error(`Failed to auth. Code: ${error?.code}, message: ${error?.message}`);
   // do error.
 }
 ```
@@ -1342,7 +1613,7 @@ try {
 
 ### on(deprecated)
 
-on : (name : AuthEventKey, callback : AuthEvent) => void
+on: (name: AuthEventKey, callback: AuthEvent) => void
 
 订阅指定类型的用户认证事件。
 
@@ -1388,7 +1659,7 @@ try {
   });
   // 订阅认证过程中的提示信息。
   auth.on('tip', {
-    callback : (result : userAuth.TipInfo) => {
+    callback: (result: userAuth.TipInfo) => {
       switch (result.tip) {
         case userAuth.FaceTips.FACE_AUTH_TIP_TOO_BRIGHT:
           // do something;
@@ -1404,14 +1675,14 @@ try {
   auth.start();
   console.info('auth start successfully.');
 } catch (error) {
-  console.error(`auth failed, error = ${error}`);
+  console.error(`Failed to auth. Code: ${error?.code}, message: ${error?.message}`);
   // do error.
 }
 ```
 
 ### off(deprecated)
 
-off : (name : AuthEventKey) => void
+off: (name: AuthEventKey) => void
 
 取消订阅特定类型的认证事件。
 
@@ -1456,14 +1727,14 @@ try {
   auth.off('result');
   console.info('cancel subscribe authentication event successfully.');
 } catch (error) {
-  console.error(`cancel subscribe authentication event failed, error = ${error}`);
+  console.error(`Failed to cancel subscribe authentication event. Code: ${error?.code}, message: ${error?.message}`);
   // do error.
 }
 ```
 
 ### start(deprecated)
 
-start : () => void
+start: () => void
 
 开始认证。
 
@@ -1509,13 +1780,13 @@ try {
   auth.start();
   console.info('auth start successfully.');
 } catch (error) {
-  console.error(`auth failed, error = ${error}`);
+  console.error(`Failed to auth. Code: ${error?.code}, message: ${error?.message}`);
 }
 ```
 
 ### cancel(deprecated)
 
-cancel : () => void
+cancel: () => void
 
 取消认证。
 
@@ -1553,13 +1824,13 @@ try {
   auth.cancel();
   console.info('cancel auth successfully.');
 } catch (error) {
-  console.error(`cancel auth failed, error = ${error}`);
+  console.error(`Failed to cancel auth. Code: ${error?.code}, message: ${error?.message}`);
 }
 ```
 
 ## userAuth.getAuthInstance(deprecated)
 
-getAuthInstance(challenge : Uint8Array, authType : UserAuthType, authTrustLevel : AuthTrustLevel): AuthInstance
+getAuthInstance(challenge: Uint8Array, authType: UserAuthType, authTrustLevel: AuthTrustLevel): AuthInstance
 
 获取AuthInstance对象，用于执行用户身份认证。
 
@@ -1609,13 +1880,13 @@ try {
   let auth = userAuth.getAuthInstance(challenge, authType, authTrustLevel);
   console.info('get auth instance successfully.');
 } catch (error) {
-  console.error(`get auth instance failed, error = ${error}`);
+  console.error(`Failed to get auth instance. Code: ${error?.code}, message: ${error?.message}`);
 }
 ```
 
 ## userAuth.getAvailableStatus9+
 
-getAvailableStatus(authType : UserAuthType, authTrustLevel : AuthTrustLevel): void
+getAvailableStatus(authType: UserAuthType, authTrustLevel: AuthTrustLevel): void
 
 查询指定类型和等级的认证能力是否支持。该接口用于检查当前设备是否支持指定的认证类型和认证可信等级，帮助应用在发起认证前判断认证能力是否可用，从而避免不必要的认证不通过。若查询通过（无错误抛出），表示认证能力可用；若抛出错误，应用应根据错误码判断具体原因并采取相应处理。
 
@@ -1669,7 +1940,7 @@ try {
   userAuth.getAvailableStatus(userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL3);
   console.info('current auth trust level is supported');
 } catch (error) {
-  console.error(`current auth trust level is not supported, error = ${error}`);
+  console.error(`Failed to check auth trust level. Code: ${error?.code}, message: ${error?.message}`);
 }
 ```
 
@@ -1721,7 +1992,7 @@ let auth = new userAuth.UserAuth();
 
 ### getVersion(deprecated)
 
-getVersion() : number
+getVersion(): number
 
 获取认证器的版本信息。
 
@@ -1751,7 +2022,7 @@ console.info(`auth version = ${version}`);
 
 ### getAvailableStatus(deprecated)
 
-getAvailableStatus(authType : UserAuthType, authTrustLevel : AuthTrustLevel) : number
+getAvailableStatus(authType: UserAuthType, authTrustLevel: AuthTrustLevel): number
 
 查询指定类型和等级的认证能力是否支持。
 
@@ -1786,7 +2057,7 @@ let checkCode = auth.getAvailableStatus(userAuth.UserAuthType.FACE, userAuth.Aut
 if (checkCode == userAuth.ResultCode.SUCCESS) {
   console.info('check auth support successfully.');
 } else {
-  console.error(`check auth support failed, code = ${checkCode}`);
+  console.error(`Failed to check auth support. Code: ${checkCode}`);
 }
 ```
 
@@ -1836,7 +2107,7 @@ auth.auth(challenge, userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL1, {
         // 此处添加认证失败逻辑。
       }
     } catch (error) {
-      console.error(`auth onResult failed, error = ${error}`);
+      console.error(`Failed to auth onResult. Code: ${error?.code}, message: ${error?.message}`);
     }
   }
 });
@@ -1844,7 +2115,7 @@ auth.auth(challenge, userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL1, {
 
 ### cancelAuth(deprecated)
 
-cancelAuth(contextID : Uint8Array) : number
+cancelAuth(contextID: Uint8Array): number
 
 表示通过contextID取消本次认证。
 
@@ -1880,7 +2151,7 @@ let cancelCode = auth.cancelAuth(contextId);
 if (cancelCode == userAuth.ResultCode.SUCCESS) {
   console.info('cancel auth successfully.');
 } else {
-  console.error('cancel auth failed.');
+  console.error('Failed to cancel auth.');
 }
 ```
 
@@ -1894,7 +2165,7 @@ if (cancelCode == userAuth.ResultCode.SUCCESS) {
 
 ### onResult(deprecated)
 
-onResult: (result : number, extraInfo : AuthResult) => void
+onResult: (result: number, extraInfo: AuthResult) => void
 
 回调函数，返回认证结果。
 
@@ -1928,7 +2199,7 @@ auth.auth(challenge, userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL1, {
         // 此处添加认证失败逻辑。
       }
     } catch (error) {
-      console.error(`auth onResult failed, error = ${error}`);
+      console.error(`Failed to auth onResult. Code: ${error?.code}, message: ${error?.message}`);
     }
   }
 });
@@ -1936,7 +2207,7 @@ auth.auth(challenge, userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL1, {
 
 ### onAcquireInfo(deprecated)
 
-onAcquireInfo ?: (module : number, acquire : number, extraInfo : any) => void
+onAcquireInfo?: (module: number, acquire: number, extraInfo: any) => void
 
 回调函数，返回认证过程中的提示信息，非必须实现。
 
@@ -1971,14 +2242,14 @@ auth.auth(challenge, userAuth.UserAuthType.FACE, userAuth.AuthTrustLevel.ATL1, {
         // 此处添加认证失败逻辑。
       }
     } catch (error) {
-      console.error(`auth onResult failed, error = ${error}`);
+      console.error(`Failed to auth onResult. Code: ${error?.code}, message: ${error?.message}`);
     }
   },
-  onAcquireInfo: (module, acquire, extraInfo : userAuth.AuthResult) => {
+  onAcquireInfo: (module, acquire, extraInfo: userAuth.AuthResult) => {
     try {
       console.info('auth onAcquireInfo successfully.');
     } catch (error) {
-      console.error(`auth onAcquireInfo failed, error = ${error}`);
+      console.error(`Failed to auth onAcquireInfo. Code: ${error?.code}, message: ${error?.message}`);
     }
   }
 });
@@ -2196,13 +2467,13 @@ authenticator.execute('FACE_ONLY', 'S2', (error, code)=>{
     console.info('auth successfully.');
     return;
   }
-  console.error(`auth failed, code = ${code}`);
+  console.error(`Failed to auth. Code: ${code}`);
 });
 ```
 
 ### execute(deprecated)
 
-execute(type : AuthType, level : SecureLevel): Promise<number>
+execute(type: AuthType, level: SecureLevel): Promise<number>
 
 执行用户认证，使用promise方式作为异步方法。
 
@@ -2236,9 +2507,9 @@ try {
   let authenticator = userAuth.getAuthenticator();
   authenticator.execute('FACE_ONLY', 'S2').then((code)=>{
     console.info('auth successfully.');
-  })
+  });
 } catch (error) {
-  console.error(`auth failed, code = ${error}`);
+  console.error(`Failed to auth. Code: ${error?.code}, message: ${error?.message}`);
 }
 ```
 

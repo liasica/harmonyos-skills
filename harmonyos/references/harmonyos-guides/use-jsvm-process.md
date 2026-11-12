@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-proc
 title: 使用JSVM-API实现JS与C/C++语言交互开发流程
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > 使用JSVM-API实现JS与C/C++语言交互开发流程
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:17+08:00
-doc_updated_at: 2026-10-28
+scraped_at: 2026-11-12T09:52:48+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:3e6a529a208c3a9f3dc6663d4617048e473362f218ab1e9e55b1b1d79c5446bc
 ---
 

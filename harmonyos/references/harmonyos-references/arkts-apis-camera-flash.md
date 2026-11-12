@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (Flash)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (Flash)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:26+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:1315a1074a47d512d5c12ebfca38b3c64fc5b56e5d2419c49697b80462fea21a
+scraped_at: 2026-11-12T09:56:32+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:07a9408b38fa8463376207898e6a8a08b409b5d1425fadac02493dd45ee03a9e
 ---
 
 Flash继承自[FlashQuery](arkts-apis-camera-flashquery.md)。
@@ -55,11 +55,11 @@ setFlashMode(flashMode: FlashMode): void
 **示例：**
 
 ```ts
-import { BusinessError } from '@kit.BasicServicesKit';
-
 function setFlashMode(photoSession: camera.PhotoSession): void {
   try {
-    photoSession.setFlashMode(camera.FlashMode.FLASH_MODE_AUTO);
+    if (photoSession.hasFlash() && photoSession.isFlashModeSupported(camera.FlashMode.FLASH_MODE_AUTO)) {
+      photoSession.setFlashMode(camera.FlashMode.FLASH_MODE_AUTO);
+    }
   } catch (error) {
     // 失败返回错误码error.code并处理。
     let err = error as BusinessError;
@@ -73,6 +73,8 @@ function setFlashMode(photoSession: camera.PhotoSession): void {
 getFlashMode(): FlashMode
 
 获取当前设备的闪光灯模式。
+
+在获取之前，需要先使用方法[hasFlash](arkts-apis-camera-flashquery.md#hasflash11)检查设备是否支持闪光灯。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -100,7 +102,9 @@ import { BusinessError } from '@kit.BasicServicesKit';
 function getFlashMode(photoSession: camera.PhotoSession): camera.FlashMode | undefined {
   let flashMode: camera.FlashMode | undefined = undefined;
   try {
-    flashMode = photoSession.getFlashMode();
+    if (photoSession.hasFlash()) {
+      flashMode = photoSession.getFlashMode();
+    }
   } catch (error) {
     // 失败返回错误码error.code并处理。
     let err = error as BusinessError;

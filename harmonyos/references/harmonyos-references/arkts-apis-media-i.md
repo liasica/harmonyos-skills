@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interfaces (其他)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Interfaces (其他)
 category: harmonyos-references
-scraped_at: 2026-10-17T06:48:10+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:fe64f2ea74f85005808b528895fa352524c4d241065b923cee992a915094f0ae
+scraped_at: 2026-11-12T09:56:45+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a9acd8db40a3f2d7add01a55daea9481b1047e191df70bf094496d8c42438d49
 ---
 
 **说明** 
@@ -178,7 +178,9 @@ media.createAVPlayer((err: BusinessError, player: media.AVPlayer) => {
 | videoFrameRate | number | 否 | 是 | 视频帧率，选择视频录制时必填。推荐范围[1, 60]，单位为帧/秒（fps）。 |
 | isHdr11+ | boolean | 否 | 是 | HDR编码，选择视频录制时选填。isHdr默认为false，对应编码格式没有要求，isHdr为true时，对应的编码格式必须为video/hevc。 |
 | enableTemporalScale12+ | boolean | 否 | 是 | 视频录制是否支持时域分层编码功能，选择视频录制时选填，enableTemporalScale默认为false。设置为true时，编码输出的码流中部分帧可以支持跳过不编码。 |
-| enableBFrame20+ | boolean | 否 | 是 | 视频录制是否启用B帧编码。true表示启用B帧编码（仅在视频编码格式为H.265且设备硬件支持的情况下生效），false表示不启用B帧编码。  该参数为视频录制场景下的可选项，默认值为false。 |
+| enableBFrame20+ | boolean | 否 | 是 | 视频录制是否启用B帧编码，仅在视频编码格式为H.265且设备硬件支持的情况下生效。true表示启用B帧编码，false表示不启用B帧编码。  该参数为视频录制场景下的可选项，默认值为false。 |
+| enableStableQualityMode | boolean | 否 | 是 | 是否使能视频编码质量稳定模式，仅在视频编码格式为H.265且设备硬件支持的情况下生效。true表示使能，false表示不使能。  该参数为视频录制场景下的可选项，默认值为false。  **起始版本：** 26.0.1 |
+| sqrFactor | number | 否 | 是 | 设置SQR码控模式的质量参数。  取值为整数，取值范围为[0, 51]，值越小，编码输出码率越大，画质越高。  需要先设置enableStableQualityMode为true，SQR码控模式的质量参数设置才生效。  该参数为视频录制场景下的可选项，默认值根据设备平台和分辨率的不同，底层动态配置。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ### 音频参数配置对照表
 

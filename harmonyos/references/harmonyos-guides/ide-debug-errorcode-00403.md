@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-err
 title: 调试失败错误码
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 调试错误码 > 调试失败错误码
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:29+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:b9d104b313aeb706730a16289dd423a53f6e0229bb7452c04fab3e30ab0abd71
+scraped_at: 2026-11-12T09:53:04+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a1a7aeec20610fd93c74b3c66a83b54e437e9ef8c293f1b1ba2856f5f2ef9df1
 ---
 
 ## 00403001 离线日志解析失败
@@ -88,7 +88,7 @@ Failed to connect to the WebSocket. Restart the debugging. If the problem persis
 
 **错误描述**
 
-无法连接到WebSocket。请重新启动调试。如果问题仍然存在，请重启DevEco Studio并重新启动调试。
+无法连接到WebSocket。请重新启动调试。如果问题仍然存在，请重启DevEco Studio后重试。
 
 **可能原因**
 
@@ -270,7 +270,7 @@ The Previewer plugin not fully installed. Please verify.
 
 **错误描述**
 
-预览插件未完全安装。请确认。
+预览插件未完全安装。
 
 **可能原因**
 

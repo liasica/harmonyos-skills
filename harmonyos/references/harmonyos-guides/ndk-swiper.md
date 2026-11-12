@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-swiper
 title: 使用滑块视图容器 (Swiper)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 媒体展示 > 使用滑块视图容器 (Swiper)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:20+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:91648711ff228382be41eb4c8ee59279ff59569dde359b669f930140fec379b2
+scraped_at: 2026-11-12T09:51:17+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b95a0d0e028ce6ab9f54bfcd05e1c42b2add560e9a20528e3b07ed31622ad6c1
 ---
 
 ## 概述
@@ -82,7 +82,7 @@ OH_ArkUI_SwiperIndicator_Dispose(swiperIndicatorStyle);
 
 显示效果如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/N9qjt0-aSgSR0svfDJ1UCQ/zh-cn_image_0000002779850330.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/76qhzUjnR1OYWNonK43HUA/zh-cn_image_0000002786359272.jpg)
 
 ## 监听事件
 

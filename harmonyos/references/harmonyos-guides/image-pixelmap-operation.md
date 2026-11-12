@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-pixelma
 title: 使用PixelMap完成位图操作
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片编辑和处理 > 使用PixelMap完成位图操作
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:11+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6cfa0686ad61b5edacab0b020dd5d329f1d72ff4b934e652ef51860a9d56cda5
+scraped_at: 2026-11-12T09:52:06+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:93c61ff2e33daed8f04d56b8ce550539d89777a96503beb62509b7d9730f8b0c
 ---
 
 当需要对目标图片中的部分区域进行处理时，可以使用位图操作功能。此功能常用于图片美化等操作。
@@ -14,7 +14,7 @@ content_hash: sha256:6cfa0686ad61b5edacab0b020dd5d329f1d72ff4b934e652ef51860a9d5
 
 **图1** 位图操作示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/_tGgP6TmT2-3ydT7N-siXA/zh-cn_image_0000002779691028.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/-k95nNNSSuGL1UQdAOFfGA/zh-cn_image_0000002815399441.png)
 
 ## 开发步骤
 
@@ -61,7 +61,7 @@ content_hash: sha256:6cfa0686ad61b5edacab0b020dd5d329f1d72ff4b934e652ef51860a9d5
 
    ```typescript
    // 场景二：读取并修改指定区域内的图像数据。
-   // 读取PixelMap指定区域内的像素数据，并按照RGBA_8888像素格式写入PositionArea.pixels缓冲区，该区域由PositionArea.region指定。
+   // 读取PixelMap指定区域内的像素数据，并按照BGRA_8888像素格式写入PositionArea.pixels缓冲区，该区域由PositionArea.region指定。
    const regionWidth: number = 200;
    const regionHeight: number = 100;
    const area: image.PositionArea = {

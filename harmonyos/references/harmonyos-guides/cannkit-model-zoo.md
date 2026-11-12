@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-model
 title: Model Zoo
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > Model Zoo
 category: harmonyos-guides
-scraped_at: 2026-09-08T06:39:19+08:00
-doc_updated_at: 2026-07-09
-content_hash: sha256:15aa8c7503d3826b43d9bc40f5c420cbeaee8549366ac92514711d5a33a3f798
+scraped_at: 2026-11-12T09:52:40+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4e338be0354feeae527d8f5b9fb20f78b618c5eb73647d7446e91d5fdd9d3890
 ---
 
 ## 概述
@@ -154,7 +154,7 @@ Model Zoo中模型的名称、性能、模型下载信息如下表所示。
 | --- | --- | --- |
 | ConcatD | 当前性能硬件最优。  当Cin是16的倍数且Cout是16的倍数时，做图融合抵消，性能最优。 | ☆☆☆☆☆ |
 | FakeQuantWithMinMaxVars | 当前性能硬件最优。 | ☆☆☆☆☆ |
-| Reshape | 当前性能硬件最优。  有些场景算子会被融合抵消掉。 | ☆☆☆☆☆ |
+| Reshape | 当前性能硬件最优。  部分场景算子会被融合抵消掉。 | ☆☆☆☆☆ |
 | SplitD | 当前性能硬件最优。  当Cin是16的倍数且Cout是16的倍数时，做图融合抵消，性能最优。 | ☆☆☆☆☆ |
 | SplitV | 由于是乱序的数据重排，性能较差。 | ☆ |
 | Unpack | 由于是乱序的数据重排，性能较差。 | ☆ |
@@ -223,7 +223,7 @@ Model Zoo中模型的名称、性能、模型下载信息如下表所示。
 | 分类网络 | EfficientNet | ☆☆☆☆☆ | 模型权重大小适中，硬件算力利用率接近95%。 |
 | 分类网络 | SENet | ☆☆☆☆ | 硬件算力利用率接近75%。 |
 | 目标检测 | Faster\_RCNN | ☆☆☆☆☆ | 硬件算力利用率接近85%。 |
-| 目标检测 | SSD | ☆☆☆☆ | 硬件算力利用率接近85%，当前仅支持通过omg流程生成。 |
+| 目标检测 | SSD | ☆☆☆☆ | 硬件算力利用率接近85%，当前仅支持通过ATC流程生成。 |
 | 目标检测 | FPN | ☆☆☆☆☆ | 硬件算力利用率接近90%，后处理不在模型中，由算法单独完成。 |
 | 语义分割 | FCN | ☆☆☆☆☆ | 硬件算力利用率接近85%，由于模型计算量较大，实际部署时要做参数裁剪，可从[Model Zoo](cannkit-model-zoo.md#model-zoo模型下载)中下载 。 |
 | 语义分割 | DeepLabV3 | ☆☆☆ | 硬件算力利用率接近60%，可从[Model Zoo](cannkit-model-zoo.md#model-zoo模型下载)中下载。 |

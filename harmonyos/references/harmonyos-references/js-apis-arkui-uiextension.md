@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.arkui.uiExtension (uiExtension)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面 > @ohos.arkui.uiExtension (uiExtension)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:05+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:9d3945705e3591334b899689e9138e0296daae0f36ef3f45e37cec68afb6551b
+scraped_at: 2026-11-12T09:53:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:6c8810f318cccaeeeb276d236339fca6cf63b751f71746f3b4b56163aa2865e7
 ---
 
 用于[EmbeddedUIExtensionAbility](../harmonyos-guides/embeddeduiextensionability.md)（或[UIExtensionAbility](js-apis-app-ability-uiextensionability.md#uiextensionability)）中获取宿主应用的窗口信息或对应的[EmbeddedComponent](ts-container-embedded-component.md)组件的信息。
@@ -668,7 +668,7 @@ export default class EntryAbility extends EmbeddedUIExtensionAbility {
 | rect | [window.Rect](arkts-apis-window-i.md#rect7) | 否 | 否 | 组件矩形变化后的值。 |
 | reason | [RectChangeReason](js-apis-arkui-uiextension.md#rectchangereason14) | 否 | 否 | 组件矩形变化的原因。 |
 
-## 完整示例
+## 示例
 
 本示例展示文档中所有API在[EmbeddedUIExtensionAbility](../harmonyos-guides/embeddeduiextensionability.md)中的基础使用方式，示例应用的bundleName为"com.example.embeddeddemo"，被拉起的EmbeddedUIExtensionAbility为"ExampleEmbeddedAbility"。
 

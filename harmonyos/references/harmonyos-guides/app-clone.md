@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-clone
 title: 创建应用分身
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发指导 > 创建应用分身
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:28:57+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:212672314b29205f8ae4f0c684f70dcf856036003ba629ca5cdb1749d041011f
+scraped_at: 2026-11-12T09:50:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:dd9f781feece56de781d2ea0bdc8e57b488b4a4c5ebd7569a313e4eeb0aec96b
 ---
 
 应用分身能在一个设备上安装多个相同的应用，实现多个账号同时登录并独立运行。主要应用场景有社交账号双开、游戏大小号双开等，无需账号切换，从而省去频繁登录的繁琐。
@@ -20,7 +20,7 @@ content_hash: sha256:212672314b29205f8ae4f0c684f70dcf856036003ba629ca5cdb1749d04
 
 以下图片展示了应用分身的效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/Syja5Sk2R5OTGyuxIduDEA/zh-cn_image_0000002809009085.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/mFw_vtgNQ6m79UUI7RE8NQ/zh-cn_image_0000002815557795.png)
 
 ## 约束与限制
 
@@ -47,14 +47,14 @@ content_hash: sha256:212672314b29205f8ae4f0c684f70dcf856036003ba629ca5cdb1749d04
 
    * 首先将已配置好的工程编译打包安装到设备上。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/Nf1Sa2SPQYafWel3jNYlVg/zh-cn_image_0000002809049001.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/BBMvFKEIRo6VbtchPzZhEA/zh-cn_image_0000002815397879.png)
    * 然后打开设置>系统>应用分身，点击“创建分身”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/gdDtf-5bRYOXm0tvSOo9_Q/zh-cn_image_0000002779849436.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/0Wc80jv4SbynsMnGEBnkoA/zh-cn_image_0000002786518304.png)
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/GD4x1A5XTf6Cxvfer1rZjA/zh-cn_image_0000002779689466.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/LQFAroOzSu6HdxgPZgfyrw/zh-cn_image_0000002786358376.png)
    * 返回桌面，检查创建是否成功。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/LVx68WrBQ_Wy31SrkzAgAQ/zh-cn_image_0000002809009085.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/6n2jlTH-SpqlMe5jOsYESw/zh-cn_image_0000002815557795.png)
 
      图中的三个应用的进程、运行、数据、通知等，都是彼此独立的。

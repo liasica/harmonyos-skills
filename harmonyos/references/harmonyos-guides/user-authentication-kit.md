@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/user-authenti
 title: User Authentication Kit（用户认证服务）
 breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务）
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:33+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:960868f06e9affd080a8c1fce6a77693d2d65148db0ee80ee7db31fe9d1f5d97
+scraped_at: 2026-11-12T09:51:41+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:80189083d2360af0b50cff0543d2d90f230f539b6362d259d3bd81ad92a5f688
 ---
 
 * **[User Authentication Kit简介](user-authentication-overview.md)**
@@ -18,6 +18,7 @@ content_hash: sha256:960868f06e9affd080a8c1fce6a77693d2d65148db0ee80ee7db31fe9d1
 * **[查询用户注册凭据的状态](obtain-enrolled-state-capabilities.md)**
 * **[使用嵌入式用户身份认证控件](user-auth-icon.md)**
 * **[查询指定认证类型的认证冻结状态](obtain-auth-lock-state-capabilities.md)**
+* **[查询和订阅用户识别结果](obtain-user-recognition-result.md)**
 * **[伴随设备认证](compaion-device-authentication.md)**
 * **[User Authentication Kit常见问题](faqs-userauthenticationkit.md)**
 * **[User Authentication Kit术语](user-authentication-glossary.md)**

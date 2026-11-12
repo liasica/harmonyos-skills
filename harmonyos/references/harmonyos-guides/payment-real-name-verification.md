@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-real-
 title: 实名信息验证/授权场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 用户身份验证服务 > 实名信息验证/授权场景
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:39+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a1b44c7813d5c12ce4a249ee326a1a72eae4af97d6d9fc6604a5dc1d6de4afbc
+scraped_at: 2026-11-12T09:52:32+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:1edf0b2190bfe74aaa0deed58ed673fa4070e152cc87b2586b613ae1f98c3cb0
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:a1b44c7813d5c12ce4a249ee326a1a72eae4af97d6d9fc6604a5dc1d6de
 
 实名信息验证授权页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/hsaOiGWbS4ana-ZY5rbXCQ/zh-cn_image_0000002809051113.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/_-0jeJy4SKi_AjtHtCNPLQ/zh-cn_image_0000002786360504.png)
 
 ## 接入流程
 
@@ -33,7 +33,7 @@ content_hash: sha256:a1b44c7813d5c12ce4a249ee326a1a72eae4af97d6d9fc6604a5dc1d6de
 
 开发者通过接入Payment Kit实名信息验证授权能力，可以简便快捷地实现用户实名信息验证或获取用户授权后的实名信息（可二选一）。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/mZP0NojYSXGRmAgXiDRqEQ/zh-cn_image_0000002779851548.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/K-DJxWp4R4qsaKUnNNLrYA/zh-cn_image_0000002815559925.png)
 
 ### 实名信息验证
 
@@ -107,7 +107,7 @@ content_hash: sha256:a1b44c7813d5c12ce4a249ee326a1a72eae4af97d6d9fc6604a5dc1d6de
 
    ```java
    // 获取accessToken
-   private String getaccessToken(String clientId, String clientSecret) {
+   private String getAccessToken(String clientId, String clientSecret) {
        HashMap<String, String> params = new HashMap<>();
        params.put("grant_type", "client_credentials");
        params.put("client_id", clientId);
@@ -121,7 +121,7 @@ content_hash: sha256:a1b44c7813d5c12ce4a249ee326a1a72eae4af97d6d9fc6604a5dc1d6de
    }
 
    // 构建PayDevAuth请求头
-   private String buildPayMercAuth(HashMap<String, String> body) {
+   private String buildPayDevAuth(HashMap<String, String> body) {
        // 对body进行排序拼接
        String bodyStr = SignStringUtil.signString(body);
        // 构建 PayDevAuth 请求头
@@ -160,7 +160,7 @@ content_hash: sha256:a1b44c7813d5c12ce4a249ee326a1a72eae4af97d6d9fc6604a5dc1d6de
        body.put("openId", openId);
        HashMap<String, String> header = new HashMap<>();
        header.put("Content-Type", "application/json;charset=UTF-8");
-       header.put("payDevAuth", buildPayMercAuth(body));
+       header.put("payDevAuth", buildPayDevAuth(body));
        // restfulClient为http请求客户端对象，请自行实现postForEntity请求方法。
        ResponseEntity<Map> responseEntity = restfulClient.postForEntity(
            "https://petalpay-developer.cloud.huawei.com.cn/api/v1/realname/verification/preverify", null, body, header, Map.class);
@@ -196,7 +196,7 @@ content_hash: sha256:a1b44c7813d5c12ce4a249ee326a1a72eae4af97d6d9fc6604a5dc1d6de
      context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
      requestStartVerifyRealNameInfoPromise() {
        // 请使用开发者真实的预验证ID（preVerifyId）
-       let preVerifyId = '';
+       let preVerifyId = '12407091401520894056950***';
        realNameService.startRealNameVerification(this.context, preVerifyId)
          .then((verifyResultId: string) => {
            // 实名信息验证成功
@@ -271,4 +271,4 @@ content_hash: sha256:a1b44c7813d5c12ce4a249ee326a1a72eae4af97d6d9fc6604a5dc1d6de
    ```
 2. **查询实名信息授权结果（服务器开发）**
 
-   请求[实名信息授权结果查询](../harmonyos-references/payment-api-common-verification-result.md)接口获取实名信息并使用publicKeyId配对的SM2私钥证书进行实名信息解密，根据业务需要返回给客户端。
+   请求[实名信息授权结果查询](../harmonyos-references/payment-api-common-auth-result.md)接口获取实名信息并使用publicKeyId配对的SM2私钥证书进行实名信息解密，根据业务需要返回给客户端。

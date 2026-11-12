@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/notification-
 title: 更新通知
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > 更新通知
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:37+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:52:30+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:e58295ce14b8554140bfdbcceeea247355275397062edfbafb453c687f0e9d66
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-animat
 title: "@AnimatableExtend：定义可动画属性"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 自定义组件 > 组件扩展装饰器 > @AnimatableExtend：定义可动画属性
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:13+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:6d15fec8c5d8a90930dd7d7749c5cd20c375dcfc5f207903ed40a36992bd5ea0
+scraped_at: 2026-11-12T09:54:26+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:6c7ae08e6960cd8b2b4c874c619f7e1005ad872f0abb794396040d2de499d559
 ---
 
 @AnimatableExtend装饰器用于自定义可动画的属性方法，该装饰器内定义的函数需要配合[animation](ts-animatorproperty.md#animation)属性使用，且必须在animation属性前调用，改变该属性值时才能使animation属性的动画效果生效。在动画过程中该函数会被逐帧调用，直到动画结束。该装饰器的常见用途有：
@@ -163,7 +163,7 @@ struct AnimatablePropertyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/sGVCZRe6QFmTp2suRggqJw/zh-cn_image_0000002809052263.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/5cOXcj8oQyyFVaZ61FKIGQ/zh-cn_image_0000002815561045.gif)
 
 ### 示例2（折线的动画效果）
 
@@ -223,9 +223,7 @@ class PointVector extends Array<Point> implements AnimatableArithmetic<PointVect
 
   multiply(scale: number): PointVector {
     let result = new PointVector([]);
-    for (let i = 0; i < this.length; i++) {
-      result.push((this as Array<Point>)[i].multiply(scale));
-    }
+    this.forEach((point: Point) => result.push(point.multiply(scale)));
     return result;
   }
 
@@ -233,12 +231,7 @@ class PointVector extends Array<Point> implements AnimatableArithmetic<PointVect
     if (this.length !== rhs.length) {
       return false;
     }
-    for (let i = 0; i < this.length; i++) {
-      if (!(this as Array<Point>)[i].equals((rhs as Array<Point>)[i])) {
-        return false;
-      }
-    }
-    return true;
+    return this.every((point: Point, index: number) => point.equals((rhs as Array<Point>)[index]));
   }
 
   get(): Array<Object[]> {
@@ -291,4 +284,4 @@ struct AnimatablePropertyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/t5yjgEY2Q9qkY4KrsKtvsg/zh-cn_image_0000002779852698.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/HJBNdPuHSPuaL_SnIOiGag/zh-cn_image_0000002815401129.gif)

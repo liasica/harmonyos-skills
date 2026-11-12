@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-generate
 title: 通过字节数组生成码图
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 码图生成 > 通过字节数组生成码图
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:15+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:251477aa4a2da05e96b53b9c95880f5d7a4b92e1acb993cb6f43ea7aa837555c
+scraped_at: 2026-11-12T09:52:09+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f6c64888c0270e0dde068669d615bbacb8df8a9582202b0c3443ecebde38cb86
 ---
 
 码图生成能力支持将字节数组转换为自定义格式的码图。
@@ -18,15 +18,15 @@ content_hash: sha256:251477aa4a2da05e96b53b9c95880f5d7a4b92e1acb993cb6f43ea7aa83
 
 ## 约束与限制
 
-* 码图生成能力支持Phone、Tablet、Wearable、PC/2in1、TV（从API版本5.1.0(18)开始支持Wearable，从API版本5.1.1(19)开始支持PC/2in1、TV）。
+* 码图生成能力支持Phone、Tablet、Wearable、PC/2in1、TV、Car（从API版本5.1.0(18)开始，新增支持Wearable；从API版本5.1.1(19)开始，新增支持PC/2in1、TV；从API版本26.0.1开始，新增支持Car）。
 * 若Scan Kit识别某码图内容显示内容为乱码，则该码图的字节数组需要通过专门的解码器解析，例如地铁闸机。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/_14CoisFTj2fkhVHmIJMuw/zh-cn_image_0000002779851040.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/MKZn7RVHQBaWEI0ngJvsAQ/zh-cn_image_0000002815559401.png)
 
 1. 用户向应用发起生成码图请求后，传入需要生成的码图信息，包括码图的类型、宽高等。
-2. 应用通过调用Scan Kit的createBarcode接口启动码图生成能力。
+2. 应用通过调用Scan Kit的createBarcode()接口启动码图生成能力。
 3. Scan Kit通过将字节数组转换为码图并返回给应用。
 4. 应用向用户返回生成码图结果。
 
@@ -36,7 +36,7 @@ content_hash: sha256:251477aa4a2da05e96b53b9c95880f5d7a4b92e1acb993cb6f43ea7aa83
 
 | 接口名 | 接口描述 |
 | --- | --- |
-| [createBarcode](../harmonyos-references/scan-generatebarcode.md#createbarcode-2)(content: ArrayBuffer, options: [CreateOptions](../harmonyos-references/scan-generatebarcode.md#createoptions)): Promise<image.[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)> | 码图生成接口，返回生成的码图，类型为image.PixelMap，可以使用Image组件渲染成图片。使用Promise异步回调。 |
+| [createBarcode](../harmonyos-references/scan-generatebarcode.md#generatebarcodecreatebarcode-2)(content: ArrayBuffer, options: [CreateOptions](../harmonyos-references/scan-generatebarcode.md#createoptions)): Promise<image.[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)> | 码图生成接口，返回生成的码图，类型为image.PixelMap，可以使用Image组件渲染成图片。使用Promise异步回调。 |
 
 ## 开发步骤
 
@@ -44,7 +44,7 @@ content_hash: sha256:251477aa4a2da05e96b53b9c95880f5d7a4b92e1acb993cb6f43ea7aa83
 
 为了方便开发者接入，我们提供了详细的样例工程供参考，推荐参考[示例工程](https://gitcode.com/HarmonyOS_Samples/scankit-samplecode-clientdemo-arkts)接入。
 
-以下示例为调用码图生成能力的createBarcode接口实现码图生成。
+以下示例为调用码图生成能力的createBarcode()接口实现码图生成。
 
 1. 导入码图生成接口模块，该模块提供了码图生成的参数和方法，导入方法如下。
 
@@ -56,12 +56,12 @@ content_hash: sha256:251477aa4a2da05e96b53b9c95880f5d7a4b92e1acb993cb6f43ea7aa83
    import { hilog } from '@kit.PerformanceAnalysisKit';
    import { buffer } from '@kit.ArkTS';
    ```
-2. 调用码图生成能力的createBarcode接口实现码图生成。
+2. 调用码图生成能力的createBarcode()接口实现码图生成。
 
    * 通过Promise方式回调，获取生成的码图。
 
      ```typescript
-     const TAG: string = 'Create barcode';
+     const TAG: string = 'Scan Kit Sample GenerateBarcode';
 
      @Entry
      @Component
@@ -90,13 +90,14 @@ content_hash: sha256:251477aa4a2da05e96b53b9c95880f5d7a4b92e1acb993cb6f43ea7aa83
                  // 码图生成接口，成功返回PixelMap格式图片
                  generateBarcode.createBarcode(contentBuffer, options).then((pixelMap: image.PixelMap) => {
                    this.pixelMap = pixelMap;
-                   hilog.info(0x0001, TAG, 'Succeeded in creating barCode.');
+                   hilog.info(0x0001, TAG, 'Succeeded in creating barcode.');
                  }).catch((err: BusinessError) => {
-                   hilog.error(0x0001, TAG, `Failed to createBarCode. Code: ${err.code}, message: ${err.message}`);
+                   hilog.error(0x0001, TAG,
+                     `Failed to createBarcode by promise with options. Code: ${err.code}, message: ${err.message}`);
                  });
                } catch (err) {
                  hilog.error(0x0001, TAG,
-                   `Failed to createBarcode by Promise with options. Code: ${err.code}, message: ${err.message}`);
+                   `Failed to createBarcode by promise with options. Code: ${err.code}, message: ${err.message}`);
                }
              })
            // 获取生成码图后显示

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agent-powered
 title: 代理提醒(ArkTS)
 breadcrumb: 指南 > 应用框架 > Background Tasks Kit（后台任务开发服务） > 代理提醒(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:28+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:e33d2687ea8217d575dc23ba6d0f1f506269fdc5cea55a1839e3ad50cd0b9732
+scraped_at: 2026-11-12T09:51:24+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:896f286299906f7c5016cdea985c5b8bbc1eb5e6daca8c8b8c439ca9f88fb289
 ---
 
 ## 功能介绍
@@ -22,7 +22,7 @@ content_hash: sha256:e33d2687ea8217d575dc23ba6d0f1f506269fdc5cea55a1839e3ad50cd0
 
 * **应用限制**：
 
-  代理提醒仅对如下类型的应用开放申请：工具类、商务类、效率类、金融理财类、教育类、生活服务类、旅游类、医疗类、运动健康类、游戏类应用。若您的应用不在上述类型中，则不符合申请条件。符合上述类型的应用，请在线上申请时一并在附件中提交应用分类截图。应用分类信息可登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，在“APP”页签中选择“应用上架”->“应用信息”查询。
+  代理提醒仅对如下类型的应用开放申请：工具类、商务类、效率类、金融理财类、教育类、生活服务类、旅游类、医疗类、运动健康类、游戏类应用。若您的应用不在上述类型中，则不符合申请条件。符合上述类型的应用，请在线上申请时一并在附件中提交应用分类截图。应用分类信息可登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，在“应用管理”页签中选择“应用上架”->“应用信息”查询。
 * **场景限制**：
 
   营销类场景（如电商/红包/优惠券抢购、直播预约等）不支持申请代理提醒权限，以下给出几种常见的开放代理提醒申请的场景示例：
@@ -78,21 +78,25 @@ content_hash: sha256:e33d2687ea8217d575dc23ba6d0f1f506269fdc5cea55a1839e3ad50cd0
 
 ### 代理提醒开放能力申请
 
-1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，选择“开发与服务”。
-2. 在项目列表中找到您的项目，在项目下的应用列表中选择需要申请代理提醒的应用。如果无对应应用，请先[创建HarmonyOS应用](../app/agc-help-create-app-0000002247955506.md)。
-3. 进入“项目设置”->“开放能力管理”页面，点击“代理提醒”卡片对应的“申请”按钮。
+1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，选择“应用管理”页签。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/GhfduqeWTYuyhsTKu9mZcA/zh-cn_image_0000002809010193.png)
-4. 在“新建业务申请”窗口填写申请原因，上传代理提醒功能场景截图和应用分类信息截图，然后点击“提交”。应用分类信息可登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，在“APP”页签中选择“应用上架”->“应用信息”查询。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/V3wNNtRfTEi9dM4bA9DwEw/zh-cn_image_0000002815398987.png)
+2. 在左侧项目列表中找到您的项目，在项目下的应用列表中选择需要申请代理提醒的应用。如果无对应应用，请先[创建HarmonyOS应用](../app/agc-help-create-app-0000002247955506.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/lyQny6qFR4CercJ97rnzxg/zh-cn_image_0000002809050107.png)
-5. 返回“开放能力接入”页面，原“申请”按钮变为“申请中”，8个工作日反馈申请结果。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/vZTRkFOZTkOuBOFkoNpfgQ/zh-cn_image_0000002786519412.png)
+3. 在“基础信息”->“开放能力管理”->“开放能力申请”页面，点击“代理提醒”卡片对应的“申请”按钮。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/uOdeG4nTSEWtaEbIvywUpg/zh-cn_image_0000002779850542.png)
-6. 申请审批通过后，互动中心会发送通知给您，同时“申请中”按钮会变为置灰显示的“申请”。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/RP1KbeZSTMaGT9OYDjao2A/zh-cn_image_0000002786359484.png)
+4. 在“新建业务申请”窗口填写申请原因，上传代理提醒功能场景截图和应用分类信息截图，然后点击“提交”。应用分类信息可登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，在“应用管理”页签中选择“应用上架”->“应用信息”查询。
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/KG7gh9AqQJyKg9XPCrzM_A/zh-cn_image_0000002815558905.png)
+5. 返回“开放能力管理”页面，申请状态由“未申请”变为“审核中”，8个工作日反馈申请结果。
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/83RwzQPEQ6isqQnLRmR9sg/zh-cn_image_0000002815398989.png)
+6. 申请审批通过后，互动中心会发送通知给您，同时申请状态会变为“已通过”。
 7. 能力申请通过后，勾选代理提醒的能力开关，点击右上角“保存”。至此，您的应用已成功接入开放能力。此时，调试和发布应用必须重新生成Profile文件并使用[手动签名](ide-signing-manual.md)。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/jyf1jt4-TLKmExDWGDq94Q/zh-cn_image_0000002779690574.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/2OPXDLvASd2wMQU-LO601Q/zh-cn_image_0000002786519414.png)
 
 ### 申请权限
 

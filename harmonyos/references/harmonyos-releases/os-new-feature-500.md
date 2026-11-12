@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feat
 title: 新增和增强特性
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:58:53+08:00
-doc_updated_at: 2026-06-27
-content_hash: sha256:05a2ca10e9dbb36d3ef28664d0e5180f0536ca51be2f01b916258c15ffd8015c
+scraped_at: 2026-11-12T09:50:35+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8baaf5d4cc5ab7890e415b90c97e614feab11f2ea42a719b05b24fc33259963f
 ---
 
 ## 应用框架
@@ -205,7 +205,7 @@ ArkUI在HarmonyOS NEXT阶段带来如下能力的新增或增强：
 
   通用onTouch事件支持[阻止事件冒泡](../harmonyos-references-V5/ui__input__event_8h-V5.md)。通用手势事件提供[手势识别器句柄](../harmonyos-references-V5/native__gesture_8h-V5.md#汇总)类型对象，返回触发该事件的组件对象。
 
-  通过[OH\_ArkUI\_GetContextByNode](../harmonyos-references/capi-native-node-h.md#oh_arkui_getcontextbynode)获取当前节前所在页面的UI上下文实例对象指针。
+  通过[OH\_ArkUI\_GetContextByNode](../harmonyos-references/capi-native-node-h.md#oh_arkui_getcontextbynode)获取当前节点所在页面的UI上下文实例对象指针。
 * 通过C API提供定义帧动画对象的能力，可获取、销毁、设置关键帧动画相关参数。（[API参考](../harmonyos-references-V5/native__animate_8h-V5.md)）
 * XComponent支持通过C API获取触摸点相对于屏幕或应用窗口的坐标。（[API参考](../harmonyos-references-V5/_o_h___native_x_component-V5.md#oh_nativexcomponent_gettouchpointwindowx)）
 * FrameNode支持数据懒加载能力。（[API参考](../harmonyos-references-V5/js-apis-arkui-framenode-V5.md#nodeadapter12)）

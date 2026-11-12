@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 小游戏登录（必选）
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 基础游戏服务（必选） > 小游戏 > 小游戏登录（必选）
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:29+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:23edf667461476ced099b6179651db5d1f3d3e4413ad9abf59e434dc279d2f0e
+scraped_at: 2026-11-12T09:52:23+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d6a0c94eac87e1a503571629125268a15067227720c4cfc64e934d776089a2b8
 ---
 
 小游戏接入基础游戏服务的小游戏登录API后，支持玩家使用华为账号快速进入游戏，且小游戏的华为账号实名认证、未成年人防沉迷功能由基础游戏服务实现。
@@ -16,15 +16,15 @@ content_hash: sha256:23edf667461476ced099b6179651db5d1f3d3e4413ad9abf59e434dc279
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/PGFZLigiQjqwL5TaMS5UVw/zh-cn_image_0000002809010997.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/Ofv5GjZnSR61AASbnJ5gfg/zh-cn_image_0000002815399797.png)
 
 1. 玩家启动小游戏。
-2. 小游戏调用[init](../harmonyos-references/gameservice-gameplayer.md#gameplayerinit-1)接口初始化Game Service Kit。初始化后，弹出华为隐私协议窗口，玩家确认同意后，可继续往下执行。
-3. 小游戏调用[on](../harmonyos-references/gameservice-gameplayer.md#gameplayeronminigameaddictionprevented)接口注册小游戏防沉迷事件监听。
-4. 小游戏调用[miniGameLogin](../harmonyos-references/gameservice-gameplayer.md#gameplayerminigamelogin)接口。小游戏顶部弹出欢迎横幅，并向小游戏返回playerId、playerSign等信息。同时对玩家是否完成实名认证及是否成年进行校验。
+2. 小游戏调用[init()](../harmonyos-references/gameservice-gameplayer.md#gameplayerinit-1)接口初始化Game Service Kit。初始化后，弹出华为隐私协议窗口，玩家确认同意后，可继续往下执行。
+3. 小游戏调用[on()](../harmonyos-references/gameservice-gameplayer.md#gameplayeronminigameaddictionprevented)接口注册小游戏防沉迷事件监听。
+4. 小游戏调用[miniGameLogin()](../harmonyos-references/gameservice-gameplayer.md#gameplayerminigamelogin)接口。小游戏顶部弹出欢迎横幅，并向小游戏返回playerId、playerSign等信息。同时对玩家是否完成实名认证及是否成年进行校验。
 
-   * 若玩家未完成实名认证，[miniGameLogin](../harmonyos-references/gameservice-gameplayer.md#gameplayerminigamelogin)接口自动弹出实名认证窗口要求玩家进行实名认证。
-   * 若玩家账号实名认证为未成年人，[miniGameLogin](../harmonyos-references/gameservice-gameplayer.md#gameplayerminigamelogin)接口将自动检测未成年人的游戏时间。若玩家不在指定时间内登录小游戏，将强制玩家退出小游戏并返回[1002000006](../harmonyos-references/errorcode-gameservice.md#section1002000006-玩家未成年并且当前不在可游戏时间)错误码。
+   * 若玩家未完成实名认证，[miniGameLogin()](../harmonyos-references/gameservice-gameplayer.md#gameplayerminigamelogin)接口自动弹出实名认证窗口要求玩家进行实名认证。
+   * 若玩家账号实名认证为未成年人，[miniGameLogin()](../harmonyos-references/gameservice-gameplayer.md#gameplayerminigamelogin)接口将自动检测未成年人的游戏时间。若玩家不在指定时间内登录小游戏，将强制玩家退出小游戏并返回[1002000006](../harmonyos-references/errorcode-gameservice.md#section1002000006-玩家未成年并且当前不在可游戏时间)错误码。
 
 ## 接口说明
 
@@ -53,7 +53,7 @@ import { window } from '@kit.ArkUI';
 
 ### 初始化
 
-调用[init](../harmonyos-references/gameservice-gameplayer.md#gameplayerinit-1)接口初始化Game Service Kit。
+调用[init()](../harmonyos-references/gameservice-gameplayer.md#gameplayerinit-1)接口初始化Game Service Kit。
 
 ```typescript
 onWindowStageCreate(windowStage: window.WindowStage) {
@@ -72,14 +72,14 @@ onWindowStageCreate(windowStage: window.WindowStage) {
 
 ### 监听小游戏防沉迷事件
 
-调用[on](../harmonyos-references/gameservice-gameplayer.md#gameplayeronminigameaddictionprevented)接口注册小游戏防沉迷事件监听。
+调用[on()](../harmonyos-references/gameservice-gameplayer.md#gameplayeronminigameaddictionprevented)接口注册小游戏防沉迷事件监听。
 
 ```typescript
 private miniGameAddictionPreventedCallback(result: string) {
   // 退出小游戏
 }
 // ...
-// 调用on接口注册小游戏防沉迷事件监听
+// 调用on()接口注册小游戏防沉迷事件监听
 try {
   gamePlayer.on('miniGameAddictionPrevented', this.miniGameAddictionPreventedCallback);
 } catch (error) {
@@ -90,7 +90,7 @@ try {
 
 ### 小游戏登录
 
-调用[miniGameLogin](../harmonyos-references/gameservice-gameplayer.md#gameplayerminigamelogin)接口登录小游戏。
+调用[miniGameLogin()](../harmonyos-references/gameservice-gameplayer.md#gameplayerminigamelogin)接口登录小游戏。
 
 ```typescript
 let context = this.getUIContext()?.getHostContext() as common.UIAbilityContext;
@@ -116,7 +116,7 @@ try {
 
 ### 取消监听小游戏防沉迷事件
 
-游戏退出时通过调用[off](../harmonyos-references/gameservice-gameplayer.md#gameplayeroffminigameaddictionprevented)接口取消监听状态。
+游戏退出时通过调用[off()](../harmonyos-references/gameservice-gameplayer.md#gameplayeroffminigameaddictionprevented)接口取消监听状态。
 
 ```typescript
 // 取消miniGameAddictionPrevented事件的全部监听

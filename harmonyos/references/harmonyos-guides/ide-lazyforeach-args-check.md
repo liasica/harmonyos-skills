@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-lazyforea
 title: "@performance/lazyforeach-args-check（已下线）"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/lazyforeach-args-check（已下线）
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:13+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:7adb0d176a30780b83d08e364221a9a577f922fb0dfdb248f987782536156e93
+scraped_at: 2026-11-12T09:52:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:1973fa6c5c678695757919195bdbf2f65a75950503f24afa60219f6f70de6bc3
 ---
 
 建议在LazyForEach参数中设置keyGenerator。该规则已于5.0.3.500版本下线。
@@ -219,4 +219,4 @@ struct MyComponent {
 plugin:@performance/recommended
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

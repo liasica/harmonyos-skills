@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-fs-space-
 title: 应用及文件系统空间统计
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用文件访问与管理 > 应用及文件系统空间统计
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:59+08:00
-doc_updated_at: 2026-10-26
+scraped_at: 2026-11-12T09:51:25+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:3980c29b69496fec4fea7ff2cae8ca871384d3043e4fb0cd01cce4c5c72574cd
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/i18n-characte
 title: 字符处理
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用国际化 > 字符处理
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:37+08:00
-doc_updated_at: 2026-09-20
+scraped_at: 2026-11-12T09:51:28+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:4d0769be232aba485b5960998585fc4b4b2f4f0038e7c727eadff8224f6bef27
 ---
 

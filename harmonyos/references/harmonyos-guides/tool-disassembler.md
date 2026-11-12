@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/tool-disassem
 title: Disassembler反汇编工具
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > Disassembler反汇编工具
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:46+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:51:05+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:d7fa54f8010ece8dd8584d03fa8a50629c799a6c48b516e47202d3d9116c7ab1
 ---
 

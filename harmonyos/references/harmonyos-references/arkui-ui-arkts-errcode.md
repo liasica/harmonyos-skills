@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkui-ui-
 title: UI界面
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > 错误码 > UI界面
 category: harmonyos-references
-scraped_at: 2026-10-11T07:25:14+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:a6b4f43006eb0fd253a05f0346be0138f8d0b3646e88febc228cd4fcf4a72953
+scraped_at: 2026-11-12T09:54:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:99f46eade6dfb22026bf7c5f78b0658a703743cd24f52126b963f2d3ae06613f
 ---
 
 * **[接口调用异常错误码](errorcode-internal.md)**
@@ -37,3 +37,4 @@ content_hash: sha256:a6b4f43006eb0fd253a05f0346be0138f8d0b3646e88febc228cd4fcf4a
 * **[DrawableDescriptor错误码](errorcode-drawable-descriptor.md)**
 * **[环境变量错误码](errorcode-env.md)**
 * **[反色能力错误码](errorcode-force-dark.md)**
+* **[动视效错误码](errorcode-animation.md)**

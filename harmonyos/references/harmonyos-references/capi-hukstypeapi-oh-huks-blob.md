@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-huks
 title: OH_Huks_Blob
 breadcrumb: API参考 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > C API > 结构体 > OH_Huks_Blob
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:47+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:55:27+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:af1bb753b0fe9de3d7f6e8275537a4cc9f8a5dbfcda3c8aa3d7ab27e3b5ed51e
 ---
 

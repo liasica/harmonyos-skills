@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/public-audio-
 title: 空间音频能力查询和状态订阅
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频播放 > 空间音频能力查询和状态订阅
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:02:16+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-11-12T09:51:59+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:922c2c93dd738cd78ef50da063a882cea25032cadbfe323cef55c90565e53dfe
 ---
 

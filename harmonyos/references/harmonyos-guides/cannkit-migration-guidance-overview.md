@@ -1,14 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-migration-guidance-overview
 title: 概述
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC昇腾到麒麟兼容性迁移指南 > Ascend910B/Ascend910C到KirinX90/Kirin9030迁移指导 > 概述
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC昇腾到麒麟兼容性迁移指南 > Ascend910B/Ascend910C到KirinX90/Kirin9030迁移指导 > 概述
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:43+08:00
-doc_updated_at: 2026-06-27
-content_hash: sha256:1a934fe313ec4609da8aa4dd89bca8f2ec30f20bc65f079c4cde2e97424987ce
+scraped_at: 2026-11-12T09:52:42+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8107c62f85946d60eb985f17adb6981dffb6d6b717a2023a8cb53762e1c7b307
 ---
 
-Ascend910B/Ascend910C和KirinX90/Kirin9030之间的ASC API详细能力差异，见[《Ascend C算子接口》](cannkit-ascend-c-apis.md)。本节当前重点描述主要的差异和兼容适配方案，其它情况可类比参考。
+Ascend910B/Ascend910C和KirinX90/Kirin9030之间的ASC API详细能力差异，见[《Ascend C算子接口》](cannkit-ascend-c-apis.md)。本节当前重点描述主要的差异和兼容适配方案，其他情况可类比参考。
 
 架构版本代表了AI处理器的能力，Ascend910B/Ascend910C和KirinX90/Kirin9030的AI处理器架构版本请参见表1。
 
@@ -28,7 +28,7 @@ Ascend910B/Ascend910C和KirinX90/Kirin9030之间的ASC API详细能力差异，�
 | --- | --- |
 | 不支持GM操作使能L2 Cache | 只影响性能、不影响功能。 |
 | 不支持原子操作 | 不支持开发者在GM完成Atomic操作。开发者需要在NPU片上的Buffer完成计算后，再使用基础API DataCopy将计算结果从NPU片上的Buffer搬到GM。 |
-| 数据类型差异（不支持bfloat16\_t、Cube计算不支持float、Mmad数据格式差异等） | 建议替换成其它数据类型（如half），并根据本指南指导做数据转换。 |
+| 数据类型差异（不支持bfloat16\_t、Cube计算不支持float、Mmad数据格式差异等） | 建议替换成其他数据类型（如half），并根据本指南指导做数据转换。 |
 | 不支持AI Core核间同步特性 | KirinX90/Kirin9030 AI处理器为单核耦合架构，软件兼容，等效为单核内部同步。开发者编程时，要避免对核数进行硬编码。 |
 | 不支持通信特性 | 不支持。 |
 | 不支持训练特性，包括右矩阵Load 3D功能、LoadDataTranspose部分特性 | 不支持。 |

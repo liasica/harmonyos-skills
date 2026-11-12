@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-m
 title: Interface (MvtOverlay)
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (MvtOverlay)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:00+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c2de099f9e73c2ddaf335b2e2b3a337d0bab2f6995bfc071d11f0f40c289d3a7
+scraped_at: 2026-11-12T09:57:26+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:1402b577667eea9b7f83a68cf2d8f1b5d50d6b022ec34832d68e5397243417cb
 ---
 
 ## 导入模块
@@ -79,7 +79,7 @@ addLayers(layers: mapCommon.MvtLayer[]): void
 **示例：**
 
 ```typescript
-let renderLayers: Array<mapCommon.MvtLayer> = []
+let renderLayers: Array<mapCommon.MvtLayer> = [];
 let staticLayerIds = [-12, -8, -4, 0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44];
 // 构建一组具有不同 sourceLayer ID的图层，用于动态渲染
 for (let index = 0; index < staticLayerIds.length; index++) {
@@ -98,7 +98,7 @@ for (let index = 0; index < staticLayerIds.length; index++) {
       }
     }
   }
-  renderLayers.push(layer)
+  renderLayers.push(layer);
 };
 
 mvtOverlay.addLayers(renderLayers);
@@ -173,7 +173,7 @@ for (let index = 0; index < staticLayerIds.length; index++) {
       }
     }
   }
-  renderLayers.push(layer)
+  renderLayers.push(layer);
 }
 let layerIds = ['111'];
 // 创建新的图层列表并更新图层
@@ -229,5 +229,5 @@ getBlur(): number | Record<number, number>
 **示例：**
 
 ```typescript
-let blur: number | Record<number, number> = mvtOverlay.getBlur()
+let blur: number | Record<number, number> = mvtOverlay.getBlur();
 ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-gesture
 title: 多层级手势事件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 添加手势响应 > 多层级手势事件
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:27+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:26ba23fbc76f6ff7ecb5d9874849263bd044ebb46230aa7111a55768113c4ff2
+scraped_at: 2026-11-12T09:51:14+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:182f05cce288e834c06b3b9dbcea880b07d0b05618231bc8b9021fe0cecb84e2
 ---
 
 多层级手势事件指父子组件嵌套时，父子组件均绑定了手势或事件。在该场景下，手势或者事件的响应受到多个因素的影响，相互之间发生传递和竞争，容易出现预期外的响应。
@@ -24,10 +24,8 @@ content_hash: sha256:26ba23fbc76f6ff7ecb5d9874849263bd044ebb46230aa7111a55768113
 4. onTouch事件在以下场景会触发Cancel类型事件：
 
    * 手指按住屏幕同时点击Home键返回桌面，此时触发Cancel事件。
-
-* 折叠屏手机，应用在按住屏幕的情况下折叠手机切换到外屏，此时触发Cancel事件。
-
-  + 手指触摸过程中存在手写笔操作，手指的触摸操作会收到Cancel事件。
+   * 折叠屏手机，应用在按住屏幕的情况下折叠手机切换到外屏，此时触发Cancel事件。
+   * 手指触摸过程中存在手写笔操作，手指的触摸操作会收到Cancel事件。
 
 对于一般的容器组件（例如：Column），父子组件之间onTouch事件能够同时触发，兄弟组件之间onTouch事件根据布局进行触发。
 

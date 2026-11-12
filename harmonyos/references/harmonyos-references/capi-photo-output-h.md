@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-phot
 title: photo_output.h
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 头文件 > photo_output.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:28+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d682eabe3e3e9f4f41cec27fd5391090290d20e431e7bdcf78680d08265bfc37
+scraped_at: 2026-11-12T09:56:34+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e61a111c737ccd9284952a6403f30cf69a9d5df2e7756fca845ec94abe5967c9
 ---
 
 ## 概述
@@ -85,6 +85,8 @@ content_hash: sha256:d682eabe3e3e9f4f41cec27fd5391090290d20e431e7bdcf78680d08265
 | [Camera\_ErrorCode OH\_PhotoCaptureSettingExt\_SetMirror(OH\_Camera\_PhotoCaptureSettingExt\* photoCaptureSettingExt, bool mirror)](capi-photo-output-h.md#oh_photocapturesettingext_setmirror) | - | 拍照扩展设置中的镜像效果。 |
 | [Camera\_ErrorCode OH\_PhotoCaptureSettingExt\_SetCompressionQuality(OH\_Camera\_PhotoCaptureSettingExt\* photoCaptureSettingExt, uint8\_t compressionQuality)](capi-photo-output-h.md#oh_photocapturesettingext_setcompressionquality) | - | 拍照扩展设置中的图片压缩质量。 |
 | [Camera\_ErrorCode OH\_PhotoOutput\_Capture\_WithCaptureSettingExt(Camera\_PhotoOutput\* photoOutput, OH\_Camera\_PhotoCaptureSettingExt\* setting)](capi-photo-output-h.md#oh_photooutput_capture_withcapturesettingext) | - | 使用扩展拍照设置执行拍照操作。 |
+| [Camera\_ErrorCode OH\_PhotoOutput\_IsAutoAuxiliaryPhotoDeliverySupported(const Camera\_PhotoOutput\* photoOutput, OH\_Camera\_AuxiliaryPhotoType auxPhotoType, bool\* isSupported)](capi-photo-output-h.md#oh_photooutput_isautoauxiliaryphotodeliverysupported) | - | 检查设备是否支持拍照自动输出辅助图。 |
+| [Camera\_ErrorCode OH\_PhotoOutput\_SetAutoAuxiliaryPhotosDeliveryEnabled(Camera\_PhotoOutput\* photoOutput, const OH\_Camera\_AuxiliaryPhotoType\* auxPhotoTypes, uint32\_t size, bool enable)](capi-photo-output-h.md#oh_photooutput_setautoauxiliaryphotosdeliveryenabled) | - | 启用或禁用拍照自动回传指定类型的辅助图。 |
 
 ## 函数说明
 
@@ -1247,3 +1249,56 @@ Camera_ErrorCode OH_PhotoOutput_Capture_WithCaptureSettingExt(Camera_PhotoOutput
 | 类型 | 说明 |
 | --- | --- |
 | [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功。  CAMERA\_INVALID\_ARGUMENT：参数丢失或参数类型不正确。  CAMERA\_SESSION\_NOT\_RUNNING：捕获会话未运行。  CAMERA\_SERVICE\_FATAL\_ERROR：相机服务异常。 |
+
+### OH\_PhotoOutput\_IsAutoAuxiliaryPhotoDeliverySupported()
+
+```c
+Camera_ErrorCode OH_PhotoOutput_IsAutoAuxiliaryPhotoDeliverySupported(const Camera_PhotoOutput* photoOutput, OH_Camera_AuxiliaryPhotoType auxPhotoType, bool* isSupported)
+```
+
+**描述**
+
+检查设备是否支持拍照自动输出辅助图。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| const [Camera\_PhotoOutput](capi-oh-camera-camera-photooutput.md)\* photoOutput | 指向目标PhotoOutput实例的指针。 |
+| [OH\_Camera\_AuxiliaryPhotoType](capi-camera-h.md#oh_camera_auxiliaryphototype) auxPhotoType | 目标辅助图类型。 |
+| bool\* isSupported | 指向检查结果的指针，表示是否支持自动输出辅助图。true表示支持，false表示不支持。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：操作成功。  CAMERA\_INVALID\_ARGUMENT：缺少参数或参数类型不正确。  CAMERA\_ERROR\_PARAM\_OUT\_OF\_RANGE：参数超出范围。  CAMERA\_SERVICE\_FATAL\_ERROR：相机服务异常。 |
+
+### OH\_PhotoOutput\_SetAutoAuxiliaryPhotosDeliveryEnabled()
+
+```c
+Camera_ErrorCode OH_PhotoOutput_SetAutoAuxiliaryPhotosDeliveryEnabled(Camera_PhotoOutput* photoOutput, const OH_Camera_AuxiliaryPhotoType* auxPhotoTypes, uint32_t size, bool enable)
+```
+
+**描述**
+
+启用或禁用拍照自动回传指定类型的辅助图。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [Camera\_PhotoOutput](capi-oh-camera-camera-photooutput.md)\* photoOutput | 指向目标PhotoOutput实例的指针。 |
+| const [OH\_Camera\_AuxiliaryPhotoType](capi-camera-h.md#oh_camera_auxiliaryphototype)\* auxPhotoTypes | 指向目标辅助图类型数组的指针。 |
+| uint32\_t size | 辅助图类型数组的大小（元素个数）。 |
+| bool enable | 表示是否启用拍照自动回传指定类型的辅助图。true表示启用，false表示禁用。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：操作成功。  CAMERA\_INVALID\_ARGUMENT：缺少参数或参数类型不正确。  CAMERA\_ERROR\_PARAM\_OUT\_OF\_RANGE：参数超出范围。  CAMERA\_SERVICE\_FATAL\_ERROR：相机服务异常。 |

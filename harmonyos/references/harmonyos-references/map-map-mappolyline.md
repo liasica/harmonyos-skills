@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-m
 title: Interface (MapPolyline)
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (MapPolyline)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:58+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:b6b7057306b426a8bdb586ab5c21b4a5ba85a5d9ea32cb32f828fdc607d098e8
+scraped_at: 2026-11-12T09:57:25+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:43a6d6670de387c6f8f85a051595f3d75ff1477ab8dd92ec3de8f12c3e37a97c
 ---
 
 ## 导入模块
@@ -752,7 +752,7 @@ addLineText(lineText: mapCommon.LineText): void
 
 | 参数名 | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
-| lineText | [mapCommon.LineText](map-common.md#linetext) | 是 | 折线的线条文本参数，异常值作为无响应处理。 |
+| lineText | [mapCommon.LineText](map-common.md#linetext) | 是 | 折线的线条文本参数，异常值作为无响应处理。  **说明：**  切换到3D地球状态下，不支持折线的线条文本。 |
 
 **示例：**
 

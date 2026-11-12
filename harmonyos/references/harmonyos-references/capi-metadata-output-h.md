@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-meta
 title: metadata_output.h
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 头文件 > metadata_output.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:28+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:3a742eca2947c58dbafca56c1decbd0035f11b93d96b9c5cc9ae9f94f45c7e0e
+scraped_at: 2026-11-12T09:56:35+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:bb1808acba77ff9e3c9f6c61a425eb87234e1c0d3391d9fce37ca146a518c300
 ---
 
 ## 概述
@@ -42,8 +42,8 @@ content_hash: sha256:3a742eca2947c58dbafca56c1decbd0035f11b93d96b9c5cc9ae9f94f45
 | [Camera\_ErrorCode OH\_MetadataOutput\_Start(Camera\_MetadataOutput\* metadataOutput)](capi-metadata-output-h.md#oh_metadataoutput_start) | - | 启动元数据输出。 |
 | [Camera\_ErrorCode OH\_MetadataOutput\_Stop(Camera\_MetadataOutput\* metadataOutput)](capi-metadata-output-h.md#oh_metadataoutput_stop) | - | 停止元数据输出。 |
 | [Camera\_ErrorCode OH\_MetadataOutput\_Release(Camera\_MetadataOutput\* metadataOutput)](capi-metadata-output-h.md#oh_metadataoutput_release) | - | 释放元数据输出实例。 |
-| [Camera\_ErrorCode OH\_MetadataOutput\_AddMetadataObjectTypes(Camera\_MetadataOutput\* metadataOutput, Camera\_MetadataObjectType\* types, uint32\_t size)](capi-metadata-output-h.md#oh_metadataoutput_addmetadataobjecttypes) | - | 添加元数据对象类型。 |
-| [Camera\_ErrorCode OH\_MetadataOutput\_RemoveMetadataObjectTypes(Camera\_MetadataOutput\* metadataOutput, Camera\_MetadataObjectType\* types, uint32\_t size)](capi-metadata-output-h.md#oh_metadataoutput_removemetadataobjecttypes) | - | 移除元数据对象类型。 |
+| [Camera\_ErrorCode OH\_MetadataOutput\_AddMetadataObjectTypes(Camera\_MetadataOutput\* metadataOutput, Camera\_MetadataObjectType\* types, uint32\_t size)](capi-metadata-output-h.md#oh_metadataoutput_addmetadataobjecttypes) | - | 添加元数据对象类型。推荐使用[OH\_CameraManager\_GetSupportedCameraOutputCapability](capi-camera-manager-h.md#oh_cameramanager_getsupportedcameraoutputcapability)获取相机元数据对象类型数组。 |
+| [Camera\_ErrorCode OH\_MetadataOutput\_RemoveMetadataObjectTypes(Camera\_MetadataOutput\* metadataOutput, Camera\_MetadataObjectType\* types, uint32\_t size)](capi-metadata-output-h.md#oh_metadataoutput_removemetadataobjecttypes) | - | 移除元数据对象类型。推荐使用[OH\_CameraManager\_GetSupportedCameraOutputCapability](capi-camera-manager-h.md#oh_cameramanager_getsupportedcameraoutputcapability)获取相机元数据对象类型数组。 |
 | [typedef void (\*OH\_MetadataOutput\_OnMetadataObjectExtAvailable)(void\* context, OH\_Camera\_MetadataObjectExt\*\* metadataObjectExt, uint32\_t size)](capi-metadata-output-h.md#oh_metadataoutput_onmetadataobjectextavailable) | OH\_MetadataOutput\_OnMetadataObjectExtAvailable | 用于监听元数据对象上报事件的回调。使用[OH\_MetadataOutput\_RegisterMetadataObjectExtAvailableCallback](capi-metadata-output-h.md#oh_metadataoutput_registermetadataobjectextavailablecallback)进行注册。 |
 | [typedef void (\*OH\_MetadataOutput\_OnErrorExt)(void\* context, Camera\_ErrorCode errorCode)](capi-metadata-output-h.md#oh_metadataoutput_onerrorext) | OH\_MetadataOutput\_OnErrorExt | 在元数据输出期间，用于监听错误事件的回调。 |
 | [Camera\_ErrorCode OH\_MetadataOutput\_RegisterMetadataObjectExtAvailableCallback(Camera\_MetadataOutput\* metadataOutput, void\* context, OH\_MetadataOutput\_OnMetadataObjectExtAvailable callback)](capi-metadata-output-h.md#oh_metadataoutput_registermetadataobjectextavailablecallback) | - | 注册监听元数据对象上报事件的回调。该回调可通过[OH\_MetadataOutput\_UnregisterMetadataObjectExtAvailableCallback](capi-metadata-output-h.md#oh_metadataoutput_unregistermetadataobjectextavailablecallback)注销。 |
@@ -229,7 +229,7 @@ Camera_ErrorCode OH_MetadataOutput_AddMetadataObjectTypes(Camera_MetadataOutput*
 
 **描述**
 
-添加元数据对象类型。
+添加元数据对象类型。推荐使用[OH\_CameraManager\_GetSupportedCameraOutputCapability](capi-camera-manager-h.md#oh_cameramanager_getsupportedcameraoutputcapability)获取相机元数据对象类型数组。
 
 **起始版本：** 23
 
@@ -255,7 +255,7 @@ Camera_ErrorCode OH_MetadataOutput_RemoveMetadataObjectTypes(Camera_MetadataOutp
 
 **描述**
 
-移除元数据对象类型。
+移除元数据对象类型。推荐使用[OH\_CameraManager\_GetSupportedCameraOutputCapability](capi-camera-manager-h.md#oh_cameramanager_getsupportedcameraoutputcapability)获取相机元数据对象类型数组。
 
 **起始版本：** 23
 

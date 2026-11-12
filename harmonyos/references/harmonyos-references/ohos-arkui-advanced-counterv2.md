@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: CounterV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > CounterV2
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:17+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ee0c0677ad24a612209e14dc00114b85f50ea07c23dae6b8dd91c52c34fd3aaf
+scraped_at: 2026-11-12T09:54:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c95de5306af096bf249f429d5ab4543dc4c38577fcb7bb93b1125a56cceca47b
 ---
 
 CounterV2组件用于精确调节数值，包含列表型、紧凑型、数值内联型和日期内联型四种类型，适用于购物车数量调节、日期选择等场景。
@@ -113,7 +113,7 @@ type OnCounterV2HoverCallback = (isHover: boolean) => void
 
 ## CounterV2CommonOptions
 
-CounterV2CommonOptions定义了CounterV2的共通属性和事件。
+CounterV2CommonOptions定义了CounterV2的通用属性和事件。
 
 **起始版本：** 26.0.0
 
@@ -316,7 +316,7 @@ struct ListCounterExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/gp4a43yzRlqz0vvcVWRl4Q/zh-cn_image_0000002779692800.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/y_clYAY-T4muTzCJ100xWg/zh-cn_image_0000002815561117.gif)
 
 ### 示例2（紧凑型CounterV2）
 
@@ -350,7 +350,7 @@ struct CompactCounterExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/DRmVn-NiQ4qvTNPI0ciHMQ/zh-cn_image_0000002809012421.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/RO2y3oWmTYSNwk1JbDjkAw/zh-cn_image_0000002815401201.gif)
 
 ### 示例3（数值内联型CounterV2）
 
@@ -387,7 +387,7 @@ struct NumberStyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/3kdWJnndRBaBf0QB-3jBvQ/zh-cn_image_0000002809052335.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/OdmsSJS0Qgaw2j8yi72m3A/zh-cn_image_0000002786521626.gif)
 
 ### 示例4（日期内联型CounterV2）
 
@@ -420,7 +420,7 @@ struct DateStyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/6TIkCsU-SVyW0et0m0WbMw/zh-cn_image_0000002779852770.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/dD4YoTIKR4O4vkszuYprRg/zh-cn_image_0000002786361698.gif)
 
 ### 示例5（镜像布局展示）
 
@@ -508,4 +508,4 @@ struct CounterPage {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/GCx9dai4S1S1x7OOhenK6g/zh-cn_image_0000002779692802.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/b6061MsDRJGMTKrteHN_sw/zh-cn_image_0000002815561119.png)

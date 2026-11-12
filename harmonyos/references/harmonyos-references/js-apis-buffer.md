@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.buffer (Buffer)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.buffer (Buffer)
 category: harmonyos-references
-scraped_at: 2026-09-21T06:20:20+08:00
-doc_updated_at: 2026-09-20
+scraped_at: 2026-11-12T09:53:53+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:5567a79c8e6a998a04815b9441e1ff865bf181b56ef9e7739b8ad9c805337c69
 ---
 

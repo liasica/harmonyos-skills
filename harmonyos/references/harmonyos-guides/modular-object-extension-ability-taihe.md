@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/modular-objec
 title: 使用Taihe实现ModularObjectExtensionAbility的IPC通信 (C/C++)
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 基于ModularObjectExtensionAbility的模块化对象开发指导 (C/C++) > 使用Taihe实现ModularObjectExtensionAbility的IPC通信 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:52+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d1458e406f15ca2f06005f8ce5fac145dbf10ef52ae879e35069168159566dee
+scraped_at: 2026-11-12T09:50:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:9c44767b3c5a633738059bd1135c35c7bf91846f0cfb1d341b096a19aba55e30
 ---
 
 从API版本26.0.0开始，通过[Taihe](ability-terminology.md#taihe)可自动生成ModularObjectExtensionAbility（相关C API定义见[modular\_object\_extension\_ability.h](../harmonyos-references/capi-modular-object-extension-ability-h.md)）所需的Proxy/Stub代码及类型库文件，屏蔽IPC通信底层细节（如参数序列化/反序列化、消息码分发等），使开发者专注于接口设计与业务逻辑，大幅简化ModularObjectExtensionAbility的开发流程。
@@ -89,7 +89,7 @@ taihec -G modobj-ipc -O example/generated example/Easy.ohidl
 | 注解 | 作用范围 | 说明 | 示例 |
 | --- | --- | --- | --- |
 | @main\_service(version="x.y.z") | interface | 有且仅能声明一个主服务接口，生成的Stub作为[OH\_AbilityRuntime\_ModObjExtensionAbility\_OnConnectFunc](../harmonyos-references/capi-modular-object-extension-ability-h.md#oh_abilityruntime_modobjextensionability_onconnectfunc)的返回值。 | @main\_service(version="1.0.0") |
-| @callback | 方法 | 用于声明一个回调接口。服务端可持有此接口的实例来调用客户端，相关逻辑会在客户端的线程中执行。典型使用场景：客户端向服务端注册监听器、服务端主动通知客户端事件。完整开发流程参见[示例文件说明](modular-object-extension-ability-taihe.md#示例文件说明)中的ITestEventCallback示例。 | @callback interface ICallback {} |
+| @callback | interface | 用于声明一个回调接口。服务端可持有此接口的实例来调用客户端，相关逻辑会在客户端的线程中执行。典型使用场景：客户端向服务端注册监听器、服务端主动通知客户端事件。完整开发流程参见[示例文件说明](modular-object-extension-ability-taihe.md#示例文件说明)中的ITestEventCallback示例。 | @callback interface ICallback {} |
 | @oneway | 方法 | 异步单向IPC调用，仅支持void类型返回值。 | @oneway Notify(...): void; |
 | @!namespace("A","B") | ohidl文件 | 设置生成代码所在的命名空间，以及IPC接口描述符字符串前缀。 | @!namespace("OHOS","NativeApp") |
 | @size(N) | 参数 | 定长数组的大小，仅供Array类型参数使用。 | @size(4) Array<i32>; |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 设备管理错误码
 breadcrumb: API参考 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > 错误码 > 设备管理错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:52+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e72dcdb4a0870c8318ae7af02be4c688a6a78aa44c683bff521261c1432306cc
+scraped_at: 2026-11-12T09:55:36+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3ac705175f8ba5972671246dedb1d7346f288767b5815c759b326aff9569e45e
 ---
 
 **说明** 
@@ -155,6 +155,24 @@ The device name contains non-compliant content.
 **处理步骤**
 
 确保设备名称符合法律法规。
+
+## 11600110 无效的网络ID
+
+**错误信息**
+
+Invalid network ID.
+
+**错误描述**
+
+传入的网络ID无效。
+
+**可能原因**
+
+传入的网络ID不存在。
+
+**处理步骤**
+
+检查网络ID是否正确，确保使用有效的网络ID重新调用接口。
 
 ## 32300001 重复创建传输流
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-devi
 title: deviceinfo.h
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > C API > 头文件 > deviceinfo.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:05+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:153331393680e20234299b7b785139484341c802cc44a20285eef390122877d9
+scraped_at: 2026-11-12T09:55:57+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:772b52058fcb4b3cde4cc70173d38221c90dd6d5ed4ce64e5b031373628a6e94
 ---
 
 ## 概述
@@ -44,6 +44,8 @@ content_hash: sha256:153331393680e20234299b7b785139484341c802cc44a20285eef390122
 | [const char \*OH\_GetOsReleaseType(void)](capi-deviceinfo-h.md#oh_getosreleasetype) | 获取系统的发布类型。 |
 | [const char \*OH\_GetOSFullName(void)](capi-deviceinfo-h.md#oh_getosfullname) | 获取完整的系统版本名。 |
 | [int OH\_GetSdkApiVersion(void)](capi-deviceinfo-h.md#oh_getsdkapiversion) | 获取系统软件API版本。 |
+| [int OH\_GetSdkMinorApiVersion(void)](capi-deviceinfo-h.md#oh_getsdkminorapiversion) | 获取系统次版本号。从API版本26.0.0起，为配合语义化版本号，新增次版本号的定义，即中间字段的值，值为整型数。完整版本号由sdkApiVersion.sdkMinorApiVersion.sdkPatchApiVersion共同构成。 |
+| [int OH\_GetSdkPatchApiVersion(void)](capi-deviceinfo-h.md#oh_getsdkpatchapiversion) | 获取系统修订版本号。从API版本26.0.0起，为配合语义化版本号，新增修订版本号的定义，即第三个字段的值，值为整型数。完整版本号由sdkApiVersion.sdkMinorApiVersion.sdkPatchApiVersion共同构成。 |
 | [int OH\_GetFirstApiVersion(void)](capi-deviceinfo-h.md#oh_getfirstapiversion) | 获取首个版本系统软件API版本。 |
 | [const char \*OH\_GetVersionId(void)](capi-deviceinfo-h.md#oh_getversionid) | 获取版本ID。 |
 | [const char \*OH\_GetBuildType(void)](capi-deviceinfo-h.md#oh_getbuildtype) | 获取系统的构建类型。 |
@@ -345,6 +347,42 @@ int OH_GetSdkApiVersion(void)
 | 类型 | 说明 |
 | --- | --- |
 | int | 系统软件API版本，取值范围为整数。常见的取值包括：12等。 |
+
+### OH\_GetSdkMinorApiVersion()
+
+```c
+int OH_GetSdkMinorApiVersion(void)
+```
+
+**描述**
+
+获取系统次版本号。从API版本26.0.0起，为配合语义化版本号，新增次版本号的定义，即中间字段的值，值为整型数。完整版本号由sdkApiVersion.sdkMinorApiVersion.sdkPatchApiVersion共同构成。
+
+**起始版本：** 26.0.1
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| int | 0 ~ 99 - 系统次版本号，取值范围为整数。  -1 - 未查询到系统次版本号，或调用内部接口失败。 |
+
+### OH\_GetSdkPatchApiVersion()
+
+```c
+int OH_GetSdkPatchApiVersion(void)
+```
+
+**描述**
+
+获取系统修订版本号。从API版本26.0.0起，为配合语义化版本号，新增修订版本号的定义，即第三个字段的值，值为整型数。完整版本号由sdkApiVersion.sdkMinorApiVersion.sdkPatchApiVersion共同构成。
+
+**起始版本：** 26.0.1
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| int | 0 ~ 99 - 系统修订版本号，取值范围为整数。  -1 - 未查询到系统修订版本号，或调用内部接口失败。 |
 
 ### OH\_GetFirstApiVersion()
 

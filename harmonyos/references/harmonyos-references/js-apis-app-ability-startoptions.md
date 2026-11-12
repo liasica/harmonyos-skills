@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.StartOptions (startAbility的可选参数)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.StartOptions (startAbility的可选参数)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:51:42+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:c0af1c5f2c4ffb519acafd3794ab55b07a95aa57a0804f833419115979d2cdf4
+scraped_at: 2026-11-12T09:53:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:6742c52d3286ee868fc73c946fdb9ffe74613124bed8318cf3f04c4ecd59c3d1
 ---
 
 StartOptions可以作为启动UIAbility接口（例如[startAbility()](js-apis-inner-application-uiabilitycontext.md#startability-1)）的入参，用于指定目标UIAbility启动时的选项，包括但不限于窗口模式、目标UIAbility启动时所在的屏幕等。
@@ -49,6 +49,7 @@ StartOptions用于指定启动目标UIAbility时的选项。
 | completionHandler20+ | [CompletionHandler](js-apis-app-ability-completionhandler.md) | 否 | 是 | 拉起应用结果的操作类，用于处理拉起应用的结果。  **元服务API**：从API version 20开始，该接口支持在元服务中使用。 |
 | hideStartWindow20+ | boolean | 否 | 是 | 启动当前应用的UIAbility时，控制是否隐藏窗口的启动页，true表示隐藏启动页，false表示不隐藏启动页。启动页介绍和规格详见[StartWindow](../harmonyos-guides/module-configuration-file.md#startwindow标签)。  **约束：**  1.该功能仅在2in1设备和自由多窗模式下的Tablet设备上生效。  2.该功能仅在启动当前应用的UIAbility时生效。 |
 | windowCreateParams20+ | [window.WindowCreateParams](arkts-apis-window-i.md#windowcreateparams20) | 否 | 是 | 启动UIAbility时的窗口参数。 |
+| preferDefaultBrowser | boolean | 否 | 是 | 当目标URI为http或https链接时，是否优先使用默认浏览器打开该链接。取值为true时表示使用默认浏览器，取值为false时表示使用正常的startAbility流程。  **约束：**  1.该功能仅在目标URI以http或https开头时生效。  2.若无默认浏览器可用，则使用正常的startAbility流程。  **起始版本**：26.0.1  **元服务API**：从API版本26.0.1开始，该接口支持在元服务中使用。 |
 
 **示例：**
 

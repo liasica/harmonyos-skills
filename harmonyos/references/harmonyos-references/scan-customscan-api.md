@@ -3,24 +3,24 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scan-cust
 title: customScan (自定义界面扫码)
 breadcrumb: API参考 > 媒体 > Scan Kit（统一扫码服务） > ArkTS API > customScan (自定义界面扫码)
 category: harmonyos-references
-scraped_at: 2026-11-04T08:36:25+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:64d8fd4580e618a11b8e38fc74d90ab740737eb834f1907f01e0dce82e852044
+scraped_at: 2026-11-12T09:56:53+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c92f7eb7c702c6bb55e7eb23fdddef28de709918996c4a4307e1deb5265256b4
 ---
 
 ## 模块概述
 
-customScan模块提供自定义界面扫码能力，允许开发者根据自身需求自定义扫码界面，通过[XComponent](ts-basic-components-xcomponent.md)组件渲染相机预览流，并获取扫码结果。
+customScan模块提供自定义界面扫码能力，允许开发者根据自身需求自定义扫码界面，通过[XComponent](ts-basic-components-xcomponent.md)组件渲染相机预览流，并获取扫码结果。从API版本26.0.0开始，scanCore模块提供了[scanCore.isCustomScanSupported()](scan-scancore.md#scancoreiscustomscansupported)查询接口，用于在调用自定义界面扫码功能前检查当前设备是否支持相应能力。
 
 ### 基础扫码流程
 
 使用customScan模块进行扫码，需要按以下顺序调用API：
 
-1. **初始化**：调用[init](scan-customscan-api.md#init)配置扫码参数。
-2. **启动扫码**：调用[start](scan-customscan-api.md#start-1)启动相机流并开始扫码。
+1. **初始化**：调用[init()](scan-customscan-api.md#customscaninit)配置扫码参数。
+2. **启动扫码**：调用[start()](scan-customscan-api.md#customscanstart-1)启动相机流并开始扫码。
 3. **处理结果**：在回调中获取[ScanResult](scan-scanbarcode-api.md#scanresult)并进行业务处理。
-4. **暂停**：调用[stop](scan-customscan-api.md#stop)暂停相机流。
-5. **释放**：调用[release](scan-customscan-api.md#release)释放资源。
+4. **暂停**：调用[stop()](scan-customscan-api.md#customscanstop)暂停相机流。
+5. **释放**：调用[release()](scan-customscan-api.md#customscanrelease)释放资源。
 
 流程伪代码如下：
 
@@ -56,17 +56,17 @@ await customScan.release();
 
 ### 生命周期和状态机
 
-customScan模块的扫码全流程包含：初始化（init）、启动相机流扫码（start）、暂停相机流（stop）、释放资源（release），状态图如下：
+customScan模块的扫码全流程包含：初始化（init()）、启动相机流扫码（start()）、暂停相机流（stop()）、释放资源（release()），状态图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/8arvMciaSe61hPqYZ5f7dA/zh-cn_image_0000002779693524.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/RhUkMf61SCC_P0rnfXt1VQ/zh-cn_image_0000002786522066.png)
 
 **状态说明**
 
 | 状态 | 可用API | 说明 |
 | --- | --- | --- |
-| Initialized | start | 扫码已初始化，可启动相机流进行扫码。 |
-| Running | getFlashLightStatus、openFlashLight、closeFlashLight、setZoom、getZoom、setFocusPoint、resetFocus、setAutoZoomEnabled、rescan、on('lightingFlash')、off('lightingFlash')、stop | 扫码进行中，可进行闪光灯控制、变焦调节、对焦设置、重新触发扫码、暂停扫码。 |
-| Paused | off('lightingFlash')、release、start | 扫码已暂停，可释放资源或重新启动扫码。 |
+| Initialized | start() | 扫码已初始化，可启动相机流进行扫码。 |
+| Running | getFlashLightStatus()、openFlashLight()、closeFlashLight()、setZoom()、getZoom()、setFocusPoint()、resetFocus()、setAutoZoomEnabled()、rescan()、on('lightingFlash')、off('lightingFlash')、stop() | 扫码进行中，可进行闪光灯控制、变焦调节、对焦设置、重新触发扫码、暂停扫码。 |
+| Paused | off('lightingFlash')、release()、start() | 扫码已暂停，可释放资源或重新启动扫码。 |
 
 为便于开发者快速上手，建议参考官方提供的[示例工程](https://gitcode.com/HarmonyOS_Samples/scankit-samplecode-clientdemo-arkts)。
 
@@ -96,8 +96,8 @@ import { customScan } from '@kit.ScanKit';
 
 **说明** 
 
-1. ViewControl的width和height需和XComponent的保持一致，start接口根据设置宽高值会匹配最接近的相机分辨率，如果宽高比例与相机的分辨率比例相差过大会影响预览流体验。XComponent组件为预览流提供的surface，而XComponent的能力由UI提供，相关介绍可参见[XComponent](ts-basic-components-xcomponent.md)。
-2. 当开发设备为折叠屏时，折叠态切换时需自行调整XComponent的宽高，start接口会重新适配相机分辨率比例。
+1. ViewControl的width和height需和XComponent的保持一致，start()接口根据设置宽高值会匹配最接近的相机分辨率，如果宽高比例与相机的分辨率比例相差过大会影响预览流体验。XComponent组件为预览流提供的surface，而XComponent的能力由UI提供，相关介绍可参见[XComponent](ts-basic-components-xcomponent.md)。
+2. 当开发设备为折叠屏时，折叠态切换时需自行调整XComponent的宽高，start()接口会重新适配相机分辨率比例。
 
 **示例：**
 
@@ -249,7 +249,7 @@ struct CustomScanPage {
 }
 ```
 
-## init
+## customScan.init
 
 init(options?: scanBarcode.ScanOptions): void
 
@@ -261,7 +261,7 @@ init(options?: scanBarcode.ScanOptions): void
 
 **系统能力：** SystemCapability.Multimedia.Scan.ScanBarcode
 
-**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，申请相机权限成功后，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，申请相机权限成功后，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras()](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
 
 **起始版本：** 4.1.0(11)
 
@@ -275,10 +275,10 @@ init(options?: scanBarcode.ScanOptions): void
 
 以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-scan.md)。
 
-从API版本5.0.2(14)开始，customScan模块的init接口新增错误码201。
+从API版本5.0.2(14)开始，customScan模块的init()接口新增错误码201。
 
-* 在API版本5.0.2(14)之前，未申请相机权限时调用customScan模块init接口，返回错误码1000500001。
-* 在API版本5.0.2(14)及之后，未申请相机权限时调用customScan模块init接口，返回错误码201。
+* 在API版本5.0.2(14)之前，未申请相机权限时调用customScan模块init()接口，返回错误码1000500001。
+* 在API版本5.0.2(14)及之后，未申请相机权限时调用customScan模块init()接口，返回错误码201。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -305,7 +305,7 @@ try {
 }
 ```
 
-## start
+## customScan.start
 
 start(viewControl: ViewControl): Promise<Array<scanBarcode.ScanResult>>
 
@@ -313,8 +313,8 @@ start(viewControl: ViewControl): Promise<Array<scanBarcode.ScanResult>>
 
 **说明** 
 
-1. 此接口需要在init接口调用后才能使用，否则会抛出错误码1000500001。
-2. 此接口为长期占用相机资源操作，扫码完成后应及时调用stop、release释放资源。
+1. 此接口需要在init()接口调用后才能使用，否则会抛出错误码1000500001。
+2. 此接口为长期占用相机资源操作，扫码完成后应及时调用stop()、release()释放资源。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -322,7 +322,7 @@ start(viewControl: ViewControl): Promise<Array<scanBarcode.ScanResult>>
 
 **系统能力：** SystemCapability.Multimedia.Scan.ScanBarcode
 
-**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，申请相机权限成功后，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，申请相机权限成功后，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras()](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
 
 **起始版本：** 4.1.0(11)
 
@@ -342,10 +342,10 @@ start(viewControl: ViewControl): Promise<Array<scanBarcode.ScanResult>>
 
 以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-scan.md)。
 
-从API版本5.0.2(14)开始，customScan模块的start接口新增错误码201。
+从API版本5.0.2(14)开始，customScan模块的start()接口新增错误码201。
 
-* 在API版本5.0.2(14)之前，未申请相机权限时调用customScan模块start接口，返回错误码1000500001。
-* 在API版本5.0.2(14)及之后，未申请相机权限时调用customScan模块start接口，返回错误码201。
+* 在API版本5.0.2(14)之前，未申请相机权限时调用customScan模块start()接口，返回错误码1000500001。
+* 在API版本5.0.2(14)及之后，未申请相机权限时调用customScan模块start()接口，返回错误码201。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -412,7 +412,7 @@ struct CustomScanPage {
 }
 ```
 
-## start
+## customScan.start
 
 start(viewControl: ViewControl, callback: AsyncCallback<Array<scanBarcode.ScanResult>>, frameCallback?: AsyncCallback<ScanFrame>): void
 
@@ -420,8 +420,8 @@ start(viewControl: ViewControl, callback: AsyncCallback<Array<scanBarcode.ScanRe
 
 **说明** 
 
-1. 此接口需要在init接口调用后才能使用，否则会抛出错误码1000500001。
-2. 此接口为长期占用相机资源操作，扫码完成后应及时调用stop、release释放资源。
+1. 此接口需要在init()接口调用后才能使用，否则会抛出错误码1000500001。
+2. 此接口为长期占用相机资源操作，扫码完成后应及时调用stop()、release()释放资源。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -429,7 +429,7 @@ start(viewControl: ViewControl, callback: AsyncCallback<Array<scanBarcode.ScanRe
 
 **系统能力：** SystemCapability.Multimedia.Scan.ScanBarcode
 
-**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，申请相机权限成功后，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，申请相机权限成功后，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras()](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
 
 **起始版本：** 4.1.0(11)
 
@@ -445,10 +445,10 @@ start(viewControl: ViewControl, callback: AsyncCallback<Array<scanBarcode.ScanRe
 
 以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-scan.md)。
 
-从API版本5.0.2(14)开始，customScan模块的start接口新增错误码201。
+从API版本5.0.2(14)开始，customScan模块的start()接口新增错误码201。
 
-* 在API版本5.0.2(14)之前，未申请相机权限时调用customScan模块start接口，返回错误码1000500001。
-* 在API版本5.0.2(14)及之后，未申请相机权限时调用customScan模块start接口，返回错误码201。
+* 在API版本5.0.2(14)之前，未申请相机权限时调用customScan模块start()接口，返回错误码1000500001。
+* 在API版本5.0.2(14)及之后，未申请相机权限时调用customScan模块start()接口，返回错误码201。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -531,7 +531,7 @@ struct CustomScanPage {
 }
 ```
 
-## getFlashLightStatus
+## customScan.getFlashLightStatus
 
 getFlashLightStatus(): boolean
 
@@ -539,13 +539,13 @@ getFlashLightStatus(): boolean
 
 **说明** 
 
-本接口必须在启动相机流start接口后，stop接口之前使用，未启动相机流调用会抛出错误码1000500001。
+本接口必须在启动相机流start()接口后，stop()接口之前使用，未启动相机流调用会抛出错误码1000500001。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Scan.ScanBarcode
 
-**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras()](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
 
 **起始版本：** 4.1.0(11)
 
@@ -591,7 +591,7 @@ try {
 }
 ```
 
-## openFlashLight
+## customScan.openFlashLight
 
 openFlashLight(): void
 
@@ -599,13 +599,13 @@ openFlashLight(): void
 
 **说明** 
 
-本接口必须在启动相机流start接口后，stop接口之前使用，未启动相机流调用会抛出错误码1000500001。
+本接口必须在启动相机流start()接口后，stop()接口之前使用，未启动相机流调用会抛出错误码1000500001。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Scan.ScanBarcode
 
-**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras()](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
 
 **起始版本：** 4.1.0(11)
 
@@ -645,7 +645,7 @@ try {
 }
 ```
 
-## closeFlashLight
+## customScan.closeFlashLight
 
 closeFlashLight(): void
 
@@ -653,13 +653,13 @@ closeFlashLight(): void
 
 **说明** 
 
-本接口必须在启动相机流start接口后，stop接口之前使用，未启动相机流调用会抛出错误码1000500001。
+本接口必须在启动相机流start()接口后，stop()接口之前使用，未启动相机流调用会抛出错误码1000500001。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Scan.ScanBarcode
 
-**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras()](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
 
 **起始版本：** 4.1.0(11)
 
@@ -699,7 +699,7 @@ if (flashLightStatus) {
 }
 ```
 
-## setZoom
+## customScan.setZoom
 
 setZoom(zoomValue: number): void
 
@@ -707,13 +707,13 @@ setZoom(zoomValue: number): void
 
 **说明** 
 
-本接口必须在启动相机流start接口后，stop接口之前使用，未启动相机流调用会抛出错误码1000500001。
+本接口必须在启动相机流start()接口后，stop()接口之前使用，未启动相机流调用会抛出错误码1000500001。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Scan.ScanBarcode
 
-**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras()](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
 
 **起始版本：** 5.0.0(12)
 
@@ -747,7 +747,7 @@ try {
 }
 ```
 
-## getZoom
+## customScan.getZoom
 
 getZoom(): number
 
@@ -755,13 +755,13 @@ getZoom(): number
 
 **说明** 
 
-本接口必须在启动相机流start接口后，stop接口之前使用，未启动相机流调用会抛出错误码1000500001。
+本接口必须在启动相机流start()接口后，stop()接口之前使用，未启动相机流调用会抛出错误码1000500001。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Scan.ScanBarcode
 
-**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras()](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
 
 **起始版本：** 5.0.0(12)
 
@@ -794,7 +794,7 @@ try {
 }
 ```
 
-## setFocusPoint
+## customScan.setFocusPoint
 
 setFocusPoint(point: scanBarcode.Point): void
 
@@ -802,13 +802,13 @@ setFocusPoint(point: scanBarcode.Point): void
 
 **说明** 
 
-本接口必须在启动相机流start接口后，stop接口之前使用，未启动相机流调用会抛出错误码1000500001。
+本接口必须在启动相机流start()接口后，stop()接口之前使用，未启动相机流调用会抛出错误码1000500001。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Scan.ScanBarcode
 
-**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras()](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
 
 **起始版本：** 5.0.0(12)
 
@@ -841,7 +841,7 @@ try {
 }
 ```
 
-## resetFocus
+## customScan.resetFocus
 
 resetFocus(): void
 
@@ -849,14 +849,14 @@ resetFocus(): void
 
 **说明** 
 
-1. 本接口必须在启动相机流start接口后，stop接口之前使用，未启动相机流调用会抛出错误码1000500001。
-2. 可与setFocusPoint配合使用：setFocusPoint设置对焦点后，可调用resetFocus恢复连续自动对焦。
+1. 本接口必须在启动相机流start()接口后，stop()接口之前使用，未启动相机流调用会抛出错误码1000500001。
+2. 可与setFocusPoint()配合使用：setFocusPoint()设置对焦点后，可调用resetFocus()恢复连续自动对焦。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Scan.ScanBarcode
 
-**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras()](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
 
 **起始版本：** 5.0.0(12)
 
@@ -882,7 +882,7 @@ try {
 }
 ```
 
-## on('lightingFlash')
+## customScan.on('lightingFlash')
 
 on(type: 'lightingFlash', callback: AsyncCallback<boolean>): void
 
@@ -890,13 +890,13 @@ on(type: 'lightingFlash', callback: AsyncCallback<boolean>): void
 
 **说明** 
 
-本接口必须在启动相机流start接口后，stop接口之前使用，未启动相机流调用会抛出错误码1000500001。
+本接口必须在启动相机流start()接口后，stop()接口之前使用，未启动相机流调用会抛出错误码1000500001。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Scan.ScanBarcode
 
-**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras()](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
 
 **起始版本：** 5.0.0(12)
 
@@ -939,7 +939,7 @@ try {
 }
 ```
 
-## off('lightingFlash')
+## customScan.off('lightingFlash')
 
 off(type: 'lightingFlash', callback?: AsyncCallback<boolean>): void
 
@@ -947,13 +947,13 @@ off(type: 'lightingFlash', callback?: AsyncCallback<boolean>): void
 
 **说明** 
 
-本接口必须在启动相机流start接口后使用，未启动相机流调用会抛出错误码1000500001。
+本接口必须在启动相机流start()接口后使用，未启动相机流调用会抛出错误码1000500001。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Scan.ScanBarcode
 
-**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras()](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
 
 **起始版本：** 5.0.0(12)
 
@@ -992,27 +992,27 @@ try {
   customScan.off('lightingFlash', callback);
 } catch (err) {
   hilog.error(0x0001, '[Scan Sample]',
-    `Failed to listen lightingFlash. Code: ${err.code}, message: ${err.message}`);
+    `Failed to cancel lightingFlash. Code: ${err.code}, message: ${err.message}`);
 }
 ```
 
-## rescan
+## customScan.rescan
 
 rescan(): void
 
-触发一次重新扫码。调用后，会重新检测预览画面中的码图，识别成功后会触发start接口传入的callback回调返回新的扫码结果。适用于扫码结果不是预期结果或连续扫码场景。
+触发一次重新扫码。调用后，会重新检测预览画面中的码图，识别成功后会触发start()接口传入的callback回调返回新的扫码结果。适用于扫码结果不是预期结果或连续扫码场景。
 
 **说明** 
 
-本接口必须在启动相机流start接口后，stop接口之前使用，未启动相机流调用会抛出错误码1000500001。
+本接口必须在启动相机流start()接口后，stop()接口之前使用，未启动相机流调用会抛出错误码1000500001。
 
-仅对start接口的Callback异步回调有效，Promise异步回调接口无效。
+仅对start()接口的Callback异步回调有效，Promise异步回调接口无效。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Scan.ScanBarcode
 
-**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras()](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
 
 **起始版本：** 5.0.0(12)
 
@@ -1095,7 +1095,7 @@ struct CustomScanPage {
 }
 ```
 
-## setAutoZoomEnabled
+## customScan.setAutoZoomEnabled
 
 setAutoZoomEnabled(enabled: boolean): void
 
@@ -1103,13 +1103,13 @@ setAutoZoomEnabled(enabled: boolean): void
 
 **说明** 
 
-本接口必须在启动相机流start接口后，stop接口之前使用，未启动相机流调用会抛出错误码1000500001。
+本接口必须在启动相机流start()接口后，stop()接口之前使用，未启动相机流调用会抛出错误码1000500001。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Scan.ScanBarcode
 
-**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras()](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
 
 **起始版本：** 5.1.0(18)
 
@@ -1141,7 +1141,7 @@ try {
 }
 ```
 
-## stop
+## customScan.stop
 
 stop(): Promise<void>
 
@@ -1149,13 +1149,13 @@ stop(): Promise<void>
 
 **说明** 
 
-本接口必须在启动相机流start接口后使用，未启动相机流调用会抛出错误码1000500001。
+本接口必须在启动相机流start()接口后使用，未启动相机流调用会抛出错误码1000500001。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Scan.ScanBarcode
 
-**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras()](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
 
 **起始版本：** 4.1.0(11)
 
@@ -1193,7 +1193,7 @@ try {
 }
 ```
 
-## stop
+## customScan.stop
 
 stop(callback: AsyncCallback<void>): void
 
@@ -1201,13 +1201,13 @@ stop(callback: AsyncCallback<void>): void
 
 **说明** 
 
-本接口必须在启动相机流start接口后使用，未启动相机流调用会抛出错误码1000500001。
+本接口必须在启动相机流start()接口后使用，未启动相机流调用会抛出错误码1000500001。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Scan.ScanBarcode
 
-**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras()](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
 
 **起始版本：** 4.1.0(11)
 
@@ -1247,7 +1247,7 @@ try {
 }
 ```
 
-## release
+## customScan.release
 
 release(): Promise<void>
 
@@ -1255,13 +1255,13 @@ release(): Promise<void>
 
 **说明** 
 
-本接口建议在启动相机流start接口且暂停相机流stop接口后使用，未启动相机流调用会抛出错误码1000500001。
+本接口建议在启动相机流start()接口且暂停相机流stop()接口后使用，未启动相机流调用会抛出错误码1000500001。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Scan.ScanBarcode
 
-**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras()](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
 
 **起始版本：** 4.1.0(11)
 
@@ -1299,7 +1299,7 @@ try {
 }
 ```
 
-## release
+## customScan.release
 
 release(callback: AsyncCallback<void>): void
 
@@ -1307,13 +1307,13 @@ release(callback: AsyncCallback<void>): void
 
 **说明** 
 
-本接口建议在启动相机流start接口且暂停相机流stop接口后使用，未启动相机流调用会抛出错误码1000500001。
+本接口建议在启动相机流start()接口且暂停相机流stop()接口后使用，未启动相机流调用会抛出错误码1000500001。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Scan.ScanBarcode
 
-**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中返回错误码1000500001。可以通过[getSupportedCameras()](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
 
 **起始版本：** 4.1.0(11)
 

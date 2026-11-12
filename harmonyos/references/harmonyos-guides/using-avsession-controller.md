@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-avsessi
 title: 媒体会话控制方
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 本地媒体会话 > 媒体会话控制方
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:28+08:00
-doc_updated_at: 2026-10-26
+scraped_at: 2026-11-12T09:52:03+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:fd926b8b305ab135046bcaa7f6e17f8e024da85e754d4f9745735a8c3bee766c
 ---
 

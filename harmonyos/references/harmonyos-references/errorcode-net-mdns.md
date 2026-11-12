@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: MDNS错误码
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 错误码 > MDNS错误码
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:16+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6af8556fa70081595d28b08628121825d3dcb77c1452d15b8c289ecfdb404506
+scraped_at: 2026-11-12T09:55:43+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:2d2efa2ac60c206b43f31736b2fa2fc36f71c97805f3a54ec354f03a5fee6cc8
 ---
 
 **说明** 
@@ -42,15 +42,13 @@ System internal error.
 
 **可能原因**
 
-1.内存异常。
-
-2.空指针。
+1. 内存异常。
+2. 空指针。
 
 **处理步骤**
 
-1.检查内存空间是否充足，清理内存后重试。
-
-2.系统异常，请稍后重试或重启设备。如果问题仍然存在，收集完整日志后联系技术支持获取帮助。
+1. 检查内存空间是否充足，清理内存后重试。
+2. 系统异常，请稍后重试或重启设备。如果问题仍然存在，收集完整日志后联系技术支持获取帮助。
 
 ## 2204002 未找到目标服务
 

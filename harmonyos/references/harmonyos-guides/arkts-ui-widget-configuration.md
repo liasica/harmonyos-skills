@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: 配置ArkTS卡片的配置文件
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > 配置ArkTS卡片的配置文件
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:27+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:b427e2e8c26d574509824b7c2ec92f9893829b6150e7d32db26f64cafffec7dd
+scraped_at: 2026-11-12T09:51:27+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7e4fb64a91308b29bb1314c3b776e5d2e5b83e42c1636cd7d74e239de10ad384
 ---
 
 卡片相关的配置文件包括[FormExtensionAbility](../harmonyos-references/js-apis-app-form-formextensionability.md)配置和卡片配置。如果是[独立卡片包](arkts-ui-widget-creation.md#方式二独立包方式创建卡片)，还会包含[独立卡片包配置](arkts-ui-widget-configuration.md#独立卡片包配置)。
@@ -82,7 +82,7 @@ content_hash: sha256:b427e2e8c26d574509824b7c2ec92f9893829b6150e7d32db26f64cafff
 | forms | 表示应用的全部卡片配置信息。  最多支持配置16个卡片，若超过16个，则保留配置的前16个。 | 数组 | 否 |
 | name | 表示卡片的名称，字符串最大长度为127字节。用于开发者区分不同的卡片。  **说明：**  该字段不建议引用资源文件。 | 字符串 | 否 |
 | displayName | 表示卡片的展示名称。主要在卡片管理页面显示，对应卡片预览下[卡片管理页面](formkit-overview.md#卡片使用场景)中的"cardName"，用于展示卡片信息，建议能够体现卡片的核心功能或用途。支持字符串或字符串资源索引，建议使用字符串资源索引方式声明，以支持完整多语言能力。字符串最小长度为1字节，最大长度为30字节。 | 字符串 | 否 |
-| description | 表示卡片的描述。用于在卡片管理页面展示卡片功能描述，对应卡片预览下[卡片管理页面](formkit-overview.md#卡片使用场景)中的"This is a service widget."。支持字符串或字符串资源索引，建议使用字符串资源索引方式声明，以支持完整多语言能力。字符串最大长度为255字节。 | 字符串 | 可缺省，缺省为空。 |
+| description | 表示卡片的描述。用于在卡片管理页面展示卡片功能描述，对应卡片预览下[卡片管理页面](formkit-overview.md#卡片使用场景)中的"This is a service widget."。支持字符串或字符串资源索引，建议使用字符串资源索引方式声明，以支持完整多语言能力。字符串最大长度为255字节。 | 字符串 | 可缺省，缺省时显示宿主应用的label值。 |
 | src | 表示卡片对应的UI代码的完整路径。当为ArkTS卡片时，完整路径需要包含卡片文件的后缀，如："./ets/widget/pages/WidgetCard.ets"。当为JS卡片时，完整路径无需包含卡片文件的后缀，如："./js/widget/pages/WidgetCard"。 | 字符串 | 否 |
 | uiSyntax | 表示该卡片的类型，当前支持如下两种类型：  - arkts：当前卡片为ArkTS卡片。  - hml：当前卡片为JS卡片。 | 字符串 | 可缺省，缺省值为“hml”。 |
 | window | 用于定义与显示窗口相关的配置。  **说明：**  该字段仅对JS卡片生效。 | 对象 | 可缺省，缺省值参考[window标签](arkts-ui-widget-configuration.md#window标签)表格。 |

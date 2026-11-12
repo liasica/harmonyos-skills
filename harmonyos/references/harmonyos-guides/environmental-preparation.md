@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/environmental
 title: 环境准备
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 环境准备
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:54+08:00
+scraped_at: 2026-11-12T09:51:50+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:b8da8685e861370c3ef8350648bfeefc7cb2364ae8b5e521861f34d4f6f9bfa0
+content_hash: sha256:b61fe5e9ae1ae5dd652d97eadab82dbac1dfc12416455772e72852194b1d76df
 ---
 
 ## 开发工具及配置
@@ -31,7 +31,7 @@ DevEco Studio作为驱动开发工具，是进行驱动开发的必备条件之�
 
 检查DevEco Studio是否已连接上HarmonyOS设备。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/Iw8VQB7ZSp2N4zSn9nmOlA/zh-cn_image_0000002779690868.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/MIQ7Lvc3RICuTdvjvuRyCg/zh-cn_image_0000002786519706.png)
 
 ## HDC配置
 

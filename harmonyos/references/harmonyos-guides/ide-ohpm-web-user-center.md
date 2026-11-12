@@ -3,19 +3,19 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-web-
 title: 个人中心主页
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 页面功能介绍 > 个人中心主页
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:13+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:45a4ca114bc5641cdde509318b2dc9a584b5af7877ea481a285c3c1bfcf893b2
+scraped_at: 2026-11-12T09:52:51+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f112ca49c685889f70c4d6bb0c281bfbc1eef1b76ff43a6c76019c671d5a219e
 ---
 
 个人中心主页是ohpm-repo私仓的核心管理页面，整个系统在此进行集中管理和操作，页面效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/-ZHqSG2tSrKz0mypIG4FgQ/zh-cn_image_0000002731541465.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/2uCkT1SgSCKGFTUZMUV78Q/zh-cn_image_0000002779565248.png "点击放大")
 
 **区域1**：个人信息区域，显示登录用户的信息。其中有编辑、复制发布码和修改密码三个功能。
 
 * 编辑：ohpm-repo从6.0.1版本开始，支持编辑个人的邮箱和手机号。
-* 复制发布码：点击后可将用户的发布码publish\_id复制到剪贴板中。使用ohpm命令行工具发布包时，如果采用证书认证方式，必须配置发布码，其详细发布流程见：[使用命令行工具发布](ide-ohpm-repo-quickstart.md#zh-cn_topic_0000001792256157_使用命令行工具发布)。
+* 复制发布码：点击后可将用户的发布码publish\_id复制到剪贴板中。使用ohpm命令行工具发布包时，如果采用证书认证方式，必须配置发布码，其详细发布流程见：[使用命令行工具发布](ide-ohpm-repo-quickstart.md#section182904013257)。
 * 修改密码：点击后可以修改用户的密码。
 
 **注意** 
@@ -30,7 +30,7 @@ content_hash: sha256:45a4ca114bc5641cdde509318b2dc9a584b5af7877ea481a285c3c1bfcf
 
 * 管理员菜单：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/VAZ6zTQ4QTmFEIgWpWTLSQ/zh-cn_image_0000002731541459.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/NwZnkk8XS-iUMk3ev17-JA/zh-cn_image_0000002779405262.png "点击放大")
 * 普通用户菜单：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/-dDNduW1QmqaHulJz0l-Og/zh-cn_image_0000002731381497.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/mo_yP3-1R8KOfCtvjMuAcg/zh-cn_image_0000002779405274.png "点击放大")

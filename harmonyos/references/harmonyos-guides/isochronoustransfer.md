@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/isochronoustransfer
-title: USB实时传输
-breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB服务 > USB Host模式开发 > USB实时传输
+title: USB实时传输（ArkTS）
+breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > USB服务 > 开发USB服务 > USB Host模式开发 > USB实时传输（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:50+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:cc11ad6d66ef7087f983db29db80ba8c533f7919475ec1ef5f8dc1affc8d6664
+scraped_at: 2026-11-12T09:51:48+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e4adb13cfe233b73d5c5b096f800cf63cc278d6fd60b68479d3de4f6c8fd6988
 ---
 
 ## 场景介绍
@@ -211,17 +211,35 @@ content_hash: sha256:cc11ad6d66ef7087f983db29db80ba8c533f7919475ec1ef5f8dc1affc8
      this.logInfo_ += '\n[ERROR] get usbEndpoint error';
      return;
    }
+   if (usbInterface === undefined) {
+     console.error(`get usbInterface error`);
+     this.logInfo_ += '\n[ERROR] get usbInterface error';
+     return;
+   }
    ```
 5. 连接设备，注册通信接口。
 
    ```typescript
    // 注册通信接口，注册成功返回0，注册失败返回其他错误码。
    try {
-     let claimInterfaceResult: number = usbManager.claimInterface(devicePipe, usbInterface, true);
-     if (claimInterfaceResult !== 0) {
-       console.error(`claimInterface error = ${claimInterfaceResult}`)
-       this.logInfo_ += '\n[ERROR] claimInterface error = ' + JSON.stringify(claimInterfaceResult);
-       return;
+     if (this.isExclusiveClaim_) {
+       usbManager.claimInterfaceExclusive(devicePipe, usbInterface, true,
+         (conflict: usbManager.InterfaceConflictInfo) => {
+         // 其他应用claim同一接口时的异步冲突通知
+         const conflictMsg = `busNum = ${conflict.busNum}, devAddr = ${conflict.devAddr}, ` +
+           `interfaceId = ${conflict.interfaceId}`;
+         console.info(`interface conflict: ${conflictMsg}`);
+         this.logInfo_ += `\n[INFO] interface conflict: ${conflictMsg}`;
+       });
+       console.info('claimInterfaceExclusive success');
+       this.logInfo_ += '\n[INFO] claimInterfaceExclusive success';
+     } else {
+       let claimInterfaceResult: number = usbManager.claimInterface(devicePipe, usbInterface, true);
+       if (claimInterfaceResult !== 0) {
+         console.error(`claimInterface error = ${claimInterfaceResult}`)
+         this.logInfo_ += '\n[ERROR] claimInterface error = ' + JSON.stringify(claimInterfaceResult);
+         return;
+       }
      }
    } catch (error) {
      let errorObj: BusinessError = error as BusinessError;

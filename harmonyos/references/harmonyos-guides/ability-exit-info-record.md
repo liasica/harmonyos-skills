@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ability-exit-
 title: 获取应用异常退出原因
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用生命周期 > 获取应用异常退出原因
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:51+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:de44dd3d6ac58ff4e915e7c845b7eb78b1230347c04f25001f9d5af5006bd078
+scraped_at: 2026-11-12T09:50:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:85aef7fa0668876eda5de4fe62251c6ab4b80a825c9b7306a5e677e6fe75adbf
 ---
 
 当应用异常退出后再次启动时，开发者往往需要获取上次异常退出的具体原因和当时的应用状态信息，比如应用内存占用的rss、pss值、上次应用退出的时间等等。通过UIAbility和UIExtensionAbility的OnCreate生命周期函数中的launchParam参数，开发者可以获取到相关信息，并将其应用于应用体验的分析改进，从而调整业务逻辑、提高应用的存活率。
 
 ## 约束限制
 
-仅[UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md)和[UIExtensionAbility](../harmonyos-references/js-apis-app-ability-uiextensionability.md)支持获取上次的退出原因。
+仅[UIAbility](../harmonyos-references/js-apis-app-ability-uiability.md#uiability)和[UIExtensionAbility](../harmonyos-references/js-apis-app-ability-uiextensionability.md#uiextensionability)支持获取上次的退出原因。
 
 ## 接口说明
 
-接口详情参见[API参考](../harmonyos-references/js-apis-app-ability-abilityconstant.md#launchparam)。
+接口详情参见[LaunchParam](../harmonyos-references/js-apis-app-ability-abilityconstant.md#launchparam)。
 
 | **接口名** | **描述** |
 | --- | --- |

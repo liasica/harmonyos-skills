@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-get-
 title: 获取网格扫描信息（ArkTS）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 环境Mesh识别 > 获取网格扫描信息（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:02+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:aaa574bcc38f41f00913ea52ca7f59ead1f120a3cb920691c2d586b8c8d7aa5f
+scraped_at: 2026-11-12T09:52:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:bab4b4b32ca39f3c855a751fddb5863b2f6269f7e8e230ba97761c498d29e1b4
 ---
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/HarmonyOS_Samples/arengine_samplecode_clientdemo_arkts)。
@@ -48,7 +48,8 @@ import {CubeGeometry, CustomGeometry, Geometry, Material, MaterialType, MeshReso
   PrimitiveTopology, Scene, SceneResourceFactory, Shader, ShaderMaterial, Vec3} from '@kit.ArkGraphics3D';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { logger } from '../utils/Logger';
-import { arrayBufferFloat32ToNumber, arrayBufferInt32ToNumber, arrayToVec3, getStatusBarHeight } from '../utils/Utils';
+import { arrayBufferFloat32ToNumber, arrayBufferInt32ToNumber, arrayToVec3, getStatusBarHeight,
+  releaseFrame } from '../utils/Utils';
 ```
 
 ### 定义变量
@@ -102,6 +103,7 @@ struct ARMesh {
       this.initARView();
     })
     .onWillDisappear(async () => {
+      releaseFrame(frame);
       await this.stopARView();
     })
     .onShown(() => {
@@ -224,9 +226,13 @@ class ARViewCallbackImpl extends arViewController.ARViewCallback {
       let camera: arEngine.ARCamera = frame.getCamera();
 
       if (camera.state === arEngine.ARTrackingState.TRACKING) {
-        planeVertices = arrayBufferFloat32ToNumber(frame.acquireSceneMesh().getVertices());
-        triangleIndices = arrayBufferInt32ToNumber(frame.acquireSceneMesh().getTriangleIndices());
-        vertexNormals = arrayBufferFloat32ToNumber(frame.acquireSceneMesh().getVertexNormals());
+        const sceneMesh: arEngine.ARSceneMesh = frame.acquireSceneMesh();
+        planeVertices = arrayBufferFloat32ToNumber(sceneMesh.getVertices());
+        triangleIndices = arrayBufferInt32ToNumber(sceneMesh.getTriangleIndices());
+        vertexNormals = arrayBufferFloat32ToNumber(sceneMesh.getVertexNormals());
+        sceneMesh.release().catch((err: BusinessError) => {
+          logger.error(`Failed to release sceneMesh. Code is ${err.code}, message is ${err.message}.`);
+        });
         isDisplayCube = true;
       } else {
         planeVertices = [];

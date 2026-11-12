@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-en
 title: 使用RSA私钥进行编码解码(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥生成与转换 > 使用RSA私钥进行编码解码(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:25+08:00
-doc_updated_at: 2026-10-10
+scraped_at: 2026-11-12T09:51:32+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:c1210360ca15d58ad50cc9f530cf139fe00952e44aea03f233efdf5b651a9423
 ---
 

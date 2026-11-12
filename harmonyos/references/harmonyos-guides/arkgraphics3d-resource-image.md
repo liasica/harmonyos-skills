@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkgraphics3d
 title: 创建并使用图片资源
 breadcrumb: 指南 > 图形 > ArkGraphics 3D（方舟3D图形） > 资源创建与使用 > 创建并使用图片资源
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:16+08:00
-doc_updated_at: 2026-10-14
+scraped_at: 2026-11-12T09:52:13+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:a3891e65db3bd9e6b196e0132c41820cdf4073567f4ba85bd1f563591396aa7a
 ---
 

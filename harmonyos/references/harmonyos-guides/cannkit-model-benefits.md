@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-model-benefits
-title: 模型收益
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化 > 模型收益
+title: 量化模型收益
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化 > CNN结构量化 > 量化模型收益
 category: harmonyos-guides
-scraped_at: 2026-09-08T06:39:18+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-11-12T09:52:40+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:b956a1f6b097172c448395a203a2943a8e3b15cd180c3d9afd4e3d8252d19574
 ---
 

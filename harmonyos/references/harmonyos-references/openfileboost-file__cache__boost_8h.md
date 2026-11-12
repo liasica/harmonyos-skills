@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/openfileb
 title: file_cache_boost.h
 breadcrumb: API参考 > 应用服务 > Preview Kit（文件预览服务） > C API > 头文件和结构体 > 头文件 > file_cache_boost.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:06+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:66a1d70416fa89154f810ec221ede703b8487527eb40746f2617fc60dbc22126
+scraped_at: 2026-11-12T09:57:37+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:97d693667dcf6866333cb3fbfbc3989aa255f90624ade7d3d3a934eb7d44dd71
 ---
 
 ## 概述
@@ -38,7 +38,7 @@ content_hash: sha256:66a1d70416fa89154f810ec221ede703b8487527eb40746f2617fc60dbc
 
 | 名称 | 描述 |
 | --- | --- |
-| [FileCacheBoost\_ErrCode](openfileboost_preview.md#filecacheboost_errcode) {  FILE\_CACHE\_BOOST\_SUCCESS = 0,  FILE\_CACHE\_BOOST\_ERROR\_INVALID\_PARAM = 401,  FILE\_CACHE\_BOOST\_ERROR\_NOT\_SUPPORTED = 801,  FILE\_CACHE\_BOOST\_ERROR\_NOMEM = 1017220001,  FILE\_CACHE\_BOOST\_ERROR\_INTERNAL\_ERROR = 1017220002, FILE\_CACHE\_BOOST\_ERROR\_KEY\_NOT\_FOUND = 1017220003, FILE\_CACHE\_BOOST\_ERROR\_KEY\_EXIST = 1017220004, FILE\_CACHE\_BOOST\_ERROR\_NOT\_DIR = 1017220005,  FILE\_CACHE\_BOOST\_ERROR\_IO = 1017220006, FILE\_CACHE\_BOOST\_ERROR\_IO\_CANCELED = 1017220007, FILE\_CACHE\_BOOST\_ERROR\_NOT\_INITIALIZED = 1017220008, FILE\_CACHE\_BOOST\_ERROR\_EXCEED\_LIMIT = 1017220009，  FILE\_CACHE\_BOOST\_ERROR\_IO\_CANCEL\_FAILED = 1017220010  } | 文件缓存加速相关的错误码定义。 |
+| [FileCacheBoost\_ErrCode](openfileboost_preview.md#filecacheboost_errcode) {  FILE\_CACHE\_BOOST\_SUCCESS = 0,  FILE\_CACHE\_BOOST\_ERROR\_INVALID\_PARAM = 401,  FILE\_CACHE\_BOOST\_ERROR\_NOT\_SUPPORTED = 801,  FILE\_CACHE\_BOOST\_ERROR\_EMULATOR\_NOT\_SUPPORTED = 804,  FILE\_CACHE\_BOOST\_ERROR\_NOMEM = 1017220001,  FILE\_CACHE\_BOOST\_ERROR\_INTERNAL\_ERROR = 1017220002, FILE\_CACHE\_BOOST\_ERROR\_KEY\_NOT\_FOUND = 1017220003, FILE\_CACHE\_BOOST\_ERROR\_KEY\_EXIST = 1017220004, FILE\_CACHE\_BOOST\_ERROR\_NOT\_DIR = 1017220005,  FILE\_CACHE\_BOOST\_ERROR\_IO = 1017220006, FILE\_CACHE\_BOOST\_ERROR\_IO\_CANCELED = 1017220007, FILE\_CACHE\_BOOST\_ERROR\_NOT\_INITIALIZED = 1017220008, FILE\_CACHE\_BOOST\_ERROR\_EXCEED\_LIMIT = 1017220009，  FILE\_CACHE\_BOOST\_ERROR\_IO\_CANCEL\_FAILED = 1017220010  } | 文件缓存加速相关的错误码定义。 |
 | [FileCacheBoost\_CbErrCode](openfileboost_preview.md#filecacheboost_cberrcode) {  FILE\_CACHE\_BOOST\_CALLBACK\_SUCCESS = 0,  FILE\_CACHE\_BOOST\_CALLBACK\_FAILURE = 1017221001，  FILE\_CACHE\_BOOST\_CALLBACK\_IO\_CANCELED = 1017221002  } | 回调函数[DeserializeFunc](openfileboost_preview.md#deserializefunc)和[SerializeFunc](openfileboost_preview.md#serializefunc)的错误码定义，用于应用程序将回调函数的执行结果返回给系统。 |
 
 ### 函数

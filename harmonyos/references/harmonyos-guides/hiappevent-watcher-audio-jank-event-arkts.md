@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅音频卡顿事件（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 音频卡顿事件 > 订阅音频卡顿事件（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:39+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:3e539acc4ba415626d4678fe2ac0ae4f9a7da5946f066cca0ce43c98bfb7facf
+scraped_at: 2026-11-12T09:51:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d2d62dbd51e8540a74c17c120397ce8b1a5fa08a24417809b0f906a8e7b44873
 ---
 
 ## 接口说明
@@ -23,68 +23,71 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
 
 1. 编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets”文件，添加系统事件的订阅。
 
-   ```ts
-   import { hiAppEvent, hilog } from '@kit.PerformanceAnalysisKit';
-
-   hiAppEvent.addWatcher({
-      // 开发者可以自定义观察者名称，系统会使用名称来标识不同的观察者
-      name: "watcher",
-      // 开发者可以订阅感兴趣的系统事件，此处是订阅了应用音频卡顿事件
-      appEventFilters: [
-        {
-          domain: hiAppEvent.domain.OS,
-          names: [hiAppEvent.event.AUDIO_JANK_FRAME]
-        }
-      ],
-      // 开发者可以自行实现订阅实时回调函数，以便对订阅获取到的事件数据进行自定义处理
-      onReceive: (domain: string, appEventGroups: Array<hiAppEvent.AppEventGroup>) => {
-        hilog.info(0x0000, 'testTag', `HiAppEvent onReceive: domain=${domain}`);
-        for (const eventGroup of appEventGroups) {
-          // 开发者可以根据事件集合中的事件名称区分不同的系统事件
-          hilog.info(0x0000, 'testTag', `HiAppEvent eventName=${eventGroup.name}`);
-          for (const eventInfo of eventGroup.appEventInfos) {
-            // 开发者可以对事件集合中的事件数据进行自定义处理，此处是将事件数据打印在日志中
-            hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo=${JSON.stringify(eventInfo)}`);
-          }
-        }
-      }
-    });
+   ```typescript
+   import { hiAppEvent } from '@kit.PerformanceAnalysisKit';
+   // ...
+       hiAppEvent.addWatcher({
+         // 开发者可以自定义观察者名称，系统会使用名称来标识不同的观察者
+         name: "watcher_audio",
+         // 开发者可以订阅感兴趣的系统事件，此处是订阅了启动耗时事件
+         appEventFilters: [
+           {
+             domain: hiAppEvent.domain.OS,
+             names: [hiAppEvent.event.AUDIO_JANK_FRAME]
+           }
+         ],
+         // 开发者可以自行实现订阅回调函数，以便对订阅获取到的事件数据进行自定义处理
+         onReceive: (domain: string, appEventGroups: Array<hiAppEvent.AppEventGroup>) => {
+           hilog.info(0x0000, 'testTag', `HiAppEvent onReceive: domain=${domain}`);
+           for (const eventGroup of appEventGroups) {
+             // 开发者可以根据事件集合中的事件名称区分不同的系统事件
+             hilog.info(0x0000, 'testTag', `HiAppEvent eventName=${eventGroup.name}`);
+             for (const eventInfo of eventGroup.appEventInfos) {
+               // 开发者可以对事件集合中的事件数据进行自定义处理，此处是将事件数据打印在日志中
+               hilog.info(0x0000, 'testTag', `HiAppEvent eventInfo=${JSON.stringify(eventInfo)}`);
+             }
+           }
+         }
+       });
    ```
 2. 编辑工程中的“entry > src > main > ets > pages > Index.ets”文件，添加一个模拟写入音频数据的回调函数normalCallback，在该回调中模拟卡顿主动返回INVALID（不送数据）来触发卡顿故障事件。
 
-   ```ts
-   import { audio } from '@kit.AudioKit';
-   let g_invalidCount = 0;
+   ```typescript
    function normalCallback(buffer: ArrayBuffer) {
-     if (g_invalidCount > 0) {
-       g_invalidCount--;
+     if (invalidCount > 0) {
+       invalidCount--;
        return audio.AudioDataCallbackResult.INVALID;
      }
      // 在此添加写数据逻辑
+     if (g_sampleFormat == audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE) {
+         fillS16Buffer(buffer);
+     } else if (g_sampleFormat == audio.AudioSampleFormat.SAMPLE_FORMAT_F32LE) {
+       fillF32Buffer(buffer);
+     }
      return audio.AudioDataCallbackResult.VALID;
    }
    ```
 3. 编辑工程中的“entry > src > main > ets > pages > Index.ets”文件，添加一个卡顿触发按钮，改变INVALID返回次数，模拟相应音频卡顿。
 
-   ```ts
+   ```typescript
    Row() {
      Button("卡顿").onClick(async () => {
-       g_invalidCount = 30;
-     })
+       invalidCount = 30;
+     }).width(100)
    }
    ```
 4. 编辑工程中的“entry > src > main > ets > pages > Index.ets”文件，在创建AudioRender实例时，进行耗时操作回调
 
-   ```ts
-   audio.createAudioRenderer(audioRendererOptions, (err, renderer) => { // 创建AudioRenderer实例
+   ```typescript
+   audio.createAudioRenderer(audioRendererOptions, (err, renderer) => {  // 创建AudioRenderer实例
      if (!err) {
-       console.info(`${TAG}: creating AudioRenderer success`);
+       console.info('' + TAG + ': creating AudioRenderer success');
        this.renderModel = renderer;
        if (this.renderModel !== undefined) {
          this.renderModel.on('writeData', normalCallback);
        }
      } else {
-       console.info(`${TAG}: creating AudioRenderer failed, error: ${err.message}`);
+       console.info('' + TAG + ': creating AudioRenderer failed, error: ' + err.message);
      }
    });
    ```

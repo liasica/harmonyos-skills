@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-h
 title: "@ohos.security.huksExternalCrypto (外部密钥管理)"
 breadcrumb: API参考 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > ArkTS API > @ohos.security.huksExternalCrypto (外部密钥管理)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:55+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ae334666d3ca5ec2f3f5519e89968fd9d3ba3cb5254d68f5b7c6068f5896e9b1
+scraped_at: 2026-11-12T09:55:27+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3554dcffe3e02f6427f5e1ad7191141f29bff49ccd6faef2054bb38f81478b27
 ---
 
 模块提供外部密钥管理扩展功能的注册与注销，PIN码认证与认证状态获取等能力。
@@ -29,6 +29,7 @@ import { huksExternalCrypto } from '@kit.UniversalKeystoreKit';
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | HUKS\_EXT\_CRYPTO\_TAG\_TYPE\_INT | 1 << 28 | 表示TAG的值为整数类型。 |
+| HUKS\_EXT\_CRYPTO\_TAG\_TYPE\_UINT | 2 << 28 | 表示TAG的值为无符号整数类型。  **起始版本：** 26.0.1 |
 | HUKS\_EXT\_CRYPTO\_TAG\_TYPE\_BYTES | 5 << 28 | 表示TAG的值为字节数组。 |
 
 ## HuksExternalCryptoTag
@@ -44,8 +45,9 @@ import { huksExternalCrypto } from '@kit.UniversalKeystoreKit';
 | HUKS\_EXT\_CRYPTO\_TAG\_EXTRA\_DATA | HuksExternalCryptoTagType.HUKS\_EXT\_CRYPTO\_TAG\_TYPE\_BYTES | 200003 | 外部数据，在通用查询场景，表示返回的数据。 |
 | HUKS\_EXT\_CRYPTO\_TAG\_UID | HuksExternalCryptoTagType.HUKS\_EXT\_CRYPTO\_TAG\_TYPE\_INT | 200004 | 表示调用方的uid。 |
 | HUKS\_EXT\_CRYPTO\_TAG\_PURPOSE | HuksExternalCryptoTagType.HUKS\_EXT\_CRYPTO\_TAG\_TYPE\_INT | 200005 | 表示证书链对应密钥的使用类型，具体类型详见[CertificatePurpose](js-apis-certmanager.md#certificatepurpose22)。 |
+| HUKS\_EXT\_CRYPTO\_TAG\_TIMEOUT | HuksExternalCryptoTagType.HUKS\_EXT\_CRYPTO\_TAG\_TYPE\_UINT | 200006 | 表示异步超时时间，单位为秒，可由业务逻辑自定义。  **起始版本：** 26.0.1 |
 | HUKS\_EXT\_CRYPTO\_TAG\_RESOURCE\_INFO | HuksExternalCryptoTagType.HUKS\_EXT\_CRYPTO\_TAG\_TYPE\_BYTES | 200007 | 表示获取资源ID所需的信息，格式和内容由厂商自定义。  **起始版本：** 26.0.0  **模型约束**：此接口仅可在Stage模型下使用。 |
-| HUKS\_EXT\_CRYPTO\_TAG\_ABILITY\_INFO | HuksExternalCryptoTagType.HUKS\_EXT\_CRYPTO\_TAG\_TYPE\_BYTES | 200008 | 表示密钥管理扩展自定义PIN码弹窗相关Ability列表信息，在注册密钥管理扩展时，同步注册，详见[provider注册示例](../harmonyos-guides/huks-extension-registration-and-unregistration-arkts.md)。注册了自定义弹窗，则在PIN码认证时允许拉起自定义弹窗，进行PIN码认证等操作。  HUKS\_EXT\_CRYPTO\_TAG\_ABILITY\_INFO  1.abilityName：长度范围为1~128字节。  2.index：其值为resourceId，最大长度为512字节。该字段不允许重复，允许单个CryptoExtension下该字段为空，为空时传输空字符串。在搜索时优先匹配index对应的UIAbility，当不存在时返回index为空的UIAbility。  **起始版本：** 26.0.0  **模型约束**：此接口仅可在Stage模型下使用。 |
+| HUKS\_EXT\_CRYPTO\_TAG\_ABILITY\_INFO | HuksExternalCryptoTagType.HUKS\_EXT\_CRYPTO\_TAG\_TYPE\_BYTES | 200008 | 表示密钥管理扩展自定义PIN码弹窗相关Ability列表信息，在注册密钥管理扩展时，同步注册，详见[provider注册示例](../harmonyos-guides/huks-extension-registration-and-unregistration-arkts-ndk.md)。注册了自定义弹窗，则在PIN码认证时允许拉起自定义弹窗，进行PIN码认证等操作。  HUKS\_EXT\_CRYPTO\_TAG\_ABILITY\_INFO  1.abilityName：长度范围为1~128字节。  2.index：其值为resourceId，最大长度为512字节。该字段不允许重复，允许单个CryptoExtension下该字段为空，为空时传输空字符串。在搜索时优先匹配index对应的UIAbility，当不存在时返回index为空的UIAbility。  3.abilityType：表示Ability类型，0表示UIAbility类型，1表示UkeyAuthExtensionAbility类型，未传入时默认按0处理。（从API版本26.0.1开始支持abilityType）  **起始版本：** 26.0.0  **模型约束**：此接口仅可在Stage模型下使用。 |
 | HUKS\_EXT\_CRYPTO\_TAG\_BUNDLE\_NAME | HuksExternalCryptoTagType.HUKS\_EXT\_CRYPTO\_TAG\_TYPE\_BYTES | 200009 | 表示CryptoExtensionAbility所属的HAP Bundle名称。  **起始版本：** 26.0.0  **模型约束**：此接口仅可在Stage模型下使用。 |
 
 ## HuksExternalCryptoParam
@@ -243,7 +245,7 @@ getUkeyPinAuthState(resourceId: string, params?: Array<HuksExternalCryptoParam>)
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resourceId | string | 是 | 资源ID，可通过[openAuthorizeDialog](js-apis-certmanagerdialog.md#certificatemanagerdialogopenauthorizedialog22)获取，其结果中附带资源ID。 |
-| params | Array<[HuksExternalCryptoParam](js-apis-huksexternalcrypto.md#huksexternalcryptoparam)> | 否 | 操作的属性。不传入时，不向Extension Ability传递额外参数。非系统应用传入[HUKS\_EXT\_CRYPTO\_TAG\_UID](js-apis-huksexternalcrypto.md#huksexternalcryptotag)是非法参数。 |
+| params | Array<[HuksExternalCryptoParam](js-apis-huksexternalcrypto.md#huksexternalcryptoparam)> | 否 | 操作的属性。不传入时，不向Extension Ability传递额外参数。非系统应用传入[HUKS\_EXT\_CRYPTO\_TAG\_UID](js-apis-huksexternalcrypto.md#huksexternalcryptotag)是非法参数。  在API版本26.0.1，新增可选TAG：[HUKS\_EXT\_CRYPTO\_TAG\_TIMEOUT](js-apis-huksexternalcrypto.md#huksexternalcryptotag)，用于自定义异步接口超时等待时间，未传入时使用默认值3秒。 |
 
 **返回值：**
 
@@ -312,7 +314,7 @@ propertyId表示查询属性的ID信息，推荐使用GMT 0016-2023中定义的S
 | --- | --- | --- | --- |
 | resourceId | string | 是 | 资源ID，可通过[openAuthorizeDialog](js-apis-certmanagerdialog.md#certificatemanagerdialogopenauthorizedialog22)获取，该接口的返回结果中附带resourceId。 |
 | propertyId | string | 是 | 查找操作的属性名称，是GMT 0016-2023中定义的SKF接口名，应用开发者需要针对接口名进行适配。 |
-| params | Array<[HuksExternalCryptoParam](js-apis-huksexternalcrypto.md#huksexternalcryptoparam)> | 否 | 需要传递给[CryptoExtensionAbility](js-apis-cryptoextensionability.md)的输入参数。不传入时，不向Extension Ability传递额外参数。非系统应用传入[HUKS\_EXT\_CRYPTO\_TAG\_UID](js-apis-huksexternalcrypto.md#huksexternalcryptotag)是非法参数。 |
+| params | Array<[HuksExternalCryptoParam](js-apis-huksexternalcrypto.md#huksexternalcryptoparam)> | 否 | 需要传递给[CryptoExtensionAbility](js-apis-cryptoextensionability.md)的输入参数。不传入时，不向Extension Ability传递额外参数。非系统应用传入[HUKS\_EXT\_CRYPTO\_TAG\_UID](js-apis-huksexternalcrypto.md#huksexternalcryptotag)是非法参数。  在API版本26.0.1，新增可选TAG：[HUKS\_EXT\_CRYPTO\_TAG\_TIMEOUT](js-apis-huksexternalcrypto.md#huksexternalcryptotag)，用于自定义异步接口超时等待时间，未传入时使用默认值3秒。 |
 
 **返回值：**
 
@@ -446,7 +448,7 @@ getResourceId(providerName: string, params: HuksExternalCryptoParam[]): Promise<
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | providerName | string | 是 | 提供者名称，建议包含厂商信息，全局唯一，长度最大为128字节。 |
-| params | [HuksExternalCryptoParam](js-apis-huksexternalcrypto.md#huksexternalcryptoparam)[] | 是 | 获取资源ID所需的属性参数。必选TAG包括：[HUKS\_EXT\_CRYPTO\_TAG\_ABILITY\_NAME](js-apis-huksexternalcrypto.md#huksexternalcryptotag)、[HUKS\_EXT\_CRYPTO\_TAG\_BUNDLE\_NAME](js-apis-huksexternalcrypto.md#huksexternalcryptotag)、[HUKS\_EXT\_CRYPTO\_TAG\_RESOURCE\_INFO](js-apis-huksexternalcrypto.md#huksexternalcryptotag)。非系统应用传入[HUKS\_EXT\_CRYPTO\_TAG\_UID](js-apis-huksexternalcrypto.md#huksexternalcryptotag)是非法参数。 |
+| params | [HuksExternalCryptoParam](js-apis-huksexternalcrypto.md#huksexternalcryptoparam)[] | 是 | 获取资源ID所需的属性参数。必选TAG包括：[HUKS\_EXT\_CRYPTO\_TAG\_ABILITY\_NAME](js-apis-huksexternalcrypto.md#huksexternalcryptotag)、[HUKS\_EXT\_CRYPTO\_TAG\_BUNDLE\_NAME](js-apis-huksexternalcrypto.md#huksexternalcryptotag)、[HUKS\_EXT\_CRYPTO\_TAG\_RESOURCE\_INFO](js-apis-huksexternalcrypto.md#huksexternalcryptotag)。非系统应用传入[HUKS\_EXT\_CRYPTO\_TAG\_UID](js-apis-huksexternalcrypto.md#huksexternalcryptotag)是非法参数。  在API版本26.0.1，新增可选TAG：[HUKS\_EXT\_CRYPTO\_TAG\_TIMEOUT](js-apis-huksexternalcrypto.md#huksexternalcryptotag)，用于自定义异步接口超时等待时间，未传入时使用默认值3秒。 |
 
 **返回值：**
 
@@ -531,7 +533,7 @@ openResource(resourceId: string, params?: HuksExternalCryptoParam[]): Promise<vo
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resourceId | string | 是 | 资源ID。可通过[openAuthorizeDialog](js-apis-certmanagerdialog.md#certificatemanagerdialogopenauthorizedialog22)获取keyUri作为resourceId，或通过[getResourceId](js-apis-huksexternalcrypto.md#huksexternalcryptogetresourceid)获取外部密钥管理扩展的资源ID。 |
-| params | [HuksExternalCryptoParam](js-apis-huksexternalcrypto.md#huksexternalcryptoparam)[] | 否 | 需要传递给[CryptoExtensionAbility](js-apis-cryptoextensionability.md)的输入参数。不传入时，不向Extension Ability传递额外参数。 |
+| params | [HuksExternalCryptoParam](js-apis-huksexternalcrypto.md#huksexternalcryptoparam)[] | 否 | 需要传递给[CryptoExtensionAbility](js-apis-cryptoextensionability.md)的输入参数。不传入时，不向Extension Ability传递额外参数。  在API版本26.0.1，新增可选TAG：[HUKS\_EXT\_CRYPTO\_TAG\_TIMEOUT](js-apis-huksexternalcrypto.md#huksexternalcryptotag)，用于自定义异步接口超时等待时间，未传入时使用默认值3秒。 |
 
 **返回值：**
 
@@ -596,7 +598,7 @@ closeResource(resourceId: string, params?: HuksExternalCryptoParam[]): Promise<v
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | resourceId | string | 是 | 资源ID。可通过[openAuthorizeDialog](js-apis-certmanagerdialog.md#certificatemanagerdialogopenauthorizedialog22)获取keyUri作为resourceId，或通过[getResourceId](js-apis-huksexternalcrypto.md#huksexternalcryptogetresourceid)获取外部密钥管理扩展的资源ID。 |
-| params | [HuksExternalCryptoParam](js-apis-huksexternalcrypto.md#huksexternalcryptoparam)[] | 否 | 需要传递给[CryptoExtensionAbility](js-apis-cryptoextensionability.md)的输入参数。不传入时，不向Extension Ability传递额外参数。 |
+| params | [HuksExternalCryptoParam](js-apis-huksexternalcrypto.md#huksexternalcryptoparam)[] | 否 | 需要传递给[CryptoExtensionAbility](js-apis-cryptoextensionability.md)的输入参数。不传入时，不向Extension Ability传递额外参数。  在API版本26.0.1，新增可选TAG：[HUKS\_EXT\_CRYPTO\_TAG\_TIMEOUT](js-apis-huksexternalcrypto.md#huksexternalcryptotag)，用于自定义异步接口超时等待时间，未传入时使用默认值3秒。 |
 
 **返回值：**
 
@@ -657,7 +659,7 @@ setProperty(resourceId: string, propertyId: string, params?: HuksExternalCryptoP
 | --- | --- | --- | --- |
 | resourceId | string | 是 | 资源ID。可通过[openAuthorizeDialog](js-apis-certmanagerdialog.md#certificatemanagerdialogopenauthorizedialog22)获取keyUri作为resourceId，或通过[getResourceId](js-apis-huksexternalcrypto.md#huksexternalcryptogetresourceid)获取外部密钥管理扩展的资源ID。 |
 | propertyId | string | 是 | 设置操作的属性名称。由[CryptoExtensionAbility](js-apis-cryptoextensionability.md)实现方提供，推荐使用GMT 0016-2023中定义的SKF接口名作为属性ID。 |
-| params | [HuksExternalCryptoParam](js-apis-huksexternalcrypto.md#huksexternalcryptoparam)[] | 否 | 需要传递给[CryptoExtensionAbility](js-apis-cryptoextensionability.md)的输入参数，包含与propertyId相关的操作参数。不传入时，不向Extension Ability传递额外参数。 |
+| params | [HuksExternalCryptoParam](js-apis-huksexternalcrypto.md#huksexternalcryptoparam)[] | 否 | 需要传递给[CryptoExtensionAbility](js-apis-cryptoextensionability.md)的输入参数，包含与propertyId相关的操作参数。不传入时，不向Extension Ability传递额外参数。  在API版本26.0.1，新增可选TAG：[HUKS\_EXT\_CRYPTO\_TAG\_TIMEOUT](js-apis-huksexternalcrypto.md#huksexternalcryptotag)，用于自定义异步接口超时等待时间，未传入时使用默认值3秒。 |
 
 **返回值：**
 

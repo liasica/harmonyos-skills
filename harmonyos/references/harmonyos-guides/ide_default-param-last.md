@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_default-p
 title: "@typescript-eslint/default-param-last"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/default-param-last
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:09+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:674e0d0b5a2b35d1aa85b8fd69a6c1f9bbc67820b50b376684c963ebdf62fcc4
+scraped_at: 2026-11-12T09:52:54+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:cc1cc82f31948edaefee142f2e23ff8652e64ca6e094837e286acb7eeff46c4a
 ---
 
 强制默认参数位于参数列表的最后一个。
@@ -67,4 +67,4 @@ export function f4(b?: number, a: number, c = defaultValue) {
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

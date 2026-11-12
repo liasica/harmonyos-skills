@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/proactively-n
 title: 主动通知页面变化
 breadcrumb: 指南 > 应用框架 > Accessibility Kit（无障碍服务） > 提升应用的无障碍体验 > 提升屏幕朗读无障碍体验 > 主动通知页面变化
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:44+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:51:00+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:ce5030119334a8d41e8660fac9a628a2f39cc00d653ca1ec4ba4d2ea271b14f8
 ---
 

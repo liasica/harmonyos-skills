@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-export-k
 title: 密钥导出(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 其他操作 > 密钥导出 > 密钥导出(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:38+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:dd0fbcc7c4192f18ff505db556d389a95dbdbc9c27407f1c89e636678328b573
+scraped_at: 2026-11-12T09:51:41+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:63f0d8cf9ed1d5ccce143e2c2d645f18285616fd280bdaefa104eb46c88faa74
 ---
 
 业务需要获取持久化存储的非对称密钥的公钥时使用，当前支持ECC/RSA/ED25519/X25519/SM2的公钥导出。
@@ -32,6 +32,7 @@ let emptyOptions: huks.HuksOptions = {
 properties: []
 };
 
+/* 2. 初始化密钥属性集 */
 let properties1: huks.HuksParam[] = [
   {
     tag: huks.HuksTag.HUKS_TAG_ALGORITHM,

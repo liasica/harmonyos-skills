@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hidebug-guide
 title: HiDebug接口使用示例（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 系统调试信息获取 > HiDebug接口使用示例（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:48+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:51:56+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:f196134fb7a7e085363e86964037bc45ec6b8875f236f0c6ba0c7f9bdfb5e973
 ---
 

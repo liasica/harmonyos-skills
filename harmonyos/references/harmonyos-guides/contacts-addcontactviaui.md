@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/contacts-addc
 title: 使用picker管理联系人
 breadcrumb: 指南 > 应用服务 > Contacts Kit（联系人服务） > 使用picker管理联系人
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:25+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:52:22+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:224aef80aae6694687663b920d2622688d703b95751b910a32ccbfec6fab76df
 ---
 

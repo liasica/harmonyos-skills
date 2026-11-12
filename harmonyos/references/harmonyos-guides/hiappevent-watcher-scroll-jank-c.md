@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅滑动丢帧事件（C/C++）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 滑动丢帧事件 > 订阅滑动丢帧事件（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:11+08:00
-doc_updated_at: 2026-06-12
-content_hash: sha256:9ec2a5aed8ebb12f9fa3760026641513e5f060d9d458ed57e0fa5a1494e8434c
+scraped_at: 2026-11-12T09:51:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:54258c47485d4c3dc4dbc03e09d3620e851a6e79c5339d26bd7fd75f19f072de
 ---
 
 ## 接口说明
@@ -65,39 +65,60 @@ content_hash: sha256:9ec2a5aed8ebb12f9fa3760026641513e5f060d9d458ed57e0fa5a1494e
 
    * onReceive类型观察者，在“napi\_init.cpp”文件中，定义onReceive类型观察者的方法：
 
-   ```cpp
+   ```
    static void OnReceive(const char *domain, const struct HiAppEvent_AppEventGroup *appEventGroups, uint32_t groupLen)
    {
        for (int i = 0; i < groupLen; ++i) {
            for (int j = 0; j < appEventGroups[i].infoLen; ++j) {
                OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.WatcherType=OnReceive");
-               OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.domain=%{public}s", appEventGroups[i].appEventInfos[j].domain);
-               OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.name=%{public}s", appEventGroups[i].appEventInfos[j].name);
-               OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.eventType=%{public}d", appEventGroups[i].appEventInfos[j].type);
-               if (strcmp(appEventGroups[i].appEventInfos[j].domain, DOMAIN_OS) != 0 || strcmp(appEventGroups[i].appEventInfos[j].name, EVENT_SCROLL_JANK) != 0) {
+               OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.domain=%{public}s",
+                   appEventGroups[i].appEventInfos[j].domain);
+               OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.name=%{public}s",
+                   appEventGroups[i].appEventInfos[j].name);
+               OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.eventType=%{public}d",
+                   appEventGroups[i].appEventInfos[j].type);
+               if (strcmp(appEventGroups[i].appEventInfos[j].domain, DOMAIN_OS) != 0
+                   || strcmp(appEventGroups[i].appEventInfos[j].name, EVENT_SCROLL_JANK) != 0) {
                    continue;
                }
                Json::Value params;
                Json::Reader reader(Json::Features::strictMode());
                Json::FastWriter writer;
                if (reader.parse(appEventGroups[i].appEventInfos[j].params, params)) {
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.time=%{public}lld", params["time"].asInt64());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.bundle_version=%{public}s", params["bundle_version"].asString().c_str());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.bundle_name=%{public}s", params["bundle_name"].asString().c_str());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.process_name=%{public}s", params["process_name"].asString().c_str());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.ability_name=%{public}s", params["ability_name"].asString().c_str());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.begin_time=%{public}lld", params["begin_time"].asInt64());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.duration=%{public}d", params["duration"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.total_app_frames=%{public}d", params["total_app_frames"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.total_app_missed_frames=%{public}d", params["total_app_missed_frames"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.max_app_frametime=%{public}d", params["max_app_frametime"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.max_app_seq_frames=%{public}d", params["max_app_seq_frames"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.total_render_frames=%{public}d", params["total_render_frames"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.total_render_missed_frames=%{public}d", params["total_render_missed_frames"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.max_render_frametime=%{public}d", params["max_render_frametime"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.max_render_seq_frames=%{public}d", params["max_render_seq_frames"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.external_log=%{public}s", writer.write(params["external_log"]).c_str());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.log_over_limit=%{public}d", params["log_over_limit"].asBool());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.time=%{public}lld",
+                       params["time"].asInt64());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.bundle_version=%{public}s",
+                       params["bundle_version"].asString().c_str());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.bundle_name=%{public}s",
+                       params["bundle_name"].asString().c_str());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.process_name=%{public}s",
+                       params["process_name"].asString().c_str());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.ability_name=%{public}s",
+                       params["ability_name"].asString().c_str());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.begin_time=%{public}lld",
+                       params["begin_time"].asInt64());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.duration=%{public}d",
+                       params["duration"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.total_app_frames=%{public}d",
+                       params["total_app_frames"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.total_app_missed_frames=%{public}d",
+                       params["total_app_missed_frames"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.max_app_frametime=%{public}d",
+                       params["max_app_frametime"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.max_app_seq_frames=%{public}d",
+                       params["max_app_seq_frames"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.total_render_frames=%{public}d",
+                       params["total_render_frames"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.total_render_missed_frames=%{public}d",
+                       params["total_render_missed_frames"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.max_render_frametime=%{public}d",
+                       params["max_render_frametime"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.max_render_seq_frames=%{public}d",
+                       params["max_render_seq_frames"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.external_log=%{public}s",
+                       writer.write(params["external_log"]).c_str());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.log_over_limit=%{public}d",
+                       params["log_over_limit"].asBool());
                }
            }
        }
@@ -114,7 +135,7 @@ content_hash: sha256:9ec2a5aed8ebb12f9fa3760026641513e5f060d9d458ed57e0fa5a1494e
        const char *names[] = {EVENT_SCROLL_JANK};
        // 开发者订阅感兴趣的事件，此处订阅了系统事件。
        OH_HiAppEvent_SetAppEventFilter(systemEventWatcherR, DOMAIN_OS, 0, names, 1);
-       // 开发者设置已实现的回调函数，观察者接收到事件后会立即触发OnReceive回调。
+       // 开发者设置已实现的回调函数，观察者接收到事件后回立即触发OnReceive回调。
        OH_HiAppEvent_SetWatcherOnReceive(systemEventWatcherR, OnReceive);
        // 使观察者开始监听订阅的事件。
        OH_HiAppEvent_AddWatcher(systemEventWatcherR);
@@ -124,7 +145,7 @@ content_hash: sha256:9ec2a5aed8ebb12f9fa3760026641513e5f060d9d458ed57e0fa5a1494e
 
    * onTrigger类型观察者，在“napi\_init.cpp”文件中，定义OnTrigger类型观察者：
 
-   ```cpp
+   ```
    // 开发者可以自行实现获取已监听到事件的回调函数，其中events指针指向内容仅在该函数内有效。
    static void OnTake(const char *const *events, uint32_t eventLen)
    {
@@ -133,31 +154,48 @@ content_hash: sha256:9ec2a5aed8ebb12f9fa3760026641513e5f060d9d458ed57e0fa5a1494e
        for (int i = 0; i < eventLen; ++i) {
            Json::Value eventInfo;
            if (reader.parse(events[i], eventInfo)) {
-               auto domain = eventInfo["domain_"].asString();
+               auto domain =  eventInfo["domain_"].asString();
                auto name = eventInfo["name_"].asString();
                auto type = eventInfo["type_"].asInt();
                OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.WatcherType=OnTrigger");
                OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.domain=%{public}s", domain.c_str());
                OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.name=%{public}s", name.c_str());
                OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.eventType=%{public}d", type);
-               if (domain == DOMAIN_OS && name == EVENT_SCROLL_JANK) {
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.time=%{public}lld", eventInfo["time"].asInt64());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.bundle_version=%{public}s", eventInfo["bundle_version"].asString().c_str());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.bundle_name=%{public}s", eventInfo["bundle_name"].asString().c_str());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.process_name=%{public}s", eventInfo["process_name"].asString().c_str());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.ability_name=%{public}s", eventInfo["ability_name"].asString().c_str());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.begin_time=%{public}lld", eventInfo["begin_time"].asInt64());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.duration=%{public}d", eventInfo["duration"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.total_app_frames=%{public}d", eventInfo["total_app_frames"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.total_app_missed_frames=%{public}d", eventInfo["total_app_missed_frames"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.max_app_frametime=%{public}d", eventInfo["max_app_frametime"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.max_app_seq_frames=%{public}d", eventInfo["max_app_seq_frames"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.total_render_frames=%{public}d", eventInfo["total_render_frames"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.total_render_missed_frames=%{public}d", eventInfo["total_render_missed_frames"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.max_render_frametime=%{public}d", eventInfo["max_render_frametime"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.max_render_seq_frames=%{public}d", eventInfo["max_render_seq_frames"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.external_log=%{public}s", writer.write(eventInfo["external_log"]).c_str());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.log_over_limit=%{public}d", eventInfo["log_over_limit"].asBool());
+               if (domain ==  DOMAIN_OS && name == EVENT_SCROLL_JANK) {
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.time=%{public}lld",
+                       eventInfo["time"].asInt64());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.bundle_version=%{public}s",
+                       eventInfo["bundle_version"].asString().c_str());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.bundle_name=%{public}s",
+                       eventInfo["bundle_name"].asString().c_str());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.process_name=%{public}s",
+                       eventInfo["process_name"].asString().c_str());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.ability_name=%{public}s",
+                       eventInfo["ability_name"].asString().c_str());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.begin_time=%{public}lld",
+                       eventInfo["begin_time"].asInt64());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.duration=%{public}d",
+                       eventInfo["duration"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.total_app_frames=%{public}d",
+                       eventInfo["total_app_frames"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.total_app_missed_frames=%{public}d",
+                       eventInfo["total_app_missed_frames"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.max_app_frametime=%{public}d",
+                       eventInfo["max_app_frametime"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.max_app_seq_frames=%{public}d",
+                       eventInfo["max_app_seq_frames"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.total_render_frames=%{public}d",
+                       eventInfo["total_render_frames"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.total_render_missed_frames=%{public}d",
+                       eventInfo["total_render_missed_frames"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.max_render_frametime=%{public}d",
+                       eventInfo["max_render_frametime"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.max_render_seq_frames=%{public}d",
+                       eventInfo["max_render_seq_frames"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.external_log=%{public}s",
+                       writer.write(eventInfo["external_log"]).c_str());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.log_over_limit=%{public}d",
+                       eventInfo["log_over_limit"].asBool());
                }
            }
        }
@@ -194,12 +232,13 @@ content_hash: sha256:9ec2a5aed8ebb12f9fa3760026641513e5f060d9d458ed57e0fa5a1494e
 
    * 在“napi\_init.cpp”文件中，将RegisterWatcher注册为ArkTS接口：
 
-   ```cpp
+   ```
    static napi_value Init(napi_env env, napi_value exports)
    {
        napi_property_descriptor desc[] = {
-           { "registerWatcherReceive", nullptr, RegisterWatcherReceive, nullptr, nullptr, nullptr, napi_default, nullptr },
-           { "registerWatcherTrigger", nullptr, RegisterWatcherTrigger, nullptr, nullptr, nullptr, napi_default, nullptr },
+           { "add", nullptr, Add, nullptr, nullptr, nullptr, napi_default, nullptr },
+           { "registerWatcherReceive", nullptr, RegisterWatcherReceive, nullptr, nullptr, nullptr, napi_default, nullptr},
+           { "registerWatcherTrigger", nullptr, RegisterWatcherTrigger, nullptr, nullptr, nullptr, napi_default, nullptr},
        };
        napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
        return exports;
@@ -214,13 +253,14 @@ content_hash: sha256:9ec2a5aed8ebb12f9fa3760026641513e5f060d9d458ed57e0fa5a1494e
    ```
 7. 在“EntryAbility.ets”文件的onCreate()函数中添加接口调用。
 
-   ```ts
-   // 导入依赖模块
+   ```typescript
    import testNapi from 'libentry.so';
-   // 在onCreate()函数中新增接口调用
-   // 启动时，注册系统事件观察者
-   testNapi.registerWatcherReceive();
-   testNapi.registerWatcherTrigger();
+   // ...
+       // 在onCreate()函数中添加C API接口调用
+       // 启动时，注册崩溃事件观察者
+       testNapi.registerWatcherReceive();
+       // 启动时，注册按钮点击事件观察者
+       testNapi.registerWatcherTrigger();
    ```
 8. 编辑工程中的“entry > src > main > ets > pages > Index.ets”文件，添加一个List组件，在列表的滑动事件中添加耗时操作，示例代码如下：
 

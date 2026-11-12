@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-s
 title: "@ohos.multimedia.sendableImage (基于Sendable对象的图片处理)"
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.sendableImage (基于Sendable对象的图片处理)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:70c0911cccfd10f95c00de33dde6a2bcbaff38b82c798b5fdd72cad3d29ba921
+scraped_at: 2026-11-12T09:56:39+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:92a013e24799606cae1cdc04c754f33aabc0deedba28a8a75a41ac10a5a29584
 ---
 
 本模块基于[Sendable](../harmonyos-guides/arkts-sendable.md)对象，提供图片处理效果，包括通过属性创建PixelMap、读取图像像素数据、读取区域内的图片数据等。
@@ -123,8 +123,8 @@ function createPixelMapSync() {
       return;
     }
     console.info('Succeeded in creating the PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to create the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -190,8 +190,8 @@ class MySequence implements rpc.Parcelable {
   unmarshalling(messageSequence: rpc.MessageSequence) {
     try {
       this.pixelMap = sendableImage.createPixelMapFromParcel(messageSequence);
-    } catch (e) {
-      const err = e as BusinessError;
+    } catch (error) {
+      const err = error as BusinessError;
       console.error(`Failed to create the PixelMap from parcel. Code: ${err.code}, message: ${err.message}`);
       return false;
     }
@@ -329,8 +329,8 @@ function convertFromPixelMap() {
   try {
     let sendablePixelMap: sendableImage.PixelMap = sendableImage.convertFromPixelMap(pixelMap);
     console.info('Succeeded in converting the PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to convert the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -382,8 +382,8 @@ function convertToPixelMap() {
   try {
     let pixelMap: image.PixelMap = sendableImage.convertToPixelMap(sendablePixelMap);
     console.info('Succeeded in converting the PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to convert the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -490,8 +490,8 @@ function readPixelsToBufferSync(pixelMap: sendableImage.PixelMap) {
   try {
     pixelMap.readPixelsToBufferSync(readBuffer);
     console.info('Succeeded in reading image pixel data.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to read image pixel data. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -611,8 +611,8 @@ function readPixelsSync(pixelMap: sendableImage.PixelMap) {
   try {
     pixelMap.readPixelsSync(area);
     console.info('Succeeded in reading the image data from the specified area.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to read the image data from the specified area. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -742,8 +742,8 @@ function writePixelsSync(pixelMap: sendableImage.PixelMap) {
   try {
     pixelMap.writePixelsSync(area);
     console.info('Succeeded in writing pixels into the specified area.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to write pixels into the specified area. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -829,8 +829,8 @@ function writeBufferToPixelsSync(pixelMap: sendableImage.PixelMap) {
   try {
     pixelMap.writeBufferToPixelsSync(color);
     console.info('Succeeded in writing data from the buffer to the PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to write data from the buffer to the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -901,8 +901,8 @@ function getImageInfoSync(pixelMap: sendableImage.PixelMap) {
   try {
     let imageInfo: image.ImageInfo = pixelMap.getImageInfoSync();
     console.info(`Succeeded in obtaining information of the PixelMap with size ${imageInfo.size} and pixel format ${imageInfo.pixelFormat}.`);
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to obtain information of the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -1060,8 +1060,8 @@ function opacitySync(pixelMap: sendableImage.PixelMap) {
   try {
     pixelMap.opacitySync(rate);
     console.info('Succeeded in setting opacity.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to set opacity. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -1147,8 +1147,8 @@ function createAlphaPixelmapSync(pixelMap: sendableImage.PixelMap) {
       return;
     }
     console.info('Succeeded in creating alpha PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to create alpha PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -1238,8 +1238,8 @@ function scaleSync(pixelMap: sendableImage.PixelMap) {
   try {
     pixelMap.scaleSync(scaleX, scaleY);
     console.info('Succeeded in scaling the PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to scale the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -1329,8 +1329,8 @@ function translateSync(pixelMap: sendableImage.PixelMap) {
   try {
     pixelMap.translateSync(translateX, translateY);
     console.info('Succeeded in translating the PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to translate the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -1420,8 +1420,8 @@ function rotateSync(pixelMap: sendableImage.PixelMap) {
   try {
     pixelMap.rotateSync(angle);
     console.info('Succeeded in rotating the PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to rotate the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -1503,8 +1503,8 @@ function flipSync(pixelMap: sendableImage.PixelMap) {
   try {
     pixelMap.flipSync(horizontal, vertical);
     console.info('Succeeded in flipping the PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to flip the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -1584,8 +1584,8 @@ function cropSync(pixelMap: sendableImage.PixelMap) {
   try {
     pixelMap.cropSync(region);
     console.info('Succeeded in cropping the PixelMap.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to crop the PixelMap. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -1624,8 +1624,8 @@ function getColorSpace(pixelMap: sendableImage.PixelMap) {
   try {
     const csm = pixelMap.getColorSpace();
     console.info(`Succeeded in getting color space: ${csm.getColorSpaceName()}.`);
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to get color space. Code: ${err.code}, message: ${err.message}`);
   }
 }
@@ -1666,8 +1666,8 @@ function setColorSpace(pixelMap: sendableImage.PixelMap) {
   try {
     pixelMap.setColorSpace(csm);
     console.info('Succeeded in setting color space.');
-  } catch (e) {
-    const err = e as BusinessError;
+  } catch (error) {
+    const err = error as BusinessError;
     console.error(`Failed to set color space. Code: ${err.code}, message: ${err.message}`);
   }
 }

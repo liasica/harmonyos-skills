@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-performan
 title: 性能规则@performance
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:59+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:9d6c0fb7d95affd2d0e7c80464115af9ac89f25c6ee31828ac3b46344394741e
+scraped_at: 2026-11-12T09:52:57+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7ff794523de0fddfdf73b54b5762d758eba4f904165ac6dadb7d67c6e427c4f4
 ---
 
 * **[@performance/avoid-overusing-custom-component-check](ide-avoid-overusing-custom-component-check.md)**
@@ -77,6 +77,7 @@ content_hash: sha256:9d6c0fb7d95affd2d0e7c80464115af9ac89f25c6ee31828ac3b4634439
 * **[@performance/sparse-array-check](ide-sparse-array-check.md)**
 * **[@performance/start-window-icon-check](ide-start-window-icon-check.md)**
 * **[@performance/state-variable-usage-in-ui-format-check](ide-state-variable-usage-in-ui-format-check.md)**
+* **[@performance/suggest-use-socket-in-async-thread](ide-suggest-use-socket-in-async-thread.md)**
 * **[@performance/typed-array-check](ide-typed-array-check.md)**
 * **[@performance/timezone-interface-check](ide-timezone-interface-check.md)**
 * **[@performance/tabs-on-change-check](ide-tabs-on-change-check.md)**

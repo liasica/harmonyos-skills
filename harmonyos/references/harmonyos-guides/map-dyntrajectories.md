@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-dyntrajec
 title: 动态轨迹
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 动态轨迹
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:36+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:05d10a6ee8f4eeb47e5ec5b6c10162de8fcaa67af6ab90b3fd79fc21b8bdab1e
+scraped_at: 2026-11-12T09:52:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:abbef4d8cce13ac8ba909317b5976e9c2e638375a4c9880a7903c1c123942aee
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:05d10a6ee8f4eeb47e5ec5b6c10162de8fcaa67af6ab90b3fd79fc21b8b
 
 动态轨迹功能可用于实时展示车辆行驶路径、用户运动轨迹等，帮助用户直观了解行程信息，并支持轨迹回放、暂停、删除等操作，广泛应用于物流跟踪、出行导航、运动监测等领域。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/Kx5ji7X3Sa26RWUZCoJh_g/zh-cn_image_0000002779851496.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/Cb9BjpecSCSLtQnYZYUpPQ/zh-cn_image_0000002815559869.gif "点击放大")
 
 ## 接口说明
 
@@ -45,6 +45,7 @@ content_hash: sha256:05d10a6ee8f4eeb47e5ec5b6c10162de8fcaa67af6ab90b3fd79fc21b8b
      private mapOptions?: mapCommon.MapOptions;
      private mapController?: map.MapComponentController;
      private callback?: AsyncCallback<map.MapComponentController>;
+     private traceOverlay?: map.TraceOverlay;
 
      aboutToAppear(): void {
        // 初始化地图参数
@@ -60,8 +61,8 @@ content_hash: sha256:05d10a6ee8f4eeb47e5ec5b6c10162de8fcaa67af6ab90b3fd79fc21b8b
        }
 
        this.callback = async (err, mapController) => {
-         console.info(this.TAG, "mapCallback err=" + JSON.stringify(err) +
-           "; mapController=" + JSON.stringify(mapController));
+         console.info(this.TAG, 'mapCallback err=' + JSON.stringify(err) +
+           '; mapController=' + JSON.stringify(mapController));
          if (!err) {
            this.mapController = mapController;
            // marker1的参数
@@ -71,7 +72,7 @@ content_hash: sha256:05d10a6ee8f4eeb47e5ec5b6c10162de8fcaa67af6ab90b3fd79fc21b8b
                longitude: 118.7622219990476
              },
              // 存放在resources/base/media目录下
-             icon: $r("app.media.track_setting_sport_map_marker_22"),
+             icon: $r('app.media.track_setting_sport_map_marker_22'),
              anchorU: 0.5,
              anchorV: 1,
              visible: true
@@ -80,29 +81,29 @@ content_hash: sha256:05d10a6ee8f4eeb47e5ec5b6c10162de8fcaa67af6ab90b3fd79fc21b8b
            let markerBoy1 = await this.mapController.addMarker(markerOptions1);
            let boyImages1: map.PlayImageAnimation = new map.PlayImageAnimation();
            boyImages1.setDuration(1000);
-           let resourceArray: Array<Resource> = new Array();
+           let resourceArray: ResourceStr[] = [];
            // 每一帧展示的图片，需要替换您自己的资源图片，存放在resources/base/media目录下
-           resourceArray.push($r("app.media.side_0"));
-           resourceArray.push($r("app.media.side_1"));
-           resourceArray.push($r("app.media.side_2"));
-           resourceArray.push($r("app.media.side_3"));
-           resourceArray.push($r("app.media.side_4"));
-           resourceArray.push($r("app.media.side_5"));
-           resourceArray.push($r("app.media.side_6"));
-           resourceArray.push($r("app.media.side_7"));
-           resourceArray.push($r("app.media.side_8"));
-           resourceArray.push($r("app.media.side_9"));
-           resourceArray.push($r("app.media.side_10"));
-           resourceArray.push($r("app.media.side_11"));
-           resourceArray.push($r("app.media.side_12"));
-           resourceArray.push($r("app.media.side_13"));
-           resourceArray.push($r("app.media.side_14"));
-           resourceArray.push($r("app.media.side_15"));
-           resourceArray.push($r("app.media.side_16"));
-           resourceArray.push($r("app.media.side_17"));
-           resourceArray.push($r("app.media.side_18"));
-           resourceArray.push($r("app.media.side_19"));
-           resourceArray.push($r("app.media.side_20"));
+           resourceArray.push($r('app.media.side_0'));
+           resourceArray.push($r('app.media.side_1'));
+           resourceArray.push($r('app.media.side_2'));
+           resourceArray.push($r('app.media.side_3'));
+           resourceArray.push($r('app.media.side_4'));
+           resourceArray.push($r('app.media.side_5'));
+           resourceArray.push($r('app.media.side_6'));
+           resourceArray.push($r('app.media.side_7'));
+           resourceArray.push($r('app.media.side_8'));
+           resourceArray.push($r('app.media.side_9'));
+           resourceArray.push($r('app.media.side_10'));
+           resourceArray.push($r('app.media.side_11'));
+           resourceArray.push($r('app.media.side_12'));
+           resourceArray.push($r('app.media.side_13'));
+           resourceArray.push($r('app.media.side_14'));
+           resourceArray.push($r('app.media.side_15'));
+           resourceArray.push($r('app.media.side_16'));
+           resourceArray.push($r('app.media.side_17'));
+           resourceArray.push($r('app.media.side_18'));
+           resourceArray.push($r('app.media.side_19'));
+           resourceArray.push($r('app.media.side_20'));
            await boyImages1.addImages(resourceArray);
            boyImages1.setRepeatCount(-1);
 
@@ -116,7 +117,7 @@ content_hash: sha256:05d10a6ee8f4eeb47e5ec5b6c10162de8fcaa67af6ab90b3fd79fc21b8b
                latitude: 31.99227173519985,
                longitude: 118.7622219990476
              },
-             icon: $r("app.media.track_setting_sport_map_marker_22"),
+             icon: $r('app.media.track_setting_sport_map_marker_22'),
              anchorU: 0.5,
              anchorV: 1,
              visible: false
@@ -125,34 +126,34 @@ content_hash: sha256:05d10a6ee8f4eeb47e5ec5b6c10162de8fcaa67af6ab90b3fd79fc21b8b
            let markerBoy2 = await this.mapController.addMarker(markerOptions2);
            let boyImages2: map.PlayImageAnimation = new map.PlayImageAnimation();
            boyImages2.setDuration(1000);
-           let resourceArray2: Array<Resource> = new Array();
-           // 需要替换您自己的资源图片，存放在resources/base/media目录下
-           resourceArray2.push($r("app.media.behavior_front_cycling_boy_000"));
-           resourceArray2.push($r("app.media.behavior_front_cycling_boy_001"));
-           resourceArray2.push($r("app.media.behavior_front_cycling_boy_002"));
-           resourceArray2.push($r("app.media.behavior_front_cycling_boy_003"));
-           resourceArray2.push($r("app.media.behavior_front_cycling_boy_004"));
-           resourceArray2.push($r("app.media.behavior_front_cycling_boy_005"));
-           resourceArray2.push($r("app.media.behavior_front_cycling_boy_006"));
-           resourceArray2.push($r("app.media.behavior_front_cycling_boy_007"));
-           resourceArray2.push($r("app.media.behavior_front_cycling_boy_008"));
-           resourceArray2.push($r("app.media.behavior_front_cycling_boy_009"));
-           resourceArray2.push($r("app.media.behavior_front_cycling_boy_010"));
-           resourceArray2.push($r("app.media.behavior_front_cycling_boy_011"));
-           resourceArray2.push($r("app.media.behavior_front_cycling_boy_012"));
-           resourceArray2.push($r("app.media.behavior_front_cycling_boy_013"));
-           resourceArray2.push($r("app.media.behavior_front_cycling_boy_014"));
-           resourceArray2.push($r("app.media.behavior_front_cycling_boy_015"));
-           resourceArray2.push($r("app.media.behavior_front_cycling_boy_016"));
-           resourceArray2.push($r("app.media.behavior_front_cycling_boy_017"));
-           resourceArray2.push($r("app.media.behavior_front_cycling_boy_018"));
+           let resourceArray2: ResourceStr[] = [];
+           // 每一帧展示的图片，需要替换您自己的资源图片，存放在resources/base/media目录下
+           resourceArray2.push($r('app.media.behavior_front_cycling_boy_000'));
+           resourceArray2.push($r('app.media.behavior_front_cycling_boy_001'));
+           resourceArray2.push($r('app.media.behavior_front_cycling_boy_002'));
+           resourceArray2.push($r('app.media.behavior_front_cycling_boy_003'));
+           resourceArray2.push($r('app.media.behavior_front_cycling_boy_004'));
+           resourceArray2.push($r('app.media.behavior_front_cycling_boy_005'));
+           resourceArray2.push($r('app.media.behavior_front_cycling_boy_006'));
+           resourceArray2.push($r('app.media.behavior_front_cycling_boy_007'));
+           resourceArray2.push($r('app.media.behavior_front_cycling_boy_008'));
+           resourceArray2.push($r('app.media.behavior_front_cycling_boy_009'));
+           resourceArray2.push($r('app.media.behavior_front_cycling_boy_010'));
+           resourceArray2.push($r('app.media.behavior_front_cycling_boy_011'));
+           resourceArray2.push($r('app.media.behavior_front_cycling_boy_012'));
+           resourceArray2.push($r('app.media.behavior_front_cycling_boy_013'));
+           resourceArray2.push($r('app.media.behavior_front_cycling_boy_014'));
+           resourceArray2.push($r('app.media.behavior_front_cycling_boy_015'));
+           resourceArray2.push($r('app.media.behavior_front_cycling_boy_016'));
+           resourceArray2.push($r('app.media.behavior_front_cycling_boy_017'));
+           resourceArray2.push($r('app.media.behavior_front_cycling_boy_018'));
            await boyImages2.addImages(resourceArray2);
            boyImages2.setRepeatCount(-1);
            // marker2添加动画
            markerBoy2.setAnimation(boyImages2);
            markerBoy2.startAnimation();
 
-           let points: Array<mapCommon.LatLng> = new Array();
+           let points: mapCommon.LatLng[] = [];
            points.push({ latitude: 31.99685233070878, longitude: 118.75846023442728 });
            points.push({ latitude: 31.99671325810786, longitude: 118.75846738985165 });
            points.push({ latitude: 31.99659191076709, longitude: 118.7585347621686 });
@@ -200,11 +201,11 @@ content_hash: sha256:05d10a6ee8f4eeb47e5ec5b6c10162de8fcaa67af6ab90b3fd79fc21b8b
                }
              }
            }
-           let markers: Array<map.Marker> = new Array();
+           let markers: map.Marker[] = [];
            markers.push(markerBoy1, markerBoy2);
            // 新增轨迹点动画
            try {
-             let traceOverlay = await this.mapController.addTraceOverlay(traceOptions, markers);
+             this.traceOverlay = await this.mapController.addTraceOverlay(traceOptions, markers);
            } catch (e) {
              console.error(`Failed to create the traceOverlay, code is：${e.code}, message is ${e.message}`);
            }
@@ -213,14 +214,18 @@ content_hash: sha256:05d10a6ee8f4eeb47e5ec5b6c10162de8fcaa67af6ab90b3fd79fc21b8b
          }
        }
      }
+     
+     aboutToDisappear(): void {
+       if (this.traceOverlay) {
+         // 删除动态轨迹
+         this.traceOverlay.remove()
+       }
+     }
 
      build() {
        Stack() {
          Column() {
-           MapComponent({
-             mapOptions: this.mapOptions,
-             mapCallback: this.callback,
-           }).width('100%').height('100%');
+           MapComponent({ mapOptions: this.mapOptions, mapCallback: this.callback });
          }.width('100%')
        }.height('100%')
      }

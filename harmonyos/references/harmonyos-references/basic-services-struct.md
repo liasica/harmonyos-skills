@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/basic-ser
 title: 结构体
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-10-11T07:26:32+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:53c3f7821ad593ab77d77c448ff2d45dbb6143a5467eeab9283dc3e447c5461b
+scraped_at: 2026-11-12T09:55:57+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:9b828af5c7095596bed91c5d1f1c2cee755ffb15250906dae89d015acc14c084
 ---
 
 * **[CommonEvent\_SubscribeInfo](capi-oh-commonevent-commonevent-subscribeinfo.md)**
@@ -31,3 +31,8 @@ content_hash: sha256:53c3f7821ad593ab77d77c448ff2d45dbb6143a5467eeab9283dc3e447c
 * **[Scan\_ScannerDevice](capi-oh-scan-scan-scannerdevice.md)**
 * **[Scan\_PictureScanProgress](capi-oh-scan-scan-picturescanprogress.md)**
 * **[Scan\_ScannerOptions](capi-oh-scan-scan-scanneroptions.md)**
+* **[OH\_UsbManager\_UsbConfig](capi-usbmanager-oh-usbmanager-usbconfig.md)**
+* **[OH\_UsbManager\_UsbDevice](capi-usbmanager-oh-usbmanager-usbdevice.md)**
+* **[OH\_UsbManager\_UsbEndpoint](capi-usbmanager-oh-usbmanager-usbendpoint.md)**
+* **[OH\_UsbManager\_UsbInterface](capi-usbmanager-oh-usbmanager-usbinterface.md)**
+* **[OH\_UsbManager\_UsbPipe](capi-usbmanager-oh-usbmanager-usbpipe.md)**

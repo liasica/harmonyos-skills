@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/save-user-fil
 title: 保存用户文件
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 用户文件 > 选择与保存用户文件 > 保存用户文件
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:59+08:00
-doc_updated_at: 2026-10-26
+scraped_at: 2026-11-12T09:51:25+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:5018dc7062aca1005554acf3fb3a815ede7b8875d2a6057346273721e538b51c
 ---
 

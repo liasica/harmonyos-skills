@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-ping
 title: ohpm ping
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm ping
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:24+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:0db4cbd89a9a829e9fca43506e7502912c3dfc7afd7c8d3e309617c7f6e12d5e
+scraped_at: 2026-11-12T09:53:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3e19084d901019df25a21e87b5168b5d61b1d9d4eea0a0a950e102877d9a5a83
 ---
 
 ping ohpm 仓库地址。
@@ -44,7 +44,7 @@ ohpm ERROR: HttpCode 404, API ping in your_registry - Not Found
 ### fetch\_timeout
 
 * 默认值：60000
-* 类型： Number
+* 类型：Number
 * 别名：ft
 
 可以在 ping 命令后面配置 --ft <number> 或者 --fetch\_timeout <number> 参数，设置操作的超时时间，如果没有指定，默认超时时间为 60000 ms。

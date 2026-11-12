@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (ColorManagement)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (ColorManagement)
 category: harmonyos-references
-scraped_at: 2026-10-01T07:39:25+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:081a411d0d23d5f9bb24eefa8429c49f5e56a51a953a4bfdfa525d98504babd9
+scraped_at: 2026-11-12T09:56:31+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c40ac0a3d613795aab1a7f57f6485fdb8c627f4ca34f6281ad88172452039c6f
 ---
 
 ColorManagement继承自[ColorManagementQuery](arkts-apis-camera-colormanagementquery.md)。
@@ -91,12 +91,14 @@ P3广色域与HDR高动态范围成像：
 import { BusinessError } from '@kit.BasicServicesKit';
 import { colorSpaceManager } from '@kit.ArkGraphics2D';
 
-function setColorSpace(session: camera.PhotoSession, colorSpaces: Array<colorSpaceManager.ColorSpace>): void {
-  if (colorSpaces === undefined || colorSpaces.length <= 0) {
+function setColorSpace(session: camera.PhotoSession, colorSpace: colorSpaceManager.ColorSpace): void {
+  let colors = session.getSupportedColorSpaces();
+  if (!colors.includes(colorSpace)) {
+    console.error(`invalid colorSpaces.`);
     return;
   }
   try {
-    session.setColorSpace(colorSpaces[0]);
+    session.setColorSpace(colorSpace);
   } catch (error) {
     let err = error as BusinessError;
     console.error(`The setColorSpace call failed, error code: ${err.code}`);

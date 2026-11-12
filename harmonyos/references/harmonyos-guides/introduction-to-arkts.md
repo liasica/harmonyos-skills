@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/introduction-
 title: ArkTS语言介绍
 breadcrumb: 指南 > 基础入门 > 学习ArkTS语言 > ArkTS语言介绍
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:50+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:93cbbed508f0497be4e79639e7a742fc144ed8a463bcf1e2b6b39b1eb3f66463
+scraped_at: 2026-11-12T09:50:57+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:98fbc210c79972339bd3d3c81a573ca6d74c92ad0842d91ed26909d6e0212be5
 ---
 
 ArkTS是一种设计用于构建高性能应用的编程语言。它在继承TypeScript语法的基础上进行了优化，以提供更高的性能和开发效率。
@@ -492,15 +492,11 @@ for ([init]; [condition]; [update]) {
 
 for语句的执行流程如下：
 
-1、 执行init表达式（如有）。此表达式通常初始化一个或多个循环计数器。
-
-2、 计算condition。如果它为真值（转换后为true的值），则执行循环主体的语句。如果它为假值（转换后为false的值），则for循环终止。
-
-3、 执行循环主体的语句。
-
-4、 如果有update表达式，则执行该表达式。
-
-5、 返回步骤2。
+1. 执行init表达式（如有）。此表达式通常初始化一个或多个循环计数器。
+2. 计算condition。如果它为真值（转换后为true的值），则执行循环主体的语句。如果它为假值（转换后为false的值），则for循环终止。
+3. 执行循环主体的语句。
+4. 如果有update表达式，则执行该表达式。
+5. 返回步骤2。
 
 示例：
 
@@ -692,9 +688,8 @@ function processData(s: string) {
 
 以下示例是一个简单的函数和它的语法语义说明：
 
-1.参数类型标注：x: string, y: string 显式声明参数类型为字符串类型。
-
-2.返回值类型：: string 指定函数返回值为字符串类型。
+1. 参数类型标注：x: string, y: string 显式声明参数类型为字符串类型。
+2. 返回值类型：: string 指定函数返回值为字符串类型。
 
 ```typescript
 function add(x: string, y: string): string {

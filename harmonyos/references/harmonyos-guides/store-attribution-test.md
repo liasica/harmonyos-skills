@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-attribu
 title: 接入调试功能
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用归因服务 > 接入调试功能
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:12+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:4e08875dcfa9e4740586f967b87c82831e700178c24043f56a0044c9578dc7fc
+scraped_at: 2026-11-12T09:52:19+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a01b733d5a1e8e877f821ec9bddde414146b2f62a0783700bb548a9812dba0aa
 ---
 
 应用归因服务为开发者提供接入调试能力，支持开发者在接入过程中进行自助调试，通过调用调试接口验证接入的准确性及归因结果回传等基础能力，从而提升接入效率。
@@ -52,21 +52,21 @@ content_hash: sha256:4e08875dcfa9e4740586f967b87c82831e700178c24043f56a0044c9578
    let privateKey: string = '';
    let publicKey: string = '';
    // 可以使用虚拟的adTechId，长度固定为8个字符。
-   let adTechId: string = '1******8';
+   let adTechId: string = '2A3B4C5D';
    // 广告平台创建的广告任务ID。
    // 自API 12起，campaignId长度小于等于6个字符
    // 自API 22起，campaignId长度小于等于9个字符
    let campaignId: string = '';
    let osApiVersion: number = deviceInfo.sdkApiVersion;
    if (osApiVersion >= 22) {
-       campaignId = '1*******9';
+       campaignId = '123456789';
    } else {
-       campaignId = '1****6';
+       campaignId = '123456';
    }
    // 开发者应用上架华为应用市场的appId，不带C
-   let destinationId: string = '1******8';
+   let destinationId: string = '12345678';
    // 归因监测平台id
-   let mmpIds: string[] = ['1******8', '2******9'];
+   let mmpIds: string[] = ['abcd1234', 'abcd5678'];
    // 分发平台关注的业务信息
    let serviceTag: string = 'testServiceTag';
    // 用于计算签名的随机数，不带'-'
@@ -122,18 +122,18 @@ content_hash: sha256:4e08875dcfa9e4740586f967b87c82831e700178c24043f56a0044c9578
    let campaignId: string = '';
    let osApiVersion: number = deviceInfo.sdkApiVersion;
    if (osApiVersion >= 22) {
-       campaignId = '1*******9';
+       campaignId = '123456789';
    } else {
-       campaignId = '1****6';
+       campaignId = '123456';
    }
    let postbackInfo: attributionTestManager.PostbackInfo = {
        // 分发平台对应的归因角色ID，在应用归因云侧注册应用生态伙伴角色时，由应用归因服务分配
-       adTechId: '1******8',
+       adTechId: '2A3B4C5D',
        campaignId: campaignId,
        // 开发者应用上架华为应用市场的appId，不带C
-       destinationId: '1******8',
+       destinationId: '12345678',
        // 媒体应用id
-       sourceId: '1******8',
+       sourceId: '12345678',
        // 分发平台关注的业务信息
        serviceTag: 'testServiceTag',
        triggerData: 123,
@@ -169,7 +169,7 @@ content_hash: sha256:4e08875dcfa9e4740586f967b87c82831e700178c24043f56a0044c9578
 2. 构造参数adTechId。
 
    ```typescript
-   let adTechId: string = '1******8';
+   let adTechId: string = '2A3B4C5D';
    ```
 3. 调用[attributionTestManager.flushPostbacks](../harmonyos-references/store-attributiontestmanager.md#attributiontestmanagerflushpostbacks)方法触发归因结果回传。
 

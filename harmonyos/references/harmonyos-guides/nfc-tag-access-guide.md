@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nfc-tag-acces
 title: NFC标签读写开发指南
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > NFC > NFC标签读写开发指南
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:35+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:ea1f15c7f97ea1efd8d64eb2540a0e419c57d2a39922429087466de7024f6eef
+scraped_at: 2026-11-12T09:51:43+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:50c3a0d2b324fa612b0dceda41b0b6afa0dfc3f1ea7bfb66032192e9daf112b1
 ---
 
 ## 简介
@@ -206,7 +206,7 @@ async function readerModeCb(error: BusinessError, tagInfo: tag.TagInfo) {
       return;
     }
   } else {
-    hilog.info(0x0000, 'testTag', 'readerModeCb readerModeCb error %{public}s', JSON.stringify(error));
+    hilog.error(0x0000, 'testTag', 'readerModeCb readerModeCb error %{public}s', JSON.stringify(error));
   }
 }
 
@@ -264,7 +264,7 @@ export default class EntryAbility extends UIAbility {
 
 ### 后台读取标签
 
-1. 在module.json5文件中声明NFC标签读取的权限，声明NFC标签特定的action，以及声明本应用程序的能够处理的NFC标签技术类型。
+1. 在module.json5文件中声明NFC标签读取的权限，声明NFC标签特定的action，以及声明本应用程序能够处理的NFC标签技术类型。
 2. import需要的tag模块和其他相关的模块。
 3. 获取特定技术类型的NFC标签对象。
 4. 执行读写接口完成标签数据的读取或写入数据到标签。

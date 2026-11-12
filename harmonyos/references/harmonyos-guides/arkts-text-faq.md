@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-text-fa
 title: 使用文本常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI开发常见问题 > 使用文本常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:23+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:22cf43b6455e4f7029c21b4490cc4f8e2db140879828369c59bb76f0c76ad454
+scraped_at: 2026-11-12T09:51:20+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3bc6d2e207b5da5b9fde54f6162575ba72f72ffbde7fd4a9891709ec60b1efd2
 ---
 
 本文档介绍使用文本的常见问题并提供参考。
@@ -20,7 +20,7 @@ content_hash: sha256:22cf43b6455e4f7029c21b4490cc4f8e2db140879828369c59bb76f0c76
 
 在Text组件上未设置宽度，当内容过长时，省略号与组件边缘之间会留有较大空白，且内容更新时省略号的位置会发生变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/t6TkWzByQHWnvHYaOYFhaQ/zh-cn_image_0000002779690462.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/65BjagrlTnKygVgJYVkmsw/zh-cn_image_0000002815558793.gif)
 
 **原因分析**
 
@@ -36,7 +36,7 @@ content_hash: sha256:22cf43b6455e4f7029c21b4490cc4f8e2db140879828369c59bb76f0c76
 import { common } from '@kit.AbilityKit';
 @Entry
 @Component
-struct WordBreakd {
+struct WordBreakExample {
   private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
   private manager = this.context.resourceManager;
 
@@ -65,7 +65,7 @@ struct WordBreakd {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/OiuHK-bRQXKoQtMqh_Acyw/zh-cn_image_0000002809010081.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/f3kDGI2YRGyJ2DIczO4mHw/zh-cn_image_0000002815398877.gif)
 
 ### Text组件如何实现行末展开样式
 
@@ -126,7 +126,7 @@ struct HeightAdaptivePolicy {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/deVh9YfZTaWeBeK7gK6OAg/zh-cn_image_0000002809049997.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/KtLb2o2iQH6sN1UZyCNqPQ/zh-cn_image_0000002786519302.gif)
 
 ### 在文本前后添加自定义标签
 
@@ -251,7 +251,7 @@ struct LengthMetric {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/PIxqD9lyQ02UKr6t9sz3Ig/zh-cn_image_0000002779850432.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/MXBeRQsqQXuyhVBcd81X0Q/zh-cn_image_0000002786359374.png)
 
 ### Text组件如何实现表情与文字一起显示
 
@@ -364,7 +364,7 @@ struct DisplayedTogether {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/MKI-XipcTmqp1vzVLIKMYw/zh-cn_image_0000002779690464.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/BexajM25REKcxh2y6Rjjpw/zh-cn_image_0000002815558795.png)
 
 ### 文本超长时如何展示
 
@@ -408,7 +408,7 @@ struct TextLong {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/-TY8ujc8QHeWicwiuH2uYw/zh-cn_image_0000002809010083.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/B2zo-15JTQGd7hS84Vh0Jg/zh-cn_image_0000002815398879.png)
 
 **解决措施二**
 
@@ -419,7 +419,7 @@ import { common } from '@kit.AbilityKit';
 
 @Entry
 @Component
-struct TextLongTow {
+struct TextLongTwo {
   private context = this.getUIContext().getHostContext() as common.UIAbilityContext;
   private manager = this.context.resourceManager;
 
@@ -445,7 +445,7 @@ struct TextLongTow {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/QxKARf8RRSKBPlXUCybNAA/zh-cn_image_0000002809049999.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/MG2kg3CQTXK35edIPOPcHg/zh-cn_image_0000002786519304.gif)
 
 ### selection如何触发弹出自定义菜单并设置菜单字体大小
 
@@ -515,7 +515,7 @@ export struct HowToSetCustomSelectionMenuExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/IDVV0emhStSiHwuSeCSxjg/zh-cn_image_0000002779850434.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/1f7NOS8SRvO14gw3wpMqZw/zh-cn_image_0000002786359376.gif)
 
 ### 如何屏蔽文本的长按手势
 
@@ -527,26 +527,29 @@ export struct HowToSetCustomSelectionMenuExample {
 
 想要使长按手势对文本不生效，可以设置触发时间小于系统菜单触发时间（500ms）的自定义长按手势。
 
-```ts
-// xxx.ets
+```typescript
 @Entry
 @Component
-struct TextExample8 {
+export struct HowToDisableTextLongPressExample {
   build() {
-    Column() {
-      Text("TextTextTextText")
-        .copyOption(CopyOptions.InApp)
-        .gesture(LongPressGesture({ repeat: false, duration: 400 })
-          .onAction(() => {
-          }))
-        .margin({
-          top: 100,
-          bottom: 100,
-          left: 100,
-          right: 100
-        })
+    NavDestination() {
+      Column() {
+        Text('TextTextTextText')
+          .copyOption(CopyOptions.InApp)
+          .gesture(LongPressGesture({ repeat: false, duration: 400 })
+            .onAction(() => {
+            }))
+          .margin({
+            top: 100,
+            bottom: 100,
+            left: 100,
+            right: 100
+          })
+      }
+      .height('100%')
     }
-    .height('100%')
+    .backgroundColor('#f1f2f3')
+    .title($r('app.string.How_To_Disable_Text_Long_Press'))
   }
 }
 ```
@@ -631,4 +634,4 @@ export struct CursorPersistsWhenTextInputIsCoveredExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/THo2dFc9SPKLR8NhGVpxEw/zh-cn_image_0000002779690466.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/XB_2FfJRS-CjAuNkvO2Bjg/zh-cn_image_0000002815558797.gif)

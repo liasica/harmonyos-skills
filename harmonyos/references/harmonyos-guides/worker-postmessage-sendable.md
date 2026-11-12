@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/worker-postme
 title: 多级Worker间高性能消息通信
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信场景 > 多级Worker间高性能消息通信
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:44:56+08:00
-doc_updated_at: 2026-09-17
+scraped_at: 2026-11-12T09:51:03+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:22c04512aec6468502c783c5bb72d4ebb51f870b7f048e750202938a18f348e2
 ---
 

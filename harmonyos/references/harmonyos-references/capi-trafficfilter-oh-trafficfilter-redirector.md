@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-traf
 title: OH_TrafficFilter_Redirector
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 结构体 > OH_TrafficFilter_Redirector
 category: harmonyos-references
-scraped_at: 2026-09-02T14:52:22+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:55:43+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:923988181225ec86faffa3832988e914e5e6203b0c1633109fb98d851c93257e
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-signing-a
 title: 自动签名
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 配置调试签名 > 自动签名
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:21+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:99a3df11fad4de2fb6a822ceb54ca929d364656836407bfd2f2c63792bcbf475
+scraped_at: 2026-11-12T09:53:02+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e68be8c1d0c5912e1264c698154a911c6792a70e675a93f66c9238d112d3f500
 ---
 
 ## 功能介绍
@@ -32,13 +32,13 @@ HarmonyOS应用调试时，自动签名分为关联注册应用和未关联注�
    * 如果同时连接多个设备，则使用自动签名时，会同时将这多个设备的信息写到证书文件中。
 2. 进入**File > Project Structure... > Project > Signing Configs**界面，勾选"**Associate with registered application**"。如果未登录，请先点击**Sign In**进行登录。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/5gg_FXgMQCGUB5NcbAzNjw/zh-cn_image_0000002701662824.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/yI8CVle3RvS6eXagWaHStg/zh-cn_image_0000002808886231.png "点击放大")
 
    **说明** 
 
    * 点击**Team**下拉框，可以切换团队账号。
    * DevEco Studio根据Bundle name查询该团队在AGC上同包名的应用。若在AGC查询到应用，则进行自动签名；若在AGC未查询到应用或应用冲突，请根据提示信息修改后重新自动签名，具体修改请参考[常见问题](../harmonyos-faqs/signature-service-faq-0002.md)。
-3. 点击**Enable open capabilities**，管理接入的[开放能力](../app/agc-help-create-app-0000002247955506.md#section1817619495251)，开放能力接入方式包括默认开启、直接开启、申请开启。当前支持的开放能力请参考[自动签名支持的开放能力](ide-signing-auto.md#section179851045217)。
+3. 点击**Enable open capabilities**，管理接入的开放能力，开放能力接入方式包括默认开启、直接开启、申请开启。当前支持的开放能力请参考[自动签名支持的开放能力](ide-signing-auto.md#section179851045217)。
    * 默认开启：默认勾选该开放能力，包括Account Kit、Location Kit、Intents Kit。
    * 直接开启：点击开放能力名称，在界面右侧查看功能简介，勾选后可直接开启。
    * 申请开启：点击开放能力名称，在界面右侧查看功能简介，填写申请理由（Application Reason）和上传附件（Upload Attachment）。申请后在AGC的[互动中心页面](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/interactive)可看到已提交的申请消息，具体请参考[管理接入的华为开放能力](../app/agc-help-open-capability-0000002465058093.md)。
@@ -47,22 +47,27 @@ HarmonyOS应用调试时，自动签名分为关联注册应用和未关联注�
 
    Push Kit（推送服务）开放能力接入后不可取消。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/hza5uZyFQTeOfOcqMukp2w/zh-cn_image_0000002731382057.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/ZqlFWrIQTC6mTpnVJY2PfA/zh-cn_image_0000002808766161.png "点击放大")
 4. （可选）添加ACL权限信息，ACL权限清单请参考[自动签名支持的ACL权限](ide-signing-auto.md#section5301916183411)。
 
    **26.0.0及以上版本**
-   1. 点击**Enable ACL Permissions**进入ACL权限配置界面，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/-cErgDRLRvOHXrqwV3H5hA/zh-cn_image_0000002701662830.png)添加模块的ACL权限。添加的权限会同步至模块的module.json5文件，以及模块module.json5文件中添加的权限信息也会同步至ACL权限配置界面。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/QpFRV7AKR7-uhwoaKL1_-A/zh-cn_image_0000002731382053.png)
-   2. 选中ACL权限名称后点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/l47HfESDS5qIgZEhS3LCAQ/zh-cn_image_0000002731542031.png)，选择权限适用模块（Module）、填写申请原因（Reason）、勾选调用时机（When）和Abilities，点击**OK**完成ACL权限配置。此外，开发者可点击编辑/删除按钮，对已填写的ACL权限配置进行修改或移除。
+   **说明** 
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/XACoTaK-QyWxw2QlWH5w2A/zh-cn_image_0000002731382061.png)
+   Enable ACL Permissions功能仅支持中国境内（不包含中国香港、中国澳门、中国台湾）。
+
+   1. 点击**Enable ACL Permissions**进入ACL权限配置界面，点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/Gpq_76PxTbKY74f562bN9A/zh-cn_image_0000002808766157.png)添加模块的ACL权限。添加的权限会同步至模块的module.json5文件，以及模块module.json5文件中添加的权限信息也会同步至ACL权限配置界面。
+
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/tGzmII9DTSOsupi3tW4WaQ/zh-cn_image_0000002808886241.png "点击放大")
+   2. 选中ACL权限名称后点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/TBoWbWxGTpyBXZMxIiFg8A/zh-cn_image_0000002779566582.png)，选择权限适用模块（Module）、填写申请原因（Reason）、勾选调用时机（When）和Abilities，点击**OK**完成ACL权限配置。此外，开发者可点击编辑/删除按钮，对已填写的ACL权限配置进行修改或移除。
+
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/iTqQX8SkSWK6P1WB6Tr0Ew/zh-cn_image_0000002808766165.png)
    3. 填写所有ACL权限的申请原因（Request reason）和上传附件（Attachment），点击**OK**提交申请。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/e8pX0uZBTl-MFA62DK_qDw/zh-cn_image_0000002731542021.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/wybKGrKSQQCJiFRz6LvNww/zh-cn_image_0000002808886233.png)
    4. 提交后可在AGC的[互动中心页面](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/interactive)查看ACL权限申请进度，或点击**Enable ACL Permissions**进入权限申请界面，过滤查看权限申请状态。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/gVH8-n1cTi2qr_MB9JjkNA/zh-cn_image_0000002766028302.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/-12T3q9LTxKfgoPF3GB-GA/zh-cn_image_0000002808766151.png)
 
    **26.0.0以下版本**
 
@@ -78,7 +83,7 @@ HarmonyOS应用调试时，自动签名分为关联注册应用和未关联注�
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/Bwi7pXjPTZOJD54QGuuKgQ/zh-cn_image_0000002701822742.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/E3-s9yMJQ3WEdSEAHrS_wQ/zh-cn_image_0000002779566572.png)
 
    **说明** 
 
@@ -88,7 +93,11 @@ HarmonyOS应用调试时，自动签名分为关联注册应用和未关联注�
    * 申请ACL后Profile证书说明：
      + 在ACL权限申请审批完成前，可获得一个有效期较短的临时Profile证书，使应用完成签名。临时证书到期后，若申请仍未审批通过，签名时需再次申请和再次获取临时证书。
      + 在ACL权限申请审批完成后，可获取一个有效期较长的正式Profile证书。
-5. 签名完成后，在本地生成密钥（.p12）、证书请求文件（.csr）、数字证书（.cer）及Profile文件（.p7b）。将鼠标悬停在Provisioning Profile: DevEco Managed Profile后![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/Z6NM7FDmTqaPzjGRl1Q6WA/zh-cn_image_0000002701822754.png)，可查看证书有效期、包名（bundle name）、ACL权限（acl）、开放能力（capability）等信息；或进入工程级build-profile.json5文件，在“signingConfigs”下查看到配置成功的签名信息。
+5. 配置完成后查看签名信息。
+
+   方式一：配置完成后，将鼠标悬停在**Provisioning Profile: DevEco Manage Profile**后![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/hXNaikWCSTmlqOGtGw-9lg/zh-cn_image_0000002808886237.png)，可查看证书有效期、包名（bundle name）、企业名称（common name）、ACL权限（acl）、开放能力（capability）相关信息。
+
+   方式二：26.0.1之前版本，进入工程级build-profile.json5文件，在“signingConfigs”下查看到配置成功的签名信息。从26.0.1版本开始，根据${default}所在的签名文件（build-profile.json5/sign-config.json5）进行查看。
 
 ### 未关联注册应用
 
@@ -112,7 +121,7 @@ HarmonyOS应用调试时，自动签名分为关联注册应用和未关联注�
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/yYSYfIS8To2w_0xRkCqkPg/zh-cn_image_0000002731382043.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/VXnXregXRNCgowm2SWSzlw/zh-cn_image_0000002808886235.png)
 
    **说明** 
 
@@ -120,8 +129,13 @@ HarmonyOS应用调试时，自动签名分为关联注册应用和未关联注�
    * 涉及受限权限的应用，上架时，应用市场（AGC）将根据应用的使用场景审核是否可以使用对应的受限权限，如不符合，应用的上架申请将被驳回。在配置ACL权限前，请审视是否符合[受限权限的使用场景](restricted-permissions.md)。当前仅少量符合特殊场景的应用可在通过审批后，使用受限权限，申请方式请见[申请使用受限权限](declare-permissions-in-acl.md)。
 3. 进入**File > Project Structure... > Project > Signing Configs**界面，勾选“**Automatically generate signature**”，点击**OK**即可完成签名。如果未登录，请先单击**Sign In**进行登录，然后自动完成签名。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/1eJtWnzhSxqUDdeB7zwOBw/zh-cn_image_0000002701822750.png "点击放大")
-4. 签名完成后，在本地生成密钥（.p12）、证书请求文件（.csr）、数字证书（.cer）及Profile文件（.p7b）。将鼠标悬停在Provisioning Profile: DevEco Managed Profile后![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/OUghcgacSTWnJ_ife-PkRg/zh-cn_image_0000002701822746.png)，可查看证书有效期、包名（bundle name）、ACL权限（acl）、开放能力（capability）等信息；或进入工程级build-profile.json5文件，在“signingConfigs”下查看到配置成功的签名信息。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/pMvnZOzBSbiI7BJXa0BngQ/zh-cn_image_0000002779566576.png)
+4. 签名完成后，在本地生成密钥（.p12）、证书请求文件（.csr）、数字证书（.cer）及Profile文件（.p7b）。
+5. 配置完成后查看签名信息。
+
+   方式一：配置完成后，将鼠标悬停在**Provisioning Profile: DevEco Manage Profile**后![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/54wNvp2fSVa-P3vOgBqnEA/zh-cn_image_0000002779406594.png)，可查看证书有效期、包名（bundle name）、企业名称（common name）、ACL权限（acl）、开放能力（capability）相关信息。
+
+   方式二：26.0.1之前版本，进入工程级build-profile.json5文件，在“signingConfigs”下查看到配置成功的签名信息。从26.0.1版本开始，根据${default}所在的签名文件（build-profile.json5/sign-config.json5）进行查看。
 
 ## （可选）OpenHarmony工程
 
@@ -133,11 +147,11 @@ HarmonyOS应用调试时，自动签名分为关联注册应用和未关联注�
 1. 连接[本地真机设备](ide-run-device.md)/[模拟器设备](ide-run-emulator.md)，或将[真机调试设备注册到AGC设备列表](../app/agc-help-add-device-0000002283189937.md)后，开始签名。从26.0.0版本开始，支持在AGC注册设备后开始签名。
 2. 进入**File > Project Structure... > Project > Signing Configs**界面。仅勾选“**Automatically generate signature**”时，生成OpenHarmony签名；勾选“**Support HarmonyOS**”和“**Automatically generate signature**”时，生成HarmonyOS签名（如果未登录，请先单击**Sign In**进行登录）。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/RRwVar4CR_WDoal9vC1dAA/zh-cn_image_0000002731542029.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/GAQv1TBHT4WQR5BVQwxCTg/zh-cn_image_0000002808766155.png)
 
    签名完成后，如下图所示。在本地生成密钥（.p12）、证书请求文件（.csr）、数字证书（.cer）及Profile文件（.p7b），数字证书在AGC网站的“证书、APP ID和Profile”页签中可以查看。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/hpyag2jEQmWVXUxoeaskwA/zh-cn_image_0000002701662826.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/UsrU95fMS0GShizpCqlc6Q/zh-cn_image_0000002779566580.png)
 
 ## 附录
 

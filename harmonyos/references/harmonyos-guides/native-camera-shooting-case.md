@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 拍照实践(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 拍照实践(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:10+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:3ded92dad1c441d423dd11a23e3d87354b66023179a3ce898db0336819783e2d
+scraped_at: 2026-11-12T09:52:05+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4719cc4631473ba329308b1064b0e58d47fb8c0b44028a7b2a57d2303510b5ed
 ---
 
 在开发相机应用时，需要先[申请相关权限](camera-preparation.md)。
@@ -16,7 +16,7 @@ content_hash: sha256:3ded92dad1c441d423dd11a23e3d87354b66023179a3ce898db03368197
 
 在获取到相机支持的输出流能力后，开始创建拍照流，开发流程如下。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/sjTbR6egSqufp7nZxjEc6Q/zh-cn_image_0000002809050555.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/gK52tlBoRSGHAVyoF9ACEg/zh-cn_image_0000002786359930.png)
 
 ## 完整示例
 
@@ -63,7 +63,7 @@ content_hash: sha256:3ded92dad1c441d423dd11a23e3d87354b66023179a3ce898db03368197
 
    void CaptureSessionOnError(Camera_CaptureSession* session, Camera_ErrorCode errorCode)
    {
-       OH_LOG_INFO(LOG_APP, "CaptureSessionOnError = %{public}d", errorCode);
+       OH_LOG_ERROR(LOG_APP, "CaptureSessionOnError = %{public}d", errorCode);
    }
 
    CaptureSession_Callbacks* GetCaptureSessionRegister(void)
@@ -87,7 +87,7 @@ content_hash: sha256:3ded92dad1c441d423dd11a23e3d87354b66023179a3ce898db03368197
 
    void PreviewOutputOnError(Camera_PreviewOutput* previewOutput, Camera_ErrorCode errorCode)
    {
-       OH_LOG_INFO(LOG_APP, "PreviewOutputOnError = %{public}d", errorCode);
+       OH_LOG_ERROR(LOG_APP, "PreviewOutputOnError = %{public}d", errorCode);
    }
 
    PreviewOutput_Callbacks* GetPreviewOutputListener(void)

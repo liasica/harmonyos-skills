@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-native-me
 title: 使用WebNativeMessagingExtensionAbility组件实现浏览器扩展和应用通信场景
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 使用WebNativeMessagingExtensionAbility组件实现浏览器扩展和应用通信场景
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:27+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:7312537ab4952c0bd0c2c6e84a8f7e19fb72eb154c894e5f4d9f12923d00df72
+scraped_at: 2026-11-12T09:51:24+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:12f6d789d91f4806ad1b9b1541fb9ffda154528000950d3588ce783da330789d
 ---
 
 ## 概述
 
-浏览器的扩展程序（extension）支持与系统上安装的应用交换消息，应用向扩展提供服务，帮助扩展实现一些应用才具备的能力，常见的例子是密码管理器：应用负责存储和加密你的密码信息，以便浏览器扩展程序自动填充网页中的表单字段。
+浏览器的扩展程序（extension）支持与系统上安装的应用交换消息，应用向扩展提供服务，帮助扩展实现一些应用才具备的能力，常见的例子是密码管理器：应用负责存储和加密开发者的密码信息，以便浏览器扩展程序自动填充网页中的表单字段。
 
 从API version 21开始，支持开发者在应用中使用[WebNativeMessagingExtensionAbility](../harmonyos-references/arkts-apis-web-webnativemessagingextensionability.md)组件，为浏览器扩展提供后台服务能力。
 
 浏览器扩展通过[WebExtensions runtime API](https://developer.mozilla.org/zh-CN/docs/Mozilla/Add-ons/WebExtensions/API/runtime)连接WebNativeMessagingExtensionAbility，双方通信是通过共享pipe文件描述符后调用IO接口实现。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/nGh7WzRwSM2LQfYjyOGBmw/zh-cn_image_0000002779690562.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/2aHkGmTuTNiDLUD_8w3SWg/zh-cn_image_0000002815558893.png)
 
 **说明** 
 
@@ -44,7 +44,7 @@ NativeMessaging面向两类开发者：应用开发者和浏览器应用开发�
 
 ### 整体流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/TfUmB4ALQYGvi-SR29bJ4g/zh-cn_image_0000002809010183.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/bwn5yLn5TfW0wtnkLfqFaw/zh-cn_image_0000002815398977.png)
 
 * **流程：**
 
@@ -144,9 +144,9 @@ NativeMessaging连接使用的具体格式，每个消息都使用JSON进行序�
 ```js
 // 从html中触发调用
 function sendMessageToNative() {
-  var message = "ping"; // 发送ping
+  let message = 'ping'; // 发送ping
   chrome.runtime.sendMessage({
-    type: "sendMessage",
+    type: 'sendMessage',
     message: message
   }, function (response) {});
 }
@@ -157,11 +157,11 @@ function sendMessageToNative() {
 1. 使用chrome.runtime.connectNative连接
 
    ```ts
-   var port = null;
+   let port = null;
    // 监听来自main.js的信息
    chrome.runtime.onMessage.addListener(
      function (request, sender, sendResponse) {
-       if (request.type == "sendMessage") {
+       if (request.type === 'sendMessage') {
          if (port == null) {
            connectToNativeHost();
          }
@@ -170,7 +170,7 @@ function sendMessageToNative() {
        return true; // 保持消息通道开放
    });
    function connectToNativeHost() {
-     var bundleName = "com.example.app"; // 插件对应应用的bundleName
+     let bundleName = 'com.example.app'; // 插件对应应用的bundleName
      port = chrome.runtime.connectNative(bundleName); // 根据bundleName名得到通信端口port
      port.onMessage.addListener(onNativeMessage); // 监听native应用程序是否发来消息
      port.onDisconnect.addListener(onDisconnected); // 监听是否断开连接
@@ -188,16 +188,16 @@ function sendMessageToNative() {
 
    ```ts
    function sendNativeMessage() {
-     var bundleName = "com.example.app"; // 插件对应应用的bundleName
-     var nativeMessage = "ping"; // 插件要发给应用的内容
+     let bundleName = 'com.example.app'; // 插件对应应用的bundleName
+     let nativeMessage = 'ping'; // 插件要发给应用的内容
      chrome.runtime.sendNativeMessage(
        bundleName,
        {message: nativeMessage},
        function(response) {
        // 收到一次应用回复的信息后断开连接
-       console.info("sendNativeMessage收到应用程序响应:", JSON.stringify(response));
+       console.info('sendNativeMessage收到应用程序响应:', JSON.stringify(response));
        }
-     )
+     );
    }
    ```
 
@@ -218,7 +218,7 @@ function sendMessageToNative() {
    ```
 3. 在MyWebNativeMessageExtAbility.ets文件中，增加导入[WebNativeMessagingExtensionAbility](../harmonyos-references/arkts-apis-web-webnativemessagingextensionability.md)的依赖包，自定义类继承WebNativeMessagingExtensionAbility组件并实现生命周期回调。
 
-   ```ts
+   ```typescript
    import { WebNativeMessagingExtensionAbility, ConnectionInfo } from '@kit.ArkWeb';
    import { hilog } from '@kit.PerformanceAnalysisKit';
    import {buffer, util} from '@kit.ArkTS';
@@ -241,8 +241,8 @@ function sendMessageToNative() {
          hilog.info(DOMAIN_NUMBER, TAG, 'read pipe %{public}s', buffer.from(arrayBuffer, 4, readLen - 4).toString());
 
          // write
-         let strResponse : string = "pong";
-         const encoder = new util.TextEncoder("utf-8");
+         let strResponse : string = 'pong';
+         const encoder = new util.TextEncoder('utf-8');
          const strBytes = encoder.encodeInto(strResponse);
          let bufferLen = strBytes.length;
          const lenBytes = new Uint8Array(4);
@@ -256,7 +256,7 @@ function sendMessageToNative() {
          let writeLen = await fileIo.write(fdWrite, writeBuffer.buffer);
          hilog.info(DOMAIN_NUMBER, TAG, 'write pipe length %{public}d', writeLen);
        } catch (err) {
-         hilog.error(DOMAIN_NUMBER, TAG, 'fileIo failed, error code: ' + err.code + " message: " + err.message);
+         hilog.error(DOMAIN_NUMBER, TAG, 'fileIo failed, error code: ' + err.code + ' message: ' + err.message);
        }
      }
 
@@ -328,7 +328,7 @@ function sendMessageToNative() {
 
 1. 当接收到创建NativeMessaging连接时，先通过[get20](../harmonyos-references/js-apis-data-datashare.md#get20)获取目标应用的extension配置。然后读取WebNativeMessagingExtensionAbility名称和允许访问的扩展列表。最后校验是否允许访问。
 
-   ```ts
+   ```typescript
    import { dataShare } from '@kit.ArkData';
 
    interface ExtensionConfig {
@@ -350,7 +350,7 @@ function sendMessageToNative() {
          try {
            const result = results[i];
            const json = result.value;
-           if (typeof json !== "string") {
+           if (typeof json !== 'string') {
              continue;
            }
            let jsonStr:string = json as string;
@@ -383,14 +383,14 @@ function sendMessageToNative() {
    ```
 2. 调用[webNativeMessagingExtensionManager.connectNative](../harmonyos-references/arkts-apis-web-webnativemessagingextensionmanager.md#webnativemessagingextensionmanagerconnectnative)创建NativeMessaging连接，如WebNativeMessagingExtensionAbility尚未运行，该接口则会拉起ExtensionAbility并触发。
 
-   ```ts
+   ```typescript
    import { UIAbility, Want, common } from '@kit.AbilityKit';
    import { webNativeMessagingExtensionManager } from '@kit.ArkWeb'
 
    class ConnectionCallback implements webNativeMessagingExtensionManager.WebExtensionConnectionCallback {
      onConnect(connection:webNativeMessagingExtensionManager.ConnectionNativeInfo) {
        // connected
-       console.error(`onConnect id ${connection.connectionId} is connected`);
+       console.info(`onConnect id ${connection.connectionId} is connected`);
      }
      onDisconnect(connection:webNativeMessagingExtensionManager.ConnectionNativeInfo) {
        // disconnect
@@ -418,13 +418,13 @@ function sendMessageToNative() {
        let connectId = webNativeMessagingExtensionManager.connectNative(abilityContext, wantInfo, options);
        console.info(`innerWebNativeMessageManager  connectionId : ${connectId}` );
      } catch (error) {
-       console.info(`inner callback error Message: ${JSON.stringify(error)}`);
+       console.error(`inner callback error Message: ${JSON.stringify(error)}`);
      }
    }
    ```
 3. 需要销毁NativeMessaging连接时，调用[webNativeMessagingExtensionManager.disconnectNative](../harmonyos-references/arkts-apis-web-webnativemessagingextensionmanager.md#webnativemessagingextensionmanagerdisconnectnative)。
 
-   ```ts
+   ```typescript
    import { webNativeMessagingExtensionManager } from '@kit.ArkWeb'
 
    function disconnectNative(connectId: number) : void {

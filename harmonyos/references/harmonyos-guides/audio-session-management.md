@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-session
 title: 音频会话管理(ArkTS)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频焦点和音频会话管理 > 音频会话管理(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:26+08:00
-doc_updated_at: 2026-10-26
-content_hash: sha256:555979058139b37b682fc6bdca5f9abdf6e26e4acaecdb64a7f93c17c95c8406
+scraped_at: 2026-11-12T09:51:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:83927d9d27829cb48045623937cbfbca2514d7b7de95695d620cd656250a6d74
 ---
 
 对于涉及多个音频流并发的场景，系统已预设了默认的[音频焦点策略](audio-playback-concurrency.md#音频焦点策略)，该策略将对所有音频流（包括播放和录制）实施统一的焦点管理。
@@ -255,13 +255,14 @@ let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionMana
 
 ### 音频会话场景
 
-音频会话统一持有焦点时，系统提供了三种音频会话场景。激活AudioSession前需要先通过[setAudioSessionScene](../harmonyos-references/arkts-apis-audio-audiosessionmanager.md#setaudiosessionscene20)设置对应的音频会话场景，后续激活时系统会根据应用选择的音频会话场景申请对应的音频焦点。
+音频会话统一持有焦点时，系统提供如下几种音频会话场景。激活AudioSession前需要先通过[setAudioSessionScene](../harmonyos-references/arkts-apis-audio-audiosessionmanager.md#setaudiosessionscene20)设置对应的音频会话场景，后续激活时系统会根据应用选择的音频会话场景申请对应的音频焦点。
 
 | 名称 | 值 | 匹配的StreamUsage | 说明 | 适用的场景 |
 | --- | --- | --- | --- | --- |
-| AUDIO\_SESSION\_SCENE\_MEDIA | 0 | STREAM\_USAGE\_MUSIC、STREAM\_USAGE\_MOVIE、STREAM\_USAGE\_AUDIOBOOK | 媒体音频会话场景。 | 频繁申请和释放焦点的场景（如多个小视频滑动播放），不持有AudioRenderer对象但需监听焦点变化等媒体播放场景。 |
-| AUDIO\_SESSION\_SCENE\_GAME | 1 | STREAM\_USAGE\_GAME | 游戏音频会话场景。 | 游戏内配乐、配音等游戏音频场景。 |
-| AUDIO\_SESSION\_SCENE\_VOICE\_COMMUNICATION | 2 | STREAM\_USAGE\_RINGTONE、STREAM\_USAGE\_VOICE\_COMMUNICATION、STREAM\_USAGE\_VIDEO\_COMMUNICATION | VoIP语音通话音频会话场景。 | VoIP通话场景下需同时启动铃声流等通话场景。 |
+| AUDIO\_SESSION\_SCENE\_MEDIA | 0 | STREAM\_USAGE\_MUSIC、STREAM\_USAGE\_MOVIE、STREAM\_USAGE\_AUDIOBOOK | 媒体音频会话场景。 | 频繁申请和释放焦点的场景（如多个小视频滑动播放），不持有AudioRenderer对象但需监听焦点变化等媒体播放场景。  **说明：** 从API版本20开始，支持该参数。 |
+| AUDIO\_SESSION\_SCENE\_GAME | 1 | STREAM\_USAGE\_GAME | 游戏音频会话场景。 | 游戏内配乐、配音等游戏音频场景。  **说明：** 从API版本20开始，支持该参数。 |
+| AUDIO\_SESSION\_SCENE\_VOICE\_COMMUNICATION | 2 | STREAM\_USAGE\_RINGTONE、STREAM\_USAGE\_VOICE\_COMMUNICATION、STREAM\_USAGE\_VIDEO\_COMMUNICATION | VoIP语音通话音频会话场景。 | VoIP通话场景下需同时启动铃声流等通话场景。  **说明：** 从API版本20开始，支持该参数。 |
+| AUDIO\_SESSION\_SCENE\_VOICE\_MESSAGE | 3 | STREAM\_USAGE\_VOICE\_MESSAGE | 语音消息音频会话场景。 | 聊天应用中播放语音消息的场景。  **说明：** 从API版本26.0.1开始，支持该参数。 |
 
 **注意** 
 
@@ -557,7 +558,20 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 从API version 24开始，应用可以通过[setAudioSessionBehavior](../harmonyos-references/arkts-apis-audio-audiosessionmanager.md#setaudiosessionbehavior24)接口设置音频会话行为参数，在特定场景下获得更优的音频焦点体验。
 
-在用户观看直播的场景中，当其他应用启动音频流（如使用键盘录音转文字）打断直播时，会导致直播的音频和画面暂停，影响用户的观看体验。直播应用可以通过设置[AudioSessionBehaviorFlags](../harmonyos-references/arkts-apis-audio-e.md#audiosessionbehaviorflags24).MUTE\_WHEN\_INTERRUPTED会话行为，使直播在被打断时保持静音播放而非暂停，避免画面中断。
+| 枚举值 | API版本 | 推荐使用场景 |
+| --- | --- | --- |
+| [AudioSessionBehaviorFlags](../harmonyos-references/arkts-apis-audio-e.md#audiosessionbehaviorflags24).MUTE\_WHEN\_INTERRUPTED | 24 | 直播类音频被打断的场景。 |
+| [AudioSessionBehaviorFlags](../harmonyos-references/arkts-apis-audio-e.md#audiosessionbehaviorflags24).PAUSE\_WHEN\_INTERRUPTED | 26.0.0 | 媒体类音频被其他短时媒体音频（如有声广告）打断后需要恢复播放的场景。 |
+
+在用户观看直播的场景中，当其他应用启动音频流（如键盘录音转文字）打断直播时，会导致直播的音频和画面暂停，影响用户的观看体验。直播应用设置[AudioSessionBehaviorFlags](../harmonyos-references/arkts-apis-audio-e.md#audiosessionbehaviorflags24).MUTE\_WHEN\_INTERRUPTED会话行为后，直播在被打断时会保持静音播放而非暂停，避免画面中断，打断结束后会自动解除静音。
+
+在媒体音频被其他短时媒体音频打断的场景中，系统不会通知应用恢复播放。当应用设置[AudioSessionBehaviorFlags](../harmonyos-references/arkts-apis-audio-e.md#audiosessionbehaviorflags24).PAUSE\_WHEN\_INTERRUPTED会话行为后，系统会通知应用恢复播放，避免被短时媒体音频打断不恢复。若打断时长超出规定时间（即打断方为长时媒体音频），该接口将不会生效。
+
+**注意** 
+
+* PAUSE\_WHEN\_INTERRUPTED不能与MUTE\_WHEN\_INTERRUPTED共存，若同时设置，仅PAUSE\_WHEN\_INTERRUPTED生效。
+* 调用[setAudioSessionBehavior](../harmonyos-references/arkts-apis-audio-audiosessionmanager.md#setaudiosessionbehavior24)接口配置该行为时，必须同步调用[setAudioSessionScene](../harmonyos-references/arkts-apis-audio-audiosessionmanager.md#setaudiosessionscene20)接口，否则配置将无法生效。
+* 当音频会话在激活状态时调用[setAudioSessionBehavior](../harmonyos-references/arkts-apis-audio-audiosessionmanager.md#setaudiosessionbehavior24)接口后，必须重新调用接口[activateAudioSession](../harmonyos-references/arkts-apis-audio-audiosessionmanager.md#activateaudiosession12)使其生效。
 
 如果本应用未使用音频会话管理，也可以针对单条音频流设置独立的音频会话行为。对于播放流，详情请参考[setIndependentAudioSessionStrategy](../harmonyos-references/arkts-apis-audio-audiorenderer.md#setindependentaudiosessionstrategy24)。对于录音流，详情请参考[setIndependentAudioSessionStrategy](../harmonyos-references/arkts-apis-audio-audiocapturer.md#setindependentaudiosessionstrategy24)。
 

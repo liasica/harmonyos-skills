@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 录像(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 录像(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:50+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:be3c0897ebea14af464eba4c44e7c4b9a2543dc45d488ca4e64df87a3cfa3d97
+scraped_at: 2026-11-12T09:52:05+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:abe2bdc15747521655c81f7fe2cd031643000d4f2e984f65a538bed9c4cde086
 ---
 
 录像是循环帧的捕获，同时也是相机应用的最重要功能之一。对于录像的流畅度，开发者可以参考拍照(C/C++)中的[开发步骤](native-camera-shooting.md#开发步骤)7，设置分辨率、闪光灯、焦距、照片质量及旋转角度等信息。
@@ -68,10 +68,11 @@ content_hash: sha256:be3c0897ebea14af464eba4c44e7c4b9a2543dc45d488ca4e64df87a3cf
        libhilog_ndk.z.so
    )
    ```
-3. 获取SurfaceId。
+3. 创建并打开相机设备，参考设备输入(C/C++)的[开发步骤](native-camera-device-input.md#开发步骤)3-5。
+4. 获取SurfaceId。
 
    系统提供的[OH\_AVRecorder\_Create()](../harmonyos-references/capi-avrecorder-h.md#oh_avrecorder_create)接口可以创建一个录像AVRecorder实例，通过该实例的[OH\_AVRecorder\_GetInputSurface()](../harmonyos-references/capi-avrecorder-h.md#oh_avrecorder_getinputsurface)方法获取SurfaceId。
-4. 创建录像输出流。
+5. 创建录像输出流。
 
    根据传入的SurfaceId，通过[OH\_CameraManager\_GetSupportedCameraOutputCapability](../harmonyos-references/capi-camera-manager-h.md#oh_cameramanager_getsupportedcameraoutputcapability)接口获取[Camera\_OutputCapability](../harmonyos-references/capi-oh-camera-camera-outputcapability.md)能力，可以通过[Camera\_OutputCapability](../harmonyos-references/capi-oh-camera-camera-outputcapability.md)中的videoProfiles，获取当前设备支持的录像输出流。然后，定义创建录像的参数，通过OH\_CameraManager\_CreateVideoOutput方法创建录像输出流。
 
@@ -98,7 +99,7 @@ content_hash: sha256:be3c0897ebea14af464eba4c44e7c4b9a2543dc45d488ca4e64df87a3cf
        return ret_;
    }
    ```
-5. 开始录像。
+6. 开始录像。
 
    通过[OH\_VideoOutput\_Start()](../harmonyos-references/capi-video-output-h.md#oh_videooutput_start)方法启动录像输出流。
 
@@ -115,7 +116,7 @@ content_hash: sha256:be3c0897ebea14af464eba4c44e7c4b9a2543dc45d488ca4e64df87a3cf
        return ret;
    }
    ```
-6. 停止录像。
+7. 停止录像。
 
    通过[OH\_VideoOutput\_Stop()](../harmonyos-references/capi-video-output-h.md#oh_videooutput_stop)方法停止录像输出流。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_font-size
 title: "@cross-device-app-dev/font-size-unit"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 一次开发多端部署规则@cross-device-app-dev > @cross-device-app-dev/font-size-unit
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:23:00+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:f069b77737db51d947b0110d21738a6dbc0501cdeedf3e5eb44558443d072b23
+scraped_at: 2026-11-12T09:52:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:19ce39fa68b150652e18be2e545facbe7791a881c412a3bf46cbdc11222034be
 ---
 
 字体大小单位建议使用fp，以适配系统字体设置。
@@ -65,4 +65,4 @@ plugin:@cross-device-app-dev/recommended
 plugin:@cross-device-app-dev/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

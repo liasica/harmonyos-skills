@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-agentframeworkkit-7002
 title: Agent Framework Kit
-breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > OS平台能力 > API变更清单 > 26.0.0 Beta2引入的API > Agent Framework Kit
+breadcrumb: 版本说明 > 更多版本 > 26.0.0 > OS平台能力 > API变更清单 > 26.0.0 Beta2引入的API > Agent Framework Kit
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:49:02+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-11-12T09:49:56+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:d0eef279861c21222d2f2874e69d69c53ccd5445144405e35fdf6c5277583a1c
 ---
 

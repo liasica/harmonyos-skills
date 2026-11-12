@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (WhiteBalance)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (WhiteBalance)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:26+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:bafbc1da7d9f0d7ba79ca1feffe4ec7e4cfc68b58f709f1780444707ba7ab3b2
+scraped_at: 2026-11-12T09:56:32+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:dc2332492d4abe4b7fc19284459e10e0351d14c473c890adfa173f60e2e8d60f
 ---
 
 WhiteBalance继承自[WhiteBalanceQuery](arkts-apis-camera-whitebalancequery.md)。
@@ -55,7 +55,9 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 function setWhiteBalanceMode(session: camera.PhotoSession | camera.VideoSession): void {
   try {
-    session.setWhiteBalanceMode(camera.WhiteBalanceMode.DAYLIGHT);
+    if (session.isWhiteBalanceModeSupported(camera.WhiteBalanceMode.DAYLIGHT)) {
+      session.setWhiteBalanceMode(camera.WhiteBalanceMode.DAYLIGHT);
+    }
   } catch (error) {
     let err = error as BusinessError;
     console.error(`The setWhiteBalanceMode call failed. error code: ${err.code}`);
@@ -136,10 +138,14 @@ setWhiteBalance(whiteBalance: number): void
 ```ts
 import { BusinessError } from '@kit.BasicServicesKit';
 
-function setWhiteBalance(session: camera.PhotoSession | camera.VideoSession): void {
+function setWhiteBalance(session: camera.PhotoSession | camera.VideoSession, whiteBalance: number): void {
   try {
-    let whiteBalance: number = 1000;
-    session.setWhiteBalance(whiteBalance);
+    let whiteBalances: Array<number> = session.getWhiteBalanceRange();
+    if (whiteBalance >= whiteBalances[0] && whiteBalance <= whiteBalances[1]) {
+      session.setWhiteBalance(whiteBalance);
+    } else {
+      console.error(`invalid whiteBalance.`);
+    }
   } catch (error) {
     let err = error as BusinessError;
     console.error(`The setWhiteBalance call failed. error code: ${err.code}`);
@@ -223,10 +229,14 @@ setColorTint(colorTint: number): void
 ```ts
 import { BusinessError } from '@kit.BasicServicesKit';
 
-function setColorTint(session: camera.PhotoSession | camera.VideoSession): void {
-  let colorTint: number = 0;
+function setColorTint(session: camera.PhotoSession | camera.VideoSession, colorTint: number): void {
   try {
-    session.setColorTint(colorTint);
+    let tints: Array<number> = session.getColorTintRange();
+    if (colorTint >= tints[0] && colorTint <= tints[1]) {
+      session.setColorTint(colorTint);
+    } else {
+      console.error(`invalid colorTint.`);
+    }
   } catch (error) {
     let err = error as BusinessError;
     console.error(`The setColorTint call failed. error code: ${err.code}`);

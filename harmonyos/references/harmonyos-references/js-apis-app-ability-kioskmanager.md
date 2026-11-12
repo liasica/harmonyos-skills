@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.kioskManager (Kiosk模式管理)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.app.ability.kioskManager (Kiosk模式管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:33+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:644452675caf1d25bb7b9cd1b1132128c351a70fc927a512235155640aa074c7
+scraped_at: 2026-11-12T09:53:31+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:6389e690d7180fda955e022930c02f95ffe72d290afe96115d7c897f60975eb7
 ---
 
 KioskManager模块提供Kiosk模式管理能力，包括系统进入/退出Kiosk模式操作。
@@ -56,7 +56,7 @@ enterKioskMode(context: UIAbilityContext): Promise<void>
 | 16000050 | Failed to connect to the system service. |
 | 16000110 | The current application is not in Kiosk app list and cannot enter Kiosk mode. |
 | 16000111 | The system is already in Kiosk mode and cannot enter Kiosk mode again. |
-| 16000113 | Current ability is not in foreground. |
+| 16000113 | Current ability is not in foreground.  适用版本：20-26.0.0 |
 
 **示例**：
 

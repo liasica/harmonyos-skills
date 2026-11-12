@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-h
 title: Interface (Heatmap)
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (Heatmap)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:59+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:2e8f9d9fbee2343e41fe55b3569a48ce2fc0a2a0cad9bde32364f1878b067ab4
+scraped_at: 2026-11-12T09:57:26+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7c6aa4bbecb6c97241900a2faf8f4dba3955da2ff42be9031e1473693a1a2c1e
 ---
 
 ## 导入模块
@@ -48,9 +48,9 @@ let heatMapOptions: mapCommon.HeatmapParams = {
     2: 1,
     5: 5,
     8: 10
-  },
+  }
 }
-let heatMap = await this.mapController.addHeatmap(heatMapOptions)
+let heatMap = await this.mapController.addHeatmap(heatMapOptions);
 ```
 
 ### setData

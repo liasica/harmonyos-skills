@@ -1,14 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-pointer
-title: "@ohos.multimodalInput.pointer (鼠标光标)"
-breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.pointer (鼠标光标)
+title: "@ohos.multimodalInput.pointer (鼠标光标和光标类的外设)"
+breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.pointer (鼠标光标和光标类的外设)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:50:21+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:13e72e9b98a6dee10676a47f4a77941ec7fe06e1f8231ecf5680ffdbfaed96ef
+scraped_at: 2026-11-12T09:56:03+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:51da3ca734270506b21806897cc03fdf5e23b8a697bb85cd0ee3e024e291ed54
 ---
 
-鼠标光标管理模块，用于查询和设置鼠标光标相关属性。
+本模块提供鼠标光标和光标类型外设的管理功能，用于查询和设置鼠标光标和光标类型外设的相关属性。
 
 **说明** 
 
@@ -43,7 +43,7 @@ setPointerVisible(visible: boolean, callback: AsyncCallback<void>): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 801 | Capability not supported.  适用版本：18+ |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported.  适用版本：18+ |
 
 **示例**：
 
@@ -103,7 +103,7 @@ setPointerVisible(visible: boolean): Promise<void>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 801 | Capability not supported.  适用版本：18+ |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported.  适用版本：18+ |
 
 **示例**：
 
@@ -1037,6 +1037,114 @@ struct Index {
           });
         }
       )
+    }
+  }
+}
+```
+
+## pointer.getTouchpadScrollDirection
+
+getTouchpadScrollDirection(callback: AsyncCallback<boolean>): void
+
+获取触控板滚轴方向，使用callback异步回调。
+
+**起始版本：** 26.0.1
+
+**系统能力**：SystemCapability.MultimodalInput.Input.Pointer
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | AsyncCallback<boolean> | 是 | 回调函数。当获取触控板滚轴方向成功，err为undefined，state为true表示与手指滑动的方向一致；否则为错误对象。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
+**示例**：
+
+```js
+import { pointer } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+          try {
+            // 获取触控板滚轴方向
+            pointer.getTouchpadScrollDirection((error: BusinessError, state: boolean) => {
+              if (error) {
+                console.error(`Failed to get touchpad scroll direction, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+                return;
+              }
+              console.info(`Succeeded in getting touchpad scroll direction, state: ${JSON.stringify(state)}.`);
+            });
+          } catch (error) {
+            console.error(`Failed to get touchpad scroll direction, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          }
+        })
+    }
+  }
+}
+```
+
+## pointer.getTouchpadScrollDirection
+
+getTouchpadScrollDirection(): Promise<boolean>
+
+获取触控板滚轴方向，使用Promise异步回调。
+
+**起始版本：** 26.0.1
+
+**系统能力**：SystemCapability.MultimodalInput.Input.Pointer
+
+**返回值**：
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<boolean> | Promise对象。返回true表示触控板滚轴方向与手指滑动的方向一致；返回false表示触控板滚轴方向与手指滑动的方向相反。默认为true。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
+
+**示例**：
+
+```js
+import { pointer } from '@kit.InputKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+@Entry
+@Component
+struct Index {
+  build() {
+    RelativeContainer() {
+      Text()
+        .onClick(() => {
+          try {
+            // 获取触控板滚轴方向
+            pointer.getTouchpadScrollDirection().then((state: boolean) => {
+              console.info(`Succeeded in getting touchpad scroll direction, state: ${JSON.stringify(state)}.`);
+            }).catch((error: BusinessError) => {
+              console.error(`Failed to get touchpad scroll direction, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+            })
+          } catch (error) {
+            console.error(`Failed to get touchpad scroll direction, Code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}.`);
+          }
+        })
     }
   }
 }

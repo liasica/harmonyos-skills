@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-e
 title: ecnyPaymentService (数字人民币服务)
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > ArkTS API > ecnyPaymentService (数字人民币服务)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:02+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e516c77f31a1c3e165f61dff4f7102dc5f6ae3c8e44efd751227b1a3076339f0
+scraped_at: 2026-11-12T09:57:31+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:599ac8b70ec2d488906f1d26a68a4f78ea3a756c41387ce5ed5a60f2e40a5a74
 ---
 
 本模块提供数字人民币支付服务。
@@ -114,7 +114,7 @@ requestEcnyPayment(context: common.Context, orderInfo: EcnyOrderInfo): Promise<E
 
 **示例**：
 
-示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)
+示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
 ```typescript
 import { ecnyPaymentService } from '@kit.PaymentKit';

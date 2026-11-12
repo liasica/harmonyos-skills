@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-data-typ
 title: Node-API支持的数据类型和接口
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API支持的数据类型和接口
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:33:41+08:00
-doc_updated_at: 2026-10-30
-content_hash: sha256:926f20484b397e01dbd64f8557037460c5bfb77b1cffff19e5acbfb7dcd2a976
+scraped_at: 2026-11-12T09:52:47+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:870f7fd813955441fb908b4b5aed8b7fae00aee2e6bcf0d4a0c759ff68478c6a
 ---
 
 ## Node-API的数据类型
@@ -371,7 +371,7 @@ Node-API接口在Node.js提供的原生模块基础上扩展，目前支持部�
 | napi\_is\_array | 判断给定ArkTS value是否为array。 |
 | napi\_set\_element | 在给定Object的指定索引处，设置属性值。 |
 | napi\_get\_element | 获取给定Object指定索引处的元素。 |
-| napi\_has\_element | 判断给定Object的指定索引处是否存在元素。 |
+| napi\_has\_element | 若给定Object的指定索引处拥有属性。 |
 | napi\_delete\_element | 尝试删除给定Object的指定索引处的元素。 |
 | napi\_create\_typedarray | 通过现有的ArrayBuffer创建一个ArkTS TypeArray。 |
 | napi\_is\_typedarray | 判断给定ArkTS value是否为TypeArray。 |

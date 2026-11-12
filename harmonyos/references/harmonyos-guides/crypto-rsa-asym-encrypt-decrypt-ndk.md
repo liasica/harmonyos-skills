@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-rsa-as
 title: 使用RSA非对称密钥加解密(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密 > 使用RSA非对称密钥加解密(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:26+08:00
-doc_updated_at: 2026-10-10
+scraped_at: 2026-11-12T09:51:33+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:98ebf82f564a2ca63ef7f8ec79e3e5bab6401d15cabe1755e74dd78168fffc7d
 ---
 

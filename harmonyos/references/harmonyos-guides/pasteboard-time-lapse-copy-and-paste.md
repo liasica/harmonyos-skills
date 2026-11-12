@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pasteboard-ti
 title: 使用剪贴板进行延迟复制粘贴
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 剪贴板服务 > 使用剪贴板进行延迟复制粘贴
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:07+08:00
-doc_updated_at: 2026-09-23
+scraped_at: 2026-11-12T09:51:48+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:703ee702e46f4f1e8ea85080034e87efef77bf74f3e712c89237087f462f5f07
 ---
 

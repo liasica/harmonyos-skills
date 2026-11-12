@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/package-structu
 title: HAR包使用常见问题排查
 breadcrumb: FAQ > 应用框架开发 > 程序包结构 > 常见问题 > HAR包使用常见问题排查
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:45+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:a959225c0e0464a9114c92042fe8b7b5005b9b1321579f1be31f5cccb0c17856
+scraped_at: 2026-11-12T09:58:18+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:313567d3c212d778893151fcb011f652ad97689008a67ec504e9c24eb03cad6e
 ---
 
 **Q：每次是否都要先打包成HAR包再引用？**
@@ -26,19 +26,19 @@ content_hash: sha256:a959225c0e0464a9114c92042fe8b7b5005b9b1321579f1be31f5cccb0c
 
 **A**：推荐将公共资源替换成HSP动态共享包。在多包场景下，如果应用的多个HAP或HSP包使用HAR包实现代码和资源的共享，那么打包后的每个HAP或HSP包中都会存在一份共享HAR包的拷贝，导致APP包中存在冗余代码和资源。如下图示例，应用模块HAP1和HAP2/HSP1都引用了HAR2和HAR3，打包后，APP包中HAR2和HAR3存在多份重复拷贝，体积较大。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/wFZrdl40SwWW9bJTsjUW1Q/zh-cn_image_0000002802054445.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/WaJy8RatTzWj-OvdAksFMw/zh-cn_image_0000002802054445.png "点击放大")
 
 这种场景下，推荐开发者使用HSP代替HAR实现代码和资源共享。如下图示例，使用HSP2对原应用进行升级改造，打包后，APP包中HAR2和HAR3只存在一份拷贝，HAR2、HAR3总大小大于HSP时，可以减小应用包大小。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/S4EU4cQ-S6GoO6vmnZ-Mew/zh-cn_image_0000002772854674.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/ENYIL2EHT-KvvCr6YqmtMQ/zh-cn_image_0000002772854674.png "点击放大")
 
 **Q：一个应用有多个模块，多个模块中引用同一个HAR包的不同版本是否有影响，怎么指定统一的版本？**
 
 **A**：没有影响，每个模块都会将各自的HAR包拷贝到自己的模块，不会影响其它模块。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/-_6Xf4zPQ76y3wkOuhMJvQ/zh-cn_image_0000002772694692.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/U_1K4j9nSyK1ANtaRPk5VA/zh-cn_image_0000002772694692.png)
 
-ohpm客户端在1.4.0版本开始支持[Override机制](../harmonyos-guides/ide-oh-package-json5.md#zh-cn_topic_0000001792256137_overrides)，可以在项目级别的oh-package.json5（即项目根目录下的oh-package.json5）文件中添加overrides配置，可以将HAR包指定统一的版本。替换的版本既可以是一个具体的版本号，也可以是一个模糊版本，还可以是本地存在的HAR包或源码目录。
+ohpm客户端在1.4.0版本开始支持[Override机制](../doccenter-deveco-studio/ide-oh-package-json5.md#section13977152601510)，可以在项目级别的oh-package.json5（即项目根目录下的oh-package.json5）文件中添加overrides配置，可以将HAR包指定统一的版本。替换的版本既可以是一个具体的版本号，也可以是一个模糊版本，还可以是本地存在的HAR包或源码目录。
 
 **须知** 
 
@@ -66,18 +66,18 @@ overrides必须配置在项目级别的oh-package.json5中，配置在模块级�
 
 **A**：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/NuC6NUvoTTS0pjhIbU931Q/zh-cn_image_0000002802134805.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/5GNwFI0gTACnS78Eya-Xhg/zh-cn_image_0000002802134805.png "点击放大")
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/sNQEr8qdQ2u5Wb9lYONGVw/zh-cn_image_0000002802055095.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/VT7jT14KT0m_3v6qzCzwXQ/zh-cn_image_0000002802055095.png "点击放大")
 
 * 由于存在多个HAR模块，这些模块之间又存在重复依赖和引用的关系，由于同一个工程下，不同HAR模块之间存在继承依赖的关系，即对于工程下的模块HARA、模块HARB、模块HARC和模块HARD，先将模块中的方法、类和接口等通过export方式暴露出去，使得工程下其他模块能够访问。
 * 让HARB中依赖HARA，HARC中依赖HARB，HARD中依赖HARC，从而使四个模块构成继承依赖的关系，就可以实现在HARD引用HARC、HARB和HARA，在HARC中引用HARB和HARA，在HARB中引用HARA，这样就避免生成重复HAR包的情况。
 * 将最外层的HAR模块HARD先转化成HSP模块，参考链接进行相关配置[HAR转HSP指导](../harmonyos-guides/har-to-hsp.md)。由于HSP模块只能供应用内其他HAP模块或HSP模块引用，如果需要共其他应用的模块使用，还需要将HSP模块转化成[集成态HSP](../harmonyos-guides/integrated-hsp.md)，参考链接进行相关配置集成态HSP。
 * 对集成态HSP模块HARD进行打包，提供给其他应用使用。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/Hs3xH_rpQ3WrHVO9vWULQQ/zh-cn_image_0000002772694976.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/9c3R3VqsS1KIAUpoyhnnjw/zh-cn_image_0000002772694976.png "点击放大")
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/eGPZkfu4TOexLpLRbhxl7A/zh-cn_image_0000002802134807.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/s9Lk8gvwR9OGswbdy3Kr-w/zh-cn_image_0000002802134807.png "点击放大")
 
 **Q：多模块依赖场景下，如何直接打包最外层HAR包而无需逐层打包子模块HAR包？**
 

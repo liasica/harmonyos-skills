@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-vide
 title: video_processing.h
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > C API > 头文件 > video_processing.h
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:37+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:738039fff07e0c36e7089c8b45100c8bf5407e3cb785b1d5d644fd91d351e02c
+scraped_at: 2026-11-12T09:56:48+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:430d86362dd675814f642cf4a4040b27be62ff12a6a14630d83727544aeeafb0
 ---
 
 ## 概述
@@ -49,6 +49,9 @@ content_hash: sha256:738039fff07e0c36e7089c8b45100c8bf5407e3cb785b1d5d644fd91d35
 | [VideoProcessing\_ErrorCode OH\_VideoProcessingCallback\_BindOnError(VideoProcessing\_Callback\* callback,OH\_VideoProcessingCallback\_OnError onError)](capi-video-processing-h.md#oh_videoprocessingcallback_bindonerror) | 绑定回调函数[OH\_VideoProcessingCallback\_OnError](capi-video-processing-types-h.md#oh_videoprocessingcallback_onerror)到回调对象。绑定完成之后，需要调用 [OH\_VideoProcessing\_RegisterCallback](capi-video-processing-h.md#oh_videoprocessing_registercallback)，将回调对象注册到视频处理实例，才能使其生效。 |
 | [VideoProcessing\_ErrorCode OH\_VideoProcessingCallback\_BindOnState(VideoProcessing\_Callback\* callback,OH\_VideoProcessingCallback\_OnState onState)](capi-video-processing-h.md#oh_videoprocessingcallback_bindonstate) | 绑定回调函数[OH\_VideoProcessingCallback\_OnState](capi-video-processing-types-h.md#oh_videoprocessingcallback_onstate)到回调对象。绑定完成之后，需要调用 [OH\_VideoProcessing\_RegisterCallback](capi-video-processing-h.md#oh_videoprocessing_registercallback)，将回调对象注册到视频处理实例，才能使其生效。 |
 | [VideoProcessing\_ErrorCode OH\_VideoProcessingCallback\_BindOnNewOutputBuffer(VideoProcessing\_Callback\* callback,OH\_VideoProcessingCallback\_OnNewOutputBuffer onNewOutputBuffer)](capi-video-processing-h.md#oh_videoprocessingcallback_bindonnewoutputbuffer) | 绑定回调函数[OH\_VideoProcessingCallback\_OnNewOutputBuffer](capi-video-processing-types-h.md#oh_videoprocessingcallback_onnewoutputbuffer)到回调对象。绑定完成之后，需要调用 [OH\_VideoProcessing\_RegisterCallback](capi-video-processing-h.md#oh_videoprocessing_registercallback)，将回调对象注册到视频处理实例，才能使其生效。 |
+| [bool OH\_VideoProcessing\_IsAutoEffectSupported(uint32\_t type)](capi-video-processing-h.md#oh_videoprocessing_isautoeffectsupported) | 系统查询是否支持视频自动增强效果。 |
+| [VideoProcessing\_ErrorCode OH\_VideoProcessing\_UseAutoEffect(uint32\_t type, bool enable, const char \*name)](capi-video-processing-h.md#oh_videoprocessing_useautoeffect) | 在将要创建名字为name的XComponent中指定是否启用类型为type的自动增强效果。此接口应在[OH\_VideoProcessing\_SetAutoEffectParam](capi-video-processing-h.md#oh_videoprocessing_setautoeffectparam)之前调用。 |
+| [VideoProcessing\_ErrorCode OH\_VideoProcessing\_SetAutoEffectParam(uint32\_t type, const char \*name, const OH\_AVFormat \*param)](capi-video-processing-h.md#oh_videoprocessing_setautoeffectparam) | 对名字为name的XComponent设置AISR的参数param。此函数调用后，本次调用时指定的名为name的XComponent获得AISR效果，其他的XComponent失去AISR效果。 |
 
 ## 函数说明
 
@@ -535,3 +538,83 @@ VideoProcessing_ErrorCode OH_VideoProcessingCallback_BindOnNewOutputBuffer(Video
 | 类型 | 说明 |
 | --- | --- |
 | [VideoProcessing\_ErrorCode](capi-video-processing-types-h.md#videoprocessing_errorcode) | 如果函数绑定成功，返回VIDEO\_PROCESSING\_SUCCESS。  如果callback为空，返回VIDEO\_PROCESSING\_ERROR\_INVALID\_PARAMETER。 |
+
+### OH\_VideoProcessing\_IsAutoEffectSupported()
+
+```c
+bool OH_VideoProcessing_IsAutoEffectSupported(uint32_t type)
+```
+
+**描述**
+
+系统查询是否支持视频自动增强效果。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| uint32\_t type | 要查询的自动增强效果类型。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| bool | 是否支持视频自动增强效果，true表示支持视频自动增强效果，false表示不支持。 |
+
+### OH\_VideoProcessing\_UseAutoEffect()
+
+```c
+VideoProcessing_ErrorCode OH_VideoProcessing_UseAutoEffect(uint32_t type, bool enable, const char *name)
+```
+
+**描述**
+
+在将要创建名字为name的XComponent中指定是否启用类型为type的自动增强效果。此接口应在[OH\_VideoProcessing\_SetAutoEffectParam](capi-video-processing-h.md#oh_videoprocessing_setautoeffectparam)之前调用。
+
+**使用场景**
+
+在视频播放场景使用。AISR称作AI超分，是AutoEffect中的一种。应用在进行SDR视频播放，希望对播放的画面进行清晰度提升时，可使用AUTOEFFECT的AISR超分能力，对视频播放的XComponent组件使能此效果。HDR视频类型不支持本功能。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| uint32\_t type | 指定要使用的自动增强效果类型。 |
+| bool enable | 启用或禁用指定的XComponent中该自动增强效果类型。 |
+| const char \*name | 指定XComponent的名称。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [VideoProcessing\_ErrorCode](capi-video-processing-types-h.md#videoprocessing_errorcode) | - 如果操作成功，返回VIDEO\_PROCESSING\_SUCCESS。  - 如果type不是[VIDEO\_PROCESSING\_TYPE\_AUTOEFFECT\_AISR](capi-video-processing-types-h.md#变量)或name为空，返回VIDEO\_PROCESSING\_ERROR\_INVALID\_VALUE。  - 如果[OH\_VideoProcessing\_IsAutoEffectSupported](capi-video-processing-h.md#oh_videoprocessing_isautoeffectsupported)对该type返回false，或该name已通过调用本函数注册过，返回VIDEO\_PROCESSING\_ERROR\_OPERATION\_NOT\_PERMITTED。 |
+
+### OH\_VideoProcessing\_SetAutoEffectParam()
+
+```c
+VideoProcessing_ErrorCode OH_VideoProcessing_SetAutoEffectParam(uint32_t type, const char *name, const OH_AVFormat *param)
+```
+
+**描述**
+
+对名字为name的XComponent设置AISR的参数param。此函数调用后，本次调用时指定的名为name的XComponent获得AISR效果，其他的XComponent失去AISR效果。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| uint32\_t type | 指定要使用的自动增强效果类型。 |
+| const char \*name | 指定XComponent的名称。 |
+| const [OH\_AVFormat](capi-videoprocessing-oh-avformat.md)\* param | 此参数依据type参数，具体的type可参考video\_processing\_types.h中的[变量](capi-video-processing-types-h.md#变量)。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [VideoProcessing\_ErrorCode](capi-video-processing-types-h.md#videoprocessing_errorcode) | - 如果操作成功，返回VIDEO\_PROCESSING\_SUCCESS。  - 如果name为空或param值无效，返回VIDEO\_PROCESSING\_ERROR\_INVALID\_VALUE。  - 如果[OH\_VideoProcessing\_IsAutoEffectSupported](capi-video-processing-h.md#oh_videoprocessing_isautoeffectsupported)对该type返回false、name不匹配任何已注册的name、VPE实例尚未创建或未对该name调用过[OH\_VideoProcessing\_UseAutoEffect](capi-video-processing-h.md#oh_videoprocessing_useautoeffect)，返回VIDEO\_PROCESSING\_ERROR\_OPERATION\_NOT\_PERMITTED。  - 如果发生内部算法错误，返回VIDEO\_PROCESSING\_ERROR\_UNKNOWN。 |

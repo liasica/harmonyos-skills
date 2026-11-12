@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Types
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @arkts.collections (ArkTS容器集) > Types
 category: harmonyos-references
-scraped_at: 2026-09-05T06:16:41+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:f6b77a2456143093bc5f4a85861d92d82825ac4b19a6461cbd07ea6e0c382adf
+scraped_at: 2026-11-12T09:53:49+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c894c233582d42c351c486c29d322d5e26a8289769509773651c90042b36ed9c
 ---
 
 **说明** 
@@ -99,6 +99,32 @@ ArkTS Array归约函数类型，被Array类的[reduceRight](arkts-apis-arkts-col
 | 类型 | 说明 |
 | --- | --- |
 | AccType | 归约函数的结果，该结果会作为下一次调用ArrayReduceCallback时的previousValue参数。 |
+
+## ArrayElementPredicateFn
+
+type ArrayElementPredicateFn<ElementType> = (value: ElementType) => boolean
+
+ArkTS Array断言函数类型，被Array类的[retainAll](arkts-apis-arkts-collections-array.md#retainall-2)接口使用，用来判断数组元素是否满足测试条件。
+
+**起始版本：** 26.0.1
+
+**模型约束**：此类型仅可在Stage模型下使用。
+
+**元服务API**：从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Utils.Lang
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | ElementType | 是 | 当前遍历的ArkTS Array元素，用于判断是否满足测试条件。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 断言函数的结果。为true时表示当前元素满足条件，为false时表示当前元素不满足条件。 |
 
 ## TypedArrayFromMapFn
 

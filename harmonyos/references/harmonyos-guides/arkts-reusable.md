@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-reusabl
 title: "@Reusable装饰器：V1组件复用"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件复用 > @Reusable装饰器：V1组件复用
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:09+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:51:07+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:8797599cf819829af1c8bf705d9258e3413087dd6bbed336d1b34f24d9abe9b2
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bundle.bundleManager (应用程序包管理模块)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 通用能力的接口(推荐) > @ohos.bundle.bundleManager (应用程序包管理模块)
 category: harmonyos-references
-scraped_at: 2026-10-31T07:34:28+08:00
-doc_updated_at: 2026-10-30
-content_hash: sha256:6b0f038efad954d36de8c3a73379a222dfa901d88435c8939780b9be4d8f8ec7
+scraped_at: 2026-11-12T09:53:32+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:bcca9b594490e989eafa42f5ea61befdd62a5470fdd82ccfb5325a026b56284d
 ---
 
 本模块提供应用信息的查询能力，支持应用包信息[BundleInfo](js-apis-bundlemanager-bundleinfo.md)、应用程序信息[ApplicationInfo](js-apis-bundlemanager-applicationinfo.md)、UIAbility组件信息[AbilityInfo](js-apis-bundlemanager-abilityinfo.md)、ExtensionAbility组件信息[ExtensionAbilityInfo](js-apis-bundlemanager-extensionabilityinfo.md)等信息的查询。
@@ -76,8 +76,10 @@ import { bundleManager } from '@kit.AbilityKit';
 | AGENT24+ | 37 | [AgentExtensionAbility](js-apis-app-agent-agentextensionability.md)：提供智能体扩展能力，包括智能体服务的创建、销毁、连接、断开的生命周期回调接口，以及接收客户端所发送数据和安全认证的回调接口。  **模型约束**：此接口仅可在Stage模型下使用。 |
 | AGENT\_UI24+ | 38 | [AgentUIExtensionAbility](js-apis-agent-agentuiextensionability.md)：为开发者提供接入端侧Agent UI界面显示能力。  **模型约束**：此接口仅可在Stage模型下使用。 |
 | MODULAR\_OBJECT | 39 | [modular\_object\_extension\_ability](capi-modular-object-extension-ability-h.md)：提供[模块化对象](../harmonyos-guides/modular-object-extension-overview.md)扩展能力，可以将应用自身功能封装为独立的功能模块，开放给其他应用使用。  **模型约束**：此接口仅可在Stage模型下使用。  **起始版本：** 26.0.0 |
+| UKEY\_AUTH | 40 | [UkeyAuthExtensionAbility](js-apis-ukeyauthextensionability.md)：为开发者提供接入自定义UKey认证界面的能力。  **模型约束**：此接口仅可在Stage模型下使用。  **起始版本：** 26.0.1 |
 | UNSPECIFIED | 255 | 不指定类型。 |
 | CALLER\_INFO\_QUERY19+ | 25 | [CallerInfoQueryExtensionAbility](callservicekit-callerinfoquery-extension-ability.md)：为开发者提供来去电信息查询能力。 |
+| FILE\_MANAGER | 41 | [FileManagerExtensionAbility](../doccenter-references/api/filemanagerservice-arkts-extensionability.md)：文件管理器扩展能力，提供自定义文件角标、文件右键菜单的能力。  **模型约束**：此接口仅可在Stage模型下使用。  **起始版本：** 26.0.1 |
 
 ## PermissionGrantState
 
@@ -227,6 +229,20 @@ Ability组件信息标志，指示需要获取的Ability组件信息的内容。
 | GET\_ABILITY\_INFO\_ONLY\_SYSTEM\_APP | 0x00000010 | 获取系统应用对应的AbilityInfo。 |
 | GET\_ABILITY\_INFO\_WITH\_APP\_LINKING | 0x00000040 | 获取通过[域名校验](../harmonyos-guides/app-linking-startupapp.md#在modulejson5中配置关联的网址域名)筛选的AbilityInfo。 |
 | GET\_ABILITY\_INFO\_WITH\_SKILL | 0x00000080 | 获取包含skills的AbilityInfo。 |
+
+## BundleInstallStatus
+
+应用安装状态枚举。
+
+**起始版本：** 26.0.1
+
+**系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| BUNDLE\_NOT\_EXIST | 1 | 应用未安装。 |
+| BUNDLE\_INSTALLING | 2 | 应用正在安装。 |
+| BUNDLE\_INSTALLED | 3 | 应用已安装。 |
 
 ## bundleManager.getBundleInfoForSelf
 
@@ -1921,6 +1937,57 @@ try {
 } catch (err) {
   let message = (err as BusinessError).message;
   hilog.error(0x0000, 'testTag', 'getAlternateIcons failed. Cause: %{public}s', message);
+}
+```
+
+## bundleManager.getBundleInstallStatus
+
+getBundleInstallStatus(bundleName: string): BundleInstallStatus
+
+获取指定应用的安装状态。
+
+**起始版本：** 26.0.1
+
+**需要权限：** ohos.permission.GET\_BUNDLE\_INFO\_PRIVILEGED
+
+**系统能力：** SystemCapability.BundleManager.BundleFramework.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| bundleName | string | 是 | 表示应用包名。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [BundleInstallStatus](js-apis-bundlemanager.md#bundleinstallstatus) | 返回指定应用的安装状态。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[包管理子系统通用错误码](errorcode-bundle.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+
+**示例：**
+
+```ts
+import { bundleManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+// 请开发者替换为实际的包名
+let bundleName: string = 'com.ohos.demo';
+
+try {
+  let bundleInstallStatus = bundleManager.getBundleInstallStatus(bundleName);
+  hilog.info(0x0000, 'testTag', 'bundle install status:' + bundleInstallStatus);
+} catch (err) {
+  let message = (err as BusinessError).message;
+  hilog.error(0x0000, 'testTag', 'getBundleInstallStatus failed. Cause: %{public}s', message);
 }
 ```
 

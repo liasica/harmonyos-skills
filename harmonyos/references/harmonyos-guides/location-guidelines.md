@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/location-guid
 title: 获取设备的位置信息开发指导(ArkTS)
 breadcrumb: 指南 > 应用服务 > Location Kit（位置服务） > 获取设备的位置信息开发指导 > 获取设备的位置信息开发指导(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:21+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:48f1405b93f268f28aba4f53579cae119987d64dbe595495a907cad40b8e9b0f
+scraped_at: 2026-11-12T09:52:28+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ae531d9fa104c00d14c79ac983248992304cd6deac945a2244f8a24ada23db85
 ---
 
 ## 场景概述
@@ -67,7 +67,7 @@ content_hash: sha256:48f1405b93f268f28aba4f53579cae119987d64dbe595495a907cad40b8
      try {
          let location = geoLocationManager.getLastLocation();
      } catch (err) {
-         console.error("errCode:" + JSON.stringify(err));
+         console.error("errCode:" + err.code + ", message:"  + err.message);
      }
      ```
    * 方式二：获取当前位置。
@@ -102,7 +102,7 @@ content_hash: sha256:48f1405b93f268f28aba4f53579cae119987d64dbe595495a907cad40b8
            console.error('promise, getCurrentLocation: error=' + JSON.stringify(error));
         });
       } catch (err) {
-        console.error("errCode:" + JSON.stringify(err));
+        console.error("errCode:" + err.code + ", message:"  + err.message);
       }
      ```
 
@@ -134,7 +134,7 @@ content_hash: sha256:48f1405b93f268f28aba4f53579cae119987d64dbe595495a907cad40b8
    try {
       geoLocationManager.on('locationChange', request, locationCallback);
    } catch (err) {
-      console.error("errCode:" + JSON.stringify(err));
+      console.error("errCode:" + err.code + ", message:"  + err.message);
    }
    ```
 
@@ -142,5 +142,9 @@ content_hash: sha256:48f1405b93f268f28aba4f53579cae119987d64dbe595495a907cad40b8
 
    ```ts
    // 该回调函数需要与on接口传入的回调函数保持一致。
-   geoLocationManager.off('locationChange', locationCallback);
+   try {
+      geoLocationManager.off('locationChange', locationCallback);
+   } catch (err) {
+      console.error("errCode:" + err.code + ", message:"  + err.message);
+   }
    ```

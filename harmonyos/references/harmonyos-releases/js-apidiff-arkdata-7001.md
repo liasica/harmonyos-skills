@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-arkdata-7001
 title: ArkData
-breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > OS平台能力 > API变更清单 > 26.0.0 Beta1引入的API > ArkData
+breadcrumb: 版本说明 > 更多版本 > 26.0.0 > OS平台能力 > API变更清单 > 26.0.0 Beta1引入的API > ArkData
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:49:05+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-11-12T09:49:59+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:7f91387cf26fa7b4b3a912248d4e3a711c279286077cd47126d2e28f1f376410
 ---
 

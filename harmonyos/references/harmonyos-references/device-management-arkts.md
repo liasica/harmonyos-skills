@@ -3,12 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/device-ma
 title: 设备管理
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 设备管理
 category: harmonyos-references
-scraped_at: 2026-10-11T07:26:23+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:4651699bb51fa40fb4370f3c12827e523061258d5a8a70ef75a11d0f696ab037
+scraped_at: 2026-11-12T09:55:51+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0685dbcc1810869ff8d3a2d069c94f2304c21f2515913342813e642d3a214d6a
 ---
 
 * **[@ohos.batteryInfo (电量信息)](js-apis-battery-info.md)**
+* **[@ohos.boardInfo (板级硬件信息)](js-apis-board-info.md)**
 * **[@ohos.busManager.serial (串口通信管理)](js-apis-busmanager-serial.md)**
 * **[@ohos.deviceInfo (设备信息)](js-apis-device-info.md)**
 * **[@ohos.power (系统电源管理)](js-apis-power.md)**

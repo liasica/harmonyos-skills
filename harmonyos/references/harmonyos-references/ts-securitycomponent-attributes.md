@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-securi
 title: 安全控件通用属性
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 安全 > 安全控件通用属性
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:12+08:00
+scraped_at: 2026-11-12T09:54:25+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:76667f734d8a75a56efa3f1a5fd3b16aaf1af4ba02558c669ca8c764c8029c37
+content_hash: sha256:a081e4418dc821eb682ea7a049b66032e5413338ac6a72c23f5605472bf6710a
 ---
 
 安全控件通用属性模块，提供安全控件的布局、尺寸、文字、图标、颜色、边框和交互等通用属性的统一配置能力。
@@ -1102,7 +1102,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/zpPBl--5TxOs84h9gIfyKg/zh-cn_image_0000002809052243.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/vIviDgauQ0G9q9mzphO9qA/zh-cn_image_0000002815561025.png)
 
 ### 示例2
 
@@ -1179,7 +1179,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/ybrqhLsEREyoG2JjNI6lvg/zh-cn_image_0000002779852678.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/5CSpKNR_T5m4_VZywx3oBA/zh-cn_image_0000002815401109.png)
 
 ### 示例3
 
@@ -1520,7 +1520,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/pCd613l0T1uRYYONPWyOEw/zh-cn_image_0000002779692710.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/U47A1flKT7y4ZTKFaPSfSg/zh-cn_image_0000002786521534.jpg)
 
 ### 示例4
 
@@ -1591,7 +1591,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/IR0PKWCUT9WD5nPwQeTPpA/zh-cn_image_0000002809012331.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/RRkTLkPCTkS3b54Mz717aA/zh-cn_image_0000002786361606.gif)
 
 ### 示例5
 

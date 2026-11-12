@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-w
 title: 退款结果回调通知
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 直连商户 > 签约代扣 > 退款结果回调通知
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:34+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:025e876f2ceff72ad0a7551646b76723b15a311698fe48450c40b92631bbb31c
+scraped_at: 2026-11-12T09:57:33+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e7d53f09683cde0e94d1bae7c91090b60f49ab5bfca7925ff403a5423754c2b9
 ---
 
 ## 功能介绍
@@ -57,7 +57,7 @@ content_hash: sha256:025e876f2ceff72ad0a7551646b76723b15a311698fe48450c40b92631b
 | currency | 是 | String | 交易币种单位，最大长度为3。  CNY （默认，当前仅支持该币种单位） |
 | mercNo | 否 | String | 商户号。 |
 | finishTime | 否 | String | 退款完成时间，UTC时间格式（yyyy-MM-dd'T'HH:mm:ss.SSSZ）。 |
-| refundOrderStatus | 是 | String | 退款订单状态。  - REFUND\_CHL\_PROC：处理中  - REFUND\_SUCCESS：成功  - REFUND\_FAILED：失败 |
+| refundOrderStatus | 是 | String | 退款订单状态。  - REFUND\_SUCCESS：退款成功  - REFUND\_FAILED：退款失败 |
 | payload | 否 | String | 预留信息，如商户请求时传递该参数，此时会原样返回。 |
 
 ## 请求示例

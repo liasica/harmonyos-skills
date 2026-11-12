@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_touch-tar
 title: "@cross-device-app-dev/touch-target-size"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 一次开发多端部署规则@cross-device-app-dev > @cross-device-app-dev/touch-target-size
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:13+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:5f9ad88ae5b9e22e37ce2b0ba98930b08699373780ed0bd5fdbb17cbbdb4d805
+scraped_at: 2026-11-12T09:52:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:5067b2c4a5828dd92a6499c5d6ed65009708f7449d235701f065e0c6b02898d0
 ---
 
 组件通用属性responseRegion点击热区需满足最小尺寸要求。
@@ -62,4 +62,4 @@ plugin:@cross-device-app-dev/recommended
 plugin:@cross-device-app-dev/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

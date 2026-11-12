@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/complex-text-
 title: 复杂文本绘制与显示（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 文本绘制与显示 > 复杂文本绘制与显示（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:19+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:cf2f4a613fa7ac3dedc617147e1664acec2894c1cb94d354517fb96a879bbfad
+scraped_at: 2026-11-12T09:52:13+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:05c8e411725b832a62e77b5cd80f5260fce31cd4f58e217af817f2923d6b10c3
 ---
 
 在进行文本绘制时，可以通过选择合适的字体、大小和颜色完成简单文本的绘制与显示；此外，还支持通过设置其他丰富的样式、语言、段落等进行复杂文本的绘制。
@@ -75,7 +75,7 @@ content_hash: sha256:cf2f4a613fa7ac3dedc617147e1664acec2894c1cb94d354517fb96a879
 
 ### 效果展示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/lFZjNCyRRBSyGEJ_ZI7t0A/zh-cn_image_0000002809010753.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/9p7c-DApQcWjFT8T8aQLxg/zh-cn_image_0000002815559469.png)
 
 ## 多行文本绘制与显示
 
@@ -410,7 +410,7 @@ class MyRenderNode extends RenderNode {
 
 // 创建一个MyRenderNode对象
 const textNode = new MyRenderNode();
-// 定义newNode的像素格式
+// 定义textNode的像素格式
 textNode.frame = {
   x: 0,
   y: 0,
@@ -584,7 +584,7 @@ class MyRenderNode extends RenderNode {
 
 // 创建一个MyRenderNode对象
 const textNode = new MyRenderNode();
-// 定义newNode的像素格式
+// 定义textNode的像素格式
 textNode.frame = {
   x: 0,
   y: 0,
@@ -724,7 +724,7 @@ class MyRenderNode extends RenderNode {
 
 // 创建一个MyRenderNode对象
 const textNode = new MyRenderNode();
-// 定义newNode的像素格式
+// 定义textNode的像素格式
 textNode.frame = {
   x: 0,
   y: 0,
@@ -875,7 +875,7 @@ class MyRenderNode extends RenderNode {
 
 // 创建一个MyRenderNode对象
 const textNode = new MyRenderNode();
-// 定义newNode的像素格式
+// 定义textNode的像素格式
 textNode.frame = {
   x: 0,
   y: 0,
@@ -1011,7 +1011,7 @@ class MyRenderNode extends RenderNode {
 
 // 创建一个MyRenderNode对象
 const textNode = new MyRenderNode();
-// 定义newNode的像素格式
+// 定义textNode的像素格式
 textNode.frame = {
   x: 0,
   y: 0,
@@ -1147,7 +1147,7 @@ class MyRenderNode extends RenderNode {
 
 // 创建一个MyRenderNode对象
 const textNode = new MyRenderNode()
-// 定义newNode的像素格式
+// 定义textNode的像素格式
 textNode.frame = {
   x: 0,
   y: 0,
@@ -1286,7 +1286,7 @@ class MyRenderNode extends RenderNode {
 
 // 创建一个MyRenderNode对象
 const textNode = new MyRenderNode();
-// 定义newNode的像素格式
+// 定义textNode的像素格式
 textNode.frame = {
   x: 0,
   y: 0,
@@ -1423,7 +1423,7 @@ class MyRenderNode extends RenderNode {
 
 // 创建一个MyRenderNode对象
 const textNode = new MyRenderNode();
-// 定义newNode的像素格式
+// 定义textNode的像素格式
 textNode.frame = {
   x: 0,
   y: 0,

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: OpenGL ES平台
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏渲染加速服务 > 超帧功能开发 > 系统送显模式 > OpenGL ES平台
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:19+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2bfef9430b67373b14a15093bb1299b86056bb882e738c9cf0fa5fea9be36926
+scraped_at: 2026-11-12T09:52:14+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d190c62ddf33558861006e36a489101bcb9a6cf59f349cc2e1055366978c044f
 ---
 
 ## 业务流程
 
 基于OpenGL ES图形API平台，系统送显模式的主要业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/ZRgP3reiTHOovRjBvfxU3g/zh-cn_image_0000002809050713.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/eFnsHpPrSAeaHyaPmO29PA/zh-cn_image_0000002815399599.png)
 
 1. 用户进入超帧适用的游戏场景。
 2. 游戏应用调用[HMS\_FG\_CreateContext\_GLES](../harmonyos-references/_graphics_accelerate.md#hms_fg_createcontext_gles)接口创建超帧上下文实例。如超帧上下文实例创建失败，则无需在步骤6提供当前帧信息，只需逐帧对场景进行渲染送显即可。
@@ -25,10 +25,11 @@ content_hash: sha256:2bfef9430b67373b14a15093bb1299b86056bb882e738c9cf0fa5fea9be
 
    在系统送显模式下，开发者可以调用[HMS\_FG\_SetTargetFps\_GLES](../harmonyos-references/_graphics_accelerate.md#hms_fg_settargetfps_gles)，设置超帧后的目标帧率。
 5. 游戏应用调用[HMS\_FG\_Activate\_GLES](../harmonyos-references/_graphics_accelerate.md#hms_fg_activate_gles)接口激活超帧上下文实例。
-6. 游戏应用渲染真实帧，调用[HMS\_FG\_Dispatch\_GLES](../harmonyos-references/_graphics_accelerate.md#hms_fg_dispatch_gles)接口并传入真实帧颜色信息、深度信息、相机矩阵信息，生成预测帧。
-7. 游戏应用完成UI绘制，并送显当前真实帧。
-8. 用户退出超帧适用的游戏场景。
-9. 游戏应用调用[HMS\_FG\_DestroyContext\_GLES](../harmonyos-references/_graphics_accelerate.md#hms_fg_destroycontext_gles)接口销毁超帧上下文实例并释放内存资源。
+6. 游戏运行，对游戏帧画面进行渲染。
+7. 游戏应用渲染真实帧，调用[HMS\_FG\_Dispatch\_GLES](../harmonyos-references/_graphics_accelerate.md#hms_fg_dispatch_gles)接口并传入真实帧颜色信息、深度信息、相机矩阵信息，生成预测帧。
+8. 游戏应用完成UI绘制，并送显当前真实帧。
+9. 用户退出超帧适用的游戏场景。
+10. 游戏应用调用[HMS\_FG\_DestroyContext\_GLES](../harmonyos-references/_graphics_accelerate.md#hms_fg_destroycontext_gles)接口销毁超帧上下文实例并释放内存资源。
 
 ## 开发步骤
 
@@ -59,8 +60,13 @@ content_hash: sha256:2bfef9430b67373b14a15093bb1299b86056bb882e738c9cf0fa5fea9be
 3. 调用[HMS\_FG\_CreateContext\_GLES](../harmonyos-references/_graphics_accelerate.md#hms_fg_createcontext_gles)接口创建超帧上下文实例。如果返回nullptr，则说明超帧上下文实例创建失败，或当前硬件设备不支持开启超帧。
 
    ```cpp
+   // 声明超帧上下文实例
+   FG_Context_GLES *context_ = nullptr;
+   ```
+
+   ```cpp
    // 创建超帧上下文实例
-   FG_Context_GLES* context_ = HMS_FG_CreateContext_GLES();
+   context_ = HMS_FG_CreateContext_GLES();
    if (context_ == nullptr) {
        GOLOGE("HMS_FG_CreateContext_GLES execution failed.");
        return false;

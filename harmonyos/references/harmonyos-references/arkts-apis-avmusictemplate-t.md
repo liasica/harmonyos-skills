@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Types
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > ArkTS API > @ohos.multimedia.avMusicTemplate (音频模板) > Types
 category: harmonyos-references
-scraped_at: 2026-09-25T07:12:56+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:75783bc18aa8a070bddd31dd0df22d5c1547cd81cbe50dbaa211bee90c0a6175
+scraped_at: 2026-11-12T09:56:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a65a0054577d2ef9b995466732f9e7e75fd115a8082185ef3f575942d2818bd6
 ---
 
 **说明** 
@@ -529,6 +529,31 @@ type PlayForSearchEvent = (command: SearchPlayInfoType, args: SearchPlayInfo) =>
 | 类型 | 说明 |
 | --- | --- |
 | Promise<[OperResult](arkts-apis-avmusictemplate-i.md#operresult)> | Promise对象，返回搜播的操作结果对象。 |
+
+## CustomCommandEvent
+
+type CustomCommandEvent = (command: string, args: string) => Promise<OperResult>
+
+自定义控制命令事件。使用Promise异步回调。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| command | string | 是 | 自定义控制命令。 |
+| args | string | 是 | 自定义控制命令事件的参数。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[OperResult](arkts-apis-avmusictemplate-i.md#operresult)> | Promise对象，返回自定义控制命令的操作结果对象。 |
 
 ## ExecuteActionEvent
 

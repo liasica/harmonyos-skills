@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/network-kit-faq
 title: HTTP抓包调试常见问题
 breadcrumb: FAQ > 系统开发 > 网络 > 网络（Network） > 常见问题 > HTTP抓包调试常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:13+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:858ad3b672de217188e70ae2f1305c6914b17d3bb3c608786f14ac130594466a
+scraped_at: 2026-11-12T09:59:32+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:59d9dc2a9582b82b1838a9a8bb3128939982d836b63bc4bd9a450015e6aae8aa
 ---
 
 **Q：为了数据传输安全，其他平台端都做了对应的防抓包措施，可以避免用户通过抓包工具窃取一些相关信息，HarmonyOS应用应该如何做到防抓包呢？**
@@ -15,13 +15,13 @@ content_hash: sha256:858ad3b672de217188e70ae2f1305c6914b17d3bb3c608786f14ac13059
 1. HTTP升级成HTTPS：确保所有的网络请求都通过HTTPS协议进行，HTTPS是HTTP和SSL/TLS安全协议的结合，它提供了加密、数字证书认证、数据完整性三方面的保护。抓包工具即使拦截到数据包，也只能看到密文，无法直接解析。
 2. 证书校验：常规HTTPS是单向认证（服务端向客户端证明身份），抓包工具通过伪造根证书让客户端信任，从而解密HTTPS数据。双向认证让客户端也向服务端证明身份，只有携带合法客户端证书的请求，服务端才会处理。详细步骤：
    * 服务端生成CA根证书，并基于根证书生成客户端证书（公钥+私钥，如p12/pem格式）。
-   * HarmonyOS应用客户端将客户端证书内置到应用中，参考[配置信任应用管理的CA证书](../best-practices/bpta-network-ca-security.md#section05271716102218)；同时配置[不信任用户安装的CA证书](../best-practices/bpta-network-ca-security.md#section11935814273)。
+   * HarmonyOS应用客户端将客户端证书内置到应用中，参考[配置信任应用管理的CA证书](../doccenter-capabilities/network-connection-security-configuration.md#配置信任应用管理的ca证书)；同时配置[不信任用户安装的CA证书](../doccenter-capabilities/network-connection-security-configuration.md#配置不信任用户安装的ca证书)。
    * 服务端配置TLS双向认证，要求客户端握手时必须携带合法客户端证书，否则直接断开连接；
    * 证书定期更新，避免证书泄露，若泄露立即吊销并更换。
 
 3. 取消代理：检测客户端是否开启了HTTP/HTTPS代理，抓包工具几乎都需要通过代理拦截请求，对于有HTTPS请求和RCP请求可通过取消代理实现。
    * Network Kit：[使用HTTP访问网络](../harmonyos-guides/http-request.md)通过配置usingProxy:false实现，示例代码可参考[发起HTTP数据请求](../harmonyos-guides/http-request.md#发起http数据请求)。
-   * Remote Communication Kit：[定制代理](../harmonyos-guides/remote-communication-customproxyconfig.md)通过配置proxy:'no-proxy'实现，示例代码可参考[使用样例](../harmonyos-guides/remote-communication-customproxyconfig.md#section16684193015209)。
+   * Remote Communication Kit：[定制代理](../harmonyos-guides/remote-communication-customproxyconfig.md)通过配置proxy:'no-proxy'实现，示例代码可参考[使用样例](../doccenter-capabilities/remote-communication-customproxyconfig.md#no-proxy)。
 
 **Q：SSL证书即将过期的情况下，使用axios发起网络请求如何防抓包？**
 
@@ -29,7 +29,7 @@ content_hash: sha256:858ad3b672de217188e70ae2f1305c6914b17d3bb3c608786f14ac13059
 
 **Q：如何禁止使用网络代理工具（如Fiddler、Charles）对应用进行抓包，从而获取HTTPS协议的网络请求返回的明文信息？**
 
-**A**：配置不信任用户安装的CA证书，创建src/main/resources/base/profile/network\_config.json配置文件并进行配置，如下设置（参考文档：[配置不信任用户安装的CA证书](../best-practices/bpta-network-ca-security.md#section11935814273)）：{"trust-current-user-ca": false}。
+**A**：配置不信任用户安装的CA证书，创建src/main/resources/base/profile/network\_config.json配置文件并进行配置，如下设置（参考文档：[配置不信任用户安装的CA证书](../doccenter-capabilities/network-connection-security-configuration.md#配置不信任用户安装的ca证书)）：{"trust-current-user-ca": false}。
 
 **Q：HarmonyOS Next手机上抓取tcpdump包（网络数据包）有可用的推荐工具吗？**
 
@@ -37,16 +37,16 @@ content_hash: sha256:858ad3b672de217188e70ae2f1305c6914b17d3bb3c608786f14ac13059
 
 1. 下载并安装Wireshark软件；电脑开启热点，手机连接电脑热点，保证手机的请求转发到电脑；通过ipconfig命令查看对应的网络接口，示例中网络对应的本地连接10如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/Lcghn037TRitoo1i_VvZ8w/zh-cn_image_0000002802160281.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/PhgT9MU7TWGvWxNZncRAlg/zh-cn_image_0000002802160281.png "点击放大")
 2. 根据当前手机连接的局域网设置捕获的网络接口；具体设置的路径为捕获-选项-勾选具体的网络接口，例如本次选择的是本地连接10；
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/DYtGTx6MQvS-SdTHVRnmRw/zh-cn_image_0000002802080199.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/wRfLE-sTRTCyHmJ57FFpcA/zh-cn_image_0000002802080199.png "点击放大")
 3. 点击开始捕获分组。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/UUJb4CdGRo2bbAy5HbJlKg/zh-cn_image_0000002802080201.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/aDpfBg3zSoOAXLMetGglkA/zh-cn_image_0000002802080201.png "点击放大")
 4. 操作App复现问题，可以查看Wireshark的包列表区和包内容细节区。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/wtrYChBGQ7W7G6SXnyCyEA/zh-cn_image_0000002772720454.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/fDKk7H0NT3-soASRxmrRcw/zh-cn_image_0000002772720454.png "点击放大")
 5. 保存生成的tcpdump包文件；具体路径为文件-保存（另存为），即可生成后缀名为pcapng的文件。
 
 **Q：HarmonyOS PC上如何在本机抓取所有网卡（包括虚拟网卡）的数据包？**
@@ -103,10 +103,10 @@ Charles具体使用步骤如下：
    2. 设置Charles的调试端口号。
       * 点击"Proxy" -> SSL Proxy Settings -> 在Include栏下点击"Add" -> 添加":"，即Host输入"*"，Port输入"*"，再添加"*:443"，即Host输入"*"，Port输入"443" -> 点击"确定"。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/HmHYOFeVT_WhBz5-H-2DJQ/zh-cn_image_0000002772883276.png "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/6haaDe1GSba16mZpsL90qA/zh-cn_image_0000002772883276.png "点击放大")
       * 点击"Proxy" -> Proxy Settings -> 设置"HTTP Proxy"下的Port（即Charles监听的端口，默认为8888）-> 勾选"Enable transparent HTTP proxying" -> 最后点击"OK"。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dd/v3/MIQiOD92TdSYgF0o6ssisg/zh-cn_image_0000002802083027.png "点击放大")
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/Ft96N1PKTPiPgHboCZ1sBg/zh-cn_image_0000002802083027.png "点击放大")
    3. 手机与PC连接同一局域网，Wi-Fi设置为手动代理，服务器主机名和端口为Charles的IP地址和监听端口。
 
       点击需要连接的Wi-Fi进入密码输入页面。在输入密码前，点击"代理"，选择"手动"，设置"代理的服务器主机名"为Charles的IP地址，"服务器端口"为Charles监听的端口，即设置为8888。最后输入密码，连接Wi-Fi。
@@ -115,18 +115,18 @@ Charles具体使用步骤如下：
 
       点击顶部菜单栏"Help" -> 选择"SSL Proxying" -> 点击"Install Charles Root Certificate" -> 点击"安装证书" -> 设置存储位置（可选择当前用户或本地计算机）后，点击"下一步" -> 选择"将所有证书都放入下列存储" -> 点击"浏览" -> 设置证书存储路径为"受信任的根证书颁发机构"。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/EmhcapogRpqoy8Q0mcmIqA/zh-cn_image_0000002772723318.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/V4SeU1cKQbiiIvaba2UMIw/zh-cn_image_0000002772723318.png "点击放大")
    2. 导入系统根证书到手机。
 
       方式一：点击 Charles 顶部菜单栏"Help" -> 选择"SSL Proxying" -> 点击"Install Charles Root Certificate on a Mobile Device or Remote Browser" -> 在手机的自带浏览器中访问 <http://chls.pro/ssl> -> 点击"立即下载"，将证书下载至手机内存中。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/sgyiHXnASOyAH3VdsHJOSg/zh-cn_image_0000002802163133.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/O-hVZKaBQcWHLbgSE7Cy7w/zh-cn_image_0000002802163133.png)
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/LoSDvF4bRLiDNbmM3B6vng/zh-cn_image_0000002772883280.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/2w9KOIUZT3GSBgWJNstt4g/zh-cn_image_0000002772883280.png "点击放大")
 
       方式二：在PC端，点击"Help"->点击"SSL Proxying"->选择"Save Charles Root Certificate..."，将证书保存到本地，格式为pem。将手机连接到电脑，通过DevEco将刚保存的pem文件上传到手机中（鼠标右键点击目标文件夹，选择"Upload..."，然后选择刚保存的pem文件），即可进行后续的证书安装步骤。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/tX7Lr5cvTJ-ojYraC9M6ug/zh-cn_image_0000002802083033.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/4iQdmw1ET_CoROgSgFsylg/zh-cn_image_0000002802083033.png "点击放大")
 4. 证书安装。
 
    证书在手机上的安装步骤如下：
@@ -143,7 +143,7 @@ Charles具体使用步骤如下：
    1. 在主界面中部点击Ctrl+F打开搜索栏，填入过滤关键字。例如监听www.charlesproxy.com，填入或勾选信息后点击Find。
    2. 在Charles的菜单栏中选择"Proxy" -> "Recording Settings" -> 选择"Include"栏 -> 点击"Add"添加一个项目 -> 按需填入需要监控的协议，重新监听即可只截取目标网站。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/d7qrVXGATfya-TM7X1o_2A/zh-cn_image_0000002772883286.png "点击放大")
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/ykDYdVvXQxiXuXcBz0m7rQ/zh-cn_image_0000002772883286.png "点击放大")
 
 **Q：使用模拟器发起HTTPS请求时如何安装数字证书？**
 
@@ -151,9 +151,9 @@ Charles具体使用步骤如下：
 
 1. 将证书拖拽上传至模拟器，可在文件管理的"我的手机">"下载"目录下查看上传的文件。
 2. 安装证书的方式如下：
-   * 点击设置 > WLAN >![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/RDAdFhkxQ82a_vlu4rC-Qw/zh-cn_image_0000002802162319.png)> 安装证书 > CA证书，选择pem格式证书进行安装。
+   * 点击设置 > WLAN >![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/htaT1reaQLCQxFLd53FPcw/zh-cn_image_0000002802162319.png)> 安装证书 > CA证书，选择pem格式证书进行安装。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/FlQnGsBbTtGWUAHCbA4EHg/zh-cn_image_0000002802083035.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/56BaMNlQScy1fQ10uYePjA/zh-cn_image_0000002772723326.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/wKjPz-B2RzCo-utaolUj6w/zh-cn_image_0000002802083035.png "点击放大") ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/sfs3tFWNRSS3C7BTZy-r5Q/zh-cn_image_0000002772723326.png "点击放大")
    * 在本机命令行窗口中使用以下命令打开证书管理。
 
      ```shell

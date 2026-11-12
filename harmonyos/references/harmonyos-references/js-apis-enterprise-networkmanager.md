@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.networkManager (网络管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.networkManager (网络管理)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:50:25+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:b438e1371b019f0c985d52c494de00b14c24a1f325529e29719acd578cf69436
+scraped_at: 2026-11-12T09:56:05+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:6af77f56b2bbf107d52956d24bc60af9f8cd82fa451bdb08708278cc6b802eac
 ---
 
 本模块提供设备网络管理能力，包括查询设备IP地址、MAC地址信息、管理网络接口状态、配置网络全局代理、管理防火墙规则和域名过滤规则、控制移动数据网络、管理APN配置、配置以太网网络等。适用于企业IT管理员对设备网络进行集中管理和安全管控，帮助企业实现网络访问策略统一管理、防止网络攻击和数据泄露、降低网络管理成本。
@@ -1562,8 +1562,8 @@ API version 21及之前版本，仅支持IPv4。从API version 22开始，支持
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| srcAddr | string | 否 | 是 | IP源地址。支持IP段，例如：192.168.0.0/22或者192.168.1.100-192.168.1.200 |
-| destAddr | string | 否 | 是 | IP目标地址。支持IP段，例如：192.168.0.0/22或者192.168.1.100-192.168.1.200 |
+| srcAddr | string | 否 | 是 | IP源地址。支持IP段，例如：192.168.0.0/22或者192.168.1.100-192.168.1.200。支持所有的IP地址，IPv4设置为0.0.0.0/0，IPv6设置为::/0。 |
+| destAddr | string | 否 | 是 | IP目标地址。支持IP段，例如：192.168.0.0/22或者192.168.1.100-192.168.1.200。支持所有的IP地址，IPv4设置为0.0.0.0/0，IPv6设置为::/0。 |
 | srcPort | string | 否 | 是 | 源端口。 |
 | destPort | string | 否 | 是 | 目标端口。 |
 | appUid | string | 否 | 是 | 应用uid，可以通过接口[bundleManager.getInstalledBundleList](js-apis-enterprise-bundlemanager.md#bundlemanagergetinstalledbundlelist20)获取bundleInfo.appInfo.uid。 |

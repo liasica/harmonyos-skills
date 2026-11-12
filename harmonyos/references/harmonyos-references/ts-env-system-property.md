@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-env-sy
 title: "@Env：环境变量"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 响应式环境变量 > @Env：环境变量
 category: harmonyos-references
-scraped_at: 2026-09-10T06:25:47+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:54:30+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:d4ce148f682c22720f8da7310aa53d94d668b747194250d71809f6809b5ce853
 ---
 

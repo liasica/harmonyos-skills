@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_listen-mu
 title: "@correctness/listen-multi-network-concurrent"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 正确性规则@correctness > @correctness/listen-multi-network-concurrent
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:14+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:afbc6c698c220bae309ff42fc1c3c70a0eed4db0accc5035410448da7ad3f2ba
+scraped_at: 2026-11-12T09:53:00+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8851265ba6680eab0fd954573fea888ce9cb90645c1907c4ab82ed542a2b0638
 ---
 
 建议应用订阅连接迁移通知，可在WiFi/蜂窝连接切换前后获取切换状态通知。
@@ -64,4 +64,4 @@ try {
 plugin:@correctness/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

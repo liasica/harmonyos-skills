@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/distributed-p
 title: 投播开发指导
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 分布式媒体会话 > 使用投播组件 > 投播开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:44+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:52:03+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:c64db6adfec15f4d5c2674f0a08eb82bfa798f564fd4d659cf586c905bf936c6
 ---
 

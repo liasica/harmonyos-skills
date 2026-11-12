@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-ndk-med
 title: 使用MediaAssetManager请求媒体资源(C/C++)
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 受限开放能力 > 使用MediaAssetManager请求媒体资源(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:47+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:52:09+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:aa8afcb51ec0e154227e568cd1acc5fe05ae4008f305832d63ee92b7d2c94f24
 ---
 

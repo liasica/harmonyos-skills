@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/agc-harmonyos
 title: 通用云开发模板
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > 端云一体化开发 > 附录：云开发工程模板 > 通用云开发模板
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:14+08:00
+scraped_at: 2026-11-12T09:52:54+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:ba799a0d189f287ea733c0b8816ae2b16a71fd054b47542112dee0493064a31f
+content_hash: sha256:640fce5b60b5422520c25ca38c747aeec6dc6d739ea974c01e381ddbc8c0384c
 ---
 
 ## 适用范围
@@ -39,7 +39,7 @@ content_hash: sha256:ba799a0d189f287ea733c0b8816ae2b16a71fd054b47542112dee049306
    1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)，进入“应用管理”页面。
    2. 在左上角的应用列表中点击“切换至项目”，选择您的项目。
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/pXIetClzS3mGkCThEwQXPQ/zh-cn_image_0000002765419093.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/gGYL6Q83QMSiTZcWMTkqbQ/zh-cn_image_0000002765419093.png)
    3. 选择“开放能力配置 > 云存储”，进入云存储页面。
    4. 选择“安全”页签，在“配置策略”页面修改默认安全策略为始终可读写后，点击“发布”。
 
@@ -51,7 +51,7 @@ content_hash: sha256:ba799a0d189f287ea733c0b8816ae2b16a71fd054b47542112dee049306
       ]
       ```
 
-      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/ASWSeyi-Qiqc54Fj0XqWaw/zh-cn_image_0000002492564672.png)
+      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/cpyqQfXiQwi6_QQIez-rYg/zh-cn_image_0000002492564672.png)
 4. 将模板工程推包到手机上，在手机上开通应用访问数据权限，即可开始体验模板。
 
    **注意** 

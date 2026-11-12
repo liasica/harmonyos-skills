@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-c-ge
 title: 检测环境中的平面（C/C++）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 平面识别 > 检测环境中的平面（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:03+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:dfbba073458277ec69a5796fc5ebf846a43981e8e1fc953c76a6eed82984663c
+scraped_at: 2026-11-12T09:52:10+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:55f53c6f6ef3db0da291f048677f789897e73c9b4aae19360d33fb1d6b7aa1ee
 ---
 
 ## 概要
@@ -69,7 +69,7 @@ CHECK(HMS_AREngine_ARTrackableList_GetSize(arSession, planeList, &planeListSize)
 
 当存在1个或多个平面时，可以依次遍历planeList获取所有平面对象。
 
-```cpp
+```
 for (int i = 0; i < planeListSize; ++i) {
     // ...
 }

@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-simulator-performance-simulation
-title: Simulator性能仿真功能
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子调试调优 > 调测功能介绍 > Simulator性能仿真功能
+title: Simulator仿真功能
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC算子调试调优 > AscendC调测调优功能 > Simulator仿真功能
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:50+08:00
-doc_updated_at: 2026-08-18
-content_hash: sha256:663de83442d3197b4976b5c631d18617f9b82a5bcc57afb2449f7c7c5f3aad7f
+scraped_at: 2026-11-12T09:52:42+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ca842baf6489b2ca8fead19fe964766d1d0fbb6009358b6543ae90639dadee1c
 ---
 
 ## CAModel性能仿真
@@ -14,182 +14,192 @@ content_hash: sha256:663de83442d3197b4976b5c631d18617f9b82a5bcc57afb2449f7c7c5f3
 
 算子可以在仿真器上进行性能仿真，目前主要支持CAModel仿真器。
 
-**说明** 
+CAModel仿真器基于一系列host侧的so（动态共享库）实现算子运行过程的仿真，可以通过**算子直调工程**和**mskl调测工具**两种方式，使算子的程序依赖仿真器的动态共享库，接入仿真器，输出算子执行结果。
 
-* 由于model本身存在准确性问题，CAModel建议只跑单核，仿真性能会比较准，多核一块跑比较慢，误差也大很多。
+### 准备工作
 
-### 使用方法（命令行）
+请参考[鸿蒙社区cannkit开发准备](cannkit-preparations.md)
 
-通过命令行进行性能仿真的关键步骤如下。
+### 使用方法-算子直调工程
 
-1. [完成环境搭建](cannkit-environment-preparation.md)，并准备好输入/标杆数据文件。
-2. 执行如下命令进行CAModel性能仿真，仅提供关键参数项示例，其他参数请参考[Simulator仿真参数](cannkit-cli-parameters.md#simulator仿真参数)按需设置。
+完整的样例工程请下载[鸿蒙CANN社区recipe仓算子直调样例工程](https://gitcode.com/cann/cann-recipes-harmony-infer/tree/master/ops/ascendc/AddKernelInvocation)
 
-   ```shell
-   ascendebug kernel --backend simulator --repo-type customize --json-file ${op_config_json_file} --core-type ${core_type} --chip-version ${chip_version} --work-dir ${work_dir} --block-num 1 --timeout 1200 ... {其他参数}
-   ```
+算子直调工程通过CMake编译生成可执行程序，在仿真模式下链接CAModel仿真器的动态共享库，从而在Host侧完成算子的功能验证与性能仿真。下面以Add算子样例为例，介绍工程的结构与运行步骤。
 
-   一般情况下，CAModel仿真时运行比较慢，--timeout一般设置为1200秒，--block-num一般设置为1，开发者需按实际情况设置。
-3. 查看性能仿真结果，详细说明参见[产物说明](cannkit-simulator-performance-simulation.md#产物说明)。
+说明：
 
-### 产物说明
+准备工作仍参考本篇文档“准备工作”一节的CANN包，请忽略上述样例工程中的README.md，仅下载工程代码。
 
-CAModel仿真结果存放在${root}/${work\_dir}/simulator路径下，其中${root}表示当前操作路径，${work\_dir}表示调测工作空间，默认为/debug\_workspace/${op\_type}目录，${op\_type}为算子名。目录结构示例如下。
+**目录结构**
+
+样例工程的目录结构如下：
 
 ```text
-├ ${op_type} // 算子名
-├── simulator
-│   ├── build // 存放NPU编译生成的中间文件
-│   │   ├── launch_args.so
-│   │   └── run_Makefile_0.sh
-│   ├── dump
-│   │   ├── camodel
-│   │   │   ├── log // model执行日志
-│   │   └── dump_data
-│   │       ├── 0 // 核心编号
-│   │       │   └── index_0 // index是dump接口的desc唯一标识值
-│   │       └── index_dtype.json
-│   ├── output // 存放NPU编译运行的输出文件
-│   │   ├── z.bin // 运行输出原始数据
-│   │   └── z.txt // 精度比对结果文件
-│   └── src // 存放NPU编译生成的临时代码文件
-│       └── _gen_args_${op_type}.cpp
+├── AddKernelInvocation
+│   ├── cmake                   // 编译工程文件
+│   ├── input                   // 存放脚本生成的输入数据目录
+│   ├── output                  // 存放算子运行输出数据和真值数据的目录
+│   ├── scripts
+│   │   ├── acl.json            // acl配置文件
+│   │   ├── gen_data.py         // 生成输入数据与真值数据的脚本
+│   │   ├── verify_result.py    // 真值对比文件
+│   ├── add_custom.cpp          // 算子kernel实现，暴露给main.cpp调用
+│   ├── CMakeLists.txt          // 编译工程文件
+│   ├── data_utils.h            // 数据读入写出函数
+│   ├── main.cpp                // 主函数，调用算子的应用程序，含CPU域及NPU域调用
+│   ├── run.sh                  // 编译运行算子的脚本
 ```
 
-* **查看性能仿真数据**
+**操作步骤**
 
-  1. 在执行ascendebug命令的目录下，会生成执行日志debug\_op.log。
-  2. 查看该日志，搜索"block finish"，可以看到类似如下日志，其中block\_idx为芯片的核心序号，total tick为核函数执行的cycle数，该值越大代表耗时越长。
+1. 进入样例工程目录。
 
-     ```plaintext
-     block finish -> block_idx: 0 total tick: 4153
-     ```
-* **查看精度比对结果**
+   ```bash
+   cd AddKernelInvocation
+   ```
+2. 执行如下命令编译并运行样例算子。
 
-  1. 在output目录下，查看是否生成输出文件(bin)和精度比对文件(txt)。
-  2. 根据精度比对文件(txt)，确认算子精度比对结果。
+   ```bash
+   bash run.sh -r [RUN_MODE] -v [SOC_VERSION]
+   ```
 
-     精度比对结果输出样例如下，主要展示两份数据的均值、部分误差对比以及成功/失败的最终比对结论。若结果是失败，会将最大误差的部分数据展示出来。
+   参数说明：
 
-     ```text
-     data_cmp mean is -1.41e-05 data_gd mean is -1.41e-05
-      split_count:2359296.0; max_diff_hd:0.1;
-      ---------------------------------------------------------------------------------------
-        Loop           ExpectOut        RealOut         FpDiff         RateDiff
-      ---------------------------------------------------------------------------------------
-      00000001         0.0395813       0.0395813       0.0000000       0.0000000
-      00000002         0.0160980       0.0160980       0.0000000       0.0000000
-      00000003         -0.0443420      -0.0443420      0.0000000       0.0000000
-      00000004         -0.0847778      -0.0847778      0.0000000       0.0000000
-      00000005         -0.0066605      -0.0066605      0.0000000       0.0000000
-      00000006         0.0880737       0.0880737       0.0000000       0.0000000
-      00000007         0.0848389       0.0848389       0.0000000       0.0000000
-      00000008         0.1083374       0.1083374       0.0000000       0.0000000
-      00000009         0.0838623       0.0838623       0.0000000       0.0000000
-      00000010         0.0887451       0.0887451       0.0000000       0.0000000
-      00000011         0.0572205       0.0572205       0.0000000       0.0000000
-      00000012         0.0741577       0.0741577       0.0000000       0.0000000
-      00000013         -0.0762329      -0.0762329      0.0000000       0.0000000
-      00000014         -0.0957642      -0.0957642      0.0000000       0.0000000
-      00000015         0.0102234       0.0102234       0.0000000       0.0000000
-        ...               ...             ...             ...             ...
-      ---------------------------------------------------------------------------------------
-      DiffThd           PctThd          PctRlt          Result
-      ---------------------------------------------------------------------------------------
-      0.0050            99.50%          100.000000%     Pass
-      Success Success Success Success Success
-     ```
+   * RUN\_MODE：编译运行方式。仿真场景请填写sim（NPU仿真）。
+   * SOC\_VERSION：芯片型号，当前支持KirinX90或Kirin9030。
 
-  **表1** 精度比对结果说明
+   以 KirinX90 仿真为例：
 
-  | 信息项 | 说明 |
-  | --- | --- |
-  | data\_cmp mean | 运行输出数据的均值信息。 |
-  | data\_gd mean | 标杆数据的均值信息。 |
-  | split\_count | 统计输出数据的个数。 |
-  | max\_diff\_hd | 输出数据和golden数据的最大误差值阈值。 |
-  | 详细对比数据展示（部分） | Loop（数据位置）、ExpectOut（期望输出值）、RealOut（实际输出值）、FpDiff （绝对误差值）、RateDiff（相对误差值）。 |
-  | 整体对比结果展示 | DiffThd（相对误差值阈值）、PctThd （精度达标数据占比阈值）、PctRlt（实际精度达标数据占比）、Result（对比结果）。 |
-  | Error Line展示项 | 若精度比对结果为Failed，会追加展示部分误差较大的数据的详细信息。 |
-* **（可选）查看dump结果**
+   ```bash
+   bash run.sh -r sim -v KirinX90
+   ```
+3. run.sh 脚本会自动完成以下操作：
 
-  若开启[DumpTensor功能](cannkit-commissioning-function-dumptensor.md)或[DumpAccChkPoint功能](cannkit-commissioning-function-dumpaccchkpoint.md)，结果文件存放在dump目录下，详细结果介绍参见[产物说明](cannkit-commissioning-function-dumptensor.md#产物说明)。
+   * 生成输入数据与真值数据（scripts/gen\_data.py）。
+   * 通过 CMake 编译生成仿真可执行文件（如add\_sim）。
+   * 运行可执行文件，输出结果保存到output/目录。
+   * 根据输入的[SOC\_VERSION]字段，自动链接对应SoC的仿真器so
+   * 调用scripts/verify\_result.py将输出结果与真值进行比对。
+4. 若终端输出 test pass，说明算子仿真运行结果与真值一致，功能验证通过。
 
-## Model仿真打点
+**仿真模式下的动态库依赖说明**
 
-### 功能介绍
+在仿真模式（RUN\_MODE=sim）下，run.sh脚本会自动设置LD\_LIBRARY\_PATH，将仿真器的动态共享库路径加入搜索路径，无需用户手动配置。相关代码片段如下：
 
-算子进行CAModel仿真时，可对算子任意运行阶段进行打点，从而分析不同指令的流水图，以便进一步性能调优。
+```bash
+export LD_LIBRARY_PATH=$_ASCEND_INSTALL_PATH/x86_64-linux/simulator/${_SOC_VERSION}/lib:$LD_LIBRARY_PATH
+```
 
-**说明** 
+其中$\_ASCEND\_INSTALL\_PATH为CANN安装路径（优先取自ASCEND\_TOOLKIT\_HOME或ASCEND\_HOME\_PATH环境变量，若未设置则默认使用$HOME/Ascend/ascend-toolkit/latest或/usr/local/Ascend/ascend-toolkit/latest）。仿真模式下CAModel仿真器所依赖的libascendcl等动态库已包含在该路径下。
 
-Kirin9020/Kirin9030/KirinX90暂不支持使用该方法进行调优。
+如需保留仿真器中间态的dump log，可在运行前手动设置CAMODEL\_LOG\_PATH环境变量指定输出路径（目录需提前创建），否则脚本默认使用./sim\_log并在每次运行前清空。
 
-### 使用方法
+**替换为自定义算子**
 
-1. 先在Kernel代码中的目标指令位置分别打上TRACE\_START/TRACE\_STOP，示例如下，起始/终止接口的说明详见[Trace接口说明](cannkit-simulator-performance-simulation.md#trace接口说明)。
+如需将该样例工程替换为自己的算子实现，需要修改以下内容：
+
+1. **add\_custom.cpp**：整个文件替换为新算子的kernel实现。
+2. **run.sh**：根据实际算子名修改FILE\_NAME属性（控制编译获得的二进制名）。
+3. **scripts/gen\_data.py**：自定义生成输入数据的内容（Shape、数据类型、算子输入参数数量）。
+4. **main.cpp**：修改调用add\_custom.cpp中暴露的符号、读数据的逻辑，使其与新算子保持一致。
+
+### 使用方法-mskl调测工具
+
+mskl调测工具提供了一组Python接口，开发者无需依赖ACLNN框架，即可在Python脚本中快速实现Kernel的下发、编译与运行，适用于算子的Tiling逻辑验证与功能验证。
+
+说明：
+
+* 当前Kirin芯片仅支持 simulator（仿真）模式。
+* 使用mskl前需先完成算子工程准备并执行 build\_and\_install.sh 将算子部署到CANN环境。
+
+**前提条件**
+
+已拷贝[样例单算子工程](https://gitcode.com/cann/cann-recipes-harmony-infer/tree/master/ops/ascendc/src/add_custom)完成算子工程准备，并执行build\_and\_install.sh完成算子部署。
+
+**操作步骤**
+
+1. 进入算子工程目录。
+
+   ```bash
+   cd ~/add_custom
+   ```
+2. 创建启动脚本run\_mskl.sh，内容如下：
 
    ```shell
-   TRACE_START(0x1);
-   DataCopy(zGm, zLocal, this->totalLength);
-   TRACE_STOP(0x1);
+   soc_version=KirinX90
+   export LD_PRELOAD=${ASCEND_HOME_PATH}/tools/msopt/bin/lib64/libstdc++.so.6
+   export LD_LIBRARY_PATH=${ASCEND_TOOLKIT_HOME}/lib64:${ASCEND_TOOLKIT_HOME}/tools/msopt/bin/lib64/:${ASCEND_TOOLKIT_HOME}/x86_64-linux/simulator/${soc_version}/lib/:${LD_LIBRARY_PATH}
+   python3 mskl_demo.py
    ```
-2. 参考[使用方法（命令行）](cannkit-simulator-performance-simulation.md#使用方法命令行)中的命令行方式，执行算子仿真流程。
-3. 在CAModel仿真结果trace图上查看打点结果。
 
-   如下图所示，其中USER\_DEFINE\_1\_DELAY表示DataCopy指令下发到指令开始执行的时间，USER\_DEFINE\_1表示指令执行的时间。
+   该脚本会设置LD\_LIBRARY\_PATH，将CANN动态库、msopt动态库与仿真器动态库路径加入搜索路径，确保mskl能正确加载仿真器与算子依赖。
+3. 创建Python调用脚本mskl\_demo.py，内容如下：
 
-   **图1** 仿真打点示意图
+   ```python
+   import os
+   import numpy as np
+   import mskl
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/mTzSFJigQkShfuKtU6SplA/zh-cn_image_0000002779851744.png)
+   CANN_ROOT = os.environ.get('ASCEND_HOME_PATH', '/usr/local/Ascend/cann')
+   KERNEL_BINARY_PATH = os.path.join(CANN_ROOT, 'opp/vendors/customize/op_impl/ai_core/tbe/kernel/kirinx90/add_custom/AddCustom_99ac61bdd243ff8d84b87c4ff0c51889.o')
+   TILING_LIB_PATH = os.path.join(CANN_ROOT, 'opp/vendors/customize/op_impl/ai_core/tbe/op_tiling/liboptiling.so')
 
-### Trace接口说明
+   a = np.random.randint(1, 5, (8, 4096)).astype(np.float16)
+   b = np.random.randint(1, 5, (8, 4096)).astype(np.float16)
+   c = np.zeros((8, 4096), dtype=np.float16)
+   golden = (a + b).astype(np.float16)
 
-TRACE\_START接口说明如下。
+   out = mskl.tiling_func(op_type='AddCustom', inputs=[a,b], outputs=[c], lib_path=TILING_LIB_PATH, attr={'bias':0}, soc_version='KirinX90')
+   kernel = mskl.get_kernel_from_binary(KERNEL_BINARY_PATH)
+   kernel(a, b, c, out.workspace, out.tiling_data, device_id=0)
+   result = 'success' if np.array_equal(c, golden) else 'failed'
+   print(f'compare {result}.')
+   ```
+4. 根据实际部署路径，修改mskl\_demo.py中的两个路径变量。
 
-* **函数原型：** #define TRACE\_START(apid)
-* **函数功能：** 起始位置打点。
-* **参数(IN)：** apid，当前预留了十个开发者自定义的类型：
+   查询Kernel二进制文件（.o 文件）的绝对路径，填入KERNEL\_BINARY\_PATH：
 
-  + 0x0：USER\_DEFINE\_0
-  + 0x1：USER\_DEFINE\_1
-  + 0x2：USER\_DEFINE\_2
-  + 0x3：USER\_DEFINE\_3
-  + 0x4：USER\_DEFINE\_4
-  + 0x5：USER\_DEFINE\_5
-  + 0x6：USER\_DEFINE\_6
-  + 0x7：USER\_DEFINE\_7
-  + 0x8：USER\_DEFINE\_8
-  + 0x9：USER\_DEFINE\_9
-* **参数(OUT)：** NA
-* **返回值：** NA
-* **使用约束：**
+   ```shell
+   find $ASCEND_HOME_PATH -name *AddCustom*o
+   ```
 
-  + TRACE\_START/TRACE\_STOP需配套使用，若Trace图上未显示打点，则说明两者没有配对。
-  + 不支持跨核使用，例如TRACE\_START在AI Cube打点，则TRACE\_STOP打点也需要在AI Cube上，不能在AI Vector上。
-* **调用示例：**
+   查询Tiling动态库（liboptiling.so）的绝对路径，填入TILING\_LIB\_PATH：
 
-  ```shell
-  TRACE_START(0x2);
-  Add(zLocal, xLocal, yLocal, dataSize);
-  TRACE_STOP(0x2);
-  ```
+   ```shell
+   find $ASCEND_HOME_PATH -path */customize/* -name liboptiling.so
+   ```
+5. 执行脚本，调用算子。
 
-TRACE\_STOP接口说明如下。
+   注意：
 
-* **函数原型：** #define TRACE\_STOP(apid)
-* **函数功能：** 终止位置打点
-* **参数(IN)：** apid，取值需与TRACE\_START接口参数取值保持一致，否则影响打点结果。
-* **参数(OUT)：** None
-* **返回值：** NA
-* **使用约束：**
+   请在成功部署算子到CANN后再调用，否则会报错。
 
-  + TRACE\_START/TRACE\_STOP需配套使用，若Trace图上未显示打点，则说明两者没有配对。
-  + 不支持跨核使用，例如TRACE\_START在AI Cube打点，则TRACE\_STOP打点也需要在AI Cube上，不能在AI Vector上。
-* **调用示例：**
+   ```shell
+   sh run_mskl.sh
+   ```
 
-  ```shell
-  TRACE_START(0x2);
-  Add(zLocal, xLocal, yLocal, dataSize);
-  TRACE_STOP(0x2);
-  ```
+   执行成功后，输出如下：
+
+   ```text
+   $ sh run_mskl.sh
+   ...
+   compare success.
+   [DIGITAL_NPU] [rtDevBinaryUnRegister:634] enter Function>>>
+   [DIGITAL_NPU] [rtFree:56] enter Function>>>
+   ```
+
+   若输出compare success.，说明算子仿真运行结果与真值一致，功能验证通过。
+
+**常见问题**
+
+运行过程中如遇到如下日志报错：
+
+```text
+init_logger Failed to init log:
+```
+
+该日志不影响mskl的执行结果，仅表示仿真器不会保存中间态dump log。如需保存仿真器中间态dump log，可手动设置环境变量指定dump路径（目录需提前创建）：
+
+```shell
+export CAMODEL_LOG_PATH=XXX
+```

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-gesture
 title: 绑定手势方法
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 添加交互响应 > 添加手势响应 > 绑定手势方法
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:18+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:51:14+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:a2969583a0eb13bb768287100edc32fb0e34e309ca1256f7edc600bcd43bece3
 ---
 

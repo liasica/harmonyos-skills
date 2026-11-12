@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-abou
 title: 使用JSVM-API接口进行JSON操作
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口进行JSON操作
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:17+08:00
-doc_updated_at: 2026-10-28
+scraped_at: 2026-11-12T09:52:48+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:572f435c531e4f2c147b6e08c44fc06deaef90eac05606d9b4a0b512c37e06cf
 ---
 

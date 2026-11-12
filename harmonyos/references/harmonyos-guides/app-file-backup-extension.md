@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-file-back
 title: 应用接入数据备份恢复
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用数据备份恢复 > 应用接入数据备份恢复
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:21+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:e17d72721cc7189aa4ebd030402bab1ee70d2efda1434899280ecc2dbc5fcb37
+scraped_at: 2026-11-12T09:51:25+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:bcc0d1f76aed032da70eaa5ece52347cf56d62ffb3af3fbcc7ad751c47aa2859
 ---
 
 应用接入数据备份恢复需要通过BackupExtensionAbility实现。
@@ -79,7 +79,7 @@ BackupExtensionAbility是[Stage模型](stage-model-development-overview.md)中�
        "restoreDeps": ""
    }
    ```
-3. 开发者可以在BackupExtension.ets文件中自定义类继承的BackupExtensionAbility，通过重写其onBackup/onBackupEx和onRestore/onRestoreEx方法，使其达到在备份预加工应用数据或者在恢复阶段加工待恢复文件。
+3. 开发者可以在BackupExtension.ets文件中自定义类继承的BackupExtensionAbility，通过重写其onBackup/onBackupEx和onRestore/onRestoreEx方法，使其达到在备份阶段预加工应用数据或者在恢复阶段加工待恢复文件。
 
    如果没有特殊要求可以空实现，则备份恢复服务会按照统一的备份恢复数据规则进行备份恢复。
 

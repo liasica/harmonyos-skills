@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ComposeListItemV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ComposeListItemV2
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:14+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:86a09b6fa0d11ca1aa0567af5bbb0a6be20d418b2dfe6c61efec90491a812478
+scraped_at: 2026-11-12T09:54:30+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f5b166acce5797092ba33e1ed546700b3ca940e073732a1eda8d2bc30d95bb69
 ---
 
 该组件用于展示一系列宽度相同的列表项，适用于展示连续、多行的同类数据组合（如图片与文本）。
@@ -56,13 +56,13 @@ ComposeListItemV2({ contentItemV2?: ContentItemV2, operateItemV2?: OperateItemV2
 
 列表左侧显示的图标、图标大小以及中间元素文字内容。
 
+**装饰器类型:** @ObservedV2
+
 ### 属性
 
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**装饰器类型:** @ObservedV2
 
 **系统能力:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -153,13 +153,13 @@ ContentItemV2构造函数的参数选项。
 
 列表项右侧显示的元素类型。
 
+**装饰器类型:** @ObservedV2
+
 ### 属性
 
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**装饰器类型:** @ObservedV2
 
 **系统能力:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -233,13 +233,13 @@ OperateItemV2构造函数的参数选项。
 
 列表项右侧图标元素的类型。
 
+**装饰器类型:** @ObservedV2
+
 ### 属性
 
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**装饰器类型:** @ObservedV2
 
 **系统能力:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -305,13 +305,13 @@ OperateIconV2构造函数的参数选项。
 
 列表项右侧按钮元素的类型。
 
+**装饰器类型:** @ObservedV2
+
 ### 属性
 
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**装饰器类型:** @ObservedV2
 
 **系统能力:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -373,13 +373,13 @@ OperateButtonV2构造函数的参数选项。
 
 列表项右侧元素为Switch、CheckBox、Radio的类型。当列表项右侧元素需要使用Switch、CheckBox、Radio时，可通过该类型配置对应属性。
 
+**装饰器类型:** @ObservedV2
+
 ### 属性
 
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**装饰器类型:** @ObservedV2
 
 **系统能力:** SystemCapability.ArkUI.ArkUI.Full
 
@@ -433,7 +433,7 @@ OperateCheckV2构造函数的参数选项。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| isCheck | boolean | 否 | 是 | 列表项右侧元素Switch/CheckBox/Radio选中状态。  值为true时表示选中，值为false时表示未选中。 |
+| isCheck | boolean | 否 | 是 | 列表项右侧元素Switch/CheckBox/Radio选中状态。  默认值为false。  值为true时表示选中，值为false时表示未选中。 |
 | onChange | [OnChangeCallback](ohos-arkui-advanced-composelistitemv2.md#onchangecallback) | 否 | 是 | 列表项右侧元素Switch/CheckBox/Radio选中状态改变时触发回调。  默认不设置或设置为undefined时，状态改变不触发回调。 |
 | accessibilityText | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 列表项右侧元素Switch/CheckBox/Radio的无障碍文本属性。当组件不包含文本属性时，屏幕朗读选中此组件时不播报，使用者无法清楚地知道当前选中了什么组件。为了解决此场景，开发人员可为不包含文字信息的组件设置无障碍文本，当屏幕朗读选中此组件时播报无障碍文本的内容，帮助屏幕朗读的使用者清楚地知道自己选中了什么组件。  默认值:"" |
 | accessibilityDescription | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 列表项右侧元素Switch/CheckBox/Radio的无障碍描述。此描述用于向用户详细解释当前组件，开发人员应为组件的这一属性提供较为详尽的文本说明，以协助用户理解即将执行的操作及其可能产生的后果。特别是当这些后果无法仅从组件的属性和无障碍文本中直接获知时。如果组件同时具备文本属性和无障碍说明属性，当组件被选中时，系统将首先播报组件的文本属性，随后播报无障碍说明属性的内容。  默认跟随基础组件Switch/CheckBox/Radio播报规则。 |
@@ -525,7 +525,7 @@ struct ComposeListItemV2Example {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/GDHkpSzoS0qjzsnYZKK2GA/zh-cn_image_0000002809052279.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/A_6eRmBUSoWduzsiaS-2bg/zh-cn_image_0000002815561061.jpg)
 
 ### 示例2(设置列表项右侧不同元素自定义播报)
 
@@ -617,7 +617,7 @@ struct ComposeListItemV2Example {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/EZWF16dORhG0cuFpQE7Crg/zh-cn_image_0000002779852714.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/GHcbh7FTSduYwl6Ti-FhTQ/zh-cn_image_0000002815401145.png)
 
 ### 示例3(设置Symbol类型图标)
 
@@ -700,4 +700,4 @@ struct ComposeListItemV2Example {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/a7MMm4dtTIekyRngKCE1KQ/zh-cn_image_0000002779692746.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/GSy-XmRFRQ6Qbv-3aCw2lQ/zh-cn_image_0000002786521570.png)

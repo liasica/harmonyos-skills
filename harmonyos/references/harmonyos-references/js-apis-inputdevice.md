@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.multimodalInput.inputDevice (输入设备)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.inputDevice (输入设备)
 category: harmonyos-references
-scraped_at: 2026-09-21T06:23:10+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:e3ad98f6b9190599e8beaf53da88e7fc0a8e63f6c612bdd845adc4c97a38f591
+scraped_at: 2026-11-12T09:56:02+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:610897540020c4fed23520c62a9988ccb1a96176ceffe3236ceb1bf606eb52c9
 ---
 
 本模块提供输入设备管理能力，包括监听输入设备的连接和断开状态，查询设备名称等输入设备信息。
@@ -1059,7 +1059,7 @@ setFunctionKeyEnabled(functionKey: FunctionKey, enabled: boolean): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 3900002 | There is currently no keyboard device connected. |
 | 3900003 | It is prohibited for non-input applications. |
@@ -1167,6 +1167,7 @@ struct Index {
 | uniq9+ | string | 否 | 否 | 输入设备的唯一标识。 |
 | isVirtual23+ | boolean | 否 | 是 | 输入设备是否为虚拟设备。  true表示是虚拟设备，false表示是非虚拟设备。当该字段不存在时，默认值为false。 |
 | isLocal23+ | boolean | 否 | 是 | 输入设备是否为本地设备。  true表示是本地设备，false表示是非本地设备。当该字段不存在时，默认值为false。 |
+| displayId | number | 是 | 是 | 绑定的目标显示器ID。当系统中有绑定关系时存在该字段，未绑定时不存在该字段。  **起始版本**：26.0.1  **模型约束**：此接口仅可在Stage模型下使用。 |
 
 ## AxisType9+
 

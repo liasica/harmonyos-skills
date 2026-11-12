@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_hp-perfor
 title: "@performance/hp-performance-no-dynamic-cls-func"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-performance-no-dynamic-cls-func
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:12+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:d77db49972258b8a491e690a8953922f023baeb481c515df12dd34e4d3a9cc7d
+scraped_at: 2026-11-12T09:52:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f02bad4a692d99f38defaff3f235dc84f73b3bcae1a50e63a3a09bb5f841db8c
 ---
 
 避免动态声明function与class，仅适用于js/ts。
@@ -69,4 +69,4 @@ function foo(f: boolean, a: number, b: number): number {
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

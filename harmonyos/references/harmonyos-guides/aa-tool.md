@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/aa-tool
 title: aa工具
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > aa工具
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:03+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:242c27592a796a3e2238008f170b39cf8a9ce466223b2d0fba0bec2fa76417d7
+scraped_at: 2026-11-12T09:51:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a51d748dd25612aab6e6dd1bde9c528ac45aa2a4e84ea3ee40862b2921767fe5
 ---
 
 Ability assistant（Ability助手，简称为aa），是用于启动应用和启动测试用例的工具，为开发者提供基本的应用调试和测试能力，例如启动应用组件、强制停止进程、打印应用组件相关信息等。
@@ -267,21 +267,21 @@ aa dump命令从API version 7开始支持，从API version 9废弃，替换命�
 aa dump -a
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/xwVyHUq6S6-nNw9bsLANqw/zh-cn_image_0000002809010529.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/_SS27DKeT2KasAKpib-CZQ/zh-cn_image_0000002786519746.png)
 
 ```bash
 # 打印所有任务链
 aa dump -l
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/P8tQh2pbSEestolzqYarIg/zh-cn_image_0000002809050443.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/3zLpKIUdRbSbS-uZYFAgVw/zh-cn_image_0000002786359818.png)
 
 ```bash
 # 打印指定应用组件详细信息
 aa dump -i 105
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/ZOR-nVH3Q-WSRdfk0hJNxw/zh-cn_image_0000002779850878.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/vg6BEQqESbSiMmEP8faQqQ/zh-cn_image_0000002815559239.png)
 
 ## 强制停止进程命令（force-stop）
 
@@ -347,6 +347,7 @@ aa test -b <bundleName> [-m <module-name>] [-p <package-name>] [-s class <test-c
 | -s <any-key> | 可选参数，任意键值对。 |
 | -w | 可选参数，指定测试运行时间（单位ms）。 |
 | -D | 可选参数，调试模式。 |
+| -u | 可选参数，userId，表示用户ID，指定要执行的测试套或测试用例所在的用户。  **说明：** 从API版本26.0.0开始，支持该参数。 |
 
 **返回值**：
 
@@ -360,6 +361,7 @@ aa test -b <bundleName> [-m <module-name>] [-p <package-name>] [-s class <test-c
 | 10105001 | Failed to connect to the ability service. |
 | 10106002 | The aa start command's window option or the aa test command does not support app with release signature. |
 | 10108501 | An internal error occurs during the execution of the aa test command. |
+| 10104005 | The userId specified by the aa test command is not currently a foreground user. |
 
 **示例**：
 
@@ -370,6 +372,8 @@ aa test -b com.example.myapplication -s unittest ActsAbilityTest
 aa test -b com.example.myapplication -m entry_test -s unittest ActsAbilityTest
 # 启动测试框架并指定超时时间
 aa test -b com.example.myapplication -m entry_test -s timeout 10000 -s unittest ActsAbilityTest
+# 启动测试框架并指定所在用户
+aa test -b com.example.myapplication -m entry_test -s timeout 10000 -s unittest ActsAbilityTest -u 100
 ```
 
 ## 进入调试模式命令（attach）
@@ -1203,3 +1207,21 @@ Cannot debug applications using a release certificate.
 使用Debug签名证书重新签名，安装新签名出的HAP后，再尝试执行该命令。
 
 签名工具及签名证书的生成方式可以参考：[签名工具指导](ide-signing.md)。
+
+### 10104005 指定的userId不是前台用户
+
+**错误信息**
+
+The specified userId is not a foreground user.
+
+**错误描述**
+
+指定的userId不是前台用户。
+
+**可能原因**
+
+指定的userId用户当前不在前台。
+
+**处理步骤**
+
+检查指定userId用户是否在前台

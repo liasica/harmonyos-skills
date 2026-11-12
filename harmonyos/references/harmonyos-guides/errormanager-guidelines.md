@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/errormanager-
 title: 错误管理开发指导
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 错误管理及应用恢复 > 错误管理开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:23+08:00
-doc_updated_at: 2026-10-26
-content_hash: sha256:80542318ab4352996d62102c1ba9c878e06fb7c765b1e04d4d52e8bf1b222e00
+scraped_at: 2026-11-12T09:51:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:354c55cebe0644fd8b48abd1fd748011ccfa5bb47615c643e1458ecb6c3b852d
 ---
 
 ## 场景介绍
@@ -27,14 +27,14 @@ content_hash: sha256:80542318ab4352996d62102c1ba9c878e06fb7c765b1e04d4d52e8bf1b2
 | off(type: "error", observerId: number): Promise<void> | 以Promise的形式解除注册监听，传入的number为之前注册监听时返回的序号。 |
 | on(type: 'globalErrorOccurred', observer: GlobalObserver): void | 注册进程错误监听接口，当系统监测到应用异常时会回调该监听，该接口为同步接口，即一次注册，全局监听。  **说明**：从API version 18开始，支持该接口。 |
 | off(type: 'globalErrorOccurred', observer?: GlobalObserver): void | 以callback的形式解除注册监听。  **说明**：  - 从API version 18开始，支持该接口。  - 注销监听器时可以监听进程中所有线程的异常，建议在进程回收时调用off接口，否则可能造成应用崩溃。 |
-| on(type: 'globalUnhandledRejectionDetected', observer: GlobalObserver): void | 注册进程错误监听接口，当系统监测到应用promise异常时会回调该监听，该接口为同步接口，即一次注册，全局监听。  说明：从API version 18开始，支持该接口。 |
+| on(type: 'globalUnhandledRejectionDetected', observer: GlobalObserver): void | 注册进程错误监听接口，当系统监测到应用promise异常时会回调该监听，该接口为同步接口，即一次注册，全局监听。  **说明**：从API version 18开始，支持该接口。 |
 | off(type: 'globalUnhandledRejectionDetected', observer?: GlobalObserver): void | 以callback的形式解除注册监听。  **说明**：  - 从API version 18开始，支持该接口。  - 注销监听器时可以监听进程中所有线程的异常，建议在进程回收时调用off接口，否则可能造成应用崩溃。 |
 | on(type: 'loopObserver', timeout: number, observer: LoopObserver): void | 注册主线程消息处理耗时监听器，当系统监测到应用主线程事件处理超时时会回调该监听。  只能在主线程调用，多次注册后，后一次的注册会覆盖前一次的。 |
 | off(type: 'loopObserver', observer?: LoopObserver): void | 以LoopObserver的形式解除应用主线程消息处理耗时监听。 |
 | on(type: 'freeze', observer: FreezeObserver): void | 注册应用主线程freeze监听。只能在主线程调用，重复注册后，后一次的注册会覆盖前一次的。 |
-| off(type: 'freeze', observer?: FreezeObserver): void | 以FreezeObserver的形式解除应用主线程消息处理耗时监听。  说明：从API version 18开始，支持该接口。 |
-| setDefaultErrorHandler(defaultHandler?: ErrorHandler): ErrorHandler | 仅允许在主线程调用，发生JS\_CRASH异常时，支持链式回调，返回值为上一次注册的处理器。  说明：从API version 21开始，支持该接口。 |
-| setDefaultResourceUsageObserver(defaultObserver?: ResourceUsageObserver): ResourceUsageObserver; | 仅允许在主线程调用，发生应用资源超基线时，支持链式回调，返回值为上一次注册的资源占用观察者。  说明：从API version 24开始，支持该接口。 |
+| off(type: 'freeze', observer?: FreezeObserver): void | 以FreezeObserver的形式解除应用主线程消息处理耗时监听。  **说明**：从API version 18开始，支持该接口。 |
+| setDefaultErrorHandler(defaultHandler?: ErrorHandler): ErrorHandler | 仅允许在主线程调用，发生JS\_CRASH异常时，支持链式回调，返回值为上一次注册的处理器。  **说明**：从API version 21开始，支持该接口。 |
+| setDefaultResourceUsageObserver(defaultObserver?: ResourceUsageObserver): ResourceUsageObserver; | 仅允许在主线程调用，发生应用资源超基线时，支持链式回调，返回值为上一次注册的资源占用观察者。  **说明**：从API version 24开始，支持该接口。 |
 | setDefaultFreezeObserver(defaultObserver?: FreezeObserver) : FreezeObserver | 仅允许在主线程调用，发生APP\_FREEZE异常时，支持链式回调，返回值为上一次注册的处理器。  **说明**：从API版本26.0.0开始，支持该接口。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 当采用callback作为异步回调时，可以在callback中进行下一步处理。

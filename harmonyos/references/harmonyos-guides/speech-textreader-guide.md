@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/speech-textre
 title: 朗读控件
 breadcrumb: 指南 > AI > Speech Kit（场景化语音服务） > 朗读控件
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:11+08:00
-doc_updated_at: 2026-09-07
-content_hash: sha256:7e0d4288502334a54ab314f48810385eb9f7e650128f0c5951606ac78c08f701
+scraped_at: 2026-11-12T09:52:46+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:634a205d83b0fbc059bbeabd8f259c3b7b30fc3e864416b0a5d68118be7c9346
 ---
 
 ## 适用场景
@@ -14,7 +14,7 @@ content_hash: sha256:7e0d4288502334a54ab314f48810385eb9f7e650128f0c5951606ac78c0
 
 本章节将向您介绍如何使用朗读组件，效果如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/MdzM8-b-SGWG3Ce1lS7aMw/zh-cn_image_0000002809011511.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/dHM7JxymRHm_5gbTwveNYw/zh-cn_image_0000002786360778.png)
 
 ## 接口说明
 
@@ -34,7 +34,7 @@ content_hash: sha256:7e0d4288502334a54ab314f48810385eb9f7e650128f0c5951606ac78c0
    import { WindowManager } from '@kit.SpeechKit';
    import { ConfigurationConstant } from '@kit.AbilityKit';
    ```
-2. （可选）在onWindowStageCreate(windowStage: window.WindowStage)生命周期方法中，添加setWindowStage方法设置窗口管理器。
+2. （可选）在onWindowStageCreate(windowStage: window.WindowStage)生命周期方法中，添加setWindowStage()方法设置窗口管理器。
 
    ```typescript
    onWindowStageCreate(windowStage: window.WindowStage): void {
@@ -174,7 +174,7 @@ content_hash: sha256:7e0d4288502334a54ab314f48810385eb9f7e650128f0c5951606ac78c0
      TextReader.off('requestMore');
    }
    ```
-7. （可选）在setActionListener方法中设置更多监听，在用户与控件进行交互时触发回调通知开发者。注销监听，监听结束后进行释放。
+7. （可选）在setActionListener()方法中设置更多监听，在用户与控件进行交互时触发回调通知开发者。注销监听，监听结束后进行释放。
 
    ```typescript
    // 设置监听
@@ -394,7 +394,7 @@ struct Index {
     }];
     this.readInfoList = readInfoList;
     this.selectedReadInfo = this.readInfoList[0];
-    void await this.init();
+    await this.init();
     AppStorage.setOrCreate('isReadyToStart', false);
   }
 
@@ -477,6 +477,7 @@ export default class SubAbility extends UIAbility {
 
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     let info = want?.parameters?.info;
+    console.info(`SubAbility onCreate, info: ${info}`);
   }
 
   onDestroy(): void {
@@ -599,7 +600,6 @@ export default class SubAbility extends UIAbility {
 
    ```typescript
    import { TextReader, WindowManager } from '@kit.SpeechKit';
-   import { commonEventManager } from '@kit.BasicServicesKit';
    ```
 2. 在新ability中声明一个应用全局的状态变量isReadyToStart，并且通过AppStorage管理此状态变量。
 
@@ -646,7 +646,7 @@ export default class SubAbility extends UIAbility {
      }
    }
    ```
-6. 在entryability中，onCreate方法需要用eventHub设置'onShowPanel'回调，用来创造新的ability；onShowPanel回调中，首先构造want，然后通过context.startAbility接口创建新的ability。
+6. 在entryability中，onCreate()方法需要用eventHub设置'onShowPanel'回调，用来创造新的ability；onShowPanel()回调中，首先构造want，然后通过context.startAbility()接口创建新的ability。
 
    ```typescript
    import { AbilityConstant, Want } from '@kit.AbilityKit';
@@ -707,5 +707,5 @@ export default class SubAbility extends UIAbility {
      "minWindowWidth": 1158, // 最小窗口宽度
      "maxWindowHeight": 772, // 最大窗口高度
      "minWindowHeight": 772, // 最小窗口高度
-    }
+   }
    ```

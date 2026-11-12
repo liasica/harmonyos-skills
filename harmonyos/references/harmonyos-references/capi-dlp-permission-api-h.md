@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-dlp-
 title: dlp_permission_api.h
 breadcrumb: API参考 > 系统 > 安全 > Data Protection Kit（数据保护服务） > C API > 头文件 > dlp_permission_api.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:42+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4a20897236b75b27befb6765bc3ae3661760bc8da5444e858e778f1a7503f0dd
+scraped_at: 2026-11-12T09:55:22+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:957cb258ccf00e9422c0ad1a2f17c19d9b60ef80f9c40a3d1b5d6597905254bd
 ---
 
 ## 概述
@@ -59,6 +59,7 @@ DLP错误码的枚举。
 | 枚举项 | 描述 |
 | --- | --- |
 | ERR\_OH\_SUCCESS = 0 | 表示操作成功。 |
+| OH\_DLP\_NOT\_SUPPORTED = 801 | 表示当前设备由于没有DLP特性导致能力不支持。  **起始版本：** 26.0.1 |
 | ERR\_OH\_INVALID\_PARAMETER = 19100001 | 表示入参错误。 |
 | ERR\_OH\_API\_ONLY\_FOR\_SANDBOX = 19100006 | 表示非DLP沙箱应用。 |
 | ERR\_OH\_API\_NOT\_FOR\_SANDBOX = 19100007 | 表示DLP沙箱应用不允许调用此接口。 |
@@ -110,7 +111,7 @@ DLP_ErrCode OH_DLP_GetDlpPermissionInfo(DLP_FileAccess *dlpFileAccess, uint32_t 
 
 | 类型 | 说明 |
 | --- | --- |
-| [DLP\_ErrCode](capi-dlp-permission-api-h.md#dlp_errcode) | 0 - 操作成功。  19100001 - 入参错误。  19100006 - 非DLP沙箱应用。  19100011 - 系统服务工作异常。  19100012 - 内存申请失败。 |
+| [DLP\_ErrCode](capi-dlp-permission-api-h.md#dlp_errcode) | 0 - 操作成功。  801 - （API 26.0.1新增）当前设备由于没有DLP特性导致能力不支持。  19100001 - 入参错误。  19100006 - 非DLP沙箱应用。  19100011 - 系统服务工作异常。  19100012 - 内存申请失败。 |
 
 ### OH\_DLP\_GetOriginalFileName()
 
@@ -135,7 +136,7 @@ DLP_ErrCode OH_DLP_GetOriginalFileName(const char *fileName, char **originalFile
 
 | 类型 | 说明 |
 | --- | --- |
-| [DLP\_ErrCode](capi-dlp-permission-api-h.md#dlp_errcode) | 0 - 操作成功。  19100001 - 入参错误。  19100012 - 内存申请失败。 |
+| [DLP\_ErrCode](capi-dlp-permission-api-h.md#dlp_errcode) | 0 - 操作成功。  801 - （API 26.0.1新增）当前设备由于没有DLP特性导致能力不支持。  19100001 - 入参错误。  19100012 - 内存申请失败。 |
 
 ### OH\_DLP\_IsInSandbox()
 
@@ -159,7 +160,7 @@ DLP_ErrCode OH_DLP_IsInSandbox(bool *isInSandbox)
 
 | 类型 | 说明 |
 | --- | --- |
-| [DLP\_ErrCode](capi-dlp-permission-api-h.md#dlp_errcode) | 0 - 操作成功。  19100011 - 系统服务工作异常。  19100012 - 内存申请失败。 |
+| [DLP\_ErrCode](capi-dlp-permission-api-h.md#dlp_errcode) | 0 - 操作成功。  801 - （API 26.0.1新增）当前设备由于没有DLP特性导致能力不支持。  19100011 - 系统服务工作异常。  19100012 - 内存申请失败。 |
 
 ### OH\_DLP\_SetSandboxAppConfig()
 
@@ -183,7 +184,7 @@ DLP_ErrCode OH_DLP_SetSandboxAppConfig(const char *configInfo)
 
 | 类型 | 说明 |
 | --- | --- |
-| [DLP\_ErrCode](capi-dlp-permission-api-h.md#dlp_errcode) | 0 - 操作成功。  19100001 - 入参错误。  19100007 - DLP沙箱应用不允许调用此接口。  19100011 - 系统服务工作异常。  19100018 - 应用未授权。 |
+| [DLP\_ErrCode](capi-dlp-permission-api-h.md#dlp_errcode) | 0 - 操作成功。  801 - （API 26.0.1新增）当前设备由于没有DLP特性导致能力不支持。  19100001 - 入参错误。  19100007 - DLP沙箱应用不允许调用此接口。  19100011 - 系统服务工作异常。  19100018 - 应用未授权。 |
 
 ### OH\_DLP\_GetSandboxAppConfig()
 
@@ -207,7 +208,7 @@ DLP_ErrCode OH_DLP_GetSandboxAppConfig(char **configInfo)
 
 | 类型 | 说明 |
 | --- | --- |
-| [DLP\_ErrCode](capi-dlp-permission-api-h.md#dlp_errcode) | 0 - 操作成功。  19100011 - 系统服务工作异常。  19100012 - 内存申请失败。  19100018 - 应用未授权。 |
+| [DLP\_ErrCode](capi-dlp-permission-api-h.md#dlp_errcode) | 0 - 操作成功。  801 - （API 26.0.1新增）当前设备由于没有DLP特性导致能力不支持。  19100011 - 系统服务工作异常。  19100012 - 内存申请失败。  19100018 - 应用未授权。 |
 
 ### OH\_DLP\_CleanSandboxAppConfig()
 
@@ -225,4 +226,4 @@ DLP_ErrCode OH_DLP_CleanSandboxAppConfig()
 
 | 类型 | 说明 |
 | --- | --- |
-| [DLP\_ErrCode](capi-dlp-permission-api-h.md#dlp_errcode) | 0 - 操作成功。  19100007 - DLP沙箱应用不允许调用此接口。  19100011 - 系统服务工作异常。  19100018 - 应用未授权。 |
+| [DLP\_ErrCode](capi-dlp-permission-api-h.md#dlp_errcode) | 0 - 操作成功。  801 - （API 26.0.1新增）当前设备由于没有DLP特性导致能力不支持。  19100007 - DLP沙箱应用不允许调用此接口。  19100011 - 系统服务工作异常。  19100018 - 应用未授权。 |

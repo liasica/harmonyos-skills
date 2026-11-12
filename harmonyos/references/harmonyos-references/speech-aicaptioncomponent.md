@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/speech-ai
 title: AICaptionComponent（AI字幕组件）
 breadcrumb: API参考 > AI > Speech Kit（场景化语音服务） > ArkTS组件 > AICaptionComponent（AI字幕组件）
 category: harmonyos-references
-scraped_at: 2026-11-04T08:37:38+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:51e1890961326cfd597091d431bcba8b79e9e3f022a85567967615cbe8852ba4
+scraped_at: 2026-11-12T09:57:47+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b9428dac38e51863a5b45939e7e2b946f1022eea9c6046f8a6c5e0471d4b139a
 ---
 
 AI字幕控件使用AI能力将语音实时转化成文本并翻译，提供原文、译文的展示。适用于一些音乐类、视频类等音视频内容App，帮助用户在一些无法直接浏览音频内容或者对音频源语言不熟悉的场景下，通过字幕来高效获取信息。
@@ -91,7 +91,7 @@ struct Index {
 
 组件如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/wIvQ7vZRRGyvUh3JjSfkIQ/zh-cn_image_0000002779853562.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/fetkdP5zS7e9SJRWtqYdcw/zh-cn_image_0000002815401711.png)
 
 ## AICaptionController
 
@@ -228,6 +228,7 @@ import { AICaptionController, AudioInfo } from '@kit.SpeechKit';
 try {
   let controller = new AICaptionController();
   let audioInfo: AudioInfo = controller.getAudioInfo();
+  console.info(`GetAudioInfo succeeded. Audio info: ${JSON.stringify(audioInfo)}`);
 } catch (e) {
   console.error(`GetAudioInfo failed. Code: ${e.code}, message: ${e.message}`);
 }
@@ -257,7 +258,7 @@ writeAudio(audioData: AudioData): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Parameter error. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. 3.Parameter verification failed. |
 | 1012900012 | Audio recognition failed. |
 
 **示例：**
@@ -265,8 +266,9 @@ writeAudio(audioData: AudioData): void
 ```typescript
 import { AICaptionController, AudioData } from '@kit.SpeechKit';
 
+const audioLength = 640;
 let audioData: AudioData = {
-  data: new Uint8Array()
+  data: new Uint8Array(audioLength)
 };
 try {
   let controller = new AICaptionController();

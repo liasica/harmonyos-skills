@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-partn
 title: 引导用户绑卡场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 引导用户绑卡场景
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:38+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:737ddcf6972494c8b7c0dc80743744650444f6c20247f0f692ea20e2949a5926
+scraped_at: 2026-11-12T09:52:32+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:227d942596ec48a23c57ec18b776a1dce6be52d9618ca38a74c8af434c6e957d
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:737ddcf6972494c8b7c0dc80743744650444f6c20247f0f692ea20e2949
 
 引导用户绑卡页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/c-45u-FVTcSxENWuTpoFvw/zh-cn_image_0000002779691578.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/1c6hmY4NS4mb23a7TsxHYA/zh-cn_image_0000002815400007.png)
 
 ## 提供绑卡跳转应用信息
 
@@ -26,13 +26,13 @@ content_hash: sha256:737ddcf6972494c8b7c0dc80743744650444f6c20247f0f692ea20e2949
 
 | 应用信息 | 是否必选 | 说明 |
 | --- | --- | --- |
-| AppID | 是 | 应用的AppID（在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站点击“开发与服务”，在项目列表中找到项目，在“项目设置 > 常规”页面的“应用”区域获取“APP ID”的值）。 |
+| AppID | 是 | 应用的AppID（在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)平台，点击“应用管理 > 基础信息”，在基本信息页面获取“APP ID”的值）。 |
 
 ## 业务流程
 
 开发者接入引导用户绑卡，具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/e-pLJ81XT5WEGnakHp3XUQ/zh-cn_image_0000002809011199.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/jOK1n2bcST2-znYZcDRI7w/zh-cn_image_0000002786520432.png)
 
 **场景1：用户取消绑卡**
 

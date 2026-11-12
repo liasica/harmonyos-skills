@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-union
 title: 使用“华为账号登录”按钮登录
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 登录 > 华为账号登录（获取UnionID/OpenID） > 使用“华为账号登录”按钮登录
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:22+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:049c018a560aabb2677617df182fd8d075e7c39a6d7b121f088af7cd6cca0a3b
+scraped_at: 2026-11-12T09:52:16+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:2cca29a6fe2e885808721d1fac4af78eb42630461c6d3fcc739fc442694d7f8e
 ---
 
 ## 场景介绍
@@ -14,21 +14,21 @@ content_hash: sha256:049c018a560aabb2677617df182fd8d075e7c39a6d7b121f088af7cd6cc
 
 华为账号登录按钮包含文本、标志和文本、标志三种样式，以满足应用对界面风格一致性和灵活性的要求。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/xv3I1ltpRxOp5trJs8Ldjg/zh-cn_image_0000002809010843.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/lvcTD_3rQcCEdasTtTzyig/zh-cn_image_0000002815559559.png)
 
 ## 约束与限制
 
-华为账号按钮登录能力支持Phone、Tablet、PC/2in1设备。并且从5.1.1(19)版本开始，新增支持TV设备。
+华为账号按钮登录能力支持Phone、Tablet、PC/2in1设备。并且从5.1.1(19)版本开始，新增支持TV设备；从26.0.1版本开始，新增支持Car设备。
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/NMEipmvWTzaYRv1MoLPBGw/zh-cn_image_0000002809050757.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/8ZWfk9n8RS-D7xy_WObSCQ/zh-cn_image_0000002815399643.png)
 
 账号登录按钮的用户体验和UX设计需符合[【华为账号登录】按钮](../design-guides/id-0000001880001344.md#section2624430102713)规范，不符合规范的UX设计可能会对应用上架和用户体验带来影响。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/tPjvUe_fRvW-5-MGEOzcrA/zh-cn_image_0000002779851192.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/PFda63aHR9ScOS-mSFi1hA/zh-cn_image_0000002786520068.png)
 
 流程说明：
 
@@ -65,7 +65,7 @@ content_hash: sha256:049c018a560aabb2677617df182fd8d075e7c39a6d7b121f088af7cd6cc
 
 ## 客户端开发
 
-开发者可参考下述内容自行开发，也可使用Account Kit提供的[华为账号登录按钮组件SampleCode](https://gitcode.com/HarmonyOS_Samples/application-services-snippets/tree/master/AccountKit/Accountkit-Samplecode-Clientdemo-HuaweiIDLogin-ArkTs)示例工程接入华为账号登录按钮组件。同时Account Kit也提供了[华为账号登录按钮Skill](https://gitcode.com/HarmonyOS_Skills/harmonyos-agent-skills/tree/main/02-development/account-kit/hmos-account-kit-login-button-client) ，开发者可利用该Skill快速接入华为账号登录按钮组件。
+开发者可参考下述内容自行开发，也可使用Account Kit提供的[华为账号登录按钮组件SampleCode](https://gitcode.com/HarmonyOS_Samples/application-services-snippets/tree/master/AccountKit/Accountkit-Samplecode-Clientdemo-HuaweiIDLogin-ArkTs)示例工程接入华为账号登录按钮组件。同时Account Kit也提供了[华为账号登录按钮Skill](https://matrix.openharmony.cn/#/skillSquare/details?id=6ae053e12f935261e2a3f7d9)，开发者可利用该Skill快速接入华为账号登录按钮组件。
 
 1. 导入[LoginWithHuaweiIDButton](../harmonyos-references/account-api-huawei-id-button.md#loginwithhuaweiidbutton)模块及相关公共模块。
 

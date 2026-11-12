@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-ta
 title: 开发Hvigor任务
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 扩展构建能力 > 开发Hvigor任务
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:26+08:00
+scraped_at: 2026-11-12T09:53:07+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:b214488f5d00989a052517c09cfa898eaac435cc644f4da73ac944155cf52443
+content_hash: sha256:471a9c614fd05ab39fe826ada779c6c7ff48e6a8cbd606b3c7a56cb686ef6f08
 ---
 
 ## 了解任务
@@ -65,4 +65,4 @@ Finished
    ```
 4. 查看任务执行结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/8rbdWfdXSEeP9HcLHSsB3w/zh-cn_image_0000002731542481.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/N9Cd9vn2QJ-k4zwxTgRrFQ/zh-cn_image_0000002808886751.png "点击放大")

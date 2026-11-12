@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-basic-matrix-computation
 title: 矩阵计算
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC昇腾到麒麟兼容性迁移指南 > Ascend910B/Ascend910C到KirinX90/Kirin9030迁移指导 > 基础API迁移指导 > 矩阵计算
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC昇腾到麒麟兼容性迁移指南 > Ascend910B/Ascend910C到KirinX90/Kirin9030迁移指导 > 基础API迁移指导 > 矩阵计算
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:08+08:00
+scraped_at: 2026-11-12T09:52:43+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:c358e9f34a761720334bb0e01c8f6021feb203afb7239d5b8488e646beacbc18
+content_hash: sha256:fb518dc6c7440c3c71ebdfd6be9457a1c44b267e12c12ca5ce85a786f8bee8bf
 ---
 
 KirinX90/Kirin9030处理器不支持结构化稀疏功能，并且Mmad左矩阵分形结构在Kirin9030有差异。
@@ -19,7 +19,7 @@ KirinX90/Kirin9030处理器不支持结构化稀疏功能，并且Mmad左矩阵�
 
 Mmad左矩阵分形格式变换修改适配方案：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/HjO4lgrZR0yeSrFa-lf7QA/zh-cn_image_0000002809011439.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/YFHpd9wYR6qWFROZVq1nbA/zh-cn_image_0000002786520634.png)
 
 ```cpp
 // 示例代码

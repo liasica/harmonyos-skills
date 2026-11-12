@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-skill-d
 title: 基于ArkTS脚本的应用Skill开发指导
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 方舟智能开发框架开发指导 > 基于ArkTS脚本的应用Skill开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:33:52+08:00
-doc_updated_at: 2026-09-30
+scraped_at: 2026-11-12T09:50:59+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:6960e095fa00c4e8d56e894ff5778939957c3d4026a28c0c20b89f7595a3f517
 ---
 

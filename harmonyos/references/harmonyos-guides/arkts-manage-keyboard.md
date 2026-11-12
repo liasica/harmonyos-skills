@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-manage-
 title: 管理软键盘
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用文本 > 管理软键盘
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:14+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:c2c6c7d701000cffac3ff60872e330446774f3bb52f6c5a2cea59a7189a510bc
+scraped_at: 2026-11-12T09:51:12+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:6ceac773e9a7f5006e83cda984048fbb7999c4b24df97cb9d90f59c8a4cedb66
 ---
 
 软键盘是用户交互的重要途径，提供文本输入功能。本文介绍在使用系统输入框组件（[TextInput](../harmonyos-references/ts-basic-components-textinput.md)、[TextArea](../harmonyos-references/ts-basic-components-textarea.md)、[Search](../harmonyos-references/ts-basic-components-search.md)、[RichEditor](../harmonyos-references/ts-basic-components-richeditor.md)）时，如何控制软键盘的弹出和收起。
@@ -26,7 +26,7 @@ content_hash: sha256:c2c6c7d701000cffac3ff60872e330446774f3bb52f6c5a2cea59a7189a
 
 以下示例展示了单击、双击和长按输入框时，软键盘弹出效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/ZID5XVh_TZKf80fRa8JmTw/zh-cn_image_0000002809049599.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/p4pDQ_16SumX-LX24mqPUA/zh-cn_image_0000002786518904.gif)
 
 ### 通过代码请求焦点
 
@@ -34,30 +34,30 @@ content_hash: sha256:c2c6c7d701000cffac3ff60872e330446774f3bb52f6c5a2cea59a7189a
 
 以下示例展示了点击按钮时，焦点转移到输入框并弹出软键盘的方法。
 
-```ts
-@Entry
-@Component
-struct demo {
+```typescript
+struct RequestFocusShowKeyboard {
   controller: TextInputController = new TextInputController();
-  @State inputValue: string = "";
+  @State inputValue: string = '';
 
   build() {
-    Column({ space: 20 }) {
-      Button('输入框请求焦点').onClick(() => {
-        this.getUIContext().getFocusController().requestFocus("textInput1")
-      })
-      TextInput({ controller: this.controller, text: this.inputValue })
-        .id("textInput1")
+    NavDestination() {
+      Column({ space: 20 }) {
+        Button('输入框请求焦点').onClick(() => {
+          this.getUIContext().getFocusController().requestFocus('textInput1')
+        })
+        TextInput({ controller: this.controller, text: this.inputValue })
+          .id('textInput1')
+      }
+      .height('100%')
+      .width('80%')
+      .margin('10%')
+      .justifyContent(FlexAlign.Center)
     }
-    .height('100%')
-    .width('80%')
-    .margin('10%')
-    .justifyContent(FlexAlign.Center)
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/7MiZUBSlTIO-dX_GR1vTMw/zh-cn_image_0000002779850034.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/iPXpdS4bR3-Pr4RqXqF-fg/zh-cn_image_0000002786358976.gif)
 
 ### 使用外接键盘的按键走焦
 
@@ -65,28 +65,28 @@ struct demo {
 
 以下示例展示了外接键盘时，多次按下Tab键，焦点转移到TextInput并显示物理键盘悬浮栏的场景。当按下Tab键时，焦点在页面中的三个组件之间转移，可以从Text的蓝色边框或者TextInput中闪烁的光标观察到焦点转移。当TextInput获焦时，显示光标，同时显示物理键盘悬浮栏。
 
-```ts
-@Entry
-@Component
-struct Index {
+```typescript
+struct TabKeyFocusShowKeyboard {
   build() {
-    Column({ space: 20 }) {
-      Text('Text.focusable(true)')
-        .focusable(true)
+    NavDestination() {
+      Column({ space: 20 }) {
+        Text('Text.focusable(true)')
+          .focusable(true)
 
-      TextInput({ placeholder: "TextInput" })
+        TextInput({ placeholder: 'TextInput' })
 
-      TextInput({ placeholder: "TextInput" })
+        TextInput({ placeholder: 'TextInput' })
+      }
+      .height('100%')
+      .width('80%')
+      .margin('10%')
+      .justifyContent(FlexAlign.Center)
     }
-    .height('100%')
-    .width('80%')
-    .margin('10%')
-    .justifyContent(FlexAlign.Center)
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/n5OgmOjsQO-YPy9INRlYWQ/zh-cn_image_0000002779690064.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/q94G2Zz3QIOlzpXrvm0n0A/zh-cn_image_0000002815558397.gif)
 
 ## 收起软键盘
 
@@ -107,27 +107,27 @@ struct Index {
 
 以下示例展示了用户主动点击软键盘关闭按钮的场景。
 
-```ts
-@Entry
-@Component
-struct Index {
+```typescript
+struct CloseButtonClickKeyboard {
   build() {
-    Column({ space: 20 }) {
-      Blank()
-        .height(350)
-      Flex({ direction: FlexDirection.Row }) {
-        TextInput({ placeholder: 'TextInput' })
+    NavDestination() {
+      Column({ space: 20 }) {
+        Blank()
+          .height(350)
+        Flex({ direction: FlexDirection.Row }) {
+          TextInput({ placeholder: 'TextInput' })
+        }
+        .width(250)
       }
-      .width(250)
+      .height('100%')
+      .width('90%')
+      .padding('5%')
     }
-    .height('100%')
-    .width('90%')
-    .padding('5%')
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/AOGrhJrySXOhdElcSVtgqA/zh-cn_image_0000002809009685.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/1mykrO-cQ02jABBK3XYVDw/zh-cn_image_0000002815398481.gif)
 
 ### 拖拽文本
 
@@ -135,35 +135,35 @@ struct Index {
 
 以下示例展示了用户主动拖拽文本时，软键盘被收起的场景。
 
-```ts
-@Entry
-@Component
-struct Index {
+```typescript
+struct DragTextCloseKeyboard {
   build() {
-    Column({ space: 20 }) {
-      Blank()
-        .height(350)
-      Flex({ direction: FlexDirection.Row }) {
-        TextInput({ text: '用户主动拖拽文本' })
-          .selectAll(true)
-          .defaultFocus(true)
+    NavDestination() {
+      Column({ space: 20 }) {
+        Blank()
+          .height(350)
+        Flex({ direction: FlexDirection.Row }) {
+          TextInput({ text: '用户主动拖拽文本' })
+            .selectAll(true)
+            .defaultFocus(true)
+        }
+        .width(250)
       }
-      .width(250)
+      .height('100%')
+      .width('90%')
+      .padding('5%')
     }
-    .height('100%')
-    .width('90%')
-    .padding('5%')
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/sgfodI_uSzGMhpvjfuF9JQ/zh-cn_image_0000002809049601.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/BT9EUKrRQKCTIzeoEBjV5A/zh-cn_image_0000002786518906.gif)
 
 ### 接收侧滑手势
 
 下面的动图展示了“用户侧滑时软键盘收起”的场景。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/HbvB-iZ2RVqOVbzHxZOicg/zh-cn_image_0000002779850036.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/wwj_iYeDQ-CgorwdcaY7Wg/zh-cn_image_0000002786358978.gif)
 
 ### 页面发生切换
 
@@ -173,44 +173,43 @@ struct Index {
 
 跳转前的页面
 
-```ts
-// Index.ets
-@Entry
-@Component
-struct Index {
+```typescript
+struct PageChangeSource {
   // 创建一个导航控制器对象并传入Navigation
   pathStack: NavPathStack = new NavPathStack()
 
   build() {
-    Navigation(this.pathStack) {
-      Column({ space: 30 }) {
-        Blank().height(150)
-        TextInput({ placeholder: 'TextInput' })
-        Button('跳转到下一个页面')
-          .onClick(() => {
-            this.pathStack.pushPath({ name: 'demo_text_1' })
-          })
+    NavDestination() {
+      Navigation(this.pathStack) {
+        Column({ space: 30 }) {
+          Blank().height(150)
+          TextInput({ placeholder: 'TextInput' })
+          Button('跳转到下一个页面')
+            .onClick(() => {
+              this.pathStack.pushPath({ name: 'pageChangeDestination' })
+            })
+        }
+        .height('100%')
+        .width('80%')
+        .margin('10%')
       }
-      .height('100%')
-      .width('80%')
-      .margin('10%')
+      .title('用Navigation实现页面跳转')
+      .navDestination(pageChangeNavDestination)
     }
-    .title('用Navigation实现页面跳转')
   }
 }
 ```
 
 跳转后的页面
 
-```ts
-// demo_text_1.ets
+```typescript
 @Builder
-export function demo_text_1_Builder() {
-  demo_text_1()
+export function pageChangeDestinationBuilder() {
+  PageChangeDestination()
 }
 
 @Component
-struct demo_text_1 {
+struct PageChangeDestination {
   pathStack: NavPathStack = new NavPathStack()
   // 跳转后的页面
   build() {
@@ -250,15 +249,15 @@ struct demo_text_1 {
 {
   "routerMap": [
     {
-      "name": "demo_text_1",
-      "pageSourceFile": "src/main/ets/pages/demo_text_1.ets",
-      "buildFunction": "demo_text_1_Builder"
+      "name": "pageChangeDestination",
+      "pageSourceFile": "src/main/ets/pages/PageChangeDestination.ets",
+      "buildFunction": "pageChangeDestinationBuilder"
     }
   ]
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/1alOMEHITiunp_sgvtdyDQ/zh-cn_image_0000002779690066.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/oy-2G2sRQty9xr_RZNTKxg/zh-cn_image_0000002815558399.gif)
 
 ### 通过输入框的TextInputController退出编辑态
 
@@ -267,7 +266,7 @@ struct demo_text_1 {
 以下示例展示了如何通过[TextInputController](../harmonyos-references/ts-basic-components-textinput.md#textinputcontroller8)收起软键盘。
 
 ```typescript
-struct textInputControllerCloseKeyboard {
+struct TextInputControllerCloseKeyboard {
   controller: TextInputController = new TextInputController();
   @State inputValue: string = '';
 
@@ -289,7 +288,7 @@ struct textInputControllerCloseKeyboard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/zvrE1-g-ROWhYztn_xs3Ew/zh-cn_image_0000002809009687.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/jo9i5gb_SD2aVbl7jFBvQg/zh-cn_image_0000002815398483.gif)
 
 ### 焦点转移到不需要软键盘的组件
 
@@ -302,7 +301,7 @@ struct textInputControllerCloseKeyboard {
 以下示例展示了点击按钮时，调用[requestFocus](../harmonyos-references/ts-universal-attributes-focus.md#requestfocus9)方法，焦点从输入框转移到按钮上，软键盘收起的场景。
 
 ```typescript
-struct requestFocusCloseKeyBoard {
+struct RequestFocusCloseKeyBoard {
   controller: TextInputController = new TextInputController();
   @State inputValue: string = '';
 
@@ -324,44 +323,44 @@ struct requestFocusCloseKeyBoard {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/VwoMjxqXQEiRcir3wNuYfQ/zh-cn_image_0000002809049603.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/vP37mxJWTTK0I310irJYzg/zh-cn_image_0000002786518908.gif)
 
 以下示例展示了滚动容器在开始滚动时收起键盘的场景。[List](../harmonyos-references/ts-container-list.md)开始滚动时，调用[clearFocus](../harmonyos-references/arkts-apis-uicontext-focuscontroller.md#clearfocus12)方法清理焦点，焦点转移到页面根容器节点，页面根容器节点不需要软键盘，从而收起软键盘。
 
-```ts
-@Entry
-@Component
-struct Index {
+```typescript
+struct ListScrollClearFocus {
   private arr: number[] = Array.from<number, number>(
     { length: 100 } as ArrayLike<number>,
     (_, i: number) => i + 1
   );
 
   build() {
-    Column() {
-      List({ space: 20, initialIndex: 0 }) {
-        ForEach(this.arr, (item: number, index?: number) => {
-          ListItem() {
-            Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) {
-              TextInput({ placeholder: 'TextInput ' + item })
+    NavDestination() {
+      Column() {
+        List({ space: 20, initialIndex: 0 }) {
+          ForEach(this.arr, (item: number, index?: number) => {
+            ListItem() {
+              Flex({ direction: FlexDirection.Row, alignItems: ItemAlign.Center }) {
+                TextInput({ placeholder: 'TextInput ' + item })
+              }
             }
-          }
-        }, (item: string) => item)
+          }, (item: string) => item)
+        }
+        .onScrollStart(() => {
+          // List开始滚动时清理焦点，达成收起键盘的目的
+          this.getUIContext().getFocusController().clearFocus()
+        })
+        .width('80%')
+        .height('80%')
+        .margin('10%')
       }
-      .onScrollStart(() => {
-        // List开始滚动时清理焦点，达成收起键盘的目的
-        this.getUIContext().getFocusController().clearFocus()
-      })
-      .width('80%')
-      .height('80%')
-      .margin('10%')
+      .justifyContent(FlexAlign.Center)
     }
-    .justifyContent(FlexAlign.Center)
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/U_E534rVSeyOVVfpg2e_5w/zh-cn_image_0000002779850038.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/dO3YSgd7RRip6lAJqTzmuw/zh-cn_image_0000002786358980.gif)
 
 ## 常见问题
 
@@ -383,12 +382,10 @@ struct Index {
 
 示例如下，单击输入框，拉起空的自定义键盘。
 
-```ts
-@Entry
-@Component
-struct demo {
+```typescript
+struct EmptyCustomKeyboard {
   controller: TextInputController = new TextInputController();
-  @State inputValue: string = "";
+  @State inputValue: string = '';
 
   // 自定义键盘组件
   @Builder
@@ -398,19 +395,21 @@ struct demo {
   }
 
   build() {
-    Column() {
-      TextInput({ placeholder: 'TextInput', controller: this.controller, text: this.inputValue })// 绑定自定义键盘
-        .customKeyboard(this.CustomKeyboardBuilder())
+    NavDestination() {
+      Column() {
+        TextInput({ placeholder: 'TextInput', controller: this.controller, text: this.inputValue })// 绑定自定义键盘
+          .customKeyboard(this.CustomKeyboardBuilder())
+      }
+      .justifyContent(FlexAlign.Center)
+      .width('80%')
+      .margin('10%')
+      .height('100%')
     }
-    .justifyContent(FlexAlign.Center)
-    .width('80%')
-    .margin('10%')
-    .height('100%')
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/nAgDp1ZvSier5yrDkH476w/zh-cn_image_0000002779690068.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/jbxJteCmRSa4zWmT1JBNLg/zh-cn_image_0000002815558401.gif)
 
 ### 点击发送按钮后不收起键盘
 
@@ -424,32 +423,32 @@ struct demo {
 
 **解决措施**
 
-软键盘的[enterKeyType](../harmonyos-references/ts-basic-components-textarea.md#enterkeytype11)可以设置输入法回车键类型。除EnterKeyType.NEW\_LINE外，enterKeyType设置其他的枚举值时，按下软键盘输入法回车键都会触发[onSubmit](../harmonyos-references/ts-basic-components-textarea.md#onsubmit14)事件。可以在TextArea的onSubmit()回调中，通过调用[keepEditableState](../harmonyos-references/ts-basic-components-textinput.md#keepeditablestate11)接口保持输入框编辑态，使得点击回车键后不收起键盘。
+软键盘的[enterKeyType](../harmonyos-references/ts-basic-components-textarea.md#enterkeytype11)可以设置输入法回车键类型。除EnterKeyType.NEW\_LINE外，enterKeyType设置其他的枚举值时，按下软键盘输入法回车键都会触发[onSubmit](../harmonyos-references/ts-basic-components-textarea.md#onsubmit14)事件。可以在TextArea的onSubmit回调中，通过调用[keepEditableState](../harmonyos-references/ts-basic-components-textinput.md#keepeditablestate11)接口保持输入框编辑态，使得点击回车键后不收起键盘。
 
 示例如下，软键盘的回车键显示为发送样式。按下发送之后，键盘不会收起。
 
-```ts
-@Entry
-@Component
-struct demo {
+```typescript
+struct KeepEditableStateOnSubmit {
   build() {
-    Column({ space: 20 }) {
-      TextArea({ placeholder: '点击发送收起键盘' })
-        .enterKeyType(EnterKeyType.Send)
+    NavDestination() {
+      Column({ space: 20 }) {
+        TextArea({ placeholder: '点击发送收起键盘' })
+          .enterKeyType(EnterKeyType.Send)
 
-      TextArea({ placeholder: 'onSubmit中设置keepEditableState，点击发送不收起键盘' })
-        .enterKeyType(EnterKeyType.Send)
-        .onSubmit((enterKey: EnterKeyType, event: SubmitEvent) => {
-          // 调用keepEditableState方法，输入框保持编辑态
-          event.keepEditableState();
-        })
+        TextArea({ placeholder: 'onSubmit中设置keepEditableState，点击发送不收起键盘' })
+          .enterKeyType(EnterKeyType.Send)
+          .onSubmit((enterKey: EnterKeyType, event: SubmitEvent) => {
+            // 调用keepEditableState方法，输入框保持编辑态
+            event.keepEditableState();
+          })
+      }
+      .justifyContent(FlexAlign.Center)
+      .height('100%')
+      .width('80%')
+      .margin('10%')
     }
-    .justifyContent(FlexAlign.Center)
-    .height('100%')
-    .width('80%')
-    .margin('10%')
   }
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/5aiiZc_OQtOMrojZZ5-EwQ/zh-cn_image_0000002809009689.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/OMMvXt8NQgyhSdAZN18Bgw/zh-cn_image_0000002815398485.gif)

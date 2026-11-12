@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: chart
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 基础组件 > chart
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:27+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:b8a3497efe0d7b6afc65d43bdb8c79b8f53f66d956300d9b098f60a21b24c449
+scraped_at: 2026-11-12T09:54:37+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c79d90205872411c74f6a29a1815d429aa8b8e7868390d71cff862faa9579e15
 ---
 
 图表组件，用于呈现线形图、柱状图、量规图、进度类圆形图表、加载类圆形图表、占比类圆形图表界面。
@@ -139,7 +139,7 @@ content_hash: sha256:b8a3497efe0d7b6afc65d43bdb8c79b8f53f66d956300d9b098f60a21b2
 | --- | --- | --- | --- | --- |
 | stroke-width | <length> | 32px（量规）  24px（占比类圆形图表） | 否 | 量规、占比类圆形图表组件刻度条的宽度。 |
 | start-angle | <deg> | 240（量规）  0（占比类圆形图表） | 否 | 量规、占比类圆形图表组件刻度条起始角度，以时钟0点为基线。范围为0到360。 |
-| total-angle | <deg> | 240（量规）  360（占比类圆形图表） | 否 | 量规、占比类圆形图表组件刻度条总长度，范围为-360到360，负数表示起点到终点为逆时针。 |
+| total-angle | <deg> | 240（量规）  360（占比类圆形图表） | 否 | 量规、占比类圆形图表组件刻度条总长度，范围为-360到360，负数标识起点到终点为逆时针。 |
 | center-x | <length> | - | 否 | 量规组件刻度条中心位置，该样式优先于通用样式的position样式，仅量规图支持。  该样式需要和center-y和radius一起配置才能生效。 |
 | center-y | <length> | - | 否 | 量规组件刻度条中心位置，该样式优先于通用样式的position样式，仅量规图支持。  该样式需要和center-x和radius一起配置才能生效。 |
 | radius | <length> | - | 否 | 量规组件刻度条半径，该样式优先于通用样式的width和height样式，仅量规图支持。  该样式需要和center-x和center-y一起配置才能生效。 |
@@ -253,7 +253,7 @@ content_hash: sha256:b8a3497efe0d7b6afc65d43bdb8c79b8f53f66d956300d9b098f60a21b2
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/fae9CHSJTu23n2tbHMR3Pg/zh-cn_image_0000002809052625.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/N87SUOIrTE6kA-jb45WFKg/zh-cn_image_0000002786521916.png)
 2. 柱状图
 
    ```html
@@ -320,7 +320,7 @@ content_hash: sha256:b8a3497efe0d7b6afc65d43bdb8c79b8f53f66d956300d9b098f60a21b2
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/AoMAYZ6LTOuOQv4v5fBwZA/zh-cn_image_0000002779853060.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/YUS675MlT6quaBeyT9tmjA/zh-cn_image_0000002786361988.png)
 3. 量规图
 
    ```html
@@ -349,4 +349,4 @@ content_hash: sha256:b8a3497efe0d7b6afc65d43bdb8c79b8f53f66d956300d9b098f60a21b2
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/FwvJsqVqSL69hOs5UW_hJg/zh-cn_image_0000002779693092.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/9vliv_OFSnOK2-MTFlGy8A/zh-cn_image_0000002815561409.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-offline-
 title: 离线匿名密钥证明(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥证明 > 离线匿名密钥证明(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:32+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:89dcbe0c0a8861dd40efb9d6f8e11eb3cca0822dd3b57fc4d5cea8361cfe5515
+scraped_at: 2026-11-12T09:51:40+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:5651b1e66b448c145355740a2a4d6252b37afa98cd498b5a2338b599ef7bb0a4
 ---
 
 从API版本26.0.0开始，HUKS支持离线匿名密钥证明。该接口用于在无网络环境下证明密钥的合法性，与在线匿名密钥证明相比，在离线证书有效期内不需要网络连接，推荐优先使用离线匿名密钥证明。离线证书是在该流程中由三级CA颁发的证书，其有效期为1个月。
@@ -30,7 +30,7 @@ content_hash: sha256:89dcbe0c0a8861dd40efb9d6f8e11eb3cca0822dd3b57fc4d5cea8361cf
 import { huks } from "@kit.UniversalKeystoreKit";
 import { BusinessError } from "@kit.BasicServicesKit";
 
-function StringToUint8Array(str: string) {
+function stringToUint8Array(str: string) {
   let arr: number[] = new Array();
   for (let i = 0, j = str.length; i < j; ++i) {
     arr.push(str.charCodeAt(i));
@@ -38,8 +38,8 @@ function StringToUint8Array(str: string) {
   return new Uint8Array(arr);
 }
 
-let g_challenge: Uint8Array = StringToUint8Array("hi_challenge_data");
-let g_keyAlias: Uint8Array = StringToUint8Array("testKey");
+let g_challenge: Uint8Array = stringToUint8Array("hi_challenge_data");
+let g_keyAlias: Uint8Array = stringToUint8Array("testKey");
 
 let gCommonParam: Array<huks.HuksParam> = [
   { tag: huks.HuksTag.HUKS_TAG_ATTESTATION_CHALLENGE, value: g_challenge },

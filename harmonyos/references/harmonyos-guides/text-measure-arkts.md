@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/text-measure-
 title: 文本测量（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 文本测量 > 文本测量（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:05+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:52:13+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:c852908e7ebcd92e64527d3058fd204ca8ae91be8d4487a998058dfdf07a9f45
 ---
 

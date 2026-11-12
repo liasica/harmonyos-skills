@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ability-h
 title: 头文件
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > C API > 头文件
 category: harmonyos-references
-scraped_at: 2026-10-11T07:23:37+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:8cfd90366a2b1e594b59545951dae181314cf9e9d05b63e4e2b458e030c9f42f
+scraped_at: 2026-11-12T09:53:35+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8625887a7c3d786653a5e2cd73081752b529a7edf511e71ce4f12bff8e9a06f9
 ---
 
 * **[ability\_access\_control.h](capi-ability-access-control-h.md)**
@@ -14,6 +14,7 @@ content_hash: sha256:8cfd90366a2b1e594b59545951dae181314cf9e9d05b63e4e2b458e030c
 * **[application\_context.h](capi-application-context-h.md)**
 * **[context\_constant.h](capi-context-constant-h.md)**
 * **[connect\_options.h](capi-connect-options-h.md)**
+* **[child\_process\_info.h](capi-child-process-info-h.md)**
 * **[native\_ability\_wrapper.h](capi-native-ability-wrapper-h.md)**
 * **[native\_child\_process.h](capi-native-child-process-h.md)**
 * **[native\_interface\_bundle.h](capi-native-interface-bundle-h.md)**

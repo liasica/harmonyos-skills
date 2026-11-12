@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: ImageAnimator
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 图片与视频 > ImageAnimator
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:06+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:075c5a78ff62736b3356b3c82f56ff131f95ed50f96af57e7dd7c9e1081cb079
+scraped_at: 2026-11-12T09:54:17+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a716ce414be6e1a2d224690eaac89b0aa03692be436e2b90a2789daf63b9f1ba
 ---
 
 提供帧动画组件来实现逐帧播放图片的能力，可以配置需要播放的图片列表，每张图片可以配置时长。
@@ -159,6 +159,26 @@ fillMode(value: FillMode)
 | --- | --- | --- | --- |
 | value | [FillMode](ts-appendix-enums.md#fillmode) | 是 | 当前播放方向下，动画开始前和结束后的状态。  默认值：FillMode.Forwards |
 
+### interpolation
+
+interpolation(value: ImageInterpolation)
+
+设置帧图片的插值效果。用于优化图片缩放时的锯齿问题。SVG类型图源不支持该属性。未通过该接口设置时，默认值为ImageInterpolation.Low。
+
+**起始版本：** 26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | [ImageInterpolation](ts-basic-components-image.md#imageinterpolation) | 是 | 帧图片的插值效果。 |
+
 ### iterations
 
 iterations(value: number)
@@ -306,7 +326,7 @@ onFinish(event: () => void)
 
 ### 示例1（播放Resource动画）
 
-通过ImageAnimator组件播放Resource动画。
+通过ImageAnimator组件播放Resource动画。从API版本26.0.1开始支持[interpolation](ts-basic-components-imageanimator.md#interpolation)接口。
 
 ```ts
 // xxx.ets
@@ -343,6 +363,7 @@ struct ImageAnimatorExample {
         .reverse(this.reverse)
         .fillMode(FillMode.None)
         .iterations(this.iterations)
+        .interpolation(ImageInterpolation.Low)
         .width(340)
         .height(240)
         .margin({ top: 100 })
@@ -390,7 +411,7 @@ struct ImageAnimatorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/owlmkHJITWi3Teza8CG29Q/zh-cn_image_0000002809012113.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/audKTghIRnieBFbn4yRjGw/zh-cn_image_0000002786361388.gif)
 
 ### 示例2（播放PixelMap动画）
 
@@ -490,7 +511,7 @@ struct ImageAnimatorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/5FS9y1aGQgO_GvmCISbYYg/zh-cn_image_0000002809052027.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/RIRZ0k7CRoOIWOvSRORZCg/zh-cn_image_0000002815560809.gif)
 
 ### 示例3（设置不可见自动停播）
 
@@ -593,4 +614,4 @@ struct ImageAnimatorAutoPauseTest {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/RygzFVlATbS5itAb1dSGtg/zh-cn_image_0000002779852462.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/NeloJMUgS6-IZH2fHtG63w/zh-cn_image_0000002815400893.gif)

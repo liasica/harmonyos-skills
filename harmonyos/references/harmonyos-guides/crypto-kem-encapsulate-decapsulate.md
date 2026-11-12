@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-kem-en
 title: 使用KEM进行密钥封装解封装(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥封装解封装 > 使用KEM进行密钥封装解封装(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:12+08:00
-doc_updated_at: 2026-10-30
+scraped_at: 2026-11-12T09:51:34+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:fc58ea7afb56708e5af6c68c8551d8e5b1262cbf8ccd7565c4fc4cb57906c0d4
 ---
 

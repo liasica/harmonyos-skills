@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-commo
 title: 业务规则说明
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 通用收银台接入 > 业务规则说明
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:38+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:472472b30c505c45d6cfceabaa2defc78ee43495ab2a113da5e15789bd5dc10a
+scraped_at: 2026-11-12T09:52:31+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b0a0888d25af0ce7ac1333847adf2d078c03b83183c1ce200771fe1259356982
 ---
 
 **说明** 
@@ -27,7 +27,7 @@ Payment Kit通用收银台上可以包含多种支付方式，支持自由组合
 | 配置项 | 是否必选 | 说明 |
 | --- | --- | --- |
 | 元服务/应用名称 | 是 | 应用的名称（AppID关联应用的名称）。 |
-| AppID | 是 | 应用的AppID（在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站点击“开发与服务”，在项目列表中找到项目，在“项目设置 > 常规”页面的“应用”区域获取“APP ID”的值）。 |
+| AppID | 是 | 应用的AppID（在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)平台，点击“应用管理 > 基础信息”，在基本信息页面获取“APP ID”的值）。 |
 | 收银台模式 | 是 | 收银台接入的支付模式（未配置商户三方支付相关配置时，默认为[华为支付](payment-payment-process.md)模式）。  2：混合支付模式（部分交易走华为支付通道，部分走外部三方支付通道）  3：纯外部支付模式（全部交易走外部三方支付通道） |
 | 启用状态 | 是 | 是否启用应用申请的三方支付相关配置。  - 启用（默认）  - 未启用 |
 | 支付方式名称 | 是 | 三方支付方式配置项。 收银台展示的支付方式名称。 |
@@ -40,7 +40,7 @@ Payment Kit通用收银台上可以包含多种支付方式，支持自由组合
 
 可参考如下表格格式填写配置提供：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/rtXGSC1jSieUQm1av-uGWg/zh-cn_image_0000002779851544.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/fTk9Z98YQv25KLn01E7QcA/zh-cn_image_0000002815559921.png)
 
 ## 约束与限制
 

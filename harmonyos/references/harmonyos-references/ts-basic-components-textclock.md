@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: TextClock
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > TextClock
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:07+08:00
+scraped_at: 2026-11-12T09:54:21+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:5a4eedeeb6f70dfa7defe882c033aa63fe8d52d7e1a3ca999d9b0d5914dd954f
+content_hash: sha256:c47c54f8d132d36b7793b2a074b2c95805477437d9e67bc58bf7a69573ea300a
 ---
 
 TextClock组件通过文本将当前系统时间显示在设备上，支持不同时区的时间显示和时间格式自定义，最高精度到秒级。适用于需要在应用界面上实时展示系统时间、支持多时区显示的场景，可帮助开发者快速实现时间文本展示功能，无需手动计算和更新时间。
@@ -469,7 +469,7 @@ struct Second {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/qaurFTFJS1WGBcvweiokaw/zh-cn_image_0000002779692568.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/i70wHKMIRByiiK5LUHfAPg/zh-cn_image_0000002786521392.gif)
 
 ### 示例2（设定文本阴影样式）
 
@@ -514,7 +514,7 @@ struct TextClockExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/5ZesUCE9TVOnn05jJMLe0w/zh-cn_image_0000002809012189.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/CsaSZhU3QCePnVJt0x349Q/zh-cn_image_0000002786361464.png)
 
 ### 示例3（设定自定义内容区）
 
@@ -601,7 +601,7 @@ struct TextClockExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/LSk8y9LXSbKfxBtBtS3iEg/zh-cn_image_0000002809052103.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/VIwax7qeShqi2rszLxMi3w/zh-cn_image_0000002815560885.gif)
 
 ### 示例4（设置前导零）
 
@@ -636,7 +636,7 @@ struct TextClockExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/ply56UJERb6Zv_UH6IYxtA/zh-cn_image_0000002779852538.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/bal9JzhUTuSqrOQqM9zAMA/zh-cn_image_0000002815400969.png)
 
 ### 示例5（设置文字显示样式）
 
@@ -691,4 +691,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/qW5xQsuBTxq5wXlHqPmLJQ/zh-cn_image_0000002779692570.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/pHLGtn5CTzCumNfXqCwqZQ/zh-cn_image_0000002786521394.png)

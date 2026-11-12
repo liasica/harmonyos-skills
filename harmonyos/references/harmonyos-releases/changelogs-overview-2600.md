@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-overview-2600
 title: 总览
-breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > OS平台能力 > OS平台行为变更说明 > 总览
+breadcrumb: 版本说明 > 更多版本 > 26.0.0 > OS平台能力 > OS平台行为变更说明 > 总览
 category: harmonyos-releases
-scraped_at: 2026-09-04T06:23:40+08:00
-doc_updated_at: 2026-09-03
+scraped_at: 2026-11-12T09:49:54+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:2ab9aada0076ec1e80ad59c9a8110f2b0697f27a41ca05b0e076ac622bc9b697
 ---
 

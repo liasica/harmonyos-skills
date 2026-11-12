@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/progress-bar-
 title: 发布进度条类型通知
 breadcrumb: 指南 > 应用服务 > Notification Kit（用户通知服务） > 发布通知 > 发布进度条类型通知
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:23+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:52:30+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:5fba2c6ec717b3505ab1f842ec4ae2af37d2fcc14cf81da1bf50bd2744ee00dd
 ---
 

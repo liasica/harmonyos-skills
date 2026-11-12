@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-picture
 title: 使用ImageSource完成多图对象解码
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片解码 > 使用ImageSource完成多图对象解码
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:44+08:00
-doc_updated_at: 2026-10-30
-content_hash: sha256:c5c35c163a93885774d317dea475c2cfb23cc65b1fdc167edc1314ec11c48e90
+scraped_at: 2026-11-12T09:52:05+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:cc64d3e871fa675c5ae6d555597cec5da6c202f430d5d7e2529120d56a130324
 ---
 
 将所支持格式的图片文件解码成[Picture](image-overview.md#基础概念)多图对象，以便在应用或系统中进行HDR图片显示、辅助图处理等操作。当前支持的图片文件格式包括JPEG、HEIF。
@@ -150,9 +150,9 @@ Picture和PixelMap是两种不同的图片解码对象，适用于不同的场�
      try {
        let picture = await imageSource?.createPicture(options);
        if (picture) {
-         // 返回解码后获取到的辅助图
+         // 返回解码后获取到的辅助图。
          if (isReturnAux) {
-           // type为解码参数中包含的辅助图类型
+           // type为解码参数中包含的辅助图类型。
            let type: image.AuxiliaryPictureType = image.AuxiliaryPictureType.GAINMAP;
            let auxPicture: image.AuxiliaryPicture | null = picture.getAuxiliaryPicture(type);
            // 获取辅助图信息。
@@ -180,7 +180,7 @@ Picture和PixelMap是两种不同的图片解码对象，适用于不同的场�
            }
            return returnPixelMap;
          } else {
-           return picture; // 返回解码后获取到的picture
+           return picture; // 返回解码后获取到的picture。
          }
        }
        return returnPixelMap;

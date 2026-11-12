@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: progress
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > progress
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:22+08:00
+scraped_at: 2026-11-12T09:54:32+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:0a9be7838ed4ffdcb4c00dc030acaa332851660e08ae36b91b81b79cfd21acbc
+content_hash: sha256:2d8498fcc986cd310f1ddc5fa673f78a783270030f39d99f6ac048d481c5004b
 ---
 
 **说明** 
@@ -133,4 +133,4 @@ type=eclipse5+
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/0lHbSAgMSmq23RzdeZ1-7Q/zh-cn_image_0000002809052395.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/rtn4wyOqT2ywK-sU02xp7w/zh-cn_image_0000002786521686.png)

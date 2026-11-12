@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_switch-ex
 title: "@typescript-eslint/switch-exhaustiveness-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/switch-exhaustiveness-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:11+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:fe1333562d52118a206d5223a3ee111f8763dc0bd69748813da7d91dd303f694
+scraped_at: 2026-11-12T09:52:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4ff778684d0354de5cba39c96e308518aae4749bf25918255591e4296b14c430
 ---
 
 要求switch语句对于联合类型中值的判断是详尽无遗的。
@@ -133,4 +133,4 @@ console.info(result);
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

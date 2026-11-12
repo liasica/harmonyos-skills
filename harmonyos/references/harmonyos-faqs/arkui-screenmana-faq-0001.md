@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-screenman
 title: 折叠屏状态监听与可折叠特性判断常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 屏幕管理 > 常见问题 > 折叠屏状态监听与可折叠特性判断常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:14:26+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:22a12c9d480d6871c565dedd8b2312f6a779d26f7e736c7563f818d41ef5a548
+scraped_at: 2026-11-12T09:58:53+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:315527360c2251223515e6dbe151ff92b76ab25f1f7ee3985a321f6cf3e5f114
 ---
 
 **Q：在使用HarmonyOS操作系统的设备时，应当采取何种方式来确定该设备是否具备可折叠特性？若设备确为可折叠类型，又该如何获取其当前的显示模式，并实现对折叠状态变化的实时监控？**
@@ -68,4 +68,4 @@ content_hash: sha256:22a12c9d480d6871c565dedd8b2312f6a779d26f7e736c7563f818d41ef
 
 **Q：折叠屏展开状态下，如何判断屏幕的横竖屏状态？**
 
-**A**：通过[display.getDisplayByIdSync](../harmonyos-references/js-apis-display.md#displaygetdisplaybyidsync12)获取对应的Display对象，其rotation属性表示屏幕的旋转角度（0、90、180、270），可据此判断横竖屏状态。同时可通过[display.on('add'|'remove'|'change')](../harmonyos-references/js-apis-display.md#displayonaddremovechange)监听显示设备变化，在回调中实时获取最新的屏幕方向信息。另外，[display.getCurrentFoldCreaseRegion](../harmonyos-references/js-apis-display.md#displaygetcurrentfoldcreaseregion10)可获取折叠区域的折痕信息，辅助判断折叠屏的展开状态。
+**A**：通过[display.getDisplayByIdSync](../harmonyos-references/js-apis-display.md#displaygetdisplaybyidsync12)获取对应的Display对象，其rotation属性表示屏幕的旋转角度（0、90、180、270），可据此判断横竖屏状态。同时可通过[display.on('add'|'remove'|'change')](../doccenter-references/api/js-apis-display.md#displayonadd--remove--change)监听显示设备变化，在回调中实时获取最新的屏幕方向信息。另外，[display.getCurrentFoldCreaseRegion](../harmonyos-references/js-apis-display.md#displaygetcurrentfoldcreaseregion10)可获取折叠区域的折痕信息，辅助判断折叠屏的展开状态。

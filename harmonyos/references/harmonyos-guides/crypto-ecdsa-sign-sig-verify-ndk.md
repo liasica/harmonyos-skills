@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-ecdsa-
 title: 使用ECDSA密钥对签名验签(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 签名验签 > 使用ECDSA密钥对签名验签(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:37+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:51:33+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:d9826368468d6bb0c8febcfe35507ad577b5ab9cc1c4174fa4e59c86c029de8f
 ---
 

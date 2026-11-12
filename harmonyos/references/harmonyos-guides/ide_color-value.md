@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_color-val
 title: "@cross-device-app-dev/color-value"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 一次开发多端部署规则@cross-device-app-dev > @cross-device-app-dev/color-value
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:13+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:2032bcce125b702cc211a80b6fea24d3a565169093c1d4a8518b34fa20ce3a7b
+scraped_at: 2026-11-12T09:52:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b240704835c444be345089274fd66f0880875adb8a2f8be98d86e6274f4dfa8d
 ---
 
 颜色值应当使用“$r”从color.json中引用，以适配不同的系统颜色模式，禁止使用固定的值。
@@ -67,4 +67,4 @@ plugin:@cross-device-app-dev/recommended
 plugin:@cross-device-app-dev/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

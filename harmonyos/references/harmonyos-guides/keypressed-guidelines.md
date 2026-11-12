@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/keypressed-gu
 title: 优先响应系统功能键开发指导
 breadcrumb: 指南 > 系统 > 基础功能 > Input Kit（多模输入服务） > 优先响应系统功能键开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:06+08:00
-doc_updated_at: 2026-09-24
+scraped_at: 2026-11-12T09:51:50+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:daff975e986828bada6bdf6293e3a1f7131e9cdbae89e5f7b60155c3c18f4953
 ---
 

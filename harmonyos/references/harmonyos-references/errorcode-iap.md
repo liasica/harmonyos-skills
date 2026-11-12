@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:18+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:be20cf5c24b94beb809aeb6bf8a1a7149c715d3c34c16d2d5bf4d7447dad0d60
+scraped_at: 2026-11-12T09:57:21+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:9fe19aa31ec1f705e368154286eebe85214dd2774e44bf183788ebc0d6dd1f18
 ---
 
 **说明** 
@@ -34,28 +34,43 @@ The operation was canceled by the user.
 
 ## 1001860001 内部错误
 
+根据实际错误原因的不同，系统会上报不同的错误信息，具体如下。
+
+### IAP is not activated.
+
 **错误信息**
 
-System internal error.
+System internal error. Failure reason: IAP is not activated.
 
 **错误描述**
 
-系统内部错误。
+当未激活应用内支付服务时，系统会产生此错误码。
 
 **可能原因**
 
-1. 当前DevEco Studio版本低于DevEco Studio 6.0.1 Release，或HarmonyOS SDK版本低于HarmonyOS 6.0.1 Release SDK。
-2. JWT签名无效或已过期。
-3. 使用了优惠签名，但nonce字段重复使用。
-4. IAP Kit开关未打开。
+IAP Kit开关未开启。
 
 **处理步骤**
 
-1. 请确认DevEco Studio已升级到DevEco Studio 6.0.1 Release及以上版本，且HarmonyOS SDK已升级到HarmonyOS 6.0.1 Release SDK及以上版本。
-2. 请参见[生成优惠签名购买参数](iap-server-subscribe-offer-sign.md)，检查JWT签名的有效性，确认JWT在有效时间内。
-3. 如果使用了优惠签名，请确认nonce字段的唯一性，请勿重复使用。请参见[OfferInfo](iap-server-data-model.md#offerinfo)。
-4. 请参见[开启和激活应用内购买服务](../harmonyos-guides/iap-enable-in-app-purchases.md)确认IAP Kit开关已开启，并已激活。
-5. 其他情况请进行重试操作或通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
+请参见[开启和激活应用内购买服务](../harmonyos-guides/iap-enable-in-app-purchases.md)确认IAP Kit开关已开启，并已激活。
+
+### Device certifcate exception.
+
+**错误信息**
+
+System internal error. Failure reason: Device certifcate exception.
+
+**错误描述**
+
+当设备证书异常时，系统会产生此错误码。
+
+**可能原因**
+
+设备证书异常。
+
+**处理步骤**
+
+请更换其他设备后重试。
 
 ## 1001860002 应用未被授权访问接口
 
@@ -98,7 +113,7 @@ Invalid product information. Failure reason: Product status is not online.
 
 **处理步骤**
 
-请登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“APP与元服务 > 在应用列表中点击该商品的应用 > 运营 > 商品管理 > 商品列表”，查看对应商品是否存在且正确、商品信息已经提交审核并审核通过。如未审核通过，可使用沙盒账号来进行[沙盒测试](../harmonyos-guides/iap-sandbox.md)。
+请登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)，点击“应用管理”，在左上角应用卡片处选择该商品对应的应用，进入“推广运营 > 产品运营 > 商品管理”，查看对应商品是否存在且正确、商品信息已经提交审核并审核通过。如未审核通过，可使用沙盒账号来进行[沙盒测试](../harmonyos-guides/iap-sandbox.md)。
 
 ### The product type or product id does not match.
 
@@ -116,7 +131,7 @@ Invalid product information. Failure reason: The product type or product id does
 
 **处理步骤**
 
-请登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“APP与元服务 > 在应用列表中点击该商品的应用 > 运营 > 商品管理 > 商品列表”，请确认对应商品ID和商品类型是否正确，并确认商品价格已配置。
+请登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)，点击“应用管理”，在左上角应用卡片处选择该商品对应的应用，进入“推广运营 > 产品运营 > 商品管理”，请确认对应商品ID和商品类型是否正确，并确认商品价格已配置。
 
 ### The In-App Purchases Service is not activated.
 
@@ -188,7 +203,7 @@ The app to which the product belongs is not released in a specified location.
 
 **处理步骤**
 
-请登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“我的应用 > 分发 > 版本信息 > 准备提交”，查看商品配置的国家/地区。
+请登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)，进入“应用管理 > 分发 > 应用上架 > 版本信息”，查看商品配置的国家/地区。
 
 ## 1001860050 未登录华为账号
 
@@ -321,8 +336,8 @@ The app provision type is not debug.
 
 可构建debug签名的应用：
 
-1. 手动签名：您需要在AGC中[申请调试证书](../app/agc-help-debug-cert-0000002283256797.md)、[注册调试设备](../app/agc-help-add-device-0000002283189937.md)、[申请调试Profile](../app/agc-help-debug-profile-0000002248181278.md)后，再[手动配置签名信息](../harmonyos-guides/ide-signing-manual.md)。
-2. 在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中[配置公钥指纹](../app/agc-help-cert-fingerprint-0000002278002933.md)。
+1. 手动签名：您需要在HarmonyOS 开发者中心中[申请调试证书](../app/agc-help-debug-cert-0000002283256797.md)、[注册调试设备](../app/agc-help-add-device-0000002283189937.md)、[申请调试Profile](../app/agc-help-debug-profile-0000002248181278.md)后，再[手动配置签名信息](../harmonyos-guides/ide-signing-manual.md)。
+2. 在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)的“应用管理 > 基础信息 > 基本信息”页[配置公钥指纹](../app/agc-help-cert-fingerprint-0000002278002933.md)。
 
 ## 1001860058 登录的华为账号不是配置的测试账号
 
@@ -336,13 +351,13 @@ The HUAWEI ID is not test account.
 
 **可能原因**
 
-未在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中的“用户与访问”中将登录的账号配置为测试账号。
+未在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)的“开发者管理 > 用户与访问 > 沙盒测试账号”中将登录的账号配置为测试账号。
 
 **处理步骤**
 
-需要在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中的“用户与访问”中添加测试账号，具体请参见[沙盒测试中添加测试账号流程](../harmonyos-guides/iap-sandbox.md#配置沙盒测试)。
+需要在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)的“开发者管理 > 用户与访问 > 沙盒测试账号”中添加测试账号，具体请参见[沙盒测试中添加测试账号流程](../harmonyos-guides/iap-sandbox.md#配置沙盒测试)。
 
-## 1001860059 无效的优惠信息
+## 1001860059 无效的优惠ID
 
 **错误信息**
 
@@ -350,7 +365,7 @@ Invalid promotional offer id.
 
 **错误描述**
 
-无效的优惠信息。
+无效的优惠ID。
 
 **可能原因**
 

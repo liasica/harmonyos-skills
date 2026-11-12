@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ad-redirectio
 title: 广告跳转
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 应用间跳转典型场景 > 广告跳转
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:00+08:00
-doc_updated_at: 2026-05-26
-content_hash: sha256:0fa43d9a83ff8e151df91146be2df8adac0f94a74785b4ff5d4fc266daac70b0
+scraped_at: 2026-11-12T09:50:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:80460a7b3898576f5aa3fb72db4ea6aaa3fcb3679542dc2e7f53a35ee26cd00c
 ---
 
 ## 概述
@@ -25,9 +25,9 @@ content_hash: sha256:0fa43d9a83ff8e151df91146be2df8adac0f94a74785b4ff5d4fc266daa
 
 广告跳转的流程图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/AzHw-L6yR3-bGBtECYsY1Q/zh-cn_image_0000002779849488.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/lECHJxozQRarRE6-a-fhdQ/zh-cn_image_0000002786518356.png)
 
-跳转过程基于[App Linking](app-linking-startup.md)能力，分为几种情况：
+跳转过程基于App Linking能力，分为几种情况：
 
 1. 商城应用已安装
 
@@ -43,7 +43,7 @@ content_hash: sha256:0fa43d9a83ff8e151df91146be2df8adac0f94a74785b4ff5d4fc266daa
 
 1. [配置App Linking服务](social-sharing-redirection.md#配置app-linking服务)。
 
-   * 在AGC（AppGallery Connect）后台为商城应用开通[App Linking](app-linking-startup.md)能力，正确配置商品详情页的深度链接与参数。
+   * 在AGC（AppGallery Connect）后台为商城应用开通App Linking能力，正确配置商品详情页的深度链接与参数。
    * 确认所有需要被广告载体（如视频应用）跳转的页面均能通过App Linking唯一链接定位。
 2. 开发商品详情Web页面
 

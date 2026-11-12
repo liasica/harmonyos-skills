@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/callservi
 title: numberIdentify (号码识别查询基本能力)
 breadcrumb: API参考 > 应用服务 > Call Service Kit（通话服务） > ArkTS API > numberIdentify (号码识别查询基本能力)
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:16+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:ef251f50bea47dfb2757068668f2bbbd764ecafe487e3936f3a3ccbd240015b5
+scraped_at: 2026-11-12T09:57:14+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:255b2c13ac2c2409bd332a802bc7a3bf814543f3a525af71985abcfa3d270dbe
 ---
 
 numberIdentify模块提供企业来电相关能力查询，包括查询是否有企业来电能力、陌生号码与信息识别开关、企业信息等。
@@ -125,7 +125,7 @@ hilog.info(0, 'TAG', `switchState is:${JSON.stringify(switchState)}`);
 | --- | --- | --- | --- | --- |
 | isNumberIdentifyEnabled | boolean | 否 | 否 | 是否开启号码识别能力。true:是。false:否。 |
 | isApplicationNumberIdentifyEnabled | boolean | 否 | 否 | 企业应用是否开启号码识别能力。true:是。false:否。 |
-| isBusinessServiceDataEnabled | boolean | 否 | 否 | 企业应用是否开启服务信息展示能力。true:是。false:否。**起始版本：** 6.1.1(24) |
+| isBusinessServiceDataEnabled | boolean | 否 | 否 | 企业应用是否开启服务信息展示能力。true:是。false:否。  **起始版本：** 6.1.1(24) |
 
 ## BusinessServiceData
 
@@ -141,6 +141,7 @@ hilog.info(0, 'TAG', `switchState is:${JSON.stringify(switchState)}`);
 | --- | --- | --- | --- | --- |
 | type | [BusinessServiceType](callservicekit-numberldentify.md#businessservicetype) | 否 | 否 | 企业服务类型。 |
 | delivery | [DeliveryData](callservicekit-numberldentify.md#deliverydata) | 否 | 是 | 快递服务数据。 |
+| carryout | [CarryoutData](callservicekit-numberldentify.md#carryoutdata) | 否 | 是 | 外卖服务数据。  **起始版本：** 26.0.1 |
 
 ## BusinessServiceType
 
@@ -155,6 +156,7 @@ hilog.info(0, 'TAG', `switchState is:${JSON.stringify(switchState)}`);
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | DELIVERY | 0 | 企业服务类型为快递。 |
+| CARRYOUT | 1 | 企业服务类型为外卖。  **起始版本：** 26.0.1 |
 
 ## DeliveryData
 
@@ -190,3 +192,40 @@ hilog.info(0, 'TAG', `switchState is:${JSON.stringify(switchState)}`);
 | BLUE | 0 | 订单状态颜色为蓝色。 |
 | GREEN | 1 | 订单状态颜色为绿色。 |
 | RED | 2 | 订单状态颜色为红色。 |
+
+## CarryoutData
+
+外卖服务数据。
+
+**模型约束：** 该接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Telephony.NumberIdentifyService
+
+**起始版本：** 26.0.1
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| customerName | string | 否 | 否 | 用户姓名。长度小于20个字符，如果超出将会截取前20个字符。 |
+| carryoutNumber | string | 否 | 否 | 外卖订单号。长度小于20个字符，如果超出将会截取前20个字符。 |
+| carryoutMerchant | string | 否 | 否 | 外卖订单商家。长度小于20个字符，如果超出将会截取前20个字符。 |
+| carryoutStatus | string | 否 | 否 | 外卖状态。 |
+| carryoutStatusColor | [StatusColor](callservicekit-numberldentify.md#statuscolor) | 否 | 否 | 外卖订单状态颜色。 |
+| carryoutAddress | string | 否 | 否 | 外卖配送地址。长度小于150个字符，如果超出将会截取前150个字符。 |
+| carryoutTimeoutDescription | string | 否 | 否 | 配送超时时间描述。 |
+| deepLinking | string | 否 | 否 | 传入的应用deepLinking地址。 |
+
+## StatusColor
+
+外卖订单状态颜色的枚举。
+
+**模型约束：** 该接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Telephony.NumberIdentifyService
+
+**起始版本：** 26.0.1
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| BLUE | 0 | 外卖订单状态颜色为蓝色。 |
+| GREEN | 1 | 外卖订单状态颜色为绿色。 |
+| RED | 2 | 外卖订单状态颜色为红色。 |

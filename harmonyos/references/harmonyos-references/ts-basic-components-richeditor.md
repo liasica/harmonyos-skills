@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: RichEditor
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > RichEditor
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:05+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:3d6d6b9cc164e3cdeb26b5b884d0589ae84b55a6e3308559dcb7f5d1f2f023b7
+scraped_at: 2026-11-12T09:54:19+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8ac072d1baffd4f0ed58ccd6ed8b65ba300bf921c5a14ea03697380959722909
 ---
 
 支持图文混排和文本交互式编辑的组件。
@@ -13,7 +13,6 @@ content_hash: sha256:3d6d6b9cc164e3cdeb26b5b884d0589ae84b55a6e3308559dcb7f5d1f2f
 **说明** 
 
 * 该组件从API version 10开始支持。后续版本新增内容，采用上角标单独标记该内容的起始版本。
-* 本模块接口仅可在Stage模型下使用。
 * 该组件从API版本26.0.0开始支持[WithTheme](ts-container-with-theme.md)。
 
 ## 子组件
@@ -28,6 +27,8 @@ RichEditor(value: RichEditorOptions)
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -41,6 +42,8 @@ RichEditor(value: RichEditorOptions)
 RichEditor(options: RichEditorStyledStringOptions)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -82,6 +85,8 @@ customKeyboard(value: CustomBuilder | ComponentContent | undefined, options?: Ke
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -98,6 +103,8 @@ bindSelectionMenu(spanType: RichEditorSpanType, content: CustomBuilder, response
 设置自定义选择菜单。支持自定义菜单风格和触发条件，适合需要深度自定义菜单的场景。自定义菜单超长时，建议内部嵌套[Scroll](ts-container-scroll.md)组件使用，避免键盘被遮挡。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -126,6 +133,8 @@ copyOptions不为CopyOptions.None时，长按组件内容，会弹出文本选�
 设置copyOptions为CopyOptions.None时，禁用复制、剪切、翻译、分享、搜索、帮写功能，且不支持拖拽操作，同时[enableDataDetector](ts-basic-components-richeditor.md#enabledatadetector11)的实体识别菜单和[enableSelectedDataDetector](ts-basic-components-richeditor.md#enableselecteddatadetector22)的AI菜单功能将受限。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -172,6 +181,8 @@ AI菜单选项包括[TextMenuItemId](ts-text-common.md#textmenuitemid12)中的ur
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -194,6 +205,8 @@ dataDetectorConfig(config: TextDataDetectorConfig)
 2. 当A ⊄ B且B ⊄ A时，若A.start < B.start，则保留A，反之则保留B。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -219,6 +232,8 @@ AI菜单生效时，选中范围内需包括且仅包括一个完整的AI实体�
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -240,6 +255,8 @@ enablePreviewText(enable: boolean)
 从API version 18开始，该接口支持在[attributeModifier](ts-universal-attributes-attribute-modifier.md#attributemodifier)中调用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -274,6 +291,8 @@ placeholder(value: ResourceStr, style?: PlaceholderStyle)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -291,6 +310,8 @@ caretColor(value: ResourceColor)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -306,6 +327,8 @@ selectedBackgroundColor(value: ResourceColor)
 设置文本选中高亮颜色。如果未设置不透明度或设置为完全不透明，默认使用20%不透明度。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -331,6 +354,8 @@ editMenuOptions(editMenu: EditMenuOptions)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -348,6 +373,8 @@ enterKeyType(value: EnterKeyType)
 设置后，软键盘回车键的图标和触发行为将根据指定类型变化，不同EnterKeyType对应不同的回车键样式。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -369,6 +396,8 @@ enableKeyboardOnFocus(isEnabled: boolean)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -389,6 +418,8 @@ RichEditor滚动条的显示模式。
 
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -405,6 +436,8 @@ maxLength(maxLength: Optional<number>)
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -420,6 +453,8 @@ maxLines(maxLines: Optional<number>)
 设置组件可显示的最大行数。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -441,6 +476,8 @@ enableHapticFeedback(isEnabled: boolean)
 
 **元服务API：** 从API version 13开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -459,6 +496,8 @@ keyboardAppearance(appearance: Optional<KeyboardAppearance>)
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -474,6 +513,8 @@ stopBackPress(isStopped: Optional<boolean>)
 设置是否阻止返回键传递。适用于编辑内容未保存时阻止返回避免数据丢失、弹窗编辑等需要防止用户误操作退出编辑的场景。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -493,6 +534,8 @@ undoStyle(style: Optional<UndoStyle>)
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -508,6 +551,8 @@ enableAutoSpacing(enable: Optional<boolean>)
 设置是否开启中文与西文的自动间距。适用于混排中英文内容（如新闻文章、技术文档）等需要改善中西文之间阅读体验的场景。开启后，中文字符与西文字符之间将自动插入间距；关闭后不自动插入间距。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -525,6 +570,8 @@ scrollBarColor(color: Optional<ColorMetrics>)
 
 **元服务API：** 从API version 21开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -540,6 +587,8 @@ includeFontPadding(include: Optional<boolean>)
 设置是否在首行和尾行增加间距以避免文字截断。适用于自定义字体行高较小导致文字被裁剪、紧凑排版等场景。不通过该接口设置，默认不增加间距。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -560,6 +609,8 @@ fallbackLineSpacing(enabled: Optional<boolean>)
 该接口依赖[RichEditorTextStyle](ts-basic-components-richeditor.md#richeditortextstyle)的lineHeight属性。当lineHeight设置值小于当前字号下文本渲染出的实际高度时，fallbackLineSpacing属性将生效。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -585,6 +636,8 @@ compressLeadingPunctuation(enabled: Optional<boolean>)
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -600,6 +653,8 @@ selectedDragPreviewStyle(value: SelectedDragPreviewStyle | undefined)
 设置拖动预览样式。适用于需要自定义拖拽内容外观的场景，如匹配应用主题风格的拖拽预览效果。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -620,6 +675,8 @@ singleLine(isEnable: boolean | undefined)
 单行模式下换行符会显示为空格。
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -705,6 +762,8 @@ onReady(callback:Callback<void>)
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -727,6 +786,8 @@ onSelect(callback:Callback<[RichEditorSelection](ts-basic-components-richeditor.
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -746,6 +807,8 @@ aboutToIMEInput(callback:Callback<[RichEditorInsertValue](ts-basic-components-ri
 使用[RichEditorStyledStringOptions](ts-basic-components-richeditor.md#richeditorstyledstringoptions12)构建的RichEditor组件不支持该回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -769,6 +832,8 @@ onDidIMEInput(callback:Callback<TextRange>)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -788,6 +853,8 @@ onIMEInputComplete(callback:Callback<[RichEditorTextSpanResult](ts-basic-compone
 使用[RichEditorStyledStringOptions](ts-basic-components-richeditor.md#richeditorstyledstringoptions12)构建的RichEditor组件不支持该回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -809,6 +876,8 @@ aboutToDelete(callback:Callback<[RichEditorDeleteValue](ts-basic-components-rich
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -826,6 +895,8 @@ onDeleteComplete(callback:Callback<void>)
 使用[RichEditorStyledStringOptions](ts-basic-components-richeditor.md#richeditorstyledstringoptions12)构建的RichEditor组件不支持该回调。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -845,6 +916,8 @@ onPaste(callback: [PasteEventCallback](ts-basic-components-richeditor.md#pasteev
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -860,6 +933,8 @@ onSelectionChange(callback:Callback<[RichEditorRange](ts-basic-components-riched
 内容选择区域或编辑状态下的光标位置发生变化时，将触发该回调。光标位置变化时，回调中选择区域的起始和终止位置相等。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -877,6 +952,8 @@ onEditingChange(callback: Callback<boolean>)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -892,6 +969,8 @@ onSubmit(callback: SubmitCallback)
 按下软键盘输入法回车键时触发该回调。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -915,6 +994,8 @@ onWillChange(callback: Callback<[RichEditorChangeValue](ts-basic-components-rich
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -937,6 +1018,8 @@ onDidChange(callback: OnDidChangeCallback)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -955,6 +1038,8 @@ onCut(callback: Callback<CutEvent>)
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -972,6 +1057,8 @@ onCopy(callback: Callback<CopyEvent>)
 使用[RichEditorStyledStringOptions](ts-basic-components-richeditor.md#richeditorstyledstringoptions12)构建的RichEditor组件，默认支持图文的复制。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -993,6 +1080,8 @@ onWillAttachIME(callback: Callback<IMEClient> | undefined)
 
 **元服务API：** 从API version 22开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -1004,6 +1093,8 @@ onWillAttachIME(callback: Callback<IMEClient> | undefined)
 ## RichEditorInsertValue
 
 插入文本的信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1018,6 +1109,8 @@ onWillAttachIME(callback: Callback<IMEClient> | undefined)
 删除操作和被删除内容的信息。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1034,6 +1127,8 @@ onWillAttachIME(callback: Callback<IMEClient> | undefined)
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
@@ -1044,6 +1139,8 @@ onWillAttachIME(callback: Callback<IMEClient> | undefined)
 ## RichEditorTextSpanResult
 
 文本Span信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1065,6 +1162,8 @@ Span位置信息。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -1075,6 +1174,8 @@ Span位置信息。
 ## RichEditorSpanType
 
 Span类型信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1089,6 +1190,8 @@ Span类型信息。
 ## RichEditorResponseType11+
 
 菜单的响应类型。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1105,6 +1208,8 @@ Span类型信息。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 值 | 说明 |
@@ -1115,6 +1220,8 @@ Span类型信息。
 ## RichEditorTextStyleResult
 
 后端返回的文本样式信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1168,6 +1275,8 @@ RichEditorSymbolSpanStyle和RichEditorSymbolSpanStyleResult中fontWeight的转�
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -1184,6 +1293,8 @@ RichEditorSymbolSpanStyle和RichEditorSymbolSpanStyleResult中fontWeight的转�
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -1198,6 +1309,8 @@ RichEditorSymbolSpanStyle和RichEditorSymbolSpanStyleResult中fontWeight的转�
 
 后端返回的图片样式信息。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -1206,12 +1319,15 @@ RichEditorSymbolSpanStyle和RichEditorSymbolSpanStyleResult中fontWeight的转�
 | verticalAlign | [ImageSpanAlignment](ts-appendix-enums.md#imagespanalignment10) | 否 | 否 | 图片垂直对齐方式。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | objectFit | [ImageFit](ts-appendix-enums.md#imagefit) | 否 | 否 | 图片缩放类型。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | layoutStyle12+ | [RichEditorLayoutStyle](ts-basic-components-richeditor.md#richeditorlayoutstyle11) | 否 | 是 | 图片布局样式。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| resizable | [ResizableOptions](ts-basic-components-image.md#resizableoptions11) | 否 | 是 | 图像拉伸时可调整大小的图像选项。  **起始版本：** 26.0.1  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。 |
 
 ## RichEditorLayoutStyle11+
 
 图片布局信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1226,6 +1342,8 @@ RichEditor初始化参数。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -1238,6 +1356,8 @@ RichEditor初始化参数。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -1249,6 +1369,8 @@ RichEditor初始化参数。
 图文变化信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1263,6 +1385,8 @@ RichEditor初始化参数。
 
 RichEditor组件控制器基类。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 ### getCaretOffset10+
 
 getCaretOffset(): number
@@ -1272,6 +1396,8 @@ getCaretOffset(): number
 当无法获取光标位置时（例如controller未与组件绑定时），该接口返回-1。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1290,6 +1416,8 @@ setCaretOffset(offset: number): boolean
 当controller未绑定组件或绑定controller的组件被释放时，该接口返回false，设置不成功。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1315,6 +1443,8 @@ closeSelectionMenu(): void
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ### getTypingStyle11+
@@ -1324,6 +1454,8 @@ getTypingStyle(): RichEditorTextStyle
 获取用户预设的文本样式。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1343,6 +1475,8 @@ setTypingStyle(value: RichEditorTextStyle): void
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -1358,6 +1492,8 @@ setTypingParagraphStyle(style: RichEditorParagraphStyle): void
 设置用户预设的段落样式。仅在组件内容为空或组件末尾换行后，输入文本生效。当controller未绑定组件或绑定controller的组件被释放时，该接口调用无效。
 
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1385,6 +1521,8 @@ selectionStart和selectionEnd均为-1时表示全选，均为0时可以清空选
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -1402,6 +1540,8 @@ isEditing(): boolean
 获取当前富文本的编辑状态。当controller未绑定组件或绑定controller的组件被释放时，返回false。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1421,6 +1561,8 @@ stopEditing(): void
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ### getLayoutManager12+
@@ -1430,6 +1572,8 @@ getLayoutManager(): LayoutManager
 获取布局管理器对象。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1447,6 +1591,8 @@ getPreviewText(): PreviewText
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
@@ -1462,6 +1608,8 @@ getCaretRect(): RectResult | undefined
 返回当前光标与RichEditor组件的相对位置。如果光标不闪烁或controller未绑定组件，返回undefined。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1481,6 +1629,8 @@ deleteBackward(): void
 
 **元服务API：** 从API version 23开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ### setStyledPlaceholder24+
@@ -1490,6 +1640,8 @@ setStyledPlaceholder(styledString: StyledString): void
 设置无输入时的属性字符串样式的提示文本。
 
 **元服务API：** 从API version 24开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1509,8 +1661,6 @@ scrollToVisible(range?: TextRange): void
 
 **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
-**模型约束：** 此接口仅可在Stage模型下使用。
-
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -1522,6 +1672,8 @@ scrollToVisible(range?: TextRange): void
 ## RichEditorController
 
 RichEditor组件的控制器，继承自[RichEditorBaseController](ts-basic-components-richeditor.md#richeditorbasecontroller12)。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **说明** 
 
@@ -1540,6 +1692,8 @@ addTextSpan(content: ResourceStr, options?: RichEditorTextSpanOptions): number
 添加文本内容。如果组件光标闪烁，插入后光标位置更新为新插入文本的后面。当controller未绑定组件或绑定controller的组件被释放时，该接口调用无效。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1565,6 +1719,8 @@ addImageSpan(value: PixelMap | ResourceStr, options?: RichEditorImageSpanOptions
 该接口为同步接口，在弱网环境下，直接添加网络图片可能会阻塞UI线程造成冻屏问题。不建议直接添加网络图片。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1605,6 +1761,8 @@ addBuilderSpan(value: CustomBuilder, options?: RichEditorBuilderSpanOptions): nu
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -1629,6 +1787,8 @@ addSymbolSpan(value: Resource, options?: RichEditorSymbolSpanOptions ): number
 SymbolSpan暂不支持手势、复制操作和拖拽处理。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1657,6 +1817,8 @@ updateSpanStyle(value: RichEditorUpdateTextSpanStyleOptions | RichEditorUpdateIm
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -1677,6 +1839,8 @@ updateParagraphStyle(value: RichEditorParagraphStyleOptions): void
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -1692,6 +1856,8 @@ getSpans(value?: RichEditorRange): Array<RichEditorImageSpanResult | RichEditorT
 获取span信息。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1715,6 +1881,8 @@ deleteSpans(value?: RichEditorRange): void
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -1730,6 +1898,8 @@ getParagraphs(value?: RichEditorRange): Array<RichEditorParagraphResult>
 获取指定范围的段落信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1753,6 +1923,8 @@ getSelection(): RichEditorSelection
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **返回值：**
@@ -1768,6 +1940,8 @@ fromStyledString(value: StyledString): Array<RichEditorSpan>
 将属性字符串转换为span信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1799,6 +1973,8 @@ toStyledString(value: RichEditorRange): StyledString
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -1825,6 +2001,8 @@ toStyledString(value: RichEditorRange): StyledString
 
 使用属性字符串构建的RichEditor组件的控制器，继承自[RichEditorBaseController](ts-basic-components-richeditor.md#richeditorbasecontroller12)。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 ### 导入对象
 
 ```ts
@@ -1838,6 +2016,8 @@ getSelection(): RichEditorRange
 获取富文本当前的选中区域范围。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1860,6 +2040,8 @@ setStyledString(styledString: StyledString): void
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -1875,6 +2057,8 @@ getStyledString(): MutableStyledString
 获取富文本组件显示的属性字符串。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1892,6 +2076,8 @@ onContentChanged(listener: StyledStringChangedListener): void
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -1906,6 +2092,8 @@ onContentChanged(listener: StyledStringChangedListener): void
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -1918,6 +2106,8 @@ onContentChanged(listener: StyledStringChangedListener): void
 定义RichEditor的范围。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1934,6 +2124,8 @@ onContentChanged(listener: StyledStringChangedListener): void
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 ## RichEditorUpdateTextSpanStyleOptions
@@ -1941,6 +2133,8 @@ onContentChanged(listener: StyledStringChangedListener): void
 文本样式选项。
 
 继承自[RichEditorSpanStyleOptions](ts-basic-components-richeditor.md#richeditorspanstyleoptions)。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1957,6 +2151,8 @@ onContentChanged(listener: StyledStringChangedListener): void
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -1970,6 +2166,8 @@ SymbolSpan样式选项。
 继承自[RichEditorSpanStyleOptions](ts-basic-components-richeditor.md#richeditorspanstyleoptions)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -1985,6 +2183,8 @@ SymbolSpan样式选项。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -1998,6 +2198,8 @@ SymbolSpan样式选项。
 ## RichEditorParagraphStyle11+
 
 段落样式。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2016,6 +2218,8 @@ SymbolSpan样式选项。
 
 前导边距占位符，用于表示文本段落左侧与组件边缘之间的距离。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -2029,6 +2233,8 @@ SymbolSpan样式选项。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -2039,6 +2245,8 @@ SymbolSpan样式选项。
 ## RichEditorTextSpanOptions
 
 添加文本的偏移位置和文本样式信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2053,6 +2261,8 @@ SymbolSpan样式选项。
 ## RichEditorTextStyle
 
 文本样式信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2080,6 +2290,8 @@ SymbolSpan样式选项。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -2090,6 +2302,8 @@ SymbolSpan样式选项。
 ## RichEditorImageSpanOptions
 
 设置图片的偏移位置和图片样式信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2104,6 +2318,8 @@ SymbolSpan样式选项。
 
 图片样式。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -2112,12 +2328,15 @@ SymbolSpan样式选项。
 | verticalAlign | [ImageSpanAlignment](ts-appendix-enums.md#imagespanalignment10) | 否 | 是 | 图片垂直对齐方式。  默认值：ImageSpanAlignment.BOTTOM  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | objectFit | [ImageFit](ts-appendix-enums.md#imagefit) | 否 | 是 | 图片缩放类型。  默认值：ImageFit.Cover。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | layoutStyle11+ | [RichEditorLayoutStyle](ts-basic-components-richeditor.md#richeditorlayoutstyle11) | 否 | 是 | 图片布局样式。默认值：{"borderRadius":"","margin":""}    **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| resizable | [ResizableOptions](ts-basic-components-image.md#resizableoptions11) | 否 | 是 | 图像拉伸时可调整大小的图像选项。  **起始版本：** 26.0.1  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。 |
 
 ## RichEditorSymbolSpanOptions11+
 
 设置SymbolSpan组件的偏移位置和样式。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2132,6 +2351,8 @@ SymbolSpan样式选项。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -2145,6 +2366,8 @@ SymbolSpan样式选项。
 ## RichEditorBuilderSpanOptions11+
 
 设置builder插入的偏移位置和样式。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2161,6 +2384,8 @@ RichEditor span信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 类型 | 说明 |
@@ -2171,6 +2396,8 @@ RichEditor span信息。
 ## SelectionMenuOptions
 
 菜单的选项。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2189,6 +2416,8 @@ RichEditor span信息。
 
 **元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -2200,6 +2429,8 @@ RichEditor span信息。
 定义用户粘贴事件。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2213,6 +2444,8 @@ RichEditor span信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -2225,6 +2458,8 @@ RichEditor span信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -2236,6 +2471,8 @@ RichEditor span信息。
 用户手势事件。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2250,6 +2487,8 @@ RichEditor span信息。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -2263,6 +2502,8 @@ type SubmitCallback = (enterKey: EnterKeyType, event: SubmitEvent) => void
 软键盘按下回车键时的回调事件。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2281,6 +2522,8 @@ type MenuOnAppearCallback = (start: number, end: number) => void
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -2297,6 +2540,8 @@ type MenuCallback = (start: number, end: number) => void
 自定义选择菜单显示或隐藏时触发的回调事件。
 
 **元服务API：** 从API version 15开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2315,6 +2560,8 @@ type PasteEventCallback = (event?: PasteEvent) => void
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -2331,6 +2578,8 @@ type OnHoverCallback = (status: boolean, event: HoverEvent) => void
 
 **元服务API：** 从API version 14开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 **参数：**
@@ -2346,6 +2595,8 @@ type OnHoverCallback = (status: boolean, event: HoverEvent) => void
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -2360,6 +2611,8 @@ type OnHoverCallback = (status: boolean, event: HoverEvent) => void
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
+**模型约束：** 此接口仅可在Stage模型下使用。
+
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
@@ -2373,6 +2626,8 @@ type OnHoverCallback = (status: boolean, event: HoverEvent) => void
 Url信息。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -2561,7 +2816,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/y3PVcsfsTGyW_NO_7efCCg/zh-cn_image_0000002809012035.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/h1tgu22LRq-iVBQkHB-_vQ/zh-cn_image_0000002815560729.gif)
 
 ### 示例2（绑定自定义键盘）
 
@@ -2612,7 +2867,7 @@ struct RichEditorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/Fy658mGuT3e7UYIX6Ad4mg/zh-cn_image_0000002809051949.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/VaROAPbjSR6QY-nZ4U7p-Q/zh-cn_image_0000002815400813.gif)
 
 ### 示例3（绑定自定义菜单）
 
@@ -3147,7 +3402,7 @@ struct SelectionMenu {
 
 系统暂未预置加粗、斜体等图标，示例代码使用系统默认图标，开发者使用时需自行替换icons中的资源。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/-BclKL3PTFaqg34642DIsA/zh-cn_image_0000002779852384.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/QWVwuWimQiet3CVsdcerzA/zh-cn_image_0000002786521238.png)
 
 ### 示例4（更新图片样式）
 
@@ -3389,7 +3644,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/pb3Ibru_T4GM-jhGeMQ8zw/zh-cn_image_0000002779692416.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/QslQMac5RyewnHyU8qgDbQ/zh-cn_image_0000002786361310.gif)
 
 ### 示例5（Span绑定手势事件）
 
@@ -3490,7 +3745,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/QMhLL4AET5WpWythWjEnXA/zh-cn_image_0000002809012037.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/V6rELRdDRSq-kIxNR2KuLQ/zh-cn_image_0000002815560731.gif)
 
 ### 示例6（更新和获取段落样式）
 
@@ -3588,7 +3843,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/9jAHNtRaSeGx-I8Fp0UMJw/zh-cn_image_0000002809051951.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/pzZhCgvyS-qKJHUokCqjBA/zh-cn_image_0000002815400815.gif)
 
 ### 示例7（更新预设样式与缩进）
 
@@ -3858,7 +4113,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/M9sJiOesRGiIODdKPcX94w/zh-cn_image_0000002779852386.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/YE_Aez5UTG-SXNs5CSieLA/zh-cn_image_0000002786521240.gif)
 
 ### 示例8（设置文本字重与阴影）
 
@@ -3942,7 +4197,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/xihwfTODRP6yaNwyBkMYow/zh-cn_image_0000002779692418.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/MFRhKWhCSEmihyjkmf56Pw/zh-cn_image_0000002786361312.gif)
 
 ### 示例9（添加用户自定义布局Span）
 
@@ -4239,7 +4494,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/RFQhj6kfRKqOJw1qPtBVQQ/zh-cn_image_0000002809012039.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/RZbSlFmQRMGOud0RBJzlRA/zh-cn_image_0000002815560733.gif)
 
 ### 示例10（使用和管理组件内的BuilderSpan）
 
@@ -4585,7 +4840,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/U9p-z2Y8QV-Pz5jrfjn_gg/zh-cn_image_0000002809051953.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/mYHi6sVCR5ip0i97439oZQ/zh-cn_image_0000002815400817.gif)
 
 ### 示例11（设置文本识别配置）
 
@@ -4688,7 +4943,7 @@ struct RichEditorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/s5WHguCYQoO9ROPN2-0oWw/zh-cn_image_0000002779852388.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/1_bXa1iwQGq6rQWuKommFQ/zh-cn_image_0000002786521242.gif)
 
 ### 示例13（设置行高和字符间距）
 
@@ -4812,7 +5067,7 @@ struct RichEditorDemo03 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/lyeUeV0ATAqxyn8n4pibng/zh-cn_image_0000002779692420.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/F8fzWp7AQYam9K7xr10z9A/zh-cn_image_0000002786361314.png)
 
 ### 示例14（自定义粘贴事件）
 
@@ -4847,7 +5102,7 @@ struct RichEditorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/lZ5xfLNbSmKQwWWB1TMAIQ/zh-cn_image_0000002809012041.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/odmox4QdSDWxAf0rlWZkkw/zh-cn_image_0000002815560735.gif)
 
 ### 示例15（配置文字特性效果）
 
@@ -4899,7 +5154,7 @@ struct RichEditorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/VauFB0xMQdKs3YUEOV7WZQ/zh-cn_image_0000002809051955.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/LW6f0JnXRoOFRbvHq_U0EQ/zh-cn_image_0000002815400819.png)
 
 ### 示例16（自定义键盘避让）
 
@@ -4983,7 +5238,7 @@ struct RichEditorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/-lBDkx7TSOCAYdoT30JAlw/zh-cn_image_0000002779852390.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/g9H8r7IgQ7y-C3UwxWkpjg/zh-cn_image_0000002786521244.gif)
 
 ### 示例17（查看编辑状态）
 
@@ -5023,7 +5278,7 @@ struct RichEditorOnEditingChange {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/hECo1MR3R368b7GardiC4g/zh-cn_image_0000002779692422.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2/v3/fwfKhD-3SLO779rmqfc4Qw/zh-cn_image_0000002786361316.gif)
 
 ### 示例18（配置文本变化回调）
 
@@ -5129,7 +5384,7 @@ struct RichEditorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/8cGsyyEIRpy0M3IrxTdsWA/zh-cn_image_0000002809012043.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/5ro4IvBCTO6gOKScMS6GGQ/zh-cn_image_0000002815560737.gif)
 
 ### 示例19（配置输入法回车键功能）
 
@@ -5164,7 +5419,7 @@ struct SoftKeyboardEnterTypeExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/2VNZaIvdTpOB2VLdJ4u3ag/zh-cn_image_0000002809051957.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/EFVGHyW9RJe-JIRZ4d17Lg/zh-cn_image_0000002815400821.gif)
 
 ### 示例20（设置段落折行规则）
 
@@ -5243,7 +5498,7 @@ struct LineBreakStrategyExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/VeCE5O_yR9mtksuYgbAXUA/zh-cn_image_0000002779852392.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/9TpAq0GIS2WKrj_5xfpqTQ/zh-cn_image_0000002786521246.gif)
 
 ### 示例21（属性字符串基本功能）
 
@@ -5442,7 +5697,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/0EAngZzOQw-5FnwzAmRkuw/zh-cn_image_0000002779692424.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/i8wvpc4pQ-K02DcJv--QkQ/zh-cn_image_0000002786361318.gif)
 
 ### 示例22（获取布局信息）
 
@@ -5513,7 +5768,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/W-c7Sc5mQ9KkCElZmm-CDw/zh-cn_image_0000002809012045.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/NP3UFgW0Tf-TfQrzcwERfg/zh-cn_image_0000002815560739.gif)
 
 ### 示例23（设置系统默认菜单扩展项）
 
@@ -5609,7 +5864,7 @@ struct RichEditorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/VgDCJ0sqRjStgMjqF_q-Zg/zh-cn_image_0000002809051959.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/aKTzzyJSR-uulyEtXVAEgQ/zh-cn_image_0000002815400823.gif)
 
 ### 示例24（组件部分常用属性）
 
@@ -5702,7 +5957,7 @@ struct RichEditorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/0FA4vbu4RXCN0NP7lz-wXA/zh-cn_image_0000002779852394.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/GwQsqQpYQ7usiUvjtbIw2Q/zh-cn_image_0000002786521248.gif)
 
 ### 示例25（获取光标相对组件位置的矩形）
 
@@ -5756,7 +6011,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/jk-S4-STQhuXhYpQx9sHHA/zh-cn_image_0000002779692426.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/V-0CwNDmRaafTcR_JGjisQ/zh-cn_image_0000002786361320.gif)
 
 ### 示例26（设置最大行数和最大字符数）
 
@@ -5853,7 +6108,7 @@ struct RichEditorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/1CD9SdvEQJ24SDNOv7hdYQ/zh-cn_image_0000002809012047.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/BzAAXOezT4eUhQ4cA4fCWg/zh-cn_image_0000002815560741.gif)
 
 ### 示例27（文本设置Url样式）
 
@@ -5895,7 +6150,7 @@ struct RichEditorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/pUPTp4yiQ8Sa6WBt4Sa3Zg/zh-cn_image_0000002809051961.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/4xdHkKjIRreoC7yYx4htdQ/zh-cn_image_0000002815400825.gif)
 
 ### 示例28（开启带样式的撤销还原能力）
 
@@ -6035,7 +6290,7 @@ struct StyledUndo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/HgwYahw9TEiKGE0SQgVJSA/zh-cn_image_0000002779852396.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/DX42PbPxQA-UE3tbSJluuQ/zh-cn_image_0000002786521250.gif)
 
 ### 示例29（文本设置预设段落样式）
 
@@ -6131,7 +6386,7 @@ struct RichEditorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/XGh2OAWMSWWWOv95RJ56RA/zh-cn_image_0000002779692428.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/uqymjfuqTyy1sXOiZ5Q-1Q/zh-cn_image_0000002786361322.gif)
 
 ### 示例30（设置装饰线粗细和多装饰线）
 
@@ -6261,7 +6516,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/LshRMmzcTFWOJKO8LiC4tw/zh-cn_image_0000002809012049.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/wMTZpoztRQyp-8buCgLnAg/zh-cn_image_0000002815560743.gif)
 
 ### 示例31（设置开启中西文自动间距）
 
@@ -6368,7 +6623,7 @@ struct AutoSpacing {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/Kr2bs0UmQIuLifpLF6CxNA/zh-cn_image_0000002809051963.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/CJJrkvf0QYWfrT_AtobpdA/zh-cn_image_0000002815400827.gif)
 
 ### 示例32（设置文本选择的AI菜单）
 
@@ -6400,7 +6655,7 @@ struct SelectedDataDetectorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/GMGxXbmRQB-5gJZmBf-Euw/zh-cn_image_0000002779852398.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/ZG6Zmlh7TIKwzXmYFFT__Q/zh-cn_image_0000002786521252.gif)
 
 ### 示例33（设置监听输入法绑定事件）
 
@@ -6454,7 +6709,7 @@ struct SetOnWillAttachIME {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/WylJCsscTiWHFOtlu5VWtA/zh-cn_image_0000002779692430.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/uc6lrLMuTbWAcgaENDCTMA/zh-cn_image_0000002786361324.gif)
 
 ### 示例34（删除输入框文本尾部字符）
 
@@ -6511,7 +6766,7 @@ struct RichEditorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/kmFcXlL7QfiVvnFY5kMG3g/zh-cn_image_0000002809012051.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/PLEHkK0KSkK07_QLK3maSQ/zh-cn_image_0000002815560745.gif)
 
 ### 示例35（优化小语种文字显示）
 
@@ -6599,7 +6854,7 @@ struct RichEditorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/oYmP2PZ4Q_yfcCxG4ACK_w/zh-cn_image_0000002809051965.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/kmbEezckStOJ4ayqiMYzXQ/zh-cn_image_0000002815400829.gif)
 
 ### 示例36（设置行首标点符号压缩和行尾标点符号悬挂）
 
@@ -6653,7 +6908,7 @@ struct PunctuationDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/Zs4_QLHpSl25pOdB9WV4Hg/zh-cn_image_0000002779852400.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/nUz94NYwTNqVL8SgjQocZg/zh-cn_image_0000002786521254.gif)
 
 ### 示例37（设置拖动预览样式）
 
@@ -6685,7 +6940,7 @@ struct RichEditorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/IpGwLhh0RE2MPKu_AIb69A/zh-cn_image_0000002779692432.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/P-81Gs0rQTe7aanOtBfs0Q/zh-cn_image_0000002786361326.gif)
 
 ### 示例38（设置单行模式）
 
@@ -6726,7 +6981,7 @@ struct SingleLineDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/VnnNcnxpQ1KWw6cwfD8kTQ/zh-cn_image_0000002809012053.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/siqrpWMgQeSRjusWR68BPw/zh-cn_image_0000002815560747.gif)
 
 ### 示例39（设置属性字符串样式的提示文本）
 
@@ -6806,7 +7061,7 @@ struct RichEditorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/RZYXUR17Raak8939AWgT-A/zh-cn_image_0000002809051967.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/Tx5ynKS0QL6u9iVcrc0Wag/zh-cn_image_0000002815400831.png)
 
 ### 示例40（设置孤立字符不成行）
 
@@ -6855,7 +7110,7 @@ struct RichEditorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/8GJkhL-ATHOLOFVE6TAoRA/zh-cn_image_0000002779852402.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/_xCcEQ9tRpqG4jOxnpu0Qw/zh-cn_image_0000002786521256.jpg)
 
 ### 示例41（设置水平滚动）
 
@@ -6899,7 +7154,7 @@ struct HorizontalScrollDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/HnG8PW5iRt-e1L2uuaS9Pw/zh-cn_image_0000002779692434.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/QP47ATCORkGBSoetiU4Iyw/zh-cn_image_0000002786361328.gif)
 
 ### 示例42（设置文本着色器效果）
 
@@ -7002,7 +7257,7 @@ struct ShaderColorStyle {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/pSmWRcF5Qb-8bWZRxlieBg/zh-cn_image_0000002809012055.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/mB96HPfDSBKnyIu6Mr0a8A/zh-cn_image_0000002815560749.png)
 
 ### 示例43（将指定范围的文字滚动到可视区内）
 
@@ -7040,4 +7295,73 @@ struct ScrollToVisibleDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/udHbSTJNQgCyD-Qf_mvUQA/zh-cn_image_0000002809051969.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/VoJvneK_TKyZewV_jTf7Mw/zh-cn_image_0000002815400833.gif)
+
+### 示例44（设置图片拉伸）
+
+该示例通过设置[RichEditorImageSpanStyle](ts-basic-components-richeditor.md#richeditorimagespanstyle)的resizable属性，对图片不同方向进行拉伸。
+
+从API版本26.0.1开始，RichEditorImageSpanStyle新增resizable属性。
+
+```ts
+@Entry
+@Component
+struct RichEditorResizablePage {
+  controller: RichEditorController = new RichEditorController();
+  options: RichEditorOptions = { controller: this.controller };
+
+  build() {
+    Column({ space: 20 }) {
+      Text('RichEditor resizable Demo')
+        .fontSize(28)
+        .fontWeight(FontWeight.Bold)
+
+      RichEditor(this.options)
+        .onReady(() => {
+          this.controller.addTextSpan('原图\n', {
+            style: {
+              fontColor: Color.Black,
+              fontSize: 28
+            }
+          });
+          this.controller.addImageSpan($r('app.media.landscape'), {
+            imageStyle: {
+              size: [260, 260],
+            }
+          });
+          this.controller.addTextSpan('\nRichEditor 中 ImageSpan resizable 拉伸效果\n', {
+            style: {
+              fontColor: Color.Black,
+              fontSize: 28
+            }
+          });
+          this.controller.addImageSpan($r('app.media.landscape'), {
+            imageStyle: {
+              size: [260, 260],
+              resizable: {
+                slice: {
+                  left: '200px',
+                  top: '200px',
+                  right: '20px',
+                  bottom: '20px'
+                }
+              }
+            }
+          });
+
+        })
+        .width('90%')
+        .borderWidth(1)
+        .borderColor('#cccccc')
+        .borderRadius(8)
+        .padding(10)
+    }
+    .width('100%')
+    .height('100%')
+    .padding(20)
+    .alignItems(HorizontalAlign.Center)
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/98feDI18TK-qTOh-R2Hk3A/zh-cn_image_0000002786521258.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-int
 title: UI Design Kit简介
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > UI Design Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:26+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:02377ccd3ef7aabaa2d9bc67bd8390e588bf90f052afd498ae6765e7afb9f44f
+scraped_at: 2026-11-12T09:51:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c6afa2f137487b809f45b42b1085027f90fc9259053a3203d51f1b1f18f8546f
 ---
 
 UI Design Kit（UI设计套件）是华为提供的符合HarmonyOS Design System规范的UI界面开发套件集合。通过提供多样式的扩展组件、丰富的光影效果，支撑开发者高效构建高端精致的界面（参见[HarmonyOS设计理念](../design-guides/design-concepts-0000001795698445.md)），确保应用在HarmonyOS全场景设备上达成一致的视觉体验与设计品质，遵循[HarmonyOS设计规范](../design-guides/general_overview-0000001929599380.md)。
@@ -66,14 +66,14 @@ UI Design Kit当前仅支持中国境内（香港特别行政区、澳门特别�
 
 | UI Design Kit提供的能力 | 支持的设备类型 |
 | --- | --- |
-| [图标处理](ui-design-layered-process.md) | Phone、Tablet、PC/2in1、TV |
-| [组件导航](ui-design-navigation-dynamic-blur.md) | Phone、Tablet、PC/2in1、TV |
-| [侧边栏样式](ui-design-sidebar-overlay-mode.md) | Phone、Tablet、PC/2in1、TV |
-| [侧边栏菜单样式](ui-design-side-menu.md) | Phone、Tablet、PC/2in1、TV |
-| [底部页签](ui-design-hds-tabs-split-line.md) | Phone、Tablet、PC/2in1 |
-| [即时操作](ui-design-snackbar-resident-notification.md) | Phone、Tablet、PC/2in1、TV |
-| [核心操作栏](ui-design-actionbar-main-buttons.md) | Phone、Tablet、PC/2in1、TV |
-| [列表](ui-design-set-hds-slide-horizon-listitem.md) | Phone、Tablet、PC/2in1、Wearable、TV |
+| [图标处理](ui-design-layered-process.md) | Phone、Tablet、PC/2in1、TV、Car |
+| [组件导航](ui-design-navigation-dynamic-blur.md) | Phone、Tablet、PC/2in1、TV、Car |
+| [侧边栏样式](ui-design-sidebar-overlay-mode.md) | Phone、Tablet、PC/2in1、TV、Car |
+| [侧边栏菜单样式](ui-design-side-menu.md) | Phone、Tablet、PC/2in1、TV、Car |
+| [底部页签](ui-design-hds-tabs-split-line.md) | Phone、Tablet、PC/2in1、Car |
+| [即时操作](ui-design-snackbar-resident-notification.md) | Phone、Tablet、PC/2in1、TV、Car |
+| [核心操作栏](ui-design-actionbar-main-buttons.md) | Phone、Tablet、PC/2in1、TV、Car |
+| [列表](ui-design-set-hds-slide-horizon-listitem.md) | Phone、Tablet、PC/2in1、Wearable、TV、Car |
 | [应用加载自定义Symbol](ui-design-custom-symbol-res-register.md) | Phone、Tablet、PC/2in1 |
 | [HDS视效](ui-design-visual-effect-point-light.md) | Phone、Tablet、PC/2in1 |
 | [应用内多窗](ui-design-multiwindowentryinapp.md) | Phone、Tablet |

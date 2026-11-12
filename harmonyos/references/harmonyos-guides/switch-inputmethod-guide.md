@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/switch-inputm
 title: 切换输入法应用
 breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > 切换输入法应用
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:56+08:00
-doc_updated_at: 2026-10-21
+scraped_at: 2026-11-12T09:51:27+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:717d6f36d9dbbb5a0acd00068ba45d1c98a22a8b2e2cac3fff92c0fd9e1d2e88
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-face
 title: 人脸跟踪（ArkTS）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 人脸识别与跟踪 > 人脸跟踪（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:48+08:00
-doc_updated_at: 2026-08-14
-content_hash: sha256:b3999664b699c801bf798d929ad54fd52787a98cfa2902145e348be1698762a5
+scraped_at: 2026-11-12T09:52:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:2897a6c940c63abdbcddd37ac151a83a04d4ac4098bf356922cd842ec44d25fa
 ---
 
 ## 约束与限制
@@ -85,7 +85,7 @@ export struct ARFace {
         }
       }
     }
-    .onAppear(async () => {
+    .onAppear(() => {
       this.initARView();
     })
     .onWillDisappear(async () => {
@@ -140,7 +140,7 @@ export struct ARFace {
   }
 
   private initARView(): void {
-    Scene.load().then(async (result: Scene) => {
+    Scene.load().then((result: Scene) => {
       try {
         let ret: boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_FACE);
         logger.info(`ARFace isARTypeSupported is ${ret}`);
@@ -202,7 +202,7 @@ class ARViewCallbackImpl extends arViewController.ARViewCallback {
       let vertexArray: Vec3[][] = [];
       let indexArray: Map<number, number[]> = new Map;
 
-      // 获取人脸数据。
+      // 获取人脸数据
       let trackables: arEngine.ARTrackable[] = session.getAllTrackables(arEngine.ARTrackableType.FACE);
       logger.debug(`the faceList length is ${trackables.length}`);
       for (let i = 0; i < trackables.length; ++i) {

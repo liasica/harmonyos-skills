@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-confus
 title: "@typescript-eslint/no-confusing-void-expression"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-confusing-void-expression
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:09+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:48bebe8e7efdce49b611fe7eb2d4b8a491ba14f354d97f85a9cbdd7e1b45d03c
+scraped_at: 2026-11-12T09:52:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:707cfb1a900bcdf41b9795609b8efdb3e0a73582bd026de3569f07786ba0f45c
 ---
 
 要求void类型的表达式出现在合适的位置。
@@ -51,4 +51,4 @@ console.info(func());
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

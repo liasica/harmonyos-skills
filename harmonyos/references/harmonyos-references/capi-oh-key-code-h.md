@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-k
 title: oh_key_code.h
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > C API > 头文件 > oh_key_code.h
 category: harmonyos-references
-scraped_at: 2026-09-18T06:50:21+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:de260a106e8a557685a128b6956feb0a987716eebc5f02c8a723c6113e1ff785
+scraped_at: 2026-11-12T09:56:03+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:610ca3b88db82fc3978d46405ab706646b90cb2b35093a9bbb689adb6bda7c22
 ---
 
 ## 概述
@@ -400,3 +400,12 @@ enum Input_KeyCode
 | KEYCODE\_XKEY = 3232 | 自定义快捷键  **起始版本：** 26.0.0 |
 | KEYCODE\_FINGERPRINT\_SLIDE\_UP = 3233 | 智控键上滑  **起始版本：** 26.0.0 |
 | KEYCODE\_FINGERPRINT\_SLIDE\_DOWN = 3234 | 智控键下滑  **起始版本：** 26.0.0 |
+| OH\_INPUT\_KEYCODE\_PTZ\_CLICK = 3235 | 云台模式调节键  **起始版本：** 26.0.1 |
+| OH\_INPUT\_KEYCODE\_PTZ\_FOCUS\_LEFT = 3236 | 云台调焦左调节  **起始版本：** 26.0.1 |
+| OH\_INPUT\_KEYCODE\_PTZ\_FOCUS\_RIGHT = 3237 | 云台调焦右调节  **起始版本：** 26.0.1 |
+| OH\_INPUT\_KEYCODE\_PTZ\_EXPOSURE\_LEFT = 3238 | 云台曝光左调节  **起始版本：** 26.0.1 |
+| OH\_INPUT\_KEYCODE\_PTZ\_EXPOSURE\_RIGHT = 3239 | 云台曝光右调节  **起始版本：** 26.0.1 |
+| OH\_INPUT\_KEYCODE\_PTZ\_SHUTTER\_LEFT = 3240 | 云台快门速度左调节  **起始版本：** 26.0.1 |
+| OH\_INPUT\_KEYCODE\_PTZ\_SHUTTER\_RIGHT = 3241 | 云台快门速度右调节  **起始版本：** 26.0.1 |
+| OH\_INPUT\_KEYCODE\_PTZ\_APERTURE\_LEFT = 3242 | 云台光圈左调节  **起始版本：** 26.0.1 |
+| OH\_INPUT\_KEYCODE\_PTZ\_APERTURE\_RIGHT = 3243 | 云台光圈右调节  **起始版本：** 26.0.1 |

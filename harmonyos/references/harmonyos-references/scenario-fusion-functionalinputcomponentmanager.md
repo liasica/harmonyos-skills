@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scenario-
 title: functionalInputComponentManager(场景化融合Input组件管理)
 breadcrumb: API参考 > 应用服务 > Scenario Fusion Kit（融合场景服务） > ArkTS组件 > functionalInputComponentManager(场景化融合Input组件管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:08+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:5d820b19c691fc2c9e1b45445d8b9696c7db535548ce38f31cfc9735bac06aa3
+scraped_at: 2026-11-12T09:57:40+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e658d18d9210bab3791665b134a7619ed4b31c505224b083ec411e0566699105
 ---
 
 本模块提供FunctionalInput组件的逻辑管理，辅助HarmonyOS应用和元服务通过FunctionalInput组件完成快速拉起选择地区页面，供用户选择地区信息的功能。
@@ -52,8 +52,8 @@ import { functionalInputComponentManager } from '@kit.ScenarioFusionKit';
 | textInputValue | [TextInputOptions](ts-basic-components-textinput.md#textinputoptions对象说明) | 否 | 否 | TextInput组件无输入时的提示文本和文本内容。 |
 | inputAttributeModifier | [TextInputModifier](ts-universal-attributes-attribute-modifier.md#自定义modifier) | 否 | 是 | 设置组件的事件和属性。支持部分[通用事件](ts-component-general-events.md)和[通用属性](ts-component-general-attributes.md)，以及部分TextInput的事件和属性。  icon参数为空时，无默认值。icon参数不为空时，默认值为：  padding({  top: 8,  bottom: 8,  left: 16,  right: 48,  })  当设备是镜像语言时，默认值为  padding({  top: 8,  bottom: 8,  left: 48,  right: 16,  })  **说明：**  inputAttributeModifier参数失效的事件和属性：  事件：onFocus、onBlur、onClick、onKeyEvent、onKeyPreIme、onSubmit、onEditChange、onCopy、onCut、onPaste、onTextSelectionChange、onSecurityStateChange、onWillInsert、onDidInsert、onWillDelete、onDidDelete。  属性：focusable、tabIndex、defaultFocus、groupDefaultFocus、focusOnTouch、focusBox、type、enterKeyType、caretColor、copyOption、showPasswordIcon、selectedBackgroundColor、caretStyle、caretPosition、passwordIcon、enableKeyboardOnFocus、customKeyboard、passwordRules、selectAll、contentType、showPassword。 |
 | icon | [Resource](ts-types.md#resource) | 否 | 是 | 设置组件显示图标，支持symbol和image两种类型。默认不显示图标。 |
-| iconImgModifier | [ImageModifier](ts-universal-attributes-attribute-modifier.md#自定义modifier) | 否 | 是 | 当“icon”设置为image时，可使用该参数进行图标的事件和样式设置。  iconImgModifier  .size({ width: 24, height: 24 })  .margin({  start: 8,  end: 16,  }) |
-| iconSymbolModifier | [SymbolGlyphModifier](ts-universal-attributes-attribute-modifier.md#自定义modifier) | 否 | 是 | 当“icon”设置为symbol时，可使用该参数进行图标的事件和样式设置。  iconSymbolModifier  .fontColor([$r('sys.color.ohos\_id\_color\_fourth')])  .margin({  start: 8,  end: 16  }) |
+| iconImgModifier | [ImageModifier](ts-universal-attributes-attribute-modifier.md#自定义modifier) | 否 | 是 | 当“icon”设置为image时，可使用该参数进行图标的事件和样式设置。  iconImgModifier: new ImageModifier()  .size({ width: 24, height: 24 })  .margin({  start: LengthMetrics.vp(8),  end: LengthMetrics.vp(16)  }) |
+| iconSymbolModifier | [SymbolGlyphModifier](ts-universal-attributes-attribute-modifier.md#自定义modifier) | 否 | 是 | 当“icon”设置为symbol时，可使用该参数进行图标的事件和样式设置。  iconSymbolModifier: new SymbolGlyphModifier()  .fontColor([$r('sys.color.ohos\_id\_color\_fourth')])  .margin({  start: LengthMetrics.vp(8),  end: LengthMetrics.vp(16)  }) |
 
 ## DistrictSelectResult
 

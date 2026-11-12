@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_audio_manager.h
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 头文件 > native_audio_manager.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:19+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:9d72e292bc60e0c151cab1d1e4759352d82fdeab90a43027497b5b1ee1cd7623
+scraped_at: 2026-11-12T09:56:21+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:75414c1e62e426cfa3e44f9861b82402f4cf2733a30b96663d27271249df43e5
 ---
 
 ## 概述
@@ -110,7 +110,7 @@ OH_AudioCommon_Result OH_GetAudioScene(OH_AudioManager* manager, OH_AudioScene *
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_AudioCommon\_Result](capi-native-audio-common-h.md#oh_audiocommon_result) | AUDIOCOMMON\_RESULT\_SUCCESS：函数执行成功。  AUDIOCOMMON\_RESULT\_ERROR\_INVALID\_PARAM：  1. 参数audioManager为nullptr；  2. 参数scene为nullptr。 |
+| [OH\_AudioCommon\_Result](capi-native-audio-common-h.md#oh_audiocommon_result) | AUDIOCOMMON\_RESULT\_SUCCESS：函数执行成功。  AUDIOCOMMON\_RESULT\_ERROR\_INVALID\_PARAM：  1. 参数manager为nullptr；  2. 参数scene为nullptr。 |
 
 ### OH\_AudioManager\_RegisterAudioSceneChangeCallback()
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interfaces (其他)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.window (窗口) > Interfaces (其他)
 category: harmonyos-references
-scraped_at: 2026-11-04T08:32:41+08:00
-doc_updated_at: 2026-10-30
-content_hash: sha256:225ff2632ec133dda48e99197292307bfb79d2e08b1390429c272608fc378be2
+scraped_at: 2026-11-12T09:54:02+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:29b4c55c9a5ec1dbbe4a1a7121ba4820bb7f56f1c9d7c2577059e83f3bb9b543
 ---
 
 **说明** 
@@ -141,7 +141,7 @@ content_hash: sha256:225ff2632ec133dda48e99197292307bfb79d2e08b1390429c272608fc3
 
 示意图展示了leftRect、topRect、rightRect、bottomRect的含义。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/jH9xgSaFRuKOuKkydSsC7w/zh-cn_image_0000002809011679.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/f-SsSWOPQr6sFW4DPee_bw/zh-cn_image_0000002786360948.png)
 
 ## UIEnvAvoidAreaVP23+
 
@@ -294,8 +294,8 @@ content_hash: sha256:225ff2632ec133dda48e99197292307bfb79d2e08b1390429c272608fc3
 
 1. 应用通过[setWindowLimits](arkts-apis-window-window.md#setwindowlimits11)设置窗口尺寸限制。
 2. 应用在[startAbility](js-apis-inner-application-uiabilitycontext.md#startability-2)拉起窗口时通过[StartOptions](js-apis-app-ability-startoptions.md#startoptions)指定窗口尺寸限制（API version 17开始支持）。
-3. 应用在[module.json5配置文件中的abilities标签](../harmonyos-guides/module-configuration-file.md#abilities标签)中配置windowLimits。
-4. 默认系统限制（基于不同产品和窗口类型，其windowLimits系统默认限制存在差异）。
+3. 应用在[module.json5配置文件中的abilities标签](../harmonyos-guides/module-configuration-file.md#abilities标签)中配置WindowLimits。
+4. 默认系统限制（基于不同产品和窗口类型，其WindowLimits系统默认限制存在差异）。
 
 **系统能力：** SystemCapability.Window.SessionManager
 
@@ -308,14 +308,15 @@ content_hash: sha256:225ff2632ec133dda48e99197292307bfb79d2e08b1390429c272608fc3
 * 默认值为0，表示属性不发生变化。
 * 可生效范围下限值：系统限定的最小高度/宽度。
 * 可生效范围上限值：系统限定的最大高度/宽度。
+* 当窗口大于系统最大值或小于最小值时会自动变为系统规定的最大值和最小值。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| maxWidth | number | 否 | 是 | 窗口的最大宽度。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| maxHeight | number | 否 | 是 | 窗口的最大高度。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| minWidth | number | 否 | 是 | 窗口的最小宽度。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| minHeight | number | 否 | 是 | 窗口的最小高度。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| pixelUnit22+ | [PixelUnit](arkts-apis-window-e.md#pixelunit22) | 否 | 是 | 窗口尺寸限制的单位，默认为px。可显式设置为px或vp。 |
+| maxWidth | number | 否 | 是 | 窗口的最大宽度。默认单位为px。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  在HarmonyOS 6.0.2之前，此参数必填。  从HarmonyOS 6.0.2开始，此参数可选，默认值为0。 |
+| maxHeight | number | 否 | 是 | 窗口的最大高度。默认单位为px。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  在HarmonyOS 6.0.2之前，此参数必填。  从HarmonyOS 6.0.2开始，此参数可选，默认值为0。 |
+| minWidth | number | 否 | 是 | 窗口的最小宽度。默认单位为px。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  在HarmonyOS 6.0.2之前，此参数必填。  从HarmonyOS 6.0.2开始，此参数可选，默认值为0。 |
+| minHeight | number | 否 | 是 | 窗口的最小高度。默认单位为px。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  在HarmonyOS 6.0.2之前，此参数必填。  从HarmonyOS 6.0.2开始，此参数可选，默认值为0。 |
+| pixelUnit22+ | [PixelUnit](arkts-apis-window-e.md#pixelunit22) | 否 | 是 | 窗口尺寸限制的单位，默认为px。可设置为px或vp。 |
 
 ## TitleButtonRect11+
 
@@ -358,6 +359,23 @@ content_hash: sha256:225ff2632ec133dda48e99197292307bfb79d2e08b1390429c272608fc3
 | defaultDensity | number | 否 | 否 | 窗口所在屏幕的系统默认显示大小缩放系数，跟随窗口所在屏幕变化，该参数变化范围为0.5-4.0。 |
 | customDensity | number | 否 | 否 | 窗口自定义设置的显示大小缩放系数，该参数取值范围为0.5-4.0。未设置该参数时，将跟随系统显示大小缩放系数变化。该参数仅主窗口生效，在子窗、模态窗、全局悬浮窗或系统窗口上等于系统显示大小缩放系数(systemDensity)。 |
 
+## WindowFocusState
+
+窗口焦点状态的变化信息。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Window.SessionManager
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| isFocused | boolean | 否 | 否 | 窗口是否获焦，true表示获焦，false表示未获焦。 |
+| focusChangeReason | [FocusChangeReason](arkts-apis-window-e.md#focuschangereason) | 否 | 否 | 焦点状态变化的原因。 |
+| nextFocusedWindowId | number | 否 | 是 | 下一个获焦窗口的ID。仅当本窗口未获焦，且下一个获焦窗口与本窗口位于同一进程时，该字段才有效。默认值为undefined。 |
+| prevFocusedWindowId | number | 否 | 是 | 上一个获焦窗口的ID。仅当本窗口已获焦，且上一个获焦窗口与本窗口位于同一进程时，该字段才有效。默认值为undefined。 |
+
 ## WindowInfoOptions
 
 窗口布局信息过滤选项。
@@ -386,6 +404,21 @@ content_hash: sha256:225ff2632ec133dda48e99197292307bfb79d2e08b1390429c272608fc3
 | --- | --- | --- | --- | --- |
 | windowRect | [Rect](arkts-apis-window-i.md#rect7) | 否 | 否 | 窗口尺寸，窗口在屏幕上的实际位置和大小。  **元服务API：** 从API version 15开始，该接口支持在元服务中使用。 |
 | windowAlpha | number | 否 | 是 | 窗口透明度。有效值范围为[0.0, 1.0]，0.0表示完全透明，1.0表示完全不透明。默认值是-1.0，表示未查询到窗口透明度或者查询失败。  说明：本透明度非窗口背景色透明度（可通过[setWindowBackgroundColor](arkts-apis-window-window.md#setwindowbackgroundcolor9)接口设置）。  **起始版本：** 26.0.0  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+
+## WindowPositionParams
+
+调整主窗口Z序时使用的位置参数。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Window.SessionManager
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| windowId | number | 否 | 否 | 待调整Z序的主窗口ID。该窗口必须是当前应用进程中的主窗口。  该参数应为大于0的整数。推荐使用[getWindowProperties()](arkts-apis-window-window.md#getwindowproperties9)方法获取窗口ID属性。 |
+| insertAfter | number | 否 | 否 | 调整到的位置。取值大于0时，表示另一主窗口的ID，待调整Z序的主窗口将被放置到该主窗口之下；其他取值对应的Z序调整操作请见[WindowPosition](arkts-apis-window-e.md#windowposition)。 |
 
 ## KeyboardInfo18+
 
@@ -514,6 +547,9 @@ content_hash: sha256:225ff2632ec133dda48e99197292307bfb79d2e08b1390429c272608fc3
 | --- | --- | --- | --- | --- |
 | animationParams | [StartAnimationParams](arkts-apis-window-i.md#startanimationparams20) | 否 | 是 | 启动动画参数配置。默认值为undefined，若不配置将保持系统默认动效。 |
 | needAnimation23+ | boolean | 否 | 是 | 是否启用窗口创建动效。  传入true时，跟随系统默认动效。传入false时，表示关闭窗口创建动效，仅在[自由窗口状态](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)的情况下生效。  此参数不填时，默认为undefined，跟随系统默认动效。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| minimizeOnStart | boolean | 否 | 是 | 窗口是否以最小化状态启动。  true表示当前窗口以最小化状态启动，false表示窗口启动到前台。默认值为false。  仅在同应用间传递参数生效；如果拉起的主窗口已经在前台，传true和false都不生效不报错；如果拉起的主窗口已经在后台，传true不生效不报错，传false生效；如果主窗首次启动，传true和false都生效。  **设备行为差异：** 该参数在PC/2in1设备、其他设备的电脑模式中可正常调用，在其他设备和其他模式中作为入参使用时，不生效不报错。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| excludeFromDock | boolean | 否 | 是 | 是否屏蔽Dock栏图标及预览窗。  true表示当前窗口屏蔽Dock栏图标及预览窗，false表示窗口正常显示Dock栏图标及预览窗。默认值为undefined，不改变Dock栏图标及预览窗的显示。  仅在同应用间传递参数生效；需要被拉起方添加应用图标到状态栏；被拉起的主窗在前台时设置无效。  **设备行为差异：** 该参数在PC/2in1设备、其他设备的电脑模式中可正常调用，在其他设备和其他模式中作为入参使用时，不生效不报错。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| excludeFromRecent | boolean | 否 | 是 | 是否屏蔽多任务视图预览窗。  true表示当前窗口屏蔽多任务视图预览窗，false表示窗口正常显示多任务视图预览窗。默认值为undefined，不改变多任务视图预览窗的显示。  仅在同应用间传递参数生效；需要被拉起方添加应用图标到状态栏；被拉起的主窗在前台时设置无效。  **设备行为差异：** 该参数在PC/2in1设备、其他设备的电脑模式中可正常调用，在其他设备和其他模式中作为入参使用时，不生效不报错。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## Callback15+
 
@@ -600,7 +636,7 @@ Callback<T, V = void> {
 | title11+ | string | 否 | 否 | 子窗口标题。标题显示区域最右端不超过系统三键区域最左端，超过部分以省略号表示。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | decorEnabled11+ | boolean | 否 | 否 | 子窗口是否显示标题栏。true表示子窗口显示标题栏，false表示子窗口不显示标题栏。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | isModal12+ | boolean | 否 | 是 | 子窗口是否启用模态属性，仅当子窗口未启用独立子窗属性，即未设置zLevelAboveParentLoosened时生效。true表示子窗口启用模态属性，false表示子窗口禁用模态属性。不设置，则默认为false。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| modalityType14+ | [ModalityType](arkts-apis-window-e.md#modalitytype14) | 否 | 是 | 子窗口模态类型，仅当子窗口启用模态属性时生效。不设置，则默认为WINDOW\_MODALITY。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
+| modalityType14+ | [ModalityType](arkts-apis-window-e.md#modalitytype14) | 否 | 是 | 子窗口模态类型，仅当子窗口启用模态属性（即[isModal](arkts-apis-window-i.md#subwindowoptions11)为true）时可设置并生效，否则设置该参数会抛异常（抛出错误码[401](errorcode-universal.md#section401-参数检查失败)）。不设置，则默认为WINDOW\_MODALITY。  **元服务API：** 从API version 14开始，该接口支持在元服务中使用。 |
 | windowRect18+ | [Rect](arkts-apis-window-i.md#rect7) | 否 | 是 | 子窗口矩形区域，其中子窗口存在大小限制，具体参考[resize()](arkts-apis-window-window.md#resize9)方法。不设置且未调用[showWindow()](arkts-apis-window-window.md#showwindow9)显示前，则默认为{left: 0, top: 0, width: 0, height: 0}。具体参考[子窗口开发指导](../harmonyos-guides/subwindow-guide.md)。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | zLevel18+ | number | 否 | 是 | 子窗口层级级别，仅当子窗口未启用模态属性，即未设置isModal时生效。该参数应为整数，取值范围为[-10000, 10000]，浮点数输入将向下取整。不设置，则默认为0。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | maximizeSupported19+ | boolean | 否 | 是 | 子窗口是否支持最大化特性。true表示子窗口支持最大化，false表示子窗口不支持最大化。不设置，则默认为false。  **元服务API：** 从API version 19开始，该接口支持在元服务中使用。  **设备行为差异：** 该参数在支持并处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备上可正常调用；在不支持[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备上，作为入参使用时，对应接口不生效不报错；在支持但不处于[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态的设备上，作为入参使用时，对应接口不生效不报错，切换到[自由窗口](../harmonyos-guides/window-terminology.md#freeform-window自由窗口)状态后生效。 |

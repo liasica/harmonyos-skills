@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-erro
 title: error_code.h
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > C API > 头文件 > error_code.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:33+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:55:05+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:cdc858e5fc47bce8239d088450d6eea6ad36b5f0a0074f22f0c9d2b031813f32
 ---
 

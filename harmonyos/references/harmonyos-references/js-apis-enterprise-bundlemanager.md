@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-e
 title: "@ohos.enterprise.bundleManager (包管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > ArkTS API > @ohos.enterprise.bundleManager (包管理)
 category: harmonyos-references
-scraped_at: 2026-10-01T07:38:56+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:eef85b201ab634d24aaca902d0ecb390fd044602804a6893bd8d5686f24495b3
+scraped_at: 2026-11-12T09:56:06+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:755a0164e698e9288b55b63e9695f365d4e0d46f1c15aebfa13e3cd952e4be28
 ---
 
 本模块提供包管理能力，包括安装和卸载应用包，管理包安装允许名单、包安装禁止名单、包卸载禁止名单、可安装应用的分发类型等。在企业设备管理场景中，通过这些能力可以实现应用安装卸载的精细化管控，防止未授权应用的安装和卸载，保障企业设备安全，降低安全风险。
@@ -769,7 +769,7 @@ bundleManager.uninstall(wantTemp, 'bundleName', 100, true).then(() => {
 
 install(admin: Want, hapFilePaths: Array<string>, installParam?: InstallParam): Promise<void>
 
-安装指定路径下的应用包。使用Promise异步回调。
+安装指定路径下的应用包。调用此接口前，此设备必须通过[HEM商用部署](https://developer.huawei.com/business/cn/doc/HEM/hem_user-guide_add-reseller_management-resellerr-0000002469112100)。使用Promise异步回调。
 
 此接口只能安装分发类型为enterprise\_mdm（MDM应用）和enterprise\_normal（普通企业应用）类型的应用，可以通过[getBundleInfoForSelf](js-apis-bundlemanager.md#bundlemanagergetbundleinfoforself)接口查询应用自身的[BundleInfo](js-apis-bundlemanager-bundleinfo.md)，其中BundleInfo.appInfo.appDistributionType为应用的分发类型。自API版本26.0.0起，建议使用[installForResult](js-apis-enterprise-bundlemanager.md#bundlemanagerinstallforresult)，以获取更详细的错误码返回值。
 
@@ -865,7 +865,7 @@ bundleManager.install(wantTemp, hapFilePaths, installParam).then(() => {
 
 installForResult(admin: Want, hapFilePaths: Array<string>, installParam?: InstallParam): Promise<void>
 
-安装指定路径下的应用包，并返回安装结果。使用Promise异步回调。
+安装指定路径下的应用包，并返回安装结果。调用此接口前，此设备必须通过[HEM商用部署](https://developer.huawei.com/business/cn/doc/HEM/hem_user-guide_add-reseller_management-resellerr-0000002469112100)。使用Promise异步回调。
 
 此接口只能安装分发类型为enterprise\_mdm（MDM应用）和enterprise\_normal（普通企业应用）类型的应用，可以通过[getBundleInfoForSelf](js-apis-bundlemanager.md#bundlemanagergetbundleinfoforself)接口查询应用自身的[BundleInfo](js-apis-bundlemanager-bundleinfo.md)，其中BundleInfo.appInfo.appDistributionType为应用的分发类型。
 
@@ -1392,13 +1392,10 @@ getInstalledBundleStorageStats(admin: Want, bundleNames: Array<string>, accountI
 
 **说明** 
 
-1.仅能获取已安装应用的存储占用信息。
-
-2.bundleNames参数为empty或全部传入未安装的应用包名，会抛出9200012错误码。
-
-3.bundleNames参数传递的包名部分应用已安装，部分应用未安装时，接口返回正常，已安装的应用返回实际的存储占用信息，未安装的应用存储占用信息为0。
-
-4.该接口支持跨用户查询，比如可以在100用户下，查询101用户下的某些应用的存储占用信息。
+1. 仅能获取已安装应用的存储占用信息。
+2. bundleNames参数为empty或全部传入未安装的应用包名，会抛出9200012错误码。
+3. bundleNames参数传递的包名部分应用已安装，部分应用未安装时，接口返回正常，已安装的应用返回实际的存储占用信息，未安装的应用存储占用信息为0。
+4. 该接口支持跨用户查询，比如可以在100用户下，查询101用户下的某些应用的存储占用信息。
 
 **起始版本：** 26.0.0
 

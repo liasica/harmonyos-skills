@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-medi
 title: media_asset_change_request_capi.h
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > C API > 头文件 > media_asset_change_request_capi.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:38+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:dc87c0e36388cde42f1bb48486d9d4cb49295001e87bf47ac84f47eded06eafe
+scraped_at: 2026-11-12T09:56:51+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:357f9eaa756c93eb3235035319354e544f64be1657acbe9240944dd297479739
 ---
 
 ## 概述
@@ -60,7 +60,7 @@ OH_MediaAssetChangeRequest* OH_MediaAssetChangeRequest_Create(OH_MediaAsset* med
 
 | 类型 | 说明 |
 | --- | --- |
-| [OH\_MediaAssetChangeRequest](capi-mediaassetmanager-oh-mediaassetchangerequest.md)\* | MEDIA\_LIBRARY\_OK：方法调用成功。  MEDIA\_LIBRARY\_PARAMETER\_ERROR：参数错误。可能的原因：  1. 未指定强制参数。  2. 参数类型不正确。  3. 参数验证失败。  MEDIA\_LIBRARY\_INTERNAL\_SYSTEM\_ERROR：内部系统错误。 |
+| [OH\_MediaAssetChangeRequest](capi-mediaassetmanager-oh-mediaassetchangerequest.md)\* | 返回一个指向OH\_MediaAssetChangeRequest实例的指针，如果创建失败则返回NULL指针。 |
 
 ### OH\_MediaAssetChangeRequest\_AddResourceWithUri()
 

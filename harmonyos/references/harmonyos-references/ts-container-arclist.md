@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: ArcList
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 滚动与滑动 > ArcList
 category: harmonyos-references
-scraped_at: 2026-11-04T08:32:54+08:00
+scraped_at: 2026-11-12T09:54:11+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:416ab73996a9b36af44e75d4bdc97789f7bf0775da45b40b9bccb29409ae0dcc
+content_hash: sha256:70234d485ef0aac881f063986d04cfbd8477a220e0fc8030bacae4bbc1827e9e
 ---
 
 弧形列表由沿弧形排列的一系列列表项组成，适用于圆形屏幕设备。适合连续、多行呈现同类数据，例如图片和文本。
@@ -500,4 +500,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/makEp-6uTiSrwDxPfngKag/zh-cn_image_0000002779692236.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/ZKCs8wfxTrOj-hNWDw2BSA/zh-cn_image_0000002815560547.png)

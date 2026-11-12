@@ -1,14 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-operator-project-compilation
-title: 算子工程编译
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子实现 > 工程化算子开发 > 算子编译安装 > 算子工程编译
+title: AscendC算子工程编译
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC算子实现 > AscendC算子工程开发 > AscendC算子工程编译安装 > AscendC算子工程编译
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:49+08:00
-doc_updated_at: 2026-06-05
-content_hash: sha256:ebbb11452cd82be359c7f05e26ae809ef1e65611d5b221c135282aaec8c25425
+scraped_at: 2026-11-12T09:52:42+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:14e312eb13d42394ae9df450e99ff5106b7c022cf7a56aa881b5bdd17ec1f1a5
 ---
 
-算子kernel侧和host侧实现开发完成后，需要对算子工程进行编译，将自定义算子部署到omg工具中，详细的编译操作包括：
+算子kernel侧和host侧实现开发完成后，需要对算子工程进行编译，将自定义算子部署到ATC工具中，详细的编译操作包括：
 
 * 编译AscendC算子kernel侧代码实现文件\*.cpp，分为源码发布和二进制发布两种方式。
 
@@ -23,7 +23,7 @@ content_hash: sha256:ebbb11452cd82be359c7f05e26ae809ef1e65611d5b221c135282aaec8c
 
 **图1** 算子工程编译示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/mFXnj59gSxmeY0wrfyo1Gg/zh-cn_image_0000002809011395.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/tg08_XFbSn-2BH5coZbZWQ/zh-cn_image_0000002786360700.png)
 
 ## 编译步骤
 
@@ -84,7 +84,7 @@ content_hash: sha256:ebbb11452cd82be359c7f05e26ae809ef1e65611d5b221c135282aaec8c
    ./build.sh
    ```
 
-   编译成功后，会在当前目录下创建build\_out目录，并将build\_out目录下生成的自定义算子交付件安装到tools\_omg中。
+   编译成功后，会在当前目录下创建build\_out目录，并将build\_out目录下生成的自定义算子交付件安装到ATC工具中。
 
    如果想单独编译算子kernel，可以在算子工程下执行如下命令：
 

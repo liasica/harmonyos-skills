@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_operator-
 title: "@hw-stylistic/operator-linebreak"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > ArkTS代码风格规则@hw-stylistic > @hw-stylistic/operator-linebreak
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:13+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:7b209f41cd1e97739ff1ddbdab837d75f7ff7cf0a0fac4b0160f95f46b4610c9
+scraped_at: 2026-11-12T09:52:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4c5c8ea0fcba2b30d0622c1e2cfe6345145ad7d5da24038d4b6e159839e4772b
 ---
 
 强制运算符位于代码行末。该规则仅检查.ets文件类型。
@@ -59,4 +59,4 @@ export function test(n1: number, n2: number, n3: number): void {
 "plugin:@hw-stylistic/all"
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

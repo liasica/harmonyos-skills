@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-enterprise-dataguard
-title: 企业数据保护服务错误码
-breadcrumb: API参考 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > ArkTS API > 企业数据保护服务错误码
+title: ArkTS API错误码
+breadcrumb: API参考 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:51+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:4a2c0cb00257354a7b862f2f062cf648aab029892768c974c57753de0710c143
+scraped_at: 2026-11-12T09:55:23+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:68ef0dc68ed56ad1609ae65c008d71ff29ce348dc422fe31ebfe7b8bb3f04d1f
 ---
 
 **说明** 
@@ -180,6 +180,44 @@ Invalid certificate.
 2. 请确认证书携带的公钥是否是ECC公钥。
 3. 请确认证书已携带企业根证书的合法签名。
 
+## 1014400207 企业身份认证失败
+
+**错误信息**
+
+Failed to authenticate the enterprise identity.
+
+**错误描述**
+
+企业身份认证失败。
+
+**可能原因**
+
+1. 因网络问题导致企业身份认证失败。
+2. 企业身份认证超时。
+
+**处理步骤**
+
+请确认网络正常或重试。
+
+## 1014402001 无效的数据盘
+
+**错误信息**
+
+Invalid data volume.
+
+**错误描述**
+
+无效的数据盘。
+
+**可能原因**
+
+1. 数据盘未完成挂载，卷不存在。
+2. 指定的数据盘不存在。
+
+**处理步骤**
+
+确认数据盘存在且正常挂载。
+
 ## 1001700001 系统服务异常
 
 **错误信息**
@@ -199,7 +237,7 @@ System service error.
 
 尝试重试操作或请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
 
-## 1001700101 无效用户ID
+## 1001700101 无效的用户ID
 
 **错误信息**
 
@@ -372,3 +410,266 @@ The key type does not match the device type.
 **处理步骤**
 
 修改类型组合方式，请避免使用无效的类型组合方式。
+
+## 1030300001 系统服务异常
+
+**错误信息**
+
+System service error.
+
+**错误描述**
+
+系统服务异常。
+
+**可能原因**
+
+1. 系统IPC通信失败。
+2. 系统参数获取或设置失败。
+3. 无法识别U盘或无法识别U盘数据卷。
+
+**处理步骤**
+
+尝试重试操作或请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
+
+## 1030300002 参数错误
+
+**错误信息**
+
+Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.
+
+**错误描述**
+
+参数错误。可能原因：1. 必选参数未指定；2. 参数类型错误；3. 参数校验失败。
+
+**可能原因**
+
+1. 必选参数未指定。
+2. 参数类型错误。
+3. 参数校验失败。
+
+**处理步骤**
+
+1. 请确认必选参数是否已指定。
+2. 请确认参数类型是否正确。
+3. 请确认参数值是否通过校验。
+
+## 1030300003 绑定loop设备失败
+
+**错误信息**
+
+Failed to bind the loop device.
+
+**错误描述**
+
+绑定loop设备失败。
+
+**可能原因**
+
+1. loop设备资源不足。
+2. 系统内核绑定操作失败。
+
+**处理步骤**
+
+1. 检查系统中loop设备是否已全部占用。
+2. 重启设备后重新调用。
+
+## 1030300004 创建dm-crypt加密卷失败
+
+**错误信息**
+
+Failed to create the dm-crypt volume.
+
+**错误描述**
+
+创建dm-crypt加密卷失败。
+
+**可能原因**
+
+1. 密钥文件路径无效或密钥内容错误。
+2. 加密算法与密钥长度不匹配。
+3. dm-crypt内核模块异常。
+
+**处理步骤**
+
+1. 请确认密钥文件路径是否正确且文件可读。
+2. 请确认加密算法与密钥长度是否匹配。
+3. 重启设备后重新调用。
+
+## 1030300005 挂载卷失败
+
+**错误信息**
+
+Failed to mount the volume.
+
+**错误描述**
+
+挂载卷失败。
+
+**可能原因**
+
+1. 文件系统格式不支持。
+2. 挂载点已被占用。
+3. 系统内核挂载操作失败。
+
+**处理步骤**
+
+1. 请确认卷的文件系统格式是否支持。
+2. 请确认挂载点是否已被占用。
+3. 重启设备后重新调用。
+
+## 1030300006 卸载卷失败
+
+**错误信息**
+
+Failed to unmount the volume.
+
+**错误描述**
+
+卸载卷失败。
+
+**可能原因**
+
+1. 卷正在被其他进程使用。
+2. 系统内核卸载操作失败。
+
+**处理步骤**
+
+1. 请确认卷是否正在被其他进程使用，关闭占用进程后重试。
+2. 重启设备后重新调用。
+
+## 1030300007 销毁dm-crypt加密卷失败
+
+**错误信息**
+
+Failed to destroy the dm-crypt volume.
+
+**错误描述**
+
+销毁dm-crypt加密卷失败。
+
+**可能原因**
+
+1. 块设备仍被占用。
+2. 系统内核操作失败。
+
+**处理步骤**
+
+重启设备后重新调用。
+
+## 1030300008 解绑loop设备失败
+
+**错误信息**
+
+Failed to unbind the loop device.
+
+**错误描述**
+
+解绑loop设备失败。
+
+**可能原因**
+
+1. loop设备仍被占用。
+2. 系统内核解绑操作失败。
+
+**处理步骤**
+
+1. 请确认loop设备关联的文件系统是否仍处于挂载状态，若已挂载请先卸载后重试。
+2. 重启设备后重新调用。
+
+## 1030300009 未找到目标磁盘
+
+**错误信息**
+
+Disk not found.
+
+**错误描述**
+
+未找到目标磁盘。
+
+**可能原因**
+
+1. 查询参数有误。
+2. 系统服务异常。
+
+**处理步骤**
+
+1. 请确认传入的磁盘设备信息是否正确。
+2. 重启设备后重新调用。
+
+## 1030300010 获取磁盘列表失败
+
+**错误信息**
+
+Failed to get the disk list from the disk manager service.
+
+**错误描述**
+
+获取磁盘列表失败。
+
+**可能原因**
+
+1. 查询参数有误。
+2. 系统服务异常。
+
+**处理步骤**
+
+1. 请确认传入的参数是否正确。
+2. 重启设备后重新调用。
+
+## 1030300011 获取卷列表失败
+
+**错误信息**
+
+Failed to get the volume list from the disk manager service.
+
+**错误描述**
+
+获取卷列表失败。
+
+**可能原因**
+
+1. 查询参数有误。
+2. 系统服务异常。
+
+**处理步骤**
+
+1. 重启设备后重新调用。
+2. 请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
+
+## 1030300012 未找到目标卷
+
+**错误信息**
+
+Volume not found.
+
+**错误描述**
+
+未找到目标卷。
+
+**可能原因**
+
+1. 查询参数有误。
+2. 磁盘设备信息与实际设备不匹配，导致未查询到对应卷。
+
+**处理步骤**
+
+1. 请确认目标卷已正确挂载。
+2. 请确认传入的磁盘设备信息是否正确。
+
+## 1030300013 该卷已挂载
+
+**错误信息**
+
+The volume is already mounted.
+
+**错误描述**
+
+该卷已挂载。
+
+**可能原因**
+
+目标卷设备已经挂载成功，无需重复挂载。
+
+**处理步骤**
+
+挂载已成功，停止重复挂载。

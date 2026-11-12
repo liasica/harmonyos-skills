@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/textblock-dra
 title: 字块绘制（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形绘制与显示 > 图元绘制 > 字块绘制（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:18+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2763ccf037c990dfe0f3db082f1787b1d4fa6ab95d4afeba62c3e3518b28475e
+scraped_at: 2026-11-12T09:52:12+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:efbac01005617a5ae16bd61614350fa6cd89d8d596afc49addc30048c9a22d35
 ---
 
 ## 场景介绍
 
 字块（TextBlob）是指文本的集合。无论是单个的文字还是大块的文本，都可以通过字块来绘制。
 
-除了基本的字块绘制之外，还可以给文字添加各种绘制效果。常见的字块绘制场景包括[文字描边](textblock-drawing-arkts.md#文字描边)、[文字渐变](textblock-drawing-arkts.md#文字渐变)等，更多效果请见[绘制效果](drawing-effect-overview.md)。
+除了基本的字块绘制之外，还可以给文字添加各种绘制效果。常见的字块绘制场景包括[文字描边](textblock-drawing-arkts.md#文字描边)、[文字渐变](textblock-drawing-arkts.md#文字渐变)、[字体回退](textblock-drawing-arkts.md#字体回退)等，更多效果请见[绘制效果](drawing-effect-overview.md)。
 
 本节不涉及文本测量和布局排版相关内容，如需在开发中处理此类文本绘制需求，可参考[文本开发概述](text-overview.md)，该文档系统讲解了排版策略与相关使用指导。
 
@@ -48,7 +48,7 @@ const textBlob = drawing.TextBlob.makeFromString('Hello world', font, drawing.Te
 canvas.drawTextBlob(textBlob, VALUE_200, VALUE_300);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/LxbG_XArRsisJEdQf3B_uQ/zh-cn_image_0000002809010737.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/9PjSDVmoQ0K7Y4s4T4QPDA/zh-cn_image_0000002786519954.jpg)
 
 ## 文字描边
 
@@ -83,7 +83,7 @@ canvas.drawTextBlob(textBlob, VALUE_200, VALUE_300);
 canvas.detachPen();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/YunQxgmqTQON4E8F5k6pCw/zh-cn_image_0000002809050651.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/Ek21FJrTRaaeYKyFkTbh_w/zh-cn_image_0000002786360026.jpg)
 
 ### 中文文字描边
 
@@ -125,7 +125,7 @@ canvas.drawTextBlob(textBlob, VALUE_200, VALUE_300);
 canvas.detachBrush();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/MxV27gZHSQaszaW2vtRU2w/zh-cn_image_0000002779851086.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/I4tR0ehIRN6xuEztCe__oQ/zh-cn_image_0000002815559447.png)
 
 ## 文字渐变
 
@@ -157,7 +157,7 @@ canvas.drawTextBlob(textBlob, VALUE_100, VALUE_300);
 canvas.detachBrush();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/XT5fSaytRNK7WTCbk4VdjA/zh-cn_image_0000002779691118.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/21BylubFSuyAmG8rmg1_Yg/zh-cn_image_0000002815399531.jpg)
 
 ## 主题字体
 
@@ -211,7 +211,7 @@ for (let s of text) {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/062RtpT7RRKwuUZ9PanWNw/zh-cn_image_0000002779851088.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/4hb-_scMRzmYDJb0rhJcbQ/zh-cn_image_0000002815559449.jpg)
 
 进阶场景：绘制带字体特征的字符。
 
@@ -236,11 +236,144 @@ for (let s of text) {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/rFDq69AfSVqEcQoFQP-Y1A/zh-cn_image_0000002779691120.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/IoGr0vRnQJ2Peo6OC8mj_A/zh-cn_image_0000002815399533.png)
 
 **说明** 
 
 如果 drawSingleCharacterWithFeatures 与 measureSingleCharacter 混合使用，或者 drawSingleCharacter 与 measureSingleCharacterWithFeatures 混合使用，字体绘制可能会重叠。
+
+## 字体回退
+
+在实际开发中，开发者指定的字体未必能覆盖文本中的全部字符，例如一个仅包含拉丁字符的字体无法显示中文、阿拉伯文等字符。此时若直接使用该字体绘制文本，不在字体覆盖范围内的字符将无法正常显示。字体回退（Font Fallback）能力可以自动从系统字体中查找能够支持这些字符的字体进行显示，从而兼顾字体风格统一与文本的完整呈现，开发者无需自行判断字符覆盖范围，也无需为不同语言单独指定字体。若系统字体中仍无支持某字符的字体，则该字符依旧无法正常显示。
+
+当需要注意字符覆盖范围、或需要在一段文本中混用多种语言时，即可使用本节介绍的支持字体回退的接口。[单字绘制](textblock-drawing-arkts.md#单字绘制)也具备字体回退能力，适用于逐字符渲染场景；本节介绍的是字块创建、字形转换与文本宽度测量场景下的字体回退接口。详细的API介绍请参考[TextBlob](../harmonyos-references/arkts-apis-graphics-drawing-textblob.md)和[Font](../harmonyos-references/arkts-apis-graphics-drawing-font.md)。
+
+**说明** 
+
+从API版本26.0.1开始，新增字体回退功能。
+
+### 字块绘制支持字体回退
+
+当指定的字体无法覆盖文本中的所有字符时，可以使用支持字体回退的字块创建接口[makeFromStringWithFallback()](../harmonyos-references/arkts-apis-graphics-drawing-textblob.md#makefromstringwithfallback)或[makeFromPosTextWithFallback()](../harmonyos-references/arkts-apis-graphics-drawing-textblob.md#makefrompostextwithfallback)。接口会自动为不支持的字符查找系统回退字体，并按字体将文本分组，生成一组字块对象。绘制时，需将所有字块绘制在同一坐标原点，即可完整呈现整段文本。
+
+主要实现步骤如下：创建字型对象并设置字体 → 准备文本 → 调用回退接口获取字块数组 → 遍历数组，在同一原点绘制每个字块。
+
+使用[makeFromStringWithFallback()](../harmonyos-references/arkts-apis-graphics-drawing-textblob.md#makefromstringwithfallback)接口从字符串创建支持字体回退的字块数组并绘制的示例代码如下：
+
+```typescript
+// 创建字型对象
+const font = new drawing.Font();
+// 创建字体对象
+const myTypeface = drawing.Typeface.makeFromFile('/system/fonts/NotoSansArmenian[wdth,wght].ttf');
+// 为字型设置字体
+font.setTypeface(myTypeface);
+// 设置字体大小
+font.setSize(VALUE_100);
+// 创建支持字体回退的字块数组
+const textBlobs = drawing.TextBlob.makeFromStringWithFallback('Hello世界', font);
+// 遍历字块数组并绘制，每个TextBlob绘制在相同原点
+for (let textBlob of textBlobs) {
+  canvas.drawTextBlob(textBlob, VALUE_200, VALUE_300);
+}
+```
+
+| 使用不回退接口makeFromString()的效果图 | 使用回退接口makeFromStringWithFallback()的效果图 |
+| --- | --- |
+|  |  |
+
+使用[makeFromPosTextWithFallback()](../harmonyos-references/arkts-apis-graphics-drawing-textblob.md#makefrompostextwithfallback)接口从文本和坐标点数组创建支持字体回退的字块数组并绘制的示例代码如下：
+
+```typescript
+// 创建字型对象
+const font = new drawing.Font();
+// 创建字体对象
+const myTypeface = drawing.Typeface.makeFromFile('/system/fonts/NotoSansArmenian[wdth,wght].ttf');
+// 为字型设置字体
+font.setTypeface(myTypeface);
+// 设置字体大小
+font.setSize(VALUE_100);
+// 需要绘制的文本
+const text = 'Hello世界';
+// 获取glyph数量
+const glyphCount = font.countText(text);
+// 为每个字符指定坐标位置
+let points: common2D.Point[] = [];
+let xOffset = 0;
+for (let i = 0; i < glyphCount; i++) {
+  points.push({ x: VALUE_200 + xOffset, y: VALUE_300 });
+  xOffset += 60;
+}
+// 创建支持字体回退的字块数组
+const textBlobs = drawing.TextBlob.makeFromPosTextWithFallback(text, glyphCount, points, font);
+// 遍历字块数组并绘制
+for (let textBlob of textBlobs) {
+  canvas.drawTextBlob(textBlob, 0, 0);
+}
+```
+
+| 使用不回退接口makeFromPosText()的效果图 | 使用回退接口makeFromPosTextWithFallback()的效果图 |
+| --- | --- |
+|  |  |
+
+### 字形转换与文本宽度测量支持字体回退
+
+当需要将文本转换为字形，或测量文本在字体回退后的实际宽度时，可以使用Font提供的支持字体回退的字形转换接口[textToGlyphsWithFallback()](../harmonyos-references/arkts-apis-graphics-drawing-font.md#texttoglyphswithfallback)和文本宽度测量接口[measureTextWithFallback()](../harmonyos-references/arkts-apis-graphics-drawing-font.md#measuretextwithfallback)。
+
+使用[textToGlyphsWithFallback()](../harmonyos-references/arkts-apis-graphics-drawing-font.md#texttoglyphswithfallback)将文本转换为字形信息（转换时自动按回退字体分组），再逐组设置对应字体、根据字形宽度计算位置，最后通过[drawGlyphs()](../harmonyos-references/arkts-apis-graphics-drawing-canvas.md#drawglyphs)绘制。示例代码如下：
+
+```typescript
+// 创建字型对象
+const font = new drawing.Font();
+// 创建字体对象
+const myTypeface = drawing.Typeface.makeFromFile('/system/fonts/NotoSansArmenian[wdth,wght].ttf');
+// 为字型设置字体
+font.setTypeface(myTypeface);
+// 设置字体大小
+font.setSize(VALUE_100);
+// 需要转换的文本
+const text = 'Hello世界';
+// 获取glyph数量
+const glyphCount = font.countText(text);
+// 将文本转换为glyph索引，支持字体回退
+const fallbackInfos = font.textToGlyphsWithFallback(text, glyphCount);
+// 使用drawGlyphs按回退字体分组绘制字形
+let xOffset = 0;
+// 遍历回退信息，每个元素包含相同typeface的glyph ID数组
+for (let info of fallbackInfos) {
+  // info.typeface为匹配的字体
+  // info.glyphIds为该字体对应的glyph ID数组
+  font.setTypeface(info.typeface);
+  let positions: common2D.Point[] = [];
+  let glyphWidths = font.getWidths(info.glyphIds);
+  for (let j = 0; j < info.glyphIds.length; j++) {
+    positions.push({ x: VALUE_200 + xOffset, y: VALUE_300 });
+    xOffset += glyphWidths[j];
+  }
+  canvas.drawGlyphs(info.glyphIds, 0, positions, 0, info.glyphIds.length, font);
+}
+```
+
+| 使用不回退接口textToGlyphs()的效果图 | 使用回退接口textToGlyphsWithFallback()的效果图 |
+| --- | --- |
+|  |  |
+
+使用[measureTextWithFallback()](../harmonyos-references/arkts-apis-graphics-drawing-font.md#measuretextwithfallback)接口测量文本在字体回退后实际宽度的示例代码如下：
+
+```typescript
+// 创建字型对象
+const font = new drawing.Font();
+// 创建字体对象
+const myTypeface = drawing.Typeface.makeFromFile('/system/fonts/NotoSansArmenian[wdth,wght].ttf');
+// 为字型设置字体
+font.setTypeface(myTypeface);
+// 设置字体大小
+font.setSize(VALUE_100);
+// 需要测量的文本
+const text = 'Hello世界';
+// 测量文本宽度，支持字体回退
+const textWidth = font.measureTextWithFallback(text, drawing.TextEncoding.TEXT_ENCODING_UTF8);
+console.info('textWidth: ' + textWidth);
+```
 
 ## 示例代码
 

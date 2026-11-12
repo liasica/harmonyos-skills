@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.security.CryptoExtensionAbility (密钥扩展能力)"
 breadcrumb: API参考 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > ArkTS API > @ohos.security.CryptoExtensionAbility (密钥扩展能力)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:56+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ce66e044d64b8b7fe6bf34f9f9feb1ae9028a65b1d7ca3364914a7e47dac95ed
+scraped_at: 2026-11-12T09:55:27+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c26e874f6a6551858567fedbb5bb7f2538971615736c96fa2556c40e29716d0d
 ---
 
 模块提供外部密钥扩展能力，包括资源管理、PIN码认证管理、密码操作、通用操作等接口能力。
@@ -148,17 +148,34 @@ onOpenResource(resourceId: string, params: Array<huksExternalCrypto.HuksExternal
 **示例：**
 
 ```ts
-import { huksExternalCrypto, HuksCryptoExtensionParam, CryptoExtensionAbility, HuksCryptoExtensionResult } from '@kit.UniversalKeystoreKit';
+import { huksExternalCrypto, HuksCryptoExtensionParam, CryptoExtensionAbility, HuksCryptoExtensionResult, HuksCryptoExtensionResultCode } from '@kit.UniversalKeystoreKit';
+import { deviceInfo } from '@kit.BasicServicesKit';
 
 export default class CryptoExtension extends CryptoExtensionAbility {
   onOpenResource(resourceId: string, params: Array<huksExternalCrypto.HuksExternalCryptoParam> | HuksCryptoExtensionParam[]): Promise<HuksCryptoExtensionResult> {
     // 解析resourceId，打开底层句柄，并映射为新的句柄返回。
     let result: HuksCryptoExtensionResult = {
-      resultCode: 0,
-      handle: "test handle"
+      resultCode: HuksCryptoExtensionResultCode.HUKS_CRYPTO_EXTENSION_ERR_EXTENSION_FAIL,
     };
 
+    // 解析resource index，API版本22需要解析index字段，在API版本26.0.0及以上可直接使用。
+    const apiVersion = deviceInfo.sdkApiVersion;
+    let index: string;
+    if (apiVersion >= 26) {
+      index = resourceId;
+    } else {
+      try {
+        index = JSON.parse(resourceId)['index'];
+      } catch (e) {
+        result.resultCode = HuksCryptoExtensionResultCode.HUKS_CRYPTO_EXTENSION_ERR_EXTENSION_FAIL;
+        return Promise.resolve(result);
+      }
+    }
+
     // ...
+
+    result.handle = "your handle";
+    result.resultCode = 0;
     return Promise.resolve(result);
   }
 }

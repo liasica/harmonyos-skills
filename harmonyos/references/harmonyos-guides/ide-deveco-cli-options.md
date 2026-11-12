@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-cl
 title: 命令
 breadcrumb: 指南 > DevEco CLI > 命令
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:40+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:2c00901c262e46099da35e35b5f18ead092cd92e61f8fe15659919ca3fa5ed4b
+scraped_at: 2026-11-12T09:53:27+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d768bb75bfc12124a769c3a7686a4f0a5e167408bd713ece39309a870bc0185c
 ---
 
 ## help
@@ -310,8 +310,8 @@ devecocli run --module <module> --device <device> --product <product> --build-mo
 | --uninstall | 可选，安装前先卸载已有应用。 |
 | --skip-build | 可选，跳过构建操作，直接安装应用。  说明：  使用该参数时，需确保对应模块已有构建产物。 |
 | --apply | 可选，将全量构建部署生成缓存后的修改生成增量修改文件（.hqf文件），重启应用后增量修改文件会生效。  fileName须在工程.hvigor目录下，中记录被修改源文件相对工程根目录的路径。通过读取该文件，工具可以定位发生变化的文件，并执行增量编译，提高构建效率。  说明：  * 执行该命令前，需先执行devecocli run命令完成全量构建部署，生成缓存。 * 若devecocli run --apply执行失败，工具会自动执行devecocli run命令进行全量构建。 * 需使用DevEco Studio 6.1.1以上版本。 |
-| --hotreload | 可选，使用热重载功能。  使用热重载功能时，该命令进程需持续存活，以使热重载构建可以快速响应。当不需要热重载功能时，通过执行“devecocli run --hotreload stop”命令终止该进程，释放系统资源。  鸿蒙电脑版DevEco CLI不支持该参数。 |
-| --hotreload-apply | 可选，将热重载基础缓存后的修改生成增量修改文件（.hqf文件），并将.hqf文件应用到运行中的应用，使修改直接生效。  鸿蒙电脑版DevEco CLI不支持该参数。  说明：  * 执行该命令前，需先执行devecocli run --hotreload命令，生成热重载基础缓存。 * 增量修改时，仅支持修改运行模块中的ArkTS文件。 |
+| --hotreload | 可选，使用热重载功能。  使用热重载功能时，该命令进程需持续存活，以使热重载构建可以快速响应。当不需要热重载功能时，通过执行“devecocli run --hotreload stop”命令终止该进程，释放系统资源。 |
+| --hotreload-apply | 可选，将热重载基础缓存后的修改生成增量修改文件（.hqf文件），并将.hqf文件应用到运行中的应用，使修改直接生效。  说明：  * 执行该命令前，需先执行devecocli run --hotreload命令，生成热重载基础缓存。 * 增量修改时，仅支持修改运行模块中的ArkTS文件。 |
 
 **示例：**
 
@@ -492,14 +492,14 @@ devecocli emulator list
 **命令格式：**
 
 ```shell
-devecocli emulator start [names...]
+devecocli emulator start <names...>
 ```
 
 **参数：**
 
 | 参数名 | 说明 |
 | --- | --- |
-| [names...] | 必选，模拟器实例名称或序列号，多个名称用空格隔开。  若名称中带有空格，则名称需要添加英文引号。 |
+| <names...> | 必选，模拟器实例名称或序列号，多个名称用空格隔开。  若名称中带有空格，则名称需要添加英文引号。 |
 
 **示例：**
 
@@ -519,14 +519,14 @@ emulator start命令仅支持启动release版本的模拟器。
 **命令格式：**
 
 ```shell
-devecocli emulator stop [names...]
+devecocli emulator stop <names...>
 ```
 
 **参数：**
 
 | 参数名 | 说明 |
 | --- | --- |
-| [names...] | 必选，模拟器实例名称或序列号，多个名称或序列号用空格隔开。  若名称中带有空格，则名称需要添加英文引号。 |
+| <names...> | 必选，模拟器实例名称或序列号，多个名称或序列号用空格隔开。  若名称中带有空格，则名称需要添加英文引号。 |
 
 **示例：**
 
@@ -1108,6 +1108,10 @@ devecocli skills remove --skill skillname --agent agentname  # skillname需替�
 
 从1.3.0版本开始，支持以字符树的形式查看应用的界面布局，包括控件类型、控件ID、控件坐标边界（[left,top,right,bottom]） 、控件文本和交互标志（clickable、longClickable、scrollable、checkable）。
 
+**说明** 
+
+设备系统要求：API 20及以上版本。
+
 **命令格式：**
 
 ```shell
@@ -1136,10 +1140,6 @@ devecocli ui layout --mode full --depth 2
 devecocli ui layout --id submit_button
 devecocli ui layout --window 15 --format json
 ```
-
-**说明** 
-
-从API version 20开始支持该命令。
 
 ### ui window list
 
@@ -1529,8 +1529,8 @@ devecocli serve lsp --arkts --cpp --project-path <path> --auto-detect
 
 | 参数名 | 说明 |
 | --- | --- |
-| --arkts | 必选，启动ArkTS语言服务器，不可与--cpp同时使用。 |
-| --cpp | 必选，启动C/C++语言服务器，不可与--arkts同时使用。 |
+| --arkts | 可选，启动ArkTS语言服务器，不可与--cpp同时使用。 |
+| --cpp | 可选，启动C/C++语言服务器，不可与--arkts同时使用。 |
 | --project-path | 可选，工程根目录。默认为当前目录。 |
 | --auto-detect | 可选，在当前目录和子目录中查找工程根目录，最多向下查找3层子目录。  不可与--project-path同时使用。 |
 

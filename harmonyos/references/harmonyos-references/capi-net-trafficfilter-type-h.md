@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-net-
 title: net_trafficfilter_type.h
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 头文件 > net_trafficfilter_type.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:55+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:8ed65ef7eb2c9885b32d5c6eebae06bb9b7982d34be934a13f226a53f63e3466
+scraped_at: 2026-11-12T09:55:41+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:6c390a1ccd225aae2378a0a15b75514d0ee6d90c417a32b89122c4f1227b680d
 ---
 
 ## 概述
@@ -43,6 +43,13 @@ content_hash: sha256:8ed65ef7eb2c9885b32d5c6eebae06bb9b7982d34be934a13f226a53f63
 | [OH\_TrafficFilter\_ProcessInfo](capi-trafficfilter-oh-trafficfilter-processinfo.md) | OH\_TrafficFilter\_ProcessInfo | 进程信息结构体。存储[OH\_TrafficFilter\_QueryProcess](capi-net-trafficfilter-h.md#oh_trafficfilter_queryprocess)返回的进程信息。初始化规则：调用[OH\_TrafficFilter\_QueryProcess](capi-net-trafficfilter-h.md#oh_trafficfilter_queryprocess)之前，调用者必须将该结构体清零（例如使用memset），然后将[size](capi-trafficfilter-oh-trafficfilter-processinfo.md#成员变量)设置为调用者分配的结构体实际大小，通常为sizeof(OH\_TrafficFilter\_ProcessInfo)。二进制兼容规则（ABI，即应用程序二进制接口，保证新旧版本编译的代码能互相识别结构体布局）：系统通过[size](capi-trafficfilter-oh-trafficfilter-processinfo.md#成员变量)来确定哪些输出字段可以被安全写入。只有被[size](capi-trafficfilter-oh-trafficfilter-processinfo.md#成员变量)完全覆盖的字段才会被系统写入。如果[size](capi-trafficfilter-oh-trafficfilter-processinfo.md#成员变量)小于读取[size](capi-trafficfilter-oh-trafficfilter-processinfo.md#成员变量)字段本身所需的最小大小，接口将返回[OH\_TRAFFICFILTER\_ERROR\_INVALID\_PARAM](capi-net-trafficfilter-type-h.md#oh_trafficfilter_errcode)。如果[size](capi-trafficfilter-oh-trafficfilter-processinfo.md#成员变量)大于系统已知的大小，多余的字段将被忽略。输出有效性规则：当[OH\_TrafficFilter\_QueryProcess](capi-net-trafficfilter-h.md#oh_trafficfilter_queryprocess)返回[OH\_TRAFFICFILTER\_OK](capi-net-trafficfilter-type-h.md#oh_trafficfilter_errcode)时，被[size](capi-trafficfilter-oh-trafficfilter-processinfo.md#成员变量)覆盖的字段包含有效的输出值。当接口返回错误时，调用者不应依赖[size](capi-trafficfilter-oh-trafficfilter-processinfo.md#成员变量)以外的输出字段的值。 |
 | [OH\_TrafficFilter\_RedirectRule](capi-trafficfilter-oh-trafficfilter-redirectrule.md) | OH\_TrafficFilter\_RedirectRule | 流量重定向规则。定义TCP流量重定向规则，将匹配的流量重定向到指定的代理服务器。初始化规则：调用[OH\_TrafficFilter\_AddRedirectRule](capi-net-trafficfilter-h.md#oh_trafficfilter_addredirectrule)之前，调用者必须将该结构体清零（例如使用memset），然后将[size](capi-trafficfilter-oh-trafficfilter-redirectrule.md#成员变量)设置为调用者分配的结构体实际大小，通常为sizeof(OH\_TrafficFilter\_RedirectRule)。二进制兼容规则（ABI，即应用程序二进制接口，保证新旧版本编译的代码能互相识别结构体布局）：系统通过[size](capi-trafficfilter-oh-trafficfilter-redirectrule.md#成员变量)来确定哪些字段可以被安全读取。如果[size](capi-trafficfilter-oh-trafficfilter-redirectrule.md#成员变量)小于当前接口所需的最小大小，接口将返回[OH\_TRAFFICFILTER\_ERROR\_INVALID\_PARAM](capi-net-trafficfilter-type-h.md#oh_trafficfilter_errcode)。如果[size](capi-trafficfilter-oh-trafficfilter-redirectrule.md#成员变量)大于系统已知的大小，多余的字段将被忽略。失败规则：如果[OH\_TrafficFilter\_AddRedirectRule](capi-net-trafficfilter-h.md#oh_trafficfilter_addredirectrule)返回错误，不保证规则已被添加或生效。调用者应在假设规则生效之前检查返回值。 |
 | [OH\_TrafficFilter\_Redirector](capi-trafficfilter-oh-trafficfilter-redirector.md) | OH\_TrafficFilter\_Redirector | 流量重定向器。 |
+| [OH\_TrafficFilter\_MACMatch](capi-trafficfilter-oh-trafficfilter-macmatch.md) | OH\_TrafficFilter\_MACMatch | MAC地址匹配条件。 |
+| [OH\_TrafficFilter\_TCPFlagsMatch](capi-trafficfilter-oh-trafficfilter-tcpflagsmatch.md) | OH\_TrafficFilter\_TCPFlagsMatch | TCP标志位匹配条件。 |
+| [OH\_TrafficFilter\_ConntrackMatch](capi-trafficfilter-oh-trafficfilter-conntrackmatch.md) | OH\_TrafficFilter\_ConntrackMatch | 连接跟踪（conntrack）匹配条件。 |
+| [OH\_TrafficFilter\_Config](capi-trafficfilter-oh-trafficfilter-config.md) | OH\_TrafficFilter\_Config | NFQueue配置结构体。 |
+| [OH\_TrafficFilter\_FilterRule](capi-trafficfilter-oh-trafficfilter-filterrule.md) | OH\_TrafficFilter\_FilterRule | 报文过滤规则。 |
+| [OH\_TrafficFilter\_PacketController](capi-trafficfilter-oh-trafficfilter-packetcontroller.md) | OH\_TrafficFilter\_PacketController | 报文控制器。 |
+| [OH\_TrafficFilter\_PacketDesc](capi-trafficfilter-oh-trafficfilter-packetdesc.md) | OH\_TrafficFilter\_PacketDesc | 报文描述符。 |
 
 ### 枚举
 
@@ -71,11 +78,18 @@ content_hash: sha256:8ed65ef7eb2c9885b32d5c6eebae06bb9b7982d34be934a13f226a53f63
 | OH\_TRAFFICFILTER\_MIN\_GROUP\_ID 1 | 最小Group ID值。  **起始版本：** 26.0.0 |
 | OH\_TRAFFICFILTER\_MAX\_GROUP\_ID 65535 | 最大Group ID值。  **起始版本：** 26.0.0 |
 | OH\_TRAFFICFILTER\_IFNAMSIZ 32 | 网络接口名称最大长度。  **起始版本：** 26.0.0 |
+| OH\_TRAFFICFILTER\_MAC\_ADDRSTRLEN 18 | MAC地址字符串的最大长度。  **起始版本：** 26.0.1 |
 | OH\_TRAFFICFILTER\_PROTO\_ANY 0 | 协议类型常量：任意协议。  **起始版本：** 26.0.0 |
 | OH\_TRAFFICFILTER\_PROTO\_TCP 6 | 协议类型常量：TCP协议。  **起始版本：** 26.0.0 |
 | OH\_TRAFFICFILTER\_PROTO\_UDP 17 | 协议类型常量：UDP协议。  **起始版本：** 26.0.0 |
 | OH\_TRAFFICFILTER\_PROTO\_ICMP 1 | 协议类型常量：ICMP协议。  **起始版本：** 26.0.0 |
 | OH\_TRAFFICFILTER\_PROTO\_ICMPV6 58 | 协议类型常量：ICMPV6协议。  **起始版本：** 26.0.0 |
+
+### 函数
+
+| 名称 | typedef关键字 | 描述 |
+| --- | --- | --- |
+| [typedef OH\_TrafficFilter\_PacketDecision (OH\_TrafficFilter\_PacketCallback)(const OH\_TrafficFilter\_PacketDesc packet, void\* userData)](capi-trafficfilter-oh-trafficfilter-packetcallback.md) | OH\_TrafficFilter\_PacketCallback | 包过滤回调函数。 |
 
 ## 枚举类型说明
 
@@ -178,3 +192,39 @@ enum OH_TrafficFilter_HookPoint
 | OH\_TRAFFICFILTER\_HOOK\_FORWARD = 2 | FORWARD链，处理本机转发的报文。  **起始版本：** 26.0.0 |
 | OH\_TRAFFICFILTER\_HOOK\_PREROUTING = 3 | PREROUTING链，处理刚到达网卡、尚未路由的报文。  **起始版本：** 26.0.0 |
 | OH\_TRAFFICFILTER\_HOOK\_POSTROUTING = 4 | POSTROUTING链，处理即将从网卡发出的报文。  **起始版本：** 26.0.0 |
+
+### OH\_TrafficFilter\_PacketCopyMode
+
+```c
+enum OH_TrafficFilter_PacketCopyMode
+```
+
+**描述**
+
+报文复制模式枚举。
+
+**起始版本：** 26.0.1
+
+| 枚举项 | 描述 |
+| --- | --- |
+| OH\_TRAFFICFILTER\_COPY\_MODE\_META = 0 | 仅复制元数据（不复制报文数据）。 |
+| OH\_TRAFFICFILTER\_COPY\_MODE\_HEADER = 1 | 仅复制报文头部（由packetCopyLen指定）。 |
+| OH\_TRAFFICFILTER\_COPY\_MODE\_FULL = 2 | 复制整个报文。 |
+| OH\_TRAFFICFILTER\_COPY\_MODE\_MAXLEN = 3 | 复制指定最大长度的报文。 |
+
+### OH\_TrafficFilter\_PacketDecision
+
+```c
+enum OH_TrafficFilter_PacketDecision
+```
+
+**描述**
+
+报文处理决策类型。
+
+**起始版本：** 26.0.1
+
+| 枚举项 | 描述 |
+| --- | --- |
+| OH\_TRAFFICFILTER\_DECISION\_ACCEPT = 0 | 接受报文。 |
+| OH\_TRAFFICFILTER\_DECISION\_DROP | 丢弃报文。 |

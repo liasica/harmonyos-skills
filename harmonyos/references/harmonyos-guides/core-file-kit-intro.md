@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/core-file-kit
 title: Core File Kit简介
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > Core File Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:28+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:0b883c31e2472cf27e2a21426d5f91a4a83a8ca50ab39896799158ef08462b9e
+scraped_at: 2026-11-12T09:51:25+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:6301f2b4c4f3a8c0fb17dabef382a613b0cfd035caaaad9d91c5ced04bedce36
 ---
 
 Core File Kit（文件基础服务）为开发者提供一套访问和管理应用文件和用户文件的能力。帮助用户更高效地管理、查找和备份各类文件，使用户能够轻松应对各种文件管理的需求。
@@ -26,13 +26,15 @@ Core File Kit（文件基础服务）为开发者提供一套访问和管理应�
 
 **图1** 文件分类模型示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/pm7fGsNvTpmqo2uwfF74kw/zh-cn_image_0000002779690576.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/pF4GasRCRhOyOtKdDvQMqw/zh-cn_image_0000002786519416.png)
 
 在Core File Kit套件中提供高性能的[压缩解压缩能力](archive-overview.md)，按照使用场景的不同分为以下类型：
 
 * 文件归档类压缩：支持文件和目录级别的归档压缩和解压。
 * 流式压缩：支持流式数据压缩和解压。
 * 缓冲区压缩：支持缓冲区数据压缩和解压。
+
+在Core File Kit套件中提供[网盘服务底座](clouddisk-overview.md)能力，提供实现文件夹云同步相关能力，将云端文件以占位符文件形式映射到本地，支持同步根管理、文件变更监听与同步状态管理、占位符文件生命周期管理、按需水合/脱水等能力。
 
 ## Kit使用场景
 
@@ -55,6 +57,7 @@ Core File Kit常见的使用场景：
 * 支持跨设备的文件访问和拷贝能力。
 * 支持文件和目录的归档压缩和解压，支持流式和缓冲区数据的压缩和解压。
 * 支持全维度同步上云，实时回调同步状态，节省本地存储空间，支持全生命周期版本管理。
+* 支持网盘应用创建云同步文件夹，将云端文件以占位符文件形式映射到本地，提供同步根管理、文件变更监听与同步状态管理、占位符文件生命周期管理、按需水合/脱水等能力。
 
 ## 亮点/特征
 
@@ -92,7 +95,7 @@ Core File Kit常见的使用场景：
 
 **图2** 用户文件访问框架示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/VLuHT2TuQLqesAvpd-X7pQ/zh-cn_image_0000002809010197.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/wP1v6D5US8ykngMnIgydLw/zh-cn_image_0000002786359488.png)
 
 * 系统应用或三方应用（即图中的文件访问客户端）若需访问用户文件，如选择一张照片或保存多个文档等，可以通过拉起“文件选择器应用”来实现。
 * FilePicker：系统预置应用，提供文件访问客户端选择和保存文件的能力，无需配置权限。FilePicker的使用指导请参见[选择用户文件](select-user-file.md)。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-interface
 title: ohpm仓库接口协议
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > ohpm仓库接口协议
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:55+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:a0ddce7877699403d6d5bfe2696dc1e44c95baa94074f6e7e1aa72d66364a008
+scraped_at: 2026-11-12T09:52:53+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e6675d20c2b968d9d2fcd368f2fedd41e513d12991d3c5dd2a9688d9ce399913
 ---
 
 ## 概述
@@ -148,7 +148,7 @@ authorization: NjJmNjFhODI3N2ZlNDUwMzlhYmUwNjQxZjQ3ZTNhZDU=
 }
 ```
 
-如请求头通过x-ohpm-metadata-type携带value值"install+v1"即可拉取精简元数据，最外层对象只保留name、packageType、versions、dist-tags四个字段，versions版本对象层只保留name、version、dependencies、dynamicDependencies、dist、packageType、debug、\_ohpmVersion字段。上述返回成功示例如下：
+如请求头通过x-ohpm-metadata-type携带value值"install+v1"即可拉取精简元数据，最外层对象只保留name、packageType、versions、dist-tags四个字段，versions版本对象层只保留name、version、dependencies、dynamicDependencies、dist、packageType、debug、\_ohpmVersion、addonSdk字段。上述返回成功示例如下：
 
 ```screen
 {
@@ -231,6 +231,7 @@ authorization: NjJmNjFhODI3N2ZlNDUwMzlhYmUwNjQxZjQ3ZTNhZDU=
 | fileNum | num | 包文件数量 |
 | userName | string | 获取metadata数据的用户名 |
 | userRole | string | 获取metadata数据的用户角色 |
+| addonSdk | boolean | 系统级扩展 |
 
 1. author: 描述包的作者信息，具体为：
    * name: 必填，作者名字；
@@ -451,7 +452,7 @@ Authorization：<token>
 ```screen
 {
     "code": 200,
-    "message": "success"，
+    "message": "success",
 }
 ```
 
@@ -460,7 +461,7 @@ Authorization：<token>
 ```screen
 {
     "success": false,
-    "error": "<error message>"，
+    "error": "<error message>",
  }
 ```
 
@@ -530,9 +531,9 @@ Authorization：<token>
       }
     }
   },
-  "hspType": "bundle_app"
-   "pkg": "D:\\basicData\\har\\package.tgz",
-   "isTgz": true
+  "hspType": "bundle_app",
+  "pkg": "D:\\basicData\\har\\package.tgz",
+  "isTgz": true
 }
 ```
 

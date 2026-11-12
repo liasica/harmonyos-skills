@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 拍照(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 拍照(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:50+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:eab7a46d955b4b48040aaf29a6e91caba9389b23f21d4f0d16a7da6a239c17ea
+scraped_at: 2026-11-12T09:52:05+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:fec368d4a57064a03606675c490184e9525161a59f14fd0cd0d7e24a062a660f
 ---
 
 ## 概述
@@ -126,7 +126,7 @@ content_hash: sha256:eab7a46d955b4b48040aaf29a6e91caba9389b23f21d4f0d16a7da6a239
      {
          OH_LOG_INFO(LOG_APP, " RegisterBufferCb start");
          if (cb == nullptr) {
-             OH_LOG_INFO(LOG_APP, " RegisterBufferCb invalid error");
+             OH_LOG_ERROR(LOG_APP, " RegisterBufferCb invalid error");
              return CAMERA_INVALID_ARGUMENT;
          }
          g_bufferCb = cb;
@@ -262,7 +262,7 @@ content_hash: sha256:eab7a46d955b4b48040aaf29a6e91caba9389b23f21d4f0d16a7da6a239
          OH_LOG_INFO(LOG_APP, "NDKCamera::PhotoOutputRegisterPhotoAvailableCallback start!");
          Camera_ErrorCode ret = OH_PhotoOutput_RegisterPhotoAvailableCallback(photoOutput_, OnPhotoAvailable);
          if (ret != CAMERA_OK) {
-             OH_LOG_INFO(LOG_APP, "NDKCamera::PhotoOutputRegisterPhotoAvailableCallback failed.");
+             OH_LOG_ERROR(LOG_APP, "NDKCamera::PhotoOutputRegisterPhotoAvailableCallback failed.");
          }
          OH_LOG_INFO(LOG_APP, "NDKCamera::PhotoOutputRegisterPhotoAvailableCallback return with ret code: %{public}d!",
              ret_);

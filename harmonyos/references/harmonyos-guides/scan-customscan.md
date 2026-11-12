@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-customsc
 title: 自定义界面扫码
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 自定义界面扫码
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:15+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:7c9e8a22730965c58202711f73e8d11fb1a44968ffe037e92722dcb49db6746c
+scraped_at: 2026-11-12T09:52:10+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4cfcb461424e7d0852db0fe0a637902ca2f4c7a42e934d4a72ecf83dc2ded057
 ---
 
 自定义界面扫码能力提供了相机流控制接口，可根据自身需求自定义扫码界面，适用于对扫码界面有定制化需求的应用开发。
@@ -22,7 +22,7 @@ content_hash: sha256:7c9e8a22730965c58202711f73e8d11fb1a44968ffe037e92722dcb49db
 
 扫码页面UX设计规范：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/fOEUvSYdQ--ANzKUtO8cyw/zh-cn_image_0000002809050603.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/NuXBswHVT-SbInH8nkAv4g/zh-cn_image_0000002786359978.png)
 
 **说明** 
 
@@ -30,50 +30,50 @@ YUV（相机预览流图像数据）适合于扫码和识物的综合识别场�
 
 ## 约束与限制
 
-* 从API版本26.0.0开始，支持使用[isCustomScanSupported](../harmonyos-references/scan-scancore.md#iscustomscansupported)接口查询当前设备是否支持自定义界面扫码。
-* 从API版本6.1.0(23)开始，自定义界面扫码能力支持带后置相机的Wearable，可以通过[getSupportedCameras](../harmonyos-references/arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+* 从API版本26.0.0开始，新增支持使用[scanCore.isCustomScanSupported()](../harmonyos-references/scan-scancore.md#scancoreiscustomscansupported)接口查询当前设备是否支持自定义界面扫码。
+* 从API版本6.1.0(23)开始，自定义界面扫码能力新增支持带后置相机的Wearable，可以通过[getSupportedCameras()](../harmonyos-references/arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
 * 需要请求相机的使用权限。
 * 需要开发者自行实现扫码的人机交互界面。例如：多码场景需要暂停相机流由用户选择一个码图进行识别。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/ctfqgCUoSWy1og99o72R6Q/zh-cn_image_0000002779851038.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/kXg9BkYARbehoW39k9Qqvg/zh-cn_image_0000002815559399.png)
 
 1. **发起请求：** 用户向开发者的应用发起扫码请求，应用拉起已定义好的扫码界面。
 2. **申请授权：** 应用需要向用户申请相机权限授权。若未同意授权，则无法使用此功能。
-3. **启动自定义界面扫码：** 在扫码前必须调用init接口初始化自定义界面扫码，加载资源。相机流初始化结束后，调用start接口开始扫码。
+3. **启动自定义界面扫码：** 在扫码前必须调用init()接口初始化自定义界面扫码，加载资源。相机流初始化结束后，调用start()接口开始扫码。
 4. **自定义界面扫码相机操作：** 可以配置自定义界面扫码相机操作参数，调整相应功能，包括闪光灯、变焦、焦距、暂停、重启扫码等。例如：
 
-   * 根据当前码图位置，比如当前码图太远或太近时，调用getZoom获取变焦比，setZoom接口设置变焦比，调整焦距以便于用户扫码。
-   * 根据当前扫码的光线条件或根据on('lightingFlash')监听闪光灯开启或关闭时机，通过getFlashLightStatus接口先获取闪光灯状态，再调用openFlashLight/closeFlashLight接口控制闪光灯开启或关闭，以便于用户进行扫码。
-   * 调用setFocusPoint设置对焦位置，resetFocus恢复默认对焦模式，以便于用户进行扫码。
-   * 在应用处于前后台或其他特殊场景需要中断/重新进行扫码时，可调用stop或start接口来控制相机流达到暂停或重新扫码的目的。
-5. **自定义界面扫码：** Scan Kit API在扫码完成后会返回扫码结果。同时根据开发者的需要，Scan Kit API会返回每帧相机预览流数据。如需不重启相机并重新触发一次扫码，可以在start接口的Callback异步回调中，调用rescan接口。完成扫码后，需调用release接口进行释放扫码资源的操作。
+   * 根据当前码图位置，比如当前码图太远或太近时，调用getZoom()接口获取变焦比，setZoom()接口设置变焦比，调整焦距以便于用户扫码。
+   * 根据当前扫码的光线条件或根据on('lightingFlash')监听闪光灯开启或关闭时机，通过getFlashLightStatus()接口先获取闪光灯状态，再调用openFlashLight()或closeFlashLight()接口控制闪光灯开启或关闭，以便于用户进行扫码。
+   * 调用setFocusPoint()设置对焦位置，resetFocus()恢复默认对焦模式，以便于用户进行扫码。
+   * 在应用处于前后台或其他特殊场景需要中断或重新进行扫码时，可调用stop()或start()接口来控制相机流达到暂停或重新扫码的目的。
+5. **自定义界面扫码：** Scan Kit API在扫码完成后会返回扫码结果。同时根据开发者的需要，Scan Kit API会返回每帧相机预览流数据。如需不重启相机并重新触发一次扫码，可以在start()接口的Callback异步回调中，调用rescan()接口。完成扫码后，需调用release()接口进行释放扫码资源的操作。
 6. **获取结果：** 解析码值结果跳转应用服务页。
 
 ## 接口说明
 
-自定义界面扫码提供init、start、stop、release、getFlashLightStatus、openFlashLight、closeFlashLight、setZoom、getZoom、setFocusPoint、resetFocus、rescan、on('lightingFlash')、off('lightingFlash')接口，其中部分接口返回值有两种返回形式：Callback和Promise回调。Callback和Promise回调函数只是返回值方式不一样，功能相同。具体API说明详见[接口文档](../harmonyos-references/scan-customscan-api.md)。
+自定义界面扫码提供init()、start()、stop()、release()、getFlashLightStatus()、openFlashLight()、closeFlashLight()、setZoom()、getZoom()、setFocusPoint()、resetFocus()、rescan()、on('lightingFlash')、off('lightingFlash')接口，其中部分接口返回值有两种返回形式：Callback和Promise回调。Callback和Promise回调函数只是返回值方式不一样，功能相同。具体API说明详见[接口文档](../harmonyos-references/scan-customscan-api.md)。
 
 | 接口名 | 描述 |
 | --- | --- |
-| [init](../harmonyos-references/scan-customscan-api.md#init)(options?: scanBarcode.[ScanOptions](../harmonyos-references/scan-scanbarcode-api.md#scanoptions)): void | 初始化自定义界面扫码，加载资源。无返回结果。 |
-| [start](../harmonyos-references/scan-customscan-api.md#start)(viewControl: [ViewControl](../harmonyos-references/scan-customscan-api.md#viewcontrol)): Promise<Array<scanBarcode.[ScanResult](../harmonyos-references/scan-scanbarcode-api.md#scanresult)>> | 启动扫码相机流获取扫码结果。使用Promise异步回调。 |
-| [stop](../harmonyos-references/scan-customscan-api.md#stop)(): Promise<void> | 暂停扫码相机流。使用Promise异步回调。 |
-| [release](../harmonyos-references/scan-customscan-api.md#release)(): Promise<void> | 释放扫码相机流。使用Promise异步回调。 |
-| [start](../harmonyos-references/scan-customscan-api.md#start-1)(viewControl: ViewControl, callback: AsyncCallback<Array<scanBarcode.ScanResult>>, frameCallback?: AsyncCallback<[ScanFrame](../harmonyos-references/scan-customscan-api.md#scanframe)>): void | 启动扫码相机流获取扫码结果、相机预览流（YUV-图像格式NV21基于4:2:0采样）。使用callback异步回调。 |
-| [getFlashLightStatus](../harmonyos-references/scan-customscan-api.md#getflashlightstatus)(): boolean | 获取当前相机闪光灯状态。返回结果为布尔值，true为打开状态，false为关闭状态。 |
-| [openFlashLight](../harmonyos-references/scan-customscan-api.md#openflashlight)(): void | 开启相机闪光灯。无返回结果。 |
-| [closeFlashLight](../harmonyos-references/scan-customscan-api.md#closeflashlight)(): void | 关闭相机闪光灯。无返回结果。 |
-| [setZoom](../harmonyos-references/scan-customscan-api.md#setzoom)(zoomValue : number): void | 设置变焦比。变焦精度最高为小数点后两位，如果设置超过支持的精度范围，则只保留精度范围内数值。无返回结果。 |
-| [getZoom](../harmonyos-references/scan-customscan-api.md#getzoom)(): number | 获取当前的变焦比。 |
-| [setFocusPoint](../harmonyos-references/scan-customscan-api.md#setfocuspoint)(point: scanBarcode.[Point](../harmonyos-references/scan-scanbarcode-api.md#point)): void | 设置相机焦点。 |
-| [resetFocus](../harmonyos-references/scan-customscan-api.md#resetfocus)(): void | 设置连续自动对焦模式。 |
-| [rescan](../harmonyos-references/scan-customscan-api.md#rescan)(): void | 触发一次重新扫码。仅对start接口callback异步回调有效，Promise异步回调无效。 |
-| [stop](../harmonyos-references/scan-customscan-api.md#stop-1)(callback: AsyncCallback<void>): void | 暂停扫码相机流。使用callback异步回调。 |
-| [release](../harmonyos-references/scan-customscan-api.md#release-1)(callback: AsyncCallback<void>): void | 释放扫码相机流。使用callback异步回调。 |
-| [on](../harmonyos-references/scan-customscan-api.md#onlightingflash)(type: 'lightingFlash', callback: AsyncCallback<boolean>): void | 订阅环境亮度变化事件，当环境暗、亮状态变化时返回闪光灯开启或关闭提示。使用callback异步回调。 |
-| [off](../harmonyos-references/scan-customscan-api.md#offlightingflash)(type: 'lightingFlash', callback?: AsyncCallback<boolean>): void | 注销环境亮度变化事件。使用callback异步回调。 |
+| [init](../harmonyos-references/scan-customscan-api.md#customscaninit)(options?: scanBarcode.[ScanOptions](../harmonyos-references/scan-scanbarcode-api.md#scanoptions)): void | 初始化自定义界面扫码，加载资源。无返回结果。 |
+| [start](../harmonyos-references/scan-customscan-api.md#customscanstart)(viewControl: [ViewControl](../harmonyos-references/scan-customscan-api.md#viewcontrol)): Promise<Array<scanBarcode.[ScanResult](../harmonyos-references/scan-scanbarcode-api.md#scanresult)>> | 启动扫码相机流获取扫码结果。使用Promise异步回调。 |
+| [stop](../harmonyos-references/scan-customscan-api.md#customscanstop)(): Promise<void> | 暂停扫码相机流。使用Promise异步回调。 |
+| [release](../harmonyos-references/scan-customscan-api.md#customscanrelease)(): Promise<void> | 释放扫码相机流。使用Promise异步回调。 |
+| [start](../harmonyos-references/scan-customscan-api.md#customscanstart-1)(viewControl: ViewControl, callback: AsyncCallback<Array<scanBarcode.ScanResult>>, frameCallback?: AsyncCallback<[ScanFrame](../harmonyos-references/scan-customscan-api.md#scanframe)>): void | 启动扫码相机流获取扫码结果、相机预览流（YUV-图像格式NV21基于4:2:0采样）。使用callback异步回调。 |
+| [getFlashLightStatus](../harmonyos-references/scan-customscan-api.md#customscangetflashlightstatus)(): boolean | 获取当前相机闪光灯状态。返回结果为布尔值，true为打开状态，false为关闭状态。 |
+| [openFlashLight](../harmonyos-references/scan-customscan-api.md#customscanopenflashlight)(): void | 开启相机闪光灯。无返回结果。 |
+| [closeFlashLight](../harmonyos-references/scan-customscan-api.md#customscancloseflashlight)(): void | 关闭相机闪光灯。无返回结果。 |
+| [setZoom](../harmonyos-references/scan-customscan-api.md#customscansetzoom)(zoomValue : number): void | 设置变焦比。变焦精度最高为小数点后两位，如果设置超过支持的精度范围，则只保留精度范围内数值。无返回结果。 |
+| [getZoom](../harmonyos-references/scan-customscan-api.md#customscangetzoom)(): number | 获取当前的变焦比。 |
+| [setFocusPoint](../harmonyos-references/scan-customscan-api.md#customscansetfocuspoint)(point: scanBarcode.[Point](../harmonyos-references/scan-scanbarcode-api.md#point)): void | 设置相机焦点。 |
+| [resetFocus](../harmonyos-references/scan-customscan-api.md#customscanresetfocus)(): void | 设置连续自动对焦模式。 |
+| [rescan](../harmonyos-references/scan-customscan-api.md#customscanrescan)(): void | 触发一次重新扫码。仅对start()接口Callback异步回调有效，Promise异步回调无效。 |
+| [stop](../harmonyos-references/scan-customscan-api.md#customscanstop-1)(callback: AsyncCallback<void>): void | 暂停扫码相机流。使用callback异步回调。 |
+| [release](../harmonyos-references/scan-customscan-api.md#customscanrelease-1)(callback: AsyncCallback<void>): void | 释放扫码相机流。使用callback异步回调。 |
+| [on](../harmonyos-references/scan-customscan-api.md#customscanonlightingflash)(type: 'lightingFlash', callback: AsyncCallback<boolean>): void | 订阅环境亮度变化事件，当环境暗、亮状态变化时返回闪光灯开启或关闭提示。使用callback异步回调。 |
+| [off](../harmonyos-references/scan-customscan-api.md#customscanofflightingflash)(type: 'lightingFlash', callback?: AsyncCallback<boolean>): void | 注销环境亮度变化事件。使用callback异步回调。 |
 
 ## 开发步骤
 
@@ -88,7 +88,7 @@ YUV（相机预览流图像数据）适合于扫码和识物的综合识别场�
    | 权限名 | 说明 | 授权方式 |
    | --- | --- | --- |
    | ohos.permission.CAMERA | 允许应用使用相机扫码。 | user\_grant |
-2. 使用接口[requestPermissionsFromUser](../harmonyos-references/js-apis-abilityaccessctrl.md#requestpermissionsfromuser9-1)请求用户授权。具体申请方式及校验方式，请参见[向用户申请授权](request-user-authorization.md)。
+2. 使用接口[requestPermissionsFromUser()](../harmonyos-references/js-apis-abilityaccessctrl.md#requestpermissionsfromuser9-1)请求用户授权。具体申请方式及校验方式，请参见[向用户申请授权](request-user-authorization.md)。
 3. 导入自定义界面扫码接口以及相关接口模块，导入方法如下。
 
    ```typescript
@@ -103,15 +103,15 @@ YUV（相机预览流图像数据）适合于扫码和识物的综合识别场�
 
    **说明** 
 
-   1. 在设置start接口的viewControl参数时，width和height与[XComponent](../harmonyos-references/ts-basic-components-xcomponent.md)的宽高值相同，start接口会根据XComponent的宽高比例从相机的分辨率选择最优分辨率，如果比例与相机的分辨率比例相差过大会影响预览流体验。
+   1. 在设置start()接口的viewControl参数时，width和height与[XComponent](../harmonyos-references/ts-basic-components-xcomponent.md)的宽高值相同，start()接口会根据XComponent的宽高比例从相机的分辨率选择最优分辨率，如果比例与相机的分辨率比例相差过大会影响预览流体验。
 
       当前支持的分辨率比例为16:9、4:3、1:1。竖屏场景下，XComponent的高度需要大于宽度，且高宽比在支持的分辨率比例中。横屏场景下，XComponent的宽度需要大于高度，且宽高比在支持的分辨率比例中。
-   2. XComponent的宽高需根据使用场景计算适配。例如：在开发设备为折叠屏时，需按照折叠屏的展开态和折叠态分别计算XComponent的宽高，start接口会根据XComponent的宽高适配对应的相机分辨率。设备屏幕宽高可通过[display.getDefaultDisplaySync](../harmonyos-references/js-apis-display.md#displaygetdefaultdisplaysync9)方法获取（所获取宽高值的单位为px，需要通过[px2vp](../harmonyos-references/arkts-apis-uicontext-uicontext.md#px2vp12)方法转为vp）。
+   2. XComponent的宽高需根据使用场景计算适配。例如：在开发设备为折叠屏时，需按照折叠屏的展开态和折叠态分别计算XComponent的宽高，start()接口会根据XComponent的宽高适配对应的相机分辨率。设备屏幕宽高可通过[display.getDefaultDisplaySync()](../harmonyos-references/js-apis-display.md#displaygetdefaultdisplaysync9)方法获取（所获取宽高值的单位为px，需要通过[px2vp()](../harmonyos-references/arkts-apis-uicontext-uicontext.md#px2vp12)方法转为vp）。
 
    * 通过Promise方式回调，调用自定义界面扫码接口拉起相机流并返回扫码结果。
 
      ```typescript
-     const TAG: string = '[customScanPage]';
+     const TAG: string = 'Scan Kit Sample CustomScanPage';
 
      @Entry
      @Component
@@ -153,7 +153,7 @@ YUV（相机预览流图像数据）适合于扫码和识物的综合识别场�
          }
        }
 
-       onPageHide() {
+       async onPageHide() {
          // 页面消失或隐藏时，停止并释放相机流
          this.userGrant = false;
          this.isFlashLightEnable = false;
@@ -163,16 +163,11 @@ YUV（相机预览流图像数据）适合于扫码和识物的综合识别场�
          } catch (err) {
            hilog.error(0x0001, TAG, `Failed to off lightingFlash. Code: ${err.code}, message: ${err.message}`);
          }
-         this.customScanStop();
-         try {
-           // 自定义相机流释放接口
-           customScan.release().catch((err: BusinessError) => {
-             hilog.error(0x0001, TAG,
-               `Failed to release customScan by promise. Code: ${err.code}, message: ${err.message}`);
-           });
-         } catch (err) {
-           hilog.error(0x0001, TAG, `Failed to release customScan. Code: ${err.code}, message: ${err.message}`);
+         // 扫描结果后已经停止相机流，不需要二次停止相机流
+         if (!this.isShowBack) {
+           await this.customScanStop();
          }
+         this.customScanRelease();
        }
 
        // 用户申请权限
@@ -262,13 +257,25 @@ YUV（相机预览流图像数据）适合于扫码和识物的综合识别场�
          }
        }
 
-       customScanStop() {
+       async customScanStop(): Promise<void> {
          try {
-           customScan.stop().catch((err: BusinessError) => {
-             hilog.error(0x0001, TAG, `Failed to stop customScan. Code: ${err.code}, message: ${err.message}`);
-           });
+           await customScan.stop();
          } catch (err) {
            hilog.error(0x0001, TAG, `Failed to stop customScan. Code: ${err.code}, message: ${err.message}`);
+         }
+       }
+
+       customScanRelease(): void {
+         try {
+           // 自定义相机流释放接口
+           customScan.release().then(() => {
+             hilog.info(0x0001, TAG, 'Succeeded in releasing customScan.');
+           }).catch((err: BusinessError) => {
+             hilog.error(0x0001, TAG,
+               `Failed to release customScan by promise. Code: ${err.code}, message: ${err.message}`);
+           });
+         } catch (err) {
+           hilog.error(0x0001, TAG, `Failed to release customScan. Code: ${err.code}, message: ${err.message}`);
          }
        }
 
@@ -516,7 +523,7 @@ YUV（相机预览流图像数据）适合于扫码和识物的综合识别场�
    * 通过Callback方式回调，调用自定义界面扫码接口拉起相机流并返回扫码结果和相机预览流（YUV）。
 
      ```typescript
-     const TAG: string = '[customScanPage]';
+     const TAG: string = 'Scan Kit Sample CustomScan';
 
      @Entry
      @Component
@@ -564,14 +571,14 @@ YUV（相机预览流图像数据）适合于扫码和识物的综合识别场�
              return;
            }
            hilog.info(0x0001, TAG,
-             `Succeeded in getting ScanFrame. byteLength: ${frameResult.byteBuffer.byteLength}, width: ${frameResult.width}, height: ${frameResult.height}`);
+             `Succeeded in getting ScanFrame by callback. byteLength: ${frameResult.byteBuffer.byteLength}, width: ${frameResult.width}, height: ${frameResult.height}`);
          };
 
        async onPageShow() {
          // 自定义启动第一步，用户申请权限
          await this.requestCameraPermission();
          // 多码扫码识别，enableMultiMode: true 单码扫码识别enableMultiMode: false
-         let options: scanBarcode.ScanOptions = {
+         const options: scanBarcode.ScanOptions = {
            scanTypes: [scanCore.ScanType.ALL],
            enableMultiMode: true,
            enableAlbum: true
@@ -596,23 +603,19 @@ YUV（相机预览流图像数据）适合于扫码和识物的综合识别场�
          } catch (err) {
            hilog.error(0x0001, TAG, `Failed to off lightingFlash. Code: ${err.code}, message: ${err.message}`);
          }
-         this.customScanStop();
-         try {
-           // 自定义相机流释放接口
-           customScan.release().catch((err: BusinessError) => {
-             hilog.error(0x0001, TAG,
-               `Failed to release customScan by promise. Code: ${err.code}, message: ${err.message}`);
-           });
-         } catch (err) {
-           hilog.error(0x0001, TAG, `Failed to release customScan. Code: ${err.code}, message: ${err.message}`);
+         // 扫描结果后已经停止相机流，不需要二次停止相机流
+         if (this.isShowBack) {
+           this.customScanRelease();
+         } else {
+           this.customScanStop(this.customScanRelease);
          }
        }
 
        // 用户申请权限
        async reqPermissionsFromUser(): Promise<number[]> {
          hilog.info(0x0001, TAG, 'reqPermissionsFromUser start');
-         let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
-         let atManager = abilityAccessCtrl.createAtManager();
+         const context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+         const atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
          try {
            const grantStatus: PermissionRequestResult =
              await atManager.requestPermissionsFromUser(context, ['ohos.permission.CAMERA']);
@@ -625,7 +628,7 @@ YUV（相机预览流图像数据）适合于扫码和识物的综合识别场�
 
        // 用户申请相机权限
        async requestCameraPermission() {
-         let grantStatus = await this.reqPermissionsFromUser();
+         const grantStatus: number[] = await this.reqPermissionsFromUser();
          for (let i = 0; i < grantStatus.length; i++) {
            if (grantStatus[i] === 0) {
              // 用户授权，可以继续访问目标操作
@@ -640,11 +643,11 @@ YUV（相机预览流图像数据）适合于扫码和识物的综合识别场�
        setDisplay() {
          try {
            // 默认竖屏
-           let displayClass = display.getDefaultDisplaySync();
+           const displayClass: display.Display = display.getDefaultDisplaySync();
            this.displayHeight = this.getUIContext().px2vp(displayClass.height);
            this.displayWidth = this.getUIContext().px2vp(displayClass.width);
-           let maxLen: number = Math.max(this.displayWidth, this.displayHeight);
-           let minLen: number = Math.min(this.displayWidth, this.displayHeight);
+           const maxLen: number = Math.max(this.displayWidth, this.displayHeight);
+           const minLen: number = Math.min(this.displayWidth, this.displayHeight);
            const RATIO: number = 16 / 9;
            this.cameraHeight = maxLen;
            this.cameraWidth = maxLen / RATIO;
@@ -671,7 +674,7 @@ YUV（相机预览流图像数据）适合于扫码和识物的综合识别场�
        initCamera() {
          this.isShowBack = false;
          this.scanResult = [];
-         let viewControl: customScan.ViewControl = {
+         const viewControl: customScan.ViewControl = {
            width: this.cameraWidth,
            height: this.cameraHeight,
            surfaceId: this.surfaceId
@@ -685,13 +688,41 @@ YUV（相机预览流图像数据）适合于扫码和识物的综合识别场�
        }
 
        // 暂停相机流
-       customScanStop() {
+       customScanStop(callback?: () => void) {
          try {
-           customScan.stop().catch((err: BusinessError) => {
-             hilog.error(0x0001, TAG, `Failed to stop customScan. Code: ${err.code}, message: ${err.message}`);
+           customScan.stop((err: BusinessError) => {
+             if (err) {
+               hilog.error(0x0001, TAG, `Failed to stop customScan. Code: ${err.code}, message:${err.message}`);
+             } else {
+               hilog.info(0x0001, TAG, 'Succeeded in stopping customScan');
+               // stop完成后执行回调
+               if (callback) {
+                 callback();
+               }
+             }
            });
          } catch (err) {
-           hilog.error(0x0001, TAG, `Failed to stop customScan. Code: ${err.code}, message: ${err.message}`);
+           hilog.error(0x0001, TAG, `Failed to stop customScan. Code: ${err.code}, message:${err.message}`);
+           // 即使出错也执行回调，确保流程继续
+           if (callback) {
+             callback();
+           }
+         }
+       }
+
+       customScanRelease(): void {
+         try {
+           // 自定义相机流释放接口
+           customScan.release((err: BusinessError) => {
+             if (err) {
+               hilog.error(0x0001, TAG,
+                 `Failed to release customScan by callback. Code: ${err.code}, message:${err.message}`);
+             } else {
+               hilog.info(0x0001, TAG, 'Succeeded in releasing customScan');
+             }
+           });
+         } catch (err) {
+           hilog.error(0x0001, TAG, `Failed to release customScan. Code: ${err.code}, message:${err.message}`);
          }
        }
 
@@ -873,8 +904,8 @@ YUV（相机预览流图像数据）适合于扫码和识物的综合识别场�
              return;
            }
            // 点击屏幕位置，获取点击位置(x,y)，设置相机焦点
-           let x1 = event.displayY / (this.displayHeight + 0.0);
-           let y1 = 1.0 - event.displayX / (this.displayWidth + 0.0);
+           const x1: number = event.displayY / (this.displayHeight + 0.0);
+           const y1: number = 1.0 - event.displayX / (this.displayWidth + 0.0);
            try {
              customScan.setFocusPoint({ x: x1, y: y1 });
              hilog.info(0x0001, TAG, `Succeeded in setting focusPoint x1: ${x1}, y1: ${y1}`);
@@ -905,7 +936,7 @@ YUV（相机预览流图像数据）适合于扫码和识物的综合识别场�
              }
              // 获取双指缩放比例，设置变焦比
              try {
-               let zoom = this.customGetZoom();
+               const zoom: number = this.customGetZoom();
                this.pinchValue = this.scaleValue * zoom;
                this.customSetZoom(this.pinchValue);
                hilog.info(0x0001, TAG, 'Pinch end');
@@ -916,7 +947,7 @@ YUV（相机预览流图像数据）适合于扫码和识物的综合识别场�
        }
 
        public customGetZoom(): number {
-         let zoom = 1;
+         let zoom: number = 1;
          try {
            zoom = customScan.getZoom();
            hilog.info(0x0001, TAG, `Succeeded in getting zoom, zoom: ${zoom}`);
@@ -976,5 +1007,5 @@ YUV（相机预览流图像数据）适合于扫码和识物的综合识别场�
 
 部分接口支持模拟器开发，模拟器使用指导请参见[使用模拟器运行应用](ide-run-emulator.md)。
 
-* 从API版本6.0.0(20)开始，模拟器支持部分自定义界面扫码接口开发（支持的接口包括[init](../harmonyos-references/scan-customscan-api.md#init)、[start](../harmonyos-references/scan-customscan-api.md#start)、[stop](../harmonyos-references/scan-customscan-api.md#stop)、[release](../harmonyos-references/scan-customscan-api.md#release)、[rescan](../harmonyos-references/scan-customscan-api.md#rescan)），可实现自定义界面扫码能力的基本功能验证。
+* 从API版本6.0.0(20)开始，模拟器新增支持部分自定义界面扫码接口开发（新增支持的接口包括[customScan.init()](../harmonyos-references/scan-customscan-api.md#customscaninit)、[customScan.start()](../harmonyos-references/scan-customscan-api.md#customscanstart)、[customScan.stop()](../harmonyos-references/scan-customscan-api.md#customscanstop)、[customScan.release()](../harmonyos-references/scan-customscan-api.md#customscanrelease)、[customScan.rescan()](../harmonyos-references/scan-customscan-api.md#customscanrescan)），可实现自定义界面扫码能力的基本功能验证。
 * 模拟器自定义界面扫码能力仅支持1280\*720分辨率，开发者传入其他分辨率会统一转换成1280\*720。

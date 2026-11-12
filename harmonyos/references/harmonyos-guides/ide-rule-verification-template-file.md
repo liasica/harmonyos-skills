@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-rule-veri
 title: 模板文件
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 自定义元数据规则校验插件 > 模板文件
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:07+08:00
-doc_updated_at: 2026-01-15
-content_hash: sha256:c3c3e266afc15ca469f5692936496f2c23c015fce2335bc22645c3e16052f4ce
+scraped_at: 2026-11-12T09:52:52+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:14e55cb29bc4973357f23f54f157fd39b37d4c8f1dc651ce62b5c3a8e0b70054
 ---
 
-模板文件中包含自定义元数据规则校验插件需要的三个文件：自定义规则校验函数模板文件checkField.ts，自定义规则校验配置模板文件CustomExtensionValidationConfig.json和ts编译为js的配置模板文件tsconfig.json。
+模板文件中包含自定义元数据规则校验插件所需的三个文件：自定义规则校验函数模板文件checkField.ts，自定义规则校验配置模板文件CustomExtensionValidationConfig.json和ts编译为js的配置模板文件tsconfig.json。
 
 请创建指定名称的文件，并把下方源码拷贝到文件中。
 

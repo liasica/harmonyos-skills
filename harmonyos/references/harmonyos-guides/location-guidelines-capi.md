@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/location-guid
 title: 获取设备的位置信息开发指导(C/C++)
 breadcrumb: 指南 > 应用服务 > Location Kit（位置服务） > 获取设备的位置信息开发指导 > 获取设备的位置信息开发指导(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:35+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:661542572eabaf5629ab7b113956115b9a004fb9e8c25eb35c8fcc718139de1c
+scraped_at: 2026-11-12T09:52:28+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4b21d338538f142e304ac4b3a463d5fbde0ec7b4be624f3fd1bb69b2a9d37d6c
 ---
 
 ## 场景介绍
@@ -32,7 +32,7 @@ content_hash: sha256:661542572eabaf5629ab7b113956115b9a004fb9e8c25eb35c8fcc71813
 
 1. 新建一个Native C++工程。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/irJAK036T0WrExHueQHkdA/zh-cn_image_0000002809011095.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/7S9Qg60kTwuavx9ErwIMOg/zh-cn_image_0000002815559817.png)
 2. 获取设备的位置信息，需要有位置权限，位置权限申请的方法和步骤见[申请位置权限开发指导](location-permission-guidelines.md)。
 3. CMakeLists.txt文件中引入动态依赖库。
 
@@ -49,17 +49,42 @@ content_hash: sha256:661542572eabaf5629ab7b113956115b9a004fb9e8c25eb35c8fcc71813
    #include "LocationKit/oh_location_type.h"
    #include "hilog/log.h"
    #include <stdlib.h>
+   #include <string>
    ```
 5. 调用获取位置接口之前需要先判断位置开关是否打开。
 
    查询当前位置开关状态，返回结果为布尔值，true代表位置开关开启，false代表位置开关关闭，示例代码如下：
 
    ```c
+    std::string GetErrorMsgFromErrorCode(int errorCode)
+    {
+        switch(errorCode) {
+           case LOCATION_PERMISSION_DENIED:
+              return "Permission verification failed. The application does not have the permission required to call the API.";
+           case LOCATION_INVALID_PARAM:
+              return "Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed.";
+           case LOCATION_NOT_SUPPORTED:
+              return "Capability not supported. Failed to call this API due to limited device capabilities.";
+           case LOCATION_SERVICE_UNAVAILABLE:
+              return "The location service is unavailable.";
+           case LOCATION_SWITCH_OFF:
+              return "The location switch is off.";
+           default:
+              return "Unknown error. error code: " + std::to_string(errorCode);
+        }
+    }
+
     static napi_value OhLocationIsEnabled(napi_env env, napi_callback_info info)
     {
         bool isEnabled = false;
         int resultCode = OH_Location_IsLocatingEnabled(&isEnabled);
         napi_value result = NULL;
+        if (resultCode != LOCATION_SUCCESS) {
+           std::string errorMsg = GetErrorMsgFromErrorCode(resultCode);
+           napi_throw_error(env, std::to_string(resultCode).c_str(), errorMsg.c_str());
+           napi_get_undefined(env, &result);
+           return result;
+        }
         napi_get_boolean(env, isEnabled, &result);
         return result;
     }
@@ -88,6 +113,7 @@ content_hash: sha256:661542572eabaf5629ab7b113956115b9a004fb9e8c25eb35c8fcc71813
        Location_BasicInfo baseInfo = OH_LocationInfo_GetBasicInfo(location);
        char additionalInfo[1024] = "";
        Location_ResultCode result = OH_LocationInfo_GetAdditionalInfo(location, additionalInfo, sizeof(additionalInfo));
+       // 此处接收传回的userData与mydata做对比，判断是否为携带mydata字段的位置请求回调
        if (mydata == userData) {
            OH_LOG_INFO(LOG_APP, "userData is mydata");
        }
@@ -98,32 +124,53 @@ content_hash: sha256:661542572eabaf5629ab7b113956115b9a004fb9e8c25eb35c8fcc71813
    static napi_value OhLocationStartLocating(napi_env env, napi_callback_info info)
    {
        if (g_requestConfig == NULL) {
-           g_requestConfig = OH_Location_CreateRequestConfig();
+          g_requestConfig = OH_Location_CreateRequestConfig();
        }
        OH_LocationRequestConfig_SetUseScene(g_requestConfig, LOCATION_USE_SCENE_NAVIGATION);
        OH_LocationRequestConfig_SetInterval(g_requestConfig, 1);
-       mydata = (void *)malloc(sizeof("mydata")); // 用户自定义任意类型，callback 透传返回
-       OH_LocationRequestConfig_SetCallback(g_requestConfig, reportLocation, mydata);
-       OH_Location_StartLocating(g_requestConfig);
-       int32_t ret = 0;
+       // mydata:用户自定义任意类型，触发reportLocation回调时会传回该字段，用于区分是否为携带mydata字段的位置请求回调
+       mydata = (void *)malloc(sizeof("mydata"));
        napi_value result = NULL;
-       napi_create_int32(env, ret, &result);
+       if (mydata == NULL) {
+          int errCode = LOCATION_INVALID_PARAM;
+          std::string errorMsg = GetErrorMsgFromErrorCode(errCode);
+          napi_throw_error(env, std::to_string(errCode).c_str(), errorMsg.c_str());
+          napi_get_undefined(env, &result);
+          return result;
+       }
+
+       OH_LocationRequestConfig_SetCallback(g_requestConfig, reportLocation, mydata);
+       int resultCode = OH_Location_StartLocating(g_requestConfig);
+       if (resultCode != LOCATION_SUCCESS) {
+           std::string errorMsg = GetErrorMsgFromErrorCode(resultCode);
+           napi_throw_error(env, std::to_string(resultCode).c_str(), errorMsg.c_str());
+           napi_get_undefined(env, &result);
+           return result;
+       }
+       napi_create_int32(env, resultCode, &result);
        return result;
    }
 
    // 取消订阅位置信息， g_requestConfig要和订阅时传入的对象保持一致
    static napi_value OhLocationStopLocating(napi_env env, napi_callback_info info)
    {
-       OH_Location_StopLocating(g_requestConfig);
+       int32_t resultCode = OH_Location_StopLocating(g_requestConfig);
        if (g_requestConfig != NULL) {
            OH_Location_DestroyRequestConfig(g_requestConfig);
            g_requestConfig = NULL;
        }
-       free(mydata);
-       mydata = NULL;
-       int32_t ret = 0;
+       if (mydata != NULL) {
+           free(mydata);
+           mydata = NULL;
+       }
        napi_value result = NULL;
-       napi_create_int32(env, ret, &result);
+       if (resultCode != LOCATION_SUCCESS) {
+           std::string errorMsg = GetErrorMsgFromErrorCode(resultCode);
+           napi_throw_error(env, std::to_string(resultCode).c_str(), errorMsg.c_str());
+           napi_get_undefined(env, &result);
+           return result;
+       }
+       napi_create_int32(env, resultCode, &result);
        return result;
    }
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bluetooth.a2dp (蓝牙a2dp模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.bluetooth.a2dp (蓝牙a2dp模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:48+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:833306b673c46d517856eff3f48c3ee160b10526b60a5ffd2d84df15094ee992
+scraped_at: 2026-11-12T09:55:31+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e2c30efe26c8a76dd1ea154dcef33bcb70299b79a45062e1ade06542c4f27688
 ---
 
 本模块提供基于增强音频分发协议（Advanced Audio Distribution Profile，[A2DP](../harmonyos-guides/terminology.md#a2dp)）的蓝牙媒体音频能力，支持获取媒体播放状态和连接状态等方法。
@@ -62,6 +62,44 @@ import { BusinessError } from '@kit.BasicServicesKit';
 try {
     let a2dpProfile = a2dp.createA2dpSrcProfile();
     console.info('a2dp success');
+} catch (err) {
+    console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
+}
+```
+
+## a2dp.createA2dpSnkProfile
+
+createA2dpSnkProfile(): A2dpSinkProfile
+
+创建蓝牙媒体[A2DP Sink](../harmonyos-guides/terminology.md#a2dp-sink)实例。通过该实例，可以调用本端作为A2DP Sink设备时所需的各项方法。
+
+**起始版本**： 26.0.1
+
+**系统能力**：SystemCapability.Communication.Bluetooth.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [A2dpSinkProfile](js-apis-bluetooth-a2dp.md#a2dpsinkprofile) | 返回蓝牙媒体音频接收端实例。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码说明文档](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
+
+**示例：**
+
+```js
+import { BusinessError } from '@kit.BasicServicesKit';
+try {
+    let a2dpSinkProfile = a2dp.createA2dpSnkProfile();
+    console.info('a2dpSink success');
 } catch (err) {
     console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
 }
@@ -124,6 +162,20 @@ try {
     console.error('errCode: ' + (err as BusinessError).code + ', errMessage: ' + (err as BusinessError).message);
 }
 ```
+
+## A2dpSinkProfile
+
+该实例表示蓝牙媒体音频中的[A2DP Sink](../harmonyos-guides/terminology.md#a2dp-sink)角色。
+
+* 该类继承于[BaseProfile](js-apis-bluetooth-a2dp.md#baseprofile)，因此可以使用其父类中的方法。
+* 使用该类的接口前，需通过[createA2dpSnkProfile](js-apis-bluetooth-a2dp.md#a2dpcreatea2dpsnkprofile)接口构造该类的实例。
+* 和该实例角色相对应的是[A2DP Source](../harmonyos-guides/terminology.md#a2dp-source)角色。
+
+**起始版本**： 26.0.1
+
+**系统能力**：SystemCapability.Communication.Bluetooth.Core
+
+**模型约束**：此接口仅可在Stage模型下使用。
 
 ## PlayingState
 

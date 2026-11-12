@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-assetstorekit-7001
 title: Asset Store Kit
-breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > OS平台能力 > API变更清单 > 26.0.0 Beta1引入的API > Asset Store Kit
+breadcrumb: 版本说明 > 更多版本 > 26.0.0 > OS平台能力 > API变更清单 > 26.0.0 Beta1引入的API > Asset Store Kit
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:49:05+08:00
-doc_updated_at: 2026-06-27
+scraped_at: 2026-11-12T09:49:59+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:5867b4353340d8cc417231c66e93b36dd58ad1a7a018d6f23ee82b57d9148494
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-game
 title: game_device_event.h
 breadcrumb: API参考 > 应用服务 > Game Controller Kit（游戏控制器服务） > C API > 头文件 > game_device_event.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:53+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d11458480919e6d02d7c36fbcc60898e70b71ebf9bbdf2fc03331838d7c31824
+scraped_at: 2026-11-12T09:57:17+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e965b3e7f0f04d28809dea34e070ae24a904ddf40a89eb7b8b1673257d04509e
 ---
 
 ## 概述
@@ -49,6 +49,7 @@ content_hash: sha256:d11458480919e6d02d7c36fbcc60898e70b71ebf9bbdf2fc03331838d7c
 | [GameController\_ErrorCode OH\_GameDevice\_DeviceInfo\_GetDeviceId(const struct GameDevice\_DeviceInfo\* deviceInfo, char\*\* deviceId)](capi-game-device-event-h.md#oh_gamedevice_deviceinfo_getdeviceid) | - | 从设备信息中获取设备ID。 |
 | [GameController\_ErrorCode OH\_GameDevice\_DeviceInfo\_GetName(const struct GameDevice\_DeviceInfo\* deviceInfo, char\*\* name)](capi-game-device-event-h.md#oh_gamedevice_deviceinfo_getname) | - | 从设备信息中获取设备名称。 |
 | [GameController\_ErrorCode OH\_GameDevice\_DeviceInfo\_GetProduct(const struct GameDevice\_DeviceInfo\* deviceInfo, int32\_t\* product)](capi-game-device-event-h.md#oh_gamedevice_deviceinfo_getproduct) | - | 从设备信息中获取产品信息。 |
+| [GameController\_ErrorCode OH\_GameDevice\_DeviceInfo\_GetVendor(const struct GameDevice\_DeviceInfo\* deviceInfo, int32\_t\* vendor)](capi-game-device-event-h.md#oh_gamedevice_deviceinfo_getvendor) | - | 从设备信息中获取厂商信息。 |
 | [GameController\_ErrorCode OH\_GameDevice\_DeviceInfo\_GetVersion(const struct GameDevice\_DeviceInfo\* deviceInfo, int32\_t\* version)](capi-game-device-event-h.md#oh_gamedevice_deviceinfo_getversion) | - | 从设备信息中获取版本信息。 |
 | [GameController\_ErrorCode OH\_GameDevice\_DeviceInfo\_GetPhysicalAddress(const struct GameDevice\_DeviceInfo\* deviceInfo, char\*\* physicalAddress)](capi-game-device-event-h.md#oh_gamedevice_deviceinfo_getphysicaladdress) | - | 从设备信息中获取物理地址。 |
 | [GameController\_ErrorCode OH\_GameDevice\_DeviceInfo\_GetDeviceType(const struct GameDevice\_DeviceInfo\* deviceInfo, GameDevice\_DeviceType\* deviceType)](capi-game-device-event-h.md#oh_gamedevice_deviceinfo_getdevicetype) | - | 从设备信息中获取设备类型。 |
@@ -275,6 +276,33 @@ GameController_ErrorCode OH_GameDevice_DeviceInfo_GetProduct(const struct GameDe
 | 类型 | 说明 |
 | --- | --- |
 | [GameController\_ErrorCode](capi-game-controller-type-h.md#gamecontroller_errorcode) | * 如果执行成功，返回[GAME\_CONTROLLER\_SUCCESS](capi-game-controller-type-h.md#gamecontroller_errorcode)。 * 如果参数deviceInfo为null，返回[GAME\_CONTROLLER\_PARAM\_ERROR](capi-game-controller-type-h.md#gamecontroller_errorcode)。 |
+
+### OH\_GameDevice\_DeviceInfo\_GetVendor()
+
+```c
+GameController_ErrorCode OH_GameDevice_DeviceInfo_GetVendor(const struct GameDevice_DeviceInfo* deviceInfo, int32_t* vendor)
+```
+
+**描述：**
+
+从设备信息中获取厂商信息。
+
+**系统能力：** SystemCapability.Game.GameController
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [const struct GameDevice\_DeviceInfo](capi-gamecontroller-gamedevice-deviceinfo.md)\* deviceInfo | [in]指向[GameDevice\_DeviceInfo](capi-gamecontroller-gamedevice-deviceinfo.md)实例的指针。指针不能为空。 |
+| int32\_t\* vendor | [out]输出参数。供应商信息。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| GameController\_ErrorCode | * 如果操作成功，则返回[GAME\_CONTROLLER\_SUCCESS](capi-game-controller-type-h.md#gamecontroller_errorcode)。 * 如果deviceInfo或vendor参数为空，返回[GAME\_CONTROLLER\_PARAM\_ERROR](capi-game-controller-type-h.md#gamecontroller_errorcode)。 |
 
 ### OH\_GameDevice\_DeviceInfo\_GetVersion()
 

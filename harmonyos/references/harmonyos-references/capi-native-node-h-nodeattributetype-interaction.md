@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: ArkUI_NodeAttributeType（交互类相关属性）
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_node.h > ArkUI_NodeAttributeType（交互类相关属性）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:16+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:54:41+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:32dcbf83de253ff3b551ad7a6344ea47c998cdbe76e29d299f9336877cb902f2
 ---
 

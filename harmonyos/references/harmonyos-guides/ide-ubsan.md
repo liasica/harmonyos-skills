@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ubsan
 title: 使用UBSan检测未定义行为
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 日志与故障分析 > 故障分析 > 使用UBSan检测未定义行为
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:23+08:00
+scraped_at: 2026-11-12T09:53:04+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:af4a0017284a8316dde9fb849a2462f72f73e999e087368ffeb29f0ed56d8561
+content_hash: sha256:afdf578c1f356a96ed51f0f95b6749d95f431bf3bb7e0114c6df7a170c61678d
 ---
 
 代码中出现未定义行为，最初可能不会产生任何问题，但是随着代码的复杂度提高，未定义行为可能造成程序崩溃或发生错误，检测出根源会变得更加困难。UBSan（Undefined Behavior Sanitizer）可以检测代码中出现的未定义行为，帮助用户清除未定义行为引起的运行时错误。
@@ -31,7 +31,7 @@ ASan、TSan、UBSan、HWASan不能同时开启，只能开启其中一个。
 
 点击****Run > Edit Configurations >** Diagnostics**，勾选**Undefined Behavior Sanitizer**开启检测。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/VccZp4qZRMW2cX85b3lUfg/zh-cn_image_0000002731382425.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/d82Oe2SESJ6xiY-1b-AaYg/zh-cn_image_0000002808886697.png)
 
 ### 方式二
 
@@ -41,7 +41,7 @@ ASan、TSan、UBSan、HWASan不能同时开启，只能开启其中一个。
 "arguments": "-DOHOS_ENABLE_UBSAN=ON"
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/JI50Hr-8Su6p34kWUuNoAQ/zh-cn_image_0000002731542397.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/w9CkagbITXySGixGhIoGew/zh-cn_image_0000002808766617.png)
 
 ## 使用UBSan
 
@@ -52,4 +52,4 @@ ASan、TSan、UBSan、HWASan不能同时开启，只能开启其中一个。
 
    无论[编译模式](ide-hvigor-compilation-options-customizing-guide.md#section192461528194916)是debug或release，均有链接可直接跳转至源码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/0aHwxigORryRRpJLbz5tmg/zh-cn_image_0000002701663202.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/r4y1fDRATc-u-XafodiVMg/zh-cn_image_0000002779567036.png)

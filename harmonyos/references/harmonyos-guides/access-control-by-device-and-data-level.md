@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/access-contro
 title: 基于设备分类和数据分级的访问控制 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 数据可靠性与安全性 > 基于设备分类和数据分级的访问控制 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:03:57+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:49c021bcfc6ed6c2f570c7290d2ba95b49531ce67dbeb3a1921f6f5b72c194cb
+scraped_at: 2026-11-12T09:51:02+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0d68b7fc3dc908169ca4261300bffa84dc7b5a6eb1b028e1cb799e7dc0ca4528
 ---
 
 ## 基本概念
@@ -168,21 +168,19 @@ public GetKvStore = (() => {
 
 ```typescript
 import { relationalStore } from '@kit.ArkData';
-import { UIContext } from '@kit.ArkUI';
 import { common } from '@kit.AbilityKit';
 
 let store: relationalStore.RdbStore | undefined = undefined;
 
-export async function accessControlByDeviceAndDataLevel() {
+export async function accessControlByDeviceAndDataLevel(context: common.UIAbilityContext | undefined) {
   /* context为应用的上下文信息，由调用方自行获取，此处仅为示例。 */
-  const context = new UIContext().getHostContext() as common.UIAbilityContext;
   try {
     const STORE_CONFIG: relationalStore.StoreConfig = {
       name: 'RdbTest.db',
       // 设置数据库安全级别为S3
       securityLevel: relationalStore.SecurityLevel.S3
     };
-    store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+    store = await relationalStore.getRdbStore(context!, STORE_CONFIG);
     console.info('Succeeded in getting RdbStore.')
   } catch (err) {
     console.error(`Failed to get RdbStore. Code:${err.code}, message:${err.message}`);

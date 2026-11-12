@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-async-l
 title: 异步锁
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > Sendable对象 > 异步锁
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:13+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:51:03+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:a83d56c2f7c4d089764a5638d85f511b87c9d25a196a791a4f4d27b8a3f5f1f1
 ---
 

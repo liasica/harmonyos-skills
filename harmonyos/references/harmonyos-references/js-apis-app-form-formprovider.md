@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.form.formProvider (formProvider)"
 breadcrumb: API参考 > 应用框架 > Form Kit（卡片开发服务） > ArkTS API > @ohos.app.form.formProvider (formProvider)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:33+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:3bc3177537364b7f15e076e4ec44dafa687a2f93b906c90b6a84416d8fd280b9
+scraped_at: 2026-11-12T09:55:09+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:5429b3b8898b5fb27448a5b39dd850ec8190912c56bfc061c64dccd691c8aa1c
 ---
 
 formProvider模块提供了获取卡片信息、更新卡片、设置卡片刷新时间等能力。该模块作为卡片提供方与卡片管理服务的桥梁，通过IPC机制与FormExtension进行通信，实现卡片的更新、信息获取等操作。适用于卡片提供方需要主动更新卡片内容、管理卡片生命周期、获取卡片运行状态等场景，帮助开发者实现卡片的动态更新和状态管理。
@@ -135,10 +135,6 @@ updateForm(formId: string, formBindingData: formBindingData.FormBindingData, cal
 
 更新指定的卡片，使用callback异步回调。适用于卡片数据变化时主动更新卡片内容的场景，例如天气数据变化、股票价格更新、任务进度更新等。
 
-**说明** 
-
-从API version 20开始，如果卡片刷新的数据通过共享内存更新，刷新数据总大小不超过10MB，刷新图片数量不超过20张。API version 19及之前的版本，图片文件数量上限为5张，每张限制内存2MB，超出限制的图片会显示异常。
-
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Ability.Form
@@ -148,7 +144,7 @@ updateForm(formId: string, formBindingData: formBindingData.FormBindingData, cal
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | formId | string | 是 | 请求更新的卡片标识。 |
-| formBindingData | [formBindingData.FormBindingData](js-apis-app-form-formbindingdata.md#formbindingdata) | 是 | 用于更新的数据。具体限制请参考上方说明。 |
+| formBindingData | [formBindingData.FormBindingData](js-apis-app-form-formbindingdata.md#formbindingdata) | 是 | 用于更新的数据。 |
 | callback | AsyncCallback<void> | 是 | 回调函数。更新结果的回调，成功时error为undefined。 |
 
 **错误码：**
@@ -196,10 +192,6 @@ updateForm(formId: string, formBindingData: formBindingData.FormBindingData): Pr
 
 更新指定的卡片，使用Promise异步回调。适用于卡片数据变化时主动更新卡片内容的场景，例如天气数据变化、股票价格更新、任务进度更新等。
 
-**说明** 
-
-从API version 20开始，如果卡片刷新的数据通过共享内存更新，刷新数据总大小不超过10MB，刷新图片数量不超过20张。API version 19及之前的版本，图片文件数量上限为5张，每张限制内存2MB，超出限制的图片会显示异常。
-
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Ability.Form
@@ -209,7 +201,7 @@ updateForm(formId: string, formBindingData: formBindingData.FormBindingData): Pr
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | formId | string | 是 | 请求更新的卡片标识。 |
-| formBindingData | [formBindingData.FormBindingData](js-apis-app-form-formbindingdata.md#formbindingdata) | 是 | 用于更新的数据。具体限制请参考上方说明。 |
+| formBindingData | [formBindingData.FormBindingData](js-apis-app-form-formbindingdata.md#formbindingdata) | 是 | 用于更新的数据。 |
 
 **返回值：**
 

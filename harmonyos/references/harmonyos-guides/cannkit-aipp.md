@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-aipp
-title: AIPP
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型转换 > AIPP
+title: AIPP转换后数据预处理
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型转换 > AIPP转换后数据预处理
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:29+08:00
-doc_updated_at: 2026-10-10
+scraped_at: 2026-11-12T09:52:40+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:7e1e6d11c75becddcc2bb145a50dcb01861981d9e9e06977a9b3d4e4ee1865c1
 ---
 

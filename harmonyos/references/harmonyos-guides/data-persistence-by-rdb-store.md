@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persiste
 title: 通过关系型数据库实现数据持久化 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 应用数据持久化 > 通过关系型数据库实现数据持久化 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:03+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:e7f65b73bb1a61a16c0920ecd0f094013b688f0410c15079f854ec6af98375b6
+scraped_at: 2026-11-12T09:51:01+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:91a4dd189b3c5f9d6d9afa3cf55e1a11a34302671098be83a2850150ca69ff2d
 ---
 
 ## 场景介绍
@@ -30,7 +30,7 @@ content_hash: sha256:e7f65b73bb1a61a16c0920ecd0f094013b688f0410c15079f854ec6af98
 
 **图1** 关系型数据库运作机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/4_zsnz2fSjOu4_McJxZSfA/zh-cn_image_0000002809009153.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/v5_wmuxHTb-mXALv1sNrkA/zh-cn_image_0000002815557863.jpg)
 
 ## 约束限制
 
@@ -74,7 +74,6 @@ content_hash: sha256:e7f65b73bb1a61a16c0920ecd0f094013b688f0410c15079f854ec6af98
    import { relationalStore } from '@kit.ArkData'; // 导入模块
    import { BusinessError } from '@kit.BasicServicesKit';
    import { hilog } from '@kit.PerformanceAnalysisKit';
-   import { UIContext } from '@kit.ArkUI';
    import { common } from '@kit.AbilityKit';
    const DOMAIN = 0x0000;
 
@@ -107,8 +106,7 @@ content_hash: sha256:e7f65b73bb1a61a16c0920ecd0f094013b688f0410c15079f854ec6af98
        'CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB, ADDRESS TEXT)';
      if (store === undefined) {
        try {
-         const context = new UIContext().getHostContext() as common.UIAbilityContext;
-         store = await relationalStore.getRdbStore(context, STORE_CONFIG);
+         store = await relationalStore.getRdbStore(context!, STORE_CONFIG);
        } catch (e) {
          const err = e as BusinessError;
          hilog.error(DOMAIN, 'rdbDataPersistence', `Failed to get RdbStore. Code:${err.code}, message:${err.message}`);
@@ -491,8 +489,7 @@ content_hash: sha256:e7f65b73bb1a61a16c0920ecd0f094013b688f0410c15079f854ec6af98
 
    ```typescript
    // 删除数据库
-   const context = new UIContext().getHostContext() as common.UIAbilityContext;
-   relationalStore.deleteRdbStore(context, 'RdbTest.db', (err: BusinessError) => {
+   relationalStore.deleteRdbStore(context!, 'RdbTest.db', (err: BusinessError) => {
      if (err) {
        hilog.error(DOMAIN, 'rdbDataPersistence', `Failed to delete RdbStore. Code:${err.code}, message:${err.message}`);
        return;

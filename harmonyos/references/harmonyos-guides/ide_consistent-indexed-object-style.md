@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_consisten
 title: "@typescript-eslint/consistent-indexed-object-style"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/consistent-indexed-object-style
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:08+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:619f034a41d796ce080acb5afb1a6e7d109708e5f22ac8e5f0d151b893f50fe0
+scraped_at: 2026-11-12T09:52:54+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:cba271e0f7dfcaf074bbbe9a344fb582f720f8265ef15740e8f2fedba73dc1bc
 ---
 
 允许或禁止使用“Record”类型。
@@ -54,4 +54,4 @@ export type Foo2 = {
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

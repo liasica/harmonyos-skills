@@ -1,18 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-compatibility-rule
 title: 兼容性说明
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > AscendC昇腾到麒麟兼容性迁移指南 > 兼容性说明
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC昇腾到麒麟兼容性迁移指南 > 兼容性说明
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:07+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b0abf52e7dcd4f056628c89052358e1900b6c066f4fe41498de8c13d634e5e9e
+scraped_at: 2026-11-12T09:52:42+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c2d44b99fafcbb1e9567ac172d3dd3ef0c668df4caac49fc4bc1db20e8bb0999
 ---
 
-总体兼容性策略见表1 Ascend C API兼容策略，兼容性范围不包含编译器BuiltIn API、Ascend C内部实现接口等。若开发者希望在新平台运行其它平台开发的Ascend C程序，需要在新平台重新编译并运行，并可能需要根据迁移指导进行代码调整。
+总体兼容性策略见表1 Ascend C API兼容策略，兼容性范围不包含编译器BuiltIn API、Ascend C内部实现接口等。若开发者希望在新平台运行其他平台开发的Ascend C程序，需要在新平台重新编译并运行，并可能需要根据迁移指导进行代码调整。
 
 **图1** Ascend C API层次结构
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/W2YSLcyDRRenxVYdVtgSbw/zh-cn_image_0000002779691818.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/wGP88x3MS2OkzXZ_BNdEvw/zh-cn_image_0000002815400209.png)
 
 **表1** Ascend C API兼容策略
 
@@ -45,5 +45,5 @@ content_hash: sha256:b0abf52e7dcd4f056628c89052358e1900b6c066f4fe41498de8c13d634
 2. 建议开发者使用如下接口或编程方式。
 
    * 兼容的API。
-   * 若涉及特定领域扩展特性，在Device侧用[NPU\_ARCH编译宏](cannkit-migration-guidance-overview.md)进行隔离，在Host侧用[SocVersion](cannkit-getsocversion.md)进行隔离。
+   * 若涉及特定领域扩展特性，在Device侧用[NPU\_ARCH编译宏](cannkit-migration-guidance-overview.md)进行隔离，在Host侧用[SocVersion](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)进行隔离。
    * 使用[Tiling模板编程](https://www.hiascend.com/document/detail/zh/canncommercial/83RC1/opdevg/Ascendcopdevg/atlas_ascendc_10_00025.html)。

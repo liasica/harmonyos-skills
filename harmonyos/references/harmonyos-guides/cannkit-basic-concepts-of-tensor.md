@@ -1,9 +1,9 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-basic-concepts-of-tensor
 title: Tensor基本概念
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 附录 > Tensor基础知识参考 > Tensor基本概念
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > 附录 > Tensor基础知识参考 > Tensor基本概念
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:35+08:00
+scraped_at: 2026-11-12T09:52:42+08:00
 doc_updated_at: 2026-06-27
 content_hash: sha256:7c11f52b879989994d4379d98a2004b2a80b6e9dd2d1613a81e5da7b6cfef52e
 ---

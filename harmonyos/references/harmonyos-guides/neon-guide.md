@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/neon-guide
 title: 使用Neon指令扩展
 breadcrumb: 指南 > NDK开发 > 硬件兼容性 > 使用Neon指令扩展
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:47+08:00
-doc_updated_at: 2026-08-14
-content_hash: sha256:e3212464b7065455fba79baf96763881ad23ef9445b552a8af1186828849e79f
+scraped_at: 2026-11-12T09:52:50+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:593733023bb5f3621e1796590078cee787b790e1a50b9cb834097e56b5349f33
 ---
 
 ARM Neon是ARM架构的SIMD（Single Instruction Multiple Data）扩展实现，提供一条指令处理多个数据的并行处理能力，广泛用于多媒体编解码、2D/3D图形处理等领域，提高执行性能。
@@ -42,7 +42,7 @@ ARMv8a架构CPU默认集成Neon扩展，在AArch64与AArch32两种状态下都�
 
 ## 如何使用
 
-使用Neon扩展的主要通过如下几种方式：
+使用Neon扩展主要通过如下几种方式：
 
 * 使用LLVM的Auto-Vectorization特性，由编译器来生成对应指令，默认开启，可以通过-fno-vectorize关闭，具体参考《[Auto-Vectorization in LLVM](https://llvm.org/docs/Vectorizers.html)》。
 * 使用Neon intrinsics库，方便开发者直接操作低阶Neon指令。

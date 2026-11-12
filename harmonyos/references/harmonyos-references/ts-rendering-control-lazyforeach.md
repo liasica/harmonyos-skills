@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-render
 title: LazyForEach
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 状态管理与渲染控制 > LazyForEach
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:18+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:5a1b76460047dec1cac5efc49d2f818f68d87e2db0502c73a186fb222455bce5
+scraped_at: 2026-11-12T09:54:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e28a2ba0e60801e227be5021c1c20547d9b278db3c146eb8ce8b1a74f952621e
 ---
 
 **说明** 
@@ -174,6 +174,32 @@ onDataReloaded(): void
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+### onDataReloaded
+
+onDataReloaded(reuseImmediately: boolean): void
+
+通知组件重新加载所有数据，并配置是否允许在更新过程中复用旧的子组件。需要和@Reusable/@ReusableV2配合使用。重新加载数据完成后调用。
+
+配置允许在更新过程中复用旧的子组件，并和[@Reusable](../harmonyos-guides/arkts-reusable.md)/[@ReusableV2](../harmonyos-guides/arkts-new-reusablev2.md)配合使用时，优先使用复用池中的组件，若复用池中无可复用的组件，而LazyForEach的旧子组件中有可复用的组件，该组件将被回收，并复用为新的子组件。当LazyForEach的旧子组件中也没有可复用的组件时，将创建新的子组件。
+
+配置允许在更新过程中复用旧的子组件，未使用@Reusable/@ReusableV2时，键值没有变化的数据项会使用原先的子组件，键值发生变化的会重建子组件。
+
+配置不允许在更新过程中复用旧的子组件，键值没有变化的数据项会使用原先的子组件，键值发生变化的数据项，若使用了@Reusable/@ReusableV2且复用池中有可用的组件，将复用旧组件，否则将创建新的子组件。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| reuseImmediately | boolean | 是 | 是否允许在更新过程中复用旧的子组件。  true：允许在更新过程中复用旧的子组件。  false：不允许在更新过程中复用旧的子组件。 |
 
 ### onDataAdded(deprecated)
 
@@ -460,7 +486,13 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 
 ### DataReloadOperation12+
 
-重载所有数据操作。当onDatasetChange含有DataOperationType.RELOAD操作时，其余操作全部失效，框架会自己调用keyGenerator进行键值比对。
+重载所有数据操作，并配置是否允许在更新过程中复用旧的子组件。当onDatasetChange含有DataOperationType.RELOAD操作时，其余操作全部失效，框架会自己调用keyGenerator进行键值比对。
+
+配置允许在更新过程中复用旧的子组件，并和[@Reusable](../harmonyos-guides/arkts-reusable.md)/[@ReusableV2](../harmonyos-guides/arkts-new-reusablev2.md)配合使用时，优先使用复用池中的组件，若复用池中无可复用的组件，而LazyForEach的旧子组件中有可复用的组件，该组件将被回收，并复用为新的子组件。当LazyForEach的旧子组件中也没有可复用的组件时，将创建新的子组件。
+
+配置允许在更新过程中复用旧的子组件，未使用@Reusable/@ReusableV2时，键值没有变化的数据项会使用原先的子组件，键值发生变化的会重建子组件。
+
+配置不允许在更新过程中复用旧的子组件，键值没有变化的数据项会使用原先的子组件，键值发生变化的数据项，若使用了@Reusable/@ReusableV2且复用池中有可用的组件，将复用旧组件，否则将创建新的子组件。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -471,6 +503,7 @@ type DataOperation = DataAddOperation | DataDeleteOperation | DataChangeOperatio
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | type | [DataOperationType](ts-rendering-control-lazyforeach.md#dataoperationtype12).RELOAD | 否 | 否 | 数据全部重载类型。 |
+| reuseImmediately | boolean | 否 | 是 | 是否允许在更新过程中复用旧的子组件。  true：允许在更新过程中复用旧的子组件。  false：不允许在更新过程中复用旧的子组件。  默认值：false  当值为undefined或null时，取默认值。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。 |
 
 ### DataOperationType12+
 

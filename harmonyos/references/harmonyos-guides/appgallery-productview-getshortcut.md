@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-pr
 title: 查询应用内快捷方式
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用市场推荐 > 应用内快捷方式 > 查询应用内快捷方式
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:24+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:dff92f37c673f29a4fc09a46e510aa684490a8470a2bf03444ae103416026217
+scraped_at: 2026-11-12T09:52:19+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b7937760dbe57ae225759c0b0359664cc7480b64fbbe71893372f7c8dc585d99
 ---
 
 **说明** 
@@ -18,7 +18,7 @@ content_hash: sha256:dff92f37c673f29a4fc09a46e510aa684490a8470a2bf03444ae1034160
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/SHqnt5oyTeq9BXdC-rPO2g/zh-cn_image_0000002809010871.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/d_YGQGJoT52ilNOJoNDSHQ/zh-cn_image_0000002815559587.png)
 
 1. 用户需要查询当前应用的快捷方式。
 2. 应用调用[getPinShortcutInfos](../harmonyos-references/store-productviewmanager.md#productviewmanagergetpinshortcutinfos)接口获取快捷方式信息。
@@ -28,7 +28,7 @@ content_hash: sha256:dff92f37c673f29a4fc09a46e510aa684490a8470a2bf03444ae1034160
 ## 约束与限制
 
 * 应用市场推荐服务不支持模拟器，请使用真机调试。在模拟器中使用该服务将会提示：无法获取内容，请点击屏幕重试。
-* 应用市场推荐服务支持Phone、Tablet、PC/2in1设备。并且从6.0.2(22)版本开始，新增支持TV设备。
+* 应用市场推荐服务支持Phone、Tablet、PC/2in1设备。从6.0.2(22)版本开始，新增支持TV设备；并且从API版本26.0.1开始，新增支持Car设备。
 
 ## 接口说明
 

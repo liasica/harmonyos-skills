@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-1318
 title: 应用未适配悬浮窗模式
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 应用未适配悬浮窗模式
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:29+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:0f3e2ae1577e0b3efcc0ccd83d83103776ecd1d1bbaa7bcd1a9dc892e1e8e961
+scraped_at: 2026-11-12T09:58:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ddfc6c7b247cc8ddf60747aa1de8daaf1947ef17b6e574048b26b2846546bbbd
 ---
 
 ## 问题现象
@@ -107,4 +107,4 @@ content_hash: sha256:0f3e2ae1577e0b3efcc0ccd83d83103776ecd1d1bbaa7bcd1a9dc892e1e
 
 ### 问题三
 
-在module.json5文件中abilities标签里preferMultiWindowOrientation配置项配置支持横向悬浮窗的设置。（默认为竖向悬浮窗）可参考[官方示例](../best-practices/bpta-multi-window-practice.md#section364215616276)。
+在module.json5文件中abilities标签里preferMultiWindowOrientation配置项配置支持横向悬浮窗的设置。（默认为竖向悬浮窗）可参考[官方示例](../doccenter-multi-device/bpta-multi-device-window-mode.md#section16977171113215)。

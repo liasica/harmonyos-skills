@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-cp
 title: 配置CPP
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 配置构建流程 > 配置CPP
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:25+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:0511cce8af08df756c128f6c774417ad547ea92509bec452d8d01ed5c88afb42
+scraped_at: 2026-11-12T09:53:06+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:67fca2d0b98f9c027ac7b500a3d7adea9ee46d139d95818b8233c16acc6e2bf2
 ---
 
 Hvigor集成CMake、Ninja为cpp代码的构建工具。在初始状态下，无需额外配置，您也可以添加以下自定义配置，定制cpp代码编译。
@@ -20,7 +20,7 @@ externalNativeOptions是Native编译配置项。
 
 | 字段名称 | 类型 | 可选/必选 | 含义 |
 | --- | --- | --- | --- |
-| path | 字符串 | 可选 | CMake构建脚本地址，即CMakeLists.txt文件地址。 |
+| path | 字符串 | 可选 | CMake构建脚本（CMakeLists.txt文件）地址。 |
 | abiFilters | 字符串数组 | 可选 | HarmonyOS当前支持的ABI编译环境，包括：   * arm64-v8a * x86\_64   如不配置该参数，编译时默认为arm64-v8a。 |
 | arguments | 字符串/字符串数组 | 可选 | CMake编译参数。  Hvigor将会把此处的自定义参数传递给CMake构建工具，您可通过CMake官方文档查找您所需的编译参数，同时它也将覆盖默认同名参数。 |
 | cppFlags | 字符串 | 可选 | C++编译器参数。  从DevEco Studio 6.0.1 Beta1版本开始，新增"-iclang"参数，提升编译效率，具体请参考[通过IClang提升C++增量编译效率](ide-hvigor-experimental-properties.md#section324586847)。 |
@@ -68,7 +68,7 @@ filter是Native 库（.so）文件的筛选选项。配置后优先级高于[nap
   + 三方包（包括远程三方包及本地har包）的优先级高于本地依赖模块的优先级。
   + 按照广度优先的遍历方式来收集依赖，如下图，优先级顺序为current > library0 > library1 > library5 > library2 > library3 > library4。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/aOCUnzwbS9-uirmWjLmpsg/zh-cn_image_0000002701822894.png "点击放大")
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/Q1pB0fTWRpaaTR_Mksbnxg/zh-cn_image_0000002808886437.png "点击放大")
 * **select**
 
   **表4** select字段说明

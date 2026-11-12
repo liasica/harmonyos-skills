@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-agre
 title: 密钥协商(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥使用 > 密钥协商 > 密钥协商(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:37+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:c8b267078b4ada0929c2836db3f28d7bc10b3924b2a5def051e49c36d1c98c73
+scraped_at: 2026-11-12T09:51:40+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a8c0d8fe77281d28cce7cc68e97e91662ee2fe026d4a078e0ba621599c495d44
 ---
 
 以X25519、DH和ECDH协商密钥类型为例，在密钥由HUKS管理的情况下，完成密钥协商。具体的场景介绍及支持的算法规格，请参考[密钥协商支持的算法](huks-key-agreement-overview.md#支持的算法)。
@@ -135,6 +135,21 @@ static struct OH_Huks_Blob g_keyAlias02001 = {(uint32_t)strlen("HksX25519AgreeKe
 执行密钥协商：
 
 ```
+static OH_Huks_Result MallocAndCheckBlobData(struct OH_Huks_Blob *blob, const uint32_t blobSize)
+{
+    struct OH_Huks_Result ret;
+    ret.errorCode = OH_HUKS_SUCCESS;
+    if (blobSize == 0 || blobSize > X25519_COMMON_SIZE) {
+        ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
+        return ret;
+    }
+    blob->data = (uint8_t *)malloc(blobSize);
+    if (blob->data == NULL) {
+        ret.errorCode = OH_HUKS_ERR_CODE_INTERNAL_ERROR;
+    }
+    return ret;
+}
+
 /* 导出密钥 */
 OH_Huks_Result HksX25519AgreeExport(const struct OH_Huks_Blob *keyAlias1, const struct OH_Huks_Blob *keyAlias2,
     struct OH_Huks_Blob *publicKey1, struct OH_Huks_Blob *publicKey2,

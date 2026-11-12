@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_restrict-
 title: "@typescript-eslint/restrict-plus-operands"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/restrict-plus-operands
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:10+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:fa2cd8f50918641ad49ad6904faa9c813a4ccfbd5c95721d35b2bf177d38deaa
+scraped_at: 2026-11-12T09:52:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:9d7e337269d31a09140610c4f9b14b755f9e9239b513c734b9626224c6c298ab
 ---
 
 要求加法的两个操作数都是相同的类型，并且是“bigint”、“number”或“string”。
@@ -48,4 +48,4 @@ export const foo2 = bigIntNum + num;
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

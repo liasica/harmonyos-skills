@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/continuous-ta
 title: 长时任务(ArkTS)
 breadcrumb: 指南 > 应用框架 > Background Tasks Kit（后台任务开发服务） > 长时任务(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:17+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:455e3e35194de480c57b6c62328073db7e36f5be03507e69f6d897bed22d6d70
+scraped_at: 2026-11-12T09:51:24+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d640898c81f4910f0950a46c282686497014d640bb1da58351cf6abf5e89126f
 ---
 
 ## 概述
@@ -42,6 +42,7 @@ content_hash: sha256:455e3e35194de480c57b6c62328073db7e36f5be03507e69f6d897bed22
 
 * 在数据传输时，若应用使用[@ohos.request (上传下载)](../harmonyos-references/js-apis-request.md)托管给系统，即使申请DATA\_TRANSFER的后台任务，应用退后台时还是会被挂起。
 * 在数据传输时，应用需要更新进度，如果进度长时间（首次更新超过10分钟）未更新，数据传输的长时任务会被取消。更新进度的通知类型必须为实况窗，具体实现可参考[startBackgroundRunning()](../harmonyos-references/js-apis-resourceschedule-backgroundtaskmanager.md#backgroundtaskmanagerstartbackgroundrunning12)中的示例。
+* 从API版本26.0.1开始，可使用[updateDataTransferProgress()](../harmonyos-references/js-apis-resourceschedule-backgroundtaskmanager.md#backgroundtaskmanagerupdatedatatransferprogress)接口更新包含数据传输类型的长时任务通知。可选择通知是否带进度环，以及进度环为100时是否响铃。
 
 关于AUDIO\_PLAYBACK（音视频播放）说明：
 

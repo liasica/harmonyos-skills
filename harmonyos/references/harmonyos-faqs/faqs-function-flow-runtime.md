@@ -3,16 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-function-f
 title: 任务并发调度（Function Flow Runtime）
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > 任务并发调度（Function Flow Runtime）
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:58+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:463a12c266259eafa8b02bb545cf85b00bf6059ad63c9c1a6d8189cb3fed1d5d
+scraped_at: 2026-11-12T09:58:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c71ba17f70ae91a7d7fec1a95b9f9f3e662b6034f32459b0a4b13b5047582d84
 ---
 
-* **[故障排查](function-flow-runtime-troubleshooting.md)**
 * **[如何在Native侧C++子线程直接调用ArkTS接口，不用通过ArkTS侧触发回调](faqs-ndk-8.md)**
 * **[ArkTS层调用Native层接口时的线程相关问题](faqs-ndk-14.md)**
 * **[Native侧获取env具有线程限制，如何在C++子线程触发ArkTS侧回调](faqs-ndk-25.md)**
-* **[如何在C++调用从ArkTS传递过来的function](faqs-ndk-26.md)**
 * **[如何在Native侧调用ArkTS侧异步方法，并获取异步计算结果到Native侧](faqs-ndk-32.md)**
 * **[Native侧代码与ArkTS侧的代码线程关系以及线程使用限制](faqs-ndk-54.md)**
 * **[napi\_env、napi\_value实例是否可以跨worker线程共享](faqs-ndk-55.md)**

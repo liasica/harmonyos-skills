@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-location
 title: 显示我的位置
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 创建地图 > 显示我的位置
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:35+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:65a694be57d69789fdd2cd0aada2ed697bfee7f418858b968e2b35bdd643f52f
+scraped_at: 2026-11-12T09:52:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:68653c5e7380cbf099f70e01deffc91f78b4f253811f151d6f969d0f14c5353a
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:65a694be57d69789fdd2cd0aada2ed697bfee7f418858b968e2b35bdd64
 
 本章节将向您介绍如何开启和展示“我的位置”功能，“我的位置”指的是进入地图后点击“我的位置”显示当前位置点的功能。效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/QaytnXP-TZCJZpnd-eIRVQ/zh-cn_image_0000002809051025.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/gsP_KnG5TKaPr9QZXxrEtg/zh-cn_image_0000002815559833.jpg "点击放大")
 
 ## 接口说明
 
@@ -181,9 +181,9 @@ content_hash: sha256:65a694be57d69789fdd2cd0aada2ed697bfee7f418858b968e2b35bdd64
    ```
 3. 检查“我的位置”功能是否成功启用。
 
-   “我的位置”按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/52/v3/Ku7AGcgcRZy8a3anXuX3iQ/zh-cn_image_0000002779851460.png)默认显示在地图的右下角。点击“我的位置”按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/W_IBTVXVQtCdg_7uzDCj2w/zh-cn_image_0000002779691492.png)，将会在屏幕中心显示当前定位，以蓝色圆点的形式呈现，效果如下图所示，效果根据获取到的用户位置会有变化。
+   “我的位置”按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/snBfW18RTIWRUgwXhmuIjw/zh-cn_image_0000002815399917.png)默认显示在地图的右下角。点击“我的位置”按钮![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/w45hXF7NQHeiPaedh8Q_SQ/zh-cn_image_0000002786520342.png)，将会在屏幕中心显示当前定位，以蓝色圆点的形式呈现，效果如下图所示，效果根据获取到的用户位置会有变化。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/KhOeh847QsCOcRH_J8lRRw/zh-cn_image_0000002809011113.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/m75JQZXSSTWZYFR-X_2SJw/zh-cn_image_0000002786360414.jpg "点击放大")
 4. 获取用户位置坐标并设置用户的位置。
 
    Map Kit默认使用系统的连续定位能力，如果您希望定制显示频率或者精准度，可以调用[geoLocationManager](../harmonyos-references/js-apis-geolocationmanager.md)相关接口获取用户位置坐标（WGS84坐标系）。注意访问设备的位置信息必须申请权限，并且获得用户授权，详情见[geoLocationManager](../harmonyos-references/js-apis-geolocationmanager.md)。
@@ -223,7 +223,7 @@ this.mapController.setMyLocationControlsEnabled(false);
 
 ### 自定义位置图标样式
 
-通过调用mapController.[setMyLocationStyle](../harmonyos-references/map-map-mapcomponentcontroller.md#setmylocationstyle)方法，设置用户位置图标样式。效果如下：
+通过调用mapController对象的[setMyLocationStyle](../harmonyos-references/map-map-mapcomponentcontroller.md#setmylocationstyle)方法，设置用户位置图标样式。效果如下：
 
 ```typescript
 let style: mapCommon.MyLocationStyle = {
@@ -237,15 +237,15 @@ let style: mapCommon.MyLocationStyle = {
 await this.mapController.setMyLocationStyle(style);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/aad4W5KrSnuTnhz3e21rGw/zh-cn_image_0000002809051027.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/yHp_WvFnQNqH3Hl924dOHA/zh-cn_image_0000002815559835.jpg "点击放大")
 
 ### 更改我的位置图层相对于覆盖物的压盖顺序
 
-通过调用mapController.[changeMyLocationLayerOrder](../harmonyos-references/map-map-mapcomponentcontroller.md#changemylocationlayerorder)方法，更改我的位置图层相对于覆盖物的压盖顺序。效果如下：
+通过调用mapController对象的[changeMyLocationLayerOrder](../harmonyos-references/map-map-mapcomponentcontroller.md#changemylocationlayerorder)方法，更改我的位置图层相对于覆盖物的压盖顺序。效果如下：
 
 ```typescript
 // true：我的位置图层位于覆盖物之下
 this.mapController?.changeMyLocationLayerOrder(true);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/obu50eNhQr2dyBTMx6b3sw/zh-cn_image_0000002779851462.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/A9rOuNzDQxqz9QF3ppOSJg/zh-cn_image_0000002815399919.jpg "点击放大")

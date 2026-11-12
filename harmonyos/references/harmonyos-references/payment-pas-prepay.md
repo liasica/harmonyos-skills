@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-p
 title: 预下单
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 直连商户 > 支付并签约 > 预下单
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:26+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:197531040e4bb1d7f10cf93adefa329a6c5fc6405db13224895af54731f3e825
+scraped_at: 2026-11-12T09:57:32+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a834a49cf020ea9f7a84cdd99d4ecd8ceffbeec09c8b9488d40849b07c8b7459
 ---
 
 ## 功能介绍
@@ -18,7 +18,7 @@ content_hash: sha256:197531040e4bb1d7f10cf93adefa329a6c5fc6405db13224895af54731f
 
 ## 接口原型
 
-* **载协议：** HTTPS POST
+* **承载协议：** HTTPS POST
 * **接口方向：** 开发者服务器 -> 华为支付服务器
 * **接口URL：** https://petalpay-developer.cloud.huawei.com.cn/api/v1/aggr/pay-and-sign/preorder/create/app
 

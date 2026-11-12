@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-stri
 title: 使用JSVM-API判断给定的两个JS value是否严格相等
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API判断给定的两个JS value是否严格相等
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:17+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:52:49+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:882149cd274e5550d2178ef8405f414d830437d9aaaf056a2a43ece53edef1d3
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 证书管理对话框错误码
 breadcrumb: API参考 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 错误码 > 证书管理对话框错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:46+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:11f26a10261d699d03b6ae1e673b84567ef7cde8ea36b1a2a020cfd30bd45a16
+scraped_at: 2026-11-12T09:55:26+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:06788b52a68a45b54824599e829886128a476ffaf49227abf0638530f3013341
 ---
 
 **说明** 
@@ -137,3 +137,39 @@ No available certificate for authorization.
 **处理步骤**
 
 安装有效证书凭据。
+
+## 29700009 证书管理对话框操作超时
+
+**错误信息**
+
+The operation in the Ukey authentication dialog box timed out.
+
+**错误描述**
+
+证书管理对话框操作超时。
+
+**可能原因**
+
+用户在Ukey认证对话框中的操作超过约定时间。
+
+**处理步骤**
+
+重新发起认证操作。
+
+## 29700010 不支持并发调用
+
+**错误信息**
+
+The Ukey authentication dialog box cannot be opened concurrently. Please try again later.
+
+**错误描述**
+
+该API不支持并发调用。
+
+**可能原因**
+
+已存在正在显示的Ukey认证对话框。
+
+**处理步骤**
+
+等待当前Ukey认证对话框关闭后，再重新发起调用。

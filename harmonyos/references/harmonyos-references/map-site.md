@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-site
 title: site（地点搜索）
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > site（地点搜索）
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:65c6e242e5fdd503c70c94cad506c0c8967f11046b39b0cbfaa24b2503f35077
+scraped_at: 2026-11-12T09:57:27+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7153f9ca263aaa1542472eb3a33738c07ffc28f4765fc376c5cbc0c38f068c46
 ---
 
 本模块提供地点搜索服务。
@@ -177,7 +177,7 @@ let params: site.NearbySearchParams = {
     longitude: -0.07594896472392065
   },
   poiTypes: [
-    "Watch_Store",
+    "WATCH_STORE",
     "SUBWAY",
     "PRIMARY_SCHOOL",
     "GENERAL_AUTO_REPAIR_SERVICE_CENTER"
@@ -237,7 +237,7 @@ let params: site.NearbySearchParams = {
     longitude:-0.07594896472392065
   },
   poiTypes: [
-    "Watch_Store",
+    "WATCH_STORE",
     "SUBWAY",
     "PRIMARY_SCHOOL",
     "GENERAL_AUTO_REPAIR_SERVICE_CENTER"

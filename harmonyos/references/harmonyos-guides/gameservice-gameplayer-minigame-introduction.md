@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 概述
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 基础游戏服务（必选） > 小游戏 > 概述
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:49:03+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:a125c0fe2b92d541f33c48c5cdc1b3645573db90cac3ca4f07fe1eaee8a004f9
+scraped_at: 2026-11-12T09:52:23+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8d620220c96e707b5eb685dc505bf3e2ab7af1430ae8f572cab4489508b3adda
 ---
 
 从6.0.1(21)版本开始，新增小游戏相关能力。
@@ -14,7 +14,7 @@ content_hash: sha256:a125c0fe2b92d541f33c48c5cdc1b3645573db90cac3ca4f07fe1eaee8a
 
 ## 约束与限制
 
-小游戏相关能力支持Phone、Tablet、PC/2in1和TV设备。
+小游戏相关能力支持Phone、Tablet、PC/2in1和TV设备；并且从API版本26.0.1开始，新增支持Car设备。
 
 ## 使用场景
 

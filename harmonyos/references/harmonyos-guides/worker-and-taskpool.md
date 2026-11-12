@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/worker-and-ta
 title: Worker常驻线程通过TaskPool进行多任务并发处理
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 应用多线程开发实践案例 > Worker常驻线程通过TaskPool进行多任务并发处理
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:49:46+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:51:04+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:99edca581f960bf303c5a13cf6d15d101e8ae29a1bec63535ba5bde15c81ab75
 ---
 

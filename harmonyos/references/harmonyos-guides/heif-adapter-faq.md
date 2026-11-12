@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/heif-adapter-
 title: 如何处理HEIF图片
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > Image Kit常见问题 > 如何处理HEIF图片
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:46+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:52:07+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:accdf589830db39c0226bc52024382074713cca11b83c8b32b7a855efa129980
 ---
 

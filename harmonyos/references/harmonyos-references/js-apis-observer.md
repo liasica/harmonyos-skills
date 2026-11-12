@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-o
 title: "@ohos.telephony.observer (电话服务状态监听)"
 breadcrumb: API参考 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > ArkTS API > @ohos.telephony.observer (电话服务状态监听)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:24+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:394684d562a8c3d1d37e07cbeabe3ed66f339d14f5a9620930ae9f640e01e807
+scraped_at: 2026-11-12T09:55:50+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3733d66d9cfbc729cf4aeb077149c4e1f0d89cec65ff138a7de599bd6587602f
 ---
 
 本模块提供订阅管理功能，可以订阅/取消订阅的事件包括：网络状态变化、信号状态变化、通话状态变化、蜂窝数据链路连接状态、蜂窝数据业务的上下行数据流状态、SIM状态变化。
@@ -1388,3 +1388,153 @@ SIM卡类型和状态。
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | slotId | number | 否 | 否 | 卡槽ID。  - 0：卡槽1  - 1：卡槽2 |
+
+## observer.onVoIPStateChange
+
+onVoIPStateChange(callback: Callback<VoIPCallStateInfo>): void
+
+订阅VoIP通话状态变化事件，使用callback方式作为异步方法。
+
+**起始版本：** 26.0.1
+
+**需要权限**：ohos.permission.MANAGE\_CALL\_FOR\_DEVICES
+
+**系统能力**：SystemCapability.Telephony.StateRegistry
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<[VoIPCallStateInfo](js-apis-observer.md#voipcallstateinfo)> | 是 | 回调函数，返回VoIP通话状态信息。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码说明文档](errorcode-universal.md)和[电话子系统错误码](errorcode-telephony.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 8800002 | Service connection failed. |
+| 8800003 | System internal error. |
+
+**示例：**
+
+```ts
+import { observer } from '@kit.TelephonyKit';
+
+let callback: (data: observer.VoIPCallStateInfo) => void = (data: observer.VoIPCallStateInfo) => {
+  console.info(`onVoIPStateChange, appName: ${data.appName}, contactName: ${data.contactName}, ` +
+    `callType: ${data.callType}, callState: ${data.callState} ` +
+    `isVoiceAnswerSupported: ${data.isVoiceAnswerSupported}`);
+}
+
+// 订阅三方VoIP通话状态变化
+try {
+  observer.onVoIPStateChange(callback);
+} catch (err) {
+  console.error(`observer.onVoIPStateChange failed: ${JSON.stringify(err)}`);
+}
+```
+
+## observer.offVoIPStateChange
+
+offVoIPStateChange(callback?: Callback<VoIPCallStateInfo>): void
+
+取消订阅VoIP通话状态变化事件，使用callback方式作为异步方法。
+
+**起始版本：** 26.0.1
+
+**需要权限**：ohos.permission.MANAGE\_CALL\_FOR\_DEVICES
+
+**系统能力**：SystemCapability.Telephony.StateRegistry
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<[VoIPCallStateInfo](js-apis-observer.md#voipcallstateinfo)> | 否 | 回调函数，返回VoIP通话状态信息。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码说明文档](errorcode-universal.md)和[电话子系统错误码](errorcode-telephony.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 8800002 | Service connection failed. |
+| 8800003 | System internal error. |
+
+**示例：**
+
+```ts
+import { observer } from '@kit.TelephonyKit';
+
+let callback: (data: observer.VoIPCallStateInfo) => void = (data: observer.VoIPCallStateInfo) => {
+  console.info(`onVoIPStateChange, appName: ${data.appName}, contactName: ${data.contactName}, ` +
+    `callType: ${data.callType}, callState: ${data.callState} ` +
+    `isVoiceAnswerSupported: ${data.isVoiceAnswerSupported}`);
+}
+
+// 取消订阅：指定回调取消单条订阅
+try {
+  observer.offVoIPStateChange(callback);
+} catch (err) {
+  console.error(`observer.offVoIPStateChange failed: ${JSON.stringify(err)}`);
+}
+
+// 取消订阅：不带参数取消全部订阅
+try {
+  observer.offVoIPStateChange();
+} catch (err) {
+  console.error(`observer.offVoIPStateChange failed: ${JSON.stringify(err)}`);
+}
+```
+
+## VoIPCallStateInfo
+
+VoIP呼叫状态信息。
+
+**起始版本：** 26.0.1
+
+**系统能力：** SystemCapability.Telephony.StateRegistry
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| appName | string | 否 | 否 | VoIP应用程序名称。 |
+| contactName | string | 否 | 否 | VoIP呼叫的联系人姓名。 |
+| callType | [VoIPCallType](js-apis-observer.md#voipcalltype) | 否 | 否 | VoIP呼叫类型。 |
+| callState | [VoIPCallState](js-apis-observer.md#voipcallstate) | 否 | 否 | VoIP呼叫状态。 |
+| isVoiceAnswerSupported | boolean | 否 | 否 | VoIP应用是否支持将当前呼叫作为语音呼叫接听。  - true：支持当前呼叫作为语音呼叫接听。  - false：不支持当前呼叫作为语音呼叫接听。 |
+
+## VoIPCallType
+
+VoIP呼叫类型的枚举。
+
+**起始版本：** 26.0.1
+
+**系统能力：** SystemCapability.Telephony.StateRegistry
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| VOICE | 0 | 语音通话。 |
+| VIDEO | 1 | 视频通话。 |
+
+## VoIPCallState
+
+VoIP通话状态。
+
+**起始版本：** 26.0.1
+
+**系统能力：** SystemCapability.Telephony.StateRegistry
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| IDLE | 0 | VoIP通话空闲。 |
+| INCOMING | 1 | VoIP通话来电。 |
+| OUTGOING | 2 | VoIP通话去电。 |
+| DIALING | 3 | VoIP通话呼叫。 |
+| ANSWERED | 4 | VoIP来电用户点击接听。 |
+| ACTIVE | 5 | VoIP通话已接通。 |
+| HOLDING | 6 | VoIP通话保持。 |
+| DISCONNECTING | 7 | 正在结束VoIP通话。 |
+| DISCONNECTED | 8 | VoIP通话已结束。 |

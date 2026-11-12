@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/archive-file-
 title: 文件归档类压缩解压缩(C/C++)
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 文件压缩解压缩 > 文件归档类压缩解压缩(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:24+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-11-12T09:51:26+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:65ac6714a6608b3e1e541c01903707af5c6ed1e021c5922dff2d50708e3fc84f
 ---
 

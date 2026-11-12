@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-p
 title: 通过sysRefundOrderNo查询退款订单信息
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 平台类商户/服务商 > 支付并签约 > 查询退款订单 > 通过sysRefundOrderNo查询退款订单信息
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:04+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:32e1b0354668f43d7a4c1b849bdb63e076cc9f36ccc508d5fce9c2a16bd0e9c0
+scraped_at: 2026-11-12T09:57:34+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:9de9c49041260c0b72446588714ece7bd91fe40e4fc6c4cddadf71b74e8bdd70
 ---
 
 ## 功能介绍
@@ -79,10 +79,10 @@ PayMercAuth: {"callerId":"10132120***","traceId":"202305151501075707669","time":
 | sign | 是 | String | 签名值。用于开发者对响应报文进行防篡改验证。 |
 | sysRefundOrderNo | 否 | String | 华为支付退款订单号。 |
 | mercRefundOrderNo | 否 | String | 商户退款订单号。最大长度64。 |
-| refundOrderStatus | 是 | String | 退款订单状态：  - REFUND\_CHL\_PROC：处理中  - REFUND\_SUCCESS：成功  - REFUND\_FAILED：失败 |
+| refundOrderStatus | 是 | String | 退款订单状态：  - REFUND\_CHL\_PROC：退款处理中  - REFUND\_SUCCESS：退款成功  - REFUND\_FAILED：退款失败 |
 | finishTime | 否 | String | 退款完成时间，UTC时间格式（yyyy-MM-dd'T'HH:mm:ss.SSSZ）。 |
 | promotionRefundAmount | 否 | Long | 营销退款金额，单位：分。 |
-| refundAmount | 否 | Long | 退款总金额。订单需要退款的金额，该金额不能大于订单金额，单位：分。  **说明：** 如果正向交易使用了营销，该退款金额包含营销金额，华为支付会按业务规则分配营销和买家自有资金分别退多少，默认按比例退款。如不填则默认payerRefundAmount。 |
+| refundAmount | 否 | Long | 退款总金额。订单需要退款的金额，该金额不能大于订单金额，单位：分。  **说明：** 如果正向交易使用了营销，该退款金额包含营销金额，华为支付会按业务规则分配营销和用户自有资金分别退多少，默认按比例退款。如不填则默认全额退款。 |
 | payerRefundAmount | 否 | Long | 退款给用户的金额，单位：分。 |
 | currency | 否 | String | 交易币种单位，最大长度为3。  CNY （默认，当前仅支持该币种单位） |
 | payload | 否 | String | 预留信息，如商户请求时传递该参数，此时会原样返回。 |

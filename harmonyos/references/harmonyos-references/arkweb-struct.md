@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkweb-st
 title: 结构体
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-10-11T07:25:21+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:ae72f0280840f888149ca7c4248a49c1a82afab3282039eaa296cee2dbd8440c
+scraped_at: 2026-11-12T09:55:00+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:800afd30a9930ca5c58b1c90ae6e74f7f6ea4484a6c5e7dd5073c1886bf511d0
 ---
 
 * **[ArkWeb\_AnyNativeAPI](capi-web-arkweb-anynativeapi.md)**
@@ -27,6 +27,7 @@ content_hash: sha256:ae72f0280840f888149ca7c4248a49c1a82afab3282039eaa296cee2dbd
 * **[ArkWeb\_ProxyObjectWithResult](capi-web-arkweb-proxyobjectwithresult.md)**
 * **[ArkWeb\_ControllerAPI](capi-web-arkweb-controllerapi.md)**
 * **[ArkWeb\_ComponentAPI](capi-web-arkweb-componentapi.md)**
+* **[ArkWeb\_ErrorInfo\_](capi-web-arkweb-errorinfo.md)**
 * **[ArkWeb\_WebMessagePortAPI](capi-web-arkweb-webmessageportapi.md)**
 * **[ArkWeb\_WebMessageAPI](capi-web-arkweb-webmessageapi.md)**
 * **[ArkWeb\_CookieManagerAPI](capi-web-arkweb-cookiemanagerapi.md)**

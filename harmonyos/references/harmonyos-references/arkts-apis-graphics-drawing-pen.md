@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Pen)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (Pen)
 category: harmonyos-references
-scraped_at: 2026-10-11T07:27:46+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:74a41d21af6c28677262168d66fcefb54e2a3e170141198cc3e7bf263d3bf6ea
+scraped_at: 2026-11-12T09:56:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:716c6c11c1f6cd40d6a52ba8f6c0dc18dc0186342820d73db11edb0e01f4996c
 ---
 
 画笔对象，用于描述所绘制图形形状的轮廓信息，支持设置颜色、线宽、抗锯齿、透明度、混合模式、转角样式、线帽样式，以及颜色滤波器、蒙版滤波器、路径效果、着色器、阴影层等绘制效果。
@@ -172,7 +172,7 @@ getColorFilter(): ColorFilter
 
 | 类型 | 说明 |
 | --- | --- |
-| [ColorFilter](arkts-apis-graphics-drawing-colorfilter.md) | 返回画笔当前设置的颜色滤波器，可用于查询当前画笔的颜色过滤效果。 |
+| [ColorFilter](arkts-apis-graphics-drawing-colorfilter.md) | 返回画笔当前设置的颜色滤波器，可用于查询当前画笔的颜色过滤效果。当前画笔未设置颜色滤波器时返回undefined。 |
 
 **示例：**
 

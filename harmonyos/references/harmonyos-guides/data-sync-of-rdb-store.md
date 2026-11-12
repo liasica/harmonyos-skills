@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-sync-of-
 title: 关系型数据库跨设备数据同步 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 同应用跨设备数据同步（分布式） > 关系型数据库跨设备数据同步 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:03+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:1f534f12a2d9b4288dd6538e680c46bf91acc833eba0f4e4687e71dd0b70857b
+scraped_at: 2026-11-12T09:51:02+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:2c54983ca153465a258421915317e6f063295d2f0e09702100d09b6b35064c7d
 ---
 
 ## 场景介绍
@@ -26,7 +26,7 @@ content_hash: sha256:1f534f12a2d9b4288dd6538e680c46bf91acc833eba0f4e4687e71dd0b7
 
 ### 数据跨设备同步机制
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/b1lbQHJyRg2cCEqthGmjpQ/zh-cn_image_0000002809049071.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/ff-d0zX_TMSMaosdoVKloQ/zh-cn_image_0000002815397949.jpg)
 
 业务将数据写入关系型数据库后，向数据管理服务发起同步请求。
 
@@ -51,7 +51,7 @@ content_hash: sha256:1f534f12a2d9b4288dd6538e680c46bf91acc833eba0f4e4687e71dd0b7
 
 需要注意的是，该模式下不支持对其他设备同步过来的数据进行修改。这一限制旨在保障数据一致性与同步逻辑的稳定性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/VpxIGBLwQoaGhqvv6GC8fg/zh-cn_image_0000002779849506.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/x0r3ZDjARgG9h-xma8G9-g/zh-cn_image_0000002786518374.jpg)
 
 **单版本表模式**
 
@@ -59,7 +59,7 @@ content_hash: sha256:1f534f12a2d9b4288dd6538e680c46bf91acc833eba0f4e4687e71dd0b7
 
 使用单版本表模式跨设备同步，需要配置schema文件，指定所需同步列以及解冲突列；单版本表模式同步数据支持修改对端设备同步过来的数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/vdCrzpsxQTmZHzhM8mznww/zh-cn_image_0000002779689536.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/CRhPGqD2QAaHzNPmiZ3iRQ/zh-cn_image_0000002786358446.jpg)
 
 ## 约束限制
 
@@ -99,7 +99,6 @@ content_hash: sha256:1f534f12a2d9b4288dd6538e680c46bf91acc833eba0f4e4687e71dd0b7
    import { distributedDeviceManager } from '@kit.DistributedServiceKit';
    import { hilog } from '@kit.PerformanceAnalysisKit';
    import { common } from '@kit.AbilityKit';
-   import { UIContext } from '@kit.ArkUI';
    const DOMAIN = 0x0000;
    ```
 2. 请求权限。
@@ -116,8 +115,7 @@ content_hash: sha256:1f534f12a2d9b4288dd6538e680c46bf91acc833eba0f4e4687e71dd0b7
        securityLevel: relationalStore.SecurityLevel.S3 // 数据库安全级别
      };
      // 打开数据库并设置分布式表
-     const context = new UIContext().getHostContext() as common.UIAbilityContext;
-     relationalStore.getRdbStore(context, STORE_CONFIG).then(async (rdbStore: relationalStore.RdbStore) => {
+     relationalStore.getRdbStore(context!, STORE_CONFIG).then(async (rdbStore: relationalStore.RdbStore) => {
        store = rdbStore;
        await store.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL, AGE INTEGER, SALARY REAL, CODES BLOB)');
        // 将已创建的表设置分布式表。
@@ -309,8 +307,7 @@ let store: relationalStore.RdbStore | undefined = undefined;
     enableCloud: false,
     tableType: relationalStore.DistributedTableType.SINGLE_VERSION
   }
-  const context = new UIContext().getHostContext() as common.UIAbilityContext;
-  relationalStore.getRdbStore(context, STORE_CONFIG).then(async (rdbStore: relationalStore.RdbStore) => {
+  relationalStore.getRdbStore(context!, STORE_CONFIG).then(async (rdbStore: relationalStore.RdbStore) => {
     store = rdbStore;
     await store.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB)');
     await store.executeSql('CREATE TABLE IF NOT EXISTS EMPLOYEE2 (NAME TEXT NOT NULL UNIQUE, AGE INTEGER, SALARY REAL, CODES BLOB, PRIMARY KEY (NAME))');

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 快速验证手机号Button
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 场景化Button > 快速验证手机号Button
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:28+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1c1e1419cbc6d6aef0e757732fb106ebeb9e2e4d903a306002ddc7ea79476cc4
+scraped_at: 2026-11-12T09:52:35+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:49946e6fa2cc04dbe0d9bf6a9082ce211f3ccb044888e8e19f64200a8d8e35f2
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:1c1e1419cbc6d6aef0e757732fb106ebeb9e2e4d903a306002ddc7ea794
 
 ## 约束与限制
 
-快速验证手机号Button支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持TV设备。
+快速验证手机号Button支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持TV设备，从API版本26.0.1开始，新增支持Car设备。
 
 **说明** 
 

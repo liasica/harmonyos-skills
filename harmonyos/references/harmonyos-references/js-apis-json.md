@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-j
 title: "@ohos.util.json (JSON解析与生成)"
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @ohos.util.json (JSON解析与生成)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:47+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:623c78518a53880ee4a2e4e13aae1a94e309684caeeb6b9d32f33e1dcca4fb06
+scraped_at: 2026-11-12T09:53:52+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:fa5929b0bada0a326f7204f0235386deb5a3045a6ed5a6b506d097a9cc9f1890
 ---
 
-本模块提供了将JSON文本转换为JSON对象或值，以及将对象转换为JSON文本等功能。模块基于标准JSON规范实现解析与序列化，通过Transformer机制支持自定义转换，通过BigIntMode策略解决BigInt兼容问题，并提供has/remove操作便于对解析结果进行属性查询与删除。
+本模块提供了将JSON文本转换为JSON对象或值，以及将对象转换为JSON文本等功能。模块基于标准JSON规范实现解析与序列化，通过Transformer机制支持自定义转换，通过BigIntMode策略解决BigInt兼容问题，并提供has/remove操作便于对解析结果进行属性查询与删除；还提供parseSendable接口将JSON文本解析为可跨线程共享的Sendable对象。
 
 **说明** 
 
@@ -64,7 +64,7 @@ type Transformer = (this: Object, key: string, value: Object) => Object | undefi
 
 ## ParseOptions
 
-解析的选项，可定义处理BigInt的模式。
+解析的选项，可定义处理BigInt的模式与解析返回结果的类型。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -73,6 +73,7 @@ type Transformer = (this: Object, key: string, value: Object) => Object | undefi
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | bigIntMode | [BigIntMode](js-apis-json.md#bigintmode) | 否 | 否 | 定义处理BigInt的模式。 |
+| parseReturnType | [ParseReturnType](js-apis-json.md#parsereturntype) | 否 | 是 | 定义解析返回结果的类型，省略时默认为OBJECT。仅对[JSON.parseSendable](js-apis-json.md#jsonparsesendable)生效；[JSON.parse](js-apis-json.md#jsonparse)会忽略该字段。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。 |
 
 ## JSON.parse
 
@@ -322,3 +323,158 @@ let result = JSON.has(inputObj, "name");
 console.info("result = " + result);
 // 打印结果：result = false
 ```
+
+## JSON.parseSendable
+
+parseSendable(text: string, reviver?: SendableTransformer, options?: ParseOptions): ISendable | null
+
+解析JSON字符串，生成可跨线程共享的Sendable对象。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Utils.Lang
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| text | string | 是 | 有效的JSON字符串，需符合JSON语法规范。 |
+| reviver | [SendableTransformer](js-apis-json.md#sendabletransformer) | 否 | 用于转换结果的函数。当前仅接受undefined，传入函数将抛出TypeError（与[ArkTSUtils.ASON.parse](arkts-apis-arkts-utils-ason.md#parse)一致）。默认值是undefined。 |
+| options | [ParseOptions](js-apis-json.md#parseoptions) | 否 | 解析的配置选项，用于控制处理BigInt的模式与解析结果的类型。也可传入仅含bigIntMode的ParseOptions对象，此时parseReturnType默认为OBJECT。默认值是undefined。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [ISendable](js-apis-json.md#isendable) | null | 返回与JSON字符串对应的Sendable对象；当JSON字符串为'null'时返回null；当options.parseReturnType为[ParseReturnType.MAP](js-apis-json.md#parsereturntype)时返回collections.Map。 |
+
+**数字键存储规则：**
+
+* 取值范围在"0"到"4294967294"之间的数字字符串键会作为元素下标存储，任意属性数量下所有键值均可完整访问与枚举。
+* 前导零（如"00"、"01"）、带符号（如"-0"、"+1"）、小数或指数形式（如"1.0"、"1e2"）、超出数组下标范围（如"4294967295"）的键作为普通属性名存储。
+* 重复键以后值为准，且枚举位置保持在首次出现的位置。
+
+**OBJECT与MAP返回说明：**
+
+* [ParseReturnType.OBJECT](js-apis-json.md#parsereturntype)（默认）：返回不可扩展的Sendable对象，其已有属性可更新、不可新增或删除。
+* [ParseReturnType.MAP](js-apis-json.md#parsereturntype)：返回collections.Map，支持任意条数的增删操作，键始终为字符串（"1"不会转换为数值键）。
+
+**示例：**
+
+```ts
+import { JSON, collections, lang } from '@kit.ArkTS';
+
+// 基础用法：解析为Sendable对象，可直接跨Worker/TaskPool传递
+let sendableObj: lang.ISendable | null = JSON.parseSendable('{"name": "John", "age": 30}');
+console.info(`result: ${(sendableObj as object)?.["name"]}`); // 打印结果：result: John
+
+// 86个数字键：任意数量数字键全部可访问
+let parts86: string[] = [];
+for (let i = 0; i < 86; i++) {
+  parts86.push('"' + i + '": ' + i * 2);
+}
+let numericObj86: lang.ISendable | null = JSON.parseSendable('{' + parts86.join(',') + '}');
+console.info(`result: ${(numericObj86 as object)?.[84]}`); // 打印结果：result: 168
+console.info(`result: ${(numericObj86 as object)?.[85]}`); // 打印结果：result: 170
+
+// 1021个数字键：属性数量超过1020时仍全部可访问
+let parts1021: string[] = [];
+for (let i = 0; i < 1021; i++) {
+  parts1021.push('"' + i + '": ' + i);
+}
+let numericObj1021: lang.ISendable | null = JSON.parseSendable('{' + parts1021.join(',') + '}');
+console.info(`result: ${(numericObj1021 as object)?.[0]}`); // 打印结果：result: 0
+console.info(`result: ${(numericObj1021 as object)?.[1020]}`); // 打印结果：result: 1020
+
+// MAP返回类型：任意条数可增删，键为字符串
+let mapOptions: JSON.ParseOptions = {
+  bigIntMode: JSON.BigIntMode.PARSE_AS_BIGINT,
+  parseReturnType: JSON.ParseReturnType.MAP
+};
+let sendableMap: lang.ISendable | null = JSON.parseSendable('{"a": 1, "b": 2}', undefined, mapOptions);
+console.info(`result: ${(sendableMap as collections.Map<string, number>).get("a")}`); // 打印结果：result: 1
+
+// 也可传入仅含bigIntMode的ParseOptions对象（parseReturnType默认为OBJECT）
+let bigOptions: JSON.ParseOptions = {
+  bigIntMode: JSON.BigIntMode.PARSE_AS_BIGINT
+};
+let bigObj: lang.ISendable | null = JSON.parseSendable('{"largeNumber":112233445566778899}', undefined, bigOptions);
+console.info(`result: ${(bigObj as object)?.["largeNumber"]}`); // 打印结果：result: 112233445566778899
+
+// reviver当前仅接受undefined
+try {
+  JSON.parseSendable('{"a": 1}', (key: string, value: lang.ISendable): lang.ISendable | undefined => {
+    return value;
+  });
+} catch (e) {
+  console.error(`error: ${(e as Error).message}`);
+  // 打印结果：error: Parameter error. Reviver only supports undefined currently.
+}
+```
+
+## ParseReturnType
+
+定义Sendable解析结果的类型。仅对[JSON.parseSendable](js-apis-json.md#jsonparsesendable)生效；[JSON.parse](js-apis-json.md#jsonparse)会忽略该字段。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Utils.Lang
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| OBJECT | 0 | 解析结果为不可扩展的Sendable对象，其已有属性可更新、不可新增或删除。 |
+| MAP | 1 | 解析结果为collections.Map，支持任意条数的增删操作。 |
+
+## ISendable
+
+type ISendable = lang.ISendable
+
+ISendable是所有Sendable类型（除null和undefined）的父类型，自身不定义任何方法和属性。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Utils.Lang
+
+| 类型 | 说明 |
+| --- | --- |
+| [lang.ISendable](js-apis-arkts-lang.md#isendable) | 所有Sendable类型的父类型。 |
+
+## SendableTransformer
+
+type SendableTransformer = (this: ISendable, key: string, value: ISendable | undefined | null) => ISendable | undefined | null
+
+用于Sendable JSON解析转换结果的函数类型，与[ArkTSUtils.ASON.Transformer](arkts-apis-arkts-utils-ason.md#transformer)一致：this、value及返回值均为ISendable（而非Object），因为parseSendable的产物为可跨线程共享的Sendable对象。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Utils.Lang
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| this | [ISendable](js-apis-json.md#isendable) | 是 | 所解析的键值对所属的Sendable对象。 |
+| key | string | 是 | 属性名。 |
+| value | [ISendable](js-apis-json.md#isendable) | undefined | null | 是 | 所解析的键值对的值。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [ISendable](js-apis-json.md#isendable) | undefined | null | 返回转换处理后的ISendable对象或undefined或null。 |

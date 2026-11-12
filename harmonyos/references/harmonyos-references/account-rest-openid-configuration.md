@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-r
 title: 获取OpenID Connect配置公开信息
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 扩展能力 > 获取OpenID Connect配置公开信息
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:50+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:9461bd104c9a9e5ec456644d7c8082bf403677540bc86c1e32b4a32798e142fc
+scraped_at: 2026-11-12T09:57:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:70f01d4292e666a6f2b664e91732fb7383e7b893bcb6ea5b02a77829b5c00d83
 ---
 
 **注意** 
@@ -72,7 +72,7 @@ Host: oauth-login.cloud.huawei.com
 | token\_endpoint | 是 | String | 获取Token接入地址。 |
 | revocation\_endpoint | 是 | String | 取消授权接入地址。 |
 | jwks\_uri | 是 | String | 获取JWT公钥信息接入地址。 |
-| response\_modes\_supported | 是 | String[] | 获取身份验证的响应模式。  固定返回["form\_post"]，表示使用HTTP GET/POST表单提交方式返回授权码。 |
+| response\_modes\_supported | 是 | String[] | 获取身份验证的响应模式。  固定返回["form\_post"]，表示使用HTTP POST表单提交方式返回授权码。 |
 | response\_types\_supported | 是 | String[] | 支持的授权类型。固定返回["code"]，表示支持授权码模式。 |
 | subject\_types\_supported | 是 | String[] | 支持的主题类型。  固定返回["pairwise"]，表示OP（OpenID Provider）会为每个RP（Relying Party）提供不同的sub值，从而在不同的RP（Relying Party）之间保护用户的唯一性。 |
 | id\_token\_signing\_alg\_values\_supported | 是 | String[] | ID Token签名支持的算法。  - RS256  - PS256 |

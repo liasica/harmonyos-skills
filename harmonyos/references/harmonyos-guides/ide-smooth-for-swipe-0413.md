@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-smooth-fo
 title: 滑动过程流畅
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 附录 > 体检规则 > 滑动过程流畅
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:24+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:8cde65268df05f73e1996ba0a839ecf689a3dcff8b8158c4a7e4e4f2b21d8a7b
+scraped_at: 2026-11-12T09:53:05+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b5c43ee9c8399d7c5eaa8fe78240540675cc8b6d3a81da403e06022b3d6eb6ef
 ---
 
 ## 规则详情
 
-应用的滑动过程卡顿率≤5ms/s；满帧30FPS的游戏类、地图类和视频类的应用帧率应≥ 29FPS。
+应用的滑动过程卡顿率≤5ms/s；满帧30FPS的游戏类、地图类和视频类的应用帧率应≥29FPS。
 
 ## 检测逻辑
 
@@ -23,20 +23,20 @@ content_hash: sha256:8cde65268df05f73e1996ba0a839ecf689a3dcff8b8158c4a7e4e4f2b21
 
   H:WEB\_LIST\_FLING
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/4SReXS5ZTOWjH2DzoENhzw/zh-cn_image_0000002731541811.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/Ai2OAkiqS5yI6wFSokSfZw/zh-cn_image_0000002779406434.png)
 
 * 查找滑动泳道：H:APP\_LIST\_FLING，如果是web页面，找H:WEB\_LIST\_FLING。
 * 刷新率：查找关键词H:RSHardwareThread::CommitAndReleaseLayers rate，如下图：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/0ykf4SY0S0GSUekiOjV_5Q/zh-cn_image_0000002731541815.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/PdOrOUm8T7qXkKS1JnrvkQ/zh-cn_image_0000002779566412.png)
 * 每帧标准时长(ms)：1000ms/刷新率。
 
   总时长(s)：在以上泳道时间范围内，总时长 =【最后一个“H:Waiting for Present Fence xxxx” 时间（如图标记2）】 - 【第一个“H:Waiting for Present Fence xxxx” 时间（如图标记1）】。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/B_5xTG4HS6OF4cFbf8asDQ/zh-cn_image_0000002701822536.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/HX2o9Oy1QRmXk8V8LJdYKQ/zh-cn_image_0000002779566408.png)
 * 实际每帧时长：【下一个H:Waiting for Present Fence xxxx的起始时间（如图标记2）】 - 【当前H:Waiting for Present Fence xxxx的起始时间（如图标记1）】。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/1-ADn825RPGPEDPkKGq26w/zh-cn_image_0000002731541805.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/B3LmwSwPTa2ieBg3fs0N8Q/zh-cn_image_0000002779406430.png)
 
   每帧丢帧时间(ms)：max（【Waiting for Present Fence实际时长(ms)】- 【每帧时长(ms)】 \* 1.5 , 0）；即每帧耗时大于标准耗时1.5倍时则判定为丢帧。
 

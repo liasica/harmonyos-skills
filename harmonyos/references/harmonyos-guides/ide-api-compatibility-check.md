@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-api-compa
 title: "@compatibility/api-compatibility-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 兼容性规则@compatibility > @compatibility/api-compatibility-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:14+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:9da3419eb4079eafd566f0f9ebfb1ae8f3c14557edc3fd72ec79e1ec8fe3a717
+scraped_at: 2026-11-12T09:53:00+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4ca4d35edbae89874e5b0ff0c416e31974376ddce13578d68f09986a038a4f97
 ---
 
 从DevEco Studio 6.0.1 Beta1开始，Code Linter新增版本兼容性规则扫描。
@@ -115,4 +115,4 @@ struct Test {
 plugin:@compatibility/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/terminology
 title: 蓝牙术语
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 蓝牙 > 蓝牙术语
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:59+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:7d3ea26ff752adda65c860a8d8e3aebe38f7bf824e3b03bb1b0de013a416a91b
+scraped_at: 2026-11-12T09:51:43+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:1e5556b02274f4909c8efd4dc0c4e152c22961b9a4a7228a5fb37148d799a06f
 ---
 
 ## A
@@ -179,6 +179,8 @@ Radio Frequency Communication，即射频通信协议。用于模拟传统的RS2
 ### RSSI
 
 Received Signal Strength Indicator，即接收信号强度指示。通过一个相对值量化无线通信中接收端的信号强度，单位是dBm。可用于评估设备间距离和信号质量。
+
+## S
 
 ### SCO
 

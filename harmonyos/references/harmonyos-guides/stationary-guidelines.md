@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/stationary-gu
 title: Stationary开发指导
 breadcrumb: 指南 > 系统 > 硬件 > Multimodal Awareness Kit（多模态融合感知服务） > Stationary开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:42+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:51:51+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:8747566141fa233865707772f1ab4842e812f4953631263674c7f73abf77f150
 ---
 

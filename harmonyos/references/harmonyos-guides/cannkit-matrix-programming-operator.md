@@ -1,18 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-matrix-programming-operator
 title: 矩阵编程算子实现
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子实现 > 矩阵编程（高阶API） > 矩阵编程算子实现
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC算子实现 > 矩阵编程（高阶API） > 矩阵编程算子实现
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:49+08:00
-doc_updated_at: 2026-05-12
-content_hash: sha256:5158ca3472969babade09e4b684688264fe05a4c15702426041a95d0fcf9a9c8
+scraped_at: 2026-11-12T09:52:42+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8a890823d7f195a8c1bd2031905fe22ccd8d4a9b98592a1a912d25ba275cfd43
 ---
 
 ## 实现流程
 
 上文介绍了Matmul矩阵乘的数据切分方案和数据流。AscendC提供一组Matmul高阶API，封装了这些常用的切分和数据搬运、计算的算法逻辑，方便开发者快速实现Matmul矩阵乘法的运算操作。开发者在host侧通过调用API自动获取Tiling参数，该参数传递到kernel侧后，在初始化操作时传入，通过几个简单的API即可完成矩阵乘操作。以下代码仅包含Matmul的关键步骤，不能直接运行。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/boGmVTJYRoSdDHlNXxsH2w/zh-cn_image_0000002809011391.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/jikyaobiQHq6XREZ5LII9Q/zh-cn_image_0000002786360696.png)
 
 **host侧自动获取Tiling参数的关键步骤介绍如下。**
 
@@ -23,7 +23,7 @@ content_hash: sha256:5158ca3472969babade09e4b684688264fe05a4c15702426041a95d0fcf
    matmul_tiling::MatmulApiTiling cubeTiling(ascendcPlatform);
    ```
 
-   创建对象时需要传入硬件平台信息，硬件平台信息可以通过[GetPlatformInfo](cannkit-getplatforminfo.md)获取。
+   创建对象时需要传入硬件平台信息，硬件平台信息可以通过[GetPlatformInfo](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)获取。
 2. 设置A、B、Bias的数据类型和格式。
 
    ```cpp
@@ -120,7 +120,7 @@ matmul::Matmul<aType, bType, cType, biasType> mm;
 
 ND\_ALIGN用于配置输出矩阵时按照一定的补齐规则进行输出。ND–>ND\_ALIGN变换过程下图所示，矩阵数据类型为uint32\_t，假设输出矩阵输出到UB，原矩阵N方向没有32字节对齐，设置ND\_ALIGN则在其后补0，将其对齐到32字节。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/Trs-KEyxRvSd3E0GvBmApA/zh-cn_image_0000002809051305.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/bad4aORvRkOAN8X3MioPow/zh-cn_image_0000002815560117.png)
 
 ## 设置Shape信息
 
@@ -133,8 +133,8 @@ Host Tiling时可以设置Shape信息，用于Tiling计算；kernel侧运行时�
 
 通过[数据分块(Tiling)](cannkit-basic-knowledge.md#数据分块tiling)的介绍我们已经了解了orgShape(M、N、K)，singleCoreShape(singleCoreM、singleCoreN、singleCoreK)，baseShape(baseM、baseN、baseK)的概念，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/QPS7p727ReS-p9ZT8KA1zw/zh-cn_image_0000002779851740.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/8m7ke-pHT025kSGAad-kQg/zh-cn_image_0000002815400201.png)
 
 除此之外，单核的Matmul Tiling时，实际参与Matmul计算的shape可以是原始shape中的一部分，singleM, singleN, singleK用于表达实际参与Matmul计算的shape，如下图所示。在单核的情况下，singleM, singleN, singleK会透传给singleCoreM, singleCoreN, singleCoreK。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/vSHyNUqCQ6a9bIkJ4bb87Q/zh-cn_image_0000002779691772.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/k1XJc5k4RoKdUprMuSQC5Q/zh-cn_image_0000002786520626.png)

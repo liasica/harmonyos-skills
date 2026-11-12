@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-mind
 title: NNRTDeviceDesc
 breadcrumb: API参考 > AI > MindSpore Lite Kit（昇思推理框架服务） > C API > 结构体 > NNRTDeviceDesc
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:34+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:57:46+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:97c264db32486826553b7d8c9bd0e8ffde1dc8952257542be8d29ef788c92048
 ---
 

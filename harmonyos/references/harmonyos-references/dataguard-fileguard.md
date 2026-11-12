@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/dataguard
 title: fileGuard (文件分级管控)
 breadcrumb: API参考 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > ArkTS API > fileGuard (文件分级管控)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:52+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:afb47be1fa61e25ac47b5f99203c547d40fcf0907f6aa467b71a276a9a5f6cbe
+scraped_at: 2026-11-12T09:55:24+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:241a8efb456dec4ff1c532d844bb1700c30f62f49cf32fd7f34eeb648550399f
 ---
 
 文件分级管控为企业安全管控类[MDM](../harmonyos-guides/mdm-kit.md)应用提供统一企业关键信息资产（KIA）文件的识别和外发管控能力，保证企业数据安全。功能包括扫描全盘目录下的文档，识别KIA文件，并管控KIA文件通过网络发送到非可信网段。
@@ -98,6 +98,30 @@ HDC认证的设备类型枚举。
 | --- | --- | --- |
 | TIME\_BASED | 0 | 表示该进程按时间管控。 |
 | LIFE\_LONG | 1 | 表示该进程按全生命周期持久化管控。 |
+
+## DeletePolicyType
+
+表示待删除的策略类型枚举。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.PCService.FileGuard
+
+**起始版本：** 26.0.1
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| ALL\_POLICY | 0 | 表示所有待删除的策略类型。 |
+| NETWORK\_POLICY | 1 | 表示网络策略。 |
+| KIA\_LIST | 2 | 表示KIA列表。 |
+| BLUETOOTH\_POLICY | 3 | 表示蓝牙策略。 |
+| NEARLINK\_POLICY | 4 | 表示星闪策略。 |
+| TRUST\_APP\_LIST\_POLICY | 5 | 表示可信任应用列表策略。 |
+| TAG\_1 | 10 | 表示自定义TAG1策略。 |
+| TAG\_2 | 11 | 表示自定义TAG2策略。 |
+| TAG\_3 | 12 | 表示自定义TAG3策略。 |
+| TAG\_4 | 13 | 表示自定义TAG4策略。 |
+| TAG\_5 | 14 | 表示自定义TAG5策略。 |
 
 ## ManagedProcessPolicy
 
@@ -384,7 +408,7 @@ openFile(path: string, callback: AsyncCallback<number>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | [默认路径范围](../harmonyos-guides/dataguard-introduction.md#访问限制)下文件的绝对路径。 |
+| path | string | 是 | [默认路径范围](../harmonyos-guides/dataguard-introduction.md#访问限制)下文件的绝对路径。从API版本26.0.1开始，支持使用[fileUri.getUriFromPath](js-apis-file-fileuri.md#fileurigeturifrompath)将文件路径转换为URI后打开文件。 |
 | callback | AsyncCallback<number> | 是 | 回调函数，当打开文件成功，err为undefined，data为获取到的文件描述符，否则为错误对象。 |
 
 **错误码：**
@@ -432,7 +456,7 @@ openFile(path: string): Promise<number>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | [默认路径范围](../harmonyos-guides/dataguard-introduction.md#访问限制)下文件的绝对路径。 |
+| path | string | 是 | [默认路径范围](../harmonyos-guides/dataguard-introduction.md#访问限制)下文件的绝对路径。从API版本26.0.1开始，支持使用[fileUri.getUriFromPath](js-apis-file-fileuri.md#fileurigeturifrompath)将文件路径转换为URI后打开文件。 |
 
 **返回值：**
 
@@ -473,7 +497,7 @@ openFileWrite(path: string, callback: AsyncCallback<number>): void
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-**需要权限：** ohos.permission.FILE\_GUARD\_MANAGER
+**需要权限：** ohos.permission.FILE\_GUARD\_MANAGER或ohos.permission.FILE\_GUARD\_FILE\_WRITE
 
 **系统能力：** SystemCapability.PCService.FileGuard
 
@@ -483,7 +507,7 @@ openFileWrite(path: string, callback: AsyncCallback<number>): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | [用户的个人数据目录](../harmonyos-guides/dataguard-introduction.md#访问限制)下文件的绝对路径。 |
+| path | string | 是 | 读写[用户个人数据目录](../harmonyos-guides/dataguard-introduction.md#访问限制)下的文件，需配置ohos.permission.FILE\_GUARD\_MANAGER权限；  读写“/data/app/el2/三方应用沙箱路径”下的文件，需配置ohos.permission.FILE\_GUARD\_FILE\_WRITE权限，该权限从API版本26.0.1开始支持。 |
 | callback | AsyncCallback<number> | 是 | 回调函数，当只写模式打开文件成功，err为undefined，data为获取到的文件描述符，否则为错误对象。 |
 
 **错误码：**
@@ -521,7 +545,7 @@ openFileWrite(path: string): Promise<number>
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
-**需要权限：** ohos.permission.FILE\_GUARD\_MANAGER
+**需要权限：** ohos.permission.FILE\_GUARD\_MANAGER或ohos.permission.FILE\_GUARD\_FILE\_WRITE
 
 **系统能力：** SystemCapability.PCService.FileGuard
 
@@ -531,7 +555,7 @@ openFileWrite(path: string): Promise<number>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| path | string | 是 | [用户的个人数据目录](../harmonyos-guides/dataguard-introduction.md#访问限制)下文件的绝对路径。 |
+| path | string | 是 | 读写[用户个人数据目录](../harmonyos-guides/dataguard-introduction.md#访问限制)下的文件，需配置ohos.permission.FILE\_GUARD\_MANAGER权限；  读写“/data/app/el2/三方应用沙箱路径”下的文件，需配置ohos.permission.FILE\_GUARD\_FILE\_WRITE权限，该权限从API版本26.0.1开始支持。 |
 
 **返回值：**
 
@@ -584,7 +608,7 @@ setFileTag(path: string, level: SecurityLevel, tag: string, callback: AsyncCallb
 | --- | --- | --- | --- |
 | path | string | 是 | [默认路径范围](../harmonyos-guides/dataguard-introduction.md#访问限制)下文件的绝对路径。 |
 | level | [SecurityLevel](dataguard-fileguard.md#securitylevel) | 是 | 用于标识文件安全等级（外部公开、内部公开、秘密、机密、绝密），需由开发者设定，并配合[queryFileTag](dataguard-fileguard.md#queryfiletag)接口使用。 |
-| tag | string | 是 | 标签名称，使用[updatePolicy](dataguard-fileguard.md#updatepolicy)接口设置自定义标签策略后，根据标签名称进行相应管控。 |
+| tag | string | 是 | 标签名称，字符串长度不超过65536。使用[updatePolicy](dataguard-fileguard.md#updatepolicy)接口设置自定义标签策略后，根据标签名称进行相应管控。 |
 | callback | AsyncCallback<void> | 是 | 回调函数，当异步设置文件属性标签成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
@@ -635,7 +659,7 @@ setFileTag(path: string, level: SecurityLevel, tag: string): Promise<void>
 | --- | --- | --- | --- |
 | path | string | 是 | [默认路径范围](../harmonyos-guides/dataguard-introduction.md#访问限制)下文件的绝对路径。 |
 | level | [SecurityLevel](dataguard-fileguard.md#securitylevel) | 是 | 用于标识文件安全等级（外部公开、内部公开、秘密、机密、绝密），需由开发者设定，并配合[queryFileTag](dataguard-fileguard.md#queryfiletag)接口使用。 |
-| tag | string | 是 | 标签名称，使用[updatePolicy](dataguard-fileguard.md#updatepolicy)接口设置自定义标签策略后，根据标签名称进行相应管控。 |
+| tag | string | 是 | 标签名称，字符串长度不超过65536。使用[updatePolicy](dataguard-fileguard.md#updatepolicy)接口设置自定义标签策略后，根据标签名称进行相应管控。 |
 
 **返回值：**
 
@@ -688,12 +712,12 @@ setFileCustomTag(path: string, tagList: Array<string>, callback: AsyncCallback<v
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | [默认路径范围](../harmonyos-guides/dataguard-introduction.md#访问限制)下文件的绝对路径。 |
-| tagList | Array<string> | 是 | 标签列表，标签数量不超过5个。 |
+| tagList | Array<string> | 是 | 标签列表，标签数量不超过5个，单个标签字符长度不超过255，且标签内容不得包含分号（;）。 |
 | callback | AsyncCallback<void> | 是 | 回调函数，当异步设置文件自定义属性标签成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[企业数据保护服务错误码](errorcode-enterprise-dataguard.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -739,7 +763,7 @@ setFileCustomTag(path: string, tagList: Array<string>): Promise<void>
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | [默认路径范围](../harmonyos-guides/dataguard-introduction.md#访问限制)下文件的绝对路径。 |
-| tagList | Array<string> | 是 | 标签列表，标签数量不超过5个。 |
+| tagList | Array<string> | 是 | 标签列表，标签数量不超过5个，单个标签字符长度不超过255，且标签内容不得包含分号（;）。 |
 
 **返回值：**
 
@@ -749,7 +773,7 @@ setFileCustomTag(path: string, tagList: Array<string>): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[企业数据保护服务错误码](errorcode-enterprise-dataguard.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -793,12 +817,12 @@ unsetFileCustomTag(path: string, tagList: Array<string>, callback: AsyncCallback
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | [默认路径范围](../harmonyos-guides/dataguard-introduction.md#访问限制)下文件的绝对路径。 |
-| tagList | Array<string> | 是 | 标签列表，标签数量不超过5个。 |
+| tagList | Array<string> | 是 | 标签列表，标签数量不超过5个，单个标签字符长度不超过255，且标签内容不得包含分号（;）。 |
 | callback | AsyncCallback<void> | 是 | 回调函数，当异步取消文件自定义属性标签成功，err为undefined，否则为错误对象。 |
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[企业数据保护服务错误码](errorcode-enterprise-dataguard.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -844,7 +868,7 @@ unsetFileCustomTag(path: string, tagList: Array<string>): Promise<void>
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | path | string | 是 | [默认路径范围](../harmonyos-guides/dataguard-introduction.md#访问限制)下文件的绝对路径。 |
-| tagList | Array<string> | 是 | 标签列表，标签数量不超过5个。 |
+| tagList | Array<string> | 是 | 标签列表，标签数量不超过5个，单个标签字符长度不超过255，且标签内容不得包含分号（;）。 |
 
 **返回值：**
 
@@ -854,7 +878,7 @@ unsetFileCustomTag(path: string, tagList: Array<string>): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[企业数据保护服务错误码](errorcode-enterprise-dataguard.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1515,7 +1539,7 @@ getPolicy(): Promise<string | null>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[企业数据保护服务错误码](errorcode-enterprise-dataguard.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -1547,6 +1571,73 @@ guard.getPolicy().then((policy: string | null) => {
 }).catch((err: BusinessError) => {
   console.error(`Failed to get policy. Code: ${err.code}, message: ${err.message}.`);
 });
+```
+
+### deletePolicy
+
+deletePolicy(type: DeletePolicyType, userId?: number): Promise<void>
+
+根据待删除的策略类型，从已配置的管控策略集合中删除对应的策略。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**需要权限：** ohos.permission.SET\_FILE\_GUARD\_POLICY
+
+**系统能力：** SystemCapability.PCService.FileGuard
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | [DeletePolicyType](dataguard-fileguard.md#deletepolicytype) | 是 | 待删除的策略类型枚举值，对应[updatePolicy](dataguard-fileguard.md#updatepolicy)中的策略信息。 |
+| userId | number | 否 | 用户ID，正整数。若指定用户ID，则删除该用户的管控策略；若未指定用户ID，则删除默认管控策略中的对应策略。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 1001700001 | System service error. |
+
+**示例：**
+
+```typescript
+import { fileGuard } from '@kit.EnterpriseDataGuardKit';
+import { osAccount, BusinessError } from '@kit.BasicServicesKit';
+
+async function deletePolicy() {
+  try {
+    let guard: fileGuard.FileGuard = new fileGuard.FileGuard();
+    // 删除网络策略
+    guard.deletePolicy(fileGuard.DeletePolicyType.NETWORK_POLICY).then(() => {
+      console.info(`Succeeded in deleting policy.`);
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to delete policy. Code: ${err.code}, message: ${err.message}.`);
+    });
+
+    // 删除指定用户ID下的所有待删除策略类型下的策略
+    let accountManager: osAccount.AccountManager = osAccount.getAccountManager();
+    let userId: number = await accountManager.getOsAccountLocalId();
+    guard.deletePolicy(fileGuard.DeletePolicyType.ALL_POLICY, userId).then(() => {
+      console.info(`Succeeded in deleting all policy for userId ${userId}.`);
+    }).catch((err: BusinessError) => {
+      console.error(`Failed to delete all policy for userId ${userId}. Code: ${err.code}, message: ${err.message}.`);
+    });
+  } catch (err) {
+    console.error(`Failed to test deletePolicy. Code: ${err.code}, message: ${err.message}.`);
+  }
+}
 ```
 
 ### setKiaFilelist
@@ -1700,7 +1791,7 @@ isKia(path: string): boolean
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[企业数据保护服务错误码](errorcode-enterprise-dataguard.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2118,7 +2209,7 @@ addUnrestrictedApplicationList(appIds: Array<string>, userId?: number): Promise<
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[企业数据保护服务错误码](errorcode-enterprise-dataguard.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2186,7 +2277,7 @@ removeUnrestrictedApplicationList(appIds: Array<string>, userId?: number): Promi
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[企业数据保护服务错误码](errorcode-enterprise-dataguard.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2252,7 +2343,7 @@ getUnrestrictedApplicationList(userId?: number): Promise<Array<string>>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[企业数据保护服务错误码](errorcode-enterprise-dataguard.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2314,7 +2405,7 @@ setHdcAuthenticationKey(devType: AuthenticateDeviceType, keyType: AuthenticateKe
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[企业数据保护服务错误码](errorcode-enterprise-dataguard.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2446,7 +2537,7 @@ getManagedProcessPolicy(): Promise<ManagedProcessPolicy | null>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[企业数据保护服务错误码](errorcode-enterprise-dataguard.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2500,7 +2591,7 @@ setManagedProcessPolicy(policy: ManagedProcessPolicy): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[企业数据保护服务错误码](errorcode-enterprise-dataguard.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2549,7 +2640,7 @@ getManagedProcessList(): Promise<ManagedProcessInfo[]>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[企业数据保护服务错误码](errorcode-enterprise-dataguard.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2602,7 +2693,7 @@ addManagedProcess(processInfo: ManagedProcessInfo): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[企业数据保护服务错误码](errorcode-enterprise-dataguard.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2659,7 +2750,7 @@ removeManagedProcess(processInfo: ManagedProcessInfo): Promise<void>
 
 **错误码：**
 
-以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[企业数据保护服务错误码](errorcode-enterprise-dataguard.md)。
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
@@ -2682,6 +2773,203 @@ guard.removeManagedProcess(processInfo).then(() => {
   console.info(`Succeeded in removing the managed process.`);
 }).catch((err: BusinessError) => {
   console.error(`Failed to remove the managed process. Code: ${err.code}, message: ${err.message}.`);
+});
+```
+
+### queryTrustedProcessUid
+
+queryTrustedProcessUid(): Promise<Array<number>>
+
+获取进程UID的可信任列表。若某进程的UID位于该可信任列表内，则允许其访问标记为KIA的文件。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**需要权限：** ohos.permission.SET\_FILE\_GUARD\_POLICY
+
+**系统能力：** SystemCapability.PCService.FileGuard
+
+**起始版本：** 26.0.1
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<number>> | Promise对象，返回已生效的进程UID的可信任列表。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 1001700001 | System service error. |
+
+**示例：**
+
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileGuard } from '@kit.EnterpriseDataGuardKit';
+
+let guard: fileGuard.FileGuard = new fileGuard.FileGuard();
+guard.queryTrustedProcessUid().then((uids: number[]) => {
+  console.info(`Succeeded in querying trusted process uid list. uids: ${uids.toString()}`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to query trusted process uid list. Code: ${err.code}, message: ${err.message}.`);
+});
+```
+
+### addTrustedProcessUid
+
+addTrustedProcessUid(uids: Array<number>): Promise<void>
+
+添加进程UID到可信任列表中。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**需要权限：** ohos.permission.SET\_FILE\_GUARD\_POLICY
+
+**系统能力：** SystemCapability.PCService.FileGuard
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uids | Array<number> | 是 | 待添加的进程UID列表。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 1001700001 | System service error. |
+
+**示例：**
+
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileGuard } from '@kit.EnterpriseDataGuardKit';
+
+let guard: fileGuard.FileGuard = new fileGuard.FileGuard();
+let uids: number[] = [1000, 1001];
+guard.addTrustedProcessUid(uids).then(() => {
+  console.info(`Succeeded in adding trusted process uid.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to add trusted process uid. Code: ${err.code}, message: ${err.message}.`);
+});
+```
+
+### removeTrustedProcessUid
+
+removeTrustedProcessUid(uids: Array<number>): Promise<void>
+
+删除可信任列表中的进程UID。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**需要权限：** ohos.permission.SET\_FILE\_GUARD\_POLICY
+
+**系统能力：** SystemCapability.PCService.FileGuard
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uids | Array<number> | 是 | 待删除的进程UID列表。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 801 | Capability not supported. |
+| 1001700001 | System service error. |
+
+**示例：**
+
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileGuard } from '@kit.EnterpriseDataGuardKit';
+
+let guard: fileGuard.FileGuard = new fileGuard.FileGuard();
+let uids: number[] = [1000, 1001];
+guard.removeTrustedProcessUid(uids).then(() => {
+  console.info(`Succeeded in removing trusted process uid.`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to remove trusted process uid. Code: ${err.code}, message: ${err.message}.`);
+});
+```
+
+### setKiaFileProtectionMode
+
+setKiaFileProtectionMode(protectionEnabled: boolean): Promise<void>
+
+配置是否启用FileProtectionMode特性。使用Promise异步回调。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**需要权限：** ohos.permission.SET\_FILE\_GUARD\_POLICY
+
+**系统能力：** SystemCapability.PCService.FileGuard
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| protectionEnabled | boolean | 是 | 是否启用FileProtectionMode特性。false表示不启用；true表示启用该特性。  启用该特性后，若在三方应用未启动时直接通过该应用打开KIA文件，此操作将不受kia\_file\_access\_toggle设置限制，应用可直接读取文件内容。此时，打开文件的窗口具备防截屏功能，并支持显示通过[setKiaWatermarkImage](dataguard-fileguard.md#setkiawatermarkimage)配置的水印图片。默认启用。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[ArkTS API错误码](errorcode-enterprise-dataguard.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
+| 801 | Capability not supported. Possible causes:  1. The hardware does not support the capability;  2. The chip does not support the capability;  3. A dependent service feature is not supported. |
+| 1001700001 | System service error. |
+
+**示例：**
+
+```typescript
+import { BusinessError } from '@kit.BasicServicesKit';
+import { fileGuard } from '@kit.EnterpriseDataGuardKit';
+
+let guard: fileGuard.FileGuard = new fileGuard.FileGuard();
+let protectionEnabled: boolean = true;
+guard.setKiaFileProtectionMode(protectionEnabled).then(() => {
+  console.info(`Succeeded in setting KIA file protection mode.`);
+}).catch((error: BusinessError) => {
+  console.error(`Failed to set KIA file protection mode. Code: ${error.code}, message: ${error.message}.`);
 });
 ```
 

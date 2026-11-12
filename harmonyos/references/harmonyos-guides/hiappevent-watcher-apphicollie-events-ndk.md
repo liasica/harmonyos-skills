@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅任务执行超时事件（C/C++）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 任务执行超时事件 > 订阅任务执行超时事件（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:46+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:6d63af96d024f40566f5a429e8d7ed98a0487b1dc5b3f7087d34208761767559
+scraped_at: 2026-11-12T09:51:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:2f448a043c941093fdd1727921987ddc0555939f80a0acbbc6b212ccc27c922b
 ---
 
 ## 简介
@@ -252,7 +252,10 @@ content_hash: sha256:6d63af96d024f40566f5a429e8d7ed98a0487b1dc5b3f7087d342087617
        // 开发者可以设置订阅触发回调的条件，此处是设置新增事件打点数量为1个时，触发onTrigger回调。
        OH_HiAppEvent_SetTriggerCondition(appHicollieWatcherT, 1, 0, 0);
        // 使观察者开始监听订阅的事件。
-       OH_HiAppEvent_AddWatcher(appHicollieWatcherT);
+       int ret = OH_HiAppEvent_AddWatcher(appHicollieWatcherT);
+       if (ret != 0) {
+           OH_LOG_ERROR(LogType::LOG_APP, "HiAppEvent AddWatcher failed, ret=%{public}d", ret);
+       }
        return {};
    }
    ```
@@ -280,8 +283,10 @@ content_hash: sha256:6d63af96d024f40566f5a429e8d7ed98a0487b1dc5b3f7087d342087617
        HiCollie_ErrorCode errorCode = OH_HiCollie_SetTimer(param, &id);  // 注册HiCollieTimer函数执行时长超时检测一次性任务
        if (errorCode == HICOLLIE_SUCCESS) {  // HiCollieTimer任务注册成功
            OH_LOG_INFO(LogType::LOG_APP, "HiCollieTimer taskId: %{public}d", id); // 打印任务id
-           sleep(2);  // 模拟执行耗时函数，在这里简单的将线程阻塞2s
+           sleep(2);  // 模拟执行耗时函数，在这里简单地将线程阻塞2s
            OH_HiCollie_CancelTimer(id);  // 根据id取消已注册任务
+       } else {
+           OH_LOG_INFO(LogType::LOG_APP, "OH_HiCollie_SetTimer failed, errorCode is %{public}d", errorCode);
        }
        return nullptr;
    }

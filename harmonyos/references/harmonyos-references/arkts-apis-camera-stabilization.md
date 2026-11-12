@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (Stabilization)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (Stabilization)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:27+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:b0ddbe9e9c0baf4289cfac4688072c95dbc173af27a97440ba14b93e1b980350
+scraped_at: 2026-11-12T09:56:32+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e20bdf3122ae78f127309d27cbb4e5ff42ee5c2ffd8b47f5baded8b1fceb441b
 ---
 
 Stabilization继承自[StabilizationQuery](arkts-apis-camera-stabilizationquery.md)。
@@ -73,6 +73,10 @@ setVideoStabilizationMode(mode: VideoStabilizationMode): void
 
 设置视频防抖模式。需要先检查设备是否支持对应的防抖模式，可以通过[isVideoStabilizationModeSupported](arkts-apis-camera-stabilizationquery.md#isvideostabilizationmodesupported11)方法判断所设置的模式是否支持。建议在[commitConfig](arkts-apis-camera-session.md#commitconfig11-1)与[Start](arkts-apis-camera-session.md#start11-1)之间设置视频防抖。
 
+**说明** 
+
+从API版本12开始，通过该接口设置HIGH视频防抖模式后，为保障多场景下的视频防抖表现，调用[getActiveVideoStabilizationMode](arkts-apis-camera-stabilization.md#getactivevideostabilizationmode11)查询当前正在使用的视频防抖模式时，返回结果为AUTO模式，即自动进行选择防抖算法。
+
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
@@ -98,7 +102,9 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 function setVideoStabilizationMode(videoSession: camera.VideoSession): void {
   try {
-    videoSession.setVideoStabilizationMode(camera.VideoStabilizationMode.OFF);
+    if (videoSession.isVideoStabilizationModeSupported(camera.VideoStabilizationMode.OFF)) {
+      videoSession.setVideoStabilizationMode(camera.VideoStabilizationMode.OFF);
+    }
   } catch (error) {
     // 失败返回错误码error.code并处理。
     let err = error as BusinessError;

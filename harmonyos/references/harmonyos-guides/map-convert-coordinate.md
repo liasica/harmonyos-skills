@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-convert-c
 title: 坐标纠偏
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图计算工具 > 坐标纠偏
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:22+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:728f3ee555fb8e4a15d76c7c7a40ff9645e76fb255a39ff2bc66ec3850a98552
+scraped_at: 2026-11-12T09:52:30+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a77c21493d907fffe1d6bcd42ee0d617115d49c463c5e10f3b81b1f167fcc06e
 ---
 
 ## 坐标系知识介绍
@@ -52,18 +52,21 @@ import { map, mapCommon } from '@kit.MapKit';
 * [rectifyCoordinate](../harmonyos-references/map-map-functions.md#rectifycoordinate)接口仅支持WGS84坐标系转为GCJ02坐标系。
 
 ```typescript
-let locations: Array<mapCommon.CoordinateLatLng> = [
-  {
-    // 输入香港坐标和WGS84坐标系，若当前地图站点使用GCJ02坐标系，返回GCJ02坐标系和转换后的香港坐标（输入的坐标转换为GCJ02坐标系）
-    coordinateType: mapCommon.CoordinateType.WGS84,
-    location: {
-      latitude: 22.280556,
-      longitude: 114.984000
+async handleCoordinateRectify(): Promise<void> {
+  let locations: mapCommon.CoordinateLatLng[] = [
+    {
+      // 输入香港坐标和WGS84坐标系，若当前地图站点使用GCJ02坐标系，返回GCJ02坐标系和转换后的香港坐标（输入的坐标转换为GCJ02坐标系）
+      coordinateType: mapCommon.CoordinateType.WGS84,
+      location: {
+        latitude: 22.280556,
+        longitude: 114.984000
+      }
     }
-  }
-];
-// 包含await的外层方法需要添加async关键字
-let arr: Array<mapCommon.CoordinateLatLng> = await map.rectifyCoordinate(this.getUIContext().getHostContext(), locations);
+  ];
+  // 包含await的外层方法需要添加async关键字
+  let arr: mapCommon.CoordinateLatLng[] = await map.rectifyCoordinate(this.getUIContext()
+    .getHostContext(), locations);
+}
 ```
 
 ### 坐标转换
@@ -72,8 +75,8 @@ let arr: Array<mapCommon.CoordinateLatLng> = await map.rectifyCoordinate(this.ge
 
 ```typescript
 let wgs84Position: mapCommon.LatLng = {
-  latitude: 30,
-  longitude: 118
+  latitude: 30.274414,
+  longitude: 118.137695
 };
 // 转换经纬度坐标
 let gcj02Position: mapCommon.LatLng =

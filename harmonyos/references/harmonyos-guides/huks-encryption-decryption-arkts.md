@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-encrypti
 title: 加解密(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥使用 > 加密/解密 > 加解密(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:41+08:00
-doc_updated_at: 2026-10-16
+scraped_at: 2026-11-12T09:51:40+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:5c2875a1b9a2805d5842e34bc013416f646912a15f88f94146cb1cdf6667c215
 ---
 

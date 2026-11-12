@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-get-
 title: 检测环境中的平面（ArkTS）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 平面识别 > 检测环境中的平面（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:48+08:00
-doc_updated_at: 2026-08-14
-content_hash: sha256:14e672726d0b9c76c0576bffc7a46b4341d67406a3e35cf3b8a4724d93c647e6
+scraped_at: 2026-11-12T09:52:10+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:36c9fc3847ed252d25c32dbd0b782542e0ad21f276a04cd5c073f1ac2664d887
 ---
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/HarmonyOS_Samples/arengine_samplecode_clientdemo_arkts)。
@@ -58,9 +58,11 @@ export function ARWorldBuilder(): void {
 // ...
 @Component
 struct ARWorld {
+  pageInfos: NavPathStack = new NavPathStack();
   @State arContext?: arViewController.ARViewContext = undefined;
   @State context: Context = this.getUIContext().getHostContext() as Context;
   @State statusBarHeight: number = 0;
+  private params: arEngine.ARConfig = { type: arEngine.ARType.WORLD };
   // ...
   build(): void {
     NavDestination() {
@@ -77,11 +79,14 @@ struct ARWorld {
         }
       }
     }
-    .onAppear(async () => {
+    .onAppear(() => {
       this.initARView();
+      this.getAvoidArea();
     })
-    .onWillDisappear(async () => {
-      await this.stopARView();
+    .onWillDisappear(() => {
+      releaseFrame(frame);
+      this.stopARView();
+      this.clearGlobalVariables();
     })
     .onShown(() => {
       this.resumeARView();
@@ -89,23 +94,27 @@ struct ARWorld {
     .onHidden(() => {
       this.pauseARView();
     })
+    .onReady(ctx => {
+      this.params = ctx.pathInfo.param as arEngine.ARConfig;
+    })
     .hideTitleBar(true)
     .hideBackButton(true)
     .hideToolBar(true)
   }
   // ...
   private initARView(): void {
-    Scene.load().then(async (scene: Scene) => {
+    isStopFrameUpdate = false;
+    Scene.load().then((scene: Scene) => {
       let viewContext: arViewController.ARViewContext = new arViewController.ARViewContext();
       viewContext.scene = scene;
       viewContext.callback = new ARViewCallbackImpl();
       viewContext.config = {
         type: arEngine.ARType.WORLD,
         planeFindingMode: arEngine.ARPlaneFindingMode.HORIZONTAL_AND_VERTICAL,
-        powerMode: arEngine.ARPowerMode.NORMAL,
+        powerMode: this.params?.powerMode,
         semanticMode: arEngine.ARSemanticMode.NONE,
-        poseMode: arEngine.ARPoseMode.GRAVITY,
-        depthMode: arEngine.ARDepthMode.AUTOMATIC,
+        poseMode: this.params?.poseMode,
+        depthMode: this.params?.depthMode,
         meshMode: arEngine.ARMeshMode.DISABLED,
         focusMode: arEngine.ARFocusMode.AUTO
       }

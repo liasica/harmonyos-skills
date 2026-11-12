@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-cl
 title: 快速入门
 breadcrumb: 指南 > DevEco CLI > 快速入门
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:43+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:dcc33c64346520c0bfc43ed8c9a2db995178bab77368311aed7391b1bc7b1d6f
+scraped_at: 2026-11-12T09:53:25+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e48db6c4eac3d01341481e5f3fe7d8912ca9fd921d867ff1e75c6a03cd230e44
 ---
 
 ## 环境准备
@@ -16,31 +16,33 @@ DevEco CLI支持在Windows、macOS、Linux和鸿蒙电脑上运行。
 
 ### 搭建环境（Windows/macOS/Linux）
 
-* 下载和安装[DevEco Studio](https://developer.huawei.com/consumer/cn/deveco-studio/) 6.0.0及以上版本。
 * 安装[Node.js](https://nodejs.org/)，推荐使用22及以上版本。
+* 安装[DevEco Studio](https://link.gitcode.com/?target=https://developer.huawei.com/consumer/cn/download/&from=https://gitcode.com/openharmony-sig/deveco-cli&lang=zh&theme=white) 6.0.0及以上版本，或者安装[Command Line Tools](https://link.gitcode.com/?target=https://developer.huawei.com/consumer/cn/download/&from=https://gitcode.com/openharmony-sig/deveco-cli&lang=zh&theme=white) 26.0.0及以上版本。
 
 **说明** 
 
-在Linux环境运行时，需要手动配置环境变量来指定工具链路径。
+* 在macOS环境中，DevEco Studio需使用默认的安装路径，安装在~/Applications或/Applications目录下。
 
-```shell
-export DEVECO_CLI_CLI_PATH=/opt/command-line-tools
-```
+* 在Linux环境运行时，需要手动配置环境变量来指定工具链路径。
+
+  ```shell
+  export DEVECO_CLI_CLT_PATH=/opt/command-line-tools
+  ```
 
 ### 搭建环境（鸿蒙电脑）
 
-1. 在鸿蒙电脑上查看**设置** **> 系统**中**开发者选项**是否存在，如果不存在，可在**设置 >** **具体的设备名称**中，连续七次单击**软件****版本**，直到提示“开启开发者选项”，点击**确认开启**后输入PIN码（如果已设置），设备将自动重启，请等待设备完成重启。
+1. 在鸿蒙电脑上查看**设置** **> 系统**中**开发者选项**是否存在，如果不存在，可在**设置 > 具体的设备名称**中，连续七次单击**软件****版本**，直到提示“开启开发者选项”，点击**确认开启**后输入PIN码（如果已设置），设备将自动重启，请等待设备完成重启。
 2. 如需使用多设备预览器，需要打开DevEco Studio，并且鸿蒙电脑需要在**设置 > 系统 >** **开发者选项**中，打开**无线调试**开关。
 3. DevEco CLI通过npm进行分发，安装前需要先下载和安装[DevEco Studio](ide-hmos-software-install.md)或[Command Line Tools](ide-hmos-commandline-get.md)。
 
    如果安装DevEco Studio，按以下步骤配置环境变量。
 
-   1. 执行以下命令，打开环境变量配置文件。
+   1. 在终端中执行以下命令，打开环境变量配置文件。
 
       ```screen
       vim ~/.zshrc
       ```
-   2. 添加Node.js环境变量。hmos-clt\_x.x.x请根据实际情况进行修改，可在鸿蒙电脑终端或DevEco Studio终端中进入/data/service/hnp/hmos-clt.org目录查看。
+   2. 在.zshrc文件中添加Node.js环境变量。hmos-clt\_x.x.x请根据实际情况进行修改，可在鸿蒙电脑终端或DevEco Studio终端中进入/data/service/hnp/hmos-clt.org目录查看。
 
       ```shell
       export PATH=/data/service/hnp/hmos-clt.org/hmos-clt_x.x.x/node/bin:$PATH
@@ -138,13 +140,14 @@ devecocli update
 **说明** 
 
 * 鸿蒙电脑版DevEco CLI仅支持通过npm install -g @deveco/deveco-cli命令安装尝鲜版。
+
 * 安装命令中的@stable标签是可选项，带有@stable标签表示下载安装稳定版本，未带有@stable标签表示下载安装最新版本。
 
 ## 首次使用
 
 1. 初始化。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/BvILLi-MSWm4yNzYs03w_g/zh-cn_image_0000002701823622.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/ScVhKupASgi_1GdwDASbYw/zh-cn_image_0000002808886949.png)
 2. 创建一个HarmonyOS应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/5sqady3aRq2ccRWF-aUOGQ/zh-cn_image_0000002701663700.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/X2MrUb0ASwaKhVarUBJLVQ/zh-cn_image_0000002808766869.png)

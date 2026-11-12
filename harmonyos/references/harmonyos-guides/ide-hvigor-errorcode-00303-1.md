@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-er
 title: 配置错误码
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 构建报错排查 > 编译构建错误码 > 配置错误码
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:36+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:ac28ec7882f9de2f8105854ccc21e32e7fe0956ed6c2de99aa6d16f683f07fd5
+scraped_at: 2026-11-12T09:53:09+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7baba8bfecabd045aa51909a4a8c7b90fc4a72d41090c750776c5f6b9a9ba00a
 ---
 
 ## 00303002 找不到某个任务对应的模块
@@ -61,6 +61,44 @@ Cannot find hvigor task XXX in module YYY required by ZZZ.
 **处理步骤**
 
 确保hvigorfile.ts中的依赖任务名称配置正确。
+
+## 00303005 当前工程不支持addonSdk能力
+
+**错误信息**
+
+Dependency 'XXX' contains addonSdk configuration in its oh-package.json5. This capability is only available in OpenHarmony Stage model projects with compatibleSdkVersion >= 26.0.0. At file: YYY.
+
+**错误描述**
+
+当前工程不支持addonSdk能力，但依赖XXX的oh-package.json5中配置了addonSdk为true。
+
+**可能原因**
+
+当前工程配置的依赖包的oh-package.json5中配置了addonSdk为true，并且工程是HarmonyOS工程、FA模型、或compatibleSdkVersion低于26.0.0。
+
+**处理步骤**
+
+若不需要该能力，移除该依赖，或去掉依赖包的oh-package.json5中的addonSdk配置。
+
+若需要使用，将工程改为Stage模型的OpenHarmony工程，并把compatibleSdkVersion设置为26.0.0或以上。
+
+## 00303006 模块级oh-package.json5不允许声明带有addonSdk配置的依赖
+
+**错误信息**
+
+Dependency 'XXX' with addonSdk configuration is declared in module-level , which is not allowed. At file: YYY.
+
+**错误描述**
+
+模块级oh-package.json5不允许声明带有addonSdk配置的依赖。
+
+**可能原因**
+
+在模块级oh-package.json5中声明的依赖包的oh-package.json5中配置了addonSdk为true。
+
+**处理步骤**
+
+将该依赖从模块级oh-package.json5移除，放到工程级oh-package.json5中。
 
 ## 00303010 工程级build-profile.json5的modules字段应该是数组类型
 
@@ -4139,7 +4177,8 @@ bundledAllDependencies配置为true，但bundledDeclare未配置或配置为fals
 
 **错误信息**
 
-One or more native C++ modules failed to build. Failed modules: XXX. Error details: YYY.
+1. Exceptions happened while executing YYY.
+2. One or more native C++ modules failed to build. Failed modules: XXX. Error details: YYY.
 
 **错误描述**
 
@@ -4147,27 +4186,15 @@ C++模块构建失败。
 
 **可能原因**
 
-Cmake/Ninja配置文件报错。
+**场景一：**构建日志中包含“xxx.so is incompatible with elf\_x86\_64.”，原因是链接器试图将xxx.so链接到一个期望为x86\_64架构的目标文件中，但xxx.so本身不是x86\_64架构，它可能是arm64-v8a、armeabi-v7a或其他架构。
+
+**场景二：**构建日志中包含"unknown type name XXX"、"expected unqualified-id"、"expected identifier"、"source file is not valid UTF-8"等，原因可能是安全软件（加密软件、杀毒软件）对源文件进行了加密或篡改导致的。
+
+**场景三：**在构建包含C/C++代码的工程时，若工程所在目录层级过深、DevEco Studio安装路径过长，或编译参数数量较多，生成的编译命令可能超过操作系统允许的命令行长度上限，从而导致编译失败。
 
 **处理步骤**
 
-根据报错信息YYY检查模块XXX，常见的报错信息及处理步骤如下。
-
-### .so文件和目标CPU架构不兼容
-
-**错误信息**
-
-xxx.so is incompatible with elf\_x86\_64.
-
-**错误描述**
-
-在Native C++工程编译过程中，链接阶段失败，提示xxx.so与elf\_x86\_64不兼容。
-
-**可能原因**
-
-链接器试图将xxx.so链接到一个期望为x86\_64架构的目标文件中，但xxx.so本身不是x86\_64架构，它可能是arm64-v8a、armeabi-v7a或其他架构。
-
-**处理步骤**
+**场景一：**
 
 1. 明确指定CPU架构，避免同时编译所有架构，有两种方式。
    * 在模块级build-profile.json5中配置abiFilters，示例如下。
@@ -4182,28 +4209,14 @@ xxx.so is incompatible with elf\_x86\_64.
    * 在CMakeLists.txt中增加架构判断分支，根据OHOS\_ARCH变量动态链接不同架构的库，确保链接的库与当前编译架构一致。
 2. 修改配置后，清理缓存并重新构建。
 
-### 编码异常导致解析失败
-
-**错误信息**
-
-包含以下一个或多个错误信息。
-
-* unknown type name XXX
-* expected unqualified-id
-* expected identifier
-* source file is not valid UTF-8
-
-**错误描述**
-
-编码异常导致解析失败，如类型未定义、语法错误等。
-
-**可能原因**
-
-可能是安全软件（加密软件、杀毒软件）对源文件进行了加密或篡改导致的。
-
-**处理步骤**
+**场景二：**
 
 将工程目录/文件添加到安全软件白名单，恢复相应文件内容，确认文件完整无损坏。
+
+**场景三：**
+
+1. 将工程迁移至路径层级较浅的目录。
+2. 将DevEco Studio安装至更短的路径（如盘符根目录下），以缩减SDK及工具链相关路径的长度。
 
 ## 00303303 skillProfiles的abilityName仅支持UIAbility或service类型的ExtensionAbility
 

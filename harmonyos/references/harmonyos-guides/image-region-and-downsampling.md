@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-region-
 title: 图片区域解码与下采样(ArkTS)
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片解码 > 图片区域解码与下采样(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:58+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:52:05+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:6a2e0667391d96289e627dc404f11be4c8bff7c9e2d34fe889d84201d2852885
 ---
 

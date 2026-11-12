@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-scenes-s
 title: 推送场景化消息
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 端云调试 > 推送场景化消息
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:41+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:189eee994c913c15f2e2b7eb0b8391db33c08f8105d5343d413c7610be754a98
+scraped_at: 2026-11-12T09:52:34+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:951627d59c1b24553b07700cb90e12f9b31c44f5c997502d49580d4652e95a3c
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ Push Kit支持您使用HTTPS协议接入云侧，使用场景化V3接口发送�
 | 1 | 卡片刷新消息 |
 | 2 | 语音播报消息 |
 | 6 | 后台消息 |
-| 7 | 实况窗消息（TV、PC/2in1不支持） |
+| 7 | 实况窗消息（TV、PC/2in1、Car不支持） |
 | 10 | 应用内通话消息（Wearable、TV、PC/2in1不支持） |
 
 有关场景化消息的更详细说明，请参见REST API-[场景化消息API接口](../harmonyos-references/push-scenariozed-api-intro.md#场景介绍)。
@@ -89,15 +89,15 @@ Push Kit提供了基于Java语言的服务端示例代码（包括申请鉴权�
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，点击“开发与服务”，在项目列表中选择对应的项目，左侧导航栏选择“项目设置”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/2w7IKDk5S56QP5kp3cUjgQ/zh-cn_image_0000002779851584.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/UmDzw_7CScWsMM6PGfkDPA/zh-cn_image_0000002815559961.png)
 2. 在项目列表中找到您的项目，通过“增长 > 推送服务 > 推送通知（V3 Beta）”导航到“推送通知（V3 Beta）”页签。在该页签下点击“添加推送通知”新建推送任务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/wMXtRncXR_ezvZv9nw0Pvg/zh-cn_image_0000002779691616.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/DcJn-j8jQ5Cym3uHjtlsIQ/zh-cn_image_0000002815400045.png)
 3. 这里以Alert消息举例，配置参数如下。
 
    * **配置推送任务**
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/rhLIvSMtS0uQm2WWrdWt3g/zh-cn_image_0000002809011237.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/hIs6hInVQl65xCZslG6YLg/zh-cn_image_0000002786520470.png)
 
      | 字段值 | 说明 |
      | --- | --- |
@@ -106,7 +106,7 @@ Push Kit提供了基于Java语言的服务端示例代码（包括申请鉴权�
      | 场景化类型 | 场景化消息类型，**当前仅支持Alert消息**。 |
    * **配置推送内容-通用参数**
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/x0KeJOk7SKihE--MD09mDw/zh-cn_image_0000002809051151.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/9YaVQgg1TLCWeu5xBcwz2w/zh-cn_image_0000002786360542.png)
 
      | 字段值 | 说明 |
      | --- | --- |
@@ -117,14 +117,14 @@ Push Kit提供了基于Java语言的服务端示例代码（包括申请鉴权�
      | 回执ID (receiptId) | 对应场景化接口中的receiptId参数，此字段为可选字段。  回执ID指定本次下行消息的回执地址及配置。该回执ID可以在[配置回执参数](push-msg-receipt.md#配置回执参数)中查看。 |
    * **配置推送内容-发送目标设备**
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/STP3wdKNSoiA7-0DnLbmyA/zh-cn_image_0000002779851586.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/C05POs1yQ5ytUbEeZB7ssw/zh-cn_image_0000002815559963.png)
 
      | 字段值 | 说明 |
      | --- | --- |
      | 设备Token (token) | 对应场景化接口中的token参数，此字段为必填字段。  按照Token向目标用户推送消息。  **样例：MAMzL\*\*\*\*\*\*\*** |
    * **配置推送内容-消息内容**
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/URcgxiDMT52Eat3i9HRVqg/zh-cn_image_0000002779691618.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/zvYn2FRSS0qUg9GnxbO9UA/zh-cn_image_0000002815400047.png)
 
      | 字段值 | 说明 |
      | --- | --- |
@@ -134,7 +134,7 @@ Push Kit提供了基于Java语言的服务端示例代码（包括申请鉴权�
      | 点击通知动作 (actionType) | 对应场景化接口中的clickAction中actionType参数，此字段为必填字段。  点击消息后触发的动作，可选择打开应用首页、自定义action页面或自定义intentUri页面。 |
 4. 当您完成上述步骤后，点击右上方“提交”按钮即可推送消息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/W87EWRPBQa6aaaLVYh-CNQ/zh-cn_image_0000002809011239.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/6TOtpMKZQ0ipqIPSFCyrBQ/zh-cn_image_0000002786520472.png)
 
    **说明** 
 

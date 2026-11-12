@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hitracechain-
 title: 使用HiTraceChain打点（C/C++）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 分布式调用链跟踪 > 使用HiTraceChain打点（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:47+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:51:56+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:707d0eff0ebddd89d13ea15122670d8950e98bd5a45eccace102f6857bbd0dca
 ---
 

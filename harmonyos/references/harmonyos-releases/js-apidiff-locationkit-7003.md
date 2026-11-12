@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-locationkit-7003
 title: Location Kit
-breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > OS平台能力 > API变更清单 > 26.0.0 Release引入的API > Location Kit
+breadcrumb: 版本说明 > 更多版本 > 26.0.0 > OS平台能力 > API变更清单 > 26.0.0 Release引入的API > Location Kit
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:49:02+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:49:55+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:a5f30c665f7aa0aa9c3b952a7ad1e8120f4db6f3f4ef53f474b951365d43be06
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-aipp-
 title: AIPP部署
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部署 > AIPP部署
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:48+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:f15f7d97786a94322053312af39358db8ec61216b0033d626bc80c3e8cded68a
+scraped_at: 2026-11-12T09:52:41+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b79e4db5af34167d90e6e510180c2576cc8d4110d162b61a4eab5bba7fde8393
 ---
 
 ## 基本概念
@@ -14,7 +14,7 @@ AIPP部署是指动态AIPP推理时开发者按需配置动态AIPP参数，从�
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/_VpgIr2qSDWON9KSbSIqvQ/zh-cn_image_0000002779691746.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/yRGzQhdlS0KZJmStJSeshA/zh-cn_image_0000002786520600.png)
 
 ## 接口说明
 
@@ -73,7 +73,7 @@ AIPP部署是指动态AIPP推理时开发者按需配置动态AIPP参数，从�
 
 ## 示例说明
 
-假定当前有一个模型，训练时采用的训练集为RGB888的图片，使能了动态AIPP之后，可以接收YUYV类型的图片作为模型推理的输入。当用于模型推理的图片尺寸与训练集不一致时，还可以使用AIPP的裁剪、缩放和填充功能，改变输入图片尺寸。以下示例代码基于NDK接口，实现AIPP的裁剪、缩放和填充等功能，将一张YUYV尺寸为480x480的图片预处理为224x224的输入。
+当前有一个超分模型，采用的输入数据为RGB888的图片数据，使能了动态AIPP之后，根据输入图片数据设置长度和宽度，并对输入数据做归一化操作处理。
 
 ```
 constexpr uint32_t BATCH_NUM = 1;

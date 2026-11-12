@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-js-code-c
 title: "@performance/js-code-cache-by-precompile-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/js-code-cache-by-precompile-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:12+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:00145dee7acc3f0b9c203d9407340e4f36c0692f7ca7e049b3242c88d8704e2c
+scraped_at: 2026-11-12T09:52:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d3df84b72419d7994a495382e816cf547ae35556ccbac80b1e2b82af494aeb04
 ---
 
 建议通过预编译生成JavaScript字节码缓存，可以降低Web页面第一次和第二次的加载时间。
@@ -112,4 +112,4 @@ struct JsCodeCacheByPrecompileCheckReport {
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-fa
 title: ArkUI页面路由跳转常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > ArkUI页面路由跳转常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:32+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:5d49fcba6e8a5198a3cf7f3af3d402a8717bb4a3e88b23ac860f51fe038087ce
+scraped_at: 2026-11-12T09:58:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f6617f07f0f51045a61a88d87f502266a6feee0967011efd238a7333c9b2ade0
 ---
 
 **Q：HAP如何跳转到HAR模块页面？HAR模块内页面如何跳至HAP模块页面？**
@@ -15,7 +15,7 @@ content_hash: sha256:5d49fcba6e8a5198a3cf7f3af3d402a8717bb4a3e88b23ac860f51fe038
 1. 模块类型限制：仅适用于HAR（静态库）或HSP（动态库）模块。
 2. HAP跳转到其他HAP的页面，必须使用UIAbility的startAbility方法拉起目标HAP的Ability。HAP和HAR之间页面跳转的两种实现方案：Navigation路由和Router路由。跳转示例：HAP包入口页面->HAR包CustomPage页面->HAP包Page页面。如下所示：
    * 方案一：Navigation路由配置。
-     1. 在HAR模块内配置HAR页面的路由表：配置CustomPage的页面路由。即配置HAR中的module.json5文件和route\_map.json文件，详细可参考官网跨包路由的[系统路由表](../harmonyos-guides/arkts-navigation-navigation.md#系统路由表)实现。
+     1. 在HAR模块内配置HAR页面的路由表：配置CustomPage的页面路由。即配置HAR中的module.json5文件和route\_map.json文件，详细可参考官网跨包路由的[系统路由表](../doccenter-capabilities/arkts-navigation-cross-package.md#系统路由表)实现。
      2. 在HAP模块配置Page页面路由，和第1步在HAR模块配置CustomPage页面路由类似。
 
         ```ts
@@ -385,7 +385,7 @@ A：对于router跳转到的页面需要使用Navigation作为根容器，才能
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/ftwjc60JQESnnlmbNGqR3A/zh-cn_image_0000002795328639.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/SA_-5Q0FSpKAISVkSWN-iA/zh-cn_image_0000002795328639.png "点击放大")
 
 * 场景三：Navigation页面与router页面间的跳转为：入口页面->PageOne->pageTwo->RouterPage->PageThree。
 
@@ -657,7 +657,7 @@ A：对于router跳转到的页面需要使用Navigation作为根容器，才能
 
   效果如下：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/Kss9hrqzTjieN9E7WcMEpA/zh-cn_image_0000002795485233.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/w68SrbLpRSKhOfKKYhbBSg/zh-cn_image_0000002795485233.png "点击放大")
 
 **Q：页面使用组件导航实现路由跳转，期望自定义一个半屏组件能够始终保持在所有页面的顶部。**
 
@@ -949,7 +949,7 @@ A：在业务体系庞大或复杂的情况下，会将业务拆分成多个子�
 
 新增工程项目后，此时存在一个entry类型的HAP包（作为拉起方），再新增一个feature类型的HAP（被拉起方）。参考不同类型[HAP](../harmonyos-guides/hap-package.md)的说明。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/R_T-26HlSFeqszOMFqL-KQ/zh-cn_image_0000002766086698.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/SdcZySRzQCSIZj23shER8Q/zh-cn_image_0000002766086698.png)
 
 1. 拉起方（entry模块）的示例代码如下，请根据实际的HAP信息更新want参数：
 
@@ -1064,7 +1064,7 @@ A：在业务体系庞大或复杂的情况下，会将业务拆分成多个子�
 3. 按照方案的描述修改被拉起方的UIAbility文件（示例中为TargetAbility.ets）的onNewWant方法（若UIAbility文件无此方法，则参照背景知识中介绍自行增加onNewWant即可）。
 4. 分别编译target模块和entry模块，再运行entry模块即可。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1e/v3/fC-vFt9mSOeaqRXCT3fCaw/zh-cn_image_0000002766086704.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/ca5qVfJ-RvmAoMNncnx8Sw/zh-cn_image_0000002766086704.png)
 
 **Q：热启动，如何每次启动都重新打开目标页面？**
 

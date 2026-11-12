@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-spat
 title: spatial_recon_interface.h
 breadcrumb: API参考 > 图形 > Spatial Recon Kit（空间建模服务） > C API > 头文件和结构体 > 头文件 > spatial_recon_interface.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:48+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:5f3f90682d631b4ad0e84f3ce4f3d4379fdc69f1be07a22e795cfd10a1f4f2fd
+scraped_at: 2026-11-12T09:57:08+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:bf74bc5225780da10dfd337719ed6e8a2b8c5cd4da6fc4ec59e35989a18ce87f
 ---
 
 ## 概述
@@ -64,6 +64,7 @@ content_hash: sha256:5f3f90682d631b4ad0e84f3ce4f3d4379fdc69f1be07a22e795cfd10a1f
 | [HMS\_SpatialReconStatus HMS\_SpatialRecon\_SaveResultToFile(HMS\_SpatialRecon\_Session \*spatialReconSession, HMS\_SpatialRecon\_ModelWriteInfo \*writeInfo, HMS\_SpatialReconCallbackFunc onSaved)](capi-spatial-recon-interface-h.md#hms_spatialrecon_saveresulttofile) | - | 将空间重建结果保存到文件。该函数将处理后的空间重建数据导出到指定的文件格式。操作是异步执行的，完成状态通过回调函数报告。 |
 | [typedef void (\*HMS\_SpatialReconNGCallbackFunc)(HMS\_SpatialReconStatus, void\*)](capi-spatial-recon-interface-h.md#hms_spatialreconngcallbackfunc) | HMS\_SpatialReconNGCallbackFunc | 支持自定义入参的回调函数。 |
 | [HMS\_SpatialReconStatus HMS\_SpatialRecon\_RegisterNGCallbackFunc(HMS\_SpatialRecon\_Session\* spatialReconSession, HMS\_SpatialReconNGCallbackFunc onTaskFinished, void\* data)](capi-spatial-recon-interface-h.md#hms_spatialrecon_registerngcallbackfunc) | - | 注册支持自定义入参的回调函数。 |
+| [HMS\_SpatialReconStatus HMS\_SpatialRecon\_DeriveFileVerifyKey(const char\*\* files, int32\_t count, char\*\* credentialOutput, int32\_t\* credentialOutputSize)](capi-spatial-recon-interface-h.md#hms_spatialrecon_derivefileverifykey) | - | 为视频文件派生完整的云凭证。 |
 
 ## 枚举类型说明
 
@@ -90,6 +91,7 @@ enum HMS_SpatialReconStatus
 | SPATIAL\_RECON\_STATUS\_STAGE\_BUILDING = 1023700005 | 重建会话已开始。 |
 | SPATIAL\_RECON\_STATUS\_STAGE\_NOT\_FINISHED = 1023700006 | 重建会话未完成。 |
 | SPATIAL\_RECON\_STATUS\_FAILED = 1023700007 | 空间重建失败。 |
+| SPATIAL\_RECON\_STATUS\_AUTH\_FAILED = 1023700008 | 认证失败（如Auth SA签名失败）。  **起始版本：** 26.0.1 |
 
 ### HMS\_SpatialReconOutputFormat
 
@@ -588,3 +590,43 @@ HMS_SpatialReconStatus HMS_SpatialRecon_RegisterNGCallbackFunc(HMS_SpatialRecon_
 | 类型 | 说明 |
 | --- | --- |
 | [HMS\_SpatialReconStatus](capi-spatial-recon-interface-h.md#hms_spatialreconstatus) | 返回HMS\_SpatialReconStatus表示初始验证状态或即时错误（例如无效参数）。 |
+
+### HMS\_SpatialRecon\_DeriveFileVerifyKey()
+
+```c
+HMS_SpatialReconStatus HMS_SpatialRecon_DeriveFileVerifyKey(const char** files,
+    int32_t count, char** credentialOutput, int32_t* credentialOutputSize)
+```
+
+**描述**
+
+为视频文件派生完整的云凭证。该函数执行文件完整性签名，具体流程如下：
+
+1. 计算每个文件的SHA-256哈希值
+2. 使用该哈希值作为signExt生成签名
+3. 返回一个JSON对象，将每个文件URI映射至其对应的完整凭证
+
+输出JSON格式示例如下，其中每个文件URI映射到其凭证对象，例如对于两个输入文件，输出如下：
+
+```json
+{"file:///path/to/video.mp4":{"accessKey":"...","deviceId":"...","appId":"...",
+  "saId":"","timeStamp":"...","signExt":"...","skMac":"..."},
+ "file:///path/to/video.OSV":{...}}
+```
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| const char\*\* files | 文件URI数组（指向const char\*数组的指针）。必须不为NULL。文件路径必须合法，且单个文件大小不超过2GB。 |
+| int32\_t count | 数组中的文件数量。必须大于等于1且小于等于64。 |
+| char\*\* credentialOutput | 输出指针，接收新分配的缓冲区，包含JSON格式的凭证映射。调用方在使用完毕后必须调用free()释放此缓冲区。必须不为NULL。 |
+| int32\_t\* credentialOutputSize | 输出时，JSON字符串的字节长度（包含null终止符）。必须不为NULL。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [HMS\_SpatialReconStatus](capi-spatial-recon-interface-h.md#hms_spatialreconstatus) | 返回HMS\_SpatialReconStatus表示成功或错误。  SPATIAL\_RECON\_STATUS\_SUCCESS：当前操作已成功执行。  SPATIAL\_RECON\_STATUS\_FAILED：当前操作已失败，例如参数无效。  SPATIAL\_RECON\_STATUS\_AUTH\_FAILED：认证失败。 |

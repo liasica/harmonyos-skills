@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-intellige
 title: 使用智能防跟踪功能
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理Web组件的网络安全与隐私 > 使用智能防跟踪功能
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:15+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:00a0debc0359c29b7bccb1e47562ca3de47dc222e7b7270897e6134c21d668be
+scraped_at: 2026-11-12T09:51:23+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0db839b5f82495448aa728000be39152263c574e21a34de646fb4c974df0ab2f
 ---
 
 Web组件支持智能防跟踪功能，即当跟踪型网站作为第三方插入到其他网页时，其发送的网络请求将禁止携带cookie。
 
-* 通过调用[enableIntelligentTrackingPrevention](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#enableintelligenttrackingprevention12)接口启用或关闭Web组件的智能防跟踪功能。默认情况下，该功能未启用。
+* 通过调用[enableIntelligentTrackingPrevention()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#enableintelligenttrackingprevention12)接口启用或关闭Web组件的智能防跟踪功能。默认情况下，该功能未启用。
 
   ```typescript
   import { webview } from '@kit.ArkWeb';
@@ -38,7 +38,7 @@ Web组件支持智能防跟踪功能，即当跟踪型网站作为第三方插�
     }
   }
   ```
-* 调用[isIntelligentTrackingPreventionEnabled](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#isintelligenttrackingpreventionenabled12)接口，判断Web组件是否开启了智能防跟踪功能。
+* 调用[isIntelligentTrackingPreventionEnabled()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#isintelligenttrackingpreventionenabled12)接口，判断Web组件是否开启了智能防跟踪功能。
 
   ```typescript
   import { webview } from '@kit.ArkWeb';
@@ -101,7 +101,7 @@ Web组件支持智能防跟踪功能，即当跟踪型网站作为第三方插�
 
 智能防跟踪功能提供了一组接口，用于设置绕过该功能的域名列表。这些接口设置的域名列表适用于整个应用，而非特定的Web组件。
 
-* 调用[addIntelligentTrackingPreventionBypassingList](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#addintelligenttrackingpreventionbypassinglist12)接口设置绕过域名列表。
+* 调用[addIntelligentTrackingPreventionBypassingList()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#addintelligenttrackingpreventionbypassinglist12)接口设置绕过域名列表。
 
   ```typescript
   import { webview } from '@kit.ArkWeb';
@@ -129,7 +129,7 @@ Web组件支持智能防跟踪功能，即当跟踪型网站作为第三方插�
     }
   }
   ```
-* 调用[removeIntelligentTrackingPreventionBypassingList](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#removeintelligenttrackingpreventionbypassinglist12)接口删除部分绕过域名列表。
+* 调用[removeIntelligentTrackingPreventionBypassingList()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#removeintelligenttrackingpreventionbypassinglist12)接口删除部分绕过域名列表。
 
   ```typescript
   import { webview } from '@kit.ArkWeb';
@@ -157,7 +157,7 @@ Web组件支持智能防跟踪功能，即当跟踪型网站作为第三方插�
     }
   }
   ```
-* 调用[clearIntelligentTrackingPreventionBypassingList](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#clearintelligenttrackingpreventionbypassinglist12)接口清除所有绕过域名列表。
+* 调用[clearIntelligentTrackingPreventionBypassingList()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#clearintelligenttrackingpreventionbypassinglist12)接口清除所有绕过域名列表。
 
   ```typescript
   import { webview } from '@kit.ArkWeb';

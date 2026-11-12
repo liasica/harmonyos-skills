@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fdsan
 title: fdsan使用指导
 breadcrumb: 指南 > NDK开发 > 代码开发 > C/C++标准库 > fdsan使用指导
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:12+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:835dcfdd2fa89475d3ea37b9a1a93d13f427360ee16a77c77bd72d6224f6763e
+scraped_at: 2026-11-12T09:52:46+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:922808ce4f6caae4639f02675070121ce348789e7073b80738e7cd44ec28efc6
 ---
 
 ## 功能介绍
@@ -24,7 +24,7 @@ value用于标识实际的owner tag。
 
 tag构成图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/QPrlkzepRuOgZCmE_bPuyA/zh-cn_image_0000002779691912.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/hlQlP1SrT8qXaUdA83uGyg/zh-cn_image_0000002786520728.png)
 
 ## 接口说明
 
@@ -199,7 +199,7 @@ void bad_close()
     int fd = open("/dev/null", O_RDONLY);
     close(fd);
     sleep(2);
-    // This close expected to be detect by fdsan
+    // 预期此处close会被fdsan检测到
     close(fd);
 }
 
@@ -223,7 +223,7 @@ int main()
 
 上述代码中的good\_write函数会打开一个文件并写入一些字符串，而bad\_close函数中也会打开一个文件同时包含double-close问题，这两个线程同时运行执行情况如下图。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/S0sPE7XdRoW3VQfxwiPCCQ/zh-cn_image_0000002809011533.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/bl0fBfleRnG3LS9WpcDJPA/zh-cn_image_0000002786360800.png)
 
 由于每次open返回的文件描述符（fd）是顺序分配的，进入主函数后第一个可用的fd是43。在bad\_close 函数中，第一次open返回的fd也是43。关闭之后，43变成可用的fd。在good\_write函数中，open返回了第一个可用的fd，即43。然而，由于bad\_close函数中存在重复关闭问题，错误地关闭了另一个线程中打开的文件，导致写入失败。
 
@@ -240,7 +240,7 @@ int main()
 
 void good_write()
 {
-    // fopen is protected by fdsan, replace open with fopen
+    // fopen受fdsan保护，使用fopen替代open
     // int fd = open(TEMP_FILE, O_RDWR);
     FILE *f = fopen(TEMP_FILE, "w+");
     if (f == NULL) {
@@ -433,7 +433,7 @@ struct fdsan_fd {
         if (move.fd_ != -1) {
             fd_ = move.fd_;
             move.fd_ = -1;
-            // Acquire ownership from the moved-from object.
+            // 从被移动的对象处获取所有权。
             exchange_tag(fd_, move.tag(), tag());
         }
         return *this;
@@ -452,7 +452,7 @@ struct fdsan_fd {
         }
         if (new_fd != -1) {
             fd_ = new_fd;
-            // Acquire ownership of the presumably unowned fd.
+            // 获取假定无属主的fd的所有权。
             exchange_tag(fd_, 0, tag());
         }
     }
@@ -460,7 +460,7 @@ struct fdsan_fd {
   private:
     int fd_ = -1;
 
-    // Use the address of object as the file tag
+    // 使用对象地址作为文件tag
     uint64_t tag()
     {
         return reinterpret_cast<uint64_t>(this);

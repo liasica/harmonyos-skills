@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-inputmeth
 title: 在自绘编辑框中使用输入法开发指导 (C/C++)
 breadcrumb: 指南 > 应用框架 > IME Kit（输入法开发服务） > 在自绘编辑框中使用输入法开发指导 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:06+08:00
-doc_updated_at: 2026-10-30
+scraped_at: 2026-11-12T09:51:28+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:e0f068d2965b167f5d7beb964362de751b311b8276154dd91e72aca48e5d094f
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/spatial-r
 title: spatialRender
 breadcrumb: API参考 > 图形 > Spatial Recon Kit（空间建模服务） > ArkTS API > spatialRender
 category: harmonyos-references
-scraped_at: 2026-09-21T06:24:36+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:9ebefbd18adc857fc095ffb4b99eea0237bf8c1742911a4a5581a08a025ae905
+scraped_at: 2026-11-12T09:57:08+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:77dbdaf459048f932873e1a4708dab7080af3923262101d61c73d94ebda34b20
 ---
 
 spatialRender模块主要用于渲染3DGS数据，展示3DGS渲染场景。
@@ -279,7 +279,7 @@ if (renderContext != null) {
           // 向远端请求获取瓦片数据，并持久化保存至uri指定相对路径
           // ......
           // 通知渲染器某个瓦片数据准备就绪
-          tiledGSNode..notifyTileReady(tile);
+          tiledGSNode.notifyTileReady(tile);
         }
       });
     });
@@ -474,7 +474,7 @@ if (renderContext != null) {
 
 ## TiledGSImportSettings
 
-TiledGSImportSettings类封装了加载分块3DGS模型的设置，包含清单文件路径。
+TiledGSImportSettings类封装了加载分块3DGS模型的设置，包含清单文件路径和画质档位预设。
 
 **模型约束：** 此模块的接口仅可在Stage模型下使用。
 
@@ -485,6 +485,7 @@ TiledGSImportSettings类封装了加载分块3DGS模型的设置，包含清单�
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | uri | string | 否 | 否 | 分块3DGS模型清单文件（JSON）的路径，用于描述瓦片层级结构。传入空字符串将导致加载失败。 |
+| renderPreference | [TiledGSRenderPreference](spatial-recon-spatialrender.md#tiledgsrenderpreference) | 否 | 是 | 加载时应用的画质档位预设。档位控制视锥内高斯点（Gaussian Splat）数量预算。默认使用BALANCED档位，传入非法值时回退为默认档位。 |
 
 **示例：**
 
@@ -502,10 +503,56 @@ if (renderContext != null) {
   let scene = Scene.load().then(async (scene: Scene) => {
     // 设置分块3DGS模型清单文件的URI路径，根据实际情况修改
     let uri = "file:///data/storage/el2/base/files/uav-lod/sanyapo.scene.json";
-    // 配置导入参数
-    let setting: spatialRender.TiledGSImportSettings = { uri: uri };
+    // 配置导入参数，设置画质档位为DETAILED
+    let setting: spatialRender.TiledGSImportSettings = {
+      uri: uri,
+      renderPreference: spatialRender.TiledGSRenderPreference.DETAILED
+    };
     // 通过GSPlugin加载指定的分块3DGS节点，并添加到场景根节点下
     let tiledGSNode: spatialRender.TiledGSNode = await spatialRender.GSPlugin.loadTiledGSNode(scene, setting, scene.root);
+  });
+}
+```
+
+## TiledGSRenderPreference
+
+TiledGSRenderPreference封装了分块3DGS流式渲染的画质档位，该类型为字符串枚举，用于[TiledGSImportSettings](spatial-recon-spatialrender.md#tiledgsimportsettings)的renderPreference属性。档位控制视锥内高斯点（Gaussian Splat）数量预算。
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Graphics.SpatialRender
+
+**起始版本：** 26.0.1
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| SMOOTH | 'smooth' | 流畅画质档位预设。 |
+| BALANCED | 'balanced' | 均衡画质档位预设。 |
+| DETAILED | 'detailed' | 细节更丰富的画质档位预设。 |
+
+**示例：**
+
+```typescript
+import { Scene, RenderContext } from '@kit.ArkGraphics3D';
+import { spatialRender } from '@kit.SpatialReconKit';
+
+// 获取默认的渲染上下文
+let renderContext: RenderContext | null = Scene.getDefaultRenderContext();
+
+if (renderContext != null) {
+  // 加载空间重建插件GSPlugin
+  renderContext.loadPlugin(spatialRender.GSPlugin.PLUGIN_ID);
+  // 加载场景
+  let scene = Scene.load().then(async (scene: Scene) => {
+    // 设置分块3DGS模型清单文件的URI路径，根据实际情况修改
+    let uri = "file:///data/storage/el2/base/files/uav-lod/sanyapo.scene.json";
+    // 配置导入参数，设置画质档位为BALANCED
+    let params: spatialRender.TiledGSImportSettings = {
+      uri: uri,
+      renderPreference: spatialRender.TiledGSRenderPreference.BALANCED
+    };
+    // 通过GSPlugin加载指定的分块3DGS节点，并添加到场景根节点下
+    let tiledGSNode: spatialRender.TiledGSNode = await spatialRender.GSPlugin.loadTiledGSNode(scene, params, scene.root);
   });
 }
 ```
@@ -1010,4 +1057,258 @@ if (renderContext != null) {
     });
   });
 }
+```
+
+## CameraCollisionStatus
+
+CameraCollisionStatus枚举，表示相机碰撞检测的结果状态，用于[CameraCollisionResult](spatial-recon-spatialrender.md#cameracollisionresult)的status属性。
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Graphics.SpatialRender
+
+**起始版本：** 26.0.1
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| COLLISION | 'collision' | 发生碰撞。 |
+| NO\_COLLISION | 'noCollision' | 未发生碰撞。 |
+
+**示例：**
+
+```typescript
+import { spatialRender } from '@kit.SpatialReconKit';
+
+// 加载碰撞检测资源
+let uri = "file:///data/storage/el2/base/files/uav-lod/sanyapo-collision.json";
+spatialRender.CameraCollisionDetector.load(uri).then((detector: spatialRender.CameraCollisionDetector | null) => {
+  if (!detector) {
+    // 碰撞资源加载失败
+    return;
+  }
+  // 构造相机移动请求
+  let request: spatialRender.CameraCollisionRequest = {
+    startPosition: { x: 0, y: 0, z: 0 },
+    endPosition: { x: 1, y: 0, z: 0 }
+  };
+  // 检测移动路径上是否发生碰撞
+  detector.detect(request).then((result: spatialRender.CameraCollisionResult) => {
+    if (result.status === spatialRender.CameraCollisionStatus.COLLISION) {
+      // 发生碰撞，取消或修正本次移动
+    } else if (result.status === spatialRender.CameraCollisionStatus.NO_COLLISION) {
+      // 未发生碰撞，应用本次移动
+    }
+  });
+});
+```
+
+## CameraCollisionRequest
+
+CameraCollisionRequest类封装了碰撞检测请求的输入参数，描述了一次从起始位置到结束位置的移动。
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Graphics.SpatialRender
+
+**起始版本：** 26.0.1
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| startPosition | [Vec3](js-apis-inner-scene-types.md#vec3) | 否 | 否 | 移动的起始位置。 |
+| endPosition | [Vec3](js-apis-inner-scene-types.md#vec3) | 否 | 否 | 移动的结束位置。 |
+
+**示例：**
+
+```typescript
+import { spatialRender } from '@kit.SpatialReconKit';
+
+// 构造相机移动请求
+let request: spatialRender.CameraCollisionRequest = {
+  startPosition: { x: 0, y: 0, z: 0 },
+  endPosition: { x: 1, y: 0, z: 0 }
+};
+
+// 加载碰撞检测资源
+let uri = "file:///data/storage/el2/base/files/uav-lod/sanyapo-collision.json";
+spatialRender.CameraCollisionDetector.load(uri).then((detector: spatialRender.CameraCollisionDetector | null) => {
+  if (!detector) {
+    // 碰撞资源加载失败
+    return;
+  }
+  // 检测移动路径上是否发生碰撞
+  detector.detect(request).then((result: spatialRender.CameraCollisionResult) => {
+    console.debug('collision status=', result.status);
+  });
+});
+```
+
+## CameraCollisionResult
+
+CameraCollisionResult类封装了相机移动请求在碰撞空间中的碰撞检测结果。
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Graphics.SpatialRender
+
+**起始版本：** 26.0.1
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| status | [CameraCollisionStatus](spatial-recon-spatialrender.md#cameracollisionstatus) | 否 | 否 | 碰撞检测的结果状态。 |
+
+**示例：**
+
+```typescript
+import { spatialRender } from '@kit.SpatialReconKit';
+
+// 加载碰撞检测资源
+let uri = "file:///data/storage/el2/base/files/uav-lod/sanyapo-collision.json";
+spatialRender.CameraCollisionDetector.load(uri).then((detector: spatialRender.CameraCollisionDetector | null) => {
+  if (!detector) {
+    // 碰撞资源加载失败
+    return;
+  }
+  // 构造相机移动请求
+  let request: spatialRender.CameraCollisionRequest = {
+    startPosition: { x: 0, y: 0, z: 0 },
+    endPosition: { x: 1, y: 0, z: 0 }
+  };
+  // 检测移动路径上是否发生碰撞，并读取检测结果
+  detector.detect(request).then((result: spatialRender.CameraCollisionResult) => {
+    // 根据碰撞状态决定相机是否可以移动到目标位置
+    let arrived: boolean = result.status === spatialRender.CameraCollisionStatus.NO_COLLISION;
+  });
+});
+```
+
+## CameraCollisionDetector
+
+CameraCollisionDetector类封装了相机碰撞检测能力，基于碰撞资源检测相机移动路径上是否发生碰撞，帮助开发者在3DGS场景中实现相机避障。
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Graphics.SpatialRender
+
+**起始版本：** 26.0.1
+
+**注意** 
+
+需先通过CameraCollisionDetector.load加载碰撞资源获取检测器实例，再调用detect进行碰撞检测。
+
+**示例：**
+
+```typescript
+import { spatialRender } from '@kit.SpatialReconKit';
+
+// 加载碰撞检测资源
+let uri = "file:///data/storage/el2/base/files/uav-lod/sanyapo-collision.json";
+spatialRender.CameraCollisionDetector.load(uri).then((detector: spatialRender.CameraCollisionDetector | null) => {
+  if (!detector) {
+    // 碰撞资源加载失败
+    return;
+  }
+  // 构造相机移动请求
+  let request: spatialRender.CameraCollisionRequest = {
+    startPosition: { x: 0, y: 0, z: 0 },
+    endPosition: { x: 1, y: 0, z: 0 }
+  };
+  // 检测移动路径上是否发生碰撞
+  detector.detect(request).then((result: spatialRender.CameraCollisionResult) => {
+    if (result.status === spatialRender.CameraCollisionStatus.COLLISION) {
+      // 发生碰撞，取消或修正本次移动
+    }
+  });
+});
+```
+
+### load
+
+static load(uri: string): Promise<CameraCollisionDetector | null>
+
+从指定URI异步加载碰撞检测资源，使用Promise异步回调。
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Graphics.SpatialRender
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| uri | string | 是 | 碰撞资源文件的路径。传入空字符串或无效路径将导致加载失败。路径格式可参考[应用沙箱目录文档](../doccenter-capabilities/app-sandbox-directory.md)和示例代码。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[CameraCollisionDetector](spatial-recon-spatialrender.md#cameracollisiondetector) | null> | Promise对象，返回碰撞检测器实例。碰撞资源加载失败时返回null。 |
+
+**示例：**
+
+```typescript
+import { spatialRender } from '@kit.SpatialReconKit';
+
+// 加载碰撞检测资源
+let uri = "file:///data/storage/el2/base/files/uav-lod/sanyapo-collision.json";
+spatialRender.CameraCollisionDetector.load(uri).then((detector: spatialRender.CameraCollisionDetector | null) => {
+  if (!detector) {
+    // 碰撞资源加载失败
+    return;
+  }
+  // 获取碰撞检测器实例后，可调用detect进行碰撞检测
+});
+```
+
+### detect
+
+detect(request: CameraCollisionRequest): Promise<CameraCollisionResult>
+
+检测相机从起始位置移动到结束位置的路径上是否发生碰撞，使用Promise异步回调。
+
+**模型约束：** 此模块的接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Graphics.SpatialRender
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| request | [CameraCollisionRequest](spatial-recon-spatialrender.md#cameracollisionrequest) | 是 | 碰撞检测请求，描述一次从起始位置到结束位置的移动。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[CameraCollisionResult](spatial-recon-spatialrender.md#cameracollisionresult)> | Promise对象，返回碰撞检测结果。 |
+
+**示例：**
+
+```typescript
+import { spatialRender } from '@kit.SpatialReconKit';
+
+// 加载碰撞检测资源
+let uri = "file:///data/storage/el2/base/files/uav-lod/sanyapo-collision.json";
+spatialRender.CameraCollisionDetector.load(uri).then((detector: spatialRender.CameraCollisionDetector | null) => {
+  if (!detector) {
+    // 碰撞资源加载失败
+    return;
+  }
+  // 构造相机移动请求
+  let request: spatialRender.CameraCollisionRequest = {
+    startPosition: { x: 0, y: 0, z: 0 },
+    endPosition: { x: 1, y: 0, z: 0 }
+  };
+  // 检测移动路径上是否发生碰撞
+  detector.detect(request).then((result: spatialRender.CameraCollisionResult) => {
+    if (result.status === spatialRender.CameraCollisionStatus.COLLISION) {
+      // 发生碰撞，取消或修正本次移动
+    } else if (result.status === spatialRender.CameraCollisionStatus.NO_COLLISION) {
+      // 未发生碰撞，应用本次移动
+    }
+  });
+});
 ```

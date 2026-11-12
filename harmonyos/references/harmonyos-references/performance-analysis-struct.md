@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/performan
 title: 结构体
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-10-11T07:26:53+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:61a295bbf6e3cfbcfae97ae81a242df4bcb199753b7f7a04405e4d7eb923611a
+scraped_at: 2026-11-12T09:56:15+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f476893711c230c7f9dca89ce759c0e2436a7c5a507639c44d747b8e9ea8c080
 ---
 
 * **[HiAppEvent\_AppEventInfo](capi-hiappevent-hiappevent-appeventinfo.md)**
@@ -14,6 +14,7 @@ content_hash: sha256:61a295bbf6e3cfbcfae97ae81a242df4bcb199753b7f7a04405e4d7eb92
 * **[HiAppEvent\_Watcher](capi-hiappevent-hiappevent-watcher.md)**
 * **[HiAppEvent\_Processor](capi-hiappevent-hiappevent-processor.md)**
 * **[HiAppEvent\_Config](capi-hiappevent-hiappevent-config.md)**
+* **[OH\_HiAppEvent\_ExternalLog](capi-hiappevent-hiappevent-externallog.md)**
 * **[HiCollie\_DetectionParam](capi-hicollie-hicollie-detectionparam.md)**
 * **[HiCollie\_SetTimerParam](capi-hicollie-hicollie-settimerparam.md)**
 * **[HiDebug\_ThreadCpuUsage](capi-hidebug-hidebug-threadcpuusage.md)**
@@ -30,4 +31,5 @@ content_hash: sha256:61a295bbf6e3cfbcfae97ae81a242df4bcb199753b7f7a04405e4d7eb92
 * **[HiDebug\_ProcessSamplerConfig](capi-hidebug-hidebug-processsamplerconfig.md)**
 * **[OH\_HiDebug\_ResProfilerConfig](capi-hidebug-oh-hidebug-resprofilerconfig.md)**
 * **[OH\_HiDebug\_ProfilingResult](capi-hidebug-oh-hidebug-profilingresult.md)**
+* **[OH\_HiDebug\_ProfilerOptions](capi-hidebug-oh-hidebug-profileroptions.md)**
 * **[HiTraceId](capi-hitrace-hitraceid.md)**

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-basicserviceskit-7003
 title: Basic Services Kit
-breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > OS平台能力 > API变更清单 > 26.0.0 Release引入的API > Basic Services Kit
+breadcrumb: 版本说明 > 更多版本 > 26.0.0 > OS平台能力 > API变更清单 > 26.0.0 Release引入的API > Basic Services Kit
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:49:02+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:49:55+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:cb0d41f7c98248c246ce5acaa55c177e430be3027d98f15db07e912e784e59e9
 ---
 

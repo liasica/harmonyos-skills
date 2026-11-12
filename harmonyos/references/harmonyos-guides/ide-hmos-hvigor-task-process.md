@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-hvig
 title: 构建任务说明
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 构建应用 > 概述 > 构建任务说明
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:39+08:00
+scraped_at: 2026-11-12T09:53:21+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:53a30c06d39def3b68351f3fd9981ab31978c3ea81f4109474edc8a5bb14ca45
+content_hash: sha256:30fdad74b7ae3a283a5e709b50fe5f4e1a5e6b61945eceb4fe7ef2ca99c132e1
 ---
 
 本章节将对构建的任务进行说明，可以更直观地了解到构建的任务流程。
@@ -14,15 +14,15 @@ content_hash: sha256:53a30c06d39def3b68351f3fd9981ab31978c3ea81f4109474edc8a5bb1
 
 ### HAP基础任务流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/caZzl4z6T2-ej7tn4AWMDw/zh-cn_image_0000002781471066.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/5kpPqnumSryLIsQOkIceMQ/zh-cn_image_0000002781471066.png)
 
 ### HSP基础任务流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/Emw6NtlXToyq7C8amXiZNg/zh-cn_image_0000002810750725.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/MPLUMh1aQDuDSVRBwzePRQ/zh-cn_image_0000002810750725.png)
 
 ### HAR基础任务流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/O6qQfdV6TpycdV0wnVbyDw/zh-cn_image_0000002781311132.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/26yNF7L1RrWIAryd4pH-WQ/zh-cn_image_0000002781311132.png "点击放大")
 
 ## 使用命令查看任务
 
@@ -34,7 +34,7 @@ hvigorw taskTree
 
 获取任务树时会根据工程中的模块，将模块中注册的任务以下图形式输出：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/CwnDLKoSS3KpReZrklvDPQ/zh-cn_image_0000002781311134.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/kMBlFr0pTsyMxg4ejBzM6w/zh-cn_image_0000002781311134.png "点击放大")
 
 执行顺序举例说明：如图所示，assembleHap依赖SignHap，SignHap依赖于PackageHap；则任务执行顺序则为PackageHap->SignHap->assembleHap。
 

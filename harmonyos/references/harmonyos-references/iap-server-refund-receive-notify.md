@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-serve
 title: 接收退款申请事件通知
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > 退款申请通知与处理 > 接收退款申请事件通知
 category: harmonyos-references
-scraped_at: 2026-11-04T08:37:04+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:42d22c26c1a12b8b812d36178a0379aa82e8c0bf5dcb2d72a75bdd3c2b23692a
+scraped_at: 2026-11-12T09:57:22+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:523d72a6e94505ff91af8326de916a9c971bbb36dd4ae97c2f143ac6f341b100
 ---
 
 ## 功能介绍
@@ -14,7 +14,7 @@ content_hash: sha256:42d22c26c1a12b8b812d36178a0379aa82e8c0bf5dcb2d72a75bdd3c2b2
 
 ## 场景描述
 
-如果开发者在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)申请支付服务时提前[配置通知接收地址](../harmonyos-guides/iap-set-necessary-parameters.md#配置订单订阅通知接收地址)，并且通知版本设置为v3，用户申请对已支付订单进行退款时，IAP服务器会调用此接口通知已配置的服务器。
+如果开发者在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)申请支付服务时提前[配置通知接收地址](../harmonyos-guides/iap-set-necessary-parameters.md#配置订单订阅通知接收地址)，并且通知版本设置为v3，用户申请对已支付订单进行退款时，IAP服务器会调用此接口通知已配置的服务器。
 
 若开发者服务器返回结果为非成功响应（请求返回的HTTP状态码不为200），IAP服务器将对本次关键事件的通知进行周期性重发。建议开发者服务端在收到通知后立即返回成功响应，避免通知消息堆积。
 
@@ -22,7 +22,7 @@ content_hash: sha256:42d22c26c1a12b8b812d36178a0379aa82e8c0bf5dcb2d72a75bdd3c2b2
 
 关键事件通知处理流程建议如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/zGFIbeySQ5OzWDy344SBVw/zh-cn_image_0000002809053099.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/uTvtVA4xRciOmZ54tSCrig/zh-cn_image_0000002815561601.png)
 
 1. IAP服务器发送退款请求关键事件通知。
 2. 应用服务器收到通知请求后，从通知中获取用户申请的退款信息，决策该笔退款订单的处理方式。
@@ -34,7 +34,7 @@ content_hash: sha256:42d22c26c1a12b8b812d36178a0379aa82e8c0bf5dcb2d72a75bdd3c2b2
 
 不建议开发者服务器设置IP允许清单用于限制华为侧的出口IP地址。IP允许清单本身并不能提高安全性且会给业务发展带来约束，IAP服务在消息层面已有更安全的JWS签名机制条件下，没有存在价值。不遵守该约定而导致的后果将由开发者自行承担。
 
-如开发者需接收退款关键事件通知，需要在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中配置开发者服务器的回调地址，地址必须支持HTTPS协议且具有合法商用证书，出于安全考虑，cipher需要支持ECDHE-RSA-AES128-GCM-SHA256、ECDHE-ECDSA-AES128-GCM-SHA256、ECDHE-RSA-AES256-GCM-SHA384或ECDHE-ECDSA-AES256-GCM-SHA384中至少一种，否则无法正常接收通知消息。
+如开发者需接收退款关键事件通知，需要在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)中配置开发者服务器的回调地址，地址必须支持HTTPS协议且具有合法商用证书，出于安全考虑，cipher需要支持ECDHE-RSA-AES128-GCM-SHA256、ECDHE-ECDSA-AES128-GCM-SHA256、ECDHE-RSA-AES256-GCM-SHA384或ECDHE-ECDSA-AES256-GCM-SHA384中至少一种，否则无法正常接收通知消息。
 
 **说明** 
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-run
 title: ohpm run
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm run
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:29+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:e0cd89b3f07128c7b5a22db4b5d0d90648c81bd721ec68ae8b6fb1fe62e9632e
+scraped_at: 2026-11-12T09:53:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f9266abfb7b6b36afd799249e557dbe3e018145e8c5732ff719c6e076bb4df9e
 ---
 
 执行用户自定义脚本。
@@ -56,7 +56,7 @@ ohpm run [options] <script_name> [-- <args...>]
 
 | 约束项 | 说明 |
 | --- | --- |
-| scriptKey 命名约束 | 合法的 scriptKey 的名字可以包含字母（包含大小写），数字，ASCII 冒号 :，ASCII下划线 \_ ，ASCII链接符 -，首字母必须是小写字母 |
+| scriptKey 命名约束 | 合法的scriptKey的名字可以包含字母（包含大小写），数字，ASCII 冒号 :，ASCII下划线 \_ ，ASCII连接符 -，首字母必须是小写字母 |
 | scriptContent 约束 | 合法的scriptContent不能引用除ohpm run以外的其它ohpm命令 |
 | scriptContent 中使用 ohpm run 的约束 | 1、ohpm run 依赖的其它script别名必须在同一 oh-package.json5 中存在  2、ohpm run 引用关系是一个有向无环图，不支持递归或循环引用 |
 
@@ -122,7 +122,7 @@ ohpm run testSuc
 
 执行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/JPkfP-HMQZaKi5WzG6yG4Q/zh-cn_image_0000002731382585.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/89LnQrc9T7GlOt7SLZyR6A/zh-cn_image_0000002808886983.png "点击放大")
 
 ### 失败示例
 
@@ -134,7 +134,7 @@ ohpm run testFail
 
 执行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/T0LjahxiT12KEKKudfAG9Q/zh-cn_image_0000002701663362.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/GGkxHADWTzSUwPZrzdbKLg/zh-cn_image_0000002779567318.png "点击放大")
 
 ### 逻辑符(&&、||)使用示例
 
@@ -146,4 +146,4 @@ ohpm run testLogic
 
 执行结果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/J3ti239YSD2xAIGy3sWL0Q/zh-cn_image_0000002731542555.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/1Fkuyl0lT8ieOvADipjNQA/zh-cn_image_0000002808886981.png "点击放大")

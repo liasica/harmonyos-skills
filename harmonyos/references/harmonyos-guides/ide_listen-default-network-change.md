@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_listen-de
 title: "@correctness/listen-default-network-change"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 正确性规则@correctness > @correctness/listen-default-network-change
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:14+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:8ae003805c45dc17dd32402b4a910199b1eff07cdeec852d638fe9119bfdac11
+scraped_at: 2026-11-12T09:53:00+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:17cee61ce94c8da260e2ab264cdf6a87596211faed5ca3636377a3a08ab74ea5
 ---
 
 建议应用监听默认网络的变化，关闭原有网络的数据传输，并使用新网络建立数据传输。
@@ -60,4 +60,4 @@ export function test() {
 plugin:@correctness/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

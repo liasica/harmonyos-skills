@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Map)
 breadcrumb: API参考 > 应用框架 > ArkTS（方舟编程语言） > ArkTS API > @arkts.collections (ArkTS容器集) > Class (Map)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:44+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:429e97179136d71051bb712aac0b6d55ee1f75718ebe7eb65eda97df65966cf8
+scraped_at: 2026-11-12T09:53:49+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c15cb534af76c92d977cfe0955f83f9a4cb7be9184b3d9c7af25e7f60382fbf6
 ---
 
 一种基于键值对存储的非线性数据结构，能够高效地通过唯一键来存取对应的值。
@@ -558,6 +558,266 @@ let obj = new Object();
 const myMap: collections.Map<string, Object> = new collections.Map<string, Object>();
 // Type arguments of generic "Sendable" type must be a "Sendable" data type (arkts-sendable-generic-types)
 myMap.set("foo", obj);
+```
+
+## containsValue
+
+containsValue(value: V): boolean
+
+判断该Map中是否存在一个或多个键映射到指定的值。
+
+**起始版本：** 26.0.1
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**元服务API**：从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Utils.Lang
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| value | V | 是 | 要检查的目标值。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 如果Map中有一个或多个键映射到该值，则返回true，否则返回false。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The containsValue method cannot be bound. |
+| 10200201 | Concurrent modification exception |
+
+**示例：**
+
+```ts
+let myMap = new collections.Map<string, number>([
+  ["one", 1],
+  ["two", 2],
+  ["TWO", 2],
+  ["three", 3]
+]);
+console.info("myMap.containsValue(1) = " + myMap.containsValue(1)); // true
+console.info("myMap.containsValue(2) = " + myMap.containsValue(2)); // true
+console.info("myMap.containsValue(4) = " + myMap.containsValue(4)); // false
+```
+
+## put
+
+put(key: K, value: V): V | undefined
+
+将指定键与指定值关联到当前Map中。如果键已存在，则使用新值覆盖旧值并返回旧值；如果键不存在，则新增键值对并返回undefined。
+
+**说明** 
+
+返回**undefined**时无法直接区分是键不存在还是键存在但值为**undefined**，可在使用本接口前先使用[has](arkts-apis-arkts-collections-map.md#has)接口判断键是否存在，进而区分返回的**undefined**所属情况。
+
+**起始版本：** 26.0.1
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**元服务API**：从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Utils.Lang
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | K | 是 | 要添加或更新的键。 |
+| value | V | 是 | 要添加或更新的值。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| V | undefined | 返回与该键关联的先前值。如果键之前不存在于Map中，则返回undefined。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The put method cannot be bound. |
+| 10200201 | Concurrent modification exception |
+
+**示例：**
+
+```ts
+let myMap = new collections.Map<number, string>([
+  [1, "one"],
+  [2, "two"],
+]);
+
+let old1 = myMap.put(1, "*ONE*");
+console.info("old1 = " + old1); // one
+console.info("value = " + myMap.get(1)); // *ONE*
+
+myMap.put(3, "three");
+console.info('' + (myMap.put(3, "three") === undefined)); // false，键3已存在
+console.info('' + (myMap.put(4, "four") === undefined)); // true，键4之前不存在
+```
+
+## putAll
+
+putAll(from: Map<K, V>): void
+
+使用指定ArkTS Map中的键值对更新当前Map。如果指定ArkTS Map中存在与当前Map相同的键，则覆盖当前Map中对应的值；否则新增键值对。
+
+**起始版本：** 26.0.1
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**元服务API**：从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Utils.Lang
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| from | Map<K, V> | 是 | 提供键值对的ArkTS Map。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The putAll method cannot be bound. |
+| 10200201 | Concurrent modification exception |
+
+**示例：**
+
+```ts
+let myMap = new collections.Map<number, string>([
+  [1, "one"],
+  [2, "two"],
+]);
+
+let putMap = new collections.Map<number, string>([
+  [3, "three"],
+  [4, "four"],
+  [1, "_ONE_"],
+]);
+myMap.putAll(putMap);
+// myMap内容为：[[1, "_ONE_"], [2, "two"], [3, "three"], [4, "four"]]
+for (const entry of myMap.entries()) {
+  console.info("key = " + entry[0] + ", value = " + entry[1]);
+}
+```
+
+## putAll
+
+putAll(from: ReadonlyMap<K, V>): void
+
+使用指定JavaScript原生容器Map中的键值对更新当前Map。如果指定JavaScript原生容器Map中存在与当前Map相同的键，则覆盖当前Map中对应的值；否则新增键值对。
+
+**起始版本：** 26.0.1
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**元服务API**：从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Utils.Lang
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| from | ReadonlyMap<K, V> | 是 | 提供键值对的JavaScript原生容器Map。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The putAll method cannot be bound. |
+| 10200201 | Concurrent modification exception |
+
+**示例：**
+
+```ts
+let myMap = new collections.Map<number, string>([
+  [1, "one"],
+  [2, "two"],
+]);
+
+let builtinMap = new Map<number, string>([
+  [3, "_THREE_"],
+  [5, "five"],
+]);
+myMap.putAll(builtinMap);
+// myMap内容为：[[1, "one"], [2, "two"], [3, "_THREE_"], [5, "five"]]
+for (const entry of myMap.entries()) {
+  console.info("key = " + entry[0] + ", value = " + entry[1]);
+}
+```
+
+## remove
+
+remove(key: K): V | undefined
+
+从该Map中删除指定键及其对应的值，并返回与该键关联的先前值。如果键不存在，则返回undefined。
+
+**说明** 
+
+返回**undefined**时无法直接区分是键不存在还是键存在但值为**undefined**，可在使用本接口前先使用[has](arkts-apis-arkts-collections-map.md#has)接口判断键是否存在，进而区分返回的**undefined**所属情况。
+
+**起始版本：** 26.0.1
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**元服务API**：从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Utils.Lang
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | K | 是 | 待删除的键。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| V | undefined | 与该键关联的先前值。如果键不存在于Map中，则返回undefined。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[语言基础类库错误码](errorcode-utils.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 10200011 | The remove method cannot be bound. |
+| 10200201 | Concurrent modification exception |
+
+**示例：**
+
+```ts
+let myMap = new collections.Map<number, string>([
+  [1, "one"],
+  [2, "two"]
+]);
+
+console.info(myMap.remove(1)); // one
+// myMap内容为：[[2, "two"]]
+for (const entry of myMap.entries()) {
+  console.info("key = " + entry[0] + ", value = " + entry[1]);
+}
+
+let ret = myMap.remove(1);
+console.info("myMap.remove(1) == undefined is " + (ret === undefined)); // true，键1已不存在
 ```
 
 ## [Symbol.iterator]

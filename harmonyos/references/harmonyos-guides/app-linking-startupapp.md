@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-linking-s
 title: 通过App Linking应用链接拉起指定应用
 breadcrumb: 指南 > 应用服务 > App Linking Kit（应用链接服务） > 通过App Linking应用链接拉起指定应用
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:26+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:fbd7a15fa7136de8eb0e1f746eab63e2de8ec1f6b4630a9bb87a31a7c55fd92f
+scraped_at: 2026-11-12T09:52:21+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c30a66bbfd7344a5ed39b1e38f682e0a3e025882ce86ab1a7fa28532537cae8e
 ---
 
 ## 场景介绍
@@ -37,7 +37,7 @@ content_hash: sha256:fbd7a15fa7136de8eb0e1f746eab63e2de8ec1f6b4630a9bb87a31a7c55
 | --- | --- |
 | 云端开发 | [开通App Linking服务](applinking-enable-applinking.md)。 |
 | 云端开发 | [建立域名与应用关联关系](app-linking-startupapp.md#建立域名与应用关联关系)。 |
-| 云端开发 | [在AGC为应用创建关联的网址域名](app-linking-startupapp.md#在agc为应用创建关联的网址域名)。 |
+| 云端开发 | [在HarmonyOS 开发者中心为应用创建关联的网址域名](app-linking-startupapp.md#在harmonyos-开发者中心为应用创建关联的网址域名)。 |
 | 客户端开发 | [在module.json5中配置关联的网址域名](app-linking-startupapp.md#在modulejson5中配置关联的网址域名)。 |
 | 客户端开发 | [处理传入的链接](app-linking-startupapp.md#处理传入的链接)。 |
 | 前端开发 | 开发链接对应的H5网页，应用未安装时呈现Web版内容。  **说明：** 本指南侧重于HarmonyOS应用相关的开发指导，网页的开发请开发者依据业务需求自行实现。 |
@@ -47,7 +47,7 @@ content_hash: sha256:fbd7a15fa7136de8eb0e1f746eab63e2de8ec1f6b4630a9bb87a31a7c55
 
 ### 建立域名与应用关联关系
 
-在开发者的网站域名服务器上做如下配置。后续[在AGC为应用创建关联的网址域名](app-linking-startupapp.md#在agc为应用创建关联的网址域名)时，AGC会通过此文件确认哪些应用才是合法归属于此域名的，使链接更加安全可靠。
+在开发者的网站域名服务器上做如下配置。后续[在HarmonyOS 开发者中心为应用创建关联的网址域名](app-linking-startupapp.md#在harmonyos-开发者中心为应用创建关联的网址域名)时，HarmonyOS 开发者中心会通过此文件确认哪些应用才是合法归属于此域名的，使链接更加安全可靠。
 
 1. 创建域名配置文件applinking.json，内容如下：
 
@@ -80,23 +80,22 @@ content_hash: sha256:fbd7a15fa7136de8eb0e1f746eab63e2de8ec1f6b4630a9bb87a31a7c55
 
    https://www.example.com/.well-known/applinking.json
 
-### 在AGC为应用创建关联的网址域名
+### 在HarmonyOS 开发者中心为应用创建关联的网址域名
 
 基于HarmonyOS应用链接能力，需要为HarmonyOS应用创建关联的网址域名。
 
-1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，点击“开发与服务”。
-2. 在项目列表中点击HarmonyOS应用所在的项目。
-3. 在左侧导航栏中选择“增长 > App Linking > 应用链接”，点击“创建”。
+1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console#/)，进入“应用管理”页面。
+2. 选择目标应用后，左侧导航栏选择“推广运营 > 增长运营 > App Linking > 应用链接”，点击“创建”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/2z-5lVNlSeC3ogjo3-E3HQ/zh-cn_image_0000002779691276.png)
-4. 填写[建立域名与应用关联关系](app-linking-startupapp.md#建立域名与应用关联关系)的网址域名，例如：https://www.example.com。必须输入精确的域名，不可输入包含特殊字符的模糊网址。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/F7xmGdPVTGSAyLdCY19CeQ/zh-cn_image_0000002786360192.png)
+3. 填写[建立域名与应用关联关系](app-linking-startupapp.md#建立域名与应用关联关系)的网址域名，例如：https://www.example.com。必须输入精确的域名，不可输入包含特殊字符的模糊网址。
 
    **说明** 
 
-   不可以在域名后面添加/，即不支持https://www.example.com/形式。
+   不可以在域名末尾添加/，即不支持https://www.example.com/形式。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/NdkZXEJEQjC6VcnqoDHSPA/zh-cn_image_0000002809010897.png)
-5. 设置完成后点击“发布”，AGC会对该网站域名的配置文件所包含的应用与本项目内的应用列表进行交集校验。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/iOpMFMLORnymojoSmYVrEg/zh-cn_image_0000002815559613.png)
+4. 设置完成后点击“发布”，HarmonyOS 开发者中心会对该网站域名的配置文件所包含的应用与本项目内的应用列表进行交集校验。
 
    **说明** 
 
@@ -104,15 +103,15 @@ content_hash: sha256:fbd7a15fa7136de8eb0e1f746eab63e2de8ec1f6b4630a9bb87a31a7c55
 
    例如：开发者在4月7日17:21创建了应用链接，系统会在4月8日17:30去域名服务器上重新获取配置文件，然后进行交集校验，更新发布状态。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/wrx49i6mSA-shlDCBCxKcg/zh-cn_image_0000002809050811.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/tzAp2KOxTmSlqWdVwX59NA/zh-cn_image_0000002815399697.png)
 
    * 如果域名的配置文件中存在本项目中的应用，则发布成功，点击“查看”可显示该域名关联的应用信息。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/ZFFxRxaPQmmYq1XEIoJPDw/zh-cn_image_0000002779851246.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/7WsDWQJlQkalIS_c1_EufQ/zh-cn_image_0000002786520122.png)
    * 如果还在校验中，则状态为“发布中”。
    * 如果配置文件中没有包含任何本项目中的应用，则发布失败，点击“查看”可显示发布失败原因。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/qENIyFn2RMyLaeAROFw7MQ/zh-cn_image_0000002779691278.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/sou5Mt_OQ1yVyvhlnbgQ6g/zh-cn_image_0000002786360194.png)
 
 ### 在module.json5中配置关联的网址域名
 
@@ -327,13 +326,13 @@ ArkWeb深度集成了App Linking的能力，当用户在系统浏览器或者集
 
 通过系统级扫码入口扫描App Linking应用链接对应的二维码，然后查看跳转效果。以“扫码直达”服务的美团单车场景为例。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/52bgLK4RSbCBp-Ou9xx1lQ/zh-cn_image_0000002809010899.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/YRyQj94sSzi4iJExMs_HgQ/zh-cn_image_0000002815559615.gif)
 
 ## FAQ
 
 ### 应用的module.json5文件skills设置不正确，如何处理？
 
-检查"host"字段中应用所对应的域名是否与AGC创建的网址域名一致。
+检查"host"字段中应用所对应的域名是否与HarmonyOS 开发者中心创建的网址域名一致。
 
 ### 开发者网站服务器配置不正确，如何处理？
 
@@ -366,8 +365,8 @@ BundleName:
 
 * 如果存在client-error消息，请按照以下步骤排查：
 
-  1. 检查消息中的appIdentifier是否与AGC中的APP ID一致。
-  2. 检查在AGC配置的域名发布是否成功。
+  1. 检查消息中的appIdentifier是否与HarmonyOS 开发者中心中的APP ID一致。
+  2. 检查在HarmonyOS 开发者中心配置的域名发布是否成功。
 * 如果存在http\_unknown消息，请确保设备可以访问网络，并重新安装应用。
 * 如果存在其他消息，请联系[技术支持](../harmonyos-releases/support.md)获取帮助。
 

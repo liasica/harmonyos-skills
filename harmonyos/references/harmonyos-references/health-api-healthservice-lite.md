@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-ap
 title: healthService (运动健康联动服务)(Lite)
 breadcrumb: API参考 > 应用服务 > Health Service Kit（运动健康服务） > ArkTS API > healthService (运动健康联动服务)(Lite)
 category: harmonyos-references
-scraped_at: 2026-09-05T06:21:03+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:fcee9444bc556b995a913edc26ff2c9298a8bea325bd0de043e564478782fb71
+scraped_at: 2026-11-12T09:57:18+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:089d275d17d4cd2f64b90f5705bb97cf4065b20f39815cf92d4f3a9c7a283169
 ---
 
 本模块提供运动健康联动服务。
@@ -210,7 +210,7 @@ type ConfigType = number | string | boolean
 | OPERATION\_FAILED | 3 | 操作失败。 |
 | SYSTEM\_INTERNAL\_ERROR | 4 | 系统内部错误。 |
 
-### workout.config
+### config
 
 config(workoutConfig: WorkoutConfig): void
 
@@ -255,7 +255,7 @@ try {
 }
 ```
 
-### workout.start
+### start
 
 start(): StartResult
 
@@ -303,7 +303,7 @@ try {
 }
 ```
 
-### workout.pause
+### pause
 
 pause(): void
 
@@ -311,7 +311,7 @@ pause(): void
 
 **说明** 
 
-该接口调用前，需先使用[start](health-api-healthservice-lite.md#workoutstart)方法确保运动联动已经开启。
+该接口调用前，需先使用[start](health-api-healthservice-lite.md#start)方法确保运动联动已经开启。
 
 **系统能力：** SystemCapability.Health.HealthService.Lite
 
@@ -342,7 +342,7 @@ try {
 }
 ```
 
-### workout.resume
+### resume
 
 resume(): void
 
@@ -350,7 +350,7 @@ resume(): void
 
 **说明** 
 
-该接口调用前，需先使用[pause](health-api-healthservice-lite.md#workoutpause)方法暂停运动联动。
+该接口调用前，需先使用[pause](health-api-healthservice-lite.md#pause)方法暂停运动联动。
 
 **系统能力：** SystemCapability.Health.HealthService.Lite
 
@@ -381,7 +381,7 @@ try {
 }
 ```
 
-### workout.stop
+### stop
 
 stop(): void
 
@@ -389,7 +389,7 @@ stop(): void
 
 **说明** 
 
-该接口调用前，需先使用[start](health-api-healthservice-lite.md#workoutstart)方法确保联动已经开启，上述接口调用后，当前运动联动被停止，其他运动可开启联动。
+该接口调用前，需先使用[start](health-api-healthservice-lite.md#start)方法确保联动已经开启，上述接口调用后，当前运动联动被停止，其他运动可开启联动。
 
 **系统能力：** SystemCapability.Health.HealthService.Lite
 
@@ -419,7 +419,7 @@ try {
 }
 ```
 
-### workout.onData(deprecated)
+### onData(deprecated)
 
 onData(dataType: undefined, listener: Callback<SampleReal[]>): void
 
@@ -427,7 +427,7 @@ onData(dataType: undefined, listener: Callback<SampleReal[]>): void
 
 **说明** 
 
-该接口调用前，需先使用[start](health-api-healthservice-lite.md#workoutstart)方法确保联动已经开启。
+该接口调用前，需先使用[start](health-api-healthservice-lite.md#start)方法确保联动已经开启。
 
 **系统能力：** SystemCapability.Health.HealthService.Lite
 
@@ -437,7 +437,7 @@ onData(dataType: undefined, listener: Callback<SampleReal[]>): void
 
 **废弃版本：** 26.0.0
 
-**替代接口：** [workout.onData](health-api-healthservice-lite.md#workoutondata)
+**替代接口：** [workout.onData](health-api-healthservice-lite.md#ondata)
 
 **参数：**
 
@@ -472,7 +472,7 @@ try {
 }
 ```
 
-### workout.onData
+### onData
 
 onData(listener: Callback<SampleReal[]>): void
 
@@ -480,7 +480,7 @@ onData(listener: Callback<SampleReal[]>): void
 
 **说明** 
 
-该接口调用前，需先使用[start](health-api-healthservice-lite.md#workoutstart)方法确保联动已经开启。
+该接口调用前，需先使用[start](health-api-healthservice-lite.md#start)方法确保联动已经开启。
 
 **系统能力：** SystemCapability.Health.HealthService.Lite
 
@@ -520,7 +520,7 @@ try {
 }
 ```
 
-### workout.offData(deprecated)
+### offData(deprecated)
 
 offData(dataType: undefined, listener?: Callback<SampleReal[]>): void
 
@@ -528,7 +528,7 @@ offData(dataType: undefined, listener?: Callback<SampleReal[]>): void
 
 **说明** 
 
-该接口调用前，需先使用[start](health-api-healthservice-lite.md#workoutstart)方法确保联动已经开启。
+该接口调用前，需先使用[start](health-api-healthservice-lite.md#start)方法确保联动已经开启。
 
 **系统能力：** SystemCapability.Health.HealthService.Lite
 
@@ -538,7 +538,7 @@ offData(dataType: undefined, listener?: Callback<SampleReal[]>): void
 
 **废弃版本：** 26.0.0
 
-**替代接口：** [workout.offData](health-api-healthservice-lite.md#workoutoffdata)
+**替代接口：** [workout.offData](health-api-healthservice-lite.md#offdata)
 
 **参数：**
 
@@ -572,7 +572,7 @@ try {
 }
 ```
 
-### workout.offData
+### offData
 
 offData(listener?: Callback<SampleReal[]>): void
 
@@ -580,7 +580,7 @@ offData(listener?: Callback<SampleReal[]>): void
 
 **说明** 
 
-该接口调用前，需先使用[start](health-api-healthservice-lite.md#workoutstart)方法确保联动已经开启。
+该接口调用前，需先使用[start](health-api-healthservice-lite.md#start)方法确保联动已经开启。
 
 **系统能力：** SystemCapability.Health.HealthService.Lite
 
@@ -619,7 +619,7 @@ try {
 }
 ```
 
-### workout.sendData
+### sendData
 
 sendData(sampleReal: SampleReal[]): void
 
@@ -627,7 +627,7 @@ sendData(sampleReal: SampleReal[]): void
 
 **说明** 
 
-该接口调用前，需先使用[start](health-api-healthservice-lite.md#workoutstart)方法确保联动已经开启。
+该接口调用前，需先使用[start](health-api-healthservice-lite.md#start)方法确保联动已经开启。
 
 **起始版本：** 6.1.1(24)
 
@@ -671,7 +671,7 @@ try {
 }
 ```
 
-### workout.load
+### load
 
 load(path: string): void
 
@@ -715,7 +715,7 @@ try {
 }
 ```
 
-### workout.load
+### load
 
 load(path: string, callback: Callback<[DynamicLibResult](health-api-healthservice-lite.md#dynamiclibresult)>): void
 
@@ -777,7 +777,7 @@ try {
 }
 ```
 
-### workout.unload
+### unload
 
 unload(path: string): void
 
@@ -821,7 +821,7 @@ try {
 }
 ```
 
-### workout.unload
+### unload
 
 unload(path: string, callback: Callback<[DynamicLibResult](health-api-healthservice-lite.md#dynamiclibresult)>): void
 

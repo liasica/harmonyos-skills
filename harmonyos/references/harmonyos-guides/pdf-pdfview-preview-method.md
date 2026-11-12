@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/pdf-pdfview-p
 title: 设置PDF文档预览效果
 breadcrumb: 指南 > 应用服务 > PDF Kit（PDF服务） > PdfView预览组件 > 设置PDF文档预览效果
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:40+08:00
+scraped_at: 2026-11-12T09:52:33+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:0b79d26e2b4894a100a3201bd02c710004425cf477f12006f52022eeac7dacfe
+content_hash: sha256:c06524247c16f7eb0f40aea462c3b244a354b4cfe747fddde8ff498e16019143
 ---
 
 pdfViewManager为PDF文档提供了丰富的预览特性。
@@ -16,7 +16,7 @@ pdfViewManager为PDF文档提供了丰富的预览特性。
 
 **图1**：提供了双页预览布局，页面宽度适配和连续滚动的预览方式
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/KMhyptYuTyCluWvu7GDxmg/zh-cn_image_0000002779851558.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e6/v3/vjGCHnCvSS2d4DbG5wqwyg/zh-cn_image_0000002815559935.png)
 
 ## 接口说明
 

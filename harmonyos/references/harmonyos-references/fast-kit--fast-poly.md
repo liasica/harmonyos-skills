@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/fast-kit-
 title: FAST_Poly
 breadcrumb: API参考 > 系统 > 基础功能 > FAST Kit（算法加速服务） > C API > 头文件和结构体 > 结构体 > FAST_Poly
 category: harmonyos-references
-scraped_at: 2026-11-04T08:35:16+08:00
+scraped_at: 2026-11-12T09:56:00+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:26cff8939e3c50be33d537f542cf6b86bd60ffd20ce40871e9fb5caad693e167
+content_hash: sha256:d13b9c0db8193f38faed56049e49b017194cf82e386b1906c16548f90348cf26
 ---
 
 ## 概述
 
-定义稀疏格式多项式的数据结构。多项式![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/js_peUkfQtKG__el06cOKA/zh-cn_image_0000002809012831.png)由系数数组coeff和指数数组pow共同描述，且需按指数升序排列。
+定义稀疏格式多项式的数据结构。多项式![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/QDPBZMwoRaKKiAaNLIX7bQ/zh-cn_image_0000002815401611.png)由系数数组coeff和指数数组pow共同描述，且需按指数升序排列。
 
 **系统能力：** SystemCapability.FAST.Core
 

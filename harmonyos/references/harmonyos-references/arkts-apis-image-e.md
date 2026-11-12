@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Enums
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.image (图片处理) > Enums
 category: harmonyos-references
-scraped_at: 2026-09-25T07:13:10+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:18a8fdb7929a2fe049b915dc1888b9d97f3722ba3b05e495147c2847f3b72258
+scraped_at: 2026-11-12T09:56:39+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:479e230f7d305996a78a2492f75c38df2067f1215aba609ce6483c31bfe9d4d2
 ---
 
 Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式、透明度类型、图片元数据、图片属性信息（Exif及各格式图片属性）、辅助图类型、缩放模式、裁剪与缩放策略、动态范围、HDR元数据、内存分配、插值算法、图片方向、焦点模式、颜色模式、XMP标签类型等，用于在图片编解码、处理和显示场景中指定各类配置参数。
@@ -75,6 +75,8 @@ Image Kit提供的枚举类型集合，涵盖图片像素格式、图片格式�
 | LINEAR\_MAP | 4 | 线性图（Linear Map）。  以线性方式记录光照、颜色或其他视觉要素，为图像处理提供补充信息。  可用于视觉效果增强与色彩后期处理。 |
 | FRAGMENT\_MAP | 5 | 水印裁剪图（Fragment Map）。  记录原图中被水印遮挡的区域，可能是从原图裁剪得到，也可能只是填充特定数值的像素数据作为占位符。  可用于水印移除、原图恢复等场景。 |
 | LHDR\_GAINMAP | 10 | 特殊增益图（LHDR Gain Map）。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| OXY\_MAP | 11 | 血氧图（Oxygen Map）。  记录人脸区域像素的血氧饱和度。  可用于肤质分析，当前仅作为相机拍照流程的中间结果，不支持用于编解码。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| MEL\_MAP | 12 | 色斑图（Melanin Map）。  记录人脸区域的色斑分布。  可用于肤质分析，当前仅作为相机拍照流程的中间结果，不支持用于编解码。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## MetadataType13+
 

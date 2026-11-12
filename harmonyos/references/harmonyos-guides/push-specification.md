@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-specific
 title: 学习Push Kit接入规范
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 开发准备 > 学习Push Kit接入规范
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:00+08:00
-doc_updated_at: 2026-04-28
-content_hash: sha256:871fac9611ed6581d4d47be31794af0d795d7ce38b5c808ccdc29ada1a5242be
+scraped_at: 2026-11-12T09:52:34+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c4f0236eec327df2fa5c6743444544090cb456ba295b6c00c70ab9d1ad76951c
 ---
 
 为维护华为通知生态秩序，保障用户合法权益和良好的使用体验，根据现行法律法规及[《华为开发者服务协议》](../start/agreement-0000001052728169.md)、[《华为APIs使用协议》](../20209.md)、[《华为推送服务使用协议》](../app/20213.md)、[《应用审核指南》](../app/50104.md)、[《元服务审核指南》](../app/50129.md)，特制定本规范。
@@ -73,7 +73,7 @@ Wearable、TV不支持此通知样式。
 
 **说明** 
 
-Wearable不支持此通知样式。
+Wearable、Car不支持此通知样式。
 
 ### 多行文本样式
 

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/deveco-studio-hmos-new-features-2600
 title: 新增和增强特性
-breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > DevEco Studio（鸿蒙电脑版） > 新增和增强特性
+breadcrumb: 版本说明 > 更多版本 > 26.0.0 > DevEco Studio（鸿蒙电脑版） > 新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-11-07T07:59:20+08:00
-doc_updated_at: 2026-11-06
+scraped_at: 2026-11-12T09:50:02+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:d8b2c0d5a37131bbe450ef8323b5c6db0bb85c6b076a98b288a881e2dd4acdb7
 ---
 

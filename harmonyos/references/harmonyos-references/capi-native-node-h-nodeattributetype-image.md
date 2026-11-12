@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: ArkUI_NodeAttributeType（图类组件相关属性）
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_node.h > ArkUI_NodeAttributeType（图类组件相关属性）
 category: harmonyos-references
-scraped_at: 2026-09-25T07:10:36+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:060b57290af506614b80e03e6fe846e3e6f8cd03649d1dd8a315004500aef09d
+scraped_at: 2026-11-12T09:54:43+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8041cf727b503a3b64fe3b1b762e664a83251c01c76946241b73214825cbd33c
 ---
 
 ```c
@@ -839,3 +839,27 @@ NODE_IMAGE_ANIMATOR_ITERATION = 19006
 | 类型 | 说明 |
 | --- | --- |
 | .value[0].i32 | 播放次数。 |
+
+## NODE\_IMAGE\_ANIMATOR\_INTERPOLATION
+
+```c
+NODE_IMAGE_ANIMATOR_INTERPOLATION = 19007
+```
+
+设置帧动画中帧图片缩放时的插值效果。支持属性设置，属性重置和属性获取接口。
+
+作为属性设置方法参数、属性获取方法返回值[ArkUI\_AttributeItem](capi-arkui-nativemodule-arkui-attributeitem.md)格式如下。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| .value[0].i32 | 帧图片缩放时的插值效果，参数类型为[ArkUI\_ImageInterpolation](capi-image-h.md#arkui_imageinterpolation)，默认值为ARKUI\_IMAGE\_INTERPOLATION\_LOW。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| .value[0].i32 | 帧图片缩放时的插值效果，参数类型为[ArkUI\_ImageInterpolation](capi-image-h.md#arkui_imageinterpolation)。 |

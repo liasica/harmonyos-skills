@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Rating
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > Rating
 category: harmonyos-references
-scraped_at: 2026-11-04T08:32:59+08:00
+scraped_at: 2026-11-12T09:54:15+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:10a496f278281457e6ba6b2aa75f65105be2b062220b3d22bbb49e183f12fb43
+content_hash: sha256:c56f3877816b9992ef34cc0b8c9040fbcfe2710d5f631afd6469644724774a6b
 ---
 
 提供在给定范围内选择评分的组件，通常用于商品评价、内容打分等应用场景。
@@ -395,7 +395,7 @@ struct RatingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/OQmlSNhYTKumPHOM-_xwDw/zh-cn_image_0000002779692348.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/vEssRsF_Sgq05kah6ClsJg/zh-cn_image_0000002786361242.gif)
 
 ### 示例2（自定义评分条）
 
@@ -601,7 +601,7 @@ struct RatingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/XJh4kYh_RMiOiGZRnMoUtg/zh-cn_image_0000002809011969.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/lcDcGJilSMWDcEYt4z-Rdg/zh-cn_image_0000002815560663.gif)
 
 ### 示例3（通过Resource资源设置评分的样式）
 
@@ -639,7 +639,7 @@ struct RatingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/XRCsNvw5RPWEwSgLZcpWug/zh-cn_image_0000002809051883.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/kZuAI0adTQWiS8dcW4Fp9w/zh-cn_image_0000002815400747.gif)
 
 ### 示例4（设置评分的样式）
 
@@ -680,4 +680,4 @@ struct RatingExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/DqoUYyOKTr6igVB9il7FUg/zh-cn_image_0000002809051883.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/ZuT1qrPLRJW14AefWTEiZw/zh-cn_image_0000002815400747.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (MediaSource)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Interface (MediaSource)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:34+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:440878c184f0dfc974622e0d5adb63848f0b9ce405ae4205e5ea20cdfbccb09d
+scraped_at: 2026-11-12T09:56:44+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f7ff506a358358de00e64d0166a73c4942e3c5eabf72d3b1b44b72c156312719
 ---
 
 媒体数据信息。来源于[createMediaSourceWithUrl](arkts-apis-media-f.md#mediacreatemediasourcewithurl12)。
@@ -126,3 +126,57 @@ getID(): string
 | 类型 | 说明 |
 | --- | --- |
 | string | 返回媒体源的标识符，失败时返回空字符串。 |
+
+## setTrackSelectionFilter
+
+setTrackSelectionFilter(filter: TrackSelectionFilter): void
+
+设置MediaSource的轨道选择过滤条件。用户定义MediaSource的轨道选择过滤条件后，在播放或离线下载MediaSource数据时，优先按过滤条件执行相应操作。
+
+**起始版本**：26.0.1
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Multimedia.Media.Core
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| filter | [TrackSelectionFilter](arkts-apis-media-i.md#trackselectionfilter) | 是 | 指定预下载流媒体的轨道选择过滤条件。 |
+
+## setRetrieveKey
+
+setRetrieveKey(key: string): void
+
+设置MediaSource在检索时的匹配字符串。MediaSource对应的资源缓存到本地后，再次播放该资源时，内容分发网络（Content Delivery Network）提供的媒体资源URL可能发生变化，导致匹配失败。可通过设置匹配字符串来解决此问题。
+
+**起始版本**：26.0.1
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Multimedia.Media.Core
+
+**参数**：
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| key | string | 是 | 为MediaSource设置的用于在本地缓存中匹配的键值。 |
+
+## getTrackSelectionFilter
+
+getTrackSelectionFilter(): TrackSelectionFilter | undefined
+
+获取已配置的轨道选择过滤条件。
+
+**起始版本**：26.0.1
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Multimedia.Media.Core
+
+**返回值**：
+
+| 类型 | 说明 |
+| --- | --- |
+| [TrackSelectionFilter](arkts-apis-media-i.md#trackselectionfilter) | undefined | 如果TrackSelectionFilter对象存在，则返回该TrackSelectionFilter对象；否则返回undefined。 |

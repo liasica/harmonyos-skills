@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-listening
 title: 事件交互
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图交互 > 事件交互
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:58+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:88f0a2d587f41b5464c21121f9937394bfcafc16dcb8e2dede64d3c0725550cd
+scraped_at: 2026-11-12T09:52:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8d73dca0b2e7b30ec78d2b84c406ec892e9cbca9eb83d5fe00275c76069747a6
 ---
 
 本章节包含地图的点击和长按、相机移动（华为地图的移动是通过模拟相机移动的方式实现的）、以及“我的位置”按钮点击等事件监听。
@@ -37,7 +37,7 @@ this.mapEventManager = this.mapController.getEventManager();
 
 ```typescript
 let callback = (position: mapCommon.LatLng) => {
-  console.info("mapClick", `on-mapClick position = ${position.longitude}`);
+  console.info('mapClick', `on-mapClick position = [${position.latitude}, ${position.longitude}]`);
 };
 this.mapEventManager.on("mapClick", callback);
 ```
@@ -88,9 +88,9 @@ this.mapEventManager.on("cameraIdle", callback);
 
 ```typescript
 let callback = (marker: map.Marker) => {
-  console.info("markerClick", `markerClick: ${marker.getId()}`);
+  console.info('markerClick', `Received marker click event for marker ID: ${marker.getId()}`);
 };
-this.mapEventManager.on("markerClick", callback);
+this.mapEventManager.on('markerClick', callback);
 ```
 
 ### 我的位置监听

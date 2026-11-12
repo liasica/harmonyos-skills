@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-cross-ori
 title: 解决Web组件本地资源跨域问题
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理Web组件的网络安全与隐私 > 解决Web组件本地资源跨域问题
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:15+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:fb1e7249b2270212d6339a279c357acf22b6b6f02d2df2b06b092519a5eaacd1
+scraped_at: 2026-11-12T09:51:23+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b56dbb6aaad8ec8a1cb80a6b2f3bd47bb928f9e411addfd34f847e50139c584e
 ---
 
 ## 拦截本地资源跨域
@@ -107,9 +107,9 @@ Access to script at 'xxx' from origin 'xxx' has been blocked by CORS policy: Cro
   ```
 * 方法二
 
-  通过[setPathAllowingUniversalAccess](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#setpathallowinguniversalaccess12)设置一个路径列表。当使用file协议访问该列表中的资源时，允许进行跨域访问本地文件。此外，一旦设置了路径列表，file协议将仅限于访问列表内的资源（此时，[fileAccess](../harmonyos-references/arkts-basic-components-web-attributes.md#fileaccess)的行为将会被此接口行为覆盖）。
+  通过[setPathAllowingUniversalAccess()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#setpathallowinguniversalaccess12)设置一个路径列表。当使用file协议访问该列表中的资源时，允许进行跨域访问本地文件。此外，一旦设置了路径列表，file协议将仅限于访问列表内的资源（此时，[fileAccess](../harmonyos-references/arkts-basic-components-web-attributes.md#fileaccess)的行为将会被此接口行为覆盖）。
 
-  setPathAllowingUniversalAccess放开目录的跨域访问限制是一个高风险操作。基于最小权限原则，当前el1，el2放开的路径是固定的，路径列表中的路径应符合以下任一路径格式：
+  setPathAllowingUniversalAccess()放开目录的跨域访问限制是一个高风险操作。基于最小权限原则，当前el1，el2放开的路径是固定的，路径列表中的路径应符合以下任一路径格式：
 
   1. 应用文件目录通过[Context.filesDir](../harmonyos-references/js-apis-inner-application-context.md#属性)获取，其子目录示例如下：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-avsession
 title: "@correctness/avsession-metadata-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 正确性规则@correctness > @correctness/avsession-metadata-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:13+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:4fd00d236466b8a7a8dca6e12b79ba8a27066183516ce9059afa90303a2349ac
+scraped_at: 2026-11-12T09:53:00+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:9b2eccdd5cdfab07b2f5a55285475e77a2e714ac4159b7565a55d2335da2d96d
 ---
 
 建议音视频应用接入AVSession场景下，提供基础的媒体会话元数据和媒体会话播放状态，包含封面、标题、歌曲作者/副标题、时长、播放状态（暂停、播放）、播放位置。
@@ -180,4 +180,4 @@ avSession.createAVSession(context, tag, "audio", (err: BusinessError, data: avSe
 plugin:@correctness/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

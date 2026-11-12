@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-image-
 title: NativeImage开发指导 (C/C++)
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 图形缓冲区 > NativeImage开发指导 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:34+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:f5e3213b91de3334b48064c8f7fb8ec6d5cb3484ec7e608592269c2964209718
+scraped_at: 2026-11-12T09:52:13+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e00dcff8e65ed3aeced80bef9933bd694247405be20b01a71bce8fc981fee243
 ---
 
 ## 场景介绍
@@ -221,12 +221,16 @@ libnative_buffer.so
    ```
 2. **创建OH\_NativeImage实例**。
 
+   创建的nativeImage\_为OH\_NativeImage实例，将作为[OH\_NativeImage\_AcquireNativeWindow()](../harmonyos-references/capi-native-image-h.md#oh_nativeimage_acquirenativewindow)接口的入参。
+
    ```
    glGenTextures(1, &nativeImageTexId_);
    // ...
    nativeImage_ = OH_NativeImage_Create(nativeImageTexId_, GL_TEXTURE_EXTERNAL_OES);
    ```
 3. **获取对应的数据生产者端NativeWindow**。
+
+   传入image获取生产者端NativeWindow，image为使用[OH\_NativeImage\_Create()](../harmonyos-references/capi-native-image-h.md#oh_nativeimage_create)创建的OH\_NativeImage实例。
 
    ```
    nativeWindow_ = OH_NativeImage_AcquireNativeWindow(image);

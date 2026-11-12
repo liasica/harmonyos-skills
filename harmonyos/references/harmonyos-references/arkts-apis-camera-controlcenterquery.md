@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (ControlCenterQuery)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (ControlCenterQuery)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:26+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e5b9034cfc55a3c131779ff82cadd6788664ef8d6579a27c943e0803e3c7a2e4
+scraped_at: 2026-11-12T09:56:31+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:1353e83214dc51f970011ad95a13a9bcda2b30537569d1c9924f1a0ae2a964cb
 ---
 
 控制中心类，用于查询是否支持相机控制器。
@@ -52,6 +52,8 @@ getSupportedEffectTypes(): Array<ControlCenterEffectType>
 
 查询相机控制器支持的效果类型。
 
+使用此接口前需先通过[isControlCenterSupported](arkts-apis-camera-controlcenterquery.md#iscontrolcentersupported20)查询当前会话是否支持相机控制器。
+
 **元服务API：** 从API version 20开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Multimedia.Camera.Core
@@ -67,7 +69,9 @@ getSupportedEffectTypes(): Array<ControlCenterEffectType>
 ```ts
 function getSupportedEffectTypes(videoSession: camera.VideoSession): Array<camera.ControlCenterEffectType> {
     let effectTypes: Array<camera.ControlCenterEffectType> = [];
-    effectTypes = videoSession.getSupportedEffectTypes();
+    if (videoSession.isControlCenterSupported()) {
+        effectTypes = videoSession.getSupportedEffectTypes();
+    }
     return effectTypes;
 }
 ```

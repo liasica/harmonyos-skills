@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: ArkTS卡片页面刷新概述
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS卡片页面刷新 > ArkTS卡片页面刷新概述
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:30+08:00
-doc_updated_at: 2026-03-20
-content_hash: sha256:dd6435a20db5c73165ec2fc539c25368e3766d1357ef28a2280bd39382864e50
+scraped_at: 2026-11-12T09:51:27+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f429e7154e8754acb1cde3d038bb72bfd00e8ead3c1af2bbda6456c24b080e4f
 ---
 
 卡片使用方（例如：桌面）和卡片提供方均可主动触发卡片页面刷新。此外，卡片管理服务会根据开发者声明的定时信息，按需通知卡片提供方进行卡片刷新。因此，卡片刷新方式包括：卡片提供方主动触发刷新、卡片使用方主动触发刷新以及卡片定时定点刷新。这些刷新方式均需由卡片提供方推送需要刷新的卡片数据。
@@ -26,13 +26,13 @@ ArkTS卡片管理服务支持卡片提供方（例如：应用）和卡片之间
 
 **图1 卡片提供方主动刷新卡片流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/zvoKoyrfTFqRVr3sSVbQtA/zh-cn_image_0000002809010237.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/huNh54drQR6Ya9ljitQITQ/zh-cn_image_0000002815558949.png)
 
 卡片提供方应用运行过程中，如果识别到有要更新卡片数据的诉求，可以主动通过formProvider提供的[updateForm](../harmonyos-references/js-apis-app-form-formprovider.md#formproviderupdateform)接口更新卡片。
 
 **图2 卡片使用方主动刷新卡片流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/Zk9LmXpYQBSDq3EesOploQ/zh-cn_image_0000002809050151.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/SafYYif8RQWX9ldwmf9K7w/zh-cn_image_0000002815399033.png)
 
 当卡片使用方检测到系统语言或主题模式（如深浅色）发生变化时，可以主动通过formHost提供的requestForm（仅支持系统应用使用）接口请求更新卡片，卡片管理服务会进而通知卡片提供方完成卡片更新。
 
@@ -46,7 +46,7 @@ ArkTS卡片管理服务支持卡片提供方（例如：应用）和卡片之间
 
 **图3 卡片管理服务通知卡片提供方定时定点刷新卡片流程图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/0LKytPPTRXuJdDP-XK_Flg/zh-cn_image_0000002779850586.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/PpmVp_RjSXOEvgJ1caTc6w/zh-cn_image_0000002786519458.png)
 
 根据卡片提供方开发者提前配置声明的定时刷新信息，卡片管理服务会根据定时信息、卡片可见状态、刷新次数等因素综合判断是否需要通知卡片提供方更新卡片。
 
@@ -54,4 +54,4 @@ ArkTS卡片管理服务支持卡片提供方（例如：应用）和卡片之间
 
 1. 卡片提供方仅允许刷新自己的卡片，其他提供方的卡片无法刷新。
 2. 卡片使用方仅允许刷新添加到自己的卡片，添加到其他使用方的卡片无法刷新。
-3. 从API version 20开始，如果卡片刷新的数据通过共享内存更新，刷新数据总大小不超过10MB，刷新图片数量不超过20张。API version 19及之前的版本，图片文件数量上限为5张，每张限制内存2MB，超出限制的图片会显示异常。
+3. 如果卡片刷新的数据通过共享内存更新，刷新数据总大小不超过10MB。使用[createFormBindingData](../harmonyos-references/js-apis-app-form-formbindingdata.md#formbindingdatacreateformbindingdata)接口时，刷新图片数量不超过20张（API version 19及之前版本上限为5张，每张限制2MB）。使用[createFormBindingDataEx](../harmonyos-references/js-apis-app-form-formbindingdata.md#formbindingdatacreateformbindingdataex)接口时，刷新图片数量不超过30张。超出限制的图片会显示异常。

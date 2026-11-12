@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hp-arkui-
 title: "@performance/hp-arkui-suggest-use-effectkit-blur"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-arkui-suggest-use-effectkit-blur
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:12+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:a81639927669703dbdaf5313da4849df09e60ac095e1c46969b6160826e1524b
+scraped_at: 2026-11-12T09:52:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:29c2bb8e3a1cb1a5d82ff0835f85150b8fa552d9a13b60dcee9d4053c01b654e
 ---
 
 建议使用effectKit.createEffect实现模糊效果。
@@ -49,7 +49,7 @@ struct MyComponent {
   async staticBlur() {
     // 获取resourceManager对象
     let resourceMgr = this.getUIContext()?.getHostContext()?.resourceManager;
-    // 获rawfile目录下的图片
+    // 获取rawfile目录下的图片
     const fileData = await resourceMgr?.getRawFileContent('startIcon.png');
     // 创建实例
     let buffer = fileData?.buffer.slice(0);
@@ -163,4 +163,4 @@ plugin:@performance/recommended
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

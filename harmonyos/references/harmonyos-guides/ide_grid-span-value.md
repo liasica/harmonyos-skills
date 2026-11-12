@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_grid-span
 title: "@cross-device-app-dev/grid-span-value"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 一次开发多端部署规则@cross-device-app-dev > @cross-device-app-dev/grid-span-value
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:13+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:5defa9641a1b6374eaff99810de8791ba50aa55f37de51f882e17c29bbb1ff4d
+scraped_at: 2026-11-12T09:52:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:6581ecf7899900c9dda6d7322b0722b209d088bad8135705e38a7c245007f778
 ---
 
 在栅格布局组件GridCol中，span和offset不建议使用小数。
@@ -74,4 +74,4 @@ plugin:@cross-device-app-dev/recommended
 plugin:@cross-device-app-dev/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

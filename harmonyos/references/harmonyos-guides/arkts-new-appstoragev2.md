@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-app
 title: "AppStorageV2: 应用全局UI状态存储"
 breadcrumb: "指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V2） > 管理应用拥有的状态 > AppStorageV2: 应用全局UI状态存储"
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:10+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4cd6c507b38f3c09feca6fbcc8727198f76eff17135c7d809bf6d1ee423f6308
+scraped_at: 2026-11-12T09:51:09+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:5d0832f02a251e555db567cfe99c8c9d043c82a6def5fddbbc4f8a7a9f5a4dbe
 ---
 
 为了增强状态管理框架对应用全局UI状态变量的共享能力，开发者可以使用AppStorageV2存储应用全局UI的状态变量数据。
@@ -32,15 +32,11 @@ AppStorageV2支持应用的[主线程](thread-model-stage.md)内多个UIAbility�
 
 **说明** 
 
-1、若未指定key，使用第二个参数作为默认构造器；否则使用第三个参数作为默认构造器（第二个参数非法也使用第三个参数作为默认构造器）。
-
-2、确保数据已经存储在AppStorageV2中，可省略默认构造器，获取存储的数据；否则必须指定默认构造器，不指定将导致应用异常。
-
-3、同一个key，connect不同类型的数据会导致应用异常，应用需要确保类型匹配。
-
-4、key建议使用有意义的值，可由字母、数字、下划线组成，长度不超过255，使用非法字符或空字符的行为是未定义的。
-
-5、关联[@Observed](arkts-observed-and-objectlink.md)对象时，由于该类型的name属性未定义，需要指定key或者自定义name属性。
+1. 若未指定key，使用第二个参数作为默认构造器；否则使用第三个参数作为默认构造器（第二个参数非法也使用第三个参数作为默认构造器）。
+2. 确保数据已经存储在AppStorageV2中，可省略默认构造器，获取存储的数据；否则必须指定默认构造器，不指定将导致应用异常。
+3. 同一个key，connect不同类型的数据会导致应用异常，应用需要确保类型匹配。
+4. key建议使用有意义的值，可由字母、数字、下划线组成，长度不超过255，使用非法字符或空字符的行为是未定义的。
+5. 关联[@Observed](arkts-observed-and-objectlink.md)对象时，由于该类型的name属性未定义，需要指定key或者自定义name属性。
 
 * remove：删除指定key的存储数据。
 
@@ -54,15 +50,11 @@ AppStorageV2支持应用的[主线程](thread-model-stage.md)内多个UIAbility�
 
 ## 使用限制
 
-1、只支持class类型，否则会抛出运行时报错，从API version 23开始，将返回错误码[140103](../harmonyos-references/errorcode-statemanagement.md#section140103-appstoragev2和persistencev2使用不支持的数据类型)。
-
-2、需要配合UI使用（UI线程），不能在其他线程使用，如不支持[@Sendable](arkts-sendable.md)。
-
-3、不支持[collections.Set](../harmonyos-references/arkts-apis-arkts-collections-set.md)、[collections.Map](../harmonyos-references/arkts-apis-arkts-collections-map.md)等类型。
-
-4、不支持非built-in类型，如[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)、NativePointer、[ArrayList](../harmonyos-references/js-apis-arraylist.md)等Native类型。
-
-5、不支持存储基本类型，如string、number、boolean等。注意：不支持存储基本类型意味着connect接口传入的类型不能是基本类型，但connect传入的class中可以包含基本类型。
+1. 只支持class类型，否则会抛出运行时报错，从API version 23开始，将返回错误码[140103](../harmonyos-references/errorcode-statemanagement.md#section140103-appstoragev2和persistencev2使用不支持的数据类型)。
+2. 需要配合UI使用（UI线程），不能在其他线程使用，如不支持[@Sendable](arkts-sendable.md)。
+3. 不支持[collections.Set](../harmonyos-references/arkts-apis-arkts-collections-set.md)、[collections.Map](../harmonyos-references/arkts-apis-arkts-collections-map.md)等类型。
+4. 不支持非built-in类型，如[PixelMap](../harmonyos-references/arkts-apis-image-pixelmap.md)、NativePointer、[ArrayList](../harmonyos-references/js-apis-arraylist.md)等Native类型。
+5. 不支持存储基本类型，如string、number、boolean等。注意：不支持存储基本类型意味着connect接口传入的类型不能是基本类型，但connect传入的class中可以包含基本类型。
 
 ## 使用场景
 
@@ -176,7 +168,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/A5NCu1j9TmWCiKj8ndJdxw/zh-cn_image_0000002779849718.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/63/v3/0eY0i7DVQVGZcpXsijIwow/zh-cn_image_0000002786518586.gif)
 
 ### 在两个页面之间存储数据
 
@@ -329,4 +321,4 @@ struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/C5uT0aPDQ8qqsJzlkHfwjQ/zh-cn_image_0000002779689748.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/kQDvOFggQlWqiOCn3Dt0Uw/zh-cn_image_0000002786358658.gif)

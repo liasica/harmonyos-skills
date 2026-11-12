@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-keyword-s
 title: "@hw-stylistic/keyword-spacing"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > ArkTS代码风格规则@hw-stylistic > @hw-stylistic/keyword-spacing
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:13+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:4d9d6b17ffa74ea8bdf3491f4242b4edc29dbc8f9d52e5d1bf567ad312308e7c
+scraped_at: 2026-11-12T09:52:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:156d5a7798de92f2eb4f365dfdb0266f91648ccfa4ab5abf2aaef8a53c80c385
 ---
 
 在关键字前后强制加空格。该规则仅检查.ets文件类型。
@@ -74,4 +74,4 @@ export function test(a: number, b: number) {
 "plugin:@hw-stylistic/all"
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

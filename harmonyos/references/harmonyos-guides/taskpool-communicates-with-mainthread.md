@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/taskpool-comm
 title: TaskPool任务与宿主线程通信
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信场景 > TaskPool任务与宿主线程通信
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:28+08:00
-doc_updated_at: 2026-09-23
+scraped_at: 2026-11-12T09:51:03+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:d70c8b05d162c77d70bdfb4346b6ef23877cfb0029f87f26b560cbb32883f2fc
 ---
 

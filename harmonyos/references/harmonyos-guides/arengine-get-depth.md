@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-get-
 title: 获取深度估计信息（ArkTS）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 深度估计 > 获取深度估计信息（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:48+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:cfa985299e287d17c5b995ea79c9e056a058db10f8ec28b669746b21a4c12e06
+scraped_at: 2026-11-12T09:52:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0abf73dcd2c2e171e5a86cd71fe19b9c41a53c36c55a7dc5acad297c87443696
 ---
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/HarmonyOS_Samples/arengine_samplecode_clientdemo_arkts)。
@@ -37,7 +37,7 @@ import { arEngine, ARView, arViewController } from '@kit.AREngine';
 import { Node, Scene } from '@kit.ArkGraphics3D';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { logger } from '../utils/Logger';
-import { arrayBufferInt32ToNumber } from '../utils/Utils';
+import { arrayBufferInt32ToNumber, releaseFrame } from '../utils/Utils';
 ```
 
 ### 定义变量
@@ -216,6 +216,7 @@ class ARViewCallbackImpl extends arViewController.ARViewCallback {
 
       centerDistance = depthPlane[index] / 1000;
       centerConfidence = confidencePlane[index];
+      releaseFrame(frame);
     } catch (error) {
       const err: BusinessError = error as BusinessError;
       logger.error(`Failed to acquire depth information. Code is ${err.code}, message is ${err.message}`);

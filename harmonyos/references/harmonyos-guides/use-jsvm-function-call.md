@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-func
 title: 使用JSVM-API接口进行函数创建和调用
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口进行函数创建和调用
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:17+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:52:48+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:ecc23d181bfddfbfccf98cd9e0df335f9bbf3cfac57c7ddf76e30a37c7d56903
 ---
 

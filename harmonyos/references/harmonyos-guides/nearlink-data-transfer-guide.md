@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-data
 title: 使用星闪传输数据
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 星闪 > 使用星闪传输数据
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:47+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:51:43+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:04af973a4bc919c49f0d141db5f9fd2a23ec2d14f7d5519f51447f479023d20f
 ---
 

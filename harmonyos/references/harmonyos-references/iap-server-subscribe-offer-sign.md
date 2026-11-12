@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-serve
 title: 生成优惠签名购买参数
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > 生成优惠签名购买参数
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:20+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a665920fc378c0e1bdd6b95624cd898351d901021fb94f4e9f2dc2e38f271e1d
+scraped_at: 2026-11-12T09:57:22+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:067c41c81322146b516df8e48540c08a9755c56a7427b432452689a31cb94fa3
 ---
 
-开发者在促销优惠场景下需要传入JWT格式的jwsRepresentation参数，该参数包含购买订单涉及的优惠及商品信息。JSON Web Token（JWT）是一个开放标准（RFC 7519），定义了一种安全传输信息的方法，具体请参见[jwt.io](https://jwt.io/)。开发者可以使用从[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)下载的私钥签名生成JWT。密钥生成和下载请参见[配置密钥](../harmonyos-guides/iap-set-necessary-parameters.md#配置密钥)。创建JWT格式的签名购买参数需要以下几步：
+开发者在促销优惠场景下需要传入JWT格式的jwsRepresentation参数，该参数包含购买订单涉及的优惠及商品信息。JSON Web Token（JWT）是一个开放标准（RFC 7519），定义了一种安全传输信息的方法，具体请参见[jwt.io](https://jwt.io/)。开发者可以使用从[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)下载的私钥签名生成JWT。密钥生成和下载请参见[配置密钥](../harmonyos-guides/iap-set-necessary-parameters.md#配置密钥)。创建JWT格式的签名购买参数需要以下几步：
 
 1. 创建JWT Header
 2. 创建JWT Payload
@@ -59,7 +59,6 @@ public class JwsRepresentationGenerator {
     public static String createJwsRepresentation(String signingKey, Map<String, Object> jwtHeader,
         Map<String, Object> jwtPayload) {
         try {
-            // Configure a key and download the private key file in AppGallery Connect.
             byte[] derEncodedSigningKey = Base64.getDecoder().decode(signingKey);
             KeyFactory keyFactory = KeyFactory.getInstance("EC");
             PKCS8EncodedKeySpec keySpec = new PKCS8EncodedKeySpec(derEncodedSigningKey);

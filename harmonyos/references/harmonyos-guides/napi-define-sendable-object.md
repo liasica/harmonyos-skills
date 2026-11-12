@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/napi-define-s
 title: 自定义Native Sendable对象的多线程操作场景
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 应用多线程开发实践案例 > 自定义Native Sendable对象的多线程操作场景
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:29+08:00
-doc_updated_at: 2026-09-23
+scraped_at: 2026-11-12T09:51:04+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:66adc2396e5993cd866e51d389bf0cf2fa25a15f2591d7112aae3eb3574be5cd
 ---
 

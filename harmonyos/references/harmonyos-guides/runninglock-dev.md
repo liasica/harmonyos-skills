@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/runninglock-d
 title: 阻止系统闲时进入睡眠开发指南
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 电源管理 > 运行锁使用指南 > 阻止系统闲时进入睡眠开发指南
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:40+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:4974d8a058d8b277b5843c499f70fbd8bb443852ee832772ed34604303dbd017
+scraped_at: 2026-11-12T09:51:48+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:54f97cd4b1df8e0980a739917903b37d8d1a44f017d51b223569dc82c3ca279e
 ---
 
 ## 场景介绍
@@ -71,16 +71,13 @@ content_hash: sha256:4974d8a058d8b277b5843c499f70fbd8bb443852ee832772ed34604303d
 
    ```typescript
    // 导入runningLock、commonEventManager模块
-   import { runningLock } from '@kit.BasicServicesKit';
-   import { commonEventManager } from '@kit.BasicServicesKit';
-   import { BusinessError } from '@kit.BasicServicesKit';
+   import { runningLock, commonEventManager, BusinessError} from '@kit.BasicServicesKit';
    ```
 3. 开发公共事件工具类以及运行锁工具类。
 
    ```typescript
    // CommonEventHelper.ets
-   import { commonEventManager } from '@kit.BasicServicesKit';
-   import { BusinessError } from '@kit.BasicServicesKit';
+   import { commonEventManager, BusinessError} from '@kit.BasicServicesKit';
 
    type SubscriberInfo = commonEventManager.CommonEventSubscribeInfo;
    type Subscriber = commonEventManager.CommonEventSubscriber;

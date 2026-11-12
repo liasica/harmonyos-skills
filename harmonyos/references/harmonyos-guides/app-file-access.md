@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-file-acce
 title: 应用文件访问(ArkTS)
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 应用文件 > 应用文件访问与管理 > 应用文件访问(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:28+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:51:25+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:4675b83e8a8e223863b78c6306c4eddfab323278f45bb05d3f230eef82485cd9
 ---
 

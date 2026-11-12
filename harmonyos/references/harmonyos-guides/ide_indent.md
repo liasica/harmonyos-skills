@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_indent
 title: "@hw-stylistic/indent"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > ArkTS代码风格规则@hw-stylistic > @hw-stylistic/indent
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:13+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:3e911db83eb4bbdbc0ebf5175faeeb6784149a6b8a20874dd0d4c78acb6e28c9
+scraped_at: 2026-11-12T09:52:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7f85b87c6a4d623b3c6acf5b0229ede39aaa8af093fbd19dcc4dd8ca3f4bbcee
 ---
 
 强制switch语句中的case和default缩进一层。该规则仅检查.ets文件类型。
@@ -87,4 +87,4 @@ export function test(e: E) {
 "plugin:@hw-stylistic/all"
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

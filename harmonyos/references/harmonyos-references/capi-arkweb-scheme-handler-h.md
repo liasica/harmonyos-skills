@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arkw
 title: arkweb_scheme_handler.h
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > C API > 头文件 > arkweb_scheme_handler.h
 category: harmonyos-references
-scraped_at: 2026-09-24T06:53:10+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:14d4093709c47bdbbc7cceb49ff4cd26b5a9d6c3b9b98fa2ddd3bb3e6dcfdd35
+scraped_at: 2026-11-12T09:55:02+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:95053f01f92ce2edd8add965b442ed47ae5d357311389698966ea2d64ffa231f
 ---
 
 ## 概述
 
-arkweb\_scheme\_handler.h是ArkWeb中用于拦截和自定义网络请求的完整C API头文件。该模块定义了注册自定义Scheme拦截器的ArkWeb\_SchemeHandler、发送自定义响应的ArkWeb\_ResourceHandler、构建HTTP响应的ArkWeb\_Response、检查请求详情的ArkWeb\_ResourceRequest，以及用于读取上传数据的ArkWeb\_HttpBodyStream和访问请求头的ArkWeb\_RequestHeaderList。该API配合ArkWeb\_NativeAPIVariantKind系统使用，通过OH\_ArkWeb\_SetSchemeHandler或OH\_ArkWebServiceWorker\_SetSchemeHandler注册。开发者可以实现自定义协议的资源加载和响应，适用于本地资源替换、数据加密传输、离线缓存等场景，通过拦截和自定义网络请求，帮助开发者解决标准协议无法满足的特殊业务需求，提升应用的安全性和数据控制能力，优化网络资源加载效率。
+arkweb\_scheme\_handler.h是ArkWeb中用于拦截和自定义网络请求的完整C API头文件。该模块定义了注册自定义Scheme拦截器的ArkWeb\_SchemeHandler、发送自定义响应的ArkWeb\_ResourceHandler、构建HTTP响应的ArkWeb\_Response、检查请求详情的ArkWeb\_ResourceRequest，用于读取上传数据的ArkWeb\_HttpBodyStream，访问请求头的ArkWeb\_RequestHeaderList，以及设置响应错误详情的ArkWeb\_ErrorInfo。该API配合ArkWeb\_NativeAPIVariantKind系统使用，通过OH\_ArkWeb\_SetSchemeHandler或OH\_ArkWebServiceWorker\_SetSchemeHandler注册。开发者可以实现自定义协议的资源加载和响应，适用于本地资源替换、数据加密传输、离线缓存等场景，通过拦截和自定义网络请求，帮助开发者解决标准协议无法满足的特殊业务需求，提升应用的安全性和数据控制能力，优化网络资源加载效率。
 
 **引用文件：** <web/arkweb\_scheme\_handler.h>
 
@@ -36,6 +36,7 @@ arkweb\_scheme\_handler.h是ArkWeb中用于拦截和自定义网络请求的完�
 | [ArkWeb\_ResourceRequest\_](capi-web-arkweb-resourcerequest.md) | ArkWeb\_ResourceRequest | 对应内核的一个请求，可以通过OH\_ArkWebResourceRequest\_系列接口获取请求的URL、method、post data以及其他信息。如通过[OH\_ArkWebResourceRequest\_GetUrl](capi-arkweb-scheme-handler-h.md#oh_arkwebresourcerequest_geturl)获取请求的URL。 |
 | [ArkWeb\_RequestHeaderList\_](capi-web-arkweb-requestheaderlist.md) | ArkWeb\_RequestHeaderList | 请求头列表。 |
 | [ArkWeb\_HttpBodyStream\_](capi-web-arkweb-httpbodystream.md) | ArkWeb\_HttpBodyStream | 请求的上传数据。使用OH\_ArkWebHttpBodyStream\_接口来读取上传的数据。 |
+| [ArkWeb\_ErrorInfo\_](capi-web-arkweb-errorinfo.md) | ArkWeb\_ErrorInfo | 用于设置响应错误详情的结构体。开发者可以通过ArkWeb\_ErrorInfo设置错误码、自定义错误码以及是否在未收到响应时自动生成响应。 |
 
 ### 枚举
 
@@ -114,7 +115,18 @@ arkweb\_scheme\_handler.h是ArkWeb中用于拦截和自定义网络请求的完�
 | [int32\_t OH\_ArkWebResourceHandler\_DidReceiveData(const ArkWeb\_ResourceHandler\* resourceHandler,const uint8\_t\* buffer,int64\_t bufLen)](capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didreceivedata) | - | 将构造的响应体传递给被拦截的请求。 |
 | [int32\_t OH\_ArkWebResourceHandler\_DidFinish(const ArkWeb\_ResourceHandler\* resourceHandler)](capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didfinish) | - | 通知ArkWeb内核被拦截的请求已经完成，并且没有更多的数据可用。 |
 | [int32\_t OH\_ArkWebResourceHandler\_DidFailWithError(const ArkWeb\_ResourceHandler\* resourceHandler,ArkWeb\_NetError errorCode)](capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didfailwitherror) | - | 通知ArkWeb内核，被拦截的请求应该失败。 |
-| [int32\_t OH\_ArkWebResourceHandler\_DidFailWithErrorV2(const ArkWeb\_ResourceHandler\* resourceHandler,ArkWeb\_NetError errorCode,bool completeIfNoResponse)](capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didfailwitherrorv2) | - | 通知ArkWeb内核，被拦截的请求应该失败。对比OH\_ArkWebResourceHandler\_DidFailWithError接口，新增参数completeIfNoResponse，当值为true时，若之前未调用过OH\_ArkWebResourceHandler\_DidReceiveResponse，则会自动生成一个response以完成此次网络请求，网络错误码为-104；值为false时，将等待应用调用OH\_ArkWebResourceHandler\_DidReceiveResponse并传入response，不会直接完成此次网络请求。 |
+| [int32\_t OH\_ArkWebResourceHandler\_DidFailWithErrorV2(const ArkWeb\_ResourceHandler\* resourceHandler,ArkWeb\_NetError errorCode,bool completeIfNoResponse)](capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didfailwitherrorv2) | - | 通知ArkWeb内核，被拦截的请求应该失败。对比OH\_ArkWebResourceHandler\_DidFailWithError接口，新增参数completeIfNoResponse，当值为true时，若之前未调用过OH\_ArkWebResourceHandler\_DidReceiveResponse，则会自动生成一个response以完成此次网络请求；值为false时，将等待应用调用OH\_ArkWebResourceHandler\_DidReceiveResponse并传入response，不会直接完成此次网络请求。 |
+| [void OH\_ArkWeb\_CreateErrorInfo(ArkWeb\_ErrorInfo\*\* errorInfo)](capi-arkweb-scheme-handler-h.md#oh_arkweb_createerrorinfo) | - | 创建一个ArkWeb\_ErrorInfo对象。 |
+| [void OH\_ArkWeb\_DestroyErrorInfo(ArkWeb\_ErrorInfo\* errorInfo)](capi-arkweb-scheme-handler-h.md#oh_arkweb_destroyerrorinfo) | - | 销毁一个ArkWeb\_ErrorInfo对象。 |
+| [int32\_t OH\_ArkWebErrorInfo\_SetCompleteIfNoResponse(ArkWeb\_ErrorInfo\* errorInfo, bool completeIfNoResponse)](capi-arkweb-scheme-handler-h.md#oh_arkweberrorinfo_setcompleteifnoresponse) | - | 设置是否在未收到响应时自动生成响应。 |
+| [bool OH\_ArkWebErrorInfo\_GetCompleteIfNoResponse(const ArkWeb\_ErrorInfo\* errorInfo)](capi-arkweb-scheme-handler-h.md#oh_arkweberrorinfo_getcompleteifnoresponse) | - | 获取是否在未收到响应时自动生成响应。 |
+| [int32\_t OH\_ArkWebErrorInfo\_SetCustomErrorCode(ArkWeb\_ErrorInfo\* errorInfo, int32\_t errorCode)](capi-arkweb-scheme-handler-h.md#oh_arkweberrorinfo_setcustomerrorcode) | - | 设置自定义错误码，Web引擎会将自定义错误码通过onErrorReceive直接传递给应用。系统错误码触发onErrorReceive，自定义错误码仅透传。 |
+| [int32\_t OH\_ArkWebErrorInfo\_GetCustomErrorCode(const ArkWeb\_ErrorInfo\* errorInfo)](capi-arkweb-scheme-handler-h.md#oh_arkweberrorinfo_getcustomerrorcode) | - | 获取自定义错误码。 |
+| [int32\_t OH\_ArkWebErrorInfo\_SetErrorCode(ArkWeb\_ErrorInfo\* errorInfo, ArkWeb\_NetError errorCode)](capi-arkweb-scheme-handler-h.md#oh_arkweberrorinfo_seterrorcode) | - | 设置错误码。 |
+| [ArkWeb\_NetError OH\_ArkWebErrorInfo\_GetErrorCode(const ArkWeb\_ErrorInfo\* errorInfo)](capi-arkweb-scheme-handler-h.md#oh_arkweberrorinfo_geterrorcode) | - | 获取错误码。 |
+| [int32\_t OH\_ArkWebResponse\_SetErrorInfo(ArkWeb\_Response\* response, ArkWeb\_ErrorInfo\* errorInfo)](capi-arkweb-scheme-handler-h.md#oh_arkwebresponse_seterrorinfo) | - | 为ArkWeb\_Response设置错误信息。 |
+| [ArkWeb\_ErrorInfo\* OH\_ArkWebResponse\_GetErrorInfo(const ArkWeb\_Response\* response)](capi-arkweb-scheme-handler-h.md#oh_arkwebresponse_geterrorinfo) | - | 从ArkWeb\_Response中获取错误信息。 |
+| [int32\_t OH\_ArkWebResourceHandler\_DidFailWithErrorInfo(const ArkWeb\_ResourceHandler\* resourceHandler, const ArkWeb\_ErrorInfo\* errorInfo)](capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didfailwitherrorinfo) | - | 通知Web引擎该请求应携带错误信息而失败。 |
 | [void OH\_ArkWeb\_ReleaseString(char\* string)](capi-arkweb-scheme-handler-h.md#oh_arkweb_releasestring) | - | 释放由NDK接口创建的字符串。 |
 | [void OH\_ArkWeb\_ReleaseByteArray(uint8\_t\* byteArray)](capi-arkweb-scheme-handler-h.md#oh_arkweb_releasebytearray) | - | 释放由NDK接口创建的字节数组。 |
 
@@ -1828,7 +1840,7 @@ int32_t OH_ArkWebResourceHandler_DidFailWithErrorV2(const ArkWeb_ResourceHandler
 
 **描述：**
 
-通知ArkWeb内核，被拦截的请求应该失败。对比[OH\_ArkWebResourceHandler\_DidFailWithError](capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didfailwitherror)接口，新增参数completeIfNoResponse，值为true时，若之前未调用过[OH\_ArkWebResourceHandler\_DidReceiveResponse](capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didreceiveresponse)，则会自动生成一个response以完成此次网络请求，网络错误码为-104；值为false时，将等待应用调用[OH\_ArkWebResourceHandler\_DidReceiveResponse](capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didreceiveresponse)并传入response，不会直接完成此次网络请求。
+通知ArkWeb内核，被拦截的请求应该失败。对比[OH\_ArkWebResourceHandler\_DidFailWithError](capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didfailwitherror)接口，新增参数completeIfNoResponse，值为true时，若之前未调用过[OH\_ArkWebResourceHandler\_DidReceiveResponse](capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didreceiveresponse)，则会自动生成一个response以完成此次网络请求；值为false时，将等待应用调用[OH\_ArkWebResourceHandler\_DidReceiveResponse](capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didreceiveresponse)并传入response，不会直接完成此次网络请求。
 
 **系统能力：** SystemCapability.Web.Webview.Core
 
@@ -1840,7 +1852,294 @@ int32_t OH_ArkWebResourceHandler_DidFailWithErrorV2(const ArkWeb_ResourceHandler
 | --- | --- |
 | const [ArkWeb\_ResourceHandler](capi-web-arkweb-resourcehandler.md)\* resourceHandler | 用于被拦截的URL请求。可以通过ArkWeb\_ResourceHandler发送自定义响应头以及自定义响应体。 |
 | [ArkWeb\_NetError](capi-arkweb-net-error-list-h.md#arkweb_neterror) errorCode | 该请求的错误码。请参考[arkweb\_net\_error\_list.h](capi-arkweb-net-error-list-h.md)。 |
-| bool completeIfNoResponse | 若之前未调用过[OH\_ArkWebResourceHandler\_DidReceiveResponse](capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didreceiveresponse)，调用[OH\_ArkWebResourceHandler\_DidFailWithErrorV2](capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didfailwitherrorv2)时，此次网络请求是否完成；值为true时，若之前未调用过[OH\_ArkWebResourceHandler\_DidReceiveResponse](capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didreceiveresponse)，则会自动生成一个response以完成此次网络请求，网络错误码为-104；值为false时，将等待应用调用[OH\_ArkWebResourceHandler\_DidReceiveResponse](capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didreceiveresponse)并传入response，不会直接完成此次网络请求。 |
+| bool completeIfNoResponse | 若之前未调用过[OH\_ArkWebResourceHandler\_DidReceiveResponse](capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didreceiveresponse)，调用[OH\_ArkWebResourceHandler\_DidFailWithErrorV2](capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didfailwitherrorv2)时，此次网络请求是否完成；值为true时，若之前未调用过[OH\_ArkWebResourceHandler\_DidReceiveResponse](capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didreceiveresponse)，则会自动生成一个response以完成此次网络请求；值为false时，将等待应用调用[OH\_ArkWebResourceHandler\_DidReceiveResponse](capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didreceiveresponse)并传入response，不会直接完成此次网络请求。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| int32\_t | 如果返回0，表示成功；返回17100101，表示参数无效。 |
+
+### OH\_ArkWeb\_CreateErrorInfo()
+
+```c
+void OH_ArkWeb_CreateErrorInfo(ArkWeb_ErrorInfo** errorInfo)
+```
+
+**描述：**
+
+创建一个ArkWeb\_ErrorInfo对象。如果创建成功，\*errorInfo指向新创建的对象，必须在不再需要时使用[OH\_ArkWeb\_DestroyErrorInfo](capi-arkweb-scheme-handler-h.md#oh_arkweb_destroyerrorinfo)销毁。如果创建失败，\*errorInfo被设置为NULL。如果errorInfo为nullptr，此函数不做任何操作。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [ArkWeb\_ErrorInfo](capi-web-arkweb-errorinfo.md)\*\* errorInfo | 创建的ArkWeb\_ErrorInfo对象。 |
+
+### OH\_ArkWeb\_DestroyErrorInfo()
+
+```c
+void OH_ArkWeb_DestroyErrorInfo(ArkWeb_ErrorInfo* errorInfo)
+```
+
+**描述：**
+
+销毁一个ArkWeb\_ErrorInfo对象。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [ArkWeb\_ErrorInfo](capi-web-arkweb-errorinfo.md)\* errorInfo | 待销毁的ArkWeb\_ErrorInfo。 |
+
+### OH\_ArkWebErrorInfo\_SetCompleteIfNoResponse()
+
+```c
+int32_t OH_ArkWebErrorInfo_SetCompleteIfNoResponse(ArkWeb_ErrorInfo* errorInfo, bool completeIfNoResponse)
+```
+
+**描述：**
+
+设置是否在未收到响应时自动生成响应。如果completeIfNoResponse设置为true，当调用[OH\_ArkWebResourceHandler\_DidFailWithErrorInfo](capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didfailwitherrorinfo)时，若之前未调用过[OH\_ArkWebResourceHandler\_DidReceiveResponse](capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didreceiveresponse)，则会自动构造一个响应来完成请求。
+
+此参数对应ArkTS API中[WebResourceHandler.didFail](arkts-apis-webview-webresourcehandler.md#didfail)的completeIfNoResponse参数。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [ArkWeb\_ErrorInfo](capi-web-arkweb-errorinfo.md)\* errorInfo | ArkWeb\_ErrorInfo。 |
+| bool completeIfNoResponse | 如果为true，当未收到响应时会自动构造一个响应。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| int32\_t | 如果返回0，表示成功；返回17100101，表示参数无效。 |
+
+### OH\_ArkWebErrorInfo\_GetCompleteIfNoResponse()
+
+```c
+bool OH_ArkWebErrorInfo_GetCompleteIfNoResponse(const ArkWeb_ErrorInfo* errorInfo)
+```
+
+**描述：**
+
+获取是否在未收到响应时自动生成响应。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| const [ArkWeb\_ErrorInfo](capi-web-arkweb-errorinfo.md)\* errorInfo | ArkWeb\_ErrorInfo。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| bool | 如果启用了在未收到响应时自动生成响应，则返回true；否则返回false。 |
+
+### OH\_ArkWebErrorInfo\_SetCustomErrorCode()
+
+```c
+int32_t OH_ArkWebErrorInfo_SetCustomErrorCode(ArkWeb_ErrorInfo* errorInfo, int32_t errorCode)
+```
+
+**描述：**
+
+为ArkWeb\_ErrorInfo设置自定义错误码。Web引擎会将自定义错误码通过onErrorReceive直接传递给应用。
+
+此接口对应ArkTS API中的[WebSchemeHandlerResponse.setCustomErrorCode](arkts-apis-webview-webschemehandlerresponse.md#setcustomerrorcode)。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [ArkWeb\_ErrorInfo](capi-web-arkweb-errorinfo.md)\* errorInfo | ArkWeb\_ErrorInfo。 |
+| int32\_t errorCode | 自定义错误码。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| int32\_t | 如果返回0，表示成功；返回17100101，表示参数无效。 |
+
+### OH\_ArkWebErrorInfo\_GetCustomErrorCode()
+
+```c
+int32_t OH_ArkWebErrorInfo_GetCustomErrorCode(const ArkWeb_ErrorInfo* errorInfo)
+```
+
+**描述：**
+
+从ArkWeb\_ErrorInfo中获取自定义错误码。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| const [ArkWeb\_ErrorInfo](capi-web-arkweb-errorinfo.md)\* errorInfo | ArkWeb\_ErrorInfo。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| int32\_t | 自定义错误码。 |
+
+### OH\_ArkWebErrorInfo\_SetErrorCode()
+
+```c
+int32_t OH_ArkWebErrorInfo_SetErrorCode(ArkWeb_ErrorInfo* errorInfo, ArkWeb_NetError errorCode)
+```
+
+**描述：**
+
+为ArkWeb\_ErrorInfo设置错误码。参考[arkweb\_net\_error\_list.h](capi-arkweb-net-error-list-h.md)。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [ArkWeb\_ErrorInfo](capi-web-arkweb-errorinfo.md)\* errorInfo | ArkWeb\_ErrorInfo。 |
+| [ArkWeb\_NetError](capi-arkweb-net-error-list-h.md#arkweb_neterror) errorCode | 错误码。参考[arkweb\_net\_error\_list.h](capi-arkweb-net-error-list-h.md)。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| int32\_t | 如果返回0，表示成功；返回17100101，表示参数无效。 |
+
+### OH\_ArkWebErrorInfo\_GetErrorCode()
+
+```c
+ArkWeb_NetError OH_ArkWebErrorInfo_GetErrorCode(const ArkWeb_ErrorInfo* errorInfo)
+```
+
+**描述：**
+
+从ArkWeb\_ErrorInfo中获取错误码。参考[arkweb\_net\_error\_list.h](capi-arkweb-net-error-list-h.md)。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| const [ArkWeb\_ErrorInfo](capi-web-arkweb-errorinfo.md)\* errorInfo | ArkWeb\_ErrorInfo。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [ArkWeb\_NetError](capi-arkweb-net-error-list-h.md#arkweb_neterror) | 错误码。 |
+
+### OH\_ArkWebResponse\_SetErrorInfo()
+
+```c
+int32_t OH_ArkWebResponse_SetErrorInfo(ArkWeb_Response* response, ArkWeb_ErrorInfo* errorInfo)
+```
+
+**描述：**
+
+为ArkWeb\_Response设置错误信息。所有权不会转移，调用方必须确保errorInfo在[ArkWeb\_OnRequestStop](capi-arkweb-scheme-handler-h.md#arkweb_onrequeststop)触发之前保持有效。
+
+此接口对应ArkTS API中的[WebSchemeHandlerResponse.setCustomErrorCode](arkts-apis-webview-webschemehandlerresponse.md#setcustomerrorcode)。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [ArkWeb\_Response](capi-web-arkweb-response.md)\* response | ArkWeb\_Response。 |
+| [ArkWeb\_ErrorInfo](capi-web-arkweb-errorinfo.md)\* errorInfo | 要设置的ArkWeb\_ErrorInfo。所有权不会转移，调用方必须确保errorInfo在[ArkWeb\_OnRequestStop](capi-arkweb-scheme-handler-h.md#arkweb_onrequeststop)触发之前保持有效。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| int32\_t | 如果返回0，表示成功；返回17100101，表示参数无效。 |
+
+### OH\_ArkWebResponse\_GetErrorInfo()
+
+```c
+ArkWeb_ErrorInfo* OH_ArkWebResponse_GetErrorInfo(const ArkWeb_Response* response)
+```
+
+**描述：**
+
+从ArkWeb\_Response中获取错误信息。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| const [ArkWeb\_Response](capi-web-arkweb-response.md)\* response | ArkWeb\_Response。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [ArkWeb\_ErrorInfo](capi-web-arkweb-errorinfo.md)\* | 如果已设置，则返回指向ArkWeb\_ErrorInfo的指针；否则返回NULL。 |
+
+### OH\_ArkWebResourceHandler\_DidFailWithErrorInfo()
+
+```c
+int32_t OH_ArkWebResourceHandler_DidFailWithErrorInfo(const ArkWeb_ResourceHandler* resourceHandler, const ArkWeb_ErrorInfo* errorInfo)
+```
+
+**描述：**
+
+通知Web引擎该请求应携带错误信息而失败。与[OH\_ArkWebResourceHandler\_DidFailWithErrorV2](capi-arkweb-scheme-handler-h.md#oh_arkwebresourcehandler_didfailwitherrorv2)相比，此接口使用ArkWeb\_ErrorInfo对象来携带错误码、自定义错误码和completeIfNoResponse设置。
+
+此接口对应ArkTS API中携带customErrorCode参数的[WebResourceHandler.didFail](arkts-apis-webview-webresourcehandler.md#didfail)。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| const [ArkWeb\_ResourceHandler](capi-web-arkweb-resourcehandler.md)\* resourceHandler | 该请求的ArkWeb\_ResourceHandler。 |
+| const [ArkWeb\_ErrorInfo](capi-web-arkweb-errorinfo.md)\* errorInfo | 该请求的错误信息。 |
 
 **返回：**
 

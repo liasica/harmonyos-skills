@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: Audio错误码
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > 错误码 > Audio错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:21+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:856489484f5c537c87a31f0f030566e4057a8e3e9ab830d5f139d87a74cb876a
+scraped_at: 2026-11-12T09:56:25+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:966e7802783ae0ce51a41b580c6da7a6339ce4e22ea1f3e132ba682ea816c0b2
 ---
 
 **说明** 
@@ -317,3 +317,66 @@ StartAudioStream日志从API版本11开始支持；StartImpl日志从API版本12
 **处理步骤**
 
 尝试重试或[提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)处理。
+
+## 6800302 系统服务进程终止
+
+**错误信息**
+
+System service process terminated.
+
+**错误描述**
+
+系统服务进程终止。
+
+**可能原因**
+
+1. 音频系统服务内部运行发生崩溃。
+2. 音频系统服务内部关键线程无响应，触发重启自恢复。
+
+**处理步骤**
+
+系统内部出错，与应用使用无关，可用步骤如下：
+
+1. 提示用户系统错误，可操作重试。
+2. 反复重试无法恢复时，可退出清理应用后台，重新进入应用重试。
+3. 仍无法恢复时，用户可重启设备尝试恢复。
+4. 收集系统错误相关信息，提交系统侧分析处理。
+
+## 6800501 网络条件不满足
+
+**错误信息**
+
+Required network conditions not met.
+
+**错误描述**
+
+网络条件不满足接口要求。
+
+**可能原因**
+
+当前用户的网络环境和接口所需要的网络环境不一致。比如接口需要连接网络，设备未连接网络；接口需要Wi-Fi网络，设备未连接可用Wi-Fi。
+
+**处理步骤**
+
+1. 检查设备网络连接状态，确认是否已连接可用网络。
+2. 若接口对网络类型有要求（如需Wi-Fi网络），确认设备当前网络类型是否满足。
+3. 引导用户连接满足要求的网络后重试。
+
+## 6800502 存储空间不足
+
+**错误信息**
+
+Insufficient storage space.
+
+**错误描述**
+
+设备存储空间不足。
+
+**可能原因**
+
+设备存储空间不满足当前接口所需要的存储大小。
+
+**处理步骤**
+
+1. 检查设备可用存储空间是否满足接口要求。
+2. 引导用户清理设备存储空间后重试。

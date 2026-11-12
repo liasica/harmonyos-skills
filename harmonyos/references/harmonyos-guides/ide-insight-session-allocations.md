@@ -3,12 +3,10 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-insight-s
 title: 基础内存：Allocation分析
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 基础内存：Allocation分析
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:22+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:e1c60d0275e5b7737b3a73d4e5e4d5ea8e0427038a7a27e6d191d8239622a7ae
+scraped_at: 2026-11-12T09:53:09+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:62166296d6816bf61f9d959588588f7316c869d8bbdc8d068470055cbad26d00
 ---
-
-## 功能介绍
 
 应用在开发过程中，可能因API使用错误、变量未及时释放、异常频繁创建/释放内存等情况引发各种内存问题。
 

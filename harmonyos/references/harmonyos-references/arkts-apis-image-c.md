@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Constants
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.image (图片处理) > Constants
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:30+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d5d28650377bf2a9c85225747c16f914668320a8c09d338e1ad4e96de2ee469e
+scraped_at: 2026-11-12T09:56:38+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:06ec60373bd30ced05281071219677eb3b6fa9bdd5dc1f986f97447a9ddfb151
 ---
 
 **说明** 
@@ -26,16 +26,16 @@ import { image } from '@kit.ImageKit';
 
 | 名称 | 类型 | 值 | 说明 |
 | --- | --- | --- | --- |
-| XMAGE\_WATERMARK\_MODE\_AT\_THE\_BOTTOM | number | 9 | XMAGE水印模式：XMAGE水印固定位于图像底部中央。 |
-| XMAGE\_WATERMARK\_MODE\_BORDER | number | 10 | XMAGE水印模式：XMAGE水印会自动调整到边界位置，系统根据图像内容选择最适合的边界区域。 |
+| XMAGE\_WATERMARK\_MODE\_AT\_THE\_BOTTOM | number | 9 | XMAGE水印模式：水印位于图像底部。 |
+| XMAGE\_WATERMARK\_MODE\_BORDER | number | 10 | XMAGE水印模式：水印位于图像边缘。 |
 | CAPTURE\_MODE\_PROFESSIONAL | number | 2 | 拍摄模式：专业模式。 |
 | CAPTURE\_MODE\_FRONT\_LENS\_NIGHT\_VIEW | number | 7 | 拍摄模式：前置摄像头夜景模式。 |
 | CAPTURE\_MODE\_PANORAMA | number | 8 | 拍摄模式：全景模式。 |
 | CAPTURE\_MODE\_TAIL\_LIGHT | number | 9 | 拍摄模式：尾灯模式。 |
-| CAPTURE\_MODE\_LIGHT\_GRAFFITI | number | 10 | 拍摄模式：轻涂鸦模式。 |
+| CAPTURE\_MODE\_LIGHT\_GRAFFITI | number | 10 | 拍摄模式：光绘涂鸦模式。 |
 | CAPTURE\_MODE\_SILKY\_WATER | number | 11 | 拍摄模式：缎面感水流模式。 |
 | CAPTURE\_MODE\_STAR\_TRACK | number | 12 | 拍摄模式：星轨模式。 |
-| CAPTURE\_MODE\_WIDEAPERTURE | number | 19 | 拍摄模式：广角模式。 |
+| CAPTURE\_MODE\_WIDEAPERTURE | number | 19 | 拍摄模式：大光圈模式。 |
 | CAPTURE\_MODE\_MOVING\_PHOTO | number | 20 | 拍摄模式：动态照片模式。 |
 | CAPTURE\_MODE\_PORTRAIT | number | 23 | 拍摄模式：人像模式。 |
 | CAPTURE\_MODE\_REAR\_LENS\_NIGHT\_VIEW | number | 42 | 拍摄模式：后镜头夜景模式。 |

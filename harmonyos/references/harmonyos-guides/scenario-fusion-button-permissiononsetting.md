@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 权限设置Button
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 场景化Button > 权限设置Button
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:28+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:bb07549087153673251c9f446bfa21f7dcb25a07d5f2995c643c28dcbcd9eac5
+scraped_at: 2026-11-12T09:52:35+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:1a9109c065ee33e0cc5747aa049e84c1f33d9e2b11c46e17552b80cc348dad6c
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:bb07549087153673251c9f446bfa21f7dcb25a07d5f2995c643c28dcbcd
 
 ## 约束与限制
 
-权限设置Button支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持TV设备。
+权限设置Button支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持TV设备，从API版本26.0.1开始，新增支持Car设备。
 
 **说明** 
 

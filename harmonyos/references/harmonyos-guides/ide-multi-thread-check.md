@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-multi-thr
 title: 方舟运行时检测
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 日志与故障分析 > 故障分析 > 方舟运行时检测
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:23+08:00
+scraped_at: 2026-11-12T09:53:04+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:0262f2fb58aaeb22ff7a1f9a18283163e6a81019cf50c8c5d5ae4de3b40ef2a5
+content_hash: sha256:ca39899dfb46302f7998fb65803c1ca924cfba1cbd1f9aa7ba040d5500f1e301
 ---
 
 ## 方舟多线程检测
@@ -22,7 +22,7 @@ content_hash: sha256:0262f2fb58aaeb22ff7a1f9a18283163e6a81019cf50c8c5d5ae4de3b40
 
   点击**Run > Edit Configurations >** **Diagnostics**，勾选**Multi Thread Check**。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/I21ecbAdQ9eNGwv_1u9Spw/zh-cn_image_0000002701823648.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/JXBkEHPOTpa2rlWT303Rjw/zh-cn_image_0000002779567500.png)
 
 * **方式二**
 
@@ -43,7 +43,7 @@ content_hash: sha256:0262f2fb58aaeb22ff7a1f9a18283163e6a81019cf50c8c5d5ae4de3b40
 
    如果是通过方式三调用setMultithreadingDetectionEnabled接口开启，发生多线程安全问题时，该接口支持应用崩溃和不崩溃两种场景。若设置为崩溃，则应用退出并生成cppcrash日志；若设置为不崩溃，应用不会退出，同时生成arktsenvsan日志，此时应用可通过[hiAppEvent订阅地址越界事件](hiappevent-watcher-address-sanitizer-events-arkts.md)来感知多线程安全问题，并生成hilog日志。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/M3tSRFW9Q-iZiR3w4Whj3Q/zh-cn_image_0000002701663728.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/WRRhmNr9Rka2eHc-QYiDdA/zh-cn_image_0000002808767079.png)
 
 ## 方舟native模块加载异常信息增强
 
@@ -57,7 +57,7 @@ content_hash: sha256:0262f2fb58aaeb22ff7a1f9a18283163e6a81019cf50c8c5d5ae4de3b40
 
   点击**Run > Edit Configurations >** **Diagnostics**，勾选**Enhanced Error Info**。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/zYbFSu7kSwaLOMf3uCIrGA/zh-cn_image_0000002731542921.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/30FW-XfsTMWGmleT8Rs1ow/zh-cn_image_0000002808887161.png)
 
 * 方式二
 
@@ -72,4 +72,4 @@ content_hash: sha256:0262f2fb58aaeb22ff7a1f9a18283163e6a81019cf50c8c5d5ae4de3b40
 1. 运行或调试当前应用。
 2. 当程序出现因native模块加载导致的报错信息时，会显示更详细准确的错误信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/lVybDEutRMOrRGh7NyL-sw/zh-cn_image_0000002701823644.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/VCJs6JhAQ_SFJX1A407CLQ/zh-cn_image_0000002779407524.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (Focus)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (Focus)
 category: harmonyos-references
-scraped_at: 2026-10-15T07:11:10+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:1532197b2215b0a824aacdee163be8dd321fc0c6b4d593eaa003b2b57bd61db1
+scraped_at: 2026-11-12T09:56:32+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:6cf08204539830819b50bd5dd5d7098c29f83c6072176972e9512ec30333e8fa
 ---
 
 Focus继承自[FocusQuery](arkts-apis-camera-focusquery.md)。
@@ -56,7 +56,9 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 function setFocusMode(photoSession: camera.PhotoSession): void {
   try {
-    photoSession.setFocusMode(camera.FocusMode.FOCUS_MODE_AUTO);
+    if (photoSession.isFocusModeSupported(camera.FocusMode.FOCUS_MODE_AUTO)) {
+      photoSession.setFocusMode(camera.FocusMode.FOCUS_MODE_AUTO);
+    }
   } catch (error) {
     // 失败返回错误码error.code并处理。
     let err = error as BusinessError;
@@ -241,6 +243,8 @@ lockFocusTracking(focusPoint: Point): void
 
 锁定焦点跟踪，使对焦持续追踪指定的物体。通过focusPoint参数指定追踪目标。
 
+设置锁定焦点追踪前，先通过[isLockFocusTrackingSupported](arkts-apis-camera-focusquery.md#islockfocustrackingsupported)接口查询是否支持锁定焦点跟踪。
+
 **起始版本：** 26.0.0
 
 **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
@@ -269,10 +273,11 @@ lockFocusTracking(focusPoint: Point): void
 ```ts
 import { BusinessError } from '@kit.BasicServicesKit';
 
-function lockFocusTracking(photoSession: camera.PhotoSession): void {
+function lockFocusTracking(focusPoint: camera.Point, photoSession: camera.PhotoSession): void {
   try {
-    const focusPoint: camera.Point = {x: 0, y: 0};
-    photoSession.lockFocusTracking(focusPoint);
+    if (photoSession.isLockFocusTrackingSupported()) {
+      photoSession.lockFocusTracking(focusPoint);
+    }
   } catch (error) {
     // 失败返回错误码error.code并处理。
     let err = error as BusinessError;
@@ -286,6 +291,8 @@ function lockFocusTracking(photoSession: camera.PhotoSession): void {
 unlockFocusTracking(): void
 
 解锁焦点跟踪。
+
+可以通过[isLockFocusTrackingSupported](arkts-apis-camera-focusquery.md#islockfocustrackingsupported)接口查询是否支持锁定焦点跟踪。
 
 **起始版本：** 26.0.0
 
@@ -311,7 +318,9 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 function unlockFocusTracking(photoSession: camera.PhotoSession): void {
   try {
-    photoSession.unlockFocusTracking();
+    if (photoSession.isLockFocusTrackingSupported()) {
+      photoSession.unlockFocusTracking();
+    }
   } catch (error) {
     // 失败返回错误码error.code并处理。
     let err = error as BusinessError;

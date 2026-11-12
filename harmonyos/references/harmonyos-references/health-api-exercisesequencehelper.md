@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-ap
 title: exerciseSequenceHelper (锻炼记录类型常量)
 breadcrumb: API参考 > 应用服务 > Health Service Kit（运动健康服务） > ArkTS API > 运动健康数据类型常量及模型定义 > exerciseSequenceHelper (锻炼记录类型常量)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:55+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4385c9bac51e6f88ba48766b81ecf261aee2db4d97ad0ffa785aa1fc625fae65
+scraped_at: 2026-11-12T09:57:21+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:997dbe9cb52469dd11c9accafb6c288116a239cdc1fa3e4a89aac75233f25c99
 ---
 
 本模块提供锻炼记录数据类型常量及数据模型。
@@ -2219,3 +2219,703 @@ type DetailFields = healthFields.WalkingDetail
 | 类型 | **说明** |
 | --- | --- |
 | [healthFields.WalkingDetail](health-api-healthfields.md#walkingdetail) | 户外步行详情数据字段列表。 |
+
+## OutdoorSnowboard
+
+户外单板滑雪数据类型常量及数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+### 常量
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| EXERCISE\_TYPE | [healthStore.SubDataType](health-api-healthstore.md#subdatatype) | 户外单板滑雪子数据类型。 |
+
+### Model
+
+type Model = healthModels.OutdoorSnowboard
+
+户外单板滑雪锻炼记录数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthModels.OutdoorSnowboard](health-api-healthmodels.md#outdoorsnowboard) | 户外单板滑雪锻炼记录数据模型。 |
+
+### SummaryFields
+
+type SummaryFields = healthFields.OutdoorSnowboardSummary
+
+户外单板滑雪统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthFields.OutdoorSnowboardSummary](health-api-healthfields.md#outdoorsnowboardsummary) | 户外单板滑雪统计数据字段列表。 |
+
+### DetailFields
+
+type DetailFields = healthFields.OutdoorSnowboardDetail
+
+户外单板滑雪详情数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthFields.OutdoorSnowboardDetail](health-api-healthfields.md#outdoorsnowboarddetail) | 户外单板滑雪详情数据字段列表。 |
+
+## OutdoorSkiing
+
+户外双板滑雪数据类型常量及数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+### 常量
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| EXERCISE\_TYPE | [healthStore.SubDataType](health-api-healthstore.md#subdatatype) | 户外双板滑雪子数据类型。 |
+
+### Model
+
+type Model = healthModels.OutdoorSkiing
+
+户外双板滑雪锻炼记录数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthModels.OutdoorSkiing](health-api-healthmodels.md#outdoorskiing) | 户外双板滑雪锻炼记录数据模型。 |
+
+### SummaryFields
+
+type SummaryFields = healthFields.OutdoorSkiingSummary
+
+户外双板滑雪统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthFields.OutdoorSkiingSummary](health-api-healthfields.md#outdoorskiingsummary) | 户外双板滑雪统计数据字段列表。 |
+
+### DetailFields
+
+type DetailFields = healthFields.OutdoorSnowboardDetail
+
+户外双板滑雪详情数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthFields.OutdoorSkiingDetail](health-api-healthfields.md#outdoorskiingdetail) | 户外双板滑雪详情数据字段列表。 |
+
+## IndoorSnowboard
+
+室内单板滑雪数据类型常量及数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+### 常量
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| EXERCISE\_TYPE | [healthStore.SubDataType](health-api-healthstore.md#subdatatype) | 室内单板滑雪子数据类型。 |
+
+### Model
+
+type Model = healthModels.IndoorSnowboard
+
+室内单板滑雪锻炼记录数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthModels.IndoorSnowboard](health-api-healthmodels.md#indoorsnowboard) | 室内单板滑雪锻炼记录数据模型。 |
+
+### SummaryFields
+
+type SummaryFields = healthFields.IndoorSnowboardSummary
+
+室内单板滑雪统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthFields.IndoorSnowboardSummary](health-api-healthfields.md#indoorsnowboardsummary) | 室内单板滑雪统计数据字段列表。 |
+
+### DetailFields
+
+type DetailFields = healthFields.IndoorSnowboardDetail
+
+室内单板滑雪详情数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthFields.IndoorSnowboardDetail](health-api-healthfields.md#indoorsnowboarddetail) | 室内单板滑雪详情数据字段列表。 |
+
+## IndoorSkiing
+
+室内双板滑雪数据类型常量及数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+### 常量
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| EXERCISE\_TYPE | [healthStore.SubDataType](health-api-healthstore.md#subdatatype) | 室内双板滑雪子数据类型。 |
+
+### Model
+
+type Model = healthModels.IndoorSkiing
+
+室内双板滑雪锻炼记录数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthModels.IndoorSkiing](health-api-healthmodels.md#indoorskiing) | 室内双板滑雪锻炼记录数据模型。 |
+
+### SummaryFields
+
+type SummaryFields = healthFields.IndoorSkiingSummary
+
+室内双板滑雪统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthFields.IndoorSkiingSummary](health-api-healthfields.md#indoorskiingsummary) | 室内双板滑雪统计数据字段列表。 |
+
+### DetailFields
+
+type DetailFields = healthFields.IndoorSkiingDetail
+
+室内双板滑雪详情数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthFields.IndoorSkiingDetail](health-api-healthfields.md#indoorskiingdetail) | 室内双板滑雪详情数据字段列表。 |
+
+## CrossCountrySkiing
+
+越野滑雪数据类型常量及数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+### 常量
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| EXERCISE\_TYPE | [healthStore.SubDataType](health-api-healthstore.md#subdatatype) | 越野滑雪子数据类型。 |
+
+### Model
+
+type Model = healthModels.CrossCountrySkiing
+
+越野滑雪锻炼记录数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthModels.SkiMountaineering](health-api-healthmodels.md#crosscountryskiing) | 越野滑雪锻炼记录数据模型。 |
+
+### SummaryFields
+
+type SummaryFields = healthFields.CrossCountrySkiingSummary
+
+越野滑雪统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthFields.CrossCountrySkiingSummary](health-api-healthfields.md#crosscountryskiingsummary) | 越野滑雪统计数据字段列表。 |
+
+### DetailFields
+
+type DetailFields = healthFields.CrossCountrySkiingDetail
+
+越野滑雪详情数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthFields.CrossCountrySkiingDetail](health-api-healthfields.md#crosscountryskiingdetail) | 越野滑雪详情数据字段列表。 |
+
+## SkiMountaineering
+
+滑雪登山数据类型常量及数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+### 常量
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| EXERCISE\_TYPE | [healthStore.SubDataType](health-api-healthstore.md#subdatatype) | 滑雪登山子数据类型。 |
+
+### Model
+
+type Model = healthModels.SkiMountaineering
+
+滑雪登山锻炼记录数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthModels.SkiMountaineering](health-api-healthmodels.md#skimountaineering) | 滑雪登山锻炼记录数据模型。 |
+
+### SummaryFields
+
+type SummaryFields = healthFields.SkiMountaineeringSummary
+
+滑雪登山统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthFields.SkiMountaineeringSummary](health-api-healthfields.md#skimountaineeringsummary) | 滑雪登山统计数据字段列表。 |
+
+### DetailFields
+
+type DetailFields = healthFields.SkiMountaineeringDetail
+
+滑雪登山详情数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthFields.SkiMountaineeringDetail](health-api-healthfields.md#skimountaineeringdetail) | 滑雪登山详情数据字段列表。 |
+
+## Padel
+
+笼式网球数据类型常量及数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+### 常量
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| EXERCISE\_TYPE | [healthStore.SubDataType](health-api-healthstore.md#subdatatype) | 笼式网球子数据类型。 |
+
+### Model
+
+type Model = healthModels.Padel
+
+笼式网球锻炼记录数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthModels.Padel](health-api-healthmodels.md#padel) | 笼式网球锻炼记录数据模型。 |
+
+### SummaryFields
+
+type SummaryFields = healthFields.PadelSummary
+
+笼式网球统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthFields.PadelSummary](health-api-healthfields.md#padelsummary) | 笼式网球统计数据字段列表。 |
+
+### DetailFields
+
+type DetailFields = healthFields.PadelDetail
+
+笼式网球详情数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthFields.PadelDetail](health-api-healthfields.md#padeldetail) | 笼式网球详情数据字段列表。 |
+
+## Pilates
+
+普拉提数据类型常量及数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+### 常量
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| EXERCISE\_TYPE | [healthStore.SubDataType](health-api-healthstore.md#subdatatype) | 普拉提子数据类型。 |
+
+### Model
+
+type Model = healthModels.Pilates
+
+普拉提锻炼记录数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthModels.Pilates](health-api-healthmodels.md#pilates) | 普拉提锻炼记录数据模型。 |
+
+### SummaryFields
+
+type SummaryFields = healthFields.PilatesSummary
+
+普拉提统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthFields.PilatesSummary](health-api-healthfields.md#pilatessummary) | 普拉提统计数据字段列表。 |
+
+### DetailFields
+
+type DetailFields = healthFields.PilatesDetail
+
+普拉提详情数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthFields.PilatesDetail](health-api-healthfields.md#pilatesdetail) | 普拉提详情数据字段列表。 |
+
+## FreeTraining
+
+自由训练数据类型常量及数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+### 常量
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| EXERCISE\_TYPE | [healthStore.SubDataType](health-api-healthstore.md#subdatatype) | 自由训练子数据类型。 |
+
+### Model
+
+type Model = healthModels.FreeTraining
+
+自由训练锻炼记录数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthModels.FreeTraining](health-api-healthmodels.md#freetraining) | 自由训练锻炼记录数据模型。 |
+
+### SummaryFields
+
+type SummaryFields = healthFields.FreeTrainingSummary
+
+自由训练统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthFields.FreeTrainingSummary](health-api-healthfields.md#freetrainingsummary) | 自由训练统计数据字段列表。 |
+
+### DetailFields
+
+type DetailFields = healthFields.FreeTrainingDetail
+
+自由训练详情数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthFields.FreeTrainingDetail](health-api-healthfields.md#freetrainingdetail) | 自由训练详情数据字段列表。 |
+
+## StrengthTraining
+
+力量训练数据类型常量及数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+### 常量
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 名称 | 类型 | 说明 |
+| --- | --- | --- |
+| EXERCISE\_TYPE | [healthStore.SubDataType](health-api-healthstore.md#subdatatype) | 力量训练子数据类型。 |
+
+### Model
+
+type Model = healthModels.StrengthTraining
+
+力量训练锻炼记录数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthModels.StrengthTraining](health-api-healthmodels.md#strengthtraining) | 力量训练锻炼记录数据模型。 |
+
+### SummaryFields
+
+type SummaryFields = healthFields.StrengthTrainingSummary
+
+力量训练统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthFields.StrengthTrainingSummary](health-api-healthfields.md#strengthtrainingsummary) | 力量训练统计数据字段列表。 |
+
+### DetailFields
+
+type DetailFields = healthFields.StrengthTrainingDetail
+
+力量训练详情数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthFields.StrengthTrainingDetail](health-api-healthfields.md#strengthtrainingdetail) | 力量训练详情数据字段列表。 |

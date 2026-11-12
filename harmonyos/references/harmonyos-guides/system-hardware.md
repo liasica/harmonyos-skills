@@ -3,12 +3,11 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/system-hardwa
 title: 硬件
 breadcrumb: 指南 > 系统 > 硬件
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:41+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:4fbd3bd98e9785241bfa40ab229f29b94bc60b5d41d5516c5a79a2d1258b15cd
+scraped_at: 2026-11-12T09:51:50+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:978ee44ef784fcb010169de17c978f05350d3bad38a073592b40a74f6de13c28
 ---
 
-* **[Car Kit（车服务）](car-kit-guide.md)**
 * **[Driver Development Kit（驱动开发服务）](driver-development-kit.md)**
 * **[Multimodal Awareness Kit（多模态融合感知服务）](multimodal-awareness-kit.md)**
 * **[Pen Kit（手写笔服务）](pen-kit-guide.md)**

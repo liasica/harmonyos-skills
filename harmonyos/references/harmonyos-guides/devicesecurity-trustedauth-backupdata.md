@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 数字盾签名密钥备份与恢复
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 数字盾服务 > 数字盾签名密钥备份与恢复
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:40+08:00
+scraped_at: 2026-11-12T09:51:36+08:00
 doc_updated_at: 2026-10-28
-content_hash: sha256:48afba5102e24a476a84f76604b817824feafa660c7d8f74008a5af8a648cc79
+content_hash: sha256:a92445585a809fb86cc7620d53149a4f3be16241ba6b50d2e924973358bcb28e
 ---
 
 ## 场景介绍
@@ -33,7 +33,7 @@ content_hash: sha256:48afba5102e24a476a84f76604b817824feafa660c7d8f74008a5af8a64
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/-ZmAoHXHQ6a44h6tDj5ZSw/zh-cn_image_0000002779850732.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/4FSfnhxLR6CQDcXDGKJdeA/zh-cn_image_0000002786359678.jpg)
 
 ## 接口说明
 

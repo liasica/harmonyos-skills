@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-oh-l
 title: oh_location_type.h
 breadcrumb: API参考 > 应用服务 > Location Kit（位置服务） > C API > 头文件 > oh_location_type.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:57+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:a9eb9a42379ac72e909afba9bf36e9346211fb0455ade0e5c601f851219925c6
+scraped_at: 2026-11-12T09:57:24+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:09177500540e3b80b78b112e59e1f5e55fb697c5062be8788cba286fd01e377f
 ---
 
 ## 概述
@@ -93,7 +93,7 @@ enum Location_UseScene
 
 | 枚举项 | 描述 |
 | --- | --- |
-| LOCATION\_USE\_SCENE\_NAVIGATION = 0x0401 | 导航场景。  适用于在户外获取设备实时位置的场景，如车载、步行导航。  主要使用GNSS定位技术提供定位服务，功耗较高。 |
+| LOCATION\_USE\_SCENE\_NAVIGATION = 0x0401 | 表示导航场景。  适用于在户外获取设备实时位置的场景，如车载、步行导航。  主要使用GNSS定位技术提供定位服务，功耗较高。 |
 | LOCATION\_USE\_SCENE\_SPORT = 0x0402 | 表示运动场景。  适用于记录用户位置轨迹的场景，如运动类应用记录轨迹功能。  主要使用GNSS定位技术提供定位服务，功耗较高。 |
 | LOCATION\_USE\_SCENE\_TRANSPORT = 0x0403 | 表示出行场景。  适用于用户出行场景，如打车、乘坐公共交通等场景。  主要使用GNSS定位技术提供定位服务，功耗较高。 |
 | LOCATION\_USE\_SCENE\_DAILY\_LIFE\_SERVICE = 0x0404 | 表示日常服务使用场景。  适用于不需要定位用户精确位置的使用场景，如新闻资讯、网购、点餐类应用。  该场景仅使用网络定位技术提供定位服务，功耗较低。 |

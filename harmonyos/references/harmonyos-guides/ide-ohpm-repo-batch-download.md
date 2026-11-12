@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo batch_download
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > 数据迁移相关命令 > ohpm-repo batch_download
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:53+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:0d1bd9f3d4be959db540d92d6ae326c713f7ff2a0e1b19de2b3e173e2aa9dc95
+scraped_at: 2026-11-12T09:52:51+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:442dbc2b96b1637d56d20b0bf3cbd192a6be0996c48182e523e70f64b0fa9cd5
 ---
 
 批量下载ohpm-repo或OpenHarmony三方库中心仓的包文件。
@@ -74,7 +74,7 @@ ohpm-repo 6.0.1版本开始支持在batch\_download命令后面配置--cert-veri
 
 * 类型：String
 
-ohpm-repo 6.0.1版本开始支持配置认证证书路径。在batch\_download命令后面配置--ca-files <string>，指定ca证书路径，当--cert-verify开启时，校验--public-registry仓库服务端证书需要的ca证书。可以设置多个证书路径，以英文逗号间隔。详情请见：[CA证书获取及配置](ide-ohpmrc.md#zh-cn_topic_0000001792216397_ca证书获取及配置)。
+ohpm-repo 6.0.1版本开始支持配置认证证书路径。在batch\_download命令后面配置--ca-files <string>，指定ca证书路径，当--cert-verify开启时，校验--public-registry仓库服务端证书需要的ca证书。可以设置多个证书路径，以英文逗号间隔。详情请见：[CA证书获取及配置](ide-ohpmrc.md#section1770711452016)。
 
 ## 示例
 
@@ -88,8 +88,8 @@ ohpm-repo batch_download <pkgInfo_xxxx.json地址>
 
 ```screen
 PS D:\> ohpm-repo batch_download D:\pkgInfo_1754733375315.json
-[2025-08-09T18:33:30.349] [INFO] default - download "@ohos/test@1.0.0" from repository "ohpm" successfully".
-[2025-08-09T18:33:30.367] [INFO] default - download "@ohos/test-two@1.0.0" from repository "ohpm" successfully".
+[2025-08-09T18:33:30.349] [INFO] default - download "@ohos/test@1.0.0" from repository "ohpm" successfully.
+[2025-08-09T18:33:30.367] [INFO] default - download "@ohos/test-two@1.0.0" from repository "ohpm" successfully.
 ...
 [2025-08-09T18:33:30.466] [INFO] default - all "6" package(s) are successfully download.
 [2025-08-09T18:33:30.466] [INFO] default - save the .zip file to : "D:\batch_download_1754735610304.zip".

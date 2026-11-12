@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-partn
 title: 平台类商户合单支付场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 平台类商户合单支付场景
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:38+08:00
+scraped_at: 2026-11-12T09:52:31+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:d84273c859993e49aa0298862bb3cf8d93faee0395b8c329ceff6380500f8cc6
+content_hash: sha256:47defda04ac0bf872eb5582bf5c9f027535a1735c56ba2c88ef878d7b5aa6924
 ---
 
 ## 场景介绍
@@ -18,13 +18,13 @@ content_hash: sha256:d84273c859993e49aa0298862bb3cf8d93faee0395b8c329ceff6380500
 
 华为支付收银台合单支付展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Jn32kzmnQ6amkFQ0qLSdPw/zh-cn_image_0000002779851540.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/civcNW2DQMGUM6SJ9fzxtg/zh-cn_image_0000002815559917.png)
 
 ## 业务流程
 
 开发者通过接入Payment Kit合单支付，可以将多个子订单合并到同一个主订单里完成支付。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/tmc_6NnxS6G9Zht7Zdd9Qg/zh-cn_image_0000002779691572.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/UK5GPFHsQEmhOqGlXlw_dg/zh-cn_image_0000002815400001.png)
 
 1. 商户客户端请求商户服务端创建合单支付订单。
 2. 商户服务器通过调用Payment Kit服务端[平台类商户合单支付预下单](../harmonyos-references/payment-partner-combined-app-prepay.md)接口。

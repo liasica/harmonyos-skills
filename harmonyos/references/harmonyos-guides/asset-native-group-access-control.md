@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/asset-native-
 title: 管理群组关键资产(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Asset Store Kit（关键资产存储服务） > Asset Store Kit开发指导(C/C++) > 管理群组关键资产(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:09+08:00
-doc_updated_at: 2026-10-30
+scraped_at: 2026-11-12T09:51:32+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:646e75538ae5d809edd13d6a6864400931d4c5b777a83d8fd4b4a8826fc79d2d
 ---
 

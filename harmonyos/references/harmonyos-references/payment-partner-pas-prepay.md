@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-p
 title: 预下单
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 平台类商户/服务商 > 支付并签约 > 预下单
 category: harmonyos-references
-scraped_at: 2026-10-15T07:12:37+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:665007848cdedec7e8c99c7d6a5908db30a7082923c7632dde69d606ec865761
+scraped_at: 2026-11-12T09:57:34+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4a5d122a4a8134b4d1e2dcfa9448f80f97fa837529fc8b11aac027ac5b4e3b58
 ---
 
 ## 功能介绍
@@ -44,7 +44,7 @@ content_hash: sha256:665007848cdedec7e8c99c7d6a5908db30a7082923c7632dde69d606ec8
 | --- | --- | --- | --- |
 | spAppId | 是 | String | 平台类商户/服务商关联的应用ID（参考[商户号绑定AppID](../harmonyos-guides/payment-binding-appid-to-merc.md)）。 |
 | spMercNo | 是 | String | 平台类商户/服务商商户号。最大长度12。 |
-| subAppId | 否 | String | 特约商户关联的应用ID（参考[商户号绑定AppID](../harmonyos-guides/payment-binding-appid-to-merc.md#服务商邀请特约商户绑定)）。  **说明：** 平台子商户当前不支持绑定AppID，平台类商户请求传递该入参可能导致校验异常。 |
+| subAppId | 否 | String | 特约商户关联的应用ID（参考[商户号绑定AppID](../harmonyos-guides/payment-binding-appid-to-merc.md#服务商邀请特约商户绑定appid)）。  **说明：** 平台子商户当前不支持绑定AppID，平台类商户请求传递该入参可能导致校验异常。 |
 | subMercNo | 是 | String | 平台子商户/特约商户商户号。最大长度12。 |
 | mercOrderNo | 是 | String | 商户订单号，由商户自己生成，商户需保证订单信息唯一性。最大长度46。 |
 | tradeSummary | 是 | String | 交易的摘要。格式建议：“商户应用名称-商品描述”。最大长度128。 |

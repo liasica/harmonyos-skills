@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/batch-databas
 title: 批量数据写数据库场景
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 应用多线程开发实践案例 > 批量数据写数据库场景
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:33:56+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:ca54fee57e6b0f63968c97d99b0c47cc7a239dfa06f512843be5fdaf03056241
+scraped_at: 2026-11-12T09:51:04+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c5aca9857a94c4deb337a40bae8bf9ae226b96ac2d4aa0619025f81f393e00af
 ---
 
 ## 使用TaskPool进行频繁数据库操作
@@ -33,12 +33,12 @@ async function create(context: Context) {
   console.info(`Get Store.db successfully!`);
 
   // 创建表
-  const CREATE_TABLE_SQL = 'CREATE TABLE IF NOT EXISTS test (' +
-    'id INTEGER PRIMARY KEY AUTOINCREMENT, ' +
-    'name TEXT NOT NULL, ' +
-    'age INTEGER, ' +
-    'salary REAL, ' +
-    'blobType BLOB)';
+  const CREATE_TABLE_SQL = `CREATE TABLE IF NOT EXISTS test (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT NOT NULL,
+    age INTEGER,
+    salary REAL,
+    blobType BLOB)`;
   await store.executeSql(CREATE_TABLE_SQL);
   console.info(`Create table test successfully!`);
 }
@@ -194,12 +194,12 @@ struct Index {
      console.info(`Get Store.db successfully!`);
 
      // 创建表
-     const CREATE_TABLE_SQL = 'CREATE TABLE IF NOT EXISTS test (' +
-       'id INTEGER PRIMARY KEY AUTOINCREMENT, ' +
-       'name TEXT NOT NULL, ' +
-       'age INTEGER, ' +
-       'salary REAL, ' +
-       'blobType BLOB)';
+     const CREATE_TABLE_SQL = `CREATE TABLE IF NOT EXISTS test (
+       id INTEGER PRIMARY KEY AUTOINCREMENT,
+       name TEXT NOT NULL,
+       age INTEGER,
+       salary REAL,
+       blobType BLOB)`;
      await store.executeSql(CREATE_TABLE_SQL);
      console.info(`Create table test successfully!`);
    }
@@ -397,12 +397,12 @@ struct Index {
        console.info('Get Store.db successfully!');
 
        // 创建表
-       const CREATE_TABLE_SQL = 'CREATE TABLE IF NOT EXISTS test (' +
-         'id INTEGER PRIMARY KEY AUTOINCREMENT, ' +
-         'name TEXT NOT NULL, ' +
-         'age INTEGER, ' +
-         'salary REAL, ' +
-         'blobType BLOB)';
+       const CREATE_TABLE_SQL = `CREATE TABLE IF NOT EXISTS test (
+         id INTEGER PRIMARY KEY AUTOINCREMENT,
+         name TEXT NOT NULL,
+         age INTEGER,
+         salary REAL,
+         blobType BLOB)`;
        await store.executeSql(CREATE_TABLE_SQL);
        console.info('Create table test successfully!');
        return true;

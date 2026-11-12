@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/isolation-pro
 title: 独立进程开发指导
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 进程模型 > 独立进程开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:08+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:ad691971ce23fde65b294b48ff3af4f4d08ed7e8c2eaff507fd9cd0633c04139
+scraped_at: 2026-11-12T09:50:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:16072c37eb8c2e94c9e11cf66a9c6de445c4fa4709a3aa33e2f4bb3fab2f2c5b
 ---
 
 ## 概述
@@ -112,7 +112,7 @@ content_hash: sha256:ad691971ce23fde65b294b48ff3af4f4d08ed7e8c2eaff507fd9cd0633c
    在srcEntry指定的AbilityStage源文件中，实现[onNewProcessRequest](../harmonyos-references/js-apis-app-ability-abilitystage.md#onnewprocessrequest11)回调方法。系统在启动配置isolationProcess为true的UIAbility实例时会触发该回调方法，然后根据该方法返回的字符串来动态地指定UIAbility实例所运行的独立进程。
 
    ```typescript
-   import AbilityStage from '@ohos.app.ability.AbilityStage';
+   import { AbilityStage, Want } from '@kit.AbilityKit';
 
    export default class MyAbilityStage extends AbilityStage {
    // ...

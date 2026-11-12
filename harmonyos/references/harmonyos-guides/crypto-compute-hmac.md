@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-comput
 title: 消息认证码计算HMAC(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 消息认证码计算 > 消息认证码计算HMAC(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:38+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:51:34+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:578c952376666a211508fad179237bdf517f3a20257fbf80038dd71dc0749751
 ---
 

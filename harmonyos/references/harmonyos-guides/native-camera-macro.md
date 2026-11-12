@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 微距能力设置(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 微距能力设置(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:50+08:00
-doc_updated_at: 2026-09-30
+scraped_at: 2026-11-12T09:52:05+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:c2084a5df796104e035f4b44459769aa1449a85fe5a9898404e15f41604ebaae
 ---
 

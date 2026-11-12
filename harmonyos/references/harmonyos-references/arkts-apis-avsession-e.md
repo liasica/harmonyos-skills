@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Enums
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > ArkTS API > @ohos.multimedia.avsession (媒体会话管理) > Enums
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:23+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c11e61848aa691df1aef22030307b64939a9a9089d140e41da905e4ed09314b8
+scraped_at: 2026-11-12T09:56:28+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:5b48d173f4c27568b16df36b7ebbb4c9ad4d1dd5a8e68e5ab40a5053cd1d0aa2
 ---
 
 **说明** 
@@ -265,6 +265,7 @@ content_hash: sha256:c11e61848aa691df1aef22030307b64939a9a9089d140e41da905e4ed09
 | ERR\_CODE\_CAST\_CONTROL\_DRM\_DEVICE\_REVOKED13+ | 6616007 | 设备已撤销DRM权限。  **元服务API：** 从API version 13开始，该接口支持在元服务中使用。  **系统能力：** SystemCapability.Multimedia.AVSession.AVCast |
 | ERR\_CODE\_CAST\_CONTROL\_DRM\_LICENSE\_EXPIRED13+ | 6616008 | 加载中的DRM许可证已过期。  **元服务API：** 从API version 13开始，该接口支持在元服务中使用。  **系统能力：** SystemCapability.Multimedia.AVSession.AVCast |
 | ERR\_CODE\_CAST\_CONTROL\_DRM\_PROVIDE\_KEY\_RESPONSE\_ERROR13+ | 6616100 | DRM处理密钥响应时发生错误。  **元服务API：** 从API version 13开始，该接口支持在元服务中使用。  **系统能力：** SystemCapability.Multimedia.AVSession.AVCast |
+| ERR\_CODE\_SERVICE\_NOT\_RUNNING | 6700101 | 会话服务未运行。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。  **系统能力：** SystemCapability.Multimedia.AVSession.Manager |
 
 ## SkipIntervals11+
 

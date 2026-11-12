@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-declara
 title: 声明式UI描述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 声明式UI描述
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:14+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:51:06+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:5ed3883881a9a641134f068abcee81caca235b964a823ee7fb9553c9f6210e73
 ---
 

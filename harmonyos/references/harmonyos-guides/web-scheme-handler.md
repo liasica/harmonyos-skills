@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-scheme-ha
 title: 拦截Web组件发起的网络请求
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > 拦截Web组件发起的网络请求
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:41+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:c8dbda870ae6a413b8e0753424e6e2e472d84b97f14cb94fd006269e3d08d046
+scraped_at: 2026-11-12T09:51:23+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c6c483abbf2ed896540564e33610064d7d6ed4e16e9b00c48ff00e58d30e3350
 ---
 
 应用可以通过[onInterceptRequest](../harmonyos-references/arkts-basic-components-web-events.md#oninterceptrequest9)拦截Web组件发起的网络请求，也可以通过SchemeHandler来拦截Web组件发起的网络请求。SchemeHandler提供了ArkTS与NDK两套接口。
@@ -43,7 +43,7 @@ ArkTS：[onRequestStop](../harmonyos-references/arkts-apis-webview-webschemehand
 **注意** 
 
 * 需要在Web组件初始化之后设置SchemeHandler，否则会设置失败。
-* 若想要拦截Web组件发出的第一个请求，可以通过[initializeWebEngine](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#initializewebengine)方法提前进行Web组件初始化，再设置SchemeHandler实现拦截。详细代码请参考[完整示例](web-scheme-handler.md#完整示例)。
+* 若想要拦截Web组件发出的第一个请求，可以通过[initializeWebEngine()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#initializewebengine)方法提前进行Web组件初始化，再设置SchemeHandler实现拦截。详细代码请参考[完整示例](web-scheme-handler.md#完整示例)。
 
 在C++中，通过NDK接口为Web组件设置SchemeHandler：
 
@@ -79,9 +79,9 @@ ArkTS：[onRequestStop](../harmonyos-references/arkts-apis-webview-webschemehand
 
 如果要拦截自定义scheme的请求，需要在Web组件初始化之前将自定义scheme注册到Web内核，初始化后再注册会失败。
 
-Web组件的创建会触发Web内核的初始化。另外ArkWeb还提供了initializeWebEngine接口，用于单独进行Web初始化。
+Web组件的创建会触发Web内核的初始化。另外ArkWeb还提供了initializeWebEngine()接口，用于单独进行Web初始化。
 
-在NDK中可以在ets侧先调用testNapi.registerCustomSchemes注册自定义协议，然后调用[initializeWebEngine](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#initializewebengine)初始化Web内核，示例如下：
+在NDK中可以在ets侧先调用testNapi.registerCustomSchemes注册自定义协议，然后调用[initializeWebEngine()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#initializewebengine)初始化Web内核，示例如下：
 
 ```typescript
 import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
@@ -259,38 +259,38 @@ ArkTS：[@ohos.web.netErrorList (ArkWeb网络协议栈错误列表)](../harmonyo
 
 ```ts
 this.schemeHandler.onRequestStart((request: webview.WebSchemeHandlerRequest, resourceHandler: webview.WebResourceHandler) => {
- let response = new webview.WebSchemeHandlerResponse();
- try {
-   // 设置网络错误代码为OK，表示请求成功。
-   response.setNetErrorCode(WebNetErrorList.NET_OK);
+  let response = new webview.WebSchemeHandlerResponse();
+  try {
+    // 设置网络错误代码为OK，表示请求成功。
+    response.setNetErrorCode(WebNetErrorList.NET_OK);
 
-   // 设置HTTP状态码为200，表示请求处理成功。
-   response.setStatus(200);
+    // 设置HTTP状态码为200，表示请求处理成功。
+    response.setStatus(200);
 
-   // 设置状态文本为"OK"，用于描述状态码。
-   response.setStatusText("OK");
+    // 设置状态文本为"OK"，用于描述状态码。
+    response.setStatusText("OK");
 
-   // 设置MIME类型为"text/html"，指明返回数据的类型为HTML文档。
-   response.setMimeType("text/html");
+    // 设置MIME类型为"text/html"，指明返回数据的类型为HTML文档。
+    response.setMimeType("text/html");
 
-   // 设置编码方式为"utf-8"，指明内容使用UTF-8编码。
-   response.setEncoding("utf-8");
+    // 设置编码方式为"utf-8"，指明内容使用UTF-8编码。
+    response.setEncoding("utf-8");
 
-   // 设置自定义响应头"header1"的值为"value1"，false表示不覆盖已经存在的同名头部。
-   response.setHeaderByName("header1", "value1", false);
+    // 设置自定义响应头"header1"的值为"value1"，false表示不覆盖已经存在的同名头部。
+    response.setHeaderByName("header1", "value1", false);
 
-   // 调用didReceiveResponse将构造的响应头传递给被拦截的请求。
-   resourceHandler.didReceiveResponse(response);
+    // 调用didReceiveResponse将构造的响应头传递给被拦截的请求。
+    resourceHandler.didReceiveResponse(response);
 
-   // 调用didReceiveResponseBody将构造的响应体传递给被拦截的请求。
-   resourceHandler.didReceiveResponseBody(buf.buffer);
+    // 调用didReceiveResponseBody将构造的响应体传递给被拦截的请求。
+    resourceHandler.didReceiveResponseBody(buf.buffer);
 
-   // 调用didFinish通知Web组件被拦截的请求已经完成。
-   resourceHandler.didFinish();
- } catch (error) {
-   console.error(`[schemeHandler] ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
- }
- return true;
+    // 调用didFinish通知Web组件被拦截的请求已经完成。
+    resourceHandler.didFinish();
+  } catch (error) {
+    console.error(`[schemeHandler] ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
+  }
+  return true;
 })
 ```
 

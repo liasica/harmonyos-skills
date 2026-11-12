@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-new-can
 title: canBeObserved接口：判断对象是否可被观察
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 辅助接口 > canBeObserved接口：判断对象是否可被观察
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:15+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:51:09+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:6c44173be9ae8dd5345615cac9745b7666a9c2c5383886ce52c5aa83b3da0ede
 ---
 

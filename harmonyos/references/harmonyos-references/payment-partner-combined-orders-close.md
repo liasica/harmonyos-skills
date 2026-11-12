@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-p
 title: 关闭合单支付订单
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 平台类商户/服务商 > 合单支付（仅支持平台类商户） > 关闭合单支付订单
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:28+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:97afd4a6cbedfe603b4c71568110253da9381239d04a4f6ddb90f0731c32081e
+scraped_at: 2026-11-12T09:57:35+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4088c16fb0933477f3b9b19516dc51148faff674dca53c3241c97db239b8c64c
 ---
 
 ## 功能介绍
@@ -22,7 +22,7 @@ content_hash: sha256:97afd4a6cbedfe603b4c71568110253da9381239d04a4f6ddb90f0731c3
 * **接口方向：** 开发者服务器 -> 华为支付服务器
 * **接口URL：** https://petalpay-developer.cloud.huawei.com.cn/api/v1/partner/combined/orders/close
 
-  说明：元服务预下单接口请使用<https://petalpay-developer.cloud.huawei.com.cn/api/v1/partner/combined/orders/close>
+  说明：元服务关闭合单支付订单接口请使用<https://petalpay-developer.cloud.huawei.com.cn/api/v1/partner/combined/orders/close>
 * **数据格式：**
 
   请求消息：Content-Type: application/json

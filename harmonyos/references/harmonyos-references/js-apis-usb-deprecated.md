@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-u
 title: "@ohos.usb (USB管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 已停止维护的接口 > @ohos.usb (USB管理)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:04+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:dfa3b11c434e63d2e25be40ccb0efb4611b08535c794d39bbb95117523170a1c
+scraped_at: 2026-11-12T09:55:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4b0dc6bb212ca453a978a7ec76e63755aae9fc8593f48dc6bf40d9bdf123feee
 ---
 
 本模块主要提供管理USB设备的相关功能，包括查询USB设备列表、批量数据传输、控制命令传输、权限控制等。
@@ -197,7 +197,7 @@ claimInterface(pipe: USBDevicePipe, iface: USBInterface, force ?: boolean): numb
 | --- | --- | --- | --- |
 | pipe | [USBDevicePipe](js-apis-usb-deprecated.md#usbdevicepipe) | 是 | 用于确定总线号和设备地址。 |
 | iface | [USBInterface](js-apis-usb-deprecated.md#usbinterface) | 是 | 用于确定需要获取接口的索引。 |
-| force | boolean | 否 | 可选参数，是否强制获取。默认值为false ，表示不强制获取。 |
+| force | boolean | 否 | 可选参数，是否强制获取。默认值为false，表示不强制获取，如果无内核驱动占用该接口，则获取成功，否则获取失败；设置为true时，将强制释放内核驱动对该接口的控制权并交由用户空间程序控制。 |
 
 **返回值：**
 

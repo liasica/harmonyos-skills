@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-import-k
 title: 明文导入密钥(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥生成/导入 > 密钥导入 > 明文导入密钥(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:31+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:af4e6c837ff4b437e611e5616fa11f3085a8b5293ce26d2562b3a8b58a1c910e
+scraped_at: 2026-11-12T09:51:39+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:bb105ba8c4463756be10e14a9f5dd8deb5d7943b8c6e23952add9b813739268f
 ---
 
 以明文导入ECC密钥为例。具体的场景介绍及支持的算法规格，请参考[密钥导入支持的算法](huks-key-import-overview.md#支持的算法)。
@@ -73,9 +73,6 @@ napi_value ImportAesKey(napi_env env, napi_callback_info info)
     do {
         ohResult = InitParamSet(&testImportKeyParamSet, g_testImportKeyParam,
                                 sizeof(g_testImportKeyParam) / sizeof(OH_Huks_Param));
-        if (ohResult.errorCode != OH_HUKS_SUCCESS) {
-            break;
-        }
         if (ohResult.errorCode != OH_HUKS_SUCCESS) {
             break;
         }
@@ -235,9 +232,6 @@ napi_value ImportX25519Key(napi_env env, napi_callback_info info)
     do {
         ohResult = InitParamSet(&testImportKeyParamSet, g_testImportKeyParam,
                                 sizeof(g_testImportKeyParam) / sizeof(OH_Huks_Param));
-        if (ohResult.errorCode != OH_HUKS_SUCCESS) {
-            break;
-        }
         if (ohResult.errorCode != OH_HUKS_SUCCESS) {
             break;
         }

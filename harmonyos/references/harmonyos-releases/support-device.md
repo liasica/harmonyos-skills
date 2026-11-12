@@ -3,10 +3,30 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/support-dev
 title: 各版本支持设备型号清单
 breadcrumb: 版本说明 > 应用升级适配与兼容性 > 各版本支持设备型号清单
 category: harmonyos-releases
-scraped_at: 2026-10-14T07:39:45+08:00
-doc_updated_at: 2026-10-13
-content_hash: sha256:21cdfc830f84c17f7341d5f8ed89eb63129a3a781f92732efc9aa1faa15f54bc
+scraped_at: 2026-11-12T09:50:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a63095942f862514ec54b26a2f3f04607f0fb0d046f2a2c2841a96cb4091875d
 ---
+
+## 26.0.1 Beta1
+
+**说明** 
+
+以下为26.0.1 Beta1发布时同步支持的设备信息。该版本面向应用开发者发布，需通过活动链接进行申请。具体申请链接稍后公布。
+
+### Phone
+
+| 设备系列 | 设备型号 | 型号代码 |
+| --- | --- | --- |
+| Mate 80系列 | Mate 80 Pro | SGT-AL00  SGT-AL50 |
+| Mate X7系列 | Mate X7 | DEL-AL10 |
+| Mate XT系列 | Mate XTs 非凡大师 | GRL-AL20 |
+| Pura 90系列 | Pura 90 | KEE-AL00 |
+| Pura X Max系列 | Pura X Max | HOP-AL00 |
+| Pura X Max 典藏版 | HOP-AL10 |
+| Pura X系列 | Pura X | VDE-AL00 |
+| Pura X 典藏版 | VDE-AL10 |
+| nova 15系列 | nova 15 pro | KLE-AL00U |
 
 ## 26.0.0
 

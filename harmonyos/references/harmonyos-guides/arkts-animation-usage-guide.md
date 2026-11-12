@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-animati
 title: 优化动画性能
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 使用动画 > 优化动画性能
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:18+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:3ca453417974e335f59b1438dc8a7801544b9f685d2402eea024055883e5b9ef
+scraped_at: 2026-11-12T09:51:15+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:09300da0ce2006891c1a1ff40a4571c720a8c90860eb3fa8c457a0c45e19b45d
 ---
 
 ## 概述
@@ -33,7 +33,7 @@ HarmonyOS系统为开发者提供了丰富的动画能力，在实际开发过�
 
 **图 1** 合理使用动画
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/NKJtIh5sTKGBSbstc2zWNw/zh-cn_image_0000002809009897.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/upXhYN1yTWeK5gGB_YksWg/zh-cn_image_0000002815398693.png)
 
 ### 动效场景设计
 
@@ -47,7 +47,7 @@ HarmonyOS系统为开发者提供了丰富的动画能力，在实际开发过�
 
 **图 2** 点击特征动效示意
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/QMxICuF_Q5mRcVCKoOyyrg/zh-cn_image_0000002809049813.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/-mnhzG-bT-e3i2aS4y_9UQ/zh-cn_image_0000002786519118.gif)
 
 **转场动效**
 
@@ -57,7 +57,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 
 **图 3** 转场动效示意
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/_D36exNCRHqxtAN6I7xO8Q/zh-cn_image_0000002779850248.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/5TBN9PImTeCXKF8KSSCIUQ/zh-cn_image_0000002786359190.gif)
 
 **手势动效**
 
@@ -71,7 +71,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 
 **图 4** 手势动效示意
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8b/v3/lO935NcXR46Hv4QN9k2EeQ/zh-cn_image_0000002779690278.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/UCNd_iH5QWSyOqdiP9yMlQ/zh-cn_image_0000002815558611.gif)
 
 **微动效**
 
@@ -79,7 +79,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 
 **图 5** 微动效示意
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/ymTItkKeQmq4xU6lg-YOLQ/zh-cn_image_0000002809009899.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/0ixc_NGmQCq-dYLRAWvRmg/zh-cn_image_0000002815398695.gif)
 
 **插画动效**
 
@@ -89,7 +89,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 
 **图 6** 插画动效示意
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/94ZA_dOHR4GgnIbQYGki8g/zh-cn_image_0000002809049815.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/5VBmHcwxRlqAnCBWBSbRTg/zh-cn_image_0000002786519120.gif)
 
 ### 动画能力选型
 
@@ -99,15 +99,15 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 
 * [属性动画](../harmonyos-references/ts-animatorproperty.md)：通过更改组件的属性值实现渐变过渡效果，例如缩放、旋转、平移等。支持的属性包括width、height、backgroundColor、opacity、scale、rotate、translate等。
 * [显式动画](../harmonyos-references/ts-explicit-animation.md)：可以通过用户的直接操作或应用程序的特定逻辑来触发，例如按钮点击时的缩放动画、列表项展开时的渐变动画等。HarmonyOS提供了全局animateTo显式动画接口来指定由于闭包代码导致状态变化的插入过渡动效。
-* [转场动画](arkts-transition-overview.md)：转场动画可以实现平滑的界面切换效果，例如页面之间的淡入淡出、滑动切换、旋转切换等，增强了界面的连贯性和吸引力。具体使用方法可参考[页面转场动画 (不推荐)](arkts-page-transition-animation.md)。
+* [转场动画](../doccenter-capabilities/arkts-animation-transition.md)：转场动画可以实现平滑的界面切换效果，例如页面之间的淡入淡出、滑动切换、旋转切换等，增强了界面的连贯性和吸引力。具体使用方法可参考[页面转场动画 (不推荐)](arkts-page-transition-animation.md)。
 * [路径动画](../harmonyos-references/ts-motion-path-animation.md)：指对象沿着指定路径进行移动的动画效果。通过设置路径可以实现视图沿着预定义的路径进行移动，例如曲线运动、圆周运动等，为用户呈现更加生动的交互效果。
 * [粒子动画](../harmonyos-references/ts-particle-animation.md)：通过大量小颗粒的运动来形成整体动画效果。通过对粒子在颜色、透明度、大小、速度、加速度、自旋角度等维度变化做动画，来营造一种氛围感。
-* [关键帧动画](../harmonyos-references/ts-keyframeanimateto.md)：在[UIContext](../harmonyos-references/arkts-apis-uicontext-uicontext.md)中提供keyframeAnimateTo接口来指定若干个关键帧状态，实现分段的动画。
+* [关键帧动画](../harmonyos-references/ts-keyframeanimateto.md)：在[UIContext](../harmonyos-references/arkts-apis-uicontext-uicontext.md)中提供[keyframeAnimateTo](../doccenter-references/api/arkts-apis-uicontext-uicontext.md#keyframeanimateto11)接口来指定若干个关键帧状态，实现分段的动画。
 
 **资源调用**
 
-* GIF动画：GIF动画可以在特定位置循环播放，为应用界面增添生动的视觉效果。在开发中，可以使用[Image组件](../harmonyos-references/ts-basic-components-image.md)来实现GIF动画的播放。通过在特定位置放置Image组件，并加载GIF格式的图像，开发者可以轻松实现动画效果。
-* 帧动画：通过逐帧播放一系列图片来实现动画效果，在开发中可以使用[ImageAnimator组件](../harmonyos-references/ts-basic-components-imageanimator.md)来实现帧动画的播放。开发者可以配置需要播放的图片列表，以及每张图片的播放时长，从而实现精细的动画效果。
+* GIF动画：GIF动画可以在特定位置循环播放，为应用界面增添生动的视觉效果。在开发中，可以使用[Image](../harmonyos-references/ts-basic-components-image.md)组件来实现GIF动画的播放。通过在特定位置放置Image组件，并加载GIF格式的图像，开发者可以轻松实现动画效果。
+* 帧动画：通过逐帧播放一系列图片来实现动画效果，在开发中可以使用[ImageAnimator](../harmonyos-references/ts-basic-components-imageanimator.md)组件来实现帧动画的播放。开发者可以配置需要播放的图片列表，以及每张图片的播放时长，从而实现精细的动画效果。
 
 **三方库**
 
@@ -124,7 +124,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 
   **图 7** 使用显式动画实现水波纹动效
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/QccSwwgETqCOHJJZ_lursQ/zh-cn_image_0000002779850250.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/FE8cK4aSQGWbUw2sHQ7CGA/zh-cn_image_0000002786359192.gif)
 * 实现原理
 
   水波圆环以圆形按钮为中心，将多个圆形图层逐渐向外扩展放大，每个圆形图层的动画开始时间稍微错开，进而形成多个水波圆环依次扩散的效果。其动效实现步骤如下。
@@ -133,7 +133,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
   2. 通过显示动画animateTo实现圆形图层放大的动效，并设置延迟时间。
 * 开发步骤
 
-  实现圆形图层，通过Stack将圆形图层与Button组件进行重叠。
+  实现圆形图层，通过[Stack](../doccenter-references/api/ts-container-stack.md)将圆形图层与[Button](../doccenter-references/api/ts-basic-components-button.md)组件进行重叠。
 
   ```ts
   @Component
@@ -223,6 +223,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
         };
       })
     } else {
+      // Break the animation by modifying the variable with a closure of duration 0.
       this.getUIContext().animateTo({ duration: CommonConstants.COMMON_NUMBER_0 }, () => {
         this.immediatelyOpacity = CommonConstants.COMMON_NUMBER;
         this.delayOpacity = CommonConstants.COMMON_NUMBER;
@@ -247,7 +248,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 
   **图 8** 使用关键帧动画实现左右移动提示
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/twdbfunASR6o3RTJ0z0Kyg/zh-cn_image_0000002779690280.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/3l--5eMSTg-yfU2eJagdTg/zh-cn_image_0000002815558613.gif)
 * 实现原理
 
   提示框左右移动提醒是将提示框进行左移，然后再进行右移，如此往复循环多次。其动效可以分为提示框左移和提示框右移两段，可以使用keyframeAnimateTo接口实现分段的动画效果，实现步骤如下所示。
@@ -282,7 +283,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
   }
   ```
 
-  设置onClick事件，通过onClick事件调用关键帧动画。
+  设置[onClick](../doccenter-references/api/ts-universal-events-click.md#onclick12)事件，通过onClick事件调用关键帧动画。
 
   ```ts
   Button($r('app.string.login_in'))
@@ -316,17 +317,17 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 
   **图 9** 使用属性动画实现手势动效
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/FUZXejN4TEm08s6Gm-gcwQ/zh-cn_image_0000002809009901.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/Ud6_dx3-TbOWsqoqjSYmOA/zh-cn_image_0000002815398697.gif)
 * 实现原理
 
   在实现下拉缩放详情中，主要包含了两个部分，分别是列表下拉的手势和下拉后标题和列表的动画，详细实现步骤如下。
 
-  1. 处理手势事件：通过onTouch事件记录当前的触摸点，判断当前的手势是否为向上或向下滑动。
+  1. 处理手势事件：通过[onTouch](../doccenter-references/api/ts-universal-events-touch.md#ontouch)事件记录当前的触摸点，判断当前的手势是否为向上或向下滑动。
   2. 通过属性动画animation实现标题缩放的效果：当列表向上或向下滑动时，改变列表的高度，并通过属性动画进行平滑过度，从而实现标题区域缩放的效果。
   3. 实现标题内容的平移：在标题区域进行缩放的同时，标题的内容也会同步进行平移，从而实现标题部分整体缩放的效果。
 * 开发步骤
 
-  实现手势事件方法。当手指按下时，触发TouchType.Down事件记录当前触碰的位置。手指按压态在屏幕上移动时，可以通过当前的位置与初始位置进行比较，判断手势是否为向上或向下滑动，进而变更列表的高度。
+  实现手势事件方法。当手指按下时，触发[TouchType.Down](../doccenter-references/api/ts-appendix-enums.md#touchtype)事件记录当前触碰的位置。手指按压态在屏幕上移动时，可以通过当前的位置与初始位置进行比较，判断手势是否为向上或向下滑动，进而变更列表的高度。
 
   ```ts
   handleTouchEvent(event: TouchEvent): void {
@@ -456,7 +457,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 * 使用图形变换属性变化组件布局：通过对组件的图形变换属性进行调整，而不是直接修改组件的布局属性，可以减少不必要的布局计算和重绘操作，从而降低丢帧率，提升动画的流畅度和响应速度。
 * 参数相同时使用同一个animateTo：当多个动画的参数相同时，合并它们并使用同一个animateTo方法进行处理能够有效减少不必要的计算和渲染开销。
 * 多次animateTo时统一更新状态变量：在进行多次动画操作时，统一更新状态变量可以避免不必要的状态更新和重复渲染，从而减少性能开销。
-* 使用renderGroup：在单一页面上存在大量应用动效的组件时，可以使用renderGroup方法来解决卡顿问题，从而提升动画性能。
+* 使用[renderGroup](../doccenter-references/api/ts-universal-attributes-image-effect.md#rendergroup10)：在单一页面上存在大量应用动效的组件时，可以使用renderGroup方法来解决卡顿问题，从而提升动画性能。
 
 下文将通过5个测试来验证上述优化方法的收益，以证明这些优化手段的可行性。综合考虑业界共识指标和实际用户使用体验，测试将对比分析如下几个关键指标：
 
@@ -483,7 +484,7 @@ HarmonyOS系统为开发者提供了丰富的转场动效库，使开发者能�
 
 **图 10** 同一界面多个按钮同时缩放示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/Vu6kiQpwS0CmDrnkjNNFKQ/zh-cn_image_0000002809049817.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/F6JPK--sQViqTxuMYgm6bw/zh-cn_image_0000002786519122.gif)
 
 **自定义动画**
 
@@ -498,8 +499,10 @@ export struct CustomAnimation {
   @State heightSize: number = 40
   @State flag: boolean = true
 
+  // Custom animation function
   computeSize() {
     let duration = 2000
+    // Set the loop cycle
     let period = 1
     let widthSizeEnd = 0
     let heightSizeEnd = 0
@@ -510,9 +513,12 @@ export struct CustomAnimation {
       widthSizeEnd = 80
       heightSizeEnd = 40
     }
+    // Calculate loop count
     let doTimes = duration / period
+    // Calculate the variation per cycle
     let deltaHeight = (heightSizeEnd - this.heightSize) / doTimes
     let deltaWeight = (widthSizeEnd - this.widthSize) / doTimes
+    // Loop, with each cycle the component increases in width and height by a portion.
     for (let i = 1; i <= doTimes; i++) {
       let t = period * (i);
       setTimeout(() => {
@@ -659,6 +665,7 @@ export struct CustomAnimation {
           Button('Tap me')
             .width('100%')
             .onClick((event?: ClickEvent | undefined) => {
+              // Animate the width and height properties of the Button component
               if (this.flag) {
                 this.getUIContext().animateTo({
                   duration: 2000,
@@ -735,10 +742,10 @@ export struct CustomAnimation {
 
 | 图形变换属性 | 布局属性 |
 | --- | --- |
-| rotate | / |
-| translate | position、offset |
-| scale | width、height、Size |
-| transform | / |
+| [rotate](../doccenter-references/api/ts-universal-attributes-transformation.md#rotate) | / |
+| [translate](../doccenter-references/api/ts-universal-attributes-transformation.md#translate) | [position](../doccenter-references/api/ts-universal-attributes-location.md#position)、[offset](../doccenter-references/api/ts-universal-attributes-location.md#offset) |
+| [scale](../doccenter-references/api/ts-universal-attributes-transformation.md#scale) | [width](../doccenter-references/api/ts-universal-attributes-size.md#width)、[height](../doccenter-references/api/ts-universal-attributes-size.md#height)、[Size](../doccenter-references/api/ts-universal-attributes-size.md#size) |
+| [transform](../doccenter-references/api/ts-universal-attributes-transformation.md#transform) | / |
 
 **说明** 
 
@@ -750,7 +757,7 @@ export struct CustomAnimation {
 
 **图 11** 同一界面多个图片同时缩放并位移示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/71/v3/LAopu-yOToW0exLCgzHlyQ/zh-cn_image_0000002779850252.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/I3C8LaY6SJyR1d1kTC57Cw/zh-cn_image_0000002786359194.gif)
 
 **改变布局属性**
 
@@ -793,8 +800,11 @@ export struct ImageAnimation {
       Column() {
         Button('Change Layout Properties')
           .width('100%')
+          // Key Attribute Settings
           .onClick(() => {
+            // Loop animation by play count
             for (let i = 0; i < 10; i++) {
+              // Interval playback position, width and height changes
               if (i % 2 == 0) {
                 setTimeout(() => {
                   this.getUIContext().animateTo({ duration: 1000 }, () => {
@@ -820,6 +830,7 @@ export struct ImageAnimation {
           .width('100%')
           .margin({ top: 12 })
           .onClick(() => {
+            // Loop animation by play count
             for (let i = 0; i < 10; i++) {
               if (i % 2 == 0) {
                 setTimeout(() => {
@@ -963,7 +974,7 @@ export struct ImageAnimation {
 
 **说明** 
 
-建议开发者优先使用[Code Linter扫描工具](ide-code-linter.md)进行代码检查，重点关注[@performance/hp-arkui-combine-same-arg-animateto](ide_hp-arkui-combine-same-arg-animateto.md)规则。若扫描结果中出现该规则相关问题，可参考本章节提供的优化建议进行调整。
+建议开发者优先使用[Code Linter代码检查](ide-code-linter.md)，重点关注[@performance/hp-arkui-combine-same-arg-animateto](ide_hp-arkui-combine-same-arg-animateto.md)规则。若扫描结果中出现该规则相关问题，可参考本章节提供的优化建议进行调整。
 
 每次调用animateTo方法，都会触发一次属性变化，这意味着在每次动画执行时都需要进行动画前后的对比，以确定属性的变化情况。当多次连续调用animateTo时，会增加额外的布局计算和绘制开销，从而降低性能表现。特别是当这些animateTo操作针对同一个组件的属性时，会导致该组件更新的次数增加，进一步影响性能。
 
@@ -977,7 +988,7 @@ export struct ImageAnimation {
 
 **图 12** 多个相同组件同时修改多个属性示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/UEgA-BvzRJC49Q3TxvQcLw/zh-cn_image_0000002779690282.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/StMcDtEkSA6_VT2nJrmlEA/zh-cn_image_0000002815558615.gif)
 
 **代码实现**
 
@@ -990,21 +1001,25 @@ export struct ImageAnimation {
     @State h:number = 2
     @State brightNum:number = 1.5
     @State color:Color = Color.Red
+    // Animation closure 1, set width change
     func1() {
       this.getUIContext().animateTo({curve: Curve.Sharp, duration: 1000}, () => {
         this.w = (this.w === 80 ? 150 : 80);
       });
     }
+    // Animation Closure 2, Set Color Change
     func2() {
       this.getUIContext().animateTo({curve: Curve.Sharp, duration: 1000}, () => {
         this.color = (this.color === Color.Yellow ? Color.Red : Color.Yellow);
       });
     }
+    // Animation closure 3, set height variation
     func3() {
       this.getUIContext().animateTo({curve: Curve.Sharp, duration: 1000}, () => {
         this.h = (this.h === 2 ? 5 : 2);
       });
     }
+    // Animation Closure 4, Set Highlight Variation
     func4() {
       this.getUIContext().animateTo({curve: Curve.Sharp, duration: 1000}, () => {
         this.brightNum= (this.brightNum=== 1.5 ? 1 : 1.5);
@@ -1041,7 +1056,9 @@ export struct ImageAnimation {
         Column() {
           Button("Tap nFunc")
             .width('100%')
+            // Key Attribute Settings
             .onClick(() => {
+              // Loop animation by play count
               for (let i = 0; i < 10; i++) {
                 setTimeout(() => {
                   this.func1();
@@ -1077,6 +1094,7 @@ export struct ImageAnimation {
     @State brightNum:number = 1.5
     @State color:Color = Color.Red
     // ...
+    // Unify animation closures while simultaneously setting changes for four properties
     func() {
       this.getUIContext().animateTo({curve: Curve.Sharp, duration: 1000}, () => {
         this.w = (this.w === 80 ? 150 : 80);
@@ -1117,7 +1135,9 @@ export struct ImageAnimation {
           Button("Tap oneFunc")
             .width('100%')
             .margin({ top: 12 })
+            // Key Attribute Settings
             .onClick(() => {
+              // Loop animation by play count
               for (let i = 0; i < 10; i++) {
                 setTimeout(() => {
                   this.func();
@@ -1173,7 +1193,7 @@ export struct ImageAnimation {
 
 **图 13** 多个相同组件修改多个属性示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/Nnq7s0eSRu2P0nZDwRdppQ/zh-cn_image_0000002809009903.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/nKq9_jcjQSK3-pt-TQ8MKQ/zh-cn_image_0000002815398699.gif)
 
 **在多个animateTo之间更新状态变量**
 
@@ -1181,7 +1201,7 @@ export struct ImageAnimation {
 
 **图 14** 多个animateTo之间更新状态变量更新流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/h4rQ2r7WTEGVTyX1CTVQ9g/zh-cn_image_0000002809049819.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/clH82Ap-TlK3db2K5OKqwQ/zh-cn_image_0000002786519124.png)
 
 在第一个animateTo前，重新设置了w属性，所以Row组件需要更新一次。在第一个animateTo的动画闭包中，改变了w属性，所以Row组件又需要更新一次并对比产生宽高动画。第二个animateTo前，重新设置了color属性，所以Row组件又需要更新一次。在第二个animateTo的动画闭包中，改变了color属性，所以Row组件再更新一次并产生了背景色动画。Row组件总共更新了4次属性。
 
@@ -1266,7 +1286,7 @@ export struct UpdateMultipleProperties {
 
   **图 15** animateTo之前显式指定属性初值更新流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/StOt1wlYTYqWn27mNR1tgQ/zh-cn_image_0000002779850254.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/YlZpV5K_Rz-A1zrqRAJJnw/zh-cn_image_0000002786359196.png)
 
 在第一个animateTo之前，重新设置了w和color属性，所以Row需要更新一次。在第一个animateTo的动画闭包中，改变了w属性，所以Row组件需要更新一次并对比产生宽高动画。在第二个animateTo之前，由于没有执行额外的语句，不存在需要更新的脏状态变量和脏节点，无需更新。在第二个animateTo的动画闭包中，改变了color属性，所以Row组件再更新一次并产生了背景色动画。Row组件总共更新了3次属性。
 
@@ -1348,7 +1368,7 @@ export struct UpdateMultipleProperties {
 
   **图 16** animateTo之前使用原始状态更新流程
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/UZhgICYkRXeJWxII3lsfwA/zh-cn_image_0000002779690284.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/SQUabVOpTL-xLGGnKlN3Yg/zh-cn_image_0000002815558617.png)
 
   在第一个animateTo之前，不存在需要更新的脏状态变量和脏节点，无需更新。在第一个animateTo的动画闭包中，改变了w属性，所以Row组件需要更新一次并对比产生宽高动画。在第二个animateTo之前，由于也没有执行额外的语句，不存在需要更新的脏状态变量和脏节点，无需更新。在第二个animateTo的动画闭包中，改变了color属性，所以Row组件再更新一次并产生了背景色动画。Row组件总共更新了2次属性。
 
@@ -1448,7 +1468,7 @@ renderGroup是组件通用方法，它代表了渲染绘制的一个组合。其
 
 **图 17** 组件渲染流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/SqtLnQhQS8KRFL1E51GG3Q/zh-cn_image_0000002809009905.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/OzuopMeKSleTWmlv9rk3Wg/zh-cn_image_0000002815398701.png)
 
 在进行缓存更新时，需要满足以下三个条件：
 
@@ -1463,7 +1483,7 @@ renderGroup是组件通用方法，它代表了渲染绘制的一个组合。其
 
 具体缓存管理流程图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/4Ct8_SBvStqgVUBFDBnJPQ/zh-cn_image_0000002809049821.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/W28yMgF3S3eYCRPu-72HDg/zh-cn_image_0000002786519126.png)
 
 **说明** 
 
@@ -1478,7 +1498,7 @@ renderGroup是组件通用方法，它代表了渲染绘制的一个组合。其
 
 **图 18** renderGroup案例实现图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/pzHWOjKbTOW8ItkIhwwdjg/zh-cn_image_0000002779850256.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/G6usQBkWSVefGQ9dlLsmmQ/zh-cn_image_0000002786359198.gif)
 
 **代码实现**
 

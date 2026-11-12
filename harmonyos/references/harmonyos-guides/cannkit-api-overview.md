@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-api-overview
 title: 接口概述
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 基本概念 > 编程API > 接口概述
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > 基本概念 > 编程API > 接口概述
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:49+08:00
-doc_updated_at: 2026-06-27
-content_hash: sha256:004afc565aa97a0e9c0822d2450cf68e127dc70374b2949f49ad009c6be0a15e
+scraped_at: 2026-11-12T09:52:41+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:97a318e2f754a2796dd17d32e0650db823d71836e12b5724e676eaa8de28d634
 ---
 
 AscendC算子采用标准C++语法和一组类库API进行编程，开发者可以根据自己的需求选择合适的API。AscendC编程类库API示意图如下所示，AscendC API的操作数都是Tensor类型：GlobalTensor和LocalTensor；类库API分为基础API和高阶API。
@@ -15,12 +15,12 @@ AscendC算子采用标准C++语法和一组类库API进行编程，开发者可�
 
 **图1** AscendC编程类库API示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/ItTJ61GZQRWR1RauRNoVjQ/zh-cn_image_0000002779851732.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/m6wtbP_MSQygTQhtqmeHiA/zh-cn_image_0000002815400193.png)
 
 对于基础API，主要分为以下几类：
 
 * **计算API**，包括标量计算API、向量计算API、矩阵计算API，分别实现调用Scalar计算单元、Vector计算单元、Cube计算单元执行计算的功能。
-* **数据搬运API**，计算API基于Local Memory数据进行计算，所以数据需要先从Global Memory搬运至Local Memory，再使用计算API完成计算，最后从Local Memory搬出至Global Memory。执行搬运过程的接口称之为数据搬运API，比如[DataCopy](cannkit-common-data-movement.md)接口。
+* **数据搬运API**，计算API基于Local Memory数据进行计算，所以数据需要先从Global Memory搬运至Local Memory，再使用计算API完成计算，最后从Local Memory搬出至Global Memory。执行搬运过程的接口称之为数据搬运API，比如[DataCopy](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/SIMD-API/basic_api/memory_vector_compute/data_move/DataCopy_GMAndUB_continuous.md)接口。
 * **内存管理API**，用于分配管理内存，比如AllocTensor、FreeTensor接口。
 * **同步控制API**，完成任务间的通信和同步，比如EnQue、DeQue接口。不同的API指令间有可能存在依赖关系，从[硬件架构抽象](cannkit-hardware-architecture-abstraction.md)可知，不同的指令异步并行执行，为了保证不同指令队列间的指令按照正确的逻辑关系执行，需要向不同的组件发送同步指令。同步控制API内部即完成这个发送同步指令的过程，开发者无需关注内部实现逻辑，使用简单的API接口即可完成。
 * **ISASI(Instruction Set Architecture Special API)，** 硬件体系结构相关的API，该类接口不能保证跨硬件版本兼容。
@@ -38,11 +38,4 @@ AscendC算子采用标准C++语法和一组类库API进行编程，开发者可�
 
 **图2** 计算API几种计算方式的特点
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/KYODzW31SrKCyLsOnmBMtg/zh-cn_image_0000002779691764.png)
-
-**说明** 
-
-AscendC API所在头文件目录为：
-
-* 基础API：${DDK\_INSTALL\_PATH}/tools/tools\_ascendc/include/tikcpp/tikcfw/kernel\_operator.h。
-* 高阶API：${DDK\_INSTALL\_PATH}/tools/tools\_ascendc/include/tikcpp/tikcfw/lib，其中${DDK\_INSTALL\_PATH}表示DDK软件安装目录。（目录头文件中包含的接口如果未在资料中声明，属于间接调用接口，开发者无需关注）
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/flvVt8-XSLKEh7SCjF3dEw/zh-cn_image_0000002786520618.png)

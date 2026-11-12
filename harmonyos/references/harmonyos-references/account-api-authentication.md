@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: "@hms.core.authentication (华为账号应用统一认证服务)"
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > ArkTS API > @hms.core.authentication (华为账号应用统一认证服务)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:55:12+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:cb83f1cba431b7f990d122ff252b721357d307e77784e001aa603331014102cd
+scraped_at: 2026-11-12T09:57:10+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:de3f13d6b31c94dc30f3802f37f0c9ef39857bbc9d969eb255d9183a0acf75b4
 ---
 
 ## 模块概述
@@ -91,7 +91,7 @@ cancelAuthorizationResponse = controller.executeRequest(cancelAuthorizationReque
 
 @hms.core.authentication模块提供手机号一致性状态校验能力，可校验应用通过[华为账号一键登录](../harmonyos-guides/account-phone-unionid-login.md)获取的手机号是否与华为账号绑定的手机号、本机SIM卡一致。当应用登录后需要进行高风险操作时，可通过该能力查询手机号一致性状态，从而进行相应的安全风控处理。
 
-开发者可创建请求对象，将已获取的手机号、用户标识（UnionID/OpenID）传入。Account Kit会判断开发者传入的手机号、华为账号绑定手机号、当前设备SIM卡之间的关系，存在如下三种一致性状态，具体可参考[ConsistencyRequest](account-api-authentication.md#consistencyrequest)：
+开发者可创建请求对象，将已获取的手机号、用户标识（UnionID/OpenID）传入。Account Kit会判断开发者传入的手机号、华为账号绑定手机号、当前设备SIM卡之间的关系，存在如下三种一致性状态，具体可参考[ConsistencyState](account-api-authentication.md#consistencystate)：
 
 * 华为账号已登录，传入的手机号与当前账号绑定的手机号一致，与当前设备任意一个SIM卡手机号一致。
 * 华为账号已登录，传入的手机号与当前账号绑定的手机号一致，与当前设备任意一个SIM卡手机号均不一致或当前设备无SIM卡。
@@ -293,7 +293,7 @@ getMobileNumberConsistency(request: ConsistencyRequest): Promise<ConsistencyResu
 
 **系统能力：** SystemCapability.AuthenticationServices.HuaweiID.Auth
 
-**设备行为差异：** 对于6.1.1(24)及之前版本，该接口在Phone、PC/2in1、Tablet中可正常调用，在其他设备类型中返回801错误码。对于26.0.0及之后版本，该接口在Phone、PC/2in1、Tablet、TV中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 对于API版本6.1.1(24)及之前，该接口在Phone、PC/2in1、Tablet中可正常调用，在其他设备类型中返回801错误码。对于API版本26.0.0，该接口在Phone、PC/2in1、Tablet、TV中可正常调用，在其他设备类型中返回801错误码。对于API版本26.0.1及之后，该接口在Phone、PC/2in1、Tablet、TV、Car中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 

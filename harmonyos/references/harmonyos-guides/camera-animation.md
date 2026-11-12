@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-animat
 title: 相机基础动效(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 相机基础动效(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:10+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:35970c1b9c19c81694f736127f452cb376ef8d90576b2b39a6525ddc1acb5851
+scraped_at: 2026-11-12T09:52:04+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3a93d89d9537265e7f59f72167684708aca491c93fff827cae350151f758f585
 ---
 
 在使用相机过程中，当遇到相机模式切换、前后置镜头切换等场景时，会不可避免地出现预览流替换。为优化用户体验，可合理使用动效过渡。本文主要介绍如何使用预览流截图，并通过ArkUI提供的[animateToImmediately](../harmonyos-references/arkts-apis-uicontext-uicontext.md#animatetoimmediately23)接口触发显式动画功能，实现下方三种核心场景动效。
@@ -14,17 +14,17 @@ content_hash: sha256:35970c1b9c19c81694f736127f452cb376ef8d90576b2b39a6525ddc1ac
 
   图片为从录像模式切换为拍照模式的效果。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/OgDCXm-VTYSwPx2ujUhkjQ/zh-cn_image_0000002779691004.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/6icg-g-2TPKPVX4zxs9ZIw/zh-cn_image_0000002815399417.gif)
 * 前后置切换动效，使用预览流截图做翻转模糊动效过渡。
 
   图片为从前置相机切换为后置相机的效果。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/mGXiYw2pQQK4f1UIT-iVJw/zh-cn_image_0000002809010625.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/Khi5w84kQ3ixh4pfYDXLmQ/zh-cn_image_0000002786519842.gif)
 * 拍照闪黑动效，使用闪黑组件覆盖预览流实现闪黑动效过渡。
 
   图片为点击完成拍摄的效果。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/bP-iX-b0RiqXuRieWhdFsQ/zh-cn_image_0000002809050539.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/zcvaKIFsTzKB1ynkMfLg-g/zh-cn_image_0000002786359914.gif)
 
 ## 闪黑动效
 
@@ -215,7 +215,7 @@ content_hash: sha256:35970c1b9c19c81694f736127f452cb376ef8d90576b2b39a6525ddc1ac
      // 获取已完成的surface截图。
      let shotPixel = BlurAnimateUtil.getSurfaceShot();
      // 后置。
-     if (this.curPosition === 0) {
+     if (this.curPosition === 1) {
        Logger.info(TAG, 'showBlurAnim BACK');
        // 直板机后置截图旋转补偿90°。
        await shotPixel.rotate(BlurAnimateUtil.IMG_ROTATE_ANGLE_90);

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-media-libr
 title: 短时间内保存多个资源如何避免重复弹窗
 breadcrumb: FAQ > 应用框架开发 > 本地数据和文件 > 媒体文件管理（Media Library） > 短时间内保存多个资源如何避免重复弹窗
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:02+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:45921d3064f822ee1cec742721aa8731c687281fa7099d0ac4d788df07ec2e5c
+scraped_at: 2026-11-12T09:59:22+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:52be4d4dda9d8c9159d9c0ad3f923f2b59000614206d5af4b637576e924026cc
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:45921d3064f822ee1cec742721aa8731c687281fa7099d0ac4d788df07e
 
 ## 背景知识
 
-1. [ohos.permission.SHORT\_TERM\_WRITE\_IMAGEVIDEO](../harmonyos-guides/restricted-permissions.md#ohospermissionshort_term_write_imagevideo)为受限开放权限，允许应用保存图片、视频到用户公共目录。应用获取此权限后，最长可获得30分钟的短时授权，来保存图片/视频。申请权限参考：[申请ACL权限](../app/agc-help-apply-acl-0000002394212138.md#section156171230179)。
+1. [ohos.permission.SHORT\_TERM\_WRITE\_IMAGEVIDEO](../harmonyos-guides/restricted-permissions.md#ohospermissionshort_term_write_imagevideo)为受限开放权限，允许应用保存图片、视频到用户公共目录。应用获取此权限后，最长可获得30分钟的短时授权，来保存图片/视频。申请权限参考：[申请ACL权限](../doccenter-getting-started/agc-help-apply-acl-0000002394212138.md#section1845215191112)。
 2. 应用首次调用[createAssetWithShortTermPermission](../harmonyos-references/arkts-apis-photoaccesshelper-photoaccesshelper.md#createassetwithshorttermpermission12)方法后拉起保存确认弹框。在用户"同意"后的5分钟之内，同一个应用再次调用接口，支持无需弹框确认自动返回已授权的uri给应用，支持应用保存图片/视频。退出应用会结束授权，再次进入需要重新弹框进行确认授权。
 
 ## 解决方案

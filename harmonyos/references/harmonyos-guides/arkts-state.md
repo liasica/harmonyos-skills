@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-state
 title: "@State装饰器：组件内状态"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @State装饰器：组件内状态
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:10+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6681edaa7ca8dec7888b38372b7a85fba2aa58336d874646be61f61036f669bc
+scraped_at: 2026-11-12T09:51:07+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:67fb2e3576216a5e7cf0a94a2a6a97787a472d368508b49be504d1c149739ac3
 ---
 
 被状态变量装饰器装饰的变量称为状态变量，使普通变量具备状态属性。当状态变量改变时，会触发其直接绑定的UI组件渲染更新。
 
 在状态变量相关装饰器中，[@State](../harmonyos-references/ts-state-management-state.md#state)是最基础的装饰器，也是大部分状态变量的数据源。
 
-在阅读@State文档前，建议开发者对状态管理框架有基本的了解。建议提前阅读：[状态管理概述](arkts-state-management-overview.md)。最佳实践请参考[状态管理最佳实践](../best-practices/bpta-status-management.md)。常见问题请参考[状态管理常见问题](arkts-state-management-faq.md)。
+在阅读@State文档前，建议开发者对状态管理框架有基本的了解。建议提前阅读：[状态管理概述](arkts-state-management-overview.md)。常见问题请参考[状态管理常见问题](arkts-state-management-faq.md)。
 
 **说明** 
 
@@ -48,7 +48,7 @@ content_hash: sha256:6681edaa7ca8dec7888b38372b7a85fba2aa58336d874646be61f61036f
 
 **图1** 初始化规则图示
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/BsSXsAp8SY-7UHaikY1MEQ/zh-cn_image_0000002809009273.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/6Lw-1AqwRCegxOsV44pg-w/zh-cn_image_0000002815557983.png)
 
 ## 观察变化和行为表现
 
@@ -205,7 +205,7 @@ content_hash: sha256:6681edaa7ca8dec7888b38372b7a85fba2aa58336d874646be61f61036f
   }
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/6ik_D73KR72HQos_MfHfBA/zh-cn_image_0000002809049189.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/9UTX09SJQlOZU8W1Fi2Nlg/zh-cn_image_0000002815398067.gif)
 
 ### 装饰class对象类型的变量
 
@@ -265,7 +265,7 @@ content_hash: sha256:6681edaa7ca8dec7888b38372b7a85fba2aa58336d874646be61f61036f
   }
   ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/F4FlPmdlSvqvYZD5_V_Lrg/zh-cn_image_0000002779849624.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/Non8oqrbTrqMyCTA2lFgOw/zh-cn_image_0000002786518492.gif)
 
 ### 装饰Array类型变量
 
@@ -336,7 +336,7 @@ struct ArraySample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/0w1GLefvQDCXZ0eOjCJ2wA/zh-cn_image_0000002779689654.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/L3UFUwdVSu--gnXYM13f5A/zh-cn_image_0000002786358564.gif)
 
 ### 装饰Map类型变量
 
@@ -403,7 +403,7 @@ struct MapSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/n9QmJWhURP6_DrkMdZrZ1Q/zh-cn_image_0000002809009275.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/bSzBVf4qSaiQBuzvLV13Pg/zh-cn_image_0000002815557985.gif)
 
 ### 装饰Set类型变量
 
@@ -463,7 +463,7 @@ struct SetSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/FlTEJijeSbC67Tx8b0-z7g/zh-cn_image_0000002809049191.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/fCu2PwGeTK-wj5RQV1k2HQ/zh-cn_image_0000002815398069.gif)
 
 ### 装饰Date类型变量
 
@@ -519,7 +519,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/dAVGYHE4Q-2iU1-QO01bRw/zh-cn_image_0000002779849626.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/gWypeh5HQk6UOnPtecjuFA/zh-cn_image_0000002786518494.gif)
 
 ### @State支持联合类型实例
 
@@ -557,4 +557,4 @@ struct UnionTypeSample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/URZscyGuQ02Ok5cbykOH_A/zh-cn_image_0000002779689656.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/_IcP3KhnSjakC_q7kHkFqw/zh-cn_image_0000002786358566.gif)

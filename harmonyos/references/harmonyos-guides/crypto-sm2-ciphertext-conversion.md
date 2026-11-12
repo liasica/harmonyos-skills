@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-sm2-ci
 title: 使用SM2密文格式转换(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 加解密 > 使用SM2密文格式转换(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:37+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:51:33+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:6f3565af051f634f9d0bbc9d1744febe0949edb1400e4d3056ccc392dee17764
 ---
 

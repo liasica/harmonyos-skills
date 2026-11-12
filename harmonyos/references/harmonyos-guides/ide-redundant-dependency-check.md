@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-redundant
 title: "@correctness/redundant-dependency-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 正确性规则@correctness > @correctness/redundant-dependency-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:14+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:70edfe65c0e7fd7274e76235723df9948bd7dcf0b9fc4034a6d04d671b536ee8
+scraped_at: 2026-11-12T09:53:00+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3da5026ce08aa6caa02d3408cb0ef58a19b6bfd66681a3bb4e5d7f883d82fcb3
 ---
 
 建议删除冗余的依赖配置。冗余依赖会增加加载和解析时间，影响代码质量。
@@ -43,4 +43,4 @@ content_hash: sha256:70edfe65c0e7fd7274e76235723df9948bd7dcf0b9fc4034a6d04d671b5
 plugin:@correctness/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

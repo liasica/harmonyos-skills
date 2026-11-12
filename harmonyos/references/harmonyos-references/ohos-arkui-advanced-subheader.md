@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SubHeader
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SubHeader
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:17+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:cdb3771284e1ff3c90b6d1d86ecff70cef2229a109abc1d358a2bb3966a98698
+scraped_at: 2026-11-12T09:54:28+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:eb6cfb3586907ae8ccdccfafde00a3ed1a7a02a0436f65204da91d598691889f
 ---
 
 子标题，用于列表项或内容项顶部，将该列表或内容划分为一个区块，子标题名称用来概括该区块内容。
@@ -32,7 +32,7 @@ import { SubHeader } from '@kit.ArkUI';
 
 ## SubHeader
 
-SubHeader({icon?: ResourceStr, iconSymbolOptions?: SymbolOptions, primaryTitle?: ResourceStr, secondaryTitle?: ResourceStr, select?: SelectOptions, operationType?: OperationType, operationItem?: Array<OperationOption>, operationSymbolOptions?: Array<SymbolOptions>, primaryTitleModifier?: TextModifier, secondaryTitleModifier?: TextModifier, titleBuilder?: () => void, contentMargin?: LocalizedMargin, contentPadding?: LocalizedPadding, titleAccessibilityText?: ResourceStr, titleId?: string })
+SubHeader({icon?: ResourceStr, iconSymbolOptions?: SymbolOptions, endIcon?: ResourceStr, endIconSymbolOptions?: SymbolOptions, primaryTitle?: ResourceStr, secondaryTitle?: ResourceStr, select?: SelectOptions, operationType?: OperationType, operationItem?: Array<OperationOption>, operationSymbolOptions?: Array<SymbolOptions>, primaryTitleModifier?: TextModifier, secondaryTitleModifier?: TextModifier, titleBuilder?: () => void, contentMargin?: LocalizedMargin, contentPadding?: LocalizedPadding, titleAccessibilityText?: ResourceStr, titleId?: string })
 
 **装饰器类型：**@Component
 
@@ -44,9 +44,11 @@ SubHeader({icon?: ResourceStr, iconSymbolOptions?: SymbolOptions, primaryTitle?:
 | --- | --- | --- | --- | --- |
 | icon | [ResourceStr](ts-types.md#resourcestr) | 否 | @Prop | 图标设置项。  默认值：undefined，表示不显示图标。  当使用secondaryTitle属性时，设置icon属性才会生效。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | iconSymbolOptions12+ | [SymbolOptions](ohos-arkui-advanced-subheader.md#symboloptions12) | 否 | - | icon为[SymbolGlyph](ts-basic-components-symbolglyph.md)时的设置项。  默认值：undefined，表示不显示图标。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| primaryTitle | [ResourceStr](ts-types.md#resourcestr) | 否 | @Prop | 标题内容。  默认值：undefined，表示不显示标题。  当同时使用primaryTitle、secondaryTitle、icon属性时，设置primaryTitle属性不生效。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| secondaryTitle | [ResourceStr](ts-types.md#resourcestr) | 否 | @Prop | 副标题内容。  默认值：undefined，表示不显示副标题。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| select | [SelectOptions](ohos-arkui-advanced-subheader.md#selectoptions) | 否 | - | select内容以及事件。  默认值：undefined，表示不显示下拉框。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| endIcon | [ResourceStr](ts-types.md#resourcestr) | 否 | @Prop | 标题尾部图标资源。  当使用primaryTitle或secondaryTitle属性时，设置endIcon属性才会生效。  默认值：undefined，表示不显示标题尾部图标。  **起始版本：** 26.0.1  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| endIconSymbolOptions | [SymbolOptions](ohos-arkui-advanced-subheader.md#symboloptions12) | 否 | - | endIcon为[SymbolGlyph](ts-basic-components-symbolglyph.md)时的设置项。  默认值：undefined，表示不设置标题尾部Symbol图标样式。  **起始版本：** 26.0.1  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| primaryTitle | [ResourceStr](ts-types.md#resourcestr) | 否 | @Prop | 主标题内容。  默认值：undefined，表示不显示标题。  当同时使用primaryTitle、secondaryTitle、icon属性时，设置primaryTitle属性不生效。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| secondaryTitle | [ResourceStr](ts-types.md#resourcestr) | 否 | @Prop | 副标题内容。  默认值：undefined，表示不显示副标题。当同时使用primaryTitle、secondaryTitle、icon属性时，设置primaryTitle属性不生效。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| select | [SelectOptions](ohos-arkui-advanced-subheader.md#selectoptions) | 否 | - | 下拉框内容和事件。  默认值：undefined，表示不显示下拉框。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | operationType | [OperationType](ohos-arkui-advanced-subheader.md#operationtype) | 否 | @Prop | 操作区（右侧）元素样式。  默认值：OperationType.BUTTON  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | operationItem | Array<[OperationOption](ohos-arkui-advanced-subheader.md#operationoption)> | 否 | - | 操作区（右侧）的设置项。  默认值：undefined，表示不显示操作区。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | operationSymbolOptions12+ | Array<[SymbolOptions](ohos-arkui-advanced-subheader.md#symboloptions12)> | 否 | - | operationType为OperationType.ICON\_GROUP，  operationItem设置多个图标，图标为[SymbolGlyph](ts-basic-components-symbolglyph.md)时的设置项。  默认值：undefined，表示不设置Symbol图标。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
@@ -98,13 +100,13 @@ SubHeader({icon?: ResourceStr, iconSymbolOptions?: SymbolOptions, primaryTitle?:
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| value | [ResourceStr](ts-types.md#resourcestr) | 否 | 否 | 文本内容。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| action | ()=>void | 否 | 是 | 子标题右侧按钮点击事件。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| accessibilityLevel18+ | string | 否 | 是 | 子标题右侧按钮无障碍重要性。用于控制当前项是否可被无障碍辅助服务所识别。  支持的值为：  "auto"：当前组件会转换"yes"。  "yes"：当前组件可被无障碍辅助服务所识别。  "no"：当前组件不可被无障碍辅助服务所识别。  "no-hide-descendants"：当前组件及其所有子组件不可被无障碍辅助服务所识别。  默认值："auto"  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| accessibilityText18+ | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 子标题右侧按钮的无障碍文本属性。当组件不包含文本属性时，屏幕朗读选中此组件时不播报，使用者无法清楚地知道当前选中了什么组件。为了解决此场景，开发人员可为不包含文字信息的组件设置无障碍文本，当屏幕朗读选中此组件时播报无障碍文本的内容，帮助屏幕朗读的使用者清楚地知道自己选中了什么组件。  默认值：类型为TEXT\_ARROW和BUTTON时默认值为当前项value属性内容，其他类型默认值为“ ”。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| accessibilityDescription18+ | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 子标题右侧按钮的无障碍描述。此描述用于向用户详细解释当前组件，开发人员应为组件的这一属性提供较为详尽的文本说明，以协助用户理解即将执行的操作及其可能产生的后果。特别是当这些后果无法仅从组件的属性和无障碍文本中直接获知时。如果组件同时具备文本属性和无障碍说明属性，当组件被选中时，系统将首先播报组件的文本属性，随后播报无障碍说明属性的内容。  默认值：类型为LOADING时，默认值为“正在加载”，其他类型默认值为“单指双击即可执行”。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| defaultFocus18+ | boolean | 否 | 是 | 子标题右侧按钮是否为默认焦点。  true：子标题右侧按钮是默认焦点。  false：子标题右侧按钮不是默认焦点。  默认值：false  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| id24+ | string | 否 | 是 | 子标题右侧按钮id。需要为子标题右侧按钮设置id的时候设置此参数，缺省时不设置此参数。  默认值：undefined，表示不设置子标题右侧按钮id。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
+| value | [ResourceStr](ts-types.md#resourcestr) | 否 | 否 | 操作区元素内容。当operationType为TEXT\_ARROW或BUTTON时，value为文本内容；当operationType为ICON\_GROUP时，value为图标资源。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| action | ()=>void | 否 | 是 | 子标题尾部按钮点击事件。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| accessibilityLevel18+ | string | 否 | 是 | 子标题尾部按钮无障碍重要性。用于控制当前项是否可被无障碍辅助服务所识别。  支持的值为：  "auto"：当前组件会转换"yes"。  "yes"：当前组件可被无障碍辅助服务所识别。  "no"：当前组件不可被无障碍辅助服务所识别。  "no-hide-descendants"：当前组件及其所有子组件不可被无障碍辅助服务所识别。  默认值："auto"  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| accessibilityText18+ | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 子标题尾部按钮的无障碍文本属性。当组件不包含文本属性时，屏幕朗读选中此组件时不播报，使用者无法清楚地知道当前选中了什么组件。为了解决此场景，开发人员可为不包含文字信息的组件设置无障碍文本，当屏幕朗读选中此组件时播报无障碍文本的内容，帮助屏幕朗读的使用者清楚地知道自己选中了什么组件。  默认值：类型为TEXT\_ARROW和BUTTON时默认值为当前项value属性内容，其他类型默认值为“ ”。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| accessibilityDescription18+ | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 子标题尾部按钮的无障碍描述。此描述用于向用户详细解释当前组件，开发人员应为组件的这一属性提供较为详尽的文本说明，以协助用户理解即将执行的操作及其可能产生的后果。特别是当这些后果无法仅从组件的属性和无障碍文本中直接获知时。如果组件同时具备文本属性和无障碍说明属性，当组件被选中时，系统将首先播报组件的文本属性，随后播报无障碍说明属性的内容。  默认值：类型为LOADING时，默认值为“正在加载”，其他类型默认值为“单指双击即可执行”。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| defaultFocus18+ | boolean | 否 | 是 | 子标题尾部按钮是否为默认焦点。  true：子标题尾部按钮是默认焦点。  false：子标题尾部按钮不是默认焦点。  默认值：false  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| id24+ | string | 否 | 是 | 子标题尾部按钮id。需要为子标题尾部按钮设置id的时候设置此参数，缺省时不设置此参数。  默认值：undefined，表示不设置子标题尾部按钮id。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
 
 ## SymbolOptions12+
 
@@ -156,7 +158,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/3HMSfMWQT2OUFGkgszvm7A/zh-cn_image_0000002779852758.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/3Yqv_NfIS_yZVE7ci_hNyw/zh-cn_image_0000002815401189.png)
 
 ### 示例2（双行文本内容型子标题）
 
@@ -186,7 +188,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/8Xz_hemdRJOheGmYCyAdRg/zh-cn_image_0000002779692790.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0e/v3/dOspcKSOSoukqXyxsg6JoQ/zh-cn_image_0000002786521614.png)
 
 ### 示例3（spinner型内容型子标题）
 
@@ -234,7 +236,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/qPzq-g2oSWSKVNcE8snr8w/zh-cn_image_0000002809012411.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/3PTkIsyVRNKh-f6LWA0RFw/zh-cn_image_0000002786361686.png)
 
 ### 示例4（设置左侧symbol图标）
 
@@ -268,7 +270,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/NlJXPw30T4-RrMSqHStgfA/zh-cn_image_0000002809052325.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/FGcERY8XSu2dJsaJ3nYn7w/zh-cn_image_0000002815561107.gif)
 
 ### 示例5（设置右侧symbol图标）
 
@@ -326,7 +328,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/GO-vpq6ESQiLTLtjm-HjhQ/zh-cn_image_0000002779852760.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/CW-41yP4RayOO2nJQh2OEw/zh-cn_image_0000002815401191.png)
 
 ### 示例6（自定义标题内容）
 
@@ -370,7 +372,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/KEPpUlMeQeysfzPevVHzzA/zh-cn_image_0000002779692792.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/mpLzsobkTumBYvPfnvTv9g/zh-cn_image_0000002786521616.png)
 
 ### 示例7（自定义标题样式）
 
@@ -409,7 +411,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/Sy37xffdTX-frp2Wa5iiIA/zh-cn_image_0000002809012413.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/ClwE_C0-T66xmW_DwJZ47w/zh-cn_image_0000002786361688.png)
 
 ### 示例8（右侧按钮自定义播报）
 
@@ -481,7 +483,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/e05fu8vOTCmDwfAn7FrQkw/zh-cn_image_0000002809052327.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/KdkQ2o7WSf-Q_SrcbJrryg/zh-cn_image_0000002815561109.png)
 
 ### 示例9（右侧按钮设置默认获焦）
 
@@ -515,4 +517,42 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/Ud7ephqqSg6CI0_SneJHng/zh-cn_image_0000002779852762.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/c3zFisdsQLGdS7KUaaItzw/zh-cn_image_0000002815401193.png)
+
+### 示例10（设置子标题尾部图标）
+
+该示例主要演示子标题设置endIcon尾部图标，包括普通图片资源和Symbol图标两种形式。
+
+从API版本26.0.1开始，[SubHeader](ohos-arkui-advanced-subheader.md#subheader-1)新增endIcon和endIconSymbolOptions属性。
+
+```ts
+import { SubHeader } from '@kit.ArkUI';
+
+@Entry
+@Component
+struct SubHeaderExample {
+  build() {
+    Column() {
+      SubHeader({
+        // 图标+二级标题+尾部图标（Image）
+        // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
+        icon: $r('app.media.startIcon'),
+        secondaryTitle: '二级标题',
+        endIcon: $r('app.media.startIcon')
+      })
+      SubHeader({
+        // 图标+二级标题+尾部图标（Symbol）
+        icon: $r('sys.media.ohos_ic_public_email'),
+        secondaryTitle: '二级标题',
+        endIcon: $r('sys.symbol.ohos_lungs'),
+        endIconSymbolOptions: {
+          renderingStrategy: SymbolRenderingStrategy.MULTIPLE_COLOR,
+          fontColor: [Color.Blue, Color.Grey, Color.Green]
+        }
+      })
+    }
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/VAIwtBX5Q_u8I8kp2HJ8CA/zh-cn_image_0000002786521618.png)

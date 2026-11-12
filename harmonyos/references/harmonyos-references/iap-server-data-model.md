@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-serve
 title: 数据类型说明
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > 数据类型说明
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:21+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:059f9185a234a0450a5b1089ce45faf3d1cf6a74a85b429888e076a1f5eb3aa9
+scraped_at: 2026-11-12T09:57:22+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8afdd97364e8185e1ee33f98e87e9629e6eb0f69a3ec0e3fd0a85a69d36db15d
 ---
 
 ## PurchaseOrderPayload
@@ -68,6 +68,6 @@ content_hash: sha256:059f9185a234a0450a5b1089ce45faf3d1cf6a74a85b429888e076a1f5e
 
 | 参数 | 是否必选 | 类型 | 说明 |
 | --- | --- | --- | --- |
-| offerId | 是 | String | 优惠ID。优惠ID来源于开发者在AppGallery Connect中配置商品信息时设置优惠促销信息，配置的优惠ID，具体请参见[设置促销价格](../app/set-0000001931995712.md)。 |
+| offerId | 是 | String | 优惠ID。优惠ID来源于开发者在HarmonyOS 开发者中心配置商品信息时设置优惠促销信息，配置的优惠ID，具体请参见[设置促销价格](../app/set-0000001931995712.md)。 |
 | applicationUserName | 否 | String | 用户账户相关联的混淆字符串，唯一标识用户，传递优惠ID场景，可以传递该字段，若传递了本字段则需在[PurchaseParameter](iap-iap.md#purchaseparameter)请求参数中传递一个相同的applicationUserName。 |
 | nonce | 是 | String | 唯一的UUID，由开发者生成，全小写，需要保证系统内全局唯一。 |

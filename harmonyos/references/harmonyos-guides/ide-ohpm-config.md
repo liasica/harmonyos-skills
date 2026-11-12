@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-conf
 title: ohpm config
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm config
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:24+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:b7a5da032a39c74350ee007a64477afa23fa654ee9a90d399a0053d3421b8a76
+scraped_at: 2026-11-12T09:53:10+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:942d57b3e06b9206c39384d137fb9b7a0d84b328a0c46427a2a1d733c01ed304
 ---
 
 设置ohpm用户级配置项。
@@ -30,7 +30,7 @@ ohpm 从命令行和 .ohpmrc 文件中获取其配置设置。有关更多 .ohpm
 
 **注意** 
 
-ohpm config 仅支持配置项字段（默认项字段请查阅 [ohpmrc](ide-ohpmrc.md#zh-cn_topic_0000001792216397_默认配置项) 章节），且仅支持修改**用户级目录**下的 .ohpmrc 文件。
+ohpm config 仅支持配置项字段（默认项字段请查阅[ohpmrc](ide-ohpmrc.md#section44263447172)章节），且仅支持修改**用户级目录**下的 .ohpmrc 文件。
 
 ## 子命令
 
@@ -197,7 +197,7 @@ ohpm config encrypt [options]
   2. 成功执行后，在指定路径生成新的加密组件，并对用户输入内容进行加密，其中用户输入内容不可见。
 
      ```screen
-     ohpm INFO: Attempted to create a crypto component at the "D:\path\to\empty_dir" path...
+     ohpm INFO: Attempted to create an crypto component at the "D:\path\to\empty_dir" path...
      ohpm INFO: The crypto component has been created successfully.
      Please enter the password to be encrypted:
      ohpm INFO: encrypted result:

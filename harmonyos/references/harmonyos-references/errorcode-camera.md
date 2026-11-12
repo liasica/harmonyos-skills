@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: Camera错误码
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > 错误码 > Camera错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:28+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e6d2622b5975d38d3c9b6c37f9faafa75cefa5584c32c2ea3d97548b18cf9a00
+scraped_at: 2026-11-12T09:56:36+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7d8137fa4c00258b949122cc5cbbdf977c83ad1ce6f06dccd14b9475d5ed7ff3
 ---
 
 **说明** 
@@ -191,6 +191,42 @@ Unresolved conflicts with current configurations.
 **处理步骤**
 
 检测当前提交的配置是否符合设备所支持的配置。
+
+## 7400113 不支持的多摄组合
+
+**错误信息**
+
+Unsupported multiple camera combination.
+
+**错误描述**
+
+不支持的多摄组合。
+
+**可能原因**
+
+因硬件限制或驱动约束，尝试使用不支持的多摄组合。
+
+**处理步骤**
+
+请考虑使用其他相机组合，或查看设备支持的相机配置。
+
+## 7400115 参数超出范围
+
+**错误信息**
+
+Parameter out of range.
+
+**错误描述**
+
+参数超出范围。
+
+**可能原因**
+
+参数值超出有效范围，例如ISO、曝光时间或对焦距离。
+
+**处理步骤**
+
+请确保取值在当前相机配置支持的范围内。
 
 ## 7400201 相机服务异常
 

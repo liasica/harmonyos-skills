@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/commoneve
 title: 系统定义的公共事件
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 进程线程通信 > 系统定义的公共事件
 category: harmonyos-references
-scraped_at: 2026-11-04T08:35:07+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:55:56+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:0a4768681737ab0422f296befcb78c1c3f6a664d826ceea274459cd74cbe4fc3
 ---
 

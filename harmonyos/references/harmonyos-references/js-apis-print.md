@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: "@ohos.print (打印)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 数据文件处理 > @ohos.print (打印)
 category: harmonyos-references
-scraped_at: 2026-10-22T07:09:18+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:bf04d3d2cc00b3c69898bea70c98510a39d72eb0524f9a46c4163177881da4aa
+scraped_at: 2026-11-12T09:55:53+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:51c465f03ecfa8885effdf807b965a439e3a4822a5f0e3ffa4531303dc339ece
 ---
 
 该模块提供打印相关的操作接口，支持文件打印、打印任务事件监听、打印机发现与管理、打印任务状态更新等功能，适用于需要在应用内集成打印相关能力的场景。
@@ -1159,6 +1159,7 @@ class MyPrintDocumentAdapter implements print.PrintDocumentAdapter {
 | PRINT\_JOB\_BLOCK\_FILE\_UPLOADING\_ERROR18+ | 30 | 表示文件上传失败。 |
 | PRINT\_JOB\_BLOCK\_DRIVER\_MISSING20+ | 34 | 表示打印驱动缺失。 |
 | PRINT\_JOB\_BLOCK\_INTERRUPT20+ | 35 | 表示打印任务中断。 |
+| PRINT\_JOB\_BLOCK\_EDM\_POLICY\_RESTRICTED | 44 | 表示打印任务受EDM策略限制。  **模型约束：** 此接口仅可在Stage模型下使用。  **起始版本：** 26.0.1 |
 | PRINT\_JOB\_BLOCK\_PRINTER\_UNAVAILABLE20+ | 98 | 表示打印机不可用。 |
 | PRINT\_JOB\_BLOCK\_UNKNOWN | 99 | 表示打印未知问题。 |
 
@@ -1184,6 +1185,7 @@ class MyPrintDocumentAdapter implements print.PrintDocumentAdapter {
 | E\_PRINT\_SMB\_LOGIN\_LOCKOUT24+ | 13100012 | 表示当前SMB协议共享打印机账号因多次登录失败而被锁定。请等待账号解锁后重试，或联系管理员处理。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | E\_PRINT\_SMB\_CONNECTION\_FAILURE24+ | 13100013 | 表示SMB协议共享打印机连接失败（发生网络错误、主机不可达或端口被阻止）。  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | E\_PRINT\_SMB\_INVALID\_CREDENTIALS24+ | 13100014 | 表示SMB协议共享打印机账号/密码错误。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| E\_PRINT\_EDM\_POLICY\_RESTRICTED | 13100015 | 表示打印操作受EDM策略限制。  **模型约束：** 此接口仅可在Stage模型下使用。  **起始版本：** 26.0.1 |
 
 ## ApplicationEvent14+
 

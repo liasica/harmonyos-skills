@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avimagegenera
 title: 使用AVImageGenerator提取视频指定时间图像(ArkTS)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 媒体信息查询 > 使用AVImageGenerator提取视频指定时间图像(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:00+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:9ba75d8f7fe3085c2906c47bbf78d54e42a82ab821177bf01115ab50023a38aa
+scraped_at: 2026-11-12T09:52:07+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e8e4b0205c423157ca066ee36cae08e53c14b4a918e148231a0424e4005e0928
 ---
 
 使用[AVImageGenerator](media-kit-intro.md#avimagegenerator)可以实现从原始媒体资源中获取视频指定时间的缩略图，本开发指导将以获取一个视频资源的缩略图作为示例，向开发者讲解AVImageGenerator相关功能。
@@ -18,8 +18,8 @@ content_hash: sha256:9ba75d8f7fe3085c2906c47bbf78d54e42a82ab821177bf01115ab50023
 
 1. 使用[createAVImageGenerator()](../harmonyos-references/arkts-apis-media-f.md#mediacreateavimagegenerator12-1)创建实例。
 
-   ```ts
-   import { media } from '@kit.MediaKit';
+   ```typescript
+   // 创建AVImageGenerator对象。
    let avImageGenerator: media.AVImageGenerator = await media.createAVImageGenerator();
    ```
 2. 设置资源：需要设置属性fdSrc（表示文件描述符）。
@@ -32,8 +32,7 @@ content_hash: sha256:9ba75d8f7fe3085c2906c47bbf78d54e42a82ab821177bf01115ab50023
    * 也可以使用应用沙箱路径访问对应资源（必须确认资源文件可用），参考[获取应用文件路径](application-context-stage.md#获取应用文件路径)。应用沙箱的介绍及如何向应用沙箱推送文件，请参考[文件管理](app-sandbox-directory.md)。
    * 不同AVImageGenerator或者[AVMetadataExtractor](../harmonyos-references/arkts-apis-media-avmetadataextractor.md)，如果需要操作同一资源，需要多次打开文件描述符，不要共用同一文件描述符。
 
-   ```ts
-   import { common } from '@kit.AbilityKit';
+   ```typescript
    // 获取当前组件所在Ability的Context，并通过Context获取应用文件路径。
    let context = this.getUIContext().getHostContext() as common.UIAbilityContext;
    // 设置fdSrc，H264_AAC.mp4为rawfile目录下的预置资源，需要开发者根据实际情况进行替换。
@@ -41,12 +40,7 @@ content_hash: sha256:9ba75d8f7fe3085c2906c47bbf78d54e42a82ab821177bf01115ab50023
    ```
 3. 获取指定时间图像：调用fetchFrameByTime()，可以获取到一个PixelMap对象，该对象可用于图片显示。
 
-   ```ts
-   import { image } from '@kit.ImageKit';
-
-   // pixelMap对象声明，用于图片显示。
-   @State pixelMap: image.PixelMap | undefined = undefined;
-
+   ```typescript
    // 初始化入参。
    let timeUs = 0; // 需要获取的缩略图在视频中的时间点。
    let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC; // AV_IMAGE_QUERY_NEXT_SYNC表示选取传入时间点或之后的关键帧。
@@ -61,11 +55,9 @@ content_hash: sha256:9ba75d8f7fe3085c2906c47bbf78d54e42a82ab821177bf01115ab50023
    ```
 4. 释放资源：调用release()销毁实例，释放资源。
 
-   ```ts
+   ```typescript
    // 释放资源（promise模式）。
-   await avImageGenerator.release().catch((err: BusinessError) => {
-      console.error(`release failed, error code: ${err.code}, error message: ${err.message}`);
-   });
+   avImageGenerator.release();
    ```
 
 ## 运行示例工程

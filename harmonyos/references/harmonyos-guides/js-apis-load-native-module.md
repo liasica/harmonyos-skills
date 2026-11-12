@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/js-apis-load-
 title: 同步方式动态加载Native模块
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS运行时 > ArkTS模块化 > 同步方式动态加载Native模块
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:58+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:51:05+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:63aff8ceaf8a290c7a5b1cd7aca70cb0a1e2a6400e64b7edc829411021585482
 ---
 

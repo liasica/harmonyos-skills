@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: Scenario Fusion Kit简介
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > Scenario Fusion Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:18:47+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:9d317bde82d05333fbd1e96a367c741edd910d9b2782678ec20690b1f4fbeb3a
+scraped_at: 2026-11-12T09:52:35+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:1e014d7ac3a4852e5b8ad92394c2bb8fbb74975c2b947170bd0a5580cf1bda85
 ---
 
 Scenario Fusion Kit（融合场景服务）基于ArkUI框架组件开发，提供跨多个子系统融合的场景化组件，降低开发者接入复杂度，确保鸿蒙生态体验统一。ArkUI一行核心代码启用，智能推荐输入建议，复杂表单一键填充。Scenario Fusion Kit通过完善应用/元服务的系统开发能力，进一步丰富鸿蒙生态，满足开发者在HarmonyOS系统下的服务闭环诉求。
@@ -38,23 +38,23 @@ Scenario Fusion Kit（融合场景服务）基于ArkUI框架组件开发，提�
 
 | 场景 | 支持设备 |
 | --- | --- |
-| 快速验证手机号Button | 支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持TV设备。 |
+| 快速验证手机号Button | 支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持TV设备，从API版本26.0.1开始，新增支持Car设备。 |
 | 选择头像Button | Phone、Tablet、PC/2in1 |
-| 打开APP Button | 支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持TV设备。 |
+| 打开APP Button | 支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持TV设备，从API版本26.0.1开始，新增支持Car设备。 |
 | 选择收货地址Button | 支持Phone、Tablet和PC/2in1设备，并且从API版本26.0.0开始，新增支持TV设备。 |
 | 选择发票抬头Button | Phone、Tablet、PC/2in1 |
 | 地图选点Button | 支持Phone和Tablet设备，并且从5.0.1(13)版本开始，新增支持PC/2in1设备。 |
-| 权限设置Button | 支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持TV设备。 |
-| 获取手机号和风险等级Button | 支持Phone、Tablet、PC/2in1和TV设备。 |
+| 权限设置Button | 支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持TV设备，从API版本26.0.1开始，新增支持Car设备。 |
+| 获取手机号和风险等级Button | 支持Phone、Tablet、PC/2in1和TV设备，并且从API版本26.0.1开始，新增支持Car设备。 |
 | 服务动态授权码Button | 支持Phone、Tablet设备，并且从6.1.0(23)版本开始，新增支持PC/2in1设备。 |
 | 元服务分享Button | 支持Phone、Tablet设备，并且从6.1.0(23)版本开始，新增支持PC/2in1设备。 |
 | 反馈与投诉Button | 支持Phone、Tablet设备，并且从6.1.0(23)版本开始，新增支持PC/2in1设备。 |
 | 省市区选择器Input | Phone、Tablet、PC/2in1 |
-| 通过API获取系统信息属性 | 支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持Wearable和TV设备。 |
-| 通过API异步获取系统信息属性 | 支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持Wearable和TV设备。 |
-| 通过API获取系统设置属性 | 支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持Wearable和TV设备。 |
+| 通过API获取系统信息属性 | 支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持Wearable和TV设备，从API版本26.0.1开始，新增支持Car设备。 |
+| 通过API异步获取系统信息属性 | 支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持Wearable和TV设备，从API版本26.0.1开始，新增支持Car设备。 |
+| 通过API获取系统设置属性 | 支持Phone、Tablet和PC/2in1设备，并且从5.1.0(18)版本开始，新增支持Wearable和TV设备，从API版本26.0.1开始，新增支持Car设备。 |
 | 通过API展示关注组件 | Phone、Tablet |
-| 文件路径转换API | Phone、Tablet，并且从API版本26.0.0开始，新增支持Car设备和TV设备。 |
+| 文件路径转换API | 支持Phone、Tablet设备，并且从API版本26.0.0开始，新增支持TV设备，从API版本26.0.1开始，新增支持Car设备。 |
 | 智能填充服务 | 支持Phone、Tablet设备，并且从5.1.0(18)版本开始，新增支持PC/2in1设备。 |
 
 ## 模拟器支持情况

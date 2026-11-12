@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-cl
 title: 版本说明
 breadcrumb: 指南 > DevEco CLI > 版本说明
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:39+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:820ab163fbff23bf44d1104aeedcb01fb831544108633ce2daa9cd9002e83bd3
+scraped_at: 2026-11-12T09:53:25+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:cd59db2925fd4859926b0eff96778a022ab92aae12bc7134ed71de99718e88a7
 ---
 
 以下为Windows/macOS/Linux版DevEco CLI的版本说明，鸿蒙电脑版的版本说明请点击[此链接](https://gitcode.com/openharmony-sig/deveco-cli/releases)查看。
 
-## 1.3.0（2026 年8月）
+## 1.3.0（2026年8月）
 
 ### 新增特性
 
@@ -23,8 +23,8 @@ content_hash: sha256:820ab163fbff23bf44d1104aeedcb01fb831544108633ce2daa9cd9002e
 * 支持对模拟器或真机进行UI测试，包括截图、单击/双击、拖拽、滑动、输入文本等。
 * 支持通过MCP协议调用ArkTS/C++语法检查工具。
 * 支持通过LSP协议实现代码检查、代码引用查找等代码编辑相关能力。
-* 支持在Linux上运行。
+* Linux版DevEco CLI首次发布！
 
-## 1.2.0（2026 年7月）
+## 1.2.0（2026年7月）
 
 Windows/macOS版DevEco CLI首次发布！

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-audio-pau
 title: "@correctness/audio-pause-or-mute-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 正确性规则@correctness > @correctness/audio-pause-or-mute-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:13+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:a3857ec8faa4744c1a5f9ee4c1a326f9f5ef03ad18bec59da783d3906c06d6c9
+scraped_at: 2026-11-12T09:53:00+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:883052bc9bdb01a30a72c9bd731732a8cbdb4feb6dcc7e2ef3dd5159734edb6f
 ---
 
 建议应用在播放声音的场景下，监听音频发声设备变化。
@@ -131,4 +131,4 @@ function demoCallBack() {
 plugin:@correctness/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-i
 title: Game Service Kit简介
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > Game Service Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:55+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:e88d703b324fef75584c3a7336ca77f4ef932abc14d4ba9a900376cc7a130355
+scraped_at: 2026-11-12T09:52:23+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8e0985ecb0be28a7a5d58929d557b195845325a04f8c5c2d1220ad0e14670540
 ---
 
 ## 业务简介
@@ -28,7 +28,7 @@ Game Service Kit（游戏服务）主要提供快速、低成本构建游戏基�
 
 | 功能 | 支持的设备 |
 | --- | --- |
-| 基础游戏服务 | Phone、Tablet、PC/2in1、TV |
+| 基础游戏服务 | Phone、Tablet、PC/2in1、TV、Car |
 | 游戏场景感知 | Phone、Tablet、PC/2in1 |
 | 游戏近场快传 | Phone、Tablet、PC/2in1 |
 

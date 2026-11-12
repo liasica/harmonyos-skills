@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/obtain-enroll
 title: 查询用户注册凭据的状态
 breadcrumb: 指南 > 系统 > 安全 > User Authentication Kit（用户认证服务） > 查询用户注册凭据的状态
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:19+08:00
-doc_updated_at: 2026-10-30
+scraped_at: 2026-11-12T09:51:42+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:5fd55616952da343e362f84a22d7f8439089a47e451648fb006282642840a909
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-apply-ri
 title: 申请推送场景化消息权益
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 开发准备 > 申请推送场景化消息权益
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:41+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:8c95dcbfc2015dfd3ea2e96c3b4f0dc4e0695c8d17376838f25364f8dc1d1c8c
+scraped_at: 2026-11-12T09:52:34+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:00b256d87bc596b1561f9d63e1af24f4b212f8ba0a93e315d775e66e7177dddd
 ---
 
 ## 场景化消息权益简介
@@ -30,7 +30,7 @@ Push Kit支持多种场景化消息类型，其中部分场景化消息类型需
 
 分类方式示意图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/QSqFEkLWSr2WntfSnTlt6w/zh-cn_image_0000002809011217.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/CDGKjnlfTx-KrdLhHvbMUQ/zh-cn_image_0000002786520450.png)
 
 **说明** 
 
@@ -45,8 +45,8 @@ Push Kit支持多种场景化消息类型，其中部分场景化消息类型需
 
 | **消息类别** | **场景说明** | **提醒方式**与消息展示位置 | 推送数量限制 |
 | --- | --- | --- | --- |
-| 服务与通讯 | 包括社交通讯与服务提醒类消息，指应用借助通知中心及时向用户传递重要通知提醒，通常用户对接收此类消息有预期。 | 锁屏、铃声、振动等。  **说明**：  **服务提醒类消息**在Wearable上静默通知，仅在通知中心展示消息。  TV不支持铃声和振动。 | 系统会根据使用场景和流量进行管控，不合理的使用场景系统会进行频控。 |
-| 资讯营销 | 包括资讯类消息和营销类消息，指的是运营人员向用户发送的活动信息、内容推荐、资讯等。 | 静默通知，仅在通知中心（更多通知）里展示消息。  **说明**：  **资讯营销类消息**在Wearable上支持锁屏、铃声、振动等提醒方式。  TV不支持铃声和振动。 | 根据应用类别限制每日推送数量，单个应用每日每设备推送数量为2条或5条。 |
+| 服务与通讯 | 包括社交通讯与服务提醒类消息，指应用借助通知中心及时向用户传递重要通知提醒，通常用户对接收此类消息有预期。 | 锁屏、铃声、振动等。  **说明**：  **服务提醒类消息**在Wearable上静默通知，仅在通知中心展示消息。  TV、Car设备不支持铃声和振动。 | 系统会根据使用场景和流量进行管控，不合理的使用场景系统会进行频控。 |
+| 资讯营销 | 包括资讯类消息和营销类消息，指的是运营人员向用户发送的活动信息、内容推荐、资讯等。 | 静默通知，仅在通知中心（更多通知）里展示消息。  **说明**：  **资讯营销类消息**在Wearable上支持锁屏、铃声、振动等提醒方式。  TV、Car设备不支持铃声和振动。 | 根据应用类别限制每日推送数量，单个应用每日每设备推送数量为2条或5条。 |
 
 **说明** 
 
@@ -84,7 +84,7 @@ Push Kit支持多种场景化消息类型，其中部分场景化消息类型需
 
 **订阅流程示意图**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/RBK_yxChQOuBi9q-wWB8FA/zh-cn_image_0000002809051131.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/7oTUDeilQ-GJ8J_pSUOWOQ/zh-cn_image_0000002786360522.png)
 
 **资讯营销类-内容资讯**
 
@@ -177,16 +177,16 @@ Wearable上为锁屏+铃声+振动（实际提醒方式以应用在通知管理�
 
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，点击“开发与服务”，在项目列表中找到您的项目，通过“增长 > 推送服务 > 配置”，在“配置”页签下选择需要申请自分类权益的应用，点击**自分类权益**后的“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/fLwcleNpRFW9NAPc5fSgwA/zh-cn_image_0000002779851566.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/iS8MyPhYThaVyIGm3LFF3g/zh-cn_image_0000002815559943.png)
 2. 选择消息发送类型，下一步补充消息示例（订阅消息类型需要额外补充场景说明和图片），备注可以补充说明此条消息的发送场景（可选），提交完成后可以通过“查看进展”按钮查看审批进展。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/aRW3aQ9MQQiPbC2dkEtnvQ/zh-cn_image_0000002779691598.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/EYxXpdwFR9CUaVem9ytvTQ/zh-cn_image_0000002815400027.png)
 
    **说明** 
 
    若某消息类型已经申请通过，后续满足此类型的场景范围的消息无需重复申请。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/THMOkuS3R-Gog2LltR8jWA/zh-cn_image_0000002809011219.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/GLd-OvCATQyukkQRn9ovfA/zh-cn_image_0000002786520452.png)
 
    **说明** 
 
@@ -206,21 +206,21 @@ Wearable上为锁屏+铃声+振动（实际提醒方式以应用在通知管理�
 
    即时聊天：企业内部办公应用，同事间的点对点聊天消息、群聊天消息。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/0tV0edAhRIGV2SFVcNqgog/zh-cn_image_0000002809051133.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/xzKMk9xJQ9awWGxytHLvSg/zh-cn_image_0000002786360524.png)
 3. 非首次申请时可以点击“新增类型”按钮跳转进行消息类型的申请。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/9Lme_m_XSaKwJFseft1rdg/zh-cn_image_0000002779851568.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/jW3l813uQ_KQgESxmgvQDQ/zh-cn_image_0000002815559945.png)
 4. 消息类型申请审核周期为3个工作日，您可以点击自分类权益后的“**详情**”查看已申请通过的消息类型。也可以通过“申请记录”查看申请过的消息类型。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/UkxcFUSpQaW0I9RWZ-5geQ/zh-cn_image_0000002779691600.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/LYu5MjAOSKimL0xvkoXAQw/zh-cn_image_0000002815400029.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/wHcD55bjTpaWGFHuZfiomA/zh-cn_image_0000002809011221.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/OM1Xz2GBTyGpshgy05yRmQ/zh-cn_image_0000002786520454.png)
 
    点击“申请记录”可以查看申请过的消息类型，对申请记录进行查看、编辑、删除等操作。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/zodMQr-CQpmg33vx0pob5A/zh-cn_image_0000002809051135.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/hlgT2Q3jRKSBqu1Y-DzSIg/zh-cn_image_0000002786360526.png)
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/wv362grgQu6riQswh46Zwg/zh-cn_image_0000002779851570.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/17eBwJJyS9OHVdEGHioz8A/zh-cn_image_0000002815559947.png)
 5. 若您的申请已经审核通过（审核通过5分钟后，您申请的自分类权益生效），请根据申请自分类类型适配云端category字段。
 
    自分类权益生效后，应用推送的通知消息类型将根据您发送消息时的云端[category](../harmonyos-references/push-scenariozed-api-request-param.md#notification)字段进行归类。
@@ -240,11 +240,11 @@ Wearable上为锁屏+铃声+振动（实际提醒方式以应用在通知管理�
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，点击“开发与服务”。
 2. 在项目列表中找到您的项目，通过“项目设置 > 选择应用”，在“开放能力管理”页签下找到推送服务的“推送应用内通话消息”权益，点击“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/uyel4YelQhKCjP1z8OO0dQ/zh-cn_image_0000002779691602.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/AfYguqHkTsye2uARIh2xXQ/zh-cn_image_0000002815400031.png)
 
    进入申请页面，按照申请原因现有模板，补充应用信息，上传附件，点击“提交”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/uwVboDr9TeiwW4r9TxFVog/zh-cn_image_0000002809011223.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/AVlRHdDfRV6_iy0mzxinoA/zh-cn_image_0000002786520456.png)
 
    **说明** 
 
@@ -275,10 +275,10 @@ Wearable上为锁屏+铃声+振动（实际提醒方式以应用在通知管理�
    XXXX年XX月XX日
 3. 申请提交之后，进入“互动中心”页面，审批进展会由智能助手通知，审核期限为3个工作日。如果退出互动中心页面，后续可以点击AGC平台右上角气泡图标再次进入。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/UwJiDsfVSPyG9u-naZwZsw/zh-cn_image_0000002809051137.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/YDEI8DgLTKe9B7lgO7qYgg/zh-cn_image_0000002786360528.png)
 4. 审核通过，权益立即生效，推送服务的“推送应用内通话消息”权益被勾选。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/ZfPt5CmARoGOTcU6s1KkIA/zh-cn_image_0000002779851572.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/DYWP3shVRwqtF6LeSYUt3w/zh-cn_image_0000002815559949.png)
 
 ## 申请推送语音播报消息权益
 
@@ -299,21 +299,21 @@ Wearable上为锁屏+铃声+振动（实际提醒方式以应用在通知管理�
 1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，点击“开发与服务”。
 2. 在项目列表中找到您的项目，通过“项目设置 > 选择应用”，在“开放能力管理”页签下找到推送服务的“推送语音播报消息”权益，点击“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/1E7QQ-RlTUCswImRJfX9Qg/zh-cn_image_0000002779691604.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/um5eqrDESm2QxEAMFOHong/zh-cn_image_0000002815400033.jpg)
 
    进入申请页面，按照申请原因现有模板，补充应用信息，上传附件，点击“提交”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/0nN6KhZVQgW9W4CKxAJloA/zh-cn_image_0000002809011225.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/vfzfmpb7RYWWFYU_kFCgPg/zh-cn_image_0000002786520458.jpg)
 
    **说明** 
 
    申请权益时，请在附件中上传语音消息通知界面截图或示意图或语音播报录像。
 3. 申请提交之后，进入“互动中心”页面，审批进展会由智能助手通知，审核期限为3个工作日。如果退出互动中心页面，后续可以点击AGC平台右上角气泡图标再次进入。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/UTq9dCdkSD6byZKaLUcBnQ/zh-cn_image_0000002809051139.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/biUe_g5QQw-hZ-H8w5OHgA/zh-cn_image_0000002786360530.png)
 4. 审核通过，权益立即生效，推送服务的“推送语音播报消息”权益被勾选。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bc/v3/J9JRPw5NQIWfWkD2nVVyvg/zh-cn_image_0000002779851574.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/ghvn358wReWBbLyc9wG-Kw/zh-cn_image_0000002815559951.png)
 
 ## 申请自定义铃声权益
 

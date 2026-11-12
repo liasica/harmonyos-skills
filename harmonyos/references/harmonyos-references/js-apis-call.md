@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.telephony.call (拨打电话)"
 breadcrumb: API参考 > 系统 > 网络 > Telephony Kit（蜂窝通信服务） > ArkTS API > @ohos.telephony.call (拨打电话)
 category: harmonyos-references
-scraped_at: 2026-09-25T07:12:04+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:40575b7dd152bd487d827cffcc0df11d09c0a35e30781732f28435ea730af765
+scraped_at: 2026-11-12T09:55:50+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:969dfab464f9246f070acf022b99a3a7585bfc54697aa7d852209945813727ae
 ---
 
 该模块提供呼叫管理功能，包括拨打电话、跳转到拨号界面、获取通话状态、格式化电话号码等。
@@ -378,6 +378,57 @@ call.makeCallWithToken("138xxxxxxxx", makeOptions).then(() => {
     console.info(`makeCallWithToken success`);
 }).catch((err: BusinessError) => {
     console.error(`makeCallWithToken fail, promise: err->Code${err.code}, message:${err.message}`);
+});
+```
+
+## call.makeDirectCall
+
+makeDirectCall(phoneNumber: string): Promise<void>
+
+允许应用一键拨号。只支持在[UIAbility](js-apis-app-ability-uiability.md#uiability)中调用。使用Promise异步回调。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Telephony.CallManager
+
+**需要权限**：ohos.permission.DIRECT\_CALL
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| phoneNumber | string | 是 | 电话号码。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[电话子系统错误码](errorcode-telephony.md)和[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 201 | Permission denied. |
+| 8300001 | Invalid parameter value. |
+| 8300002 | Operation failed. Cannot connect to service. |
+| 8300003 | System internal error. |
+| 8300005 | Airplane mode is on. |
+| 8300006 | Network not in service. |
+
+**示例：**
+
+```ts
+import { call } from '@kit.TelephonyKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+call.makeDirectCall("138xxxxxxxx").then(() => {
+    console.info(`makeDirectCall success`);
+}).catch((err: BusinessError) => {
+    console.error(`makeDirectCall fail, promise: err->Code${err.code}, message:${err.message}`);
 });
 ```
 

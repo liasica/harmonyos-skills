@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-abil
 title: ability_runtime_common.h
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > C API > 头文件 > ability_runtime_common.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d638887876b32c9dcc3759d89252567dd853bc8e59ba6c20a06908c525c2c2e8
+scraped_at: 2026-11-12T09:53:36+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:314c4da83b6f78ba69acc1cf6d950a47bdc6f2c629d5e1269a49a952af7784fe
 ---
 
 ## 概述
@@ -81,3 +81,4 @@ AbilityRuntime模块的错误码的枚举。
 | ABILITY\_RUNTIME\_ERROR\_CODE\_CROSS\_APP\_IN\_PROCESS = 16000176 | 在[OH\_ABILITY\_RUNTIME\_LAUNCH\_MODE\_IN\_PROCESS](capi-modular-object-extension-manager-h.md#oh_abilityruntime_launchmode)模式下，调用方与目标Ability不在同一应用。  **起始版本：** 26.0.0 |
 | ABILITY\_RUNTIME\_ERROR\_CODE\_ABILITY\_WRAPPER\_INVALID = 16000177 | NativeAbility数据信息无效或不完整。  **起始版本：** 26.0.0 |
 | ABILITY\_RUNTIME\_ERROR\_CODE\_METADATA\_INVALID = 16000178 | 类型库元数据无效。  **起始版本：** 26.0.0 |
+| ABILITY\_RUNTIME\_ERROR\_CODE\_BUFFER\_TOO\_SMALL = 16000179 | 缓冲区过小。  **起始版本：** 26.0.1 |

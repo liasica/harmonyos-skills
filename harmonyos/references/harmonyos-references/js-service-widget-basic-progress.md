@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-servic
 title: progress
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > JS服务卡片UI组件 > 基础组件 > progress
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:27+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:8a762d4081a472bf1f2d4b68a7092808282957410ea890cbc4834094900f5376
+scraped_at: 2026-11-12T09:54:37+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d2a28a11cda8c7f1912689fa94e4029103ee94119a62d07f07d48523764be1df
 ---
 
 进度条，用于显示内容加载或操作的处理进度。
@@ -84,9 +84,9 @@ type=arc
 | stroke-width | <length> | - | 否 | 弧形进度条的宽度。  进度条宽度越大，进度条越靠近圆心。即进度条始终在半径区域内。 |
 | start-angle | <deg> | 240 | 否 | 弧形进度条起始角度，以时钟0点为基线。范围为0到360（顺时针）。 |
 | total-angle | <deg> | 240 | 否 | 弧形进度条总角度，范围为-360到360，负数表示起点到终点为逆时针。 |
-| center-x | <length> | - | 否 | 弧形进度条中心位置，（坐标原点为组件左上角顶点）。该样式需要和center-y和radius一起配置才能生效。 |
-| center-y | <length> | - | 否 | 弧形进度条中心位置，（坐标原点为组件左上角顶点）。该样式需要和center-x和radius一起配置才能生效。 |
-| radius | <length> | - | 否 | 弧形进度条半径，该样式需要和center-x和center-y一起配置才能生效。 |
+| center-x | <length> | - | 否 | 弧形进度条中心位置，（坐标原点为组件左上角顶点）。该样式需要和center-y和radius一起。 |
+| center-y | <length> | - | 否 | 弧形进度条中心位置，（坐标原点为组件左上角顶点）。该样式需要和center-x和radius一起。 |
+| radius | <length> | - | 否 | 弧形进度条半径，该样式需要和center-x和center-y一起。 |
 
 ## 事件
 
@@ -120,4 +120,4 @@ type=arc
 
 **4\*4卡片**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/jmQ5FaufR0OWvok1QY2SjA/zh-cn_image_0000002809052629.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/OmQLn2UGTWmbQw1JQudPag/zh-cn_image_0000002786521920.png)

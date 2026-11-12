@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo batch_publish
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > 数据迁移相关命令 > ohpm-repo batch_publish
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:06+08:00
-doc_updated_at: 2026-09-29
-content_hash: sha256:82c603bb63418e379146069e5994a2882b0a22b04fc2af649c5247e257b99827
+scraped_at: 2026-11-12T09:52:51+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a2dffa3a938bb0dbc3de9792fbcc8ddb5b1213c4077e4d5c44512016299bb3e0
 ---
 
 批量上传包文件。
@@ -48,6 +48,8 @@ ohpm-repo batch_publish <zip_file>
 * 类型：string
 
 ohpm-repo 5.3.0版本开始支持配置多个仓库，当[batch\_download命令](ide-ohpm-repo-batch-download.md)导出的zip文件中仅包含一个仓库目录时，可在batch\_publish命令后面配置--target-repo <string>，用于指定待上传的仓库名称。未配置默认上传仓库名称与[batch\_download命令](ide-ohpm-repo-batch-download.md)导出的zip文件中的目录仓库名称保持一致，否则将报错。
+
+## 选项
 
 ## 示例
 

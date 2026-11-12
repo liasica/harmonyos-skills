@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-file-nami
 title: "@hw-stylistic/file-naming-convention"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > ArkTS代码风格规则@hw-stylistic > @hw-stylistic/file-naming-convention
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:13+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:f675d11a7d50dfb2c23b9f4f5a580cfdd6a29b5d84db858da4f5a5153b6d0647
+scraped_at: 2026-11-12T09:52:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:396603a0a7e9130bce8cc568bd90ec3a1eff917fc904e342b36162741f8e1744
 ---
 
 强制代码文件和资源文件保持一致的命名风格。
@@ -73,4 +73,4 @@ content_hash: sha256:f675d11a7d50dfb2c23b9f4f5a580cfdd6a29b5d84db858da4f5a5153b6
 "plugin:@hw-stylistic/all"
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

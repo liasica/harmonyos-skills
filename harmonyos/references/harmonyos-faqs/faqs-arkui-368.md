@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-arkui-368
 title: 在display.on('change')监听回调中，无法使用Window实例获取更新后的窗口大小
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 窗口管理 > 在display.on('change')监听回调中，无法使用Window实例获取更新后的窗口大小
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:31+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:3153eec7f062a9ad8a24a9f89345ac18455e8d9a9a7dd99a88cc99ed85082f86
+scraped_at: 2026-11-12T09:58:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3af00555f74ea6551ad4a02b056e0739c9849130fa8238c8f57bb527e781fdac
 ---
 
 **解决措施**
@@ -47,4 +47,4 @@ display.on('change', (data) => {
 
 **参考链接**
 
-[display.on('change')](../harmonyos-references/js-apis-display.md#displayonaddremovechange)
+[display.on('change')](../doccenter-references/api/js-apis-display.md#displayonadd--remove--change)

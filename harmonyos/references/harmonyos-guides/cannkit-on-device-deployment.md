@@ -3,16 +3,13 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-on-de
 title: 端侧部署
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部署
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:29+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:d14ee0bcc5d7d2c0ee6c274345a1a7c95f6bb1b1677716bb9ae3650cb91cf6d2
+scraped_at: 2026-11-12T09:52:40+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:780771351abee42b9f04ddaeef794b283f7314577481eaac010253fda82cff65
 ---
 
 * **[部署全流程](cannkit-whole-deployment-process.md)**
 * **[模型推理](cannkit-model-inference.md)**
 * **[AIPP部署](cannkit-aipp-deployment.md)**
-* **[异构](cannkit-optimization.md)**
-* **[维测调优](cannkit-debugging-and-optimization.md)**
-* **[内存零拷贝](cannkit-zero-memory-copy.md)**
-* **[深度融合](cannkit-in-depth-convergence.md)**
+* **[部署性能优化](cannkit-deployment-erformance-optimization.md)**
 * **[App集成](cannkit-app-integration.md)**

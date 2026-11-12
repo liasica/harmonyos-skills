@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pdf-arkts
 title: pdfService（PDF服务）
 breadcrumb: API参考 > 应用服务 > PDF Kit（PDF服务） > ArkTS API > pdfService（PDF服务）
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:41+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ee045262e7981c8ba0213b1191ebcf354acd54cbfedbf5735e882d646cdadde5
+scraped_at: 2026-11-12T09:57:38+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:1b99b00d5cb962a727dbda4b82402e77d8a7d1caacfa9392ff773498f3640d1d
 ---
 
 本模块为应用提供统一的管理PDF页面的页眉页脚、水印和背景、文档的多种批注风格和书签等便捷的PDF能力。
@@ -161,7 +161,7 @@ let tempDir = context.tempDir;
 // 确保该路径下的源文档有读写的权限
 let filePath = dir + `/input.pdf`;
 let tempFilePath = tempDir + `/temp${Math.random()}.pdf`;
-fs.copyFileSync(filePath, tempFilePath);
+fileIo.copyFileSync(filePath, tempFilePath);
 let pdfDocument: pdfService.PdfDocument = new pdfService.PdfDocument();
 // 加载临时文件
 let loadResult = pdfDocument.loadDocument(tempFilePath, '');
@@ -1406,10 +1406,11 @@ getPixelMapWithPages(pageIndices: number[], matrices: PdfMatrix[], bitmapWidth: 
 
 **错误码：**
 
-以下错误码的详细介绍请参见[ArkTS API 错误码](errorcode-pdf.md)。
+以下错误码的详细介绍请参见[ArkTS API 错误码](errorcode-pdf.md)和[通用错误码](errorcode-universal.md)。
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| [401](errorcode-universal.md#section401-参数检查失败) | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | [1011301001](errorcode-pdf.md#section1011301001-数组大小不匹配) | The arrays of pageIndices and matrices do not match. |
 | [1011301002](errorcode-pdf.md#section1011301002-页码值超出范围) | Invalid page number. |
 | [1011301003](errorcode-pdf.md#section1011301003-尺寸超出最大值) | The number of pixels in the bitmap exceeds the upper limit. |
@@ -1747,7 +1748,7 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
   let pdfPage: pdfService.PdfPage = annot.getPdfPage();
   let annoIndex: number = annot.getAnnotationIndex(); // 返回当前批注页的索引
   let annotat: pdfService.TextAnnotationInfo = annot.getAnnotationInfo() as pdfService.TextAnnotationInfo;
-  annot.moveTo(50, 50); // 当前页批注移动到 x为50， y为50的位置
+  annot.moveTo(50, 50); // 增量移动PDF页面x方向50Points的距离，y方向50Points的距离
   let isMarkupAnno: boolean = annot.isMarkup();
 }
 ```
@@ -1785,7 +1786,7 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
   let pdfPage: pdfService.PdfPage = annot.getPdfPage();
   let annoIndex: number = annot.getAnnotationIndex(); // 返回当前批注页的索引
   let annotat: pdfService.TextAnnotationInfo = annot.getAnnotationInfo() as pdfService.TextAnnotationInfo;
-  annot.moveTo(50, 50); // 当前页批注移动到 x为50， y为50的位置
+  annot.moveTo(50, 50); // 增量移动PDF页面x方向50Points的距离，y方向50Points的距离
   let isMarkupAnno: boolean =  annot.isMarkup();
 }
 ```
@@ -2874,7 +2875,7 @@ if(pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
 
 deleteGraphicsObject(object: GraphicsObject): void
 
-删除指定的[GraphicsObject](pdf-arkts-pdfservice.md#graphicsobject)类型对象。需要配合getGraphicsObjects使用，且调用之后会实际删除PDF页面中的GraphicsObject对象。
+删除指定的[GraphicsObject](pdf-arkts-pdfservice.md#graphicsobject)类型对象。需要配合getGraphicsObjects使用，调用之后对应的GraphicsObject对象将不在PDF页面中展示。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.accessibility (辅助功能)"
 breadcrumb: API参考 > 应用框架 > Accessibility Kit（无障碍服务） > ArkTS API > @ohos.accessibility (辅助功能)
 category: harmonyos-references
-scraped_at: 2026-10-11T07:23:42+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:d3cbcc0ff206b4ab0b44a9bbb5d3480520f34577b2bf2475eb84fd54f073c1a1
+scraped_at: 2026-11-12T09:53:39+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a8e526ba59bcfa34376c1ca3e2e53fd351b4512765ea593a6ecbb01d86dc6602
 ---
 
 本模块提供辅助功能相关能力，包括获取辅助应用列表、获取辅助应用启用状态、获取无障碍字幕配置、发送无障碍事件、监听辅助应用状态变化等。
@@ -2884,6 +2884,288 @@ struct Index {
   build() {
     Column() {
     }
+  }
+}
+```
+
+## UIRect
+
+表示矩形区域。仅在[UIAccessibilityElement](js-apis-accessibility.md#uiaccessibilityelement)中被使用，用于表示组件所在的矩形区域的范围。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.BarrierFree.Accessibility.Core
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| left | number | 否 | 否 | 矩形区域的左边界，单位为像素（px）。 |
+| top | number | 否 | 否 | 矩形区域的上边界，单位为像素（px）。 |
+| width | number | 否 | 否 | 矩形区域的宽度，单位为像素（px）。 |
+| height | number | 否 | 否 | 矩形区域的高度，单位为像素（px）。 |
+
+## UIAccessibilityElement
+
+无障碍聚焦节点元素信息。
+
+可通过[accessibility.getFocusedUIAccessibilityElement](js-apis-accessibility.md#accessibilitygetfocuseduiaccessibilityelement)获取实例。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.BarrierFree.Accessibility.Core
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| accessibilityFocused | boolean | 是 | 是 | 表示元素是否因无障碍目的获得焦点。true表示已获得焦点，false表示未获得焦点。  默认值为false。 |
+| checkable | boolean | 是 | 是 | 元素是否可勾选。true表示可勾选，false表示不可勾选。  默认值为false。 |
+| isChecked | boolean | 是 | 是 | 元素是否已勾选。true表示已勾选，false表示未勾选。  默认值为false。 |
+| clickable | boolean | 是 | 是 | 元素是否可点击。true表示可点击，false表示不可点击。  默认值为false。 |
+| componentId | number | 是 | 是 | 元素所属组件的ID。  默认值为-1。-1表示的是一个非法的组件ID。 |
+| componentType | string | 是 | 是 | 元素所属组件的类型。默认值为空。  例如：  - 按钮Button类型的元素，该属性值为'Button'。  - 图片Image类型的元素，该属性值为'Image'。 |
+| accessibilityDescription | string | 是 | 是 | 元素的描述信息。 |
+| editable | boolean | 是 | 是 | 元素是否可编辑。true表示可编辑，false表示不可编辑。  默认值为false。 |
+| error | string | 是 | 是 | 当元素处于错误状态时显示的错误文本。 |
+| focusable | boolean | 是 | 是 | 元素是否可获得焦点。true表示可获得焦点，false表示不可获得焦点。  默认值为false。 |
+| hintText | string | 是 | 是 | 输入框无输入时的提示文本。 |
+| identifier | string | 是 | 是 | 开发者自行设置的元素标识字段。 |
+| isActive | boolean | 是 | 是 | 元素是否处于活动状态。true表示活动状态，false表示非活动状态。  默认值为true。 |
+| isEnabled | boolean | 是 | 是 | 元素是否被启用。true表示被启用，false表示未被启用。  默认值为false。 |
+| isFocused | boolean | 是 | 是 | 表示元素是否已获得焦点。true表示已获得焦点，false表示未获得焦点。  默认值为false。 |
+| isVisible | boolean | 是 | 是 | 元素是否可见。true表示元素可见，false表示元素不可见。  默认值为false。 |
+| longClickable | boolean | 是 | 是 | 元素是否可长按。true表示可长按，false表示不可长按。  默认值为false。 |
+| pageId | number | 是 | 是 | 页面ID。  默认值为-1。-1表示非法的页面ID。 |
+| rect | [UIRect](js-apis-accessibility.md#uirect) | 是 | 是 | 元素的区域。 |
+| scrollable | boolean | 是 | 是 | 元素是否可滚动。true表示元素可滚动，false表示不可滚动。  默认值为false。 |
+| selected | boolean | 是 | 是 | 元素是否已选中。true表示已选中，false表示未选中。  默认值为false。 |
+| text | string | 是 | 是 | 元素的文本内容。 |
+| textLengthLimit | number | 是 | 是 | 元素的最大文本长度。  默认值为0，单位为字节（Byte）。 |
+| valueMax | number | 是 | 是 | 滑块组件的最大值。  默认值为0。 |
+| valueMin | number | 是 | 是 | 滑块组件的最小值。  默认值为0。 |
+| valueNow | number | 是 | 是 | 滑块组件的当前值。  默认值为0。 |
+| offset | number | 是 | 是 | 内容区域相对于可滚动组件（如List和Grid）顶部坐标的像素偏移量，单位为像素（px）。  默认值为0。 |
+| accessibilityText | string | 是 | 是 | 元素的无障碍文本信息。 |
+| accessibilityStateDescription | string | 是 | 是 | 元素的自定义无障碍状态播报文本信息。 |
+| accessibilityRole | string | 是 | 是 | 自定义组件类型。 |
+| accessibilityNextFocusId | number | 是 | 是 | 下一个要获得焦点的组件的ID。  默认值为-1。-1表示没有设置下一个要获得焦点的组件ID。 |
+| accessibilityPreviousFocusId | number | 是 | 是 | 上一个要获得焦点的组件的ID。  默认值为-1。-1表示没有设置上一个要获得焦点的组件ID。 |
+| accessibilityScrollable | boolean | 是 | 是 | 表示无障碍模式下，控件元素是否可滚动。  此属性优先级高于scrollable，即此属性和scrollable属性值冲突时，此属性的值优先生效。  true表示元素可滚动，false表示元素不可滚动。  默认值为true。 |
+| accessibilityGroup | boolean | 是 | 是 | 元素是否为无障碍组。true表示元素是无障碍组，false表示元素不是无障碍组。  默认值为false。 |
+| accessibilityLevel | string | 是 | 是 | 组件的无障碍级别。  - auto：当前组件由无障碍分组服务和ArkUI进行综合判断组件是否可被辅助功能识别。  - yes：当前组件可被辅助功能识别。  - no：当前组件不可被辅助功能识别。  - no-hide-descendants：当前组件及其所有子组件不可被辅助功能识别。 |
+| accessibilityVisible | boolean | 是 | 是 | 该组件是否对辅助功能可见。true表示可见，false表示不可见。  与isVisible属性不同，该值是根据组件的可见性、屏幕坐标以及在辅助功能场景中的边框计算得出的。  默认值为true。 |
+| parentId | number | 是 | 是 | 组件的父元素ID。-1表示当前组件没有父元素。默认值为-1。 |
+| childrenIds | Array<number> | 是 | 是 | 组件的子元素ID列表。  默认值为空数组。 |
+| customActions | Array<string> | 是 | 是 | 元素支持的自定义操作列表。 |
+
+## UIAccessibilityFocusChangeInfo
+
+应用程序中的无障碍焦点变化信息。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.BarrierFree.Accessibility.Core
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| focusedElement | [UIAccessibilityElement](js-apis-accessibility.md#uiaccessibilityelement) | 否 | 是 | 当前聚焦节点的信息。 |
+| unfocusedElement | [UIAccessibilityElement](js-apis-accessibility.md#uiaccessibilityelement) | 否 | 是 | 上一个聚焦节点的信息。 |
+
+## accessibility.getFocusedUIAccessibilityElement
+
+getFocusedUIAccessibilityElement(): Promise<UIAccessibilityElement | undefined>
+
+获取当前应用内部无障碍聚焦的节点的信息。使用Promise异步回调。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.BarrierFree.Accessibility.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<[UIAccessibilityElement](js-apis-accessibility.md#uiaccessibilityelement)| undefined> | Promise对象，返回当前应用内部无障碍聚焦节点的信息；结果为undefined时说明当前应用内部没有无障碍聚焦节点。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[无障碍子系统错误码](errorcode-accessibility.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9300000 | System abnormality. Possible causes:  1.Internal operation failed.  2.Failed to obtain the required service or client object (null pointer). |
+
+**示例：**
+
+```ts
+import { accessibility } from '@kit.AccessibilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+ 
+accessibility.getFocusedUIAccessibilityElement().then((data: UIAccessibilityElement) => {
+  console.info(`succeeded in getting focused accessibility elementInfo, ${JSON.stringify(data)}`);
+}).catch((err: BusinessError) => {
+  console.error(`Failed to call getFocusedUIAccessibilityElement. Code: ${err.code}, message: ${err.message}`);
+});
+```
+
+## accessibility.onUIAccessibilityFocusChanged
+
+onUIAccessibilityFocusChanged(callback: Callback<UIAccessibilityFocusChangeInfo>): void
+
+注册监听器，监听应用无障碍焦点变化的事件。
+
+**说明** 
+
+* 注册监听的callback参数应使用具名函数而非匿名函数，否则每次调用时会创建一个新的底层对象，引起内存泄漏问题。
+* 调用此方法后，务必在组件实例销毁前（如aboutToDisappear生命周期中）使用[offUIAccessibilityFocusChanged()](js-apis-accessibility.md#accessibilityoffuiaccessibilityfocuschanged)取消监听，否则可能会导致崩溃。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<[UIAccessibilityFocusChangeInfo](js-apis-accessibility.md#uiaccessibilityfocuschangeinfo)> | 是 | 回调函数，无障碍聚焦节点发生变化的时候，通过此回调函数进行通知。返回值为UIAccessibilityFocusChangeInfo。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[无障碍子系统错误码](errorcode-accessibility.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9300000 | System abnormality. Possible causes:  1.Internal operation failed.  2.Failed to obtain the required service or client object (null pointer). |
+
+**示例：**
+
+```ts
+import { accessibility } from '@kit.AccessibilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+ 
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
+  
+  // 监听器回调。
+  static onFocusChanged(data: accessibility.UIAccessibilityFocusChangeInfo): void {
+    console.info(`focusedElement:  ${JSON.stringify(data.focusedElement)}`);
+    console.info(`unfocusedElement: ${JSON.stringify(data.unfocusedElement)}`);
+  }
+ 
+  aboutToAppear(): void {
+    try {
+      // 注册监听器。
+      accessibility.onUIAccessibilityFocusChanged(Index.onFocusChanged);
+    } catch (error) {
+      let err = error as BusinessError;
+      console.error(`Failed to call onUIAccessibilityFocusChanged. Code: ${err.code}, message: ${err.message}`);
+    }
+  }
+ 
+  aboutToDisappear(): void {
+    try {
+      // 注销监听器。
+      accessibility.offUIAccessibilityFocusChanged(Index.onFocusChanged);
+    } catch (error) {
+      let err = error as BusinessError;
+      console.error(`Failed to call offUIAccessibilityFocusChanged. Code: ${err.code}, message: ${err.message}`);
+    }
+  }
+ 
+  build() {
+    RelativeContainer() {
+      Text(this.message)
+        .id('HelloWorld')
+        .fontSize($r('app.float.page_text_font_size'))
+        .fontWeight(FontWeight.Bold)
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
+```
+
+## accessibility.offUIAccessibilityFocusChanged
+
+offUIAccessibilityFocusChanged(callback?: Callback<UIAccessibilityFocusChangeInfo>): void
+
+注销监听器，该监听器用于监听应用无障碍焦点变化的事件。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.BarrierFree.Accessibility.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | Callback<[UIAccessibilityFocusChangeInfo](js-apis-accessibility.md#uiaccessibilityfocuschangeinfo)> | 否 | 回调函数，需要注销的回调函数，传空值取消所有监听。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[无障碍子系统错误码](errorcode-accessibility.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 9300000 | System abnormality. Possible causes:  1.Internal operation failed.  2.Failed to obtain the required service or client object (null pointer).  3.The listener or observer is not registered. |
+
+**示例：**
+
+```ts
+import { accessibility } from '@kit.AccessibilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+ 
+@Entry
+@Component
+struct Index {
+  @State message: string = 'Hello World';
+ 
+  // 监听器回调。
+  static onFocusChanged(data: accessibility.UIAccessibilityFocusChangeInfo): void {
+    console.info(`focusedElement:  ${JSON.stringify(data.focusedElement)}`);
+    console.info(`unfocusedElement: ${JSON.stringify(data.unfocusedElement)}`);
+  }
+ 
+  aboutToAppear(): void {
+    try {
+      // 注册监听器。
+      accessibility.onUIAccessibilityFocusChanged(Index.onFocusChanged);
+    } catch (error) {
+      let err = error as BusinessError;
+      console.error(`Failed to call onUIAccessibilityFocusChanged. Code: ${err.code}, message: ${err.message}`);
+    }
+  }
+ 
+  aboutToDisappear(): void {
+    try {
+      // 注销监听器。
+      accessibility.offUIAccessibilityFocusChanged(Index.onFocusChanged);
+    } catch (error) {
+      let err = error as BusinessError;
+      console.error(`Failed to call offUIAccessibilityFocusChanged. Code: ${err.code}, message: ${err.message}`);
+    }
+  }
+ 
+  build() {
+    RelativeContainer() {
+      Text(this.message)
+        .id('HelloWorld')
+        .fontSize($r('app.float.page_text_font_size'))
+        .fontWeight(FontWeight.Bold)
+    }
+    .height('100%')
+    .width('100%')
   }
 }
 ```

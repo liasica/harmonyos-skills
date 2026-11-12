@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-
 title: 模拟器与真机的差异
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 使用模拟器运行应用 > 概述 > 模拟器与真机的差异
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:23:02+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:c4843fb46c68c66dc022d406758029379bf48a3c12fc7f10f7f62540c68f8a18
+scraped_at: 2026-11-12T09:53:02+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:087a9bb96a10d33e30ef3884ec949598e407563efccdbc03b899d1ca3d41d0c9
 ---
 
 模拟器是开发和调试HarmonyOS应用/元服务的便捷工具，例如不需要配置服务器域名即可开发和调试元服务，在大多数情况下，模拟器上推包调试不需要签名，但部分Kit仍需签名后才能正常运行，具体要求请参考Kit的开发指南。
@@ -26,6 +26,7 @@ content_hash: sha256:c4843fb46c68c66dc022d406758029379bf48a3c12fc7f10f7f62540c68
 
 * 模拟器不支持OpenGL ES 3.1、3.2接口。
 * DevEco Studio 6.1.0 Beta2之前的版本，不支持Vulkan接口，从DevEco Studio 6.1.0 Beta2版本开始，支持除vkGetSwapchainGrallocUsageOHOS、vkAcquireImageOHOS、vkQueueSignalReleaseImageOHOS之外的接口。
+* 使用DMA buffer（包括直接通过接口申请的DMA buffer和通过allocator\_host申请的DMA buffer）时，仅支持RGBA像素格式的图片文件。
 
 ## 多媒体差异
 

@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/js-apidiff-backgroundtaskskit-7003
 title: Background Tasks Kit
-breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > OS平台能力 > API变更清单 > 26.0.0 Release引入的API > Background Tasks Kit
+breadcrumb: 版本说明 > 更多版本 > 26.0.0 > OS平台能力 > API变更清单 > 26.0.0 Release引入的API > Background Tasks Kit
 category: harmonyos-releases
-scraped_at: 2026-09-02T14:49:02+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:49:55+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:210bdbcb95e7f019a7ada601c6ee03d5c98a45f44b447924aeb50c72c4906d9e
 ---
 

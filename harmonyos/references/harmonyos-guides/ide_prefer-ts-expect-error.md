@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_prefer-ts
 title: "@typescript-eslint/prefer-ts-expect-error"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/prefer-ts-expect-error
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:10+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:ed82138a59a7b5132b1411628a54ca644c60f0e993b7b4baab20b44f26a106b5
+scraped_at: 2026-11-12T09:52:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:01cf815cb4e8bacea660122cd8bd34f65ba883d14b6e9aab0b5b297d819b7c62
 ---
 
 强制使用“@ts-expect-error”而不是“@ts-ignore”。
@@ -70,4 +70,4 @@ const isOptionEnabled = (key: string): boolean => {
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

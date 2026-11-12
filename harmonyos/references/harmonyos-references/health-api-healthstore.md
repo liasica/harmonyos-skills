@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-ap
 title: healthStore (运动健康数据服务)
 breadcrumb: API参考 > 应用服务 > Health Service Kit（运动健康服务） > ArkTS API > healthStore (运动健康数据服务)
 category: harmonyos-references
-scraped_at: 2026-09-25T07:14:03+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:cfc73263d7ed86e9dcfdc837d87d61d09ca425006fa7fbf545ef87b6cc63e5ce
+scraped_at: 2026-11-12T09:57:19+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8c7feacb3630be34697151ec67700edc593968dd5a884a88f33d6f0d2e7a71ed
 ---
 
 本模块提供运动健康数据服务。
@@ -273,6 +273,7 @@ type DataSourceBase = Omit<DataSource, 'dataSourceId'>
 | dataSourceId | string | 否 | 是 | 数据源的唯一标识（dataSourceId与bundleName、deviceUniqueId不能同时填写）。 |
 | bundleName | string | 否 | 是 | 应用包名（仅当未填写dataSourceId时可填写）。 |
 | deviceUniqueId | string | 否 | 是 | 设备UniqueId（仅当未填写dataSourceId时可填写）。 |
+| filterDeviceInfo | string[] | 否 | 是 | 过滤设备信息中部分字段。  支持范围：model、sn、mac  **起始版本：** 26.0.1 |
 
 ## DataType
 
@@ -701,6 +702,8 @@ init(context: common.Context): Promise<void>
 
 Health Service初始化接口，使用Promise异步回调，其他接口调用前需先初始化，仅首次调用需要。
 
+**说明** 
+
 该接口从API 19 Release开始，支持Wearable设备开发。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
@@ -752,6 +755,10 @@ insertDataSource(dataSource: DataSourceBase): Promise<string>
 
 插入指定的数据源，使用Promise异步回调。
 
+**说明** 
+
+上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
+
 **系统能力：** SystemCapability.Health.HealthStore
 
 **设备行为差异：** 该接口在Phone、Tablet中可正常调用，在Wearable中返回1002700001错误码。
@@ -786,10 +793,6 @@ insertDataSource(dataSource: DataSourceBase): Promise<string>
 | [1002702001](errorcode-healthservice.md#section1002702001-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
 | [1002702002](errorcode-healthservice.md#section1002702002-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
 | [1002703001](errorcode-healthservice.md#section1002703001-用户隐私未同意) | User privacy is not agreed. |
-
-**说明** 
-
-上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
 
 **示例：**
 
@@ -828,6 +831,10 @@ readDataSource(request: DataSourceReadRequest): Promise<DataSource[]>
 
 读取数据源，使用Promise异步回调。
 
+**说明** 
+
+上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
+
 **系统能力：** SystemCapability.Health.HealthStore
 
 **设备行为差异：** 该接口在Phone、Tablet中可正常调用，在Wearable中返回1002700001错误码。
@@ -863,10 +870,6 @@ readDataSource(request: DataSourceReadRequest): Promise<DataSource[]>
 | [1002702002](errorcode-healthservice.md#section1002702002-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
 | [1002703001](errorcode-healthservice.md#section1002703001-用户隐私未同意) | User privacy is not agreed. |
 
-**说明** 
-
-上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
-
 **示例：**
 
 ```typescript
@@ -892,6 +895,10 @@ try {
 updateDataSource(dataSource: DataSource): Promise<void>
 
 更新数据源，使用Promise异步回调。
+
+**说明** 
+
+上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
@@ -927,10 +934,6 @@ updateDataSource(dataSource: DataSource): Promise<void>
 | [1002702001](errorcode-healthservice.md#section1002702001-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
 | [1002702002](errorcode-healthservice.md#section1002702002-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
 | [1002703001](errorcode-healthservice.md#section1002703001-用户隐私未同意) | User privacy is not agreed. |
-
-**说明** 
-
-上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
 
 **示例：**
 
@@ -972,6 +975,10 @@ saveData(sampleData: SamplePoint[] | SamplePoint): Promise<void>
 
 保存数据采样点，使用Promise异步回调。
 
+**说明** 
+
+上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
+
 **系统能力：** SystemCapability.Health.HealthStore
 
 **设备行为差异：** 该接口在Phone、Tablet中可正常调用，在Wearable中返回1002700001错误码。
@@ -1007,10 +1014,6 @@ saveData(sampleData: SamplePoint[] | SamplePoint): Promise<void>
 | [1002702002](errorcode-healthservice.md#section1002702002-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
 | [1002703001](errorcode-healthservice.md#section1002703001-用户隐私未同意) | User privacy is not agreed. |
 
-**说明** 
-
-上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
-
 **示例：**
 
 ```typescript
@@ -1045,9 +1048,11 @@ saveData(exerciseSequence: ExerciseSequence[] | ExerciseSequence): Promise<void>
 
 保存锻炼记录数据，使用Promise异步回调。
 
-**系统能力：** SystemCapability.Health.HealthStore
+**说明** 
 
-**设备行为差异：** 该接口在Phone、Tablet中可正常调用，在Wearable中返回1002700001错误码。
+上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
+
+**系统能力：** SystemCapability.Health.HealthStore
 
 **起始版本：** 5.0.0(12)
 
@@ -1057,7 +1062,7 @@ saveData(exerciseSequence: ExerciseSequence[] | ExerciseSequence): Promise<void>
 
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
-| exerciseSequence | [ExerciseSequence](health-api-healthstore.md#exercisesequence)[] | [ExerciseSequence](health-api-healthstore.md#exercisesequence) | 是 | 单个锻炼记录或锻炼记录数组。 |
+| exerciseSequence | [ExerciseSequence](health-api-healthstore.md#exercisesequence)[] | [ExerciseSequence](health-api-healthstore.md#exercisesequence) | 是 | 单个锻炼记录或锻炼记录数组。从API版本26.0.1版本开始，支持wearable设备保存单个锻炼记录。 |
 
 **返回值：**
 
@@ -1079,10 +1084,6 @@ saveData(exerciseSequence: ExerciseSequence[] | ExerciseSequence): Promise<void>
 | [1002702001](errorcode-healthservice.md#section1002702001-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
 | [1002702002](errorcode-healthservice.md#section1002702002-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
 | [1002703001](errorcode-healthservice.md#section1002703001-用户隐私未同意) | User privacy is not agreed. |
-
-**说明** 
-
-上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
 
 **示例：**
 
@@ -1164,6 +1165,10 @@ saveData(healthSequence: HealthSequence[] | HealthSequence): Promise<void>
 
 保存健康记录数据，使用Promise异步回调。
 
+**说明** 
+
+上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
+
 **系统能力：** SystemCapability.Health.HealthStore
 
 **设备行为差异：** 该接口在Phone、Tablet中可正常调用，在Wearable中返回1002700001错误码。
@@ -1198,10 +1203,6 @@ saveData(healthSequence: HealthSequence[] | HealthSequence): Promise<void>
 | [1002702001](errorcode-healthservice.md#section1002702001-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
 | [1002702002](errorcode-healthservice.md#section1002702002-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
 | [1002703001](errorcode-healthservice.md#section1002703001-用户隐私未同意) | User privacy is not agreed. |
-
-**说明** 
-
-上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
 
 **示例：**
 
@@ -1269,7 +1270,11 @@ readData<T extends SamplePoint>(request: SamplePointReadRequest): Promise<T[]>
 
 读取数据采样点，使用Promise异步回调。
 
+**说明** 
+
 该接口从API 19 Release开始，支持Wearable设备开发。
+
+上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
@@ -1304,10 +1309,6 @@ readData<T extends SamplePoint>(request: SamplePointReadRequest): Promise<T[]>
 | [1002702002](errorcode-healthservice.md#section1002702002-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
 | [1002703001](errorcode-healthservice.md#section1002703001-用户隐私未同意) | User privacy is not agreed. |
 
-**说明** 
-
-上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
-
 **示例：**
 
 ```typescript
@@ -1340,7 +1341,11 @@ readData<T extends ExerciseSequence>(request: ExerciseSequenceReadRequest): Prom
 
 读取锻炼记录数据，使用Promise异步回调。
 
+**说明** 
+
 该接口从API 19 Release开始，支持Wearable设备开发。
+
+上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
@@ -1375,10 +1380,6 @@ readData<T extends ExerciseSequence>(request: ExerciseSequenceReadRequest): Prom
 | [1002702002](errorcode-healthservice.md#section1002702002-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
 | [1002703001](errorcode-healthservice.md#section1002703001-用户隐私未同意) | User privacy is not agreed. |
 
-**说明** 
-
-上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
-
 **示例：**
 
 ```typescript
@@ -1398,7 +1399,7 @@ const sequenceReadRequest:
   sortOrder: 1,
   readOptions: {
     withPartialDetails: ['exerciseHeartRate', 'altitude']
- }
+  }
 };
 try {
   const runningSequences =
@@ -1425,7 +1426,11 @@ readData<T extends HealthSequence>(request: HealthSequenceReadRequest): Promise<
 
 读取健康记录数据，使用Promise异步回调。
 
+**说明** 
+
 该接口从API 19 Release开始，支持Wearable设备开发。
+
+上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
@@ -1459,10 +1464,6 @@ readData<T extends HealthSequence>(request: HealthSequenceReadRequest): Promise<
 | [1002702001](errorcode-healthservice.md#section1002702001-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
 | [1002702002](errorcode-healthservice.md#section1002702002-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
 | [1002703001](errorcode-healthservice.md#section1002703001-用户隐私未同意) | User privacy is not agreed. |
-
-**说明** 
-
-上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
 
 **示例：**
 
@@ -1500,6 +1501,10 @@ deleteData(request: SamplePointDeleteRequest | SamplePointDeleteRequest[]): Prom
 
 删除数据采样点，使用Promise异步回调。
 
+**说明** 
+
+上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
+
 **系统能力：** SystemCapability.Health.HealthStore
 
 **设备行为差异：** 该接口在Phone、Tablet中可正常调用，在Wearable中返回1002700001错误码。
@@ -1535,10 +1540,6 @@ deleteData(request: SamplePointDeleteRequest | SamplePointDeleteRequest[]): Prom
 | [1002702002](errorcode-healthservice.md#section1002702002-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
 | [1002703001](errorcode-healthservice.md#section1002703001-用户隐私未同意) | User privacy is not agreed. |
 
-**说明** 
-
-上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
-
 **示例：**
 
 ```typescript
@@ -1564,6 +1565,10 @@ try {
 deleteData(request: ExerciseSequenceDeleteRequest | ExerciseSequenceDeleteRequest[]): Promise<void>
 
 删除锻炼记录数据，使用Promise异步回调。
+
+**说明** 
+
+上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
@@ -1600,10 +1605,6 @@ deleteData(request: ExerciseSequenceDeleteRequest | ExerciseSequenceDeleteReques
 | [1002702002](errorcode-healthservice.md#section1002702002-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
 | [1002703001](errorcode-healthservice.md#section1002703001-用户隐私未同意) | User privacy is not agreed. |
 
-**说明** 
-
-上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
-
 **示例：**
 
 ```typescript
@@ -1628,6 +1629,10 @@ try {
 deleteData(request: HealthSequenceDeleteRequest | HealthSequenceDeleteRequest[]): Promise<void>
 
 删除健康记录数据，使用Promise异步回调。
+
+**说明** 
+
+上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
@@ -1664,10 +1669,6 @@ deleteData(request: HealthSequenceDeleteRequest | HealthSequenceDeleteRequest[])
 | [1002702002](errorcode-healthservice.md#section1002702002-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
 | [1002703001](errorcode-healthservice.md#section1002703001-用户隐私未同意) | User privacy is not agreed. |
 
-**说明** 
-
-上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
-
 **示例：**
 
 ```typescript
@@ -1692,6 +1693,10 @@ try {
 deleteData(samplePoint: SamplePoint | SamplePoint[]): Promise<void>
 
 删除指定数据采样点，使用Promise异步回调。
+
+**说明** 
+
+上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
@@ -1728,10 +1733,6 @@ deleteData(samplePoint: SamplePoint | SamplePoint[]): Promise<void>
 | [1002702002](errorcode-healthservice.md#section1002702002-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
 | [1002703001](errorcode-healthservice.md#section1002703001-用户隐私未同意) | User privacy is not agreed. |
 
-**说明** 
-
-上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
-
 **示例：**
 
 ```typescript
@@ -1760,6 +1761,10 @@ try {
 deleteData(exerciseSequence: ExerciseSequence | ExerciseSequence[]): Promise<void>
 
 删除指定锻炼记录数据，使用Promise异步回调。
+
+**说明** 
+
+上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
@@ -1796,10 +1801,6 @@ deleteData(exerciseSequence: ExerciseSequence | ExerciseSequence[]): Promise<voi
 | [1002702002](errorcode-healthservice.md#section1002702002-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
 | [1002703001](errorcode-healthservice.md#section1002703001-用户隐私未同意) | User privacy is not agreed. |
 
-**说明** 
-
-上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
-
 **示例：**
 
 ```typescript
@@ -1831,6 +1832,10 @@ try {
 deleteData(healthSequence: HealthSequence | HealthSequence[]): Promise<void>
 
 删除指定健康记录数据，使用Promise异步回调。
+
+**说明** 
+
+上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
@@ -1867,10 +1872,6 @@ deleteData(healthSequence: HealthSequence | HealthSequence[]): Promise<void>
 | [1002702002](errorcode-healthservice.md#section1002702002-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
 | [1002703001](errorcode-healthservice.md#section1002703001-用户隐私未同意) | User privacy is not agreed. |
 
-**说明** 
-
-上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
-
 **示例：**
 
 ```typescript
@@ -1899,6 +1900,10 @@ try {
 aggregateData<T extends AggregateResult>(request: AggregateRequest | AggregateRequest[]): Promise<T[]>
 
 聚合查询，使用Promise异步回调。
+
+**说明** 
+
+上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -1936,10 +1941,6 @@ aggregateData<T extends AggregateResult>(request: AggregateRequest | AggregateRe
 | [1002702001](errorcode-healthservice.md#section1002702001-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
 | [1002702002](errorcode-healthservice.md#section1002702002-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
 | [1002703001](errorcode-healthservice.md#section1002703001-用户隐私未同意) | User privacy is not agreed. |
-
-**说明** 
-
-上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
 
 **示例：**
 
@@ -1988,7 +1989,11 @@ requestAuthorizations(context: common.UIAbilityContext, request: AuthorizationRe
 
 用户授权，使用Promise异步回调。
 
+**说明** 
+
 该接口从API 19 Release开始，支持Wearable设备开发。
+
+上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -2019,10 +2024,6 @@ requestAuthorizations(context: common.UIAbilityContext, request: AuthorizationRe
 | --- | --- |
 | [201](errorcode-healthservice.md#health-service-kit调用失败返回201) | Permission verification failed. |
 | [401](errorcode-universal.md#section401-参数检查失败) | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified;2. Incorrect parameter types; 3.Parameter verification failed. |
-
-**说明** 
-
-上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
 
 **示例：**
 
@@ -2060,7 +2061,11 @@ getAuthorizations(request: AuthorizationRequest): Promise<AuthorizationResponse>
 
 查询权限，使用Promise异步回调。
 
+**说明** 
+
 该接口从API 19 Release开始，支持Wearable设备开发。
+
+上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
@@ -2091,10 +2096,6 @@ getAuthorizations(request: AuthorizationRequest): Promise<AuthorizationResponse>
 | [1002701001](errorcode-healthservice.md#section1002701001-网络错误) | Network error. The network is unavailable. |
 | [1002702001](errorcode-healthservice.md#section1002702001-账号未登录) | Account error. The user has not logged in with HUAWEI ID. |
 | [1002702002](errorcode-healthservice.md#section1002702002-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
-
-**说明** 
-
-上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
 
 **示例：**
 
@@ -2128,7 +2129,11 @@ cancelAuthorizations(): Promise<void>
 
 用户取消授权，使用Promise异步回调。
 
+**说明** 
+
 该接口从API 19 Release开始，支持Wearable设备开发。
+
+上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
 
 **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。
 
@@ -2152,10 +2157,6 @@ cancelAuthorizations(): Promise<void>
 | --- | --- |
 | [201](errorcode-healthservice.md#health-service-kit调用失败返回201) | Permission verification failed. |
 
-**说明** 
-
-上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
-
 **示例：**
 
 ```typescript
@@ -2175,6 +2176,10 @@ try {
 syncAll(): Promise<void>
 
 用户主动触发云端数据同步，使用Promise异步回调。
+
+**说明** 
+
+上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
@@ -2205,10 +2210,6 @@ syncAll(): Promise<void>
 | [1002702002](errorcode-healthservice.md#section1002702002-账号异常) | Account error. Failed to obtain account information with HUAWEI ID. |
 | [1002703001](errorcode-healthservice.md#section1002703001-用户隐私未同意) | User privacy is not agreed. |
 
-**说明** 
-
-上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
-
 **示例：**
 
 ```typescript
@@ -2229,7 +2230,11 @@ on(type: 'serviceDie', callback: Callback<void>): void
 
 订阅Health Service Kit进程销毁通知，使用Callback异步回调。
 
+**说明** 
+
 该接口从API 19 Release开始，支持Wearable设备开发。
+
+上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
@@ -2243,10 +2248,6 @@ on(type: 'serviceDie', callback: Callback<void>): void
 | --- | --- | --- | --- |
 | type | string | 是 | Health Service Kit进程状态的回调类型，支持的事件为：'serviceDie'，当Health Service Kit进程销毁时，触发该事件。 |
 | callback | Callback<void> | 是 | 回调函数，无返回结果。 |
-
-**说明** 
-
-上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
 
 **示例：**
 
@@ -2265,7 +2266,11 @@ off(type: 'serviceDie', callback?: Callback<void>): void
 
 取消订阅Health Service Kit进程销毁通知，使用Callback异步回调。
 
+**说明** 
+
 该接口从API 19 Release开始，支持Wearable设备开发。
+
+上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
 
 **系统能力：** SystemCapability.Health.HealthStore
 
@@ -2279,10 +2284,6 @@ off(type: 'serviceDie', callback?: Callback<void>): void
 | --- | --- | --- | --- |
 | type | string | 是 | Health Service Kit进程状态的回调类型，支持的事件为：'serviceDie'，当Health Service Kit进程销毁时，触发该事件。 |
 | callback | Callback<void> | 否 | 回调函数，无返回结果。  - callback为空：取消所有callback回调。  - callback非空：取消指定的callback回调。 |
-
-**说明** 
-
-上述接口调用前，需先使用[init](health-api-healthstore.md#healthstoreinit)方法进行初始化。
 
 **示例：**
 

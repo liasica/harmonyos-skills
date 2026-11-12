@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-c
 title: 应用上下文Context
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 应用组件 > 应用上下文Context
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:31:35+08:00
-doc_updated_at: 2026-10-30
+scraped_at: 2026-11-12T09:50:58+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:61aa4a17668c22270c6118bf64283f57150c8efc803cbd7ec2f480620c288ae1
 ---
 

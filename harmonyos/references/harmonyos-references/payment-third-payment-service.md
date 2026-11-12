@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-t
 title: thirdPaymentService(三方支付服务)
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > ArkTS API > thirdPaymentService(三方支付服务)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:02+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f77b68b4fbd152ed9dceba376dfc6f3f6b6764de3f35599933a5948e1f1b6ad1
+scraped_at: 2026-11-12T09:57:31+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d17f71aed6ad7b89b5c5ddead7d7bfd1ecfea77470bab47ab77736ea92a41d0d
 ---
 
 本模块提供直接通过依赖包拉起第三方支付方式收银台能力。
@@ -163,7 +163,7 @@ pay(payInfo: string): Promise<void>;
 
 **示例**：
 
-示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)
+示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
 ```typescript
 import { thirdPaymentService } from '@kit.PaymentKit';

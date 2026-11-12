@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-input-d
 title: 查询和监听音频输入设备
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频设备路由管理 > 查询和监听音频输入设备
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:14+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:52:00+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:0e0dc932880351417720e02013e81505d0e39c162ae611abb4d64f57af1f0c36
 ---
 

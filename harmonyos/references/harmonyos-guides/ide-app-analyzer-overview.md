@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-app-analy
 title: 体检概述
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 体检概述
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:17+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:9c0091df292f35dc66b35967b6e27f5ddb19a2c6c5c3abb3cda004d3a5612795
+scraped_at: 2026-11-12T09:53:05+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8b218b67ace9c265438a3a5a22d6a96c184b378083ebcc5cbe5a052303ee2051
 ---
 
-DevEco Studio提供了应用与元服务体检工具AppAnalyzer，用于对应用和元服务进行本地测试体检，并给出体检报告、分析指导以及修改建议，帮助开发者提升应用与元服务质量。在体检过程中，工具会收集应用或元服务的trace信息、代码栈、内存快照以及应用或元服务页面的截屏，并保存在本地工程目录.appanalyzer下，帮助开发者快速进行问题分析定位。
+DevEco Studio提供了应用与元服务体检工具AppAnalyzer，用于对应用和元服务进行本地测试体检，并给出体检报告、分析指导以及修改建议，帮助开发者提升应用与元服务质量。在体检过程中，工具会收集应用或元服务的trace信息、代码栈、内存快照以及应用或元服务页面的截屏，并保存在本地工程目录.appanalyzer下，帮助开发者快速定位问题。
 
 开发者可以通过DevEco Studio连接本地设备，自主遍历HarmonyOS应用或元服务的功能，快速进行自测试，查看测试结果。
 
@@ -36,4 +36,4 @@ DevEco Studio提供了应用与元服务体检工具AppAnalyzer，用于对应�
 
 ### 支持的国家/地区
 
-仅支持在中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）使用。
+仅支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。

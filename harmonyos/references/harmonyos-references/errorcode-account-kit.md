@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS错误码
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > ArkTS错误码
 category: harmonyos-references
-scraped_at: 2026-11-04T08:36:49+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:f73fec537204f26b093293bcaf8b2858fd7b4e19b7424b133f31c2ddc6d6cf42
+scraped_at: 2026-11-12T09:57:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d4951d3ce562da9fabea135b7bfed22bc267aeef59fc610a6f1579b780bc173f
 ---
 
 **说明** 
@@ -66,7 +66,7 @@ The scopes or permissions are not supported.
 4. 元服务开发过程中，调[AuthorizationWithHuaweiIDRequest](account-api-authentication.md#authorizationwithhuaweiidrequest)接口时传了profile这个scope，且supportAtomicService参数未设置为true。
 5. 元服务开发过程中，调[AuthorizationWithHuaweiIDRequest](account-api-authentication.md#authorizationwithhuaweiidrequest)接口时传了phone这个scope。
 6. 在实名信息校验、人脸核身场景，登录的华为账号是儿童账号。
-7. Wearable、TV设备申请获取不支持的scope。
+7. Wearable、TV、Car设备申请获取不支持的scope。
 8. 在一键登录场景下，用户登录的华为账号注册地为中国境外、香港特别行政区、澳门特别行政区或中国台湾。
 
 **处理步骤**
@@ -93,12 +93,12 @@ The account does not support this function.
 **可能原因**
 
 1. 已登录的华为账号注册地为中国境外、香港特别行政区、澳门特别行政区或中国台湾，不支持调用获取手机号一致性状态接口。
-2. 儿童账号不支持在TV设备上调用华为账号一键登录接口。
+2. 儿童账号不支持在TV、Car设备上调用华为账号一键登录接口。
 
 **处理步骤**
 
 1. 更换或注册一个注册地为中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）的账号，重新触发该接口。
-2. 在TV设备上，登录成人账号调用华为账号一键登录接口。
+2. 在TV、Car设备上，登录成人账号调用华为账号一键登录接口。
 
 ## 1001500005 该功能被限制调用
 
@@ -180,7 +180,7 @@ Invalid input parameter value.
 
 1. 在AppGallery Connect（简称AGC）的[开发与服务](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject)中，选择对应的项目和对应的应用，在“常规 > 应用 ”下，找到**应用**的Client ID和APP ID。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/g2kcw4KmSO2e6k46aIqcmQ/zh-cn_image_0000002809050751.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/f78-PbVgSqy1NP_rSXk8wA/zh-cn_image_0000002815399637.png)
 
    * 若Client ID和APP ID不同：请检查module type为entry的模块下module.json5中的client\_id是否配置或配置的值是否正确，参考[配置Client ID](../harmonyos-guides/account-client-id.md)。
    * 若Client ID和APP ID相同：可无需配置Client ID。

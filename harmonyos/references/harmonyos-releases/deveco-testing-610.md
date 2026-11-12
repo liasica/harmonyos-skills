@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/deveco-test
 title: DevEco Testing
 breadcrumb: 版本说明 > 更多版本 > 6.1.0(23) > DevEco Testing
 category: harmonyos-releases
-scraped_at: 2026-10-09T08:12:08+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-11-12T09:50:08+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:2d0d8f8ea0bd2388026e226d6af700616f60decf59a97e5a365a73c4c0d52130
 ---
 

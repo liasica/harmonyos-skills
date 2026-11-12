@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.net.vpnExtension (VPN增强管理)"
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > ArkTS API > @ohos.net.vpnExtension (VPN增强管理)
 category: harmonyos-references
-scraped_at: 2026-11-04T08:34:48+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:dce037b215ba0e0f15f254ca98329a6bfd30a0fa0a46af608aa6458060864455
+scraped_at: 2026-11-12T09:55:38+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:35314ec0830f0be06f855ab1a63c53fca599e0f6655057d8f9acaa9d6b104355
 ---
 
 三方VPN管理模块，支持三方VPN的启动和停止功能。三方VPN是指由第三方提供的VPN服务，它们通常提供更多的功能和更广泛的网络连接选项，包括更多的安全和隐私功能，以及更全面的定制选项。当前提供三方VPN能力主要用于创建虚拟网卡及配置VPN路由信息，连接隧道过程及内部连接的协议需要应用内部自行实现。
@@ -28,7 +28,7 @@ import { vpnExtension } from '@kit.NetworkKit';
 
 type LinkAddress = connection.LinkAddress
 
-获取网络链路信息。
+获取网络链接信息。
 
 **系统能力**：SystemCapability.Communication.NetManager.Core
 
@@ -152,7 +152,7 @@ stopVpnExtensionAbility(want: Want): Promise<void>
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| want | [Want](js-apis-app-ability-want.md) | 是 | 指示要停止的信息。 |
+| want | [Want](js-apis-app-ability-want.md) | 是 | 指示要启动的信息。 |
 
 **返回值：**
 
@@ -252,7 +252,7 @@ let vpnObserver: vpnExtension.VpnObserver = vpnExtension.createVpnObserver();
 
 ## VpnObserver
 
-VPN观察者对象。用于监听VPN相关事件。在调用VpnObserver的方法前，需要先通过[vpnExtension.createVpnObserver](js-apis-net-vpnextension.md#vpnextensioncreatevpnobserver)创建VPN观察者对象。
+VPN观察者对象。用于监听VPN相关事件。在调用VpnObserver的方法前，需要先通过[vpnExtension.createVpnObserver](js-apis-net-vpnextension.md#vpnextensioncreatevpnobserver)创建VPN连接对象。
 
 ### onAuthorizationResult
 
@@ -386,7 +386,7 @@ export default class MyVpnExtAbility extends VpnExtensionAbility {
 
 ## VpnConnection
 
-VPN连接对象。在调用VpnConnection的方法前，需要先通过vpnExtension.createVpnConnection创建VPN连接对象。
+VPN连接对象。在调用VpnConnection的方法前，需要先通过vpnExt.createVpnConnection创建VPN连接对象。
 
 ### create
 

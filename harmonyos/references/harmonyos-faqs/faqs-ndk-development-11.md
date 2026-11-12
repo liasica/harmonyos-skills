@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-ndk-develo
 title: 从napi导出的C++类如何在ArkTS侧被派生
 breadcrumb: FAQ > 应用框架开发 > NDK开发 > NDK开发 > 从napi导出的C++类如何在ArkTS侧被派生
 category: harmonyos-faqs
-scraped_at: 2026-09-24T06:56:29+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:fea880e7a0722aed1f487b6179f441de9a9ce65caa16bd31807bca78eddb2251
+scraped_at: 2026-11-12T09:58:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4899e1809f970d68b3e6a56eadc174a33247c5ea5f23c38164f583879f2c0d83
 ---
 
 ## 问题现象
@@ -397,7 +397,7 @@ content_hash: sha256:fea880e7a0722aed1f487b6179f441de9a9ce65caa16bd31807bca78edd
        ```
 * 场景二：
 
-  在[build-profile.json5](../harmonyos-guides/ide-hvigor-build-profile.md#section511142752919)中设置tsImportSoCheck字段为true，开启IDE对.ts文件中来自.so符号的解析支持。该功能从7.0Beta1版本开始支持。
+  在[build-profile.json5](../doccenter-deveco-studio/ide-hvigor-build-profile-app.md#section111543473013)中设置tsImportSoCheck字段为true，开启IDE对.ts文件中来自.so符号的解析支持。该功能从7.0Beta1版本开始支持。
 
 ## 总结
 

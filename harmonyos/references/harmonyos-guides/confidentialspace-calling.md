@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/confidentials
 title: 运行数据应用处理数据
 breadcrumb: 指南 > 系统 > 安全 > Confidential Space Kit（机密空间服务） > 运行数据应用处理数据
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:36+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:f71cf952f43b190da577e78a893de753e9bb444fd9feb1ea683e8a6626c6e4b2
+scraped_at: 2026-11-12T09:51:32+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:36508b8a7ade7e05f8361c9754788397de6c46d61ecc148eac553a5268a2b600
 ---
 
 ## 概述
@@ -33,7 +33,7 @@ content_hash: sha256:f71cf952f43b190da577e78a893de753e9bb444fd9feb1ea683e8a6626c
 
 应用在机密空间中运行数据应用（以下简称DA）的业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/y4wqI9iqSZ6r2Ao4ESHHVQ/zh-cn_image_0000002779690736.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/ZJbQxm2WQpK0MwpnZ0wqDA/zh-cn_image_0000002815559069.png)
 
 1. 应用调用[runApp](../harmonyos-references/confidentialspace-confidentialspace.md#confidentialspacerunapp)，异步发起运行DA请求：
 
@@ -64,6 +64,33 @@ content_hash: sha256:f71cf952f43b190da577e78a893de753e9bb444fd9feb1ea683e8a6626c
 | [onReceiveDataError](../harmonyos-references/confidentialspace-confidentialspace.md#onreceivedataerror)(callback: ErrorCallback<BusinessError<[DataAppErrorInfo](../harmonyos-references/confidentialspace-confidentialspace.md#dataapperrorinfo)>>): void | 注册处理接收数据时发生错误的回调函数。 |
 | [offReceiveDataError](../harmonyos-references/confidentialspace-confidentialspace.md#offreceivedataerror)(callback?: ErrorCallback<BusinessError<[DataAppErrorInfo](../harmonyos-references/confidentialspace-confidentialspace.md#dataapperrorinfo)>>): void | 取消注册处理接收数据时发生错误的回调函数。 |
 | [stop](../harmonyos-references/confidentialspace-confidentialspace.md#stop)(): void | 结束数据应用。 |
+
+## 开通机密空间服务
+
+1. 登录[HarmonyOS开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)，进入“开发者管理 -> ID、证书和Profile -> APP ID -> 开放能力管理”。
+2. 在“选择应用”列表中选择您需要开通机密空间服务的应用。
+3. 找到机密空间服务，点击右侧“申请”链接。
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/SN4hG_aJSAG0xbCnk-GGvg/zh-cn_image_0000002815399153.png)
+4. 参照申请页面中的说明，检测应用是否满足申请条件。
+
+   **说明** 
+
+   1. 申请主体仅限完成实名认证的企业开发者账号，请完成[企业开发者实名认证](../start/edrna-0000001062678489.md)。
+   2. 应用类型仅限银行、商城、移动支付行业的应用，请参考[配置应用分类、标签](../doccenter-submission/agc-help-release-app-class-tag-0000002271695234.md)。
+   3. 机密空间服务仅面向注册地在中国大陆地区的开发者开放，请参考[配置发布国家或地区](../doccenter-submission/agc-help-release-app-area-0000002313510997.md)。
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/OgRiKGKASEmvMT7g2mGbgQ/zh-cn_image_0000002786519578.png)
+5. 选择机密空间的使用场景，参考模板填写“申请原因”，在“举证材料”附件中提交安全报告说明和场景流程说明。填写完成后，点击“提交”按钮。
+
+   **说明** 
+
+   提交申请后，HarmonyOS 开发者中心运营将审核相关材料，审核周期为1-3个工作日，请耐心等待。
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/AItN4cTgRpmTN2eBilS3OA/zh-cn_image_0000002786359650.png)
+6. 审核通过后，在“开放能力管理”标签页中勾选机密空间服务并点击“保存”。
+
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/mvC-6Pe_Tu-pMHr8yR9O4w/zh-cn_image_0000002815559071.png)
 
 ## 开发步骤
 

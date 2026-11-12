@@ -1,6 +1,6 @@
 # FAQ（harmonyos-faqs）
 
-共 4429 篇文档。
+共 4428 篇文档。
 
 - [Context功能使用常见问题](ability-kit-faq-0001.md)
 - [Context类型与关系常见问题](ability-kit-faq-0002.md)
@@ -4273,7 +4273,6 @@
 - [应用接续任务失败](free-flow-faqs-1.md)
 - [不同APPID的应用如何实现应用接续](free-flow-faqs-2.md)
 - [常见问题](free-flow-faqs.md)
-- [故障排查](function-flow-runtime-troubleshooting.md)
 - [JWS数据解码与验签常见问题](iap-kit-faqs-0001.md)
 - [单机应用与元服务接入IAP Kit支付常见问题](iap-kit-faqs-0002.md)
 - [常见问题](iap-kit-faqs.md)

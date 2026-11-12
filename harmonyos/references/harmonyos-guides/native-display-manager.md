@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-displa
 title: 使用OH_DisplayManager实现屏幕基础信息查询和状态监听 (C/C++)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 屏幕管理 > 使用OH_DisplayManager实现屏幕基础信息查询和状态监听 (C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:35+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-11-12T09:51:22+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:04530fec7934ec8ec40fc214e8a307c4fecd146ed628fc5d8b4112f0c626811d
 ---
 

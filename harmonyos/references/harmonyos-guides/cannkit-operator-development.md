@@ -1,87 +1,30 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-operator-development
 title: 快速入门
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 快速入门
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > 快速入门
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:49+08:00
-doc_updated_at: 2026-05-18
-content_hash: sha256:6ebe67db6352149ad918e380d309f2d1995b627869f697e4244387adff7f8d39
+scraped_at: 2026-11-12T09:52:41+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:bdc585950598bc003fd1e5c491253b3a2020da68a9a398664939af5b09603135
 ---
 
 本节以一个简单算子为例，带开发者体验从算子工程创建、代码编写、编译部署到运行验证的开发全流程，让开发者对算子开发工程有个宏观的认识，此处我们以输入是动态shape的Add算子实现为例，为了与内置Add算子区分，定义算子类型为AddCustom。
 
 ## 工程创建
 
-DDK软件包中提供了工程创建工具msOpGen，开发者可以输入算子原型定义文件生成AscendC算子开发工程。
+开发者可以基于鸿蒙CANN社区recipe仓提供的工程模板创建AscendC算子开发工程，模板中包含了算子实现的模板文件、编译脚本等。
 
-1. 编写AddCustom算子的原型定义json文件。
-
-   假设AddCustom算子的原型定义文件命名为add\_custom.json，存储路径为：$HOME/sample，文件内容如下。
-
-   ```json
-   [
-       {
-           "op": "AddCustom",
-           "input_desc": [
-               {
-                   "name": "x",
-                   "param_type": "required",
-                   "format": [
-                       "ND"
-                   ],
-                   "type": [
-                       "fp16"
-                   ]
-               },
-               {
-                   "name": "y",
-                   "param_type": "required",
-                   "format": [
-                       "ND"
-                   ],
-                   "type": [
-                       "fp16"
-                   ]
-               }
-           ],
-           "output_desc": [
-               {
-                   "name": "z",
-                   "param_type": "required",
-                   "format": [
-                       "ND"
-                   ],
-                   "type": [
-                       "fp16"
-                   ]
-               }
-           ]
-       }
-   ]
-   ```
-2. 注意先设置环境变量，执行**source ${install\_path}/ddk/** **tools/tools\_ascendc/set\_ascendc\_env.sh**命令，其中${install\_path}为tools包的解压目录。
-3. 使用msOpGen工具生成AddCustom算子的开发工程。
+1. 从鸿蒙CANN社区recipe仓获取算子工程模板，将仓内的样例单算子工程（如AddCustom算子，位于仓内"ops/ascendc/src/add\_custom"目录下）拷贝到本地目录（如$HOME/sample下），作为算子开发工程。
 
    ```shell
-   msopgen gen -i $HOME/sample/add_custom.json -c ai_core-<soc_version> -out   $HOME/sample/AddCustom
+   git clone https://gitcode.com/cann/cann-recipes-harmony-infer.git
+   cp -r ./cann-recipes-harmony-infer/ops/ascendc/src/add_custom $HOME/sample/AddCustom
    ```
 
-   * -i：算子原型定义文件add\_custom.json所在路径。
-   * -c：ai\_core-<soc\_version>代表算子在AI Core上执行，<soc\_version>为Kirin AI处理器的型号，可在运行环境通过命令进行查询:
+   **说明** 
 
-     ```shell
-     hdc -t ${target} shell param get ohos.boot.chiptype
-     ```
-
-     target：设备的SN码，可以通过hdc list targets获取当前运行环境上所有设备的SN码。
-
-   样例：
-
-   ```shell
-   msopgen gen -i ./add_custom.json -c ai_core-kirin9020 -out ./AddCustom
-   ```
-
-   基于同系列的AI处理器型号创建的算子工程，其基础能力通用。命令执行完后，会在$HOME/sample目录下生成算子工程目录AddCustom，工程中包含算子实现的模板文件，编译脚本等，如下所示。
+   鸿蒙CANN社区recipe仓的更多介绍请参见[仓工程模板说明](https://gitcode.com/cann/cann-recipes-harmony-infer/blob/master/README.md)。
+2. 拷贝完成后，会在$HOME/sample目录下生成算子工程目录AddCustom，工程中包含算子实现的模板文件，编译脚本等，如下所示。
 
    ```text
    AddCustom
@@ -105,7 +48,7 @@ DDK软件包中提供了工程创建工具msOpGen，开发者可以输入算子�
 
    **说明** 
 
-   上述目录结构中的粗体文件op\_host/add\_custom\_tiling.h、op\_host/add\_custom.cpp、op\_kernel/add\_custom.cpp为后续算子开发过程中需要修改的文件，其他文件无需修改。
+   上述目录结构中的粗体文件op\_host/add\_custom\_tiling.h、op\_host/add\_custom.cpp、op\_kernel/add\_custom.cpp为后续算子开发过程中需要修改的文件，其他文件无需修改。样例工程的实际目录结构以仓内工程为准。
 
 ## 算子核函数实现
 
@@ -115,26 +58,11 @@ DDK软件包中提供了工程创建工具msOpGen，开发者可以输入算子�
 
 **图1** 核函数调用关系图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/nmqwpT2yTVOWOAxTv0r6Xw/zh-cn_image_0000002779691750.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/Yn8TJLrhRGCbSLszTdII4Q/zh-cn_image_0000002786520604.png)
 
 由此可见除了Init函数完成初始化外，Process中完成了对流水任务：搬入、计算、搬出的调用，开发者可以重点关注三个流水任务的实现。
 
-1. 进行**核函数的定义**并在核函数中调用算子类的Init和Process函数。
-
-   ```cpp
-   extern "C" __global__ __aicore__ void add_custom(GM_ADDR x, GM_ADDR y, GM_ADDR z, GM_ADDR workspace, GM_ADDR tiling)
-   {
-       // 获取Host侧传入的Tiling参数
-       GET_TILING_DATA(tiling_data, tiling);
-       // 初始化算子类
-       KernelAdd op;
-       // 算子类的初始化函数，完成内存初始化相关工作
-       op.Init(x, y, z, tiling_data.totalLength, tiling_data.tileNum);
-       // 完成算子实现的核心逻辑
-       op.Process();
-   }
-   ```
-2. 定义KernelAdd算子类，其具体成员及成员函数实现如下。
+1. 定义KernelAdd算子类，其具体成员及成员函数实现如下。
 
    ```cpp
    #include "kernel_operator.h"
@@ -232,6 +160,21 @@ DDK软件包中提供了工程创建工具msOpGen，开发者可以输入算子�
        uint32_t tileLength;
    };
    ```
+2. 进行**核函数的定义**并在核函数中调用算子类的Init和Process函数。
+
+   ```cpp
+   extern "C" __global__ __aicore__ void add_custom(GM_ADDR x, GM_ADDR y, GM_ADDR z, GM_ADDR workspace, GM_ADDR tiling)
+   {
+       // 获取Host侧传入的Tiling参数
+       GET_TILING_DATA(tiling_data, tiling);
+       // 初始化算子类
+       KernelAdd op;
+       // 算子类的初始化函数，完成内存初始化相关工作
+       op.Init(x, y, z, tiling_data.totalLength, tiling_data.tileNum);
+       // 完成算子实现的核心逻辑
+       op.Process();
+   }
+   ```
 
 ## Host侧算子实现
 
@@ -280,7 +223,7 @@ DDK软件包中提供了工程创建工具msOpGen，开发者可以输入算子�
    ```
 3. 在“add\_custom.cpp”文件中实现AddCustom算子的shape推导。
 
-   Add算子的输出shape等于输入shape，所以直接将输入shape赋给输出shape，当前msOpGen工具生成的代码“InferShape”函数无需修改。
+   Add算子的输出shape等于输入shape，所以直接将输入shape赋给输出shape，工程模板中的“InferShape”函数无需修改。
 4. 修改“add\_custom.cpp”文件中的算子原型注册，此函数为入口函数。
 
    ```cpp
@@ -357,3 +300,9 @@ DDK软件包中提供了工程创建工具msOpGen，开发者可以输入算子�
    │   └── simulator
    └── README.md
    ```
+
+## 使用AI Agent完成算子开发
+
+CANNBot是CANN社区为开发者提供的多智能体、端到端、自动化智能助手，支持代码自动生成，具备自主排障、闭环修复、端到端调优能力，有效降低开发者门槛。
+
+其中，Ascend C注册算子开发插件(ops-registry-invoke)和Ascend C直调算子开发插件(ops-direct-invoke)均已支持Kirin平台。前者适用于生产级自定义算子开发场景，后者适用于算子的快速验证和原型开发或者Ascend C的学习。具体使用方式，详见[CANNBot仓](https://gitcode.com/cann/cannbot)。

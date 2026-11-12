@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scan-decodeim
 title: 识别图像数据
 breadcrumb: 指南 > 媒体 > Scan Kit（统一扫码服务） > 图像识码 > 识别图像数据
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:15+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:95271394d01f451ca176eae753a22605c082d5e12b171cfcb9938bde171d96eb
+scraped_at: 2026-11-12T09:52:09+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a45e0cc355e31579a4eb75cc157d391645c49f3f3ae4531d63e9e0ca8a9bbd9a
 ---
 
 图像数据识码能力支持对NV21像素格式图像中的码图进行扫描识别，并获取信息。
@@ -16,11 +16,11 @@ content_hash: sha256:95271394d01f451ca176eae753a22605c082d5e12b171cfcb9938bde171
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/zStY3mBfTzqQ2GRZ38qeOA/zh-cn_image_0000002809010691.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/SL29eO7kRH26gXeKHu0yBg/zh-cn_image_0000002786519908.png)
 
 1. 用户向应用发起识码请求。
 2. 应用通过调用[Camera Kit](camera-overview.md)启动相机，获取预览流数据。
-3. 应用通过调用Scan Kit的decodeImage接口识别码图。
+3. 应用通过调用Scan Kit的decodeImage()接口识别码图。
 4. Scan Kit通过回调返回识别结果。
 5. 应用向用户返回扫码结果。
 
@@ -30,7 +30,7 @@ content_hash: sha256:95271394d01f451ca176eae753a22605c082d5e12b171cfcb9938bde171
 
 | 接口名 | 描述 |
 | --- | --- |
-| [decodeImage](../harmonyos-references/scan-imagedecode.md#decodeimage)(image: [ByteImage](../harmonyos-references/scan-imagedecode.md#byteimage), options?: scanBarcode.[ScanOptions](../harmonyos-references/scan-scanbarcode-api.md#scanoptions)): Promise<[DetectResult](../harmonyos-references/scan-imagedecode.md#detectresult)> | 启动图像识码，通过传入ByteImage类型的图像数据信息，使用Promise异步回调返回识码结果。 |
+| [decodeImage](../harmonyos-references/scan-imagedecode.md#detectbarcodedecodeimage)(image: [ByteImage](../harmonyos-references/scan-imagedecode.md#byteimage), options?: scanBarcode.[ScanOptions](../harmonyos-references/scan-scanbarcode-api.md#scanoptions)): Promise<[DetectResult](../harmonyos-references/scan-imagedecode.md#detectresult)> | 启动图像识码，通过传入ByteImage类型的图像数据信息，使用Promise异步回调返回识码结果。 |
 
 ## 开发步骤
 
@@ -38,7 +38,7 @@ content_hash: sha256:95271394d01f451ca176eae753a22605c082d5e12b171cfcb9938bde171
 
 为了方便开发者接入，我们提供了详细的样例工程供参考，推荐参考[示例工程](https://gitcode.com/HarmonyOS_Samples/scankit-samplecode-clientdemo-arkts)接入。
 
-以下示例为调用decodeImage接口获取码图信息。
+以下示例为调用decodeImage()接口获取码图信息。
 
 1. 导入图像识码接口和相关接口模块，该模块提供了图像识码参数和方法，导入方法如下。
 
@@ -50,9 +50,11 @@ content_hash: sha256:95271394d01f451ca176eae753a22605c082d5e12b171cfcb9938bde171
    import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
 2. 使用Camera Kit启动相机能力，实现双路预览功能，具体实现详见[双路预览](camera-dual-channel-preview.md)。
-3. 通过ImageReceiver实时获取预览图像数据，详见[双路预览](camera-dual-channel-preview.md)，调用decodeImage接口解析图像数据。请在识别完成后再释放图像数据。
+3. 通过ImageReceiver实时获取预览图像数据，详见[双路预览](camera-dual-channel-preview.md)，调用decodeImage()接口解析图像数据。请在识别完成后再释放图像数据。
 
    ```typescript
+   const TAG: string = 'Scan Kit Sample DetectImageData';
+
    // 从ImageReceiver获取imgComponent，预览流图像数据的宽高：width、height
    export function decodeImageBuffer(imgComponent: image.Component, width: number, height: number) {
      const stride: number = imgComponent.rowStride;
@@ -83,14 +85,14 @@ content_hash: sha256:95271394d01f451ca176eae753a22605c082d5e12b171cfcb9938bde171
      };
      try {
        detectBarcode.decodeImage(byteImg, options).then((data: detectBarcode.DetectResult) => {
-         hilog.info(0x0001, '[Scan Sample]',
+         hilog.info(0x0001, TAG,
            `Succeeded in getting DetectResult by promise with options, result length: ${data.scanResults.length}, zoomValue: ${data.zoomValue}`);
        }).catch((err: BusinessError) => {
-         hilog.error(0x0001, '[Scan Sample]',
+         hilog.error(0x0001, TAG,
            `Failed to get DetectResult by promise with options. Code: ${err.code}, message: ${err.message}`);
        });
      } catch (err) {
-       hilog.error(0x0001, '[Scan Sample]', `Failed to detectBarcode. Code: ${err.code}, message: ${err.message}`);
+       hilog.error(0x0001, TAG, `Failed to detectBarcode. Code: ${err.code}, message: ${err.message}`);
      }
    }
    ```

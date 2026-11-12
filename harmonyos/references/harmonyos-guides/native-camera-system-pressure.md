@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-camera
 title: 压力管控(C/C++)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(C/C++) > 压力管控(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:16+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:52:05+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:fe4594c312f8411a93123c6317bc0a64c5f9f622157a9cd8e3dcea9caf4e3559
 ---
 

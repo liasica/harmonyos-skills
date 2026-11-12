@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-modul
 title: 模块描述
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > 模块描述
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:58+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:b2ca5bd776c520ae580328d3d25d8b7d45590e5b3adb911ac1a482d3c3fe2bec
+scraped_at: 2026-11-12T09:57:24+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4b655207a30f05997cec272370dad15fbd174f2ee87a2d54d6c4770d3c1335af
 ---
 
 Map Kit支持显示地图、在地图上绘制各类覆盖物（标记、折线、弧线、多边形、圆形等）、添加动画效果、处理地图交互事件、更新地图状态等。
@@ -92,8 +92,9 @@ let mapOptions: mapCommon.MapOptions = {
 // 3. 定义回调函数获取MapComponentController
 let mapCallback = async (err, mapController) => {
   if (!err) {
-    // 获取控制器成功后，可进行后续操作
+    // 获取控制器成功后，可用于展示地图、地图交互和地图绘制等
     let mapController = mapController;
+    // 获取地图监听事件管理器，可控制地图所有事件
     let mapEventManager = mapController.getEventManager();
   }
 };
@@ -157,5 +158,6 @@ animation.on("animationStart", () => {});
 animation.on("animationEnd", () => {});
 
 // 4. 对覆盖物应用动画
-marker.startAnimation(animation);
+marker.setAnimation(animation);
+marker.startAnimation();
 ```

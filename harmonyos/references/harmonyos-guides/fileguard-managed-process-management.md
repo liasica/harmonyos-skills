@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fileguard-man
 title: 进程管控时长管理
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > 文件分级管控 > 进程管控时长管理
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:30+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d7618c705da1d762215049bfe191daf55520c148c8d835ee260b186054ad6526
+scraped_at: 2026-11-12T09:51:38+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8924cd6be7b2171e037f6db009d09111e0d8235e61a0c097e53550b5897b31d5
 ---
 
 从API版本26.0.0开始，新增支持进程管控策略查询与设置、进程管控信息的查询、添加以及删除。
@@ -98,7 +98,8 @@ content_hash: sha256:d7618c705da1d762215049bfe191daf55520c148c8d835ee260b186054a
    function testAddManagedProcess() {
      let guard: fileGuard.FileGuard = new fileGuard.FileGuard();
      let processInfo: fileGuard.ManagedProcessInfo = {
-       pid: process.pid
+       pid: process.pid,
+       policy: 'KIA'
      };
      guard.addManagedProcess(processInfo).then(() => {
        hilog.info(DOMAIN, TAG, `Succeeded in adding the managed process.`);

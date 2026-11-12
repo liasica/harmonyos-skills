@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-form-26
 title: 服务卡片实现长期破窗效果
 breadcrumb: FAQ > 应用框架开发 > 程序框架 > 卡片开发（Form） > 服务卡片实现长期破窗效果
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:51+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:7e5a7ff8fd94572a45bfd207e6076921e4ed0b4624eb263a09d578422beda10a
+scraped_at: 2026-11-12T09:58:22+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:6bd6604f48d4df6b2a3b1ae336d578776e06f1921f15fb17f8f7668e981a9a49
 ---
 
 ## 问题现象
@@ -104,7 +104,7 @@ content_hash: sha256:7e5a7ff8fd94572a45bfd207e6076921e4ed0b4624eb263a09d578422be
      }
    }
    ```
-5. 在调试或发布阶段，需进行[手动签名](../harmonyos-guides/ide-signing.md#section297715173233)，确保权限生效。
+5. 在调试或发布阶段，需进行[手动签名](../doccenter-deveco-studio/ide-signing-manual.md)，确保权限生效。
 
 ## 常见FAQ
 

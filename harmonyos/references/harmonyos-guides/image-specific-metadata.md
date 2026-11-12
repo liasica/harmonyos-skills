@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-specifi
 title: 使用ImageSource获取专有元数据
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片元数据处理 > 使用ImageSource获取专有元数据
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:26+08:00
-doc_updated_at: 2026-09-24
+scraped_at: 2026-11-12T09:52:06+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:d3f193486809fa5b3f70c735932c6612f65771bf01ebe4bcde669025b65eed63
 ---
 

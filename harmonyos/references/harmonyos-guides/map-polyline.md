@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-polyline
 title: 折线
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 折线
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:36+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:daee6c81d268d5818db1f9f35ff7119b992c6f9eed1d4d8c73963e389c43aa2d
+scraped_at: 2026-11-12T09:52:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e2c5c4c52acee79a6f1f2afbc410587c9e229394a231821e153413b2f417d84d
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:daee6c81d268d5818db1f9f35ff7119b992c6f9eed1d4d8c73963e389c4
 
 5.0.3(15)开始，支持折线绘制纹理功能；26.0.0开始，支持折线添加文字。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/UXmcYrdwTGaCuuzHoGBIww/zh-cn_image_0000002809051047.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/PNa2p283QASTWJUQOzuykw/zh-cn_image_0000002815559855.jpg "点击放大")
 
 ## 接口说明
 
@@ -107,7 +107,7 @@ content_hash: sha256:daee6c81d268d5818db1f9f35ff7119b992c6f9eed1d4d8c73963e389c4
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/rs8ZnPq3S9SsOLEV5haC4A/zh-cn_image_0000002779851482.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/_qdPFJbJRdSdiBGdCVRZGw/zh-cn_image_0000002815399939.jpg "点击放大")
 
 ### 设置折线分段颜色
 
@@ -141,7 +141,7 @@ let colors = [0xffffff00, 0xff000000];
 this.mapPolyline.setColors(colors);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/vg7wERwkRiybQNRfjeAqgw/zh-cn_image_0000002779691514.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/NMwQ1xjtTOulrBRDVkbXmg/zh-cn_image_0000002786520364.jpg "点击放大")
 
 ### 设置折线可渐变
 
@@ -174,7 +174,7 @@ let polylineOption: mapCommon.MapPolylineOptions = {
 this.mapPolyline.setGradient(true);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/3OMDuRTIRnOnh_og6DWTHA/zh-cn_image_0000002809011135.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/EDbhLUm7QPaSx1aIIW6vAg/zh-cn_image_0000002786360436.jpg "点击放大")
 
 ### 绘制纹理
 
@@ -203,7 +203,7 @@ let polylineOption: mapCommon.MapPolylineOptions = {
 await this.mapPolyline.setCustomTexture('icon/naviline_arrow.png');
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/y6el8M7NQOGOIrtnjDj7ug/zh-cn_image_0000002809051049.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/E3ZIqL4JTeONLt-uAxJifw/zh-cn_image_0000002815559857.jpg "点击放大")
 
 ### 折线设置分段纹理
 
@@ -219,7 +219,7 @@ let customTextures: (ResourceStr | image.PixelMap)[] = [];
 customTextures.push('icon/img.png');
 customTextures.push('icon/img_1.png');
 let cusIndexNumber: number[] = [];
-// cusIndexNumber数组长度与折线点数量必须相同，数组元素内容与customTextures下标相对应，图片从数组第二个元素开始选择
+// customTextureIndexes数组长度必须与points数组长度相同，每个值对应customTextures中的索引，图片从数组第二个元素开始
 cusIndexNumber.push(0, 0, 1);
 // polyline初始化参数
 let polylineOption: mapCommon.MapPolylineOptions = {
@@ -240,7 +240,7 @@ let polylineOption: mapCommon.MapPolylineOptions = {
 let mapPolyline = await this.mapController.addPolyline(polylineOption);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/3PcHdNulRWGQCryrRkKAWw/zh-cn_image_0000002779851484.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/TrueswLVTBKVkccUDxF5Rw/zh-cn_image_0000002815399941.jpg "点击放大")
 
 ### 折线添加文字
 
@@ -264,4 +264,4 @@ this.mapPolyline.addLineText(textLine);
 this.mapPolyline.removeLineText();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/cHPhIiTWTtyRwvw0GZIgRw/zh-cn_image_0000002779691516.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/kXno2j3URIGwK8EqC00zCQ/zh-cn_image_0000002786520366.png "点击放大")

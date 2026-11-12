@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-mix-langu
 title: 性能优化：混合语言工程Sync优化实践
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 提升构建效率 > 实践说明 > 性能优化：混合语言工程Sync优化实践
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:26+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:bef6b753be222222483c24e6db4d71c292bb6b4f7c7371259ed5748259ae7c75
+scraped_at: 2026-11-12T09:53:07+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c66d5a849521475aecbc830d02f34183f94a64bc5b33a52ac7e308f10b5402d1
 ---
 
 ## 概述
@@ -23,7 +23,7 @@ content_hash: sha256:bef6b753be222222483c24e6db4d71c292bb6b4f7c7371259ed5748259a
 
    **开启方式：**点击**File >** **Settings**（macOS为**DevEco Studio > Preferences/Settings**） **> Build, Execution, Deployment > Build Tools > Hvigor**，勾选**Enable ohpm execution by hvigor**。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/pdENk-oRRTikv1GTdrqWDw/zh-cn_image_0000002731542977.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/0_LJxUMrSfmfE--j0c1T_g/zh-cn_image_0000002779567242.png)
 
 ## 优化措施二：启用C++并行同步编译
 
@@ -37,10 +37,10 @@ content_hash: sha256:bef6b753be222222483c24e6db4d71c292bb6b4f7c7371259ed5748259a
 
 * 场景一：多个C++模块之间无依赖关系，则是并行编译，构建窗口中只有一个syncNative的Tab页，对应了多个模块的编译日志，如下所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/h8S_iqhvSEiRnLkqnMoQaQ/zh-cn_image_0000002701663782.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/a5UzEFvbQq6IdXf6_A4Yrw/zh-cn_image_0000002779407262.png)
 * 场景二：多个C++模块之间有依赖关系，比如entry依赖hsp1，hsp1依赖hsp，hsp依赖har和har1模块，则会先执行被依赖的模块，如下所示：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3/v3/3cn8u95dQruNKRu9WWjU1w/zh-cn_image_0000002701823706.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/GPpnFI-USnGNlBKPTS_Gyw/zh-cn_image_0000002779407260.png)
 
 **可能影响**：如果在hvigorfile.ts脚本的compileNative任务阶段有自定义插件或任务，开启开关后，由于compileNative任务不会被执行，会导致自定义插件或任务未执行。
 
@@ -65,10 +65,10 @@ add_library(MyProject SHARED ${PROJECT_SOURCE})
 
 从26.0.0版本开始，新增Refresh C++ Project功能，允许开发者主动触发CMake重新配置项目，确保动态生成的源码列表与当前文件系统状态同步。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/YEb-Qm6DSBaTyZ0kIxRjmA/zh-cn_image_0000002731383005.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/IfZyFiywTq-jOVpQf-G_Yw/zh-cn_image_0000002779567240.png)
 
 ## 优化措施四：修改代码索引模式
 
-在开发大型C/C++工程时，代码索引（Code Indexing）往往是影响启动速度和日常开发流畅度的关键因素。传统的全量索引虽然能提供完整的代码导航能力，但在处理代码量巨大的项目时，往往会导致索引耗时较长，并持续占用较高的CPU和内存资源，迫使开发者等待较长时间才能进入编码状态。
+在开发大型C/C++工程时，代码索引（Code Indexing）往往是影响启动速度和日常开发流畅度的关键因素。传统的全量索引虽然能提供完整的代码导航能力，但在处理代码量巨大的项目时，往往会导致索引耗时较长，并持续占用较高的CPU和内存资源。
 
 从26.0.0版本开始，DevEco Studio支持切换C/C++代码索引模式，可以根据当前工程的规模、硬件性能以及具体的开发需求，灵活选择最适合的索引策略，在“开发体验”与“资源消耗”之间找到最佳平衡点，具体支持的代码索引模式和切换方式请参考[代码索引（clangd）](ide-clangd.md)。

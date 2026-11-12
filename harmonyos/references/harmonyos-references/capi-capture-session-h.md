@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-capt
 title: capture_session.h
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > C API > 头文件 > capture_session.h
 category: harmonyos-references
-scraped_at: 2026-10-15T07:11:15+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:a720f8b5b847c09b76eb5722d7d29c124dc0b9a11bfd8e3ba0cc79e65a575d59
+scraped_at: 2026-11-12T09:56:34+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c99a348beb71a2df375864c7bbe1d6c0ec341fbefca412578011c0df0c773600
 ---
 
 ## 概述
@@ -64,19 +64,19 @@ content_hash: sha256:a720f8b5b847c09b76eb5722d7d29c124dc0b9a11bfd8e3ba0cc79e65a5
 | [Camera\_ErrorCode OH\_CaptureSession\_Release(Camera\_CaptureSession\* session)](capi-capture-session-h.md#oh_capturesession_release) | - | 释放捕获会话。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_HasFlash(Camera\_CaptureSession\* session, bool\* hasFlash)](capi-capture-session-h.md#oh_capturesession_hasflash) | - | 检查设备是否有闪光灯。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_IsFlashModeSupported(Camera\_CaptureSession\* session, Camera\_FlashMode flashMode, bool\* isSupported)](capi-capture-session-h.md#oh_capturesession_isflashmodesupported) | - | 检查是否支持指定的闪光灯模式。 |
-| [Camera\_ErrorCode OH\_CaptureSession\_GetFlashMode(Camera\_CaptureSession\* session, Camera\_FlashMode\* flashMode)](capi-capture-session-h.md#oh_capturesession_getflashmode) | - | 获取当前闪光灯模式。 |
+| [Camera\_ErrorCode OH\_CaptureSession\_GetFlashMode(Camera\_CaptureSession\* session, Camera\_FlashMode\* flashMode)](capi-capture-session-h.md#oh_capturesession_getflashmode) | - | 获取当前闪光灯模式。在获取当前闪光灯模式前，需使用[OH\_CaptureSession\_HasFlash](capi-capture-session-h.md#oh_capturesession_hasflash)接口检查设备是否有闪光灯。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_SetFlashMode(Camera\_CaptureSession\* session, Camera\_FlashMode flashMode)](capi-capture-session-h.md#oh_capturesession_setflashmode) | - | 设置闪光灯模式。 |
 | [typedef void (\*OH\_CaptureSession\_OnFlashStateChange)(const Camera\_CaptureSession\* session, OH\_Camera\_FlashState flashState)](capi-capture-session-h.md#oh_capturesession_onflashstatechange) | OH\_CaptureSession\_OnFlashStateChange | 捕获会话闪光灯状态变更回调。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_RegisterFlashStateChangeCallback(const Camera\_CaptureSession\* session, OH\_CaptureSession\_OnFlashStateChange flashStateChange)](capi-capture-session-h.md#oh_capturesession_registerflashstatechangecallback) | - | 注册闪光灯状态变更事件回调。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_UnregisterFlashStateChangeCallback(const Camera\_CaptureSession\* session, OH\_CaptureSession\_OnFlashStateChange flashStateChange)](capi-capture-session-h.md#oh_capturesession_unregisterflashstatechangecallback) | - | 注销闪光灯状态变更回调。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_IsExposureModeSupported(Camera\_CaptureSession\* session, Camera\_ExposureMode exposureMode, bool\* isSupported)](capi-capture-session-h.md#oh_capturesession_isexposuremodesupported) | - | 检查是否支持指定的曝光模式。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_GetExposureMode(Camera\_CaptureSession\* session, Camera\_ExposureMode\* exposureMode)](capi-capture-session-h.md#oh_capturesession_getexposuremode) | - | 获取当前曝光模式。 |
-| [Camera\_ErrorCode OH\_CaptureSession\_SetExposureMode(Camera\_CaptureSession\* session, Camera\_ExposureMode exposureMode)](capi-capture-session-h.md#oh_capturesession_setexposuremode) | - | 设置曝光模式。 |
+| [Camera\_ErrorCode OH\_CaptureSession\_SetExposureMode(Camera\_CaptureSession\* session, Camera\_ExposureMode exposureMode)](capi-capture-session-h.md#oh_capturesession_setexposuremode) | - | 设置曝光模式。进行设置之前，需要先使用方法[OH\_CaptureSession\_IsExposureModeSupported](capi-capture-session-h.md#oh_capturesession_isexposuremodesupported)检查设备是否支持指定的曝光模式。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_GetMeteringPoint(Camera\_CaptureSession\* session, Camera\_Point\* point)](capi-capture-session-h.md#oh_capturesession_getmeteringpoint) | - | 获取当前测量点。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_SetMeteringPoint(Camera\_CaptureSession\* session, Camera\_Point point)](capi-capture-session-h.md#oh_capturesession_setmeteringpoint) | - | 设置计量区域的中心点。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_IsExposureMeteringModeSupported(const Camera\_CaptureSession\* session, OH\_Camera\_ExposureMeteringMode exposureMeteringMode, bool\* isSupported)](capi-capture-session-h.md#oh_capturesession_isexposuremeteringmodesupported) | - | 查询指定曝光测光模式是否支持。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_GetExposureMeteringMode(const Camera\_CaptureSession\* session, OH\_Camera\_ExposureMeteringMode\* exposureMeteringMode)](capi-capture-session-h.md#oh_capturesession_getexposuremeteringmode) | - | 获取当前曝光测光模式。 |
-| [Camera\_ErrorCode OH\_CaptureSession\_SetExposureMeteringMode(const Camera\_CaptureSession\* session, OH\_Camera\_ExposureMeteringMode exposureMeteringMode)](capi-capture-session-h.md#oh_capturesession_setexposuremeteringmode) | - | 设置曝光测光模式。 |
+| [Camera\_ErrorCode OH\_CaptureSession\_SetExposureMeteringMode(const Camera\_CaptureSession\* session, OH\_Camera\_ExposureMeteringMode exposureMeteringMode)](capi-capture-session-h.md#oh_capturesession_setexposuremeteringmode) | - | 设置曝光测光模式。进行设置之前，需要先使用方法[OH\_CaptureSession\_IsExposureMeteringModeSupported](capi-capture-session-h.md#oh_capturesession_isexposuremeteringmodesupported)检查设备是否支持指定的曝光测光模式。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_GetSupportedISORange(const Camera\_CaptureSession\* session, int32\_t \*minIsoValue, int32\_t \*maxIsoValue)](capi-capture-session-h.md#oh_capturesession_getsupportedisorange) | - | 查询ISO感光度范围。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_GetIso(const Camera\_CaptureSession\* session, int32\_t\* isoValue)](capi-capture-session-h.md#oh_capturesession_getiso) | - | 获取当前ISO感光度值（遵循ISO 12232:2006标准）。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_SetIso(const Camera\_CaptureSession\* session, int32\_t isoValue)](capi-capture-session-h.md#oh_capturesession_setiso) | - | 设置ISO感光度值。设置的值需在[OH\_CaptureSession\_GetSupportedISORange](capi-capture-session-h.md#oh_capturesession_getsupportedisorange)范围内。当曝光锁定模式[ExposureMode](capi-camera-h.md#camera_exposuremode)为EXPOSURE\_MODE\_LOCKED时，不支持设置ISO感光度值。 |
@@ -87,15 +87,15 @@ content_hash: sha256:a720f8b5b847c09b76eb5722d7d29c124dc0b9a11bfd8e3ba0cc79e65a5
 | [Camera\_ErrorCode OH\_CaptureSession\_GetExposureBiasRange(Camera\_CaptureSession\* session, float\* minExposureBias, float\* maxExposureBias, float\* step)](capi-capture-session-h.md#oh_capturesession_getexposurebiasrange) | - | 查询曝光补偿范围。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_SetExposureBias(Camera\_CaptureSession\* session, float exposureBias)](capi-capture-session-h.md#oh_capturesession_setexposurebias) | - | 设置曝光补偿。设置前，建议通过[OH\_CaptureSession\_GetExposureBiasRange](capi-capture-session-h.md#oh_capturesession_getexposurebiasrange)获取支持配置的曝光补偿范围。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_GetExposureBias(Camera\_CaptureSession\* session, float\* exposureBias)](capi-capture-session-h.md#oh_capturesession_getexposurebias) | - | 获取当前曝光补偿。 |
-| [Camera\_ErrorCode OH\_CaptureSession\_GetSupportedExposureDurationRange(const Camera\_CaptureSession\* session, int32\_t\* minExposureDuration, int32\_t\* maxExposureDuration)](capi-capture-session-h.md#oh_capturesession_getsupportedexposuredurationrange) | - | 获取支持的曝光时间范围。单位：微秒。 |
-| [Camera\_ErrorCode OH\_CaptureSession\_SetExposureDuration(const Camera\_CaptureSession\* session, int32\_t exposureDuration)](capi-capture-session-h.md#oh_capturesession_setexposureduration) | - | 设置曝光时间。单位：微秒。若传感器无法精确使用该曝光时间，系统会自动调整为最近的支持值，并通过[OH\_CaptureSession\_OnExposureDurationChange](capi-capture-session-h.md#oh_capturesession_onexposuredurationchange)回调通知。仅在[ExposureMode](capi-camera-h.md#camera_exposuremode).EXPOSURE\_MODE\_MANUAL手动曝光模式下设置生效。 |
-| [Camera\_ErrorCode OH\_CaptureSession\_GetExposureDuration(const Camera\_CaptureSession\* session, int32\_t\* exposureDuration)](capi-capture-session-h.md#oh_capturesession_getexposureduration) | - | 获取当前曝光时间。单位：微秒。 |
+| [Camera\_ErrorCode OH\_CaptureSession\_GetSupportedExposureDurationRange(const Camera\_CaptureSession\* session, int32\_t\* minExposureDuration, int32\_t\* maxExposureDuration)](capi-capture-session-h.md#oh_capturesession_getsupportedexposuredurationrange) | - | 获取支持的曝光时间范围。单位：微秒（μs）。 |
+| [Camera\_ErrorCode OH\_CaptureSession\_SetExposureDuration(const Camera\_CaptureSession\* session, int32\_t exposureDuration)](capi-capture-session-h.md#oh_capturesession_setexposureduration) | - | 设置曝光时间。单位：微秒（μs）。若传感器无法精确使用该曝光时间，系统会自动调整为最近的支持值，并通过[OH\_CaptureSession\_OnExposureDurationChange](capi-capture-session-h.md#oh_capturesession_onexposuredurationchange)回调通知。仅在[ExposureMode](capi-camera-h.md#camera_exposuremode).EXPOSURE\_MODE\_MANUAL手动曝光模式下设置生效。设置exposureDuration前请通过[getSupportedExposureDurationRange](capi-capture-session-h.md#oh_capturesession_getsupportedexposuredurationrange)接口获取支持的曝光时长范围。 |
+| [Camera\_ErrorCode OH\_CaptureSession\_GetExposureDuration(const Camera\_CaptureSession\* session, int32\_t\* exposureDuration)](capi-capture-session-h.md#oh_capturesession_getexposureduration) | - | 获取当前曝光时间。单位：微秒（μs）。 |
 | [typedef void (\*OH\_CaptureSession\_OnExposureDurationChange)(const Camera\_CaptureSession\* session, int32\_t exposureDuration)](capi-capture-session-h.md#oh_capturesession_onexposuredurationchange) | OH\_CaptureSession\_OnExposureDurationChange | 捕获会话曝光时间变更回调。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_RegisterExposureInfoChangeCallback(const Camera\_CaptureSession\* session, OH\_CaptureSession\_OnExposureDurationChange exposureDurationChange)](capi-capture-session-h.md#oh_capturesession_registerexposureinfochangecallback) | - | 注册曝光信息变更事件回调，曝光参数变更后系统会返回更新后的曝光信息。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_UnregisterExposureInfoChangeCallback(const Camera\_CaptureSession\* session, OH\_CaptureSession\_OnExposureDurationChange exposureDurationChange)](capi-capture-session-h.md#oh_capturesession_unregisterexposureinfochangecallback) | - | 注销曝光信息变更回调，相机操作完成后调用该方法。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_IsFocusModeSupported(Camera\_CaptureSession\* session, Camera\_FocusMode focusMode, bool\* isSupported)](capi-capture-session-h.md#oh_capturesession_isfocusmodesupported) | - | 检查是否支持指定的聚焦模式。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_GetFocusMode(Camera\_CaptureSession\* session, Camera\_FocusMode\* focusMode)](capi-capture-session-h.md#oh_capturesession_getfocusmode) | - | 获取当前聚焦模式。 |
-| [Camera\_ErrorCode OH\_CaptureSession\_SetFocusMode(Camera\_CaptureSession\* session, Camera\_FocusMode focusMode)](capi-capture-session-h.md#oh_capturesession_setfocusmode) | - | 设置聚焦模式。 |
+| [Camera\_ErrorCode OH\_CaptureSession\_SetFocusMode(Camera\_CaptureSession\* session, Camera\_FocusMode focusMode)](capi-capture-session-h.md#oh_capturesession_setfocusmode) | - | 设置聚焦模式。设置聚焦模式前，先通过方法[OH\_CaptureSession\_IsFocusModeSupported](capi-capture-session-h.md#oh_capturesession_isfocusmodesupported)检查是否支持要设置的聚焦模式。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_GetFocusPoint(Camera\_CaptureSession\* session, Camera\_Point\* focusPoint)](capi-capture-session-h.md#oh_capturesession_getfocuspoint) | - | 获取当前焦点。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_SetFocusPoint(Camera\_CaptureSession\* session, Camera\_Point focusPoint)](capi-capture-session-h.md#oh_capturesession_setfocuspoint) | - | 设置焦点。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_GetZoomRatioRange(Camera\_CaptureSession\* session, float\* minZoom, float\* maxZoom)](capi-capture-session-h.md#oh_capturesession_getzoomratiorange) | - | 获取所有支持的缩放比例范围。 |
@@ -103,7 +103,7 @@ content_hash: sha256:a720f8b5b847c09b76eb5722d7d29c124dc0b9a11bfd8e3ba0cc79e65a5
 | [Camera\_ErrorCode OH\_CaptureSession\_SetZoomRatio(Camera\_CaptureSession\* session, float zoom)](capi-capture-session-h.md#oh_capturesession_setzoomratio) | - | 设置缩放比例。设置前，建议通过[OH\_CaptureSession\_GetZoomRatioRange](capi-capture-session-h.md#oh_capturesession_getzoomratiorange)获取支持的缩放比例范围。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_IsVideoStabilizationModeSupported(Camera\_CaptureSession\* session, Camera\_VideoStabilizationMode mode, bool\* isSupported)](capi-capture-session-h.md#oh_capturesession_isvideostabilizationmodesupported) | - | 检查是否支持指定的录像防抖模式。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_GetVideoStabilizationMode(Camera\_CaptureSession\* session, Camera\_VideoStabilizationMode\* mode)](capi-capture-session-h.md#oh_capturesession_getvideostabilizationmode) | - | 获取当前录像防抖模式。 |
-| [Camera\_ErrorCode OH\_CaptureSession\_SetVideoStabilizationMode(Camera\_CaptureSession\* session, Camera\_VideoStabilizationMode mode)](capi-capture-session-h.md#oh_capturesession_setvideostabilizationmode) | - | 设置录像防抖模式。 |
+| [Camera\_ErrorCode OH\_CaptureSession\_SetVideoStabilizationMode(Camera\_CaptureSession\* session, Camera\_VideoStabilizationMode mode)](capi-capture-session-h.md#oh_capturesession_setvideostabilizationmode) | - | 设置录像防抖模式。设置前需要先通过方法[isVideoStabilizationModeSupported](arkts-apis-camera-stabilizationquery.md#isvideostabilizationmodesupported11)检查是否支持要设置的录像防抖模式。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_CanAddInput(Camera\_CaptureSession\* session, Camera\_Input\* cameraInput, bool\* isSuccessful)](capi-capture-session-h.md#oh_capturesession_canaddinput) | - | 确定是否可以将相机输入添加到会话中。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_CanAddPreviewOutput(Camera\_CaptureSession\* session, Camera\_PreviewOutput\* cameraOutput, bool\* isSuccessful)](capi-capture-session-h.md#oh_capturesession_canaddpreviewoutput) | - | 确定是否可以将相机预览输出添加到会话中。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_CanAddPhotoOutput(Camera\_CaptureSession\* session, Camera\_PhotoOutput\* cameraOutput, bool\* isSuccessful)](capi-capture-session-h.md#oh_capturesession_canaddphotooutput) | - | 确定是否可以将拍照输出添加到会话中。 |
@@ -115,22 +115,22 @@ content_hash: sha256:a720f8b5b847c09b76eb5722d7d29c124dc0b9a11bfd8e3ba0cc79e65a5
 | [Camera\_ErrorCode OH\_CaptureSession\_GetExposureValue(Camera\_CaptureSession\* session, float\* exposureValue)](capi-capture-session-h.md#oh_capturesession_getexposurevalue) | - | 查询曝光值。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_GetFocalLength(Camera\_CaptureSession\* session, float\* focalLength)](capi-capture-session-h.md#oh_capturesession_getfocallength) | - | 获取当前焦距值。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_GetFocusDistance(const Camera\_CaptureSession\* session, float\* focusDistance)](capi-capture-session-h.md#oh_capturesession_getfocusdistance) | - | 获取当前对焦距离。取值范围为[0.0, 1.0]。0.0表示镜头可对焦的最近距离；1.0表示最远距离。默认值为1.0。 |
-| [Camera\_ErrorCode OH\_CaptureSession\_SetFocusDistance(const Camera\_CaptureSession\* session, float focusDistance)](capi-capture-session-h.md#oh_capturesession_setfocusdistance) | - | 设置对焦距离。取值范围为[0.0, 1.0]。0.0表示镜头可对焦的最近距离；1.0表示最远距离。默认值为1.0。 |
+| [Camera\_ErrorCode OH\_CaptureSession\_SetFocusDistance(const Camera\_CaptureSession\* session, float focusDistance)](capi-capture-session-h.md#oh_capturesession_setfocusdistance) | - | 设置对焦距离。取值范围为[0.0, 1.0]。0.0表示镜头可对焦的最近距离；1.0表示最远距离。默认值为1.0。设置前可以通过[OH\_CaptureSession\_IsFocusDistanceSupported](capi-capture-session-h.md#oh_capturesession_isfocusdistancesupported)查询是否支持对焦距离的设置。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_IsFocusDistanceSupported(const Camera\_CaptureSession\* session, bool\* isSupported)](capi-capture-session-h.md#oh_capturesession_isfocusdistancesupported) | - | 查询是否支持对焦距离设置。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_SetSmoothZoom(Camera\_CaptureSession\* session, float targetZoom, Camera\_SmoothZoomMode smoothZoomMode)](capi-capture-session-h.md#oh_capturesession_setsmoothzoom) | - | 触发平滑变焦。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_GetSupportedColorSpaces(Camera\_CaptureSession\* session, OH\_NativeBuffer\_ColorSpace\*\* colorSpace, uint32\_t\* size)](capi-capture-session-h.md#oh_capturesession_getsupportedcolorspaces) | - | 获取支持的色彩空间列表。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_DeleteColorSpaces(Camera\_CaptureSession\* session, OH\_NativeBuffer\_ColorSpace\* colorSpace)](capi-capture-session-h.md#oh_capturesession_deletecolorspaces) | - | 删除色彩空间列表。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_GetActiveColorSpace(Camera\_CaptureSession\* session, OH\_NativeBuffer\_ColorSpace\* colorSpace)](capi-capture-session-h.md#oh_capturesession_getactivecolorspace) | - | 获取当前色彩空间。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_SetActiveColorSpace(Camera\_CaptureSession\* session, OH\_NativeBuffer\_ColorSpace colorSpace)](capi-capture-session-h.md#oh_capturesession_setactivecolorspace) | - | 设置当前色彩空间。设置的值需在[OH\_CaptureSession\_GetSupportedColorSpaces](capi-capture-session-h.md#oh_capturesession_getsupportedcolorspaces)获取的支持列表中。 |
-| [Camera\_ErrorCode OH\_CaptureSession\_RegisterAutoDeviceSwitchStatusCallback(Camera\_CaptureSession\* session, OH\_CaptureSession\_OnAutoDeviceSwitchStatusChange autoDeviceSwitchStatusChange)](capi-capture-session-h.md#oh_capturesession_registerautodeviceswitchstatuscallback) | - | 注册设备切换事件回调。 |
-| [Camera\_ErrorCode OH\_CaptureSession\_UnregisterAutoDeviceSwitchStatusCallback(Camera\_CaptureSession\* session, OH\_CaptureSession\_OnAutoDeviceSwitchStatusChange autoDeviceSwitchStatusChange)](capi-capture-session-h.md#oh_capturesession_unregisterautodeviceswitchstatuscallback) | - | 注销设备切换事件回调。 |
+| [Camera\_ErrorCode OH\_CaptureSession\_RegisterAutoDeviceSwitchStatusCallback(Camera\_CaptureSession\* session, OH\_CaptureSession\_OnAutoDeviceSwitchStatusChange autoDeviceSwitchStatusChange)](capi-capture-session-h.md#oh_capturesession_registerautodeviceswitchstatuscallback) | - | 注册设备切换事件回调。可以通过[OH\_CaptureSession\_IsAutoDeviceSwitchSupported](capi-capture-session-h.md#oh_capturesession_isautodeviceswitchsupported)接口查询是否支持自动设备切换能力。 |
+| [Camera\_ErrorCode OH\_CaptureSession\_UnregisterAutoDeviceSwitchStatusCallback(Camera\_CaptureSession\* session, OH\_CaptureSession\_OnAutoDeviceSwitchStatusChange autoDeviceSwitchStatusChange)](capi-capture-session-h.md#oh_capturesession_unregisterautodeviceswitchstatuscallback) | - | 注销设备切换事件回调。可以通过[OH\_CaptureSession\_IsAutoDeviceSwitchSupported](capi-capture-session-h.md#oh_capturesession_isautodeviceswitchsupported)接口查询是否支持自动设备切换能力。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_IsAutoDeviceSwitchSupported(Camera\_CaptureSession\* session, bool\* isSupported)](capi-capture-session-h.md#oh_capturesession_isautodeviceswitchsupported) | - | 检查是否支持自动设备切换。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_EnableAutoDeviceSwitch(Camera\_CaptureSession\* session, bool enabled)](capi-capture-session-h.md#oh_capturesession_enableautodeviceswitch) | - | 是否启用相机设备的自动切换。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_RegisterSystemPressureLevelChangeCallback(Camera\_CaptureSession\* session, OH\_CaptureSession\_OnSystemPressureLevelChange systemPressureLevelChange)](capi-capture-session-h.md#oh_capturesession_registersystempressurelevelchangecallback) | - | 注册系统压力状态变化回调。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_UnregisterSystemPressureLevelChangeCallback(Camera\_CaptureSession\* session, OH\_CaptureSession\_OnSystemPressureLevelChange systemPressureLevelChange)](capi-capture-session-h.md#oh_capturesession_unregistersystempressurelevelchangecallback) | - | 注销系统压力状态变化回调。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_SetQualityPrioritization(Camera\_CaptureSession\* session, Camera\_QualityPrioritization qualityPrioritization)](capi-capture-session-h.md#oh_capturesession_setqualityprioritization) | - | 设置录像质量优先级。  默认为高录像质量，设置为功耗平衡将降低录像质量以减少功耗。实际功耗收益因平台而异。建议该接口在[OH\_CaptureSession\_CommitConfig](capi-capture-session-h.md#oh_capturesession_commitconfig)和[OH\_CaptureSession\_Start](capi-capture-session-h.md#oh_capturesession_start)之间调用。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_IsMacroSupported(Camera\_CaptureSession\* session, bool\* isSupported)](capi-capture-session-h.md#oh_capturesession_ismacrosupported) | - | 检查是否支持微距能力。 |
-| [Camera\_ErrorCode OH\_CaptureSession\_EnableMacro(Camera\_CaptureSession\* session, bool enabled)](capi-capture-session-h.md#oh_capturesession_enablemacro) | - | 是否启用相机设备的微距能力。 |
+| [Camera\_ErrorCode OH\_CaptureSession\_EnableMacro(Camera\_CaptureSession\* session, bool enabled)](capi-capture-session-h.md#oh_capturesession_enablemacro) | - | 是否启用相机设备的微距能力。启用前先通过[OH\_CaptureSession\_IsMacroSupported](capi-capture-session-h.md#oh_capturesession_ismacrosupported)接口查询是否支持微距能力。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_SetWhiteBalance(Camera\_CaptureSession\* session, int32\_t colorTemperature)](capi-capture-session-h.md#oh_capturesession_setwhitebalance) | - | 设置白平衡的色温。  设置前，建议通过[OH\_CaptureSession\_GetWhiteBalanceRange](capi-capture-session-h.md#oh_capturesession_getwhitebalancerange)获取支持配置的白平衡色温范围。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_GetColorTintRange(const Camera\_CaptureSession\* session, int32\_t \*minColorTint, int32\_t \*maxColorTint)](capi-capture-session-h.md#oh_capturesession_getcolortintrange) | - | 获取支持配置的白平衡色调调节范围。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_GetColorTint(const Camera\_CaptureSession\* session, int32\_t \*colorTint)](capi-capture-session-h.md#oh_capturesession_getcolortint) | - | 获取当前白平衡的色调调节值。 |
@@ -138,17 +138,17 @@ content_hash: sha256:a720f8b5b847c09b76eb5722d7d29c124dc0b9a11bfd8e3ba0cc79e65a5
 | [Camera\_ErrorCode OH\_CaptureSession\_GetWhiteBalance(Camera\_CaptureSession\* session, int32\_t \*colorTemperature)](capi-capture-session-h.md#oh_capturesession_getwhitebalance) | - | 获取当前白平衡色温值。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_GetWhiteBalanceMode(Camera\_CaptureSession\* session, Camera\_WhiteBalanceMode\* whiteBalanceMode)](capi-capture-session-h.md#oh_capturesession_getwhitebalancemode) | - | 获取当前的白平衡模式。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_IsWhiteBalanceModeSupported(Camera\_CaptureSession\* session, Camera\_WhiteBalanceMode whiteBalanceMode, bool\* isSupported)](capi-capture-session-h.md#oh_capturesession_iswhitebalancemodesupported) | - | 检查是否支持指定的白平衡模式。 |
-| [Camera\_ErrorCode OH\_CaptureSession\_SetWhiteBalanceMode(Camera\_CaptureSession\* session, Camera\_WhiteBalanceMode whiteBalanceMode)](capi-capture-session-h.md#oh_capturesession_setwhitebalancemode) | - | 设置白平衡模式。 |
+| [Camera\_ErrorCode OH\_CaptureSession\_SetWhiteBalanceMode(Camera\_CaptureSession\* session, Camera\_WhiteBalanceMode whiteBalanceMode)](capi-capture-session-h.md#oh_capturesession_setwhitebalancemode) | - | 设置白平衡模式。设置之前需要先检查设备是否支持指定的白平衡模式，具体方法请参考[OH\_CaptureSession\_IsWhiteBalanceModeSupported](capi-capture-session-h.md#oh_capturesession_iswhitebalancemodesupported)。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_GetWhiteBalanceRange(Camera\_CaptureSession\* session, int32\_t \*minColorTemperature, int32\_t \*maxColorTemperature)](capi-capture-session-h.md#oh_capturesession_getwhitebalancerange) | - | 获取支持配置的白平衡色温范围。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_IsControlCenterSupported(Camera\_CaptureSession\* session, bool\* isSupported)](capi-capture-session-h.md#oh_capturesession_iscontrolcentersupported) | - | 检查是否支持相机控制器。 |
-| [Camera\_ErrorCode OH\_CaptureSession\_GetSupportedEffectTypes(Camera\_CaptureSession\* session, Camera\_ControlCenterEffectType\*\* types, uint32\_t\* size)](capi-capture-session-h.md#oh_capturesession_getsupportedeffecttypes) | - | 获取相机控制器支持的效果类型。 |
-| [Camera\_ErrorCode OH\_CaptureSession\_DeleteSupportedEffectTypes(Camera\_CaptureSession\* session, Camera\_ControlCenterEffectType\* types, uint32\_t size)](capi-capture-session-h.md#oh_capturesession_deletesupportedeffecttypes) | - | 删除相机控制器效果类型列表。 |
-| [Camera\_ErrorCode OH\_CaptureSession\_EnableControlCenter(Camera\_CaptureSession\* session, bool enabled)](capi-capture-session-h.md#oh_capturesession_enablecontrolcenter) | - | 是否启用相机控制器。 |
-| [Camera\_ErrorCode OH\_CaptureSession\_RegisterControlCenterEffectStatusChangeCallback(Camera\_CaptureSession\* session, OH\_CaptureSession\_OnControlCenterEffectStatusChange controlCenterEffectStatusChange)](capi-capture-session-h.md#oh_capturesession_registercontrolcentereffectstatuschangecallback) | - | 注册相机控制器效果激活状态变化回调。 |
-| [Camera\_ErrorCode OH\_CaptureSession\_UnregisterControlCenterEffectStatusChangeCallback(Camera\_CaptureSession\* session, OH\_CaptureSession\_OnControlCenterEffectStatusChange controlCenterEffectStatusChange)](capi-capture-session-h.md#oh_capturesession_unregistercontrolcentereffectstatuschangecallback) | - | 注销相机控制器效果激活状态变化回调。 |
+| [Camera\_ErrorCode OH\_CaptureSession\_GetSupportedEffectTypes(Camera\_CaptureSession\* session, Camera\_ControlCenterEffectType\*\* types, uint32\_t\* size)](capi-capture-session-h.md#oh_capturesession_getsupportedeffecttypes) | - | 获取相机控制器支持的效果类型。通过[OH\_CaptureSession\_IsControlCenterSupported](capi-capture-session-h.md#oh_capturesession_iscontrolcentersupported)接口检查是否支持相机控制器。 |
+| [Camera\_ErrorCode OH\_CaptureSession\_DeleteSupportedEffectTypes(Camera\_CaptureSession\* session, Camera\_ControlCenterEffectType\* types, uint32\_t size)](capi-capture-session-h.md#oh_capturesession_deletesupportedeffecttypes) | - | 删除相机控制器效果类型列表。通过[OH\_CaptureSession\_IsControlCenterSupported](capi-capture-session-h.md#oh_capturesession_iscontrolcentersupported)接口检查是否支持相机控制器。 |
+| [Camera\_ErrorCode OH\_CaptureSession\_EnableControlCenter(Camera\_CaptureSession\* session, bool enabled)](capi-capture-session-h.md#oh_capturesession_enablecontrolcenter) | - | 是否启用相机控制器。通过[OH\_CaptureSession\_IsControlCenterSupported](capi-capture-session-h.md#oh_capturesession_iscontrolcentersupported)接口检查是否支持相机控制器。 |
+| [Camera\_ErrorCode OH\_CaptureSession\_RegisterControlCenterEffectStatusChangeCallback(Camera\_CaptureSession\* session, OH\_CaptureSession\_OnControlCenterEffectStatusChange controlCenterEffectStatusChange)](capi-capture-session-h.md#oh_capturesession_registercontrolcentereffectstatuschangecallback) | - | 注册相机控制器效果激活状态变化回调。通过[OH\_CaptureSession\_IsControlCenterSupported](capi-capture-session-h.md#oh_capturesession_iscontrolcentersupported)接口检查是否支持相机控制器。 |
+| [Camera\_ErrorCode OH\_CaptureSession\_UnregisterControlCenterEffectStatusChangeCallback(Camera\_CaptureSession\* session, OH\_CaptureSession\_OnControlCenterEffectStatusChange controlCenterEffectStatusChange)](capi-capture-session-h.md#oh_capturesession_unregistercontrolcentereffectstatuschangecallback) | - | 注销相机控制器效果激活状态变化回调。通过[OH\_CaptureSession\_IsControlCenterSupported](capi-capture-session-h.md#oh_capturesession_iscontrolcentersupported)接口检查是否支持相机控制器。 |
 | [typedef void (\*OH\_CaptureSession\_OnMacroStatusChange)(Camera\_CaptureSession\* session, bool isMacroDetected)](capi-capture-session-h.md#oh_capturesession_onmacrostatuschange) | OH\_CaptureSession\_OnMacroStatusChange | 相机会话微距状态改变回调。 |
-| [Camera\_ErrorCode OH\_CaptureSession\_RegisterMacroStatusChangeCallback(Camera\_CaptureSession\* session, OH\_CaptureSession\_OnMacroStatusChange macroStatusChange)](capi-capture-session-h.md#oh_capturesession_registermacrostatuschangecallback) | - | 注册相机会话微距状态改变回调函数。 |
-| [Camera\_ErrorCode OH\_CaptureSession\_UnregisterMacroStatusChangeCallback(Camera\_CaptureSession\* session, OH\_CaptureSession\_OnMacroStatusChange macroStatusChange)](capi-capture-session-h.md#oh_capturesession_unregistermacrostatuschangecallback) | - | 取消注册相机会话微距状态改变回调函数。 |
+| [Camera\_ErrorCode OH\_CaptureSession\_RegisterMacroStatusChangeCallback(Camera\_CaptureSession\* session, OH\_CaptureSession\_OnMacroStatusChange macroStatusChange)](capi-capture-session-h.md#oh_capturesession_registermacrostatuschangecallback) | - | 注册相机会话微距状态改变回调函数。可以通过[OH\_CaptureSession\_IsMacroSupported](capi-capture-session-h.md#oh_capturesession_ismacrosupported)接口查询是否支持微距能力。 |
+| [Camera\_ErrorCode OH\_CaptureSession\_UnregisterMacroStatusChangeCallback(Camera\_CaptureSession\* session, OH\_CaptureSession\_OnMacroStatusChange macroStatusChange)](capi-capture-session-h.md#oh_capturesession_unregistermacrostatuschangecallback) | - | 取消注册相机会话微距状态改变回调函数。可以通过[OH\_CaptureSession\_IsMacroSupported](capi-capture-session-h.md#oh_capturesession_ismacrosupported)接口查询是否支持微距能力。 |
 | [typedef void (\*OH\_CaptureSession\_OnIsoChange)(Camera\_CaptureSession\* session, int32\_t isoValue)](capi-capture-session-h.md#oh_capturesession_onisochange) | OH\_CaptureSession\_OnIsoChange | 用于在相机会话中监听感光度（ISO）变化的回调函数。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_RegisterIsoChangeCallback(Camera\_CaptureSession\* session, OH\_CaptureSession\_OnIsoChange isoChange)](capi-capture-session-h.md#oh_capturesession_registerisochangecallback) | - | 注册监听感光度（ISO）改变的事件回调。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_UnregisterIsoChangeCallback(Camera\_CaptureSession\* session, OH\_CaptureSession\_OnIsoChange isoChange)](capi-capture-session-h.md#oh_capturesession_unregisterisochangecallback) | - | 取消注册监听感光度（ISO）改变的事件回调。 |
@@ -157,7 +157,7 @@ content_hash: sha256:a720f8b5b847c09b76eb5722d7d29c124dc0b9a11bfd8e3ba0cc79e65a5
 | [Camera\_ErrorCode OH\_CaptureSession\_GetSupportedOISBiasRange(const Camera\_CaptureSession\* session, OH\_Camera\_OISAxes oisAxis, float\* minBias, float\* maxBias, float\* step)](capi-capture-session-h.md#oh_capturesession_getsupportedoisbiasrange) | - | 获取指定光学防抖轴支持的偏移范围。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_GetCurrentOISMode(const Camera\_CaptureSession\* session, OH\_Camera\_OISMode\* oisMode)](capi-capture-session-h.md#oh_capturesession_getcurrentoismode) | - | 获取当前光学防抖（OIS）模式。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_GetCurrentCustomOISBias(const Camera\_CaptureSession\* session, float\* pitchBias, float\* yawBias)](capi-capture-session-h.md#oh_capturesession_getcurrentcustomoisbias) | - | 获取所有光学防抖轴当前的自定义偏移值。 |
-| [Camera\_ErrorCode OH\_CaptureSession\_SetOISMode(const Camera\_CaptureSession\* session, OH\_Camera\_OISMode oisMode)](capi-capture-session-h.md#oh_capturesession_setoismode) | - | 设置光学防抖（OIS）模式。 |
+| [Camera\_ErrorCode OH\_CaptureSession\_SetOISMode(const Camera\_CaptureSession\* session, OH\_Camera\_OISMode oisMode)](capi-capture-session-h.md#oh_capturesession_setoismode) | - | 设置光学防抖（OIS）模式。设置防抖前先通过方法[OH\_CaptureSession\_IsOISModeSupported](capi-capture-session-h.md#oh_capturesession_isoismodesupported)查询是否支持要设置的光学防抖模式。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_SetOISModeCustom(const Camera\_CaptureSession\* session, float pitchBias, float yawBias)](capi-capture-session-h.md#oh_capturesession_setoismodecustom) | - | 为对应轴设置自定义光学防抖偏移值。设置前，建议通过[OH\_CaptureSession\_GetSupportedOISBiasRange](capi-capture-session-h.md#oh_capturesession_getsupportedoisbiasrange)获取对应轴支持的偏移范围。 |
 | [typedef void (\*OH\_CaptureSession\_OnExposureStateChange)(void\* context, OH\_Camera\_ExposureState exposureState)](capi-capture-session-h.md#oh_capturesession_onexposurestatechange) | OH\_CaptureSession\_OnExposureStateChange | 定义曝光状态变更时的回调函数。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_RegisterExposureStateChangeCallback(const Camera\_CaptureSession\* session, void\* context, OH\_CaptureSession\_OnExposureStateChange callback)](capi-capture-session-h.md#oh_capturesession_registerexposurestatechangecallback) | - | 注册曝光状态变化的回调。注册此回调后，当捕获会话中的曝光状态发生变化时，将调用该回调。 |
@@ -165,8 +165,11 @@ content_hash: sha256:a720f8b5b847c09b76eb5722d7d29c124dc0b9a11bfd8e3ba0cc79e65a5
 | [Camera\_ErrorCode OH\_CaptureSession\_GetZoomPointInfos(const Camera\_CaptureSession\* session, uint32\_t\* size, OH\_Camera\_ZoomPointInfo\*\* zoomPointInfo)](capi-capture-session-h.md#oh_capturesession_getzoompointinfos) | - | 获取变焦点信息。  需要通过调用[OH\_CaptureSession\_DeleteZoomPointInfos](capi-capture-session-h.md#oh_capturesession_deletezoompointinfos)来释放变焦点信息的内存。 |
 | [Camera\_ErrorCode OH\_CaptureSession\_DeleteZoomPointInfos(const Camera\_CaptureSession\* session, OH\_Camera\_ZoomPointInfo\* zoomPointInfo)](capi-capture-session-h.md#oh_capturesession_deletezoompointinfos) | - | 删除变焦点信息。 |
 | [bool OH\_CaptureSession\_IsLockFocusTrackingSupported(const Camera\_CaptureSession\* session)](capi-capture-session-h.md#oh_capturesession_islockfocustrackingsupported) | - | 查询是否支持锁定焦点跟踪。 |
-| [Camera\_ErrorCode OH\_CaptureSession\_LockFocusTracking(Camera\_CaptureSession\* session, Camera\_Point focusPoint)](capi-capture-session-h.md#oh_capturesession_lockfocustracking) | - | 锁定焦点跟踪，可通过[OH\_CaptureSession\_UnlockFocusTracking](capi-capture-session-h.md#oh_capturesession_unlockfocustracking)解锁。 |
-| [Camera\_ErrorCode OH\_CaptureSession\_UnlockFocusTracking(Camera\_CaptureSession\* session)](capi-capture-session-h.md#oh_capturesession_unlockfocustracking) | - | 解锁焦点跟踪。 |
+| [Camera\_ErrorCode OH\_CaptureSession\_LockFocusTracking(Camera\_CaptureSession\* session, Camera\_Point focusPoint)](capi-capture-session-h.md#oh_capturesession_lockfocustracking) | - | 锁定焦点跟踪，可通过[OH\_CaptureSession\_UnlockFocusTracking](capi-capture-session-h.md#oh_capturesession_unlockfocustracking)解锁。在使用焦点跟踪前可以通过[OH\_CaptureSession\_IsLockFocusTrackingSupported](capi-capture-session-h.md#oh_capturesession_islockfocustrackingsupported)接口查询是否支持焦点跟踪。 |
+| [Camera\_ErrorCode OH\_CaptureSession\_UnlockFocusTracking(Camera\_CaptureSession\* session)](capi-capture-session-h.md#oh_capturesession_unlockfocustracking) | - | 解锁焦点跟踪。可以通过[OH\_CaptureSession\_IsLockFocusTrackingSupported](capi-capture-session-h.md#oh_capturesession_islockfocustrackingsupported)接口查询是否支持焦点跟踪。 |
+| [typedef void (\*OH\_CaptureSession\_OnCameraDeviceSwitchRequest)(void \*userContext, Camera\_CaptureSession \*userSession, Camera\_Device \*userDevice)](capi-capture-session-h.md#oh_capturesession_oncameradeviceswitchrequest) | OH\_CaptureSession\_OnCameraDeviceSwitchRequest | 定义镜头切换请求发生时调用的回调函数。 |
+| [Camera\_ErrorCode OH\_CaptureSession\_RegisterCameraDeviceSwitchRequestCallback(const Camera\_CaptureSession \*session, void \*context, OH\_CaptureSession\_OnCameraDeviceSwitchRequest callback)](capi-capture-session-h.md#oh_capturesession_registercameradeviceswitchrequestcallback) | - | 注册镜头切换请求的回调。注册此回调后，当捕获会话中发生镜头切换请求时，将调用该回调。 |
+| [Camera\_ErrorCode OH\_CaptureSession\_UnregisterCameraDeviceSwitchRequestCallback(const Camera\_CaptureSession \*session, void \*context, OH\_CaptureSession\_OnCameraDeviceSwitchRequest callback)](capi-capture-session-h.md#oh_capturesession_unregistercameradeviceswitchrequestcallback) | - | 注销镜头切换请求的回调。 |
 
 ## 函数说明
 
@@ -409,7 +412,7 @@ Camera_ErrorCode OH_CaptureSession_SetSessionMode(Camera_CaptureSession* session
 | 参数项 | 描述 |
 | --- | --- |
 | [Camera\_CaptureSession](capi-oh-camera-camera-capturesession.md)\* session | Camera\_CaptureSession实例。 |
-| [Camera\_SceneMode](capi-camera-h.md#camera_scenemode) sceneMode | 相机模式。 |
+| [Camera\_SceneMode](capi-camera-h.md#camera_scenemode) sceneMode | 相机模式。推荐使用[OH\_CameraManager\_GetSupportedSceneModes](capi-camera-manager-h.md#oh_cameramanager_getsupportedscenemodes)获取Camera\_SceneMode。 |
 
 **返回：**
 
@@ -871,7 +874,7 @@ Camera_ErrorCode OH_CaptureSession_GetFlashMode(Camera_CaptureSession* session, 
 
 **描述**
 
-获取当前闪光灯模式。
+获取当前闪光灯模式。在获取当前闪光灯模式前，需使用[OH\_CaptureSession\_HasFlash](capi-capture-session-h.md#oh_capturesession_hasflash)接口检查设备是否有闪光灯。
 
 **起始版本：** 11
 
@@ -905,7 +908,7 @@ Camera_ErrorCode OH_CaptureSession_SetFlashMode(Camera_CaptureSession* session, 
 | 参数项 | 描述 |
 | --- | --- |
 | [Camera\_CaptureSession](capi-oh-camera-camera-capturesession.md)\* session | Camera\_CaptureSession实例。 |
-| [Camera\_FlashMode](capi-camera-h.md#camera_flashmode) flashMode | 要设置的闪光灯模式。 |
+| [Camera\_FlashMode](capi-camera-h.md#camera_flashmode) flashMode | 要设置的闪光灯模式。在设置闪光灯模式前需先使用[OH\_CaptureSession\_HasFlash](capi-capture-session-h.md#oh_capturesession_hasflash)接口检查设备是否有闪光灯，再使用[OH\_CaptureSession\_IsFlashModeSupported](capi-capture-session-h.md#oh_capturesession_isflashmodesupported)接口检查设置的闪光灯模式是否支持。 |
 
 **返回：**
 
@@ -1041,7 +1044,7 @@ Camera_ErrorCode OH_CaptureSession_SetExposureMode(Camera_CaptureSession* sessio
 
 **描述**
 
-设置曝光模式。
+设置曝光模式。进行设置之前，需要先使用方法[OH\_CaptureSession\_IsExposureModeSupported](capi-capture-session-h.md#oh_capturesession_isexposuremodesupported)检查设备是否支持指定的曝光模式。
 
 **起始版本：** 11
 
@@ -1167,7 +1170,7 @@ Camera_ErrorCode OH_CaptureSession_SetExposureMeteringMode(const Camera_CaptureS
 
 **描述**
 
-设置曝光测光模式。
+设置曝光测光模式。进行设置之前，需要先使用方法[OH\_CaptureSession\_IsExposureMeteringModeSupported](capi-capture-session-h.md#oh_capturesession_isexposuremeteringmodesupported)检查设备是否支持指定的曝光测光模式。
 
 **起始版本：** 24
 
@@ -1477,7 +1480,7 @@ Camera_ErrorCode OH_CaptureSession_SetExposureDuration(const Camera_CaptureSessi
 
 **描述**
 
-设置曝光时间。单位：微秒。若传感器无法精确使用该曝光时间，系统会自动调整为最近的支持值，并通过[OH\_CaptureSession\_OnExposureDurationChange](capi-capture-session-h.md#oh_capturesession_onexposuredurationchange)回调通知。仅在[ExposureMode](capi-camera-h.md#camera_exposuremode).EXPOSURE\_MODE\_MANUAL手动曝光模式下设置生效。
+设置曝光时间。单位：微秒（μs）。若传感器无法精确使用该曝光时间，系统会自动调整为最近的支持值，并通过[OH\_CaptureSession\_OnExposureDurationChange](capi-capture-session-h.md#oh_capturesession_onexposuredurationchange)回调通知。仅在[ExposureMode](capi-camera-h.md#camera_exposuremode).EXPOSURE\_MODE\_MANUAL手动曝光模式下设置生效。设置exposureDuration前请通过[getSupportedExposureDurationRange](capi-capture-session-h.md#oh_capturesession_getsupportedexposuredurationrange)接口获取支持的曝光时长范围。
 
 **起始版本：** 24
 
@@ -1647,7 +1650,7 @@ Camera_ErrorCode OH_CaptureSession_SetFocusMode(Camera_CaptureSession* session, 
 
 **描述**
 
-设置聚焦模式。
+设置聚焦模式。设置聚焦模式前，先通过方法[OH\_CaptureSession\_IsFocusModeSupported](capi-capture-session-h.md#oh_capturesession_isfocusmodesupported)检查是否支持要设置的聚焦模式。
 
 **起始版本：** 11
 
@@ -1851,7 +1854,7 @@ Camera_ErrorCode OH_CaptureSession_SetVideoStabilizationMode(Camera_CaptureSessi
 
 **描述**
 
-设置录像防抖模式。
+设置录像防抖模式。设置前需要先通过方法[isVideoStabilizationModeSupported](arkts-apis-camera-stabilizationquery.md#isvideostabilizationmodesupported11)检查是否支持要设置的录像防抖模式。
 
 **起始版本：** 11
 
@@ -2159,7 +2162,7 @@ Camera_ErrorCode OH_CaptureSession_SetFocusDistance(const Camera_CaptureSession*
 
 **描述**
 
-设置对焦距离。取值范围为[0.0, 1.0]。0.0表示镜头可对焦的最近距离；1.0表示最远距离。默认值为1.0。
+设置对焦距离。取值范围为[0.0, 1.0]。0.0表示镜头可对焦的最近距离；1.0表示最远距离。默认值为1.0。设置前可以通过[OH\_CaptureSession\_IsFocusDistanceSupported](capi-capture-session-h.md#oh_capturesession_isfocusdistancesupported)查询是否支持对焦距离的设置。
 
 **起始版本：** 24
 
@@ -2338,7 +2341,7 @@ Camera_ErrorCode OH_CaptureSession_RegisterAutoDeviceSwitchStatusCallback(Camera
 
 **描述**
 
-注册设备切换事件回调。
+注册设备切换事件回调。可以通过[OH\_CaptureSession\_IsAutoDeviceSwitchSupported](capi-capture-session-h.md#oh_capturesession_isautodeviceswitchsupported)接口查询是否支持自动设备切换能力。
 
 **起始版本：** 13
 
@@ -2363,7 +2366,7 @@ Camera_ErrorCode OH_CaptureSession_UnregisterAutoDeviceSwitchStatusCallback(Came
 
 **描述**
 
-注销设备切换事件回调。
+注销设备切换事件回调。可以通过[OH\_CaptureSession\_IsAutoDeviceSwitchSupported](capi-capture-session-h.md#oh_capturesession_isautodeviceswitchsupported)接口查询是否支持自动设备切换能力。
 
 **起始版本：** 13
 
@@ -2540,7 +2543,7 @@ Camera_ErrorCode OH_CaptureSession_EnableMacro(Camera_CaptureSession* session, b
 
 **描述**
 
-是否启用相机设备的微距能力。
+是否启用相机设备的微距能力。启用前先通过[OH\_CaptureSession\_IsMacroSupported](capi-capture-session-h.md#oh_capturesession_ismacrosupported)接口查询是否支持微距能力。
 
 **起始版本：** 19
 
@@ -2744,7 +2747,7 @@ Camera_ErrorCode OH_CaptureSession_SetWhiteBalanceMode(Camera_CaptureSession* se
 
 **描述**
 
-设置白平衡模式。
+设置白平衡模式。设置之前需要先检查设备是否支持指定的白平衡模式，具体方法请参考[OH\_CaptureSession\_IsWhiteBalanceModeSupported](capi-capture-session-h.md#oh_capturesession_iswhitebalancemodesupported)。
 
 **起始版本：** 20
 
@@ -2820,7 +2823,7 @@ Camera_ErrorCode OH_CaptureSession_GetSupportedEffectTypes(Camera_CaptureSession
 
 **描述**
 
-获取相机控制器支持的效果类型。
+获取相机控制器支持的效果类型。通过[OH\_CaptureSession\_IsControlCenterSupported](capi-capture-session-h.md#oh_capturesession_iscontrolcentersupported)接口检查是否支持相机控制器。
 
 **起始版本：** 20
 
@@ -2846,7 +2849,7 @@ Camera_ErrorCode OH_CaptureSession_DeleteSupportedEffectTypes(Camera_CaptureSess
 
 **描述**
 
-删除相机控制器效果类型列表。
+删除相机控制器效果类型列表。通过[OH\_CaptureSession\_IsControlCenterSupported](capi-capture-session-h.md#oh_capturesession_iscontrolcentersupported)接口检查是否支持相机控制器。
 
 **起始版本：** 20
 
@@ -2872,7 +2875,7 @@ Camera_ErrorCode OH_CaptureSession_EnableControlCenter(Camera_CaptureSession* se
 
 **描述**
 
-是否启用相机控制器。
+是否启用相机控制器。通过[OH\_CaptureSession\_IsControlCenterSupported](capi-capture-session-h.md#oh_capturesession_iscontrolcentersupported)接口检查是否支持相机控制器。
 
 **起始版本：** 20
 
@@ -2897,7 +2900,7 @@ Camera_ErrorCode OH_CaptureSession_RegisterControlCenterEffectStatusChangeCallba
 
 **描述**
 
-注册相机控制器效果激活状态变化回调。
+注册相机控制器效果激活状态变化回调。通过[OH\_CaptureSession\_IsControlCenterSupported](capi-capture-session-h.md#oh_capturesession_iscontrolcentersupported)接口检查是否支持相机控制器。
 
 **起始版本：** 20
 
@@ -2922,7 +2925,7 @@ Camera_ErrorCode OH_CaptureSession_UnregisterControlCenterEffectStatusChangeCall
 
 **描述**
 
-注销相机控制器效果激活状态变化回调。
+注销相机控制器效果激活状态变化回调。通过[OH\_CaptureSession\_IsControlCenterSupported](capi-capture-session-h.md#oh_capturesession_iscontrolcentersupported)接口检查是否支持相机控制器。
 
 **起始版本：** 20
 
@@ -2966,7 +2969,7 @@ Camera_ErrorCode OH_CaptureSession_UnregisterControlCenterEffectStatusChangeCall
 
 **描述**
 
-注册相机会话微距状态改变回调函数。
+注册相机会话微距状态改变回调函数。可以通过[OH\_CaptureSession\_IsMacroSupported](capi-capture-session-h.md#oh_capturesession_ismacrosupported)接口查询是否支持微距能力。
 
 **起始版本：** 20
 
@@ -2991,7 +2994,7 @@ Camera_ErrorCode OH_CaptureSession_UnregisterControlCenterEffectStatusChangeCall
 
 **描述**
 
-取消注册相机会话微距状态改变回调函数。
+取消注册相机会话微距状态改变回调函数。可以通过[OH\_CaptureSession\_IsMacroSupported](capi-capture-session-h.md#oh_capturesession_ismacrosupported)接口查询是否支持微距能力。
 
 **起始版本：** 20
 
@@ -3216,7 +3219,7 @@ Camera_ErrorCode OH_CaptureSession_SetOISMode(const Camera_CaptureSession* sessi
 
 **描述**
 
-设置光学防抖（OIS）模式。
+设置光学防抖（OIS）模式。设置防抖前先通过方法[OH\_CaptureSession\_IsOISModeSupported](capi-capture-session-h.md#oh_capturesession_isoismodesupported)查询是否支持要设置的光学防抖模式。
 
 **起始版本：** 24
 
@@ -3417,7 +3420,7 @@ Camera_ErrorCode OH_CaptureSession_LockFocusTracking(Camera_CaptureSession* sess
 
 **描述**
 
-锁定焦点跟踪，可通过[OH\_CaptureSession\_UnlockFocusTracking](capi-capture-session-h.md#oh_capturesession_unlockfocustracking)解锁。
+锁定焦点跟踪，可通过[OH\_CaptureSession\_UnlockFocusTracking](capi-capture-session-h.md#oh_capturesession_unlockfocustracking)解锁。在使用焦点跟踪前可以通过[OH\_CaptureSession\_IsLockFocusTrackingSupported](capi-capture-session-h.md#oh_capturesession_islockfocustrackingsupported)接口查询是否支持焦点跟踪。
 
 **起始版本：** 26.0.0
 
@@ -3442,7 +3445,7 @@ Camera_ErrorCode OH_CaptureSession_UnlockFocusTracking(Camera_CaptureSession* se
 
 **描述**
 
-解锁焦点跟踪。
+解锁焦点跟踪。可以通过[OH\_CaptureSession\_IsLockFocusTrackingSupported](capi-capture-session-h.md#oh_capturesession_islockfocustrackingsupported)接口查询是否支持焦点跟踪。
 
 **起始版本：** 26.0.0
 
@@ -3457,3 +3460,81 @@ Camera_ErrorCode OH_CaptureSession_UnlockFocusTracking(Camera_CaptureSession* se
 | 类型 | 说明 |
 | --- | --- |
 | [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功。  CAMERA\_INVALID\_ARGUMENT：参数丢失或者参数不正确。  CAMERA\_SERVICE\_FATAL\_ERROR：相机服务异常。 |
+
+### OH\_CaptureSession\_OnCameraDeviceSwitchRequest()
+
+```c
+typedef void (*OH_CaptureSession_OnCameraDeviceSwitchRequest)(void *userContext, Camera_CaptureSession *userSession, Camera_Device *userDevice)
+```
+
+**描述**
+
+定义镜头切换请求发生时调用的回调函数。
+
+**起始版本：** 26.0.1
+
+**资源释放：** 调用[OH\_CaptureSession\_Release](capi-capture-session-h.md#oh_capturesession_release)释放userSession、调用[OH\_CameraManager\_DeleteCameraDevices](capi-camera-manager-h.md#oh_cameramanager_deletecameradevices)释放userDevice。
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| void\* userContext | [出参]指向自定义上下文的指针。 |
+| [Camera\_CaptureSession](capi-oh-camera-camera-capturesession.md)\* userSession | [出参]指向Camera\_CaptureSession实例的指针。 |
+| [Camera\_Device](capi-oh-camera-camera-device.md)\* userDevice | [出参]指向Camera\_Device实例的指针。 |
+
+### OH\_CaptureSession\_RegisterCameraDeviceSwitchRequestCallback()
+
+```c
+Camera_ErrorCode OH_CaptureSession_RegisterCameraDeviceSwitchRequestCallback(const Camera_CaptureSession *session, void *context, OH_CaptureSession_OnCameraDeviceSwitchRequest callback)
+```
+
+**描述**
+
+注册镜头切换请求的回调。注册此回调后，当捕获会话中发生镜头切换请求时，将调用该回调。
+
+**起始版本：** 26.0.1
+
+**参考：** [OH\_CaptureSession\_OnCameraDeviceSwitchRequest](capi-capture-session-h.md#oh_capturesession_oncameradeviceswitchrequest)
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| const [Camera\_CaptureSession](capi-oh-camera-camera-capturesession.md)\* session | [入参]Camera\_CaptureSession实例。 |
+| void\* context | [入参]指向自定义上下文的指针。 |
+| [OH\_CaptureSession\_OnCameraDeviceSwitchRequest](capi-capture-session-h.md#oh_capturesession_oncameradeviceswitchrequest) callback | [入参]表示要注册的镜头切换请求回调。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功。  CAMERA\_INVALID\_ARGUMENT：参数缺失或参数类型不正确。 |
+
+### OH\_CaptureSession\_UnregisterCameraDeviceSwitchRequestCallback()
+
+```c
+Camera_ErrorCode OH_CaptureSession_UnregisterCameraDeviceSwitchRequestCallback(const Camera_CaptureSession *session, void *context, OH_CaptureSession_OnCameraDeviceSwitchRequest callback)
+```
+
+**描述**
+
+注销镜头切换请求的回调。
+
+**起始版本：** 26.0.1
+
+**参考：** [OH\_CaptureSession\_OnCameraDeviceSwitchRequest](capi-capture-session-h.md#oh_capturesession_oncameradeviceswitchrequest)
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| const [Camera\_CaptureSession](capi-oh-camera-camera-capturesession.md)\* session | [入参]Camera\_CaptureSession实例。 |
+| void\* context | [入参]指向注册回调时调用方指定的自定义上下文的指针。 |
+| [OH\_CaptureSession\_OnCameraDeviceSwitchRequest](capi-capture-session-h.md#oh_capturesession_oncameradeviceswitchrequest) callback | [入参]表示要注销的镜头切换请求回调。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [Camera\_ErrorCode](capi-camera-h.md#camera_errorcode) | CAMERA\_OK：方法调用成功。  CAMERA\_INVALID\_ARGUMENT：参数缺失或参数类型不正确。 |

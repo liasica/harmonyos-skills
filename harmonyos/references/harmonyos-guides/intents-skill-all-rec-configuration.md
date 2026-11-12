@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-skill
 title: 任务执行类场景方案（配置文件接入方式）
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 技能调用方案 > 接入方案 > 任务执行类场景方案（配置文件接入方式）
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:09+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e6622cab8240c7fa8e21d7b25e40e8a373806308b0075a3a1f8f370422a6e8bc
+scraped_at: 2026-11-12T09:52:44+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:121e054493320a4572e40e1c53eb43902ba7bca568faaaf306985ef19fe1a8a2
 ---
 
 ## 方案概述
 
 开发者需要按照意图定义，进行意图注册并实现意图调用；用户通过对小艺对话进行自然语言输入，小艺理解语义转换成意图调用（含意图参数），执行意图调用实现对应交互体验。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/ACIExI3WSO-7K-oooMuboQ/zh-cn_image_0000002809051383.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/PR8eCTVAQf-z4soeNVICXA/zh-cn_image_0000002786360736.png)
 
 ## 意图声明
 
@@ -155,7 +155,7 @@ import { insightIntent, InsightIntentExecutor, UIExtensionContentSession } from 
  */
 export default class IntentExecutorImpl extends InsightIntentExecutor {
   private static readonly LOAD_BLUETOOTH_CARD: string = 'LoadBluetoothCard';
-  
+
   /**
    * override 执行前台UI扩展意图
    *

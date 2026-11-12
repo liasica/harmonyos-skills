@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: 系统后台切应用前台接续下载资源包
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏资源加速服务 > 资源包后台下载 > 系统后台切应用前台接续下载资源包
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:20+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ffbef5ba8adf218ee1b21445d4fd8b00768d3035f7fd2ad2ac0625a1b6ff7899
+scraped_at: 2026-11-12T09:52:14+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:6d70c8981d026d64c949c8fea4c6e541d645f8d776fd26b49fd0cda56e3e7246
 ---
 
 系统后台静默下载过程中启动游戏，应用前台将接管系统后台下载任务，资源包下载任务将在应用前台接续执行。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/X3AW2T6PRwOtDMYU3Lxu5Q/zh-cn_image_0000002809010807.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/0x9EYOQOSr-B_d2LcYJJ7g/zh-cn_image_0000002815559523.png)
 
 1. 用户在应用市场安装游戏后、用户在应用市场更新游戏后、系统检测到用户设备符合闲时条件时，游戏资源加速服务开启资源包后台下载。
 2. 游戏资源加速服务携带manifestUrl资源清单，向资源加速ExtensionAbility获取资源包下载任务列表。
@@ -119,24 +119,24 @@ content_hash: sha256:ffbef5ba8adf218ee1b21445d4fd8b00768d3035f7fd2ad2ac0625a1b6f
    5. 游戏调用[on('progress')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageronprogress)方法，监听资源包下载进度。游戏调用[on('pause')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageronpause)方法，监听下载任务是否暂停。游戏调用[on('complete')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageroncomplete)方法，监听资源是否成功下载。游戏调用[on('fail')](../harmonyos-references/graphics-accelerate-assetdownloadmanager.md#assetdownloadmanageronfail)方法，监听下载任务是否失败。
 
       ```typescript
+      // assetDownloadManager.on('progress').
       onProgressCallback: (progressArray: assetDownloadManager.DownloadProgressInfo[]) => void = (progressArray) => {
         hilog.info(DOMAINID, TAG, `onProgressCallback progressArray length: ${progressArray.length}`);
         // 添加资源包下载进度处理逻辑。
         // ...
       }
-
+      // assetDownloadManager.on('pause').
       onPauseCallback: (downloadTaskInfo: assetDownloadManager.AssetDownloadTask) => void = (downloadTaskInfo) => {
         hilog.info(DOMAINID, TAG, `task identifier = ${downloadTaskInfo.config.identifier} has paused.`);
         // 添加资源包下载暂停处理逻辑。
-        // ...
       }
-
+      // assetDownloadManager.on('complete').
       onCompleteCallback: (completeInfo: assetDownloadManager.DownloadCompletedInfo) => void = async (completeInfo) => {
         hilog.info(DOMAINID, TAG, `task identifier = ${completeInfo.downloadTask.config.identifier} has completed.`);
         // 添加资源包下载完成处理逻辑。
         // ...
       }
-
+      // assetDownloadManager.on('fail').
       onFailedCallback: (failedInfo: assetDownloadManager.DownloadFailedInfo) => void = async (failedInfo) => {
         hilog.info(DOMAINID, TAG, `task identifier = ${failedInfo.downloadTask.config.identifier} has failed.`);
         // 添加资源包下载失败处理逻辑。

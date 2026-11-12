@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-
 title: 错误码
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > 附录 > 错误码
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:37+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:c74ac8bea5bd090a4eb3e0d19d112bd4bee4b0612d801802b5d8581a45c7fda3
+scraped_at: 2026-11-12T09:53:10+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0421aea984dbee3cdb3147a0d3b32015de70d02f68dc90025fb166c05091a979
 ---
 
 ## 00701101 应用拉起失败
@@ -461,6 +461,24 @@ Source file not found.
 **处理步骤**
 
 检查被录制的应用与当前DevEco Studio窗口打开的应用工程是否匹配。
+
+## 00703207 Native Leaks快照文件丢失
+
+**错误信息**
+
+The Native Leaks snapshot file is missing, so the exported file does not contain any Native Leaks data.
+
+**错误描述**
+
+Native Leaks快照文件丢失，导出的会话文件不包含Native Leaks泄漏数据。
+
+**可能原因**
+
+快照文件被删除或文件名被修改。
+
+**处理步骤**
+
+将文件名还原成标准格式、还原被删除的快照文件或重新录制Native Leaks泳道数据。
 
 ## 00703301 结束录制失败
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.form.formBindingData (卡片数据绑定类)"
 breadcrumb: API参考 > 应用框架 > Form Kit（卡片开发服务） > ArkTS API > @ohos.app.form.formBindingData (卡片数据绑定类)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:32+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b5f796e932a5e2382b6b69a571bdafc23c7b87f5380a23cf02b3804958a5cdff
+scraped_at: 2026-11-12T09:55:08+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:fa0109a7153a5bf4d715121b32a2a12701f3c318b1074d4893ae8181ee2d1951
 ---
 
 卡片数据绑定模块提供卡片数据绑定的能力，支持创建FormBindingData对象并设置卡片展示数据。适用于卡片数据更新、图片数据传递等场景，能够帮助开发者便捷地管理卡片展示内容，提升卡片数据管理的效率。
@@ -47,6 +47,7 @@ FormBindingData对象的属性定义。
 | --- | --- | --- | --- | --- |
 | data | Object | 否 | 否 | 卡片要展示的数据。可以是包含若干键值对的Object或者JSON格式的字符串。 |
 | proxies10+ | Array<[ProxyData](js-apis-app-form-formbindingdata.md#proxydata10)> | 否 | 是 | 卡片代理刷新的订阅信息，配置后会订阅代理刷新消息。默认为空数组，表示不订阅代理刷新消息。当需要使用卡片代理刷新功能时传入此参数，不传入时默认为空数组（不使用代理刷新）。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| isSupportMoreImages | boolean | 否 | 是 | 是否支持更多图片数据。在卡片数据使用共享内存时，设置值为false，最多支持正常显示的图片是20张；设置值为true时，最多支持正常显示的图片是30张。更多图片有数据总量超过10MB的风险，导致卡片数据更新失败。  默认值：false。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。 |
 
 ## formBindingData.createFormBindingData
 
@@ -118,6 +119,77 @@ struct Index {
     Button('createFormBindingData')
       .onClick((event: ClickEvent) => {
         this.createFormBindingData();
+      })
+  }
+}
+```
+
+## formBindingData.createFormBindingDataEx
+
+createFormBindingDataEx(obj?: Object | string): FormBindingData
+
+创建一个FormBindingData对象。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Ability.Form
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| obj | Object | string | 否 | 卡片要展示的数据，默认为空字符串。可以是包含若干键值对的Object或者JSON格式的字符串。其中图片数据以formImages作为标识，内容为图片标识与图片文件描述符的键值对{'formImages': {'key1': fd1, 'key2': fd2}}。  **说明：** 在[卡片刷新](../harmonyos-guides/arkts-ui-widget-interaction-overview.md)过程中，卡片UI通过[@LocalStorageProp](../harmonyos-guides/arkts-localstorage.md#localstorageprop)接收卡片数据时，FormBindingData对象会序列化，即卡片数据会转换成string类型。如果卡片刷新的数据通过共享内存更新，刷新数据总大小不超过10MB，刷新图片数量不超过30张，超出限制的图片会显示异常。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [FormBindingData](js-apis-app-form-formbindingdata.md#formbindingdata) | 基于传入数据创建的FormBindingData对象，isSupportMoreImages为true。 |
+
+**示例：**
+
+```ts
+import { formBindingData } from '@kit.FormKit';
+import { fileIo } from '@kit.CoreFileKit';
+import { common } from '@kit.AbilityKit';
+
+@Entry
+@Component
+struct Index {
+  content = this.getUIContext().getHostContext() as common.UIAbilityContext;
+  pathDir: string = this.content.filesDir;
+
+  createFormBindingDataEx() {
+    let filePath = this.pathDir + "/form.png";
+    let fd: number = -1;
+    try {
+      fd = fileIo.openSync(filePath, fileIo.OpenMode.READ_ONLY).fd;
+      let formImagesParam: Record<string, number> = {
+        'image': fd
+      };
+      let createFormBindingDataExParam: Record<string, string | Record<string, number>> = {
+        'name': '21°',
+        'imgSrc': 'image',
+        'formImages': formImagesParam
+      };
+      let formBindingDataObj = formBindingData.createFormBindingDataEx(createFormBindingDataExParam);
+    } catch (error) {
+      console.error(`catch error, code: ${(error as BusinessError).code}, message: ${(error as BusinessError).message}`);
+    } finally {
+      if (fd !== -1) {
+        fileIo.closeSync(fd);
+      }
+    }
+  }
+
+  build() {
+    Button('createFormBindingDataEx')
+      .onClick((event: ClickEvent) => {
+        this.createFormBindingDataEx();
       })
   }
 }

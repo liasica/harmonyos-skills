@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Progress
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 信息展示 > Progress
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:06+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:2825df22ba8e357fd29333ec3f0d85c3debb00810e043710db01f81598691037
+scraped_at: 2026-11-12T09:54:21+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a729159c22b50bcaba8eb45b7563c62df20b55145d07c5b170b6cc58a56d2d15
 ---
 
 进度条组件，用于显示内容加载或操作处理等进度。支持线性、环形、圆形、胶囊等多种样式，可自定义颜色、渐变效果和动效，适用于文件下载、数据加载、任务处理等需要展示进度状态的场景。通过丰富的样式与动效配置，可快速实现进度可视化，提升用户体验。
@@ -95,13 +95,13 @@ Progress(options: ProgressOptions)
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
-| 名称 | 类型 |
-| --- | --- |
-| [ProgressType.Linear] | [LinearStyleOptions](ts-basic-components-progress.md#linearstyleoptions10) | [ProgressStyleOptions](ts-basic-components-progress.md#progressstyleoptions8) |
-| [ProgressType.Ring] | [RingStyleOptions](ts-basic-components-progress.md#ringstyleoptions10) | [ProgressStyleOptions](ts-basic-components-progress.md#progressstyleoptions8) |
-| [ProgressType.Eclipse] | [EclipseStyleOptions](ts-basic-components-progress.md#eclipsestyleoptions10) | [ProgressStyleOptions](ts-basic-components-progress.md#progressstyleoptions8) |
-| [ProgressType.ScaleRing] | [ScaleRingStyleOptions](ts-basic-components-progress.md#scaleringstyleoptions10) | [ProgressStyleOptions](ts-basic-components-progress.md#progressstyleoptions8) |
-| [ProgressType.Capsule] | [CapsuleStyleOptions](ts-basic-components-progress.md#capsulestyleoptions10) | [ProgressStyleOptions](ts-basic-components-progress.md#progressstyleoptions8) |
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| [ProgressType.Linear] | [LinearStyleOptions](ts-basic-components-progress.md#linearstyleoptions10) | [ProgressStyleOptions](ts-basic-components-progress.md#progressstyleoptions8) | 否 | 否 | 线性进度条对应的进度条样式。 |
+| [ProgressType.Ring] | [RingStyleOptions](ts-basic-components-progress.md#ringstyleoptions10) | [ProgressStyleOptions](ts-basic-components-progress.md#progressstyleoptions8) | 否 | 否 | 环形无刻度进度条对应的进度条样式。 |
+| [ProgressType.Eclipse] | [EclipseStyleOptions](ts-basic-components-progress.md#eclipsestyleoptions10) | [ProgressStyleOptions](ts-basic-components-progress.md#progressstyleoptions8) | 否 | 否 | 圆形进度条对应的进度条样式。 |
+| [ProgressType.ScaleRing] | [ScaleRingStyleOptions](ts-basic-components-progress.md#scaleringstyleoptions10) | [ProgressStyleOptions](ts-basic-components-progress.md#progressstyleoptions8) | 否 | 否 | 环形有刻度进度条对应的进度条样式。 |
+| [ProgressType.Capsule] | [CapsuleStyleOptions](ts-basic-components-progress.md#capsulestyleoptions10) | [ProgressStyleOptions](ts-basic-components-progress.md#progressstyleoptions8) | 否 | 否 | 胶囊形进度条对应的进度条样式。 |
 
 ## 属性
 
@@ -439,7 +439,7 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/_FPxJwd8SEaVKcs8O-HI2g/zh-cn_image_0000002809012183.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/Bxq6VZGqRZOEgVsI485b_w/zh-cn_image_0000002786361458.png)
 
 ### 示例2（设置环形进度条属性）
 
@@ -469,7 +469,7 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/yGK2u_QHQs2mnl5tpSb6XQ/zh-cn_image_0000002809052097.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/niucu47WQ76KkTA0kMu1VA/zh-cn_image_0000002815560879.png)
 
 ### 示例3（设置环形进度条动画）
 
@@ -496,7 +496,7 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/LZRnfIdZS42LniOW1fejrw/zh-cn_image_0000002779852532.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/P9rGkvwuTiWkS1RIJ1FUfQ/zh-cn_image_0000002815400963.gif)
 
 ### 示例4（设置胶囊形进度条属性）
 
@@ -526,7 +526,7 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/_t_SZ-C9TT2lH5pB0r7n2g/zh-cn_image_0000002779692564.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/6kg8KIYcRUSU1zKoFXbNrw/zh-cn_image_0000002786521388.png)
 
 ### 示例5（设置进度平滑动效）
 
@@ -568,7 +568,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/fpyAWYaZS-a15CEyBaIaGA/zh-cn_image_0000002809012185.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/_uqtdAYHRBGiPKskx-qxrw/zh-cn_image_0000002786361460.gif)
 
 ### 示例6（设置定制内容区）
 
@@ -648,7 +648,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/-MFYBb6wRACW9Kb-qNDXbQ/zh-cn_image_0000002809052099.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/59/v3/ubwiJoXOTr-tFMw9vmBS_g/zh-cn_image_0000002815560881.gif)
 
 ### 示例7（设置隐私隐藏）
 
@@ -685,7 +685,7 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/iISgeoN1R72GuojAJ157Jw/zh-cn_image_0000002779852534.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/7z-A3OuURWy36dIDVTapIg/zh-cn_image_0000002815400965.gif)
 
 ### 示例8（设置Capsule进度条圆角半径）
 
@@ -722,7 +722,7 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/km7SgydLSkSsjfdV5l2aPQ/zh-cn_image_0000002779692566.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/M1bKe0iEQFCgicjvhnBSiw/zh-cn_image_0000002786521390.png)
 
 ### 示例9（设置线性进度条和胶囊进度条属性）
 
@@ -754,4 +754,4 @@ struct ProgressExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/wRM_VU9GRIqOQnpZA9MphQ/zh-cn_image_0000002809012187.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/9CbSiTs8Sz61vzeRCMNCSw/zh-cn_image_0000002786361462.png)

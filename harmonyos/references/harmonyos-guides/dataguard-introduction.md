@@ -3,14 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dataguard-int
 title: Enterprise Data Guard Kit简介
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > Enterprise Data Guard Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:30+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c6feb64359d7be3c9460fb6870ed9f62cac36dc7f8d0a7fb35f723d33eefc84e
+scraped_at: 2026-11-12T09:51:37+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:adf644847b4c727af0205539f57a6f317348bc26a75f054928a876131e0f6dc2
 ---
 
 Enterprise Data Guard Kit（企业数据保护服务）为企业安全管控类[MDM](mdm-kit.md)应用提供关键信息资产（KIA）文件的识别、外发管控以及企业恢复密钥的管理能力，支撑企业构建完整的数据防泄漏解决方案，实现企业数据资产可知、可控、可追溯。
 
-目前Enterprise Data Guard Kit提供了两种能力，包括文件分级管控和恢复密钥。
+从API版本26.0.1开始，新增加密U盘管理，支持挂载或卸载加密U盘的加密区与交换区，确保企业数据在U盘上的安全存储和访问控制。
+
+目前Enterprise Data Guard Kit提供了三种能力，包括文件分级管控、企业恢复密钥和加密U盘管理。
 
 ## 场景介绍
 
@@ -18,12 +20,17 @@ Enterprise Data Guard Kit（企业数据保护服务）为企业安全管控类[
 * 提供管控策略配置能力，支持企业下发分级管控策略、灵活管控敏感文件的外发权限。
 * 基于已配置的策略和敏感文件清单，对文件外发等非法行为进行管控，打开时进行水印保护。
 * 提供企业恢复密钥的管理能力。
+* 提供加密U盘管理能力，支持挂载或卸载加密U盘的加密区与交换区，确保企业数据在U盘上的安全存储和访问控制。
 
 ## 约束与限制
 
 ### 访问限制
 
-当前文件分级管控仅支持对用户数据进行文件扫描和分级标识。文件扫描仅限于默认路径范围内的子目录，且[获取文件URI](fileguard-get-file-url.md)、[删除指定路径下的文件](fileguard-delete-file.md)以及以只写模式[打开文件](fileguard-openfile.md)的功能仅适用于用户个人数据目录下的绝对路径。
+当前文件分级管控仅支持对用户数据进行文件扫描和分级标识，具体限制如下：
+
+* 文件扫描仅限于默认路径范围内的子目录。
+* [获取文件URI](fileguard-get-file-url.md)、[删除指定路径下的文件](fileguard-delete-file.md)仅适用于用户个人数据目录下的绝对路径。
+* 以只写模式[打开文件](fileguard-openfile.md)可以访问用户个人数据目录下的绝对路径，从API版本26.0.1开始，若配置了ohos.permission.FILE\_GUARD\_FILE\_WRITE权限，还可访问"/data/app/el2/三方应用沙箱路径"下的文件。
 
 | 文件路径 | 说明 |
 | --- | --- |

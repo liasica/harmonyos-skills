@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-specified
 title: "@security/specified-interface-call-chain-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 安全规则@security > @security/specified-interface-call-chain-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:11+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:d69423f5ed78800bf4226d156c17a9e6fc98058900a83ff6abdf4e7dfc3a8a09
+scraped_at: 2026-11-12T09:52:57+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d88e551dade98ea95aaf0a3a38aaa76131cd57877aa3bf649118ff25c9a340f2
 ---
 
 该规则旨在标识指定接口的调用链，方便接口管理，调用链最大数量为5000。
@@ -113,4 +113,4 @@ testClass.func1();
 plugin:@security/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

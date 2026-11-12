@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/os-new-feature-2600
 title: OS新增和增强特性
-breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > OS平台能力 > OS新增和增强特性
+breadcrumb: 版本说明 > 更多版本 > 26.0.0 > OS平台能力 > OS新增和增强特性
 category: harmonyos-releases
-scraped_at: 2026-10-09T08:11:54+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-11-12T09:49:55+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:a5c83e4f83ecb71be435e15675d35f4a0e919432e076bf553ef207bf674f8f6a
 ---
 

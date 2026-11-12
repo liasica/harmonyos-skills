@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (ColorFilter)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (ColorFilter)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:45+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2241e9af8ebc07d6a42388572c3062fb3ad31e8ba190e7b10aa2954d6d0283d8
+scraped_at: 2026-11-12T09:56:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a8cb15c728ce1e132c1a864393b44056e2d2c597d7ec9d701d31d17f1dff8b01
 ---
 
 颜色滤波器。
@@ -221,7 +221,7 @@ static createMatrixColorFilter(matrix: Array<number>): ColorFilter
 
 | 类型 | 说明 |
 | --- | --- |
-| [ColorFilter](arkts-apis-graphics-drawing-colorfilter.md) | 返回颜色滤波器。 |
+| [ColorFilter](arkts-apis-graphics-drawing-colorfilter.md) | 返回颜色滤波器。创建失败时返回undefined。 |
 
 **错误码：**
 

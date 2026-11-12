@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/websocket-con
 title: 使用WebSocket访问网络
 breadcrumb: 指南 > 系统 > 网络 > Network Kit（网络服务） > 访问网络 > 使用WebSocket访问网络
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:48+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:51:44+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:f4d75b2f27a8a0c9dc4479ea51341a34cfbf59f681f9fc2d905d9032f374a0ae
 ---
 

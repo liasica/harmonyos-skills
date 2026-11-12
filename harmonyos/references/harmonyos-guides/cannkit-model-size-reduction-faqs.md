@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-model-size-reduction-faqs
-title: 常见问题
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化 > 常见问题
+title: CNN结构量化常见问题
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化 > CNN结构量化 > CNN结构量化常见问题
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:17+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-11-12T09:52:40+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:68d8466c071a3d3869670b8c1d713b854dde4f9f9b2c2ea70728d1ad8762c684
 ---
 

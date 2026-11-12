@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkweb-ndk-pa
 title: 建立应用侧与前端页面数据通道(C/C++)
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 在应用中使用前端页面JavaScript > 建立应用侧与前端页面数据通道(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:26+08:00
-doc_updated_at: 2026-10-30
-content_hash: sha256:2502a3d6ccf4380df2c8632c81104f09f8e4c062008fafebfcaa9fb621be7041
+scraped_at: 2026-11-12T09:51:23+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c0fa781e161c5bf5d744be01f11effb1fa466d20818016ca8cbf8cfe60ca4341
 ---
 
 前端页面和应用侧之间可以使用Native方法实现两端通信（以下简称Native PostWebMessage），可解决ArkTS环境的冗余切换，同时允许发送消息、回调在非UI线程上运行，避免造成UI阻塞。当前只支持string和buffer数据类型。
@@ -14,13 +14,13 @@ content_hash: sha256:2502a3d6ccf4380df2c8632c81104f09f8e4c062008fafebfcaa9fb621b
 
 应用使用ArkTS、C++语言混合开发，或本身应用架构较贴近于小程序架构，自带C++侧环境，推荐使用ArkWeb在Native侧提供的[ArkWeb\_ControllerAPI](../harmonyos-references/capi-web-arkweb-controllerapi.md)、[ArkWeb\_WebMessageAPI](../harmonyos-references/capi-web-arkweb-webmessageapi.md)、[ArkWeb\_WebMessagePortAPI](../harmonyos-references/capi-web-arkweb-webmessageportapi.md)实现PostWebMessage功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/otGtuz_MQSClBO6DYrrNrQ/zh-cn_image_0000002809050053.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/KORHFGaHRj281lF5cXa8sA/zh-cn_image_0000002786519358.png)
 
 上图展示了具有普遍适用性的小程序的通用架构。在这一架构中，逻辑层依赖于应用程序自带的JavaScript运行时，该运行时在一个已有的C++环境中运行。通过Native接口，逻辑层能够直接在C++环境中与视图层（其中ArkWeb充当渲染器）进行通信，无需回退至ArkTS环境使用ArkTS PostWebMessage接口。
 
 左图是使用ArkTS PostWebMessage接口构建小程序的方案，如红框所示，应用需要先调用到ArkTS环境，再调用到C++环境。右图是使用Native PostWebMessage接口构建小程序的方案，不需要ArkTS环境和C++环境的切换，执行效率更高。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/9YN_KH8ORdmzey8cy2TC9Q/zh-cn_image_0000002779690520.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/xGSzzinRSEqXjRpM_ziWaw/zh-cn_image_0000002815558851.png)
 
 ## 使用Native接口实现PostWebMessage通信
 
@@ -61,7 +61,7 @@ webMessage = reinterpret_cast<ArkWeb_WebMessageAPI *>(OH_ArkWeb_GetNativeAPI(ARK
 
 ### 完整示例
 
-在调用API前建议通过[ARKWEB\_MEMBER\_MISSING](../harmonyos-references/capi-arkweb-type-h.md#宏定义)校验该函数结构体是否有对应函数指针，避免SDK与设备ROM不匹配导致crash问题。[createWebMessagePorts](../harmonyos-references/capi-web-arkweb-controllerapi.md#createwebmessageports)、[postWebMessage](../harmonyos-references/capi-web-arkweb-controllerapi.md#postwebmessage)、[close](../harmonyos-references/capi-web-arkweb-webmessageportapi.md#close)需运行在UI线程。
+在调用API前建议通过[ARKWEB\_MEMBER\_MISSING](../harmonyos-references/capi-arkweb-type-h.md#宏定义)校验该函数结构体是否有对应函数指针，避免SDK与设备ROM不匹配导致crash问题。[createWebMessagePorts()](../harmonyos-references/capi-web-arkweb-controllerapi.md#createwebmessageports)、[postWebMessage()](../harmonyos-references/capi-web-arkweb-controllerapi.md#postwebmessage)、[close()](../harmonyos-references/capi-web-arkweb-webmessageportapi.md#close)需运行在UI线程。
 
 * 前端页面代码
 

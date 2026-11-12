@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-tool-c
 title: 使用Image_NativeModule读取和编辑图片Exif信息
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(C/C++) > 图片编辑和处理 > 使用Image_NativeModule读取和编辑图片Exif信息
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:27+08:00
-doc_updated_at: 2026-09-24
+scraped_at: 2026-11-12T09:52:07+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:03b322aa4cca61e57a22f7575acaab8ac2ebcfeaeac6746fae971952c9402fd9
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-import-e
 title: 数字信封导入密钥(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥生成/导入 > 密钥导入 > 数字信封导入密钥(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:00+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:7fc9e2cb9cf9130f38879415b08cea4f289bd9f3b733193a6ae20cf5d0bdddbb
+scraped_at: 2026-11-12T09:51:39+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:baf590d0e54954332d211075aa5e815d6d9e3d19f5c92857b9493c05ff6da13c
 ---
 
 从API 23开始支持[数字信封](huks-key-import-overview.md#数字信封导入)特性。
@@ -117,7 +117,7 @@ let enOption: huks.HuksOptions = {
 let cipherData: Uint8Array;
 let handle: number;
 
-async function EnvelopRsaTest()
+async function envelopRsaTest()
 {
   let wrappingKeyAlias = "WrappedKey";
   await huks.generateKeyItem(wrappingKeyAlias, option)

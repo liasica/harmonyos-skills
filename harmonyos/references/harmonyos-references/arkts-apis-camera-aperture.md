@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (Aperture)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (Aperture)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:26+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:07f537f504693738504dc9e7ef7d76392d08d83a1b31c96f8c01d216b57ebe87
+scraped_at: 2026-11-12T09:56:31+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d821c0c220814f557035f6ae8c59490abd8973864e36d8df5ab88221345fc67b
 ---
 
 Aperture继承自[ApertureQuery](arkts-apis-camera-aperturequery.md)。
@@ -100,7 +100,20 @@ import { BusinessError } from '@kit.BasicServicesKit';
 
 function setPhysicalAperture(photoSession: camera.PhotoSession, aperture: number): void {
   try {
-    photoSession.setPhysicalAperture(aperture);
+    let apertures: Array<camera.PhysicalAperture> = photoSession.getSupportedPhysicalApertures();
+    let index = apertures.findIndex((apertureValue: camera.PhysicalAperture) =>
+      apertureValue.apertures.includes(aperture));
+    if (index < 0) {
+      console.error(`invalid aperture`);
+      return;
+    }
+    let curZoomValue = photoSession.getZoomRatio();
+    if (curZoomValue >= apertures[index].zoomRange.min && curZoomValue <= apertures[index].zoomRange.max) {
+      photoSession.setPhysicalAperture(aperture);
+    } else {
+      console.error(`current aperture: ${aperture} invalid in zoomRatio: ${curZoomValue}.`);
+      return;
+    }
   } catch (error) {
     // 失败返回错误码error.code并处理。
     let err = error as BusinessError;

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deprecate
 title: "@compatibility/deprecate-api-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 兼容性规则@compatibility > @compatibility/deprecate-api-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:14+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:3bf71ad5fd70ea6da10ef78daa12ee2f03fbdb1fa1f66fe60f0a23f72eec3377
+scraped_at: 2026-11-12T09:53:00+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3032de3adda22e5cc525eabaa3293c6d31d1a02492cb5f339efd47fbe1ba406a
 ---
 
 在开发中避免使用废弃的API接口。
@@ -57,4 +57,4 @@ function deprecatedApi(): void {
 plugin:@compatibility/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

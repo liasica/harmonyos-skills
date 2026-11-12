@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.ability.dataUriUtils (DataUriUtils模块)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 已停止维护的接口 > @ohos.ability.dataUriUtils (DataUriUtils模块)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:36+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:42c2fe199da3a7c17527489aeceb48df85e0d040ba0a910508dd01bb8c421a28
+scraped_at: 2026-11-12T09:53:34+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:958cb685b1d802257e1a56f0b6235636aff4781096e455676b3d8adc8ae85fc7
 ---
 
 DataUriUtils模块提供用于处理uri对象的能力，包括获取、绑定、删除和更新指定uri对象的路径末尾的ID。
@@ -25,6 +25,10 @@ import dataUriUtils from '@ohos.ability.dataUriUtils';
 getId(uri: string): number
 
 获取指定uri路径末尾的ID。
+
+**说明** 
+
+从API version 7开始支持，从API version 9废弃，建议使用[@ohos.app.ability.dataUriUtils](js-apis-app-ability-datauriutils.md)中的[dataUriUtils.getId](js-apis-app-ability-datauriutils.md#datauriutilsgetid)替代。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
@@ -53,6 +57,10 @@ let id = dataUriUtils.getId('com.example.dataUriUtils/1221');
 attachId(uri: string, id: number): string
 
 将ID附加到uri的路径末尾。
+
+**说明** 
+
+从API version 7开始支持，从API version 9废弃，建议使用[@ohos.app.ability.dataUriUtils](js-apis-app-ability-datauriutils.md)中的[dataUriUtils.attachId](js-apis-app-ability-datauriutils.md#datauriutilsattachid)替代。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
@@ -87,6 +95,10 @@ deleteId(uri: string): string
 
 删除指定uri路径末尾的ID。
 
+**说明** 
+
+从API version 7开始支持，从API version 9废弃，建议使用[@ohos.app.ability.dataUriUtils](js-apis-app-ability-datauriutils.md)中的[dataUriUtils.deleteId](js-apis-app-ability-datauriutils.md#datauriutilsdeleteid)替代。
+
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 
 **参数：**
@@ -114,6 +126,10 @@ let uri = dataUriUtils.deleteId('com.example.dataUriUtils/1221');
 updateId(uri: string, id: number): string
 
 更新指定uri中的ID。
+
+**说明** 
+
+从API version 7开始支持，从API version 9废弃，建议使用[@ohos.app.ability.dataUriUtils](js-apis-app-ability-datauriutils.md)中的[dataUriUtils.updateId](js-apis-app-ability-datauriutils.md#datauriutilsupdateid)替代。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.Core
 

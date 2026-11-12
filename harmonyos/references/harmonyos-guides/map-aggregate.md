@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-aggregate
 title: 点聚合
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 点聚合
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:36+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6bd9199e6cd898a7b7e2e654b43b74e9a4b841c22bc39fb39d4d7ad8d4860c91
+scraped_at: 2026-11-12T09:52:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:29fbd2d0e1840cb061cc145dc687399b1c6dbc0f3a58edc5c106519a3fc79e1b
 ---
 
 ## 场景介绍
@@ -24,7 +24,7 @@ content_hash: sha256:6bd9199e6cd898a7b7e2e654b43b74e9a4b841c22bc39fb39d4d7ad8d48
 
 5.0.3(15)开始，支持聚合标记点击事件监听功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/YRpZjYz7Qa-0RpD28JvdwA/zh-cn_image_0000002779691526.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/SpGtEx3GTb6abA09le1HsA/zh-cn_image_0000002815399951.jpg "点击放大")
 
 ## 接口说明
 
@@ -53,6 +53,7 @@ content_hash: sha256:6bd9199e6cd898a7b7e2e654b43b74e9a4b841c22bc39fb39d4d7ad8d48
      private mapOptions?: mapCommon.MapOptions;
      private mapController?: map.MapComponentController;
      private callback?: AsyncCallback<map.MapComponentController>;
+     private clusterOverlay?: map.ClusterOverlay
 
      aboutToAppear(): void {
        this.mapOptions = {
@@ -162,6 +163,12 @@ content_hash: sha256:6bd9199e6cd898a7b7e2e654b43b74e9a4b841c22bc39fb39d4d7ad8d48
          } else {
            console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
          }
+       }
+     }
+
+     aboutToDisappear(): void {
+       if (this.clusterOverlay) {
+         this.clusterOverlay.remove()
        }
      }
 

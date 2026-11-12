@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-rtc
 title: 在Web中打开摄像头和麦克风
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 使用网页多媒体 > 在Web中打开摄像头和麦克风
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:27+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:51:23+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:f258090dea534dfb527015a80d9c926c51ffd621e08bb8f94a0bfcb61db0d304
 ---
 

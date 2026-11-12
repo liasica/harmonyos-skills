@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: SubHeaderV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > SubHeaderV2
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:16+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d47ca18f4c676a8b33722a043ddcd948c7247411df3c7a07b5bf226c13ccc45d
+scraped_at: 2026-11-12T09:54:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c4635b9dd84b6e08845e84d81bbae7db20923137e6e803c39acb749def935268
 ---
 
 子标题，用于列表项或内容项顶部，将该列表或内容划分为一个区块，子标题名称用来概括该区块内容。
@@ -30,13 +30,11 @@ import { SubHeaderV2 } from '@kit.ArkUI';
 
 ## SubHeaderV2
 
-SubHeaderV2({ icon?: SubHeaderV2IconType, title?: SubHeaderV2Title, select?: SubHeaderV2Select, operationType?: SubHeaderV2OperationType, operationItems?: SubHeaderV2OperationItem[], titleBuilder?: SubHeaderV2TitleBuilder; })
+SubHeaderV2({ icon?: SubHeaderV2IconType, endIcon?: SubHeaderV2IconType, title?: SubHeaderV2Title, select?: SubHeaderV2Select, operationType?: SubHeaderV2OperationType, operationItems?: SubHeaderV2OperationItem[], titleBuilder?: SubHeaderV2TitleBuilder })
 
 子标题，用于列表项顶部，将该组列表划分为一个区块，子标题名称用来概括该区块内容。也可以用于内容项顶部，子标题名称用来概括该区块内容。
 
 **装饰器类型：** @ComponentV2
-
-**元服务API：** 从API version 18开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
@@ -44,12 +42,13 @@ SubHeaderV2({ icon?: SubHeaderV2IconType, title?: SubHeaderV2Title, select?: Sub
 
 | 名称 | 类型 | 必填 | 装饰器类型 | 说明 |
 | --- | --- | --- | --- | --- |
-| icon | [SubHeaderV2IconType](ohos-arkui-advanced-subheaderv2.md#subheaderv2icontype) | 否 | @Param | 图标设置项。  默认值：undefined  当title使用secondaryTitle属性时，设置icon属性才会生效。 |
-| title | [SubHeaderV2Title](ohos-arkui-advanced-subheaderv2.md#subheaderv2title) | 否 | @Param | 标题设置项。  默认值：undefined |
-| select | [SubHeaderV2Select](ohos-arkui-advanced-subheaderv2.md#subheaderv2select) | 否 | @Param | select内容以及事件。  默认值：undefined |
-| operationType | [SubHeaderV2OperationType](ohos-arkui-advanced-subheaderv2.md#subheaderv2operationtype) | 否 | @Param | 操作区元素样式。  默认值：SubHeaderV2OperationType.BUTTON |
-| operationItems | [SubHeaderV2OperationItem](ohos-arkui-advanced-subheaderv2.md#subheaderv2operationitem)[] | 否 | @Param | 操作区的设置项。  默认值：undefined |
-| titleBuilder | [SubHeaderV2TitleBuilder](ohos-arkui-advanced-subheaderv2.md#subheaderv2titlebuilder) | 否 | @BuilderParam | 自定义标题区内容。  默认值：() => void |
+| icon | [SubHeaderV2IconType](ohos-arkui-advanced-subheaderv2.md#subheaderv2icontype) | 否 | @Param | 图标设置项，用于为子标题添加图标标识。  默认值：undefined  当title使用secondaryTitle属性时，设置icon属性才会生效。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| endIcon | [SubHeaderV2IconType](ohos-arkui-advanced-subheaderv2.md#subheaderv2icontype) | 否 | @Param | 子标题尾部图标设置项，用于为子标题添加尾部图标标识。  当title使用primaryTitle或secondaryTitle属性时，设置endIcon属性才会生效。  默认值：undefined，表示不显示标题尾部图标。  **起始版本：** 26.0.1  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| title | [SubHeaderV2Title](ohos-arkui-advanced-subheaderv2.md#subheaderv2title) | 否 | @Param | 标题设置项。  默认值：undefined  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| select | [SubHeaderV2Select](ohos-arkui-advanced-subheaderv2.md#subheaderv2select) | 否 | @Param | 下拉选择器的配置项，包含下拉选项内容、选中状态及回调事件。  默认值：undefined  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| operationType | [SubHeaderV2OperationType](ohos-arkui-advanced-subheaderv2.md#subheaderv2operationtype) | 否 | @Param | 操作区元素样式，用于定义子标题尾部操作按钮的显示形式。  默认值：SubHeaderV2OperationType.BUTTON  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| operationItems | [SubHeaderV2OperationItem](ohos-arkui-advanced-subheaderv2.md#subheaderv2operationitem)[] | 否 | @Param | 操作区的设置项，用于配置子标题尾部的操作按钮。  默认值：undefined  当operationType为ICON\_GROUP时，数组最多包含三个元素。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| titleBuilder | [SubHeaderV2TitleBuilder](ohos-arkui-advanced-subheaderv2.md#subheaderv2titlebuilder) | 否 | @BuilderParam | 自定义标题区内容。当设置此参数时，title参数将不生效。  默认值：() => void  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 
 ## SubHeaderV2IconType
 
@@ -248,12 +247,12 @@ type SubHeaderV2OperationItemType = ResourceStr | SymbolGlyphModifier
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | content | [SubHeaderV2OperationItemType](ohos-arkui-advanced-subheaderv2.md#subheaderv2operationitemtype) | 否 | 否 | 操作区元素内容。  装饰器类型：@Trace  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| action | [SubHeaderV2OperationItemAction](ohos-arkui-advanced-subheaderv2.md#subheaderv2operationitemaction) | 否 | 是 | 操作区事件。默认值：() => void。  装饰器类型：@Trace  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| accessibilityText | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 子标题右侧icon图标无障碍描述。  默认值：undefined  装饰器类型：@Trace  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| accessibilityLevel | string | 否 | 是 | 子标题右侧icon图标无障碍重要性。  支持的值为：  "auto"：当前子标题右侧icon图标由无障碍分组服务和ArkUI进行综合判断是否可被无障碍辅助服务所识别。  "yes"：当前子标题右侧icon图标可被无障碍辅助服务所识别。  "no"：当前子标题右侧icon图标不可被无障碍辅助服务所识别。  "no-hide-descendants"：当前子标题右侧icon图标及其所有子组件不可被无障碍辅助服务所识别。  默认值：“yes”。  装饰器类型：@Trace  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| accessibilityDescription | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 子标题右侧icon图标无障碍说明，用于为用户进一步说明当前组件。  默认值：“单指双击即可执行”。  装饰器类型：@Trace  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| defaultFocus | boolean | 否 | 是 | 子标题右侧按钮是否为默认焦点。  true：子标题右侧按钮是默认焦点。  false：子标题右侧按钮不是默认焦点。  默认值：false  装饰器类型：@Trace  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| id24+ | string | 否 | 是 | 子标题右侧按钮id。需要为子标题右侧按钮设置id的时候设置此参数，缺省时不设置此参数。  默认值：undefined，表示不设置子标题右侧按钮id。  装饰器类型：@Trace  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
+| action | [SubHeaderV2OperationItemAction](ohos-arkui-advanced-subheaderv2.md#subheaderv2operationitemaction) | 否 | 是 | 操作区事件回调。默认值：() => void。  装饰器类型：@Trace  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| accessibilityText | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 子标题尾部操作项无障碍描述。  默认值：undefined  装饰器类型：@Trace  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| accessibilityLevel | string | 否 | 是 | 子标题尾部操作项无障碍重要性。  支持的值为：  "auto"：当前子标题尾部操作项由无障碍分组服务和ArkUI进行综合判断是否可被无障碍辅助服务所识别。  "yes"：当前子标题尾部操作项可被无障碍辅助服务所识别。  "no"：当前子标题尾部操作项不可被无障碍辅助服务所识别。  "no-hide-descendants"：当前子标题尾部操作项及其所有子组件不可被无障碍辅助服务所识别。  默认值：“yes”。  装饰器类型：@Trace  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| accessibilityDescription | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 子标题尾部操作项无障碍说明，用于为用户进一步说明当前组件。  默认值：“单指双击即可执行”。  装饰器类型：@Trace  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| defaultFocus | boolean | 否 | 是 | 子标题尾部操作项是否为默认焦点。  true：子标题尾部操作项是默认焦点。  false：子标题尾部操作项不是默认焦点。  默认值：false  装饰器类型：@Trace  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| id24+ | string | 否 | 是 | 子标题尾部操作项id。需要为子标题尾部操作项设置id的时候设置此参数，缺省时不设置此参数。  默认值：undefined，表示不设置子标题尾部操作项id。  装饰器类型：@Trace  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
 
 ### constructor
 
@@ -296,12 +295,12 @@ type SubHeaderV2OperationItemAction = () => void
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | content | [SubHeaderV2OperationItemType](ohos-arkui-advanced-subheaderv2.md#subheaderv2operationitemtype) | 否 | 否 | 操作项显示的内容。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| action | [SubHeaderV2OperationItemAction](ohos-arkui-advanced-subheaderv2.md#subheaderv2operationitemaction) | 否 | 是 | 选项操作事件。默认值：() => void。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| accessibilityText | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 子标题右侧icon图标无障碍描述。  默认值：undefined  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| accessibilityLevel | string | 否 | 是 | 子标题右侧icon图标无障碍重要性。  支持的值为：  "auto"：当前子标题右侧icon图标由无障碍分组服务和ArkUI进行综合判断是否可被无障碍辅助服务所识别。  "yes"：当前子标题右侧icon图标可被无障碍辅助服务所识别。  "no"：当前子标题右侧icon图标不可被无障碍辅助服务所识别。  "no-hide-descendants"：当前子标题右侧icon图标及其所有子组件不可被无障碍辅助服务所识别。  默认值：“yes”。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| accessibilityDescription | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 子标题右侧icon图标无障碍说明，用于为用户进一步说明当前组件。  默认值：“单指双击即可执行”。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| defaultFocus | boolean | 否 | 是 | 子标题右侧按钮是否为默认焦点。  true：子标题右侧按钮是默认焦点。  false：子标题右侧按钮不是默认焦点。  默认值：false  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
-| id24+ | string | 否 | 是 | 子标题右侧按钮id。需要为子标题右侧按钮设置id的时候设置此参数，缺省时不设置此参数。  默认值：undefined，表示不设置子标题右侧按钮id。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
+| action | [SubHeaderV2OperationItemAction](ohos-arkui-advanced-subheaderv2.md#subheaderv2operationitemaction) | 否 | 是 | 选项操作事件回调，点击操作项时触发，用于执行自定义操作。默认值：() => void。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| accessibilityText | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 子标题尾部操作项无障碍描述。  默认值：undefined  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| accessibilityLevel | string | 否 | 是 | 子标题尾部操作项无障碍重要性。  支持的值为：  "auto"：当前子标题尾部操作项由无障碍分组服务和ArkUI进行综合判断是否可被无障碍辅助服务所识别。  "yes"：当前子标题尾部操作项可被无障碍辅助服务所识别。  "no"：当前子标题尾部操作项不可被无障碍辅助服务所识别。  "no-hide-descendants"：当前子标题尾部操作项及其所有子组件不可被无障碍辅助服务所识别。  默认值：“yes”。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| accessibilityDescription | [ResourceStr](ts-types.md#resourcestr) | 否 | 是 | 子标题尾部操作项无障碍说明，用于为用户进一步说明当前组件。  默认值：“单指双击即可执行”。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| defaultFocus | boolean | 否 | 是 | 子标题尾部操作项是否为默认焦点。  true：子标题尾部操作项是默认焦点。  false：子标题尾部操作项不是默认焦点。  默认值：false  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
+| id24+ | string | 否 | 是 | 子标题尾部操作项id。需要为子标题尾部操作项设置id的时候设置此参数，缺省时不设置此参数。  默认值：undefined，表示不设置子标题尾部操作项id。  **元服务API：** 从API version 24开始，该接口支持在元服务中使用。 |
 
 ## SubHeaderV2TitleBuilder
 
@@ -379,7 +378,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/qWdLYg7PSwme2hGSLzZZJg/zh-cn_image_0000002779852758.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/v7AwMUwHSMiihB1lkWrmaA/zh-cn_image_0000002815401189.png)
 
 ### 示例2（双行文本内容型子标题）
 
@@ -431,7 +430,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/M6nG56zzSn25eC5Kli2uwQ/zh-cn_image_0000002779692790.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/bVlfsbDVTT20Hzf9uhce6g/zh-cn_image_0000002786521614.png)
 
 ### 示例3（spinner型内容型子标题）
 
@@ -509,7 +508,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/Mv9g_oYBQW2bvxrSp2v_AA/zh-cn_image_0000002809012411.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/heyt4FGMS3mwHHDhfBPZYg/zh-cn_image_0000002786361686.png)
 
 ### 示例4（设置左侧symbol图标）
 
@@ -553,7 +552,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/LAeKTz3ySUmUanCHOSxJUQ/zh-cn_image_0000002809052325.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/YievpQukTWGk9dtRQYV4UA/zh-cn_image_0000002815561107.gif)
 
 ### 示例5（设置右侧symbol图标）
 
@@ -639,7 +638,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/8Y2UvTP9SNi3-GeXHeUluw/zh-cn_image_0000002779852760.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/tUY7mC_wQBSFvFHulQnU4w/zh-cn_image_0000002815401191.png)
 
 ### 示例6（自定义标题内容）
 
@@ -697,7 +696,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/awzvdP1CSy-mMDQVfC7mUg/zh-cn_image_0000002779692792.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/GwMWrrWCQRSe5dzDyC2phg/zh-cn_image_0000002786521616.png)
 
 ### 示例7（自定义标题样式）
 
@@ -748,7 +747,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3b/v3/hf2S62wNTz2ZhoOKjeP1UQ/zh-cn_image_0000002779692794.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/-BINOSquSPyFViidqgYxYQ/zh-cn_image_0000002786361690.png)
 
 ### 示例8（右侧按钮自定义播报）
 
@@ -848,7 +847,7 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/_ZuK9qOjQGi1n9nxFNFO1A/zh-cn_image_0000002809052327.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/BCVyxBoIRUucz05YawVG-w/zh-cn_image_0000002815561109.png)
 
 ### 示例9（右侧按钮设置默认获焦）
 
@@ -910,4 +909,56 @@ struct SubHeaderExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/t-1cEjOSTiSNM0ttZ3jJ4g/zh-cn_image_0000002779852762.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/O8E8B9HIRv6mwrf2hG-bLg/zh-cn_image_0000002815401193.png)
+
+### 示例10（设置子标题尾部图标）
+
+该示例主要演示子标题设置endIcon尾部图标，包括普通图片资源和Symbol图标两种形式。
+
+从API版本26.0.1开始，[SubHeaderV2](ohos-arkui-advanced-subheaderv2.md#subheaderv2-1)新增endIcon属性。
+
+```ts
+import {
+  SubHeaderV2,
+  SubHeaderV2Title,
+  SubHeaderV2IconType,
+  SymbolGlyphModifier
+} from '@kit.ArkUI';
+
+@Entry
+@ComponentV2
+struct SubHeaderExample {
+  @Local title: SubHeaderV2Title = new SubHeaderV2Title({ secondaryTitle: '二级标题' });
+  // $r('app.media.startIcon')需要替换为开发者所需的图像资源文件。
+  @Local endIcon: SubHeaderV2IconType = $r('app.media.startIcon');
+  @Local endIconSymbol: SymbolGlyphModifier = new SymbolGlyphModifier($r('sys.symbol.ohos_lungs'));
+
+  aboutToAppear(): void {
+    this.title = new SubHeaderV2Title({
+      secondaryTitle: '二级标题'
+    });
+    this.endIconSymbol = new SymbolGlyphModifier($r('sys.symbol.ohos_lungs'))
+      .renderingStrategy(SymbolRenderingStrategy.MULTIPLE_COLOR)
+      .fontColor([Color.Blue, Color.Grey, Color.Green]);
+  }
+
+  build() {
+    Column() {
+      // 图标+二级标题+尾部图标（Image）
+      SubHeaderV2({
+        icon: $r('sys.media.ohos_ic_public_email'),
+        endIcon: this.endIcon,
+        title: this.title
+      })
+      // 图标+二级标题+尾部图标（Symbol）
+      SubHeaderV2({
+        icon: $r('sys.media.ohos_ic_public_email'),
+        endIcon: this.endIconSymbol,
+        title: this.title
+      })
+    }
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/fSk23uyyRAe33DqaM70yEw/zh-cn_image_0000002815561111.png)

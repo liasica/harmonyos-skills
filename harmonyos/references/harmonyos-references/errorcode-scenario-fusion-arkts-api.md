@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用服务 > Scenario Fusion Kit（融合场景服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:08+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:a3f475831298b94286d2c0c373aa2f0d4b839f0bbaa414eb3f6dd418be730d33
+scraped_at: 2026-11-12T09:57:40+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4823643a19787f1d1be34ceccf55256662b3b79c5f202b2cf40d84b2969eb8a8
 ---
 
 **说明** 
@@ -74,11 +74,15 @@ Request server failed.
 
 **可能原因**
 
-服务号云系统出现问题。
+1.传入非法参数。
+
+2.服务号云系统出现问题。
 
 **处理步骤**
 
-尝试重试操作或请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
+1.确认传入的[FollowComponentParams](scenario-fusion-atomicservice.md#followcomponentparams)参数是否合法。
+
+2.尝试重试操作或请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
 
 ## 1009601004 网络连接失败
 

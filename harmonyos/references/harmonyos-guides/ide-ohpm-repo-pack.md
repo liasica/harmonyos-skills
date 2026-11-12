@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: ohpm-repo pack
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 相关命令 > ohpm-repo pack
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:12+08:00
-doc_updated_at: 2026-06-12
-content_hash: sha256:152b53298db1e2d1f7a6deb4c2599188f9ed3ded33c5fadef2de141d6825ec76
+scraped_at: 2026-11-12T09:52:51+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ab873ae71c4e18346555e3219e78460b8ffcc565aa9cd694d627eb43dbd1c447
 ---
 
 打包ohpm-repo部署目录文件。
@@ -22,7 +22,7 @@ ohpm-repo pack <deploy_root>
 
 ## 功能描述
 
-用于打包ohpm-repo部署目录[deploy\_root](ide-ohpm-repo-configuration.md#zh-cn_topic_0000001745376470_关于-deploy_root)下的conf ，db和meta目录。
+用于打包ohpm-repo部署目录[deploy\_root](ide-ohpm-repo-configuration.md#section77641227123)下的conf ，db和meta目录。
 
 说明：
 
@@ -37,7 +37,7 @@ ohpm-repo pack <deploy_root>
 * 类型：String
 * 必填参数
 
-必须在pack命令后面配置<deploy\_root>参数，指定待打包的[ohpm-repo私仓部署目录](ide-ohpm-repo-configuration.md#zh-cn_topic_0000001745376470_关于-deploy_root)。
+必须在pack命令后面配置<deploy\_root>参数，指定待打包的[ohpm-repo私仓部署目录](ide-ohpm-repo-configuration.md#section77641227123)。
 
 ## 示例
 
@@ -49,4 +49,4 @@ ohpm-repo pack D:\ohpm-repo
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/zxgzid1LSKacnq5vx_njIg/zh-cn_image_0000002701661980.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/PL__snY1RROhWSX6Z3AXag/zh-cn_image_0000002779565084.png "点击放大")

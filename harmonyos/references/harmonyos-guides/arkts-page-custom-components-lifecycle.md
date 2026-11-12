@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-page-cu
 title: 自定义组件生命周期
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式基本语法 > 自定义组件 > 自定义组件生命周期
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:08+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:fc977f89b860c3a4a449a4e0cec6ec797eb2743bf593246aeaa0c9573c9a9f28
+scraped_at: 2026-11-12T09:51:06+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:cdac90e0135833ad34309f5d553b8f1a18c76678eda9183e27df01929ea51793
 ---
 
 自定义组件生命周期，即用[@Component](arkts-create-custom-components.md#component)或[@ComponentV2](arkts-create-custom-components.md#componentv2)装饰的自定义组件的生命周期，提供以下生命周期接口：
@@ -20,7 +20,7 @@ content_hash: sha256:fc977f89b860c3a4a449a4e0cec6ec797eb2743bf593246aeaa0c9573c9
 
 自定义组件生命周期流程如下图所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/qHBW7vyDTvG13NTJWPuWTA/zh-cn_image_0000002779689580.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/_4Am5YCiQz6XkUpza5FMWQ/zh-cn_image_0000002786358490.png)
 
 根据上面的流程图，接下来从自定义组件的初始创建、重新渲染和删除来详细说明。
 
@@ -61,17 +61,17 @@ struct Parent {
   @State showChild: boolean = true;
   @State btnColor: string = '#FF007DFF';
 
-  // 组件生命周期
+  // Parent即将出现时，回调该方法
   aboutToAppear() {
     hilog.info(0x0000, 'testTag', 'Parent aboutToAppear');
   }
 
-  // 组件生命周期
+  // Parent首次渲染触发的build函数执行完成之后，回调该方法
   onDidBuild() {
     hilog.info(0x0000, 'testTag', 'Parent onDidBuild');
   }
 
-  // 组件生命周期
+  // Parent销毁之前，回调该方法
   aboutToDisappear() {
     hilog.info(0x0000, 'testTag', 'Parent aboutToDisappear');
   }
@@ -100,17 +100,17 @@ struct Parent {
 struct Child {
   @State title: string = 'Hello World';
 
-  // 组件生命周期
+  // Child销毁之前，回调该方法
   aboutToDisappear() {
     hilog.info(0x0000, 'testTag', 'Child aboutToDisappear');
   }
 
-  // 组件生命周期
+  // Child首次渲染触发的build函数执行完成之后，回调该方法
   onDidBuild() {
     hilog.info(0x0000, 'testTag', 'Child onDidBuild');
   }
 
-  // 组件生命周期
+  // Child即将出现时，回调该方法
   aboutToAppear() {
     hilog.info(0x0000, 'testTag', 'Child aboutToAppear');
   }
@@ -126,7 +126,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/H8dHDGaRQOu4FbecmhOnwA/zh-cn_image_0000002809009201.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/aSR8ac2uSmqS8ww70nXkgg/zh-cn_image_0000002815557911.gif)
 
 以上示例中，Index页面包含两个自定义组件，一个是Parent，一个是Child，Parent及其子组件Child分别声明了各自的自定义组件生命周期函数（aboutToAppear / onDidBuild / aboutToDisappear）。
 
@@ -165,4 +165,4 @@ Child onDidBuild
 
 当showChild为默认值true时，该示例的生命周期流程图如下所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/Uidzo_KHRxiYY1m80lMLcA/zh-cn_image_0000002809049117.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/6ztTIYI_R5eR5AnLITPDJg/zh-cn_image_0000002815397995.png)

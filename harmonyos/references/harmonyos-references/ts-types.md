@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-types
 title: 基础类型定义
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 公共定义 > 基础类型定义
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:20+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:27add913ea281eecc21094d2523faf4f9e49df31f488338afc91005ef8ef0e70
+scraped_at: 2026-11-12T09:54:31+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:011e5248090b03d2757234a67730850f7c638d93ffb05e06dd83082ddf9dec57
 ---
 
 **说明** 
@@ -88,8 +88,6 @@ type LengthMetricsUnit = import('../api/arkui/Graphics').LengthMetricsUnit
 type LengthMetrics = import('../api/arkui/Graphics').LengthMetrics
 
 定义长度属性。
-
-**卡片能力：** 从API version 12开始，该接口支持在ArkTS卡片中使用。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -915,19 +913,17 @@ type Callback<T, V = void> = (data: T) => V;
 
 分割线样式属性集合, 用于描述分割线相关信息。
 
-**元服务API：** 从API version 12开始，该接口支持在元服务中使用。
-
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| strokeWidth | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 分割线的线宽。 |
-| color | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 分割线的颜色。 |
-| startMargin | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 分割线与菜单侧边起始端的距离。 |
-| endMargin | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 分割线与菜单侧边结束端的距离。 |
-| mode19+ | [DividerMode](ts-appendix-enums.md#dividermode19枚举说明) | 否 | 是 | 设置分割线模式。 |
+| strokeWidth | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 分割线的线宽。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| color | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 分割线的颜色。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| startMargin | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 分割线与菜单侧边起始端的距离。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| endMargin | [LengthMetrics](js-apis-arkui-graphics.md#lengthmetrics12) | 否 | 是 | 分割线与菜单侧边结束端的距离。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| mode19+ | [DividerMode](ts-appendix-enums.md#dividermode19枚举说明) | 否 | 是 | 设置分割线模式。  **元服务API：** 从API version 19开始，该接口支持在元服务中使用。 |
 
 ## ChainWeightOptions14+对象说明
 
@@ -1043,11 +1039,11 @@ type ResponsiveFillType = PresetFillType
 
 以水平方向Bias为例，其值为组件到左锚点的距离 Dstart与组件到水平方向锚点间总距离 Dstart + Dend的比值。镜像语言下，Dstart为组件到右锚点的距离。下图中Dwidth表示组件宽度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/hmlW-XjBRXSZW4wyBPMBSA/zh-cn_image_0000002779852774.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/IREsYb96Ta65sWrjIjG-yA/zh-cn_image_0000002786361702.png)
 
 竖直方向同理，其值为组件到上锚点的距离Dtop与组件到竖直方向锚点间总距离Dtop + Dbottom的比值。下图中Dheight表示组件高度。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/OwWMIOU1SrODpLECXPbD9Q/zh-cn_image_0000002779692806.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/eb/v3/6B6BU68RSUqIcNN7llG3SQ/zh-cn_image_0000002815561123.png)
 
 **卡片能力：** 从API version 11开始，该接口支持在ArkTS卡片中使用。
 

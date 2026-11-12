@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interfaces (其他)
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > ArkTS API > @ohos.multimedia.avMusicTemplate (音频模板) > Interfaces (其他)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:14+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:cfe7095ca8985733d9fbd92c7f89d3ffb549cb7c31d366ef39401b0fbc07264e
+scraped_at: 2026-11-12T09:56:30+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ade857f13b9ce372aff4a661b76d5ab62304c50222bcadc2d563c1bc8f9ab830
 ---
 
 **说明** 
@@ -398,6 +398,49 @@ content_hash: sha256:cfe7095ca8985733d9fbd92c7f89d3ffb549cb7c31d366ef39401b0fbc0
 | --- | --- | --- | --- | --- |
 | musicInfo | [SearchPlayMusicInfo](arkts-apis-avmusictemplate-i.md#searchplaymusicinfo) | 否 | 是 | 搜播的音频信息。 |
 | videoInfo | [SearchPlayVideoInfo](arkts-apis-avmusictemplate-i.md#searchplayvideoinfo) | 否 | 是 | 搜播的视频信息。 |
+| karaokeInfo | [SearchPlayKaraokeInfo](arkts-apis-avmusictemplate-i.md#searchplaykaraokeinfo) | 否 | 是 | 搜播的K歌信息。如果此参数留空，则仅启动K歌应用。  **起始版本：** 26.0.1 |
+
+## SearchPlayKaraokeInfo
+
+搜播的K歌信息的定义。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| songName | string | 否 | 是 | 歌曲名检索槽位。 |
+| artist | string | 否 | 是 | 歌手检索槽位。 |
+| albumName | string | 否 | 是 | 专辑名检索槽位。 |
+| billBoard | string | 否 | 是 | 榜单检索槽位。 |
+| scene | string | 否 | 是 | 场景检索槽位。 |
+| genre | string | 否 | 是 | 曲风检索槽位。 |
+| instrument | string | 否 | 是 | 乐器检索槽位。 |
+| language | string | 否 | 是 | 语种检索槽位。 |
+| decade | string | 否 | 是 | 年代检索槽位。 |
+| mood | string | 否 | 是 | 心情检索槽位。 |
+| gender | string | 否 | 是 | 性别检索槽位。 |
+| queryKeyWords | string | 否 | 是 | 关键词检索槽位。 |
+| extra | string | 否 | 是 | K歌的额外信息。 |
+| items | [SearchPlayKaraokeItem](arkts-apis-avmusictemplate-i.md#searchplaykaraokeitem)[] | 否 | 是 | K歌曲目列表。 |
+
+## SearchPlayKaraokeItem
+
+搜播的K歌项目的定义。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| entityId | string | 否 | 否 | K歌媒体资源的唯一标识。 |
+| entityName | string | 否 | 是 | K歌媒体资源的名称。 |
 
 ## SearchPlayMusicInfo
 
@@ -414,6 +457,7 @@ content_hash: sha256:cfe7095ca8985733d9fbd92c7f89d3ffb549cb7c31d366ef39401b0fbc0
 | description | string | 否 | 是 | 对音频的描述。 |
 | playMusicOnly | boolean | 否 | 是 | 是否仅执行播放音乐的操作。true表示是，false表示否。无默认值。 |
 | playMode | string | 否 | 是 | 音频的播放模式。 |
+| extras | string | 否 | 是 | 音频的额外信息。  **起始版本：** 26.0.1 |
 
 ## SearchPlayMusicItem
 

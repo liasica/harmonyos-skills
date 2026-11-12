@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.application.BackupExtensionAbility (备份恢复扩展能力)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > @ohos.application.BackupExtensionAbility (备份恢复扩展能力)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:f3f88fa14344c40b8556a4f536f0085addb22e0fd6df87dd81645b76aa9883d6
+scraped_at: 2026-11-12T09:55:04+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:19e47d08b2b4e9cc8df229df49dba74a83fd2f8babe29a89a857bd43910e6b24
 ---
 
 BackupExtensionAbility模块提供备份恢复服务的扩展能力。应用接入该能力后，可由系统备份恢复框架调度备份、恢复、进度上报和安全退出逻辑，满足应用数据迁移、版本兼容处理和临时文件清理等场景，提升数据迁移连续性并降低应用自行管理备份恢复流程的复杂度。
@@ -492,8 +492,7 @@ BackupExtensionAbility不支持以下模块的引用。
 | Basic Services Kit | [@ohos.power (系统电源管理)](js-apis-power.md) |
 | Connectivity Kit | [@ohos.nfc.cardEmulation (标准NFC-cardEmulation)](js-apis-cardemulation.md) |
 | Form Kit | [@ohos.application.formError (formError)](js-apis-application-formerror.md) |
-| Form Kit | [@ohos.application.formError (formError)](js-apis-application-formerror.md) |
 | IME Kit | [@ohos.inputMethod (输入法框架)](js-apis-inputmethod.md) |
 | Location Kit | [@ohos.geolocation (位置服务)](js-apis-geolocation.md) |
-| MDM Kit | [@ohos.enterprise.adminManager（admin权限管理）](js-apis-enterprise-adminmanager.md) |
+| MDM Kit | [@ohos.enterprise.adminManager (admin权限管理)](js-apis-enterprise-adminmanager.md) |
 | Sensor Service Kit | [@ohos.sensor (传感器)](js-apis-sensor.md) |

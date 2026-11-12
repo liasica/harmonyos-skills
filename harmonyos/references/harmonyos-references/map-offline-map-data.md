@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-offli
 title: offlineMapData（离线地图）
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > offlineMapData（离线地图）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:23+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:57:26+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:18ec5c33e2734bf2e3d475ffd7b78045726f2cd4693efb59520b84f0ae89d54b
 ---
 

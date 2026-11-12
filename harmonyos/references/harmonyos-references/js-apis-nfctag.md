@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.nfc.tag (标准NFC-Tag)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.nfc.tag (标准NFC-Tag)
 category: harmonyos-references
-scraped_at: 2026-11-04T08:34:40+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:c20b71463a49d978fb2d83e7d2abaa3c4b0edd9a67f3ef02932f5027e504c7c2
+scraped_at: 2026-11-12T09:55:33+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:fb9709b54a446e90f0b091e38d4c64bd113f08c84b0a28e0dc28a537613881e4
 ---
 
 本模块主要用于操作及管理NFC Tag，提供后台读卡和前台应用优先分发两种读卡模式。
@@ -691,7 +691,7 @@ on(type: 'readerMode', elementName: [ElementName](js-apis-bundlemanager-elementn
 | 201 | Permission denied. |
 | 401 | The parameter check failed. Possible causes:  1. Mandatory parameters are left unspecified.  2. Incorrect parameters types.  3. Parameter verification failed. |
 | 801 | Capability not supported. |
-| 3100201 | The tag running state is abnormal in the service. |
+| 3100201 | The tag running state is abnormal in the service.  适用版本：12+ |
 | 3100202 | The element state is invalid. |
 
 **示例：**

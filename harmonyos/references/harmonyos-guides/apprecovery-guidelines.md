@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/apprecovery-g
 title: 应用恢复开发指导
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 错误管理及应用恢复 > 应用恢复开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:01+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:6b9d1da23384970996531836a09420594edbcaae3be4d1bcd00b1df0722f4536
+scraped_at: 2026-11-12T09:51:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:064506f5ca8a51660dab7867aa9a41a3084ed06fb95d7aeb38fac6afa7e0f168
 ---
 
 ## 场景介绍
@@ -56,13 +56,13 @@ API版本9以及未使用**setRestartWant**指定UIAbility的场景，会拉起�
 
 应用恢复状态标识会在状态保存接口主动或者被动调用时设置。在应用正常退出或者应用异常退出重启后，该状态会被清理。正常退出目前包括用户按后退键退出以及用户清理最近任务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/VJBA9Pj1R2aZo8QmWb6i6A/zh-cn_image_0000002809010525.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/ax-yJK5xRWqZxrnQfeecQQ/zh-cn_image_0000002786519742.png)
 
 ### 应用卡死的状态保存及恢复
 
 API版本10开始支持应用卡死时的状态保存。JsError故障时，onSaveState接口在主线程进行回调。对于AppFreeze故障，主线程可能处于卡死的状态，onSaveState会在非主线程进行回调。其主要流程如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/BTnlcdXXSYapcTfe26ff4A/zh-cn_image_0000002809050439.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/4VUo66pcQX2sZaj93RrAkg/zh-cn_image_0000002786359814.png)
 
 由于卡死时的回调不在JS线程上执行，onSaveState回调中的代码建议不要使用import进来的Native动态库，禁止访问主线程创建的thread\_local对象。
 
@@ -76,7 +76,7 @@ API版本10开始支持应用卡死时的状态保存。JsError故障时，onSav
 
 下图中并没有标记faultLogger的调用时机，开发者可以根据应用启动时传入的[LastExitReason](../harmonyos-references/js-apis-app-ability-abilityconstant.md#lastexitreason)来决定是否调用faultLogger查询上次的故障信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/wRo1Z4w5RWqhkINkO_kQ2Q/zh-cn_image_0000002779850874.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/3NnbvZ_TSiuZMtrLoCpRCw/zh-cn_image_0000002815559235.png)
 
 这里建议应用开发者使用errorManager对应用的异常进行处理，处理完成后开发者可以选择调用状态保存接口并主动重启应用。
 
@@ -100,33 +100,33 @@ API版本10开始支持应用卡死时的状态保存。JsError故障时，onSav
 
 ### 使能开启自恢复特性
 
-开发者需要在应用模块初始化时使能appRecovery功能。下面为示例的AbilityStage。
+引入头文件。
 
-```ts
-import { AbilityStage, appRecovery } from '@kit.AbilityKit';
-import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+import {
+  appRecovery,
+// ...
+} from '@kit.AbilityKit';
+```
 
-export default class MyAbilityStage extends AbilityStage {
-    onCreate() {
-        hilog.info(0x0000, 'testTag', `[Demo] MyAbilityStage onCreate`);
-        appRecovery.enableAppRecovery(appRecovery.RestartFlag.ALWAYS_RESTART,
-            appRecovery.SaveOccasionFlag.SAVE_WHEN_ERROR | appRecovery.SaveOccasionFlag.SAVE_WHEN_BACKGROUND,
-            appRecovery.SaveModeFlag.SAVE_WITH_FILE);
-    }
-}
+开发者需要在应用模块初始化(onCreate阶段)时使能appRecovery功能。
+
+```typescript
+appRecovery.enableAppRecovery(appRecovery.RestartFlag.ALWAYS_RESTART,
+  appRecovery.SaveOccasionFlag.SAVE_WHEN_ERROR | appRecovery.SaveOccasionFlag.SAVE_WHEN_BACKGROUND,
+  appRecovery.SaveModeFlag.SAVE_WITH_FILE);
 ```
 
 ### 配置支持恢复的UIAbility
 
 UIAbility的配置清单一般的名字为module.json5。
 
-```ts
+```json5
 {
-    "abilities": [
-      {
-        "name": "EntryAbility",
-        "recoverable": true,
-      }]
+  "name": "EntryAbility",
+  // ...
+  "recoverable": true,
+  // ...
 }
 ```
 
@@ -138,60 +138,56 @@ UIAbility的配置清单一般的名字为module.json5。
 
 **导包**
 
-```ts
-import { AbilityConstant, appRecovery, errorManager } from '@kit.AbilityKit';
+```typescript
+import {
+  appRecovery,
+  AbilityConstant,
+  errorManager,
+  UIAbility,
+  Want,
+  wantConstant
+} from '@kit.AbilityKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+import { window } from '@kit.ArkUI';
+```
+
+自定义hilog打印的domain值。
+
+```typescript
+const DOMAIN = 0x0000;
 ```
 
 **主动触发保存和恢复**
 
 * 定义和注册[ErrorObserver](../harmonyos-references/js-apis-inner-application-errorobserver.md) callback，具体可参考[errorManager](../harmonyos-references/js-apis-app-ability-errormanager.md)里的使用方法。
 
-```ts
-import { appRecovery, errorManager, UIAbility } from '@kit.AbilityKit';
-import { window } from '@kit.ArkUI';
-import { hilog } from '@kit.PerformanceAnalysisKit';
-
+```typescript
 let registerId = -1;
 let callback: errorManager.ErrorObserver = {
-    onUnhandledException(errMsg) {
-    hilog.error(0x0000, 'testTag', `errMsg: ${errMsg}`);
+  onUnhandledException(errMsg) {
+    hilog.error(DOMAIN, 'testRecoveryTag', `errMsg: ${errMsg}`);
     appRecovery.saveAppState();
     appRecovery.restartApp();
-    }
+  }
 }
+```
 
-export default class EntryAbility extends UIAbility {
-    onWindowStageCreate(windowStage: window.WindowStage) {
-    // 为已创建的主窗口设置主页面
-    hilog.info(0x0000, 'testTag', `[Demo] EntryAbility onWindowStageCreate`);
-    registerId = errorManager.on('error', callback);
+* 在onWindowStageCreate阶段，注册ErrorObserver并加载页面。
 
-    windowStage.loadContent("pages/index", (err, data) => {
-        if (err.code) {
-            hilog.error(0x0000, 'testTag', `Failed to load the content. Cause: ${JSON.stringify(err)}`);
-            return;
-        }
-        hilog.info(0x0000, 'testTag', `Succeeded in loading the content. Data: ${JSON.stringify(data)}`);
-    })
-    }
-}
+```typescript
+registerId = errorManager.on('error', callback);
 ```
 
 * 数据保存
 
 callback触发appRecovery.saveAppState()调用后，会触发EntryAbility的onSaveState(state, wantParams)函数回调。
 
-```ts
-import { AbilityConstant, UIAbility } from '@kit.AbilityKit';
-import { hilog } from '@kit.PerformanceAnalysisKit';
-
-export default class EntryAbility extends UIAbility {
-    onSaveState(state:AbilityConstant.StateType, wantParams: Record<string, Object>) {
-        // UIAbility已调用以保存应用程序数据
-        hilog.info(0x0000, 'testTag', `[Demo] EntryAbility onSaveState`);
-        wantParams["myData"] = "my1234567";
-        return AbilityConstant.OnSaveResult.ALL_AGREE;
-    }
+```typescript
+onSaveState(state: AbilityConstant.StateType, wantParams: Record<string, Object>) {
+  // Ability has called to save app data
+  hilog.info(DOMAIN, 'testRecoveryTag', '[Demo] EntryAbility onSaveState');
+  wantParams['myData'] = 'my1234567';
+  return AbilityConstant.OnSaveResult.ALL_AGREE;
 }
 ```
 
@@ -199,81 +195,46 @@ export default class EntryAbility extends UIAbility {
 
 callback触发后appRecovery.restartApp()调用后，应用会重启，重启后会走到EntryAbility的onCreate(want, launchParam)函数，保存的数据会在want参数的parameters里。
 
-```ts
-import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-import { hilog } from '@kit.PerformanceAnalysisKit';
-
-let abilityWant: Want;
-
-export default class EntryAbility extends UIAbility {
-    storage: LocalStorage | undefined = undefined;
-
-    onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-        hilog.info(0x0000, 'testTag', `[Demo] EntryAbility onCreate`);
-        abilityWant = want;
-        if (launchParam.launchReason == AbilityConstant.LaunchReason.APP_RECOVERY) {
-            this.storage = new LocalStorage();
-            if (want.parameters) {
-                let recoveryData = want.parameters["myData"];
-                this.storage.setOrCreate("myData", recoveryData);
-                this.context.restoreWindowStage(this.storage);
-            }
-        }
-    }
+```typescript
+if (launchParam.launchReason == AbilityConstant.LaunchReason.APP_RECOVERY) {
+  this.storage = new LocalStorage();
+  if (want.parameters) {
+    let recoveryData = want.parameters['myData'];
+    this.storage.setOrCreate('myData', recoveryData);
+    this.context.restoreWindowStage(this.storage);
+  }
 }
 ```
 
 * 取消注册ErrorObserver callback
 
-```ts
-import { errorManager, UIAbility } from '@kit.AbilityKit';
-import { hilog } from '@kit.PerformanceAnalysisKit';
-
-let registerId = -1;
-
-export default class EntryAbility extends UIAbility {
-    onWindowStageDestroy() {
-        // 销毁主窗口，释放相关UI资源
-        hilog.info(0x0000, 'testTag', `[Demo] EntryAbility onWindowStageDestroy`);
-
-        errorManager.off('error', registerId, (err) => {
-            hilog.error(0x0000, 'testTag', `[Demo] err: ${err}`);
-        });
-    }
-}
+```typescript
+errorManager.off('error', registerId, (err) => {
+  hilog.error(DOMAIN, 'testRecoveryTag', '[Demo] err:', err);
+});
 ```
 
 **被动保存和恢复**
 
 被动保存和恢复依赖恢复框架底层触发，无需注册监听ErrorObserver callback，只需实现UIAbility的onSaveState接口数据保存和onCreate接口数据恢复流程即可。
 
-```ts
-import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
-import { hilog } from '@kit.PerformanceAnalysisKit';
+```typescript
+if (launchParam.launchReason == AbilityConstant.LaunchReason.APP_RECOVERY) {
+  this.storage = new LocalStorage();
+  if (want.parameters) {
+    let recoveryData = want.parameters['myData'];
+    this.storage.setOrCreate('myData', recoveryData);
+    this.context.restoreWindowStage(this.storage);
+  }
+}
+```
 
-let abilityWant: Want;
-
-export default class EntryAbility extends UIAbility {
-    storage: LocalStorage | undefined = undefined
-    onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-    hilog.info(0x0000, 'testTag', `[Demo] EntryAbility onCreate`);
-        abilityWant = want;
-        if (launchParam.launchReason == AbilityConstant.LaunchReason.APP_RECOVERY) {
-            this.storage = new LocalStorage();
-            if (want.parameters) {
-                let recoveryData = want.parameters["myData"];
-                this.storage.setOrCreate("myData", recoveryData);
-                this.context.restoreWindowStage(this.storage);
-            }
-        }
-    }
-
-    onSaveState(state:AbilityConstant.StateType, wantParams: Record<string, Object>) {
-        // UIAbility已调用以保存应用程序数据
-        hilog.info(0x0000, 'testTag', `[Demo] EntryAbility onSaveState`);
-        wantParams["myData"] = "my1234567";
-        return AbilityConstant.OnSaveResult.ALL_AGREE;
-    }
+```typescript
+onSaveState(state: AbilityConstant.StateType, wantParams: Record<string, Object>) {
+  // Ability has called to save app data
+  hilog.info(DOMAIN, 'testRecoveryTag', '[Demo] EntryAbility onSaveState');
+  wantParams['myData'] = 'my1234567';
+  return AbilityConstant.OnSaveResult.ALL_AGREE;
 }
 ```
 
@@ -281,19 +242,12 @@ export default class EntryAbility extends UIAbility {
 
 发生故障的UIAbility再次重新启动时，在调用onCreate生命周期里，参数want的parameters成员会有[ABILITY\_RECOVERY\_RESTART](../harmonyos-references/js-apis-app-ability-wantconstant.md#params)标记数据，并且值为true。
 
-```ts
-import { AbilityConstant, UIAbility, Want, wantConstant } from '@kit.AbilityKit';
-import { hilog } from '@kit.PerformanceAnalysisKit';
-
-export default class EntryAbility extends UIAbility {
-    onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-        if (want.parameters === undefined) {
-            return;
-        }
-        if (want.parameters[wantConstant.Params.ABILITY_RECOVERY_RESTART] != undefined &&
-            want.parameters[wantConstant.Params.ABILITY_RECOVERY_RESTART] == true) {
-            hilog.info(0x0000, 'testTag', `This ability need to recovery`);
-        }
-    }
+```typescript
+if (want.parameters === undefined) {
+  return;
+}
+if (want.parameters[wantConstant.Params.ABILITY_RECOVERY_RESTART] != undefined &&
+  want.parameters[wantConstant.Params.ABILITY_RECOVERY_RESTART] == true) {
+  hilog.info(DOMAIN, 'testRecoveryTag', 'This ability need to recovery');
 }
 ```

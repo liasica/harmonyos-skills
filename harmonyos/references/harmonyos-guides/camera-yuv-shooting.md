@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-yuv-sh
 title: YUV拍照(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > YUV拍照(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:20+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:68ead72967739b3a0989f7d2e751bca1d6118a23b0b791a63302e54904e3973f
+scraped_at: 2026-11-12T09:52:04+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b9cc732bd80fff58b406db0abcddf54aea4a1935609905a7a956e228aab7c629
 ---
 
 从API version 23开始，相机框架提供YUV格式图片拍照能力。与普通拍照相比，YUV拍照获取到的是未经过编码的图像数据，完整保留了传感器捕获的原始亮度和色度信息，适用于视频编码或专业处理。同时，拍摄过程会产生更高的能耗开销，保存会占用更多的存储空间。
@@ -96,13 +96,13 @@ content_hash: sha256:68ead72967739b3a0989f7d2e751bca1d6118a23b0b791a63302e54904e
 
      async mediaLibSavePhotoSingle(context: Context, imageObj: image.Image | image.Picture) {
        let picture: image.Picture = imageObj as image.Picture;
-       Logger.info(TAG_LOG, 'picture GetMainPixelmap E');
-       await this.GetMainPixelmap(context, picture);
-       Logger.info(TAG_LOG, 'picture GetMainPixelmap X');
+       Logger.info(TAG_LOG, 'picture getMainPixelmap E');
+       await this.getMainPixelmap(context, picture);
+       Logger.info(TAG_LOG, 'picture getMainPixelmap X');
 
-       Logger.info(TAG_LOG, 'picture Release E');
-       await this.Release(picture);
-       Logger.info(TAG_LOG, 'picture Release X');
+       Logger.info(TAG_LOG, 'picture releasePicture E');
+       await this.releasePicture(picture);
+       Logger.info(TAG_LOG, 'picture releasePicture X');
      }
 
      async packToFileFromPixelMap(context : Context, pixelMap : image.PixelMap) {
@@ -148,7 +148,7 @@ content_hash: sha256:68ead72967739b3a0989f7d2e751bca1d6118a23b0b791a63302e54904e
      }
 
      // 获取拍照的主图的pixelMap。
-     async GetMainPixelmap(context: Context, pictureObj : image.Picture) {
+     async getMainPixelmap(context: Context, pictureObj : image.Picture) {
        let funcName = 'getMainPixelmap';
        if (pictureObj != null) {
          let mainPixelmap: image.PixelMap = pictureObj.getMainPixelmap();
@@ -162,7 +162,7 @@ content_hash: sha256:68ead72967739b3a0989f7d2e751bca1d6118a23b0b791a63302e54904e
            this.callback(mainPixelmap, '');
            mainPixelmap.getImageInfo().then((imageInfo: image.ImageInfo) => {
              if (imageInfo != null) {
-               Logger.info(TAG_LOG, 'GetMainPixelmap information height:' + imageInfo.size.height + ' width:' + imageInfo.size.width +
+               Logger.info(TAG_LOG, 'getMainPixelmap information height:' + imageInfo.size.height + ' width:' + imageInfo.size.width +
                  ' pixelFormat:' + imageInfo.pixelFormat + ' isHdr:' + imageInfo.isHdr);
              }
            }).catch((error: BusinessError) => {
@@ -177,8 +177,8 @@ content_hash: sha256:68ead72967739b3a0989f7d2e751bca1d6118a23b0b791a63302e54904e
      }
 
      // 释放资源。
-     async Release(pictureObj : image.Picture) {
-       let funcName = 'Release';
+     async releasePicture(pictureObj : image.Picture) {
+       let funcName = 'releasePicture';
        if (pictureObj != null) {
          pictureObj.release();
          if (pictureObj.getMainPixelmap() == null) {

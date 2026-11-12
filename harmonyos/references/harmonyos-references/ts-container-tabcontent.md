@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: TabContent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 导航与切换 > TabContent
 category: harmonyos-references
-scraped_at: 2026-11-04T08:32:57+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:bd30978254f2dd0540714b0cf89b7461ca37c22ffa5d58f3f564b2fc4b307e4f
+scraped_at: 2026-11-12T09:54:14+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:60a74113bd3224cfa9c81c1d882895150980da2ade99f644f7dc8414fbac0be8
 ---
 
 TabContent组件用于在[Tabs](ts-container-tabs.md)中定义每个页签的内容视图，支持单个子组件渲染、内容裁切控制、页签样式自定义等特性。适用于需要多页签切换的应用场景，如分类导航、功能模块切换等，帮助开发者快速实现内容分页展示和交互。
@@ -115,6 +115,34 @@ tabBar(content: ComponentContent | SubTabBarStyle | BottomTabBarStyle | string |
 * 建议对Tabs组件的所有TabContent子组件的tabBar属性，采用统一的参数类型。
 * 若TabContent内部有可获焦组件，Tabs组件内TabContent组件和TabBar组件之间的走焦，仅支持通过键盘的方向键控制。
 * TabBar的属性动态修改后，会重新进行渲染，更新相关属性并重置所有页签位置。
+
+### tabBarVisibility
+
+tabBarVisibility(visibility: TabVisibility, displayMode?: TabBarDisplayMode)
+
+设置Tab页签的可见性。未通过该接口设置时，Tab页签可见性默认为TabVisibility.VISIBLE。
+
+**说明** 
+
+* 当visibility为TabVisibility.HIDDEN且displayMode为TabBarDisplayMode.SIDEBAR时，该页签在侧边栏中不显示，但在底部TabBar中仍可见。
+* 当visibility为TabVisibility.HIDDEN且displayMode为TabBarDisplayMode.BOTTOM\_TABBAR时，该页签在底部TabBar中不显示，但在侧边栏中仍可见。
+* 当visibility为TabVisibility.HIDDEN且不设置displayMode时，该页签在两种显示模式中均不显示。
+* 隐藏的页签内容仍可通过TabsController.changeIndex()或修改index状态变量切换显示。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| visibility | [TabVisibility](ts-container-tabcontent.md#tabvisibility) | 是 | Tab页签可见性。 |
+| displayMode | [TabBarDisplayMode](ts-container-tabs.md#tabbardisplaymode) | 否 | 可见性对应的显示模式。  不设置时，visibility同时作用于侧边栏和底部TabBar。  设置为TabBarDisplayMode.SIDEBAR时，visibility仅作用于侧边栏。设置为TabBarDisplayMode.BOTTOM\_TABBAR时，visibility仅作用于底部TabBar。 |
 
 ## TabBarOptions18+对象说明
 
@@ -778,6 +806,23 @@ iconStyle(style: TabBarIconStyle): BottomTabBarStyle
 | unselectedColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 设置图标未选中时的颜色。  默认值：#33182431  **说明：**  仅对svg图源生效，设置后会替换svg图片的填充颜色。 |
 | selectedColor | [ResourceColor](ts-types.md#resourcecolor) | 否 | 是 | 设置图标选中时的颜色。  默认值：#FF007DFF  **说明：**  仅对svg图源生效，设置后会替换svg图片的填充颜色。 |
 
+## TabVisibility
+
+Tab页签可见性枚举。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| VISIBLE | 0 | 页签可见。 |
+| HIDDEN | 1 | 页签不可见。 |
+
 ## 事件
 
 除支持[通用事件](ts-component-general-events.md)外，还支持以下事件：
@@ -953,7 +998,7 @@ struct TabContentExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/kkWP_xJST1yr3RpUWdLgNA/zh-cn_image_0000002809051845.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/em2ip-bTRg2MkfruS533FA/zh-cn_image_0000002815560625.gif)
 
 ### 示例2（自定义侧边页签）
 
@@ -1028,7 +1073,7 @@ struct TabContentExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/F3AKJIKnSO2Cl32iWHNQ0g/zh-cn_image_0000002779852280.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/F3k77INTRRuomlDKW7DuYA/zh-cn_image_0000002815400709.gif)
 
 ### 示例3（子页签/底部页签/侧边页签样式对比）
 
@@ -1205,7 +1250,7 @@ struct TabBarStyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/YimdupGmRAKKLnXcEhBT4w/zh-cn_image_0000002779692312.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/fxE0OMcTS8ymeQiZzP0FCQ/zh-cn_image_0000002786521134.jpeg)
 
 ### 示例4（设置子页签下划线基本属性）
 
@@ -1443,7 +1488,7 @@ struct TabsAttr {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/_qnNGfFRScm76_aX7DIxqg/zh-cn_image_0000002809011933.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/UPJAM7EJSPSIET2iAsUk9A/zh-cn_image_0000002786361206.gif)
 
 ### 示例5（设置子页签文本自适应高度属性）
 
@@ -1531,7 +1576,7 @@ struct TabsTextOverflow {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/Crqd43q4TT625l9fyVCDDg/zh-cn_image_0000002809051847.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/WlB8MjQgSNqRwBxihe0GlQ/zh-cn_image_0000002815560627.png)
 
 ### 示例6（设置底部页签基本属性）
 
@@ -1682,7 +1727,7 @@ struct TabContentExample6 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/pQt_7G8tQ6CgRlVAd6UYLw/zh-cn_image_0000002779852282.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/wJ3cdtSDQMWI4wiujD0I3w/zh-cn_image_0000002815400711.gif)
 
 ### 示例7（设置子页签/底部页签文本颜色）
 
@@ -1782,7 +1827,7 @@ struct TabBarStyleExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/36vHRwIBQ-qqAMzffecF2g/zh-cn_image_0000002779692314.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/fHykttdmRrKhfjkMKNegbQ/zh-cn_image_0000002786521136.gif)
 
 ### 示例8（设置底部页签使用symbol图标）
 
@@ -1866,7 +1911,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/wYY7Hu2FTd-MiV67XdviUQ/zh-cn_image_0000002809011935.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/VvbNo45aRHG9m-qZfLTeyg/zh-cn_image_0000002786361208.gif)
 
 ### 示例9（通过ComponentContent设置TabBar）
 
@@ -1972,7 +2017,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/QvwpahfbQuu0C9z3ZrrCIg/zh-cn_image_0000002809051849.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/jZGGJfzIR8SCJAmgErDpPA/zh-cn_image_0000002815560629.gif)
 
 ### 示例10（通过ComponentContent预加载子节点）
 
@@ -2148,7 +2193,7 @@ struct MyComponent {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/aaVeCSs9TCe02dis5eKCIg/zh-cn_image_0000002779852284.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/-7JTh1CARuKo6R0Jps4ACQ/zh-cn_image_0000002815400713.gif)
 
 ### 示例11（设置子页签indicator为图片）
 
@@ -2214,4 +2259,124 @@ struct TabsIndicatorExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/bnPItABVQ36lLiBCbiH_YA/zh-cn_image_0000002779692316.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/cNHIziY4Q4aoQAPk0CbSsg/zh-cn_image_0000002786521138.png)
+
+### 示例12（设置页签在不同页签栏中的可见性）
+
+该示例通过[tabBarVisibility](ts-container-tabcontent.md#tabbarvisibility)属性，设置页签在不同样式的页签栏中的可见性。
+
+从API版本26.0.1开始，TabContent新增了[tabBarVisibility](ts-container-tabcontent.md#tabbarvisibility)属性。
+
+```ts
+// xxx.ets
+@Entry
+@Component
+struct TabBarVisibilityExample {
+  @State myIndex: number = 0;
+  @State isBottomType: boolean = true;
+  private controller: TabsController = new TabsController();
+
+  build() {
+    Column() {
+      Row() {
+        Text('barStyle: ')
+        Radio({group: `barStyle`, value: `BOTTOM`}).checked(this.isBottomType).onChange((isChecked: boolean) => {
+          if (isChecked) {
+            this.isBottomType = true;
+          }
+        })
+        Text('BOTTOM  ')
+        Radio({group: `barStyle`, value: `SIDEBAR`}).checked(!this.isBottomType).onChange((isChecked: boolean) => {
+          if (isChecked) {
+            this.isBottomType = false;
+          }
+        })
+        Text('SIDEBAR')
+      }.width(450)
+      .height(55)
+      .justifyContent(FlexAlign.Center)
+      Divider().vertical(false).strokeWidth(1).color('#ffd9d9d9')
+      Row() {
+        // 即使某些页签通过tabBarVisibility属性隐藏了，也可以通过修改index状态变量切换到对应的页面
+        Text('Set myIndex: ')
+        Radio({group: `myIndex`, value: `0`}).checked(this.myIndex === 0).onChange((isChecked: boolean) => {
+          if (isChecked) {
+            this.myIndex = 0;
+          }
+        })
+        Text('0  ')
+        Radio({group: `myIndex`, value: `1`}).checked(this.myIndex === 1).onChange((isChecked: boolean) => {
+          if (isChecked) {
+            this.myIndex = 1;
+          }
+        })
+        Text('1  ')
+        Radio({group: `myIndex`, value: `2`}).checked(this.myIndex === 2).onChange((isChecked: boolean) => {
+          if (isChecked) {
+            this.myIndex = 2;
+          }
+        })
+        Text('2')
+      }.width(450)
+      .height(55)
+      .justifyContent(FlexAlign.Center)
+      Divider().vertical(false).strokeWidth(1).color('#ffd9d9d9')
+      Row() {
+        // 即使某些页签通过tabBarVisibility属性隐藏了，也可以通过TabsController.changeIndex接口切换到对应的页面
+        Text('TabsController.changeIndex').margin({right: 10})
+        Button('0').onClick(() => {
+          this.controller.changeIndex(0)
+        }).margin({right: 10}).fontSize(15).backgroundColor('#ff2787d9')
+        Button('1').onClick(() => {
+          this.controller.changeIndex(1)
+        }).margin({right: 10}).fontSize(15).backgroundColor('#ff2787d9')
+        Button('2').onClick(() => {
+          this.controller.changeIndex(2)
+        }).fontSize(15).backgroundColor('#ff2787d9')
+      }.width(450)
+      .height(55)
+      .justifyContent(FlexAlign.Center)
+      Tabs({index: this.myIndex, controller: this.controller}) {
+        TabContent() {
+          Stack({alignContent: Alignment.Center}) {
+            Text('TabContent0').fontSize(18)
+          }.width('100%').height('100%')
+        }
+        // 请开发者将$r('app.media.arrow')替换为实际的资源
+        // 页签默认在TabBarDisplayMode.BOTTOM_TABBAR和TabBarDisplayMode.SIDEBAR显示模式中都可见
+        .tabBar({icon: $r('app.media.arrow'), text: 'tab0'})
+        TabContent() {
+          Stack({alignContent: Alignment.Center}) {
+            Text('TabContent1').fontSize(18)
+          }.width('100%').height('100%')
+        }
+        // 请开发者将$r('app.media.arrow')替换为实际的资源
+        .tabBar({icon: $r('app.media.arrow'), text: 'tab1'})
+        // 设置该页签在TabBarDisplayMode.BOTTOM_TABBAR显示模式时不可见
+        .tabBarVisibility(TabVisibility.HIDDEN, TabBarDisplayMode.BOTTOM_TABBAR)
+        TabContent() {
+          Stack({alignContent: Alignment.Center}) {
+            Text('TabContent2').fontSize(18)
+          }.width('100%').height('100%')
+        }
+        // 请开发者将$r('app.media.arrow')替换为实际的资源
+        .tabBar({icon: $r('app.media.arrow'), text: 'tab2'})
+        // 设置该页签在TabBarDisplayMode.SIDEBAR显示模式时不可见
+        .tabBarVisibility(TabVisibility.HIDDEN, TabBarDisplayMode.SIDEBAR)
+      }
+      .width(450)
+      .height('80%')
+      .border({width: 1, color: '#ffd9d9d9'})
+      .barBackgroundColor('#fff7f7f7')
+      .barStyle(this.isBottomType ? TabBarStyle.BOTTOM : TabBarStyle.SIDEBAR)
+      .barPosition(BarPosition.End)
+      .vertical(false)
+    }.width('100%')
+    .height(350)
+    .alignItems(HorizontalAlign.Center)
+    .justifyContent(FlexAlign.Center)
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/XMiELUnCTDOo2eBeXfQhxQ/zh-cn_image_0000002786361210.gif)

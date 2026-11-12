@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-app-analy
 title: 规则总览
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 附录 > 体检规则 > 规则总览
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:23:06+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:dbe187a25e213fd2c434cdab7beccc1693eac974fb626afce44186867491b7bb
+scraped_at: 2026-11-12T09:53:06+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:40f9e327214105d656be646a32f82b617fe25f466935ebb684d4406b2824068a
 ---
 
 以下是AppAnalyzer规则体检的所有规则，对应用/元服务进行体检的指导请参考[应用与元服务体检](ide-app-analyzer.md)。
@@ -51,7 +51,7 @@ content_hash: sha256:dbe187a25e213fd2c434cdab7beccc1693eac974fb626afce4418686749
 | [前台场景内存峰值占用](ide-peak-foreground-memory-usage-0418.md) | 应用/元服务前台场景峰值内存占用：应用在前台且亮屏使用过程的内存占用应≤1500MB。 | 应用，元服务 |
 | [后台CPU占用峰值](ide-peak-background-cpu-usage-0420.md) | 应用/元服务后台CPU占用峰值：应用/元服务切换到后台等待3min后，开始采集3min内CPU Load < 5%。 | 应用，元服务 |
 | [点击操作完成快](ide-quick-completion-for-click-0404.md) | 应用内点击操作完成时延应≤900ms；时间起点：点击离手；时间终点：转场页面所有占位符加载完成。 | 应用，元服务 |
-| [滑动过程流畅](ide-smooth-for-swipe-0413.md) | 应用的滑动过程卡顿率≤5ms/s；满帧30FPS的游戏类、地图类和视频类的应用帧率应≥ 29FPS。 | 应用，元服务 |
+| [滑动过程流畅](ide-smooth-for-swipe-0413.md) | 应用的滑动过程卡顿率≤5ms/s；满帧30FPS的游戏类、地图类和视频类的应用帧率应≥29FPS。 | 应用，元服务 |
 | [转场操作流畅](ide-smooth-for-transition-0414.md) | 应用内转场过程卡顿率≤0ms/s；滑动过程卡顿率：动效时间内累计丢帧时间/动效时长。 | 应用，元服务 |
 | [节点数超过500过多](ide-render-node-limit-0430.md) | 后端Render Server在每帧数据里处理的节点数不应该超过500，否则会造成CPU使用过高，引发帧时延过高，从而导致丢帧。 | 应用，元服务 |
 | [点击操作响应快](ide-quick-response-for-click-0403.md) | 应用内点击操作响应时延应≤100ms；时间起点：点击离手；时间终点：界面发生变化。 | 应用，元服务 |
@@ -200,7 +200,7 @@ content_hash: sha256:dbe187a25e213fd2c434cdab7beccc1693eac974fb626afce4418686749
 | [应用/元服务内点击操作响应快](ide-quick-response-for-click-0403.md) | 起点：点击离手；  终点：界面发生变化；  应用/元服务内点击操作响应时延应≤ 100ms。 | 应用，元服务 | 3 |
 | [应用/元服务内点击操作完成快](ide-quick-completion-for-click-0404.md) | 时间起点：点击离手；  时间终点：转场页面所有占位符加载完成；  应用/元服务内点击操作完成时延应≤ 1600ms。 | 应用，元服务 | 3 |
 | [应用/元服务内滑动操作响应快](ide-quick-response-for-swipe-0405.md) | 时间起点：手指滑动；  时间终点：界面发生变化；  应用/元服务内滑动操作响应时延应≤ 80ms。 | 应用，元服务 | 3 |
-| [应用/元服务内滑动过程流畅](ide-smooth-for-swipe-0413.md) | 应用/元服务的滑动过程卡顿率≤ 5ms/s；  满帧30FPS的游戏类、地图类和视频类的应用帧率应≥ 29FPS。 | 应用，元服务 | 3 |
+| [应用/元服务内滑动过程流畅](ide-smooth-for-swipe-0413.md) | 应用/元服务的滑动过程卡顿率≤ 5ms/s；  满帧30FPS的游戏类、地图类和视频类的应用帧率应≥29FPS。 | 应用，元服务 | 3 |
 | [应用/元服务内转场操作流畅](ide-smooth-for-transition-0414.md) | 应用/元服务内转场过程卡顿率≤ 0ms/s；  滑动过程卡顿率：动效时间内累计丢帧时间/动效时长。 | 应用，元服务 | 3 |
 | [应用/元服务动态内存峰值占用](ide-peak-dynamic-memory-usage-0417.md) | 应用/元服务完成操作后，各类应用在后台的内存占用峰值应≤ 1300MB；  应用完成操作后切换到后台，静置3min以后采集内存占用。 | 应用，元服务 | 3 |
 | [应用/元服务前台场景内存峰值占用](ide-peak-foreground-memory-usage-0418.md) | 应用/元服务前台场景峰值内存占用：应用在前台且亮屏使用过程的内存占用应≤1500MB。 | 应用，元服务 | 3 |

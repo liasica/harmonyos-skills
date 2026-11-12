@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/dialog-window
 title: 模态窗口开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 模态窗口开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:13+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b26e2baa6a6b795efd90d18fcabbab69a1b4f84e13b0af2e41221d62f06ecac2
+scraped_at: 2026-11-12T09:51:20+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:bc56ff42e2ddfbe0ad44c6b5c885e3be931265b12ad220f3903119eb3ce33319
 ---
 
 模态窗口用于临时展示关键信息或引导用户完成特定操作（如保存信息），它会中断用户当前的操作流程，要求用户必须做出响应才能继续其他操作，通常用于需要向用户传达重要信息的场景。
@@ -48,7 +48,7 @@ content_hash: sha256:b26e2baa6a6b795efd90d18fcabbab69a1b4f84e13b0af2e41221d62f06
      }
      console.info('Succeeded in moving the window.');
      if (!dialogWindowClass) {
-       console.error('dialog_windowClass is null');
+       console.error('dialogWindowClass is null');
        return;
      }
      dialogWindowClass.resize(500, 500, (err) => {
@@ -87,7 +87,7 @@ content_hash: sha256:b26e2baa6a6b795efd90d18fcabbab69a1b4f84e13b0af2e41221d62f06
    当不再需要模态窗口时，可根据具体实现逻辑，使用[destroyWindow()](../harmonyos-references/arkts-apis-window-window.md#destroywindow9)接口销毁模态窗口。
 
    ```typescript
-   // 4.销毁模态窗口。当不再需要模态窗口时，可根据具体实现逻辑，使用destroy对其进行销毁。
+   // 4.销毁模态窗口。当不再需要模态窗口时，可根据具体实现逻辑，使用destroyWindow对其进行销毁。
    dialogWindowClass.destroyWindow((err: BusinessError) => {
      let errCode: number = err.code;
      if (errCode) {

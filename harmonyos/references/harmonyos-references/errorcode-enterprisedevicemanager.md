@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 企业设备管理错误码
 breadcrumb: API参考 > 系统 > 基础功能 > MDM Kit（企业设备管理服务） > 错误码 > 企业设备管理错误码
 category: harmonyos-references
-scraped_at: 2026-10-01T07:38:57+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:5a15dff186425ce4f35ca8fdcbfc3d1f3e89d899d6ee12e4459d516de5c50a48
+scraped_at: 2026-11-12T09:56:08+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:07986df1fd8a821d658df27e7a708bf0947040b316b44e19b1d0df1c0a77be08
 ---
 
 **说明** 
@@ -335,6 +335,24 @@ This device is not an enterprise device.
 **处理步骤**
 
 检查该设备是否设置为企业设备。
+
+## 9200019 策略列表超限
+
+**错误信息**
+
+The policy list has exceeded the limit.
+
+**错误描述**
+
+策略列表已超出限制。
+
+**可能原因**
+
+添加策略列表数据超过可设置的最大范围。
+
+**处理步骤**
+
+查看策略可设置的最大范围，根据已设置的策略值，调整输入参数，避免超限。
 
 ## 9201001 管理证书失败
 
@@ -1293,3 +1311,101 @@ Failed to operate the device.
 **处理步骤**
 
 擦除失败，请重试。
+
+## 9201052 会话超期
+
+**错误信息**
+
+USB key session time out.
+
+**错误描述**
+
+三方自定义身份认证操作过程中会话超期或authToken过期时，会产生此错误码。
+
+**可能原因**
+
+1. 调用openSession后长时间未操作，会话已过期（超过10分钟）。
+2. 通过userAuth获取的authToken已超过有效时长（10分钟）。
+
+**处理步骤**
+
+1. 重新调用openSession获取新的会话和挑战值。
+2. 重新发起用户身份认证，获取新的authToken。
+3. 使用新的会话和authToken重新执行操作。
+
+## 9201053 定时器数量已达上限
+
+**错误信息**
+
+The number of timers has reached the upper limit.
+
+**错误描述**
+
+当设备管理应用同时生效的精确定时器数量超过上限（5个）时，会产生此错误码。
+
+**可能原因**
+
+单个设备管理应用同时生效的精确定时器数量已超过5个上限。
+
+**处理步骤**
+
+销毁不再使用的定时器后重试。可通过[systemManager.destroyExactTimer](js-apis-enterprise-systemmanager.md#systemmanagerdestroyexacttimer)接口销毁定时器，释放定时器资源后再创建新的定时器。
+
+## 9201054 指定的定时器不存在或不属于当前设备管理应用
+
+**错误信息**
+
+The specified timer does not exist or does not belong to the current administrator.
+
+**错误描述**
+
+当操作不存在的定时器或操作非当前设备管理应用创建的定时器时，会产生此错误码。
+
+**可能原因**
+
+该错误码表示指定的定时器不存在或不属于当前设备管理应用，可能原因如下。
+
+1. 传入的定时器ID对应的定时器不存在。
+2. 传入的定时器ID对应的定时器不属于当前设备管理应用。
+
+**处理步骤**
+
+1. 检查传入的定时器ID是否正确，定时器ID由[systemManager.createExactTimer](js-apis-enterprise-systemmanager.md#systemmanagercreateexacttimer)接口创建时返回。
+2. 检查传入的定时器ID是否属于当前设备管理应用，设备管理应用只能操作自身创建的定时器。
+
+## 9201055 获取USB设备序列号失败
+
+**错误信息**
+
+Failed to obtain the USB serial number.
+
+**错误描述**
+
+获取指定USB设备序列号失败。
+
+**可能原因**
+
+USB设备未连接或不支持序列号获取。
+
+**处理步骤**
+
+重新拔插USB设备，再尝试获取序列号。
+
+## 9201056 外置存储设备挂载策略不合法
+
+**错误信息**
+
+Invalid external storage mount policy.
+
+**错误描述**
+
+当进行外置存储设备挂载，传入的挂载策略不合法时，会产生此错误码。
+
+**可能原因**
+
+1. 在不同的挂载策略之间切换。
+2. 传入的挂载策略和该外置存储设备已挂载的策略相同。
+
+**处理步骤**
+
+先将该外置存储设备卸载，再传入相应的挂载策略进行挂载。

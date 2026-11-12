@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hp-arkui-
 title: "@performance/hp-arkui-remove-unchanged-state-var"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-arkui-remove-unchanged-state-var
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:12+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:157871ea7905d0ab7c2cec97ed7e918647b2c88ed9a618d994ad2fb0023e7db9
+scraped_at: 2026-11-12T09:52:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a17b37200f8925ccd23e92b35e49b3abc192268673e1a8f2c6fd9a35e88d0104
 ---
 
 建议移除未改变的状态变量设置。
@@ -140,4 +140,4 @@ struct MyComponent {
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

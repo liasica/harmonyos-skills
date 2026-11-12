@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fast-introduc
 title: FAST Kit简介
 breadcrumb: 指南 > 系统 > 基础功能 > FAST Kit（算法加速服务） > FAST Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:36+08:00
-doc_updated_at: 2026-08-07
-content_hash: sha256:c31619a40b8ef433bb3787190e2116b7bdb7615b3771da3638310ec93235ded2
+scraped_at: 2026-11-12T09:51:49+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:2830fae060bb753931ca9ad6586c13226a0e74f80a67853f60e607a1bf4149f4
 ---
 
 FAST Kit（算法加速服务）以理论计算机为基础、面向开发者提供算法加速能力。当前开放线段表、矩形划分求解器、数字信号处理（DSP）、数理预测与系统性能优化接口，支撑应用的开发体验和用户体验提升。
@@ -107,8 +107,8 @@ FAST Kit基于理论计算机科学，通过理论算法优化，为应用的性
 | [哈希表数据结构](fast-hashmap.md) | Phone、Tablet、PC/2in1 |
 | [通用排序算法](fast-algorithm.md) | Phone、Tablet、PC/2in1 |
 | [智能序列预测](fast-math-prediction.md) | Phone、Tablet、PC/2in1 |
-| [系统性能优化（ArkTS）](fast-scheduling-optimization_arkts.md) | Phone、Tablet、PC/2in1、Wearable、TV |
-| [系统性能优化（C/C++）](fast-scheduling-optimization_c.md) | Phone、Tablet、PC/2in1、Wearable、TV |
+| [系统性能优化（ArkTS）](fast-scheduling-optimization_arkts.md) | Phone、Tablet、PC/2in1、Wearable、TV  从API版本26.0.1开始，新增支持Car设备 |
+| [系统性能优化（C/C++）](fast-scheduling-optimization_c.md) | Phone、Tablet、PC/2in1、Wearable、TV  从API版本26.0.1开始，新增支持Car设备 |
 
 ## 模拟器支持情况
 

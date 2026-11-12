@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-examples
-title: 模型轻量化示例
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化 > 模型轻量化示例
+title: CNN模型轻量化示例
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化 > CNN结构量化 > CNN模型轻量化示例
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:48+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:b0f4ffdd11cbaae7f38ef050a04b5ebaa40354e98d44a3d5cb6b847f1142f82e
+scraped_at: 2026-11-12T09:52:40+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a17733817f961076af0bb1af3f0a73aa2cbafa23d2bf5782806e4e4f58575767
 ---
 
 ## TensorFlow Quant\_INT8-8无训练量化Demo
@@ -29,7 +29,7 @@ content_hash: sha256:b0f4ffdd11cbaae7f38ef050a04b5ebaa40354e98d44a3d5cb6b847f114
 
 "dopt\_tf\_py3/demo/quant8-8/notrain/tensorflow\_mnist"中存有量化后的pb模型和量化配置文件，运行demo后生成的文件如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/MGf6ByUFRjK0t5F1zyCXMg/zh-cn_image_0000002809051273.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/55URjrIFQqKw4crY4K2TLA/zh-cn_image_0000002815400167.png)
 
 ## PyTorch Quant\_INT8-8无训练量化Demo
 
@@ -54,7 +54,7 @@ content_hash: sha256:b0f4ffdd11cbaae7f38ef050a04b5ebaa40354e98d44a3d5cb6b847f114
 
 "dopt\_pytorch\_py3/demo/quant8-8/notrain/pytorch\_mnist/"中存有PyTorch无训练量化示例文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/JCaSuWfoTjKp8VKvj7huiQ/zh-cn_image_0000002779851708.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/gQM-MSmfSk6f5YI9vv6X0A/zh-cn_image_0000002786520592.png)
 
 ## ONNX Quant\_INT8-8无训练量化Demo
 
@@ -64,7 +64,7 @@ content_hash: sha256:b0f4ffdd11cbaae7f38ef050a04b5ebaa40354e98d44a3d5cb6b847f114
 
 ### 示例代码
 
-将dopt\_onnx\_py3 目录添加到系统环境中，在终端环境执行
+将dopt\_onnx\_py3目录添加到系统环境中，在终端环境执行以下命令：
 
 ```python
 python3 ./dopt_so.py \
@@ -176,12 +176,12 @@ if __name__ == "__main__":
     ## step 1
     ## 开发者接入，配置修改
     generate_config()
-    
+
     ## step 2
     ## 训练模型，直至达标
     train_model() ## 重训练量化模型
     ## calibrate_model()  ## 校准量化模型
-    
+
     ## step 3
     ## 提取参数，用于后续模型部署
     generate_params()
@@ -197,7 +197,7 @@ if __name__ == "__main__":
 
 ```python
 import sys
-sys.path.append(".../dopt_tf_py3") ## 其中路径为绝对路径
+sys.path.append(".../dopt_pytorch_py3") ## 其中路径为绝对路径
 
 def generate_config():
     model = build_torch_model()  ## 开发者待量化的浮点模型
@@ -208,35 +208,35 @@ def train_model():
     model = build_torch_model() ## 开发者待量化的浮点模型
     from dopt.dopt_torch.opt_main import optimize_model
     model.load_state_dict(state)  ## load 浮点模型参数
-    
+
     ## 调用optimize model 量化模型
     quanted_model = optimize_model(model, config_path)
-    
+
     ## train model
-    quant_loss = get_quant_loss(quant_model)
+    quant_loss = get_quant_loss(quanted_model)
     optimizer = torch.optim.SGD(quanted_model.parameters(), lr=0.001, momentum=0.9) ## 假设使用SGD优化器
-    
+
     for input_data, label in range(...):
         optimizer.zero_grad()
-        outputs = model(input_data)
+        outputs = quanted_model(input_data)
         loss = loss_fn(outputs, label) ## loss_fn 为原始浮点网络训练loss
-        
+
         total_loss = loss + quant_weight * quant_loss ## quant_weight是指量化损失所占比例
         loss.backward()
-        
+
         optimizer.step()
 
 def calibrate_model():
     model = build_torch_model() ## 开发者待量化的浮点模型
     from dopt.dopt_torch.opt_main import optimize_model, set_calibrate_state
     model.load_state_dict(state)  ## load 浮点模型参数
-    
+
     ## 调用optimize model 量化模型
     quanted_model = optimize_model(model, config_path)
-    
+
     calibrate_mode = True
-    set_calibrate_state(model, calibrate_mode)
-    
+    set_calibrate_state(quanted_model, calibrate_mode)
+
     for input_data, label in range(...):
         outputs = model(input_data)
 
@@ -252,13 +252,13 @@ if __name__ == "__main__":
     ## step 1
     ## 开发者接入，配置修改
     generate_config()
-    
+
     ## step 2
     ## 训练模型，直至达标
     train_model()
     ## 无训练模式
     ## calibrate_model()
- 
+
     ## step 3
     ## 提取参数，用于后续模型部署
     generate_params()
@@ -270,7 +270,7 @@ if __name__ == "__main__":
 
 分类网络Demo位于tools\_dopt/dopt\_tf\_py3/demo/nas\_ea/ea\_cls\_imagenet，包含5个文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/JAu2P7ldQkigmhvLQtUmEg/zh-cn_image_0000002779691740.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/r8Oa5gY-R0G5e4WPZBeQCw/zh-cn_image_0000002786360664.png)
 
 * blocks.so：搜索空间文件
 * readme.md：搜索训练指导文件
@@ -284,22 +284,22 @@ if __name__ == "__main__":
 2. 环境准备请参见[环境准备](cannkit-network-structure-search-training.md#环境准备)。
 3. 加载依赖的开源代码：
 
-   1. 进入分类网络demo目录：
+   1. 进入分类网络demo目录。
 
       ```console
       cd tools_dopt/dopt_tf_py3/demo/nas_ea/ea_cls_imagenet
       ```
-   2. 下载开源代码：
+   2. 下载开源代码。
 
       ```console
       git clone https://github.com/Tensorflow/models.git
       ```
-   3. 进入开源代码目录：
+   3. 进入开源代码目录。
 
       ```console
       cd models
       ```
-   4. 切换到指定版本：
+   4. 切换到指定版本。
 
       * 如果TensorFlow版本为1.12.0，执行如下命令：
 
@@ -311,12 +311,12 @@ if __name__ == "__main__":
         ```console
         git checkout v2.1.0
         ```
-   5. 返回分类网络demo目录：
+   5. 返回分类网络demo目录。
 
       ```console
       cd ..
       ```
-   6. 设置PYTHONPATH默认路径：
+   6. 设置PYTHONPATH默认路径。
 
       ```console
       export PYTHONPATH=$PYTHONPATH:`pwd`/models/
@@ -333,7 +333,7 @@ if __name__ == "__main__":
 
 检测网络Demo位于"tools\_dopt/dopt\_tf\_py3/demo/nas\_ea/ea\_det\_coco"，包含6个文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/qBYkZ1_pTnugN_kFiCGgog/zh-cn_image_0000002809011361.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e4/v3/988rwYduTVqNrurTpoATOQ/zh-cn_image_0000002815560085.png)
 
 * blocks.so：搜索空间文件。
 * pre\_train.yaml：预训练的配置项。
@@ -411,7 +411,7 @@ if __name__ == "__main__":
 
 分割网络Demo位于tools\_dopt/dopt\_tf\_py3/demo/nas\_ea/ea\_seg\_voc，包含 6个文件，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/MviGB4JNRsa5rM7vJ6NPoQ/zh-cn_image_0000002809051275.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/eG-Cs_a8SQmJeAC54q5jlA/zh-cn_image_0000002815400169.png)
 
 * blocks.so：搜索空间文件。
 * pre\_train.yaml：预训练的配置项
@@ -503,7 +503,7 @@ if __name__ == "__main__":
 
 分类网络Demo位于tools\_dopt/dopt\_pytorch\_py3/demo/nas\_ea/ea\_cls\_imagenet\_pytorch，包含5个文件，如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/jp9coTTXQEarRqHX3Q0xFQ/zh-cn_image_0000002779851710.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/Ya6SSkRdR8WdtU0wuvqvag/zh-cn_image_0000002786520594.png)
 
 * blocks.so：搜索空间文件
 * readme.md：搜索训练指导文件
@@ -523,7 +523,7 @@ if __name__ == "__main__":
 
 分割网络Demo位于tools\_dopt/dopt\_pytorch\_py3/demo/nas\_ea/ea\_seg\_voc\_pytorch，包含 6个文件，如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/i0dkDdd9RSCoIwcaayIOxg/zh-cn_image_0000002779691742.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/04/v3/D6kMw-rPQlaCE-A465PEQA/zh-cn_image_0000002786360666.png)
 
 * blocks.so：搜索空间文件
 * pre\_train.yaml：预训练的配置项

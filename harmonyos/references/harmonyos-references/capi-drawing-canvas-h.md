@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: drawing_canvas.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > drawing_canvas.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:43+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:d2d6f238a2f357b9baff84f24e7cb73a48488ad6c419c0628c94d0bc98a99a49
+scraped_at: 2026-11-12T09:57:00+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:72cfb1f0f670aae1c10f588c2997aa3bbcc1dff7263e62bf06bae51968aedc74
 ---
 
 ## 概述
@@ -69,7 +69,7 @@ content_hash: sha256:d2d6f238a2f357b9baff84f24e7cb73a48488ad6c419c0628c94d0bc98a
 | [void OH\_Drawing\_CanvasDrawBitmapRect(OH\_Drawing\_Canvas\* canvas, const OH\_Drawing\_Bitmap\* bitmap,const OH\_Drawing\_Rect\* src, const OH\_Drawing\_Rect\* dst, const OH\_Drawing\_SamplingOptions\* samplingOptions)](capi-drawing-canvas-h.md#oh_drawing_canvasdrawbitmaprect) | 将位图的指定区域绘制到画布的指定区域。  本接口会产生错误码，可以通过[OH\_Drawing\_ErrorCodeGet](capi-drawing-error-code-h.md#oh_drawing_errorcodeget)查看错误码的取值。  canvas、bitmap、dst任意一个为NULL时返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER。 |
 | [void OH\_Drawing\_CanvasDrawRect(OH\_Drawing\_Canvas\* canvas, const OH\_Drawing\_Rect\* rect)](capi-drawing-canvas-h.md#oh_drawing_canvasdrawrect) | 用于画一个矩形。  本接口会产生错误码，可以通过[OH\_Drawing\_ErrorCodeGet](capi-drawing-error-code-h.md#oh_drawing_errorcodeget)查看错误码的取值。  canvas、rect任意一个为NULL时返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER。 |
 | [void OH\_Drawing\_CanvasDrawCircle(OH\_Drawing\_Canvas\* canvas, const OH\_Drawing\_Point\* point, float radius)](capi-drawing-canvas-h.md#oh_drawing_canvasdrawcircle) | 用于画一个圆形。  本接口会产生错误码，可以通过[OH\_Drawing\_ErrorCodeGet](capi-drawing-error-code-h.md#oh_drawing_errorcodeget)查看错误码的取值。  canvas、point任意一个为NULL时返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER；  radius小于等于0时返回OH\_DRAWING\_ERROR\_PARAMETER\_OUT\_OF\_RANGE。 |
-| [OH\_Drawing\_ErrorCode OH\_Drawing\_CanvasDrawColor(OH\_Drawing\_Canvas\* canvas, uint32\_t color,OH\_Drawing\_BlendMode blendMode)](capi-drawing-canvas-h.md#oh_drawing_canvasdrawcolor) | 用于以指定的颜色及混合模式填充整个画布。该函数将指定颜色按照blendMode定义的混合规则与画布上已有内容进行合成，不同混合模式产生不同的视觉效果。 |
+| [OH\_Drawing\_ErrorCode OH\_Drawing\_CanvasDrawColor(OH\_Drawing\_Canvas\* canvas, uint32\_t color,OH\_Drawing\_BlendMode blendMode)](capi-drawing-canvas-h.md#oh_drawing_canvasdrawcolor) | 用于以指定的颜色及混合模式填充整个画布。该函数将指定颜色按照blendMode定义的混合规则与画布上已有内容进行合成，不同混合模式产生不同的视觉效果。与[OH\_Drawing\_CanvasClear](capi-drawing-canvas-h.md#oh_drawing_canvasclear)的区别是，本接口通过混合模式将颜色与画布现有内容混合，而OH\_Drawing\_CanvasClear直接使用指定颜色替换画布所有内容。 |
 | [void OH\_Drawing\_CanvasDrawOval(OH\_Drawing\_Canvas\* canvas, const OH\_Drawing\_Rect\* rect)](capi-drawing-canvas-h.md#oh_drawing_canvasdrawoval) | 用于画一个椭圆，椭圆内接于参数rect所指定的矩形区域。本接口会产生错误码，可以通过[OH\_Drawing\_ErrorCodeGet](capi-drawing-error-code-h.md#oh_drawing_errorcodeget)查看错误码的取值。canvas、rect任意一个为NULL时返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER。 |
 | [void OH\_Drawing\_CanvasDrawArc(OH\_Drawing\_Canvas\* canvas,const OH\_Drawing\_Rect\* rect, float startAngle, float sweepAngle)](capi-drawing-canvas-h.md#oh_drawing_canvasdrawarc) | 用于绘制内接于参数rect所定义椭圆的一段弧线。当扫描角度的绝对值大于360度时，本接口绘制的是一个椭圆。与[OH\_Drawing\_CanvasDrawArcWithCenter](capi-drawing-canvas-h.md#oh_drawing_canvasdrawarcwithcenter)的区别是，本接口不支持指定圆弧的起点和终点是否连接圆弧的中心点。  本接口会产生错误码，可以通过[OH\_Drawing\_ErrorCodeGet](capi-drawing-error-code-h.md#oh_drawing_errorcodeget)查看错误码的取值。  canvas、rect任意一个为NULL时返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER。 |
 | [OH\_Drawing\_ErrorCode OH\_Drawing\_CanvasDrawArcWithCenter(OH\_Drawing\_Canvas\* canvas, const OH\_Drawing\_Rect\* rect,float startAngle, float sweepAngle, bool useCenter)](capi-drawing-canvas-h.md#oh_drawing_canvasdrawarcwithcenter) | 用于绘制一段圆弧，弧线内接于参数rect所定义的椭圆。本接口允许指定圆弧的起始角度、扫描角度以及圆弧的起点和终点是否连接椭圆的中心点（即rect的中心点）。 |
@@ -95,7 +95,7 @@ content_hash: sha256:d2d6f238a2f357b9baff84f24e7cb73a48488ad6c419c0628c94d0bc98a
 | [void OH\_Drawing\_CanvasClear(OH\_Drawing\_Canvas\* canvas, uint32\_t color)](capi-drawing-canvas-h.md#oh_drawing_canvasclear) | 使用指定颜色清空画布。与[OH\_Drawing\_CanvasDrawColor](capi-drawing-canvas-h.md#oh_drawing_canvasdrawcolor)的区别是，本接口直接用指定颜色替换画布所有内容，而OH\_Drawing\_CanvasDrawColor通过混合模式将颜色与画布现有内容混合。  本接口会产生错误码，可以通过[OH\_Drawing\_ErrorCodeGet](capi-drawing-error-code-h.md#oh_drawing_errorcodeget)查看错误码的取值。  canvas为NULL时返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER。 |
 | [void OH\_Drawing\_CanvasSetMatrix(OH\_Drawing\_Canvas\* canvas, OH\_Drawing\_Matrix\* matrix)](capi-drawing-canvas-h.md#oh_drawing_canvassetmatrix) | 设置画布的矩阵状态，将画布当前矩阵替换为传入的矩阵，影响后续绘制操作的坐标变换。  本接口会产生错误码，可以通过[OH\_Drawing\_ErrorCodeGet](capi-drawing-error-code-h.md#oh_drawing_errorcodeget)查看错误码的取值。  canvas、matrix任意一个为NULL时返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER。 |
 | [void OH\_Drawing\_CanvasResetMatrix(OH\_Drawing\_Canvas\* canvas)](capi-drawing-canvas-h.md#oh_drawing_canvasresetmatrix) | 重置当前画布的矩阵为单位矩阵。  本接口会产生错误码，可以通过[OH\_Drawing\_ErrorCodeGet](capi-drawing-error-code-h.md#oh_drawing_errorcodeget)查看错误码的取值。  canvas为NULL时返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER。 |
-| [void OH\_Drawing\_CanvasDrawImageRectWithSrc(OH\_Drawing\_Canvas\* canvas, const OH\_Drawing\_Image\* image,const OH\_Drawing\_Rect\* src, const OH\_Drawing\_Rect\* dst, const OH\_Drawing\_SamplingOptions\* samplingOptions,OH\_Drawing\_SrcRectConstraint srcRectConstraint)](capi-drawing-canvas-h.md#oh_drawing_canvasdrawimagerectwithsrc) | 将图片绘制到画布的指定区域上，源矩形选定的区域会缩放平移到目标矩形。  本接口会产生错误码，可以通过[OH\_Drawing\_ErrorCodeGet](capi-drawing-error-code-h.md#oh_drawing_errorcodeget)查看错误码的取值。  canvas、image、src、dst任意一个为NULL时返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER。 |
+| [void OH\_Drawing\_CanvasDrawImageRectWithSrc(OH\_Drawing\_Canvas\* canvas, const OH\_Drawing\_Image\* image,const OH\_Drawing\_Rect\* src, const OH\_Drawing\_Rect\* dst, const OH\_Drawing\_SamplingOptions\* samplingOptions,OH\_Drawing\_SrcRectConstraint srcRectConstraint)](capi-drawing-canvas-h.md#oh_drawing_canvasdrawimagerectwithsrc) | 将图片绘制到画布的指定区域上，源矩形选定的区域会缩放平移到目标矩形。与[OH\_Drawing\_CanvasDrawImageRect](capi-drawing-canvas-h.md#oh_drawing_canvasdrawimagerect)的区别是，本接口支持指定源矩形区域约束类型。  本接口会产生错误码，可以通过[OH\_Drawing\_ErrorCodeGet](capi-drawing-error-code-h.md#oh_drawing_errorcodeget)查看错误码的取值。  canvas、image、src、dst任意一个为NULL时返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER。 |
 | [void OH\_Drawing\_CanvasDrawImageRect(OH\_Drawing\_Canvas\* canvas, OH\_Drawing\_Image\* image,OH\_Drawing\_Rect\* rect, OH\_Drawing\_SamplingOptions\* samplingOptions)](capi-drawing-canvas-h.md#oh_drawing_canvasdrawimagerect) | 将图片绘制到画布的指定区域上。与[OH\_Drawing\_CanvasDrawImageRectWithSrc](capi-drawing-canvas-h.md#oh_drawing_canvasdrawimagerectwithsrc)的区别是，本接口不支持指定源矩形区域约束类型。  本接口会产生错误码，可以通过[OH\_Drawing\_ErrorCodeGet](capi-drawing-error-code-h.md#oh_drawing_errorcodeget)查看错误码的取值。  canvas、image、rect任意一个为NULL时返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER。 |
 | [void OH\_Drawing\_CanvasDrawVertices(OH\_Drawing\_Canvas\* canvas, OH\_Drawing\_VertexMode vertexMmode,int32\_t vertexCount, const OH\_Drawing\_Point2D\* positions, const OH\_Drawing\_Point2D\* texs,const uint32\_t\* colors, int32\_t indexCount, const uint16\_t\* indices, OH\_Drawing\_BlendMode mode)](capi-drawing-canvas-h.md#oh_drawing_canvasdrawvertices) | 用于画顶点数组描述的三角网格。  本接口会产生错误码，可以通过[OH\_Drawing\_ErrorCodeGet](capi-drawing-error-code-h.md#oh_drawing_errorcodeget)查看错误码的取值。  canvas或positions为NULL、vertexCount值小于3、indexCount值小于3且不为0，存在以上任意一种情况时设置错误码为OH\_DRAWING\_ERROR\_INVALID\_PARAMETER；  vertexMmode、mode任意一个不在枚举范围内时设置错误码为OH\_DRAWING\_ERROR\_PARAMETER\_OUT\_OF\_RANGE。 |
 | [bool OH\_Drawing\_CanvasReadPixels(OH\_Drawing\_Canvas\* canvas, OH\_Drawing\_Image\_Info\* imageInfo,void\* dstPixels, uint32\_t dstRowBytes, int32\_t srcX, int32\_t srcY)](capi-drawing-canvas-h.md#oh_drawing_canvasreadpixels) | 从画布中拷贝像素数据到指定地址。该接口不可用于录制类型画布。  本接口会产生错误码，可以通过[OH\_Drawing\_ErrorCodeGet](capi-drawing-error-code-h.md#oh_drawing_errorcodeget)查看错误码的取值。  canvas、imageInfo、dstPixels任意一个为NULL时返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER。 |
@@ -106,8 +106,8 @@ content_hash: sha256:d2d6f238a2f357b9baff84f24e7cb73a48488ad6c419c0628c94d0bc98a
 | [OH\_Drawing\_ErrorCode OH\_Drawing\_CanvasDrawRecordCmdNesting(OH\_Drawing\_Canvas\* canvas, OH\_Drawing\_RecordCmd\* recordCmd)](capi-drawing-canvas-h.md#oh_drawing_canvasdrawrecordcmdnesting) | 用于绘制录制指令对象，支持嵌套。  本接口支持[OH\_Drawing\_RecordCmdUtilsBeginRecording](capi-drawing-record-cmd-h.md#oh_drawing_recordcmdutilsbeginrecording)接口生成的画布对象作为入参，嵌套调用。不建议多层嵌套，会影响性能。 |
 | [OH\_Drawing\_ErrorCode OH\_Drawing\_CanvasQuickRejectPath(OH\_Drawing\_Canvas\* canvas, const OH\_Drawing\_Path\* path,bool\* quickReject)](capi-drawing-canvas-h.md#oh_drawing_canvasquickrejectpath) | 判断路径与画布区域是否不相交。画布区域包含边界。 |
 | [OH\_Drawing\_ErrorCode OH\_Drawing\_CanvasQuickRejectRect(OH\_Drawing\_Canvas\* canvas, const OH\_Drawing\_Rect\* rect,bool\* quickReject)](capi-drawing-canvas-h.md#oh_drawing_canvasquickrejectrect) | 判断矩形和画布区域是否不相交。画布区域包含边界。 |
-| [OH\_Drawing\_ErrorCode OH\_Drawing\_CanvasDrawPixelMapRectConstraint(OH\_Drawing\_Canvas\* canvas,OH\_Drawing\_PixelMap\* pixelMap, const OH\_Drawing\_Rect\* src, const OH\_Drawing\_Rect\* dst,const OH\_Drawing\_SamplingOptions\* samplingOptions, OH\_Drawing\_SrcRectConstraint constraint)](capi-drawing-canvas-h.md#oh_drawing_canvasdrawpixelmaprectconstraint) | 用于将像素图的指定区域绘制到画布的指定区域。 |
-| [OH\_Drawing\_ErrorCode OH\_Drawing\_CanvasDrawSingleCharacterWithFeatures(OH\_Drawing\_Canvas\* canvas, const char\* str,const OH\_Drawing\_Font\* font, float x, float y, OH\_Drawing\_FontFeatures\* fontFeatures)](capi-drawing-canvas-h.md#oh_drawing_canvasdrawsinglecharacterwithfeatures) | 绘制单个字符，字符带有字体特征。当前字型中的字体不支持待绘制字符时，退化到使用系统字体绘制字符。 |
+| [OH\_Drawing\_ErrorCode OH\_Drawing\_CanvasDrawPixelMapRectConstraint(OH\_Drawing\_Canvas\* canvas,OH\_Drawing\_PixelMap\* pixelMap, const OH\_Drawing\_Rect\* src, const OH\_Drawing\_Rect\* dst,const OH\_Drawing\_SamplingOptions\* samplingOptions, OH\_Drawing\_SrcRectConstraint constraint)](capi-drawing-canvas-h.md#oh_drawing_canvasdrawpixelmaprectconstraint) | 用于将像素图的指定区域绘制到画布的指定区域。与[OH\_Drawing\_CanvasDrawPixelMapRect](capi-drawing-canvas-h.md#oh_drawing_canvasdrawpixelmaprect)的区别是，本接口支持指定源矩形区域约束类型。 |
+| [OH\_Drawing\_ErrorCode OH\_Drawing\_CanvasDrawSingleCharacterWithFeatures(OH\_Drawing\_Canvas\* canvas, const char\* str,const OH\_Drawing\_Font\* font, float x, float y, OH\_Drawing\_FontFeatures\* fontFeatures)](capi-drawing-canvas-h.md#oh_drawing_canvasdrawsinglecharacterwithfeatures) | 绘制单个字符，字符带有字体特征。当前字型中的字体不支持待绘制字符时，退化到使用系统字体绘制字符。与[OH\_Drawing\_CanvasDrawSingleCharacter](capi-drawing-canvas-h.md#oh_drawing_canvasdrawsinglecharacter)的区别是，本接口支持设置字体特征。 |
 | [OH\_Drawing\_ErrorCode OH\_Drawing\_CanvasDrawPixelMapMesh(OH\_Drawing\_Canvas\* cCanvas, OH\_Drawing\_PixelMap\* pixelMap, uint32\_t meshWidth, uint32\_t meshHeight, const float\* vertices, uint32\_t verticesSize, uint32\_t vertOffset, const uint32\_t\* colors, uint32\_t colorsSize, uint32\_t colorOffset)](capi-drawing-canvas-h.md#oh_drawing_canvasdrawpixelmapmesh) | 在网格上绘制像素图，网格均匀分布在像素图上。（只支持画刷，使用画笔没有绘制效果。） |
 | [OH\_Drawing\_ErrorCode OH\_Drawing\_CanvasIsOpaque(const OH\_Drawing\_Canvas\* canvas, bool\* isOpaque)](capi-drawing-canvas-h.md#oh_drawing_canvasisopaque) | 检查当前绘制到设备上的图层是否是不透明的。 |
 | [OH\_Drawing\_ErrorCode OH\_Drawing\_CanvasDrawGlyphs(const OH\_Drawing\_Canvas\* canvas, const int\* glyphIds, int glyphIdCount, int glyphIdOffset, const OH\_Drawing\_Point2D\* positions, int positionCount, int positionOffset, int glyphCount, const OH\_Drawing\_Font\* font)](capi-drawing-canvas-h.md#oh_drawing_canvasdrawglyphs) | 绘制具有指定字体的字形数组。如果字形计数小于或等于0，则不绘制任何内容。 |
@@ -213,7 +213,7 @@ OH_Drawing_ErrorCode OH_Drawing_CanvasDrawSingleCharacterWithFeatures(OH_Drawing
 
 **描述**
 
-绘制单个字符，字符带有字体特征。当前字型中的字体不支持待绘制字符时，退化到使用系统字体绘制字符。
+绘制单个字符，字符带有字体特征。当前字型中的字体不支持待绘制字符时，退化到使用系统字体绘制字符。与[OH\_Drawing\_CanvasDrawSingleCharacter](capi-drawing-canvas-h.md#oh_drawing_canvasdrawsinglecharacter)的区别是，本接口支持设置字体特征。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
 
@@ -244,7 +244,7 @@ OH_Drawing_ErrorCode OH_Drawing_CanvasDrawPixelMapRectConstraint(OH_Drawing_Canv
 
 **描述**
 
-用于将像素图的指定区域绘制到画布的指定区域。
+用于将像素图的指定区域绘制到画布的指定区域。与[OH\_Drawing\_CanvasDrawPixelMapRect](capi-drawing-canvas-h.md#oh_drawing_canvasdrawpixelmaprect)的区别是，本接口支持指定源矩形区域约束类型。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
 
@@ -951,7 +951,7 @@ OH_Drawing_ErrorCode OH_Drawing_CanvasDrawColor(OH_Drawing_Canvas* canvas, uint3
 
 **描述**
 
-用于以指定的颜色及混合模式填充整个画布。该函数将指定颜色按照blendMode定义的混合规则与画布上已有内容进行合成，不同混合模式产生不同的视觉效果。
+用于以指定的颜色及混合模式填充整个画布。该函数将指定颜色按照blendMode定义的混合规则与画布上已有内容进行合成，不同混合模式产生不同的视觉效果。与[OH\_Drawing\_CanvasClear](capi-drawing-canvas-h.md#oh_drawing_canvasclear)的区别是，本接口通过混合模式将颜色与画布现有内容混合，而OH\_Drawing\_CanvasClear直接使用指定颜色替换画布所有内容。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
 
@@ -1655,7 +1655,7 @@ void OH_Drawing_CanvasDrawImageRectWithSrc(OH_Drawing_Canvas* canvas, const OH_D
 
 **描述**
 
-将图片绘制到画布的指定区域上，源矩形选定的区域会缩放平移到目标矩形。
+将图片绘制到画布的指定区域上，源矩形选定的区域会缩放平移到目标矩形。与[OH\_Drawing\_CanvasDrawImageRect](capi-drawing-canvas-h.md#oh_drawing_canvasdrawimagerect)的区别是，本接口支持指定源矩形区域约束类型。
 
 本接口会产生错误码，可以通过[OH\_Drawing\_ErrorCodeGet](capi-drawing-error-code-h.md#oh_drawing_errorcodeget)查看错误码的取值。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-fast-re
 title: 低时延音频录制(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频录制 > 开发麦克风录制(外录)功能 > 低时延音频录制(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:51+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:4eefe4f35b2bcb1542a48c79624e9d337f6426ad38c6135e8fffa30596455f06
+scraped_at: 2026-11-12T09:51:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:038778627614c3a6f26fbb77fc798ccc1a107b2fba666a4967eb74d31b5bef20
 ---
 
 从API version 10开始支持低时延音频录制。
@@ -91,8 +91,8 @@ int32_t MyOnReadData_Legacy(
     OH_AudioStreamBuilder_SetCapturerReadDataCallback(builder, readDataCb, nullptr);
 ```
 
-* 为避免音频卡顿，禁止在回调方法OH\_AudioCapturer\_OnReadData中执行耗时操作。
-* 为保证OH\_AudioCapturer\_OnReadData与流状态控制逻辑独立正常运行，禁止在OH\_AudioCapturer\_OnReadData回调方法中调用音频流控制接口。
+* 为避免音频卡顿，禁止在回调方法OH\_AudioCapturer\_OnReadDataCallback中执行耗时操作。
+* 为保证OH\_AudioCapturer\_OnReadDataCallback与流状态控制逻辑独立正常运行，禁止在OH\_AudioCapturer\_OnReadDataCallback回调方法中调用音频流控制接口。
 
   | 音频流控制接口 | 说明 |
   | --- | --- |

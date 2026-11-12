@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-image-pix
 title: "@correctness/image-pixel-format-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 正确性规则@correctness > @correctness/image-pixel-format-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:14+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:451f4d0dc2dadea5909f3149b56dcf60d34aae8d394b164feaeabcb1718ea4fa
+scraped_at: 2026-11-12T09:53:00+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e67e1ac87db0d21672ce140bca6915b2b8174b60663702f21663eaf7e6d3acad
 ---
 
 在使用Image组件[createPixelMap](../harmonyos-references/arkts-apis-image-f.md#imagecreatepixelmap8)接口时，建议不要选择RGB\_565档位，避免出现色阶问题。
@@ -114,4 +114,4 @@ export class AodFailTask {
 plugin:@correctness/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

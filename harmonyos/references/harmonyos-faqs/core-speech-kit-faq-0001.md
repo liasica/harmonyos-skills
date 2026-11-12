@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/core-speech-kit
 title: 文本转语音男声音色无效
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 基础语音（Core Speech） > 常见问题 > 文本转语音男声音色无效
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:07+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:c7fd246676bcb82315e42a2c1648ab9e2aafa97d2984148c5bc5b1619da208e5
+scraped_at: 2026-11-12T10:00:19+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c182a4bbbb05cd88814520253eb3de4b770db3de410e27c0c99f1a3a1b249705
 ---
 
 **Q：文本转语音功能中男声音色调用失败，日志如下：**
@@ -24,4 +24,4 @@ content_hash: sha256:c7fd246676bcb82315e42a2c1648ab9e2aafa97d2984148c5bc5b1619da
 
 其中'GA'表示音色可下载；
 
-需下载该音色资源，参考：[textToSpeech.downloadVoice](../harmonyos-references/hms-ai-texttospeech.md#section376811290229)。
+需下载该音色资源，参考：[textToSpeech.downloadVoice](../doccenter-references/api/hms-ai-texttospeech.md#texttospeechdownloadvoice)。

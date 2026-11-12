@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/open-permissi
 title: 手动设置授权
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 申请应用权限 > 手动设置授权
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:33+08:00
+scraped_at: 2026-11-12T09:51:30+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:11636a51fb8ec3380af220526b2380825da0be054795ab4d4863e64ddb2d5b6d
+content_hash: sha256:c3956862edc783fc1612e7e54191ee2f76c6b2f49783aabd651c160676fd9787
 ---
 
 当应用需要访问用户的隐私信息或使用敏感系统能力时，如拦截键盘输入事件，应向用户申请授权。这些权限属于[manual\_settings](app-permission-mgmt-overview.md#manual_settings手动设置授权)权限。
@@ -78,11 +78,11 @@ content_hash: sha256:11636a51fb8ec3380af220526b2380825da0be054795ab4d4863e64ddb2
 
    路径一：设置 > 隐私和安全 > 权限类型（如键盘输入辅助） > 某个应用
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/vdYYvcWMSeOd56NbRgDbuA/zh-cn_image_0000002779690716.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/f7-JegjYS7mHPeEt2-LEEw/zh-cn_image_0000002815559049.png)
 
    路径二：设置 > 应用和元服务 > 某个应用 > 权限类型（如键盘输入辅助）
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/UpSNF6e9S6qUpZqFqH6izQ/zh-cn_image_0000002809010337.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0b/v3/kfEbn9ofSBSXQCkjDp94lQ/zh-cn_image_0000002815399133.png)
 
    应用在UIAbility的onWindowStageCreate()回调中调用[openPermissionOnSetting()](../harmonyos-references/js-apis-abilityaccessctrl.md#openpermissiononsetting22)方法引导用户跳转到“设置”，或根据业务需要在UI中引导用户跳转到“设置”。
 
@@ -90,7 +90,7 @@ content_hash: sha256:11636a51fb8ec3380af220526b2380825da0be054795ab4d4863e64ddb2
 
    效果展示：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/Eli0MussSx-mpYxS3u3Dog/zh-cn_image_0000002809050251.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/o0RjE_BjQ_WwGbWwqxbBLw/zh-cn_image_0000002786519558.png)
 
    * 在UIAbility中引导用户跳转到系统应用“设置”中的对应路径。
 

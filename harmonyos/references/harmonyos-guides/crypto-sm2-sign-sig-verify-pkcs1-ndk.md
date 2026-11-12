@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-sm2-si
 title: 使用SM2密钥对签名验签(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 签名验签 > 使用SM2密钥对签名验签(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:37+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:51:34+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:84a667366d0a82ecb2e7d94dcb795bff6101e1cd484ac10dc31210314327e75d
 ---
 

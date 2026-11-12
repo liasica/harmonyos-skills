@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-styled-st
 title: 使用属性字符串
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 使用文本 > 使用属性字符串
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:19+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:80789621fdca506df5a8adecf75904e5ca9f09540bd6f5abfd6dd70621cfd974
+scraped_at: 2026-11-12T09:51:17+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:31f73187b64a299eaef94bb7352c2e186cc3e11a702161a0c5343269b839d7b8
 ---
 
 部分框架或应用具备自研的文字排版能力，在移植时，其文字排版能力会被对接到[方舟2D图形服务的文本引擎](complex-text-c.md)。为了避免开发者重复开发文本组件，Text组件可以通过[ArkUI\_NodeAttributeType](../harmonyos-references/capi-native-node-h.md#arkui_nodeattributetype)中的NODE\_TEXT\_CONTENT\_WITH\_STYLED\_STRING属性，使用格式化字符串对象设置文本内容属性，直接渲染方舟文本引擎生成的文本。
@@ -18,7 +18,7 @@ content_hash: sha256:80789621fdca506df5a8adecf75904e5ca9f09540bd6f5abfd6dd70621c
 
 下图展示了 NODE\_TEXT\_CONTENT\_WITH\_STYLED\_STRING 接口的主要使用流程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/vtWd6IFrSWufHjQCADxs7A/zh-cn_image_0000002779690360.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/mzvMiPHXQNidqtxlkIzdRw/zh-cn_image_0000002815558691.png)
 
 ## 创建StyledString对象
 
@@ -98,7 +98,7 @@ OH_ArkUI_StyledString_AddText(styledString, "World!");
 OH_ArkUI_StyledString_PopTextStyle(styledString);
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/XpjNf3i6TPmFWcvy3ZtZbA/zh-cn_image_0000002809009979.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b/v3/lBc3vZuaS02RE9dEvbh5WA/zh-cn_image_0000002815398775.png)
 
 ## 添加占位符
 
@@ -136,6 +136,7 @@ nodeApi->setAttribute(text, NODE_TEXT_CONTENT_WITH_STYLED_STRING, &styledStringI
 | --- | --- |
 | [OH\_ArkUI\_StyledString\_Descriptor\_Create](../harmonyos-references/capi-styled-string-h.md#oh_arkui_styledstring_descriptor_create) | 创建StyledString描述符。 |
 | [OH\_ArkUI\_UnmarshallStyledStringDescriptor](../harmonyos-references/capi-styled-string-h.md#oh_arkui_unmarshallstyledstringdescriptor) | 反序列化字节数据到描述符。 |
+| [OH\_ArkUI\_MarshallStyledStringDescriptor](../harmonyos-references/capi-styled-string-h.md#oh_arkui_marshallstyledstringdescriptor) | 将描述符序列化为字节数据。 |
 | [OH\_ArkUI\_ConvertToHtml](../harmonyos-references/capi-styled-string-h.md#oh_arkui_converttohtml) | 将描述符转换为HTML格式。 |
 | [OH\_ArkUI\_StyledString\_Descriptor\_Destroy](../harmonyos-references/capi-styled-string-h.md#oh_arkui_styledstring_descriptor_destroy) | 销毁StyledString描述符。 |
 
@@ -162,29 +163,17 @@ static void SerializeAndDeserializeStyledString()
     // 转换为HTML格式
     const char* html = OH_ArkUI_ConvertToHtml(desc);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "styledString", "html: [%{public}s]", html);
-    size_t resultSize = dataSize + 2;
-    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "styledString", "resultSize: %{public}zu", resultSize);
-    uint8_t *buf2 = (uint8_t *)malloc(resultSize * sizeof(uint8_t));
-
-    // 验证反序列化后的数据
-    if (buf2 != nullptr) {
-        if (resultSize >= dataSize) {
-            for (size_t i = 0; i < dataSize; i++) {
-                buf2[i] = data_bytes[i];
-            }
-        } else {
-            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "styledString",
-                         "Buf too small: %{public}zu < %{public}zu", resultSize, dataSize);
-            free(buf2);
-            OH_ArkUI_StyledString_Descriptor_Destroy(desc);
-            return;
-        }
-        bool equal = true;
+    // 验证反序列化后的数据：将描述符重新序列化，与原始数据对比
+    uint8_t buf2[1024] = {0};
+    size_t resultSize = 0;
+    auto marshallStatus = OH_ArkUI_MarshallStyledStringDescriptor(buf2, sizeof(buf2), desc, &resultSize);
+    bool equal = false;
+    if (marshallStatus == ARKUI_ERROR_CODE_NO_ERROR && resultSize == dataSize) {
+        equal = true;
         for (size_t i = 0; i < dataSize && equal; i++) equal = (data_bytes[i] == buf2[i]);
-        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "styledString",
-            "Before: %{public}zu, After: %{public}zu, Equal: %{public}d", dataSize, resultSize, equal);
-        free(buf2);
     }
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "styledString",
+        "Before: %{public}zu, After: %{public}zu, Equal: %{public}d", dataSize, resultSize, equal);
 
     // 释放描述符
     OH_ArkUI_StyledString_Descriptor_Destroy(desc);

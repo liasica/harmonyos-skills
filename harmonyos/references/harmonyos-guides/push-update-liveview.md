@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-update-l
 title: 推送实况窗消息
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 推送场景化消息 > 推送实况窗消息
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:41+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2a414d44752f0f11160d1ff2f7f452f7430d7adc7f04a27b164aaa13013aa460
+scraped_at: 2026-11-12T09:52:34+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3ef27db5bdfe0ea323dff312058d9deb335c95586371086fa82103784fa7c22b
 ---
 
 ## 场景介绍
@@ -24,7 +24,7 @@ content_hash: sha256:2a414d44752f0f11160d1ff2f7f452f7430d7adc7f04a27b164aaa13013
 
 **通过Live View Kit创建实况窗，Push Kit更新与结束实况窗**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/gvoetxvGTP-92dD5Ufdr0g/zh-cn_image_0000002809051145.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/6MkJ6GrOSA6WmrFiZtWevg/zh-cn_image_0000002786360536.png)
 
 1. 使用Push Kit，获取Push Token。
 2. 使用Live View Kit创建实况窗成功后，开发者需要将实况窗id、pushToken、实况窗场景event以及业务服务的相关的状态属性保存到业务服务端。
@@ -32,7 +32,7 @@ content_hash: sha256:2a414d44752f0f11160d1ff2f7f452f7430d7adc7f04a27b164aaa13013
 
 **通过Push Kit创建、更新、结束实况窗**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/4uUlbcSRQhe4--2y69JLlQ/zh-cn_image_0000002779851580.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/7hoNYM98T0eIRH96Ssl4wQ/zh-cn_image_0000002815559957.png)
 
 1. 使用Push Kit，获取Push Token。
 2. 将Push Token保存到业务的服务端。
@@ -40,7 +40,7 @@ content_hash: sha256:2a414d44752f0f11160d1ff2f7f452f7430d7adc7f04a27b164aaa13013
 
 **实况窗更新效果示例图：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/Kpg-_bdWT2-5X30_NZvtEA/zh-cn_image_0000002779691612.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/spGcwsilTRK9soTrN6LPYw/zh-cn_image_0000002815400041.png)
 
 **说明** 
 
@@ -49,7 +49,7 @@ content_hash: sha256:2a414d44752f0f11160d1ff2f7f452f7430d7adc7f04a27b164aaa13013
 
 ## 约束与限制
 
-推送实况窗消息能力支持Phone、Tablet设备，并且从26.0.0版本开始，新增支持Wearable设备。
+推送实况窗消息能力支持Phone、Tablet设备，并且从API版本26.0.0开始，新增支持Wearable设备。
 
 部分特性在Wearable设备中存在差异，详情请参考[LiveViewPayload 实况窗消息](../harmonyos-references/push-scenariozed-api-request-param.md#liveviewpayload-实况窗消息)相关字段描述。
 

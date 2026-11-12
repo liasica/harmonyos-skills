@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sendable-tran
 title: Sendable对象改造实践
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 应用多线程开发实践 > 应用多线程开发实践案例 > Sendable对象改造实践
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:35+08:00
-doc_updated_at: 2026-10-21
+scraped_at: 2026-11-12T09:51:04+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:683f7c964bfdf4cbd30f03093212aa0226d0e42ee88237c63c7d7f09f775aa50
 ---
 

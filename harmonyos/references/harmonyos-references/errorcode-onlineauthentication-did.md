@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode-onlineauthentication-did
-title: DID数字身份服务
-breadcrumb: API参考 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > ArkTS API > ArkTS API错误码 > DID数字身份服务
+title: DID分布式数字身份服务
+breadcrumb: API参考 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > ArkTS API > ArkTS API错误码 > DID分布式数字身份服务
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:52+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:29741d247e554a2c720f74420732c5fb5cebd191213ca1a42b379b857b3aae7d
+scraped_at: 2026-11-12T09:55:24+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b577152e7307bd00bcdad442d13673f055291c823122d399f6afe94ad573b77b
 ---
 
 **说明** 
@@ -247,7 +247,7 @@ The number of did keys has reached the maximum limit.
 
 **错误描述**
 
-DID密钥数量达到上限（500个）时，系统会产生此错误码。
+单应用DID密钥数量达到上限（20个）或端侧DID密钥数量达到上限（200个）时，系统会产生此错误码。
 
 **可能原因**
 
@@ -267,7 +267,7 @@ The number of DIDs has reached the maximum limit.
 
 **错误描述**
 
-DID数量达到上限（50个）时，系统会产生此错误码。
+单应用DID数量达到上限（5个）或端侧DID数量达到上限（50个）时，系统会产生此错误码。
 
 **可能原因**
 
@@ -287,7 +287,7 @@ The number of credentials has reached the maximum limit.
 
 **错误描述**
 
-凭证数量达到上限（1000个）时，系统会产生此错误码。
+单应用凭证数量达到上限（50个）或凭证数量达到上限（500个）时，系统会产生此错误码。
 
 **可能原因**
 

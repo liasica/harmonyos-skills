@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_ListItemSwipeActionOption
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 结构体 > ArkUI_ListItemSwipeActionOption
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:51+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:3c7e164acea7dac91421f18432a9ed940659257d21985f3ed7d818bbcf8721cf
+scraped_at: 2026-11-12T09:54:53+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3dedbdde8cf209e1297548559ed938c90afa00e24494dd7c7e722a68fa507553
 ---
 
 ```c
@@ -20,4 +20,4 @@ typedef struct ArkUI_ListItemSwipeActionOption ArkUI_ListItemSwipeActionOption
 
 **相关模块：** [ArkUI\_NativeModule](capi-arkui-nativemodule.md)
 
-**所在头文件：** [native\_type.h](capi-native-type-h.md)
+**所在头文件：** [list\_item.h](capi-list-item-h.md)

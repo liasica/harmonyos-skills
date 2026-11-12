@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/global-floati
 title: 全局悬浮窗开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 全局悬浮窗开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:31:58+08:00
-doc_updated_at: 2026-10-30
+scraped_at: 2026-11-12T09:51:20+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:86d2a67c03ce2bba79b2f745dc991f7c4bb603a4a082d7dec352ba692bce15b7
 ---
 

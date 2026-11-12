@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.childProcessManager (子进程管理)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.childProcessManager (子进程管理)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:51:42+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:85e5494674dba273cdfbafd781a7faa9eeae5c6d6724d112fdde26a131d2f8c8
+scraped_at: 2026-11-12T09:53:28+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3148184ee698fe82e12eb776be6380ba56f6d103029b7dbc6c3a9bfb3052136b
 ---
 
 childProcessManager模块提供子进程管理能力，支持子进程创建和启动操作。
@@ -46,6 +46,22 @@ import { childProcessManager } from '@kit.AbilityKit';
 | --- | --- | --- |
 | SELF\_FORK | 0 | 从App自身进程Fork子进程。以该模式启动的子进程会继承父进程资源，不能使用Binder IPC和其他进程通信，否则会导致子进程崩溃退出。 |
 | APP\_SPAWN\_FORK | 1 | 从AppSpawn Fork子进程。以该模式启动的子进程不会继承父进程资源，可以使用Binder IPC和其他进程通信。 |
+
+## ChildProcessInformation
+
+type ChildProcessInformation = \_ChildProcessInformation
+
+定义子进程信息。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
+| 类型 | 说明 |
+| --- | --- |
+| \_[ChildProcessInformation](js-apis-inner-application-childprocessrunninginfo.md) | 定义子进程信息，包含子进程的PID、所属父进程的PID、子进程的进程名。 |
 
 ## childProcessManager.startChildProcess
 
@@ -373,7 +389,7 @@ void Main(NativeChildProcess_Args args)
         char *fdName = current->fdName;
         int32_t fd = current->fd;
         current = current->next;
-        // 业务逻辑..
+        // 业务逻辑...
     }
 }
 } // extern "C"
@@ -524,4 +540,52 @@ struct Index {
     .height('100%')
   }
 }
+```
+
+## childProcessManager.getChildProcessInfos
+
+getChildProcessInfos(): Promise<Array<ChildProcessInformation>>
+
+获取当前应用的所有子进程信息，使用Promise异步回调。包括通过以下方式启动的子进程：
+
+* [OH\_Ability\_CreateNativeChildProcess](capi-native-child-process-h.md#oh_ability_createnativechildprocess) / [OH\_Ability\_CreateNativeChildProcessWithConfigs](capi-native-child-process-h.md#oh_ability_createnativechildprocesswithconfigs)
+* [OH\_Ability\_StartNativeChildProcess](capi-native-child-process-h.md#oh_ability_startnativechildprocess) / [OH\_Ability\_StartNativeChildProcessWithConfigs](capi-native-child-process-h.md#oh_ability_startnativechildprocesswithconfigs)
+* [childProcessManager.startChildProcess](js-apis-app-ability-childprocessmanager.md#childprocessmanagerstartchildprocess)（非SELF\_FORK模式）
+* [childProcessManager.startArkChildProcess](js-apis-app-ability-childprocessmanager.md#childprocessmanagerstartarkchildprocess12)
+* [childProcessManager.startNativeChildProcess](js-apis-app-ability-childprocessmanager.md#childprocessmanagerstartnativechildprocess13)
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.Ability.AbilityRuntime.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<Array<[ChildProcessInformation](js-apis-inner-application-childprocessrunninginfo.md)>> | Promise对象，返回当前应用的子进程信息。 |
+
+**错误码**：
+
+以下错误码详细介绍请参考[通用错误码](errorcode-universal.md)和[元能力子系统错误码](errorcode-ability.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 16000050 | Connect to system service failed. |
+
+**示例：**
+
+```ts
+import { childProcessManager } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+
+childProcessManager.getChildProcessInfos().then((data) => {
+  console.info(`getChildProcessInfos success, count: ${data.length}`);
+  for (let info of data) {
+    console.info(`pid: ${info.pid}, parentPid: ${info.parentPid}, processName: ${info.processName}`);
+  }
+}).catch((err: BusinessError) => {
+  console.error(`getChildProcessInfos failed, code: ${err.code}, msg: ${err.message}`);
+});
 ```

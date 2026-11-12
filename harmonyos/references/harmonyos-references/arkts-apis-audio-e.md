@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Enums
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > ArkTS API > @ohos.multimedia.audio (音频管理) > Enums
 category: harmonyos-references
-scraped_at: 2026-09-15T07:07:38+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:bd2a9723b1ebdbe1e01df03f56274c23d6b9ce61b596f8b3504bb6628a3b8906
+scraped_at: 2026-11-12T09:56:20+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3a7e921183b3dab34518884ee2a3f012e90a9c11d0978019da685c43bb309c30
 ---
 
 **说明** 
@@ -158,7 +158,7 @@ content_hash: sha256:bd2a9723b1ebdbe1e01df03f56274c23d6b9ce61b596f8b3504bb6628a3
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
 | RINGER\_MODE\_SILENT | 0 | 静音模式。 |
-| RINGER\_MODE\_VIBRATE | 1 | 震动模式。 |
+| RINGER\_MODE\_VIBRATE | 1 | 振动模式。 |
 | RINGER\_MODE\_NORMAL | 2 | 响铃模式。 |
 
 ## AudioSampleFormat8+
@@ -191,6 +191,9 @@ content_hash: sha256:bd2a9723b1ebdbe1e01df03f56274c23d6b9ce61b596f8b3504bb6628a3
 | ERROR\_TIMEOUT | 6800105 | 处理超时。 |
 | ERROR\_STREAM\_LIMIT | 6800201 | 音频流数量达到限制。 |
 | ERROR\_SYSTEM | 6800301 | 系统处理异常。 |
+| ERROR\_SERVICE\_DIED | 6800302 | 系统服务进程终止。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| ERROR\_NETWORK\_CONDITION\_NOT\_MET | 6800501 | 网络条件不满足。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| ERROR\_STORAGE\_NOT\_ENOUGH | 6800502 | 存储空间不足。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## AudioChannel8+
 
@@ -404,11 +407,11 @@ content_hash: sha256:bd2a9723b1ebdbe1e01df03f56274c23d6b9ce61b596f8b3504bb6628a3
 
 ## InterruptForceType9+
 
-表示音频打断类型的枚举。
+表示音频中断提示对应的操作是否由系统强制执行的枚举。
 
-当用户监听到音频中断（即收到[InterruptEvent](arkts-apis-audio-i.md#interruptevent9)事件）时，获取此信息。
+当用户监听到音频中断事件（即收到[InterruptEvent](arkts-apis-audio-i.md#interruptevent9)事件）时，获取此信息。
 
-此类型表示音频打断是否已由系统强制执行，具体操作信息（如音频暂停、停止等）可通过[InterruptHint](arkts-apis-audio-e.md#interrupthint)获取。关于音频打断策略的详细说明可参考文档[音频焦点介绍](../harmonyos-guides/audio-playback-concurrency.md)。
+此类型表示音频中断提示[InterruptHint](arkts-apis-audio-e.md#interrupthint)对应的操作是否已由系统强制执行，具体操作信息（如音频暂停、停止等）可通过[InterruptHint](arkts-apis-audio-e.md#interrupthint)获取。其中，INTERRUPT\_HINT\_RESUME对应的[InterruptForceType](arkts-apis-audio-e.md#interruptforcetype9)一定为INTERRUPT\_SHARE，即恢复操作无法由系统强制执行，需应用自行触发。关于音频中断策略的详细说明可参考文档[音频焦点介绍](../harmonyos-guides/audio-playback-concurrency.md)。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -416,8 +419,8 @@ content_hash: sha256:bd2a9723b1ebdbe1e01df03f56274c23d6b9ce61b596f8b3504bb6628a3
 
 | 名称 | 值 | 说明 |
 | --- | --- | --- |
-| INTERRUPT\_FORCE | 0 | 强制打断类型，即具体操作已由系统强制执行。 |
-| INTERRUPT\_SHARE | 1 | 共享打断类型，即系统不执行具体操作，通过[InterruptHint](arkts-apis-audio-e.md#interrupthint)建议并提示应用操作，应用可自行决策下一步处理方式。 |
+| INTERRUPT\_FORCE | 0 | 强制执行类型，即中断提示[InterruptHint](arkts-apis-audio-e.md#interrupthint)对应的操作已由系统强制执行。 |
+| INTERRUPT\_SHARE | 1 | 非强制执行类型，即系统不执行对应操作，仅通过[InterruptHint](arkts-apis-audio-e.md#interrupthint)提示应用操作，应用可自行决策下一步处理方式。 |
 
 ## InterruptHint
 
@@ -626,6 +629,7 @@ content_hash: sha256:bd2a9723b1ebdbe1e01df03f56274c23d6b9ce61b596f8b3504bb6628a3
 | AUDIO\_SESSION\_SCENE\_MEDIA | 0 | 媒体音频会话场景。 |
 | AUDIO\_SESSION\_SCENE\_GAME | 1 | 游戏音频会话场景。 |
 | AUDIO\_SESSION\_SCENE\_VOICE\_COMMUNICATION | 2 | VoIP语音通话音频会话场景。 |
+| AUDIO\_SESSION\_SCENE\_VOICE\_MESSAGE | 3 | 语音消息音频会话场景。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。 |
 
 ## AudioSessionStateChangeHint20+
 

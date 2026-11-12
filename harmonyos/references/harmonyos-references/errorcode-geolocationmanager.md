@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 位置服务错误码
 breadcrumb: API参考 > 应用服务 > Location Kit（位置服务） > 错误码 > 位置服务错误码
 category: harmonyos-references
-scraped_at: 2026-09-18T06:51:54+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:340aa829bedb4437037cf5c6fe14e2b9fd58ffea72bda18d68bb33f1c9c5c5c0
+scraped_at: 2026-11-12T09:57:24+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:893b7764b546e1d4fb8bd8c15df8635ca4d8f13dcd505eb6cfcf41aa63f7543b
 ---
 
 **说明** 
@@ -52,9 +52,7 @@ The location switch is off.
 
 ## 3301200 定位失败，未获取到定位结果
 
-### 错误原因
-
-1. 网络不可用导致定位失败
+### 错误原因1. 网络不可用导致定位失败
 
 **错误信息**
 

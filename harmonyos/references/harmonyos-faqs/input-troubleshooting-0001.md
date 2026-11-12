@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/input-troublesh
 title: 物理键盘输入异常分析
 breadcrumb: FAQ > 系统开发 > 基础功能 > 多模输入（Input） > 故障排查 > 物理键盘输入异常分析
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:22+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:27f329d32cc072db4bd91d597deaafb9b453956ac67303787bb7793bb9c04f7a
+scraped_at: 2026-11-12T09:59:39+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:6651ef1e5cc0db16c18bdd6b58a551b74efb8a60a6b4b0723677d648ec63ea0b
 ---
 
 ## 问题现象
@@ -26,7 +26,7 @@ content_hash: sha256:27f329d32cc072db4bd91d597deaafb9b453956ac67303787bb7793bb9c
 * [Input Kit（多模输入服务）](../harmonyos-guides/input-kit.md)：为多种输入设备提供服务，如触控板、触摸屏、鼠标、键盘等。通过对这些输入设备上报驱动事件的归一化处理，确保不同输入设备与用户交互体验统一和流畅。相关API请参考[ArkTS API](../harmonyos-references/input-arkts.md)。
   1. [运作机制](../harmonyos-guides/input-overview.md#运作机制)：多模输入能力作为系统为应用提供的一种基础服务，通过处理上报的输入设备驱动事件，完成输入事件管理、接收、预处理、分发，通过inner SDK与JSkit上报应用，具体运行机制如下。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/gcAolWeSSgyKAFncWOzlNQ/zh-cn_image_0000002801612475.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/EBcsVlIgRU-96Zn18F14SQ/zh-cn_image_0000002801612475.png "点击放大")
   2. [输入设备开发指导](../harmonyos-guides/inputdevice-guidelines.md)：当用户需要输入文本时，输入法会根据当前是否插入了物理键盘来决定是否弹出虚拟键盘，开发者可以通过监听设备热插拔判断是否有物理键盘插入。
 
      **说明** 
@@ -39,14 +39,14 @@ content_hash: sha256:27f329d32cc072db4bd91d597deaafb9b453956ac67303787bb7793bb9c
      2. 再向输入法分发，输入法会消费按键用作输入。
      3. 再次将事件发给ArkUI框架，用于响应[onKeyEventDispatch](../harmonyos-references/ts-universal-events-key.md#onkeyeventdispatch15)事件、获焦组件绑定的[onKeyEvent](../harmonyos-references/ts-universal-events-key.md#onkeyevent)回调以及走焦。
 
-        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6e/v3/yJM9fTnqTAey2pG_0GvmLg/zh-cn_image_0000002772372638.png)
+        ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/FU6FhAw-RcuvxPtO5vh79A/zh-cn_image_0000002772372638.png)
 
         当某输入框组件获焦，且打开了输入法，此时大部分按键事件均会被输入法消费。
 
      按键事件到ArkUI框架之后，会先找到完整的父子节点获焦链。从叶子节点到根节点，逐一发送按键事件。
 
      Web组件的KeyEvent流程与上述过程有所不同。对于Web组件，不会在onKeyPreIme返回false时去匹配快捷。而是第三次按键派发中，Web对于未消费的KeyEvent会通过ReDispatch重新派发给ArkUI。在ReDispatch中再执行匹配快捷键等操作。
-  3. [onKeyEvent & onKeyPreIme](../harmonyos-guides/arkts-interaction-development-guide-keyboard.md#onkeyevent--onkeypreime)：onKeyEvent、onKeyPreIme和onKeyEventDispatch的区别仅在于触发的时机。其中onKeyPreIme的返回值决定了该按键事件后续是否会被继续分发给页面快捷键、输入法、onKeyEventDispatch和onKeyEvent。
+  3. [onKeyEvent & onKeyPreIme](../doccenter-capabilities/arkts-interaction-development-guide-keyboard.md#onkeyeventonkeypreime和onkeyeventdispatch)：onKeyEvent、onKeyPreIme和onKeyEventDispatch的区别仅在于触发的时机。其中onKeyPreIme的返回值决定了该按键事件后续是否会被继续分发给页面快捷键、输入法、onKeyEventDispatch和onKeyEvent。
 
      **说明** 
 
@@ -88,7 +88,7 @@ Web组件获焦后消费了键盘事件，事件不会冒泡回传给ArkUI父组
 
 **场景二**：
 
-onKeyEvent、onKeyPreIme和onKeyEventDispatch的区别仅在于触发的时机，当绑定方法的组件处于获焦状态下，外设键盘的按键事件会触发上述方法，回调参数为[KeyEvent](../harmonyos-references/ts-universal-events-key.md#keyevent对象说明)。相关示例可以参考[onKeyEvent & onKeyPreIme](../harmonyos-guides/arkts-interaction-development-guide-keyboard.md#onkeyevent--onkeypreime)。
+onKeyEvent、onKeyPreIme和onKeyEventDispatch的区别仅在于触发的时机，当绑定方法的组件处于获焦状态下，外设键盘的按键事件会触发上述方法，回调参数为[KeyEvent](../harmonyos-references/ts-universal-events-key.md#keyevent对象说明)。相关示例可以参考[onKeyEvent & onKeyPreIme](../doccenter-capabilities/arkts-interaction-development-guide-keyboard.md#onkeyeventonkeypreime和onkeyeventdispatch)。
 
 **说明** 
 

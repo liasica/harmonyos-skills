@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/applinking-cr
 title: 通过聚合链接按指定方式跳转至应用
 breadcrumb: 指南 > 应用服务 > App Linking Kit（应用链接服务） > 通过聚合链接按指定方式跳转至应用
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:27+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:45ddbc98528f0605ffe12f90937b52d9dd2dbd38da6bcf28c02f352ea5fa0f6a
+scraped_at: 2026-11-12T09:52:21+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e1c56addcf175f388d0ebb31943f73cbbe8b8cfcb2a91d48f9f1447f705cbac2
 ---
 
 ## 场景介绍
@@ -25,7 +25,7 @@ content_hash: sha256:45ddbc98528f0605ffe12f90937b52d9dd2dbd38da6bcf28c02f352ea5f
 | 角色 | 操作步骤 |
 | --- | --- |
 | 云端开发 | [开通App Linking服务](applinking-enable-applinking.md)。 |
-| 云端开发 | 先在AGC[申请链接前缀](applinking-cross-platform.md#申请链接前缀)并[添加网址允许清单](applinking-cross-platform.md#添加网址允许清单)，然后[创建聚合链接](applinking-cross-platform.md#创建聚合链接)。 |
+| 云端开发 | 先在HarmonyOS 开发者中心[申请链接前缀](applinking-cross-platform.md#申请链接前缀)并[添加网址允许清单](applinking-cross-platform.md#添加网址允许清单)，然后[创建聚合链接](applinking-cross-platform.md#创建聚合链接)。 |
 | 客户端开发 | [在module.json5中配置聚合链接](applinking-cross-platform.md#在modulejson5中配置聚合链接)。 |
 | 客户端开发 | [处理拉起方应用传入的链接](applinking-cross-platform.md#处理拉起方应用传入的链接)。 |
 | 客户端开发 | [验证应用被拉起效果](applinking-cross-platform.md#验证应用被拉起效果)。 |
@@ -36,128 +36,121 @@ content_hash: sha256:45ddbc98528f0605ffe12f90937b52d9dd2dbd38da6bcf28c02f352ea5f
 
 链接前缀是指聚合链接地址中包含的网址，其格式为https://域名。创建聚合链接前，需要申请链接前缀。
 
-1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，点击“开发与服务”。
-2. 在项目列表中点击HarmonyOS应用所在的项目（请确保所有平台的应用在同一项目下）。
-3. 在左侧导航栏中选择“增长 > App Linking > 聚合链接”，选择“链接前缀”页签，点击“添加链接前缀”。
+1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console#/)，进入“应用管理”页面。
+2. 选择目标应用后，左侧导航栏选择“推广运营 > 增长运营 > App Linking > 聚合链接”，选择“链接前缀”页签，点击“添加链接前缀”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/WHaNeDqjTVChcrgtntjSYQ/zh-cn_image_0000002779691282.png)
-4. 在AGC提供的免费域名（例如中国站点的域名：drcn.agconnect.link）前再设置一个前缀字符串，前缀字符串仅支持小写字母和数字，且必须确保此前缀唯一。设置完成后点击“下一步”。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/1OOFtSILT8-wKzh_bY05Fw/zh-cn_image_0000002786360198.png)
+3. 在HarmonyOS 开发者中心提供的免费域名（例如中国站点的域名：drcn.agconnect.link）前再设置一个前缀字符串，前缀字符串仅支持小写字母和数字，且必须确保此前缀唯一。设置完成后点击“下一步”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/k3ZuUg6jSz-TIDmpcEv2CA/zh-cn_image_0000002809010903.png)
-5. 等待域名地址验证通过后，页面将显示完整域名。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/YTMB_IpjS0qY1QaX61PcSA/zh-cn_image_0000002815559619.png)
+4. 等待域名地址验证通过后，页面将显示完整域名。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/2Fe8g64USe-3ENngaQpDmA/zh-cn_image_0000002809050817.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/8pQvp9WJSMqCbdAU6EE_tQ/zh-cn_image_0000002815399703.png)
 
 ### 添加网址允许清单
 
 创建聚合链接前，需要添加网址允许清单来指定深度链接地址和自定义网址中允许使用的网址格式。设置后，聚合链接仅允许重定向到符合允许清单规则的网址，从而防止网站诱骗。
 
-1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，点击“开发与服务”。
-2. 在项目列表中点击HarmonyOS应用所在的项目（请确保所有平台的应用在同一项目下）。
-3. 在左侧导航栏中选择“增长 > App Linking > 聚合链接”，选择“网址允许清单”页签，点击“添加允许清单规则”。
+1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console#/)，进入“应用管理”页面。
+2. 选择目标应用后，左侧导航栏选择“推广运营 > 增长运营 > App Linking > 聚合链接”，选择“网址允许清单”页签，点击“添加允许清单规则”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/6IQZEBK1RfyQ_7IREXyUTQ/zh-cn_image_0000002779851252.png)
-4. 使用正则表达式设置允许清单规则，设置完成后点击右上角的“发布”。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/ohQQeskqQCquIpkvFux1jQ/zh-cn_image_0000002786520128.png)
+3. 使用正则表达式设置允许清单规则，设置完成后点击右上角的“发布”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/opt8HScbQKGgBXXPqSgyyg/zh-cn_image_0000002779691284.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/FaC4HgrFRzOBYdLmvm2_xA/zh-cn_image_0000002786360200.png)
 
 ### 创建聚合链接
 
 配置聚合链接，按照指定的方式进行跳转。
 
-1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，点击“开发与服务”。
-2. 在项目列表中点击HarmonyOS应用所在的项目（请确保所有平台的应用在同一项目下）。
-3. 在左侧导航栏中选择“增长 > App Linking > 聚合链接”，选择“聚合链接”页签，点击“创建聚合链接”。
+1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console#/)，进入“应用管理”页面。
+2. 选择目标应用后，左侧导航栏选择“推广运营 > 增长运营 > App Linking > 聚合链接”，选择“聚合链接”页签，点击“创建聚合链接”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/mH_5GqhASUy74hwrfu5tlw/zh-cn_image_0000002809010905.png)
-4. 设置短链接，完成后点击“下一步”。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b4/v3/GIIrnUvrQHSJ7c_ArQOXeg/zh-cn_image_0000002815559621.png)
+3. 设置短链接，完成后点击“下一步”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/raHUkoMRS4qGr6pLVmsbIQ/zh-cn_image_0000002809050819.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7a/v3/mgKQuDQ-Q3KXDnqkCPmGrg/zh-cn_image_0000002815399705.png)
 
    | 参数 | 参数说明 |
    | --- | --- |
-   | 链接前缀 | 聚合链接的前缀。如果还未申请链接前缀，请参见[申请链接前缀](applinking-cross-platform.md#申请链接前缀)。  “链接前缀”下方的文本框中可设置聚合链接的短链接后缀字符串，默认由AGC自动生成。如果需要自行定义，请确保该字符串唯一。 |
+   | 链接前缀 | 聚合链接的前缀。如果还未申请链接前缀，请参见[申请链接前缀](applinking-cross-platform.md#申请链接前缀)。  “链接前缀”下方的文本框中可设置聚合链接的短链接后缀字符串，默认由系统自动生成。如果需要自行定义，请确保该字符串唯一。 |
    | 链接预览 | 聚合链接向用户发送的短链接地址。 |
-5. 设置深度链接，完成后点击“下一步”。
+4. 设置深度链接，完成后点击“下一步”。
 
-   * 深度链接地址中使用的域名需满足“网址允许清单”要求。
-   * 深度链接地址不允许设置为可执行文件格式。
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/47QqRUe6SAC_zDBZRddjBA/zh-cn_image_0000002779851254.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/WmOWRfAlRZOaX4-cIuvn7w/zh-cn_image_0000002786520130.png)
 
    | 参数 | 参数说明 |
    | --- | --- |
    | 链接名称 | 配置聚合链接的自定义名称。 |
-   | 深度链接地址（默认） | 应用将打开的深度链接地址。  如果未设置HarmonyOS深度链接地址(api>=12)，则会默认打开此链接。 |
+   | 深度链接地址（默认） | 应用将打开的深度链接地址。  如果未设置HarmonyOS深度链接地址(api>=12)，则会默认打开此链接。  **说明：** 深度链接地址中使用的域名需满足“网址允许清单”要求，且不允许设置为可执行文件格式。 |
    | （可选）HarmonyOS深度链接地址(api>=12) | 如果设置了HarmonyOS深度链接地址(api>=12)，则在HarmonyOS平台优先打开此链接。 |
-6. 设置聚合链接在HarmonyOS系统的链接行为，完成后点击“下一步”。
+5. 设置聚合链接在HarmonyOS系统的链接行为，完成后点击“下一步”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/U5yuAdY4Tj-dFwImTASKMQ/zh-cn_image_0000002779691286.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/GYVAfuWFTOOqp1yWknHgeg/zh-cn_image_0000002786360202.png)
 
    | 参数 | 参数说明 |
    | --- | --- |
    | 设置在HarmonyOS系统的链接行为(api>=12) | 1. 选择“在HarmonyOS应用中打开”，表示用户点击链接会跳转到HarmonyOS应用中的深度链接地址。  2. 选择或添加需要配置深度链接地址的HarmonyOS应用。 |
    | 未安装应用时，则重定向到 | 如果用户未安装HarmonyOS应用，可通过此选项将用户引导到“华为应用市场页面详情页”或“自定义网址”。  **说明：** 如果选择“自定义网址”，链接不允许设置为可执行文件格式。 |
-7. （可选）在“设置跟踪参数”页面，设置广告跟踪参数，可用于广告、流量跟踪。
+6. （可选）在“设置跟踪参数”页面，设置广告跟踪参数，可用于广告、流量跟踪。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/JRf_8oqjRzO4y9Me3I-ZNw/zh-cn_image_0000002809010907.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/m9XrEbPfQk6grpcNLHI3dg/zh-cn_image_0000002815559623.png)
 
    | 参数 | 参数说明 |
    | --- | --- |
    | 广告系列来源 | 广告渠道，如Huawei，也可自定义。 |
    | 广告系列媒介 | 广告媒介的标识，如pic 、email。 |
    | 广告系列名称 | 特定的推广活动描述，如“双11推广”。 |
-8. （可选）设置社交分享标识，可用于社交软件之间的分享，设置完成后点击“下一步”。
+7. （可选）设置社交分享标识，可用于社交软件之间的分享，设置完成后点击“下一步”。
 
    **说明** 
 
    设置了社交分享标识参数后，可通过[社交分享标识说明](../AppGallery-connect-Guides/agc-applinking-socialdescription-0000001055261926.md)了解设置效果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/jqKXRvBLQYmK7jdIARXDpQ/zh-cn_image_0000002809050821.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/3obujadfSv62bppEbTA3vg/zh-cn_image_0000002815399707.png)
 
    | 参数 | 参数说明 |
    | --- | --- |
    | 标题 | 聚合链接在社交平台上分享时展示的标题名称。 |
    | 图片URL | 聚合链接在社交平台上分享时展示的图片地址。 |
    | 描述说明 | 聚合链接在社交平台上分享时展示的说明信息。 |
-9. （可选）设置预览页，可以将用户引导至合适的目标位置。
+8. （可选）设置预览页，可以将用户引导至合适的目标位置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/JB9FWAYaTCWJN1XV6V4kpQ/zh-cn_image_0000002779851256.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/CoX3FZcdS2e_73PBqRRLLw/zh-cn_image_0000002786520132.png)
 
    | 参数 | 参数说明 |
    | --- | --- |
    | 显示预览页 | 应用未安装，点击聚合链接时，预览页的显示情况。  - 勾选：在点击聚合链接时，应用如果未安装，则在重定向到应用市场详情页前优先显示预览页。  - 不勾选（默认）：在点击时，应用如果未安装，则会根据浏览器的类型，尽可能地优先拉起应用市场详情页。  **说明：** 目前仅支持华为浏览器。 |
-   | 预览页信息来源 | 勾选“显示预览页”后，可以选择预览页信息展示的内容。  - “分享标识内容”：采用分享标识信息构建预览页。  - “应用市场应用信息”：采用AGC中配置的应用信息构建预览页。 |
-10. 全部设置完成后，点击右上角的“发布”，页签中将展示已发布的聚合链接列表。
+   | 预览页信息来源 | 勾选“显示预览页”后，可以选择预览页信息展示的内容。  - “分享标识内容”：采用分享标识信息构建预览页。  - “应用市场应用信息”：采用HarmonyOS 开发者中心配置的应用信息构建预览页。 |
+9. 全部设置完成后，点击右上角的“发布”，页签中将展示已发布的聚合链接列表。
 
-* 点击网址中的二维码图标，或对应操作栏下方的“二维码下载”，可以下载该聚合链接的二维码图片。
+   * 点击网址中的二维码图标，或对应操作栏下方的“二维码下载”，可以下载该聚合链接的二维码图片。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/r37oUAtGR-CCS5kDv5zJGg/zh-cn_image_0000002779691288.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/dPyUG9BPTP6N1NqKYGfj6g/zh-cn_image_0000002786360204.png)
 
-  点击对应操作栏下方的“链接详情”，可以查看该聚合链接的详情，包括深度链接地址、HarmonyOS应用包名、短链接地址等。
+     点击对应操作栏下方的“链接详情”，可以查看该聚合链接的详情，包括深度链接地址、HarmonyOS应用包名、短链接地址等。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/mVtgNT4cRq2FQVw_pCwH_g/zh-cn_image_0000002809010909.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/86/v3/obyCv6XpQ3yIniostOzGiA/zh-cn_image_0000002815559625.png)
 
 ### （可选）归档聚合链接
 
 创建聚合链接后，如果不想继续管理该链接，而又不希望影响用户较长一段时间内的使用，可以选择归档聚合链接。
 
-* 归档7天后的聚合链接将被隐藏，开发者无法通过AGC查看或撤销归档。
+* 归档7天后的聚合链接将被隐藏，开发者无法通过HarmonyOS 开发者中心查看或撤销归档。
 * 归档后的聚合链接默认从归档时起1年内有效，请谨慎操作。
 
 **操作步骤如下：**
 
-1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，点击“开发与服务”。
-2. 在项目列表中点击HarmonyOS应用所在的项目。
-3. 在左侧导航栏中选择“增长 > App Linking > 聚合链接”。
-4. 选择“聚合链接”页签，对已创建的聚合链接进行归档。
+1. 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console#/)，进入“应用管理”页面。
+2. 选择目标应用后，左侧导航栏选择“推广运营 > 增长运营 > App Linking > 聚合链接”。
+3. 选择“聚合链接”页签，对已创建的聚合链接进行归档。
 
    * 单条归档：在聚合链接列表，选择待归档聚合链接对应“操作”列下方的“归档”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/v_TKhU5BS6yxRG49Mv-fuA/zh-cn_image_0000002809050823.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/5nAT4a5JTuikS5PS3Ag2Uw/zh-cn_image_0000002815399709.png)
    * 批量归档：在列表，勾选多条待归档，选择右上角“批量操作”的下拉选项中的“归档”。
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/l9cUQQJwTCmIOhi9unXG4Q/zh-cn_image_0000002779851258.png)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/VgCWLbssQeqCO8dnfbi97g/zh-cn_image_0000002786520134.png)
 
    **说明** 
 

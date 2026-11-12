@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-obtain-k
 title: 获取密钥属性(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 其他操作 > 获取密钥属性 > 获取密钥属性(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:38+08:00
-doc_updated_at: 2026-10-14
+scraped_at: 2026-11-12T09:51:41+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:bda8ca15dafcade0c870a9c2a064c32f21fd51621137df1646bdf74cb7a9fffa
 ---
 

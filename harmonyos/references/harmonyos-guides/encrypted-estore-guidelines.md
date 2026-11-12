@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/encrypted-est
 title: E类加密数据库的使用 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 数据可靠性与安全性 > E类加密数据库的使用 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:03:57+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:df178c987daa2d0c562b596aa97a9d42ad89588afdf5a840daa269212bcbd8a0
+scraped_at: 2026-11-12T09:51:02+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:81cdec7e18f8d70a213ed0c2c3c7ac9a75332260ee431420b2fad660d39ce8ff
 ---
 
 ## 场景介绍
@@ -803,8 +803,7 @@ import { ECStoreManager } from '../encryptedEStoreGuidelines/ECStoreManager';
 import { StoreInfo } from '../encryptedEStoreGuidelines/Store';
 import { Mover } from '../encryptedEStoreGuidelines/Mover';
 import { SecretKeyObserver } from '../encryptedEStoreGuidelines/SecretKeyObserver';
-import { commonEventManager } from '@kit.BasicServicesKit';
-import { BusinessError } from '@kit.BasicServicesKit';
+import { BusinessError, commonEventManager } from '@kit.BasicServicesKit';
 
 export let storeManager = new ECStoreManager();
 export let e_secretKeyObserver = new SecretKeyObserver();

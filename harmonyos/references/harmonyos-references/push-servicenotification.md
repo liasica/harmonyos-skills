@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/push-serv
 title: serviceNotification（服务通知）
 breadcrumb: API参考 > 应用服务 > Push Kit（推送服务） > ArkTS API > serviceNotification（服务通知）
 category: harmonyos-references
-scraped_at: 2026-10-15T07:12:43+08:00
-doc_updated_at: 2026-10-14
+scraped_at: 2026-11-12T09:57:38+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:af57bb2ec63f449083f820840b9df5ab8dfed7cb415dfecf23feab0f8760a3e5
 ---
 

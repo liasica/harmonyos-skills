@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用服务 > Health Service Kit（运动健康服务） > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:20+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:6ed7271eacb0c4d1349841d997f77d7f1ca5a207f331f618c3a51a2af9b18661
+scraped_at: 2026-11-12T09:57:21+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:226f7016b69affb310b47872486a3f9f8828dd16c5dc3e33e7eed6c1c9ef35fe
 ---
 
 以下授权相关错误码的详细介绍请参见[华为账号服务ArkTS错误码](errorcode-account-kit.md)。
@@ -134,6 +134,24 @@ User privacy is not agreed.
 
 引导用户启动运动健康App，参考[FAQ](../harmonyos-guides/health-faqs.md)。
 
+## 1009100001 不支持的事件类型
+
+**错误信息**
+
+Unsupported event types.
+
+**错误描述**
+
+不支持的事件类型。
+
+**可能原因**
+
+传入了不支持的健康事件类型。
+
+**处理步骤**
+
+检查传入的事件类型，请参见[HealthEvent](health-api-healthevent.md#healthevent)。
+
 ## 1009104001 联动已开启
 
 **错误信息**
@@ -234,7 +252,7 @@ Failed to load the dynamic library.
 
 1、检查load传入路径是否正确。
 
-2、调用[load](health-api-healthservice-lite.md#workoutload)函数，检查是否返回该错误码，返回则代表动态库已经被加载，需要先调用[unload](health-api-healthservice-lite.md#workoutunload)函数卸载动态库。
+2、调用[load](health-api-healthservice-lite.md#load)函数，检查是否返回该错误码，返回则代表动态库已经被加载，需要先调用[unload](health-api-healthservice-lite.md#unload)函数卸载动态库。
 
 ## 1009104006 动态库卸载异常
 
@@ -254,7 +272,7 @@ Failed to unload the dynamic library.
 
 1、检查unload传入路径是否正确。
 
-2、调用[unload](health-api-healthservice-lite.md#workoutunload)函数，检查是否返回该错误码，返回则代表动态库已经被卸载，不返回错误码代表动态库卸载成功。
+2、调用[unload](health-api-healthservice-lite.md#unload)函数，检查是否返回该错误码，返回则代表动态库已经被卸载，不返回错误码代表动态库卸载成功。
 
 ## 1009104999 通用错误码
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_prefer-in
 title: "@typescript-eslint/prefer-includes"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/prefer-includes
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:58+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:ae67b47f0f11406be0ac384f2516e0c93cdf35555327a68af1bafd6b50a0a54d
+scraped_at: 2026-11-12T09:52:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:de164b4c8c5417331b91a51c1a27ab8cc93e7d19de0c295a6043dade8142a673
 ---
 
 强制使用“includes”方法而不是“indexOf”方法。
@@ -57,4 +57,4 @@ export { vv };
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

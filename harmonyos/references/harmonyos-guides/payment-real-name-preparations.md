@@ -3,41 +3,41 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-real-
 title: （可选）用户身份验证服务接入准备
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 开发准备 > （可选）用户身份验证服务接入准备
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:38+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:4170087ae50f2ed0d7c081ae6c8093754f1f14b5fb2ca73cfee0f59d5c933e02
+scraped_at: 2026-11-12T09:52:31+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:5417209adf1c41da6f02c68c7c2865ad9d763d8f1f75a32d6711cb345952b501
 ---
 
 如不涉及身份验证服务接入，可跳过该章节。
 
 ## 开启用户身份验证服务权限开关
 
-开发者可登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，在“项目设置 > 开放能力管理”的“鸿蒙支付服务”中开启身份验证服务相关权限开关。
+开发者可登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)，在“开发者管理 > ID、证书和Profile > APP ID > 开放能力管理 ”页签下找到“鸿蒙支付服务”中开启身份验证服务相关权限开关。
 
 **说明** 
 
 开启身份验证服务相关权限开关时，开发者需签署一份“开发者协议”，开发者同意协议并提交申请资料后需要等待审核（审核周期一般在1-3个工作日）通过后才能使用相关服务。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/LAGnuTvET4-c0Rf1eLVUdg/zh-cn_image_0000002809051103.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/xgIMlmQrQB6_3BzcEXUUSA/zh-cn_image_0000002786360494.png)
 
 ## 上传开发者公钥及下载华为公钥
 
-开发者可登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，在“鸿蒙支付服务 > 身份验证服务”菜单中的“公钥管理”页签下完成开发者证书的上传以及华为公钥证书下载。
+开发者可登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)，在“鸿蒙支付服务 > 身份验证服务”菜单中的“公钥管理”页签下完成开发者证书的上传以及华为公钥证书下载。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/36/v3/Zt8ehma1Tw2nkT6RsmFINg/zh-cn_image_0000002779851538.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/WuVjy90wSs6tdGtlvRBaxQ/zh-cn_image_0000002815559915.png)
 
 证书使用如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/n-Kx075-TDWrrL1L-sKJlQ/zh-cn_image_0000002779691570.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/vr9i4De_S-mWc1s40ixIzw/zh-cn_image_0000002815399999.png)
 
 证书说明如下：
 
 | 证书 | 获取方式 | 内容说明及使用场景 |
 | --- | --- | --- |
-| **华为加密公钥** | [AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)的“鸿蒙支付服务>身份验证服务>公钥管理”下载 | 华为支付服务器使用SM2加密算法生成的证书公钥。  **使用场景：** 开发者可用对应的公钥证书对请求开放API接口的隐私字段进行加密，华为支付服务器使用配对的私钥证书对隐私字段进行解密。 |
-| **华为签名公钥** | [AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)的“鸿蒙支付服务>身份验证服务>公钥管理”下载 | 华为支付服务器使用SM2加密算法生成的证书公钥。  **使用场景：** 华为支付服务器使用配对的私钥证书对响应报文进行加签， 开发者用于对开放API接口响应报文验签使用，具体验签方式请参见[验签规则](../harmonyos-references/payment-rest-overview.md#验签规则)。 |
-| **开发者公钥**（**加密**） | 开发者生成 | 开发者使用SM2加密算法生成的证书公钥。需登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，在“鸿蒙支付服务>身份验证服务>公钥管理”上传（公钥类型为加密）。  **使用场景：** 开发者上传后生成证书Id（developerEncKeyId），开发者请求开放API接口时可通过[PayDevAuth](../harmonyos-references/payment-model.md#paydevauth)请求头传递，指定给华为支付服务器用于对开放API接口响应的隐私字段加密。 |
-| **开发者公钥（签名）** | 开发者生成 | 开发者使用SM2加密算法生成的证书公钥。需登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)，在“鸿蒙支付服务>身份验证服务>公钥管理”上传（公钥类型为签名）。  **使用场景：** 开发者上传后生成证书Id（developerSignKeyId），开发者请求开放API接口时可通过[PayDevAuth](../harmonyos-references/payment-model.md#paydevauth)请求头传递，指定给华为支付服务器用于对开放API接口请求报文进行验签。 |
+| **华为加密公钥** | [HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)的“鸿蒙支付服务>身份验证服务>公钥管理”下载 | 华为支付服务器使用SM2加密算法生成的证书公钥。  **使用场景：** 开发者可用对应的公钥证书对请求开放API接口的隐私字段进行加密，华为支付服务器使用配对的私钥证书对隐私字段进行解密。 |
+| **华为签名公钥** | [HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)的“鸿蒙支付服务>身份验证服务>公钥管理”下载 | 华为支付服务器使用SM2加密算法生成的证书公钥。  **使用场景：** 华为支付服务器使用配对的私钥证书对响应报文进行加签， 开发者用于对开放API接口响应报文验签使用，具体验签方式请参见[验签规则](../harmonyos-references/payment-rest-overview.md#验签规则)。 |
+| **开发者公钥**（**加密**） | 开发者生成 | 开发者使用SM2加密算法生成的证书公钥。需登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)，在“鸿蒙支付服务>身份验证服务>公钥管理”上传（公钥类型为加密）。  **使用场景：** 开发者上传后生成证书Id（developerEncKeyId），开发者请求开放API接口时可通过[PayDevAuth](../harmonyos-references/payment-model.md#paydevauth)请求头传递，指定给华为支付服务器用于对开放API接口响应的隐私字段加密。 |
+| **开发者公钥（签名）** | 开发者生成 | 开发者使用SM2加密算法生成的证书公钥。需登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)，在“鸿蒙支付服务>身份验证服务>公钥管理”上传（公钥类型为签名）。  **使用场景：** 开发者上传后生成证书Id（developerSignKeyId），开发者请求开放API接口时可通过[PayDevAuth](../harmonyos-references/payment-model.md#paydevauth)请求头传递，指定给华为支付服务器用于对开放API接口请求报文进行验签。 |
 
 ### SM2公私钥对生成示例代码参考
 
@@ -46,7 +46,7 @@ content_hash: sha256:4170087ae50f2ed0d7c081ae6c8093754f1f14b5fb2ca73cfee0f59d5c9
 * 只支持ASN.1格式的SM2公私钥对（以下示例代码为服务端生成示例）。如需在应用端生成ASN.1格式SM2公私钥对（公钥91字节，私钥51字节）可参考：
 
 1. [随机生成非对称密钥对(ArkTS)](crypto-generate-asym-key-pair-randomly.md)（应用端生成的公私钥对可能无法在服务端使用）。
-2. 参考[数据编码格式差异](crypto-development-practice.md#数据编码格式差异)将生成的秘钥对转成16进制hex格式。
+2. 参考[数据编码格式差异](crypto-development-practice.md#数据编码格式差异)将生成的密钥对转成16进制hex格式。
 
 * 生成的SM2公私钥对，还请先自测验证加解密是否正常，正常后再正式对外使用，避免生成错误的公私钥对，阻塞后续业务进度。
 

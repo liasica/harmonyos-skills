@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/permissions-f
 title: 仅MDM应用可用权限
 breadcrumb: 指南 > 系统 > 安全 > 程序访问控制 > 应用权限管控 > 应用权限列表 > 仅MDM应用可用权限
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:27+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:99ed40f2b8a56ff52f82976aa5491dcbd36a543d06152ab65ffe86415e1b76dc
+scraped_at: 2026-11-12T09:51:31+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:eeb0f5a5579dc1e5027f340446223d610ed8cae6e66ead4d4635cf39c2a2a90f
 ---
 
 以下权限仅对MDM（Mobile Device Management）设备管理应用开放。
@@ -745,3 +745,45 @@ HarmonyOS系统以应用包名作为应用的唯一标识，不同的发布证�
 **支持设备**：PC/2in1
 
 **起始版本**：26.0.0
+
+## ohos.permission.ENTERPRISE\_REQUEST\_PUBLISH\_FORM
+
+允许设备管理应用在桌面添加卡片。
+
+**申请后AGC的审核时长：** 预计3个工作日内反馈审核结果。
+
+**权限级别**：system\_basic
+
+**授权方式**：系统授权（system\_grant）
+
+**支持设备**：Phone | PC/2in1 | Tablet
+
+**起始版本**：26.0.1
+
+## ohos.permission.ENTERPRISE\_EXTERNAL\_READ
+
+允许设备管理应用在OOBE阶段拷贝U盘大文件。
+
+**申请后AGC的审核时长：** 预计3个工作日内反馈审核结果。
+
+**权限级别**：system\_basic
+
+**授权方式**：系统授权（system\_grant）
+
+**支持设备**：PC/2in1
+
+**起始版本**：26.0.1
+
+## ohos.permission.ENTERPRISE\_ENCRYPT\_BLOCK\_DEVICE
+
+允许MDM应用挂载和卸载加密U盘加密区与交换区。
+
+**申请后AGC的审核时长：** 预计3个工作日内反馈审核结果。
+
+**权限级别**：system\_basic
+
+**授权方式**：系统授权（system\_grant）
+
+**支持设备**：PC/2in1
+
+**起始版本**：26.0.1

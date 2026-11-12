@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_ban-tslin
 title: "@typescript-eslint/ban-tslint-comment"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/ban-tslint-comment
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:08+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:f1a15a4c5123c91ab8b153be036432897e7a4ed4502e91583cce3f947b8c8fd3
+scraped_at: 2026-11-12T09:52:54+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:5e2ded4cc01f2f08858ded697a459f1209f250a368abed1e059e01f7240536cd
 ---
 
 不允许使用`//tslint:<rule-flag>`格式的注释。
@@ -51,4 +51,4 @@ console.log('hello'); // tslint:disable-line
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

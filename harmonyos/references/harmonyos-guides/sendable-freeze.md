@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sendable-free
 title: Sendable对象冻结
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS并发 > 并发线程间通信 > 线程间通信对象 > Sendable对象 > Sendable对象冻结
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:13+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:51:03+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:15ce5c0cc2b069fd620f713f17e41e59ec089af23bda6379b9b52cd596a05aed
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅启动耗时事件（C/C++）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 启动耗时事件 > 订阅启动耗时事件（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:11+08:00
-doc_updated_at: 2026-06-12
-content_hash: sha256:cb5a06b3fd4aa493019f838ca0d5cb816cef9dd027d01a2f159b29125a68e50c
+scraped_at: 2026-11-12T09:51:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:32d952ac7532e7bb478d693d2cd1586879b95ac3dca855a052201a8e9643a70d
 ---
 
 ## 接口说明
@@ -65,37 +65,57 @@ content_hash: sha256:cb5a06b3fd4aa493019f838ca0d5cb816cef9dd027d01a2f159b29125a6
 
    * onReceive类型观察者，在“napi\_init.cpp”文件中，定义onReceive类型观察者的方法：
 
-   ```cpp
+   ```
    static void OnReceive(const char *domain, const struct HiAppEvent_AppEventGroup *appEventGroups, uint32_t groupLen)
    {
        for (int i = 0; i < groupLen; ++i) {
            for (int j = 0; j < appEventGroups[i].infoLen; ++j) {
                OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.WatcherType=OnReceive");
-               OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.domain=%{public}s", appEventGroups[i].appEventInfos[j].domain);
-               OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.name=%{public}s", appEventGroups[i].appEventInfos[j].name);
-               OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.eventType=%{public}d", appEventGroups[i].appEventInfos[j].type);
-               if (strcmp(appEventGroups[i].appEventInfos[j].domain, DOMAIN_OS) != 0 || strcmp(appEventGroups[i].appEventInfos[j].name, EVENT_APP_LAUNCH) != 0) {
+               OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.domain=%{public}s",
+                   appEventGroups[i].appEventInfos[j].domain);
+               OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.name=%{public}s",
+                   appEventGroups[i].appEventInfos[j].name);
+               OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.eventType=%{public}d",
+                   appEventGroups[i].appEventInfos[j].type);
+               if (strcmp(appEventGroups[i].appEventInfos[j].domain, DOMAIN_OS) != 0 ||
+                   strcmp(appEventGroups[i].appEventInfos[j].name, EVENT_APP_LAUNCH) != 0) {
                    continue;
                }
                Json::Value params;
                Json::Reader reader(Json::Features::strictMode());
                if (reader.parse(appEventGroups[i].appEventInfos[j].params, params)) {
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.time=%{public}lld", params["time"].asInt64());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.bundle_version=%{public}s", params["bundle_version"].asString().c_str());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.bundle_name=%{public}s", params["bundle_name"].asString().c_str());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.process_name=%{public}s", params["process_name"].asString().c_str());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.start_type=%{public}d", params["start_type"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.icon_input_time=%{public}lld", params["icon_input_time"].asInt64());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.animation_finish_time=%{public}d", params["animation_finish_time"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.extend_time=%{public}d", params["extend_time"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.response_latency=%{public}d", params["response_latency"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.laun_to_start_ability_dur=%{public}d", params["laun_to_start_ability_dur"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.startability_processstart_dur=%{public}d", params["startability_processstart_dur"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.processstart_to_appattach_dur=%{public}d", params["processstart_to_appattach_dur"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.appattach_to_appforeground_dur=%{public}d", params["appattach_to_appforeground_dur"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.startability_appforeground_dur=%{public}d", params["startability_appforeground_dur"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.appforegr_abilityonforegr_dur=%{public}d", params["appforegr_abilityonforegr_dur"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.abilityonforeg_startwindow_dur=%{public}d", params["abilityonforeg_startwindow_dur"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.time=%{public}lld",
+                       params["time"].asInt64());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.bundle_version=%{public}s",
+                       params["bundle_version"].asString().c_str());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.bundle_name=%{public}s",
+                       params["bundle_name"].asString().c_str());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.process_name=%{public}s",
+                       params["process_name"].asString().c_str());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.start_type=%{public}d",
+                       params["start_type"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.icon_input_time=%{public}lld",
+                       params["icon_input_time"].asInt64());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.animation_finish_time=%{public}d",
+                       params["animation_finish_time"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.extend_time=%{public}d",
+                       params["extend_time"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.response_latency=%{public}d",
+                       params["response_latency"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.laun_to_start_ability_dur=%{public}d",
+                       params["laun_to_start_ability_dur"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.startability_processstart_dur=%{public}d",
+                       params["startability_processstart_dur"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.processstart_to_appattach_dur=%{public}d",
+                       params["processstart_to_appattach_dur"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.appattach_to_appforeground_dur=%{public}d",
+                       params["appattach_to_appforeground_dur"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.startability_appforeground_dur=%{public}d",
+                       params["startability_appforeground_dur"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.appforegr_abilityonforegr_dur=%{public}d",
+                       params["appforegr_abilityonforegr_dur"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.abilityonforeg_startwindow_dur=%{public}d",
+                       params["abilityonforeg_startwindow_dur"].asInt());
                }
            }
        }
@@ -122,7 +142,7 @@ content_hash: sha256:cb5a06b3fd4aa493019f838ca0d5cb816cef9dd027d01a2f159b29125a6
 
    * onTrigger类型观察者，在“napi\_init.cpp”文件中，定义OnTrigger类型观察者：
 
-   ```cpp
+   ```
    // 开发者可以自行实现获取已监听到事件的回调函数，其中events指针指向内容仅在该函数内有效。
    static void OnTake(const char *const *events, uint32_t eventLen)
    {
@@ -139,22 +159,38 @@ content_hash: sha256:cb5a06b3fd4aa493019f838ca0d5cb816cef9dd027d01a2f159b29125a6
                OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.name=%{public}s", name.c_str());
                OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.eventType=%{public}d", type);
                if (domain == DOMAIN_OS && name == EVENT_APP_LAUNCH) {
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.time=%{public}lld", eventInfo["time"].asInt64());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.bundle_version=%{public}s", eventInfo["bundle_version"].asString().c_str());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.bundle_name=%{public}s", eventInfo["bundle_name"].asString().c_str());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.process_name=%{public}s", eventInfo["process_name"].asString().c_str());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.start_type=%{public}d", eventInfo["start_type"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.icon_input_time=%{public}lld", eventInfo["icon_input_time"].asInt64());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.animation_finish_time=%{public}d", eventInfo["animation_finish_time"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.extend_time=%{public}d", eventInfo["extend_time"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.response_latency=%{public}d", eventInfo["response_latency"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.laun_to_start_ability_dur=%{public}d", eventInfo["laun_to_start_ability_dur"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.startability_processstart_dur=%{public}d", eventInfo["startability_processstart_dur"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.processstart_to_appattach_dur=%{public}d", eventInfo["processstart_to_appattach_dur"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.appattach_to_appforeground_dur=%{public}d", eventInfo["appattach_to_appforeground_dur"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.startability_appforeground_dur=%{public}d", eventInfo["startability_appforeground_dur"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.appforegr_abilityonforegr_dur=%{public}d", eventInfo["appforegr_abilityonforegr_dur"].asInt());
-                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.abilityonforeg_startwindow_dur=%{public}d", eventInfo["abilityonforeg_startwindow_dur"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.time=%{public}lld",
+                       eventInfo["time"].asInt64());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.bundle_version=%{public}s",
+                       eventInfo["bundle_version"].asString().c_str());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.bundle_name=%{public}s",
+                       eventInfo["bundle_name"].asString().c_str());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.process_name=%{public}s",
+                       eventInfo["process_name"].asString().c_str());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.start_type=%{public}d",
+                       eventInfo["start_type"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.icon_input_time=%{public}lld",
+                       eventInfo["icon_input_time"].asInt64());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.animation_finish_time=%{public}d",
+                       eventInfo["animation_finish_time"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.extend_time=%{public}d",
+                       eventInfo["extend_time"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.response_latency=%{public}d",
+                       eventInfo["response_latency"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.laun_to_start_ability_dur=%{public}d",
+                       eventInfo["laun_to_start_ability_dur"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.startability_processstart_dur=%{public}d",
+                       eventInfo["startability_processstart_dur"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.processstart_to_appattach_dur=%{public}d",
+                       eventInfo["processstart_to_appattach_dur"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.appattach_to_appforeground_dur=%{public}d",
+                       eventInfo["appattach_to_appforeground_dur"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.startability_appforeground_dur=%{public}d",
+                       eventInfo["startability_appforeground_dur"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.appforegr_abilityonforegr_dur=%{public}d",
+                       eventInfo["appforegr_abilityonforegr_dur"].asInt());
+                   OH_LOG_INFO(LogType::LOG_APP, "HiAppEvent eventInfo.params.abilityonforeg_startwindow_dur=%{public}d",
+                       eventInfo["abilityonforeg_startwindow_dur"].asInt());
                }
            }
        }
@@ -191,12 +227,14 @@ content_hash: sha256:cb5a06b3fd4aa493019f838ca0d5cb816cef9dd027d01a2f159b29125a6
 
    * 在“napi\_init.cpp”文件中，将RegisterWatcher注册为ArkTS接口：
 
-   ```cpp
+   ```
    static napi_value Init(napi_env env, napi_value exports)
    {
        napi_property_descriptor desc[] = {
-           { "registerWatcherReceive", nullptr, RegisterWatcherReceive, nullptr, nullptr, nullptr, napi_default, nullptr },
-           { "registerWatcherTrigger", nullptr, RegisterWatcherTrigger, nullptr, nullptr, nullptr, napi_default, nullptr },
+           { "registerWatcherReceive", nullptr, RegisterWatcherReceive, nullptr, nullptr, nullptr,
+               napi_default, nullptr },
+           { "registerWatcherTrigger", nullptr, RegisterWatcherTrigger, nullptr, nullptr, nullptr,
+               napi_default, nullptr },
        };
        napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
        return exports;
@@ -211,13 +249,14 @@ content_hash: sha256:cb5a06b3fd4aa493019f838ca0d5cb816cef9dd027d01a2f159b29125a6
    ```
 7. 在“EntryAbility.ets”文件的onCreate()函数中添加接口调用。
 
-   ```ts
-   // 导入依赖模块
+   ```typescript
    import testNapi from 'libentry.so';
-   // 在onCreate()函数中新增接口调用
-   // 启动时，注册系统事件观察者
-   testNapi.registerWatcherReceive();
-   testNapi.registerWatcherTrigger();
+   // ...
+       // 在onCreate()函数中添加C API接口调用
+       // 启动时，注册崩溃事件观察者
+       testNapi.registerWatcherReceive();
+       // 启动时，注册按钮点击事件观察者
+       testNapi.registerWatcherTrigger();
    ```
 8. 点击DevEco Studio界面中的运行按钮，运行应用工程，添加系统事件订阅者，退出应用，再次点击桌面应用图标，触发一次启动耗时事件。
 9. 应用工程再次启动可以在Log窗口看到对系统事件数据的处理日志。

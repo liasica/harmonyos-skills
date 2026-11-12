@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/speech-wi
 title: WindowManager（窗口管理）
 breadcrumb: API参考 > AI > Speech Kit（场景化语音服务） > ArkTS API > WindowManager（窗口管理）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:35+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:2694bca96963befb9b36bc18c9c9a59c837338b67f15a44d517ff28e0e52b5de
+scraped_at: 2026-11-12T09:57:47+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a450e5a955ea77a8af9c9487e89093f9a8b82c08288518c63806cd3fa22c1705
 ---
 
 朗读控件的窗口管理类。
@@ -113,8 +113,8 @@ import { WindowManager } from '@kit.SpeechKit';
 
 try {
   let windowManager = WindowManager.getWindowStage();
-  console.info(`TextReader succeeded in getting windowStage.`);
+  console.info(`WindowManager succeeded in getting windowStage: ${JSON.stringify(windowManager)}.`);
 } catch (e) {
-  console.error(`TextReader failed to get windowStage. Code: ${e.code}, message: ${e.message}.`);
+  console.error(`WindowManager failed to get windowStage. Code: ${e.code}, message: ${e.message}.`);
 }
 ```

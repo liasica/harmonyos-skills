@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-get-
 title: 识别平面语义（ArkTS）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 平面语义 > 识别平面语义（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:01+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:cbc6e6ac570c91817a9012325ebc0ab40e815c58096551c1f92ae00e6f8ce70a
+scraped_at: 2026-11-12T09:52:10+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:6ff5ce603de60e09e99e30e6ef8587549a50002f2219890eefda2c72390f2a2e
 ---
 
 本章节给出了关键开发步骤，完整代码可以参考[示例代码](https://gitcode.com/HarmonyOS_Samples/arengine_samplecode_clientdemo_arkts)。
@@ -150,9 +150,13 @@ struct ARTarget {
       };
       context.init().then(() => {
         this.arContext = context;
-        // ...
+        logger.info(`Succeeded in initing ARView.`);
+      }).catch((err: BusinessError) => {
+        logger.error(`Failed to init context. Code is ${err.code}, message is ${err.message}`);
       });
       // ...
+    }).catch((err: BusinessError) => {
+      logger.error(`Failed to load scene. Code is ${err.code}, message is ${err.message}`);
     });
   }
 }
@@ -173,7 +177,7 @@ class ARViewCallbackImpl extends arViewController.ARViewCallback {
   onAnchorUpdate(ctx: arViewController.ARViewContext, node: Node, anchor: arEngine.ARAnchor): void {
   }
 
-  async onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): Promise<void> {
+  onFrameUpdate(ctx: arViewController.ARViewContext, sysBootTs: number): void {
     if (!ctx.session) {
       // ...
       return;

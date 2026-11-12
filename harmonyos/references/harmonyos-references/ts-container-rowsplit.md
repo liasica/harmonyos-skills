@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-contai
 title: RowSplit
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 栅格与分栏 > RowSplit
 category: harmonyos-references
-scraped_at: 2026-11-04T08:32:53+08:00
+scraped_at: 2026-11-12T09:54:10+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:dafbf5e48a19cf58a0a0baae6a7affa4aa482c9a90ddcbe1e84198864441c6d7
+content_hash: sha256:6129563ab75591373d036f72f3e097c17a216225d92be11ec528bbcadf74b56b
 ---
 
 将子组件横向布局，并在每个子组件之间插入纵向分割线。适用于需要横向多区域布局且支持动态调整子组件宽度的场景，如文件管理器的左右分栏、设置页面的双栏布局等。通过可拖拽的分割线，用户可以灵活调整各区域宽度。
@@ -95,4 +95,4 @@ struct RowSplitExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/0WNqIMYMTCyDNO38uU2Xog/zh-cn_image_0000002779692220.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/hqYa48XfRoOLloV7rD6m1g/zh-cn_image_0000002815560531.gif)

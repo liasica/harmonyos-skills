@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-confus
 title: "@typescript-eslint/no-confusing-non-null-assertion"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-confusing-non-null-assertion
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:09+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:9ee7a97f4deed12d18d73e76c02cc485b9a7be519b6a9bcab7575e5f645748d0
+scraped_at: 2026-11-12T09:52:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:18e0251e3e480ac61bef4cd3978734ff166a21b1967684ac7c2520f42421fe75
 ---
 
 不允许在可能产生混淆的位置使用非空断言。
@@ -75,4 +75,4 @@ export const isEqualsNum = num + foo.num! === num;
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-udmf
 title: udmf_meta.h
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > C API > 头文件 > udmf_meta.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:43+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:53:47+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:c476b15171e8dadad64b5cfe3d1efcc12923c592fafb867a275d50d813488ea6
 ---
 

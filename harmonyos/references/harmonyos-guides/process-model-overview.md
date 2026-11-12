@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/process-model
 title: 进程模型概述
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用模型 > 进程模型 > 进程模型概述
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:28:59+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:7690c52b1127068ed27e990075f111f17d18bbf56e608504f7586f95e55c2846
+scraped_at: 2026-11-12T09:50:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f71c7d69c1c6586fc79e1ac681a2d8a4cb142769f87030d58605ef65022d48c0
 ---
 
 进程是系统分配资源的基本单位，也是操作系统运行结构的重要基础。下面从应用全局视角介绍系统的进程模型。
@@ -27,12 +27,12 @@ HarmonyOS的进程模型则以组件为中心，大多数情况下应用并不�
 * **主进程**：默认情况下，应用中（同一Bundle名称）的所有UIAbility均是运行在同一个独立进程（主进程）中，即图1中的“Main Process1”。
 * **ExtensionAbility进程**：应用中（同一Bundle名称）的所有同一类型ExtensionAbility均是运行在一个独立进程中，如图1中“FormExtensionAbility Process”、“其他类型ExtensionAbility Process”（其他类型的ExtensionAbility组件）。
 
-  特别地，对于继承自[UIExtensionAbility](../harmonyos-references/js-apis-app-ability-uiextensionability.md)的ExtensionAbility，可以为每个实例配置独立进程。例如ShareExtensionAbility可以指定每个ShareExtensionAbility实例分别运行在一个独立进程，详见[UIExtensionAbility](../harmonyos-references/js-apis-app-ability-uiextensionability.md)。对于[AppServiceExtensionAbility](../harmonyos-references/js-apis-app-ability-appserviceextensionability.md)，可以通过配置module.json5文件中的[extensionProcessMode](module-configuration-file.md#extensionabilities标签)字段为type，来指定不同name的AppServiceExtensionAbility组件各自运行在独立进程。
+  特别地，对于继承自[UIExtensionAbility](../harmonyos-references/js-apis-app-ability-uiextensionability.md)的ExtensionAbility，可以为每个实例配置独立进程。例如ShareExtensionAbility可以指定每个ShareExtensionAbility实例分别运行在一个独立进程，详见[UIExtensionAbility](../harmonyos-references/js-apis-app-ability-uiextensionability.md)。对于[AppServiceExtensionAbility](../harmonyos-references/js-apis-app-ability-appserviceextensionability.md)，可以通过配置module.json5文件中的[extensionProcessMode](module-configuration-file.md#extensionabilities标签)字段为type，来指定不同name的AppServiceExtensionAbility组件各自运行在独立进程。从API版本26.0.0开始，支持该配置。
 * **Render进程**：应用中的Web组件运行时，系统会为之分配一个Render进程，用于渲染。如图1中的“Render Process”。
 
 **图1** 基本进程类型
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/c1NrngavT4uMf4BhsDgGdw/zh-cn_image_0000002809049027.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/HRr3tKgcSnyD4zPv1CGm_Q/zh-cn_image_0000002815397905.png)
 
 **说明** 
 
@@ -53,4 +53,4 @@ HarmonyOS的进程模型则以组件为中心，大多数情况下应用并不�
 
 **图2** 独立进程配置和子进程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/AQMH-NcPSDywSabO7A9PWg/zh-cn_image_0000002779849462.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/KvG9r35URz6P8KAmO9RWwQ/zh-cn_image_0000002786518330.png)

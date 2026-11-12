@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-zorder
 title: 窗口层级
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口基础能力 > 窗口层级
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:56+08:00
-doc_updated_at: 2026-10-26
-content_hash: sha256:39e6ad41f5f155e0fcd723e7cc65051e75403c424350842dd9db00fa5a827d84
+scraped_at: 2026-11-12T09:51:21+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f7f76433ee8aa193d80072862af4e2211f0ab27beb108ee43de526323327b9c7
 ---
 
 ## 场景介绍
@@ -67,23 +67,24 @@ ZOrder值越大，窗口越靠前显示，能够覆盖ZOrder值较小的窗口�
 
 ### TopMost置顶窗口层级规则
 
-* 在[自由窗口](window-terminology.md#freeform-window自由窗口)状态下，应用主窗口可通过调用[setWindowTopmost()](../harmonyos-references/arkts-apis-window-window.md#setwindowtopmost14)接口传入true将自身置于其他应用窗口之上，以实现“不被遮挡”的常驻显示效果，需合理使用，避免影响用户体验。
-* 使用该接口需要申请权限ohos.permission.WINDOW\_TOPMOST。
+* 在[自由窗口](window-terminology.md#freeform-window自由窗口)状态下，应用主窗口可通过调用[setWindowTopmost()](../harmonyos-references/arkts-apis-window-window.md#setwindowtopmost14)接口传入true将自身置于其他应用窗口之上，以实现“不被遮挡”的常驻显示效果，需合理使用，避免影响用户体验。使用该接口需要申请权限[ohos.permission.WINDOW\_TOPMOST](permissions-for-all.md#ohospermissionwindow_topmost)。
+* 从API版本26.0.1开始，还可以通过[setWindowPosition()](../harmonyos-references/arkts-apis-window-f.md#windowsetwindowposition)接口调整主窗口的置顶状态。使用该接口设置主窗口置顶或将处于置顶状态的主窗口取消置顶时，需要申请权限[ohos.permission.WINDOW\_TOPMOST](permissions-for-all.md#ohospermissionwindow_topmost)。
 
 ## 窗口层级控制机制汇总表
 
 | 特性/操作 | 控制方式 | 生效范围 | 适用场景 |
 | --- | --- | --- | --- |
 | ZOrder | 系统管理 | 可跨应用生效 | 内部渲染顺序管理 |
-| zLevel | setSubWindowZLevel()/创建窗口时设置 | 仅同应用内生效 | 子窗口层级管理 |
-| 窗口置顶 | setWindowTopmost() | 可跨应用生效 | 视频、导航等常驻窗口 |
-| 点击抬升 | setRaiseByClickEnabled() | 同应用内同类型子窗口之间 | 防误触、固定布局 |
+| zLevel | [setSubWindowZLevel()](../harmonyos-references/arkts-apis-window-window.md#setsubwindowzlevel18)/创建窗口时设置 | 仅同应用内生效 | 子窗口层级管理 |
+| 窗口置顶 | [setWindowTopmost()](../harmonyos-references/arkts-apis-window-window.md#setwindowtopmost14) | 可跨应用生效 | 视频、导航等常驻窗口 |
+| 点击抬升 | [setRaiseByClickEnabled()](../harmonyos-references/arkts-apis-window-window.md#setraisebyclickenabled14) | 同应用内同类型子窗口之间 | 防误触、固定布局 |
 
 ## 层级相关开发场景
 
 | 功能 | 典型场景 | 对应接口 |
 | --- | --- | --- |
 | 设置主窗口置顶 | 用于实现将窗口置于其他应用窗口之上不被遮挡。如视频通话、导航等场景。 | [setWindowTopmost()](../harmonyos-references/arkts-apis-window-window.md#setwindowtopmost14) |
+| 调整主窗口Z序 | 可用于同时调整多个窗口Z序，如云应用场景。 | [setWindowPosition()](../harmonyos-references/arkts-apis-window-f.md#windowsetwindowposition) |
 | 提升子窗口到顶层 | 将子窗口提升至当前应用内同类型子窗口的最顶层，只在当前应用同一个父窗口下相同zLevel值的子窗范围内生效。  例如，视频会议中的悬浮工具栏，主窗口是视频画面，子窗口包括聊天框、共享控制栏等。点击聊天框时，可调用raiseToAppTop()将其提升到顶层，避免被其他子窗口遮挡。 | [raiseToAppTop()](../harmonyos-references/arkts-apis-window-window.md#raisetoapptop14) |
 | 禁止/使能子窗点击抬升功能 | 可用于固定布局的工具面板，防止用户误操作导致层级混乱。 | [setRaiseByClickEnabled()](../harmonyos-references/arkts-apis-window-window.md#setraisebyclickenabled14) |
 | 获取当前应用内层级最高的窗口 | 可判断当前最前显示的窗口（可能是主窗口或子窗口），用于日志记录或状态同步等场景。 | [getLastWindow()](../harmonyos-references/arkts-apis-window-f.md#windowgetlastwindow9-1) |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-g
 title: "@ohos.graphics.drawing (绘制模块)"
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块)
 category: harmonyos-references
-scraped_at: 2026-10-11T07:27:43+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:865ca45ee4f5c6ecb40eb9611d2a5fdeef04a58b9b66d084502e7b43426d94b1
+scraped_at: 2026-11-12T09:56:53+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e46a0361625855c3710fa33e151c6c9212314ee3f747a619d5d7fc4078edd608
 ---
 
 * **[模块描述](arkts-apis-graphics-drawing.md)**
@@ -22,6 +22,7 @@ content_hash: sha256:865ca45ee4f5c6ecb40eb9611d2a5fdeef04a58b9b66d084502e7b43426
 * **[Class (PathIterator)](arkts-apis-graphics-drawing-pathiterator.md)**
 * **[Class (Pen)](arkts-apis-graphics-drawing-pen.md)**
 * **[Class (PointUtils)](arkts-apis-graphics-drawing-pointutils.md)**
+* **[Class (RecordCmdUtils)](arkts-apis-graphics-drawing-recordcmdutils.md)**
 * **[Class (RectUtils)](arkts-apis-graphics-drawing-rectutils.md)**
 * **[Class (Region)](arkts-apis-graphics-drawing-region.md)**
 * **[Class (RoundRect)](arkts-apis-graphics-drawing-roundrect.md)**

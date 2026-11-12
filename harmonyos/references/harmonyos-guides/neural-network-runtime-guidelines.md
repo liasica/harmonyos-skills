@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/neural-networ
 title: Neural Network Runtime对接AI推理框架开发指导
 breadcrumb: 指南 > AI > Neural Network Runtime Kit（Neural Network运行时服务） > Neural Network Runtime对接AI推理框架开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:11+08:00
+scraped_at: 2026-11-12T09:52:46+08:00
 doc_updated_at: 2026-09-07
-content_hash: sha256:04651b71206425f414020ed8be65ee2d1141dd38d3fe78c6caaf2f46f62a46cb
+content_hash: sha256:1086d35248b621f62d8b56eebb817029f4898c111ccfe810b6beb65d2e974e5d
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ Neural Network Runtime作为AI推理引擎和加速芯片的桥梁，为AI推理
 
 **图1** Add单算子网络示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/UckpmMEvShu_8gU-mlo-7Q/zh-cn_image_0000002779691890.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/4Wcr2B7nQTmEfnOupLwpVg/zh-cn_image_0000002786520706.png)
 
 ## 环境准备
 

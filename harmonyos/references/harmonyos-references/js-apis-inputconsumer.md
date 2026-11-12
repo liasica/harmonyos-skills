@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.multimodalInput.inputConsumer (全局快捷键)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.inputConsumer (全局快捷键)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:50:20+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:3c7a102ba115e1d7faa3a369a0a76d7cfb30663f139cbacd41eab7bf6aa89e0f
+scraped_at: 2026-11-12T09:56:02+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:834731208164722b95fe66596d9af53ba4fc0afa82dd1cb2107325cecb778c92
 ---
 
 全局快捷键订阅模块，用于处理组合按键的订阅，本模块也支持音量键拦截监听能力。
@@ -69,7 +69,7 @@ getAllSystemHotkeys(): Promise<Array<HotkeyOptions>>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 
 **示例：**
 
@@ -121,7 +121,7 @@ on(type: 'hotkeyChange', hotkeyOptions: HotkeyOptions, callback: Callback<Hotkey
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 801 | Capability not supported. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 4200002 | The hotkey has been used by the system. |
 | 4200003 | The hotkey has been subscribed to by another. |
 
@@ -183,7 +183,7 @@ off(type: 'hotkeyChange', hotkeyOptions: HotkeyOptions, callback?: Callback<Hotk
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 801 | Capability not supported. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 
 **示例：**
 
@@ -280,7 +280,7 @@ on(type: 'keyPressed', options: KeyPressedConfig, callback: Callback<KeyEvent>):
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 801 | Capability not supported. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 
 **示例：**
 
@@ -338,7 +338,7 @@ off(type: 'keyPressed', callback?: Callback<KeyEvent>): void
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
-| 801 | Capability not supported. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 
 **示例：**
 

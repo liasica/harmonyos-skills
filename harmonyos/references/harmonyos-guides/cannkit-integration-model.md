@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-integ
 title: 集成模型
 breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部署 > App集成 > 集成模型
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:49+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:461d7e5e7ece73ba72dc8565583c8ffa793f3c8729cbdb574bf0a7d7d061f3bf
+scraped_at: 2026-11-12T09:52:41+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:df5c84bd09df88082e648852774a15069ae143ad84753f56e029d912fa78da62
 ---
 
 模型的加载、编译和推理主要是在native层实现，应用层主要作为数据传递和展示作用。
@@ -14,7 +14,7 @@ content_hash: sha256:461d7e5e7ece73ba72dc8565583c8ffa793f3c8729cbdb574bf0a7d7d06
 
 本节阐述同步模式下单模型的使用，从流程上分别阐述每个步骤在应用层和native层的实现和调用。接口请参见[API参考](../harmonyos-references/cannkit.md)，示例请参见[SampleCode](https://gitcode.com/HarmonyOS_Samples/cannkit-samplecode-clientdemo-cpp)，本示例支持加载离线模型对图片中的物体进行分类，App运行效果图如下所示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/gEepBVjqQrif6-6loiRPDw/zh-cn_image_0000002809011369.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/2BdRjm13TRewZbTQSTZGng/zh-cn_image_0000002786360674.png)
 
 ## 预置模型
 
@@ -31,38 +31,39 @@ content_hash: sha256:461d7e5e7ece73ba72dc8565583c8ffa793f3c8729cbdb574bf0a7d7d06
 3. 把模型buffer传递给HIAIModelManager类的HIAIModelManager::LoadModelFromBuffer接口，该接口调用[OH\_NNCompilation\_ConstructWithOfflineModelBuffer](../harmonyos-references/capi-neural-network-core-h.md#oh_nncompilation_constructwithofflinemodelbuffer)创建模型的编译实例。
 4. 设置模型的deviceID。
 
-   ```cpp
-   size_t deviceID = 0;
-   const size_t *allDevicesID = nullptr;
-   uint32_t deviceCount = 0;
-   // 获取所有已连接设备的ID
-   OH_NN_ReturnCode ret = OH_NNDevice_GetAllDevicesID(&allDevicesID, &deviceCount);
-   if (ret != OH_NN_SUCCESS || allDevicesID == nullptr) {
-       OH_LOG_ERROR(LOG_APP, "OH_NNDevice_GetAllDevicesID failed");
+   ```
+       size_t deviceID = 0;
+       const size_t *allDevicesID = nullptr;
+       uint32_t deviceCount = 0;
+       OH_NN_ReturnCode ret = OH_NNDevice_GetAllDevicesID(&allDevicesID, &deviceCount);
+       if (ret != OH_NN_SUCCESS || allDevicesID == nullptr) {
+           OH_LOG_ERROR(LOG_APP, "OH_NNDevice_GetAllDevicesID failed");
+           return deviceID;
+       }
+
+       for (uint32_t i = 0; i < deviceCount; i++) {
+           const char *name = nullptr;
+           ret = OH_NNDevice_GetName(allDevicesID[i], &name);
+           if (ret != OH_NN_SUCCESS || name == nullptr) {
+               OH_LOG_ERROR(LOG_APP, "OH_NNDevice_GetName failed");
+               return deviceID;
+           }
+           if (std::string(name) == "HIAI_F") {
+               deviceID = allDevicesID[i];
+               break;
+           }
+       }
+       // ...
+   // Create a compilation based on the model buffer.
+   compilation_ = OH_NNCompilation_ConstructWithOfflineModelBuffer(modelData, modelSize);
+   if (compilation_ == nullptr) {
+       OH_LOG_ERROR(LOG_APP, "OH_NNCompilation_ConstructWithOfflineModelBuffer failed");
        return OH_NN_FAILED;
-   }
-   // 获取设备名为HIAI_F的设备ID
-   for (uint32_t i = 0; i < deviceCount; i++) {
-       const char *name = nullptr;
-       // 获取指定设备的名称
-       ret = OH_NNDevice_GetName(allDevicesID[i], &name);
-       if (ret != OH_NN_SUCCESS || name == nullptr) {
-           OH_LOG_ERROR(LOG_APP, "OH_NNDevice_GetName failed");
-           return OH_NN_FAILED;
-       }
-       if (std::string(name) == "HIAI_F") {
-           deviceID = allDevicesID[i];
-           break;
-       }
    }
 
-   // modelData和modelSize为模型的内存地址和大小， compilation的创建可参考CANN Kit Codelab
-   OH_NNCompilation *compilation = OH_NNCompilation_ConstructWithOfflineModelBuffer(modelData, modelSize);
-   // 设置编译器的设备id为HIAI_F
-   ret = OH_NNCompilation_SetDevice(compilation, deviceID);
+   OH_NN_ReturnCode ret = SetDevices();
    if (ret != OH_NN_SUCCESS) {
-       OH_LOG_ERROR(LOG_APP, "OH_NNCompilation_SetDevice failed");
-       return OH_NN_FAILED;
+       OH_LOG_ERROR(LOG_APP, "SetDevices failed");
    }
    ```
 5. 调用[OH\_NNCompilation\_Build](../harmonyos-references/capi-neural-network-core-h.md#oh_nncompilation_build)，执行模型编译。
@@ -76,62 +77,72 @@ content_hash: sha256:461d7e5e7ece73ba72dc8565583c8ffa793f3c8729cbdb574bf0a7d7d06
 1. 处理模型的输入，例如示例中模型的输入为1\*3\*227\*227格式Float类型的数据，需要把输入的图片转成该格式后传递到NAPI层。
 2. 创建模型的输入和输出Tensor，并把应用层传递的数据填充到输入的Tensor中。
 
-   ```cpp
-   // 创建输入数据
+   ```
+   OH_NN_ReturnCode SetInputTensorData(std::vector<NN_Tensor *> inputTensors,
+                                       std::vector<std::pair<float *, size_t>> inputData)
+   {
+       for (size_t i = 0; i < inputTensors.size(); ++i) {
+           // Obtain the address of the input memory and write the input data.
+           void *data = OH_NNTensor_GetDataBuffer(inputTensors[i]);
+           size_t dataSize = 0;
+           OH_NNTensor_GetSize(inputTensors[i], &dataSize);
+           if (data == nullptr || dataSize != inputData[i].second * sizeof(float)) {
+               OH_LOG_ERROR(LOG_APP, "invalid data or dataSize");
+               return OH_NN_FAILED;
+           }
+           memcpy(data, inputData[i].first, dataSize);
+       }
+       return OH_NN_SUCCESS;
+   }
+   // ...
    size_t inputCount = 0;
-   std::vector<NN_Tensor*> inputTensors;
-   OH_NN_ReturnCode ret = OH_NNExecutor_GetInputCount(executor, &inputCount); // 创建executor可参考CANN Kit Codelab
-   if (ret != OH_NN_SUCCESS || inputCount != inputData.size()) { // inputData为开发者构造的输入数据
+   OH_NN_ReturnCode ret = OH_NNExecutor_GetInputCount(executor_, &inputCount);
+   if (ret != OH_NN_SUCCESS || inputCount != inputData.size()) {
        OH_LOG_ERROR(LOG_APP, "OH_NNExecutor_GetInputCount failed, size mismatch");
        return OH_NN_FAILED;
    }
    for (size_t i = 0; i < inputCount; ++i) {
-       NN_TensorDesc *tensorDesc = OH_NNExecutor_CreateInputTensorDesc(executor, i); // 创建executor可参考CANN Kit Codelab
-       NN_Tensor *tensor = OH_NNTensor_Create(deviceID, tensorDesc); // deviceID的获取方式可参考加载离线模型的步骤3或者CANN Kit Codelab
+       NN_TensorDesc *tensorDesc = OH_NNExecutor_CreateInputTensorDesc(executor_, i);
+       NN_Tensor *tensor = OH_NNTensor_Create(deviceID_, tensorDesc);
        if (tensor != nullptr) {
-           inputTensors.push_back(tensor);
+           inputTensors_.push_back(tensor);
        }
        OH_NNTensorDesc_Destroy(&tensorDesc);
    }
-   if (inputTensors.size() != inputCount) {
-       OH_LOG_ERROR(LOG_APP, "input size mismatch");
-       DestroyTensors(inputTensors); // DestroyTensors为释放tensor内存操作函数，具体实现可参考CANN Kit Codelab
+   if (inputTensors_.size() != inputCount) {
+       OH_LOG_ERROR(LOG_APP, "input size mismatch.");
+       DestroyTensors(inputTensors_);
        return OH_NN_FAILED;
    }
-
-   // 初始化输入数据
-   for (size_t i = 0; i < inputTensors.size(); ++i) {
-       void *data = OH_NNTensor_GetDataBuffer(inputTensors[i]);
-       size_t dataSize = 0;
-       OH_NNTensor_GetSize(inputTensors[i], &dataSize);
-       if (data == nullptr || dataSize != inputData[i].size()) { // inputData为模型的输入数据，使用方式可参考CANN Kit Codelab
-           OH_LOG_ERROR(LOG_APP, "invalid data or dataSize");
-           return OH_NN_FAILED;
-       }
-       memcpy(data, inputData[i].data(), inputData[i].size()); // inputData为模型的输入数据，使用方式可参考CANN Kit Codelab
+       
+   // Write input data
+   ret = SetInputTensorData(inputTensors_, inputData);
+   if (ret != OH_NN_SUCCESS) {
+       OH_LOG_ERROR(LOG_APP, "SetInputTensorData failed");
+       DestroyTensors(inputTensors_);
+       return OH_NN_FAILED;
    }
-
-   // 创建输出数据，与输入数据的创建方式类似
+   // ...
+   // Preparing to Output Tensor
    size_t outputCount = 0;
-   std::vector<NN_Tensor*> outputTensors;
-   ret = OH_NNExecutor_GetOutputCount(executor, &outputCount); // 创建executor可参考CANN Kit Codelab
+   OH_NN_ReturnCode ret = OH_NNExecutor_GetOutputCount(executor_, &outputCount);
    if (ret != OH_NN_SUCCESS) {
        OH_LOG_ERROR(LOG_APP, "OH_NNExecutor_GetOutputCount failed");
-       DestroyTensors(inputTensors); // DestroyTensors为释放tensor内存操作函数，具体实现可参考CANN Kit Codelab
+       DestroyTensors(inputTensors_);
        return OH_NN_FAILED;
    }
    for (size_t i = 0; i < outputCount; i++) {
-       NN_TensorDesc *tensorDesc = OH_NNExecutor_CreateOutputTensorDesc(executor, i); // 创建executor可参考CANN Kit Codelab
-       NN_Tensor *tensor = OH_NNTensor_Create(deviceID, tensorDesc); // deviceID的获取方式可参考加载离线模型的步骤3或者CANN Kit Codelab
+       NN_TensorDesc *tensorDesc = OH_NNExecutor_CreateOutputTensorDesc(executor_, i);
+       NN_Tensor *tensor = OH_NNTensor_Create(deviceID_, tensorDesc);
        if (tensor != nullptr) {
-           outputTensors.push_back(tensor);
+           outputTensors_.push_back(tensor);
        }
        OH_NNTensorDesc_Destroy(&tensorDesc);
    }
-   if (outputTensors.size() != outputCount) {
-       DestroyTensors(inputTensors); // DestroyTensors为释放tensor内存操作函数，具体实现可参考CANN Kit Codelab
-       DestroyTensors(outputTensors); // DestroyTensors为释放tensor内存操作函数，具体实现可参考CANN Kit Codelab
-       OH_LOG_ERROR(LOG_APP, "output size mismatch");
+   if (outputTensors_.size() != outputCount) {
+       DestroyTensors(inputTensors_);
+       DestroyTensors(outputTensors_);
+       OH_LOG_ERROR(LOG_APP, "output size mismatch.");
        return OH_NN_FAILED;
    }
    ```

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-h
 title: "@ohos.hidebug (Debug调试)"
 breadcrumb: API参考 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > ArkTS API > @ohos.hidebug (Debug调试)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:53+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:421252a4947ac373cd9ed79f906decf33dff0ada3a3ad440527492f3d6defe5b
+scraped_at: 2026-11-12T09:56:14+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:54b73167340bc44be1287146cf99b19b5a431f95a871a6dc84acae0b711ad20d
 ---
 
 为应用提供多种调试、调优的方法，帮助开发者定位性能瓶颈、优化应用性能。主要功能包括：内存数据分析、CPU使用率监控、trace采集、profiler采集、VM堆快照转储。由于该模块的接口大多比较耗费性能，接口调用较为耗时，且基于HiDebug模块定义，该模块内的接口仅建议在应用调试、调优阶段使用。若需要在其他场景使用时，请认真评估所需调用的接口对应用性能的影响。
@@ -558,7 +558,7 @@ import { hidebug } from '@kit.PerformanceAnalysisKit';
 
 let appThreadCpuUsage: hidebug.ThreadCpuUsage[] = hidebug.getAppThreadCpuUsage();
 for (let i = 0; i < appThreadCpuUsage.length; i++) {
-  console.info(`threadId=${appThreadCpuUsage[i].threadId}, cpuUsage=${appThreadCpuUsage[i].cpuUsage}`);
+  console.info(`threadId=${appThreadCpuUsage[i].threadId}, cpuUsage=${appThreadCpuUsage[i].cpuUsage}, threadName=${appThreadCpuUsage[i].threadName}`);
 }
 ```
 
@@ -1061,6 +1061,7 @@ VM内存信息。
 | --- | --- | --- | --- | --- |
 | threadId | number | 否 | 否 | 线程号。 |
 | cpuUsage | number | 否 | 否 | 线程CPU使用率。 |
+| threadName | string | 否 | 是 | 线程名。  **起始版本**：26.0.1 |
 
 ## tags12+
 
@@ -1758,4 +1759,31 @@ import { hidebug } from '@kit.PerformanceAnalysisKit';
 
 let rssInfo: hidebug.RssInfo = hidebug.getRssInfo();
 console.info(`rss: ${rssInfo.rss}, swapRss: ${rssInfo.swapRss}`);
+```
+
+## hidebug.getAppRunningUniqueId
+
+getAppRunningUniqueId(): string
+
+获取应用程序的运行唯一标识符。
+
+**起始版本**：26.0.1
+
+**元服务API**：从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力**：SystemCapability.HiviewDFX.HiProfiler.HiDebug
+
+**返回值**：
+
+| 类型 | 说明 |
+| --- | --- |
+| string | 返回运行唯一标识ID字符串。失败时返回空字符串。 |
+
+**示例**：
+
+```ts
+import { hidebug } from '@kit.PerformanceAnalysisKit';
+ 
+let appRunningId = hidebug.getAppRunningUniqueId();
+console.info(`appRunningId: ${appRunningId}`);
 ```

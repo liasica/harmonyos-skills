@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-sendable-
 title: Native与Sendable ArkTS对象绑定
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景 > Native与Sendable ArkTS对象绑定
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:06:23+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:d3ff3c94a87becf3a2910de0241a0437006cea66a731f57f336047190063dcc6
+scraped_at: 2026-11-12T09:52:47+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:11d72a0a129c93dbc1a4856313e7acb2cc99e296a061e39847d0e103adb35e56
 ---
 
 ## 场景介绍
@@ -25,7 +25,7 @@ content_hash: sha256:d3ff3c94a87becf3a2910de0241a0437006cea66a731f57f33604719006
      constructor(arg: number);
      plusOne(): number;
 
-     public get value(): number;
+     public get value();
      public set value(newVal: number);
    }
    ```

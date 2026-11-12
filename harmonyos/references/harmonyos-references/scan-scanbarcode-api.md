@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scan-scan
 title: scanBarcode (默认界面扫码)
 breadcrumb: API参考 > 媒体 > Scan Kit（统一扫码服务） > ArkTS API > scanBarcode (默认界面扫码)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:39+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:b8467400f11d3f5ccedae084ab0cf7e4996744845c89d25749b608c040a1b6f1
+scraped_at: 2026-11-12T09:56:53+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0c8602572d1417ad09f2725289e77ed6cbef24d35a63d61b502c00536b134d71
 ---
 
 ## 模块概述
 
-scanBarcode模块提供系统级体验一致的扫码界面，包含相机预览流，相册扫码入口，暗光环境闪光灯开启提示。Scan Kit默认界面扫码对系统相机权限进行了预授权且调用期间处于安全访问状态，无需开发者再次申请相机权限。
+scanBarcode模块提供系统级体验一致的扫码界面，包含相机预览流，相册扫码入口，暗光环境闪光灯开启提示。Scan Kit默认界面扫码对系统相机权限进行了预授权且调用期间处于安全访问状态，无需开发者再次申请相机权限。从API版本26.0.0开始，scanCore模块提供了[scanCore.isDefaultScanSupported()](scan-scancore.md#scancoreisdefaultscansupported)查询接口，用于在调用默认界面扫码功能前检查当前设备是否支持相应能力。
 
 为便于开发者快速上手，建议参考官方提供的[示例工程](https://gitcode.com/HarmonyOS_Samples/scankit-samplecode-clientdemo-arkts)。
 
@@ -37,13 +37,13 @@ import { scanBarcode } from '@kit.ScanKit';
 | scanType | scanCore.[ScanType](scan-scancore.md#scantype) | 否 | 否 | 码类型。  **元服务API：** 从API版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | originalValue | string | 否 | 否 | 码识别内容结果。  **元服务API：** 从API版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | scanCodeRect | [ScanCodeRect](scan-scanbarcode-api.md#scancoderect) | 否 | 是 | 码识别位置信息。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **起始版本：** 4.1.0(11) |
-| cornerPoints | Array<[Point](scan-scanbarcode-api.md#point)> | 否 | 是 | 码识别角点位置信息，返回QR Code四个角点。此参数仅图像识码接口[decodeImage](scan-imagedecode.md#decodeimage)返回。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **起始版本：** 5.0.0(12) |
+| cornerPoints | Array<[Point](scan-scanbarcode-api.md#point)> | 否 | 是 | 码识别角点位置信息，返回QR Code四个角点。此参数仅图像识码接口[detectBarcode.decodeImage()](scan-imagedecode.md#detectbarcodedecodeimage)返回。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **起始版本：** 5.0.0(12) |
 | isGS1 | boolean | 否 | 是 | 码图是否携带GS1（Global Standards 1）数据。  true表示码图携带GS1数据；false表示码图不携带GS1数据。默认值是false。  **元服务API：** 从API版本6.0.2(22)开始，该接口支持在元服务中使用。  **起始版本：** 6.0.2(22) |
 | source | scanCore.[ScanSource](scan-scancore.md#scansource) | 否 | 是 | 扫码结果来源。此参数仅默认界面扫码接口返回。用于区分扫码结果来源于相机预览流还是相册图片，以便进行不同的业务处理。  **元服务API：** 从API版本6.0.2(22)开始，该接口支持在元服务中使用。  **起始版本：** 6.0.2(22) |
 
 ## ScanCodeRect
 
-码的位置信息。使用默认界面扫码（startScan和startScanForResult）不返回码位置。
+码的位置信息。使用默认界面扫码（startScan()和startScanForResult()）不返回码位置。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -125,7 +125,7 @@ function loadPage(uiContext: UIContext) {
 }
 ```
 
-## startScanForResult
+## scanBarcode.startScanForResult
 
 startScanForResult(context: common.Context, options?: ScanOptions): Promise<ScanResult>
 
@@ -137,7 +137,7 @@ startScanForResult(context: common.Context, options?: ScanOptions): Promise<Scan
 
 **系统能力：** SystemCapability.Multimedia.Scan.ScanBarcode
 
-**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中无响应。可以通过[getSupportedCameras](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中无响应。可以通过[getSupportedCameras()](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
 
 **起始版本：** 4.1.0(11)
 
@@ -190,7 +190,7 @@ function loadPage(uiContext: UIContext) {
 }
 ```
 
-## startScanForResult
+## scanBarcode.startScanForResult
 
 startScanForResult(context: common.Context, callback: AsyncCallback<ScanResult>): void
 
@@ -202,7 +202,7 @@ startScanForResult(context: common.Context, callback: AsyncCallback<ScanResult>)
 
 **系统能力：** SystemCapability.Multimedia.Scan.ScanBarcode
 
-**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中无响应。可以通过[getSupportedCameras](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中无响应。可以通过[getSupportedCameras()](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
 
 **起始版本：** 4.1.0(11)
 
@@ -250,7 +250,7 @@ function loadPage(uiContext: UIContext) {
 }
 ```
 
-## startScanForResult
+## scanBarcode.startScanForResult
 
 startScanForResult(context: common.Context, options: ScanOptions, callback: AsyncCallback<ScanResult>): void
 
@@ -262,7 +262,7 @@ startScanForResult(context: common.Context, options: ScanOptions, callback: Asyn
 
 **系统能力：** SystemCapability.Multimedia.Scan.ScanBarcode
 
-**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中无响应。可以通过[getSupportedCameras](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中无响应。可以通过[getSupportedCameras()](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
 
 **起始版本：** 4.1.0(11)
 
@@ -314,19 +314,19 @@ function loadPage(uiContext: UIContext) {
 }
 ```
 
-## startScan(deprecated)
+## scanBarcode.startScan(deprecated)
 
 startScan(options?: ScanOptions): Promise<ScanResult>
 
 通过配置参数调用默认界面扫码，返回扫码结果。使用Promise异步回调。
 
-**废弃说明：** 从API版本4.1.0(11)开始废弃，建议使用[startScanForResult](scan-scanbarcode-api.md#startscanforresult)替代。
+**废弃说明：** 从API版本4.1.0(11)开始废弃，建议使用[startScanForResult()](scan-scanbarcode-api.md#scanbarcodestartscanforresult)替代。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Scan.ScanBarcode
 
-**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中无响应。可以通过[getSupportedCameras](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中无响应。可以通过[getSupportedCameras()](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
 
 **起始版本：** 4.0.0(10)
 
@@ -373,19 +373,19 @@ try {
 }
 ```
 
-## startScan(deprecated)
+## scanBarcode.startScan(deprecated)
 
 startScan(callback: AsyncCallback<ScanResult>): void
 
 启动默认界面扫码，返回扫码结果。使用callback异步回调。
 
-**废弃说明：** 从API版本4.1.0(11)开始废弃，建议使用[startScanForResult](scan-scanbarcode-api.md#startscanforresult-1)替代。
+**废弃说明：** 从API版本4.1.0(11)开始废弃，建议使用[startScanForResult()](scan-scanbarcode-api.md#scanbarcodestartscanforresult-1)替代。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Scan.ScanBarcode
 
-**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中无响应。可以通过[getSupportedCameras](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中无响应。可以通过[getSupportedCameras()](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
 
 **起始版本：** 4.0.0(10)
 
@@ -426,19 +426,19 @@ try {
 }
 ```
 
-## startScan(deprecated)
+## scanBarcode.startScan(deprecated)
 
 startScan(options: ScanOptions, callback: AsyncCallback<ScanResult>): void
 
 通过配置参数调用默认界面扫码，返回扫码结果。使用callback异步回调。
 
-**废弃说明：** 从API版本4.1.0(11)开始废弃，建议使用[startScanForResult](scan-scanbarcode-api.md#startscanforresult-2)替代。
+**废弃说明：** 从API版本4.1.0(11)开始废弃，建议使用[startScanForResult()](scan-scanbarcode-api.md#scanbarcodestartscanforresult-2)替代。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
 **系统能力：** SystemCapability.Multimedia.Scan.ScanBarcode
 
-**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中无响应。可以通过[getSupportedCameras](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
+**设备行为差异：** 在API版本6.0.2(22)及之前，该接口在Phone、Tablet中可正常调用。在API版本6.1.0(23)及之后，该接口在Phone、Tablet、带后置相机的Wearable中可正常调用，在不带后置相机的Wearable中无响应。可以通过[getSupportedCameras()](arkts-apis-camera-cameramanager.md#getsupportedcameras)接口查询是否带后置相机。
 
 **起始版本：** 4.0.0(10)
 

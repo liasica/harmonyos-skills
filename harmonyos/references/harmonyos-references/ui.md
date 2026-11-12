@@ -3,14 +3,15 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui
 title: UI界面
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > UI界面
 category: harmonyos-references
-scraped_at: 2026-10-11T07:24:01+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:87986169c637ee216bd90afe184756858d263f751c6039d4c97b247fa8f6019d
+scraped_at: 2026-11-12T09:53:54+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8f7c123061d07b958ffe834e8c3e186f1c2b9f16b3a1e9da93c087e415e785de
 ---
 
 * **[@ohos.animator (动画)](js-apis-animator.md)**
 * **[@ohos.arkui.componentSnapshot (组件截图)](js-apis-arkui-componentsnapshot.md)**
 * **[@ohos.arkui.componentUtils (componentUtils)](js-apis-arkui-componentutils.md)**
+* **[@ohos.arkui.dialog (弹出框)](js-apis-dialog.md)**
 * **[@ohos.arkui.dragController (DragController)](js-apis-arkui-dragcontroller.md)**
 * **[@ohos.arkui.drawableDescriptor (DrawableDescriptor)](js-apis-arkui-drawabledescriptor.md)**
 * **[@ohos.arkui.inspector (布局回调)](js-apis-arkui-inspector.md)**

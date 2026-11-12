@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Enums
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > ArkTS API > @ohos.multimedia.avMusicTemplate (音频模板) > Enums
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:24+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:13f0d6ce83ab1c148d80a2b615d18a613b5fac03bf7a0e2ad7ca1503b5e70e49
+scraped_at: 2026-11-12T09:56:28+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c3dc53724dde9a631ac0747f5ea64d477f16169d1cda182c001133d9f8b85a88
 ---
 
 **说明** 
@@ -146,6 +146,10 @@ content_hash: sha256:13f0d6ce83ab1c148d80a2b615d18a613b5fac03bf7a0e2ad7ca1503b5e
 | --- | --- | --- |
 | PLAY\_MUSIC | 'playMusic' | 播放音乐。 |
 | PLAY\_VIDEO | 'playVideo' | 播放视频。 |
+| PLAY\_MUSIC\_LIST | 'playMusicList' | 播放音乐列表（指定歌单）。  **起始版本：** 26.0.1 |
+| PLAY\_VIDEO\_LIST | 'playVideoList' | 播放视频列表（指定视频）。  **起始版本：** 26.0.1 |
+| PLAY\_KARAOKE | 'playKaraoke' | 播放K歌。  **起始版本：** 26.0.1 |
+| PLAY\_KARAOKE\_LIST | 'playKaraokeList' | 播放K歌列表（指定歌单）。  **起始版本：** 26.0.1 |
 
 ## DownloadStatus
 

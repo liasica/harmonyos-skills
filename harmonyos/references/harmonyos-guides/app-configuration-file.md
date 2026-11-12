@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/app-configura
 title: app.json5配置文件
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用配置文件 > app.json5配置文件
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:48+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ff82aec261215383c396773d0778d0e2b71008384c065e9dcd684acb66e9e7d8
+scraped_at: 2026-11-12T09:50:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:20bd104d3b5580a1e05aa68aeab80fe69ac13668fd042d7ccc765df11d806955
 ---
 
 应用级配置文件，包含应用的全局配置信息和特定设备类型的配置信息，用于向编译工具、操作系统和应用市场提供应用的基本信息。每个工程下必须包含一个app.json5配置文件，文件所在目录为工程名称/AppScope/app.json5。
@@ -112,7 +112,7 @@ app.json5配置文件包含以下标签。
 | 2in1 | 标识对PC/2in1设备做的特殊配置，可以配置的属性标签为minAPIVersion。  如果使用该属性对PC/2in1设备做了特殊配置，则应用在PC/2in1设备中会采用此处配置的属性值，并忽略在app.json5公共区域配置的属性值。 | 对象 | 该标签可缺省，缺省时PC/2in1设备使用app.json5公共区域配置的属性值。 |
 | GWPAsanEnabled | 标识应用程序是否开启[GWP-asan](../best-practices/bpta-stability-gwpasan-detection.md#section2735718353)堆内存检测工具，用于对内存越界、内存释放后使用等内存破坏问题进行分析。  - true：应用程序开启GWP-asan检测。  - false：应用程序不开启GWP-asan检测。 | 布尔值 | 该标签可缺省，缺省值为false。 |
 | [appEnvironments](app-configuration-file.md#appenvironments标签) | 标识当前应用配置的应用环境变量。 | 对象数组 | 该标签可缺省，缺省值为空。 |
-| maxChildProcess | 标识当前应用自身可创建的子进程的最大个数，取值范围为0到512，0表示不限制，当应用有多个模块时，以entry模块的配置为准。 | 数值 | 该标签可缺省，缺省时使用系统配置的默认值512。 |
+| maxChildProcess | 标识应用通过fork或clone创建的最大总进程数。若应用包含多个模块，以entry模块的配置为准。  取值范围：[0，512]，0表示最大值512，其余数值以实际配置为准。 | 数值 | 该标签可缺省，缺省时使用系统配置的默认值512。 |
 | [multiAppMode](app-configuration-file.md#multiappmode标签) | 标识当前应用配置的多开模式。仅bundleType为app的应用的entry或feature模块配置有效，存在多个模块时，以entry模块的配置为准。 | 对象 | 该标签可缺省，缺省值为空。 |
 | hwasanEnabled | 标识应用程序是否开启[HWAsan检测](ide-hwasan.md)。HWAsan(HardWare-assisted AddressSanitizer)是利用Top-Byte-Ignore特性实现的增强版Asan，与Asan相比HWAsan的内存开销更低，检测到的内存错误范围更大。  - true：当前工程开启HWAsan检测。  - false：当前工程不开启HWAsan检测。  **说明：**  从API version 14开始，支持该标签。 | 布尔值 | 该标签可缺省，缺省值为false。 |
 | tsanEnabled | 标识应用程序是否开启使用TSan检测线程错误。  [TSan（ThreadSanitizer）](../best-practices/bpta-stability-tsan-detection.md)是一个检测数据竞争的工具。  - true：当前工程开启TSan检测。  - false：当前工程不开启TSan检测。 | 布尔值 | 该标签可缺省，缺省值为false。 |

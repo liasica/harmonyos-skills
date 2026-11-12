@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-user-ide
 title: 用户身份认证访问控制开发指导
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥使用 > 访问控制 > 用户身份认证访问控制开发指导
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:38+08:00
-doc_updated_at: 2026-10-14
+scraped_at: 2026-11-12T09:51:40+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:a6aefe8c9d88d212a33efe5f7263f1ed5c1063941ee8cd21e3e08fbd0933db34
 ---
 

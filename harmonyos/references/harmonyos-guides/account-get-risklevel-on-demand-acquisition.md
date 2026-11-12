@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-get-r
 title: 华为账号其他方式登录获取用户风险等级
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 获取华为账号用户信息 > 获取风险等级 > 华为账号其他方式登录获取用户风险等级
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:23+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a6f743dd6fc76b0e17194d13be42251f2270381fd8f123c761510f8c4c1e8962
+scraped_at: 2026-11-12T09:52:17+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7a5a8c781689cfe70fd7bf8edac02bb2eed3087dd1a141efe36dbabadafc6602
 ---
 
 ## 场景介绍
@@ -15,11 +15,11 @@ content_hash: sha256:a6f743dd6fc76b0e17194d13be42251f2270381fd8f123c761510f8c4c1
 ## 约束与限制
 
 1. 获取用户风险等级scope仅支持与openid、phone、profile组合使用，接口支持的全量scopes见[scope列表](../harmonyos-references/account-api-authentication.md#authorizationwithhuaweiidrequest)。
-2. 获取风险等级能力支持Phone、Tablet、PC/2in1设备。并且从5.1.0(18)版本开始，新增支持Wearable设备；从5.1.1(19)版本开始，新增支持TV设备。
+2. 获取风险等级能力支持Phone、Tablet、PC/2in1设备。并且从5.1.0(18)版本开始，新增支持Wearable设备；从5.1.1(19)版本开始，新增支持TV设备；从26.0.1版本开始，新增支持Car设备。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/i-2V-IWaRVWv1NBcTA1erA/zh-cn_image_0000002809050765.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/J8S99SUSQTao51I0N_Ykxw/zh-cn_image_0000002815399651.png)
 
 流程说明：
 

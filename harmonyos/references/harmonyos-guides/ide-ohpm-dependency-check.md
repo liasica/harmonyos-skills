@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-depe
 title: ohpm dependency-check
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm dependency-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:24+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:e30c9d3f8df80b47395909e0aba16dc4a24115aa7a1b5e67e522fda613e4fb17
+scraped_at: 2026-11-12T09:53:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3e6b6e2f2351758e2584d156cab9b112d9d646d13ed5ed42c231f0a56c0f6b2c
 ---
 
 从ohpm 6.1.1.830版本开始，ohpm命令支持查询三方库的版本更新信息。
@@ -159,7 +159,7 @@ checkupdate_pkgea4->@fdddd/test@1.1.5, 三方测试库
 @js-joda/core->checkupdate_test@2.0.0-beta, 三方测试库
 @js-joda/core->@fdddd/test@1.1.5, 三方测试库
 test-check-update->checkupdate_test@2.0.0, 三方测试库
-Here is the security update information: 2 package container 2 vulnerabilities，2 malwares
+Here is the security update information: 2 package container 2 vulnerabilities,2 malwares
 checkupdate_pkgea4@1.0.0, CVE-xxxx-xxxx test 跨站脚本漏洞,
 checkupdate_pkgea4@1.0.0, asfasdf
 test-check-update@3.8.9-beta, CVE-xxxx-xxxxx test 跨站脚本漏洞
@@ -191,7 +191,7 @@ checkupdate_pkgea4->@fdddd/test@1.1.5, 三方测试库
 @js-joda/core->checkupdate_test@2.0.0-beta, 三方测试库
 @js-joda/core->@fdddd/test@1.1.5, 三方测试库
 test-check-update->checkupdate_test@2.0.0, 三方测试库
-Here is the security update information: 2 package container 2 vulnerabilities，2 malwares
+Here is the security update information: 2 package container 2 vulnerabilities,2 malwares
 checkupdate_pkgea4@1.0.0, CVE-xxxx-xxxx test 跨站脚本漏洞,
 checkupdate_pkgea4@1.0.0, asfasdf
 test-check-update@3.8.9-beta, CVE-xxxx-xxxxx test 跨站脚本漏洞

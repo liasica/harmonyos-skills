@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-dimensi
 title: 视频编解码宽高、跨距与裁剪信息说明
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > AVCodec Kit常见问题 > 视频编解码宽高、跨距与裁剪信息说明
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:08+08:00
+scraped_at: 2026-11-12T09:52:03+08:00
 doc_updated_at: 2026-09-30
-content_hash: sha256:e3511702263ec3909d7ca2a5a6f463c74a80640e2e87d2f3a40889d4e413c7e4
+content_hash: sha256:25ec8ba719af798d1ffbf35e4d2052ba42e2e29bf62860bedcc174d675330d90
 ---
 
 ## 概述
@@ -102,7 +102,7 @@ sliceHeight = height + padding_height        （垂直方向）
 
 **图1** NV12格式图像的内存布局示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/cU6zkXG8T6iFQgyCeFDBzg/zh-cn_image_0000002779850922.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/vpW28EDYQdO8dEX0vrB6_A/zh-cn_image_0000002815559283.png)
 
 图1中各参数含义：
 
@@ -119,7 +119,7 @@ sliceHeight = height + padding_height        （垂直方向）
 
 **图2** 解码器输出Buffer的内存布局示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/oDLAr3uWRc-as_k4YQeAyw/zh-cn_image_0000002809050495.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/pvp2qMBMRye4wwxdxBASuw/zh-cn_image_0000002786359870.png)
 
 图2中各参数含义：
 
@@ -138,7 +138,7 @@ sliceHeight = height + padding_height        （垂直方向）
 
 **图3** 含crop信息时解码器侧内存布局示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/Uv3dwIQQTfK-UqOeWljFNA/zh-cn_image_0000002779850948.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4/v3/iHpQ8dAsTt2nHAwHksg0Xg/zh-cn_image_0000002815559309.png)
 
 解码器特有的4个裁剪参数定义了**有效显示区域**的矩形范围。
 

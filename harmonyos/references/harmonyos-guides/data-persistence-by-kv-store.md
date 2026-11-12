@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persiste
 title: 通过键值型数据库实现数据持久化 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 应用数据持久化 > 通过键值型数据库实现数据持久化 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:03:56+08:00
-doc_updated_at: 2026-10-14
+scraped_at: 2026-11-12T09:51:01+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:72ba802bed31ffbac8a5a1939fb170417dc2cd856c9774964e7654f572415dcc
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/application-p
 title: 应用程序包概述
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用程序包基础知识 > 应用程序包概述
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:28:57+08:00
+scraped_at: 2026-11-12T09:50:55+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:8877b03fdbe567f08d744fafd76f98ebb6c6956264a4c649eda07da1d139ca76
+content_hash: sha256:f29f867fa9f4fb9632ce851142596cc70546af9989b9ee240a2a168bc82406f6
 ---
 
 在开发应用之前，开发者需要了解应用的设计机制、应用程序包结构等基础知识。
@@ -47,7 +47,7 @@ Module按照使用场景可以分为两种类型：
 
   **图1** HAR和HSP在APP包中的形态示意图
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/tPkBYCZpTseqV335mvymZg/zh-cn_image_0000002809048997.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/rcPu7V63TOui0PTKR4HEfA/zh-cn_image_0000002815397875.png)
 
 ## 选择合适的包类型
 

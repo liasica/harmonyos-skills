@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/vision-docume
 title: 文档扫描
 breadcrumb: 指南 > AI > Vision Kit（场景化视觉服务） > 文档扫描
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:11+08:00
+scraped_at: 2026-11-12T09:52:46+08:00
 doc_updated_at: 2026-09-07
-content_hash: sha256:4979e993da18bd686db6e9e9fd417b93ae1aa75ba16d5caa48d12ce2e328ab70
+content_hash: sha256:7a5137b4a22c13681484d93a91e6fa360de19aa13dde7692feeabad5921ffb75
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:4979e993da18bd686db6e9e9fd417b93ae1aa75ba16d5caa48d12ce2e32
 
 **图1** 文档扫描示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/RsWWzZ5jQvS6PAbYJKdHNQ/zh-cn_image_0000002809011513.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/sjij_GtZR3atSG1D1nY1VQ/zh-cn_image_0000002786360780.png)
 
 ## 约束与限制
 

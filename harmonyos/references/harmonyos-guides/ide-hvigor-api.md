@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-ap
 title: 基础构建能力
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 扩展构建能力 > 扩展构建API > 基础构建能力
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:35+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:035f61eb5744fa67b8375aeb0e0e5d21bcf2cf0d98431c23d7e44e066168b9a5
+scraped_at: 2026-11-12T09:53:09+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:71fe41583e7390e28e7181664c1f6a8fc4af139dbe5543c595f7887cc1cd8117
 ---
 
 ## Hvigor预置对象
 
-"hvigor"对象是一个预定义的Hvigor对象，表示当前正在执行的Hvigor构建引擎的实例，通过"hvigor"对象可以获得有关构建的一些信息和操作。
+hvigor是一个预定义的Hvigor对象，表示当前正在执行的Hvigor构建引擎的实例，通过hvigor对象可以获得有关构建的一些信息和操作。
 
 ### 导入模块
 
@@ -461,7 +461,7 @@ getReportJson(): any
   "version": "2.0", // 固定字段
   "ppid": 524, // process.ppid
   "events": [ // 构建事件
-    ...
+    // ...
     {
       "head": {
         "id": "61068546-11d9-49d0-baa7-733e167af7d6", // 事件id
@@ -694,7 +694,9 @@ getChildNode(): HvigorNodeDescriptor[] | undefined
 
 ```ts
 // hvigorconfig.ts
-import { hvigorConfig } from '@ohos/hvigor';
+import { hvigor } from '@ohos/hvigor';
+
+const hvigorConfig = hvigor.getHvigorConfig();
 const rootNodeDescriptors = hvigorConfig.getRootNodeDescriptor();
 rootNodeDescriptors.getChildNode()?.forEach(child => {
   console.log(`child: ${child.name}`);
@@ -719,7 +721,9 @@ getRootNode(): HvigorNodeDescriptor
 
 ```screen
 // hvigorconfig.ts
-import { hvigorConfig } from '@ohos/hvigor';
+import { hvigor } from '@ohos/hvigor';
+
+const hvigorConfig = hvigor.getHvigorConfig();
 const entryNodeDescriptor = hvigorConfig.getNodeDescriptorByName('entry');
 console.log(`rootNode name: ${entryNodeDescriptor.getRootNode().name}`);
 ```
@@ -1258,7 +1262,7 @@ getProperty(key: string): any | undefined
 
 | 类型 | 说明 |
 | --- | --- |
-| any | undefined | properties配置中指定key对应的value值（string，number, boolean类型），若不存在配置时返回undefined |
+| any | undefined | properties配置中指定key对应的value值（string，number，boolean类型），若不存在配置时返回undefined |
 
 **示例：**
 
@@ -1462,7 +1466,7 @@ console.log(workspaceDir);
 
 ## HvigorNode
 
-"HvigorNode"是hvigor中的节点模型接口，Hvigor工程中都有一个根模块对应的节点对象和每个子模块对应的节点对象，节点对象均为HvigorNode接口的实现。节点对象包含了该模块的配置，属性和任务等。
+HvigorNode是hvigor中的节点模型接口，Hvigor工程中都有一个根模块对应的节点对象和每个子模块对应的节点对象，节点对象均为HvigorNode接口的实现。节点对象包含了该模块的配置，属性和任务等。
 
 ### 导入模块
 
@@ -2012,7 +2016,7 @@ export default {
 
 context?: (() => any) | any
 
-插件上下文实现接口，可选实现；实现此函数后，其他插件可通过node.getContext('插件ID'）获取插件中定义的上下文接口。
+插件上下文实现接口，可选实现；实现此函数后，其他插件可通过node.getContext('插件ID')获取插件中定义的上下文接口。
 
 **返回值：**
 
@@ -3994,11 +3998,11 @@ import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
 import path from "path";
 
 const currentNode = getNode(__filename);
-hvigor.nodesEvaluated(() => {
+hvigor.nodesEvaluated(async () => {
   const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
   const json5FilePath = path.resolve(context.getProjectPath(), 'testJson.json5');
   FileUtil.ensureFileSync(json5FilePath);
-  FileUtil.writeFile(json5FilePath, JSON.stringify(context.getAppJsonOpt()));
+  await FileUtil.writeFile(json5FilePath, JSON.stringify(context.getAppJsonOpt()));
 })
 
 export default {
@@ -4074,13 +4078,13 @@ import { appTasks, OhosPluginId, OhosAppContext } from '@ohos/hvigor-ohos-plugin
 import { hvigor, FileUtil, getNode } from '@ohos/hvigor';
 
 const currentNode = getNode(__filename);
-hvigor.nodesEvaluated(() => {
+hvigor.nodesEvaluated(async () => {
   const context = currentNode.getContext(OhosPluginId.OHOS_APP_PLUGIN) as OhosAppContext;
   const json5FilePath = FileUtil.pathResolve(context.getProjectPath(), 'testJson.json5');
   FileUtil.ensureFileSync(json5FilePath);
   FileUtil.writeFileSync(json5FilePath, JSON.stringify(context.getAppJsonOpt()));
   const copyFilePath = FileUtil.pathResolve(context.getProjectPath(), 'testJson_copy.json5');
-  FileUtil.copyFile(json5FilePath, copyFilePath);
+  await FileUtil.copyFile(json5FilePath, copyFilePath);
 })
 
 export default {

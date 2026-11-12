@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avtranscoder-
 title: 创建异步线程执行AVTranscoder视频转码(ArkTS)
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(ArkTS) > 视频转码 > 创建异步线程执行AVTranscoder视频转码(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:13+08:00
+scraped_at: 2026-11-12T09:52:08+08:00
 doc_updated_at: 2026-09-20
-content_hash: sha256:226d90888933415628287b573b4f4fd751b0c67720b6dec09a67ff7df2031960
+content_hash: sha256:23c60706d26bc65843e3645c013fa04acb01b15761af8836e1520c4381d47dba
 ---
 
 在开发过程中，应用经常会创建异步线程执行视频转码任务以满足不同诉求，主要包括：
@@ -55,13 +55,13 @@ content_hash: sha256:226d90888933415628287b573b4f4fd751b0c67720b6dec09a67ff7df20
 
   计算过程：
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/sgf-AQM1Tu-LFLuXTqm_GA/zh-cn_image_0000002779851004.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/L0MvyvqUSZmbikIQS4y3iQ/zh-cn_image_0000002815559365.png)
 
   分辨率和帧率的系数由以下经验公式计算可得。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/-QgbYZdwQp-HMJPWm_-Nzw/zh-cn_image_0000002779691036.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/n_eQNC1GR3mdEcoaZDUV6w/zh-cn_image_0000002815399449.png)
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/WM6Lv-VZTj6r82f8UVwAgw/zh-cn_image_0000002809010657.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/sfvtQWpkTbKNTbW-RBSxSg/zh-cn_image_0000002786519874.png)
 
   上述计算帧率的公式y=clip(0.5, 2, x)表示：如果x∈[0.5, 2.0]，取y=x；如果x＜0.5，取y=0.5；如果x＞2.0，取y=2.0。
 * **码率计算**

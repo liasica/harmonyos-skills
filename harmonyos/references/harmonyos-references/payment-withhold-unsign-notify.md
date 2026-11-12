@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-w
 title: 解约结果回调通知
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 直连商户 > 签约代扣 > 解约结果回调通知
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:34+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:ccb5c54af6dfcbfe8f33613912a43585a93a124985ffafffc57fb7bd769e0e8b
+scraped_at: 2026-11-12T09:57:33+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7a8678b51ce0c3965eec8ec12ad0a3c2735007bea09eb25dc27c24b44f490676
 ---
 
 开发者完成解约申请成功后，华为支付服务器调用此接口向开发者服务器发送解约关键事件通知。
@@ -22,7 +22,7 @@ content_hash: sha256:ccb5c54af6dfcbfe8f33613912a43585a93a124985ffafffc57fb7bd769
 
 * **承载协议：** HTTPS POST
 * **接口方向：** 华为支付服务器 -> 开发者服务器
-* **接口URL：** URL为开发者在请求申请解约接口时传入的callbackUrl
+* **接口URL：** URL由开发者在请求申请解约接口时传入的callbackUrl参数决定
 * **数据格式：**
 
   请求消息：Content-Type: application/json; charset=UTF-8

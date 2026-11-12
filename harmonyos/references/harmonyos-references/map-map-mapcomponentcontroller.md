@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-m
 title: Class (MapComponentController)
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Class (MapComponentController)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:24+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1da73608f388b1a1e8c9fa2ddb618ca400bcded9d5282e0d604685c435b906ca
+scraped_at: 2026-11-12T09:57:25+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:6423c12324b96b11b94b76fbca24fc54c99c4cd0d096e3058ee1ff6c29e4146c
 ---
 
 ## 导入模块
@@ -201,7 +201,7 @@ animateCameraWithMarker(update: CameraUpdate, marker: Marker, duration: number):
 | --- | --- | --- | --- |
 | update | [CameraUpdate](map-map-cameraupdate.md) | 是 | 相机状态将要发生的变化，异常值不处理。 |
 | marker | [Marker](map-map-marker.md) | 是 | 标记，异常值不处理。 |
-| duration | number | 是 | 动画的持续时间，单位：ms，默认值为250，取值范围：大于0，异常值按默认值处理。 |
+| duration | number | 是 | 动画的持续时间，单位：ms，取值范围：大于0，异常值按250处理。 |
 
 **返回值：**
 
@@ -259,7 +259,7 @@ animateCameraWithMarkers(update: CameraUpdate, markers: Array<Marker>, duration:
 | --- | --- | --- | --- |
 | update | [CameraUpdate](map-map-cameraupdate.md) | 是 | 相机状态将要发生的变化，异常值返回401错误码。 |
 | markers | Array<[Marker](map-map-marker.md)> | 是 | 一组标记。  **说明：**  一组标记的位置必须相同，否则会返回401错误码。 |
-| duration | number | 是 | 动画的持续时间，单位：ms，默认值为250，取值范围：大于0，小于等于0按照默认值处理，异常值按默认值处理。 |
+| duration | number | 是 | 动画的持续时间，单位：ms，取值范围：大于0，异常值按250处理。 |
 
 **返回值：**
 
@@ -1430,7 +1430,7 @@ addMarker(options: mapCommon.MarkerOptions): Promise<Marker>
 | --- | --- |
 | 401 | Invalid input parameter. |
 | 1002601001 | The object to be operated does not exist. |
-| 1002601005 | Failed to generate the icon of the customized component.  适用版本：6.0.0(20)+ |
+| 1002601005 | Failed to generate the icon of the custom component.  适用版本：6.0.0(20)+ |
 
 **示例：**
 
@@ -2590,7 +2590,7 @@ addTraceOverlay(params: mapCommon.TraceOverlayParams, markers?: Array<Marker>): 
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | params | [mapCommon.TraceOverlayParams](map-common.md#traceoverlayparams) | 是 | 动态轨迹参数。 |
-| markers | Array<[Marker](map-map-marker.md)> | 否 | 动态轨迹的图片数组，异常值不处理。  **说明：**  一组标记的位置必须相同。 |
+| markers | Array<[Marker](map-map-marker.md)> | 否 | 动态轨迹的标记数组，异常值不处理。  **说明：**  一组标记的位置必须相同。 |
 
 **返回值：**
 
@@ -3036,7 +3036,7 @@ setSphereEnabled(enabled: boolean): void
 
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
-| enabled | boolean | 是 | 以动画形式切换2D或3D地球，异常值不处理。取值范围：  - true：开启3D地球  - false：开启2D地球 |
+| enabled | boolean | 是 | 以动画形式切换2D或3D地球，异常值不处理。取值范围：  - true：开启3D地球。  - false：开启2D地球。  **说明：**  3D地球不支持点击事件。 |
 
 **示例：**
 
@@ -3062,7 +3062,7 @@ setSphereEnabled(enabled: boolean, animateDuration: number): void
 
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
-| enabled | boolean | 是 | 以动画形式切换2D或3D地球，异常值不处理。取值范围：  - true：开启3D地球  - false：开启2D地球 |
+| enabled | boolean | 是 | 以动画形式切换2D或3D地球，异常值不处理。取值范围：  - true：开启3D地球。  - false：开启2D地球。  **说明：**  3D地球不支持点击事件。 |
 | animateDuration | number | 是 | 动画持续时间，单位：ms，取值范围：大于0，异常值不处理。 |
 
 **示例：**
@@ -3089,7 +3089,7 @@ setSphereEnabled(enabled: boolean, animateDuration: number, cityLight: boolean):
 
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
-| enabled | boolean | 是 | 以动画形式切换2D或3D地球，异常值不处理。取值范围：  - true：开启3D地球  - false：开启2D地球 |
+| enabled | boolean | 是 | 以动画形式切换2D或3D地球，异常值不处理。取值范围：  - true：开启3D地球。  - false：开启2D地球。  **说明：**  3D地球不支持点击事件。 |
 | animateDuration | number | 是 | 动画持续时间，单位：ms，取值范围：大于0，异常值不处理。 |
 | cityLight | boolean | 是 | 是否启用城市灯光，需要开启3D地球，异常值不处理。  - true：开启城市灯光  - false：关闭城市灯光 |
 
@@ -3103,7 +3103,7 @@ this.mapController.setSphereEnabled(true, 1000, true);
 
 setSphereMapEnabled(enabled: boolean, params?: mapCommon.SphereParams): Promise<void>
 
-设置3D地图开关。
+设置3D地图开关，使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -3141,6 +3141,7 @@ let mSphereOptions: mapCommon.SphereParams =
     backgroundImage: $r('app.media.bg_compress'),
     coverageImage: $r('app.media.coverage_icon')
   };
+// await等待时间仅指图片加载，不包含动画时长
 await this.mapController.setSphereMapEnabled(true, mSphereOptions);
 ```
 
@@ -5033,7 +5034,7 @@ setIndoorMapEnabled(enabled: boolean): void
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 在5.1.1(19)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。
+**设备行为差异：** 在5.1.1(19)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。在26.0.1及之后版本该接口在phone、tablet、PC/2in1和Car均可正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 5.1.1(19)
 
@@ -5070,7 +5071,7 @@ isIndoorMapEnabled(): boolean
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 在5.1.1(19)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。
+**设备行为差异：** 在5.1.1(19)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。在26.0.1及之后版本该接口在phone、tablet、PC/2in1和Car均可正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 5.1.1(19)
 
@@ -5106,7 +5107,7 @@ switchIndoorMapFloor(buildingId: string, floorName: string): void
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 在5.1.1(19)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。
+**设备行为差异：** 在5.1.1(19)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。在26.0.1及之后版本该接口在phone、tablet、PC/2in1和Car均可正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 5.1.1(19)
 
@@ -5143,7 +5144,7 @@ setFloorControlsPosition(point: mapCommon.MapPoint): void
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 在6.0.0(20)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。
+**设备行为差异：** 在6.0.0(20)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。在26.0.1及之后版本该接口在phone、tablet、PC/2in1和Car均可正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 6.0.0(20)
 

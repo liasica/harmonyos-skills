@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hidebug-guide
 title: HiDebug接口使用示例（C/C++）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 系统调试信息获取 > HiDebug接口使用示例（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:23+08:00
-doc_updated_at: 2026-10-26
+scraped_at: 2026-11-12T09:51:56+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:707cc1dc8e7e1791767d5f5f47b645b0275421eb6d53e74e7c7be2e9a32450b7
 ---
 

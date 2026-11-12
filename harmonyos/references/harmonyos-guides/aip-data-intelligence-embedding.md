@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/aip-data-inte
 title: 应用数据向量化 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 应用数据向量化 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:49:27+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:177e177163a88536b5d33e9ce7f97bac772df9d950b8037bee5ac0e1f31dd08f
+scraped_at: 2026-11-12T09:51:02+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ecc75cf47de328a403341784ae4b7feeb5bd763978789b947dcd87362d439506
 ---
 
 ## 场景介绍
@@ -89,7 +89,7 @@ content_hash: sha256:177e177163a88536b5d33e9ce7f97bac772df9d950b8037bee5ac0e1f31
        cachePath: "/data"
      }
      let textEmbedding: intelligence.TextEmbedding;
-     let modelInfo:  intelligence.CloudModelInfo;
+     let modelInfo: intelligence.CloudModelInfo;
      ```
 
      ```typescript
@@ -113,6 +113,10 @@ content_hash: sha256:177e177163a88536b5d33e9ce7f97bac772df9d950b8037bee5ac0e1f31
          if (info.length > 0) {
            modelInfo = info[0];
          }
+       })
+       .catch((err: BusinessError) => {
+         console.error('Failed to get supported model and code is ' + err.code);
+         // ...
        })
      ```
 

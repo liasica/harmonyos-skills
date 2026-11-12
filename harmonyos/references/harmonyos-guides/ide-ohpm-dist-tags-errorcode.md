@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-dist
 title: ohpm dist-tags错误码
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm dist-tags错误码
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:25+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:1c69ee0fe6fe0468f25424ac6a3f7c420a11f1c57f3634a520c6b2ffe23dc0ab
+scraped_at: 2026-11-12T09:53:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:5bd8b1c5ea5dbdec941a31c982fc06d0ce2daf14b499c15dcf8d077ea774d419
 ---
 
-## 00623001 tag标签无效
+## 00623001 tag无效
 
 **错误信息**
 
@@ -20,11 +20,11 @@ Tag Invalid Error.
 
 **可能原因**
 
-tag标签格式不符合要求。
+tag格式不符合要求。
 
 **处理步骤**
 
-检查tag标签格式，确保其符合规范。具体请参考[ohpm dist-tags](ide-ohpm-dist-tags.md)。
+检查tag格式，确保其符合规范。具体请参考[ohpm dist-tags](ide-ohpm-dist-tags.md)。
 
 ## 00623003 list命令错误
 

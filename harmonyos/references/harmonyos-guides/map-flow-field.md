@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-flow-fiel
 title: 流场图层
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 流场图层
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:36+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:a9d5cee5d88864095ebc5c362c1b64f6299ecaa35538ca3745049195c75f32fb
+scraped_at: 2026-11-12T09:52:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b501f5d54f78909e31ed7b18688c5a4530089aa7e0af2e9afa4969aa5c005919
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:a9d5cee5d88864095ebc5c362c1b64f6299ecaa35538ca3745049195c75
 
 6.0.0(20)开始，支持流场图层功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/qb1Jbx4tRhuSXpGjIeZtoQ/zh-cn_image_0000002779691530.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/9niGC4jmSjub5aZyPXV3Kg/zh-cn_image_0000002815399955.gif "点击放大")
 
 ## 接口说明
 
@@ -70,16 +70,16 @@ content_hash: sha256:a9d5cee5d88864095ebc5c362c1b64f6299ecaa35538ca3745049195c75
                "header": {
                  "parameterUnit": "m.s-1",
                  "parameterNumber": 2,
-                 "dx": 10,
-                 "dy": 20,
+                 "dx": 90,
+                 "dy": 45,
                  "parameterNumberName": "U-component-wind",
                  "la2": -90,
                  "la1": 90,
                  "parameterCategory": 2,
                  "lo1": 0,
                  "lo2": 359.75,
-                 "ny": 4,
                  "nx": 4,
+                 "ny": 4,
                  "numberPoints": 16
                },
                "data": [2, 2, 2, 2, 2, 2, 2, 2, -10, -10, -1, -1, -1, -1, -3, 2]
@@ -87,16 +87,16 @@ content_hash: sha256:a9d5cee5d88864095ebc5c362c1b64f6299ecaa35538ca3745049195c75
                "header": {
                  "parameterUnit": "m.s-1",
                  "parameterNumber": 3,
-                 "dx": 4,
-                 "dy": 4,
-                 "parameterNumberName": "U-component-wind",
+                 "dx": 90,
+                 "dy": 45,
+                 "parameterNumberName": "V-component-wind",
                  "la2": -90,
                  "la1": 90,
                  "parameterCategory": 2,
                  "lo1": 0,
                  "lo2": 359.75,
-                 "ny": 4,
                  "nx": 4,
+                 "ny": 4,
                  "numberPoints": 16
                },
                "data": [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, -1, -1, -2, -3, -1]
@@ -111,7 +111,7 @@ content_hash: sha256:a9d5cee5d88864095ebc5c362c1b64f6299ecaa35538ca3745049195c75
 
            try {
              // 添加流场图层
-             this.fieldOverlay = await this.mapController?.addFlowFieldOverlay(params);
+             this.fieldOverlay = await this.mapController.addFlowFieldOverlay(params);
            } catch (e) {
              console.error(this.TAG, `code:${e.code}, message:${e.message}`);
            }

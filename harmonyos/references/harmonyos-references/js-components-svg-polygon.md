@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: polygon
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > svg组件 > polygon
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:24+08:00
+scraped_at: 2026-11-12T09:54:34+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:b242866fcb146f9e4711bb1264ed13522c974501230c8d576a164ac162e206d5
+content_hash: sha256:5ecb8e2b6c89c0cc4bf2d8c3ebd0667c442ef6fba170a21399b7ada75caea248
 ---
 
 **说明** 
@@ -43,4 +43,4 @@ content_hash: sha256:b242866fcb146f9e4711bb1264ed13522c974501230c8d576a164ac162e
 </div>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/oo61bo20SMqoUJIKc8In2Q/zh-cn_image_0000002809052441.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/soMGciOiSQCuyixPxVzc7Q/zh-cn_image_0000002786521732.png)

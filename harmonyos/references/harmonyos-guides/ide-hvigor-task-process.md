@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-ta
 title: 构建任务说明
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 概述 > 构建任务说明
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:24+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:03059d8f51c7eeddfa269bff5ecbac0bba0a2f82013430bec9176875d6f91ebc
+scraped_at: 2026-11-12T09:53:06+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:974c1b623ebd8f984bb5f50da3b98ba6695528ea008b3629ee28c9a228945a5b
 ---
 
 本章节将对构建的任务进行说明，可以更直观地了解到构建的任务流程。
@@ -14,15 +14,15 @@ content_hash: sha256:03059d8f51c7eeddfa269bff5ecbac0bba0a2f82013430bec9176875d6f
 
 ### HAP基础任务流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/3Z4XacSxRc23-7AayRS0Lw/zh-cn_image_0000002701823192.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/QcMLp4gkQD-eA1ppImfzIA/zh-cn_image_0000002779566960.png)
 
 ### HSP基础任务流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/D16JqqRzSkW_nVcaYjkX4w/zh-cn_image_0000002731382497.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/pY7bm-MpRG6rOl3mNM5idQ/zh-cn_image_0000002779566958.png)
 
 ### HAR基础任务流程图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/d9kszWl7QlO2wTOFPGhawQ/zh-cn_image_0000002701663274.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/nags_z2fRAOzZLtM4-bPNQ/zh-cn_image_0000002779406980.png)
 
 ## 使用命令查看任务
 
@@ -34,7 +34,7 @@ hvigorw taskTree
 
 获取任务树时会根据工程中的模块，将模块中注册的任务以下图形式输出：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/lGn8S7pnSjuSbW2-UzwSgQ/zh-cn_image_0000002731542467.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/jwhG3jFlRb6uH0Ps9qnCzg/zh-cn_image_0000002779406978.png)
 
 执行顺序举例说明：如图所示，assembleHap依赖CollectDebugSymbol，CollectDebugSymbol依赖于PackageHap；则任务执行顺序为PackageHap->CollectDebugSymbol->assembleHap。
 
@@ -94,7 +94,7 @@ hvigorw taskTree
 
 * ProcessResource 处理和生成用文件方式编译资源的中间文件。
 * PreviewProcessResource 预览场景下，处理和生成用文件方式编译资源的中间文件。
-* CompileResource 调用restool 编译资源。
+* CompileResource 调用restool编译资源。
 * PreviewCompileResource 预览场景下，调用restool编译资源。
 * ProcessLibs 收集hap和har依赖中的.so文件。
 

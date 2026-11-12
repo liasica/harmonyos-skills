@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅崩溃事件（C/C++）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 崩溃事件 > 订阅崩溃事件（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:10+08:00
-doc_updated_at: 2026-10-28
+scraped_at: 2026-11-12T09:51:54+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:eb6c1a99347e06507f1d1b9c366270cfb4c5d954dcfffab9189cf6c5d3b58de9
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: 数据迁移
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 附录 > 数据迁移
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:13+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:282a83bd543e4b7f9d6f634c9584234e03333d062b1506ada9991d1c62347039
+scraped_at: 2026-11-12T09:52:52+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:873bf4a35982088ceba9b368e7c06418a94ebc3f11acb2fc002ebd41bbe3ed83
 ---
 
 ohpm-repo**2.2.0**版本开始支持数据迁移功能。在ohpm-repo配置文件中，db是元数据存储的配置项，store是文件存储的配置项，db和store不能随意搭配，需要符合下面表格中的匹配规范。如果需要改变db和store的存储方式，需要进行数据迁移操作。
@@ -125,7 +125,7 @@ ohpm-repo**2.2.0**版本开始支持数据迁移功能。在ohpm-repo配置文�
 ohpm-repo install --config <配置文件路径>
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/yTJ8BwiTQJGOuvIjQGqc0A/zh-cn_image_0000002701662634.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/9BidA8V8RYKECUaAnLTtIg/zh-cn_image_0000002779565386.png "点击放大")
 
 根据提示信息刷新环境变量，然后重新启动ohpm-repo。
 
@@ -133,7 +133,7 @@ ohpm-repo install --config <配置文件路径>
 ohpm-repo start
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fb/v3/oXJHnqTVRmuLnQaJkGFBng/zh-cn_image_0000002731541829.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5f/v3/Y9Uy6FZ2R-CwgF6wOGyxZg/zh-cn_image_0000002779405420.png "点击放大")
 
 ## 使用迁移命令导入数据
 
@@ -172,7 +172,7 @@ ohpm-repo start
 
    数据导入成功后，可启动ohpm-repo服务并登录管理页验证。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/QZvYfK_VRj2GZ3kwGtZ3pA/zh-cn_image_0000002731381855.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/Ki3oX76dRhunK9m6mwtACA/zh-cn_image_0000002779405412.png "点击放大")
 3. 批量上传包到ohpm-repo配置的store目录。
 
    使用[batch\_publish](ide-ohpm-repo-batch-publish.md)命令，将批量下载生成的batch\_download\_xxx.zip中的包依次发布到ohpm-repo。
@@ -197,7 +197,7 @@ ohpm-repo start
    2. 当批量上传的zip文件中仅包含一个仓库目录，可在batch\_publish命令后面配置--target-repo <string>，指定所有包上传至目标ohpm-repo仓库。
 4. 导入包权限数据。
 
-   ohpm-repo 5.4.0版本开始，支持使用[import\_pkgPermission](ide-ohpm-repo-import-pkgpermission.md)命令，导入包权限数据。导入时有[三种导入模式](ide-ohpm-repo-import-pkgpermission.md#section8679814134119)，请根据不同模式的处理规则选择适合的导入模式。
+   ohpm-repo 5.4.0版本开始，支持使用[import\_pkgPermission](ide-ohpm-repo-import-pkgpermission.md)命令，导入包权限数据。导入时有[三种导入模式](ide-ohpm-repo-import-pkgpermission.md#section171061630114611)，请根据不同模式的处理规则选择适合的导入模式。
 
    ```screen
    PS D:\> ohpm-repo import_pkgPermission D:\packagePermission_1758008466123.json --mode override

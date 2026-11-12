@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/brightness-co
 title: 控制亮度与常亮 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 其他开发场景 > 控制亮度与常亮 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:14+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:56928f5503fcd713b5ffab1fe159f6a5ca73119e6a4d8e42dc9002a66fde97dc
+scraped_at: 2026-11-12T09:51:21+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:697a36a2ce27f11cf06cd04d418b6fce54d21606159e7bf61a8a5d247888cddb
 ---
 
 ## 场景介绍
@@ -28,7 +28,7 @@ content_hash: sha256:56928f5503fcd713b5ffab1fe159f6a5ca73119e6a4d8e42dc9002a66fd
   + 当窗口退至后台时，窗口亮度失效，可以通过控制中心或快捷键调整。不建议连续调用或窗口退至后台时调用此接口，否则可能产生时序问题。
 * **屏幕亮度**：指设备屏幕的全局显示亮度，作用范围覆盖整个屏幕，会影响系统界面以及所有应用窗口的显示效果。
 
-  屏幕亮度可通过**控制中心**或者**设置 > 显示和亮度**进行调整。目前没有直接设置系统屏幕亮度的接口，但当[setWindowBrightness()](../harmonyos-references/arkts-apis-window-window.md#setwindowbrightness9-1)传入-1时，窗口亮度恢复为系统屏幕亮度。
+  屏幕亮度可通过**控制中心**或者**设置 > 显示和亮度**进行调整。目前没有直接设置系统屏幕亮度的接口，但当[setWindowBrightness()](../harmonyos-references/arkts-apis-window-window.md#setwindowbrightness9-1)传入-1.0时，窗口亮度恢复为系统屏幕亮度。
 
 ## 控制屏幕常亮
 

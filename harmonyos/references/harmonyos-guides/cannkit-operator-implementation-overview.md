@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-operator-implementation-overview
-title: 算子实现概述
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子实现 > 算子实现概述
+title: AscendC算子实现概述
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC算子实现 > AscendC算子实现概述
 category: harmonyos-guides
-scraped_at: 2026-04-29T13:41:06+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-11-12T09:52:41+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:ef527c224113a0e7cac1696a2da68f18bbb00b01eda6c9d08347aec85589f68c
 ---
 

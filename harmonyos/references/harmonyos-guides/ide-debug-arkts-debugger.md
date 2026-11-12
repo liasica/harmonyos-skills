@@ -3,20 +3,20 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-debug-ark
 title: 使用调试器
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 应用调试 > 代码调试 > 使用调试器
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:22+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:c39ac6613cfde19980c4582846e26fc89e020fe0888a7ca00a0dfa7ea66b624e
+scraped_at: 2026-11-12T09:53:03+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e755670e263e98dddb53b8a4b20e936affdc9eb3d24d2c06cda1f8268c5b0d57
 ---
 
 Debug界面有三个tab页，分别是“entry”、“entry(PandaDebugger)”和“entry(Native)”。
 
 通常第一个tab页“entry”用于展示推包安装过程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/dgj7eEkiTaiLxQiraY99Gg/zh-cn_image_0000002731543079.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ef/v3/lgSjKGxKRAqw-tnSPxt20w/zh-cn_image_0000002808766907.png)
 
 第二个tab页“entry(PandaDebugger)”和第三个tab页“entry(Native)”是调试器，用于调试Debugger功能，其中“entry(Native)”仅在涉及Native调试时才会拉起。调试器包含两个窗格，**[Debugger](ide-debug-arkts-debugger.md#section1437520119316)**和**[Console](ide-debug-arkts-debugger.md#section327153017314)**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/bN0VE_0XT6esn9qH165tIQ/zh-cn_image_0000002731383113.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/93/v3/PVGup54KQFa5Jez6AQQQNA/zh-cn_image_0000002808766901.png)
 
 ## Debugger窗格
 
@@ -25,7 +25,7 @@ Debugger显示两个独立的窗格：
 * 左侧区域是Frames，当应用调试到某个断点时，Frames区会显示当前代码所引用的代码位置。
 * 右侧区域是Variables，用于展示当前变量。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0f/v3/-cSyesFUSdiLa5Bh0UgR9Q/zh-cn_image_0000002731543025.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/Ty17HlLCTsWN7vGAdZKgDg/zh-cn_image_0000002808766903.png)
 
 Debugger窗格有多个按钮：
 
@@ -44,54 +44,54 @@ Debugger窗格有多个按钮：
 
 ### Resume Program
 
-点击Resume Program图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/XKbmMb0fTwu4MmHKKZ_Hmg/zh-cn_image_0000002731383101.png)，如果存在断点时，命中下一个断点，并展示对应的Frames和Variables信息；如果不存在断点，设备上的应用正常运行，Frames和Variables信息会消失。
+点击Resume Program图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/CpKdG4G5RlazCh93ECfRXQ/zh-cn_image_0000002779567326.png)，如果存在断点，命中下一个断点，并展示对应的Frames和Variables信息；如果不存在断点，设备上的应用正常运行，Frames和Variables信息会消失。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/G5Zq64bLR9ek4DZ9aGFryQ/zh-cn_image_0000002731383051.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/57sS91o1Ru-g2-XYBzBAug/zh-cn_image_0000002808886985.png)
 
 ### Pause Program
 
-点击Pause Program图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/dY7IGqdmRjqLbjgi-lmbKA/zh-cn_image_0000002731383089.png)，当有对应源代码时，应用会暂停。
+点击Pause Program图标![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/q-CU4rhQShi9KezAjhracA/zh-cn_image_0000002779567334.png)，存在对应源代码时，应用会暂停。
 
 ### Step Over
 
-点击Step Over![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/2-ZuYO6UQYikb1DBmiLGaw/zh-cn_image_0000002731543067.png)，当前代码执行到下一行代码。
+点击Step Over![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/Yw2nrzFlQLOvn43BB6cBMw/zh-cn_image_0000002779407354.png)，当前代码执行到下一行代码。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/gygombTyQI-pCWkPS0ctlQ/zh-cn_image_0000002731543073.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/1FdU7D-nTyuUQWV4yyDcEA/zh-cn_image_0000002779567324.png)
 
 ### Step Into
 
-点击Step Into![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/BBro4EZMSeiel6JfUMAAMw/zh-cn_image_0000002731383119.png)，当前代码进入到方法内部。
+点击Step Into![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/Ws7PIjZ8QSGOoHzRYyKyPg/zh-cn_image_0000002808886997.png)，当前代码进入到方法内部。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/uM5H4oimQ3mE4oCU8CWtsQ/zh-cn_image_0000002731383065.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/ILaptgdZSaKhdyk9aTa8vA/zh-cn_image_0000002808886987.png)
 
 例如代码进入add方法的定义处。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/S5prSkQwSE6hiZvp74MPEA/zh-cn_image_0000002731383083.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/1lLifv0BR-K2oRTDaaV9aA/zh-cn_image_0000002779567330.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/_EQnDeoITPOoW50qjLJZig/zh-cn_image_0000002701663838.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/GGUlXptcROyEoAIl47xNnw/zh-cn_image_0000002808766899.png)
 
 ### Step Out
 
-点击Step Out![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/zq7b_X-5QgSdA9BwkX-pXA/zh-cn_image_0000002701823766.png)，代码会从方法内部回到调用处。
+点击Step Out![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/3g577qczSryAYa4JPmohrw/zh-cn_image_0000002779567328.png)，代码会从方法内部回到调用处。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/FXF0qomWTomZx6CKEJkqTg/zh-cn_image_0000002731543059.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/i64IMzIARCSA4cAG5FWUSw/zh-cn_image_0000002808887003.png)
 
 ### Run to Cursor
 
-点击Run to Cursor![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/oeAp8uzLRoGV1vU9DjTJWg/zh-cn_image_0000002701823778.png)，代码停留在鼠标停留处。
+点击Run to Cursor![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/F_gR7PuGSleyo4Iis4o7sw/zh-cn_image_0000002779567316.png)，代码停留在鼠标停留处。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/FelP68YOSaCI9wQyqe5meQ/zh-cn_image_0000002701663846.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/Gju16_q9TauFr2amrOzTnQ/zh-cn_image_0000002808766919.png)
 
 ### JSVM Debug Port
 
-点击JSVM Debug Port![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/aEr8h56ET5uKJqmvXJwGig/zh-cn_image_0000002731543089.png)，弹出输入转发端口的面板，输入端口并点击**OK**后会开始转发，转发成功后会有弹窗提示，根据提示对JS代码进行调试。具体的调试方法请参考[JSVM-API调试&定位](jsvm-debugger-cpuprofiler-heapsnapshot.md)。
+点击JSVM Debug Port![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/mA9FKCjMT7u0N1ArP14yUA/zh-cn_image_0000002808766917.png)，弹出输入转发端口的面板，输入端口并点击**OK**后会开始转发，转发成功后会有弹窗提示，根据提示对JS代码进行调试。具体的调试方法请参考[JSVM-API调试&定位](jsvm-debugger-cpuprofiler-heapsnapshot.md)。
 
 该功能从DevEco Studio 5.1.0 Release版本开始支持。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fc/v3/w92rPToCT6ufvUvlWl27QQ/zh-cn_image_0000002731543085.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/p2fj3yr3QY2Yiz8ZOlu6OA/zh-cn_image_0000002701823792.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/83y-90NSSAW9E5rtNnni7A/zh-cn_image_0000002808886979.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/VTF0AYnnScaJIL4gA8dV_A/zh-cn_image_0000002779567340.png)
 
 ## Console窗格
 
 Console窗格用于展示已加载的ets、js或so。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/G2TAoeskQWagshjKHi1v1w/zh-cn_image_0000002701663852.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/JaUr-oG1TxOYxLftx8v-hQ/zh-cn_image_0000002808886999.png)

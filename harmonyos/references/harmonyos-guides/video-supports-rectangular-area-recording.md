@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-support
 title: 屏幕录制支持矩形区域录制
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 录制 > 屏幕录制支持矩形区域录制
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:33+08:00
-doc_updated_at: 2026-10-26
+scraped_at: 2026-11-12T09:52:08+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:d2e0d6838bcc1fee5e5be8ce715e0c4ef5004b756244e8953dda9c8812a3cd36
 ---
 

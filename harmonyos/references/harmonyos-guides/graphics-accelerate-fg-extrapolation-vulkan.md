@@ -3,28 +3,30 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/graphics-acce
 title: Vulkan平台
 breadcrumb: 指南 > 图形 > Graphics Accelerate Kit（图形加速服务） > 游戏渲染加速服务 > 超帧功能开发 > 外插模式 > Vulkan平台
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:19+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:efdffec428685c15ec2f029a8f513adefffff1f6ded0f2d141f76696a2fce493
+scraped_at: 2026-11-12T09:52:14+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4aa71e3631fe35e6615bf15717beb00d10f6ff559bc2fa50419b7f6dacbd127a
 ---
 
 ## 业务流程
 
 基于Vulkan图形API平台，超帧外插模式的主要业务流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/83/v3/VXapx_quQ6u7WD8MghAknA/zh-cn_image_0000002809050711.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/V8t09L2wRGucBmy4T0tWLg/zh-cn_image_0000002815399597.png)
 
 1. 用户进入超帧适用的游戏场景。
 2. 游戏应用调用[HMS\_FG\_CreateContext\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_createcontext_vk)接口创建超帧上下文实例。如超帧上下文实例创建失败，则无需进入步骤6到步骤9的真实帧、预测帧交替渲染送显的循环流程，只需逐帧对场景进行渲染送显即可。
 3. 游戏应用调用接口配置超帧实例属性。包括调用[HMS\_FG\_SetAlgorithmMode\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_setalgorithmmode_vk)设置超帧算法模式并选择外插模式；调用[HMS\_FG\_SetResolution\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_setresolution_vk)设置超帧输入输出图像分辨率；调用[HMS\_FG\_SetCvvZSemantic\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_setcvvzsemantic_vk)设置齐次裁剪空间Z/W范围及深度测试函数，未调用该接口则默认设置为FG\_CVV\_Z\_SEMANTIC\_ZERO\_TO\_ONE\_FORWARD\_Z；调用[HMS\_FG\_SetImageFormat\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_setimageformat_vk)设置超帧输入输出图像格式未调用该接口则真实帧颜色缓冲区和预测帧缓冲区图像格式默认设置为VK\_FORMAT\_R8G8B8A8\_UNORM，深度模板缓冲区图像格式默认设置为VK\_FORMAT\_D24\_UNORM\_S8\_UINT；如果颜色缓冲区相对深度模板缓冲区基于y轴翻转180度，则调用[HMS\_FG\_SetDepthStencilYDirectionInverted\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_setdepthstencilydirectioninverted_vk)设置翻转状态，未调用该接口则默认无翻转。
 4. 游戏应用调用[HMS\_FG\_Activate\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_activate_vk)接口激活超帧上下文实例。
 5. 游戏应用调用[HMS\_FG\_CreateImage\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_createimage_vk)接口创建真实渲染帧颜色缓冲区图像实例、深度模板缓冲区图像实例、预测帧缓冲区图像实例。该接口将游戏应用中的VkImage、VkImageView图像资源和超帧算法实现之间建立关联。
-6. 渲染游戏场景绘制真实渲染帧，缓存真实帧颜色信息、深度信息和相机矩阵等信息，用于后续超帧预测。
-7. 真实渲染帧绘制UI并送显。
-8. 游戏应用调用[HMS\_FG\_Dispatch\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_dispatch_vk)接口并传入历史真实渲染帧颜色信息、深度信息、相机矩阵等信息，生成预测帧，并更新预测帧缓冲区。
-9. 预测帧绘制UI并送显，跳转至步骤5继续执行，直到退出游戏场景。
-10. 用户退出超帧适用的游戏场景。
-11. 游戏应用调用[HMS\_FG\_DestroyContext\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_destroycontext_vk)接口销毁超帧上下文实例并释放内存资源。
+6. 游戏运行，对游戏帧画面进行渲染。
+7. 渲染游戏场景绘制真实渲染帧，缓存真实帧颜色信息、深度信息和相机矩阵等信息，用于后续超帧预测。
+8. 真实渲染帧绘制UI并送显。
+9. 游戏应用调用[HMS\_FG\_Dispatch\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_dispatch_vk)接口并传入历史真实渲染帧颜色信息、深度信息、相机矩阵等信息，生成预测帧，并更新预测帧缓冲区。
+10. 预测帧绘制UI并送显，跳转至步骤5继续执行，直到退出游戏场景。
+11. 用户退出超帧适用的游戏场景。
+12. 游戏应用调用[HMS\_FG\_DestroyImage\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_destroyimage_vk)接口销毁真实渲染帧颜色缓冲区图像实例、深度模板缓冲区图像实例、预测帧缓冲区图像实例并释放内存资源。
+13. 游戏应用调用[HMS\_FG\_DestroyContext\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_destroycontext_vk)接口销毁超帧上下文实例并释放内存资源。
 
 ## 开发步骤
 
@@ -49,19 +51,22 @@ content_hash: sha256:efdffec428685c15ec2f029a8f513adefffff1f6ded0f2d141f76696a2f
 3. 调用[HMS\_FG\_CreateContext\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_createcontext_vk)接口创建超帧上下文实例。如果返回nullptr，则说明超帧上下文实例创建失败，或当前硬件设备不支持开启超帧。
 
    ```cpp
-    // 变量声明
-    VkInstance vkInstance = VK_NULL_HANDLE; // vkInstance通过调用vkCreateInstance创建
-    VkPhysicalDevice vkPhysicalDevice = VK_NULL_HANDLE; // vkPhysicalDevice通过调用vkEnumeratePhysicalDevices枚举
-    VkDevice vkDevice = VK_NULL_HANDLE; // vkDevice通过调用vkCreateDevice创建
+   // 声明超帧上下文实例
+   FG_Context_VK *m_context = nullptr;
+   ```
 
-    // 创建超帧上下文实例
+   ```cpp
+   // 创建超帧上下文实例
    FG_ContextDescription_VK contextDescription{};
-   contextDescription.vkInstance = vkInstance;
-   contextDescription.vkPhysicalDevice = vkPhysicalDevice;
-   contextDescription.vkDevice = vkDevice;
-   contextDescription.framesInFlight = 1;
+   // vkInstance通过调用vkCreateInstance创建
+   contextDescription.vkInstance = VulkanFG::Device::Instance().GetNativeInstance();
+   // vkPhysicalDevice通过调用vkEnumeratePhysicalDevices枚举
+   contextDescription.vkPhysicalDevice = VulkanFG::Device::Instance().GetNativePhysicalDevice();
+   // vkDevice通过调用vkCreateDevice创建
+   contextDescription.vkDevice = VulkanFG::Device::Instance().GetNativeDevice();
+   contextDescription.framesInFlight = static_cast<uint8_t>(VulkanFG::FRAMES_IN_FLIGHT);
    contextDescription.fnVulkanLoaderFunction = vkGetInstanceProcAddr;
-   FG_Context_VK* m_context = HMS_FG_CreateContext_VK(&contextDescription);
+   m_context = HMS_FG_CreateContext_VK(&contextDescription);
    if (m_context == nullptr) {
        GOLOGE("HMS_FG_CreateContext_VK execution failed.");
        return false;
@@ -204,13 +209,13 @@ content_hash: sha256:efdffec428685c15ec2f029a8f513adefffff1f6ded0f2d141f76696a2f
            .inputColorInfo = {
                .image = m_ffSceneColor,
                // 设置预测帧生成前真实帧颜色缓冲区同步状态
-               .initialSync {
+               .initialSync = {
                    .accessMask = VK_ACCESS_SHADER_READ_BIT,
                    .layout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL,
                    .stages = VK_PIPELINE_STAGE_FRAGMENT_SHADER_BIT
                },
                // 设置预测帧生成后真实帧颜色缓冲区同步状态
-               .finalSync {
+               .finalSync = {
                    .accessMask = VK_ACCESS_SHADER_READ_BIT,
                    .layout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL,
                    .stages = VK_PIPELINE_STAGE_FRAGMENT_SHADER_BIT
@@ -220,13 +225,13 @@ content_hash: sha256:efdffec428685c15ec2f029a8f513adefffff1f6ded0f2d141f76696a2f
            .inputDepthStencilInfo = {
                .image = m_ffDepthStencil,
                // 设置预测帧生成前深度模板缓冲区同步状态
-               .initialSync {
+               .initialSync = {
                    .accessMask = VK_ACCESS_SHADER_READ_BIT,
                    .layout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL,
                    .stages = VK_PIPELINE_STAGE_FRAGMENT_SHADER_BIT
                },
                // 设置预测帧生成后深度模板缓冲区同步状态
-               .finalSync {
+               .finalSync = {
                    .accessMask = VK_ACCESS_SHADER_READ_BIT,
                    .layout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL,
                    .stages = VK_PIPELINE_STAGE_FRAGMENT_SHADER_BIT
@@ -236,13 +241,13 @@ content_hash: sha256:efdffec428685c15ec2f029a8f513adefffff1f6ded0f2d141f76696a2f
            .outputColorInfo = {
                .image = m_ffPredictedColor,
                // 设置预测帧生成前预测帧缓冲区同步状态
-               .initialSync {
+               .initialSync = {
                    .accessMask = VK_ACCESS_SHADER_READ_BIT,
                    .layout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL,
                    .stages = VK_PIPELINE_STAGE_FRAGMENT_SHADER_BIT
                },
                // 设置预测帧生成后预测帧缓冲区同步状态
-               .finalSync {
+               .finalSync = {
                    .accessMask = VK_ACCESS_SHADER_READ_BIT,
                    .layout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL,
                    .stages = VK_PIPELINE_STAGE_FRAGMENT_SHADER_BIT
@@ -271,7 +276,29 @@ content_hash: sha256:efdffec428685c15ec2f029a8f513adefffff1f6ded0f2d141f76696a2f
        // ...
    }
    ```
-8. 调用[HMS\_FG\_DestroyContext\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_destroycontext_vk)接口销毁超帧实例，释放内存资源。
+8. 调用[HMS\_FG\_DestroyImage\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_destroyimage_vk)接口销毁真实渲染帧颜色缓冲区图像实例、深度模板缓冲区图像实例、预测帧缓冲区图像实例，释放内存资源。
+
+   ```
+   // 销毁真实帧颜色缓冲区图像实例
+   FG_ErrorCode errorCode = HMS_FG_DestroyImage_VK(m_context, m_ffSceneColor);
+   if (errorCode != FG_SUCCESS) {
+       GOLOGE("HMS_FG_DestroyImage_VK m_ffSceneColor execution failed.");
+       return false;
+   }
+   // 销毁真实帧深度模板缓冲区图像实例
+   errorCode = HMS_FG_DestroyImage_VK(m_context, m_ffDepthStencil);
+   if (errorCode != FG_SUCCESS) {
+       GOLOGE("HMS_FG_DestroyImage_VK m_ffDepthStencil execution failed.");
+       return false;
+   }
+   // 销毁预测帧缓冲区图像实例
+   errorCode = HMS_FG_DestroyImage_VK(m_context, m_ffPredictedColor);
+   if (errorCode != FG_SUCCESS) {
+       GOLOGE("HMS_FG_DestroyImage_VK m_ffPredictedColor execution failed.");
+       return false;
+   }
+   ```
+9. 调用[HMS\_FG\_DestroyContext\_VK](../harmonyos-references/_graphics_accelerate.md#hms_fg_destroycontext_vk)接口销毁超帧实例，释放内存资源。
 
    ```cpp
    // 销毁超帧上下文实例并释放内存资源

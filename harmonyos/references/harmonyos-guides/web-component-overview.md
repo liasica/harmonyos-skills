@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-component
 title: ArkWeb简介
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > ArkWeb简介
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:25+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:51:22+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:de6713603aa5e57b4bb8738f9c924ca0aae6265962c711738918dbb9b02445a7
 ---
 

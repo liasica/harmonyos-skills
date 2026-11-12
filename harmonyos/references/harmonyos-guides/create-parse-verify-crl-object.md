@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/create-parse-
 title: 证书吊销列表对象的创建、解析和校验
 breadcrumb: 指南 > 系统 > 安全 > Device Certificate Kit（设备证书服务） > 证书算法库框架 > 证书吊销列表对象的创建、解析和校验
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:27+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:51:35+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:58d4cf03942c5ffeab5112230ae8585fbe74e04d129a4d63e8445cc88b05f069
 ---
 

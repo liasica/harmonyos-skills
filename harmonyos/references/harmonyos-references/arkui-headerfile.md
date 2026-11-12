@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkui-hea
 title: 头文件
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件
 category: harmonyos-references
-scraped_at: 2026-10-11T07:24:53+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:6d55425f96540f90cd7cc0613ee7b4b2e32eab6efc5206066e17107fd8715318
+scraped_at: 2026-11-12T09:54:37+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:1b1e1920131b6c0297bb6267a0d3d3d792096dcc6d167997773da16269f0b6d4
 ---
 
 * **[common\_attributes.h](capi-common-attributes-h.md)**
@@ -31,6 +31,7 @@ content_hash: sha256:6d55425f96540f90cd7cc0613ee7b4b2e32eab6efc5206066e17107fd87
 * **[native\_render.h](capi-native-render-h.md)**
 * **[grid.h](capi-grid-h.md)**
 * **[list.h](capi-list-h.md)**
+* **[list\_item.h](capi-list-item-h.md)**
 * **[native\_type.h](capi-native-type-h.md)**
 * **[native\_type\_visual.h](capi-native-type-visual-h.md)**
 * **[native\_xcomponent\_key\_event.h](capi-native-xcomponent-key-event-h.md)**

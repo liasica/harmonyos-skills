@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/account-a
 title: 获取实名信息
 breadcrumb: API参考 > 应用服务 > Account Kit（华为账号服务） > REST API > 实名认证 > 获取实名信息
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:50+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:fe6ca32ea5fc83796ca7991a9b39e83ef050e752e11250e0a189a05605a651d3
+scraped_at: 2026-11-12T09:57:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0090465b64fc49066b1d26dcd7090cbf726d2adb03fbd131edd3c02414842560
 ---
 
 **注意** 
@@ -20,11 +20,11 @@ content_hash: sha256:fe6ca32ea5fc83796ca7991a9b39e83ef050e752e11250e0a189a05605a
 
 ## 功能介绍
 
-应用服务端向华为账号服务器调用该接口获取华为账号实名信息（姓名，身份证号）。
+应用服务端向华为账号服务器调用该接口获取华为账号实名信息（姓名、证件号码）。
 
 ## 场景描述
 
-应用已经通过授权码（Authorization Code）获取到Access Token，并且已申请账号开放信息对应权限后，可以获取账号姓名，身份证号。
+应用已经通过授权码（Authorization Code）获取到Access Token，获取账号实名的姓名、证件号码。
 
 ## 使用约束
 
@@ -84,7 +84,7 @@ access_token=<access_token>&queryRangeFlag=0001&serviceAccountClientID=<serviceA
 
 | **参数** | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
-| encryptedInfo | 否 | String | 加密后的姓名和证件号码  请使用Base64.decodeBase64方法解码后，使用请求传入的serviceAccountKeyID对应的私钥解密，解密算法为RSA/ECB/OAEPWithSHA-256AndMGF1Padding，解密后可获得明文姓名和证件号码，Json格式，如{realName:xxx, ctfCode:xxx\*\*xxx}。 |
+| encryptedInfo | 否 | String | 加密后的姓名和证件号码  请使用Base64.decodeBase64方法解码后，使用请求传入的serviceAccountKeyID对应的私钥解密，解密算法为RSA/ECB/OAEPWithSHA-256AndMGF1Padding，解密后可获得明文姓名和证件号码，Json格式，如{realName:xxx, ctfCode:xxx\*\*xxx}。  以下场景encryptedInfo不返回：  - 应用未申请获取实名信息权限。  - 获取Authorization Code时没有携带获取实名信息scope。 |
 
 调用失败时，响应消息体返回如下：
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: ArkUI_NodeAttributeType（滚动容器类组件相关属性）
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_node.h > ArkUI_NodeAttributeType（滚动容器类组件相关属性）
 category: harmonyos-references
-scraped_at: 2026-09-24T06:52:49+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:f335c73c7d975406a1c720731fc707dc914a7fbd72539a2931909684ae9acb3b
+scraped_at: 2026-11-12T09:54:44+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f87d92ba7d167b7020809f4c542014fe173474ff41cf00b31eeb08604fbbf5df
 ---
 
 ```c
@@ -2896,7 +2896,7 @@ NODE_ARC_LIST_ITEM_SWIPE_ACTION = 1020001
 
 | 参数项 | 描述 |
 | --- | --- |
-| .object | 使用[ArkUI\_ListItemSwipeActionOption](capi-arkui-nativemodule-arkui-listitemswipeactionoption.md)对象构造。  定义ArcListItem的划出组件信息的结构体。通过[OH\_ArkUI\_ListItemSwipeActionOption\_Create](capi-native-type-h.md#oh_arkui_listitemswipeactionoption_create)接口来创建，并且可以使用[OH\_ArkUI\_ListItemSwipeActionOption\_SetStart](capi-native-type-h.md#oh_arkui_listitemswipeactionoption_setstart)方法设置ListItemSwipeActionItem左侧（垂直布局）或上方（横向布局）内容。 |
+| .object | 使用[ArkUI\_ListItemSwipeActionOption](capi-arkui-nativemodule-arkui-listitemswipeactionoption.md)对象构造。  定义ArcListItem的划出组件信息的结构体。通过[OH\_ArkUI\_ListItemSwipeActionOption\_Create](capi-list-item-h.md#oh_arkui_listitemswipeactionoption_create)接口来创建，并且可以使用[OH\_ArkUI\_ListItemSwipeActionOption\_SetStart](capi-list-item-h.md#oh_arkui_listitemswipeactionoption_setstart)方法设置ListItemSwipeActionItem左侧（垂直布局）或上方（横向布局）内容。 |
 
 ## NODE\_ARC\_SCROLL\_BAR\_BIND\_SCROLLABLE
 

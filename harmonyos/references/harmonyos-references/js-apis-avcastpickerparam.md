@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.multimedia.avCastPickerParam (投播组件参数)"
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > ArkTS API > @ohos.multimedia.avCastPickerParam (投播组件参数)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:23+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:56:27+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:4987aaac4c1fb89af0c1bec3f8d6b27a7832680728b3efd321f587fde244640c
 ---
 

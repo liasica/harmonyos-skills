@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ble-developme
 title: 查找设备
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 蓝牙 > 低功耗蓝牙 > 查找设备
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:47+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:07db7c6f9b17f638d64226add55a38bae50ea5c62f72d4c5bb72753ecc282bd1
+scraped_at: 2026-11-12T09:51:43+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0d451db6324c906dd73da300ba423fecdd7bebcdbf2611d035a2c2ae1f1aeee3
 ---
 
 ## 简介
@@ -255,7 +255,7 @@ let advertisingParams: ble.AdvertisingParams = {
   advertisingSettings: setting,
   advertisingData: advData, // 注意: 广播报文长度不能超过31个字节
   advertisingResponse: advResponse, // 注意: 广播报文长度不能超过31个字节
-  duration: 0 // 可选参数，若大于0，则广播发送一段时间后，则会停止，但分配的广播资源还在，可重新启动发送
+  duration: 0 // 可选参数，若大于0，则广播发送一段时间后会停止，但分配的广播资源还在，可重新启动发送
 }
 
 let advHandle = 0xFF; // 定义广播标识

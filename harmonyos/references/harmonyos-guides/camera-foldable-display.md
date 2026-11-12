@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-foldab
 title: 适配不同折叠状态的摄像头变更(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 适配不同折叠状态的摄像头变更(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:44+08:00
-doc_updated_at: 2026-08-03
-content_hash: sha256:3277dc5bb3ae3b34e157e699952d4ce9640798de6882b92a2bc646a81dd084b6
+scraped_at: 2026-11-12T09:52:04+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:08a6ed9a110fe7ddef807a4f509e8e5e236c3dcbba20de6c5292207b59431ad7
 ---
 
 折叠设备形态各异，在相机应用的开发过程中需要统一的摄像头切换方案，以确保用户在拍照、录像过程中获得更好的体验。
@@ -209,14 +209,14 @@ struct Index {
     try {
       curFoldStatus = display.getFoldStatus();
     } catch (error) {
-      console.info(`${TAG} getFoldStatus call failed, error: ${error.code}`);
+      console.error(`${TAG} getFoldStatus call failed, error: ${error.code}`);
     }
     return curFoldStatus;
   }
 
   registerFoldStatusChanged(err: BusinessError, foldStatusInfo: camera.FoldStatusInfo) {
     if (err !== undefined && err.code !== 0) {
-      console.info(`${TAG} registerFoldStatusChanged call failed, error: ${err.code}`);
+      console.error(`${TAG} registerFoldStatusChanged call failed, error: ${err.code}`);
       return;
     }
     console.info(TAG + 'foldStatusChanged foldStatus: ' + foldStatusInfo.foldStatus);

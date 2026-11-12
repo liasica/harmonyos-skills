@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-de
 title: 使用X963KDF进行密钥派生(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥派生 > 使用X963KDF进行密钥派生(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:38+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:51:34+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:895126b008e455a69b6714c1c76bb135629317125e43e2e060a03b87c8635e1d
 ---
 

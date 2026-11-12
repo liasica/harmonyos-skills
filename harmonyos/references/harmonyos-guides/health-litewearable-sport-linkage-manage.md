@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-litewe
 title: 运动联动管理
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > LiteWearable应用开发 > 运动联动管理
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:18+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:207178477a99fa7e18a4db8afff1db9a19f0eec226c22cc257ec312cb1c5e98a
+scraped_at: 2026-11-12T09:52:25+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ac32932e35d114138d05e091394bab9e6060e37c09c13d557c3154f764de0848
 ---
 
 ## 场景介绍
@@ -19,13 +19,13 @@ content_hash: sha256:207178477a99fa7e18a4db8afff1db9a19f0eec226c22cc257ec312cb1c
 | 接口名 | 描述 |
 | --- | --- |
 | [config](../harmonyos-references/health-api-healthservice-lite.md#workoutconfig)(workoutConfig: WorkoutConfig): void | 运动联动配置。 |
-| [start](../harmonyos-references/health-api-healthservice-lite.md#workoutstart)(): StartResult | 开启运动联动。 |
-| [pause](../harmonyos-references/health-api-healthservice-lite.md#workoutpause)(): void | 暂停运动联动。 |
-| [resume](../harmonyos-references/health-api-healthservice-lite.md#workoutresume)(): void | 恢复运动联动。 |
-| [stop](../harmonyos-references/health-api-healthservice-lite.md#workoutstop)(): void | 停止运动联动。 |
-| [onData](../harmonyos-references/health-api-healthservice-lite.md#workoutondata)(dataType: undefined, listener: Callback<[SampleReal](../harmonyos-references/health-api-healthservice-lite.md#samplereal)[]>): void | 订阅所有类型的数据。 |
-| [offData](../harmonyos-references/health-api-healthservice-lite.md#workoutoffdata)(dataType: undefined, listener?: Callback<[SampleReal](../harmonyos-references/health-api-healthservice-lite.md#samplereal)[]>): void | 取消订阅所有类型的数据。 |
-| [sendData](../harmonyos-references/health-api-healthservice-lite.md#workoutsenddata)(sampleReal: [SampleReal](../harmonyos-references/health-api-healthservice-lite.md#samplereal)[]): void | 下发融合数据。 |
+| [start](../harmonyos-references/health-api-healthservice-lite.md#start)(): StartResult | 开启运动联动。 |
+| [pause](../harmonyos-references/health-api-healthservice-lite.md#pause)(): void | 暂停运动联动。 |
+| [resume](../harmonyos-references/health-api-healthservice-lite.md#resume)(): void | 恢复运动联动。 |
+| [stop](../harmonyos-references/health-api-healthservice-lite.md#stop)(): void | 停止运动联动。 |
+| [onData](../harmonyos-references/health-api-healthservice-lite.md#ondata)(dataType: undefined, listener: Callback<[SampleReal](../harmonyos-references/health-api-healthservice-lite.md#samplereal)[]>): void | 订阅所有类型的数据。 |
+| [offData](../harmonyos-references/health-api-healthservice-lite.md#offdata)(dataType: undefined, listener?: Callback<[SampleReal](../harmonyos-references/health-api-healthservice-lite.md#samplereal)[]>): void | 取消订阅所有类型的数据。 |
+| [sendData](../harmonyos-references/health-api-healthservice-lite.md#senddata)(sampleReal: [SampleReal](../harmonyos-references/health-api-healthservice-lite.md#samplereal)[]): void | 下发融合数据。 |
 | [readData](../harmonyos-references/health-api-healthstore-lite.md#healthstorereaddata)<T extends ExerciseSequence>(request: exercisesequencereadrequest, callback: Callback<T[]>): void | 读取最新一条锻炼记录。 |
 | [saveData](../harmonyos-references/health-api-healthstore-lite.md#healthstoresavedata)(exerciseSequence: ExerciseSequence): void | 保存锻炼记录。 |
 
@@ -157,7 +157,7 @@ content_hash: sha256:207178477a99fa7e18a4db8afff1db9a19f0eec226c22cc257ec312cb1c
        dataSourceId: 'xxx',
        localDate: '09/26/2023',
        startTime: 1695740400000,  // 2023-9-26 23:00:00
-       endTime: 1695769200000,   // 2023-9-27 07:00:00
+       endTime: 1695769200000,   // 2023-9-27 7:00:00
        timeZone: '+0800',
        modifiedTime: 1695769200000,
        exerciseType: healthStore.exerciseSequenceHelper.badminton. EXERCISE_TYPE,

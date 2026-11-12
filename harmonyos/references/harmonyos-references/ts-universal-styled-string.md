@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-univer
 title: 属性字符串
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > 属性字符串
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:04+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:bac9cb144e31c86a42654e07e4b1baebcce217d7e2d204dc5fe12567d2581e9b
+scraped_at: 2026-11-12T09:54:18+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:280dbb833f072f9e4037733c80f87ae8b3987d1de33c81965553da06bafeb29d
 ---
 
 属性字符串是一种将文本样式与文本内容关联管理的对象，样式通过start和length指定文本区间，多种样式可叠加应用于同一区间。属性字符串是一种用于创建富文本的对象，支持设置字体样式、装饰线、阴影、行高、段落样式等多种样式类型，还支持插入图片和自定义绘制内容。可通过[TextController](ts-basic-components-text.md#textcontroller11)中的[setStyledString](ts-basic-components-text.md#setstyledstring12)方法与Text组件绑定，也可通过[RichEditorStyledStringController](ts-basic-components-richeditor.md#richeditorstyledstringcontroller12)中的[setStyledString](ts-basic-components-richeditor.md#setstyledstring12)方法与[RichEditor](ts-basic-components-richeditor.md)组件绑定。适用于富文本编辑、聊天消息显示、文档标注等需要灵活设置文本样式的场景，可动态修改样式内容，支持样式叠加和冲突处理。
@@ -995,6 +995,7 @@ ShadowOptions对象中不支持fill字段。
 | layoutStyle | [ImageAttachmentLayoutStyle](ts-universal-styled-string.md#imageattachmentlayoutstyle对象说明) | 是 | 是 | 获取属性字符串的图片布局。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | colorFilter15+ | [ColorFilterType](ts-universal-styled-string.md#colorfiltertype15) | 是 | 是 | 获取属性字符串的图片颜色滤镜效果。  **元服务API：** 从API version 15开始，该接口支持在元服务中使用。 |
 | supportSvg222+ | boolean | 是 | 是 | 获取属性字符串是否开启[SVG标签解析能力增强功能](ts-image-svg2-capabilities.md)。  true：支持SVG解析新能力；false：保持原有SVG解析能力。  默认值：false  **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
+| resizable | [ResizableOptions](ts-basic-components-image.md#resizableoptions11) | 是 | 是 | 获取属性字符串的图像拉伸时可调整大小的图像选项。  **起始版本：** 26.0.1  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。 |
 
 ### constructor
 
@@ -1070,6 +1071,7 @@ type ColorFilterType = ColorFilter | DrawingColorFilter
 | objectFit | [ImageFit](ts-appendix-enums.md#imagefit) | 否 | 是 | 设置图片的缩放类型，当前枚举类型不支持ImageFit.MATRIX。具体枚举及说明请参考ImageFit。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。  默认值：ImageFit.Cover |
 | layoutStyle | [ImageAttachmentLayoutStyle](ts-universal-styled-string.md#imageattachmentlayoutstyle对象说明) | 否 | 是 | 设置图片布局。不传入时使用默认布局（外边距、内边距和圆角均为0）。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | colorFilter15+ | [ColorFilterType](ts-universal-styled-string.md#colorfiltertype15) | 否 | 是 | 设置属性字符串的图片颜色滤镜效果。不传入时不应用颜色滤镜，图片显示原始颜色。  **元服务API：** 从API version 15开始，该接口支持在元服务中使用。 |
+| resizable | [ResizableOptions](ts-basic-components-image.md#resizableoptions11) | 否 | 是 | 设置属性字符串的图像拉伸时可调整大小的图像选项。不传入时不进行拉伸。  **起始版本：** 26.0.1  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。 |
 
 ## ImageAttachmentLayoutStyle对象说明
 
@@ -1099,6 +1101,7 @@ ResourceStr类型图片设置项。
 | colorFilter | [ColorFilterType](ts-universal-styled-string.md#colorfiltertype15) | 否 | 是 | 设置属性字符串的图片颜色滤镜效果。不传入时不应用颜色滤镜，图片显示原始颜色。  **元服务API：** 从API version 15开始，该接口支持在元服务中使用。 |
 | syncLoad | boolean | 否 | 是 | 是否同步加载图片，默认是异步加载。同步加载时阻塞UI线程，不会显示占位图。  true：同步加载；false：异步加载。  默认值：false  **元服务API：** 从API version 15开始，该接口支持在元服务中使用。 |
 | supportSvg222+ | boolean | 否 | 是 | 控制是否开启[SVG标签解析能力增强功能](ts-image-svg2-capabilities.md)。  true：支持SVG解析新能力；false：保持原有SVG解析能力。  默认值：false  **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
+| resizable | [ResizableOptions](ts-basic-components-image.md#resizableoptions11) | 否 | 是 | 设置属性字符串的图像拉伸时可调整大小的图像选项。不传入时不进行拉伸。  **起始版本：** 26.0.1  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。 |
 
 ## CustomSpan
 
@@ -1593,7 +1596,7 @@ struct StyledStringProcessDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/BlPAXZCeQUG9NHN4rYgEAQ/zh-cn_image_0000002779852434.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/ecywUMhWSVyenDoQlDmpuA/zh-cn_image_0000002815560781.png)
 
 ### 示例2（设置事件）
 
@@ -1683,7 +1686,7 @@ struct StyledStringBindEventsDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/4iJVLLCTR4-imknwdhuYCg/zh-cn_image_0000002779692466.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/25/v3/a7LFBrevTueiEcmvbTwMGg/zh-cn_image_0000002815400865.png)
 
 ### 示例3（设置文本样式）
 
@@ -1873,7 +1876,7 @@ struct StyledStringSetTextStyleDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/13MBc-zGTE6oLj-fJeaE-w/zh-cn_image_0000002809012087.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/qy8L8GzqRv-3xjxxq6HChw/zh-cn_image_0000002786521290.png)
 
 ### 示例4（设置图片）
 
@@ -2008,7 +2011,7 @@ struct StyledStringSetImageDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/4lDhmdcVTBmrZZkNEkiYyw/zh-cn_image_0000002809052001.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/ZvKzcf0GSsO_U2iylMZj3w/zh-cn_image_0000002786361362.gif)
 
 ### 示例5（设置文本行高和段落样式）
 
@@ -2168,7 +2171,7 @@ struct StyledStringSetLineheightParagraphstyleDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/rmS5okJsQxizWruUQtGmHA/zh-cn_image_0000002779852436.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/_jmzpjD5Sg-W3jYsSzzgNw/zh-cn_image_0000002815560783.png)
 
 ### 示例6（设置自定义绘制Span）
 
@@ -2330,7 +2333,7 @@ struct StyledStringSetCustomspanDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/xkxoil_OTLagsp9qYrzEZw/zh-cn_image_0000002779692468.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/Od8t9XHsR62zkyudcCSCMw/zh-cn_image_0000002815400867.gif)
 
 ### 示例7（支持存储自定义扩展信息）
 
@@ -2381,7 +2384,7 @@ struct StyledStringSetUserdataspanDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/EQe9TJbYT3iWnHO7-rTp3w/zh-cn_image_0000002809012089.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/yvIwcHHHS-qHDwMc_E76og/zh-cn_image_0000002786521292.gif)
 
 ### 示例8（设置超链接）
 
@@ -2415,7 +2418,7 @@ struct StyledStringSetUrlstyleDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/EtVyRy2VR7uXdfM_OUesCQ/zh-cn_image_0000002809052003.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/E_tay_MmQ8KpazUm0H3Wdw/zh-cn_image_0000002786361364.gif)
 
 ### 示例9 （给图片设置colorFilter）
 
@@ -2486,7 +2489,7 @@ struct StyledStringSetImageColorfilterDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/8ovGVQl9TdK7FXiRQeiACQ/zh-cn_image_0000002779852438.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/51/v3/tkZ4qv6vRtuV-0N8HbGMLw/zh-cn_image_0000002815560785.gif)
 
 ### 示例10（属性字符串的插入、删除、替换）
 
@@ -2562,7 +2565,7 @@ struct StyledStringModifyDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/jwuboLE8R0aHQ7oaozASeg/zh-cn_image_0000002779692470.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/3gwFfQtxQqKwZqoAvNQKOw/zh-cn_image_0000002815400869.gif)
 
 ### 示例11（属性字符串的文本描边）
 
@@ -2637,7 +2640,7 @@ struct StyledStringStrokewidthStrokecolorDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/fHB0c4y6SsqgACSTTnst6A/zh-cn_image_0000002809012091.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/oN9hxmeoRJ-u_oPAykwcuw/zh-cn_image_0000002786521294.png)
 
 ### 示例12（fromHtml和toHtml互相转换）
 
@@ -2707,7 +2710,7 @@ struct StyledStringHtmlConvertDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/35/v3/wlvoMtq6TCukDJvTEBU-jg/zh-cn_image_0000002809052005.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/9mW_j-7DR5S-OHNp5ngPyA/zh-cn_image_0000002786361366.gif)
 
 ### 示例13（多装饰线与加粗装饰线）
 
@@ -2778,7 +2781,7 @@ struct StyledStringSetDecorationstyleDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/2i9Mv_TUTxOm7AqV73OUHA/zh-cn_image_0000002779852440.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/5NYeofqRQLCizPKab7T2zA/zh-cn_image_0000002815560787.png)
 
 ### 示例14（获取以vp为单位的图片尺寸）
 
@@ -2877,7 +2880,7 @@ struct StyledStringImageAttachmentInterfaceDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/zp8ADRilQuio-4CsFDcdig/zh-cn_image_0000002779692472.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a6/v3/o_C1CVAZSC-j-jMrym9rAA/zh-cn_image_0000002815400871.gif)
 
 ### 示例15（设置段落自定义缩进）
 
@@ -2996,7 +2999,7 @@ struct leadingMarginSpanDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/TYGoVVWiSce76SGMqxQiHQ/zh-cn_image_0000002809012093.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d3/v3/dbGBAp3VQDa9iQ_5nv2MeA/zh-cn_image_0000002786521296.gif)
 
 ### 示例16（使用supportSvg2属性时，SVG图片的显示效果）
 
@@ -3066,7 +3069,7 @@ struct StyledStringProcessDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/S1FwJmyGSvKQIIf6jTGP9w/zh-cn_image_0000002809012077.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/48/v3/0rhQ4AhRTxazwhTRbAP9ew/zh-cn_image_0000002815400855.png)
 
 ### 示例17（设置字体配置）
 
@@ -3174,7 +3177,7 @@ struct StyledStringFontConfigsDemo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/oCR-upNrRYSNZa1R2OS8Lw/zh-cn_image_0000002809052007.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/yjl51-I-SCi_F5VIEwEm5g/zh-cn_image_0000002786361368.png)
 
 ### 示例18（fromHtml转换）
 
@@ -3209,7 +3212,7 @@ struct html_convert_demo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/uUIJR0EVSmGOvD_g375wWQ/zh-cn_image_0000002779852442.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/aQ_dOOWBS92vPNRhtpUqnw/zh-cn_image_0000002815560789.png)
 
 ### 示例19（设置可变字体的属性）
 
@@ -3260,7 +3263,7 @@ struct StyledStringExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/f4MbZQD3Rlaub8c0IyrOGg/zh-cn_image_0000002809051911.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/CtMnW7e-TiCDD5UAua0wBA/zh-cn_image_0000002815400775.gif)
 
 ### 示例20（设置文本着色器效果）
 
@@ -3390,7 +3393,7 @@ struct ShaderColorStyle {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/siGHaDSOTlKUpIVXj6o6AA/zh-cn_image_0000002779692474.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8f/v3/CoEZqrEwRIipNbW2_FmOlQ/zh-cn_image_0000002815400873.png)
 
 ### 示例21（设置文本尾部缩进）
 
@@ -3489,4 +3492,76 @@ struct TailIndentsExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/R5QRNW3aRNawslKHg6WbXg/zh-cn_image_0000002809012095.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/nnlsEl9LQPipBEzF5lSKeQ/zh-cn_image_0000002786521298.png)
+
+### 示例22（设置图片拉伸）
+
+该示例通过设置[ImageAttachment](ts-universal-styled-string.md#imageattachmentinterface对象说明)中的resizable属性，分别使用slice和lattice选项对图片进行拉伸。
+
+从API版本26.0.1开始，ImageAttachment接口新增resizable属性。
+
+```ts
+import { drawing } from '@kit.ArkGraphics2D';
+
+@Entry
+@Component
+struct StyledStringResizablePage {
+  controller: TextController = new TextController();
+  private xDivs: Array<number> = [1, 2, 200];
+  private yDivs: Array<number> = [1, 2, 200];
+  private fXCount: number = 3;
+  private fYCount: number = 3;
+  private drawingLattice: DrawingLattice =
+    drawing.Lattice.createImageLattice(this.xDivs, this.yDivs, this.fXCount, this.fYCount);
+
+  build() {
+    Column({ space: 20 }) {
+      Text('StyledString resizable Demo')
+        .fontSize(25)
+        .fontWeight(FontWeight.Bold)
+
+      Text(undefined, { controller: this.controller })
+        .width('90%')
+        .margin({ top: 10 })
+        .fontSize(25)
+        .onAppear(() => {
+          let sliceStyledString: MutableStyledString = new MutableStyledString(new ImageAttachment({
+            resourceValue: $r('app.media.landscape'),
+            size: { width: 200, height: 200 },
+            resizable: {
+              slice: {
+                left: '200px',
+                top: '200px',
+                right: '20px',
+                bottom: '20px'
+              }
+            }
+          }));
+          let latticeStyledString: MutableStyledString = new MutableStyledString(new ImageAttachment({
+            resourceValue: $r('app.media.landscape'),
+            size: { width: 200, height: 200 },
+            resizable: {
+              lattice: this.drawingLattice
+            }
+          }));
+          let mutableStyledString: MutableStyledString = new MutableStyledString(new ImageAttachment({
+            resourceValue: $r('app.media.landscape'),
+            size: { width: 200, height: 200 },
+          }));
+          mutableStyledString.insertString(0, "原图\n")
+          mutableStyledString.insertString(mutableStyledString.length, "\n设置slice后\n")
+          mutableStyledString.appendStyledString(sliceStyledString);
+          mutableStyledString.insertString(mutableStyledString.length, "\n设置lattice后\n")
+          mutableStyledString.appendStyledString(latticeStyledString);
+          this.controller.setStyledString(mutableStyledString);
+        })
+    }
+    .width('100%')
+    .height('100%')
+    .padding(20)
+    .alignItems(HorizontalAlign.Center)
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/HkrJqseMRa-bmeZ4Ab0sbA/zh-cn_image_0000002786361370.png)

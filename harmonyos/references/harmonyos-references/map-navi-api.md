@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-navi-
 title: navi（路径规划）
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > navi（路径规划）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:00+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e0ab602ceb0163d3d9e5da7fc306fb189057c2e28a37129d86e50950f9bc636f
+scraped_at: 2026-11-12T09:57:28+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d342b235601c42be8b82edf241390724dfc452f1cab3b4fb2cba8492e1ce95bd
 ---
 
 本模块提供路径规划功能。
@@ -325,7 +325,7 @@ let params: navi.RouteParams = {
   language: "zh_CN"
 };
 const result = await navi.getWalkingRoutes(this.getUIContext().getHostContext(), params);
-console.info("Succeeded in getting cycling routes.");
+console.info("Succeeded in getting walking routes.");
 ```
 
 ## getCyclingRoutes
@@ -1215,7 +1215,7 @@ console.info("Succeeded in snapping to roads.");
 | origins | Array<[RouteCoordinate](map-navi-api.md#routecoordinate)> | 否 | 否 | 道路绑定的起点坐标列表。  坐标点的数量不能超过31个，相邻两个点之间的距离应大于1米。 |
 | destination | [RouteCoordinate](map-navi-api.md#routecoordinate) | 否 | 否 | 目的地。  **说明：**  若未设置途经点，起点和目的地坐标不能相同。 |
 | language | string | 否 | 是 | 文字指引/描述的语种。目前只支持中文zh\_CN和英文en。如果不传，返回地点的当地语言。 |
-| avoids | Array<number> | 否 | 是 | 表示指定计算路线的策略。取值包括：  0：速度快  1：避免收费  2：避免高速  4：距离短  8：避免轮渡  16：躲避拥堵  32：大路优先  64：智能路线  128：高速优先  256：少收费  512：速度流畅  默认值为0。  步行和骑行仅支持两种策略：0和8。  目前设置项16、32、128和256仅在中国大陆的路线规划中支持，后续将在其他国家和地区陆续支持这些设置项。  **说明：**  以上为单独策略，组合策略仅驾车支持1和8：避免收费+避免轮渡，若传入其他组合则按照64：智能路线处理。 |
+| avoids | Array<number> | 否 | 是 | 表示指定计算路线的策略。取值包括：  0：速度快  1：避免收费  2：避免高速  4：距离短  8：避免轮渡  16：躲避拥堵  32：大路优先  64：智能路线  128：高速优先  256：少收费  512：速度流畅  默认值为0。  步行和骑行仅支持设置策略：0。  目前设置项16、32、128和256仅在中国大陆的路线规划中支持，后续将在其他国家和地区陆续支持这些设置项。  **说明：**  以上为单独策略，组合策略仅驾车支持1和8：避免收费+避免轮渡，若传入其他组合则按照64：智能路线处理。 |
 | extension | number | 否 | 是 | 额外信息。包括：  0：基础路况信息  1：新增路况信息  默认值为0。 |
 
 ## RouteResult
@@ -1248,7 +1248,7 @@ console.info("Succeeded in snapping to roads.");
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| waypoints | Array<[mapCommon.LatLng](map-common.md#latlng)> | 否 | 是 | 途经点。最多可以输入5个途经点，异常值不处理。 |
+| waypoints | Array<[mapCommon.LatLng](map-common.md#latlng)> | 否 | 是 | 途经点。默认值：[]，最多可以输入5个途经点，异常值不处理。 |
 | isViaType | boolean | 否 | 是 | 途经点类型，是via类型还是stopover类型，默认值为false，异常值不处理。  - false：stopover类型。  - true：via类型  **说明：**  1. stopover类型为经停点，将分段下发路线信息。  2. via类型为经过点，将统一返回完整路线信息。 |
 | optimize | boolean | 否 | 是 | 是否对途经点进行优化，异常值不处理。  - false：不进行途经点优化，保持原始顺序，按照输入顺序返回途经点。  - true：进行途经点优化，启用智能优化算法，按照距离起点的远近顺序返回途经点，实现路径规划效率最大化。  默认值为false。 |
 | alternatives | boolean | 否 | 是 | 是否返回多条规划路线结果，异常值不处理。  - true：返回多条规划路线结果  - false：返回单条规划路线结果  默认值为false。 |
@@ -1407,7 +1407,7 @@ console.info("Succeeded in snapping to roads.");
 | origins | Array<[RouteCoordinate](map-navi-api.md#routecoordinate)> | 否 | 否 | 起点的经纬度，不能超过100个。 |
 | destinations | Array<[RouteCoordinate](map-navi-api.md#routecoordinate)> | 否 | 否 | 终点的经纬度，不能超过100个。  **说明：**  1. 驾车路线只能在直线距离2000公里内规划；步行路线只能在直线距离150公里内规划；骑行路线只能在直线距离500公里内规划。  2. 起点的数量乘以终点的数量不能超过100。 |
 | language | string | 否 | 是 | 文字指引/描述的语种。目前只支持zh\_CN和en。如果不传，返回地点的当地语言。 |
-| avoids | Array<number> | 否 | 是 | 表示指定计算路线的策略。取值包括：  0：速度快  1：避免收费  2：避免高速  4：距离短  8：避免轮渡  16：躲避拥堵  32：大路优先  64：智能路线  128：高速优先  256：少收费  默认值为0。  步行和骑行只支持两种设置项：0和8。  驾车支持所有设置项，但目前设置项16、32、128和256仅在中国大陆的路线规划中支持，后续将在其他国家和地区陆续支持这些设置项。 |
+| avoids | Array<number> | 否 | 是 | 表示指定计算路线的策略。取值包括：  0：速度快  1：避免收费  2：避免高速  4：距离短  8：避免轮渡  16：躲避拥堵  32：大路优先  64：智能路线  128：高速优先  256：少收费  默认值为0。  步行和骑行仅支持设置策略：0。  驾车支持所有设置项，但目前设置项16、32、128和256仅在中国大陆的路线规划中支持，后续将在其他国家和地区陆续支持这些设置项。 |
 
 ## TransitRouteParams
 

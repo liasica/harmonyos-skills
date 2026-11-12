@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ui-design
 title: HdsColorPicker (颜色选择器组件)
 breadcrumb: API参考 > 应用框架 > UI Design Kit（UI设计套件） > ArkTS组件 > HdsColorPicker (颜色选择器组件)
 category: harmonyos-references
-scraped_at: 2026-11-04T08:34:18+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:656f86b695c176f7f1bdd581c5504965ad6685096b8af0a6f6fa7ed45d0d4bea
+scraped_at: 2026-11-12T09:55:18+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:5b383a87f7af01e919f57e6a5399a9cd8cfd07bee3d4a0a6bf33786e7d2d7e64
 ---
 
 提供颜色选择与收藏管理功能的组件，支持网格、光谱和滑块三种颜色选择模式。
@@ -32,7 +32,7 @@ import { HdsColorPicker, HdsColorPickerTabType, HdsColorPickerOptions } from '@k
 
 ## HdsColorPicker
 
-HdsColorPicker({initialColor?: string, onColorSelected: HdsColorSelectedCallback, initialFavoriteColors?: Array<string>, onFavoriteColorsUpdate?: HdsFavoritesUpdateCallback, options?: HdsColorPickerOptions})
+HdsColorPicker({initialColor?: string, onColorSelected: HdsColorSelectedCallback, initialFavoriteColors?: Array<string>, onFavoriteColorsUpdate?: HdsFavoritesUpdateCallback, options?: HdsColorPickerOptions, isColorPickerShow?: boolean, onShowStatusChanged?: HdsColorPickerShowStatusChangeEvent})
 
 定义颜色选择器组件。
 
@@ -51,6 +51,8 @@ HdsColorPicker({initialColor?: string, onColorSelected: HdsColorSelectedCallback
 | initialFavoriteColors | Array<string> | 否 | @Param  @Once | 设置颜色选择器的初始收藏颜色列表，颜色值支持十六进制ARGB标准颜色格式（如'#FFFF0000'）。  **说明**：@Once装饰器，仅在组件首次渲染时生效，后续更新不会触发重新渲染。 |
 | onFavoriteColorsUpdate | [HdsFavoritesUpdateCallback](ui-design-hdscolorpicker.md#hdsfavoritesupdatecallback) | 否 | @Event | 收藏颜色更新回调，当收藏颜色列表发生变化时触发，最多可收藏并显示72个颜色值。 |
 | options | [HdsColorPickerOptions](ui-design-hdscolorpicker.md#hdscolorpickeroptions) | 否 | @Param | 颜色选择器组件选项。 |
+| isColorPickerShow | boolean | 否 | @Param | 设置颜色选择器的显示状态。  设置为false时隐藏颜色选择器，设置为true时显示颜色选择器。默认值：false。  **起始版本：** 26.0.1 |
+| onShowStatusChanged | [HdsColorPickerShowStatusChangeEvent](ui-design-hdscolorpicker.md#hdscolorpickershowstatuschangeevent) | 否 | @Event | 颜色选择器显示状态变化回调，当颜色选择器的显示状态发生变化时触发。  **起始版本：** 26.0.1 |
 
 ## HdsColorPickerOptions
 
@@ -119,6 +121,24 @@ type HdsFavoritesUpdateCallback = (favoritesList: Array<string>) => void
 | --- | --- | --- | --- |
 | favoritesList | Array<string> | 是 | 更新后的收藏颜色列表，颜色值支持十六进制ARGB标准颜色格式（如'FFFF0000'）。 |
 
+## HdsColorPickerShowStatusChangeEvent
+
+type HdsColorPickerShowStatusChangeEvent = (isShow: boolean) => void
+
+定义颜色选择器显示状态变化回调函数类型。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.UIDesign.HDSPattern.Standard
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| isShow | boolean | 是 | 颜色选择器当前是否显示。true表示颜色选择器已显示，false表示颜色选择器已隐藏。 |
+
 ## 示例
 
 HdsColorPicker提供完整的颜色选择与收藏管理功能：
@@ -133,13 +153,14 @@ struct ColorPickerExample {
   @Local selectedColor: string = '#FF0000';
   // 收藏颜色列表
   @Local favoriteColors: Array<string> = ['#FF0000', '#00FF00', '#0000FF'];
+  // 颜色选择器显示状态
+  @Local isColorPickerShow: boolean = false;
 
   build() {
-    Column() {
+    Column({space: 10}) {
       // 显示当前选中的颜色
-      Text('当前选中颜色: ' + this.selectedColor)
+      Text('当前选中颜色：' + this.selectedColor)
         .fontSize(16)
-        .margin({ bottom: 10 })
 
       // 颜色预览区域
       Row() {
@@ -151,32 +172,40 @@ struct ColorPickerExample {
       }
       .width('100%')
       .justifyContent(FlexAlign.Center)
-      .margin({ bottom: 20 })
 
       // 收藏颜色展示
-      Text('收藏颜色: ' + this.favoriteColors.join(', '))
+      Text('收藏颜色：' + this.favoriteColors.join(', '))
         .fontSize(14)
-        .margin({ bottom: 10 })
 
       // HdsColorPicker 组件
       HdsColorPicker({
         initialColor: this.selectedColor,
         initialFavoriteColors: this.favoriteColors,
+        isColorPickerShow: this.isColorPickerShow,
         options: {
           circleRadius: 12,
           tabs: [HdsColorPickerTabType.GRID, HdsColorPickerTabType.SPECTRUM, HdsColorPickerTabType.SLIDERS]
         },
         onColorSelected: (color: string) => {
           this.selectedColor = color;
-          console.info('选中颜色: ' + color);
+          console.info('选中颜色：' + color);
         },
         onFavoriteColorsUpdate: (favorites: Array<string>) => {
           this.favoriteColors = favorites;
-          console.info('收藏颜色更新: ' + favorites.join(', '));
+          console.info('收藏颜色更新：' + favorites.join(', '));
+        },
+        onShowStatusChanged: (isShow: boolean) => {
+          this.isColorPickerShow = isShow;
+          console.info('颜色选择器显示状态：' + isShow);
         }
       })
-      .width('100%')
-      .height(500)
+        .alignSelf(ItemAlign.Center)
+
+      // 控制颜色选择器显隐的按钮
+      Button(this.isColorPickerShow ? '隐藏颜色选择器' : '显示颜色选择器')
+        .onClick(() => {
+          this.isColorPickerShow = !this.isColorPickerShow;
+        })
     }
     .width('100%')
     .height('100%')
@@ -189,4 +218,4 @@ struct ColorPickerExample {
 
 执行上述示例中的代码，进行颜色选择，效果如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/tTli-nz3QAu9Erl_tKXuzw/zh-cn_image_0000002809052731.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/r5rrS0eTQteU4QV8Kj_Gdw/zh-cn_image_0000002786522022.gif "点击放大")

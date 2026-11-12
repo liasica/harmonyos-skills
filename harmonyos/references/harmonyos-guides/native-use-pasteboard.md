@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-use-pa
 title: 使用剪贴板进行复制粘贴（C/C++）
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 剪贴板服务 > 使用剪贴板进行复制粘贴（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:07+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:ffaf7a32d6a74b085e066b3af739e24b4f891eea4dfcee1141c12c2f33fa8e33
+scraped_at: 2026-11-12T09:51:48+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:29c637062590ab265f178f8fac518a552e7208f7ef033054e1f387a0d8615462
 ---
 
 ## 场景介绍
@@ -113,7 +113,7 @@ content_hash: sha256:ffaf7a32d6a74b085e066b3af739e24b4f891eea4dfcee1141c12c2f33f
        // 1. 创建一个剪贴板实例
        OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
        if (pasteboard == nullptr) {
-           OH_LOG_INFO(LOG_APP, "Failed to create pasteboard instance.");
+           OH_LOG_ERROR(LOG_APP, "Failed to create pasteboard instance.");
            napi_value result;
            napi_get_undefined(env, &result);
            return result;
@@ -149,7 +149,7 @@ content_hash: sha256:ffaf7a32d6a74b085e066b3af739e24b4f891eea4dfcee1141c12c2f33f
        int ret = 0;
        OH_UdmfData* udmfData = OH_Pasteboard_GetData(pasteboard, &ret);
        if (udmfData == nullptr) {
-           OH_LOG_INFO(LOG_APP, "Failed to get data from pasteboard.");
+           OH_LOG_ERROR(LOG_APP, "Failed to get data from pasteboard.");
            OH_Pasteboard_Destroy(pasteboard);
            napi_value result;
            napi_get_undefined(env, &result);
@@ -158,7 +158,7 @@ content_hash: sha256:ffaf7a32d6a74b085e066b3af739e24b4f891eea4dfcee1141c12c2f33f
        // 4. 从OH_UdmfData中获取第一个数据记录
        OH_UdmfRecord* record = OH_UdmfData_GetRecord(udmfData, 0);
        if (record == nullptr) {
-           OH_LOG_INFO(LOG_APP, "Failed to get record from udmfData.");
+           OH_LOG_ERROR(LOG_APP, "Failed to get record from udmfData.");
            OH_UdmfData_Destroy(udmfData);
            OH_Pasteboard_Destroy(pasteboard);
            napi_value result;
@@ -168,7 +168,7 @@ content_hash: sha256:ffaf7a32d6a74b085e066b3af739e24b4f891eea4dfcee1141c12c2f33f
        // 5. 从数据记录中获取文本数据内容
        OH_UdsPlainText* plainText = OH_UdsPlainText_Create();
        if (plainText == nullptr) {
-           OH_LOG_INFO(LOG_APP, "Failed to create plain text object.");
+           OH_LOG_ERROR(LOG_APP, "Failed to create plain text object.");
            OH_UdmfData_Destroy(udmfData);
            OH_Pasteboard_Destroy(pasteboard);
            napi_value result;
@@ -178,7 +178,7 @@ content_hash: sha256:ffaf7a32d6a74b085e066b3af739e24b4f891eea4dfcee1141c12c2f33f
        OH_UdmfRecord_GetPlainText(record, plainText);
        const char* content = OH_UdsPlainText_GetContent(plainText);
        if (content == nullptr) {
-           OH_LOG_INFO(LOG_APP, "Failed to get content from plain text.");
+           OH_LOG_ERROR(LOG_APP, "Failed to get content from plain text.");
            OH_UdsPlainText_Destroy(plainText);
            OH_UdmfData_Destroy(udmfData);
            OH_Pasteboard_Destroy(pasteboard);
@@ -200,7 +200,7 @@ content_hash: sha256:ffaf7a32d6a74b085e066b3af739e24b4f891eea4dfcee1141c12c2f33f
        // 1. 创建一个剪贴板实例
        OH_Pasteboard* pasteboard = OH_Pasteboard_Create();
        if (pasteboard == nullptr) {
-           OH_LOG_INFO(LOG_APP, "Failed to create pasteboard instance.");
+           OH_LOG_ERROR(LOG_APP, "Failed to create pasteboard instance.");
            napi_value result;
            napi_get_undefined(env, &result);
            return result;

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口进行ArrayBuffer相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口进行ArrayBuffer相关开发
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:15+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:52:46+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:f5a52ed7dc6b236ccfcd6e0e14ab7a3cd1bb880e6e671db0566dd4937cada3bd
 ---
 

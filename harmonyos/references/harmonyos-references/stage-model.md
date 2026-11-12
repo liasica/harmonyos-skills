@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/stage-mod
 title: Stage模型能力的接口
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口
 category: harmonyos-references
-scraped_at: 2026-10-11T07:23:29+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:50239843fffd08b267df79b953df75322155d4c3771dc9162f887f111deef38a
+scraped_at: 2026-11-12T09:53:28+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:dfda74af749448d9e962306ccd7ddcac6e1638d66801d50ffc075409e79c852d
 ---
 
 * **[@ohos.app.ability.Ability (Ability基类)](js-apis-app-ability-ability.md)**
@@ -57,5 +57,6 @@ content_hash: sha256:50239843fffd08b267df79b953df75322155d4c3771dc9162f887f111de
 * **[@ohos.app.agent.agentConstant (Agent常量)](js-apis-app-agent-agentconstant.md)**
 * **[@ohos.app.agent.AgentExtensionAbility (智能体扩展组件)](js-apis-app-agent-agentextensionability.md)**
 * **[@ohos.app.agent.AgentUIExtensionAbility (带界面的智能体扩展组件)](js-apis-agent-agentuiextensionability.md)**
+* **[@ohos.app.cli.cliManager (CLI工具管理)](js-apis-app-cli-climanager.md)**
 * **[@ohos.continuation.continuationManager (流转/协同管理)](js-apis-continuation-continuationmanager.md)**
 * **[continuation](stage-model-continuation.md)**

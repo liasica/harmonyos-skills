@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/wallet-wa
 title: walletPass（Pass卡片能力）
 breadcrumb: API参考 > 应用服务 > Wallet Kit（钱包服务） > ArkTS API > walletPass（Pass卡片能力）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:08+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:a0ba05fcf3bded709f084c4d3a9fff18cbc2bdf1146544dbbf109e6b3814d601
+scraped_at: 2026-11-12T09:57:41+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c6d9563694a041d891fc14405fa17a3bedd8fd43edb81ac3fcddfabd0ae2f75a
 ---
 
 本模块提供接入钱包服务的能力。
@@ -89,13 +89,13 @@ queryPassDeviceInfo(passStr: string): Promise<string>
 
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
-| passStr | string | 是 | 要求JSON String格式，传入的字段以key-value的形式设置在JSON String中，并通过该参数传入。  key包括passType、targetDeviceType。  - passType：创建Wallet Kit服务时注册的服务号，需要开发者到华为AGC网站申请。  - targetDeviceType：目标设备类型。取值如下  - phone：手机  - wear：穿戴  - all：手机+穿戴 |
+| passStr | string | 是 | 要求JSON String格式，传入的字段以key-value的形式设置在JSON String中，value均为String类型，并通过该参数传入。  key包括passType、targetDeviceType、queryCapabilitiesFlag、autoPushPassFlag、spOpenId。  - passType：创建Wallet Kit服务时注册的服务号，需要开发者到华为AGC网站申请。  - targetDeviceType：目标设备类型。取值如下  phone：手机  wear：穿戴  all：手机+穿戴  - queryCapabilitiesFlag：是否查询设备对BLE/UWB/SLE能力的支持情况，默认不查询。取值如下  0：不查询  1：查询  - autoPushPassFlag：自动推送卡券标识，默认不自动推送。取值如下  0：不自动推送  1：自动推送  - spOpenId：开发者账号的关联标识，autoPushPassFlag取值为1时必填。 |
 
 **返回值：**
 
 | **类型** | **说明** |
 | --- | --- |
-| Promise<string> | Promise对象，返回设备标识及设备能力。JSON String格式，传出的字段以key-value的形式设置在数组类型的JSON String中，并通过该参数传出。  key包括deviceType、passDeviceId、deviceModel、passCapabilityVersion、deviceModelNumber、deviceCapabilities。  - deviceType：设备类型。取值如下  - phone：手机  - wear：穿戴  - passDeviceId：账号/设备联合标识符。  - deviceModel：设备名，用于展示可开通的设备名称。  - passCapabilityVersion：WalletKit开放能力版本号，用于版本兼容处理，初始为 1。  - deviceModelNumber：设备型号编码，用于获取匹配的标定数据。  - deviceCapabilities：能力集，同步返回是否支持NFC/BLE/UWB/SLE  - NFC：0200  - NFC+BLE：0201  - UWB：0202  - SLE：0203 |
+| Promise<string> | Promise对象，返回设备标识及设备能力。JSON String格式，传出的字段以key-value的形式设置在数组类型的JSON String中，并通过该参数传出。  key包括deviceType、passDeviceId、deviceModel、passCapabilityVersion、deviceModelNumber、deviceCapabilities、openId。  - deviceType：设备类型。取值如下  - phone：手机  - wear：穿戴  - passDeviceId：账号/设备联合标识符。  - deviceModel：设备名，用于展示可开通的设备名称。  - passCapabilityVersion：WalletKit开放能力版本号，用于版本兼容处理，初始为 1。  - deviceModelNumber：设备型号编码，用于获取匹配的标定数据。  - deviceCapabilities：能力集，同步返回是否支持NFC/BLE/UWB/SLE  - NFC：0200  - NFC+BLE：0201  - UWB：0202  - SLE：0203  - openId：账号联合标识符。 |
 
 **错误码：**
 
@@ -177,7 +177,7 @@ canAddPass(passStr: string): Promise<string>
 
 | 类型 | **说明** |
 | --- | --- |
-| Promise<string> | Promise对象，返回是否支持添卡的结果。JSON String格式，传出的字段以key-value的形式设置在数组类型的JSON String中，并通过该参数传出。  key包括passType、deviceType、passDeviceId、deviceModel、result。  - passType：服务号  - deviceType：设备类型。取值如下  - phone：手机  - wear：穿戴  - passDeviceId：账号/设备联合标识符。  - deviceModel：设备名，用于展示可开通的设备名称。  - result：结果码。取值如下  0：支持添加  1：ROM版本过低  2：钱包版本过低  3：ROM版本和钱包版本均过低 |
+| Promise<string> | Promise对象，返回是否支持添卡的结果。JSON String格式，传出的字段以key-value的形式设置在数组类型的JSON String中，并通过该参数传出。  key包括passType、deviceType、passDeviceId、deviceModel、result。  - passType：服务号  - deviceType：设备类型。取值如下  - phone：手机  - wear：穿戴  - passDeviceId：账号/设备联合标识符。  - deviceModel：设备名，用于展示可开通的设备名称。  - result：结果码。取值如下  0：支持添加  1：系统版本过低  2：钱包版本过低  3：系统版本和钱包版本均过低  4：手表系版本过低  5：手表钱包版本过低  6：手表系统版本和手表钱包版本均过低 |
 
 **错误码：**
 
@@ -336,7 +336,7 @@ addPass(passStr: string): Promise<string>
 
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
-| passStr | string | 是 | 要求JSON String格式，传入的字段以key-value的形式设置在JSON String中，并通过该参数传入。  key包括jweContent。  - jweContent：开发者服务端生成的开卡签名数据包。 |
+| passStr | string | 是 | 要求JSON String格式，传入的字段以key-value的形式设置在JSON String中，并通过该参数传入。  key包括jweContent、targetDeviceType、autoPushPassFlag、spOpenId、style。  - jweContent：开发者服务端生成的开卡签名数据包。  - targetDeviceType：目标设备类型。取值如下  - phone：手机  - wear：穿戴  - autoPushPassFlag：自动推送卡券标识，默认不自动推送。取值如下  - 0：不自动推送  - 1：自动推送  - spOpenId：开发者账号的关联标识，autoPushPassFlag取值为1时必填。  - style：开卡预览的卡片样式，默认不传为卡片样式，传入ticket指定为票券样式。 |
 
 **返回值：**
 
@@ -425,13 +425,13 @@ queryPass(passStr: string): Promise<string>
 
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
-| passStr | string | 是 | 要求JSON String格式，传入的字段以key-value的形式设置在JSON String中，并通过该参数传入。  key包括passType、serialNumber。  - passType：创建Wallet Kit服务时注册的服务号，需要开发者到华为AGC网站申请。  - serialNumber：开发者服务器申请卡券时定义的唯一标识。 |
+| passStr | string | 是 | 要求JSON String格式，传入的字段以key-value的形式设置在JSON String中，并通过该参数传入。  key包括passType、serialNumber、targetDeviceType。  - passType：创建Wallet Kit服务时注册的服务号，需要开发者到华为AGC网站申请。  - serialNumber：开发者服务器申请卡券时定义的唯一标识。  - targetDeviceType：目标设备类型。取值如下  - phone：手机  - wear：穿戴  - all：手机+穿戴 |
 
 **返回值：**
 
 | 类型 | **说明** |
 | --- | --- |
-| Promise<string> | Promise对象，返回卡片数据。JSON String格式，传出的字段以key-value的形式设置在数组类型的JSON String中，并通过该参数传出。  key包括passType、serialNumber、deviceType、passDeviceId、deviceModel、cardStatus。  - passType：服务号  - serialNumber：卡券唯一标识  - deviceType：设备类型。取值如下  - phone：手机  - wear：穿戴  - passDeviceId：账号/设备联合标识符。  - deviceModel：设备名，用于展示可开通的设备名称。  - cardStatus：卡片状态 。取值如下  0：可用  1：不可用 |
+| Promise<string> | Promise对象，返回卡片数据。JSON String格式，传出的字段以key-value的形式设置在数组类型的JSON String中，并通过该参数传出。  key包括passType、serialNumber、deviceType、passDeviceId、deviceModel、cardStatus、carKeyCapabilities、passiveEntryFlag。  - passType：服务号  - serialNumber：卡券唯一标识  - deviceType：设备类型。取值如下  - phone：手机  - wear：穿戴  - passDeviceId：账号/设备联合标识符。  - deviceModel：设备名，用于展示可开通的设备名称。  - cardStatus：卡片状态。取值如下  0：可用  1：不可用  - carKeyCapabilities：钥匙实际能力集。取值如下  0200：NFC  0201：NFC+BLE  0202：UWB  0203：SLE  - passiveEntryFlag：钱包无感开关状态。取值如下  1：开启  0：关闭 |
 
 **错误码：**
 
@@ -506,7 +506,7 @@ viewPass(passStr: string): Promise<void>
 
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
-| passStr | string | 是 | 要求JSON String格式，传入的字段以key-value的形式设置在JSON String中，并通过该参数传入。  key包括passType、serialNumber。  - passType：创建Wallet Kit服务时注册的服务号，需要开发者到华为AGC网站申请。  - serialNumber：开发者服务器申请卡券时定义的唯一标识。 |
+| passStr | string | 是 | 要求JSON String格式，传入的字段以key-value的形式设置在JSON String中，并通过该参数传入。  key包括passType、serialNumber、targetDeviceType。  - passType：创建Wallet Kit服务时注册的服务号，需要开发者到华为AGC网站申请。  - serialNumber：开发者服务器申请卡券时定义的唯一标识。  - targetDeviceType：目标设备类型。取值如下  - phone：手机  - wear：穿戴 |
 
 **返回值：**
 
@@ -563,7 +563,7 @@ struct Index {
 
 updatePass(passStr: string): Promise<string>
 
-卡券更新（预留接口，暂不提供具体功能）。
+卡券更新。
 
 使用Promise异步回调。
 
@@ -581,7 +581,7 @@ updatePass(passStr: string): Promise<string>
 
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
-| passStr | string | 是 | 要求JSON String格式，传入的字段以key-value的形式设置在JSON String中，并通过该参数传入。  key包括passType、serialNumber。  - passType：创建Wallet Kit服务时注册的服务号，需要开发者到华为AGC网站申请。  - serialNumber：开发者服务器申请卡券时定义的唯一标识。 |
+| passStr | string | 是 | 要求JSON String格式，传入的字段以key-value的形式设置在JSON String中，并通过该参数传入。  key包括passType、serialNumber、targetDeviceType、sleUpdateFlag、passiveEntryFlag。  - passType：创建Wallet Kit服务时注册的服务号，需要开发者到华为AGC网站申请。  - serialNumber：开发者服务器申请卡券时定义的唯一标识。  - targetDeviceType：目标设备类型。取值如下  phone：手机  wear：穿戴  - sleUpdateFlag：星闪更新标识，默认只更新卡券数据。取值如下  0：更新卡券数据  1：蓝牙钥匙升级星闪  - passiveEntryFlag：钱包无感开关状态。取值如下  1：开启  0：关闭 |
 
 **返回值：**
 
@@ -647,7 +647,7 @@ struct Index {
 
 deletePass(passStr: string): Promise<string>
 
-卡券删除（预留接口，暂不提供具体功能）。
+卡券删除。
 
 使用Promise异步回调。
 
@@ -665,7 +665,7 @@ deletePass(passStr: string): Promise<string>
 
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
-| passStr | string | 是 | 要求JSON String格式，传入的字段以key-value的形式设置在JSON String中，并通过该参数传入。  key包括passType、serialNumber。  - passType：创建Wallet Kit服务时注册的服务号，需要开发者到华为AGC网站申请。  - serialNumber：开发者服务器申请卡券时定义的唯一标识。 |
+| passStr | string | 是 | 要求JSON String格式，传入的字段以key-value的形式设置在JSON String中，并通过该参数传入。  key包括passType、serialNumber、targetDeviceType。  - passType：创建Wallet Kit服务时注册的服务号，需要开发者到华为AGC网站申请。  - serialNumber：开发者服务器申请卡券时定义的唯一标识。  - targetDeviceType：目标设备类型。取值如下  - phone：手机  - wear：穿戴 |
 
 **返回值：**
 
@@ -756,7 +756,7 @@ queryICCEConnectionState(rkeStr: string): Promise<string>
 
 | 类型 | **说明** |
 | --- | --- |
-| Promise<string> | Promise对象，返回连接状态。JSON String格式，传出的字段以key-value的形式设置在JSON String中，并通过该参数传出。  key包括deviceType、passDeviceId、deviceModel、connectionState、authState。  - deviceType：设备类型。取值如下  - phone：手机  - wear：穿戴  - passDeviceId：账号/设备联合标识符。  - deviceModel：设备名，用于展示可开通的设备名称。  - connectionState：连接状态。取值如下  0：异常状态  1：正在连接  2：连接成功  3：未连接  4：连接超时  10：未配对  11：配对中  12：已配对  - authState：认证状态。取值如下  0：未认证/认证失败  1：认证成功 |
+| Promise<string> | Promise对象，返回连接状态。JSON String格式，传出的字段以key-value的形式设置在JSON String中，并通过该参数传出。  key包括deviceType、passDeviceId、deviceModel、connectionState、authState、connectionType、rkeCommandVersion、passiveEntryFlag。  - deviceType：设备类型。取值如下  - phone：手机  - wear：穿戴  - passDeviceId：账号/设备联合标识符。  - deviceModel：设备名，用于展示可开通的设备名称。  - connectionState：连接状态。取值如下  0：异常状态  1：正在连接  2：连接成功  3：未连接  4：连接超时  10：未配对  11：配对中  12：已配对  - authState：认证状态。取值如下  0：未认证/认证失败  1：认证成功  - connectionType：连接类型。取值如下  - 0201：BLE  - 0203：SLE  - rkeCommandVersion：支持的指令集版本。取值如下  - 01：默认指令集（现有蓝牙指令）  - 02：ICCE标准指令集  - 0102：默认指令集+ICCE标准指令集  - passiveEntryFlag：钱包无感开关状态。取值如下  - 1：开启  - 0：关闭 |
 
 **错误码：**
 
@@ -831,13 +831,13 @@ startICCEConnection(rkeStr: string): Promise<string>
 
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
-| rkeStr | string | 是 | 要求JSON String格式，传入的字段以key-value的形式设置在JSON String中，并通过该参数传入。  key包括passType、serialNumber。  - passType：创建Wallet Kit服务时注册的服务号，需要开发者到华为AGC网站申请。  - serialNumber：开发者服务器申请卡券时定义的唯一标识。 |
+| rkeStr | string | 是 | 要求JSON String格式，传入的字段以key-value的形式设置在JSON String中，并通过该参数传入。  key包括passType、serialNumber、targetDeviceType、connectionAction。  - passType：创建Wallet Kit服务时注册的服务号，需要开发者到华为AGC网站申请。  - serialNumber：开发者服务器申请卡券时定义的唯一标识。  - targetDeviceType：目标设备类型。取值如下  - phone：手机  - wear：穿戴  - connectionAction：发起连接的动作类型。取值如下  - 0：发起后台配对  - 1：发起连接  - 2：拉起钱包配对页面，申请用户授权 |
 
 **返回值：**
 
 | 类型 | **说明** |
 | --- | --- |
-| Promise<string> | Promise对象，返回连接结果。JSON String格式，传出的字段以key-value的形式设置在JSON String中，并通过该参数传出。  key包括result、deviceType、passDeviceId、deviceModel、connectionState、authState、reasonCode。  result：认证状态。取值如下  0：已配对已连接  1：已配对未连接  2：未配对  deviceType：设备类型。取值如下  phone：手机  wear：穿戴  passDeviceId：账号/设备联合标识符。  deviceModel：设备名，用于展示可开通的设备名称。  connectionState：连接状态。取值如下  0：异常状态  1：正在连接  2：连接成功  3：未连接  4：连接超时  10：未配对  11：配对中  12：已配对  authState：认证状态。取值如下  0：未认证/认证失败  1：认证成功  reasonCode：异常原因码，只有result为2时才会返回。取值如下  1：表侧星闪开关未开启 |
+| Promise<string> | Promise对象，返回连接结果。JSON String格式，传出的字段以key-value的形式设置在JSON String中，并通过该参数传出。  key包括result、deviceType、passDeviceId、deviceModel、connectionState、authState、reasonCode、connectionType。  result：认证状态。取值如下  0：已配对已连接  1：已配对未连接  2：未配对  deviceType：设备类型。取值如下  phone：手机  wear：穿戴  passDeviceId：账号/设备联合标识符。  deviceModel：设备名，用于展示可开通的设备名称。  connectionState：连接状态。取值如下  0：异常状态  1：正在连接  2：连接成功  3：未连接  4：连接超时  10：未配对  11：配对中  12：已配对  authState：认证状态。取值如下  0：未认证/认证失败  1：认证成功  reasonCode：异常原因码，只有result为2时才会返回。取值如下  1：表侧星闪开关未开启  connectionType：连接类型。取值如下  0201：BLE  0203：SLE |
 
 **错误码：**
 
@@ -916,7 +916,7 @@ registerICCEListener(rkeStr: string, eventNotifyListener: rpc.RemoteObject): Pro
 
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
-| rkeStr | string | 是 | 要求JSON String格式，传入的字段以key-value的形式设置在JSON String中，并通过该参数传入。  key包括passType、registerName。  - passType：创建Wallet Kit服务时注册的服务号，需要开发者到华为AGC网站申请。  - registerName：注册监听的应用名称，一般为包名。 |
+| rkeStr | string | 是 | 要求JSON String格式，传入的字段以key-value的形式设置在JSON String中，并通过该参数传入。  key包括passType、registerName、rkeCommandVersion。  - passType：创建Wallet Kit服务时注册的服务号，需要开发者到华为AGC网站申请。  - registerName：注册监听的应用名称，一般为包名。  - rkeCommandVersion：支持的指令集版本。取值如下  - 01：默认指令集（现有蓝牙指令）  - 02：ICCE标准指令集  - 0102：默认指令集+ICCE标准指令集 |
 | eventNotifyListener | [rpc.RemoteObject](js-apis-rpc.md#remoteobject) | 是 | 回调事件，[rpc.RemoteObject](js-apis-rpc.md#remoteobject)格式。 |
 
 **返回值：**
@@ -1099,7 +1099,7 @@ sendICCERKEMessage(rkeStr: string): Promise<string>
 
 | **参数名** | **类型** | **必填** | **说明** |
 | --- | --- | --- | --- |
-| rkeStr | string | 是 | 要求JSON String格式，传入的字段以key-value的形式设置在JSON String中，并通过该参数传入。  key包括passType、serialNumber、rkeCommand、encryptFlag、directionFlag。  - passType：创建Wallet Kit服务时注册的服务号，需要开发者到华为AGC网站申请。  - serialNumber：开发者服务器申请卡券时定义的唯一标识。  - rkeCommand：请求指令。  - encryptFlag：加密指示位。取值如下  0：不加密  1：需要基于通道会话秘钥加密  - directionFlag：方向指示位。取值如下  0：上报结果  1：发送指令 |
+| rkeStr | string | 是 | 要求JSON String格式，传入的字段以key-value的形式设置在JSON String中，并通过该参数传入。  key包括passType、serialNumber、rkeCommand、encryptFlag、directionFlag。  - passType：创建Wallet Kit服务时注册的服务号，需要开发者到华为AGC网站申请。  - serialNumber：开发者服务器申请卡券时定义的唯一标识。  - rkeCommand：请求指令。  - encryptFlag：加密指示位。取值如下  0：不加密  1：需要基于通道会话秘钥加密  - directionFlag：方向指示位。取值如下  0：上报结果  1：发送指令  - targetDeviceType：目标设备类型。取值如下  phone：手机  wear：穿戴  - responseFlag：回复指示位。取值如下  0：不限制对端是否回复  1：限制对端不回复  - asyncFlag：同步/异步响应指示位。取值如下  0：同步响应  1：异步响应 |
 
 **返回值：**
 

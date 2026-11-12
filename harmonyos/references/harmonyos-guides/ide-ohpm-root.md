@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-root
 title: ohpm root
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm root
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:29+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:2c7962fd22ba6b1da9d953a4d65707c08c459d3ce620c89b72d1edde7c420159
+scraped_at: 2026-11-12T09:53:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:27dc8db2e2056e27e9537734e709329958153f850509ed389e339e91e27b9694
 ---
 
 在标准输出中打印有效的 oh\_modules 目录路径信息。
@@ -25,7 +25,7 @@ ohpm root
 ### prefix
 
 * 默认值：""
-* 类型：string
+* 类型：String
 
 可以在 root 命令后面配置 --prefix <string> 参数，用来指定包的根目录，该目录下必须存在 oh-package.json5 文件，将会打印该根目录中有效的 oh\_modules 目录路径信息。
 
@@ -47,7 +47,7 @@ ohpm root
 
 项目结构为：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/zFH3cZf_SiOdpzEjCuE8Sw/zh-cn_image_0000002701822560.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/Hd68YfVWRfidPEz8-93E-g/zh-cn_image_0000002779406480.png)
 
 在entry模块的src目录下执行：
 
@@ -57,4 +57,4 @@ ohpm root
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/PNfaaQ9STv-tA2QK3GMPog/zh-cn_image_0000002701662642.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/7sZTkea-S7KKe7X2rYrzgw/zh-cn_image_0000002779566456.png)

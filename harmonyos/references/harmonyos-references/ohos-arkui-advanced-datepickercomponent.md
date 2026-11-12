@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: DatePickerComponent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > DatePickerComponent
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:17+08:00
+scraped_at: 2026-11-12T09:54:28+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:4e0b5d62be9a663a724ad838114ba668aa0f03dab5c389c16022692192c7bb75
+content_hash: sha256:057b3b4815a312742d42f0b095964be133f485146b14295ee581411aac732381
 ---
 
 DatePickerComponent组件用于选择日期（年月日）和时间（时分秒）。
@@ -293,7 +293,7 @@ struct DatePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/uRFi6hXJRUqOCw7YAUrxsA/zh-cn_image_0000002809012423.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/0Dw8mtqyRdyNDfVHSd64lQ/zh-cn_image_0000002815401203.gif)
 
 ### 示例2（时间选择器）
 
@@ -330,7 +330,7 @@ struct TimePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/gglIAo4pTVGf-jSYTjZOHA/zh-cn_image_0000002809052337.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/H1BhtMZsR7a98BlvD4CbRA/zh-cn_image_0000002786521628.gif)
 
 ### 示例3（日期时间选择器）
 
@@ -377,7 +377,7 @@ struct DateTimePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/Q2CeVojeT-eSv6-fkiQvBQ/zh-cn_image_0000002779852772.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/OuVPdsjNSYSj4i52d88_8g/zh-cn_image_0000002786361700.gif)
 
 ### 示例4（关闭循环模式）
 
@@ -413,4 +413,4 @@ struct NoLoopPickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/qtFeiaT5RMaA-Vr84xVkDA/zh-cn_image_0000002779692804.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/NKbfpEB7S8ap7lIXvd4sZQ/zh-cn_image_0000002815561121.gif)

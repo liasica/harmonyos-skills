@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_prefer-re
 title: "@typescript-eslint/prefer-regexp-exec"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/prefer-regexp-exec
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:10+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:cde71d9ec3ed7a064489afb0b578744eb6d9a24879def29d25feda50d519e126
+scraped_at: 2026-11-12T09:52:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:9b9a55b001260313ec13485be0eca0d1ece0cd9b3087d713586aaaaf999633ad
 ---
 
 如果未提供全局标志（/g），推荐使用“RegExp#exec”，而不是“String#match”。
@@ -55,4 +55,4 @@ text.match(search);
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

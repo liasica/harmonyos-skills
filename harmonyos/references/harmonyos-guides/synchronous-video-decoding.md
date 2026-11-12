@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/synchronous-v
 title: 视频解码同步模式
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 视频解码同步模式
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:07+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c2de09a99d61e02d795ef25d37d8f03c34ae30d14337c101b72394cc52cb3111
+scraped_at: 2026-11-12T09:52:02+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b9cec2dcb6b89c6d1912d8fe5d9d5f9fbf5a07bd322206e67d7fb9fa53d8c265
 ---
 
 从API version 20开始，支持视频解码同步模式。
@@ -26,7 +26,7 @@ content_hash: sha256:c2de09a99d61e02d795ef25d37d8f03c34ae30d14337c101b72394cc52c
 
 详细的API说明请参考[VideoDecoder](../harmonyos-references/capi-native-avcodec-videodecoder-h.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/DKM3BoEaRUyt9wYGxlPMHQ/zh-cn_image_0000002779850930.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/neLbQUqSQfyGjIN3bnprGg/zh-cn_image_0000002815559291.png)
 
 ### 在CMake脚本中链接动态库
 
@@ -225,7 +225,7 @@ target_link_libraries(sample PUBLIC libnative_media_vdec.so)
                    return false;
                }
                if (inFile_->eof()) {
-                   inputDone = 1;
+                   inputDone = true;
                }
                break;
            }
@@ -269,7 +269,7 @@ target_link_libraries(sample PUBLIC libnative_media_vdec.so)
                    return false;
                }
                if (info.flags & AVCODEC_BUFFER_FLAGS_EOS) {
-                   outputDone = 1;
+                   outputDone = true;
                }
                
                // 解码输出数据处理。
@@ -325,7 +325,7 @@ target_link_libraries(sample PUBLIC libnative_media_vdec.so)
 
    ```
    bool result = true;
-   int64_t timeoutUs = 0; // 单位：微秒（us），负值：无限等待；0：立即退出；正值：指定时间后结束后退出。
+   int64_t timeoutUs = 0; // 单位：微秒（us），负值：无限等待；0：立即退出；正值：等待指定时长后退出。
 
    while (!outputDone && result) {
        if (!inputDone) {
@@ -543,7 +543,7 @@ target_link_libraries(sample PUBLIC libnative_media_vdec.so)
                    return false;
                }
                if (inFile_->eof()) {
-                   inputDone = 1;
+                   inputDone = true;
                }
                break;
            }
@@ -593,7 +593,7 @@ target_link_libraries(sample PUBLIC libnative_media_vdec.so)
                    return false;
                }
                if (info.flags & AVCODEC_BUFFER_FLAGS_EOS) {
-                   outputDone = 1;
+                   outputDone = true;
                }
                
                // 释放已完成处理的信息，index为对应buffer队列的下标。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_ban-ts-co
 title: "@typescript-eslint/ban-ts-comment"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/ban-ts-comment
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:08+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:3735e8da43c915ac8656d13942b0a75c872e82d283d73e7f6232e500833e304e
+scraped_at: 2026-11-12T09:52:54+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0d1131bcbade96a061837cc1e32d679f772ad0dfc03903f1539de870780f809d
 ---
 
 不允许使用`@ts-<directional>`格式的注释，或要求在注释后进行补充说明。
@@ -47,4 +47,4 @@ console.log('hello');
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

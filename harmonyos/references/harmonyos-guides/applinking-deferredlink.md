@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/applinking-de
 title: 通过延迟链接跳转至应用详情页
 breadcrumb: 指南 > 应用服务 > App Linking Kit（应用链接服务） > 通过延迟链接跳转至应用详情页
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:26+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:88d82ea24f69d5abcf4832ce6bae4fe6fd7ce95982bfe1b112a1a1460b294a51
+scraped_at: 2026-11-12T09:52:20+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:5c085e9f1cf42fc2e0271add390174d9fc513ea31921ba16a1e46ae4411278a8
 ---
 
 ## 场景介绍
@@ -16,7 +16,7 @@ content_hash: sha256:88d82ea24f69d5abcf4832ce6bae4fe6fd7ce95982bfe1b112a1a1460b2
 
 例如：华为阅读结合App Linking Kit延迟链接能力，实现了即使用户未安装应用，点击链接完成下载并首次打开时，仍能直接跳转至预设页面（如书籍详情页）。与传统方式（需先打开APP再手动定位内容）相比，操作步骤减少了43%。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/8LCIYYqLTeqc0QbaYQOtKw/zh-cn_image_0000002779851250.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/52dXWfLlTxi2jvBQeRRgVQ/zh-cn_image_0000002786520126.gif)
 
 ## 原理机制
 
@@ -37,7 +37,7 @@ content_hash: sha256:88d82ea24f69d5abcf4832ce6bae4fe6fd7ce95982bfe1b112a1a1460b2
 ## 约束与限制
 
 * 支持Phone、Tablet设备。并且从6.1.0(23)版本开始，新增支持PC/2in1设备。
-* 只能获取通过App Linking域名校验的应用链接，请参见[在AGC为应用创建关联的网址域名](app-linking-startupapp.md#在agc为应用创建关联的网址域名)。建议在首次启动签署隐私协议后再调用延迟链接接口，确保此时域名校验通过。
+* 只能获取通过App Linking域名校验的应用链接，请参见[在HarmonyOS 开发者中心为应用创建关联的网址域名](app-linking-startupapp.md#在harmonyos-开发者中心为应用创建关联的网址域名)。建议在首次启动签署隐私协议后再调用延迟链接接口，确保此时域名校验通过。
 
 ## 开发步骤
 
@@ -185,7 +185,7 @@ content_hash: sha256:88d82ea24f69d5abcf4832ce6bae4fe6fd7ce95982bfe1b112a1a1460b2
               .margin({ top: '20vp' })
               .onClick(() => {
                 let context = GlobalContext.getContext();
-                let link: string = 'https://www.example.com/product?pageName=productDetail';
+                let link: string = Constants.APP_LINK_PAGE;
                 // 仅以App Linking的方式打开应用
                 context.openLink(link, { appLinkingOnly: true })
                   .then(() => {

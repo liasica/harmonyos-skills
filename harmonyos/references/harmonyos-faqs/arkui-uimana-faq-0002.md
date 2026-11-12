@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-fa
 title: 穿戴侧应用开发方案
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > 穿戴侧应用开发方案
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:14:31+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:8bd8e6efd581f94ca2aa28a4e75c002afc63e23a3abd2461d1ae82e054aa54ba
+scraped_at: 2026-11-12T09:58:57+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ca618ae28c885d0222bdda7f4759fb1d0cd73c2b7c03e0ec1e75cbfbf19dbbec
 ---
 
 **Q：穿戴侧应用开发目前只能用JS实现吗，请问是否有ArkTS实现方案？**
@@ -46,7 +46,7 @@ content_hash: sha256:8bd8e6efd581f94ca2aa28a4e75c002afc63e23a3abd2461d1ae82e054a
 
 **Q：穿戴侧应用如何获取心率和步数等健康数据？**
 
-**A**：可以接入[@ohos.sensor（传感器）](../harmonyos-references/js-apis-sensor.md)订阅对应传感器数据。使用[sensor.on(SensorId.HEART\_RATE)](../harmonyos-references/js-apis-sensor.md#sensoron)订阅心率传感器数据，调用后系统会按设定频率通过callback持续上报心率数据，从回调函数返回的[HeartRateResponse](../harmonyos-references/js-apis-sensor.md#heartrateresponse)中获取心率值。使用[sensor.on(SensorId.PEDOMETER)](../harmonyos-references/js-apis-sensor.md#pedometer9)订阅计步器传感器数据，从回调函数返回的[PedometerResponse](../harmonyos-references/js-apis-sensor.md#pedometerresponse)中获取行走步数。
+**A**：可以接入[@ohos.sensor（传感器）](../harmonyos-references/js-apis-sensor.md)订阅对应传感器数据。使用[sensor.on(SensorId.HEART\_RATE)](../doccenter-references/api/js-apis-sensor.md#sensoronsensoridheart_rate9)订阅心率传感器数据，调用后系统会按设定频率通过callback持续上报心率数据，从回调函数返回的[HeartRateResponse](../harmonyos-references/js-apis-sensor.md#heartrateresponse)中获取心率值。使用[sensor.on(SensorId.PEDOMETER)](../doccenter-references/api/js-apis-sensor.md#sensoronsensoridpedometer9)订阅计步器传感器数据，从回调函数返回的[PedometerResponse](../harmonyos-references/js-apis-sensor.md#pedometerresponse)中获取行走步数。
 
 **Q：轻量级智能穿戴设备是否支持通过蓝牙传输数据？**
 

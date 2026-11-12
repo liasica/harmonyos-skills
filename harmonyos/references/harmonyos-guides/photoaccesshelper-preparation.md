@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshe
 title: 开发准备
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 受限开放能力 > 开发准备
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:47+08:00
-doc_updated_at: 2026-10-30
+scraped_at: 2026-11-12T09:52:09+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:fa3905c4f933306a4dc0e3f9b5a0f49cdc6bb629dd5b789ea29c50a690083df2
 ---
 

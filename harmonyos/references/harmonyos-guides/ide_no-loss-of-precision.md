@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-loss-o
 title: "@typescript-eslint/no-loss-of-precision"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-loss-of-precision
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:09+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:3092b20b70d5d1ff46c9a97dc0a9e43e46b9b14c85fc150c225d97eab23f91e9
+scraped_at: 2026-11-12T09:52:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:44fda4c0e73c78465b0d408f82b11afe57825b57e53cf990e11dcc93c9f36eb9
 ---
 
 禁止使用失去精度的字面数字。
@@ -54,4 +54,4 @@ export const f = 0X2_000000000_0001;
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

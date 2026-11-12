@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-genera
 title: 消息摘要计算SHA256(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 消息摘要计算 > 消息摘要计算SHA256(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:38+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:51:34+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:92d37622eb3ae513abf8ee9d489f6274b2bf1ab358c8ea8644f4ee0c4d46e2e9
 ---
 

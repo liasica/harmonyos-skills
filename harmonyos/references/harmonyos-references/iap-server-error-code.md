@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-serve
 title: REST API错误码
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > REST API错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:57+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:011b32ac00e2d72ad6929adec3b57e3156ec8d688d598b37fa57bca2b31c4cd7
+scraped_at: 2026-11-12T09:57:22+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:826d16848092aa8be0c539978db3f60b72d8fbbe286182e49d5d30503d96115b
 ---
 
 **说明** 
@@ -15,7 +15,7 @@ content_hash: sha256:011b32ac00e2d72ad6929adec3b57e3156ec8d688d598b37fa57bca2b31
 | 值 | MSG | 描述 | 解决方法 |
 | --- | --- | --- | --- |
 | 0 | IAP\_RESPONSE\_RESULT\_OK | 成功。 | 不涉及。 |
-| 1001880005 | IAP\_APP\_IAP\_NOT\_ACTIVATED | App的IAP功能未打开。 | 请到[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)打开应用内支付服务开关。 |
+| 1001880005 | IAP\_APP\_IAP\_NOT\_ACTIVATED | App的IAP功能未打开。 | 请到[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)打开应用内支付服务开关。 |
 | 1001880006 | IAP\_RESPONSE\_RESULT\_ERROR | API操作期间发生致命错误。 | 请参见响应中的错误信息。 |
 | 1001880008 | IAP\_RESPONSE\_RESULT\_ITEM\_NOT\_OWNED | 由于未拥有该商品，查询/确认发货失败。 | 确保已经成功购买该商品，且接口的传入参数正确，再调用查询、确认发货等接口。 |
 | 1001880009 | IAP\_RESPONSE\_RESULT\_ITEM\_CONSUMED\_OR\_ACKNED | 消耗型/非续期订阅商品已经确认发货，不能再次确认发货。非消耗型商品只能购买一次，发货一次。 | 请检查为何存在重复调用，进一步优化项目逻辑，如需要流程确认和建议，请联系华为支撑人员。 |

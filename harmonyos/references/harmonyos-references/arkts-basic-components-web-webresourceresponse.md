@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-bas
 title: Class (WebResourceResponse)
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > ArkTS 组件 > Web > Class (WebResourceResponse)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:28+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:055ab83cb771ab2d69991191f641a1ad1d60a023e368df14c55d26b4105b3d85
+scraped_at: 2026-11-12T09:55:00+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7b9aae628f7bf3cbb09b833a3a35b0028e0fd12258de5fc6bed82ca0c3d04e80
 ---
 
 WebResourceResponse是Web组件中表示HTTP响应并允许自定义网页资源响应的类。它在onHttpErrorReceive等事件中向应用提供服务器返回响应的状态码、状态描述、响应头、响应数据、编码、MIME类型等信息；在资源请求拦截场景中允许应用自定义响应的状态码、状态描述、响应头、响应数据、编码、MIME类型及数据就绪状态，从而由应用接管特定资源的返回内容。示例代码参考[onHttpErrorReceive事件](arkts-basic-components-web-events.md#onhttperrorreceive)。
@@ -148,7 +148,55 @@ setResponseData(data: string | number | Resource | ArrayBuffer): void
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| data | string | number | [Resource](ts-types.md#resource) | ArrayBuffer11+ | 是 | 要设置的资源响应数据。string表示HTML格式的字符串。number表示文件句柄，此句柄由系统的Web组件负责关闭。Resource表示应用rawfile目录下文件资源。ArrayBuffer表示资源的原始二进制数据。 |
+| data | string | number | [Resource](ts-types.md#resource) | ArrayBuffer11+ | 是 | 要设置的资源响应数据。string表示HTML格式的字符串。number表示文件句柄，此句柄由系统的Web组件负责关闭。Resource表示应用rawfile目录下文件资源（该接口不支持根据Resource对象获取HSP资源）。ArrayBuffer表示资源的原始二进制数据。 |
+
+## setResponseBody
+
+setResponseBody(data: string | number | Resource | ArrayBuffer): void
+
+设置资源响应数据。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Web.Webview.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| data | string | number | [Resource](ts-types.md#resource) | ArrayBuffer | 是 | 要设置的资源响应数据。string表示HTML格式的字符串。number表示文件句柄，此句柄由系统的Web组件负责关闭。Resource表示应用rawfile目录下文件资源（该接口支持根据Resource对象获取HSP资源）。ArrayBuffer表示资源的原始二进制数据。 |
+
+**示例：**
+
+```ts
+// xxx.ets
+import { webview } from '@kit.ArkWeb';
+
+@Entry
+@Component
+struct Index {
+  controller: webview.WebviewController = new webview.WebviewController();
+  responseWeb: WebResourceResponse = new WebResourceResponse();
+
+  build() {
+    Column() {
+      Web({ src: 'https://www.example.com', controller: this.controller})
+        .onInterceptRequest((event) => {
+          this.responseWeb.setResponseBody("<!DOCTYPE html><html><body><h1>Hello, World</h1></body></html>");
+          this.responseWeb.setResponseEncoding('utf-8');
+          this.responseWeb.setResponseMimeType('text/html');
+          this.responseWeb.setResponseCode(200);
+          this.responseWeb.setReasonMessage('OK');
+          return this.responseWeb;
+        })
+    }
+    .height('100%')
+    .width('100%')
+  }
+}
+```
 
 ## setResponseEncoding9+
 
@@ -228,7 +276,7 @@ setResponseIsReady(IsReady: boolean): void
 
 **说明** 
 
-* 在资源请求拦截场景中，应先调用setResponseData()、setResponseEncoding()、setResponseMimeType()、setResponseHeader()、setResponseCode()、setReasonMessage()等方法设置响应的各个属性。最后调用setResponseIsReady(true)来触发资源返回。
+* 在资源请求拦截场景中，应先调用[setResponseData](arkts-basic-components-web-webresourceresponse.md#setresponsedata9)、[setResponseBody](arkts-basic-components-web-webresourceresponse.md#setresponsebody)、[setResponseEncoding](arkts-basic-components-web-webresourceresponse.md#setresponseencoding9)、[setResponseMimeType](arkts-basic-components-web-webresourceresponse.md#setresponsemimetype9)、[setResponseHeader](arkts-basic-components-web-webresourceresponse.md#setresponseheader9)、[setResponseCode](arkts-basic-components-web-webresourceresponse.md#setresponsecode9)、[setReasonMessage](arkts-basic-components-web-webresourceresponse.md#setreasonmessage9)等方法设置响应的各个属性。最后调用setResponseIsReady(true)来触发资源返回。
 * 异步数据场景：需先调用setResponseIsReady(false)，待数据准备好后调用setResponseData()等设置方法，最后调用setResponseIsReady(true)来触发资源返回。
 * 如果不正确设置调用顺序，可能导致XMLHttpRequest同步请求阻塞。
 

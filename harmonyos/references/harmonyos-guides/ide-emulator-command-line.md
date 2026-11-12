@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-
 title: 通过命令行使用模拟器
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 使用模拟器运行应用 > 通过命令行使用模拟器
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:43:27+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:0617a950537b796e3ac1be4412370eb00be6ce68e728002870f19eaa20c287d8
+scraped_at: 2026-11-12T09:53:03+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:81dc859f550a03fd3f99889bc358f88630f70287847c219a15276524721b47e0
 ---
 
 除了在DevEco Studio的设备管理中使用模拟器外，开发者还可以通过Emulator命令行使用模拟器，支持Windows、macOS和Linux平台，Linux平台的使用方式请参考[模拟器工具（Emulator）](ide-commandline-emulator.md)。
@@ -156,7 +156,7 @@ Emulator -create {模拟器名称} -deviceType {模拟器类型} -osVersion {模
 | -osVersion | 必选参数，指定模拟器镜像版本。  如果是release版本，和下载镜像的-osVersion参数一致，例如"HarmonyOS 6.0.1(21)"。如果不是release版本，需要在DevEco Studio中创建模拟器时查看，例如"HarmonyOS 6.0.2(22) Beta1"。 |
 | -instancePath/-path | 可选参数，指定模拟器实例路径。如果不指定，默认使用DevEco Studio中的模拟器实例路径。 |
 | -imageRoot | 可选参数，指定模拟器镜像路径。如果不指定，默认使用DevEco Studio中的模拟器镜像路径。 |
-| -screenProfile | 可选参数，指定模拟器的设备型号，如"Mate 70 Pro"，支持的设备型号可通过[screenProfileList命令](ide-emulator-command-line.md#section3480544193216)查询。如果不指定，默认使用当前产品类型最新的设备型号。  如同时设置了-screen参数，以-screen参数为准。  仅在支持自定义屏幕的模拟器类型中可用，具体请参考[自定义模拟器屏幕配置](ide-emulator-customize-screen-configuration.md)。 |
+| -screenProfile | 可选参数，指定模拟器的设备型号，如"Mate 70 Pro"，支持的设备型号可通过[screenProfileList命令](ide-emulator-command-line.md#section3480544193216)查询。如果不指定，默认使用当前产品类型最新的设备型号。  如同时设置了-screen参数，以-screen参数为准。 |
 | -screen | 可选参数，用于自定义模拟器屏幕配置，包括屏幕尺寸、分辨率、DPI，格式为"宽度(px) 高度(px) DPI 屏幕对角线长度(inch)"，如-screen "1316 2832 560 6.9"。  如果是双折叠模拟器，需要输入2组屏幕参数，分别对应展开态和折叠态屏幕，例如-screen "2200 2480 480 7.8" "1080 2480 480 6.4"。  仅在支持自定义屏幕的模拟器类型中可用，具体请参考[自定义模拟器屏幕配置](ide-emulator-customize-screen-configuration.md)。 |
 | -storage | 可选参数，模拟器存储空间，可选范围2-1023（单位G），默认6G。  从26.0.0版本开始，参数可选范围为2-100（单位G）。 |
 | -memory | 可选参数，模拟器运行内存，可选范围2-32（单位G），默认4G。 |
@@ -244,7 +244,7 @@ Emulator -list -details
 ## 启动模拟器
 
 ```bash
-Emulator -start {模拟器名称} -path {模拟器实例路径} -imageRoot {模拟器镜像路径} -hdcport {hdc端口号} -bootMode {启动方式} -noWindow
+Emulator -start {模拟器名称} -path {模拟器实例路径} -imageRoot {模拟器镜像路径} -hdcport {hdc端口号} -bootMode {启动方式} -noWindow -streamOutput
 ```
 
 **参数：**
@@ -257,6 +257,7 @@ Emulator -start {模拟器名称} -path {模拟器实例路径} -imageRoot {模�
 | -hdcport | 可选参数，指定hdc端口号，支持范围10000-16555。从DevEco Studio 6.0.1 Beta1版本开始支持。 |
 | -bootMode | 可选参数，指定模拟器启动方式，从DevEco Studio 6.1.0 Release版本开始支持。  如果不指定，则根据创建时指定的方式启动，创建时选择了Quick Boot或命令行创建模拟器时添加了参数-hotBoot true，则启动方式为snapshot，否则按coldboot启动。   * coldboot（冷启动）：以开机启动的方式启动，如未清除数据，则启动时会保留上次使用的数据，例如安装的应用、上传的文件等。 * snapshot（热启动）：启动时加载上次关闭时保存的快照，启动后会恢复至上次关闭时的状态。使用此参数时，需要确保创建模拟器时选择Quick Boot，或命令行创建模拟器时添加参数-hotBoot true。 * reset：清除数据后以开机启动的方式启动。 |
 | -noWindow | 可选参数，使用无界面方式启动模拟器。针对无图形界面的Linux环境，该参数必选。从26.0.0版本开始支持。 |
+| -streamOutput | 可选参数，打开模拟器共享内存写入能力，使用方式详见[获取模拟器实时画面数据](ide-emulator-video.md)。从26.0.1版本开始支持。 |
 
 **示例：**
 
@@ -474,7 +475,7 @@ Emulator -instance {模拟器名称} -foldedState {折叠开合状态}
 | 参数名 | 说明 |
 | --- | --- |
 | -instance | 必选参数，指定模拟器名称。 |
-| -foldedState | 必选参数，折叠开合场景化命令，控制折叠设备状态切换。支持以下状态：   * 双折叠设备、Pura X Max：open | half-open | close * 阔折叠设备（Pura X Max除外）：open | close * 折叠2in1设备：open | vertical-open | half-open | close * 三折叠设备：single | double | triple | left-folded-right-half-folded | left-half-folded-right-expanded | left-expanded-right-folded | left-half-folded-right-folded | left-expanded-right-half-folded | left-half-folded-right-half-folded |
+| -foldedState | 必选参数，折叠开合场景化命令，控制折叠设备状态切换。支持以下状态：   * 双折叠设备、Pura X Max：open | half-open | close * 阔折叠设备（Pura X Max除外）：open | close * 折叠2in1设备：open | vertical-open | half-open | close * 三折叠Mate XT设备：single | double | triple | left-folded-right-half-folded | left-half-folded-right-expanded | left-expanded-right-folded | left-half-folded-right-folded | left-expanded-right-half-folded | left-half-folded-right-half-folded * 三折叠Mate XT2设备：single | triple | left-expanded-right-folded | left-folded-right-expanded | left-expanded-right-half-folded | left-half-folded-right-expanded | left-half-folded-right-half-folded | left-half-folded-right-folded |
 
 **示例：**
 
@@ -485,7 +486,7 @@ Emulator -instance "Mate X7" -foldedState half-open
 ### 截屏
 
 ```bash
-Emulator -instance {模拟器名称} -screenshot -screenshotPath {截屏保存路径}
+Emulator -instance {模拟器名称} -screenshot -screenshotPath {截屏保存路径} -screenid {屏幕id}
 ```
 
 **参数：**
@@ -495,11 +496,12 @@ Emulator -instance {模拟器名称} -screenshot -screenshotPath {截屏保存�
 | -instance | 必选参数，指定模拟器名称。 |
 | -screenshot | 必选参数，截屏场景化命令，对模拟器界面进行截屏，可通过-screenshotPath参数指定截屏保存路径。如不指定则保存在默认路径下，默认路径可通过模拟器工具栏-设置进行修改。 |
 | -screenshotPath | 可选参数，指定截屏保存路径，与-screenshot命令搭配使用，单次有效，不会保存到默认路径中。 |
+| -screenid | 可选参数，对指定的屏幕进行截屏，适用于模拟器多屏场景，0~3对应主屏和3个副屏。不指定id或指定错误id时，默认对模拟器主屏进行截屏。从26.0.1版本开始支持。 |
 
 **示例：**
 
 ```bash
-Emulator -instance "Mate 80 Pro" -screenshot -screenshotPath "D:\"
+Emulator -instance "Mate 80 Pro" -screenshot -screenshotPath "D:\" -screenid 1
 ```
 
 ### 电池
@@ -704,4 +706,75 @@ Emulator -instance {模拟器名称} -fill {控件ID} {输入内容}
 
 ```bash
 Emulator -instance "Mate 80 Pro" -fill "10 Hello,World"
+```
+
+### 使用HiCar能力
+
+从26.0.1版本开始，支持使用HiCar能力。
+
+```bash
+Emulator -instance {模拟器名称} -hicar {list/模板序号/分辨率/off}
+Emulator -instance {模拟器名称} -hicar customize -screen {屏幕参数}
+```
+
+**参数：**
+
+| 参数名 | 说明 |
+| --- | --- |
+| -instance | 必选参数，指定模拟器名称。 |
+| -hicar | 必选参数，通过命令行使用HiCar能力。支持以下取值：   * list：查询可用的HiCar屏幕模板，包括模板序号和分辨率。 * 模板序号：根据模板序号创建HiCar屏幕，模板序号可通过list查询。 * 分辨率：根据分辨率创建HiCar屏幕。分辨率可通过list查询。 * customize：创建自定义的HiCar屏幕，必须搭配-screen使用。 * off：关闭HiCar。 |
+| -screen | 可选参数，必须搭配-hicar customize使用，用于自定义HiCar屏幕配置，包括屏幕尺寸、分辨率、DPI，格式为"宽度(px) 高度(px) DPI 屏幕对角线长度(inch)"，如-hicar customize -screen "1920 1080 200 15.6"。 |
+
+**示例：**
+
+```bash
+Emulator -instance "Mate 80 Pro" -hicar list
+Emulator -instance "Mate 80 Pro" -hicar "1920*720"
+Emulator -instance "Mate 80 Pro" -hicar 2
+Emulator -instance "Mate 80 Pro" -hicar off
+Emulator -instance "Mate 80 Pro" -hicar customize -screen "1920 1080 200 15.6"
+```
+
+### 设置界面语言
+
+从26.0.1版本开始，支持设置界面语言，即模拟器工具栏语言。
+
+```bash
+Emulator -instance {模拟器名称} -uiLanguage {0~1/语言名称}
+```
+
+**参数：**
+
+| 参数名 | 说明 |
+| --- | --- |
+| -instance | 必选参数，指定模拟器名称。 |
+| -uiLanguage | 必选参数，设置模拟器的界面语言，可通过语言序号或语言名称进行设置。具体支持语言如下：   * 简体中文：语言序号0，名称Chinese、zh * 英文：语言序号1，名称English、en |
+
+**示例：**
+
+```bash
+Emulator -instance "Mate 80 Pro" -uiLanguage 1
+Emulator -instance "Mate 80 Pro" -uiLanguage English
+```
+
+### 设置镜像语言
+
+从26.0.1版本开始，支持设置镜像语言。
+
+```bash
+Emulator -instance {模拟器名称} -osLanguage {0~8/语言名称}
+```
+
+**参数：**
+
+| 参数名 | 说明 |
+| --- | --- |
+| -instance | 必选参数，指定模拟器名称。 |
+| -osLanguage | 必选参数，设置模拟器的镜像语言，可通过语言序号或语言名称进行设置。具体支持语言如下：   * 简体中文：语言序号0，名称Chinese、zh * 英文：语言序号1，名称English、en * 繁体中文：语言序号2，名称ChineseTraditional 、zht * 阿拉伯文：语言序号3，名称Arabic、ar * 西班牙文：语言序号4，名称Spanish 、es * 俄文：语言序号5，名称Russian 、ru * 日文：语言序号6，名称Japanese 、ja * 韩文：语言序号7，名称Korean 、ko * 法文：语言序号8，名称French、fr |
+
+**示例：**
+
+```bash
+Emulator -instance "Mate 80 Pro" -osLanguage 1
+Emulator -instance "Mate 80 Pro" -osLanguage zh
 ```

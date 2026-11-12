@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/in-app-hsp
 title: HSP
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 应用程序包基础知识 > 应用程序包开发与使用 > HSP
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:48+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:50:55+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:cff82fedcc1b84fda76aef00ae99f0f1267a4d70c2df3b25c752d948baffa683
 ---
 

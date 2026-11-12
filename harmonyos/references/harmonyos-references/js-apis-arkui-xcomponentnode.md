@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: XComponentNode
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 已停止维护的接口 > XComponentNode
 category: harmonyos-references
-scraped_at: 2026-11-04T08:32:45+08:00
+scraped_at: 2026-11-12T09:54:02+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:3e5dc13caecd6c42273aeab1d4b47b3bfd0120187eb160d2d8672f38463edeb2
+content_hash: sha256:9a4f436e433684f2d5deb6568ab903a113fe2334b489f9d40919677b9993ca78
 ---
 
 提供XComponent节点XComponentNode，表示组件树中的[XComponent](ts-basic-components-xcomponent.md)组件，用于[EGL](egl.md)/[OpenGL ES](opengles.md)渲染和媒体数据写入，并支持动态修改节点渲染类型，适用于需要在ArkUI组件树中嵌入Native自渲染内容的场景。
@@ -158,4 +158,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c1/v3/DVrHvznGQ72jU20by2lR7g/zh-cn_image_0000002809011681.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/QSaB_bq0Rh2OSVmh6dyOtw/zh-cn_image_0000002786360950.jpg)

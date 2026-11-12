@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hp-arkui-
 title: "@performance/hp-arkui-wrap-waterflow-if-else-footer（已下线）"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/hp-arkui-wrap-waterflow-if-else-footer（已下线）
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:12+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:808fbd55debc7b91004955b410af3cac95186c0c5ada1cd50911df3f1ecb5dc1
+scraped_at: 2026-11-12T09:52:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c65061bb9e9d2552855c7dd52f5d25a6f2dca1ee887f2d8a7cebe8b68e4da691
 ---
 
 建议使用容器包裹waterflow中footer的if-else逻辑。
@@ -193,4 +193,4 @@ struct ReusableFlowItem {
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

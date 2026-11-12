@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-key-e
 title: 服务端关键事件通知
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > REST API > 服务端关键事件通知
 category: harmonyos-references
-scraped_at: 2026-11-04T08:37:04+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:863899af3a749589108562389224f40afbba60e098e875bbe0bef8d71de95458
+scraped_at: 2026-11-12T09:57:22+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:74e5ee0d4ecbbadecc1cac03462a9a1670ecafad12be1f970ddf806722e034d5
 ---
 
-如果接入了IAP Kit订单/订阅功能，建议在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站[配置通知接收地址](../harmonyos-guides/iap-set-necessary-parameters.md#配置订单订阅通知接收地址)，用于接收IAP服务器发送的关键事件通知。IAP关键事件通知版本只支持v3。
+如果接入了IAP Kit订单/订阅功能，建议在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)网站[配置通知接收地址](../harmonyos-guides/iap-set-necessary-parameters.md#配置订单订阅通知接收地址)，用于接收IAP服务器发送的关键事件通知。IAP关键事件通知版本只支持v3。
 
 **说明** 
 
@@ -20,7 +20,7 @@ content_hash: sha256:863899af3a749589108562389224f40afbba60e098e875bbe0bef8d71de
 
 ## 场景描述
 
-如果在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)申请支付服务时提前[配置通知接收地址](../harmonyos-guides/iap-set-necessary-parameters.md#配置订单订阅通知接收地址)，并且通知版本设置为v3，用户购买消耗型/非消耗型/自动续期订阅/非续期订阅商品后，IAP服务器会在某些关键事件发生时调用此接口通知已配置的服务器。
+如果在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)申请支付服务时提前[配置通知接收地址](../harmonyos-guides/iap-set-necessary-parameters.md#配置订单订阅通知接收地址)，并且通知版本设置为v3，用户购买消耗型/非消耗型/自动续期订阅/非续期订阅商品后，IAP服务器会在某些关键事件发生时调用此接口通知已配置的服务器。
 
 消耗型/非消耗型/非续期订阅商品主要涉及的场景如下：
 
@@ -57,7 +57,7 @@ content_hash: sha256:863899af3a749589108562389224f40afbba60e098e875bbe0bef8d71de
 
 关键事件通知处理流程建议如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/4TyC4FLaTQy1gtNgLxB97Q/zh-cn_image_0000002809013185.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/BhTx17QORh2ST1zOfxxZCQ/zh-cn_image_0000002786362180.png)
 
 1. IAP服务器发送订单/订阅关键事件通知。
 2. 应用服务器收到通知请求后，从通知中获取购买Token。
@@ -70,7 +70,7 @@ content_hash: sha256:863899af3a749589108562389224f40afbba60e098e875bbe0bef8d71de
 
 不允许开发者服务器设置IP允许清单用于限制华为侧的出口IP地址。IP允许清单本身并不能提高安全性且会给业务发展带来约束，在消息层面已有更安全的JWS签名机制条件下，没有存在价值。不遵守该约定而导致的后果将由开发者自行承担。
 
-必须在开发前在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中配置开发者服务器的回调地址，地址必须支持HTTPS协议且具有合法商用证书，出于安全考虑，cipher需要支持ECDHE-RSA-AES128-GCM-SHA256、ECDHE-ECDSA-AES128-GCM-SHA256、ECDHE-RSA-AES256-GCM-SHA384或ECDHE-ECDSA-AES256-GCM-SHA384中至少一种，否则无法正常接收通知消息。
+必须在开发前在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)中配置开发者服务器的回调地址，地址必须支持HTTPS协议且具有合法商用证书，出于安全考虑，cipher需要支持ECDHE-RSA-AES128-GCM-SHA256、ECDHE-ECDSA-AES128-GCM-SHA256、ECDHE-RSA-AES256-GCM-SHA384或ECDHE-ECDSA-AES256-GCM-SHA384中至少一种，否则无法正常接收通知消息。
 
 华为IAP关键事件通知仅通过IPv4链路发送，请确保回调地址支持IPv4访问。若回调地址仅支持IPv6，将无法正常接收通知消息。
 

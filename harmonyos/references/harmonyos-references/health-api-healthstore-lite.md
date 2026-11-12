@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-ap
 title: healthStore (运动健康数据服务)(Lite)
 breadcrumb: API参考 > 应用服务 > Health Service Kit（运动健康服务） > ArkTS API > healthStore (运动健康数据服务)(Lite)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:17+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:dbbcefc54a55873a692ff2a8277e72cb6bf3916efef04680c3cc763db50c6906
+scraped_at: 2026-11-12T09:57:19+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:15c338fdf4377f40312cd726c0a69f3e432c76b0e46a32577055fe5db835bf92
 ---
 
 本模块提供运动健康数据服务。
@@ -307,7 +307,7 @@ saveData(exerciseSequence: ExerciseSequence): void
 
 **说明** 
 
-上述接口调用前，需先使用[start](health-api-healthservice-lite.md#workoutstart)方法确保运动联动已经开启。
+上述接口调用前，需先使用[start](health-api-healthservice-lite.md#start)方法确保运动联动已经开启。
 
 **系统能力：** SystemCapability.Health.HealthStore.Lite
 
@@ -346,8 +346,8 @@ let healthSequence = {
   // insertDataSource插入数据源接口返回的DataSourceId
   dataSourceId: 'xxx',
   localDate: '09/26/2023',
-  startTime: 1695740400000,  // 2023-10-23 14:00:00
-  endTime: 1695769200000,   // 2023-10-23 14:30:00
+  startTime: 1695740400000,  // 2023-9-26 23:00:00
+  endTime: 1695769200000,   // 2023-9-27 7:00:00
   timeZone: '+0800',
   modifiedTime: 1695769200000,
   exerciseType: healthStore.exerciseSequenceHelper.badminton.EXERCISE_TYPE,
@@ -410,7 +410,7 @@ readData<T extends ExerciseSequence>(request: ExerciseSequenceReadRequest, callb
 ```javascript
 import healthStore from '@hms.health.store';
 
-// 查询跑步记录
+// 查询羽毛球记录
 const startTime = 1698040800000; // 2023-10-23 14:00:00
 const endTime = 1698042600000; // 2023-10-23 14:30:00
 

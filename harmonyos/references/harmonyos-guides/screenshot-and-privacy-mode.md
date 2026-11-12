@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screenshot-an
 title: 截图与隐私模式 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 其他开发场景 > 截图与隐私模式 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:14+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:51:21+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:4dae106c77670b90efcbe1b7af4f6de5fdefbec1a72e8c2fc09d4633d77f65d4
 ---
 

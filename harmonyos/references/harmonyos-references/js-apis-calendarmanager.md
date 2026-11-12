@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-c
 title: "@ohos.calendarManager (日程管理能力)"
 breadcrumb: API参考 > 应用服务 > Calendar Kit（日历服务） > ArkTS API > @ohos.calendarManager (日程管理能力)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:11+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:cafa5b9c25aee274684d1f6972b8d5051be8f68c8e8db19e09d76536e29c8e8e
+scraped_at: 2026-11-12T09:57:14+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4690474a59feb73823e6455917ec1786fb22db86ac17e75b2c5480a95f88ba27
 ---
 
 本模块提供日历与日程管理能力，包括日历和日程的创建、删除、修改、查询等。
@@ -140,7 +140,7 @@ export default class EntryAbility extends UIAbility {
 
 createCalendar(calendarAccount: CalendarAccount, callback: AsyncCallback<Calendar>): void
 
-根据日历账户信息，创建一个Calendar对象，使用callback异步回调。
+根据日历账户信息，创建一个Calendar对象，若创建的账户已存在（与CalendarAccount的name和type相同的账户已被创建），则返回之前的Calendar对象，使用callback异步回调。
 
 **需要权限**：
 
@@ -1254,7 +1254,7 @@ calendarMgr?.getCalendar(async (err: BusinessError, data:calendarManager.Calenda
 
 updateEvent(event: Event, callback: AsyncCallback<void>): void
 
-更新日程，入参[Event](js-apis-calendarmanager.md#event)需要填写被修改日程的id，使用callback异步回调。
+更新日程，入参[Event](js-apis-calendarmanager.md#event)需要填写被修改日程的id，否则无法修改日程，使用callback异步回调。
 
 **系统能力**： SystemCapability.Applications.CalendarData
 
@@ -1969,7 +1969,7 @@ calendarMgr?.getCalendar(async (err: BusinessError, data: calendarManager.Calend
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | enableReminder | boolean | 否 | 是 | 是否打开Calendar下所有Event提醒能力。当取值为true时，该Calendar下所有Event具备提醒能力；当取值为false时，不具备提醒能力，默认具备提醒能力。 |
-| color | number | string | 否 | 是 | 设置Calendar颜色。值为number时取值范围为0x000001至0xFFFFFF或0x00000001至0xFFFFFFFF，值为string时长度为7或9，如'#FFFFFF'，'#FFFFFFFF'。不设置时默认值为0xFF0A59F7，输入undefined或错误值时抛异常。 |
+| color | number | string | 否 | 是 | Calendar颜色。值为number时取值范围为0x000001至0xFFFFFF或0x00000001至0xFFFFFFFF，超出取值范围会导致颜色值与颜色不匹配，值为string时长度为7或9，如'#FFFFFF'，'#FFFFFFFF'。  输入0或'#000000'时显示日历主题颜色朱彤色，输入undefined或错误值时抛异常。  针对搭载HarmonyOS 5.1.0以下版本的设备，默认颜色为黑色。  针对搭载HarmonyOS 5.1.0至HarmonyOS 7.0.0（不含）版本的设备，默认颜色为红色。  针对搭载HarmonyOS 7.0.0及以上版本的设备，默认颜色值为0xFF0A59F7。 |
 
 ## Event
 
@@ -1986,13 +1986,13 @@ calendarMgr?.getCalendar(async (err: BusinessError, data: calendarManager.Calend
 | startTime | number | 否 | 否 | 日程开始时间，需要13位时间戳。全天日程时，该字段转换为传入日期00:00对应的时间戳。当调用[getEvents()](js-apis-calendarmanager.md#getevents-2)查询日程时，默认查询到此字段。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | endTime | number | 否 | 否 | 日程结束时间，需要13位时间戳。全天日程时，该字段转换为传入日期24:00对应的时间戳。当调用[getEvents()](js-apis-calendarmanager.md#getevents-2)查询日程时，默认查询到此字段。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | isAllDay | boolean | 否 | 是 | 是否为全天日程。当取值为true时，说明为全天日程；当取值为false时，说明不是全天日程，默认为非全天日程。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| attendee | [Attendee](js-apis-calendarmanager.md#attendee)[] | 否 | 是 | 会议日程参与者。不填时，默认为null。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
+| attendee | [Attendee](js-apis-calendarmanager.md#attendee)[] | 否 | 是 | 会议日程参与者。不填时，默认为undefined。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | timeZone | string | 否 | 是 | 日程时区。长度建议为[0,5000]字符，不填或异常值时，默认为当前所在时区，当需要创建与当前不一样的时区时，可填入对应的时区。可通过[systemDateTime.getTimezone()](js-apis-date-time.md#systemdatetimegettimezone)获取当前系统时区。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | reminderTime | number[] | 否 | 是 | 日程提醒时间，单位为分钟。填写x分钟，即距开始时间提前x分钟提醒，不填时，默认为不提醒。为负值时表示延期多长时间提醒。全天日程时此字段表示上午9:00前x分钟提醒，可取负值，负值表示上午9:00后多长时间提醒。若日程在创建时已过了提醒时间，但未超过结束时间，日程创建成功后会立即提醒。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | recurrenceRule | [RecurrenceRule](js-apis-calendarmanager.md#recurrencerule) | 否 | 是 | 日程重复规则，设置了此字段的日程为重复日程。不填时，默认为非重复日程，默认值为undefined。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | description | string | 否 | 是 | 日程描述。长度建议为[0,5000]字符，不填时，默认为空字符串。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | service | [EventService](js-apis-calendarmanager.md#eventservice) | 否 | 是 | 日程服务。不填时，默认没有一键服务。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
-| identifier12+ | string | 否 | 是 | 写入方可指定日程唯一标识。长度建议为[0,5000]字符，不填时，默认为null。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| identifier12+ | string | 否 | 是 | 写入方可指定日程唯一标识。长度建议为[0,5000]字符，不填时，默认为空字符串。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | isLunar12+ | boolean | 否 | 是 | 是否为农历日程。当取值为true时，说明为农历日程；当取值为false时，说明不是农历日程，默认为非农历日程。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | instanceStartTime18+ | number | 否 | 是 | 日程实例开始时间，需要13位时间戳，默认值为undefined。当调用[addEvent()](js-apis-calendarmanager.md#addevent)、[addEvents()](js-apis-calendarmanager.md#addevents)创建日程或[getEvents()](js-apis-calendarmanager.md#getevents-2)查询日程时，不填写此参数。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
 | instanceEndTime18+ | number | 否 | 是 | 日程实例结束时间，需要13位时间戳，默认值为undefined。当调用[addEvent()](js-apis-calendarmanager.md#addevent)、[addEvents()](js-apis-calendarmanager.md#addevents)创建日程或[getEvents()](js-apis-calendarmanager.md#getevents-2)查询日程时，不填写此参数。  **元服务API：** 从API version 18开始，该接口支持在元服务中使用。 |
@@ -2263,7 +2263,7 @@ calendarMgr?.getCalendar(async (err: BusinessError, data:calendarManager.Calenda
 | expire | number | 否 | 是 | 重复周期截止日。格式为13位时间戳，不填时则日程无截止日期。  当expire与count和interval同时设置时，以先到达的限制条件及效果为准。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | count12+ | number | 否 | 是 | 重复日程的重复次数，取值为非负整数，浮点数输入将向下取整，不填时默认为0，表示不会限定重复次数，会一直重复。取值为负时，效果等同于取值为0。  当count与interval和expire同时设置时，以先到达的限制条件及效果为准。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | interval12+ | number | 否 | 是 | 重复日程的重复周期，取值为非负整数，浮点数输入将向下取整。  不填时默认为0，当取值为0、1或负值时，表示日程每天/周/月/年重复一次。  当interval与count和expire同时设置时，以先到达的限制条件及效果为准。  此属性与recurrenceFrequency重复规则相关，不同的重复规则下，表示的重复周期不同，以interval取2为例，分为以下几种情况：  每天重复时：表示日程每两天重复一次。  每周重复时：表示日程每两周重复一次。  每月重复时：表示日程每两月重复一次。  每年重复时：表示日程每两年重复一次。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
-| excludedDates12+ | number[] | 否 | 是 | 重复日程的排除日期，参数取值为时间戳格式，且时间戳必须精确匹配日程的开始时间（时分秒一致），否则会不生效，不填时，默认为空，表示没有排除的日期，0或负数为无效值，与空值效果相同。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
+| excludedDates12+ | number[] | 否 | 是 | 重复日程的排除日期，参数取值为时间戳格式，且时间戳必须精确匹配日程的开始时间（时分秒一致），否则会不生效，不填时，默认为空，表示没有排除的日期。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | daysOfWeek12+ | number[] | 否 | 是 | 按照一周第几天重复。不填时，默认为空，表示没有一周第几天重复的规则。范围为[1, 7]，对应周一到周日，其他值为无效值，与空值效果相同。该字段数组与其相关字段数组为一一对应关系，如weeksOfMonth为[1, 2, 3]，daysOfWeek为[1, 2, 3]，则表示按照每月的第一周的周一，第二周的周二，第三周的周三进行重复。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | daysOfMonth12+ | number[] | 否 | 是 | 按照一个月第几天重复。不填时，默认为空，表示没有一个月第几天重复的规则。范围为[1, 31]，[1, 31]对应1到31号，其他值为无效值，与空值效果相同。若当月没有29号、30号或31号，则29、30、31也为无效值。该字段数组与其相关字段数组为一一对应关系，如monthsOfYear为[1, 2, 3]，daysOfMonth为[1, 2, 3]，则表示按照一月一号，二月二号，三月三号进行重复。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | daysOfYear12+ | number[] | 否 | 是 | 按照一年第几天重复。不填时，默认为空，表示没有一年第几天重复的规则。范围为[1, 366]，[1, 366]表示一年的1到366天，其他值为无效值，与空值效果相同。若当年没有366天，366也为无效值。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
@@ -2302,7 +2302,9 @@ calendarMgr?.getCalendar(async (err: BusinessError, data:calendarManager.Calenda
 
 ## EventService
 
-日程服务。
+日程服务，
+
+一键服务日程的配置参数详见：[注册并管理一键服务日程](../harmonyos-guides/calendar-service.md)和[日历服务实践案例](../harmonyos-guides/calendarmanager-practice-developer.md)。非一键服务日程可不填。
 
 **元服务API：** 从API version 11开始，该接口支持在元服务中使用。
 

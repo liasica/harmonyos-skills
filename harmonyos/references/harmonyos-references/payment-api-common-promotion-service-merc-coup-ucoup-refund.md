@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-a
 title: 申请退券
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 通用接口 > 运营工具 > 商家券 > 用户券 > 申请退券
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:29+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:107a5ab479c9cf0d1aea65f68cb5c9a690473962e34ed33a963e512af7fbb06e
+scraped_at: 2026-11-12T09:57:36+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:73a7378bf062469e31979a66327b20df7dfe9686b24ac5b4f4e9894c61791577
 ---
 
 ## 功能介绍
@@ -72,7 +72,7 @@ Content-Type: application/json
 | sign | 是 | String | 签名信息，除“sign”字段以外的其他字段参与签名。 |
 | signType | 否 | String | 签名类型。华为支付生成签名字符串使用的算法，当前为SM2算法。 |
 | certNo | 否 | String | 签名所使用的证书编号。 |
-| refundTime | 是 | String | 微信退券成功的时间，格式为yyyy-MM-dd'T'HH:mm:ss.SSSZ，yyyy-MM-DD表示年月日，T出现在字符串中，表示time元素的开头，HH:mm:ss.SSS表示时分秒，Z为对应的时区。例如：2023-03-28T17:50:12.000+0800表示，北京时间2023年3月28日 17点50分12秒。注意：要使用必须传准确的UTC时间。 |
+| refundTime | 是 | String | 退券成功的时间，格式为yyyy-MM-dd'T'HH:mm:ss.SSSZ，yyyy-MM-DD表示年月日，T出现在字符串中，表示time元素的开头，HH:mm:ss.SSS表示时分秒，Z为对应的时区。例如：2023-03-28T17:50:12.000+0800表示，北京时间2023年3月28日 17点50分12秒。注意：要使用必须传准确的UTC时间。 |
 
 ## **响应示例**
 

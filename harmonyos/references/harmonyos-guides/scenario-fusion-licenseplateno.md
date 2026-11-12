@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/scenario-fusi
 title: 推荐车牌号场景
 breadcrumb: 指南 > 应用服务 > Scenario Fusion Kit（融合场景服务） > 智能填充服务 > 推荐车牌号场景
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:43+08:00
-doc_updated_at: 2026-09-01
-content_hash: sha256:98b0daf30f2226e3db2cd6b06dc3d68c3a258fedc80cbd8a1e179292f6ca49d4
+scraped_at: 2026-11-12T09:52:36+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:914e9264834fbf07bdbf0efa1e60e8fb45103072d446e1349dc9b7b49f3ecb69
 ---
 
 从5.1.0(18)开始，支持智能填充的推荐车牌号场景。
@@ -18,7 +18,7 @@ content_hash: sha256:98b0daf30f2226e3db2cd6b06dc3d68c3a258fedc80cbd8a1e179292f6c
 
 ## 效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/Z-1jwRxySbGFljg5WRxGUA/zh-cn_image_0000002809011269.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/5iQpF9OTToGgzyr-swfmcQ/zh-cn_image_0000002786520502.png)
 
 ## 示例代码
 
@@ -36,7 +36,7 @@ function extendStyles(value: string, width: number, height: number, active: bool
   .height(height)
   .borderWidth('3px')
   .borderColor(active ? Color.Blue : '#ccc')
-  .borderRadius(5)
+  .borderRadius(5);
 }
 
 @Entry
@@ -85,7 +85,8 @@ struct LicensePlate {
     }
     // 用户输入仅替换选定的输入框，而智能填充则替换所有输入框中的所有值。
     this.handleUserInput(inputData);
-    this.beforeValue = val;
+    this.inputText = this.getLicensePlate();
+    this.beforeValue = this.inputText;
   }
 
   getLicensePlate(): string {
@@ -108,7 +109,7 @@ struct LicensePlate {
     for (let i = 0; i < this.length; i++) {
       this.licensePlateVal[i] = i < value.length ? value[i] : this.licensePlateVal[i];
     }
-    this.activeIndex = Math.min(value.length + 1, this.length - 1);
+    this.activeIndex = Math.min(value.length, this.length - 1);
   }
 
   handleDelete() {
@@ -125,7 +126,7 @@ struct LicensePlate {
   }
 
   handleLicenseClick(screenX: number) {
-    for(let index = 0; index <= 7; index++) {
+    for (let index = 0; index < this.length; index++) {
       let id = index + this.licenseItemId;
       let position = this.getUIContext().getComponentUtils().getRectangleById(id);
       // 相对于屏幕的位置信息,单位px
@@ -164,18 +165,18 @@ struct LicensePlate {
 
         Stack({ alignContent: Alignment.BottomStart }) {
           Row() {
-            this.displayItem(0)
-            this.displayItem(1)
+            this.displayItem(0);
+            this.displayItem(1);
             Text('·')
               .fontSize(22)
               .fontWeight(600)
               .height(this.itemHeight)
-            this.displayItem(2)
-            this.displayItem(3)
-            this.displayItem(4)
-            this.displayItem(5)
-            this.displayItem(6)
-            this.displayItem(7)
+            this.displayItem(2);
+            this.displayItem(3);
+            this.displayItem(4);
+            this.displayItem(5);
+            this.displayItem(6);
+            this.displayItem(7);
           }
 
           TextInput({ text: $$this.inputText })
@@ -224,7 +225,7 @@ struct LicensePlate {
   build() {
 // ...
       Column() {
-        this.buildLicensePlateNumber()
+        this.buildLicensePlateNumber();
       }
 // ...
   }

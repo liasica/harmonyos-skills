@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-command-l
 title: 搭建流水线
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 搭建流水线
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:30+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:36fd87d850dd57f0a10891bfaa9497657bf1b88604c6443ea43511d8cacadb07
+scraped_at: 2026-11-12T09:53:12+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0f51825506929323d3993229c33a3a4ddbf9f559efe24d34f7e45648067850b3
 ---
 
 除了使用DevEco Studio一键式构建应用/元服务外，还可以使用命令行工具来调用Hvigor任务进行构建。通过命令行的方式构建应用或元服务，可用于构建CI（Continuous Integration）流水线，按照计划时间自动化地构建HAP/APP、签名、安装运行等操作。
@@ -48,7 +48,7 @@ content_hash: sha256:36fd87d850dd57f0a10891bfaa9497657bf1b88604c6443ea43511d8cac
    java -version
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/L5aY2t6GSzunbnvag6M2dg/zh-cn_image_0000002701662860.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/kkaMyvRFRm2evCIFMn3sew/zh-cn_image_0000002779566842.png)
 
 ### 获取命令行工具
 
@@ -59,39 +59,12 @@ content_hash: sha256:36fd87d850dd57f0a10891bfaa9497657bf1b88604c6443ea43511d8cac
    unzip commandline-tools-linux-x64-5.0.3.XXX.zip
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/SSYw8pxJSAm-NOopImO3Gw/zh-cn_image_0000002731382083.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/xqTdufYpQxaOxFmWxtp6Wg/zh-cn_image_0000002779406866.png)
 3. 将解压后所在的路径定义为COMMANDLINE\_TOOL\_DIR，在后续配置Node、hdc、hvigor、ohpm工具环境变量时使用。例如解压在/opt路径下。
 
    ```bash
    export COMMANDLINE_TOOL_DIR=/opt
    ```
-
-### 配置Node.js环境变量
-
-命令行工具包含了配套的Node.js，按照以下步骤配置环境变量。
-
-1. 配置Node.js环境变量。
-
-   ```bash
-   # 此处以Linux系统举例，不同系统Node.js路径不同，具体以实际路径为准
-   export NODE_HOME=${COMMANDLINE_TOOL_DIR}/command-line-tools/tool/node
-   export PATH=$PATH:$NODE_HOME/bin
-   ```
-
-   **说明** 
-
-   不同系统的Node.js所在路径不同，Windows存放在tool/node目录下，Linux和macOS存放在tool/node/bin目录下。
-2. 执行如下命令，查询Node.js版本信息，确认配置成功。
-
-   ```bash
-   node -v
-   ```
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/NI2slGjQQ2K79v6qffwvQw/zh-cn_image_0000002731542057.png)
-
-**说明** 
-
-建议使用命令行工具内置的Node.js，如需另行安装，推荐使用命令行工具配套的Node.js版本，具体配套关系请参考[DevEco Studio兼容性配套关系](../harmonyos-releases/ide-overview-releasenote.md)。
 
 ### 配置hdc环境变量
 
@@ -189,7 +162,6 @@ apt install -y libgl1-mesa-dev
    ```bash
    # 根据业务情况安装ohpm三方库依赖
    ohpm_install "${PROJECT_PATH}"
-   ...
    ```
 
 ### 执行Hvigor命令进行构建
@@ -220,14 +192,11 @@ hvigorw assembleApp --mode project -p product=default -p buildMode=debug --no-da
   ```json5
   // build-profile.json5文件
   {
-      "name": "default",
-      "compatibleSdkVersion": "26.0.0",
-      "runtimeOS": "HarmonyOS",
-      "buildOption": {
-        "strictMode": {
-          "caseSensitiveCheck" : true
-        }
+    "buildOption": {
+      "strictMode": {
+        "caseSensitiveCheck" : true
       }
+    }
   }
   ```
 * 如果在非daemon模式下，需要修改node内存配置，可在command-line-tools的hvigor/bin/hvigorw文件中取消第15行的注释，并配置对应的数值。如将node内存配置为10240，示例如下：
@@ -244,7 +213,7 @@ hvigorw assembleApp --mode project -p product=default -p buildMode=debug --no-da
 | 选项 | 说明 |
 | --- | --- |
 | -p buildMode={debug | release} | 采用debug/release模式进行编译构建。  缺省时：构建Hap/Hsp/Har时为debug模式，构建App时为release模式。  关于构建模式的详细说明，请参考[指定构建模式](ide-hvigor-compilation-options-customizing-guide.md#section192461528194916)。针对HAR构建，请参考[构建HAR](ide-hvigor-build-har.md)。 |
-| -p product={ProductName} | 指定product进行编译, 编译product下配置的module target。  缺省时：默认为default。 |
+| -p product={ProductName} | 指定product进行编译，编译product下配置的module target。  缺省时：默认为default。 |
 | -p module={ModuleName}@{TargetName} | 指定模块及target进行编译，可指定多个相同类型的模块进行编译，以逗号隔开；TargetName不指定时默认为default。  限制：此参数需要与--mode module参数搭配使用。  缺省时：执行AssembleHap任务会编译工程下所有模块，默认指定target为default。 |
 | -p ohos-test-coverage={true | false} | 执行测试框架代码覆盖率插桩编译。 |
 
@@ -456,9 +425,9 @@ main
      }
    }
    ```
-2. 先配置[环境变量](ide-command-line-building-app.md#section159168531288)，再打开[命令行工具](ide-commandline-get.md)，在文件夹下执行npm install命令，会生成node\_modules文件夹。
+2. 打开[命令行工具](ide-commandline-get.md)，在文件夹下执行npm install命令，会生成node\_modules文件夹。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/Yua8YdsRRWasuVnuB7xfWg/zh-cn_image_0000002731542053.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/cT-oXUZyTomvuBHtuIGciA/zh-cn_image_0000002779406862.png)
 3. 26.0.0及以上版本：将node\_modules文件夹和package.json文件拷贝到无网络电脑的C:\Users\*用户名目录*\.hvigor\wrapper\tools\x.x.x下（若当前无该目录，请手动创建），其中x.x.x是步骤一的pnpm版本号。
 
    26.0.0以下版本：将node\_modules文件夹和package.json文件拷贝到无网络电脑的C:\Users\*用户名目录*\.hvigor\wrapper\tools\下（若当前无该目录，请手动创建）。
@@ -481,7 +450,7 @@ main
    ```
 2. 打开[命令行工具](ide-commandline-get.md)，在文件夹下执行npm install命令，会生成node\_modules文件夹。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/55/v3/9Od4NCL8QKybtD0LGH4T9w/zh-cn_image_0000002701822784.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/qIIK3t9DSWC5bHq8tl7Ksg/zh-cn_image_0000002808766423.png)
 3. 将node\_modules文件夹拷贝到无网络电脑的工程根目录下。
 
 ### 安装ohpm依赖插件

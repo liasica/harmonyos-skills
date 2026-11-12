@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-code
 title: 代码生成/补全
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 代码编辑 > 代码生成/补全
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:33+08:00
+scraped_at: 2026-11-12T09:53:14+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:d55f9f4d57735fbc41d87b04ed9b62dba7538dc589ddaf39df83460afee69ef1
+content_hash: sha256:c7e78917fba87df0b90e2201a9118d2678a64d30359aeed12bf47b72824664c0
 ---
 
 ## 代码自动补全
 
 提供代码的自动补全能力，编辑器工具会分析上下文，并根据输入的内容，提示可补全的类、方法、字段和关键字的名称等，支持模糊匹配。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/lIOA12NOSBiCvYd4P2UzYg/zh-cn_image_0000002810630735.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/daS3bLdUSIqVNXhiy75qRQ/zh-cn_image_0000002810630735.gif)
 
 ## 快速生成get/set方法
 
@@ -20,7 +20,7 @@ content_hash: sha256:d55f9f4d57735fbc41d87b04ed9b62dba7538dc589ddaf39df83460afee
 
 将光标放置在当前类中，单击右键选择**生成...** **>** **Getter and Setter**，完成方法的快速生成。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/lx_MxWoVSgOa1Qk17pOcaw/zh-cn_image_0000002810630733.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/E-x-_mfeQwawgIdSe5eozQ/zh-cn_image_0000002810630733.gif)
 
 ## 代码后缀补全
 
@@ -30,18 +30,18 @@ content_hash: sha256:d55f9f4d57735fbc41d87b04ed9b62dba7538dc589ddaf39df83460afee
 
 当前后缀补全支持arg、await、else、fori、forin、forof、forr、if、instanceof、itin、log、not、notnull、null、par、return、switch、throw、try、typeof、typeofif、undef的联想。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/l79ZmO-oTt2GI3iNIfCM5g/zh-cn_image_0000002781471180.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/gyVHe74MRhOJdes77--Yrg/zh-cn_image_0000002781471180.png)
 
 例如在ArkTS代码的语句末尾输入.try并选择**try补全项**，可将语句自动添加到try代码块中，并生成catch代码块。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/a-Rcfp7tRdmOrKubAxsNgg/zh-cn_image_0000002781471182.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/pI65SLJjTjC6dtyf0-qTpQ/zh-cn_image_0000002781471182.gif)
 
 ## 生成版权
 
 编辑器支持为.ets文件快速添加版权信息。在文件任意位置单击右键并选择**生成...**，在弹窗中选择**版权**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/EGhcay_gTnWI-daiG-SEeg/zh-cn_image_0000002810750841.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/Hk2OjqOgTtCU74_8HEjZRg/zh-cn_image_0000002810750841.png)
 
 若未配置版权模板信息，请按照提示信息，在设置下的**编辑器 > 版权**面板中，勾选**版权文本**并填写版权信息，返回文件鼠标右键选择**生成 > 版权**，则会在当前文件上方生成版权信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/7m9agDdUSDqtOuYfWeKRiA/zh-cn_image_0000002781311248.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/f3jksU0jRMetHuTMgFx-nw/zh-cn_image_0000002781311248.png)

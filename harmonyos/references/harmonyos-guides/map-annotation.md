@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-annotatio
 title: 点注释
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 点注释
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:36+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8a4325a03f62b63889295264411a2d073507d866d7eda84224166c3bec7f34a2
+scraped_at: 2026-11-12T09:52:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:bc1c35a15a120abd547173e7684d80e4b0f11613d2ef7ce9c5a5313a65624e5b
 ---
 
 ## 场景介绍
@@ -19,7 +19,7 @@ content_hash: sha256:8a4325a03f62b63889295264411a2d073507d866d7eda84224166c3bec7
 
 [PointAnnotation](../harmonyos-references/map-map-pointannotation.md)有默认风格，同时也支持自定义。由于内容丰富，以下只展示一些基础功能的使用，详细内容可参见[接口文档](../harmonyos-references/map-map-pointannotation.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/R9ae-pt6TveYerK45r0iWg/zh-cn_image_0000002809051057.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/jQI2mWdWRmKM6BM-kTzUJw/zh-cn_image_0000002786360444.jpg "点击放大")
 
 ## 接口说明
 
@@ -54,7 +54,7 @@ content_hash: sha256:8a4325a03f62b63889295264411a2d073507d866d7eda84224166c3bec7
      private callback?: AsyncCallback<map.MapComponentController>;
      private mapEventManager?: map.MapEventManager;
      private pointAnnotation?: map.PointAnnotation;
-     aboutToAppear(): void {
+     async aboutToAppear(): Promise<void> {
        this.mapOptions = {
          position: {
            target: {
@@ -81,7 +81,7 @@ content_hash: sha256:8a4325a03f62b63889295264411a2d073507d866d7eda84224166c3bec7
              // 定义点注释的标题，数组长度最小为1，最大为3
              titles: [{
                // 定义标题内容
-               content: "南京夫子庙",
+               content: '南京夫子庙',
                // 定义标题字体颜色
                color: 0xFF000000,
                // 定义标题字体大小
@@ -94,7 +94,7 @@ content_hash: sha256:8a4325a03f62b63889295264411a2d073507d866d7eda84224166c3bec7
                fontStyle: mapCommon.FontStyle.ITALIC
              }],
              // 定义点注释的图标，图标存放在resources/rawfile
-             icon: "",
+             icon: 'icon.png',
              // 定义点注释是否展示图标
              showIcon: true,
              // 定义点注释的锚点在水平方向上的位置
@@ -136,7 +136,7 @@ content_hash: sha256:8a4325a03f62b63889295264411a2d073507d866d7eda84224166c3bec7
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4c/v3/uHliUkbwTQa37f-33yxKmA/zh-cn_image_0000002779851492.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b7/v3/4H18OnFsQoKgJNOf6U2exA/zh-cn_image_0000002815559865.jpg "点击放大")
 3. 在添加点注释之后，修改已经设置的点注释属性。
 
    ```typescript
@@ -187,7 +187,7 @@ this.pointAnnotation.setAnimation(animation);
 this.pointAnnotation.startAnimation();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/eKNcOveRRvaeqL7gkp_AUw/zh-cn_image_0000002779691524.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/7y9oQLgbTJGDmmBfPpMhxA/zh-cn_image_0000002815399949.gif "点击放大")
 
 ### 点注释标题动画
 
@@ -221,4 +221,4 @@ this.pointAnnotation.setTitleAnimation(animation);
 this.pointAnnotation.startTitleAnimation();
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/Ngoj0dcBTZS7_mDbTT4oIw/zh-cn_image_0000002809011145.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/11/v3/9P0yyWxlQfa9DX_-JCFLPA/zh-cn_image_0000002786520374.gif "点击放大")

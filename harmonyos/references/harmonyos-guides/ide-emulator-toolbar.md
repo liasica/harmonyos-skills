@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-emulator-
 title: 使用工具栏
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 使用模拟器运行应用 > 使用模拟器 > 使用工具栏
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:23:02+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:4aae88d6f3e0e27db64e3dbd938f6bce55fe5b2852e913eb697df747f98c69e2
+scraped_at: 2026-11-12T09:53:03+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d68e109002e0ef49163402d88965b8700b1de7eeb84871788d8e0c717bba1e9d
 ---
 
 工具栏上集成了模拟器的各种调试工具和控制选项，其中的扩展菜单栏包含了更加丰富的功能。注意，部分工具栏按键需要在模拟器开机亮屏后才能使用。以下对工具栏的各个按键功能作简要说明：
@@ -39,14 +39,20 @@ content_hash: sha256:4aae88d6f3e0e27db64e3dbd938f6bce55fe5b2852e913eb697df747f98
 | 悬停 | 仅支持可折叠设备。切换设备形态至悬停态，并显示折痕避让区。 |
 | 折叠 | 仅支持可折叠设备。切换设备形态至折叠态。 |
 | 三屏 | 仅支持三折叠设备。切换设备形态至左展开，右展开状态。对应[FOLD\_STATUS\_EXPANDED\_WITH\_SECOND\_EXPANDED](../best-practices/bpta-matext-guide.md#section15762231134610)状态。 |
-| 双屏 | 仅支持三折叠设备。切换设备形态至左折叠，右展开状态。对应FOLD\_STATUS\_EXPANDED状态。 |
+| 双屏 | 仅支持三折叠Mate XT设备。切换设备形态至左折叠，右展开状态。对应FOLD\_STATUS\_EXPANDED状态。 |
 | 单屏 | 仅支持三折叠设备。切换设备形态至左折叠，右折叠状态。对应FOLD\_STATUS\_FOLDED状态。 |
-| 左半折，右展开 | 仅支持三折叠设备。切换设备形态至左半折，右展开状态，并显示折痕避让区。对应FOLD\_STATUS\_EXPANDED\_WITH\_SECOND\_HALF\_FOLDED状态。  从DevEco Studio 6.1.0 Beta2版本开始支持。 |
-| 左展开，右半折 | 仅支持三折叠设备。切换设备形态至左展开，右半折状态，并显示折痕避让区。对应FOLD\_STATUS\_HALF\_FOLDED\_WITH\_SECOND\_EXPANDED状态。  从DevEco Studio 6.1.0 Beta2版本开始支持。 |
-| 左半折，右半折 | 仅支持三折叠设备。切换设备形态至左半折，右半折状态，并显示折痕避让区。对应FOLD\_STATUS\_HALF\_FOLDED\_WITH\_SECOND\_HALF\_FOLDED状态。  从DevEco Studio 6.1.0 Beta2版本开始支持。 |
-| 左折叠，右半折 | 仅支持三折叠设备。切换设备形态至左折叠，右半折状态，并显示折痕避让区。对应FOLD\_STATUS\_HALF\_FOLDED状态。  从DevEco Studio 6.1.0 Beta2版本开始支持。 |
-| 左半折，右折叠 | 仅支持三折叠设备。切换设备形态至左半折，右折叠状态。对应FOLD\_STATUS\_FOLDED\_WITH\_SECOND\_HALF\_FOLDED状态。  从DevEco Studio 6.1.0 Beta2版本开始支持。 |
-| 左展开，右折叠 | 仅支持三折叠设备。切换设备形态至左展开，右折叠状态。对应FOLD\_STATUS\_FOLDED\_WITH\_SECOND\_EXPANDED状态。  从DevEco Studio 6.1.0 Beta2版本开始支持。 |
+| 左半折，右展开 | 仅支持三折叠Mate XT设备。切换设备形态至左半折，右展开状态，并显示折痕避让区。对应FOLD\_STATUS\_EXPANDED\_WITH\_SECOND\_HALF\_FOLDED状态。  从DevEco Studio 6.1.0 Beta2版本开始支持。 |
+| 左展开，右半折 | 仅支持三折叠Mate XT设备。切换设备形态至左展开，右半折状态，并显示折痕避让区。对应FOLD\_STATUS\_HALF\_FOLDED\_WITH\_SECOND\_EXPANDED状态。  从DevEco Studio 6.1.0 Beta2版本开始支持。 |
+| 左半折，右半折 | 仅支持三折叠Mate XT设备。切换设备形态至左半折，右半折状态，并显示折痕避让区。对应FOLD\_STATUS\_HALF\_FOLDED\_WITH\_SECOND\_HALF\_FOLDED状态。  从DevEco Studio 6.1.0 Beta2版本开始支持。 |
+| 左折叠，右半折 | 仅支持三折叠Mate XT设备。切换设备形态至左折叠，右半折状态，并显示折痕避让区。对应FOLD\_STATUS\_HALF\_FOLDED状态。  从DevEco Studio 6.1.0 Beta2版本开始支持。 |
+| 左半折，右折叠 | 仅支持三折叠Mate XT设备。切换设备形态至左半折，右折叠状态。对应FOLD\_STATUS\_FOLDED\_WITH\_SECOND\_HALF\_FOLDED状态。  从DevEco Studio 6.1.0 Beta2版本开始支持。 |
+| 左展开，右折叠 | 仅支持三折叠Mate XT设备。切换设备形态至左展开，右折叠状态。对应FOLD\_STATUS\_FOLDED\_WITH\_SECOND\_EXPANDED状态。  从DevEco Studio 6.1.0 Beta2版本开始支持。 |
+| 左折叠，右展开 | 仅支持三折叠Mate XT2设备。切换设备形态至左折叠，右展开状态。 |
+| 左展开，右折叠 | 仅支持三折叠Mate XT2设备。切换设备形态至左展开，右折叠状态。 |
+| 左半折，右展开 | 仅支持三折叠Mate XT2设备。切换设备形态至左半折，右展开状态。 |
+| 左展开，右半折 | 仅支持三折叠Mate XT2设备。切换设备形态至左展开，右半折状态。 |
+| 左半折，右半折 | 仅支持三折叠Mate XT2设备。切换设备形态至左半折，右半折状态。 |
+| 左半折，右折叠 | 仅支持三折叠Mate XT2设备。切换设备形态至左半折，右折叠状态。 |
 | 横展 | 仅支持折叠2in1设备。切换设备形态至横展状态。 |
 | 竖展 | 仅支持折叠2in1设备。切换设备形态至竖展状态。 |
 | 悬停 | 仅支持折叠2in1设备。切换设备形态至悬停状态。 |

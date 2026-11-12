@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-peak-back
 title: 后台CPU占用峰值
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 开发自测试 > 应用与元服务体检 > 附录 > 体检规则 > 后台CPU占用峰值
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:24+08:00
+scraped_at: 2026-11-12T09:53:05+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:0c242af946be72b23774a7bd30c5eb42e17f4155eb3e165282ce8a951378547b
+content_hash: sha256:579d5a83533a897e239cfc5085f7b000ff644549bdd7dbf7065455a8e210c2af
 ---
 
 ## 规则详情
@@ -17,7 +17,7 @@ content_hash: sha256:0c242af946be72b23774a7bd30c5eb42e17f4155eb3e165282ce8a95137
 1. 执行hdc shell。
 2. 执行hidumper --cpuusage <进程pid>命令，获取总的CPU使用率。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/ST_hRKJCTQCbvjwWzFVmkQ/zh-cn_image_0000002731382569.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/60/v3/b0N1AcjgRluRf-XqvWZAvg/zh-cn_image_0000002808766567.png)
 
 ## 计算逻辑
 

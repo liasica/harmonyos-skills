@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/openfileb
 title: open_file_boost.h
 breadcrumb: API参考 > 应用服务 > Preview Kit（文件预览服务） > C API > 头文件和结构体 > 头文件 > open_file_boost.h
 category: harmonyos-references
-scraped_at: 2026-09-05T06:21:24+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:13e51df64c74475bd4892633635d317ddf2993e6c11652b718e8f482b3b4a437
+scraped_at: 2026-11-12T09:57:37+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b055a52cd4f6fb6282edd8b8b208d1387a9f11dda6406f8b8e78ead6478dc8ad
 ---
 
 ## 概述
@@ -47,10 +47,10 @@ content_hash: sha256:13e51df64c74475bd4892633635d317ddf2993e6c11652b718e8f482b3b
 
 | 名称 | 描述 |
 | --- | --- |
-| [OpenFileBoost\_ErrCode](openfileboost_preview.md#openfileboost_errcode) {  OPEN\_FILE\_BOOST\_SUCCESS = 0,  OPEN\_FILE\_BOOST\_PERMISSION\_NOT\_GRANTED = 201,  OPEN\_FILE\_BOOST\_INVALID\_PARAM = 401,  OPEN\_FILE\_BOOST\_CAPABILITY\_NOT\_SUPPORTED = 801,  OPEN\_FILE\_BOOST\_INTERNAL\_ERROR = 1017200001,  OPEN\_FILE\_BOOST\_INSUFFICIENT\_BUFFER = 1017200002,  OPEN\_FILE\_BOOST\_SERVICE\_UNAVAILABLE = 1017200003,  OPEN\_FILE\_BOOST\_NO\_MEMORY = 1017200004  } | 文件打开加速的错误码定义。 |
+| [OpenFileBoost\_ErrCode](openfileboost_preview.md#openfileboost_errcode) {  OPEN\_FILE\_BOOST\_SUCCESS = 0,  OPEN\_FILE\_BOOST\_PERMISSION\_NOT\_GRANTED = 201,  OPEN\_FILE\_BOOST\_INVALID\_PARAM = 401,  OPEN\_FILE\_BOOST\_CAPABILITY\_NOT\_SUPPORTED = 801,  OPEN\_FILE\_BOOST\_EMULATOR\_NOT\_SUPPORTED = 804,  OPEN\_FILE\_BOOST\_INTERNAL\_ERROR = 1017200001,  OPEN\_FILE\_BOOST\_INSUFFICIENT\_BUFFER = 1017200002,  OPEN\_FILE\_BOOST\_SERVICE\_UNAVAILABLE = 1017200003,  OPEN\_FILE\_BOOST\_NO\_MEMORY = 1017200004  } | 文件打开加速的错误码定义。 |
 | [OpenFileBoost\_CbErrCode](openfileboost_preview.md#openfileboost_cberrcode) {  OPEN\_FILE\_BOOST\_CALLBACK\_SUCCESS = 0,  OPEN\_FILE\_BOOST\_CALLBACK\_FAILURE = 1017210000  } | 回调函数[HMS\_OpenFileBoost\_OnFilePreload](openfileboost_preview.md#hms_openfileboost_onfilepreload)的错误码定义， 它用于App向系统返回回调函数执行结果。 |
 | [OpenFileBoost\_AppState](openfileboost_preview.md#openfileboost_appstate) {  OPEN\_FILE\_BOOST\_APP\_STATE\_ALLOW\_PRELOAD = 0,  OPEN\_FILE\_BOOST\_APP\_STATE\_REJECT\_PRELOAD = 1,  OPEN\_FILE\_BOOST\_APP\_STATE\_FOREVER\_REJECT\_PRELOAD = 2,  OPEN\_FILE\_BOOST\_APP\_STATE\_EXCEL\_TRANSACTION = 3 } | App状态，用于指示App当前是否允许系统推荐预加载文件。 |
-| [FileScanBoost\_ErrCode](openfileboost_preview.md#filescanboost_errcode) {  FILE\_SCAN\_BOOST\_SUCCESS = 0,  FILE\_SCAN\_BOOST\_ERROR\_PERMISSION\_NOT\_GRANTED = 201,  FILE\_SCAN\_BOOST\_ERROR\_INVALID\_PARAM = 401,  FILE\_SCAN\_BOOST\_ERROR\_CAPABILITY\_NOT\_SUPPORTED = 801,  FILE\_SCAN\_BOOST\_ERROR\_INTERNAL = 1017230001,  FILE\_SCAN\_BOOST\_ERROR\_NOT\_REGISTERED = 1017230002,  FILE\_SCAN\_BOOST\_ERROR\_ALREADY\_REGISTERED = 1017230003,  FILE\_SCAN\_BOOST\_ERROR\_SERVICE\_UNAVAILABLE = 1017230004,  FILE\_SCAN\_BOOST\_ERROR\_FORMAT\_NOT\_SUPPORTED = 1017230005  } | 文件扫描加速功能返回的所有错误码的枚举。 |
+| [FileScanBoost\_ErrCode](openfileboost_preview.md#filescanboost_errcode) {  FILE\_SCAN\_BOOST\_SUCCESS = 0,  FILE\_SCAN\_BOOST\_ERROR\_PERMISSION\_NOT\_GRANTED = 201,  FILE\_SCAN\_BOOST\_ERROR\_INVALID\_PARAM = 401,  FILE\_SCAN\_BOOST\_ERROR\_CAPABILITY\_NOT\_SUPPORTED = 801,  FILE\_SCAN\_BOOST\_ERROR\_EMULATOR\_NOT\_SUPPORTED = 804,  FILE\_SCAN\_BOOST\_ERROR\_INTERNAL = 1017230001,  FILE\_SCAN\_BOOST\_ERROR\_NOT\_REGISTERED = 1017230002,  FILE\_SCAN\_BOOST\_ERROR\_ALREADY\_REGISTERED = 1017230003,  FILE\_SCAN\_BOOST\_ERROR\_SERVICE\_UNAVAILABLE = 1017230004,  FILE\_SCAN\_BOOST\_ERROR\_FORMAT\_NOT\_SUPPORTED = 1017230005  } | 文件扫描加速功能返回的所有错误码的枚举。 |
 | [FileScanBoost\_CbErrCode](openfileboost_preview.md#filescanboost_cberrcode) { FILE\_SCAN\_BOOST\_CALLBACK\_SUCCESS = 0,  FILE\_SCAN\_BOOST\_CALLBACK\_ERROR\_INTERNAL = 1017240001,  FILE\_SCAN\_BOOST\_CALLBACK\_ERROR\_FORMAT\_NOT\_SUPPORTED = 1017240002 } | 文件扫描回调特定错误码的枚举。 |
 | [FileScanBoost\_ScanState](openfileboost_preview.md#filescanboost_scanstate) { FILE\_SCAN\_BOOST\_SCAN\_STATE\_SUCCESS = 0,  FILE\_SCAN\_BOOST\_SCAN\_STATE\_PROCESS\_ERROR = 1,  FILE\_SCAN\_BOOST\_SCAN\_STATE\_FILE\_ERROR = 2 } | 文件扫描后扫描状态的枚举。 |
 

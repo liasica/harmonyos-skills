@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.deviceInfo (设备信息)"
 breadcrumb: API参考 > 系统 > 基础功能 > Basic Services Kit（基础服务） > ArkTS API > 设备管理 > @ohos.deviceInfo (设备信息)
 category: harmonyos-references
-scraped_at: 2026-10-22T07:09:17+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:6d0cb890c5c9dbaee571c059753e0d52da28151be74e125a7a2f97cabf37bb4e
+scraped_at: 2026-11-12T09:55:53+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3f7ed8d7babc2154c38575d584005ac8310e522f51772b032329112c57a54cef
 ---
 
 本模块提供终端设备信息查询能力，支持获取设备类型、品牌、型号、系统版本、安全补丁级别、设备唯一标识等多种设备信息，适用于设备适配、版本兼容性检查、设备识别、统计分析等场景，帮助开发者快速获取设备信息进行应用适配和优化。开发者不可配置这些信息。
@@ -39,7 +39,7 @@ import { deviceInfo } from '@kit.BasicServicesKit';
 | deviceType | string | 是 | 设备类型。详细请参考[deviceTypes标签](../harmonyos-guides/module-configuration-file.md#devicetypes标签)。  **元服务API**：从API版本11开始，该接口支持在元服务中使用。  示例：wearable |
 | manufacture | string | 是 | 设备厂家名称。 |
 | brand | string | 是 | 设备品牌名称。  **元服务API**：从API版本11开始，该接口支持在元服务中使用。 |
-| marketName | string | 是 | 外部产品系列。  示例：HUAWEI Mate 60 Pro |
+| marketName | string | 是 | 产品对外传播名  示例：HUAWEI Mate 60 Pro |
 | productSeries | string | 是 | 产品系列。  示例：ALN |
 | productModel | string | 是 | 认证型号。  **元服务API**：从API版本11开始，该接口支持在元服务中使用。  示例：ALN-AL00 |
 | productModelAlias14+ | string | 是 | 认证型号别名。  **元服务API**：从API版本14开始，该接口支持在元服务中使用。  示例：TAS-AL00 |
@@ -80,6 +80,7 @@ import { deviceInfo } from '@kit.BasicServicesKit';
 | chipType21+ | string | 是 | 当前设备CPU芯片型号。  **使用场景**：用于根据芯片型号进行性能适配、设备特性识别、兼容性检查等场景，不同芯片型号可能具有不同的GPU性能、AI加速能力等特性。  示例：xxxxx |
 | bootCount21+ | number | 是 | 当前设备重启次数，获取失败时返回-1。  示例：100 |
 | deviceColor | string | 是 | 当前设备颜色。如果无法获取，则返回空字符串  **模型约束**： 此接口仅可在Stage模型下使用。  **起始版本**：26.0.0  示例：gold |
+| kernelVersion | string | 是 | 获取当前运行环境的内核版本字符串。  **模型约束**： 此接口仅可在Stage模型下使用。  **起始版本**：26.0.1  示例：HongMeng Kernel 1.0.0 |
 
 **错误码**：
 
@@ -265,6 +266,10 @@ console.info('the value of the deviceInfo bootCount is :' + bootCount);
 let deviceColor: string = deviceInfo.deviceColor;
 // 输出结果：the value of the deviceColor is :blue
 console.info('the value of the deviceColor is :' + deviceColor);
+
+let kernelVersion: string = deviceInfo.kernelVersion;
+// 输出结果：the value of the kernelVersion is :HongMeng Kernel 1.0.0
+console.info('the value of the kernelVersion is :' + kernelVersion);
 ```
 
 ## PerformanceClassLevel19+
@@ -347,7 +352,7 @@ apiAvailable(version: string | number): boolean;
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| version | string | number | 是 | 需要校验的API版本号，支持整数格式版本号和字符串格式版本号。字符串采用M.S.F格式（如 "26.0.0","5.0.1"）：对于API 26.0.0及以上版本（version >= 26.0.0）：代表HarmonyOS和发行版系统API版本。对于API 26.0.0以下版本（version < 26.0.0）：代表发行版系统API版本。整数格式（如 13）：代表HarmonyOS SDK API版本。（仅支持API 26以下）M>=26,0<=S<=99,0<=F<=99。传入无效字面量时编译报错。 |
+| version | string | number | 是 | 需要校验的API版本号，支持整数格式版本号和字符串格式版本号。  字符串采用M.S.F格式（如 "26.0.0","5.0.1"），其中0<=S<=99，0<=F<=99：  对于API 26.0.0及以上版本（version >= 26.0.0）：代表HarmonyOS和发行版系统API版本。  对于API 26.0.0以下版本（version < 26.0.0）：代表发行版系统API版本。  整数格式（如 13）：  代表HarmonyOS SDK API版本。（仅支持API 26以下） |
 
 **返回值**：
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-faq-4
 title: 设置地图Logo始终显示
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > Map Kit常见问题 > 设置地图Logo始终显示
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:37+08:00
-doc_updated_at: 2026-04-24
-content_hash: sha256:bd72fe2603425b2f1bc8ab001b815ffe60086d642097b2f9e4d976d093d7c936
+scraped_at: 2026-11-12T09:52:30+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7f53e93e44ad9a2c75e3cebd6c976fc45ffbebba6c591e5347cb9e2a4f214011
 ---
 
 **现象描述**
 
 Map Kit地图Logo不可见。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/PsCTNdXoRjKuU6rWzclz5w/zh-cn_image_0000002779691542.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/qNGYlTuTRxmRWHYlSJTPig/zh-cn_image_0000002815399967.jpg "点击放大")
 
 **可能原因**
 
@@ -33,6 +33,7 @@ struct MapKitAppDemo {
   private callback?: AsyncCallback<map.MapComponentController>;
   private mapController?: map.MapComponentController;
   private mapEventManager?: map.MapEventManager;
+  private onMapLoadCallback: (() => void) | undefined;
   private TAG = 'MapKitAppDemo';
   @State isShowSheet: boolean = true;
 
@@ -84,11 +85,11 @@ struct MapKitAppDemo {
         this.mapController = mapController;
         // 返回地图组件的监听事件管理接口
         this.mapEventManager = this.mapController.getEventManager();
-        let callback = () => {
+        this.onMapLoadCallback = () => {
           console.info(this.TAG, `on-mapLoad`);
         }
         // 监听地图加载事件
-        this.mapEventManager?.on('mapLoad', callback);
+        this.mapEventManager?.on('mapLoad', this.onMapLoadCallback);
       } else {
         console.error(`Failed to initialize the map, code is：${err.code}, message is ${err.message}`);
       }
@@ -96,7 +97,7 @@ struct MapKitAppDemo {
   }
 
   aboutToDisappear(): void {
-    this.mapEventManager?.off('mapLoad');
+    this.mapEventManager?.off('mapLoad', this.onMapLoadCallback);
     this.mapController?.clear();
   }
 
@@ -147,4 +148,4 @@ struct MapKitAppDemo {
 
 展示效果如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/iRVEh0HsT1qOLuHVejOmuQ/zh-cn_image_0000002809011163.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/5zfvMzPXQZOqQ19nLUBECQ/zh-cn_image_0000002786520392.gif "点击放大")

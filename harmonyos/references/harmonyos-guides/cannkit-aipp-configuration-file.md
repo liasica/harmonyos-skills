@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-aipp-configuration-file
 title: 模型转换AIPP配置文件说明
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型转换 > AIPP > 模型转换AIPP配置文件说明
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型转换 > AIPP转换后数据预处理 > 模型转换AIPP配置文件说明
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:04+08:00
-doc_updated_at: 2026-05-12
-content_hash: sha256:b95779f399d28834b45d21f55ccf9037cc3756cca54fb3353b323d08617a72d1
+scraped_at: 2026-11-12T09:52:41+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:13ea0c01b87c921322c36f2d9b5e04fd5d09904c893ff2437dcbc941f7f4d146
 ---
 
 ## 模型转换AIPP配置文件说明
@@ -335,7 +335,6 @@ dtc_func {
 ```proto
 rotate_para {
     switch: true
-    dynamic: true
     rotation_angle: 0.0
 }
 ```

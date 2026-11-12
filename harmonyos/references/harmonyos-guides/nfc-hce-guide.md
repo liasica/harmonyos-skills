@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nfc-hce-guide
 title: HCE卡模拟开发指南
 breadcrumb: 指南 > 系统 > 网络 > Connectivity Kit（短距通信服务） > NFC > HCE卡模拟开发指南
 category: harmonyos-guides
-scraped_at: 2026-09-18T06:45:35+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:cb22080ff28f58633fcdb58dbe6c3ac20a6f7dc09c3867a41c588d7111d06a1b
+scraped_at: 2026-11-12T09:51:43+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:5fa47eb069897745a891eff26a2d58bc3ba02b335a65fac852c4e251f91ca4df
 ---
 
 ## 简介
@@ -123,9 +123,8 @@ HCE应用开发者根据业务需要，可以选择实现前台刷卡或者后�
 
 ```ts
 import { cardEmulation, nfcController } from '@kit.ConnectivityKit';
-import { BusinessError } from '@kit.BasicServicesKit';
+import { BusinessError, AsyncCallback } from '@kit.BasicServicesKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { AsyncCallback } from '@kit.BasicServicesKit';
 import { AbilityConstant, UIAbility, Want, bundleManager } from '@kit.AbilityKit';
 
 let hceElementName: bundleManager.ElementName;
@@ -267,9 +266,8 @@ export default class EntryAbility extends UIAbility {
 
 ```ts
 import { cardEmulation, nfcController } from '@kit.ConnectivityKit';
-import { BusinessError } from '@kit.BasicServicesKit';
+import { BusinessError, AsyncCallback } from '@kit.BasicServicesKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { AsyncCallback } from '@kit.BasicServicesKit';
 import { AbilityConstant, UIAbility, Want, bundleManager } from '@kit.AbilityKit';
 
 let hceElementName: bundleManager.ElementName;

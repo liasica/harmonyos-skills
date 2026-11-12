@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/weather-s
 title: weatherService（天气数据服务）
 breadcrumb: API参考 > 应用服务 > Weather Service Kit（天气服务） > ArkTS API > weatherService（天气数据服务）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:33+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:a1d515111d632832b5338d9365b63849fab9e4a306c21e9874741cf03026408c
+scraped_at: 2026-11-12T09:57:43+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0598c508f870d0e84aa5ca0eedcce97b83e29ee6a3197c17cb792e26aab43815
 ---
 
 本模块提供天气数据服务。
@@ -245,6 +245,7 @@ export default class EntryAbility extends UIAbility {
 | indices | [WeatherIndex](weather-service-weatherservice.md#weatherindex)[] | 否 | 是 | 天气指数，若设置了limitedDatasets且数组中不包含[Dataset](weather-service-weatherservice.md#dataset).INDICES，该字段不返回。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 | tides | [Tide](weather-service-weatherservice.md#tide)[] | 否 | 是 | 潮汐，若设置了limitedDatasets且数组中不包含[Dataset](weather-service-weatherservice.md#dataset).TIDES，或者该区域无潮汐站点，该字段不返回。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 | city | [City](weather-service-weatherservice.md#city) | 否 | 是 | 请求经纬度对应的城市信息，若设置了limitedDatasets且数组中不包含[Dataset](weather-service-weatherservice.md#dataset).CITY，该字段不返回。  **元服务API：** 从版本6.1.0(23)开始，该接口支持在元服务中使用。  **起始版本：** 6.1.0(23) |
+| glow | [Forecast](weather-service-weatherservice.md#forecastt)<[GlowDayWeather](weather-service-weatherservice.md#glowdayweather)> | 否 | 是 | 朝霞和晚霞预报，若设置了limitedDatasets且数组中不包含[Dataset](weather-service-weatherservice.md#dataset).GLOW，则不返回数据。  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。  **起始版本：** 26.0.1 |
 | metadata | [WeatherMetadata](weather-service-weatherservice.md#weathermetadata) | 否 | 否 | 天气数据元数据。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 | attributions | [WeatherAttribution](weather-service-weatherservice.md#weatherattribution)[] | 否 | 否 | 天气数据的归因。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 
@@ -474,6 +475,24 @@ export default class EntryAbility extends UIAbility {
 | englishName | string | 否 | 是 | 英文城市名称。 |
 | timezone | string | 否 | 是 | 时区。 |
 | administrativeAreas | [AdministrativeArea](weather-service-weatherservice.md#administrativearea)[] | 否 | 是 | 行政区域列表。 |
+
+## GlowDayWeather
+
+一天的朝霞和晚霞天气数据类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Weather.Core
+
+**起始版本：** 26.0.1
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| date | Date | 否 | 否 | 朝霞和晚霞天气的日期，UTC时间。 |
+| sunriseGlow | [GlowInfo](weather-service-weatherservice.md#glowinfo) | 否 | 是 | 朝霞信息，包括朝霞的开始时间、结束时间和出现概率。 |
+| sunsetGlow | [GlowInfo](weather-service-weatherservice.md#glowinfo) | 否 | 是 | 晚霞信息，包括晚霞的开始时间、结束时间和出现概率。 |
 
 ## WeatherMetadata
 
@@ -732,6 +751,26 @@ export default class EntryAbility extends UIAbility {
 | category | [TideCategory](weather-service-weatherservice.md#tidecategory) | 否 | 是 | 潮汐类型。 |
 | height | number | 否 | 否 | 潮汐高度。  单位：cm。 |
 
+## GlowInfo
+
+朝霞和晚霞信息类。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Weather.Core
+
+**起始版本：** 26.0.1
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| start | Date | 否 | 否 | 朝霞或晚霞的开始时间，UTC时间。 |
+| end | Date | 否 | 否 | 朝霞或晚霞的结束时间，UTC时间。 |
+| probability | number | 否 | 是 | 朝霞或晚霞出现的概率。取值范围：[0, 100]。 |
+| qualityLevel | number | 否 | 是 | 朝霞或晚霞的质量等级。取值范围：[1, 4]。  1：较差  2：普通  3：良好  4：优秀 |
+| qualityProbability | number | 否 | 是 | 朝霞或晚霞的质量概率。取值范围：[0, 100]。 |
+
 ## AdministrativeArea
 
 行政区域信息类。
@@ -773,6 +812,7 @@ export default class EntryAbility extends UIAbility {
 | INDICES | 5 | 天气指数。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 | TIDES | 6 | 潮汐。  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 | CITY | 7 | 城市信息。  **元服务API：** 从版本6.1.0(23)开始，该接口支持在元服务中使用。  **起始版本：** 6.1.0(23) |
+| GLOW | 8 | 朝霞和晚霞预报。  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。  **起始版本：** 26.0.1 |
 
 ## PressureTrend
 

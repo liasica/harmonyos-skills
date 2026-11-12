@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-traf
 title: OH_TrafficFilter_IPRange
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 结构体 > OH_TrafficFilter_IPRange
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:56+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:55:43+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:cf7fadf42db22a75cbac6b854dc4ff0094130deba3b7c2fc5168b27c8eca93f9
 ---
 

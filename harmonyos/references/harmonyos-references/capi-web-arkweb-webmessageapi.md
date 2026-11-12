@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-web-
 title: ArkWeb_WebMessageAPI
 breadcrumb: API参考 > 应用框架 > ArkWeb（方舟Web） > C API > 结构体 > ArkWeb_WebMessageAPI
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:29+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:b113aebca26b6b9aab6e87eae9f238a17bbaa4fea995019d20ad56a753c49dbc
+scraped_at: 2026-11-12T09:55:02+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c91ef69dedfd144832063ad7ce2464b469e8c0058c7c6f66885e7b2ce6569f38
 ---
 
 ```c
@@ -114,7 +114,7 @@ ArkWeb_WebMessageType (*getType)(ArkWeb_WebMessagePtr webMessage)
 
 | 类型 | 说明 |
 | --- | --- |
-| [ArkWeb\_WebMessageType](capi-arkweb-type-h.md#arkweb_webmessagetype) | 返回消息的类型枚举值，如ARKWEB\_WEB\_MESSAGE\_TYPE\_STRING或ARKWEB\_WEB\_MESSAGE\_TYPE\_ARRAY\_BUFFER等。 |
+| [ArkWeb\_WebMessageType](capi-arkweb-type-h.md#arkweb_webmessagetype) | 返回消息的类型枚举值。 |
 
 ### setData()
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/avscreencaptu
 title: AVScreenCapture录屏自定义场景
 breadcrumb: 指南 > 媒体 > Media Kit（媒体服务） > 媒体开发指导(C/C++) > 录制 > 使用AVScreenCapture录屏取码流(C/C++) > AVScreenCapture录屏自定义场景
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:26+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:3b2ed73159ba6f21d9bb41a4f86f0d0cf19414c1d110c7c167a906d54ec4acc5
+scraped_at: 2026-11-12T09:52:08+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:9f7e12a737472018ef4e1b3305924de1deff8d175cbd572af9c94f4ab97c537f
 ---
 
 AVScreenCapture支持应用完成场景化的自定义配置，具体配置可参考下述指导。
@@ -60,6 +60,10 @@ OH_AVScreenCapture_SetCaptureStrategy(capture, strategy);
 // 释放CaptureStrategy对象。
 OH_AVScreenCapture_ReleaseCaptureStrategy(strategy);
 ```
+
+**说明** 
+
+从API版本26.0.1开始，当录屏模式设置为[OH\_CaptureMode](../harmonyos-references/capi-native-avscreen-capture-base-h.md#oh_capturemode).OH\_CAPTURE\_VIRTUAL\_EXTENDED\_SCREEN时，无论OH\_AVScreenCapture\_StrategyForPickerPopUp设置为任何值，都不会弹出Picker。
 
 ## 设置旋转适配
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-ge
 title: 实践说明
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 定制构建 > 获取自定义编译参数 > 实践说明
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:25+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:73b86f79e834f6ca69eb752f913c6502951099ccf84523641503e8eddde1e006
+scraped_at: 2026-11-12T09:53:07+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:10656b3ea75d9a55fa646be6cade62ff981428f5f3d50ee47bc81949b09b18f5
 ---
 
 示例：配置工程级和模块级的自定义参数并通过切换product来展示不同的message。
@@ -23,7 +23,7 @@ content_hash: sha256:73b86f79e834f6ca69eb752f913c6502951099ccf84523641503e8eddde
       {
         "name": "default",
         "signingConfig": "default",
-        "compatibleSdkVersion": "26.0.0",
+        "compatibleSdkVersion": "26.0.1",
         "runtimeOS": "HarmonyOS",
         "buildOption": {
           "arkOptions": {
@@ -37,7 +37,7 @@ content_hash: sha256:73b86f79e834f6ca69eb752f913c6502951099ccf84523641503e8eddde
       {
         "name": "mirror",
         "signingConfig": "default",
-        "compatibleSdkVersion": "26.0.0",
+        "compatibleSdkVersion": "26.0.1",
         "runtimeOS": "HarmonyOS",
         "buildOption": {
           "arkOptions": {
@@ -51,7 +51,7 @@ content_hash: sha256:73b86f79e834f6ca69eb752f913c6502951099ccf84523641503e8eddde
       {
         "name": "product",
         "signingConfig": "default",
-        "compatibleSdkVersion": "26.0.0",
+        "compatibleSdkVersion": "26.0.1",
         "runtimeOS": "HarmonyOS",
         "buildOption": {
           "arkOptions": {
@@ -212,28 +212,28 @@ struct Index {
 
 选中har模块后点击以下按钮。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/kjQn9H1TSHuS3Z6aXj2-og/zh-cn_image_0000002731542717.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a/v3/_2M-x6VvTEKnNnzmsL7RcA/zh-cn_image_0000002779567306.png)
 
 default模式下初始化的message为defaultMessage。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/IJvz_HkLR4WjVqMxPOycvw/zh-cn_image_0000002701823444.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/da/v3/ptoXsuaDQEOthN-ARIoNxw/zh-cn_image_0000002779407330.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/r6m-hZ5SSEuUVlI8sEBOcg/zh-cn_image_0000002731382749.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/rLG6W0U6R0Ka2Cp5G8tfxA/zh-cn_image_0000002808886973.png)
 
 通过切换不同的product，可以使用不同的自定义参数来初始化message。
 
 切换product为mirror。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/sp5veBdSSNCe2JcAcBWRRw/zh-cn_image_0000002731382745.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/oeO_qtQTQvax5QANWPzqgw/zh-cn_image_0000002808766887.png)
 
 可以观察到初始化参数为mirrorMessage：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/58QhRvV9SzayooIbEjKwhA/zh-cn_image_0000002731382751.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/hLIc8jtxRZOOVQ3tVkzP8g/zh-cn_image_0000002808766891.png)
 
-点击不同的Button可以改变message为对应的自定义参数：
+点击不同的Button，message会变为对应的自定义参数：
 
 **图1** 点击Button1  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/mmPvXNCCQIiGd1F-PZNrfw/zh-cn_image_0000002731542721.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/UAvbMIuOQxiKWJNsMaH2eQ/zh-cn_image_0000002808886969.png)
 
 **图2** 点击Button2  
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/V5ca-e7RQbanI1RsiTJXAg/zh-cn_image_0000002731542715.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/hOmN-Eo3TrGpd5GEc8t5pg/zh-cn_image_0000002808766893.png)

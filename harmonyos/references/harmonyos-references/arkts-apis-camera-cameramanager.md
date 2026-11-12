@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (CameraManager)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (CameraManager)
 category: harmonyos-references
-scraped_at: 2026-10-01T07:39:25+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:0ffe864522ef9fa5ea048b4c135897a412d095cfd82583b399dcac19b36e2c7c
+scraped_at: 2026-11-12T09:56:32+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8ba792cb708628831cef9948adc1b992c13256967d8fbd1eee7fb9815827566d
 ---
 
 相机管理器类，使用前需要通过[getCameraManager](arkts-apis-camera-f.md#cameragetcameramanager)接口获取相机管理实例。
@@ -82,10 +82,16 @@ getSupportedSceneModes(camera: CameraDevice): Array<SceneMode>
 ```ts
 import { BusinessError } from '@kit.BasicServicesKit';
 
-function getSupportedSceneModes(cameraManager: camera.CameraManager, camera: camera.CameraDevice): Array<camera.SceneMode> {
+function getSupportedSceneModes(cameraManager: camera.CameraManager, cameraDevice: camera.CameraDevice): Array<camera.SceneMode> {
   let modes: Array<camera.SceneMode> = [];
   try {
-    modes = cameraManager.getSupportedSceneModes(camera);
+    let cameras: Array<camera.CameraDevice> = cameraManager.getSupportedCameras();
+    if (cameras.some(camera => camera.cameraId === cameraDevice.cameraId)) {
+      modes = cameraManager.getSupportedSceneModes(cameraDevice);
+    } else {
+      console.error(`current camera invalid.`);
+      return [];
+    }
   } catch (error) {
     let err = error as BusinessError;
     console.error(`The getSupportedSceneModes call failed. error code: ${err.code}`);
@@ -120,8 +126,17 @@ getSupportedOutputCapability(camera: CameraDevice, mode: SceneMode): CameraOutpu
 **示例：**
 
 ```ts
-function getSupportedOutputCapability(camera: camera.CameraDevice, cameraManager: camera.CameraManager, sceneMode: camera.SceneMode): camera.CameraOutputCapability {
-  let cameraOutputCapability: camera.CameraOutputCapability = cameraManager.getSupportedOutputCapability(camera, sceneMode);
+function getSupportedOutputCapability(camera: camera.CameraDevice,
+  cameraManager: camera.CameraManager, sceneMode: camera.SceneMode): camera.CameraOutputCapability | undefined {
+  let cameras = cameraManager.getSupportedCameras();
+  let cameraOutputCapability: camera.CameraOutputCapability | undefined = undefined;
+  if (cameras.some(cameraValue => cameraValue.cameraId === camera.cameraId)) {
+    if (cameraManager.getSupportedSceneModes(camera).some(mode => mode === sceneMode)) {
+      cameraOutputCapability = cameraManager.getSupportedOutputCapability(camera, sceneMode);
+      return cameraOutputCapability;
+    }
+  }
+  console.error(`invalid camera or sceneMode.`);
   return cameraOutputCapability;
 }
 ```
@@ -160,9 +175,17 @@ getSupportedFullOutputCapability(camera: CameraDevice, mode: SceneMode): CameraO
 ```ts
 import { camera } from '@kit.CameraKit';
 
-function getSupportedFullOutputCapability(camera: camera.CameraDevice, cameraManager: camera.CameraManager, sceneMode: camera.SceneMode): camera.CameraOutputCapability {
-  let cameraOutputCapability: camera.CameraOutputCapability = cameraManager.getSupportedFullOutputCapability(camera, sceneMode);
-  return cameraOutputCapability;
+function getSupportedFullOutputCapability(camera: camera.CameraDevice,
+  cameraManager: camera.CameraManager, sceneMode: camera.SceneMode): camera.CameraOutputCapability | undefined {
+  let cameras = cameraManager.getSupportedCameras();
+  if (cameras.some(cameraValue => cameraValue.cameraId === camera.cameraId)) {
+    if (cameraManager.getSupportedSceneModes(camera).some(mode => mode === sceneMode)) {
+      let cameraOutputCapability: camera.CameraOutputCapability = cameraManager.getSupportedFullOutputCapability(camera, sceneMode);
+      return cameraOutputCapability;
+    }
+  }
+  console.error(`camera or sceneMode invalid.`);
+  return undefined;
 }
 ```
 
@@ -235,7 +258,13 @@ import { BusinessError } from '@kit.BasicServicesKit';
 function createCameraInput(camera: camera.CameraDevice, cameraManager: camera.CameraManager): camera.CameraInput | undefined {
   let cameraInput: camera.CameraInput | undefined = undefined;
   try {
-    cameraInput = cameraManager.createCameraInput(camera);
+    let cameras: Array<camera.CameraDevice> = cameraManager.getSupportedCameras();
+    if (cameras.some(cameraValue => cameraValue.cameraId === camera.cameraId)) {
+      cameraInput = cameraManager.createCameraInput(camera);
+    } else {
+      console.error(`camera invalid.`);
+      return undefined;
+    }
   } catch (error) {
     // 失败返回错误码error.code并处理。
     let err = error as BusinessError;
@@ -339,11 +368,20 @@ createPreviewOutput(profile: Profile, surfaceId: string): PreviewOutput
 ```ts
 import { BusinessError } from '@kit.BasicServicesKit';
 
-function createPreviewOutput(cameraOutputCapability: camera.CameraOutputCapability, cameraManager: camera.CameraManager, surfaceId: string): camera.PreviewOutput | undefined {
-  let profile: camera.Profile = cameraOutputCapability.previewProfiles[0];
+function createPreviewOutput(previewProfile: camera.Profile, cameraDevice: camera.CameraDevice,
+  cameraManager: camera.CameraManager, surfaceId: string): camera.PreviewOutput | undefined {
+  let cameraOutputCapability = cameraManager.getSupportedOutputCapability(cameraDevice, camera.SceneMode.NORMAL_PHOTO);
+  if (cameraOutputCapability.previewProfiles.findIndex((profile: camera.Profile) => {
+    return profile.format == previewProfile.format &&
+      profile.size.width == previewProfile.size.width &&
+      profile.size.height == previewProfile.size.height;
+  }) == -1) {
+    console.error(`invalid previewProfile.`);
+    return undefined;
+  }
   let previewOutput: camera.PreviewOutput | undefined = undefined;
   try {
-    previewOutput = cameraManager.createPreviewOutput(profile, surfaceId);
+    previewOutput = cameraManager.createPreviewOutput(previewProfile, surfaceId);
   } catch (error) {
     // 失败返回错误码error.code并处理。
     let err = error as BusinessError;
@@ -438,15 +476,24 @@ createDeferredPreviewOutput(profile: Profile): PreviewOutput
 ```ts
 import { BusinessError } from '@kit.BasicServicesKit';
 
-function createPreviewOutput(cameraOutputCapability: camera.CameraOutputCapability, cameraManager: camera.CameraManager): camera.PreviewOutput | undefined {
-  let profile: camera.Profile = cameraOutputCapability.previewProfiles[0];
+function createDeferredPreviewOutput(previewProfile: camera.Profile, cameraDevice: camera.CameraDevice,
+  cameraManager: camera.CameraManager): camera.PreviewOutput | undefined {
+  let cameraOutputCapability = cameraManager.getSupportedOutputCapability(cameraDevice, camera.SceneMode.NORMAL_PHOTO);
+  if (cameraOutputCapability.previewProfiles.findIndex((profile: camera.Profile) => {
+    return profile.format == previewProfile.format &&
+      profile.size.width == previewProfile.size.width &&
+      profile.size.height == previewProfile.size.height;
+  }) == -1) {
+    console.error(`invalid previewProfile.`);
+    return undefined;
+  }
   let previewOutput: camera.PreviewOutput | undefined = undefined;
   try {
-    previewOutput = cameraManager.createDeferredPreviewOutput(profile);
+    previewOutput = cameraManager.createDeferredPreviewOutput(previewProfile);
   } catch (error) {
     // 失败返回错误码error.code并处理。
     let err = error as BusinessError;
-    console.error(`The createPreviewOutput call failed. error code: ${err.code}`);
+    console.error(`The createDeferredPreviewOutput call failed. error code: ${err.code}`);
   }
   return previewOutput;
 }
@@ -488,11 +535,20 @@ createPhotoOutput(profile?: Profile): PhotoOutput
 ```ts
 import { BusinessError } from '@kit.BasicServicesKit';
 
-function createPhotoOutput(cameraOutputCapability: camera.CameraOutputCapability, cameraManager: camera.CameraManager): camera.PhotoOutput | undefined {
-  let profile: camera.Profile = cameraOutputCapability.photoProfiles[0];
+function createPhotoOutput(photoProfile: camera.Profile, cameraDevice: camera.CameraDevice,
+  cameraManager: camera.CameraManager): camera.PhotoOutput | undefined {
+  let cameraOutputCapability = cameraManager.getSupportedOutputCapability(cameraDevice, camera.SceneMode.NORMAL_PHOTO);
+  if (cameraOutputCapability.photoProfiles.findIndex((profile: camera.Profile) => {
+    return profile.format == photoProfile.format &&
+      profile.size.width == photoProfile.size.width &&
+      profile.size.height == photoProfile.size.height;
+  }) == -1) {
+    console.error(`invalid photoProfile.`);
+    return undefined;
+  }
   let photoOutput: camera.PhotoOutput | undefined = undefined;
   try {
-    photoOutput = cameraManager.createPhotoOutput(profile);
+    photoOutput = cameraManager.createPhotoOutput(photoProfile);
   } catch (error) {
     // 失败返回错误码error.code并处理。
     let err = error as BusinessError;
@@ -546,11 +602,22 @@ createVideoOutput(profile: VideoProfile, surfaceId: string): VideoOutput
 ```ts
 import { BusinessError } from '@kit.BasicServicesKit';
 
-function createVideoOutput(cameraOutputCapability: camera.CameraOutputCapability, cameraManager: camera.CameraManager, surfaceId: string): camera.VideoOutput | undefined {
-  let profile: camera.VideoProfile = cameraOutputCapability.videoProfiles[0];
+function createVideoOutput(videoProfile: camera.VideoProfile, cameraDevice: camera.CameraDevice,
+  cameraManager: camera.CameraManager, surfaceId: string): camera.VideoOutput | undefined {
+  let cameraOutputCapability = cameraManager.getSupportedOutputCapability(cameraDevice, camera.SceneMode.NORMAL_VIDEO);
+  if (cameraOutputCapability.videoProfiles.findIndex((profile: camera.VideoProfile) => {
+    return profile.format == videoProfile.format &&
+      profile.size.width == videoProfile.size.width &&
+      profile.size.height == videoProfile.size.height &&
+      profile.frameRateRange.min == videoProfile.frameRateRange.min &&
+      profile.frameRateRange.max == videoProfile.frameRateRange.max;
+  }) == -1) {
+    console.error(`invalid videoProfile.`);
+    return undefined;
+  }
   let videoOutput: camera.VideoOutput | undefined = undefined;
   try {
-    videoOutput = cameraManager.createVideoOutput(profile, surfaceId);
+    videoOutput = cameraManager.createVideoOutput(videoProfile, surfaceId);
   } catch (error) {
     // 失败返回错误码error.code并处理。
     let err = error as BusinessError;
@@ -645,15 +712,23 @@ createMetadataOutput(metadataObjectTypes: Array<MetadataObjectType>): MetadataOu
 ```ts
 import { BusinessError } from '@kit.BasicServicesKit';
 
-function createMetadataOutput(cameraManager: camera.CameraManager, cameraOutputCapability: camera.CameraOutputCapability): void {
+function createMetadataOutput(metadataTypes: Array<camera.MetadataObjectType>,
+  cameraManager: camera.CameraManager, cameraDevice: camera.CameraDevice): camera.MetadataOutput | undefined {
+  let cameraOutputCapability = cameraManager.getSupportedOutputCapability(cameraDevice, camera.SceneMode.NORMAL_PHOTO);
   let metadataObjectTypes: Array<camera.MetadataObjectType> = cameraOutputCapability.supportedMetadataObjectTypes;
+  if (!metadataTypes.every(type => metadataObjectTypes.includes(type))) {
+    console.error(`invalid metadataTypes.`);
+    return undefined;
+  }
   let metadataOutput: camera.MetadataOutput | undefined = undefined;
   try {
-    metadataOutput = cameraManager.createMetadataOutput(metadataObjectTypes);
+    metadataOutput = cameraManager.createMetadataOutput(metadataTypes);
+    return metadataOutput;
   } catch (error) {
     // 失败返回错误码error.code并处理。
     let err = error as BusinessError;
     console.error(`createMetadataOutput error. error code: ${err.code}`);
+    return metadataOutput;
   }
 }
 ```
@@ -663,6 +738,8 @@ function createMetadataOutput(cameraManager: camera.CameraManager, cameraOutputC
 createSession<T extends Session>(mode: SceneMode): T
 
 创建指定SceneMode的Session实例，同步返回结果。
+
+可以通过[getSupportedSceneModes](arkts-apis-camera-cameramanager.md#getsupportedscenemodes11)接口获取要设置的模式。
 
 **元服务API：** 从API version 19开始，该接口支持在元服务中使用。
 
@@ -694,10 +771,16 @@ createSession<T extends Session>(mode: SceneMode): T
 ```ts
 import { BusinessError } from '@kit.BasicServicesKit';
 
-function createSession(cameraManager: camera.CameraManager, mode: camera.SceneMode): camera.Session | undefined {
+function createSession(cameraManager: camera.CameraManager,
+  cameraDevice: camera.CameraDevice, sceneMode: camera.SceneMode): camera.Session | undefined {
   let photoSession: camera.PhotoSession | undefined = undefined;
+  let modes = cameraManager.getSupportedSceneModes(cameraDevice);
+  if (!modes.includes(sceneMode)) {
+    console.error(`invalid sceneMode.`);
+    return undefined;
+  }
   try {
-    photoSession = cameraManager.createSession(mode) as camera.PhotoSession;
+    photoSession = cameraManager.createSession(sceneMode) as camera.PhotoSession;
   } catch (error) {
     // 失败返回错误码error.code并处理。
     let err = error as BusinessError;
@@ -1233,6 +1316,13 @@ function getCameraConcurrentInfos(cameraManager: camera.CameraManager,
   cameraDeviceArray: Array<camera.CameraDevice>): Array<camera.CameraConcurrentInfo> {
   let cameraConcurrentInfos: Array<camera.CameraConcurrentInfo> = [];
   try {
+    let cameras = cameraManager.getSupportedCameras();
+    // 判断选择的相机镜头组合是否在相机列表中。
+    if (cameraDeviceArray.length === 0 ||
+      !cameraDeviceArray.every(camera => cameras.some(cameraValue => cameraValue.cameraId === camera.cameraId))) {
+      console.error(`invalid cameraDeviceArray.`);
+      return cameraConcurrentInfos;
+    }
     cameraConcurrentInfos = cameraManager.getCameraConcurrentInfos(cameraDeviceArray);
   } catch (error) {
     // 失败返回错误码并处理。

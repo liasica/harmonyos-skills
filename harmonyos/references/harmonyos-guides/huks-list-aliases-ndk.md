@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-list-ali
 title: 查询密钥别名集(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 其他操作 > 查询密钥别名集 > 查询密钥别名集(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:33+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2d8f3fcf0c4a8ee09635ce3d5cd4b476bbbc51f09004ae65a5c738f71e762781
+scraped_at: 2026-11-12T09:51:41+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:5a57ff7a5e4b553359d27a342d0975af8541cb556983953358ea38f3bcd969c9
 ---
 
 HUKS提供了接口供应用查询密钥别名集。
@@ -32,7 +32,6 @@ target_link_libraries(entry PUBLIC libhuks_ndk.z.so)
 #include "huks/native_huks_api.h"
 #include "huks/native_huks_param.h"
 #include "napi/native_api.h"
-#include <string.h>
 
 OH_Huks_Result InitParamSet(
    struct OH_Huks_ParamSet **paramSet,

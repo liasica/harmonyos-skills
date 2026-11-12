@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-traf
 title: OH_TrafficFilter_ConnectionInfo
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 结构体 > OH_TrafficFilter_ConnectionInfo
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:56+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f7fa5f1e2c5ad65c93a88fd1d152a36624a8c18aae770e1b76b6646166a7c24e
+scraped_at: 2026-11-12T09:55:43+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:2e99c18c8772165965f7aba297b2b72fcd2d0cdceef2d6c7942be0a1730c7f13
 ---
 
 ```c
@@ -32,9 +32,9 @@ typedef struct OH_TrafficFilter_ConnectionInfo {...} OH_TrafficFilter_Connection
 
 | 名称 | 描述 |
 | --- | --- |
-| uint32\_t size | 调用者分配的结构体实际大小。  **起始版本：** 26.0.0 |
-| [OH\_TrafficFilter\_IPAddress](capi-trafficfilter-oh-trafficfilter-ipaddress.md) srcIp | 源IP地址，支持IPv4和IPv6。  **起始版本：** 26.0.0 |
-| uint16\_t srcPort | 源端口。0表示任意源端口。  **起始版本：** 26.0.0 |
-| [OH\_TrafficFilter\_IPAddress](capi-trafficfilter-oh-trafficfilter-ipaddress.md) dstIp | 目的IP地址，支持IPv4和IPv6，需要与源IP地址的地址族相同。  **起始版本：** 26.0.0 |
-| uint16\_t dstPort | 目的端口。0表示任意目的端口。  **起始版本：** 26.0.0 |
-| uint8\_t protocol | 协议类型。支持的取值：- OH\_TRAFFICFILTER\_PROTO\_TCP (6)- OH\_TRAFFICFILTER\_PROTO\_UDP (17)  **起始版本：** 26.0.0 |
+| uint32\_t size | 调用者分配的结构体实际大小。 |
+| [OH\_TrafficFilter\_IPAddress](capi-trafficfilter-oh-trafficfilter-ipaddress.md) srcIp | 源IP地址，支持IPv4和IPv6。 |
+| uint16\_t srcPort | 源端口。0表示任意源端口。 |
+| [OH\_TrafficFilter\_IPAddress](capi-trafficfilter-oh-trafficfilter-ipaddress.md) dstIp | 目的IP地址，支持IPv4和IPv6，需要与源IP地址的地址族相同。 |
+| uint16\_t dstPort | 目的端口。0表示任意目的端口。 |
+| uint8\_t protocol | 协议类型。支持的取值：- OH\_TRAFFICFILTER\_PROTO\_TCP (6) - OH\_TRAFFICFILTER\_PROTO\_UDP (17) |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-
 title: UX样式或效果的变更
 breadcrumb: 版本说明 > 更多版本 > 历史版本 > 5.0.0(12) > OS平台能力 > 接口行为变更说明 > HarmonyOS NEXT Developer Beta2引入的接口行为变更 > UX样式或效果的变更
 category: harmonyos-releases
-scraped_at: 2026-10-09T08:12:36+08:00
+scraped_at: 2026-11-12T09:50:35+08:00
 doc_updated_at: 2026-06-27
-content_hash: sha256:44ad870ef435fc2eca2706e2ef9c9cc8aead15050cc4d91641a8711c633a91d0
+content_hash: sha256:3df90bff3b588601f2759c6453e102541dc75051c8ef818b7d1f1b8be309bbd6
 ---
 
 ## TextInput、TextArea 设置TextAlign.Center且显示PlaceHolder文字时，光标位置的变更
@@ -182,11 +182,11 @@ popupPosition属性设置为undefined时应该重置为默认值，但当前实�
 
 API version 12之前，popupPosition属性设置为undefined时会保持现有状态，提示弹窗位置不发生变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/yoIhxXywQ8m7JWRV7NzDsQ/zh-cn_image_0000001987151785.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/8ds9O3AyTp-kOhHoyKC5WQ/zh-cn_image_0000001987151785.png)
 
 API version 12及以后，popupPosition属性设置为undefined时会重置为默认值，提示弹窗位置会发生变化。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/NShb_yeoSJ-A06QUDo_0og/zh-cn_image_0000001953232366.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/4CaY5mXITjGsB8jeFi4sQw/zh-cn_image_0000001953232366.png)
 
 **变更的接口/组件**
 
@@ -553,11 +553,11 @@ struct ListExample {
 
 API version 12之前：autoCollapse属性默认值为false，当AlphabetIndexer组件高度不足时，不会折叠显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/eHEDiLPzQ8SsE5daK4XI6w/zh-cn_image_0000001987311653.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/07/v3/e2T8xUZIQWCUZdkhdZVdPw/zh-cn_image_0000001987311653.png)
 
 API version 12及之后：autoCollapse属性默认值为true，当AlphabetIndexer组件高度不足时，会折叠显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/1D8Uft4MQMO4IRs0JzrH3g/zh-cn_image_0000001987151797.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/TWUyqO9aRv-U_ZPa_VAvWA/zh-cn_image_0000001987151797.png)
 
 **变更的接口/组件**
 

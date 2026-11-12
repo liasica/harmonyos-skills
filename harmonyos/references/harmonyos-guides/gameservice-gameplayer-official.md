@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 接入游戏官方账号登录
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 基础游戏服务（必选） > 游戏登录 > 网络游戏登录 > 接入游戏官方账号登录
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:29+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2af8f9f49372ba520fbb46d0b6e35c45547ee63ee769efd6339668c33992dfe4
+scraped_at: 2026-11-12T09:52:23+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:9b529e8db0760a6a8a1604d8c25e12c3fe3833997cb078680e162c2cb44e96a4
 ---
 
 为了支持用户在HarmonyOS 5.0及以上系统上继承其他系统（例如HarmonyOS 4及以下）的官包进度继续游玩，基础游戏服务支持用户使用游戏官方账号登录HarmonyOS 5.0及以上游戏。
@@ -16,21 +16,21 @@ content_hash: sha256:2af8f9f49372ba520fbb46d0b6e35c45547ee63ee769efd6339668c3399
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/34/v3/dg3OKQU0SeWBpM_NRqnubg/zh-cn_image_0000002809050905.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/40/v3/AyMaroJ4SGCa_qM1C6FenA/zh-cn_image_0000002786520216.png)
 
 1. 玩家启动游戏。
-2. 游戏调用[init](../harmonyos-references/gameservice-gameplayer.md#gameplayerinit-1)接口初始化Game Service Kit。初始化后，弹出华为游戏服务与隐私的声明窗口，玩家确认同意后，则继续往下执行。
-3. 游戏调用[on](../harmonyos-references/gameservice-gameplayer.md#gameplayeronplayerchanged)接口注册事件监听。若监听到playerChanged事件，先清除本地缓存信息，再重新执行unionLogin登录逻辑。
-4. 游戏调用[unionLogin](../harmonyos-references/gameservice-gameplayer.md#gameplayerunionlogin)接口。
+2. 游戏调用[init()](../harmonyos-references/gameservice-gameplayer.md#gameplayerinit-1)接口初始化Game Service Kit。初始化后，弹出华为游戏服务与隐私的声明窗口，玩家确认同意后，则继续往下执行。
+3. 游戏调用[on()](../harmonyos-references/gameservice-gameplayer.md#gameplayeronplayerchanged)接口注册事件监听。若监听到playerChanged事件，先清除本地缓存信息，再重新执行unionLogin()登录逻辑。
+4. 游戏调用[unionLogin()](../harmonyos-references/gameservice-gameplayer.md#gameplayerunionlogin)接口。
 
    **说明** 
 
-   建议使用session缓存登录状态，玩家下次登录进入游戏无需再调用unionLogin接口，但仍需调用[verifyLocalPlayer](../harmonyos-references/gameservice-gameplayer.md#gameplayerverifylocalplayer)接口。
+   建议使用session缓存登录状态，玩家下次登录进入游戏无需再调用unionLogin()接口，但仍需调用[verifyLocalPlayer()](../harmonyos-references/gameservice-gameplayer.md#gameplayerverifylocalplayer)接口。
 5. 向玩家展示联合登录面板。
 6. 玩家选择“游戏官方账号登录”。
 7. 游戏获取到accountName等信息。
 8. 游戏开发者要求自行实现官方账号的实名认证、未成年人防沉迷、支付合规控制。
-9. 游戏调用[verifyLocalPlayer](../harmonyos-references/gameservice-gameplayer.md#gameplayerverifylocalplayer)接口，实现华为账号的实名认证、未成年人防沉迷功能。游戏官方账号和华为账号均通过合规校验，玩家才能进入游戏。若有一方未通过校验，不允许玩家进入游戏。若校验未通过请根据返回的[错误码](../harmonyos-references/errorcode-gameservice.md)进行相应处理。
+9. 游戏调用[verifyLocalPlayer()](../harmonyos-references/gameservice-gameplayer.md#gameplayerverifylocalplayer)接口，实现华为账号的实名认证、未成年人防沉迷功能。游戏官方账号和华为账号均通过合规校验，玩家才能进入游戏。若有一方未通过校验，不允许玩家进入游戏。若校验未通过请根据返回的[错误码](../harmonyos-references/errorcode-gameservice.md)进行相应处理。
 
 ## 接口说明
 
@@ -51,7 +51,7 @@ content_hash: sha256:2af8f9f49372ba520fbb46d0b6e35c45547ee63ee769efd6339668c3399
 
 接入游戏官方账号登录的接口调用流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ec/v3/BxObcN5JS9ieFOe1-J75Vg/zh-cn_image_0000002779851340.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e5/v3/p_Bf0gXWROKFrK6GzS8_mg/zh-cn_image_0000002786360288.png)
 
 ### 合规校验
 
@@ -68,5 +68,5 @@ content_hash: sha256:2af8f9f49372ba520fbb46d0b6e35c45547ee63ee769efd6339668c3399
 
 1. 建议在游戏内为玩家提供一个“切换账号”按钮。按钮常见的位置如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/vRe5O5QqSXqszg5xGoqN0A/zh-cn_image_0000002779691372.png)
-2. 玩家点击切换账号按钮时，开发者重新调用[unionLogin](../harmonyos-references/gameservice-gameplayer.md#gameplayerunionlogin)接口，将showLoginDialog参数设置为true，即可强制拉起联合登录面板，允许玩家重新选择华为账号登录或游戏官方账号登录。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/-WZzmdUuQT2hd37bF2K3DQ/zh-cn_image_0000002815559709.png)
+2. 玩家点击切换账号按钮时，开发者重新调用[unionLogin()](../harmonyos-references/gameservice-gameplayer.md#gameplayerunionlogin)接口，将showLoginDialog参数设置为true，即可强制拉起联合登录面板，允许玩家重新选择华为账号登录或游戏官方账号登录。

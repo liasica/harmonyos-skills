@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-file
 title: "@ohos.file.RecentPhotoComponent (最近图片组件)"
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS组件 > @ohos.file.RecentPhotoComponent (最近图片组件)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:42+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:369cec843c29566c67ef8150998350b75ddeb77c08e96e1007268dd230d942fb
+scraped_at: 2026-11-12T09:56:51+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7d037f419ab7f6821b087f779050428b4ecdc8fef7dc711ca18649323e2fe493
 ---
 
 应用可以在布局中嵌入最近图片组件，通过此组件，应用无需申请权限，即可指定配置访问公共目录中最近的一个图片或视频文件。授予的权限仅包含只读权限。
@@ -49,6 +49,7 @@ RecentPhotoComponent，是最近图片组件，可用于访问按创建时间排
 | onRecentPhotoCheckResult | [RecentPhotoCheckResultCallback](ohos-file-recentphotocomponent.md#recentphotocheckresultcallback) | 否 | 最近图片查询结果回调函数。  **元服务API**：从API version 12开始，该接口支持在元服务中使用。 |
 | onRecentPhotoClick | [RecentPhotoClickCallback](ohos-file-recentphotocomponent.md#recentphotoclickcallback) | 是 | 选择最近图片回调函数。  **元服务API**：从API version 12开始，该接口支持在元服务中使用。 |
 | onRecentPhotoCheckInfo13+ | [RecentPhotoCheckInfoCallback](ohos-file-recentphotocomponent.md#recentphotocheckinfocallback13) | 否 | 最近图片查询结果回调函数，并且返回该照片的相关信息。  **元服务API**：从API version 13开始，该接口支持在元服务中使用。 |
+| onError | [ErrorCallback](ohos-file-photopickercomponent.md#errorcallback23) | 否 | 使用RecentPhotoComponent组件发生错误时产生的回调。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。 |
 
 ## RecentPhotoOptions
 
@@ -58,11 +59,14 @@ RecentPhotoComponent，是最近图片组件，可用于访问按创建时间排
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| period | number | 否 | 是 | 配置显示多久时间段内按创建时间排序的最新一张图片，单位为秒（s）。最长可配置时长为1天（86400s）。  当值小于等于0、大于86400或者未配置时，默认按最长时间段1天显示最近图片。当配置时间段内无符合的图片或视频时，组件不显示。  **元服务API**：从API version 12开始，该接口支持在元服务中使用。 |
+| period | number | 否 | 是 | 配置最近图片或视频显示的时间范围，单位为秒（s）。配置后，系统将显示距离当前时间点指定时长内按创建时间排序的最新一个图片或视频。  - 在API版本26.0.1之前，取值范围为(0, 86400]，配置时长最长为1天（86400秒）。当值小于等于0、大于86400或者未设置该值时，默认显示1天内最近照片或视频。  - 从API版本26.0.1开始，配置时长最长（INT\_MAX）为2147483647秒。当值为正无穷大（Number.POSITIVE\_INFINITY）时，系统显示INT\_MAX时间范围内的最新一个图片或视频；当值小于等于0、大于INT\_MAX或者未配置时，默认按1天处理。  当配置时间段内无符合的图片或视频时，组件不显示。  **注意：**  当isAutoRefreshSupported为true时，period字段失效。  **元服务API：** 从API version 12开始，该接口支持在元服务中使用。 |
 | MIMEType | [photoAccessHelper.PhotoViewMIMETypes](arkts-apis-photoaccesshelper-e.md#photoviewmimetypes) | 否 | 是 | 最近图片控件显示的文件类型，默认为PhotoViewMIMETypes.IMAGE\_VIDEO\_TYPE。  **元服务API**：从API version 12开始，该接口支持在元服务中使用。 |
 | photoSource | [PhotoSource](ohos-file-recentphotocomponent.md#photosource) | 否 | 是 | 配置最近图片视频显示内容的来源，比如拍照、截屏等。默认不限制来源。  **元服务API**：从API version 12开始，该接口支持在元服务中使用。 |
 | isAutoRefreshSupported20+ | boolean | 否 | 是 | 配置最近照片组件在符合要求的最近图片或视频发生变更（包括新增、删除、修改）时是否进行刷新。  当组件原显示的最近图片或视频被删除，而无符合要求的图片或视频时，则显示占位符，组件不自动退出。  默认为false，不支持自动刷新；配置为true时显示全量照片；period字段失效。  **元服务API**：从API version 20开始，该接口支持在元服务中使用。 |
 | colorMode20+ | [PickerColorMode](ohos-file-photopickercomponent.md#pickercolormode) | 否 | 是 | 支持应用配置占位符的颜色模式。  当isAutoRefreshSupported为true，且无符合要求的最近图片或视频时，显示占位符，字段生效。  默认为跟随系统深浅色模式。  **元服务API**：从API version 20开始，该接口支持在元服务中使用。 |
+| isPersistAfterClick | boolean | 否 | 是 | 配置点击最近图片后是否保留组件。true表示点击后组件不销毁，false表示点击后组件销毁。默认为false。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。 |
+| assetFilter | Array<[photoAccessHelper.OperationItem](arkts-apis-photoaccesshelper-class.md#operationitem22)> | 否 | 是 | 媒体资产过滤器，长度限制为50个，超出取前50个。  **注意：**  1. 当使用该过滤器时，其他过滤器会失效。  2. 当配置多个条件时，过滤条件前后需要配置英文括号，否则可能和内部过滤项冲突。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。 |
+| isShowBadge | boolean | 否 | 是 | 配置最近图片上是否显示角标。true表示显示角标信息，如动态照片角标、视频时长等；false表示不显示任何角标，仅显示图片缩略图。默认为true。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。 |
 
 ## RecentPhotoInfo13+
 

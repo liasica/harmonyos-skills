@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-carkey
 title: 使用车钥匙
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 数字车钥匙 > 开发场景 > 使用车钥匙
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:45+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:63a90a1dd98f0fed668d40726deaf675ab0f31e8fbd5f1ebfa4692b105d0904b
+scraped_at: 2026-11-12T09:52:38+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:35d7f89e9cc51429556bb6da37f89049762a0f2ef04a81aec2cd94056990d2c0
 ---
 
 用户可在车主App中查看钥匙连接状态，执行开锁、闭锁、开启后备箱等远程车控操作。车控操作的超时时间由车主App自行控制。
@@ -21,7 +21,7 @@ content_hash: sha256:63a90a1dd98f0fed668d40726deaf675ab0f31e8fbd5f1ebfa4692b105d
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/W_qvjjvTS6SQz_YnFlH6tg/zh-cn_image_0000002809051229.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/vb25Hmu5SWSGXNNXJCAuyQ/zh-cn_image_0000002786360620.png)
 
 ## 开发流程
 
@@ -79,6 +79,10 @@ content_hash: sha256:63a90a1dd98f0fed668d40726deaf675ab0f31e8fbd5f1ebfa4692b105d
   }
   ```
 * **异步查询**
+
+  **说明** 
+
+  目前仅手机车钥匙支持该功能。
 
   车钥匙已开通的情况下，车主App调用[registerICCEListener](../harmonyos-references/wallet-walletpass.md#registericcelistener)接口注册监听，当移动端和车端状态发生变化，钱包App会通过监听回调通知车主App；当车钥匙被删除或者车主App进程退出，车主App需要调用[unregisterICCEListener](../harmonyos-references/wallet-walletpass.md#unregistericcelistener)取消监听。
 
@@ -141,6 +145,10 @@ async startICCEConnection(): Promise<void> {
 ```
 
 ### 主动车控
+
+**说明** 
+
+目前仅手机车钥匙支持该功能。
 
 车钥匙已开通并且移动端和车端已连接（已完成车钥匙认证过程）的情况下，车主App可以调用[sendICCERKEMessage](../harmonyos-references/wallet-walletpass.md#sendiccerkemessage)接口通过钱包App作为中继，发送车控指令给车端，然后通过监听接收车端对于车控指令的响应指令。
 

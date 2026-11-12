@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/payment-commo
 title: 纯外部支付场景
 breadcrumb: 指南 > 应用服务 > Payment Kit（鸿蒙支付服务） > 通用收银台接入 > 纯外部支付场景
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:38+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:e268d387ceadd7df9548587962ab0be74701a6052fb2baace5a20069dd83e4ec
+scraped_at: 2026-11-12T09:52:32+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:294ff1216f20d5bc6b17fb2d3dbaed71b10f624e7d663ee4102e7e2853dd2836
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:e268d387ceadd7df9548587962ab0be74701a6052fb2baace5a20069dd8
 
 通用收银台纯外部支付页面展示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/jGpfR-k9SgqobxAKO4A5XA/zh-cn_image_0000002809051111.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/Ea9XYVMvQTytYDGicydXGQ/zh-cn_image_0000002786360502.png)
 
 ## 接入流程
 
@@ -34,7 +34,7 @@ content_hash: sha256:e268d387ceadd7df9548587962ab0be74701a6052fb2baace5a20069dd8
 
 纯外部支付模式下，收银台仅支持第三方平台支付，用户无法使用华为支付。具体接入流程如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/QuksUPDfRxuz0Rl_2s0ijQ/zh-cn_image_0000002779851546.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/HCCPcZE-S9WJtjL1_mvfnQ/zh-cn_image_0000002815559923.png)
 
 1. 商户客户端根据商户已开通的支付模式构建[PaymentInfo](../harmonyos-references/payment-paymentservice.md#paymentinfo)参数调用[cashierPicker](../harmonyos-references/payment-paymentservice.md#cashierpicker)接口拉起Payment Kit通用收银台。
 2. Payment Kit通用收银台展示可用的三方支付方式，用户选择三方支付方式并确认支付。
@@ -46,7 +46,7 @@ content_hash: sha256:e268d387ceadd7df9548587962ab0be74701a6052fb2baace5a20069dd8
 2. 商户服务端调用三方支付的接口获取支付信息。
 3. 三方支付服务端将支付跳转链接信息返回给商户服务端。
 4. 商户服务端将支付跳转链接信息返回给商户客户端。
-5. 商户客户端构建**订单支付跳转信息**[orderStr](../harmonyos-references/payment-model.md#orderstr)请求Payment Kit的[requestPayment](../harmonyos-references/payment-paymentservice.md#requestpayment)接口跳转三方支付。
+5. 商户客户端构建**订单支付跳转信息**[orderStr](../harmonyos-references/payment-model.md#orderstr)请求Payment Kit的[requestPayment](../harmonyos-references/payment-paymentservice.md#requestpayment-2)接口跳转三方支付。
 6. Payment Kit客户端根据传递的支付消息拉起三方支付收银台。
 7. 三方支付客户端展示支付收银台。
 8. 用户完成支付操作。
@@ -109,12 +109,12 @@ struct Index {
     }
     paymentService.cashierPicker(this.context, paymentInfo)
       .then((pickerResult: paymentService.PickerResult) => {
-        // 支付成功
-        console.info('succeeded in paying, picker result: ', pickerResult);
+        // 请求成功
+        console.info('succeeded in requesting, picker result: ', pickerResult);
       })
       .catch((error: BusinessError) => {
-        // 支付失败
-        console.error(`failed to pay, error.code: ${error.code}, error.message: ${error.message}`);
+        // 请求失败
+        console.error(`failed to request, error.code: ${error.code}, error.message: ${error.message}`);
       });
   }
 

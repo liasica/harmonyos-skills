@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-full-scre
 title: Web组件支持视频沉浸式全屏播放
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 使用网页多媒体 > Web组件支持视频沉浸式全屏播放
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:52+08:00
-doc_updated_at: 2026-10-21
+scraped_at: 2026-11-12T09:51:23+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:a558487729611c7431e573f858dacd3cf9ae436746632257fba2b39a4b95feb1
 ---
 

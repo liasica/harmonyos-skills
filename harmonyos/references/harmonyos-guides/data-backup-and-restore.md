@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-backup-a
 title: 数据库备份与恢复 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 数据可靠性与安全性 > 数据库备份与恢复 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:03:57+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:57aa4956f215b60d471287f07ce389d454ebf4464229931a56d3094c3ed0c562
+scraped_at: 2026-11-12T09:51:02+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:2ac7ae6d14dd9fdc9151bb0018aa1e8f014144fecbc2124c5fcee5cdb41172b0
 ---
 
 ## 场景介绍
@@ -269,7 +269,10 @@ import { common } from '@kit.AbilityKit';
 
 ```typescript
 /* context为应用的上下文信息，由调用方自行获取，此处仅为示例。 */
-const context = new UIContext().getHostContext() as common.UIAbilityContext;
+const context = uiContext.getHostContext();
+if (context === undefined) {
+  return;
+}
 let store: relationalStore.RdbStore | undefined = undefined;
 const STORE_CONFIG: relationalStore.StoreConfig = {
   name: 'RdbTest.db',
@@ -314,7 +317,10 @@ try {
 ```typescript
 let store: relationalStore.RdbStore | undefined = undefined;
 /* context为应用的上下文信息，由调用方自行获取，此处仅为示例。 */
-const context = new UIContext().getHostContext() as common.UIAbilityContext;
+const context = uiContext.getHostContext();
+if (context === undefined) {
+  return;
+}
 try {
   const STORE_CONFIG: relationalStore.StoreConfig = {
     name: 'RdbTest.db',
@@ -368,7 +374,7 @@ try {
            if (err.code === 14800011) {
              // 执行下文的步骤，即关闭结果集之后进行数据的恢复
            }
-           hilog.info(DOMAIN, 'BackupAndRestore', JSON.stringify(err));
+           hilog.error(DOMAIN, 'BackupAndRestore', JSON.stringify(err));
          }
        })
    }
@@ -383,7 +389,7 @@ try {
        resultSet.close();
      } catch (e) {
        if (e.code !== 14800014) {
-         hilog.info(DOMAIN, 'BackupAndRestore', `Code:${e.code}, message:${e.message}`);
+         hilog.error(DOMAIN, 'BackupAndRestore', `Code:${e.code}, message:${e.message}`);
        }
      }
    }
@@ -393,7 +399,10 @@ try {
    ```typescript
    let store: relationalStore.RdbStore | undefined = undefined;
    /* context为应用的上下文信息，由调用方自行获取，此处仅为示例。 */
-   const context = new UIContext().getHostContext() as common.UIAbilityContext;
+   const context = uiContext.getHostContext();
+   if (context === undefined) {
+     return;
+   }
    let STORE_CONFIG: relationalStore.StoreConfig = {
      name: 'RdbTest.db',
      securityLevel: relationalStore.SecurityLevel.S3,
@@ -413,7 +422,7 @@ try {
        return;
      }
    } catch (e) {
-     hilog.info(DOMAIN, 'BackupAndRestore', `Code:${e.code}, message:${e.message}`);
+     hilog.error(DOMAIN, 'BackupAndRestore', `Code:${e.code}, message:${e.message}`);
    }
 
    try {

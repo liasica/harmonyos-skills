@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ads-publisher
 title: 横幅广告
 breadcrumb: 指南 > 应用服务 > Ads Kit（广告服务） > 流量变现服务开发 > 横幅广告
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:23+08:00
+scraped_at: 2026-11-12T09:52:18+08:00
 doc_updated_at: 2026-09-01
-content_hash: sha256:dcc257afddf78828fcaee84f0ace9fb61800f1ff3a4a6ea49cefde8f19b3a882
+content_hash: sha256:cc5735461e61c960cc0ff06e6c04c017cbdf1eec33ad0deb4a13182624f14271
 ---
 
 ## 场景介绍
 
 横幅广告又名Banner广告，是在应用程序顶部、中部或底部占据一个位置的矩形图片，广告内容每隔一段时间会自动刷新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/EjbNCC7KQUe8sQqQehaYzg/zh-cn_image_0000002809010859.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/ZyGzMluTR0OHk1OLafybkQ/zh-cn_image_0000002815559575.png)
 
 ## 约束与限制
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arengine-volu
 title: 高精几何重建（ArkTS）
 breadcrumb: 指南 > 图形 > AR Engine（AR引擎服务） > 高精几何重建 > 高精几何重建（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:48+08:00
-doc_updated_at: 2026-08-14
-content_hash: sha256:def4f40f9ee18429bcb21b8066b2a01e808f94909744079bc40bbb3811f38430
+scraped_at: 2026-11-12T09:52:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:97478d1e5ffea1491612fb37232348edeca3b626338d6ea35ab786618430e484
 ---
 
 ## 约束与限制
@@ -125,7 +125,7 @@ struct ARSemanticDense {
   }
 
   private initARView(): void {
-    Scene.load().then(async (scene: Scene) => {
+    Scene.load().then((scene: Scene) => {
       let ret :boolean = arViewController.isARTypeSupported(arEngine.ARFeatureType.ARENGINE_FEATURE_TYPE_SEMANTIC_DENSE);
       logger.info('ARSemanticDense isARTypeSupported is' + ret);
       let context = new arViewController.ARViewContext()
@@ -139,9 +139,13 @@ struct ARSemanticDense {
       };
       context.init().then(() => {
         this.arContext = context;
-        // ...
+        logger.info(`Succeeded in initing ARView.`);
+      }).catch((err: BusinessError) => {
+        logger.error(`Failed to init context. Code is ${err.code}, message is ${err.message}`);
       });
-    })
+    }).catch((err: BusinessError) => {
+      logger.error(`Failed to load scene. Code is ${err.code}, message is ${err.message}`);
+    });
   }
 }
 ```

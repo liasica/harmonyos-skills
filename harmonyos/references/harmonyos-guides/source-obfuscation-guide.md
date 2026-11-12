@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/source-obfusc
 title: ArkGuard混淆开启指南
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard源码混淆工具 > ArkGuard混淆开启指南
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:07+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:fb34ca8a00245dd5ad5e1d757a2ddfbd858fafc3b6b42e9e26a902119e1f24f7
+scraped_at: 2026-11-12T09:51:05+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4aa9c5bfaa2219cc143fdc2d15f6ff7d7751579100de9baef2c9cef9b036edc5
 ---
 
 本指南旨在帮助开发者了解和使用ArkGuard源码混淆功能，保护应用代码安全。通过启用源码混淆，开发者可以对ArkTS代码中的变量名、属性名、文件名等进行混淆处理，增加代码逆向难度，提升应用的安全性。文章将详细介绍如何在DevEco Studio中开启混淆、配置混淆规则、适配不同混淆场景，以及如何查看混淆效果和还原混淆后的报错堆栈。
@@ -172,7 +172,7 @@ content_hash: sha256:fb34ca8a00245dd5ad5e1d757a2ddfbd858fafc3b6b42e9e26a902119e1
   + 名称映射表文件：nameCache.json，该文件记录了源码名称混淆的映射关系。
   + 系统API白名单文件：systemApiCache.json，该文件记录了SDK中的接口与属性名称，工程源码中与其重名的元素不会被混淆。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/6BqEtAMgTFCTaGDfFtKoeg/zh-cn_image_0000002779849538.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/52DydlBPRVqCTFNGCUTylg/zh-cn_image_0000002786518406.png)
 
 ## 报错栈还原
 
@@ -184,4 +184,4 @@ content_hash: sha256:fb34ca8a00245dd5ad5e1d757a2ddfbd858fafc3b6b42e9e26a902119e1
 
 源代码映射信息文件：sourceMaps.map，该文件记录了压缩/转换后的代码到原始源代码之间的映射关系。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e2/v3/vVByJAS1QZyQqMY0UNaPGA/zh-cn_image_0000002779689568.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/3MjNhTVhRt2i9Y22hiSvJQ/zh-cn_image_0000002786358478.png)

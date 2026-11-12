@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-traf
 title: TrafficFilter
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 模块 > TrafficFilter
 category: harmonyos-references
-scraped_at: 2026-09-15T07:06:49+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:3e4b5f4c4fba69219c9ff789b96f5be57afdc03324f49464c6ba1c508520e08d
+scraped_at: 2026-11-12T09:55:41+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8600f08007c94b9606372d7913fd133161ada20b774d8661b908e73049f76d69
 ---
 
 ## 概述
@@ -23,4 +23,4 @@ content_hash: sha256:3e4b5f4c4fba69219c9ff789b96f5be57afdc03324f49464c6ba1c50852
 | 名称 | 描述 |
 | --- | --- |
 | [net\_trafficfilter.h](capi-net-trafficfilter-h.md) | 声明网络流量过滤与重定向功能的C接口。该头文件提供创建和销毁报文控制器、注册报文回调、添加和清除过滤规则，以及创建和销毁流量重定向器、添加和清除重定向规则的接口。  适用于需要在系统层面对网络数据包进行拦截、过滤和重定向的应用场景。 |
-| [net\_trafficfilter\_type.h](capi-net-trafficfilter-type-h.md) | 声明网络流量过滤与重定向功能所需的通用类型和错误码。该头文件定义了流量过滤与重定向功能中使用的IP地址、端口、接口等匹配条件结构体，报文过滤规则、重定向规则等配置结构体，以及操作返回的错误码。  适用于调用[OH\_TrafficFilter\_CreateRedirector](capi-net-trafficfilter-h.md#oh_trafficfilter_createredirector)等接口时构造参数和解析返回值。 |
+| [net\_trafficfilter\_type.h](capi-net-trafficfilter-type-h.md) | 声明网络流量过滤与重定向功能所需的通用类型和错误码。该头文件定义了流量过滤与重定向功能中使用的IP地址、端口、MAC地址、接口、TCP标志位、连接跟踪等匹配条件结构体，报文过滤规则、重定向规则、NFQueue配置等配置结构体，报文描述符、报文处理决策、报文复制模式以及操作返回的错误码。  适用于调用[OH\_TrafficFilter\_CreateRedirector](capi-net-trafficfilter-h.md#oh_trafficfilter_createredirector)或[OH\_TrafficFilter\_CreatePacketController](capi-net-trafficfilter-h.md#oh_trafficfilter_createpacketcontroller)等接口时构造参数和解析返回值。 |

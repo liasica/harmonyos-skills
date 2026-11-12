@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-state-
 title: "@Type：标记类属性的类型"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 状态管理与渲染控制 > 状态管理V2装饰器 > @Type：标记类属性的类型
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:10+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:54:30+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:7d4e63cc3dbfbd7b8a623fd579e23b005221053521356a20dde46ee80e576d53
 ---
 

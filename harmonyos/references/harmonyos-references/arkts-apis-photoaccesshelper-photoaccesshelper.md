@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (PhotoAccessHelper)
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS API > @ohos.file.photoAccessHelper (相册管理模块) > Interface (PhotoAccessHelper)
 category: harmonyos-references
-scraped_at: 2026-10-27T07:43:26+08:00
-doc_updated_at: 2026-10-26
+scraped_at: 2026-11-12T09:56:52+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:924756dfd0055719c5a174ac323f1393e9c4e7d21633ed00275fa17097915ff9
 ---
 

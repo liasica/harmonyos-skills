@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/core-vision-f
 title: 人脸检测
 breadcrumb: 指南 > AI > Core Vision Kit（基础视觉服务） > 人脸检测
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:09+08:00
-doc_updated_at: 2026-09-07
-content_hash: sha256:9f95aaf3b0ef7d7336aa376c5c00c13f50989537b77ebcfc1b237b23f0657956
+scraped_at: 2026-11-12T09:52:43+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:fc4920b947718ff669575f1bceaed363ed4c68321b708c2bb9a3a9cd69a60ff3
 ---
 
 ## 适用场景
@@ -14,13 +14,13 @@ content_hash: sha256:9f95aaf3b0ef7d7336aa376c5c00c13f50989537b77ebcfc1b237b23f06
 
 效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/BaqWn42PSvC8rtN3YlbZOQ/zh-cn_image_0000002809051367.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/s-EGwdTIQqawJVYLwuZxaw/zh-cn_image_0000002786360720.png)
 
 ## 世界坐标系
 
 以下方图片指示坐标系辅助表示人脸朝向。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/xpqrMn84SdS8PFiRDe4Eeg/zh-cn_image_0000002779851802.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/31/v3/28hiCyUkRwm5iXtcyt8wng/zh-cn_image_0000002815560141.png)
 
 ## 开发步骤
 
@@ -114,12 +114,12 @@ content_hash: sha256:9f95aaf3b0ef7d7336aa376c5c00c13f50989537b77ebcfc1b237b23f06
          hilog.error(0x0000, 'faceDetectorSample', 'Failed to detect face.');
          return;
        }
-       // 调用人脸检测接口
-       let visionInfo: faceDetector.VisionInfo = {
-         pixelMap: this.chooseImage
-       };
+        // 调用人脸检测接口
+        let visionInfo: faceDetector.VisionInfo = {
+          pixelMap: this.chooseImage
+        };
         faceDetector.detect(visionInfo)
-        .then((data: faceDetector.Face[]) => {
+          .then((data: faceDetector.Face[]) => {
           if (data && Array.isArray(data)) {
             if (data.length === 0) {
               this.dataValues = 'No face is detected in the image. Select an image that contains a face.';

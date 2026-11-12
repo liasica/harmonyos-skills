@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nearlink-intr
 title: NearLink Kit简介
 breadcrumb: 指南 > 系统 > 网络 > NearLink Kit（星闪服务） > NearLink Kit简介
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:05+08:00
-doc_updated_at: 2026-08-04
-content_hash: sha256:db61f26a4aefaac36b05149e452e24b29c603c2f1cd6264ceed3a327096c7b83
+scraped_at: 2026-11-12T09:51:43+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a707a600ec5016dfdcfd29d65a8c4ad14db2bb052c79b8360aad66d521f6c233
 ---
 
 NearLink Kit（星闪服务）提供一种低功耗、高速率的短距离通信服务，支持星闪设备之间的连接、数据交互。
@@ -19,7 +19,7 @@ NearLink Kit（星闪服务）提供一种低功耗、高速率的短距离通�
 
 ## 约束与限制
 
-本Kit适用于Phone、PC/2in1、TV、Tablet和Wearable设备。
+本Kit支持Phone、PC/2in1、TV、Tablet、Wearable设备；从API版本26.0.1开始，新增支持Car设备。
 
 ## 模拟器支持情况
 

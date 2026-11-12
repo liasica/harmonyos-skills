@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-avsession-
 title: 播控中心的进度条展示错误，与应用内的进度条不一致
 breadcrumb: FAQ > 媒体开发 > 音频和视频 > 音视频播控（AVSession） > 播控中心的进度条展示错误，与应用内的进度条不一致
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:22+08:00
-doc_updated_at: 2026-09-02
-content_hash: sha256:872840a34f2658c6e5fb5b14af561b0bbe4d660898ff50ad91c27397de29cc31
+scraped_at: 2026-11-12T09:59:49+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3add7e3799326b6a8e905404d9a384dba8e737064a9e9f6e87e731881da28e00
 ---
 
 ## 问题现象
@@ -161,4 +161,4 @@ async RegisterTimeChange() {
 
 ## 修改建议
 
-实现播控中心的进度条的正常显示和移动，与应用保持一致，需要正确接入AVSession，并且在播放状态发生变化时（播放状态、播放位置、倍速），及时更新AVPlaybackState。其他可参考[AVSession进度条](../harmonyos-guides/avsession-access-scene.md#进度条)。
+实现播控中心的进度条的正常显示和移动，与应用保持一致，需要正确接入AVSession，并且在播放状态发生变化时（播放状态、播放位置、倍速），及时更新AVPlaybackState。其他可参考[AVSession进度条](../doccenter-capabilities/avsession-access-scene.md)。

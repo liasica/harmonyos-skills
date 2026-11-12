@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅滑动丢帧事件（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 滑动丢帧事件 > 订阅滑动丢帧事件（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-09-05T06:14:39+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:c6b8f7e61bbcf34a2358f000c691b00b47d3c6b7f27ee8548d87b83086e7f219
+scraped_at: 2026-11-12T09:51:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:35e47bac541123ca103583c3417a807391f23e771c859ef05ffbc7e13ef646cf
 ---
 
 ## 接口说明
@@ -23,7 +23,7 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
 
 1. 编辑工程中的“entry > src > main > ets > entryability > EntryAbility.ets”文件，添加系统事件的订阅，示例代码如下：
 
-   ```ts
+   ```typescript
    import { hiAppEvent, hilog } from '@kit.PerformanceAnalysisKit';
 
    hiAppEvent.addWatcher({
@@ -52,7 +52,7 @@ API接口的具体使用说明（参数使用限制、具体取值范围等）�
    ```
 2. 编辑工程中的“entry > src > main > ets > pages > Index.ets”文件，添加一个List组件，在列表的滑动事件中添加耗时操作，示例代码如下：
 
-   ```ts
+   ```typescript
    struct Index {
      private arr: number[] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
      build() {

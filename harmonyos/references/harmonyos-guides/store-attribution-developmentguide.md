@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/store-attribu
 title: 登记归因来源及转化
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用归因服务 > 登记归因来源及转化
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:12+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:9a5b50ed770ec8ef4ec6966cbedeb3f8e83ef9b70df32542c0ea235381140a6d
+scraped_at: 2026-11-12T09:52:19+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:405b0b97fd60e57c82f098fe07ac54f7c6c7a848951ca4240989537fcd654524
 ---
 
 **说明** 
@@ -46,22 +46,22 @@ content_hash: sha256:9a5b50ed770ec8ef4ec6966cbedeb3f8e83ef9b70df32542c0ea2353811
    // 私钥，由开发者生成，用于生成签名值使用
    let privateKey: string = '********u2rMtFw==';
    // 分发平台对应的归因角色ID，在应用归因云侧注册应用生态伙伴角色时，由应用归因服务分配
-   let adTechId: string = '2******';
+   let adTechId: string = '2A3B4C5D';
    // 广告平台创建的广告任务ID。
    // 自API 12起，campaignId长度小于等于6个字符
    // 自API 22起，campaignId长度小于等于9个字符
    let campaignId: string = '';
    let osApiVersion: number = deviceInfo.sdkApiVersion;
    if (osApiVersion >= 22) {
-       campaignId = '1*******9';
+       campaignId = '1123456789';
    } else {
-       campaignId = '1****6';
+       campaignId = '123456';
    }
    // 开发者应用上架华为应用市场的appId，不带C
-   let destinationId: string = '6*********4';
+   let destinationId: string = '12345678';
    // 归因监测平台id
-   let mmpIds: string[] = ['2f*****15'];
-   // 分发平台关注的业务信息
+   let mmpIds: string[] = ['abcd1234'];
+   // 分发平台关注的业务信息，长度不超过32字符
    let serviceTag: string = 'testServiceTag';
    // 用于计算签名的随机数，不带'-'
    let nonce: string = util.generateRandomUUID().replace(/-/g, '');

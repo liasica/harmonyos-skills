@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-revoke-e
 title: 撤回语音播报消息
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 推送场景化消息 > 推送语音播报消息 > 撤回语音播报消息
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:26+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:e3afbb44a724f28d0b4654983211342164778369b2c6da972338bb6fed37bb46
+scraped_at: 2026-11-12T09:52:34+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f0885d8966cdcf51f25a4442ebf85ff37d91ae9f51737ce90b53d4d58d33a12b
 ---
 
 ## 场景介绍
@@ -24,7 +24,7 @@ content_hash: sha256:e3afbb44a724f28d0b4654983211342164778369b2c6da972338bb6fed3
 
 ## 约束与限制
 
-撤回语音播报消息能力支持Phone、Tablet、PC/2in1。并且从5.1.0(18)版本开始，新增支持Wearable设备；从6.1.0(23)版本开始，新增支持TV设备。
+撤回语音播报消息能力支持Phone、Tablet、PC/2in1。并且从API版本5.1.0(18)开始，新增支持Wearable设备；从API版本6.1.0(23)开始，新增支持TV设备；从API版本26.0.1开始，新增支持Car设备。
 
 ## 开发步骤
 

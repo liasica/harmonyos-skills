@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hidumper
 title: hidumper
 breadcrumb: 指南 > 系统 > 调测调优 > 调试命令 > hidumper > hidumper
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:05:24+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:979f8a5eec2f68328339c44fe5a66b72a0abce1137c17584b677656d87995793
+scraped_at: 2026-11-12T09:51:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:80b9e2ceff5bf5b0494cff85a5617b1cfcb368f221aa89582da1cf91b89e3f33
 ---
 
 HiDumper是用于统一系统信息导出的命令行工具，支持分析CPU、内存、存储等系统资源使用情况，查询系统服务运行情况，定位资源使用异常、通信等相关问题。
@@ -42,7 +42,7 @@ HiDumper命令行工具使用常见问题汇总在[常见问题](hidumper.md#常
 | [--cpuusage [pid]](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hidumper#查询进程cpu使用率) | 获取CPU使用率，取值范围(0, CPU核数]，按进程和类别分类；如果指定pid，则获取指定pid的CPU使用率。 |
 | [--cpufreq](hidumper.md#查询cpu频率) | 获取CPU每个核的真实频率，单位：kHz。 |
 | [--mem [--prune]](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hidumper#查询整机内存) | 获取总内存使用情况。如果指定--prune，只导出精简的内存使用情况。  **说明**：从API version 20开始，支持--prune参数。 |
-| [--mem pid [--show-ashmem] [--show-dmabuf] [--show-gpumem]](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hidumper#查询进程内存) | 获取指定pid的进程内存使用情况。  指定--show-ashmem，则补充打印该进程的ashmem使用详细信息。  指定--show-dmabuf，则补充打印DMA内存使用详情信息。  指定--show-gpumem，则补充打印该进程的GPU内存使用详细信息。  **说明**：  从API version 20开始，支持--show-ashmem、应用进程的--show-dmabuf参数。  从API version 23开始，支持系统服务进程的--show-dmabuf参数。  从API version 24开始，支持进程的--show-gpumem参数。 |
+| [--mem pid [--show-ashmem] [--show-dmabuf] [--show-gpumem] [--show-arktsheap]](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hidumper#查询进程内存) | 获取指定pid的进程内存使用情况。  指定--show-ashmem，则补充打印该进程的ashmem使用详细信息。  指定--show-dmabuf，则补充打印DMA内存使用详情信息。  指定--show-gpumem，则补充打印该进程的GPU内存使用详细信息。  指定--show-arktsheap，则补充打印PID中主线程的arkts heap使用情况。  **说明**：  从API version 20开始，支持--show-ashmem、应用进程的--show-dmabuf参数。  从API version 23开始，支持系统服务进程的--show-dmabuf参数。  从API version 24开始，支持进程的--show-gpumem参数。  从API版本26.0.1开始，支持系统服务进程的--show-arktsheap参数。 |
 | [--zip](hidumper.md#导出信息压缩存储) | 保存命令输出到 /data/log/hidumper 下的压缩文件，压缩格式为 ZIP。 |
 | [--ipc [pid]/-a --start-stat/stat/--stop-stat](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hidumper#获取进程间通信信息) | 统计一段时间进程IPC信息。如果使用-a，则统计所有进程IPC数据。使用--start-stat开始统计，使用--stat获取统计数据，使用--stop-stat结束统计。 |
 | [--mem-smaps pid [-v]](https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hidumper#查询进程内存) | 获取pid内存统计信息，数据来源于/proc/pid/smaps，使用-v指定更多详细信息。（仅支持导出[debug版本应用](performance-analysis-kit-terminology.md#debug版本应用)）  **说明**：从API version 20开始，支持该参数。 |
@@ -308,6 +308,58 @@ Total Ashmem:144 kB
 | leak\_type | ION内存泄漏维测的buffer类型。 |
 
 使用hidumper --mem pid --show-gpumem命令可获取指定PID的内存使用情况，并打印GPU内存详细信息。详细信息可参考[ASHMEM/DMA/GPU/GPU\_RS内存泄漏日志规格](resource-leak-guidelines.md#ashmemdmagpugpu_rs内存泄漏日志规格)中gpu内存泄漏字段说明。
+
+使用hidumper --mem pid --show-arktsheap命令可获取指定PID中主线程的arkts heap使用情况。
+
+使用样例：
+
+```shell
+$ hidumper --mem 1436 --show-arktsheap
+
+-------------------------------[memory]-------------------------------
+
+                             Pss         Shared         Shared        Private        Private           Swap        SwapPss           Heap           Heap           Heap
+                           Total          Clean          Dirty          Clean          Dirty          Total          Total           Size          Alloc           Free
+                          ( kB )         ( kB )         ( kB )         ( kB )         ( kB )         ( kB )         ( kB )         ( kB )         ( kB )         ( kB )
+                 ------------------------------------------------------------------------------------------------------------------------------------------------------
+               GL              0              0              0              0              0              0              0              0              0              0
+            Graph          11300              0              0              0          11300              0              0              0              0              0
+      ark ts heap          14978              0           7460              0          13916              0              0              0              0              0
+            guard              0              0              0              0              0              0              0              0              0              0
+      native heap          28362              0          23380              0          25168              0              0              0              0              0
+   AnonPage other           1242              4           3852              0            808              0              0              0              0              0
+            stack            880              0              0              0            880              0              0              0              0              0
+              .so          20661          94220          13996           1480           1368              0              0              0              0              0
+              dev           5988              0            252             32           5956              0              0              0              0              0
+             .ttf            188            468              0             24              0              0              0              0              0              0
+   FilePage other           2533           1776              4           2020              4              0              0              0              0              0
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+            Total          86163          96468          49172           3556          59400              0              0              0              0              0
+
+native heap:
+           heap:           686              0            184              0            660              0              0              0              0              0
+       brk heap:         25533              0          20980              0          22676              0              0              0              0              0
+      mmap heap:          2143              0           2216              0           1832              0              0              0              0              0
+
+Purgeable:
+        PurgSum:0 kB
+        PurgPin:0 kB
+
+DMA:
+            Dma:11300 kB
+
+arkts heap:
+tid               thread name                   arkts_heap(KB)
+1436              m.ohos.systemui               14848
+```
+
+字段说明：
+
+| 字段 | 说明 |
+| --- | --- |
+| tid | 指定PID中主线程ID。 |
+| thread name | 指定PID中主线程的名称。 |
+| arkts\_heap(KB) | 指定PID中主线程的arkts heap大小。 |
 
 可使用hidumper --mem-smaps pid命令获取指定进程的详细内存使用情况，该命令会累加相同内存段的内存值。
 
@@ -1251,31 +1303,9 @@ no records found.
 | --- | --- |
 | time | 异常退出发生的时间。 |
 | foreground | 异常退出发生时，进程是否在前台。True表示处于前台；False表示处于后台。 |
-| reason | 异常退出原因，原因范围详见[reason字段说明](hidumper.md#reason字段说明)。 |
+| reason | 异常退出原因。取值、各原因的产生场景、排查处理方法可参考[应用终止分析思路和分析步骤](appkilled-guidelines.md#分析思路和分析步骤)。 |
 | record\_id | 异常退出记录ID。 |
 | process\_name | 发生异常退出的进程名。 |
-
-### reason字段说明
-
-以下异常退出原因，可参考[应用终止分析思路和分析步骤](appkilled-guidelines.md#分析思路和分析步骤)进行问题排查处理。
-
-| 类型 | 说明 |
-| --- | --- |
-| IllegalAudioRendererBySuspend | 应用未申请合理的后台任务，但是后台有大量音频播放。 |
-| LowMemoryKill | 整机低内存。 |
-| OomKiller | 整机内存耗尽，无法继续分配。 |
-| PowerSaveClean | 整机切换到省电模式或应急模式。 |
-| ResourceLeak(AshmemLeak) | 应用Ashmem内存占用超标。 |
-| ResourceLeak(GpuLeak) | 应用GPU内存占用超标。 |
-| ResourceLeak(GpuRsLeak) | 应用在Render Service进程内的GPU内存占用超标。 |
-| ResourceLeak(IonLeak) | 应用的Ion内存占用超标。 |
-| RssThresholdKiller | 应用的RSS（Resident Size Set）占用超标。 |
-| SwapFull | 整机Swap空间耗尽。 |
-| ThreadBlock6S | 应用主进程阻塞，该类型支持根据record\_id查看故障日志详情。 |
-| AppInputBlock | 输入事件无响应，该类型支持根据record\_id查看故障日志详情。 |
-| LifecycleTimeout | 生命周期超时，该类型支持根据record\_id查看故障日志详情。 |
-| JsError | JS崩溃，该类型支持根据record\_id查看故障日志详情。 |
-| CppCrash | Native崩溃，该类型支持根据record\_id查看故障日志详情。 |
 
 ## 获取异常退出故障日志
 
@@ -1635,49 +1665,129 @@ hdc shell "hidumper -s WindowManagerService -a '-w 5 -inspector'"
 | ID: 2100001
 | compid:
 | text:
+| accessibilityText:
+| accessibilityGroup: 0
+| accessibilityLevel: auto
+| accessibilityCustomRole:
 | top: 72.000000
 | left: 0.000000
 | width: 0.000000
 | height: 0.000000
 | visible: 1
+| debugLine:
 | clickable: 0
+| longclickable: 0
 | checkable: 0
+| scrollable: 0
+| checked: 0
+| hint:
+| childTree: -1
+| accessibilitySelected: 0
+| accessibilityRole:
 |-> Column childSize:1
 | ID: 128
 | compid:
 | text:
+| accessibilityText:
+| accessibilityGroup: 0
+| accessibilityLevel: auto
+| accessibilityCustomRole:
 | top: 72.000000
 | left: 0.000000
 | width: 720.000000
 | height: 1136.000000
 | visible: 1
+| debugLine:
 | clickable: 0
+| longclickable: 0
 | checkable: 0
+| scrollable: 0
+| checked: 0
+| hint:
+| childTree: -1
+| accessibilitySelected: 0
+| accessibilityRole:
 |-> GridContainer childSize:1
 | ID: 129
 | compid:
 | text:
+| accessibilityText:
+| accessibilityGroup: 0
+| accessibilityLevel: auto
+| accessibilityCustomRole:
 | top: 72.000000
 | left: 0.000000
 | width: 720.000000
 | height: 1136.000000
 | visible: 1
+| debugLine:
 | clickable: 0
+| longclickable: 0
 | checkable: 0
+| scrollable: 0
+| checked: 0
+| hint:
+| childTree: -1
+| accessibilitySelected: 0
+| accessibilityRole:
 |-> Column childSize:2
 | ID: 130
 | compid:
 | text:
+| accessibilityText:
+| accessibilityGroup: 1
+|     accessibilityOptions:
+|         accessibilityTextPreferred: 0
+|         stateControllerByType:
+|         stateControllerByInspector:
+|         actionControllerByType:
+|         actionControllerByInspector:
+| accessibilityLevel: yes
+| accessibilityCustomRole:
 | top: 72.000000
 | left: 0.000000
 | width: 720.000000
 | height: 180.000000
 | visible: 1
+| debugLine:
 | clickable: 0
+| longclickable: 0
 | checkable: 0
+| scrollable: 0
+| checked: 0
+| hint:
+| childTree: -1
+| accessibilitySelected: 0
+| accessibilityRole:
 
 ......
 ```
+
+上述样例中，各字段的含义如下：
+
+| 字段 | 说明 |
+| --- | --- |
+| ID | 节点的无障碍ID，由系统自动分配。 |
+| compid | 组件的唯一标识，为[id](../harmonyos-references/ts-universal-attributes-component-id.md#id)属性设置的值，未设置时为空。 |
+| text | 组件的文本内容，字符串；启用无障碍分组时为按[accessibilityGroup](../harmonyos-references/ts-universal-attributes-accessibility.md#accessibilitygroup)规则拼接的合并文本，多项文本以", "分隔。 |
+| accessibilityText | 无障碍文本，对应[accessibilityText](../harmonyos-references/ts-universal-attributes-accessibility.md#accessibilitytext)属性，未设置时为空。 |
+| accessibilityGroup | 是否启用无障碍分组，对应[accessibilityGroup](../harmonyos-references/ts-universal-attributes-accessibility.md#accessibilitygroup)属性。0表示未启用（默认），1表示启用。 |
+| accessibilityOptions | 无障碍分组配置选项，仅accessibilityGroup为1时输出，对应[AccessibilityOptions](../harmonyos-references/ts-types.md#accessibilityoptions14对象说明)。其中accessibilityTextPreferred对应accessibilityPreferred，当accessibilityPreferred为false时为0，否则为1；stateControllerByType、actionControllerByType为角色字符串（如button），分别对应stateControllerRoleType、actionControllerRoleType；stateControllerByInspector、actionControllerByInspector为组件id字符串，分别对应stateControllerId、actionControllerId；未设置时为空。  **说明**：从API版本26.0.1开始，输出此字段。 |
+| accessibilityLevel | 无障碍重要性，对应[accessibilityLevel](../harmonyos-references/ts-universal-attributes-accessibility.md#accessibilitylevel)属性。取值为auto（默认）、yes、no、no-hide-descendants。 |
+| accessibilityCustomRole | 无障碍组件类型（如button），为[accessibilityRole](../harmonyos-references/ts-universal-attributes-accessibility.md#accessibilityrole18)属性设置的类型，未设置时为空。  **说明**：从API version 18开始，输出此字段。 |
+| top/left | 组件左上角的坐标位置，单位vp，由组件相对窗口的位置叠加窗口在屏幕上的偏移计算得到。 |
+| width/height | 组件的宽和高，单位vp。 |
+| visible | 组件是否可见。1表示可见，0表示不可见。 |
+| debugLine | 组件创建所在的代码行信息，同[getInspectorInfo](../harmonyos-references/js-apis-arkui-framenode.md#getinspectorinfo12)的$debugLine，仅debug编译场景下有值，否则为空。  **说明**：从API版本26.0.0开始，输出此字段。 |
+| clickable | 组件是否可点击。1表示绑定了点击事件，0表示未绑定。 |
+| longclickable | 组件是否可长按。1表示绑定了长按事件，0表示未绑定。 |
+| checkable | 组件是否支持选中。1表示支持（如单选框、多选框、开关等），0表示不支持。 |
+| scrollable | 组件是否可滚动。1表示支持（如Scroll、List等滚动容器），0表示不支持。 |
+| checked | 组件是否被选中。1表示选中，0表示未选中，参见[accessibilityChecked](../harmonyos-references/ts-universal-attributes-accessibility.md#accessibilitychecked13)属性。 |
+| hint | 组件的提示文本，如输入框的placeholder文本，无为空。 |
+| childTree | 子无障碍树ID，Web、XComponent、卡片等内部使用独立无障碍树的组件为其树ID，无子树时为-1。 |
+| accessibilitySelected | 组件是否被单选选中。1表示选中，0表示未选中，对应[accessibilitySelected](../harmonyos-references/ts-universal-attributes-accessibility.md#accessibilityselected13)属性。  **说明**：从API版本26.0.1开始，输出此字段。 |
+| accessibilityRole | 组件的无障碍角色，通过C API属性[NODE\_ACCESSIBILITY\_ROLE](../harmonyos-references/capi-native-node-h-nodeattributetype-accessibility.md#node_accessibility_role)设置，未设置时为空。  **说明**：从API版本26.0.1开始，输出此字段。 |
 
 ### 获取期望应用路由栈信息
 

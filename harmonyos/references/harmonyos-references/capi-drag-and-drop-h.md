@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drag
 title: drag_and_drop.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > drag_and_drop.h
 category: harmonyos-references
-scraped_at: 2026-09-25T07:10:31+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:56b221493321348acf7a57a915fe23eac8a04faa2d8ef25e3ffc265133e78e44
+scraped_at: 2026-11-12T09:54:39+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ed5351ccd198ba0cdccb73462f2767232b6298fbd185bd165c8b92008fab116c
 ---
 
 ## 概述
@@ -59,6 +59,7 @@ content_hash: sha256:56b221493321348acf7a57a915fe23eac8a04faa2d8ef25e3ffc265133e
 | [int32\_t OH\_ArkUI\_DragEvent\_GetUdmfData(ArkUI\_DragEvent\* event, OH\_UdmfData \*data)](capi-drag-and-drop-h.md#oh_arkui_dragevent_getudmfdata) | 从ArkUI\_DragEvent中获取拖拽默认相关数据。 |
 | [int32\_t OH\_ArkUI\_DragEvent\_GetDataTypeCount(ArkUI\_DragEvent\* event, int32\_t\* count)](capi-drag-and-drop-h.md#oh_arkui_dragevent_getdatatypecount) | 从ArkUI\_DragEvent中获取所拖拽的数据类型种类个数。 |
 | [int32\_t OH\_ArkUI\_DragEvent\_GetDataTypes(ArkUI\_DragEvent \*event, char \*eventTypeArray[], int32\_t length, int32\_t maxStrLen)](https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-drag-and-drop-h#oh_arkui_dragevent_getdatatypes) | 从ArkUI\_DragEvent中获取拖拽数据的类型列表。 |
+| [int32\_t OH\_ArkUI\_DragEvent\_GetSummary(ArkUI\_DragEvent \*event, OH\_UDMF\_Summary \*summary)](capi-drag-and-drop-h.md#oh_arkui_dragevent_getsummary) | 从ArkUI\_DragEvent中获取统一数据摘要。 |
 | [int32\_t OH\_ArkUI\_DragEvent\_GetDragResult(ArkUI\_DragEvent\* event, ArkUI\_DragResult\* result)](capi-drag-and-drop-h.md#oh_arkui_dragevent_getdragresult) | 从ArkUI\_DragEvent中获取拖拽结果。 |
 | [int32\_t OH\_ArkUI\_DragEvent\_GetDropOperation(ArkUI\_DragEvent\* event, ArkUI\_DropOperation\* operation)](capi-drag-and-drop-h.md#oh_arkui_dragevent_getdropoperation) | 从ArkUI\_DragEvent中获取数据处理方式。 |
 | [float OH\_ArkUI\_DragEvent\_GetPreviewTouchPointX(ArkUI\_DragEvent\* event)](capi-drag-and-drop-h.md#oh_arkui_dragevent_getpreviewtouchpointx) | 从ArkUI\_DragEvent中获取预览图跟手点的x轴坐标。 |
@@ -465,6 +466,31 @@ int32_t OH_ArkUI_DragEvent_GetDataTypes(ArkUI_DragEvent *event, char *eventTypeA
 | 类型 | 说明 |
 | --- | --- |
 | int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 函数参数异常。  [ARKUI\_ERROR\_CODE\_BUFFER\_SIZE\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 传入的缓冲区大小异常。 |
+
+### OH\_ArkUI\_DragEvent\_GetSummary()
+
+```c
+int32_t OH_ArkUI_DragEvent_GetSummary(ArkUI_DragEvent *event, OH_UDMF_Summary *summary)
+```
+
+**描述：**
+
+从ArkUI\_DragEvent中获取统一数据摘要。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [ArkUI\_DragEvent](capi-arkui-nativemodule-arkui-dragevent.md) \*event | [入参] ArkUI\_DragEvent事件指针，不能为空。 |
+| [OH\_UDMF\_Summary](capi-udmf-oh-udmf-summary.md) \*summary | [出参] 用于接收统一数据摘要的OH\_UDMF\_Summary对象指针，不能为空，调用本接口前需由调用方创建该对象，使用完毕后由调用方销毁；操作失败时，对象内容不保证有效。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| int32\_t | 错误码。  [ARKUI\_ERROR\_CODE\_NO\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 成功。  [ARKUI\_ERROR\_CODE\_PARAM\_INVALID](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 函数参数异常，例如入参指针为空或摘要对象无效。  [ARKUI\_ERROR\_CODE\_INTERNAL\_ERROR](capi-arkui-nativemodule-arkui-error-code-h.md#arkui_errorcode) 内部错误，例如拖拽事件未携带摘要数据。 |
 
 ### OH\_ArkUI\_DragEvent\_GetDragResult()
 

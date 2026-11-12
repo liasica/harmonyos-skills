@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-p
 title: "@ohos.PiPWindow (画中画窗口)"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS API > 窗口管理 > @ohos.PiPWindow (画中画窗口)
 category: harmonyos-references
-scraped_at: 2026-10-29T07:59:28+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:e5da1e73b8c1076b29ce98278252e95270144b4c81d67e90a957d2ad0b8ef36c
+scraped_at: 2026-11-12T09:54:01+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:df96a0f608eb1b78a9c489ed8f19c5ce863a62bcf77c933934d0b0226a0e2b98
 ---
 
 该模块提供画中画基础功能，包括判断当前设备是否支持画中画功能，以及创建画中画控制器用于启动或停止画中画等。支持用户在进行其他操作时以小窗形式继续观看视频内容，提升多任务处理效率。适用于视频播放、视频通话或视频会议场景。
@@ -1204,7 +1204,7 @@ on(type: 'pipWindowSizeChange', callback: Callback<PiPWindowSize>): void
 | --- | --- |
 | 401 | Params error. Possible causes: Callback is already registered. |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
-| 1300014 | PiP internal error. |
+| 1300014 | PiP internal error. Possible cause: The PiP controller has been destroyed. |
 
 **示例：**
 

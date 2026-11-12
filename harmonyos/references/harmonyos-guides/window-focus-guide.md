@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-focus-
 title: 窗口焦点
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口基础能力 > 窗口焦点
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:14+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:5c409d82e74664e3d38c78ed1631467a83c8595556889be05cc7f8f9e977537b
+scraped_at: 2026-11-12T09:51:21+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:18ab6a779135b7a8d0c7436cf5e3146d78fe930946494a6cdd3d23fa49f02186
 ---
 
 ## 场景介绍
@@ -61,6 +61,6 @@ content_hash: sha256:5c409d82e74664e3d38c78ed1631467a83c8595556889be05cc7f8f9e97
 **说明** 
 
 * 针对监听类接口：请使用对应的off()接口在页面销毁时移除相关监听，以避免内存泄漏。
-* 页面加载优于显示：在调用showWindow()显示窗口等接口时，请确保已使用loadContent()或setUIContent等接口完成页面的加载。
+* 页面加载优于显示：在调用[showWindow()](../harmonyos-references/arkts-apis-window-window.md#showwindow20)显示窗口等接口时，请确保已使用[loadContent()](../harmonyos-references/arkts-apis-window-windowstage.md#loadcontent9)或[setUIContent](../harmonyos-references/arkts-apis-window-window.md#setuicontent9-1)等接口完成页面的加载。
 * 合理使用窗口独占激活模式：避免滥用[setExclusivelyHighlighted()](../harmonyos-references/arkts-apis-window-window.md#setexclusivelyhighlighted15)导致用户体验割裂。
 * 状态查询和监听接口的结合使用：首次进入页面可使用isWindowHighlighted()/isFocused()获取初始状态，再通过对应的on('windowHighlightChange')/on('windowEvent')接口监听后续变化以实现相关适配和操作。

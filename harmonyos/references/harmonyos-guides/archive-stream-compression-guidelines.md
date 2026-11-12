@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/archive-strea
 title: 流式压缩解压缩(C/C++)
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 文件压缩解压缩 > 流式压缩解压缩(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:24+08:00
-doc_updated_at: 2026-07-28
+scraped_at: 2026-11-12T09:51:26+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:e45252ed01ce5824f3986427c7e86129f7c354e0c8e2ff17720299b9ae082810
 ---
 

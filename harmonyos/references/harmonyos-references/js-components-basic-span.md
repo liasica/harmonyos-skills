@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-compon
 title: span
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > JS组件 > 兼容JS的类Web开发范式（ArkUI.Full） > 基础组件 > span
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:23+08:00
+scraped_at: 2026-11-12T09:54:33+08:00
 doc_updated_at: 2026-08-29
-content_hash: sha256:48561ee31e8ea88be27e50e35e6678a637341d8f570db10ccaa26f918074b0d6
+content_hash: sha256:d0a0cd8dbdd042e45e55df4f50921f8409691590d1b74e7dfbf8857c43164f50
 ---
 
 **说明** 
@@ -82,4 +82,4 @@ content_hash: sha256:48561ee31e8ea88be27e50e35e6678a637341d8f570db10ccaa26f91807
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/Ovn9XM7-QoWLNQ8rfPeEmg/zh-cn_image_0000002779692864.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/jBefQQyGQCy5sHwtQgUgxg/zh-cn_image_0000002815561181.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: GridObjectSortComponent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > GridObjectSortComponent
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:15+08:00
+scraped_at: 2026-11-12T09:54:27+08:00
 doc_updated_at: 2026-09-23
-content_hash: sha256:599d2ef9391959d186c2be3ad224186c28e8296b4840c2277575c38777048f78
+content_hash: sha256:aa83d502d9402f4231fca418425d41c0058c4f92af5001de03d4deed95538a49
 ---
 
 网格对象排序组件，用于网格对象的编辑、拖动排序、新增和删除。
@@ -176,4 +176,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/h12JWXNzQfyR20uoa8CpMg/zh-cn_image_0000002809052305.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/yfb4s2t1RoOK24vL2xC8Sg/zh-cn_image_0000002815561087.gif)

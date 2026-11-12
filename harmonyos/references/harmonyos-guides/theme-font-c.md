@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/theme-font-c
 title: 使用主题字体（C/C++）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 字体管理 > 使用主题字体（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:18+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b5fd00e5248d6bc03209ce930f12cb166ce39663cd81ab2d30273dde358c4ab3
+scraped_at: 2026-11-12T09:52:12+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4bedf6a9b7c5a50245911a4b5b29be6aef87359273d0df5cf059342a5e6a8fe1
 ---
 
 ## 场景介绍
@@ -16,13 +16,13 @@ content_hash: sha256:b5fd00e5248d6bc03209ce930f12cb166ce39663cd81ab2d30273dde358
 
 **图1** 主题字体的切换和使用
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/HZqdBl3QTxOsOg3qWUSXGA/zh-cn_image_0000002809050661.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b1/v3/a388vACrQhu2_KzJhLnPRA/zh-cn_image_0000002815399547.jpg)
 
-针对主题字的切换使用，应用方应确保订阅主题字变更事件，当接收字体变更事件后，由应用方主动调用页面刷新才能实现主题字的切换，否则主题字只能在重启应用后才生效；主题字的绘制需要使用OH\_Drawing\_GetFontCollectionGlobalInstance来获取全局字体集对象，仅该接口返回的对象拥有主题字体信息。
+针对主题字体的切换使用，应用方应确保订阅主题字体变更事件，当接收字体变更事件后，由应用方主动调用页面刷新才能实现主题字体的切换，否则主题字体只能在重启应用后才生效；主题字体的绘制需要使用OH\_Drawing\_GetFontCollectionGlobalInstance来获取全局字体集对象，仅该接口返回的对象拥有主题字体信息。
 
 **说明** 
 
-由OH\_Drawing\_CreateSharedFontCollection创建的字体集对象不包含主题字信息，无法用于绘制主题字。
+由OH\_Drawing\_CreateSharedFontCollection创建的字体集对象不包含主题字体信息，无法用于绘制主题字体。
 
 ## 接口说明
 
@@ -36,9 +36,9 @@ content_hash: sha256:b5fd00e5248d6bc03209ce930f12cb166ce39663cd81ab2d30273dde358
 ## 开发步骤
 
 1. 请确保在设备系统**主题应用**中，能成功应用一项主题字体。
-2. 在应用入口文件（默认工程中为EntryAbility.ets）中重写onConfigurationUpdate函数，以响应fontId变更，适配主题字体的切换和页面刷新，重写方式可参考[主题字变更事件](theme-font-arkts.md#开发步骤)。
+2. 在应用入口文件（默认工程中为EntryAbility.ets）中重写onConfigurationUpdate函数，以响应fontId变更，适配主题字体的切换和页面刷新，重写方式可参考[主题字体变更事件](theme-font-arkts.md#开发步骤)。
 
-   系统配置信息（即示例中的newConfig）变化时，会自动触发onConfigurationUpdate函数。应用可从系统发送的配置信息获取fontId，通过判断是否与应用本地保存的fontId一致来识别主题字的切换。若不一致则刷新本地fontId，并调用C++代码刷新排版结果。从ArkTS到C++的调用通路需应用根据实际情况选取调用方式，本示例不作推荐。跨语言调用可参考[Node-API简介](napi-introduction.md)。
+   系统配置信息（即示例中的newConfig）变化时，会自动触发onConfigurationUpdate函数。应用可从系统发送的配置信息获取fontId，通过判断是否与应用本地保存的fontId一致来识别主题字体的切换。若不一致则刷新本地fontId，并调用C++代码刷新排版结果。从ArkTS到C++的调用通路需应用根据实际情况选取调用方式，本示例不作推荐。跨语言调用可参考[Node-API简介](napi-introduction.md)。
 3. 导入C++侧依赖，本步骤及之后均为主题字体在C++侧的使用
 
    在工程的src/main/cpp/CMakeLists.txt文件中添加以下lib。
@@ -97,8 +97,8 @@ content_hash: sha256:b5fd00e5248d6bc03209ce930f12cb166ce39663cd81ab2d30273dde358
 
 **图2** 主题字体1的效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/b_CR4bN9Th6SDhnKoUZ0rA/zh-cn_image_0000002809010751.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7/v3/q1N8xeBKTruqLoliBaaDFQ/zh-cn_image_0000002815559467.png)
 
 **图3** 主题字体2的效果
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/5uzt8swUTFmGU32ahiW7jQ/zh-cn_image_0000002809050665.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/uXCNqEQ7Rk2OuWhtHGmzIQ/zh-cn_image_0000002815399551.png)

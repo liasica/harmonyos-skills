@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-xmp-met
 title: 读取和编辑图片XMP元数据
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片元数据处理 > 读取和编辑图片XMP元数据
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:58+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c5a2b81b8e85e67e14d125fb7e99111d9f84c5524755f7af9e66f3633cb72329
+scraped_at: 2026-11-12T09:52:06+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ede3a3cedd96bf823eb39ed4099c2f5bea0415d6ae394592bd377fe568d9a131
 ---
 
 XMP（Extensible Metadata Platform，可扩展元数据平台）是一种用于描述数字资源（如图片、文档、音频等）元数据的标准格式。以XML为基础，允许为资源添加丰富的描述性信息，支持自定义命名空间和扩展。XMP元数据通常内嵌在JPEG、PNG、GIF、DNG、TIFF等格式图片中。
@@ -232,13 +232,13 @@ async createStructAndOperateMembers(xmpMetadata: image.XMPMetadata): Promise<voi
 ```typescript
 async setAndGetQualifierValue(xmpMetadata: image.XMPMetadata): Promise<void> {
   try {
-    // 设置主标签 book:bookTitle
+    // 设置主标签 book:bookTitle。
     await xmpMetadata.setValue('book:bookTitle', image.XMPTagType.STRING, 'My Book Title');
-    // 为主标签添加限定符 book:lastUpdated
+    // 为主标签添加限定符 book:lastUpdated。
     await xmpMetadata.setValue('book:bookTitle/?book:lastUpdated', image.XMPTagType.STRING, '2024-01-15');
     console.info('Succeeded in setting tag and qualifier.');
 
-    // 获取限定符的值
+    // 获取限定符的值。
     let qualifierTag: image.XMPTag | null = await xmpMetadata.getTag('book:bookTitle/?book:lastUpdated');
     console.info(`book:bookTitle/?book:lastUpdated: ${qualifierTag?.value}`);
   } catch (error) {

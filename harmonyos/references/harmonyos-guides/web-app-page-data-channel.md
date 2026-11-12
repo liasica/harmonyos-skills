@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-app-page-
 title: 建立应用侧与前端页面数据通道
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 在应用中使用前端页面JavaScript > 建立应用侧与前端页面数据通道
 category: harmonyos-guides
-scraped_at: 2026-10-22T07:04:51+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:22dfcb195fa71f5e7daaf301a7632a89f9f0ecbf3853538f83683dee43a3299e
+scraped_at: 2026-11-12T09:51:22+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:6dc3c8e77c85f45fa14b01fc22be9b9e5c8015abc73fa401bb799c4c2489f135
 ---
 
 前端页面和应用侧之间可以用[createWebMessagePorts()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#createwebmessageports)接口创建消息端口来实现两端的通信。
 
-在下面的示例中，应用侧页面中通过createWebMessagePorts方法创建两个消息端口，再把其中一个端口通过[postMessage()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#postmessage)接口发送到前端页面，便可以在前端页面和应用侧之间互相发送消息。端口使用完毕后或Webview对象销毁前通过[close](../harmonyos-references/arkts-apis-webview-webmessageport.md#close)接口关闭端口。
+在下面的示例中，应用侧页面中通过createWebMessagePorts()方法创建两个消息端口，再把其中一个端口通过[postMessage()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#postmessage)接口发送到前端页面，便可以在前端页面和应用侧之间互相发送消息。端口使用完毕后或Webview对象销毁前通过[close()](../harmonyos-references/arkts-apis-webview-webmessageport.md#close)接口关闭端口。
 
 * 应用侧代码。
 

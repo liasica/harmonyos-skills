@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: drawing_record_cmd.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > drawing_record_cmd.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:43+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:56e56903ec097f7d1aa3a4ef45aaa3b1638ceecb41b0d81a050056f8dcf0c9e7
+scraped_at: 2026-11-12T09:57:01+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d5a068c6bbc29500ed78bbcaa6b53b44de365a139e6436a9cccfaa3a84283273
 ---
 
 ## 概述
@@ -34,6 +34,8 @@ content_hash: sha256:56e56903ec097f7d1aa3a4ef45aaa3b1638ceecb41b0d81a050056f8dcf
 | [OH\_Drawing\_ErrorCode OH\_Drawing\_RecordCmdUtilsDestroy(OH\_Drawing\_RecordCmdUtils\* recordCmdUtils)](capi-drawing-record-cmd-h.md#oh_drawing_recordcmdutilsdestroy) | 销毁一个指令录制工具对象，并回收该对象占用的内存。 |
 | [OH\_Drawing\_ErrorCode OH\_Drawing\_RecordCmdUtilsBeginRecording(OH\_Drawing\_RecordCmdUtils\* recordCmdUtils,int32\_t width, int32\_t height, OH\_Drawing\_Canvas\*\* canvas)](capi-drawing-record-cmd-h.md#oh_drawing_recordcmdutilsbeginrecording) | 开始录制。此接口需要与[OH\_Drawing\_RecordCmdUtilsFinishRecording](capi-drawing-record-cmd-h.md#oh_drawing_recordcmdutilsfinishrecording)接口成对使用。  指令录制工具生成录制类型的画布对象，可调用drawing的绘制接口，记录接下来所有的绘制指令。 |
 | [OH\_Drawing\_ErrorCode OH\_Drawing\_RecordCmdUtilsFinishRecording(OH\_Drawing\_RecordCmdUtils\* recordCmdUtils,OH\_Drawing\_RecordCmd\*\* recordCmd)](capi-drawing-record-cmd-h.md#oh_drawing_recordcmdutilsfinishrecording) | 结束录制。在调用此接口前，需要先调用[OH\_Drawing\_RecordCmdUtilsBeginRecording](capi-drawing-record-cmd-h.md#oh_drawing_recordcmdutilsbeginrecording)接口。  指令录制工具结束录制指令，将录制类型画布对象记录的绘制指令存入生成的录制指令对象。 |
+| [OH\_Drawing\_ErrorCode OH\_Drawing\_RecordCmdUtilsGetHeight(const OH\_Drawing\_RecordCmdUtils \*recordCmdUtils, int32\_t \*height)](capi-drawing-record-cmd-h.md#oh_drawing_recordcmdutilsgetheight) | 获取录制画布的高度。 |
+| [OH\_Drawing\_ErrorCode OH\_Drawing\_RecordCmdUtilsGetWidth(const OH\_Drawing\_RecordCmdUtils \*recordCmdUtils, int32\_t \*width)](capi-drawing-record-cmd-h.md#oh_drawing_recordcmdutilsgetwidth) | 获取录制画布的宽度。 |
 | [OH\_Drawing\_ErrorCode OH\_Drawing\_RecordCmdDestroy(OH\_Drawing\_RecordCmd\* recordCmd)](capi-drawing-record-cmd-h.md#oh_drawing_recordcmddestroy) | 销毁录制指令对象，并回收该对象占用的内存。 |
 
 ## 函数说明
@@ -143,6 +145,56 @@ OH_Drawing_ErrorCode OH_Drawing_RecordCmdUtilsFinishRecording(OH_Drawing_RecordC
 | 类型 | 说明 |
 | --- | --- |
 | [OH\_Drawing\_ErrorCode](capi-drawing-error-code-h.md#oh_drawing_errorcode) | 函数返回执行错误码。  返回OH\_DRAWING\_SUCCESS，表示执行成功。  返回OH\_DRAWING\_ERROR\_INVALID\_PARAMETER，表示参数recordCmdUtils或者recordCmd为空。  返回OH\_DRAWING\_ERROR\_ALLOCATION\_FAILED，表示系统内存不足。 |
+
+### OH\_Drawing\_RecordCmdUtilsGetHeight()
+
+```c
+OH_Drawing_ErrorCode OH_Drawing_RecordCmdUtilsGetHeight(const OH_Drawing_RecordCmdUtils *recordCmdUtils, int32_t *height)
+```
+
+**描述**
+
+获取录制画布的高度。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| const [OH\_Drawing\_RecordCmdUtils](capi-drawing-oh-drawing-recordcmdutils.md) \*recordCmdUtils | [入参] 指向指令录制工具对象[OH\_Drawing\_RecordCmdUtils](capi-drawing-oh-drawing-recordcmdutils.md)的指针，不能为空。 |
+| int32\_t \*height | [出参] 用于接收录制画布的高度，单位为物理像素px。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [OH\_Drawing\_ErrorCode](capi-drawing-error-code-h.md#oh_drawing_errorcode) | 返回OH\_DRAWING\_SUCCESS，表示执行成功。  返回OH\_DRAWING\_ERROR\_INCORRECT\_PARAMETER，表示参数recordCmdUtils或height为nullptr。 |
+
+### OH\_Drawing\_RecordCmdUtilsGetWidth()
+
+```c
+OH_Drawing_ErrorCode OH_Drawing_RecordCmdUtilsGetWidth(const OH_Drawing_RecordCmdUtils *recordCmdUtils, int32_t *width)
+```
+
+**描述**
+
+获取录制画布的宽度。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| const [OH\_Drawing\_RecordCmdUtils](capi-drawing-oh-drawing-recordcmdutils.md) \*recordCmdUtils | [入参] 指向指令录制工具对象[OH\_Drawing\_RecordCmdUtils](capi-drawing-oh-drawing-recordcmdutils.md)的指针，不能为空。 |
+| int32\_t \*width | [出参] 用于接收录制画布的宽度，单位为物理像素px。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [OH\_Drawing\_ErrorCode](capi-drawing-error-code-h.md#oh_drawing_errorcode) | 返回OH\_DRAWING\_SUCCESS，表示执行成功。  返回OH\_DRAWING\_ERROR\_INCORRECT\_PARAMETER，表示参数recordCmdUtils或width为nullptr。 |
 
 ### OH\_Drawing\_RecordCmdDestroy()
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scan-gene
 title: generateBarcode (码图生成)
 breadcrumb: API参考 > 媒体 > Scan Kit（统一扫码服务） > ArkTS API > generateBarcode (码图生成)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:39+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:91ff15490581869e30f8a3f5abeddacc0398dbf72413eb3a4e479333daa130d6
+scraped_at: 2026-11-12T09:56:53+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:1fc828dd862fe4ffb91a7b1fb6d24a0a5f7f64ab18e7fa88e18c93af439b62c9
 ---
 
 ## 模块概述
@@ -95,7 +95,7 @@ let options: generateBarcode.CreateOptions = {
 };
 ```
 
-## createBarcode
+## generateBarcode.createBarcode
 
 createBarcode(content: string, options: CreateOptions): Promise<image.PixelMap>
 
@@ -175,7 +175,7 @@ generateBarcode.createBarcode(content, options).then((data: image.PixelMap) => {
 | Code 128 | 不超过80字节长度，如果内容过长会导致码复杂，影响识别。字符集可以是数字、大小写字母和- . $ / + % \* SPACE英文格式符号（请注意：一个小写字母占用1个字节）。 |
 | Codabar | 不超过512字符长度，如果内容过长会导致码复杂，影响识别。起始/终止符可以是ABCD中的任一个（特殊情况下，TN\*E也会编码成ABCD，推荐使用ABCD）。其他字符可以是数字和- . $ / : +英文格式符号。 |
 
-## createBarcode
+## generateBarcode.createBarcode
 
 createBarcode(content: string, options: CreateOptions, callback: AsyncCallback<image.PixelMap>): void
 
@@ -193,7 +193,7 @@ createBarcode(content: string, options: CreateOptions, callback: AsyncCallback<i
 
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
-| content | string | 是 | 码内容字符串。参数限制请参见[createBarcode](scan-generatebarcode.md#createbarcode)的表1-content参数限制条件。 |
+| content | string | 是 | 码内容字符串。参数限制请参见[generateBarcode.createBarcode()](scan-generatebarcode.md#generatebarcodecreatebarcode)的表1-content参数限制条件。 |
 | options | [CreateOptions](scan-generatebarcode.md#createoptions) | 是 | 码图生成的配置参数。 |
 | callback | AsyncCallback<image.[PixelMap](arkts-apis-image-pixelmap.md)> | 是 | 回调函数。当码图生成成功，err为undefined，data为生成的码图对象image.PixelMap；否则为错误对象。 |
 
@@ -234,7 +234,7 @@ generateBarcode.createBarcode(content, options, (err: BusinessError, data: image
 });
 ```
 
-## createBarcode
+## generateBarcode.createBarcode
 
 createBarcode(content: ArrayBuffer, options: CreateOptions): Promise<image.PixelMap>
 
@@ -298,11 +298,11 @@ struct Index {
         }; // 码图生成的配置参数
         generateBarcode.createBarcode(contentBuffer, options).then((pixelMap: image.PixelMap) => {
           this.pixelMap = pixelMap; // 码图生成成功，返回生成码图的PixelMap对象
-          hilog.info(0x0001, '[Scan Sample]', 'Succeeded in creating barCode.');
+          hilog.info(0x0001, '[Scan Sample]', 'Succeeded in creating barcode.');
         }).catch((err: BusinessError) => {
           // 码图生成失败，返回错误信息
           hilog.error(0x0001, '[Scan Sample]',
-            `Failed to create barCode. Code: ${err.code}, message: ${err.message}`);
+            `Failed to create barcode. Code: ${err.code}, message: ${err.message}`);
         });
       })
       // 码图生成成功，显示码图

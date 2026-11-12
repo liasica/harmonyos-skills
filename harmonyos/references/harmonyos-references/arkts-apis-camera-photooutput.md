@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (PhotoOutput)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (PhotoOutput)
 category: harmonyos-references
-scraped_at: 2026-10-17T06:47:54+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:fba907b33549aaacc221d07e9618cf218215fc44b1ea112f8152049db59cfdda
+scraped_at: 2026-11-12T09:56:33+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:1aad637881eff1c584a34cdf66b65f723c6e2dfc69bef8874222b46018286dff
 ---
 
 拍照会话中使用的输出信息，继承[CameraOutput](arkts-apis-camera-cameraoutput.md)。
@@ -540,7 +540,7 @@ import { photoAccessHelper } from '@kit.MediaLibraryKit';
 
 function photoAssetAvailableCallback(err: BusinessError, photoAsset: photoAccessHelper.PhotoAsset): void {
   if (err) {
-    console.info(`photoAssetAvailable error: ${JSON.stringify(err)}.`);
+    console.error(`photoAssetAvailable error code: ${err.code}.`);
     return;
   }
   console.info('photoOutPutCallBack photoAssetAvailable');
@@ -1195,7 +1195,7 @@ function testGetPhotoRotationWithOutParam(photoOutput: camera.PhotoOutput): came
   } catch (error) {
     // 失败返回错误码error.code并处理。
     let err = error as BusinessError;
-    console.error(`The photoOutput.getPhotoRotation call failed. error code: ${err.code}`);
+    console.error(`The photoOutput.testGetPhotoRotationWithOutParam call failed. error code: ${err.code}`);
   }
   return photoRotation;
 }
@@ -1446,6 +1446,108 @@ function enableAutoExtendedGainmapDelivery(photoOutput: camera.PhotoOutput): voi
     // 失败返回错误码error.code并处理。
     let err = error as BusinessError;
     console.error(`The enableAutoExtendedGainmapDelivery call failed. error code: ${err.code}`);
+  }
+}
+```
+
+## isAutoAuxiliaryPhotoDeliverySupported
+
+isAutoAuxiliaryPhotoDeliverySupported(auxPhotoType: CameraAuxiliaryPhotoType): boolean
+
+查询设备是否支持拍摄输出指定类型的辅助图。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| auxPhotoType | [CameraAuxiliaryPhotoType](arkts-apis-camera-e.md#cameraauxiliaryphototype) | 是 | 拍照回传的目标辅助图类型。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| boolean | 设备是否支持回传指定类型的辅助图。true表示支持回传；false表示不支持回传。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[Camera错误码](errorcode-camera.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 7400115 | Parameter out of the range. The auxPhotoType value is invalid. Check the CameraAuxiliaryPhotoType enum for valid values. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { camera } from '@kit.CameraKit';
+
+function isAutoAuxiliaryPhotoDeliverySupported(photoOutput: camera.PhotoOutput): boolean {
+  let isSupported: boolean = false;
+  try {
+    isSupported = photoOutput.isAutoAuxiliaryPhotoDeliverySupported(camera.CameraAuxiliaryPhotoType.OXYGEN);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The isAutoAuxiliaryPhotoDeliverySupported call failed. error code: ${err.code}`);
+  }
+  return isSupported;
+}
+```
+
+## setAutoAuxiliaryPhotosDeliveryEnabled
+
+setAutoAuxiliaryPhotosDeliveryEnabled(auxPhotoTypes: CameraAuxiliaryPhotoType[], enable: boolean): void
+
+启用或禁用拍照自动回传指定类型的辅助图。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Multimedia.Camera.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| auxPhotoTypes | [CameraAuxiliaryPhotoType](arkts-apis-camera-e.md#cameraauxiliaryphototype)[] | 是 | 回传的目标辅助图类型。 |
+| enable | boolean | 是 | 表示是否启用拍照自动回传指定类型的辅助图。true表示启用，false表示禁用。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参考[通用错误码](errorcode-universal.md)和[Camera错误码](errorcode-camera.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. Check if the camera device supports the required auxiliary photo types by using capability query APIs. |
+| 7400115 | Parameter out of the range. The auxPhotoType value is invalid. Check the CameraAuxiliaryPhotoType enum for valid values. |
+| 7400201 | Camera service fatal error. |
+
+**示例：**
+
+```ts
+import { BusinessError } from '@kit.BasicServicesKit';
+import { camera } from '@kit.CameraKit';
+
+function setAutoAuxiliaryPhotosDeliveryEnabled(photoOutput: camera.PhotoOutput): void {
+  try {
+    photoOutput.setAutoAuxiliaryPhotosDeliveryEnabled(
+      [camera.CameraAuxiliaryPhotoType.OXYGEN, camera.CameraAuxiliaryPhotoType.PIGMENTATION], true);
+  } catch (error) {
+    // 失败返回错误码error.code并处理。
+    let err = error as BusinessError;
+    console.error(`The setAutoAuxiliaryPhotosDeliveryEnabled call failed. error code: ${err.code}`);
   }
 }
 ```

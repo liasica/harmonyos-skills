@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-receive
 title: 使用Image_NativeModule完成图片接收
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(C/C++) > 图片接收 > 使用Image_NativeModule完成图片接收
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:59+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:65386ea36e1d1b816fbbf3a382f0439ebee39067cb7266632cc5323a24e5954f
+scraped_at: 2026-11-12T09:52:07+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:470b9b216b8834a799ac0db5a7b1c2a931fc19a0f0a4e50312be9d66952fba04
 ---
 
 图像接收类，用于获取组件的surfaceId、接收最新的图片、读取下一张图片以及释放ImageReceiver实例。结合camera API实现的相机预览示例代码可参考[预览流二次处理(C/C++)](native-camera-preview-imagereceiver.md)。
@@ -52,7 +52,7 @@ target_link_libraries(entry PUBLIC libhilog_ndk.z.so libohimage.so libimage_rece
    #include "ohcamera/camera_manager.h"
 
    #include <mutex>
-   #include <shared_mutex> // C++17以上使用
+   #include <shared_mutex> // C++17以上使用。
    #include <condition_variable>
    ```
 2. 常量定义。
@@ -178,7 +178,7 @@ target_link_libraries(entry PUBLIC libhilog_ndk.z.so libohimage.so libimage_rece
      {
          OH_LOG_INFO(LOG_APP, "ImageReceiverNativeCTest buffer available.");
 
-         // 共享锁（读）
+         // 共享锁（读）。
          std::shared_lock<std::shared_mutex> lock(shared_receiver_mutex);
          OH_ImageNative* image = nullptr;
          Image_ErrorCode errCode = OH_ImageReceiverNative_ReadNextImage(receiver, &image);
@@ -643,7 +643,7 @@ target_link_libraries(entry PUBLIC libhilog_ndk.z.so libohimage.so libimage_rece
            OH_LOG_ERROR(LOG_APP, "ImageReceiverNativeCTest image receiver off failed, errCode: %{public}d.", errCode);
        }
 
-       // 独占锁（写）
+       // 独占锁（写）。
        std::unique_lock<std::shared_mutex> lock(shared_receiver_mutex);
        errCode = OH_ImageReceiverNative_Release(g_receiver);
        if (errCode != IMAGE_SUCCESS) {

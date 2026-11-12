@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-bytecod
 title: 方舟字节码函数命名规则
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > 方舟字节码 > 方舟字节码函数命名规则
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:14+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:51:05+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:bd00e8131766141651c5c6aadabcc41711e612f645108a4ff002de99e1924da0
 ---
 

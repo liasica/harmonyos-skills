@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/core-visi
 title: textSearchImage（通过文本搜索图片）
 breadcrumb: API参考 > AI > Core Vision Kit（基础视觉服务） > ArkTS API > textSearchImage（通过文本搜索图片）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:33+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e6349224dd9f1afcb56658ce90cd2df651f47fd6bba0814341198e691ada5022
+scraped_at: 2026-11-12T09:57:44+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4e980d113d3ee24b1f0c8fbef8c9616cc6c894f4c58fe21e621b478a31586578
 ---
 
 文本搜索图片提供基于文本描述的图片检索能力。通过输入文本关键词，从已插入的图片库中搜索匹配的图像结果，返回图片沙箱路径、作用域和相似度信息。
@@ -125,7 +125,7 @@ insertImage(imagePath: string, scope: string): Promise<boolean>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 1013100001 | Invalid image path. |
+| 1013100001 | Invalid image path or size. |
 | 1013100002 | Service abnormal. |
 | 1013100003 | The capability has been updated. Please use the function [clearData](core-vision-text-search-image-api.md#textsearchimagecleardata), and after completing it, use this function again. |
 

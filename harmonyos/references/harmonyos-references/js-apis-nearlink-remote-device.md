@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: "@ohos.nearlink.remoteDevice (星闪远端设备连接能力)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.nearlink.remoteDevice (星闪远端设备连接能力)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:27:03+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:94bb510108f7e5e3740d7b045495e1d235dd29bad1917c98b48f4c0f30d6e9a9
+scraped_at: 2026-11-12T09:55:34+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:6f8c0d9fed33674cc2520a7a30f1ea938b8b57ac3d74ddc7299742d0c55cd472
 ---
 
 本模块提供了星闪远端设备的管理能力，包括创建远端设备实例、发起配对、查询远端设备信息、订阅设备状态变化事件等。
@@ -90,6 +90,8 @@ createRemoteDevice(address: string): RemoteDevice
 
 创建远端设备实例。
 
+调用此接口前，您可以调用[isNearLinkSupported](js-apis-nearlink-manager.md#managerisnearlinksupported)查询设备是否支持星闪。
+
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -114,7 +116,7 @@ createRemoteDevice(address: string): RemoteDevice
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported because the chip does not support it. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 36100041 | Invalid address. |
 
 **示例：**
@@ -141,6 +143,8 @@ onPairingStateChange(callback: Callback<PairingStateParam>): void
 
 应用需具备ohos.permission.ACCESS\_NEARLINK权限，方可接收此事件上报。
 
+调用此接口前，您可以调用[isNearLinkSupported](js-apis-nearlink-manager.md#managerisnearlinksupported)查询设备是否支持星闪。
+
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -159,7 +163,7 @@ onPairingStateChange(callback: Callback<PairingStateParam>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported because the chip does not support it. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 36100099 | Operation failed. |
 
 **示例：**
@@ -184,6 +188,8 @@ offPairingStateChange(callback?: Callback<PairingStateParam>): void
 
 取消订阅配对状态变化事件。使用callback异步回调。
 
+调用此接口前，您可以调用[isNearLinkSupported](js-apis-nearlink-manager.md#managerisnearlinksupported)查询设备是否支持星闪。
+
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -202,7 +208,7 @@ offPairingStateChange(callback?: Callback<PairingStateParam>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported because the chip does not support it. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 36100099 | Operation failed. |
 
 **示例：**
@@ -226,6 +232,8 @@ onConnectionStateChange(callback: Callback<ConnectionStateParam>): void
 
 应用需具备ohos.permission.ACCESS\_NEARLINK权限，方可接收此事件上报。
 
+调用此接口前，您可以调用[isNearLinkSupported](js-apis-nearlink-manager.md#managerisnearlinksupported)查询设备是否支持星闪。
+
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -244,7 +252,7 @@ onConnectionStateChange(callback: Callback<ConnectionStateParam>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported because the chip does not support it. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 36100099 | Operation failed. |
 
 **示例：**
@@ -269,6 +277,8 @@ offConnectionStateChange(callback?: Callback<ConnectionStateParam>): void
 
 取消订阅连接状态变化事件。使用callback异步回调。
 
+调用此接口前，您可以调用[isNearLinkSupported](js-apis-nearlink-manager.md#managerisnearlinksupported)查询设备是否支持星闪。
+
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -287,7 +297,7 @@ offConnectionStateChange(callback?: Callback<ConnectionStateParam>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported because the chip does not support it. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 36100099 | Operation failed. |
 
 **示例：**
@@ -311,6 +321,8 @@ onAcbStateChange(callback: Callback<AcbStateParam>): void
 
 应用需具备ohos.permission.ACCESS\_NEARLINK权限，方可接收此事件上报。
 
+调用此接口前，您可以调用[isNearLinkSupported](js-apis-nearlink-manager.md#managerisnearlinksupported)查询设备是否支持星闪。
+
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -329,7 +341,7 @@ onAcbStateChange(callback: Callback<AcbStateParam>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported because the chip does not support it. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 36100099 | Operation failed. |
 
 **示例：**
@@ -354,6 +366,8 @@ offAcbStateChange(callback?: Callback<AcbStateParam>): void
 
 取消订阅逻辑链路连接状态变化事件。使用callback异步回调。
 
+调用此接口前，您可以调用[isNearLinkSupported](js-apis-nearlink-manager.md#managerisnearlinksupported)查询设备是否支持星闪。
+
 **起始版本：** 26.0.0
 
 **模型约束：** 此接口仅可在Stage模型下使用。
@@ -372,7 +386,7 @@ offAcbStateChange(callback?: Callback<AcbStateParam>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 801 | Capability not supported because the chip does not support it. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 36100099 | Operation failed. |
 
 **示例：**
@@ -426,7 +440,7 @@ startPairing(): Promise<void>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 36100003 | NearLink disabled. |
 | 36100099 | Operation failed. |
 
@@ -476,7 +490,7 @@ getPairingState(): PairingState
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 36100003 | NearLink disabled. |
 | 36100099 | Operation failed. |
 
@@ -523,7 +537,7 @@ getDeviceName(): string
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 36100003 | NearLink disabled. |
 | 36100099 | Operation failed. |
 
@@ -570,7 +584,7 @@ getDeviceClass(): DeviceClass
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 36100003 | NearLink disabled. |
 | 36100099 | Operation failed. |
 
@@ -617,7 +631,7 @@ getConnectionState(): ConnectionState
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 36100003 | NearLink disabled. |
 | 36100099 | Operation failed. |
 
@@ -664,7 +678,7 @@ getAcbState(): AcbState
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 36100003 | NearLink disabled. |
 | 36100099 | Operation failed. |
 
@@ -711,7 +725,7 @@ getDeviceInformation(): DeviceInformation
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 36100003 | NearLink disabled. |
 | 36100099 | Operation failed. |
 
@@ -734,7 +748,7 @@ try {
 }
 ```
 
-### DeviceInformation
+## DeviceInformation
 
 表示远端设备信息。
 
@@ -749,7 +763,7 @@ try {
 | manufacturerData | string | 否 | 否 | 厂商信息。数据为二进制编码格式，可通过buffer.from(manufacturerData, 'binary')等方式解析。 |
 | modelData | string | 否 | 否 | 设备型号信息。数据为二进制编码格式，可通过buffer.from(modelData, 'binary')等方式解析。 |
 
-### ConnectionStateParam
+## ConnectionStateParam
 
 订阅的连接状态变化事件上报结果。
 
@@ -767,7 +781,7 @@ try {
 | connectionReason | [ConnectionReason](js-apis-nearlink-remote-device.md#connectionreason) | 否 | 否 | 原因值。 |
 | reasonMsg | string | 否 | 是 | 原因详情。该字段仅用于日志信息，不应用于逻辑处理。无原因详情时，该字段默认为空字符串。 |
 
-### ConnectionReason
+## ConnectionReason
 
 星闪连接状态变化结果的原因值。
 
@@ -788,7 +802,7 @@ try {
 | CONNECTION\_FAIL\_NO\_AVAILABLE\_SERVICE | 6 | 表示没有可连接/可用的profile。 |
 | CONNECTION\_FAIL\_CONNECTION\_NUM\_LIMITED | 7 | 表示连接数超出限制。 |
 
-### PairingStateParam
+## PairingStateParam
 
 订阅的配对状态变化结果。
 
@@ -806,7 +820,7 @@ try {
 | reason | [PairingReason](js-apis-nearlink-remote-device.md#pairingreason) | 否 | 否 | 原因值。 |
 | reasonMsg | string | 否 | 是 | 原因详情。该字段仅用于日志信息，不应用于逻辑处理。无原因详情时，该字段默认为空字符串。 |
 
-### PairingRequestParam
+## PairingRequestParam
 
 表示订阅的配对请求事件上报结果。
 
@@ -822,7 +836,7 @@ try {
 | passkey | string | 否 | 否 | 表示配对交互的配对码，显示给用户确认。长度固定为6，字符串内容为数字。仅在pairingType为PAIRING\_TYPE\_PASSCODE或PAIRING\_TYPE\_NUMBER\_COMPARE时该字段生效。 |
 | pairingType | [PairingType](js-apis-nearlink-remote-device.md#pairingtype) | 否 | 否 | 表示配对类型。 |
 
-### PairingReason
+## PairingReason
 
 表示星闪配对状态变化结果的原因值，为枚举值。
 

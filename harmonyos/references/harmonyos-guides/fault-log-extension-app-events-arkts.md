@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/fault-log-ext
 title: 使用FaultLogExtensionAbility订阅事件
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用FaultLogExtensionAbility订阅事件
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:00+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:4a718156eff099c2983c15ca2438d605b5abee70aff935977ffdcee8c658dd86
+scraped_at: 2026-11-12T09:51:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:709919412aaa0f0360eefa7f10849b1ccac0a19b99c23e6881dcb726d922f1cd
 ---
 
 从API version 21开始，可以在FaultLogExtensionAbility中使用HiAppEvent事件订阅接口，实现应用故障事件（仅包括[崩溃事件](hiappevent-watcher-crash-events.md)和[应用冻屏事件](hiappevent-watcher-freeze-events.md)）的延迟通知。应用因崩溃或冻屏退出后，无法启动或长时间未启动的场景下，可以不依赖应用启动实现故障事件信息的订阅回调。FaultLogExtensionAbility仅用于补充处理故障事件，不能替代[主进程](process-model-overview.md#基本进程类型)正常启动时进行故障事件处理。
@@ -16,7 +16,7 @@ content_hash: sha256:4a718156eff099c2983c15ca2438d605b5abee70aff935977ffdcee8c65
 
 FaultLogExtensionAbility的原理机制如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/lT_t2l-iS-a3wBi5yyuIlw/zh-cn_image_0000002809050437.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/vuz9pby3TGaKjMt0uOsesw/zh-cn_image_0000002786359812.png)
 
 1. 主进程启动后，在主进程中添加事件观察者A和事件观察者B，其中A包含正常实现的回调处理函数以及事件订阅过滤条件[appEventFilter](../harmonyos-references/js-apis-hiviewdfx-hiappevent.md#appeventfilter)，应用发生故障后正常重启会由A的回调处理HiAppEvent事件；B的回调处理函数为空实现，仅用于生成需要保存的事件订阅过滤条件。
 2. 事件观察者A和B的事件订阅过滤条件会被保存到应用沙箱中。当应用移除事件观察者时，应用沙箱中保存的相应观察者的事件订阅过滤条件也会被删除。

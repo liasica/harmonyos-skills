@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-union
 title: 使用自定义按钮登录
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 登录 > 华为账号登录（获取UnionID/OpenID） > 使用自定义按钮登录
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:22+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:7d4e5a5844e4e55257a20118dc0acc42271d360b7bba7333db93326b269d4d10
+scraped_at: 2026-11-12T09:52:16+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:885746189ab778cb5764451193453724a9caff1707dd0046766a9dfd4b1493f2
 ---
 
 ## 场景介绍
@@ -14,11 +14,11 @@ content_hash: sha256:7d4e5a5844e4e55257a20118dc0acc42271d360b7bba7333db93326b269
 
 ## 约束与限制
 
-自定义按钮登录能力支持Phone、Tablet、PC/2in1设备。并且从5.1.0(18)版本开始，新增支持Wearable设备；从5.1.1(19)版本开始，新增支持TV设备。
+自定义按钮登录能力支持Phone、Tablet、PC/2in1设备。并且从5.1.0(18)版本开始，新增支持Wearable设备；从5.1.1(19)版本开始，新增支持TV设备；从26.0.1版本开始，新增支持Car设备。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/oZyLDVY2QEuhrV4ioRJTfA/zh-cn_image_0000002779691224.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/nSPY9aYOSuSW9i-Mtg4YAw/zh-cn_image_0000002786360140.png)
 
 流程说明：
 
@@ -53,7 +53,7 @@ content_hash: sha256:7d4e5a5844e4e55257a20118dc0acc42271d360b7bba7333db93326b269
 
 ## 客户端开发
 
-开发者可参考下述内容自行开发，也可使用Account Kit提供的[华为账号登录按钮组件SampleCode](https://gitcode.com/HarmonyOS_Samples/application-services-snippets/tree/master/AccountKit/Accountkit-Samplecode-Clientdemo-HuaweiIDLogin-ArkTs)示例工程接入华为账号自定义登录按钮。同时Account Kit也提供了[自定义按钮登录Skill](https://gitcode.com/HarmonyOS_Skills/harmonyos-agent-skills/tree/main/02-development/account-kit/hmos-account-kit-login-api-client) ，开发者可利用该Skill快速接入华为账号登录能力。
+开发者可参考下述内容自行开发，也可使用Account Kit提供的[华为账号登录按钮组件SampleCode](https://gitcode.com/HarmonyOS_Samples/application-services-snippets/tree/master/AccountKit/Accountkit-Samplecode-Clientdemo-HuaweiIDLogin-ArkTs)示例工程接入华为账号自定义登录按钮。同时Account Kit也提供了[自定义按钮登录Skill](https://matrix.openharmony.cn/#/skillSquare/details?id=6ae053e42f935261e2a3f7dc)，开发者可利用该Skill快速接入华为账号登录能力。
 
 1. 根据[【华为账号登录】按钮](../design-guides/id-0000001880001344.md#section2624430102713)规范开发自定义登录图标按钮，参考如下步骤在点击事件中完成华为账号登录API调用。
 2. 导入[authentication](../harmonyos-references/account-api-authentication.md)模块及相关公共模块。

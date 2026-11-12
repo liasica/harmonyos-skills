@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-js-compone
 title: search开发指导
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (兼容JS的类Web开发范式) > 常见组件开发指导 > 基础组件 > search开发指导
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:22+08:00
+scraped_at: 2026-11-12T09:51:19+08:00
 doc_updated_at: 2026-07-09
-content_hash: sha256:9cc27f7faa2e598cdbe69a904d578b0f69ea6d491b4224e26e5f054eea9c1aa0
+content_hash: sha256:9e5691b099552e809c378f39dc5b300667db8d812d3043666d389bab1401d475
 ---
 
 提供搜索框组件，用于提供用户搜索内容的输入区域，具体用法请参考[search](../harmonyos-references/js-components-basic-search.md)。
@@ -33,7 +33,7 @@ content_hash: sha256:9cc27f7faa2e598cdbe69a904d578b0f69ea6d491b4224e26e5f054eea9
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/QPXaRl3ITlO8oR3yaBiYBQ/zh-cn_image_0000002779850392.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/u_TeXIkrQZWIg6WgAZAjng/zh-cn_image_0000002786359334.png)
 
 ## 设置属性
 
@@ -58,7 +58,7 @@ content_hash: sha256:9cc27f7faa2e598cdbe69a904d578b0f69ea6d491b4224e26e5f054eea9
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/0r5bDOKyQY2IxgIs47yGbA/zh-cn_image_0000002779690424.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/yWGiKZhjRPGUVfNSBsJrfw/zh-cn_image_0000002815558755.png)
 
 ## 添加样式
 
@@ -88,7 +88,7 @@ search{
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/HvrMMKDCTw2T68YVavfW4Q/zh-cn_image_0000002809010043.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/21/v3/dsTxuyz3QbGmvcYsovvQvg/zh-cn_image_0000002815398839.gif)
 
 ## 绑定事件
 
@@ -161,7 +161,7 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/HDBOTdWaQY2lNCFkMlDSfg/zh-cn_image_0000002809049959.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3e/v3/sl7lvEVIQtmyqKMQH_iywQ/zh-cn_image_0000002786519264.gif)
 
 ## 场景示例
 
@@ -247,4 +247,4 @@ export default {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/7UMqT5lUQceX619OlGwxRg/zh-cn_image_0000002779850394.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/WneegQFPS0iGmogGTaJZUg/zh-cn_image_0000002786359336.gif)

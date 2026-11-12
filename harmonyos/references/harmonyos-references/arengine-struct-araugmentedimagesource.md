@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arengine-
 title: AREngine_ARAugmentedImageSource
 breadcrumb: API参考 > 图形 > AR Engine（AR引擎服务） > C API > 头文件和结构体 > 结构体 > AREngine_ARAugmentedImageSource
 category: harmonyos-references
-scraped_at: 2026-10-11T07:27:40+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:822e8b6114a282f8bdd8292e5b283d2dfd69ed91bddd5e0e60e97e90ec59dc7c
+scraped_at: 2026-11-12T09:56:53+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:338e641f66a95adffc36c18f88e5427346434814ee71aa4469a9288df4f69427
 ---
 
 ## 概述
@@ -29,7 +29,7 @@ content_hash: sha256:822e8b6114a282f8bdd8292e5b283d2dfd69ed91bddd5e0e60e97e90ec5
 | int32\_t [pixelWidth](arengine-struct-araugmentedimagesource.md#pixelwidth) | 图像像素宽度。 |
 | int32\_t [pixelHeight](arengine-struct-araugmentedimagesource.md#pixelheight) | 图像像素高度。 |
 | int32\_t [stride](arengine-struct-araugmentedimagesource.md#stride) | 图像步幅。 |
-| float [realWidthInMeters](arengine-struct-araugmentedimagesource.md#realwidthinmeters) | 图像中对象的实际物理宽度。无限制，默认值为A4纸张尺寸（291mm）。 |
+| float [realWidthInMeters](arengine-struct-araugmentedimagesource.md#realwidthinmeters) | 图像中对象的实际物理宽度。无限制，默认值为291mm。 |
 
 ## 结构体成员变量说明
 
@@ -91,4 +91,4 @@ float AREngine_ARAugmentedImageSource::realWidthInMeters
 
 **描述**
 
-图像中对象的实际物理宽度。无限制，默认值为A4纸张尺寸（291mm）。
+图像中对象的实际物理宽度。无限制，默认值为291mm。

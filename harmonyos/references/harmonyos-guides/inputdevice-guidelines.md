@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/inputdevice-g
 title: 输入设备开发指导
 breadcrumb: 指南 > 系统 > 基础功能 > Input Kit（多模输入服务） > 输入设备开发指导
 category: harmonyos-guides
-scraped_at: 2026-09-25T07:07:06+08:00
-doc_updated_at: 2026-09-24
+scraped_at: 2026-11-12T09:51:49+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:784fbb9a9a0e6b70597529e45d035ec161af02434b2bf2edd3e0e923e58c92ea
 ---
 

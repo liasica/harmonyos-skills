@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: Socket错误码
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > 错误码 > Socket错误码
 category: harmonyos-references
-scraped_at: 2026-09-18T06:49:59+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:656b9e701ef2d43ef4b0247e88ba77057b89fabe4a9f91d69d4190cb9b221e94
+scraped_at: 2026-11-12T09:55:44+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:004ca8a644bc36d0fdc5d546f34d9463a25ba34cb54ce452ee5cc6419cb42d0a
 ---
 
 **说明** 
@@ -111,15 +111,13 @@ System internal error.
 
 **可能原因**
 
-1.内存异常。
-
-2.空指针。
+1. 内存异常。
+2. 空指针。
 
 **处理步骤**
 
-1.检查内存空间是否充足，清理内存后重试。
-
-2.系统异常，请稍后重试或重启设备。
+1. 检查内存空间是否充足，清理内存后重试。
+2. 系统异常，请稍后重试或重启设备。
 
 ## 2301206 SOCKS5连接代理服务器失败
 

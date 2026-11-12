@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-wearab
 title: 读取锻炼记录
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > Wearable应用开发 > 管理运动健康数据 > 读取锻炼记录
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:17+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:52:25+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:721a3c3a09a98fa4cf74e919fa748a79f4d76b8268696a978a22c11025e31bfc
 ---
 
@@ -50,7 +50,7 @@ content_hash: sha256:721a3c3a09a98fa4cf74e919fa748a79f4d76b8268696a978a22c11025e
      sortOrder: 1,
      readOptions: {
        withPartialDetails: ['exerciseHeartRate', 'altitude']
-    }
+     }
    };
    ```
 3. 调用[readData](../harmonyos-references/health-api-healthstore.md#healthstorereaddata-1)方法执行查询请求，并处理返回结果。

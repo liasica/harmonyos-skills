@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-multimedi
 title: "@correctness/multimedia-use-stride-in-image-receiver"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 正确性规则@correctness > @correctness/multimedia-use-stride-in-image-receiver
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:14+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:15efdb1ca5bab758d47b34a8d81f304d66cd4609c01acd1b8d16410d4b9e3984
+scraped_at: 2026-11-12T09:53:00+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:53ea8842c0df4b2b912e388b0fc0c1c73677f97260fabf67655703b169d83ee5
 ---
 
 在使用ImageReceiver组件中[readNextImage](../harmonyos-references/arkts-apis-image-imagereceiver.md#readnextimage9)接口时，建议调用rowStride属性，避免出现相机获取预览流数据异常的问题。
@@ -110,4 +110,4 @@ function onImageArrival(receiver: image.ImageReceiver): void {
 plugin:@correctness/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

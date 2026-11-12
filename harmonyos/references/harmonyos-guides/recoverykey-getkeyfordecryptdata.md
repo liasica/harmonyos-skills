@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/recoverykey-g
 title: 获取解密硬盘数据的企业恢复密钥
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > 企业恢复密钥 > 获取解密硬盘数据的企业恢复密钥
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:30+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b7a35d082399e0622599e3ae544769821a6cb64759e94e1b6e088c638b795643
+scraped_at: 2026-11-12T09:51:38+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:269e558b5083b7b361e3539747944e619ae4ee60c8721b1c75ee2dfdf5d67f71
 ---
 
 ## 场景介绍
@@ -22,7 +22,7 @@ content_hash: sha256:b7a35d082399e0622599e3ae544769821a6cb64759e94e1b6e088c638b7
 
 | 接口名 | 描述 |
 | --- | --- |
-| [getEnterpriseRecoveryKey](../harmonyos-references/dataguard-recoverykey.md#recoverykeygetenterpriserecoverykey)(userId: number): Promise<[EnterpriseRecoveryKeyInfo](../harmonyos-references/dataguard-recoverykey.md#enterpriserecoverykeyinfo)> | 使用Promise方式获取企业恢复密钥。 |
+| [getEnterpriseRecoveryKey](../harmonyos-references/dataguard-recoverykey.md#recoverykeygetenterpriserecoverykey)(userId: number): Promise<[EnterpriseRecoveryKeyInfo](../harmonyos-references/dataguard-recoverykey.md#enterpriserecoverykeyinfo)> | 获取企业恢复密钥。使用Promise异步回调。 |
 
 ## 开发步骤
 
@@ -60,6 +60,8 @@ content_hash: sha256:b7a35d082399e0622599e3ae544769821a6cb64759e94e1b6e088c638b7
          hilog.error(DOMAIN, TAG,
            `Failed to get enterprise recovery key. Code: ${error.code}, message: ${error.message}`);
        });
+     }).catch((err: BusinessError) => {
+       hilog.error(DOMAIN, TAG, `Failed to get userId. Code: ${err.code}, message: ${err.message}`);
      });
    }
    ```

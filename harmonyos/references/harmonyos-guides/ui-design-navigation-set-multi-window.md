@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ui-design-nav
 title: 设置应用内多窗
 breadcrumb: 指南 > 应用框架 > UI Design Kit（UI设计套件） > 组件导航 > 设置应用内多窗
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:32+08:00
+scraped_at: 2026-11-12T09:51:29+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:5730c3f6adf43c179b517e09ea57491bb92a0b5a13cdacbc3efe07de97f8241d
+content_hash: sha256:766027b0bec74bab69e523b5b613ea74c2dcab4c84c5e286b2c5b7b8dae222f8
 ---
 
 ## 场景介绍
@@ -79,4 +79,4 @@ content_hash: sha256:5730c3f6adf43c179b517e09ea57491bb92a0b5a13cdacbc3efe07de97f
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/CPfYVT5ITzGfKQdkTuj_CQ/zh-cn_image_0000002809010317.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/lZQFkWr5RoWOObnbdUxKIA/zh-cn_image_0000002815399113.jpg)

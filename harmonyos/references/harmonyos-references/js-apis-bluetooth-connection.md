@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-b
 title: "@ohos.bluetooth.connection (蓝牙connection模块)"
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > @ohos.bluetooth.connection (蓝牙connection模块)
 category: harmonyos-references
-scraped_at: 2026-11-04T08:34:38+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:61bf8e2ddd974fa78ce9897f48455a4e8791d356764827521f7afd4e19dcdc0f
+scraped_at: 2026-11-12T09:55:32+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e5db28b7a0e625cec89c388afd125b7db4c92d21abc7514a3d677f56bf1aa0e6
 ---
 
 connection模块提供了蓝牙设备的配对、连接、状态查询、设备扫描发现、扫描模式设置、电量信息获取及事件订阅等能力，适用于需要在应用中实现蓝牙设备发现、配对、连接和信息查询的场景。
@@ -385,8 +385,12 @@ getRemoteDeviceClass(deviceId: string): DeviceClass
 
 获取对端蓝牙设备的类别。
 
-* 从API version 18开始，此接口不再校验ohos.permission.ACCESS\_BLUETOOTH权限。
-* 从API version 21开始，此接口支持使用对端设备的实际MAC地址获取设备类别信息。
+从API version 21开始，此接口支持使用对端设备的实际MAC地址获取设备类别信息。
+
+**需要权限**：
+
+* API版本10-17：ohos.permission.ACCESS\_BLUETOOTH
+* API版本18+：N/A
 
 **系统能力**：SystemCapability.Communication.Bluetooth.Core
 

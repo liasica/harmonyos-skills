@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/l10n-multilin
 title: 多语言适配
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用本地化 > 多语言适配
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:02+08:00
-doc_updated_at: 2026-10-26
+scraped_at: 2026-11-12T09:51:29+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:f211ee66f6b570f4108b28e2b65b26d64cefdb4e1d71b4ba020fd372ce81f414
 ---
 

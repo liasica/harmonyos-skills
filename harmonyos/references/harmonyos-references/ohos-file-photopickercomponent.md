@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-file
 title: "@ohos.file.PhotoPickerComponent (PhotoPicker组件)"
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS组件 > @ohos.file.PhotoPickerComponent (PhotoPicker组件)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:51:19+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:0970c76ea187ac059fdea1f61250bc263a0a01cfcb6aa2b8b36d5fa7867e913c
+scraped_at: 2026-11-12T09:56:52+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e8673d7358b2a47050a52b8406fb7dcfed02ac45b59ec9ae79930c2b5e3acdc1
 ---
 
 应用可以在布局中嵌入PhotoPicker组件，通过此组件，应用无需申请权限，即可实现媒体文件选择功能。在用户选择媒体文件后，应用即可访问用户选中的图片或视频文件。仅包含读权限。
@@ -79,6 +79,7 @@ PhotoPickerComponent({ pickerOptions?: PickerOptions, onSelect?: (uri: string) =
 | onPhotoBrowserChangeStart23+ | [PhotoBrowserChangeStartCallback](ohos-file-photopickercomponent.md#photobrowserchangestartcallback23) | 否 | - | 宫格视图进入到大图视图、大图浏览切换时产生的回调。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API**：从API version 23开始，该接口支持在元服务中使用。 |
 | onError23+ | [ErrorCallback](ohos-file-photopickercomponent.md#errorcallback23) | 否 | - | 使用PhotoPickerComponent组件发生错误时产生的回调。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API**：从API version 23开始，该接口支持在元服务中使用。 |
 | onPhotoBrowserZoom | [PhotoBrowserZoomCallback](ohos-file-photopickercomponent.md#photobrowserzoomcallback) | 否 | - | PhotoPickerComponent进入大图后，双指放大缩小时的回调。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **起始版本：** 26.0.0 |
+| onUnselectableItemClicked | [UnselectableItemClickedCallback](ohos-file-photopickercomponent.md#unselectableitemclickedcallback) | 否 | - | 在picker宫格或大图预览界面，当不可选中的图片被点击时产生的回调。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。  **起始版本：** 26.0.1 |
 
 ## PickerOptions
 
@@ -456,6 +457,26 @@ PhotoPickerComponent进入大图后，大图放大缩小时的回调。
 | 参数名 | 类型 | 必填 | 说明 |
 | --- | --- | --- | --- |
 | scale | number | 是 | 图片相比原图放大缩小的比例。 |
+
+## UnselectableItemClickedCallback
+
+type UnselectableItemClickedCallback = (unselectableItemInfo: UnselectableItemInfo) => void
+
+在picker宫格或大图预览界面，当不可选中的图片被点击时产生的回调。
+
+**起始版本：** 26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| unselectableItemInfo | [UnselectableItemInfo](ohos-file-photopickercomponent.md#unselectableiteminfo) | 是 | 被点击的不可选中的图片详情。 |
 
 ## PickerController
 
@@ -911,6 +932,23 @@ Picker上次退出时现场的信息。
 | photoUris | Array<string> | 否 | 否 | 已选择的图片或视频URI。该URI数组仅支持通过临时授权方式调用photoAccessHelper.getAssets使用。 |
 | contextRecoveryInfo | [photoAccessHelper.ContextRecoveryInfo](arkts-apis-photoaccesshelper-class.md#contextrecoveryinfo21) | 否 | 否 | PhotoPicker退出状态的上下文信息。 |
 | movingPhotoBadgeStates | Array<[photoAccessHelper.MovingPhotoBadgeStateType](arkts-apis-photoaccesshelper-e.md#movingphotobadgestatetype22)> | 否 | 否 | 已选择媒体文件的动态照片状态。当isMovingPhotoBadgeShown为true时，movingPhotoBadgeStates包含动态照片状态；否则为空。 |
+
+## UnselectableItemInfo
+
+被点击的不可选中的图片详情。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.FileManagement.PhotoAccessHelper.Core
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| mimeType | string | 否 | 是 | 媒体文件类型。 |
+| photoSubType | [photoAccessHelper.PhotoSubtype](arkts-apis-photoaccesshelper-e.md#photosubtype12) | 否 | 是 | 图片资源的子类型。 |
 
 ## DataType
 

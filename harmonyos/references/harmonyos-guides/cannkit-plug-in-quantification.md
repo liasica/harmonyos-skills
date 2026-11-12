@@ -1,31 +1,33 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-plug-in-quantification
-title: 插件式量化
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化 > Transformer结构量化 > 插件式量化
+title: Transformer插件式量化
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 模型优化 > 模型轻量化 > Transformer结构量化 > Transformer插件式量化
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:47+08:00
-doc_updated_at: 2026-05-18
-content_hash: sha256:a178fbce68b0c2e64c4fce472f8e99390590deabb1119d283cd95e41be3a0b98
+scraped_at: 2026-11-12T09:52:40+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:6cefa7a79e4e101212043a9daf40ac5e40ddffe81ed3aa2e913f9231a002c3b8
 ---
 
 ## 简介
 
-插件式量化不区分模型类型，包含语言类视觉类，可以针对各种Transform结构的模型进行快速量化。
+插件式量化理论上不区分模型类型，但是推荐对视觉类transformers使用。LLM模型也可使用，但仅支持策略为Quant\_INT8-4\_ECO。
 
 ## 插件式整体流程
 
 PTQ和QAT是两种量化参数优化策略，PTQ使用推理工程即可完成量化校准，QAT需要结合训练工程来进行量化感知训练。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/Ef3Ynqa6Qhmik--MLDf7Ng/zh-cn_image_0000002779691736.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1/v3/_nNj2njGSiKuUde4wmdAKw/zh-cn_image_0000002815400171.png)
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/RKgeFJh6TaWVyOOPOmHPKg/zh-cn_image_0000002786520596.gif)
 
 ## 接口使用说明
 
 ```python
 import os
 import sys
-sys.path.append('path/to/dopt_torch_py3')
+sys.path.append('path/to/dopt_pytorch_py3')
 ####  接口导入
-from dopt.dopt_lm.do_opt import (
+from dopt_lm.do_opt import (
     generate_config_file,   ## 生成量化配置文件
     optimize_model,         ## 使用生成和配置好的量化配置文件将浮点nn.module转成插入量化算子的nn.module
     set_quant_state,        ## 分别对激活和量化设置量化推理使能
@@ -43,7 +45,11 @@ def get_quant_model(model, dopt_config):
     return model
 ```
 
-**量化策略配置：**
+**量化配置文件配置样例：**
+
+**注意** 
+
+group\_size仅在weight\_algo中含“group”时可配置，否则不要配置。group\_size需能被该层输入通道数整除，否则量化结构构建时报错。
 
 ```json
 {
@@ -54,12 +60,12 @@ def get_quant_model(model, dopt_config):
             "weight": {
                 "bit": 4,
                 "group_size": 128,
-                "weight_algo": "group_min_max",
+                "weight_algo": "group_min_max"
             },
-            "input" : {
-                "bit" : 8,
-                "input_algo":  "min_max",
-                "unsigned_quant": True
+            "input": {
+                "bit": 8,
+                "input_algo": "min_max",
+                "unsigned_quant": true
             }
         }
     }
@@ -74,13 +80,17 @@ quant\_strategy 不同策略有默认的配置，可参考下表1进行配置修
 
 | 配置信息 | 配置信息 | 可选项 | 选项说明 |
 | --- | --- | --- | --- |
-| quant\_strategy | N/A | Quant\_aigc\_ptq  Quant\_aigc\_qat  Quant\_act\_weight\_eco  Quant\_lm\_head  Quant\_Embed\_MinMax | PTQ量化策略，默认U8S8。量化器为minmax  QAT量化策略，默认U8S8。量化器为omni\_minmax  16-4grouplinear 量化策略。默认groupsize128，针对llm大模型，QAT量化器  16-4grouplinear 量化策略。默认groupsize128，针对llm大模型，QAT量化器  8bit embedding量化 |
+| quant\_strategy | N/A | Quant\_aigc\_ptq  Quant\_aigc\_qat  Quant\_INT8-4\_ECO | PTQ策略，U8S8。量化器为minmax  QAT策略，U8S8。量化器为omni\_minmax  QAT策略，动态8-4，量化器为grouplinear |
 | weight | bit | 4, 8 | 权重量化位宽 |
-| weight | group\_size | 128 , 256 | 权重bit为4时，属于低比特量化范畴， 使用grouplinear量化，可配置此信息，否则请别配置该键值对 |
-| weight | weight\_algo | min\_max  group\_min\_max  omni\_min\_max  omni\_group\_min\_max | perchannel量化，最大最小值统计用于PTQ量化  pergroup量化，最大最小值统计，用于PTQ量化  QAT量化器， perchannel量化  QAT量化器， pergroup量化 |
+| weight | group\_size | 128 , 256 | 权重bit为4时，属于低比特量化范畴， 使用grouplinear量化，可配置此信息，否则别配置。group\_size需能被该层输入通道数整除，若该层输入通道数小于group\_size，需选择可整除的更小取值 |
+| weight | weight\_algo | min\_max  group\_min\_max  omni\_min\_max  omni\_group\_min\_max | PTQ量化器 perchannel量化  PTQ量化器 pergroup量化  QAT量化器 perchannel量化  QAT量化器 pergroup量化 |
 | input | bit | 8, 16 | 激活量化位宽 |
-| input | input\_algo | min\_max  ema  omni\_min\_max | pertensor量化，最大最小值统计用于PTQ量化，clip误差小  pertensor量化，滑动平均统计用于PTQ量化，round误差小  pertensor量化，QAT量化器 |
+| input | input\_algo | ema\_min\_max  omni\_min\_max  dyn\_s8 | pertensor PTQ量化  pertensor QAT量化器  动态激活量化 推荐策略 |
 | input | unsigned\_quant | True  False | 非对称量化  对称量化 |
+
+**说明** 
+
+weight\_algo为group\_min\_max、omni\_group\_min\_max时，权重量化器仅支持Linear层；Conv2d等4D权重算子请将weight\_algo配置为min\_max或omni\_min\_max，或将该层quant\_strategy配置为float，否则量化结构构建或前向推理时会报错。
 
 ## 量化参数优化-PTQ
 
@@ -123,28 +133,4 @@ torch.save(model.state_dict(), 'pth_save_path')
 
 ## 量化参数提取导出
 
-```python
-from dopt.dopt_lm.do_opt import generate_quant_params, optimize_model
-## model： 浮点 nn.module 实例对象， quant_config：量化配置文件
-model = optimize_model(model, quant_config)
-## 加载量化标定后保存的pth
-model.load_state_dict(
-    torch.load('pth_save_path', map_location=torch.device('cpu')),
-    strict=True,
-)
-## 关闭量化参数更新，导出量化参数
-## Tips：也可以在标定完成后直接到这一步，进行参数导出，步骤分离的目的是为了防止过程中有错误，导致前面步骤重来。
-set_quant_state(model, weight_state=True, input_state=True)
-set_calibrate_state(model, False)
-generate_quant_params(
-    model,
-    output_dir,
-    quant_param_2=False,
-    embedding_separate=True,
-)
-## output_dir 下会生成 fake_quant_weight.pth 以及量化参数文件， fake_quant_weight.pth 仅用作导出onnx图时替换权重
-```
-
-**ONNX 导出：**
-
-使用torch.onnx.export 对浮点model进行导出（需要加载fake\_quant\_weight.pth），必要时完成ONNX模型简化，以及确保conv和linear算子名和torch定义名同步。
+量化标定或量化感知训练完成后，基于量化配置文件与保存的量化权重pth，完成量化参数提取与ONNX导出，具体操作参见[量化模型导出](cannkit-quant-model-export.md)。

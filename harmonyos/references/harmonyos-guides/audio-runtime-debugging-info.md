@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-runtime
 title: 使用音频快照获取问题定位信息
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > Audio Kit常见问题 > 使用音频快照获取问题定位信息
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:27+08:00
-doc_updated_at: 2026-10-26
-content_hash: sha256:20a9bb6617ccbabe2cab0f0df870a7d0b05837924d85b3cfd1220da9803f6d3a
+scraped_at: 2026-11-12T09:52:01+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:35281b0e36c839749755cded6429067849d4b6f94aab8e13ba55120d115e922f
 ---
 
 从API版本26.0.0开始，支持通过音频快照（Audio Debugging Info）能力获取当前进程中音频子系统的状态信息。音频快照是对当前进程中音频各模块运行状态的瞬时记录，类似于系统在某一时刻为音频子系统拍摄的“照片”，涵盖音频流参数、通路状态、音量信息、焦点状态、错误记录等关键数据，能够帮助开发者在不影响业务逻辑的前提下，快速了解音频系统的内部运行情况。开发者可通过快照获取定位音频播放、录音、耳返、会话等场景中的异常问题所需的相关系统信息，例如无声、音量异常、焦点丢失等。
@@ -454,7 +454,7 @@ OH_AudioSessionManager *audioSessionManager;
 import { audio } from '@kit.AudioKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 // ...
-import { fileIo as fs } from '@kit.CoreFileKit';
+import { fileIo } from '@kit.CoreFileKit';
 // ...
   // 设置音频并发模式。
   let strategy: audio.AudioSessionStrategy = {
@@ -471,10 +471,10 @@ import { fileIo as fs } from '@kit.CoreFileKit';
 
   // fd 文件描述符，实际使用时请根据具体情况获取
   let filePath = context.filesDir + '/audio_session_info.txt';
-  let fd = fs.openSync(filePath, fs.OpenMode.CREATE | fs.OpenMode.WRITE_ONLY | fs.OpenMode.TRUNC).fd;
+  let fd = fileIo.openSync(filePath, fileIo.OpenMode.CREATE | fileIo.OpenMode.WRITE_ONLY | fileIo.OpenMode.TRUNC).fd;
   // 输出到文件。
   audioDebuggingManager.printSessionInfo(audioSessionManager, fd);
-  fs.closeSync(fd);
+  fileIo.closeSync(fd);
 ```
 
 **输出示例：**

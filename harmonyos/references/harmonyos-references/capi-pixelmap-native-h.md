@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-pixe
 title: pixelmap_native.h
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > C API > 头文件 > pixelmap_native.h
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:31+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8a116a48763ac8b8f6935e698feaeebba89e4cc58d79c14eacaadca168b265cc
+scraped_at: 2026-11-12T09:56:41+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ecc325ee4f88afb0a15e92fd591d23d149171643e56580aa268825326047af51
 ---
 
 ## 概述
@@ -32,11 +32,11 @@ content_hash: sha256:8a116a48763ac8b8f6935e698feaeebba89e4cc58d79c14eacaadca168b
 | [OH\_Pixelmap\_HdrDynamicMetadata](capi-image-nativemodule-oh-pixelmap-hdrdynamicmetadata.md) | OH\_Pixelmap\_HdrDynamicMetadata | [OH\_Pixelmap\_HdrMetadataKey](capi-pixelmap-native-h.md#oh_pixelmap_hdrmetadatakey)中HDR\_DYNAMIC\_METADATA关键字对应的元数据值类型，用于存储HDR动态元数据，格式遵循相关HDR动态元数据标准。 |
 | [OH\_Pixelmap\_HdrGainmapMetadata](capi-image-nativemodule-oh-pixelmap-hdrgainmapmetadata.md) | OH\_Pixelmap\_HdrGainmapMetadata | [OH\_Pixelmap\_HdrMetadataKey](capi-pixelmap-native-h.md#oh_pixelmap_hdrmetadatakey)中HDR\_GAINMAP\_METADATA关键字对应的元数据值类型，用于存储HDR增益图元数据，参考ISO 21496-1。 |
 | [OH\_Pixelmap\_HdrMetadataValue](capi-image-nativemodule-oh-pixelmap-hdrmetadatavalue.md) | OH\_Pixelmap\_HdrMetadataValue | Pixelmap使用的HDR元数据值，和[OH\_Pixelmap\_HdrMetadataKey](capi-pixelmap-native-h.md#oh_pixelmap_hdrmetadatakey)关键字相对应。当传入相应的[OH\_Pixelmap\_HdrMetadataKey](capi-pixelmap-native-h.md#oh_pixelmap_hdrmetadatakey)关键字作为入参时，可通过本结构体设置或获取对应类型的元数据值，用于[OH\_PixelmapNative\_SetMetadata](capi-pixelmap-native-h.md#oh_pixelmapnative_setmetadata)及[OH\_PixelmapNative\_GetMetadata](capi-pixelmap-native-h.md#oh_pixelmapnative_getmetadata)。 |
-| [OH\_PixelmapNative](capi-image-nativemodule-oh-pixelmapnative.md) | - | OH\_PixelmapNative结构体是Native层封装的图像解码后无压缩的位图格式结构体。  创建OH\_PixelmapNative使用[OH\_PixelmapNative\_CreatePixelmap](capi-pixelmap-native-h.md#oh_pixelmapnative_createpixelmap)函数，默认采用BGRA\_8888格式处理数据。  释放OH\_PixelmapNative对象使用[OH\_PixelmapNative\_Release](capi-pixelmap-native-h.md#oh_pixelmapnative_release)函数。 |
-| [OH\_NativeBuffer](capi-image-nativemodule-image-nativemodule-oh-nativebuffer.md) | - | NativeBuffer结构体类型，用于执行NativeBuffer相关操作。 |
+| [OH\_PixelmapNative](capi-image-nativemodule-oh-pixelmapnative.md) | OH\_PixelmapNative | OH\_PixelmapNative结构体是Native层封装的图像解码后无压缩的位图格式结构体。  创建OH\_PixelmapNative使用[OH\_PixelmapNative\_CreatePixelmap](capi-pixelmap-native-h.md#oh_pixelmapnative_createpixelmap)函数，默认采用BGRA\_8888格式处理数据。  释放OH\_PixelmapNative对象使用[OH\_PixelmapNative\_Release](capi-pixelmap-native-h.md#oh_pixelmapnative_release)函数。 |
+| [OH\_NativeBuffer](capi-image-nativemodule-image-nativemodule-oh-nativebuffer.md) | OH\_NativeBuffer | NativeBuffer结构体类型，用于执行NativeBuffer相关操作。 |
 | [OH\_NativeColorSpaceManager](capi-image-nativemodule-oh-nativecolorspacemanager.md) | OH\_NativeColorSpaceManager | NativeColorSpaceManager结构体类型，用于执行NativeColorSpaceManager相关操作。 |
-| [OH\_Pixelmap\_InitializationOptions](capi-image-nativemodule-oh-pixelmap-initializationoptions.md) | - | OH\_Pixelmap\_InitializationOptions是Native层封装的初始化参数结构体，用于设置Pixelmap的初始化参数。  创建OH\_Pixelmap\_InitializationOptions对象使用[OH\_PixelmapInitializationOptions\_Create](capi-pixelmap-native-h.md#oh_pixelmapinitializationoptions_create)函数。  释放OH\_Pixelmap\_InitializationOptions对象使用[OH\_PixelmapInitializationOptions\_Release](capi-pixelmap-native-h.md#oh_pixelmapinitializationoptions_release)函数。 |
-| [OH\_Pixelmap\_ImageInfo](capi-image-nativemodule-oh-pixelmap-imageinfo.md) | - | 图像像素信息结构体。 |
+| [OH\_Pixelmap\_InitializationOptions](capi-image-nativemodule-oh-pixelmap-initializationoptions.md) | OH\_Pixelmap\_InitializationOptions | OH\_Pixelmap\_InitializationOptions是Native层封装的初始化参数结构体，用于设置Pixelmap的初始化参数。  创建OH\_Pixelmap\_InitializationOptions对象使用[OH\_PixelmapInitializationOptions\_Create](capi-pixelmap-native-h.md#oh_pixelmapinitializationoptions_create)函数。  释放OH\_Pixelmap\_InitializationOptions对象使用[OH\_PixelmapInitializationOptions\_Release](capi-pixelmap-native-h.md#oh_pixelmapinitializationoptions_release)函数。 |
+| [OH\_Pixelmap\_ImageInfo](capi-image-nativemodule-oh-pixelmap-imageinfo.md) | OH\_Pixelmap\_ImageInfo | 图像像素信息结构体。 |
 
 ### 枚举
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_consisten
 title: "@typescript-eslint/consistent-type-definitions"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/consistent-type-definitions
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:08+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:6e1344d070d79c3904eb4dfc403e06ebefe9f05587710e364af3b6a1598ea8a3
+scraped_at: 2026-11-12T09:52:54+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0e6fc8e47c63939b733dc7e4f80b4b5ab0425992a68279573da3e29ca16c1c4c
 ---
 
 强制使用一致的类型声明样式，仅使用“interface”或者仅使用“type”。
@@ -54,4 +54,4 @@ type T = { x: number };
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/health-wearab
 title: 实时三环数据
 breadcrumb: 指南 > 应用服务 > Health Service Kit（运动健康服务） > 开发接入 > Wearable应用开发 > 管理运动健康数据 > 实时三环数据
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:17+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2c1cb916755741868d7fe08384e2a5bf5f8bcfa43e36092657801e5d2ea24691
+scraped_at: 2026-11-12T09:52:25+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:def56a8f2282f69295dd3a9695abf42d42776895b5bb08fa2cc8d3c26047b387
 ---
 
 ## 场景介绍
@@ -24,7 +24,7 @@ content_hash: sha256:2c1cb916755741868d7fe08384e2a5bf5f8bcfa43e36092657801e5d2ea
 
 | 接口名 | 描述 |
 | --- | --- |
-| [readActivityReport](../harmonyos-references/health-api-healthservice.md#workoutreadactivityreport)(): Promise<[ActivityReport](../harmonyos-references/health-api-healthservice.md#activityreport)> | 读取实时三环数据。 |
+| [readActivityReport](../harmonyos-references/health-api-workout.md#workoutreadactivityreport)(): Promise<[ActivityReport](../harmonyos-references/health-api-workout.md#activityreport)> | 读取实时三环数据。 |
 
 ## 开发前检查
 
@@ -41,7 +41,7 @@ content_hash: sha256:2c1cb916755741868d7fe08384e2a5bf5f8bcfa43e36092657801e5d2ea
    import { healthService } from '@kit.HealthServiceKit';
    import { hilog } from '@kit.PerformanceAnalysisKit';
    ```
-2. 调用[readActivityReport](../harmonyos-references/health-api-healthservice.md#workoutreadactivityreport)方法读取实时三环数据，并处理返回结果。
+2. 调用[readActivityReport](../harmonyos-references/health-api-workout.md#workoutreadactivityreport)方法读取实时三环数据，并处理返回结果。
 
    ```typescript
    try {

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-in-app-fr
 title: 应用侧调用前端页面函数
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 在应用中使用前端页面JavaScript > 应用侧调用前端页面函数
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:15+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:51:22+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:d6d77231b9f369f92f3b294ed79576b0b069d7d0d20d460b86294b48a4ba9c99
 ---
 

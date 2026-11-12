@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-shooti
 title: 拍照(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用基础能力(ArkTS) > 拍照(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:57:19+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:c9c8bfa87493aaca3bcd86ad5357342cbf55eabd3aa58f5f5421e515425ed924
+scraped_at: 2026-11-12T09:52:04+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a1479b132686e25820d162d65c254efd71e0f2f4efeb7bfff628c88c4e93952d
 ---
 
 ## 概述
@@ -29,7 +29,39 @@ content_hash: sha256:c9c8bfa87493aaca3bcd86ad5357342cbf55eabd3aa58f5f5421e515425
    import { fileIo } from '@kit.CoreFileKit';
    import { BusinessError } from '@kit.BasicServicesKit';
    ```
-2. 创建拍照输出流。
+2. 查询相机是否支持拍照模式。
+
+   通过[getSupportedSceneModes](../harmonyos-references/arkts-apis-camera-cameramanager.md#getsupportedscenemodes11)接口获取传入镜头支持的模式，查询是否支持拍照模式。
+
+   ```ts
+   function isCaptureModeSupported(cameraManager: camera.CameraManager, cameraDevice: camera.CameraDevice): boolean
+   {
+     try {
+       let modeArray = cameraManager.getSupportedSceneModes(cameraDevice);
+       return modeArray.includes(camera.SceneMode.NORMAL_PHOTO);
+     } catch (error) {
+       let err = error as BusinessError;
+       console.error(`failed to getSupportedSceneModes, err code: ${err.code}`);
+       return false;
+     }
+   }
+   ```
+3. 通过[getSupportedOutputCapability](../harmonyos-references/arkts-apis-camera-cameramanager.md#getsupportedoutputcapability11)接口获取镜头支持的[CameraOutputCapability](../harmonyos-references/arkts-apis-camera-i.md#cameraoutputcapability)列表。
+
+   ```ts
+   function getSupportedOutputCapability(cameraManager: camera.CameraManager, cameraDevice: camera.CameraDevice): camera.CameraOutputCapability | undefined
+   {
+     try {
+       // 接口传入要使能的模式。
+       return cameraManager.getSupportedOutputCapability(cameraDevice, camera.SceneMode.NORMAL_PHOTO);
+     } catch (error) {
+       let err = error as BusinessError;
+       console.error(`failed to getSupportedOutputCapability, err code: ${err.code}`);
+       return undefined;
+     }
+   }
+   ```
+4. 创建拍照输出流。
 
    通过[CameraOutputCapability](../harmonyos-references/arkts-apis-camera-i.md#cameraoutputcapability)中的photoProfiles属性，可获取当前设备支持的拍照输出流。通过[createPhotoOutput](../harmonyos-references/arkts-apis-camera-cameramanager.md#createphotooutput11)方法传入支持的某一个输出流[Profile](../harmonyos-references/arkts-apis-camera-i.md#profile)创建拍照输出流。
 
@@ -51,7 +83,7 @@ content_hash: sha256:c9c8bfa87493aaca3bcd86ad5357342cbf55eabd3aa58f5f5421e515425
      return photoOutput;
    }
    ```
-3. 设置拍照[on('photoAvailable')](../harmonyos-references/arkts-apis-camera-photooutput.md#onphotoavailable11)的回调，并将拍照的buffer保存为图片。
+5. 设置拍照[on('photoAvailable')](../harmonyos-references/arkts-apis-camera-photooutput.md#onphotoavailable11)的回调，并将拍照的buffer保存为图片。
 
    Context获取方式请参考：[获取UIAbility的上下文信息](uiability-usage.md#获取uiability的上下文信息)。
 
@@ -105,7 +137,7 @@ content_hash: sha256:c9c8bfa87493aaca3bcd86ad5357342cbf55eabd3aa58f5f5421e515425
      });
    }
    ```
-4. 参数配置。
+6. 参数配置。
 
    配置相机的参数可以调整拍照的一些功能，包括闪光灯、变焦、焦距等。
 
@@ -176,7 +208,7 @@ content_hash: sha256:c9c8bfa87493aaca3bcd86ad5357342cbf55eabd3aa58f5f5421e515425
      }
    }
    ```
-5. 触发拍照。
+7. 触发拍照。
 
    通过photoOutput的[capture](../harmonyos-references/arkts-apis-camera-photooutput.md#capture-2)方法，执行拍照任务。该方法有两个参数，第一个参数为拍照设置参数的setting，setting中可以设置照片的质量和旋转角度，第二参数为回调函数。
 

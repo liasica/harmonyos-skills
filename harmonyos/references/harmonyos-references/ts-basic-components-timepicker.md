@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: TimePicker
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 按钮与选择 > TimePicker
 category: harmonyos-references
-scraped_at: 2026-11-04T08:32:59+08:00
+scraped_at: 2026-11-12T09:54:15+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:288ed20b19f3b274b7f1e4be16c0eee4610d8264eeee411d6fb63c8ac278277d
+content_hash: sha256:ef118ad77b5a6d52e16d928d0b01e48b95db30ef3a1731bc3ad851be8e1aaca5
 ---
 
 TimePicker是用于滑动选择时间的组件，支持12/24小时制、多种时间格式（小时/分钟/秒）、循环滚动、样式定制和时间范围限制等功能。适用于日程安排、时间预约、任务管理等需要用户选择时间的场景，能够提升用户体验，减少输入错误，并可快速集成到应用中。
@@ -592,7 +592,7 @@ struct TimePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/KYH7f_eLQ-GD-R6XzC6uCw/zh-cn_image_0000002809051877.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/bqhbVVNZTtK6560R2WQdrw/zh-cn_image_0000002815400741.png)
 
 ### 示例2（切换小时制）
 
@@ -632,7 +632,7 @@ struct TimePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/qAM4PRnpTKWQnGVVvZI-5w/zh-cn_image_0000002779852312.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/Xr7BHgskTN6ic7R-sQ8Daw/zh-cn_image_0000002786521166.gif)
 
 ### 示例3（设置时间格式）
 
@@ -663,7 +663,7 @@ struct TimePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4e/v3/lkDq8whaRGWH5nfWZ2gR0g/zh-cn_image_0000002779692344.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7b/v3/m5-W64_pTH2lU6T4QkGT3w/zh-cn_image_0000002786361238.gif)
 
 ### 示例4（设置循环滚动）
 
@@ -704,7 +704,7 @@ struct TimePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/Gtb9fzTDQROJymaYClfVKA/zh-cn_image_0000002809011965.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/0aqnVCUBTCeqJScwB-ASKg/zh-cn_image_0000002815560659.gif)
 
 ### 示例5（设置时间选择组件的起始时间）
 
@@ -736,7 +736,7 @@ struct TimePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/2LeFnQVbSoa2cD_Q04cgyA/zh-cn_image_0000002809051879.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/45/v3/isJoVl12Sluzw6uA8e5o2A/zh-cn_image_0000002815400743.png)
 
 ### 示例6（设置时间选择组件的结束时间）
 
@@ -768,7 +768,7 @@ struct TimePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/4x4AObviQbyZl5nx4hNpHQ/zh-cn_image_0000002779852314.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/uuSvM5bvQGm3KwMjFm_XIA/zh-cn_image_0000002786521168.png)
 
 ### 示例7（设置上午/下午跟随时间联动）
 
@@ -802,4 +802,4 @@ struct TimePickerExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/00PhoZfNQ-aJLx2iwaen5g/zh-cn_image_0000002779692346.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/MOlBpHFoRAS0qmVVCDEhuw/zh-cn_image_0000002786361240.gif)

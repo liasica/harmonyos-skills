@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-scre
 title: 截屏
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 应用调试 > 截屏
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:38+08:00
+scraped_at: 2026-11-12T09:53:20+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:6da79e49817136eed50c392442c42eb7450047e3d08d9d11fb0e71af3f2b26d5
+content_hash: sha256:4cb15316c34a4f6195be49359c5c64b9d9cb70c9e627e6e8d615ae78ec2af9d2
 ---
 
 在调试过程中，可以通过多种方式截取屏幕截图。
@@ -13,10 +13,10 @@ content_hash: sha256:6da79e49817136eed50c392442c42eb7450047e3d08d9d11fb0e71af3f2
 ## 通过DevEco Studio截屏
 
 1. 连接真机设备。
-2. 点击鸿蒙电脑DevEco Studio底部![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/kFAWXietQSqhYmKRgpB01g/zh-cn_image_0000002781311424.png "点击放大")图标打开日志面板，选择HiLog。
-3. 点击左侧工具栏中![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/8Fj_aptcTuigr7K_aNOsTg/zh-cn_image_0000002781471360.png "点击放大")，选择保存路径后即可截取屏幕截图。
+2. 点击鸿蒙电脑DevEco Studio底部![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2b/v3/GUdCffIcTn-DcJnbrtpojA/zh-cn_image_0000002781311424.png "点击放大")图标打开日志面板，选择HiLog。
+3. 点击左侧工具栏中![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d5/v3/cjMvzSu1ToukUbdO9qiUdg/zh-cn_image_0000002781471360.png "点击放大")，选择保存路径后即可截取屏幕截图。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/dUawdlP3QiGQsnpU3pEEfw/zh-cn_image_0000002810630911.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/20/v3/06qFCPsOTb25c5XXlv0bzw/zh-cn_image_0000002810630911.png)
 
 ## 通过命令行方式截屏
 

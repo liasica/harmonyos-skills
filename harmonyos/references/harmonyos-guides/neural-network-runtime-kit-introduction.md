@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/neural-networ
 title: Neural Network Runtime Kit简介
 breadcrumb: 指南 > AI > Neural Network Runtime Kit（Neural Network运行时服务） > Neural Network Runtime Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:10+08:00
+scraped_at: 2026-11-12T09:52:45+08:00
 doc_updated_at: 2026-03-12
-content_hash: sha256:ced5bcffe10d9243c5f2aeedeae9380da4d105ec29511a4a49616fee75f2e78a
+content_hash: sha256:bca78397381e33119f1852ace7a1d30d80b5c2fa8c3d059351d9947c150b15ee
 ---
 
 ## 使用场景
@@ -32,7 +32,7 @@ AI推理框架和应用开发者也可以无需调用NNRt构图接口，直接�
 
 **图1** Neural Network Runtime架构图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/yCBp577EQTSXBXxNIKrvMw/zh-cn_image_0000002779851858.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/Ne5vh7KER8uP0d-KTkFYUg/zh-cn_image_0000002815400281.jpg)
 
 ## 亮点特征
 

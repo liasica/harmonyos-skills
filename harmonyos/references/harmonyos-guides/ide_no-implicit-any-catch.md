@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-implic
 title: "@typescript-eslint/no-implicit-any-catch"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-implicit-any-catch
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:09+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:b0aa25c41f9b0aedc5d872ce8c0b62c761f60214d5a0c7d7a5511c4d07859b59
+scraped_at: 2026-11-12T09:52:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:6e83f34a60ceb12458f77567bf2ad07104a33db2c6c29399542c811ec4eb69e1
 ---
 
 禁止在 catch 表达式中使用隐式“any”类型。
@@ -75,4 +75,4 @@ try {
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

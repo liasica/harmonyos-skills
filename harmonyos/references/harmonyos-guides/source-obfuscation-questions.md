@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/source-obfusc
 title: ArkGuard混淆常见问题
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS编译工具链 > ArkGuard源码混淆工具 > ArkGuard混淆常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:14+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:51:06+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:dd5e16d19ff8475c6f8aa6e2bdc8e5fa28a8b97f875211a5cd852355e13013ec
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Brush)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (Brush)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:45+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:03af3d1f856c1f3ce4d322fe8edf3c28288c79dfb654c971eac104c72ea89966
+scraped_at: 2026-11-12T09:56:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:2a8eae6a74ecaeed1d50e04a9f59004c63db254fb3155e444d7b93044c0956b8
 ---
 
 画刷对象，用于设置图形的填充样式，包括颜色、抗锯齿、混合模式、颜色滤波器、蒙版滤波器、着色器效果、阴影层效果及图像滤波器等，并支持获取颜色、透明度、抗锯齿等属性及重置画刷为初始状态。
@@ -624,7 +624,7 @@ getColorFilter(): ColorFilter
 
 | 类型 | 说明 |
 | --- | --- |
-| [ColorFilter](arkts-apis-graphics-drawing-colorfilter.md) | 返回画刷的颜色滤波器，用于对绘制内容进行颜色调整，如伽马校正、颜色矩阵变换等。 |
+| [ColorFilter](arkts-apis-graphics-drawing-colorfilter.md) | 返回画刷的颜色滤波器，用于对绘制内容进行颜色调整，如伽马校正、颜色矩阵变换等。当前画刷未设置颜色滤波器时返回undefined。 |
 
 **示例：**
 

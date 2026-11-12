@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-suite-f
 title: 音频格式转换(C/C++)
 breadcrumb: 指南 > 媒体 > Audio Kit（音频服务） > 音频编创 > 音频格式转换(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:06+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:52:00+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:c99654a7416f7efae70a86b980c4bd2355e61728e1f02f3ff6605b64ae9b56cd
 ---
 

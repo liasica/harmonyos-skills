@@ -1,18 +1,18 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-operator-implementation-on-the
 title: Kernel侧算子实现
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 算子实现 > 工程化算子开发 > 基于工程实现算子 > Kernel侧算子实现
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > AscendC算子实现 > AscendC算子工程开发 > AscendC算子工程实现 > Kernel侧算子实现
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:49+08:00
-doc_updated_at: 2026-06-05
-content_hash: sha256:05269e386b713befa8e3f851bd7e05dfe5518540eb8dd188ac69d7f25cf679aa
+scraped_at: 2026-11-12T09:52:42+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a2f6412a10d72c2b91551ff8825d59679e2226060066f9a7be02790a9d972756
 ---
 
 在[算子实现](cannkit-operator-implementation-overview.md)章节已经介绍了kernel侧算子核心的实现方法，本章节侧重于介绍接入DDK框架时编程模式和API的使用。
 
-## 自动生成kernel侧算子实现模板
+## kernel侧算子实现模板介绍
 
-在算子工程目录下的“op\_kernel/xxx.cpp”文件中实现算子的核函数。核函数的定义模板已通过msOpGen工具自动生成，样例如下所示。**这里参数的顺序按照“输入、输出、workspace、tiling”的顺序排布，开发者不要调整其顺序。**
+在算子工程目录下的“op\_kernel/xxx.cpp”文件中实现算子的核函数。算子工程模板中已提供核函数的定义模板，样例如下所示。**这里参数的顺序按照“输入、输出、workspace、tiling”的顺序排布，开发者不要调整其顺序。**
 
 ```cpp
 #include "kernel_operator.h"
@@ -34,9 +34,9 @@ extern "C" __global__ __aicore__ void add_custom(GM_ADDR x, GM_ADDR y, GM_ADDR x
 
 ## GET\_TILING\_DATA获取Tiling参数
 
-提供[GET\_TILING\_DATA](cannkit-get-tiling-data.md)，用于获取算子kernel入口函数传入的tiling信息，并填入注册的Tiling结构体中，此函数会以宏展开的方式进行编译。注意，对应的算子host实现中需要定义TilingData结构体，实现并注册计算TilingData的Tiling函数。具体请参考[Host侧Tiling实现](cannkit-tiling-implementation-on-the-host.md)。
+提供[GET\_TILING\_DATA](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)，用于获取算子kernel入口函数传入的tiling信息，并填入注册的Tiling结构体中，此函数会以宏展开的方式进行编译。注意，对应的算子host实现中需要定义TilingData结构体，实现并注册计算TilingData的Tiling函数。具体请参考[Host侧Tiling实现](cannkit-tiling-implementation-on-the-host.md)。
 
-核函数中调用[GET\_TILING\_DATA](cannkit-get-tiling-data.md)获取TilingData的样例如下。
+核函数中调用[GET\_TILING\_DATA](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)获取TilingData的样例如下。
 
 ```cpp
 extern "C" __global__ __aicore__ void add_custom(GM_ADDR x, GM_ADDR y, GM_ADDR z, GM_ADDR workspace, GM_ADDR tiling)
@@ -68,11 +68,11 @@ extern "C" __global__ __aicore__ void add_custom(GM_ADDR x, GM_ADDR y, GM_ADDR z
 
 ## 输出shape依赖计算的算子kernel侧实现
 
-某些算子，比如NonZero（统计tensor中非零值的个数），计算完成前无法得知算子输出的shape信息，算子计算完成后才能获取。该类算子在原型定义时，需要使用[OutputShapeDependOnCompute](cannkit-outputshapedependoncompute.md)接口进行标识，同时在算子核函数中将实际输出shape写入到出参中，便于框架侧基于该信息进行输出内存的管理。
+某些算子，比如NonZero（统计tensor中非零值的个数），计算完成前无法得知算子输出的shape信息，算子计算完成后才能获取。该类算子在原型定义时，需要使用[OutputShapeDependOnCompute](https://www.hiascend.com/document/detail/zh/CANNCommunityEdition/latest/API/ascendcopapi/docs/zh/api/api_list.md)接口进行标识，同时在算子核函数中将实际输出shape写入到出参中，便于框架侧基于该信息进行输出内存的管理。
 
 在核函数所有输出的最后增加一个GM\_ADDR类型的输出参数，并在核函数计算完成后，将输出shape信息写入到该出参中。shape信息的排布格式如下，大小为**n \* (8 + 1)**，每个元素的数据类型为**uint64\_t**。其中n表示待刷新shape信息的输出个数，每个输出的shape信息都通过第1个元素来保存实际的shape维度(dim)，后续的8个元素来保存具体每个维度的shape信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d4/v3/-PUO0uuWRX22H3P2KEleWA/zh-cn_image_0000002809051307.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/oKKi0K_9SkyK5zI9LUDnqg/zh-cn_image_0000002815560119.png)
 
 **说明** 
 
@@ -94,7 +94,7 @@ extern "C" __global__ __aicore__ void add_custom(GM_ADDR x, GM_ADDR y, GM_ADDR z
    // ...
    }
   ```
-* 如下示例中，算子中有一个输出依赖计算得出，输出tensor的数据类型为uint64\_t，计算完成后，得到输出的shape为（1, 64, 128, 128），出参shape\_out用于存放该shape信息，值为（0x0000000010000000 | 2, 32, 64）。代码示例如下。
+* 如下示例中，算子中有一个输出依赖计算得出，输出tensor的数据类型为uint64\_t，计算完成后，得到输出的shape为（1, 64, 128, 128），出参shape\_out用于存放该shape信息，值为（0x0000000010000000 | 1, 64, 128, 128）。代码示例如下。
 
   ```cpp
   extern "C" __global__ __aicore__ void xxx_custom(GM_ADDR x, GM_ADDR y, GM_ADDR z, GM_ADDR shape_out, GM_ADDR workspace, GM_ADDR tiling) {

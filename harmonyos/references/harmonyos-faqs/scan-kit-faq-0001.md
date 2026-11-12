@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/scan-kit-faq-00
 title: 自定义界面扫码黑屏问题排查与解决
 breadcrumb: FAQ > 媒体开发 > 拍照和图片 > 扫码服务（Scan） > 故障排查 > 自定义界面扫码黑屏问题排查与解决
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:29+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:1c4d07e3e6301c1ab70d073f7fea4999c38047811696e1b681693658b1aad707
+scraped_at: 2026-11-12T09:59:45+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:9ce75f722090042b4612a944acfffe89de7bbaed45bffec9e15d35154c9e23b4
 ---
 
 ## 问题现象
@@ -16,9 +16,9 @@ content_hash: sha256:1c4d07e3e6301c1ab70d073f7fea4999c38047811696e1b681693658b1a
 
 1. 检查是否有相机权限ohos.permission.CAMERA。流程图如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/15/v3/qAjCuqT_SiOdpWEW5TJJuw/zh-cn_image_0000002773902926.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/pd-0awW2Q8G0LIJuLMSdRg/zh-cn_image_0000002773902926.png "点击放大")
 
-   检查日志，如果出现以下日志，则代表调用[customScan.init](../harmonyos-references/scan-customscan-api.md#customscaninit)方法时已获得相机权限：
+   检查日志，如果出现以下日志，则代表调用[customScan.init](../doccenter-references/api/scan-customscan-api.md#init)方法时已获得相机权限：
 
    ```txt
    C05506/包名/ScanFrameworkCustomScan    包名  I    [InitScan:551] customScan.init is called
@@ -63,7 +63,7 @@ content_hash: sha256:1c4d07e3e6301c1ab70d073f7fea4999c38047811696e1b681693658b1a
         [IsDynamicRequest:444]Permission: ohos.permission.CAMERA: state: -1, errorReason: 0
         [RequestPermissionsFromUserExecute:704]It does not need to request permission
         ```
-2. 排查接口调用时序是否正确。筛选日志，如果出现下方日志，说明[customScan.start](../harmonyos-references/scan-customscan-api.md#customscanstart-1)方法实际在init方法前执行：
+2. 排查接口调用时序是否正确。筛选日志，如果出现下方日志，说明[customScan.start](../doccenter-references/api/scan-customscan-api.md#start)方法实际在init方法前执行：
 
    ```txt
    C05506/包名/ScanFramework    包名  I     [CreateBusinessError:30] CreateBusinessError errCode: 1000500001 errMsg: Internal error. ScanOption is null, please call customScan.init first.
@@ -72,7 +72,7 @@ content_hash: sha256:1c4d07e3e6301c1ab70d073f7fea4999c38047811696e1b681693658b1a
 
    错误流程示意图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/MQwmNWQCTa-pYP2tTw9gew/zh-cn_image_0000002774068432.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/qo81-cWHSMOjFGhmnDkLBQ/zh-cn_image_0000002774068432.png "点击放大")
 
    出现该问题可能得原因有：
 
@@ -111,16 +111,16 @@ content_hash: sha256:1c4d07e3e6301c1ab70d073f7fea4999c38047811696e1b681693658b1a
 
      排查流程图如下：
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/NLpmewQFT2ex90ZNqTTSzg/zh-cn_image_0000002803228499.png "点击放大")
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/DOKznDZtRzavgmve5_fz-Q/zh-cn_image_0000002803228499.png "点击放大")
 
      **说明** 
 
      流程图中置绿色背景部分是较新版本中宽高比不匹配时也能正常扫码，不会黑屏。在2025年5月之前的版本中，宽高比不匹配会有报错日志Internal error. The width and height of viewControl do not match the width and height supported by the camera.，并且扫码区域显示黑屏。后续版本已移除相关报错，可以正常显示画面，但会出现画面拉伸问题影响预览流体验，建议宽高比保持在16:9、4:3、1:1范围内。
 4. 排查在应用退至后台/手机设备锁屏/退出页面等场景下，是否释放扫码相机流。流程图如下：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/06u4F2ooSdeUtP3J-lJPhw/zh-cn_image_0000002773909858.png "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/-Wfd1c0mTm6dOGRsjINrRA/zh-cn_image_0000002773909858.png "点击放大")
 
-   如果在返回扫码页面时出现以下日志，则代表相机重启失败，执行start方法前没有调用[customScan.stop](../harmonyos-references/scan-customscan-api.md#customscanstop)、[customScan.release](../harmonyos-references/scan-customscan-api.md#customscanrelease)接口释放扫码相机流：
+   如果在返回扫码页面时出现以下日志，则代表相机重启失败，执行start方法前没有调用[customScan.stop](../doccenter-references/api/scan-customscan-api.md#stop)、[customScan.release](../doccenter-references/api/scan-customscan-api.md#release)接口释放扫码相机流：
 
    ```txt
    C05506/包名/ScanFramework  包名  I     [CreateBusinessError:30] CreateBusinessError errCode: 1000500001 errMsg: Internal error. Camera restart camera session failed.
@@ -149,8 +149,8 @@ content_hash: sha256:1c4d07e3e6301c1ab70d073f7fea4999c38047811696e1b681693658b1a
    * 应用需要在[module.json5](../harmonyos-guides/module-configuration-file.md)配置文件中声明权限相机权限ohos.permission.CAMERA。
    * 参照[向用户申请授权](../harmonyos-guides/request-user-authorization.md)拉起弹窗向用户申请相机权限。
    * 参照[再次向用户申请授权](../harmonyos-guides/request-user-authorization-second.md)引导用户再次授权。
-2. 调整[customScan.start](../harmonyos-references/scan-customscan-api.md#customscanstart)方法的执行时机，确保customScan.start方法在customScan.init方法之后执行。
+2. 调整[customScan.start](../doccenter-references/api/scan-customscan-api.md#start)方法的执行时机，确保customScan.start方法在customScan.init方法之后执行。
 3. 参考[开发步骤](../doccenter-capabilities/scan-customscan.md#开发步骤)中第4步的说明部分，调整viewControl参数的宽高，确保在支持范围内。
-4. 在锁屏、应用退至后台等退出页面的场景下，及时调用[customScan.stop](../harmonyos-references/scan-customscan-api.md#customscanstop)、[customScan.release](../harmonyos-references/scan-customscan-api.md#customscanrelease)方法释放扫码相机流。
+4. 在锁屏、应用退至后台等退出页面的场景下，及时调用[customScan.stop](../doccenter-references/api/scan-customscan-api.md#stop)、[customScan.release](../doccenter-references/api/scan-customscan-api.md#release)方法释放扫码相机流。
 
 示例代码可以参考[开发步骤](../doccenter-capabilities/scan-customscan.md#开发步骤)以及[示例工程](https://gitcode.com/HarmonyOS_Samples/scankit-samplecode-clientdemo-arkts)。

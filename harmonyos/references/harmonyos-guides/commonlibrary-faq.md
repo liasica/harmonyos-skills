@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/commonlibrary
 title: 基础库常见问题
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS基础类库 > 基础库常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:11+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:0c0fec7f86181a434ae829157c0e1eedebc7a4c955810b02bb8d59195b1ac9b2
+scraped_at: 2026-11-12T09:51:03+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:90b8466846cf2117f5701fc4a0a5c7eeb0e83f5170c7952721452ee2dbe89846
 ---
 
 ## 解析大文件xml发生内存溢出（Out of Memory）
@@ -249,4 +249,21 @@ let value = 'sparrow';
 if (!hashSet.has(value)) {
   hashSet.add(value);
 }
+```
+
+## 解析包含大量数字键的JSON字符串
+
+当需要将包含大量数字键的JSON字符串转换为Sendable对象时，可以使用[JSON.parseSendable](../harmonyos-references/js-apis-json.md#jsonparsesendable)接口进行处理。
+
+```ts
+import { JSON, lang } from '@kit.ArkTS';
+
+// 1021个数字键
+let parts1021: string[] = [];
+for (let i = 0; i < 1021; i++) {
+  parts1021.push('"' + i + '": ' + i);
+}
+let numericObj1021: lang.ISendable | null = JSON.parseSendable('{' + parts1021.join(',') + '}');
+console.info(`result: ${(numericObj1021 as object)?.[0]}`); // result: 0
+console.info(`result: ${(numericObj1021 as object)?.[1020]}`); // result: 1020
 ```

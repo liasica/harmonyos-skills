@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/audio-encodin
 title: 音频编码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 音频编码
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:06+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:c6853e1d8382b877b268181564a22ede5dd1fb9e657ac1936d1294d27851294a
+scraped_at: 2026-11-12T09:52:01+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7ec120d01d6dffaf6f7713c27d0697ff5097e6843877e27fe197a12173ab971b
 ---
 
 开发者可以调用本模块的Native API接口，完成音频编码，即将音频PCM编码压缩成不同的格式。
@@ -34,6 +34,8 @@ content_hash: sha256:c6853e1d8382b877b268181564a22ede5dd1fb9e657ac1936d1294d2785
 
 参考以下示例代码，完成音频编码的全流程，包括：创建编码器、设置编码参数（采样率/码率/声道数等）、开始、刷新、重置、销毁资源。
 
+示例代码引用了示例工程中自定义的工具宏与数据结构（如CHECK\_AND\_RETURN\_RET\_LOG、AVCODEC\_SAMPLE\_ERR\_\*、AVCODEC\_SAMPLE\_LOG\*、CodecUserData、CodecBufferInfo、SampleInfo等），不属于SDK的接口，完整定义请参见示例工程，移植时需自行实现或替换。
+
 在应用开发过程中，开发者应按一定顺序调用方法，执行对应操作，否则系统可能会抛出异常或生成其他未定义的行为。具体顺序可参考下列开发步骤及对应说明。
 
 如下为音频编码调用关系图：
@@ -41,7 +43,7 @@ content_hash: sha256:c6853e1d8382b877b268181564a22ede5dd1fb9e657ac1936d1294d2785
 * 虚线表示可选。
 * 实线表示必选。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/itQqOT1MQza-IVpBjbflbg/zh-cn_image_0000002779850918.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/70/v3/zZ60MzxEQoqT4EeSYA6IPQ/zh-cn_image_0000002815559279.png)
 
 ### 在 CMake 脚本中链接动态库
 
@@ -71,51 +73,33 @@ target_link_libraries(sample PUBLIC libnative_media_acodec.so)
 
    应用可以通过媒体类型或编解码器名称创建编码器。
 
-   方法一：通过mime type创建编码器。
+   * 方法一：通过mime type创建编码器。
 
-   ```cpp
-   // 设置判定是否为编码；设置true表示当前是编码。
-   bool isEncoder = true;
-   // 通过媒体类型创建编码器。
-   OH_AVCodec *audioEnc_ = OH_AudioCodec_CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_AAC, isEncoder);
+   ```
+   int32_t AudioEncoder::Create(const std::string &codecMime)
+   {
+       // 设置判定是否为编码。true表示当前是编码。
+       constexpr bool isEncoder = true;
+       // 通过mime type创建编码器。此处传入的mime type以实际编码格式为准。
+       encoder_ = OH_AudioCodec_CreateByMime(codecMime.c_str(), isEncoder);
+       CHECK_AND_RETURN_RET_LOG(encoder_ != nullptr, AVCODEC_SAMPLE_ERR_ERROR, "Create failed");
+       return AVCODEC_SAMPLE_ERR_OK;
+   }
    ```
 
-   方法二：通过codec name创建编码器。
+   * 方法二：通过codec name创建编码器。
 
-   ```cpp
-   // 通过codec name创建编码器。
-   OH_AVCapability *capability = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_AUDIO_AAC, true);
-   const char *name = OH_AVCapability_GetName(capability);
-   OH_AVCodec *audioEnc_ = OH_AudioCodec_CreateByName(name);
    ```
-
-   添加头文件和命名空间：
-
-   ```cpp
-   #include <mutex>
-   #include <queue>
-   // c++标准库命名空间。
-   using namespace std;
-   ```
-
-   示例代码：
-
-   ```cpp
-   // 初始化队列。
-   class AEncBufferSignal {
-   public:
-       std::mutex inMutex_;
-       std::mutex outMutex_;
-       std::mutex startMutex_;
-       std::condition_variable inCond_;
-       std::condition_variable outCond_;
-       std::condition_variable startCond_;
-       std::queue<uint32_t> inQueue_;
-       std::queue<uint32_t> outQueue_;
-       std::queue<OH_AVBuffer *> inBufferQueue_;
-       std::queue<OH_AVBuffer *> outBufferQueue_;
-   };
-   AEncBufferSignal *signal_;
+   int32_t AudioEncoder::CreateByName(const std::string &codecMime)
+   {
+       // 通过codec name创建编码器。
+       OH_AVCapability *capability = OH_AVCodec_GetCapability(codecMime.c_str(), true);
+       CHECK_AND_RETURN_RET_LOG(capability != nullptr, AVCODEC_SAMPLE_ERR_ERROR, "GetCapability failed");
+       const char *name = OH_AVCapability_GetName(capability);
+       encoder_ = OH_AudioCodec_CreateByName(name);
+       CHECK_AND_RETURN_RET_LOG(encoder_ != nullptr, AVCODEC_SAMPLE_ERR_ERROR, "CreateByName failed");
+       return AVCODEC_SAMPLE_ERR_OK;
+   }
    ```
 3. 调用OH\_AudioCodec\_RegisterCallback()注册回调函数。
 
@@ -128,72 +112,108 @@ target_link_libraries(sample PUBLIC libnative_media_acodec.so)
 
    开发者可以通过处理该回调报告的信息，确保编码器正常运转。
 
+   示例中的CodecUserData为应用自定义的透传数据结构，用于在回调线程与消费线程之间传递buffer队列。
+
    **注意** 
 
    请勿在回调中调用编码器的相关接口或进行耗时操作。
 
-   ```cpp
-   // OH_AVCodecOnError回调函数的实现。
-   static void OnError(OH_AVCodec *codec, int32_t errorCode, void *userData)
+   ```
+   void SampleCallback::OnCodecError(OH_AVCodec *codec, int32_t errorCode, void *userData)
    {
        (void)codec;
-       (void)errorCode;
-       (void)userData;
-   }
-   // OH_AVCodecOnStreamChanged回调函数的实现。
-   static void OnOutputFormatChanged(OH_AVCodec *codec, OH_AVFormat *format, void *userData)
-   {
-       (void)codec;
-       (void)format;
-       (void)userData;
-   }
-   // OH_AVCodecOnNeedInputBuffer回调函数的实现。
-   static void OnInputBufferAvailable(OH_AVCodec *codec, uint32_t index, OH_AVBuffer *data, void *userData)
-   {
-       (void)codec;
-       // 编码输入码流送入InputBuffer队列。
-       AEncBufferSignal *signal = static_cast<AEncBufferSignal *>(userData);
-       unique_lock<mutex> lock(signal->inMutex_);
-       signal->inQueue_.push(index);
-       signal->inBufferQueue_.push(data);
-       signal->inCond_.notify_all();
-   }
-   // OH_AVCodecOnNewOutputBuffer回调函数的实现。
-   static void OnOutputBufferAvailable(OH_AVCodec *codec, uint32_t index, OH_AVBuffer *data, void *userData)
-   {
-       (void)codec;
-       // 将对应输出buffer的index送入OutputQueue_队列。
-       // 将对应编码完成的数据data送入outBuffer队列。
-       AEncBufferSignal *signal = static_cast<AEncBufferSignal *>(userData);
-       unique_lock<mutex> lock(signal->outMutex_);
-       signal->outQueue_.push(index);
-       signal->outBufferQueue_.push(data);
-       signal->outCond_.notify_all();
+       auto *codecUserData = static_cast<CodecUserData *>(userData);
+       if (codecUserData != nullptr && !codecUserData->isDestroyed.load()) {
+           codecUserData->SignalError();
+       }
+       AVCODEC_SAMPLE_LOGE("On codec error, error code: %{public}d", errorCode);
    }
    ```
 
+   ```
+   void SampleCallback::OnNeedInputBuffer(OH_AVCodec *codec, uint32_t index, OH_AVBuffer *buffer, void *userData)
+   {
+       auto *codecUserData = static_cast<CodecUserData *>(userData);
+       if (codecUserData == nullptr || codecUserData->isDestroyed.load()) {
+           return;
+       }
+       if (codec == nullptr || buffer == nullptr) {
+           AVCODEC_SAMPLE_LOGE("Invalid codec input callback argument");
+           codecUserData->SignalError();
+           return;
+       }
+       UpdateEncoderFirstInputDescription(codec, codecUserData);
+       // 输入帧的数据buffer和对应的index送入inputBufferQueue队列。
+       codecUserData->inputBufferQueue.Enqueue(std::make_shared<CodecBufferInfo>(index, buffer));
+   }
+   ```
+
+   OnNeedInputBuffer()中的UpdateEncoderFirstInputDescription()为视频编码首帧的信息获取逻辑（内部调用OH\_VideoEncoder\_GetInputDescription()），音频编码场景不会生效，可忽略。
+
+   ```
+   void SampleCallback::OnNewOutputBuffer(OH_AVCodec *codec, uint32_t index, OH_AVBuffer *buffer, void *userData)
+   {
+       auto *codecUserData = static_cast<CodecUserData *>(userData);
+       if (codecUserData == nullptr || codecUserData->isDestroyed.load()) {
+           return;
+       }
+       if (codec == nullptr || buffer == nullptr) {
+           AVCODEC_SAMPLE_LOGE("Invalid codec output callback argument");
+           codecUserData->SignalError();
+           return;
+       }
+       if (codecUserData->isDecFirstFrame) {
+           OH_AVFormat *format = OH_VideoDecoder_GetOutputDescription(codec);
+           if (format != nullptr) {
+               UpdateVideoOutputInfo(format, codecUserData);
+               OH_AVFormat_Destroy(format);
+           }
+           codecUserData->isDecFirstFrame = false;
+       }
+       // 输出帧的数据buffer和对应的index送入outputBufferQueue队列。
+       codecUserData->outputBufferQueue.Enqueue(std::make_shared<CodecBufferInfo>(index, buffer));
+
+       // 从AVBuffer中获取时域层级信息。
+       int32_t layerID = GetTemporalLayerID(buffer);
+       if (layerID >= 0 && index % LIMIT_LOGD_FREQUENCY == 0) {
+           AVCODEC_SAMPLE_LOGD("Temporal layer ID: %{public}d", layerID);
+       }
+   }
+   ```
+
+   **说明** 
+
+   isDecFirstFrame分支内部调用OH\_VideoDecoder\_GetOutputDescription()，该接口声明于native\_avcodec\_videodecoder.h，属于视频解码库。示例中isDecFirstFrame分支与时域层级信息的获取（GetTemporalLayerID()）为视频场景的扩展逻辑，音频编码场景不会生效，可忽略。
+
    配置回调：
 
-   ```cpp
-   signal_ = new AEncBufferSignal();
-   OH_AVCodecCallback cb_ = {&OnError, &OnOutputFormatChanged, &OnInputBufferAvailable, &OnOutputBufferAvailable};
-   // 配置异步回调。
-   int32_t ret = OH_AudioCodec_RegisterCallback(audioEnc_, cb_, signal_);
-   if (ret != AV_ERR_OK) {
-       // 异常处理。
+   ```
+   int32_t AudioEncoder::SetCallback(CodecUserData *codecUserData)
+   {
+       // 编码器在内部线程回调userData；释放前应停止编码器并等待消费线程退出。
+       int32_t ret = AV_ERR_OK;
+       ret = OH_AudioCodec_RegisterCallback(encoder_,
+                                            { SampleCallback::OnCodecError, SampleCallback::OnCodecFormatChange,
+                                              SampleCallback::OnNeedInputBuffer, SampleCallback::OnNewOutputBuffer },
+                                            codecUserData);
+       CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, AVCODEC_SAMPLE_ERR_ERROR, "Set callback failed, ret: %{public}d", ret);
+
+       return AVCODEC_SAMPLE_ERR_OK;
    }
    ```
 4. 调用OH\_AudioCodec\_Configure设置编码器。
 
    配置选项key值说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/33/v3/drWzpUspTrmt8C3s1saaiw/zh-cn_image_0000002779690950.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/hzGYIzM9SdmkrR_f7KrdDA/zh-cn_image_0000002815399363.png)
 
    各音频编码类型参数范围说明：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e9/v3/YJ_2p2OcQcOH7P9lhK4jRQ/zh-cn_image_0000002809010571.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/9TNIz5ghQyat2TqXXqRE8w/zh-cn_image_0000002786519788.png)
 
    例如对一个44100Hz采样率、2声道立体声、SAMPLE\_S16LE采样格式的PCM音频，以32000bps的码率进行AAC编码的调用流程如下：
+
+   配置前建议先通过OH\_AVCapability能力查询接口校验待配置参数是否在编码器支持范围内，再写入format并调用OH\_AudioCodec\_Configure()。
 
 ```cpp
    int32_t ret;
@@ -223,42 +243,6 @@ target_link_libraries(sample PUBLIC libnative_media_acodec.so)
    if (ret != AV_ERR_OK) {
        // 异常处理
    }
-```
-
-例FLAC调用流程：
-
-```cpp
-int32_t ret;
-// 配置音频采样率（必须）。
-constexpr uint32_t DEFAULT_SAMPLERATE = 44100;
-// 配置音频码率（必须）。
-constexpr uint64_t DEFAULT_BITRATE = 261000;
-// 配置音频声道数（必须）。
-constexpr uint32_t DEFAULT_CHANNEL_COUNT = 2;
-// 配置音频声道布局（必须）。
-// 值为CH_LAYOUT_MONO、CH_LAYOUT_STEREO、CH_LAYOUT_SURROUND、CH_LAYOUT_QUAD、CH_LAYOUT_5POINT0、CH_LAYOUT_5POINT1、CH_LAYOUT_6POINT1或CH_LAYOUT_7POINT1其中一项。
-constexpr OH_AudioChannelLayout CHANNEL_LAYOUT = OH_AudioChannelLayout::CH_LAYOUT_STEREO;
-// 配置音频位深（必须） flac只有SAMPLE_S16LE和SAMPLE_S32LE。
-constexpr OH_BitsPerSample SAMPLE_FORMAT = OH_BitsPerSample::SAMPLE_S32LE;
-// 配置音频compliance level (默认值0，取值范围-2~2)。
-constexpr int32_t COMPLIANCE_LEVEL = 0;
-
-OH_AVFormat *format = OH_AVFormat_Create();
-// 写入format。
-OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_CHANNEL_COUNT, DEFAULT_CHANNEL_COUNT);
-OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUD_SAMPLE_RATE, DEFAULT_SAMPLERATE);
-OH_AVFormat_SetLongValue(format, OH_MD_KEY_BITRATE, DEFAULT_BITRATE);
-// 配置音频精度。API version 20前，FLAC编码必须设置此参数，设置为1即可；未设置此参数配置FLAC编码器时，调用OH_AudioCodec_Configure会返回错误码AV_ERR_INVALID_VAL。该值无实际作   用，不会影响编码结果。从API version 20开始，无需设置此参数。
-// constexpr int32_t BITS_PER_CODED_SAMPLE = 1;
-// OH_AVFormat_SetIntValue(format, OH_MD_KEY_BITS_PER_CODED_SAMPLE, BITS_PER_CODED_SAMPLE);
-OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_SAMPLE_FORMAT, SAMPLE_FORMAT);
-OH_AVFormat_SetLongValue(format, OH_MD_KEY_CHANNEL_LAYOUT, CHANNEL_LAYOUT);
-OH_AVFormat_SetLongValue(format, OH_MD_KEY_COMPLIANCE_LEVEL, COMPLIANCE_LEVEL);
-// 配置编码器。
-ret = OH_AudioCodec_Configure(audioEnc_, format);
-if (ret != AV_ERR_OK) {
-    // 异常处理。
-}
 ```
 
 例AMR编码调用流程：
@@ -342,38 +326,25 @@ OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_ENCODER_ENABLE_SAMPLE_FORMAT_CON
 
 1. 调用OH\_AudioCodec\_Prepare()，编码器就绪。
 
-   ```cpp
-   int32_t ret = OH_AudioCodec_Prepare(audioEnc_);
-   if (ret != AV_ERR_OK) {
-       // 异常处理。
+   示例工程将OH\_AudioCodec\_Prepare()封装在Config()函数中调用：在Config()函数中先完成Configure()配置与回调注册，之后再调用OH\_AudioCodec\_Prepare()使编码器就绪。以下为其中Prepare部分的代码：
+
+   ```
+   {
+       // 编码器就绪。
+       int ret = OH_AudioCodec_Prepare(encoder_);
+       CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, AVCODEC_SAMPLE_ERR_ERROR, "Prepare failed, ret: %{public}d", ret);
    }
    ```
 2. 调用OH\_AudioCodec\_Start()启动编码器，进入运行态。
 
-   添加头文件：
-
    ```
-   #include <fstream>
-   ```
+   int32_t AudioEncoder::Start()
+   {
+       CHECK_AND_RETURN_RET_LOG(encoder_ != nullptr, AVCODEC_SAMPLE_ERR_ERROR, "Encoder is null");
 
-   使用示例：
-
-   ```
-   ifstream inputFile_;
-   ofstream outFile_;
-
-   // 根据实际使用情况填写输入文件路径。
-   const char* inputFilePath = "/";
-   // 根据实际使用情况填写输出文件路径。
-   const char* outputFilePath = "/";
-   // 打开待编码二进制文件路径（此处以输入为PCM文件为例）。
-   inputFile_.open(inputFilePath, ios::in | ios::binary);
-   // 配置编码文件输出路径（此处以输出为编码码流文件为例）。
-   outFile_.open(outputFilePath, ios::out | ios::binary);
-   // 开始编码。
-   int32_t ret = OH_AudioCodec_Start(audioEnc_);
-   if (ret != AV_ERR_OK) {
-       // 异常处理。
+       int ret = OH_AudioCodec_Start(encoder_);
+       CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, AVCODEC_SAMPLE_ERR_ERROR, "Start failed, ret: %{public}d", ret);
+       return AVCODEC_SAMPLE_ERR_OK;
    }
    ```
 3. 调用OH\_AudioCodec\_PushInputBuffer()，写入待编码的数据。需开发者填充完整的输入数据后调用。
@@ -405,35 +376,76 @@ OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_ENCODER_ENABLE_SAMPLE_FORMAT_CON
    flac编码的样点数建议参考表格根据采样率对应的样点数进行设置，否则可能出现编码文件损坏问题。
 
    ```
-   // 声道数。
-   constexpr int32_t DEFAULT_CHANNEL_COUNT = 2;
-   // 采样点数，这里以AAC-LC为例，采样点数为1024。
-   constexpr int32_t SAMPLES_PER_FRAME = 1024;
-   // 单次编码输入的数据量（单位：字节）为：采样点数 * 声道数 * 单个采样点的占用字节（以采样格式SAMPLE_S16LE为例）。
-   // 如果最后一帧数据不满足长度，建议进行丢弃或填充处理。
-   constexpr int32_t INPUT_FRAME_BYTES = SAMPLES_PER_FRAME * DEFAULT_CHANNEL_COUNT * sizeof(short);
-   uint32_t index = signal_->inQueue_.front();
-   auto buffer = signal_->inBufferQueue_.front();
-   OH_AVCodecBufferAttr attr = {0};
-   if (!inputFile_.eof()) {
-       inputFile_.read((char *)OH_AVBuffer_GetAddr(buffer), INPUT_FRAME_BYTES);
-       attr.size = INPUT_FRAME_BYTES;
-       attr.flags = AVCODEC_BUFFER_FLAGS_NONE;
-   } else {
-       attr.size = 0;
-       attr.flags = AVCODEC_BUFFER_FLAGS_EOS;
+   int32_t AudioEncoder::PushInputData(CodecBufferInfo &info)
+   {
+       CHECK_AND_RETURN_RET_LOG(encoder_ != nullptr, AVCODEC_SAMPLE_ERR_ERROR, "Encoder is null");
+       CHECK_AND_RETURN_RET_LOG(info.buffer != nullptr, AVCODEC_SAMPLE_ERR_ERROR, "Input buffer is null");
+       int32_t ret = OH_AVBuffer_SetBufferAttr(info.buffer, &info.attr);
+       CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, AVCODEC_SAMPLE_ERR_ERROR, "Set avbuffer attr failed");
+       ret = OH_AudioCodec_PushInputBuffer(encoder_, info.bufferIndex);
+       CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, AVCODEC_SAMPLE_ERR_ERROR, "Push input data failed");
+       return AVCODEC_SAMPLE_ERR_OK;
    }
-   OH_AVBuffer_SetBufferAttr(buffer, &attr);
-   // 送入编码输入队列进行编码, index为对应队列下标。
-   int32_t ret = OH_AudioCodec_PushInputBuffer(audioEnc_, index);
-   if (ret != AV_ERR_OK) {
-       // 异常处理。
+   ```
+
+   示例中以麦克风录音（AudioCapturer）作为PCM数据来源，录音数据先写入应用自定义的PCM缓存，攒够一个输入buffer的数据量后填充到编码器输入buffer并送入编码器，输入线程示例如下：
+
+   ```
+   void Recorder::AudioEncInputThread()
+   {
+       while (true) {
+           CHECK_AND_BREAK_LOG(!isEos_, "Work done, thread out");
+           CHECK_AND_BREAK_LOG(isStarted_, "Encoder input thread out");
+           if (isStopping_.load()) {
+               std::this_thread::sleep_for(std::chrono::milliseconds(AUDIO_INPUT_STOP_POLL_INTERVAL_MS));
+               continue;
+           }
+           if (!WaitForAudioInputFrame(5s)) {
+               continue;
+           }
+           std::shared_ptr<CodecBufferInfo> bufferInfo = audioEncContext_->inputBufferQueue.Dequeue();
+           std::shared_lock<std::shared_mutex> codecLock(audioEncContext_->codecMutex);
+           CHECK_AND_CONTINUE_LOG(bufferInfo != nullptr, "Audio buffer queue is empty, continue");
+           if (!SubmitAudioInputFrame(*bufferInfo, bufferInfo->buffer, false)) {
+               break;
+           }
+       }
    }
    ```
 
    在上方案例中，attr.flags代表缓冲区标记的类别。
 
-   结束时需要将flags标识为AVCODEC\_BUFFER\_FLAGS\_EOS。
+   结束时需要将flags标识为AVCODEC\_BUFFER\_FLAGS\_EOS。在示例中，当录制结束时获取一个输入buffer，填入长度为0的数据并标识EOS标志后送入编码器。
+
+   ```
+   int32_t AudioEncoder::NotifyEndOfStream()
+   {
+       CHECK_AND_RETURN_RET_LOG(encoder_ != nullptr, AVCODEC_SAMPLE_ERR_ERROR, "Encoder is null");
+
+       // 使用空输入Buffer携带EOS。即使没有媒体数据也必须提交该Buffer，编码器才会输出尾部数据。
+       CodecBufferInfo bufferInfo;
+       auto buffer = GetInputBuffer(bufferInfo, TIMEOUT_US);
+       if (buffer == nullptr) {
+           AVCODEC_SAMPLE_LOGW("GetInputBuffer for EOS failed");
+           return AVCODEC_SAMPLE_ERR_ERROR;
+       }
+
+       // EOS不包含有效音频字节；调用PushInputBuffer后该Buffer立即归codec管理。
+       bufferInfo.attr.size = 0;
+       bufferInfo.attr.flags = AVCODEC_BUFFER_FLAGS_EOS;
+       int32_t ret = OH_AVBuffer_SetBufferAttr(buffer, &bufferInfo.attr);
+       if (ret != AV_ERR_OK) {
+           AVCODEC_SAMPLE_LOGE("SetBufferAttr for EOS failed, ret: %{public}d", ret);
+           return AVCODEC_SAMPLE_ERR_ERROR;
+       }
+
+       bufferInfo.buffer = buffer;
+       ret = OH_AudioCodec_PushInputBuffer(encoder_, bufferInfo.bufferIndex);
+       CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, AVCODEC_SAMPLE_ERR_ERROR,
+                                "PushInputBuffer for EOS failed, ret: %{public}d", ret);
+       return AVCODEC_SAMPLE_ERR_OK;
+   }
+   ```
 
    | 枚举值 | 描述 |
    | --- | --- |
@@ -445,26 +457,58 @@ OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_ENCODER_ENABLE_SAMPLE_FORMAT_CON
    在取走编码码流后，就应及时调用OH\_AudioCodec\_FreeOutputBuffer()进行释放。
 
    ```
-   uint32_t index = signal_->outQueue_.front();
-   OH_AVBuffer *avBuffer = signal_->outBufferQueue_.front();
-   if (avBuffer == nullptr) {
-       // 异常处理
+   int32_t AudioEncoder::FreeOutputData(uint32_t bufferIndex)
+   {
+       CHECK_AND_RETURN_RET_LOG(encoder_ != nullptr, AVCODEC_SAMPLE_ERR_ERROR, "Encoder is null");
+
+       int32_t ret = AVCODEC_SAMPLE_ERR_OK;
+       ret = OH_AudioCodec_FreeOutputBuffer(encoder_, bufferIndex);
+       CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, AVCODEC_SAMPLE_ERR_ERROR, "Free output data failed");
+       return AVCODEC_SAMPLE_ERR_OK;
    }
-   // 获取buffer attributes。
-   OH_AVCodecBufferAttr attr = {0};
-   int32_t ret = OH_AVBuffer_GetBufferAttr(avBuffer, &attr);
-   if (ret != AV_ERR_OK) {
-       // 异常处理。
-   }
-   // 将编码完成数据data写入到对应输出文件中。
-   outFile_.write(reinterpret_cast<char *>(OH_AVBuffer_GetAddr(avBuffer)), attr.size);
-   // 释放已完成写入的数据。
-   ret = OH_AudioCodec_FreeOutputBuffer(audioEnc_, index);
-   if (ret != AV_ERR_OK) {
-       // 异常处理。
-   }
-   if (attr.flags == AVCODEC_BUFFER_FLAGS_EOS) {
-       // 结束。
+   ```
+
+   示例中编码输出的码流写入封装模块，写完一帧后及时释放输出buffer，输出消费示例如下：
+
+   ```
+   void Recorder::AudioEncOutputThread()
+   {
+       while (true) {
+           CHECK_AND_BREAK_LOG(isStarted_, "Work done, thread out");
+
+           std::shared_ptr<CodecBufferInfo> bufferInfo = audioEncContext_->outputBufferQueue.Dequeue();
+           std::shared_lock<std::shared_mutex> codecLock(audioEncContext_->codecMutex);
+           CHECK_AND_BREAK_LOG(isStarted_, "Work done, thread out");
+           CHECK_AND_CONTINUE_LOG(bufferInfo != nullptr, "Buffer queue is empty, continue");
+
+           audioEncContext_->outputFrameCount++;
+           AVCODEC_SAMPLE_LOGW(
+               "Audio Out buffer count: %{public}u, size: %{public}d, flag: %{public}u, pts: %{public}" PRId64,
+               audioEncContext_->outputFrameCount, bufferInfo->attr.size, bufferInfo->attr.flags, bufferInfo->attr.pts);
+           const bool isEosBuffer = (bufferInfo->attr.flags & AVCODEC_BUFFER_FLAGS_EOS) != 0;
+           int32_t writeRet = AVCODEC_SAMPLE_ERR_OK;
+           if (!isEosBuffer && bufferInfo->attr.size > 0) {
+               // AAC只编码一次；同一输出Buffer依次写入两个Muxer，之后仍按原索引归还。
+               writeRet = muxer_->WriteSample(muxer_->GetAudioTrackId(), bufferInfo->buffer, bufferInfo->attr);
+               if (writeRet == AVCODEC_SAMPLE_ERR_OK && secondaryMuxer_ != nullptr) {
+                   writeRet = secondaryMuxer_->WriteSample(secondaryMuxer_->GetAudioTrackId(), bufferInfo->buffer,
+                       bufferInfo->attr);
+               }
+           }
+           int32_t ret = audioEncoder_->FreeOutputData(bufferInfo->bufferIndex);
+           CHECK_AND_BREAK_LOG(ret == AVCODEC_SAMPLE_ERR_OK, "Encoder output thread out");
+           if (writeRet != AVCODEC_SAMPLE_ERR_OK) {
+               AbortRecording("Write encoded audio sample failed");
+               break;
+           }
+           if (isEosBuffer) {
+               AVCODEC_SAMPLE_LOGI("Audio EOS processed, exiting output thread");
+               isAudioEos_.store(true);
+               videoEosCond_.notify_all();
+               break;
+           }
+       }
+       AVCODEC_SAMPLE_LOGI("Exit, frame count: %{public}u", audioEncContext_->inputFrameCount);
    }
    ```
 5. （可选）调用OH\_AudioCodec\_Flush()刷新编码器。
@@ -479,15 +523,14 @@ OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_ENCODER_ENABLE_SAMPLE_FORMAT_CON
    * 在执行过程中遇到可继续执行的错误时（即OH\_AudioCodec\_IsValid()为true）可以调用刷新，然后调用OH\_AudioCodec\_Start()重新开始编码。
 
    ```
-   // 刷新编码器 audioEnc_。
-   int32_t ret = OH_AudioCodec_Flush(audioEnc_);
-   if (ret != AV_ERR_OK) {
-       // 异常处理。
-   }
-   // 重新开始编码。
-   ret = OH_AudioCodec_Start(audioEnc_);
-   if (ret != AV_ERR_OK) {
-       // 异常处理。
+   int32_t AudioEncoder::Flush()
+   {
+       CHECK_AND_RETURN_RET_LOG(encoder_ != nullptr, AVCODEC_SAMPLE_ERR_ERROR, "Encoder is null");
+
+       // 刷新编码器，清空当前队列，之后需要调用Start()重新开始编码。
+       int32_t ret = OH_AudioCodec_Flush(encoder_);
+       CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, AVCODEC_SAMPLE_ERR_ERROR, "Flush failed, ret: %{public}d", ret);
+       return AVCODEC_SAMPLE_ERR_OK;
    }
    ```
 6. （可选）调用OH\_AudioCodec\_Reset()重置编码器。
@@ -495,15 +538,14 @@ OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_ENCODER_ENABLE_SAMPLE_FORMAT_CON
    调用OH\_AudioCodec\_Reset()后，编码器回到初始化状态，重置前获取到的输入/输出buffer都无法继续使用，需先调用OH\_AudioCodec\_Configure()重新配置，再调用OH\_AudioCodec\_Start()重新开始编码。启动后重新获取输入/输出buffer。
 
    ```
-   // 重置编码器 audioEnc_。
-   int32_t ret = OH_AudioCodec_Reset(audioEnc_);
-   if (ret != AV_ERR_OK) {
-       // 异常处理。
-   }
-   // 重新配置编码器参数。
-   ret = OH_AudioCodec_Configure(audioEnc_, format);
-   if (ret != AV_ERR_OK) {
-       // 异常处理。
+   int32_t AudioEncoder::Reset()
+   {
+       CHECK_AND_RETURN_RET_LOG(encoder_ != nullptr, AVCODEC_SAMPLE_ERR_ERROR, "Encoder is null");
+
+       // 重置编码器，之后需要重新调用Configure()配置、Start()启动。
+       int32_t ret = OH_AudioCodec_Reset(encoder_);
+       CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, AVCODEC_SAMPLE_ERR_ERROR, "Reset failed, ret: %{public}d", ret);
+       return AVCODEC_SAMPLE_ERR_OK;
    }
    ```
 7. 调用OH\_AudioCodec\_Stop()停止编码器。
@@ -511,10 +553,17 @@ OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_ENCODER_ENABLE_SAMPLE_FORMAT_CON
    停止后，可以通过调用OH\_AudioCodec\_Start()重新进入已启动状态（started）。停止前获取到的输入/输出buffer都无法继续使用，需要在启动后重新获取输入/输出buffer。
 
    ```
-   // 终止编码器 audioEnc_。
-   int32_t ret = OH_AudioCodec_Stop(audioEnc_);
-   if (ret != AV_ERR_OK) {
-       // 异常处理。
+   int32_t AudioEncoder::Stop()
+   {
+       CHECK_AND_RETURN_RET_LOG(encoder_ != nullptr, AVCODEC_SAMPLE_ERR_ERROR, "Encoder is null");
+
+       int ret = Flush();
+       CHECK_AND_RETURN_RET_LOG(ret == AVCODEC_SAMPLE_ERR_OK, AVCODEC_SAMPLE_ERR_ERROR,
+                                "Flush failed, ret: %{public}d", ret);
+
+       ret = OH_AudioCodec_Stop(encoder_);
+       CHECK_AND_RETURN_RET_LOG(ret == AV_ERR_OK, AVCODEC_SAMPLE_ERR_ERROR, "Stop failed, ret: %{public}d", ret);
+       return AVCODEC_SAMPLE_ERR_OK;
    }
    ```
 8. 调用OH\_AudioCodec\_Destroy()销毁编码器实例，释放资源。
@@ -524,11 +573,15 @@ OH_AVFormat_SetIntValue(format, OH_MD_KEY_AUDIO_ENCODER_ENABLE_SAMPLE_FORMAT_CON
    禁止重复销毁编码器。
 
    ```
-   // 调用OH_AudioCodec_Destroy, 销毁编码器。
-   int32_t ret = OH_AudioCodec_Destroy(audioEnc_);
-   if (ret != AV_ERR_OK) {
-       // 异常处理。
-   } else {
-       audioEnc_ = NULL; // 不可重复destroy。
+   int32_t AudioEncoder::Release()
+   {
+       if (encoder_ != nullptr) {
+           // 销毁前刷新并停止编码器，不可重复destroy。
+           Flush();
+           Stop();
+           OH_AudioCodec_Destroy(encoder_);
+           encoder_ = nullptr;
+       }
+       return AVCODEC_SAMPLE_ERR_OK;
    }
    ```

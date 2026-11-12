@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-commo
 title: mapCommon（地图属性模型）
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > mapCommon（地图属性模型）
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:3700f8f7497444a18e0b152f5083af86716c2ae445af6256f4db19ae64310b20
+scraped_at: 2026-11-12T09:57:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0fa8c1d75983aa4f4ba0f0bb8969e3c8c7cfbe0ef3c1b2745d4f2790617a0d29
 ---
 
 本模块提供map组件相关属性设置接口。
@@ -310,7 +310,7 @@ let poi: mapCommon.Poi = {
 | clickable | boolean | 否 | 是 | 标记是否可以点击，默认值为false，异常值按默认值处理。  - true：可点击  - false：不可点击  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | draggable | boolean | 否 | 是 | 是否可以通过长按来拖拽，默认值为false，异常值按默认值处理。  - true：可拖拽  - false：不可拖拽  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | flat | boolean | 否 | 是 | 是否平贴地图，默认值为false，异常值按默认值处理。  - true：可平贴  - false：不可平贴  **说明：**  开启3D地球且层级处于2~5层时不可平贴地图。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
-| title | string | 否 | 是 | 信息窗口的标题，信息窗的最大宽度为136vp，超长字串超出部分用省略号“...”表示。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| title | string | 否 | 是 | 信息窗口的标题，默认值：''，信息窗的最大宽度为136vp，超长字串超出部分用省略号“...”表示。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | snippet | string | 否 | 是 | 信息窗口的子标题，信息窗的最大宽度为136vp，超长字串超出部分用省略号“...”表示。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | infoWindowAnchorU | number | 否 | 是 | 指示标记信息窗口的锚点在水平方向上的位置。值范围：[0, 1]，默认值为0.5，异常值按默认值处理。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | infoWindowAnchorV | number | 否 | 是 | 指示标记信息窗口的锚点在垂直方向上的位置。值范围：[0, 1]，默认值为0，异常值按默认值处理。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
@@ -461,7 +461,7 @@ let polygonOptions: mapCommon.MapPolygonOptions = {
 | points | Array<[LatLng](map-common.md#latlng)> | 否 | 否 | 折线的一组顶点，异常值不处理。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | clickable | boolean | 否 | 是 | 折线的可点击性，默认值为false，异常值按默认值处理。  - true：可点击  - false：不可点击  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | color | number | 否 | 是 | 折线的颜色，默认值为0xff000000（黑色），颜色值为ARGB格式，异常值按默认值处理。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
-| colors | Array<number> | 否 | 是 | 折线的多段颜色，默认值为空数组（黑色），颜色值为ARGB格式，异常值按默认值处理。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
+| colors | Array<number> | 否 | 是 | 折线的多段颜色，默认值为空数组（黑色），颜色值为ARGB格式，异常值按默认值处理。  **说明：**  colors的优先级高于color，数组长度需大于等于2。当colors数组长度小于折线线段数时，剩余线段将沿用最后一种颜色进行渲染；超出折线线段数的颜色将被忽略。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | startCap | [CapStyle](map-common.md#capstyle) | 否 | 是 | 折线的起始顶点的样式，默认值为[CapStyle](map-common.md#capstyle).BUTT，异常值按默认值处理。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | endCap | [CapStyle](map-common.md#capstyle) | 否 | 是 | 折线的结束顶点的样式，默认值为[CapStyle](map-common.md#capstyle).BUTT，异常值按默认值处理。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | geodesic | boolean | 否 | 是 | 折线的线段是否为大地曲线，默认值为false，异常值按默认值处理。  - true：大地曲线  - false：非大地曲线  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
@@ -470,9 +470,9 @@ let polygonOptions: mapCommon.MapPolygonOptions = {
 | width | number | 否 | 是 | 折线的宽度，单位：px，默认值为10，取值范围：[0, 512]，大于512按512处理。  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | gradient | boolean | 否 | 是 | 折线的渐变属性，默认值为false，异常值按默认值处理。  - true：可渐变  - false：不可渐变  **元服务API：** 从版本4.1.0(11)开始，该接口支持在元服务中使用。 |
 | customTexture | [ResourceStr](ts-types.md#resourcestr) | [image.PixelMap](arkts-apis-image-pixelmap.md) | 否 | 是 | 折线纹理。建议纹理使用没有背景色（透明色）的图片。  **起始版本：** 5.0.0(12)  **元服务API：** 从版本5.0.0(12)开始，该接口支持在元服务中使用。  **说明：**  从版本6.1.0(23)开始，新增调整纹理间距功能，可通过更换带有更宽透明背景的纹理图片，实现纹理间距调整。 |
-| isTextureMappingUsed | boolean | 否 | 是 | 是否使用贴图的方式处理纹理，默认值为false。  - true：使用贴图的方式处理纹理  - false：不使用贴图的方式处理纹理  **起始版本：** 5.0.3(15)  **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。 |
+| isTextureMappingUsed | boolean | 否 | 是 | 是否使用贴图的方式处理纹理，默认值为false。  **说明：**  贴图纹理只支持单个折线纹理。  - true：使用贴图的方式处理纹理  - false：不使用贴图的方式处理纹理  **起始版本：** 5.0.3(15)  **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。 |
 | customTextures | Array<[ResourceStr](ts-types.md#resourcestr) | [image.PixelMap](arkts-apis-image-pixelmap.md)> | 否 | 是 | 多个纹理图片。  **起始版本：** 5.0.3(15)  **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。  **说明：**  如果同时传入customTexture和customTextures，则呈现customTexture的效果。 |
-| customTextureIndexes | Array<number> | 否 | 是 | 每个坐标对应的纹理索引。  **起始版本：** 5.0.3(15)  **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。  **说明：**  如果传入customTextures，则必须传入customTextureIndexes，同时customTextureIndexes的数组长度必须和points数组长度一致，customTextureIndexes每个元素取值必须在0到customTextures数组长度-1的范围内，如果不满足，返回错误码401。 |
+| customTextureIndexes | Array<number> | 否 | 是 | 每个坐标对应的纹理索引。  **起始版本：** 5.0.3(15)  **元服务API：** 从版本5.0.3(15)开始，该接口支持在元服务中使用。  **说明：**  若传入customTextures，则必须同时传入customTextureIndexes，且需满足以下约束，否则返回错误码401：  - customTextureIndexes数组长度须与points数组长度一致。  - customTextureIndexes中每个元素的取值范围应为[0, customTextures.length - 1]。  - customTextureIndexes数组从索引1开始生效（索引0不生效）。 |
 
 **示例：**
 
@@ -1729,7 +1729,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise<ArrayBuffer>
 
 ## LineText
 
-提供地图线段的文本。
+提供地图折线的文本。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -1743,7 +1743,7 @@ type TileProvider = (x: number, y: number, z: number) => Promise<ArrayBuffer>
 | --- | --- | --- | --- | --- |
 | lineNames | string[] | 否 | 否 | 分段行文本内容列表。 |
 | lineNameIndexes | number[] | 否 | 否 | 用于在段中显示文本的段线范围。  **说明：**  - 每个值必须大于等于0。  - 值序列必须单调不递减。  - LineNameIndexes数组长度必须是lineNames数组长度的两倍。  如果违反任何一个条件，则该参数将被视为无效参数。 |
-| nameOnRight | boolean | 否 | 是 | 显示在行的哪一边的文本。  - true：右侧。  - false：左侧。  默认值：true，异常值按默认值处理。 |
+| nameOnRight | boolean | 否 | 是 | 文本内容显示在折线行进方向的哪一侧。  - true：右侧。  - false：左侧。  默认值：true，异常值按默认值处理。 |
 | color | number | 否 | 是 | 文字内容的颜色，颜色值采用ARGB格式，默认值：0xFF000000，异常值按默认值处理。 |
 | fontSize | number | 否 | 是 | 文字内容的字体大小，默认值：15，单位：px，取值范围：[0, 100]，超出按边界值处理，null和undefined按默认值处理。 |
 | strokeColor | number | 否 | 是 | 文本内容描边颜色，颜色值采用ARGB格式，默认值：0xFFFFFFFF，异常值按默认值处理。 |
@@ -1751,11 +1751,9 @@ type TileProvider = (x: number, y: number, z: number) => Promise<ArrayBuffer>
 
 ## SphereParams
 
-3D地球的属性，包括启用晨昏线、城市灯光、动画持续时间、背景和覆盖物。
+3D地球的属性，包括启用晨昏线、城市灯光、动画持续时间、背景、覆盖物和球体中线距离屏幕的比例值。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
-
-**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.Map.Core
 
@@ -1763,11 +1761,13 @@ type TileProvider = (x: number, y: number, z: number) => Promise<ArrayBuffer>
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| sunLightEnabled | boolean | 否 | 是 | 是否启用晨昏线。  - true：启用晨昏线。  - false：关闭晨昏线。  默认值：true，异常值按默认值处理。  **说明：**  晨昏线是地球表面上太阳光照范围的分界线，将地球分为白天和黑夜两个区域。晨昏线在地球上的位置会随着地球自转和公转而不断变化。 |
-| cityLightEnabled | boolean | 否 | 是 | 是否启用城市灯光，默认值：true，异常值按默认值处理。  - true：启用城市灯光。  - false：关闭城市灯光。 |
-| animateDuration | number | 否 | 是 | 动画持续时间，单位ms，取值范围：不小于0，异常值按默认值处理。 |
-| backgroundImage | [ResourceStr](ts-types.md#resourcestr) | [image.PixelMap](arkts-apis-image-pixelmap.md) | 否 | 是 | 3D地球的背景。 |
-| coverageImage | [ResourceStr](ts-types.md#resourcestr) | [image.PixelMap](arkts-apis-image-pixelmap.md) | 否 | 是 | 3D地球的覆盖物。 |
+| sunLightEnabled | boolean | 否 | 是 | 是否启用晨昏线。  - true：启用晨昏线。  - false：关闭晨昏线。  默认值：true，异常值按默认值处理。  **说明：**  晨昏线是地球表面上太阳光照范围的分界线，将地球分为白天和黑夜两个区域。晨昏线在地球上的位置会随着地球自转和公转而不断变化。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| cityLightEnabled | boolean | 否 | 是 | 是否启用城市灯光，默认值：true，异常值按默认值处理。  - true：启用城市灯光。  - false：关闭城市灯光。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| animateDuration | number | 否 | 是 | 动画持续时间，单位ms，取值范围：不小于0，默认值：0，异常值按默认值处理。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| backgroundImage | [ResourceStr](ts-types.md#resourcestr) | [image.PixelMap](arkts-apis-image-pixelmap.md) | 否 | 是 | 3D地球的背景图片。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| coverageImage | [ResourceStr](ts-types.md#resourcestr) | [image.PixelMap](arkts-apis-image-pixelmap.md) | 否 | 是 | 3D地球的覆盖物。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| left | number | 否 | 是 | 球体中线距离屏幕左边的比例值，取值范围(0, 1)，默认值为0.5，球体中线位于屏幕中心，异常值按默认值处理。  **起始版本：** 26.0.1  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。 |
+| bottom | number | 否 | 是 | 球体中线距离屏幕底部的比例值，取值范围(0, 1)，默认值为0.5，球体中线位于屏幕中心，异常值按默认值处理。  **起始版本：** 26.0.1  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。 |
 
 ## MapSignalParams
 

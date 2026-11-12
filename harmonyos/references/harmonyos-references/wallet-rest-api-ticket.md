@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/wallet-re
 title: 活动/景点门票接口
 breadcrumb: API参考 > 应用服务 > Wallet Kit（钱包服务） > REST API > 活动/景点门票接口
 category: harmonyos-references
-scraped_at: 2026-09-25T07:14:34+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:2cdf92d56eec9226b757cf1cb44d781bbbd6149e65376adf6c26656b4f173353
+scraped_at: 2026-11-12T09:57:42+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:edc63d9f89b813619fd616824592eae517efdd3cfb92429e98e439614c3882ed
 ---
 
 ## 预置模板
@@ -335,13 +335,6 @@ Accept: application/json;charset=UTF-8
           "key": "venueOfPerformance",
           "value": "XX",
           "label": "演出场所"
-        }
-      ],
-      "supplementaryFields": [
-        {
-          "key": "ticketStatus",
-          "value": "有效",
-          "label": "门票状态"
         }
       ]
     },

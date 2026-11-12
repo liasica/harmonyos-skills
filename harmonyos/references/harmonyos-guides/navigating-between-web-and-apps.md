@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/navigating-be
 title: Web和应用的跳转与拉起
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 应用间跳转典型场景 > Web和应用的跳转与拉起
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:00+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:9e0397f5ffb5a9f69ac82f36add5754d30c603a378c408cfaeb72886dbbc9805
+scraped_at: 2026-11-12T09:50:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:43454519774a55171a8214f3ba644fb1543ec376c04aab04809b055f7712e68f
 ---
 
 ## 概述
@@ -31,7 +31,7 @@ content_hash: sha256:9e0397f5ffb5a9f69ac82f36add5754d30c603a378c408cfaeb72886dbb
 
 ### ArkTS页面跳转ArkWeb页面
 
-在HarmonyOS应用开发中，会有Web页面和ArkTS页面互相之间进行跳转的场景，例如列表页用了ArkTS进行开发，而详情页设计上只有简单的内容展示并没有复杂的逻辑操作，于是使用了Web开发并使用了ArkTS中的Web组件进行了加载，在这种场景下，从列表页跳转到详情页就是从ArkTS页面跳转到Web页面，在这种场景下，开发者只需要在ArkTS页面对应的事件回调函数中使用路由栈提供的跳转功能即可实现。关于Navigation组件的使用开发者可以参考：[组件导航（Navigation）](arkts-navigation-navigation.md)。
+在HarmonyOS应用开发中，会有Web页面和ArkTS页面互相之间进行跳转的场景，例如列表页用了ArkTS进行开发，而详情页设计上只有简单的内容展示并没有复杂的逻辑操作，于是使用了Web开发并使用了ArkTS中的Web组件进行了加载，在这种场景下，从列表页跳转到详情页就是从ArkTS页面跳转到Web页面，在这种场景下，开发者只需要在ArkTS页面对应的事件回调函数中使用路由栈提供的跳转功能即可实现。关于Navigation组件的使用开发者可以参考：[组件导航（Navigation）（推荐）](arkts-navigation-navigation.md)。
 
 ```typescript
 NavDestination() {
@@ -85,12 +85,12 @@ NavDestination() {
 
 开发者在HarmonyOS应用内使用了Web页面做了部分页面的实现，同时出于推广，或者需要在其他应用内处理一些逻辑等目的，需要拉起其他的指定应用，例如跳转到支付应用进行支付，在这些场景下，就需要用到指定应用跳转的相关知识，首先在实现方案上，指定应用跳转建议使用如下两种方案：
 
-1. 使用[Deep Linking](deep-linking-startup.md)实现应用拉起。
-2. 使用[App Linking](app-linking-startup.md)实现应用拉起。
+1. 使用Deep Linking实现应用拉起（实现参考[使用Deep Linking实现应用间跳转](deep-linking-startup.md)）。
+2. 使用App Linking实现应用拉起（实现参考[使用App Linking实现应用间跳转](app-linking-startup.md)）。
 
 方案1：使用Deep Linking。
 
-1. 在目标方配置module.json5文件，保证entities中包含entity.system.browsable、actions中包含ohos.want.action.viewData，最后再配置uris，用户可以自定义scheme，host，port以及path。具体含义可以参考：[uris标签说明](module-configuration-file.md#skills标签)。
+1. 在目标方配置module.json5文件，保证entities中包含entity.system.browsable、actions中包含ohos.want.action.viewData，最后再配置uris，用户可以自定义scheme，host，port以及path。具体含义可以参考：[skills标签](module-configuration-file.md#skills标签)下面的表8 uris标签说明。
 
    ```json5
    {
@@ -136,14 +136,14 @@ NavDestination() {
    ```typescript
    const link: string = 'appScheme://www.test.com:80/path1';
    ```
-4. 通过[canOpenLink()](canopenlink.md)接口判断link是否可以打开，如不能打开链接开发者可以自定义响应逻辑，此处直接返回。
+4. 通过[bundleManager.canOpenLink()](../doccenter-references/api/js-apis-bundlemanager.md#bundlemanagercanopenlink12)接口判断link是否可以打开，如不能打开链接开发者可以自定义响应逻辑，此处直接返回。
 
    ```typescript
    if (!bundleManager.canOpenLink(link)) {
      return true;
    }
    ```
-5. 配置拉起时的启动参数[openLinkOptions](../harmonyos-references/js-apis-app-ability-openlinkoptions.md)，在该配置中可以进行参数传递以及配置appLinkingOnly属性。代码参考如下：
+5. 配置拉起时的启动参数[openLinkOptions](../doccenter-references/api/js-apis-app-ability-openlinkoptions.md#openlinkoptions)，在该配置中可以进行参数传递以及配置appLinkingOnly属性。代码参考如下：
 
    ```typescript
    Navigation(this.navPathStack) {
@@ -196,17 +196,17 @@ NavDestination() {
 4. 若开发者不希望触发App Linking应用跳转逻辑，而是在应用内以ArkWeb继续浏览，可以在onLoadIntercept()回调中拦截对应的App Linking地址，并手动通过loadUrl()的方式加载网页内容，需注意获取到的链接地址末尾会被自动添加“/”。
 5. 无法在浏览器地址栏输入App Linking或Deep Linking打开应用，只能通过网页内的跳转代码实现（a标签、window.open()、window.location.href等）。
 6. 目前HarmonyOS设备上华为浏览器对上述两种链接地址做了支持。
-7. App Linking跳转失败时，默认配置下将会打开开发者自定义的网页版应用提供给用户进行浏览，通常此时网页内会嵌入按钮实现“在应用市场下载”，目前HarmonyOS设备的跳转逻辑与其他品类设备并不一致，所以需要开发者通过区分UA标识来判断是否为HarmonyOS设备，从而定制HarmonyOS设备上的跳转体验，实现上开发者可以参考[通过UserAgent识别HarmonyOS设备](web-default-useragent.md#如何通过user-agent来识别harmonyos操作系统中不同设备)。
+7. App Linking跳转失败时，默认配置下将会打开开发者自定义的网页版应用提供给用户进行浏览，通常此时网页内会嵌入按钮实现“在应用市场下载”，目前HarmonyOS设备的跳转逻辑与其他品类设备并不一致，所以需要开发者通过区分UA标识来判断是否为HarmonyOS设备，从而定制HarmonyOS设备上的跳转体验，实现上开发者可以参考[如何通过User-Agent来识别HarmonyOS操作系统中不同设备](web-default-useragent.md#如何通过user-agent来识别harmonyos操作系统中不同设备)。
 
 **图 1** Web页面打开效果图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/vE5-abJLQ-WcWixBqNhF8A/zh-cn_image_0000002779689522.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/L1jDy3o3Q1WXyBIWQt-cYA/zh-cn_image_0000002786358432.png)
 
 因此，Deep Linking适用于需要在已安装的应用之间进行跳转，实现相对简单，但当无应用匹配时用户体验不佳。而App Linking适用于社交分享、广告引流等需要外部链接访问应用的场景，以及对安全性和用户体验要求较高的场景。AppLinking在Deep Linking的基础上增加了域名校验，提高了链接的安全性和可靠性，且无论应用是否安装，用户都能访问内容。
 
 ## ArkWeb页面指定类型跳转
 
-在某些场景下，系统存在多个同类的应用，希望由用户按个人偏好自行选择在哪个应用中进行处理，例如用户收到了一个地址，而系统内有多个导航软件，希望让用户自行选择偏好的软件进行导航。实现上开发者可以参考：[拉起指定类型的应用](start-intent-panel.md)。以下参考代码以调用方拉起地图导航类应用为例。
+在某些场景下，系统存在多个同类的应用，希望由用户按个人偏好自行选择在哪个应用中进行处理，例如用户收到了一个地址，而系统内有多个导航软件，希望让用户自行选择偏好的软件进行导航。实现上开发者可以参考：[拉起指定类型的应用概述](start-intent-panel.md)。以下参考代码以调用方拉起地图导航类应用为例。
 
 1. 在HTML页面中使用a标签规定拉起指定应用的字符串。
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.autoFillManager (自动填充框架)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.autoFillManager (自动填充框架)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:51:41+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:ddf61e369587ec49380bbc7674bbbdf8442c99104a14d8849b5a3bffb9a81064
+scraped_at: 2026-11-12T09:53:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:1d04dc110922bc758e4c1678ed20d9b43a325214db73cfc8c045bca290f88ca5
 ---
 
 autoFillManager模块为应用提供账号、密码、地址、电话号码等用户信息的自动填充能力。
@@ -116,49 +116,10 @@ onFailure(): void
 
 **模型约束**：此接口仅可在Stage模型下使用。
 
-### onSuccess
-
-onSuccess: OnFillSuccessFn
-
-当填充请求成功时，该回调被调用。
-
-**起始版本：** 26.0.0
-
-**元服务API**：从API版本26.0.0开始，该接口支持在元服务中使用。
-
-**系统能力**：SystemCapability.Ability.AbilityRuntime.AbilityCore
-
-**模型约束**：此接口仅可在Stage模型下使用。
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| [OnFillSuccessFn](js-apis-app-ability-autofillmanager.md#onfillsuccessfn) | 当填充请求成功时，会触发该回调。 |
-
-**示例：**
-
-参见[autoFillManager.requestAutoFill](js-apis-app-ability-autofillmanager.md#autofillmanagerrequestautofill)。
-
-### onFailure
-
-onFailure: OnFillFailureFn
-
-当填充请求失败时，会触发该回调。
-
-**起始版本：** 26.0.0
-
-**元服务API**：从API版本26.0.0开始，该接口支持在元服务中使用。
-
-**系统能力**：SystemCapability.Ability.AbilityRuntime.AbilityCore
-
-**模型约束**：此接口仅可在Stage模型下使用。
-
-**返回值：**
-
-| 类型 | 说明 |
-| --- | --- |
-| [OnFillFailureFn](js-apis-app-ability-autofillmanager.md#onfillfailurefn) | 当填充请求失败时，会触发该回调。 |
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| onSuccess | [OnFillSuccessFn](js-apis-app-ability-autofillmanager.md#onfillsuccessfn) | 否 | 否 | 当填充请求成功时，该回调被调用，返回的viewData包含可用于填充表单的数据，如用户名密码、收货地址等。 |
+| onFailure | [OnFillFailureFn](js-apis-app-ability-autofillmanager.md#onfillfailurefn) | 否 | 否 | 当填充请求失败时，会触发该回调。 |
 
 **示例：**
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: DataAbilityHelper
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > 接口依赖的元素及定义 > ability > DataAbilityHelper
 category: harmonyos-references
-scraped_at: 2026-09-02T15:00:34+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f5bcd9d245bba9909929c55b65e7094c760a12d63938d349ebdf595c18623fd3
+scraped_at: 2026-11-12T09:53:32+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:555ba01819134e6cc0d668c031cdd4802b83588f2fdd8d369e4fa0efc69c6451
 ---
 
 可以通过[acquireDataAbilityHelper](js-apis-ability-featureability.md#featureabilityacquiredataabilityhelper7)接口获取DataAbilityHelper对象。
@@ -1313,6 +1313,10 @@ dataAbilityHelper.executeBatch('dataability:///com.example.jsapidemo.UserDataAbi
 用于存储数据的PacMap类型。
 
 **系统能力**：SystemCapability.Ability.AbilityRuntime.FAModel
+
+**模型约束**：
+
+API版本11+：此接口可在Stage模型和FA模型下使用。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |

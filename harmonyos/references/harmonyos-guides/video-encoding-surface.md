@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-encodin
 title: 基于Surface模式进行视频编码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码开发实践 > 基于Surface模式进行视频编码
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:08+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:560da83126a55b0fa63c20bfc0d59eae26ef441f6dfe806d5b6e004cca9fad52
+scraped_at: 2026-11-12T09:52:02+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:fc280f8af5eeae2a2fe77076bcfd05a8e51942693614faf614bd59f588a522f4
 ---
 
 ## 概述
@@ -28,7 +28,7 @@ Surface分为生产者ProducerSurface和消费者ConsumerSurface。NativeWindow�
 
 Surface轮转流程如下所示，生产者先申请到一块Buffer，填充数据后将Buffer返回给BufferQueue。在触发回调函数后，通知消费者Buffer已经被生产者填充好数据。之后，消费者可以获取填充好数据的Buffer，直到不再需要该Buffer后，释放对应的Buffer。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/PbIsUkElRfeHwy2FUjJ2Tw/zh-cn_image_0000002779690978.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/zMC3J3QBRBWNMwjJDtcq_Q/zh-cn_image_0000002815399391.png)
 
 视频编码器提供了获取NativeWindow的接口，通过NativeWindow可以将相机产生的数据与视频编码器进行对接。视频编码器作为消费者，将Buffer数据进行消费编码，从而实现视频编码的操作。下面我们将通过相机录制和屏幕录制，介绍基于Surface模式进行视频编码。
 
@@ -50,7 +50,7 @@ Surface模式是通过NativeWindow包含的Surface传递录屏数据进行视频
 6. 创建并启动编码输出子线程。
 7. 将从编码器中获取的NativeWindow对象设置给AVScreenCapture，启动屏幕录制。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/24/v3/XS-OD5QvQWe0OHSahhzlZA/zh-cn_image_0000002809010599.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/WHk7QtOwRmu-ZD8N7N6M7Q/zh-cn_image_0000002786519816.png)
 
 ### 开发步骤
 
@@ -71,8 +71,8 @@ Surface模式是通过NativeWindow包含的Surface传递录屏数据进行视频
 
        OH_AVFormat_SetIntValue(formatAudio, OH_MD_KEY_PROFILE, AAC_PROFILE_LC);
 
-       int32_t ret = OH_AVMuxer_AddTrack(muxer_, &audioTrackId_, formatAudio);
-       OH_AVFormat_Destroy(formatAudio);
+       int32_t ret = OH_AVMuxer_AddTrack(muxer_, &micTrackId_, formatAudio);
+       ret = OH_AVMuxer_AddTrack(muxer_, &audioTrackId_, formatAudio);
 
        OH_AVFormat *formatVideo =
            OH_AVFormat_CreateVideoFormat(sampleInfo.videoCodecMime.data(), sampleInfo.videoWidth, sampleInfo.videoHeight);
@@ -103,6 +103,7 @@ Surface模式是通过NativeWindow包含的Surface传递录屏数据进行视频
    }
 
    int32_t VideoEncoder::Config(SampleInfo &sampleInfo, CodecUserData *codecUserData) {
+       // Configure video encoder
        OH_AVFormat *format = OH_AVFormat_Create();
 
        OH_AVFormat_SetIntValue(format, OH_MD_KEY_WIDTH, sampleInfo.videoWidth);
@@ -114,18 +115,26 @@ Surface模式是通过NativeWindow包含的Surface传递录屏数据进行视频
        OH_AVFormat_SetIntValue(format, OH_MD_KEY_PROFILE, sampleInfo.hevcProfile);
 
        int ret = OH_VideoEncoder_Configure(encoder_, format);
-       if (ret != AV_ERR_OK) {
-           OH_LOG_ERROR(LOG_APP, "Config failed, ret: %{public}d", ret);
-       }
        OH_AVFormat_Destroy(format);
        format = nullptr;
+       if (ret != AV_ERR_OK) {
+           OH_LOG_ERROR(LOG_APP, "Config failed, ret: %{public}d", ret);
+           return AVCODEC_SAMPLE_ERR_ERROR;
+        }
 
-       OH_VideoEncoder_GetSurface(encoder_, &sampleInfo.window);
-
+       // GetSurface from video encoder
+       ret = OH_VideoEncoder_GetSurface(encoder_, &sampleInfo.window);
+       if (ret != AV_ERR_OK) {
+           OH_LOG_ERROR(LOG_APP, "OH_VideoEncoder_GetSurface failed, ret: %{public}d", ret);
+           return AVCODEC_SAMPLE_ERR_ERROR;
+        }
+       
+       // SetCallback for video encoder
        OH_VideoEncoder_RegisterCallback(encoder_,
                                         {VideoEncoder::OnCodecError, VideoEncoder::OnCodecFormatChange,
                                          VideoEncoder::OnNeedInputBuffer, VideoEncoder::OnNewOutputBuffer},
                                         codecUserData);
+       // Prepare video encoder
        OH_VideoEncoder_Prepare(encoder_);
 
        return 0;
@@ -143,26 +152,29 @@ Surface模式是通过NativeWindow包含的Surface传递录屏数据进行视频
        g_avCapture = OH_AVScreenCapture_Create();
        if (g_avCapture == nullptr) {
            OH_LOG_ERROR(LOG_APP, "create screen capture failed");
+           return;
        }
        OH_LOG_INFO(LOG_APP, "ScreenCapture after create sc");
 
+       // Set callback
        OH_AVScreenCapture_SetErrorCallback(g_avCapture, OnErrorToStream, nullptr);
        OH_AVScreenCapture_SetStateCallback(g_avCapture, OnSurfaceStateChangeToStream, nullptr);
 
        OH_AVScreenCapture_SetMicrophoneEnabled(g_avCapture, true);
        OH_AVScreenCapture_SetCanvasRotation(g_avCapture, true);
 
-       OH_AVScreenCaptureConfig config;
-       OH_AudioCaptureInfo micCapInfo = {.audioSampleRate = 48000, .audioChannels = 2, .audioSource = OH_SOURCE_DEFAULT};
-       OH_AudioCaptureInfo innerCapInfo = {.audioSampleRate = 48000, .audioChannels = 2, .audioSource = OH_ALL_PLAYBACK};
-       OH_AudioEncInfo audioEncInfo = {.audioBitrate = 96000, .audioCodecformat = OH_AudioCodecFormat::OH_AAC_LC};
+       // Initialize configuration information
+       ptureConfig config;
+       OH_AudioCaptureInfo micCapInfo = {.audioSampleRate = SAMPLE_RATE, .audioChannels = CHANNELS_COUNT, .audioSource = OH_SOURCE_DEFAULT};
+       OH_AudioCaptureInfo innerCapInfo = {.audioSampleRate = SAMPLE_RATE, .audioChannels = CHANNELS_COUNT, .audioSource = OH_ALL_PLAYBACK};
+       OH_AudioEncInfo audioEncInfo = {.audioBitrate = AUDIO_BITRATE, .audioCodecformat = OH_AudioCodecFormat::OH_AAC_LC};
        OH_AudioInfo audioInfo = {.micCapInfo = micCapInfo, .innerCapInfo = innerCapInfo, .audioEncInfo = audioEncInfo};
 
        OH_VideoCaptureInfo videoCapInfo = {
            .videoFrameWidth = videoWidth, .videoFrameHeight = videoHeight, .videoSource = OH_VIDEO_SOURCE_SURFACE_RGBA};
 
        OH_VideoEncInfo videoEncInfo = {
-           .videoCodec = OH_VideoCodecFormat::OH_H264, .videoBitrate = 10000000, .videoFrameRate = 30};
+           .videoCodec = OH_VideoCodecFormat::OH_H264, .videoBitrate = SAMPLE_BITRATE, .videoFrameRate = FRAME_RATE};
 
        OH_VideoInfo videoInfo = {.videoCapInfo = videoCapInfo, .videoEncInfo = videoEncInfo};
 
@@ -228,12 +240,17 @@ Surface模式是通过NativeWindow包含的Surface传递录屏数据进行视频
            if ((bufferInfo.attr.flags & AVCODEC_BUFFER_FLAGS_SYNC_FRAME) ||
                (bufferInfo.attr.flags == AVCODEC_BUFFER_FLAGS_NONE)) {
                videoEncContext_->outputFrameCount++;
+               // if first Frame, last frame info not init, Set pts directly to 0
                if (lastFrameTimestampPts_ == 0) {
                    lastFrameTimestampPts_ = bufferInfo.attr.pts;
                    bufferInfo.attr.pts = 0;
                } else {
-                   lastFrameEncodePts_ += (bufferInfo.attr.pts - lastFrameTimestampPts_) / 1000;
+                   // calc cur frame pts and last pts diff, get cur frame encode pts
+                   lastFrameEncodePts_ += (bufferInfo.attr.pts -
+                   lastFrameTimestampPts_) / MICROSECOND;
+                   // record last frame pts info
                    lastFrameTimestampPts_ = bufferInfo.attr.pts;
+                   // set cur frame encode pts.
                    bufferInfo.attr.pts = lastFrameEncodePts_;
                }
            } else {
@@ -291,7 +308,7 @@ Surface模式是通过NativeWindow包含的Surface传递录屏数据进行视频
 5. 启动视频编码器。
 6. 创建并启动编码输出子线程。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c0/v3/pbSz_gqJSQK7YP_TxYb88Q/zh-cn_image_0000002809050513.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/eqjeSvVuTneXP9oQUYDZbw/zh-cn_image_0000002786359888.png)
 
 ### 开发步骤
 
@@ -340,6 +357,7 @@ Surface模式是通过NativeWindow包含的Surface传递录屏数据进行视频
    点击相机录制时，启动相机输出流。
 
    ```typescript
+   // Start the video output stream
    encoderVideoOutput.start((err: BusinessError) => {
      if (err) {
        Logger.error(TAG, `Failed to start the encoder video output. error: ${JSON.stringify(err)}`);

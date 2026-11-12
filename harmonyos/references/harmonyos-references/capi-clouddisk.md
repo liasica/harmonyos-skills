@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-clou
 title: CloudDisk
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > C API > 模块 > CloudDisk
 category: harmonyos-references
-scraped_at: 2026-09-02T14:51:59+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:7944707d8195940c6cb77cc90cbeb02375275ae7a24359b77526486b1a2f86a9
+scraped_at: 2026-11-12T09:55:05+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b40f220210cd8ca67655b3df8c564fa8e7b33b37c7bf6ec362aceb5e9b3b2f7a
 ---
 
 ## 概述
@@ -20,5 +20,5 @@ content_hash: sha256:7944707d8195940c6cb77cc90cbeb02375275ae7a24359b77526486b1a2
 
 | 名称 | 描述 |
 | --- | --- |
-| [cloud\_disk\_error\_code.h](capi-cloud-disk-error-code-h.md) | 提供云盘管理模块的错误码定义。 |
-| [oh\_cloud\_disk\_manager.h](capi-oh-cloud-disk-manager-h.md) | 云盘管理模块的接口定义。 |
+| [cloud\_disk\_error\_code.h](capi-cloud-disk-error-code-h.md) | 提供云盘管理模块的错误码定义，用于标识云盘管理接口调用过程中的异常情况，帮助开发者定位和处理权限校验失败、参数无效、路径冲突、IPC连接失败等问题。 |
+| [oh\_cloud\_disk\_manager.h](capi-oh-cloud-disk-manager-h.md) | 云盘管理模块的接口定义，提供云盘同步根路径的注册、激活、监听和查询能力，支持监听文件变更、设置和查询文件同步状态，并提供占位符文件的创建、水合、脱水及回调注册能力，适用于需要在应用内实现云盘文件同步、变更监听和按需下载的场景。 |

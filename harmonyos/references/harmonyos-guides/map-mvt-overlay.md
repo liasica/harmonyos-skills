@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-mvt-overl
 title: 矢量图层
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 矢量图层
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:36+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1572b90aace3792722aedc6e0fb41fbdc96e84cb15bd130579141bcdde911937
+scraped_at: 2026-11-12T09:52:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f7ca5fcad283423f9810e14a4dcc5857820d1d1c5da7622772cbb32f7d0d2da8
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:1572b90aace3792722aedc6e0fb41fbdc96e84cb15bd130579141bcdde9
 
 6.0.0(20)开始，支持矢量图层功能。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/gbs8NM6TRHa4wR48yKNvQQ/zh-cn_image_0000002779851498.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/8GSWG1gDQS2XDL0d0iEskg/zh-cn_image_0000002815559871.gif "点击放大")
 
 ## 接口说明
 
@@ -36,32 +36,14 @@ content_hash: sha256:1572b90aace3792722aedc6e0fb41fbdc96e84cb15bd130579141bcdde9
 
    ```json5
    {
-     "module": {
-       // ...
+     "module" : {
        // ...
        "requestPermissions":[
          {
-           // 允许应用在前台运行时获取位置信息
-           "name" : "ohos.permission.LOCATION",
-           // reason需要在/resources/base/element/string.json中新建
-           "reason": "$string:location_permission",
+           // 允许应用使用Internet网络。
+           "name": "ohos.permission.INTERNET",
            "usedScene": {
-             "abilities": [
-               "EntryAbility"
-             ],
-             "when":"inuse"
-           }
-         },
-         {
-           // 允许应用获取设备模糊位置信息
-           "name" : "ohos.permission.APPROXIMATELY_LOCATION",
-           // reason需要在/resources/base/element/string.json中新建
-           "reason": "$string:fuzzy_location_permission",
-           "usedScene": {
-             "abilities": [
-               "EntryAbility"
-             ],
-             "when":"inuse"
+             "when": "always"
            }
          }
        ]

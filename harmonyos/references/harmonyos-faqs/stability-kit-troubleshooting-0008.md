@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/stability-kit-t
 title: CppCrash问题定位
 breadcrumb: FAQ > 应用质量 > 技术质量 > 稳定性 > 故障排查 > CppCrash问题定位
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:46:39+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:106f023d75fc5b0069a50504814fa4a8f9a881421066965bc2304ebef159bb21
+scraped_at: 2026-11-12T09:58:13+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e632157ba0d5712aa2b16797cc7a853dad781d81d5b513c185e9a45c59cfa43c
 ---
 
 ## SIGSEGV信号崩溃排查
@@ -282,7 +282,7 @@ content_hash: sha256:106f023d75fc5b0069a50504814fa4a8f9a881421066965bc2304ebef15
   启用[方舟多线程检测](../best-practices/bpta-stability-ark-runtime-detection.md#section7199344111510)，运行或调试当前应用，当程序出现多线程安全问题时，会弹出Crash log信息。点击信息中的链接，可以跳转至引起多线程安全问题的代码处。
 * 异常信息是：resolveBufferCallback get hsp buffer failed, hsp path:/data/storage/el1/bundle/com.huawei.hmos.walletkit/walletKit/walletKit/ets/modules.abc, errorMsg:hap path error: /data/storage/el1/bundle/com.huawei.hmos.walletkit/walletKit/walletKit.hsp。
 
-  在使用钱包服务前需要判断当前设备是否支持NFC能力，将NFC能力加入[自定义syscap](../harmonyos-references/syscap.md#加入自定义syscap)中。
+  在使用钱包服务前需要判断当前设备是否支持NFC能力，将NFC能力加入[自定义syscap](../doccenter-references/api/syscap.md)中。
 * 异常信息是：Assertion failed: xxx (xxx)。检查代码运行时的断言条件，修复业务逻辑异常。
 
   例：Assertion failed: handle->flags & UV\_HANDLE\_CLOSING (/home/lwf/deps/libuv-1.51.0/src/unix/core.c: uv\_\_finish\_close: 314)。业务逻辑中避免调用正在关闭的句柄。

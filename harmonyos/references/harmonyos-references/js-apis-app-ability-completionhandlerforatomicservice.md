@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.CompletionHandlerForAtomicService (打开元服务结果的操作类)"
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > ArkTS API > Stage模型能力的接口 > @ohos.app.ability.CompletionHandlerForAtomicService (打开元服务结果的操作类)
 category: harmonyos-references
-scraped_at: 2026-09-24T06:51:41+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:c85a1a991deae4791e9189592ed28a17ed23fc23d7f9107fd8580bd856fb4baf
+scraped_at: 2026-11-12T09:53:28+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:27ad47f7ecd739b64c9e0041fdb7d8ca976ac9c2bbbdea45c544b352a966eb0c
 ---
 
 CompletionHandlerForAtomicService作为[AtomicServiceOptions](js-apis-app-ability-atomicserviceoptions.md)的可选参数，用于接收打开元服务请求的结果。
@@ -95,7 +95,7 @@ export default class EntryAbility extends UIAbility {
         hilog.info(0x0000, 'testTag', `appId:${appId}`);
       },
       onAtomicServiceRequestFailure(appId: string, failureCode: FailureCode, failureMessage: string) {
-        hilog.info(0x0000, 'testTag', `appId:${appId}, failureCode:${failureCode}, failureMessage:${failureMessage}`);
+        hilog.error(0x0000, 'testTag', `appId:${appId}, failureCode:${failureCode}, failureMessage:${failureMessage}`);
       }
     };
     let options: AtomicServiceOptions = {

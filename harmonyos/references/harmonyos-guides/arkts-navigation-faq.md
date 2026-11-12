@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-navigat
 title: Navigation常见问题
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发调试调优 > UI开发常见问题 > Navigation常见问题
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:23+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:4408c4a4d9deee30e8e07b8d7698a7019f8f8171dadebd363f9a0f73e0685098
+scraped_at: 2026-11-12T09:51:20+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:865252cd458842ee86085156ee8d1dacc98ef7961f3a78e227eb0af5778f0d6a
 ---
 
 ## Dialog类型NavDestination蒙层动画不流畅
@@ -16,10 +16,10 @@ content_hash: sha256:4408c4a4d9deee30e8e07b8d7698a7019f8f8171dadebd363f9a0f73e06
 
 * 将蒙层背景色设置在页面上：pop页面的时候蒙层没有马上消失，而是等内容下滑退出后才消失。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/-B2T7AffQU-bS-GrgjaNFA/zh-cn_image_0000002779690458.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ce/v3/MtJ-kdedRfOh2_50TCtC8Q/zh-cn_image_0000002815558789.gif)
 * 将蒙层背景色设置在内容区域：蒙层一起从上向下退出。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/85/v3/mnuxdZXFTZ-uDeaNHGfLUQ/zh-cn_image_0000002809010077.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/YLt7hNynTEWPHeRjnbsc0Q/zh-cn_image_0000002815398873.gif)
 
 期望退出时蒙层渐隐，同时内容区域向下退出。
 
@@ -67,7 +67,7 @@ export struct DialogNavDestination {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/43/v3/rLbJQCnzS0uINCMk0qQtVQ/zh-cn_image_0000002809049993.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/v472cZwfRAerErdliokpaQ/zh-cn_image_0000002786519298.gif)
 
 ## router、navigation动画冲突
 
@@ -212,7 +212,7 @@ Navigation构建NavDestination的机制：
    └── IfElseNode3               ← IfElseNode3为false，无子节点
   ```
 
-  Navigation组件从IfElseNode1沿第一个子节点遍历，找到NavDestination(PageA)，页面正常。
+  Navigation组件从IfElseNode1开始，沿其第一个子节点遍历，找到NavDestination(PageA)，页面正常。
 * 当name === 'PageB'时，IfElseNode2为true，IfElseNode1和IfElseNode3为false，产生的组件树：
 
   ```text
@@ -222,7 +222,7 @@ Navigation构建NavDestination的机制：
    └── IfElseNode3               ← IfElseNode3为false，无子节点
   ```
 
-  Navigation组件从IfElseNode1沿第一个子节点遍历：IfElseNode1 → IfElseNode2 → NavDestination(PageB)，页面正常。
+  Navigation组件从IfElseNode1开始，沿其第一个子节点遍历：IfElseNode1 → IfElseNode2 → NavDestination(PageB)，页面正常。
 * 当name === 'PageC'时，IfElseNode3为true，IfElseNode1和IfElseNode2为false，产生的组件树：
 
   ```text
@@ -232,7 +232,7 @@ Navigation构建NavDestination的机制：
         └── NavDestination(PageC)
   ```
 
-  Navigation组件IfElseNode1沿第一个子节点遍历：IfElseNode1 → IfElseNode2（无子节点，遍历终止），无法找到NavDestination(PageC)，页面空白。
+  Navigation组件从IfElseNode1开始，沿其第一个子节点遍历：IfElseNode1 → IfElseNode2（无子节点，遍历终止），无法找到NavDestination(PageC)，页面空白。
 
 **解决措施**
 

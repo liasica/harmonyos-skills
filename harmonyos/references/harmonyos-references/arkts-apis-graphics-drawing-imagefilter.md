@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (ImageFilter)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (ImageFilter)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:45+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:e5998f365743351408f0364f8587409a83bc07ffb22e543aa32fc90fa5fab090
+scraped_at: 2026-11-12T09:56:54+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0ef87daff38408deb7a988b6838898ac4d346046f0b8e6abf2ba0b66aaa1e590
 ---
 
 图像滤波器。
@@ -82,7 +82,7 @@ static createFromImage(pixelmap: image.PixelMap, srcRect?: common2D.Rect | null,
 
 | 类型 | 说明 |
 | --- | --- |
-| [ImageFilter](arkts-apis-graphics-drawing-imagefilter.md) | 返回创建的图像滤波器。 |
+| [ImageFilter](arkts-apis-graphics-drawing-imagefilter.md) | 返回创建的图像滤波器。传入的图片对象无效时返回undefined。 |
 
 **示例：**
 

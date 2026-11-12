@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/remote-co
 title: RemoteCommunication
 breadcrumb: API参考 > 系统 > 网络 > Remote Communication Kit（远场通信服务） > C API > 模块 > RemoteCommunication
 category: harmonyos-references
-scraped_at: 2026-10-15T07:10:07+08:00
-doc_updated_at: 2026-10-14
+scraped_at: 2026-11-12T09:55:46+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:20968d829911aa4a369df2f9301327a965c383b8fe3d4abc74b9ddac5323dce1
 ---
 

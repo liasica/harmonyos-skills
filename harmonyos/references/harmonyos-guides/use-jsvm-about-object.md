@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-abou
 title: 使用JSVM-API接口进行object相关开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API使用指导 > 使用JSVM-API接口进行object相关开发
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:58:17+08:00
-doc_updated_at: 2026-10-28
+scraped_at: 2026-11-12T09:52:49+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:3d2217bbb37cd425133f0ad07de5184550c18bf1de6809ecf8fefd8d198361e0
 ---
 

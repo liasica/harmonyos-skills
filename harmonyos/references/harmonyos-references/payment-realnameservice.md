@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-r
 title: realNameService(身份验证服务)
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > ArkTS API > realNameService(身份验证服务)
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:26+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4c7467104af1d3c84f2191ed3e94ac37bfb37e70005c1069a4d00c5048ad234d
+scraped_at: 2026-11-12T09:57:31+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:692fc454d4423ed79db1abd8ed8bfaa3f90a151a3885eefa0529f94834915697
 ---
 
 本模块提供身份验证服务，包括“实名信息验证”、“实名信息授权”和“人脸核身实人验证”三种功能。
@@ -69,7 +69,7 @@ startRealNameVerification(context: common.UIAbilityContext | common.UIExtensionC
 
 **示例**：
 
-示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)
+示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
 ```typescript
 import { realNameService } from '@kit.PaymentKit';
@@ -146,7 +146,7 @@ startRealNameAuth(context: common.UIAbilityContext | common.UIExtensionContext):
 
 **示例**：
 
-示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)
+示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
 ```typescript
 import { realNameService } from '@kit.PaymentKit';
@@ -227,7 +227,7 @@ startFaceVerification(context: common.UIAbilityContext | common.UIExtensionConte
 
 **示例**：
 
-示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)
+示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
 ```typescript
 import { realNameService } from '@kit.PaymentKit';

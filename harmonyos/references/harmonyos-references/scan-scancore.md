@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scan-scan
 title: scanCore (扫码公共信息)
 breadcrumb: API参考 > 媒体 > Scan Kit（统一扫码服务） > ArkTS API > scanCore (扫码公共信息)
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:03+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:4be37f355225525440af2dfa90baff646961afd0cebe66e21a7367fb63c7a16a
+scraped_at: 2026-11-12T09:56:52+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:33bc037270974d9b6783bc5f01b270f4dd78ea192dd180885cb0da15039fe811
 ---
 
 ## 模块概述
 
-scanCore模块是Scan Kit的公共数据类型模块，提供扫码场景中使用的码类型枚举、错误码、默认界面扫码结果来源等公共数据类型定义。该模块不直接提供扫码能力，而是作为scanBarcode（默认界面扫码）、customScan（自定义界面扫码）、detectBarcode（图像识码）、generateBarcode（码图生成）功能模块的基础数据类型支撑。同时提供了isDefaultScanSupported和isCustomScanSupported两个能力查询接口，用于在调用扫码功能前检查当前设备是否支持相应能力。
+scanCore模块是Scan Kit的公共数据类型模块，提供扫码场景中使用的码类型枚举、错误码、默认界面扫码结果来源等公共数据类型定义。该模块不直接提供扫码能力，而是作为scanBarcode（默认界面扫码）、customScan（自定义界面扫码）、detectBarcode（图像识码）、generateBarcode（码图生成）功能模块的基础数据类型支撑。从API版本26.0.0开始，该模块提供了isDefaultScanSupported()和isCustomScanSupported()两个能力查询接口，用于在调用扫码功能前检查当前设备是否支持相应能力。
 
 **起始版本：** 4.0.0(10)
 
@@ -85,7 +85,7 @@ import { scanCore } from '@kit.ScanKit';
 | CAMERA | 0 | 默认界面扫码结果来源是相机预览流。 |
 | PHOTO | 1 | 默认界面扫码结果来源是相册图片。 |
 
-## isDefaultScanSupported
+## scanCore.isDefaultScanSupported
 
 isDefaultScanSupported(): boolean
 
@@ -122,7 +122,7 @@ if (isSupported) {
 }
 ```
 
-## isCustomScanSupported
+## scanCore.isCustomScanSupported
 
 isCustomScanSupported(): boolean
 

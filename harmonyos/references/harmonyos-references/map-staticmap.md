@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-stati
 title: staticMap（静态图）
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > staticMap（静态图）
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:23+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:47441e1dc280021cecfc1f46043e6fd20ccb171289045c9a2856e6177e964058
+scraped_at: 2026-11-12T09:57:27+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:edb203fdd0905cdd81b0409d8f0f36024b64e7b77f4ed129925d88857f5fc8a1
 ---
 
 本模块提供获取静态图功能。
@@ -102,7 +102,7 @@ getMapImage(context: common.Context, options: StaticMapOptions): Promise<image.P
 
 | 类型 | 说明 |
 | --- | --- |
-| Promise<[image.PixelMap](arkts-apis-image-pixelmap.md)> | Promise对象，返回[image.PixelMap](arkts-apis-image-pixelmap.md)。 |
+| Promise<[image.PixelMap](arkts-apis-image-pixelmap.md)> | Promise对象，返回[image.PixelMap](arkts-apis-image-pixelmap.md)，可用于渲染或保存为图片文件。 |
 
 **错误码：**
 
@@ -190,7 +190,7 @@ StaticMapMarker定义了标记点位置。
 | location | [mapCommon.LatLng](map-common.md#latlng) | 否 | 否 | 标记点坐标。 |
 | icon | string | 否 | 是 | 标记点自定义图标，该图标必须以http://或https://开头。如果未设置或者图标不符合要求，系统将使用默认图标。  **说明：**  图标格式为png，大小不能大于16KB，像素不超过128\*128。 |
 | defaultIconSize | [IconSize](map-staticmap.md#iconsize) | 否 | 是 | 默认图标大小。如果使用默认图标，请选择使用默认图标的大小，默认值为[IconSize](map-staticmap.md#iconsize).NORMAL，表示中等大小；如果icon生效，defaultIconSize不生效。 |
-| font | string | 否 | 是 | 标记点的名称，超长名称超出部分用省略号“...”表示。 |
+| font | string | 否 | 是 | 标记点的名称，默认值：''，超长名称超出部分用省略号“...”表示。 |
 | fontColor | number | 否 | 是 | 标记点文字的颜色，ARGB格式，默认值为0xff000000（黑色）。 |
 | rotation | number | 否 | 是 | 标记点图标的旋转角度（仅支持自定义图标）。  以正北方向为0度、顺时针方向为正的角度，默认值为0，取值范围：[0, 360]。 |
 

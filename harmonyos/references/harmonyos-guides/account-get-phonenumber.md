@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-get-p
 title: 获取手机号
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 获取华为账号用户信息 > 获取手机号
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:22+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:eecf87fba9cb66d1ed978ef3283660947ee69f80a6df39c54e1c56d677d1f6d4
+scraped_at: 2026-11-12T09:52:17+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7f54c5a6da53e160d152cf9055e78c50ea3f020f386d669fd33b1caf48daca96
 ---
 
 ## 场景介绍
@@ -19,22 +19,22 @@ content_hash: sha256:eecf87fba9cb66d1ed978ef3283660947ee69f80a6df39c54e1c56d677d
 
 **图1** 手机端获取手机号（请以实际效果为准）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/6wVGICj1QZufV_fFwegvbw/zh-cn_image_0000002809050761.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f/v3/OKOJFdXcQsucYaJCw4c14g/zh-cn_image_0000002815399647.png "点击放大")
 
 **图2** Wearable设备获取手机号（请以实际效果为准）
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/5W1nUx8cQzuXGlg_DuIwSQ/zh-cn_image_0000002779851196.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/IEWLfXp2RIa58lsWd2IZQg/zh-cn_image_0000002786520072.png "点击放大")
 
 ## 约束与限制
 
 1. 应用满足《[常见类型移动互联网应用程序必要个人信息范围规定](http://www.cac.gov.cn/2021-03/22/c_1617990997054277.htm)》（对第三方网站的内容，华为不承担任何责任）中使用手机号的必要业务场景。
 2. 儿童账号无法通过该能力获取到手机号。
-3. 获取手机号能力支持Phone、Tablet、PC/2in1设备。并且从5.1.0(18)版本开始，新增支持Wearable设备；从5.1.1(19)版本开始，新增支持TV设备。
+3. 获取手机号能力支持Phone、Tablet、PC/2in1设备。并且从5.1.0(18)版本开始，新增支持Wearable设备；从5.1.1(19)版本开始，新增支持TV设备；从26.0.1版本开始，新增支持Car设备。
 4. 获取手机号能力目前仅支持游戏类应用申请使用。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b8/v3/hpWu6A2BR3aA28LQ-grNLA/zh-cn_image_0000002779691228.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/db/v3/rQxyhXSjRSOjsSLTOTumTg/zh-cn_image_0000002786360144.png)
 
 流程说明：
 

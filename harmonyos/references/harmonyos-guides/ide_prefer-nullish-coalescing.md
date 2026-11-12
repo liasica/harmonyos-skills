@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_prefer-nu
 title: "@typescript-eslint/prefer-nullish-coalescing"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/prefer-nullish-coalescing
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:10+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:8f9cf06eda1fb0b628a8d0757f5327495e171f69b26c9d51c3e87c606f677116
+scraped_at: 2026-11-12T09:52:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:91d8661f5404fbe9fa27d5b0d25ca9d71c4b35a40fc3c3863cd666eb27309f27
 ---
 
 强制使用空值合并运算符（??）而不是逻辑运算符。
@@ -58,4 +58,4 @@ export const c = a || b;
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

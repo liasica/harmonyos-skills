@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/i18n-time-zon
 title: 时区
 breadcrumb: 指南 > 应用框架 > Localization Kit（本地化开发服务） > 应用国际化 > 时区与夏令时国际化 > 时区
 category: harmonyos-guides
-scraped_at: 2026-09-21T06:17:37+08:00
-doc_updated_at: 2026-09-20
+scraped_at: 2026-11-12T09:51:28+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:0f1ed266df8b58341977389c1d63e154c0004dd45aa1ac9939969972e1c458cb
 ---
 

@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/online-authen
 title: Online Authentication Kit术语
 breadcrumb: 指南 > 系统 > 安全 > Online Authentication Kit（在线认证服务） > Online Authentication Kit术语
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:31+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:fb9484fc2d2263b40665adeeb983aa81fea27c029a02ba52c161fe7b1819aedf
+scraped_at: 2026-11-12T09:51:39+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:cc6459486f44c00fc8d84e74f48b065f36a1fd08bb36e690526ca4d9410190ea
 ---
 
 ## D
 
-### Decentralized Identifier (DID)；去中心化身份标识
+### Decentralized Identifier (DID)；分布式数字身份标识
 
-符合W3C DID协议的去中心化身份标识符，通过区块链或分布式网络实现实体唯一标识，具备跨系统、跨平台的互操作性。
+符合W3C DID协议的分布式数字身份标识符，通过区块链或分布式网络实现实体唯一标识，具备跨系统、跨平台的互操作性。
 
 ## F
 

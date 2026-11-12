@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/iap-iap
 title: IAP
 breadcrumb: API参考 > 应用服务 > IAP Kit（应用内支付服务） > ArkTS API > IAP
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:19+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6b4f3a335fb66433e11f6e3254657870f30ce98f079d5d784fc0c6ea7b482487
+scraped_at: 2026-11-12T09:57:22+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:566330519c53f9da313000c5ce930dd4e3967a874bd0db334ce5dd434c0324a7
 ---
 
 应用内购买（In-App Purchase，IAP）模块为HarmonyOS应用提供数字商品（虚拟商品）的全链路支付能力，包括商品查询、购买、发货确认、订阅管理及退款等。
@@ -142,7 +142,7 @@ import { iap } from '@kit.IAPKit';
 | PRODUCT\_TERRITORY\_NOT\_SUPPORTED | 1001860007 | 商品所属的应用未在指定国家/地区上架。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 | ACCOUNT\_NOT\_LOGGED\_IN | 1001860050 | 未登录华为账号。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 | PRODUCT\_OWNED | 1001860051 | 由于已经拥有该商品，购买失败。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
-| PURCHASE\_NOT\_PAID | 1001860052 | 由于未拥有该商品，发货失败。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| PURCHASE\_NOT\_PAID | 1001860052 | 由于未支付该商品，发货失败。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 | PURCHASE\_FINISHED | 1001860053 | 此次购买已经完成发货，无需重复发货。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 | ACCOUNT\_TERRITORY\_NOT\_SUPPORTED | 1001860054 | 用户账号所在服务地暂不支持IAP。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 | USER\_NOT\_ALLOWED | 1001860056 | 用户交易被拒绝。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
@@ -153,7 +153,7 @@ import { iap } from '@kit.IAPKit';
 | PURCHASE\_ALREADY\_REFUNDED | 1001860061 | 商品已退款或退款中。  **元服务API：** 从API版本5.0.3(15)开始，该接口支持在元服务中使用。  **起始版本：** 5.0.3(15) |
 | REFUND\_NOT\_ALLOWED | 1001860062 | 不允许退款。  **元服务API：** 从API版本5.0.3(15)开始，该接口支持在元服务中使用。  **起始版本：** 5.0.3(15) |
 | PURCHASE\_NOT\_FOUND | 1001860064 | 在登录的华为账号上找不到该笔订单。  **元服务API：** 从API版本6.1.0(23)开始，该接口支持在元服务中使用。  **起始版本：** 6.1.0(23) |
-| OPERATION\_NOT\_SUPPORTED | 1001860065 | 不支持开票操作。  **元服务API：** 从API版本6.1.0(23)开始，该接口支持在元服务中使用。  **起始版本：** 6.1.0(23) |
+| OPERATION\_NOT\_SUPPORTED | 1001860065 | 不支持该操作。  **元服务API：** 从API版本6.1.0(23)开始，该接口支持在元服务中使用。  **起始版本：** 6.1.0(23) |
 
 ## WindowScreenMode
 
@@ -227,7 +227,7 @@ queryEnvironmentStatus(context: common.Context): Promise<void>
 | 401 | Parameter error. |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities.  **适用版本：** 6.1.0(23)+ |
 | 1001860000 | The operation was canceled by the user. |
-| 1001860001 | System internal error. |
+| 1001860001 | System internal error. Possible causes: 1.IAP is not activated; 2.Device certifcate exception. |
 | 1001860002 | The application is not authorized.  **适用版本：** 5.0.0(12)+ |
 | 1001860004 | Too frequent API calls. |
 | 1001860005 | Network connection error. |
@@ -288,7 +288,7 @@ queryEnvironmentStatus(context: common.Context, callback: AsyncCallback<void>): 
 | 401 | Parameter error. |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities.  **适用版本：** 6.1.0(23)+ |
 | 1001860000 | The operation was canceled by the user. |
-| 1001860001 | System internal error. |
+| 1001860001 | System internal error. Possible causes: 1.IAP is not activated; 2.Device certifcate exception. |
 | 1001860004 | Too frequent API calls. |
 | 1001860005 | Network connection error. |
 | 1001860050 | The HUAWEI ID is not signed in. |
@@ -324,7 +324,7 @@ struct Index {
 
 queryProducts(context: common.UIAbilityContext, parameter: QueryProductsParameter): Promise<Array<Product>>
 
-获取在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)上配置的商品详情信息。使用Promise异步回调。
+获取在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)上配置的商品详情信息。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -355,7 +355,7 @@ queryProducts(context: common.UIAbilityContext, parameter: QueryProductsParamete
 | --- | --- |
 | 401 | Parameter error. |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities.  **适用版本：** 6.1.0(23)+ |
-| 1001860001 | System internal error. |
+| 1001860001 | System internal error. Possible causes: 1.IAP is not activated; 2.Device certifcate exception. |
 | 1001860002 | The application is not authorized. |
 | 1001860003 | Invalid product information. |
 | 1001860004 | Too frequent API calls. |
@@ -381,7 +381,7 @@ struct Index {
             // iap.ProductType.AUTORENEWABLE：自动续期订阅商品
             // iap.ProductType.NONRENEWABLE：非续期订阅商品
             productType: iap.ProductType.CONSUMABLE,
-            // productIds中的商品需要替换成开发者在AppGallery Connect网站配置的商品
+            // productIds中的商品需要替换成开发者配置的商品
             productIds: ['testConsumeProduct01', 'testConsumeProduct02']
         }
         iap.queryProducts(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter).then((data: Array<iap.Product>) => {
@@ -401,7 +401,7 @@ struct Index {
 
 queryProducts(context: common.UIAbilityContext, parameter: QueryProductsParameter, callback: AsyncCallback<Array<Product>>): void
 
-用于获取在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)上配置的商品详情信息。使用callback异步回调。
+用于获取在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)上配置的商品详情信息。使用callback异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -425,7 +425,7 @@ queryProducts(context: common.UIAbilityContext, parameter: QueryProductsParamete
 | --- | --- |
 | 401 | Parameter error. |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities.  **适用版本：** 6.1.0(23)+ |
-| 1001860001 | System internal error. |
+| 1001860001 | System internal error. Possible causes: 1.IAP is not activated; 2.Device certifcate exception. |
 | 1001860002 | The application is not authorized. |
 | 1001860003 | Invalid product information. |
 | 1001860004 | Too frequent API calls. |
@@ -451,7 +451,7 @@ struct Index {
             // iap.ProductType.AUTORENEWABLE：自动续期订阅商品
             // iap.ProductType.NONRENEWABLE：非续期订阅商品
             productType: iap.ProductType.CONSUMABLE,
-            // productIds中的商品需要替换成开发者在AppGallery Connect网站配置的商品
+            // productIds中的商品需要替换成开发者配置的商品
             productIds: ['testConsumeProduct01', 'testConsumeProduct02']
         }
         iap.queryProducts(this.getUIContext().getHostContext() as common.UIAbilityContext, parameter, (err: BusinessError, data: Array<iap.Product>) => {
@@ -473,7 +473,7 @@ struct Index {
 
 queryProducts(context: common.UIAbilityContext, productIds: string[]): Promise<Array<Product>>
 
-查询在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)上配置的商品详情信息。使用Promise异步回调。
+查询在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)上配置的商品详情信息。使用Promise异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -488,7 +488,7 @@ queryProducts(context: common.UIAbilityContext, productIds: string[]): Promise<A
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
 | context | common.[UIAbilityContext](js-apis-inner-application-uiabilitycontext.md) | 是 | [UIAbility](js-apis-app-ability-uiability.md)上下文。 |
-| productIds | string[] | 是 | 待查询商品ID列表。商品ID必须已经在当前应用中创建且唯一。  商品ID来源于开发者在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中配置商品信息时设置的商品ID，请参见[配置商品信息](../harmonyos-guides/iap-config-product.md)。  **说明：** 一次最多可查询200个商品，商品数量较多时建议分批查询。 |
+| productIds | string[] | 是 | 待查询商品ID列表。商品ID必须已经在当前应用中创建且唯一。  商品ID来源于开发者在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)中配置商品信息时设置的商品ID，请参见[配置商品信息](../harmonyos-guides/iap-config-product.md)。  **说明：** 一次最多可查询200个商品，商品数量较多时建议分批查询。 |
 
 **返回值：**
 
@@ -503,7 +503,7 @@ queryProducts(context: common.UIAbilityContext, productIds: string[]): Promise<A
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities.  **适用版本：** 6.1.0(23)+ |
-| 1001860001 | System internal error. |
+| 1001860001 | System internal error. Possible causes: 1.IAP is not activated; 2.Device certifcate exception. |
 | 1001860002 | The application is not authorized. |
 | 1001860003 | Invalid product information. |
 | 1001860004 | Too frequent API calls. |
@@ -523,7 +523,7 @@ import { BusinessError } from '@kit.BasicServicesKit';
 @Component
 struct Index {
     test() {
-        // productIds中的商品需要替换成开发者在AppGallery Connect网站配置的商品
+        // productIds中的商品需要替换成开发者配置的商品
         const productIds: string[] = ['testConsumeProduct01', 'testConsumeProduct02'];
         iap.queryProducts(this.getUIContext().getHostContext() as common.UIAbilityContext, productIds).then((data: Array<iap.Product>) => {
             // 请求成功
@@ -542,7 +542,7 @@ struct Index {
 
 purchase(context: common.UIAbilityContext, parameter: PurchaseParameter): Promise<PurchaseResult>
 
-创建订单，支持消耗型商品和非消耗型商品。在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)创建商品后，应用使用此接口调用华为应用内支付收银台，显示商品、价格和支付方式。
+创建订单，支持消耗型商品和非消耗型商品。在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)创建商品后，应用使用此接口调用华为应用内支付收银台，显示商品、价格和支付方式。
 
 使用Promise异步回调。
 
@@ -577,7 +577,7 @@ purchase(context: common.UIAbilityContext, parameter: PurchaseParameter): Promis
 | --- | --- |
 | 401 | Parameter error. |
 | 1001860000 | The operation was canceled by the user. |
-| 1001860001 | System internal error. |
+| 1001860001 | System internal error. Possible causes: 1.IAP is not activated; 2.Device certifcate exception. |
 | 1001860002 | The application is not authorized. |
 | 1001860003 | Invalid product information. |
 | 1001860004 | Too frequent API calls. |
@@ -602,7 +602,7 @@ struct Index {
             // iap.ProductType.CONSUMABLE：消耗型商品
             // iap.ProductType.NONCONSUMABLE：非消耗型商品
             productType: iap.ProductType.CONSUMABLE,
-            // productId需要替换成开发者在AppGallery Connect网站配置商品信息时设置的“商品ID”
+            // productId需要替换成开发者配置商品信息时设置的“商品ID”
             productId: 'testConsumeProduct01',
             developerPayload: 'test developer payload string.'
         }
@@ -623,7 +623,7 @@ struct Index {
 
 purchase(context: common.UIAbilityContext, parameter: PurchaseParameter, callback: AsyncCallback<PurchaseResult>): void
 
-创建订单，支持消耗型商品和非消耗型商品。在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)创建商品后，使用此接口调用华为应用内支付收银台，显示商品、价格和支付方式。
+创建订单，支持消耗型商品和非消耗型商品。在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)创建商品后，使用此接口调用华为应用内支付收银台，显示商品、价格和支付方式。
 
 使用callback异步回调。
 
@@ -653,7 +653,7 @@ purchase(context: common.UIAbilityContext, parameter: PurchaseParameter, callbac
 | --- | --- |
 | 401 | Parameter error. |
 | 1001860000 | The operation was canceled by the user. |
-| 1001860001 | System internal error. |
+| 1001860001 | System internal error. Possible causes: 1.IAP is not activated; 2.Device certifcate exception. |
 | 1001860002 | The application is not authorized. |
 | 1001860003 | Invalid product information. |
 | 1001860004 | Too frequent API calls. |
@@ -678,7 +678,7 @@ struct Index {
             // iap.ProductType.CONSUMABLE：消耗型商品
             // iap.ProductType.NONCONSUMABLE：非消耗型商品
             productType: iap.ProductType.CONSUMABLE,
-            // productId需要替换成开发者在AppGallery Connect网站配置商品信息时设置的“商品ID”
+            // productId需要替换成开发者配置商品信息时设置的“商品ID”
             productId: 'testConsumeProduct01',
             developerPayload: 'test developer payload string.'
         }
@@ -701,7 +701,7 @@ struct Index {
 
 createPurchase(context: common.UIAbilityContext, parameter: PurchaseParameter): Promise<CreatePurchaseResult>
 
-发起购买，支持消耗型商品、非消耗型商品、自动续期订阅商品和非续期订阅商品。在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)创建商品后，使用此接口拉起华为应用内支付收银台，显示商品名称、商品价格等信息。
+发起购买，支持消耗型商品、非消耗型商品、自动续期订阅商品和非续期订阅商品。在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)创建商品后，使用此接口拉起华为应用内支付收银台，显示商品名称、商品价格等信息。
 
 使用Promise异步回调。
 
@@ -735,7 +735,7 @@ createPurchase(context: common.UIAbilityContext, parameter: PurchaseParameter): 
 | 401 | Parameter error. |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities.  **适用版本：** 6.1.0(23)+ |
 | 1001860000 | The operation was canceled by the user. |
-| 1001860001 | System internal error. |
+| 1001860001 | System internal error. Possible causes: 1.IAP is not activated; 2.Device certifcate exception. |
 | 1001860002 | The application is not authorized. |
 | 1001860003 | Invalid product information. |
 | 1001860004 | Too frequent API calls. |
@@ -764,7 +764,7 @@ struct Index {
             // iap.ProductType.AUTORENEWABLE：自动续期订阅商品
             // iap.ProductType.NONRENEWABLE：非续期订阅商品
             productType: iap.ProductType.AUTORENEWABLE,
-            // productId需要替换成开发者在AppGallery Connect网站配置商品信息时设置的“商品ID”
+            // productId需要替换成开发者配置商品信息时设置的“商品ID”
             productId: 'testProduct01',
             developerPayload: 'test developer payload string.'
         }
@@ -785,7 +785,7 @@ struct Index {
 
 createPurchase(context: common.UIAbilityContext, parameter: PurchaseParameter, callback: AsyncCallback<CreatePurchaseResult>): void
 
-发起购买，支持消耗型商品、非消耗型商品、自动续期订阅商品和非续期订阅商品。在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)创建商品后，使用此接口拉起华为应用内支付收银台，显示商品名称、价格等信息。
+发起购买，支持消耗型商品、非消耗型商品、自动续期订阅商品和非续期订阅商品。在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)创建商品后，使用此接口拉起华为应用内支付收银台，显示商品名称、价格等信息。
 
 使用callback异步回调。
 
@@ -812,7 +812,7 @@ createPurchase(context: common.UIAbilityContext, parameter: PurchaseParameter, c
 | 401 | Parameter error. |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities.  **适用版本：** 6.1.0(23)+ |
 | 1001860000 | The operation was canceled by the user. |
-| 1001860001 | System internal error. |
+| 1001860001 | System internal error. Possible causes: 1.IAP is not activated; 2.Device certifcate exception. |
 | 1001860002 | The application is not authorized. |
 | 1001860003 | Invalid product information. |
 | 1001860004 | Too frequent API calls. |
@@ -841,7 +841,7 @@ struct Index {
             // iap.ProductType.AUTORENEWABLE：自动续期订阅商品
             // iap.ProductType.NONRENEWABLE：非续期订阅商品
             productType: iap.ProductType.AUTORENEWABLE,
-            // productId需要替换成开发者在AppGallery Connect网站配置商品信息时设置的“商品ID”
+            // productId需要替换成开发者配置商品信息时设置的“商品ID”
             productId: 'testProduct01',
             developerPayload: 'test developer payload string.'
         }
@@ -896,7 +896,7 @@ consumePurchase(context: common.UIAbilityContext, parameter: ConsumePurchasePara
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
-| 1001860001 | System internal error. |
+| 1001860001 | System internal error. Possible causes: 1.IAP is not activated; 2.Device certifcate exception. |
 | 1001860002 | The application is not authorized. |
 | 1001860004 | Too frequent API calls. |
 | 1001860005 | Network connection error. |
@@ -965,7 +965,7 @@ consumePurchase(context: common.UIAbilityContext, parameter: ConsumePurchasePara
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
-| 1001860001 | System internal error. |
+| 1001860001 | System internal error. Possible causes: 1.IAP is not activated; 2.Device certifcate exception. |
 | 1001860002 | The application is not authorized. |
 | 1001860004 | Too frequent API calls. |
 | 1001860005 | Network connection error. |
@@ -1040,7 +1040,7 @@ finishPurchase(context: common.UIAbilityContext, parameter: FinishPurchaseParame
 | --- | --- |
 | 401 | Parameter error. |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities.  **适用版本：** 6.1.0(23)+ |
-| 1001860001 | System internal error. |
+| 1001860001 | System internal error. Possible causes: 1.IAP is not activated; 2.Device certifcate exception. |
 | 1001860002 | The application is not authorized. |
 | 1001860004 | Too frequent API calls. |
 | 1001860005 | Network connection error. |
@@ -1110,7 +1110,7 @@ finishPurchase(context: common.UIAbilityContext, parameter: FinishPurchaseParame
 | --- | --- |
 | 401 | Parameter error. |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities.  **适用版本：** 6.1.0(23)+ |
-| 1001860001 | System internal error. |
+| 1001860001 | System internal error. Possible causes: 1.IAP is not activated; 2.Device certifcate exception. |
 | 1001860002 | The application is not authorized. |
 | 1001860004 | Too frequent API calls. |
 | 1001860005 | Network connection error. |
@@ -1195,7 +1195,7 @@ queryOwnedPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesP
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
-| 1001860001 | System internal error. |
+| 1001860001 | System internal error. Possible causes: 1.IAP is not activated; 2.Device certifcate exception. |
 | 1001860002 | The application is not authorized. |
 | 1001860003 | Invalid product information. |
 | 1001860004 | Too frequent API calls. |
@@ -1268,7 +1268,7 @@ queryOwnedPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesP
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
-| 1001860001 | System internal error. |
+| 1001860001 | System internal error. Possible causes: 1.IAP is not activated; 2.Device certifcate exception. |
 | 1001860002 | The application is not authorized. |
 | 1001860003 | Invalid product information. |
 | 1001860004 | Too frequent API calls. |
@@ -1343,7 +1343,7 @@ queryPurchaseRecords(context: common.UIAbilityContext, parameter: QueryPurchases
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
-| 1001860001 | System internal error. |
+| 1001860001 | System internal error. Possible causes: 1.IAP is not activated; 2.Device certifcate exception. |
 | 1001860002 | The application is not authorized. |
 | 1001860004 | Too frequent API calls. |
 | 1001860005 | Network connection error. |
@@ -1407,7 +1407,7 @@ queryPurchaseRecords(context: common.UIAbilityContext, parameter: QueryPurchases
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 401 | Parameter error. |
-| 1001860001 | System internal error. |
+| 1001860001 | System internal error. Possible causes: 1.IAP is not activated; 2.Device certifcate exception. |
 | 1001860002 | The application is not authorized. |
 | 1001860004 | Too frequent API calls. |
 | 1001860005 | Network connection error. |
@@ -1482,7 +1482,7 @@ queryPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesParame
 | --- | --- |
 | 401 | Parameter error. |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities.  **适用版本：** 6.1.0(23)+ |
-| 1001860001 | System internal error. |
+| 1001860001 | System internal error. Possible causes: 1.IAP is not activated; 2.Device certifcate exception. |
 | 1001860002 | The application is not authorized. |
 | 1001860004 | Too frequent API calls. |
 | 1001860005 | Network connection error. |
@@ -1550,7 +1550,7 @@ queryPurchases(context: common.UIAbilityContext, parameter: QueryPurchasesParame
 | --- | --- |
 | 401 | Parameter error. |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities.  **适用版本：** 6.1.0(23)+ |
-| 1001860001 | System internal error. |
+| 1001860001 | System internal error. Possible causes: 1.IAP is not activated; 2.Device certifcate exception. |
 | 1001860002 | The application is not authorized. |
 | 1001860004 | Too frequent API calls. |
 | 1001860005 | Network connection error. |
@@ -1599,7 +1599,7 @@ showManagedSubscriptions(context: common.Context, uiParameter: UIWindowParameter
 
 **系统能力：** SystemCapability.Payment.IAP
 
-**设备行为差异：** 该接口在Phone、Tablet、2in1、TV设备中可正常调用，在其他设备中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、2in1、TV设备中可正常调用，从API版本26.0.1开始，新增支持Car设备，在其他设备中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 
@@ -1609,7 +1609,7 @@ showManagedSubscriptions(context: common.Context, uiParameter: UIWindowParameter
 | --- | --- | --- | --- |
 | context | common.[Context](js-apis-inner-application-context.md) | 是 | 上下文。建议使用[UIAbilityContext](js-apis-inner-application-uiabilitycontext.md)。 |
 | uiParameter | [UIWindowParameter](iap-iap.md#uiwindowparameter) | 是 | 包含界面窗口模式的[UIWindowParameter](iap-iap.md#uiwindowparameter)对象。 |
-| groupId | string | 否 | 订阅组ID，来源于开发者在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中配置管理的订阅组，请参见[新增订阅组](../app/non-subscription-0000001958955109.md#section37862471018)。  **说明：**  - 传递groupId，跳转到订阅详情页。  - 不传递groupId，跳转到订阅页。如果用户在应用只有一条订阅数据，此时会跳转到此条订阅的订阅详情页。 |
+| groupId | string | 否 | 订阅组ID，来源于开发者在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)中配置管理的订阅组，请参见[新增订阅组](../app/non-subscription-0000001958955109.md#section37862471018)。  **说明：**  - 传递groupId，跳转到订阅详情页。  - 不传递groupId，跳转到订阅页。如果用户在应用中只有一条订阅数据，此时会直接跳转到该订阅的详情页。 |
 
 **返回值：**
 
@@ -1625,7 +1625,7 @@ showManagedSubscriptions(context: common.Context, uiParameter: UIWindowParameter
 | --- | --- |
 | 401 | Parameter error. |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities.  **适用版本：** 5.1.0(18)+ |
-| 1001860001 | System internal error. |
+| 1001860001 | System internal error. Possible causes: 1.IAP is not activated; 2.Device certifcate exception. |
 | 1001860002 | The application is not authorized. |
 | 1001860004 | Too frequent API calls. |
 | 1001860005 | Network connection error. |
@@ -1694,7 +1694,7 @@ isSandboxActivated(context: common.Context): Promise<boolean>
 | --- | --- |
 | 401 | Parameter error. |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities.  **适用版本：** 6.1.0(23)+ |
-| 1001860001 | System internal error. |
+| 1001860001 | System internal error. Possible causes: 1.IAP is not activated; 2.Device certifcate exception. |
 | 1001860002 | The application is not authorized. |
 | 1001860004 | Too frequent API calls. |
 | 1001860005 | Network connection error. |
@@ -1765,7 +1765,7 @@ createRefundRequest(context: common.Context, purchaseOrderId: string): Promise<v
 | 401 | Parameter error.Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
 | 1001860000 | The operation was canceled by the user. |
-| 1001860001 | System internal error. |
+| 1001860001 | System internal error. Possible causes: 1.IAP is not activated; 2.Device certifcate exception. |
 | 1001860002 | The application is not authorized. |
 | 1001860004 | Too frequent API calls. |
 | 1001860005 | Network connection error. |
@@ -1840,7 +1840,7 @@ showManagedInvoices(context: common.Context, purchaseOrderId: string): Promise<v
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 1001860001 | System internal error. |
+| 1001860001 | System internal error. Possible causes: 1.IAP is not activated; 2.Device certifcate exception. |
 | 1001860002 | The application is not authorized. |
 | 1001860004 | Too frequent API calls. |
 | 1001860005 | Network connection error. |
@@ -1880,6 +1880,85 @@ struct IapTest {
 }
 ```
 
+## iap.queryPaymentPromotions
+
+queryPaymentPromotions(context: common.Context, params: QueryPaymentPromotionParam[]): Promise<Array<PaymentPromotion>>;
+
+根据指定参数查询支付优惠活动信息。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Payment.IAP
+
+**设备行为差异：** 该接口在Phone、Tablet、2in1设备中可正常调用，在其他设备中返回1001860065错误码。
+
+**起始版本：** 26.0.1
+
+**参数**：
+
+| **参数名** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| context | common.[Context](js-apis-inner-application-context.md) | 是 | 上下文。建议使用[UIAbilityContext](js-apis-inner-application-uiabilitycontext.md)。 |
+| params | [QueryPaymentPromotionParam](iap-iap.md#querypaymentpromotionparam)[] | 是 | 指定查询商品的信息列表，最大长度为5。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Array<[PaymentPromotion](iap-iap.md#paymentpromotion)> | Promise对象，返回指定参数查询的商品的优惠信息。 |
+
+**错误码**：
+
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-iap.md)和[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported. Failed to call the API due to limited device capabilities. |
+| 1001860001 | System internal error. Possible causes: 1.IAP is not activated; 2.Device certifcate exception. |
+| 1001860002 | The application is not authorized. |
+| 1001860003 | Invalid product information. |
+| 1001860004 | Too frequent API calls. |
+| 1001860005 | Network connection error. |
+| 1001860007 | The app to which the product belongs is not released in a specified location. |
+| 1001860050 | The HUAWEI ID is not signed in. |
+| 1001860054 | The country or region of the signed-in HUAWEI ID does not support IAP. |
+| 1001860064 | The purchase order is not found for the signed-in HUAWEI ID. |
+| 1001860065 | The operation is not supported. |
+
+**示例**：
+
+```typescript
+import { iap } from '@kit.IAPKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { common } from '@kit.AbilityKit';
+
+@Entry
+@Component
+struct Index {
+    test() {
+        const context: common.UIAbilityContext = this.getUIContext().getHostContext() as common.UIAbilityContext;
+        // productId需要替换成开发者配置商品信息时设置的“商品ID”
+        const parameter: iap.QueryPaymentPromotionParam[] = [{
+        productId: 'testProduct01',
+        microMarkedPrice: 1,
+        currency: 'CNY',
+        }];
+        iap.queryPaymentPromotions(context, parameter).then((data: Array<iap.PaymentPromotion>) => {
+        // 请求成功
+        console.info(`Succeeded in querying paymentPromotions. data length: ${data?.length}`);
+        }).catch((err: BusinessError) => {
+        // 请求失败
+        console.error(`Failed to query paymentPromotions. Code is ${err.code}, message is ${err.message}`);
+        });
+    }
+
+    build() {
+    }
+}
+```
+
 ## QueryProductsParameter
 
 [queryProducts](iap-iap.md#iapqueryproducts)接口的请求参数。
@@ -1895,7 +1974,7 @@ struct IapTest {
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | productType | [ProductType](iap-iap.md#producttype) | 否 | 否 | 需要查询的商品类型。  - CONSUMABLE：消耗型商品  - NONCONSUMABLE：非消耗型商品  - AUTORENEWABLE：自动续期订阅商品  - NONRENEWABLE：非续期订阅商品 |
-| productIds | string[] | 否 | 否 | 待查询商品ID列表。商品ID必须已经在当前应用中创建且唯一。  商品ID来源于开发者在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中配置商品信息时设置的商品ID，请参见[配置商品信息](../harmonyos-guides/iap-config-product.md)。  **说明：** 一次查询最多支持200个商品，商品数量较多时建议分批查询。 |
+| productIds | string[] | 否 | 否 | 待查询商品ID列表。商品ID必须已经在当前应用中创建且唯一。  商品ID来源于开发者在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)中配置商品信息时设置的商品ID，请参见[配置商品信息](../harmonyos-guides/iap-config-product.md)。  **说明：** 一次查询最多支持200个商品，商品数量较多时建议分批查询。 |
 
 ## Product
 
@@ -1999,7 +2078,7 @@ struct IapTest {
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| productId | string | 否 | 否 | 待支付的商品ID。每个产品ID必须在当前应用中存在且唯一。商品ID来源于开发者在[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)中配置商品信息时设置的“商品ID”，具体请参见[配置商品信息](../harmonyos-guides/iap-config-product.md)。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
+| productId | string | 否 | 否 | 待支付的商品ID。每个产品ID必须在当前应用中存在且唯一。商品ID来源于开发者在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)中配置商品信息时设置的“商品ID”，具体请参见[配置商品信息](../harmonyos-guides/iap-config-product.md)。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 | productType | [ProductType](iap-iap.md#producttype) | 否 | 否 | 需要查询的商品类型。  - CONSUMABLE：消耗型商品  - NONCONSUMABLE：非消耗型商品  - AUTORENEWABLE：自动续期订阅商品  - NONRENEWABLE：非续期订阅商品  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 | developerPayload | string | 否 | 是 | 商户侧保留信息。  若该字段有值，在支付成功后的回调结果中会原样返回给应用。  **说明：** 该参数长度限制为[0, 256]。如超过长度限制，在支付成功后将返回被截断的数据。建议在发起请求前自行验证字段长度，避免非预期截断。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
 | reservedInfo | string | 否 | 是 | 要求JSON String格式，商户可以将额外需要传入的字段以key-value的形式设置在JSON String中，并通过该参数传入。  例如：let reservedInfo = "{\"key1\":\"value1\",\"key2\":\"value2\"}";  **说明：** 该字段为预留字段，可选传入，开发者暂时无需关注。  **元服务API：** 从API版本5.0.0(12)开始，该接口支持在元服务中使用。 |
@@ -2165,3 +2244,40 @@ struct IapTest {
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
 | windowScreenMode | [WindowScreenMode](iap-iap.md#windowscreenmode) | 否 | 否 | 界面窗口模式。  - DIALOG\_BOX：弹窗模式  - FULLSCREEN：全屏模式 |
+
+## QueryPaymentPromotionParam
+
+[iap.queryPaymentPromotions](iap-iap.md#iapquerypaymentpromotions)接口的请求参数。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Payment.IAP
+
+**起始版本：** 26.0.1
+
+| **名称** | **类型** | 只读 | 可选 | **说明** |
+| --- | --- | --- | --- | --- |
+| productId | string | 否 | 否 | 待支付的商品ID。每个产品ID必须在当前应用中存在且唯一。商品ID来源于开发者在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)中配置商品信息时设置的“商品ID”，具体请参见[配置商品信息](../harmonyos-guides/iap-config-product.md)。 |
+| microMarkedPrice | number | 否 | 否 | 对应货币单位的标示价格，即扣除产品营销优惠后的价格，单位：分。 |
+| currency | string | 否 | 否 | 币种，请参见[ISO 4217](https://www.iso.org/iso-4217-currency-codes.html)标准。例如CNY、USD、MYR。 |
+
+## PaymentPromotion
+
+[iap.queryPaymentPromotions](iap-iap.md#iapquerypaymentpromotions)接口的返回结果。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**元服务API：** 从版本26.0.1开始，该接口支持在元服务中使用。
+
+**系统能力：** SystemCapability.Payment.IAP
+
+**起始版本：** 26.0.1
+
+| **名称** | **类型** | 只读 | 可选 | **说明** |
+| --- | --- | --- | --- | --- |
+| productId | string | 否 | 否 | 待支付的商品ID。每个产品ID必须在当前应用中存在且唯一。商品ID来源于开发者在[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console)中配置商品信息时设置的“商品ID”，具体请参见[配置商品信息](../harmonyos-guides/iap-config-product.md)。用。 |
+| microDiscountAmount | number | 否 | 是 | 对应货币单位的折扣金额，单位：分。 |
+| currency | string | 否 | 是 | 币种，请参见[ISO 4217](https://www.iso.org/iso-4217-currency-codes.html)标准。例如CNY、USD、MYR。 |
+| promotionText | string | 否 | 是 | 优惠活动显示的文本，最大长度为1024。 |

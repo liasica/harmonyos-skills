@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/core-speech-kit
 title: 初始化语音识别引擎报错
 breadcrumb: FAQ > AI功能开发 > 机器学习 > 基础语音（Core Speech） > 故障排查 > 初始化语音识别引擎报错
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:55+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:956672508e9b70bc3ffb5f8122e13be5d3d82d7a9e0d833e34fe58324f3e7f59
+scraped_at: 2026-11-12T10:00:19+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b51e35f7125039cd3c06469ce1469d21c02cdb34a0d0b4b321ac78f2c0908c4e
 ---
 
 ## 问题现象
@@ -31,9 +31,9 @@ content_hash: sha256:956672508e9b70bc3ffb5f8122e13be5d3d82d7a9e0d833e34fe58324f3
 ## 分析结论
 
 * Asr CreateEngineParams is wrong。测试机中存在不止一个SpeechRecognitionEngine实例，可能为创建实例使用完成后未及时释放资源导致的再次创建报错。
-* Error message:Cannot read property createEngine of undefined。此报错原因是使用模拟器调试语音识别能力，官网的约束与限制已表明该能力当前不支持模拟器，参考语音识别[约束与限制](../harmonyos-guides/speechrecognizer-guide.md#section2020122517405)。
+* Error message:Cannot read property createEngine of undefined。此报错原因是使用模拟器调试语音识别能力，官网的约束与限制已表明该能力当前不支持模拟器，参考语音识别[约束与限制](../doccenter-capabilities/speechrecognizer-guide.md#约束与限制)。
 * 错误码1002200001：
-  + errMessage: create param is error,language only support zh-CN now。speechRecognizer.createEngine的参数[createEngineParams](../harmonyos-references/hms-ai-speechrecognizer.md#section53411946183318)官网已表明language目前只支持“zh-CN”中文。
+  + errMessage: create param is error,language only support zh-CN now。speechRecognizer.createEngine的参数[createEngineParams](../doccenter-references/api/hms-ai-speechrecognizer.md#createengineparams)官网已表明language目前只支持“zh-CN”中文。
   + errMessage: asr engine init failed with other process has initialized.此报错意味着在同一时间或同一环境中已经有另一个实例或进程正在使用相同的资源或配置来初始化asr引擎导致的创建引擎失败。
 
 ## 修改建议

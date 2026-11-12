@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-a
 title: 创建券批次
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 通用接口 > 运营工具 > 商家券 > 券批次 > 创建券批次
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:28+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:6e447ae5d5c9ead54856322e013500358d74fd95a09ceb952a1f9de801a35631
+scraped_at: 2026-11-12T09:57:36+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:cb00bd63a7a34363e89a343ac16b96ffa88815b457266ca2d8c32871ffa427c3
 ---
 
 ## 功能介绍
@@ -99,7 +99,7 @@ Content-Type: application/json
         "couponTitle": "XX元满减券",
         "description": "XX元满减券",
         "diversionName": "XX元满减券",
-        "nextJumpUrl": "https://hoas.drcn.agconnect.link/abcd",
+        "nextJumpUrl": "https://hoas.drcn.test.link/abcd",
         "merchantLogoUrl": "https://XXX/ab3OXLUtwRO.png",
         "merchantName": "XX公司"
     },
@@ -131,7 +131,7 @@ Content-Type: application/json
 | signType | 否 | String | 签名类型。华为支付生成签名字符串使用的算法，当前为SM2算法。 |
 | certNo | 否 | String | 签名所使用的证书编号。 |
 | batchNo | 是 | String | 批次号。 |
-| createTime | 是 | String | 创建时间（UTC时间），格式为yyyy-MM-dd'T'HH:mm:ss.SSSZ，yyyy-MM-DD表示年月日，T出现在字符串中，表示time元素的开头，HH:mm:ss.SSS表示时分秒，Z为对应的时区。例如：2023-03-28T17:50:12.000+0800表示，北京时间2023年3月28日 17点50分12秒。 |
+| createTime | 是 | String | 创建时间（UTC时间），格式为yyyy-MM-dd'T'HH:mm:ss.SSSZ，yyyy-MM-dd表示年月日，T出现在字符串中，表示time元素的开头，HH:mm:ss.SSS表示时分秒，Z为对应的时区。例如：2023-03-28T17:50:12.000+0800表示，北京时间2023年3月28日 17点50分12秒。 |
 
 ## 响应示例
 

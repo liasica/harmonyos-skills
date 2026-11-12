@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/call-introduc
 title: Call Service Kit简介
 breadcrumb: 指南 > 应用服务 > Call Service Kit（通话服务） > Call Service Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:26+08:00
-doc_updated_at: 2026-06-12
-content_hash: sha256:d3773f48406201e1b16c9ef07ddbe8a19ea54256e37be1014f92661551146d1f
+scraped_at: 2026-11-12T09:52:21+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:24773bf9921c9a6fea55a44c72faa2ed54d065cb651872beaafaf5d027ec9d42
 ---
 
 Call Service Kit（通话服务）是HarmonyOS为开发者提供的应用内通话管理服务。
@@ -29,14 +29,18 @@ Call Service Kit（通话服务）是HarmonyOS为开发者提供的应用内通�
 
   + 去电时，由于应用在前台，不需要展示横幅通知，只在屏幕左上角展示通话胶囊。
   + 去电不支持多路共存，即同一时间，只能有1路去电存在。
+* 外设VoIP通话控制场景
+
+  用户在远端设备（如第三方穿戴设备）上控制本设备的VoIP通话，称为外设VoIP通话控制场景。在该场景中，应用可以接听、拒接当前来电，或挂断当前通话，详见[外设VoIP通话控制](remote-voip-call-control.md)。
 
 ## 与相关Kit的关系
 
-当应用在后台时，如果有来电，需要[Push Kit（推送服务）](push-kit-introduction.md)先拉起应用主进程，应用才能给Call Service Kit上报来电。
+1. 当应用在后台时，如果有来电，需要[Push Kit（推送服务）](push-kit-introduction.md)先拉起应用主进程，应用才能给Call Service Kit上报来电。
 
-业务流程如下图所示：
+   业务流程如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/GsDbJki2Tnqf_V62Cf1l4Q/zh-cn_image_0000002809010923.jpg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/UOD94Ww9TKyGFcwnGOgCsA/zh-cn_image_0000002815559639.jpg)
+2. 来去电时，通过对端手机号隐私查询对应的企业服务信息，依赖[Data Protection Kit](dlp-overview.md)提供的隐私查询能力，保证查询号码以及返回数据的隐私和安全。
 
 ## 约束和限制
 
@@ -48,6 +52,7 @@ Call Service Kit（通话服务）是HarmonyOS为开发者提供的应用内通�
 | --- | --- |
 | 来电场景 | Phone、Tablet、PC/2in1、Wearable。 |
 | 去电场景 | Phone、Tablet、PC/2in1、Wearable。 |
+| 外设VoIP通话控制 | Phone、Tablet、PC/2in1、Wearable。 |
 | 企业联系人信息来去电页面显示 | Phone、Tablet、PC/2in1、Wearable。 |
 | 企业服务信息来去电页面显示 | Phone、Tablet、PC/2in1、Wearable。 |
 | 应用跳转陌生号码和信息识别页面 | Phone、Tablet、PC/2in1、Wearable。 |

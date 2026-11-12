@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_avcodec_videobase.h
 breadcrumb: API参考 > 媒体 > AVCodec Kit（音视频编解码服务） > C API > 头文件 > native_avcodec_videobase.h
 category: harmonyos-references
-scraped_at: 2026-10-22T07:09:49+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:be442a94e0442c03301b48518b3d94818ac8688847b6a74f555940ebfa6732ae
+scraped_at: 2026-11-12T09:56:25+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b12d3de8af4e4d51598e8e00192515980218c3b666956467ede16c764798b68f
 ---
 
 ## 概述
@@ -48,6 +48,7 @@ content_hash: sha256:be442a94e0442c03301b48518b3d94818ac8688847b6a74f555940ebfa6
 | const char \* OH\_MD\_KEY\_VIDEO\_METADATA\_ROI\_RIGHT | 用于描述单个ROI矩形右侧坐标（x）的键，值类型为int32\_t。坐标系的原点位于视频的左上角。取值范围为(OH\_MD\_KEY\_VIDEO\_METADATA\_ROI\_LEFT, OH\_MD\_KEY\_VIDEO\_WIDTH]。这是配置ROI参数时的必填键。  **起始版本：** 26.0.0 |
 | const char \* OH\_MD\_KEY\_VIDEO\_METADATA\_ROI\_DELTA\_QP | 用于描述单个ROI的量化参数（QP）相对偏移值的键，值类型为int32\_t。该变量取值范围为[-51, 51]。这是配置ROI参数时的可选键。如果未设置此键，编码器将对此区域使用其默认的量化参数策略。  **起始版本：** 26.0.0 |
 | const char \* OH\_MD\_KEY\_VIDEO\_METADATA\_ROI\_SEM\_LABEL | 用于描述单个ROI语义标签的键，值类型为int32\_t。该变量值必须与[OH\_VideoMetadataRoiSemanticLabel](capi-native-avcodec-videobase-h.md#oh_videometadataroisemanticlabel)对应。这是配置ROI参数时的可选键。如果未设置此键，该区域将采用默认的语义处理策略。  **起始版本：** 26.0.0 |
+| const char \* OH\_MD\_KEY\_VIDEO\_ENCODER\_WITH\_LOWPOWER\_CAMERA | 定义采编联合低功耗优化的使能的键。该键是采编联合低功耗优化的配置开关。  使用[OH\_AVFormat\_SetIntValue](capi-native-avformat-h.md#oh_avformat_setintvalue)设置启用状态：1表示开启采编联合低功耗优化，0表示关闭此能力（默认）。  使用约束：该键仅对视频编码器有效，为可选参数。可通过[OH\_VideoEncoder\_Configure](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_configure)初始化时配置，或在运行时通过[OH\_VideoEncoder\_SetParameter](capi-native-avcodec-videoencoder-h.md#oh_videoencoder_setparameter)启用。启用后，采集侧会根据编码信息调整采集配置策略，以降低整体功耗。  **起始版本：** 26.0.1 |
 
 ## 枚举类型说明
 

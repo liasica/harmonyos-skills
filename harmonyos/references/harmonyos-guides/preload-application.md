@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/preload-appli
 title: 应用预加载
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用生命周期 > 应用启动 > 应用预加载
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:00+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:5253ace94e75b79dbc953bfab0cba661cdcd0c3438f82683f0d68691f542e25f
+scraped_at: 2026-11-12T09:50:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:290a2896b8be984ee34bb155f28ccc0d9977347f9c35428dfb01a7281f7087a5
 ---
 
 ## 概述
@@ -29,9 +29,9 @@ content_hash: sha256:5253ace94e75b79dbc953bfab0cba661cdcd0c3438f82683f0d68691f54
 
 * processCreated：进程创建完成阶段。开发者配置此阶段后，预加载机制会创建空进程并初始化Application，但是不会触发任何生命周期回调。
 * abilityStageCreated：[AbilityStage](../harmonyos-references/js-apis-app-ability-abilitystage.md)创建完成阶段。开发者配置此阶段后，预加载机制会创建空进程并初始化Application，随后触发entry模块[AbilityStage](../harmonyos-references/js-apis-app-ability-abilitystage.md)的[onCreate](../harmonyos-references/js-apis-app-ability-abilitystage.md#oncreate)回调。
-* windowStageCreated：[WindowStage](../harmonyos-references/arkts-apis-window-windowstage.md)创建完成阶段。开发者配置此阶段后，预加载机制会创建空进程并初始化Application，随后触发entry模块[AbilityStage](../harmonyos-references/js-apis-app-ability-abilitystage.md)的[onCreate](../harmonyos-references/js-apis-app-ability-abilitystage.md#oncreate)回调。接着会拉起entry模块的入口UIAbility，并触发其[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)回调和[onWindowStageCreate](../harmonyos-references/js-apis-app-ability-uiability.md#onwindowstagecreate)回调。开发者可以在UIAbility的[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)回调中，通过[launchParam.launchReason](../harmonyos-references/js-apis-app-ability-abilityconstant.md#launchreason)的枚举值获取启动原因。枚举值为PRELOAD表示当前UIAbility是由预加载机制启动的。
+* windowStageCreated：[WindowStage](../harmonyos-references/arkts-apis-window-windowstage.md)创建完成阶段。开发者配置此阶段后，预加载机制会创建空进程并初始化Application，随后触发entry模块[AbilityStage](../harmonyos-references/js-apis-app-ability-abilitystage.md)的[onCreate](../harmonyos-references/js-apis-app-ability-abilitystage.md#oncreate)回调。接着会拉起entry模块的入口UIAbility，并触发其[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)回调和[onWindowStageCreate](../harmonyos-references/js-apis-app-ability-uiability.md#onwindowstagecreate)回调。开发者可以在UIAbility的[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)回调中，通过[launchParam.launchReason](../harmonyos-references/js-apis-app-ability-abilityconstant.md#launchreason)的枚举值获取启动原因。枚举值为CALL表示当前UIAbility通过[startAbilityByCall](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#startabilitybycall)接口启动，此时结合[application.getAppPreloadType()](../harmonyos-references/js-apis-app-ability-application.md#applicationgetapppreloadtype22)获取的预加载类型，可判断当前UIAbility是否由预加载机制启动。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/_eeDKEEFSOuNXVdmsd5lNQ/zh-cn_image_0000002779689498.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/4vcxy0r6ShWrEQ6g-sa7hw/zh-cn_image_0000002786358408.png)
 
 ## 应用预加载状态识别与判断
 
@@ -55,7 +55,7 @@ export default class MyAbilityStage extends AbilityStage {
 }
 ```
 
-除了在AbilityStage中判断进程级别的预加载类型外，若应用配置的预加载阶段为windowStageCreated，开发者还可以在UIAbility的[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)生命周期回调中进行判断。通过校验[launchParam.launchReason](../harmonyos-references/js-apis-app-ability-abilityconstant.md#launchreason)是否等于PRELOAD，即可识别当前UIAbility实例是否由预加载机制启动。具体实现请参考[开发步骤](preload-application.md#开发步骤)中的步骤3。
+除了在AbilityStage中判断进程级别的预加载类型外，若应用配置的预加载阶段为windowStageCreated，开发者还可以在UIAbility的[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)生命周期回调中进行判断。通过校验[launchParam.launchReason](../harmonyos-references/js-apis-app-ability-abilityconstant.md#launchreason)是否等于CALL，并结合[application.getAppPreloadType()](../harmonyos-references/js-apis-app-ability-application.md#applicationgetapppreloadtype22)获取的预加载类型，即可识别当前UIAbility实例是否由预加载机制启动。具体实现请参考[开发步骤](preload-application.md#开发步骤)中的步骤3。
 
 ## 应用声明支持预加载到abilityStageCreated阶段
 
@@ -87,7 +87,7 @@ export default class MyAbilityStage extends AbilityStage {
 
   用户点击应用启动到前台时，系统会依次触发UIAbility.onNewWant()、UIAbility.onForeground()生命周期回调，走完前台启动流程。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/wgcUlhlPQp6xkVS_R93Kzw/zh-cn_image_0000002809009119.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/GNSO19zFQHiQqVaX5f7uxA/zh-cn_image_0000002815557829.png)
 * 支持PC/2in1且不支持Phone的应用：加载至隐藏窗口前台初始状态
 
   此类应用在UIAbility生命周期中无后台状态，详见[不同设备UIAbility生命周期的差异化行为](window-lifecycle.md#不同设备uiability生命周期的差异化行为)。
@@ -96,7 +96,7 @@ export default class MyAbilityStage extends AbilityStage {
 
   用户点击应用启动到前台时，系统会依次触发UIAbility.onNewWant()、UIAbility.onForeground()生命周期回调，走完前台启动流程。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/9YXEhxRBS5y-VFdQnLABEA/zh-cn_image_0000002809049035.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/NEakYBrjTdyKxkbfyWvy1A/zh-cn_image_0000002815397913.png)
 
 ## 开发步骤
 
@@ -152,16 +152,17 @@ export default class MyAbilityStage extends AbilityStage {
    ```
 3. （可选）获取UIAbility启动原因。
 
-   仅当appPreloadPhase配置为windowStageCreated时，开发者可在UIAbility的[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)生命周期回调中通过[launchParam.launchReason](../harmonyos-references/js-apis-app-ability-abilityconstant.md#launchreason)的枚举值获取启动原因。枚举值为PRELOAD表示当前UIAbility是由预加载机制启动的。
+   仅当appPreloadPhase配置为windowStageCreated时，开发者可在UIAbility的[onCreate](../harmonyos-references/js-apis-app-ability-uiability.md#oncreate)生命周期回调中通过[launchParam.launchReason](../harmonyos-references/js-apis-app-ability-abilityconstant.md#launchreason)获取启动原因。当launchReason为CALL时，结合[application.getAppPreloadType()](../harmonyos-references/js-apis-app-ability-application.md#applicationgetapppreloadtype22)返回的预加载类型（非UNSPECIFIED），可判断当前UIAbility实例是否由预加载机制启动。
 
    ```ts
-   import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
+   import { AbilityConstant, UIAbility, Want, application } from '@kit.AbilityKit';
 
    export default class EntryAbility extends UIAbility {
      onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
        console.info(`EntryAbility onCreate, LaunchReason:${launchParam.launchReason}`);
-       // 判断是否是预加载启动
-       let isPreloadStart = launchParam.launchReason === AbilityConstant.LaunchReason.PRELOAD;
+       // 判断是否是预加载启动：launchReason为CALL且预加载类型非UNSPECIFIED
+       let isPreloadStart = launchParam.launchReason === AbilityConstant.LaunchReason.CALL &&
+         application.getAppPreloadType() !== application.AppPreloadType.UNSPECIFIED;
        // ...
      }
    }

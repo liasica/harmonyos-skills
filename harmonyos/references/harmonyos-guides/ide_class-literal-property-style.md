@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_class-lit
 title: "@typescript-eslint/class-literal-property-style"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/class-literal-property-style
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:08+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:88ac9cc6d2b2526abd7b8e11e3d37bb0f7470c1498cff5c7b635122d99c9bee0
+scraped_at: 2026-11-12T09:52:54+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0f15c7d2a6f7051b20243d6117c88317cb8382cc217d8909818ef40941da223c
 ---
 
 建议类中的字面量属性对外暴露时，保持一致的风格。
@@ -65,4 +65,4 @@ export { Mx };
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

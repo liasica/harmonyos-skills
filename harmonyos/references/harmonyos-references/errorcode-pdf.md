@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS API 错误码
 breadcrumb: API参考 > 应用服务 > PDF Kit（PDF服务） > ArkTS API 错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:06+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:6425c0b3390737e7fecc298c54faf1470eabbd813d700eee93550fc9bc1faa9d
+scraped_at: 2026-11-12T09:57:37+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c16175910a3e2a5cc2dbf9302ceb43a0d86315199e2980e6928237a12d29818d
 ---
 
 **说明** 
@@ -236,3 +236,21 @@ Another document is being loaded.
 **处理步骤**
 
 检查调用逻辑，避免连续调用异步加载接口。
+
+## 1011302007 HighlightRect数量超过上限
+
+**错误信息**
+
+The number of HighlightRect exceeds the upper limit.
+
+**错误描述**
+
+highlightRects数组元素数量超过了上限。
+
+**可能原因**
+
+1. highlightRects数组元素HighlightRect的数量超过了10000上限。
+
+**处理步骤**
+
+减少[setHighlightRectsWithColors](pdf-arkts-pdfviewmanage.md#sethighlightrectswithcolors)接口中HighlightRect的数量，确保highlightRects数组元素HighlightRect的数量不要超过10000上限。

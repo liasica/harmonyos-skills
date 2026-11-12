@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-key-ag
 title: 使用DH进行密钥协商(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥协商 > 使用DH进行密钥协商(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:37+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:51:34+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:2192896a1c4aba9fbdbcddb068938c04c5ffaa34e97ab11fa71f44751d966e1e
 ---
 

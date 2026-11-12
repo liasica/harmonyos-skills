@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: BusinessRiskIntelligentDetection（业务风险检测）
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > BusinessRiskIntelligentDetection（业务风险检测）
 category: harmonyos-references
-scraped_at: 2026-09-05T06:18:35+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:b55bb67e6fa2e2b26e65473ddfc33b4413c095b634a27b4a7f23601da87d8919
+scraped_at: 2026-11-12T09:55:22+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8dec125b08b99fa1e20cb344826969688749c59e346ab1bf99480f792da8146d
 ---
 
 本模块提供识别当前设备的涉诈行为风险能力和自动化点击、设备农场等作弊行为检测能力。
@@ -108,7 +108,7 @@ detectFraudRisk(params: FraudDetectionRequest): Promise<string>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 401 | Invalid parameters. |
+| 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | 1012500001 | Internal error. API call limit exceeded.  Internal error. Internal interface invocation exception. |
 | 1012500002 | The network is unreachable. |
 | 1012500003 | Access cloud server fail. |

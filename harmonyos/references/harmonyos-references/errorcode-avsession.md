@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 媒体会话管理错误码
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > 错误码 > 媒体会话管理错误码
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:15+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:25e6cef3a16d2fee6e09c43df2e1b60199900c7c6c05004fe9630a49033722bd
+scraped_at: 2026-11-12T09:56:31+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:280708f60fde8694f0924ea41edf158f969d209fdcb1d5084a517ed0f8d69355
 ---
 
 **说明** 
@@ -1172,3 +1172,21 @@ DRM密钥响应的处理过程出现了问题。
 **处理步骤**
 
 当前远端设备的DRM出现异常，更新DRM组件之后重新发起会话。
+
+## 6700101 会话服务未运行
+
+**错误信息**
+
+Session service is not running.
+
+**错误描述**
+
+会话服务未运行或者会话服务通信失败。
+
+**可能原因**
+
+会话重启过程中服务终止，或者会话服务通信异常。
+
+**处理步骤**
+
+定时重试，超过3s仍失败时，停止对该会话服务操作。

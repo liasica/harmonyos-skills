@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-transfo
 title: 使用PixelMap完成图像变换
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片编辑和处理 > 使用PixelMap完成图像变换
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:11+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d5ddf151145d3c631de789ac9af5907b9dc3059de2b2458d691a230b96cc84e7
+scraped_at: 2026-11-12T09:52:06+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f615de844d911d22227f8d7df4697bf5961aebed1c0dd0f1df2d93119bd6e90c
 ---
 
 图片处理指对PixelMap进行相关的操作，如获取图片信息、裁剪、缩放、偏移、旋转、翻转、设置透明度、读写像素数据等。图片处理主要包括图像变换、[位图操作](image-pixelmap-operation.md)，本文介绍图像变换。
@@ -31,7 +31,7 @@ content_hash: sha256:d5ddf151145d3c631de789ac9af5907b9dc3059de2b2458d691a230b96c
 
    原图：
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/AspJQ9DvSwy2U9NyQfPh_Q/zh-cn_image_0000002779691024.jpeg)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/U_XLXaLxSgCKCHt4q37KgQ/zh-cn_image_0000002815399437.jpeg)
 
    * 裁剪
 
@@ -48,7 +48,7 @@ content_hash: sha256:d5ddf151145d3c631de789ac9af5907b9dc3059de2b2458d691a230b96c
      });
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/f2mfKohHQmKYSTkXZVM_6w/zh-cn_image_0000002809010645.jpeg)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/l-voHbYURNiia4GQ0Fnjjg/zh-cn_image_0000002786519862.jpeg)
    * 缩放
 
      ```typescript
@@ -59,18 +59,17 @@ content_hash: sha256:d5ddf151145d3c631de789ac9af5907b9dc3059de2b2458d691a230b96c
      });
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/pUXHTe90Qr6DhTD4zlIO_w/zh-cn_image_0000002809050559.jpeg)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/94/v3/5TssumNYSFWB6HIxDQhHqw/zh-cn_image_0000002786359934.jpeg)
    * 平移
 
      ```typescript
-     // 向下平移100。
-     // 向右平移100。
+     // 向右平移100像素并向下平移100像素。
      this.pixelMap.translate(100, 100).then(() => {
        // ...
      });
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/79/v3/dvWMlIr0TRC4Hr8ldTFPrA/zh-cn_image_0000002779850994.jpeg)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/n6aPECk6SOW8CmQDweI9hQ/zh-cn_image_0000002815559355.jpeg)
    * 旋转
 
      ```typescript
@@ -80,7 +79,7 @@ content_hash: sha256:d5ddf151145d3c631de789ac9af5907b9dc3059de2b2458d691a230b96c
      });
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/63Sj7iEuRQWkKpeGz5zo2w/zh-cn_image_0000002779691026.jpeg)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/zwgx20DKQa-rnoX01VRFAg/zh-cn_image_0000002815399439.jpeg)
    * 翻转
 
      ```typescript
@@ -90,7 +89,7 @@ content_hash: sha256:d5ddf151145d3c631de789ac9af5907b9dc3059de2b2458d691a230b96c
      });
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/38/v3/7YOcdfxmR0GRPg33NKWdpQ/zh-cn_image_0000002809010647.jpeg)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/WZpRp5gqS0qTNvNZ-3WqGA/zh-cn_image_0000002786519864.jpeg)
 
      ```typescript
      // 水平翻转。
@@ -99,7 +98,7 @@ content_hash: sha256:d5ddf151145d3c631de789ac9af5907b9dc3059de2b2458d691a230b96c
      });
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/yDtK13D_RmqImwooqP-JXQ/zh-cn_image_0000002809050561.jpeg)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/LdQCL5DNTJGgUx4V6Uoebg/zh-cn_image_0000002786359936.jpeg)
    * 透明度
 
      ```typescript
@@ -109,8 +108,4 @@ content_hash: sha256:d5ddf151145d3c631de789ac9af5907b9dc3059de2b2458d691a230b96c
      });
      ```
 
-     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/GLel0CBkRlqhMCGQDsFlYg/zh-cn_image_0000002779850996.png)
-
-## 示例代码
-
-* [拼图](https://gitcode.com/HarmonyOS_Samples/game-puzzle)
+     ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/3IqFihUMS6CewJC5tzQoUw/zh-cn_image_0000002815559357.png)

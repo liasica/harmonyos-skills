@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-custom
 title: "@CustomEnv：自定义环境变量"
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 响应式环境变量 > @CustomEnv：自定义环境变量
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:10+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:54:30+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:9fa2a74672acbe3590b2bb108e849885a20c5b5e8fe0439a5428638c1b10b188
 ---
 

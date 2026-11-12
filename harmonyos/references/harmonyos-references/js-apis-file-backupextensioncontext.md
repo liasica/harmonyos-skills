@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.file.BackupExtensionContext (备份恢复扩展能力)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > @ohos.file.BackupExtensionContext (备份恢复扩展能力)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:31+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:0742ca08b928c79610ee76458cabdcd127fd4da64e41210b31271fc863ae5761
+scraped_at: 2026-11-12T09:55:04+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a63b8e0e7fd412fd1ea185da659cf89d587bf0b4867d7934cd139ecb4e9529b1
 ---
 
-BackupExtensionContext是BackupExtensionAbility的上下文环境，继承自ExtensionContext，用于在备份恢复过程中获取临时目录。
+BackupExtensionContext是BackupExtensionAbility的上下文环境，继承自[ExtensionContext](js-apis-inner-application-extensioncontext.md)，用于在备份恢复过程中获取临时目录。
 
 BackupExtensionContext模块提供访问特定BackupExtensionAbility资源的能力。应用实现备份恢复扩展能力时，可通过该上下文获取el1（设备级加密区）或el2（用户级加密区）对应的临时目录，用于临时保存待备份数据或读取待恢复数据，从而简化备份恢复扩展能力开发，并按数据安全等级隔离临时数据。对于扩展的BackupExtensionAbility，可直接将BackupExtensionContext作为上下文环境，或者定义一个继承自BackupExtensionContext的类型作为上下文环境。
 

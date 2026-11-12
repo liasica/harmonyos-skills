@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-customize
 title: 能力说明
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 配置构建流程 > 配置多目标产物 > 能力说明
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:25+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:e8bad0935abbbc5d5085742937782cd3c47420fc9ae09665fa0bfb4319662f3e
+scraped_at: 2026-11-12T09:53:06+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3d927739a26048d049f908563517591ab620306bbeb35b50597eb98269203324
 ---
 
 通常情况下，应用厂商会根据不同的部署环境，不同的目标人群，不同的运行环境等，将同一个应用定制为不同的版本，如国内版、国际版、普通版、VIP版、免费版、付费版等。针对以上场景，DevEco Studio支持通过少量的代码配置以实例化不同的差异版本，在编译构建过程中实现一个应用构建出不同的目标产物版本，从而实现源代码、资源文件等的高效复用。
@@ -453,7 +453,7 @@ struct Index {
       {
         "name": "default",
         "signingConfig": "default",
-        "compatibleSdkVersion": "26.0.0",
+        "compatibleSdkVersion": "26.0.1",
         "runtimeOS": "HarmonyOS",
       }
     ],
@@ -493,7 +493,7 @@ struct Index {
 
 ### 定义产物的资源
 
-每个target使用的资源文件可能存在差异，在开发过程中，开发者可以将每个target所使用的资源存放在不同的资源目录下。其中，ArkTS工程支持对main目录下的资源文件目录（resource）进行定制；JS工程支持对main目录下的资源文件目录（resource）及 Ability下的资源文件目录（res）进行定制。如下为ArkTS工程的资源文件目录定制示例：
+每个target使用的资源文件可能存在差异，在开发过程中，开发者可以将每个target所使用的资源存放在不同的资源目录下。其中，ArkTS工程支持对main目录下的资源文件目录（resource）进行定制；JS工程支持对main目录下的资源文件目录（resource）及Ability下的资源文件目录（res）进行定制。如下为ArkTS工程的资源文件目录定制示例：
 
 ```json5
 { 
@@ -605,7 +605,7 @@ struct Index {
 
 ### 定义C++工程依赖的.so文件
 
-在 C++ 工程中，可以对每个target依赖的.so文件进行定制。例如某模块依赖了function1.so、function2.so和function3.so三个文件，其中target为default的产物依赖了function1.so和function2.so；其中target为vip的产物依赖了function1.so和 function3.so，则示例代码如下所示：
+在C++工程中，可以对每个target依赖的.so文件进行定制。例如某模块依赖了function1.so、function2.so和function3.so三个文件，其中target为default的产物依赖了function1.so和function2.so；其中target为vip的产物依赖了function1.so和 function3.so，则示例代码如下所示：
 
 ```json5
 {
@@ -711,7 +711,7 @@ hvigorw --mode module -p product=default -p module=library@free -p buildMode=deb
 
 ### 定义C++工程依赖的.so文件
 
-在 C++ 工程中，可以对每个target依赖的.so文件进行定制。例如某模块依赖了function1.so、function2.so和function3.so三个文件，其中target为default的产物依赖了function1.so和function2.so；其中target为vip的产物依赖了function1.so和 function3.so，则示例代码如下所示：
+在C++工程中，可以对每个target依赖的.so文件进行定制。例如某模块依赖了function1.so、function2.so和function3.so三个文件，其中target为default的产物依赖了function1.so和function2.so；其中target为vip的产物依赖了function1.so和 function3.so，则示例代码如下所示：
 
 ```json5
 {
@@ -820,7 +820,7 @@ APP用于应用/元服务上架发布，针对不同的应用场景，可以定�
 
 **定义目标产物product**
 
-每一个product对应一个定制的APP包，因此，在定制APP多目标构建产物前，应提前规划好需要定制的product名称。例如，定义productA和productB。工程级build-profile.json5文件示例如下：
+每一个product对应一个定制的APP包，因此，在定制APP多目标构建产物前，应提前规划好需要定制的product名称。例如，定义productA和productB。工程级build-profile.json5文件示例如下。
 
 在定制product时，必须存在"default"的product，否则编译时会出现错误。
 
@@ -835,17 +835,17 @@ APP用于应用/元服务上架发布，针对不同的应用场景，可以定�
     { 
       "name": "default", 
       "signingConfig": "default", 
-      "compatibleSdkVersion": "26.0.0", 
+      "compatibleSdkVersion": "26.0.1", 
       "runtimeOS": "HarmonyOS", 
     }, 
     { 
       "name": "productA", 
-      "compatibleSdkVersion": "26.0.0", 
+      "compatibleSdkVersion": "26.0.1", 
       "runtimeOS": "HarmonyOS", 
     }, 
     { 
       "name": "productB", 
-      "compatibleSdkVersion": "26.0.0", 
+      "compatibleSdkVersion": "26.0.1", 
       "runtimeOS": "HarmonyOS", 
     } 
   ], 
@@ -872,7 +872,7 @@ APP用于应用/元服务上架发布，针对不同的应用场景，可以定�
       { 
         "name": "default", 
         "signingConfig": "default", 
-        "compatibleSdkVersion": "26.0.0", 
+        "compatibleSdkVersion": "26.0.1", 
         "runtimeOS": "HarmonyOS", 
         "output": { 
           "artifactName": "customizedProductOutputName-1.0.0"  //产物名称为customizedProductOutputName-1.0.0
@@ -881,7 +881,7 @@ APP用于应用/元服务上架发布，针对不同的应用场景，可以定�
       }, 
       { 
         "name": "productA", 
-        "compatibleSdkVersion": "26.0.0", 
+        "compatibleSdkVersion": "26.0.1", 
         "runtimeOS": "HarmonyOS", 
         "output": { 
           "artifactName": "customizedProductOutputNameA-1.0.0"  //产物名称为customizedProductOutputNameA-1.0.0
@@ -890,7 +890,7 @@ APP用于应用/元服务上架发布，针对不同的应用场景，可以定�
       }, 
       { 
         "name": "productB", 
-        "compatibleSdkVersion": "26.0.0", 
+        "compatibleSdkVersion": "26.0.1", 
         "runtimeOS": "HarmonyOS", 
         "output": { 
           "artifactName": "customizedProductOutputNameB-1.0.0" //产物名称为customizedProductOutputNameB-1.0.0
@@ -923,21 +923,21 @@ APP用于应用/元服务上架发布，针对不同的应用场景，可以定�
     { 
       "name": "default", 
       "signingConfig": "default",
-      "compatibleSdkVersion": "26.0.0", 
+      "compatibleSdkVersion": "26.0.1", 
       "runtimeOS": "HarmonyOS", 
       "bundleName": "com.example00.com"  //定义default的bundleName信息 
     }, 
     { 
       "name": "productA", 
       "signingConfig": "default", 
-      "compatibleSdkVersion": "26.0.0", 
+      "compatibleSdkVersion": "26.0.1", 
       "runtimeOS": "HarmonyOS", 
       "bundleName": "com.example01.com"  //定义productA的bundleName信息
     }, 
     { 
       "name": "productB", 
       "signingConfig": "default",
-      "compatibleSdkVersion": "26.0.0", 
+      "compatibleSdkVersion": "26.0.1", 
       "runtimeOS": "HarmonyOS", 
       "bundleName": "com.example02.com"  //定义productB的bundleName信息 
     } 
@@ -969,7 +969,7 @@ APP用于应用/元服务上架发布，针对不同的应用场景，可以定�
     { 
       "name": "default", 
       "signingConfig": "default",
-      "compatibleSdkVersion": "26.0.0", 
+      "compatibleSdkVersion": "26.0.1", 
       "runtimeOS": "HarmonyOS", 
       "bundleName": "com.example00.com",   
       "bundleType": "app" //定义default的bundleType信息 
@@ -977,7 +977,7 @@ APP用于应用/元服务上架发布，针对不同的应用场景，可以定�
     { 
       "name": "productA", 
       "signingConfig": "default",
-      "compatibleSdkVersion": "26.0.0", 
+      "compatibleSdkVersion": "26.0.1", 
       "runtimeOS": "HarmonyOS", 
       "bundleName": "com.example01.com",    
       "bundleType": "atomicService"  //定义productA的bundleType信息 
@@ -985,7 +985,7 @@ APP用于应用/元服务上架发布，针对不同的应用场景，可以定�
     { 
       "name": "productB", 
       "signingConfig": "default",
-      "compatibleSdkVersion": "26.0.0", 
+      "compatibleSdkVersion": "26.0.1", 
       "runtimeOS": "HarmonyOS", 
       "bundleName": "com.example02.com",    
       "bundleType": "atomicService"  //定义productB的bundleType信息 
@@ -1008,7 +1008,7 @@ APP用于应用/元服务上架发布，针对不同的应用场景，可以定�
 
 通常情况下，您首先需要在签名配置界面或工程的build-profile.json5文件中配置签名信息。例如在**File > Project Structure > Project > Signing Configs**界面，分别配置default、productA和productB的签名信息，如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d/v3/qgapuJD0SjeNgRwRyE-UTA/zh-cn_image_0000002731382535.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/23/v3/vzH1AA2fRBin0PDcju-0gg/zh-cn_image_0000002779407102.png)
 
 签名信息配置完成后，再添加各个product对应的签名文件，示例如下所示：
 
@@ -1021,21 +1021,21 @@ APP用于应用/元服务上架发布，针对不同的应用场景，可以定�
     { 
       "name": "default", 
       "signingConfig": "default", //定义default的签名文件信息
-      "compatibleSdkVersion": "26.0.0", 
+      "compatibleSdkVersion": "26.0.1", 
       "runtimeOS": "HarmonyOS", 
       "bundleName": "com.example00.com"  
     }, 
     { 
       "name": "productA", 
       "signingConfig": "productA", //定义productA的签名文件信息
-      "compatibleSdkVersion": "26.0.0", 
+      "compatibleSdkVersion": "26.0.1", 
       "runtimeOS": "HarmonyOS", 
       "bundleName": "com.example01.com"  
     }, 
     { 
       "name": "productB", 
       "signingConfig": "productB", //定义productB的签名文件信息
-      "compatibleSdkVersion": "26.0.0", 
+      "compatibleSdkVersion": "26.0.1", 
       "runtimeOS": "HarmonyOS", 
       "bundleName": "com.example02.com" 
     } 
@@ -1067,7 +1067,7 @@ products中的icon和label字段在编译时会替换[app.json5](app-configurati
       {
         "name": "default",
         "signingConfig": "default",
-        "compatibleSdkVersion": "26.0.0",
+        "compatibleSdkVersion": "26.0.1",
         "runtimeOS": "HarmonyOS",
         "icon":"$media:default_icon", //定义default的icon
         "label":"$string:default_name", //定义default的label
@@ -1075,14 +1075,14 @@ products中的icon和label字段在编译时会替换[app.json5](app-configurati
       {
         "name": "productA",
         "signingConfig": "default",
-        "compatibleSdkVersion": "26.0.0",
+        "compatibleSdkVersion": "26.0.1",
         "icon":"$media:productA_icon", //定义productA的icon
         "label":"$string:productA_name", //定义productA的label
       },
       {
         "name": "productB",
         "signingConfig": "default",
-        "compatibleSdkVersion": "26.0.0",
+        "compatibleSdkVersion": "26.0.1",
         "runtimeOS": "HarmonyOS",
         "icon":"$media:productB_icon", //定义productB的icon
         "label":"$string:productB_name",  //定义productB的label
@@ -1116,21 +1116,21 @@ products中的icon和label字段在编译时会替换[app.json5](app-configurati
       { 
         "name": "default", 
         "signingConfig": "default",
-        "compatibleSdkVersion": "26.0.0", 
+        "compatibleSdkVersion": "26.0.1", 
         "runtimeOS": "HarmonyOS", 
         "bundleName": "com.example00.com"  
       }, 
       { 
         "name": "productA", 
         "signingConfig": "productA",
-        "compatibleSdkVersion": "26.0.0", 
+        "compatibleSdkVersion": "26.0.1", 
         "runtimeOS": "HarmonyOS", 
         "bundleName": "com.example01.com"  
       }, 
       { 
         "name": "productB", 
         "signingConfig": "productB",  
-        "compatibleSdkVersion": "26.0.0", 
+        "compatibleSdkVersion": "26.0.1", 
         "runtimeOS": "HarmonyOS", 
         "bundleName": "com.example02.com" 
       } 
@@ -1168,14 +1168,14 @@ products中的icon和label字段在编译时会替换[app.json5](app-configurati
 
 每个target对应一个HAP，每个product对应一个APP包，在编译构建时，如果存在多product或多target时，您可以指定编译具体的包。
 
-单击右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/QaUxLrEeRqqI4a6wVqd7UA/zh-cn_image_0000002731382527.png)图标，指定需要打包的**Product**及**Target**，然后单击**Apply**保存。例如选择"ProductA"中，entry模块对应的"free" Target。
+单击右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/SLjslarfQGeXKAhHJGym1Q/zh-cn_image_0000002779407098.png)图标，指定需要打包的**Product**及**Target**，然后单击**Apply**保存。例如选择"ProductA"中，entry模块对应的"free" Target。
 
 * **Product**：选择需要构建的APP包。
 * **Build Mode**：选择[编译模式](ide-hvigor-compilation-options-customizing-guide.md#section192461528194916)。
 * **Product Info**：该APP包的BundleName和SigningConfig信息。
 * **Target Select**：选择各个模块的Target，该Target需要包含在定义的Product中才能选择，如果未包含则显示"No Target to apply"。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/j-qK1mLxQd-KuYUN26GhKA/zh-cn_image_0000002701663304.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/Y0-dG6F4T4mZf0OAGiUS3Q/zh-cn_image_0000002808886741.png)
 
 然后执行编译构建APP/HAP的任务：
 
@@ -1184,17 +1184,17 @@ products中的icon和label字段在编译时会替换[app.json5](app-configurati
 
 如果您想将某个模块下的指定target打包生成HAP，可以在工程目录中，单击模块名，然后再单击**Build > Make Module** **‘模块名** **’**，此时DevEco Studio将构建生成模块下指定target对应的包。例如，按照上述配置，此时DevEco Studio将构建生成entry模块下free的HAP。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/wSfPh5abTD2W22V3FL9sgQ/zh-cn_image_0000002701823224.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/bCAK-6OoQ1WtU01HJei4Fw/zh-cn_image_0000002808766659.png)
 
 ## 调试和运行指定的Target
 
-使用DevEco Studio调试或运行应用/元服务时，每个模块只能选择其中的一个target运行，可以通过单击右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/9lp7M_irTWC6CX9-SnH-YQ/zh-cn_image_0000002701823228.png)图标，指定需要调试或运行的**Product**下对应的**Module Target**，然后单击**Apply**保存。
+使用DevEco Studio调试或运行应用/元服务时，每个模块只能选择其中的一个target运行，可以通过单击右上角的![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c9/v3/NqQXV6EFTc2t_7shTi7kpg/zh-cn_image_0000002779567078.png)图标，指定需要调试或运行的**Product**下对应的**Module Target**，然后单击**Apply**保存。
 
 **说明** 
 
 在选择需要调试或运行的target时，需要注意选择该target所属的Product，否则将找不到可调试和运行的target。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/3VUEFhDXSaWpUQrsTtKsIg/zh-cn_image_0000002701663306.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/13/v3/gRsfcBV2SVCVjtTIHfN95Q/zh-cn_image_0000002779567080.png)
 
 ## 多产物构建target
 
@@ -1240,7 +1240,7 @@ products中的icon和label字段在编译时会替换[app.json5](app-configurati
 
 多个target的优先级顺序为：align target > 命令行指定模块target > 父级模块target > fallback target > default。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f7/v3/kmzFS8w1Rie3zJod1x9xgA/zh-cn_image_0000002731542507.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/ufRibB83Rxmb55gTHXZHkg/zh-cn_image_0000002779407100.png)
 
 举例说明：
 
@@ -1298,7 +1298,7 @@ hvigorw --mode module -p module=entry -c properties.ohos.align.target=A -c prope
    ```
 5. 再次执行Sync即可导入插件。导入成功后，可在Hvigor任务树中看到以Seq结尾的新增任务。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9a/v3/mRTg3RMyS5-t79yfGEG4mA/zh-cn_image_0000002731382531.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/o9p9tn35S0-ghzBiU3LgHg/zh-cn_image_0000002808766661.png)
 
 ### 配置依赖
 

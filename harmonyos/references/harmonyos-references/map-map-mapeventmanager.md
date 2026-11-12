@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/map-map-m
 title: Interface (MapEventManager)
 breadcrumb: API参考 > 应用服务 > Map Kit（地图服务） > ArkTS API > map（地图显示功能） > Interface (MapEventManager)
 category: harmonyos-references
-scraped_at: 2026-09-05T06:21:11+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:0cfd16d119fc0e619f79e19452d5fd46c30bdd7cbb5d00ebd6f1a57b591250c9
+scraped_at: 2026-11-12T09:57:27+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e24e2dd1746eddbe6e57e42f933779d501b8ee4fb15e1ee97abbd86f5ad36723
 ---
 
 ## 导入模块
@@ -1204,7 +1204,7 @@ mapEventManager.on("markerDragEnd", callback3);
 
 off(type: 'markerDragEnd', callback?: Callback<Marker>): void
 
-取消监听标记拖动结束事件。支持传递多个callback异步回调。
+取消监听标记拖拽结束事件。支持传递多个callback异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -1980,7 +1980,7 @@ mapEventManager.off('error');
 
 on(type: 'indoorMapEnter', callback: Callback<IndoorMapInfo>): void
 
-监听室内图进入事件。
+监听室内图进入事件，使用callback异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -1988,7 +1988,7 @@ on(type: 'indoorMapEnter', callback: Callback<IndoorMapInfo>): void
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 在5.1.1(19)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。
+**设备行为差异：** 在5.1.1(19)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。在26.0.1及之后版本该接口在phone、tablet、PC/2in1和Car均可正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 5.1.1(19)
 
@@ -2020,7 +2020,7 @@ mapEventManager.on("indoorMapEnter", callback);
 
 off(type: 'indoorMapEnter', callback?: Callback<IndoorMapInfo>): void
 
-取消监听室内图进入事件。
+取消监听室内图进入事件，使用callback异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -2028,7 +2028,7 @@ off(type: 'indoorMapEnter', callback?: Callback<IndoorMapInfo>): void
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 在5.1.1(19)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。
+**设备行为差异：** 在5.1.1(19)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。在26.0.1及之后版本该接口在phone、tablet、PC/2in1和Car均可正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 5.1.1(19)
 
@@ -2063,7 +2063,7 @@ mapEventManager.off('indoorMapEnter', callback);
 
 on(type: 'indoorMapExit', callback: Callback<void>): void
 
-监听室内图退出事件。
+监听室内图退出事件，使用callback异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -2071,7 +2071,7 @@ on(type: 'indoorMapExit', callback: Callback<void>): void
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 在5.1.1(19)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。
+**设备行为差异：** 在5.1.1(19)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。在26.0.1及之后版本该接口在phone、tablet、PC/2in1和Car均可正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 5.1.1(19)
 
@@ -2103,7 +2103,7 @@ mapEventManager.on("indoorMapExit", callback);
 
 off(type: 'indoorMapExit', callback?: Callback<void>): void
 
-取消监听室内图退出事件。
+取消监听室内图退出事件，使用callback异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -2111,7 +2111,7 @@ off(type: 'indoorMapExit', callback?: Callback<void>): void
 
 **系统能力：** SystemCapability.Map.Core
 
-**设备行为差异：** 在5.1.1(19)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。
+**设备行为差异：** 在5.1.1(19)及之后版本该接口在phone、tablet和PC/2in1均可正常使用，在其他设备中返回801错误码。在26.0.1及之后版本该接口在phone、tablet、PC/2in1和Car均可正常使用，在其他设备中返回801错误码。
 
 **起始版本：** 5.1.1(19)
 
@@ -2146,7 +2146,7 @@ mapEventManager.off('indoorMapExit', callback);
 
 on(type: 'massPointOverlayClick', callback: MassPointOverlayCallback): void
 
-监听海量点图层点击事件。
+监听海量点图层点击事件，使用callback异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -2179,7 +2179,7 @@ mapEventManager.on('massPointOverlayClick', massCallback);
 
 off(type: 'massPointOverlayClick', callback?: MassPointOverlayCallback): void
 
-取消监听海量点图层点击事件。
+取消监听海量点图层点击事件，使用callback异步回调。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -2193,7 +2193,7 @@ off(type: 'massPointOverlayClick', callback?: MassPointOverlayCallback): void
 
 | **参数名** | **类型** | 必填 | **说明** |
 | --- | --- | --- | --- |
-| type | string | 是 | 'massPointOverlayClick'：监听海量点图层点击退出事件。 |
+| type | string | 是 | 'massPointOverlayClick'：监听海量点图层点击事件。 |
 | callback | [MassPointOverlayCallback](map-map-types.md#masspointoverlaycallback) | 否 | 回调函数，无返回结果，取消监听海量点图层点击事件。  - callback为空：取消所有callback回调。  - callback非空：取消指定的callback回调。 |
 
 **示例：**

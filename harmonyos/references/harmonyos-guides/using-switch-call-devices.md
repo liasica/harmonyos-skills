@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/using-switch-
 title: 使用组件切换通话设备
 breadcrumb: 指南 > 媒体 > AVSession Kit（音视频播控服务） > 分布式媒体会话 > 使用组件切换通话设备
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:29+08:00
-doc_updated_at: 2026-10-26
+scraped_at: 2026-11-12T09:52:03+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:569ce7d0de8c834409928f7ee3b82aaaa260ee4f4355f94ddf0fbf7d13de493f
 ---
 

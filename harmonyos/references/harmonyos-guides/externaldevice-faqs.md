@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/externaldevic
 title: 常见问题
 breadcrumb: 指南 > 系统 > 硬件 > Driver Development Kit（驱动开发服务） > 常见问题
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:10+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:e4fcd3153eed1e4e7b1db322340bedc62adbe22873456fef87f787f278b9ba14
+scraped_at: 2026-11-12T09:51:51+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f31a3ca2c7996f017fa8d8decd89a23a9159cfb4c853de21250b563c15da06fd
 ---
 
 ## 编译或运行时无法找到头文件
@@ -45,7 +45,7 @@ content_hash: sha256:e4fcd3153eed1e4e7b1db322340bedc62adbe22873456fef87f787f278b
 
 ### 解决措施
 
-根据应用调试中[安装HAP时提示“code:9568347 error: install parse native so failed”错误，或者运行时候提示“TypeError：Cannot read property xxx of undefined”错误](../harmonyos-faqs-V5/faqs-app-debugging-14-V5.md)提供的解决方法，在build-profile.json5中的buildOption/externalNativeOptions内手动配置abiFilters的值。
+设备支持的Abi类型与C++工程中配置的Abi类型不匹配。请参考[bm工具错误码9568347](../doccenter-capabilities/bm-tool.md#section9568347-解析本地so文件失败)提供的解决方法，通过hdc shell执行param get const.product.cpu.abilist查询设备支持的Abi列表，在模块级build-profile.json5的abiFilters参数中配置设备支持的Abi类型。
 
 ## 已申请ohos.permission.ACCESS\_DDK\_DRIVERS权限，安装HAP时报错9568289
 

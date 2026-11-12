@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: ArkUI_NativeModule
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 模块 > ArkUI_NativeModule
 category: harmonyos-references
-scraped_at: 2026-09-25T07:10:29+08:00
-doc_updated_at: 2026-09-24
-content_hash: sha256:ef999fff29a86dca89284dcc5fb78a1a3a4d04d13981c6ac2f4a9388de82bb7e
+scraped_at: 2026-11-12T09:54:37+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d056baec498e0fe05b0335028a9394f5ff069bb8af81a6d8819b0088013b6ab2
 ---
 
 ## 概述
@@ -41,6 +41,7 @@ content_hash: sha256:ef999fff29a86dca89284dcc5fb78a1a3a4d04d13981c6ac2f4a9388de8
 | [custom\_attributes.h](capi-native-node-node-attributes-custom-attributes-h.md) | 为NativeNode API提供自定义组件的测量、布局和绘制事件类型定义，用于注册和处理测量、布局以及内容层、前景层和浮层的绘制事件。 |
 | [grid.h](capi-grid-h.md) | 定义Grid组件的枚举和接口。 |
 | [list.h](capi-list-h.md) | 定义List组件的枚举和接口。 |
+| [list\_item.h](capi-list-item-h.md) | 定义ListItem组件侧滑操作相关的枚举和接口。 |
 | [navigation\_router.h](capi-navigation-router-h.md) | 定义Navigation或Router组件的枚举和接口。 |
 | [scroll.h](capi-scroll-h.md) | 定义Scroll组件相关的枚举。 |
 | [swiper.h](capi-swiper-h.md) | 定义Swiper组件的枚举和接口。 |

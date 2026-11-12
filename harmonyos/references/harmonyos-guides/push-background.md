@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-backgrou
 title: 推送后台消息
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 推送场景化消息 > 推送后台消息
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:22e9a8e6a4c0dac7522ebaf39014f507b94cdfec8bf40f0480a6e241970b6f3b
+scraped_at: 2026-11-12T09:52:34+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ef5adf8d1047be68e63442a9b0849c19f9083258263f821a5cd133691735938f
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:22e9a8e6a4c0dac7522ebaf39014f507b94cdfec8bf40f0480a6e241970
 
 ## 约束与限制
 
-推送后台消息能力支持Phone、Tablet、PC/2in1。并且从5.1.0(18)版本开始，新增支持Wearable设备；从5.1.1(19)版本开始，新增支持TV设备。
+推送后台消息能力支持Phone、Tablet、PC/2in1。并且从API版本5.1.0(18)开始，新增支持Wearable设备；从API版本5.1.1(19)开始，新增支持TV设备；从API版本26.0.1开始，新增支持Car设备。
 
 ## 频控规则
 

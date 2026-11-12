@@ -3,20 +3,17 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-n
 title: nfctech (标准NFC-Tag Nfc 技术)
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > ArkTS API > tag > nfctech (标准NFC-Tag Nfc 技术)
 category: harmonyos-references
-scraped_at: 2026-11-04T08:34:43+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:48784114b3736cfa025dc07154e5a7940d32634bc5e3d13b3159c916dd2fa1d1
+scraped_at: 2026-11-12T09:55:35+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:15d2ca8a37a370239fd03159cf0be9ec5b792a2af0578517ebb88994bcb52c68
 ---
 
 本模块主要用于采用不同Nfc技术的Tag的读写操作。
 
 **说明** 
 
-本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
-
-**注意** 
-
-导入tag模块编辑器报错，在某个具体设备型号上能力可能超出工程默认设备定义的能力集范围，如需要使用此部分能力需额外配置自定义syscap，参考[syscap开发指南](syscap.md)。
+* 本模块首批接口从API version 7开始支持。后续版本的新增接口，采用上角标单独标记接口的起始版本。
+* 导入tag模块编辑器报错，在某个具体设备型号上能力可能超出工程默认设备定义的能力集范围，如需要使用此部分能力需额外配置自定义syscap，参考[syscap开发指南](syscap.md)。
 
 ## 导入模块
 
@@ -445,7 +442,7 @@ function nfcTechDemo() {
             }
         });
     } catch (businessError) {
-        console.error(`isoDep isExtendedApduSupported AsyncCallback Code: ${(businessError as Business).code}, message: ${(businessError as Business).message}`);
+        console.error(`isoDep isExtendedApduSupported AsyncCallback Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
     }
 }
 ```
@@ -807,7 +804,7 @@ function nfcTechDemo() {
     try {
         ndefTag.writeNdef(ndefMessage, (err : BusinessError)=> {
             if (err) {
-                console.error("ndef writeNdef AsyncCallback Code: ${err.code}, message: ${err.message}");
+                console.error(`ndef writeNdef AsyncCallback Code: ${err.code}, message: ${err.message}`);
             } else {
                 console.info("ndef writeNdef AsyncCallback success.");
             }
@@ -905,7 +902,7 @@ function nfcTechDemo() {
         ndefTag.setReadOnly().then(() => {
             console.info("ndef setReadOnly Promise success.");
         }).catch((err : BusinessError)=> {
-            console.error("ndef setReadOnly Promise err Code: ${err.code}, message: ${err.message}");
+            console.error(`ndef setReadOnly Promise err Code: ${err.code}, message: ${err.message}`);
         });
     } catch (businessError) {
         console.error(`ndef setReadOnly Promise catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
@@ -1089,7 +1086,7 @@ function nfcTechDemo() {
         mifareClassic.authenticateSector(sectorIndex, key, true).then(() => {
             console.info("mifareClassic authenticateSector Promise success.");
         }).catch((err : BusinessError)=> {
-            console.error("mifareClassic authenticateSector Promise errCode: ${err.code}, " + "message: ${err.message}");
+            console.error(`mifareClassic authenticateSector Promise errCode: ${err.code}, message: ${err.message}`);
         });
     } catch (businessError) {
         console.error(`mifareClassic authenticateSector Promise catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
@@ -1349,7 +1346,7 @@ function nfcTechDemo() {
         mifareClassic.writeSingleBlock(blockIndex, rawData).then(() => {
             console.info("mifareClassic writeSingleBlock Promise success.");
         }).catch((err : BusinessError)=> {
-            console.error("mifareClassic writeSingleBlock Promise errCode: ${err.code}, message: ${err.message}");
+            console.error(`mifareClassic writeSingleBlock Promise errCode: ${err.code}, message: ${err.message}`);
         });
     } catch (businessError) {
         console.error(`mifareClassic writeSingleBlock Promise catch businessError Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
@@ -1611,8 +1608,8 @@ function nfcTechDemo() {
         let value = 0x20; // 将其更改为正确的数据
         mifareClassic.decrementBlock(blockIndex, value).then(() => {
             console.info("mifareClassic decrementBlock Promise success.");
-        }).catch((err : BusinessError)=> {
-            console.error("mifareClassic decrementBlock Promise errCode: ${err.code}, message: ${err.message}");
+        }).catch((err: BusinessError)=> {
+            console.error(`mifareClassic decrementBlock Promise errCode: ${err.code}, message: ${err.message}`);
         });
     } catch (businessError) {
         console.error(`mifareClassic decrementBlock Promise catch businessError: Code: ${(businessError as BusinessError).code}, message: ${(businessError as BusinessError).message}`);
@@ -1671,10 +1668,9 @@ function nfcTechDemo() {
     try {
         let blockIndex = 1; // 将其更改为正确的 index
         let value = 0x20; // 将其更改为正确的数据
-        mifareClassic.decrementBlock(blockIndex, value, (err : BusinessError)=> {
+        mifareClassic.decrementBlock(blockIndex, value, (err: BusinessError)=> {
             if (err) {
-                console.error("mifareClassic decrementBlock AsyncCallback errCode:" +
-                  "${err.code}, message: ${err.message}");
+                console.error(`mifareClassic decrementBlock AsyncCallback errCode: ${err.code}, message: ${err.message}`);
             } else {
                 console.info("mifareClassic decrementBlock AsyncCallback success.");
             }
@@ -1741,7 +1737,7 @@ function nfcTechDemo() {
         let blockIndex = 1; // 将其更改为正确的 index
         mifareClassic.transferToBlock(blockIndex).then(() => {
             console.info("mifareClassic transferToBlock Promise success.");
-        }).catch((err : BusinessError)=> {
+        }).catch((err: BusinessError)=> {
             console.error(`mifareClassic transferToBlock Promise err Code: ${err.code}, message: ${err.message}`);
         });
     } catch (businessError) {
@@ -1868,7 +1864,7 @@ function nfcTechDemo() {
         let blockIndex = 1; // 将其更改为正确的 index
         mifareClassic.restoreFromBlock(blockIndex).then(() => {
             console.info("mifareClassic restoreFromBlock Promise success.");
-        }).catch((err : BusinessError)=> {
+        }).catch((err: BusinessError)=> {
             console.error(`mifareClassic restoreFromBlock Promise errCode: ${err.code}, message: ${err.message}`);
         });
     } catch (businessError) {
@@ -1926,7 +1922,7 @@ function nfcTechDemo() {
 
     try {
         let blockIndex = 1; // 将其更改为正确的 index
-        mifareClassic.restoreFromBlock(blockIndex, (err : BusinessError)=> {
+        mifareClassic.restoreFromBlock(blockIndex, (err: BusinessError)=> {
             if (err) {
                 console.error(`mifareClassic restoreFromBlock AsyncCallback err Code: ${err.code}, message: ${err.message}`);
             } else {
@@ -2251,9 +2247,9 @@ function nfcTechDemo() {
 
     try {
         let pageIndex = 1; // 将其更改为正确的 index
-        mifareUltralight.readMultiplePages(pageIndex).then((data : number[]) => {
+        mifareUltralight.readMultiplePages(pageIndex).then((data: number[]) => {
             console.info("mifareUltralight readMultiplePages Promise data = " + data);
-        }).catch((err : BusinessError)=> {
+        }).catch((err: BusinessError)=> {
             console.error(`mifareUltralight readMultiplePages Promise Code: ${err.code}, message: ${err.message}`);
         });
     } catch (businessError) {
@@ -2311,7 +2307,7 @@ function nfcTechDemo() {
 
     try {
         let pageIndex = 1; // 将其更改为正确的 index
-        mifareUltralight.readMultiplePages(pageIndex, (err : BusinessError, data : number[])=> {
+        mifareUltralight.readMultiplePages(pageIndex, (err: BusinessError, data: number[])=> {
             if (err) {
                 console.error(`mifareUltralight readMultiplePages AsyncCallback Code: ${err.code}, message: ${err.message}`);
             } else {
@@ -2382,7 +2378,7 @@ function nfcTechDemo() {
         let rawData = [0x01, 0x02, 0x03, 0x04]; // 必须是4个字节，将其更改为正确的data
         mifareUltralight.writeSinglePage(pageIndex, rawData).then(() => {
             console.info("mifareUltralight writeSinglePage Promise success.");
-        }).catch((err : BusinessError)=> {
+        }).catch((err: BusinessError)=> {
             console.error(`mifareUltralight writeSinglePage Promise err Code: ${err.code}, message: ${err.message}`);
         });
     } catch (businessError) {
@@ -2442,7 +2438,7 @@ function nfcTechDemo() {
     try {
         let pageIndex = 1; // 将其更改为正确的 index
         let rawData = [0x01, 0x02, 0x03, 0x04];  // 必须是4个字节，将其更改为正确的data
-        mifareUltralight.writeSinglePage(pageIndex, rawData, (err : BusinessError)=> {
+        mifareUltralight.writeSinglePage(pageIndex, rawData, (err: BusinessError)=> {
         if (err) {
                 console.error(`mifareUltralight writeSinglePage AsyncCallback Code: ${err.code}, message: ${err.message}`);
             } else {
@@ -2551,7 +2547,7 @@ function nfcTechDemo() {
 
         ndefFormatable.format(ndefMessage).then(() => {
             console.info("ndefFormatable format Promise success.");
-        }).catch((err : BusinessError)=> {
+        }).catch((err: BusinessError)=> {
             console.error(`ndefFormatable format Promise err Code: ${err.code}, message: ${err.message}`);
         });
     } catch (businessError) {

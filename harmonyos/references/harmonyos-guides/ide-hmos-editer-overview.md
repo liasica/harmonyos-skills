@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hmos-edit
 title: 代码阅读
 breadcrumb: 指南 > DevEco Studio（鸿蒙电脑版） > 编写与调试应用 > 代码编辑 > 代码阅读
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:33+08:00
+scraped_at: 2026-11-12T09:53:15+08:00
 doc_updated_at: 2026-10-08
-content_hash: sha256:a9341d1c27b2d8c281e1dd6fd7f04bccabb7da9b33e512131eb58fd8f419cef8
+content_hash: sha256:ee1417fbc411fe5ada103bc5398a81766d2bed6e9d0504523f5a134d2fb34524
 ---
 
 鸿蒙电脑DevEco Studio支持使用多种语言进行应用/元服务的开发，包括ArkTS、JS和C/C++。在编写应用/元服务阶段，可以通过掌握代码编写的各种常用技巧，来提升编码效率。
@@ -14,7 +14,7 @@ content_hash: sha256:a9341d1c27b2d8c281e1dd6fd7f04bccabb7da9b33e512131eb58fd8f41
 
 支持对代码的关键字、运算符、字符串、类、标识符、注释等进行高亮显示。通过切换主题，代码高亮的颜色也会随之变化。开发者可以在**文件** **> 设置** **>** **应用程序 > 外观**中切换**主题**，当前支持**深色模式**和**浅色模式**两种，选择主题之后，代码会有不同的高亮显示效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/pb5FeumhSzeO6Mj8VGIIvw/zh-cn_image_0000002810630841.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/Y0YtVq0FT82ehOHKN6HT1Q/zh-cn_image_0000002810630841.png)
 
 ## 代码跳转
 
@@ -24,25 +24,25 @@ content_hash: sha256:a9341d1c27b2d8c281e1dd6fd7f04bccabb7da9b33e512131eb58fd8f41
 
 在编辑器中，可以按住**Ctrl**键，鼠标单击代码中引用的类、方法、参数、变量等名称，会自动跳转到定义位置；也可以在名称处点击鼠标右键，在弹框中选择**转到** > **转到定义**（或单击快捷键**Ctrl+B**），跳转到定义位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/jWuzvKAuTbGACj3t9W0yuA/zh-cn_image_0000002781311354.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/hGKcYTi9Qaq9fVw5NTgkpg/zh-cn_image_0000002781311354.gif "点击放大")
 
 ### 跳转到实现位置
 
 在编辑器中，选中引用的类、方法、参数、变量等名称后单击鼠标右键，在弹窗中选择**转到 > 转到实现**（或使用快捷键**Ctrl+Alt+B**）跳转到实现位置 。若变量名有多个实现，在弹窗中可选择想要查看的实现位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/78/v3/t8eWyGP4SxW150uFXaJpAw/zh-cn_image_0000002810750949.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/hWZKlmtbTI-ijCwi4vHIkA/zh-cn_image_0000002810750949.png)
 
 ### 跳转到引用位置
 
 在编辑器中，选中引用的类、方法、参数、变量等名称后单击鼠标右键，在弹框中选择**转到 >转到引用**（或使用快捷键**Ctrl+Shift+B**），可以跳转到变量被引用位置。若有多处引用，在弹窗中可选择想要查看的引用位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/54/v3/qeok3P_HR5eS_Mq49_Dz1Q/zh-cn_image_0000002810750935.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/hrA0c9XcTnWAwg8cK4c4Cg/zh-cn_image_0000002810750935.png "点击放大")
 
 ## 跨语言跳转
 
 支持在声明或引用了Native接口的文件中（如d.ts）跨语言跳转至其对应的C++函数，从而提升混合语言开发的开发效率。开发者可以选中接口名称单击右键，在弹出的菜单中选择**转到 >转到实现**（或使用快捷键**Ctrl+Alt+B**）实现跨语言跳转。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/9dRbFKglTlekXWPk8CpN5w/zh-cn_image_0000002781471286.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/SpkfBMvcSKaXgwVgeKU91w/zh-cn_image_0000002781471286.png "点击放大")
 
 ## 代码格式化
 
@@ -50,19 +50,19 @@ content_hash: sha256:a9341d1c27b2d8c281e1dd6fd7f04bccabb7da9b33e512131eb58fd8f41
 
 若想要快速对整个文件的代码进行格式化，可以点击鼠标右键，在弹框中选择**格式化文档**（或使用快捷键**Ctrl+Shift+L**） ；若想要对选定范围的代码进行格式化，可以选中代码并点击鼠标右键，在弹窗中选择**格式化选中内容**。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f1/v3/RCVp4AQVTeayFzpcThTmzQ/zh-cn_image_0000002810750943.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4b/v3/5WXGzEJkQzW23xsDe51w3Q/zh-cn_image_0000002810750943.png "点击放大")
 
 ## 代码折叠
 
 单击编辑器左侧边栏的折叠和展开按钮对代码块进行快速折叠和展开操作。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/JY2sQsuyTUyyCyKxco_Z9Q/zh-cn_image_0000002810630833.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ab/v3/2Ja8oSQ3TLKyR_M2d7ZgCA/zh-cn_image_0000002810630833.gif "点击放大")
 
 ## 代码快速注释
 
 支持对选择的代码块进行快速注释，使用快捷键**Ctrl+/**进行快速注释，对于已注释的代码块，再次使用快捷键**Ctrl+/**取消注释。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3c/v3/a4yA6DahT2axYZtCM1Xxtw/zh-cn_image_0000002781471288.gif "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/R8MZ-fErTAmPPdj90_1w_g/zh-cn_image_0000002781471288.gif "点击放大")
 
 ## 代码查找
 
@@ -73,7 +73,7 @@ content_hash: sha256:a9341d1c27b2d8c281e1dd6fd7f04bccabb7da9b33e512131eb58fd8f41
 1. 打开目标文件，使用快捷键**Ctrl+F**打开查找界面。
 2. 输入需要查找的代码字符串，支持通过大小写匹配、全字符匹配或正则匹配缩小搜索范围。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/hJ9LZSREQ4Si_-di713tcQ/zh-cn_image_0000002781471290.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a2/v3/mTGIvUNbS4m2HMhhgfsUwQ/zh-cn_image_0000002781471290.png)
 
 **说明** 
 
@@ -83,27 +83,27 @@ content_hash: sha256:a9341d1c27b2d8c281e1dd6fd7f04bccabb7da9b33e512131eb58fd8f41
 
 支持在整个项目中查找特定的文本或代码片段，操作步骤如下：
 
-1. 在左侧菜单栏中点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/7BDibRdbQIqkkzjKVqGkgg/zh-cn_image_0000002810750941.png "点击放大")打开查找界面，在搜索框中输入查找内容后，编辑器会在项目中匹配并显示所有搜索结果，点击查找界面右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fa/v3/xnIeSTA7Tuyhwpfd17o0NQ/zh-cn_image_0000002781471292.png "点击放大")收起搜索结果。
+1. 在左侧菜单栏中点击![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/ddS82H_AT7Kb1x89i-T3dA/zh-cn_image_0000002810750941.png "点击放大")打开查找界面，在搜索框中输入查找内容后，编辑器会在项目中匹配并显示所有搜索结果，点击查找界面右上角![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/o44VTkJMRz67d06EsJEVkw/zh-cn_image_0000002781471292.png "点击放大")收起搜索结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f0/v3/KftCiRqVQRmiRN3K8-CPLQ/zh-cn_image_0000002810750945.gif)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/4rsfVLOVQZecz3V7qwEzUw/zh-cn_image_0000002810750945.gif)
 2. 支持通过文件类型和搜索范围过滤搜索结果。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f9/v3/wSVgmpNjTauWLQXO2CCLyA/zh-cn_image_0000002781311350.png)
-3. 点击搜索框右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/491Q6xUTT82_H65OgQbiHA/zh-cn_image_0000002810630831.png)支持替换操作，选择**替换全部**替换所有匹配内容。
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/-a1sYWVhRmu96OfY7YG_GQ/zh-cn_image_0000002781311350.png)
+3. 点击搜索框右侧![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/90/v3/wIxsPh8QRl6IhNwBRo1hWw/zh-cn_image_0000002810630831.png)支持替换操作，选择**替换全部**替换所有匹配内容。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/s0F99rlkRyWMx9Hi6rpHkA/zh-cn_image_0000002781311342.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/pHmu4taQQrGlgH47J0vJFA/zh-cn_image_0000002781311342.png)
 
 ### 全局查找
 
 支持文件名、符号、命令及文本的全局查找。通过连续点击**两次****Shift**快捷键，打开代码查找界面，在搜索框中输入需要查找内容，下方窗口实时展示搜索结果。单击查找的结果可以快速打开所在文件的位置。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/dzLR_K9lT8OkU5kLtDORSQ/zh-cn_image_0000002810750955.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/77/v3/P3EUHErgQeO_zQ9wr73YcQ/zh-cn_image_0000002810750955.png)
 
 ## 函数注释生成
 
 DevEco Studio支持在函数定义处，快速生成对应的注释。在函数定义的代码块前，输入**"****/\*\*****"+回车键**，快速生成注释信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9c/v3/V9riZV3eRua2IS_oclHdPQ/zh-cn_image_0000002810630839.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/RvzQasSPQfeN8oN_ADNGfw/zh-cn_image_0000002810630839.gif)
 
 ## 文件引用查找
 
@@ -111,10 +111,10 @@ DevEco Studio提供对文件或文件夹的查找引用，可以帮助开发者�
 
 选中文件或文件夹，单击鼠标右键选择**查找用法**。在左侧搜索窗口查看文件被引用的位置，点击引用位置自动跳转到对应文件中。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/i6d9mtr_Qh2f8BNtzFWxmw/zh-cn_image_0000002810630835.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/tlHqr6oES12JWcQkHEVSyA/zh-cn_image_0000002810630835.png)
 
 ## 字体设置
 
 编辑器支持开发者设置字体，选择**文件** **> 设置**(或使用快捷键Ctrl+Alt+S打开)，在设置界面点击**编辑器 > 字体**，设置字体大小、字体样式和制表符大小。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5a/v3/jymkfc74Rn6nNBNhVwG_og/zh-cn_image_0000002781311340.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/dHJBzgmJSnedA4EiOKHkzA/zh-cn_image_0000002781311340.png)

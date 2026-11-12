@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/recoverykey-d
 title: 删除企业恢复密钥
 breadcrumb: 指南 > 系统 > 安全 > Enterprise Data Guard Kit（企业数据保护服务） > 企业恢复密钥 > 删除企业恢复密钥
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:30+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:fb9f057ad2cefa0302261152e45d8b659080c99d8bf6b2f230cd44d96d286b4a
+scraped_at: 2026-11-12T09:51:38+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:51148d8132029e6f6c2ed2423f65faf401f5cfdc37c83e9a3fad7318b81b34e0
 ---
 
 ## 场景介绍
@@ -18,7 +18,7 @@ content_hash: sha256:fb9f057ad2cefa0302261152e45d8b659080c99d8bf6b2f230cd44d96d2
 
 | 接口名 | 描述 |
 | --- | --- |
-| [deleteEnterpriseRecoveryKey](../harmonyos-references/dataguard-recoverykey.md#recoverykeydeleteenterpriserecoverykey)(userId: number, signature: Uint8Array): Promise<number> | 使用Promise方式删除企业恢复密钥相关数据。 |
+| [deleteEnterpriseRecoveryKey](../harmonyos-references/dataguard-recoverykey.md#recoverykeydeleteenterpriserecoverykey)(userId: number, signature: Uint8Array): Promise<number> | 删除企业恢复密钥相关数据。使用Promise异步回调。 |
 
 ## 开发步骤
 

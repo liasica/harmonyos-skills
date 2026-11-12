@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/intents-a
 title: ArkTS API错误码
 breadcrumb: API参考 > AI > Intents Kit（意图框架服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-09-18T06:52:18+08:00
-doc_updated_at: 2026-09-17
+scraped_at: 2026-11-12T09:57:45+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:e57e33db52803c1672212f5cd54490761af0990635a1cbcdc78cc45308086ba6
 ---
 

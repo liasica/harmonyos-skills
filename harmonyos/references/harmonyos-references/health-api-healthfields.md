@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-ap
 title: healthFields (运动健康数据字段)
 breadcrumb: API参考 > 应用服务 > Health Service Kit（运动健康服务） > ArkTS API > 运动健康数据类型常量及模型定义 > healthFields (运动健康数据字段)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:56+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:7a6e9d6afa5be45d7e4d6ba74e524b9808bc052f6329387289ae2f024d275b2b
+scraped_at: 2026-11-12T09:57:20+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3caef77b12c4928c0438c87fd7c4ea5ffeb972d4080be09a3a77a66e73b25972
 ---
 
 本模块提供运动健康数据字段列表。
@@ -381,7 +381,8 @@ type CadenceSummary = QuantitySummary
 
 | **名称** | **类型** | 只读 | 可选 | **说明** |
 | --- | --- | --- | --- | --- |
-| totalCalories | number | 否 | 否 | 卡路里总和。  单位：cal  取值范围：(0, ∞) |
+| totalCalories | number | 否 | 否 | 卡路里总和，单位：cal，取值范围：(0, ∞)。 |
+| activeCalories | number | 否 | 是 | 运动主动消耗的热量，单位：cal，取值范围：(0, ∞)。  **起始版本：** 26.0.1 |
 
 ## CervicalMucus
 
@@ -433,6 +434,10 @@ type CadenceSummary = QuantitySummary
 | calorie | [CalorieSummary](health-api-healthfields.md#caloriesummary) | 否 | 否 | 热量统计。 |
 | speed | [SpeedSummary](health-api-healthfields.md#speedsummary) | 否 | 否 | 速度统计。 |
 | exerciseHeartRate | [ExerciseHeartRateSummary](health-api-healthfields.md#exerciseheartratesummary) | 否 | 是 | 运动心率统计，若未填写，默认为空。 |
+| trainingLoad | [TrainingLoadSummary](health-api-healthfields.md#trainingloadsummary) | 否 | 是 | 训练负荷统计，若未填写，默认为空。只支持Wearable设备。  **起始版本：** 26.0.1。 |
+| trainingStress | [TrainingStressSummary](health-api-healthfields.md#trainingstresssummary) | 否 | 是 | 训练压力统计，若未填写，默认为空。只支持Wearable设备。  **起始版本：** 26.0.1。 |
+| recoveryTime | [RecoveryTimeSummary](health-api-healthfields.md#recoverytimesummary) | 否 | 是 | 恢复时间统计，若未填写，默认为空。只支持Wearable设备。  **起始版本：** 26.0.1。 |
+| heartRateZone | [HeartRateZonesSummary](health-api-healthfields.md#heartratezonessummary) | 否 | 是 | 心率区间统计，若未填写，默认为空。只支持Wearable设备。  **起始版本：** 26.0.1。 |
 | resistance | [ResistanceSummary](health-api-healthfields.md#resistancesummary) | 否 | 是 | 阻力统计，若未填写，默认为空。 |
 | pedalingCadence | [PedalingCadenceSummary](health-api-healthfields.md#pedalingcadencesummary) | 否 | 是 | 踏频统计，若未填写，默认为空。 |
 | power | [PowerSummary](health-api-healthfields.md#powersummary) | 否 | 是 | 功率统计，若未填写，默认为空。 |
@@ -1580,12 +1585,18 @@ type RowerFeature = RowingFeature
 | calorie | [CalorieSummary](health-api-healthfields.md#caloriesummary) | 否 | 否 | 热量统计。 |
 | speed | [SpeedSummary](health-api-healthfields.md#speedsummary) | 否 | 否 | 速度统计。 |
 | exerciseHeartRate | [ExerciseHeartRateSummary](health-api-healthfields.md#exerciseheartratesummary) | 否 | 是 | 运动心率统计，若未填写，默认为空。 |
+| trainingLoad | [TrainingLoadSummary](health-api-healthfields.md#trainingloadsummary) | 否 | 是 | 训练负荷统计，若未填写，默认为空。只支持Wearable设备。  **起始版本：** 26.0.1。 |
+| trainingStress | [TrainingStressSummary](health-api-healthfields.md#trainingstresssummary) | 否 | 是 | 训练压力统计，若未填写，默认为空。只支持Wearable设备。  **起始版本：** 26.0.1。 |
+| recoveryTime | [RecoveryTimeSummary](health-api-healthfields.md#recoverytimesummary) | 否 | 是 | 恢复时间统计，若未填写，默认为空。只支持Wearable设备。  **起始版本：** 26.0.1。 |
+| heartRateZone | [HeartRateZonesSummary](health-api-healthfields.md#heartratezonessummary) | 否 | 是 | 心率区间统计，若未填写，默认为空。只支持Wearable设备。  **起始版本：** 26.0.1。 |
 | step | [StepSummary](health-api-healthfields.md#stepsummary) | 否 | 是 | 步数统计，若未填写，默认为空。 |
 | cadence | [CadenceSummary](health-api-healthfields.md#cadencesummary) | 否 | 是 | 步频统计，若未填写，默认为空。 |
 | altitude | [AltitudeSummary](health-api-healthfields.md#altitudesummary) | 否 | 是 | 海拔统计，若未填写，默认为空。 |
 | location | [LocationSummary](health-api-healthfields.md#locationsummary) | 否 | 是 | 位置统计，若未填写，默认为空。 |
 | runningForm | [RunningFormSummary](health-api-healthfields.md#runningformsummary) | 否 | 是 | 跑姿统计，若未填写，默认为空。 |
 | runningFeature | [RunningFeature](health-api-healthfields.md#runningfeature) | 否 | 是 | 跑步特征数据，若未填写，默认为空。 |
+| analogPower | [AnalogPowerSummary](health-api-healthfields.md#analogpowersummary) | 否 | 是 | 模拟功率统计。只支持Wearable设备。  **起始版本：** 26.0.1。 |
+| runPaceZone | [RunPaceZoneSummary](health-api-healthfields.md#runpacezonesummary) | 否 | 是 | 配速区间统计。只支持Wearable设备。  **起始版本：** 26.0.1。 |
 
 ## ScubaDivingDetail
 
@@ -2247,3 +2258,768 @@ type WaterTemperatureSummary = Omit<QuantitySummary, 'avg'>
 | bodyAge | number | 否 | 是 | 身体年龄，若未填写，默认为空。  取值范围：[5, 99] |
 | skeletalMuscleMass | number | 否 | 是 | 骨骼肌量，若未填写，默认为空。  单位：kg  取值范围：[1, 150] |
 | impedance | number | 否 | 是 | 阻抗。  单位：欧姆  取值范围：[0.1, 100000] |
+
+## HeartRateZonesSummary
+
+心率区间统计数据字段数据列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| heartRateZones | number | 是 | 心率区间统计值，取值范围：[0,2]。  0为最大心率区间，1为储备心率区间，2为乳酸阈心率区间。 |
+
+## TrainingLoadSummary
+
+训练负荷数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| trainingLoad | number | 是 | 有氧训练负荷和有氧训练负荷的总和。 |
+| aerobic | number | 是 | 有氧训练负荷。 |
+| anaerobic | number | 是 | 无氧训练负荷。 |
+
+## TrainingStressSummary
+
+训练压力统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| aerobic | number | 是 | 有氧训练压力。 |
+| anaerobic | number | 是 | 无氧训练压力。 |
+
+## RecoveryTimeSummary
+
+恢复时间统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| recoveryTime | number | 是 | 恢复时间，单位：min。 |
+
+## ServeSummary
+
+发球统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| serve | number | 是 | 发球次数，取值范围：[0,10000]。 |
+
+## SwingSpeedSummary
+
+type SwingSpeedSummary = Omit<QuantitySummary, 'min'>
+
+挥拍速度统计数据字段列表，继承自统计基类数据字段列表中min以外字段。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **类型** | **说明** |
+| --- | --- |
+| Omit<[QuantitySummary](health-api-healthfields.md#quantitysummary), 'min'> | 统计基类数据字段列表min以外字段。 |
+
+## PadelFeature
+
+笼式网球特性统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| bandeja | number | 是 | 班德哈次数，取值范围：[0,10000]。 |
+| vibora | number | 是 | 维博拉次数，取值范围：[0,10000]。 |
+| forehandShot | number | 是 | 正手击球次数，取值范围：[0,10000]。 |
+| forehandSmash | number | 是 | 正手高压球次数，取值范围：[0,10000]。 |
+| forehandDrop | number | 是 | 正手吊小球次数，取值范围：[0,10000]。 |
+| forehandBajada | number | 是 | 正手巴哈达次数，取值范围：[0,10000]。 |
+| forehandDrive | number | 是 | 正手抽球次数，取值范围：[0,10000]。 |
+| forehandBackspin | number | 是 | 正手下旋球次数，取值范围：[0,10000]。 |
+| forehandVolley | number | 是 | 正手截击次数，取值范围：[0,10000]。 |
+| backhandShot | number | 是 | 反手击球次数，取值范围：[0,10000]。 |
+| backhandSmash | number | 是 | 反手高压球次数，取值范围：[0,10000]。 |
+| backhandBajada | number | 是 | 反手巴哈达次数，取值范围：[0,10000]。 |
+| backhandDrop | number | 是 | 反手吊小球次数，取值范围：[0,10000]。 |
+| backhandDrive | number | 是 | 反手抽球次数，取值范围：[0,10000]。 |
+| backhandBackspin | number | 是 | 反手下旋球次数，取值范围：[0,10000]。 |
+| backhandVolley | number | 是 | 反手截击次数，取值范围：[0,10000]。 |
+
+## TechStatsSummary
+
+技术数据统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| swingTimes | number | 是 | 挥拍次数，取值范围：[0,20000]。 |
+| maxContinuousRally | number | 是 | 最长连拍次数，取值范围：[0,10000]。 |
+| movementDistance | number | 是 | 移动距离，单位：m，取值范围：[0,99999]。 |
+
+## ScoreStatsSummary
+
+分数数据统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| setsWon | number | 是 | 获胜盘数，取值范围：[0,256]。 |
+| totalSets | number | 是 | 总盘数，取值范围：[0,256]。 |
+
+## SkiSpeedSummary
+
+type SkiSpeedSummary = Omit<QuantitySummary, 'min'>
+
+滑雪速度统计数据字段列表，继承自统计基类数据字段列表中min以外字段。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **类型** | **说明** |
+| --- | --- |
+| Omit<[QuantitySummary](health-api-healthfields.md#quantitysummary), 'min'> | 统计基类数据字段列表min以外字段。 |
+
+## SkiDurationSummary
+
+滑雪时长统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| skiDuration | number | 是 | 滑雪时长，单位：s。 |
+
+## SkiTripTimeSummary
+
+滑雪趟数统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| tripTimes | number | 是 | 滑雪总趟数。 |
+
+## TurnsSummary
+
+转弯统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| totalTurnNumber | number | 是 | 总转弯次数，取值范围：[0,9999]。 |
+| longRadiusTurn | number | 是 | 中长弯次数，取值范围：[0,9999]。 |
+| shortRadiusTurn | number | 是 | 短弯次数，取值范围：[0,9999]。 |
+| turnFrequency | number | 否 | 平均转弯频率，单位：次/分钟，取值范围：[0,200]。 |
+| leftTurnCount | number | 否 | 左转次数，取值范围：[0,9999]。 |
+| rightTurnCount | number | 否 | 右转次数，取值范围：[0,9999]。 |
+
+## GForceSummary
+
+type GForceSummary = Omit<QuantitySummary, 'min'>
+
+G-Force统计数据字段列表，继承自统计基类数据字段列表中min以外字段。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **类型** | **说明** |
+| --- | --- |
+| Omit<[QuantitySummary](health-api-healthfields.md#quantitysummary), 'min'> | 统计基类数据字段列表min以外字段。 |
+
+## SkiPisteRegionSummary
+
+雪道区域统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| skiPisteRegion | number | 是 | 雪道所属的地区，取值范围：[0,3]。  0代表无效，1代表欧洲，2代表日本，3代表北美。 |
+
+## RunwayRatioSummary
+
+雪道占比统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| novice | number | 是 | 新手道占比，取值范围：[1,100]。 |
+| beginner | number | 是 | 初级道占比，取值范围：[1,100]。 |
+| intermediate | number | 是 | 中级道占比，取值范围：[1,100]。 |
+| advanced | number | 是 | 高级道占比，取值范围：[1,100]。 |
+
+## InclineSummary
+
+坡度统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| maxSlopePercent | number | 是 | 最大坡度，单位：%。 |
+| minSlopePercent | number | 否 | 最小坡度，单位：%。 |
+| maxSlopeDegree | number | 是 | 最大坡度，单位：°。 |
+| avgSlopeDegree | number | 是 | 平均坡度，单位：°。 |
+| avgUphillSlope | number | 是 | 平均上坡坡度，单位：%。 |
+| avgDownhillSlope | number | 是 | 平均下坡坡度，单位：%。 |
+
+## TemperatureSummary
+
+温度统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| temperature | number | 是 | 温度，单位：℃。 |
+
+## SkiTechStatsSummary
+
+滑雪技术统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| falls | number | 是 | 摔倒次数，取值范围：[0,9999]。 |
+| skidding | number | 是 | 搓雪次数，取值范围：[0,100]。 |
+| skiddingRatio | number | 是 | 搓雪占比，取值范围：[0,100]。 |
+| steering | number | 是 | 走刃次数，取值范围：[0,9999]。 |
+| steeringRatio | number | 是 | 走刃占比，取值范围：[0,100]。 |
+| carving | number | 是 | 卡宾次数，取值范围：[0,9999]。 |
+| carvingRatio | number | 是 | 卡宾占比，取值范围：[0,100]。 |
+| turnRoundness | number | 是 | 弯形圆润度，取值范围：[0,100]。 |
+| turnSymmetry | number | 是 | 弯形对称度，取值范围：[0,100]。 |
+| averageParallelism | number | 是 | 平均平行率，取值范围：[0,100]。 |
+| averageEdgingSync | number | 是 | 平均立刃同步率，取值范围：[0,100]。 |
+| averageEdgeAngle | number | 是 | 平均立刃，单位：°，取值范围：[0,90]。 |
+| maxEdgeAngle | number | 是 | 最大立刃，单位：°，取值范围：[0,90]。 |
+| earlyMovementIndex | number | 是 | 提前移动指数，取值范围：[0,100]。 |
+| earlyWeightTransfer | number | 是 | 提前重心变化，取值范围：[0,100]。 |
+| earlyEdging | number | 是 | 提前立刃启动动作在整个转弯周期中所占的时间比例，取值范围：[0,100]。 |
+| progressiveEdging | number | 是 | 渐进式立刃，单位：°/s，取值范围：[0,100]。 |
+| outsideSkiPressureIndex | number | 是 | 外侧压感指数，单位：kg，取值范围：[0,100]。 |
+| pressureSmoothnessIndex | number | 是 | 压力平滑指数，取值范围：[0,100]。 |
+
+## PadelSummary
+
+笼式网球统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| exerciseHeartRate | [ExerciseHeartRateSummary](health-api-healthfields.md#exerciseheartratesummary) | 否 | 运动心率统计。 |
+| heartRateZone | [HeartRateZonesSummary](health-api-healthfields.md#heartratezonessummary) | 否 | 心率区间统计。 |
+| trainingLoad | [TrainingLoadSummary](health-api-healthfields.md#trainingloadsummary) | 否 | 训练负荷统计。 |
+| trainingStress | [TrainingStressSummary](health-api-healthfields.md#trainingstresssummary) | 否 | 训练压力统计。 |
+| recoveryTime | [RecoveryTimeSummary](health-api-healthfields.md#recoverytimesummary) | 否 | 恢复时间统计。 |
+| calorie | [CalorieSummary](health-api-healthfields.md#caloriesummary) | 否 | 热量统计。 |
+| serve | [ServeSummary](health-api-healthfields.md#servesummary) | 否 | 发球统计。 |
+| swingSpeed | [SwingSpeedSummary](health-api-healthfields.md#swingspeedsummary) | 否 | 挥拍速度统计。 |
+| padelFeature | [PadelFeature](health-api-healthfields.md#padelfeature) | 否 | 笼式网球特征统计。 |
+| techStats | [TechStatsSummary](health-api-healthfields.md#techstatssummary) | 否 | 技术数据统计。 |
+| scoreStats | [ScoreStatsSummary](health-api-healthfields.md#scorestatssummary) | 否 | 得分数据统计。 |
+
+## PadelDetail
+
+笼式网球详情数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| exerciseHeartRate | [ExerciseHeartRate](health-api-healthfields.md#exerciseheartrate)[] | 否 | 运动心率详情列表，若未填写，默认为空。 |
+
+## OutdoorSnowboardSummary
+
+户外单板滑雪统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| skiDuration | [SkiDurationSummary](health-api-healthfields.md#skidurationsummary) | 否 | 滑雪时长统计。 |
+| exerciseHeartRate | [ExerciseHeartRateSummary](health-api-healthfields.md#exerciseheartratesummary) | 否 | 运动心率统计。 |
+| heartRateZone | [HeartRateZonesSummary](health-api-healthfields.md#heartratezonessummary) | 否 | 心率区间统计。 |
+| trainingLoad | [TrainingLoadSummary](health-api-healthfields.md#trainingloadsummary) | 否 | 训练负荷统计。 |
+| trainingStress | [TrainingStressSummary](health-api-healthfields.md#trainingstresssummary) | 否 | 训练压力统计。 |
+| recoveryTime | [RecoveryTimeSummary](health-api-healthfields.md#recoverytimesummary) | 否 | 恢复时间统计。 |
+| calorie | [CalorieSummary](health-api-healthfields.md#caloriesummary) | 否 | 热量统计。 |
+| distance | [DistanceSummary](health-api-healthfields.md#distancesummary) | 否 | 距离统计。 |
+| speed | [SkiSpeedSummary](health-api-healthfields.md#skispeedsummary) | 否 | 滑雪速度统计。 |
+| tripTimes | [SkiTripTimeSummary](health-api-healthfields.md#skitriptimesummary) | 否 | 滑雪趟数统计。 |
+| incline | Omit<[InclineSummary](health-api-healthfields.md#inclinesummary), ‘avgSlopeDegree’ |‘avgUphillSlope’ | ‘avgDownhillSlope’> | 否 | 滑雪坡度统计。 |
+| turns | Omit<[TurnsSummary](health-api-healthfields.md#turnssummary), ‘totalTurnNumber’> | 否 | 转弯统计。 |
+| gForce | [GForceSummary](health-api-healthfields.md#gforcesummary) | 否 | G-Force统计。 |
+| altitude | Omit<[AltitudeSummary](health-api-healthfields.md#altitudesummary), ‘totalAscent’>; | 否 | 海拔统计。 |
+| skiPisteRegion | [SkiPisteRegionSummary](health-api-healthfields.md#skipisteregionsummary) | 否 | 雪道区域统计。 |
+| temperature | [TemperatureSummary](health-api-healthfields.md#temperaturesummary) | 否 | 温度统计。 |
+| runwayRatio | [RunwayRatioSummary](health-api-healthfields.md#runwayratiosummary) | 否 | 雪道统计。 |
+| skiTechStats | [SkiTechStatsSummary](health-api-healthfields.md#skitechstatssummary) | 否 | 滑雪技术数据统计。 |
+
+## OutdoorSnowboardDetail
+
+户外单板滑雪详情数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| exerciseHeartRate | [ExerciseHeartRate](health-api-healthfields.md#exerciseheartrate)[] | 否 | 运动心率详情列表，若未填写，默认为空。 |
+
+## OutdoorSkiingSummary
+
+type OutdoorSkiingSummary = OutdoorSnowboardSummary
+
+户外双板滑雪统计数据字段列表，继承自户外单板滑雪。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **类型** | **说明** |
+| --- | --- |
+| [OutdoorSnowboardSummary](health-api-healthfields.md#outdoorsnowboardsummary) | 户外单板滑雪统计数据字段。 |
+
+## OutdoorSkiingDetail
+
+type OutdoorSkiingDetail = OutdoorSnowboardDetail
+
+户外双板滑雪详情数据字段列表，继承自户外单板滑雪。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **类型** | **说明** |
+| --- | --- |
+| [OutdoorSnowboardDetail](health-api-healthfields.md#outdoorsnowboarddetail) | 户外单板滑雪详情数据字段列表。 |
+
+## IndoorSnowboardSummary
+
+室内单板滑雪统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| skiDuration | [SkiDurationSummary](health-api-healthfields.md#skidurationsummary) | 否 | 滑雪时长统计。 |
+| exerciseHeartRate | [ExerciseHeartRateSummary](health-api-healthfields.md#exerciseheartratesummary) | 否 | 运动心率统计。 |
+| heartRateZone | [HeartRateZonesSummary](health-api-healthfields.md#heartratezonessummary) | 否 | 心率区间统计。 |
+| trainingLoad | [TrainingLoadSummary](health-api-healthfields.md#trainingloadsummary) | 否 | 训练负荷统计。 |
+| trainingStress | [TrainingStressSummary](health-api-healthfields.md#trainingstresssummary) | 否 | 训练压力统计。 |
+| recoveryTime | [RecoveryTimeSummary](health-api-healthfields.md#recoverytimesummary) | 否 | 恢复时间统计。 |
+| calorie | [CalorieSummary](health-api-healthfields.md#caloriesummary) | 否 | 热量统计。 |
+| distance | [DistanceSummary](health-api-healthfields.md#distancesummary) | 否 | 距离统计。 |
+| speed | [SkiSpeedSummary](health-api-healthfields.md#skispeedsummary) | 否 | 滑雪速度统计。 |
+| tripTimes | [SkiTripTimeSummary](health-api-healthfields.md#skitriptimesummary) | 否 | 滑雪趟数统计。 |
+| incline | Omit<[InclineSummary](health-api-healthfields.md#inclinesummary), ‘avgSlopeDegree’ |‘avgUphillSlope’ | ‘avgDownhillSlope’> | 否 | 滑雪坡度统计。 |
+| turns | Omit<[TurnsSummary](health-api-healthfields.md#turnssummary), ‘totalTurnNumber’> | 否 | 转弯统计。 |
+| skiTechStats | [SkiTechStatsSummary](health-api-healthfields.md#skitechstatssummary) | 否 | 滑雪技术数据统计。 |
+
+## IndoorSnowboardDetail
+
+室内单板滑雪详情数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| exerciseHeartRate | [ExerciseHeartRate](health-api-healthfields.md#exerciseheartrate)[] | 否 | 运动心率详情列表，若未填写，默认为空。 |
+
+## IndoorSkiingSummary
+
+type IndoorSkiingSummary = IndoorSnowboardSummary
+
+室内双板滑雪统计数据字段列表，继承自室内单板滑雪。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **类型** | **说明** |
+| --- | --- |
+| [IndoorSnowboardSummary](health-api-healthfields.md#indoorsnowboardsummary) | 室内单板滑雪统计数据字段列表。 |
+
+## IndoorSkiingDetail
+
+type IndoorSkiingDetail = IndoorSnowboardDetail
+
+室内双板滑雪详情数据字段列表，继承自室内单板滑雪。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **类型** | **说明** |
+| --- | --- |
+| [IndoorSnowboardDetail](health-api-healthfields.md#indoorsnowboarddetail) | 室内单板滑雪详情数据字段列表。 |
+
+## CrossCountrySkiingSummary
+
+越野滑雪统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| exerciseHeartRate | [ExerciseHeartRateSummary](health-api-healthfields.md#exerciseheartratesummary) | 否 | 运动心率统计。 |
+| heartRateZone | [HeartRateZonesSummary](health-api-healthfields.md#heartratezonessummary) | 否 | 心率区间统计。 |
+| trainingLoad | [TrainingLoadSummary](health-api-healthfields.md#trainingloadsummary) | 否 | 训练负荷统计。 |
+| trainingStress | [TrainingStressSummary](health-api-healthfields.md#trainingstresssummary) | 否 | 训练压力统计。 |
+| recoveryTime | [RecoveryTimeSummary](health-api-healthfields.md#recoverytimesummary) | 否 | 恢复时间统计。 |
+| calorie | [CalorieSummary](health-api-healthfields.md#caloriesummary) | 否 | 热量统计。 |
+| distance | [DistanceSummary](health-api-healthfields.md#distancesummary) | 否 | 距离统计。 |
+| speed | [SkiSpeedSummary](health-api-healthfields.md#skispeedsummary) | 否 | 滑雪速度统计。 |
+| altitude | [AltitudeSummary](health-api-healthfields.md#altitudesummary) | 否 | 海拔统计。 |
+| temperature | [TemperatureSummary](health-api-healthfields.md#temperaturesummary) | 否 | 温度统计。 |
+| skiTechStats | [SkiTechStatsSummary](health-api-healthfields.md#skitechstatssummary) | 否 | 滑雪技术数据统计。 |
+
+## CrossCountrySkiingDetail
+
+越野滑雪详情数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| exerciseHeartRate | [ExerciseHeartRate](health-api-healthfields.md#exerciseheartrate)[] | 否 | 运动心率详情列表，若未填写，默认为空。 |
+
+## SkiMountaineeringSummary
+
+滑雪登山统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| exerciseHeartRate | [ExerciseHeartRateSummary](health-api-healthfields.md#exerciseheartratesummary) | 否 | 运动心率统计。 |
+| heartRateZone | [HeartRateZonesSummary](health-api-healthfields.md#heartratezonessummary) | 否 | 心率区间统计。 |
+| trainingLoad | [TrainingLoadSummary](health-api-healthfields.md#trainingloadsummary) | 否 | 训练负荷统计。 |
+| trainingStress | [TrainingStressSummary](health-api-healthfields.md#trainingstresssummary) | 否 | 训练压力统计。 |
+| recoveryTime | [RecoveryTimeSummary](health-api-healthfields.md#recoverytimesummary) | 否 | 恢复时间统计。 |
+| calorie | [CalorieSummary](health-api-healthfields.md#caloriesummary) | 否 | 热量统计。 |
+| distance | [DistanceSummary](health-api-healthfields.md#distancesummary) | 否 | 距离统计。 |
+| speed | [SkiSpeedSummary](health-api-healthfields.md#skispeedsummary) | 否 | 滑雪速度统计。 |
+| incline | Omit<[InclineSummary](health-api-healthfields.md#inclinesummary), maxSlopeDegree |avgSlopeDegree> | 否 | 滑雪坡度统计。 |
+| altitude | [AltitudeSummary](health-api-healthfields.md#altitudesummary) | 否 | 海拔统计。 |
+| temperature | [TemperatureSummary](health-api-healthfields.md#temperaturesummary) | 否 | 温度统计。 |
+| skiTechStats | [SkiTechStatsSummary](health-api-healthfields.md#skitechstatssummary) | 否 | 滑雪技术数据统计。 |
+
+## SkiMountaineeringDetail
+
+滑雪登山详情数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| exerciseHeartRate | [ExerciseHeartRate](health-api-healthfields.md#exerciseheartrate)[] | 否 | 运动心率详情列表，若未填写，默认为空。 |
+
+## AnalogPowerSummary
+
+type AnalogPowerSummary = Omit<QuantitySummary, 'max' | 'min'>
+
+模拟功率统计数据字段列表，继承自统计基类数据字段列表中min以外字段。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **类型** | **说明** |
+| --- | --- |
+| Omit<[QuantitySummary](health-api-healthfields.md#quantitysummary), 'max' | 'min'> | 统计基类数据字段列表max和min以外字段。 |
+
+## RunPaceZoneSummary
+
+配速区间统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| runPaceZoneConfig | string | 是 | 配速区间值。 |
+| runPaceZoneStatistics | string | 是 | 配速区间统计时长。 |
+
+## TrainingVolumeSummary
+
+训练容量统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| totalTrainingVolume | number | 是 | 训练总容量，单位：kg。 |
+
+## RpeSummary
+
+疲劳等级统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| rpe | number | 是 | 主观疲劳等级，值越大疲劳等级越高，取值范围：[1,10]。 |
+
+## ActionsSummary
+
+训练动作统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| actionCount | number | 是 | 动作个数。 |
+| actionGroups | number | 是 | 总组数。 |
+| actions | string | 是 | 动作数据集合。 |
+
+## PilatesSummary
+
+普拉提统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| exerciseHeartRate | [ExerciseHeartRateSummary](health-api-healthfields.md#exerciseheartratesummary) | 否 | 运动心率统计。 |
+| heartRateZone | [HeartRateZonesSummary](health-api-healthfields.md#heartratezonessummary) | 否 | 心率区间统计。 |
+| trainingLoad | [TrainingLoadSummary](health-api-healthfields.md#trainingloadsummary) | 否 | 训练负荷统计。 |
+| trainingStress | [TrainingStressSummary](health-api-healthfields.md#trainingstresssummary) | 否 | 训练压力统计。 |
+| recoveryTime | [RecoveryTimeSummary](health-api-healthfields.md#recoverytimesummary) | 否 | 恢复时间统计。 |
+| calorie | [CalorieSummary](health-api-healthfields.md#caloriesummary) | 否 | 热量统计。 |
+
+## PilatesDetail
+
+普拉提详情数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| exerciseHeartRate | [ExerciseHeartRate](health-api-healthfields.md#exerciseheartrate)[] | 否 | 运动心率详情列表，若未填写，默认为空。 |
+
+## FreeTrainingSummary
+
+自由训练统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| exerciseHeartRate | [ExerciseHeartRateSummary](health-api-healthfields.md#exerciseheartratesummary) | 否 | 运动心率统计。 |
+| heartRateZone | [HeartRateZonesSummary](health-api-healthfields.md#heartratezonessummary) | 否 | 心率区间统计。 |
+| trainingLoad | [TrainingLoadSummary](health-api-healthfields.md#trainingloadsummary) | 否 | 训练负荷统计。 |
+| trainingStress | [TrainingStressSummary](health-api-healthfields.md#trainingstresssummary) | 否 | 训练压力统计。 |
+| recoveryTime | [RecoveryTimeSummary](health-api-healthfields.md#recoverytimesummary) | 否 | 恢复时间统计。 |
+| calorie | [CalorieSummary](health-api-healthfields.md#caloriesummary) | 否 | 热量统计。 |
+
+## FreeTrainingDetail
+
+自由训练详情数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| exerciseHeartRate | [ExerciseHeartRate](health-api-healthfields.md#exerciseheartrate)[] | 否 | 运动心率详情列表，若未填写，默认为空。 |
+
+## StrengthTrainingSummary
+
+力量训练统计数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| exerciseHeartRate | [ExerciseHeartRateSummary](health-api-healthfields.md#exerciseheartratesummary) | 否 | 运动心率统计。 |
+| heartRateZone | [HeartRateZonesSummary](health-api-healthfields.md#heartratezonessummary) | 否 | 心率区间统计。 |
+| trainingLoad | [TrainingLoadSummary](health-api-healthfields.md#trainingloadsummary) | 否 | 训练负荷统计。 |
+| trainingStress | [TrainingStressSummary](health-api-healthfields.md#trainingstresssummary) | 否 | 训练压力统计。 |
+| recoveryTime | [RecoveryTimeSummary](health-api-healthfields.md#recoverytimesummary) | 否 | 恢复时间统计。 |
+| calorie | [CalorieSummary](health-api-healthfields.md#caloriesummary) | 否 | 热量统计。 |
+| trainingVolume | [TrainingVolumeSummary](health-api-healthfields.md#trainingvolumesummary) | 否 | 训练容量统计。 |
+| rpe | [RpeSummary](health-api-healthfields.md#rpesummary) | 否 | 主观疲劳等级统计。 |
+| actions | [ActionsSummary](health-api-healthfields.md#actionssummary) | 否 | 训练动作统计。 |
+
+## StrengthTrainingDetail
+
+力量训练详情数据字段列表。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| **名称** | **类型** | 必填 | **说明** |
+| --- | --- | --- | --- |
+| exerciseHeartRate | [ExerciseHeartRate](health-api-healthfields.md#exerciseheartrate)[] | 否 | 运动心率详情列表，若未填写，默认为空。 |

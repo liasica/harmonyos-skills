@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-navigatio
 title: 使用导航类组件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > 使用导航类组件
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:10+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:51:17+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:6397dc6858049bf2a5f70cc8e84442fec986ed3235a5fef51f4b350d819f29f5
 ---
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-ui-widg
 title: 卡片拉起应用UIAbility到后台（call事件）
 breadcrumb: 指南 > 应用框架 > Form Kit（卡片开发服务） > ArkTS卡片开发（推荐） > ArkTS卡片提供方开发指导 > ArkTS卡片页面交互 > 卡片拉起应用UIAbility到后台（call事件）
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:28+08:00
-doc_updated_at: 2026-10-16
+scraped_at: 2026-11-12T09:51:27+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:7f556fe57d5f13fdcac32335bf5116cb9c53e0d125d2ce87b5a494e0911772a7
 ---
 

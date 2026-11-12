@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Typeface)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (Typeface)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:50+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:f5aabaa0600def7aaed8d13209743025a45f54fdc63ab79f54784d14d579a45e
+scraped_at: 2026-11-12T09:56:57+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3815ea933c554f68a46afc5d495d55258c6039a0e9d555e21bf85873b0c81464
 ---
 
 Typeface类用于表示和管理字体对象。支持的字体操作包括：获取字体族名、从字体文件或rawfile资源构造字体、结合字体属性构造新字体，以及检查字体的加粗、斜体状态等。
@@ -107,7 +107,7 @@ static makeFromFile(filePath: string): Typeface
 
 | 类型 | 说明 |
 | --- | --- |
-| [Typeface](arkts-apis-graphics-drawing-typeface.md) | 返回从指定字体文件加载的字体对象。 |
+| [Typeface](arkts-apis-graphics-drawing-typeface.md) | 返回从指定字体文件加载的字体对象。创建失败时返回undefined。 |
 
 **错误码：**
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/nonlinear-con
 title: 非线性容器
 breadcrumb: 指南 > 应用框架 > ArkTS（方舟编程语言） > ArkTS基础类库 > ArkTS容器类库 > 非线性容器
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:38:42+08:00
-doc_updated_at: 2026-10-26
+scraped_at: 2026-11-12T09:51:02+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:6c552bd941d6bd5f28f8ef9dc22902b8cf66090325cbce02cba003bdb254f585
 ---
 

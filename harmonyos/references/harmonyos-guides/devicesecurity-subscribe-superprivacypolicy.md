@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 订阅超级隐私模式管控策略改变事件
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 超级隐私模式 > 订阅超级隐私模式管控策略改变事件
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:41+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1982e0003bfd440b5ccb9bf372d4d565636833d4e9f4671bdce0fdba6c0a5569
+scraped_at: 2026-11-12T09:51:37+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:18ac2726822d4bb70f5d134bb1e683530783548ac125ae5b74f5f6d562c72cbf
 ---
 
 ## 场景介绍
@@ -20,7 +20,7 @@ content_hash: sha256:1982e0003bfd440b5ccb9bf372d4d565636833d4e9f4671bdce0fdba6c0
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/iYgVhWP8THawzzaRPGVG4w/zh-cn_image_0000002809050309.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b9/v3/xEiG14jKTrWIb1YYUSxF2Q/zh-cn_image_0000002815559111.png)
 
 **流程说明：**
 

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/drm-avcodec-i
 title: 基于AVCodec播放DRM节目(C/C++)
 breadcrumb: 指南 > 媒体 > DRM Kit（数字版权保护服务） > 基于AVCodec播放DRM节目(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:11+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:52:05+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:77524de0fe79c83f49758cb686b20fc8f294a644c0dfa807f4fd557f46afac52
 ---
 

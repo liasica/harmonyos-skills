@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/network-s
 title: 结构体
 breadcrumb: API参考 > 系统 > 网络 > Network Kit（网络服务） > C API > 结构体
 category: harmonyos-references
-scraped_at: 2026-10-11T07:26:13+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:64e3601d7470d44691d4268a7dcdb1be5b74d2639a8a0a8a93326a2f3b895079
+scraped_at: 2026-11-12T09:55:42+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:04aa2ed07126685adee13f01249233f309559f073d4d916b62d43c9e12e9e0d1
 ---
 
 * **[NetConn\_NetHandle](capi-netconnection-netconn-nethandle.md)**
@@ -52,9 +52,19 @@ content_hash: sha256:64e3601d7470d44691d4268a7dcdb1be5b74d2639a8a0a8a93326a2f3b8
 * **[OH\_TrafficFilter\_PortMulti](capi-trafficfilter-oh-trafficfilter-portmulti.md)**
 * **[OH\_TrafficFilter\_PortMatch](capi-trafficfilter-oh-trafficfilter-portmatch.md)**
 * **[OH\_TrafficFilter\_ConnectionInfo](capi-trafficfilter-oh-trafficfilter-connectioninfo.md)**
+* **[OH\_TrafficFilter\_Config](capi-trafficfilter-oh-trafficfilter-config.md)**
+* **[OH\_TrafficFilter\_ConntrackMatch](capi-trafficfilter-oh-trafficfilter-conntrackmatch.md)**
+* **[OH\_TrafficFilter\_FilterRule](capi-trafficfilter-oh-trafficfilter-filterrule.md)**
+* **[OH\_TrafficFilter\_MACMatch](capi-trafficfilter-oh-trafficfilter-macmatch.md)**
+* **[OH\_TrafficFilter\_PacketCallback](capi-trafficfilter-oh-trafficfilter-packetcallback.md)**
+* **[OH\_TrafficFilter\_PacketController](capi-trafficfilter-oh-trafficfilter-packetcontroller.md)**
+* **[OH\_TrafficFilter\_PacketCopyMode](capi-trafficfilter-oh-trafficfilter-packetcopymode.md)**
+* **[OH\_TrafficFilter\_PacketDecision](capi-trafficfilter-oh-trafficfilter-packetdecision.md)**
+* **[OH\_TrafficFilter\_PacketDesc](capi-trafficfilter-oh-trafficfilter-packetdesc.md)**
 * **[OH\_TrafficFilter\_ProcessInfo](capi-trafficfilter-oh-trafficfilter-processinfo.md)**
 * **[OH\_TrafficFilter\_RedirectRule](capi-trafficfilter-oh-trafficfilter-redirectrule.md)**
 * **[OH\_TrafficFilter\_Redirector](capi-trafficfilter-oh-trafficfilter-redirector.md)**
+* **[OH\_TrafficFilter\_TCPFlagsMatch](capi-trafficfilter-oh-trafficfilter-tcpflagsmatch.md)**
 * **[OH\_Http\_Interceptor\_Headers](capi-netstack-http-interceptor-headers.md)**
 * **[OH\_Http\_Interceptor\_Request](capi-netstack-http-interceptor-request.md)**
 * **[OH\_Http\_Interceptor\_Response](capi-netstack-http-interceptor-response.md)**

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-arc
 title: 弧线
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 弧线
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:36+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:994ad38c7454106a14451ca3fe1c6d24619cc267700893901f09265bd4d17c2b
+scraped_at: 2026-11-12T09:52:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:93e079b498e5d75703006b95bc211a763fa10b43e88ade87ee7112fd1855ae14
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:994ad38c7454106a14451ca3fe1c6d24619cc267700893901f09265bd4d
 
 弧线主要用于展示飞机、轮船等出行路线，直观呈现弧形轨迹，同时可在交叉路口等位置指示转向方向。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/XDe4__AtTty6jywitup9wQ/zh-cn_image_0000002779691520.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e/v3/bmKUsuk7TXuQsWyeL-gX8A/zh-cn_image_0000002815399945.jpg "点击放大")
 
 ## 接口说明
 
@@ -90,7 +90,7 @@ content_hash: sha256:994ad38c7454106a14451ca3fe1c6d24619cc267700893901f09265bd4d
            };
            // 添加弧线
            try {
-             this.mapArc = await this.mapController.addArc(mapArcParams);
+             this.mapArc = this.mapController.addArc(mapArcParams);
            } catch (e) {
              console.error(`Failed to create the mapArc, code is：${e.code}, message is ${e.message}`);
            }
@@ -115,4 +115,4 @@ content_hash: sha256:994ad38c7454106a14451ca3fe1c6d24619cc267700893901f09265bd4d
    }
    ```
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/jIusFVwiTRKvenjgy-TzlA/zh-cn_image_0000002809011141.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/C3Whv18QTUSmPeZ3lOKAJA/zh-cn_image_0000002786520370.jpg "点击放大")

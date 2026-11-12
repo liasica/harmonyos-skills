@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_audio_common.h
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 头文件 > native_audio_common.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:20+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:025edc1ea63bd54b0c2dc2499018720f2346e5f13aff4e043b9aed17a176c8a1
+scraped_at: 2026-11-12T09:56:21+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7b5f740a7c1ec44dcffb22046dc43c8014dcec9da4e3641162c2ddee13fc8251
 ---
 
 ## 概述
@@ -61,6 +61,9 @@ enum OH_AudioCommon_Result
 | AUDIOCOMMON\_RESULT\_ERROR\_FRAME\_LENGTH\_MISMATCH = 6800106 | 输入音频数据与所需帧长度不匹配。  **起始版本：** 26.0.0 |
 | AUDIOCOMMON\_RESULT\_ERROR\_STREAM\_LIMIT = 6800201 | 达到系统可支持的最大数量。 |
 | AUDIOCOMMON\_RESULT\_ERROR\_SYSTEM = 6800301 | 系统通用错误。 |
+| AUDIOCOMMON\_RESULT\_ERROR\_SERVICE\_DIED = 6800302 | 系统服务进程终止。  **起始版本：** 26.0.1 |
+| AUDIOCOMMON\_RESULT\_ERROR\_NETWORK\_CONDITION\_NOT\_MET = 6800501 | 网络条件不满足。  **起始版本：** 26.0.1 |
+| AUDIOCOMMON\_RESULT\_ERROR\_STORAGE\_NOT\_ENOUGH = 6800502 | 存储空间不足。  **起始版本：** 26.0.1 |
 
 ### OH\_AudioScene
 

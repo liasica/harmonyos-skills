@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-page-load
 title: 使用Web组件加载页面
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 管理网页加载与浏览记录 > 使用Web组件加载页面
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:26+08:00
-doc_updated_at: 2026-10-21
-content_hash: sha256:c1edba9afde96fcfa1ac03be4c27bff82f089df9b78d69621f1c1135d57eb634
+scraped_at: 2026-11-12T09:51:23+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ea4020b31daa64b97ed4b67eb8dacf908f95b982897165b5e8c93469d6da60b1
 ---
 
 页面加载是Web组件的基本功能。根据页面加载数据来源可以分为三种常用场景，包括加载网络页面、加载本地页面、加载HTML格式的富文本数据。
@@ -24,7 +24,7 @@ content_hash: sha256:c1edba9afde96fcfa1ac03be4c27bff82f089df9b78d69621f1c1135d57
 
 开发者可以在Web组件创建时，指定默认加载的网络页面。在默认页面加载完成后，如果需要变更此Web组件显示的网络页面，可以通过调用[loadUrl()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#loadurl)接口加载指定的网页。[Web组件](../harmonyos-references/arkts-basic-components-web.md)的第一个参数变量src不能通过状态变量（例如：[@State](arkts-state.md)）动态更改地址，如需更改，请通过[loadUrl()](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#loadurl)重新加载。
 
-在下面的示例中，在Web组件加载完“www.example.com”页面后，开发者可通过loadUrl接口将此Web组件显示页面变更为“www.example1.com”。
+在下面的示例中，在Web组件加载完“www.example.com”页面后，开发者可通过loadUrl()接口将此Web组件显示页面变更为“www.example1.com”。
 
 ```typescript
 import { webview } from '@kit.ArkWeb';
@@ -72,7 +72,7 @@ struct WebComponent {
 
   **图1** 资源文件路径
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/ILABZFZmTie0UDGHa0eUdg/zh-cn_image_0000002779850500.png)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/RxcqI-NTT4aN3F4NHDvS2g/zh-cn_image_0000002786359442.png)
 * 应用侧代码。
 
   ```typescript

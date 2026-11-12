@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-reasonabl
 title: "@performance/reasonable-audio-use-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/reasonable-audio-use-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:12+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:82b6ef3f6886315edf1d85b54dba28e26540bab472068e8769538d55f6d17b44
+scraped_at: 2026-11-12T09:52:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f0bd2580c8703afc90cb2c36d13b05a9f7853e5d1a93417978a5142dbd4c7ca6
 ---
 
 无长时任务的应用退到后台时，禁止使用麦克风或扬声器。
@@ -136,4 +136,4 @@ export default class EntryAbility extends UIAbility {
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

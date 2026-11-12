@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_type_visual.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_type_visual.h
 category: harmonyos-references
-scraped_at: 2026-09-10T06:26:04+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8b2674e112eb6f4fb56cbaeb8fcfe0506b9ba616c78a26c4ad328bf117f6b6ef
+scraped_at: 2026-11-12T09:54:46+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:2f8ef33452305903b4241bffd0f7dd2f22cee055d81a833459977f62c3adf7c3
 ---
 
 ## 概述
@@ -61,6 +61,9 @@ content_hash: sha256:8b2674e112eb6f4fb56cbaeb8fcfe0506b9ba616c78a26c4ad328bf117f
 | [ArkUI\_RenderFit](capi-native-type-visual-h.md#arkui_renderfit) | ArkUI\_RenderFit | 定义动画终态内容大小与位置的枚举值。 |
 | [ArkUI\_AnimationDirection](capi-native-type-visual-h.md#arkui_animationdirection) | ArkUI\_AnimationDirection | 动画播放方向。 |
 | [ArkUI\_AnimationFillMode](capi-native-type-visual-h.md#arkui_animationfillmode) | ArkUI\_AnimationFillMode | 定义帧动画组件在动画开始前和结束后的状态。 |
+| [OH\_ArkUI\_AnimationPropertyType](capi-native-type-visual-h.md#oh_arkui_animationpropertytype) | OH\_ArkUI\_AnimationPropertyType | 枚举属性动画、关键帧动画和路径动画的可动画属性类型。 |
+| [OH\_ArkUI\_AnimationGroupState](capi-native-type-visual-h.md#oh_arkui_animationgroupstate) | OH\_ArkUI\_AnimationGroupState | 枚举动画组的播放状态。 |
+| [OH\_ArkUI\_AnimationFinishMode](capi-native-type-visual-h.md#oh_arkui_animationfinishmode) | OH\_ArkUI\_AnimationFinishMode | 枚举动画组的结束模式。 |
 
 ### 函数
 
@@ -538,6 +541,75 @@ enum ArkUI_AnimationFillMode
 | ARKUI\_ANIMATION\_FILL\_MODE\_FORWARDS = 1 | 目标将保留动画执行期间最后一个关键帧的状态。 |
 | ARKUI\_ANIMATION\_FILL\_MODE\_BACKWARDS = 2 | 动画将在应用于目标时立即应用第一个关键帧中定义的值，并在[delay](capi-native-animate-h.md#oh_arkui_animateoption_setdelay)期间保留此值。 |
 | ARKUI\_ANIMATION\_FILL\_MODE\_BOTH = 3 | 动画将遵循[ARKUI\_ANIMATION\_FILL\_MODE\_FORWARDS](capi-native-type-visual-h.md#arkui_animationfillmode)和[ARKUI\_ANIMATION\_FILL\_MODE\_BACKWARDS](capi-native-type-visual-h.md#arkui_animationfillmode)的规则，从而在两个方向上扩展动画属性。 |
+
+### OH\_ArkUI\_AnimationPropertyType
+
+```c
+enum OH_ArkUI_AnimationPropertyType
+```
+
+**描述：**
+
+枚举属性动画、关键帧动画和路径动画的可动画属性类型。
+
+**起始版本：** 26.0.1
+
+| 枚举项 | 描述 |
+| --- | --- |
+| OH\_ARKUI\_ANIMATION\_PROPERTY\_TRANSLATION = 0 | 在x和y方向上的平移。设置或获取该属性值时，需要两个f32类型的[ArkUI\_NumberValue](capi-arkui-nativemodule-arkui-numbervalue.md)元素，依次为x、y方向的平移量，单位为px。 |
+| OH\_ARKUI\_ANIMATION\_PROPERTY\_TRANSLATION\_X = 1 | 在x方向上的平移。设置或获取该属性值时，需要一个f32类型的[ArkUI\_NumberValue](capi-arkui-nativemodule-arkui-numbervalue.md)元素，单位为px。 |
+| OH\_ARKUI\_ANIMATION\_PROPERTY\_TRANSLATION\_Y = 2 | 在y方向上的平移。设置或获取该属性值时，需要一个f32类型的[ArkUI\_NumberValue](capi-arkui-nativemodule-arkui-numbervalue.md)元素，单位为px。 |
+| OH\_ARKUI\_ANIMATION\_PROPERTY\_TRANSLATION\_Z = 3 | 在z方向上的平移。设置或获取该属性值时，需要一个f32类型的[ArkUI\_NumberValue](capi-arkui-nativemodule-arkui-numbervalue.md)元素，单位为px。 |
+| OH\_ARKUI\_ANIMATION\_PROPERTY\_SCALE = 4 | 在x和y方向上的缩放。设置或获取该属性值时，需要两个f32类型的[ArkUI\_NumberValue](capi-arkui-nativemodule-arkui-numbervalue.md)元素，依次为x、y方向的缩放比例。 |
+| OH\_ARKUI\_ANIMATION\_PROPERTY\_SCALE\_X = 5 | 在x方向上的缩放。设置或获取该属性值时，需要一个f32类型的[ArkUI\_NumberValue](capi-arkui-nativemodule-arkui-numbervalue.md)元素。 |
+| OH\_ARKUI\_ANIMATION\_PROPERTY\_SCALE\_Y = 6 | 在y方向上的缩放。设置或获取该属性值时，需要一个f32类型的[ArkUI\_NumberValue](capi-arkui-nativemodule-arkui-numbervalue.md)元素。 |
+| OH\_ARKUI\_ANIMATION\_PROPERTY\_ROTATION = 7 | 所有轴的旋转角度。设置或获取该属性值时，需要三个f32类型的[ArkUI\_NumberValue](capi-arkui-nativemodule-arkui-numbervalue.md)元素，依次为x、y、z轴的旋转角度，单位为度。 |
+| OH\_ARKUI\_ANIMATION\_PROPERTY\_ROTATION\_X = 8 | 围绕x轴的旋转角度。设置或获取该属性值时，需要一个f32类型的[ArkUI\_NumberValue](capi-arkui-nativemodule-arkui-numbervalue.md)元素，单位为度。 |
+| OH\_ARKUI\_ANIMATION\_PROPERTY\_ROTATION\_Y = 9 | 围绕y轴的旋转角度。设置或获取该属性值时，需要一个f32类型的[ArkUI\_NumberValue](capi-arkui-nativemodule-arkui-numbervalue.md)元素，单位为度。 |
+| OH\_ARKUI\_ANIMATION\_PROPERTY\_ROTATION\_Z = 10 | 围绕z轴的旋转角度。设置或获取该属性值时，需要一个f32类型的[ArkUI\_NumberValue](capi-arkui-nativemodule-arkui-numbervalue.md)元素，单位为度。 |
+| OH\_ARKUI\_ANIMATION\_PROPERTY\_OPACITY = 11 | 组件的不透明度。设置或获取该属性值时，需要一个f32类型的[ArkUI\_NumberValue](capi-arkui-nativemodule-arkui-numbervalue.md)元素。取值范围：[0, 1]。 |
+| OH\_ARKUI\_ANIMATION\_PROPERTY\_BOUNDS = 12 | 边界（位置和大小）。设置或获取该属性值时，需要四个i32类型的[ArkUI\_NumberValue](capi-arkui-nativemodule-arkui-numbervalue.md)元素，依次为x坐标、y坐标、宽度、高度，单位为px。其中宽度和高度的取值范围为大于等于0。 |
+| OH\_ARKUI\_ANIMATION\_PROPERTY\_BOUNDS\_X = 13 | 边界左上角的x坐标位置。设置或获取该属性值时，需要一个i32类型的[ArkUI\_NumberValue](capi-arkui-nativemodule-arkui-numbervalue.md)元素，单位为px。 |
+| OH\_ARKUI\_ANIMATION\_PROPERTY\_BOUNDS\_Y = 14 | 边界左上角的y坐标位置。设置或获取该属性值时，需要一个i32类型的[ArkUI\_NumberValue](capi-arkui-nativemodule-arkui-numbervalue.md)元素，单位为px。 |
+| OH\_ARKUI\_ANIMATION\_PROPERTY\_BOUNDS\_WIDTH = 15 | 边界的宽度。设置或获取该属性值时，需要一个i32类型的[ArkUI\_NumberValue](capi-arkui-nativemodule-arkui-numbervalue.md)元素，单位为px。取值范围为大于等于0。 |
+| OH\_ARKUI\_ANIMATION\_PROPERTY\_BOUNDS\_HEIGHT = 16 | 边界的高度。设置或获取该属性值时，需要一个i32类型的[ArkUI\_NumberValue](capi-arkui-nativemodule-arkui-numbervalue.md)元素，单位为px。取值范围为大于等于0。 |
+| OH\_ARKUI\_ANIMATION\_PROPERTY\_BACKGROUND\_COLOR = 17 | 组件的背景颜色。设置或获取该属性值时，需要一个u32类型的[ArkUI\_NumberValue](capi-arkui-nativemodule-arkui-numbervalue.md)元素。 |
+
+### OH\_ArkUI\_AnimationGroupState
+
+```c
+enum OH_ArkUI_AnimationGroupState
+```
+
+**描述：**
+
+枚举动画组的播放状态。
+
+**起始版本：** 26.0.1
+
+| 枚举项 | 描述 |
+| --- | --- |
+| OH\_ARKUI\_ANIMATION\_GROUP\_STATE\_RUNNING = 0 | 动画组正在运行。 |
+| OH\_ARKUI\_ANIMATION\_GROUP\_STATE\_PAUSED = 1 | 动画组已暂停。 |
+| OH\_ARKUI\_ANIMATION\_GROUP\_STATE\_INACTIVE = 2 | 动画组处于非活动状态，例如动画已结束或动画组处于无效状态。 |
+
+### OH\_ArkUI\_AnimationFinishMode
+
+```c
+enum OH_ArkUI_AnimationFinishMode
+```
+
+**描述：**
+
+枚举动画组的结束模式。
+
+**起始版本：** 26.0.1
+
+| 枚举项 | 描述 |
+| --- | --- |
+| OH\_ARKUI\_ANIMATION\_FINISH\_TO\_START = 0 | 结束动画组并跳转到起始状态。 |
+| OH\_ARKUI\_ANIMATION\_FINISH\_TO\_CURRENT = 1 | 结束动画组并保持在当前值。 |
+| OH\_ARKUI\_ANIMATION\_FINISH\_TO\_END = 2 | 结束动画组并跳转到结束状态。 |
 
 ## 函数说明
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/iap-faq-23
 title: 自动续期订阅商品，A切换B且立即生效时，新订阅有效期的组成
 breadcrumb: 指南 > 应用服务 > IAP Kit（应用内支付服务） > IAP Kit常见问题 > 自动续期订阅商品，A切换B且立即生效时，新订阅有效期的组成
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:33+08:00
+scraped_at: 2026-11-12T09:52:27+08:00
 doc_updated_at: 2026-04-20
-content_hash: sha256:1be4c69e81b5ce7c0c2d6ed082279fffb8e07b40f64a339c86315688cd2334c3
+content_hash: sha256:fcd476f4262cbd4cb0f9c6dd9ff65511dec32aaa4bc362b1823f3df37ccf1695
 ---
 
 订阅在发生切换且立即生效时，原订阅的剩余权益价值会自动按照比例，折算并叠加至新订阅。所以，切换后订阅有效期的组成 = 原订阅剩余权益的折算时间 + 新订阅原本的周期时间。
@@ -14,8 +14,8 @@ content_hash: sha256:1be4c69e81b5ce7c0c2d6ed082279fffb8e07b40f64a339c86315688cd2
 
 时间轴（MM/dd）如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/timpOM2hRQOWnWnZdETVeg/zh-cn_image_0000002779851392.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/FHMwZ6xFSae2sUzoNflJ8A/zh-cn_image_0000002786520274.png)
 
 对于沙盒环境，按照生产1天 = 沙盒10s换算，等效时间轴（hh:mm:ss）如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/pKfwd0XPTQWvXYznIU0-4g/zh-cn_image_0000002779691424.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/97/v3/n82_fWMFRLWXq_CtPF8oHw/zh-cn_image_0000002786360346.png)

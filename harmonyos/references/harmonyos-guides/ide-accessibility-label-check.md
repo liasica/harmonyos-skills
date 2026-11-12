@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-accessibi
 title: "@correctness/accessibility-label-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 正确性规则@correctness > @correctness/accessibility-label-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:14+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:fea01fab815c678160e6b87e8650758fad0c11a40083593e84fcb645b161b19a
+scraped_at: 2026-11-12T09:52:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d4dd861f2a58acaa17e45c30bb46182658831db59ff6c5f9030a1bbf39a88130
 ---
 
 在无障碍场景中，建议通过[accessibilityText](../harmonyos-references/ts-universal-attributes-accessibility.md#accessibilitytext)为控件添加无障碍文本信息。
@@ -67,4 +67,4 @@ struct AccessibilityLabelNegative {
 plugin:@correctness/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

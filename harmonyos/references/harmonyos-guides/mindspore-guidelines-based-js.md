@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/mindspore-gui
 title: 使用MindSpore Lite实现图像分类 (ArkTS)
 breadcrumb: 指南 > AI > MindSpore Lite Kit（昇思推理框架服务） > 使用MindSpore Lite实现图像分类 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:11+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:8f8c453b91df33923fb73bea20650b01514808d2e7193900e50b483b415e4d3b
+scraped_at: 2026-11-12T09:52:45+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d0613ac76df0e5e71e4d71bc876836c2abcd9406b0c6da78d0c60aca04e7e6c7
 ---
 
 ## 场景说明
@@ -46,12 +46,13 @@ content_hash: sha256:8f8c453b91df33923fb73bea20650b01514808d2e7193900e50b483b415
 
 ### 编写推理代码
 
-1. 工程默认设备定义的能力集可能不包含MindSporeLite。需在DevEco Studio工程的entry/src/main目录下，手动创建syscap.json文件。其中，general的取值需与module.json5中的deviceTypes保持一致。配置示例如下：
+1. 工程默认设备定义的能力集可能不包含MindSporeLite。需在DevEco Studio工程的entry/src/main目录下，手动创建syscap.json文件，内容如下：
 
    ```json
    {
      "devices": {
        "general": [
+         // 需跟module.json5中deviceTypes保持一致。
          "default"
        ]
      },
@@ -347,9 +348,9 @@ content_hash: sha256:8f8c453b91df33923fb73bea20650b01514808d2e7193900e50b483b415
 
 在设备上，点击photo按钮，选择相册中的一张图片，点击确定。在图片下方显示此图片占比前4的分类信息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/YwKvzc_ZQE20EPbGWPz-IA/zh-cn_image_0000002779851854.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/AKAeBe2iTz-KhDbeKGGncA/zh-cn_image_0000002779691886.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/GgI-Atx1RNWAQC4L0YxIWg/zh-cn_image_0000002815400277.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/hp7chqq-S1e4ry-FpvzMcw/zh-cn_image_0000002786520702.png)
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/RukhGtw3SqSICW_iijg36w/zh-cn_image_0000002809011507.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/-_-P7sW0SzyHEw4zui1twg/zh-cn_image_0000002809051421.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/ZiC7Tac1Sdiim79yjS2-lw/zh-cn_image_0000002786360774.png) ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/UHoUw2HvRPmCs0DYh6m5GA/zh-cn_image_0000002815560195.png)
 
 ## 示例代码
 

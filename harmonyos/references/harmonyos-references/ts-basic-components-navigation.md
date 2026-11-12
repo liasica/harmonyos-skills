@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Navigation
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 导航与切换 > Navigation
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:00+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:32922f0ffcda8877ad73a80c01636ac93424ae043a0ae36960d926c156e446b8
+scraped_at: 2026-11-12T09:54:14+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ac14f0c3dae01bcc13e1d319dcc0eef929ca88eb270dfba512ef3c27ab36d602
 ---
 
 Navigation组件是路由导航的根视图容器，一般作为Page页面的根容器使用，其内部默认包含了标题栏、内容区和工具栏，其中内容区默认首页显示导航内容（Navigation的子组件）或非首页显示（[NavDestination](ts-basic-components-navdestination.md)的子组件），首页和非首页通过路由进行切换。
@@ -1677,6 +1677,43 @@ setPathStack(pathStack: Array<NavPathInfo>, animated?: boolean): void
 | pathStack | Array<[NavPathInfo](ts-basic-components-navigation.md#navpathinfo10)> | 是 | 设置当前路由栈中的路由页面信息数组。  **说明：**  数组长度无限制。 |
 | animated | boolean | 否 | 是否开启转场动画。  true：开启转场动画；false：不开启转场动画。  默认值：true |
 
+### preloadPath
+
+preloadPath(info: NavPathInfo, options?: PreloadOptions): Promise<void>
+
+预加载info指定的NavDestination页面。预加载页面不会立即显示，而是被缓存。当后续调用[pushPath](ts-basic-components-navigation.md#pushpath10)时，若参数匹配，将使用预加载的页面实例进行快速显示。使用Promise异步回调。
+
+**起始版本：** 26.0.1
+
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| info | [NavPathInfo](ts-basic-components-navigation.md#navpathinfo10) | 是 | 预加载的NavDestination页面信息。 |
+| options | [PreloadOptions](ts-basic-components-navigation.md#preloadoptions) | 否 | 预加载页面选项。 |
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| Promise<void> | Promise对象，无返回结果。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[页面路由错误码](errorcode-router.md)和[接口调用异常错误码](errorcode-internal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 100001 | Internal error. |
+| 100005 | Builder function not registered. |
+| 100006 | NavDestination not found. |
+
 ## NavPathInfo10+
 
 路由页面信息。
@@ -1763,7 +1800,7 @@ NavPathInfo参数信息。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| timeout | number | 否 | 是 | 动画超时结束时间。  单位：ms。  取值范围：[0, +∞)。  默认值：可交互动画无默认值，不可交互动画默认超时时间为1000ms。 |
+| timeout | number | 否 | 是 | 动画超时结束时间，超过该时间后系统自动结束本次转场。  单位：ms。  取值范围：[0, +∞)。  默认值：可交互动画默认无超时限制，未设置timeout时，需由开发者调用[finishTransition](ts-basic-components-navigation.md#finishtransition)结束本次转场；不可交互动画默认超时时间为1000ms。 |
 | transition | (transitionProxy:[NavigationTransitionProxy](ts-basic-components-navigation.md#navigationtransitionproxy-11)) => void | 否 | 否 | 自定义转场动画执行回调。  transitionProxy：自定义转场动画代理对象。 |
 | onTransitionEnd | (success:boolean) => void | 否 | 是 | 转场完成回调。  success：转场是否成功。 |
 | isInteractive12+ | boolean | 否 | 是 | 本次转场动画是否为可交互转场。  true：本次转场动画是可交互转场；false：本次转场动画不是可交互转场。  默认值：false |
@@ -2238,13 +2275,13 @@ Navigation分割线颜色及上下边距。
 | launchMode | [LaunchMode](ts-basic-components-navigation.md#launchmode12枚举说明) | 否 | 是 | 路由栈的操作模式。  默认值：LaunchMode.STANDARD |
 | animated | boolean | 否 | 是 | 是否支持转场动画。  true：支持转场动画；false：不支持转场动画。  默认值：true |
 
-## NavigationConfiguration
+## PreloadOptions
 
-Navigation配置项。
+预加载页面选项。
 
-**起始版本：** 26.0.0
+**起始版本：** 26.0.1
 
-**元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
+**元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
@@ -2252,7 +2289,23 @@ Navigation配置项。
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| stackSizeLimit | number | 否 | 是 | Navigation路由栈的活跃页面节点数量限制。  默认值：0，表示不限制路由栈大小。  取值小于等于0时，不限制路由栈大小。  取值大于0时，将活跃页面节点数量限制为指定值；超过限制后，系统会按照先入先出顺序自动销毁较早入栈的页面节点，页面的NavPathInfo完整保留在路由栈中，支持后续重新创建页面。 |
+| onDestroy | Callback<void> | 否 | 是 | 预加载页面被系统销毁时的回调。 |
+
+## NavigationConfiguration
+
+Navigation配置项。
+
+**起始版本：** 26.0.0
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.ArkUI.ArkUI.Full
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| stackSizeLimit | number | 否 | 是 | Navigation路由栈的活跃页面节点数量限制。  默认值：0，表示不限制路由栈大小。  取值小于等于0时，不限制路由栈大小。  取值大于0时，将活跃页面节点数量限制为指定值；超过限制后，系统会按照先入先出顺序自动销毁较早入栈的页面节点，页面的NavPathInfo完整保留在路由栈中，支持后续重新创建页面。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。 |
+| recyclePagesOnLowMemory | boolean | 否 | 是 | 是否在收到低内存信号时回收不可见页面。  默认值：false  true：收到低内存信号时回收不可见的NavDestination页面实例，NavPathInfo会保留，页面后续可被重新创建。  false：收到低内存信号时不回收不可见的NavDestination页面实例。  **起始版本：** 26.0.1  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。 |
+| clearContentStackOnPrimaryNavigation | boolean | 否 | 是 | 是否开启Navigation左起右清栈能力。  默认值：false。值为true时表示开启左起右清栈能力，值为false时表示关闭左起右清栈能力。  **左起右清栈能力说明：**  Navigation显示为split模式时，如果用户在主页侧（NavBar或者是主页NavDestination）的操作（比如点击页面中的按钮等）触发了页面跳转，那么Navigation页面栈中第一个新创建的页面之前的页面会被系统清除，只保留第一个新创建的页面及其之后的页面。  **起始版本：** 26.0.1  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。 |
 
 ## MoreButtonOptions19+
 
@@ -2429,7 +2482,7 @@ struct NavigationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/PA_TMCpkRuqgGZAyGNfRDw/zh-cn_image_0000002809011905.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/98/v3/rw4UNBzkQuqiIkeCZLy5Tw/zh-cn_image_0000002815400679.png)
 
 ### 示例2（使用导航控制器方法）
 
@@ -2694,7 +2747,7 @@ export struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/SIC-jfLGQR2XLipGWEiP_g/zh-cn_image_0000002809051819.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/iEjeAxWqRDu50UPv1S6gQw/zh-cn_image_0000002786521104.gif)
 
 ### 示例3（设置可交互转场动画）
 
@@ -3178,7 +3231,7 @@ export class CustomTransition {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9e/v3/mksDLmZAQBu4DW8-gpsVTw/zh-cn_image_0000002779852254.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/53/v3/vSlI1XQbRDuB3iQiEz__xw/zh-cn_image_0000002786361176.gif)
 
 ### 示例4（Navigation带参返回）
 
@@ -3469,7 +3522,7 @@ export struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/91/v3/DOwcx_ysSA656cH3tEe2KA/zh-cn_image_0000002779692286.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/02/v3/yGA8HG9ZQfOrEW5X7xKLcQ/zh-cn_image_0000002815560597.gif)
 
 ### 示例5（设置背景颜色和模糊效果）
 
@@ -3765,7 +3818,7 @@ export const EFFECT_OPTION_2: BackgroundEffectOptions = {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/r8sLTNRDRASTads6ev7GfA/zh-cn_image_0000002809011907.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f6/v3/XCn0FFlkQLCMP-MD6_k0dg/zh-cn_image_0000002815400681.gif)
 
 ### 示例6（嵌套场景下获取外层栈）
 
@@ -3836,7 +3889,7 @@ export function PageOneBuilder(name: string) {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/WvqalrLhRAW5Y-ehg4Iyuw/zh-cn_image_0000002809051821.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/0YZBIOQXRGiiWHY5ZD5z-w/zh-cn_image_0000002786521106.gif)
 
 ### 示例7（通过onReady获取栈）
 
@@ -3948,7 +4001,7 @@ struct NavigationExample2 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c6/v3/tICyGem0QnyyqGOQlmt6oQ/zh-cn_image_0000002779852256.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c5/v3/_JctTWXBQ5asLkgUOn6zkA/zh-cn_image_0000002786361178.gif)
 
 ### 示例8（NavDestination生命周期时序）
 
@@ -4069,7 +4122,7 @@ struct NavigationExample3 {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/JqKLrdxiQnS2-hXeu5iQ3Q/zh-cn_image_0000002779692288.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/26/v3/8paHkvpRRIKEfNURfLUSWw/zh-cn_image_0000002815560599.gif)
 
 ### 示例9（标题栏布局效果）
 
@@ -4141,7 +4194,7 @@ struct NavigationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d0/v3/AdC70irWRBiKdGxgDNZ6vg/zh-cn_image_0000002809011909.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/BC_IQocQRH-zmQghhwyyyg/zh-cn_image_0000002815400683.gif)
 
 ### 示例10（定义导航控制器派生类）
 
@@ -4291,7 +4344,7 @@ export class NewParam {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f3/v3/kZlJirlaQHisYBC5rlnYPw/zh-cn_image_0000002809051823.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/WCizTSWxQe64cd3mJ33dcQ/zh-cn_image_0000002786521108.gif)
 
 ### 示例11（使用Symbol组件）
 
@@ -4442,7 +4495,7 @@ export struct NavigationMenu {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ee/v3/NRmC2L0aRC-LMBxDywXDSA/zh-cn_image_0000002779852258.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/vOs4U8TdRpayens8MK71Dw/zh-cn_image_0000002786361180.gif)
 
 ### 示例12（设置自定义标题栏边距）
 
@@ -4691,7 +4744,7 @@ export class SubTitleTextModifier extends TextModifier {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6f/v3/bM_tMAyvQoOEhn-Fj7w79w/zh-cn_image_0000002779692290.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/LEh08IscQhCLbjfby3MJuw/zh-cn_image_0000002815560601.gif)
 
 ### 示例13（自定义转场动画）
 
@@ -4938,7 +4991,7 @@ export class CustomTransition {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/SX1XM7MIQWC5essP3IJ5kg/zh-cn_image_0000002809011911.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/Y5euk48pRHSz1e1dB1c2Wg/zh-cn_image_0000002815400685.gif)
 
 ### 示例14（设置Navigation双栏模式）
 
@@ -5074,7 +5127,7 @@ struct NavigationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/dgVL6ftoSRyY5DoGlxtXfg/zh-cn_image_0000002809051825.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b3/v3/2rrQ5QOYRqONiQdLDS1XwA/zh-cn_image_0000002786521110.gif)
 
 ### 示例15（Navigation工具栏自适应）
 
@@ -5145,7 +5198,7 @@ struct NavigationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d6/v3/kPra5IHrTYCx0zglnQD_TQ/zh-cn_image_0000002779852260.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/w6HY1KdRQ9-r8relkRbMGA/zh-cn_image_0000002786361182.gif)
 
 ### 示例16（Navigation使用NavDestination作为导航页）
 
@@ -5232,7 +5285,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/0GZei6mWRYez5UXfYyaJuQ/zh-cn_image_0000002779692292.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/r5PyUD5xTJWJfX2gSuf-Rg/zh-cn_image_0000002815560603.gif)
 
 ### 示例17（使用新增导航控制器方法）
 
@@ -5502,7 +5555,7 @@ export struct PageTwo {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/yXMywfLxS6y0CfanLTUD1g/zh-cn_image_0000002809011913.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/4OqNDDBjTmO7Ba2kxkjhDA/zh-cn_image_0000002815400687.gif)
 
 ### 示例18（设置Navigation可恢复）
 
@@ -5671,7 +5724,7 @@ export struct NavigationMenu {
 4. 输入"aa force-stop 工程包名 -p pid值 -r RESOURCE\_CONTROL"进行回车，模拟资源使用不当导致的应用退出。
 5. 点击应用重新进入，可发现页面依然是点击跳转按钮后的页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/UkyQRKNmRj-lH5A5BApGOw/zh-cn_image_0000002809051827.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1f/v3/_-lXjnmrRgy8pg3S5vrkzQ/zh-cn_image_0000002786521112.gif)
 
 ### 示例19（设置ScrollEffectOptions开启标题栏滚动模糊）
 
@@ -5741,7 +5794,7 @@ struct NavigationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/T4ufl8MfSTyrRqJGhKMpfw/zh-cn_image_0000002779852262.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/uri-lky6Sj2nkT8u9HhB9g/zh-cn_image_0000002786361184.gif)
 
 ### 示例20（设置systemMaterial开启标题栏材质效果）
 
@@ -5881,4 +5934,110 @@ struct NavigationTitleMaterialDemo {
 
 该示例配图为高算力设备强档效果：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/9tI73P6jRb2u0UsKGagDuQ/zh-cn_image_0000002779692294.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/XW_iEh2RQ82FKqkNgSvmFQ/zh-cn_image_0000002815560605.gif)
+
+### 示例21（开启左起右清栈效果）
+
+该示例演示如何使用clearContentStackOnPrimaryNavigation属性，开启Navigation左起右清栈效果。
+
+从API版本26.0.1开始，[NavigationConfiguration](ts-basic-components-navigation.md#navigationconfiguration)新增了clearContentStackOnPrimaryNavigation属性。
+
+```ts
+// xxx.ets
+@Component
+struct MyControlPanel {
+  private stack: NavPathStack | undefined = undefined;
+ 
+  aboutToAppear(): void {
+    let info = this.queryNavigationInfo();
+    if (info) {
+      this.stack = info.pathStack;
+    }
+  }
+ 
+  build() {
+    Column() {
+      Button('push pageOne').onClick(() => {
+        this.stack?.pushPath({name: 'one'})
+      })
+        .margin({top: 25})
+      Button('push pageTwo').onClick(() => {
+        this.stack?.pushPath({name: 'two'})
+      })
+        .margin({top: 25})
+      Button('pop').onClick(() => {
+        this.stack?.pop()
+      })
+        .margin({top: 25})
+    }
+  }
+}
+ 
+@Component
+struct MyPageOne {
+  build() {
+    NavDestination() {
+      Column() {
+        MyControlPanel()
+      }
+      .width('100%')
+      .height('100%')
+    }
+    .width('100%')
+    .height('100%')
+    .title('PageOne')
+  }
+}
+ 
+@Component
+struct MyPageTwo {
+  build() {
+    NavDestination() {
+      Column() {
+        MyControlPanel()
+      }
+      .width('100%')
+      .height('100%')
+    }
+    .width('100%')
+    .height('100%')
+    .title('PageTwo')
+  }
+}
+ 
+@Entry
+@Component
+struct NavigationConfig {
+  private stack: NavPathStack = new NavPathStack();
+ 
+  @Builder
+  MyDestMap(name: string) {
+    if (name === 'one') {
+      MyPageOne()
+    } else {
+      MyPageTwo()
+    }
+  }
+ 
+  build() {
+    Navigation(this.stack) {
+      Column() {
+        MyControlPanel()
+      }
+      .width('100%')
+      .height('100%')
+    }
+    .width('100%')
+    .height('100%')
+    .title('NavBar')
+    .titleMode(NavigationTitleMode.Mini)
+    .mode(NavigationMode.Split)
+    .navDestination(this.MyDestMap)
+    .configuration({
+      clearContentStackOnPrimaryNavigation: true
+    })
+  }
+}
+```
+
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/PA6DBT1QScOQ5eDrPk6nEg/zh-cn_image_0000002815400689.gif)

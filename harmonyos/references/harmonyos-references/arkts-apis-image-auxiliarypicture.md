@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AuxiliaryPicture)
 breadcrumb: API参考 > 媒体 > Image Kit（图片处理服务） > ArkTS API > @ohos.multimedia.image (图片处理) > Interface (AuxiliaryPicture)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:29+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:8d5b06205baa47ddce1af2f10e23585b937b0215d40db577188415cc7fb7d019
+scraped_at: 2026-11-12T09:56:37+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:fec7884c8242f9cbd9eae8488caa26ffad48621a9c919b0085f16317dcd70c95
 ---
 
 AuxiliaryPicture类，用于读取或写入图像的辅助图数据以及获取图像的辅助图信息。目前支持的辅助图类型可参考[AuxiliaryPictureType](arkts-apis-image-e.md#auxiliarypicturetype13)。
@@ -323,6 +323,54 @@ async function SetAuxiliaryPictureInfo(auxPictureObj: image.AuxiliaryPicture) {
       colorSpace: colorSpaceManager.create(colorSpaceName),
     };
     auxPictureObj.setAuxiliaryPictureInfo(info);
+  }
+}
+```
+
+## acquirePixelmap
+
+acquirePixelmap(): PixelMap | null
+
+获取辅助图的像素图（PixelMap）。返回的PixelMap与该辅助图共享同一份底层内存，获取过程不发生像素拷贝。
+
+返回的PixelMap生命周期独立于该AuxiliaryPicture对象，使用完成后应调用PixelMap的release方法及时释放。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.Image.Core
+
+**返回值：**
+
+| 类型 | 说明 |
+| --- | --- |
+| [PixelMap](arkts-apis-image-pixelmap.md) | null | 得到的PixelMap对象。当辅助图没有包含PixelMap数据时返回null。 |
+
+**示例：**
+
+```ts
+async function AcquirePixelmap(context: Context) {
+  const resourceMgr = context.resourceManager;
+  // 需要一张含增益图（gainmap）的HDR图片。
+  const rawFile = await resourceMgr.getRawFileContent("picture.jpg");
+  let imageSource: image.ImageSource = image.createImageSource(rawFile.buffer as ArrayBuffer);
+  // 使用createPicture解码。
+  let pictureObj: image.Picture = await imageSource.createPicture();
+  // 获取增益图辅助图。
+  let auxPictureObj: image.AuxiliaryPicture | null =
+    pictureObj.getAuxiliaryPicture(image.AuxiliaryPictureType.GAINMAP);
+  if (auxPictureObj != null) {
+    let auxPixelmap: image.PixelMap | null = auxPictureObj.acquirePixelmap();
+    if (auxPixelmap != null) {
+      console.info('Succeeded in acquiring pixelmap.');
+      // 使用完毕后单独释放PixelMap。
+      auxPixelmap.release();
+    } else {
+      console.error('Auxiliary picture contains no pixelmap.');
+    }
+  } else {
+    console.error('AuxPictureObj is null.');
   }
 }
 ```

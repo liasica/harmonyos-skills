@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/cloudfoun
 title: cloudDatabase (云数据库模块)
 breadcrumb: API参考 > 应用服务 > Cloud Foundation Kit（云开发服务） > ArkTS API > cloudDatabase (云数据库模块)
 category: harmonyos-references
-scraped_at: 2026-10-11T07:28:07+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:fce6adfaa60c239043332401ce34fd9027c76a0569f8a5f8d4af7866196cf54c
+scraped_at: 2026-11-12T09:57:14+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:8a13683a8253fccbb0706057bfe758745b21be23c607cb983b45a0ea8e033d2b
 ---
 
 本模块提供使用云数据库进行数据写入、查询、删除等操作的能力。
@@ -1593,7 +1593,7 @@ or(): DatabaseQuery<T>
 **说明** 
 
 * or()只能与其他查询条件一起使用。
-* 当和equalTo()、notEqualTo()、greaterThan()、greaterThanOrEqualTo()、lessThan()、lessThanOrEqualTo()、in()、beginsWith()、endsWith()、isNull()、isNotNull()和contains()一起使用时，返回两个查询结果的交集。
+* 当和equalTo()、notEqualTo()、greaterThan()、greaterThanOrEqualTo()、lessThan()、lessThanOrEqualTo()、in()、beginsWith()、endsWith()、isNull()、isNotNull()和contains()一起使用时，返回两个查询结果的并集。
 * 当or()与and()一起使用时，or()前面不能直接跟and()，即不支持and().or()。
 * 与beginGroup()和endGroup()结合使用时：
 

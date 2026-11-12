@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AutoExposure)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (AutoExposure)
 category: harmonyos-references
-scraped_at: 2026-10-17T06:47:51+08:00
-doc_updated_at: 2026-10-16
-content_hash: sha256:2d48626af10e2dc19e63dacfa96c75f5262f8ac63de3167f806441be40dc0e8f
+scraped_at: 2026-11-12T09:56:31+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:df3ff5d7690dff0d37733c221729c97d9039c640a1564e06bfa3a646e7d69370
 ---
 
 AutoExposure继承自[AutoExposureQuery](arkts-apis-camera-autoexposurequery.md)。
@@ -99,9 +99,11 @@ setExposureMode(aeMode: ExposureMode): void
 ```ts
 import { BusinessError } from '@kit.BasicServicesKit';
 
-function setExposureMode(photoSession: camera.PhotoSession): void {
+function setExposureMode(photoSession: camera.PhotoSession, mode: camera.ExposureMode): void {
   try {
-    photoSession.setExposureMode(camera.ExposureMode.EXPOSURE_MODE_LOCKED);
+    if (photoSession.isExposureModeSupported(mode)) {
+      photoSession.setExposureMode(mode);
+    }
   } catch (error) {
     // 失败返回错误码error.code并处理。
     let err = error as BusinessError;
@@ -397,7 +399,7 @@ function callback(exposureState: camera.ExposureState): void {
   console.info(`exposureState: ${exposureState}`);
 }
 
-function registerExposureStateChange(captureSession: camera.PhotoSession): void {
+function registerPhotoOutputCaptureStart(captureSession: camera.PhotoSession): void {
   captureSession.onExposureStateChange(callback);
 }
 ```
@@ -431,11 +433,11 @@ function callback(exposureState: camera.ExposureState): void {
   console.info(`exposureState: ${exposureState}`);
 }
 
-function unregisterExposureStateChange(captureSession: camera.PhotoSession): void {
+function unregisterPhotoOutputCaptureStart(captureSession: camera.PhotoSession): void {
   captureSession.offExposureStateChange(callback);
 }
 
-function unregisterExposureStateChangeWithoutParam(captureSession: camera.PhotoSession): void {
+function unregisterPhotoOutputCaptureStartWithoutParam(captureSession: camera.PhotoSession): void {
   captureSession.offExposureStateChange();
 }
 ```

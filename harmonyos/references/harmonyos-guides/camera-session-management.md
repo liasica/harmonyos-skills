@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/camera-sessio
 title: 会话管理(ArkTS)
 breadcrumb: 指南 > 媒体 > Camera Kit（相机服务） > 开发相机应用必选能力(ArkTS) > 会话管理(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:56+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:6321b3b1b2908f41df7618586d6f7304daa96797440d5e92a5ac2f0ffd008f4f
+scraped_at: 2026-11-12T09:52:03+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d0142757489c8c16a6c5bbca871a6b97583602f8268cee8a1ef99b2214f5d1bb
 ---
 
 相机使用预览、拍照、录像、元数据功能前，均需要创建相机会话。
@@ -90,7 +90,7 @@ content_hash: sha256:6321b3b1b2908f41df7618586d6f7304daa96797440d5e92a5ac2f0ffd0
        let err = error as BusinessError;
        console.error(`Failed to add previewOutput. error: ${err.code}`);
      }
-     let canAddPhotoOutput : boolean = false
+     let canAddPhotoOutput : boolean = false;
      try {
        canAddPhotoOutput = videoSession.canAddOutput(photoOutput);
      } catch (error) {

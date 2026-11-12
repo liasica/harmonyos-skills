@@ -3,33 +3,34 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/account-confi
 title: 申请账号权限
 breadcrumb: 指南 > 应用服务 > Account Kit（华为账号服务） > 开发准备 > 申请账号权限
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:22+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:a2765e4625f449e7d98acb8127be6c0a320cb9411d423a36cec768af3438a16d
+scraped_at: 2026-11-12T09:52:16+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f3deaeb562b15d9dffc3dc9c37283ae703f3cf9e8b066d5b149aea355e054645
 ---
 
 请参考“[应用开发准备](application-dev-overview.md)”章节，创建应用、使用DevEco Studio创建应用工程。
 
 **说明** 
 
-如需申请华为账号一键登录、获取您的手机号、获取收货地址、获取您的年龄段权限，则需按照以下步骤完成权限申请，否则可跳过本章节。
+如需申请华为账号一键登录、获取您的手机号、获取收货地址、获取您的年龄段、获取亲密圈关系列表权限，则需按照以下步骤完成权限申请，否则可跳过本章节。
 
 ## 申请前自检
 
-申请权限前请参考**表1**，了解账号权限支持的能力和使用条件，并根据**表2**、**表3**、**表4**、**表5**完成自检，确认您的**应用类型、设备类型、开发者类型等**是否符合申请条件，不符合条件的申请将被驳回。
+申请权限前请参考**表1**，了解账号权限支持的能力和使用条件，并根据**表2**、**表3**、**表4**、**表5**、**表6**完成自检，确认您的**应用类型、设备类型、开发者类型等**是否符合申请条件，不符合条件的申请将被驳回。
 
 **说明** 
 
-华为账号一键登录、获取您的手机号、获取收货地址、获取您的年龄段权限，仅支持企业开发者申请，不支持个人开发者申请。个人开发者可使用[华为账号登录](account-unionid-login-button.md)或[静默登录](account-silent-login.md)实现登录，无需申请权限。
+华为账号一键登录、获取您的手机号、获取收货地址、获取您的年龄段、获取亲密圈关系列表权限，仅支持企业开发者申请，不支持个人开发者申请。个人开发者可使用[华为账号登录](account-unionid-login-button.md)或[静默登录](account-silent-login.md)实现登录，无需申请权限。
 
 **表1** 账号权限说明
 
 | 权限名称 | 权限描述 | 支持的应用类型 | 支持的开发者类型 | 支持的设备类型 |
 | --- | --- | --- | --- | --- |
-| 华为账号一键登录 | 支持应用获取用户的**Union ID**、**Open ID**和华为账号绑定的**手机号**。 | 非游戏类应用、非银行类应用 | 企业开发者 | Phone、Tablet、PC/2in1、TV |
-| 获取您的手机号 | 支持应用获取华为账号绑定的**手机号**或用户选择的**其他手机号**。 | 游戏类应用 | 企业开发者 | Phone、Tablet、PC/2in1、Wearable、TV |
-| 获取收货地址 | 支持应用获取用户的**地址**，地址可以用做收货或者发货。 | 无限制 | 企业开发者 | Phone、Tablet、PC/2in1、TV |
-| 获取您的年龄段 | 支持应用获取用户的**实名年龄段**信息。 | 游戏类应用 | 企业开发者 | Phone、Tablet、PC/2in1、Wearable、TV |
+| 华为账号一键登录 | 支持应用获取用户的**Union ID**、**Open ID**和华为账号绑定的**手机号**。 | 非游戏类应用、非银行类应用 | 企业开发者 | Phone、Tablet、PC/2in1、TV、Car |
+| 获取您的手机号 | 支持应用获取华为账号绑定的**手机号**或用户选择的**其他手机号**。 | 游戏类应用 | 企业开发者 | Phone、Tablet、PC/2in1、Wearable、TV、Car |
+| 获取收货地址 | 支持应用获取用户的**地址**，地址可以用做收货或者发货。 | 无限制 | 企业开发者 | Phone、Tablet、PC/2in1、TV、Car |
+| 获取您的年龄段 | 支持应用获取用户的**实名年龄段**信息。 | 游戏类应用 | 企业开发者 | Phone、Tablet、PC/2in1、Wearable、TV、Car |
+| 获取亲密圈关系列表 | 支持应用获取用户亲密圈关系列表。 | 无限制 | 企业开发者 | Phone、Tablet |
 
 **表2** 华为账号一键登录权限申请自检表
 
@@ -38,7 +39,7 @@ content_hash: sha256:a2765e4625f449e7d98acb8127be6c0a320cb9411d423a36cec768af343
 | 1 | 开发者必须为企业开发者。 |
 | 2 | 申请权限的应用类型必须为HarmonyOS NEXT应用（HarmonyOS应用不予审批）。 |
 | 3 | 游戏类、银行类应用暂不开放。 |
-| 4 | 应用是否上架应用市场，如不上架需要说明原因。 |
+| 4 | 应用是否上架应用市场，若不上架需要说明原因。 |
 | 5 | 若应用近期存在违规记录，则不予审批或有权收回权限。 |
 | 6 | 若用户举报或发现开发者不合理的使用，华为有权收回权限。 |
 
@@ -48,7 +49,7 @@ content_hash: sha256:a2765e4625f449e7d98acb8127be6c0a320cb9411d423a36cec768af343
 | --- | --- |
 | 1 | 开发者必须为企业开发者。 |
 | 2 | 仅支持游戏类应用申请，其他类型应用暂不开放。 |
-| 3 | 应用是否上架应用市场，如不上架需要说明原因。 |
+| 3 | 应用是否上架应用市场，若不上架需要说明原因。 |
 | 4 | 若应用近期存在违规记录，则不予审批或有权收回权限。 |
 | 5 | 若用户举报或发现开发者不合理的使用，华为有权收回权限。 |
 
@@ -57,7 +58,7 @@ content_hash: sha256:a2765e4625f449e7d98acb8127be6c0a320cb9411d423a36cec768af343
 | 序号 | 自检项内容 |
 | --- | --- |
 | 1 | 开发者必须为企业开发者。 |
-| 2 | 应用是否上架应用市场，如不上架需要说明原因。 |
+| 2 | 应用是否上架应用市场，若不上架需要说明原因。 |
 | 3 | 若应用近期存在违规记录，则不予审批或有权收回权限。 |
 | 4 | 若用户举报或发现开发者不合理的使用，华为有权收回权限。 |
 
@@ -67,15 +68,24 @@ content_hash: sha256:a2765e4625f449e7d98acb8127be6c0a320cb9411d423a36cec768af343
 | --- | --- |
 | 1 | 开发者必须为企业开发者。 |
 | 2 | 仅支持游戏类应用申请，其他类型应用暂不开放。 |
-| 3 | 应用是否上架应用市场，如不上架需要说明原因。 |
+| 3 | 应用是否上架应用市场，若不上架需要说明原因。 |
 | 4 | 若应用近期存在违规记录，则不予审批或有权收回权限。 |
 | 5 | 若用户举报或发现开发者不合理的使用，华为有权收回权限。 |
+
+**表6** 获取亲密圈关系列表权限申请自检表
+
+| 序号 | 自检项内容 |
+| --- | --- |
+| 1 | 开发者必须为企业开发者。 |
+| 2 | 应用是否上架应用市场，若不上架需要说明原因。 |
+| 3 | 若应用近期存在违规记录，则不予审批或有权收回权限。 |
+| 4 | 若用户举报或发现开发者不合理的使用，华为有权收回权限。 |
 
 ## 申请步骤
 
 1. 在 AppGallery Connect（简称AGC）的[开发与服务](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/myProject)中，选择相应的项目，然后选择需要申请对应权限的HarmonyOS应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/iFE1QytNS821TdtbCKwRPA/zh-cn_image_0000002809050747.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/t3M84wrPQ82iGpLORHMq6A/zh-cn_image_0000002815399633.png)
 2. 在“开放能力管理”中，选择想要申请的账号权限，并点击“申请”。
 
    **说明** 
@@ -84,10 +94,10 @@ content_hash: sha256:a2765e4625f449e7d98acb8127be6c0a320cb9411d423a36cec768af343
 
    图示仅为示例，不同应用类型展示不同权限，请以实际页面显示为准。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a9/v3/Tc1QP6zVQe-LhhVKfAnuyg/zh-cn_image_0000002779851182.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/oai-hEMtTdyBZA9_Qsnuqg/zh-cn_image_0000002786520058.png)
 3. 点击申请后，请根据应用实际情况填写“申请原因”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/-LtAfwqBRBqqHS_57sDxBg/zh-cn_image_0000002779691214.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2d/v3/ugJ1j8ZYQwKoM-KA9w_qJA/zh-cn_image_0000002786360130.png)
 
    **说明** 
 
@@ -97,7 +107,7 @@ content_hash: sha256:a2765e4625f449e7d98acb8127be6c0a320cb9411d423a36cec768af343
    * **使用场景**：说明权限使用场景，例如在XXX场景下，需要使用XX能力。使用场景参见表5 使用场景类型，若为其他场景，请按实际类型填写。
    * **申请用途**：描述该权限的用途，例如用户使用XXX功能后，进行XXX操作，提供XXX服务。
 
-   **表5** 使用场景类型
+   **表7** 使用场景类型
 
    | **使用场景类型** | **业务场景描述** |
    | --- | --- |
@@ -126,6 +136,7 @@ content_hash: sha256:a2765e4625f449e7d98acb8127be6c0a320cb9411d423a36cec768af343
    | 邮箱云盘类 | 基本功能服务为“邮箱、云盘等”。 |
    | 远程会议类 | 基本功能服务为“通过网络提供音频或视频会议”。 |
    | 演出票务类 | 基本功能服务为“演出购票”。 |
+   | 主题类 | 基本功能服务为“壁纸、锁屏、个性、铃声”。 |
 4. 提交申请成功后，自动跳转到互动中心，提示等待审核。
 
    **说明** 
@@ -137,8 +148,8 @@ content_hash: sha256:a2765e4625f449e7d98acb8127be6c0a320cb9411d423a36cec768af343
 
    **图1** 修改前
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/oqtV87NDQcSKvgyr36Avfw/zh-cn_image_0000002809010835.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/dPxBpJP2TaigKqOAhJpapg/zh-cn_image_0000002815559551.png)
 
    **图2** 修改后
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/BbGNU-FjRieVppXoMihVnA/zh-cn_image_0000002809050749.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/Vdag-r1QRDmUocAnyEAphA/zh-cn_image_0000002815399635.png)

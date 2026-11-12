@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_buffer.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > native_buffer.h
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:52+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:1f4341af68748ca94076e17bab593041ef6efacb2b8f619a9475337663bc5358
+scraped_at: 2026-11-12T09:56:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3930698dbe81542c048ae7a62f9a1ed7bce38fc52f68e38127a183f9e251b943
 ---
 
 ## 概述
@@ -53,6 +53,7 @@ content_hash: sha256:1f4341af68748ca94076e17bab593041ef6efacb2b8f619a9475337663b
 | [int32\_t OH\_NativeBuffer\_Unmap(OH\_NativeBuffer \*buffer)](capi-native-buffer-h.md#oh_nativebuffer_unmap) | 将OH\_NativeBuffer对应的ION内存从进程空间移除。  本接口为非线程安全类型接口。 |
 | [uint32\_t OH\_NativeBuffer\_GetSeqNum(OH\_NativeBuffer \*buffer)](capi-native-buffer-h.md#oh_nativebuffer_getseqnum) | 获取OH\_NativeBuffer的序列号。  本接口为非线程安全类型接口。 |
 | [int32\_t OH\_NativeBuffer\_SetColorSpace(OH\_NativeBuffer \*buffer, OH\_NativeBuffer\_ColorSpace colorSpace)](capi-native-buffer-h.md#oh_nativebuffer_setcolorspace) | 为OH\_NativeBuffer设置颜色空间属性。  本接口为非线程安全类型接口。 |
+| [int32\_t OH\_NativeBuffer\_SetDmaBufferName(OH\_NativeBuffer \*buffer, const char \*name)](capi-native-buffer-h.md#oh_nativebuffer_setdmabuffername) | 设置OH\_NativeBuffer对应的DMA buffer名称，用于在内存泄漏排查中定位buffer的来源。  DMA buffer（Direct Memory Access buffer，直接内存访问缓冲区）是允许多进程、多硬件之间共享访问的内存；OH\_NativeBuffer对应的图形缓冲区底层基于内核DMA-BUF机制分配。  本接口为非线程安全类型接口。 |
 | [int32\_t OH\_NativeBuffer\_MapPlanes(OH\_NativeBuffer \*buffer, void \*\*virAddr, OH\_NativeBuffer\_Planes \*outPlanes)](capi-native-buffer-h.md#oh_nativebuffer_mapplanes) | 将OH\_NativeBuffer对应的多通道ION内存映射到进程空间。  本接口为非线程安全类型接口。 |
 | [int32\_t OH\_NativeBuffer\_FromNativeWindowBuffer(OHNativeWindowBuffer \*nativeWindowBuffer, OH\_NativeBuffer \*\*buffer)](capi-native-buffer-h.md#oh_nativebuffer_fromnativewindowbuffer) | 将OHNativeWindowBuffer实例转换为OH\_NativeBuffer实例。  本接口为非线程安全类型接口。 |
 | [int32\_t OH\_NativeBuffer\_GetColorSpace(OH\_NativeBuffer \*buffer, OH\_NativeBuffer\_ColorSpace \*colorSpace)](capi-native-buffer-h.md#oh_nativebuffer_getcolorspace) | 获取OH\_NativeBuffer颜色空间属性。  本接口为非线程安全类型接口。 |
@@ -353,6 +354,37 @@ int32_t OH_NativeBuffer_SetColorSpace(OH_NativeBuffer *buffer, OH_NativeBuffer_C
 | 类型 | 说明 |
 | --- | --- |
 | int32\_t | 返回值为0表示执行成功，其他返回值可参考[OHNativeErrorCode](capi-graphic-error-code-h.md#ohnativeerrorcode)。 |
+
+### OH\_NativeBuffer\_SetDmaBufferName()
+
+```c
+int32_t OH_NativeBuffer_SetDmaBufferName(OH_NativeBuffer *buffer, const char *name)
+```
+
+**描述**
+
+设置OH\_NativeBuffer对应的DMA buffer名称，用于在内存泄漏排查中定位buffer的来源。
+
+DMA buffer（Direct Memory Access buffer，直接内存访问缓冲区）是允许多进程、多硬件之间共享访问的内存；OH\_NativeBuffer对应的图形缓冲区底层基于内核DMA-BUF机制分配。
+
+本接口为非线程安全类型接口。
+
+**系统能力：** SystemCapability.Graphic.Graphic2D.NativeBuffer
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数项 | 描述 |
+| --- | --- |
+| [OH\_NativeBuffer](capi-oh-nativebuffer-oh-nativebuffer.md) \*buffer | 一个指向OH\_NativeBuffer的结构体实例的指针。 |
+| const char \*name | 传入的DMA buffer的名称字符串，必须以字母开头，仅包含字母与数字，且长度不超过64字节，开发板最大支持31字节。 |
+
+**返回：**
+
+| 类型 | 说明 |
+| --- | --- |
+| int32\_t | 执行成功时返回NATIVE\_ERROR\_OK。  buffer为空指针或name非法时返回NATIVE\_ERROR\_INVALID\_ARGUMENTS。  其他返回值可参考[OHNativeErrorCode](capi-graphic-error-code-h.md#ohnativeerrorcode)。 |
 
 ### OH\_NativeBuffer\_MapPlanes()
 

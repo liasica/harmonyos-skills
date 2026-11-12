@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-p
 title: 退款结果回调通知
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 平台类商户/服务商 > 签约代扣 > 退款结果回调通知
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:36+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:d59a722647e712273ce69e226febffa9950eef81787336693087338ebf69f62d
+scraped_at: 2026-11-12T09:57:35+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c0f1f9c2da020c70e3dade1cf94b5d3a565d3a696e688c873daedf55c8f14cb7
 ---
 
 ## 功能介绍
@@ -47,13 +47,13 @@ content_hash: sha256:d59a722647e712273ce69e226febffa9950eef81787336693087338ebf6
 | certNo | 否 | String | 签名所使用的证书编号。 |
 | mercRefundNo | 是 | String | 商户退款订单号。 |
 | sysRefundNo | 是 | String | 华为支付退款订单号。 |
-| refundAmount | 是 | Long | 退款总金额。订单需要退款的金额，该金额不能大于订单金额，单位：分。  **说明：** 如果正向交易使用了营销，该退款金额包含营销金额，华为支付会按业务规则分配营销和买家自有资金分别退多少，默认按比例退款。如不填则默认payerRefundAmount。 |
+| refundAmount | 是 | Long | 退款总金额。订单需要退款的金额，该金额不能大于订单金额，单位：分。  **说明：** 如果正向交易使用了营销，该退款金额包含营销金额，华为支付会按业务规则分配营销和用户自有资金分别退多少，默认按比例退款。 |
 | payerRefundAmount | 是 | Long | 退款给用户的金额，单位：分。 |
 | promotionRefundAmount | 是 | Long | 营销退款金额，单位：分。 |
 | currency | 是 | String | 交易币种单位，最大长度为3。  CNY （默认，当前仅支持该币种单位） |
 | mercNo | 否 | String | 商户号。 |
 | finishTime | 否 | String | 退款完成时间，UTC时间格式（yyyy-MM-dd'T'HH:mm:ss.SSSZ）。 |
-| refundOrderStatus | 是 | String | 退款订单状态。  - REFUND\_SUCCESS：成功  - REFUND\_FAILED：失败 |
+| refundOrderStatus | 是 | String | 退款订单状态。  - REFUND\_SUCCESS：退款成功  - REFUND\_FAILED：退款失败 |
 | payload | 否 | String | 预留信息，如商户请求时传递该参数，此时会原样返回。 |
 
 ## 请求示例

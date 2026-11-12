@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/health-ap
 title: healthModels (运动健康数据模型)
 breadcrumb: API参考 > 应用服务 > Health Service Kit（运动健康服务） > ArkTS API > 运动健康数据类型常量及模型定义 > healthModels (运动健康数据模型)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:55+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:742961f16c5bd7c0b886a23563b5ba3a7c974b9a872631f49a242009094b9c1b
+scraped_at: 2026-11-12T09:57:19+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c34c0bd2beab59405420e761fa9548bea75d53097991d75a2e2533f8722ba8cd
 ---
 
 本模块提供运动健康数据模型。
@@ -969,3 +969,163 @@ type Weight = healthStore.SamplePoint<healthFields.Weight>
 | 类型 | **说明** |
 | --- | --- |
 | [healthStore.SamplePoint](health-api-healthstore.md#samplepoint)<[healthFields.Weight](health-api-healthfields.md#weight)> | 体重采样数据模型。 |
+
+## OutdoorSnowboard
+
+type OutdoorSnowboard = healthStore.ExerciseSequence<healthFields.OutdoorSnowboardSummary, healthFields.OutdoorSnowboardDetail>
+
+户外单板滑雪锻炼记录数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.OutdoorSnowboardSummary](health-api-healthfields.md#outdoorsnowboardsummary), [healthFields.OutdoorSnowboardgDetail](health-api-healthfields.md#outdoorsnowboarddetail)> | 户外单板滑雪锻炼记录数据模型。 |
+
+## OutdoorSkiing
+
+type OutdoorSkiing = healthStore.ExerciseSequence<healthFields.OutdoorSkiingSummary, healthFields.OutdoorSkiingDetail>
+
+户外双板滑雪锻炼记录数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.OutdoorSkiingSummary](health-api-healthfields.md#outdoorskiingsummary), [healthFields.OutdoorSkiingDetail](health-api-healthfields.md#outdoorskiingdetail)> | 户外双板滑雪锻炼记录数据模型。 |
+
+## IndoorSnowboard
+
+type IndoorSnowboard = healthStore.ExerciseSequence<healthFields.IndoorSnowboardSummary, healthFields.IndoorSnowboardDetail>
+
+室内单板滑雪锻炼记录数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.IndoorSnowboardSummary](health-api-healthfields.md#indoorsnowboardsummary), [healthFields.IndoorSnowboardDetail](health-api-healthfields.md#indoorsnowboarddetail)> | 室内单板滑雪锻炼记录数据模型。 |
+
+## IndoorSkiing
+
+type IndoorSkiing = healthStore.ExerciseSequence<healthFields.IndoorSkiingSummary, healthFields.IndoorSkiingDetail>
+
+室内双板滑雪锻炼记录数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.IndoorSkiingSummary](health-api-healthfields.md#indoorskiingsummary), [healthFields.IndoorSkiingDetail](health-api-healthfields.md#indoorskiingdetail)> | 室内双板滑雪锻炼记录数据模型。 |
+
+## CrossCountrySkiing
+
+type CrossCountrySkiing = healthStore.ExerciseSequence<healthFields.CrossCountrySkiingSummary, healthFields.CrossCountrySkiingDetail>
+
+越野滑雪锻炼记录数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.CrossCountrySkiingSummary](health-api-healthfields.md#crosscountryskiingsummary), [healthFields.CrossCountrySkiingDetail](health-api-healthfields.md#crosscountryskiingdetail)> | 越野滑雪锻炼记录数据模型。 |
+
+## SkiMountaineering
+
+type SkiMountaineering = healthStore.ExerciseSequence<healthFields.SkiMountaineeringSummary, healthFields.SkiMountaineeringDetail>
+
+滑雪登山锻炼记录数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.SkiMountaineeringSummary](health-api-healthfields.md#skimountaineeringsummary), [healthFields.SkiMountaineeringDetail](health-api-healthfields.md#skimountaineeringdetail)> | 滑雪登山锻炼记录数据模型。 |
+
+## Padel
+
+type Padel = healthStore.ExerciseSequence<healthFields.PadelSummary, healthFields.PadelDetail>
+
+笼式网球锻炼记录数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.PadelSummary](health-api-healthfields.md#padelsummary), [healthFields.PadelDetail](health-api-healthfields.md#padeldetail)> | 笼式网球锻炼记录数据模型。 |
+
+## Pilates
+
+type Pilates = healthStore.ExerciseSequence<healthFields.PilatesSummary, healthFields.PilatesDetail>
+
+普拉提锻炼记录数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.PilatesSummary](health-api-healthfields.md#pilatessummary), [healthFields.PilatesDetail](health-api-healthfields.md#pilatesdetail)> | 普拉提锻炼记录数据模型。 |
+
+## FreeTraining
+
+type FreeTraining = healthStore.ExerciseSequence<healthFields.FreeTrainingSummary, healthFields.FreeTrainingDetail>
+
+自由训练锻炼记录数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.FreeTrainingSummary](health-api-healthfields.md#freetrainingsummary), [healthFields.FreeTrainingDetail](health-api-healthfields.md#freetrainingdetail)> | 自由训练锻炼记录数据模型。 |
+
+## StrengthTraining
+
+type StrengthTraining = healthStore.ExerciseSequence<healthFields.StrengthTrainingSummary, healthFields.StrengthTrainingDetail>
+
+力量训练锻炼记录数据模型。
+
+**系统能力：** SystemCapability.Health.HealthStore
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+| 类型 | **说明** |
+| --- | --- |
+| [healthStore.ExerciseSequence](health-api-healthstore.md#exercisesequence)<[healthFields.StrengthTrainingSummary](health-api-healthfields.md#strengthtrainingsummary), [healthFields.StrengthTrainingDetail](health-api-healthfields.md#strengthtrainingdetail)> | 力量训练锻炼记录数据模型。 |

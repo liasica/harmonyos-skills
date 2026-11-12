@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-safe-area
 title: 网页中安全区域计算和避让适配
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 处理网页内容 > 网页中安全区域计算和避让适配
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:aa70cd1c86016e7fe62ca1d77bf3d230f5ab1df6f207fb128bfe7f4ab2ae3256
+scraped_at: 2026-11-12T09:51:24+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:ea5f54803ad67a1cca70a8d8db8db590831e8d6df24bf97beca50acc2f1546b0
 ---
 
 早期设备屏幕多为矩形，应用界面能够完整展示。随着全面屏、刘海屏等异形屏幕的普及，屏幕边缘可能出现圆角、摄像头或系统导航条，导致界面部分被遮挡。
@@ -22,39 +22,65 @@ Web组件默认布局在安全区域内。开启[沉浸式效果](arkts-develop-
 
 * 通过[setWindowLayoutFullScreen](../harmonyos-references/arkts-apis-window-window.md#setwindowlayoutfullscreen9)设置应用窗口全屏。窗口全屏时，Web组件可布局至非安全区域。
 
-  ```ts
-  // EntryAbility.ets
-  import { UIAbility } from '@kit.AbilityKit';
-  import { window } from '@kit.ArkUI';
-
-  export default class EntryAbility extends UIAbility {
-    // ...
-    onWindowStageCreate(windowStage: window.WindowStage): void {
-      windowStage.getMainWindow().then(window => {
-        // 设置窗口全屏
-        window.setWindowLayoutFullScreen(true);
+```typescript
+import { webview } from '@kit.ArkWeb';
+import { window } from '@kit.ArkUI';
+import { common } from '@kit.AbilityKit';
+import { BusinessError } from '@kit.BasicServicesKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+ 
+const DOMAIN: number = 0x0000;
+const TAG: string = 'ImmersiveWeb';
+const TITLE_HEIGHT: number = 56;
+const TITLE_FONT_SIZE: number = 20;
+ 
+@Entry
+@Component
+struct WebComponent {
+  controller: webview.WebviewController = new webview.WebviewController();
+  private win: window.Window | null = null;
+ 
+  aboutToAppear(): void {
+    // 设置窗口全屏，启用沉浸式效果
+    const ctx = this.getUIContext().getHostContext() as common.UIAbilityContext;
+    window.getLastWindow(ctx).then((win) => {
+      this.win = win;
+      win.setWindowLayoutFullScreen(true).catch((error: BusinessError) => {
+        hilog.error(DOMAIN, TAG, `setWindowLayoutFullScreen failed: %{public}s`, error.message);
+      });
+    }).catch((error: BusinessError) => {
+      hilog.error(DOMAIN, TAG, `getLastWindow failed: %{public}s`, error.message);
+    });
+  }
+ 
+  aboutToDisappear(): void {
+    // 离开页面时恢复窗口布局
+    if (this.win) {
+      this.win.setWindowLayoutFullScreen(false).catch((error: BusinessError) => {
+        hilog.error(DOMAIN, TAG, `setWindowLayoutFullScreen failed: %{public}s`, error.message);
       });
     }
   }
-  ```
 
-  ```ts
-  // xxx.ets
-  import { webview } from '@kit.ArkWeb';
-
-  @Entry
-  @Component
-  struct WebComponent {
-    controller: webview.WebviewController = new webview.WebviewController();
-
-    build() {
-      Column() {
-        Web({ src: 'www.example.com', controller: this.controller })
-          .width('100%').height('100%')
-      }
+  build() {
+    Column() {
+      // 顶部标题条，背景色延伸到状态栏，直观体现沉浸式全屏效果
+      Text($r('app.string.immersive_web_title'))
+        .width('100%')
+        .height(TITLE_HEIGHT)
+        .fontSize(TITLE_FONT_SIZE)
+        .fontColor($r('app.color.immersive_title_font'))
+        .textAlign(TextAlign.Center)
+        .backgroundColor($r('app.color.immersive_title_bg'))
+        .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP])
+ 
+      Web({ src: 'www.example.com', controller: this.controller })
+        .width('100%').height('100%')
     }
   }
-  ```
+}
+```
+
 * 通过[expandSafeArea](../harmonyos-references/ts-universal-attributes-expand-safe-area.md#expandsafearea)设置Web组件扩展安全区域，可以自定义扩展类型和方向。下面的示例中，Web组件可扩展至状态栏和导航栏，实现沉浸式效果。
 
 ```typescript
@@ -104,7 +130,7 @@ safe-area-inset-\*是一组CSS环境变量，定义了安全区域与Web可视�
 
 **图1** safe-area-inset-\*示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/QrQV4BzSSq2YaWyrSruU5w/zh-cn_image_0000002809010165.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/w7Y3YjI4RyGOi6oUIpFeOQ/zh-cn_image_0000002815398959.png)
 
 当设置viewport-fit=cover时，ArkWeb内核将持续监测Web组件及系统非安全区域的位置与尺寸，根据两者的重叠部分计算网页在四个方向上需避让的具体距离，并设置给环境变量safe-area-inset-\*。在矩形显示器（如普通PC/2in1设备的屏幕）上，这些值为零。在非矩形显示器（如圆形表盘或移动设备屏幕）上，safe-area-inset-\*所界定的内矩形区域即为安全区域，网页内容在该区域内可完整显示，避免被非矩形显示区域裁剪。
 
@@ -140,7 +166,7 @@ Web组件启用沉浸式效果时，渲染内容可能与非安全区域重叠�
 
 **图2** Web组件开启沉浸式效果时网页元素被非安全区域遮挡
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d8/v3/OrMMIHVkS_Cnl1bTZULubQ/zh-cn_image_0000002809050079.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/jFqVHnGiQwGYv3z2ZQ3uvw/zh-cn_image_0000002786519384.png)
 
 ```html
 <!-- index.html -->
@@ -222,4 +248,4 @@ Web组件启用沉浸式效果时，渲染内容可能与非安全区域重叠�
 
 **图3** Web组件开启沉浸式效果时网页元素避让非安全区域
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/qmAsYSLrSCWLVxwEg3Z1ZA/zh-cn_image_0000002779850514.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/FfHg55X-SD-swcuEw9hv-Q/zh-cn_image_0000002786359456.png)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/synchronous-v
 title: 视频编码同步模式
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 视频编码同步模式
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:07+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:4eb1102ff1307553a50e33c1c5a90ac6ee3748352ec862f43903744afc641e23
+scraped_at: 2026-11-12T09:52:01+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:64bea6abf353e915fb6030a8c2b1f3b98cf34cda6c165480b9396c73917589cb
 ---
 
 从API version 20开始，支持视频编码同步模式。
@@ -26,7 +26,7 @@ content_hash: sha256:4eb1102ff1307553a50e33c1c5a90ac6ee3748352ec862f43903744afc6
 
 详细的API说明请参考[VideoEncoder](../harmonyos-references/capi-native-avcodec-videoencoder-h.md)。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/17/v3/bhZeb3QrTYaiFDx2uT2IHA/zh-cn_image_0000002809050489.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/yBRh65s-TuiQ8QozskngNA/zh-cn_image_0000002786359864.png)
 
 ### 在CMake脚本中链接动态库
 
@@ -201,7 +201,7 @@ target_link_libraries(sample PUBLIC libnative_media_venc.so)
                    return false;
                }
                if (info.flags & AVCODEC_BUFFER_FLAGS_EOS) {
-                   outputDone = 1;
+                   outputDone = true;
                }
 
                // 将编码完成帧数据buffer写入到对应输出文件中。
@@ -496,7 +496,7 @@ target_link_libraries(sample PUBLIC libnative_media_venc.so)
                    return false;
                }
                if (inputFile->eof()) {
-                   inputDone = 1;
+                   inputDone = true;
                }
                break;
            }
@@ -549,7 +549,7 @@ target_link_libraries(sample PUBLIC libnative_media_venc.so)
                    outputFile->write(reinterpret_cast<char *>(addr), info.size);
                }
                if (info.flags & AVCODEC_BUFFER_FLAGS_EOS) {
-                   outputDone = 1;
+                   outputDone = true;
                }
                // 释放已完成处理的信息，index为对应buffer队列的下标。
                OH_AVErrCode freeOutputRet = OH_VideoEncoder_FreeOutputBuffer(videoEnc, index);

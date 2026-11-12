@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/components-ba
 title: 基于标准化数据结构的控件 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 标准化数据定义 > 基于标准化数据结构的控件 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:11+08:00
-doc_updated_at: 2026-09-01
+scraped_at: 2026-11-12T09:51:01+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:2c67841017e5249051bb6e5dea3c3a7e615d8a7fa1e4759835aeac75dc486457
 ---
 

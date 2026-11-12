@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/system-font-a
 title: 系统字体的信息获取和使用（ArkTS）
 breadcrumb: 指南 > 图形 > ArkGraphics 2D（方舟2D图形服务） > 文本 > 字体管理 > 系统字体的信息获取和使用（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:18+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:f0d4b8712d9513ea50064b10bb900d32e374cf5e473e5d07d58500ceaf2fd048
+scraped_at: 2026-11-12T09:52:12+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4b8df0b6cc9167e4a0131372ff037c9ed63ac8b3b75147455f41b65c05ddd539
 ---
 
 ## 场景介绍
@@ -62,7 +62,7 @@ content_hash: sha256:f0d4b8712d9513ea50064b10bb900d32e374cf5e473e5d07d58500ceaf2
 
 以下打印的示例为应用设备系统对应的部分系统字体配置信息情况，不同设备系统配置信息可能不同，此处仅示意。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c8/v3/WT_E57KlQuuSRjiiEUh3Zg/zh-cn_image_0000002779851098.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a1/v3/5nXBly0QTG68dgejYzb-0w/zh-cn_image_0000002786519974.png)
 
 ## 使用或切换系统字体
 
@@ -99,7 +99,7 @@ content_hash: sha256:f0d4b8712d9513ea50064b10bb900d32e374cf5e473e5d07d58500ceaf2
    // 创建一个段落样式对象，以设置排版风格
    let myParagraphStyle: text.ParagraphStyle = {
      textStyle: textStyle1,
-     align: 3,
+     align: text.TextAlign.JUSTIFY,
      wordBreak: text.WordBreak.NORMAL
    };
    // 获取全局字体集实例
@@ -126,4 +126,4 @@ content_hash: sha256:f0d4b8712d9513ea50064b10bb900d32e374cf5e473e5d07d58500ceaf2
 
 效果展示如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/50/v3/4xRNBVFxThi-wVk5VG2Pmg/zh-cn_image_0000002779691130.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/HFzcLMyzR66l-RCy9aynbg/zh-cn_image_0000002786360046.png)

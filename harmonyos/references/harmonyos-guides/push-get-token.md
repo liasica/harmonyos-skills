@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-get-toke
 title: 获取Push Token
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 开发准备 > 获取Push Token
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:26+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:4d961e3e8097d3c50f63d08a56e0c7e9ac856b87c4d30bf11e42974822bc7b5a
+scraped_at: 2026-11-12T09:52:34+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f87a588167ee0e9be859aa12ed77f403cfb3096a41e95f0829aae478b8c98cf8
 ---
 
 ## 场景介绍
@@ -28,7 +28,7 @@ Push Token一般情况不会变化，仅下列场景会导致之前的Push Token
 
 ## 约束与限制
 
-获取Push Token能力支持Phone、Tablet、PC/2in1设备。并且从5.1.0(18)版本开始，新增支持Wearable设备；从5.1.1(19)版本开始，新增支持TV设备。
+获取Push Token能力支持Phone、Tablet、PC/2in1设备。并且从API版本5.1.0(18)开始，新增支持Wearable设备；从API版本5.1.1(19)开始，新增支持TV设备；从API版本26.0.1开始，新增支持Car设备。
 
 ## 注意事项
 
@@ -118,7 +118,7 @@ Push Token一般情况不会变化，仅下列场景会导致之前的Push Token
 
 **说明** 
 
-Push Token更新回调能力支持Wearable设备。并且从6.1.0(23)版本开始，新增支持Phone、Tablet、PC/2in1设备。
+Push Token更新回调能力支持Wearable设备。并且从API版本6.1.0(23)开始，新增支持Phone、Tablet、PC/2in1设备。
 
 当设备离开当前国家或地区时，可能会触发Push Token自动更新，如果应用期望感知到Push Token更新事件，需要调用on接口进行回调注册；对应的，可以调用off接口解除回调注册，解除后当Push Token更新时，应用将不会收到回调。
 

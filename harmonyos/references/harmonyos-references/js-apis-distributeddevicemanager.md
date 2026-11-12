@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.distributedDeviceManager (设备管理)"
 breadcrumb: API参考 > 系统 > 网络 > Distributed Service Kit（分布式管理服务） > ArkTS API > @ohos.distributedDeviceManager (设备管理)
 category: harmonyos-references
-scraped_at: 2026-10-31T07:36:54+08:00
-doc_updated_at: 2026-10-30
+scraped_at: 2026-11-12T09:55:36+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:bcd0bf29873f4c16a8e0659f59fc12ed9f2e4fc20c13506dbbf33be0011c603e
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/device-securi
 title: Device Security Kit（设备安全服务）
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务）
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:28+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:4d0c7b6b0cdf0d57cdb2de836268b7c649c72b00ac2c7467853807a14cd8b9b7
+scraped_at: 2026-11-12T09:51:35+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:bf6802c13bc6733b135010525a10615760c288164df50028e52ae11166cd26e8
 ---
 
 * **[Device Security Kit简介](devicesecurity-introduction.md)**
@@ -20,6 +20,7 @@ content_hash: sha256:4d0c7b6b0cdf0d57cdb2de836268b7c649c72b00ac2c7467853807a14cd
 * **[星盾机密风控引擎](devicesecurity-starshieldconfidentialriskcontrolengine.md)**
 * **[查询设备安全模式(C/C++)](devicesecurity-securitymode.md)**
 * **[反诈选择器](devicesecurity-antifraudpicker.md)**
+* **[侧载安全管控](devicesecurity-sideloading.md)**
 * **[防窥保护](devicesecurity-dlpantipeep.md)**
 * **[病毒防护服务管理(C/C++)](devicesecurity-vps-c.md)**
 * **[超级隐私模式](devicesecurity-superprivacymode.md)**

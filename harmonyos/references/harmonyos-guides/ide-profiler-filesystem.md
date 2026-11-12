@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-profiler-
 title: IO耗时：FileSystem分析
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 优化应用性能 > IO耗时：FileSystem分析
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:28+08:00
+scraped_at: 2026-11-12T09:53:09+08:00
 doc_updated_at: 2026-10-10
-content_hash: sha256:e8150c0ab918bb5f4e499b0121bdf1253f79828db03384be146c04105d029562
+content_hash: sha256:6029cc8c6341559758a837bb09935be9a00c1f59521870771a873ab9bce72f5c
 ---
 
 ## 功能介绍
@@ -30,47 +30,47 @@ FileSystem模板支持的泳道包括：APP Name IO、File System IO、Callstack
 
 APP Name IO泳道显示调测应用的逻辑读、逻辑写、物理读写的累计次数和字节数，具体统计项如下。默认显示所有的统计项，如需取消查看某项数据，可在APP Name IO泳道的右上角取消勾选。
 
-* ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/jU-UxCIsTIe9Kbhrhmh5-g/zh-cn_image_0000002731542331.png)Logical Write Bytes：逻辑写的累计次数和字节数。
-* ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/ixqbTHSbRB-vq1TYfhbypA/zh-cn_image_0000002701663128.png)Logical Read Bytes：逻辑读的累计次数及字节数。
-* ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/24W1YsDhT3KmDejnukFhDw/zh-cn_image_0000002731542317.png)Physical Write/Read Bytes：物理读写的累计次数和字节数。
+* ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/BL62Ws7xSMOfVeQAlsjT1Q/zh-cn_image_0000002779406854.png)Logical Write Bytes：逻辑写的累计次数和字节数。
+* ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ed/v3/AihKEKsaQ4axzEJ5z6PoNQ/zh-cn_image_0000002808766421.png)Logical Read Bytes：逻辑读的累计次数及字节数。
+* ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/iqtKKNnLRA21RrhLq3rh-A/zh-cn_image_0000002808766415.png)Physical Write/Read Bytes：物理读写的累计次数和字节数。
 
 框选**APP Name IO**主泳道，通过**Statistics**区域和**Details**区域查看选定时间段内的统计数据。
 
 * Statistics区域：以进程维度展示了选定时间段内IO的统计数据，包括进程信息、IO类型、累计次数、累计字节数、最小时延、最大时延、平均时延、平均方差时延。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/mpJ2FBqfTjSVyTnHDxZXBA/zh-cn_image_0000002731542325.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/62/v3/iCMeqBddRvqi7NXcD4kPKw/zh-cn_image_0000002808886497.png "点击放大")
 * Details区域：展示详细的IO数据，包括开始时间、进程信息、线程信息、IO类型、单次时延、单次字节数。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4f/v3/3E3qpIgNRnSafJy664EFrg/zh-cn_image_0000002701663120.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/d-ck82OfSbKqUBqCZd-Pqg/zh-cn_image_0000002779566830.png "点击放大")
 
 主泳道包括Logical Writes、Logical Reads、Physical Writes/Reads三条子泳道。Logical Writes展示应用逻辑写的详细数据，Logical Reads展示应用逻辑读的详细数据，Physical Writes/Reads用于展示应用物理读写的详细数据。通过点选子泳道中的条块或框选子泳道，查看特定的统计数据。
 
 * 点选子泳道中的条块，**Slice Detail**区域展示详情数据，包括IO的开始时间、所属进程、所属线程、类型、单次时延、单次字节数。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/9FrBreX3QJSM_FBtzKZ_Vw/zh-cn_image_0000002731542323.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/Nya0TkFPQEWkvnJ_cF95YQ/zh-cn_image_0000002808886505.png "点击放大")
 
 * 框选子泳道，**Details**详情区查看选定时间段内的详细数据，包括IO的开始时间、进程信息、线程信息、类型、单次时延、单次字节数。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/H2V-O6gbSzSmbojG12oOiA/zh-cn_image_0000002731382355.png "点击放大")
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/57/v3/gpV0M6WQRUaUb90ueIDpSA/zh-cn_image_0000002808766419.png "点击放大")
 
 ## 查看整机IO耗时
 
 File System IO泳道显示整机的逻辑读、逻辑写、物理读写累计次数和字节数，具体统计项如下。默认显示所有的统计项，如需取消查看某项数据，可在File System IO泳道的右上角取消勾选。
 
-* ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e3/v3/x6ZVNWJcSB6T3MJyt-0J9w/zh-cn_image_0000002701823054.png)Logical Write Bytes：逻辑写的累计次数和字节数。
-* ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/vig0GVIlT52cTJkqMKEczg/zh-cn_image_0000002731382363.png)Logical Read Bytes：逻辑读的累计次数和字节数。
-* ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/z3yiXCvNRPSFis2f9vYSoA/zh-cn_image_0000002701823048.png)Physical Write/Read Bytes：物理读写的累计次数和字节数。
+* ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/xBswhep_Q1eQrhPO6U36TA/zh-cn_image_0000002808886501.png)Logical Write Bytes：逻辑写的累计次数和字节数。
+* ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/28/v3/xrbhdTfDT1qoeZLsf6SLMg/zh-cn_image_0000002779406860.png)Logical Read Bytes：逻辑读的累计次数和字节数。
+* ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/2TluNXo5QGK2kXmH5U-Yag/zh-cn_image_0000002779406852.png)Physical Write/Read Bytes：物理读写的累计次数和字节数。
 
 主泳道包括Logical Writes、Logical Reads、Physical Writes/Reads三条子泳道。Logical Writes子泳道展示整机逻辑写的详细数据，Logical Reads子泳道展示整机逻辑读的详细数据，Physical Writes/Reads子泳道展示整机物理读写的详细数据。
 
 框选File System IO主泳道或子泳道，**Statistics**区域以进程维度展示选定时间段内的IO统计数据，包括进程信息、IO类型、次数、字节数、最小时延、最大时延、平均时延、平均方差时延。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/2Vqw9jyrQQqjJpGwQdd2OA/zh-cn_image_0000002731542319.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a4/v3/Qac-0jwtQd6zjmtd7VNfUg/zh-cn_image_0000002808766417.png "点击放大")
 
 单击主泳道或子泳道的Statistics区域中任意一行，右侧**More**区域中会显示详情数据，包括IO的开始时间、线程信息、单次时延、单次字节数。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9b/v3/3dj6t-TIQayobf2wy0Dn1Q/zh-cn_image_0000002701663134.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5e/v3/U9lKVVnzSD6L-NSGP4Cn-Q/zh-cn_image_0000002808886499.png "点击放大")
 
 点选子泳道中的条块，展示条块对应时间区域的整机IO聚合数据。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/0oWbO0FETFSCtrx9QvGnEg/zh-cn_image_0000002731382347.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6/v3/o9UzaeAdS1adaboBdDrH2w/zh-cn_image_0000002779566840.png "点击放大")

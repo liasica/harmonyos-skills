@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-run-
 title: ohpm run错误码
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 错误码 > ohpm run错误码
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:25+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:13a69cebc576e3f0eba8b59a41661cb41615bc94e52549a87bcf47b21d4cb1ae
+scraped_at: 2026-11-12T09:53:12+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:5c8fad1961037f715e3aacca9d50fe6cf7db4744308b106604a47a6baa8a4ac8
 ---
 
 ## 00611001 脚本执行失败
@@ -38,7 +38,7 @@ Invalid Command Error.
 
 **可能原因**
 
-脚本别名开头位置使用非法字符，包括(、[、{，如oh-package.json5配置："scripts": { "build": "(echo hello)" }
+脚本别名开头位置使用非法字符，包括(、[、{，如oh-package.json5配置："scripts": { "build": "(echo hello)" }。
 
 **处理步骤**
 
@@ -110,7 +110,7 @@ Invalid Key Regex.
 
 **可能原因**
 
-script\_name不符合规范
+script\_name不符合规范。
 
 **处理步骤**
 
@@ -256,11 +256,11 @@ Script Content Error.
 
 当同时满足以下三个条件时返回该错误码：
 
-1. 脚本内容包含ohpm run
+1. 脚本内容包含ohpm run。
 
-2. 脚本内容包含 --（参数分隔符）
+2. 脚本内容包含 --（参数分隔符）。
 
-3. 脚本内容包含 && 或 ||（命令连接符 ）
+3. 脚本内容包含 && 或 ||（命令连接符 ）。
 
 如oh-package.json5 配置为"scripts": { "bad": "ohpm run build -- --prefix D:\\test && ohpm run test" }，执行ohpm run bad。
 
@@ -338,4 +338,4 @@ Invalid Param Config Error.
 
 **处理步骤**
 
-传递参数配置时，确保以--开头，以指示需要添加或覆盖的参数。具体请参考[传递参数](ide-ohpm-run.md#zh-cn_topic_0000001792216413_传递参数)。
+传递参数配置时，确保以--开头，以指示需要添加或覆盖的参数。具体请参考[传递参数](ide-ohpm-run.md#section1755712434412)。

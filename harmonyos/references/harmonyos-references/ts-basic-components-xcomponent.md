@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: XComponent
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 渲染绘制 > XComponent
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:09+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:cd74982892a4d4e80aacc555ca2197868b350af0ccb8218d73ccb3110961790e
+scraped_at: 2026-11-12T09:54:22+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3ec673c0d5c19c74d41528552cc62533c97ede6101515b24c941adb974b0337c
 ---
 
 提供用于图形绘制和媒体数据写入的Surface，XComponent负责将其嵌入到视图中，支持应用自定义Surface位置和大小。同时支持AI图像分析、HDR视频亮度调节、防截屏录屏隐私保护、画布自绘制等能力，适用于视频播放、相机预览、游戏渲染、图像AI识别等需要高性能自绘制和媒体内容展示的场景。具体指南请参考[自定义渲染（XComponent）文档](../harmonyos-guides/napi-xcomponent-guidelines.md)。
@@ -376,24 +376,26 @@ getXComponentSurfaceId(): string
 ```ts
 // xxx.ets
 
-@Entry
-  @Component
-  struct Index {
-    myXComponentController: XComponentController = new XComponentController();
+class MyXComponentController extends XComponentController {
+  onSurfaceCreated(surfaceId: string): void {
+    console.info("XComponent SurfaceId: " + this.getXComponentSurfaceId());
+  }
+}
 
-    build() {
-      Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
-        XComponent({
-          type: XComponentType.SURFACE,
-          controller: this.myXComponentController
-        })
-          .onLoad(() => {
-            let surfaceId: string = this.myXComponentController.getXComponentSurfaceId();
-            console.info("XComponent SurfaceId: " + surfaceId);
-          })
-      }
+@Entry
+@Component
+struct Index {
+  myXComponentController: XComponentController = new MyXComponentController();
+
+  build() {
+    Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
+      XComponent({
+        type: XComponentType.SURFACE,
+        controller: this.myXComponentController
+      })
     }
   }
+}
 ```
 
 ### setXComponentSurfaceSize(deprecated)
@@ -915,7 +917,7 @@ struct XComponentExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1c/v3/ukQZFQNpQuSW1yRuXQ0z7Q/zh-cn_image_0000002809012267.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ff/v3/gWTJUgPrREeUlF42nKucbA/zh-cn_image_0000002786361542.gif)
 
 ### 示例2（在Surface旋转过程中锁定）
 
@@ -930,9 +932,15 @@ struct XComponentExample {
 import nativeRender from 'libnativerender.so';
 
 class MyXComponentController extends XComponentController {
+  isLock: boolean = true;
+
   onSurfaceCreated(surfaceId: string): void {
     console.info(`onSurfaceCreated surfaceId: ${surfaceId}`);
     nativeRender.SetSurfaceId(BigInt(surfaceId));
+    let surfaceRotation: SurfaceRotationOptions = { lock: this.isLock };
+    this.setXComponentSurfaceRotation(surfaceRotation);
+    console.info("Surface getXComponentSurfaceRotation lock = " +
+    this.getXComponentSurfaceRotation().lock);
   }
 
   onSurfaceChanged(surfaceId: string, rect: SurfaceRect): void {
@@ -949,10 +957,9 @@ class MyXComponentController extends XComponentController {
 @Entry
 @Component
 struct Index {
-  @State isLock: boolean = true;
   @State xcWidth: number = 500;
   @State xcHeight: number = 700;
-  myXComponentController: XComponentController = new MyXComponentController();
+  myXComponentController: MyXComponentController = new MyXComponentController();
 
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Start }) {
@@ -961,12 +968,6 @@ struct Index {
         type: XComponentType.SURFACE,
         controller: this.myXComponentController
       })
-        .onLoad(() => {
-          let surfaceRotation: SurfaceRotationOptions = { lock: this.isLock };
-          this.myXComponentController.setXComponentSurfaceRotation(surfaceRotation);
-          console.info("Surface getXComponentSurfaceRotation lock = " +
-          this.myXComponentController.getXComponentSurfaceRotation().lock);
-        })
         .width(this.xcWidth)
         .height(this.xcHeight)
       Button("Draw")
@@ -987,39 +988,43 @@ struct Index {
 // xxx.ets
 import { drawing } from '@kit.ArkGraphics2D';
 
+class MyXComponentController extends XComponentController {
+  private mCanvas: DrawingCanvas | null = null;
+
+  onSurfaceCreated(surfaceId: string): void {
+    this.mCanvas = this.lockCanvas();
+    if (this.mCanvas) {
+      this.mCanvas.drawColor(255, 240, 250, 255); // 每次绘制前必须完全重绘整个XComponent区域，可以调用此方法实现
+      const brush = new drawing.Brush(); // 创建画刷对象
+      brush.setColor({ // 设置画刷的颜色
+        alpha: 255,
+        red: 39,
+        green: 135,
+        blue: 217
+      });
+      this.mCanvas.attachBrush(brush); // 绑定画刷到画布上
+      this.mCanvas.drawRect({ // 绘制一个矩形
+        left: 300,
+        right: 800,
+        top: 100,
+        bottom: 800
+      });
+      this.mCanvas.detachBrush(); // 将画刷与画布解绑
+      this.unlockCanvasAndPost(this.mCanvas);
+    }
+  }
+}
+
 @Entry
 @Component
 struct Index {
-  private xcController: XComponentController = new XComponentController();
-  private mCanvas: DrawingCanvas | null = null;
+  private xcController: XComponentController = new MyXComponentController();
 
   build() {
     Column() {
       XComponent({ type: XComponentType.SURFACE, controller: this.xcController })
         .width("80%")
         .height("80%")
-        .onLoad(() => {
-          this.mCanvas = this.xcController.lockCanvas();
-          if (this.mCanvas) {
-            this.mCanvas.drawColor(255, 240, 250, 255); // 每次绘制前必须完全重绘整个XComponent区域，可以调用此方法实现
-            const brush = new drawing.Brush(); // 创建画刷对象
-            brush.setColor({ // 设置画刷的颜色
-              alpha: 255,
-              red: 39,
-              green: 135,
-              blue: 217
-            });
-            this.mCanvas.attachBrush(brush); // 绑定画刷到画布上
-            this.mCanvas.drawRect({ // 绘制一个矩形
-              left: 300,
-              right: 800,
-              top: 100,
-              bottom: 800
-            });
-            this.mCanvas.detachBrush(); // 将画刷与画布解绑
-            this.xcController.unlockCanvasAndPost(this.mCanvas);
-          }
-        })
     }
     .height('100%')
     .width('100%')
@@ -1027,7 +1032,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e0/v3/2NaqfmQmTCObRYaqudx1AQ/zh-cn_image_0000002809052181.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/96/v3/r1nSSbb3SoqOrwUEXHHlrA/zh-cn_image_0000002815560963.png)
 
 ### 示例4（XComponent实现沉浸式效果）
 
@@ -1036,37 +1041,36 @@ struct Index {
 ```ts
 // xxx.ets
 import { display } from '@kit.ArkUI';
-@Entry
-@Component
-struct Index {
-  private xcController: XComponentController = new XComponentController();
+
+class MyXComponentController extends XComponentController {
   private mCanvas: DrawingCanvas | null = null;
-  @State screenWidth: number = 0;
-  @State screenHeight:number = 0;
-  aboutToAppear() {
+
+  onSurfaceCreated(surfaceId: string): void {
     try {
       const displayClass = display.getDefaultDisplaySync();
-      this.screenWidth = displayClass.width;
-      this.screenHeight = displayClass.height;
+      // 请在此处设置Surface大小，过大可能会导致绘制时间长
+      this.setXComponentSurfaceRect({surfaceWidth: displayClass.width, surfaceHeight: displayClass.height, offsetX: 0, offsetY: 0});
     } catch (error) {
       console.error(`Failed to get default display. Code: ${error.code}, message: ${error.message}`);
     }
+    this.mCanvas = this.lockCanvas();
+    if (this.mCanvas) {
+      this.mCanvas.drawColor(255, 39, 135, 217); // 每次绘制前必须完全重绘整个XComponent区域，可以调用此方法实现
+      this.unlockCanvasAndPost(this.mCanvas);
+    }
   }
+}
+
+@Entry
+@Component
+struct Index {
+  private xcController: XComponentController = new MyXComponentController();
 
   build() {
     Column() {
       XComponent({ type: XComponentType.SURFACE, controller: this.xcController })
         .width('100%')
         .height('100%')
-        .onLoad(() => {
-          // 请在此处设置Surface大小，过大可能会导致绘制时间长
-          this.xcController.setXComponentSurfaceRect({surfaceWidth: this.screenWidth, surfaceHeight: this.screenHeight, offsetX: 0, offsetY: 0});
-          this.mCanvas = this.xcController.lockCanvas();
-          if (this.mCanvas) {
-            this.mCanvas.drawColor(255, 39, 135, 217); // 每次绘制前必须完全重绘整个XComponent区域，可以调用此方法实现
-            this.xcController.unlockCanvasAndPost(this.mCanvas);
-          }
-        })
         .expandSafeArea([SafeAreaType.SYSTEM], [SafeAreaEdge.TOP, SafeAreaEdge.BOTTOM]);
     }
     .height('100%')
@@ -1075,7 +1079,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/AYkVoeSpRlqSiTcvwRjJgw/zh-cn_image_0000002779852616.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/nWiYRZyJT1aX7TirjsUMpA/zh-cn_image_0000002815401047.jpeg)
 
 ### 示例5（设置XComponent持有Surface在渲染时是否需要被视为不透明）
 
@@ -1179,4 +1183,4 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/wuldYqD3Sm2YqWwL5wFY4A/zh-cn_image_0000002779692648.jpeg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c/v3/d0Uv7UKiQ4mMXJeXFKTMDA/zh-cn_image_0000002786521472.jpeg)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 星闪错误码
 breadcrumb: API参考 > 系统 > 网络 > Connectivity Kit（短距通信服务） > 错误码 > 星闪错误码
 category: harmonyos-references
-scraped_at: 2026-10-01T07:38:23+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:3ee82dbb7d192d8935c525751f88af881678712bdea9c8bbb8b07a6930ba4fd2
+scraped_at: 2026-11-12T09:55:35+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:fd11837bb9e27bde69d04f89bfee83248f51fac251f2a094c155978bed27d1b8
 ---
 
 **说明** 
@@ -88,7 +88,7 @@ The UUID is not registered.
 
 **错误信息**
 
-Write data congestion.
+Data transmission congested.
 
 **错误描述**
 
@@ -197,7 +197,8 @@ NearLink standard UUID not allowed.
 
 **处理步骤**
 
-将接口参数中的标准服务UUID更换为自定义服务UUID，或请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
+1. 将接口参数中的标准服务UUID更换为自定义服务UUID。
+2. 检查自定义的服务、属性、方法等结构，确保其中不包含星闪标准服务UUID；若问题持续存在，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
 
 标准服务UUID由星闪联盟官方定义的基础标识（Base UUID，37BEA880-FC70-11EA-B720-000000000000）的前112比特与16比特标准标识拼接而成。自定义服务UUID不能以基础标识的前112比特为前缀。
 
@@ -227,14 +228,14 @@ Operation failed.
 
 **错误描述**
 
-系统处理过程中遇到未预期的内部错误。
+系统处理过程中遇到非预期的内部错误。
 
 **可能原因**
 
-其他未知错误。
-
-在设备已配对的情况下再调用[startPairing](js-apis-nearlink-remote-device.md#startpairing)发起配对，会返回该错误码。
+1. 在设备已配对的情况下重复调用[startPairing](js-apis-nearlink-remote-device.md#startpairing)发起配对。
+2. 其他非预期的内部错误。
 
 **处理步骤**
 
-请重试操作；若问题持续存在，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。
+1. 检查设备是否已配对；若已配对，请勿重复调用[startPairing](js-apis-nearlink-remote-device.md#startpairing)发起配对。
+2. 请重试操作；若问题持续存在，请通过[在线提单](https://developer.huawei.com/consumer/cn/support/feedback/#/)提交问题。

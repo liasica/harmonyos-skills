@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/scenario-
 title: atomicService（融合场景化API）
 breadcrumb: API参考 > 应用服务 > Scenario Fusion Kit（融合场景服务） > ArkTS API > atomicService（融合场景化API）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:08+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e36164df3d71a43f754d0e0a56c5f3f3e99ce9ce54ed78b5917d2dd0ab0731ab
+scraped_at: 2026-11-12T09:57:40+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:83a7e3db0c1b20116bf06c8c7836227ed0829e6a452a27d3baa174be9dbea4a3
 ---
 
 本模块为开发者提供获取系统信息、系统设置、关注组件等能力。
@@ -154,7 +154,7 @@ type SystemInfoType = 'brand' | 'deviceModel' | 'screenWidth' | 'screenHeight' |
 
 **系统能力：** SystemCapability.AtomicserviceComponent.atomicservice
 
-**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、Wearable、TV中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、Wearable、TV、Car中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 
@@ -190,7 +190,7 @@ type SystemSettingType = 'bluetoothEnabled' | 'locationEnabled' | 'wifiEnabled' 
 
 **系统能力：** SystemCapability.AtomicserviceComponent.atomicservice
 
-**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、Wearable、TV中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、Wearable、TV、Car中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 
@@ -217,7 +217,7 @@ getSystemInfoSync(properties?: Array<SystemInfoType>): SystemInfo
 
 **系统能力：** SystemCapability.AtomicserviceComponent.atomicservice
 
-**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、Wearable、TV中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、Wearable、TV、Car中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 
@@ -280,7 +280,7 @@ getSystemInfo(properties?: Array<SystemInfoType>): Promise<SystemInfo>
 
 **系统能力：** SystemCapability.AtomicserviceComponent.atomicservice
 
-**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、Wearable、TV中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、Wearable、TV、Car中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 
@@ -308,33 +308,30 @@ let stateArray: Array<atomicService.SystemInfoType> =
   ['brand', 'deviceModel', 'screenWidth', 'screenHeight', 'statusBarHeight', 'screenSafeArea', 'language', 'osFullName',
     'fontSizeSetting', 'sdkApiVersion', 'bluetoothEnabled', 'wifiEnabled', 'locationEnabled', 'deviceOrientation',
     'theme', 'windowWidth', 'windowHeight'];
-try {
-  atomicService.getSystemInfo(stateArray).then((data: atomicService.SystemInfo) => {
-    hilog.info(0x0000, 'testTag', 'succeeded in getting system info asynchronously');
-    // 当前参数未调用，开发者自行实现参数的逻辑处理
-    let brand: string | undefined = data.brand;
-    let deviceModel: string | undefined = data.deviceModel;
-    let screenWidth: number | undefined = data.screenWidth;
-    let screenHeight: number | undefined = data.screenHeight;
-    let statusBarHeight: number | undefined = data.statusBarHeight;
-    let screenSafeArea: window.AvoidArea | undefined = data.screenSafeArea;
-    let language: string | undefined = data.language;
-    let osFullName: string | undefined = data.osFullName;
-    let fontSizeSetting: number | undefined = data.fontSizeSetting;
-    let sdkApiVersion: number | undefined = data.sdkApiVersion;
-    let bluetoothEnabled: boolean | undefined = data.bluetoothEnabled;
-    let wifiEnabled: boolean | undefined = data.wifiEnabled;
-    let locationEnabled: boolean | undefined = data.locationEnabled;
-    let deviceOrientation: string | undefined = data.deviceOrientation;
-    let theme: ColorMode | undefined = data.theme;
-    let windowWidth: number | undefined = data.windowWidth;
-    let windowHeight: number | undefined = data.windowHeight;
-  }).catch((error: BusinessError) => {
-    hilog.error(0x0000, 'testTag', 'Promise error: %{public}d %{public}s', error.code, error.message);
-  });
-} catch (error) {
-  hilog.error(0x0000, 'testTag', 'Failed to get system info asynchronously, failReason: %{public}d %{public}s', error.code, error.message);
-}
+
+atomicService.getSystemInfo(stateArray).then((data: atomicService.SystemInfo) => {
+  hilog.info(0x0000, 'testTag', 'succeeded in getting system info asynchronously');
+  // 当前参数未调用，开发者自行实现参数的逻辑处理
+  let brand: string | undefined = data.brand;
+  let deviceModel: string | undefined = data.deviceModel;
+  let screenWidth: number | undefined = data.screenWidth;
+  let screenHeight: number | undefined = data.screenHeight;
+  let statusBarHeight: number | undefined = data.statusBarHeight;
+  let screenSafeArea: window.AvoidArea | undefined = data.screenSafeArea;
+  let language: string | undefined = data.language;
+  let osFullName: string | undefined = data.osFullName;
+  let fontSizeSetting: number | undefined = data.fontSizeSetting;
+  let sdkApiVersion: number | undefined = data.sdkApiVersion;
+  let bluetoothEnabled: boolean | undefined = data.bluetoothEnabled;
+  let wifiEnabled: boolean | undefined = data.wifiEnabled;
+  let locationEnabled: boolean | undefined = data.locationEnabled;
+  let deviceOrientation: string | undefined = data.deviceOrientation;
+  let theme: ColorMode | undefined = data.theme;
+  let windowWidth: number | undefined = data.windowWidth;
+  let windowHeight: number | undefined = data.windowHeight;
+}).catch((error: BusinessError) => {
+  hilog.error(0x0000, 'testTag', 'Failed to get system info asynchronously. Promise error: %{public}d %{public}s', error.code, error.message);
+});
 ```
 
 ## getSystemSetting
@@ -349,7 +346,7 @@ getSystemSetting(properties?: Array<SystemSettingType>): SystemSettingInfo
 
 **系统能力：** SystemCapability.AtomicserviceComponent.atomicservice
 
-**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、Wearable、TV中可正常调用，在其他设备类型中返回801错误码。
+**设备行为差异：** 该接口在Phone、Tablet、PC/2in1、Wearable、TV、Car中可正常调用，在其他设备类型中返回801错误码。
 
 **起始版本：** 5.0.0(12)
 
@@ -422,7 +419,7 @@ showFollowComponent(ctx: UIContext, params: FollowComponentParams, callback: Fol
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| [801](errorcode-universal.md#section801-该设备不支持此api) | Capability not supported. |
+| [801](errorcode-universal.md#section801-该设备不支持此api) | Capability not supported. Failed to call the API due to limited device capabilities. |
 | [1009601001](errorcode-scenario-fusion-arkts-api.md#section1009601001-非法的服务号id) | Invalid service account id. |
 | [1009601002](errorcode-scenario-fusion-arkts-api.md#section1009601002-用户未登录华为账号) | The user has not logged in with HUAWEI ID. |
 | [1009601003](errorcode-scenario-fusion-arkts-api.md#section1009601003-请求服务号云失败) | Request server failed. |

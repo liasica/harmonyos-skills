@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/hiappevent-wa
 title: 订阅资源泄漏事件（ArkTS）
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 事件订阅 > 使用HiAppEvent订阅事件 > 系统事件 > 资源泄漏事件 > 订阅资源泄漏事件（ArkTS）
 category: harmonyos-guides
-scraped_at: 2026-10-17T06:41:57+08:00
-doc_updated_at: 2026-10-16
+scraped_at: 2026-11-12T09:51:54+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:70301d9091153dc39dd982b56d1da781c4139c74671531173b93babb8e66daa8
 ---
 

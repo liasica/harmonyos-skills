@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-huks
 title: OH_Huks_ParamSet
 breadcrumb: API参考 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > C API > 结构体 > OH_Huks_ParamSet
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:47+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:55:27+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:7fbb6a01c7ab15dc2709b3707ec01e292f2d9ef7b10fbb2b051e1ce3e1559d73
 ---
 

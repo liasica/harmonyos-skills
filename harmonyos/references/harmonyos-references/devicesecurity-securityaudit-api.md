@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/devicesec
 title: SecurityAudit（安全审计）
 breadcrumb: API参考 > 系统 > 安全 > Device Security Kit（设备安全服务） > ArkTS API > SecurityAudit（安全审计）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:43+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:016e98c86c0aa25283f598c755f9bf906df18b32289a9f61f92d655fdc5ae190
+scraped_at: 2026-11-12T09:55:23+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a2aaad673d9a916bfc42a7f2fb01ddbb5cf3e6c47f36e47d3042c9b63f1affae
 ---
 
 提供统一的安全审计数据订阅与取消订阅接口，应用可以获取设备上的安全审计数据，以支撑审计业务。
@@ -132,6 +132,8 @@ import { securityAudit } from '@kit.DeviceSecurityKit';
 | AUDIO\_INTERFACE\_ACCESS | 0x1A000001 | 音频接口访问事件。  **起始版本：** 26.0.0 |
 | VIDEO\_INTERFACE\_ACCESS | 0x1A000002 | 视频接口访问事件。  **起始版本：** 26.0.0 |
 | SERIAL\_PORT\_INTERCEPTED | 0x30000101 | 串口拦截事件。  **起始版本：** 26.0.0 |
+| CUSTOMIZED\_DLP\_FILE\_ACCESS | 0x0F000007 | 自定义DLP文件访问事件。  **起始版本：** 26.0.1 |
+| DISC\_BURNING\_INTERCEPTED | 0x0F000008 | 光盘刻录拦截事件。  **起始版本：** 26.0.1 |
 
 ## FilterType
 
@@ -221,7 +223,7 @@ on(type: 'auditEventOccur', auditEventInfo: [AuditEventInfo](devicesecurity-secu
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | check permission fail. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 
 **示例：**
 
@@ -281,7 +283,7 @@ off(type: 'auditEventOccur', auditEventInfo: [AuditEventInfo](devicesecurity-sec
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | check permission fail. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 
 **示例：**
 
@@ -361,7 +363,7 @@ subscribe(events: NotifyEvent[]): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | check permission fail. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 1012000001 | Internal error.Possible causes: 1. IPC cross-process invoking fails. 2. System service process is faulty. |
 
 **示例：**
@@ -416,7 +418,7 @@ unsubscribe(events: NotifyEvent[]): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | check permission fail. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 1012000001 | Internal error.Possible causes: 1. IPC cross-process invoking fails. 2. System service process is faulty. |
 
 **示例：**
@@ -472,7 +474,7 @@ addFilter(event: NotifyEvent, filter: Filter): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | check permission fail. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 1012000001 | Internal error.Possible causes: 1. IPC cross-process invoking fails. 2. System service process is faulty. |
 | 1012000004 | The number of filters exceeds the upper limit. |
 | 1012000005 | The event does not support the filter condition. |
@@ -535,7 +537,7 @@ removeFilter(event: NotifyEvent, filter: Filter): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | check permission fail. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 1012000001 | Internal error.Possible causes: 1. IPC cross-process invoking fails. 2. System service process is faulty. |
 | 1012000005 | The event does not support the filter condition. |
 
@@ -602,7 +604,7 @@ newClient(callback: Callback<[AuditEvent](devicesecurity-securityaudit-api.md#au
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | check permission fail. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 1012000001 | Internal error.Possible causes: 1. IPC cross-process invoking fails. 2. System service process is faulty. |
 | 1012000002 | The number of clients exceeds the global upper limit. |
 | 1012000003 | The number of clients exceeds the current process upper limit. |
@@ -658,7 +660,7 @@ deleteClient(client: Client): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | check permission fail. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 1012000001 | Internal error.Possible causes: 1. IPC cross-process invoking fails. 2. System service process is faulty. |
 
 **示例：**
@@ -727,7 +729,7 @@ subscribe(events: AuthEvent[]): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | check permission fail. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 1012000001 | Internal error.Possible causes: 1. IPC cross-process invoking fails. 2. System service process is faulty. |
 
 **示例：**
@@ -784,7 +786,7 @@ unsubscribe(events: AuthEvent[]): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | check permission fail. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 1012000001 | Internal error.Possible causes: 1. IPC cross-process invoking fails. 2. System service process is faulty. |
 
 **示例：**
@@ -848,7 +850,7 @@ addFilter(event: AuthEvent, filter: Filter): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | check permission fail. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 1012000001 | Internal error.Possible causes: 1. IPC cross-process invoking fails. 2. System service process is faulty. |
 | 1012000004 | The number of filters exceeds the upper limit. |
 | 1012000005 | The event does not support the filter condition. |
@@ -913,7 +915,7 @@ removeFilter(event: AuthEvent, filter: Filter): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | check permission fail. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 1012000001 | Internal error.Possible causes: 1. IPC cross-process invoking fails. 2. System service process is faulty. |
 | 1012000005 | The event does not support the filter condition. |
 
@@ -983,7 +985,7 @@ auth(auditEvent: AuditEvent, authResult: AuthResult): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | check permission fail. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 1012000001 | Internal error.Possible causes: 1. IPC cross-process invoking fails. 2. System service process is faulty. |
 | 1012000007 | The auth event cannot be found. |
 
@@ -1047,7 +1049,7 @@ newAuthClient(callback: Callback<[AuditEvent](devicesecurity-securityaudit-api.m
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | check permission fail. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 1012000001 | Internal error.Possible causes: 1. IPC cross-process invoking fails. 2. System service process is faulty. |
 | 1012000002 | The number of clients exceeds the global upper limit. |
 | 1012000003 | The number of clients exceeds the current process upper limit. |
@@ -1100,7 +1102,7 @@ deleteAuthClient(client: AuthClient): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | check permission fail. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 1012000001 | Internal error.Possible causes: 1. IPC cross-process invoking fails. 2. System service process is faulty. |
 
 **示例：**
@@ -1178,7 +1180,7 @@ newAuthClient(callback: Callback<[AuditEvent](devicesecurity-securityaudit-api.m
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | check permission fail. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 1012000001 | Internal error.Possible causes: 1. IPC cross-process invoking fails. 2. System service process is faulty. |
 | 1012000002 | The number of clients exceeds the global upper limit. |
 | 1012000003 | The number of clients exceeds the current process upper limit. |
@@ -1237,7 +1239,7 @@ queryAllProcesses(): string
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | check permission fail. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 1012000001 | Internal error.Possible causes: 1. IPC cross-process invoking fails. 2. System service process is faulty. |
 
 **示例：**
@@ -1290,7 +1292,7 @@ queryProcesses(pids: number[]): string
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | check permission fail. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 1012000001 | Internal error.Possible causes: 1. IPC cross-process invoking fails. 2. System service process is faulty. |
 | 1012000006 | The number of queried processes exceeds the threshold. |
 
@@ -1345,7 +1347,7 @@ acquireCodeSign(path: string): string
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | check permission fail. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 1012000001 | Internal error.Possible causes: 1. IPC cross-process invoking fails. 2. System service process is faulty. |
 | 1012000008 | The file cannot be found. |
 
@@ -1394,7 +1396,7 @@ acquireAllClientsInfo(): string
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | check permission fail. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 1012000001 | Internal error.Possible causes: 1. IPC cross-process invoking fails. 2. System service process is faulty. |
 
 **示例：**
@@ -1441,7 +1443,7 @@ acquireAllAuthClientsInfo(): string
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | check permission fail. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 1012000001 | Internal error.Possible causes: 1. IPC cross-process invoking fails. 2. System service process is faulty. |
 
 **示例：**

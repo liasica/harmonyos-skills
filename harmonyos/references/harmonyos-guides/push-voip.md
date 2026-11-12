@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-voip
 title: 推送应用内通话消息
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 推送场景化消息 > 推送应用内通话消息
 category: harmonyos-guides
-scraped_at: 2026-10-27T07:39:53+08:00
-doc_updated_at: 2026-10-26
-content_hash: sha256:51ed396f2c35b2076fd0a9c447c9c9231084b50311788f0c1cffde175a64f86b
+scraped_at: 2026-11-12T09:52:34+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b51a8679eb6f35b8456cfe44afaeeaed4c1a28820c8c4a6b153865f8d6160e3f
 ---
 
 ## 场景介绍
@@ -30,7 +30,7 @@ content_hash: sha256:51ed396f2c35b2076fd0a9c447c9c9231084b50311788f0c1cffde175a6
 
 ## 约束与限制
 
-推送应用内通话消息能力支持Phone、Tablet设备，并且从6.1.0(23)版本开始，新增支持儿童智能表。
+推送应用内通话消息能力支持Phone、Tablet设备，并且从API版本6.1.0(23)开始，新增支持儿童智能表；从API版本26.0.1开始，新增支持Car设备。
 
 ## 开通权益
 
@@ -460,11 +460,11 @@ content_hash: sha256:51ed396f2c35b2076fd0a9c447c9c9231084b50311788f0c1cffde175a6
          },
          "appMessageId": "12345"
        }
-      },
-      "target": {
+     },
+     "target": {
         "token": ["MAMzLg**********aZW"]
-      }
-    }
+     }
+   }
    ```
 
    * push-type：0表示通知消息场景。

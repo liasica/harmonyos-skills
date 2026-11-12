@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/common-event-
 title: 发布公共事件
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 进程线程通信 > 使用公共事件进行进程间通信 > 发布公共事件
 category: harmonyos-guides
-scraped_at: 2026-10-01T07:34:34+08:00
-doc_updated_at: 2026-09-30
+scraped_at: 2026-11-12T09:51:47+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:10f2a435ee58cd8f758818b721d0039f1cb4818f53ec45d570c7d0a1a3012806
 ---
 

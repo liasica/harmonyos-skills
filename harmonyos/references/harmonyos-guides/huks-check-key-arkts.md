@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-check-ke
 title: 查询密钥是否存在(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 其他操作 > 查询密钥是否存在 > 查询密钥是否存在(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:38+08:00
-doc_updated_at: 2026-10-14
+scraped_at: 2026-11-12T09:51:41+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:102b4553c6d1412bddf4be93d905b3a2268af8930de772b9f7da36457a187e89
 ---
 

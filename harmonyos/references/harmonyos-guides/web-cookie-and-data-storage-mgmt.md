@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-cookie-an
 title: 管理Cookie及数据存储
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 设置基本属性和事件 > 管理Cookie及数据存储
 category: harmonyos-guides
-scraped_at: 2026-10-29T07:56:40+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:cc0d7f5da140063e2488acfe77b58c4b0aca59723fbbb8f2690691b66565a58b
+scraped_at: 2026-11-12T09:51:22+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3188588a553ce04024214400c5f05bd2ce480de4edd675f9b28b042e133e115a
 ---
 
 Cookie是服务端生成并发送到客户端的数据。客户端持有Cookie，便于服务端快速识别身份和状态。
@@ -44,7 +44,7 @@ struct WebComponent {
 }
 ```
 
-从API version 22开始，开发者可以通过[setLazyInitializeWebEngine()](../harmonyos-references/arkts-apis-webview-webcookiemanager.md#setlazyinitializewebengine22)延后初始化ArkWeb内核，在调用configCookieSync()为“www.example.com”设置单个Cookie的值“value=test”时跳过初始化ArkWeb内核，以节省[configCookieSync()](../harmonyos-references/arkts-apis-webview-webcookiemanager.md#configcookiesync11)接口耗时。其他Cookie的相关功能及使用，请参考[WebCookieManager()](../harmonyos-references/arkts-apis-webview-webcookiemanager.md)接口文档。
+从API version 22开始，开发者可以通过[setLazyInitializeWebEngine()](../harmonyos-references/arkts-apis-webview-webcookiemanager.md#setlazyinitializewebengine22)延后初始化ArkWeb内核，在调用configCookieSync()为“www.example.com”设置单个Cookie的值“value=test”时跳过初始化ArkWeb内核，以节省[configCookieSync()](../harmonyos-references/arkts-apis-webview-webcookiemanager.md#configcookiesync11)接口耗时。其他Cookie的相关功能及使用，请参考[WebCookieManager](../harmonyos-references/arkts-apis-webview-webcookiemanager.md)接口文档。
 
 ```typescript
 import { webview } from '@kit.ArkWeb';
@@ -76,7 +76,9 @@ struct WebComponent {
 
 **说明** 
 
-Cookie每30s周期性保存到磁盘中，也可以使用接口[saveCookieAsync](../harmonyos-references/arkts-apis-webview-webcookiemanager.md#savecookieasync)进行强制落盘（PC/2in1和Tablet设备不会持久化session cookie，即使调用saveCookieAsync，也不会将session cookie写入磁盘）。
+Cookie每30s周期性保存到磁盘中，也可以使用接口[saveCookieAsync()](../harmonyos-references/arkts-apis-webview-webcookiemanager.md#savecookieasync)进行强制落盘（PC/2in1和Tablet设备不会持久化session cookie，即使调用saveCookieAsync()，也不会将session cookie写入磁盘）。
+
+从API版本26.0.1开始，调用[setLazyInitializeWebEngine()](../harmonyos-references/arkts-apis-webview-webcookiemanager.md#setlazyinitializewebengine22)设置为true后，[WebCookieManager](../harmonyos-references/arkts-apis-webview-webcookiemanager.md)的接口支持在异步线程使用；设置为false或不调用该接口时，[WebCookieManager](../harmonyos-references/arkts-apis-webview-webcookiemanager.md)的接口不支持在异步线程使用，仅能在UI线程使用。
 
 ## 缓存与存储管理
 
@@ -84,7 +86,7 @@ Cookie每30s周期性保存到磁盘中，也可以使用接口[saveCookieAsync]
 
 ### Cache
 
-使用[cacheMode()](../harmonyos-references/arkts-basic-components-web-attributes.md#cachemode)配置页面资源的缓存模式，Web组件为开发者提供四种缓存模式，分别为：
+使用[cacheMode](../harmonyos-references/arkts-basic-components-web-attributes.md#cachemode)配置页面资源的缓存模式，Web组件为开发者提供四种缓存模式，分别为：
 
 * Default：优先使用未过期缓存来加载资源。如果缓存不存在，则从网络获取。
 * None：优先使用（含过期的）缓存来加载资源。如果缓存中无该资源，则从网络中获取。
@@ -143,7 +145,7 @@ struct WebComponent {
 
 ### DOM Storage
 
-DOM Storage包含了Session Storage和Local Storage两类。Session Storage为临时数据，其存储与释放跟随会话生命周期；Local Storage为持久化数据，保存在应用目录下。两者的数据均通过Key-Value的形式存储，在访问需要客户端存储的页面时使用。开发者可以通过Web组件的属性接口[domStorageAccess()](../harmonyos-references/arkts-basic-components-web-attributes.md#domstorageaccess)进行使能配置，示例如下：
+DOM Storage包含了Session Storage和Local Storage两类。Session Storage为临时数据，其存储与释放跟随会话生命周期；Local Storage为持久化数据，保存在应用目录下。两者的数据均通过Key-Value的形式存储，在访问需要客户端存储的页面时使用。开发者可以通过Web组件的属性接口[domStorageAccess](../harmonyos-references/arkts-basic-components-web-attributes.md#domstorageaccess)进行使能配置，示例如下：
 
 ```typescript
 import { webview } from '@kit.ArkWeb';

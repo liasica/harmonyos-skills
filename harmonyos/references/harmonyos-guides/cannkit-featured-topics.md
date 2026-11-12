@@ -1,16 +1,14 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-featured-topics
 title: 附录
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > AscendC算子开发 > 自定义算子开发 > 附录
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 自定义算子开发 > AscendC算子开发 > 附录
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:31+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:0fa0a6178e6b336f713e23bbcb6d96f07df78121b446ec22d1f6fa72e62ba87e
+scraped_at: 2026-11-12T09:52:42+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:df40edf8f561340c448597abd86c41268e1b0be8728ccf7e79c3837a63ebfa5e
 ---
 
 * **[Tensor基础知识参考](cannkit-tensor-basics.md)**
 * **[如何使用double buffer优化性能](cannkit-double-buffer.md)**
 * **[如何申请workspace作为临时内存](cannkit-workspace.md)**
-* **[如何升级工程到最新版本](cannkit-project-upgrade.md)**
-* **[算子工程创建工具参数说明](cannkit-creating-operator-project-msopgen.md)**
-* **[调测工具样例与参数说明](cannkit-commissioning-tool-parameter.md)**
+* **[精度比对结果输出样例](cannkit-example-of-the-precision-comparison.md)**

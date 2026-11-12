@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/apidiff-600
 title: 6.0.0(20) Beta5引入的API
 breadcrumb: 版本说明 > 更多版本 > 6.0.0(20) > OS平台能力 > API变更清单 > 6.0.0(20) Beta5引入的API
 category: harmonyos-releases
-scraped_at: 2026-10-09T08:12:14+08:00
-doc_updated_at: 2026-10-08
+scraped_at: 2026-11-12T09:50:13+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:a27c22cd48e864a2b136e631c64d54c36b76b757afa1f6461838c1fff3503720
 ---
 

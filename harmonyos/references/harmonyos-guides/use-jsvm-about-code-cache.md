@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-jsvm-abou
 title: 使用code cache加速编译
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用JSVM-API实现JS与C/C++语言交互 > JSVM-API典型使用场景指导 > JSVM-API调优&高性能使用示例 > 使用code cache加速编译
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:50:47+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:52:49+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:bf24c630e5b5353b1cc051ad622b1d783a1a49bd90839512d4309bdd78465e69
 ---
 

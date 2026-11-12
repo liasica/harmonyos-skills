@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-mu
 title: 多模块管理
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 配置构建流程 > 多模块管理
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:23:06+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:4cdc03e632ae7ba056bd9eee0794d2f9c2b2d316cf01448b6720c66b0bada236
+scraped_at: 2026-11-12T09:53:06+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3ce5d72133c455190f92214d0f3bf185ffb6df92a44b4b466371746eecfb13b9
 ---
 
 模块是应用/元服务的基本功能单元，包含了源代码、资源文件、第三方库及应用/元服务配置文件，Hvigor支持工程多模块管理。您可在工程下的build-profile.json5配置文件中增加对应模块信息，即可对模块进行工程绑定和管理，或在hvigorconfig.ts脚本中动态添加或排除某个模块。同时也支持分模块配置、编译和打包。
@@ -14,7 +14,7 @@ content_hash: sha256:4cdc03e632ae7ba056bd9eee0794d2f9c2b2d316cf01448b6720c66b0ba
 
 ### 静态配置模块
 
-工程级build-profile.json5配置文件中"modules"字段，用于记录工程下的模块信息，主要包含模块名称、模块的源码路径以及模块的 target 信息。target信息主要用于定制多目标构建产物，更多详细信息可参考[配置多目标产物](ide-customized-multi-targets-and-products.md)章节。
+工程级build-profile.json5配置文件中"modules"字段，用于记录工程下的模块信息，主要包含模块名称、模块的源码路径以及模块的target信息。target信息主要用于定制多目标构建产物，更多详细信息可参考[配置多目标产物](ide-customized-multi-targets-and-products.md)章节。
 
 例如以下目录中存在两个模块目录，您可在工程下的build-profile.json5配置文件，添加模块信息，使得模块与工程进行绑定：
 
@@ -37,9 +37,9 @@ content_hash: sha256:4cdc03e632ae7ba056bd9eee0794d2f9c2b2d316cf01448b6720c66b0ba
 其他配置文件：
 
 * oh-package.json5：应用的三方包依赖配置文件。
-* local.properties: 应用本地环境配置文件。
-* obfuscation-rules.txt: 应用模块的混淆规则配置文件。
-* consumer-rules.txt: HAR/HSP模块默认导出的混淆规则文件，会打包到HAR包中。
+* local.properties：应用本地环境配置文件。
+* obfuscation-rules.txt：应用模块的混淆规则配置文件。
+* consumer-rules.txt：HAR/HSP模块默认导出的混淆规则文件，会打包到HAR包中。
 
 工程下的build-profile.json5文件中模块配置示例：
 

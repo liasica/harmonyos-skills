@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/sensor-overvi
 title: 传感器开发概述
 breadcrumb: 指南 > 系统 > 硬件 > Sensor Service Kit（传感器服务） > 传感器 > 传感器开发概述
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:56+08:00
+scraped_at: 2026-11-12T09:51:51+08:00
 doc_updated_at: 2026-09-09
-content_hash: sha256:62f365c1250b447608d75f1da66e08103b19adb6211d7fb4adb8e59357b32e34
+content_hash: sha256:634ec03f2abbf3b15b6b38946daa417da1c875d11ea77c8902bed0e5aacc72a5
 ---
 
 ## 传感器类型
@@ -56,7 +56,7 @@ Z轴：垂直于屏幕，从屏幕向外指向用户的方向。
 
 **图1** 传感器
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/ObKw7rSpSaKOMwpD1KTlAQ/zh-cn_image_0000002779850842.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/4nZliXLqQaGejZ5uZR4_0w/zh-cn_image_0000002815399287.png)
 
 * Sensor API：提供传感器的基础API，主要包含查询传感器列表，订阅/取消传感器的数据、执行控制命令等，简化应用开发。
 * Sensor Framework：主要实现传感器的订阅管理，数据通道的创建、销毁、订阅与取消订阅，实现与SensorService的通信。

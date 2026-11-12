@@ -3,14 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (SecureSession)
 breadcrumb: API参考 > 媒体 > Camera Kit（相机服务） > ArkTS API > @ohos.multimedia.camera (相机管理) > Interface (SecureSession)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:28:17+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:5080a268d4b882df7b1b893de6f7909a383bcf464259a8aeafd9cf96778466df
+scraped_at: 2026-11-12T09:56:32+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:46fa9290cfbf00f535be34c74ad30b271b5cd98ac3e10f74a515245309ca9568
 ---
 
 SecureSession继承自[Session](arkts-apis-camera-session.md)、[Flash](arkts-apis-camera-flash.md)、[AutoExposure](arkts-apis-camera-autoexposure.md)、[WhiteBalance](arkts-apis-camera-whitebalance.md)、[Focus](arkts-apis-camera-focus.md)、[Zoom](arkts-apis-camera-zoom.md)。
 
 安全模式会话类，提供了对闪光灯、曝光、白平衡、对焦、变焦的操作。
+
+在创建安全模式会话前，需要通过[getSupportedSceneModes](arkts-apis-camera-cameramanager.md#getsupportedscenemodes11)接口获取当前相机支持的模式来确定是否支持安全模式的会话。
 
 通过[createSession](arkts-apis-camera-cameramanager.md#createsession11)接口传入[SceneMode](arkts-apis-camera-e.md#scenemode11)为SECURE\_PHOTO模式创建一个安全模式的会话。该模式开放给人脸识别、银行等有安全诉求的应用，需要结合Device Security Kit使用，支持同时输出普通预览流和安全流的业务场景。请参考[安全相机开发指导](../harmonyos-guides/camera-secure-photo.md)。
 
@@ -62,7 +64,7 @@ function addSecureOutput(session: camera.SecureSession, previewOutput: camera.Pr
   } catch (error) {
     // 失败返回错误码error.code并处理。
     let err = error as BusinessError;
-    console.error(`The addOutput call failed. error code: ${err.code}`);
+    console.error(`The addSecureOutput call failed. error code: ${err.code}`);
   }
 }
 ```

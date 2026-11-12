@@ -1,10 +1,10 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cannkit-in-depth-convergence
-title: 深度融合
-breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部署 > 深度融合
+title: 算子深度融合
+breadcrumb: 指南 > AI > CANN Kit（CANN异构计算框架服务） > 端侧部署 > 部署性能优化 > 算子深度融合
 category: harmonyos-guides
-scraped_at: 2026-04-28T07:51:22+08:00
-doc_updated_at: 2026-04-20
+scraped_at: 2026-11-12T09:52:41+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:f7973f7fc0eb376ec5e10aa7d668a7baf18df1cce6f1a161e6b20da0f281a585
 ---
 

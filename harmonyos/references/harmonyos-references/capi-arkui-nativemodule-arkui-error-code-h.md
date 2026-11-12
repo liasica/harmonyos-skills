@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-arku
 title: error_code.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > error_code.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:01:22+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:b1d37b8a3ad12edf3e39878c265f43f64428192e2b93626330438a048e4104f4
+scraped_at: 2026-11-12T09:54:48+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:34c042e37ec4b8380c3e979544789120a53566c3ec5f282b835b82068033941d
 ---
 
 ## 概述
@@ -72,6 +72,12 @@ enum ArkUI_ErrorCode
 | ARKUI\_ERROR\_CODE\_NODE\_CAN\_NOT\_BE\_ADOPTED = 106208 | 节点无法被接纳为附属节点。错误码的详细介绍请参见[106208 节点无法被接纳为附属节点](errorcode-adopt.md#section106208-节点无法被接纳为附属节点)。  **起始版本：** 22 |
 | ARKUI\_ERROR\_CODE\_NODE\_CAN\_NOT\_ADOPT\_TO = 106209 | 节点无法接纳其他节点。错误码的详细介绍请参见[106209 节点无法接纳其他节点](errorcode-adopt.md#section106209-节点无法接纳其他节点)。  **起始版本：** 22 |
 | ARKUI\_ERROR\_CODE\_NODE\_IS\_NOT\_IN\_ADOPTED\_CHILDREN = 106210 | 节点不是被目标节点接纳的附属节点。错误码的详细介绍请参见[106210 节点不是被目标节点接纳的附属节点](errorcode-adopt.md#section106210-节点不是被目标节点接纳的附属节点)。  **起始版本：** 22 |
+| ARKUI\_ERROR\_CODE\_NO\_ATTRIBUTE\_FOUND = 106211 | 无法获取属性，因为之前未设置该属性。错误码的详细介绍请参见[106211 无法获取属性](errorcode-animation.md#section106211-无法获取属性)。  **起始版本：** 26.0.1 |
+| ARKUI\_ERROR\_CODE\_SUB\_ANIMATION\_INVALID = 106212 | 子动画参数无效。错误码的详细介绍请参见[106212 子动画参数无效](errorcode-animation.md#section106212-子动画参数无效)。  **起始版本：** 26.0.1 |
+| ARKUI\_ERROR\_CODE\_ANIMATION\_GROUP\_NOT\_FOUND = 106213 | 在[ArkUI\_ContextHandle](capi-arkui-nativemodule-arkui-context8h.md)上未找到指定的动画组。错误码的详细介绍请参见[106213 在UIContext上未找到指定的动画组](errorcode-animation.md#section106213-在uicontext上未找到指定的动画组)。  **起始版本：** 26.0.1 |
+| ARKUI\_ERROR\_CODE\_ANIMATION\_GROUP\_REENTRANT\_CALL = 106214 | 检测到同一线程上对动画组接口的重入调用。错误码的详细介绍请参见[106214 检测到同一线程上对动画组接口的重入调用](errorcode-animation.md#section106214-检测到同一线程上对动画组接口的重入调用)。  **起始版本：** 26.0.1 |
+| ARKUI\_ERROR\_CODE\_ANIMATION\_GROUP\_INVALID\_STATE = 106215 | 动画组未处于操作所需的状态。错误码的详细介绍请参见[106215 动画组未处于操作所需的状态](errorcode-animation.md#section106215-动画组未处于操作所需的状态)。  **起始版本：** 26.0.1 |
+| ARKUI\_ERROR\_CODE\_TARGET\_NODE\_NOT\_IN\_SAME\_CONTEXT = 106216 | 解析的目标节点不属于注册动画组时传入的context所在的UIContext。错误码的详细介绍请参见[106216 解析的目标节点不属于注册动画组时传入的context所在的UIContext](errorcode-animation.md#section106216-解析的目标节点不属于注册动画组时传入的context所在的uicontext)。  **起始版本：** 26.0.1 |
 | ARKUI\_ERROR\_CODE\_NOT\_CUSTOM\_NODE = 106401 | 当前节点不是自定义节点。错误码的详细介绍请参见[渲染节点错误码](errorcode-node-render.md)。  **起始版本：** 20 |
 | ARKUI\_ERROR\_CODE\_CHILD\_EXISTED = 106402 | 当前节点已存在子节点。错误码的详细介绍请参见[渲染节点错误码](errorcode-node-render.md)。  **起始版本：** 20 |
 | ARKUI\_ERROR\_CODE\_RENDER\_PARENT\_EXISTED = 106403 | 当前渲染节点存在父节点。错误码的详细介绍请参见[渲染节点错误码](errorcode-node-render.md)。  **起始版本：** 20 |
@@ -97,3 +103,5 @@ enum ArkUI_ErrorCode
 | ARKUI\_ERROR\_CODE\_CALLBACK\_INVALID = 190002 | 无效的回调函数。错误码的详细介绍请参见[UI上下文错误码](errorcode-uicontext.md)。  **起始版本：** 18 |
 | ARKUI\_ERROR\_CODE\_RECOGNIZER\_TYPE\_NOT\_SUPPORTED = 180102 | 不支持手势识别器类型。错误码的详细介绍请参见[交互事件错误码](errorcode-event.md)。  **起始版本：** 18 |
 | ARKUI\_ERROR\_CODE\_DRAG\_DROP\_OPERATION\_NOT\_ALLOWED = 190004 | 当前拖放事件处理阶段不允许执行请求的操作。错误码的详细介绍请参见[拖拽事件错误码](errorcode-drag-event.md)。  **起始版本：** 19 |
+| ARKUI\_ERROR\_CODE\_DIALOG\_NODE\_MOUNT\_FAILURE = 103306 | 由于节点挂载失败，弹窗无法打开。错误码的详细介绍请参见[弹窗错误码](errorcode-promptaction.md)。  **起始版本：** 26.0.1 |
+| ARKUI\_ERROR\_CODE\_DIALOG\_SUBWINDOW\_CREATE\_FAILURE = 103308 | 由于子窗口创建失败，弹窗无法打开。错误码的详细介绍请参见[弹窗错误码](errorcode-promptaction.md)。  **起始版本：** 26.0.1 |

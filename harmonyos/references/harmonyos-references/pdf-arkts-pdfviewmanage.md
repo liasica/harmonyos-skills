@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/pdf-arkts
 title: pdfViewManager（PDF预览）
 breadcrumb: API参考 > 应用服务 > PDF Kit（PDF服务） > ArkTS API > pdfViewManager（PDF预览）
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:06+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:c0f25e9ce8a388f4aa80e58db3c79284019c50886bceb8c3972a0f16e5286505
+scraped_at: 2026-11-12T09:57:38+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e2bd4111be7a9a759fa40017f71390c38271f0cca1ed080f7c11558eaf9aae59
 ---
 
 本模块为应用提供统一的PDF预览能力。
@@ -1225,6 +1225,297 @@ if (pdfService.ParseResult.PARSE_SUCCESS === loadResult) {
 }
 ```
 
+### enablePen
+
+enablePen(style?: PenStyle): void
+
+启用画笔模式。启用后，单指拖动将绘制墨迹批注。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.OfficeService.PDFService.Core
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| style | [PenStyle](pdf-arkts-pdfviewmanage.md#penstyle) | 否 | 画笔样式配置，不传则使用默认值（笔类型DEFAULT、线条颜色黑色、线条宽度2、不透明度1.0） |
+
+**示例：**
+
+```typescript
+import { pdfViewManager, pdfService } from '@kit.PDFKit';
+
+@Entry
+@Component
+struct PdfPage {
+private pdfController: pdfViewManager.PdfController = new pdfViewManager.PdfController();
+
+    build() {
+        Column() {
+            Button('启用默认画笔')
+                .onClick(() => {
+                    this.pdfController.enablePen();
+                })
+            Button('启用自定义画笔')
+                .onClick(() => {
+                    this.pdfController.enablePen({
+                        type: pdfViewManager.PenType.DEFAULT,
+                        lineColor: 0xFFFF0000,
+                        lineWidth: 3,
+                        opacity: 1.0
+                    });
+                })
+        }
+    }
+}
+```
+
+### disablePen
+
+disablePen(): void
+
+关闭画笔模式，恢复为浏览模式。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.OfficeService.PDFService.Core
+
+**起始版本：** 26.0.1
+
+**示例：**
+
+```typescript
+import { pdfViewManager } from '@kit.PDFKit';
+
+@Entry
+@Component
+struct PdfPage {
+private pdfController: pdfViewManager.PdfController = new pdfViewManager.PdfController();
+
+    build() {
+        Column() {
+            Button('关闭画笔')
+                .onClick(() => {
+                    this.pdfController.disablePen();
+                })
+        }
+    }
+}
+```
+
+### enableEraser
+
+enableEraser(): void
+
+启用橡皮擦模式。启用后，触碰墨迹批注时，将删除触碰到的单条笔划。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.OfficeService.PDFService.Core
+
+**起始版本：** 26.0.1
+
+**示例：**
+
+```typescript
+import { pdfViewManager } from '@kit.PDFKit';
+
+@Entry
+@Component
+struct PdfPage {
+  private pdfController: pdfViewManager.PdfController = new pdfViewManager.PdfController();
+
+  build() {
+    Column() {
+      Button('启用橡皮擦')
+        .onClick(() => {
+          this.pdfController.enableEraser();
+        })
+    }
+  }
+}
+```
+
+### disableEraser
+
+disableEraser(): void
+
+关闭橡皮擦模式，恢复为浏览模式。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.OfficeService.PDFService.Core
+
+**起始版本：** 26.0.1
+
+**示例：**
+
+```typescript
+import { pdfViewManager } from '@kit.PDFKit';
+
+@Entry
+@Component
+struct PdfPage {
+private pdfController: pdfViewManager.PdfController = new pdfViewManager.PdfController();
+
+    build() {
+        Column() {
+            Button('关闭橡皮擦')
+                .onClick(() => {
+                    this.pdfController.disableEraser();
+                })
+        }
+    }
+}
+```
+
+### changePenStyle
+
+changePenStyle(style: PenStyle): void
+
+切换画笔样式。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.OfficeService.PDFService.Core
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| style | [PenStyle](pdf-arkts-pdfviewmanage.md#penstyle) | 是 | 画笔样式配置。 |
+
+**示例：**
+
+```typescript
+import { pdfViewManager, pdfService } from '@kit.PDFKit';
+
+@Entry
+@Component
+struct PdfPage {
+private pdfController: pdfViewManager.PdfController = new pdfViewManager.PdfController();
+
+    build() {
+        Column() {
+            Button('切换为红色画笔')
+                .onClick(() => {
+                    this.pdfController.changePenStyle({
+                        type: pdfViewManager.PenType.DEFAULT,
+                        lineColor: 0xFFFF0000,
+                        lineWidth: 3,
+                        opacity: 1.0
+                    });
+                })
+        }
+    }
+}
+```
+
+### setHighlightRectsWithColors
+
+setHighlightRectsWithColors(highlightRects: Array<HighlightRect>): void
+
+设置高亮区域，支持页面不同矩形区域指定不同颜色。重叠区域按透明度叠加，每次调用都会清空前一次设置的所有矩形颜色，传空数组达到清除高亮的效果。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.OfficeService.PDFService.Core
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| highlightRects | Array<[HighlightRect](pdf-arkts-pdfviewmanage.md#highlightrect)> | 是 | 高亮矩形数组。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[ArkTS API错误码](errorcode-pdf.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| [1011302001](errorcode-pdf.md#section1011302001-页码值错误) | Invalid page number. |
+| [1011302007](errorcode-pdf.md#section1011302007-highlightrect数量超过上限) | The number of HighlightRect exceeds the upper limit. |
+
+**示例：**
+
+```typescript
+import { pdfService, pdfViewManager, PdfView } from '@kit.PDFKit';
+
+@Entry
+@Component
+struct Index {
+  private context = this.getUIContext().getHostContext() as Context;
+  private controller: pdfViewManager.PdfController = new pdfViewManager.PdfController();
+  private filePath = this.context.resourceDir + '/input.pdf';
+
+  aboutToAppear(): void {
+    this.controller.loadDocument(this.filePath);
+  }
+
+  aboutToDisappear(): void {
+    this.controller.releaseDocument();
+  }
+
+  build() {
+    Column() {
+      PdfView({
+        controller: this.controller, // 需将controller绑定到PdfView组件上
+        pageFit: pdfService.PageFit.FIT_WIDTH,
+        showScroll: true
+      })
+        .width('100%')
+        .layoutWeight(4)
+
+      Row() {
+        Button('设置高亮').onClick(() => {
+          try {
+            const rect1: pdfService.PdfRect = {
+              left: 0,
+              top: 250,
+              right: 400,
+              bottom: 500
+            };
+            const rect2: pdfService.PdfRect = {
+              left: 150,
+              top: 250,
+              right: 500,
+              bottom: 500
+            };
+            const rect3: pdfService.PdfRect = {
+              left: 50,
+              top: 200,
+              right: 400,
+              bottom: 450
+            };
+            const hl41 = new pdfViewManager.HighlightRect(0, rect1, 0x80FF0000); // 半透明红
+            const hl42 = new pdfViewManager.HighlightRect(1, rect2, 0x8000FF00); // 半透明绿
+            const hl43 = new pdfViewManager.HighlightRect(2, rect3, 0x800000FF); // 半透明蓝
+            this.controller.setHighlightRectsWithColors([hl41, hl42, hl43]);
+          } catch (error) {
+            console.error(`Failed to setHighlightRectsWithColors: ${error}`);
+          }
+        })
+        Button('清除高亮').onClick(() => {
+          this.controller.setHighlightRectsWithColors([]);
+        })
+      }
+      .width('100%')
+      .layoutWeight(1)
+      .justifyContent(FlexAlign.SpaceEvenly)
+    }
+    .width('100%')
+    .height('100%')
+  }
+}
+```
+
 ### saveDocument
 
 saveDocument(path: string, onProgress?: Callback<number>): Promise<number>
@@ -1882,6 +2173,7 @@ loadDocumentFromMemory(data: ArrayBuffer, password?: string, initPageIndex?: num
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| [401](errorcode-universal.md#section401-参数检查失败) | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | [1011302001](errorcode-pdf.md#section1011302001-页码值错误) | Invalid page number. |
 | [1011302002](errorcode-pdf.md#section1011302002-加载的文档未释放) | The loaded document has not been freed. |
 | [1011302003](errorcode-pdf.md#section1011302003-加载的二进制流为空或超出范围) | The input ArrayBuffer is empty or exceeds the maximum limit. |
@@ -1952,6 +2244,14 @@ getPageIndexFromViewPoint(viewPoint: Point): number
 | 类型 | 说明 |
 | --- | --- |
 | number | 返回对应的页面索引。大于等于0：有效的页面索引。-1：该点未落在任何有效页面上。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| [401](errorcode-universal.md#section401-参数检查失败) | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例：**
 
@@ -2041,6 +2341,7 @@ viewRectToPDFRect(pageIndex: number, viewRect: ViewRect): pdfService.PdfRect
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| [401](errorcode-universal.md#section401-参数检查失败) | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | [1011302001](errorcode-pdf.md#section1011302001-页码值错误) | Invalid page number. |
 
 **示例：**
@@ -2133,6 +2434,7 @@ pdfPointToViewPoint(pageIndex: number, pdfPoint: pdfService.PdfPoint): Point
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| [401](errorcode-universal.md#section401-参数检查失败) | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | [1011302001](errorcode-pdf.md#section1011302001-页码值错误) | Invalid page number. |
 
 **示例：**
@@ -2223,6 +2525,7 @@ viewPointToPDFPoint(pageIndex: number, viewPoint: Point): pdfService.PdfPoint
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| [401](errorcode-universal.md#section401-参数检查失败) | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | [1011302001](errorcode-pdf.md#section1011302001-页码值错误) | Invalid page number. |
 
 **示例：**
@@ -2313,6 +2616,7 @@ pdfRectToViewRect(pageIndex: number, pdfRect: pdfService.PdfRect): ViewRect
 
 | 错误码ID | 错误信息 |
 | --- | --- |
+| [401](errorcode-universal.md#section401-参数检查失败) | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 | [1011302001](errorcode-pdf.md#section1011302001-页码值错误) | Invalid page number. |
 
 **示例：**
@@ -2585,6 +2889,42 @@ PDF页面[registerAnnotationChangedListener](pdf-arkts-pdfviewmanage.md#register
 | pageIndexArray | Array<number> | 否 | 否 | 批注在页面的索引列表。 |
 | controlType | [AnnotationEditType](pdf-arkts-pdfviewmanage.md#annotationedittype) | 否 | 否 | 批注编辑类型，0：添加，1：修改，2：删除。 |
 
+## HighlightRect
+
+高亮矩形信息类。包含页面索引、高亮矩形位置信息、高亮矩形颜色。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.OfficeService.PDFService.Core
+
+**起始版本：** 26.0.1
+
+### 属性
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| pageIndex | number | 否 | 否 | 高亮矩形所在的页面索引。 |
+| pdfRect | pdfService.[PdfRect](pdf-arkts-pdfservice.md#pdfrect) | 否 | 否 | 高亮矩形在索引页面的具体位置。 |
+| color | number | 否 | 否 | 高亮矩形的颜色（ARGB格式）。 |
+
+### constructor
+
+constructor(pageIndex: number, pdfRect: pdfService.PdfRect, color: number)
+
+用于创建高亮矩形信息类的对象。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.OfficeService.PDFService.Core
+
+**起始版本：** 26.0.1
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| pageIndex | number | 是 | 页面索引。 |
+| pdfRect | pdfService.[PdfRect](pdf-arkts-pdfservice.md#pdfrect) | 是 | 高亮矩形在索引页面的具体位置。 |
+| color | number | 是 | 高亮矩形的颜色（ARGB格式）。 |
+
 ## SupportedAnnotationType
 
 PDF页面支持的批注类型。
@@ -2606,6 +2946,7 @@ PDF页面支持的批注类型。
 | HIGHLIGHT | 9 | 高亮。 |
 | UNDERLINE | 10 | 下划线。 |
 | STRIKETHROUGH | 12 | 删除线。 |
+| INK | 15 | 水墨。  起始版本：26.0.1 |
 
 ## AnnotationEditType
 
@@ -2731,3 +3072,34 @@ PDF页面上支持的批注更改类型。
 | top | number | 矩形上边缘的Y坐标。默认值：0。 |
 | right | number | 矩形右边缘的X坐标。默认值：0。 |
 | bottom | number | 矩形下边缘的y坐标。默认值：0。 |
+
+## PenType
+
+画笔类型的枚举。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.OfficeService.PDFService.Core
+
+**起始版本：** 26.0.1
+
+| 名称 | 值 | 说明 |
+| --- | --- | --- |
+| DEFAULT | 0 | 默认笔刷类型。 |
+
+## PenStyle
+
+画笔样式，用于配置画笔的笔类型、颜色、线宽和不透明度。
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.OfficeService.PDFService.Core
+
+**起始版本：** 26.0.1
+
+| 名称 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| type | [PenType](pdf-arkts-pdfviewmanage.md#pentype) | 否 | 笔类型，默认值：DEFAULT。 |
+| lineColor | number | 否 | 线条颜色，ARGB格式，默认值：0xFF000000（黑色）。 |
+| lineWidth | number | 否 | 线条宽度，单位为Points（一英寸等于72Points）。取值范围：1~12，默认值：2。整数，小数向下取整，小于1则取1，大于12则取12。 |
+| opacity | number | 否 | 不透明度。取值范围：0.0~1.0，默认值：1.0。0.0：完全透明，1.0：完全不透明。小于0.0则取0.0，大于1.0则取1.0。 |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/window-type-o
 title: 窗口类型开发概述
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > 窗口管理 > 窗口类型 > 窗口类型开发概述
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:33+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:d4532f9a63f20ea8c564d8b75dfd69cf0b53f378af47da2925d9b9c9322df468
+scraped_at: 2026-11-12T09:51:20+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:bcc3690a805fdafd5ae6a10e2cea3b3591b170b1584a8dc63302b368d80efc61
 ---
 
 窗口分为系统窗口、应用窗口两种类型。
@@ -33,6 +33,10 @@ content_hash: sha256:d4532f9a63f20ea8c564d8b75dfd69cf0b53f378af47da2925d9b9c9322
   Stage模型下通过[createSubWindow()](../harmonyos-references/arkts-apis-window-windowstage.md#createsubwindow9-1)或[createSubWindowWithOptions()](../harmonyos-references/arkts-apis-window-windowstage.md#createsubwindowwithoptions11)接口创建。具体可见[子窗口开发指导](subwindow-guide.md)。
 
   当使用[createSubWindowWithOptions()](../harmonyos-references/arkts-apis-window-windowstage.md#createsubwindowwithoptions11)接口配置zLevelAboveParentLoosened属性为true时，创建得到的子窗称为独立子窗。
+
+  **说明** 
+
+  独立子窗的独立特性仅在[自由窗口](freeform-window-overview.md#自由窗口)状态下生效。在非自由窗口状态下，独立子窗与普通子窗表现一致。在自由窗口状态下，独立子窗不跟随主窗前后台的切换，仅跟随主窗一起销毁，独立子窗与主窗可通过点击调整层级。
 * 全局悬浮窗（即WindowType.TYPE\_FLOAT），具体可见[全局悬浮窗开发指导](global-floating-window-guide.md)。
 * 模态窗口（即WindowType.TYPE\_DIALOG），具体可见[模态窗口开发指导](dialog-window-guide.md)。
 * [画中画](../harmonyos-references/js-apis-pipwindow.md)

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/drm-c-dev-gui
 title: 数字版权保护(C/C++)
 breadcrumb: 指南 > 媒体 > DRM Kit（数字版权保护服务） > 数字版权保护(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:11+08:00
-doc_updated_at: 2026-11-03
+scraped_at: 2026-11-12T09:52:05+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:ac988ebb3479d77b56789be94d57351156d74a91870609776dc0c8935f827d51
 ---
 

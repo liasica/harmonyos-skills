@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-display-o
 title: 设置地图元素压盖顺序
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 设置地图元素压盖顺序
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:36+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:edf4a250b08303c63804456c4b6d374e7b66a94f727c9e2d589d4c1b983501f6
+scraped_at: 2026-11-12T09:52:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7984e3af21c35f27cfa05ba21b0aa11448f71a519c0a543cc261bbc9999dfffe
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:edf4a250b08303c63804456c4b6d374e7b66a94f727c9e2d589d4c1b983
 
 设置地图元素的显示顺序，按照从低到高排列，即后面的地图元素会压盖前面的地图元素。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/mzfo_UurRe6BD90EQTgl9g/zh-cn_image_0000002779691528.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/Fx94t1ADSfaXekTgL8TYSQ/zh-cn_image_0000002815399953.jpg "点击放大")
 
 **表1** 地图元素类型压盖顺序
 
@@ -148,7 +148,7 @@ content_hash: sha256:edf4a250b08303c63804456c4b6d374e7b66a94f727c9e2d589d4c1b983
            };
            // 添加覆盖物
            try {
-             await this.mapController?.addImageOverlay(imageOverlayParams);
+             await this.mapController.addImageOverlay(imageOverlayParams);
            } catch (e) {
              console.error(`Failed to create the imageOverlay, code is：${e.code}, message is ${e.message}`);
            }

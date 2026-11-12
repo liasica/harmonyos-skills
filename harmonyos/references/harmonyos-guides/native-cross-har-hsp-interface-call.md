@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-cross-
 title: Native侧跨HAR/HSP模块接口调用
 breadcrumb: 指南 > 基础入门 > 开发基础知识 > 典型场景的开发指导 > Native侧跨HAR/HSP模块接口调用
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:28:57+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:6575d7552cbd0a9402458439b9a5806ede4af2937b4bfb74521c68d66fe4adb5
+scraped_at: 2026-11-12T09:50:56+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:50dc19aaa84b7cb8cdcaace3195dec99c27f6efa69c04e3305cbc3b63916bfb8
 ---
 
 ## 概述
 
-在大型应用开发中，应用通常会分为多个业务模块，业务模块常会以HSP或HAR包的形式提供SDK能力，这些SDK往往会提供Native接口给HAP模块的Native层直接调用，从而实现应用的复杂功能。而如何在Native侧跨HAR/HSP模块进行接口调用，是开发者经常遇到的问题。本文将介绍Native侧跨HAR/HSP模块调用两种典型场景，包括调用Native方法和调用ArkTS方法，以方便开发者更好的掌握Native侧跨模块调用的能力。
+在大型应用开发中，应用通常会分为多个业务模块，业务模块常会以[HSP](../doccenter-getting-started/in-app-hsp.md)或[HAR](../doccenter-getting-started/har-package.md)包的形式提供SDK能力，这些SDK往往会提供Native接口给HAP模块的Native层直接调用，从而实现应用的复杂功能。而如何在Native侧跨HAR/HSP模块进行接口调用，是开发者经常遇到的问题。本文将介绍Native侧跨HAR/HSP模块调用两种典型场景，包括调用Native方法和调用ArkTS方法，以方便开发者更好的掌握Native侧跨模块调用的能力。
 
 ## 实现原理
 
@@ -28,7 +28,7 @@ content_hash: sha256:6575d7552cbd0a9402458439b9a5806ede4af2937b4bfb74521c68d66fe
 
 **图 1** Native侧跨HAR/HSP模块调用原理图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/AEqpYCNSShiRXmYUJOkm0A/zh-cn_image_0000002809009089.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8c/v3/zAlq4VNzTfWFQCQMeahkmQ/zh-cn_image_0000002815557799.png)
 
 ## Native侧跨HAR/HSP模块调用Native方法
 
@@ -36,13 +36,13 @@ content_hash: sha256:6575d7552cbd0a9402458439b9a5806ede4af2937b4bfb74521c68d66fe
 
 **图 2** Native侧跨HAR/HSP模块调用Native方法
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/uMjgZ9mwTJShfte41CgK5Q/zh-cn_image_0000002809049005.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/de/v3/slTS_O-iQ5Sl_RiC3pdMMw/zh-cn_image_0000002815397883.png)
 
 ### 开发流程
 
 Native侧跨HAR/HSP模块调用Native方法时，需要实现Module1（HAP）的ArkTS侧调用Module1（HSP/HAR）的Native侧、Module1（HAP）的Native侧调用Module2（HSP/HAR）的Native侧。在当前场景下，跨模块调用HAR模块和HSP模块的方式相同，当前以跨模块调用HAR模块为例，详细流程如下所示。
 
-1. 开发者需要创建Module2（HAR）模块staticModule，详细创建流程可以参考[创建库模块](ide-har.md#section643521083015)。
+1. 开发者需要创建Module2（HAR）模块staticModule，详细创建流程可以参考[创建HAR模块](ide-har.md#section643521083015)。
 2. 在Module2中新建C++文件napi\_har.cpp，再新建其头文件napi\_har.h，并定义Native方法。
 
    napi\_har.cpp代码如下所示。
@@ -118,7 +118,7 @@ Native侧跨HAR/HSP模块调用Native方法时，需要实现Module1（HAP）的
    # entry\src\main\cpp\CMakeLists.txt
    target_link_libraries(entry PUBLIC libace_napi.z.so static_module::add shared_module::calc)
    ```
-7. 在Module1的napi\_init.cpp中导入Module2的头文件napi\_har.h，并调用其Native方法harNativeAdd()。
+7. 在Module1的napi\_init.cpp中导入Module2的头文件napi\_har.h，并调用harNativeAdd()方法。
 8. 在Module1的Native侧调用Module2的invokeHarNative()方法。
 
    ```
@@ -166,7 +166,7 @@ Native侧跨HAR/HSP模块调用Native方法时，需要实现Module1（HAP）的
 
 **图 3** Native侧调用HAR模块的Native方法
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/be/v3/lDbujwFDRCWWDPsw5MO6iQ/zh-cn_image_0000002779849440.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/PQ303ek8R1S2abkjV0jxiA/zh-cn_image_0000002786518308.gif)
 
 ## Native侧跨HAR/HSP模块调用ArkTS方法
 
@@ -174,7 +174,7 @@ Native侧跨HAR/HSP模块调用Native方法时，需要实现Module1（HAP）的
 
 **图 4** Native侧跨HAR/HSP模块调用ArkTS方法
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e8/v3/ik-bB_DmRASNrEkBUBoVtw/zh-cn_image_0000002779689470.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/CU5AC0YBRt6Tho8Hf5Df7Q/zh-cn_image_0000002786358380.png)
 
 ### 开发流程
 
@@ -319,8 +319,8 @@ Native侧跨HAR/HSP模块调用ArkTS方法具体实现方法如下所示。
 
 **图 5** Native侧调用HAR模块的ArkTS方法
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/pRK1B8HzTcqcJA2wJTsNNQ/zh-cn_image_0000002809009091.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f8/v3/mu4OrKopR7iRMkg8dlepLw/zh-cn_image_0000002815557801.gif)
 
 ## 示例代码
 
-* [Native侧跨HAR/HSP模块调用](https://gitcode.com/harmonyos_samples/CrossModuleReference)
+* [Native侧调用HAR/HSP模块接口](https://gitcode.com/harmonyos_samples/CrossModuleReference)

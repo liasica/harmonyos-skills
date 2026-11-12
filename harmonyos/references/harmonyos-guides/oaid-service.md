@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/oaid-service
 title: 开放匿名设备标识服务
 breadcrumb: 指南 > 应用服务 > Ads Kit（广告服务） > 开放匿名设备标识服务
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:52+08:00
-doc_updated_at: 2026-08-21
-content_hash: sha256:38db8b89d8d0d71b201035cdc415b019d29d2e2be07e6dddb7b2735ef77b41a8
+scraped_at: 2026-11-12T09:52:18+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:72635b9882b92fc5354d7d28404d89416fdfec7781f584b64ea03d07baf9a31c
 ---
 
 ## 获取OAID信息
@@ -50,7 +50,7 @@ OAID会在下述场景中发生变化：
 
 **说明** 
 
-如调用getOAID接口需要申请ohos.permission.APP\_TRACKING\_CONSENT权限，且“要求应用请求关联”保持关闭状态。存在如下三种情况：
+如调用getOAID()接口需要申请ohos.permission.APP\_TRACKING\_CONSENT权限，且“要求应用请求关联”保持关闭状态。存在如下三种情况：
 
 1.如应用已配置ohos.permission.APP\_TRACKING\_CONSENT权限，且“跨应用关联访问权限”为“允许”，则返回OAID。
 

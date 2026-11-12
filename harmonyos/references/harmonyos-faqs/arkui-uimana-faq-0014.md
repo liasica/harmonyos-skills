@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-uimana-fa
 title: ArkUI-Canvas组件绘制功能常见问题
 breadcrumb: FAQ > 应用框架开发 > UI框架 > UI界面 > 常见问题 > ArkUI-Canvas组件绘制功能常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:32+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:3718436a0b572c23be44dd24d6c1088c8be7f2440e59f13c373446615a867fd3
+scraped_at: 2026-11-12T09:58:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a537a05009a45950ac01e74cf031974c64dc145ae24c87919838859ae60e01a4
 ---
 
 **Q：如何使用canvas绘制圆角矩形？**
@@ -30,7 +30,7 @@ struct CanvasDrawRoundedRectangle {
 
 **Q：如何基于Canvas实现六边形雷达图以展示不同能力的数据？**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/97mzuMh0R6iQxB4wAbPI8A/zh-cn_image_0000002765922228.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/TfhY-quFSCKNEn-mynTBLQ/zh-cn_image_0000002765922228.png "点击放大")
 
 **A**：实现方法如下：
 
@@ -386,11 +386,11 @@ struct Index {
 
 代码运行效果图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/UFBzcEj4Ri6ZqlJWDrdzgg/zh-cn_image_0000002795480725.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0c/v3/SxGw9f0gQi2h-zV8VTHteQ/zh-cn_image_0000002795480725.png "点击放大")
 
 **Q：将UI组件绘制到Canvas上后，如何截取Canvas获取图片？**
 
-**A**：使用[getPixelMap](../harmonyos-references/ts-canvasrenderingcontext2d.md#getpixelmap)方法即可。
+**A**：使用[getPixelMap](../doccenter-references/api/ts-components-canvas-common-method.md#getpixelmap)方法即可。
 
 **Q：解决方案里的方法能够实现多行文字的对齐效果吗？**
 
@@ -398,7 +398,7 @@ struct Index {
 
 **Q：Canvas如何实现橡皮擦效果，清除已绘制的路径？具体演示如下：**
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/99/v3/0PNOyTBOT7qPIevf59LTaw/zh-cn_image_0000002795480865.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/Mf3mkS_ERJma1fp9MSMc4Q/zh-cn_image_0000002795480865.png "点击放大")
 
 **A**：基于图层叠加实现橡皮擦效果，思路如下：
 

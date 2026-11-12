@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-no-use-an
 title: "@performance/no-use-any-import"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/no-use-any-import
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:12+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:a0947f4f5a49538f6ba1cfd1cba4348619d3321cf658ab026585cf8557b9b570
+scraped_at: 2026-11-12T09:52:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7d93e34c7165810539d4cdee85acf077fd71ee4e8c9538ebbf4bb02cc6382776
 ---
 
 使用import的方式引入对应的模块时，建议按需引用变量代替“import \*”的方式，以减少.ets文件的执行耗时和文件中所有export变量的初始化过程。
@@ -56,4 +56,4 @@ plugin:@performance/recommended
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

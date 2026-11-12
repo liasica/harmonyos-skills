@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/appgallery-pr
 title: 添加桌面快捷方式
 breadcrumb: 指南 > 应用服务 > AppGallery Kit（应用市场服务） > 应用市场推荐 > 应用内快捷方式 > 添加桌面快捷方式
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:25+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:90a35ca4d943ad9be836689c025f61ad4b144ee8db1acd8d38ee167c73a346bc
+scraped_at: 2026-11-12T09:52:19+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:daa9065f7bc7d07bbe3b023e0ccd2013603c0ef15c515c31e452d056f8175eb7
 ---
 
 ## 场景介绍
@@ -14,11 +14,14 @@ content_hash: sha256:90a35ca4d943ad9be836689c025f61ad4b144ee8db1acd8d38ee167c73a
 
 **说明** 
 
-单个应用最多可添加2个快捷方式。
+单个应用可添加快捷方式数量限制如下：
+
+* PC/2in1：最多支持添加10个快捷方式。
+* Phone/Tablet：对于API版本26.0.0及之前版本，最多可添加2个快捷方式；从API版本26.0.1开始，最多可添加5个快捷方式。
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/29/v3/SQdDLWYBRbaFecRY0hjIAg/zh-cn_image_0000002779691250.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/39/v3/liOASzhOSnaQ2J0NH49vew/zh-cn_image_0000002786360166.png)
 
 1. 应用预先调用[checkPinShortcutPermitted](../harmonyos-references/store-productviewmanager.md#productviewmanagercheckpinshortcutpermitted)接口检查是否允许快捷方式加桌。
 2. AppGallery Kit获取应用传入的快捷方式信息并生成检查结果。
@@ -34,7 +37,7 @@ content_hash: sha256:90a35ca4d943ad9be836689c025f61ad4b144ee8db1acd8d38ee167c73a
 ## 约束与限制
 
 * 应用市场推荐服务不支持模拟器，请使用真机调试。在模拟器中使用该服务将会提示：无法获取内容，请点击屏幕重试。
-* 应用市场推荐服务支持Phone、Tablet、PC/2in1设备。并且从6.0.2(22)版本开始，新增支持TV设备。
+* 应用市场推荐服务支持Phone、Tablet、PC/2in1设备。从6.0.2(22)版本开始，新增支持TV设备；并且从API版本26.0.1开始，新增支持Car设备。
 
 ## 接口说明
 

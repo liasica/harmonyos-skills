@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 概述
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 基础游戏服务（必选） > 游戏登录 > 概述
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:55+08:00
-doc_updated_at: 2026-04-20
-content_hash: sha256:484863ff40b1be70eb3d874b6e256f36cb5088b934a6e0dc135923053dc5dcab
+scraped_at: 2026-11-12T09:52:23+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:eb503841820d1fff2b6dbfcdb4689b7589082ba349faf15f336755a83612f4f1
 ---
 
 基础游戏服务能为游戏快速、低成本地构建基础功能，例如联合登录、华为账号实名认证、未成年人防沉迷等，让开发者聚焦游戏本身的业务能力，从而迅速推广游戏，并基于用户和内容的本地化进行深度的游戏运营。
 
 ## 约束与限制
 
-基础游戏服务支持Phone、Tablet、PC/2in1设备，并且从5.1.1(19)版本开始，新增支持TV设备。
+基础游戏服务支持Phone、Tablet、PC/2in1设备；从5.1.1(19)版本开始，新增支持TV设备；并且从API版本26.0.1开始，新增支持Car设备。
 
 ## 场景介绍
 

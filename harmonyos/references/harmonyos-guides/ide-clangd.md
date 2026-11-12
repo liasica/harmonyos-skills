@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-clangd
 title: 代码索引（clangd）
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码索引（clangd）
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:20+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:ea26b193121f7aeb404c4995bf869ee29e4d3a85c2d99b6958c4c4bfc8f03cf1
+scraped_at: 2026-11-12T09:53:01+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:910834d33cffc07627de9b4ed3fb4c33122e969a719a8ec93aacedb3df30d2aa
 ---
 
 在打开C/C++大工程时，代码索引耗时较长，且持续占用CPU和内存，开发者通常需要等待一段时间才能进入编码状态，影响开发效率。
@@ -20,10 +20,10 @@ content_hash: sha256:ea26b193121f7aeb404c4995bf869ee29e4d3a85c2d99b6958c4c4bfc8f
 
 该配置对当前工程持续生效。
 
-点击菜单栏**File** **>** **Settings（macOS为DevEco Studio > Preferences/Settings）****>** **Advanced Settings** **>** **Clangd，**进行索引模式切换。切换索引模式后，需要重启DevEco Studio。
+点击菜单栏**File** **>** **Settings（macOS为DevEco Studio > Preferences/Settings）****>** **Advanced Settings** **>** **Clangd**，进行索引模式切换。切换索引模式后，需要重启DevEco Studio。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2a/v3/fSXcDNvqRGqXm2iSuyxOzA/zh-cn_image_0000002731542253.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/AhCyd89qRxuoHLkXIcqRQQ/zh-cn_image_0000002808766443.png)
 
 打开C/C++大工程时，DevEco Studio右下角会弹出提示，建议切换索引模式。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/DUYnxPGdS92Z02_rM3V7pQ/zh-cn_image_0000002731382281.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/Fct7tPoGTayVvnhLLREliA/zh-cn_image_0000002779406884.png)

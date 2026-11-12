@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: 日志
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 日志
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:12+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:7e4c4a52ec256346c3e2461ec31ebde4105aca1580376545fade0acba5437370
+scraped_at: 2026-11-12T09:52:51+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3db0095d0248669615e0f8fc7a0117c12c464680dc45bed1df8e3f5242d9c67a
 ---
 
 与任何Web应用程序相同，ohpm-repo有一个内置的日志记录器，其定义了四种日志类型。
@@ -18,11 +18,11 @@ content_hash: sha256:7e4c4a52ec256346c3e2461ec31ebde4105aca1580376545fade0acba54
 
 操作日志中主要包含操作时间、日志级别、操作人id（userId）、终端IP（ip）、操作资源（resource）、操作方法名（event）以及操作结果（result），其文件保存个数最多为180个。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/I7ZP9YV5R9KGHzJCvAA31w/zh-cn_image_0000002701822344.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cb/v3/onzXdwB-RXCx4neJ8Ssw0g/zh-cn_image_0000002808884785.png "点击放大")
 
 **说明** 
 
-**操作方法名(event)**： 当在ohpm-repo管理界面执行一系列操作时，会在operate.log文件生成一条条操作数据，操作方法名即该操作涉及的方法名，例如login即表示登录操作，analyzePackage即表示上传包时对包的解析操作。
+**操作方法名(event)**： 当在ohpm-repo管理界面执行操作时，会在operate.log文件生成操作数据，操作方法名即该操作涉及的方法名，例如login即表示登录操作，analyzePackage即表示上传包时对包的解析操作。
 
 **表1** 常用操作方法说明
 
@@ -30,7 +30,7 @@ content_hash: sha256:7e4c4a52ec256346c3e2461ec31ebde4105aca1580376545fade0acba54
 | --- | --- | --- |
 | 1 | generateAccessToken/deleteAccessToken | 生成/删除AccessToken |
 | 2 | login/logout | 登录/退出登录 |
-| 3 | publish/batchPublish/unPublish /batchUnPublish | 上架资源包/批量上架资源包/下架资源包/批量下架资源包  ohpm-repo从6.0.1版本开始支持批量上架资源包 |
+| 3 | publish/batchPublish/unPublish/batchUnPublish | 上架资源包/批量上架资源包/下架资源包/批量下架资源包  ohpm-repo从6.0.1版本开始支持批量上架资源包 |
 | 4 | addGroup/deleteGroup | 添加/删除组织 |
 | 5 | updateGroup | 更新组织 |
 | 6 | addMember/deleteMember | 添加/删除组织成员 |
@@ -58,7 +58,7 @@ content_hash: sha256:7e4c4a52ec256346c3e2461ec31ebde4105aca1580376545fade0acba54
 
 运行日志中主要包含操作时间、日志级别以及日志信息，其文件保存个数最多为30个。运行日志定义了日志级别：all，trace，debug，info，warn，error，fatal，mark和off。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5b/v3/RVRtbYCKRf-AyJKKb-qAEg/zh-cn_image_0000002731381651.png "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4d/v3/W-uhdyVlRRy6tQoW-cmqJg/zh-cn_image_0000002808764693.png "点击放大")
 
 ## 运行错误日志 - repoError.log
 
@@ -70,7 +70,7 @@ content_hash: sha256:7e4c4a52ec256346c3e2461ec31ebde4105aca1580376545fade0acba54
 
 ## 日志存储路径
 
-日志存储的默认路径为./logs，相对路径基准为ohpm-repo部署根目录[deploy\_root](ide-ohpm-repo-configuration.md#zh-cn_topic_0000001745376470_关于-deploy_root)。
+日志存储的默认路径为./logs，相对路径基准为ohpm-repo部署根目录[deploy\_root](ide-ohpm-repo-configuration.md#section49261233214)。
 
 ## 日志打印级别
 

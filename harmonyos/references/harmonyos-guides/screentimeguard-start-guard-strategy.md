@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 启动策略
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 守护策略管理 > 启动策略
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:44+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:4cff8b805413338f957227ef014fe63b2ef2eb990588f4ebf0bcba5665106030
+scraped_at: 2026-11-12T09:52:36+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f1c4e5a5b85d321c149ca3ee37fb60780a4b36bd32ed2726f50b93d93966e09b
 ---
 
 ## 场景介绍
@@ -16,11 +16,11 @@ content_hash: sha256:4cff8b805413338f957227ef014fe63b2ef2eb990588f4ebf0bcba56651
 
 ## 用户体验设计
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e7/v3/b0mXXJV_Qqmd0Bv3R8TY_A/zh-cn_image_0000002809011281.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9d/v3/CeaBVwD7S4S4_sDRDn4T9Q/zh-cn_image_0000002786520514.png)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ca/v3/LRfPSHSZTJG_lydXilfkpw/zh-cn_image_0000002809051195.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/44/v3/JGRogurUQxm0Kl8g3K8xpw/zh-cn_image_0000002786360586.png)
 
 流程说明：
 
@@ -46,7 +46,7 @@ content_hash: sha256:4cff8b805413338f957227ef014fe63b2ef2eb990588f4ebf0bcba56651
 **说明** 
 
 1. startGuardStrategy接口支持应用指定策略的启用时间，如果设置的时间小于等于当前时间，直接生效；如果大于当前时间，等设置时间到达后生效。
-2. ScreenTimeGuard Kit取指定的startDate分钟级别的时刻进行启动管控策略操作。
+2. Screen Time Guard Kit取指定的startDate分钟级别的时刻进行启动管控策略操作。
 
 ## 开发前提
 

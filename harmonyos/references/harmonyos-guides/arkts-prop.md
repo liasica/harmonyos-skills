@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/arkts-prop
 title: "@Prop装饰器：父子单向同步"
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (ArkTS声明式开发范式) > 学习UI范式状态管理 > 状态管理（V1） > 管理组件拥有的状态 > @Prop装饰器：父子单向同步
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:10+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:cc9b3eabaebd4e756a399225a62ef111df114162251adf552d09bf716abeba6a
+scraped_at: 2026-11-12T09:51:08+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:535d836d5d76c20d62cf2001bcedfdce7ea168660b93470dfcdea64509896180
 ---
 
 [@Prop](../harmonyos-references/ts-state-management-prop.md#prop)装饰的变量可以和父组件建立单向同步关系。
 
-在阅读@Prop文档前，建议开发者首先了解[@State](arkts-state.md)的基本用法。最佳实践请参考[状态管理最佳实践](../best-practices/bpta-status-management.md)。常见问题请参考[状态管理常见问题](arkts-state-management-faq.md)。
+在阅读@Prop文档前，建议开发者首先了解[@State](arkts-state.md)的基本用法。常见问题请参考[状态管理常见问题](arkts-state-management-faq.md)。
 
 **说明** 
 
@@ -46,7 +46,7 @@ content_hash: sha256:cc9b3eabaebd4e756a399225a62ef111df114162251adf552d09bf716ab
 
 初始化规则图示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/92/v3/ApPXv5MZRGOGS_T_oNzQ2g/zh-cn_image_0000002809009277.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/8nybY4DKQ92a_lCOoCM-ow/zh-cn_image_0000002815557987.png)
 
 ## 观察变化和行为表现
 
@@ -540,7 +540,7 @@ class Book {
 
 @Observed装饰的类的实例会被不透明的代理对象包装，此代理可以检测到包装对象内的所有属性更改。如果发生这种情况，此时，代理通知@Prop，@Prop对象值被更新。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/18/v3/swxMoLfoSZe56GgNcv2YQA/zh-cn_image_0000002809049193.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/aupeV3RCQZOicHmek7UfOQ/zh-cn_image_0000002815398071.gif)
 
 ### @Prop本地初始化不和父组件同步
 
@@ -614,7 +614,7 @@ struct MainProgram {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b2/v3/EC2c-Xe3RvSq676Gizj3Kg/zh-cn_image_0000002779849628.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/76/v3/MRHI24aXQGS6LRmIuppR2Q/zh-cn_image_0000002786518496.gif)
 
 ### @Prop嵌套场景
 
@@ -723,7 +723,7 @@ struct Child {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/xjOqebg-Qka6p2xCzR5MRQ/zh-cn_image_0000002779689658.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/KhbPztRYR3uvVVcdIuMxkA/zh-cn_image_0000002786358568.gif)
 
 ### 装饰Array类型变量
 
@@ -1018,7 +1018,7 @@ struct Zoo {
           if (this.animal instanceof Animals) {
             this.animal.name = 'Dog';
           } else {
-            hilog.info(DOMAIN, TAG, 'num is undefined, cannot change property');
+            hilog.info(DOMAIN, TAG, 'animal is undefined, cannot change property');
           }
         })
 

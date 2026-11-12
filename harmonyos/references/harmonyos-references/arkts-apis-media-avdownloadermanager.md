@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Interface (AVDownloaderManager)
 breadcrumb: API参考 > 媒体 > Media Kit（媒体服务） > ArkTS API > @ohos.multimedia.media (媒体服务) > Interface (AVDownloaderManager)
 category: harmonyos-references
-scraped_at: 2026-10-15T07:11:28+08:00
-doc_updated_at: 2026-10-14
+scraped_at: 2026-11-12T09:56:45+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:5c7fd4c955e7295ece5f73eb98abc34aefb84441f1ee219dcca4382dcbdaf670
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-non-nu
 title: "@typescript-eslint/no-non-null-asserted-optional-chain"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-non-null-asserted-optional-chain
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:10+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:d12caf6feef4ef0c7bbf166e55abceb157d3512e71327fccd80d59841d0fe6fc
+scraped_at: 2026-11-12T09:52:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:44c7e42cd27fd28bc60e34b45d40557f69d6253931b6f4008c8985d0077b35bb
 ---
 
 禁止在可选链表达式之后使用非空断言。
@@ -70,4 +70,4 @@ instance?.foo()!;
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

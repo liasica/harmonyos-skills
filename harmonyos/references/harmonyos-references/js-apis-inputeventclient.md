@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.multimodalInput.inputEventClient (输入事件注入)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.inputEventClient (输入事件注入)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:50:21+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:356de2c86a22219aabed44ff14d8777260f873089c6667488f67bd967dd95249
+scraped_at: 2026-11-12T09:56:03+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:627ff4395a44b269fb070e9000e408186a7e8b7ae807def9546d12b03d06eeab
 ---
 
 输入事件注入模块，提供输入按键、鼠标/触控板、触屏输入事件注入能力。
@@ -47,7 +47,7 @@ createKeyboardController(): Promise<KeyboardController>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
-| 801 | Capability not supported. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 3800001 | Input service exception. |
 
 **示例：**
@@ -105,7 +105,7 @@ createMouseController(): Promise<MouseController>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
-| 801 | Capability not supported. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 3800001 | Input service exception. |
 
 **示例：**
@@ -163,7 +163,7 @@ createTouchController(): Promise<TouchController>
 | 错误码ID | 错误信息 |
 | --- | --- |
 | 201 | Permission verification failed. The application does not have the permission required to call the API. |
-| 801 | Capability not supported. |
+| 801 | Capability not supported. Possible causes: 1. The hardware does not support the capability; 2. The chip does not support the capability; 3. A dependent service feature is not supported. |
 | 3800001 | Input service exception. |
 
 **示例：**

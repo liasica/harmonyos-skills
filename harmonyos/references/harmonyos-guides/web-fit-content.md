@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-fit-conte
 title: Web组件大小自适应页面内容布局
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web渲染和布局 > Web组件大小自适应页面内容布局
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:15+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2a11b6cf525ae54d5d3bbee7715bd94d38be041db81ab28a0d7e533131fa8331
+scraped_at: 2026-11-12T09:51:22+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:2a327cfb7603c3c56753eda33ff0f6c76d919a2b61c829d81a418a2319bd782e
 ---
 
 使用Web组件大小自适应页面内容布局模式[layoutMode](../harmonyos-references/arkts-basic-components-web-attributes.md#layoutmode11)([WebLayoutMode](../harmonyos-references/arkts-basic-components-web-e.md#weblayoutmode11).FIT\_CONTENT)时，能使Web组件的大小根据页面内容自适应变化。
@@ -38,7 +38,7 @@ content_hash: sha256:2a11b6cf525ae54d5d3bbee7715bd94d38be041db81ab28a0d7e533131f
 ## 规格与约束
 
 1. 建议配置[渲染模式](web-render-mode.md)为[同步渲染模式](web-render-mode.md#同步渲染模式)，避免因为组件大小超出限制导致异常场景（白屏，布局错误）。
-2. 建议配置[overScrollMode](../harmonyos-references/arkts-basic-components-web-attributes.md#overscrollmode11)（过滚动模式）为关闭状态。当过滚动模式开启时，当用户在Web界面上滑动到边缘时，Web会通过弹性动画弹回界面，会与Scroll组件的回弹相互冲突，影响体验。
+2. 建议配置[overScrollMode](../harmonyos-references/arkts-basic-components-web-attributes.md#overscrollmode11)（过滚动模式）为关闭状态。当过滚动模式开启，用户在Web界面上滑动到边缘时，Web会通过弹性动画弹回界面，会与Scroll组件的回弹相互冲突，影响体验。
 3. [keyboardAvoidMode](../harmonyos-references/arkts-basic-components-web-attributes.md#keyboardavoidmode12)（键盘避让）属性配置为RESIZE\_CONTENT时，该避让模式不生效。
 4. 不支持对页面进行手势缩放。
 5. 不支持通过Web组件的height属性修改组件高度。

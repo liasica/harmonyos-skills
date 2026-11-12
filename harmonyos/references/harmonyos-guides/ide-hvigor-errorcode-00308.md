@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-hvigor-er
 title: 操作异常错误码
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 构建应用 > 构建报错排查 > 编译构建错误码 > 操作异常错误码
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:22+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:5c20170cba7eb8ba23cc94c294e7509ce5de758b1f0737c449bb962b7f6f8799
+scraped_at: 2026-11-12T09:53:08+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:bb78ee67b2185cdbed5930200e0fbca68d7ba5a2a95fbf352531ef76ed7a9101
 ---
 
 ## 00308001 删除文件失败
@@ -51,6 +51,7 @@ XXX execute failed.
 * **场景四：**构建日志中包含“ERR\_PNPM\_NO\_OFFLINE\_META”，原因是离线模式下无法从本地缓存中找到某个依赖包的元数据，可能是包的相关依赖没有打包完整。
 * **场景五：**构建日志中包含“CERT\_HAS\_EXPIRED”，原因是使用的npm远程仓库服务器上的证书已过期。
 * **场景六：**构建日志中包含“ETIMEDOUT”，原因是链接npm仓库超时，可能是网络问题，或者npm仓库地址配置错误。
+* **场景七：**构建日志中包含“ERR\_PNPM\_ABORTED\_REMOVE\_MODULES\_DIR\_NO\_TTY”，原因是pnpm因无法获取终端交互（TTY）而中止删除node\_modules目录，可能是pnpm版本变化，node\_modules损坏或结构异常，pnpm配置发生变化等。
 
 **处理步骤**
 
@@ -84,6 +85,9 @@ XXX execute failed.
 * **场景六：**
   1. 请确保仓库地址可以访问，查看npm配置的仓库地址是否正确、是否有防火墙或代理限制等。
   2. 联系仓库提供方确认仓库地址是否可用，或更换新的npm仓库地址。
+* **场景七：**
+
+  设置环境变量CI=true。
 
 ## 00308003 找不到Hvigor的入口文件
 
@@ -101,7 +105,8 @@ ENOENT: no such file XXX.
 
 **处理步骤**
 
-删除“用户目录\.hvigor\project\_caches\xxxxxxxx\workspace”并重试。
+1. 检查hvigor-config.json5的dependencies中是否配置了@ohos/hvigor-ohos-plugin或@ohos/hvigor依赖，如果配置请删除，当前DevEco Studio一体化安装，默认使用内置的hvigor插件，无需额外配置。
+2. 删除“用户目录\.hvigor\project\_caches\xxxxxxxx\workspace”并重试。
 
 ## 00308004 删除build目录失败
 
@@ -525,3 +530,25 @@ DevEco Studio无权限操作XXX文件或者XXX文件被占用。
 **处理步骤**
 
 手动删除XXX文件。
+
+## 00308026 找不到交互式环境
+
+**错误信息**
+
+Error Message: XXX
+
+ERR\_PNPM\_ABORTED\_REMOVE\_MODULES\_DIR\_NO\_TTY Aborted removal of modules directory due to no TTY
+
+If you are running pnpm in CI, set the CI environment variable to "true".
+
+**错误描述**
+
+pnpm因无法获取终端交互（TTY）而中止删除node\_modules目录。
+
+**可能原因**
+
+pnpm版本变化，node\_modules损坏或结构异常，pnpm配置发生变化等。
+
+**处理步骤**
+
+设置环境变量CI=true。

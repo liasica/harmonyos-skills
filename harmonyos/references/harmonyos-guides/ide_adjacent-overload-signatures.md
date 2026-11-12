@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_adjacent-
 title: "@typescript-eslint/adjacent-overload-signatures"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/adjacent-overload-signatures
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:08+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:6af7b25a71c24d87d9f6c8aa40eea21a5ed3791caae7f9525714ff0dcdc572ed
+scraped_at: 2026-11-12T09:52:54+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:af21da7a9e26e6e696ba12729cf0cb84813f8578e9456057bd3a294cbdd4eb6c
 ---
 
 建议函数重载的签名保持连续。
 
 ## 规则配置
 
-```screen
+```json
 // code-linter.json5
 {
   "rules": {
@@ -27,7 +27,7 @@ content_hash: sha256:6af7b25a71c24d87d9f6c8aa40eea21a5ed3791caae7f9525714ff0dcdc
 
 ## 正例
 
-```screen
+```ts
 export declare function bar(): void;
 export declare function foo(a: string): void;
 export declare function foo(a: number, b: number): void;
@@ -36,7 +36,7 @@ export declare function foo(a: number, b: string, c?: string): void;
 
 ## 反例
 
-```screen
+```ts
 export declare function foo(a: string): void;
 export declare function bar(): void;
 export declare function foo(a: number, b: number): void;
@@ -49,4 +49,4 @@ export declare function foo(a: number, b: string, c?: string): void;
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-g
 title: "@ohos.geolocation (位置服务)"
 breadcrumb: API参考 > 应用服务 > Location Kit（位置服务） > ArkTS API > 已停止维护的接口 > @ohos.geolocation (位置服务)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:22+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:3523e77819b84ed3a174c8402ba2eb810c1bb4eaf3751d20723a387c9f072a69
+scraped_at: 2026-11-12T09:57:24+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:18e48dc050c20c08cfa8c323815e49e8882ce2375eb32537610457aaddf481d6
 ---
 
 位置服务提供GNSS定位、网络定位、地理编码、逆地理编码、国家码和地理围栏等基本功能。
@@ -1257,7 +1257,7 @@ geolocation.sendCommand(requestInfo).then((result) => {
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | latitude7+ | number | 否 | 是 | 表示纬度信息，正值表示北纬，负值表示南纬。取值范围为-90到90。 |
-| longitude7+ | number | 否 | 是 | 表示经度信息，正值表示东经，负值表是西经。取值范围为-180到180。 |
+| longitude7+ | number | 否 | 是 | 表示经度信息，正值表示东经，负值表示西经。取值范围为-180到180。 |
 | locale7+ | string | 否 | 是 | 表示位置描述信息的语言，“zh”代表中文，“en”代表英文。 |
 | placeName7+ | string | 否 | 是 | 表示地区信息。 |
 | countryCode7+ | string | 否 | 是 | 表示国家码信息。 |
@@ -1431,7 +1431,7 @@ GNSS围栏的配置参数。目前只支持圆形围栏。
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
 | latitude7+ | number | 否 | 否 | 表示纬度信息，正值表示北纬，负值表示南纬。取值范围为-90到90。 |
-| longitude7+ | number | 否 | 否 | 表示经度信息，正值表示东经，负值表是西经。取值范围为-180到180。 |
+| longitude7+ | number | 否 | 否 | 表示经度信息，正值表示东经，负值表示西经。取值范围为-180到180。 |
 | altitude7+ | number | 否 | 否 | 表示高度信息，单位米。 |
 | accuracy7+ | number | 否 | 否 | 表示精度信息，单位米。 |
 | speed7+ | number | 否 | 否 | 表示速度信息，单位米每秒。 |
@@ -1499,7 +1499,7 @@ GNSS围栏的配置参数。目前只支持圆形围栏。
 | TRAJECTORY\_TRACKING | 0x302 | 表示运动轨迹记录场景。  适用于记录用户位置轨迹的场景，如运动类应用记录轨迹功能。主要使用GNSS定位技术提供定位服务。  此场景默认以最小1秒间隔上报定位结果。 |
 | CAR\_HAILING | 0x303 | 表示打车场景。  适用于用户出行打车时定位当前位置的场景，如网约车类应用。  此场景默认以最小1秒间隔上报定位结果。 |
 | DAILY\_LIFE\_SERVICE | 0x304 | 表示日常服务使用场景。  适用于不需要定位用户精确位置的使用场景，如新闻资讯、网购、点餐类应用，做推荐、推送时定位用户大致位置即可。  此场景默认以最小1秒间隔上报定位结果。 |
-| NO\_POWER | 0x305 | 表示无功耗功场景，这种场景下不会主动触发定位，会在其他应用定位时，才给当前应用返回位置。 |
+| NO\_POWER | 0x305 | 表示无功耗场景，这种场景下不会主动触发定位，会在其他应用定位时，才给当前应用返回位置。 |
 
 ## GeoLocationErrorCode(deprecated)
 

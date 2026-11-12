@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/push-send-ale
 title: 发送通知消息
 breadcrumb: 指南 > 应用服务 > Push Kit（推送服务） > 推送场景化消息 > 推送通知消息 > 发送通知消息
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:41+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8438c0add4e1fae04269bcf537d8ae8e35f2eb3b3c4b84b52d1cd253934cba4b
+scraped_at: 2026-11-12T09:52:34+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:328957c8cef22afc298cfb4f2612f6bbea44fb2c9b8afe7551614e514ed50e68
 ---
 
 ## 场景介绍
@@ -14,7 +14,7 @@ content_hash: sha256:8438c0add4e1fae04269bcf537d8ae8e35f2eb3b3c4b84b52d1cd253934
 
 ## 约束与限制
 
-发送通知消息能力支持Phone、Tablet、PC/2in1设备。并且从5.1.0(18)版本开始，新增支持Wearable设备；从5.1.1(19)版本开始，新增支持TV设备。
+发送通知消息能力支持Phone、Tablet、PC/2in1设备。并且从API版本5.1.0(18)开始，新增支持Wearable设备；从API版本5.1.1(19)开始，新增支持TV设备；从API版本26.0.1开始，新增支持Car设备。
 
 ## 开通权益
 
@@ -116,7 +116,7 @@ Push Kit根据消息内容，将通知消息分类为**服务与通讯**、**资
        "token": ["MAMzLg**********lPW"]
      },
      "pushOptions": {
-      "testMessage": true,
+       "testMessage": true,
        "ttl": 86400
      }
    }
@@ -421,7 +421,7 @@ Push Kit提供了多种通知消息样式，您可以自定义其中内容来吸
 
 您在发送通知消息时[notification](../harmonyos-references/push-scenariozed-api-request-param.md#notification)参数中必须携带**title**与**body**字段，来设置应用收到通知消息后展示在通知中心的标题与内容。文本内容最多显示3行，超出3行以“...”截断。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/t-WijgbQTYe_EOkmk8hWbA/zh-cn_image_0000002779691606.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/89/v3/aGFfLrdLRJ6SxVjkG1zhhQ/zh-cn_image_0000002815400035.png)
 
 消息体示例：
 
@@ -454,7 +454,7 @@ Wearable、TV不支持此通知样式。
 
 您可以发送通知消息时携带[badge](../harmonyos-references/push-scenariozed-api-request-param.md#badge)字段来设置应用收到通知消息后以数字的形式展示角标，提醒用户查看消息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1b/v3/rL0Joy9HQyiza5zzqbivnQ/zh-cn_image_0000002809011227.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0a/v3/wjGaSRkLQYWEjXsjLnbtiw/zh-cn_image_0000002786520460.png)
 
 消息体示例：
 
@@ -494,13 +494,13 @@ Wearable、TV不支持此通知样式。
 
 **说明** 
 
-Wearable不支持此通知样式。
+Wearable、Car不支持此通知样式。
 
 **Push Kit禁止推送包含敏感信息的图片。**
 
 您可以发送通知消息时携带[image](../harmonyos-references/push-scenariozed-api-request-param.md#notification)字段设置消息大图标内容，提醒用户查看消息。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/7fqVR2-xTimRvGup4_iDoQ/zh-cn_image_0000002809051141.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/Y4JA7fufRKmv6LOA55NSxQ/zh-cn_image_0000002786360532.png)
 
 消息体示例：
 
@@ -534,7 +534,7 @@ Wearable不支持此通知样式。
 
 您可以发送通知消息时在[notification](../harmonyos-references/push-scenariozed-api-request-param.md#notification)中携带**inboxContent**和**style**字段设置通知消息为多行文本样式。最多可展示3行内容，每行内容无法完全展示时以“...”截断。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c7/v3/Gje4XtYgSCe5KLMAEao91A/zh-cn_image_0000002779851576.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/81/v3/ZdI4Cza4RXWB5LmZZO9kkQ/zh-cn_image_0000002815559953.png)
 
 消息体示例：
 
@@ -831,7 +831,7 @@ Push Kit支持华为账号和应用账号两种账号类型：
        "token": ["MAMzLg**********lPW"]
      },
      "pushOptions": {
-      "testMessage": true,
+       "testMessage": true,
        "ttl": 86400
      }
    }

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/native-enviro
 title: 获取用户目录环境(C/C++)
 breadcrumb: 指南 > 应用框架 > Core File Kit（文件基础服务） > 用户文件 > 获取用户目录环境(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:39+08:00
-doc_updated_at: 2026-09-14
+scraped_at: 2026-11-12T09:51:25+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:6462ba8cf1f3f7baacd4e9404291c0da8bbf88d9855af23565a9e406bb2b0d76
 ---
 

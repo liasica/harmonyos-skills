@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Classes (其他)
 breadcrumb: API参考 > 媒体 > Media Library Kit（媒体文件管理服务） > ArkTS API > @ohos.file.photoAccessHelper (相册管理模块) > Classes (其他)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:51:17+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:114f48315b037b05f36f01c566ab263f5e0f0d06f4e21591c6da10f68b75e774
+scraped_at: 2026-11-12T09:56:51+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:10795127f743abd59ed1f30f1a88e6e66d468f69ab03e5aeb43ec541e4d3d224
 ---
 
 **说明** 
@@ -74,6 +74,7 @@ PhotoSelectOptions extends BaseSelectOptions
 | isReturnToPhotoBrowserEnabled23+ | boolean | 否 | 是 | 在单选模式下，拍完照是否能自动跳转到大图预览模式，true表示支持，false表示不支持，默认为false。  **注意：** 该参数配置为true时仅在[SingleSelectionMode](arkts-apis-photoaccesshelper-e.md#singleselectionmode18)为BROWSER\_MODE（大图预览模式）或者BROWSER\_AND\_SELECT\_MODE（兼容模式）并且[BaseSelectOptions.isPreviewForSingleSelectionSupported](arkts-apis-photoaccesshelper-class.md#baseselectoptions)参数为true时生效。  **模型约束**： 此接口仅可在Stage模型下使用。  **元服务API：** 从API version 23开始，该接口支持在元服务中使用。 |
 | isSelectionNumberVisible | boolean | 否 | 是 | 是否支持选择序号。true表示支持，false表示不支持，默认值为false。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **起始版本：** 26.0.0 |
 | isSelectionOrderAdjustable | boolean | 否 | 是 | 是否支持调整选择顺序。true表示支持，false表示不支持，默认值为false。  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。  **起始版本：** 26.0.0 |
+| pickerColorMode | [PickerColorMode](arkts-apis-photoaccesshelper-e.md#pickercolormode) | 否 | 是 | 设置图片选择器的颜色模式，实现图片选择器拉起的界面内所有内容的深色/浅色显示效果。  默认值为AUTO：颜色跟随系统。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。 |
 
 ## PhotoSelectResult
 
@@ -149,7 +150,7 @@ PhotoSelectOptions extends BaseSelectOptions
 
 | 名称 | 类型 | 只读 | 可选 | 说明 |
 | --- | --- | --- | --- | --- |
-| period | number | 否 | 是 | 配置最近图片显示的时间范围，单位为秒（s）。配置后，系统将显示距离当前时间点指定时长内的图片。最长可配置时长为1天（86400s）。  当值小于等于0、大于86400或者未配置时，默认按最长时间段（1天）显示最近图片。当配置时间段内无符合的图片或视频时，组件不显示。  **元服务API**：从API version 20开始，该接口支持在元服务中使用。 |
+| period | number | 否 | 是 | 配置最近图片或视频显示的时间范围，单位为秒（s）。配置后，系统将显示距离当前时间点指定时长内按创建时间排序的最新一个图片或视频。  - 在API版本26.0.1之前，配置时长最长为1天（86400秒）。当值小于等于0、大于86400或者未配置时，默认按最长时间段（1天）显示最近图片或视频。  - 从API版本26.0.1开始，配置时长最长（INT\_MAX）为2147483647秒。当值为正无穷大（Number.POSITIVE\_INFINITY）时，系统显示INT\_MAX时间范围内的最新一个图片或视频；当值小于等于0、大于INT\_MAX或者未配置时，默认按1天处理。  当配置时间段内无符合的图片或视频时，组件不显示。  **元服务API**：从API版本20开始，该接口支持在元服务中使用。 |
 | MIMEType | [photoAccessHelper.PhotoViewMIMETypes](arkts-apis-photoaccesshelper-e.md#photoviewmimetypes) | 否 | 是 | 最近图片控件显示的文件类型，默认为PhotoViewMIMETypes.IMAGE\_VIDEO\_TYPE。  **元服务API**：从API version 20开始，该接口支持在元服务中使用。 |
 | photoSource | [PhotoSource](arkts-apis-photoaccesshelper-e.md#photosource20) | 否 | 是 | 配置最近图片视频显示内容的来源，比如拍照、截屏等。默认不限制来源。  **元服务API**：从API version 20开始，该接口支持在元服务中使用。 |
 

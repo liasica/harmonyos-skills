@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-f
 title: "@ohos.file.cloudSync (端云同步能力)"
 breadcrumb: API参考 > 应用框架 > Core File Kit（文件基础服务） > ArkTS API > @ohos.file.cloudSync (端云同步能力)
 category: harmonyos-references
-scraped_at: 2026-11-04T08:34:03+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:6cff1c9ac8557ee00f5723628b5b78e165cd39cf6cef3c68c9a8d475560d2a67
+scraped_at: 2026-11-12T09:55:05+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:328bb1c188e5662884fbe7ea91fdc78fd4ca429853d11ca5c4a6a7ee4812e5e0
 ---
 
 该模块向应用提供端云同步能力，包括启动/停止端云同步以及启动/停止原图下载功能。
@@ -687,7 +687,7 @@ start(uri: string): Promise<void>
 | 13600001 | IPC error. |
 | 13900002 | No such file or directory. |
 | 13900025 | No space left on device. |
-| 14000002 | Invalid URI. |
+| 14000002 | Invalid uri. |
 
 **示例：**
 
@@ -740,7 +740,7 @@ start(uri: string, callback: AsyncCallback<void>): void
 | 13600001 | IPC error. |
 | 13900002 | No such file or directory. |
 | 13900025 | No space left on device. |
-| 14000002 | Invalid URI. |
+| 14000002 | Invalid uri. |
 
 **示例：**
 
@@ -851,7 +851,7 @@ stop(uri: string, needClean?: boolean): Promise<void>
 | 401 | The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 | 13600001 | IPC error. |
 | 13900002 | No such file or directory. |
-| 14000002 | Invalid URI. |
+| 14000002 | Invalid uri. |
 
 **示例：**
 
@@ -896,7 +896,7 @@ stop(uri: string, callback: AsyncCallback<void>): void
 | 401 | The input parameter is invalid. Possible causes: 1. Mandatory parameters are left unspecified. 2. Incorrect parameter types. |
 | 13600001 | IPC error. |
 | 13900002 | No such file or directory. |
-| 14000002 | Invalid URI. |
+| 14000002 | Invalid uri. |
 
 **示例：**
 
@@ -1000,7 +1000,7 @@ cleanFileCache(uri: string): void
 | 13900010 | Try again. |
 | 13900012 | Permission denied by the file system. |
 | 13900020 | Invalid argument. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| 14000002 | Invalid URI. |
+| 14000002 | Invalid uri. |
 | 22400005 | Inner error. Possible causes:1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception. |
 
 **示例：**
@@ -1292,7 +1292,7 @@ registerChange(uri: string, recursion: boolean, callback: Callback<ChangeData>):
 | 13900001 | Operation not permitted. |
 | 13900002 | No such file or directory. |
 | 13900012 | Permission denied. |
-| 14000002 | Invalid URI. |
+| 14000002 | Invalid uri. |
 
 **示例：**
 
@@ -1337,7 +1337,7 @@ unregisterChange(uri: string): void
 | 13900001 | Operation not permitted. |
 | 13900002 | No such file or directory. |
 | 13900012 | Permission denied. |
-| 14000002 | Invalid URI. |
+| 14000002 | Invalid uri. |
 
 **示例：**
 
@@ -1490,7 +1490,7 @@ getHistoryVersionList(uri: string, versionNumLimit: number): Promise<Array<Histo
 | 13900010 | Try again. |
 | 13900012 | Permission denied by the file system. |
 | 13900020 | Invalid argument. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| 14000002 | Invalid URI. |
+| 14000002 | Invalid uri. |
 | 22400002 | Network unavailable. |
 | 22400005 | Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception. |
 
@@ -1507,9 +1507,9 @@ let uri = fileUri.getUriFromPath(path);
 let limit = 10;
 
 fileVersion.getHistoryVersionList(uri, limit).then((versionList: Array<cloudSync.HistoryVersion>) => {
-  for(let i = 0, len = versionList.length; i < len; i++) {
-    console.info("get history versionId: " + versionList[i].versionId);
-  }
+  versionList.forEach((item) => {
+    console.info("get history versionId: " + item.versionId);
+  })
 }).catch((err: BusinessError) => {
   console.error("get history version failed with error message: " + err.message + ", error code: " + err.code);
 });
@@ -1548,7 +1548,7 @@ downloadHistoryVersion(uri: string, versionId: string, callback: Callback<[Versi
 | 13900010 | Try again. |
 | 13900012 | Permission denied by the file system. |
 | 13900020 | Invalid argument. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| 14000002 | Invalid URI. |
+| 14000002 | Invalid uri. |
 | 22400002 | Network unavailable. |
 | 22400005 | Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception. |
 
@@ -1615,7 +1615,7 @@ replaceFileWithHistoryVersion(originalUri: string, versionUri: string): Promise<
 | 13900010 | Try again. |
 | 13900012 | Permission denied by the file system. |
 | 13900020 | Invalid argument. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| 14000002 | Invalid URI. |
+| 14000002 | Invalid uri. |
 | 22400005 | Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception. |
 | 22400007 | The version file specified to replace the original file does not exist. |
 
@@ -1688,7 +1688,7 @@ isFileConflict(uri: string): Promise<boolean>
 | 13900010 | Try again. |
 | 13900012 | Permission denied by the file system. |
 | 13900020 | Invalid argument. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| 14000002 | Invalid URI. |
+| 14000002 | Invalid uri. |
 | 22400005 | Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception. |
 
 **示例：**
@@ -1740,7 +1740,7 @@ clearFileConflict(uri: string): Promise<void>
 | 13900010 | Try again. |
 | 13900012 | Permission denied by the file system. |
 | 13900020 | Invalid argument. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
-| 14000002 | Invalid URI. |
+| 14000002 | Invalid uri. |
 | 22400005 | Inner error. Possible causes: 1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception. |
 
 **示例：**
@@ -1801,7 +1801,7 @@ getCoreFileSyncState(uri: string): FileState
 | 13900012 | Permission denied by the file system. |
 | 13900020 | Invalid argument. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types. |
 | 13900031 | Function not implemented. |
-| 14000002 | Invalid URI. |
+| 14000002 | Invalid uri. |
 | 22400005 | Inner error. Possible causes:1.Failed to access the database or execute the SQL statement. 2.System error, such as a null pointer, insufficient memory or a JS engine exception. |
 
 **示例：**

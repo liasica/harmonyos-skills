@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/screentimegua
 title: 健康使用设备授权列表页中应用授权开关打开/关闭时触发回调
 breadcrumb: 指南 > 应用服务 > Screen Time Guard Kit（屏幕时间守护服务） > 用户授权管理 > 健康使用设备授权列表页中应用授权开关打开/关闭时触发回调
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:43+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:56bee2a969f9878fc0ac0aa210693c1c7efb856cd98d000a6f20950fcd2d5432
+scraped_at: 2026-11-12T09:52:36+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0547b640326de371506d9f7d844f2deda0d191b017dffa1d8923d971eddcae0b
 ---
 
 ## 场景介绍
@@ -14,21 +14,21 @@ content_hash: sha256:56bee2a969f9878fc0ac0aa210693c1c7efb856cd98d000a6f20950fcd2
 
 **说明** 
 
-1. 健康使用设备授权列表页（访问入口为：设置-健康使用设备-右上角四点设置![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/nOL2f4mIS7CjYspxdlgP0w/zh-cn_image_0000002779851624.png)-可访问健康使用设备的应用），用于统一管理所有管控应用的用户授权。
+1. 健康使用设备授权列表页（访问入口为：设置-健康使用设备-右上角四点设置![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/cid_qsCcTz2egb94Vvfkuw/zh-cn_image_0000002815560001.png)-可访问健康使用设备的应用），用于统一管理所有管控应用的用户授权。
 2. 若用户已设置健康使用设备的密码，则在此页面取消应用授权时需要输入相应的密码。
 3. 管控应用调用Screen Time Guard Kit接口获取授权或者取消授权时，不会触发onUserAuthSwitchOn/onUserAuthSwitchOff回调方法。只有在健康使用设备授权列表页操作授权开关时才会触发。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/49/v3/EU0IdcC_SeWJy59ul1I50g/zh-cn_image_0000002779691656.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/3RzPuvYXQtC5bl1NWHxeRQ/zh-cn_image_0000002815400085.png)
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/66/v3/DRUIGn5SRBeYOo4QEpPE9w/zh-cn_image_0000002809011277.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7c/v3/9hzkLAPET-2efBZbZdY_ew/zh-cn_image_0000002786520510.png)
 
 流程说明（以关闭授权开关为例）：
 
 1. 应用继承TimeGuardExtensionAbility，实现onUserAuthSwitchOn、onUserAuthSwitchOff方法，以监听用户授权状态。
 2. 用户在健康使用设备的授权列表页中关闭授权开关后会拉起extension进程，执行TimeGuardExtensionAbility的onUserAuthSwitchOff回调。
-3. onUserAuthSwitchOff回调执行，应用可以在该回调中可以执行特定逻辑。
+3. onUserAuthSwitchOff回调执行，应用可以在该回调中执行特定逻辑。
 
 ## 接口说明
 
@@ -42,7 +42,7 @@ content_hash: sha256:56bee2a969f9878fc0ac0aa210693c1c7efb856cd98d000a6f20950fcd2
 **说明** 
 
 1. TimeGuardExtensionAbility与应用运行在不同进程，但共用沙箱。
-2. TimeGuardExtensionAbility与应用直接无法直接传递数据，如需传递数据可以通过[用户首选项](../harmonyos-references/js-apis-data-preferences.md)/[数据库](../harmonyos-references/js-apis-data-relationalstore.md)等数据持久化手段进行传递，或者通过[公共事件模块](../harmonyos-references/js-apis-commoneventmanager.md)传递。
+2. TimeGuardExtensionAbility与应用无法直接传递数据，如需传递数据可以通过[用户首选项](../harmonyos-references/js-apis-data-preferences.md)/[数据库](../harmonyos-references/js-apis-data-relationalstore.md)等数据持久化手段进行传递，或者通过[公共事件模块](../harmonyos-references/js-apis-commoneventmanager.md)传递。
 
 ## 开发步骤
 

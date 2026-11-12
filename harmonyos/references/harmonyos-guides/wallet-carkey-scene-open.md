@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/wallet-carkey
 title: 开通车钥匙
 breadcrumb: 指南 > 应用服务 > Wallet Kit（钱包服务） > 数字车钥匙 > 开发场景 > 开通车钥匙
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:45+08:00
-doc_updated_at: 2026-10-28
-content_hash: sha256:2309a24afb0dec60e21f941ddff652692782b07cb2e85e4e725282b726c93186
+scraped_at: 2026-11-12T09:52:38+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:fe75a48bffacd7d73b7d974a9bcf5cf05c343f24acfd4b03b35ef48233d488ce
 ---
 
 用户可将车钥匙添加至钱包，实现刷卡开车门、无感解闭锁、远程车控等便捷能力。
 
 ## 交互流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2e/v3/s6RtMivZQ_uCgr0YJojhQg/zh-cn_image_0000002779851662.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/EgMxsmLbSf-_r056na_0tw/zh-cn_image_0000002815560039.png)
 
 ## 开发流程
 
@@ -101,7 +101,8 @@ content_hash: sha256:2309a24afb0dec60e21f941ddff652692782b07cb2e85e4e725282b726c
    ```typescript
    async addPass(): Promise<void> {
       const passStr = JSON.stringify({
-         jweContent: this.jweContent
+         jweContent: this.jweContent,
+         targetDeviceType: this.targetDeviceType
       });
       try {
          const result = await this.walletPassClient.addPass(passStr);

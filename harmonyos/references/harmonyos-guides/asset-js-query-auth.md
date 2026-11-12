@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/asset-js-quer
 title: 查询需要用户认证的关键资产(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Asset Store Kit（关键资产存储服务） > Asset Store Kit开发指导(ArkTS) > 查询需要用户认证的关键资产(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:22:24+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:51:32+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:8d561e38e8133a87ddb8122dcf9c97ce3d2126f653862ff4156d7b0d0217cd44
 ---
 

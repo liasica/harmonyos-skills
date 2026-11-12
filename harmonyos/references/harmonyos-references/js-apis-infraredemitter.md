@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-i
 title: "@ohos.multimodalInput.infraredEmitter (红外管理)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.infraredEmitter (红外管理)
 category: harmonyos-references
-scraped_at: 2026-09-21T06:23:10+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:9bf4791b95a487d7548a365c5d6d97986895d9dc8cbd76acaf5e3c54093aca4a
+scraped_at: 2026-11-12T09:56:02+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:05f4fa6be8d19470e973bbb773cf5333a71af93d7bfede6cc1b59fd282431f40
 ---
 
 红外管理模块提供产生特定频率和大小的红外信号，以及查询设备支持的频率范围等功能。
@@ -43,7 +43,7 @@ transmitInfrared(infraredFrequency: number, pattern: Array<number>): void
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 401 | Parameter error. Possible causes: 1. Mandatory parameters are left unspecified; 2. Incorrect parameter types; 3. Parameter verification failed. |
 
 **示例**：
@@ -104,7 +104,7 @@ getInfraredFrequencies(): Array<InfraredFrequency>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 
 **示例**：
 
@@ -164,7 +164,7 @@ hasIrEmitter(): Promise<boolean>
 
 | 错误码ID | 错误信息 |
 | --- | --- |
-| 201 | Permission denied. |
+| 201 | Permission verification failed. The application does not have the permission required to call the API. |
 | 3800001 | Input service exception. |
 
 **示例**：

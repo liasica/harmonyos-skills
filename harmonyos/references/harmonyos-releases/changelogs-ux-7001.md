@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-releases/changelogs-ux-7001
 title: UX样式或效果的变更
-breadcrumb: 版本说明 > 最新版本(26.0.0) > 26.0.0 > OS平台能力 > OS平台行为变更说明 > 26.0.0 Beta1引入的行为变更 > UX样式或效果的变更
+breadcrumb: 版本说明 > 更多版本 > 26.0.0 > OS平台能力 > OS平台行为变更说明 > 26.0.0 Beta1引入的行为变更 > UX样式或效果的变更
 category: harmonyos-releases
-scraped_at: 2026-10-09T08:11:53+08:00
-doc_updated_at: 2026-09-04
-content_hash: sha256:1ddab5d04a8b6af3cd4386d7077c7ee54d7d16801d3999ee9a6d08a92395a6f1
+scraped_at: 2026-11-12T09:49:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a8f78126f5432486c715f2a4896c52178811e8d59a98139aa4ee20e2111a268d
 ---
 
 ## notofonts三方件小语种字体升级变更
@@ -51,7 +51,7 @@ content_hash: sha256:1ddab5d04a8b6af3cd4386d7077c7ee54d7d16801d3999ee9a6d08a9239
 * 变更前：组件默认触摸热区高度最小为28vp。
 * 变更后：组件默认触摸热区高度最小为32vp。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/69/v3/84GLFLDbQ3OiqdDCqRj1Iw/zh-cn_image_0000002607653205.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/61/v3/P8--m7EzTF2HhSASGwq9TQ/zh-cn_image_0000002607653205.png)
 
 **起始 API Level**
 
@@ -106,7 +106,7 @@ struct ButtonExample {
 
 孤字换行变更前后效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/NbtQNSNNThm1_tC_9XOoIA/zh-cn_image_0000002577173246.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6d/v3/nbHTIwloQJOj-251UNzETw/zh-cn_image_0000002577173246.png)
 
 **场景二：小语种行高优化**
 
@@ -116,7 +116,7 @@ struct ButtonExample {
 
 小语种行高优化变更前后效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/1WQKvPvDS9eac2PS3OZz3Q/zh-cn_image_0000002577333224.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3d/v3/DB4tcddRQdSHyb1aM_IFGg/zh-cn_image_0000002577333224.png)
 
 **场景三：单词换行改为音节换行**
 
@@ -126,7 +126,7 @@ struct ButtonExample {
 
 文本按单词换行改为按音节换行变更前后效果如下图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bd/v3/_jRXltj5T-CQ-9knKGh_Gw/zh-cn_image_0000002607733199.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/aa/v3/UY6LHplcS3-3cYR0OIql_A/zh-cn_image_0000002607733199.png)
 
 **起始 API Level**
 
@@ -185,19 +185,19 @@ ArkUI组件支持对接沉浸式系统材质功能，为减少应用适配成本
 
 Dialog变更前后的效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/Ss6JE7TpTlaP64YkXMHUNg/zh-cn_image_0000002607653207.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/DtAeib7RRUiDohw5rzNXHw/zh-cn_image_0000002607653207.png)
 
 Toast变更前后的效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d2/v3/jmBAXadoQ4-zBgZLj3PzUw/zh-cn_image_0000002577173248.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0/v3/mLeZGFm_QaStGIzJYDKdMA/zh-cn_image_0000002577173248.png)
 
 AlphabetIndexer变更前后的效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/nUqfYhHGRwyRBJUuXYUeig/zh-cn_image_0000002577333226.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8d/v3/ed5j2Tb0SsGd50dIzuE3nQ/zh-cn_image_0000002577333226.png)
 
 文本选择菜单变更前后的效果图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/87/v3/rCf8xoeDSzCdnBVuP7072w/zh-cn_image_0000002607733201.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ad/v3/E6TJ5HC0RhODWt2169RpCA/zh-cn_image_0000002607733201.png)
 
 **适配指导**
 
@@ -254,13 +254,13 @@ UX规格变更，当前半模态最大高度限制为窗口短边长度的90%，
 
 半模态居中弹窗最大高度：取“短边长度\*90%”。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/64/v3/9VhoyExiT76LyfT047YHBQ/zh-cn_image_0000002607653209.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/TU4xDAghQVClssgnwW1ZVg/zh-cn_image_0000002607653209.png)
 
 变更后：
 
 半模态居中弹窗最大高度：取“短边长度\*90%”、“窗口高度-信号栏高度\*2”两者中的最小值。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/19/v3/njrtXGfURLGkx1--oKL-nw/zh-cn_image_0000002577173250.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ac/v3/MB2QdwBIREqpB1aLj47VHQ/zh-cn_image_0000002577173250.png)
 
 **起始 API Level**
 

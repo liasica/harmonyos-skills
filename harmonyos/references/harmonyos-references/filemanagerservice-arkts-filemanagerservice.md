@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/filemanag
 title: fileManagerService
 breadcrumb: API参考 > 应用服务 > File Manager Service Kit（文件管理服务） > ArkTS API > fileManagerService
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:53+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:95aac0d490b3bf60a6c56640ef8f52b7f71ba3be39b38b02003d7eb65ee8bf46
+scraped_at: 2026-11-12T09:57:16+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a8a83095d127f67dc3c24c6cecb0075aa5c3affc5051e44a21fc9be2d8a276e0
 ---
 
 fileManagerService模块提供删除文件到回收站、获取文件图标及解析文件快捷方式的能力。
@@ -353,3 +353,124 @@ struct Index {
   }
 }
 ```
+
+## FileBadge
+
+文件角标信息。
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.FileManagement.FileManagerService.Extension
+
+**起始版本：** 26.0.1
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| uri | string | 否 | 否 | 角标关联的文件URI。 |
+| icon | string | 否 | 否 | 角标图标资源ID。 |
+
+## QueryBadgesParams
+
+角标查询参数，文件管理器进入目录时查询角标。
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.FileManagement.FileManagerService.Extension
+
+**起始版本：** 26.0.1
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| dirUri | string | 否 | 否 | 用户进入的目录URI。 |
+| files | string[] | 否 | 是 | 目录内文件URI列表。 |
+
+## QueryBadgesResult
+
+角标查询结果。
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.FileManagement.FileManagerService.Extension
+
+**起始版本：** 26.0.1
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| isMemberOf | boolean | 否 | 否 | 当前FileManagerExtensionAbility是否需要管理和显示文件角标。  true：文件管理应用需要显示应用自定义角标，false：文件管理应用不需要显示应用自定义角标。 |
+| badges | [FileBadge](filemanagerservice-arkts-filemanagerservice.md#filebadge)[] | 否 | 是 | 匹配文件的角标列表。isMemberOf为false时为空。 |
+
+## ObserveDirectoryParams
+
+文件管理进入指定目录参数。
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.FileManagement.FileManagerService.Extension
+
+**起始版本：** 26.0.1
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| dirUri | string | 否 | 否 | 用户打开文件管理进入的目录URI。 |
+
+## MenuConfig
+
+菜单项配置。
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.FileManagement.FileManagerService.Extension
+
+**起始版本：** 26.0.1
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| icon | string | 否 | 否 | 菜单项图标资源。 |
+| description | string | 否 | 否 | 菜单项描述文本。 |
+| menuId | number | 否 | 否 | 菜单项唯一标识ID。 |
+| submenu | [MenuConfig](filemanagerservice-arkts-filemanagerservice.md#menuconfig)[] | 否 | 否 | 子菜单配置列表（最多3级）。 |
+
+## QueryMenuParams
+
+右键点击查询菜单参数。
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.FileManagement.FileManagerService.Extension
+
+**起始版本：** 26.0.1
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| dirUri | string | 否 | 否 | 当前目录URI。 |
+| files | string[] | 否 | 是 | 选中文件URI列表。空数组或未填表示空白区域右键。 |
+
+## MenuActionParams
+
+菜单点击动作参数。
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.FileManagement.FileManagerService.Extension
+
+**起始版本：** 26.0.1
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| menuId | number | 否 | 否 | 被点击的菜单项ID。 |
+| dirUri | string | 否 | 否 | 当前目录URI。 |
+| files | string[] | 否 | 否 | 选中文件URI列表。空数组表示空白区域右键。 |
+
+## BadgeChangeNotify
+
+角标变更通知，应用主动推送角标更新至文件管理器。
+
+**模型约束**：此接口仅可在Stage模型下使用。
+
+**系统能力**：SystemCapability.FileManagement.FileManagerService.Extension
+
+**起始版本：** 26.0.1
+
+| 名称 | 类型 | 只读 | 可选 | 说明 |
+| --- | --- | --- | --- | --- |
+| badges | [FileBadge](filemanagerservice-arkts-filemanagerservice.md#filebadge)[] | 否 | 否 | 更新后的角标列表。文件管理器会替换该扩展在该目录下的旧角标。 |

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (AVMusicTemplate)
 breadcrumb: API参考 > 媒体 > AVSession Kit（音视频播控服务） > ArkTS API > @ohos.multimedia.avMusicTemplate (音频模板) > Class (AVMusicTemplate)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:25+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:f2c69a724aefe0c354de2210456f063f304096526c8a40a31a730de686044d78
+scraped_at: 2026-11-12T09:56:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:14849f8c3757df38aae1d7e8967831f8f8f9cfcdc35a776c3c7e9582f6ede86d
 ---
 
 开发者调用[avMusicTemplate.createAVMusicTemplate](arkts-apis-avmusictemplate-f.md#avmusictemplatecreateavmusictemplate)获取实例后，可获取其ID，启动音频模板界面，并配置数据获取方法。随后，同步数据给模板控制方，以完成数据交互和界面更新等操作。
@@ -2575,6 +2575,114 @@ export class TemplateManager {
    */
   public unregisterListener() {
     this.template?.offPlayForSearch();
+  }
+}
+```
+
+## onCustomCommand
+
+onCustomCommand(callback: CustomCommandEvent): void
+
+注册自定义控制命令的监听。使用callback异步回调。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | [CustomCommandEvent](arkts-apis-avmusictemplate-t.md#customcommandevent) | 是 | 回调函数，返回自定义控制命令的事件。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[音频模板错误码](errorcode-avmusictemplate.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported.function onCustomCommand can not work correctly due to limited device capabilities. |
+| 35000005 | AVMusicTemplate does not exist. |
+| 35000012 | AVMusicTemplate error. |
+
+**示例：**
+
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
+
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+  private customCommandEvent: avMusicTemplate.CustomCommandEvent = async (command: string, args: string) => {
+    return new Promise<avMusicTemplate.OperResult>(async (resolve, reject) => {
+      let operResult: avMusicTemplate.OperResult = await this.createOperResult();
+      resolve(operResult);
+    });
+  };
+
+  /**
+   * 注册监听。
+   */
+  private registerListener() {
+    this.template?.onCustomCommand(this.customCommandEvent);
+  }
+
+  /**
+   * 模拟操作结果。
+   *
+   * @returns 操作结果。
+   */
+  private async createOperResult(): Promise<avMusicTemplate.OperResult> {
+    let operResult: avMusicTemplate.OperResult = {
+      errorCode: 0,
+    }
+    return operResult;
+  };
+}
+```
+
+## offCustomCommand
+
+offCustomCommand(callback?: CustomCommandEvent): void
+
+注销自定义控制命令的监听。
+
+**起始版本：** 26.0.1
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**系统能力：** SystemCapability.Multimedia.AVSession.AVMusicTemplate
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| callback | [CustomCommandEvent](arkts-apis-avmusictemplate-t.md#customcommandevent) | 否 | 回调函数，注销自定义控制命令的监听。 |
+
+**错误码：**
+
+以下错误码的详细介绍请参见[通用错误码](errorcode-universal.md)和[音频模板错误码](errorcode-avmusictemplate.md)。
+
+| 错误码ID | 错误信息 |
+| --- | --- |
+| 801 | Capability not supported.function offCustomCommand can not work correctly due to limited device capabilities. |
+| 35000005 | AVMusicTemplate does not exist. |
+| 35000012 | AVMusicTemplate error. |
+
+**示例：**
+
+```ts
+import { avMusicTemplate } from '@kit.AVSessionKit';
+
+export class TemplateManager {
+  private template: avMusicTemplate.AVMusicTemplate | undefined = undefined;
+
+  /**
+   * 注销监听。
+   */
+  public unregisterListener() {
+    this.template?.offCustomCommand();
   }
 }
 ```

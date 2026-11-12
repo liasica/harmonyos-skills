@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-basic-
 title: Span
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 文本与输入 > Span
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:02+08:00
-doc_updated_at: 2026-09-30
-content_hash: sha256:bed2d9ae8faf147d3eb82edad99c4b243d633574fbad869faae724c34c4001a1
+scraped_at: 2026-11-12T09:54:16+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:fa8379828024b8e29a7df4d2abc6651b34e0dd5912379fcf274503b773d65fbd
 ---
 
 作为[Text](ts-basic-components-text.md)、[ContainerSpan](ts-basic-components-containerspan.md)组件的子组件，用于显示行内文本，支持对文本的字体、颜色、大小等样式进行细粒度设置。适用于在同一行文本中混合显示不同样式的场景，如不同字体颜色的文本、添加装饰线或阴影效果等。
@@ -312,6 +312,8 @@ fontVariations(fontVariations: Array<FontVariation>)
 
 **模型约束：** 此接口仅可在Stage模型下使用。
 
+**卡片能力：** 从API版本26.0.1开始，该接口支持在ArkTS卡片中使用。
+
 **元服务API：** 从API版本26.0.0开始，该接口支持在元服务中使用。
 
 **系统能力：** SystemCapability.ArkUI.ArkUI.Full
@@ -387,6 +389,8 @@ baselineOffset(value: LengthMetrics): T
 | T | 返回当前Span的属性对象，用于链式调用。 |
 
 ## TextBackgroundStyle11+对象说明
+
+定义Span的背景样式。
 
 **元服务API：** 从API version 12开始，该接口支持在元服务中使用。
 
@@ -572,7 +576,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/uCwuMcTnRS-48WNS9FVwsw/zh-cn_image_0000002779852420.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/KG23PUGcSiuvy6TBNoYXtA/zh-cn_image_0000002786361346.png)
 
 ### 示例2（设置文本阴影）
 
@@ -626,7 +630,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/01/v3/4nje-d-jSJSil6HgHfotrQ/zh-cn_image_0000002779692452.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c2/v3/L8PI_Mv1QMCFVldilGNAkw/zh-cn_image_0000002815560767.png)
 
 ### 示例3（设置背景样式）
 
@@ -650,7 +654,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fe/v3/ic7JPhOxRXaiuFs6-wv8uw/zh-cn_image_0000002809012073.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/12/v3/SEco1FVzS7eBLJCXc1vGYA/zh-cn_image_0000002815400851.png)
 
 ### 示例4（设置文本基线偏移量）
 
@@ -687,7 +691,7 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3f/v3/-xnDuzy7QGGsx4WxK1hh1g/zh-cn_image_0000002809051987.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d1/v3/UglTmCf6QkqEByMgKrpfRg/zh-cn_image_0000002786521276.png)
 
 ### 示例5（设置文本可变字体的属性）
 
@@ -720,4 +724,4 @@ struct SpanExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/rqLwwmGQT7q8d9pB_U0Log/zh-cn_image_0000002809051911.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6c/v3/HRZZiv2VQ8u-LRh9djcTCg/zh-cn_image_0000002815400775.gif)

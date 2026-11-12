@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_type-anno
 title: "@typescript-eslint/type-annotation-spacing"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/type-annotation-spacing
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:11+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:b356dfa878de807adbb4eee2090c7d16dd9116cae9b3eb096940a9da90bdec75
+scraped_at: 2026-11-12T09:52:57+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:0a5b36cf14e9212e6a7d27ee9b3a44d7dce0e4e68b9b8181c9b69143cc016b39
 ---
 
 类型注解前后需要一致的空格风格。
@@ -153,4 +153,4 @@ export declare type Foo4 = ()=>void;
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

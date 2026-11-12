@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/intents-skill
 title: 功能搜索方案
 breadcrumb: 指南 > AI > Intents Kit（意图框架服务） > 本地搜索方案 > 接入方案 > 功能搜索方案
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:31:10+08:00
-doc_updated_at: 2026-06-27
-content_hash: sha256:e7fc350a7ef8d848befc71a54bf97093992e1be864dfe91a5b7d9f424786ab7c
+scraped_at: 2026-11-12T09:52:44+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:84746b2c481224edc93c5d28cfe3b1bea973b91833b9c961cb43a34ae1e9869f
 ---
 
 ## 方案概述
 
 从5.1.0(18)开始，新增功能搜索接入方案，可通过该方案实现快速打开应用内功能页面。开发者将应用内的功能在意图声明文件中声明，并实现对应的意图调用，即可实现用户在小艺搜索入口直接搜索到应用内功能，点击后可直接拉起应用，直达功能页面。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/16/v3/iumrrh8qR5a1ll5CGCuJCg/zh-cn_image_0000002779851838.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1d/v3/0e_6VQEHS0uPlgXu4_kOMA/zh-cn_image_0000002815560177.png)
 
 **意图名称：跳转App功能页 JumpFunctionPage（端侧前台意图调用）**
 
@@ -29,47 +29,49 @@ content_hash: sha256:e7fc350a7ef8d848befc71a54bf97093992e1be864dfe91a5b7d9f42478
 ```json5
 {
     "insightIntents": [
-       {
+        {
             "intentName": "JumpFunctionPage", // 功能搜意图
             "domain": "ToolsDomain",
             "intentVersion": "1.0.1", // 意图版本号
-             // 意图调用逻辑入口
+            // 意图调用逻辑入口
             "srcEntry": "./ets/entryability/InsightIntentExecutorImpl.ets",
             "uiAbility": {
-            // 意图所在ability
-            "ability": "EntryAbility",
-            // UIAbility仅支持前台执行模式
-            "executeMode": [
-                "foreground"
-            ]
+                // 意图所在ability
+                "ability": "EntryAbility",
+                // UIAbility仅支持前台执行模式
+                "executeMode": [
+                    "foreground"
+                ]
             },
-            "inputParams": [{ // 部分意图开放意图参数定义，格式整体参考JSON-Schema。
-                "properties": { // 描述参数列表，后续可以同级别增加其他描述节点
-                    "pageId": { // 具体功能的标识的key值
-                        "type": "string", // 参数类型
-                        "enum": [
-                            {
-                                "value": "1", // 具体功能的标识的value值
-                                "displayName": "查找路线", // 功能名，小艺搜索展示
-                                "keywords": [
-                                    "查路线"
-                                ], // 参数枚举值别名，可以用于索引、过滤，最多不超过5个
-                                "displayDescription": "查找到达目的地的路线", // 功能描述，小艺搜索展示
-                                "icon": "https://abc.xx" // 功能图标，小艺搜索展示
-                            },
-                            {
-                                "value": "2", // 具体功能的标识的value值
-                                "displayName": "扫一扫", // 功能名，小艺搜索展示
-                                "keywords": [
-                                    "扫码"
-                                ], // 参数枚举值别名，可以用于索引、过滤
-                                "displayDescription": "用于扫码", // 功能描述，小艺搜索展示
-                                "icon": "https://abc.xx" // 功能图标，小艺搜索展示
-                            }
-                        ]
+            "inputParams": [
+                { // 部分意图开放意图参数定义，格式整体参考JSON-Schema。
+                    "properties": { // 描述参数列表，后续可以同级别增加其他描述节点
+                        "pageId": { // 具体功能的标识的key值
+                            "type": "string", // 参数类型
+                            "enum": [
+                                {
+                                    "value": "1", // 具体功能的标识的value值
+                                    "displayName": "查找路线", // 功能名，小艺搜索展示
+                                    "keywords": [
+                                        "查路线"
+                                    ], // 参数枚举值别名，可以用于索引、过滤，最多不超过5个
+                                    "displayDescription": "查找到达目的地的路线", // 功能描述，小艺搜索展示
+                                    "icon": "https://abc.xx" // 功能图标，小艺搜索展示
+                                },
+                                {
+                                    "value": "2", // 具体功能的标识的value值
+                                    "displayName": "扫一扫", // 功能名，小艺搜索展示
+                                    "keywords": [
+                                        "扫码"
+                                    ], // 参数枚举值别名，可以用于索引、过滤
+                                    "displayDescription": "用于扫码", // 功能描述，小艺搜索展示
+                                    "icon": "https://abc.xx" // 功能图标，小艺搜索展示
+                                }
+                            ]
+                        }
                     }
                 }
-            }]
+            ]
         }
     ]
 }

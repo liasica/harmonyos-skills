@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-repo
 title: 配置文件
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 开发环境搭建 > 工程创建 > 模块管理 > ohpm-repo私仓搭建工具 > 配置文件
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:22:54+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:e38b0bfcc5317c618a7a294390ba99e018b68d44c5a35cf01089d50f1ad43556
+scraped_at: 2026-11-12T09:52:51+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a19058a897eb884a47dceb4baca684716cd0ba70b2a8fba6d39bee9720941401
 ---
 
 config.yaml是ohpm-repo的重要文件，可以在其中修改默认参数配置，启动插件和扩展功能。ohpm-repo私仓解压目录中的conf目录下带有一个默认配置文件config.yaml，ohpm-repo执行install命令时默认读取该文件。
@@ -233,7 +233,7 @@ deploy_root: ''
 
 服务相关配置，具体为：
 
-* **max\_package\_size**: 上传包大小限制，单位为MB， 不配置或配置为0取默认值500MB，取值范围为 (0, 500] 。
+* **max\_package\_size**: 上传包大小限制，单位为MB，不配置或配置为0取默认值500MB，取值范围为 (0, 500] 。
 * **max\_extract\_size**：压缩包解压后大小限制，单位为MB，不配置或配置为0取默认值800MB。
 * **max\_extract\_file\_num**：压缩包解压后文件个数限制，不配置或配置为0取默认值30000个。
 * **max\_batch\_package\_num：**ohpm-repo从6.0.1版本新增，批量上传时zip包根目录中包含的.har和.tgz包的数量限制，单位为个，取值范围为(0, 1000]，默认为200。不配置或配置为0时，取默认值。
@@ -587,6 +587,6 @@ compability_log_level: warn
 allow_remove_depended_packages: false
 ```
 
-## 关于 deploy\_root
+## 关于deploy\_root
 
 deploy\_root为ohpm-repo的部署目录，通过配置文件中字段<[deploy\_root](ide-ohpm-repo-configuration.md#zh-cn_topic_0000001745376470_deploy_root)>可进行配置。

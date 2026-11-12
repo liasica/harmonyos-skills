@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/video-decodin
 title: 视频解码
 breadcrumb: 指南 > 媒体 > AVCodec Kit（音视频编解码服务） > 音视频编解码 > 视频解码
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:07+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:0a9f269f01bc3d0cae1c7a75b04365d4a2c9b1cbc335c1992f0de658a31a8fc2
+scraped_at: 2026-11-12T09:52:02+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c6331709362d32bc7ccf5cfca8e1a751e430464c7a050e89379b84febd1e7330
 ---
 
 视频解码是多媒体处理的核心环节，功能是将压缩的视频码流解码为原始像素数据。视频解码支持同步模式与异步模式两种运行机制，两者主要区别为buffer获取方式的同异步之分，开发者可根据自身业务选择适合的接口调用模式。
@@ -53,7 +53,7 @@ AVCodec支持的视频解码格式请参考[视频解码](avcodec-support-format
 
 **图1** 状态机调用关系示意图
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8/v3/CRS-UZMJQCqVmVUDMujZkA/zh-cn_image_0000002809010573.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/06/v3/Veyhya6FTIGrVz36pP6pxg/zh-cn_image_0000002786519790.png)
 
 ## 开发指导
 
@@ -66,7 +66,7 @@ AVCodec支持的视频解码格式请参考[视频解码](avcodec-support-format
 * 虚线表示可选。
 * 实线表示必选。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d9/v3/pgNCU-0FSqOraOWL1AC_BQ/zh-cn_image_0000002809010581.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5/v3/1-9HLAlrRPqJfEGUlAJN5w/zh-cn_image_0000002786519798.png)
 
 ### 在 CMake 脚本中链接动态库
 
@@ -160,7 +160,7 @@ target_link_libraries(sample PUBLIC libnative_media_vdec.so)
    // 视频帧高度。
    int32_t height = 240;
    // 视频像素格式。
-    OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
+   OH_AVPixelFormat pixelFormat = AV_PIXEL_FORMAT_NV12;
    // 视频宽跨距。
    int32_t widthStride = 0;
    // 视频高跨距。
@@ -331,7 +331,7 @@ target_link_libraries(sample PUBLIC libnative_media_vdec.so)
 
    // 设置解密配置, 即将解密会话、安全视频通路标志设置到解码器中
    // 如果DRM解决方案支持安全视频通路，在使用安全视频通路时，需将secureVideoPath设置为true，并在此之前须创建安全解码器
-   // 即在步骤3使用OH_VideoDecoder_CreateByName函数、参数为解码器名称后拼接.secure（如“[CodecName].secure”）创建安全解码器
+   // 即在步骤2使用OH_VideoDecoder_CreateByName函数、参数为解码器名称后拼接.secure（如“[CodecName].secure”）创建安全解码器
    bool secureVideoPath = true;
    ret = OH_VideoDecoder_SetDecryptionConfig(videoDec, session, secureVideoPath);
    ```
@@ -416,7 +416,7 @@ target_link_libraries(sample PUBLIC libnative_media_vdec.so)
    target_link_libraries(sample PUBLIC libnative_window.so)
    ```
 
-   6.1.1 在ArkTS侧，通过xComponentController组件的getXComponentSurfaceId接口获取XComponent对应的surface的ID。详情请参考[自定义渲染 (XComponent)](napi-xcomponent-guidelines.md)。
+   6.1.1 在ArkTS侧，通过xComponentController组件的getXComponentSurfaceId()接口获取XComponent对应的surface的ID。详情请参考[自定义渲染 (XComponent)](napi-xcomponent-guidelines.md)。
 
    6.1.2 在Native侧，调用OH\_NativeWindow\_CreateNativeWindowFromSurfaceId接口创建出NativeWindow实例。
 
@@ -1147,7 +1147,7 @@ target_link_libraries(sample PUBLIC libnative_media_vdec.so)
     * OH\_MD\_KEY\_VIDEO\_STRIDE表示wStride；
     * OH\_MD\_KEY\_VIDEO\_SLICE\_HEIGHT表示hStride。
 
-    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/EPxKfy8xS366gKND831gpQ/zh-cn_image_0000002809050495.png)
+    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/2KbX_IVURPKPp8e_upqAtA/zh-cn_image_0000002786359870.png)
 
     添加头文件。
 
@@ -1232,15 +1232,15 @@ target_link_libraries(sample PUBLIC libnative_media_vdec.so)
 7. 在Buffer模式下，开发者通过输出回调函数OH\_AVCodecOnNewOutputBuffer获取到OH\_AVBuffer后，必须调用OH\_VideoDecoder\_FreeOutputBuffer接口释放，确保系统能够将后续解码的数据写入到相应的位置。如果开发者通过调用OH\_AVBuffer\_GetNativeBuffer接口获取OH\_NativeBuffer指针实例，并且该实例的生命周期超过了当前的OH\_AVBuffer指针实例，那么开发者需手动拷贝数据，并自行管理新生成的OH\_NativeBuffer实例的生命周期，确保其正确使用和释放。
 8. 为确保系统服务的持续可用性，系统会实时检测应用对实例的占用行为，当检测到应用存在异常的实例占用行为，系统会自动介入并终止该应用实例。需要注意的是：持续的实例管理不当可能导致进程被终止，开发者可通过查询以下日志来确认应用实例是否被系统终止。
 
-   日志匹配规则：HardwareDecoding.\*kill\s+进程名:进程pid
+日志匹配规则：HardwareDecoding.\*kill\s+进程名:进程pid
 
-   示例：
+示例：
 
-   HardwareDecoding process background, kill com.test:1887
+HardwareDecoding process background, kill com.test:1887
 
-   HardwareDecoding reachLimit and background, kill com.test:1887
+HardwareDecoding reachLimit and background, kill com.test:1887
 
-   HardwareDecoding killPercentage, kill com.test:1887
+HardwareDecoding killPercentage, kill com.test:1887
 
 ## 示例代码
 

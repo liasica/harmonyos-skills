@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-p
 title: paymentService (鸿蒙支付服务)
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > ArkTS API > paymentService (鸿蒙支付服务)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:29:33+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:23606bb17fbbe79216e2b62b18acb8ec8e7fc7557451c08275ea8f89f2418ae9
+scraped_at: 2026-11-12T09:57:31+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c1205fca094ea6662fd95edb1ad46fa97a84d74457cdb1de175909c075a79440
 ---
 
 本模块提供支付、签约服务能力，包括基础支付、支付并签约、合单支付、签约代扣等。
@@ -214,7 +214,7 @@ requestPayment(context: common.UIAbilityContext, orderStr: string, callback: Asy
 
 **示例**：
 
-示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)
+示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
 ```typescript
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -300,7 +300,7 @@ requestContract(context: common.UIAbilityContext, contractStr: string): Promise<
 
 **示例**：
 
-示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)
+示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
 ```typescript
 import { paymentService } from '@kit.PaymentKit';
@@ -376,7 +376,7 @@ requestContract(context: common.UIAbilityContext, contractStr: string, callback:
 
 **示例**：
 
-示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)
+示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
 ```typescript
 import { BusinessError } from '@kit.BasicServicesKit';
@@ -463,7 +463,7 @@ requestPayment(context: common.UIAbilityContext, orderStr: string, payload: stri
 
 **示例**：
 
-示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)
+示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
 ```typescript
 import { paymentService } from '@kit.PaymentKit';
@@ -546,7 +546,7 @@ cashierPicker(context: common.UIAbilityContext, paymentInfo: PaymentInfo): Promi
 
 **示例**：
 
-示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)
+示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
 ```typescript
 import { paymentService } from '@kit.PaymentKit';
@@ -628,7 +628,7 @@ requestBindCard(context: common.UIAbilityContext | common.UIExtensionContext): P
 
 **示例**：
 
-示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)
+示例中的context的获取方式请参见[获取UIAbility的上下文信息](../harmonyos-guides/uiability-usage.md#获取uiability的上下文信息)。
 
 ```typescript
 import { paymentService } from '@kit.PaymentKit';

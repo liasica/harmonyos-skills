@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_explicit-
 title: "@typescript-eslint/explicit-function-return-type"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/explicit-function-return-type
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:09+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:11ab95b3ad5542f21463f15d51afa01ffb70a928ee28922cdaa4dbd00027f72c
+scraped_at: 2026-11-12T09:52:54+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:582090269b0e1985c22314df178c2e2fff32afe2ed81e7cf8c35bb0b38406024
 ---
 
-函数和类方法需要显式的定义返回类型。
+函数和类方法需要显式定义返回类型。
 
 该规则仅支持对.ts文件进行检查。通过配置选项，可以支持对.ets文件进行检查。
 
@@ -108,4 +108,4 @@ plugin:@typescript-eslint/recommended
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

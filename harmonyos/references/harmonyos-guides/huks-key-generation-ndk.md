@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/huks-key-gene
 title: 生成密钥(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Universal Keystore Kit（密钥管理服务） > 本地密钥管理 > 密钥生成/导入 > 密钥生成 > 生成密钥(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:04:36+08:00
-doc_updated_at: 2026-10-14
+scraped_at: 2026-11-12T09:51:39+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:8345f1d637be638de5501b30d2cddf5c84f18806b62f3989bcc70aedc1b4d5b6
 ---
 

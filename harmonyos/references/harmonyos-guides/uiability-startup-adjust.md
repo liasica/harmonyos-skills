@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/uiability-sta
 title: 显式Want跳转切换应用链接跳转适配指导
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起指定应用 > 显式Want跳转切换应用链接跳转适配指导
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:03:52+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:2edb61193c78353bcc9db8017ffa7de384319c0fd5ba76ea34bf32621243b920
+scraped_at: 2026-11-12T09:50:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c7359f0edf9c9812b6df316d9f3042aa0dc5c4c50ed8bd1e8c8767bf423ec9a1
 ---
 
 从API 12开始，已不再推荐三方应用使用指定Ability方式（即显式Want）拉起其他应用，推荐通过指定[应用链接](app-startup-overview.md#应用链接)的方式来实现。
@@ -22,7 +22,7 @@ content_hash: sha256:2edb61193c78353bcc9db8017ffa7de384319c0fd5ba76ea34bf3262124
 
    * "actions"列表中包含"ohos.want.action.viewData"。
    * "entities"列表中包含"entity.system.browsable"。
-   * "uris"列表中包含"scheme"为"https"且"domainVerify"为true的元素。uri的匹配规则参考[uri匹配](explicit-implicit-want-mappings.md#uri匹配规则)，domainVerify为true代表开启域名检查，通过App Linking匹配该应用时需经过配置的域名校验后才能匹配到。
+   * "uris"列表中包含"scheme"为"https"且"domainVerify"为true的元素。uri的匹配规则参考[uri匹配规则](explicit-implicit-want-mappings.md#uri匹配规则)，domainVerify为true代表开启域名检查，通过App Linking匹配该应用时需经过配置的域名校验后才能匹配到。
 
    ```json5
    {
@@ -56,7 +56,7 @@ content_hash: sha256:2edb61193c78353bcc9db8017ffa7de384319c0fd5ba76ea34bf3262124
      }
    }
    ```
-2. 调用方通过[openLink()](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#openlink12)接口执行跳转，需要传入link和[options](../harmonyos-references/js-apis-app-ability-openlinkoptions.md)，不再需要传入bundleName、moduleName和abilityName。系统会根据传入的link匹配到符合skills配置的应用。
+2. 调用方通过[openLink()](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#openlink12)接口执行跳转，需要传入link和[OpenLinkOptions](../harmonyos-references/js-apis-app-ability-openlinkoptions.md#openlinkoptions)，不再需要传入bundleName、moduleName和abilityName。系统会根据传入的link匹配到符合skills配置的应用。
 
    * 当options中的appLinkingOnly为true时，匹配到的应用会经过应用市场域名检查（需联网）返回域名校验检查的唯一匹配项或未匹配结果。
    * 当options中的appLinkingOnly为false时，会优先尝试以App Linking的方式拉起，如果没有匹配的应用则跳转默认浏览器打开网页。
@@ -127,7 +127,7 @@ content_hash: sha256:2edb61193c78353bcc9db8017ffa7de384319c0fd5ba76ea34bf3262124
 
    * "actions"列表中包含"ohos.want.action.viewData"。
    * "entities"列表中包含"entity.system.browsable"。
-   * "uris"列表中包含"scheme"为"https"且"domainVerify"为true的元素。uri的匹配规则参考[uri匹配](explicit-implicit-want-mappings.md#uri匹配规则)，domainVerify为true代表开启域名检查，通过App Linking匹配该应用时需经过配置的域名校验后才能匹配到。
+   * "uris"列表中包含"scheme"为"https"且"domainVerify"为true的元素。uri的匹配规则参考[uri匹配规则](explicit-implicit-want-mappings.md#uri匹配规则)，domainVerify为true代表开启域名检查，通过App Linking匹配该应用时需经过配置的域名校验后才能匹配到。
 
    ```json5
    {
@@ -161,7 +161,7 @@ content_hash: sha256:2edb61193c78353bcc9db8017ffa7de384319c0fd5ba76ea34bf3262124
      }
    }
    ```
-2. 调用方通过[openLink()](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#openlink12)接口执行跳转，需要传入link和[options](../harmonyos-references/js-apis-app-ability-openlinkoptions.md)，不再需要传入bundleName、moduleName和abilityName。系统会根据传入的link匹配到符合skills配置的应用。AbilityResult回调结果通过入参传入回调函数，在被启动的UIAbility停止自身后返回给调用方。启动成功和失败结果仍通过Promise返回。
+2. 调用方通过[openLink()](../harmonyos-references/js-apis-inner-application-uiabilitycontext.md#openlink12)接口执行跳转，需要传入link和[OpenLinkOptions](../harmonyos-references/js-apis-app-ability-openlinkoptions.md#openlinkoptions)，不再需要传入bundleName、moduleName和abilityName。系统会根据传入的link匹配到符合skills配置的应用。AbilityResult回调结果通过入参传入回调函数，在被启动的UIAbility停止自身后返回给调用方。启动成功和失败结果仍通过Promise返回。
 
    * 当options中的appLinkingOnly为true时，匹配到的应用会经过应用市场域名检查（需联网）返回域名校验检查的唯一匹配项或未匹配结果。
    * 当options中的appLinkingOnly为false时，会优先尝试以App Linking的方式拉起，如果没有匹配的应用则跳转默认浏览器打开网页。

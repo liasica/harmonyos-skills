@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-camera
 title: 更改地图位置
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 地图交互 > 更改地图位置
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:35+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:36cf4cbb2eb8fef6f58a195e13cf72dfd56fcc4e0fc7723773733b257c1a40e9
+scraped_at: 2026-11-12T09:52:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:e08995cebf269711912f873cc516e66b11b4f3b502c59b138a92490b79872073
 ---
 
 ## 场景介绍
@@ -16,11 +16,11 @@ content_hash: sha256:36cf4cbb2eb8fef6f58a195e13cf72dfd56fcc4e0fc7723773733b257c1
 
 **图1** 相机移动前
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7f/v3/m2ae9rz8R0aoMrfigwM2KA/zh-cn_image_0000002809051039.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ea/v3/LvUOimjIRyuXMSuF_shHcQ/zh-cn_image_0000002815559847.jpg "点击放大")
 
 **图2** 相机移动后
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/37YXo7CwRBW3Zsy6fDge_Q/zh-cn_image_0000002779851474.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/ceSXi5uITLmBPho8b1YmGA/zh-cn_image_0000002815399931.jpg "点击放大")
 
 ## 接口说明
 
@@ -75,16 +75,20 @@ content_hash: sha256:36cf4cbb2eb8fef6f58a195e13cf72dfd56fcc4e0fc7723773733b257c1
    this.mapController.animateCamera(cameraUpdate, 1000);
 
    // 以动画方式移动地图相机，并返回动画结果
-   let animateResult = await this.mapController.animateCameraStatus(cameraUpdate, 1000);
+   try {
+     let animateResult = await this.mapController.animateCameraStatus(cameraUpdate, 1000);
+   } catch (error) {
+     console.error('Camera animation failed: ', error);
+   }
    ```
 
    **图3** 相机移动前
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/36bi-CVhRCWzP-to37GnBA/zh-cn_image_0000002779691506.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/68/v3/_3-G12moQ1SapfwyNSRZsw/zh-cn_image_0000002786520356.jpg "点击放大")
 
    **图4** 相机移动后
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/30/v3/hSoCtcppQGiTDNYBc0trNQ/zh-cn_image_0000002809011127.jpg "点击放大")
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a0/v3/tSy5cTLyQVinfednHug9LA/zh-cn_image_0000002786360428.jpg "点击放大")
 4. 您还可以通过以下方式创建[CameraUpdate](../harmonyos-references/map-map-cameraupdate.md)对象。
 
    ```typescript

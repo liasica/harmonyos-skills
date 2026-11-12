@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/payment-w
 title: 申请免密代扣
 breadcrumb: API参考 > 应用服务 > Payment Kit（鸿蒙支付服务） > REST API > 直连商户 > 签约代扣 > 申请免密代扣
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:27+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:780c0386266f02fbee0bc803aa3ec6e23d487b8ecc808984d3195c7d0848f862
+scraped_at: 2026-11-12T09:57:33+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b9246f41f971281a5f30cfde22107c883f5cc62fae36b75f22d83861c8cabebf
 ---
 
 ## 功能介绍
@@ -121,7 +121,7 @@ Content-Type: application/json; charset=UTF-8
 | --- | --- | --- | --- |
 | 400000 | CUST\_NOT\_EXIST | 用户不存在或已销户 | 请替换签约号重试。 |
 | 400000 | INVALID\_ARGUMENTS | 参数不合法 | 请检查参数是否正确。 |
-| 400000 | INVALID\_MERC\_NO | 无效商户号 | 请更换有效的商户号。 |
+| 400000 | INVALID\_MERCNO | 无效商户号 | 请更换有效的商户号。 |
 | 400000 | UNKNOW\_ERROR | 服务暂不可用，请稍后重试 | 稍后重试。 |
 | 400000 | CHECK\_TRANSACTION\_ORDER\_STATUS | 交易订单状态异常 | 请查看订单是否正确或换单重试。 |
 | 400000 | CHECK\_MERC\_STATUS | 商户状态异常 | 请检查商户状态是否正常。 |

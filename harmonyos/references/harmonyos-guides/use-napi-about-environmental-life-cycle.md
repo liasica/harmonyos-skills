@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口关联数据，使其生命周期与当前环境的生命周期相关联
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口关联数据，使其生命周期与当前环境的生命周期相关联
 category: harmonyos-guides
-scraped_at: 2026-09-02T15:00:16+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:52:47+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:d84d691f5ee8386479f52c128a67fd35b028cf2297a877d68e5f06e7466bd095
 ---
 

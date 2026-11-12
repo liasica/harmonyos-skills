@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/arkts-api
 title: Class (Canvas)
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > ArkTS API > @ohos.graphics.drawing (绘制模块) > Class (Canvas)
 category: harmonyos-references
-scraped_at: 2026-11-04T08:36:29+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:8236b4b4256694143e96337e8d09f3d5eebc5257941521a244d7dd54720c8287
+scraped_at: 2026-11-12T09:56:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:04cf417d0309df9670cc18d3629cefff7e145c66388d25214d2a3dfaafeefa2d
 ---
 
 承载绘制内容与绘制状态的载体。Canvas提供矩形、圆形、椭圆、弧线、路径、文字、图片等多种图形的绘制能力，支持通过画笔和画刷设置绘制样式，支持画布裁剪、矩阵变换、画布状态保存与恢复等功能。
@@ -1335,7 +1335,7 @@ drawTextBlob(blob: TextBlob, x: number, y: number): void
 | x | number | 是 | 所绘制出的文字基线（下图蓝线）的左端点（下图红点）的横坐标，该参数为浮点数。单位为物理像素px。 |
 | y | number | 是 | 所绘制出的文字基线（下图蓝线）的左端点（下图红点）的纵坐标，该参数为浮点数。单位为物理像素px。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/03/v3/211ffzDqS8ufg77JWHipzw/zh-cn_image_0000002779693530.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/9f/v3/Mo9tnzrzSxetoBo96KMl8A/zh-cn_image_0000002786522072.png)
 
 **错误码：**
 
@@ -1442,7 +1442,7 @@ drawSingleCharacter(text: string, font: Font, x: number, y: number): void
 | x | number | 是 | 所绘制出的字符基线（下图蓝线）的左端点（下图红点）的x轴坐标，该参数为浮点数。单位为物理像素px。 |
 | y | number | 是 | 所绘制出的字符基线（下图蓝线）的左端点（下图红点）的y轴坐标，该参数为浮点数。单位为物理像素px。 |
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/22/v3/OD76URuAT3a5eRX_mTYWxQ/zh-cn_image_0000002779693530.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/x1tx5keaS92hOxLwBFj-ww/zh-cn_image_0000002786522072.png)
 
 **错误码：**
 
@@ -2729,6 +2729,46 @@ class DrawingRenderNode extends RenderNode {
     } else {
       console.info('canvas.isOpaque() returned false');
     }
+  }
+}
+```
+
+## drawRecordCmd
+
+drawRecordCmd(recordCmd: RecordCmd): void
+
+回放已录制的绘制指令。该接口会按照录制顺序在当前画布上执行[RecordCmd](arkts-apis-graphics-drawing-i.md#recordcmd)中记录的所有绘制操作。录制指令对象由[RecordCmdUtils.finishRecording](arkts-apis-graphics-drawing-recordcmdutils.md#finishrecording)生成。
+
+**系统能力：** SystemCapability.Graphics.Drawing
+
+**模型约束：** 此接口仅可在Stage模型下使用。
+
+**起始版本：** 26.0.1
+
+**参数：**
+
+| 参数名 | 类型 | 必填 | 说明 |
+| --- | --- | --- | --- |
+| recordCmd | [RecordCmd](arkts-apis-graphics-drawing-i.md#recordcmd) | 是 | 已录制的绘制指令对象，由[finishRecording](arkts-apis-graphics-drawing-recordcmdutils.md#finishrecording)生成。 |
+
+**示例：**
+
+```ts
+import { RenderNode, DrawContext } from '@kit.ArkUI';
+
+class DrawingRenderNode extends RenderNode {
+  draw(context : DrawContext) {
+    const canvas = context.canvas;
+    const recordCmdUtils = new drawing.RecordCmdUtils();
+    const recordCanvas = recordCmdUtils.beginRecording(200, 200);
+    const pen = new drawing.Pen();
+    pen.setStrokeWidth(5);
+    pen.setColor({ alpha: 255, red: 255, green: 0, blue: 0 });
+    recordCanvas.attachPen(pen);
+    recordCanvas.drawRect({ left : 0, right : 100, top : 0, bottom : 100 });
+    recordCanvas.detachPen();
+    const recordCmd = recordCmdUtils.finishRecording();
+    canvas.drawRecordCmd(recordCmd);
   }
 }
 ```

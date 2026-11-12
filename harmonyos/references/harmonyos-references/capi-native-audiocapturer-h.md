@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_audiocapturer.h
 breadcrumb: API参考 > 媒体 > Audio Kit（音频服务） > C API > 头文件 > native_audiocapturer.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:20+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:e7c650bc2acce3efbcdfd5a40ac5aec691bb048b04736d54e7faf063287afbd8
+scraped_at: 2026-11-12T09:56:22+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:dff47fbdb3729aa94f710ff5fbbb59575afe62a34a0eef98efeaad86fe74a02e
 ---
 
 ## 概述
@@ -492,7 +492,7 @@ OH_AudioStream_Result OH_AudioCapturer_SetMuteHint(OH_AudioCapturer* capturer, b
 
 | 类型 | 说明 |
 | --- | --- |
-| OH\_AudioStream\_Result | AUDIOSTREAM\_SUCCESS：函数执行成功。  AUDIOSTREAM\_ERROR\_INVALID\_PARAM：参数capturer为nullptr。  AUDIOSTREAM\_ERROR\_ILLEGAL\_STATE：操作状态异常，录音流未处于running状态。  AUDIOSTREAM\_ERROR\_SYSTEM：系统异常，例如系统服务异常退出等。 |
+| OH\_AudioStream\_Result | AUDIOSTREAM\_SUCCESS：函数执行成功。  AUDIOSTREAM\_ERROR\_INVALID\_PARAM：参数capturer为nullptr。  AUDIOSTREAM\_ERROR\_ILLEGAL\_STATE：操作状态异常，录音流未处于running状态。 |
 
 ### OH\_AudioCapturer\_GetOverflowCount()
 

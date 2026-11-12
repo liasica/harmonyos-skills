@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-k
 title: "@ohos.multimodalInput.keyCode (键值)"
 breadcrumb: API参考 > 系统 > 基础功能 > Input Kit（多模输入服务） > ArkTS API > @ohos.multimodalInput.keyCode (键值)
 category: harmonyos-references
-scraped_at: 2026-09-18T06:50:21+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:4f2bce6e845112b7d3d668fc6b85c0ccae4a7ffc768a50845466b11f746ef645
+scraped_at: 2026-11-12T09:56:03+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:3491f8f2652d443605d20cbf1920ebdd5a2ba7b38506e92653316acc13b97533
 ---
 
 按键设备的键值，按键设备包括键盘、光盘、游戏手柄等。
@@ -382,3 +382,12 @@ import { KeyCode } from '@kit.InputKit';
 | KEYCODE\_XKEY | 3232 | 自定义快捷键。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | KEYCODE\_FINGERPRINT\_SLIDE\_UP | 3233 | 智控键上滑。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
 | KEYCODE\_FINGERPRINT\_SLIDE\_DOWN | 3234 | 智控键下滑。  **起始版本：** 26.0.0  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| KEYCODE\_PTZ\_CLICK | 3235 | 云台模式调节键。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| KEYCODE\_PTZ\_FOCUS\_LEFT | 3236 | 云台调焦左调节。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| KEYCODE\_PTZ\_FOCUS\_RIGHT | 3237 | 云台调焦右调节。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| KEYCODE\_PTZ\_EXPOSURE\_LEFT | 3238 | 云台曝光左调节。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| KEYCODE\_PTZ\_EXPOSURE\_RIGHT | 3239 | 云台曝光右调节。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| KEYCODE\_PTZ\_SHUTTER\_LEFT | 3240 | 云台快门速度左调节。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| KEYCODE\_PTZ\_SHUTTER\_RIGHT | 3241 | 云台快门速度右调节。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| KEYCODE\_PTZ\_APERTURE\_LEFT | 3242 | 云台光圈左调节。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。 |
+| KEYCODE\_PTZ\_APERTURE\_RIGHT | 3243 | 云台光圈右调节。  **起始版本：** 26.0.1  **模型约束：** 此接口仅可在Stage模型下使用。 |

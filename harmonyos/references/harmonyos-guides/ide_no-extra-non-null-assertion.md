@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide_no-extra-
 title: "@typescript-eslint/no-extra-non-null-assertion"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 通用规则@typescript-eslint > @typescript-eslint/no-extra-non-null-assertion
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:09+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:e02c44b66ed2db18e31b3d5d82d5a18027579d7771010fe9d852eed0cbc42235
+scraped_at: 2026-11-12T09:52:55+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:c1a1e70c86e6bbb8c1bdeee2e40df9fa59fb5b0f92fcdec16b6402bee99c57d8
 ---
 
 不允许多余的非空断言。
@@ -74,4 +74,4 @@ export function foo(bar?: BarType2) {
 plugin:@typescript-eslint/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/getting-start
 title: 从Swift到ArkTS的迁移指导
 breadcrumb: 指南 > 基础入门 > 学习ArkTS语言 > 面向其他语言的ArkTS迁移指导 > 从Swift到ArkTS的迁移指导
 category: harmonyos-guides
-scraped_at: 2026-09-02T14:59:09+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:50:57+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:6c1cc8a5f1acad1f133f214abf0ea9f1e7a31da007780f18288f0be170a5a011
 ---
 

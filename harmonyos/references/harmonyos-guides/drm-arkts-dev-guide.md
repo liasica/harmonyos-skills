@@ -3,14 +3,14 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/drm-arkts-dev
 title: 数字版权保护(ArkTS)
 breadcrumb: 指南 > 媒体 > DRM Kit（数字版权保护服务） > 数字版权保护(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:11+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:819950adb31cc7df60428f7b27096dd4aaacddad33d272936497fd60bb00dd81
+scraped_at: 2026-11-12T09:52:05+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:456ed01cea8cc2047962fdcd99d27e79bf3aac07da02dc67794090ac51236cdf
 ---
 
 开发者可以调用DRM Kit的ArkTS接口实现DRM证书管理、DRM许可证管理、DRM节目授权、DRM节目解密等数字版权保护功能。
 
-DRM Kit提供MediaKeySystem实现DRM证书管理、DRM许可证管理功能，并管理MediaKeySession实例；MediaKeySession实现DRM节目授权，并可支持Media Kit或Media Kit/AVCodec Kit实现DRM节目解密以实现DRM节目播放。
+DRM Kit提供MediaKeySystem实现DRM证书管理、DRM许可证管理功能，并管理MediaKeySession实例；MediaKeySession实现DRM节目授权，并可支持Media Kit/AVCodec Kit实现DRM节目解密以实现DRM节目播放。
 
 ## 开发步骤
 

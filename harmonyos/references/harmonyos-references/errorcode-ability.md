@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: 元能力子系统错误码
 breadcrumb: API参考 > 应用框架 > Ability Kit（程序框架服务） > 错误码 > 元能力子系统错误码
 category: harmonyos-references
-scraped_at: 2026-09-18T06:47:36+08:00
-doc_updated_at: 2026-09-17
-content_hash: sha256:c97028394d170b8d620f46bfc80ac4c654a02c193632be51f622b569852c6478
+scraped_at: 2026-11-12T09:53:38+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:430a2d178d2d812642c1885314009c4afefd7c404afb13cedd477d68559b485e
 ---
 
 **说明** 
@@ -333,6 +333,26 @@ The context is not ability context.
 **处理步骤**
 
 使用UIAbilityContext或ExtensionContext对象作为入参，或者使用继承了UIAbilityContext或ExtensionContext类的对象作为入参。
+
+## 16000021 模块名不存在
+
+**错误信息**
+
+The module name does not exist.
+
+**错误描述**
+
+模块名不存在。
+
+**可能原因**
+
+1. 传入的moduleName参数为空。
+2. HAP/HSP包中不存在moduleName对应的模块。
+
+**处理步骤**
+
+1. 确保传入的moduleName参数不为空。
+2. 确保传入的moduleName是在HAP/HSP包中存在的模块名。
 
 ## 16000050 内部错误
 

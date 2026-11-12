@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-reasonabl
 title: "@performance/reasonable-gps-use-check"
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 编写与调试应用 > 代码编辑 > 代码检查 > Code Linter代码检查规则 > 性能规则@performance > @performance/reasonable-gps-use-check
 category: harmonyos-guides
-scraped_at: 2026-10-09T08:15:12+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:8fbf1c0816cc2f444390e352fb2cbdd3e93848027484eb0427d9e08d43fcff3c
+scraped_at: 2026-11-12T09:52:58+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:5a3b42ea7add91fd3107b82b4e2780e52c9b33f62dd5a196b0f648792f8808aa
 ---
 
 未申请长时任务的应用退到后台时，禁止使用定位服务。
@@ -87,4 +87,4 @@ export default class EntryAbility extends UIAbility {
 plugin:@performance/all
 ```
 
-Code Linter代码检查规则的配置指导请参考[Code Linter代码检查](ide-code-linter.md)。
+Code Linter代码检查规则的配置指导请参考[Code Linter代码检查（ArkTS/TS）](ide-code-linter.md)。

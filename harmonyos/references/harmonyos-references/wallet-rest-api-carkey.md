@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/wallet-re
 title: 数字车钥匙接口
 breadcrumb: API参考 > 应用服务 > Wallet Kit（钱包服务） > REST API > 数字车钥匙接口
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:09+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:37532489b91922a0b563093912ca8ae91b448011016fe71c7b543b948b9d5895
+scraped_at: 2026-11-12T09:57:42+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:b06cb555f02b80abdf6a9afe1beabb3826563697d452db20a858cd967a3dfe61
 ---
 
 ## 预置模板
@@ -171,14 +171,18 @@ DK业务管理服务向华为钱包云服务请求创建车钥匙卡片。
 | organizationName | 是 | String | 预置模板中创建的商户名称，最长64个字节。 |
 | organizationPassId | 是 | String | 车钥匙卡片在开发者服务器中的卡号，长度16个字节，为保证唯一性，请勿手动输入，建议使用代码随机生成，只能是字母、数字，当前和serialNumber保持一致。 |
 | serialNumber | 是 | String | 车钥匙卡片在华为钱包服务器中的卡号，即instanceId。在同一个appId下唯一。长度16个字节，为保证唯一性，请勿手动输入，建议使用代码随机生成，只能是字母、数字，当前和organizationPassId保持一致。 |
-| fields | 是 | fields | 卡券展示信息，包括commonFields和status两部分。 |
+| fields | 是 | fields | 卡券展示信息，包括appendFields、commonFields、status三部分。 |
 | linkDevicePass | 是 | linkDevicePass | 链接设备参数，用于保存车钥匙管理台服务器地址、公钥信息以及是否使能卡券的NFC能力。 |
 
-| **status**参数 | 是否必选 | 参数类型 | 描述 |
+| status参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
 | state | 是 | String | 状态值。取值如下：  - active：生效  - expired：删除 |
 | effectTime | 是 | String | 生效时间，UTC格式。 |
 | expireTime | 是 | String | 失效时间，UTC格式。如果超过此时间，卡券自动按照expired状态处理。 |
+
+| appendFields参数 | 是否必选 | 参数类型 | 描述 |
+| --- | --- | --- | --- |
+| vehicleType | 是 | String | 车型的传播名。 |
 
 | commonFields参数 | 是否必选 | 参数类型 | 描述 |
 | --- | --- | --- | --- |
@@ -228,6 +232,13 @@ Accept: application/json;charset=UTF-8
       "effectTime": "2020-04-06T00:00:00.111Z",
       "expireTime": "2030-04-06T00:00:00.111Z"
     },
+    "appendFields": [
+      {
+        "label": "vehicleType",
+        "value": "xxx",
+        "key": "vehicleType"
+      }
+    ],
     "commonFields": [
       {
         "value": "hwpass.carkey.ble",
@@ -467,12 +478,12 @@ public HwWalletObject invokeHwCreateKeyCarKeyObject() {
 
 **Request Body**
 
-| 参数 | 是否必选 | 参数类型 | 描述 |
-| --- | --- | --- | --- |
-| passTypeIdentifier | 是 | String | 服务号，格式为：hwpass.stdcarkey.xxx.xxx（xxx可为公司/产品名称，总长度不超过32个英文小写字符，请严格按照此规则定义）。 |
-| serialNumber | 是 | String | Pass对象在发卡方的唯一键值，回调时以便发卡方根据此值识别具体的卡券记录。 |
-| payload | 是 | String | 车端请求报文中的整个body部分，如03040102xxxx。 |
-| signature | 是 | String | 钱包服务器使用signByRSAWithPSS方式对请求体的签名。 |
+| 父节点参数 | 子节点参数 | 参数类型 | 是否必选 | 描述 |
+| --- | --- | --- | --- | --- |
+| requestBody | passTypeIdentifier | String | 是 | 服务号，格式为：hwpass.stdcarkey.xxx.xxx（xxx可为公司/产品名称，总长度不超过32个英文小写字符，请严格按照此规则定义）。 |
+| requestBody | serialNumber | String | 是 | Pass对象在发卡方的唯一键值，回调时以便发卡方根据此值识别具体的卡券记录。 |
+| requestBody | payload | String | 是 | 车端请求报文中的整个body部分，如03040102xxxx。 |
+| signature | - | String | 是 | 钱包服务器使用signByRSAWithPSS方式对请求体的签名。 |
 
 ### 请求示例
 
@@ -562,6 +573,7 @@ Accept: identity
       "passTypeIdentifier": "xxx",
       "serialNumber": "xxx",
       "transPublicKey": "xxx",
+      "userDeviceId": "xxx",
       "transId": "xxx",
       "vehicleType": "xxx",
       "vehicleId": "xxx",

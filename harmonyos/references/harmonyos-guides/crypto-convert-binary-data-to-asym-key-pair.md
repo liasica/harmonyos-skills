@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-conver
 title: 指定二进制数据转换非对称密钥对(ArkTS)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥生成与转换 > 指定二进制数据转换非对称密钥对(ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-10-31T07:32:10+08:00
-doc_updated_at: 2026-10-30
+scraped_at: 2026-11-12T09:51:32+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:af09517bf35690c7bcff10d021d7e7705ab31a69e5624555376086511bbc33b7
 ---
 

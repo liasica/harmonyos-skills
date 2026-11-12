@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/errorcode
 title: ArkTS API错误码
 breadcrumb: API参考 > 应用服务 > Preview Kit（文件预览服务） > ArkTS API > ArkTS API错误码
 category: harmonyos-references
-scraped_at: 2026-09-02T15:03:06+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:19e80bb371601bcb126c3dbd560585dd1fb1460e7bf50b46c8eec5f6ae61e9dd
+scraped_at: 2026-11-12T09:57:37+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:adfe042677da9028f51dec39ac476b114a4bedec6e0428f7bce96728dd5dc9de
 ---
 
 **说明** 
@@ -24,7 +24,7 @@ Internal failure.
 
 **可能原因**
 
-系统处理异常返回的未定义的错误。
+系统处理异常返回的未定义的错误，在不支持的设备以及模拟器上也会返回此错误码。
 
 **处理步骤**
 

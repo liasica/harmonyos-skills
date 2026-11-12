@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ohos-arku
 title: ChipGroupV2
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 系统预置UI组件库 > ChipGroupV2
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:15+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:72a4a60faf3b544c95a32bdb1377a2c5816d32c3b0524c08e48a9cd7633e59f2
+scraped_at: 2026-11-12T09:54:26+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4d8f7239d58559afa0fbda273269800f1fd396545838820f8635dd4942068ef9
 ---
 
 ChipGroupV2组件提供操作块群组容器，支持单选或多选、自定义样式和间距、以及尾部自定义内容。该组件适用于文件或资源内容的分类、标签选择、筛选等场景，可帮助开发者快速构建美观且交互丰富的标签组界面。
@@ -462,14 +462,14 @@ ChipGroupV2PaddingConfig定义了ChipGroupV2的上下内边距配置，用于控
 
 ## ChipGroupV2IconGroupSuffix
 
-ChipGroupV2IconGroupSuffix用于在ChipGroupV2组件最右侧显示自定义内容，支持配置Image图标、Symbol图标或Symbol图标配置项，以及图标背景材质样式，适用于需要在标签组尾部添加额外操作入口的场景。
-
 ```typescript
 ChipGroupV2IconGroupSuffix({
   items: Array<ChipGroupV2IconItemConfig | SymbolGlyphModifier | ChipGroupV2SymbolItemConfig>,
   iconBackgroundSystemMaterial?: uiMaterial.Material
 })
 ```
+
+ChipGroupV2IconGroupSuffix用于在ChipGroupV2组件最右侧显示自定义内容，支持配置Image图标、Symbol图标或Symbol图标配置项，以及图标背景材质样式，适用于需要在标签组尾部添加额外操作入口的场景。
 
 **起始版本：** 26.0.0
 
@@ -621,7 +621,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2c/v3/U5Kkp25MRTmiOfBKO09PEA/zh-cn_image_0000002809052275.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cf/v3/3hjG85ZlTiSQqrcu4VXxkQ/zh-cn_image_0000002815561057.png)
 
 ### 示例2（ChipGroupV2设置最右侧自定义组件）
 
@@ -719,7 +719,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/4a/v3/HFTttLTGQgy62uUq09MQOQ/zh-cn_image_0000002779852710.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/fd/v3/yLAMGQ3cQRq1xeZ-k7IHIA/zh-cn_image_0000002815401141.png)
 
 ### 示例3（设置Symbol类型图标）
 
@@ -821,7 +821,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/o6pvAvN9T_uxvZY1s2aA_A/zh-cn_image_0000002779692742.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/0d/v3/LGYuN3ATRESP8QTzfoNPMQ/zh-cn_image_0000002786521566.png)
 
 ### 示例4（监听ChipGroupV2内对象类型属性的内部属性变化）
 
@@ -898,7 +898,7 @@ struct Index {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/fubSCbRCQzOyXkWoY-mjMA/zh-cn_image_0000002809012363.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/74/v3/_4Jwnfw0R7-B3Ag5ECiJkw/zh-cn_image_0000002786361638.gif)
 
 ### 示例5（设置系统材质样式）
 
@@ -988,4 +988,4 @@ struct Index {
 
 该示例配图为高算力设备强档效果。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/80/v3/A93rTfDFTIe-lXs5nhIJxg/zh-cn_image_0000002809052277.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/72/v3/UMhIQtuLTDiY-K6U4bEMUA/zh-cn_image_0000002815561059.png)

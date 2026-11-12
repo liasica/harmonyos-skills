@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-draw
 title: drawing_font_collection.h
 breadcrumb: API参考 > 图形 > ArkGraphics 2D（方舟2D图形服务） > C API > 头文件 > drawing_font_collection.h
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:43+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:423e1037bb6b3bd48ffe429be8b267656262b7d101db7d607c1b1d59460c9074
+scraped_at: 2026-11-12T09:56:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f50fc352fa090d0160a9de05e48ca1c2cb69220618863f1f1f873a5733e9c0ad
 ---
 
 ## 概述
@@ -34,7 +34,7 @@ content_hash: sha256:423e1037bb6b3bd48ffe429be8b267656262b7d101db7d607c1b1d59460
 | [void OH\_Drawing\_DisableFontCollectionSystemFont(OH\_Drawing\_FontCollection\* fontCollection)](capi-drawing-font-collection-h.md#oh_drawing_disablefontcollectionsystemfont) | 禁用系统字体。禁用后，该字体集对象仅能使用已注册的自定义字体进行文本渲染。 |
 | [OH\_Drawing\_FontCollection\* OH\_Drawing\_CreateSharedFontCollection(void)](capi-drawing-font-collection-h.md#oh_drawing_createsharedfontcollection) | 创建可共享的字体集对象[OH\_Drawing\_FontCollection](capi-drawing-oh-drawing-fontcollection.md)。 |
 | [void OH\_Drawing\_ClearFontCaches(OH\_Drawing\_FontCollection\* fontCollection)](capi-drawing-font-collection-h.md#oh_drawing_clearfontcaches) | 清理字体排版缓存（字体排版缓存本身设有内存上限和清理机制，所占内存有限，如无内存要求，不建议清理）。 |
-| [OH\_Drawing\_FontCollection\* OH\_Drawing\_GetFontCollectionGlobalInstance(void)](capi-drawing-font-collection-h.md#oh_drawing_getfontcollectionglobalinstance) | 获取全局字体集对象[OH\_Drawing\_FontCollection](capi-drawing-oh-drawing-fontcollection.md)，可获取主题字信息，禁止释放该对象。 |
+| [OH\_Drawing\_FontCollection\* OH\_Drawing\_GetFontCollectionGlobalInstance(void)](capi-drawing-font-collection-h.md#oh_drawing_getfontcollectionglobalinstance) | 获取全局字体集对象[OH\_Drawing\_FontCollection](capi-drawing-oh-drawing-fontcollection.md)，可获取主题字体信息，禁止释放该对象。 |
 
 ## 函数说明
 
@@ -170,7 +170,7 @@ OH_Drawing_FontCollection* OH_Drawing_GetFontCollectionGlobalInstance(void)
 
 **描述**
 
-获取全局字体集对象[OH\_Drawing\_FontCollection](capi-drawing-oh-drawing-fontcollection.md)，可获取主题字信息，禁止释放该对象。
+获取全局字体集对象[OH\_Drawing\_FontCollection](capi-drawing-oh-drawing-fontcollection.md)，可获取主题字体信息，禁止释放该对象。
 
 **系统能力：** SystemCapability.Graphic.Graphic2D.NativeDrawing
 

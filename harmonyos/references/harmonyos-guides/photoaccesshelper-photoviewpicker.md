@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/photoaccesshe
 title: 使用Picker选择媒体库资源
 breadcrumb: 指南 > 媒体 > Media Library Kit（媒体文件管理服务） > 使用Picker选择媒体库资源
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:23:01+08:00
-doc_updated_at: 2026-09-09
+scraped_at: 2026-11-12T09:52:08+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:9c1fc0e7fab19bcfa97176b15831c582ce53c33755d494575dddcbdb290dede1
 ---
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/capi-nati
 title: native_interface_xcomponent.h
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > C API > 头文件 > native_interface_xcomponent.h
 category: harmonyos-references
-scraped_at: 2026-10-11T07:24:54+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:8db61c133904a734bfa86f3d1c652da26c8d3d5419c9cd217fe7b8a973f29296
+scraped_at: 2026-11-12T09:54:39+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:42fbb3af1b7a4eeedaa1bc324158e8ae756cea2e49659af41c6ecec38cc2f625
 ---
 
 ## 概述
@@ -42,7 +42,7 @@ content_hash: sha256:8db61c133904a734bfa86f3d1c652da26c8d3d5419c9cd217fe7b8a973f
 | [OH\_NativeXComponent\_ExtraMouseEventInfo](capi-oh-nativexcomponent-native-xcomponent-oh-nativexcomponent-extramouseeventinfo.md) | OH\_NativeXComponent\_ExtraMouseEventInfo | 提供封装的扩展的鼠标事件信息实例。 |
 | [OH\_ArkUI\_SurfaceHolder](capi-oh-nativexcomponent-native-xcomponent-oh-arkui-surfaceholder.md) | OH\_ArkUI\_SurfaceHolder | 提供封装的OH\_ArkUI\_SurfaceHolder实例。 |
 | [OH\_ArkUI\_SurfaceCallback](capi-oh-nativexcomponent-native-xcomponent-oh-arkui-surfacecallback.md) | OH\_ArkUI\_SurfaceCallback | 定义Surface生命周期回调函数。 |
-| [OHNativeWindow](capi-oh-nativexcomponent-native-xcomponent-nativewindow.md) | OHNativeWindow | 提供封装的NativeWindow实例。 |
+| [NativeWindow](capi-oh-nativexcomponent-native-xcomponent-nativewindow.md) | OHNativeWindow | 提供封装的NativeWindow实例。 |
 | [ArkUI\_XComponentSurfaceConfig](capi-oh-nativexcomponent-native-xcomponent-arkui-xcomponentsurfaceconfig.md) | ArkUI\_XComponentSurfaceConfig | 定义XComponent组件持有的Surface选项，用于设置XComponent组件持有的Surface在渲染时是否被视为不透明。 |
 
 ### 枚举

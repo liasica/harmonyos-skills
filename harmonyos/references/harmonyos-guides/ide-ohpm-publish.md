@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-ohpm-publ
 title: ohpm publish
 breadcrumb: 指南 > DevEco Studio（Windows/macOS版） > 命令行工具 > 三方依赖管理工具（ohpm） > 常用命令 > ohpm publish
 category: harmonyos-guides
-scraped_at: 2026-11-07T08:02:29+08:00
-doc_updated_at: 2026-10-08
-content_hash: sha256:1304ff337769ba3da44129384b5da546c3916dfe506c3c2a3383f64c7cd51993
+scraped_at: 2026-11-12T09:53:11+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:5fbbea724d3757c55a51e0a63ac34dd80e942b5cbdad1f04631e1a2ce6a25e8d
 ---
 
 发布一个三方库。
@@ -33,7 +33,7 @@ ohpm publish [options] <har_or_tgz_file>
 
 * 为了保证.har 和 .tgz 包的编译与运行正常，包中的 oh-package.json5 必须包含该包的所有直接依赖，若有依赖通过项目级别的 oh-package.json5 引入，则相应的依赖也必须写入包中对应的 oh-package.json5 中。
 * debug模式构建的HAR包中含有源码，便于本地调试，需关注代码安全，详细请参考[构建HAR](ide-hvigor-build-har.md)。
-* 发布包前请务必检查待发布包 oh-package.json5 的配置是否满足要求，具体要求请参考：[oh-package.json5 字段说明](ide-oh-package-json5.md#zh-cn_topic_0000001792256137_oh-packagejson5-字段说明)
+* 发布包前请务必检查待发布包 oh-package.json5 的配置是否满足要求，具体要求请参考：[oh-package.json5 字段说明](ide-oh-package-json5.md)。
 
 ## 发布校验规则
 
@@ -160,6 +160,13 @@ ohpm publish [options] <har_or_tgz_file>
 
 从ohpm 6.0.2.636版本开始，可以在 publish 命令后面配置 --cache <string> 参数，设置缓存路径。
 
+### readme
+
+* 默认值：无
+* 类型：string
+
+从ohpm 26.0.1.220版本开始，可以在publish命令后面配置--readme <p>参数，指定发包时使用的README.md文件路径；若包内已存在README.md文件，以该参数传入的路径为准。
+
 ## 示例
 
 发布工作目录下的三方库，执行以下命令：
@@ -170,4 +177,4 @@ ohpm publish publish_test.har
 
 结果示例：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/95/v3/79FtWy9PQIy0sQfrjvqTmQ/zh-cn_image_0000002731541843.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/d7/v3/hVpnwPHRQvSHi5vDBxfxKw/zh-cn_image_0000002808766099.png)

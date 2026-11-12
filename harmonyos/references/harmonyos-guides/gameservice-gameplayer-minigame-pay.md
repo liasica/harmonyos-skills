@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/gameservice-g
 title: 小游戏支付
 breadcrumb: 指南 > 应用服务 > Game Service Kit（游戏服务） > 基础游戏服务（必选） > 小游戏 > 小游戏支付
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:30+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:dd828cf4f00abafe835f270a2eb3c07236fb502c9266bfe53ef8f4e7293f05d2
+scraped_at: 2026-11-12T09:52:23+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:2534a6d512fb3418006eb5f462390f17f6cecbe37c0234552d3bef59e42de398
 ---
 
 小游戏接入基础游戏服务的小游戏支付API后，支持在小游戏内提供付费商品，玩家可以在小游戏内进行购买。
@@ -18,10 +18,10 @@ content_hash: sha256:dd828cf4f00abafe835f270a2eb3c07236fb502c9266bfe53ef8f4e7293
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/47/v3/MVtWfMqfRaOVMzD5iRTbmA/zh-cn_image_0000002809050911.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/VwyJyPdZSIeIjKfyVAde_A/zh-cn_image_0000002786520222.png)
 
 1. 玩家在小游戏内购买商品。
-2. 小游戏调用[miniGamePay](../harmonyos-references/gameservice-gameplayer.md#gameplayerminigamepay)向Game Service Kit发起支付请求。
+2. 小游戏调用[miniGamePay()](../harmonyos-references/gameservice-gameplayer.md#gameplayerminigamepay)向Game Service Kit发起支付请求。
 3. Game Service Kit向IAP Kit发送请求拉起收银台，IAP Kit处理支付请求，详情请参考[接入购买](iap-integrate-purchase.md)。
 4. IAP Kit处理完成后向Game Service Kit返回此次商品购买的结果等信息。
 5. Game Service Kit返回此次商品购买的结果等信息，开发者将接收到一个[CreatePurchaseResult](../harmonyos-references/gameservice-gameplayer.md#createpurchaseresult)对象，对象内的purchaseData字段包括了此次购买的结果信息。
@@ -51,7 +51,7 @@ import { window } from '@kit.ArkUI';
 
 ### 初始化
 
-调用[init](../harmonyos-references/gameservice-gameplayer.md#gameplayerinit-1)接口初始化Game Service Kit。
+调用[init()](../harmonyos-references/gameservice-gameplayer.md#gameplayerinit-1)接口初始化Game Service Kit。
 
 ```typescript
 onWindowStageCreate(windowStage: window.WindowStage) {
@@ -70,7 +70,7 @@ onWindowStageCreate(windowStage: window.WindowStage) {
 
 ### 发起支付请求
 
-调用[miniGamePay](../harmonyos-references/gameservice-gameplayer.md#gameplayerminigamepay)向Game Service Kit发起支付请求，Game Service Kit将向IAP Kit发送请求拉起收银台，IAP Kit处理支付请求。IAP Kit处理完成后向Game Service Kit返回此次商品购买的结果等信息，Game Service Kit将此次商品购买的结果等信息通过[CreatePurchaseResult](../harmonyos-references/gameservice-gameplayer.md#createpurchaseresult)对象返回给开发者。
+调用[miniGamePay()](../harmonyos-references/gameservice-gameplayer.md#gameplayerminigamepay)向Game Service Kit发起支付请求，Game Service Kit将向IAP Kit发送请求拉起收银台，IAP Kit处理支付请求。IAP Kit处理完成后向Game Service Kit返回此次商品购买的结果等信息，Game Service Kit将此次商品购买的结果等信息通过[CreatePurchaseResult](../harmonyos-references/gameservice-gameplayer.md#createpurchaseresult)对象返回给开发者。
 
 ```typescript
 let context = this.getUIContext()?.getHostContext() as common.UIAbilityContext;

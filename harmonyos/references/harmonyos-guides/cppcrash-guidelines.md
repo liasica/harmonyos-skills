@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/cppcrash-guid
 title: Cpp Crash（进程崩溃）检测
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 故障检测 > 崩溃检测 > Cpp Crash（进程崩溃）检测
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:59+08:00
-doc_updated_at: 2026-09-20
-content_hash: sha256:1dcb5821e18bb7bf1d9cc875576362bea4b0a9877860ad92d8070ecc73f272d3
+scraped_at: 2026-11-12T09:51:53+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:d73248af83b6b9e5a373f8bffca4c33fc93b8b7494ac0549ea16be960a0dfb42
 ---
 
 ## 简介
@@ -569,7 +569,7 @@ pstate:0000000060001000 esr:0000000000000000
 
 原理示意图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bb/v3/7M6xS9_JT7avJ8lm5nohng/zh-cn_image_0000002809050427.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/05/v3/ayGux8dJSgqfdoIjk0tkyA/zh-cn_image_0000002786519730.png)
 
 1. 提交线程搜集自身的调用栈信息，保存至进程特定区域内存的异步栈表中。
 2. 记录保存后，异步栈表返回唯一标识stackId。
@@ -988,24 +988,25 @@ SIGPIPE异常退出时关键日志如下所示：
 
   在HILOG中使用关键字C02D11过滤日志，根据筛选日志能够获取异常发生所在行相应信息，则表示调用栈功能成功开启。
 
-  以通过testSIGPIPE()函数来实现SIGPIPE的异常场景为例：
+  以通过TestSigpipe()函数来实现SIGPIPE的异常场景为例：
 
   ```
   #include <unistd.h>
-  #include <signal.h>
+  #include <csignal>
 
-  int testSIGPIPE()
+  int TestSigpipe()
   {
-      sigset_t set, oldset;
+      sigset_t set;
+      sigset_t oldset;
       // 初始化信号集，加入要临时解除阻塞的信号
       sigemptyset(&set);
       sigaddset(&set, SIGPIPE);
       // 先保存当前的信号屏蔽集
-      if (sigprocmask(SIG_SETMASK, NULL, &oldset) != 0) {
+      if (sigprocmask(SIG_SETMASK, nullptr, &oldset) != 0) {
           return -1;
       }
       // 临时解除阻塞
-      if (sigprocmask(SIG_UNBLOCK, &set, NULL) != 0) {
+      if (sigprocmask(SIG_UNBLOCK, &set, nullptr) != 0) {
           return -1;
       }
       // 创建pipe后，先关闭读端pipe，然后写端继续写，构建SIGPIPE的异常场景
@@ -1017,16 +1018,16 @@ SIGPIPE异常退出时关键日志如下所示：
       int src = 1;
       write(pipe[1], reinterpret_cast<const void*>(&src), sizeof(int));
       close(pipe[1]);
-    
+
       // 最后恢复原来的屏蔽集
-      if (sigprocmask(SIG_SETMASK, &oldset, NULL) != 0) {
+      if (sigprocmask(SIG_SETMASK, &oldset, nullptr) != 0) {
           return -1;
       }
       return 0;
   }
   ```
 
-  过滤日志信息，根据调用栈信息，成功定位到异常发生在testSIGPIPE()函数中，表示功能开启成功。
+  过滤日志信息，根据调用栈信息，成功定位到异常发生在TestSigpipe()函数中，表示功能开启成功。
 
   ```text
   ...
@@ -1040,7 +1041,7 @@ SIGPIPE异常退出时关键日志如下所示：
   03-06 13:55:25.876   20440-20440   C02D11/process...fxFaultLogger  pid-20440             I     Fault thread info:
   03-06 13:55:25.876   20440-20440   C02D11/process...fxFaultLogger  pid-20440             I     Tid:19787, Name:e.myapplication
   03-06 13:55:25.876   20440-20440   C02D11/process...fxFaultLogger  pid-20440             I     #00 pc 00000000001e8150 /system/lib/ld-musl-aarch64.so.1(write+68)(90776dcdb3f38042fc78b97d93138bde)
-  03-06 13:55:25.876   20440-20440   C02D11/process...fxFaultLogger  pid-20440             I     #01 pc 0000000000001cf8 /data/storage/el1/bundle/libs/arm64/libentry.so(testSIGPIPE()+228)(d6af99a8111f4c2761800cb1432bea140f5176e4)
+  03-06 13:55:25.876   20440-20440   C02D11/process...fxFaultLogger  pid-20440             I     #01 pc 0000000000001cf8 /data/storage/el1/bundle/libs/arm64/libentry.so(TestSigpipe()+228)(d6af99a8111f4c2761800cb1432bea140f5176e4)
   03-06 13:55:25.876   20440-20440   C02D11/process...fxFaultLogger  pid-20440             I     #02 pc 0000000000001e34 /data/storage/el1/bundle/libs/arm64/libentry.so(d6af99a8111f4c2761800cb1432bea140f5176e4)
   ...
   ```
@@ -1076,6 +1077,9 @@ mallopt(M_OHOS_CONFIG, M_TCACHE_PERFORMANCE_MODE);
 mallopt(M_OHOS_CONFIG, M_ENABLE_OPT_TCACHE);
 mallopt(M_SET_THREAD_CACHE, M_THREAD_CACHE_ENABLE);
 char* test = (char*)malloc(4096);
+if (test == nullptr) {
+    return {};
+}
 // 这里日志输出test地址值，方便查找crash日志中内存内容
 std::cout << "test addr: " << std::hex << test << std::endl;
 free(test);

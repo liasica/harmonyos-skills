@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/image-raw-dat
 title: 使用ImageSource获取RAW数据
 breadcrumb: 指南 > 媒体 > Image Kit（图片处理服务） > 图片开发指导(ArkTS) > 图片解码 > 使用ImageSource获取RAW数据
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:05:07+08:00
-doc_updated_at: 2026-10-14
+scraped_at: 2026-11-12T09:52:05+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:94f3c604ab147d1b6785de4f1e9f42915913a777d39045d6281b3690682f472a
 ---
 

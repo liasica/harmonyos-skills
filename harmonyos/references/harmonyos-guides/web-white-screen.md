@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-white-scr
 title: 定位与解决Web白屏问题
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > Web调试维测 > 定位与解决Web白屏问题
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2efe7089b4fde052f114e6db4d20a972e7fd189f11d954439054d1e32432a7d8
+scraped_at: 2026-11-12T09:51:24+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:31d4cd6914aec65d91be2beb9745679c2a1c261f6d24ccf6d1ccf28b71b256bb
 ---
 
 Web页面出现白屏的原因众多，本文列举了若干常见白屏问题的排查步骤，供开发者快速定位。
@@ -103,7 +103,7 @@ Web页面出现白屏的原因众多，本文列举了若干常见白屏问题�
 
    （3）网络里面是否有资源加载时间特别长等。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f4/v3/JSJamhXGQYCIBqjYx9Wl_g/zh-cn_image_0000002779850538.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/37/v3/sDS9mrz6T0Wl-i3PTDeU2g/zh-cn_image_0000002786359480.png)
 2. 检查控制台，确认是否存在因MixedContent策略或CORS策略导致的异常，或JS错误等。可参考[解决Web组件本地资源跨域问题](web-cross-origin.md)。为了提高安全性，ArkWeb内核禁止file协议和resource协议访问跨域请求。因此，在使用Web组件加载本地离线资源的时候，Web组件会拦截file协议和resource协议的跨域访问。Web组件无法访问本地跨域资源时，DevTools控制台会显示报错信息：
 
    ```txt
@@ -118,8 +118,7 @@ Web页面出现白屏的原因众多，本文列举了若干常见白屏问题�
 
    以下结合示例说明如何使用HTTP或HTTPS等协议解决本地资源跨域访问失败的问题。其中，index.html和js/script.js文件置于工程的rawfile目录下。当使用resource协议访问index.html时，js/script.js文件因跨域而被拦截，无法加载。在示例中，使用https://www.example.com/域名替换了原有的resource协议，同时利用onInterceptRequest接口替换资源，确保js/script.js文件可以成功加载，从而解决跨域拦截问题。
 
-   ```ts
-   // main/ets/pages/Index.ets
+   ```typescript
    import { webview } from '@kit.ArkWeb';
 
    @Entry
@@ -129,27 +128,27 @@ Web页面出现白屏的原因众多，本文列举了若干常见白屏问题�
      webviewController: webview.WebviewController = new webview.WebviewController();
      // 构造域名和本地文件的映射表
      schemeMap = new Map([
-       ["https://www.example.com/index.html", "index.html"],
-       ["https://www.example.com/js/script.js", "js/script.js"],
+       ['https://www.example.com/index.html', 'index.html'],
+       ['https://www.example.com/js/script.js', 'js/script.js'],
      ])
      // 构造本地文件和构造返回的格式mimeType
      mimeTypeMap = new Map([
-       ["index.html", 'text/html'],
-       ["js/script.js", "text/javascript"]
+       ['index.html', 'text/html'],
+       ['js/script.js', 'text/javascript']
      ])
 
      build() {
        Row() {
          Column() {
-           // 针对本地index.html,使用HTTP或HTTPS协议代替file协议或者resource协议，并且构造一个属于自己的域名。
+           // 针对本地index.html，使用http或者https协议代替file协议或者resource协议，并且构造一个属于自己的域名。
            // 本例中构造www.example.com为例。
-           Web({ src: "https://www.example.com/index.html", controller: this.webviewController })
+           Web({ src: 'https://www.example.com/index.html', controller: this.webviewController })
              .javaScriptAccess(true)
              .fileAccess(true)
              .domStorageAccess(true)
              .geolocationAccess(true)
-             .width("100%")
-             .height("100%")
+             .width('100%')
+             .height('100%')
              .onInterceptRequest((event) => {
                if (!event) {
                  return;
@@ -322,7 +321,7 @@ Web页面出现白屏的原因众多，本文列举了若干常见白屏问题�
    | [onHttpErrorReceive](../harmonyos-references/arkts-basic-components-web-events.md#onhttperrorreceive) | 服务器返回HTTP错误码，这类问题一般需要跟服务器进行联调。 |
    | [onHttpAuthRequest](../harmonyos-references/arkts-basic-components-web-events.md#onhttpauthrequest9) | 服务器返回407需要端侧提供用户名密码认证，如果不正确处理，可能会导致加载异常、白屏。 |
    | [onClientAuthenticationRequest](../harmonyos-references/arkts-basic-components-web-events.md#onclientauthenticationrequest9) | 服务器向端侧请求证书，如果不正确处理，会导致页面加载异常。 |
-   | [onSslErrorEvent](../harmonyos-references/arkts-basic-components-web-events.md#onsslerrorevent12) | 证书错误，需要应用根据证书错误信息进行排查，是证书配错了？还是过期了。 |
+   | [onSslErrorEvent](../harmonyos-references/arkts-basic-components-web-events.md#onsslerrorevent12) | 证书错误，需应用根据证书错误信息排查，常见原因包括证书配置错误、证书过期或证书不受信任。 |
 
 ## 复杂的布局与渲染模式导致白屏
 
@@ -379,18 +378,23 @@ Web组件提供了自适应页面布局的能力，详情见 [Web组件大小自
 * 特殊协议拦截。
 * 若H5页面调用tel:、mailto:等协议导致白屏，需通过onInterceptRequest拦截并调用系统拨号能力：
 
-  ```ts
-  .onInterceptRequest((event) => {
-      if (event.request.getRequestUrl().startsWith('tel:')) {
-          // 调用系统拨号能力
-          call.makeCall('123456');
-          let response = new WebResourceResponse();
-          response.setResponseCode(404);
-          return response; // 阻止默认行为
-      }
-      return null;
-  })
-  ```
+```typescript
+.onInterceptRequest((event) => {
+  if (!event) {
+    return null;
+  }
+  // 拦截 tel: 协议，调用系统拨号能力，阻止 Web 默认行为导致白屏
+  if (event.request.getRequestUrl().startsWith('tel:')) {
+    this.makePhoneCall(event.request.getRequestUrl(), 'onInterceptRequest');
+    // 返回非空 WebResourceResponse 阻止 Web 组件继续加载该 URL，避免白屏
+    let response = new WebResourceResponse();
+    response.setResponseCode(404);
+    response.setReasonMessage('Not Found');
+    return response;
+  }
+  return null;
+})
+```
 
 ## 监控内存与生命周期
 
@@ -410,7 +414,7 @@ Web组件提供了自适应页面布局的能力，详情见 [Web组件大小自
 
 下面说明一下Web组件网络加载过程中的关键日志，正常情况下一个Web组件的加载过程应该包含这些关键节点：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b0/v3/xKqD_uryTvizhGJYeEV_nQ/zh-cn_image_0000002779690570.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/67/v3/NiqunorrSxyUPlNKprJSoQ/zh-cn_image_0000002815558901.png)
 
 | 日志关键字 | 说明 |
 | --- | --- |
@@ -441,8 +445,13 @@ Tablet/PC/2in1的WebView默认采用多进程加载，iframe默认使用子进�
 
 通过[setRenderProcessMode](../harmonyos-references/arkts-apis-webview-webviewcontroller.md#setrenderprocessmode12)设置WebView渲染模式为单进程加载。
 
-```ts
-webview.WebviewController.setRenderProcessMode(webview.RenderProcessMode.SINGLE);
+```typescript
+// 设置渲染进程为单进程模式，解决 Tablet/PC/2in1 设备上多进程 iframe 加载白屏问题
+try {
+  webview.WebviewController.setRenderProcessMode(webview.RenderProcessMode.SINGLE);
+} catch (error) {
+  console.error(`ErrorCode: ${(error as BusinessError).code}, Message: ${(error as BusinessError).message}`);
+}
 ```
 
 ## WebView默认缓存模式下缓存协商与服务端资源更新不一致导致的白屏

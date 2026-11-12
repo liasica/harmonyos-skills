@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/get-pastedata
 title: 申请访问剪贴板权限
 breadcrumb: 指南 > 系统 > 基础功能 > Basic Services Kit（基础服务） > 剪贴板服务 > 申请访问剪贴板权限
 category: harmonyos-guides
-scraped_at: 2026-09-24T06:50:07+08:00
-doc_updated_at: 2026-09-23
-content_hash: sha256:34a3f6f9a3755437578415055648d54048821661fa95a3ca8fcbd4d77a22ed33
+scraped_at: 2026-11-12T09:51:48+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:dd3fe1fae55f795995e20c4e5692d0e00370c0d6d0b649118a9e6998481b5d9a
 ---
 
 ## 概述
@@ -138,14 +138,14 @@ struct Index {
               return;
             }
             let atManager: abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
-            // requestPermissionsFromUser会判断权限的授权状态来决定是否唤起弹窗。
+            // requestPermissionsFromUser会判断权限的授权状态来决定是否唤起弹窗
             try {
               let data = await atManager.requestPermissionsFromUser(context, permissions);
               let grantStatus: number[] = data.authResults;
 
               let allGranted: boolean = grantStatus.some(status => status === 0);
               if (!allGranted) {
-                // 用户拒绝授权，提示用户必须授权才能访问当前页面的功能，并引导用户到系统设置中打开相应的权限。
+                // 用户拒绝授权，提示用户必须授权才能访问当前页面的功能，并引导用户到系统设置中打开相应的权限
                 hilog.error(0xFF00, '[Sample_pasteboard]', 'All permissions denied');
                 return;
               }
@@ -154,9 +154,9 @@ struct Index {
               hilog.error(0xFF00, '[Sample_pasteboard]', 'Failed to request permissions from user.');
               return;
             }
-            // 用户授权，使用get操作读取剪贴板内容。
+            // 用户授权，使用get操作读取剪贴板内容
             // ...
-            // 执行判断口令逻辑，如果是本应用口令，建议获取完数据后使用cleardata清除剪贴板口令内容
+            // 执行判断口令逻辑，如果是本应用口令，建议获取完数据后使用clearData清除剪贴板口令内容
             try {
               await systemPasteboard.clearData();
               hilog.info(0xFF00, '[Sample_pasteboard]', 'Succeeded in clearing the pasteboard.');

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/data-persiste
 title: 通过向量数据库实现数据持久化 (ArkTS)
 breadcrumb: 指南 > 应用框架 > ArkData（方舟数据管理） > 应用数据持久化 > 通过向量数据库实现数据持久化 (ArkTS)
 category: harmonyos-guides
-scraped_at: 2026-09-15T07:01:12+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:a49af2c763270420baaeeb1beaca3804539c9a7a6b89ae5ccd5566613d8c8324
+scraped_at: 2026-11-12T09:51:01+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:6839bff6facb4776670b2260c6c6de422898cfb8e988096616357fa7b8eb1126
 ---
 
 ## 场景介绍
@@ -144,7 +144,6 @@ SQL语句中的函数，如下所示：
    import { relationalStore } from '@kit.ArkData'; // 导入模块
    import { BusinessError } from '@kit.BasicServicesKit';
    import { common } from '@kit.AbilityKit';
-   import { UIContext } from '@kit.ArkUI';
    // ...
      // 判断当前系统是否支持向量数据库
      let ret = relationalStore.isVectorSupported();
@@ -165,8 +164,6 @@ SQL语句中的函数，如下所示：
 
    ```typescript
    let store: relationalStore.RdbStore | undefined = undefined;
-   /* context为应用的上下文信息，此处获取方式仅为示例。 */
-   let context: Context = new UIContext().getHostContext() as common.UIAbilityContext;
    const STORE_CONFIG: relationalStore.StoreConfig = {
      name: 'VectorTest.db', // 数据库文件名
      securityLevel: relationalStore.SecurityLevel.S1, // 数据库安全级别

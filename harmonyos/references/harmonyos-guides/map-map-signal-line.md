@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/map-map-signa
 title: 信号路线
 breadcrumb: 指南 > 应用服务 > Map Kit（地图服务） > 在地图上绘制 > 信号路线
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:36+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:b462fe306fd9b7bc3537bf455bd110eca36b35d3837138d8a6846164b72e196a
+scraped_at: 2026-11-12T09:52:29+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:310c866ac7c6100a5b9e4427b7e9499eb47f8f4f0a1efd323a42bd8fd54bb8a0
 ---
 
 ## 场景介绍
@@ -14,12 +14,12 @@ content_hash: sha256:b462fe306fd9b7bc3537bf455bd110eca36b35d3837138d8a6846164b72
 
 信号路线是一条能够动态反映地图上信号强度的彩色折线。信号路线可预测路线中的弱信号或无信号路段，提前提醒用户下载离线地图、提升户外安全性。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5c/v3/_IBCJ-kjShu8NaDpYxpbpw/zh-cn_image_0000002809011137.jpg "点击放大")
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/58/v3/ZKfweCJUT3Sfi_R4wSO9jg/zh-cn_image_0000002786360438.png "点击放大")
 
 ## 约束与限制
 
 * 该能力仅面向完成企业认证开发者开放，个人开发者不支持申请。
-* 设备限制：信号路线功能仅适用于Phone、Tablet、PC/2in1和Wearable。
+* 设备限制：信号路线功能仅适用于Phone、Tablet、PC/2in1、Wearable和Car。
 * 场景限制：
 
   1. 申请场景需与地图展示、路线规划、户外出行决策有明确关联，开发者申请该权益时，应基于Map Kit地图能力集成使用。常见的申请场景示例如下。
@@ -52,33 +52,30 @@ content_hash: sha256:b462fe306fd9b7bc3537bf455bd110eca36b35d3837138d8a6846164b72
 
 权限申请入口目前仅针对企业开发者开放，个人开发者不可见。
 
-1. 登录[AppGallery Connect](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html)网站，选择“开发与服务”。
+* 登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/index.html#/home/)网站，在项目列表中找到需要开通“信号预测能力”的应用。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/af/v3/kWzKVpcCS3mAWfsW40W7lA/zh-cn_image_0000002809051051.jpg)
-2. 在项目列表中找到需要开通“信号预测能力”的应用。
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/3a/v3/dHW7wa72QLaoBKEIZFmyTw/zh-cn_image_0000002815559859.jpg)
+* 进入“开放能力管理”页签，找到“地图服务”开关下的“信号预测能力”，点击“申请”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ae/v3/UZQb8bi3RVGLs0XSLVeSLw/zh-cn_image_0000002779851486.jpg)
-3. 进入“开放能力管理”页签，找到“地图服务”开关下的“信号预测能力”，点击“申请”。
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/14/v3/JIdgflNGQl6cMl5NrdVG7g/zh-cn_image_0000002815399943.jpg)
+* 确认您已满足开通信号预测能力的所有条件后，点击“下一步”。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c3/v3/dFfxDFcgSqm9gTs80CidXw/zh-cn_image_0000002779691518.jpg)
-4. 确认您已满足开通信号预测能力的所有条件后，点击“下一步”。
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/73/v3/4nlUIyYNQfKBr-Sqc1gHpg/zh-cn_image_0000002786520368.jpg)
+* 填写申请原因。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/09/v3/bVJj-uq_Rmu04GU6lvaB-w/zh-cn_image_0000002809011139.jpg)
-5. 填写申请原因。
+  **说明** 
 
-   **说明** 
+  申请原因填写模板：
 
-   申请原因填写模板：
+  + **应用介绍**：说明应用类型，例如XXX应用属于XXX类型的应用。
+  + **使用场景**：说明权限使用场景，例如在XXX场景下，需要使用XX能力。
+  + **申请用途**：描述该权限的用途，例如用户使用XXX功能后，进行XXX操作，提供XXX服务。
 
-   * **应用介绍**：说明应用类型，例如XXX应用属于XXX类型的应用。
-   * **使用场景**：说明权限使用场景，例如在XXX场景下，需要使用XX能力。
-   * **申请用途**：描述该权限的用途，例如用户使用XXX功能后，进行XXX操作，提供XXX服务。
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b5/v3/WL9tbD31QaSJax3bRsngyw/zh-cn_image_0000002786360440.jpg)
+* 系统将推送消息到互动中心，请等待审核。3个工作日内审核结果会通过站内消息的形式发送到[互动中心](https://developer.huawei.com/consumer/cn/message-center/myMessage)，请注意查收。
+* 审核通过后，勾选“地图服务”和“信号预测能力”以完成配置。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/5d/v3/5JSPqefvSy6H0WmeHdWoKg/zh-cn_image_0000002809051053.jpg)
-6. 系统将推送消息到互动中心，请等待审核。3个工作日内审核结果会通过站内消息的形式发送到[互动中心](https://developer.huawei.com/consumer/cn/service/josp/agc/index.html#/interactive)，请注意查收。
-7. 审核通过后，勾选“地图服务”和“信号预测能力”以完成配置。
-
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f2/v3/545r_sJSRU-gTisIZ8yT_w/zh-cn_image_0000002779851488.jpg)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/88/v3/d3Tp7Cw2RgSXY3NiccGYLA/zh-cn_image_0000002815559861.jpg)
 
 ## 开发步骤
 

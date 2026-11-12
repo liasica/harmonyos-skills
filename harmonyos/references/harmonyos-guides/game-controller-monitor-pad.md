@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/game-controll
 title: 监听游戏手柄的轴和按键事件（C/C++）
 breadcrumb: 指南 > 应用服务 > Game Controller Kit（游戏控制器服务） > 监听游戏手柄的轴和按键事件（C/C++）
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:30:29+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:cd7200ea9fe102eb0976535d9961f48b3d4941f2d58ad3819bc2d001d231ac85
+scraped_at: 2026-11-12T09:52:23+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:767c12482dd12170c07287c50e05f53d63193b55a1dc583dfc8b32d6cb17c43c
 ---
 
 **说明** 
@@ -20,7 +20,7 @@ Game Controller Kit提供游戏手柄轴事件和按键事件的监听能力。�
 
 Game Controller Kit支持的手柄键位参考图如下：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7e/v3/8Ywp5ixvT9-s26KeigOj7g/zh-cn_image_0000002779851330.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/1a/v3/7qfQ3XhvRum9l4IuC62z-Q/zh-cn_image_0000002786360278.png)
 
 ## 接口说明
 
@@ -39,6 +39,7 @@ Game Controller Kit支持的手柄键位参考图如下：
 | OH\_GamePad\_ButtonX\_RegisterButtonInputMonitor | 注册X按键事件的监听。 |
 | OH\_GamePad\_ButtonY\_RegisterButtonInputMonitor | 注册Y按键事件的监听。 |
 | OH\_GamePad\_ButtonC\_RegisterButtonInputMonitor | 注册C按键事件的监听。 |
+| OH\_GamePad\_ButtonNonstandard\_RegisterButtonInputMonitor | 注册非标准按键事件的监听。 |
 | OH\_GamePad\_Dpad\_LeftButton\_RegisterButtonInputMonitor | 注册方向按键的向左按键事件的监听。 |
 | OH\_GamePad\_Dpad\_RightButton\_RegisterButtonInputMonitor | 注册方向按键的向右按键事件的监听。 |
 | OH\_GamePad\_Dpad\_UpButton\_RegisterButtonInputMonitor | 注册方向按键的向上按键事件的监听。 |
@@ -55,14 +56,14 @@ Game Controller Kit支持的手柄键位参考图如下：
 
 ### 链接动态库
 
-```c
+```text
 target_link_libraries(entry PUBLIC libohgame_controller.z.so)
 ```
 
 ### 导入模块
 
-```c
-#include <GameControllerKit/game_pad.h>
+```
+#include "GameControllerKit/game_pad.h"
 ```
 
 ### 注册和取消注册轴事件的监听
@@ -81,111 +82,37 @@ target_link_libraries(entry PUBLIC libohgame_controller.z.so)
 
 以LeftThumbstick轴事件为例。
 
-```c
-// 注册LeftThumbstick轴事件监听
-napi_value GamePad::LeftThumbstick_RegisterAxisInputMonitor(napi_env env, napi_callback_info info) {
-    napi_value result;
-    GameController_ErrorCode errorCode =
-        OH_GamePad_LeftThumbstick_RegisterAxisInputMonitor(GamePad::LeftThumbstick_OnAxisEvent);
-    if (errorCode != GameController_ErrorCode::GAME_CONTROLLER_SUCCESS) {
-        OH_LOG_ERROR(LOG_APP, "LeftThumbstick_RegisterAxisInputMonitor Failed, %{public}d", errorCode);
-        napi_create_double(env, errorCode, &result);
-        return result;
-    }
-    OH_LOG_INFO(LOG_APP, "LeftThumbstick_RegisterAxisInputMonitor Success");
-    napi_create_double(env, 0, &result);
-    return result;
-}
-
-// 取消注册LeftThumbstick轴事件监听
-napi_value GamePad::LeftThumbstick_UnregisterAxisInputMonitor(napi_env env, napi_callback_info info) {
-    napi_value result;
-    GameController_ErrorCode errorCode = OH_GamePad_LeftThumbstick_UnregisterAxisInputMonitor();
-    if (errorCode != GameController_ErrorCode::GAME_CONTROLLER_SUCCESS) {
-        OH_LOG_ERROR(LOG_APP, "LeftThumbstick_UnregisterAxisInputMonitor Failed, %{public}d", errorCode);
-        napi_create_double(env, errorCode, &result);
-        return result;
-    }
-    OH_LOG_INFO(LOG_APP, "LeftThumbstick_UnregisterAxisInputMonitor Success");
-    napi_create_double(env, 0, &result);
-    return result;
-}
-
-void GamePad::LeftThumbstick_OnAxisEvent(const struct GamePad_AxisEvent *axisEvent) {
-    std::string val = "X";
-    double xAxisValue;
-    OH_GamePad_AxisEvent_GetXAxisValue(axisEvent, &xAxisValue);
-    val.append(std::to_string(xAxisValue)).append("_Y");
-    double yAxisValue;
-    OH_GamePad_AxisEvent_GetYAxisValue(axisEvent, &yAxisValue);
-    val.append(std::to_string(yAxisValue));
-    OnAxisEvent(axisEvent, "LeftThumbstick_OnAxisEvent", val);
-}
 ```
-
-### 注册按键事件的监听和取消注册
-
-调用相应接口注册或取消注册按键事件回调，从回调函数中获取按键值。
-
-以下是按键名称与对应按键值：
-
-| 按键名称 | 按键值 |
-| --- | --- |
-| LeftShoulder | 2307 |
-| RightShoulder | 2308 |
-| LeftTrigger | 2309 |
-| RightTrigger | 2310 |
-| LeftThumbstick | 2314 |
-| RightThumbstick | 2315 |
-| ButtonHome | 2311 |
-| ButtonMenu | 2312 |
-| ButtonA | 2301 |
-| ButtonB | 2302 |
-| ButtonC | 2303 |
-| ButtonX | 2304 |
-| ButtonY | 2305 |
-| Dpad\_UpButton | 2012 |
-| Dpad\_DownButton | 2013 |
-| Dpad\_LeftButton | 2014 |
-| Dpad\_RightButton | 2015 |
-
-以LeftShoulder按键事件为例。
-
-```c
-// 注册LeftShoulder按键事件监听
-napi_value GamePad::LeftShoulder_RegisterButtonInputMonitor(napi_env env, napi_callback_info info) {
-    napi_value result;
+int32_t GamePad::LeftShoulderRegisterButtonInputMonitor()
+{
     GameController_ErrorCode errorCode =
-        OH_GamePad_LeftShoulder_RegisterButtonInputMonitor(GamePad::LeftShoulder_OnButtonEvent);
+        OH_GamePad_LeftShoulder_RegisterButtonInputMonitor(GamePad::LeftShoulderOnButtonEvent);
     if (errorCode != GameController_ErrorCode::GAME_CONTROLLER_SUCCESS) {
         OH_LOG_ERROR(LOG_APP, "LeftShoulder_RegisterButtonInputMonitor Failed, %{public}d", errorCode);
-        napi_create_double(env, errorCode, &result);
-        return result;
+        return static_cast<int32_t>(errorCode);
     }
     OH_LOG_INFO(LOG_APP, "LeftShoulder_RegisterButtonInputMonitor Success");
-    napi_create_double(env, 0, &result);
-    return result;
+    return 0;
 }
 
-// 取消注册LeftShoulder按键事件监听
-napi_value GamePad::LeftShoulder_UnregisterButtonInputMonitor(napi_env env, napi_callback_info info) {
-    napi_value result;
+int32_t GamePad::LeftShoulderUnregisterButtonInputMonitor()
+{
     GameController_ErrorCode errorCode = OH_GamePad_LeftShoulder_UnregisterButtonInputMonitor();
     if (errorCode != GameController_ErrorCode::GAME_CONTROLLER_SUCCESS) {
         OH_LOG_ERROR(LOG_APP, "LeftShoulder_UnregisterButtonInputMonitor Failed, %{public}d", errorCode);
-        napi_create_double(env, errorCode, &result);
-        return result;
+        return static_cast<int32_t>(errorCode);
     }
     OH_LOG_INFO(LOG_APP, "LeftShoulder_UnregisterButtonInputMonitor Success");
-    napi_create_double(env, 0, &result);
-    return result;
+    return 0;
 }
 
-void GamePad::LeftShoulder_OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent) {
+void GamePad::LeftShoulderOnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent)
+{
     OnButtonEvent(buttonEvent, "LeftShoulder_OnButtonEvent");
 }
 
-void GamePad::OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent, const std::string &buttonName) {
+void GamePad::OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent, const std::string &buttonName)
+{
     std::string temp;
     temp.append("OnButtonEvent:").append(buttonName);
     char *deviceId;
@@ -226,5 +153,74 @@ void GamePad::OnButtonEvent(const struct GamePad_ButtonEvent *buttonEvent, const
     temp.append(" ,pressedButtonCodes:").append(pressedButtonCodes);
     OH_LOG_INFO(LOG_APP, "%{public}s", temp.c_str());
     Log::GetInstance()->PrintLog(temp);
+}
+```
+
+### 注册按键事件的监听和取消注册
+
+调用相应接口注册或取消注册按键事件回调，从回调函数中获取按键值。
+
+以下是按键名称与对应按键值：
+
+| 按键名称 | 按键值 |
+| --- | --- |
+| LeftShoulder | 2307 |
+| RightShoulder | 2308 |
+| LeftTrigger | 2309 |
+| RightTrigger | 2310 |
+| LeftThumbstick | 2314 |
+| RightThumbstick | 2315 |
+| ButtonHome | 2311 |
+| ButtonMenu | 2312 |
+| ButtonA | 2301 |
+| ButtonB | 2302 |
+| ButtonC | 2303 |
+| ButtonX | 2304 |
+| ButtonY | 2305 |
+| Dpad\_UpButton | 2012 |
+| Dpad\_DownButton | 2013 |
+| Dpad\_LeftButton | 2014 |
+| Dpad\_RightButton | 2015 |
+
+**说明** 
+
+非标准按键的按键值请参见[KeyCode](../harmonyos-references/js-apis-keycode.md#keycode)。
+
+以LeftShoulder按键事件为例。
+
+```
+int32_t GamePad::LeftThumbstickRegisterAxisInputMonitor()
+{
+    GameController_ErrorCode errorCode =
+        OH_GamePad_LeftThumbstick_RegisterAxisInputMonitor(GamePad::LeftThumbstickOnAxisEvent);
+    if (errorCode != GameController_ErrorCode::GAME_CONTROLLER_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "LeftThumbstick_RegisterAxisInputMonitor Failed, %{public}d", errorCode);
+        return static_cast<int32_t>(errorCode);
+    }
+    OH_LOG_INFO(LOG_APP, "LeftThumbstick_RegisterAxisInputMonitor Success");
+    return 0;
+}
+
+int32_t GamePad::LeftThumbstickUnregisterAxisInputMonitor()
+{
+    GameController_ErrorCode errorCode = OH_GamePad_LeftThumbstick_UnregisterAxisInputMonitor();
+    if (errorCode != GameController_ErrorCode::GAME_CONTROLLER_SUCCESS) {
+        OH_LOG_ERROR(LOG_APP, "LeftThumbstick_UnregisterAxisInputMonitor Failed, %{public}d", errorCode);
+        return static_cast<int32_t>(errorCode);
+    }
+    OH_LOG_INFO(LOG_APP, "LeftThumbstick_UnregisterAxisInputMonitor Success");
+    return 0;
+}
+
+void GamePad::LeftThumbstickOnAxisEvent(const struct GamePad_AxisEvent *axisEvent)
+{
+    std::string val = "X";
+    double xAxisValue;
+    OH_GamePad_AxisEvent_GetXAxisValue(axisEvent, &xAxisValue);
+    val.append(std::to_string(xAxisValue)).append("_Y");
+    double yAxisValue;
+    OH_GamePad_AxisEvent_GetYAxisValue(axisEvent, &yAxisValue);
+    val.append(std::to_string(yAxisValue));
+    OnAxisEvent(axisEvent, "LeftThumbstick_OnAxisEvent", val);
 }
 ```

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-thre
 title: 使用Node-API接口进行线程安全开发
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API典型使用场景 > 使用Node-API接口进行线程安全开发
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:12+08:00
-doc_updated_at: 2026-10-14
+scraped_at: 2026-11-12T09:52:48+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:25f6c9d3313a8c18dd1e176a620f46b10eed5827434358911b2c776b339cd7fe
 ---
 

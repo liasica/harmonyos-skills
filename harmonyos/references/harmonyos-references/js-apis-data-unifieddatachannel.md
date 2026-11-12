@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-d
 title: "@ohos.data.unifiedDataChannel (标准化数据通路)"
 breadcrumb: API参考 > 应用框架 > ArkData（方舟数据管理） > ArkTS API > @ohos.data.unifiedDataChannel (标准化数据通路)
 category: harmonyos-references
-scraped_at: 2026-09-10T06:24:47+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:7c9f624fca70ad4826123b333e27607931acdfb7efbded342532832246252851
+scraped_at: 2026-11-12T09:53:42+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:734e8c6d7e5e61f326a8a102efaef98dd82321444e66198a06ff57b81c1c1cab
 ---
 
 本模块为统一数据管理框架（Unified Data Management Framework，UDMF）的组成部分，针对多对多跨应用数据共享的不同业务场景提供了标准化的数据通路，提供了标准化的数据接入与读取接口。同时对文本、图片等数据类型提供了标准化定义，方便不同应用间进行数据交互，减少数据类型适配的工作量。
@@ -473,6 +473,7 @@ let types = unifiedData.getTypes();
 | summary | Record<string, number> | 否 | 否 | 是一个字典类型对象，key表示数据类型（见[UniformDataType](js-apis-data-uniformtypedescriptor.md#uniformdatatype)），value为统一数据对象中该类型记录大小总和（单位：Byte）。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | totalSize | number | 否 | 否 | 统一数据对象内记录总大小（单位：Byte）。  **元服务API：** 从API version 11开始，该接口支持在元服务中使用。 |
 | overview22+ | Record<string, number> | 是 | 否 | 统一数据对象中所有类型与该类型数据记录大小的映射关系，其中数据大小单位为Byte。当获取到的统一数据对象为空时，此overview属性值为空。  **元服务API：** 从API version 22开始，该接口支持在元服务中使用。 |
+| filenameExtensions | Array<string> | 是 | 否 | 统一数据对象中文件记录的文件扩展名数组。扩展名是唯一的，包括前导句点，并使用小写ASCII字母。例如，文件myphoto.png的扩展名是'.png'。如果没有有效的文件扩展名，则返回空数组。  **起始版本：** 26.0.1  **元服务API：** 从API版本26.0.1开始，该接口支持在元服务中使用。 |
 
 **示例：**
 
@@ -495,6 +496,7 @@ function parseSummary(summary: unifiedDataChannel.Summary) {
   }
   let overviewRecord = summary.overview as Record<string, number>;
   let totalSize = summary.totalSize;
+  let filenameExtensions = summary.filenameExtensions;
 }
 ```
 

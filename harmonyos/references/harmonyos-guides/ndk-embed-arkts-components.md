@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ndk-embed-ark
 title: 嵌入ArkTS组件
 breadcrumb: 指南 > 应用框架 > ArkUI（方舟UI框架） > UI开发 (基于NDK构建UI) > NDK对接ArkTS > 嵌入ArkTS组件
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:19+08:00
-doc_updated_at: 2026-09-14
-content_hash: sha256:96a5ec2f5498514364e7ef4fa5786e82cc9170dadb6e5aafa85a6819e1648e82
+scraped_at: 2026-11-12T09:51:16+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a6775dcceeb2ec893b01d6a550dc7b01ce47c28bf258ed59259c30799532d242
 ---
 
 ArkUI在Native侧提供的能力作为ArkTS的子集，部分能力不会在Native侧提供，如声明式UI语法，自定义struct组件，UI高级组件。
@@ -22,7 +22,7 @@ ArkUI在Native侧提供的能力作为ArkTS的子集，部分能力不会在Nati
 
 **图1** Refresh组件挂载文本列表
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/65/v3/jOFm4owLRj2tS47-twbxbA/zh-cn_image_0000002809049887.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/b6/v3/0G0MnFMgSjmVZ8YtJ-8cHQ/zh-cn_image_0000002786519192.gif)
 
 1. 注册ArkTS组件创建函数给Native侧，以便Native侧调用，创建函数使用ComponentContent能力进行封装。
 
@@ -83,9 +83,9 @@ ArkUI在Native侧提供的能力作为ArkTS的子集，部分能力不会在Nati
    // 定义创建函数的返回值，用于ArkTS侧和Native侧的交互。
    interface MixedModuleResult {
      // 定义针对Refresh构建函数的封装对象，用于Native侧转化为ArkUI_NodeHandle对象。
-     content?: ComponentContent<RefreshAttribute>;
+     content: ComponentContent<RefreshAttribute>;
      // Refresh作为容器组件，需要使用ContentSlot机制挂载Native侧的子组件。
-     childSlot?: NodeContent;
+     childSlot: NodeContent;
    }
 
    // 提供创建ArkTS组件的入口函数。
@@ -94,19 +94,19 @@ ArkUI在Native侧提供的能力作为ArkTS的子集，部分能力不会在Nati
      // 通过AppStorage对象在Ability启动的时候保持UI上下文对象。
      let uiContent = AppStorage.get<UIContext>('context');
      let modifier = new RefreshModifier();
-     if (value.width) {
+     if (value.width !== undefined) {
        modifier.width(value.width);
      }
-     if (value.height) {
+     if (value.height !== undefined) {
        modifier.height(value.height);
      }
-     if (value.backgroundColor) {
+     if (value.backgroundColor !== undefined) {
        modifier.backgroundColor(value.backgroundColor);
      }
-     if (value.pullToRefresh) {
+     if (value.pullToRefresh !== undefined) {
        modifier.pullToRefresh(value.pullToRefresh);
      }
-     if (value.refreshOffset) {
+     if (value.refreshOffset !== undefined) {
        modifier.refreshOffset(value.refreshOffset);
      }
      // 创建NodeContent插槽对象用于Refresh子组件挂载。
@@ -125,23 +125,23 @@ ArkUI在Native侧提供的能力作为ArkTS的子集，部分能力不会在Nati
    }
 
    // 定义Refresh组件的更新函数，用于Native侧更新。
-   // 在更新场景下，需要将Refresh组件的封装对象及其子组件插槽对象返回，防止组件重新创建。
+   // 在更新场景下，需要将Refresh组件的封装对象及其子组件插槽对象传入更新函数并复用，防止组件重新创建。
    export function updateMixedRefresh(refresh: ComponentContent<RefreshAttribute>, childSlot: NodeContent,
      value: NativeRefreshAttribute): void {
      let modifier = new RefreshModifier();
-     if (value.width) {
+     if (value.width !== undefined) {
        modifier.width(value.width);
      }
-     if (value.height) {
+     if (value.height !== undefined) {
        modifier.height(value.height);
      }
-     if (value.backgroundColor) {
+     if (value.backgroundColor !== undefined) {
        modifier.backgroundColor(value.backgroundColor);
      }
-     if (value.pullToRefresh) {
+     if (value.pullToRefresh !== undefined) {
        modifier.pullToRefresh(value.pullToRefresh);
      }
-     if (value.refreshOffset) {
+     if (value.refreshOffset !== undefined) {
        modifier.refreshOffset(value.refreshOffset);
      }
      // 调用ComponentContent的update接口进行更新。
@@ -422,7 +422,7 @@ ArkUI在Native侧提供的能力作为ArkTS的子集，部分能力不会在Nati
 
    // 定义Native侧和ArkTS侧的交互数据结构。
    struct NativeRefreshAttribute {
-       std::optional<bool> isRefreshing;
+       std::optional<bool> isRefreshing = false;
        std::optional<float> width;
        std::optional<float> height;
        std::optional<uint32_t> backgroundColor;
@@ -441,9 +441,15 @@ ArkUI在Native侧提供的能力作为ArkTS的子集，部分能力不会在Nati
                          napi_ref componentContent, napi_ref nodeContent)
            : ArkUIMixedNode(handle, env, componentContent), contentHandle_(contentHandle), nodeContent_(nodeContent) {}
 
-       ArkUIMixedRefresh() : ArkUIMixedNode(nullptr, nullptr, nullptr) {}
+       ArkUIMixedRefresh()
+           : ArkUIMixedNode(nullptr, nullptr, nullptr), contentHandle_(nullptr), nodeContent_(nullptr) {}
 
-       ~ArkUIMixedRefresh() override { napi_delete_reference(env_, nodeContent_); } // 释放子节点占位组件插槽对象。
+       ~ArkUIMixedRefresh() override
+       {
+           if (env_ != nullptr && nodeContent_ != nullptr) {
+               napi_delete_reference(env_, nodeContent_);
+           }
+       } // 释放子节点占位组件插槽对象。
 
        void SetWidth(float width) { attribute_.width = width; }
 
@@ -489,7 +495,7 @@ ArkUI在Native侧提供的能力作为ArkTS的子集，部分能力不会在Nati
    private:
        // 使用napi接口创建ArkTS侧的数据结构。
        static napi_value CreateRefreshAttribute(const NativeRefreshAttribute &attribute, void *userData);
-       
+
        static void Attribute2Descriptor(const NativeRefreshAttribute &attribute, napi_property_descriptor *desc);
 
        ArkUI_NodeContentHandle contentHandle_;
@@ -544,12 +550,12 @@ ArkUI在Native侧提供的能力作为ArkTS的子集，部分能力不会在Nati
        }
        if (attribute.pullToRefresh) {
            napi_value pullToRefresh;
-           napi_create_int32(g_env, attribute.pullToRefresh.value(), &pullToRefresh);
+           napi_get_boolean(g_env, attribute.pullToRefresh.value(), &pullToRefresh);
            desc[REFRESH_OFFSET_INDEX3].value = pullToRefresh;
        }
        if (attribute.isRefreshing) {
            napi_value isRefreshing;
-           napi_create_int32(g_env, attribute.isRefreshing.value(), &isRefreshing);
+           napi_get_boolean(g_env, attribute.isRefreshing.value(), &isRefreshing);
            desc[REFRESH_OFFSET_INDEX4].value = isRefreshing;
        }
        if (attribute.refreshOffset) {
@@ -634,13 +640,21 @@ ArkUI在Native侧提供的能力作为ArkTS的子集，部分能力不会在Nati
        // 获取ArkTS的Refresh组件。
        napi_value componentContent = nullptr;
        napi_get_named_property(g_env, result, "content", &componentContent);
-       ArkUI_NodeHandle handle;
-       OH_ArkUI_GetNodeHandleFromNapiValue(g_env, componentContent, &handle);
+       ArkUI_NodeHandle handle = nullptr;
+       auto code = OH_ArkUI_GetNodeHandleFromNapiValue(g_env, componentContent, &handle);
+       if (code != ARKUI_ERROR_CODE_NO_ERROR) {
+           napi_close_handle_scope(g_env, scope);
+           return nullptr;
+       }
        // 获取ArkTS的Refresh组件的子组件插槽。
        napi_value nodeContent = nullptr;
        napi_get_named_property(g_env, result, "childSlot", &nodeContent);
-       ArkUI_NodeContentHandle contentHandle;
-       OH_ArkUI_GetNodeContentFromNapiValue(g_env, nodeContent, &contentHandle);
+       ArkUI_NodeContentHandle contentHandle = nullptr;
+       code = OH_ArkUI_GetNodeContentFromNapiValue(g_env, nodeContent, &contentHandle);
+       if (code != ARKUI_ERROR_CODE_NO_ERROR) {
+           napi_close_handle_scope(g_env, scope);
+           return nullptr;
+       }
        // 保存ArkTS的ComponentContent用于防止ArkTS侧对象释放以及后续的更新。
        napi_ref componentContentRef;
        napi_create_reference(g_env, componentContent, 1, &componentContentRef);
@@ -717,81 +731,121 @@ ArkUI在Native侧提供的能力作为ArkTS的子集，部分能力不会在Nati
    ```
 6. 定时器模块相关简单实现。
 
-   ```c
-   // UITimer.h
+   ```
+   // UITimer.cpp
    // 定时器模块。
 
-   #ifndef MYAPPLICATION_UITIMER_H
-   #define MYAPPLICATION_UITIMER_H
+   #include "UITimer.h"
 
    #include <hilog/log.h>
-   #include <js_native_api.h>
-   #include <js_native_api_types.h>
-   #include <node_api.h>
-   #include <node_api_types.h>
    #include <string>
    #include <thread>
    #include <uv.h>
 
    namespace NativeModule {
-
+   namespace {
    struct UIData {
-       void *userData = nullptr;
+       std::weak_ptr<ArkUIMixedRefresh> refresh;
        int32_t count = 0;
        int32_t totalCount = 0;
-       void (*func)(void *userData, int32_t count) = nullptr;
+       TimerCallback func = nullptr;
+       napi_threadsafe_function threadSafeFunction = nullptr;
    };
 
-   napi_threadsafe_function threadSafeFunction = nullptr;
-
-   void CreateNativeTimer(napi_env env, void *userData, int32_t totalCount, void (*func)(void *userData, int32_t count))
+   void DeleteTimerHandle(uv_handle_t *handle)
    {
-       napi_value name;
-       std::string str = "UICallback";
-       napi_create_string_utf8(env, str.c_str(), str.size(), &name);
-       // UI主线程回调函数。
-       napi_create_threadsafe_function(
-           env, nullptr, nullptr, name, 0, 1, nullptr, nullptr, nullptr,
-           [](napi_env env, napi_value value, void *context, void *data) {
-               auto userdata = reinterpret_cast<UIData *>(data);
-               userdata->func(userdata->userData, userdata->count);
-               delete userdata;
-           },
-           &threadSafeFunction);
-       // 启动定时器，模拟数据变化。
-       std::thread timerThread([data = userData, totalCount, func]() {
-           uv_loop_t *loop = uv_loop_new();
-           uv_timer_t *timer = new uv_timer_t();
-           uv_timer_init(loop, timer);
-           timer->data = new UIData{data, 0, totalCount, func};
-           uint64_t timeout = 4000;
-           uint64_t repeat = 4000;
-           uv_timer_start(
-               timer,
-               [](uv_timer_t *handle) {
-                   OH_LOG_INFO(LOG_APP, "on timeout");
-                   napi_acquire_threadsafe_function(threadSafeFunction);
-                   auto *customData = reinterpret_cast<UIData *>(handle->data);
-                   // 创建回调数据。
-                   auto *callbackData =
-                       new UIData{customData->userData, customData->count, customData->totalCount, customData->func};
-                   napi_call_threadsafe_function(threadSafeFunction, callbackData, napi_tsfn_blocking);
-                   customData->count++;
-                   if (customData->count > customData->totalCount) {
-                       uv_timer_stop(handle);
-                       delete handle;
-                       delete customData;
-                   }
-               },
-               timeout, repeat);
-           uv_run(loop, UV_RUN_DEFAULT);
+       delete reinterpret_cast<uv_timer_t *>(handle);
+   }
+
+   void CloseTimer(uv_timer_t *timer)
+   {
+       uv_timer_stop(timer);
+       uv_close(reinterpret_cast<uv_handle_t *>(timer), DeleteTimerHandle);
+   }
+
+   void CallRefreshOnUI(napi_env, napi_value, void *, void *data)
+   {
+       auto *callbackData = reinterpret_cast<UIData *>(data);
+       auto refresh = callbackData->refresh.lock();
+       if (refresh != nullptr && callbackData->func != nullptr) {
+           callbackData->func(refresh, callbackData->count);
+       }
+       delete callbackData;
+   }
+
+   napi_status CreateTimerThreadSafeFunction(napi_env env, UIData *customData)
+   {
+       napi_value name = nullptr;
+       const std::string callbackName = "UICallback";
+       auto status = napi_create_string_utf8(env, callbackName.c_str(), callbackName.size(), &name);
+       if (status != napi_ok) {
+           return status;
+       }
+       return napi_create_threadsafe_function(env, nullptr, nullptr, name, 0, 1, nullptr, nullptr, nullptr,
+                                              CallRefreshOnUI, &customData->threadSafeFunction);
+   }
+
+   void OnTimer(uv_timer_t *timer)
+   {
+       OH_LOG_INFO(LOG_APP, "on timeout");
+       auto *customData = reinterpret_cast<UIData *>(timer->data);
+       auto *callbackData = new UIData(*customData);
+       if (napi_call_threadsafe_function(customData->threadSafeFunction, callbackData,
+                                         napi_tsfn_blocking) != napi_ok) {
+           delete callbackData;
+       }
+       customData->count++;
+       if (customData->count <= customData->totalCount) {
+           return;
+       }
+       CloseTimer(timer);
+   }
+
+   void ReleaseTimerData(UIData *customData)
+   {
+       napi_release_threadsafe_function(customData->threadSafeFunction, napi_tsfn_release);
+       delete customData;
+   }
+
+   void RunTimer(UIData *customData)
+   {
+       uv_loop_t *loop = uv_loop_new();
+       if (loop == nullptr) {
+           ReleaseTimerData(customData);
+           return;
+       }
+       auto *timer = new uv_timer_t();
+       if (uv_timer_init(loop, timer) != 0) {
+           delete timer;
+           ReleaseTimerData(customData);
            uv_loop_delete(loop);
-       });
+           return;
+       }
+       timer->data = customData;
+       constexpr uint64_t timeout = 4000;
+       constexpr uint64_t repeat = 4000;
+       if (uv_timer_start(timer, OnTimer, timeout, repeat) != 0) {
+           CloseTimer(timer);
+       }
+       uv_run(loop, UV_RUN_DEFAULT);
+       ReleaseTimerData(customData);
+       uv_loop_delete(loop);
+   }
+   } // namespace
+
+   void CreateNativeTimer(napi_env env, const std::weak_ptr<ArkUIMixedRefresh> &refresh, int32_t totalCount,
+                          TimerCallback func)
+   {
+       auto *customData = new UIData {refresh, 0, totalCount, func, nullptr};
+       if (CreateTimerThreadSafeFunction(env, customData) != napi_ok) {
+           delete customData;
+           return;
+       }
+       // 启动定时器，模拟数据变化。
+       std::thread timerThread(RunTimer, customData);
        timerThread.detach();
    }
    } // namespace NativeModule
-
-   #endif // MYAPPLICATION_UITIMER_H
    ```
 7. 使用[接入ArkTS页面](ndk-access-the-arkts-page.md)章节的页面结构，将Refresh组件作为文本列表的父组件。
 
@@ -818,20 +872,26 @@ ArkUI在Native侧提供的能力作为ArkTS的子集，部分能力不会在Nati
        NativeRefreshAttribute nativeRefreshAttribute{
            .backgroundColor = 0xFF89CFF0, .refreshOffset = 64, .pullToRefresh = true};
        auto refresh = ArkUIMixedRefresh::Create(nativeRefreshAttribute);
+       if (refresh == nullptr) {
+           return nullptr;
+       }
        refresh->AddChild(list);
 
        // 设置混合模式下的事件。
        refresh->SetOnOffsetChange(
            [](float offset) { OH_LOG_INFO(LOG_APP, "on refresh offset changed: %{public}f", offset); });
-       refresh->SetRefreshCallback([refreshPtr = refresh.get(), env]() {
+       std::weak_ptr<ArkUIMixedRefresh> weakRefresh = refresh;
+       refresh->SetRefreshCallback([weakRefresh, env]() {
            OH_LOG_INFO(LOG_APP, "on refreshing");
-           // 启动定时器，模拟数据获取。
-           CreateNativeTimer(env, refreshPtr, 1, [](void *userData, int32_t count) {
-               // 数据获取后关闭刷新。
-               auto refresh = reinterpret_cast<ArkUIMixedRefresh *>(userData);
-               refresh->SetRefreshState(false);
-               refresh->FlushMixedModeCmd();
-           });
+           if (auto refresh = weakRefresh.lock()) {
+               // 启动定时器，模拟数据获取；定时器只保存弱引用，避免访问已销毁的Refresh对象。
+               CreateNativeTimer(env, weakRefresh, 1,
+                   [](const std::shared_ptr<ArkUIMixedRefresh> &refresh, int32_t count) {
+                       // 数据获取后关闭刷新。
+                       refresh->SetRefreshState(false);
+                       refresh->FlushMixedModeCmd();
+                   });
+           }
        });
 
        // 更新事件到ArkTS侧。
@@ -870,12 +930,18 @@ ArkUI在Native侧提供的能力作为ArkTS的子集，部分能力不会在Nati
        napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
 
        // 获取NodeContent
-       ArkUI_NodeContentHandle contentHandle;
-       OH_ArkUI_GetNodeContentFromNapiValue(env, args[0], &contentHandle);
+       ArkUI_NodeContentHandle contentHandle = nullptr;
+       auto code = OH_ArkUI_GetNodeContentFromNapiValue(env, args[0], &contentHandle);
+       if (code != ARKUI_ERROR_CODE_NO_ERROR) {
+           return nullptr;
+       }
        NativeEntry::GetInstance()->SetContentHandle(contentHandle);
 
        // 创建Refresh文本列表
        auto refresh = CreateMixedRefreshList(env);
+       if (refresh == nullptr) {
+           return nullptr;
+       }
 
        // 保持Native侧对象到管理类中，维护生命周期。
        NativeEntry::GetInstance()->SetRootNode(refresh);
@@ -894,9 +960,38 @@ ArkUI在Native侧提供的能力作为ArkTS的子集，部分能力不会在Nati
 8. 在Native侧提供Node-API的桥接方法，实现ArkTS侧的NativeNode模块接口。
 
    ```typescript
-   export const createNativeRoot: (content: Object) => void;
+   import { ComponentContent, NodeContent, RefreshModifier } from '@kit.ArkUI';
+
+   interface NativeRefreshAttribute {
+     isRefreshing: boolean;
+     width?: number;
+     height?: number;
+     backgroundColor?: number;
+     refreshOffset?: number;
+     pullToRefresh?: boolean;
+     onRefreshing?: () => void;
+     onOffsetChange?: (offset: number) => void;
+   }
+
+   interface RefreshAttribute {
+     isRefreshing: boolean;
+     modifier?: RefreshModifier;
+     slot?: NodeContent;
+     onRefreshing?: () => void;
+     onOffsetChange?: (offset: number) => void;
+   }
+
+   interface MixedModuleResult {
+     content: ComponentContent<RefreshAttribute>;
+     childSlot: NodeContent;
+   }
+
+   export const createNativeRoot: (content: NodeContent) => void;
    export const destroyNativeRoot: () => void;
 
-   export const registerCreateMixedRefreshNode: (content: Object) => void;
-   export const registerUpdateMixedRefreshNode: (content: Object) => void;
+   export const registerCreateMixedRefreshNode: (
+     callback: (value: NativeRefreshAttribute) => MixedModuleResult) => void;
+   export const registerUpdateMixedRefreshNode: (
+     callback: (refresh: ComponentContent<RefreshAttribute>, childSlot: NodeContent,
+       value: NativeRefreshAttribute) => void) => void;
    ```

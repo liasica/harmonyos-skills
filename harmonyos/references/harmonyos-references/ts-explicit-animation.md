@@ -3,12 +3,12 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/ts-explic
 title: 显式动画 (animateTo)
 breadcrumb: API参考 > 应用框架 > ArkUI（方舟UI框架） > ArkTS组件 > 动画 > 显式动画 (animateTo)
 category: harmonyos-references
-scraped_at: 2026-11-04T08:33:10+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:4190ae9d254c84c38ad226550293385ec6af12b6b3c2f5712b3432691e59294e
+scraped_at: 2026-11-12T09:54:23+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:35d9a5cda7fcee6bdb32ed3110d68e2a0967cb028e6fea0a6f70021114cbb43a
 ---
 
-提供全局animateTo显式动画接口来指定由于闭包代码导致的状态变化插入过渡动效。与属性动画相同，对于改变布局类属性（如宽高）的动画，内容通常会直接跳转到最终状态，例如文字或[Canvas](ts-components-canvas-canvas.md)中的内容。如果希望内容跟随宽高变化，可以使用[renderFit](ts-universal-attributes-renderfit.md#renderfit)属性进行配置。
+提供全局animateTo显式动画接口，为闭包内的状态变化添加过渡动效。与属性动画相同，对于改变布局类属性（如宽高）的动画，内容通常会直接跳转到最终状态，例如文字或[Canvas](ts-components-canvas-canvas.md)中的内容。如果希望内容跟随宽高变化，可以使用[renderFit](ts-universal-attributes-renderfit.md#renderfit)属性进行配置。
 
 **说明** 
 
@@ -214,7 +214,7 @@ struct AnimateToExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a5/v3/Xdo_tfj7Tv6WQE-NsPQfaA/zh-cn_image_0000002809012273.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cd/v3/YcMmp2_gRZKMoy0iqSt0CQ/zh-cn_image_0000002786361548.gif)
 
 ### 示例2（动画执行结束后组件消失）
 
@@ -269,4 +269,4 @@ struct AttrAnimationExample {
 }
 ```
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8e/v3/QrnmqG0cTQS8WfvOH-AhHw/zh-cn_image_0000002809052187.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/82/v3/BQ0e9dayQhKJSIFTZyXLCQ/zh-cn_image_0000002815560969.gif)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/apptask-timeo
 title: 任务超时检测
 breadcrumb: 指南 > 系统 > 调测调优 > Performance Analysis Kit（性能分析服务） > 故障检测 > 任务超时检测
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:57+08:00
-doc_updated_at: 2026-07-28
-content_hash: sha256:bc07ba68bdcb7afb2bf64cdd6eec2c0d5f841be71238dd4cabbf26677b429d3a
+scraped_at: 2026-11-12T09:51:53+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:95d15829d56e26cb9b44ea35215a39943665a319787ffd5c3cc59be2ab7ccc2e
 ---
 
 ## 简介
@@ -43,26 +43,26 @@ content_hash: sha256:bc07ba68bdcb7afb2bf64cdd6eec2c0d5f841be71238dd4cabbf26677b4
 
    （1）第1轮检测到主线程处理超时（主线程处理时长 > 150ms），开始执行堆栈采集，每隔150ms采集1次堆栈，共采集10次堆栈，第11轮收集堆栈并上报事件，结束检测。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a3/v3/xo8KpSYfRASfFLTsCKQkgg/zh-cn_image_0000002809050431.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6b/v3/xa1zRxJ8RqO_Jck69PvYIA/zh-cn_image_0000002786519734.png)
 
-   （2）第1轮未检测到主线程处理超时（主线程处理时长 > 150ms），第2轮检测到主线程处理超时（主线程处理时长 > 150ms），开始执行堆栈采集流程，每隔150ms采集1次，共采集10次堆栈，第12轮收集堆栈并上报事件，结束检测。
+   （2）第1轮未检测到主线程处理超时（主线程处理时长 < 150ms），第2轮检测到主线程处理超时（主线程处理时长 > 150ms），开始执行堆栈采集流程，每隔150ms采集1次，共采集10次堆栈，第12轮收集堆栈并上报事件，结束检测。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/e1/v3/2wtdADikSQim5zRPRNElBA/zh-cn_image_0000002779850866.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/32/v3/32VhT0MqQqCasDf5cHfJwQ/zh-cn_image_0000002786359806.png)
 
-   （3）前2轮均未检测到主线程处理超时（主线程处理时长 > 150ms），结束检测。
+   （3）前2轮均未检测到主线程处理超时（主线程处理时长 < 150ms），结束检测。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/c4/v3/v2lj_g-BSnOu2MtofhtW6g/zh-cn_image_0000002779690898.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/56/v3/-DNJp2OkSvyl8Qjc3d8heA/zh-cn_image_0000002815559227.png)
 2. trace采集流程
 
    当主线程处理超时（主线程处理时长 > 450ms），调用开启trace采集接口，启动周期性检测，每隔150ms检测主线程处理时长超过150ms（检测轮数 = 20）。分两种情况：
 
-   （1）20轮均未检测到主线程处理超时（主线程处理时长 > 150ms），无trace文件生成，结束检测。
+   （1）20轮均未检测到主线程处理超时（主线程处理时长 < 150ms），无trace文件生成，结束检测。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/rwjpuQd2QSCEajoMrhpMRA/zh-cn_image_0000002809010519.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/ba/v3/pwrguSnmRvmEBZrgiRFE7g/zh-cn_image_0000002815399311.png)
 
    （2）20轮检测至少有一轮检测发生主线程处理超时（主线程处理时长 > 150ms），生成trace文件并上报事件，结束检测。
 
-   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/df/v3/OfrYPL2YSUuIQbbczAt0dw/zh-cn_image_0000002809050433.png)
+   ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/84/v3/VTl3C4DiS1aj3poKMi-07A/zh-cn_image_0000002786519736.png)
 
 ### 日志获取
 
@@ -136,7 +136,7 @@ HiAppEvent给开发者提供了故障订阅接口，详见[HiAppEvent介绍](hia
    ```
 3. 主线程超时检测采集trace规格
 
-   trace文件大小约为1-5M左右。trace文件可以通过[HiSmartPerf](https://gitcode.com/openharmony/developtools_smartperf_host)工具进行可视化分析。工具下载链接：[developtools\_smartperf\_host官方发行版](https://gitcode.com/openharmony/developtools_smartperf_host/releases)。
+   trace文件大小约为1-5MB左右。trace文件可以通过[HiSmartPerf](https://gitcode.com/openharmony/developtools_smartperf_host)工具进行可视化分析。工具下载链接：[developtools\_smartperf\_host官方发行版](https://gitcode.com/openharmony/developtools_smartperf_host/releases)。
 
    trace文件说明参考：[web端加载trace说明](https://gitcode.com/openharmony/developtools_smartperf_host/blob/master/smartperf_host/ide/src/doc/md/quickstart_systemtrace.md)。
 
@@ -179,7 +179,7 @@ HiAppEvent给开发者提供了故障订阅接口，详见[HiAppEvent介绍](hia
 
 检测原理如下图：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/75/v3/d7WghL1bTciKiHOirj1zOA/zh-cn_image_0000002779850868.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/7d/v3/Z2VAV0PVR-OfHjCuux47CQ/zh-cn_image_0000002786359808.png)
 
 ### 日志获取
 

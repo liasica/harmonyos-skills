@@ -1,11 +1,11 @@
 ---
 url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/ide-deveco-code-plugin-options
 title: 斜杠命令
-breadcrumb: 指南 > DevEco Code > DevEco Studio Plugin > 斜杠命令
+breadcrumb: 指南 > DevEco Code > DevEco Code Plugin > 斜杠命令
 category: harmonyos-guides
-scraped_at: 2026-11-01T07:13:14+08:00
-doc_updated_at: 2026-10-31
-content_hash: sha256:2868b7683f497a8117760774185ef8228204ba9f0b99a46b57c8e99c1dbf88eb
+scraped_at: 2026-11-12T09:53:25+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:4f67c88b3b7b93872a9cb6e87b34ad0072854d5c98f737bee6eb79dc9d24183f
 ---
 
 ## new
@@ -30,7 +30,7 @@ content_hash: sha256:2868b7683f497a8117760774185ef8228204ba9f0b99a46b57c8e99c1db
 
 ## review
 
-代码审查命令，以子任务方式在独立上下文中运行，审查结果以结构化反馈返回。支持三种审查范围，默认审查当前所有未提交的变更（含暂存区与未跟踪文件）。审查聚焦于Bug识别（逻辑错误、边界条件、安全问题）、代码结构是否符合现有模式、以及明显的性能问题，不会对风格偏好做过度纠偏。
+默认对当前未提交的变更代码（含暂存区与未跟踪文件）进行审查，支持三种审查范围：审查聚焦于 Bug 识别（逻辑错误、边界条件、安全问题）、代码结构是否符合现有模式、明显的性能问题。
 
 **命令格式：**
 
@@ -62,7 +62,7 @@ AGENTS.md初始化。该命令会分析项目结构（构建配置、CI 工作�
 
 ## debug
 
-ArkTS运行时调试命令。以粘滞模式（sticky mode）运行调试专用智能体，在当前会话中持续保持调试上下文，直到用户显式退出。调试智能体会收集运行时证据（日志、堆栈等）来定位ArkTS问题根因。如果用户描述过于笼统或缺少关键症状信息，智能体会先提出问题以收集具体的故障现象，再开始诊断。支持clea子命令退出调试模式，status子命令查看当前调试状态。
+ArkTS运行时调试命令。以粘滞模式（sticky mode）运行调试专用智能体，在当前会话中持续保持调试上下文，直到用户显式退出。调试智能体会收集运行时证据（日志、堆栈等）来定位ArkTS问题根因。如果用户描述过于笼统或缺少关键症状信息，智能体会先提出问题以收集具体的故障现象，再开始诊断。支持 clear子命令退出调试模式，status子命令查看当前调试状态。
 
 **命令格式：**
 

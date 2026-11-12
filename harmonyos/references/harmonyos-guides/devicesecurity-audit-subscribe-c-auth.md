@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: 订阅阻断类事件
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > 安全审计 > 多客户端订阅场景（C/C++） > 订阅阻断类事件
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:40+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:fc9b45105763ad0d342721f482426a346e51f154f428af07051ebb0dfdf82ccc
+scraped_at: 2026-11-12T09:51:37+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:a025c38d3edd2a3a84b8cd9849fdee8133394866d08fe5406135de71a2b42d2b
 ---
 
 ## 场景介绍
@@ -31,7 +31,7 @@ content_hash: sha256:fc9b45105763ad0d342721f482426a346e51f154f428af07051ebb0dfdf
 
 ## 业务流程
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/3WBxIfq3RgCfbUQ2skiUHg/zh-cn_image_0000002779850734.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/cc/v3/hI8Ztqo0RRywij5MWg-YyQ/zh-cn_image_0000002786359680.png)
 
 **流程说明：**
 
@@ -106,7 +106,7 @@ content_hash: sha256:fc9b45105763ad0d342721f482426a346e51f154f428af07051ebb0dfdf
            printf("event content = %s \n", events[i].content);
            printf("event id = %ld \n", events[i].eventId);
            const SecurityAudit_Event *singleEvent = &events[i];
-           HMS_SecurityAudit_Auth(client, singleEvent, SECURITY_AUDIT_AUTH_RESULT_DENY);
+           HMS_SecurityAudit_Auth(client, singleEvent, SECURITY_AUDIT_AUTH_RESULT_ALLOW);
        }
    }
    ```

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/crypto-conver
 title: 使用ECC压缩/非压缩点格式转换(C/C++)
 breadcrumb: 指南 > 系统 > 安全 > Crypto Architecture Kit（加解密算法框架服务） > 密钥生成与转换 > 使用ECC压缩/非压缩点格式转换(C/C++)
 category: harmonyos-guides
-scraped_at: 2026-10-11T07:21:25+08:00
-doc_updated_at: 2026-10-10
+scraped_at: 2026-11-12T09:51:32+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:2a7392022aebb8f5e43c8814a5dc884fe1ddb9ad56d3c732e3fa72bdcb7fb2c1
 ---
 

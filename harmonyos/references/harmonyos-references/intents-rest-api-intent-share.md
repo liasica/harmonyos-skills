@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/intents-r
 title: 意图共享
 breadcrumb: API参考 > AI > Intents Kit（意图框架服务） > REST API > 意图共享
 category: harmonyos-references
-scraped_at: 2026-09-02T14:53:34+08:00
-doc_updated_at: 2026-08-29
+scraped_at: 2026-11-12T09:57:45+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:26c7e7a5af7b5cb01a2f1912c6d08a07ed0a32c2e0d797349bbe54254a09090b
 ---
 

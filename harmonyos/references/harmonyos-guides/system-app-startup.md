@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/system-app-st
 title: 拉起系统应用
 breadcrumb: 指南 > 应用框架 > Ability Kit（程序框架服务） > 应用间跳转 > 拉起系统应用
 category: harmonyos-guides
-scraped_at: 2026-09-10T06:21:52+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:2a719c1a5db0de7bcb1145ab8d424c9ba3241b8fc0ea869b8c18d0f0d5ee1f00
+scraped_at: 2026-11-12T09:50:59+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f532063def16289d3393a7b24e562308e71bca2f68535ca3155f652e57f6d19f
 ---
 
 本章节介绍拉起系统应用的方式，以及支持跳转系统应用的能力清单。
@@ -35,7 +35,7 @@ content_hash: sha256:2a719c1a5db0de7bcb1145ab8d424c9ba3241b8fc0ea869b8c18d0f0d5e
 
 当前支持直接拉起设置应用中如下功能界面，未列出的暂不支持。
 
-* **权限设置：** 当应用通过[requestPermissionsFromUser()](../harmonyos-references/js-apis-abilityaccessctrl.md#requestpermissionsfromuser9)接口拉起权限申请弹框时，如果用户拒绝授权，将无法使用该接口再次拉起弹框，需要调用[requestPermissionOnSetting](../harmonyos-references/js-apis-abilityaccessctrl.md#requestpermissiononsetting12)接口拉起权限设置弹窗。
+* **权限设置：** 当应用通过[requestPermissionsFromUser()](../harmonyos-references/js-apis-abilityaccessctrl.md#requestpermissionsfromuser9)接口拉起权限申请弹框时，如果用户拒绝授权，将无法使用该接口再次拉起弹框，需要调用[requestPermissionOnSetting()](../harmonyos-references/js-apis-abilityaccessctrl.md#requestpermissiononsetting12)接口拉起权限设置弹窗。
 
   [二次向用户申请授权](request-user-authorization-second.md)介绍了如何拉起权限设置弹窗。该文档中的示例代码同样适用于[应用权限组列表](app-permission-group-list.md)中的所有权限，只需将对应的权限名进行替换即可。以下为开发者经常用到的一些场景。
 
@@ -62,7 +62,7 @@ content_hash: sha256:2a719c1a5db0de7bcb1145ab8d424c9ba3241b8fc0ea869b8c18d0f0d5e
 
 ### 日历
 
-[Calendar Kit](calendarmanager-overview.md)提供[addEvent](../harmonyos-references/js-apis-calendarmanager.md#addevent)接口，用于创建日程。
+[Calendar Kit](calendarmanager-overview.md)提供[addEvent()](../harmonyos-references/js-apis-calendarmanager.md#addevent)接口，用于创建日程。
 
 ### 联系人
 

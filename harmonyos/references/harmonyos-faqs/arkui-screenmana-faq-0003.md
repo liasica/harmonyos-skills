@@ -3,16 +3,16 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/arkui-screenman
 title: 如何监听屏幕旋转事件
 breadcrumb: FAQ > 应用框架开发 > UI框架 > 屏幕管理 > 常见问题 > 如何监听屏幕旋转事件
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:47:27+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:9c12986613d71009c75be3fdcab273babaa9fc12af7d4ecbf75fe11de3cfd44e
+scraped_at: 2026-11-12T09:58:53+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:f750f60ee99d9610a4fcd38ab753d595bc8a9ccd7e1cd8018784fedba8742486
 ---
 
 **Q：在应用程序开发中，应当如何设置以检测并响应设备屏幕旋转的事件？**
 
 **A**：可以通过以下方案实现：
 
-* 方案一：监听屏幕旋转的能力可以通过[display.on('change')](../harmonyos-references/js-apis-display.md#displayonaddremovechange)监听屏幕状态改变实现，并通过[display.getDefaultDisplaySync()](../harmonyos-references/js-apis-display.md#displaygetdefaultdisplaysync9)获取屏幕实例对象，其中rotation属性用于显示设备的屏幕顺时针旋转角度。实现示例如下：
+* 方案一：监听屏幕旋转的能力可以通过[display.on('change')](../doccenter-references/api/js-apis-display.md#displayonadd--remove--change)监听屏幕状态改变实现，并通过[display.getDefaultDisplaySync()](../harmonyos-references/js-apis-display.md#displaygetdefaultdisplaysync9)获取屏幕实例对象，其中rotation属性用于显示设备的屏幕顺时针旋转角度。实现示例如下：
 
   ```ts
   import window from '@ohos.window';

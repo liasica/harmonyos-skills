@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-references/js-apis-a
 title: "@ohos.app.ability.FenceExtensionAbility (FenceExtensionAbility)"
 breadcrumb: API参考 > 应用服务 > Location Kit（位置服务） > ArkTS API > @ohos.app.ability.FenceExtensionAbility (FenceExtensionAbility)
 category: harmonyos-references
-scraped_at: 2026-09-02T15:02:57+08:00
-doc_updated_at: 2026-08-29
-content_hash: sha256:15f9d5e39c2e2aa49ba337004c701c610fcdc20f3d27c5be60bf6b1c8d680736
+scraped_at: 2026-11-12T09:57:23+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:7a5cbe1a2f0a84f5baab4c78603d2093207345f25ee1a4c1b2d40a1414c81afc
 ---
 
 FenceExtensionAbility为开发者提供的地理围栏相关的能力，继承自ExtensionAbility。
@@ -145,7 +145,6 @@ FenceExtensionAbility不支持以下模块的引用。
 | Background Tasks Kit | [@ohos.resourceschedule.backgroundTaskManager (后台任务管理)](js-apis-resourceschedule-backgroundtaskmanager.md) |
 | Background Tasks Kit | [@ohos.reminderAgent (后台代理提醒)](js-apis-reminderagent.md) |
 | Background Tasks Kit | [@ohos.reminderAgentManager (后台代理提醒)](js-apis-reminderagentmanager.md) |
-| Background Tasks Kit | [@ohos.resourceschedule.backgroundTaskManager (后台任务管理)](js-apis-resourceschedule-backgroundtaskmanager.md) |
 | Basic Services Kit | [@ohos.account.appAccount (应用账号管理)](js-apis-appaccount.md) |
 | Basic Services Kit | [@ohos.account.distributedAccount (分布式账号管理)](js-apis-distributed-account.md) |
 | Basic Services Kit | [@ohos.account.osAccount (系统账号管理)](js-apis-osaccount.md) |

@@ -3,8 +3,8 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/use-napi-abou
 title: 使用Node-API接口操作bigint类型值
 breadcrumb: 指南 > NDK开发 > 代码开发 > 使用Node-API实现ArkTS/JS与C/C++语言交互 > Node-API使用指导 > 使用Node-API接口操作bigint类型值
 category: harmonyos-guides
-scraped_at: 2026-10-15T07:06:10+08:00
-doc_updated_at: 2026-10-14
+scraped_at: 2026-11-12T09:52:47+08:00
+doc_updated_at: 2026-11-11
 content_hash: sha256:0fab0cbcf4f0b43bf4f2178c2c911e01a1a0d5ae619c9797db68fc622d65c983
 ---
 

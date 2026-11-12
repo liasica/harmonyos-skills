@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/devicesecurit
 title: Device Security Kit简介
 breadcrumb: 指南 > 系统 > 安全 > Device Security Kit（设备安全服务） > Device Security Kit简介
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:39+08:00
-doc_updated_at: 2026-10-10
-content_hash: sha256:ceaa81ec66d897422bcb6e3b9c7b396dbc92c438b90540811ccf83418d77a89b
+scraped_at: 2026-11-12T09:51:36+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:dbc692e4338973fcbba52c99386f87775f85e84bedf7263563c29e693a2f6f05
 ---
 
 Device Security Kit（设备安全服务）提供应用设备状态检测（DeviceVerify）、安全检测（SafetyDetect）、可信应用服务（TrustedAppService）、数字盾服务（TrustedAuthentication）、业务风险检测（BusinessRiskIntelligentDetection）、星盾机密风控引擎（RiskControlEngine）、安全审计（SecurityAudit）、反诈选择器（AntifraudPicker）、防窥保护（DlpAntiPeep）、病毒防护服务管理（VirusProtectionServiceManager）和超级隐私模式（SuperPrivacyMode），可以保护应用程序免受安全威胁和保证应用的数据安全。
@@ -20,6 +20,7 @@ Device Security Kit（设备安全服务）提供应用设备状态检测（Devi
 * 星盾机密风控引擎（RiskControlEngine）场景：提供基于端侧机密计算空间的风控解决方案。
 * 安全审计（SecurityAudit）场景：为应用提供获取当前设备上的审计数据（窗口截屏、移动存储插拔、剪贴板复制粘贴等）能力，支撑审计相关业务。
 * 反诈选择器（AntifraudPicker）场景：为反诈应用提供获取诈骗消息、诈骗通话记录和诈骗应用的能力，支撑反诈相关业务。
+* 侧载安全管控（Sideloading）场景：支持应用查询设备是否可以侧载外部二进制。
 * 防窥保护（DlpAntiPeep）场景：支持应用根据窥视状态保护用户隐私，如非机主状态下不进行个性化推荐，隐藏浏览记录、支付记录、收藏记录等敏感信息。
 * 病毒防护服务管理（VirusProtectionServiceManager）场景：支持应用向设备提交自身软件信息、查询设备中防病毒软件信息列表、启停设备自带的安全防护服务。
 * 超级隐私模式（SuperPrivacyMode）场景：支持应用查询和监听超级隐私模式状态。
@@ -38,7 +39,7 @@ Device Security Kit（设备安全服务）提供应用设备状态检测（Devi
 
 业务关联如图所示：
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a7/v3/Kon_CoK3S7-0Zpl78kYZoQ/zh-cn_image_0000002779850712.jpg)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/42/v3/JkgWmueaRSKDLn2nc8ZVcg/zh-cn_image_0000002786359658.jpg)
 
 ## 约束与限制
 
@@ -58,6 +59,7 @@ Device Security Kit（设备安全服务）提供应用设备状态检测（Devi
 | 业务风险检测 | 只支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。 |
 | 星盾机密风控引擎 | 只支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。 |
 | 反诈选择器 | 只支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。 |
+| 侧载安全管控 | 只支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。 |
 | 防窥保护 | 只支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。 |
 | 病毒防护服务管理 | 只支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。 |
 | 超级隐私模式 | 只支持中国境内（香港特别行政区、澳门特别行政区、中国台湾除外）。 |
@@ -76,6 +78,7 @@ Device Security Kit（设备安全服务）提供应用设备状态检测（Devi
 | 业务风险检测 | Phone、Tablet。 |
 | 星盾机密风控引擎 | Phone、Tablet、PC/2in1。 |
 | 反诈选择器 | Phone、Tablet。 |
+| 侧载安全管控 | Phone、Tablet、PC/2in1、Wearable、TV。 |
 | 防窥保护 | Phone。 |
 | 病毒防护服务管理 | PC/2in1。 |
 | 超级隐私模式 | Phone、Tablet、PC/2in1。 |

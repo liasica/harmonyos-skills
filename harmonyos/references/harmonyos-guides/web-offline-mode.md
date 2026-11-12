@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-guides/web-offline-m
 title: 使用离线Web组件
 breadcrumb: 指南 > 应用框架 > ArkWeb（方舟Web） > 使用离线Web组件
 category: harmonyos-guides
-scraped_at: 2026-11-04T08:29:27+08:00
-doc_updated_at: 2026-09-09
-content_hash: sha256:fa38cb6def7ff626577c25b3d8037b1d0683e7a2de41c4bb7c8b5279ac449855
+scraped_at: 2026-11-12T09:51:24+08:00
+doc_updated_at: 2026-11-11
+content_hash: sha256:293e6b2855432acba15b6940f352f29f03a92cb1b567fd5acb5e0bbc00f9a55d
 ---
 
 Web组件能够实现在不同窗口的组件树上进行挂载或移除操作，这一能力使得开发者可以预先创建Web组件，从而实现性能优化。例如，Tab页为Web组件时，页面预先渲染，便于即时显示。
@@ -21,7 +21,7 @@ Web组件能够实现在不同窗口的组件树上进行挂载或移除操作�
 
 如下图所示，在需要离屏创建Web组件时，定义一个自定义组件以封装Web组件，此Web组件在离线状态下被创建，封装于无状态的[NodeContainer](../harmonyos-references/ts-basic-components-nodecontainer.md)节点中，并与相应的[NodeController](../harmonyos-references/js-apis-arkui-nodecontroller.md)组件绑定。Web组件在后台预渲染完毕后，当需要展示时，通过[NodeController](../harmonyos-references/js-apis-arkui-nodecontroller.md)将其挂载到ViewTree的[NodeContainer](../harmonyos-references/ts-basic-components-nodecontainer.md)中，即与对应的[NodeContainer](../harmonyos-references/ts-basic-components-nodecontainer.md)组件绑定，即可挂载上树并显示。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/41/v3/UVDZgqP9SSWU98iLKLYjLQ/zh-cn_image_0000002809010181.png)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/bf/v3/l1x-YBl0RHiZ7ZUH0-aR4A/zh-cn_image_0000002815398975.png)
 
 ## 创建离线Web组件
 
@@ -640,14 +640,14 @@ onBackground(): void {
   + 第一个离线Web组件执行了预渲染，可以直接显示页面内容，比第二个离线Web组件更快。
   + 第二个离线Web组件是复用空闲的离线Web组件，其在UI页面的aboutToAppear的生命周期中动态加载这个url。
 
-  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/10/v3/guhrObj4RieIRXapmvjFQw/zh-cn_image_0000002809050095.gif)
+  ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/8a/v3/KHCzZvl4SpCRBkBgSavaXw/zh-cn_image_0000002786519400.gif)
 * Page2页面显示单个Web页面，使用复用空闲离线Web组件的方式加载指定url。
 
   + Page2页面可以通过传入参数加载指定url，并允许用户在加载后跳转到其他url。
   + Page2会在NavDestination的onWillHide回调中，让当前Web组件加载空白页并取消与当前UI的关联，为下次复用做准备。
   + Page2页面支持嵌套，即使有多层UI页面嵌套，由于采用复用离线Web组件的方式，Web组件数量不会增加。
 
-![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/46/v3/xKaqepPhQCWkMQnJ9U6SpQ/zh-cn_image_0000002779850530.gif)
+![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/a8/v3/Z0n1lB99QIiSJHzmgfGgPw/zh-cn_image_0000002786359472.gif)
 
 **完整示例**
 
@@ -655,9 +655,9 @@ onBackground(): void {
 
 ## 常见白屏问题排查
 
-1.排查应用上网权限配置。
+1. 排查应用上网权限配置。
 
-检查是否已在module.json5中添加网络权限，添加方法请参考[在配置文件中声明权限](declare-permissions.md#在配置文件中声明权限)。
+   检查是否已在module.json5中添加网络权限，添加方法请参考[在配置文件中声明权限](declare-permissions.md#在配置文件中声明权限)。
 
 ```json5
 "requestPermissions":[
@@ -667,22 +667,21 @@ onBackground(): void {
 ],
 ```
 
-2.排查[NodeContainer](../harmonyos-references/ts-basic-components-nodecontainer.md)与节点绑定的逻辑。
+1. 排查[NodeContainer](../harmonyos-references/ts-basic-components-nodecontainer.md)与节点绑定的逻辑。
 
-检查节点是否已上组件树，建议在已有的Web组件上方加上Text（请参考以下例子），如果白屏的时候没有出现Text，建议检查[NodeContainer](../harmonyos-references/ts-basic-components-nodecontainer.md)与节点绑定的情况。
+   检查节点是否已上组件树，建议在已有的Web组件上方加上Text（请参考以下例子），如果白屏的时候没有出现Text，建议检查[NodeContainer](../harmonyos-references/ts-basic-components-nodecontainer.md)与节点绑定的情况。
 
-```ts
-@Builder
-function WebBuilder(data:Data) {
-  Column() {
-    Text('test')
-    Web({ src: data.url, controller: data.controller })
-      .width("100%")
-      .height("100%")
-  }
-}
-```
+   ```ts
+   @Builder
+   function WebBuilder(data:Data) {
+     Column() {
+       Text('test')
+       Web({ src: data.url, controller: data.controller })
+         .width("100%")
+         .height("100%")
+     }
+   }
+   ```
+2. 排查Web可见性状态。
 
-3.排查Web可见性状态。
-
-如果整个节点已上树，可通过日志[WebPattern::OnVisibleAreaChange](../harmonyos-references/ts-universal-component-visible-area-change-event.md#onvisibleareachange)查看Web组件可见性状态是否正确，不可见的Web组件可能会造成白屏。
+   如果整个节点已上树，可通过日志[WebPattern::OnVisibleAreaChange](../harmonyos-references/ts-universal-component-visible-area-change-event.md#onvisibleareachange)查看Web组件可见性状态是否正确，不可见的Web组件可能会造成白屏。
