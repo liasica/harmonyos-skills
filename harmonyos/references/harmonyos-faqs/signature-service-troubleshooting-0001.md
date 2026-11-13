@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/signature-servi
 title: 自动签名报错问题定位
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 故障排查 > 自动签名报错问题定位
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:0143f927390f5c6984f9284e912bdf985e8f9aac551d349b97bfee10706ba0b3
+scraped_at: 2026-11-13T09:06:50+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:5b48871c64983079f688b9e1ef1b0ef14ecbf6aa2b88c1b5f3b7607f5b0412bb
 ---
 
 ## 签名配置名称超长或含特殊字符
@@ -318,7 +318,7 @@ signingConfigs.name与products.signingConfig匹配，同时检查文件路径是
 
 ### 修改建议
 
-配置工程级oh-package.json5的[overrides](../harmonyos-guides/ide-oh-package-json5.md#zh-cn_topic_0000001792256137_overrides)字段，将版本设置为已有版本。
+配置工程级oh-package.json5的[overrides](../doccenter-deveco-studio/ide-oh-package-json5.md#section13977152601510)字段，将版本设置为已有版本。
 
 ## 编译产物未正确配置signingConfig
 
@@ -370,7 +370,7 @@ signingConfigs.name与products.signingConfig匹配，同时检查文件路径是
 
 清除build-profile.json5文件中的signingConfigs字段，点击File > Project Structure > Project > Signing Configs重新签名。
 
-若自动签名仍报错，可使用[手动签名](../harmonyos-guides/ide-signing.md#section297715173233)方式重新配置签名。
+若自动签名仍报错，可使用[手动签名](../doccenter-deveco-studio/ide-signing-manual.md)方式重新配置签名。
 
 ## 命令行批量签名HAP包数量受限
 

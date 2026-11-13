@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-4
 title: 使用DevEco Studio执行单元测试脚本常见问题和解决方案
 breadcrumb: FAQ > DevEco Studio > 应用测试 > 使用DevEco Studio执行单元测试脚本常见问题和解决方案
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-08-05
-content_hash: sha256:e7783bc256b39a22e1723fca52fcdc7f3c9bcb917fb58bc9d69113e6cd344542
+scraped_at: 2026-11-13T09:06:53+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:504c86e3bf967fe25ebaf9bbb0d182ca004394d310a08b9eece20f1c4d398b24
 ---
 
 ## 问题现象
@@ -54,7 +54,7 @@ content_hash: sha256:e7783bc256b39a22e1723fca52fcdc7f3c9bcb917fb58bc9d69113e6cd3
   即用户引用了不存在的模块，建议用户排查工程中引用的模块，把报错模块的编译产物删除，再重新编译。
 * **问题二解决方案：**
 
-  在测试脚本中，直接使用getContext()会报错"Error in xxx, Parameter error. The context is invalid."。可以通过[AbilityDelegator.getAppContext](../harmonyos-references/js-apis-inner-application-abilitydelegator.md#getappcontext9)获取应用的Context。
+  在测试脚本中，直接使用getContext()会报错"Error in xxx, Parameter error. The context is invalid."。可以通过[AbilityDelegator.getAppContext](../doccenter-references/api/js-apis-inner-application-abilitydelegator.md#getappcontext)获取应用的Context。
 * **问题三解决方案：**
 
   可以基于问题二的解决方案，获取到应用的Context，通过Context获取[resourceManager](../harmonyos-references/js-apis-resource-manager.md)，参考[getStringValue](../harmonyos-references/js-apis-resource-manager.md#getstringvalue9)的用法即可。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/appgallery-kit-
 title: HarmonyOS 开发者中心软件包上传与打包签名常见问题
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 常见问题 > HarmonyOS 开发者中心软件包上传与打包签名常见问题
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-22
-content_hash: sha256:ea75bdd486cf2cc04e1626f7c10322d1b2758e1969c53465a7237b606a469777
+scraped_at: 2026-11-13T09:06:38+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:7d49a1d2881d4ddd9b078b05cb2f61e4196f36da6a60d9e66644433c62a1d70a
 ---
 
 **Q：应用开发完成后，打好的app包上传应用市场，经常会遇到软件包报错的情况，阻塞上架流程。报错有错误码和无错误码两种场景：**
@@ -58,7 +58,7 @@ content_hash: sha256:ea75bdd486cf2cc04e1626f7c10322d1b2758e1969c53465a7237b606a4
     - 前面两步都没问题，也可以提供AppId，提[在线工单](https://developer.huawei.com/consumer/cn/support/feedback/#/add/89?level2=101594901521145579)求助相关华为开发工程师。
   + [错误码7014](../app/agc-help-package-errorcode-0000002312513009.md#section9225124218158)，表示软件包内权限与Profile权限不一致。需要更改软件包内权限，或者重新生成Profile，使得hap包内权限与Profile权限一致。按照下面步骤排查原因。
     - 重新配置软件包内权限，删除Profile内没有的权限。
-    - 若软件包内的权限是必须要用到的，则建议重新[申请Profile](../app/agc-help-release-profile-0000002248341090.md)，增加对应的权限。若Profile要申请特殊权限，可以参见[ACL权限](../app/agc-help-apply-acl-0000002394212138.md#section156171230179)。ACL权限为受限权限，仅部分场景允许申请使用。应用上架审核会根据您的使用场景对该权限进行审核，为了避免您的应用上架申请被驳回，请优先使用Picker/控件等系统机制替代相关权限使用。注意：单次可申请的ACL权限数量最多为10个。
+    - 若软件包内的权限是必须要用到的，则建议重新[申请Profile](../app/agc-help-release-profile-0000002248341090.md)，增加对应的权限。若Profile要申请特殊权限，可以参见[ACL权限](../doccenter-getting-started/agc-help-apply-acl-0000002394212138.md)。ACL权限为受限权限，仅部分场景允许申请使用。应用上架审核会根据您的使用场景对该权限进行审核，为了避免您的应用上架申请被驳回，请优先使用Picker/控件等系统机制替代相关权限使用。注意：单次可申请的ACL权限数量最多为10个。
   + [错误码999](../app/agc-help-package-errorcode-0000002312513009.md#section1070911435820)，表示上传的软件包使用的Profile类型错误。可能原因是软件包使用的是调试证书和调试Profile，上传应用市场时，需使用发布证书和发布Profile后重新上传。
   + [错误码7017](../app/agc-help-package-errorcode-0000002312513009.md#section154421017114817)，表示：软件包Profile版本不符合要求。出现此错误，表示软件包内的Profile版本不符合要求，请前往"证书、APP ID和Profile > Profile"页面重新下载Profile，然后重新打包上传。
   + [错误码7019](../app/agc-help-package-errorcode-0000002312513009.md#section14575111134518)，表示Profile文件非法。可能原因是当前共享库软件包内的Profile文件未申请AllowAppShareLibrary权限。若已申请权限，[申请新的Profile](../app/agc-help-release-profile-0000002248341090.md)，重新打包即可。

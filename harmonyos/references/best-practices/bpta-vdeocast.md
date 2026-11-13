@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-vdeocast
 title: 视频投播
 breadcrumb: 最佳实践 > 技术创新 > 全场景 > 多端协同 > 视频投播
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-13T09:04:31+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:dff5fff6afce01a34cd409f5d0fe2893f527b97d751a4c23d3f8a8787a9cf524
 ---
@@ -29,7 +29,7 @@ content_hash: sha256:dff5fff6afce01a34cd409f5d0fe2893f527b97d751a4c23d3f8a8787a9
 
 **体验视频**
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/c4/v3/312Hq4zoQxK5tZ4Ae99e-A/zh-cn_media_0000002311894292.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/c4/v3/312Hq4zoQxK5tZ4Ae99e-A/zh-cn_media_0000002311894292.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010431Z&HW-CC-Expire=31536000000&HW-CC-Sign=1A23C0FFF96F03D55A858FA67E0D44141409B04A6364C5BC7FE756AF251F7428)
 
 **用户体验路径**
 
@@ -149,7 +149,7 @@ this.videoSession.on('pause', () => avPlayerController.setAVPlayerPause());
 
 在完成创建投播后，远端设备即可正常播放视频，本端会停止播放并页面跳转。
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/7e/v3/xtjdYPKvQAC_QX4wM4Mb-A/zh-cn_media_0000002311894304.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/7e/v3/xtjdYPKvQAC_QX4wM4Mb-A/zh-cn_media_0000002311894304.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010431Z&HW-CC-Expire=31536000000&HW-CC-Sign=76749D04D3BC8472F2541687D05C7A924BA992A3EE8E8448B9860E26F672637C)
 
 创建投播时需要setExtras()告知系统可投播、绘制AVCastPicker、videosession监听设备改变事件，用户点击AVCastPicker组件后会弹出设备选择半模态，在选择设备后，应用需要设置投播媒体信息，调用prepare、start启动播放。时序图如下，具体实现见开发步骤：
 
@@ -289,7 +289,7 @@ this.videoSession.on('pause', () => avPlayerController.setAVPlayerPause());
 
 ### 设备切换
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/0c/v3/0bUts_DoTGyFL1gHDzlcvg/zh-cn_media_0000002312054100.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/0c/v3/0bUts_DoTGyFL1gHDzlcvg/zh-cn_media_0000002312054100.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010431Z&HW-CC-Expire=31536000000&HW-CC-Sign=CEE639CB3845E70FFB7F3BA110C74CD5D4F56D062C6A8E43868EF81D303420A6)
 
 设备切换依赖于videosession监听设备改变事件，可以通过stopCasting终止投播切换设备，也可以通过[avCastPicker.select()](../harmonyos-references/arkts-apis-avsession-avcastpickerhelper.md#select14)进行切换。均会触发[videoSession.on('outputDeviceChange')](../harmonyos-references/arkts-apis-avsession-avsession.md#onoutputdevicechange10)事件，当切换到远端设备播放，本端应该跳转到遥控器界面，当切换回本端设备播放，应当停止投播并跳转到视频播放页面。应用时序图如下，具体实现见开发步骤。
 
@@ -354,7 +354,7 @@ try {
 
 ### 远端视频状态回传本端
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/d7/v3/ezn5ZxQ5SX23UuSrj4bfAg/zh-cn_media_0000002345973105.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/d7/v3/ezn5ZxQ5SX23UuSrj4bfAg/zh-cn_media_0000002345973105.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010431Z&HW-CC-Expire=31536000000&HW-CC-Sign=0E2074997CBCDF214FF24D3544E44EE3A97F7757255C72097B59DB85AC943A06)
 
 当视频在远端设备播放时，为了控制远端视频的播放，应用需要监听远端视频播放状态并同步显示本端，通过远端设备或本端播控中心控制，都会直接改变远端设备的播放状态，并触发[avCastController.on('playbackStateChange')](../harmonyos-references/arkts-apis-avsession-avcastcontroller.md#onplaybackstatechange10)。应用时序图如下，具体实现见开发步骤。
 
@@ -392,7 +392,7 @@ export class VideoCastController {
 
 ### 本端控制远端设备状态
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/b9/v3/Ghjrnmn4S42iYCSihX0Fzg/zh-cn_media_0000002312054104.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/b9/v3/Ghjrnmn4S42iYCSihX0Fzg/zh-cn_media_0000002312054104.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010431Z&HW-CC-Expire=31536000000&HW-CC-Sign=589CB5EE301B4583029630CD96AF48F242F2CF5A5E107172AC5F0BE0A02C0FED)
 
 **时序图**
 

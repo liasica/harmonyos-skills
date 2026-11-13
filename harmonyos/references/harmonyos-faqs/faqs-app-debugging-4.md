@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: HarmonyOS应用自动化签名时提示“Provision number exceeds limit”
 breadcrumb: FAQ > DevEco Studio > 应用调试 > HarmonyOS应用自动化签名时提示“Provision number exceeds limit”
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:7187dbffd843981abe6f7c0b527859eb4ef9e116456521585a8e6e0f00202a85
+scraped_at: 2026-11-13T09:06:51+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:1975c6f998d5db4c7fee42812c4a613338fb2b07fbdd5e3c32b47bf6a0d14bb5
 ---
 
 **问题现象**
@@ -16,7 +16,7 @@ content_hash: sha256:7187dbffd843981abe6f7c0b527859eb4ef9e116456521585a8e6e0f002
 
 **解决措施**
 
-HarmonyOS 开发者中心限制了自动化签名的使用次数。同一开发者账号在最近30天内使用自动化签名功能的次数不能超过150次。可使用手动签名方案，详情参考[手动签名](../harmonyos-guides/ide-signing.md#section297715173233)。
+HarmonyOS 开发者中心限制了自动化签名的使用次数。同一开发者账号在最近30天内使用自动化签名功能的次数不能超过150次。可使用手动签名方案，详情参考[手动签名](../doccenter-deveco-studio/ide-signing-manual.md)。
 
 如需继续使用自动签名，可通过如下几种方式进行解决：
 

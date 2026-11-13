@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-debugg
 title: HarmonyOS应用自动化签名时提示“Unsupported restricted ACL permission exist in the configuration”
 breadcrumb: FAQ > DevEco Studio > 应用调试 > HarmonyOS应用自动化签名时提示“Unsupported restricted ACL permission exist in the configuration”
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:74b48141dc7f42703ea5d6592a765841cc9ce2210fd157eaaeb073169ea57d5e
+scraped_at: 2026-11-13T09:06:51+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:a202318dd7232ecc16fb0b6fc54b108bb5c3c55523651428d08fd42e831db0d9
 ---
 
 **问题现象**
@@ -20,6 +20,6 @@ content_hash: sha256:74b48141dc7f42703ea5d6592a765841cc9ce2210fd157eaaeb073169ea
 
 **参考链接**
 
-[自动签名支持的ACL权限](../harmonyos-guides/ide-signing.md#section5301916183411)
+[自动签名支持的ACL权限](../doccenter-deveco-studio/ide-signing-auto.md#section5301916183411)
 
-[手动签名](../harmonyos-guides/ide-signing.md#section297715173233)
+[手动签名](../doccenter-deveco-studio/ide-signing-manual.md)

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-healthserv
 title: 运动健康无法获取数据常见问题和解决方案
 breadcrumb: FAQ > 应用服务开发 > 运动健康数据服务（Health Service Kit） > 运动健康无法获取数据常见问题和解决方案
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:33e946d884fefd671b42f6cd02a708edd1657133009177966a46423017e14424
+scraped_at: 2026-11-13T09:06:41+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:a0080ab867e8e43ee516aa1aafd7554c37659507a074f83d66c61425b9712b4d
 ---
 
 ## 问题现象
@@ -40,7 +40,7 @@ content_hash: sha256:33e946d884fefd671b42f6cd02a708edd1657133009177966a46423017e
 * 问题二：说明没有正确配置client\_id，将client\_id(xxxxxxx)配置到‘\entry\src\main\module.json5’文件中再次尝试，参考[配置Client ID](../harmonyos-guides/health-configuration-client-id.md)。
 * 问题三：如果调用运动健康服务接口没有回调，或者出现该报错，说明健康服务未进行初始化，调用其他接口前，需要先调用init方法初始化：healthStore.init(this.context)，参考[healthStore(运动健康数据服务)](../harmonyos-references/health-api-healthstore.md)。
 * 问题四：[12300001](../harmonyos-references/errorcode-account.md#section12300001-系统服务异常)表示账号管理系统服务异常，具体参考[账号管理错误码](../harmonyos-references/errorcode-account.md)。
-* 问题五：[201鉴权失败](../harmonyos-references/errorcode-healthservice.md#section201-鉴权失败)。
+* 问题五：[201鉴权失败](../doccenter-references/api/errorcode-healthservice.md#health-service-kit调用失败返回201)。
 
   可能原因：
 

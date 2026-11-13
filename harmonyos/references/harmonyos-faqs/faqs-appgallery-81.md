@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: 证书和Profile类型及使用场景
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 证书和Profile类型及使用场景
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:d4bf13a686dd24c871099bdccf1da82b00a3d403e76caad27afb34c6c6849318
+scraped_at: 2026-11-13T09:06:40+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:fd279735fb31d0e81ed5e3f5f658b74909c01e3b3039fb350a5bdf47a4da6437
 ---
 
 ## 问题现象
@@ -40,7 +40,7 @@ content_hash: sha256:d4bf13a686dd24c871099bdccf1da82b00a3d403e76caad27afb34c6c68
    * 本地通过HDC命令即可安装的应用需要申请调试证书和调试Profile，登录HarmonyOS 开发者中心申请证书时，弹窗界面证书类型选择“调试证书”，如下：
 
      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/2f/v3/zBAHlXreTxWr4183zp0Cfg/zh-cn_image_0000002658793911.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=F2BAFDEEF6433AD5DD5C88D244126A04B0C2FD7974E9F3CA6D3C46C55B73C7AF)
-   * 调试证书除了登录HarmonyOS 开发者中心手动申请，也可以通过DevEco Studio自动签名方式从HarmonyOS 开发者中心申请。详细操作可参考[自动签名](../harmonyos-guides/ide-signing.md#section18815157237)。申请成功也可登录HarmonyOS 开发者中心查看，证书名称以“auto\_debug”开头：
+   * 调试证书除了登录HarmonyOS 开发者中心手动申请，也可以通过DevEco Studio自动签名方式从HarmonyOS 开发者中心申请。详细操作可参考[自动签名](../doccenter-deveco-studio/ide-signing-auto.md)。申请成功也可登录HarmonyOS 开发者中心查看，证书名称以“auto\_debug”开头：
 
      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/6a/v3/r8IrIuFeTmG52LkXAbY4qw/zh-cn_image_0000002628394642.png?HW-CC-KV=V1&HW-CC-Date=20261112T233146Z&HW-CC-Expire=31536000000&HW-CC-Sign=BD31D592D0353BBADF9B0E6C1BA3277A6CDA53F038A3EAC607206965E0F104F5 "点击放大")
    * [申请调试Profile](../app/agc-help-debug-profile-0000002248181278.md)时，对应的证书类型选择“调试”。

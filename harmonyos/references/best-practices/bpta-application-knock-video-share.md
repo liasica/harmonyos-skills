@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-applicatio
 title: 碰一碰链接分享
 breadcrumb: 最佳实践 > 技术创新 > 全场景 > 多端协同 > 碰一碰链接分享
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-13T09:04:32+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:3a159e47b725c861915b0e0d8d1399cff5ba9e5b81fa6bcf582e7ffbe238d251
 ---
@@ -14,7 +14,7 @@ content_hash: sha256:3a159e47b725c861915b0e0d8d1399cff5ba9e5b81fa6bcf582e7ffbe23
 
 本文以视频分享场景为例，详细介绍碰一碰快速分享视频的原理与开发步骤。
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/2e/v3/KRc6L770SdCX4pFG4rr7-w/zh-cn_media_0000002306538056.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/2e/v3/KRc6L770SdCX4pFG4rr7-w/zh-cn_media_0000002306538056.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010432Z&HW-CC-Expire=31536000000&HW-CC-Sign=DE69E245F1C73C13058256629E67BC24CA3F7CEA8670E053F9550F04DD6234F9)
 
 ## 典型场景
 

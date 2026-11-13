@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 编译构建时报错：系统错误问题汇总
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 编译构建时报错：系统错误问题汇总
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:55+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:7a4a7bb8d1b40a2005460b204d86044d77c19381c150eeb61658ab2b2d8c8d52
+scraped_at: 2026-11-13T09:06:49+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:9e5814ebf5e61e7b35c2974a067f1ea5a046fdb85f11582a6e522ed73919c1b9
 ---
 
 ## 问题现象
@@ -30,7 +30,7 @@ content_hash: sha256:7a4a7bb8d1b40a2005460b204d86044d77c19381c150eeb61658ab2b2d8
 * [获取命令行工具](../harmonyos-guides/ide-commandline-get.md)：该命令行工具集合了HarmonyOS应用开发所用到的系列工具，包括代码检查codelinter、堆栈解析hstack、命令行构建hvigorw、三方依赖管理ohpm和SDK中包含的一系列工具。
 * Mac版本的DevEco Studio[下载](https://developer.huawei.com/consumer/cn/download/)。
 * [hvigorw](../harmonyos-guides/ide-hvigor-commandline.md)作为Hvigor的wrapper包装工具，支持自动安装Hvigor构建工具和相关插件依赖，以及执行Hvigor构建命令。执行命令前，需要先配置JDK，配置Node.js、Hvigor等环境变量。
-* Windows环境下DevEco Studio[运行环境要求](../harmonyos-guides/ide-software-install.md#section1165991652412)。
+* Windows环境下DevEco Studio[运行环境要求](../doccenter-deveco-studio/ide-software-install.md#section228618484217)。
 
 ## 问题定位
 

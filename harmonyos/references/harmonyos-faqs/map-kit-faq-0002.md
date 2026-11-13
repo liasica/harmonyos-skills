@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/map-kit-faq-000
 title: 地图定位功能实现常见问题
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 常见问题 > 地图定位功能实现常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:37+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:9a4d4d561cd075a6e800555ae4b114821c718a4c05970fe15e23c77dd429affa
+scraped_at: 2026-11-13T09:06:32+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:34cdb8e76a015519fc5c54f6ec2ee2cdeb2ddd9a976fa95345b7e176291a4ad2
 ---
 
 **Q：如何在地图上获取当前位置并显示？**
@@ -89,7 +89,7 @@ content_hash: sha256:9a4d4d561cd075a6e800555ae4b114821c718a4c05970fe15e23c77dd42
        return grantStatus;
      }
    ```
-5. 完成定位函数，主要用于获取当前的位置信息，并将当前的地图视图相机移动到该位置。主要实现原理是调用[getCurrentLocation](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetcurrentlocation)接口获取当前位置信息，调用[setMyLocation](../harmonyos-references/map-map-mapcomponentcontroller.md#section1165002535516)接口将当前的地图视图相机移动过去。需要注意：[getCurrentLocation](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetcurrentlocation)接口获取的是WGS-84坐标系坐标，而地图显示的是GCJ02坐标系坐标，需要使用[convertCoordinate](../harmonyos-references/map-map-functions.md#convertcoordinate)接口进行一次转换。
+5. 完成定位函数，主要用于获取当前的位置信息，并将当前的地图视图相机移动到该位置。主要实现原理是调用[getCurrentLocation](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetcurrentlocation)接口获取当前位置信息，调用[setMyLocation](../doccenter-references/api/map-map-mapcomponentcontroller.md#setmylocation)接口将当前的地图视图相机移动过去。需要注意：[getCurrentLocation](../harmonyos-references/js-apis-geolocationmanager.md#geolocationmanagergetcurrentlocation)接口获取的是WGS-84坐标系坐标，而地图显示的是GCJ02坐标系坐标，需要使用[convertCoordinate](../harmonyos-references/map-map-functions.md#convertcoordinate)接口进行一次转换。
 
    ```ts
    // 获取当前位置并视图移动过去
@@ -142,7 +142,7 @@ content_hash: sha256:9a4d4d561cd075a6e800555ae4b114821c718a4c05970fe15e23c77dd42
        return gcj02Postion;
      }
    ```
-6. 完成以上函数后，最后使用[MapComponent](../harmonyos-references/map-mapcomponent.md#section816451553012)组件，生成一张新的地图。在aboutToAppear函数中向用户弹窗并获取定位授权。设置启用“我的位置”按钮，运行应用后点击按钮，即可进行我的位置定位。
+6. 完成以上函数后，最后使用[MapComponent](../doccenter-references/api/map-mapcomponent.md#mapcomponent)组件，生成一张新的地图。在aboutToAppear函数中向用户弹窗并获取定位授权。设置启用“我的位置”按钮，运行应用后点击按钮，即可进行我的位置定位。
 
    ```screen
    import { AsyncCallback, BusinessError } from '@kit.BasicServicesKit';
@@ -341,7 +341,7 @@ content_hash: sha256:9a4d4d561cd075a6e800555ae4b114821c718a4c05970fe15e23c77dd42
 
 **Q：如何获取当前显示页面的中心点。**
 
-**A**：可以使用[getCameraPosition](../harmonyos-references/map-map-mapcomponentcontroller.md#section17913440719)接口，返回的数据中target字段就是地图中心位置的经纬度坐标。
+**A**：可以使用[getCameraPosition](../doccenter-references/api/map-map-mapcomponentcontroller.md#getcameraposition)接口，返回的数据中target字段就是地图中心位置的经纬度坐标。
 
 **Q：地图中我的位置功能失效如何排查？**
 
@@ -351,8 +351,8 @@ content_hash: sha256:9a4d4d561cd075a6e800555ae4b114821c718a4c05970fe15e23c77dd42
   1. 检查下module.json5里面是否申请ohos.permission.LOCATION和ohos.permission.APPROXIMATELY\_LOCATION权限。
   2. 位置服务需要用户授权。
   3. 系统设置-应用和元服务-应用里检查是否有位置权限。
-* 确认是否开启“我的位置”图层功能开关。使用[setMyLocationEnabled](../harmonyos-references/map-map-mapcomponentcontroller.md#section201759451313)接口，参数设置为true时启用“我的位置”图层。
+* 确认是否开启“我的位置”图层功能开关。使用[setMyLocationEnabled](../doccenter-references/api/map-map-mapcomponentcontroller.md#setmylocationenabled)接口，参数设置为true时启用“我的位置”图层。
 
 **Q：如何用代码判断是否启动我的位置图层和我的位置按钮？**
 
-**A**：使用[isMyLocationEnabled](../harmonyos-references/map-map-mapcomponentcontroller.md#section1818961519)获取“我的位置”图层的开启状态，使用[isMyLocationControlsEnabled](../harmonyos-references/map-map-mapcomponentcontroller.md#section12480182191818)获取“我的位置”按钮的启用状态。
+**A**：使用[isMyLocationEnabled](../doccenter-references/api/map-map-mapcomponentcontroller.md#ismylocationenabled)获取“我的位置”图层的开启状态，使用[isMyLocationControlsEnabled](../doccenter-references/api/map-map-mapcomponentcontroller.md#ismylocationcontrolsenabled)获取“我的位置”按钮的启用状态。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 如何解决编译本地依赖包失败的问题
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 如何解决编译本地依赖包失败的问题
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:8da1d438746ea6a5c7cc7d74f51078971a75c82b47500822a2b9add2c21b75bf
+scraped_at: 2026-11-13T09:06:48+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:341acf2d17db26f4b595e477849fae9aac5431695789d32d4754cfb1cef9a69c
 ---
 
 ## 问题现象
@@ -46,7 +46,7 @@ HSP（Harmony Shared Package）是动态共享包，包含代码、C++库、资�
 3. 在运行配置页，选择General标签页中配置[Auto Dependencies](../harmonyos-guides/ide-run-debug-configurations.md#section18910152417412)。
 
    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/dc/v3/zDQGr_dzQAStGYlukx3r0Q/zh-cn_image_0000002658928497.png?HW-CC-KV=V1&HW-CC-Date=20261112T233208Z&HW-CC-Expire=31536000000&HW-CC-Sign=F559C89AE277A9240D65EEE5AD38BD0897F6917E0747EA95E0D47E9C55060FD4 "点击放大")
-4. [配置签名](../harmonyos-guides/ide-signing.md#section18815157237)，DevEco Studio在打包时会对HSP模块重签名，只有重签名才会进行部署entry时自动部署HSP依赖。
+4. [配置签名](../doccenter-deveco-studio/ide-signing.md)，DevEco Studio在打包时会对HSP模块重签名，只有重签名才会进行部署entry时自动部署HSP依赖。
 
 ## 总结
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/signature-servi
 title: 手动签名失败问题排查与解决
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 故障排查 > 手动签名失败问题排查与解决
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-29
-content_hash: sha256:1bd0b75354c0b6acaaed962b26ff9754d13179a8ac929cdcdf1651945444844d
+scraped_at: 2026-11-13T09:06:50+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:dc7ed5de5889ecf18345428686931e0b2ca730650ea60b65f86e7e86150e777f
 ---
 
 ## hdc安装应用报错9568393
@@ -56,7 +56,7 @@ Decryption failed. Verify the encryption password, or delete the material folder
 
 ### 修改建议
 
-配置签名密码和生成的.p12文件要一致。具体步骤可参考[手动签名](../doccenter-deveco-studio/ide-signing.md#section297715173233)。
+配置签名密码和生成的.p12文件要一致。具体步骤可参考[手动签名](../doccenter-deveco-studio/ide-signing-manual.md)。
 
 ## 配置签名弹窗报错Encryption failed
 

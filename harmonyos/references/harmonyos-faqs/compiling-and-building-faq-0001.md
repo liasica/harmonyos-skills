@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/compiling-and-b
 title: App加固与代码混淆配置常见问题
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 常见问题 > App加固与代码混淆配置常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:16:05+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:a1bc6c329dad88e8ccbb868e6e2b1e97c8d656252f64de8d5a143859a78d442a
+scraped_at: 2026-11-13T09:06:44+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:5463f55c5ca99b14d376ca7cce0bccfe0cee729674faa3bb0a3d53d72feb09ac
 ---
 
 **Q：开发的过程中，为了保护开发的App不被恶意破解，如何对App进行加密，混淆操作？**
@@ -69,3 +69,7 @@ content_hash: sha256:a1bc6c329dad88e8ccbb868e6e2b1e97c8d656252f64de8d5a143859a78
 **Q：In-house模式的应用如何进行代码保护？**
 
 **A**：In-house模式应用不通过应用市场上架，无法使用应用加密能力。可以使用代码混淆进行代码保护，参考[混淆加固](../harmonyos-guides/ide-build-obfuscation.md)和[不同包类型的源码混淆建议](../harmonyos-guides/source-obfuscation-practice.md)。如需更高等级的安全保护，可使用第三方安全加固，具体参考[使用第三方加固](../best-practices/bpta-app-code-ob.md#section4564113173012)。
+
+**Q：文档说API12开始默认开启四项混淆选项，又说从Developer Beta3（5.0.3.600）版本开始默认不开启混淆，以哪个为准？**
+
+**A**：两个描述不矛盾。“默认不开启混淆”指的是源码混淆功能本身默认关闭，需要开发者手动开启。“默认开启四项混淆选项”是指在已开启源码混淆的前提下，混淆配置文件obfuscation-rules.txt中默认启用的四项推荐混淆规则：-enable-property-obfuscation、-enable-toplevel-obfuscation、-enable-filename-obfuscation和-enable-export-obfuscation。

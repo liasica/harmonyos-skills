@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/signature-servi
 title: 配置调试签名异常
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 常见问题 > 配置调试签名异常
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:0d632ea88e0451fbba26db8fc0e89523b8cf56b22a98b46747ecac9251a687ae
+scraped_at: 2026-11-13T09:06:49+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:463a9ec1dbe54840fc224a0cac5754e322934e7d7842fdb2a3bf059831a04840
 ---
 
 **Q：提示"Bundle name \*\*\* does not exist."的原因和解决措施是什么？**
@@ -47,7 +47,7 @@ content_hash: sha256:0d632ea88e0451fbba26db8fc0e89523b8cf56b22a98b46747ecac9251a
 
 方式二：
 
-1. 加入目标团队，具体可参考[添加成员账号](../app/agc-help-manageaccount-0000002306610129.md#section151241455193313)。
+1. 加入目标团队，具体可参考[添加成员账号](../doccenter-getting-started/hdc-team-account-guide-0000002752529227.md#section1674403322314)。
 2. 加入团队成功后，将Team修改为目标团队。
 
    ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/27/v3/IdomFllJToefv20AQhZI6Q/zh-cn_image_0000002772519878.png?HW-CC-KV=V1&HW-CC-Date=20261112T233220Z&HW-CC-Expire=31536000000&HW-CC-Sign=5A38B89EA46E422C733BF68CE8D5E60BE98816BAE4CECF2B8851583E6247D4A0 "点击放大")

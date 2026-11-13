@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-command-li
 title: "编译时DevEco Studio报“ohpm ERROR: EINSTALL install failed, Error: Dependency node build failed Install failed”错"
 breadcrumb: "FAQ > DevEco Studio > 命令行工具 > 编译时DevEco Studio报“ohpm ERROR: EINSTALL install failed, Error: Dependency node build failed Install failed”错"
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:02+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:c1199c6c58ac2ead6c1dc803ccf3171052070351335671b92cc7d0fb0d71f049
+scraped_at: 2026-11-13T09:06:54+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:77b93d520e8138588886cfba03df5a201008b5496924df328244766ce2ef6bd3
 ---
 
 **问题现象**
@@ -29,4 +29,4 @@ ohpm 1.4.0之后，HAR中存在相对路径的依赖，在生成oh\_module时，
 **解决措施**
 
 1. 将依赖包上传至私仓，配置私仓依赖，具体配置可参考[ohpm-repo私仓搭建工具](../harmonyos-guides/ide-ohpm-repo.md)。
-2. 或者在项目级别的oh-package.json5文件中添加[overrides](../harmonyos-guides/ide-oh-package-json5.md#zh-cn_topic_0000001792256137_overrides)配置，覆盖依赖信息，将依赖替换为另一个版本。
+2. 或者在项目级别的oh-package.json5文件中添加[overrides](../doccenter-deveco-studio/ide-oh-package-json5.md#section13977152601510)配置，覆盖依赖信息，将依赖替换为另一个版本。

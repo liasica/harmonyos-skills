@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-app-test-2
 title: 单元测试中如何获取上下文Context
 breadcrumb: FAQ > DevEco Studio > 应用测试 > 单元测试中如何获取上下文Context
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:295631db0f2e2deba84e6ed632a260fd3d4508c8bc2d4af4e64de7f0aa6333f6
+scraped_at: 2026-11-13T09:06:53+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:3231257ba00828c27215989c6cb73eba4a6e21d662b80c0d3001962be430da74
 ---
 
 ## 问题现象
@@ -15,7 +15,7 @@ content_hash: sha256:295631db0f2e2deba84e6ed632a260fd3d4508c8bc2d4af4e64de7f0aa6
 ## 背景知识
 
 * [Context](../harmonyos-references/js-apis-inner-application-context.md)：Stage模型的上下文基类，主要用于访问特定应用程序的资源，以及执行应用级操作的回调。
-* [getCurrentTopAbility](../harmonyos-references/js-apis-inner-application-abilitydelegator.md#getcurrenttopability9-1)：用于获取当前应用顶部Ability。
+* [getCurrentTopAbility](../doccenter-references/api/js-apis-inner-application-abilitydelegator.md#getcurrenttopability)：用于获取当前应用顶部Ability。
 
 ## 解决方案
 

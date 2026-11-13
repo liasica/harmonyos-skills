@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/push-kit-troubl
 title: 消息推送后手机未收到消息提示怎么处理
 breadcrumb: FAQ > 应用服务开发 > 消息推送服务（Push Kit） > 故障排查 > 消息推送后手机未收到消息提示怎么处理
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-29
-content_hash: sha256:18eaf5f408d4ca054a69737ea2fe31e459352978f1629db3e3b9ee80696cecb5
+scraped_at: 2026-11-13T09:06:37+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:b413ea0abebeb314e938dea9c179803042f6aa0eaa11aae209bbd3d59e312a9a
 ---
 
 ## 问题现象
@@ -21,7 +21,7 @@ content_hash: sha256:18eaf5f408d4ca054a69737ea2fe31e459352978f1629db3e3b9ee80696
   + 检查是否是静默通知。
   + 检查是否手动关闭了消息提醒方式。
 * **用户未收到消息：**
-  + 检查消息[回执状态码](../harmonyos-guides/push-msg-receipt.md#section19100519195717)是否为6，若为6则继续排查通知开关、Push SDK方法调用等问题。
+  + 检查消息[回执状态码](../doccenter-capabilities/push-msg-receipt.md#回执状态码)是否为6，若为6则继续排查通知开关、Push SDK方法调用等问题。
   + 检查Push token是否正确。
   + 检查Authorization请求体是否错误。
   + 检查是否推送后台消息场景。

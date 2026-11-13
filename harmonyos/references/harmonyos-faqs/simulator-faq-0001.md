@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/simulator-faq-0
 title: 模拟器真机预览器调试差异常见问题
 breadcrumb: FAQ > DevEco Studio > 模拟器 > 常见问题 > 模拟器真机预览器调试差异常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:49:03+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:42f963d3ef5e60724fe3f8fa2647441fc0c54ba6614ef2a0da3815310a78642b
+scraped_at: 2026-11-13T09:06:55+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:df8c9c08f241c0c3eae84dc29f41b05ab525780155cd5dc4db999b87d8826921
 ---
 
 **Q：根据官方文档给出的示例[如何拉起浏览器应用](faqs-ability-58.md)，使用预览器查看Demo效果，控制台报错日志信息Error message:is not callable. 使用模拟器进行调试，也无法拉起浏览器应用。当前无真机设备。调试过程中，模拟器、真机、预览器具有哪些差异？**
@@ -62,7 +62,7 @@ content_hash: sha256:42f963d3ef5e60724fe3f8fa2647441fc0c54ba6614ef2a0da3815310a7
 LastFatalMessage:[default] [LoadJSPandaFile:108] resolveBufferCallback get hsp buffer failed, hsp path:/data/storage/el1/bundle/com.huawei.hmos.walletkit/walletKit/walletKit/ets/modules.abc, errorMsg:hap path error: /data/storage/el1/bundle/com.huawei.hmos.walletkit/walletKit/walletKit.hsp
 ```
 
-**A**：该报错是因为Kit在模拟器不支持，可以参考：[Kit能力差异](../harmonyos-guides/ide-emulator-specification.md#section139481235225)。当前walletkit不支持在模拟器上使用，建议使用真机进行调试。如遇到因Kit能力不支持导致的应用闪退问题，可以使用[动态引入Kit](../harmonyos-guides/arkts-dynamic-import.md#动态import实绍介绍)的方式规避此异常问题。
+**A**：该报错是因为Kit在模拟器不支持，可以参考：[Kit能力差异](../harmonyos-guides/ide-emulator-specification.md#section139481235225)。当前walletkit不支持在模拟器上使用，建议使用真机进行调试。如遇到因Kit能力不支持导致的应用闪退问题，可以使用[动态引入Kit](../doccenter-capabilities/arkts-dynamic-import.md)的方式规避此异常问题。
 
 **Q：模拟器能安装apk或卓易通吗？**
 
@@ -90,7 +90,7 @@ LastFatalMessage:[default] [LoadJSPandaFile:108] resolveBufferCallback get hsp b
 
 **Q：使用SafetyDetect进行设备安全检测，为什么调用checkSysIntegrity在真机(未root)运行正常，在模拟器中报错？**
 
-**A**：该报错是因为SafetyDetect属于Device Security Kit（设备安全服务）而模拟器不支持该Kit，可以参考：[Kit能力差异-安全](../harmonyos-guides/ide-emulator-specification.md#section147193483010)。建议使用真机进行调试以规避该报错。
+**A**：该报错是因为SafetyDetect属于Device Security Kit（设备安全服务）而模拟器不支持该Kit，可以参考：[Kit能力差异-安全](../doccenter-deveco-studio/ide-emulator-specification.md#section139481235225)。建议使用真机进行调试以规避该报错。
 
 **Q：预览器是否支持根据module.json5的orientation配置自动切换横竖屏？**
 

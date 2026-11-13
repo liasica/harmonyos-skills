@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/appgallery-kit-
 title: 拉起应用市场跳转详情页常见问题
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 常见问题 > 拉起应用市场跳转详情页常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:15:57+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:d2861c336485e1a95fad71525aec093b4e36b561368362f5248db73c56ea184d
+scraped_at: 2026-11-13T09:06:38+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:619216dc5649d12da2712b435d1761a20c695c421ebc24903c88831dde55c2cc
 ---
 
 **Q：在视频类App、社交类App、浏览器App中，如何通过链接的方式跳转到目标应用的指定页面，并在用户未安装该应用时跳转到应用市场下载页面提示用户安装？**
@@ -279,7 +279,7 @@ content_hash: sha256:d2861c336485e1a95fad71525aec093b4e36b561368362f5248db73c56e
 
 **Q：应用还未上架时，如何测试能否跳转至应用市场详情页？**
 
-**A**：可以通过Deep Linking方式跳转，使用已上架应用的包名进行测试。在DevEco Studio中可以查看其他应用的进程名获取包名，具体操作参考[FAQ文档](faqs-appgallery-31.md#section4548115452118)。
+**A**：可以通过Deep Linking方式跳转，使用已上架应用的包名进行测试。在DevEco Studio中可以查看其他应用的进程名获取包名。
 
 **Q：应用尝鲜版本是否可以通过链接跳转引导用户下载？**
 

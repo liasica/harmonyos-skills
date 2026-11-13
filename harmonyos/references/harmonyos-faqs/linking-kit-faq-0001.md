@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/linking-kit-faq
 title: App Linking跳转失败问题排查
 breadcrumb: FAQ > 应用服务开发 > 应用链接跳转服务（App Linking Kit） > 常见问题 > App Linking跳转失败问题排查
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:18+08:00
-doc_updated_at: 2026-11-03
-content_hash: sha256:e8817fc1dd2679e7cf88cbe9a13eb5590301e78f0dae798f51a4d60a116bbc23
+scraped_at: 2026-11-13T09:06:37+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:a7aec22c91b8a77ac721122184e58cb92ec57b01ec0c3e3ee1caabeebce31304
 ---
 
 **Q：开发者在HarmonyOS 开发者中心开通了App Linking服务，并且在域名服务器上配置了对应文件，HarmonyOS 开发者中心上面也显示发布成功，但是点击跳转失败，提示16000019，是什么原因呢？**
@@ -98,8 +98,12 @@ content_hash: sha256:e8817fc1dd2679e7cf88cbe9a13eb5590301e78f0dae798f51a4d60a116
 
 **Q：仅支持PC/2in1设备类型的应用能否使用App Linking聚合链接拉起应用？**
 
-**A**：仅支持PC/2in1设备类型的应用在HarmonyOS 开发者中心配置聚合链接时会被拦截，提示“应用不支持此配置”。但可以使用App Linking应用链接来实现需求，App Linking应用链接本身支持PC/2in1设备。App Linking不提供按设备类型限制链接生效范围的功能，因此可以直接使用App Linking应用链接，无需也无法在配置层面做设备限制。具体配置方式可参考[目标方应用配置应用链接能力](../harmonyos-guides/app-linking-startupapp.md#配置应用链接能力)。
+**A**：仅支持PC/2in1设备类型的应用在HarmonyOS 开发者中心配置聚合链接时会被拦截，提示"应用不支持此配置"。但可以使用App Linking应用链接来实现需求，App Linking应用链接本身支持PC/2in1设备。App Linking不提供按设备类型限制链接生效范围的功能，因此可以直接使用App Linking应用链接，无需也无法在配置层面做设备限制。具体配置方式可参考[目标方应用配置应用链接能力](../harmonyos-guides/app-linking-startupapp.md#配置应用链接能力)。
 
 **Q：App Linking域名校验是否必须使用应用自己的域名？**
 
 **A**：域名不必须是应用的域名，可以使用公司的其他域名，但域名必须由实际掌控，能够进行DNS和服务器配置。需要确保HarmonyOS 开发者中心配置的域名、代码中module.json5里声明的域名、applinking.json文件所在的域名三者保持一致。
+
+**Q：在7.0系统中，短信中点击App Linking链接为何跳转至浏览器而非拉起应用？**
+
+**A**：此为预期行为，无需修改。在7.0系统中，为了保持与API 12以下版本打开方式的一致性，并确保跳转浏览器访问的安全性，短信中打开链接时系统默认会跳转至浏览器。

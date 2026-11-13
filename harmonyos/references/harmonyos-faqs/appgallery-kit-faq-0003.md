@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/appgallery-kit-
 title: HarmonyOS应用上架备案流程与常见问题
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > 常见问题 > HarmonyOS应用上架备案流程与常见问题
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-22
-content_hash: sha256:2a123b7dc857f369b06bc92bb7c00e73ffb73af8c73997baf8cb92d829ec79c5
+scraped_at: 2026-11-13T09:06:38+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:f98a03fefad7c21d1271980b073da37e2359a8891eafeb0b34115efcc1840b2e
 ---
 
 **Q：应用上架需要填写备案信息，实际开发者在进行备案过程中可能会遇到各种问题，比如：所有应用必须备案吗，应该怎么备案？备案有哪些渠道，需要提前准备什么信息？如何验证备案完成等等？**
@@ -140,7 +140,7 @@ sha1 Fingerprint=15:3E:C8:::::::**:DF:46:F1:53:AF:84:C9:BF:D0:61
 
 **A**：鸿蒙PC应用属于鸿蒙应用，所以需要正常办理APP备案。需参考[APP备案指引](../app/50130.md)。
 
-另外，.exe格式的PC应用，需办理ICP备案，ICP备案示例请参考[ICP备案](../app/50111-03.md#section3355141513234)。
+另外，.exe格式的PC应用，需办理ICP备案，ICP备案示例请参考[ICP备案](../doccenter-submission/50111-03.md#section1965119613017)。
 
 **Q：应用未搭建服务器，仅使用联网权限将照片上传至云端，备案信息是否可以选择单机APP？**
 

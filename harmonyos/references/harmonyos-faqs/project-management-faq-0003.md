@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/project-managem
 title: 使用了新API打包的APP包如何兼容安装在老系统和其他不兼容该API的设备
 breadcrumb: FAQ > DevEco Studio > 工程管理 > 常见问题 > 使用了新API打包的APP包如何兼容安装在老系统和其他不兼容该API的设备
 category: harmonyos-faqs
-scraped_at: 2026-10-30T07:59:12+08:00
-doc_updated_at: 2026-10-29
-content_hash: sha256:690cc4cb2bb60d312780bfbee5a3a72b4a85888b672dcb397701135518431d8d
+scraped_at: 2026-11-13T09:06:43+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:319b44759de8230747fc1a05bc5f811e0421f0f066a6438c5b5c5336dde6c1fa
 ---
 
 **Q：应用使用了新的API（如6.0.0(20)的hdsEffect），根据"一次开发，多端部署"规范，将手机/平板/电脑/手表打包进同一个APP内供上架审核时遇到以下问题：**
@@ -35,7 +35,7 @@ content_hash: sha256:690cc4cb2bb60d312780bfbee5a3a72b4a85888b672dcb3977011355184
 解决方案：
 
 1. 配置build-profile.json5设置[应用开发过程使用的SDK版本](../harmonyos-releases/app-compatibility-influence-factor.md#section99881928838)：假如应用使用并适配了API版本6.0.0(20)，同时希望应用能够运行5.0.5(17)，那么可以在应用工程的build-profile.json5文件中设置"targetSdkVersion": "6.0.0(20)"，"compatibleSdkVersion": "5.0.5(17)"。
-2. [通过distributionOSApiVersion和sdkApiVersion接口消除](../harmonyos-releases/arkts-api-compatibility-warning-elim.md#section9264409142)：假如某个新特性的API是在SDK版本6.0.0(20)提供，为了让应用兼容在基于API版本5.0.5(17)的老设备正常运行，开发者可以使用如下兼容性判断。
+2. [通过distributionOSApiVersion和sdkApiVersion接口消除](../doccenter-release-notes/arkts-api-compatibility-warning-elim.md)：假如某个新特性的API是在SDK版本6.0.0(20)提供，为了让应用兼容在基于API版本5.0.5(17)的老设备正常运行，开发者可以使用如下兼容性判断。
    * 针对HarmonyOS设备独有特性接口，即接口标记为since M.F.S(N)（文档中标记"起始版本：M.F.S(N)"，SDK物理包中hms路径下所包含的接口），使用distributionOSApiVersion接口进行兼容性判断保护。例如判断"deviceInfo.distributionOSApiVersion >= 60000"时，调用6.0.0(20)的API新接口，否则使用降级方案，其中"60000"是由新接口的since字段"M\*10000+F\*100+S"转换而来，即60000=6\*10000+0\*100+0。
    * 针对OpenHarmony底座接口，即接口标记为since N（文档中标记"起始版本：N"，SDK物理包中openharmony路径下所包含的接口），使用sdkApiVersion接口进行兼容性判断保护。例如判断"deviceInfo.sdkApiVersion >= 20"时，调用6.0.0(20)的API新接口，否则使用降级方案。
 

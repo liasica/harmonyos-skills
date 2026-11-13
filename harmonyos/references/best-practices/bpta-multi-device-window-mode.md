@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-multi-devi
 title: 窗口模式
 breadcrumb: 最佳实践 > 一次开发，多端部署 > 多设备界面开发 > 多设备窗口形态 > 窗口模式
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-13T09:04:36+08:00
 doc_updated_at: 2026-10-15
 content_hash: sha256:e71dedf06f8548832830fc92acfc7c7b8a7a4b2a10e1c98cb4821c013476c9e5
 ---
@@ -362,7 +362,7 @@ updateWindowInfo(): void {
 
    应用窗口拖拽缩放是在电脑和平板设备上使用自由多窗模式时常见的操作，指鼠标点击或手指触控应用窗口边缘，使得应用窗口跟随鼠标或手指位置移动而变化大小的现象，如下图所示。
 
-   [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/b0/v3/nnZsMOdzThyP6q4Pylv6mw/zh-cn_attachment_0000002453953437.mp4)
+   [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/b0/v3/nnZsMOdzThyP6q4Pylv6mw/zh-cn_attachment_0000002453953437.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010435Z&HW-CC-Expire=31536000000&HW-CC-Sign=C61E7969412C177FB3FE2CB65CC24C80CF20533181E7EC2DDC5D3E3F98006B36)
 
    对于窗口拖拽缩放有两种限制方式：
 

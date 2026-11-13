@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/map-kit-trouble
 title: Map Kit地图加载Marker不展示问题
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 故障排查 > Map Kit地图加载Marker不展示问题
 category: harmonyos-faqs
-scraped_at: 2026-10-15T07:15:48+08:00
-doc_updated_at: 2026-10-14
-content_hash: sha256:df9b21884cfd1d9913a0aa7c36c4eead20766c35ebb297d94bb6f021bcabccc7
+scraped_at: 2026-11-13T09:06:32+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:a40ec25339517b8e315c0dfcbe1ebc4da82c4497cac49ba28828871bef300093
 ---
 
 ## 问题现象
@@ -23,4 +23,4 @@ content_hash: sha256:df9b21884cfd1d9913a0aa7c36c4eead20766c35ebb297d94bb6f021bca
 
 ## 修改建议
 
-在初始化地图方法的callback回调中，执行添加默认Marker的方法，保证地图初始化完成后再调用添加默认Marker的方法。正确用法见[添加标记](../harmonyos-guides/map-marker.md#section2594451570)。
+在初始化地图方法的callback回调中，执行添加默认Marker的方法，保证地图初始化完成后再调用添加默认Marker的方法。正确用法见[添加标记](../doccenter-capabilities/map-marker.md#添加标记)。

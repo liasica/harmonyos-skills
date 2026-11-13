@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: HarmonyOS权限分类、受限权限审批前调试方法及开发者中心 Profile中权限置灰原因说明
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > HarmonyOS权限分类、受限权限审批前调试方法及开发者中心 Profile中权限置灰原因说明
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:2206a36fee12dd8ae6469834438d6cb7c071318141f4a539632221ecaf8175e4
+scraped_at: 2026-11-13T09:06:40+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:f859c9907b0856d21df2ff5429d58de196cde7f0a004d472966cf3b4bb879c93
 ---
 
 ## 问题现象
@@ -41,7 +41,7 @@ content_hash: sha256:2206a36fee12dd8ae6469834438d6cb7c071318141f4a539632221ecaf8
 
      **说明** 
 
-     只有在[自动签名支持的ACL权限](../harmonyos-guides/ide-signing.md#section5301916183411)权限列表的权限才可以通过自动签名申请。
+     只有在[自动签名支持的ACL权限](../doccenter-deveco-studio/ide-signing-auto.md#section5301916183411)权限列表的权限才可以通过自动签名申请。
 
 2. 在HarmonyOS 开发者中心[创建试用调试Profile](../app/agc-help-apply-acl-0000002394212138.md#section1443958124819)，完成[申请ACL权限](../app/agc-help-apply-acl-0000002394212138.md)后，在审核等待期间，还可以创建试用调试Profile来提前试用您申请的这些权限。试用调试Profile有效期为5天，到期即失效。具体操作指导如下：
    * 在提交ACL权限申请后弹出的提示框中，点击"Profile页面"链接。
@@ -72,7 +72,7 @@ A：企业类应用包括企业普通应用和MDM（Mobile Device Management）�
 
 Q：企业类应用可用权限和仅MDM应用可用权限是否支持自动签名？
 
-A：不支持自动签名，因此在调试和发布阶段，均需参照[手动签名](../harmonyos-guides/ide-signing.md#section297715173233)的步骤，完成手动签名。
+A：不支持自动签名，因此在调试和发布阶段，均需参照[手动签名](../doccenter-deveco-studio/ide-signing-manual.md)的步骤，完成手动签名。
 
 Q：在HarmonyOS 开发者中心自助ACL权限申请页面搜索不到企业类应用权限（如GET\_RUNNING\_INFO）怎么办？
 
@@ -92,7 +92,7 @@ A：仅MDM应用可用权限（如ohos.permission.ENTERPRISE\_GET\_ALL\_BUNDLE\_
 
 Q：使用DevEco Studio自动签名时提示受限权限不在支持范围内，签名失败怎么办？
 
-A：并非所有受限权限都支持自动签名，只有[自动签名支持的ACL权限](../harmonyos-guides/ide-signing.md#section5301916183411)列表中的权限才可以通过自动签名申请。如果声明的受限权限不在该列表中（如ALLOW\_USE\_JITFORT\_INTERFACE），自动签名会失败。建议参照[手动签名](../harmonyos-guides/ide-signing.md#section297715173233)完成签名。
+A：并非所有受限权限都支持自动签名，只有[自动签名支持的ACL权限](../doccenter-deveco-studio/ide-signing-auto.md#section5301916183411)列表中的权限才可以通过自动签名申请。如果声明的受限权限不在该列表中（如ALLOW\_USE\_JITFORT\_INTERFACE），自动签名会失败。建议参照[手动签名](../doccenter-deveco-studio/ide-signing-manual.md)完成签名。
 
 Q：BYOD项目权限申请是否支持所有MDM权限？
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-share-10
 title: 如何隔空传送打开App Linking链接直达应用
 breadcrumb: FAQ > 应用服务开发 > 内容分享服务（Share Kit） > 如何隔空传送打开App Linking链接直达应用
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:fbd638349c41820046cefad7eeb77037f8dd917fb20cb61942b4547b560ab35b
+scraped_at: 2026-11-13T09:06:35+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:bf55223b842be45693748a08f2ce97557fac35d7fda22f36acf0a81e52f545eb
 ---
 
 ## 问题现象
@@ -114,7 +114,7 @@ content_hash: sha256:fbd638349c41820046cefad7eeb77037f8dd917fb20cb61942b4547b560
 
    **须知** 
 
-   不能使用DevEco Studio的自动签名功能，必须使用[手动签名](../harmonyos-guides/ide-signing.md#section297715173233)，否则无法拉起应用。
+   不能使用DevEco Studio的自动签名功能，必须使用[手动签名](../doccenter-deveco-studio/ide-signing-manual.md)，否则无法拉起应用。
 
 **宿主应用配置：**
 

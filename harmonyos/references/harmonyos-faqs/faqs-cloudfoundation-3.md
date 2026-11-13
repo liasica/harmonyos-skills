@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-cloudfound
 title: 端云项目启动时crash报错问题
 breadcrumb: FAQ > 应用服务开发 > 云开发服务（Cloud Foundation Kit） > 端云项目启动时crash报错问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:52+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:ccff9836f65694234171bb5b41d4750b7c0c0cba7d343cce7766ed73c225f494
+scraped_at: 2026-11-13T09:06:41+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:049779bc56400195ebfab534f369802fc2218b960eea890e9c1f731cd09383cf
 ---
 
 ## 问题现象
@@ -21,7 +21,7 @@ content_hash: sha256:ccff9836f65694234171bb5b41d4750b7c0c0cba7d343cce7766ed73c22
 ## 问题定位
 
 1. 排查云数据库使用方式是否正确，参考指南：[云数据库](../harmonyos-guides/cloudfoundation-database-service.md)。
-2. 排查签名方式是否正确。参考：[支持的签名方式](../harmonyos-guides/agc-harmonyos-clouddev-overview.md#section10621955124720)，目前支持[关联注册应用进行自动签名](../harmonyos-guides/ide-signing.md#section20943184413328)和[手动签名](../harmonyos-guides/ide-signing.md#section297715173233)两种方式，报错有可能是因为使用了不支持的签名方式。
+2. 排查签名方式是否正确。参考：[支持的签名方式](../harmonyos-guides/agc-harmonyos-clouddev-overview.md#section10621955124720)，目前支持[关联注册应用进行自动签名](../doccenter-deveco-studio/ide-signing-auto.md)和[手动签名](../doccenter-deveco-studio/ide-signing-manual.md)两种方式，报错有可能是因为使用了不支持的签名方式。
 3. 排查运行环境是否正常。从6.0.0(20) Beta5版本开始支持模拟器开发，但与真机存在部分能力差异，详情请参见[模拟器与真机的差异](../harmonyos-guides/ide-emulator-specification.md)，报错有可能是使用了低版本的模拟器。
 
 ## 分析结论
@@ -31,5 +31,5 @@ content_hash: sha256:ccff9836f65694234171bb5b41d4750b7c0c0cba7d343cce7766ed73c22
 ## 修改建议
 
 1. 参考指南：[云数据库](../harmonyos-guides/cloudfoundation-database-service.md)，按照指导步骤进行云数据库开发。
-2. 使用支持的签名方式，如[关联注册应用进行自动签名](../harmonyos-guides/ide-signing.md#section20943184413328)和[手动签名](../harmonyos-guides/ide-signing.md#section297715173233)。
+2. 使用支持的签名方式，如[关联注册应用进行自动签名](../doccenter-deveco-studio/ide-signing-auto.md)和[手动签名](../doccenter-deveco-studio/ide-signing-manual.md)。
 3. 使用真机或者高于6.0.0(20) Beta5版本的模拟器进行调试。

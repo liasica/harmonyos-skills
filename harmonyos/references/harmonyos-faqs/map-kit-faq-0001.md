@@ -3,17 +3,17 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/map-kit-faq-000
 title: 地图组件Marker标记与样式自定义常见问题
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 常见问题 > 地图组件Marker标记与样式自定义常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-21T07:12:23+08:00
-doc_updated_at: 2026-10-20
-content_hash: sha256:df7bd4ea2339da87fb9c30e386516f12a44fd61b726faaf9e3b35ef0716e5752
+scraped_at: 2026-11-13T09:06:32+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:44af852855c15201ef93209d9457271ae11ddf83fe3cbf78f0368c1a3c96c58b
 ---
 
 **Q：如何在地图上实现多个Marker的效果，多个Marker的样式不同，需要自定义样式？**
 
 **A**：添加多个Marker和自定义Marker样式的实现方式如下：
 
-* 添加多个Marker：可以通过调用map.MapComponentController类的[addMarker](../harmonyos-references/map-map-mapcomponentcontroller.md#section0810361284)方法，该方法会返回添加的Marker实例；再通过不同的[MarkerOptions](../harmonyos-references/map-common.md#section559041743210)参数调用该方法创建不同的Marker实例，即可在地图上添加多个Marker标记。
-* 自定义Marker样式的实现：Marker的[icon属性](../harmonyos-references/map-common.md#section559041743210)可以自定义设置图片，可以尝试使用[组件截图](../harmonyos-references/arkts-apis-uicontext-componentsnapshot.md)的方式去构建Builder组件来实现Marker的自定义设置。
+* 添加多个Marker：可以通过调用map.MapComponentController类的[addMarker](../doccenter-references/api/map-map-mapcomponentcontroller.md#addmarker)方法，该方法会返回添加的Marker实例；再通过不同的[MarkerOptions](../doccenter-references/api/map-common.md#markeroptions)参数调用该方法创建不同的Marker实例，即可在地图上添加多个Marker标记。
+* 自定义Marker样式的实现：Marker的[icon属性](../doccenter-references/api/map-common.md#markeroptions)可以自定义设置图片，可以尝试使用[组件截图](../harmonyos-references/arkts-apis-uicontext-componentsnapshot.md)的方式去构建Builder组件来实现Marker的自定义设置。
 
 实现步骤如下：
 
@@ -136,7 +136,7 @@ content_hash: sha256:df7bd4ea2339da87fb9c30e386516f12a44fd61b726faaf9e3b35ef0716
 
 **Q：地图上如何实现自定义信息窗？**
 
-**A**：自定义信息窗可以参考：[自定义信息窗](../harmonyos-guides/map-marker.md#section1930164112317)。
+**A**：自定义信息窗可以参考：[自定义信息窗](../doccenter-capabilities/map-marker.md#自定义信息窗)。
 
 **Q：Marker中的图标可以使用远程地址吗？**
 
@@ -144,7 +144,7 @@ content_hash: sha256:df7bd4ea2339da87fb9c30e386516f12a44fd61b726faaf9e3b35ef0716
 
 **Q：地图组件怎么删除Marker？**
 
-**A**：可以使用[remove](../harmonyos-references/map-map-baseoverlay.md#section39155506439)方法从地图移除覆盖物，实现删除单个Marker。或者可以使用[clear](../harmonyos-references/map-map-mapcomponentcontroller.md#section121439349711)方法删除地图上所有标记。
+**A**：可以使用[remove](../doccenter-references/api/map-map-baseoverlay.md#remove)方法从地图移除覆盖物，实现删除单个Marker。或者可以使用[clear](../doccenter-references/api/map-map-mapcomponentcontroller.md#clear)方法删除地图上所有标记。
 
 **Q：使用createFromBuilder自定义Marker图标时，为什么全局Builder不生效？**
 

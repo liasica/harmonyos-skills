@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-map-9
 title: 如何监听地图的移动
 breadcrumb: FAQ > 应用服务开发 > 地图服务（Map Kit） > 如何监听地图的移动
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:37+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:7966772f13c84b4b9458b3a2807805f1593d41ed8a50277c8c2c4035236c3a6d
+scraped_at: 2026-11-13T09:06:32+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:ec7d0021ec1504a9006b092c8a57002c35a8f4fa6a411b60820886ce782cdde4
 ---
 
 ## 问题现象
@@ -89,7 +89,7 @@ struct HuaweiMapDemo {
 1. 登录HarmonyOS 开发者中心网站，选择“我的项目”。
 2. 在项目列表中找到您的项目，在项目下的应用列表中选择需要打开“地图服务”的应用。
 3. 选择API管理，找到“地图服务”开关，打开开关。
-4. 确认已经开启“地图服务”开放能力，并完成[手动签名](../harmonyos-guides/ide-signing.md#section297715173233)。
+4. 确认已经开启“地图服务”开放能力，并完成[手动签名](../doccenter-deveco-studio/ide-signing-manual.md)。
 
 ## 常见FAQ
 

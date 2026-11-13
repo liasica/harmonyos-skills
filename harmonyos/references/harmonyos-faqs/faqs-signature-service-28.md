@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-signature-
 title: 编译构建时报错：签名工具错误问题汇总
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 编译构建时报错：签名工具错误问题汇总
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:56+08:00
-doc_updated_at: 2026-08-13
-content_hash: sha256:b80a64e1c59e505b85d6ff78dca7dae11104065be1c6b4eea80fad1ec48a6e37
+scraped_at: 2026-11-13T09:06:50+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:7b15aa7726af0115310973634d7a2c6698ae786983144e3be06223fe0bb76bd5
 ---
 
 ## 问题现象
@@ -29,7 +29,7 @@ content_hash: sha256:b80a64e1c59e505b85d6ff78dca7dae11104065be1c6b4eea80fad1ec48
 ## 背景知识
 
 * 由于签名工具基于Java语言开发，需要在Java环境运行。参考：[应用包签名工具](https://gitee.com/openharmony/developtools_hapsigner)。
-* [配置调试签名](../harmonyos-guides/ide-signing.md#section54361623194519)。
+* [配置调试签名](../doccenter-deveco-studio/ide-signing.md)。
 * [工程级build-profile.json5文件](../harmonyos-guides/ide-hvigor-build-profile-app.md)。
 
 ## 问题定位
@@ -85,7 +85,7 @@ build-profile.json5文件products中缺少signingConfig字段，导致软件包�
 
 场景二：
 
-重新配置签名，参考：[配置调试签名](../harmonyos-guides/ide-signing.md#section54361623194519)。
+重新配置签名，参考：[配置调试签名](../doccenter-deveco-studio/ide-signing.md)。
 
 场景三：
 

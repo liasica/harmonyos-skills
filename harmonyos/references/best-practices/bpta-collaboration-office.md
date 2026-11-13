@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-collaborat
 title: 办公编辑全场景协同最佳实践
 breadcrumb: 最佳实践 > 技术创新 > 全场景 > 典型全场景协同开发案例 > 办公编辑全场景协同最佳实践
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-13T09:04:33+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:2157406d9ca4392d0733b917a1fd1f44d393ef401ca1b7233883f85d87bb3ac0
 ---
@@ -32,13 +32,13 @@ content_hash: sha256:2157406d9ca4392d0733b917a1fd1f44d393ef401ca1b7233883f85d87b
 
 |  | 特性 | 特性体验 | 体验视频 |
 | --- | --- | --- | --- |
-| 插入其他设备图文 | 跨设备互通插入图片 | 1、用户使用平板/电脑打开应用。  2、点击应用跨设备互通按钮。  3、弹窗选择设备拍照/图库。  4、用其他设备拍照/选择插入的图片。  5、插入图片到文档中。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/91/v3/lJn03OduTPaXJLUBgxUuVg/zh-cn_media_0000002525619044.mp4) |
-| 插入其他设备图文 | 碰一碰文件/图片插入 | 1、用户在电脑上打开应用。  2、通过手机碰PC窗口触发，手机向电脑传输图片/文件。  3、文档接收文件，图片直接展示，文件形成链接。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/7c/v3/ntZrFdSiT5il__UYMkJYBw/zh-cn_attachment_0000002525621244.mp4) |
-| 插入其他设备图文 | 跨设备剪贴板 | 1、用户使用两台/多台设备（至少包含一台电脑），均打开键鼠穿越，选择共享的设备。  2、复制图文。  3、粘贴选中图文到另一台设备的应用，图文正常落入。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/58/v3/QBrspkRYSc-CHau7Y0CgIQ/zh-cn_media_0000002525779012.mp4) |
-| 插入其他设备图文 | 跨设备拖拽 | 1、用户使用两台/多台设备，均打开键鼠穿越，并链接鼠标。  2、拖拽图文到另一台设备的应用窗口。  3、图文正常落入。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/43/v3/jPoySBf5SwWFBoSjCkzAhw/zh-cn_media_0000002556898897.mp4) |
-| 切换设备继续编辑 | 应用接续 | 1、应用在源端设备打开，想切换到对端设备继续编辑。  2、点击对端设备docker栏应用图标。  3、对端设备正常打开文档。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/db/v3/-xZamGFuREmhO0UMWiSHOA/zh-cn_media_0000002525619050.mp4) |
-| 分享协作 | 碰一碰邀请协同 | 1、用户A打开应用。  2、A的设备和B的设备之间相碰。  3、用户B的设备打开文档。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/9e/v3/79W3ByJmQMePG8o9l_saNQ/zh-cn_media_0000002556778941.mp4) |
-| 分享协作 | 隔空传送邀请协同 | 1、用户A打开应用。  2、用户A做隔空传送手势到用户B的设备，手势见[场景介绍](../harmonyos-guides/gestures-share-overview.md#场景介绍)。  3、用户B的设备打开文档。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/11/v3/XmdX8CjWTdGJP2T1YXOB5A/zh-cn_media_0000002525779026.mp4) |
+| 插入其他设备图文 | 跨设备互通插入图片 | 1、用户使用平板/电脑打开应用。  2、点击应用跨设备互通按钮。  3、弹窗选择设备拍照/图库。  4、用其他设备拍照/选择插入的图片。  5、插入图片到文档中。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/91/v3/lJn03OduTPaXJLUBgxUuVg/zh-cn_media_0000002525619044.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010144Z&HW-CC-Expire=31536000000&HW-CC-Sign=378A71D3FBC587B5F0A6C14E9B428A0A64AB01FC2F58E7954305DEEF6DEA1610) |
+| 插入其他设备图文 | 碰一碰文件/图片插入 | 1、用户在电脑上打开应用。  2、通过手机碰PC窗口触发，手机向电脑传输图片/文件。  3、文档接收文件，图片直接展示，文件形成链接。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/7c/v3/ntZrFdSiT5il__UYMkJYBw/zh-cn_attachment_0000002525621244.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010144Z&HW-CC-Expire=31536000000&HW-CC-Sign=4A5DA141349052CDF56184306C79F05D81CBE2340BB35D1F0AC211E7D5234766) |
+| 插入其他设备图文 | 跨设备剪贴板 | 1、用户使用两台/多台设备（至少包含一台电脑），均打开键鼠穿越，选择共享的设备。  2、复制图文。  3、粘贴选中图文到另一台设备的应用，图文正常落入。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/58/v3/QBrspkRYSc-CHau7Y0CgIQ/zh-cn_media_0000002525779012.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010144Z&HW-CC-Expire=31536000000&HW-CC-Sign=1317CFA430CE1ACFF6EEDD79722B9184D9D8658BBFD463D8DA3F36F03A3F542F) |
+| 插入其他设备图文 | 跨设备拖拽 | 1、用户使用两台/多台设备，均打开键鼠穿越，并链接鼠标。  2、拖拽图文到另一台设备的应用窗口。  3、图文正常落入。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/43/v3/jPoySBf5SwWFBoSjCkzAhw/zh-cn_media_0000002556898897.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010144Z&HW-CC-Expire=31536000000&HW-CC-Sign=4DAB2D65DE539EAB5A8356906AF9D9DDEE1CCA61C3BF2496703F8FF52BDAC0C9) |
+| 切换设备继续编辑 | 应用接续 | 1、应用在源端设备打开，想切换到对端设备继续编辑。  2、点击对端设备docker栏应用图标。  3、对端设备正常打开文档。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/db/v3/-xZamGFuREmhO0UMWiSHOA/zh-cn_media_0000002525619050.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010144Z&HW-CC-Expire=31536000000&HW-CC-Sign=98DCA32DEC686F6738EA71F1368478C13FE8295F16B62EA7F811D5D7B26E85C8) |
+| 分享协作 | 碰一碰邀请协同 | 1、用户A打开应用。  2、A的设备和B的设备之间相碰。  3、用户B的设备打开文档。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/9e/v3/79W3ByJmQMePG8o9l_saNQ/zh-cn_media_0000002556778941.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010144Z&HW-CC-Expire=31536000000&HW-CC-Sign=8D77D446F394387B2777C7DCA74235DB501791227F8C695CC69DC74B40077A0F) |
+| 分享协作 | 隔空传送邀请协同 | 1、用户A打开应用。  2、用户A做隔空传送手势到用户B的设备，手势见[场景介绍](../harmonyos-guides/gestures-share-overview.md#场景介绍)。  3、用户B的设备打开文档。 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/11/v3/XmdX8CjWTdGJP2T1YXOB5A/zh-cn_media_0000002525779026.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010144Z&HW-CC-Expire=31536000000&HW-CC-Sign=295F45BCD31E4D87F2B82E9F46D5C512888B5858D07D2C9D3AE1BCBFC3D92AD1) |
 
 ### 使用限制
 

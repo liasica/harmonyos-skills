@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-screentime
 title: 屏幕时间守护服务的策略设置与使用时长查询
 breadcrumb: FAQ > 应用服务开发 > 屏幕时长守护服务（Screen Time Guard Kit） > 屏幕时间守护服务的策略设置与使用时长查询
 category: harmonyos-faqs
-scraped_at: 2026-09-02T15:04:26+08:00
-doc_updated_at: 2026-08-26
-content_hash: sha256:d7b9165e0fbf859824bc4e7db867aba837563671e7e090b50559bc44669f6c5b
+scraped_at: 2026-11-13T09:06:35+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:1f7a40290f43d3173080ed00c33f136b49a9111fbb184fd308a9dea778ec3c3c
 ---
 
 ## 问题现象
@@ -27,7 +27,7 @@ content_hash: sha256:d7b9165e0fbf859824bc4e7db867aba837563671e7e090b50559bc44669
 
 ### 场景一
 
-准备工作：完成[配置签名](../harmonyos-guides/screentimeguard-app-signature.md)和[受限ACL权限申请](../harmonyos-guides/screentimeguard-permission-application.md)。可使用自动签名完成ACL权限调试配置，具体参考[自动签名支持的ACL权限](../harmonyos-guides/ide-signing.md#section5301916183411)。
+准备工作：完成[配置签名](../harmonyos-guides/screentimeguard-app-signature.md)和[受限ACL权限申请](../harmonyos-guides/screentimeguard-permission-application.md)。可使用自动签名完成ACL权限调试配置，具体参考[自动签名支持的ACL权限](../doccenter-deveco-studio/ide-signing-auto.md#section5301916183411)。
 
 * **步骤一：**
 

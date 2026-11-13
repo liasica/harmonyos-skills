@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-compiling-
 title: 三方SDK定制修改部分源码
 breadcrumb: FAQ > DevEco Studio > 编译构建 > 三方SDK定制修改部分源码
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:23ae1727af8fd40eb649d5ee77d869bf9c19d518ab72122a7d40ab0fcab2e81c
+scraped_at: 2026-11-13T09:06:48+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:8f4ed4d8ce9df384cf5c81adfe2b4f33d43b6685c7231498294c7b290f3d04c5
 ---
 
 **问题背景**
@@ -66,7 +66,7 @@ SDK使用方需在SDK上定制功能开发，SDK提供方仅希望提供SDK和�
 
 1. hvigor-config.json5文件的properties下不能将ohos.compile.lib.entryfile配置为false。
 2. 从提供方拷贝过来的文件名、资源名、方法名：支持新增，不支持修改、删除。
-3. 如果工程中存在其他模块引用了提供方SDK，则需要在工程级别oh-package.json5文件中配置[overrides选项](../harmonyos-guides/ide-oh-package-json5.md#zh-cn_topic_0000001792256137_overrides)，改成本地依赖方式。
+3. 如果工程中存在其他模块引用了提供方SDK，则需要在工程级别oh-package.json5文件中配置[overrides选项](../doccenter-deveco-studio/ide-oh-package-json5.md#section13977152601510)，改成本地依赖方式。
 4. 不允许额外修改模块A配置文件（包括oh-package.json5，module.json5）。
 5. 不支持C++源码的修改替换。
 6. 仅支持Har的源码修改，不支持Hap和Hsp的源码修改替换。

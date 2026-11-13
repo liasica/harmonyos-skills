@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/app-debugging-f
 title: HAP包安装到其他手机方法与常见问题
 breadcrumb: FAQ > DevEco Studio > 应用调试 > 常见问题 > HAP包安装到其他手机方法与常见问题
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:59+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:0831f32b51af5d56da74256a00a5fceb339db14a203327e9d71f35d2e3efd689
+scraped_at: 2026-11-13T09:06:50+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:3082f6d1a532253f7418869a3a1124be7cd9ec5032f3e5d0b8c098d74c60f35f
 ---
 
 **Q：如何将HAP包安装到其他手机供测试使用？**
@@ -13,22 +13,14 @@ content_hash: sha256:0831f32b51af5d56da74256a00a5fceb339db14a203327e9d71f35d2e3e
 **A**：可以通过以下方式安装：
 
 * 通过命令安装应用。
-  1. 获取关联手机的[手动签名](../harmonyos-guides/ide-signing.md#section297715173233)（调试签名），并配置。
+  1. 获取关联手机的[手动签名](../doccenter-deveco-studio/ide-signing-manual.md)（调试签名），并配置。
   2. 打包HAP以及依赖的HSP。
   3. 使用hdc安装包体：hdc install src（src：软件包所在文件目录）。
 
-  **说明** 
-
-  从API version 22开始，支持安装APP包，即第2步打包APP即可。
+  注：从API version 22开始，支持安装APP包，即第2步打包APP即可。
 * 通过[DevEco Testing](https://developer.huawei.com/consumer/cn/deveco-testing/?ha_source=sousuo&ha_sourceId=89000251)安装：连接真机后，选择实用工具，点击开始投屏，点击右侧安装应用即可选择HAP包进行安装。
 * 通过应用市场能力安装：[指定设备发布](../app/agc-help-internal-test-0000002270709477.md)将应用发布上传至您的服务器或者第三方云上，团队参与测试的人员可以将应用下载到授权的设备上测试。
 * 安装到模拟器：[安装应用程序包和上传文件](../harmonyos-guides/ide-emulator-install-upload.md)。
-
-**Q：已上架应用的不同版本如何通过邀请测试分发给用户试用？**
-
-**A**：可以通过以下方式分发：
-
-通过[邀请测试](../doccenter-submission/agc-help-invite-test-overview-0000002287701773.md)分发测试版本。邀请测试面向小范围信任用户分发测试版本的场景。若分发版本与已上架版本使用相同包名，两版的签名证书配置必须一致，否则客户端无法覆盖安装，会报9568286错误。若分发版本是独立包名，则作为新应用提审后走邀请测试即可。
 
 **Q：无网络设备如何安装HAP包，且期望一次打包供不同客户自行安装？**
 
@@ -62,4 +54,4 @@ content_hash: sha256:0831f32b51af5d56da74256a00a5fceb339db14a203327e9d71f35d2e3e
    hdc install src
    ```
 
-只有调试Profile文件中添加了对应UDID的设备才能安装，其他设备无法安装。详情可参考[调试证书和调试Profile签名](../app/agc-help-releasefaq-0000001110342644.md#section1577614593020)。
+   只有调试Profile文件中添加了对应UDID的设备才能安装，其他设备无法安装。详情可参考[调试证书和调试Profile签名](../app/agc-help-releasefaq-0000001110342644.md#section1577614593020)。

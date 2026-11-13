@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-signature-
 title: 项目多人开发时会导致signingConfigs冲突，该如何协调
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 项目多人开发时会导致signingConfigs冲突，该如何协调
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-07-22
-content_hash: sha256:a215e8901060a6450e1d93406446e732c14900830da6bd3afcc9566206eba1ac
+scraped_at: 2026-11-13T09:06:50+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:5dcd4a5cc1e28d112db3fc5de39f7fce39af18662d89ee9c2495e3cdde622f53
 ---
 
 ## 问题现象
@@ -27,7 +27,7 @@ at E:\work\1200_iabp_harmonyos\build-profile.json5
   + 并行开发：通过分支机制实现功能隔离，开发者可在独立分支上工作，避免直接修改主分支代码。
   + 代码整合：通过合并（Merge）或变基（Rebase）操作将多分支代码整合到主分支，确保代码最终一致性。
 * 签名配置个性化导致的文件冲突。
-  + [手动签名](../harmonyos-guides/ide-signing.md#section297715173233)场景下，每个开发者的本地签名参数（如storePassword、keyAlias、certpath等）因设备差异而不同，直接修改[build-profile.json5](../harmonyos-guides/ide-hvigor-build-profile-app.md)会导致该文件频繁被改动。
+  + [手动签名](../doccenter-deveco-studio/ide-signing-manual.md)场景下，每个开发者的本地签名参数（如storePassword、keyAlias、certpath等）因设备差异而不同，直接修改[build-profile.json5](../harmonyos-guides/ide-hvigor-build-profile-app.md)会导致该文件频繁被改动。
   + 即便开发者设置相同密码，不同设备生成的加密值仍会不同，进一步加剧文件内容不一致问题。
 
 ## 问题定位

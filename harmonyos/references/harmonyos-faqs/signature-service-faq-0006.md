@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/signature-servi
 title: 应用签名失败与证书过期问题排查
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 常见问题 > 应用签名失败与证书过期问题排查
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:0e646ece2c349492362fa88d357e4adae424fbc87cf9f4fdb907b576b821bf2d
+scraped_at: 2026-11-13T09:06:49+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:99218bfee11b18c8b891a6246a84c2726073910188bd7108cd5f424c96e71119
 ---
 
 **Q：应用在进行自动签名时，签名失败，提示“The signature does not take effect or has expired. The current system time may be inaccurate. Please calibrate the system time and sign again.”。**
@@ -43,7 +43,7 @@ Detail: Please check the message from tools.hvigor ERROR: BUILD FAILED in 4 s 59
 
 1. 在File-Project Structure-Signing Configs下查看证书存储路径。
 2. 进入证书存储路径，将过期的证书删除，废除过期的证书和Profile，用原有的csr和p12重新申请证书和Profile。
-3. 本地调试时，在适用自动签名的场景，可以在Signing Configs页面勾选Automatically generate signature完成[自动签名](../harmonyos-guides/ide-signing.md#section18815157237)，其余需要手动签名的场景，需要去官网生成新的证书并更换证书。
+3. 本地调试时，在适用自动签名的场景，可以在Signing Configs页面勾选Automatically generate signature完成[自动签名](../doccenter-deveco-studio/ide-signing-auto.md)，其余需要手动签名的场景，需要去官网生成新的证书并更换证书。
 
 **Q：打包报错提示“hap-sign-tool:error:invalid CEN header (bad signature)”。**
 

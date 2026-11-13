@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-continue
 title: 社交通讯全场景协同最佳实践
 breadcrumb: 最佳实践 > 技术创新 > 全场景 > 典型全场景协同开发案例 > 社交通讯全场景协同最佳实践
 category: best-practices
-scraped_at: 2026-11-13T07:34:14+08:00
+scraped_at: 2026-11-13T09:04:33+08:00
 doc_updated_at: 2026-11-03
 content_hash: sha256:abcfe12ff1b992163ce89f8ccf72212fed020594bf2ae69ec352a93f970f7e74
 ---
@@ -29,13 +29,13 @@ content_hash: sha256:abcfe12ff1b992163ce89f8ccf72212fed020594bf2ae69ec352a93f970
 |  |  |
 | --- | --- |
 | 特性 | 体验视频 |
-| 跨设备互通 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/9e/v3/Hc9cJ62NSC2vhd5x9Rpvhg/zh-cn_media_0000002623705755.mp4) |
-| 跨设备拖拽 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/6e/v3/1L5imfzdS_SWMQw9xbM4Rg/zh-cn_media_0000002623545867.mp4) |
-| 跨设备剪贴 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/e7/v3/6mrkwg8RRgmznB8XawEArw/zh-cn_media_0000002593106340.mp4) |
-| 跨设备应用接续 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/08/v3/a7YQrnq6StCP-vZ-WO7jSw/zh-cn_media_0000002593266262.mp4) |
-| 碰一碰插入图片 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/94/v3/Mkgv9PihRWOH33MxZuLqOw/zh-cn_media_0000002623705769.mp4) |
-| 碰一碰分享页面 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/c6/v3/lr5YxTpURCCoV_f8YnfXeA/zh-cn_media_0000002623545883.mp4) |
-| 隔空传送分享页面 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/5/v3/3vD1GqBTTGS0SOFSPWxflw/zh-cn_media_0000002593106342.mp4) |
+| 跨设备互通 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/9e/v3/Hc9cJ62NSC2vhd5x9Rpvhg/zh-cn_media_0000002623705755.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010144Z&HW-CC-Expire=31536000000&HW-CC-Sign=2190DFC1B79A39DBE16A5F9C06CF816888BF6B79612D2756C0144E9ADF79A73B) |
+| 跨设备拖拽 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/6e/v3/1L5imfzdS_SWMQw9xbM4Rg/zh-cn_media_0000002623545867.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010144Z&HW-CC-Expire=31536000000&HW-CC-Sign=919B8DA5ED16CA1E2C68FE08761C5329B43BF0420566451884665086C3968BAE) |
+| 跨设备剪贴 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/e7/v3/6mrkwg8RRgmznB8XawEArw/zh-cn_media_0000002593106340.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010144Z&HW-CC-Expire=31536000000&HW-CC-Sign=E79B1A57871B4D64A9BB556D95AAC697510CD57C415629C555A6D1E863D0D6CA) |
+| 跨设备应用接续 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/08/v3/a7YQrnq6StCP-vZ-WO7jSw/zh-cn_media_0000002593266262.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010144Z&HW-CC-Expire=31536000000&HW-CC-Sign=6F60BEABD3B093A122AFE608E80806DDC36D72F6CEB5E5A58042DD5E228F936E) |
+| 碰一碰插入图片 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/94/v3/Mkgv9PihRWOH33MxZuLqOw/zh-cn_media_0000002623705769.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010144Z&HW-CC-Expire=31536000000&HW-CC-Sign=0BD677346EEFDEE492C4E547B528B545FD4EF9314860CF2CB8E2BCBD0E7A4A7D) |
+| 碰一碰分享页面 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/c6/v3/lr5YxTpURCCoV_f8YnfXeA/zh-cn_media_0000002623545883.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010144Z&HW-CC-Expire=31536000000&HW-CC-Sign=31EDBC3CC33B2B16599F9547B1FA77797E90CE1C7EB06D65D8355DE31A1A2004) |
+| 隔空传送分享页面 | [视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/5/v3/3vD1GqBTTGS0SOFSPWxflw/zh-cn_media_0000002593106342.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010144Z&HW-CC-Expire=31536000000&HW-CC-Sign=DEBE802446834A4F6B5F2AACDA3833401484521A0A64F3C9A74BF69BA1EF6E85) |
 
 ### 使用限制
 

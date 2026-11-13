@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-project-ma
 title: app中如何统一同一三方库的不同版本
 breadcrumb: FAQ > DevEco Studio > 工程管理 > app中如何统一同一三方库的不同版本
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:53+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:77ef4195a396805bb573b4cb1b0683729bf1b65029ca21c102bc230b87039b91
+scraped_at: 2026-11-13T09:06:43+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:86f099b486fe423dadcd88a5cca9a4c905ef3c1bbf7afd5f073d7e81a11509c1
 ---
 
 ## 问题现象
@@ -19,7 +19,7 @@ content_hash: sha256:77ef4195a396805bb573b4cb1b0683729bf1b65029ca21c102bc230b870
 [oh-package.json5](../harmonyos-guides/ide-oh-package-json5.md)是项目依赖管理的配置文件，通过如下配置选项可以实现依赖管理：
 
 * [parameterFile](../harmonyos-guides/ide-oh-package-json5.md#section122411462820)：开发者可在项目根目录配置一个参数化文件（json5格式文件），在该文件中维护模块或依赖版本信息，不同模块将根据该文件中的版本进行配置，满足不同构建场景下，开发者快速切换依赖版本的需要。
-* [overrides](../harmonyos-guides/ide-oh-package-json5.md#zh-cn_topic_0000001792256137_overrides)：在项目级别的oh-package.json5（即项目根目录下的oh-package.json5）文件中添加overrides配置，方便将依赖树中的依赖替换为另一个版本。
+* [overrides](../doccenter-deveco-studio/ide-oh-package-json5.md#section13977152601510)：在项目级别的oh-package.json5（即项目根目录下的oh-package.json5）文件中添加overrides配置，方便将依赖树中的依赖替换为另一个版本。
 * [overrideDependencyMap](../harmonyos-guides/ide-oh-package-json5.md#section106151513236)：重写源码模块或三方库的依赖关系。开发者可在工程级oh-package.json5文件中新增overrideDependencyMap配置，在依赖安装时，某个依赖节点的所有直接子依赖替换为对应依赖关系重写文件中配置的依赖项。
 
 ## 解决方案

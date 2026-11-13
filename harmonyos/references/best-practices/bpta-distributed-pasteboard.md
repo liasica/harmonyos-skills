@@ -3,7 +3,7 @@ url: https://developer.huawei.com/consumer/cn/doc/best-practices/bpta-distribute
 title: 跨设备剪贴板常见场景
 breadcrumb: 最佳实践 > 技术创新 > 全场景 > 多端协同 > 跨设备剪贴板常见场景
 category: best-practices
-scraped_at: 2026-11-10T10:42:00+08:00
+scraped_at: 2026-11-13T09:04:32+08:00
 doc_updated_at: 2026-10-28
 content_hash: sha256:0b38d5f194f0645da54feb72d89ef03460c13ec2638ae0d78f1b369ad6e6b11e
 ---
@@ -43,7 +43,7 @@ content_hash: sha256:0b38d5f194f0645da54feb72d89ef03460c13ec2638ae0d78f1b369ad6e
 
 用户在任意应用（如短信、浏览器等）中复制包含特定标识的文本（如活动口令、订单号或链接等），随后打开目标应用（如商城应用、服务应用），应用能自动识别复制文本中预设的关键字或编码。应用在校验关键字格式、时效性或用户权限通过后，弹窗或直接跳转至关联的活动页面、订单详情页或其他特定功能模块。例如用户复制短信中的活动链接，打开商城应用后自动跳转至促销活动页，无需手动搜索或点击多级菜单。
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/eb/v3/ATWugyGgQWOAMthB_MM5Ng/zh-cn_media_0000002429043485.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/eb/v3/ATWugyGgQWOAMthB_MM5Ng/zh-cn_media_0000002429043485.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010432Z&HW-CC-Expire=31536000000&HW-CC-Sign=84E72278E2C3E9227574AD4131886FC311F3296829D79A954AA6CF27F123DE12)
 
 **构建****数据存入剪贴板**
 
@@ -119,7 +119,7 @@ checkPermissionGrant(): void {
 
 随着富文本数据接入不同设备，为了使复制的数据能够被更多的设备B识别，设备A需要将同一份数据的多种样式存入剪贴板中。如设备A图文混排的富文本数据可以按[纯文本类型（'text/plain'）](../harmonyos-references/js-apis-pasteboard.md#常量)、包含文字样式及图片的[HTML类型（'text/html'）](../harmonyos-references/js-apis-pasteboard.md#常量)、[纯图片类型（'pixelMap'）](../harmonyos-references/js-apis-pasteboard.md#常量)等多种类型存入剪贴板。设备B选择需要的类型读取对应类型的数据，然后实现粘贴操作。剪贴板支持的数据类型请参考[@ohos.pasteboard (剪贴板)](../harmonyos-references/js-apis-pasteboard.md#常量)。
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/92/v3/HDU17F-JT9-1yK2xrdVfLw/zh-cn_media_0000002429163385.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/92/v3/HDU17F-JT9-1yK2xrdVfLw/zh-cn_media_0000002429163385.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010432Z&HW-CC-Expire=31536000000&HW-CC-Sign=EA558F5194FEC7524280C2519A44ACD5DDA9AA50D1D10018CAF4978788BBA6F0)
 
 **构建数据存入剪贴板**
 
@@ -248,7 +248,7 @@ await systemPasteBoard.setData(pasteData).catch((err: BusinessError) => {
 
 允许文件粘贴时，通常需要使用进度条将抽象进程转化为可视化的动态变化，帮助用户快速了解当前进展。
 
-[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/24/v3/iQYut6eUSr2bVtLKRa5RkA/zh-cn_media_0000002395443772.mp4)
+[视频](https://contentcenter-videovali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_300_3/24/v3/iQYut6eUSr2bVtLKRa5RkA/zh-cn_media_0000002395443772.mp4?HW-CC-KV=V1&HW-CC-Date=20261113T010432Z&HW-CC-Expire=31536000000&HW-CC-Sign=681DE2C53E6DD4169F63AED4961712C816656DF546FBC4A33EABE82D83619262)
 
 **构建****数据存入剪贴板**
 

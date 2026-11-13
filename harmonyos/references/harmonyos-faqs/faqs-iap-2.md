@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-iap-2
 title: 应用如何接入退款及常见问题
 breadcrumb: FAQ > 应用服务开发 > 应用内支付服务（IAP Kit） > 应用如何接入退款及常见问题
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:c2a0a2f4d7152ddaec4217904fd5d06340b2c438ae218c93db56bc598101773f
+scraped_at: 2026-11-13T09:06:38+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:6873bdb83be9bfaeecd6da15352447f2dd2025941bd42d6b5ee31545875fb56b
 ---
 
 ## 问题现象
@@ -30,13 +30,13 @@ content_hash: sha256:c2a0a2f4d7152ddaec4217904fd5d06340b2c438ae218c93db56bc59810
 
    * IAP订单退款设备侧操作入口：设置-华为账号-付款与账单-购买记录-详情-对订单有疑问-申请退款；
    * 或者通过设置-华为账号-付款与账单-帮助和反馈，通过客服申请退款。开发者侧：
-   * 开发者登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)，选择“App与元服务”，在“运营”页签下，点击“产品运营>退款管理”，查看用户提交的退款申请，处理退款订单，退款申请后到退款完成非实时，一般从发起申请退款到完成需要7个工作日左右。
+   * 开发者登录[HarmonyOS 开发者中心](https://developer.huawei.com/consumer/cn/hdc-console/#/home/)，选择"App与元服务"，在"运营"页签下，点击"产品运营>退款管理"，查看用户提交的退款申请，处理退款订单，退款申请后到退款完成非实时，一般从发起申请退款到完成需要7个工作日左右。
 
 2. 用户发起退款后，应用客户端可以调用[iap.createRefundRequest](../harmonyos-references/iap-iap.md#iapcreaterefundrequest)接口传入退款的订单号从而拉起退款页面完成退款申请。同时开发者服务器会收到[NotificationType](../harmonyos-references/iap-key-event-notifications.md#notificationtype)对应字段是：REVOKE的退款事件通知，完成退款后则会收到[NotificationSubtype](../harmonyos-references/iap-key-event-notifications.md#notificationsubtype)对应字段是REFUND\_TRANSACTION的退款成功事件通知。
 3. 沙盒环境下订单退款不支持退款申请事件通知，用户提交退款请求后，IAP会跳过退款审核流程，直接完成退款，同时给开发者服务器发送[NotificationSubtype](../harmonyos-references/iap-key-event-notifications.md#notificationsubtype)对应字段是REFUND\_TRANSACTION的退款成功事件通知。
 4. IAP提供了两种方式让开发者来查询到用户退款相关信息：
    * 服务端API查询：用户申请退款后，IAP服务器会向开发者服务器发起请求，请求中会携带[RefundRequestData](../harmonyos-references/iap-server-refund-receive-notify.md#refundrequestdata)结构体，该结构体中的applyAmount字段就说明了用户申请的退款金额（单位：分），除此外还有refundReason（用户申请退款理由）和refundOrders（退款申请工单下的订单号）等参数。
-   * HarmonyOS 开发者中心管理台查询退款信息：开发者登录HarmonyOS 开发者中心，选择“App与元服务”，在“运营”页签下，点击“产品运营>退款管理”，查看用户提交的退款申请，处理退款订单。
+   * HarmonyOS 开发者中心管理台查询退款信息：开发者登录HarmonyOS 开发者中心，选择"App与元服务"，在"运营"页签下，点击"产品运营>退款管理"，查看用户提交的退款申请，处理退款订单。
 
      ![](https://contentcenter-vali-drcn.dbankcdn.cn/pvt_2/DeveloperAlliance_scene_100_1/f5/v3/3JWunVkmRfS-Z3OEA9GRkA/zh-cn_image_0000002654410216.png?HW-CC-KV=V1&HW-CC-Date=20261112T233212Z&HW-CC-Expire=31536000000&HW-CC-Sign=80E9A05FC316340FC731164EDC228699FC5D86689BE7FBC0D2495A96484F95AD "点击放大")
 
@@ -58,8 +58,28 @@ A：需要的，审核同意退款后，华为财务系统会发起原路退回�
 
 Q：华为开发者账号登录HarmonyOS 开发者中心管理台后看不到退款管理功能，如何解决？
 
-A：开发者使用退款管理功能，需要拥有至少一个具备退款权限的角色：账号持有者、管理员、App管理员、财务。具体可查看[添加成员账号](../app/agc-help-manageaccount-0000001099996700.md#section151241455193313)。
+A：开发者使用退款管理功能，需要拥有至少一个具备退款权限的角色：账号持有者、管理员、App管理员、财务。具体可查看[添加成员账号](../app/team-account-guide-0000002735960448.md#section1674403322314)。
 
 Q：用户通过客服进线申请退款，开发者服务端是否会收到退款申请事件通知？
 
 A：不会。用户通过客服进线（即人工退款）进行退款时，不会向开发者服务端发送退款申请事件通知，而是通过发送退款邮件与开发者确认是否同意退款。如开发者同意退款，再进行人工退款处理。正常退款申请通知通常在用户提交退款申请后很快推送，基本为分钟级。
+
+Q：收到REVOKE及APPLICATION\_DELETE\_SUBSCRIPTION\_HOSTING通知后，是否表示退款已成功？之后又收到同一订单的REFUND\_REQUEST退款申请通知如何处理？
+
+A：REVOKE及APPLICATION\_DELETE\_SUBSCRIPTION\_HOSTING通知仅表示订阅的托管被删除或取消，并非退款成功通知，退款成功通知应为[NotificationSubtype](../harmonyos-references/iap-key-event-notifications.md#notificationsubtype)对应字段是REFUND\_TRANSACTION。收到REFUND\_REQUEST退款申请通知时，按以下步骤处理：
+
+1. 以purchaseOrderId或purchaseToken比对订单系统，确认该订单是否已退款成功（此前应已收到过REFUND\_TRANSACTION退款成功通知），同时对比通知的notificationRequestId排除通知重发的可能。
+2. 若确认该订单已退款成功，调用[开发者审核退款订单](../harmonyos-guides/iap-refund.md#开发者审核退款订单)接口对refundBatchNo提交拒绝结果，避免同一订单被二次退款造成资金损失。
+3. 登录HarmonyOS 开发者中心，选择"App与元服务"，在"运营"页签下，点击"产品运营>退款管理"，查询该refundBatchNo工单的创建来源与状态，确认申请渠道。
+
+Q：IAP退款是否支持部分退款？例如用户购买会员9.9元并使用1元优惠券后，是否可以退还8.9元？
+
+A：支持部分退款。退款金额由开发者在审核退款时确认，IAP不做金额校验。开发者同意退款时，通过[ReviewResult](../harmonyos-references/iap-server-refund-return-result.md#reviewresult)明确返回每笔订单的退款金额，如果部分订单拒绝退款，则该订单退款金额返回0。
+
+Q：工作人员处理退款的期限是24小时还是72小时？不同文档中描述的时间不一致。
+
+A：退款处理期限为24小时。请关注每一笔退款单的剩余处理时间，过期后将无法处理退款单，将由平台统一审核受理。
+
+Q：数字商品是否可以设置不支持退款？
+
+A：目前不支持直接设置数字商品不可退款。如果有此需求，可以通过[退款管理](../doccenter-distribution/refund-management-0000002084083100.md#section16244110171513)API将退款申请全部拒绝返回，但平台仍会酌情判断。

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/account-kit-faq
 title: 华为账号登录与授权常见问题
 breadcrumb: FAQ > 应用服务开发 > 华为账号服务（Account Kit） > 常见问题 > 华为账号登录与授权常见问题
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-22
-content_hash: sha256:88dc7f9fe113a8a66fec5eed76dc4a8578f97447194e722796cbaebac7b3cdd3
+scraped_at: 2026-11-13T09:06:34+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:7dac65b1d17e5e4cfb72fa0e6bfeaaf8fdd8f514ba37c875797220eb44af07a1
 ---
 
 **Q：华为账号登录报错，常见错误码是1001500001，主要报错信息如下：**
@@ -108,7 +108,7 @@ A：问题四：错误码60180007的含义是通过Authorization Code无法获�
 
 解决方案：
 
-* [申请账号权限](../harmonyos-guides/account-config-permissions.md#section144591410155511)，确认应用满足华为账号一键权限申请条件并确认申请已通过。
+* [申请账号权限](../doccenter-capabilities/account-config-permissions.md)，确认应用满足华为账号一键权限申请条件并确认申请已通过。
 * 确认/oauth2/v6/quickLogin/getPhoneNumber需要的入参code是通过华为账号一键登录接口获取的。请参考[客户端开发](../harmonyos-guides/account-phone-unionid-login.md#客户端开发)。
 
 **Q：通过"/oauth2/agent/v1/access-token"[获取用户级Token](../FASP-by-Template-develop-References/get-token-user-0000001622722589.md)报错：**
@@ -149,7 +149,7 @@ A：问题六：错误码1001502003的含义为输入参数值无效。
 * client\_id配置value值错误，比如空格等异常字符。
 * 传入的匿名手机号不正确，或是未调用授权API（[AuthorizationWithHuaweiIDRequest](../harmonyos-references/account-api-authentication.md#authorizationwithhuaweiidrequest)）获取匿名手机号。
 * 接口传参异常，如调用授权API（[AuthorizationWithHuaweiIDRequest](../harmonyos-references/account-api-authentication.md#authorizationwithhuaweiidrequest)）时scope和permission都未传。
-* 检查应用的签名文件是否配置正确，且需要进行[手动签名](../harmonyos-guides/ide-signing.md#section297715173233)，并使用调试证书而非发布证书。
+* 检查应用的签名文件是否配置正确，且需要进行[手动签名](../doccenter-deveco-studio/ide-signing-manual.md)，并使用调试证书而非发布证书。
 * 申请的Profile文件不包含APP ID，需要重新申请Profile文件。
 
 **Q：后端一键登录通过token换取手机号调用报错，报错信息如下：**

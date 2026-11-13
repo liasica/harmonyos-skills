@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: p12和csr文件丢失后如何找回并更新应用
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > p12和csr文件丢失后如何找回并更新应用
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:0c88edc80c26073fe633ef95aaa6ee1d76340668b7257fc2b670de7d4e35850d
+scraped_at: 2026-11-13T09:06:40+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:e46d6c1301b443c3bb86402d3c478cdee6011ace1fd88eb95ef1f409c5b98d49
 ---
 
 ## 背景知识
@@ -30,10 +30,10 @@ HarmonyOS应用签名需要使用p12文件、cer文件和p7b文件。p7b文件�
   2. 输入Key store Password和Alias后，即可重新生成csr文件。
 * **场景2：p12文件和csr文件存在，但Password或Alias丢失；**
 
-  这种情况只能重新生成p12文件和csr文件，详细步骤可参考[生成密钥和证书请求文件](../harmonyos-guides/ide-signing.md#section462703710326)。
+  这种情况只能重新生成p12文件和csr文件，详细步骤可参考[生成密钥和证书请求文件](../doccenter-deveco-studio/ide-signing-manual.md#section1245916381106)。
 * **场景3：p12文件丢失，csr文件或Password或Alias存在；**
 
-  由于签名必须使用p12文件，这种情况csr存在也失去作用，只能重新生成p12文件和csr文件，详细步骤可参考[生成密钥和证书请求文件](../harmonyos-guides/ide-signing.md#section462703710326)。
+  由于签名必须使用p12文件，这种情况csr存在也失去作用，只能重新生成p12文件和csr文件，详细步骤可参考[生成密钥和证书请求文件](../doccenter-deveco-studio/ide-signing-manual.md#section1245916381106)。
 
 ## 总结
 

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-signature-
 title: 安装应用时提示“安装失败，请重试”
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 安装应用时提示“安装失败，请重试”
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:56+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:21894cd8b554a84a2e9690f81acbb757c905b9e7cbad37a016dbcc12f39f02a8
+scraped_at: 2026-11-13T09:06:50+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:78ce660e5d7fb64adacd84af14ce251ae072c8d07274765ea98f61d12b7b50ef
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:21894cd8b554a84a2e9690f81acbb757c905b9e7cbad37a016dbcc12f39
 
 ## 背景知识
 
-* [调试证书](../harmonyos-guides/ide-signing.md#section081822416419)：用于应用/元服务调试场景。
+* [调试证书](../doccenter-deveco-studio/ide-signing.md)：用于应用/元服务调试场景。
 * [发布证书](../harmonyos-guides/ide-publish-app.md#section178461193713)：发布证书用于应用/元服务发布的场景。当发布应用/元服务至华为应用市场时，需要申请、下载发布证书，用于后续打包正式发布包。
 
 ## 解决方案

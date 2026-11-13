@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-signature-
 title: 如何处理密钥共享团队内部发生的merge冲突
 breadcrumb: FAQ > DevEco Studio > 签名服务 > 如何处理密钥共享团队内部发生的merge冲突
 category: harmonyos-faqs
-scraped_at: 2026-11-13T07:34:14+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:3817df9f7cfdc2ecbabebc21002493aebc0c58975aa5c6089ef978a709b54b5f
+scraped_at: 2026-11-13T09:06:49+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:95a27f0af1dc052f6da79c706c19719fe1acc61763c3bbf2e89c4bfa4ec2a09f
 ---
 
 ## 问题现象
@@ -14,7 +14,7 @@ content_hash: sha256:3817df9f7cfdc2ecbabebc21002493aebc0c58975aa5c6089ef978a709b
 
 ## 背景知识
 
-* [手动配置签名信息](../harmonyos-guides/ide-signing.md#section297715173233)：针对应用/元服务的签名，开发者可选择手动签名对应用/元服务进行签名。
+* [手动配置签名信息](../doccenter-deveco-studio/ide-signing-manual.md)：针对应用/元服务的签名，开发者可选择手动签名对应用/元服务进行签名。
 * 在开发测试阶段，开发团队成员会使用各自的自动化签名工具，从而导致成员之间的配置文件（build-profile.json5）有差异，因此可以统一使用同一份签名文件的拷贝，进行手动配置签名。
 
 ## 解决方案

@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-developmen
 title: DevEco Studio版本相关问题
 breadcrumb: FAQ > DevEco Studio > 环境准备 > DevEco Studio版本相关问题
 category: harmonyos-faqs
-scraped_at: 2026-09-02T14:54:53+08:00
-doc_updated_at: 2026-06-26
-content_hash: sha256:545392094f949d1e4935571b0a1974982f7f00e6ca05dde15e7b7e8f9d9b9bf7
+scraped_at: 2026-11-13T09:06:43+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:358c4335b428b7105dc21a38cf5fcf734205e86d73722a7ba7789b93bb760a7b
 ---
 
 ## 问题现象
@@ -21,7 +21,7 @@ DevEco Studio版本相关的常见问题和答复可以参考如下：
 | DevEco Studio版本更新周期是怎么样的，必须使用最新版本开发吗？ | DevEco Studio版本更新请参考官网[版本说明](../harmonyos-releases/overview-allversion.md)。您可以根据项目需要采用对应的[版本](https://developer.huawei.com/consumer/cn/download/)进行开发。 |
 | DevEco Studio支持在线更新吗，还是必须卸载重装？ | 目前DevEco Studio的小版本更新会优先发布到官网，经过约一周左右的测试验证，确认无问题后再开放DevEco Studio内部的在线升级功能；而大版本更新涉及的内容可能较多较广，例如可能会涉及API版本迭代、HarmonyOS底层逻辑代码更新，所以可能需要通过卸载重新安装的方式进行全量更新。 |
 | DevEco Studio版本是5.0.0 Release，导入API15版本的工程，提示需要升级，点击升级了又提示已经是最新版本了，如何处理？ | DevEco Studio当前不支持大版本自动升级，获取DevEco Studio请点击[链接下载](https://developer.huawei.com/consumer/cn/download/deveco-studio)，完成开发工具的安装和更新版本。DevEco Studio开发环境依赖于网络环境，需要连接上网络才能确保工具的正常使用。部分企业网络受限的情况下，需要配置[代理信息](../harmonyos-guides/ide-environment-config.md)。 |
-| 同一个电脑是否可以安装2个不同版本的DevEco Studio？ | DevEco Studio支持Windows和macOS系统，可参考[安装DevEco Studio](../harmonyos-guides/ide-software-install.md#section137331951241)将不同版本的IDE安装到不同目录。点击对应路径中bin目录里的DevEcoStudio64.exe即可启动不同版本的IDE。 |
+| 同一个电脑是否可以安装2个不同版本的DevEco Studio？ | DevEco Studio支持Windows和macOS系统，可参考[安装DevEco Studio](../doccenter-deveco-studio/ide-software-install.md)将不同版本的IDE安装到不同目录。点击对应路径中bin目录里的DevEcoStudio64.exe即可启动不同版本的IDE。 |
 | DevEco Studio新版本发布有说明吗？ | [版本说明](../harmonyos-releases/overview-allversion.md)记录了DevEco Studio历史版本的更新记录。您也可以通过[DevEco Studio官方网站](https://developer.huawei.com/consumer/cn/download/)下载最新版本完整的安装包。在使用DevEco Studio各个版本过程中，您可能会遇到一些问题，目前已将识别的[已知问题](../harmonyos-releases/known-issues-baseline.md)列出，请查阅。 |
 | DevEco Studio是否有Linux系统版本，需要在Linux系统上打包。 | 目前DevEco Studio没有Linux系统版本，后续计划请您关注华为官方消息。需要在linux系统打包可以参考以下文档：[搭建流水线](../harmonyos-guides/ide-command-line-building-app.md)。 |
 | DevEco Studio是否有HarmonyOS PC版本？ | 目前HarmonyOS PC版本的DevEco Studio还在加速迭代中，面向企业开发者开启技术预览，可通过官网报名申请。后续支持计划请您留意华为官方消息。 |

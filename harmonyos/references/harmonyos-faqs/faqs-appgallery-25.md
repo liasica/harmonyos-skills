@@ -3,9 +3,9 @@ url: https://developer.huawei.com/consumer/cn/doc/harmonyos-faqs/faqs-appgallery
 title: HarmonyOS应用在开发者中心申请ACL受限权限与Profile配置流程及常见问题解决说明
 breadcrumb: FAQ > 应用服务开发 > 应用市场服务（AppGallery Kit） > HarmonyOS应用在开发者中心申请ACL受限权限与Profile配置流程及常见问题解决说明
 category: harmonyos-faqs
-scraped_at: 2026-10-28T07:48:45+08:00
-doc_updated_at: 2026-10-27
-content_hash: sha256:bc26c44174aae3d7a1a2e97092a13c9e353afdf681c7d12558a3c984d347d65a
+scraped_at: 2026-11-13T09:06:39+08:00
+doc_updated_at: 2026-11-12
+content_hash: sha256:6dc2ec43cc0f904aeb46ddb0b1b59d8452a1d94b98e7799b9b3785ce4d722ec0
 ---
 
 ## 问题现象
@@ -25,7 +25,7 @@ content_hash: sha256:bc26c44174aae3d7a1a2e97092a13c9e353afdf681c7d12558a3c984d34
 
 场景一：应用因特殊场景要求需要使用受限开放权限时，需按照以下规范流程在HarmonyOS 开发者中心平台申请ACL受限权限及配置Profile。
 
-1. 在HarmonyOS 开发者中心申请权限：HarmonyOS 开发者中心会根据应用/元服务的使用场景审核是否可以使用对应的权限，可参考[申请ACL权限](../app/agc-help-apply-acl-0000002394212138.md#section156171230179)。
+1. 在HarmonyOS 开发者中心申请权限：HarmonyOS 开发者中心会根据应用/元服务的使用场景审核是否可以使用对应的权限，可参考[申请ACL权限](../doccenter-getting-started/agc-help-apply-acl-0000002394212138.md#section1845215191112)。
 2. 创建调试Profile（避坑指南）：ACL权限审核等待期间，可以[创建试用调试Profile](../app/agc-help-apply-acl-0000002394212138.md#section1443958124819)来提前试用申请的权限。需注意试用调试Profile有效期为5天，到期即失效，且一个应用/元服务最多支持创建5个试用调试Profile。
 3. 申请发布Profile（避坑指南）：在发布阶段，必须手动申请受限权限。请在申请发布Profile"添加Profile页面"时，务必手动勾选申请使用相应权限，否则应用将在审核时被驳回。申请Profile的步骤可参考[申请发布Profile](../app/agc-help-release-profile-0000002248341090.md)。
 4. 在代码工程中申请权限：在HarmonyOS 开发者中心侧完成上述配置后，开发者还需要根据实际情况在工程中声明权限。
